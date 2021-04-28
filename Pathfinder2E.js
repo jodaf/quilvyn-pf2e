@@ -18,7 +18,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 /*jshint esversion: 6 */
 "use strict";
 
-var PATHFINDER2E_VERSION = '2.1.1.0';
+var PATHFINDER2E_VERSION = '2.2.1.0';
 
 /*
  * This module loads the rules from the Pathfinder Reference Document v2. The
@@ -180,145 +180,154 @@ Pathfinder2E.ARMORS = {
 };
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
-    'Ability=intelligence,wisdom ' +
-    'Skill=Religion,"Scribing Lore" ' +
-    'Feat="Student Of The Cannon"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",'+
+      '"Skill Trained (Religion/Scribing Lore)","Student Of The Canon"',
   'Acrobat':
-    'Ability=dexterity,strength ' +
-    'Skill=Acrobatics,"Circus Lore" ' +
-    'Feat="Steady Balance"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Acrobatics/Circus Lore)","Steady Balance"',
   'Animal Whisperer':
-    'Ability=charisma,wisdom ' +
-    'Skill=Nature,"Terrain Lore" ' + // TODO
-    'Feat="Train Animal"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Nature/Choose 1 from Plains Lore,Swamp Lore)",' +
+      '"Train Animal"',
   'Artisan':
-    'Ability=intelligence,strength ' +
-    'Skill=Crafting,"Guild Lore" ' +
-    'Feat="Specialty Crafting"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Intelligence, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Crafting/Guild Lore)","Specialty Crafting"',
   'Artist':
-    'Ability=charisma,dexterity ' +
-    'Skill=Crafting,"Art Lore" ' +
-    'Feat="Specialty Crafting"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
+      '"Skill Trained (Crafting/Art Lore)","Specialty Crafting"',
   'Barkeep':
-    'Ability=charisma,constitution ' +
-    'Skill=Diplomacy,"Alcohol Lore" ' +
-    'Feat=Hobnobber',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Constitution/Choose 1 from any)",' +
+      '"Skill Trained (Diplomacy/Alcohol Lore)",Hobnobber',
   'Barrister':
-    'Ability=charisma,intelligence ' +
-    'Skill=Diplomacy,"Legal Lore" ' +
-    'Feat="Group Impression"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Diplomacy/Legal Lore)","Group Impression"',
   'Bounty Hunter':
-    'Ability=strength,wisdom ' +
-    'Skill=Survival,"Legal Lore" ' +
-    'Feat="Experienced Tracker"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Strength, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Survival/Legal Lore)","Experienced Tracker"',
   'Charlatan':
-    'Ability=charisma,intelligence ' +
-    'Skill=Deception,"Underworld Lore" ' +
-    'Feat="Charming Liar"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Deception/Underworld Lore)","Charming Liar"',
   'Criminal':
-    'Ability=dexterity,intelligence ' +
-    'Skill=Stealth,"Underworld Lore" ' +
-    'Feat="Experienced Smuggler"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Stealth/Underworld Lore)","Experienced Smuggler"',
   'Detective':
-    'Ability=intelligence,wisdom ' +
-    'Skill=Society,"Underworld Lore" ' +
-    'Feat=Streetwise',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Society/Underworld Lore)",Streetwise',
   'Emissary':
-    'Ability=charisma,intelligence ' +
-    'Skill=Society,"City Lore" ' + // TODO
-    'Feat=Multilingual',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Society/City Lore)",Multilingual',
   'Entertainer':
-    'Ability=charisma,dexterity ' +
-    'Skill=Performance,"Theater Lore" ' +
-    'Feat="Fascinating Performance"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
+      '"Skill Trained (Performance/Theater Lore)","Fascinating Performance"',
   'Farmhand':
-    'Ability=constitution,wisdom ' +
-    'Skill=Athletics,"Farming Lore" ' +
-    'Feat="Assurance (Athletics)"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Athletics/Farming Lore)","Assurance (Athletics)"',
   'Field Medic':
-    'Ability=constitution,wisdom ' +
-    'Skill=Medicine,"Warfare Lore" ' +
-    'Feat="Battle Medic"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Medicine, Warfare Lore)","Battle Medic"',
   'Fortune Teller':
-    'Ability=charisma,intelligence ' +
-    'Skill=Occultism,"Fortune-Telling Lore" ' +
-    'Feat="Oddity Identification"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Occultism/Fortune-Telling Lore)",' +
+      '"Oddity Identification"',
   'Gambler':
-    'Ability=charisma,dexterity ' +
-    'Skill=Deception,"Games Lore" ' +
-    'Feat="Lie To Me"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
+      '"Skill Trained (Deception/Games Lore)","Lie To Me"',
   'Gladiator':
-    'Ability=charisma,strength ' +
-    'Skill=Performance,"Gladitorial Lore" ' +
-    'Feat="Impressive Performance"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Performance/Gladitorial Lore)",' +
+      '"Impressive Performance"',
   'Guard':
-    'Ability=charisma,strength ' +
-    'Skill=Intimidation,"Legal Lore" ' +
-    'Feat="Quick Coercion"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Intimidation/Legal Lore)","Quick Coercion"',
   'Herbalist':
-    'Ability=constitution,wisdom ' +
-    'Skill=Nature,"Herbalism Lore" ' +
-    'Feat="Natural Medicine"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Nature/Herbalism Lore)","Natural Medicine"',
   'Hermit':
-    'Ability=constitution,intelligence ' +
-    'Skill=Nature,"Terrain Lore" ' + // TODO
-    'Feat="Dubious Knowledge"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Nature/Choose 1 from Cave Lore, Desert)",' +
+      '"Dubious Knowledge"',
   'Hunter':
-    'Ability=dexterity,wisdom ' +
-    'Skill=Survival,"Tanning Lore" ' +
-    'Feat="Survey Wildlife"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Survival/Tanning Lore)","Survey Wildlife"',
   'Laborer':
-    'Ability=constitution,strength ' +
-    'Skill=Atheletics,"Labor Lore" ' +
-    'Feat="Hefty Hauler"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Athletics/Labor Lore)","Hefty Hauler"',
   'Martial Disciple':
-    'Ability=dexterity,strength ' +
-    'Skill=Acrobatics,"Warfare Lore" ' + // TODO
-    'Feat="Cat Fall"', // TODO
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Choose 1 from Acrobatics, Athletics/Warfare Lore)",' +
+      '"Cat Fall"',
   'Merchant':
-    'Ability=charisma,intelligence ' +
-    'Skill=Diplomacy,"Mercantile Lore" ' +
-    'Feat="Bargain Hunter"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Diplomacy/Mercantile Lore)","Bargain Hunter"',
   'Miner':
-    'Ability=strength,wisdom ' +
-    'Skill=Survival,"Mining Lore" ' +
-    'Feat="Terrain Expertise (Underground)"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Stength, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Survival/Mining Lore)",' +
+      '"Terrain Expertise (Underground)"',
   'Noble':
-    'Ability=charisma,intelligence' +
-    'Skill=Society,"Heraldry Lore" ' +
-    'Feat="Courtly Graces"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Society/Heraldry Lore)","Courtly Graces"',
   'Nomad':
-    'Ability=constitution,wisdom ' +
-    'Skill=Survival,"Terrain Lore" ' + // TODO
-    'Feat="Assurance (Survival)"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Survival/Choose 1 from Desert Lore, Swamp Lore)",' +
+      '"Assurance (Survival)"',
   'Prisoner':
-    'Ability=constitution,strength ' +
-    'Skill=Stealth,"Underworld Lore" ' +
-    'Feat="Experienced Smuggler"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Stealth/Underworld Lore)","Experienced Smuggler"',
   'Sailor':
-    'Ability=dexterity,strength ' +
-    'Skill=Athletics,"Sailing Lore" ' +
-    'Feat="Underwater Marauder"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Athletics/Sailing Lore)","Underwater Marauder"',
   'Scholar':
-    'Ability=intelligence,wisdom ' +
-    'Skill=Arcana,"Academia Lore" ' + // TODO
-    'Feat="Assurance (Arcana)"', // TODO
+    'Features=' +
+      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion/Academia Lore)",' +
+      '"Choose 1 from Assurance (Arcana), Assurance (Nature), Assurance (Occultism), Assurance (Religion)"',
   'Scout':
-    'Ability=dexterity,wisdom ' +
-    'Skill=Survival,"Terrain Lore" ' + // TODO
-    'Feat="Forager"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Wisdom/Choose 1 from any)",' +
+      '"Skill Trained (Survival/Choose 1 from Cavern Lore, Forest Lore)",' +
+      'Forager',
   'Street Urchin':
-    'Ability=constitution,dexterity ' +
-    'Skill=Thieving,"City Lore" ' + // TODO
-    'Feat=Pickpocket',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Dexterity/Choose 1 from any)",' +
+      '"Skill Trained (Thieving/City Lore)",Pickpocket',
   'Tinker':
-    'Ability=dexterity,intelligence ' +
-    'Skill=Crafting,"Engineering Lore" ' +
-    'Feat="Specialty Crafting"',
+    'Features=' +
+      '"Ability Boost (Choose 1 from Dexterity, Intelligence/Choose 1 from any)",' +
+      '"Skill Trained (Crafting/Engineering Lore)","Specialty Crafting"',
   'Warrior':
-    'Ability=constitution,strength ' +
-    'Skill=Intimidation,"Warfare Lore" ' +
-    'Feat="Intimidating Glare"'
+    'Features=' +
+      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
+      '"Skill Trained (Intimidation/Warfare Lore)","Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
   // TODO
@@ -335,7 +344,20 @@ Pathfinder2E.CLASSES = {
   'Druid':
     'Ability=wisdom HitPoints=8',
   'Fighter':
-    'Ability=strength,dexterity HitPoints=10',
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Fortitude/Reflex)","1:Save Trained (Will)",' +
+      '"1:Skill Trained (Choose 1 from Acrobatics, Athletics/Choose 3 from any)",' +
+      '"1:Attack Expert (Simple/Martial/Unarmed)","1:Attack Trained (Advanced)",' +
+      '"1:Defense Trained (Armor/Unarmored)",' +
+      '"1:Attack Of Opportunity","1:Fighter Feats","1:Shield Block",' +
+      '"2:Skill Feats",3:Bravery,"3:General Feats","3:Skill Increases",' +
+      '"5:Ability Boosts","5:Fighter Weapon Mastery","7:Battlefield Surveyor",'+
+      '"7:Weapon Specialization","9:Combat Flexibility",9:Juggernaut,' +
+      '"11:Armor Expertise","11:Fighter Expertise","13:Weapon Legend",' +
+      '15:Evasion,"15:Greater Weapon Specialization",' +
+      '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend"',
   'Monk':
     'Ability=strength,dexterity HitPoints=10',
   'Ranger':
@@ -582,7 +604,159 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"humanLevel >= 13",' +
       'features.Half-Orc,' +
-      '"features.Orc Weapon Familiarity"'
+      '"features.Orc Weapon Familiarity"',
+  // General
+  'Adopted Ancestry':'Type=General',
+  'Armor Proficiency':'Type=General',
+  'Breath Control':'Type=General',
+  'Canny Acumen':'Type=General',
+  'Diehard':'Type=General',
+  'Fast Recovery':'Type=General Require="constitution >= 14"',
+  'Feather Step':'Type=General Require="dexterity >= 14"',
+  'Fleet':'Type=General',
+  'Incredible Initiative':'Type=General',
+  'Ride':'Type=General',
+  'Shield Block':'Type=General',
+  'Toughness':'Type=General',
+  'Weapon Proficiency':'Type=General',
+  'Ancestral Paragon':'Type=General Require="level >= 3"',
+  'Untrained Improvisation':'Type=General Require="level >= 3"',
+  'Expeditious Search':
+    'Type=General Require="level >= 7","perception >= 2"',
+  'Incredible Investiture':
+    'Type=General Require="level >= 11","charisma >= 16"',
+  'Assurance':'Type=Skill',
+  'Dubious Knowledge':'Type=Skill Require="skills.Recall Knowledge >= 1"',
+  'Quick Identification':
+    'Type=Skill ' +
+    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
+  'Recognize Spell':
+    'Type=Skill ' +
+    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
+  'Skill Training':'Type=Skill',
+  'Trick Magic Item':
+    'Type=Skill ' +
+    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
+  'Automatic Knowledge':
+    'Type=Skill Require="level >= 2","skills.Recall Knowledge >= 2"',
+  'Magical Shorthand':
+    'Type=Skill ' +
+    'Require="level >= 2","skills.Arcana >= 2 || skills.Nature >= 2 || skills.Occultism >= 2 || skills.Religion >= 2"',
+  'Quick Recognition':
+    'Type=Skill ' +
+    'Require="level >= 7","skills.Arcana >= 3 || skills.Nature >= 3 || skills.Occultism >= 3 || skills.Religion >= 3","features.Recognize Spell"',
+  'Cat Fall':'Type=Skill Require="skills.Acrobatics >= 1"',
+  'Quick Squeeze':'Type=Skill Require="skills.Acrobatics >= 1"',
+  'Steady Balance':'Type=Skill Require="skills.Acrobatics >= 1"',
+  'Nimble Crawl':'Type=Skill Require="level >= 2","skills.Acrobatics >= 2"',
+  'Kip Up':'Type=Skill Require="level >= 7","skills.Acrobatics >= 3"',
+  'Arcane Sense':'Type=Skill Require="skills.Arcana >= 1"',
+  'Unified Theory':'Type=Skill Require="level >= 15","skills.Acrobatics >= 4"',
+  'Combat Climber':'Type=Skill Require="skills.Athletics >= 1"',
+  'Hefty Hauler':'Type=Skill Require="skills.Athletics >= 1"',
+  'Quick Jump':'Type=Skill Require="skills.Athletics >= 1"',
+  'Titan Wrestler':'Type=Skill Require="skills.Athletics >= 1"',
+  'Underwater Maurauder':'Type=Skill Require="skills.Athletics >= 1"',
+  'Powerful Leap':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
+  'Rapid Mantel':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
+  'Quick Climb':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
+  'Quick Swim':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
+  'Wall Jump':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
+  'Cloud Jump':'Type=Skill Require="level >= 15","skills.Athletics >= 4"',
+  'Alchemical Crafting':'Type=Skill Require="skills.Crafting >= 1"',
+  'Quick Repair':'Type=Skill Require="skills.Crafting >= 1"',
+  'Snare Crafting':'Type=Skill Require="skills.Crafting >= 1"',
+  'Specialty Crafting':'Type=Skill Require="skills.Crafting >= 1"',
+  'Magical Crafting':'Type=Skill Require="level >= 2","skills.Crafting >= 2"',
+  'Impeccable Crafting':
+    'Type=Skill ' +
+    'Require="level >= 7","skills.Crafting >= 3","features.Specialty Crafting"',
+  'Inventor':'Type=Skill Require="level >= 7","skills.Crafting >= 3"',
+  'Craft Anything':'Type=Skill Require="level >= 15","skills.Crafting >= 4"',
+  'Charming Liar':'Type=Skill Require="skills.Deception >= 1"',
+  'Lengthy Diversion':'Type=Skill Require="skills.Deception >= 1"',
+  'Lie To Me':'Type=Skill Require="skills.Deception >= 1"',
+  'Confabulator':'Type=Skill Require="level >= 2","skills.Deception >= 2"',
+  'Quick Disguise':'Type=Skill Require="level >= 2","skills.Deception >= 2"',
+  'Slippery Secrets':'Type=Skill Require="level >= 7","skills.Deception >= 3"',
+  'Bargain Hunter':'Type=Skill Require="skills.Diplomacy >= 1"',
+  'Group Impression':'Type=Skill Require="skills.Diplomacy >= 1"',
+  'Hobnobber':'Type=Skill Require="skills.Diplomacy >= 1"',
+  'Glad-Hand':'Type=Skill Require="level >= 2","skills.Diplomacy >= 2"',
+  'Shameless Request':'Type=Skill Require="level >= 7","skills.Diplomacy >= 3"',
+  'Legendary Negotiation':
+    'Type=Skill Require="level >= 15","skills.Diplomacy >= 4"',
+  'Group Coercion':'Type=Skill Require="skills.Intimidation >= 1"',
+  'Intimidating Glare':'Type=Skill Require="skills.Intimidation >= 1"',
+  'Quick Coercion':'Type=Skill Require="skills.Intimidation >= 1"',
+  'Intimidating Prowess':
+    'Type=Skill ' +
+    'Require="level >= 2","strength >= 16","skills.Intimidation >= 2"',
+  'Lasting Coercion':
+    'Type=Skill Require="level >= 2","skills.Intimidation >= 2"',
+  'Battle Cry':'Type=Skill Require="level >= 7","skills.Intimidation >= 3"',
+  'Terrified Retreat':
+    'Type=Skill Require="level >= 7","skills.Intimidation >= 3"',
+  'Scare To Death':
+    'Type=Skill Require="level >= 15","skills.Intimidation >= 4"',
+  'Additional Lore':'Type=Skill Require="skills.Lore >= 1"',
+  'Experience Professional':'Type=Skill Require="skills.Lore >= 1"',
+  'Unmistakable Lore':'Type=Skill Require="level >= 2","skills.Lore >= 2"',
+  'Legendary Professional':
+    'Type=Skill Require="level >= 15","skills.Lore >= 4"',
+  'Battle Medicine':'Type=Skill Require="skills.Medicine >= 1"',
+  'Continual Recovery':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
+  'Robust Recovery':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
+  'Ward Medic':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
+  'Legendary Medic':'Type=Skill Require="level >= 15","skills.Medicine >= 4"',
+  'Natural Medicine':'Type=Skill Require="skills.Nature >= 1"',
+  'Train Animal':'Type=Skill Require="skills.Nature >= 1"',
+  'Bonded Animal':'Type=Skill Require="level >= 2","skills.Nature >= 2"',
+  'Oddity Identification':'Type=Skill Require="skills.Occultism >= 1"',
+  'Bizarre Magic':'Type=Skill Require="level >= 7","skills.Occultism >= 3"',
+  'Fascinating Performance':'Type=Skill Require="skills.Performance >= 1"',
+  'Impressive Performance':'Type=Skill Require="skills.Performance >= 1"',
+  'Virtuosic Performer':'Type=Skill Require="skills.Performance >= 1"',
+  'Legendary Performer':
+    'Type=Skill ' +
+    'Require="level >= 15",' +
+            '"skills.Performance >= 4",' +
+            '"features.Virtuosic Performer"',
+  'Student Of The Canon':'Type=Skill Require="skills.Religion >= 1"',
+  'Divine Guidance':'Type=Skill Require="level >= 15","skills.Religion >= 4"',
+  'Courtly Graces':'Type=Skill Require="skills.Society >= 1"',
+  'Multilingual':'Type=Skill Require="skills.Society >= 1"',
+  'Read Lips':'Type=Skill Require="skills.Society >= 1"',
+  'Sign Language':'Type=Skill Require="skills.Society >= 1"',
+  'Streetwise':'Type=Skill Require="skills.Society >= 1"',
+  'Connections':
+    'Type=Skill ' +
+    'Require="level >= 2","skills.Society >= 2","features.Courtly Graces"',
+  'Legendary Codebreaker':
+    'Type=Skill Require="level >= 15","skills.Society >= 4"',
+  'Legendary Linguist':
+    'Type=Skill ' +
+    'Require="level >= 15","skills.Society >= 4","features.Multilingual"',
+  'Experienced Smuggler':'Type=Skill Require="skills.Stealth >= 1"',
+  'Terrain Stalker':'Type=Skill Require="skills.Stealth >= 1"',
+  'Quiet Aliases':'Type=Skill Require="level >= 2","skills.Stealth >= 2"',
+  'Foil Senses':'Type=Skill Require="level >= 7","skills.Stealth >= 3"',
+  'Swift Sneak':'Type=Skill Require="level >= 7","skills.Stealth >= 3"',
+  'Legendary Sneak':'Type=Skill Require="level >= 15","skills.Stealth >= 4"',
+  'Experienced Tracker':'Type=Skill Require="skills.Survival >= 1"',
+  'Forager':'Type=Skill Require="skills.Survival >= 1"',
+  'Survey Wildlife':'Type=Skill Require="skills.Survival >= 1"',
+  'Terrain Expertise':'Type=Skill Require="skills.Survival >= 1"',
+  'Planar Survival':'Type=Skill Require="level >= 7","skills.Survival >= 3"',
+  'Legendary Survivalist':
+    'Type=Skill Require="level >= 15","skills.Survival >= 4"',
+  'Pickpocket':'Type=Skill Require="skills.Thievery >= 1"',
+  'Subtle Theft':'Type=Skill Require="skills.Thievery >= 1"',
+  'Wary Disarmament':'Type=Skill Require="level >= 2","skills.Thievery >= 2"',
+  'Quick Unlock':'Type=Skill Require="level >= 7","skills.Thievery >= 3"',
+  'Legendary Thief':
+    'Type=Skill ' +
+    'Require="level >= 15","skills.Thievery >= 4","features.Pickpocket"'
 };
 Pathfinder2E.FEATURES = {
   // Ancestry
@@ -838,7 +1012,11 @@ Pathfinder2E.FEATURES = {
   'Incredible Ferocity':
     'Section=combat Note="TODO"',
   'Orc Weapon Expertise':
-    'Section=combat Note="TODO"'
+    'Section=combat Note="TODO"',
+  // Class
+  'Fighter Feats':'Section=feature Note="%V Fighter Feats"',
+  'General Feats':'Section=feature Note="%V General Feats"',
+  'Skill Feats':'Section=feature Note="%V Skill Feats"'
 };
 SRD35.GOODIES = {
   'Armor':
@@ -990,23 +1168,21 @@ Pathfinder2E.SHIELDS = {
 };
 Pathfinder2E.SKILLS = {
   'Acrobatics':'Ability=dexterity',
-  'Animal Handling':'Ability=wisdom',
   'Arcana':'Ability=intelligence',
   'Athletics':'Ability=strength',
+  'Crafting':'Ability=intelligence',
   'Deception':'Ability=charisma',
-  'History':'Ability=intelligence',
-  'Insight':'Ability=wisdom',
   'Intimidation':'Ability=charisma',
-  'Investigation':'Ability=intelligence',
+  'Lore':'Ability=intelligence',
   'Medicine':'Ability=wisdom',
-  'Nature':'Ability=intelligence',
-  'Perception':'Ability=wisdom',
+  'Nature':'Ability=wisdom',
+  'Occultism':'Ability=intelligence',
   'Performance':'Ability=charisma',
-  'Persuasion':'Ability=charisma',
-  'Religion':'Ability=intelligence',
-  'Sleight Of Hand':'Ability=dexterity',
+  'Religion':'Ability=wisdom',
+  'Society':'Ability=intelligence',
   'Stealth':'Ability=dexterity',
-  'Survival':'Ability=wisdom'
+  'Survival':'Ability=wisdom',
+  'Thievery':'Ability=dexterity'
 };
 Pathfinder2E.SPELLS = {
   // TODO
@@ -1089,6 +1265,9 @@ Pathfinder2E.WEAPONS = {
   'Shuriken':'Category=2 Damage=d4 Bulk=0 Range=20'
 };
 
+Pathfinder2E.PROFICIENCY_LEVEL_NAMES =
+  ['Untrained', 'Trained', 'Expert', 'Master', 'Legendary'];
+
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
 
@@ -1148,7 +1327,7 @@ Pathfinder2E.identityRules = function(
 
   QuilvynUtils.checkAttrTable(alignments, []);
   QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'Boost', 'Flaw', 'HitPoints', 'Languages']);
-  QuilvynUtils.checkAttrTable(backgrounds, ['Ability', 'Skill', 'Feat']);
+  QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'CasterLevelArcane', 'CasterLevelDivine', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
@@ -1257,9 +1436,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Background')
     Pathfinder2E.backgroundRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Ability'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Feat'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Skill')
+      QuilvynUtils.getAttrValueArray(attrs, 'Features')
     );
   else if(type == 'Armor')
     Pathfinder2E.armorRules(rules, name,
@@ -1528,17 +1705,15 @@ Pathfinder2E.armorRules = function(
 
 /* TODO
  */
-Pathfinder2E.backgroundRules = function(rules, name, ability, feat, skill) {
-
+Pathfinder2E.backgroundRules = function(rules, name, features) {
   var prefix =
     name.substring(0, 1).toLowerCase() + name.substring(1).replaceAll(' ', '');
   var backgroundLevel = prefix + 'Level';
-
   rules.defineRule(backgroundLevel,
     'background', '?', 'source == "' + name + '"',
     'level', '=', null
   );
-
+  Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
 };
 
 /*
@@ -1668,381 +1843,26 @@ Pathfinder2E.classRules = function(
  */
 Pathfinder2E.classRulesExtra = function(rules, name) {
 
-  if(name == 'Barbarian') {
+  var classLevel = 'levels.' + name;
 
-    rules.defineRule('abilityNotes.rage',
-      'levels.Barbarian', '+=', 'source<3 ? 2 : source<6 ? 3 : source<12 ? 4 : source<17 ? 5 : source<20 ? 6 : "unlimited"'
-    );
-    rules.defineRule('armorClass',
-      'combatNotes.barbarianUnarmoredDefense.2', '+', null
-    );
-    rules.defineRule('combatNotes.brutalCritical',
-      'levels.Barbarian', '=', 'Math.floor((source - 5) / 4)'
-    );
-    // Show Unarmored Defense note even if armor != None or conMod == 0
-    rules.defineRule('combatNotes.barbarianUnarmoredDefense.1',
-      'combatNotes.barbarianUnarmoredDefense', '?', null,
-      'constitutionModifier', '=', null
-    );
-    rules.defineRule('combatNotes.barbarianUnarmoredDefense.2',
-      'combatNotes.barbarianUnarmoredDefense', '?', null,
-      'armor', '?', 'source == "None"',
-      'combatNotes.barbarianUnarmoredDefense.1', '=', null
-    );
-    rules.defineRule('combatNotes.extraAttack',
-      'levels.Barbarian', '+=', 'source < 5 ? null : 1'
-    );
-    rules.defineRule('combatNotes.rage',
-      'levels.Barbarian', '+=', 'source<3 ? 2 : source<6 ? 3 : source<12 ? 4 : source<17 ? 5 : source<20 ? 6 : "unlimited"'
-    );
-    rules.defineRule('combatNotes.rage.1',
-      'levels.Barbarian', '+=', 'source<9 ? 2 : source<16 ? 3 : 4'
-    );
-    rules.defineRule('featureNotes.intimidatingPresence',
-      'charismaModifier', '=', 'source + 8',
-      'proficiencyBonus', '+', null
-    );
-    rules.defineRule('selectableFeatureCount.Barbarian',
-      'levels.Barbarian', '=', 'source < 3 ? null : 1'
-    );
-    rules.defineRule('speed', 'abilityNotes.fastMovement', '+', '10');
-
-  } else if(name == 'Bard') {
-
-    rules.defineRule('abilityNotes.jackOfAllTrades',
-      'proficiencyBonus', '=', 'Math.floor(source / 2)'
-    );
-    rules.defineRule('magicNotes.bardicInspiration',
-      'levels.Bard', '=', '6 + Math.floor(source / 5) * 2'
-    );
-    rules.defineRule('magicNotes.bardicInspiration.1',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule('magicNotes.magicalSecrets',
-      'levels.Bard', '=', '2 * Math.floor((source - 6) / 4)'
-    );
-    rules.defineRule('magicNotes.songOfRest',
-      'levels.Bard', '=', '6 + (source>=9 ? 2 * Math.floor((source-5)/4) : 0)'
-    );
-    rules.defineRule('selectableFeatureCount.Bard',
-      'levels.Bard', '=', 'source < 3 ? null : 1'
-    );
-    rules.defineRule('skillNotes.bardExpertise',
-      'levels.Bard', '=', 'source < 10 ? 2 : 4'
-    );
-
-  } else if(name == 'Cleric') {
-
-    rules.defineRule('combatNotes.destroyUndead',
-      'levels.Cleric', '=', 'source < 8 ? 0.5 : Math.floor((source - 5) / 3)'
-    );
-    rules.defineRule('combatNotes.divineStrike',
-      'levels.Cleric', '=', 'source < 14 ? 1 : 2'
-    );
-    rules.defineRule('combatNotes.turnUndead',
-      'wisdomModifier', '=', 'source + 8',
-      'proficiencyBonus', '+', null
-    );
-    rules.defineRule('featureNotes.channelDivinity',
-      'levels.Cleric', '=', 'source < 6 ? 1: source < 18 ? 2 : 3'
-    );
-    rules.defineRule('magicNotes.divineIntervention',
-      'levels.Cleric', '=', 'source < 20 ? source : 100'
+  if(name == 'Fighter') {
+    rules.defineRule
+      ('featCount.Fighter', 'featureNotes.fighterFeats', '+=', null);
+    rules.defineRule('featureNotes.fighterFeats',
+      classLevel, '+=', 'Math.floor(source / 2) + 1'
     );
     rules.defineRule
-      ('magicNotes.preserveLife', 'levels.Cleric', '=', '5 * source');
-    rules.defineRule
-      ('selectableFeatureCount.Cleric', 'levels.Cleric', '=', '1');
-
-  } else if(name == 'Druid') {
-
-    rules.defineRule('magicNotes.wildShape.1',
-      'levels.Druid', '=', 'source < 4 ? "1/4" : source < 8 ? "1/2" : "1"'
-    );
-    rules.defineRule('magicNotes.wildShape.2',
-      'levels.Druid', '=', 'source < 4 ? " (land only)" : source < 8 ? " (non-flying)" : ""'
-    );
-    rules.defineRule('magicNotes.wildShape.3',
-      'levels.Druid', '=', 'Math.floor(source /2)'
-    );
-    rules.defineRule('selectableFeatureCount.Druid',
-      'levels.Druid', '=', 'source < 2 ? null : 1'
-    );
-
-    rules.defineRule("combatNotes.nature'sSanctuary",
-      'wisdomModifier', '=', 'source + 8',
-      'proficiencyBonus', '+', null
-    );
-    rules.defineRule('magicNotes.naturalRecovery',
-      'levels.Druid', '=', 'Math.floor(source / 2)'
-    );
-    rules.defineRule('spellSlots.D0', 'magicNotes.bonusCantrip', '+=', '1');
-
-  } else if(name == 'Fighter') {
-
-    rules.defineRule('abilityNotes.remarkableAthlete',
-      'proficiencyBonus', '=', 'Math.ceil(source / 2)'
+      ('featCount.General', 'featureNotes.generalFeats', '+=', null);
+    rules.defineRule('featureNotes.generalFeats',
+      classLevel, '+=', 'Math.floor((source + 1) / 4)'
     );
     rules.defineRule
-      ('attackBonus.Ranged', 'combatNotes.archeryStyle', '+=', '2');
-    rules.defineRule('combatNotes.actionSurge',
-      'levels.Fighter', '=', 'source < 17 ? 1 : 2'
-    );
-    // Show Defense Style note even if armor == None
-    rules.defineRule('combatNotes.defenseStyle.1',
-      'combatNotes.defenseStyle', '?', null,
-      'armor', '=', 'source == "None" ? null : 1'
-    );
-    rules.defineRule('combatNotes.extraAttack',
-      'levels.Fighter', '+=', 'source < 5 ? null : source < 11 ? 1 : source < 20 ? 2 : 3'
-    );
-    rules.defineRule('combatNotes.secondWind', 'levels.Fighter', '=', null);
+      ('featCount.Skill', 'featureNotes.skillFeats', '+=', null);
     rules.defineRule
-      ('combatNotes.survivor', 'constitutionModifier', '=', '5 + source');
-    rules.defineRule
-      ('combatNotes.survivor.1', 'hitPoints', '=', 'Math.floor(source / 2)');
-    rules.defineRule('featCount.General', 'fighterFeatBonus', '+', null);
-    rules.defineRule('fighterFeatBonus',
-      'levels.Fighter', '=', 'source < 6 ? null : source < 14 ? 1 : 2'
-    );
-    rules.defineRule('saveNotes.indomitable',
-      'levels.Fighter', '=', 'source < 13 ? 1 : source < 17 ? 2 : 3'
-    );
-    rules.defineRule('selectableFeatureCount.Fighter',
-      'levels.Fighter', '=', 'source < 3 ? 1 : 2',
-      'combatNotes.additionalFightingStyle', '+', '1'
-    );
-    rules.defineRule
-      ('skillNotes.remarkableAthlete', 'strengthModifier', '=', null);
-
-  } else if(name == 'Monk') {
-
-    rules.defineRule('abilityNotes.improvedUnarmoredMovement',
-      'armor', '?', 'source == "None"',
-      'shield', '?', 'source == "None"'
-    );
-    rules.defineRule('abilityNotes.slowFall', 'levels.Monk', '=', 'source * 5');
-    // Show Unarmored Movement note properly even if armor != "None"
-    rules.defineRule('abilityNotes.unarmoredMovement',
-      'levels.Monk', '=', 'Math.floor((source + 6) / 4) * 5'
-    );
-    rules.defineRule('abilityNotes.unarmoredMovement.1',
-      'armor', '?', 'source == "None"',
-      'shield', '?', 'source == "None"',
-      'abilityNotes.unarmoredMovement', '=', null
-    );
-    rules.defineRule
-      ('armorClass', 'combatNotes.monkUnarmoredDefense.2', '+', null);
-    rules.defineRule('combatNotes.deflectMissiles',
-      'levels.Monk', '=', null,
-      'dexterityModifier', '+', null
-    );
-    rules.defineRule('combatNotes.extraAttack',
-      'levels.Monk', '+=', 'source < 5 ? null : 1'
-    );
-    rules.defineRule('combatNotes.martialArts',
-      'levels.Monk', '=', '4 + Math.floor(source / 5) * 2'
-    );
-    rules.defineRule('combatNotes.martialArts.1',
-      'monkFeatures.Martial Arts', '?', null,
-      'dexterityModifier', '=', 'source',
-      'strengthModifier', '+', '-source',
-      '', '^', '0'
-    );
-    // Show Unarmored Defense note even if armor != None or wisMod = 0
-    rules.defineRule('combatNotes.monkUnarmoredDefense.1',
-      'combatNotes.monkUnarmoredDefense', '?', null,
-      'wisdomModifier', '=', null
-    );
-    rules.defineRule('combatNotes.monkUnarmoredDefense.2',
-      'combatNotes.monkUnarmoredDefense', '?', null,
-      'armor', '?', 'source == "None"',
-      'combatNotes.monkUnarmoredDefense.1', '=', null
-    );
-    rules.defineRule('combatNotes.openHandTechnique', 'kiSaveDC', '=', null);
-    rules.defineRule('combatNotes.quiveringPalm', 'kiSaveDC', '=', null);
-    rules.defineRule('combatNotes.stunningStrike', 'kiSaveDC', '=', null);
-    rules.defineRule('featureNotes.ki', 'levels.Monk', '=', null);
-    rules.defineRule
-      ('featureNotes.wholenessOfBody', 'levels.Monk', '=', 'source*3');
-    rules.defineRule('kiSaveDC',
-      'monkFeatures.Ki', '?', null,
-      'proficiencyBonus', '=', '8 + source',
-      'wisdomModifier', '+', null
-    );
-    rules.defineRule('magicNotes.tranquility', 'kiSaveDC', '=', null);
-    rules.defineRule('monkMeleeAttackBonus',
-      'armor', '?', 'source == "None"',
-      'combatNotes.martialArts.1', '=', null
-    );
-    rules.defineRule('monkMeleeDamageBonus',
-      'armor', '?', 'source == "None"',
-      'combatNotes.martialArts.1', '=', null
-    );
-    rules.defineRule('monkMeleeDieBonus',
-      'armor', '?', 'source == "None"',
-      'combatNotes.martialArts', '=', '"1d" + source'
-    );
-    for(var ability in Pathfinder2E.ABILITIES) {
-      rules.defineRule
-        ('saveProficiency.' + ability, 'saveNotes.diamondSoul', '=', '1');
-    }
-    rules.defineRule('selectableFeatureCount.Monk',
-      'levels.Monk', '=', 'source < 3 ? null : 1'
-    );
-    rules.defineRule('speed', 'abilityNotes.unarmoredMovement.1', '+', null);
-
-
-  } else if(name == 'Paladin') {
-
-    rules.defineRule('armorClass', 'combatNotes.defenseStyle.1', '+', null);
-    // Show Defense Style note even if armor == None
-    rules.defineRule('combatNotes.defenseStyle.1',
-      'combatNotes.defenseStyle', '?', null,
-      'armor', '=', 'source == "None" ? null : 1'
-    );
-    rules.defineRule('combatNotes.extraAttack',
-      'levels.Paladin', '+=', 'source < 5 ? null : 1'
-    );
-    rules.defineRule('combatNotes.sacredWeapon',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule
-      ('featureNotes.channelDivinity', 'levels.Paladin', '=', '1');
-    rules.defineRule('magicNotes.cleansingTouch',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule
-      ('magicNotes.divineSense', 'charismaModifier', '=', 'source+1');
-    rules.defineRule
-      ('magicNotes.layOnHands', 'levels.Paladin', '=', 'source*5');
-    rules.defineRule('saveNotes.auraOfCourage',
-      'levels.Paladin', '=', 'source < 18 ? 10 : 30'
-    );
-    rules.defineRule('saveNotes.auraOfDevotion',
-      'levels.Paladin', '=', 'source < 18 ? 10 : 30'
-    );
-    rules.defineRule('saveNotes.auraOfProtection',
-      'levels.Paladin', '=', 'source < 18 ? 10 : 30'
-    );
-    rules.defineRule('saveNotes.auraOfProtection.1',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule('selectableFeatureCount.Paladin',
-      'levels.Paladin', '=', 'source < 2 ? null : source < 3 ? 1 : 2'
-    );
-
-  } else if(name == 'Ranger') {
-
-    rules.defineRule('armorClass', 'combatNotes.defenseStyle.1', '+', null);
-    // Show Defense Style note even if armor == None
-    rules.defineRule('combatNotes.defenseStyle.1',
-      'combatNotes.defenseStyle', '?', null,
-      'armor', '=', 'source == "None" ? null : 1'
-    );
-    rules.defineRule('combatNotes.extraAttack',
-      'levels.Ranger', '+=', 'source < 5 ? null : 1'
-    );
-    rules.defineRule
-      ('attackBonus.Ranged', 'combatNotes.archeryStyle', '+=', '2');
-    rules.defineRule('skillNotes.favoredEnemy',
-      'levels.Ranger', '=', 'source < 6 ? 1 : source < 14 ? 2 : 3'
-    );
-    rules.defineRule('combatNotes.foeSlayer', 'wisdomModifier', '=', null);
-    rules.defineRule('hunterSelectableFeatureCount',
-      'rangerFeatures.Hunter Archetype', '?', null,
-      'levels.Ranger', '=', 'source<3 ? 0 : source<7 ? 1 : source<11 ? 2 : source<15 ? 3 : 4'
-    );
-    rules.defineRule('selectableFeatureCount.Ranger',
-      'levels.Ranger', '=', 'source < 2 ? 0 : source < 3 ? 1 : 2',
-      'hunterSelectableFeatureCount', '+', null
-    );
-    rules.defineRule('skillNotes.naturalExplorer',
-      'levels.Ranger', '=', 'source < 6 ? 1 : source < 10 ? 2 : 3'
-    );
-
-  } else if(name == 'Rogue') {
-
-    rules.defineRule('combatNotes.sneakAttack',
-      'levels.Rogue', '=', 'Math.floor((source + 1) / 2)'
-    );
-    rules.defineRule('featCount.General', 'rogueFeatBonus', '+', null);
-    rules.defineRule
-      ('rogueFeatBonus', 'levels.Rogue', '=', 'source < 10 ? null : 1');
-    rules.defineRule('selectableFeatureCount.Rogue',
-      'levels.Rogue', '=', 'source < 3 ? null : 1'
-    );
-    rules.defineRule('skillNotes.rogueExpertise',
-      'levels.Rogue', '=', 'source < 6 ? 2 : 4'
-    );
-    rules.defineRule
-      ('skillNotes.second-StoryWork', 'dexterityModifier', '=', null);
-
-  } else if(name == 'Sorcerer') {
-
-    rules.defineRule('magicNotes.carefulSpell',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule('magicNotes.empoweredSpell',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule('magicNotes.fontOfMagic', 'levels.Sorcerer', '=', null);
-    rules.defineRule('selectableFeatureCount.Sorcerer',
-      'levels.Sorcerer', '=', 'source<3?1 : source<10?3 : source<17?4 : 5'
-    );
-
-    rules.defineRule
-      ('armorClass', 'combatNotes.draconicResilience.2', '^', null);
-    rules.defineRule
-      ('combatNotes.draconicResilience', 'levels.Sorcerer', '=', null);
-    rules.defineRule('combatNotes.draconicResilience.1',
-      'combatNotes.draconicResilience', '?', null,
-      'dexterityModifier', '=', 'source + 13'
-    );
-    rules.defineRule('combatNotes.draconicResilience.2',
-      'armor', '?', 'source == "None"',
-      'combatNotes.draconicResilience.1', '=', null
-    );
-    rules.defineRule
-      ('magicNotes.elementalAffinity', 'charismaModifier', '=', null);
-
-  } else if(name == 'Warlock') {
-
-    rules.defineRule("combatNotes.darkOne'sBlessing.1",
-      "warlockFeatures.Dark One's Blessing", '?', null,
-      'charismaModifier', '=', null,
-      'levels.Warlock', '+', null,
-      '', '^', '1'
-    );
-    rules.defineRule('combatNotes.lifedrinker',
-      'charismaModifier', '=', 'Math.max(source, 1)'
-    );
-    rules.defineRule
-      ('magicNotes.agonizingBlast', 'charismaModifier', '=', null);
-    rules.defineRule('magicNotes.eldritchInvocations',
-      'levels.Warlock', '=', 'source == 2 ? 2 : source < 9 ? Math.floor((source + 1) / 2) : Math.floor((source + 6) / 3)'
-    );
-    rules.defineRule('magicNotes.mysticArcanum',
-      'levels.Warlock', '=', 'source<13 ? "K6" : source<15 ? "K6, K7" : source<17 ? "K6, K7, K8" : "K6, K7, K8, K9"'
-    );
-    rules.defineRule('selectableFeatureCount.Warlock',
-      'levels.Warlock', '=', 'source < 3 ? 1 : 2',
-      'magicNotes.eldritchInvocations', '+', null
-    );
-
-  } else if(name == 'Wizard') {
-
-    rules.defineRule('magicNotes.arcaneRecovery',
-      'levels.Wizard', '=', 'Math.ceil(source / 2)'
-    );
-    rules.defineRule('magicNotes.empoweredEvocation',
-      'intelligenceModifier', '=', null
-    );
-    rules.defineRule('selectableFeatureCount.Wizard',
-      'levels.Wizard', '=', 'source < 2 ? null : 1'
-    );
-
+      ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
   }
+
+  // TODO
 
 };
 
@@ -2340,17 +2160,18 @@ Pathfinder2E.skillRules = function(rules, name, ability, classes) {
       ('skillProficiency.' + name, 'levels.' + classes[i], '=', '1');
   }
   rules.defineRule('skillProficiency.' + name,
+    '', '=', '0',
     'skillsChosen.' + name, '=', 'source ? 1 : null'
   );
-  rules.defineRule('skillBonus.' + name,
-    'skillProficiency.' + name, '?', null,
-    'proficiencyBonus', '=', null
-  );
   rules.defineChoice
-      ('notes', 'skills.' + name + ':(' + ability.substring(0, 3) + ') %V');
+    ('notes', 'skills.' + name + ':(' + ability.substring(0, 3) + ') %V (%1)');
   rules.defineRule('skills.' + name,
+    'skillProficiency.' + name, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+  );
+  rules.defineRule('skills.' + name + '.1', 'skillModifier.' + name, '=', null);
+  rules.defineRule('skillModifier.' + name,
     ability + 'Modifier', '=', null,
-    'skillBonus.' + name, '+', null,
+    'skillProficiency.' + name, '+', '2 * source',
     'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
 
@@ -2509,11 +2330,12 @@ Pathfinder2E.featureListRules = function(
   setName = setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
   for(var i = 0; i < features.length; i++) {
     var feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
-    var matchInfo = feature.match(/([A-Z]\w*)\sProficiency\s\((.*)\)$/);
+    var matchInfo = feature.match(/([A-Z]\w*)\s(Expert|Trained)\s\((.*)\)$/);
     if(!matchInfo)
       continue;
     var group = matchInfo[1].toLowerCase();
-    var elements = matchInfo[2].split('/');
+    var elements = matchInfo[3].split('/');
+    var proficiency = matchInfo[2] == 'Expert' ? 2 : 1;
     for(var j = 0; j < elements.length; j++) {
       matchInfo = elements[j].match(/^Choose\s+(\d+)\s+from/i);
       if(matchInfo) {
@@ -2521,7 +2343,7 @@ Pathfinder2E.featureListRules = function(
           (group + 'ChoiceCount', setName + '.' + feature, '+=', matchInfo[1]);
       } else {
         rules.defineRule(group + 'Proficiency.' + elements[j],
-          setName + '.' + feature, '=', '1'
+          setName + '.' + feature, '=', proficiency
         );
       }
     }
@@ -2681,7 +2503,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
         );
       }
       viewer.addElements(
-          {name: 'Skill Proficiency', within: 'FeaturesAndSkills', separator: listSep},
           {name: 'Skills', within: 'FeaturesAndSkills', columns: '3LE', separator: null},
           {name: 'Languages', within: 'FeaturesAndSkills', separator: listSep}
       );
@@ -2714,7 +2535,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
       }
       viewer.addElements(
           {name: 'SavePart', within: 'Combat', separator: '\n'},
-            {name: 'Save Proficiency', within: 'SavePart', separator: listSep},
             {name: 'Save', within: 'SavePart', separator: listSep}
       );
       if(name != 'Collected Notes') {
