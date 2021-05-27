@@ -18,8 +18,6 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 /*jshint esversion: 6 */
 "use strict";
 
-var PATHFINDER2E_VERSION = '2.2.1.0';
-
 /*
  * This module loads the rules from the Pathfinder Reference Document v2. The
  * Pathfinder2E function contains methods that load rules for particular parts
@@ -30,7 +28,7 @@ var PATHFINDER2E_VERSION = '2.2.1.0';
  */
 function Pathfinder2E() {
 
-  var rules = new QuilvynRules('Pathfinder 2E', PATHFINDER2E_VERSION);
+  var rules = new QuilvynRules('Pathfinder 2E', Pathfinder2E.VERSION);
   Pathfinder2E.rules = rules;
 
   rules.defineChoice('choices', Pathfinder2E.CHOICES);
@@ -71,6 +69,8 @@ function Pathfinder2E() {
   Quilvyn.addRuleSet(rules);
 
 }
+
+Pathfinder2E.VERSION = '2.2.1.0';
 
 /* List of items handled by choiceRules method. */
 Pathfinder2E.CHOICES = [
@@ -1016,7 +1016,7 @@ Pathfinder2E.FEATURES = {
   // Class
   'Fighter Feats':'Section=feature Note="%V Fighter Feats"',
   'General Feats':'Section=feature Note="%V General Feats"',
-  'Skill Feats':'Section=feature Note="%V Skill Feats"'
+  'Skill Feats':'Section=feature Note="%V Fighter Skill"'
 };
 SRD35.GOODIES = {
   'Armor':
