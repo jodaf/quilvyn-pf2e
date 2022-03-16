@@ -629,7 +629,7 @@ Pathfinder2E.FEATS = {
     'Type=General Require="level >= 7","perception >= 2"',
   'Incredible Investiture':
     'Type=General Require="level >= 11","charisma >= 16"',
-  'Assurance':'Type=Skill',
+  'Assurance (%skill)':'Type=Skill',
   'Dubious Knowledge':'Type=Skill Require="skills.Recall Knowledge >= 1"',
   'Quick Identification':
     'Type=Skill ' +
@@ -926,7 +926,8 @@ Pathfinder2E.FEATURES = {
     'Note="Gain expert proficiency in glaive, kukri, and gnome weapons"',
 
   'Burn It!':
-    'Section=combat,magic Note="+1 fire damage","+1/2 spell level fire damage"',
+    'Section=combat,magic ' +
+    'Note="+1 fire damage","+Half spell level fire damage"',
   'City Scavenger':
     'Section=skill ' +
     'Note="+%V Subsist/Use Society or Survial to Subsist/+1 Earn Income while subsisting"',
@@ -1039,10 +1040,75 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Gain expert proficiency in falchion, greataxe, and orc weapons"',
 
+  // Background
+  'Assurance (%skill)':
+    'Section=skill Note="Minimum %{10+proficiencyBonus} on %skill"',
+  'Bargain Hunter':'Section=skill Note="Use Diplomacy to Earn Income"',
+  'Battle Medic':'Section=skill Note="Use Medicine to Treat Wounds"',
+  'Cat Fall':'Section=ability Note="Treat falls as 10\' shorter"',
+  'Charming Liar':
+    'Section=skill Note="Crit success on Lie improves attitude 1 step"',
+  'Courtly Graces':
+    'Section=skill Note="Use Society to Make An Impression or Impersonate"',
+  'Dubious Knowledge':
+    'Section=skill ' +
+    'Note="Fail on Recall Knowledge yields mix of true and false info"',
+  'Experienced Smuggler':
+    'Section=skill Note="Minimum 10 roll to smuggle concealed item"',
+  'Experienced Tracker':'Section=skill Note="-5 Track at full Speed"',
+  'Fascinating Performance':
+    'Section=skill Note="Performance fascinates 1 target for 1 rd (Will neg)"',
+  'Forager':'Section=skill Note="Guaranteed success on Survival to Subsist"',
+  'Group Impression':
+    'Section=skill Note="May Make An Impression on two targets"',
+  'Hefty Hauler':'Section=ability Note="+2 Bulk"',
+  'Hobnobber':'Section=skill Note="Gather Information takes half time"',
+  'Impressive Performance':
+    'Section=skill Note="Use Performance to Make An Impression"',
+  'Intimidating Glare':'Section=skill Note="Intimidate visually"',
+  'Lie To Me':'Section=skill Note="Use Deception to detect lies"',
+  'Multilingual':'Section=skill Note="+2 Language Count"',
+  'Natural Medicine':
+    'Section=skill Note="Use Nature to Treat Wounds, +2 in wilderness"',
+  'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic"',
+  'Pickpocket':
+    'Section=skill Note="Steal closely-guarded object without penalty"',
+  'Quick Coercion':'Section=skill Note="Corerce in 1 rd"',
+  'Quick Jump':
+    'Section=skill Note="May use High Jump and Long Jump as 1 action"',
+  'Specialty Crafting':'Section=skill Note="+1 Craft on selected type"',
+  'Steady Balance':
+    'Section=skill ' +
+    'Note="Balance success crits, not flat-footed during Balance, use Acrobatics to Grab an Edge"',
+  'Streetwise':
+    'Section=skill ' +
+    'Note="May use Society instead of Diplomacy to Gather Information"',
+  'Student Of The Canon':
+    'Section=skill ' +
+    'Note="No crit fail on Religion check to Decipher Writing or Recall Knowledge, no failure to Recall Knowledge about own faith"',
+  'Survey Wildlife':
+    'Section=skill ' +
+    'Note="Use Survival-2 to Recall Knowledge after 10 min study"',
+  'Terrain Expertise (Aquatic)':'Section=skill Note="+1 Survival (aquatic)"',
+  'Terrain Expertise (Arctic)':'Section=skill Note="+1 Survival (arctic)"',
+  'Terrain Expertise (Desert)':'Section=skill Note="+1 Survival (desert)"',
+  'Terrain Expertise (Forest)':'Section=skill Note="+1 Survival (forest)"',
+  'Terrain Expertise (Mountain)':'Section=skill Note="+1 Survival (mountain)"',
+  'Terrain Expertise (Plains)':'Section=skill Note="+1 Survival (plains)"',
+  'Terrain Expertise (Sky)':'Section=skill Note="+1 Survival (sky)"',
+  'Terrain Expertise (Swamp)':'Section=skill Note="+1 Survival (swamp)"',
+  'Terrain Expertise (Underground)':
+    'Section=skill Note="+1 Survival (underground)"',
+  'Train Animal':'Section=companion Note="Can teach tricks to animals"',
+  'Underwater Marauder':
+    'Section=combat ' +
+    'Note="Not flat-footed in water, no penalty for bludgeoning or slashing weapons"',
+
   // Class
   'Fighter Feats':'Section=feature Note="%V Fighter Feats"',
   'General Feats':'Section=feature Note="%V General Feats"',
   'Skill Feats':'Section=feature Note="%V Fighter Skill"'
+
 };
 Pathfinder2E.GOODIES = {
   'Armor':
@@ -1407,17 +1473,13 @@ Pathfinder2E.talentRules = function(
   rules, feats, features, goodies, languages, skills)
 {
 
+  var matchInfo;
+
   QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Type']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Class']);
 
-  for(var feat in feats) {
-    rules.choiceRules(rules, 'Feat', feat, feats[feat]);
-  }
-  for(var feature in features) {
-    rules.choiceRules(rules, 'Feature', feature, features[feature]);
-  }
   for(var goody in goodies) {
     rules.choiceRules(rules, 'Goody', goody, goodies[goody]);
   }
@@ -1439,6 +1501,26 @@ Pathfinder2E.talentRules = function(
       'Attribute="skillProficiency.' + skill + '" ' +
       'Section=skill Note="Proficiency in ' + skill + '"'
     );
+  }
+  for(var feat in feats) {
+    if((matchInfo = feat.match(/(%(\w+))/)) != null) {
+      for(var c in rules.getChoices(matchInfo[2] + 's')) {
+        rules.choiceRules
+          (rules, 'Feat', feat.replace(matchInfo[1], c), feats[feat].replaceAll(matchInfo[1], c));
+      }
+    } else {
+      rules.choiceRules(rules, 'Feat', feat, feats[feat]);
+    }
+  }
+  for(var feature in features) {
+    if((matchInfo = feature.match(/(%(\w+))/)) != null) {
+      for(var c in rules.getChoices(matchInfo[2] + 's')) {
+        rules.choiceRules
+          (rules, 'Feature', feature.replace(matchInfo[1], c), features[feature].replaceAll(matchInfo[1], c));
+      }
+    } else {
+      rules.choiceRules(rules, 'Feature', feature, features[feature]);
+    }
   }
 
 };
@@ -1632,11 +1714,6 @@ Pathfinder2E.ancestryRules = function(
     'ancestry', '=', 'source=="' + name + '" ? 1 : null'
   );
 
-  Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
-  Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
-  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
-  rules.defineChoice('extras', prefix + 'Features');
-
   if(languages.length > 0) {
     rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
     for(var i = 0; i < languages.length; i++) {
@@ -1645,10 +1722,16 @@ Pathfinder2E.ancestryRules = function(
     }
   }
 
+  Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
+  Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
+  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
+  rules.defineChoice('extras', prefix + 'Features');
+
 };
 
 /*
- * TODO
+ * Defines in #rules# the rules associated with class #name# that cannot be
+ * derived directly from the attributes passed to ancestryRules.
  */
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Elf') {
@@ -1754,6 +1837,8 @@ Pathfinder2E.backgroundRules = function(rules, name, features) {
     'level', '=', null
   );
   Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
+  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
+  rules.defineChoice('extras', prefix + 'Features');
 };
 
 /*
