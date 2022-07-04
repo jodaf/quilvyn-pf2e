@@ -11,9 +11,15 @@ quilvyn-pf2e relies on the core modules installed by the quilvyn-core package.
 
 ### Installation
 
-To use quilvyn-pf2e, unbundle the release package into a plugins/
-subdirectory within the Quilvyn installation directory, then add or uncomment
-the 'plugins/Pathfinder2E.js' entry in the PLUGINS definition in quilvyn.html.
+To use quilvyn-pf2e, unbundle the release package into the plugins/
+subdirectory within the Quilvyn installation directory, then append the
+following lines to the file plugins/plugins.js:
+
+    RULESETS['Pathfinder 2E'] = {
+      url:'plugins/Pathfinder2E.js',
+      group:'Pathfinder 2E',
+      require:'SRD35.js'
+    };
 
 ### Usage
 

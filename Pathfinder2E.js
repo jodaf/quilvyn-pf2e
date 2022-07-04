@@ -330,9 +330,13 @@ Pathfinder2E.BACKGROUNDS = {
       '"Skill Trained (Intimidation/Warfare Lore)","Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
-  // TODO
   'Alchemist':
-    'Ability=intelligence HitPoints=8',
+    'Ability=intelligence HitPoints=8 ' +
+    'Features=' +
+      '"Perception Trained",' +
+      '"Skill Trained (Crafting/Choose %{3+intelligenceModifier} from any)",' +
+      '"Attack Trained (Simple/Alchemical Bombs/Unarmed)",' +
+      '"Defense Trained (Light Armor/Unarmored)"',
   'Barbarian':
     'Ability=strength HitPoints=12',
   'Bard':
@@ -455,7 +459,6 @@ Pathfinder2E.DEITIES = {
     'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"',
 };
 Pathfinder2E.FEATS = {
-  // TODO
   // Ancestries
   'Dwarven Lore':'Type=Ancestry,Dwarf',
   'Dwarven Weapon Familiarity':'Type=Ancestry,Dwarf',
@@ -609,6 +612,59 @@ Pathfinder2E.FEATS = {
       '"humanLevel >= 13",' +
       'features.Half-Orc,' +
       '"features.Orc Weapon Familiarity"',
+
+  // Class
+  'Quick Alchemy':'Type=Class,Alchemist',
+  'Alchemical Familiar':'Type=Class,Alchemist',
+  'Alchemical Alchemical Savant':
+    'Type=Class,Alchemist Require=skillStep.Crafting>=1',
+  'Far Lobber':'Type=Class,Alchemist',
+  'Quick Bomber':'Type=Class,Alchemist',
+  'Poison Resistance':'Type=Class,Alchemist Require=level>=2',
+  'Revivifying Mutagen':'Type=Class,Alchemist Require=level>=2',
+  'Smoke Bomb':'Type=Class,Alchemist Require=level>=2',
+  'Calculated Splash':'Type=Class,Alchemist Require=level>=4',
+  'Efficient Alchemy':'Type=Class,Alchemist Require=level>=4',
+  'Enduring Alchemy':'Type=Class,Alchemist Require=level>=4',
+  'Combine Elixirs':'Type=Class,Alchemist Require=level>=6',
+  'Debilitating Bomb':'Type=Class,Alchemist Require=level>=6',
+  'Directional Bomb':'Type=Class,Alchemist Require=level>=6',
+  'Feral Mutagen':'Type=Class,Alchemist Require=level>=8',
+  'Powerful Alchemy':'Type=Class,Alchemist Require=level>=8',
+  'Sticky Bomb':'Type=Class,Alchemist Require=level>=8',
+  'Elastic Mutagen':'Type=Class,Alchemist Require=level>=10',
+  'Extended Splash':
+    'Type=Class,Alchemist Require=level>=10,"features.Calculated Spash"',
+  'Greater Debilitating Bomb':
+    'Type=Class,Alchemist Require=level>=10,"features.Debilitating Bomb"',
+  'Merciful Elixir':'Type=Class,Alchemist Require=level>=10',
+  'Potent Poisoner':
+    'Type=Class,Alchemist Require=level>=10,"features.Powerful Alchemy"',
+  'Extend Elixir':'Type=Class,Alchemist Require=level>=12',
+  'Invincible Mutagen':'Type=Class,Alchemist Require=level>=12',
+  'Uncanny Bombs':
+    'Type=Class,Alchemist Require=level>=12,"features.Far Lobber"',
+  'Glib Mutagen':'Type=Class,Alchemist Require=level>=14',
+  'Greater Merciful Exlixir':
+    'Type=Class,Alchemist Require=level>=14,"features.Merciful Elixir"',
+  'True Debilitating Bomb':
+    'Type=Class,Alchemist ' +
+    'Require=level>=14,"features.Greater Debilitating Bomb"',
+  'Eternal Exlixir':
+    'Type=Class,Alchemist Require=level>=16,"features.Extend Elixir"',
+  'Exploitive Bomb':'Type=Class,Alchemist Require=level>=16',
+  'Genius Mutagen':'Type=Class,Alchemist Require=level>=16',
+  'Persistent Mutagen':
+    'Type=Class,Alchemist Require=level>=16,"features.Extend Elixir"',
+  'Improbable Elixirs':'Type=Class,Alchemist Require=level>=18',
+  'Mindblank Mutagen':'Type=Class,Alchemist Require=level>=18',
+  'Miracle Worker':'Type=Class,Alchemist Require=level>=18',
+  'Perfect Debilitation':'Type=Class,Alchemist Require=level>=18',
+  "Craft Philosopher's Stone":'Type=Class,Alchemist Require=level>=20',
+  'Mega Bomb':
+    'Type=Class,Alchemist Require=level>=20,"features.Expanded Splash"',
+  'Perfect Mutagen':'Type=Class,Alchemist Require=level>=20',
+
   // General
   'Adopted Ancestry':'Type=General',
   'Armor Proficiency':'Type=General',
@@ -888,15 +944,15 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Ancestral Longevity also gives expert level in trained skill"',
   'Universal Longevity':
-    'Section=skill Note="TODO"',
+    'Section=skill Note="PND"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Gain expert proficiency in longbow, composite longbow, longsword, shortbow, composite shortbow, and elf weapons"',
 
   'Animal Accomplice':
-    'Section=combat Note="TODO"',
+    'Section=combat Note="PND"',
   'Burrow Elocutionist':
-    'Section=combat Note="TODO"',
+    'Section=combat Note="PND"',
   'Fey Fellowship':
     'Section=save,skill ' +
     'Note="+2 vs. fey","+2 Perception/May make immediate Diplomacy-5 with fey"',
@@ -1660,11 +1716,15 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 };
 
 /*
- * TODO
+ * Defines in #rules# the rules associated with ancestry #name#, which has the
+ * list of hard prerequisites #requires#. #features# and #selectables# list
+ * associated features, #boosts# and #flaws# any associated boost and flaws,
+ * #languages# any automatic languages, and #hitPoints# the number of HP gained
+ * at level 1.
  */
 Pathfinder2E.ancestryRules = function(
   rules, name, requires, features, selectables, boosts, flaws, languages,
-  hitPoints,
+  hitPoints
 ) {
 
   if(!name) {
@@ -1694,6 +1754,9 @@ Pathfinder2E.ancestryRules = function(
   if(!Array.isArray(languages)) {
     console.log('Bad languages list "' + languages + '" for ancestry ' + name);
     return;
+  }
+  if(typeof hitPoints != 'number') {
+    console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
   }
 
   var matchInfo;
@@ -1727,6 +1790,8 @@ Pathfinder2E.ancestryRules = function(
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
 
+  rules.defineRule('hitPoints', ancestryLevel, '+', hitPoints);
+
 };
 
 /*
@@ -1740,7 +1805,11 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
 };
 
 /*
- * TODO
+ * Defines in #rules# the rules associated with armor #name#, which adds #ac#
+ * to the character's armor class, adds #bulk# to the character's load, allows
+ * a maximum dex bonus to ac of #maxDex#, imposes #skillPenalty# on specific
+ * skills, slows the character by #speedPenalty#, requires a strength of at
+ * least #minStr# to use, and weighs #weight# lbs.
  */
 Pathfinder2E.armorRules = function(
   rules, name, ac, bulk, maxDex, skillPenalty, speedPenalty, minStr, weight
@@ -1761,6 +1830,10 @@ Pathfinder2E.armorRules = function(
   }
   if(typeof maxDex != 'number') {
     console.log('Bad max dex "' + maxDex + '" for armor ' + name);
+    return;
+  }
+  if(typeof skillPenalty != 'number') {
+    console.log('Bad skill penalty "' + skillPenalty + '" for armor ' + name);
     return;
   }
   if(typeof speedPenalty != 'number') {
@@ -1826,7 +1899,9 @@ Pathfinder2E.armorRules = function(
 
 };
 
-/* TODO
+/*
+ * Defines in #rules# the rules associated with background #name#. #features#
+ * lists the background's associated features.
  */
 Pathfinder2E.backgroundRules = function(rules, name, features) {
   var prefix =
@@ -1987,8 +2062,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
   }
 
-  // TODO
-
 };
 
 /*
@@ -2116,7 +2189,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
  * the two must have the same number of elements.
  */
 Pathfinder2E.featureRules = function(rules, name, sections, notes) {
-  // TBD Move out of SRD35
   SRD35.featureRules(rules, name, sections, notes);
   for(var i = 0; i < notes.length; i++) {
     var matchInfo = notes[i].match(/^([A-Z]\w*)\sProficiency\s\((.*)\)$/);
@@ -2333,7 +2405,6 @@ Pathfinder2E.skillRules = function(rules, name, ability, classes) {
 Pathfinder2E.spellRules = function(
   rules, name, school, casterGroup, level, description
 ) {
-  // TBD Move out of SRD35
   SRD35.spellRules(rules, name, school, casterGroup, level, description);
 };
 
