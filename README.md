@@ -17,7 +17,7 @@ following lines to the file plugins/plugins.js:
 
     RULESETS['Pathfinder 2E'] = {
       url:'plugins/Pathfinder2E.js',
-      group:'Pathfinder 2E',
+      group:'Pathfinder',
       require:'SRD35.js'
     };
 

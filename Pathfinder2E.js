@@ -28,7 +28,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  */
 function Pathfinder2E() {
 
-  var rules = new QuilvynRules('Pathfinder 2E', Pathfinder2E.VERSION);
+  let rules = new QuilvynRules('Pathfinder 2E', Pathfinder2E.VERSION);
   Pathfinder2E.rules = rules;
 
   rules.defineChoice('choices', Pathfinder2E.CHOICES);
@@ -111,55 +111,60 @@ Pathfinder2E.ALIGNMENTS = {
 };
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
-    'Features=Darkvision,Slow ' +
+    'Features=' +
+      '"1:Ability Boost (Constitution; Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
+      '"1:Ability Flaw (Charisma)",' +
+      '1:Darkvision,1:Slow ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf","1:Death Warden Dwarf","1:Forge Dwarf",' +
       '"1:Rock Dwarf","1:Strong-Blooded Dwarf" ' +
-    'Boost=Constitution,Wisdom,any ' +
-    'Flaw=Charisma ' +
     'HitPoints=10 ' +
     'Languages=Common,Dwarven',
   'Elf':
-    'Features="Low-Light Vision" ' +
+    'Features=' +
+      '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from Charisma, Constitution, Strength, Wisdom)",' +
+      '"1:Ability Flaw (Constitution)",' +
+      '"1:Low-Light Vision" ' +
     'Selectables=' +
       '"1:Arctic Elf","1:Cavern Elf","1:Seer Elf","1:Whisper Elf",' +
       '"1:Woodland Elf" ' +
-    'Boost=Dexterity,Intelligence,any ' +
-    'Flaw=Constitution ' +
     'HitPoints=6 ' +
     'Languages=Common,Elven',
   'Gnome':
-    'Features="Low-Light Vision",Small ' +
+    'Features=' +
+      '"1:Ability Boost (Charisma; Constitution; Choose 1 from Dexterity, Intelligence, Strength, Wisdom)",' +
+      '"1:Ability Flaw (Strength)",' +
+      '"1:Low-Light Vision",1:Small ' +
     'Selectables=' +
       '"1:Chameleon Gnome","1:Fey-Touched Gnome","1:Sensate Gnome",' +
       '"1:Umbral Gnome","1:Wellspring Gnome" ' +
-    'Boost=Constitution,Charisma,any ' +
-    'Flaw=Strength ' +
     'HitPoints=8 ' +
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
-    'Features="Darkvision",Small ' +
+    'Features=' +
+      '"1:Ability Boost (Charisma; Dexterity; Choose 1 from Constitution, Intelligence, Strength, Wisdom)",' +
+      '"1:Ability Flaw (Wisdom)",' +
+      '1:Darkvision,1:Small ' +
     'Selectables=' +
       '"1:Charhide Goblin","1:Irongut Goblin","1:Razortooth Goblin",' +
       '"1:Snow Goblin","1:Unbreakable Goblin" ' +
-    'Boost=Dexterity,Charisma,any ' +
-    'Flaw=Wisdom ' +
     'HitPoints=6 ' +
     'Languages=Common,Goblin',
   'Halfling':
-    'Features="Keen Eyes",Small ' +
+    'Features=' +
+      '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from Charisma, Constitution, Intelligence, Strength)",' +
+      '"1:Ability Flaw (Strength)",' +
+      '"1:Keen Eyes",1:Small ' +
     'Selectables=' +
       '"1:Gutsy Halfling","1:Hillock Halfling","1:Nomadic Halfling",' +
       '"1:Twilight Halfling","1:Wildwood Halfling" ' +
-    'Boost=Dexterity,Wisdom,any ' +
-    'Flaw=Strength ' +
     'HitPoints=6 ' +
     'Languages=Common,Halfling',
   'Human':
-    'Features="Keen Eyes",Small ' +
+    'Features=' +
+      '"1:Ability Boost (Choose 2 from any)" ' +
     'Selectables=' +
       '1:Half-Elf,1:Half-Orc,"1:Skilled Heritage","1:Versatile Heritage" ' +
-    'Boost=any,any ' +
     'HitPoints=8 ' +
     'Languages=Common'
 };
@@ -181,162 +186,162 @@ Pathfinder2E.ARMORS = {
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
     'Features=' +
-      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",'+
-      '"Skill Trained (Religion/Scribing Lore)","Student Of The Canon"',
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
+      '"1:Skill Trained (Religion; Scribing Lore)","Student Of The Canon"',
   'Acrobat':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Acrobatics/Circus Lore)","Steady Balance"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Acrobatics; Circus Lore)","Steady Balance"',
   'Animal Whisperer':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Nature/Choose 1 from Plains Lore,Swamp Lore)",' +
-      '"Train Animal"',
+      '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Nature; Choose 1 from Plains Lore, Swamp Lore)",' +
+      '"1:Train Animal"',
   'Artisan':
     'Features=' +
-      '"Ability Boost (Choose 1 from Intelligence, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Crafting/Guild Lore)","Specialty Crafting"',
+      '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Crafting; Guild Lore)","Specialty Crafting"',
   'Artist':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
-      '"Skill Trained (Crafting/Art Lore)","Specialty Crafting"',
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Skill Trained (Crafting; Art Lore)","Specialty Crafting"',
   'Barkeep':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Constitution/Choose 1 from any)",' +
-      '"Skill Trained (Diplomacy/Alcohol Lore)",Hobnobber',
+      '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
+      '"1:Skill Trained (Diplomacy; Alcohol Lore)",Hobnobber',
   'Barrister':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Diplomacy/Legal Lore)","Group Impression"',
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Diplomacy; Legal Lore)","Group Impression"',
   'Bounty Hunter':
     'Features=' +
-      '"Ability Boost (Choose 1 from Strength, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Survival/Legal Lore)","Experienced Tracker"',
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Survival; Legal Lore)","Experienced Tracker"',
   'Charlatan':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Deception/Underworld Lore)","Charming Liar"',
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Deception; Underworld Lore)","Charming Liar"',
   'Criminal':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Stealth/Underworld Lore)","Experienced Smuggler"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Stealth; Underworld Lore)","Experienced Smuggler"',
   'Detective':
     'Features=' +
-      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Society/Underworld Lore)",Streetwise',
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Society; Underworld Lore)",Streetwise',
   'Emissary':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Society/City Lore)",Multilingual',
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained; Society; City Lore",Multilingual',
   'Entertainer':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
-      '"Skill Trained (Performance/Theater Lore)","Fascinating Performance"',
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Skill Trained (Performance; Theater Lore)","Fascinating Performance"',
   'Farmhand':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Athletics/Farming Lore)","Assurance (Athletics)"',
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Athletics; Farming Lore)","Assurance (Athletics)"',
   'Field Medic':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Medicine, Warfare Lore)","Battle Medic"',
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Medicine; Warfare Lore)","Battle Medic"',
   'Fortune Teller':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Occultism/Fortune-Telling Lore)",' +
-      '"Oddity Identification"',
+      '"1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Occultism; Fortune-Telling Lore)",' +
+      '"1:Oddity Identification"',
   'Gambler':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Dexterity/Choose 1 from any)",' +
-      '"Skill Trained (Deception/Games Lore)","Lie To Me"',
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Skill Trained (Deception; Games Lore)","Lie To Me"',
   'Gladiator':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Performance/Gladitorial Lore)",' +
-      '"Impressive Performance"',
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Performance; Gladitorial Lore)",' +
+      '"1:Impressive Performance"',
   'Guard':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Intimidation/Legal Lore)","Quick Coercion"',
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Intimidation; Legal Lore)","Quick Coercion"',
   'Herbalist':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Nature/Herbalism Lore)","Natural Medicine"',
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Nature; Herbalism Lore)","Natural Medicine"',
   'Hermit':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Nature/Choose 1 from Cave Lore, Desert)",' +
-      '"Dubious Knowledge"',
+      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Nature; Choose 1 from Cave Lore, Desert)",' +
+      '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Survival/Tanning Lore)","Survey Wildlife"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Survival; Tanning Lore)","Survey Wildlife"',
   'Laborer':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Athletics/Labor Lore)","Hefty Hauler"',
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Athletics; Labor Lore)","Hefty Hauler"',
   'Martial Disciple':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Choose 1 from Acrobatics, Athletics/Warfare Lore)",' +
-      '"Cat Fall"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
+      '"1:Cat Fall"',
   'Merchant':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Diplomacy/Mercantile Lore)","Bargain Hunter"',
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Diplomacy, Mercantile Lore)","Bargain Hunter"',
   'Miner':
     'Features=' +
-      '"Ability Boost (Choose 1 from Stength, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Survival/Mining Lore)",' +
-      '"Terrain Expertise (Underground)"',
+      '"1:Ability Boost (Choose 1 from Stength, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Survival; Mining Lore)",' +
+      '"1:Terrain Expertise: Underground"',
   'Noble':
     'Features=' +
-      '"Ability Boost (Choose 1 from Charisma, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Society/Heraldry Lore)","Courtly Graces"',
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Society; Heraldry Lore)","Courtly Graces"',
   'Nomad':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Survival/Choose 1 from Desert Lore, Swamp Lore)",' +
-      '"Assurance (Survival)"',
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Survival; Choose 1 from Desert Lore, Swamp Lore)",' +
+      '"1:Assurance: Survival"',
   'Prisoner':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Stealth/Underworld Lore)","Experienced Smuggler"',
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Stealth; Underworld Lore)","Experienced Smuggler"',
   'Sailor':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Athletics/Sailing Lore)","Underwater Marauder"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Athletics; Sailing Lore)","Underwater Marauder"',
   'Scholar':
     'Features=' +
-      '"Ability Boost (Choose 1 from Intelligence, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion/Academia Lore)",' +
-      '"Choose 1 from Assurance (Arcana), Assurance (Nature), Assurance (Occultism), Assurance (Religion)"',
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
+      '"1:Assurance: Choose 1 from Arcana, Nature, Occultism, Religion"',
   'Scout':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Wisdom/Choose 1 from any)",' +
-      '"Skill Trained (Survival/Choose 1 from Cavern Lore, Forest Lore)",' +
-      'Forager',
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Survival; Choose 1 from Cavern Lore, Forest Lore)",' +
+      '1:Forager',
   'Street Urchin':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Dexterity/Choose 1 from any)",' +
-      '"Skill Trained (Thieving/City Lore)",Pickpocket',
+      '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
+      '"1:Skill Trained (Thieving; City Lore)",Pickpocket',
   'Tinker':
     'Features=' +
-      '"Ability Boost (Choose 1 from Dexterity, Intelligence/Choose 1 from any)",' +
-      '"Skill Trained (Crafting/Engineering Lore)","Specialty Crafting"',
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Crafting; Engineering Lore)","Specialty Crafting"',
   'Warrior':
     'Features=' +
-      '"Ability Boost (Choose 1 from Constitution, Strength/Choose 1 from any)",' +
-      '"Skill Trained (Intimidation/Warfare Lore)","Intimidating Glare"'
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Skill Trained (Intimidation; Warfare Lore)","Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
   'Alchemist':
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
-      '"Perception Trained",' +
-      '"Skill Trained (Crafting/Choose %{3+intelligenceModifier} from any)",' +
-      '"Attack Trained (Simple/Alchemical Bombs/Unarmed)",' +
-      '"Defense Trained (Light Armor/Unarmored)"',
+      '"1:Perception Trained",' +
+      '"1:Skill Trained (Crafting; Choose %{3+intelligenceModifier} from any)",' +
+      '"1:Attack Trained (Simple; Alchemical Bombs; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Unarmored)"',
   'Barbarian':
     'Ability=strength HitPoints=12',
   'Bard':
@@ -351,10 +356,10 @@ Pathfinder2E.CLASSES = {
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
       '"1:Perception Expert",' +
-      '"1:Save Expert (Fortitude/Reflex)","1:Save Trained (Will)",' +
-      '"1:Skill Trained (Choose 1 from Acrobatics, Athletics/Choose 3 from any)",' +
-      '"1:Attack Expert (Simple/Martial/Unarmed)","1:Attack Trained (Advanced)",' +
-      '"1:Defense Trained (Armor/Unarmored)",' +
+      '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
+      '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 3 from any)",' +
+      '"1:Attack Expert (Simple; Martial; Unarmed)","1:Attack Trained (Advanced)",' +
+      '"1:Defense Trained (Armor; Unarmored)",' +
       '"1:Attack Of Opportunity","1:Fighter Feats","1:Shield Block",' +
       '"2:Skill Feats",3:Bravery,"3:General Feats","3:Skill Increases",' +
       '"5:Ability Boosts","5:Fighter Weapon Mastery","7:Battlefield Surveyor",'+
@@ -825,8 +830,8 @@ Pathfinder2E.FEATURES = {
     'Section=save Note="May use Reaction for +1 vs. magic for 1 rd"',
   'Arctic Elf':
     'Section=save ' +
-    'Note="Cold resistance %{level//2>?1}, treat environmental cold as 1 step lower"',
-  'Cavern Elf':'Section=feature Note="Has Darkvision"',
+    'Note="Cold resistance %{level//2>?1} and treats environmental cold as 1 step lower"',
+  'Cavern Elf':'Section=feature Note="Has Darkvision feature"',
   'Chameleon Gnome':
     'Section=feature,skill ' +
     'Note="May change skin and hair colors",' +
@@ -835,51 +840,57 @@ Pathfinder2E.FEATURES = {
   'Darkvision':
     'Section=feature Note="Normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
-    'Section=save Note="Successful save vs. necromancy effect always critical"',
+    'Section=save Note="Successful save vs. necromancy effect is always a critical success"',
   'Fey-Touched Gnome':
-    'Section=feature,magic Note="Fey trait","Cast chosen cantrip at will"',
+    'Section=feature,magic Note="Fey trait","May cast chosen cantrip at will"',
   'Forge Dwarf':
     'Section=save ' +
-    'Note="Fire resistance %{level//2>?1}, treat environmental heat as 1 step lower"',
-  'Gutsy Halfling':'Section=save Note="Success vs. emotion automatic crit"',
-  'Half-Elf':'Section=feature Note="Elf trait, Low-Light Vision"',
-  'Half-Orc':'Section=combat Note="Orc trait, Low-Light Vision"',
+    'Note="Fire resistance %{level//2>?1} and treats environmental heat as 1 step lower"',
+  'Gutsy Halfling':
+    'Section=save ' +
+    'Note="Successful save vs. emotion isl always a critical success"',
+  'Half-Elf':
+    'Section=feature Note="Has Elf trait and Low-Light Vision features"',
+  'Half-Orc':
+    'Section=combat Note="Has Orc trait and Low-Light Vision features"',
   'Hillock Halfling':
-    'Section=combat Note="Regain +%V HP from rest or treatment"',
+    'Section=combat Note="Regains +%V HP from rest or treatment"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
-      '"Eat spoiled food and when sickened",' +
+      '"May safely eat spoiled food and when sickened",' +
       '"+2 vs afflictions, sickened (ingested); success automatic crit"',
-  'Low-Light Vision':'Section=feature Note="Treat dim light as bright light"',
+  'Low-Light Vision':'Section=feature Note="Treats dim light as bright light"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
-  'Razortooth Goblin':'Section=combat Note="Jaws attack 1d6 damage"',
+  'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6 HP"',
   'Rock Dwarf':
     'Section=save ' +
     'Note="+2 vs. knock prone, shove, and trip; halve forced move distance"',
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
-      '"<i>Detect Magic</i> at will",' +
+      '"May cast <i>Detect Magic</i> at will",' +
       '"+1 identify magic and deciper magic writing"',
   'Sensate Gnome':'Section=skill Note="R30\' +2 Perception (Locate creature)"',
   'Skilled Heritage':'Section=skill Note="Trained in chosen skill"',
   'Slow':'Section=ability Note="-10 Speed"',
   'Snow Goblin':
-    'Section=save Note="Cold resistance %V, drop environmental cold 1 step"',
+    'Section=save ' +
+    'Note="Cold resistance %V and reduces environmental cold 1 step"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
-    'Note="Poison resistance %{level//2>?1}, save reduces stage by 2 (virulent 1), critical by 3 (virulent 2)"',
-  'Twilight Halfling':'Section=combat Note="Low-Light Vision"',
-  'Umbral Gnome':'Section=combat Note="Darkvision"',
+    'Note="Poison resistance %{level//2>?1} and save reduces stage by 2 (virulent 1), critical by 3 (virulent 2)"',
+  'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
+  'Umbral Gnome':'Section=combat Note="Has Darkvision feature"',
   'Unbreakable Goblin':
-    'Section=combat,save Note="+4 Hit Points","Halve falling distance"',
+    'Section=combat,save ' +
+    'Note="+4 Hit Points","Suffers half falling distance damage"',
   'Versatile Heritage':'Section=combat Note="+1 General Feat"',
-  'Wellspring Gnome':'Section=magic Note="Cast chosen cantrip at will"',
+  'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
     'Section=combat Note="R60\' Seek, R30\' +2 locate heard creatures"',
   'Wildwood Halfling':
-    'Section=feature Note="Ignore difficult terrain from foliage"',
+    'Section=feature Note="Ignores difficult terrain from foliage"',
   'Woodland Elf':
     'Section=ability,combat ' +
     'Note="%{speed//2}\' Climb (foliage) (%{speed}\' crit success)",' +
@@ -893,18 +904,18 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Weapon Training (Battle Axe/Pick/Warhammer)"',
   'Rock Runner':
     'Section=ability,skill ' +
-    'Note="Move normally over stone and earth difficulty terrain",' +
-         '"Acrobatics on stone and earth never flat-footed, success always critical"',
+    'Note="May move normally over stone and earth difficulty terrain",' +
+         '"Acrobatics on stone and earth is never flat-footed and success always critical"',
   'Stonecunning':
     'Section=skill Note="+2 Perception (unusual stonework)/Automatic -2 check"',
   'Unburdened Iron':
     'Section=ability ' +
-    'Note="No Speed reduction from armor, reduce other speed penalties by 5"',
+    'Note="No Speed reduction from armor; reduces other speed penalties by 5"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="+1 damage vs. choice of drow, duergar, giant, or orc/+1 damage vs. all of these after taking damage"',
+    'Note="+1 damage vs. choice of drow, duergar, giant, or orc; +1 damage vs. all of these after taking damage"',
   'Boulder Roll':
-    'Section=combat Note="Step into foe\'s space forces 5\' move, inflicts (Fort vs. Athletics neg, inflicts %{level+strengthModifier} HP})"',
+    'Section=combat Note="Stepping into foe\'s space forces 5\' move, inflicts (Fort vs. Athletics neg, inflicts %{level+strengthModifier} HP})"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hit with battle axe, pick, warhammer, or dwarf weapon inflicts critical specialization effect"',
@@ -913,29 +924,30 @@ Pathfinder2E.FEATURES = {
     'Note="+%{level} HP/-%{1+(features.Toughness||0)*3} dying recovery DC"',
   'Stonewalker':
     'Section=magic,skill ' +
-    'Note="Cast <i>Meld Into Stone</i> 1/dy",' +
-         '"Find legendary unusual stonework"',
+    'Note="May cast <i>Meld Into Stone</i> 1/dy",' +
+         '"May find legendary unusual stonework"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in battle axes, picks, warhammers, and dwarf weapons"',
+    'Note="Gains expert proficiency in battle axes, picks, warhammers, and dwarf weapons"',
 
-  'Ancestral Longevity':'Section=skill Note="Movable training in 1 skill 1/dy"',
+  'Ancestral Longevity':
+    'Section=skill Note="Has movable training in 1 skill 1/dy"',
   'Elven Lore':
-    'Section=skill Note="Skill Proficiency (Arcana/Nature/Elven Lore)"',
+    'Section=skill Note="Skill Proficiency: Arcana; Nature; Elven Lore"',
   'Elven Weapon Familiarity':
     // TODO Proficiency step in "elf weapons"
     'Section=combat ' +
-    'Note="Weapon Proficiency (Longbow/Composite Longbow/Longsword/Shortbow/Composite Shortbow)"',
+    'Note="Weapon Proficiency: Longbow; Composite Longbow; Longsword; Shortbow; Composite Shortbow"',
   'Forlorn':
-    'Section=save Note="+1 vs. emotion effects, all successes are critical"',
+    'Section=save Note="+1 vs. emotion effects and all successes are critical"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':'Section=magic Note="May cast chosen catrip at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="Reduces duration of mental effects by 1 rd, gives +1 level of save vs. sleep effects"',
+    'Note="Reduces duration of mental effects by 1 rd and gives +1 level of save vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May dbl duration of check for +2, critical failure only on 10 lower than DC"',
+    'Note="May dbl duration of check for +2; suffers critical failure only on 10 lower than DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hit with longbow, composite longbow, longsword, shortbow, composite shortbow, or elf weapon inflicts critical specialization effect"',
@@ -947,7 +959,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="PND"',
   'Elven Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in longbow, composite longbow, longsword, shortbow, composite shortbow, and elf weapons"',
+    'Note="Has expert proficiency in longbow, composite longbow, longsword, shortbow, composite shortbow, and elf weapons"',
 
   'Animal Accomplice':
     'Section=combat Note="PND"',
@@ -957,7 +969,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,skill ' +
     'Note="+2 vs. fey","+2 Perception/May make immediate Diplomacy-5 with fey"',
   'First World Magic':
-    'Section=magic Note="Cast chosen cantrip at will as level %{level//2}"',
+    'Section=magic Note="May cast chosen cantrip at will as level %{level//2}"',
   'Gnome Obsession':
     'Section=skill Note="%V proficiency in chosen and background Lore skill"',
   'Gnome Weapon Familiarity':
@@ -969,31 +981,32 @@ Pathfinder2E.FEATURES = {
   'Animal Elocutionist':
     'Section=magic,skill ' +
     'Note="May speak with all animals","+1 Diplomacy (animals)"',
-  'Energized Font':'Section=magic Note="Regain 1 Focus Point 1/dy"',
+  'Energized Font':'Section=magic Note="Regains 1 Focus Point 1/dy"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
-    'Note="Critical hits with glaive, kukri, or gnome weapon applies critical specialization effect"',
+    'Note="Critical hits with glaive, kukri, or gnome weapon apply critical specialization effect"',
   'First World Adept':
-    'Section=magic Note="Cast <i>Faerie Fire</i> and <i>Invisibility</i> 1/dy"',
+    'Section=magic ' +
+     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> 1/dy"',
   'Vivacious Conduit':
     'Section=combat Note="10 min rest restores %{constitutionModifier+level//2} HP"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in glaive, kukri, and gnome weapons"',
+    'Note="Has expert proficiency in glaive, kukri, and gnome weapons"',
 
   'Burn It!':
     'Section=combat,magic ' +
     'Note="+1 fire damage","+Half spell level fire damage"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%V Subsist/Use Society or Survial to Subsist/+1 Earn Income while subsisting"',
+    'Note="+%V Subsist/May use Society or Survial to Subsist/+1 Earn Income while subsisting"',
   'Goblin Lore':
     'Section=skill Note="Trained in Nature, Stealth, and Goblin Lore"',
   'Goblin Scuttle':
-    'Section=combat Note="Free Step after ally moves to adjacent position"',
+    'Section=combat Note="May take free Step after ally moves to adjacent position"',
   'Goblin Song':
     'Section=skill ' +
-    'Note="R30\' Use Performance to inflict -1 Perception and Will on target for 1 rd (crit 1 min; crit fail immune for 1 hr)"',
+    'Note="R30\' May use Performance to inflict -1 Perception and Will on target for 1 rd (crit 1 min; crit fail immune for 1 hr)"',
   'Goblin Weapon Familiarity':
     'Section=combat ' +
     // TODO Proficiency step in "goblin weapons"
@@ -1006,78 +1019,80 @@ Pathfinder2E.FEATURES = {
     'Section=ability,skill Note="+5\' sneak","May Stealth between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
-    'Note="Critical hits with goblin weapon applies critical specialization effect"',
+    'Note="Critical hits with goblin weapon apply critical specialization effect"',
   'Cave Climber':'Section=ability Note="10\' Climb"',
   'Skittering Scuttle':
-    'Section=combat Note="Move up to %{speed}\' using Goblin Scuttle"',
+    'Section=combat Note="May move up to %{speed}\' using Goblin Scuttle"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in dogslicer, horsechopper, and goblin weapons"',
+    'Note="Has expert proficiency in dogslicer, horsechopper, and goblin weapons"',
   'Very, Very Sneaky':
-    'Section=combat Note="Sneak at full speed and without cover"',
+    'Section=combat Note="May sneak at full speed and without cover"',
 
   'Distracting Shadows':
-    'Section=skill Note="Use larger creatures for Hide and Sneak"',
+    'Section=skill Note="May use larger creatures for Hide and Sneak"',
   'Halfling Lore':
-    'Section=skill Note="Trained (Acrobatics/Stealth/Halfling Lore)"',
-  'Halfling Luck':'Section=feaure Note="Reroll skill or save 1/dy"',
+    'Section=skill Note="Trained (Acrobatics; Stealth; Halfling Lore)"',
+  'Halfling Luck':'Section=feaure Note="May reroll skill or save 1/dy"',
   'Halfling Weapon Familiarity':
     'Section=combat ' +
     // TODO Proficiency step in "halfling weapons"
     'Note="Weapon Training (Sling/Halfling Sling Staff/Shortsword)"',
   'Sure Feet':
     'Section=skill ' +
-    'Note="All Acrobatics (balance) and Athletics (climb) successes crit/Not flat-footed during balance or climb"',
+    'Note="Success on Acrobatics (balance) and Athletics (climb) is a critical success/Never flat-footed during balance or climb"',
   'Titan Slinger':
     'Section=combat Note="+1 damage die step on slings against large+ foes"',
   'Unfettered Halfling':
     'Section=combat ' +
-    'Note="All escape successes and vs. grabbed or restrained crit/Foe Grapple fail crit/Foe Grab requires Athletics"',
+    'Note="All escape successes and vs. grabbed or restrained are critical successes/All foe Grapple fails are critical fails/Foe Grab requires Athletics"',
   'Watchful Halfling':
     'Section=combat,skill Note="May Aid to overcome enchantment","+2 Perception (sense enchantment), automatic check at -2"',
   'Cultural Adaptability':'Section=feature Note="Has Adopted Ancestry feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
-    'Note="Critical hits with shortsword, sling, or halfling weapon applies critical specialization effect"',
-  'Guiding Luck':'Section=skill Note="Reroll failed Perception 1/dy"',
+    'Note="Critical hits with shortsword, sling, or halfling weapon apply critical specialization effect"',
+  'Guiding Luck':'Section=skill Note="May reroll failed Perception 1/dy"',
   'Irrepressible':'Section=save Note="Save vs. emotion crits%1"',
   'Ceaseless Shadows':
     'Section=combat ' +
     'Note="Hide and Sneak without cover, gain additional cover from creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in sling, halfling sling staff, shortsword, and halfling weapons"',
+    'Note="Has expert proficiency in sling, halfling sling staff, shortsword, and halfling weapons"',
 
   'Adapted Cantrip':
-    'Section=magic Note="Know cantrip from a different tradition"',
+    'Section=magic Note="Knows 1 cantrip from a different tradition"',
   'Cooperative Nature':'Section=skill Note="+4 Aid"',
   'General Training':'Section=feature Note="+1 General feat"',
   'Haughty Obstinacy':
-    'Section=save Note="Foe Intimidation (Coerce) fails crit"',
+    'Section=save ' +
+    'Note="All foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=features Note="+1 Class feat"',
-  'Natural Skill':'Section=skill Note="Trained (Choose 2 from any)"',
+  'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
   'Unconventional Weaponry':'Section=combat Note="Trained in choice of weapon"',
   'Adaptive Adept':
     'Section=magic ' +
-    'Note="Know cantrip or level 1 spell from a different tradition"',
+    'Note="Knows cantrip or level 1 spell from a different tradition"',
   'Clever Improviser':
     'Section=feature,skill ' +
     'Note="Has Untrained Improvisation feature","May use all skills untrained"',
   'Cooperative Soul':
     'Section=skill Note="Always succeeds on Aid of expert skills"',
   'Incredible Improvisation':'Section=combat Note="+4 to untrained skill 1/dy"',
-  'Multitalented':'Section=combat Note="Gain 2nd level multiclass feat"',
+  'Multitalented':'Section=combat Note="Has 2nd level multiclass feat"',
   'Unconventional Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in Unconventional Weaponry weapon"',
+    'Note="has expert proficiency in Unconventional Weaponry weapon"',
 
   'Elf Atavism':'Section=feature Note="Has elven features"',
   'Inspire Imitation':'Section=skill Note="Automatic Aid on critical success"',
-  'Supernatural Charm':'Section=magic Note="Cast 1st level <i>Charm</i> 1/dy"',
+  'Supernatural Charm':
+    'Section=magic Note="May cast 1st level <i>Charm</i> 1/dy"',
   'Monstrous Peacemaker':
     'Section=skill ' +
     'Note="+1 Diplomacy, Perception, and Sense Motive with marginalized"',
-  'Orc Ferocity':'Section=combat Note="Retain 1 HP when brought to 0 1/dy"',
+  'Orc Ferocity':'Section=combat Note="May retain 1 HP when brought to 0 1/dy"',
   'Orc Sight':'Section=feature Note="Has Darkvision feature"',
   'Orc Superstition':'Section=save Note="+1 vs. magic 1/dy"',
   'Orc Weapon Familiarity':
@@ -1086,56 +1101,58 @@ Pathfinder2E.FEATURES = {
     'Note="Weapon Training (Falchion/Greataxe/Orc Weapons)"',
   'Orc Weapon Carnage':
     'Section=combat ' +
-    'Note="Critical hits with falchion, greataxe, or orc weapon applies critical specialization effect"',
+    'Note="Critical hits with falchion, greataxe, or orc weapon apply critical specialization effect"',
   'Victorious Vigor':
     'Section=combat ' +
-    'Note="Gain %{constitutionModifer} temporary HP for 1 rd when foe drops"',
+    'Note="Gains %{constitutionModifer} temporary HP for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
-  'Incredible Ferocity':'Section=combat Note="Use Orc Ferocity 1/hr"',
+  'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hr"',
   'Orc Weapon Expertise':
     'Section=combat ' +
-    'Note="Gain expert proficiency in falchion, greataxe, and orc weapons"',
+    'Note="Has expert proficiency in falchion, greataxe, and orc weapons"',
 
   // Background
   'Assurance (%skill)':
     'Section=skill Note="Minimum %{10+proficiencyBonus} on %skill"',
-  'Bargain Hunter':'Section=skill Note="Use Diplomacy to Earn Income"',
-  'Battle Medic':'Section=skill Note="Use Medicine to Treat Wounds"',
-  'Cat Fall':'Section=ability Note="Treat falls as 10\' shorter"',
+  'Bargain Hunter':'Section=skill Note="May use Diplomacy to Earn Income"',
+  'Battle Medic':'Section=skill Note="May use Medicine to Treat Wounds"',
+  'Cat Fall':
+    'Section=ability Note="Suffers damage from falling as 10\' shorter"',
   'Charming Liar':
     'Section=skill Note="Crit success on Lie improves attitude 1 step"',
   'Courtly Graces':
-    'Section=skill Note="Use Society to Make An Impression or Impersonate"',
+    'Section=skill Note="May use Society to Make An Impression or Impersonate"',
   'Dubious Knowledge':
     'Section=skill ' +
-    'Note="Fail on Recall Knowledge yields mix of true and false info"',
+    'Note="Fail on Recall Knowledge yields a mix of true and false info"',
   'Experienced Smuggler':
     'Section=skill Note="Minimum 10 roll to smuggle concealed item"',
-  'Experienced Tracker':'Section=skill Note="-5 Track at full Speed"',
+  'Experienced Tracker':'Section=skill Note="May make Track-5 at full Speed"',
   'Fascinating Performance':
     'Section=skill Note="Performance fascinates 1 target for 1 rd (Will neg)"',
-  'Forager':'Section=skill Note="Guaranteed success on Survival to Subsist"',
+  'Forager':
+    'Section=skill Note="Has guaranteed success on Survival to Subsist"',
   'Group Impression':
     'Section=skill Note="May Make An Impression on two targets"',
   'Hefty Hauler':'Section=ability Note="+2 Bulk"',
   'Hobnobber':'Section=skill Note="Gather Information takes half time"',
   'Impressive Performance':
-    'Section=skill Note="Use Performance to Make An Impression"',
-  'Intimidating Glare':'Section=skill Note="Intimidate visually"',
-  'Lie To Me':'Section=skill Note="Use Deception to detect lies"',
+    'Section=skill Note="May use Performance to Make An Impression"',
+  'Intimidating Glare':'Section=skill Note="May Intimidate visually"',
+  'Lie To Me':'Section=skill Note="May use Deception to detect lies"',
   'Multilingual':'Section=skill Note="+2 Language Count"',
   'Natural Medicine':
-    'Section=skill Note="Use Nature to Treat Wounds, +2 in wilderness"',
+    'Section=skill Note="May use Nature to Treat Wounds, +2 in wilderness"',
   'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic"',
   'Pickpocket':
-    'Section=skill Note="Steal closely-guarded object without penalty"',
-  'Quick Coercion':'Section=skill Note="Corerce in 1 rd"',
+    'Section=skill Note="May Steal closely-guarded object without penalty"',
+  'Quick Coercion':'Section=skill Note="May Corerce in 1 rd"',
   'Quick Jump':
     'Section=skill Note="May use High Jump and Long Jump as 1 action"',
   'Specialty Crafting':'Section=skill Note="+1 Craft on selected type"',
   'Steady Balance':
     'Section=skill ' +
-    'Note="Balance success crits, not flat-footed during Balance, use Acrobatics to Grab an Edge"',
+    'Note="All Balance successes are crit/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
     'Note="May use Society instead of Diplomacy to Gather Information"',
@@ -1144,7 +1161,7 @@ Pathfinder2E.FEATURES = {
     'Note="No crit fail on Religion check to Decipher Writing or Recall Knowledge, no failure to Recall Knowledge about own faith"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="Use Survival-2 to Recall Knowledge after 10 min study"',
+    'Note="May use Survival-2 to Recall Knowledge after 10 min study"',
   'Terrain Expertise (Aquatic)':'Section=skill Note="+1 Survival (aquatic)"',
   'Terrain Expertise (Arctic)':'Section=skill Note="+1 Survival (arctic)"',
   'Terrain Expertise (Desert)':'Section=skill Note="+1 Survival (desert)"',
@@ -1155,10 +1172,10 @@ Pathfinder2E.FEATURES = {
   'Terrain Expertise (Swamp)':'Section=skill Note="+1 Survival (swamp)"',
   'Terrain Expertise (Underground)':
     'Section=skill Note="+1 Survival (underground)"',
-  'Train Animal':'Section=companion Note="Can teach tricks to animals"',
+  'Train Animal':'Section=companion Note="May teach tricks to animals"',
   'Underwater Marauder':
     'Section=combat ' +
-    'Note="Not flat-footed in water, no penalty for bludgeoning or slashing weapons"',
+    'Note="Never flat-footed in water/Suffers no penalty for bludgeoning or slashing weapons"',
 
   // Class
   'Fighter Feats':'Section=feature Note="%V Fighter Feats"',
@@ -1419,7 +1436,7 @@ Pathfinder2E.PROFICIENCY_LEVEL_NAMES =
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
 
-  for(var ability in abilities) {
+  for(let ability in abilities) {
     ability = ability.toLowerCase();
     rules.defineChoice('notes', ability + ':%V (%1)');
     rules.defineRule(ability, ability + 'Adjust', '+', null);
@@ -1442,15 +1459,15 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   QuilvynUtils.checkAttrTable(shields, ['AC', 'Speed', 'Bulk']);
   QuilvynUtils.checkAttrTable(weapons, ['Category', 'Damage', 'Bulk', 'Range', 'Crit']);
 
-  for(var armor in armors) {
+  for(let armor in armors) {
     rules.choiceRules(rules, 'Armor', armor, armors[armor]);
   }
-  for(var shield in shields) {
+  for(let shield in shields) {
     rules.choiceRules(rules, 'Shield', shield, shields[shield]);
   }
-  for(var weapon in weapons) {
-    var pattern = weapon.replace(/  */g, '\\s+');
-    var prefix =
+  for(let weapon in weapons) {
+    let pattern = weapon.replace(/  */g, '\\s+');
+    let prefix =
       weapon.charAt(0).toLowerCase() + weapon.substring(1).replaceAll(' ', '');
     rules.choiceRules(rules, 'Goody', weapon,
       // To avoid triggering additional weapons with a common suffix (e.g.,
@@ -1474,7 +1491,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'Boost', 'Flaw', 'HitPoints', 'Languages']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'CasterLevelArcane', 'CasterLevelDivine', 'SpellSlots']);
@@ -1482,22 +1499,22 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable
     (paths, ['Group', 'Level', 'Features', 'Selectables', 'SpellAbility', 'SpellSlots']);
 
-  for(var alignment in alignments) {
+  for(let alignment in alignments) {
     rules.choiceRules(rules, 'Alignment', alignment, alignments[alignment]);
   }
-  for(var ancestry in ancestries) {
+  for(let ancestry in ancestries) {
     rules.choiceRules(rules, 'Ancestry', ancestry, ancestries[ancestry]);
   }
-  for(var background in backgrounds) {
+  for(let background in backgrounds) {
     rules.choiceRules(rules, 'Background', background, backgrounds[background]);
   }
-  for(var clas in classes) {
+  for(let clas in classes) {
     rules.choiceRules(rules, 'Class', clas, classes[clas]);
   }
-  for(var deity in deities) {
+  for(let deity in deities) {
     rules.choiceRules(rules, 'Deity', deity, deities[deity]);
   }
-  for(var path in paths) {
+  for(let path in paths) {
     rules.choiceRules(rules, 'Path', path, paths[path]);
   }
 
@@ -1515,10 +1532,10 @@ Pathfinder2E.magicRules = function(rules, schools, spells) {
   QuilvynUtils.checkAttrTable
     (spells, ['School', 'Group', 'Level', 'Description']);
 
-  for(var school in schools) {
+  for(let school in schools) {
     rules.choiceRules(rules, 'School', school, schools[school]);
   }
-  for(var spell in spells) {
+  for(let spell in spells) {
     rules.choiceRules(rules, 'Spell', spell, spells[spell]);
   }
 
@@ -1529,20 +1546,20 @@ Pathfinder2E.talentRules = function(
   rules, feats, features, goodies, languages, skills)
 {
 
-  var matchInfo;
+  let matchInfo;
 
   QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Type']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Class']);
 
-  for(var goody in goodies) {
+  for(let goody in goodies) {
     rules.choiceRules(rules, 'Goody', goody, goodies[goody]);
   }
-  for(var language in languages) {
+  for(let language in languages) {
     rules.choiceRules(rules, 'Language', language, languages[language]);
   }
-  for(var skill in skills) {
+  for(let skill in skills) {
     rules.choiceRules(rules, 'Skill', skill, skills[skill]);
     rules.choiceRules(rules, 'Goody', skill,
       'Pattern="([-+]\\d).*\\s+' + skill + '\\s+Skill|' + skill + '\\s+skill\\s+([-+]\\d)"' +
@@ -1558,9 +1575,9 @@ Pathfinder2E.talentRules = function(
       'Section=skill Note="Proficiency in ' + skill + '"'
     );
   }
-  for(var feat in feats) {
+  for(let feat in feats) {
     if((matchInfo = feat.match(/(%(\w+))/)) != null) {
-      for(var c in rules.getChoices(matchInfo[2] + 's')) {
+      for(let c in rules.getChoices(matchInfo[2] + 's')) {
         rules.choiceRules
           (rules, 'Feat', feat.replace(matchInfo[1], c), feats[feat].replaceAll(matchInfo[1], c));
       }
@@ -1568,9 +1585,9 @@ Pathfinder2E.talentRules = function(
       rules.choiceRules(rules, 'Feat', feat, feats[feat]);
     }
   }
-  for(var feature in features) {
+  for(let feature in features) {
     if((matchInfo = feature.match(/(%(\w+))/)) != null) {
-      for(var c in rules.getChoices(matchInfo[2] + 's')) {
+      for(let c in rules.getChoices(matchInfo[2] + 's')) {
         rules.choiceRules
           (rules, 'Feature', feature.replace(matchInfo[1], c), features[feature].replaceAll(matchInfo[1], c));
       }
@@ -1593,10 +1610,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Boost'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Flaw'),
-      QuilvynUtils.getAttrValueArray(attrs, 'HitPoints'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Languages')
+      QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
+      QuilvynUtils.getAttrValue(attrs, 'HitPoints')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
   } else if(type == 'Background')
@@ -1718,13 +1733,11 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 /*
  * Defines in #rules# the rules associated with ancestry #name#, which has the
  * list of hard prerequisites #requires#. #features# and #selectables# list
- * associated features, #boosts# and #flaws# any associated boost and flaws,
- * #languages# any automatic languages, and #hitPoints# the number of HP gained
- * at level 1.
+ * associated features, #languages# any automatic languages, and #hitPoints#
+ * the number of HP gained at level 1.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, features, selectables, boosts, flaws, languages,
-  hitPoints
+  rules, name, requires, features, selectables, languages, hitPoints
 ) {
 
   if(!name) {
@@ -1743,14 +1756,6 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad selectables list "' + selectables + '" for ancestry ' + name);
     return;
   }
-  if(!Array.isArray(boosts)) {
-    console.log('Bad boosts list "' + selectables + '" for ancestry ' + name);
-    return;
-  }
-  if(!Array.isArray(flaws)) {
-    console.log('Bad flaws list "' + selectables + '" for ancestry ' + name);
-    return;
-  }
   if(!Array.isArray(languages)) {
     console.log('Bad languages list "' + languages + '" for ancestry ' + name);
     return;
@@ -1759,10 +1764,10 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
   }
 
-  var matchInfo;
-  var prefix =
+  let matchInfo;
+  let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-  var ancestryLevel = prefix + 'Level';
+  let ancestryLevel = prefix + 'Level';
 
   rules.defineRule(ancestryLevel,
     'ancestry', '?', 'source == "' + name + '"',
@@ -1779,7 +1784,7 @@ Pathfinder2E.ancestryRules = function(
 
   if(languages.length > 0) {
     rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
       if(languages[i] != 'any')
         rules.defineRule('languages.' + languages[i], ancestryLevel, '=', '1');
     }
@@ -1904,9 +1909,9 @@ Pathfinder2E.armorRules = function(
  * lists the background's associated features.
  */
 Pathfinder2E.backgroundRules = function(rules, name, features) {
-  var prefix =
+  let prefix =
     name.substring(0, 1).toLowerCase() + name.substring(1).replaceAll(' ', '');
-  var backgroundLevel = prefix + 'Level';
+  let backgroundLevel = prefix + 'Level';
   rules.defineRule(backgroundLevel,
     'background', '?', 'source == "' + name + '"',
     'level', '=', null
@@ -1969,8 +1974,8 @@ Pathfinder2E.classRules = function(
     return;
   }
 
-  var classLevel = 'levels.' + name;
-  var prefix =
+  let classLevel = 'levels.' + name;
+  let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
   if(requires.length > 0)
@@ -1984,7 +1989,7 @@ Pathfinder2E.classRules = function(
 
   if(languages.length > 0) {
     rules.defineRule('languageCount', classLevel, '+', languages.length);
-    for(var i = 0; i < languages.length; i++) {
+    for(let i = 0; i < languages.length; i++) {
       if(languages[i] != 'any')
         rules.defineRule('languages.' + languages[i], classLevel, '=', '1');
     }
@@ -1998,7 +2003,7 @@ Pathfinder2E.classRules = function(
   );
 
   if(spellSlots.length > 0) {
-    var casterLevelExpr = casterLevelArcane || casterLevelDivine || classLevel;
+    let casterLevelExpr = casterLevelArcane || casterLevelDivine || classLevel;
     if(casterLevelExpr.match(new RegExp('\\b' + classLevel + '\\b', 'i'))) {
       rules.defineRule('casterLevels.' + name,
         classLevel, '=', casterLevelExpr.replace(new RegExp('\\b' + classLevel + '\\b', 'gi'), 'source')
@@ -2014,11 +2019,11 @@ Pathfinder2E.classRules = function(
     if(casterLevelDivine)
       rules.defineRule('casterLevelDivine', 'casterLevels.' + name, '+=', null);
     QuilvynRules.spellSlotRules(rules, 'casterLevels.' + name, spellSlots);
-    for(var j = 0; j < spellSlots.length; j++) {
-      var spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
-      var spellType = spellTypeAndLevel.replace(/\d+/, '');
-      var spellLevel = spellTypeAndLevel.replace(spellType, '');
-      var spellModifier = spellAbility + 'Modifier';
+    for(let j = 0; j < spellSlots.length; j++) {
+      let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
+      let spellType = spellTypeAndLevel.replace(/\d+/, '');
+      let spellLevel = spellTypeAndLevel.replace(spellType, '');
+      let spellModifier = spellAbility + 'Modifier';
       if(spellType != name)
         rules.defineRule
           ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
@@ -2043,7 +2048,7 @@ Pathfinder2E.classRules = function(
  */
 Pathfinder2E.classRulesExtra = function(rules, name) {
 
-  var classLevel = 'levels.' + name;
+  let classLevel = 'levels.' + name;
 
   if(name == 'Fighter') {
     rules.defineRule
@@ -2132,7 +2137,7 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
     return;
   }
 
-  var prefix =
+  let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
   if(requires.length > 0)
@@ -2142,7 +2147,7 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
     QuilvynRules.prerequisiteRules
       (rules, 'sanity', prefix + 'Feat', 'feats.' + name, implies);
   rules.defineRule('features.' + name, 'feats.' + name, '=', null);
-  for(var i = 0; i < types.length; i++) {
+  for(let i = 0; i < types.length; i++) {
     if(types[i] != 'General')
       rules.defineRule('sum' + types[i] + 'Feats', 'feats.' + name, '+=', null);
   }
@@ -2190,19 +2195,23 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
  */
 Pathfinder2E.featureRules = function(rules, name, sections, notes) {
   SRD35.featureRules(rules, name, sections, notes);
-  for(var i = 0; i < notes.length; i++) {
-    var matchInfo = notes[i].match(/^([A-Z]\w*)\sProficiency\s\((.*)\)$/);
-    if(!matchInfo)
-      continue;
-    var group = matchInfo[1].toLowerCase();
-    var note = sections[i] + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-    var affected = matchInfo[2].split('/');
-    for(var j = 0; j < affected.length; j++) {
-      matchInfo = affected[j].match(/^Choose\s(\d+)/);
-      if(matchInfo)
-        rules.defineRule(group + 'ChoiceCount', note, '+=', matchInfo[1]);
-      else
-        rules.defineRule(group + 'Proficiency.' + affected[j], note, '=', '1');
+  let prefix =
+    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+  for(let i = 0; i < notes.length; i++) {
+    let section = sections[i];
+    let matchInfo;
+    let note = section + 'Notes.' + prefix;
+    matchInfo = notes[i].match(/^([A-Z]\w*)\sProficiency:\s*(.*)$/);
+    if(matchInfo) {
+      let group = matchInfo[1].toLowerCase();
+      let note = sections[i] + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+      matchInfo[2].split(/;\s*/).forEach(affected => {
+        matchInfo = affected.match(/^Choose\s(\d+)/);
+        if(matchInfo)
+          rules.defineRule(group + 'ChoiceCount', note, '+=', matchInfo[1]);
+        else
+          rules.defineRule(group + 'Proficiency.' + affected, note, '=', '1');
+      });
     }
   }
 };
@@ -2278,7 +2287,7 @@ Pathfinder2E.pathRules = function(
     }
   }
 
-  var pathLevel =
+  let pathLevel =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '') + 'Level';
 
   rules.defineRule(pathLevel,
@@ -2292,8 +2301,8 @@ Pathfinder2E.pathRules = function(
   if(spellSlots.length > 0) {
     rules.defineRule('casterLevels.' + name, pathLevel, '=', null);
     QuilvynRules.spellSlotRules(rules, 'casterLevels.' + name, spellSlots);
-    for(var j = 0; j < spellSlots.length; j++) {
-      var spellType = spellSlots[j].replace(/\d.*/, '');
+    for(let j = 0; j < spellSlots.length; j++) {
+      let spellType = spellSlots[j].replace(/\d.*/, '');
       if(spellType != name)
         rules.defineRule
           ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
@@ -2374,7 +2383,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, classes) {
     return;
   }
 
-  for(var i = 0; i < classes.length; i++) {
+  for(let i = 0; i < classes.length; i++) {
     rules.defineRule
       ('skillProficiency.' + name, 'levels.' + classes[i], '=', '1');
   }
@@ -2430,7 +2439,7 @@ Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, r
     console.log('Bad properties list "' + properties + '" for weapon ' + name);
     return;
   }
-  var matchInfo = (damage + '').match(/^(((\d*d)?\d+)([\-+]\d+)?)$/);
+  let matchInfo = (damage + '').match(/^(((\d*d)?\d+)([\-+]\d+)?)$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
@@ -2448,13 +2457,13 @@ Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, r
   else if(category.match(/^martial$/i))
     category = 2;
 
-  var isFinessed = properties.includes('finesse') || properties.includes('Fi');
-  var isRanged = properties.includes('ranged') || properties.includes('R');
-  var is2h = properties.includes('two-handed') || properties.includes('2h');
+  let isFinessed = properties.includes('finesse') || properties.includes('Fi');
+  let isRanged = properties.includes('ranged') || properties.includes('R');
+  let is2h = properties.includes('two-handed') || properties.includes('2h');
 
-  var damage = matchInfo[1];
-  var weaponName = 'weapons.' + name;
-  var format = '%V (%1 %2%3' + (range ? " R%4'" : '') + ')';
+  damage = matchInfo[1];
+  let weaponName = 'weapons.' + name;
+  let format = '%V (%1 %2%3' + (range ? " R%4'" : '') + ')';
 
   if(damage.startsWith('d'))
     damage = '1' + damage;
@@ -2546,24 +2555,37 @@ Pathfinder2E.featureListRules = function(
   QuilvynRules.featureListRules
     (rules, features, setName, levelAttr, selectable);
   setName = setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
-  for(var i = 0; i < features.length; i++) {
-    var feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
-    var matchInfo = feature.match(/([A-Z]\w*)\s(Expert|Trained)\s\((.*)\)$/);
-    if(!matchInfo)
-      continue;
-    var group = matchInfo[1].toLowerCase();
-    var elements = matchInfo[3].split('/');
-    var proficiency = matchInfo[2] == 'Expert' ? 2 : 1;
-    for(var j = 0; j < elements.length; j++) {
-      matchInfo = elements[j].match(/^Choose\s+(\d+)\s+from/i);
-      if(matchInfo) {
-        rules.defineRule
-          (group + 'ChoiceCount', setName + '.' + feature, '+=', matchInfo[1]);
-      } else {
-        rules.defineRule(group + 'Proficiency.' + elements[j],
-          setName + '.' + feature, '=', proficiency
-        );
-      }
+  for(let i = 0; i < features.length; i++) {
+    let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
+    let matchInfo = feature.match(/([A-Z]\w*)\s(Expert|Trained)\s*\((.*)\)$/i);
+    if(matchInfo) {
+      let group = matchInfo[1].toLowerCase();
+      let proficiency = matchInfo[2] == 'Expert' ? 2 : 1;
+      matchInfo[3].split(/;\s*/).forEach(element => {
+        matchInfo = element.match(/^Choose\s+(\d+)\s+from/i);
+        if(matchInfo) {
+          rules.defineRule
+            (group + 'ChoiceCount', setName + '.' + feature, '+=', matchInfo[1]);
+        } else {
+          rules.defineRule(group + 'Proficiency.' + element,
+            setName + '.' + feature, '=', proficiency
+          );
+        }
+      });
+    }
+    matchInfo = feature.match(/Ability (Boost|Flaw)\s*\((.*)\)$/i);
+    if(matchInfo) {
+      let flaw = matchInfo[1].match(/flaw/i);
+      matchInfo[2].split(/;\s*/).forEach(element => {
+        matchInfo = element.match(/^Choose\s+(\d+)\s+from/i);
+        if(matchInfo) {
+          rules.defineRule
+            ('abilityBoostCount', setName + '.' + feature, '+=', matchInfo[1]);
+        } else {
+          rules.defineRule
+            (element.toLowerCase(), setName + '.' + feature, '+', flaw ? '-2' : '2');
+        }
+      });
     }
   }
 };
@@ -2573,15 +2595,15 @@ Pathfinder2E.featureListRules = function(
  * format #viewer# in #rules#.
  */
 Pathfinder2E.getFormats = function(rules, viewer) {
-  var format;
-  var formats = rules.getChoices('notes');
-  var result = {};
-  var matchInfo;
+  let format;
+  let formats = rules.getChoices('notes');
+  let result = {};
+  let matchInfo;
   if(viewer == 'Collected Notes') {
     for(format in formats) {
       result[format] = formats[format];
       if((matchInfo = format.match(/Notes\.(.*)$/)) != null) {
-        var feature = matchInfo[1];
+        let feature = matchInfo[1];
         feature = feature.charAt(0).toUpperCase() + feature.substring(1).replace(/([A-Z(])/g, ' $1');
         formats['features.' + feature] = formats[format];
       }
@@ -2599,9 +2621,9 @@ Pathfinder2E.getFormats = function(rules, viewer) {
 
 /* Returns an ObjectViewer loaded with the default character sheet format. */
 Pathfinder2E.createViewers = function(rules, viewers) {
-  for(var i = 0; i < viewers.length; i++) {
-    var name = viewers[i];
-    var viewer = new ObjectViewer();
+  for(let i = 0; i < viewers.length; i++) {
+    let name = viewers[i];
+    let viewer = new ObjectViewer();
     if(name == 'Compact') {
       viewer.addElements(
         {name: '_top', separator: '\n'},
@@ -2643,11 +2665,11 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Hidden Notes', within: 'Section 2', format: '%V'}
       );
     } else if(name == 'Collected Notes' || name == 'Standard') {
-      var innerSep = null;
-      var listSep = '; ';
-      var noteSep = listSep;
+      let innerSep = null;
+      let listSep = '; ';
+      let noteSep = listSep;
       noteSep = '\n';
-      var outerSep = name == '\n';
+      let outerSep = name == '\n';
       viewer.addElements(
         {name: '_top', borders: 1, separator: '\n'},
         {name: 'Header', within: '_top'},
@@ -2800,16 +2822,16 @@ Pathfinder2E.createViewers = function(rules, viewers) {
  * item to #rules#.
  */
 Pathfinder2E.choiceEditorElements = function(rules, type) {
-  var result = [];
-  var zeroToTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let result = [];
+  let zeroToTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if(type == 'Alignment')
     result.push(
       // empty
     );
   else if(type == 'Armor') {
-    var zeroToFifty = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
-    var minusTenToZero = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0];
-    var tenToEighteen = [10, 11, 12, 13, 14, 15, 16, 17, 18];
+    let zeroToFifty = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+    let minusTenToZero = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0];
+    let tenToEighteen = [10, 11, 12, 13, 14, 15, 16, 17, 18];
     result.push(
       ['AC', 'AC Bonus', 'select-one', [0, 1, 2, 3, 4, 5]],
       ['Bulky', 'Bulky', 'checkbox', ['']],
@@ -2849,7 +2871,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Type', 'Types', 'text', [20]]
     );
   else if(type == 'Feature') {
-    var sections =
+    let sections =
       ['ability', 'combat', 'companion', 'feature', 'magic', 'skill'];
     result.push(
       ['Section', 'Section', 'select-one', sections],
@@ -2899,7 +2921,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Class', 'Class Skill', 'text', [30]]
     );
   else if(type == 'Spell') {
-    var zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     result.push(
       ['School', 'School', 'select-one', QuilvynUtils.getKeys(rules.getChoices('schools'))],
       ['Group', 'Caster Group', 'text', [15]],
@@ -2907,9 +2929,9 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
-    var oneToFive = [1, 2, 3, 4, 5];
-    var sixteenToTwenty = [16, 17, 18, 19, 20];
-    var zeroToOneFifty =
+    let oneToFive = [1, 2, 3, 4, 5];
+    let sixteenToTwenty = [16, 17, 18, 19, 20];
+    let zeroToOneFifty =
      [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
     result.push(
       ['Category', 'Category', 'select-one', ['Simple', 'Martial']],
@@ -2923,10 +2945,10 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
 
 /* Returns the elements in a basic 5E character editor. */
 Pathfinder2E.initialEditorElements = function() {
-  var abilityChoices = [
+  let abilityChoices = [
     3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
   ];
-  var editorElements = [
+  let editorElements = [
     ['name', 'Name', 'text', [20]],
     ['ancestry', 'Ancestry', 'select-one', 'ancestries'],
     ['background', 'Background', 'select-one', 'backgrounds'],
@@ -2989,33 +3011,33 @@ Pathfinder2E.randomName = function(ancestry) {
   else
     ancestry = 'Human';
 
-  var clusters = {
+  let clusters = {
     B:'lr', C:'hlr', D:'r', F:'lr', G:'lnr', K:'lnr', P:'lr', S:'chklt', T:'hr',
     W:'h',
     c:'hkt', l:'cfkmnptv', m: 'p', n:'cgkt', r: 'fv', s: 'kpt', t: 'h'
   };
-  var consonants = {
+  let consonants = {
     'Dwarf':'dgkmnprst', 'Elf':'fhlmnpqswy', 'Gnome':'bdghjlmnprstw',
     'Goblin':'bdfghklmnprtwyz', 'Halfling':'bdfghlmnprst', 
     'Human': 'bcdfghjklmnprstvwz'
   }[ancestry];
-  var endConsonant = '';
-  var leading = 'ghjqvwy';
-  var vowels = {
+  let endConsonant = '';
+  let leading = 'ghjqvwy';
+  let vowels = {
     'Dwarf':'aeiou', 'Elf':'aeioy', 'Gnome':'aeiou', 'Goblin':'aeiou',
     'Halfling':'aeiou', 'Human':'aeiou'
   }[ancestry];
-  var diphthongs = {a:'wy', e:'aei', o: 'aiouy', u: 'ae'};
-  var syllables = QuilvynUtils.random(0, 99);
+  let diphthongs = {a:'wy', e:'aei', o: 'aiouy', u: 'ae'};
+  let syllables = QuilvynUtils.random(0, 99);
   syllables = syllables < 50 ? 2 :
               syllables < 75 ? 3 :
               syllables < 90 ? 4 :
               syllables < 95 ? 5 :
               syllables < 99 ? 6 : 7;
-  var result = '';
-  var vowel;
+  let result = '';
+  let vowel;
 
-  for(var i = 0; i < syllables; i++) {
+  for(let i = 0; i < syllables; i++) {
     if(QuilvynUtils.random(0, 99) <= 80) {
       endConsonant = randomChar(consonants).toUpperCase();
       if(clusters[endConsonant] != null && QuilvynUtils.random(0, 99) < 15)
@@ -3055,27 +3077,27 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
    * #prefix# to each, and sets those attributes in #attributes# to #value#.
    */
   function pickAttrs(attributes, prefix, choices, howMany, value) {
-    var remaining = [].concat(choices);
-    for(var i = 0; i < howMany && remaining.length > 0; i++) {
-      var which = QuilvynUtils.random(0, remaining.length - 1);
+    let remaining = [].concat(choices);
+    for(let i = 0; i < howMany && remaining.length > 0; i++) {
+      let which = QuilvynUtils.random(0, remaining.length - 1);
       attributes[prefix + remaining[which]] = value;
       remaining = remaining.slice(0, which).concat(remaining.slice(which + 1));
     }
   }
 
-  var attr;
-  var attrs;
-  var choices;
-  var howMany;
-  var i;
-  var matchInfo;
+  let attr;
+  let attrs;
+  let choices;
+  let howMany;
+  let i;
+  let matchInfo;
 
   if(attribute == 'armor') {
-    var armors = this.getChoices('armors');
+    let armors = this.getChoices('armors');
     attrs = this.applyRules(attributes);
     choices = [];
     for(attr in armors) {
-      var weight = QuilvynUtils.getAttrValue(armors[attr], 'Weight');
+      let weight = QuilvynUtils.getAttrValue(armors[attr], 'Weight');
       if(weight == null)
         weight = 0;
       else if((weight + '').match(/light/i))
@@ -3093,7 +3115,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     attributes['armor'] = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'boosts') {
-    var attrs = this.applyRules(attributes);
+    let attrs = this.applyRules(attributes);
     howMany = (attrs.abilityBoost || 0) - QuilvynUtils.sumMatching(attributes, /Adjust$/);
     while(howMany > 0) {
       attr = QuilvynUtils.randomKey(Pathfinder2E.ABILITIES).toLowerCase();
@@ -3105,8 +3127,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   } else if(attribute == 'deity') {
     /* Pick a deity that's no more than one alignment position removed. */
-    var aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
-    var aliPat;
+    let aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
+    let aliPat;
     if(aliInfo == null) /* Neutral character */
       aliPat = 'N[EG]?|[CL]N';
     else if(aliInfo[1] == 'N') /* NG or NE */
@@ -3116,7 +3138,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     else /* [LC]G or [LC]E */
       aliPat = aliInfo[1] + '[N' + aliInfo[2] + ']|N' + aliInfo[2];
     choices = [];
-    var deities = this.getChoices('deities');
+    let deities = this.getChoices('deities');
     for(attr in deities) {
       if(deities[attr].match('=' + aliPat + '\\b'))
         choices.push(attr);
@@ -3124,27 +3146,27 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     if(choices.length > 0)
       attributes.deity = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'feats' || attribute == 'features') {
-    var debug = [];
+    let debug = [];
     attribute = attribute == 'feats' ? 'feat' : 'selectableFeature';
-    var countPrefix = attribute + 'Count.';
-    var prefix = attribute + 's';
-    var suffix = attribute.charAt(0).toUpperCase() + attribute.substring(1);
-    var toAllocateByType = {};
+    let countPrefix = attribute + 'Count.';
+    let prefix = attribute + 's';
+    let suffix = attribute.charAt(0).toUpperCase() + attribute.substring(1);
+    let toAllocateByType = {};
     attrs = this.applyRules(attributes);
     for(attr in attrs) {
       if(attr.startsWith(countPrefix)) {
         toAllocateByType[attr.replace(countPrefix, '')] = attrs[attr];
       }
     }
-    var availableChoices = {};
-    var allChoices = this.getChoices(prefix);
+    let availableChoices = {};
+    let allChoices = this.getChoices(prefix);
     for(attr in allChoices) {
-      var types = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Type');
+      let types = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Type');
       if(types.indexOf('General') < 0)
         types.push('General');
       if(attrs[prefix + '.' + attr] != null) {
         for(i = 0; i < types.length; i++) {
-          var t = types[i];
+          let t = types[i];
           if(toAllocateByType[t] != null && toAllocateByType[t] > 0) {
             debug.push(prefix + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByType[t]);
             toAllocateByType[t]--;
@@ -3156,8 +3178,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
     for(attr in toAllocateByType) {
-      var availableChoicesInType = {};
-      for(var a in availableChoices) {
+      let availableChoicesInType = {};
+      for(let a in availableChoices) {
         if(attr == 'General' || availableChoices[a].includes(attr))
           availableChoicesInType[a] = '';
       }
@@ -3169,17 +3191,17 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           'Pick ' + howMany + ' from ' +
           QuilvynUtils.getKeys(availableChoicesInType).length
         );
-        var pick;
-        var picks = {};
+        let pick;
+        let picks = {};
         pickAttrs(picks, '', choices, howMany, 1);
         debug.push('From ' + QuilvynUtils.getKeys(picks).join(", ") + ' reject');
         for(pick in picks) {
           attributes[prefix + '.' + pick] = 1;
           delete availableChoicesInType[pick];
         }
-        var validate = this.applyRules(attributes);
+        let validate = this.applyRules(attributes);
         for(pick in picks) {
-          var name = pick.charAt(0).toLowerCase() +
+          let name = pick.charAt(0).toLowerCase() +
                      pick.substring(1).replaceAll(' ', '').
                      replace(/\(/g, '\\(').replace(/\)/g, '\\)');
           if(QuilvynUtils.sumMatching
@@ -3196,7 +3218,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       debug.push('xxxxxxx');
     }
     if(window.DEBUG) {
-      var notes = attributes.notes;
+      let notes = attributes.notes;
       attributes.notes =
         (notes != null ? attributes.notes + '\n' : '') + debug.join('\n');
     }
@@ -3204,13 +3226,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes['gender'] = QuilvynUtils.random(0, 99) < 50 ? 'Female' : 'Male';
   } else if(attribute == 'hitPoints') {
     attributes.hitPoints = 0;
-    for(var clas in this.getChoices('levels')) {
+    for(let clas in this.getChoices('levels')) {
       if((attr = attributes['levels.' + clas]) == null)
         continue;
       matchInfo = this.getChoices('levels')[clas].match(/^((\d+)?d)?(\d+)$/);
-      var number = matchInfo == null || matchInfo[2] == null ||
+      let number = matchInfo == null || matchInfo[2] == null ||
                    matchInfo[2] == '' ? 1 : matchInfo[2];
-      var sides = matchInfo == null || matchInfo[3] == null ||
+      let sides = matchInfo == null || matchInfo[3] == null ||
                   matchInfo[3] == '' ? 6 : matchInfo[3];
       attributes.hitPoints += number * sides;
       while(--attr > 0)
@@ -3228,7 +3250,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     pickAttrs(attributes, 'languages.', choices, howMany, 1);
   } else if(attribute == 'levels') {
-    var assignedLevels = QuilvynUtils.sumMatching(attributes, /^levels\./);
+    let assignedLevels = QuilvynUtils.sumMatching(attributes, /^levels\./);
     if(!attributes.level) {
       if(assignedLevels > 0)
         attributes.level = assignedLevels
@@ -3240,17 +3262,17 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         attributes.level =
           9 - Math.floor(Math.log(QuilvynUtils.random(2, 511)) / Math.log(2));
     }
-    var max = attributes.level * 1000 - 1;
-    var min = (attributes.level - 1) * 1000;
+    let max = attributes.level * 1000 - 1;
+    let min = (attributes.level - 1) * 1000;
     if(!attributes.experience || attributes.experience < min)
       attributes.experience = QuilvynUtils.random(min, max);
     choices = QuilvynUtils.getKeys(this.getChoices('levels'));
     if(assignedLevels == 0) {
-      var classesToChoose =
+      let classesToChoose =
         attributes.level == 1 || QuilvynUtils.random(1,10) < 9 ? 1 : 2;
       // Find choices that are valid or can be made so
       while(classesToChoose > 0) {
-        var which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
+        let which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
         attributes[which] = 1;
         if(QuilvynUtils.sumMatching(this.applyRules(attributes),
              /^validationNotes.*(BaseAttack|CasterLevel|Spells)/) == 0) {
@@ -3262,7 +3284,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
     while(assignedLevels < attributes.level) {
-      var which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
+      let which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
       while(!attributes[which]) {
         which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
       }
@@ -3285,26 +3307,26 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes['shield'] = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'skills') {
     attrs = this.applyRules(attributes);
-    var group = this.getChoices(attribute);
+    let group = this.getChoices(attribute);
     for(attr in attrs) {
-    var pat = new RegExp('^features.' + attribute.replace(/s$/, '') + ' Proficiency \\((.*)\\)$', 'i');
+    let pat = new RegExp('^features.' + attribute.replace(/s$/, '') + ' Proficiency \\((.*)\\)$', 'i');
       if((matchInfo = attr.match(pat)) == null ||
          !matchInfo[1].match(/\bChoose\b/i))
         continue;
-      var pieces = matchInfo[1].split('/');
+      let pieces = matchInfo[1].split('/');
       for(i = 0; i < pieces.length; i++) {
         matchInfo = pieces[i].match(/^Choose\s+(\d+)\s+from\s+(.*)$/i)
         if(!matchInfo)
           continue;
-        var count = matchInfo[1] * 1;
+        let count = matchInfo[1] * 1;
         if(matchInfo[2].match(/^any$/i)) {
           choices = QuilvynUtils.getKeys(group);
         } else {
           choices = matchInfo[2].split(/\s*,\s*/);
-          for(var j = choices.length - 1; j >= 0; j--) {
+          for(let j = choices.length - 1; j >= 0; j--) {
             if(choices[j].match(/^any\s+/i)) {
-              var type = choices[j].replace(/^any\s+/, '');
-              for(var item in group) {
+              let type = choices[j].replace(/^any\s+/, '');
+              for(let item in group) {
                 if(group[item].includes(type))
                   choices.push(item);
               }
@@ -3312,7 +3334,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             }
           }
         }
-        for(var k = choices.length - 1; k >= 0; k--) {
+        for(let k = choices.length - 1; k >= 0; k--) {
           if(!attrs[attribute + 'Chosen.' + choices[k]])
             continue;
           count--;
@@ -3327,8 +3349,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       QuilvynUtils.sumMatching(attributes, '^' + attribute + 'Chosen'), 1
     );
   } else if(attribute == 'spells') {
-    var availableSpellsByGroupAndLevel = {};
-    var groupAndLevel;
+    let availableSpellsByGroupAndLevel = {};
+    let groupAndLevel;
     attrs = this.applyRules(attributes);
     for(attr in this.getChoices('spells')) {
       groupAndLevel = attr.split('(')[1].split(' ')[0];
@@ -3343,7 +3365,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       howMany = attrs[attr];
       choices = availableSpellsByGroupAndLevel[groupAndLevel];
       if(choices != null) {
-        var slots = attrs['spellSlots.' + groupAndLevel];
+        let slots = attrs['spellSlots.' + groupAndLevel];
         if(slots != null && slots < howMany) {
           howMany = slots;
         }
@@ -3353,11 +3375,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'weapons') {
-    var weapons = this.getChoices('weapons');
+    let weapons = this.getChoices('weapons');
     attrs = this.applyRules(attributes);
     choices = [];
     for(attr in weapons) {
-      var category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
+      let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
       if(category == null)
         category = 0;
       else if((category + '').match(/simple/i))
@@ -3376,7 +3398,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'charisma' || attribute == 'constitution' ||
      attribute == 'dexterity' || attribute == 'intelligence' ||
      attribute == 'strength' || attribute == 'wisdom') {
-    var rolls = [];
+    let rolls = [];
     for(i = 0; i < 4; i++)
       rolls[i] = QuilvynUtils.random(1, 6);
     rolls.sort();
@@ -3391,42 +3413,42 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
 /* Fixes as many validation errors in #attributes# as possible. */
 Pathfinder2E.makeValid = function(attributes) {
 
-  var attributesChanged = {};
-  var debug = [];
-  var notes = this.getChoices('notes');
+  let attributesChanged = {};
+  let debug = [];
+  let notes = this.getChoices('notes');
 
   // If 8 passes don't get rid of all repairable problems, give up
-  for(var pass = 0; pass < 8; pass++) {
+  for(let pass = 0; pass < 8; pass++) {
 
-    var applied = this.applyRules(attributes);
-    var fixedThisPass = 0;
+    let applied = this.applyRules(attributes);
+    let fixedThisPass = 0;
 
     // Try to fix each sanity/validation note w/a non-zero value
-    for(var attr in applied) {
+    for(let attr in applied) {
 
-      var matchInfo =
+      let matchInfo =
         attr.match(/^(sanity|validation)Notes\.(.*)([A-Z][a-z]+)/);
-      var attrValue = applied[attr];
+      let attrValue = applied[attr];
 
       if(matchInfo == null || !attrValue || notes[attr] == null) {
         continue;
       }
 
-      var problemSource = matchInfo[2];
-      var problemCategory = matchInfo[3].substring(0, 1).toLowerCase() +
+      let problemSource = matchInfo[2];
+      let problemCategory = matchInfo[3].substring(0, 1).toLowerCase() +
                             matchInfo[3].substring(1).replaceAll(' ', '');
       if(problemCategory == 'features') {
         problemCategory = 'selectableFeatures';
       }
-      var requirements =
+      let requirements =
         notes[attr].replace(/^(Implies|Requires)\s/, '').split(/\s*\/\s*/);
 
-      for(var i = 0; i < requirements.length; i++) {
+      for(let i = 0; i < requirements.length; i++) {
 
         // Find a random requirement choice w/the format "name [op value]"
-        var choices = requirements[i].split(/\s*\|\|\s*/);
+        let choices = requirements[i].split(/\s*\|\|\s*/);
         while(choices.length > 0) {
-          var index = QuilvynUtils.random(0, choices.length - 1);
+          let index = QuilvynUtils.random(0, choices.length - 1);
           matchInfo = choices[index].match(/^([^<>!=]+)(([<>!=~]+)(.*))?/);
           if(matchInfo != null) {
             break;
@@ -3437,16 +3459,16 @@ Pathfinder2E.makeValid = function(attributes) {
           continue;
         }
 
-        var toFixCombiner = null;
-        var toFixName = matchInfo[1].replace(/\s+$/, '');
-        var toFixOp = matchInfo[3] == null ? '>=' : matchInfo[3];
-        var toFixValue =
+        let toFixCombiner = null;
+        let toFixName = matchInfo[1].replace(/\s+$/, '');
+        let toFixOp = matchInfo[3] == null ? '>=' : matchInfo[3];
+        let toFixValue =
           matchInfo[4] == null ? 1 : matchInfo[4].replace(/^\s+/, '');;
         if(toFixName.match(/^(Max|Sum)/)) {
           toFixCombiner = toFixName.substring(0, 3);
           toFixName = toFixName.substring(4).replace(/^\s+/, '');
         }
-        var toFixAttr = toFixName.substring(0, 1).toLowerCase() +
+        let toFixAttr = toFixName.substring(0, 1).toLowerCase() +
                         toFixName.substring(1).replaceAll(' ', '');
 
         // See if this attr has a set of choices (e.g., ancestry) or a category
@@ -3457,10 +3479,10 @@ Pathfinder2E.makeValid = function(attributes) {
         }
         if(choices != null) {
           // Find the set of choices that satisfy the requirement
-          var target =
+          let target =
             this.getChoices(problemCategory) == null ? toFixValue : toFixName;
-          var possibilities = [];
-          for(var choice in choices) {
+          let possibilities = [];
+          for(let choice in choices) {
             if((toFixOp.match(/[^!]=/) && choice == target) ||
                (toFixOp == '!=' && choice != target) ||
                (toFixCombiner != null && choice.indexOf(target) == 0) ||
@@ -3498,19 +3520,19 @@ Pathfinder2E.makeValid = function(attributes) {
         } else if(problemCategory == 'total' && attrValue > 0 &&
                   (choices = this.getChoices(problemSource)) != null) {
           // Too many items allocated in a category
-          var possibilities = [];
-          for(var k in attributes) {
+          let possibilities = [];
+          for(let k in attributes) {
             if(k.match('^' + problemSource + '\\.') &&
                attributesChanged[k] == null) {
                possibilities.push(k);
             }
           }
           while(possibilities.length > 0 && attrValue > 0) {
-            var index = QuilvynUtils.random(0, possibilities.length - 1);
+            let index = QuilvynUtils.random(0, possibilities.length - 1);
             toFixAttr = possibilities[index];
             possibilities =
               possibilities.slice(0,index).concat(possibilities.slice(index+1));
-            var current = attributes[toFixAttr];
+            let current = attributes[toFixAttr];
             toFixValue = current > attrValue ? current - attrValue : 0;
             debug.push(
               attr + " '" + toFixAttr + "': '" + attributes[toFixAttr] +
@@ -3535,7 +3557,7 @@ Pathfinder2E.makeValid = function(attributes) {
           fixedThisPass++;
         } else if(attr.match(/validationNotes.abilityModifier(Sum|Minimum)/)) {
           // Special cases
-          var abilities = {
+          let abilities = {
             'charisma':'', 'constitution':'', 'dexterity':'',
             'intelligence':'', 'strength':'', 'wisdom':''
           };
