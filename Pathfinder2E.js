@@ -58,8 +58,7 @@ function Pathfinder2E() {
   Pathfinder2E.magicRules(rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
-    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES,
-    Pathfinder2E.PATHS
+    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
@@ -75,7 +74,7 @@ Pathfinder2E.VERSION = '2.2.1.0';
 /* List of items handled by choiceRules method. */
 Pathfinder2E.CHOICES = [
   'Alignment', 'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Feat',
-  'Feature', 'Goody', 'Language', 'Path', 'School', 'Shield', 'Skill', 'Spell',
+  'Feature', 'Goody', 'Language', 'School', 'Shield', 'Skill', 'Spell',
   'Weapon'
 ];
 /*
@@ -111,16 +110,19 @@ Pathfinder2E.ALIGNMENTS = {
 };
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
+    'HitPoints=10 ' +
     'Features=' +
+      '1:Slow,' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
       '"1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,1:Slow ' +
+      '1:Darkvision,"1:Clan Dagger" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf","1:Death Warden Dwarf","1:Forge Dwarf",' +
       '"1:Rock Dwarf","1:Strong-Blooded Dwarf" ' +
-    'HitPoints=10 ' +
+    'Trait=Dwarf,Humanoid ' +
     'Languages=Common,Dwarven',
   'Elf':
+    'HitPoints=6 ' +
     'Features=' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from Charisma, Constitution, Strength, Wisdom)",' +
       '"1:Ability Flaw (Constitution)",' +
@@ -128,9 +130,10 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Arctic Elf","1:Cavern Elf","1:Seer Elf","1:Whisper Elf",' +
       '"1:Woodland Elf" ' +
-    'HitPoints=6 ' +
+    'Trait=Elf,Humanoid ' +
     'Languages=Common,Elven',
   'Gnome':
+    'HitPoints=8 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Constitution; Choose 1 from Dexterity, Intelligence, Strength, Wisdom)",' +
       '"1:Ability Flaw (Strength)",' +
@@ -138,9 +141,10 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Chameleon Gnome","1:Fey-Touched Gnome","1:Sensate Gnome",' +
       '"1:Umbral Gnome","1:Wellspring Gnome" ' +
-    'HitPoints=8 ' +
+    'Trait=Gnome,Humanoid ' +
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
+    'HitPoints=6 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Dexterity; Choose 1 from Constitution, Intelligence, Strength, Wisdom)",' +
       '"1:Ability Flaw (Wisdom)",' +
@@ -148,7 +152,6 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Charhide Goblin","1:Irongut Goblin","1:Razortooth Goblin",' +
       '"1:Snow Goblin","1:Unbreakable Goblin" ' +
-    'HitPoints=6 ' +
     'Languages=Common,Goblin',
   'Halfling':
     'Features=' +
@@ -482,7 +485,7 @@ Pathfinder2E.FEATS = {
     'Type=Ancestry,Dwarf ' +
     'Require="level>=13","features.Dwarven Weapon Familiarity"',
 
-  // TODO requires age >= 100
+  // NOTE requires age >= 100
   'Ancestral Longevity':'Type=Ancestry,Elf',
   'Elven Lore':'Type=Ancestry,Elf',
   'Elven Weapon Familiarity':'Type=Ancestry,Elf',
@@ -511,7 +514,7 @@ Pathfinder2E.FEATS = {
   'Illusion Sense':'Type=Ancestry,Gnome',
   'Animal Elocutionist':
     'Type=Ancestry,Gnome Require="level>=5","features.Burrow Elocutionist"',
-  // TODO require "at least one innate spell from a snome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
+  // TODO require "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
   'Energized Font':
     'Type=Ancestry,Gnome Require="level>=5","features.Focus Pool"',
   'Gnome Weapon Innovator':
@@ -524,26 +527,26 @@ Pathfinder2E.FEATS = {
     'Type=Ancestry,Gnome ' +
     'Require="gnomeLevel >= 13","features.Gnome Weapon Familiarity"',
 
-  'Burn It!':'Type=Ancestry Require="goblinLevel >= 1"',
-  'City Scavenger':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Goblin Lore':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Goblin Scuttle':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Goblin Song':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Goblin Weapon Familiarity':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Junk Tinker':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Rough Rider':'Type=Ancestry Require="goblinLevel >= 1"',
-  'Very Sneaky':'Type=Ancestry Require="goblinLevel >= 1"',
+  'Burn It!':'Type=Ancestry,Goblin',
+  'City Scavenger':'Type=Ancestry,Goblin',
+  'Goblin Lore':'Type=Ancestry,Goblin',
+  'Goblin Scuttle':'Type=Ancestry,Goblin',
+  'Goblin Song':'Type=Ancestry,Goblin',
+  'Goblin Weapon Familiarity':'Type=Ancestry,Goblin',
+  'Junk Tinker':'Type=Ancestry,Goblin',
+  'Rough Rider':'Type=Ancestry,Goblin',
+  'Very Sneaky':'Type=Ancestry,Goblin',
   'Goblin Weapon Frenzy':
-    'Type=Ancestry ' +
-    'Require="goblinLevel >= 5","features.Goblin Weapon Familiarity"',
-  'Cave Climber':'Type=Ancestry Require="goblinLevel >= 9"',
+    'Type=Ancestry,Goblin ' +
+    'Require="level >= 5","features.Goblin Weapon Familiarity"',
+  'Cave Climber':'Type=Ancestry,Goblin Require="level >= 9"',
   'Skittering Scuttle':
-    'Type=Ancestry Require="goblinLevel >= 9","features.Goblin Scuttle"',
+    'Type=Ancestry,Goblin Require="level >= 9","features.Goblin Scuttle"',
   'Goblin Weapon Expertise':
-    'Type=Ancestry ' +
-    'Require="goblinLevel >= 13","features.Goblin Weapon Familiarity"',
+    'Type=Ancestry,Goblin ' +
+    'Require="level >= 13","features.Goblin Weapon Familiarity"',
   'Very, Very Sneaky':
-    'Type=Ancestry Require="goblinLevel >= 13","features.Very Sneaky"',
+    'Type=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
   'Distracting Shadows':'Type=Ancestry Require="halflingLevel >= 1"',
   'Halfling Lore':'Type=Ancestry Require="halflingLevel >= 1"',
   'Halfling Luck':'Type=Ancestry Require="halflingLevel >= 1"',
@@ -827,28 +830,36 @@ Pathfinder2E.FEATURES = {
 
   // Ancestry
   'Ancient-Blooded Dwarf':
-    'Section=save Note="May use Reaction for +1 vs. magic for 1 rd"',
+    'Section=save ' +
+    'Note="May use Reaction upon save vs. magic for +1 vs. magic for 1 rd"',
   'Arctic Elf':
     'Section=save ' +
-    'Note="Cold resistance %{level//2>?1} and treats environmental cold as 1 step lower"',
+    'Note="Cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
   'Cavern Elf':'Section=feature Note="Has Darkvision feature"',
   'Chameleon Gnome':
     'Section=feature,skill ' +
-    'Note="May change skin and hair colors",' +
-         '"+2 Stealth (blend into surroundings)"',
-  'Charhide Goblin':'Section=save Note="Fire resistance %V, -5 DC to remove"',
+    'Note=' +
+      '"May change skin and hair colors",' +
+      '"May use an action to change coloration and gain +2 Stealth"',
+  'Charhide Goblin':
+    'Section=save ' +
+    'Note="Fire resistance %{level//2>?1}/DC 10 to recover from fire damage (DC 5 with help)"',
   'Darkvision':
     'Section=feature Note="Normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
-    'Section=save Note="Successful save vs. necromancy effect is always a critical success"',
+    'Section=save ' +
+    'Note="A successful save vs. a necromancy effect is always a critical success"',
   'Fey-Touched Gnome':
-    'Section=feature,magic Note="Fey trait","May cast chosen cantrip at will"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Fey trait",' +
+      '"May cast chosen cantrip at will; may replace chosen cantrip 1/dy"',
   'Forge Dwarf':
     'Section=save ' +
-    'Note="Fire resistance %{level//2>?1} and treats environmental heat as 1 step lower"',
+    'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step lower"',
   'Gutsy Halfling':
     'Section=save ' +
-    'Note="Successful save vs. emotion isl always a critical success"',
+    'Note="Successful save vs. emotion is always a critical success"',
   'Half-Elf':
     'Section=feature Note="Has Elf trait and Low-Light Vision features"',
   'Half-Orc':
@@ -859,175 +870,212 @@ Pathfinder2E.FEATURES = {
     'Section=feature,save ' +
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs afflictions, sickened (ingested); success automatic crit"',
+      '"+2 vs afflictions and sickened from ingestion, and a successful save is always a critical success"',
   'Low-Light Vision':'Section=feature Note="Treats dim light as bright light"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6 HP"',
   'Rock Dwarf':
     'Section=save ' +
-    'Note="+2 vs. knock prone, shove, and trip; halve forced move distance"',
+    'Note="+2 vs. Shove, Trip, and magical knock prone/Suffers halve forced move distance"',
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Detect Magic</i> at will",' +
-      '"+1 identify magic and deciper magic writing"',
-  'Sensate Gnome':'Section=skill Note="R30\' +2 Perception (Locate creature)"',
+      '"May cast <i>Detect Magic</i> cantrip at will",' +
+      '"+1 Identify Magic and Deciper Writing of a magical nature"',
+  'Sensate Gnome':
+    'Section=skill ' +
+    'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
   'Skilled Heritage':'Section=skill Note="Trained in chosen skill"',
   'Slow':'Section=ability Note="-10 Speed"',
+  'Small':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
-    'Note="Cold resistance %V and reduces environmental cold 1 step"',
+    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
-    'Note="Poison resistance %{level//2>?1} and save reduces stage by 2 (virulent 1), critical by 3 (virulent 2)"',
+    'Note="Has poison resistance %{level//2>?1}; save reduces stage by 2 (virulent 1), critical success by 3 (virulent 2)"',
   'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
   'Umbral Gnome':'Section=combat Note="Has Darkvision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
-    'Note="+4 Hit Points","Suffers half falling distance damage"',
+    'Note="+4 Hit Points","Suffers falling damage as half distance"',
   'Versatile Heritage':'Section=combat Note="+1 General Feat"',
   'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
-    'Section=combat Note="R60\' Seek, R30\' +2 locate heard creatures"',
+    'Section=combat ' +
+    'Note="R60\' Seek, R30\' +2 to locate creatures via hearing"',
   'Wildwood Halfling':
     'Section=feature Note="Ignores difficult terrain from foliage"',
   'Woodland Elf':
     'Section=ability,combat ' +
-    'Note="%{speed//2}\' Climb (foliage) (%{speed}\' crit success)",' +
-          '"May always Take Cover in forest"',
+    'Note=' +
+      '"%{speed//2}\' Climb (foliage) (critical success %{speed}\')",' +
+      '"May always Take Cover within forest terrain"',
 
   // Ancestry feats
   'Dwarven Lore':
     'Section=skill Note="Skill Training (Crafting/Religion/Dwarven Lore)"',
   'Dwarven Weapon Familiarity':
-    // TODO Proficiency step in "dwarf weapons"
-    'Section=combat Note="Weapon Training (Battle Axe/Pick/Warhammer)"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Training (Battle Axe/Pick/Warhammer)",' +
+      '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower"',
   'Rock Runner':
     'Section=ability,skill ' +
-    'Note="May move normally over stone and earth difficulty terrain",' +
-         '"Acrobatics on stone and earth is never flat-footed and success always critical"',
+    'Note=' +
+      '"May move normally over stone and earth difficult terrain",' +
+      '"Acrobatics to Balance on stone and earth is never flat-footed, and success is always a critical success"',
   'Stonecunning':
-    'Section=skill Note="+2 Perception (unusual stonework)/Automatic -2 check"',
+    'Section=skill ' +
+    'Note="+2 Perception (unusual stonework)/Gains an automatic -2 check to note unusual stonework"',
   'Unburdened Iron':
-    'Section=ability ' +
-    'Note="No Speed reduction from armor; reduces other speed penalties by 5"',
+    'Section=ability,ability ' +
+    'Note=' +
+      '"Suffers no Speed penalty from armor",' +
+      '"Reduces speed penalties by 5"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="+1 damage vs. choice of drow, duergar, giant, or orc; +1 damage vs. all of these after taking damage"',
+    'Note="+1 per die weapon damage vs. choice of drow, duergar, giant, or orc and for 1 minute on any foe that inflicts a critical success on attack"',
   'Boulder Roll':
-    'Section=combat Note="Stepping into foe\'s space forces 5\' move, inflicts (Fort vs. Athletics neg, inflicts %{level+strengthModifier} HP})"',
+    'Section=combat ' +
+    'Note="Stepping into foe\'s space forces 5\' move (Fort vs. Athletics neg but inflicts %{level+strengthModifier} HP})"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
-    'Note="Critical hit with battle axe, pick, warhammer, or dwarf weapon inflicts critical specialization effect"',
+    'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict critical specialization effect"',
   "Mountain's Stoutness":
-    'Section=combat ' +
-    'Note="+%{level} HP/-%{1+(features.Toughness||0)*3} dying recovery DC"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"+%{level} Hit Points",' +
+      '"-%{1+(features.Toughness||0)*3} dying recovery DC"',
   'Stonewalker':
     'Section=magic,skill ' +
-    'Note="May cast <i>Meld Into Stone</i> 1/dy",' +
-         '"May find legendary unusual stonework"',
+    'Note=' +
+      '"May cast <i>Meld Into Stone</i> 1/dy",' +
+      '"May find legendary unusual stonework"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
-    'Note="Gains expert proficiency in battle axes, picks, warhammers, and dwarf weapons"',
+     // TODO only if another feature grants expert or greater proficiency
+    'Note="Has expert proficiency in battle axes, picks, warhammers, and dwarf weapons"',
 
   'Ancestral Longevity':
-    'Section=skill Note="Has movable training in 1 skill 1/dy"',
+    'Section=skill Note="May become Trained in choice of skill 1/dy"',
   'Elven Lore':
-    'Section=skill Note="Skill Proficiency: Arcana; Nature; Elven Lore"',
+    'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
-    // TODO Proficiency step in "elf weapons"
-    'Section=combat ' +
-    'Note="Weapon Proficiency: Longbow; Composite Longbow; Longsword; Shortbow; Composite Shortbow"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Proficiency (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
+      '"Has access to uncommon elf weapons/Treats elf weapons as one category lower"',
   'Forlorn':
-    'Section=save Note="+1 vs. emotion effects and all successes are critical"',
+    'Section=save ' +
+    'Note="+1 vs. emotion effects, and all successes are critical"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
-  'Otherworldly Magic':'Section=magic Note="May cast chosen catrip at will"',
+  'Otherworldly Magic':
+    'Section=magic Note="May cast chosen cantrip at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="Reduces duration of mental effects by 1 rd and gives +1 level of save vs. sleep effects"',
+    'Note="May reduce duration of mental effects by 1 rd/Gives +1 degree of save vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May dbl duration of check for +2; suffers critical failure only on 10 lower than DC"',
+    'Note="May gain a +2 bonus on a check by spending double the time required; suffers critical failure only on 10 lower than DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
-    'Note="Critical hit with longbow, composite longbow, longsword, shortbow, composite shortbow, or elf weapon inflicts critical specialization effect"',
-  'Elf Step':'Section=combat Note="May take second 5\' Step"',
+    'Note="Critical hits with a longbow, composite longbow, longsword, rapier shortbow, composite shortbow, or elf weapon inflict critical specialization effect"',
+  'Elf Step':'Section=combat Note="May take a second Step 5\'"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Ancestral Longevity also gives expert level in trained skill"',
+    'Note="Ancestral Longevity also gives expert level in chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
   'Universal Longevity':
-    'Section=skill Note="PND"',
+    'Section=skill ' +
+    'Note="May replace Ancestral Longevity and Expert Longevity skills 1/dy"',
   'Elven Weapon Expertise':
     'Section=combat ' +
-    'Note="Has expert proficiency in longbow, composite longbow, longsword, shortbow, composite shortbow, and elf weapons"',
+     // TODO only if another feature grants expert or greater proficiency
+    'Note="Has expert proficiency in longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, and elf weapons"',
 
   'Animal Accomplice':
-    'Section=combat Note="PND"',
+    'Section=combat Note="Has Familiar feature"',
   'Burrow Elocutionist':
-    'Section=combat Note="PND"',
+    'Section=skill Note="May speak with burrowing animals"',
   'Fey Fellowship':
     'Section=save,skill ' +
-    'Note="+2 vs. fey","+2 Perception/May make immediate Diplomacy-5 with fey"',
+    'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey; may retry after 1 min conversation"',
   'First World Magic':
-    'Section=magic Note="May cast chosen cantrip at will as level %{level//2}"',
+    'Section=magic Note="May cast chosen primal cantrip at will"',
   'Gnome Obsession':
-    'Section=skill Note="%V proficiency in chosen and background Lore skill"',
+    'Section=skill Note="Skill %{level<2?\'Trained\':level<7?\'Expert\':levle<15?\'Master\':\'Legendary\'} in chosen and background Lore skill"',
   'Gnome Weapon Familiarity':
-    'Section=combat ' +
-    // TODO Proficiency step in "gnome weapons"
-    'Section=combat Note="Weapon Training (Glaive/Kukri)"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Proficiency (Glaive; Kukri)",' +
+      '"Has access to uncommon gnome weapons/Treats gnome weapons as one category lower"',
   'Illusion Sense':
-    'Section=save,skill Note="+1 vs. illusions","+1 Perception"',
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. illusions/R10\' Automatic disbelieve check",' +
+      '"+1 Perception (illusions)"',
   'Animal Elocutionist':
     'Section=magic,skill ' +
-    'Note="May speak with all animals","+1 Diplomacy (animals)"',
-  'Energized Font':'Section=magic Note="Regains 1 Focus Point 1/dy"',
+    'Note=' +
+      '"May speak with all animals",' +
+      '"+1 to Make an Impression on animals"',
+  'Energized Font':'Section=magic Note="May regain 1 Focus Point 1/dy"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
-    'Note="Critical hits with glaive, kukri, or gnome weapon apply critical specialization effect"',
+    'Note="Critical hits with a glaive, kukri, or gnome weapon inflict critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> 1/dy"',
+     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/dy"',
   'Vivacious Conduit':
-    'Section=combat Note="10 min rest restores %{constitutionModifier+level//2} HP"',
+    'Section=combat ' +
+    'Note="10 min rest restores %{constitutionModifier+level//2} HP"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
+     // TODO only if another feature grants expert or greater proficiency
     'Note="Has expert proficiency in glaive, kukri, and gnome weapons"',
 
   'Burn It!':
     'Section=combat,magic ' +
-    'Note="+1 fire damage","+Half spell level fire damage"',
+    'Note=' +
+      '"+1 persistent fire damage",' +
+      '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%V Subsist/May use Society or Survial to Subsist/+1 Earn Income while subsisting"',
+    'Note="+%{1+(features.Irongut?1:0)} Subsist/May make +%{1+features.Irongut?1:0} Society or Survival check to Earn Income while using Subsist in a settlement"',
   'Goblin Lore':
-    'Section=skill Note="Trained in Nature, Stealth, and Goblin Lore"',
+    'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
-    'Section=combat Note="May take free Step after ally moves to adjacent position"',
+    'Section=combat ' +
+    'Note="May make a Step Reaction when an ally moves to an adjacent position"',
   'Goblin Song':
     'Section=skill ' +
-    'Note="R30\' May use Performance to inflict -1 Perception and Will on target for 1 rd (crit 1 min; crit fail immune for 1 hr)"',
+    'Note="R30\' May use Performance to inflict -1 Perception and Will on targets for 1 rd (critical success 1 min; critical fail immune for 1 hr)"',
   'Goblin Weapon Familiarity':
-    'Section=combat ' +
-    // TODO Proficiency step in "goblin weapons"
-    'Section=combat Note="Weapon Training (Dogslicer/Horsechopper)"',
-  'Junk Tinker':'Section=skill Note="May Craft using junk"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Proficiency (Dogslicer; Horsechopper)",' +
+      '"Has access to uncommon goblin weapons/Treats goblin weapons as one category lower"',
+  'Junk Tinker':'Section=skill Note="May use Crafting on junk"',
   'Rough Rider':
     'Section=feature,skill ' +
-    'Note="Has Ride feat","+1 Nature (Command goblin dog or wolf mount)"',
+    'Note="Has Ride feat","+1 Nature (Command a goblin dog or wolf mount)"',
   'Very Sneaky':
-    'Section=ability,skill Note="+5\' sneak","May Stealth between cover"',
+    'Section=ability,skill ' +
+    'Note=' +
+      '"+5\' Sneak",' +
+      '"May Stealth between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
-    'Note="Critical hits with goblin weapon apply critical specialization effect"',
+    'Note="Critical hits with a goblin weapon inflict critical specialization effect"',
   'Cave Climber':'Section=ability Note="10\' Climb"',
   'Skittering Scuttle':
-    'Section=combat Note="May move up to %{speed}\' using Goblin Scuttle"',
+    'Section=combat Note="May move up to %{speed//2}\' using Goblin Scuttle"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
+     // TODO only if another feature grants expert or greater proficiency
     'Note="Has expert proficiency in dogslicer, horsechopper, and goblin weapons"',
   'Very, Very Sneaky':
-    'Section=combat Note="May sneak at full speed and without cover"',
+    'Section=combat Note="May Sneak at full speed and without cover"',
 
   'Distracting Shadows':
     'Section=skill Note="May use larger creatures for Hide and Sneak"',
@@ -1311,9 +1359,6 @@ Pathfinder2E.LANGUAGES = {
   'Shadowtounge':'',
   'Terran':''
 };
-Pathfinder2E.PATHS = {
-  // TODO
-};
 Pathfinder2E.SCHOOLS = {
   'Abjuration':'',
   'Conjuration':'',
@@ -1487,36 +1532,26 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
 /* Defines rules related to basic character identity. */
 Pathfinder2E.identityRules = function(
-  rules, alignments, ancestries, backgrounds, classes, deities, paths
+  rules, alignments, ancestries, backgrounds, classes, deities
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Trait']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'CasterLevelArcane', 'CasterLevelDivine', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
-  QuilvynUtils.checkAttrTable
-    (paths, ['Group', 'Level', 'Features', 'Selectables', 'SpellAbility', 'SpellSlots']);
 
-  for(let alignment in alignments) {
-    rules.choiceRules(rules, 'Alignment', alignment, alignments[alignment]);
-  }
-  for(let ancestry in ancestries) {
-    rules.choiceRules(rules, 'Ancestry', ancestry, ancestries[ancestry]);
-  }
-  for(let background in backgrounds) {
-    rules.choiceRules(rules, 'Background', background, backgrounds[background]);
-  }
-  for(let clas in classes) {
-    rules.choiceRules(rules, 'Class', clas, classes[clas]);
-  }
-  for(let deity in deities) {
-    rules.choiceRules(rules, 'Deity', deity, deities[deity]);
-  }
-  for(let path in paths) {
-    rules.choiceRules(rules, 'Path', path, paths[path]);
-  }
+  for(let a in alignments)
+    rules.choiceRules(rules, 'Alignment', a, alignments[a]);
+  for(let a in ancestries)
+    rules.choiceRules(rules, 'Ancestry', a, ancestries[a]);
+  for(let b in backgrounds)
+    rules.choiceRules(rules, 'Background', b, backgrounds[b]);
+  for(let c in classes)
+    rules.choiceRules(rules, 'Class', c, classes[c]);
+  for(let d in deities)
+    rules.choiceRules(rules, 'Deity', d, deities[d]);
 
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
@@ -1608,10 +1643,11 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Ancestry') {
     Pathfinder2E.ancestryRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
+      QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
-      QuilvynUtils.getAttrValue(attrs, 'HitPoints')
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Languages')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
   } else if(type == 'Background')
@@ -1670,17 +1706,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Language')
     Pathfinder2E.languageRules(rules, name);
-  else if(type == 'Path')
-    Pathfinder2E.pathRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Group'),
-      QuilvynUtils.getAttrValue(attrs, 'Level'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Features'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
-      QuilvynUtils.getAttrValue(attrs, 'SpellAbility'),
-      QuilvynUtils.getAttrValueArray(attrs, 'SpellSlots'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Spells'),
-      Pathfinder2E.SPELLS
-    );
   else if(type == 'School')
     Pathfinder2E.schoolRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Features')
@@ -1712,7 +1737,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     console.log('Unknown choice type "' + type + '"');
     return;
   }
-  if(type != 'Feature' && type != 'Path' && type != 'Spell') {
+  if(type != 'Spell') {
     type = type == 'Ancestry' ? 'ancestries' :
            type == 'Class' ? 'levels' :
            type == 'Deity' ? 'deities' :
@@ -1737,7 +1762,7 @@ Pathfinder2E.alignmentRules = function(rules, name) {
  * the number of HP gained at level 1.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, features, selectables, languages, hitPoints
+  rules, name, requires, hitPoints, features, selectables, traits, languages
 ) {
 
   if(!name) {
@@ -1748,6 +1773,9 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad requires list "' + requires + '" for ancestry ' + name);
     return;
   }
+  if(typeof hitPoints != 'number') {
+    console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
+  }
   if(!Array.isArray(features)) {
     console.log('Bad features list "' + features + '" for ancestry ' + name);
     return;
@@ -1756,12 +1784,13 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad selectables list "' + selectables + '" for ancestry ' + name);
     return;
   }
+  if(!Array.isArray(traits)) {
+    console.log('Bad traits list "' + traits + '" for ancestry ' + name);
+    return;
+  }
   if(!Array.isArray(languages)) {
     console.log('Bad languages list "' + languages + '" for ancestry ' + name);
     return;
-  }
-  if(typeof hitPoints != 'number') {
-    console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
   }
 
   let matchInfo;
@@ -2163,18 +2192,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineChoice('notes', 'abilityNotes.abilityBoost:%V to distribute');
     rules.defineRule('abilityNotes.abilityBoost', 'abilityBoost', '=', null);
     rules.defineRule('abilityBoost', 'features.' + name, '+=', '2');
-  } else if(name == 'City Scavenger') {
-    rules.defineChoice('skillNotes.cityScavenger',
-      '', '=', '1',
-      'features.Irongut Goblin', '+', '1'
-    );
   } else if(name == 'Cultural Adaptability') {
     rules.defineRule('features.Adopted Ancestry',
       'featureNotes.culturalAdaptability', '=', '1'
-    );
-  } else if(name == 'Gnome Obsession') {
-    rules.defineRule('skillNotes.gnomeObsession',
-      'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
   } else if(name == 'Irrepressible') {
     rules.defineRule('saveNotes.irrepressible.1',
@@ -2185,6 +2205,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
   } else if(name == 'Rough Rider') {
     rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
+  } else if(name == 'Stonewalker') {
+    rules.defineRule
+      ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   }
 };
 
@@ -2242,83 +2265,6 @@ Pathfinder2E.languageRules = function(rules, name) {
     return;
   }
   // No rules pertain to language
-};
-
-/*
- * Defines in #rules# the rules associated with path #name#, which is a
- * selection for characters belonging to #group# and tracks path level via
- * #levelAttr#. The path grants the features and spells listed in #features#
- * and #spells#. #spellAbility#, if specified, names the ability for computing
- * spell difficulty class. #spellSlots# lists the number of spells per level
- * per day granted by the path, and #spells# lists spells defined by the path.
- * #spellDict# is the dictionary of all spells, used to look up individual
- * spell attributes.
- */
-Pathfinder2E.pathRules = function(
-  rules, name, group, levelAttr, features, selectables, spellAbility,
-  spellSlots, spells, spellDict
-) {
-
-  if(!name) {
-    console.log('Empty path name');
-    return;
-  }
-  if(!group) {
-    console.log('Bad group "' + group + '" for path ' + name);
-    return;
-  }
-  if(!(levelAttr + '').startsWith('level')) {
-    console.log('Bad level "' + levelAttr + '" for path ' + name);
-    return;
-  }
-  if(!Array.isArray(features)) {
-    console.log('Bad features list "' + features + '" for path ' + name);
-    return;
-  }
-  if(!Array.isArray(selectables)) {
-    console.log('Bad selectables list "' + selectables + '" for path ' + name);
-    return;
-  }
-  if(spellAbility) {
-    spellAbility = spellAbility.toLowerCase();
-    if(!(spellAbility.charAt(0).toUpperCase() + spellAbility.substring(1) in Pathfinder2E.ABILITIES)) {
-      console.log('Bad spell ability "' + spellAbility + '" for class ' + name);
-      return;
-    }
-  }
-
-  let pathLevel =
-    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '') + 'Level';
-
-  rules.defineRule(pathLevel,
-    'features.' + name, '?', null,
-    levelAttr, '=', null
-  );
-
-  Pathfinder2E.featureListRules(rules, features, group, pathLevel, false);
-  Pathfinder2E.featureListRules(rules, selectables, group, pathLevel, true);
-
-  if(spellSlots.length > 0) {
-    rules.defineRule('casterLevels.' + name, pathLevel, '=', null);
-    QuilvynRules.spellSlotRules(rules, 'casterLevels.' + name, spellSlots);
-    for(let j = 0; j < spellSlots.length; j++) {
-      let spellType = spellSlots[j].replace(/\d.*/, '');
-      if(spellType != name)
-        rules.defineRule
-          ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
-      rules.defineRule('spellAttackModifier.' + spellType,
-        'casterLevels.' + spellType, '?', null,
-        spellAbility + 'Modifier', '=', null,
-        'proficiencyBonus', '+', null
-      );
-      rules.defineRule('spellDifficultyClass.' + spellType,
-        'casterLevels.' + spellType, '?', null,
-        spellAbility + 'Modifier', '=', '8 + source',
-        'proficiencyBonus', '+', null
-      );
-    }
-  }
-
 };
 
 /*
@@ -2880,16 +2826,6 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   } else if(type == 'Language')
     result.push(
       // empty
-    );
-  else if(type == 'Path')
-    result.push(
-      ['Group', 'Group', 'text', [15]],
-      ['Level', 'Level', 'text', [15]],
-      ['Features', 'Features', 'text', [40]],
-      ['Selectables', 'Features', 'text', [40]],
-      ['SpellAbility', 'Spell Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
-      ['SpellSlots', 'Spells Slots', 'text', [40]],
-      ['Spells', 'Spells', 'text', [40]]
     );
   else if(type == 'Ancestry')
     result.push(
