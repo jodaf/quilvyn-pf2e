@@ -47,7 +47,7 @@ function Pathfinder2E() {
     'validationNotes'
   );
   rules.defineChoice('preset',
-    'ancestry:Ancestry,select-one,ancestries',
+    'ancestry:Ancestry,select-one,ancestrys',
     'background:Background,select-one,backgrounds',
     'levels:Class Levels,bag,levels'
   );
@@ -119,7 +119,7 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf","1:Death Warden Dwarf","1:Forge Dwarf",' +
       '"1:Rock Dwarf","1:Strong-Blooded Dwarf" ' +
-    'Trait=Dwarf,Humanoid ' +
+    'Traits=Dwarf,Humanoid ' +
     'Languages=Common,Dwarven',
   'Elf':
     'HitPoints=6 ' +
@@ -130,7 +130,7 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Arctic Elf","1:Cavern Elf","1:Seer Elf","1:Whisper Elf",' +
       '"1:Woodland Elf" ' +
-    'Trait=Elf,Humanoid ' +
+    'Traits=Elf,Humanoid ' +
     'Languages=Common,Elven',
   'Gnome':
     'HitPoints=8 ' +
@@ -141,7 +141,7 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Chameleon Gnome","1:Fey-Touched Gnome","1:Sensate Gnome",' +
       '"1:Umbral Gnome","1:Wellspring Gnome" ' +
-    'Trait=Gnome,Humanoid ' +
+    'Traits=Gnome,Humanoid ' +
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
     'HitPoints=6 ' +
@@ -154,6 +154,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Snow Goblin","1:Unbreakable Goblin" ' +
     'Languages=Common,Goblin',
   'Halfling':
+    'HitPoints=6 ' +
     'Features=' +
       '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from Charisma, Constitution, Intelligence, Strength)",' +
       '"1:Ability Flaw (Strength)",' +
@@ -161,15 +162,16 @@ Pathfinder2E.ANCESTRIES = {
     'Selectables=' +
       '"1:Gutsy Halfling","1:Hillock Halfling","1:Nomadic Halfling",' +
       '"1:Twilight Halfling","1:Wildwood Halfling" ' +
-    'HitPoints=6 ' +
+    'Traits=Humanoid,Halfling ' +
     'Languages=Common,Halfling',
   'Human':
+    'HitPoints=8 ' +
     'Features=' +
       '"1:Ability Boost (Choose 2 from any)" ' +
     'Selectables=' +
       '1:Half-Elf,1:Half-Orc,"1:Skilled Heritage","1:Versatile Heritage" ' +
-    'HitPoints=8 ' +
-    'Languages=Common'
+    'Traits=Humanoid,Human ' +
+    'Languages=Common,any'
 };
 Pathfinder2E.ARMORS = {
   'None':'Weight=0 AC=0 Dex=10 Skill=0 Speed=0 Str=0 Bulk=0',
@@ -190,11 +192,11 @@ Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
-      '"1:Skill Trained (Religion; Scribing Lore)","Student Of The Canon"',
+      '"1:Skill Trained (Religion; Scribing Lore)","1:Student Of The Canon"',
   'Acrobat':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Acrobatics; Circus Lore)","Steady Balance"',
+      '"1:Skill Trained (Acrobatics; Circus Lore)","1:Steady Balance"',
   'Animal Whisperer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
@@ -203,51 +205,52 @@ Pathfinder2E.BACKGROUNDS = {
   'Artisan':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Crafting; Guild Lore)","Specialty Crafting"',
+      '"1:Skill Trained (Crafting; Guild Lore)","1:Specialty Crafting"',
   'Artist':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Crafting; Art Lore)","Specialty Crafting"',
+      '"1:Skill Trained (Crafting; Art Lore)","1:Specialty Crafting"',
   'Barkeep':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
-      '"1:Skill Trained (Diplomacy; Alcohol Lore)",Hobnobber',
+      '"1:Skill Trained (Diplomacy; Alcohol Lore)",1:Hobnobber',
   'Barrister':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Diplomacy; Legal Lore)","Group Impression"',
+      '"1:Skill Trained (Diplomacy; Legal Lore)","1:Group Impression"',
   'Bounty Hunter':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Legal Lore)","Experienced Tracker"',
+      '"1:Skill Trained (Survival; Legal Lore)","1:Experienced Tracker"',
   'Charlatan':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Deception; Underworld Lore)","Charming Liar"',
+      '"1:Skill Trained (Deception; Underworld Lore)","1:Charming Liar"',
   'Criminal':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Stealth; Underworld Lore)","Experienced Smuggler"',
+      '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Detective':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; Underworld Lore)",Streetwise',
+      '"1:Skill Trained (Society; Underworld Lore)",1:Streetwise',
   'Emissary':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained; Society; City Lore",Multilingual',
+      '"1:Skill Trained; Society; City Lore",1:Multilingual',
   'Entertainer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Performance; Theater Lore)","Fascinating Performance"',
+      '"1:Skill Trained (Performance; Theater Lore)",' +
+      '"1:Fascinating Performance"',
   'Farmhand':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Athletics; Farming Lore)","Assurance (Athletics)"',
+      '"1:Skill Trained (Athletics; Farming Lore)","1:Assurance (Athletics)"',
   'Field Medic':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Medicine; Warfare Lore)","Battle Medic"',
+      '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
       '"1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
@@ -256,7 +259,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Gambler':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Deception; Games Lore)","Lie To Me"',
+      '"1:Skill Trained (Deception; Games Lore)","1:Lie To Me"',
   'Gladiator':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
@@ -265,11 +268,11 @@ Pathfinder2E.BACKGROUNDS = {
   'Guard':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Intimidation; Legal Lore)","Quick Coercion"',
+      '"1:Skill Trained (Intimidation; Legal Lore)","1:Quick Coercion"',
   'Herbalist':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Nature; Herbalism Lore)","Natural Medicine"',
+      '"1:Skill Trained (Nature; Herbalism Lore)","1:Natural Medicine"',
   'Hermit':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
@@ -278,47 +281,49 @@ Pathfinder2E.BACKGROUNDS = {
   'Hunter':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Tanning Lore)","Survey Wildlife"',
+      '"1:Skill Trained (Survival; Tanning Lore)","1:Survey Wildlife"',
   'Laborer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Athletics; Labor Lore)","Hefty Hauler"',
+      '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
   'Martial Disciple':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
-      '"1:Cat Fall"',
+      // TODO: Cat Fall if Acrobatics chosen; Quick Jump if Athletics chosen
+      '"1:Cat Fall",' +
+      '"1:Quick Jump"',
   'Merchant':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Diplomacy, Mercantile Lore)","Bargain Hunter"',
+      '"1:Skill Trained (Diplomacy, Mercantile Lore)","1:Bargain Hunter"',
   'Miner':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Stength, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Mining Lore)",' +
-      '"1:Terrain Expertise: Underground"',
+      '"1:Terrain Expertise (Underground)"',
   'Noble':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; Heraldry Lore)","Courtly Graces"',
+      '"1:Skill Trained (Society; Heraldry Lore)","1:Courtly Graces"',
   'Nomad':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Choose 1 from Desert Lore, Swamp Lore)",' +
-      '"1:Assurance: Survival"',
+      '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Stealth; Underworld Lore)","Experienced Smuggler"',
+      '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Sailor':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Athletics; Sailing Lore)","Underwater Marauder"',
+      '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
   'Scholar':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
-      '"1:Assurance: Choose 1 from Arcana, Nature, Occultism, Religion"',
+      '"1:Assurance (chosen skill)"',
   'Scout':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
@@ -327,22 +332,22 @@ Pathfinder2E.BACKGROUNDS = {
   'Street Urchin':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Thieving; City Lore)",Pickpocket',
+      '"1:Skill Trained (Thieving; City Lore)",1:Pickpocket',
   'Tinker':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Crafting; Engineering Lore)","Specialty Crafting"',
+      '"1:Skill Trained (Crafting; Engineering Lore)","1:Specialty Crafting"',
   'Warrior':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Intimidation; Warfare Lore)","Intimidating Glare"'
+      '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
   'Alchemist':
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
       '"1:Perception Trained",' +
-      '"1:Skill Trained (Crafting; Choose %{3+intelligenceModifier} from any)",' +
+      '"1:Skill Trained (Crafting; Choose 3 from any)",' +
       '"1:Attack Trained (Simple; Alchemical Bombs; Unarmed)",' +
       '"1:Defense Trained (Light Armor; Unarmored)"',
   'Barbarian':
@@ -386,7 +391,7 @@ Pathfinder2E.DEITIES = {
   'Abadar':
     'Alignment=LN Font=Harm,Heal Skill=Society Weapon=Crossbow ' +
     'Domain=Cities,Earth,Travel,Wealth ' +
-    'Spells="1:Illusory Object",4:Creation,"7:agnificent Mansion"',
+    'Spells="1:Illusory Object",4:Creation,"7:Magnificent Mansion"',
   'Asmodeus':
     'Alignment=LE Font=Harm Skill=Deception Weapon=Mace ' +
     'Domain=Confidence,Fire,Trickery,Tyranny ' +
@@ -394,7 +399,7 @@ Pathfinder2E.DEITIES = {
   'Calistra':
     'Alignment=CN Font=Harm,Heal Skill=Deception Weapon=Whip ' +
     'Domain=Pain,Passion,Secrecy,Trickery ' +
-    'Spells=1:Charm,3:Entrall,6:Mislead',
+    'Spells=1:Charm,3:Enthrall,6:Mislead',
   'Cayden Cailean':
     'Alignment=CG Font=Heal Skill=Athletics Weapon=Rapier ' +
     'Domain=Cities,Freedom,Indulgence,Might ' +
@@ -514,13 +519,13 @@ Pathfinder2E.FEATS = {
   'Illusion Sense':'Type=Ancestry,Gnome',
   'Animal Elocutionist':
     'Type=Ancestry,Gnome Require="level>=5","features.Burrow Elocutionist"',
-  // TODO require "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
+  // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
   'Energized Font':
     'Type=Ancestry,Gnome Require="level>=5","features.Focus Pool"',
   'Gnome Weapon Innovator':
     'Type=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
-  // TODO require "at least one primal innate spell"
+  // TODO requires "at least one primal innate spell"
   'First World Adept':'Type=Ancestry,Gnome Require="level >= 9"',
   'Vivacious Conduit':'Type=Ancestry,Gnome Require="level >= 9"',
   'Gnome Weapon Expertise':
@@ -547,79 +552,65 @@ Pathfinder2E.FEATS = {
     'Require="level >= 13","features.Goblin Weapon Familiarity"',
   'Very, Very Sneaky':
     'Type=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
-  'Distracting Shadows':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Halfling Lore':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Halfling Luck':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Halfling Weapon Familiarity':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Sure Feet':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Titan Slinger':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Unfettered Halfling':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Watchful Halfling':'Type=Ancestry Require="halflingLevel >= 1"',
-  'Cultural Adaptability':'Type=Ancestry Require="halflingLevel >= 5"',
+  'Distracting Shadows':'Type=Ancestry,Halfling',
+  'Halfling Lore':'Type=Ancestry,Halfling',
+  'Halfling Luck':'Type=Ancestry,Halfling',
+  'Halfling Weapon Familiarity':'Type=Ancestry,Halfling',
+  'Sure Feet':'Type=Ancestry,Halfling',
+  'Titan Slinger':'Type=Ancestry,Halfling',
+  'Unfettered Halfling':'Type=Ancestry,Halfling',
+  'Watchful Halfling':'Type=Ancestry,Halfling',
+  'Cultural Adaptability':'Type=Ancestry,Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
-    'Type=Ancestry ' +
-    'Require="halflingLevel >= 5","features.Halfling Weapon Familiarity"',
+    'Type=Ancestry,Halfling ' +
+    'Require="level >= 5","features.Halfling Weapon Familiarity"',
   'Guiding Luck':
-    'Type=Ancestry Require="halflingLevel >= 9","features.Halfling Luck"',
-  'Irrepressible':'Type=Ancestry Require="halflingLevel >= 9"',
+    'Type=Ancestry,Halfling Require="level >= 9","features.Halfling Luck"',
+  'Irrepressible':'Type=Ancestry,Halfling Require="level >= 9"',
   'Ceaseless Shadows':
-    'Type=Ancestry ' +
-    'Require="halflingLevel >= 13","features.Distracting Shadows"',
+    'Type=Ancestry,Halfling ' +
+    'Require="level >= 13","features.Distracting Shadows"',
   'Halfling Weapon Expertise':
-    'Type=Ancestry ' +
-    'Require="halflingLevel >= 13","features.Halfling Weapon Familiarity"',
-  // TODO require "spellcasting class feature"
-  'Adapted Cantrip':'Type=Ancestry Require="humanLevel >= 1"',
-  'Cooperative Nature':'Type=Ancestry Require="humanLevel >= 1"',
-  'General Training':'Type=Ancestry Require="humanLevel >= 1"',
-  'Haughty Obstinacy':'Type=Ancestry Require="humanLevel >= 1"',
-  'Natural Ambition':'Type=Ancestry Require="humanLevel >= 1"',
-  'Natural Skill':'Type=Ancestry Require="humanLevel >= 1"',
-  'Unconventional Weaponry':'Type=Ancestry Require="humanLevel >= 1"',
-  // TODO require "can cast 3rd level spells"
+    'Type=Ancestry,Halfling ' +
+    'Require="level >= 13","features.Halfling Weapon Familiarity"',
+  'Adapted Cantrip':'Type=Ancestry,Human Require=features.Spellcasting',
+  'Cooperative Nature':'Type=Ancestry,Human',
+  'General Training':'Type=Ancestry,Human',
+  'Haughty Obstinacy':'Type=Ancestry,Human',
+  'Natural Ambition':'Type=Ancestry,Human',
+  'Natural Skill':'Type=Ancestry,Human',
+  'Unconventional Weaponry':'Type=Ancestry,Human',
+  // TODO requires "can cast 3rd level spells"
   'Adaptive Adept':
-    'Type=Ancestry Require="humanLevel >= 5","features.Adapted Cantrip"',
-  'Clever Improviser':'Type=Ancestry Require="humanLevel >= 5"',
+    'Type=Ancestry,Human Require="level >= 5","features.Adapted Cantrip"',
+  'Clever Improviser':'Type=Ancestry,Human Require="level >= 5"',
   'Cooperative Soul':
-    'Type=Ancestry Require="humanLevel >= 9","features.Cooperative Nature"',
+    'Type=Ancestry,Human Require="level >= 9","features.Cooperative Nature"',
   'Incredible Improvisation':
-    'Type=Ancestry Require="humanLevel >= 9","features.Clever Improviser"',
-  'Multitalented':'Type=Ancestry Require="humanLevel >= 9"',
-  // TODO require "trained in the weapon you chose for Unconventional Weaponry"
+    'Type=Ancestry,Human Require="level >= 9","features.Clever Improviser"',
+  'Multitalented':'Type=Ancestry,Human Require="level >= 9"',
+  // TODO requires "trained in the weapon you chose for Unconventional Weaponry"
   'Unconventional Expertise':
-    'Type=Ancestry ' +
-    'Require="humanLevel >= 13","features.Unconventional Weaponry"',
-  'Elf Atavism':'Type=Ancestry Require="humanLevel >= 1",features.Half-Elf',
-  'Inspire Imitation':
-    'Type=Ancestry Require="humanLevel >= 5",features.Half-Elf',
-  'Supernatural Charm':
-    'Type=Ancestry Require="humanLevel >= 5",features.Half-Elf',
-  'Monstrous Peacemaker':
-    'Type=Ancestry Require="humanLevel >= 1",features.Half-Orc',
-  'Orc Ferocity':'Type=Ancestry Require="humanLevel >= 1",features.Half-Orc',
-  'Orc Sight':
-    'Type=Ancestry ' +
-    'Require="humanLevel >= 1",features.Half-Orc,"features.Low-Light Vision"',
-  'Orc Superstition':
-    'Type=Ancestry Require="humanLevel >= 1",features.Half-Orc',
-  'Orc Weapon Familiarity':
-    'Type=Ancestry Require="humanLevel >= 1",features.Half-Orc',
+    'Type=Ancestry,Human ' +
+    'Require="level >= 13","features.Unconventional Weaponry"',
+  'Elf Atavism':'Type=Ancestry,Half-Elf',
+  'Inspire Imitation':'Type=Ancestry,Half-Elf Require="level >= 5"',
+  'Supernatural Charm':'Type=Ancestry,Half-Elf Require="level >= 5"',
+  'Monstrous Peacemaker':'Type=Ancestry,Half-Orc',
+  'Orc Ferocity':'Type=Ancestry,Orc',
+  'Orc Sight':'Type=Ancestry,Half-Orc Require="features.Low-Light Vision"',
+  'Orc Superstition':'Type=Ancestry,Orc',
+  'Orc Weapon Familiarity':'Type=Ancestry,Orc',
   'Orc Weapon Carnage':
-    'Type=Ancestry Require="humanLevel >= 5",features.Half-Orc,"features.Orc Weapon Familiarity"',
-  'Victorious Vigor':
-    'Type=Ancestry Require="humanLevel >= 5",features.Half-Orc',
+    'Type=Ancestry,Orc Require="level >= 5","features.Orc Weapon Familiarity"',
+  'Victorious Vigor':'Type=Ancestry,Orc Require="level >= 5"',
   'Pervasive Superstition':
-    'Type=Ancestry ' +
-    'Require="humanLevel >= 9",features.Half-Orc,"features.Orc Superstition"',
+    'Type=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
   'Incredible Ferocity':
-    'Type=Ancestry ' +
-    'Require="humanLevel >= 13",features.Half-Orc,"features.Orc Ferocity"',
+    'Type=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
   'Orc Weapon Expertise':
-    'Type=Ancestry ' +
-    'Require=' +
-      '"humanLevel >= 13",' +
-      'features.Half-Orc,' +
-      '"features.Orc Weapon Familiarity"',
+    'Type=Ancestry,Half-Orc ' +
+    'Require="level >= 13","features.Orc Weapon Familiarity"',
 
   // Class
   'Quick Alchemy':'Type=Class,Alchemist',
@@ -653,12 +644,12 @@ Pathfinder2E.FEATS = {
   'Uncanny Bombs':
     'Type=Class,Alchemist Require=level>=12,"features.Far Lobber"',
   'Glib Mutagen':'Type=Class,Alchemist Require=level>=14',
-  'Greater Merciful Exlixir':
+  'Greater Merciful Elixir':
     'Type=Class,Alchemist Require=level>=14,"features.Merciful Elixir"',
   'True Debilitating Bomb':
     'Type=Class,Alchemist ' +
     'Require=level>=14,"features.Greater Debilitating Bomb"',
-  'Eternal Exlixir':
+  'Eternal Elixir':
     'Type=Class,Alchemist Require=level>=16,"features.Extend Elixir"',
   'Exploitive Bomb':'Type=Class,Alchemist Require=level>=16',
   'Genius Mutagen':'Type=Class,Alchemist Require=level>=16',
@@ -672,6 +663,108 @@ Pathfinder2E.FEATS = {
   'Mega Bomb':
     'Type=Class,Alchemist Require=level>=20,"features.Expanded Splash"',
   'Perfect Mutagen':'Type=Class,Alchemist Require=level>=20',
+
+  'Double Slice':'Type=Class,Fighter',
+  'Exacting Strike':'Type=Class,Fighter',
+  'Point-Blank Shot':'Type=Class,Fighter',
+  'Power Attack':'Type=Class,Fighter',
+  'Reactive Shield':'Type=Class,Fighter',
+  'Snagging Strike':'Type=Class,Fighter',
+  'Sudden Charge':'Type=Class,Fighter',
+  'Aggressive Block':'Type=Class,Fighter Require="level >= 2"',
+  'Assisting Shot':'Type=Class,Fighter Require="level >= 2"',
+  'Brutish Shove':'Type=Class,Fighter Require="level >= 2"',
+  'Combat Grab':'Type=Class,Fighter Require="level >= 2"',
+  'Dueling Parry':'Type=Class,Fighter Require="level >= 2"',
+  'Intimidating Strike':'Type=Class,Fighter Require="level >= 2"',
+  'Lunge':'Type=Class,Fighter Require="level >= 2"',
+  'Double Shot':'Type=Class,Fighter Require="level >= 4"',
+  'Dual-Handed Assault':'Type=Class,Fighter Require="level >= 4"',
+  'Knockdown':'Type=Class,Fighter Require="level >= 4"',
+  'Powerful Shove':
+    'Type=Class,Fighter ' +
+    'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
+  'Quick Reversal':'Type=Class,Fighter Require="level >= 4"',
+  'Shielded Stride':'Type=Class,Fighter Require="level >= 4"',
+  'Swipe':'Type=Class,Fighter Require="level >= 4"',
+  'Twin Parry':'Type=Class,Fighter Require="level >= 4"',
+  'Advanced Weapon Training':'Type=Class,Fighter Require="level >= 6"',
+  'Advantageous Assault':'Type=Class,Fighter Require="level >= 6"',
+  // TODO requires trained in Athletics
+  'Disarming Stance':'Type=Class,Fighter Require="level >= 6"',
+  'Furious Focus':
+    'Type=Class,Fighter Require="level >= 6","features.Power Attack"',
+  "Guardian's Deflection":'Type=Class,Fighter Require="level >= 6"',
+  'Reflexive Shield':'Type=Class,Fighter Require="level >= 6"',
+  'Revealing Stab':'Type=Class,Fighter Require="level >= 6"',
+  'Shatter Defenses':'Type=Class,Fighter Require="level >= 6"',
+  'Shield Warden':
+    'Type=Class,Fighter Require="level >= 6","features.Shield Block"',
+  'Triple Shot':
+    'Type=Class,Fighter Require="level >= 6","features.Double Shot"',
+  // TODO requires master in Perception
+  'Blind Fight':'Type=Class,Fighter Require="level >= 8"',
+  'Dueling Riposte':
+    'Type=Class,Fighter Require="level >= 8","features.Dueling Parry"',
+  'Felling Strike':'Type=Class,Fighter Require="level >= 8"',
+  'Incredible Aim':'Type=Class,Fighter Require="level >= 8"',
+  'Mobile Shot Stance':'Type=Class,Fighter Require="level >= 8"',
+  'Positioning Assault':'Type=Class,Fighter Require="level >= 8"',
+  'Quick Shield Block':
+    'Type=Class,Fighter ' +
+    'Require="level >= 8","features.Shield Block","features.Reactive Shield"',
+  'Sudden Leap':'Type=Class,Fighter Require="level >= 8"',
+  'Agile Grace':'Type=Class,Fighter Require="level >= 10"',
+  'Certain Strike':'Type=Class,Fighter Require="level >= 10"',
+  'Combat Reflexes':'Type=Class,Fighter Require="level >= 10"',
+  'Debilitating Shot':'Type=Class,Fighter Require="level >= 10"',
+  // TODO requires trained in Athletics
+  'Disarming Twist':'Type=Class,Fighter Require="level >= 10"',
+  'Disruptive Stance':'Type=Class,Fighter Require="level >= 10"',
+  'Fearsome Brute':'Type=Class,Fighter Require="level >= 10"',
+  'Improved Knockdown':
+    'Type=Class,Fighter Require="level >= 10",features.Knockdown',
+  'Mirror Shield':'Type=Class,Fighter Require="level >= 10"',
+  'Twin Riposte':
+    'Type=Class,Fighter Require="level >= 10","features.Twin Parry"',
+  'Brutal Finish':'Type=Class,Fighter Require="level >= 12"',
+  'Dueling Dance':
+    'Type=Class,Fighter Require="level >= 12","features.Dueling Parry"',
+  'Flinging Shove':
+    'Type=Class,Fighter ' +
+    'Require="level >= 12","features.Aggressive Block||features.Brutish Shove"',
+  'Improved Dueling Riposte':
+    'Type=Class,Fighter Require="level >= 12","features.Dueling Riposte"',
+  'Incredible Ricochet':
+    'Type=Class,Fighter Require="level >= 12","features.Incredible Aim"',
+  'Lunging Stance':
+    'Type=Class,Fighter ' +
+    'Require="level >= 12","features.Attack Of Opportunity","features.Lunge"',
+  "Paragon's Guard":'Type=Class,Fighter Require="level >= 12"',
+  'Spring Attack':'Type=Class,Fighter Require="level >= 12"',
+  // TODO requires ability to use press action
+  'Desperate Finisher':'Type=Class,Fighter Require="level >= 14"',
+  'Determination':'Type=Class,Fighter Require="level >= 14"',
+  'Guiding Finish':'Type=Class,Fighter Require="level >= 14"',
+  'Guiding Riposte':
+    'Type=Class,Fighter Require="level >= 14","features.Dueling Riposte"',
+  'Improved Twin Riposte':
+    'Type=Class,Fighter Require="level >= 14","features.Twin Riposte"',
+  'Stance Savant':'Type=Class,Fighter Require="level >= 14"',
+  'Two-Weapon Flurry':'Type=Class,Fighter Require="level >= 14"',
+  'Whirlwind Strike':'Type=Class,Fighter Require="level >= 14"',
+  'Graceful Poise':
+    'Type=Class,Fighter Require="level >= 16","features.Double Slice"',
+  'Improved Reflexive Shield':
+    'Type=Class,Fighter Require="level >= 16","features.Reflexive Shield"',
+  'Multishot Stance':
+    'Type=Class,Fighter Require="level >= 16","features.Triple Shot"',
+  'Twinned Defense':
+    'Type=Class,Fighter Require="level >= 16","features.Twin Parry"',
+  'Impossible Volley':'Type=Class,Fighter Require="level >= 18"',
+  'Savage Critical':'Type=Class,Fighter Require="level >= 18"',
+  'Boundless Reprisals':'Type=Class,Fighter Require="level >= 20"',
+  'Weapon Supremacy':'Type=Class,Fighter Require="level >= 20"',
 
   // General
   'Adopted Ancestry':'Type=General',
@@ -724,7 +817,7 @@ Pathfinder2E.FEATS = {
   'Hefty Hauler':'Type=Skill Require="skills.Athletics >= 1"',
   'Quick Jump':'Type=Skill Require="skills.Athletics >= 1"',
   'Titan Wrestler':'Type=Skill Require="skills.Athletics >= 1"',
-  'Underwater Maurauder':'Type=Skill Require="skills.Athletics >= 1"',
+  'Underwater Marauder':'Type=Skill Require="skills.Athletics >= 1"',
   'Powerful Leap':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
   'Rapid Mantel':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
   'Quick Climb':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
@@ -845,7 +938,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Fire resistance %{level//2>?1}/DC 10 to recover from fire damage (DC 5 with help)"',
   'Darkvision':
-    'Section=feature Note="Normal b/w vision in darkness and dim light"',
+    'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
     'Section=save ' +
     'Note="A successful save vs. a necromancy effect is always a critical success"',
@@ -860,19 +953,24 @@ Pathfinder2E.FEATURES = {
   'Gutsy Halfling':
     'Section=save ' +
     'Note="Successful save vs. emotion is always a critical success"',
-  'Half-Elf':
-    'Section=feature Note="Has Elf trait and Low-Light Vision features"',
-  'Half-Orc':
-    'Section=combat Note="Has Orc trait and Low-Light Vision features"',
+  'Half-Elf':'Section=feature Note="Has Low-Light Vision feature"',
+  'Half-Orc':'Section=combat Note="Has Low-Light Vision feature"',
   'Hillock Halfling':
-    'Section=combat Note="Regains +%V HP from rest or treatment"',
+    'Section=combat Note="Regains +%{level} HP from rest or treatment"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
       '"+2 vs afflictions and sickened from ingestion, and a successful save is always a critical success"',
-  'Low-Light Vision':'Section=feature Note="Treats dim light as bright light"',
-  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
+  'Low-Light Vision':
+    'Section=feature Note="Can see in dim light as well as bright light"',
+  'Keen Eyes':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"DC 3/9 to target a concealed/hidden foe",' +
+      '"R30\' +2 Seek to find hidden creatures"',
+  'Nomadic Halfling':
+    'Section=skill Note="+%{2+(feats.Multilingual||0)}  Language Count"',
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6 HP"',
   'Rock Dwarf':
     'Section=save ' +
@@ -881,11 +979,12 @@ Pathfinder2E.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"May cast <i>Detect Magic</i> cantrip at will",' +
-      '"+1 Identify Magic and Deciper Writing of a magical nature"',
+      '"+1 Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill ' +
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
-  'Skilled Heritage':'Section=skill Note="Trained in chosen skill"',
+  'Skilled Heritage':
+    'Section=skill Note="%{level<5?\'Trained\':\'Expert\'} in chosen skill"',
   'Slow':'Section=ability Note="-10 Speed"',
   'Small':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
@@ -1003,7 +1102,7 @@ Pathfinder2E.FEATURES = {
   'First World Magic':
     'Section=magic Note="May cast chosen primal cantrip at will"',
   'Gnome Obsession':
-    'Section=skill Note="Skill %{level<2?\'Trained\':level<7?\'Expert\':levle<15?\'Master\':\'Legendary\'} in chosen and background Lore skill"',
+    'Section=skill Note="Skill %{level<2?\'Trained\':level<7?\'Expert\':level<15?\'Master\':\'Legendary\'} in chosen and background Lore skill"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -1078,85 +1177,111 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May Sneak at full speed and without cover"',
 
   'Distracting Shadows':
-    'Section=skill Note="May use larger creatures for Hide and Sneak"',
+    'Section=skill Note="May use larger creatures as cover for Hide and Sneak"',
   'Halfling Lore':
-    'Section=skill Note="Trained (Acrobatics; Stealth; Halfling Lore)"',
-  'Halfling Luck':'Section=feaure Note="May reroll skill or save 1/dy"',
+    'Section=skill Note="Skill Trained (Acrobatics; Stealth; Halfling Lore)"',
+  'Halfling Luck':
+    'Section=feature Note="May reroll a skill check or save 1/dy"',
   'Halfling Weapon Familiarity':
-    'Section=combat ' +
-    // TODO Proficiency step in "halfling weapons"
-    'Note="Weapon Training (Sling/Halfling Sling Staff/Shortsword)"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Proficiency (Sling; Halfling Sling Staff; Shortsword)",' +
+      '"Has access to uncommon halfling weapons/Treats halfling weapons as one category lower"',
   'Sure Feet':
     'Section=skill ' +
     'Note="Success on Acrobatics (balance) and Athletics (climb) is a critical success/Never flat-footed during balance or climb"',
   'Titan Slinger':
-    'Section=combat Note="+1 damage die step on slings against large+ foes"',
+    'Section=combat ' +
+    'Note="+1 damage die step on slings against Large and larger foes"',
   'Unfettered Halfling':
     'Section=combat ' +
-    'Note="All escape successes and vs. grabbed or restrained are critical successes/All foe Grapple fails are critical fails/Foe Grab requires Athletics"',
+    'Note="All escape successes and vs. grabbed or restrained are critical successes/All foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
   'Watchful Halfling':
-    'Section=combat,skill Note="May Aid to overcome enchantment","+2 Perception (sense enchantment), automatic check at -2"',
-  'Cultural Adaptability':'Section=feature Note="Has Adopted Ancestry feature"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"May use Aid to overcome enchantment",' +
+      '"+2 Perception (sense enchantment)/Gains an automatic -2 check to note enchantment"',
+  'Cultural Adaptability':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"+1 Ancestry feat",' +
+      '"Has Adopted Ancestry feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
-    'Note="Critical hits with shortsword, sling, or halfling weapon apply critical specialization effect"',
-  'Guiding Luck':'Section=skill Note="May reroll failed Perception 1/dy"',
-  'Irrepressible':'Section=save Note="Save vs. emotion crits%1"',
+    'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict critical specialization effect"',
+  'Guiding Luck':
+    'Section=skill ' +
+    'Note="May reroll a failed Perception check or attack roll 1/dy"',
+  'Irrepressible':
+    'Section=save ' +
+    'Note=' +
+      '"Successful save vs. emotion is always a critical success%{saveNotes.gutsyHalfling?\'; failure is never a critical failure\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
-    'Note="Hide and Sneak without cover, gain additional cover from creatures"',
+    'Note="May use Hide and Sneak without cover and gain additional cover from creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
-    'Note="Has expert proficiency in sling, halfling sling staff, shortsword, and halfling weapons"',
+     // TODO only if another feature grants expert or greater proficiency
+    'Note="Has expert proficiency in sling, halfling sling, shortsword, and halfling weapons"',
 
   'Adapted Cantrip':
-    'Section=magic Note="Knows 1 cantrip from a different tradition"',
-  'Cooperative Nature':'Section=skill Note="+4 Aid"',
-  'General Training':'Section=feature Note="+1 General feat"',
+    'Section=magic Note="Knows a cantrip from a different tradition"',
+  'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
+  'General Training':
+    'Section=feature Note="+%{$\'features.General Training\'} General feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="All foe Intimidation (Coerce) fails are critical fails"',
+    'Note="Successful save vs. control is always a critical success; foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=features Note="+1 Class feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  'Unconventional Weaponry':'Section=combat Note="Trained in choice of weapon"',
+  'Unconventional Weaponry':
+    'Section=combat Note="Trained in choice of uncommon weapon"',
   'Adaptive Adept':
     'Section=magic ' +
-    'Note="Knows cantrip or level 1 spell from a different tradition"',
+    'Note="Knows a cantrip or level 1 spell from a different tradition"',
   'Clever Improviser':
     'Section=feature,skill ' +
-    'Note="Has Untrained Improvisation feature","May use all skills untrained"',
+    'Note=' +
+      '"Has Untrained Improvisation feature",' +
+      '"May use any skill untrained"',
   'Cooperative Soul':
-    'Section=skill Note="Always succeeds on Aid of expert skills"',
-  'Incredible Improvisation':'Section=combat Note="+4 to untrained skill 1/dy"',
-  'Multitalented':'Section=combat Note="Has 2nd level multiclass feat"',
+    'Section=skill Note="Always succeeds when using Aid with expert skills"',
+  'Incredible Improvisation':
+    'Section=combat Note="May add +4 to an untrained skill check 1/dy"',
+  'Multitalented':'Section=combat Note="Has a 2nd level multiclass feat"',
   'Unconventional Expertise':
     'Section=combat ' +
-    'Note="has expert proficiency in Unconventional Weaponry weapon"',
+     // TODO only if another feature grants expert or greater proficiency
+    'Note="Has expert proficiency in Unconventional Weaponry weapon"',
 
-  'Elf Atavism':'Section=feature Note="Has elven features"',
-  'Inspire Imitation':'Section=skill Note="Automatic Aid on critical success"',
+  'Elf Atavism':'Section=feature Note="Has a feature from elven ancestry"',
+  'Inspire Imitation':
+    'Section=skill Note="May use Aid freely on skill critical success"',
   'Supernatural Charm':
     'Section=magic Note="May cast 1st level <i>Charm</i> 1/dy"',
   'Monstrous Peacemaker':
     'Section=skill ' +
-    'Note="+1 Diplomacy, Perception, and Sense Motive with marginalized"',
-  'Orc Ferocity':'Section=combat Note="May retain 1 HP when brought to 0 1/dy"',
+    'Note="+1 Diplomacy, Perception, and Sense Motive with creatures marginalized in human society"',
+  'Orc Ferocity':
+    'Section=combat Note="May retain 1 HP when brought to 0 HP 1/%{combatNotes.incredibleFerocity?\'hr\':\'dy\'}"',
   'Orc Sight':'Section=feature Note="Has Darkvision feature"',
   'Orc Superstition':'Section=save Note="+1 vs. magic 1/dy"',
   'Orc Weapon Familiarity':
-    'Section=combat ' +
-    // TODO Proficiency step in "orc weapons"
-    'Note="Weapon Training (Falchion/Greataxe/Orc Weapons)"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Proficiency (Falchion; Greataxe)",' +
+      '"Has access to uncommon orc weapons/Treats orc weapons as one category lower"',
   'Orc Weapon Carnage':
     'Section=combat ' +
-    'Note="Critical hits with falchion, greataxe, or orc weapon apply critical specialization effect"',
+    'Note="Critical hits with a falchion, greataxe, or orc weapon inflict critical specialization effect"',
   'Victorious Vigor':
     'Section=combat ' +
-    'Note="Gains %{constitutionModifer} temporary HP for 1 rd when foe drops"',
+    'Note="Gains %{constitutionModifier} temporary HP for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
   'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hr"',
   'Orc Weapon Expertise':
     'Section=combat ' +
+     // TODO only if another feature grants expert or greater proficiency
     'Note="Has expert proficiency in falchion, greataxe, and orc weapons"',
 
   // Background
@@ -1194,7 +1319,7 @@ Pathfinder2E.FEATURES = {
   'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic"',
   'Pickpocket':
     'Section=skill Note="May Steal closely-guarded object without penalty"',
-  'Quick Coercion':'Section=skill Note="May Corerce in 1 rd"',
+  'Quick Coercion':'Section=skill Note="May Coerce in 1 rd"',
   'Quick Jump':
     'Section=skill Note="May use High Jump and Long Jump as 1 action"',
   'Specialty Crafting':'Section=skill Note="+1 Craft on selected type"',
@@ -1226,9 +1351,105 @@ Pathfinder2E.FEATURES = {
     'Note="Never flat-footed in water/Suffers no penalty for bludgeoning or slashing weapons"',
 
   // Class
-  'Fighter Feats':'Section=feature Note="%V Fighter Feats"',
-  'General Feats':'Section=feature Note="%V General Feats"',
-  'Skill Feats':'Section=feature Note="%V Fighter Skill"'
+  'Fighter Feats':'Section=feature Note="%V selections"',
+  'General Feats':'Section=feature Note="%V selections"',
+  'Skill Feats':'Section=feature Note="%V selections"',
+  'Skill Increases':'Section=skill Note="%V selections"',
+
+  'Armor Expertise':'Section=feature Note="FILL"',
+  'Armor Mastery':'Section=feature Note="FILL"',
+  'Attack Of Opportunity':
+    'Section=combat ' +
+    'Note="May use Reaction to make a melee Strike at a foe within reach who uses a manipulate or move action, makes a ranged attack"',
+  'Battlefield Surveyor':'Section=feature Note="FILL"',
+  'Bravery':
+    'Section=save ' +
+    'Note="Save Expert (Will)/Successful Will save vs. fear is always a critical success/Reduces frightened condition by 1"',
+  'Combat Flexibility':'Section=feature Note="FILL"',
+  'Evasion':'Section=feature Note="FILL"',
+  'Fighter Expertise':'Section=feature Note="FILL"',
+  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
+  'Greater Weapon Specialization':'Section=feature Note="FILL"',
+  'Improved Flexibility':'Section=feature Note="FILL"',
+  'Juggernaut':'Section=feature Note="FILL"',
+  'Versatile Legend':'Section=feature Note="FILL"',
+  'Weapon Legend':'Section=feature Note="FILL"',
+  'Weapon Specialization':'Section=feature Note="FILL"',
+
+  'Double Slice':'Section=feature Note="FILL"',
+  'Exacting Strike':'Section=feature Note="FILL"',
+  'Point-Blank Shot':'Section=feature Note="FILL"',
+  'Power Attack':'Section=feature Note="FILL"',
+  'Reactive Shield':'Section=feature Note="FILL"',
+  'Snagging Strike':'Section=feature Note="FILL"',
+  'Sudden Charge':'Section=feature Note="FILL"',
+  'Aggressive Block':'Section=feature Note="FILL"',
+  'Assisting Shot':'Section=feature Note="FILL"',
+  'Brutish Shove':'Section=feature Note="FILL"',
+  'Combat Grab':'Section=feature Note="FILL"',
+  'Dueling Parry':'Section=feature Note="FILL"',
+  'Intimidating Strike':'Section=feature Note="FILL"',
+  'Lunge':'Section=feature Note="FILL"',
+  'Double Shot':'Section=feature Note="FILL"',
+  'Dual-Handed Assault':'Section=feature Note="FILL"',
+  'Knockdown':'Section=feature Note="FILL"',
+  'Powerful Shove':'Section=feature Note="FILL"',
+  'Quick Reversal':'Section=feature Note="FILL"',
+  'Shielded Stride':'Section=feature Note="FILL"',
+  'Swipe':'Section=feature Note="FILL"',
+  'Twin Parry':'Section=feature Note="FILL"',
+  'Advanced Weapon Training':'Section=feature Note="FILL"',
+  'Advantageous Assault':'Section=feature Note="FILL"',
+  'Disarming Stance':'Section=feature Note="FILL"',
+  'Furious Focus':'Section=feature Note="FILL"',
+  "Guardian's Deflection":'Section=feature Note="FILL"',
+  'Reflexive Shield':'Section=feature Note="FILL"',
+  'Revealing Stab':'Section=feature Note="FILL"',
+  'Shatter Defenses':'Section=feature Note="FILL"',
+  'Shield Warden':'Section=feature Note="FILL"',
+  'Triple Shot':'Section=feature Note="FILL"',
+  'Blind Fight':'Section=feature Note="FILL"',
+  'Dueling Riposte':'Section=feature Note="FILL"',
+  'Felling Strike':'Section=feature Note="FILL"',
+  'Incredible Aim':'Section=feature Note="FILL"',
+  'Mobile Shot Stance':'Section=feature Note="FILL"',
+  'Positioning Assault':'Section=feature Note="FILL"',
+  'Quick Shield Block':'Section=feature Note="FILL"',
+  'Sudden Leap':'Section=feature Note="FILL"',
+  'Agile Grace':'Section=feature Note="FILL"',
+  'Certain Strike':'Section=feature Note="FILL"',
+  'Combat Reflexes':'Section=feature Note="FILL"',
+  'Debilitating Shot':'Section=feature Note="FILL"',
+  'Disarming Twist':'Section=feature Note="FILL"',
+  'Disruptive Stance':'Section=feature Note="FILL"',
+  'Fearsome Brute':'Section=feature Note="FILL"',
+  'Improved Knockdown':'Section=feature Note="FILL"',
+  'Mirror Shield':'Section=feature Note="FILL"',
+  'Twin Riposte':'Section=feature Note="FILL"',
+  'Brutal Finish':'Section=feature Note="FILL"',
+  'Dueling Dance':'Section=feature Note="FILL"',
+  'Flinging Shove':'Section=feature Note="FILL"',
+  'Improved Dueling Riposte':'Section=feature Note="FILL"',
+  'Incredible Ricochet':'Section=feature Note="FILL"',
+  'Lunging Stance':'Section=feature Note="FILL"',
+  "Paragon's Guard":'Section=feature Note="FILL"',
+  'Spring Attack':'Section=feature Note="FILL"',
+  'Desperate Finisher':'Section=feature Note="FILL"',
+  'Determination':'Section=feature Note="FILL"',
+  'Guiding Finish':'Section=feature Note="FILL"',
+  'Guiding Riposte':'Section=feature Note="FILL"',
+  'Improved Twin Riposte':'Section=feature Note="FILL"',
+  'Stance Savant':'Section=feature Note="FILL"',
+  'Two-Weapon Flurry':'Section=feature Note="FILL"',
+  'Whirlwind Strike':'Section=feature Note="FILL"',
+  'Graceful Poise':'Section=feature Note="FILL"',
+  'Improved Reflexive Shield':'Section=feature Note="FILL"',
+  'Multishot Stance':'Section=feature Note="FILL"',
+  'Twinned Defense':'Section=feature Note="FILL"',
+  'Impossible Volley':'Section=feature Note="FILL"',
+  'Savage Critical':'Section=feature Note="FILL"',
+  'Boundless Reprisals':'Section=feature Note="FILL"',
+  'Weapon Supremacy':'Section=feature Note="FILL"'
 
 };
 Pathfinder2E.GOODIES = {
@@ -1484,15 +1705,13 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let ability in abilities) {
     ability = ability.toLowerCase();
     rules.defineChoice('notes', ability + ':%V (%1)');
-    rules.defineRule(ability, ability + 'Adjust', '+', null);
+    rules.defineRule(ability, ability + 'Boosts', '+', 'source * 2');
     rules.defineRule
       (ability + 'Modifier', ability, '=', 'Math.floor((source - 10) / 2)');
     rules.defineRule(ability + '.1', ability + 'Modifier', '=', null);
     rules.defineRule(ability, '', 'v', '20');
   }
-  rules.defineRule('speed',
-    '', '=', '25'
-  );
+  rules.defineRule('speed', '', '=', '30');
 
 };
 
@@ -1536,7 +1755,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Trait']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'CasterLevelArcane', 'CasterLevelDivine', 'SpellSlots']);
@@ -1646,7 +1865,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
@@ -1738,8 +1957,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     return;
   }
   if(type != 'Spell') {
-    type = type == 'Ancestry' ? 'ancestries' :
-           type == 'Class' ? 'levels' :
+    type = type == 'Class' ? 'levels' :
            type == 'Deity' ? 'deities' :
            (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
     rules.addChoice(type, name, attrs);
@@ -1823,8 +2041,6 @@ Pathfinder2E.ancestryRules = function(
   Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
-
-  rules.defineRule('hitPoints', ancestryLevel, '+', hitPoints);
 
 };
 
@@ -2094,6 +2310,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('featCount.Skill', 'featureNotes.skillFeats', '+=', null);
     rules.defineRule
       ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
+    rules.defineRule('skillBoosts', 'skillNotes.skillIncreases', '+=', null);
+    rules.defineRule('skillNotes.skillIncreases',
+      classLevel, '+=', 'Math.floor((source - 1) / 2)'
+    );
   }
 
 };
@@ -2191,20 +2411,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   if(name.startsWith('Ability Boost')) {
     rules.defineChoice('notes', 'abilityNotes.abilityBoost:%V to distribute');
     rules.defineRule('abilityNotes.abilityBoost', 'abilityBoost', '=', null);
-    rules.defineRule('abilityBoost', 'features.' + name, '+=', '2');
-  } else if(name == 'Cultural Adaptability') {
-    rules.defineRule('features.Adopted Ancestry',
-      'featureNotes.culturalAdaptability', '=', '1'
-    );
-  } else if(name == 'Irrepressible') {
-    rules.defineRule('saveNotes.irrepressible.1',
-      '', '=', '""',
-      'features.Gutsy Halfling', '=', '", no crit fail"'
-    );
-  } else if(name == 'Orc Sight') {
-    rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
-  } else if(name == 'Rough Rider') {
-    rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
+    rules.defineRule('abilityBoostCount', 'features.' + name, '+=', '2');
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
@@ -2892,17 +3099,17 @@ Pathfinder2E.initialEditorElements = function() {
     ['levels', 'Levels', 'bag', 'levels'],
     ['imageUrl', 'Image URL', 'text', [20]],
     ['strength', 'Str/Boost', 'select-one', abilityChoices],
-    ['strengthAdjust', '', 'text', [3]],
+    ['strengthBoosts', '', 'text', [3]],
     ['dexterity', 'Dex/Boost', 'select-one', abilityChoices],
-    ['dexterityAdjust', '', 'text', [3]],
+    ['dexterityBoosts', '', 'text', [3]],
     ['constitution', 'Con/Boost', 'select-one', abilityChoices],
-    ['constitutionAdjust', '', 'text', [3]],
+    ['constitutionBoosts', '', 'text', [3]],
     ['intelligence', 'Int/Boost', 'select-one', abilityChoices],
-    ['intelligenceAdjust', '', 'text', [3]],
+    ['intelligenceBoosts', '', 'text', [3]],
     ['wisdom', 'Wis/Boost', 'select-one', abilityChoices],
-    ['wisdomAdjust', '', 'text', [3]],
+    ['wisdomBoosts', '', 'text', [3]],
     ['charisma', 'Cha/Boost', 'select-one', abilityChoices],
-    ['charismaAdjust', '', 'text', [3]],
+    ['charismaBoosts', '', 'text', [3]],
     ['player', 'Player', 'text', [20]],
     ['alignment', 'Alignment', 'select-one', 'alignments'],
     ['gender', 'Gender', 'text', [10]],
@@ -3052,13 +3259,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes['armor'] = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'boosts') {
     let attrs = this.applyRules(attributes);
-    howMany = (attrs.abilityBoost || 0) - QuilvynUtils.sumMatching(attributes, /Adjust$/);
+    howMany = (attrs.abilityBoostCount || 0) - QuilvynUtils.sumMatching(attributes, /Boosts$/);
     while(howMany > 0) {
       attr = QuilvynUtils.randomKey(Pathfinder2E.ABILITIES).toLowerCase();
-      if(attributes[attr + 'Adjust'] == null)
-        attributes[attr + 'Adjust'] = 1;
+      if(attributes[attr + 'Boosts'] == null)
+        attributes[attr + 'Boosts'] = 1;
       else
-        attributes[attr + 'Adjust'] += 1;
+        attributes[attr + 'Boosts'] += 1;
       howMany--;
     }
   } else if(attribute == 'deity') {
