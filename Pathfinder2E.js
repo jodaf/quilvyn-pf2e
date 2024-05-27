@@ -23,7 +23,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  * Pathfinder2E function contains methods that load rules for particular parts
  * of the PRD: ancestryRules for character ancestries, magicRules for spells,
  * etc. These member methods can be called independently in order to use a
- * subset of the SRD v2 rules. Similarly, the constant fields of Pathfinder2E
+ * subset of the PRD v2 rules. Similarly, the constant fields of Pathfinder2E
  * (ALIGNMENTS, FEATS, etc.) can be manipulated to modify the choices.
  */
 function Pathfinder2E() {
@@ -82,10 +82,11 @@ Pathfinder2E.CHOICES = [
  * dependencies among attributes when generating random characters.
  */
 Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
-  'charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom',
-  'ancestry', 'gender', 'name', 'alignment', 'background', 'deity', 'levels',
-  'features', 'feats', 'skills', 'languages', 'hitPoints', 'armor', 'weapons',
-  'shield', 'spells', 'boosts'
+  'abilities',
+  'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
+  'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
+  'levels', 'boosts', 'features', 'feats', 'skills', 'languages',
+  'hitPoints', 'armor', 'weapons', 'shield', 'spells', 'boosts'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard'];
 
@@ -191,155 +192,155 @@ Pathfinder2E.ARMORS = {
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from Charisma, Constitution, Dexterity, Strength)",'+
       '"1:Skill Trained (Religion; Scribing Lore)","1:Student Of The Canon"',
   'Acrobat':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from Charisma, Constitution, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Acrobatics; Circus Lore)","1:Steady Balance"',
   'Animal Whisperer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from Constitution, Dexterity, Intelligence, Strength)",' +
       '"1:Skill Trained (Nature; Choose 1 from Plains Lore, Swamp Lore)",' +
       '"1:Train Animal"',
   'Artisan':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from Charisma, Constitution, Dexterity, Wisdom)",' +
       '"1:Skill Trained (Crafting; Guild Lore)","1:Specialty Crafting"',
   'Artist':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from Constitution, Intelligence, Strength, Wisdom)",' +
       '"1:Skill Trained (Crafting; Art Lore)","1:Specialty Crafting"',
   'Barkeep':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from Dexterity, Intelligence, Strength, Wisdom)",' +
       '"1:Skill Trained (Diplomacy; Alcohol Lore)",1:Hobnobber',
   'Barrister':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Diplomacy; Legal Lore)","1:Group Impression"',
   'Bounty Hunter':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from Charisma, Constitution, Dexterity, Intelligence)",' +
       '"1:Skill Trained (Survival; Legal Lore)","1:Experienced Tracker"',
   'Charlatan':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Deception; Underworld Lore)","1:Charming Liar"',
   'Criminal':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from Charisma, Constitution, Strength, Wisdom)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Detective':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from Charisma, Constitution, Dexterity, Strength)",' +
       '"1:Skill Trained (Society; Underworld Lore)",1:Streetwise',
   'Emissary':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained; Society; City Lore",1:Multilingual',
   'Entertainer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from Constitution, Intelligence, Strength, Wisdom)",' +
       '"1:Skill Trained (Performance; Theater Lore)",' +
       '"1:Fascinating Performance"',
   'Farmhand':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
       '"1:Skill Trained (Athletics; Farming Lore)","1:Assurance (Athletics)"',
   'Field Medic':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
-      '"1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Occultism; Fortune-Telling Lore)",' +
       '"1:Oddity Identification"',
   'Gambler':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from Constitution, Intelligence, Strength, Wisdom)",' +
       '"1:Skill Trained (Deception; Games Lore)","1:Lie To Me"',
   'Gladiator':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from Constitution, Dexterity, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Performance; Gladitorial Lore)",' +
       '"1:Impressive Performance"',
   'Guard':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from Constitution, Dexterity, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Intimidation; Legal Lore)","1:Quick Coercion"',
   'Herbalist':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
       '"1:Skill Trained (Nature; Herbalism Lore)","1:Natural Medicine"',
   'Hermit':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from Charisma, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Nature; Choose 1 from Cave Lore, Desert)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from Charisma, Constitution, Intelligence, Strength)",' +
       '"1:Skill Trained (Survival; Tanning Lore)","1:Survey Wildlife"',
   'Laborer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from Charisma, Dexterity, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
   'Martial Disciple':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from Charisma, Constitution, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
       // TODO: Cat Fall if Acrobatics chosen; Quick Jump if Athletics chosen
       '"1:Cat Fall",' +
       '"1:Quick Jump"',
   'Merchant':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Diplomacy, Mercantile Lore)","1:Bargain Hunter"',
   'Miner':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from Charisma, Constitution, Dexterity, Intelligence)",' +
       '"1:Skill Trained (Survival; Mining Lore)",' +
       '"1:Terrain Expertise (Underground)"',
   'Noble':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from Constitution, Dexterity, Strength, Wisdom)",' +
       '"1:Skill Trained (Society; Heraldry Lore)","1:Courtly Graces"',
   'Nomad':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from Charisma, Dexterity, Intelligence, Strength)",' +
       '"1:Skill Trained (Survival; Choose 1 from Desert Lore, Swamp Lore)",' +
       '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from Charisma, Dexterity, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Sailor':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from Charisma, Constitution, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
   'Scholar':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from Charisma, Constitution, Dexterity, Strength)",' +
       '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
       '"1:Assurance (chosen skill)"',
   'Scout':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from Charisma, Constitution, Intelligence, Strength)",' +
       '"1:Skill Trained (Survival; Choose 1 from Cavern Lore, Forest Lore)",' +
       '1:Forager',
   'Street Urchin':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from Charisma, Intelligence, Strength, Wisdom)",' +
       '"1:Skill Trained (Thieving; City Lore)",1:Pickpocket',
   'Tinker':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from Charisma, Constitution, Strength, Wisdom)",' +
       '"1:Skill Trained (Crafting; Engineering Lore)","1:Specialty Crafting"',
   'Warrior':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from Charisma, Dexterity, Intelligence, Wisdom)",' +
       '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
@@ -1702,15 +1703,15 @@ Pathfinder2E.PROFICIENCY_LEVEL_NAMES =
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
 
-  for(let ability in abilities) {
-    ability = ability.toLowerCase();
-    rules.defineChoice('notes', ability + ':%V (%1)');
-    rules.defineRule(ability, ability + 'Boosts', '+', 'source * 2');
-    rules.defineRule
-      (ability + 'Modifier', ability, '=', 'Math.floor((source - 10) / 2)');
-    rules.defineRule(ability + '.1', ability + 'Modifier', '=', null);
-    rules.defineRule(ability, '', 'v', '20');
+  for(let a in abilities) {
+    a = a.toLowerCase();
+    rules.defineChoice('notes', a + ':%V (%1)');
+    rules.defineRule(a, 'abilityBoosts.' + a, '+', 'source * 2');
+    rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
+    rules.defineRule(a + '.1', a + 'Modifier', '=', null);
+    rules.defineRule(a, '', 'v', '20');
   }
+  rules.defineRule('features.Ability Boost (Choose 4 from any)', '', '=', '1');
   rules.defineRule('speed', '', '=', '30');
 
 };
@@ -2408,11 +2409,7 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
  * derived directly from the attributes passed to featRules.
  */
 Pathfinder2E.featRulesExtra = function(rules, name) {
-  if(name.startsWith('Ability Boost')) {
-    rules.defineChoice('notes', 'abilityNotes.abilityBoost:%V to distribute');
-    rules.defineRule('abilityNotes.abilityBoost', 'abilityBoost', '=', null);
-    rules.defineRule('abilityBoostCount', 'features.' + name, '+=', '2');
-  } else if(name == 'Stonewalker') {
+  if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   }
@@ -2730,14 +2727,9 @@ Pathfinder2E.featureListRules = function(
     if(matchInfo) {
       let flaw = matchInfo[1].match(/flaw/i);
       matchInfo[2].split(/;\s*/).forEach(element => {
-        matchInfo = element.match(/^Choose\s+(\d+)\s+from/i);
-        if(matchInfo) {
-          rules.defineRule
-            ('abilityBoostCount', setName + '.' + feature, '+=', matchInfo[1]);
-        } else {
+        if(!element.match(/Choose/))
           rules.defineRule
             (element.toLowerCase(), setName + '.' + feature, '+', flaw ? '-2' : '2');
-        }
       });
     }
   }
@@ -3235,7 +3227,74 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   let i;
   let matchInfo;
 
-  if(attribute == 'armor') {
+  if(attribute == 'abilities' ||
+     attribute.charAt(0).toUpperCase() + attribute.substring(1) in Pathfinder2E.ABILITIES) {
+    for(attr in Pathfinder2E.ABILITIES) {
+      attr = attr.toLowerCase();
+      if(attribute != attr && attribute == 'abilities')
+        continue;
+      if(!(attr in attributes))
+        attributes[attr] = 10;
+      else if(attributes[attr] != 10) {
+        let rolls = [];
+        for(i = 0; i < 4; i++)
+          rolls.push(QuilvynUtils.random(1, 6));
+        rolls.sort();
+        attributes[attr] = rolls[1] + rolls[2] + rolls[3];
+      }
+    }
+  } else if(attribute == 'boosts') {
+    attrs = this.applyRules(attributes);
+    let notes = this.getChoices('notes');
+    howMany = 0;
+    let potentialBoosts = {};
+    for(attr in Pathfinder2E.ABILITIES)
+      potentialBoosts[attr] = 0;
+    potentialBoosts.any = potentialBoosts.Any = 0;
+    for(attr in attrs) {
+      if((matchInfo = attr.match(/^features.Ability\s+Boost\s+\((.*)\)/gi)))
+        ; // empty
+      else if(!notes[attr] ||
+         (matchInfo = notes[attr].match(/Ability\s+Boost\s+\((.*)\)/gi))==null)
+        continue;
+      matchInfo.forEach(matched => {
+        matched.split(/;\s*/).forEach(boosted => {
+          let choices = boosted.match(/Choose\s+(%V|\d+)\s+from\s+([^\)]*)/i);
+          if(choices) {
+            let amount =
+              !choices[1].startsWith('%') ? choices[1] - 0 : attrs[attr];
+            howMany += amount;
+            choices[2].split(/\s*,\s*/).forEach(choice => {
+              potentialBoosts[choice.charAt(0).toUpperCase() + choice.substring(1).toLowerCase()] += 1;
+            });
+          }
+        });
+      });
+    }
+    for(attr in Pathfinder2E.ABILITIES)
+      potentialBoosts[attr] += potentialBoosts.Any + potentialBoosts.any;
+    delete potentialBoosts.Any;
+    delete potentialBoosts.any;
+    for(attr in Pathfinder2E.ABILITIES) {
+      if(('abilityBoosts.' + attr) in attributes) {
+        potentialBoosts[attr] -= attributes['abilityBoosts.' + attr];
+        howMany -= attributes['abilityBoosts.' + attr];
+      }
+    }
+    console.log(potentialBoosts);
+    while(howMany > 0 && QuilvynUtils.sumMatching(potentialBoosts, /./) > 0) {
+      attr = QuilvynUtils.randomKey(potentialBoosts);
+      if(potentialBoosts[attr] <= 0)
+        continue;
+      console.log(attr);
+      potentialBoosts[attr]--;
+      attr = attr.toLowerCase();
+      if(!attributes['abilityBoosts.' + attr])
+        attributes['abilityBoosts.' + attr] = 0;
+      attributes['abilityBoosts.' + attr]++;
+      howMany--;
+    }
+  } else if(attribute == 'armor') {
     let armors = this.getChoices('armors');
     attrs = this.applyRules(attributes);
     choices = [];
@@ -3257,17 +3316,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         choices.push(attr);
     }
     attributes['armor'] = choices[QuilvynUtils.random(0, choices.length - 1)];
-  } else if(attribute == 'boosts') {
-    let attrs = this.applyRules(attributes);
-    howMany = (attrs.abilityBoostCount || 0) - QuilvynUtils.sumMatching(attributes, /Boosts$/);
-    while(howMany > 0) {
-      attr = QuilvynUtils.randomKey(Pathfinder2E.ABILITIES).toLowerCase();
-      if(attributes[attr + 'Boosts'] == null)
-        attributes[attr + 'Boosts'] = 1;
-      else
-        attributes[attr + 'Boosts'] += 1;
-      howMany--;
-    }
   } else if(attribute == 'deity') {
     /* Pick a deity that's no more than one alignment position removed. */
     let aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
@@ -3538,14 +3586,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     pickAttrs(attributes, 'weapons.', choices,
               3 - QuilvynUtils.sumMatching(attributes, /^weapons\./), 1);
-  } else if(attribute == 'charisma' || attribute == 'constitution' ||
-     attribute == 'dexterity' || attribute == 'intelligence' ||
-     attribute == 'strength' || attribute == 'wisdom') {
-    let rolls = [];
-    for(i = 0; i < 4; i++)
-      rolls[i] = QuilvynUtils.random(1, 6);
-    rolls.sort();
-    attributes[attribute] = rolls[1] + rolls[2] + rolls[3];
   } else if(this.getChoices(attribute + 's') != null) {
     attributes[attribute] =
       QuilvynUtils.randomKey(this.getChoices(attribute + 's'));
