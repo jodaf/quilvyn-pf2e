@@ -3208,6 +3208,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   }
 
+  function randomElement(list) {
+    return list.length>0 ? list[QuilvynUtils.random(0, list.length - 1)] : '';
+  }
+
   let attr;
   let attrs;
   let choices;
@@ -3232,13 +3236,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'boosts') {
+    let boostsAllocated = {};
+    for(attr in Pathfinder2E.ABILITIES) {
+      attr = attr.toLowerCase();
+      boostsAllocated[attr] = attributes['abilityBoosts.' + attr] || 0;
+    }
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
-    howMany = 0;
-    let potentialBoosts = {};
-    for(attr in Pathfinder2E.ABILITIES)
-      potentialBoosts[attr.toLowerCase()] = 0;
-    potentialBoosts.any = 0;
     for(attr in attrs) {
       if((matchInfo = attr.match(/\wfeatures.Ability\s+Boost\s+\([^\)]*\)/gi)))
         ; // empty
@@ -3246,85 +3250,66 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
          (matchInfo = notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
-        matched.split(/;\s*/).forEach(boost => {
-          let choices = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
-          if(choices) {
-            let amount =
-              !choices[1].startsWith('%') ? choices[1] - 0 : attrs[attr];
-            howMany += amount;
-            choices[2].split(/\s*,\s*/).forEach(choice => {
-              potentialBoosts[choice.toLowerCase()] += 1;
+        matched.split(/\s*;\s*/).forEach(boost => {
+          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+          if(m) {
+            console.log(boost);
+            howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
+            choices = m[2].match(/^any$/i) ? Object.keys(Pathfinder2E.ABILITIES) : m[2].split(/\s*,\s*/);
+            choices = choices.map(x => x.toLowerCase());
+            choices.forEach(choice => {
+              if(howMany > 0 && boostsAllocated[choice] > 0) {
+                howMany--;
+                boostsAllocated[choice]--;
+              }
             });
+            while(howMany > 0 && choices.length > 0) {
+              let choice = randomElement(choices);
+              console.log('Boosting ' + choice);
+              attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
+              howMany--;
+              choices = choices.filter(x => x != choice);
+            }
           }
         });
       });
-    }
-    for(attr in Pathfinder2E.ABILITIES) {
-      attr = attr.toLowerCase();
-      potentialBoosts[attr] += potentialBoosts.any;
-      if(('abilityBoosts.' + attr) in attributes) {
-        potentialBoosts[attr] -= attributes['abilityBoosts.' + attr];
-        howMany -= attributes['abilityBoosts.' + attr];
-      }
-    }
-    delete potentialBoosts.any;
-    while(howMany > 0 && QuilvynUtils.sumMatching(potentialBoosts, /./) > 0) {
-      attr = QuilvynUtils.randomKey(potentialBoosts);
-      if(potentialBoosts[attr] <= 0)
-        continue;
-      potentialBoosts[attr]--;
-      if(!attributes['abilityBoosts.' + attr])
-        attributes['abilityBoosts.' + attr] = 0;
-      attributes['abilityBoosts.' + attr]++;
-      howMany--;
     }
   } else if(attribute == 'skills') {
+    let boostsAllocated = {};
+    for(attr in Pathfinder2E.SKILLS) {
+      boostsAllocated[attr] = attributes['skillBoosts.' + attr] || 0;
+    }
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
-    howMany = 0;
-    let potentialBoosts = {};
-    for(attr in Pathfinder2E.SKILLS)
-      potentialBoosts[attr] = 0;
-    potentialBoosts.any = 0;
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Trained)\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/\wfeatures.SKILL\s+(Trained|Expert)\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Expert|Trained)\s+\([^\)]*\)/gi))==null)
+         (matchInfo = notes[attr].match(/Skill\s+(Trained|Expert)\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
-        matched.split(/;\s*/).forEach(boost => {
-          let choices = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
-          if(choices) {
-            let amount =
-              !choices[1].startsWith('%') ? choices[1] - 0 : attrs[attr];
-            howMany += amount;
-            choices[2].split(/\s*,\s*/).forEach(choice => {
-              potentialBoosts[choice] += 1;
+        matched.split(/\s*;\s*/).forEach(boost => {
+          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+          if(m) {
+            console.log(boost);
+            howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
+            choices = m[2].match(/^any$/i) ? Object.keys(Pathfinder2E.SKILLS) : m[2].split(/\s*,\s*/);
+            choices.forEach(choice => {
+              if(howMany > 0 && boostsAllocated[choice] > 0) {
+                howMany--;
+                boostsAllocated[choice]--;
+              }
             });
+            while(howMany > 0 && choices.length > 0) {
+              let choice = randomElement(choices);
+              console.log('Boosting ' + choice);
+              attributes['skillBoosts.' + choice] = (attributes['skillBoosts.' + choice] || 0) + 1;
+              howMany--;
+              choices = choices.filter(x => x != choice);
+            }
           }
         });
       });
-    }
-    for(attr in Pathfinder2E.SKILLS) {
-      potentialBoosts[attr] += potentialBoosts.any;
-      if(('skillBoosts.' + attr) in attributes) {
-        potentialBoosts[attr] -= attributes['skillBoosts.' + attr];
-        howMany -= attributes['skillBoosts.' + attr];
-      }
-    }
-    delete potentialBoosts.any;
-    console.log(potentialBoosts);
-    console.log(howMany);
-    while(howMany > 0 && QuilvynUtils.sumMatching(potentialBoosts, /./) > 0) {
-      attr = QuilvynUtils.randomKey(potentialBoosts);
-      if(potentialBoosts[attr] <= 0)
-        continue;
-      potentialBoosts[attr]--;
-      if(!attributes['skillBoosts.' + attr])
-        attributes['skillBoosts.' + attr] = 0;
-      attributes['skillBoosts.' + attr]++;
-      howMany--;
     }
   } else if(attribute == 'armor') {
     let armors = this.getChoices('armors');
