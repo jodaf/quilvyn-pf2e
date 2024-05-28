@@ -16,6 +16,8 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 */
 
 /*jshint esversion: 6 */
+/* jshint forin: false */
+/* globals ObjectViewer, Quilvyn, QuilvynRules, QuilvynUtils, SRD35 */
 "use strict";
 
 /*
@@ -1014,7 +1016,7 @@ Pathfinder2E.FEATURES = {
 
   // Ancestry feats
   'Dwarven Lore':
-    'Section=skill Note="Skill Training (Crafting/Religion/Dwarven Lore)"',
+    'Section=skill Note="Skill Trained (Crafting/Religion/Dwarven Lore)"',
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -1604,6 +1606,7 @@ Pathfinder2E.SKILLS = {
   'Athletics':'Ability=strength',
   'Crafting':'Ability=intelligence',
   'Deception':'Ability=charisma',
+  'Diplomacy':'Ability=charisma',
   'Intimidation':'Ability=charisma',
   'Lore':'Ability=intelligence',
   'Medicine':'Ability=wisdom',
@@ -1936,8 +1939,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Skill')
     Pathfinder2E.skillRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Ability'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Class')
+      QuilvynUtils.getAttrValue(attrs, 'Ability')
     );
   else if(type == 'Spell')
     Pathfinder2E.spellRules(rules, name,
@@ -2075,7 +2077,7 @@ Pathfinder2E.armorRules = function(
     return;
   }
   if(bulk == '.1')
-    bulk = .1;
+    bulk = 0.1;
   if(typeof bulk != 'number') {
     console.log('Bad bulk "' + bulk + '" for armor ' + name);
   }
@@ -2513,9 +2515,8 @@ Pathfinder2E.shieldRules = function(rules, name, ac) {
 /*
  * Defines in #rules# the rules associated with skill #name#, associated with
  * #ability# (one of 'strength', 'intelligence', etc.).
- * #classes# lists any classes that are proficient in this skill.
  */
-Pathfinder2E.skillRules = function(rules, name, ability, classes) {
+Pathfinder2E.skillRules = function(rules, name, ability) {
 
   if(!name) {
     console.log('Empty skill name');
@@ -2528,18 +2529,10 @@ Pathfinder2E.skillRules = function(rules, name, ability, classes) {
       return;
     }
   }
-  if(!Array.isArray(classes)) {
-    console.log('Bad classes list "' + classes + '" for skill ' + name);
-    return;
-  }
 
-  for(let i = 0; i < classes.length; i++) {
-    rules.defineRule
-      ('skillProficiency.' + name, 'levels.' + classes[i], '=', '1');
-  }
   rules.defineRule('skillProficiency.' + name,
     '', '=', '0',
-    'skillsChosen.' + name, '=', 'source ? 1 : null'
+    'skillBoosts.' + name, '+', 'source ? 1 : null'
   );
   rules.defineChoice
     ('notes', 'skills.' + name + ':(' + ability.substring(0, 3) + ') %V (%1)');
@@ -2712,18 +2705,13 @@ Pathfinder2E.featureListRules = function(
       let group = matchInfo[1].toLowerCase();
       let proficiency = matchInfo[2] == 'Expert' ? 2 : 1;
       matchInfo[3].split(/;\s*/).forEach(element => {
-        matchInfo = element.match(/^Choose\s+(\d+)\s+from/i);
-        if(matchInfo) {
-          rules.defineRule
-            (group + 'ChoiceCount', setName + '.' + feature, '+=', matchInfo[1]);
-        } else {
+        if(!element.match(/Choose/))
           rules.defineRule(group + 'Proficiency.' + element,
-            setName + '.' + feature, '=', proficiency
+            setName + '.' + feature, '^=', proficiency
           );
-        }
       });
     }
-    matchInfo = feature.match(/Ability (Boost|Flaw)\s*\((.*)\)$/i);
+    matchInfo = feature.match(/Ability\s(Boost|Flaw)\s*\((.*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[1].match(/flaw/i);
       matchInfo[2].split(/;\s*/).forEach(element => {
@@ -2852,7 +2840,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'LoadInfo', within: 'AbilityStats', separator: ''},
               {name: 'Carry', within: 'LoadInfo',
                format: '<b>Carry/Lift:</b> %V'},
-              {name: 'Lift', within: 'LoadInfo', format: '/%V'},
+              {name: 'Lift', within: 'LoadInfo', format: '/%V'}
       );
       if(name != 'Collected Notes') {
         viewer.addElements(
@@ -2911,7 +2899,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Gear', within: 'CombatPart', separator: innerSep},
               {name: 'Armor', within: 'Gear'},
               {name: 'Shield', within: 'Gear'},
-              {name: 'Weapons', within: 'Gear', separator: listSep},
+              {name: 'Weapons', within: 'Gear', separator: listSep}
       );
       if(name != 'Collected Notes') {
         viewer.addElements(
@@ -3109,7 +3097,7 @@ Pathfinder2E.initialEditorElements = function() {
     ['origin', 'Origin', 'text', [20]],
     ['feats', 'Feats', 'set', 'feats'],
     ['selectableFeatures', 'Selectable Features', 'set', 'selectableFeatures'],
-    ['skillsChosen', 'Skills', 'set', 'skills'],
+    ['skillBoosts', 'Skills', 'set', 'skills'],
     ['languages', 'Languages', 'set', 'languages'],
     ['hitPoints', 'Hit Points', 'text', [4]],
     ['armor', 'Armor', 'select-one', 'armors'],
@@ -3231,7 +3219,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
      attribute.charAt(0).toUpperCase() + attribute.substring(1) in Pathfinder2E.ABILITIES) {
     for(attr in Pathfinder2E.ABILITIES) {
       attr = attr.toLowerCase();
-      if(attribute != attr && attribute == 'abilities')
+      if(attribute != attr && attribute != 'abilities')
         continue;
       if(!(attr in attributes))
         attributes[attr] = 10;
@@ -3249,49 +3237,93 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     howMany = 0;
     let potentialBoosts = {};
     for(attr in Pathfinder2E.ABILITIES)
-      potentialBoosts[attr] = 0;
-    potentialBoosts.any = potentialBoosts.Any = 0;
+      potentialBoosts[attr.toLowerCase()] = 0;
+    potentialBoosts.any = 0;
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^features.Ability\s+Boost\s+\((.*)\)/gi)))
+      if((matchInfo = attr.match(/\wfeatures.Ability\s+Boost\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Ability\s+Boost\s+\((.*)\)/gi))==null)
+         (matchInfo = notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
-        matched.split(/;\s*/).forEach(boosted => {
-          let choices = boosted.match(/Choose\s+(%V|\d+)\s+from\s+([^\)]*)/i);
+        matched.split(/;\s*/).forEach(boost => {
+          let choices = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
           if(choices) {
             let amount =
               !choices[1].startsWith('%') ? choices[1] - 0 : attrs[attr];
             howMany += amount;
             choices[2].split(/\s*,\s*/).forEach(choice => {
-              potentialBoosts[choice.charAt(0).toUpperCase() + choice.substring(1).toLowerCase()] += 1;
+              potentialBoosts[choice.toLowerCase()] += 1;
             });
           }
         });
       });
     }
-    for(attr in Pathfinder2E.ABILITIES)
-      potentialBoosts[attr] += potentialBoosts.Any + potentialBoosts.any;
-    delete potentialBoosts.Any;
-    delete potentialBoosts.any;
     for(attr in Pathfinder2E.ABILITIES) {
+      attr = attr.toLowerCase();
+      potentialBoosts[attr] += potentialBoosts.any;
       if(('abilityBoosts.' + attr) in attributes) {
         potentialBoosts[attr] -= attributes['abilityBoosts.' + attr];
         howMany -= attributes['abilityBoosts.' + attr];
       }
     }
-    console.log(potentialBoosts);
+    delete potentialBoosts.any;
     while(howMany > 0 && QuilvynUtils.sumMatching(potentialBoosts, /./) > 0) {
       attr = QuilvynUtils.randomKey(potentialBoosts);
       if(potentialBoosts[attr] <= 0)
         continue;
-      console.log(attr);
       potentialBoosts[attr]--;
-      attr = attr.toLowerCase();
       if(!attributes['abilityBoosts.' + attr])
         attributes['abilityBoosts.' + attr] = 0;
       attributes['abilityBoosts.' + attr]++;
+      howMany--;
+    }
+  } else if(attribute == 'skills') {
+    attrs = this.applyRules(attributes);
+    let notes = this.getChoices('notes');
+    howMany = 0;
+    let potentialBoosts = {};
+    for(attr in Pathfinder2E.SKILLS)
+      potentialBoosts[attr] = 0;
+    potentialBoosts.any = 0;
+    for(attr in attrs) {
+      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Trained)\s+\([^\)]*\)/gi)))
+        ; // empty
+      else if(!notes[attr] ||
+         (matchInfo = notes[attr].match(/Skill\s+(Expert|Trained)\s+\([^\)]*\)/gi))==null)
+        continue;
+      matchInfo.forEach(matched => {
+        matched.split(/;\s*/).forEach(boost => {
+          let choices = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+          if(choices) {
+            let amount =
+              !choices[1].startsWith('%') ? choices[1] - 0 : attrs[attr];
+            howMany += amount;
+            choices[2].split(/\s*,\s*/).forEach(choice => {
+              potentialBoosts[choice] += 1;
+            });
+          }
+        });
+      });
+    }
+    for(attr in Pathfinder2E.SKILLS) {
+      potentialBoosts[attr] += potentialBoosts.any;
+      if(('skillBoosts.' + attr) in attributes) {
+        potentialBoosts[attr] -= attributes['skillBoosts.' + attr];
+        howMany -= attributes['skillBoosts.' + attr];
+      }
+    }
+    delete potentialBoosts.any;
+    console.log(potentialBoosts);
+    console.log(howMany);
+    while(howMany > 0 && QuilvynUtils.sumMatching(potentialBoosts, /./) > 0) {
+      attr = QuilvynUtils.randomKey(potentialBoosts);
+      if(potentialBoosts[attr] <= 0)
+        continue;
+      potentialBoosts[attr]--;
+      if(!attributes['skillBoosts.' + attr])
+        attributes['skillBoosts.' + attr] = 0;
+      attributes['skillBoosts.' + attr]++;
       howMany--;
     }
   } else if(attribute == 'armor') {
@@ -3315,7 +3347,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
          attrs['armorProficiency.' + attr])
         choices.push(attr);
     }
-    attributes['armor'] = choices[QuilvynUtils.random(0, choices.length - 1)];
+    attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'deity') {
     /* Pick a deity that's no more than one alignment position removed. */
     let aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
@@ -3414,7 +3446,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         (notes != null ? attributes.notes + '\n' : '') + debug.join('\n');
     }
   } else if(attribute == 'gender') {
-    attributes['gender'] = QuilvynUtils.random(0, 99) < 50 ? 'Female' : 'Male';
+    attributes.gender = QuilvynUtils.random(0, 99) < 50 ? 'Female' : 'Male';
   } else if(attribute == 'hitPoints') {
     attributes.hitPoints = 0;
     for(let clas in this.getChoices('levels')) {
@@ -3444,7 +3476,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let assignedLevels = QuilvynUtils.sumMatching(attributes, /^levels\./);
     if(!attributes.level) {
       if(assignedLevels > 0)
-        attributes.level = assignedLevels
+        attributes.level = assignedLevels;
       else if(attributes.experience)
         attributes.level =
           Math.floor((1 + Math.sqrt(1 + attributes.experience/125)) / 2);
@@ -3484,7 +3516,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     delete attributes.level;
   } else if(attribute == 'name') {
-    attributes['name'] = Pathfinder2E.randomName(attributes['ancestry']);
+    attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
     attrs = this.applyRules(attributes);
     choices = [''];
@@ -3495,50 +3527,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         choices.push(attr);
       }
     }
-    attributes['shield'] = choices[QuilvynUtils.random(0, choices.length - 1)];
-  } else if(attribute == 'skills') {
-    attrs = this.applyRules(attributes);
-    let group = this.getChoices(attribute);
-    for(attr in attrs) {
-    let pat = new RegExp('^features.' + attribute.replace(/s$/, '') + ' Proficiency \\((.*)\\)$', 'i');
-      if((matchInfo = attr.match(pat)) == null ||
-         !matchInfo[1].match(/\bChoose\b/i))
-        continue;
-      let pieces = matchInfo[1].split('/');
-      for(i = 0; i < pieces.length; i++) {
-        matchInfo = pieces[i].match(/^Choose\s+(\d+)\s+from\s+(.*)$/i)
-        if(!matchInfo)
-          continue;
-        let count = matchInfo[1] * 1;
-        if(matchInfo[2].match(/^any$/i)) {
-          choices = QuilvynUtils.getKeys(group);
-        } else {
-          choices = matchInfo[2].split(/\s*,\s*/);
-          for(let j = choices.length - 1; j >= 0; j--) {
-            if(choices[j].match(/^any\s+/i)) {
-              let type = choices[j].replace(/^any\s+/, '');
-              for(let item in group) {
-                if(group[item].includes(type))
-                  choices.push(item);
-              }
-              choices.splice(j, 1);
-            }
-          }
-        }
-        for(let k = choices.length - 1; k >= 0; k--) {
-          if(!attrs[attribute + 'Chosen.' + choices[k]])
-            continue;
-          count--;
-          choices.splice(k, 1);
-        }
-      }
-      pickAttrs(attributes, attribute + 'Chosen.', choices, count, 1);
-    }
-    pickAttrs(
-      attributes, attribute + 'Chosen.', QuilvynUtils.getKeys(group),
-      attrs[attribute.replace(/s$/, '') + 'ChoiceCount'] -
-      QuilvynUtils.sumMatching(attributes, '^' + attribute + 'Chosen'), 1
-    );
+    attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'spells') {
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
@@ -3636,7 +3625,7 @@ Pathfinder2E.makeValid = function(attributes) {
           if(matchInfo != null) {
             break;
           }
-          choices = choices.slice(0, index).concat(choice.slice(index + 1));
+          choices = choices.slice(0, index).concat(choices.slice(index + 1));
         }
         if(matchInfo == null) {
           continue;
@@ -3646,7 +3635,7 @@ Pathfinder2E.makeValid = function(attributes) {
         let toFixName = matchInfo[1].replace(/\s+$/, '');
         let toFixOp = matchInfo[3] == null ? '>=' : matchInfo[3];
         let toFixValue =
-          matchInfo[4] == null ? 1 : matchInfo[4].replace(/^\s+/, '');;
+          matchInfo[4] == null ? 1 : matchInfo[4].replace(/^\s+/, '');
         if(toFixName.match(/^(Max|Sum)/)) {
           toFixCombiner = toFixName.substring(0, 3);
           toFixName = toFixName.substring(4).replace(/^\s+/, '');
@@ -3791,7 +3780,7 @@ Pathfinder2E.makeValid = function(attributes) {
 Pathfinder2E.ruleNotes = function() {
   return '' +
     '<h2>Pathfinder2E Quilvyn Module Notes</h2>\n' +
-    'Pathfinder2E Quilvyn Module Version ' + Pathfinder2E_VERSION + '\n' +
+    'Pathfinder2E Quilvyn Module Version ' + Pathfinder2E.VERSION + '\n' +
     '\n' +
     '<h3>Usage Notes</h3>\n' +
     '<p>\n' +
