@@ -240,7 +240,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Emissary':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained; Society; City Lore",1:Multilingual',
+      '"1:Skill Trained (Society; City Lore)",1:Multilingual',
   'Entertainer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
@@ -1651,23 +1651,23 @@ Pathfinder2E.SHIELDS = {
   'Tower':'AC=2 Speed=5 Bulk=4'
 };
 Pathfinder2E.SKILLS = {
-  'Acrobatics':'Ability=dexterity',
-  'Arcana':'Ability=intelligence',
-  'Athletics':'Ability=strength',
-  'Crafting':'Ability=intelligence',
-  'Deception':'Ability=charisma',
-  'Diplomacy':'Ability=charisma',
-  'Intimidation':'Ability=charisma',
-  '%lore Lore':'Ability=intelligence',
-  'Medicine':'Ability=wisdom',
-  'Nature':'Ability=wisdom',
-  'Occultism':'Ability=intelligence',
-  'Performance':'Ability=charisma',
-  'Religion':'Ability=wisdom',
-  'Society':'Ability=intelligence',
-  'Stealth':'Ability=dexterity',
-  'Survival':'Ability=wisdom',
-  'Thievery':'Ability=dexterity'
+  'Acrobatics':'Ability=Dexterity',
+  'Arcana':'Ability=Intelligence',
+  'Athletics':'Ability=Strength',
+  'Crafting':'Ability=Intelligence',
+  'Deception':'Ability=Charisma',
+  'Diplomacy':'Ability=Charisma',
+  'Intimidation':'Ability=Charisma',
+  '%lore Lore':'Ability=Intelligence',
+  'Medicine':'Ability=Wisdom',
+  'Nature':'Ability=Wisdom',
+  'Occultism':'Ability=Intelligence',
+  'Performance':'Ability=Charisma',
+  'Religion':'Ability=Wisdom',
+  'Society':'Ability=Intelligence',
+  'Stealth':'Ability=Dexterity',
+  'Survival':'Ability=Wisdom',
+  'Thievery':'Ability=Dexterity'
 };
 Pathfinder2E.SPELLS = {
   // TODO
@@ -1751,7 +1751,7 @@ Pathfinder2E.WEAPONS = {
 };
 
 Pathfinder2E.PROFICIENCY_LEVEL_NAMES =
-  ['Untrained', 'Trained', 'Expert', 'Master', 'Legendary'];
+  ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
@@ -1804,17 +1804,16 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   let saves =
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
-    rules.defineChoice
-      ('notes', 'save.' + s + ': (' + saves[s].substring(0, 3) + ') %V (%1)');
+    rules.defineChoice('notes', 'save.' + s + ':%V (' + saves[s] + '; %1)');
     rules.defineRule('saveProficiency.' + s, '', '=', '0');
     rules.defineRule('save.' + s,
-      'saveProficiency.' + s, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+      'saveProficiency.' + s, '=', '2 * source',
+      'level', '+', null,
+      saves[s] + 'Modifier', '+', null,
+      'skillNotes.goodies' + s + 'Adjustment', '+', null
     );
-    rules.defineRule('save.' + s + '.1', 'saveModifier.' + s, '=', null);
-    rules.defineRule('saveModifier.' + s,
-      saves[s] + 'Modifier', '=', null,
-      'saveProficiency.' + s, '+', '2 * source',
-      'saveNotes.goodiesSave' + s + 'Adjustment', '+', null
+    rules.defineRule('save.' + s + '.1',
+      'saveProficiency.' + s, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
     );
   }
 
@@ -1915,17 +1914,18 @@ Pathfinder2E.talentRules = function(
     }
   }
 
-  rules.defineChoice('notes', 'perception:(wis) %V (%1)');
+  rules.defineChoice('notes', 'perception:%V (wisdom; %1)');
   rules.defineRule('perceptionProficiency', '', '=', '0');
   rules.defineRule('perception',
-    'perceptionProficiency', '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
-  );
-  rules.defineRule('perception.1', 'perceptionModifier', '=', null);
-  rules.defineRule('perceptionModifier',
-    'wisdomModifier', '=', null,
-    'perceptionProficiency', '+', '2 * source',
+    'perceptionProficiency', '=', '2 * source',
+    'level', '+', null,
+    'wisdomModifier', '+', null,
     'skillNotes.goodiesPerceptionAdjustment', '+', null
   );
+  rules.defineRule('perception.1',
+    'perceptionProficiency', '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+  );
+
 };
 
 /*
@@ -2605,31 +2605,24 @@ Pathfinder2E.skillRules = function(rules, name, ability) {
     console.log('Empty skill name');
     return;
   }
-  if(ability) {
-    ability = ability.toLowerCase();
-    if(!(ability.charAt(0).toUpperCase() + ability.substring(1) in Pathfinder2E.ABILITIES)) {
-      console.log('Bad ability "' + ability + '" for skill ' + name);
-      return;
-    }
+  if(typeof(ability) != 'string' || !(ability in Pathfinder2E.ABILITIES)) {
+    console.log('Bad ability "' + ability + '" for skill ' + name);
+    return;
   }
 
-  rules.defineRule('skillProficiency.' + name,
-    'skillBoosts.' + name, '+=', 'source ? 1 : null'
-  );
+  ability = ability.toLowerCase();
   rules.defineChoice
-    ('notes', 'skills.' + name + ':(' + ability.substring(0, 3) + ') %V (%1)');
+    ('notes', 'skills.' + name + ':%V (' + ability + '; %1)');
+  rules.defineRule
+    ('skillProficiency.' + name, 'skillBoosts.' + name, '=', null);
   rules.defineRule('skills.' + name,
-    'skillProficiency.' + name, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+    'skillProficiency.' + name, '=', '2 * source',
+    'level', '+', null,
+    ability + 'Modifier', '+', null,
+    'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
   rules.defineRule('skills.' + name + '.1',
-    'skills.' + name, '?', null,
-    'skillModifier.' + name, '=', null
-  );
-  rules.defineRule('skillModifier.' + name,
-    'skills.' + name, '?', null,
-    ability + 'Modifier', '=', null,
-    'skillProficiency.' + name, '+', '2 * source',
-    'skillNotes.goodies' + name + 'Adjustment', '+', null
+    'skillProficiency.' + name, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
   );
 
 };
