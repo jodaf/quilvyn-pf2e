@@ -31,13 +31,17 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 function Pathfinder2E() {
 
   let rules = new QuilvynRules('Pathfinder 2E', Pathfinder2E.VERSION);
+  rules.plugin = Pathfinder2E;
   Pathfinder2E.rules = rules;
 
   rules.defineChoice('choices', Pathfinder2E.CHOICES);
   rules.choiceEditorElements = Pathfinder2E.choiceEditorElements;
   rules.choiceRules = Pathfinder2E.choiceRules;
+  rules.removeChoice = Pathfinder2E.removeChoice;
   rules.editorElements = Pathfinder2E.initialEditorElements();
+  rules.getChoices = Pathfinder2E.getChoices;
   rules.getFormats = Pathfinder2E.getFormats;
+  rules.getPlugins = Pathfinder2E.getPlugins;
   rules.makeValid = Pathfinder2E.makeValid;
   rules.randomizeOneAttribute = Pathfinder2E.randomizeOneAttribute;
   rules.defineChoice('random', Pathfinder2E.RANDOMIZABLE_ATTRIBUTES);
@@ -68,10 +72,9 @@ function Pathfinder2E() {
   );
 
   Quilvyn.addRuleSet(rules);
-
 }
 
-Pathfinder2E.VERSION = '2.2.1.0';
+Pathfinder2E.VERSION = '2.3.1.0';
 
 /* List of items handled by choiceRules method. */
 Pathfinder2E.CHOICES = [
@@ -1361,25 +1364,59 @@ Pathfinder2E.FEATURES = {
   'Skill Feats':'Section=feature Note="%V selections"',
   'Skill Increases':'Section=skill Note="%V selections"',
 
-  'Armor Expertise':'Section=feature Note="FILL"',
-  'Armor Mastery':'Section=feature Note="FILL"',
+  'Armor Expertise':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Armor Expert (Light; Medium; Heavy; Unarmored)",' +
+      '"May use specialization effects of medium and heavy armor"',
+  'Armor Mastery':
+    'Section=combat ' +
+    'Note="Armor Master (Light; Medium; Heavy; Unarmored)"',
   'Attack Of Opportunity':
     'Section=combat ' +
-    'Note="May use Reaction to make a melee Strike at a foe within reach who uses a manipulate or move action, makes a ranged attack"',
-  'Battlefield Surveyor':'Section=feature Note="FILL"',
+    'Note="May use Reaction to make a melee Strike at a foe within reach who makes a ranged attack or uses a manipulate or move action"',
+  'Battlefield Surveyor':
+     'Section=feature,combat ' +
+     'Note=' +
+       '"Perception Master",' +
+       '"+2 Perception (initiative)"',
   'Bravery':
-    'Section=save ' +
-    'Note="Save Expert (Will)/Successful Will save vs. fear is always a critical success/Reduces frightened condition by 1"',
-  'Combat Flexibility':'Section=feature Note="FILL"',
-  'Evasion':'Section=feature Note="FILL"',
-  'Fighter Expertise':'Section=feature Note="FILL"',
-  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
-  'Greater Weapon Specialization':'Section=feature Note="FILL"',
-  'Improved Flexibility':'Section=feature Note="FILL"',
-  'Juggernaut':'Section=feature Note="FILL"',
-  'Versatile Legend':'Section=feature Note="FILL"',
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Expert (Will)",' +
+      '"Successful Will save vs. fear is always a critical success/Reduces frightened condition by 1"',
+  'Combat Flexibility':
+    'Section=feature ' +
+    'Note="May choose 1 fighter feat of up to 8th level each day"',
+  'Evasion':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Reflex)",' +
+      '"A successful Reflex save is always a critical succees"',
+  'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
+  'Fighter Weapon Mastery':
+    'Section=combat ' +
+    'Note="Has Weapon Master feature in simple and martial weapons and Weapon Expert feature in advanced weapons in chosen category/Weapon Master gives access to critical specialization effects"',
+  'Greater Weapon Specialization':
+    'Section=combat ' +
+    'Note="Increased Weapon Specialization effects"',
+  'Improved Flexibility':
+    'Section=feature ' +
+    'Note="May choose 1 fighter feat of up to 14th level each day"',
+  'Juggernaut':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Fortitude)",' +
+      '"A successful Fortitude save is always a critical success"',
+  'Versatile Legend':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Has Weapon Expert in simple and martial weapons and Weapon Expert in advanced weapons in chosen category",' +
+      '"Class Expert (Fighter)"',
   'Weapon Legend':'Section=feature Note="FILL"',
-  'Weapon Specialization':'Section=feature Note="FILL"',
+  'Weapon Specialization':
+    'Section=combat ' +
+    'Note="%{$\'features.Greater Weapon Specialization\'?\'+2/+3/+4\':\'+4/+5/+8\'} damage with master/expert/ledgendary weapons"',
 
   'Double Slice':'Section=feature Note="FILL"',
   'Exacting Strike':'Section=feature Note="FILL"',
@@ -1750,7 +1787,7 @@ Pathfinder2E.WEAPONS = {
   'Shuriken':'Category=2 Damage=d4 Bulk=0 Range=20'
 };
 
-Pathfinder2E.PROFICIENCY_LEVEL_NAMES =
+Pathfinder2E.PROFICIENCY_RANK_NAMES =
   ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
 /* Defines the rules related to character abilities. */
@@ -1759,11 +1796,15 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     a = a.toLowerCase();
     rules.defineChoice('notes', a + ':%V (%1)');
-    rules.defineRule(a, 'abilityBoosts.' + a, '+', 'source * 2');
+    rules.defineRule(a,
+      'abilityBoosts.' + a, '+', 'source * 2',
+      '', 'v', '20'
+    );
     rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
-    rules.defineRule(a + '.1', a + 'Modifier', '=', null);
-    rules.defineRule(a, '', 'v', '20');
+    rules.defineRule
+      (a + '.1', a + 'Modifier', '=', 'source>=0 ? "+" + source : source');
   }
+
   rules.defineRule('features.Ability Boost (Choose 4 from any)', '', '=', '1');
   rules.defineRule('speed', '', '=', '30');
 
@@ -1777,17 +1818,14 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   QuilvynUtils.checkAttrTable(shields, ['AC', 'Speed', 'Bulk']);
   QuilvynUtils.checkAttrTable(weapons, ['Category', 'Damage', 'Bulk', 'Range', 'Crit']);
 
-  for(let armor in armors) {
-    rules.choiceRules(rules, 'Armor', armor, armors[armor]);
-  }
-  for(let shield in shields) {
-    rules.choiceRules(rules, 'Shield', shield, shields[shield]);
-  }
-  for(let weapon in weapons) {
-    let pattern = weapon.replace(/  */g, '\\s+');
-    let prefix =
-      weapon.charAt(0).toLowerCase() + weapon.substring(1).replaceAll(' ', '');
-    rules.choiceRules(rules, 'Goody', weapon,
+  for(let a in armors)
+    rules.choiceRules(rules, 'Armor', a, armors[a]);
+  for(let s in shields)
+    rules.choiceRules(rules, 'Shield', s, shields[s]);
+  for(let w in weapons) {
+    let pattern = w.replace(/  */g, '\\s+');
+    let prefix = w.charAt(0).toLowerCase() + w.substring(1).replaceAll(' ', '');
+    rules.choiceRules(rules, 'Goody', w,
       // To avoid triggering additional weapons with a common suffix (e.g.,
       // "* punching dagger +2" also makes regular dagger +2), require that
       // weapon goodies with a trailing value have no preceding word or be
@@ -1798,22 +1836,29 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
       'Value="$1 || $2" ' +
       'Section=combat Note="%V Attack and damage"'
     );
-    rules.choiceRules(rules, 'Weapon', weapon, weapons[weapon]);
+    rules.choiceRules(rules, 'Weapon', w, weapons[w]);
   }
 
   let saves =
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
-    rules.defineChoice('notes', 'save.' + s + ':%V (' + saves[s] + '; %1)');
-    rules.defineRule('saveProficiency.' + s, '', '=', '0');
+    rules.defineChoice('notes', 'save.' + s + ':%S (' + saves[s] + '; %1)');
+    rules.defineRule('proficiencyRank.' + s, '', '=', '0');
+    rules.defineRule('proficiencyLevelBonus.' + s,
+      'proficiencyRank.' + s, '=', 'source>0 ? 0 : null',
+      'level', '+', null
+    );
+    rules.defineRule('proficiencyBonus.' + s,
+      'proficiencyRank.' + s, '=', '2 * source',
+      'proficiencyLevelBonus.' + s, '+', null
+    );
     rules.defineRule('save.' + s,
-      'saveProficiency.' + s, '=', '2 * source',
-      'level', '+', null,
-      saves[s] + 'Modifier', '+', null,
+      saves[s] + 'Modifier', '=', null,
+      'proficiencyBonus.' + s, '+', null,
       'skillNotes.goodies' + s + 'Adjustment', '+', null
     );
     rules.defineRule('save.' + s + '.1',
-      'saveProficiency.' + s, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+      'proficiencyRank.' + s, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
     );
   }
 
@@ -1856,12 +1901,10 @@ Pathfinder2E.magicRules = function(rules, schools, spells) {
   QuilvynUtils.checkAttrTable
     (spells, ['School', 'Group', 'Level', 'Description']);
 
-  for(let school in schools) {
-    rules.choiceRules(rules, 'School', school, schools[school]);
-  }
-  for(let spell in spells) {
-    rules.choiceRules(rules, 'Spell', spell, spells[spell]);
-  }
+  for(let s in schools)
+    rules.choiceRules(rules, 'School', s, schools[s]);
+  for(let s in spells)
+    rules.choiceRules(rules, 'Spell', s, spells[s]);
 
 };
 
@@ -1914,16 +1957,23 @@ Pathfinder2E.talentRules = function(
     }
   }
 
-  rules.defineChoice('notes', 'perception:%V (wisdom; %1)');
-  rules.defineRule('perceptionProficiency', '', '=', '0');
+  rules.defineChoice('notes', 'perception:%S (wisdom; %1)');
+  rules.defineRule('proficiencyRank.Perception', '', '=', '0');
+  rules.defineRule('proficiencyLevelBonus.Perception',
+    'proficiencyRank.Perception', '=', 'source>0 ? 0 : null',
+    'level', '+', null
+  );
+  rules.defineRule('proficiencyBonus.Perception',
+    'proficiencyRank.Perception', '=', '2 * source',
+    'proficiencyLevelBonus.Perception', '+', null
+  );
   rules.defineRule('perception',
-    'perceptionProficiency', '=', '2 * source',
-    'level', '+', null,
-    'wisdomModifier', '+', null,
+    'wisdomModifier', '=', null,
+    'proficiencyBonus.Perception', '+', null,
     'skillNotes.goodiesPerceptionAdjustment', '+', null
   );
   rules.defineRule('perception.1',
-    'perceptionProficiency', '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+    'proficiencyRank.Perception', '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
   );
 
 };
@@ -2035,9 +2085,99 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   }
   if(type != 'Spell') {
     type = type == 'Class' ? 'levels' :
-           type == 'Deity' ? 'deities' :
            (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
     rules.addChoice(type, name, attrs);
+  }
+};
+
+/*
+ * Removes #name# from the set of user #type# choices, reversing the effects of
+ * choiceRules.
+ */
+Pathfinder2E.removeChoice = function(rules, type, name) {
+  let group =
+    type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's';
+  let choices = rules.getChoices(group);
+  if(!choices)
+    return;
+  let currentAttrs = choices[name];
+  if(currentAttrs) {
+    delete choices[name];
+    // Q defines no way to delete rules outright; instead, we override with a
+    // noop all rules that have the removed choice as their source
+    if(type.match(/^(Armor|Deity|Shield)$/)) {
+      // Remove this item from rules' cached item stats ...
+      let stats = rules[type.toLowerCase() + 'Stats'];
+      if(stats) {
+        for(let s in stats)
+          delete stats[s][name];
+      }
+      // ... and force a recomputation of associated rules
+      let first = Object.keys(choices)[0];
+      if(first)
+        rules.choiceRules(rules, type, first, choices[first]);
+    } else if(type.match(/^(Class|NPC|Prestige|Race)$/)) {
+      let prefix =
+        name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+      let level = type == 'Race' ? prefix + 'Level' : ('levels.' + name);
+      let targets = rules.allTargets(level);
+      targets.forEach(x => {
+        rules.defineRule(x, level, '=', 'null');
+      });
+    } else if(type.match(/^(Class|Race) Feature/)) {
+      let base = QuilvynUtils.getAttrValue(currentAttrs, 'Class') ||
+                 QuilvynUtils.getAttrValue(currentAttrs, 'Race');
+      let prefix =
+        base.charAt(0).toLowerCase() + base.substring(1).replaceAll(' ', '');
+      let source =
+        QuilvynUtils.getAttrValue(currentAttrs, 'Selectable') != null ?
+          'selectableFeatures.' + base + ' - ' + name :
+        type.includes('Class') ? 'levels.' + base : (prefix + 'Level');
+      rules.defineRule(prefix + 'Features.' + name, source, '=', 'null');
+    } else {
+      let source =
+        type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') +
+        (type.match(/^(Feat|Feature|Skill)$/) ? 's' : '') +
+        '.' + name;
+      let targets = rules.allTargets(source);
+      targets.forEach(x => {
+        rules.defineRule(x, source, '=', 'null');
+      });
+      delete rules.getChoices('notes')[group + '.' + name];
+    }
+  } else if(choices && type == 'Spell') {
+    let notes = rules.getChoices('notes');
+    let potions = rules.getChoices('potions');
+    let scrolls = rules.getChoices('scrolls');
+    QuilvynUtils.getKeys(choices, '^' + name + '\\(').forEach(s => {
+      delete choices[s];
+      delete notes['spells.' + s];
+      if(potions) {
+        delete potions[s.replace('(', ' Oil (')];
+        delete potions[s.replace('(', ' Potion (')];
+        delete notes['potions.' + s.replace('(', ' Oil (')];
+        delete notes['potions.' + s.replace('(', ' Potion (')];
+      }
+      if(scrolls) {
+        delete scrolls[s];
+        delete notes['scrolls.' + s];
+      }
+    });
+  }
+  // If this choice overloaded a plugin-defined one (e.g., a homebrew Fighter
+  // class), restore the plugin version
+  let constantName = type.toUpperCase().replaceAll(' ', '_') + 'S';
+  let plugins = rules.getPlugins();
+  if(rules.plugin)
+    plugins.push(rules.plugin);
+  for(let i = 0; i < plugins.length; i++) {
+    let p = plugins[i];
+    if(p[constantName] &&
+       name in p[constantName] &&
+       p[constantName][name] != currentAttrs) {
+      rules.choiceRules(rules, type, name, p[constantName][name]);
+      break;
+    }
   }
 };
 
@@ -2102,9 +2242,7 @@ Pathfinder2E.ancestryRules = function(
     QuilvynRules.prerequisiteRules
       (rules, 'validation', prefix + 'Ancestry', ancestryLevel, requires);
 
-  rules.defineRule('selectableFeatureCount.' + name,
-    'ancestry', '=', 'source=="' + name + '" ? 1 : null'
-  );
+  rules.defineRule('selectableFeatureCount.' + name, ancestryLevel, '=', '1');
 
   if(languages.length > 0) {
     rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
@@ -2320,9 +2458,6 @@ Pathfinder2E.classRules = function(
   rules.defineRule('featCount.General',
     'levels.' + name, '+=', 'source >= 19 ? 5 : Math.floor(source / 4)'
   );
-  rules.defineRule('proficiencyBonus',
-    'levels.' + name, '=', 'Math.floor((source + 7) / 4)'
-  );
 
   if(spellSlots.length > 0) {
     let casterLevelExpr = casterLevelArcane || casterLevelDivine || classLevel;
@@ -2345,19 +2480,17 @@ Pathfinder2E.classRules = function(
       let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
       let spellType = spellTypeAndLevel.replace(/\d+/, '');
       let spellLevel = spellTypeAndLevel.replace(spellType, '');
-      let spellModifier = spellAbility + 'Modifier';
+      let spellModifier = abilities[0] + 'Modifier';
       if(spellType != name)
         rules.defineRule
           ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
       rules.defineRule('spellAttackModifier.' + spellType,
         'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', null,
-        'proficiencyBonus', '+', null
+        spellModifier, '=', null
       );
       rules.defineRule('spellDifficultyClass.' + spellType,
         'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', '8 + source',
-        'proficiencyBonus', '+', null
+        spellModifier, '=', '8 + source'
       );
     }
   }
@@ -2387,7 +2520,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('featCount.Skill', 'featureNotes.skillFeats', '+=', null);
     rules.defineRule
       ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
-    rules.defineRule('skillBoosts', 'skillNotes.skillIncreases', '+=', null);
+    rules.defineRule('proficiencyRank.Will', 'saveNotes.bravery', '^=', '2');
+    // TODO rules.defineRule('skillBoosts', 'skillNotes.skillIncreases', '+=', null);
     rules.defineRule('skillNotes.skillIncreases',
       classLevel, '+=', 'Math.floor((source - 1) / 2)'
     );
@@ -2612,17 +2746,26 @@ Pathfinder2E.skillRules = function(rules, name, ability) {
 
   ability = ability.toLowerCase();
   rules.defineChoice
-    ('notes', 'skills.' + name + ':%V (' + ability + '; %1)');
-  rules.defineRule
-    ('skillProficiency.' + name, 'skillBoosts.' + name, '=', null);
+    ('notes', 'skills.' + name + ':%S (' + ability + '; %1)');
+  if(!name.match(/Lore$/))
+    rules.defineRule('proficiencyRank.' + name, '', '=', '0');
+  rules.defineRule('proficiencyRank.' + name, 'skillBoosts.' + name, '=', null);
+  rules.defineRule('proficiencyLevelBonus.' + name,
+    'proficiencyRank.' + name, '=', 'source>0 ? 0 : null',
+    'level', '+', null
+  );
+  rules.defineRule('proficiencyBonus.' + name,
+    'proficiencyRank.' + name, '=', '2 * source',
+    'proficiencyLevelBonus.' + name, '+', null
+  );
   rules.defineRule('skills.' + name,
-    'skillProficiency.' + name, '=', '2 * source',
-    'level', '+', null,
-    ability + 'Modifier', '+', null,
+    'proficiencyRank.' + name, '?', 'source != null',
+    ability + 'Modifier', '=', null,
+    'proficiencyBonus.' + name, '+', null,
     'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
   rules.defineRule('skills.' + name + '.1',
-    'skillProficiency.' + name, '=', 'Pathfinder2E.PROFICIENCY_LEVEL_NAMES[source]'
+    'proficiencyRank.' + name, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
   );
 
 };
@@ -2698,7 +2841,6 @@ Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, r
   if(category > 0) {
     rules.defineRule('sanityNotes.nonproficientWeaponPenalty.' + name,
       weaponName, '?', null,
-      'proficiencyBonus', '=', '-source',
       'weaponProficiency.Martial', '^', '0',
       'weaponProficiency.' + name, '^', '0'
     );
@@ -2710,7 +2852,6 @@ Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, r
   }
   rules.defineRule('weaponProficiencyBonus.' + name,
     weaponName, '?', null,
-    'proficiencyBonus', '=', null,
     'sanityNotes.nonproficientWeaponPenalty.' + name, 'v', 'source == 0 ? null : 0'
   );
   rules.defineRule('attackBonus.' + name,
@@ -2779,21 +2920,23 @@ Pathfinder2E.featureListRules = function(
   setName = setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
   for(let i = 0; i < features.length; i++) {
     let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
-    let matchInfo = feature.match(/([A-Z]\w*)\s(Expert|Trained)\s*\((.*)\)$/i);
+    let matchInfo =
+      feature.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
     if(matchInfo) {
       let group = matchInfo[1].toLowerCase();
-      let proficiency = matchInfo[2] == 'Expert' ? 2 : 1;
+      let proficiency =
+        matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
       matchInfo[3].split(/;\s*/).forEach(element => {
         if(!element.match(/Choose/))
-          rules.defineRule(group + 'Proficiency.' + element,
+          rules.defineRule('proficiencyRank.' + element,
             setName + '.' + feature, '^=', proficiency
           );
       });
     }
-    matchInfo = feature.match(/Perception\s(Expert|Trained)$/i);
+    matchInfo = feature.match(/Perception\s(Expert|Master|Trained)$/i);
     if(matchInfo) {
-      rules.defineRule('perceptionProficiency',
-        setName + '.' + feature, '^=', matchInfo[1] == 'Expert' ? '2' : '1'
+      rules.defineRule('proficiencyRank.Perception',
+        setName + '.' + feature, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
       );
     }
     matchInfo = feature.match(/Ability\s(Boost|Flaw)\s*\((.*)\)$/i);
@@ -2806,6 +2949,14 @@ Pathfinder2E.featureListRules = function(
       });
     }
   }
+};
+
+/*
+ * Returns an object that contains all the choices for #name# previously
+ * defined for this rule set via addChoice.
+ */
+Pathfinder2E.getChoices = function(name) {
+  return this.choices[name == 'classs' ? 'levels' : name];
 };
 
 /*
@@ -2936,7 +3087,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
       viewer.addElements(
         {name: 'FeaturesAndSkills', within: '_top', separator: outerSep,
          format: '<b>Features/Skills</b><br/>%V'},
-          {name: 'Proficiency Bonus', within: 'FeaturesAndSkills'},
           {name: 'FeaturePart', within: 'FeaturesAndSkills', separator: '\n'},
             {name: 'FeatStats', within: 'FeaturePart', separator: innerSep},
               {name: 'Feat Count', within: 'FeatStats', separator: listSep},
@@ -3180,7 +3330,7 @@ Pathfinder2E.initialEditorElements = function() {
     ['player', 'Player', 'text', [20]],
     ['alignment', 'Alignment', 'select-one', 'alignments'],
     ['gender', 'Gender', 'text', [10]],
-    ['deity', 'Deity', 'select-one', 'deities'],
+    ['deity', 'Deity', 'select-one', 'deitys'],
     ['origin', 'Origin', 'text', [20]],
     ['feats', 'Feats', 'set', 'feats'],
     ['selectableFeatures', 'Selectable Features', 'set', 'selectableFeatures'],
@@ -3372,10 +3522,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.SKILL\s+(Trained|Expert)\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Master|Trained)\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Trained|Expert)\s+\([^\)]*\)/gi))==null)
+         (matchInfo = notes[attr].match(/Skill\s+(Expert|Master|Trained)\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
         matched.split(/\s*;\s*/).forEach(boost => {
@@ -3436,7 +3586,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     else /* [LC]G or [LC]E */
       aliPat = aliInfo[1] + '[N' + aliInfo[2] + ']|N' + aliInfo[2];
     choices = [];
-    let deities = this.getChoices('deities');
+    let deities = this.getChoices('deitys');
     for(attr in deities) {
       if(deities[attr].match('=' + aliPat + '\\b'))
         choices.push(attr);
@@ -3849,6 +3999,11 @@ Pathfinder2E.makeValid = function(attributes) {
     attributes.notes =
       (attributes.notes ? attributes.notes + '\n' : '') + debug.join('\n');
 
+};
+
+/* Returns an array of plugins upon which this one depends. */
+Pathfinder2E.getPlugins = function() {
+  return [];
 };
 
 /* Returns HTML body content for user notes associated with this rule set. */
