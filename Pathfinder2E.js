@@ -621,10 +621,9 @@ Pathfinder2E.FEATS = {
     'Require="level >= 13","features.Orc Weapon Familiarity"',
 
   // Class
-  'Quick Alchemy':'Type=Class,Alchemist',
   'Alchemical Familiar':'Type=Class,Alchemist',
-  'Alchemical Alchemical Savant':
-    'Type=Class,Alchemist Require=skillStep.Crafting>=1',
+  'Alchemical Savant':
+    'Type=Class,Alchemist Require=skillProficiency.Crafting>=1',
   'Far Lobber':'Type=Class,Alchemist',
   'Quick Bomber':'Type=Class,Alchemist',
   'Poison Resistance':'Type=Class,Alchemist Require=level>=2',
@@ -635,9 +634,8 @@ Pathfinder2E.FEATS = {
   'Enduring Alchemy':'Type=Class,Alchemist Require=level>=4',
   'Combine Elixirs':'Type=Class,Alchemist Require=level>=6',
   'Debilitating Bomb':'Type=Class,Alchemist Require=level>=6',
-  'Directional Bomb':'Type=Class,Alchemist Require=level>=6',
+  'Directional Bombs':'Type=Class,Alchemist Require=level>=6',
   'Feral Mutagen':'Type=Class,Alchemist Require=level>=8',
-  'Powerful Alchemy':'Type=Class,Alchemist Require=level>=8',
   'Sticky Bomb':'Type=Class,Alchemist Require=level>=8',
   'Elastic Mutagen':'Type=Class,Alchemist Require=level>=10',
   'Extended Splash':
@@ -672,13 +670,85 @@ Pathfinder2E.FEATS = {
     'Type=Class,Alchemist Require=level>=20,"features.Expanded Splash"',
   'Perfect Mutagen':'Type=Class,Alchemist Require=level>=20',
 
+  'Acute Vision':'Type=Class,Barbarian',
+  'Moment Of Clarity':'Type=Class,Barbarian',
+  'Raging Intimidation':'Type=Class,Barbarian',
+  'Raging Thrower':'Type=Class,Barbarian',
+  'Sudden Charge':'Type=Class,Barbarian,Fighter',
+  'Acute Scent':
+    'Type=Class,Barbarian ' +
+    'Require=level>=2,"features.Acute Vision||features.Darkvision"',
+  'Furious Finish':'Type=Class,Barbarian Require=level>=2',
+  'No Escape':'Type=Class,Barbarian Require=level>=2',
+  'Second Wind':'Type=Class,Barbarian Require=level>=2',
+  'Shake It Off':'Type=Class,Barbarian Require=level>=2',
+  'Fast Movement':'Type=Class,Barbarian Require=level>=4',
+  'Raging Athlete':
+    'Type=Class,Barbarian Require=level>=4,"skillProficiency.Athletics>=2"',
+  'Swipe':'Type=Class,Barbarian,Fighter Require=level>=4',
+  'Wounded Rage':'Type=Class,Barbarian Require=level>=4',
+  'Animal Skin':
+    'Type=Class,Barbarian Require=level>=6,"features.Animal Instinct"',
+  'Attack Of Opportunity':'Type=Class,Barbarian Require=level>=6',
+  'Brutal Bully':
+    'Type=Class,Barbarian Require=level>=6,"skillProficiency.Athletics>=2"',
+  'Cleave':'Type=Class,Barbarian Require=level>=6',
+  "Dragon's Rage Breath":
+    'Type=Class,Barbarian Require=level>=6,"features.Dragon Instinct"',
+  "Giant's Stature":
+    'Type=Class,Barbarian Require=level>=6,"features.Giant Instinct"',
+  "Spirits' Interference":
+    'Type=Class,Barbarian Require=level>=6,"features.Spirit Instinct"',
+  'Animal Rage':
+    'Type=Class,Barbarian Require=level>=8,"features.Animal Instinct"',
+  'Furious Bully':
+    'Type=Class,Barbarian Require=level>=8,"skillProficiency.Athletics>=3"',
+  'Renewed Vigor':'Type=Class,Barbarian Require=level>=8',
+  'Share Rage':'Type=Class,Barbarian Require=level>=8',
+  'Sudden Leap':'Type=Class,Barbarian,Fighter Require=level>=8',
+  'Thrash':'Type=Class,Barbarian Require=level>=8',
+  'Come And Get Me':'Type=Class,Barbarian Require=level>=10',
+  'Furious Sprint':'Type=Class,Barbarian Require=level>=10',
+  'Great Cleave':'Type=Class,Barbarian Require=level>=10,features.Cleave',
+  'Knockback':'Type=Class,Barbarian Require=level>=10',
+  'Terrifying Howl':
+    'Type=Class,Barbarian Require=level>=10,"features.Intimidating Glare"',
+  "Dragon's Rage Wings":
+    'Type=Class,Barbarian Require=level>=12,"features.Dragon Instinct"',
+  'Furious Grab':'Type=Class,Barbarian Require=level>=12',
+  "Predator's Pounce":
+    'Type=Class,Barbarian Require=level>=12,"features.Animal Instinct"',
+  "Spirit's Wrath":
+    'Type=Class,Barbarian Require=level>=12,"features.Spirit Instinct"',
+  "Titan's Stature":
+    'Type=Class,Barbarian ' +
+    'Require=level>=12,"features.Giant Instinct","features.Giant\'s Stature"',
+  'Awesome Blow':
+    'Type=Class,Barbarian Require=level>=14,"features.Knockback"',
+  "Giant's Lunge":
+    'Type=Class,Barbarian Require=level>=14,"features.Giant Instinct"',
+  'Vengeful Strike':
+    'Type=Class,Barbarian Require=level>=14,"features.Vengeful Strike"',
+  'Whirlwind Strike':'Type=Class,Barbarian,Fighter Require=level>=14',
+  'Collateral Thrash':
+    'Type=Class,Barbarian Require=level>=16,"features.Thrash"',
+  'Dragon Transformation':
+    'Type=Class,Barbarian ' +
+    'Require=level>=16,"features.Dragon Instinct","features.Dragon\'s Rage Wings"',
+  'Reckless Abandon':'Type=Class,Barbarian Require=level>=16',
+  'Brutal Critical':'Type=Class,Barbarian Require=level>=18',
+  'Perfect Clarity':'Type=Class,Barbarian Require=level>=18',
+  'Vicious Evisceration':'Type=Class,Barbarian Require=level>=18',
+  'Contagious Rage':
+    'Type=Class,Barbarian Require=level>=20,"features.Share Rage"',
+  'Quaking Stomp':'Type=Class,Barbarian Require=level>=20',
+
   'Double Slice':'Type=Class,Fighter',
   'Exacting Strike':'Type=Class,Fighter',
   'Point-Blank Shot':'Type=Class,Fighter',
   'Power Attack':'Type=Class,Fighter',
   'Reactive Shield':'Type=Class,Fighter',
   'Snagging Strike':'Type=Class,Fighter',
-  'Sudden Charge':'Type=Class,Fighter',
   'Aggressive Block':'Type=Class,Fighter Require="level >= 2"',
   'Assisting Shot':'Type=Class,Fighter Require="level >= 2"',
   'Brutish Shove':'Type=Class,Fighter Require="level >= 2"',
@@ -694,7 +764,6 @@ Pathfinder2E.FEATS = {
     'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
   'Quick Reversal':'Type=Class,Fighter Require="level >= 4"',
   'Shielded Stride':'Type=Class,Fighter Require="level >= 4"',
-  'Swipe':'Type=Class,Fighter Require="level >= 4"',
   'Twin Parry':'Type=Class,Fighter Require="level >= 4"',
   'Advanced Weapon Training':'Type=Class,Fighter Require="level >= 6"',
   'Advantageous Assault':'Type=Class,Fighter Require="level >= 6"',
@@ -721,7 +790,6 @@ Pathfinder2E.FEATS = {
   'Quick Shield Block':
     'Type=Class,Fighter ' +
     'Require="level >= 8","features.Shield Block","features.Reactive Shield"',
-  'Sudden Leap':'Type=Class,Fighter Require="level >= 8"',
   'Agile Grace':'Type=Class,Fighter Require="level >= 10"',
   'Certain Strike':'Type=Class,Fighter Require="level >= 10"',
   'Combat Reflexes':'Type=Class,Fighter Require="level >= 10"',
@@ -760,7 +828,6 @@ Pathfinder2E.FEATS = {
     'Type=Class,Fighter Require="level >= 14","features.Twin Riposte"',
   'Stance Savant':'Type=Class,Fighter Require="level >= 14"',
   'Two-Weapon Flurry':'Type=Class,Fighter Require="level >= 14"',
-  'Whirlwind Strike':'Type=Class,Fighter Require="level >= 14"',
   'Graceful Poise':
     'Type=Class,Fighter Require="level >= 16","features.Double Slice"',
   'Improved Reflexive Shield':
@@ -1418,15 +1485,30 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="%{$\'features.Greater Weapon Specialization\'?\'+2/+3/+4\':\'+4/+5/+8\'} damage with master/expert/ledgendary weapons"',
 
-  'Double Slice':'Section=feature Note="FILL"',
-  'Exacting Strike':'Section=feature Note="FILL"',
-  'Point-Blank Shot':'Section=feature Note="FILL"',
-  'Power Attack':'Section=feature Note="FILL"',
-  'Reactive Shield':'Section=feature Note="FILL"',
-  'Snagging Strike':'Section=feature Note="FILL"',
-  'Sudden Charge':'Section=feature Note="FILL"',
-  'Aggressive Block':'Section=feature Note="FILL"',
-  'Assisting Shot':'Section=feature Note="FILL"',
+  'Double Slice':
+    'Section=combat Note="May attack with two weapons simultaneously"',
+  'Exacting Strike':
+    'Section=combat ' +
+    'Note="Failed attack does not count toward multi-attack penalty"',
+  'Point-Blank Shot':
+    'Section=feature ' +
+    'Note="Suffers no volley penalty from ranged volley weapon/+2 attack at close range with ranged non-volley weapon"',
+  'Power Attack':
+    'Section=combat ' +
+    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra dice damage; counts as two Strikes for multi-attack penalty"',
+  'Reactive Shield':
+    'Section=combat Note="May use Reaction to make a Raise a Shield action"',
+  'Snagging Strike':
+    'Section=combat ' +
+    'Note="Successful Strike inflicts flat-footed on target for 1 rd"',
+  'Sudden Charge':
+    'Section=combat Note="May make a melee Strike after a double Stride"',
+  'Aggressive Block':
+    'Section=combat ' +
+    'Note="May use Shield Block to move foe 5\' or cause it to become flat-footed (foe\'s choice)"',
+  'Assisting Shot':
+    'Section=combat ' +
+    'Note="Successful ranged Strike gives next attack on foe +1 attack (critical success +2)"',
   'Brutish Shove':'Section=feature Note="FILL"',
   'Combat Grab':'Section=feature Note="FILL"',
   'Dueling Parry':'Section=feature Note="FILL"',
@@ -2228,7 +2310,6 @@ Pathfinder2E.ancestryRules = function(
     return;
   }
 
-  let matchInfo;
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   let ancestryLevel = prefix + 'Level';
@@ -2641,7 +2722,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
     matchInfo = notes[i].match(/^([A-Z]\w*)\sProficiency:\s*(.*)$/);
     if(matchInfo) {
       let group = matchInfo[1].toLowerCase();
-      let note = sections[i] + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
       matchInfo[2].split(/;\s*/).forEach(affected => {
         matchInfo = affected.match(/^Choose\s(\d+)/);
         if(matchInfo)
@@ -2923,7 +3003,6 @@ Pathfinder2E.featureListRules = function(
     let matchInfo =
       feature.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
     if(matchInfo) {
-      let group = matchInfo[1].toLowerCase();
       let proficiency =
         matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
       matchInfo[3].split(/;\s*/).forEach(element => {
@@ -3199,8 +3278,6 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       // empty
     );
   else if(type == 'Armor') {
-    let zeroToFifty = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
-    let minusTenToZero = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0];
     let tenToEighteen = [10, 11, 12, 13, 14, 15, 16, 17, 18];
     result.push(
       ['AC', 'AC Bonus', 'select-one', [0, 1, 2, 3, 4, 5]],
@@ -3289,10 +3366,8 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
-    let oneToFive = [1, 2, 3, 4, 5];
-    let sixteenToTwenty = [16, 17, 18, 19, 20];
     let zeroToOneFifty =
-     [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+      [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
     result.push(
       ['Category', 'Category', 'select-one', ['Simple', 'Martial']],
       ['Property', 'Property', 'select-one', ['Unarmed', 'Light', 'One-Handed', 'Two-Handed', 'Ranged']],
