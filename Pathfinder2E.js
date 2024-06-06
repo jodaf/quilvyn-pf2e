@@ -488,15 +488,15 @@ Pathfinder2E.FEATS = {
   'Unburdened Iron':'Type=Ancestry,Dwarf',
   'Vengeful Hatred':'Type=Ancestry,Dwarf',
   'Boulder Roll':
-    'Type=Ancestry,Dwarf Require="level>=5","features.Rock Runner"',
+    'Type=Ancestry,Dwarf Require="level >= 5","features.Rock Runner"',
   'Dwarven Weapon Cunning':
     'Type=Ancestry,Dwarf ' +
-    'Require="level>=5","features.Dwarven Weapon Familiarity"',
-  "Mountain's Stoutness":'Type=Ancestry,Dwarf Require="level>=9"',
-  'Stonewalker':'Type=Ancestry,Dwarf Require="level>=9"',
+    'Require="level >= 5","features.Dwarven Weapon Familiarity"',
+  "Mountain's Stoutness":'Type=Ancestry,Dwarf Require="level >= 9"',
+  'Stonewalker':'Type=Ancestry,Dwarf Require="level >= 9"',
   'Dwarven Weapon Expertise':
     'Type=Ancestry,Dwarf ' +
-    'Require="level>=13","features.Dwarven Weapon Familiarity"',
+    'Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
   // NOTE requires age >= 100
   'Ancestral Longevity':'Type=Ancestry,Elf',
@@ -506,17 +506,18 @@ Pathfinder2E.FEATS = {
   'Nimble Elf':'Type=Ancestry,Elf',
   'Otherworldly Magic':'Type=Ancestry,Elf',
   'Unwavering Mien':'Type=Ancestry,Elf',
-  'Ageless Patience':'Type=Ancestry,Elf Require="level>=5"',
+  'Ageless Patience':'Type=Ancestry,Elf Require="level >= 5"',
   'Elven Weapon Elegance':
-    'Type=Ancestry,Elf Require="level>=5","features.Elven Weapon Familiarity"',
-  'Elf Step':'Type=Ancestry,Elf Require="level>=9"',
+    'Type=Ancestry,Elf ' +
+    'Require="level >= 5","features.Elven Weapon Familiarity"',
+  'Elf Step':'Type=Ancestry,Elf Require="level >= 9"',
   'Expert Longevity':
-    'Type=Ancestry,Elf Require="level>=9","features.Ancestral Longevity"',
+    'Type=Ancestry,Elf Require="level >= 9","features.Ancestral Longevity"',
   'Universal Longevity':
-    'Type=Ancestry,Elf Require="level>=13","features.Expert Longevity"',
+    'Type=Ancestry,Elf Require="level >= 13","features.Expert Longevity"',
   'Elven Weapon Expertise':
     'Type=Ancestry,Elf ' +
-    'Require="level>=13","features.Elven Weapon Familiarity"',
+    'Require="level >= 13","features.Elven Weapon Familiarity"',
 
   'Animal Accomplice':'Type=Ancestry,Gnome',
   'Burrow Elocutionist':'Type=Ancestry,Gnome',
@@ -526,10 +527,10 @@ Pathfinder2E.FEATS = {
   'Gnome Weapon Familiarity':'Type=Ancestry,Gnome',
   'Illusion Sense':'Type=Ancestry,Gnome',
   'Animal Elocutionist':
-    'Type=Ancestry,Gnome Require="level>=5","features.Burrow Elocutionist"',
+    'Type=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
   // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
   'Energized Font':
-    'Type=Ancestry,Gnome Require="level>=5","features.Focus Pool"',
+    'Type=Ancestry,Gnome Require="level >= 5","features.Focus Pool"',
   'Gnome Weapon Innovator':
     'Type=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
@@ -626,49 +627,49 @@ Pathfinder2E.FEATS = {
     'Type=Class,Alchemist Require=skillProficiency.Crafting>=1',
   'Far Lobber':'Type=Class,Alchemist',
   'Quick Bomber':'Type=Class,Alchemist',
-  'Poison Resistance':'Type=Class,Alchemist Require=level>=2',
-  'Revivifying Mutagen':'Type=Class,Alchemist Require=level>=2',
-  'Smoke Bomb':'Type=Class,Alchemist Require=level>=2',
-  'Calculated Splash':'Type=Class,Alchemist Require=level>=4',
-  'Efficient Alchemy':'Type=Class,Alchemist Require=level>=4',
-  'Enduring Alchemy':'Type=Class,Alchemist Require=level>=4',
-  'Combine Elixirs':'Type=Class,Alchemist Require=level>=6',
-  'Debilitating Bomb':'Type=Class,Alchemist Require=level>=6',
-  'Directional Bombs':'Type=Class,Alchemist Require=level>=6',
-  'Feral Mutagen':'Type=Class,Alchemist Require=level>=8',
-  'Sticky Bomb':'Type=Class,Alchemist Require=level>=8',
-  'Elastic Mutagen':'Type=Class,Alchemist Require=level>=10',
+  'Poison Resistance':'Type=Class,Alchemist Require="level >= 2"',
+  'Revivifying Mutagen':'Type=Class,Alchemist Require="level >= 2"',
+  'Smoke Bomb':'Type=Class,Alchemist Require="level >= 2"',
+  'Calculated Splash':'Type=Class,Alchemist Require="level >= 4"',
+  'Efficient Alchemy':'Type=Class,Alchemist Require="level >= 4"',
+  'Enduring Alchemy':'Type=Class,Alchemist Require="level >= 4"',
+  'Combine Elixirs':'Type=Class,Alchemist Require="level >= 6"',
+  'Debilitating Bomb':'Type=Class,Alchemist Require="level >= 6"',
+  'Directional Bombs':'Type=Class,Alchemist Require="level >= 6"',
+  'Feral Mutagen':'Type=Class,Alchemist Require="level >= 8"',
+  'Sticky Bomb':'Type=Class,Alchemist Require="level >= 8"',
+  'Elastic Mutagen':'Type=Class,Alchemist Require="level >= 10"',
   'Extended Splash':
-    'Type=Class,Alchemist Require=level>=10,"features.Calculated Spash"',
+    'Type=Class,Alchemist Require="level >= 10","features.Calculated Spash"',
   'Greater Debilitating Bomb':
-    'Type=Class,Alchemist Require=level>=10,"features.Debilitating Bomb"',
-  'Merciful Elixir':'Type=Class,Alchemist Require=level>=10',
+    'Type=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
+  'Merciful Elixir':'Type=Class,Alchemist Require="level >= 10"',
   'Potent Poisoner':
-    'Type=Class,Alchemist Require=level>=10,"features.Powerful Alchemy"',
-  'Extend Elixir':'Type=Class,Alchemist Require=level>=12',
-  'Invincible Mutagen':'Type=Class,Alchemist Require=level>=12',
+    'Type=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
+  'Extend Elixir':'Type=Class,Alchemist Require="level >= 12"',
+  'Invincible Mutagen':'Type=Class,Alchemist Require="level >= 12"',
   'Uncanny Bombs':
-    'Type=Class,Alchemist Require=level>=12,"features.Far Lobber"',
-  'Glib Mutagen':'Type=Class,Alchemist Require=level>=14',
+    'Type=Class,Alchemist Require="level >= 12","features.Far Lobber"',
+  'Glib Mutagen':'Type=Class,Alchemist Require="level >= 14"',
   'Greater Merciful Elixir':
-    'Type=Class,Alchemist Require=level>=14,"features.Merciful Elixir"',
+    'Type=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
   'True Debilitating Bomb':
     'Type=Class,Alchemist ' +
-    'Require=level>=14,"features.Greater Debilitating Bomb"',
+    'Require="level >= 14","features.Greater Debilitating Bomb"',
   'Eternal Elixir':
-    'Type=Class,Alchemist Require=level>=16,"features.Extend Elixir"',
-  'Exploitive Bomb':'Type=Class,Alchemist Require=level>=16',
-  'Genius Mutagen':'Type=Class,Alchemist Require=level>=16',
+    'Type=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Exploitive Bomb':'Type=Class,Alchemist Require="level >= 16"',
+  'Genius Mutagen':'Type=Class,Alchemist Require="level >= 16"',
   'Persistent Mutagen':
-    'Type=Class,Alchemist Require=level>=16,"features.Extend Elixir"',
-  'Improbable Elixirs':'Type=Class,Alchemist Require=level>=18',
-  'Mindblank Mutagen':'Type=Class,Alchemist Require=level>=18',
-  'Miracle Worker':'Type=Class,Alchemist Require=level>=18',
-  'Perfect Debilitation':'Type=Class,Alchemist Require=level>=18',
-  "Craft Philosopher's Stone":'Type=Class,Alchemist Require=level>=20',
+    'Type=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Improbable Elixirs':'Type=Class,Alchemist Require="level >= 18"',
+  'Mindblank Mutagen':'Type=Class,Alchemist Require="level >= 18"',
+  'Miracle Worker':'Type=Class,Alchemist Require="level >= 18"',
+  'Perfect Debilitation':'Type=Class,Alchemist Require="level >= 18"',
+  "Craft Philosopher's Stone":'Type=Class,Alchemist Require="level >= 20"',
   'Mega Bomb':
-    'Type=Class,Alchemist Require=level>=20,"features.Expanded Splash"',
-  'Perfect Mutagen':'Type=Class,Alchemist Require=level>=20',
+    'Type=Class,Alchemist Require="level >= 20","features.Expanded Splash"',
+  'Perfect Mutagen':'Type=Class,Alchemist Require="level >= 20"',
 
   'Acute Vision':'Type=Class,Barbarian',
   'Moment Of Clarity':'Type=Class,Barbarian',
@@ -677,71 +678,273 @@ Pathfinder2E.FEATS = {
   'Sudden Charge':'Type=Class,Barbarian,Fighter',
   'Acute Scent':
     'Type=Class,Barbarian ' +
-    'Require=level>=2,"features.Acute Vision||features.Darkvision"',
-  'Furious Finish':'Type=Class,Barbarian Require=level>=2',
-  'No Escape':'Type=Class,Barbarian Require=level>=2',
-  'Second Wind':'Type=Class,Barbarian Require=level>=2',
-  'Shake It Off':'Type=Class,Barbarian Require=level>=2',
-  'Fast Movement':'Type=Class,Barbarian Require=level>=4',
+    'Require="level >= 2","features.Acute Vision||features.Darkvision"',
+  'Furious Finish':'Type=Class,Barbarian Require="level >= 2"',
+  'No Escape':'Type=Class,Barbarian Require="level >= 2"',
+  'Second Wind':'Type=Class,Barbarian Require="level >= 2"',
+  'Shake It Off':'Type=Class,Barbarian Require="level >= 2"',
+  'Fast Movement':'Type=Class,Barbarian Require="level >= 4"',
   'Raging Athlete':
-    'Type=Class,Barbarian Require=level>=4,"skillProficiency.Athletics>=2"',
-  'Swipe':'Type=Class,Barbarian,Fighter Require=level>=4',
-  'Wounded Rage':'Type=Class,Barbarian Require=level>=4',
+    'Type=Class,Barbarian Require="level >= 4","skillProficiency.Athletics>=2"',
+  'Swipe':'Type=Class,Barbarian,Fighter Require="level >= 4"',
+  'Wounded Rage':'Type=Class,Barbarian Require="level >= 4"',
   'Animal Skin':
-    'Type=Class,Barbarian Require=level>=6,"features.Animal Instinct"',
-  'Attack Of Opportunity':'Type=Class,Barbarian Require=level>=6',
+    'Type=Class,Barbarian Require="level >= 6","features.Animal Instinct"',
+  'Attack Of Opportunity':'Type=Class,Barbarian,Champion Require="level >= 6"',
   'Brutal Bully':
-    'Type=Class,Barbarian Require=level>=6,"skillProficiency.Athletics>=2"',
-  'Cleave':'Type=Class,Barbarian Require=level>=6',
+    'Type=Class,Barbarian Require="level >= 6","skillProficiency.Athletics>=2"',
+  'Cleave':'Type=Class,Barbarian Require="level >= 6"',
   "Dragon's Rage Breath":
-    'Type=Class,Barbarian Require=level>=6,"features.Dragon Instinct"',
+    'Type=Class,Barbarian Require="level >= 6","features.Dragon Instinct"',
   "Giant's Stature":
-    'Type=Class,Barbarian Require=level>=6,"features.Giant Instinct"',
+    'Type=Class,Barbarian Require="level >= 6","features.Giant Instinct"',
   "Spirits' Interference":
-    'Type=Class,Barbarian Require=level>=6,"features.Spirit Instinct"',
+    'Type=Class,Barbarian Require="level >= 6","features.Spirit Instinct"',
   'Animal Rage':
-    'Type=Class,Barbarian Require=level>=8,"features.Animal Instinct"',
+    'Type=Class,Barbarian Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
-    'Type=Class,Barbarian Require=level>=8,"skillProficiency.Athletics>=3"',
-  'Renewed Vigor':'Type=Class,Barbarian Require=level>=8',
-  'Share Rage':'Type=Class,Barbarian Require=level>=8',
-  'Sudden Leap':'Type=Class,Barbarian,Fighter Require=level>=8',
-  'Thrash':'Type=Class,Barbarian Require=level>=8',
-  'Come And Get Me':'Type=Class,Barbarian Require=level>=10',
-  'Furious Sprint':'Type=Class,Barbarian Require=level>=10',
-  'Great Cleave':'Type=Class,Barbarian Require=level>=10,features.Cleave',
-  'Knockback':'Type=Class,Barbarian Require=level>=10',
+    'Type=Class,Barbarian Require="level >= 8","skillProficiency.Athletics>=3"',
+  'Renewed Vigor':'Type=Class,Barbarian Require="level >= 8"',
+  'Share Rage':'Type=Class,Barbarian Require="level >= 8"',
+  'Sudden Leap':'Type=Class,Barbarian,Fighter Require="level >= 8"',
+  'Thrash':'Type=Class,Barbarian Require="level >= 8"',
+  'Come And Get Me':'Type=Class,Barbarian Require="level >= 10"',
+  'Furious Sprint':'Type=Class,Barbarian Require="level >= 10"',
+  'Great Cleave':'Type=Class,Barbarian Require="level >= 10",features.Cleave',
+  'Knockback':'Type=Class,Barbarian Require="level >= 10"',
   'Terrifying Howl':
-    'Type=Class,Barbarian Require=level>=10,"features.Intimidating Glare"',
+    'Type=Class,Barbarian Require="level >= 10","features.Intimidating Glare"',
   "Dragon's Rage Wings":
-    'Type=Class,Barbarian Require=level>=12,"features.Dragon Instinct"',
-  'Furious Grab':'Type=Class,Barbarian Require=level>=12',
+    'Type=Class,Barbarian Require="level >= 12","features.Dragon Instinct"',
+  'Furious Grab':'Type=Class,Barbarian Require="level >= 12"',
   "Predator's Pounce":
-    'Type=Class,Barbarian Require=level>=12,"features.Animal Instinct"',
+    'Type=Class,Barbarian Require="level >= 12","features.Animal Instinct"',
   "Spirit's Wrath":
-    'Type=Class,Barbarian Require=level>=12,"features.Spirit Instinct"',
+    'Type=Class,Barbarian Require="level >= 12","features.Spirit Instinct"',
   "Titan's Stature":
     'Type=Class,Barbarian ' +
-    'Require=level>=12,"features.Giant Instinct","features.Giant\'s Stature"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Giant Instinct",' +
+      '"features.Giant\'s Stature"',
   'Awesome Blow':
-    'Type=Class,Barbarian Require=level>=14,"features.Knockback"',
+    'Type=Class,Barbarian Require="level >= 14","features.Knockback"',
   "Giant's Lunge":
-    'Type=Class,Barbarian Require=level>=14,"features.Giant Instinct"',
+    'Type=Class,Barbarian Require="level >= 14","features.Giant Instinct"',
   'Vengeful Strike':
-    'Type=Class,Barbarian Require=level>=14,"features.Vengeful Strike"',
-  'Whirlwind Strike':'Type=Class,Barbarian,Fighter Require=level>=14',
+    'Type=Class,Barbarian Require="level >= 14","features.Vengeful Strike"',
+  'Whirlwind Strike':'Type=Class,Barbarian,Fighter Require="level >= 14"',
   'Collateral Thrash':
-    'Type=Class,Barbarian Require=level>=16,"features.Thrash"',
+    'Type=Class,Barbarian Require="level >= 16","features.Thrash"',
   'Dragon Transformation':
     'Type=Class,Barbarian ' +
-    'Require=level>=16,"features.Dragon Instinct","features.Dragon\'s Rage Wings"',
-  'Reckless Abandon':'Type=Class,Barbarian Require=level>=16',
-  'Brutal Critical':'Type=Class,Barbarian Require=level>=18',
-  'Perfect Clarity':'Type=Class,Barbarian Require=level>=18',
-  'Vicious Evisceration':'Type=Class,Barbarian Require=level>=18',
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Dragon Instinct",' +
+     '"features.Dragon\'s Rage Wings"',
+  'Reckless Abandon':'Type=Class,Barbarian Require="level >= 16"',
+  'Brutal Critical':'Type=Class,Barbarian Require="level >= 18"',
+  'Perfect Clarity':'Type=Class,Barbarian Require="level >= 18"',
+  'Vicious Evisceration':'Type=Class,Barbarian Require="level >= 18"',
   'Contagious Rage':
-    'Type=Class,Barbarian Require=level>=20,"features.Share Rage"',
-  'Quaking Stomp':'Type=Class,Barbarian Require=level>=20',
+    'Type=Class,Barbarian Require="level >= 20","features.Share Rage"',
+  'Quaking Stomp':'Type=Class,Barbarian Require="level >= 20"',
+
+  'Bardic Lore':'Type=Class,Bard Require="features.Enigma Muse"',
+  'Lingering Composition':'Type=Class,Bard Require="features.Maestro Muse"',
+  'Reach Spell':'Type=Class,Bard',
+  'Versatile Performance':'Type=Class,Bard Require="features.Polymath Muse"',
+  'Cantrip Expanion':'Type=Class,Bard Require="level >= 2"',
+  'Esoteric Polymath':
+    'Type=Class,Bard Require="level >= 2","features.Polymath Muse"',
+  'Inspire Competence':
+    'Type=Class,Bard Require="level >= 2","features.Maestro Muse"',
+  "Loremaster's Etude":
+    'Type=Class,Bard Require="level >= 2","features.Enigma Muse"',
+  'Mutifarious Muse':'Type=Class,Bard Require="level >= 2"',
+  'Inspire Defense':
+    'Type=Class,Bard Require="level >= 4","features.Maestro Muse"',
+  'Melodious Spell':'Type=Class,Bard Require="level >= 4"',
+  'Triple Time':'Type=Class,Bard Require="level >= 4"',
+  'Versatile Signature':
+    'Type=Class,Bard Require="level >= 4","features.Polymath Muse"',
+  'Dirge Of Doom':'Type=Class,Bard Require="level >= 6"',
+  'Harmonize':'Type=Class,Bard Require="level >= 6","features.Maestro Muse"',
+  'Steady Spellcasting':'Type=Class,Bard Require="level >= 6"',
+  'Electic Skill':
+    'Type=Class,Bard ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Polymath Muse",' +
+      '"proficiencyRank.Occultism >= 1"',
+  'Inspire Heroics':
+    'Type=Class,Bard Require="level >= 8","features.Maestro Muse"',
+  'Know-It-All':
+    'Type=Class,Bard Require="level >= 8","features.Enigma Muse"',
+  'House Of Imaginary Walls':'Type=Class,Bard Require="level >= 10"',
+  'Quickened Casting':'Type=Class,Bard Require="level >= 10"',
+  'Unusual Composition':
+    'Type=Class,Bard Require="level >= 10","features.Polymath Muse"',
+  'Eclectic Polymath':
+    'Type=Class,Bard Require="level >= 12","features.Esoteric Polymath"',
+  'Inspirational Focus':'Type=Class,Bard Require="level >= 12"',
+  'Allegro':'Type=Class,Bard Require="level >= 14"',
+  'Soothing Ballad':'Type=Class,Bard Require="level >= 14"',
+  'True Hypercognition':
+    'Type=Class,Bard Require="level >= 14","features.Enigma Muse"',
+  'Effortless Concentration':'Type=Class,Bard Require="level >= 16"',
+  'Studious Capacity':
+    'Type=Class,Bard ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Enigma Muse",' +
+      '"proficiencyRank.Occultism >= 4"',
+  'Deep Lore':'Type=Class,Bard Require="level >= 18"',
+  'Eternal Composition':
+    'Type=Class,Bard Require="level >= 18","features.Maestro Muse"',
+  'Impossible Polymath':
+    'Type=Class,Bard ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"proficiencyRank.Arcana || proficiencyRank.Nature || proficiencyRank.Religion",' +
+      '"features.Esoteric Polymath"',
+  'Fatal Aria':'Type=Class,Bard Require="level >= 20"',
+  'Perfect Encore':
+    'Type=Class,Bard Require="level >= 20","features.Magnum Opus"',
+  'Symphony Of The Muse':
+    'Type=Class,Bard Require="level >= 20","features.Harmonize"',
+
+  "Deity's Domain":'Type=Class,Champion',
+  'Ranged Reprisal':'Type=Class,Champion Require="features.Paladin Cause"',
+  'Unimpeded Step':'Type=Class,Champion Require="features.Liberator Cause"',
+  'Weight Of Guilt':'Type=Class,Champion Require="features.Redeemer Cause"',
+  'Divine Grace':'Type=Class,Champion Require="level >= 2"',
+  'Dragonslayer Oath':
+    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+  'Fiendsbane Oath':
+    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+  'Shining Oath':
+    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+  'Vengeful Oath':
+    'Type=Class,Champion Require="level >= 2","features.Paladin Cause"',
+  'Aura Of Courage':
+    'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
+  'Divine Health':
+    'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
+  'Mercy':
+    'Type=Class,Champion Require="level >= 4","spells.Lay On Hands"',
+  'Litany Against Wrath':
+    'Type=Class,Champion ' +
+    'Require="level >= 6","features.Devotion Spells","features.Tenets Of Good"',
+  'Loyal Warhorse':
+    'Type=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
+  'Shield Warden':
+    'Type=Class,Champion,Fighter ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Divine Ally (Shield && features.Tenets Of Good || features.Shield Block"',
+  'Smite Evil':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Divine Ally (Blade)",' +
+      '"features.Tenets Of Good"',
+  "Advanced Deity's Domain":
+    'Type=Class,Champion Require="level >= 8","features.Deity\'s Domain"',
+  'Greater Mercy':'Type=Class,Champion Require="level >= 8","features.Mercy"',
+  'Heal Mount':
+    'Type=Class,Champion ' +
+    'Require="level >= 8","features.Divine Ally (Steed)","spells.Lay On Hands"',
+  'Quick Shield Block':
+    'Type=Class,Champion,Fighter ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"levels.Champion || features.Shield Block && features.Reactive Shield"',
+  'Second Ally':
+    'Type=Class,Champion Require="level >= 8","features.Divine Ally"',
+  'Sense Evil':
+    'Type=Class,Champion Require="level >= 8","features.Tenets Of Good"',
+  'Devoted Focus':
+    'Type=Class,Champion Require="level >= 10","features.Devotion Spells"',
+  'Imposing Destrier':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Divine Ally (Steed)",' +
+      '"features.Loyal Warhorse"',
+  'Litany Of Sloth':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Devotion Spells",' +
+      '"features.Tenets Of Good"',
+  'Radiant Blade Spirit':
+    'Type=Class,Champion Require="level >= 10","features.Divine Ally (Blade)"',
+  'Shield Of Reckoning':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Champion\'s Reaction",' +
+      '"features.Shield Warden"',
+  'Affliction Mercy':
+    'Type=Class,Champion Require="level >= 12","features.Mercy"',
+  'Aura Of Faith':
+    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+  'Blade Of Justice':
+    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+  "Champion's Sacrifice":
+    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+  'Divine Wall':'Type=Class,Champion Require="level >= 12"',
+  'Lasting Doubt':
+    'Type=Class,Champion Require="level >= 12","features.Redeemer Cause"',
+  'Liberating Stride':
+    'Type=Class,Champion Require="level >= 12","features.Liberator Cause"',
+  'Anchoring Aura':
+    'Type=Class,Champion Require="level >= 14","features.Fiendsbane Oath"',
+  'Aura Of Life':
+    'Type=Class,Champion Require="level >= 14","features.Shining Oath"',
+  'Aura Of Righteousness':
+    'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
+  'Aura Of Vengeance':
+    'Type=Class,Champion ' +
+    'Require="level >= 14","features.Exalt","features.Vengeance Oath"',
+  'Divine Reflexes':'Type=Class,Champion Require="level >= 14"',
+  'Litany Of Righteousness':
+    'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
+  'Wyrmbane Aura':
+    'Type=Class,Champion Require="level >= 14","features.Dragonslayer Oath"',
+  'Auspicious Mount':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Divine Ally (Steed)",' +
+      '"features.Imposing Destrier"',
+  'Instrument Of Zeal':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Divine Ally (Blade)",' +
+      '"features.Tenets Of Good"',
+  'Shield Of Grace':
+    'Type=Class,Champion Require="level >= 16","features.Shield Warden"',
+  'Celestial Form':
+    'Type=Class,Champion Require="level >= 18","features.Tenets Of Good"',
+  'Ultimate Mercy':
+    'Type=Class,Champion Require="level >= 18","features.Mercy"',
+  'Celestial Mount':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 20",' +
+      '"features.Divine Ally (Steed)",' +
+      '"features.Tenets Of Good"',
+  'Radiant Blade Master':
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 20",' +
+      '"features.Divine Ally (Blade)",' +
+      '"features.Radiant Blade Spirit"',
+  'Shield Paragon':
+    'Type=Class,Champion Require="level >= 20","features.Divine Ally (Shield)"',
 
   'Double Slice':'Type=Class,Fighter',
   'Exacting Strike':'Type=Class,Fighter',
@@ -775,8 +978,6 @@ Pathfinder2E.FEATS = {
   'Reflexive Shield':'Type=Class,Fighter Require="level >= 6"',
   'Revealing Stab':'Type=Class,Fighter Require="level >= 6"',
   'Shatter Defenses':'Type=Class,Fighter Require="level >= 6"',
-  'Shield Warden':
-    'Type=Class,Fighter Require="level >= 6","features.Shield Block"',
   'Triple Shot':
     'Type=Class,Fighter Require="level >= 6","features.Double Shot"',
   // TODO requires master in Perception
@@ -787,9 +988,6 @@ Pathfinder2E.FEATS = {
   'Incredible Aim':'Type=Class,Fighter Require="level >= 8"',
   'Mobile Shot Stance':'Type=Class,Fighter Require="level >= 8"',
   'Positioning Assault':'Type=Class,Fighter Require="level >= 8"',
-  'Quick Shield Block':
-    'Type=Class,Fighter ' +
-    'Require="level >= 8","features.Shield Block","features.Reactive Shield"',
   'Agile Grace':'Type=Class,Fighter Require="level >= 10"',
   'Certain Strike':'Type=Class,Fighter Require="level >= 10"',
   'Combat Reflexes':'Type=Class,Fighter Require="level >= 10"',
