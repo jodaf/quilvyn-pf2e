@@ -354,15 +354,72 @@ Pathfinder2E.CLASSES = {
     'Features=' +
       '"1:Ability Boost (Intelligence)",' +
       '"1:Perception Trained",' +
+      '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
+      // TODO plus intelligence modifier
       '"1:Skill Trained (Crafting; Choose 3 from any)",' +
       '"1:Attack Trained (Simple; Alchemical Bombs; Unarmed)",' +
-      '"1:Defense Trained (Light Armor; Unarmored)"',
+      '"1:Defense Trained (Medium Armor; Unarmored)",' +
+      '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
+      '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
+      '"5:Field Discovery","5:Powerful Alchemy",' +
+      '"7:Alchemical Weapon Expertise","7:Iron Will","7:Perpetual Infusions",' +
+      '"9:Alchemical Expertise","9:Alertness","9:Double Brew",' +
+      '"11:Juggernaut","11:Perpetual Potency","13:Greater Field Discovery",' +
+      '"13:Medium Armor Expertise","13:Weapon Specialization",' +
+      '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
+      '"17:Perpetual Perfection","19:Medium Armor Mastery"',
   'Barbarian':
-    'Ability=strength HitPoints=12',
+    'Ability=intelligence HitPoints=8 ' +
+    'Features=' +
+      '"1:Ability Boost (Strength)",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Athletics; Choose 3 from any)",' +
+      '"1:Attack Trained (Martial; Unarmed)",' +
+      '"1:Defense Trained (Medium Armor; Unarmored)",' +
+      '"1:Rage","1:Instinct","3:Deny Advantage","5:Brutality","7:Juggernaut",' +
+      '"7:Weapon Specialization","9:Lightning Reflexes",' +
+      '"9:Raging Resistance","11:Mighty Rage","13:Greater Juggernaut",' +
+      '"13:Medium Armor Expertise","13:Weapon Fury",' +
+      '"15:Greater Weapon Specialization","15:Indomitable Will",' +
+      '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
+      '"19:Devastator"',
   'Bard':
-    'Ability=charisma HitPoints=8',
+    'Ability=charisma HitPoints=8 ' +
+    'Features=' +
+      '"1:Ability Boost (Charisma)",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Occultism; Performance; Choose 4 from any)",' +
+      '"1:Attack Trained (Simple; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Unarmored)",' +
+      '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
+      '"3:Lightning Reflexes","3:Signature Spells","7:Expert Spellcaster",' +
+      '"9:Great Fortitude","9:Resolve","11:Bard Weapon Expertise",' +
+      '"11:Vigilant Senses","13:Light Armor Expertise",' +
+      '"13:Weapon Specialization","15:Master Spellcaster",' +
+      '"17:Greater Resolve","19:Magnum Opus","19:Legendary Spellcaster"',
   'Champion':
-    'Ability=strength,dexterity HitPoints=10',
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Ability Boost (Choose 1 from Strength, Dexterity)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Religion; Choose 3 from any)",' +
+      '"1:Attack Trained (Martial; Unarmed)",' +
+      '"1:Defense Trained (Heavy Armor; Unarmored)",' +
+      '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
+      '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
+      '"1:Devotion Spells","1:Shield Block","3:Divine Ally",' +
+      '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
+      '"9:Champion Expertise","9:Divine Smite","9:Juggernaut",' +
+      '"9:Lightning Reflexes","11:Alertness","11:Divine Will","11:Exalt",' +
+      '"13:Armor Mastery","13:Weapon Mastery",' +
+      '"15:Greater Weapon Specialization","17:Champion Mastery",' +
+      '"17:Legendary Armor","19:Hero\'s Defiance"',
   'Cleric':
     'Ability=wisdom HitPoints=8',
   'Druid':
@@ -833,6 +890,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
   'Mercy':
     'Type=Class,Champion Require="level >= 4","spells.Lay On Hands"',
+  // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Type=Class,Champion ' +
     'Require="level >= 6","features.Devotion Spells","features.Tenets Of Good"',
@@ -872,7 +930,7 @@ Pathfinder2E.FEATS = {
       '"level >= 10",' +
       '"features.Divine Ally (Steed)",' +
       '"features.Loyal Warhorse"',
-  'Litany Of Sloth':
+  'Litany Against Sloth':
     'Type=Class,Champion ' +
     'Require=' +
       '"level >= 10",' +
@@ -1623,65 +1681,255 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Never flat-footed in water/Suffers no penalty for bludgeoning or slashing weapons"',
 
-  // Class
-  'Fighter Feats':'Section=feature Note="%V selections"',
+  // Class Features
   'General Feats':'Section=feature Note="%V selections"',
   'Skill Feats':'Section=feature Note="%V selections"',
   'Skill Increases':'Section=skill Note="%V selections"',
 
-  'Armor Expertise':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Armor Expert (Light; Medium; Heavy; Unarmored)",' +
-      '"May use specialization effects of medium and heavy armor"',
-  'Armor Mastery':
-    'Section=combat ' +
-    'Note="Armor Master (Light; Medium; Heavy; Unarmored)"',
-  'Attack Of Opportunity':
-    'Section=combat ' +
-    'Note="May use Reaction to make a melee Strike at a foe within reach who makes a ranged attack or uses a manipulate or move action"',
-  'Battlefield Surveyor':
-     'Section=feature,combat ' +
-     'Note=' +
-       '"Perception Master",' +
-       '"+2 Perception (initiative)"',
-  'Bravery':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Expert (Will)",' +
-      '"Successful Will save vs. fear is always a critical success/Reduces frightened condition by 1"',
-  'Combat Flexibility':
-    'Section=feature ' +
-    'Note="May choose 1 fighter feat of up to 8th level each day"',
-  'Evasion':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Reflex)",' +
-      '"A successful Reflex save is always a critical succees"',
-  'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
-  'Fighter Weapon Mastery':
-    'Section=combat ' +
-    'Note="Has Weapon Master feature in simple and martial weapons and Weapon Expert feature in advanced weapons in chosen category/Weapon Master gives access to critical specialization effects"',
-  'Greater Weapon Specialization':
-    'Section=combat ' +
-    'Note="Increased Weapon Specialization effects"',
-  'Improved Flexibility':
-    'Section=feature ' +
-    'Note="May choose 1 fighter feat of up to 14th level each day"',
-  'Juggernaut':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Fortitude)",' +
-      '"A successful Fortitude save is always a critical success"',
-  'Versatile Legend':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Has Weapon Expert in simple and martial weapons and Weapon Expert in advanced weapons in chosen category",' +
-      '"Class Expert (Fighter)"',
+  'Alchemical Crafting':'Section=feature Note="FILL"',
+  'Advanced Alchemy':'Section=feature Note="FILL"',
+  'Quick Alchemy':'Section=feature Note="FILL"',
+  'Formula Book':'Section=feature Note="FILL"',
+  'Research Field':'Section=feature Note="FILL"',
+  'Mutagenic Flashback':'Section=feature Note="FILL"',
+  'Field Discovery':'Section=feature Note="FILL"',
+  'Powerful Alchemy':'Section=feature Note="FILL"',
+  'Alchemical Weapon Expertise':'Section=feature Note="FILL"',
+  'Iron Will':'Section=feature Note="FILL"',
+  'Perpetual Infusions':'Section=feature Note="FILL"',
+  'Alchemical Expertise':'Section=feature Note="FILL"',
+  'Alertness':'Section=feature Note="FILL"',
+  'Double Brew':'Section=feature Note="FILL"',
+  'Juggernaut':'Section=feature Note="FILL"',
+  'Perpetual Potency':'Section=feature Note="FILL"',
+  'Greater Field Discovery':'Section=feature Note="FILL"',
+  'Medium Armor Expertise':'Section=feature Note="FILL"',
+  'Weapon Specialization':'Section=feature Note="FILL"',
+  'Alchemical Alacrity':'Section=feature Note="FILL"',
+  'Evasion':'Section=feature Note="FILL"',
+  'Alchemical Mastery':'Section=feature Note="FILL"',
+  'Perpetual Perfection':'Section=feature Note="FILL"',
+  'Medium Armor Mastery':'Section=feature Note="FILL"',
+  
+  'Rage':'Section=feature Note="FILL"',
+  'Instinct':'Section=feature Note="FILL"',
+  'Deny Advantage':'Section=feature Note="FILL"',
+  'Brutality':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Weapon Specialization as above
+  'Lightning Reflexes':'Section=feature Note="FILL"',
+  'Raging Resistance':'Section=feature Note="FILL"',
+  'Mighty Rage':'Section=feature Note="FILL"',
+  'Greater Juggernaut':'Section=feature Note="FILL"',
+  // Medium Armor Expertise as above
+  'Weapon Fury':'Section=feature Note="FILL"',
+  'Greater Weapon Specialization':'Section=feature Note="FILL"',
+  'Indomitable Will':'Section=feature Note="FILL"',
+  'Heightened Senses':'Section=feature Note="FILL"',
+  'Quick Rage':'Section=feature Note="FILL"',
+  'Armor Of Fury':'Section=feature Note="FILL"',
+  'Devastator':'Section=feature Note="FILL"',
+
+  'Occult Spellcasting':'Section=feature Note="FILL"',
+  'Composition Spells':'Section=feature Note="FILL"',
+  'Muses':'Section=feature Note="FILL"',
+  // Lightning Reflexes as above
+  'Signature Spells':'Section=feature Note="FILL"',
+  'Expert Spellcaster':'Section=feature Note="FILL"',
+  'Great Fortitude':'Section=feature Note="FILL"',
+  'Resolve':'Section=feature Note="FILL"',
+  'Bard Weapon Expertise':'Section=feature Note="FILL"',
+  'Vigilant Senses':'Section=feature Note="FILL"',
+  'Light Armor Expertise':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Master Spellcaster':'Section=feature Note="FILL"',
+  'Greater Resolve':'Section=feature Note="FILL"',
+  'Magnum Opus':'Section=feature Note="FILL"',
+  'Legendary Spellcaster':'Section=feature Note="FILL"',
+  
+  "Champion's Code":'Section=feature Note="FILL"',
+  'Deific Weapon':'Section=feature Note="FILL"',
+  "Champion's Reaction":'Section=feature Note="FILL"',
+  'Retributive Strike':'Section=feature Note="FILL"',
+  'Glimpse Of Redemption':'Section=feature Note="FILL"',
+  'Liberating Step':'Section=feature Note="FILL"',
+  'Devotion Spells':'Section=feature Note="FILL"',
+  'Shield Block':'Section=feature Note="FILL"',
+  'Divine Ally':'Section=feature Note="FILL"',
+  'Weapon Expertise':'Section=feature Note="FILL"',
+  'Armor Expertise':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Champion Expertise':'Section=feature Note="FILL"',
+  'Divine Smite':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Lightning Reflexes as above
+  // Alertness as above
+  'Divine Will':'Section=feature Note="FILL"',
+  'Exalt':'Section=feature Note="FILL"',
+  'Armor Mastery':'Section=feature Note="FILL"',
+  'Weapon Mastery':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Champion Mastery':'Section=feature Note="FILL"',
+  'Legendary Armor':'Section=feature Note="FILL"',
+  "Hero's Defiance":'Section=feature Note="FILL"',
+
+  // Class Feats
+
+  'Alchemical Familiar':'Section=feature Note="FILL"',
+  'Alchemical Savant':'Section=feature Note="FILL"',
+  'Far Lobber':'Section=feature Note="FILL"',
+  'Quick Bomber':'Section=feature Note="FILL"',
+  'Poison Resistance':'Section=feature Note="FILL"',
+  'Revivifying Mutagen':'Section=feature Note="FILL"',
+  'Smoke Bomb':'Section=feature Note="FILL"',
+  'Calculated Splash':'Section=feature Note="FILL"',
+  'Efficient Alchemy':'Section=feature Note="FILL"',
+  'Enduring Alchemy':'Section=feature Note="FILL"',
+  'Combine Elixirs':'Section=feature Note="FILL"',
+  'Debilitating Bomb':'Section=feature Note="FILL"',
+  'Directional Bombs':'Section=feature Note="FILL"',
+  'Feral Mutagen':'Section=feature Note="FILL"',
+  'Sticky Bomb':'Section=feature Note="FILL"',
+  'Elastic Mutagen':'Section=feature Note="FILL"',
+  'Extended Splash':'Section=feature Note="FILL"',
+  'Greater Debilitating Bomb':'Section=feature Note="FILL"',
+  'Merciful Elixir':'Section=feature Note="FILL"',
+  'Potent Poisoner':'Section=feature Note="FILL"',
+  'Extend Elixir':'Section=feature Note="FILL"',
+  'Invincible Mutagen':'Section=feature Note="FILL"',
+  'Uncanny Bombs':'Section=feature Note="FILL"',
+  'Glib Mutagen':'Section=feature Note="FILL"',
+  'Greater Merciful Elixir':'Section=feature Note="FILL"',
+  'True Debilitating Bomb':'Section=feature Note="FILL"',
+  'Eternal Elixir':'Section=feature Note="FILL"',
+  'Exploitive Bomb':'Section=feature Note="FILL"',
+  'Genius Mutagen':'Section=feature Note="FILL"',
+  'Persistent Mutagen':'Section=feature Note="FILL"',
+  'Improbable Elixirs':'Section=feature Note="FILL"',
+  'Mindblank Mutagen':'Section=feature Note="FILL"',
+  'Miracle Worker':'Section=feature Note="FILL"',
+  'Perfect Debilitation':'Section=feature Note="FILL"',
+  "Craft Philosopher's Stone":'Section=feature Note="FILL"',
+  'Mega Bomb':'Section=feature Note="FILL"',
+  'Perfect Mutagen':'Section=feature Note="FILL"',
+
+  'Acute Vision':'Section=feature Note="FILL"',
+  'Moment Of Clarity':'Section=feature Note="FILL"',
+  'Raging Intimidation':'Section=feature Note="FILL"',
+  'Raging Thrower':'Section=feature Note="FILL"',
+  'Sudden Charge':
+    'Section=combat Note="May make a melee Strike after a double Stride"',
+  'Acute Scent':'Section=feature Note="FILL"',
+  'Furious Finish':'Section=feature Note="FILL"',
+  'No Escape':'Section=feature Note="FILL"',
+  'Second Wind':'Section=feature Note="FILL"',
+  'Shake It Off':'Section=feature Note="FILL"',
+  'Fast Movement':'Section=feature Note="FILL"',
+  'Raging Athlete':'Section=feature Note="FILL"',
+  'Swipe':'Section=feature Note="FILL"',
+  'Wounded Rage':'Section=feature Note="FILL"',
+  // Armor Expertise as above
+  // Armor Mastery as above
+  'Attack Of Opportunity':'Section=feature Note="FILL"',
+  'Battlefield Surveyor':'Section=feature Note="FILL"',
+  'Bravery':'Section=feature Note="FILL"',
+  'Combat Flexibility':'Section=feature Note="FILL"',
+  // Evasion as above
+  'Fighter Expertise':'Section=feature Note="FILL"',
+  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Improved Flexibility':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  'Versatile Legend':'Section=feature Note="FILL"',
   'Weapon Legend':'Section=feature Note="FILL"',
-  'Weapon Specialization':
-    'Section=combat ' +
-    'Note="%{$\'features.Greater Weapon Specialization\'?\'+2/+3/+4\':\'+4/+5/+8\'} damage with master/expert/ledgendary weapons"',
+  // Weapon Specialization as above
+
+  'Bardic Lore':'Section=feature Note="FILL"',
+  'Lingering Composition':'Section=feature Note="FILL"',
+  'Reach Spell':'Section=feature Note="FILL"',
+  'Versatile Performance':'Section=feature Note="FILL"',
+  'Cantrip Expanion':'Section=feature Note="FILL"',
+  'Esoteric Polymath':'Section=feature Note="FILL"',
+  'Inspire Competence':'Section=feature Note="FILL"',
+  "Loremaster's Etude":'Section=feature Note="FILL"',
+  'Mutifarious Muse':'Section=feature Note="FILL"',
+  'Inspire Defense':'Section=feature Note="FILL"',
+  'Melodious Spell':'Section=feature Note="FILL"',
+  'Triple Time':'Section=feature Note="FILL"',
+  'Versatile Signature':'Section=feature Note="FILL"',
+  'Dirge Of Doom':'Section=feature Note="FILL"',
+  'Harmonize':'Section=feature Note="FILL"',
+  'Steady Spellcasting':'Section=feature Note="FILL"',
+  'Electic Skill':'Section=feature Note="FILL"',
+  'Inspire Heroics':'Section=feature Note="FILL"',
+  'Know-It-All':'Section=feature Note="FILL"',
+  'House Of Imaginary Walls':'Section=feature Note="FILL"',
+  'Quickened Casting':'Section=feature Note="FILL"',
+  'Unusual Composition':'Section=feature Note="FILL"',
+  'Eclectic Polymath':'Section=feature Note="FILL"',
+  'Inspirational Focus':'Section=feature Note="FILL"',
+  'Allegro':'Section=feature Note="FILL"',
+  'Soothing Ballad':'Section=feature Note="FILL"',
+  'True Hypercognition':'Section=feature Note="FILL"',
+  'Effortless Concentration':'Section=feature Note="FILL"',
+  'Studious Capacity':'Section=feature Note="FILL"',
+  'Deep Lore':'Section=feature Note="FILL"',
+  'Eternal Composition':'Section=feature Note="FILL"',
+  'Impossible Polymath':'Section=feature Note="FILL"',
+  'Fatal Aria':'Section=feature Note="FILL"',
+  'Perfect Encore':'Section=feature Note="FILL"',
+  'Symphony Of The Muse':'Section=feature Note="FILL"',
+
+  "Deity's Domain":'Section=feature Note="FILL"',
+  'Ranged Reprisal':'Section=feature Note="FILL"',
+  'Unimpeded Step':'Section=feature Note="FILL"',
+  'Weight Of Guilt':'Section=feature Note="FILL"',
+  'Divine Grace':'Section=feature Note="FILL"',
+  'Dragonslayer Oath':'Section=feature Note="FILL"',
+  'Fiendsbane Oath':'Section=feature Note="FILL"',
+  'Shining Oath':'Section=feature Note="FILL"',
+  'Vengeful Oath':'Section=feature Note="FILL"',
+  'Aura Of Courage':'Section=feature Note="FILL"',
+  'Divine Health':'Section=feature Note="FILL"',
+  'Mercy':'Section=feature Note="FILL"',
+  // Attack Of Opportunity as above
+  'Litany Against Wrath':'Section=feature Note="FILL"',
+  'Loyal Warhorse':'Section=feature Note="FILL"',
+  'Shield Warden':'Section=feature Note="FILL"',
+  'Smite Evil':'Section=feature Note="FILL"',
+  "Advanced Deity's Domain":'Section=feature Note="FILL"',
+  'Greater Mercy':'Section=feature Note="FILL"',
+  'Heal Mount':'Section=feature Note="FILL"',
+  'Quick Shield Block':'Section=feature Note="FILL"',
+  'Second Ally':'Section=feature Note="FILL"',
+  'Sense Evil':'Section=feature Note="FILL"',
+  'Devoted Focus':'Section=feature Note="FILL"',
+  'Imposing Destrier':'Section=feature Note="FILL"',
+  'Litany Against Sloth':'Section=feature Note="FILL"',
+  'Radiant Blade Spirit':'Section=feature Note="FILL"',
+  'Shield Of Reckoning':'Section=feature Note="FILL"',
+  'Affliction Mercy':'Section=feature Note="FILL"',
+  'Aura Of Faith':'Section=feature Note="FILL"',
+  'Blade Of Justice':'Section=feature Note="FILL"',
+  "Champion's Sacrifice":'Section=feature Note="FILL"',
+  'Divine Wall':'Section=feature Note="FILL"',
+  'Lasting Doubt':'Section=feature Note="FILL"',
+  'Liberating Stride':'Section=feature Note="FILL"',
+  'Anchoring Aura':'Section=feature Note="FILL"',
+  'Aura Of Life':'Section=feature Note="FILL"',
+  'Aura Of Righteousness':'Section=feature Note="FILL"',
+  'Aura Of Vengeance':'Section=feature Note="FILL"',
+  'Divine Reflexes':'Section=feature Note="FILL"',
+  'Litany Of Righteousness':'Section=feature Note="FILL"',
+  'Wyrmbane Aura':'Section=feature Note="FILL"',
+  'Auspicious Mount':'Section=feature Note="FILL"',
+  'Instrument Of Zeal':'Section=feature Note="FILL"',
+  'Shield Of Grace':'Section=feature Note="FILL"',
+  'Celestial Form':'Section=feature Note="FILL"',
+  'Ultimate Mercy':'Section=feature Note="FILL"',
+  'Celestial Mount':'Section=feature Note="FILL"',
+  'Radiant Blade Master':'Section=feature Note="FILL"',
+  'Shield Paragon':'Section=feature Note="FILL"',
 
   'Double Slice':
     'Section=combat Note="May attack with two weapons simultaneously"',
@@ -1699,8 +1947,7 @@ Pathfinder2E.FEATURES = {
   'Snagging Strike':
     'Section=combat ' +
     'Note="Successful Strike inflicts flat-footed on target for 1 rd"',
-  'Sudden Charge':
-    'Section=combat Note="May make a melee Strike after a double Stride"',
+  // Sudden Charge as above
   'Aggressive Block':
     'Section=combat ' +
     'Note="May use Shield Block to move foe 5\' or cause it to become flat-footed (foe\'s choice)"',
@@ -1718,7 +1965,7 @@ Pathfinder2E.FEATURES = {
   'Powerful Shove':'Section=feature Note="FILL"',
   'Quick Reversal':'Section=feature Note="FILL"',
   'Shielded Stride':'Section=feature Note="FILL"',
-  'Swipe':'Section=feature Note="FILL"',
+  // Swipe as above
   'Twin Parry':'Section=feature Note="FILL"',
   'Advanced Weapon Training':'Section=feature Note="FILL"',
   'Advantageous Assault':'Section=feature Note="FILL"',
@@ -1728,7 +1975,7 @@ Pathfinder2E.FEATURES = {
   'Reflexive Shield':'Section=feature Note="FILL"',
   'Revealing Stab':'Section=feature Note="FILL"',
   'Shatter Defenses':'Section=feature Note="FILL"',
-  'Shield Warden':'Section=feature Note="FILL"',
+  // Shield Warden as above
   'Triple Shot':'Section=feature Note="FILL"',
   'Blind Fight':'Section=feature Note="FILL"',
   'Dueling Riposte':'Section=feature Note="FILL"',
@@ -1736,7 +1983,7 @@ Pathfinder2E.FEATURES = {
   'Incredible Aim':'Section=feature Note="FILL"',
   'Mobile Shot Stance':'Section=feature Note="FILL"',
   'Positioning Assault':'Section=feature Note="FILL"',
-  'Quick Shield Block':'Section=feature Note="FILL"',
+  // Quick Shield Block as above
   'Sudden Leap':'Section=feature Note="FILL"',
   'Agile Grace':'Section=feature Note="FILL"',
   'Certain Strike':'Section=feature Note="FILL"',
@@ -1787,6 +2034,12 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=charisma ' +
     'Section=ability Note="%V Charisma"',
+  'Class Feat Count':
+    'Pattern="([-+]\\d)\\s+class\\s+feat|class\\s+feat\\s+([-+]\\d)" ' +
+    'Effect=add ' +
+    'Value="$1 || $2" ' +
+    'Attribute=featCount.Class ' +
+    'Section=feature Note="%V Class Feat"',
   'Constitution':
     'Pattern="([-+]\\d)\\s+con(?:stitution)?|con(?:stitution)?\\s+([-+]\\d)" ' +
     'Effect=add ' +
@@ -1799,12 +2052,6 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=dexterity ' +
     'Section=ability Note="%V Dexterity"',
-  'Fighter Feat Count':
-    'Pattern="([-+]\\d)\\s+fighter\\s+feat|fighter\\s+feat\\s+([-+]\\d)" ' +
-    'Effect=add ' +
-    'Value="$1 || $2" ' +
-    'Attribute=featCount.Fighter ' +
-    'Section=feature Note="%V Fighter Feat"',
   'Fortitude':
     'Pattern="([-+]\\d)\\s+fortitude\\s+save|fortitude\\s+save\\s+([-+]\\d)" ' +
     'Effect=add ' +
@@ -1870,13 +2117,7 @@ Pathfinder2E.GOODIES = {
     'Effect=add ' +
     'Value="$1 || $2" ' +
     'Attribute=wisdom ' +
-    'Section=ability Note="%V Wisdom"',
-  'Wizard Feat Count':
-    'Pattern="([-+]\\d)\\s+wizard\\s+feat|wizard\\s+feat\\s+([-+]\\d)" ' +
-    'Effect=add ' +
-    'Value="$1 || $2" ' +
-    'Attribute=featCount.Wizard ' +
-    'Section=feature Note="%V Wizard Feat"'
+    'Section=ability Note="%V Wisdom"'
 };
 Pathfinder2E.LANGUAGES = {
   'Common':'',
@@ -2774,6 +3015,22 @@ Pathfinder2E.classRules = function(
     }
   }
 
+  rules.defineChoice('notes', 'featureNotes.' + prefix + 'Feats:%V selections');
+  rules.defineRule('featureNotes.' + prefix + 'Feats',
+    classLevel, '=', 'Math.floor(source / 2)' + (spellSlots.length == 0 ? ' + 1' : '')
+  );
+  rules.defineRule
+    ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
+  rules.defineRule('featureNotes.generalFeats',
+    classLevel, '+=', 'Math.floor((source + 1) / 4)'
+  );
+  rules.defineRule
+    ('featCount.General', 'featureNotes.generalFeats', '+=', null);
+  rules.defineRule
+    ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
+  rules.defineRule
+    ('featCount.Skill', 'featureNotes.skillFeats', '+=', null);
+
 };
 
 /*
@@ -2785,20 +3042,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   let classLevel = 'levels.' + name;
 
   if(name == 'Fighter') {
-    rules.defineRule
-      ('featCount.Fighter', 'featureNotes.fighterFeats', '+=', null);
-    rules.defineRule('featureNotes.fighterFeats',
-      classLevel, '+=', 'Math.floor(source / 2) + 1'
-    );
-    rules.defineRule
-      ('featCount.General', 'featureNotes.generalFeats', '+=', null);
-    rules.defineRule('featureNotes.generalFeats',
-      classLevel, '+=', 'Math.floor((source + 1) / 4)'
-    );
-    rules.defineRule
-      ('featCount.Skill', 'featureNotes.skillFeats', '+=', null);
-    rules.defineRule
-      ('featureNotes.skillFeats', classLevel, '+=', 'Math.floor(source / 2)');
     rules.defineRule('proficiencyRank.Will', 'saveNotes.bravery', '^=', '2');
     // TODO rules.defineRule('skillBoosts', 'skillNotes.skillIncreases', '+=', null);
     rules.defineRule('skillNotes.skillIncreases',
@@ -3875,16 +4118,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let toAllocateByType = {};
     attrs = this.applyRules(attributes);
     for(attr in attrs) {
-      if(attr.startsWith(countPrefix)) {
+      if(attr.startsWith(countPrefix))
         toAllocateByType[attr.replace(countPrefix, '')] = attrs[attr];
-      }
     }
     let availableChoices = {};
     let allChoices = this.getChoices(prefix);
     for(attr in allChoices) {
       let types = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Type');
-      if(types.indexOf('General') < 0)
-        types.push('General');
       if(attrs[prefix + '.' + attr] != null) {
         for(i = 0; i < types.length; i++) {
           let t = types[i];
@@ -3898,10 +4138,23 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         availableChoices[attr] = types;
       }
     }
+    if(attribute == 'feat') {
+      debug.push('Replace Ancestry with ' + attributes.ancestry);
+      toAllocateByType[attributes.ancestry] = toAllocateByType.Ancestry;
+      for(let a in this.getChoices('levels')) {
+        if(!attributes['levels.' + a])
+          continue;
+        debug.push('Replace Class with ' + a);
+        toAllocateByType[a] = toAllocateByType.Class;
+        break;
+      }
+      delete toAllocateByType.Ancestry;
+      delete toAllocateByType.Class;
+    }
     for(attr in toAllocateByType) {
       let availableChoicesInType = {};
       for(let a in availableChoices) {
-        if(attr == 'General' || availableChoices[a].includes(attr))
+        if(availableChoices[a].includes(attr))
           availableChoicesInType[a] = '';
       }
       howMany = toAllocateByType[attr];
