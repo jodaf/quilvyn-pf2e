@@ -357,8 +357,8 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Crafting; Choose 3 from any)",' +
-      '"1:Attack Trained (Simple; Alchemical Bombs; Unarmed)",' +
-      '"1:Defense Trained (Medium Armor; Unarmored)",' +
+      '"1:Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
       '"5:Field Discovery","5:Powerful Alchemy",' +
@@ -376,8 +376,8 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Athletics; Choose 3 from any)",' +
-      '"1:Attack Trained (Martial; Unarmed)",' +
-      '"1:Defense Trained (Medium Armor; Unarmored)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Rage","1:Instinct","3:Deny Advantage","5:Brutality","7:Juggernaut",' +
       '"7:Weapon Specialization","9:Lightning Reflexes",' +
       '"9:Raging Resistance","11:Mighty Rage","13:Greater Juggernaut",' +
@@ -393,7 +393,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Occultism; Performance; Choose 4 from any)",' +
-      '"1:Attack Trained (Simple; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed)",' +
+      '"1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed)",' +
       '"1:Defense Trained (Light Armor; Unarmored)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
       '"3:Lightning Reflexes","3:Signature Spells","7:Expert Spellcaster",' +
@@ -409,8 +409,8 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Religion; Choose 3 from any)",' +
-      '"1:Attack Trained (Martial; Unarmed)",' +
-      '"1:Defense Trained (Heavy Armor; Unarmored)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
       '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
       '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
       '"1:Devotion Spells","1:Shield Block","3:Divine Ally",' +
@@ -425,10 +425,10 @@ Pathfinder2E.CLASSES = {
     'Features=' +
       '"1:Ability Boost (Wisdom)",' +
       '"1:Perception Trained",' +
-      '"1:Save Expert (Will)","1:Save Trained (Fortide; Reflex)",' +
+      '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Religion; Choose 1 from any; Choose 2 from any)",' +
-      '"1:Attack Trained (Simple; Unarmed)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed)",' +
       '"1:Defense Trained (Unarmored)",' +
       '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","5:Alertness",' +
       '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
@@ -438,11 +438,11 @@ Pathfinder2E.CLASSES = {
     'Features=' +
       '"1:Ability Boost (Wisdom)",' +
       '"1:Perception Trained",' +
-      '"1:Save Expert (Will)","1:Save Trained (Fortide; Reflex)",' +
+      '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       // TODO plus intelligence modifier
       '"1:Skill Trained (Nature; Choose 1 from any; Choose 2 from any)",' +
-      '"1:Attack Trained (Simple; Unarmed)",' +
-      '"1:Defense Trained (Medium Armor; Unarmored)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Primal Spellcasting","1:Druidic Language","1:Druidic Order",' +
       '"1:Shield Block","1:Wild Empathy","3:Alertness","3:Great Fortitude",' +
       '"5:Lightning Reflexes","7:Expert Spellcaster",' +
@@ -455,22 +455,68 @@ Pathfinder2E.CLASSES = {
       '"1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
+      // TODO plus intelligence modifier
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 3 from any)",' +
-      '"1:Attack Expert (Simple; Martial; Unarmed)","1:Attack Trained (Advanced)",' +
-      '"1:Defense Trained (Armor; Unarmored)",' +
-      '"1:Attack Of Opportunity","1:Fighter Feats","1:Shield Block",' +
-      '"2:Skill Feats",3:Bravery,"3:General Feats","3:Skill Increases",' +
-      '"5:Ability Boosts","5:Fighter Weapon Mastery","7:Battlefield Surveyor",'+
-      '"7:Weapon Specialization","9:Combat Flexibility",9:Juggernaut,' +
-      '"11:Armor Expertise","11:Fighter Expertise","13:Weapon Legend",' +
-      '15:Evasion,"15:Greater Weapon Specialization",' +
-      '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend"',
+      '"1:Attack Expert (Simple Weapons; Martial Weapons; Unarmed)","1:Attack Trained (Advanced Weapons)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
+      '"1:Attack Of Opportunity","1:Shield Block","5:Fighter Weapon Mastery",' +
+      '"7:Battlefield Surveyor","7:Weapon Specialization",' +
+      '"9:Combat Flexibility",9:Juggernaut,"11:Armor Expertise",' +
+      '"11:Fighter Expertise","13:Weapon Legend","15:Evasion",' +
+      '"15:Greater Weapon Specialization","15:Improved Flexibility",' +
+      '"17:Armor Mastery","19:Versatile Legend"',
   'Monk':
-    'Ability=strength,dexterity HitPoints=10',
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Fortitude; Reflex; Will)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Choose 4 from any)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed)",' +
+      '"1:Defense Expert (Unarmored)",' +
+      '"1:Flurry Of Blows","1:Powerful Fist","3:Incredible Movement",' +
+      '"3:Mystic Strikes","5:Alertness","5:Expert Strikes",' +
+      '"7:Path To Perfection","7:Weapon Specialization","9:Metal Strikes",' +
+      '"9:Monk Expertise","11:Second Path To Perfection",' +
+      '"13:Graceful Mastery","13:Master Strikes",' +
+      '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
+      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form"',
   'Ranger':
-    'Ability=strength,dexterity HitPoints=10',
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Nature; Survival; Choose 4 from any)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Defense Expert (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Hunt Prey","1:Hunter\'s Edge","3:Iron Will",' +
+      '"5:Ranger Weapon Expertise","5:Trackless Step","7:Evasion",' +
+      '"7:Vigilant Senses","7:Weapon Specialization","9:Nature\'s Edge",' +
+      '"9:Ranger Expertise","11:Juggernaut","11:Medium Armor Expertise",' +
+      '"11:Wild Stride","13:Weapon Mastery",' +
+      '"15:Greater Weapon Specialization","15:Improved Evasion",' +
+      '"15:Incredible Senses","17:Masterful Hunter","19:Second Skin",' +
+      '"19:Swift Prey"',
   'Rogue':
-    'Ability=dexterity HitPoints=8',
+    'Ability=charisma,constitution,dexterity,intelligence,strength,wisdom HitPoints=8 ' +
+    'Features=' +
+      '"1:Ability Boost (Choose 1 from any)",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Stealth; Choose 1 from any; Choose 7 from any)",' +
+      '"1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)",' +
+      '"1:Defense Expert (Light Armor; Unarmored)",' +
+      '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
+      '"3:Deny Advantage","5:Weapon Tricks","7:Evasion","7:Vigilant Senses",' +
+      '"7:Weapon Specialization","9:Debilitating Strike",' +
+      '"9:Great Fortitude","11:Rogue Expertise","13:Improved Evasion",' +
+      '"13:Incredible Senses","13:Light Armor Expertise","13:Master Tricks",' +
+      '"15:Double Debilitation","15:Greater Weapon Specialization",' +
+      '"17:Slippery Mind","19:Light Armor Mastery","19:Master Strike"',
   'Sorcerer':
     'Ability=charisma HitPoints=6',
   'Wizard':
@@ -706,7 +752,7 @@ Pathfinder2E.FEATS = {
   // Class
   'Alchemical Familiar':'Type=Class,Alchemist',
   'Alchemical Savant':
-    'Type=Class,Alchemist Require=skillProficiency.Crafting>=1',
+    'Type=Class,Alchemist Require="skillProficiency.Crafting >= 1"',
   'Far Lobber':'Type=Class,Alchemist',
   'Quick Bomber':'Type=Class,Alchemist',
   'Poison Resistance':'Type=Class,Alchemist,Druid Require="level >= 2"',
@@ -767,14 +813,16 @@ Pathfinder2E.FEATS = {
   'Shake It Off':'Type=Class,Barbarian Require="level >= 2"',
   'Fast Movement':'Type=Class,Barbarian Require="level >= 4"',
   'Raging Athlete':
-    'Type=Class,Barbarian Require="level >= 4","skillProficiency.Athletics>=2"',
+    'Type=Class,Barbarian ' +
+    'Require="level >= 4","skillProficiency.Athletics >= 2"',
   'Swipe':'Type=Class,Barbarian,Fighter Require="level >= 4"',
   'Wounded Rage':'Type=Class,Barbarian Require="level >= 4"',
   'Animal Skin':
     'Type=Class,Barbarian Require="level >= 6","features.Animal Instinct"',
   'Attack Of Opportunity':'Type=Class,Barbarian,Champion Require="level >= 6"',
   'Brutal Bully':
-    'Type=Class,Barbarian Require="level >= 6","skillProficiency.Athletics>=2"',
+    'Type=Class,Barbarian ' +
+    'Require="level >= 6","skillProficiency.Athletics >= 2"',
   'Cleave':'Type=Class,Barbarian Require="level >= 6"',
   "Dragon's Rage Breath":
     'Type=Class,Barbarian Require="level >= 6","features.Dragon Instinct"',
@@ -785,7 +833,8 @@ Pathfinder2E.FEATS = {
   'Animal Rage':
     'Type=Class,Barbarian Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
-    'Type=Class,Barbarian Require="level >= 8","skillProficiency.Athletics>=3"',
+    'Type=Class,Barbarian ' +
+    'Require="level >= 8","skillProficiency.Athletics >=3 "',
   'Renewed Vigor':'Type=Class,Barbarian Require="level >= 8"',
   'Share Rage':'Type=Class,Barbarian Require="level >= 8"',
   'Sudden Leap':'Type=Class,Barbarian,Fighter Require="level >= 8"',
@@ -836,7 +885,7 @@ Pathfinder2E.FEATS = {
   'Lingering Composition':'Type=Class,Bard Require="features.Maestro Muse"',
   'Reach Spell':'Type=Class,Bard,Cleric,Druid',
   'Versatile Performance':'Type=Class,Bard Require="features.Polymath Muse"',
-  'Cantrip Expanion':'Type=Class,Bard Require="level >= 2"',
+  'Cantrip Expansion':'Type=Class,Bard Require="level >= 2"',
   'Esoteric Polymath':
     'Type=Class,Bard Require="level >= 2","features.Polymath Muse"',
   'Inspire Competence':
@@ -853,12 +902,12 @@ Pathfinder2E.FEATS = {
   'Dirge Of Doom':'Type=Class,Bard Require="level >= 6"',
   'Harmonize':'Type=Class,Bard Require="level >= 6","features.Maestro Muse"',
   'Steady Spellcasting':'Type=Class,Bard,Cleric,Druid Require="level >= 6"',
-  'Electic Skill':
+  'Eclectic Skill':
     'Type=Class,Bard ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Polymath Muse",' +
-      '"proficiencyRank.Occultism >= 1"',
+      '"proficiencyRank.Occultism >= 3"',
   'Inspire Heroics':
     'Type=Class,Bard Require="level >= 8","features.Maestro Muse"',
   'Know-It-All':
@@ -888,7 +937,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard ' +
     'Require=' +
       '"level >= 18",' +
-      '"proficiencyRank.Arcana || proficiencyRank.Nature || proficiencyRank.Religion",' +
+      '"proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
   'Fatal Aria':'Type=Class,Bard Require="level >= 20"',
   'Perfect Encore':
@@ -1037,7 +1086,7 @@ Pathfinder2E.FEATS = {
   // Reach Spell as above
   'Cantrip Expansion':'Type=Class,Cleric Require="level >= 2"',
   'Communal Healing':'Type=Class,Cleric Require="level >= 2"',
-  'Emplazon Armament':'Type=Class,Cleric Require="level >= 2"',
+  'Emblazon Armament':'Type=Class,Cleric Require="level >= 2"',
   'Sap Life':'Type=Class,Cleric Require="level >= 2"',
   'Turn Undead':'Type=Class,Cleric Require="level >= 2"',
   'Versatile Font':
@@ -1119,7 +1168,8 @@ Pathfinder2E.FEATS = {
     'Type=Class,Cleric Require="level >= 20","features.Miraculous Spell"',
   'Metamagic Channel':'Type=Class,Cleric Require="level >= 20"',
 
-  'Animal Companion':'Type=Class,Druid Require="features.Animal Order"',
+  'Animal Companion':
+    'Type=Class,Druid,Ranger Require="features.Animal Order || levels.Ranger"',
   'Leshy Familiar':'Type=Class,Druid Require="features.Leaf Order"',
   // Reach Spell as above
   'Storm Born':'Type=Class,Druid Require="features.Storm Order"',
@@ -1134,7 +1184,10 @@ Pathfinder2E.FEATS = {
     'Type=Class,Druid ' +
     'Require="level >= 4","strength >= 14","features.Wild Shape"',
   'Mature Animal Companion':
-    'Type=Class,Druid Require="level >= 4","features.Animal Companion"',
+    'Type=Class,Druid,Ranger ' +
+    'Require=' +
+      '"levels.Druid >= 4 || levels.Ranger >= 6",' +
+      '"features.Animal Companion"',
   'Order Magic':
     'Type=Class,Druid Require="level >= 4","features.Order Explorer"',
   'Thousand Faces':
@@ -1153,7 +1206,10 @@ Pathfinder2E.FEATS = {
     'Type=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Fey Caller':'Type=Class,Druid Require="level >= 8"',
   'Incredible Companion':
-    'Type=Class,Druid Require="level >= 8","features.Mature Animal Companion"',
+    'Type=Class,Druid,Ranger ' +
+    'Require=' +
+      '"levels.Druid >= 8 || levels.Ranger >= 10",' +
+      '"features.Mature Animal Companion"',
   'Soaring Shape':
     'Type=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Wind Caller':
@@ -1166,7 +1222,10 @@ Pathfinder2E.FEATS = {
     'Type=Class,Druid ' +
     'Require="level >= 10","features.Leaf Order || features.Wild Shape"',
   'Side By Side':
-    'Type=Class,Druid Require="level >= 10","features.Animal Companion"',
+    'Type=Class,Druid,Ranger ' +
+    'Require=' +
+      '"levels.Druid >= 10 || levels.Ranger >= 12",' +
+      '"features.Animal Companion"',
   'Dragon Shape':
     'Type=Class,Druid Require="level >= 12","features.Soaring Shape"',
   'Green Tongue':
@@ -1175,7 +1234,10 @@ Pathfinder2E.FEATS = {
   'Primal Summons':
     'Type=Class,Druid Require="level >= 12","features.Call Of The Wild"',
   'Specialized Companion':
-    'Type=Class,Druid Require="level >= 14","features.Incredible Companion"',
+    'Type=Class,Druid,Ranger ' +
+    'Require=' +
+      '"levels.Druid >= 14 || levels.Ranger >= 16",' +
+      '"features.Incredible Companion"',
   'Timeless Nature':'Type=Class,Druid Require="level >= 14"',
   'Verdant Metamorphosis':
     'Type=Class,Druid Require="level >= 14","features.Leaf Order"',
@@ -1212,17 +1274,18 @@ Pathfinder2E.FEATS = {
   'Lunge':'Type=Class,Fighter Require="level >= 2"',
   'Double Shot':'Type=Class,Fighter Require="level >= 4"',
   'Dual-Handed Assault':'Type=Class,Fighter Require="level >= 4"',
-  'Knockdown':'Type=Class,Fighter Require="level >= 4"',
+  'Knockdown':
+    'Type=Class,Fighter Require="level >= 4","proficiencyRank.Athletics >= 1"',
   'Powerful Shove':
     'Type=Class,Fighter ' +
     'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
   'Quick Reversal':'Type=Class,Fighter Require="level >= 4"',
   'Shielded Stride':'Type=Class,Fighter Require="level >= 4"',
-  'Twin Parry':'Type=Class,Fighter Require="level >= 4"',
+  'Twin Parry':'Type=Class,Fighter,Ranger Require="level >= 4"',
   'Advanced Weapon Training':'Type=Class,Fighter Require="level >= 6"',
   'Advantageous Assault':'Type=Class,Fighter Require="level >= 6"',
-  // TODO requires trained in Athletics
-  'Disarming Stance':'Type=Class,Fighter Require="level >= 6"',
+  'Disarming Stance':
+    'Type=Class,Fighter Require="level >= 6","proficiencyLevel.Athletics >= 1"',
   'Furious Focus':
     'Type=Class,Fighter Require="level >= 6","features.Power Attack"',
   "Guardian's Deflection":'Type=Class,Fighter Require="level >= 6"',
@@ -1231,8 +1294,9 @@ Pathfinder2E.FEATS = {
   'Shatter Defenses':'Type=Class,Fighter Require="level >= 6"',
   'Triple Shot':
     'Type=Class,Fighter Require="level >= 6","features.Double Shot"',
-  // TODO requires master in Perception
-  'Blind Fight':'Type=Class,Fighter Require="level >= 8"',
+  'Blind-Fight':
+    'Type=Class,Fighter,Ranger,Rogue ' +
+    'Require="level >= 8","proficiencyRank.Perception >= 3"',
   'Dueling Riposte':
     'Type=Class,Fighter Require="level >= 8","features.Dueling Parry"',
   'Felling Strike':'Type=Class,Fighter Require="level >= 8"',
@@ -1243,15 +1307,16 @@ Pathfinder2E.FEATS = {
   'Certain Strike':'Type=Class,Fighter Require="level >= 10"',
   'Combat Reflexes':'Type=Class,Fighter Require="level >= 10"',
   'Debilitating Shot':'Type=Class,Fighter Require="level >= 10"',
-  // TODO requires trained in Athletics
-  'Disarming Twist':'Type=Class,Fighter Require="level >= 10"',
+  'Disarming Twist':
+    'Type=Class,Fighter ' +
+    'Require="level >= 10","proficiencyLevel.Athletics >= 1"',
   'Disruptive Stance':'Type=Class,Fighter Require="level >= 10"',
   'Fearsome Brute':'Type=Class,Fighter Require="level >= 10"',
   'Improved Knockdown':
     'Type=Class,Fighter Require="level >= 10",features.Knockdown',
   'Mirror Shield':'Type=Class,Fighter Require="level >= 10"',
   'Twin Riposte':
-    'Type=Class,Fighter Require="level >= 10","features.Twin Parry"',
+    'Type=Class,Fighter,Ranger Require="level >= 10","features.Twin Parry"',
   'Brutal Finish':'Type=Class,Fighter Require="level >= 12"',
   'Dueling Dance':
     'Type=Class,Fighter Require="level >= 12","features.Dueling Parry"',
@@ -1274,8 +1339,12 @@ Pathfinder2E.FEATS = {
   'Guiding Riposte':
     'Type=Class,Fighter Require="level >= 14","features.Dueling Riposte"',
   'Improved Twin Riposte':
-    'Type=Class,Fighter Require="level >= 14","features.Twin Riposte"',
-  'Stance Savant':'Type=Class,Fighter Require="level >= 14"',
+    'Type=Class,Fighter,Ranger ' +
+    'Require=' +
+      '"levels.Fighter >= 14 || levels.Ranger >= 16",' +
+      '"features.Twin Riposte"',
+  'Stance Savant':
+    'Type=Class,Fighter,Monk Require="level >= 14 || levels.Monk >= 12"',
   'Two-Weapon Flurry':'Type=Class,Fighter Require="level >= 14"',
   'Graceful Poise':
     'Type=Class,Fighter Require="level >= 16","features.Double Slice"',
@@ -1285,10 +1354,320 @@ Pathfinder2E.FEATS = {
     'Type=Class,Fighter Require="level >= 16","features.Triple Shot"',
   'Twinned Defense':
     'Type=Class,Fighter Require="level >= 16","features.Twin Parry"',
-  'Impossible Volley':'Type=Class,Fighter Require="level >= 18"',
+  'Impossible Volley':'Type=Class,Fighter,Ranger Require="level >= 18"',
   'Savage Critical':'Type=Class,Fighter Require="level >= 18"',
   'Boundless Reprisals':'Type=Class,Fighter Require="level >= 20"',
   'Weapon Supremacy':'Type=Class,Fighter Require="level >= 20"',
+
+  'Crane Stance':'Type=Class,Monk"',
+  'Dragon Stance':'Type=Class,Monk"',
+  'Ki Rush':'Type=Class,Monk"',
+  'Ki Strike':'Type=Class,Monk"',
+  'Monastic Weaponry':'Type=Class,Monk"',
+  'Mountain Stance':'Type=Class,Monk"',
+  'Tiger Stance':'Type=Class,Monk"',
+  'Wolf Stance':'Type=Class,Monk"',
+  'Brawling Focus':'Type=Class,Monk Require="level >= 2"',
+  'Cruising Grab':'Type=Class,Monk Require="level >= 2"',
+  'Dancing Leaf':'Type=Class,Monk Require="level >= 2"',
+  'Elemental Fist':'Type=Class,Monk Require="level >= 2","features.Ki Strike"',
+  'Stunning Fist':
+    'Type=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
+  'Deflect Arrow':'Type=Class,Monk Require="level >= 4"',
+  'Flurry Of Maneuvers':
+    'Type=Class,Monk Require="level >= 4","proficiencyRank.Athletics >= 2"',
+  'Flying Kick':'Type=Class,Monk Require="level >= 4"',
+  'Guarded Movement':'Type=Class,Monk Require="level >= 4"',
+  'Stand Still':'Type=Class,Monk Require="level >= 4"',
+  'Wholeness Of Body':
+    'Type=Class,Monk Require="level >= 4","features.Ki Spells"',
+  'Abundant Step':
+    'Type=Class,Monk ' +
+    'Require="level >= 6","features.Incredible Movement","features.Ki Spells"',
+  'Crane Flutter':
+    'Type=Class,Monk Require="level >= 6","features.Crane Stance"',
+  'Dragon Roar':
+    'Type=Class,Monk Require="level >= 6","features.Dragon Stance"',
+  'Ki Blast':
+    'Type=Class,Monk Require="level >= 6","features.Ki Spells"',
+  'Mountain Stronghold':
+    'Type=Class,Monk Require="level >= 6","features.Mountain Stance"',
+  'Tiger Slash':
+    'Type=Class,Monk Require="level >= 6","features.Tiger Stance"',
+  'Water Step':'Type=Class,Monk Require="level >= 6"',
+  'Whirling Throw':'Type=Class,Monk Require="level >= 6"',
+  'Wolf Drag':
+    'Type=Class,Monk Require="level >= 6","features.Wolf Stance"',
+  'Arrow Snatching':
+    'Type=Class,Monk Require="level >= 8","features.Deflect Arrow"',
+  'Ironblood Stance':'Type=Class,Monk Require="level >= 8"',
+  'Mixed Maneuver':
+    'Type=Class,Monk Require="level >= 8","proficiencyRank.Athletics >= 3"',
+  'Tangled Forest Stance':'Type=Class,Monk Require="level >= 8"',
+  'Wall Run':'Type=Class,Monk Require="level >= 8"',
+  'Wild Winds Initiate':
+    'Type=Class,Monk Require="level >= 8","features.Ki Spells"',
+  'Knockback Strike':'Type=Class,Monk Require="level >= 10"',
+  'Sleeper Hold':'Type=Class,Monk Require="level >= 10"',
+  'Wind Jump':
+    'Type=Class,Monk Require="level >= 10","features.Ki Spells"',
+  'Winding Flow':'Type=Class,Monk Require="level >= 10"',
+  'Diamond Soul':'Type=Class,Monk Require="level >= 12"',
+  'Disrupt Ki':'Type=Class,Monk Require="level >= 12"',
+  'Improved Knockback':
+    'Type=Class,Monk Require="level >= 12","proficiencyRank.Athletics >= 3"',
+  'Meditative Focus':
+    'Type=Class,Monk Require="level >= 12","features.Ki Spells"',
+  // Stance Savant as above
+  'Ironblood Surge':
+    'Type=Class,Monk Require="level >= 14","features.Ironblood Stance"',
+  'Mountain Quake':
+    'Type=Class,Monk Require="level >= 14","features.Mountain Stronghold"',
+  'Tangled Forest Rake':
+    'Type=Class,Monk Require="level >= 14","features.Tangled Forest Stance"',
+  'Timeless Body':'Type=Class,Monk Require="level >= 14"',
+  'Tongue Of Sun And Moon':'Type=Class,Monk Require="level >= 14"',
+  'Wild Winds Gust':
+    'Type=Class,Monk Require="level >= 14","features.Wild Winds Initiate"',
+  'Enlightened Presence':'Type=Class,Monk Require="level >= 16"',
+  'Master Of Many Styles':
+    'Type=Class,Monk Require="level >= 16","features.Stance Savant"',
+  'Shattering Strike':'Type=Class,Monk Require="level >= 16"',
+  'Diamond Fists':'Type=Class,Monk Require="level >= 18"',
+  'Empty Body':
+    'Type=Class,Monk Require="level >= 18","features.Ki Spells"',
+  'Meditative Wellspring':
+    'Type=Class,Monk Require="level >= 18","features.Meditative Focus"',
+  'Swift River':'Type=Class,Monk Require="level >= 18"',
+  'Enduring Quickness':'Type=Class,Monk Require="level >= 20"',
+  // TODO requires at least two stances
+  'Fuse Stance':'Type=Class,Monk Require="level >= 20"',
+  'Impossible Technique':'Type=Class,Monk Require="level >= 20"',
+
+  // Animal Companion as above
+  'Crossbow Ace':'Type=Class,Ranger',
+  'Hunted Shot':'Type=Class,Ranger',
+  'Monster Hunter':'Type=Class,Ranger',
+  'Twin Takedown':'Type=Class,Ranger',
+  'Favored Terrain':'Type=Class,Ranger Require="level >= 2"',
+  "Hunter's Aim":'Type=Class,Ranger Require="level >= 2"',
+  'Monster Warden':
+    'Type=Class,Ranger Require="level >= 2","features.Monster Hunter"',
+  'Quick Draw':'Type=Class,Ranger,Rogue Require="level >= 2"',
+  'Wild Empathy':'Type=Class,Ranger Require="level >= 2"',
+  "Companion's Cry":
+    'Type=Class,Ranger Require="level >= 4","features.Animal Companion"',
+  'Disrupt Prey':'Type=Class,Ranger Require="level >= 4"',
+  'Far Shot':'Type=Class,Ranger Require="level >= 4"',
+  'Favored Enemy':'Type=Class,Ranger Require="level >= 4"',
+  'Running Reload':'Type=Class,Ranger Require="level >= 4"',
+  "Scout's Warning":'Type=Class,Ranger,Rogue Require="level >= 4"',
+  'Snare Specialist':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"proficiencyRank.Crafting >= 2",' +
+      '"features.Snare Crafting"',
+  // Twin Parry as above
+  // Mature Animal Companion as above
+  'Quick Snares':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"proficiencyRank.Crafting >= 2",' +
+      '"features.Snare Specialist"',
+  'Skirmish Strike':'Type=Class,Ranger,Rogue Require="level >= 6"',
+  'Snap Shot':'Type=Class,Ranger Require="level >= 6"',
+  'Swift Tracker':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"proficiencyRank.Survival >= 2",' +
+      '"features.Experienced Tracker"',
+  // Blind-Fight as above
+  'Deadly Aim':
+    'Type=Class,Ranger Require="level >= 8","features.Weapon Specialization"',
+  'Hazard Finder':'Type=Class,Ranger Require="level >= 8"',
+  'Powerful Snares':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"proficiencyRank.Crafting >= 3",' +
+      '"features.Snare Specialist"',
+  'Terrain Master':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"proficiencyRank.Survival >= 3",' +
+      '"features.Favored Terrain"',
+  "Warden's Boon":'Type=Class,Ranger Require="level >= 8"',
+  'Camouflage':
+    'Type=Class,Ranger Require="level >= 10","proficiencyRank.Stealth >= 3"',
+  // Incredible Companion as above
+  'Master Monster Hunter':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"proficiencyRank.Nature >= 3",' +
+      '"features.Monster Hunter"',
+  'Penetrating Shot':'Type=Class,Ranger Require="level >= 10"',
+  // Twin Riposte as above
+  "Warden's Step":
+    'Type=Class,Ranger Require="level >= 10","proficiencyRank.Stealth >= 3"',
+  'Distracting Shot':'Type=Class,Ranger Require="level >= 12"',
+  'Double Prey':'Type=Class,Ranger Require="level >= 12"',
+  'Lightning Snares':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"proficiencyRank.Crafting >= 3",' +
+      '"features.Quick Snares",' +
+      '"features.Snare Specialist"',
+  'Second Sting':'Type=Class,Ranger Require="level >= 12"',
+  // Side By Side as above
+  'Sense The Unseen':'Type=Class,Ranger,Rogue Require="level >= 14"',
+  'Shared Prey':
+    'Type=Class,Ranger ' +
+    'Require="level >= 14","features.Double Prey","features.Warden\'s Boon"',
+  'Stealthy Companion':
+    'Type=Class,Ranger ' +
+    'Require="level >= 14","features.Animal Companion","features.Camouflage"',
+  'Targeting Shot':
+    'Type=Class,Ranger Require="level >= 14","features.Hunter\'s Aim"',
+  "Warden's Guidance":'Type=Class,Ranger Require="level >= 14"',
+  'Greater Distracting Shot':
+    'Type=Class,Ranger Require="level >= 16","features.Distracting Shot"',
+  // Improved Twin Riposte as above
+  'Legendary Monster Hunter':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"proficiencyRanks.Nature >= 4",' +
+      '"features.Master Monster Hunter"',
+  // Specialized Companion as above
+  'Ubiquitous Snares':
+    'Type=Class,Ranger Require="level >= 16","features.Snare Specialist"',
+  'Impossible Flurry':'Type=Class,Ranger Require="level >= 18"',
+  // Impossible Volley as above
+  'Manifold Edge':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"features.Hunter\'s Edge",' +
+      '"features.Masterful Hunter"',
+  'Masterful Companion':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"features.Masterful Hunter",' +
+      '"features.Animal Companion"',
+  'Perfect Shot':'Type=Class,Ranger Require="level >= 18"',
+  'Shadow Hunter':
+    'Type=Class,Ranger Require="level >= 18","features.Camouflage"',
+  'Legendary Shot':
+    'Type=Class,Ranger ' +
+    'Require=' +
+      '"level >= 20",' +
+      '"features.Masterful Hunter",' +
+      '"proficiencyRank.Perception >= 4",' +
+      '"features.Far Shot"',
+  'To The Ends Of The Earth':
+    'Type=Class,Ranger Require="level >= 20","proficiencyRank.Survival >= 4"',
+  'Triple Threat':
+    'Type=Class,Ranger Require="level >= 20","features.Shared Prey"',
+  'Ultimate Skirmisher':
+    'Type=Class,Ranger Require="level >= 20","features.Wild Stride"',
+
+  'Nimble Dodge':'Type=Class,Rogue',
+  'Trap Finder':'Type=Class,Rogue',
+  'Twin Feint':'Type=Class,Rogue',
+  "You're Next":'Type=Class,Rogue Require="proficiencyRank.Intimidation >= 1"',
+  'Brutal Beating':
+    'Type=Class,Rogue Require="level >= 2","features.Ruffian Racket"',
+  'Distracting Feint':
+    'Type=Class,Rogue Require="level >= 2","features.Scoundrel Racket"',
+  'Minor Magic':'Type=Class,Rogue Require="level >= 2"',
+  'Mobility':'Type=Class,Rogue Require="level >= 2"',
+  // Quick Draw as above
+  'Unbalancing Blow':
+    'Type=Class,Rogue Require="level >= 2","features.Thief Racket"',
+  'Battle Assessment':'Type=Class,Rogue Require="level >= 4"',
+  'Dead Striker':'Type=Class,Rogue Require="level >= 4"',
+  'Magical Trickster':'Type=Class,Rogue Require="level >= 4"',
+  'Poison Weapon':'Type=Class,Rogue Require="level >= 4"',
+  'Reactive Pursuit':'Type=Class,Rogue Require="level >= 4"',
+  'Sabotage':'Type=Class,Rogue Require="level >= 4"',
+  // Scout's Warning as above
+  'Gang Up':'Type=Class,Rogue Require="level >= 6"',
+  'Light Step':'Type=Class,Rogue Require="level >= 6"',
+  // Skirmish Strike as above
+  'Twist The Knife':'Type=Class,Rogue Require="level >= 6"',
+  // Blind-Fight as above
+  'Delay Trap':'Type=Class,Rogue Require="level >= 8"',
+  'Improved Poison Weapon':
+    'Type=Class,Rogue Require="level >= 8","features.Poison Weapon"',
+  'Nimble Roll':
+    'Type=Class,Rogue Require="level >= 8","features.Nimble Dodge"',
+  'Opportune Backstab':'Type=Class,Rogue Require="level >= 8"',
+  'Sidestep':'Type=Class,Rogue Require="level >= 8"',
+  'Sly Striker':
+    'Type=Class,Rogue Require="level >= 8","features.Sneak Attack"',
+  'Precise Debilitations':
+    'Type=Class,Rogue ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Thief Racket",' +
+      '"features.Debilitating Strike"',
+  'Sneak Savant':
+    'Type=Class,Rogue Require="level >= 10","proficiencyRank.Stealth >= 3"',
+  'Tactical Debilitations':
+    'Type=Class,Rogue ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Scoundrel Racket",' +
+      '"features.Debilitating Strike"',
+  'Vicious Debilitations':
+    'Type=Class,Rogue ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Ruffian Racket",' +
+      '"features.Debilitating Strike"',
+  'Critical Debilitation':
+    'Type=Class,Rogue Require="level >= 12","features.Debilitating Strike"',
+  'Fantastic Leap':'Type=Class,Rogue Require="level >= 12"',
+  'Felling Shot':'Type=Class,Rogue Require="level >= 12"',
+  'Reactive Interference':'Type=Class,Rogue Require="level >= 12"',
+  'Spring From The Shadows':'Type=Class,Rogue Require="level >= 12"',
+  'Defensive Roll':'Type=Class,Rogue Require="level >= 14"',
+  'Instant Opening':'Type=Class,Rogue Require="level >= 14"',
+  'Leave An Opening':'Type=Class,Rogue Require="level >= 14"',
+  // Sense The Unseen as above
+  'Blank Slate':
+    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Deception >= 4"',
+  'Cloud Step':
+    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Acrobatics >= 4"',
+  'Cognitive Loophole':'Type=Class,Rogue Require="level >= 16"',
+  'Dispelling Slice':'Type=Class,Rogue Require="level >= 16"',
+  'Perfect Distraction':
+    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Deception >= 4"',
+  'Implausible Infiltration':
+    'Type=Class,Rogue ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"proficiencyRank.Acrobatics >= 4",' +
+      '"features.Quick Squeeze"',
+  'Powerful Sneak':'Type=Class,Rogue Require="level >= 18"',
+  "Trickster's Ace":'Type=Class,Rogue Require="level >= 18"',
+  'Hidden Paragon':
+    'Type=Class,Rogue Require="level >= 20","proficiencyRank.Stealth >= 4"',
+  'Impossible Striker':
+    'Type=Class,Rogue Require="level >= 20","features.Sly Striker"',
+  'Reactive Distraction':
+    'Type=Class,Rogue ' +
+    'Require=' +
+      '"level >= 20",' +
+      '"proficiencyRank.Deception >= 4",' +
+      '"features.Perfect Distraction"',
 
   // General
   'Adopted Ancestry':'Type=General',
@@ -1874,7 +2253,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Never flat-footed in water/Suffers no penalty for bludgeoning or slashing weapons"',
 
-  // Class Features
+  // Class Features and Feats
+
   'General Feats':'Section=feature Note="%V selections"',
   'Skill Feats':'Section=feature Note="%V selections"',
   'Skill Increases':'Section=skill Note="%V selections"',
@@ -1905,103 +2285,6 @@ Pathfinder2E.FEATURES = {
   'Perpetual Perfection':'Section=feature Note="FILL"',
   'Medium Armor Mastery':'Section=feature Note="FILL"',
   
-  // Barbarian
-  'Rage':'Section=feature Note="FILL"',
-  'Instinct':'Section=feature Note="FILL"',
-  'Deny Advantage':'Section=feature Note="FILL"',
-  'Brutality':'Section=feature Note="FILL"',
-  // Juggernaut as above
-  // Weapon Specialization as above
-  'Lightning Reflexes':'Section=feature Note="FILL"',
-  'Raging Resistance':'Section=feature Note="FILL"',
-  'Mighty Rage':'Section=feature Note="FILL"',
-  'Greater Juggernaut':'Section=feature Note="FILL"',
-  // Medium Armor Expertise as above
-  'Weapon Fury':'Section=feature Note="FILL"',
-  'Greater Weapon Specialization':'Section=feature Note="FILL"',
-  'Indomitable Will':'Section=feature Note="FILL"',
-  'Heightened Senses':'Section=feature Note="FILL"',
-  'Quick Rage':'Section=feature Note="FILL"',
-  'Armor Of Fury':'Section=feature Note="FILL"',
-  'Devastator':'Section=feature Note="FILL"',
-
-  // Bard
-  'Occult Spellcasting':'Section=feature Note="FILL"',
-  'Composition Spells':'Section=feature Note="FILL"',
-  'Muses':'Section=feature Note="FILL"',
-  // Lightning Reflexes as above
-  'Signature Spells':'Section=feature Note="FILL"',
-  'Expert Spellcaster':'Section=feature Note="FILL"',
-  'Great Fortitude':'Section=feature Note="FILL"',
-  'Resolve':'Section=feature Note="FILL"',
-  'Bard Weapon Expertise':'Section=feature Note="FILL"',
-  'Vigilant Senses':'Section=feature Note="FILL"',
-  'Light Armor Expertise':'Section=feature Note="FILL"',
-  // Weapon Specialization as above
-  'Master Spellcaster':'Section=feature Note="FILL"',
-  'Greater Resolve':'Section=feature Note="FILL"',
-  'Magnum Opus':'Section=feature Note="FILL"',
-  'Legendary Spellcaster':'Section=feature Note="FILL"',
-  
-  // Champion
-  "Champion's Code":'Section=feature Note="FILL"',
-  'Deific Weapon':'Section=feature Note="FILL"',
-  "Champion's Reaction":'Section=feature Note="FILL"',
-  'Retributive Strike':'Section=feature Note="FILL"',
-  'Glimpse Of Redemption':'Section=feature Note="FILL"',
-  'Liberating Step':'Section=feature Note="FILL"',
-  'Devotion Spells':'Section=feature Note="FILL"',
-  'Shield Block':'Section=feature Note="FILL"',
-  'Divine Ally':'Section=feature Note="FILL"',
-  'Weapon Expertise':'Section=feature Note="FILL"',
-  'Armor Expertise':'Section=feature Note="FILL"',
-  // Weapon Specialization as above
-  'Champion Expertise':'Section=feature Note="FILL"',
-  'Divine Smite':'Section=feature Note="FILL"',
-  // Juggernaut as above
-  // Lightning Reflexes as above
-  // Alertness as above
-  'Divine Will':'Section=feature Note="FILL"',
-  'Exalt':'Section=feature Note="FILL"',
-  'Armor Mastery':'Section=feature Note="FILL"',
-  'Weapon Mastery':'Section=feature Note="FILL"',
-  // Greater Weapon Specialization as above
-  'Champion Mastery':'Section=feature Note="FILL"',
-  'Legendary Armor':'Section=feature Note="FILL"',
-  "Hero's Defiance":'Section=feature Note="FILL"',
-
-  // Cleric
-  'Divine Spellcasting':'Section=feature Note="FILL"',
-  'Divine Font':'Section=feature Note="FILL"',
-  'Doctrine':'Section=feature Note="FILL"',
-  // Alertness as above
-  // Resolve as above
-  // Lightning Reflexes as above
-  'Divine Defense':'Section=feature Note="FILL"',
-  // Weapon Specialization as above
-  'Miraculous Spell':'Section=feature Note="FILL"',
-
-  // Druid
-  'Primal Spellcasting':'Section=feature Note="FILL"',
-  'Druidic Language':'Section=feature Note="FILL"',
-  'Druidic Order':'Section=feature Note="FILL"',
-  // Shield Block as above
-  'Wild Empathy':'Section=feature Note="FILL"',
-  // Alertness as above
-  // Great Fortitude as above
-  // Lightning Reflexes as above
-  // Expert Spellcaster as above
-  'Druid Weapon Expertise':'Section=feature Note="FILL"',
-  // Resolve as above
-  // Medium Armor Expertise as above
-  // Weapon Specialization as above
-  // Master Spellcaster as above
-  // Legendary Spellcaster as above
-  'Primal Hierophant':'Section=feature Note="FILL"',
-
-  // Class Feats
-
-  // Alchemist
   'Alchemical Familiar':'Section=feature Note="FILL"',
   'Alchemical Savant':'Section=feature Note="FILL"',
   'Far Lobber':'Section=feature Note="FILL"',
@@ -2041,6 +2324,25 @@ Pathfinder2E.FEATURES = {
   'Perfect Mutagen':'Section=feature Note="FILL"',
 
   // Barbarian
+  'Rage':'Section=feature Note="FILL"',
+  'Instinct':'Section=feature Note="FILL"',
+  'Deny Advantage':'Section=feature Note="FILL"',
+  'Brutality':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Weapon Specialization as above
+  'Lightning Reflexes':'Section=feature Note="FILL"',
+  'Raging Resistance':'Section=feature Note="FILL"',
+  'Mighty Rage':'Section=feature Note="FILL"',
+  'Greater Juggernaut':'Section=feature Note="FILL"',
+  // Medium Armor Expertise as above
+  'Weapon Fury':'Section=feature Note="FILL"',
+  'Greater Weapon Specialization':'Section=feature Note="FILL"',
+  'Indomitable Will':'Section=feature Note="FILL"',
+  'Heightened Senses':'Section=feature Note="FILL"',
+  'Quick Rage':'Section=feature Note="FILL"',
+  'Armor Of Fury':'Section=feature Note="FILL"',
+  'Devastator':'Section=feature Note="FILL"',
+
   'Acute Vision':'Section=feature Note="FILL"',
   'Moment Of Clarity':'Section=feature Note="FILL"',
   'Raging Intimidation':'Section=feature Note="FILL"',
@@ -2056,28 +2358,30 @@ Pathfinder2E.FEATURES = {
   'Raging Athlete':'Section=feature Note="FILL"',
   'Swipe':'Section=feature Note="FILL"',
   'Wounded Rage':'Section=feature Note="FILL"',
-  // Armor Expertise as above
-  // Armor Mastery as above
-  'Attack Of Opportunity':'Section=feature Note="FILL"',
-  'Battlefield Surveyor':'Section=feature Note="FILL"',
-  'Bravery':'Section=feature Note="FILL"',
-  'Combat Flexibility':'Section=feature Note="FILL"',
-  // Evasion as above
-  'Fighter Expertise':'Section=feature Note="FILL"',
-  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
-  // Greater Weapon Specialization as above
-  'Improved Flexibility':'Section=feature Note="FILL"',
-  // Juggernaut as above
-  'Versatile Legend':'Section=feature Note="FILL"',
-  'Weapon Legend':'Section=feature Note="FILL"',
-  // Weapon Specialization as above
 
   // Bard
+  'Occult Spellcasting':'Section=feature Note="FILL"',
+  'Composition Spells':'Section=feature Note="FILL"',
+  'Muses':'Section=feature Note="FILL"',
+  // Lightning Reflexes as above
+  'Signature Spells':'Section=feature Note="FILL"',
+  'Expert Spellcaster':'Section=feature Note="FILL"',
+  'Great Fortitude':'Section=feature Note="FILL"',
+  'Resolve':'Section=feature Note="FILL"',
+  'Bard Weapon Expertise':'Section=feature Note="FILL"',
+  'Vigilant Senses':'Section=feature Note="FILL"',
+  'Light Armor Expertise':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Master Spellcaster':'Section=feature Note="FILL"',
+  'Greater Resolve':'Section=feature Note="FILL"',
+  'Magnum Opus':'Section=feature Note="FILL"',
+  'Legendary Spellcaster':'Section=feature Note="FILL"',
+
   'Bardic Lore':'Section=feature Note="FILL"',
   'Lingering Composition':'Section=feature Note="FILL"',
   'Reach Spell':'Section=feature Note="FILL"',
   'Versatile Performance':'Section=feature Note="FILL"',
-  'Cantrip Expanion':'Section=feature Note="FILL"',
+  'Cantrip Expansion':'Section=feature Note="FILL"',
   'Esoteric Polymath':'Section=feature Note="FILL"',
   'Inspire Competence':'Section=feature Note="FILL"',
   "Loremaster's Etude":'Section=feature Note="FILL"',
@@ -2089,7 +2393,7 @@ Pathfinder2E.FEATURES = {
   'Dirge Of Doom':'Section=feature Note="FILL"',
   'Harmonize':'Section=feature Note="FILL"',
   'Steady Spellcasting':'Section=feature Note="FILL"',
-  'Electic Skill':'Section=feature Note="FILL"',
+  'Eclectic Skill':'Section=feature Note="FILL"',
   'Inspire Heroics':'Section=feature Note="FILL"',
   'Know-It-All':'Section=feature Note="FILL"',
   'House Of Imaginary Walls':'Section=feature Note="FILL"',
@@ -2108,8 +2412,34 @@ Pathfinder2E.FEATURES = {
   'Fatal Aria':'Section=feature Note="FILL"',
   'Perfect Encore':'Section=feature Note="FILL"',
   'Symphony Of The Muse':'Section=feature Note="FILL"',
-
+  
   // Champion
+  "Champion's Code":'Section=feature Note="FILL"',
+  'Deific Weapon':'Section=feature Note="FILL"',
+  "Champion's Reaction":'Section=feature Note="FILL"',
+  'Retributive Strike':'Section=feature Note="FILL"',
+  'Glimpse Of Redemption':'Section=feature Note="FILL"',
+  'Liberating Step':'Section=feature Note="FILL"',
+  'Devotion Spells':'Section=feature Note="FILL"',
+  'Shield Block':'Section=feature Note="FILL"',
+  'Divine Ally':'Section=feature Note="FILL"',
+  'Weapon Expertise':'Section=feature Note="FILL"',
+  'Armor Expertise':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Champion Expertise':'Section=feature Note="FILL"',
+  'Divine Smite':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Lightning Reflexes as above
+  // Alertness as above
+  'Divine Will':'Section=feature Note="FILL"',
+  'Exalt':'Section=feature Note="FILL"',
+  'Armor Mastery':'Section=feature Note="FILL"',
+  'Weapon Mastery':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Champion Mastery':'Section=feature Note="FILL"',
+  'Legendary Armor':'Section=feature Note="FILL"',
+  "Hero's Defiance":'Section=feature Note="FILL"',
+
   "Deity's Domain":'Section=feature Note="FILL"',
   'Ranged Reprisal':'Section=feature Note="FILL"',
   'Unimpeded Step':'Section=feature Note="FILL"',
@@ -2162,6 +2492,16 @@ Pathfinder2E.FEATURES = {
   'Shield Paragon':'Section=feature Note="FILL"',
 
   // Cleric
+  'Divine Spellcasting':'Section=feature Note="FILL"',
+  'Divine Font':'Section=feature Note="FILL"',
+  'Doctrine':'Section=feature Note="FILL"',
+  // Alertness as above
+  // Resolve as above
+  // Lightning Reflexes as above
+  'Divine Defense':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Miraculous Spell':'Section=feature Note="FILL"',
+
   'Deadly Simplicity':'Section=feature Note="FILL"',
   'Domain Initiate':'Section=feature Note="FILL"',
   'Harming Hands':'Section=feature Note="FILL"',
@@ -2170,7 +2510,7 @@ Pathfinder2E.FEATURES = {
   // Reach Spell as above
   'Cantrip Expansion':'Section=feature Note="FILL"',
   'Communal Healing':'Section=feature Note="FILL"',
-  'Emplazon Armament':'Section=feature Note="FILL"',
+  'Emblazon Armament':'Section=feature Note="FILL"',
   'Sap Life':'Section=feature Note="FILL"',
   'Turn Undead':'Section=feature Note="FILL"',
   'Versatile Font':'Section=feature Note="FILL"',
@@ -2211,6 +2551,23 @@ Pathfinder2E.FEATURES = {
   'Metamagic Channel':'Section=feature Note="FILL"',
 
   // Druid
+  'Primal Spellcasting':'Section=feature Note="FILL"',
+  'Druidic Language':'Section=feature Note="FILL"',
+  'Druidic Order':'Section=feature Note="FILL"',
+  // Shield Block as above
+  'Wild Empathy':'Section=feature Note="FILL"',
+  // Alertness as above
+  // Great Fortitude as above
+  // Lightning Reflexes as above
+  // Expert Spellcaster as above
+  'Druid Weapon Expertise':'Section=feature Note="FILL"',
+  // Resolve as above
+  // Medium Armor Expertise as above
+  // Weapon Specialization as above
+  // Master Spellcaster as above
+  // Legendary Spellcaster as above
+  'Primal Hierophant':'Section=feature Note="FILL"',
+
   'Animal Companion':'Section=feature Note="FILL"',
   'Leshy Familiar':'Section=feature Note="FILL"',
   // Reach Spell as above
@@ -2258,6 +2615,23 @@ Pathfinder2E.FEATURES = {
   'True Shapeshifter':'Section=feature Note="FILL"',
 
   // Fighter
+  // Armor Expertise as above
+  // Armor Mastery as above
+  'Attack Of Opportunity':'Section=feature Note="FILL"',
+  'Battlefield Surveyor':'Section=feature Note="FILL"',
+  'Bravery':'Section=feature Note="FILL"',
+  'Combat Flexibility':'Section=feature Note="FILL"',
+  // Evasion as above
+  'Fighter Expertise':'Section=feature Note="FILL"',
+  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Improved Flexibility':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Shield Block as above
+  'Versatile Legend':'Section=feature Note="FILL"',
+  'Weapon Legend':'Section=feature Note="FILL"',
+
+  // Weapon Specialization as above
   'Double Slice':
     'Section=combat Note="May attack with two weapons simultaneously"',
   'Exacting Strike':
@@ -2304,7 +2678,7 @@ Pathfinder2E.FEATURES = {
   'Shatter Defenses':'Section=feature Note="FILL"',
   // Shield Warden as above
   'Triple Shot':'Section=feature Note="FILL"',
-  'Blind Fight':'Section=feature Note="FILL"',
+  'Blind-Fight':'Section=feature Note="FILL"',
   'Dueling Riposte':'Section=feature Note="FILL"',
   'Felling Strike':'Section=feature Note="FILL"',
   'Incredible Aim':'Section=feature Note="FILL"',
@@ -2345,7 +2719,244 @@ Pathfinder2E.FEATURES = {
   'Impossible Volley':'Section=feature Note="FILL"',
   'Savage Critical':'Section=feature Note="FILL"',
   'Boundless Reprisals':'Section=feature Note="FILL"',
-  'Weapon Supremacy':'Section=feature Note="FILL"'
+  'Weapon Supremacy':'Section=feature Note="FILL"',
+
+  // Monk
+  'Flurry Of Blows':'Section=feature Note="FILL"',
+  'Powerful Fist':'Section=feature Note="FILL"',
+  'Incredible Movement':'Section=feature Note="FILL"',
+  'Mystic Strikes':'Section=feature Note="FILL"',
+  // Alertness as above
+  'Expert Strikes':'Section=feature Note="FILL"',
+  'Path To Perfection':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  'Metal Strikes':'Section=feature Note="FILL"',
+  'Monk Expertise':'Section=feature Note="FILL"',
+  'Second Path To Perfection':'Section=feature Note="FILL"',
+  'Graceful Mastery':'Section=feature Note="FILL"',
+  'Master Strikes':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Third Path To Perfection':'Section=feature Note="FILL"',
+  'Adamantine Strikes':'Section=feature Note="FILL"',
+  'Graceful Legend':'Section=feature Note="FILL"',
+  'Perfected Form':'Section=feature Note="FILL"',
+
+  'Crane Stance':'Section=feature Note="FILL"',
+  'Dragon Stance':'Section=feature Note="FILL"',
+  'Ki Rush':'Section=feature Note="FILL"',
+  'Ki Strike':'Section=feature Note="FILL"',
+  'Monastic Weaponry':'Section=feature Note="FILL"',
+  'Mountain Stance':'Section=feature Note="FILL"',
+  'Tiger Stance':'Section=feature Note="FILL"',
+  'Wolf Stance':'Section=feature Note="FILL"',
+  'Brawling Focus':'Section=feature Note="FILL"',
+  'Cruising Grab':'Section=feature Note="FILL"',
+  'Dancing Leaf':'Section=feature Note="FILL"',
+  'Elemental Fist':'Section=feature Note="FILL"',
+  'Stunning Fist':'Section=feature Note="FILL"',
+  'Deflect Arrow':'Section=feature Note="FILL"',
+  'Flurry Of Maneuvers':'Section=feature Note="FILL"',
+  'Flying Kick':'Section=feature Note="FILL"',
+  'Guarded Movement':'Section=feature Note="FILL"',
+  'Stand Still':'Section=feature Note="FILL"',
+  'Wholeness Of Body':'Section=feature Note="FILL"',
+  'Abundant Step':'Section=feature Note="FILL"',
+  'Crane Flutter':'Section=feature Note="FILL"',
+  'Dragon Roar':'Section=feature Note="FILL"',
+  'Ki Blast':'Section=feature Note="FILL"',
+  'Mountain Stronghold':'Section=feature Note="FILL"',
+  'Tiger Slash':'Section=feature Note="FILL"',
+  'Water Step':'Section=feature Note="FILL"',
+  'Whirling Throw':'Section=feature Note="FILL"',
+  'Wolf Drag':'Section=feature Note="FILL"',
+  'Arrow Snatching':'Section=feature Note="FILL"',
+  'Ironblood Stance':'Section=feature Note="FILL"',
+  'Mixed Maneuver':'Section=feature Note="FILL"',
+  'Tangled Forest Stance':'Section=feature Note="FILL"',
+  'Wall Run':'Section=feature Note="FILL"',
+  'Wild Winds Initiate':'Section=feature Note="FILL"',
+  'Knockback Strike':'Section=feature Note="FILL"',
+  'Sleeper Hold':'Section=feature Note="FILL"',
+  'Wind Jump':'Section=feature Note="FILL"',
+  'Winding Flow':'Section=feature Note="FILL"',
+  'Diamond Soul':'Section=feature Note="FILL"',
+  'Disrupt Ki':'Section=feature Note="FILL"',
+  'Improved Knockback':'Section=feature Note="FILL"',
+  'Meditative Focus':'Section=feature Note="FILL"',
+  // Stance Savant as above
+  'Ironblood Surge':'Section=feature Note="FILL"',
+  'Mountain Quake':'Section=feature Note="FILL"',
+  'Tangled Forest Rake':'Section=feature Note="FILL"',
+  'Timeless Body':'Section=feature Note="FILL"',
+  'Tongue Of Sun And Moon':'Section=feature Note="FILL"',
+  'Wild Winds Gust':'Section=feature Note="FILL"',
+  'Enlightened Presence':'Section=feature Note="FILL"',
+  'Master Of Many Styles':'Section=feature Note="FILL"',
+  'Shattering Strike':'Section=feature Note="FILL"',
+  'Diamond Fists':'Section=feature Note="FILL"',
+  'Empty Body':'Section=feature Note="FILL"',
+  'Meditative Wellspring':'Section=feature Note="FILL"',
+  'Swift River':'Section=feature Note="FILL"',
+  'Enduring Quickness':'Section=feature Note="FILL"',
+  'Fuse Stance':'Section=feature Note="FILL"',
+  'Impossible Technique':'Section=feature Note="FILL"',
+
+  // Ranger
+  'Hunt Prey':'Section=feature Note="FILL"',
+  "Hunter's Edge":'Section=feature Note="FILL"',
+  // Iron Will as above
+  'Ranger Weapon Expertise':'Section=feature Note="FILL"',
+  'Trackless Step':'Section=feature Note="FILL"',
+  // Evasion as above
+  // Vigilant Senses as above
+  // Weapon Specialization as above
+  "Nature's Edge":'Section=feature Note="FILL"',
+  'Ranger Expertise':'Section=feature Note="FILL"',
+  // Juggernaut as above
+  // Medium Armor Expertise as above
+  'Wild Stride':'Section=feature Note="FILL"',
+  // Weapon Mastery as above
+  // Greater Weapon Specialization as above
+  'Improved Evasion':'Section=feature Note="FILL"',
+  'Incredible Senses':'Section=feature Note="FILL"',
+  'Masterful Hunter':'Section=feature Note="FILL"',
+  'Second Skin':'Section=feature Note="FILL"',
+  'Swift Prey':'Section=feature Note="FILL"',
+
+  // Animal Companion as above
+  'Crossbow Ace':'Section=feature Note="FILL"',
+  'Hunted Shot':'Section=feature Note="FILL"',
+  'Monster Hunter':'Section=feature Note="FILL"',
+  'Twin Takedown':'Section=feature Note="FILL"',
+  'Favored Terrain':'Section=feature Note="FILL"',
+  "Hunter's Aim":'Section=feature Note="FILL"',
+  'Monster Warden':'Section=feature Note="FILL"',
+  'Quick Draw':'Section=feature Note="FILL"',
+  // Wild Empathy as above
+  "Companion's Cry":'Section=feature Note="FILL"',
+  'Disrupt Prey':'Section=feature Note="FILL"',
+  'Far Shot':'Section=feature Note="FILL"',
+  'Favored Enemy':'Section=feature Note="FILL"',
+  'Running Reload':'Section=feature Note="FILL"',
+  "Scout's Warning":'Section=feature Note="FILL"',
+  'Snare Specialist':'Section=feature Note="FILL"',
+  // Twin Parry as above
+  // Mature Animal Companion as above
+  'Quick Snares':'Section=feature Note="FILL"',
+  'Skirmish Strike':'Section=feature Note="FILL"',
+  'Snap Shot':'Section=feature Note="FILL"',
+  'Swift Tracker':'Section=feature Note="FILL"',
+  'Deadly Aim':'Section=feature Note="FILL"',
+  'Hazard Finder':'Section=feature Note="FILL"',
+  'Powerful Snares':'Section=feature Note="FILL"',
+  'Terrain Master':'Section=feature Note="FILL"',
+  "Warden's Boon":'Section=feature Note="FILL"',
+  'Camouflage':'Section=feature Note="FILL"',
+  // Incredible Companion as above
+  'Master Monster Hunter':'Section=feature Note="FILL"',
+  'Penetrating Shot':'Section=feature Note="FILL"',
+  // Twin Riposte as above
+  "Warden's Step":'Section=feature Note="FILL"',
+  'Distracting Shot':'Section=feature Note="FILL"',
+  'Double Prey':'Section=feature Note="FILL"',
+  'Lightning Snares':'Section=feature Note="FILL"',
+  'Second Sting':'Section=feature Note="FILL"',
+  // Side By Side as above
+  'Sense The Unseen':'Section=feature Note="FILL"',
+  'Shared Prey':'Section=feature Note="FILL"',
+  'Stealthy Companion':'Section=feature Note="FILL"',
+  'Targeting Shot':'Section=feature Note="FILL"',
+  "Warden's Guidance":'Section=feature Note="FILL"',
+  'Greater Distracting Shot':'Section=feature Note="FILL"',
+  // Improved Twin Riposte as above
+  'Legendary Monster Hunter':'Section=feature Note="FILL"',
+  // Specialized Companion as above
+  'Ubiquitous Snares':'Section=feature Note="FILL"',
+  'Impossible Flurry':'Section=feature Note="FILL"',
+  // Impossible Volley as above
+  'Manifold Edge':'Section=feature Note="FILL"',
+  'Masterful Companion':'Section=feature Note="FILL"',
+  'Perfect Shot':'Section=feature Note="FILL"',
+  'Shadow Hunter':'Section=feature Note="FILL"',
+  'Legendary Shot':'Section=feature Note="FILL"',
+  'To The Ends Of The Earth':'Section=feature Note="FILL"',
+  'Triple Threat':'Section=feature Note="FILL"',
+  'Ultimate Skirmisher':'Section=feature Note="FILL"',
+
+  // Rogue
+  'Rogue\'s Racket':'Section=feature Note="FILL"',
+  'Sneak Attack':'Section=feature Note="FILL"',
+  'Surprise Attack':'Section=feature Note="FILL"',
+  // Deny Advantage as above
+  'Weapon Tricks':'Section=feature Note="FILL"',
+  // Evasion as above
+  // Vigilant Senses as above
+  // Weapon Specialization as above
+  'Debilitating Strike':'Section=feature Note="FILL"',
+  // Great Fortitude as above
+  'Rogue Expertise':'Section=feature Note="FILL"',
+  // Improved Evasion as above
+  // Incredible Senses as above
+  // Light Armor Expertise as above
+  'Master Tricks':'Section=feature Note="FILL"',
+  'Double Debilitation':'Section=feature Note="FILL"',
+  // Greater Weapon Specialization as above
+  'Slippery Mind':'Section=feature Note="FILL"',
+  'Light Armor Mastery':'Section=feature Note="FILL"',
+  'Master Strike':'Section=feature Note="FILL"',
+
+  'Nimble Dodge':'Section=feature Note="FILL"',
+  'Trap Finder':'Section=feature Note="FILL"',
+  'Twin Feint':'Section=feature Note="FILL"',
+  "You're Next":'Section=feature Note="FILL"',
+  'Brutal Beating':'Section=feature Note="FILL"',
+  'Distracting Feint':'Section=feature Note="FILL"',
+  'Minor Magic':'Section=feature Note="FILL"',
+  'Mobility':'Section=feature Note="FILL"',
+  // Quick Draw as above
+  'Unbalancing Blow':'Section=feature Note="FILL"',
+  'Battle Assessment':'Section=feature Note="FILL"',
+  'Dead Striker':'Section=feature Note="FILL"',
+  'Magical Trickster':'Section=feature Note="FILL"',
+  'Poison Weapon':'Section=feature Note="FILL"',
+  'Reactive Pursuit':'Section=feature Note="FILL"',
+  'Sabotage':'Section=feature Note="FILL"',
+  // Scout's Warning as above
+  'Gang Up':'Section=feature Note="FILL"',
+  'Light Step':'Section=feature Note="FILL"',
+  // Skirmish Strike as above
+  'Twist The Knife':'Section=feature Note="FILL"',
+  // Blind-Fight as above
+  'Delay Trap':'Section=feature Note="FILL"',
+  'Improved Poison Weapon':'Section=feature Note="FILL"',
+  'Nimble Roll':'Section=feature Note="FILL"',
+  'Opportune Backstab':'Section=feature Note="FILL"',
+  'Sidestep':'Section=feature Note="FILL"',
+  'Sly Striker':'Section=feature Note="FILL"',
+  'Precise Debilitations':'Section=feature Note="FILL"',
+  'Sneak Savant':'Section=feature Note="FILL"',
+  'Tactical Debilitations':'Section=feature Note="FILL"',
+  'Vicious Debilitations':'Section=feature Note="FILL"',
+  'Critical Debilitation':'Section=feature Note="FILL"',
+  'Fantastic Leap':'Section=feature Note="FILL"',
+  'Felling Shot':'Section=feature Note="FILL"',
+  'Reactive Interference':'Section=feature Note="FILL"',
+  'Spring From The Shadows':'Section=feature Note="FILL"',
+  'Defensive Roll':'Section=feature Note="FILL"',
+  'Instant Opening':'Section=feature Note="FILL"',
+  'Leave An Opening':'Section=feature Note="FILL"',
+  // Sense The Unseen as above
+  'Blank Slate':'Section=feature Note="FILL"',
+  'Cloud Step':'Section=feature Note="FILL"',
+  'Cognitive Loophole':'Section=feature Note="FILL"',
+  'Dispelling Slice':'Section=feature Note="FILL"',
+  'Perfect Distraction':'Section=feature Note="FILL"',
+  'Implausible Infiltration':'Section=feature Note="FILL"',
+  'Powerful Sneak':'Section=feature Note="FILL"',
+  "Trickster's Ace":'Section=feature Note="FILL"',
+  'Hidden Paragon':'Section=feature Note="FILL"',
+  'Impossible Striker':'Section=feature Note="FILL"',
+  'Reactive Distraction':'Section=feature Note="FILL"'
 
 };
 Pathfinder2E.GOODIES = {
@@ -2467,7 +3078,7 @@ Pathfinder2E.LANGUAGES = {
   'Ignan':'',
   'Infernal':'',
   'Necril':'',
-  'Shadowtounge':'',
+  'Shadowtongue':'',
   'Terran':''
 };
 Pathfinder2E.LORES = {
