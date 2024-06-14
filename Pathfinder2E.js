@@ -491,7 +491,7 @@ Pathfinder2E.CLASSES = {
       // TODO plus intelligence modifier
       '"1:Skill Trained (Nature; Survival; Choose 4 from any)",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
-      '"1:Defense Expert (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Hunt Prey","1:Hunter\'s Edge","3:Iron Will",' +
       '"5:Ranger Weapon Expertise","5:Trackless Step","7:Evasion",' +
       '"7:Vigilant Senses","7:Weapon Specialization","9:Nature\'s Edge",' +
@@ -509,7 +509,7 @@ Pathfinder2E.CLASSES = {
       // TODO plus intelligence modifier
       '"1:Skill Trained (Stealth; Choose 1 from any; Choose 7 from any)",' +
       '"1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)",' +
-      '"1:Defense Expert (Light Armor; Unarmored)",' +
+      '"1:Defense Trained (Light Armor; Unarmored)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"3:Deny Advantage","5:Weapon Tricks","7:Evasion","7:Vigilant Senses",' +
       '"7:Weapon Specialization","9:Debilitating Strike",' +
@@ -518,9 +518,35 @@ Pathfinder2E.CLASSES = {
       '"15:Double Debilitation","15:Greater Weapon Specialization",' +
       '"17:Slippery Mind","19:Light Armor Mastery","19:Master Strike"',
   'Sorcerer':
-    'Ability=charisma HitPoints=6',
+    'Ability=charisma HitPoints=6 ' +
+    'Features=' +
+      '"1:Ability Boost (Charisma)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Choose 2 from any)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed)",' +
+      '"1:Defense Trained (Unarmored)",' +
+      '"1:Bloodline","1:Sorcerer Spellcasting","1:Spell Repertoire",' +
+      '"3:Signature Spells","5:Magical Fortitude","7:Expert Spellcaster",' +
+      '"9:Lightning Reflexes","11:Alertness","11:Weapon Expertise",' +
+      '"13:Defensive Robes","13:Weapon Specialization",' +
+      '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
+      '"19:Legendary Spellcaster"',
   'Wizard':
-    'Ability=intelligence HitPoints=6'
+    'Ability=intelligence HitPoints=6 ' +
+    'Features=' +
+      '"1:Ability Boost (Intelligence)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Will)","Save Expert (Fortitude; Reflex)",' +
+      // TODO plus intelligence modifier
+      '"1:Skill Trained (Arcana; Choose 2 from any)",' +
+      '"1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed)",' +
+      '"1:Defense Trained (Unarmored)",' +
+      '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
+      '"1:Arcane Thesis","5:Lightning Reflexes","7:Expert Spellcaster",' +
+      '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
+      '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster"'
 };
 Pathfinder2E.DEITIES = {
   'None':'',
@@ -608,6 +634,7 @@ Pathfinder2E.DEITIES = {
     'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"',
 };
 Pathfinder2E.FEATS = {
+
   // Ancestries
   'Dwarven Lore':'Type=Ancestry,Dwarf',
   'Dwarven Weapon Familiarity':'Type=Ancestry,Dwarf',
@@ -883,9 +910,10 @@ Pathfinder2E.FEATS = {
 
   'Bardic Lore':'Type=Class,Bard Require="features.Enigma Muse"',
   'Lingering Composition':'Type=Class,Bard Require="features.Maestro Muse"',
-  'Reach Spell':'Type=Class,Bard,Cleric,Druid',
+  'Reach Spell':'Type=Class,Bard,Cleric,Druid,Sorcerer,Wizard',
   'Versatile Performance':'Type=Class,Bard Require="features.Polymath Muse"',
-  'Cantrip Expansion':'Type=Class,Bard Require="level >= 2"',
+  'Cantrip Expansion':
+    'Type=Class,Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
   'Esoteric Polymath':
     'Type=Class,Bard Require="level >= 2","features.Polymath Muse"',
   'Inspire Competence':
@@ -901,7 +929,8 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard Require="level >= 4","features.Polymath Muse"',
   'Dirge Of Doom':'Type=Class,Bard Require="level >= 6"',
   'Harmonize':'Type=Class,Bard Require="level >= 6","features.Maestro Muse"',
-  'Steady Spellcasting':'Type=Class,Bard,Cleric,Druid Require="level >= 6"',
+  'Steady Spellcasting':
+    'Type=Class,Bard,Cleric,Druid,Sorcerer,Wizard Require="level >= 6"',
   'Eclectic Skill':
     'Type=Class,Bard ' +
     'Require=' +
@@ -913,7 +942,7 @@ Pathfinder2E.FEATS = {
   'Know-It-All':
     'Type=Class,Bard Require="level >= 8","features.Enigma Muse"',
   'House Of Imaginary Walls':'Type=Class,Bard Require="level >= 10"',
-  'Quickened Casting':'Type=Class,Bard Require="level >= 10"',
+  'Quickened Casting':'Type=Class,Bard,Sorcerer,Wizard Require="level >= 10"',
   'Unusual Composition':
     'Type=Class,Bard Require="level >= 10","features.Polymath Muse"',
   'Eclectic Polymath':
@@ -923,7 +952,8 @@ Pathfinder2E.FEATS = {
   'Soothing Ballad':'Type=Class,Bard Require="level >= 14"',
   'True Hypercognition':
     'Type=Class,Bard Require="level >= 14","features.Enigma Muse"',
-  'Effortless Concentration':'Type=Class,Bard,Druid Require="level >= 16"',
+  'Effortless Concentration':
+    'Type=Class,Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
   'Studious Capacity':
     'Type=Class,Bard ' +
     'Require=' +
@@ -1084,7 +1114,7 @@ Pathfinder2E.FEATS = {
   'Healing Hands':'Type=Class,Cleric',
   'Holy Castigation':'Type=Class,Cleric',
   // Reach Spell as above
-  'Cantrip Expansion':'Type=Class,Cleric Require="level >= 2"',
+  // Cantrip Expansion as above
   'Communal Healing':'Type=Class,Cleric Require="level >= 2"',
   'Emblazon Armament':'Type=Class,Cleric Require="level >= 2"',
   'Sap Life':'Type=Class,Cleric Require="level >= 2"',
@@ -1173,11 +1203,11 @@ Pathfinder2E.FEATS = {
   'Leshy Familiar':'Type=Class,Druid Require="features.Leaf Order"',
   // Reach Spell as above
   'Storm Born':'Type=Class,Druid Require="features.Storm Order"',
-  'Widen Spell':'Type=Class,Druid',
+  'Widen Spell':'Type=Class,Druid,Sorcerer,Wizard',
   'Wild Shape':'Type=Class,Druid Require="features.Wild Order"',
   'Call Of The Wild':'Type=Class,Druid Require="level >= 2"',
-  // TODO requires a familiar
-  'Enhanced Familiar':'Type=Class,Druid Require="level >= 2"',
+  'Enhanced Familiar':
+    'Type=Class,Druid,Sorcerer,Wizard Require="level >= 2","features.Familiar"',
   'Order Explorer':'Type=Class,Druid Require="level >= 2"',
   // Poison Resistance as above
   'Form Control':
@@ -1217,7 +1247,8 @@ Pathfinder2E.FEATS = {
   'Elemental Shape':
     'Type=Class,Druid Require="level >= 10","features.Wild Shape"',
   'Healing Transformation':'Type=Class,Druid Require="level >= 10"',
-  'Overwhelming Energy':'Type=Class,Druid Require="level >= 10"',
+  'Overwhelming Energy':
+    'Type=Class,Druid,Sorcerer,Wizard Require="level >= 10"',
   'Plant Shape':
     'Type=Class,Druid ' +
     'Require="level >= 10","features.Leaf Order || features.Wild Shape"',
@@ -1669,6 +1700,114 @@ Pathfinder2E.FEATS = {
       '"proficiencyRank.Deception >= 4",' +
       '"features.Perfect Distraction"',
 
+  'Counterspell':'Type=Class,Sorcerer,Wizard',
+  'Dangerous Sorcerer':'Type=Class,Sorcerer',
+  'Familiar':'Type=Class,Sorcerer,Wizard',
+  // Reach Spell as above
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  // Enhanced Familiar as above
+  'Arcane Evolution':
+    'Type=Class,Sorcerer Require="level >= 4","features.Arcane Spells"',
+  'Bespell Weapon':'Type=Class,Sorcerer,Wizard Require="level >= 4"',
+  'Divine Evolution':
+    'Type=Class,Sorcerer Require="level >= 4","features.Divine Spells"',
+  'Occult Evolution':
+    'Type=Class,Sorcerer Require="level >= 4","features.Occult Spells"',
+  'Primal Evolution':
+    'Type=Class,Sorcerer Require="level >= 4","features.Primal Spells"',
+  'Advanced Bloodline':
+    'Type=Class,Sorcerer Require="level >= 6","features.Bloodline Spell"',
+  // Steady Spellcasting as above
+  'Bloodline Resistance':'Type=Class,Sorcerer Require="level >= 8"',
+  'Crossblooded Evolution':'Type=Class,Sorcerer Require="level >= 8"',
+  'Greater Bloodline':
+    'Type=Class,Sorcerer Require="level >= 10","features.Bloodline Spell"',
+  // Overwhelming Energy as above
+  // Quickened Casting as above
+  'Bloodline Focus':
+    'Type=Class,Sorcerer Require="level >= 12","features.Bloodline Spell"',
+  'Magic Sense':'Type=Class,Sorcerer,Wizard Require="level >= 12"',
+  'Interweave Spell':
+    'Type=Class,Sorcerer Require="level >= 14","spells.Dispel Magic"',
+  'Reflect Spell':
+    'Type=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
+  // Effortless Concentration as above
+  'Greater Mental Evolution':
+    'Type=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Arcane Evolution || features.Occult Evolution"',
+  'Greater Vital Evolution':
+    'Type=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Divine Evolution || features.Primal Evolution"',
+  'Bloodline Wellspring':
+    'Type=Class,Sorcerer Require="level >= 18","features.Bloodline Focus"',
+  'Greater Crossblooded Evolution':
+    'Type=Class,Sorcerer ' +
+    'Require="level >= 18","features.Crossblooded Evolution"',
+  'Bloodline Conduit':'Type=Class,Sorcerer Require="level >= 20"',
+  'Bloodline Perfection':
+    'Type=Class,Sorcerer Require="level >= 20","features.Bloodline Paragon"',
+  'Metamagic Mastery':'Type=Class,Sorcerer,Wizard Require="level >= 20"',
+
+  // Wizard
+  // Counterspell as above
+  'Eschew Materials':'Type=Class,Wizard',
+  // Familiar as above
+  'Hand Of The Apprentice':
+    'Type=Class,Wizard Require="features.Universalist Wizard"',
+  // Reach Spell as above
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  'Conceal Spell':'Type=Class,Wizard Require="level >= 2"',
+  // Enhanced Familiar as above
+  // Bespell Weapon as above
+  'Linked Focus':
+    'Type=Class,Wizard ' +
+    'Require="level >= 4","features.Arcane Bond","features.Arcane School"',
+  'Silent Spell':
+    'Type=Class,Wizard Require="level >= 4","features.Conceal Spell"',
+  'Spell Penetration':'Type=Class,Wizard Require="level >= 6"',
+  // Steady Spellcasting as above
+  'Advanced School Spell':
+    'Type=Class,Wizard Require="level >= 8","features.Arcane School"',
+  'Bond Conservation':
+    'Type=Class,Wizard Require="level >= 8","features.Arcane Bond"',
+  'Universal Versatility':
+    'Type=Class,Wizard ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Universality Wizard",' +
+      '"features.Hand Of The Apprentice"',
+  // Overwhelming Energy as above
+  // Quickened Casting as above
+  'Scroll Savant':
+    'Type=Class,Wizard Require="level >= 10","proficiencyRank.Crafting >= 2"',
+  'Clever Counterspell':
+    'Type=Class,Wizard ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Counterspell",' +
+      '"features.Quick Recognition"',
+  // Magic Sense as above
+  'Bonded Focus':
+    'Type=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+  // Reflect Spell as above
+  'Superior Bond':
+    'Type=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+  // Effortless Concentration as above
+  'Spell Tinker':'Type=Class,Wizard Require="level >= 16"',
+  'Infinite Possibilities':'Type=Class,Wizard Require="level >= 18"',
+  'Reprepare Spell':'Type=Class,Wizard Require="level >= 18"',
+  "Archwizard's Might":
+    'Type=Class,Wizard ' +
+    'Require="level >= 20","features.Archwizard\'s Spellcraft"',
+  // Metamagic Mastery as above
+  'Spell Combination':'Type=Class,Wizard Require="level >= 20"',
+
   // General
   'Adopted Ancestry':'Type=General',
   'Armor Proficiency':'Type=General',
@@ -1689,138 +1828,196 @@ Pathfinder2E.FEATS = {
     'Type=General Require="level >= 7","perception >= 2"',
   'Incredible Investiture':
     'Type=General Require="level >= 11","charisma >= 16"',
+
+  // Skill
   'Assurance (%skill)':'Type=Skill',
-  'Dubious Knowledge':'Type=Skill Require="skills.Recall Knowledge >= 1"',
+  'Dubious Knowledge':
+    'Type=Skill Require="proficiencyRank.Recall Knowledge >= 1"',
   'Quick Identification':
     'Type=Skill ' +
-    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
+    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
   'Recognize Spell':
     'Type=Skill ' +
-    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
-  'Skill Training':'Type=Skill',
+    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
+  'Skill Training':'Type=Skill Require="intelligence >= 12"',
   'Trick Magic Item':
     'Type=Skill ' +
-    'Require="skills.Arcana >= 1 || skills.Nature >= 1 || skills.Occultism >= 1 || skills.Religion >= 1"',
+    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
   'Automatic Knowledge':
-    'Type=Skill Require="level >= 2","skills.Recall Knowledge >= 2"',
+    'Type=Skill Require="level >= 2","proficiencyRank.Recall Knowledge >= 2"',
   'Magical Shorthand':
     'Type=Skill ' +
-    'Require="level >= 2","skills.Arcana >= 2 || skills.Nature >= 2 || skills.Occultism >= 2 || skills.Religion >= 2"',
+    'Require="level >= 2","proficiencyRank.Arcana >= 2 || proficiencyRank.Nature >= 2 || proficiencyRank.Occultism >= 2 || proficiencyRank.Religion >= 2"',
   'Quick Recognition':
     'Type=Skill ' +
-    'Require="level >= 7","skills.Arcana >= 3 || skills.Nature >= 3 || skills.Occultism >= 3 || skills.Religion >= 3","features.Recognize Spell"',
-  'Cat Fall':'Type=Skill Require="skills.Acrobatics >= 1"',
-  'Quick Squeeze':'Type=Skill Require="skills.Acrobatics >= 1"',
-  'Steady Balance':'Type=Skill Require="skills.Acrobatics >= 1"',
-  'Nimble Crawl':'Type=Skill Require="level >= 2","skills.Acrobatics >= 2"',
-  'Kip Up':'Type=Skill Require="level >= 7","skills.Acrobatics >= 3"',
-  'Arcane Sense':'Type=Skill Require="skills.Arcana >= 1"',
-  'Unified Theory':'Type=Skill Require="level >= 15","skills.Acrobatics >= 4"',
-  'Combat Climber':'Type=Skill Require="skills.Athletics >= 1"',
-  'Hefty Hauler':'Type=Skill Require="skills.Athletics >= 1"',
-  'Quick Jump':'Type=Skill Require="skills.Athletics >= 1"',
-  'Titan Wrestler':'Type=Skill Require="skills.Athletics >= 1"',
-  'Underwater Marauder':'Type=Skill Require="skills.Athletics >= 1"',
-  'Powerful Leap':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
-  'Rapid Mantel':'Type=Skill Require="level >= 2","skills.Athletics >= 2"',
-  'Quick Climb':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
-  'Quick Swim':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
-  'Wall Jump':'Type=Skill Require="level >= 7","skills.Athletics >= 3"',
-  'Cloud Jump':'Type=Skill Require="level >= 15","skills.Athletics >= 4"',
-  'Alchemical Crafting':'Type=Skill Require="skills.Crafting >= 1"',
-  'Quick Repair':'Type=Skill Require="skills.Crafting >= 1"',
-  'Snare Crafting':'Type=Skill Require="skills.Crafting >= 1"',
-  'Specialty Crafting':'Type=Skill Require="skills.Crafting >= 1"',
-  'Magical Crafting':'Type=Skill Require="level >= 2","skills.Crafting >= 2"',
+    'Require=' +
+      '"level >= 7",' +
+      '"proficiencyRank.Arcana >= 3 || proficiencyRank.Nature >= 3 || proficiencyRank.Occultism >= 3 || proficiencyRank.Religion >= 3",' +
+      '"features.Recognize Spell"',
+
+  'Cat Fall':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
+  'Quick Squeeze':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
+  'Steady Balance':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
+  'Nimble Crawl':
+    'Type=Skill Require="level >= 2","proficiencyRank.Acrobatics >= 2"',
+  'Kip Up':'Type=Skill Require="level >= 7","proficiencyRank.Acrobatics >= 3"',
+  'Arcane Sense':'Type=Skill Require="proficiencyRank.Arcana >= 1"',
+  'Unified Theory':
+    'Type=Skill Require="level >= 15","proficiencyRank.Acrobatics >= 4"',
+  'Combat Climber':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+  'Hefty Hauler':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+  'Quick Jump':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+  'Titan Wrestler':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+  'Underwater Marauder':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+  'Powerful Leap':
+    'Type=Skill Require="level >= 2","proficiencyRank.Athletics >= 2"',
+  'Rapid Mantel':
+    'Type=Skill Require="level >= 2","proficiencyRank.Athletics >= 2"',
+  'Quick Climb':
+    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+  'Quick Swim':
+    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+  'Wall Jump':
+    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+  'Cloud Jump':
+    'Type=Skill Require="level >= 15","proficiencyRank.Athletics >= 4"',
+  'Alchemical Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
+  'Quick Repair':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
+  'Snare Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
+  'Specialty Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
+  'Magical Crafting':
+    'Type=Skill Require="level >= 2","proficiencyRank.Crafting >= 2"',
   'Impeccable Crafting':
     'Type=Skill ' +
-    'Require="level >= 7","skills.Crafting >= 3","features.Specialty Crafting"',
-  'Inventor':'Type=Skill Require="level >= 7","skills.Crafting >= 3"',
-  'Craft Anything':'Type=Skill Require="level >= 15","skills.Crafting >= 4"',
-  'Charming Liar':'Type=Skill Require="skills.Deception >= 1"',
-  'Lengthy Diversion':'Type=Skill Require="skills.Deception >= 1"',
-  'Lie To Me':'Type=Skill Require="skills.Deception >= 1"',
-  'Confabulator':'Type=Skill Require="level >= 2","skills.Deception >= 2"',
-  'Quick Disguise':'Type=Skill Require="level >= 2","skills.Deception >= 2"',
-  'Slippery Secrets':'Type=Skill Require="level >= 7","skills.Deception >= 3"',
-  'Bargain Hunter':'Type=Skill Require="skills.Diplomacy >= 1"',
-  'Group Impression':'Type=Skill Require="skills.Diplomacy >= 1"',
-  'Hobnobber':'Type=Skill Require="skills.Diplomacy >= 1"',
-  'Glad-Hand':'Type=Skill Require="level >= 2","skills.Diplomacy >= 2"',
-  'Shameless Request':'Type=Skill Require="level >= 7","skills.Diplomacy >= 3"',
+    'Require=' +
+      '"level >= 7",' +
+      '"proficiencyRank.Crafting >= 3",' +
+      '"features.Specialty Crafting"',
+  'Inventor':'Type=Skill Require="level >= 7","proficiencyRank.Crafting >= 3"',
+  'Craft Anything':
+    'Type=Skill Require="level >= 15","proficiencyRank.Crafting >= 4"',
+  'Charming Liar':'Type=Skill Require="proficiencyRank.Deception >= 1"',
+  'Lengthy Diversion':'Type=Skill Require="proficiencyRank.Deception >= 1"',
+  'Lie To Me':'Type=Skill Require="proficiencyRank.Deception >= 1"',
+  'Confabulator':
+    'Type=Skill Require="level >= 2","proficiencyRank.Deception >= 2"',
+  'Quick Disguise':
+    'Type=Skill Require="level >= 2","proficiencyRank.Deception >= 2"',
+  'Slippery Secrets':
+    'Type=Skill Require="level >= 7","proficiencyRank.Deception >= 3"',
+  'Bargain Hunter':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
+  'Group Impression':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
+  'Hobnobber':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
+  'Glad-Hand':
+    'Type=Skill Require="level >= 2","proficiencyRank.Diplomacy >= 2"',
+  'Shameless Request':
+    'Type=Skill Require="level >= 7","proficiencyRank.Diplomacy >= 3"',
   'Legendary Negotiation':
-    'Type=Skill Require="level >= 15","skills.Diplomacy >= 4"',
-  'Group Coercion':'Type=Skill Require="skills.Intimidation >= 1"',
-  'Intimidating Glare':'Type=Skill Require="skills.Intimidation >= 1"',
-  'Quick Coercion':'Type=Skill Require="skills.Intimidation >= 1"',
+    'Type=Skill Require="level >= 15","proficiencyRank.Diplomacy >= 4"',
+  'Group Coercion':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
+  'Intimidating Glare':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
+  'Quick Coercion':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
   'Intimidating Prowess':
     'Type=Skill ' +
-    'Require="level >= 2","strength >= 16","skills.Intimidation >= 2"',
+    'Require="level >= 2","strength >= 16","proficiencyRank.Intimidation >= 2"',
   'Lasting Coercion':
-    'Type=Skill Require="level >= 2","skills.Intimidation >= 2"',
-  'Battle Cry':'Type=Skill Require="level >= 7","skills.Intimidation >= 3"',
+    'Type=Skill Require="level >= 2","proficiencyRank.Intimidation >= 2"',
+  'Battle Cry':
+    'Type=Skill Require="level >= 7","proficiencyRank.Intimidation >= 3"',
   'Terrified Retreat':
-    'Type=Skill Require="level >= 7","skills.Intimidation >= 3"',
+    'Type=Skill Require="level >= 7","proficiencyRank.Intimidation >= 3"',
   'Scare To Death':
-    'Type=Skill Require="level >= 15","skills.Intimidation >= 4"',
-  'Additional Lore':'Type=Skill Require="skills.Lore >= 1"',
-  'Experience Professional':'Type=Skill Require="skills.Lore >= 1"',
-  'Unmistakable Lore':'Type=Skill Require="level >= 2","skills.Lore >= 2"',
+    'Type=Skill Require="level >= 15","proficiencyRank.Intimidation >= 4"',
+  'Additional Lore':'Type=Skill Require="proficiencyRank.Lore >= 1"',
+  'Experience Professional':'Type=Skill Require="proficiencyRank.Lore >= 1"',
+  'Unmistakable Lore':
+    'Type=Skill Require="level >= 2","proficiencyRank.Lore >= 2"',
   'Legendary Professional':
-    'Type=Skill Require="level >= 15","skills.Lore >= 4"',
-  'Battle Medicine':'Type=Skill Require="skills.Medicine >= 1"',
-  'Continual Recovery':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
-  'Robust Recovery':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
-  'Ward Medic':'Type=Skill Require="level >= 2","skills.Medicine >= 2"',
-  'Legendary Medic':'Type=Skill Require="level >= 15","skills.Medicine >= 4"',
-  'Natural Medicine':'Type=Skill Require="skills.Nature >= 1"',
-  'Train Animal':'Type=Skill Require="skills.Nature >= 1"',
-  'Bonded Animal':'Type=Skill Require="level >= 2","skills.Nature >= 2"',
-  'Oddity Identification':'Type=Skill Require="skills.Occultism >= 1"',
-  'Bizarre Magic':'Type=Skill Require="level >= 7","skills.Occultism >= 3"',
-  'Fascinating Performance':'Type=Skill Require="skills.Performance >= 1"',
-  'Impressive Performance':'Type=Skill Require="skills.Performance >= 1"',
-  'Virtuosic Performer':'Type=Skill Require="skills.Performance >= 1"',
+    'Type=Skill Require="level >= 15","proficiencyRank.Lore >= 4"',
+  'Battle Medicine':'Type=Skill Require="proficiencyRank.Medicine >= 1"',
+  'Continual Recovery':
+    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+  'Robust Recovery':
+    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+  'Ward Medic':
+    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+  'Legendary Medic':
+    'Type=Skill Require="level >= 15","proficiencyRank.Medicine >= 4"',
+  'Natural Medicine':'Type=Skill Require="proficiencyRank.Nature >= 1"',
+  'Train Animal':'Type=Skill Require="proficiencyRank.Nature >= 1"',
+  'Bonded Animal':
+    'Type=Skill Require="level >= 2","proficiencyRank.Nature >= 2"',
+  'Oddity Identification':'Type=Skill Require="proficiencyRank.Occultism >= 1"',
+  'Bizarre Magic':
+    'Type=Skill Require="level >= 7","proficiencyRank.Occultism >= 3"',
+  'Fascinating Performance':
+    'Type=Skill Require="proficiencyRank.Performance >= 1"',
+  'Impressive Performance':
+    'Type=Skill Require="proficiencyRank.Performance >= 1"',
+  'Virtuosic Performer':'Type=Skill Require="proficiencyRank.Performance >= 1"',
   'Legendary Performer':
     'Type=Skill ' +
-    'Require="level >= 15",' +
-            '"skills.Performance >= 4",' +
-            '"features.Virtuosic Performer"',
-  'Student Of The Canon':'Type=Skill Require="skills.Religion >= 1"',
-  'Divine Guidance':'Type=Skill Require="level >= 15","skills.Religion >= 4"',
-  'Courtly Graces':'Type=Skill Require="skills.Society >= 1"',
-  'Multilingual':'Type=Skill Require="skills.Society >= 1"',
-  'Read Lips':'Type=Skill Require="skills.Society >= 1"',
-  'Sign Language':'Type=Skill Require="skills.Society >= 1"',
-  'Streetwise':'Type=Skill Require="skills.Society >= 1"',
+    'Require=' +
+      '"level >= 15",' +
+      '"proficiencyRank.Performance >= 4",' +
+      '"features.Virtuosic Performer"',
+  'Student Of The Canon':'Type=Skill Require="proficiencyRank.Religion >= 1"',
+  'Divine Guidance':
+    'Type=Skill Require="level >= 15","proficiencyRank.Religion >= 4"',
+  'Courtly Graces':'Type=Skill Require="proficiencyRank.Society >= 1"',
+  'Multilingual':'Type=Skill Require="proficiencyRank.Society >= 1"',
+  'Read Lips':'Type=Skill Require="proficiencyRank.Society >= 1"',
+  'Sign Language':'Type=Skill Require="proficiencyRank.Society >= 1"',
+  'Streetwise':'Type=Skill Require="proficiencyRank.Society >= 1"',
   'Connections':
     'Type=Skill ' +
-    'Require="level >= 2","skills.Society >= 2","features.Courtly Graces"',
+    'Require=' +
+      '"level >= 2",' +
+      '"proficiencyRank.Society >= 2",' +
+      '"features.Courtly Graces"',
   'Legendary Codebreaker':
-    'Type=Skill Require="level >= 15","skills.Society >= 4"',
+    'Type=Skill Require="level >= 15","proficiencyRank.Society >= 4"',
   'Legendary Linguist':
     'Type=Skill ' +
-    'Require="level >= 15","skills.Society >= 4","features.Multilingual"',
-  'Experienced Smuggler':'Type=Skill Require="skills.Stealth >= 1"',
-  'Terrain Stalker':'Type=Skill Require="skills.Stealth >= 1"',
-  'Quiet Aliases':'Type=Skill Require="level >= 2","skills.Stealth >= 2"',
-  'Foil Senses':'Type=Skill Require="level >= 7","skills.Stealth >= 3"',
-  'Swift Sneak':'Type=Skill Require="level >= 7","skills.Stealth >= 3"',
-  'Legendary Sneak':'Type=Skill Require="level >= 15","skills.Stealth >= 4"',
-  'Experienced Tracker':'Type=Skill Require="skills.Survival >= 1"',
-  'Forager':'Type=Skill Require="skills.Survival >= 1"',
-  'Survey Wildlife':'Type=Skill Require="skills.Survival >= 1"',
-  'Terrain Expertise':'Type=Skill Require="skills.Survival >= 1"',
-  'Planar Survival':'Type=Skill Require="level >= 7","skills.Survival >= 3"',
+    'Require=' +
+      '"level >= 15",' +
+      '"proficiencyRank.Society >= 4",' +
+      '"features.Multilingual"',
+  'Experienced Smuggler':'Type=Skill Require="proficiencyRank.Stealth >= 1"',
+  'Terrain Stalker':'Type=Skill Require="proficiencyRank.Stealth >= 1"',
+  'Quiet Aliases':
+    'Type=Skill Require="level >= 2","proficiencyRank.Stealth >= 2"',
+  'Foil Senses':
+    'Type=Skill Require="level >= 7","proficiencyRank.Stealth >= 3"',
+  'Swift Sneak':
+    'Type=Skill Require="level >= 7","proficiencyRank.Stealth >= 3"',
+  'Legendary Sneak':
+    'Type=Skill ' +
+    'Require=' +
+      '"level >= 15",' +
+      '"proficiencyRank.Stealth >= 4",' +
+      '"features.Swift Sneak"',
+  'Experienced Tracker':'Type=Skill Require="proficiencyRank.Survival >= 1"',
+  'Forager':'Type=Skill Require="proficiencyRank.Survival >= 1"',
+  'Survey Wildlife':'Type=Skill Require="proficiencyRank.Survival >= 1"',
+  'Terrain Expertise':'Type=Skill Require="proficiencyRank.Survival >= 1"',
+  'Planar Survival':
+    'Type=Skill Require="level >= 7","proficiencyRank.Survival >= 3"',
   'Legendary Survivalist':
-    'Type=Skill Require="level >= 15","skills.Survival >= 4"',
-  'Pickpocket':'Type=Skill Require="skills.Thievery >= 1"',
-  'Subtle Theft':'Type=Skill Require="skills.Thievery >= 1"',
-  'Wary Disarmament':'Type=Skill Require="level >= 2","skills.Thievery >= 2"',
-  'Quick Unlock':'Type=Skill Require="level >= 7","skills.Thievery >= 3"',
+    'Type=Skill Require="level >= 15","proficiencyRank.Survival >= 4"',
+  'Pickpocket':'Type=Skill Require="proficiencyRank.Thievery >= 1"',
+  'Subtle Theft':'Type=Skill Require="proficiencyRank.Thievery >= 1"',
+  'Wary Disarmament':
+    'Type=Skill Require="level >= 2","proficiencyRank.Thievery >= 2"',
+  'Quick Unlock':
+    'Type=Skill Require="level >= 7","proficiencyRank.Thievery >= 3"',
   'Legendary Thief':
     'Type=Skill ' +
-    'Require="level >= 15","skills.Thievery >= 4","features.Pickpocket"'
+    'Require=' +
+      '"level >= 15",' +
+      '"proficiencyRank.Thievery >= 4",' +
+      '"features.Pickpocket"'
+
 };
 Pathfinder2E.FEATURES = {
 
@@ -2508,7 +2705,7 @@ Pathfinder2E.FEATURES = {
   'Healing Hands':'Section=feature Note="FILL"',
   'Holy Castigation':'Section=feature Note="FILL"',
   // Reach Spell as above
-  'Cantrip Expansion':'Section=feature Note="FILL"',
+  // Cantrip Expansion as above
   'Communal Healing':'Section=feature Note="FILL"',
   'Emblazon Armament':'Section=feature Note="FILL"',
   'Sap Life':'Section=feature Note="FILL"',
@@ -2956,7 +3153,103 @@ Pathfinder2E.FEATURES = {
   "Trickster's Ace":'Section=feature Note="FILL"',
   'Hidden Paragon':'Section=feature Note="FILL"',
   'Impossible Striker':'Section=feature Note="FILL"',
-  'Reactive Distraction':'Section=feature Note="FILL"'
+  'Reactive Distraction':'Section=feature Note="FILL"',
+
+  // Sorcerer
+  'Bloodline':'Section=feature Note="FILL"',
+  'Sorcerer Spellcasting':'Section=feature Note="FILL"',
+  'Spell Repertoire':'Section=feature Note="FILL"',
+  // Signature Spells as above
+  'Magical Fortitude':'Section=feature Note="FILL"',
+  // Expert Spellcaster as above
+  // Lightning Reflexes as above
+  // Alertness as above
+  // Weapon Expertise as above
+  'Defensive Robes':'Section=feature Note="FILL"',
+  // Weapon Specialization as above
+  // Master Spellcaster as above
+  // Resolve as above
+  'Bloodline Paragon':'Section=feature Note="FILL"',
+  // Legendary Spellcaster as above
+
+  'Counterspell':'Section=feature Note="FILL"',
+  'Dangerous Sorcerer':'Section=feature Note="FILL"',
+  'Familiar':'Section=feature Note="FILL"',
+  // Reach Spell as above
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  // Enhanced Familiar as above
+  'Arcane Evolution':'Section=feature Note="FILL"',
+  'Bespell Weapon':'Section=feature Note="FILL"',
+  'Divine Evolution':'Section=feature Note="FILL"',
+  'Occult Evolution':'Section=feature Note="FILL"',
+  'Primal Evolution':'Section=feature Note="FILL"',
+  'Advanced Bloodline':'Section=feature Note="FILL"',
+  // Steady Spellcasting as above
+  'Bloodline Resistance':'Section=feature Note="FILL"',
+  'Crossblooded Evolution':'Section=feature Note="FILL"',
+  'Greater Bloodline':'Section=feature Note="FILL"',
+  // Overwhelming Energy as above
+  // Quickened Casting as above
+  'Bloodline Focus':'Section=feature Note="FILL"',
+  'Magic Sense':'Section=feature Note="FILL"',
+  'Interweave Spell':'Section=feature Note="FILL"',
+  'Reflect Spell':'Section=feature Note="FILL"',
+  // Effortless Concentration as above
+  'Greater Mental Evolution':'Section=feature Note="FILL"',
+  'Greater Vital Evolution':'Section=feature Note="FILL"',
+  'Bloodline Wellspring':'Section=feature Note="FILL"',
+  'Greater Crossblooded Evolution':'Section=feature Note="FILL"',
+  'Bloodline Conduit':'Section=feature Note="FILL"',
+  'Bloodline Perfection':'Section=feature Note="FILL"',
+  'Metamagic Mastery':'Section=feature Note="FILL"',
+
+  // Wizard
+  'Arcane Spellcasting':'Section=feature Note="FILL"',
+  'Arcane School':'Section=feature Note="FILL"',
+  'Arcane Bond':'Section=feature Note="FILL"',
+  'Arcane Thesis':'Section=feature Note="FILL"',
+  // Lightning Reflexes as above
+  // Expert Spellcaster as above
+  // Magical Fortitude as above
+  // Alertness as above
+  'Wizard Weapon Expertise':'Section=feature Note="FILL"',
+  // Resolve as above
+  "Archwizard's Spellcraft":'Section=feature Note="FILL"',
+  // Legendary Spellcaster as above
+
+  // Counterspell as above
+  'Eschew Materials':'Section=feature Note="FILL"',
+  // Familiar as above
+  'Hand Of The Apprentice':'Section=feature Note="FILL"',
+  // Reach Spell as above
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  'Conceal Spell':'Section=feature Note="FILL"',
+  // Enhanced Familiar as above
+  // Bespell Weapon as above
+  'Linked Focus':'Section=feature Note="FILL"',
+  'Silent Spell':'Section=feature Note="FILL"',
+  'Spell Penetration':'Section=feature Note="FILL"',
+  // Steady Spellcasting as above
+  'Advanced School Spell':'Section=feature Note="FILL"',
+  'Bond Conservation':'Section=feature Note="FILL"',
+  'Universal Versatility':'Section=feature Note="FILL"',
+  // Overwhelming Energy as above
+  // Quickened Casting as above
+  'Scroll Savant':'Section=feature Note="FILL"',
+  'Clever Counterspell':'Section=feature Note="FILL"',
+  // Magic Sense as above
+  'Bonded Focus':'Section=feature Note="FILL"',
+  // Reflect Spell as above
+  'Superior Bond':'Section=feature Note="FILL"',
+  // Effortless Concentration as above
+  'Spell Tinker':'Section=feature Note="FILL"',
+  'Infinite Possibilities':'Section=feature Note="FILL"',
+  'Reprepare Spell':'Section=feature Note="FILL"',
+  "Archwizard's Might":'Section=feature Note="FILL"',
+  // Metamagic Mastery as above
+  'Spell Combination':'Section=feature Note="FILL"'
 
 };
 Pathfinder2E.GOODIES = {
