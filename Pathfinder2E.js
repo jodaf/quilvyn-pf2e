@@ -1931,7 +1931,7 @@ Pathfinder2E.FEATS = {
   'Scare To Death':
     'Type=Skill Require="level >= 15","proficiencyRank.Intimidation >= 4"',
   'Additional Lore (%lore)':'Type=Skill Require="proficiencyRank.Lore >= 1"',
-  'Experience Professional':'Type=Skill Require="proficiencyRank.Lore >= 1"',
+  'Experienced Professional':'Type=Skill Require="proficiencyRank.Lore >= 1"',
   'Unmistakable Lore':
     'Type=Skill Require="level >= 2","proficiencyRank.Lore >= 2"',
   'Legendary Professional':
@@ -2387,8 +2387,6 @@ Pathfinder2E.FEATURES = {
     'Note="Has expert proficiency in falchion, greataxe, and orc weapons"',
 
   // Background
-  'Assurance (%skill)':
-    'Section=skill Note="Minimum %{10+proficiencyBonus} on %skill"',
   'Bargain Hunter':
     'Section=skill Note="+2 initial gold/May use Diplomacy to Earn Income"',
   'Battle Medic':'Section=skill Note="May use Medicine to Treat Wounds"',
@@ -2400,9 +2398,6 @@ Pathfinder2E.FEATURES = {
     'Note="Critical success on a Lie improves attitude by 1 step"',
   'Courtly Graces':
     'Section=skill Note="May use Society to Make An Impression or Impersonate"',
-  'Dubious Knowledge':
-    'Section=skill ' +
-    'Note="Fail on Recall Knowledge yields a mix of true and false info"',
   'Experienced Smuggler':
     'Section=skill Note="Minimum 10 roll to smuggle concealed item"',
   'Experienced Tracker':'Section=skill Note="May make Track-5 at full Speed"',
@@ -3304,7 +3299,10 @@ Pathfinder2E.FEATURES = {
   'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
   'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
   'Canny Acumen (Will)':'Section=save Note="Save %V (Will)"',
-  'Diehard':'Section=feature Note="FILL"',
+  'Diehard':'Section=combat Note="Remains alive until dying 5"',
+  'Expeditious Search':
+    'Section=skill ' +
+    'Note="May Search at %{proficiencyRank.Perception>=4?4:2}x normal speed"',
   'Fast Recovery':'Section=feature Note="FILL"',
   'Feather Step':'Section=feature Note="FILL"',
   'Fleet':'Section=feature Note="FILL"',
@@ -3313,13 +3311,17 @@ Pathfinder2E.FEATURES = {
   'Shield Block':'Section=feature Note="FILL"',
   'Toughness':'Section=feature Note="FILL"',
   'Weapon Proficiency':'Section=feature Note="FILL"',
+
   'Ancestral Paragon':'Section=feature Note="FILL"',
   'Untrained Improvisation':'Section=feature Note="FILL"',
-  'Expeditious Search':'Section=feature Note="FILL"',
   'Incredible Investiture':'Section=feature Note="FILL"',
 
   // Skill Feats
-  'Dubious Knowledge':'Section=feature Note="FILL"',
+  'Assurance (%skill)':
+    'Section=skill Note="Minimum %{10+proficiencyBonus} on %skill"',
+  'Dubious Knowledge':
+    'Section=skill ' +
+    'Note="Fail on Recall Knowledge yields a mix of true and false info"',
   'Magical Shorthand':'Section=feature Note="FILL"',
   'Quick Identification':'Section=feature Note="FILL"',
   'Quick Recognition':'Section=feature Note="FILL"',
@@ -3349,17 +3351,37 @@ Pathfinder2E.FEATURES = {
     'Note="May make an animal permanently helpful with 1 week interaction and a successful DC 20 Nature test"',
   'Cat Fall':'Section=feature Note="FILL"',
   'Charming Liar':'Section=feature Note="FILL"',
-  'Cloud Jump':'Section=feature Note="FILL"',
-  'Combat Climber':'Section=feature Note="FILL"',
-  'Confabulator':'Section=feature Note="FILL"',
-  'Connections':'Section=feature Note="FILL"',
-  'Continual Recovery':'Section=feature Note="FILL"',
-  'Courtly Graces':'Section=feature Note="FILL"',
-  'Craft Anything':'Section=feature Note="FILL"',
-  'Divine Guidance':'Section=feature Note="FILL"',
-  'Experience Professional':'Section=feature Note="FILL"',
-  'Experienced Smuggler':'Section=feature Note="FILL"',
-  'Experienced Tracker':'Section=feature Note="FILL"',
+  'Cloud Jump':
+    'Section=skill ' +
+    'Note="May long jump triple normal distance, high jump normal long jump distance, and add %{speed} to jump distance for every additional action spent"',
+  'Combat Climber':
+    'Section=skill ' +
+    'Note="Does not suffer flat-footed and may fight while Climbing/May Climb with one hand occupied"',
+  'Confabulator':
+    'Section=skill ' +
+    'Note="Target of Decpetion gains %{proficiencyRank.Deception>=4?\'no\':proficiencyBonus>=3?\'+1\':\'+2\'} bonus for previous attempts"',
+  'Connections':
+    'Section=skill ' +
+    'Note="May use Society to gain meeting with an important figure or to exchange favors"',
+  'Continual Recovery':
+    'Section=skill Note="May repeat Treat Wounds on a patient after 10 min"',
+  'Courtly Graces':
+    'Section=skill ' +
+    'Note="May use Society to impersonate a noble or to Make an Impression on one"',
+  'Craft Anything':
+    'Section=skill Note="May ignore secondary Crafting requirements"',
+  'Divine Guidance':
+    'Section=skill ' +
+    'Note="May use Religion after 10 min Deciphering Writing on religious text to gain a hint with current problem"',
+  'Experienced Professional':
+    'Section=skill ' +
+    'Note="A critical failure when using Lore to Earn Income becomes a normal failure, and a normal failure gives twice normal income"',
+  'Experienced Smuggler':
+    'Section=skill ' +
+    'Note="Stealth to conceal a small item gains a minimum %{proficiencyRank.Stealth>=4?\'success\':proficiencyRank.Steak>=3\'15\':\'10\'} on roll"',
+  'Experienced Tracker':
+    'Section=skill ' +
+    'Note="May Track at full Speed%{proficiencyRank.Survival<3\' at a -5 penalty\':\'\'}%{proficiencyRank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
   'Fascinating Performance':'Section=feature Note="FILL"',
   'Foil Senses':'Section=feature Note="FILL"',
   'Forager':'Section=feature Note="FILL"',
