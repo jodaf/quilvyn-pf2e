@@ -944,7 +944,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 8",' +
       '"features.Polymath Muse",' +
-      '"proficiencyRank.Occultism >= 3"',
+      '"rank.Occultism >= 3"',
   'Inspire Heroics':
     'Type=Class,Bard Require="level >= 8","features.Maestro Muse"',
   'Know-It-All':
@@ -967,7 +967,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 16",' +
       '"features.Enigma Muse",' +
-      '"proficiencyRank.Occultism >= 4"',
+      '"rank.Occultism >= 4"',
   'Deep Lore':'Type=Class,Bard Require="level >= 18"',
   'Eternal Composition':
     'Type=Class,Bard Require="level >= 18","features.Maestro Muse"',
@@ -975,7 +975,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard ' +
     'Require=' +
       '"level >= 18",' +
-      '"proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Religion >= 1",' +
+      '"rank.Arcana >= 1 || rank.Nature >= 1 || rank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
   'Fatal Aria':'Type=Class,Bard Require="level >= 20"',
   'Perfect Encore':
@@ -1314,7 +1314,7 @@ Pathfinder2E.FEATS = {
   'Double Shot':'Type=Class,Fighter Require="level >= 4"',
   'Dual-Handed Assault':'Type=Class,Fighter Require="level >= 4"',
   'Knockdown':
-    'Type=Class,Fighter Require="level >= 4","proficiencyRank.Athletics >= 1"',
+    'Type=Class,Fighter Require="level >= 4","rank.Athletics >= 1"',
   'Powerful Shove':
     'Type=Class,Fighter ' +
     'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
@@ -1335,7 +1335,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Fighter Require="level >= 6","features.Double Shot"',
   'Blind-Fight':
     'Type=Class,Fighter,Ranger,Rogue ' +
-    'Require="level >= 8","proficiencyRank.Perception >= 3"',
+    'Require="level >= 8","rank.Perception >= 3"',
   'Dueling Riposte':
     'Type=Class,Fighter Require="level >= 8","features.Dueling Parry"',
   'Felling Strike':'Type=Class,Fighter Require="level >= 8"',
@@ -1414,7 +1414,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
   'Deflect Arrow':'Type=Class,Monk Require="level >= 4"',
   'Flurry Of Maneuvers':
-    'Type=Class,Monk Require="level >= 4","proficiencyRank.Athletics >= 2"',
+    'Type=Class,Monk Require="level >= 4","rank.Athletics >= 2"',
   'Flying Kick':'Type=Class,Monk Require="level >= 4"',
   'Guarded Movement':'Type=Class,Monk Require="level >= 4"',
   'Stand Still':'Type=Class,Monk Require="level >= 4"',
@@ -1441,7 +1441,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Monk Require="level >= 8","features.Deflect Arrow"',
   'Ironblood Stance':'Type=Class,Monk Require="level >= 8"',
   'Mixed Maneuver':
-    'Type=Class,Monk Require="level >= 8","proficiencyRank.Athletics >= 3"',
+    'Type=Class,Monk Require="level >= 8","rank.Athletics >= 3"',
   'Tangled Forest Stance':'Type=Class,Monk Require="level >= 8"',
   'Wall Run':'Type=Class,Monk Require="level >= 8"',
   'Wild Winds Initiate':
@@ -1454,7 +1454,7 @@ Pathfinder2E.FEATS = {
   'Diamond Soul':'Type=Class,Monk Require="level >= 12"',
   'Disrupt Ki':'Type=Class,Monk Require="level >= 12"',
   'Improved Knockback':
-    'Type=Class,Monk Require="level >= 12","proficiencyRank.Athletics >= 3"',
+    'Type=Class,Monk Require="level >= 12","rank.Athletics >= 3"',
   'Meditative Focus':
     'Type=Class,Monk Require="level >= 12","features.Ki Spells"',
   // Stance Savant as above
@@ -1505,7 +1505,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 4",' +
-      '"proficiencyRank.Crafting >= 2",' +
+      '"rank.Crafting >= 2",' +
       '"features.Snare Crafting"',
   // Twin Parry as above
   // Mature Animal Companion as above
@@ -1513,7 +1513,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 6",' +
-      '"proficiencyRank.Crafting >= 2",' +
+      '"rank.Crafting >= 2",' +
       '"features.Snare Specialist"',
   'Skirmish Strike':'Type=Class,Ranger,Rogue Require="level >= 6"',
   'Snap Shot':'Type=Class,Ranger Require="level >= 6"',
@@ -1521,7 +1521,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 6",' +
-      '"proficiencyRank.Survival >= 2",' +
+      '"rank.Survival >= 2",' +
       '"features.Experienced Tracker"',
   // Blind-Fight as above
   'Deadly Aim':
@@ -1531,35 +1531,35 @@ Pathfinder2E.FEATS = {
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 8",' +
-      '"proficiencyRank.Crafting >= 3",' +
+      '"rank.Crafting >= 3",' +
       '"features.Snare Specialist"',
   'Terrain Master':
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 8",' +
-      '"proficiencyRank.Survival >= 3",' +
+      '"rank.Survival >= 3",' +
       '"features.Favored Terrain"',
   "Warden's Boon":'Type=Class,Ranger Require="level >= 8"',
   'Camouflage':
-    'Type=Class,Ranger Require="level >= 10","proficiencyRank.Stealth >= 3"',
+    'Type=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
   // Incredible Companion as above
   'Master Monster Hunter':
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 10",' +
-      '"proficiencyRank.Nature >= 3",' +
+      '"rank.Nature >= 3",' +
       '"features.Monster Hunter"',
   'Penetrating Shot':'Type=Class,Ranger Require="level >= 10"',
   // Twin Riposte as above
   "Warden's Step":
-    'Type=Class,Ranger Require="level >= 10","proficiencyRank.Stealth >= 3"',
+    'Type=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
   'Distracting Shot':'Type=Class,Ranger Require="level >= 12"',
   'Double Prey':'Type=Class,Ranger Require="level >= 12"',
   'Lightning Snares':
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 12",' +
-      '"proficiencyRank.Crafting >= 3",' +
+      '"rank.Crafting >= 3",' +
       '"features.Quick Snares",' +
       '"features.Snare Specialist"',
   'Second Sting':'Type=Class,Ranger Require="level >= 12"',
@@ -1581,7 +1581,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Ranger ' +
     'Require=' +
       '"level >= 16",' +
-      '"proficiencyRanks.Nature >= 4",' +
+      '"rank.Nature >= 4",' +
       '"features.Master Monster Hunter"',
   // Specialized Companion as above
   'Ubiquitous Snares':
@@ -1608,10 +1608,10 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 20",' +
       '"features.Masterful Hunter",' +
-      '"proficiencyRank.Perception >= 4",' +
+      '"rank.Perception >= 4",' +
       '"features.Far Shot"',
   'To The Ends Of The Earth':
-    'Type=Class,Ranger Require="level >= 20","proficiencyRank.Survival >= 4"',
+    'Type=Class,Ranger Require="level >= 20","rank.Survival >= 4"',
   'Triple Threat':
     'Type=Class,Ranger Require="level >= 20","features.Shared Prey"',
   'Ultimate Skirmisher':
@@ -1620,7 +1620,7 @@ Pathfinder2E.FEATS = {
   'Nimble Dodge':'Type=Class,Rogue',
   'Trap Finder':'Type=Class,Rogue',
   'Twin Feint':'Type=Class,Rogue',
-  "You're Next":'Type=Class,Rogue Require="proficiencyRank.Intimidation >= 1"',
+  "You're Next":'Type=Class,Rogue Require="rank.Intimidation >= 1"',
   'Brutal Beating':
     'Type=Class,Rogue Require="level >= 2","features.Ruffian Racket"',
   'Distracting Feint':
@@ -1658,7 +1658,7 @@ Pathfinder2E.FEATS = {
       '"features.Thief Racket",' +
       '"features.Debilitating Strike"',
   'Sneak Savant':
-    'Type=Class,Rogue Require="level >= 10","proficiencyRank.Stealth >= 3"',
+    'Type=Class,Rogue Require="level >= 10","rank.Stealth >= 3"',
   'Tactical Debilitations':
     'Type=Class,Rogue ' +
     'Require=' +
@@ -1682,30 +1682,30 @@ Pathfinder2E.FEATS = {
   'Leave An Opening':'Type=Class,Rogue Require="level >= 14"',
   // Sense The Unseen as above
   'Blank Slate':
-    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Deception >= 4"',
+    'Type=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
   'Cloud Step':
-    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Acrobatics >= 4"',
+    'Type=Class,Rogue Require="level >= 16","rank.Acrobatics >= 4"',
   'Cognitive Loophole':'Type=Class,Rogue Require="level >= 16"',
   'Dispelling Slice':'Type=Class,Rogue Require="level >= 16"',
   'Perfect Distraction':
-    'Type=Class,Rogue Require="level >= 16","proficiencyRank.Deception >= 4"',
+    'Type=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
   'Implausible Infiltration':
     'Type=Class,Rogue ' +
     'Require=' +
       '"level >= 18",' +
-      '"proficiencyRank.Acrobatics >= 4",' +
+      '"rank.Acrobatics >= 4",' +
       '"features.Quick Squeeze"',
   'Powerful Sneak':'Type=Class,Rogue Require="level >= 18"',
   "Trickster's Ace":'Type=Class,Rogue Require="level >= 18"',
   'Hidden Paragon':
-    'Type=Class,Rogue Require="level >= 20","proficiencyRank.Stealth >= 4"',
+    'Type=Class,Rogue Require="level >= 20","rank.Stealth >= 4"',
   'Impossible Striker':
     'Type=Class,Rogue Require="level >= 20","features.Sly Striker"',
   'Reactive Distraction':
     'Type=Class,Rogue ' +
     'Require=' +
       '"level >= 20",' +
-      '"proficiencyRank.Deception >= 4",' +
+      '"rank.Deception >= 4",' +
       '"features.Perfect Distraction"',
 
   'Counterspell':'Type=Class,Sorcerer,Wizard',
@@ -1793,7 +1793,7 @@ Pathfinder2E.FEATS = {
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
-    'Type=Class,Wizard Require="level >= 10","proficiencyRank.Crafting >= 2"',
+    'Type=Class,Wizard Require="level >= 10","rank.Crafting >= 2"',
   'Clever Counterspell':
     'Type=Class,Wizard ' +
     'Require=' +
@@ -1841,196 +1841,196 @@ Pathfinder2E.FEATS = {
     'Type=General Require="level >= 11","charisma >= 16"',
 
   // Skill
-  'Assurance (%skill)':'Type=Skill Require="proficiencyRank.%skill >= 1"',
+  'Assurance (%skill)':'Type=Skill Require="rank.%skill >= 1"',
   'Dubious Knowledge':
-    'Type=Skill Require="proficiencyRank.Recall Knowledge >= 1"',
+    'Type=Skill Require="rank.Recall Knowledge >= 1"',
   'Quick Identification':
     'Type=Skill ' +
-    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
+    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Recognize Spell':
     'Type=Skill ' +
-    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
+    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Skill Training (%skill)':'Type=Skill Require="intelligence >= 12"',
   'Trick Magic Item':
     'Type=Skill ' +
-    'Require="proficiencyRank.Arcana >= 1 || proficiencyRank.Nature >= 1 || proficiencyRank.Occultism >= 1 || proficiencyRank.Religion >= 1"',
+    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Automatic Knowledge (%skill)':
     'Type=Skill ' +
     'Require=' +
       '"level >= 2",' +
-      '"proficiencyRank.%skill >= 2",' +
+      '"rank.%skill >= 2",' +
       '"features.Assurance (%skill)"',
   'Magical Shorthand':
     'Type=Skill ' +
-    'Require="level >= 2","proficiencyRank.Arcana >= 2 || proficiencyRank.Nature >= 2 || proficiencyRank.Occultism >= 2 || proficiencyRank.Religion >= 2"',
+    'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
   'Quick Recognition':
     'Type=Skill ' +
     'Require=' +
       '"level >= 7",' +
-      '"proficiencyRank.Arcana >= 3 || proficiencyRank.Nature >= 3 || proficiencyRank.Occultism >= 3 || proficiencyRank.Religion >= 3",' +
+      '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
       '"features.Recognize Spell"',
 
-  'Cat Fall':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
-  'Quick Squeeze':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
-  'Steady Balance':'Type=Skill Require="proficiencyRank.Acrobatics >= 1"',
+  'Cat Fall':'Type=Skill Require="rank.Acrobatics >= 1"',
+  'Quick Squeeze':'Type=Skill Require="rank.Acrobatics >= 1"',
+  'Steady Balance':'Type=Skill Require="rank.Acrobatics >= 1"',
   'Nimble Crawl':
-    'Type=Skill Require="level >= 2","proficiencyRank.Acrobatics >= 2"',
-  'Kip Up':'Type=Skill Require="level >= 7","proficiencyRank.Acrobatics >= 3"',
-  'Arcane Sense':'Type=Skill Require="proficiencyRank.Arcana >= 1"',
+    'Type=Skill Require="level >= 2","rank.Acrobatics >= 2"',
+  'Kip Up':'Type=Skill Require="level >= 7","rank.Acrobatics >= 3"',
+  'Arcane Sense':'Type=Skill Require="rank.Arcana >= 1"',
   'Unified Theory':
-    'Type=Skill Require="level >= 15","proficiencyRank.Acrobatics >= 4"',
-  'Combat Climber':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
-  'Hefty Hauler':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
-  'Quick Jump':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
-  'Titan Wrestler':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
-  'Underwater Marauder':'Type=Skill Require="proficiencyRank.Athletics >= 1"',
+    'Type=Skill Require="level >= 15","rank.Acrobatics >= 4"',
+  'Combat Climber':'Type=Skill Require="rank.Athletics >= 1"',
+  'Hefty Hauler':'Type=Skill Require="rank.Athletics >= 1"',
+  'Quick Jump':'Type=Skill Require="rank.Athletics >= 1"',
+  'Titan Wrestler':'Type=Skill Require="rank.Athletics >= 1"',
+  'Underwater Marauder':'Type=Skill Require="rank.Athletics >= 1"',
   'Powerful Leap':
-    'Type=Skill Require="level >= 2","proficiencyRank.Athletics >= 2"',
+    'Type=Skill Require="level >= 2","rank.Athletics >= 2"',
   'Rapid Mantel':
-    'Type=Skill Require="level >= 2","proficiencyRank.Athletics >= 2"',
+    'Type=Skill Require="level >= 2","rank.Athletics >= 2"',
   'Quick Climb':
-    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+    'Type=Skill Require="level >= 7","rank.Athletics >= 3"',
   'Quick Swim':
-    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+    'Type=Skill Require="level >= 7","rank.Athletics >= 3"',
   'Wall Jump':
-    'Type=Skill Require="level >= 7","proficiencyRank.Athletics >= 3"',
+    'Type=Skill Require="level >= 7","rank.Athletics >= 3"',
   'Cloud Jump':
-    'Type=Skill Require="level >= 15","proficiencyRank.Athletics >= 4"',
-  'Alchemical Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
-  'Quick Repair':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
-  'Snare Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
-  'Specialty Crafting':'Type=Skill Require="proficiencyRank.Crafting >= 1"',
+    'Type=Skill Require="level >= 15","rank.Athletics >= 4"',
+  'Alchemical Crafting':'Type=Skill Require="rank.Crafting >= 1"',
+  'Quick Repair':'Type=Skill Require="rank.Crafting >= 1"',
+  'Snare Crafting':'Type=Skill Require="rank.Crafting >= 1"',
+  'Specialty Crafting':'Type=Skill Require="rank.Crafting >= 1"',
   'Magical Crafting':
-    'Type=Skill Require="level >= 2","proficiencyRank.Crafting >= 2"',
+    'Type=Skill Require="level >= 2","rank.Crafting >= 2"',
   'Impeccable Crafting':
     'Type=Skill ' +
     'Require=' +
       '"level >= 7",' +
-      '"proficiencyRank.Crafting >= 3",' +
+      '"rank.Crafting >= 3",' +
       '"features.Specialty Crafting"',
-  'Inventor':'Type=Skill Require="level >= 7","proficiencyRank.Crafting >= 3"',
+  'Inventor':'Type=Skill Require="level >= 7","rank.Crafting >= 3"',
   'Craft Anything':
-    'Type=Skill Require="level >= 15","proficiencyRank.Crafting >= 4"',
-  'Charming Liar':'Type=Skill Require="proficiencyRank.Deception >= 1"',
-  'Lengthy Diversion':'Type=Skill Require="proficiencyRank.Deception >= 1"',
-  'Lie To Me':'Type=Skill Require="proficiencyRank.Deception >= 1"',
+    'Type=Skill Require="level >= 15","rank.Crafting >= 4"',
+  'Charming Liar':'Type=Skill Require="rank.Deception >= 1"',
+  'Lengthy Diversion':'Type=Skill Require="rank.Deception >= 1"',
+  'Lie To Me':'Type=Skill Require="rank.Deception >= 1"',
   'Confabulator':
-    'Type=Skill Require="level >= 2","proficiencyRank.Deception >= 2"',
+    'Type=Skill Require="level >= 2","rank.Deception >= 2"',
   'Quick Disguise':
-    'Type=Skill Require="level >= 2","proficiencyRank.Deception >= 2"',
+    'Type=Skill Require="level >= 2","rank.Deception >= 2"',
   'Slippery Secrets':
-    'Type=Skill Require="level >= 7","proficiencyRank.Deception >= 3"',
-  'Bargain Hunter':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
-  'Group Impression':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
-  'Hobnobber':'Type=Skill Require="proficiencyRank.Diplomacy >= 1"',
+    'Type=Skill Require="level >= 7","rank.Deception >= 3"',
+  'Bargain Hunter':'Type=Skill Require="rank.Diplomacy >= 1"',
+  'Group Impression':'Type=Skill Require="rank.Diplomacy >= 1"',
+  'Hobnobber':'Type=Skill Require="rank.Diplomacy >= 1"',
   'Glad-Hand':
-    'Type=Skill Require="level >= 2","proficiencyRank.Diplomacy >= 2"',
+    'Type=Skill Require="level >= 2","rank.Diplomacy >= 2"',
   'Shameless Request':
-    'Type=Skill Require="level >= 7","proficiencyRank.Diplomacy >= 3"',
+    'Type=Skill Require="level >= 7","rank.Diplomacy >= 3"',
   'Legendary Negotiation':
-    'Type=Skill Require="level >= 15","proficiencyRank.Diplomacy >= 4"',
-  'Group Coercion':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
-  'Intimidating Glare':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
-  'Quick Coercion':'Type=Skill Require="proficiencyRank.Intimidation >= 1"',
+    'Type=Skill Require="level >= 15","rank.Diplomacy >= 4"',
+  'Group Coercion':'Type=Skill Require="rank.Intimidation >= 1"',
+  'Intimidating Glare':'Type=Skill Require="rank.Intimidation >= 1"',
+  'Quick Coercion':'Type=Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
     'Type=Skill ' +
-    'Require="level >= 2","strength >= 16","proficiencyRank.Intimidation >= 2"',
+    'Require="level >= 2","strength >= 16","rank.Intimidation >= 2"',
   'Lasting Coercion':
-    'Type=Skill Require="level >= 2","proficiencyRank.Intimidation >= 2"',
+    'Type=Skill Require="level >= 2","rank.Intimidation >= 2"',
   'Battle Cry':
-    'Type=Skill Require="level >= 7","proficiencyRank.Intimidation >= 3"',
+    'Type=Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Terrified Retreat':
-    'Type=Skill Require="level >= 7","proficiencyRank.Intimidation >= 3"',
+    'Type=Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Scare To Death':
-    'Type=Skill Require="level >= 15","proficiencyRank.Intimidation >= 4"',
-  'Additional Lore (%lore)':'Type=Skill Require="proficiencyRank.Lore >= 1"',
-  'Experienced Professional':'Type=Skill Require="proficiencyRank.Lore >= 1"',
+    'Type=Skill Require="level >= 15","rank.Intimidation >= 4"',
+  'Additional Lore (%lore)':'Type=Skill Require="rank.Lore >= 1"',
+  'Experienced Professional':'Type=Skill Require="rank.Lore >= 1"',
   'Unmistakable Lore':
-    'Type=Skill Require="level >= 2","proficiencyRank.Lore >= 2"',
+    'Type=Skill Require="level >= 2","rank.Lore >= 2"',
   'Legendary Professional':
-    'Type=Skill Require="level >= 15","proficiencyRank.Lore >= 4"',
-  'Battle Medicine':'Type=Skill Require="proficiencyRank.Medicine >= 1"',
+    'Type=Skill Require="level >= 15","rank.Lore >= 4"',
+  'Battle Medicine':'Type=Skill Require="rank.Medicine >= 1"',
   'Continual Recovery':
-    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+    'Type=Skill Require="level >= 2","rank.Medicine >= 2"',
   'Robust Recovery':
-    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+    'Type=Skill Require="level >= 2","rank.Medicine >= 2"',
   'Ward Medic':
-    'Type=Skill Require="level >= 2","proficiencyRank.Medicine >= 2"',
+    'Type=Skill Require="level >= 2","rank.Medicine >= 2"',
   'Legendary Medic':
-    'Type=Skill Require="level >= 15","proficiencyRank.Medicine >= 4"',
-  'Natural Medicine':'Type=Skill Require="proficiencyRank.Nature >= 1"',
-  'Train Animal':'Type=Skill Require="proficiencyRank.Nature >= 1"',
+    'Type=Skill Require="level >= 15","rank.Medicine >= 4"',
+  'Natural Medicine':'Type=Skill Require="rank.Nature >= 1"',
+  'Train Animal':'Type=Skill Require="rank.Nature >= 1"',
   'Bonded Animal':
-    'Type=Skill Require="level >= 2","proficiencyRank.Nature >= 2"',
-  'Oddity Identification':'Type=Skill Require="proficiencyRank.Occultism >= 1"',
+    'Type=Skill Require="level >= 2","rank.Nature >= 2"',
+  'Oddity Identification':'Type=Skill Require="rank.Occultism >= 1"',
   'Bizarre Magic':
-    'Type=Skill Require="level >= 7","proficiencyRank.Occultism >= 3"',
+    'Type=Skill Require="level >= 7","rank.Occultism >= 3"',
   'Fascinating Performance':
-    'Type=Skill Require="proficiencyRank.Performance >= 1"',
+    'Type=Skill Require="rank.Performance >= 1"',
   'Impressive Performance':
-    'Type=Skill Require="proficiencyRank.Performance >= 1"',
-  'Virtuosic Performer':'Type=Skill Require="proficiencyRank.Performance >= 1"',
+    'Type=Skill Require="rank.Performance >= 1"',
+  'Virtuosic Performer':'Type=Skill Require="rank.Performance >= 1"',
   'Legendary Performer':
     'Type=Skill ' +
     'Require=' +
       '"level >= 15",' +
-      '"proficiencyRank.Performance >= 4",' +
+      '"rank.Performance >= 4",' +
       '"features.Virtuosic Performer"',
-  'Student Of The Canon':'Type=Skill Require="proficiencyRank.Religion >= 1"',
+  'Student Of The Canon':'Type=Skill Require="rank.Religion >= 1"',
   'Divine Guidance':
-    'Type=Skill Require="level >= 15","proficiencyRank.Religion >= 4"',
-  'Courtly Graces':'Type=Skill Require="proficiencyRank.Society >= 1"',
-  'Multilingual':'Type=Skill Require="proficiencyRank.Society >= 1"',
-  'Read Lips':'Type=Skill Require="proficiencyRank.Society >= 1"',
-  'Sign Language':'Type=Skill Require="proficiencyRank.Society >= 1"',
-  'Streetwise':'Type=Skill Require="proficiencyRank.Society >= 1"',
+    'Type=Skill Require="level >= 15","rank.Religion >= 4"',
+  'Courtly Graces':'Type=Skill Require="rank.Society >= 1"',
+  'Multilingual':'Type=Skill Require="rank.Society >= 1"',
+  'Read Lips':'Type=Skill Require="rank.Society >= 1"',
+  'Sign Language':'Type=Skill Require="rank.Society >= 1"',
+  'Streetwise':'Type=Skill Require="rank.Society >= 1"',
   'Connections':
     'Type=Skill ' +
     'Require=' +
       '"level >= 2",' +
-      '"proficiencyRank.Society >= 2",' +
+      '"rank.Society >= 2",' +
       '"features.Courtly Graces"',
   'Legendary Codebreaker':
-    'Type=Skill Require="level >= 15","proficiencyRank.Society >= 4"',
+    'Type=Skill Require="level >= 15","rank.Society >= 4"',
   'Legendary Linguist':
     'Type=Skill ' +
     'Require=' +
       '"level >= 15",' +
-      '"proficiencyRank.Society >= 4",' +
+      '"rank.Society >= 4",' +
       '"features.Multilingual"',
-  'Experienced Smuggler':'Type=Skill Require="proficiencyRank.Stealth >= 1"',
-  'Terrain Stalker':'Type=Skill Require="proficiencyRank.Stealth >= 1"',
-  'Quiet Aliases':
-    'Type=Skill Require="level >= 2","proficiencyRank.Stealth >= 2"',
+  'Experienced Smuggler':'Type=Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker':'Type=Skill Require="rank.Stealth >= 1"',
+  'Quiet Allies':
+    'Type=Skill Require="level >= 2","rank.Stealth >= 2"',
   'Foil Senses':
-    'Type=Skill Require="level >= 7","proficiencyRank.Stealth >= 3"',
+    'Type=Skill Require="level >= 7","rank.Stealth >= 3"',
   'Swift Sneak':
-    'Type=Skill Require="level >= 7","proficiencyRank.Stealth >= 3"',
+    'Type=Skill Require="level >= 7","rank.Stealth >= 3"',
   'Legendary Sneak':
     'Type=Skill ' +
     'Require=' +
       '"level >= 15",' +
-      '"proficiencyRank.Stealth >= 4",' +
+      '"rank.Stealth >= 4",' +
       '"features.Swift Sneak"',
-  'Experienced Tracker':'Type=Skill Require="proficiencyRank.Survival >= 1"',
-  'Forager':'Type=Skill Require="proficiencyRank.Survival >= 1"',
-  'Survey Wildlife':'Type=Skill Require="proficiencyRank.Survival >= 1"',
-  'Terrain Expertise':'Type=Skill Require="proficiencyRank.Survival >= 1"',
+  'Experienced Tracker':'Type=Skill Require="rank.Survival >= 1"',
+  'Forager':'Type=Skill Require="rank.Survival >= 1"',
+  'Survey Wildlife':'Type=Skill Require="rank.Survival >= 1"',
+  'Terrain Expertise':'Type=Skill Require="rank.Survival >= 1"',
   'Planar Survival':
-    'Type=Skill Require="level >= 7","proficiencyRank.Survival >= 3"',
+    'Type=Skill Require="level >= 7","rank.Survival >= 3"',
   'Legendary Survivalist':
-    'Type=Skill Require="level >= 15","proficiencyRank.Survival >= 4"',
-  'Pickpocket':'Type=Skill Require="proficiencyRank.Thievery >= 1"',
-  'Subtle Theft':'Type=Skill Require="proficiencyRank.Thievery >= 1"',
+    'Type=Skill Require="level >= 15","rank.Survival >= 4"',
+  'Pickpocket':'Type=Skill Require="rank.Thievery >= 1"',
+  'Subtle Theft':'Type=Skill Require="rank.Thievery >= 1"',
   'Wary Disarmament':
-    'Type=Skill Require="level >= 2","proficiencyRank.Thievery >= 2"',
+    'Type=Skill Require="level >= 2","rank.Thievery >= 2"',
   'Quick Unlock':
-    'Type=Skill Require="level >= 7","proficiencyRank.Thievery >= 3"',
+    'Type=Skill Require="level >= 7","rank.Thievery >= 3"',
   'Legendary Thief':
     'Type=Skill ' +
     'Require=' +
       '"level >= 15",' +
-      '"proficiencyRank.Thievery >= 4",' +
+      '"rank.Thievery >= 4",' +
       '"features.Pickpocket"'
 
 };
@@ -3259,7 +3259,7 @@ Pathfinder2E.FEATURES = {
   'Diehard':'Section=combat Note="Remains alive until dying 5"',
   'Expeditious Search':
     'Section=skill ' +
-    'Note="May Search at %{proficiencyRank.Perception>=4?4:2}x normal speed"',
+    'Note="May Search at %{rank.Perception>=4?4:2}x normal speed"',
   'Fast Recovery':
     'Section=save ' +
     'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. ongoing disease or poison reduces stage by 2 (1 if virulent; 3 or 2 with critical success)"',
@@ -3280,9 +3280,9 @@ Pathfinder2E.FEATURES = {
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Fail on Recall Knowledge yields a mix of true and false info"',
-  'Magical Shorthand':'Section=feature Note="FILL"',
-  'Quick Identification':'Section=feature Note="FILL"',
-  'Quick Recognition':'Section=feature Note="FILL"',
+  'Magical Shorthand':'Section=skill Note="May learn new spells in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} per spell level; may retry 1 week after failure"',
+  'Quick Identification':'Section=skill Note="May Identify Magic %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'in 1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'as a 3-action activity\':\'in 1 min\'}"',
+  'Quick Recognition':'Section=skill Note="May Recognize a Spell as a free action 1/rd"',
   'Recognize Spell':'Section=feature Note="FILL"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':'Section=feature Note="FILL"',
@@ -3298,7 +3298,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="+2 initial gold/May use Diplomacy to Earn Income"',
   'Battle Cry':
     'Section=combat ' +
-    'Note="May Demoralize a foe during initiative%{proficiencyRank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
+    'Note="May Demoralize a foe during initiative%{rank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
   'Battle Medicine':
     'Section=skill Note="May use Medicine for Treat Wounds 1/target/dy"',
   'Bizarre Magic':
@@ -3321,7 +3321,7 @@ Pathfinder2E.FEATURES = {
     'Note="Does not suffer flat-footed and may fight while Climbing/May Climb with one hand occupied"',
   'Confabulator':
     'Section=skill ' +
-    'Note="Target of Decpetion gains %{proficiencyRank.Deception>=4?\'no\':proficiencyBonus>=3?\'+1\':\'+2\'} bonus for previous attempts"',
+    'Note="Target of Decpetion gains %{rank.Deception>=4?\'no\':proficiencyBonus>=3?\'+1\':\'+2\'} bonus for previous attempts"',
   'Connections':
     'Section=skill ' +
     'Note="May use Society to gain meeting with an important figure or to exchange favors"',
@@ -3340,28 +3340,28 @@ Pathfinder2E.FEATURES = {
     'Note="A critical failure when using Lore to Earn Income becomes a normal failure, and a normal failure gives twice normal income"',
   'Experienced Smuggler':
     'Section=skill ' +
-    'Note="Stealth to conceal a small item gains a minimum %{proficiencyRank.Stealth>=4?\'success\':proficiencyRank.Steak>=3\'15\':\'10\'} on roll"',
+    'Note="Stealth to conceal a small item gains a minimum %{rank.Stealth>=4?\'success\':rank.Steak>=3\'15\':\'10\'} on roll"',
   'Experienced Tracker':
     'Section=skill ' +
-    'Note="May Track at full Speed%{proficiencyRank.Survival<3\' at a -5 penalty\':\'\'}%{proficiencyRank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
+    'Note="May Track at full Speed%{rank.Survival<3\' at a -5 penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
-    'Note="May facinate %{proficiencyRank.Performance>=4?\'targets\':proficiencyRank.Performance==3?\'10 targets\':proficiencyRank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+    'Note="May facinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
     'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak actions"',
   'Forager':
     'Section=skill ' +
-    'Note="Using Survival to Subsist always succeeds; may provide for self and %{proficiencyRank.Survival>=4?32:proficiencyRank.Survival==3?16:proficiencyRank.Survival==2?8:4} others (x2 with a critical success)"',
+    'Note="Using Survival to Subsist always succeeds; may provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
   'Glad-Hand':
     'Section=skill ' +
     'Note="May attempt to Make an Impression using Diplomacy immediately upon meeting; may retry after 1 min"',
   'Group Coercion':
     'Section=skill ' +
-    'Note="May use Intimidation to Coerce %{proficiencyRank.Intimidation>=4?25:proficiencyRank.Intimidation==3?10:proficiencyRank.Intimidation==2?4:2} targets"',
+    'Note="May use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
-    'Note="May use Diplomacy to Make an Impression with %{proficiencyRank.Diplomacy>=4?25:proficiencyRank.Diplomacy==3?10:proficiencyRank.Diplomacy==2?4:2} targets"',
+    'Note="May use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="x2 maximum and encumbered Bulk"',
   'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{levels.Diplomacy>=3?\'/Gather Information in normal time cannot critically fail\':\'\'}"',
   'Impeccable Crafting':
@@ -3377,42 +3377,83 @@ Pathfinder2E.FEATURES = {
   'Kip Up':'Section=combat Note="May stand without triggering reactions"',
   'Lasting Coercion':
     'Section=skill ' +
-    'Note="Successful Coerce lasts up to a %{proficiencyRank.Intimidation>=4?\'month\':\'week\'}"',
+    'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
   'Legendary Codebreaker':
     'Section=skill ' +
     'Note="May use Society to Decipher Writing at full speed; success at normal speed is always a critical success"',
-  'Legendary Linguist':'Section=feature Note="FILL"',
-  'Legendary Medic':'Section=feature Note="FILL"',
-  'Legendary Negotiation':'Section=feature Note="FILL"',
-  'Legendary Performer':'Section=feature Note="FILL"',
-  'Legendary Professional':'Section=feature Note="FILL"',
-  'Legendary Sneak':'Section=feature Note="FILL"',
-  'Legendary Survivalist':'Section=feature Note="FILL"',
-  'Legendary Thief':'Section=feature Note="FILL"',
-  'Lengthy Diversion':'Section=feature Note="FILL"',
-  'Lie To Me':'Section=skill Note="May use Deception to detect lies"',
-  'Magical Crafting':'Section=feature Note="FILL"',
-  'Multilingual':'Section=skill Note="+2 Language Count"',
+  'Legendary Linguist':
+    'Section=skill ' +
+    'Note="May establish basic communication with any creature that uses language"',
+  'Legendary Medic':
+    'Section=skill ' +
+    'Note="May use 1 hr process and a successful Medicine check to remove a disease or condition 1/target/dy"',
+  'Legendary Negotiation':
+    'Section=skill ' +
+    'Note="May convince a foe to negotiate with a successful Make and Impression followed by a successful Request"',
+  'Legendary Performer':
+    'Section=skill ' +
+    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Performance to Earn Income increases audience by 2 levels"',
+  'Legendary Professional':
+    'Section=skill ' +
+    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Lore to Earn Income increases job level"',
+  'Legendary Sneak':
+    'Section=skill ' +
+    'Note="May Hide and Sneak witout cover/Automatically uses Avoiding Notice when exploring"',
+  'Legendary Survivalist':
+    'Section=skill ' +
+    'Note="May survive indefintely without food and water and endure incredible temperatures without damage"',
+  'Legendary Thief':
+    'Section=skill ' +
+    'Note="May attempt a Steal-5 check to take actively wielded and highly noticeable items"',
+  'Lengthy Diversion':
+    'Section=skill ' +
+    'Note="May remain hidden after a Create a Diversion attempt critically succeeds"',
+  'Lie To Me':
+    'Section=skill Note="May use Deception to detect lies in a coversation"',
+  'Magical Crafting':
+    'Section=skill ' +
+    'Note="May craft magic items/Learns formulas for 4 common magic items of 2nd level or lower"',
+  'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
-    'Section=skill Note="May use Nature to Treat Wounds, +2 in wilderness"',
-  'Nimble Crawl':'Section=feature Note="FILL"',
-  'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic"',
+    'Section=skill ' +
+    'Note="May use Nature to Treat Wounds, +2 checks in wilderness"',
+  'Nimble Crawl':
+    'Section=ability ' +
+    'Note="May crawl at %{rank.Acrobatics>=3?\'full\':\'half\'} speed%{rank.Acrobatics>=4?\'/Being prone does not inflict flat-footed\':\'\'}"',
+  'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait"',
   'Pickpocket':
-    'Section=skill Note="May Steal closely-guarded object without penalty"',
-  'Planar Survival':'Section=feature Note="FILL"',
-  'Powerful Leap':'Section=feature Note="FILL"',
-  'Quick Climb':'Section=feature Note="FILL"',
+    'Section=skill ' +
+    'Note="May Steal a closely-guarded object without penalty%{levels.Thievery>=3?\'/May use Steal-5 on an alert creature\':\'\'}"',
+  'Planar Survival':
+    'Section=skill Note="May use Survival to Subsist on different planes"',
+  'Powerful Leap':
+    'Section=skill Note="May jump 5\' vertically and +5\' horizontally"',
+  'Quick Climb':
+    'Section=skill ' +
+    'Note="%{rank.Athletics>=4?\'/May Climb at full speed\':\'Climb normal/critical success increases distance by 5\'/10\'}"',
   'Quick Coercion':'Section=skill Note="May Coerce in 1 rd"',
-  'Quick Disguise':'Section=feature Note="FILL"',
+  'Quick Disguise':'Section=skill Note="May create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
-    'Section=skill Note="May use High Jump and Long Jump as 1 action"',
-  'Quick Repair':'Section=feature Note="FILL"',
-  'Quick Squeeze':'Section=feature Note="FILL"',
-  'Quick Swim':'Section=feature Note="FILL"',
-  'Quick Unlock':'Section=feature Note="FILL"',
-  'Quiet Aliases':'Section=feature Note="FILL"',
-  'Rapid Mantel':'Section=feature Note="FILL"',
-  'Read Lips':'Section=feature Note="FILL"',
+    'Section=skill ' +
+    'Note="May use High Jump and Long Jump as 1 action without an initial Stride"',
+  'Quick Repair':
+    'Section=skill ' +
+    'Note="May Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
+  'Quick Squeeze':
+    'Section=skill ' +
+    'Note="May Squeeze %{rank.Athletics>=4?\'at full speed\':\\"5\'/rd (critical success 10\'\\"}"',
+  'Quick Swim':
+    'Section=skill ' +
+    'Note="May Swim %{rank.Athletics>=4?\'at full speed\':\\"5\'/rd (critical success 10\'\\"}"',
+  'Quick Unlock':'Section=skill Note="May Pick a Lock in 1 action"',
+  'Quiet Allies':
+    'Section=skill ' +
+    'Note="May roll a single Steath check to Avoid Notice when leading a group"',
+  'Rapid Mantel':
+    'Section=skill ' +
+    'Note="May stand immediately after a successful Grab an Edge/May use Athletics to Grab an Edge"',
+  'Read Lips':
+    'Section=skill Note="May read the lips of those who can be seen clearly"',
   'Robust Recovery':'Section=feature Note="FILL"',
   'Scare To Death':'Section=feature Note="FILL"',
   'Shameless Request':'Section=feature Note="FILL"',
@@ -3801,13 +3842,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
     rules.defineChoice('notes', 'save.' + s + ':%S (' + saves[s] + '; %1)');
-    rules.defineRule('proficiencyRank.' + s, '', '=', '0');
+    rules.defineRule('rank.' + s, '', '=', '0');
     rules.defineRule('proficiencyLevelBonus.' + s,
-      'proficiencyRank.' + s, '=', 'source>0 ? 0 : null',
+      'rank.' + s, '=', 'source>0 ? 0 : null',
       'level', '+', null
     );
     rules.defineRule('proficiencyBonus.' + s,
-      'proficiencyRank.' + s, '=', '2 * source',
+      'rank.' + s, '=', '2 * source',
       'proficiencyLevelBonus.' + s, '+', null
     );
     rules.defineRule('save.' + s,
@@ -3816,7 +3857,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
       'skillNotes.goodies' + s + 'Adjustment', '+', null
     );
     rules.defineRule('save.' + s + '.1',
-      'proficiencyRank.' + s, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
+      'rank.' + s, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
     );
   }
 
@@ -3934,13 +3975,13 @@ Pathfinder2E.talentRules = function(
   }
 
   rules.defineChoice('notes', 'perception:%S (wisdom; %1)');
-  rules.defineRule('proficiencyRank.Perception', '', '=', '0');
+  rules.defineRule('rank.Perception', '', '=', '0');
   rules.defineRule('proficiencyLevelBonus.Perception',
-    'proficiencyRank.Perception', '=', 'source>0 ? 0 : null',
+    'rank.Perception', '=', 'source>0 ? 0 : null',
     'level', '+', null
   );
   rules.defineRule('proficiencyBonus.Perception',
-    'proficiencyRank.Perception', '=', '2 * source',
+    'rank.Perception', '=', '2 * source',
     'proficiencyLevelBonus.Perception', '+', null
   );
   rules.defineRule('perception',
@@ -3949,7 +3990,7 @@ Pathfinder2E.talentRules = function(
     'skillNotes.goodiesPerceptionAdjustment', '+', null
   );
   rules.defineRule('perception.1',
-    'proficiencyRank.Perception', '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
+    'rank.Perception', '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
   );
 
 };
@@ -4510,7 +4551,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Fighter') {
-    rules.defineRule('proficiencyRank.Will', 'saveNotes.bravery', '^=', '2');
+    rules.defineRule('rank.Will', 'saveNotes.bravery', '^=', '2');
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Monk') {
@@ -4633,36 +4674,41 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.additionalLore(' + matchInfo[1] + ')',
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule('proficiencyRank.' + matchInfo[1] + ' Lore',
+    rules.defineRule('rank.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('proficiencyRank.Fortitude',
+    rules.defineRule('rank.Fortitude',
       'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Perception)') {
     rules.defineRule('skillNotes.cannyAcumen(Perception)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('proficiencyRank.Perception',
+    rules.defineRule('rank.Perception',
       'skillNotes.cannyAcumen(Perception)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Reflex)') {
     rules.defineRule('saveNotes.cannyAcumen(Reflex)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('proficiencyRank.Reflex',
+    rules.defineRule('rank.Reflex',
       'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Will)') {
     rules.defineRule('saveNotes.cannyAcumen(Will)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('proficiencyRank.Will',
+    rules.defineRule('rank.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
+    );
+  } else if(name == 'Multilingual') {
+    rules.defineRule('skillNotes.multilingual',
+      'rank.Society', '=', null,
+      'feats.Multilingual', '*', null
     );
   } else if(name == 'Stonewalker') {
     rules.defineRule
@@ -4792,27 +4838,27 @@ Pathfinder2E.skillRules = function(rules, name, ability) {
   rules.defineChoice
     ('notes', 'skillModifiers.' + name + ':%S (' + ability + '; %1)');
   if(!name.match(/Lore$/))
-    rules.defineRule('proficiencyRank.' + name, '', '=', '0');
+    rules.defineRule('rank.' + name, '', '=', '0');
   else
-    rules.defineRule('totalLoreRanks', 'proficiencyRank.' + name, '+=', null);
+    rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
   rules.defineRule
-    ('proficiencyRank.' + name, 'skillBoosts.' + name, '+=', null);
+    ('rank.' + name, 'skillBoosts.' + name, '+=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
-    'proficiencyRank.' + name, '=', 'source>0 ? 0 : null',
+    'rank.' + name, '=', 'source>0 ? 0 : null',
     'level', '+', null
   );
   rules.defineRule('skillBonus.' + name,
-    'proficiencyRank.' + name, '=', '2 * source',
+    'rank.' + name, '=', '2 * source',
     'proficiencyLevelBonus.' + name, '+', null
   );
   rules.defineRule('skillModifiers.' + name,
-    'proficiencyRank.' + name, '?', 'source != null',
+    'rank.' + name, '?', 'source != null',
     ability + 'Modifier', '=', null,
     'skillBonus.' + name, '+', null,
     'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
   rules.defineRule('skillModifiers.' + name + '.1',
-    'proficiencyRank.' + name, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
+    'rank.' + name, '=', 'Pathfinder2E.PROFICIENCY_RANK_NAMES[source]'
   );
 
 };
@@ -4974,14 +5020,14 @@ Pathfinder2E.featureListRules = function(
         matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
       matchInfo[3].split(/;\s*/).forEach(element => {
         if(!element.match(/Choose/))
-          rules.defineRule('proficiencyRank.' + element,
+          rules.defineRule('rank.' + element,
             setName + '.' + feature, '^=', proficiency
           );
       });
     }
     matchInfo = feature.match(/Perception\s(Expert|Master|Trained)$/i);
     if(matchInfo) {
-      rules.defineRule('proficiencyRank.Perception',
+      rules.defineRule('rank.Perception',
         setName + '.' + feature, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
       );
     }
