@@ -2408,7 +2408,6 @@ Pathfinder2E.FEATURES = {
   'Group Impression':
     'Section=skill Note="May Make An Impression on two targets"',
   'Hefty Hauler':'Section=ability Note="+2 Bulk"',
-  'Hobnobber':'Section=skill Note="Gather Information takes half time"',
   'Impressive Performance':
     'Section=skill Note="May use Performance to Make An Impression"',
   'Intimidating Glare':'Section=skill Note="May Intimidate visually"',
@@ -3289,7 +3288,7 @@ Pathfinder2E.FEATURES = {
   'Armor Proficiency':
     'Section=feature ' +
     // TODO interacts w/other sources of Defense Trained
-    'Note="Defense Trained (%{$\'feats.Armor Proficiency\'}>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
+    'Note="Defense Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
   'Breath Control':
     'Section=attribte,save ' +
     'Note=' +
@@ -3303,10 +3302,12 @@ Pathfinder2E.FEATURES = {
   'Expeditious Search':
     'Section=skill ' +
     'Note="May Search at %{proficiencyRank.Perception>=4?4:2}x normal speed"',
-  'Fast Recovery':'Section=feature Note="FILL"',
-  'Feather Step':'Section=feature Note="FILL"',
-  'Fleet':'Section=feature Note="FILL"',
-  'Incredible Initiative':'Section=feature Note="FILL"',
+  'Fast Recovery':
+    'Section=save ' +
+    'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. ongoing disease or poison reduces stage by 2 (1 if virulent; 3 or 2 with critical success)"',
+  'Feather Step':'Section=ability Note="May Step into difficult terrain"',
+  'Fleet':'Section=ability Note="+5 Speed"',
+  'Incredible Initiative':'Section=combat Note="+2 Initiative"',
   'Ride':'Section=feature Note="FILL"',
   'Shield Block':'Section=feature Note="FILL"',
   'Toughness':'Section=feature Note="FILL"',
@@ -3314,7 +3315,7 @@ Pathfinder2E.FEATURES = {
 
   'Ancestral Paragon':'Section=feature Note="FILL"',
   'Untrained Improvisation':'Section=feature Note="FILL"',
-  'Incredible Investiture':'Section=feature Note="FILL"',
+  'Incredible Investiture':'Section=magic Note="May invest 12 items"',
 
   // Skill Feats
   'Assurance (%skill)':
@@ -3382,22 +3383,43 @@ Pathfinder2E.FEATURES = {
   'Experienced Tracker':
     'Section=skill ' +
     'Note="May Track at full Speed%{proficiencyRank.Survival<3\' at a -5 penalty\':\'\'}%{proficiencyRank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
-  'Fascinating Performance':'Section=feature Note="FILL"',
-  'Foil Senses':'Section=feature Note="FILL"',
-  'Forager':'Section=feature Note="FILL"',
-  'Glad-Hand':'Section=feature Note="FILL"',
-  'Group Coercion':'Section=feature Note="FILL"',
-  'Group Impression':'Section=feature Note="FILL"',
-  'Hefty Hauler':'Section=feature Note="FILL"',
-  'Hobnobber':'Section=feature Note="FILL"',
-  'Impeccable Crafting':'Section=feature Note="FILL"',
-  'Impressive Performance':'Section=feature Note="FILL"',
-  'Intimidating Glare':'Section=feature Note="FILL"',
-  'Intimidating Prowess':'Section=feature Note="FILL"',
-  'Inventor':'Section=feature Note="FILL"',
-  'Kip Up':'Section=feature Note="FILL"',
-  'Lasting Coercion':'Section=feature Note="FILL"',
-  'Legendary Codebreaker':'Section=feature Note="FILL"',
+  'Fascinating Performance':
+    'Section=skill ' +
+    'Note="May facinate %{proficiencyRank.Performance>=4?\'targets\':proficiencyRank.Performance==3?\'10 targets\':proficiencyRank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+  'Foil Senses':
+    'Section=skill ' +
+    'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak actions"',
+  'Forager':
+    'Section=skill ' +
+    'Note="Using Survival to Subsist always succeeds; may provide for self and %{proficiencyRank.Survival>=4?32:proficiencyRank.Survival==3?16:proficiencyRank.Survival==2?8:4} others (x2 with a critical success)"',
+  'Glad-Hand':
+    'Section=skill ' +
+    'Note="May attempt to Make an Impression using Diplomacy immediately upon meeting; may retry after 1 min"',
+  'Group Coercion':
+    'Section=skill ' +
+    'Note="May use Intimidation to Coerce %{proficiencyRank.Intimidation>=4?25:proficiencyRank.Intimidation==3?10:proficiencyRank.Intimidation==2?4:2} targets"',
+  'Group Impression':
+    'Section=skill ' +
+    'Note="May use Diplomacy to Make an Impression with %{proficiencyRank.Diplomacy>=4?25:proficiencyRank.Diplomacy==3?10:proficiencyRank.Diplomacy==2?4:2} targets"',
+  'Hefty Hauler':'Section=ability Note="x2 maximum and encumbered Bulk"',
+  'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{levels.Diplomacy>=3?\'/Gather Information in normal time cannot critically fail\':\'\'}"',
+  'Impeccable Crafting':
+    'Section=skill ' +
+    'Note="Crafting success with Specialty Crafting is always a critical success"',
+  'Impressive Performance':
+    'Section=skill Note="May use Performance to Make an Impression"',
+  'Intimidating Glare':'Section=skill Note="May use glare to Demoralize"',
+  'Intimidating Prowess':
+    'Section=skill ' +
+    'Note="+{strength>=20&&proficiencyLevel.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
+  'Inventor':'Section=skill Note="May use Craft o create formulas"',
+  'Kip Up':'Section=combat Note="May stand without triggering reactions"',
+  'Lasting Coercion':
+    'Section=skill ' +
+    'Note="Successful Coerce lasts up to a %{proficiencyRank.Intimidation>=4?\'month\':\'week\'}"',
+  'Legendary Codebreaker':
+    'Section=skill ' +
+    'Note="May use Society to Decipher Writing at full speed; success at normal speed is always a critical success"',
   'Legendary Linguist':'Section=feature Note="FILL"',
   'Legendary Medic':'Section=feature Note="FILL"',
   'Legendary Negotiation':'Section=feature Note="FILL"',
@@ -5529,7 +5551,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           if(!m) {
             anyChoices = anyChoices.filter(x => x != boost);
           } else {
-            console.log(boost);
             howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
             choices = m[2].match(/^any$/i) ? anyChoices : m[2].split(/\s*,\s*/);
             choices = choices.map(x => x.toLowerCase());
@@ -5541,7 +5562,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             });
             while(howMany > 0 && choices.length > 0) {
               let choice = randomElement(choices);
-              console.log('Boosting ' + choice);
               attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
               howMany--;
               choices = choices.filter(x => x != choice);
@@ -5567,7 +5587,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         matched.split(/\s*;\s*/).forEach(boost => {
           let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
-            console.log(boost);
             howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
             choices = m[2].match(/^any$/i) ? Object.keys(this.getChoices('skills')) : m[2].split(/\s*,\s*/);
             choices.forEach(choice => {
@@ -5578,7 +5597,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             });
             while(howMany > 0 && choices.length > 0) {
               let choice = randomElement(choices);
-              console.log('Boosting ' + choice);
               attributes['skillBoosts.' + choice] = (attributes['skillBoosts.' + choice] || 0) + 1;
               howMany--;
               choices = choices.filter(x => x != choice);
