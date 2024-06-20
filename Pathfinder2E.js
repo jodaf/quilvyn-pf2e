@@ -58,7 +58,8 @@ function Pathfinder2E() {
     'levels:Class Levels,bag,levels',
     'abilityGeneration:Ability Generation,select-one,abilgens'
   );
-  rules.addChoice('abilgens', 'All 10s', 'Each 4d6, discarding lowest');
+  rules.addChoice('abilgens', 'All 10s', '');
+  rules.addChoice('abilgens', 'Each 4d6, discarding lowest', '');
 
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
@@ -125,8 +126,9 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Ability Flaw (Charisma)",' +
       '1:Darkvision,"1:Clan Dagger" ' +
     'Selectables=' +
-      '"1:Ancient-Blooded Dwarf","1:Death Warden Dwarf","1:Forge Dwarf",' +
-      '"1:Rock Dwarf","1:Strong-Blooded Dwarf" ' +
+      '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
+      '"1:Forge Dwarf:Heritage","1:Rock Dwarf:Heritage",' +
+      '"1:Strong-Blooded Dwarf:Heritage" ' +
     'Traits=Dwarf,Humanoid ' +
     'Languages=Common,Dwarven',
   'Elf':
@@ -2827,12 +2829,21 @@ Pathfinder2E.FEATURES = {
   'Assisting Shot':
     'Section=combat ' +
     'Note="Successful ranged Strike gives next attack on foe +1 attack (critical success +2)"',
-  'Brutish Shove':'Section=feature Note="FILL"',
-  'Combat Grab':'Section=feature Note="FILL"',
-  'Dueling Parry':'Section=feature Note="FILL"',
-  'Intimidating Strike':'Section=feature Note="FILL"',
-  'Lunge':'Section=feature Note="FILL"',
-  'Double Shot':'Section=feature Note="FILL"',
+  'Brutish Shove':
+    'Section=combat ' +
+    'Note="Two-handed Strike inflicts flat-footed until end of turn; success allows subsequent Shove"',
+  'Combat Grab':
+    'Section=combat ' +
+    'Note="Successful Strike allows grabbing foe with free hand for 1 rd or until foe Escapes"',
+  'Dueling Parry':
+    'Section=combat ' +
+    'Note="+2 AC when wielding a one-handed weapon with a hand free"',
+  'Intimidating Strike':
+    'Section=combat ' +
+    'Note="Successful Strike inflicts frightened 1 (critical hit frightened 2)"',
+  'Lunge':'Section=combat Note="May make +5\' Strike"',
+  'Double Shot':
+    'Section=combat Note="May make two ranged Strikes at a -2 penalty on each"',
   'Dual-Handed Assault':'Section=feature Note="FILL"',
   'Knockdown':'Section=feature Note="FILL"',
   'Powerful Shove':'Section=feature Note="FILL"',
@@ -3267,8 +3278,12 @@ Pathfinder2E.FEATURES = {
   'Fleet':'Section=ability Note="+5 Speed"',
   'Incredible Initiative':'Section=combat Note="+2 Initiative"',
   'Incredible Investiture':'Section=magic Note="May invest 12 items"',
-  'Ride':'Section=feature Note="FILL"',
-  'Shield Block':'Section=feature Note="FILL"',
+  'Ride':
+    'Section=feature ' +
+    'Note="Command an Animal to move automatically succeeds/Mount acts on self turn"',
+  'Shield Block':
+    'Section=combat ' +
+    'Note="Shield negates damage up to its hardness and absorbs half of remaining damage"',
   'Toughness':'Section=feature Note="FILL"',
   'Untrained Improvisation':'Section=feature Note="FILL"',
   'Weapon Proficiency':'Section=feature Note="FILL"',
@@ -3454,27 +3469,41 @@ Pathfinder2E.FEATURES = {
     'Note="May stand immediately after a successful Grab an Edge/May use Athletics to Grab an Edge"',
   'Read Lips':
     'Section=skill Note="May read the lips of those who can be seen clearly"',
-  'Robust Recovery':'Section=feature Note="FILL"',
-  'Scare To Death':'Section=feature Note="FILL"',
-  'Shameless Request':'Section=feature Note="FILL"',
-  'Sign Language':'Section=feature Note="FILL"',
-  'Slippery Secrets':'Section=feature Note="FILL"',
-  'Snare Crafting':'Section=feature Note="FILL"',
-  'Specialty Crafting':'Section=skill Note="+1 Craft on selected type"',
+  'Robust Recovery':
+    'Section=skill ' +
+    'Note="Success on Treat a Disease or a Poison gives +4 bonus/Patient success is always a critical success"',
+  'Scare To Death':
+    'Section=skill ' +
+    'Note="R30\' May test Intimidation vs. foe Will DC; critical success kills foe (Fortitude save frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
+  'Shameless Request':
+    'Section=skill ' +
+    'Note="-2 DC and no critical failures for an outrageous request"',
+  'Sign Language':
+    'Section=skill Note="Knows the sign equivalents of all known languages"',
+  'Slippery Secrets':
+    'Section=skill ' +
+    'Note="Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
+  'Snare Crafting':
+    'Section=skill ' +
+    'Note="May use Craft to create snares; knows the formulas for 4 common snares"',
+  'Specialty Crafting':
+    'Section=skill Note="+%{rank.Crafting>=3?2:1} Craft on selected type"',
   'Steady Balance':
     'Section=skill ' +
-    'Note="All Balance successes are crit/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
+    'Note="All Balance successes are critical successes/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
-    'Note="May use Society instead of Diplomacy to Gather Information"',
+    'Note="May use Society instead of Diplomacy to Gather Information/May use Recall Knowledge to know information in familiar settlements"',
   'Student Of The Canon':
     'Section=skill ' +
-    'Note="No crit fail on Religion check to Decipher Writing or Recall Knowledge, no failure to Recall Knowledge about own faith"',
-  'Subtle Theft':'Section=feature Note="FILL"',
+    'Note="All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith"',
+  'Subtle Theft':'Section=skill Note="Successful Steal inflctes -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="May use Survival-2 to Recall Knowledge after 10 min study"',
-  'Swift Sneak':'Section=feature Note="FILL"',
+    'Note="May use Survival-2 to Recall Knowledge about local creatures after 10 min study"',
+  'Swift Sneak':
+    'Section=skill ' +
+    'Note="May Sneak at full Speed and while Burrowing, Climbing, Flying, or Swimming"',
   'Terrain Expertise (Aquatic)':'Section=skill Note="+1 Survival (aquatic)"',
   'Terrain Expertise (Arctic)':'Section=skill Note="+1 Survival (arctic)"',
   'Terrain Expertise (Desert)':'Section=skill Note="+1 Survival (desert)"',
@@ -3485,7 +3514,9 @@ Pathfinder2E.FEATURES = {
   'Terrain Expertise (Swamp)':'Section=skill Note="+1 Survival (swamp)"',
   'Terrain Expertise (Underground)':
     'Section=skill Note="+1 Survival (underground)"',
-  'Terrain Stalker':'Section=feature Note="FILL"',
+  'Terrain Stalker':
+    'Section=skill ' +
+    'Note="May Sneak without a Stealth check in choice of difficult terrain"',
   'Terrified Retreat':'Section=feature Note="FILL"',
   'Titan Wrestler':'Section=feature Note="FILL"',
   'Train Animal':'Section=companion Note="May teach tricks to animals"',
