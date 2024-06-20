@@ -124,7 +124,7 @@ Pathfinder2E.ANCESTRIES = {
       '1:Slow,' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,"1:Clan Dagger" ' +
+      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
       '"1:Forge Dwarf:Heritage","1:Rock Dwarf:Heritage",' +
@@ -136,7 +136,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Ability Flaw (Constitution)",' +
-      '"1:Low-Light Vision" ' +
+      '"1:Low-Light Vision","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Arctic Elf:Heritage","1:Cavern Elf:Heritage","1:Seer Elf:Heritage",' +
       '"1:Whisper Elf:Heritage","1:Woodland Elf:Heritage" ' +
@@ -147,7 +147,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Low-Light Vision",1:Small ' +
+      '"1:Low-Light Vision",1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage","1:Fey-Touched Gnome:Heritage",' +
       '"1:Sensate Gnome:Heritage","1:Umbral Gnome:Heritage",' +
@@ -159,7 +159,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"1:Ability Flaw (Wisdom)",' +
-      '1:Darkvision,1:Small ' +
+      '1:Darkvision,1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage","1:Irongut Goblin:Heritage",' +
       '"1:Razortooth Goblin:Heritage","1:Snow Goblin:Heritage",' +
@@ -170,7 +170,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
-      '"1:Keen Eyes",1:Small ' +
+      '"1:Keen Eyes",1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage","1:Hillock Halfling:Heritage",' +
       '"1:Nomadic Halfling:Heritage","1:Twilight Halfling:Heritage",' +
@@ -180,7 +180,7 @@ Pathfinder2E.ANCESTRIES = {
   'Human':
     'HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boost (Choose 2 from any)" ' +
+      '"1:Ability Boost (Choose 2 from any)","1:Ancestry Feats" ' +
     'Selectables=' +
       '1:Half-Elf:Heritage,1:Half-Orc:Heritage,' +
       '"1:Skilled Heritage Human:Heritage",' +
