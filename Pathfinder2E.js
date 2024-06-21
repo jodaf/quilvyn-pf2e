@@ -2424,13 +2424,23 @@ Pathfinder2E.FEATURES = {
   'Alchemical Expertise':'Section=feature Note="FILL"',
   'Alertness':'Section=feature Note="FILL"',
   'Double Brew':'Section=feature Note="FILL"',
-  'Juggernaut':'Section=feature Note="FILL"',
+  'Juggernaut':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Fortitude)",' +
+      '"Success on fortitude save are critical successes"',
   'Perpetual Potency':'Section=feature Note="FILL"',
   'Greater Field Discovery':'Section=feature Note="FILL"',
   'Medium Armor Expertise':'Section=feature Note="FILL"',
-  'Weapon Specialization':'Section=feature Note="FILL"',
+  'Weapon Specialization':
+    'Section=combat ' +
+    'Note="+%{$\'features.Greater Weapon Specialization\'?4:2}/+%{$\'features.Greater Weapon Specialization\'?6:3}/+%{$\'features.Greater Weapon Specialization\'?8:4} damage with expert/master/legendary weapons"',
   'Alchemical Alacrity':'Section=feature Note="FILL"',
-  'Evasion':'Section=feature Note="FILL"',
+  'Evasion':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Reflex)",' +
+      '"Success on Reflex save are critical successes"',
   'Alchemical Mastery':'Section=feature Note="FILL"',
   'Perpetual Perfection':'Section=feature Note="FILL"',
   'Medium Armor Mastery':'Section=feature Note="FILL"',
@@ -2482,7 +2492,8 @@ Pathfinder2E.FEATURES = {
   'Deny Advantage':'Section=feature Note="FILL"',
   'Devastator':'Section=feature Note="FILL"',
   'Greater Juggernaut':'Section=feature Note="FILL"',
-  'Greater Weapon Specialization':'Section=feature Note="FILL"',
+  'Greater Weapon Specialization':
+    'Section=combat Note="Increased Weapon Specialization effects"',
   'Heightened Senses':'Section=feature Note="FILL"',
   'Indomitable Will':'Section=feature Note="FILL"',
   'Instinct':'Section=feature Note="FILL"',
@@ -2509,7 +2520,7 @@ Pathfinder2E.FEATURES = {
   'Shake It Off':'Section=feature Note="FILL"',
   'Fast Movement':'Section=feature Note="FILL"',
   'Raging Athlete':'Section=feature Note="FILL"',
-  'Swipe':'Section=feature Note="FILL"',
+  'Swipe':'Section=combat Note="May attack two adjacent foes with one Strike"',
   'Wounded Rage':'Section=feature Note="FILL"',
 
   // Bard
@@ -2572,8 +2583,14 @@ Pathfinder2E.FEATURES = {
   
   // Champion
   // Alertness as above
-  'Armor Expertise':'Section=feature Note="FILL"',
-  'Armor Mastery':'Section=feature Note="FILL"',
+  'Armor Expertise':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Armor Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"May use specialization effects of medium and heavy armor"',
+  'Armor Mastery':
+    'Section=combat ' +
+    'Note="Armor Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
   'Champion Expertise':'Section=feature Note="FILL"',
   'Champion Feats':'Section=feature Note="%V selections"',
   'Champion Mastery':'Section=feature Note="FILL"',
@@ -2783,23 +2800,45 @@ Pathfinder2E.FEATURES = {
   // Fighter
   // Armor Expertise as above
   // Armor Mastery as above
-  'Attack Of Opportunity':'Section=feature Note="FILL"',
-  'Battlefield Surveyor':'Section=feature Note="FILL"',
-  'Bravery':'Section=feature Note="FILL"',
-  'Combat Flexibility':'Section=feature Note="FILL"',
+  'Attack Of Opportunity':
+    'Section=combat ' +
+    'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
+  'Battlefield Surveyor':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"+2 Perception for Initiative",' +
+      '"Perception Master"',
+  'Bravery':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Expert (Will)",' +
+      '"Success on Will save vs. fear is a critical save/Reduce value of frightened condition by 1"',
+  'Combat Flexibility':
+    'Section=combat ' +
+    'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each dy"',
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="FILL"',
   'Fighter Feats':'Section=feature Note="%V selections"',
   'Fighter Skills':
     'Section=skill ' +
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
-  'Fighter Weapon Mastery':'Section=feature Note="FILL"',
+  'Fighter Weapon Mastery':
+    'Section=combat ' +
+    'Note="Weapon Master with common weapons of chosen group/Weapon Expert with advanced weapons/May use critical specialization effects of all weapons with master proficiency"',
   // Greater Weapon Specialization as above
-  'Improved Flexibility':'Section=feature Note="FILL"',
+  'Improved Flexibility':
+    'Section=combat Note="Increased Combat Flexibility effects"',
   // Juggernaut as above
   // Shield Block as below
-  'Versatile Legend':'Section=feature Note="FILL"',
-  'Weapon Legend':'Section=feature Note="FILL"',
+  // TODO Fighter class DC Master
+  'Versatile Legend':
+    'Section=combat ' +
+    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Master (Advanced Weapons)"',
+  'Weapon Legend':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"Weapon Legendary in common weapons of chosen group/Weapon Master in advanced weapons"',
 
   // Weapon Specialization as above
   'Double Slice':
@@ -2840,14 +2879,27 @@ Pathfinder2E.FEATURES = {
   'Lunge':'Section=combat Note="May make +5\' Strike"',
   'Double Shot':
     'Section=combat Note="May make two ranged Strikes at a -2 penalty on each"',
-  'Dual-Handed Assault':'Section=feature Note="FILL"',
-  'Knockdown':'Section=feature Note="FILL"',
-  'Powerful Shove':'Section=feature Note="FILL"',
-  'Quick Reversal':'Section=feature Note="FILL"',
-  'Shielded Stride':'Section=feature Note="FILL"',
+  'Dual-Handed Assault':
+    'Section=combat ' +
+    'Note="Increases damage from 2-handed weapon by number of damage dice and other weapon by one step"',
+  'Knockdown':
+    'Section=combat ' +
+    'Note="May follow successful Strike with an Athletic check to Trip"',
+  'Powerful Shove':
+    'Section=combat ' +
+    'Note="May use Aggressive Block and Brutish Shove on foes two sizes larger/Shoved creature takes %{strengthModifier>?1} damage from hitting an object"',
+  'Quick Reversal':
+    'Section=combat Note="May use an attack to Strike two flanking foes"',
+  'Shielded Stride':
+    'Section=combat ' +
+    'Note="May Stride at half Speed without provoking Attacks of Opportunity"',
   // Swipe as above
-  'Twin Parry':'Section=feature Note="FILL"',
-  'Advanced Weapon Training':'Section=feature Note="FILL"',
+  'Twin Parry':
+    'Section=combat ' +
+    'Note="Wielding two weapons give +1 AC, or +2 with parry trait"',
+  'Advanced Weapon Training':
+    'Section=combat ' +
+    'Note="Weapon Trained with advanced weapons in chosen group"',
   'Advantageous Assault':'Section=feature Note="FILL"',
   'Disarming Stance':'Section=feature Note="FILL"',
   'Furious Focus':'Section=feature Note="FILL"',
