@@ -2428,10 +2428,12 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Fortitude)",' +
-      '"Success on fortitude save are critical successes"',
+      '"Successes on fortitude saves are critical successes"',
   'Perpetual Potency':'Section=feature Note="FILL"',
   'Greater Field Discovery':'Section=feature Note="FILL"',
-  'Medium Armor Expertise':'Section=feature Note="FILL"',
+  'Medium Armor Expertise':
+    'Section=combat ' +
+    'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Weapon Specialization':
     'Section=combat ' +
     'Note="+%{$\'features.Greater Weapon Specialization\'?4:2}/+%{$\'features.Greater Weapon Specialization\'?6:3}/+%{$\'features.Greater Weapon Specialization\'?8:4} damage with expert/master/legendary weapons"',
@@ -2484,7 +2486,9 @@ Pathfinder2E.FEATURES = {
   'Perfect Mutagen':'Section=feature Note="FILL"',
 
   // Barbarian
-  'Armor Of Fury':'Section=feature Note="FILL"',
+  'Armor Of Fury':
+    'Section=combat ' +
+    'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Barbarian Feats':'Section=feature Note="%V selections"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
@@ -2494,17 +2498,23 @@ Pathfinder2E.FEATURES = {
   'Greater Juggernaut':'Section=feature Note="FILL"',
   'Greater Weapon Specialization':
     'Section=combat Note="Increased Weapon Specialization effects"',
-  'Heightened Senses':'Section=feature Note="FILL"',
-  'Indomitable Will':'Section=feature Note="FILL"',
+  'Heightened Senses':'Section=skill Note="Perception Master"',
+  'Indomitable Will':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will saves are critical successes"',
   'Instinct':'Section=feature Note="FILL"',
   // Juggernaut as above
-  'Lightning Reflexes':'Section=feature Note="FILL"',
+  'Lightning Reflexes':'Section=save Note="Save Expert (Reflex)"',
   // Medium Armor Expertise as above
   'Mighty Rage':'Section=feature Note="FILL"',
   'Quick Rage':'Section=feature Note="FILL"',
-  'Rage':'Section=feature Note="FILL"',
+  'Rage':'Section=combat Note="May use Rage again after 1 turn"',
   'Raging Resistance':'Section=feature Note="FILL"',
-  'Weapon Fury':'Section=feature Note="FILL"',
+  'Weapon Fury':
+    'Section=combat ' +
+    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   'Acute Vision':'Section=feature Note="FILL"',
@@ -2522,6 +2532,45 @@ Pathfinder2E.FEATURES = {
   'Raging Athlete':'Section=feature Note="FILL"',
   'Swipe':'Section=combat Note="May attack two adjacent foes with one Strike"',
   'Wounded Rage':'Section=feature Note="FILL"',
+  'Animal Skin':'Section=feature Note="FILL"',
+  'Attack Of Opportunity':
+    'Section=combat ' +
+    'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
+  'Butal Bully':'Section=feature Note="FILL"',
+  'Cleave':'Section=feature Note="FILL"',
+  "Dragon's Rage Breath":'Section=feature Note="FILL"',
+  "Giant's Stature":'Section=feature Note="FILL"',
+  "Spirit's Interference":'Section=feature Note="FILL"',
+  'Animal Rage':'Section=feature Note="FILL"',
+  'Furious Bully':'Section=feature Note="FILL"',
+  'Renewed Vigor':'Section=feature Note="FILL"',
+  'Share Rage':'Section=feature Note="FILL"',
+  'Sudden Leap':
+    'Section=combat ' +
+    'Note="May use 2 actions to make a Strike during a Leap, High Jump, or Long Jump"',
+  'Thrash':'Section=feature Note="FILL"',
+  'Come And Get Me':'Section=feature Note="FILL"',
+  'Furious Sprint':'Section=feature Note="FILL"',
+  'Great Cleave':'Section=feature Note="FILL"',
+  'Knockback':'Section=feature Note="FILL"',
+  'Terrifying Howl':'Section=feature Note="FILL"',
+  "Dragon's Rage Wings":'Section=feature Note="FILL"',
+  'Furious Grab':'Section=feature Note="FILL"',
+  "Predator's Pounce":'Section=feature Note="FILL"',
+  "Spirit's Wrath":'Section=feature Note="FILL"',
+  "Titan's Stature":'Section=feature Note="FILL"',
+  'Awesome Blow':'Section=feature Note="FILL"',
+  "Giant's Lunge":'Section=feature Note="FILL"',
+  'Vengeful Strike':'Section=feature Note="FILL"',
+  'Whirlwind Strike':'Section=feature Note="FILL"',
+  'Collateral Thrash':'Section=feature Note="FILL"',
+  'Dragon Transformation':'Section=feature Note="FILL"',
+  'Rackless Abandon':'Section=feature Note="FILL"',
+  'Brutal Critical':'Section=feature Note="FILL"',
+  'Perfect Clarity':'Section=feature Note="FILL"',
+  'Vicious Evisceration':'Section=feature Note="FILL"',
+  'Contagious Rage':'Section=feature Note="FILL"',
+  'Quaking Stomp':'Section=feature Note="FILL"',
 
   // Bard
   'Bard Weapon Expertise':'Section=feature Note="FILL"',
@@ -2632,12 +2681,15 @@ Pathfinder2E.FEATURES = {
   // Attack Of Opportunity as above
   'Litany Against Wrath':'Section=feature Note="FILL"',
   'Loyal Warhorse':'Section=feature Note="FILL"',
-  'Shield Warden':'Section=feature Note="FILL"',
+  'Shield Warden':
+    'Section=combat Note="May use Shield Block to protect an adjacent ally"',
   'Smite Evil':'Section=feature Note="FILL"',
   "Advanced Deity's Domain":'Section=feature Note="FILL"',
   'Greater Mercy':'Section=feature Note="FILL"',
   'Heal Mount':'Section=feature Note="FILL"',
-  'Quick Shield Block':'Section=feature Note="FILL"',
+  'Quick Shield Block':
+    'Section=combat ' +
+    'Note="May use an additional Reaction for a Shield Block 1/tn"',
   'Second Ally':'Section=feature Note="FILL"',
   'Sense Evil':'Section=feature Note="FILL"',
   'Devoted Focus':'Section=feature Note="FILL"',
@@ -2800,9 +2852,7 @@ Pathfinder2E.FEATURES = {
   // Fighter
   // Armor Expertise as above
   // Armor Mastery as above
-  'Attack Of Opportunity':
-    'Section=combat ' +
-    'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
+  // Attack Of Opportunity as above
   'Battlefield Surveyor':
     'Section=combat,skill ' +
     'Note=' +
@@ -2817,6 +2867,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each dy"',
   // Evasion as above
+  // TODO Fighter DC Expert
   'Fighter Expertise':'Section=feature Note="FILL"',
   'Fighter Feats':'Section=feature Note="%V selections"',
   'Fighter Skills':
@@ -2876,9 +2927,9 @@ Pathfinder2E.FEATURES = {
   'Intimidating Strike':
     'Section=combat ' +
     'Note="Successful Strike inflicts frightened 1 (critical hit frightened 2)"',
-  'Lunge':'Section=combat Note="May make +5\' Strike"',
+  'Lunge':'Section=combat Note="May make a +5\' Strike"',
   'Double Shot':
-    'Section=combat Note="May make two ranged Strikes at a -2 penalty on each"',
+    'Section=combat Note="May make two ranged Strikes against two foes, suffering a -2 attack penalty on each"',
   'Dual-Handed Assault':
     'Section=combat ' +
     'Note="Increases damage from 2-handed weapon by number of damage dice and other weapon by one step"',
@@ -2900,40 +2951,93 @@ Pathfinder2E.FEATURES = {
   'Advanced Weapon Training':
     'Section=combat ' +
     'Note="Weapon Trained with advanced weapons in chosen group"',
-  'Advantageous Assault':'Section=feature Note="FILL"',
-  'Disarming Stance':'Section=feature Note="FILL"',
-  'Furious Focus':'Section=feature Note="FILL"',
-  "Guardian's Deflection":'Section=feature Note="FILL"',
-  'Reflexive Shield':'Section=feature Note="FILL"',
-  'Revealing Stab':'Section=feature Note="FILL"',
-  'Shatter Defenses':'Section=feature Note="FILL"',
+  'Advantageous Assault':
+    'Section=combat ' +
+    'Note="Strike on grabbed, prone, or restrained foe inflicts +damage dice damage (+damage dice + 2 if wielded two-handed), even on failure"',
+  'Disarming Stance':
+    'Section=combat ' +
+    'Note="+1 to Disarm; +2 vs. Disarm/May Disarm foes two sizes larger"',
+  'Furious Focus':
+    'Section=combat ' +
+    'Note="Two-handed power attacks count as single attacks for multi-attack penalty"',
+  "Guardian's Deflection":
+    'Section=combat Note="May use Reaction to give adjacent ally +2 AC"',
+  'Reflexive Shield':
+    'Section=save Note="Raised shield adds bonus to Reflex saves"',
+  'Revealing Stab':
+    'Section=combat ' +
+    'Note="May leave a piercing weapon embedded in a corporeal concealed or hidden foe to reveal it to others"',
+  'Shatter Defenses':
+    'Section=combat ' +
+    'Note="A successful Strike vs. a frightened foe inflicts flat-footed while fright lasts"',
   // Shield Warden as above
-  'Triple Shot':'Section=feature Note="FILL"',
-  'Blind-Fight':'Section=feature Note="FILL"',
-  'Dueling Riposte':'Section=feature Note="FILL"',
-  'Felling Strike':'Section=feature Note="FILL"',
-  'Incredible Aim':'Section=feature Note="FILL"',
-  'Mobile Shot Stance':'Section=feature Note="FILL"',
-  'Positioning Assault':'Section=feature Note="FILL"',
+  'Triple Shot':
+    'Section=combat ' +
+    'Note="May use Double Shot against a single foe/May make three ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
+  'Blind-Fight':
+    'Section=combat ' +
+    'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check"',
+  'Dueling Riposte':
+    'Section=combat ' +
+    'Note="May use a Reaction to Strike or Disarm a foe who critically misses an attack on self"',
+  'Felling Strike':
+    'Section=combat ' +
+    'Note="May spend 2 actions to attack a flying foe; a successful Strike causes it to fall 120\' and a critial hit grounds it for 1 rd"',
+  'Incredible Aim':
+    'Section=combat ' +
+    'Note="May spend 2 actions to gain +2 on a ranged attack that ignores concealment"',
+  'Mobile Shot Stance':
+    'Section=combat ' +
+    'Note="Ranged Strikes do not trigger reactions/May use Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
+  'Positioning Assault':
+    'Section=combat ' +
+    'Note="May use 2 actions to move target 5\' within reach with a successful Strike"',
   // Quick Shield Block as above
-  'Sudden Leap':'Section=feature Note="FILL"',
-  'Agile Grace':'Section=feature Note="FILL"',
-  'Certain Strike':'Section=feature Note="FILL"',
-  'Combat Reflexes':'Section=feature Note="FILL"',
-  'Debilitating Shot':'Section=feature Note="FILL"',
-  'Disarming Twist':'Section=feature Note="FILL"',
-  'Disruptive Stance':'Section=feature Note="FILL"',
-  'Fearsome Brute':'Section=feature Note="FILL"',
-  'Improved Knockdown':'Section=feature Note="FILL"',
-  'Mirror Shield':'Section=feature Note="FILL"',
-  'Twin Riposte':'Section=feature Note="FILL"',
-  'Brutal Finish':'Section=feature Note="FILL"',
-  'Dueling Dance':'Section=feature Note="FILL"',
-  'Flinging Shove':'Section=feature Note="FILL"',
-  'Improved Dueling Riposte':'Section=feature Note="FILL"',
-  'Incredible Ricochet':'Section=feature Note="FILL"',
-  'Lunging Stance':'Section=feature Note="FILL"',
-  "Paragon's Guard":'Section=feature Note="FILL"',
+  // Sudden Leap as above
+  'Agile Grace':'Section=combat Note="Reduces multi-attack penalty to -3/-6"',
+  'Certain Strike':
+    'Section=combat ' +
+    'Note="Failed Strike inflicts normal damage other than damage dice"',
+  'Combat Reflexes':
+    'Section=combat ' +
+    'Note="May use an additional Reaction to make an Attack Of Opportunity 1/tn"',
+  'Debilitating Shot':
+     'Section=combat ' +
+     'Note="May use 2 actions to make a ranged attack that slows target for 1 rd"',
+  'Disarming Twist':
+    'Section=combat ' +
+    'Note="A successful Strike with a one-handed melee weapon and the other hand free inflicts Disarm; failure inflicts flat-footed until the end of tn"',
+  'Disruptive Stance':
+    'Section=combat ' +
+    'Note="May use Attack Of Opportunity in response to a concentrate action; successful Strike disrupts"',
+  'Fearsome Brute':
+    'Section=combat ' +
+    'Note="Strikes against frightened foes inflict +frighted value x %{rank.Intimidation>=2?3:2} damage"',
+  'Improved Knockdown':
+    'Section=combat Note="May use Knockdown without a Trip check"',
+  'Mirror Shield':
+    'Section=combat ' +
+    'Note="May use a Reaction to reflect a spell back upon caster with a ranged Strike"',
+  'Twin Riposte':
+    'Section=combat ' +
+    'Note="May use a Reaction to Strike or Disarm a foe who critically fails on a Strike on self"',
+  'Brutal Finish':
+    'Section=combat ' +
+    'Note="May end turn with a two-handed Strike that inflicts +%{level>=18?2:1} damage dice, even on a failure"',
+  'Dueling Dance':
+    'Section=combat ' +
+    'Note="+2 AC when wielding a one-handed weapon with a hand free"',
+  'Flinging Shove':'Section=combat Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed; Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
+  'Improved Dueling Riposte':
+    'Section=combat ' +
+    'Note="May use an additional Reaction to make a Dueling Riposte 1/tn"',
+  'Incredible Ricochet':
+    'Section=combat ' +
+    'Note="Second ranged attack against the same foe ignores concealment and cover"',
+  'Lunging Stance':
+    'Section=combat Note="May make an Attack Of Opportunity with Lunge"',
+  "Paragon's Guard":
+    'Section=combat Note="Constantly gain the benefits of a Raised shield"',
   'Spring Attack':'Section=feature Note="FILL"',
   'Desperate Finisher':'Section=feature Note="FILL"',
   'Determination':'Section=feature Note="FILL"',
