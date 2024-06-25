@@ -5774,6 +5774,16 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         attributes[attr] = 10;
       }
     }
+  } else if(attribute == 'armor') {
+    attrs = this.applyRules(attributes);
+    let armors = this.getChoices('armors');
+    choices = [];
+    for(let attr in armors) {
+      let category = QuilvynUtils.getAttrValue(armors[attr], 'Category');
+      if(('rank.' + category + ' Armor') in attrs)
+        choices.push(attr);
+    }
+    attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'boosts') {
     let boostsAllocated = {};
     for(attr in Pathfinder2E.ABILITIES) {
