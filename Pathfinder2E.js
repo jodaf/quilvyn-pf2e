@@ -189,19 +189,31 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,any'
 };
 Pathfinder2E.ARMORS = {
-  'None':'Weight=0 AC=0 Dex=10 Skill=0 Speed=0 Str=0 Bulk=0',
-  "Explorer's Clothing":'Weight=0 AC=0 Dex=5 Skill=0 Speed=0 Str=0 Bulk=.1',
-  'Padded':'Weight=1 AC=1 Dex=3 Skill=0 Speed=0 Str=10 Bulk=.1',
-  'Leather':'Weight=1 AC=1 Dex=4 Skill=1 Speed=0 Str=10 Bulk=1',
-  'Studded Leather':'Weight=1 AC=2 Dex=3 Skill=1 Speed=0 Str=12 Bulk=1',
-  'Chain Shirt':'Weight=1 AC=2 Dex=3 Skill=1 Speed=0 Str=12 Bulk=1',
-  'Hide':'Weight=2 AC=3 Dex=2 Skill=2 Speed=5 Str=14 Bulk=2',
-  'Scale Mail':'Weight=2 AC=3 Dex=2 Skill=2 Speed=5 Str=14 Bulk=2',
-  'Chain Mail':'Weight=2 AC=4 Dex=1 Skill=2 Speed=5 Str=16 Bulk=2',
-  'Breastplate':'Weight=2 AC=4 Dex=1 Skill=2 Speed=5 Str=16 Bulk=2',
-  'Splint Mail':'Weight=3 AC=5 Dex=1 Skill=3 Speed=10 Str=16 Bulk=3',
-  'Half Plate':'Weight=3 AC=5 Dex=1 Skill=3 Speed=10 Str=16 Bulk=3',
-  'Full Plate':'Weight=3 AC=6 Dex=0 Skill=3 Speed=10 Str=18 Bulk=4'
+  'None':'Price=0 Category=Unarmored AC=0 Dex=5 Check=0 Speed=0',
+  "Explorer's Clothing":
+    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+  'Padded':
+    'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+  'Leather':
+    'Category=Light Price=2 AC=1 Dex=4 Check=-1 Str=10 Speed=0 Bulk=1 Group=Leather',
+  'Studded Leather':
+    'Category=Light Price=2 AC=1 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 Group=Leather',
+  'Chain Shirt':
+    'Category=Light Price=5 AC=2 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 Group=Chain Trait=Flexible,Noisy',
+  'Hide':
+    'Category=Medium Price=2 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 Group=Leather',
+  'Scale Mail':
+    'Category=Medium Price=4 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 Group=Composite',
+  'Chain Mail':
+    'Category=Medium Price=6 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 Group=Chain Trait=Flexible,Noisy',
+  'Breastplate':
+    'Category=Medium Price=8 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 Group=Plate',
+  'Splint Mail':
+    'Category=Heavy Price=13 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 Group=Composite',
+  'Half Plate':
+    'Category=Heavy Price=18 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 Group=Plate',
+  'Full Plate':
+    'Category=Heavy Price=18 AC=6 Dex=0 Check=-3 Speed=-10 Str=18 Bulk=4 Group=Plate Trait=Bulwark'
 };
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
@@ -3038,23 +3050,50 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May make an Attack Of Opportunity with Lunge"',
   "Paragon's Guard":
     'Section=combat Note="Constantly gain the benefits of a Raised shield"',
-  'Spring Attack':'Section=feature Note="FILL"',
-  'Desperate Finisher':'Section=feature Note="FILL"',
-  'Determination':'Section=feature Note="FILL"',
-  'Guiding Finish':'Section=feature Note="FILL"',
-  'Guiding Riposte':'Section=feature Note="FILL"',
-  'Improved Twin Riposte':'Section=feature Note="FILL"',
-  'Stance Savant':'Section=feature Note="FILL"',
-  'Two-Weapon Flurry':'Section=feature Note="FILL"',
-  'Whirlwind Strike':'Section=feature Note="FILL"',
-  'Graceful Poise':'Section=feature Note="FILL"',
-  'Improved Reflexive Shield':'Section=feature Note="FILL"',
-  'Multishot Stance':'Section=feature Note="FILL"',
-  'Twinned Defense':'Section=feature Note="FILL"',
-  'Impossible Volley':'Section=feature Note="FILL"',
-  'Savage Critical':'Section=feature Note="FILL"',
-  'Boundless Reprisals':'Section=feature Note="FILL"',
-  'Weapon Supremacy':'Section=feature Note="FILL"',
+  'Spring Attack':
+    'Section=combat Note="May attack foes before and after full speed Stride"',
+  'Desperate Finisher':
+    'Section=combat ' +
+    'Note="May use a press action as a Reaction at the end of turn"',
+  'Determination':
+    'Section=save ' +
+    'Note="May end a nonpermanent spell (%{level/2} counteract Will save) or condition affecting self 1/dy"',
+  'Guiding Finish':
+    'Section=combat ' +
+    'Note="May move target 10\' within reach with a successful Strike (unsuccessful 5\')"',
+  'Guiding Riposte':
+    'Section=combat ' +
+    'Note="May move target 10\' within reach with a successful Dueling Riposte Strike"',
+  'Improved Twin Riposte':
+    'Section=combat ' +
+    'Note="May use an additional Reaction to make a Twin Riposte 1/tn"',
+  'Stance Savant':'Section=combat Note="May enter a stance upon initiative"',
+  'Two-Weapon Flurry':
+    'Section=combat Note="May Strike with two weapons simultaneously"',
+  'Whirlwind Strike':
+    'Section=combat Note="May use 3 actions to Strike each foe within reach"',
+  'Graceful Poise':
+    'Section=combat ' +
+    'Note="Double Slice with an agile weapon counts as one attack"',
+  'Improved Reflexive Shield':
+    'Section=combat ' +
+    'Note="May use Shield Block to protect both self and adjacent allies"',
+  'Multishot Stance':
+    'Section=combat Note="Double/Triple Shot penalty reduced to -1/-2"',
+  'Twinned Defense':
+    'Section=combat Note="Gives constant benefits of Twin Parry"',
+  'Impossible Volley':
+    'Section=combat ' +
+    'Note="May use 3 actions to make a -2 ranged attack against all foes in a 10\' radius"',
+  'Savage Critical':
+    'Section=combat ' +
+    'Note="Successful rolls of 19 with a legendary weapon are critical successes"',
+  'Boundless Reprisals':
+     'Section=combat ' +
+     'Note="May use an additional Reaction to use a fighter feat or class feature 1/foe turn"',
+  'Weapon Supremacy':
+    'Section=combat ' +
+    'Note="Permanently quickened; may use additional actions only to Strike"',
 
   // Monk
   'Adamantine Strikes':'Section=feature Note="FILL"',
@@ -4018,7 +4057,7 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
 Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
   QuilvynUtils.checkAttrTable
-    (armors, ['Weight', 'AC', 'Dex', 'Skill', 'Speed', 'Str', 'Bulk']);
+    (armors, ['Category', 'Price', 'AC', 'Dex', 'Check', 'Speed', 'Str', 'Bulk', 'Group', 'Trait']);
   QuilvynUtils.checkAttrTable(shields, ['AC', 'Speed', 'Bulk']);
   QuilvynUtils.checkAttrTable(weapons, ['Category', 'Damage', 'Bulk', 'Range', 'Crit']);
 
@@ -4223,13 +4262,15 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Armor')
     Pathfinder2E.armorRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Category'),
+      QuilvynUtils.getAttrValue(attrs, 'Price'),
       QuilvynUtils.getAttrValue(attrs, 'AC'),
-      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Dex'),
-      QuilvynUtils.getAttrValue(attrs, 'Skill'),
+      QuilvynUtils.getAttrValue(attrs, 'Check'),
       QuilvynUtils.getAttrValue(attrs, 'Speed'),
       QuilvynUtils.getAttrValue(attrs, 'Str'),
-      QuilvynUtils.getAttrValue(attrs, 'Weight')
+      QuilvynUtils.getAttrValue(attrs, 'Group'),
+      QuilvynUtils.getAttrValue(attrs, 'Trait')
     );
   else if(type == 'Class') {
     Pathfinder2E.classRules(rules, name,
@@ -4496,35 +4537,43 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
 };
 
 /*
- * Defines in #rules# the rules associated with armor #name#, which adds #ac#
- * to the character's armor class, adds #bulk# to the character's load, allows
- * a maximum dex bonus to ac of #maxDex#, imposes #skillPenalty# on specific
- * skills, slows the character by #speedPenalty#, requires a strength of at
- * least #minStr# to use, and weighs #weight# lbs.
+ * Defines in #rules# the rules associated with armor #name#, which costs
+ * #price# gold pieces, belongs to category #category#, adds #ac# to the
+ * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
+ * imposes #checkPenalty# on specific skills, slows the character by
+ * #speedPenalty#, requires a strength of at least #minStr# to use, belongs to
+ * group #group#, and has the list of traits #traits#.
  */
 Pathfinder2E.armorRules = function(
-  rules, name, ac, bulk, maxDex, skillPenalty, speedPenalty, minStr, weight
+  rules, name, category, price, ac, maxDex, checkPenalty, speedPenalty, minStr,
+  group, traits
 ) {
 
   if(!name) {
     console.log('Empty armor name');
     return;
   }
+  if(typeof category != 'string' ||
+     !category.match(/^(Unarmored|Light|Medium|Heavy)$/)) {
+    console.log('Bad category "' + category + '" for armor ' + name);
+    return;
+  }
+  if(typeof price == 'string' && price.match(/^0\.\d+$/))
+    price = +price;
+  if(typeof price != 'number') {
+    console.log('Bad price "' + price + '" for armor ' + name);
+    return;
+  }
   if(typeof ac != 'number') {
     console.log('Bad ac "' + ac + '" for armor ' + name);
     return;
-  }
-  if(bulk == '.1')
-    bulk = 0.1;
-  if(typeof bulk != 'number') {
-    console.log('Bad bulk "' + bulk + '" for armor ' + name);
   }
   if(typeof maxDex != 'number') {
     console.log('Bad max dex "' + maxDex + '" for armor ' + name);
     return;
   }
-  if(typeof skillPenalty != 'number') {
-    console.log('Bad skill penalty "' + skillPenalty + '" for armor ' + name);
+  if(typeof checkPenalty != 'number') {
+    console.log('Bad check penalty "' + checkPenalty + '" for armor ' + name);
     return;
   }
   if(typeof speedPenalty != 'number') {
@@ -4535,41 +4584,25 @@ Pathfinder2E.armorRules = function(
     console.log('Bad min str "' + minStr + '" for armor ' + name);
     return;
   }
-  if(weight == null ||
-     !(weight + '').match(/^([0-3]|none|light|medium|heavy)$/i)) {
-    console.log('Bad weight "' + weight + '" for armor ' + name);
+  if(group != null && typeof group != 'string') {
+    console.log('Bad group "' + group + '" for armor ' + name);
     return;
   }
-
-  if((weight + '').match(/^[0-3]$/))
-    ; // empty
-  else if(weight.match(/^none$/i))
-    weight = 0;
-  else if(weight.match(/^light$/i))
-    weight = 1;
-  else if(weight.match(/^medium$/i))
-    weight = 2;
-  else if(weight.match(/^heavy$/i))
-    weight = 3;
 
   if(rules.armorStats == null) {
     rules.armorStats = {
       ac:{},
-      bulk:{},
       dex:{},
-      skill:{},
+      check:{},
       speed:{},
-      str:{},
-      weight:{}
+      str:{}
     };
   }
   rules.armorStats.ac[name] = ac;
-  rules.armorStats.bulk[name] = bulk;
   rules.armorStats.dex[name] = maxDex;
-  rules.armorStats.skill[name] = skillPenalty;
+  rules.armorStats.check[name] = checkPenalty;
   rules.armorStats.speed[name] = speedPenalty;
   rules.armorStats.str[name] = minStr;
-  rules.armorStats.weight[name] = weight;
 
   rules.defineRule('armorClass',
     '', '=', '10',
@@ -4577,12 +4610,6 @@ Pathfinder2E.armorRules = function(
   );
   rules.defineRule('armorStrRequirement',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.minStr) + '[source]'
-  );
-  rules.defineRule('armorWeight',
-    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.weight) + '[source]'
-  );
-  rules.defineRule('bulk',
-    'armor', '+=', QuilvynUtils.dictLit(rules.armorStats.bulk) + '[source]'
   );
   rules.defineRule('combatNotes.dexterityArmorClassAdjustment',
     'armor', 'v', QuilvynUtils.dictLit(rules.armorStats.dex) + '[source]'
