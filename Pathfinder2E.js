@@ -189,11 +189,11 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,any'
 };
 Pathfinder2E.ARMORS = {
-  'None':'Price=0 Category=Unarmored AC=0 Dex=5 Check=0 Speed=0',
+  'None':'Category=Unarmored Price=0 AC=0 Dex=5 Check=0 Str=0 Speed=0 Bulk=0',
   "Explorer's Clothing":
-    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
   'Padded':
-    'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+    'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
   'Leather':
     'Category=Light Price=2 AC=1 Dex=4 Check=-1 Str=10 Speed=0 Bulk=1 Group=Leather',
   'Studded Leather':
@@ -2349,7 +2349,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Exper (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
+    'Note="Weapon Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a different tradition"',
@@ -2574,7 +2574,8 @@ Pathfinder2E.FEATURES = {
   'Awesome Blow':'Section=feature Note="FILL"',
   "Giant's Lunge":'Section=feature Note="FILL"',
   'Vengeful Strike':'Section=feature Note="FILL"',
-  'Whirlwind Strike':'Section=feature Note="FILL"',
+  'Whirlwind Strike':
+    'Section=combat Note="May use 3 actions to Strike each foe within reach"',
   'Collateral Thrash':'Section=feature Note="FILL"',
   'Dragon Transformation':'Section=feature Note="FILL"',
   'Rackless Abandon':'Section=feature Note="FILL"',
@@ -2994,7 +2995,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction to Strike or Disarm a foe who critically misses an attack on self"',
   'Felling Strike':
     'Section=combat ' +
-    'Note="May spend 2 actions to attack a flying foe; a successful Strike causes it to fall 120\' and a critial hit grounds it for 1 rd"',
+    'Note="May spend 2 actions to attack a flying foe; a successful Strike causes it to fall 120\', and a critical hit grounds it for 1 rd"',
   'Incredible Aim':
     'Section=combat ' +
     'Note="May spend 2 actions to gain +2 on a ranged attack that ignores concealment"',
@@ -3070,8 +3071,7 @@ Pathfinder2E.FEATURES = {
   'Stance Savant':'Section=combat Note="May enter a stance upon initiative"',
   'Two-Weapon Flurry':
     'Section=combat Note="May Strike with two weapons simultaneously"',
-  'Whirlwind Strike':
-    'Section=combat Note="May use 3 actions to Strike each foe within reach"',
+  // Whirlwind Strike as above
   'Graceful Poise':
     'Section=combat ' +
     'Note="Double Slice with an agile weapon counts as one attack"',
@@ -3450,7 +3450,7 @@ Pathfinder2E.FEATURES = {
     // TODO interacts w/other sources of Armor Trained
     'Note="Armor Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
   'Breath Control':
-    'Section=attribte,save ' +
+    'Section=attribute,save ' +
     'Note=' +
       '"May hold breath 25x as long as usual without suffocating",' +
       '"+1 vs. inhaled threats/Success vs. inhaled threat is always a critical success"',
@@ -3534,7 +3534,7 @@ Pathfinder2E.FEATURES = {
     'Note="Does not suffer flat-footed and may fight while Climbing/May Climb with one hand occupied"',
   'Confabulator':
     'Section=skill ' +
-    'Note="Target of Decpetion gains %{rank.Deception>=4?\'no\':rank.Deception==3?\'+1\':\'+2\'} bonus for previous attempts"',
+    'Note="Target of Deception gains %{rank.Deception>=4?\'no\':rank.Deception==3?\'+1\':\'+2\'} bonus for previous attempts"',
   'Connections':
     'Section=skill ' +
     'Note="May use Society to gain meeting with an important figure or to exchange favors"',
@@ -3559,7 +3559,7 @@ Pathfinder2E.FEATURES = {
     'Note="May Track at full Speed%{rank.Survival<3\' at a -5 penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
-    'Note="May facinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+    'Note="May fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
     'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak actions"',
@@ -3611,10 +3611,10 @@ Pathfinder2E.FEATURES = {
     'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Lore to Earn Income increases job level"',
   'Legendary Sneak':
     'Section=skill ' +
-    'Note="May Hide and Sneak witout cover/Automatically uses Avoiding Notice when exploring"',
+    'Note="May Hide and Sneak without cover/Automatically uses Avoiding Notice when exploring"',
   'Legendary Survivalist':
     'Section=skill ' +
-    'Note="May survive indefintely without food and water and endure incredible temperatures without damage"',
+    'Note="May survive indefinitely without food and water and endure incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
     'Note="May attempt a Steal-5 check to take actively wielded and highly noticeable items"',
@@ -3622,7 +3622,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May remain hidden after a Create a Diversion attempt critically succeeds"',
   'Lie To Me':
-    'Section=skill Note="May use Deception to detect lies in a coversation"',
+    'Section=skill Note="May use Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
     'Note="May craft magic items/Learns formulas for 4 common magic items of 2nd level or lower"',
@@ -3695,7 +3695,7 @@ Pathfinder2E.FEATURES = {
   'Student Of The Canon':
     'Section=skill ' +
     'Note="All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith"',
-  'Subtle Theft':'Section=skill Note="Successful Steal inflctes -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion"',
+  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
     'Note="May use Survival-2 to Recall Knowledge about local creatures after 10 min study"',
@@ -3925,11 +3925,11 @@ Pathfinder2E.SCHOOLS = {
   'Transmutation':''
 };
 Pathfinder2E.SHIELDS = {
-  'None':'AC=0 Speed=0 Bulk=0',
-  'Buckler':'AC=1 Speed=0 Bulk=1',
-  'Wooden':'AC=2 Speed=0 Bulk=1',
-  'Steel':'AC=2 Speed=0 Bulk=1',
-  'Tower':'AC=2 Speed=5 Bulk=4'
+  'None':'Price=0 AC=0 Speed=0 Bulk=0 Hardness=0 HP=0',
+  'Buckler':'Price=1 AC=1 Speed=0 Bulk=L Hardness=3 HP=6',
+  'Wooden':'Price=1 AC=2 Speed=0 Bulk=1 Hardness=3 HP=12',
+  'Steel':'Price=2 AC=2 Speed=0 Bulk=1 Hardness=5 HP=20',
+  'Tower':'Price=10 AC=2 Speed=-5 Bulk=4 Hardness=5 HP=20'
 };
 Pathfinder2E.SKILLS = {
   'Acrobatics':'Ability=Dexterity',
@@ -3954,81 +3954,162 @@ Pathfinder2E.SPELLS = {
   // TODO
 };
 Pathfinder2E.WEAPONS = {
-  'Fist':'Category=0 Damage=d4 Bulk=0',
-  'Club':'Category=1 Damage=d6 Bulk=1 Range=10',
-  'Dagger':'Category=1 Damage=d4 Bulk=.1 Range=10',
-  'Gauntlet':'Category=1 Damage=d4 Bulk=.1',
-  'Light Mace':'Category=1 Damage=d4 Bulk=.1',
-  'Longspear':'Category=1 Damage=d8 Bulk=2',
-  'Mace':'Category=1 Damage=d6 Bulk=1',
-  'Morningstar':'Category=1 Damage=d6 Bulk=1',
-  'Sickle':'Category=1 Damage=d4 Bulk=.1',
-  'Spear':'Category=1 Damage=d6 Bulk=1 Range=20',
-  'Spiked Gauntlet':'Category=1 Damage=d4 Bulk=.1',
-  'Staff':'Category=1 Damage=d4 Bulk=1',
-  'Clan Dagger':'Category=1 Damage=d4 Bulk=.1',
-  'Katar':'Category=1 Damage=d4 Bulk=.1 Crit=+d6',
-  'Bastard Sword':'Category=2 Damage=d8 Bulk=1',
-  'Battle Axe':'Category=2 Damage=d8 Bulk=1',
-  'Bo Staff':'Category=2 Damage=d8 Bulk=2',
-  'Falchion':'Category=2 Damage=d10 Bulk=2',
-  'Flail':'Category=2 Damage=d6 Bulk=1',
-  'Glaive':'Category=2 Damage=d8 Bulk=2 Crit=+d8',
-  'Greataxe':'Category=2 Damage=d12 Bulk=2',
-  'Greatclub':'Category=2 Damage=d10 Bulk=2',
-  'Greatpick':'Category=2 Damage=d10 Bulk=2 Crit=d12',
-  'Greatsword':'Category=2 Damage=d12 Bulk=2',
-  'Guisarme':'Category=2 Damage=d10 Bulk=2',
-  'Halberd':'Category=2 Damage=d10 Bulk=2',
-  'Hatchet':'Category=2 Damage=d6 Bulk=.1 Range=10',
-  'Lance':'Category=2 Damage=d8 Bulk=2 Crit=+d8',
-  'Light Hammer':'Category=2 Damage=d6 Bulk=.1 Range=20',
-  'Light Pick':'Category=2 Damage=d4 Bulk=.1 Crit=d8',
-  'Longsword':'Category=2 Damage=d8 Bulk=1',
-  'Main-gauche':'Category=2 Damage=d4 Bulk=.1',
-  'Maul':'Category=2 Damage=d12 Bulk=2',
-  'Pick':'Category=2 Damage=d6 Bulk=1 Crit=d10',
-  'Ranseur':'Category=2 Damage=d10 Bulk=2',
-  'Rapier':'Category=2 Damage=d6 Bulk=1 Crit=+d8',
-  'Sap':'Category=2 Damage=d6 Bulk=.1',
-  'Scimitar':'Category=2 Damage=d6 Bulk=1',
-  'Scythe':'Category=2 Damage=d10 Bulk=2 Crit=+d10',
-  'Shortsword':'Category=2 Damage=d6 Bulk=.1',
-  'Starknife':'Category=2 Damage=d4 Bulk=.1 Range=20 Crit=+d6',
-  'Trident':'Category=2 Damage=d8 Bulk=1 Range=20',
-  'War Flail':'Category=2 Damage=d10 Bulk=2',
-  'Warhammer':'Category=2 Damage=d8 Bulk=1',
-  'Whip':'Category=2 Damage=d4 Bulk=1',
-  'Dogslicer':'Category=2 Damage=d6 Bulk=.1',
-  'Elven Curve Blade':'Category=2 Damage=d8 Bulk=2',
-  "Filcher's Fork":'Category=2 Damage=d4 Bulk=.1 Range=20 Crit=+d6',
-  'Gnome Hooked Hammer':'Category=2 Damage=d6 Bulk=1',
-  'Horsechopper':'Category=2 Damage=d8 Bulk=2',
-  'Kama':'Category=2 Damage=d6 Bulk=.1',
-  'Katana':'Category=2 Damage=d6 Bulk=1 Crit=+d8',
-  'Kukri':'Category=2 Damage=d6 Bulk=.1',
-  'Nunchaku':'Category=2 Damage=d6 Bulk=.1',
-  'Orc Knuckle Dragger':'Category=2 Damage=d6 Bulk=.1',
-  'Sai':'Category=2 Damage=d4 Bulk=.1',
-  'Spiked Chain':'Category=2 Damage=d8 Bulk=1',
-  'Temple Sword':'Category=2 Damage=d8 Bulk=1',
-  'Dwarven Waraxe':'Category=2 Damage=d8 Bulk=2',
-  'Gnome Flickmace':'Category=2 Damage=d8 Bulk=2',
-  'Orc Necksplitter':'Category=2 Damage=d8 Bulk=1',
-  'Sawtooth Saber':'Category=0 Damage=d6 Bulk=.1',
-  'Blowgun':'Category=1 Damage=d1 Bulk=.1 Range=20',
-  'Crossbow':'Category=1 Damage=d8 Bulk=1 Range=120',
-  'Dart':'Category=1 Damage=d4 Bulk=.1 Range=20',
-  'Hand Crossbow':'Category=1 Damage=d6 Bulk=.1 Range=60',
-  'Heavy Crossbow':'Category=1 Damage=d10 Bulk=2 Range=120',
-  'Javelin':'Category=1 Damage=d6 Bulk=.1 Range=30',
-  'Sling':'Category=1 Damage=d6 Bulk=.1 Range=50',
-  'Composite Longbow':'Category=2 Damage=d8 Bulk=2 Range=100 Crit=+d10',
-  'Composite Shortbow':'Category=2 Damage=d6 Bulk=1 Range=60 Crit=+d10',
-  'Longbow':'Category=2 Damage=d8 Bulk=2 Range=100 Crit=+d10',
-  'Shortbow':'Category=2 Damage=d6 Bulk=1 Range=60 Crit=+d10',
-  'Halfling Sling Staff':'Category=2 Damage=d10 Bulk=1 Range=80',
-  'Shuriken':'Category=2 Damage=d4 Bulk=0 Range=20'
+
+  'Fist':
+    'Category=Unarmed Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Brawling Trait=Agile,Finesse,Nonlethal,Unarmed',
+
+  'Club':
+    'Category=Simple Price=0 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Thrown Range=10',
+  'Dagger':
+    'Category=Simple Price=0.2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Thrown,"Versatile S" Range=10',
+  'Gauntlet':
+    'Category=Simple Price=0.2 Damage=1d4B Bulk=L Hands=1 Group=Brawling Trait=Agile,Free-hand',
+  'Light Mace':
+    'Category=Simple Price=0.4 Damage=1d4B Bulk=L Hands=1 Group=Club Trait=Agile,Finesse,Shove',
+  'Longspear':
+    'Category=Simple Price=0.5 Damage=1d8P Bulk=2 Hands=2 Group=Spear Trait=Reach',
+  'Mace':
+    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Shove',
+  'Morningstar':
+    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait="Versatile P"',
+  'Sickle':'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+  'Spear':
+    'Category=Simple Price=0.1 Damage=1d6P Bulk=1 Hands=1 Group=Spear Trait=Thrown Range=20',
+  'Spiked Gauntlet':
+    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Brawling Trait=Agile,Free-hand',
+  'Staff':
+    'Category=Simple Price=0 Damage=1d4B Bulk=1 Hands=1 Group=Club Trait="Two-hand d8"',
+
+  'Clan Dagger':
+    'Category=Simple Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
+  'Katar':
+    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,"Deadly d6",Monk,Uncommon',
+
+  'Bastard Sword':
+    'Category=Martial Price=4 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait="Two-hand d12"',
+  'Battle Axe':
+    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Axe Trait="Sweep"',
+  'Bo Staff':
+    'Category=Martial Price=0.2 Damage=1d8B Bulk=2 Hands=2 Group=Club Trait=Monk,Parry,Reach,Trip',
+  'Falchion':
+    'Category=Martial Price=3 Damage=1d10S Bulk=2 Hands=2 Group=Sword Trait=Forceful,Sweep',
+  'Flail':
+    'Category=Martial Price=0.8 Damage=1d6B Bulk=1 Hands=1 Group=Flail Trait=Disarm,Sweep,Trip',
+  'Glaive':
+    'Category=Martial Price=1 Damage=1d8S Bulk=2 Hands=2 Group=Polearm Trait="Deadly d8",Forceful,Reach',
+  'Greataxe':
+    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Axe Trait=Sweep',
+  'Greatclub':
+    'Category=Martial Price=1 Damage=1d10B Bulk=2 Hands=2 Group=Club Trait=Backswing,Shove',
+  'Greatpick':
+    'Category=Martial Price=1 Damage=1d10P Bulk=2 Hands=2 Group=Pick Trait="Fatal d12"',
+  'Greatsword':'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Sword Trait="Versatile P"',
+  'Guisarme':'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm Trait=Reach,Trip',
+  'Halberd':'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm Trait=Reach,"Versatile S"',
+  'Hatchet':
+    'Category=Martial Price=0.4 Damage=1d6S Bulk=L Hands=1 Group=Axe Trait=Agile,Sweep,Thrown Range=10',
+  'Lance':
+    'Category=Martial Price=1 Damage=1d8P Bulk=2 Hands=2 Group=Spear Trait="Deadly d8","Jousting d6",Reach',
+  'Light Hammer':
+    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer Trait=Agile,Thrown',
+  'Light Pick':
+    'Category=Martial Price=0.4 Damage=1d4P Bulk=L Hands=1 Group=Pick Trait=Agile,"Fatal d8"',
+  'Longsword':
+    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait="Versatile P"',
+  'Main-gauche':
+    'Category=Martial Price=0.5 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Finesse,Parry,"Versatile S"',
+  'Maul':
+    'Category=Martial Price=3 Damage=1d12B Bulk=2 Hands=2 Group=Hammer Trait=Shove',
+  'Pick':
+    'Category=Martial Price=0.7 Damage=1d6P Bulk=1 Hands=1 Group=Pick Trait="Fatal d10"',
+  'Ranseur':
+    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm Trait=Disarm,Reach',
+  'Rapier':
+    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword Trait="Deady d8",Disarm,Finesse',
+  'Sap':
+    'Category=Martial Price=0.1 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Agile,Nonlethal',
+  'Scimitar':
+    'Category=Martial Price=1 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait=Forceful,Sweep',
+  'Scythe':
+    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm Trait="Deadly d10",Tripe',
+  // TODO Shield bash, boss, spikes
+  'Shortsword':
+   'Category=Martial Price=0.9 Damage=1d6P Bulk=L Hands=1 Group=Sword Trait=Agile,Finesse,"Versatile S"',
+  'Starknife':
+    'Category=Martial Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
+  'Trident':
+    'Category=Martial Price=1 Damage=1d8P Bulk=1 Hands=1 Group=Spear Trait=Thrown Range=20',
+  'War Flail':
+    'Category=Martial Price=2 Damage=1d10B Bulk=2 Hands=2 Group=Flail Trait=Disarm,Sweep,Trip',
+  'Warhammer':
+    'Category=Martial Price=1 Damage=1d8B Bulk=1 Hands=1 Group=Hammer Trait=Shove',
+  'Whip':
+    'Category=Martial Price=0.1 Damage=1d4S Bulk=1 Hands=1 Group=Flail Trait=Disarm,Finesse,Nonlethal,Trip',
+
+  'Dogslicer':
+    'Category=Martial Price=0.1 Damage=1d6S Bulk=L Hands=1 Group=Sword Trait=Agile,Backstabber,Finesse,Goblin,Uncommon',
+  'Elven Curve Blade':
+    'Category=Martial Price=4 Damage=1d8S Bulk=2 Hands=2 Group=Sword Trait=Elf,Finesse,Forceful,Uncommon',
+  "Filcher's Fork":
+    'Category=Martial Price=1 Damage=1d4P Bulk=L Hands=1 Group=Spear Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon Range=20',
+  'Gnome Hooked Hammer':
+    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer Trait=Gnome,Trip,"Two-Hand d10",Uncommon,"Versatile P"',
+  'Horsechopper':
+    'Category=Martial Price=0.9 Damage=1d8S Bulk=2 Hands=2 Group=Polearm Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
+  'Kama':
+    'Category=Martial Price=1 Damage=1d6S Bulk=L Hands=1 Group=Knife Trait=Agile,Monk,Trip,Uncommon',
+  'Katana':
+    'Category=Martial Price=2 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait="Deadly d8","Two-hand d10","Versatile P"',
+  'Kukri':
+    'Category=Martial Price=0.6 Damage=1d6P Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+  'Nunchaku':
+    'Category=Martial Price=0.2 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
+  'Orc Knuckle Dragger':
+    'Category=Martial Price=0.7 Damage=1d6P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Orc,Uncommon',
+  'Sai':
+    'Category=Martial Price=0.6 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
+  'Spiked Chain':
+    'Category=Martial Price=3 Damage=1d8S Bulk=1 Hands=2 Group=Flail Trait=Disarm,Finesse,Trip,Uncommon',
+  'Temple Sword':'Category=Martial Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait=Monk,Trip,Uncommon',
+
+  'Dwarven Waraxe':
+    'Category=Advanced Price=3 Damage=1d8S Bulk=2 Hands=1 Group=Axe Trait=Dwarf,Sweep,"Two-hand d12",Uncommon',
+  'Gnome Flickmace':
+    'Category=Advanced Price=3 Damage=1d6B Bulk=1 Hands=1 Group=Flail Trait=Gnome,Reach,Sweep,Uncommon',
+  'Orc Necksplitter':
+    'Category=Advanced Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Axe Trait=Forceful,Orc,Sweep,Uncommon',
+  'Sawtooth Saber':
+    'Category=Advanced Price=5 Damage=1d6S Bulk=L Hands=1 Group=Sword Trait=Agile,Finesse,Twin,Uncommon',
+
+  'Blowgun':
+    'Category=Simple Price=0.1 Damage=1P Bulk=L Hands=1 Group=Dart Trait=Agile,Nonlethal,"Reload 1" Range=20',
+  'Crossbow':
+    'Category=Simple Price=3 Damage=1d8P Bulk=1 Hands=2 Group=Bow Trait="Reload 1", Range=120',
+  'Dart':
+    'Category=Simple Price=0.01 Damage=1d4P Bulk=L Hands=1 Group=Dart Trait=Agile,Thrown Range=20',
+  'Hand Crossbow':
+    'Category=Simple Price=3 Damage=1d6P Bulk=L Hands=1 Group=Bow Trait="Reload 1", Range=60',
+  'Heavy Crossbow':
+    'Category=Simple Price=4 Damage=1d10P Bulk=2 Hands=2 Group=Bow Trait="Reload 2", Range=120',
+  'Javelin':
+    'Category=Simple Price=0.1 Damage=1d6P Bulk=L Hands=1 Group=Dart Trait=Thrown Range=30',
+  'Sling':
+    'Category=Simple Price=0 Damage=1d6P Bulk=L Hands=1 Group=Sling Trait=Propulsive,"Reload 1" Range=50',
+
+  // TODO Alchemical bomb
+  'Composite Longbow':
+    'Category=Martial Price=20 Damage=1d8P Bulk=2 Hands=2 Group=Bow Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
+  'Composite Shortbow':
+    'Category=Martial Price=14 Damage=1d6P Bulk=1 Hands=2 Group=Bow Trait="Deadly d10",Propulsive Range=60',
+  'Longbow':
+    'Category=Martial Price=6 Damage=1d8P Bulk=2 Hands=2 Group=Bow Trait="Deadly d10","Volley 30\'" Range=100',
+  'Shortbow':
+    'Category=Martial Price=3 Damage=1d6P Bulk=1 Hands=2 Group=Bow Trait="Deadly d10" Range=60',
+  'Halfling Sling Staff':
+    'Category=Martial Price=5 Damage=1d10B Bulk=1 Hands=2 Group=Sling Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
+  'Shuriken':
+    'Category=Martial Price=0.01 Damage=1d4P Bulk=0 Hands=1 Group=Dart Trait=Agile,Monk,Thrown,Uncommon Range=20'
+
 };
 
 Pathfinder2E.RANK_NAMES =
@@ -4058,8 +4139,10 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
   QuilvynUtils.checkAttrTable
     (armors, ['Category', 'Price', 'AC', 'Dex', 'Check', 'Speed', 'Str', 'Bulk', 'Group', 'Trait']);
-  QuilvynUtils.checkAttrTable(shields, ['AC', 'Speed', 'Bulk']);
-  QuilvynUtils.checkAttrTable(weapons, ['Category', 'Damage', 'Bulk', 'Range', 'Crit']);
+  QuilvynUtils.checkAttrTable
+    (shields, ['Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP']);
+  QuilvynUtils.checkAttrTable
+    (weapons, ['Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Trait', 'Range']);
 
   for(let a in armors)
     rules.choiceRules(rules, 'Armor', a, armors[a]);
@@ -4269,8 +4352,9 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Check'),
       QuilvynUtils.getAttrValue(attrs, 'Speed'),
       QuilvynUtils.getAttrValue(attrs, 'Str'),
+      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Group'),
-      QuilvynUtils.getAttrValue(attrs, 'Trait')
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
     );
   else if(type == 'Class') {
     Pathfinder2E.classRules(rules, name,
@@ -4322,7 +4406,12 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Shield')
     Pathfinder2E.shieldRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'AC')
+      QuilvynUtils.getAttrValue(attrs, 'Price'),
+      QuilvynUtils.getAttrValue(attrs, 'AC'),
+      QuilvynUtils.getAttrValue(attrs, 'Speed'),
+      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
+      QuilvynUtils.getAttrValue(attrs, 'Hardness'),
+      QuilvynUtils.getAttrValue(attrs, 'HP')
     );
   else if(type == 'Skill')
     Pathfinder2E.skillRules(rules, name,
@@ -4338,8 +4427,12 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Weapon')
     Pathfinder2E.weaponRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Property'),
+      QuilvynUtils.getAttrValue(attrs, 'Price'),
       QuilvynUtils.getAttrValue(attrs, 'Damage'),
+      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
+      QuilvynUtils.getAttrValue(attrs, 'Hands'),
+      QuilvynUtils.getAttrValue(attrs, 'Group'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
       QuilvynUtils.getAttrValue(attrs, 'Range')
     );
   else {
@@ -4541,12 +4634,13 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
  * #price# gold pieces, belongs to category #category#, adds #ac# to the
  * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
  * imposes #checkPenalty# on specific skills, slows the character by
- * #speedPenalty#, requires a strength of at least #minStr# to use, belongs to
- * group #group#, and has the list of traits #traits#.
+ * #speedPenalty#, requires a strength of at least #minStr# to use, adds #bulk#
+ * to the character's burden, belongs to group #group#, and has the list of
+ * traits #traits#.
  */
 Pathfinder2E.armorRules = function(
   rules, name, category, price, ac, maxDex, checkPenalty, speedPenalty, minStr,
-  group, traits
+  bulk, group, traits
 ) {
 
   if(!name) {
@@ -4580,8 +4674,14 @@ Pathfinder2E.armorRules = function(
     console.log('Bad speed penalty "' + speedPenalty + '" for armor ' + name);
     return;
   }
-  if(minStr != null && typeof minStr != 'number') {
+  if(typeof minStr != 'number') {
     console.log('Bad min str "' + minStr + '" for armor ' + name);
+    return;
+  }
+  if(bulk == 'L')
+    bulk = 0.1;
+  if(typeof bulk != 'number') {
+    console.log('Bad bulk "' + bulk + '" for armor ' + name);
     return;
   }
   if(group != null && typeof group != 'string') {
@@ -5007,13 +5107,33 @@ Pathfinder2E.schoolRules = function(rules, name) {
 };
 
 /*
- * Defines in #rules# the rules associated with shield #name#, which adds #ac#
- * to the character's armor class.
+ * Defines in #rules# the rules associated with shield #name#, which costs
+ * #price# gold pieces, adds #ac# to the character's armor class, reduces the
+ * character's speed by #speed#, weight #bulk#, has hardness #hardness#, and
+ * can absorb #hp# damage before becoming useless.
  */
-Pathfinder2E.shieldRules = function(rules, name, ac) {
+Pathfinder2E.shieldRules = function(
+  rules, name, price, ac, speed, bulk, hardness, hp
+) {
 
   if(!name) {
     console.log('Empty shield name');
+    return;
+  }
+  if(typeof price == 'string' && price.match(/^0\.\d+$/))
+    price = +price;
+  if(typeof price != 'number') {
+    console.log('Bad price "' + price + '" for shield ' + name);
+    return;
+  }
+  if(typeof speed != 'number') {
+    console.log('Bad speed "' + speed + '" for shield ' + name);
+    return;
+  }
+  if(bulk == 'L')
+    bulk = 0.1;
+  if(typeof bulk != 'number') {
+    console.log('Bad bulk "' + bulk + '" for shield ' + name);
     return;
   }
   if(typeof ac != 'number') {
@@ -5024,12 +5144,18 @@ Pathfinder2E.shieldRules = function(rules, name, ac) {
   if(rules.shieldStats == null) {
     rules.shieldStats = {
       ac:{},
+      speed:{}
     };
   }
   rules.shieldStats.ac[name] = ac;
+  rules.shieldStats.speed[name] = speed;
 
-  rules.defineRule
-    ('armorClass', 'shield', '+', QuilvynUtils.dictLit(rules.shieldStats.ac) + '[source]');
+  rules.defineRule('armorClass',
+    'shield', '+', QuilvynUtils.dictLit(rules.shieldStats.ac) + '[source]'
+  );
+  rules.defineRule('speed',
+    'shield', '+', QuilvynUtils.dictLit(rules.shieldStats.speed) + '[source]'
+  );
 
 };
 
@@ -5090,61 +5216,71 @@ Pathfinder2E.spellRules = function(
 };
 
 /*
- * Defines in #rules# the rules associated with weapon #name#, which requires a
- * #category# proficiency level to use effectively and has weapon properties
- * #properties#. The weapon does #damage# HP on a successful attack. If
- * specified, the weapon can be used as a ranged weapon with a range increment
- * of #range# feet.
+ * Defines in #rules# the rules associated with weapon #name#, which costs
+ * #price# gold pieces, requires a #category# proficiency level to use
+ * effectively, adds #bulk# to the character's encumbrance, requires #hands#
+ * hands to operate, belongs to group #group#, and has weapon properties
+ * #traits#. If specified, the weapon can be used as a ranged weapon with a
+ * range increment of #range# feet.
  */
-Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, range) {
+Pathfinder2E.weaponRules = function(
+  rules, name, category, price, damage, bulk, hands, group, traits, range
+) {
 
   if(!name) {
     console.log('Bad name for weapon  "' + name + '"');
     return;
   }
   if(category == null ||
-     !(category + '').match(/^([0-2]|unarmed|simple|martial)$/i)) {
+     !(category + '').match(/^(Unarmed|Simple|Martial|Advanced)$/)) {
     console.log('Bad category "' + category + '" for weapon ' + name);
     return;
   }
-  if(!Array.isArray(properties)) {
-    console.log('Bad properties list "' + properties + '" for weapon ' + name);
+  if(typeof price == 'string' && price.match(/^0\.\d+$/))
+    price = +price;
+  if(typeof price != 'number') {
+    console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^(((\d*d)?\d+)([\-+]\d+)?)$/);
+  let matchInfo = (damage + '').match(/^\d(d\d+)?([BPS])$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
+    return;
+  }
+  if(bulk == 'L')
+    bulk = 0.1;
+  if(typeof bulk != 'number') {
+    console.log('Bad bulk "' + bulk + '" for weapon ' + name);
+    return;
+  }
+  if(hands != 1 && hands != 2) {
+    console.log('Bad hands "' + hands + '" for weapon ' + name);
+    return;
+  }
+  if(!(group+'').match(/^(Axe|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Spear|Sword)$/)) {
+    console.log('Bad group "' + group + '" for weapon ' + name);
+    return;
+  }
+  if(!Array.isArray(traits)) {
+    console.log('Bad traits list "' + traits + '" for weapon ' + name);
     return;
   }
   if(range && typeof range != 'number') {
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
-  if((category + '').match(/^[0-2]$/))
-    ; // empty
-  else if(category.match(/^unarmed$/i))
-    category = 0;
-  else if(category.match(/^simple$/i))
-    category = 1;
-  else if(category.match(/^martial$/i))
-    category = 2;
-
-  let isFinessed = properties.includes('finesse') || properties.includes('Fi');
-  let isRanged = properties.includes('ranged') || properties.includes('R');
-  let is2h = properties.includes('two-handed') || properties.includes('2h');
+  let isRanged = group.match(/Bow|Dart|Sling/);
 
   damage = matchInfo[1];
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3' + (range ? " R%4'" : '') + ')';
-
-  if(damage.startsWith('d'))
-    damage = '1' + damage;
+  let format = '%V (%1 %2%3%4' + (range ? " R%5'" : '') + ')';
 
   rules.defineChoice('notes',
     weaponName + ':' + format,
     'sanityNotes.nonproficientWeaponPenalty.' + name + ':%V attack'
   );
 
+/*
   if(category > 0) {
     rules.defineRule('sanityNotes.nonproficientWeaponPenalty.' + name,
       weaponName, '?', null,
@@ -5161,48 +5297,41 @@ Pathfinder2E.weaponRules = function(rules, name, category, properties, damage, r
     weaponName, '?', null,
     'sanityNotes.nonproficientWeaponPenalty.' + name, 'v', 'source == 0 ? null : 0'
   );
+*/
   rules.defineRule('attackBonus.' + name,
     weaponName, '=', '0',
-    isFinessed ? 'betterAttackAdjustment' :
-      isRanged ? 'combatNotes.dexterityAttackAdjustment' :
-                 'combatNotes.strengthAttackAdjustment', '+', null,
+    isRanged ? 'combatNotes.dexterityAttackAdjustment' :
+               'combatNotes.strengthAttackAdjustment', '+', null,
     'weaponProficiencyBonus.' + name, '+', null,
     'weaponAttackAdjustment.' + name, '+', null
   );
   rules.defineRule('damageBonus.' + name,
     weaponName, '=', '0',
-    isFinessed ? 'betterDamageAdjustment' :
-      isRanged ? 'combatNotes.dexterityDamageAdjustment' :
-                 'combatNotes.strengthDamageAdjustment', '+', null,
+    isRanged ? 'combatNotes.dexterityDamageAdjustment' :
+               'combatNotes.strengthDamageAdjustment', '+', null,
     'weaponDamageAdjustment.' + name, '+', null
   );
-  if(!range) {
-    rules.defineRule('attackBonus.' + name, 'monkMeleeAttackBonus', '+', null);
-    rules.defineRule('damageBonus.' + name, 'monkMeleeDamageBonus', '+', null);
-  }
 
   rules.defineRule(weaponName + '.1',
     'attackBonus.' + name, '=', 'source >= 0 ? "+" + source : source'
   );
   rules.defineRule(weaponName + '.2', weaponName, '=', '"' + damage + '"');
-  if(properties.includes('Ve') || properties.includes('versatile'))
-    rules.defineRule(weaponName + '.2',
-      'shield', '=', 'source == "None" ? Pathfinder2E.VERSATILE_WEAPON_DAMAGE["' + damage + '"] : null'
-    );
   rules.defineRule(weaponName + '.3',
     'damageBonus.' + name, '=', 'source > 0 ? "+" + source : source == 0 ? "" : source'
   );
+  rules.defineRule
+    (weaponName + '.4', weaponName, '=', '"' + matchInfo[2] + '"');
   if(range) {
     rules.defineRule('range.' + name,
       weaponName, '=', range,
       'weaponRangeAdjustment.' + name, '+', null
     );
-    rules.defineRule(weaponName + '.4', 'range.' + name, '=', null);
+    rules.defineRule(weaponName + '.5', 'range.' + name, '=', null);
   } else {
     rules.defineRule(weaponName + '.2', 'monkMeleeDieBonus', '^', null);
   }
 
-  if(is2h)
+  if(hands == 2)
     rules.defineRule
       ('features.Two-Handed Weapon With Shield', weaponName, '=', '1');
 
@@ -6061,15 +6190,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'name') {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
-    attrs = this.applyRules(attributes);
-    choices = [''];
-    for(attr in this.getChoices('shields')) {
-      if(attr == 'None' ||
-         attrs['armorProficiency.Shield'] ||
-         attrs['armorProficiency.' + attr]) {
-        choices.push(attr);
-      }
-    }
+    // TODO The rules have no restrictions on shield use; give, e.g., Wizards
+    // no shield?
+    choices = Object.keys(this.getChoices('shields'));
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'spells') {
     let availableSpellsByGroupAndLevel = {};
@@ -6101,23 +6224,20 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let weapons = this.getChoices('weapons');
     attrs = this.applyRules(attributes);
     choices = [];
+    howMany = 3;
     for(attr in weapons) {
-      let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
-      if(category == null)
-        category = 0;
-      else if((category + '').match(/simple/i))
-        category = 1;
-      else if((category + '').match(/martial/i))
-        category = 2;
-      if(category == 0 ||
-         attrs['weaponProficiency.Martial'] ||
-         category == 1 && attrs['weaponProficiency.Simple'] ||
-         attrs['weaponProficiency.' + attr]) {
-        choices.push(attr);
+      if(attributes['weapons.' + attr]) {
+        howMany--;
+        continue;
       }
+      let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
+      if(weapons[attr].includes('Uncommon'))
+        continue; // TODO
+      if(attrs['rank.' + category + ' Weapons'])
+        choices.push(attr);
     }
-    pickAttrs(attributes, 'weapons.', choices,
-              3 - QuilvynUtils.sumMatching(attributes, /^weapons\./), 1);
+    if(howMany > 0)
+      pickAttrs(attributes, 'weapons.', choices, howMany, 1);
   } else if(this.getChoices(attribute + 's') != null) {
     attributes[attribute] =
       QuilvynUtils.randomKey(this.getChoices(attribute + 's'));
