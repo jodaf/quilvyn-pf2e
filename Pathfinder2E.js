@@ -189,9 +189,9 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,any'
 };
 Pathfinder2E.ARMORS = {
-  'None':'Category=Unarmored Price=0 AC=0 Dex=5 Check=0 Str=0 Speed=0 Bulk=0',
+  'None':'Category=Unarmored Price=0 AC=0 Check=0 Str=0 Speed=0 Bulk=0',
   "Explorer's Clothing":
-    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+    'Category=Unarmored Price=0.1 AC=0 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
   'Padded':
     'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
   'Leather':
@@ -4662,7 +4662,7 @@ Pathfinder2E.armorRules = function(
     console.log('Bad ac "' + ac + '" for armor ' + name);
     return;
   }
-  if(typeof maxDex != 'number') {
+  if(maxDex && typeof maxDex != 'number') {
     console.log('Bad max dex "' + maxDex + '" for armor ' + name);
     return;
   }
@@ -4704,16 +4704,24 @@ Pathfinder2E.armorRules = function(
   rules.armorStats.speed[name] = speedPenalty;
   rules.armorStats.str[name] = minStr;
 
-  rules.defineRule('armorClass',
-    '', '=', '10',
-    'armor', '+', QuilvynUtils.dictLit(rules.armorStats.ac) + '[source]'
+  rules.defineRule('armorDexLimit',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.dex) + '[source]'
   );
   rules.defineRule('armorStrRequirement',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.minStr) + '[source]'
   );
-  rules.defineRule('combatNotes.dexterityArmorClassAdjustment',
-    'armor', 'v', QuilvynUtils.dictLit(rules.armorStats.dex) + '[source]'
+
+  rules.defineChoice('notes', 'armorClass:%V (dexterity%1; %2)');
+  rules.defineRule('armorClass',
+    '', '=', '10',
+    'armor', '+', QuilvynUtils.dictLit(rules.armorStats.ac) + '[source]'
   );
+  rules.defineRule('armorClass.1',
+    '', '=', '""',
+    'armorDexLimit', '=', '" (" + source + " max)"'
+  );
+  // TODO
+  rules.defineRule('armorClass.2', '', '=', '"FILL"');
 
 };
 
@@ -5740,7 +5748,7 @@ Pathfinder2E.initialEditorElements = function() {
   ];
   let editorElements = [
     ['name', 'Name', 'text', [20]],
-    ['ancestry', 'Ancestry', 'select-one', 'ancestries'],
+    ['ancestry', 'Ancestry', 'select-one', 'ancestrys'],
     ['background', 'Background', 'select-one', 'backgrounds'],
     ['experience', 'Experience', 'text', [8]],
     ['levels', 'Levels', 'bag', 'levels'],
