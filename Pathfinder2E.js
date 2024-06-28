@@ -407,7 +407,11 @@ Pathfinder2E.CLASSES = {
       '"13:Greater Juggernaut","13:Medium Armor Expertise","13:Weapon Fury",' +
       '"15:Greater Weapon Specialization","15:Indomitable Will",' +
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
-      '"19:Devastator"',
+      '"19:Devastator" ' +
+    'Selectables=' +
+      '"1:Animal Instinct:Instinct","1:Dragon Instinct:Instinct",' +
+      '"1:Fury Instinct:Instinct","1:Giant Instinct:Instinct",' +
+      '"1:Spirit Instinct:Instinct"',
   'Bard':
     'Ability=charisma HitPoints=8 ' +
     'Features=' +
@@ -2123,8 +2127,7 @@ Pathfinder2E.FEATURES = {
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
   'Skilled Heritage Human':
     'Section=skill Note="%{level<5?\'Trained\':\'Expert\'} in chosen skill"',
-  'Slow':'Section=ability Note="-10 Speed"',
-  'Small':'Section=ability Note="-5 Speed"',
+  'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
@@ -2509,16 +2512,34 @@ Pathfinder2E.FEATURES = {
   'Perfect Mutagen':'Section=feature Note="FILL"',
 
   // Barbarian
+  'Animal Instinct':'Section=feature Note="FILL"',
   'Armor Of Fury':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Barbarian Feats':'Section=feature Note="%V selections"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
-  'Brutality':'Section=feature Note="FILL"',
-  'Deny Advantage':'Section=feature Note="FILL"',
-  'Devastator':'Section=feature Note="FILL"',
-  'Greater Juggernaut':'Section=feature Note="FILL"',
+  'Brutality':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"May use melee and unarmed weapon specialization features while raging"',
+  'Deny Advantage':
+    'Section=combat ' +
+    'Note="Foes of equal or lower level cannot inflict flat-footed"',
+  'Devastator':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Class Master (Barbarian)",' +
+      '"Successful melee Strikes ignore 10 points of physical resistance"',
+  'Dragon Instinct':'Section=feature Note="FILL"',
+  'Fury Instinct':'Section=feature Note="FILL"',
+  'Giant Instinct':'Section=feature Note="FILL"',
+  'Greater Juggernaut':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Fortitude)",' +
+      '"Critical failures on Fortitude saves are normal failures/Suffers half damage on failed Fortitude save"',
   'Greater Weapon Specialization':
     'Section=combat Note="Increased Weapon Specialization effects"',
   'Heightened Senses':'Section=skill Note="Perception Master"',
@@ -2527,51 +2548,94 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
-  'Instinct':'Section=feature Note="FILL"',
+  'Instinct':'Section=feature Note="1 selection"',
   // Juggernaut as above
   'Lightning Reflexes':'Section=save Note="Save Expert (Reflex)"',
   // Medium Armor Expertise as above
-  'Mighty Rage':'Section=feature Note="FILL"',
-  'Quick Rage':'Section=feature Note="FILL"',
-  'Rage':'Section=combat Note="May use Rage again after 1 turn"',
-  'Raging Resistance':'Section=feature Note="FILL"',
+  'Mighty Rage':'Section=combat Note="May use 2-action rage activities"',
+  'Quick Rage':'Section=combat Note="May use Rage again after 1 turn"',
+  'Rage':
+    'Section=combat ' +
+    'Note="May gain %{level+constitutionModifier} HP and +2 melee damage, and suffer -1 AC and no concentration actions, for 1 min; requires 1 min break between rages"',
+  'Raging Resistance':
+    'Section=save ' +
+    'Note="Resistance %{3+constitutionModifier} to instinct damage type while raging"',
+  'Spirit Instinct':'Section=feature Note="FILL"',
   'Weapon Fury':
     'Section=combat ' +
     'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
-  'Acute Vision':'Section=feature Note="FILL"',
-  'Moment Of Clarity':'Section=feature Note="FILL"',
-  'Raging Intimidation':'Section=feature Note="FILL"',
-  'Raging Thrower':'Section=feature Note="FILL"',
+  'Acute Vision':'Section=feature Note="Has Darkvision during rage"',
+  'Moment Of Clarity':
+    'Section=combat Note="May use concentration actions during rage"',
+  'Raging Intimidation':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has Intimidating Glare%1 features",' +
+      '"May use Demoralize during rage"',
+  'Raging Thrower':
+    'Section=combat ' +
+    'Note="+2 thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
   'Sudden Charge':
     'Section=combat Note="May make a melee Strike after a double Stride"',
-  'Acute Scent':'Section=feature Note="FILL"',
-  'Furious Finish':'Section=feature Note="FILL"',
-  'No Escape':'Section=feature Note="FILL"',
-  'Second Wind':'Section=feature Note="FILL"',
-  'Shake It Off':'Section=feature Note="FILL"',
-  'Fast Movement':'Section=feature Note="FILL"',
-  'Raging Athlete':'Section=feature Note="FILL"',
+  'Acute Scent':'Section=ability Note="R30\' imprecise scent"',
+  'Furious Finish':
+    'Section=combat ' +
+    'Note="May gain additional damage on a Strike during rage; suffers loss of rage and fatigue until 10 min rest"',
+  'No Escape':
+    'Section=combat ' +
+    'Note="May use Reaction to Stride along with retreating foe"',
+  'Second Wind':
+    'Section=combat ' +
+    'Note="May start a second rage without waiting; suffers fatigue afterwards until 10 min rest"',
+  'Shake It Off':
+    'Section=combat ' +
+    'Note="May reduce frightened condition by 1 and gain a Fortitude save to reduce sickened condition during rage"',
+  'Fast Movement':'Section=combat Note="+10 speed during rage"',
+  'Raging Athlete':
+    'Section=skill ' +
+    'Note="Gains %{speed} climb and swim speed, -10 jump DC, and 5\'/%{speed>=30?20:15}\' vertical/horizontal Leap during rage"',
   'Swipe':'Section=combat Note="May attack two adjacent foes with one Strike"',
-  'Wounded Rage':'Section=feature Note="FILL"',
-  'Animal Skin':'Section=feature Note="FILL"',
+  'Wounded Rage':'Section=combat Note="May use a Reaction to enter rage"',
+  'Animal Skin':
+    'Section=combat ' +
+    'Note=' +
+      '"Armor Expert (Unarmored Defense)",' +
+      // TODO Dex cap
+      '"+%{$\'features.Greater Juggernaut\'?3:2} AC during rage"',
   'Attack Of Opportunity':
     'Section=combat ' +
     'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
-  'Butal Bully':'Section=feature Note="FILL"',
-  'Cleave':'Section=feature Note="FILL"',
-  "Dragon's Rage Breath":'Section=feature Note="FILL"',
-  "Giant's Stature":'Section=feature Note="FILL"',
-  "Spirit's Interference":'Section=feature Note="FILL"',
-  'Animal Rage':'Section=feature Note="FILL"',
-  'Furious Bully':'Section=feature Note="FILL"',
-  'Renewed Vigor':'Section=feature Note="FILL"',
-  'Share Rage':'Section=feature Note="FILL"',
+  'Butal Bully':
+    'Section=combat ' +
+    'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier} damage"',
+  'Cleave':
+    'Section=combat ' +
+    'Note="May use a Reaction after killing or knocking unconscious to Strike an adjacent foe"',
+  "Dragon's Rage Breath":
+    'Section=combat ' +
+    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line (Ref neg; half damage for a 2nd breath use within 1 hr)"',
+  "Giant's Stature":
+    'Section=combat Note="May grow to Large size until rage ends"',
+  "Spirit's Interference":
+    'Section=combat ' +
+    'Note="Foe ranged attacks require a DC 5 flat check until rage ends"',
+  'Animal Rage':
+    'Section=magic ' +
+    'Note="May use <i>Animal Form</i> to transform into spirit animal at will"',
+  'Furious Bully':'Section=combat Note="+2 Athletics for attacks during range"',
+  'Renewed Vigor':
+    'Section=combat ' +
+    'Note="May gain %{level//2+constitutionModifier} temporary HP"',
+  'Share Rage':
+    'Section=combat Note="R30\' May give an ally the effects of rage 1/rage"',
   'Sudden Leap':
     'Section=combat ' +
     'Note="May use 2 actions to make a Strike during a Leap, High Jump, or Long Jump"',
-  'Thrash':'Section=feature Note="FILL"',
+  'Thrash':
+    'Section=combat ' +
+    'Note="May inflict %{strengthModifier+2}+specialization damge to grabbed foe (Fort neg)"',
   'Come And Get Me':'Section=feature Note="FILL"',
   'Furious Sprint':'Section=feature Note="FILL"',
   'Great Cleave':'Section=feature Note="FILL"',
@@ -4139,7 +4203,7 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
       (a + '.1', a + 'Modifier', '=', 'source>=0 ? "+" + source : source');
   }
 
-  rules.defineRule('speed', '', '=', '30');
+  rules.defineRule('speed', '', '=', '25');
 
 };
 
@@ -4964,7 +5028,22 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Barbarian') {
     rules.defineRule
+      ('selectableFeatureCount.Barbarian (Instinct)', classLevel, '=', '1');
+    rules.defineRule
       ('skillNotes.barbarianSkills', 'intelligenceModifier', '=', '3 + source');
+    rules.defineRule
+      ('skillNotes.ragingIntimidation', 'rank.Intimidation', '?', null);
+    rules.defineRule('skillNotes.ragingIntimidation.1',
+      'skillNotes.ragingIntimidation', '?', null,
+      'level', '=', 'source>=15 ? " and Scare To Death" : ""',
+      'rank.Intimidation', '=', 'source<4 ? "" : null'
+    );
+    rules.defineRule('features.Intimidating Glare',
+      'skillNotes.ragingIntimidation', '=', '1'
+    );
+    rules.defineRule('features.Scare To Death',
+      'skillNotes.ragingIntimidation.1', '=', 'source=="" ? null : 1'
+    );
   } else if(name == 'Bard') {
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
