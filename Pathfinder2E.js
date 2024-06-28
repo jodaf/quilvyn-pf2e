@@ -379,6 +379,7 @@ Pathfinder2E.CLASSES = {
       '"1:Alchemist Skills",' +
       '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Class Trained (Alchemist)",' +
       '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
       '"1:Alchemist Feats","2:Skill Feats","3:General Feats",' +
@@ -398,6 +399,7 @@ Pathfinder2E.CLASSES = {
       '"1:Barbarian Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Class Trained (Barbarian)",' +
       '"1:Rage","1:Instinct","1:Barbarian Feats","2:Skill Feats",' +
       '"3:Deny Advantage","3:General Feats","3:Skill Increases",' +
       '"5:Brutality","7:Juggernaut","7:Weapon Specialization",' +
@@ -415,6 +417,7 @@ Pathfinder2E.CLASSES = {
       '"1:Bard Skills",' +
       '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Unarmored)",' +
+      '"1:Class Trained (Bard)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
       '"3:Lightning Reflexes","3:Signature Spells","3:Skill Increases",' +
@@ -432,6 +435,7 @@ Pathfinder2E.CLASSES = {
       '"1:Champion Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
+      '"1:Class Trained (Champion)",' +
       '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
       '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
@@ -451,6 +455,7 @@ Pathfinder2E.CLASSES = {
       '"1:Cleric Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
       '"1:Armor Trained (Unarmored)",' +
+      '"1:Class Trained (Cleric)",' +
       '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","2:Cleric Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases","5:Alertness",' +
       '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
@@ -464,6 +469,7 @@ Pathfinder2E.CLASSES = {
       '"1:Druid Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Class Trained (Druid)",' +
       '"1:Primal Spellcasting","1:Druidic Language","1:Druidic Order",' +
       '"1:Shield Block","1:Wild Empathy","2:Druid Feats","2:Skill Feats",' +
       '"3:Alertness","3:General Feats","3:Great Fortitude",' +
@@ -480,6 +486,7 @@ Pathfinder2E.CLASSES = {
       '"1:Fighter Skills",' +
       '"1:Weapon Expert (Simple Weapons; Martial Weapons; Unarmed)","1:Weapon Trained (Advanced Weapons)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
+      '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases",' +
       '"5:Fighter Weapon Mastery","7:Battlefield Surveyor",' +
@@ -513,6 +520,7 @@ Pathfinder2E.CLASSES = {
       '"1:Ranger Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Class Trained (Ranger)",' +
       '"1:Hunt Prey","1:Hunter\'s Edge","1:Ranger Feats","2:Skill Feats",' +
       '"3:General Feats","3:Iron Will","3:Skill Increases",' +
       '"5:Ranger Weapon Expertise","5:Trackless Step","7:Evasion",' +
@@ -531,6 +539,7 @@ Pathfinder2E.CLASSES = {
       '"1:Rogue Skills",' +
       '"1:Weapon Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)",' +
       '"1:Armor Trained (Light Armor; Unarmored)",' +
+      '"1:Class Trained (Rogue)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"1:Rogue Feats","1:Skill Feats","2:Skill Increases",' +
       '"3:Deny Advantage","3:General Feats","5:Weapon Tricks","7:Evasion",' +
@@ -548,6 +557,7 @@ Pathfinder2E.CLASSES = {
       '"1:Sorcerer Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
       '"1:Armor Trained (Unarmored)",' +
+      '"1:Class Trained (Sorcerer)",' +
       '"1:Bloodline","1:Sorcerer Spellcasting","1:Spell Repertoire",' +
       '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
       '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
@@ -564,6 +574,7 @@ Pathfinder2E.CLASSES = {
       '"1:Wizard Skills",' +
       '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed)",' +
       '"1:Armor Trained (Unarmored)",' +
+      '"1:Class Trained (Wizard)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
@@ -2125,7 +2136,7 @@ Pathfinder2E.FEATURES = {
   'Unbreakable Goblin':
     'Section=combat,save ' +
     'Note="+4 Hit Points","Suffers falling damage as half distance"',
-  'Versatile Heritage Human':'Section=combat Note="+1 General Feat"',
+  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
   'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
     'Section=combat ' +
@@ -2880,8 +2891,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each dy"',
   // Evasion as above
-  // TODO Fighter DC Expert
-  'Fighter Expertise':'Section=feature Note="FILL"',
+  'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
   'Fighter Skills':
     'Section=skill ' +
@@ -2894,10 +2904,9 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Increased Combat Flexibility effects"',
   // Juggernaut as above
   // Shield Block as below
-  // TODO Fighter class DC Master
   'Versatile Legend':
     'Section=combat ' +
-    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Master (Advanced Weapons)"',
+    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Master (Advanced Weapons)/Class Master (Fighter)"',
   'Weapon Legend':
     'Section=combat,combat ' +
     'Note=' +
@@ -4165,6 +4174,65 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.choiceRules(rules, 'Weapon', w, weapons[w]);
   }
 
+  rules.defineRule('armorDexBonus',
+    'dexterityModifier', '=', null,
+    'armorDexCap', 'v', null
+  );
+  rules.defineChoice('notes',
+    'armorClass:%V (dexterity%1; %2)',
+    'shield:%V%1%2%3%4'
+  );
+  rules.defineRule('armorClass',
+    '', '=', '10',
+    'armorACBonus', '+', null,
+    'armorDexBonus', '+', null,
+    'rank.Armor', '+', null,
+    'rankLevelBonus.Armor', '+', null
+  );
+  rules.defineRule('armorClass.1',
+    '', '=', '""',
+    'armorDexCap', '=', '" (" + source + " max)"'
+  );
+  rules.defineRule
+    ('armorClass.2', 'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source]');
+  rules.defineRule('rank.Armor',
+    'armorCategory', '=', '0',
+    'rank.Unarmored', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
+    'rank.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
+    'rank.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
+    'rank.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
+  );
+  rules.defineRule('rankLevelBonus.Armor',
+    'rank.Armor', '=', 'source>0 ? 0 : null',
+    'level', '+', null
+  );
+  rules.defineRule('shield.1',
+    '', '=', '""',
+    'shieldACBonus', '=', 'source>0 ? " (+" + source + " AC when raised" : ""'
+  );
+  rules.defineRule('shield.2',
+    '', '=', '""',
+    'shieldHardness', '=', 'source>0 ? "; hardness " + source : ""'
+  );
+  rules.defineRule('shield.3',
+    '', '=', '""',
+    'shieldHP', '=', 'source>0 ? "; HP " + source : ""'
+  );
+  rules.defineRule('shield.4',
+    '', '=', '""',
+    'shieldACBonus', '=', 'source>0 ? ")" : ""'
+  );
+
+  rules.defineRule
+    ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
+  rules.defineRule
+    ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
+  // For weapons with the finesse trait
+  rules.defineRule('maxStrOrDexModifier',
+    'strengthModifier', '=', null,
+    'dexterityModifier', '^', null
+  );
+
   let saves =
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
@@ -4692,6 +4760,7 @@ Pathfinder2E.armorRules = function(
   if(rules.armorStats == null) {
     rules.armorStats = {
       ac:{},
+      category:{},
       dex:{},
       check:{},
       speed:{},
@@ -4699,29 +4768,24 @@ Pathfinder2E.armorRules = function(
     };
   }
   rules.armorStats.ac[name] = ac;
+  rules.armorStats.category[name] = category;
   rules.armorStats.dex[name] = maxDex;
   rules.armorStats.check[name] = checkPenalty;
   rules.armorStats.speed[name] = speedPenalty;
   rules.armorStats.str[name] = minStr;
 
-  rules.defineRule('armorDexLimit',
+  rules.defineRule('armorACBonus',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.ac) + '[source]'
+  );
+  rules.defineRule('armorCategory',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.category) + '[source]'
+  );
+  rules.defineRule('armorDexCap',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.dex) + '[source]'
   );
   rules.defineRule('armorStrRequirement',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.minStr) + '[source]'
   );
-
-  rules.defineChoice('notes', 'armorClass:%V (dexterity%1; %2)');
-  rules.defineRule('armorClass',
-    '', '=', '10',
-    'armor', '+', QuilvynUtils.dictLit(rules.armorStats.ac) + '[source]'
-  );
-  rules.defineRule('armorClass.1',
-    '', '=', '""',
-    'armorDexLimit', '=', '" (" + source + " max)"'
-  );
-  // TODO
-  rules.defineRule('armorClass.2', '', '=', '"FILL"');
 
 };
 
@@ -4861,6 +4925,29 @@ Pathfinder2E.classRules = function(
   );
   rules.defineRule
     ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
+
+  let classAbilityModifier = abilities[0];
+  if(abilities.length > 1) {
+    classAbilityModifier = 'bestAbilityModifier.' + name;
+    rules.defineRule
+      (classAbilityModifier, abilities[0] + 'Modifier', '=', null);
+    for(let i = 1; i < abilities.length; i++)
+      rules.defineRule
+        (classAbilityModifier, abilities[i] + 'Modifier', '^=', null);
+  }
+  rules.defineRule('classDifficultyClass.' + name,
+    'levels.' + name, '?', null,
+    classAbilityModifier, '=', '10 + source',
+    'rankBonus.' + name, '+', null
+  );
+  rules.defineRule('rankLevelBonus.' + name,
+    'rank.' + name, '=', 'source>0 ? 0 : null',
+    'levels.' + name, '+', null
+  );
+  rules.defineRule('rankBonus.' + name,
+    'rank.' + name, '=', '2 * source',
+    'rankLevelBonus.' + name, '+', null
+  );
 
 };
 
@@ -5063,6 +5150,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
  */
 Pathfinder2E.featureRules = function(rules, name, sections, notes) {
   SRD35.featureRules(rules, name, sections, notes);
+  for(let i = 0; i < sections.length; i++) {
+    let note = notes[i];
+    let section = sections[i];
+    let noteName =
+      section + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+    let matchInfo =
+      note.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
+    if(matchInfo) {
+      let rank =
+        matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
+      matchInfo[3].split(/;\s*/).forEach(element => {
+        if(!element.match(/Choose/))
+          rules.defineRule('rank.' + element, noteName, '^=', rank);
+      });
+    }
+    matchInfo = note.match(/Perception\s(Expert|Master|Trained)$/i);
+    if(matchInfo) {
+      rules.defineRule('rank.Perception',
+        noteName, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
+      );
+    }
+  }
 };
 
 /*
@@ -5152,17 +5261,27 @@ Pathfinder2E.shieldRules = function(
   if(rules.shieldStats == null) {
     rules.shieldStats = {
       ac:{},
-      speed:{}
+      speed:{},
+      hardness:{},
+      hp:{}
     };
   }
   rules.shieldStats.ac[name] = ac;
   rules.shieldStats.speed[name] = speed;
+  rules.shieldStats.hardness[name] = hardness;
+  rules.shieldStats.hp[name] = hp;
 
-  rules.defineRule('armorClass',
-    'shield', '+', QuilvynUtils.dictLit(rules.shieldStats.ac) + '[source]'
+  rules.defineRule('shieldACBonus',
+    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.ac) + '[source]'
   );
-  rules.defineRule('speed',
-    'shield', '+', QuilvynUtils.dictLit(rules.shieldStats.speed) + '[source]'
+  rules.defineRule('shieldSpeedPenalty',
+    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.speed) + '[source]'
+  );
+  rules.defineRule('shieldHardness',
+    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hardness) + '[source]'
+  );
+  rules.defineRule('shieldHP',
+    'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hp) + '[source]'
   );
 
 };
@@ -5277,37 +5396,32 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
+  let isFinesse = traits.includes('Finesse');
   let isRanged = group.match(/Bow|Dart|Sling/);
+  let isPropulsive = traits.includes('Propulsive');
+  let isThrown = traits.includes('Thrown');
 
   damage = matchInfo[1];
+  let damageType = matchInfo[2];
+  traits.forEach(t => {
+    if(t.match(/^Versatile [BPS]$/))
+      damageType += '/' + t.charAt(t.length - 1);
+  });
+
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3%4' + (range ? " R%5'" : '') + ')';
+  let format = '%V (%1 %2%3 %4' + (range ? " R%5'" : '') + ')';
 
-  rules.defineChoice('notes',
-    weaponName + ':' + format,
-    'sanityNotes.nonproficientWeaponPenalty.' + name + ':%V attack'
-  );
+  rules.defineChoice('notes', weaponName + ':' + format);
 
-/*
-  if(category > 0) {
-    rules.defineRule('sanityNotes.nonproficientWeaponPenalty.' + name,
-      weaponName, '?', null,
-      'weaponProficiency.Martial', '^', '0',
-      'weaponProficiency.' + name, '^', '0'
-    );
-    if(category == 1) {
-      rules.defineRule('sanityNotes.nonproficientWeaponPenalty.' + name,
-        'weaponProficiency.Simple', '^', '0'
-      );
-    }
-  }
   rules.defineRule('weaponProficiencyBonus.' + name,
     weaponName, '?', null,
-    'sanityNotes.nonproficientWeaponPenalty.' + name, 'v', 'source == 0 ? null : 0'
+    'rank.' + category + ' Weapons', '=', null,
+    'rank.' + name, '^=', null,
+    'level', '+', null
   );
-*/
   rules.defineRule('attackBonus.' + name,
     weaponName, '=', '0',
+    isFinesse ? 'maxStrOrDexModifier' :
     isRanged ? 'combatNotes.dexterityAttackAdjustment' :
                'combatNotes.strengthAttackAdjustment', '+', null,
     'weaponProficiencyBonus.' + name, '+', null,
@@ -5315,37 +5429,31 @@ Pathfinder2E.weaponRules = function(
   );
   rules.defineRule('damageBonus.' + name,
     weaponName, '=', '0',
-    isRanged ? 'combatNotes.dexterityDamageAdjustment' :
-               'combatNotes.strengthDamageAdjustment', '+', null,
     'weaponDamageAdjustment.' + name, '+', null
   );
+  if(!isRanged || isThrown)
+    rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
+  else if(isPropulsive)
+    rules.defineRule('damageBonus.' + name,
+      'strengthModifier', '+', 'source<0 ? source : Math.floor(source / 2)'
+    );
 
   rules.defineRule(weaponName + '.1',
-    'attackBonus.' + name, '=', 'source >= 0 ? "+" + source : source'
+    'attackBonus.' + name, '=', 'QuilvynUtils.signed(source)'
   );
   rules.defineRule(weaponName + '.2', weaponName, '=', '"' + damage + '"');
   rules.defineRule(weaponName + '.3',
-    'damageBonus.' + name, '=', 'source > 0 ? "+" + source : source == 0 ? "" : source'
+    'damageBonus.' + name, '=', 'source == 0 ? "" : QuilvynUtils.signed(source)'
   );
   rules.defineRule
-    (weaponName + '.4', weaponName, '=', '"' + matchInfo[2] + '"');
+    (weaponName + '.4', weaponName, '=', '"' + damageType + '"');
   if(range) {
     rules.defineRule('range.' + name,
       weaponName, '=', range,
       'weaponRangeAdjustment.' + name, '+', null
     );
     rules.defineRule(weaponName + '.5', 'range.' + name, '=', null);
-  } else {
-    rules.defineRule(weaponName + '.2', 'monkMeleeDieBonus', '^', null);
   }
-
-  if(hands == 2)
-    rules.defineRule
-      ('features.Two-Handed Weapon With Shield', weaponName, '=', '1');
-
-  rules.defineRule('weaponProficiency.' + name,
-    'weaponsChosen.' + name, '=', 'source ? 1 : null'
-  );
 
 };
 
@@ -5444,13 +5552,14 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Name', within: 'Identity', format: '<b>%V</b>'},
               {name: 'Gender', within: 'Identity', format: ' -- <b>%V</b>'},
               {name: 'Heritage', within: 'Identity', format: ' <b>%V</b>'},
-              {name: 'Background', within: 'Identity', format: ' <b>%V</b>'},
               {name: 'Levels', within: 'Identity', format: ' <b>%V</b>',
                separator: '/'},
             {name: 'Hit Points', within: 'Section 1', format: '<b>HP</b> %V'},
             {name: 'Initiative', within: 'Section 1', format: '<b>Init</b> %V'},
             {name: 'Speed', within: 'Section 1', format: '<b>Speed</b> %V'},
             {name: 'Armor Class', within: 'Section 1', format: '<b>AC</b> %V'},
+            {name: 'Class Difficulty Class', within: 'Section 1',
+             format: '<b>Class DC</b>: %V', separator: '/'},
             {name: 'Weapons', within: 'Section 1', format: '<b>%N</b> %V',
              separator: '/'},
             {name: 'Alignment', within: 'Section 1', format: '<b>Ali</b> %V'},
@@ -5489,7 +5598,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Name', within: 'Identity', format: '<b>%V</b>'},
             {name: 'Gender', within: 'Identity', format: ' -- <b>%V</b>'},
             {name: 'Heritage', within: 'Identity', format: ' <b>%V</b>'},
-            {name: 'Background', within: 'Identity', format: ' <b>%V</b>'},
             {name: 'Levels', within: 'Identity', format: ' <b>%V</b>',
              separator: '/'},
           {name: 'Image Url', within: 'Header', format: '<img src="%V"/>'},
@@ -5572,9 +5680,8 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Initiative', within: 'CombatStats'},
               {name: 'Armor Class', within: 'CombatStats'},
               {name: 'Attacks Per Round', within: 'CombatStats'},
-            {name: 'CombatProfs', within: 'CombatPart', separator: innerSep},
-              {name: 'Armor Proficiency', within: 'CombatProfs', separator: listSep},
-              {name: 'Weapon Proficiency', within: 'CombatProfs', separator: listSep},
+              {name: 'Class Difficulty Class', within: 'CombatStats',
+               format: '<b>Class DC</b>: %V', separator: '; '},
             {name: 'Gear', within: 'CombatPart', separator: innerSep},
               {name: 'Armor', within: 'Gear'},
               {name: 'Shield', within: 'Gear'},
@@ -6230,6 +6337,12 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   } else if(attribute == 'weapons') {
     let weapons = this.getChoices('weapons');
+    let clas = 'Fighter';
+    for(attr in attributes) {
+      if(attr.match(/^levels\./))
+        clas = attr.replace('levels.', '');
+    }
+    let race = attributes.race || 'Human';
     attrs = this.applyRules(attributes);
     choices = [];
     howMany = 3;
@@ -6239,8 +6352,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         continue;
       }
       let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
-      if(weapons[attr].includes('Uncommon'))
-        continue; // TODO
+      if(weapons[attr].includes('Uncommon') &&
+         !weapons[attr].includes(clas) &&
+         !weapons[attr].includes(race))
+        continue;
       if(attrs['rank.' + category + ' Weapons'])
         choices.push(attr);
     }
