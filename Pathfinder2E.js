@@ -2599,7 +2599,7 @@ Pathfinder2E.FEATURES = {
   'Swipe':'Section=combat Note="May attack two adjacent foes with one Strike"',
   'Wounded Rage':'Section=combat Note="May use a Reaction to enter rage"',
   'Animal Skin':
-    'Section=combat ' +
+    'Section=combat,combat ' +
     'Note=' +
       '"Armor Expert (Unarmored Defense)",' +
       // TODO Dex cap
@@ -4240,11 +4240,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
   rules.defineRule('armorDexBonus',
     'dexterityModifier', '=', null,
-    'armorDexCap', 'v', null
+    'armorDexterityCap', 'v', null
   );
   rules.defineChoice('notes',
+    'abilityNotes.armorSpeedPenalty:%V Speed',
     'armorClass:%V (dexterity%1; %2)',
-    'shield:%V%1%2%3%4'
+    'shield:%V%1%2%3%4',
+    'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
   );
   rules.defineRule('armorClass',
     '', '=', '10',
@@ -4255,7 +4257,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   );
   rules.defineRule('armorClass.1',
     '', '=', '""',
-    'armorDexCap', '=', '" (" + source + " max)"'
+    'armorDexterityCap', '=', '" (" + source + " max)"'
   );
   rules.defineRule
     ('armorClass.2', 'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source]');
@@ -4287,6 +4289,11 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'shieldACBonus', '=', 'source>0 ? ")" : ""'
   );
 
+  rules.defineRule('abilityNotes.armorSpeedPenalty',
+    'armorSpeedReduction', '=', null,
+    'armorStrengthRequirement', '=', 'null',
+    'strength', '?', 'source<dict["armorStrengthRequirement"]'
+  );
   rules.defineRule
     ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
   rules.defineRule
@@ -4296,6 +4303,12 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'strengthModifier', '=', null,
     'dexterityModifier', '^', null
   );
+  rules.defineRule('skillNotes.armorSkillPenalty',
+    'armorCheckPenalty', '=', null,
+    'armorStrengthRequirement', '=', 'null',
+    'strength', '?', 'source<dict["armorStrengthRequirement"]'
+  );
+  rules.defineRule('speed', 'abilityNotes.armorSpeedPenalty', '+', null);
 
   let saves =
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
@@ -4844,11 +4857,17 @@ Pathfinder2E.armorRules = function(
   rules.defineRule('armorCategory',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.category) + '[source]'
   );
-  rules.defineRule('armorDexCap',
+  rules.defineRule('armorCheckPenalty',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.check) + '[source]'
+  );
+  rules.defineRule('armorDexterityCap',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.dex) + '[source]'
   );
-  rules.defineRule('armorStrRequirement',
-    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.minStr) + '[source]'
+  rules.defineRule('armorSpeedReduction',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.speed) + '[source]'
+  );
+  rules.defineRule('armorStrengthRequirement',
+    'armor', '=', QuilvynUtils.dictLit(rules.armorStats.str) + '[source]'
   );
 
 };
@@ -5403,6 +5422,9 @@ Pathfinder2E.skillRules = function(rules, name, ability) {
     'rankBonus.' + name, '+', null,
     'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
+  if(['dexterity', 'strength'].includes(ability))
+    rules.defineRule
+      ('skillModifiers.' + name, 'skillNotes.armorSkillPenalty', '+', null);
   rules.defineRule('skillModifiers.' + name + '.1',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
