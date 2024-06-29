@@ -94,7 +94,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
   'levels', 'boosts', 'features', 'feats', 'skills', 'languages',
-  'hitPoints', 'armor', 'weapons', 'shield', 'spells', 'boosts'
+  'armor', 'weapons', 'shield', 'spells', 'boosts'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard'];
 
@@ -2096,7 +2096,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Successful save vs. emotion is always a critical success"',
   'Half-Elf':'Section=feature Note="Has Low-Light Vision feature"',
-  'Half-Orc':'Section=combat Note="Has Low-Light Vision feature"',
+  'Half-Orc':'Section=feature Note="Has Low-Light Vision feature"',
   'Hillock Halfling':
     'Section=combat Note="Regains +%{level} HP from rest or treatment"',
   'Irongut Goblin':
@@ -2436,7 +2436,7 @@ Pathfinder2E.FEATURES = {
   // Alchemical Crafting as below
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
-    'Section=feature Note="Skill Trained (Crafting; Choose %V from any)"',
+    'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
   'Advanced Alchemy':'Section=feature Note="FILL"',
   'Quick Alchemy':'Section=feature Note="FILL"',
   'Formula Book':'Section=feature Note="FILL"',
@@ -4201,8 +4201,15 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
     rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
     rules.defineRule
       (a + '.1', a + 'Modifier', '=', 'source>=0 ? "+" + source : source');
+    rules.defineRule
+      ('abilityBoostsAllocated', 'abilityBoosts.' + a, '+=', null);
   }
 
+  rules.defineRule('constitutionHitPoints',
+    'constitutionModifier', '=', null,
+    'level', '*', null
+  );
+  rules.defineRule('hitPoints', 'constitutionHitPoints', '+=', null);
   rules.defineRule('speed', '', '=', '25');
 
 };
@@ -4231,7 +4238,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
       // enclosed in parentheses.
       'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
       'Effect=add ' +
-      'Attribute=' + prefix + 'AttackModifier,' + prefix + 'DamageModifier ' +
+      'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
       'Value="$1 || $2" ' +
       'Section=combat Note="%V Attack and damage"'
     );
@@ -4361,7 +4368,7 @@ Pathfinder2E.identityRules = function(
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('abilityNotes.abilityBoosts',
-    'level', '=', '4 + Math.floor(source / 5)',
+    'level', '=', '4 + Math.floor(source / 5) * 4',
     'abilityGeneration', '+', 'source.match(/4d6/) ? -1 : null'
   );
   rules.defineRule('featureNotes.ancestryFeats',
@@ -4761,6 +4768,7 @@ Pathfinder2E.ancestryRules = function(
   });
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
+  rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
 
 };
 
@@ -4771,6 +4779,11 @@ Pathfinder2E.ancestryRules = function(
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
+  } else if(name == 'Human') {
+    rules.defineRule
+      ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
+    rules.defineRule
+      ('features.Low-Light Vision', 'featureNotes.half-Orc', '=', '1');
   }
 };
 
@@ -5032,6 +5045,8 @@ Pathfinder2E.classRules = function(
     'rankLevelBonus.' + name, '+', null
   );
 
+  rules.defineRule('hitPoints', classLevel, '=', 'source * ' + hitPoints);
+
 };
 
 /*
@@ -5046,8 +5061,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Barbarian') {
-    rules.defineRule
-      ('selectableFeatureCount.Barbarian (Instinct)', classLevel, '=', '1');
+    rules.defineRule('selectableFeatureCount.Barbarian (Instinct)',
+      'featureNotes.instinct', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.barbarianSkills', 'intelligenceModifier', '=', '3 + source');
     rules.defineRule
@@ -5180,10 +5196,12 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
     QuilvynRules.prerequisiteRules
       (rules, 'sanity', prefix + 'Feat', 'feats.' + name, implies);
   rules.defineRule('features.' + name, 'feats.' + name, '=', null);
-  for(let i = 0; i < types.length; i++) {
-    if(types[i] != 'General')
-      rules.defineRule('sum' + types[i] + 'Feats', 'feats.' + name, '+=', null);
-  }
+  types.forEach(t => {
+    rules.defineRule('sum' + t + 'Feats', 'feats.' + name, '+=', null);
+    if(['Ancestry', 'Class', 'General', 'Skill'].includes(t))
+      QuilvynRules.validAllocationRules
+        (rules, t + 'Feats', 'featCount.' + t, 'sum' + t + 'Feats');
+  });
 
 };
 
@@ -5235,6 +5253,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'rank.Society', '=', null,
       'feats.Multilingual', '*', null
     );
+  } else if(name == 'Orc Sight') {
+    rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
@@ -5514,6 +5534,10 @@ Pathfinder2E.weaponRules = function(
 
   rules.defineChoice('notes', weaponName + ':' + format);
 
+  rules.defineRule
+    ('weaponAttackAdjustment.' + name, 'weapons.' + name, '=', '0');
+  rules.defineRule
+    ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
   rules.defineRule('weaponProficiencyBonus.' + name,
     weaponName, '?', null,
     'rank.' + category + ' Weapons', '=', null,
@@ -5979,11 +6003,10 @@ Pathfinder2E.initialEditorElements = function() {
     ['gender', 'Gender', 'text', [10]],
     ['deity', 'Deity', 'select-one', 'deitys'],
     ['origin', 'Origin', 'text', [20]],
-    ['feats', 'Feats', 'set', 'feats'],
+    ['feats', 'Feats', 'setbag', 'feats'],
     ['selectableFeatures', 'Selectable Features', 'set', 'selectableFeatures'],
-    ['skillBoosts', 'Skills', 'set', 'skills'],
+    ['skillBoosts', 'Skills', 'setbag', 'skills'],
     ['languages', 'Languages', 'set', 'languages'],
-    ['hitPoints', 'Hit Points', 'text', [4]],
     ['armor', 'Armor', 'select-one', 'armors'],
     ['shield', 'Shield', 'select-one', 'shields'],
     ['weapons', 'Weapons', 'bag', 'weapons'],
@@ -6335,20 +6358,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   } else if(attribute == 'gender') {
     attributes.gender = QuilvynUtils.random(0, 99) < 50 ? 'Female' : 'Male';
-  } else if(attribute == 'hitPoints') {
-    attributes.hitPoints = 0;
-    for(let clas in this.getChoices('levels')) {
-      if((attr = attributes['levels.' + clas]) == null)
-        continue;
-      matchInfo = this.getChoices('levels')[clas].match(/^((\d+)?d)?(\d+)$/);
-      let number = matchInfo == null || matchInfo[2] == null ||
-                   matchInfo[2] == '' ? 1 : matchInfo[2];
-      let sides = matchInfo == null || matchInfo[3] == null ||
-                  matchInfo[3] == '' ? 6 : matchInfo[3];
-      attributes.hitPoints += number * sides;
-      while(--attr > 0)
-        attributes.hitPoints += QuilvynUtils.random(number, number * sides);
-    }
   } else if(attribute == 'languages') {
     attrs = this.applyRules(attributes);
     howMany = attrs.languageCount;
