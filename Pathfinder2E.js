@@ -2891,29 +2891,58 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Section=combat ' +
     'Note="May inflict %{strengthModifier+2}+specialization damge to grabbed foe (Fort neg)"',
-  'Come And Get Me':'Section=feature Note="FILL"',
-  'Furious Sprint':'Section=feature Note="FILL"',
-  'Great Cleave':'Section=feature Note="FILL"',
-  'Knockback':'Section=feature Note="FILL"',
-  'Terrifying Howl':'Section=feature Note="FILL"',
-  "Dragon's Rage Wings":'Section=feature Note="FILL"',
-  'Furious Grab':'Section=feature Note="FILL"',
-  "Predator's Pounce":'Section=feature Note="FILL"',
+  'Come And Get Me':
+    'Section=combat ' +
+    'Note="May suffer flat-footed and +2 foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constutionModifier*2}) until rage ends"',
+  'Furious Sprint':
+    'Section=combat ' +
+    'Note="May use 2 actions to Stride %{speed*5}\' in a straight line, or 3 actions to Stride %{speed*8}\'"',
+  'Great Cleave':
+    'Section=combat ' +
+    'Note="May continue to Cleave adjacent foes as long as Strike incapacitates"',
+  'Knockback':'Section=combat Note="Successful Strike moves foe 5\'"',
+  'Terrifying Howl':
+    'Section=combat ' +
+    'Note="R30\' Successful Intimidate Demoralizes multiple foes"',
+  "Dragon's Rage Wings":
+    'Section=combat Note="May fly %{speed}\'/rd during rage"',
+  'Furious Grab':
+    'Section=combat ' +
+    'Note="May automatically grab foe after a successful Strike"',
+  "Predator's Pounce":
+    'Section=combat Note="May Strike after moving %{speed}\'"',
   "Spirit's Wrath":'Section=feature Note="FILL"',
-  "Titan's Stature":'Section=feature Note="FILL"',
-  'Awesome Blow':'Section=feature Note="FILL"',
-  "Giant's Lunge":'Section=feature Note="FILL"',
-  'Vengeful Strike':'Section=feature Note="FILL"',
+  "Titan's Stature":
+    'Section=combat Note="May grow to Huge size until rage ends"',
+  'Awesome Blow':
+    'Section=combat ' +
+    'Note="A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe"',
+  "Giant's Lunge":
+    'Section=combat ' +
+    'Note="Melee weapons and unarmed attacks gain reach 10\' until rage ends"',
+  'Vengeful Strike':
+    'Section=combat ' +
+    'Note="May use Reaction to make a Strike when hit by a Strike"',
   'Whirlwind Strike':
     'Section=combat Note="May use 3 actions to Strike each foe within reach"',
-  'Collateral Thrash':'Section=feature Note="FILL"',
+  'Collateral Thrash':
+    'Section=combat Note="Successful Thrash affects an adjacent foe"',
   'Dragon Transformation':'Section=feature Note="FILL"',
-  'Rackless Abandon':'Section=feature Note="FILL"',
-  'Brutal Critical':'Section=feature Note="FILL"',
-  'Perfect Clarity':'Section=feature Note="FILL"',
-  'Vicious Evisceration':'Section=feature Note="FILL"',
+  'Rackless Abandon':
+    'Section=feature ' +
+    'Note="When dropped to %{hitPoints//2} HP, may suffer -2 AC and -1 Saves to gain +2 attacks"',
+  'Brutal Critical':
+    'Section=combat ' +
+    'Note="Critical melee hits inflct +1 damage dia and 2 dice bleed damage"',
+  'Perfect Clarity':
+    'Section=combat ' +
+    'Note="May end rage for +2 reroll on failed attack or Will save"',
+  'Vicious Evisceration':
+    'Section=combat ' +
+    'Note="May use 2 actions to inflict drained 1 (critical success drained 2)"',
   'Contagious Rage':'Section=feature Note="FILL"',
-  'Quaking Stomp':'Section=feature Note="FILL"',
+  'Quaking Stomp':
+    'Section=magic Note="May use effects of <i>Earthquake</i> 1/10 min"',
 
   // Bard
   'Bard Weapon Expertise':'Section=feature Note="FILL"',
