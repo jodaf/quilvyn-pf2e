@@ -1649,16 +1649,16 @@ Pathfinder2E.FEATS = {
   'Twin Feint':'Type=Class,Rogue',
   "You're Next":'Type=Class,Rogue Require="rank.Intimidation >= 1"',
   'Brutal Beating':
-    'Type=Class,Rogue Require="level >= 2","features.Ruffian Racket"',
+    'Type=Class,Rogue Require="level >= 2","features.Ruffian"',
   'Distracting Feint':
-    'Type=Class,Rogue Require="level >= 2","features.Scoundrel Racket"',
+    'Type=Class,Rogue Require="level >= 2","features.Scoundrel"',
   'Minor Magic':'Type=Class,Rogue Require="level >= 2"',
   'Mobility':'Type=Class,Rogue Require="level >= 2"',
   // Quick Draw as above
   'Unbalancing Blow':
-    'Type=Class,Rogue Require="level >= 2","features.Thief Racket"',
+    'Type=Class,Rogue Require="level >= 2","features.Thief"',
   'Battle Assessment':'Type=Class,Rogue Require="level >= 4"',
-  'Dead Striker':'Type=Class,Rogue Require="level >= 4"',
+  'Dread Striker':'Type=Class,Rogue Require="level >= 4"',
   'Magical Trickster':'Type=Class,Rogue Require="level >= 4"',
   'Poison Weapon':'Type=Class,Rogue Require="level >= 4"',
   'Reactive Pursuit':'Type=Class,Rogue Require="level >= 4"',
@@ -1682,7 +1682,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Thief Racket",' +
+      '"features.Thief",' +
       '"features.Debilitating Strike"',
   'Sneak Savant':
     'Type=Class,Rogue Require="level >= 10","rank.Stealth >= 3"',
@@ -1690,13 +1690,13 @@ Pathfinder2E.FEATS = {
     'Type=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Scoundrel Racket",' +
+      '"features.Scoundrel",' +
       '"features.Debilitating Strike"',
   'Vicious Debilitations':
     'Type=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Ruffian Racket",' +
+      '"features.Ruffian",' +
       '"features.Debilitating Strike"',
   'Critical Debilitation':
     'Type=Class,Rogue Require="level >= 12","features.Debilitating Strike"',
@@ -2729,7 +2729,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Mastery':'Section=feature Note="FILL"',
   'Perpetual Perfection':'Section=feature Note="FILL"',
   'Medium Armor Mastery':'Section=feature Note="FILL"',
-  
+
   'Alchemical Familiar':'Section=feature Note="FILL"',
   'Alchemical Savant':'Section=feature Note="FILL"',
   'Far Lobber':'Section=feature Note="FILL"',
@@ -3004,7 +3004,7 @@ Pathfinder2E.FEATURES = {
   'Fatal Aria':'Section=feature Note="FILL"',
   'Perfect Encore':'Section=feature Note="FILL"',
   'Symphony Of The Muse':'Section=feature Note="FILL"',
-  
+
   // Champion
   // Alertness as above
   'Armor Expertise':
@@ -3570,19 +3570,20 @@ Pathfinder2E.FEATURES = {
   'Favored Terrain':'Section=feature Note="FILL"',
   "Hunter's Aim":'Section=feature Note="FILL"',
   'Monster Warden':'Section=feature Note="FILL"',
-  'Quick Draw':'Section=feature Note="FILL"',
+  'Quick Draw':
+    'Section=combat Note="May use 1 action to draw a weapon and Strike"',
   // Wild Empathy as above
   "Companion's Cry":'Section=feature Note="FILL"',
   'Disrupt Prey':'Section=feature Note="FILL"',
   'Far Shot':'Section=feature Note="FILL"',
   'Favored Enemy':'Section=feature Note="FILL"',
   'Running Reload':'Section=feature Note="FILL"',
-  "Scout's Warning":'Section=feature Note="FILL"',
+  "Scout's Warning":'Section=combat Note="May give allies +1 initiative"',
   'Snare Specialist':'Section=feature Note="FILL"',
   // Twin Parry as above
   // Mature Animal Companion as above
   'Quick Snares':'Section=feature Note="FILL"',
-  'Skirmish Strike':'Section=feature Note="FILL"',
+  'Skirmish Strike':'Section=combat Note="May use 1 action to Step and Strike"',
   'Snap Shot':'Section=feature Note="FILL"',
   'Swift Tracker':'Section=feature Note="FILL"',
   'Deadly Aim':'Section=feature Note="FILL"',
@@ -3646,23 +3647,38 @@ Pathfinder2E.FEATURES = {
   'Master Tricks':
     'Section=combat ' +
     'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)"',
-  'Rogue Expertise':'Section=feature Note="FILL"',
+  'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
   'Rogue Feats':'Section=feature Note="%V selections"',
   'Rogue Skills':
     'Section=skill Note="Skill Trained (Stealth; Choose %V from any)"',
   "Rogue's Racket":'Section=feature Note="1 selection"',
-  'Ruffian':'Section=feature Note="FILL"',
-  'Scoundrel':'Section=feature Note="FILL"',
+  'Ruffian':
+    'Section=combat,combat,skill ' +
+    'Note=' +
+      '"Armor %V (Medium Armor)",' +
+      '"May sneak attack with any simple weapon/May apply critical specialization on a successful Strike with a d8 or lighter weapon on a flat-footed foe",' +
+      '"Skill Trained (Intimidation)"',
+  'Scoundrel':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"A successful Feint inflicts flat-footed on foe vs. self attacks (critical success all attacks) for 1 rd",' +
+      '"Skill Trained (Deception; Diplomacy)"',
   'Slippery Mind':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
-  'Sneak Attack':'Section=feature Note="FILL"',
+  'Sneak Attack':
+    'Section=combat ' +
+    'Note="+%{(level+7)//6}d6 damage vs. flat-footed foe with agile, finesse, or projectile weapons"',
   'Surprise Attack':
     'Section=combat ' +
     'Note="May use Deception or Stealth for initiative to inflict flat-footed on creature that haven\'t acted"',
-  'Thief':'Section=feature Note="FILL"',
+  'Thief':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"+%{dexterityModifier-strengthModifier} damage with finesse weapons",' +
+      '"Skill Trained (Thievery)"',
   // Vigilant Senses as above
   'Weapon Tricks':
     'Section=combat,combat ' +
@@ -3671,38 +3687,85 @@ Pathfinder2E.FEATURES = {
       '"Critical success on a Strike vs. a flat-footed foe with an agile weapon, finesse weapon, unarmed attack, or rogue weapon applies specialization effect"',
   // Weapon Specialization as above
 
-  'Nimble Dodge':'Section=feature Note="FILL"',
-  'Trap Finder':'Section=feature Note="FILL"',
-  'Twin Feint':'Section=feature Note="FILL"',
-  "You're Next":'Section=feature Note="FILL"',
-  'Brutal Beating':'Section=feature Note="FILL"',
-  'Distracting Feint':'Section=feature Note="FILL"',
-  'Minor Magic':'Section=feature Note="FILL"',
-  'Mobility':'Section=feature Note="FILL"',
+  'Nimble Dodge':
+    'Section=combat Note="May use Reaction to gain +2 AC against 1 attacker"',
+  'Trap Finder':
+    'Section=combat,save,skill ' +
+    'Note=' +
+      '"+{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'ledgendary\' : \'master\'} in Thievery",' +
+      '"+{rank.Thievery>=3?2:1} vs. traps",' +
+      '"+{rank.Thievery>=3?2:1} AC vs. traps"',
+  'Twin Feint':
+    'Section=combat ' +
+    'Note="May Strike with each hand, inflicting flat-footed on the second"',
+  "You're Next":
+    'Section=combat ' +
+    'Note="May use %{rank.Intimidation>=4 ? \'a free action\' : \'Reaction\'} for a +2 Intimidation to Demoralize another foe after current foe drops"',
+  'Brutal Beating':
+    'Section=combat Note="Critical success on a Strike inflicts frightened 1"',
+  'Distracting Feint':
+    'Section=combat ' +
+    'Note="A successful Feint inflicts -2 Perception and Reflex saves"',
+  'Minor Magic':'Section=magic Note="Knows 2 cantrips from chosen tradition"',
+  'Mobility':
+    'Section=combat Note="May Stride half Speed without triggering reactions"',
   // Quick Draw as above
-  'Unbalancing Blow':'Section=feature Note="FILL"',
-  'Battle Assessment':'Section=feature Note="FILL"',
-  'Dead Striker':'Section=feature Note="FILL"',
-  'Magical Trickster':'Section=feature Note="FILL"',
-  'Poison Weapon':'Section=feature Note="FILL"',
-  'Reactive Pursuit':'Section=feature Note="FILL"',
-  'Sabotage':'Section=feature Note="FILL"',
+  'Unbalancing Blow':
+    'Section=combat ' +
+    'Note="Critical hits inflict flat-footed vs. self attacks for 1 rd"',
+  'Battle Assessment':
+    'Section=combat ' +
+    'Note="May use 1 action to learn enemy strenghts and weaknesses"',
+  'Dread Striker':
+    'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
+  'Magical Trickster':
+    'Section=magic ' +
+    'Note="Spell attacks vs. flat-footed foe inflict sneak attack damage"',
+  'Poison Weapon':
+    'Section=combat Note="May apply poison to piercing and slashing weapons"',
+  'Reactive Pursuit':
+    'Section=combat ' +
+    'Note="May use Reaction to remain adjacent to a retreating foe"',
+  'Sabotage':
+    'Section=skill Note="May use Thievery to damage an item in a foe\'s hand"',
   // Scout's Warning as above
-  'Gang Up':'Section=feature Note="FILL"',
-  'Light Step':'Section=feature Note="FILL"',
+  'Gang Up':
+    'Section=combat ' +
+    'Note="Attacks from allies inflict flat-footed on foes vs. self attacks"',
+  'Light Step':'Section=ability Note="Unaffected by difficult terrain"',
   // Skirmish Strike as above
-  'Twist The Knife':'Section=feature Note="FILL"',
+  'Twist The Knife':
+    'Section=combat ' +
+    'Note="Sneak attacks inflict %{(level+7)//6} persistent bleed damage"',
   // Blind-Fight as above
-  'Delay Trap':'Section=feature Note="FILL"',
-  'Improved Poison Weapon':'Section=feature Note="FILL"',
-  'Nimble Roll':'Section=feature Note="FILL"',
-  'Opportune Backstab':'Section=feature Note="FILL"',
-  'Sidestep':'Section=feature Note="FILL"',
-  'Sly Striker':'Section=feature Note="FILL"',
-  'Precise Debilitations':'Section=feature Note="FILL"',
-  'Sneak Savant':'Section=feature Note="FILL"',
-  'Tactical Debilitations':'Section=feature Note="FILL"',
-  'Vicious Debilitations':'Section=feature Note="FILL"',
+  'Delay Trap':
+    'Section=skill ' +
+    'Note="May attempt a +5 DC Thievery to delay or disable trap activation"',
+  'Improved Poison Weapon':
+    'Section=combat ' +
+    'Note="Poisoned weapons inflict +2d4 damage/Critical miss does not waste poison"',
+  'Nimble Roll':
+    'Section=save ' +
+    'Note="May use Nimble Dodge before a Reflex save; success allows 10\' Stride"',
+  'Opportune Backstab':
+    'Section=combat Note="May use Reaction to Strike a foe that hits an ally"',
+  'Sidestep':
+    'Section=combat ' +
+    'Note="May use Reaction to redirect a failed Strike on self to an adjacent creature"',
+  'Sly Striker':
+    'Section=combat ' +
+    'Note="Successful Strikes with sneak attack weapons inflict +%{level>=14 ? 2 : 1}d6 damage"',
+  'Precise Debilitations':
+    'Section=combat ' +
+    'Note="Debilitating Strike may inflict +2d6 damage or flat-footed"',
+  'Sneak Savant':
+    'Section=skill Note="Normal failures with Sneak actions are successes"',
+  'Tactical Debilitations':
+    'Section=combat ' +
+    'Note="Debilitating Strike may prevent reactions or flanking"',
+  'Vicious Debilitations':
+    'Section=combat ' +
+    'Note="Debilitating Strike may inflict weakness 5 to choice of weapon type or clumsy 1"',
   'Critical Debilitation':'Section=feature Note="FILL"',
   'Fantastic Leap':'Section=feature Note="FILL"',
   'Felling Shot':'Section=feature Note="FILL"',
@@ -5713,9 +5776,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Rogue (Racket)',
       "featureNotes.rogue'sRacket", '=', '1'
     );
+    rules.defineRule('combatNotes.ruffian',
+      '', '=', '"Trained"',
+      'rank.Light Armor', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
+    );
     rules.defineRule('featureNotes.rogueFeats', classLevel, '=', null);
     rules.defineRule('featureNotes.skillIncreases',
       classLevel, '^=', 'source>=2 ? Math.floor(source / 2) : null'
+    );
+    rules.defineRule('rank.Medium Armor',
+      'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
     rules.defineRule
       ('skillNotes.rogueSkills', 'intelligenceModifier', '=', '7 + source');
@@ -6696,7 +6766,7 @@ Pathfinder2E.randomName = function(ancestry) {
   };
   let consonants = {
     'Dwarf':'dgkmnprst', 'Elf':'fhlmnpqswy', 'Gnome':'bdghjlmnprstw',
-    'Goblin':'bdfghklmnprtwyz', 'Halfling':'bdfghlmnprst', 
+    'Goblin':'bdfghklmnprtwyz', 'Halfling':'bdfghlmnprst',
     'Human': 'bcdfghjklmnprstvwz'
   }[ancestry];
   let endConsonant = '';
