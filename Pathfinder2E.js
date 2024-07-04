@@ -295,7 +295,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Guard':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
-      '"1:Skill Trained (Intimidation; Legal Lore)","1:Quick Coercion"',
+      '"1:Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)","1:Quick Coercion"',
   'Herbalist':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
@@ -303,7 +303,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Hermit':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Nature; Choose 1 from Cave Lore, Desert)",' +
+      '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from Cave Lore, Desert Lore)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
@@ -2382,8 +2382,7 @@ Pathfinder2E.FEATURES = {
   'Sensate Gnome':
     'Section=skill ' +
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
-  'Skilled Heritage Human':
-    'Section=skill Note="%{level<5?\'Trained\':\'Expert\'} in chosen skill"',
+  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
@@ -5451,10 +5450,16 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
   } else if(name == 'Human') {
+    rules.defineRule('choiceCount.Skill',
+      'skillNotes.skilledHeritageHuman', '+=', 'source=="Expert" ? 2 : 1'
+    );
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Orc', '=', '1');
+    rules.defineRule('skillNotes.skilledHeritageHuman',
+      'level', '=', 'source<5 ? "Trained" : "Expert"'
+    );
   }
 };
 
@@ -5960,15 +5965,18 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
     if(matchInfo) {
       let rank =
         matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
+      let choices = '';
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+|%V)/);
         if(m)
-          rules.defineRule('choiceCount.' + matchInfo[1],
-            noteName, '+=', m[1] == '%V' ? 'source' : m[1]
-          );
+          choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
         else
           rules.defineRule('rank.' + element, noteName, '^=', rank);
       });
+      if(choices)
+        rules.defineRule('choiceCount.' + matchInfo[1],
+          noteName, '+=', choices.replace('+', '')
+        );
     }
     matchInfo = note.match(/Perception\s(Expert|Master|Trained)$/i);
     if(matchInfo) {
@@ -6305,18 +6313,21 @@ Pathfinder2E.featureListRules = function(
     let matchInfo =
       feature.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
     if(matchInfo) {
+      let choices = '';
       let rank =
         matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+)/);
         if(m)
-          rules.defineRule('choiceCount.' + matchInfo[1],
-            setName + '.' + feature, '+=', null
-          );
+          choices += '+' + m[1];
         else
           rules.defineRule
             ('rank.' + element, setName + '.' + feature, '^=', rank);
       });
+      if(choices)
+        rules.defineRule('choiceCount.' + matchInfo[1],
+          setName + '.' + feature, '+=', choices.replace('+', '')
+        );
     }
     matchInfo = feature.match(/Perception\s(Expert|Master|Trained)$/i);
     if(matchInfo) {
