@@ -332,7 +332,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Noble':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; Heraldry Lore)","1:Courtly Graces"',
+      '"1:Skill Trained (Society; Choose 1 from Geneology Lore, Heraldry Lore)","1:Courtly Graces"',
   'Nomad':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
@@ -350,7 +350,11 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
-      '"1:Assurance (chosen skill)"',
+      // TODO this will erroneously add feats for other trained skills
+      '"rank.Arcana>0 ? 1:Assurance (Arcana)",' +
+      '"rank.Nature>0  ? 1:Assurance (Nature)",' +
+      '"rank.Occultism>0  ? 1:Assurance (Occultism)",' +
+      '"rank.Religion>0  ? 1:Assurance (Religion)"',
   'Scout':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
