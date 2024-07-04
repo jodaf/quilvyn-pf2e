@@ -71,7 +71,7 @@ function Pathfinder2E() {
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
-    Pathfinder2E.LANGUAGES, Pathfinder2E.LORES, Pathfinder2E.SKILLS
+    Pathfinder2E.LANGUAGES, Pathfinder2E.SKILLS
   );
 
   Quilvyn.addRuleSet(rules);
@@ -227,7 +227,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Animal Whisperer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Nature; Choose 1 from Plains Lore, Swamp Lore)",' +
+      '"1:Skill Trained (Nature; Choose 1 from any terrain)",' +
       '"1:Train Animal"',
   'Artisan':
     'Features=' +
@@ -264,7 +264,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Emissary':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; City Lore)",1:Multilingual',
+      '"1:Skill Trained (Society; Choose 1 from any settlement)",1:Multilingual',
   'Entertainer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
@@ -303,7 +303,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Hermit':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from Cave Lore, Desert Lore)",' +
+      '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any terrain)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
@@ -336,7 +336,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Nomad':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Choose 1 from Desert Lore, Swamp Lore)",' +
+      '"1:Skill Trained (Survival; Choose 1 from any terrain)",' +
       '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
@@ -358,12 +358,12 @@ Pathfinder2E.BACKGROUNDS = {
   'Scout':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Choose 1 from Cavern Lore, Forest Lore)",' +
+      '"1:Skill Trained (Survival; Choose 1 from any terrain)",' +
       '1:Forager',
   'Street Urchin':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Thieving; City Lore)",1:Pickpocket',
+      '"1:Skill Trained (Thievery; Choose 1 from any settlement)",1:Pickpocket',
   'Tinker':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
@@ -2386,6 +2386,7 @@ Pathfinder2E.FEATURES = {
   'Sensate Gnome':
     'Section=skill ' +
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
+  // TODO randomizeOneAttribute doesn't recognize this
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
@@ -4424,54 +4425,6 @@ Pathfinder2E.LANGUAGES = {
   'Shadowtongue':'',
   'Terran':''
 };
-Pathfinder2E.LORES = {
-  'Academia':'',
-  'Accounting':'',
-  'Architecture':'',
-  'Art':'',
-  'Circus':'',
-  'Engineering':'',
-  'Farming':'',
-  'Fishing':'',
-  'Fortune-Telling':'',
-  'Games':'',
-  'Genealogy':'',
-  'Gladiatorial':'',
-  'Guild':'',
-  'Heraldry':'',
-  'Herbalism':'',
-  'Hunting':'',
-  'Labor':'',
-  'Legal':'',
-  'Library':'',
-  // TODO Specific deity
-  // TODO Specific creature
-  // TODO Specific plane
-  // TODO Specific settlement
-  // TODO Specific terrain
-  'Cave':'',
-  'Cavern':'',
-  'City':'',
-  'Desert':'',
-  'Forest':'',
-  'Plains':'',
-  'Swamp':'',
-  // TODO Specific food or drink
-  'Alcohol':'',
-  //
-  'Mercantile':'',
-  'Midwifery':'',
-  'Milling':'',
-  'Mining':'',
-  'Sailing':'',
-  'Scouting':'',
-  'Scribing':'',
-  'Stabling':'',
-  'Tanning':'',
-  'Theater':'',
-  'Underworld':'',
-  'Warfare':''
-};
 Pathfinder2E.SCHOOLS = {
   'Abjuration':'',
   'Conjuration':'',
@@ -4490,23 +4443,93 @@ Pathfinder2E.SHIELDS = {
   'Tower':'Price=10 AC=2 Speed=-5 Bulk=4 Hardness=5 HP=20'
 };
 Pathfinder2E.SKILLS = {
-  'Acrobatics':'Ability=Dexterity',
-  'Arcana':'Ability=Intelligence',
-  'Athletics':'Ability=Strength',
-  'Crafting':'Ability=Intelligence',
-  'Deception':'Ability=Charisma',
-  'Diplomacy':'Ability=Charisma',
-  'Intimidation':'Ability=Charisma',
-  '%lore Lore':'Ability=Intelligence',
-  'Medicine':'Ability=Wisdom',
-  'Nature':'Ability=Wisdom',
-  'Occultism':'Ability=Intelligence',
-  'Performance':'Ability=Charisma',
-  'Religion':'Ability=Wisdom',
-  'Society':'Ability=Intelligence',
-  'Stealth':'Ability=Dexterity',
-  'Survival':'Ability=Wisdom',
-  'Thievery':'Ability=Dexterity'
+  'Acrobatics':'Ability=Dexterity Category=general',
+  'Arcana':'Ability=Intelligence Category=general',
+  'Athletics':'Ability=Strength Category=general',
+  'Crafting':'Ability=Intelligence Category=general',
+  'Deception':'Ability=Charisma Category=general',
+  'Diplomacy':'Ability=Charisma Category=general',
+  'Intimidation':'Ability=Charisma Category=general',
+  'Medicine':'Ability=Wisdom Category=general',
+  'Nature':'Ability=Wisdom Category=general',
+  'Occultism':'Ability=Intelligence Category=general',
+  'Performance':'Ability=Charisma Category=general',
+  'Religion':'Ability=Wisdom Category=general',
+  'Society':'Ability=Intelligence Category=general',
+  'Stealth':'Ability=Dexterity Category=general',
+  'Survival':'Ability=Wisdom Category=general',
+  'Thievery':'Ability=Dexterity Category=general',
+  // creature (ancestry) lores from ancestry chapter pg 33ff
+  'Dwarven Lore':'Ability=Intelligence Category=creature',
+  'Elven Lore':'Ability=Intelligence Category=creature',
+  'Gnome Lore':'Ability=Intelligence Category=creature', // added
+  'Goblin Lore':'Ability=Intelligence Category=creature',
+  'Halfling Lore':'Ability=Intelligence Category=creature',
+  // terrain lores from background chapter pg 60ff
+  'Cave Lore':'Ability=Intelligence Category=terrain',
+  'Cavern Lore':'Ability=Intelligence Category=terrain',
+  'Desert Lore':'Ability=Intelligence Category=terrain',
+  'Forest Lore':'Ability=Intelligence Category=terrain',
+  'Plains Lore':'Ability=Intelligence Category=terrain',
+  'Swamp Lore':'Ability=Intelligence Category=terrain',
+  'Bardic Lore':'Ability=Intelligence Category=general', // Bardic Lore class feat pg 99
+  'Military Lore':'Ability=Intelligence Category=general', // pg 247
+  // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
+  // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
+  // 'Planar Lore':'Ability=Intelligence', // pg 247 excluded
+  // Common lore subcatories pg 248
+  'Academia Lore':'Ability=Intelligence Category=general',
+  'Accounting Lore':'Ability=Intelligence Category=general',
+  'Architecture Lore':'Ability=Intelligence Category=general',
+  'Art Lore':'Ability=Intelligence Category=general',
+  'Circus Lore':'Ability=Intelligence Category=general',
+  'Engineering Lore':'Ability=Intelligence Category=general',
+  'Farming Lore':'Ability=Intelligence Category=general',
+  'Fishing Lore':'Ability=Intelligence Category=general',
+  'Fortune-Telling Lore':'Ability=Intelligence Category=general',
+  'Games Lore':'Ability=Intelligence Category=general',
+  'Geneology Lore':'Ability=Intelligence Category=general',
+  'Gladitorial Lore':'Ability=Intelligence Category=general',
+  'Guild Lore':'Ability=Intelligence Category=general',
+  'Heraldry Lore':'Ability=Intelligence Category=general',
+  'Herbalism Lore':'Ability=Intelligence Category=general',
+  'Hunting Lore':'Ability=Intelligence Category=general',
+  'Labor Lore':'Ability=Intelligence Category=general',
+  'Legal Lore':'Ability=Intelligence Category=general',
+  'Library Lore':'Ability=Intelligence Category=general',
+  'Abadar Lore':'Ability=Intelligence Category=deity',
+  'Iomedae Lore':'Ability=Intelligence Category=deity',
+  'Demon Lore':'Ability=Intelligence Category=creature',
+  'Owlbear Lore':'Ability=Intelligence Category=creature',
+  'Vampire Lore':'Ability=Intelligence Category=creature',
+  'Abyss Lore':'Ability=Intelligence Category=planar',
+  'Astral Plane Lore':'Ability=Intelligence Category=planar',
+  'Heaven Lore':'Ability=Intelligence Category=planar',
+  'Absalom Lore':'Ability=Intelligence Category=settlement',
+  'Magnimar Lore':'Ability=Intelligence Category=settlement',
+  'Mountain Lore':'Ability=Intelligence Category=terrain',
+  'River Lore':'Ability=Intelligence Category=terrain',
+  'Alcohol Lore':'Ability=Intelligence Category=Food',
+  'Baking Lore':'Ability=Intelligence Category=Food',
+  'Butchering Lore':'Ability=Intelligence Category=Food',
+  'Cooking Lore':'Ability=Intelligence Category=Food',
+  'Tea Lore':'Ability=Intelligence Category=Food',
+  'Mercantile Lore':'Ability=Intelligence Category=general',
+  'Midwifery Lore':'Ability=Intelligence Category=general',
+  'Milling Lore':'Ability=Intelligence Category=general',
+  'Mining Lore':'Ability=Intelligence Category=general',
+  'Sailing Lore':'Ability=Intelligence Category=general',
+  'Scouting Lore':'Ability=Intelligence Category=general',
+  'Scribing Lore':'Ability=Intelligence Category=general',
+  'Stabling Lore':'Ability=Intelligence Category=general',
+  'Tanning Lore':'Ability=Intelligence Category=general',
+  'Theater Lore':'Ability=Intelligence Category=general',
+  'Underworld Lore':'Ability=Intelligence Category=general',
+  'Warfare Lore':'Ability=Intelligence Category=general',
+  'Folktale Lore':'Ability=Intelligence Category=general', // pg 503
+  'Aberration Lore':'Ability=Intelligence Category=creature', // pg 504
+  'Troll Lore':'Ability=Intelligence Category=creature', // pg 505
+  'Taldan History Lore':'Ability=Intelligence Category=general' // pg 506
 };
 Pathfinder2E.SPELLS = {
   'Abyssal Plague':
@@ -5074,36 +5097,23 @@ Pathfinder2E.magicRules = function(rules, schools, spells) {
 
 /* Defines rules related to character aptitudes. */
 Pathfinder2E.talentRules = function(
-  rules, feats, features, goodies, languages, lores, skills)
-{
+  rules, feats, features, goodies, languages, skills
+) {
 
   let matchInfo;
 
   QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Type']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
-  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Class']);
+  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
   for(let l in languages)
     rules.choiceRules(rules, 'Language', l, languages[l]);
-  for(let l in lores)
-    rules.choiceRules(rules, 'Lore', l, lores[l]);
   for(let s in skills) {
-    if((matchInfo = s.match(/(%(\w+))/)) != null) {
-      for(let c in rules.getChoices(matchInfo[2] + 's')) {
-        let subskill = s.replaceAll(matchInfo[1], c);
-        rules.choiceRules
-          (rules, 'Skill', subskill, skills[s].replaceAll(matchInfo[1], c));
-        rules.defineRule
-          ('skillBoostsAllocated', 'skillBoosts.' + subskill, '+=', null);
-      }
-    } else {
-      rules.choiceRules(rules, 'Skill', s, skills[s]);
-      rules.defineRule
-        ('skillBoostsAllocated', 'skillBoosts.' + s, '+=', null);
-    }
+    rules.choiceRules(rules, 'Skill', s, skills[s]);
+    rules.defineRule('skillBoostsAllocated', 'skillBoosts.' + s, '+=', null);
   }
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
@@ -5225,8 +5235,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Language')
     Pathfinder2E.languageRules(rules, name);
-  else if(type == 'Lore')
-    Pathfinder2E.loreRules(rules, name);
   else if(type == 'School')
     Pathfinder2E.schoolRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Features')
@@ -5242,7 +5250,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Skill')
     Pathfinder2E.skillRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Ability')
+      QuilvynUtils.getAttrValue(attrs, 'Ability'),
+      QuilvynUtils.getAttrValue(attrs, 'Category')
     );
   else if(type == 'Spell')
     Pathfinder2E.spellRules(rules, name,
@@ -6036,15 +6045,6 @@ Pathfinder2E.languageRules = function(rules, name) {
   // No rules pertain to language
 };
 
-/* Defines in #rules# the rules associated with lore #name#. */
-Pathfinder2E.loreRules = function(rules, name) {
-  if(!name) {
-    console.log('Empty lore name');
-    return;
-  }
-  // No rules pertain to lore
-};
-
 /*
  * Defines in #rules# the rules associated with magic school #name#, which
  * grants the list of #features#.
@@ -6122,9 +6122,10 @@ Pathfinder2E.shieldRules = function(
 
 /*
  * Defines in #rules# the rules associated with skill #name#, associated with
- * #ability# (one of 'strength', 'intelligence', etc.).
+ * #ability# (one of 'strength', 'intelligence', etc.) that belongs to
+ * category #category#.
  */
-Pathfinder2E.skillRules = function(rules, name, ability) {
+Pathfinder2E.skillRules = function(rules, name, ability, category) {
 
   if(!name) {
     console.log('Empty skill name');
@@ -6133,6 +6134,10 @@ Pathfinder2E.skillRules = function(rules, name, ability) {
   if(typeof(ability) != 'string' ||
      !(ability.toLowerCase() in Pathfinder2E.ABILITIES)) {
     console.log('Bad ability "' + ability + '" for skill ' + name);
+    return;
+  }
+  if(typeof(category) != 'string') {
+    console.log('Bad category "' + category + '" for skill ' + name);
     return;
   }
 
@@ -6925,6 +6930,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   } else if(attribute == 'skills') {
     let boostsAllocated = {};
+    let allSkills = this.getChoices('skills');
     for(attr in this.getChoices('skills'))
       boostsAllocated[attr] = attributes['skillBoosts.' + attr] || 0;
     attrs = this.applyRules(attributes);
@@ -6939,8 +6945,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         matched.split(/\s*;\s*/).forEach(boost => {
           let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
-            howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
-            choices = m[2].match(/^any$/i) ? Object.keys(this.getChoices('skills')) : m[2].split(/\s*,\s*/);
+            howMany = m[1] == '%V' ? attrs[attr] : +m[1];
+            if(m[2].match(/^any$/i))
+              choices = Object.keys(allSkills);
+            else if(m[2].match(/^any\s/i))
+              choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
+            else
+              choices = m[2].split(/\s*,\s*/);
             choices.forEach(choice => {
               if(howMany > 0 && boostsAllocated[choice] > 0) {
                 howMany--;
