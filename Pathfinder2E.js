@@ -317,9 +317,9 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
-      // TODO: Cat Fall if Acrobatics chosen; Quick Jump if Athletics chosen
-      '"1:Cat Fall",' +
-      '"1:Quick Jump"',
+      // TODO These only work if Acrobatics/Athletics aren't otherwise chosen
+      '"rank.Acrobatics>0 ? 1:Cat Fall",' +
+      '"rank.Athletics>0 ? 1:Quick Jump"',
   'Merchant':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
@@ -2386,8 +2386,11 @@ Pathfinder2E.FEATURES = {
   'Sensate Gnome':
     'Section=skill ' +
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
-  // TODO randomizeOneAttribute doesn't recognize this
-  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
+  'Skilled Heritage Human':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Choose 1 from any)",' +
+      '"Skill Expert (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
@@ -3606,7 +3609,8 @@ Pathfinder2E.FEATURES = {
   'Lightning Snares':'Section=feature Note="FILL"',
   'Second Sting':'Section=feature Note="FILL"',
   // Side By Side as above
-  'Sense The Unseen':'Section=feature Note="FILL"',
+  'Sense The Unseen':
+    'Section=skill Note="Failed Seeks make undetected foes hidden"',
   'Shared Prey':'Section=feature Note="FILL"',
   'Stealthy Companion':'Section=feature Note="FILL"',
   'Targeting Shot':'Section=feature Note="FILL"',
@@ -3770,26 +3774,57 @@ Pathfinder2E.FEATURES = {
   'Vicious Debilitations':
     'Section=combat ' +
     'Note="Debilitating Strike may inflict weakness 5 to choice of weapon type or clumsy 1"',
-  'Critical Debilitation':'Section=feature Note="FILL"',
-  'Fantastic Leap':'Section=feature Note="FILL"',
-  'Felling Shot':'Section=feature Note="FILL"',
-  'Reactive Interference':'Section=feature Note="FILL"',
-  'Spring From The Shadows':'Section=feature Note="FILL"',
-  'Defensive Roll':'Section=feature Note="FILL"',
-  'Instant Opening':'Section=feature Note="FILL"',
-  'Leave An Opening':'Section=feature Note="FILL"',
+  'Critical Debilitation':
+    'Section=combat ' +
+    'Note="Debilitating Strike forces Fortitude save; critical failure paralyzes for 1 rd, failure/success inflict slows 2/1 for 1 rd"',
+  'Fantastic Leap':
+    'Section=combat ' +
+    'Note="May use 2 actions to Strike after a High Jump or Long Jump, using Long Jump distance for either"',
+  'Felling Shot':
+    'Section=combat ' +
+    'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds for 1 rd, failure causes 120\' fall"',
+  'Reactive Interference':
+    'Section=combat ' +
+    'Note="May use Reaction to prevent foe Reaction; requires an attack against a higher-level foe"',
+  'Spring From The Shadows':
+    'Section=combat Note="May Strike an unaware foe after a Stride"',
+  'Defensive Roll':
+    'Section=combat ' +
+    'Note="May negate half damage from an attack that would reduce self to 0 HP 1/10 min"',
+  'Instant Opening':
+    'Section=combat ' +
+    'Note="R30\' May use a distraction to make a foe flat-footed against self for 1 rd"',
+  'Leave An Opening':
+    'Section=combat ' +
+    'Note="A critical hit vs. a flat-footed foe gives an ally an Attack Of Opportunity"',
   // Sense The Unseen as above
-  'Blank Slate':'Section=feature Note="FILL"',
-  'Cloud Step':'Section=feature Note="FILL"',
-  'Cognitive Loophole':'Section=feature Note="FILL"',
-  'Dispelling Slice':'Section=feature Note="FILL"',
-  'Perfect Distraction':'Section=feature Note="FILL"',
-  'Implausible Infiltration':'Section=feature Note="FILL"',
-  'Powerful Sneak':'Section=feature Note="FILL"',
-  "Trickster's Ace":'Section=feature Note="FILL"',
-  'Hidden Paragon':'Section=feature Note="FILL"',
-  'Impossible Striker':'Section=feature Note="FILL"',
-  'Reactive Distraction':'Section=feature Note="FILL"',
+  'Blank Slate':
+    'Section=save ' +
+    'Note="Immune to detection, revelation and scrying effects of less than 10 counteract level"',
+  'Cloud Step':
+    'Section=ability Note="May Stride over insubstantial surfaces and traps"',
+  'Cognitive Loophole':
+    'Section=save Note="May use Reaction to supress a mental effect for 1 rd"',
+  'Dispelling Slice':
+    'Section=combat ' +
+    'Note="May use 2 actions to dispel magical effect with a successful sneak attack"',
+  'Perfect Distraction':
+    'Section=magic Note="May use <i>Mislead</i> effects 1/10 min"',
+  'Implausible Infiltration':
+    'Section=ability ' +
+    'Note="May use 2 actions to move through up to 10\' of wood, plaster, or stone"',
+  'Powerful Sneak':
+    'Section=combat ' +
+    'Note="May change sneak attack damage to to match weapon type"',
+  "Trickster's Ace":
+    'Section=magic ' +
+    'Note="May use Reaction to evoke effects of a spell up to level 4"',
+  'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hr"',
+  'Impossible Striker':
+    'Section=combat Note="May use sneak attack vs. non-flat-footed foe"',
+  'Reactive Distraction':
+    'Section=combat ' +
+    'Note="May use Reaction to redirect attack from self to decoy"',
 
   // Sorcerer
   // Alertness as above
@@ -5463,16 +5498,14 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
   } else if(name == 'Human') {
-    rules.defineRule('choiceCount.Skill',
-      'skillNotes.skilledHeritageHuman', '+=', 'source=="Expert" ? 2 : 1'
-    );
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Orc', '=', '1');
-    rules.defineRule('skillNotes.skilledHeritageHuman',
-      'level', '=', 'source<5 ? "Trained" : "Expert"'
-    );
+    rules.defineRule
+      ('skillNotes.skilledHeritageHuman', 'level', '?', 'source < 5');
+    rules.defineRule
+      ('skillNotes.skilledHeritageHuman-1', 'level', '?', 'source >= 5');
   }
 };
 
