@@ -759,6 +759,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 13","features.Goblin Weapon Familiarity"',
   'Very, Very Sneaky':
     'Type=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
+
   'Distracting Shadows':'Type=Ancestry,Halfling',
   'Halfling Lore':'Type=Ancestry,Halfling',
   'Halfling Luck':'Type=Ancestry,Halfling',
@@ -780,6 +781,7 @@ Pathfinder2E.FEATS = {
   'Halfling Weapon Expertise':
     'Type=Ancestry,Halfling ' +
     'Require="level >= 13","features.Halfling Weapon Familiarity"',
+
   'Adapted Cantrip':'Type=Ancestry,Human Require=features.Spellcasting',
   'Cooperative Nature':'Type=Ancestry,Human',
   'General Training':'Type=Ancestry,Human',
@@ -1859,7 +1861,7 @@ Pathfinder2E.FEATS = {
     'Type=Archetype Require="level >= 6","features.Basic Concoction"',
   'Expert Alchemy':
     'Type=Archetype ' +
-    'Require="level >= 6","features.Achemist Dedication","rank.Crafting >= 2"',
+    'Require="level >= 6","features.Alchemist Dedication","rank.Crafting >= 2"',
   'Master Alchemy':
     'Type=Archetype ' +
     'Require="level >= 12","features.Expert Alchemy","rank.Crafting >= 3"',
@@ -1904,7 +1906,7 @@ Pathfinder2E.FEATS = {
       '"level >= 12",' +
       '"features.Basic Bard Spellcasting",' +
       '"rank.Occultism >= 3"',
-  'Mster Bard Spellcasting':
+  'Master Bard Spellcasting':
     'Type=Archetype ' +
     'Require=' +
       '"level >= 18",' +
@@ -2327,10 +2329,10 @@ Pathfinder2E.FEATURES = {
 
   'Ancient-Blooded Dwarf':
     'Section=save ' +
-    'Note="May use Reaction upon save vs. magic for +1 vs. magic for 1 rd"',
+    'Note="May use Reaction upon save vs. magic to gain +1 vs. magic for 1 rd"',
   'Arctic Elf':
     'Section=save ' +
-    'Note="Cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
+    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
   'Cavern Elf':'Section=feature Note="Has Darkvision feature"',
   'Chameleon Gnome':
     'Section=feature,skill ' +
@@ -2344,7 +2346,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
     'Section=save ' +
-    'Note="A successful save vs. a necromancy effect is always a critical success"',
+    'Note="Successful saves vs. necromancy effects are critical successes"',
   'Fey-Touched Gnome':
     'Section=feature,magic ' +
     'Note=' +
@@ -2352,7 +2354,7 @@ Pathfinder2E.FEATURES = {
       '"May cast chosen cantrip at will; may replace chosen cantrip 1/dy"',
   'Forge Dwarf':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step lower"',
+    'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
   'Gutsy Halfling':
     'Section=save ' +
     'Note="Successful save vs. emotion is always a critical success"',
@@ -2365,8 +2367,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
       '"+2 vs afflictions and sickened from ingestion, and a successful save is always a critical success"',
-  'Low-Light Vision':
-    'Section=feature Note="Can see in dim light as well as bright light"',
+  'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Keen Eyes':
     'Section=combat,skill ' +
     'Note=' +
@@ -2377,12 +2378,12 @@ Pathfinder2E.FEATURES = {
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6 HP"',
   'Rock Dwarf':
     'Section=save ' +
-    'Note="+2 vs. Shove, Trip, and magical knock prone/Suffers halve forced move distance"',
+    'Note="+2 vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance"',
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
       '"May cast <i>Detect Magic</i> cantrip at will",' +
-      '"+1 Identify Magic and Decipher Writing of a magical nature"',
+      '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill ' +
     'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
@@ -2397,7 +2398,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
-    'Note="Has poison resistance %{level//2>?1}; save reduces stage by 2 (virulent 1), critical success by 3 (virulent 2)"',
+    'Note="Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1), critical successes by 3 (virulent 2)"',
   'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
   'Umbral Gnome':'Section=combat Note="Has Darkvision feature"',
   'Unbreakable Goblin':
@@ -2407,7 +2408,7 @@ Pathfinder2E.FEATURES = {
   'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
     'Section=combat ' +
-    'Note="R60\' Seek, R30\' +2 to locate creatures via hearing"',
+    'Note="May attempt a 60\' Seek using hearing; +2 within 30\'"',
   'Wildwood Halfling':
     'Section=feature Note="Ignores difficult terrain from foliage"',
   'Woodland Elf':
@@ -2418,17 +2419,17 @@ Pathfinder2E.FEATURES = {
 
   // Ancestry feats
   'Dwarven Lore':
-    'Section=skill Note="Skill Trained (Crafting/Religion/Dwarven Lore)"',
+    'Section=skill Note="Skill Trained (Crafting; Religion; Dwarven Lore)"',
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Training (Battle Axe/Pick/Warhammer)",' +
+      '"Weapon Trained (Battle Axe; Pick; Warhammer)",' +
       '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower"',
   'Rock Runner':
     'Section=ability,skill ' +
     'Note=' +
       '"May move normally over stone and earth difficult terrain",' +
-      '"Acrobatics to Balance on stone and earth is never flat-footed, and success is always a critical success"',
+      '"Not flat-footed when using Acrobatics to Balance on stone and earth; successes are critical successes"',
   'Stonecunning':
     'Section=skill ' +
     'Note="+2 Perception (unusual stonework)/Gains an automatic -2 check to note unusual stonework"',
@@ -2436,13 +2437,13 @@ Pathfinder2E.FEATURES = {
     'Section=ability,ability ' +
     'Note=' +
       '"Suffers no Speed penalty from armor",' +
-      '"Reduces speed penalties by 5"',
+      '"Reduces non-armor Speed penalties by 5"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="+1 per die weapon damage vs. choice of drow, duergar, giant, or orc and for 1 minute on any foe that inflicts a critical success on attack"',
+    'Note="+1 per die weapon damage vs. choice of drow, duergar, giant, or orc and for 1 min on any foe that inflicts a critical success on attack"',
   'Boulder Roll':
     'Section=combat ' +
-    'Note="Stepping into foe\'s space forces 5\' move (Fort vs. Athletics neg but inflicts %{level+strengthModifier} HP})"',
+    'Note="May Step into a foe\'s space to force a 5\' move (Fort vs. Athletics neg but inflicts %{level+strengthModifier}B HP)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict critical specialization effect"',
@@ -2455,10 +2456,11 @@ Pathfinder2E.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"May cast <i>Meld Into Stone</i> 1/dy",' +
-      '"May find legendary unusual stonework"',
+      '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater rank
+     // TODO featureNotes treats "Dwarf Weapons" as a name instead of a category
     'Note="Weapon Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
@@ -2472,29 +2474,30 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon elf weapons/Treats elf weapons as one category lower"',
   'Forlorn':
     'Section=save ' +
-    'Note="+1 vs. emotion effects, and all successes are critical"',
+    'Note="+1 vs. emotion effects; successes are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
     'Section=magic Note="May cast chosen cantrip at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="May reduce duration of mental effects by 1 rd/Gives +1 degree of save vs. sleep effects"',
+    'Note="May reduce duration of mental effects by 1 rd/+1 degree of success vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May gain a +2 bonus on a check by spending double the time required; suffers critical failure only on 10 lower than DC"',
+    'Note="May gain a +2 bonus on a check by spending double the time required/Suffers a critical failure only on a roll 10 lower than DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
-    'Note="Critical hits with a longbow, composite longbow, longsword, rapier shortbow, composite shortbow, or elf weapon inflict critical specialization effect"',
+    'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict critical specialization effect"',
   'Elf Step':'Section=combat Note="May take a second Step 5\'"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Ancestral Longevity also gives expert level in chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
+    'Note="Ancestral Longevity also gives expert level in a chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
   'Universal Longevity':
     'Section=skill ' +
     'Note="May replace Ancestral Longevity and Expert Longevity skills 1/dy"',
   'Elven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
+     // TODO featureNotes treats "Elf Weapons" as a name instead of a category
     'Note="Weapon Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':
@@ -2694,7 +2697,7 @@ Pathfinder2E.FEATURES = {
   'Ability Boosts':'Section=ability Note="Ability Boost (Choose %V from any)"',
   'General Feats':'Section=feature Note="%V selections"',
   'Skill Feats':'Section=feature Note="%V selections"',
-  'Skill Increases':'Section=skill Note="Skill Boost (Choose %V from any)"',
+  'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
   // Alchemical Crafting as below
@@ -2871,7 +2874,7 @@ Pathfinder2E.FEATURES = {
   'Attack Of Opportunity':
     'Section=combat ' +
     'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
-  'Butal Bully':
+  'Brutal Bully':
     'Section=combat ' +
     'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier} damage"',
   'Cleave':
@@ -2899,10 +2902,10 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to make a Strike during a Leap, High Jump, or Long Jump"',
   'Thrash':
     'Section=combat ' +
-    'Note="May inflict %{strengthModifier+2}+specialization damge to grabbed foe (Fort neg)"',
+    'Note="May inflict %{strengthModifier+2}+specialization damage to grabbed foe (Fort neg)"',
   'Come And Get Me':
     'Section=combat ' +
-    'Note="May suffer flat-footed and +2 foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constutionModifier*2}) until rage ends"',
+    'Note="May suffer flat-footed and +2 foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constitutionModifier*2}) until rage ends"',
   'Furious Sprint':
     'Section=combat ' +
     'Note="May use 2 actions to Stride %{speed*5}\' in a straight line, or 3 actions to Stride %{speed*8}\'"',
@@ -2937,12 +2940,12 @@ Pathfinder2E.FEATURES = {
   'Collateral Thrash':
     'Section=combat Note="Successful Thrash affects an adjacent foe"',
   'Dragon Transformation':'Section=feature Note="FILL"',
-  'Rackless Abandon':
+  'Reckless Abandon':
     'Section=feature ' +
     'Note="When dropped to %{hitPoints//2} HP, may suffer -2 AC and -1 Saves to gain +2 attacks"',
   'Brutal Critical':
     'Section=combat ' +
-    'Note="Critical melee hits inflct +1 damage dia and 2 dice bleed damage"',
+    'Note="Critical melee hits inflict +1 damage dia and 2 dice bleed damage"',
   'Perfect Clarity':
     'Section=combat ' +
     'Note="May end rage for +2 reroll on failed attack or Will save"',
@@ -3700,7 +3703,7 @@ Pathfinder2E.FEATURES = {
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"+{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'ledgendary\' : \'master\'} in Thievery",' +
+      '"+{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
       '"+{rank.Thievery>=3?2:1} vs. traps",' +
       '"+{rank.Thievery>=3?2:1} AC vs. traps"',
   'Twin Feint':
@@ -3723,7 +3726,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits inflict flat-footed vs. self attacks for 1 rd"',
   'Battle Assessment':
     'Section=combat ' +
-    'Note="May use 1 action to learn enemy strenghts and weaknesses"',
+    'Note="May use 1 action to learn enemy strengths and weaknesses"',
   'Dread Striker':
     'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
   'Magical Trickster':
@@ -3804,7 +3807,7 @@ Pathfinder2E.FEATURES = {
   'Cloud Step':
     'Section=ability Note="May Stride over insubstantial surfaces and traps"',
   'Cognitive Loophole':
-    'Section=save Note="May use Reaction to supress a mental effect for 1 rd"',
+    'Section=save Note="May use Reaction to suppress a mental effect for 1 rd"',
   'Dispelling Slice':
     'Section=combat ' +
     'Note="May use 2 actions to dispel magical effect with a successful sneak attack"',
@@ -3951,7 +3954,7 @@ Pathfinder2E.FEATURES = {
   'Inspiration Performance':'Section=feature Note="FILL"',
   'Occult Breadth':'Section=feature Note="FILL"',
   'Expert Bard Spellcasting':'Section=feature Note="FILL"',
-  'Mster Bard Spellcasting':'Section=feature Note="FILL"',
+  'Master Bard Spellcasting':'Section=feature Note="FILL"',
 
   'Champion Dedication':'Section=feature Note="FILL"',
   'Basic Devotion':'Section=feature Note="FILL"',
@@ -4512,7 +4515,7 @@ Pathfinder2E.SKILLS = {
   // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Planar Lore':'Ability=Intelligence', // pg 247 excluded
-  // Common lore subcatories pg 248
+  // Common lore subcatigories pg 248
   'Academia Lore':'Ability=Intelligence Category=general',
   'Accounting Lore':'Ability=Intelligence Category=general',
   'Architecture Lore':'Ability=Intelligence Category=general',
@@ -4743,7 +4746,7 @@ Pathfinder2E.SPELLS = {
     'Description="FILL"',
   'Burning Hands':
     'Level=1 ' +
-    'School=Evoation ' +
+    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="FILL"'
@@ -4820,7 +4823,7 @@ Pathfinder2E.WEAPONS = {
   'Ranseur':
     'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm Trait=Disarm,Reach',
   'Rapier':
-    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword Trait="Deady d8",Disarm,Finesse',
+    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword Trait="Deadly d8",Disarm,Finesse',
   'Sap':
     'Category=Martial Price=0.1 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Agile,Nonlethal',
   'Scimitar':
@@ -4932,7 +4935,6 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   );
   rules.defineRule
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
-  rules.defineRule('speed', '', '=', '25');
   QuilvynRules.validAllocationRules
     (rules, 'abilityBoost', 'choiceCount.Ability', 'abilityBoostsAllocated');
 
@@ -5111,6 +5113,10 @@ Pathfinder2E.identityRules = function(
     ('featCount.Ancestry', 'featureNotes.ancestryFeats', '=', null);
   rules.defineRule('featCount.General', 'featureNotes.generalFeats', '=', null);
   rules.defineRule('featCount.Skill', 'featureNotes.skillFeats', '=', null);
+  rules.defineRule('speed',
+    '', '=', '25',
+    'elfLevel', '+', '5'
+  );
   QuilvynRules.validAllocationRules
     (rules, 'level', 'level', 'Sum "^levels\\."');
 
@@ -5144,11 +5150,14 @@ Pathfinder2E.talentRules = function(
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
-  for(let l in languages)
+  for(let l in languages) {
     rules.choiceRules(rules, 'Language', l, languages[l]);
+    rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
+  }
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
-    rules.defineRule('skillBoostsAllocated', 'skillBoosts.' + s, '+=', null);
+    rules.defineRule
+      ('skillIncreasesAllocated', 'skillIncreases.' + s, '+=', null);
   }
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
@@ -5171,7 +5180,12 @@ Pathfinder2E.talentRules = function(
     }
   }
 
-  rules.defineChoice('notes', 'perception:%S (wisdom; %1)');
+  rules.defineChoice('notes',
+    'perception:%S (wisdom; %1)',
+    'skillNotes.intelligenceLanguageBonus:+%V Language Count'
+  );
+  rules.defineRule
+    ('languageCount', 'skillNotes.intelligenceLanguageBonus', '+', null);
   rules.defineRule('rank.Perception', '', '=', '0');
   rules.defineRule('rankLevelBonus.Perception',
     'rank.Perception', '=', 'source>0 ? 0 : null',
@@ -5189,8 +5203,13 @@ Pathfinder2E.talentRules = function(
   rules.defineRule('perception.1',
     'rank.Perception', '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
+  rules.defineRule('skillNotes.intelligenceLanguageBonus',
+    'intelligenceModifier', '=', 'source>0 ? source : null'
+  );
   QuilvynRules.validAllocationRules
-    (rules, 'skillBoost', 'choiceCount.Skill', 'skillBoostsAllocated');
+    (rules, 'language', 'languageCount', 'languagesSpoken');
+  QuilvynRules.validAllocationRules
+    (rules, 'skillIncrease', 'choiceCount.Skill', 'skillIncreasesAllocated');
 
 };
 
@@ -5495,7 +5514,12 @@ Pathfinder2E.ancestryRules = function(
  * derived directly from the attributes passed to ancestryRules.
  */
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
-  if(name == 'Elf') {
+  if(name == 'Dwarf') {
+    rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
+    rules.defineRule('abilityNotes.armorSpeedPenalty',
+      'abilityNotes.unburdenedIron', '^', '0'
+    );
+  } else if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
   } else if(name == 'Human') {
     rules.defineRule
@@ -5767,7 +5791,7 @@ Pathfinder2E.classRules = function(
     'rankLevelBonus.' + name, '+', null
   );
 
-  rules.defineRule('hitPoints', classLevel, '=', 'source * ' + hitPoints);
+  rules.defineRule('hitPoints', classLevel, '+=', 'source * ' + hitPoints);
 
 };
 
@@ -6030,7 +6054,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
         noteName, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
       );
     }
-    matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw)\s*\((.*)\)$/i);
+    matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[2].match(/flaw/i);
       let choices = '';
@@ -6182,7 +6206,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   else
     rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
   rules.defineRule
-    ('rank.' + name, 'skillBoosts.' + name, '+=', null);
+    ('rank.' + name, 'skillIncreases.' + name, '+=', null);
   rules.defineRule('rankLevelBonus.' + name,
     'rank.' + name, '=', 'source>0 ? 0 : null',
     'level', '+', null
@@ -6245,7 +6269,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^\d(d\d+)?([BPS])$/);
+  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BPS])$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
@@ -6278,7 +6302,7 @@ Pathfinder2E.weaponRules = function(
   let isThrown = traits.includes('Thrown');
 
   damage = matchInfo[1];
-  let damageType = matchInfo[2];
+  let damageType = matchInfo[3];
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
       damageType += '/' + t.charAt(t.length - 1);
@@ -6295,8 +6319,8 @@ Pathfinder2E.weaponRules = function(
     ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
   rules.defineRule('weaponProficiencyBonus.' + name,
     weaponName, '?', null,
-    'rank.' + category + ' Weapons', '=', null,
-    'rank.' + name, '^=', null,
+    'rank.' + category + ' Weapons', '=', 'source * 2',
+    'rank.' + name, '^=', 'source * 2',
     'level', '+', null
   );
   rules.defineRule('attackBonus.' + name,
@@ -6377,7 +6401,8 @@ Pathfinder2E.featureListRules = function(
         setName + '.' + feature, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
       );
     }
-    matchInfo = feature.match(/(Ability|Skill)\s(Boost|Flaw)\s*\((.*)\)$/i);
+    matchInfo =
+      feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[2].match(/flaw/i);
       let choices = '';
@@ -6776,7 +6801,7 @@ Pathfinder2E.initialEditorElements = function() {
     ['origin', 'Origin', 'text', [20]],
     ['feats', 'Feats', 'setbag', 'feats'],
     ['selectableFeatures', 'Selectable Features', 'set', 'selectableFeatures'],
-    ['skillBoosts', 'Skills', 'setbag', 'skills'],
+    ['skillIncreases', 'Skills', 'setbag', 'skills'],
     ['languages', 'Languages', 'set', 'languages'],
     ['armor', 'Armor', 'select-one', 'armors'],
     ['shield', 'Shield', 'select-one', 'shields'],
@@ -6993,7 +7018,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             });
             while(howMany > 0 && choices.length > 0) {
               let choice = randomElement(choices);
-              attributes['skillBoosts.' + choice] = (attributes['skillBoosts.' + choice] || 0) + 1;
+              attributes['skillIncreases.' + choice] =
+                (attributes['skillIncreases.' + choice] || 0) + 1;
               howMany--;
               choices = choices.filter(x => x != choice);
             }
