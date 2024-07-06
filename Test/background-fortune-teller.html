@@ -12,11 +12,11 @@ var attributes = {
   "abilityGeneration":"All 10s", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Scale Mail", 
   "background":"Fortune Teller", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":319, "feats.Natural Ambition":1, "feats.Point-Blank Shot":1, "gender":"Male", 
-  "intelligence":10, "languages.Dwarven":1, "levels.Fighter":1, 
+  "intelligence":10, "languages.Dwarven":1, "languages.Halfling":1, "levels.Fighter":1, 
   "name":"Background-Fortune Teller", "selectableFeatures.Human - Half-Elf":1, "shield":"None", 
-  "skillBoosts.Athletics":1, "skillBoosts.Cave Lore":1, "skillBoosts.Cavern Lore":1, 
-  "skillBoosts.Sailing Lore":1, "skillBoosts.Stealth":1, "strength":10, "weapons.Club":1, "weapons.Sap":1, 
-  "weapons.Shortbow":1, "wisdom":10
+  "skillIncreases.Athletics":1, "skillIncreases.Cave Lore":1, "skillIncreases.Cavern Lore":1, 
+  "skillIncreases.Sailing Lore":1, "skillIncreases.Stealth":1, "strength":10, "weapons.Club":1, 
+  "weapons.Sap":1, "weapons.Shortbow":1, "wisdom":10
 };
   </script>
 </head>
@@ -96,7 +96,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Half-Elf: Has Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Low-Light Vision: Can see in dim light as well as bright light</td>
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -139,13 +139,15 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Dwarven</td>
+    <td><b>Languages</b>: Common; Dwarven; Halfling</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Armor Skill Penalty: -2 strength and dexterity skills</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 4 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Intelligence Language Bonus: +1 Language Count</i></td>
     </tr><tr style="text-align:center">
       <td>Oddity Identification: +2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait</td>
     </tr></table>
@@ -159,7 +161,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 12</td>
+        <td><b>Hit Points</b>: 20</td>
         <td><b>Armor Class</b>: 16 (dexterity (2 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 14</td>
       </tr></table>
@@ -169,7 +171,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Scale Mail</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Club (+4 d6+1 B R10'); Sap (+4 d6+1 B); Shortbow (+4 d6 P R60')</td>
+        <td><b>Weapons</b>: Club (+6 d6+1 B R10'); Sap (+6 d6+1 B); Shortbow (+6 d6 P R60')</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">

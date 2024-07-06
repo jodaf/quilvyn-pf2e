@@ -12,12 +12,12 @@ var attributes = {
   "alignment":"Neutral Good", "ancestry":"Human", "armor":"Scale Mail", "background":"Merchant", 
   "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, "experience":407, 
   "feats.Natural Skill":1, "feats.Snagging Strike":1, "gender":"Female", "intelligence":10, 
-  "languages.Orcish":1, "levels.Fighter":1, "name":"Background-Merchant", 
-  "selectableFeatures.Human - Half-Elf":1, "shield":"Steel", "skillBoosts.Accounting Lore":1, 
-  "skillBoosts.Athletics":1, "skillBoosts.Crafting":1, "skillBoosts.Guild Lore":1, 
-  "skillBoosts.Legal Lore":1, "skillBoosts.Milling Lore":1, "skillBoosts.Mining Lore":1, 
-  "skillBoosts.Plains Lore":1, "strength":10, "weapons.Bo Staff":1, "weapons.Shortbow":1, "weapons.Whip":1, 
-  "wisdom":10
+  "languages.Goblin":1, "languages.Halfling":1, "languages.Orcish":1, "levels.Fighter":1, 
+  "name":"Background-Merchant", "selectableFeatures.Human - Half-Elf":1, "shield":"Steel", 
+  "skillIncreases.Accounting Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Crafting":1, 
+  "skillIncreases.Guild Lore":1, "skillIncreases.Legal Lore":1, "skillIncreases.Milling Lore":1, 
+  "skillIncreases.Mining Lore":1, "skillIncreases.Plains Lore":1, "strength":10, "weapons.Bo Staff":1, 
+  "weapons.Shortbow":1, "weapons.Whip":1, "wisdom":10
 };
   </script>
 </head>
@@ -97,7 +97,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Half-Elf: Has Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Low-Light Vision: Can see in dim light as well as bright light</td>
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -144,13 +144,15 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Orcish</td>
+    <td><b>Languages</b>: Common; Goblin; Halfling; Orcish</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Armor Skill Penalty: -2 strength and dexterity skills</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 5 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
       <td><i>Natural Skill: Skill Trained (Choose 2 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -166,7 +168,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 10</td>
+        <td><b>Hit Points</b>: 18</td>
         <td><b>Armor Class</b>: 16 (dexterity (2 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 14</td>
       </tr></table>
@@ -176,7 +178,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Scale Mail</td>
         <td><b>Shield</b>: Steel (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Bo Staff (+4 d8+1 B); Shortbow (+4 d6 P R60'); Whip (+4 d4+1 S)</td>
+        <td><b>Weapons</b>: Bo Staff (+6 d8+1 B); Shortbow (+6 d6 P R60'); Whip (+6 d4+1 S)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">

@@ -12,11 +12,11 @@ var attributes = {
   "alignment":"Neutral Good", "ancestry":"Human", "armor":"Chain Mail", "background":"Tinker", 
   "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, "experience":40, 
   "feats.Double Slice":1, "feats.Natural Ambition":1, "gender":"Female", "intelligence":10, 
-  "languages.Auran":1, "levels.Fighter":1, "name":"Background-Tinker", 
-  "selectableFeatures.Human - Half-Orc":1, "shield":"Buckler", "skillBoosts.Acrobatics":1, "skillBoosts.Athletics":1, 
-  "skillBoosts.Games Lore":1, "skillBoosts.Religion":1, "skillBoosts.Stealth":1, 
-  "skillBoosts.Tanning Lore":1, "strength":10, "weapons.Bo Staff":1, "weapons.Gauntlet":1, 
-  "weapons.Longspear":1, "wisdom":10
+  "languages.Auran":1, "languages.Goblin":1, "languages.Halfling":1, "levels.Fighter":1, 
+  "name":"Background-Tinker", "selectableFeatures.Human - Half-Orc":1, "shield":"Buckler", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, "skillIncreases.Games Lore":1, 
+  "skillIncreases.Religion":1, "skillIncreases.Stealth":1, "skillIncreases.Tanning Lore":1, "strength":10, 
+  "weapons.Bo Staff":1, "weapons.Gauntlet":1, "weapons.Longspear":1, "wisdom":10
 };
   </script>
 </head>
@@ -96,7 +96,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Half-Orc: Has Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Low-Light Vision: Can see in dim light as well as bright light</td>
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -139,13 +139,15 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Auran; Common</td>
+    <td><b>Languages</b>: Auran; Common; Goblin; Halfling</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Armor Skill Penalty: -2 strength and dexterity skills</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 5 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
       <td>Specialty Crafting: +1 Craft on selected type</td>
     </tr></table>
@@ -159,7 +161,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 12</td>
+        <td><b>Hit Points</b>: 20</td>
         <td><b>Armor Class</b>: 17 (dexterity (1 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 15</td>
       </tr></table>
@@ -169,7 +171,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Chain Mail</td>
         <td><b>Shield</b>: Buckler (+1 AC when raised; hardness 3; HP 6)</td>
-        <td><b>Weapons</b>: Bo Staff (+5 d8+2 B); Gauntlet (+5 d4+2 B); Longspear (+5 d8+2 P)</td>
+        <td><b>Weapons</b>: Bo Staff (+7 d8+2 B); Gauntlet (+7 d4+2 B); Longspear (+7 d8+2 P)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
