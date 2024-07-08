@@ -13,21 +13,22 @@ var attributes = {
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":0, "feats.Adapted Cantrip":1, "feats.Adaptive Adept":1, 
   "feats.Clever Improviser":1, "feats.Cooperative Nature":1, "feats.Cooperative Soul":1, 
-  "feats.Elf Atavism":1, "feats.General Training":1, "feats.Haughty Obstinacy":1, 
-  "feats.Incredible Ferocity":1, "feats.Incredible Improvisation":1, "feats.Inspire Imitation":1, 
-  "feats.Monstrous Peacemaker":1, "feats.Multitalented":1, "feats.Natural Ambition":1, 
-  "feats.Natural Skill":1, "feats.Orc Ferocity":1, "feats.Orc Sight":1, "feats.Orc Superstition":1, 
-  "feats.Orc Weapon Carnage":1, "feats.Orc Weapon Expertise":1, "feats.Orc Weapon Familiarity":1, 
-  "feats.Pervasive Superstition":1, "feats.Point-Blank Shot":1, "feats.Ride":1, "feats.Supernatural Charm":1, 
+  "feats.Double Slice":1, "feats.Elf Atavism":1, "feats.General Training":1, 
+  "feats.Haughty Obstinacy":1, "feats.Incredible Ferocity":1, "feats.Incredible Improvisation":1, 
+  "feats.Inspire Imitation":1, "feats.Monstrous Peacemaker":1, "feats.Multitalented":1, 
+  "feats.Natural Ambition":1, "feats.Natural Skill":1, "feats.Orc Ferocity":1, "feats.Orc Sight":1, 
+  "feats.Orc Superstition":1, "feats.Orc Weapon Carnage":1, "feats.Orc Weapon Expertise":1, 
+  "feats.Orc Weapon Familiarity":1, "feats.Pervasive Superstition":1, "feats.Point-Blank Shot":1, 
+  "feats.Ride":1, "feats.Snagging Strike":1, "feats.Supernatural Charm":1, 
   "feats.Unconventional Expertise":1, "feats.Unconventional Weaponry":1, "feats.Victorious Vigor":1, 
   "gender":"Female", "intelligence":10, "languages.Gnomish":1, "languages.Goblin":1, 
   "languages.Halfling":1, "levels.Fighter":1, "name":"Ancestry-Human", 
-  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Human - Half-Orc":1, 
-  "selectableFeatures.Human - Skilled Heritage Human":1, "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"None", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Dwarven Lore":1, "skillIncreases.Games Lore":1, "skillIncreases.Goblin Lore":1, 
-  "skillIncreases.Milling Lore":1, "skillIncreases.Scouting Lore":1, "skillIncreases.Theater Lore":1, 
-  "strength":10, "wisdom":10
+  "selectableFeatures.Elf - Woodland Elf":1, "selectableFeatures.Human - Half-Elf":1, 
+  "selectableFeatures.Human - Half-Orc":1, "selectableFeatures.Human - Skilled Heritage Human":1, 
+  "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"None", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Dwarven Lore":1, 
+  "skillIncreases.Games Lore":1, "skillIncreases.Goblin Lore":1, "skillIncreases.Milling Lore":1, 
+  "skillIncreases.Scouting Lore":1, "skillIncreases.Theater Lore":1, "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -69,7 +70,13 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Ability Notes</b>: <i>Ability Boosts: Ability Boost (Choose 4 from any)</i></td>
+    <td><b>Ability Notes</b>:     <table id="AbilityNotes" style="width:100%">
+    <tr style="text-align:center">
+      <td><i>Ability Boosts: Ability Boost (Choose 4 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Woodland Elf: 12' climb Speed (foliage) (critical success 25')</td>
+    </tr></table>
+</td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -79,23 +86,28 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry; Class; General</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 3; General: 1</td>
+        <td><b>Selectable Feature Count</b>: Elf (Heritage); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Clever Improviser; Cooperative Nature; Cooperative Soul; Elf Atavism; General Training; Haughty Obstinacy; Incredible Ferocity; Incredible Improvisation; Inspire Imitation; Monstrous Peacemaker; Multitalented; Natural Ambition; Natural Skill; Orc Ferocity; Orc Sight; Orc Superstition; Orc Weapon Carnage; Orc Weapon Expertise; Orc Weapon Familiarity; Pervasive Superstition; Point-Blank Shot; Ride; Supernatural Charm; Unconventional Expertise; Unconventional Weaponry; Victorious Vigor</td>
+        <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Clever Improviser; Cooperative Nature; Cooperative Soul; Double Slice; Elf Atavism; General Training; Haughty Obstinacy; Incredible Ferocity; Incredible Improvisation; Inspire Imitation; Monstrous Peacemaker; Multitalented; Natural Ambition; Natural Skill; Orc Ferocity; Orc Sight; Orc Superstition; Orc Weapon Carnage; Orc Weapon Expertise; Orc Weapon Familiarity; Pervasive Superstition; Point-Blank Shot; Ride; Snagging Strike; Supernatural Charm; Unconventional Expertise; Unconventional Weaponry; Victorious Vigor</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed); Weapon Trained (Advanced Weapons)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Half-Orc; Skilled Heritage Human; Versatile Heritage Human</td>
+        <td><b>Elf Features</b>: Woodland Elf</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Clever Improviser: Has Untrained Improvisation feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Elf Atavism: Has an elven heritage</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -107,13 +119,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Versatile Heritage Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
-        <td>Clever Improviser: Has Untrained Improvisation feature</td>
-      </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
-      </tr><tr style="text-align:center">
-        <td>Elf Atavism: Has a feature from elven ancestry</td>
-      </tr><tr style="text-align:center">
-        <td>General Training: +1 General feat</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
@@ -180,13 +186,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
-      <td>Cooperative Soul: Always succeeds when using Aid with expert skills</td>
+      <td>Cooperative Soul: Failures and critical failures when using Aid with expert skills are successes</td>
     </tr><tr style="text-align:center">
-      <td>Inspire Imitation: May use Aid freely on skill critical success</td>
+      <td>Inspire Imitation: After a critical success using a skill, may use Reaction to Aid an ally on the same skill</td>
     </tr><tr style="text-align:center">
-      <td>Monstrous Peacemaker: +1 Diplomacy, Perception, and Sense Motive with creatures marginalized in human society</td>
+      <td>Monstrous Peacemaker: +1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+    </tr><tr style="text-align:center">
+      <td>Untrained Improvisation: +0 on untrained skill checks</td>
     </tr></table>
 </td>
   </tr></table>
@@ -219,21 +227,25 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Incredible Ferocity: May use Orc Ferocity 1/hr</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Multitalented: +1 Class Feat (multiclass dedication)</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Orc Weapon Expertise: Weapon Expert (Falchion; Greataxe; Orc Weapons)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Orc Weapon Familiarity: Weapon Trained (Falchion; Greataxe)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Expertise: Weapon Expert (Unconventional Weaponry)</i></td>
+        <td><i>Unconventional Expertise: Weapon Expert (Choose 1 from any)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Unconventional Weaponry: Weapon Trained (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Incredible Ferocity: May use Orc Ferocity 1/hr</td>
+        <td>Double Slice: May attack with two weapons simultaneously</td>
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: May add +4 to an untrained skill check 1/dy</td>
-      </tr><tr style="text-align:center">
-        <td>Multitalented: Has a 2nd level multiclass feat</td>
       </tr><tr style="text-align:center">
         <td>Orc Ferocity: May retain 1 HP when brought to 0 HP 1/hr</td>
       </tr><tr style="text-align:center">
@@ -245,9 +257,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Unconventional Weaponry: Trained in choice of uncommon weapon</td>
+        <td>Snagging Strike: Successful Strike inflicts flat-footed on target for 1 rd</td>
       </tr><tr style="text-align:center">
         <td>Victorious Vigor: Gains 1 temporary HP for 1 rd when foe drops</td>
+      </tr><tr style="text-align:center">
+        <td>Woodland Elf: May always Take Cover within forest terrain</td>
       </tr></table>
 </td>
     </tr></table>
@@ -259,9 +273,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Haughty Obstinacy: Successful save vs. control is always a critical success; foe Intimidation (Coerce) fails are critical fails</td>
+        <td>Haughty Obstinacy: Successful saves vs. control are critical successs/Foe Intimidation (Coerce) fails are critical fails</td>
       </tr><tr style="text-align:center">
-        <td>Orc Superstition: +1 vs. magic 1/dy</td>
+        <td>Orc Superstition: May use Reaction to gain +1 vs. magic</td>
       </tr><tr style="text-align:center">
         <td>Pervasive Superstition: +1 vs. magic</td>
       </tr></table>
@@ -300,6 +314,8 @@ var attributes = {
         <td>Clever Improviser Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
         <td>Cooperative Soul Feat: Requires level (currently 1) >= 9 and cooperative nature feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Elf-Woodland Elf Selectable Feature: Requires elf level</td>
       </tr><tr style="text-align:center">
         <td>Incredible Ferocity Feat: Requires level (currently 1) >= 13 and orc ferocity feature (currently 1)</td>
       </tr><tr style="text-align:center">

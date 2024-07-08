@@ -2341,7 +2341,7 @@ Pathfinder2E.FEATURES = {
       '"May use an action to change coloration and gain +2 Stealth"',
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Fire resistance %{level//2>?1}/DC 10 to recover from fire damage (DC 5 with help)"',
+    'Note="Has fire resistance %{level//2>?1}/DC 10 to recover from fire damage (DC 5 with help)"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
@@ -2354,8 +2354,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
   'Gutsy Halfling':
-    'Section=save ' +
-    'Note="Successful save vs. emotion is always a critical success"',
+    'Section=save Note="Successful saves vs. emotion are critical successes"',
   'Half-Elf':'Section=feature Note="Has Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has Low-Light Vision feature"',
   'Hillock Halfling':
@@ -2364,7 +2363,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,save ' +
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs afflictions and sickened from ingestion, and a successful save is always a critical success"',
+      '"+2 vs. afflictions and sickened from ingestion; successes on saves are critical successes"',
   'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Keen Eyes':
     'Section=combat,skill ' +
@@ -2372,8 +2371,9 @@ Pathfinder2E.FEATURES = {
       '"DC 3/9 to target a concealed/hidden foe",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':
-    'Section=skill Note="+%{2+(feats.Multilingual||0)}  Language Count"',
-  'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6 HP"',
+    'Section=skill Note="+%{2+(feats.Multilingual||0)} Language Count"',
+  // TODO Add jaws to weapon list?
+  'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6P HP"',
   'Rock Dwarf':
     'Section=save ' +
     'Note="+2 vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance"',
@@ -2393,7 +2393,7 @@ Pathfinder2E.FEATURES = {
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step lower"',
+    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note="Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1), critical successes by 3 (virulent 2)"',
@@ -2401,18 +2401,19 @@ Pathfinder2E.FEATURES = {
   'Umbral Gnome':'Section=feature Note="Has Darkvision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
-    'Note="+4 Hit Points","Suffers falling damage as half distance"',
+    'Note="+4 Hit Points","Suffers half distance falling damage"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
   'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
     'Section=combat ' +
     'Note="May attempt a 60\' Seek using hearing; +2 within 30\'"',
   'Wildwood Halfling':
-    'Section=feature Note="Ignores difficult terrain from foliage"',
+    'Section=feature ' +
+    'Note="May move normally through foliage difficult terrain"',
   'Woodland Elf':
     'Section=ability,combat ' +
     'Note=' +
-      '"%{speed//2}\' Climb (foliage) (critical success %{speed}\')",' +
+      '"%{speed//2}\' climb Speed (foliage) (critical success %{speed}\')",' +
       '"May always Take Cover within forest terrain"',
 
   // Ancestry feats
@@ -2553,38 +2554,40 @@ Pathfinder2E.FEATURES = {
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%{1+(features.Irongut?1:0)} Subsist/May make +%{1+features.Irongut?1:0} Society or Survival check to Earn Income while using Subsist in a settlement"',
+    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May make +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival check to Earn Income while using Subsist in a settlement"',
   'Goblin Lore':
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
     'Section=combat ' +
-    'Note="May make a Step Reaction when an ally moves to an adjacent position"',
+    'Note="May use Reaction to take a Step when an ally moves to an adjacent position"',
   'Goblin Song':
     'Section=skill ' +
-    'Note="R30\' May use Performance to inflict -1 Perception and Will on targets for 1 rd (critical success 1 min; critical fail immune for 1 hr)"',
+    'Note="R30\' May use Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, critical success for 1 min"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Dogslicer; Horsechopper)",' +
       '"Has access to uncommon goblin weapons/Treats goblin weapons as one category lower"',
-  'Junk Tinker':'Section=skill Note="May use Crafting on junk"',
+  'Junk Tinker':
+    'Section=skill Note="May use Crafting on junk to create level 0 items"',
   'Rough Rider':
     'Section=feature,skill ' +
-    'Note="Has Ride feat","+1 Nature (Command a goblin dog or wolf mount)"',
-  'Very Sneaky':
-    'Section=ability,skill ' +
     'Note=' +
-      '"+5\' Sneak",' +
-      '"May Stealth between cover"',
+      '"Has Ride feature",' +
+      '"+1 Nature (Command an Animal with a goblin dog or wolf mount)"',
+  'Very Sneaky':
+    'Section=skill ' +
+    'Note="+5\' Sneak/May Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
     'Note="Critical hits with a goblin weapon inflict critical specialization effect"',
-  'Cave Climber':'Section=ability Note="10\' Climb"',
+  'Cave Climber':'Section=ability Note="10\' climb Speed"',
   'Skittering Scuttle':
     'Section=combat Note="May move up to %{speed//2}\' using Goblin Scuttle"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
+     // TODO featureNotes treats "Goblin Weapons" as a name instead of a category
     'Note="Weapon Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
     'Section=combat Note="May Sneak at full speed and without cover"',
@@ -2602,23 +2605,20 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon halfling weapons/Treats halfling weapons as one category lower"',
   'Sure Feet':
     'Section=skill ' +
-    'Note="Success on Acrobatics (balance) and Athletics (climb) is a critical success/Never flat-footed during balance or climb"',
+    'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
   'Titan Slinger':
     'Section=combat ' +
-    'Note="+1 damage die step on slings against Large and larger foes"',
+    'Note="+1 damage die step on slings vs. Large and larger foes"',
   'Unfettered Halfling':
     'Section=combat ' +
-    'Note="All escape successes and vs. grabbed or restrained are critical successes/All foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
+    'Note="Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
   'Watchful Halfling':
     'Section=combat,skill ' +
     'Note=' +
       '"May use Aid to overcome enchantment",' +
       '"+2 Perception (sense enchantment)/Gains an automatic -2 check to note enchantment"',
   'Cultural Adaptability':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Ancestry feat",' +
-      '"Has Adopted Ancestry feature"',
+    'Section=feature Note="+1 Ancestry feat/Has Adopted Ancestry feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict critical specialization effect"',
@@ -2628,27 +2628,28 @@ Pathfinder2E.FEATURES = {
   'Irrepressible':
     'Section=save ' +
     'Note=' +
-      '"Successful save vs. emotion is always a critical success%{saveNotes.gutsyHalfling?\'; failure is never a critical failure\':\'\'}"',
+      '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
     'Note="May use Hide and Sneak without cover and gain additional cover from creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
+     // TODO featureNotes treats "Halfling Weapons" as a name instead of a category
     'Note="Weapon Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a different tradition"',
   'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
   'General Training':
-    'Section=feature Note="+%{$\'features.General Training\'} General feat"',
+    'Section=feature Note="+%{$\'features.General Training\'} General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="Successful save vs. control is always a critical success; foe Intimidation (Coerce) fails are critical fails"',
-  'Natural Ambition':'Section=features Note="+1 Class feat"',
+    'Note="Successful saves vs. control are critical successs/Foe Intimidation (Coerce) fails are critical fails"',
+  'Natural Ambition':'Section=features Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
   'Unconventional Weaponry':
-    'Section=combat Note="Trained in choice of uncommon weapon"',
+    'Section=combat Note="Weapon Trained (Choose 1 from any)"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -2658,27 +2659,30 @@ Pathfinder2E.FEATURES = {
       '"Has Untrained Improvisation feature",' +
       '"May use any skill untrained"',
   'Cooperative Soul':
-    'Section=skill Note="Always succeeds when using Aid with expert skills"',
+    'Section=skill ' +
+    'Note="Failures and critical failures when using Aid with expert skills are successes"',
   'Incredible Improvisation':
     'Section=combat Note="May add +4 to an untrained skill check 1/dy"',
-  'Multitalented':'Section=combat Note="Has a 2nd level multiclass feat"',
+  'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Unconventional Weaponry)"',
+    'Note="Weapon Expert (Choose 1 from any)"',
 
-  'Elf Atavism':'Section=feature Note="Has a feature from elven ancestry"',
+  'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
-    'Section=skill Note="May use Aid freely on skill critical success"',
+    'Section=skill ' +
+    'Note="After a critical success using a skill, may use Reaction to Aid an ally on the same skill"',
   'Supernatural Charm':
     'Section=magic Note="May cast 1st level <i>Charm</i> 1/dy"',
   'Monstrous Peacemaker':
     'Section=skill ' +
-    'Note="+1 Diplomacy, Perception, and Sense Motive with creatures marginalized in human society"',
+    'Note="+1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society"',
   'Orc Ferocity':
-    'Section=combat Note="May retain 1 HP when brought to 0 HP 1/%{combatNotes.incredibleFerocity?\'hr\':\'dy\'}"',
+    'Section=combat Note="May retain 1 HP when brought to 0 HP 1/%V"',
   'Orc Sight':'Section=feature Note="Has Darkvision feature"',
-  'Orc Superstition':'Section=save Note="+1 vs. magic 1/dy"',
+  'Orc Superstition':
+    'Section=save Note="May use Reaction to gain +1 vs. magic"',
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -2695,6 +2699,7 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
+     // TODO featureNotes treats "Orc Weapons" as a name instead of a category
     'Note="Weapon Expert (Falchion; Greataxe; Orc Weapons)"',
 
   // Class Features and Feats
@@ -3748,7 +3753,8 @@ Pathfinder2E.FEATURES = {
   'Gang Up':
     'Section=combat ' +
     'Note="Attacks from allies inflict flat-footed on foes vs. self attacks"',
-  'Light Step':'Section=ability Note="Unaffected by difficult terrain"',
+  'Light Step':
+    'Section=ability Note="May move normally through difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Section=combat ' +
@@ -3938,7 +3944,7 @@ Pathfinder2E.FEATURES = {
   // Archetype
   'Alchemist Dedication':'Section=feature Note="FILL"',
   'Basic Concoction':'Section=feature Note="FILL"',
-  'Quick Alchemy':'Section=feature Note="FILL"',
+  // Quick Alchemy as above
   'Advanced Concoction':'Section=feature Note="FILL"',
   'Expert Alchemy':'Section=feature Note="FILL"',
   'Master Alchemy':'Section=feature Note="FILL"',
@@ -3967,8 +3973,8 @@ Pathfinder2E.FEATURES = {
   'Champion Resiliency':'Section=feature Note="FILL"',
   'Healing Touch':'Section=feature Note="FILL"',
   'Advanced Devotion':'Section=feature Note="FILL"',
-  "Champion's Reaction":'Section=feature Note="FILL"',
-  'Divine Ally':'Section=feature Note="FILL"',
+  // Champion's Reaction as above
+  // Divine Ally as above
   'Diverse Armor Expert':'Section=feature Note="FILL"',
 
   'Cleric Dedication':'Section=feature Note="FILL"',
@@ -5529,6 +5535,9 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   } else if(name == 'Gnome') {
     rules.defineRule
       ('features.Darkvision', 'featureNotes.umbralGnome', '=', '1');
+  } else if(name == 'Halfling') {
+    rules.defineRule
+      ('features.Low-Light Vision', 'featureNotes.twilightHalfling', '=', '1');
   } else if(name == 'Human') {
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
@@ -6016,6 +6025,20 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('rank.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
     );
+  } else if(name == 'Clever Improviser') {
+    rules.defineRule('features.Untrained Improvisation',
+      'featureNotes.cleverImproviser', '=', '1'
+    );
+  } else if(name == 'Cultural Adaptability') {
+    rules.defineRule('features.Adopted Ancestry',
+      'featureNotes.culturalAdaptability', '=', '1'
+    );
+    rules.defineRule
+      ('featCount.Ancestry', 'featureNotes.culturalAdaptability', '+', '1');
+  } else if(name == 'Elf Atavism') {
+    rules.defineRule('selectableFeatureCount.Elf (Heritage)',
+      'featureNotes.elfAtavism', '=', '1'
+    );
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'source<2');
     rules.defineRule
@@ -6029,8 +6052,17 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'rank.Society', '=', null,
       'feats.Multilingual', '*', null
     );
+  } else if(name == 'Multitalented') {
+    rules.defineRule('featCount.Class', 'featureNotes.multitalented', '+', '1');
+  } else if(name == 'Orc Ferocity') {
+    rules.defineRule('combatNotes.orcFerocity',
+      '', '=', '"dy"',
+      'combatNotes.incredibleFerocity', '=', '"hr"'
+    );
   } else if(name == 'Orc Sight') {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
+  } else if(name == 'Rough Rider') {
+    rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
@@ -6824,7 +6856,7 @@ Pathfinder2E.initialEditorElements = function() {
     ['languages', 'Languages', 'set', 'languages'],
     ['armor', 'Armor', 'select-one', 'armors'],
     ['shield', 'Shield', 'select-one', 'shields'],
-    ['weapons', 'Weapons', 'bag', 'weapons'],
+    ['weapons', 'Weapons', 'setbag', 'weapons'],
     ['weaponsChosen', 'Proficiency', 'set', 'weapons'],
     ['spells', 'Spells', 'fset', 'spells'],
     ['notes', 'Notes', 'textarea', [40,10]],
