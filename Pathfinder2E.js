@@ -6347,11 +6347,14 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
-  // TODO Two-hand property? Use if shield == "None"?
   let isFinesse = traits.includes('Finesse');
   let isRanged = group.match(/Bow|Dart|Sling/);
   let isPropulsive = traits.includes('Propulsive');
   let isThrown = traits.includes('Thrown');
+  let specialDamage =
+    traits.filter(x => x.match(/Two-hand/)).map(x => x.replace('Two-hand', '2h')).concat(
+    traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
+    traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
   damage = matchInfo[1];
   let damageType = matchInfo[3];
@@ -6361,7 +6364,7 @@ Pathfinder2E.weaponRules = function(
   });
 
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3 %4' + (range ? " R%5'" : '') + ')';
+  let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%5'" : '') + ')';
 
   rules.defineChoice('notes', weaponName + ':' + format);
 
