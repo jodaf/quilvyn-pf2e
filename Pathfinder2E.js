@@ -227,7 +227,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Animal Whisperer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Nature; Choose 1 from any terrain)",' +
+      '"1:Skill Trained (Nature; Choose 1 from any Terrain Lore)",' +
       '"1:Train Animal"',
   'Artisan':
     'Features=' +
@@ -264,7 +264,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Emissary':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; Choose 1 from any settlement)",1:Multilingual',
+      '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",1:Multilingual',
   'Entertainer':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
@@ -303,7 +303,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Hermit':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any terrain)",' +
+      '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any Terrain Lore)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
@@ -336,7 +336,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Nomad':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Choose 1 from any terrain)",' +
+      '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
       '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
@@ -358,12 +358,12 @@ Pathfinder2E.BACKGROUNDS = {
   'Scout':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Choose 1 from any terrain)",' +
+      '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
       '1:Forager',
   'Street Urchin':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
-      '"1:Skill Trained (Thievery; Choose 1 from any settlement)",1:Pickpocket',
+      '"1:Skill Trained (Thievery; Choose 1 from any Settlement Lore)",1:Pickpocket',
   'Tinker':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
@@ -737,7 +737,7 @@ Pathfinder2E.FEATS = {
   'Vivacious Conduit':'Type=Ancestry,Gnome Require="level >= 9"',
   'Gnome Weapon Expertise':
     'Type=Ancestry,Gnome ' +
-    'Require="gnomeLevel >= 13","features.Gnome Weapon Familiarity"',
+    'Require="level >= 13","features.Gnome Weapon Familiarity"',
 
   'Burn It!':'Type=Ancestry,Goblin',
   'City Scavenger':'Type=Ancestry,Goblin',
@@ -2348,10 +2348,8 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Successful saves vs. necromancy effects are critical successes"',
   'Fey-Touched Gnome':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Fey trait",' +
-      '"May cast chosen cantrip at will; may replace chosen cantrip 1/dy"',
+    'Section=magic ' +
+    'Note="May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/dy"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
@@ -2386,7 +2384,7 @@ Pathfinder2E.FEATURES = {
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill ' +
-    'Note="R30\' May locate a creature by smell/R30\' +2 Perception (Locate creature)"',
+    'Note="R30\' May locate a creature by smell/R30\' +2 Perception (locate a creature)"',
   'Skilled Heritage Human':
     'Section=skill,skill ' +
     'Note=' +
@@ -2400,7 +2398,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1), critical successes by 3 (virulent 2)"',
   'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
-  'Umbral Gnome':'Section=combat Note="Has Darkvision feature"',
+  'Umbral Gnome':'Section=feature Note="Has Darkvision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
     'Note="+4 Hit Points","Suffers falling damage as half distance"',
@@ -2500,17 +2498,23 @@ Pathfinder2E.FEATURES = {
      // TODO featureNotes treats "Elf Weapons" as a name instead of a category
     'Note="Weapon Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
-  'Animal Accomplice':
-    'Section=combat Note="Has Familiar feature"',
+  'Animal Accomplice':'Section=feature Note="Has Familiar feature"',
   'Burrow Elocutionist':
     'Section=skill Note="May speak with burrowing animals"',
   'Fey Fellowship':
     'Section=save,skill ' +
-    'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey; may retry after 1 min conversation"',
+    'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey and retry after 1 min conversation"',
   'First World Magic':
     'Section=magic Note="May cast chosen primal cantrip at will"',
   'Gnome Obsession':
-    'Section=skill Note="Skill %{level<2?\'Trained\':level<7?\'Expert\':level<15?\'Master\':\'Legendary\'} in chosen and background Lore skill"',
+    'Section=skill,skill,skill,skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Choose 1 from any Lore)",' +
+      '"Skill Expert (Choose 1 from any Lore)",' +
+      '"Skill Master (Choose 1 from any Lore)",' +
+      '"Skill Legendary (Choose 1 from any Lore)",' +
+      // TODO figure out how to automate this
+      '"Skill %{level<7\'Expert\':level<15?\'Master\':\'Legendary\'} in background lore skill"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -2539,6 +2543,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
+     // TODO featureNotes treats "Gnome Weapons" as a name instead of a category
     'Note="Weapon Expert (Glaive; Kukri; Gnome Weapons)"',
 
   'Burn It!':
@@ -4481,93 +4486,93 @@ Pathfinder2E.SHIELDS = {
   'Tower':'Price=10 AC=2 Speed=-5 Bulk=4 Hardness=5 HP=20'
 };
 Pathfinder2E.SKILLS = {
-  'Acrobatics':'Ability=Dexterity Category=general',
-  'Arcana':'Ability=Intelligence Category=general',
-  'Athletics':'Ability=Strength Category=general',
-  'Crafting':'Ability=Intelligence Category=general',
-  'Deception':'Ability=Charisma Category=general',
-  'Diplomacy':'Ability=Charisma Category=general',
-  'Intimidation':'Ability=Charisma Category=general',
-  'Medicine':'Ability=Wisdom Category=general',
-  'Nature':'Ability=Wisdom Category=general',
-  'Occultism':'Ability=Intelligence Category=general',
-  'Performance':'Ability=Charisma Category=general',
-  'Religion':'Ability=Wisdom Category=general',
-  'Society':'Ability=Intelligence Category=general',
-  'Stealth':'Ability=Dexterity Category=general',
-  'Survival':'Ability=Wisdom Category=general',
-  'Thievery':'Ability=Dexterity Category=general',
+  'Acrobatics':'Ability=Dexterity',
+  'Arcana':'Ability=Intelligence',
+  'Athletics':'Ability=Strength',
+  'Crafting':'Ability=Intelligence',
+  'Deception':'Ability=Charisma',
+  'Diplomacy':'Ability=Charisma',
+  'Intimidation':'Ability=Charisma',
+  'Medicine':'Ability=Wisdom',
+  'Nature':'Ability=Wisdom',
+  'Occultism':'Ability=Intelligence',
+  'Performance':'Ability=Charisma',
+  'Religion':'Ability=Wisdom',
+  'Society':'Ability=Intelligence',
+  'Stealth':'Ability=Dexterity',
+  'Survival':'Ability=Wisdom',
+  'Thievery':'Ability=Dexterity',
   // creature (ancestry) lores from ancestry chapter pg 33ff
-  'Dwarven Lore':'Ability=Intelligence Category=creature',
-  'Elven Lore':'Ability=Intelligence Category=creature',
-  'Gnome Lore':'Ability=Intelligence Category=creature', // added
-  'Goblin Lore':'Ability=Intelligence Category=creature',
-  'Halfling Lore':'Ability=Intelligence Category=creature',
+  'Dwarven Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Elven Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Gnome Lore':'Ability=Intelligence Category="Creature Lore"', // added
+  'Goblin Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Halfling Lore':'Ability=Intelligence Category="Creature Lore"',
   // terrain lores from background chapter pg 60ff
-  'Cave Lore':'Ability=Intelligence Category=terrain',
-  'Cavern Lore':'Ability=Intelligence Category=terrain',
-  'Desert Lore':'Ability=Intelligence Category=terrain',
-  'Forest Lore':'Ability=Intelligence Category=terrain',
-  'Plains Lore':'Ability=Intelligence Category=terrain',
-  'Swamp Lore':'Ability=Intelligence Category=terrain',
-  'Bardic Lore':'Ability=Intelligence Category=general', // Bardic Lore class feat pg 99
-  'Military Lore':'Ability=Intelligence Category=general', // pg 247
+  'Cave Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Cavern Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Desert Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Forest Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Plains Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Swamp Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Bardic Lore':'Ability=Intelligence', // Bardic Lore class feat pg 99
+  'Military Lore':'Ability=Intelligence', // pg 247
   // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Planar Lore':'Ability=Intelligence', // pg 247 excluded
   // Common lore subcatigories pg 248
-  'Academia Lore':'Ability=Intelligence Category=general',
-  'Accounting Lore':'Ability=Intelligence Category=general',
-  'Architecture Lore':'Ability=Intelligence Category=general',
-  'Art Lore':'Ability=Intelligence Category=general',
-  'Circus Lore':'Ability=Intelligence Category=general',
-  'Engineering Lore':'Ability=Intelligence Category=general',
-  'Farming Lore':'Ability=Intelligence Category=general',
-  'Fishing Lore':'Ability=Intelligence Category=general',
-  'Fortune-Telling Lore':'Ability=Intelligence Category=general',
-  'Games Lore':'Ability=Intelligence Category=general',
-  'Geneology Lore':'Ability=Intelligence Category=general',
-  'Gladitorial Lore':'Ability=Intelligence Category=general',
-  'Guild Lore':'Ability=Intelligence Category=general',
-  'Heraldry Lore':'Ability=Intelligence Category=general',
-  'Herbalism Lore':'Ability=Intelligence Category=general',
-  'Hunting Lore':'Ability=Intelligence Category=general',
-  'Labor Lore':'Ability=Intelligence Category=general',
-  'Legal Lore':'Ability=Intelligence Category=general',
-  'Library Lore':'Ability=Intelligence Category=general',
-  'Abadar Lore':'Ability=Intelligence Category=deity',
-  'Iomedae Lore':'Ability=Intelligence Category=deity',
-  'Demon Lore':'Ability=Intelligence Category=creature',
-  'Owlbear Lore':'Ability=Intelligence Category=creature',
-  'Vampire Lore':'Ability=Intelligence Category=creature',
-  'Abyss Lore':'Ability=Intelligence Category=planar',
-  'Astral Plane Lore':'Ability=Intelligence Category=planar',
-  'Heaven Lore':'Ability=Intelligence Category=planar',
-  'Absalom Lore':'Ability=Intelligence Category=settlement',
-  'Magnimar Lore':'Ability=Intelligence Category=settlement',
-  'Mountain Lore':'Ability=Intelligence Category=terrain',
-  'River Lore':'Ability=Intelligence Category=terrain',
-  'Alcohol Lore':'Ability=Intelligence Category=Food',
-  'Baking Lore':'Ability=Intelligence Category=Food',
-  'Butchering Lore':'Ability=Intelligence Category=Food',
-  'Cooking Lore':'Ability=Intelligence Category=Food',
-  'Tea Lore':'Ability=Intelligence Category=Food',
-  'Mercantile Lore':'Ability=Intelligence Category=general',
-  'Midwifery Lore':'Ability=Intelligence Category=general',
-  'Milling Lore':'Ability=Intelligence Category=general',
-  'Mining Lore':'Ability=Intelligence Category=general',
-  'Sailing Lore':'Ability=Intelligence Category=general',
-  'Scouting Lore':'Ability=Intelligence Category=general',
-  'Scribing Lore':'Ability=Intelligence Category=general',
-  'Stabling Lore':'Ability=Intelligence Category=general',
-  'Tanning Lore':'Ability=Intelligence Category=general',
-  'Theater Lore':'Ability=Intelligence Category=general',
-  'Underworld Lore':'Ability=Intelligence Category=general',
-  'Warfare Lore':'Ability=Intelligence Category=general',
-  'Folktale Lore':'Ability=Intelligence Category=general', // pg 503
-  'Aberration Lore':'Ability=Intelligence Category=creature', // pg 504
-  'Troll Lore':'Ability=Intelligence Category=creature', // pg 505
-  'Taldan History Lore':'Ability=Intelligence Category=general' // pg 506
+  'Academia Lore':'Ability=Intelligence',
+  'Accounting Lore':'Ability=Intelligence',
+  'Architecture Lore':'Ability=Intelligence',
+  'Art Lore':'Ability=Intelligence',
+  'Circus Lore':'Ability=Intelligence',
+  'Engineering Lore':'Ability=Intelligence',
+  'Farming Lore':'Ability=Intelligence',
+  'Fishing Lore':'Ability=Intelligence',
+  'Fortune-Telling Lore':'Ability=Intelligence',
+  'Games Lore':'Ability=Intelligence',
+  'Geneology Lore':'Ability=Intelligence',
+  'Gladitorial Lore':'Ability=Intelligence',
+  'Guild Lore':'Ability=Intelligence',
+  'Heraldry Lore':'Ability=Intelligence',
+  'Herbalism Lore':'Ability=Intelligence',
+  'Hunting Lore':'Ability=Intelligence',
+  'Labor Lore':'Ability=Intelligence',
+  'Legal Lore':'Ability=Intelligence',
+  'Library Lore':'Ability=Intelligence',
+  'Abadar Lore':'Ability=Intelligence Category="Deity Lore"',
+  'Iomedae Lore':'Ability=Intelligence Category="Deity Lore"',
+  'Demon Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Owlbear Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Vampire Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Abyss Lore':'Ability=Intelligence Category="Planar Lore"',
+  'Astral Plane Lore':'Ability=Intelligence Category="Planar Lore"',
+  'Heaven Lore':'Ability=Intelligence Category="Planar Lore"',
+  'Absalom Lore':'Ability=Intelligence Category="Settlement Lore"',
+  'Magnimar Lore':'Ability=Intelligence Category="Settlement Lore"',
+  'Mountain Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'River Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Alcohol Lore':'Ability=Intelligence Category="Food Lore"',
+  'Baking Lore':'Ability=Intelligence Category="Food Lore"',
+  'Butchering Lore':'Ability=Intelligence Category="Food Lore"',
+  'Cooking Lore':'Ability=Intelligence Category="Food Lore"',
+  'Tea Lore':'Ability=Intelligence Category="Food Lore"',
+  'Mercantile Lore':'Ability=Intelligence',
+  'Midwifery Lore':'Ability=Intelligence',
+  'Milling Lore':'Ability=Intelligence',
+  'Mining Lore':'Ability=Intelligence',
+  'Sailing Lore':'Ability=Intelligence',
+  'Scouting Lore':'Ability=Intelligence',
+  'Scribing Lore':'Ability=Intelligence',
+  'Stabling Lore':'Ability=Intelligence',
+  'Tanning Lore':'Ability=Intelligence',
+  'Theater Lore':'Ability=Intelligence',
+  'Underworld Lore':'Ability=Intelligence',
+  'Warfare Lore':'Ability=Intelligence',
+  'Folktale Lore':'Ability=Intelligence', // pg 503
+  'Aberration Lore':'Ability=Intelligence Category="Creature Lore"', // pg 504
+  'Troll Lore':'Ability=Intelligence Category="Creature Lore"', // pg 505
+  'Taldan History Lore':'Ability=Intelligence' // pg 506
 };
 Pathfinder2E.SPELLS = {
   'Abyssal Plague':
@@ -5521,6 +5526,9 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     );
   } else if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
+  } else if(name == 'Gnome') {
+    rules.defineRule
+      ('features.Darkvision', 'featureNotes.umbralGnome', '=', '1');
   } else if(name == 'Human') {
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
@@ -5977,6 +5985,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('rank.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
+  } else if(name == 'Animal Accomplice') {
+    rules.defineRule
+      ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
@@ -6005,6 +6016,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('rank.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
     );
+  } else if(name == 'Gnome Obsession') {
+    rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'source<2');
+    rules.defineRule
+      ('skillNotes.gnomeObsession-1', 'level', '?', 'source>=2 && source<7');
+    rules.defineRule
+      ('skillNotes.gnomeObsession-2', 'level', '?', 'source>=7 && source<15');
+    rules.defineRule('skillNotes.gnomeObsession-3', 'level', '?', 'source>=15');
+    rules.defineRule('skillNotes.gnomeObsession-4', 'level', '?', 'source>=2');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', null,
@@ -6193,7 +6212,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     console.log('Bad ability "' + ability + '" for skill ' + name);
     return;
   }
-  if(typeof(category) != 'string') {
+  if(category && typeof(category) != 'string') {
     console.log('Bad category "' + category + '" for skill ' + name);
     return;
   }
@@ -7006,6 +7025,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             howMany = m[1] == '%V' ? attrs[attr] : +m[1];
             if(m[2].match(/^any$/i))
               choices = Object.keys(allSkills);
+            else if(m[2].match(/^any\slore$/i))
+              choices = Object.keys(allSkills).filter(x => x.includes('Lore'));
             else if(m[2].match(/^any\s/i))
               choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
             else
