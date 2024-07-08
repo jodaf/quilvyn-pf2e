@@ -67,9 +67,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Ability Boosts: Ability Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Cave Climber: 10' Climb</td>
-    </tr><tr style="text-align:center">
-      <td>Very Sneaky: +5' Sneak</td>
+      <td>Cave Climber: 10' climb Speed</td>
     </tr></table>
 </td>
   </tr></table>
@@ -101,11 +99,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Rough Rider: Has Ride feature</i></td>
+      </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
         <td>Irongut Goblin: May safely eat spoiled food and when sickened</td>
       </tr><tr style="text-align:center">
-        <td>Rough Rider: Has Ride feat</td>
+        <td>Ride: Command an Animal to move automatically succeeds/Mount acts on self turn</td>
       </tr></table>
 </td>
     </tr></table>
@@ -162,15 +162,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td>Goblin Song: R30' May use Performance to inflict -1 Perception and Will on targets for 1 rd (critical success 1 min; critical fail immune for 1 hr)</td>
+      <td>City Scavenger: +2 Subsist checks/May make +2 Society or Survival check to Earn Income while using Subsist in a settlement</td>
     </tr><tr style="text-align:center">
-      <td>Junk Tinker: May use Crafting on junk</td>
+      <td>Goblin Song: R30' May use Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, critical success for 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Rough Rider: +1 Nature (Command a goblin dog or wolf mount)</td>
+      <td>Junk Tinker: May use Crafting on junk to create level 0 items</td>
+    </tr><tr style="text-align:center">
+      <td>Rough Rider: +1 Nature (Command an Animal with a goblin dog or wolf mount)</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
     </tr><tr style="text-align:center">
-      <td>Very Sneaky: May Stealth between cover</td>
+      <td>Very Sneaky: +5' Sneak/May Sneak between cover</td>
     </tr></table>
 </td>
   </tr></table>
@@ -213,7 +215,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Burn It!: +1 persistent fire damage</td>
       </tr><tr style="text-align:center">
-        <td>Goblin Scuttle: May make a Step Reaction when an ally moves to an adjacent position</td>
+        <td>Goblin Scuttle: May use Reaction to take a Step when an ally moves to an adjacent position</td>
       </tr><tr style="text-align:center">
         <td>Goblin Weapon Familiarity: Has access to uncommon goblin weapons/Treats goblin weapons as one category lower</td>
       </tr><tr style="text-align:center">
@@ -221,7 +223,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Point-Blank Shot: Suffers no volley penalty from ranged volley weapon/+2 attack at close range with ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
-        <td>Razortooth Goblin: Jaw attack inflicts 1d6 HP</td>
+        <td>Razortooth Goblin: Jaw attack inflicts 1d6P HP</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr><tr style="text-align:center">
@@ -239,13 +241,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Charhide Goblin: Fire resistance 1/DC 10 to recover from fire damage (DC 5 with help)</td>
+        <td>Charhide Goblin: Has fire resistance 1/DC 10 to recover from fire damage (DC 5 with help)</td>
       </tr><tr style="text-align:center">
-        <td>Irongut Goblin: +2 vs afflictions and sickened from ingestion, and a successful save is always a critical success</td>
+        <td>Irongut Goblin: +2 vs. afflictions and sickened from ingestion; successes on saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Snow Goblin: Has cold resistance 1/Treats environmental cold as 1 step lower</td>
+        <td>Snow Goblin: Has cold resistance 1/Treats environmental cold as 1 step less extreme</td>
       </tr><tr style="text-align:center">
-        <td>Unbreakable Goblin: Suffers falling damage as half distance</td>
+        <td>Unbreakable Goblin: Suffers half distance falling damage</td>
       </tr></table>
 </td>
     </tr></table>
@@ -263,8 +265,6 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Warnings</b>: City Scavenger: Implies subsist skill</td>
-    </tr><tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Ancestry Feats Allocation: 1 available vs. 14 allocated</td>
