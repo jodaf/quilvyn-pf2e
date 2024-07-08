@@ -381,7 +381,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Alchemist Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Class Trained (Alchemist)",' +
       '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
@@ -401,7 +401,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Barbarian Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Class Trained (Barbarian)",' +
       '"1:Rage","1:Instinct","1:Barbarian Feats","2:Skill Feats",' +
@@ -423,7 +423,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Bard Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Unarmored)",' +
       '"1:Class Trained (Bard)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
@@ -441,7 +441,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Champion Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
@@ -461,7 +461,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Cleric Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored)",' +
       '"1:Class Trained (Cleric)",' +
       '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","2:Cleric Feats",' +
@@ -475,7 +475,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Druid Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Class Trained (Druid)",' +
       '"1:Primal Spellcasting","1:Druidic Language","1:Druidic Order",' +
@@ -492,7 +492,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Fighter Skills",' +
-      '"1:Weapon Expert (Simple Weapons; Martial Weapons; Unarmed)","1:Weapon Trained (Advanced Weapons)",' +
+      '"1:Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)","1:Weapon Trained (Advanced Weapons)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
       '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
@@ -509,7 +509,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Expert (Unarmored)",' +
       '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
       '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
@@ -526,7 +526,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
       '"1:Ranger Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
       '"1:Class Trained (Ranger)",' +
       '"1:Hunt Prey","1:Hunter\'s Edge","1:Ranger Feats","2:Skill Feats",' +
@@ -545,7 +545,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
       '"1:Rogue Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Unarmored)",' +
       '"1:Class Trained (Rogue)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
@@ -565,7 +565,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Sorcerer Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed)",' +
+      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored)",' +
       '"1:Class Trained (Sorcerer)",' +
       '"1:Bloodline","1:Sorcerer Spellcasting","1:Spell Repertoire",' +
@@ -582,7 +582,7 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Expert (Fortitude; Reflex)",' +
       '"1:Wizard Skills",' +
-      '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed)",' +
+      '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored)",' +
       '"1:Class Trained (Wizard)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
@@ -2000,7 +2000,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 12",' +
       // TODO or rank.any weapon >= 3
-      '"rank.Unarmed >= 3"',
+      '"rank.Unarmed Attacks >= 3"',
 
   'Monk Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
@@ -2799,7 +2799,7 @@ Pathfinder2E.FEATURES = {
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"May use melee and unarmed weapon specialization features while raging"',
   'Deny Advantage':
     'Section=combat ' +
@@ -2840,7 +2840,7 @@ Pathfinder2E.FEATURES = {
   'Spirit Instinct':'Section=feature Note="FILL"',
   'Weapon Fury':
     'Section=combat ' +
-    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed)"',
+    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   'Acute Vision':'Section=feature Note="Has Darkvision during rage"',
@@ -3277,11 +3277,11 @@ Pathfinder2E.FEATURES = {
   // Shield Block as below
   'Versatile Legend':
     'Section=combat ' +
-    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed)/Weapon Master (Advanced Weapons)/Class Master (Fighter)"',
+    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Master (Advanced Weapons)/Class Master (Fighter)"',
   'Weapon Legend':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed)",' +
+      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"Weapon Legendary in common weapons of chosen group/Weapon Master in advanced weapons"',
 
   // Weapon Specialization as above
@@ -3667,7 +3667,7 @@ Pathfinder2E.FEATURES = {
       '"Successful Strike forces a Fortitude save; critical failure inflicts self choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
-    'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)"',
+    'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
   'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
   'Rogue Feats':'Section=feature Note="%V selections"',
   'Rogue Skills':
@@ -3704,7 +3704,7 @@ Pathfinder2E.FEATURES = {
   'Weapon Tricks':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed)",' +
+      '"Weapon Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
       '"Critical success on a Strike vs. a flat-footed foe with an agile weapon, finesse weapon, unarmed attack, or rogue weapon applies specialization effect"',
   // Weapon Specialization as above
 
@@ -4820,7 +4820,7 @@ Pathfinder2E.WEAPONS = {
   'Lance':
     'Category=Martial Price=1 Damage=1d8P Bulk=2 Hands=2 Group=Spear Trait="Deadly d8","Jousting d6",Reach',
   'Light Hammer':
-    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer Trait=Agile,Thrown',
+    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer Trait=Agile,Thrown Range=20',
   'Light Pick':
     'Category=Martial Price=0.4 Damage=1d4P Bulk=L Hands=1 Group=Pick Trait=Agile,"Fatal d8"',
   'Longsword':
@@ -4862,7 +4862,7 @@ Pathfinder2E.WEAPONS = {
   "Filcher's Fork":
     'Category=Martial Price=1 Damage=1d4P Bulk=L Hands=1 Group=Spear Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon Range=20',
   'Gnome Hooked Hammer':
-    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer Trait=Gnome,Trip,"Two-Hand d10",Uncommon,"Versatile P"',
+    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer Trait=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
   'Horsechopper':
     'Category=Martial Price=0.9 Damage=1d8S Bulk=2 Hands=2 Group=Polearm Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
   'Kama':
@@ -4870,7 +4870,7 @@ Pathfinder2E.WEAPONS = {
   'Katana':
     'Category=Martial Price=2 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait="Deadly d8","Two-hand d10","Versatile P"',
   'Kukri':
-    'Category=Martial Price=0.6 Damage=1d6P Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+    'Category=Martial Price=0.6 Damage=1d6S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
   'Nunchaku':
     'Category=Martial Price=0.2 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
   'Orc Knuckle Dragger':
@@ -4903,7 +4903,7 @@ Pathfinder2E.WEAPONS = {
   'Javelin':
     'Category=Simple Price=0.1 Damage=1d6P Bulk=L Hands=1 Group=Dart Trait=Thrown Range=30',
   'Sling':
-    'Category=Simple Price=0 Damage=1d6P Bulk=L Hands=1 Group=Sling Trait=Propulsive,"Reload 1" Range=50',
+    'Category=Simple Price=0 Damage=1d6B Bulk=L Hands=1 Group=Sling Trait=Propulsive,"Reload 1" Range=50',
 
   // TODO Alchemical bomb
   'Composite Longbow':
@@ -6347,6 +6347,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad range "' + range + '" for weapon ' + name);
   }
 
+  // TODO Two-hand property? Use if shield == "None"?
   let isFinesse = traits.includes('Finesse');
   let isRanged = group.match(/Bow|Dart|Sling/);
   let isPropulsive = traits.includes('Propulsive');
@@ -6370,7 +6371,7 @@ Pathfinder2E.weaponRules = function(
     ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
   rules.defineRule('weaponProficiencyBonus.' + name,
     weaponName, '?', null,
-    'rank.' + category + ' Weapons', '=', 'source * 2',
+    'rank.' + (category!='Unarmed' ? category + ' Weapons' : 'Unarmed Attacks'), '=', 'source * 2',
     'rank.' + name, '^=', 'source * 2',
     'level', '+', null
   );
@@ -7321,7 +7322,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
          !weapons[attr].includes(clas) &&
          !weapons[attr].includes(race))
         continue;
-      if(attrs['rank.' + category + ' Weapons'])
+      category += category == 'Unarmed' ? ' Attacks' : ' Weapons';
+      if(attrs['rank.' + category] || attrs['rank.' + attr])
         choices.push(attr);
     }
     if(howMany > 0)
