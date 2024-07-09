@@ -2550,7 +2550,7 @@ Pathfinder2E.FEATURES = {
   'Burn It!':
     'Section=combat,magic ' +
     'Note=' +
-      '"+1 persistent fire damage",' +
+      '"+1 HP persistent fire damage",' +
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
@@ -2739,13 +2739,13 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="+%{$\'features.Greater Weapon Specialization\'?4:2}/+%{$\'features.Greater Weapon Specialization\'?6:3}/+%{$\'features.Greater Weapon Specialization\'?8:4} damage with expert/master/legendary weapons"',
+    'Note="+%{combatNotes.greaterWeaponSpecialization?4:2}/+%{combatNotes.greaterWeaponSpecialization?6:3}/+%{combatNotes.greaterWeaponSpecialization?8:4} HP damage with expert/master/legendary weapons"',
   'Alchemical Alacrity':'Section=feature Note="FILL"',
   'Evasion':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Reflex)",' +
-      '"Success on Reflex save are critical successes"',
+      '"Successes on Reflex saves are critical successes"',
   'Alchemical Mastery':'Section=feature Note="FILL"',
   'Perpetual Perfection':'Section=feature Note="FILL"',
   'Medium Armor Mastery':'Section=feature Note="FILL"',
@@ -2853,7 +2853,7 @@ Pathfinder2E.FEATURES = {
       '"May use Demoralize during rage"',
   'Raging Thrower':
     'Section=combat ' +
-    'Note="+2 thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
+    'Note="+2 HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
   'Sudden Charge':
     'Section=combat Note="May make a melee Strike after a double Stride"',
   'Acute Scent':'Section=ability Note="R30\' imprecise scent"',
@@ -2915,7 +2915,7 @@ Pathfinder2E.FEATURES = {
     'Note="May inflict %{strengthModifier+2}+specialization damage to grabbed foe (Fort neg)"',
   'Come And Get Me':
     'Section=combat ' +
-    'Note="May suffer flat-footed and +2 foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constitutionModifier*2}) until rage ends"',
+    'Note="May suffer flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constitutionModifier*2}) until rage ends"',
   'Furious Sprint':
     'Section=combat ' +
     'Note="May use 2 actions to Stride %{speed*5}\' in a straight line, or 3 actions to Stride %{speed*8}\'"',
@@ -2955,7 +2955,7 @@ Pathfinder2E.FEATURES = {
     'Note="When dropped to %{hitPoints//2} HP, may suffer -2 AC and -1 Saves to gain +2 attacks"',
   'Brutal Critical':
     'Section=combat ' +
-    'Note="Critical melee hits inflict +1 damage dia and 2 dice bleed damage"',
+    'Note="Critical melee hits inflict +1 damage die and 2 dice bleed damage"',
   'Perfect Clarity':
     'Section=combat ' +
     'Note="May end rage for +2 reroll on failed attack or Will save"',
@@ -2974,7 +2974,7 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   'Composition Spells':'Section=feature Note="FILL"',
   'Expert Spellcaster':'Section=feature Note="FILL"',
-  'Great Fortitude':'Section=feature Note="FILL"',
+  'Great Fortitude':'Section=feature Note="Save Expert (Fortitude)"',
   'Greater Resolve':'Section=feature Note="FILL"',
   'Legendary Spellcaster':'Section=feature Note="FILL"',
   'Light Armor Expertise':
@@ -3346,7 +3346,7 @@ Pathfinder2E.FEATURES = {
     'Note="Weapon Trained with advanced weapons in chosen group"',
   'Advantageous Assault':
     'Section=combat ' +
-    'Note="Strike on grabbed, prone, or restrained foe inflicts +damage dice damage (+damage dice + 2 if wielded two-handed), even on failure"',
+    'Note="Strike on grabbed, prone, or restrained foe inflicts +damage dice HP damage (+damage dice + 2 if wielded two-handed), even on failure"',
   'Disarming Stance':
     'Section=combat ' +
     'Note="+1 to Disarm; +2 vs. Disarm/May Disarm foes two sizes larger"',
@@ -3369,7 +3369,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Double Shot against a single foe/May make three ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
   'Blind-Fight':
     'Section=combat ' +
-    'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check"',
+    'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check/Does not suffer flat-footed with hidden foes"',
   'Dueling Riposte':
     'Section=combat ' +
     'Note="May use a Reaction to Strike or Disarm a foe who critically misses an attack on self"',
@@ -3405,7 +3405,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Attack Of Opportunity in response to a concentrate action; successful Strike disrupts"',
   'Fearsome Brute':
     'Section=combat ' +
-    'Note="Strikes against frightened foes inflict +frighted value x %{rank.Intimidation>=2?3:2} damage"',
+    'Note="Strikes against frightened foes inflict +frighted value x %{rank.Intimidation>=2?3:2} HP damage"',
   'Improved Knockdown':
     'Section=combat Note="May use Knockdown without a Trip check"',
   'Mirror Shield':
@@ -3562,7 +3562,11 @@ Pathfinder2E.FEATURES = {
   // Greater Weapon Specialization as above
   'Hunt Prey':'Section=feature Note="FILL"',
   "Hunter's Edge":'Section=feature Note="FILL"',
-  'Improved Evasion':'Section=feature Note="FILL"',
+  'Improved Evasion':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Reflex)",' +
+      '"Critical failures on Reflex saves are normal failures/Suffers half normal damage from failed Reflex saves"',
   'Incredible Senses':'Section=skill Note="Perception Legendary"',
   // Iron Will as above
   // Juggernaut as above
@@ -3651,7 +3655,7 @@ Pathfinder2E.FEATURES = {
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Strike inflicts both -10 Speed and enfeebled 1"',
+    'Note="Debilitating Strike inflicts choice of two debilitations"',
   // Evasion as above
   // Great Fortitude as above
   // Greater Weapon Specialization as above
@@ -3664,7 +3668,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"Successful Strike forces a Fortitude save; critical failure inflicts self choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"Successful Strikes on flat-footed foes force Fortitude saves; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -3677,7 +3681,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Armor %V (Medium Armor)",' +
-      '"May sneak attack with any simple weapon/May apply critical specialization on a successful Strike with a d8 or lighter weapon on a flat-footed foe",' +
+      '"May sneak attack with any simple weapon/May apply critical specialization on a successful Strike with a d8 or lighter simple weapon on a flat-footed foe",' +
       '"Skill Trained (Intimidation)"',
   'Scoundrel':
     'Section=combat,skill ' +
@@ -3691,21 +3695,21 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sneak Attack':
     'Section=combat ' +
-    'Note="+%{(level+7)//6}d6 damage vs. flat-footed foe with agile, finesse, or projectile weapons"',
+    'Note="+%{(level+7)//6}d6 HP damage vs. flat-footed foe with agile, finesse, or ranged weapons"',
   'Surprise Attack':
     'Section=combat ' +
-    'Note="May use Deception or Stealth for initiative to inflict flat-footed on creature that haven\'t acted"',
+    'Note="May use Deception or Stealth for initiative to inflict flat-footed on creatures that haven\'t acted"',
   'Thief':
     'Section=combat,skill ' +
     'Note=' +
-      '"+%{dexterityModifier-strengthModifier} damage with finesse weapons",' +
+      '"+%{dexterityModifier-strengthModifier} HP damage with finesse melee weapons",' +
       '"Skill Trained (Thievery)"',
   // Vigilant Senses as above
   'Weapon Tricks':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"Critical success on a Strike vs. a flat-footed foe with an agile weapon, finesse weapon, unarmed attack, or rogue weapon applies specialization effect"',
+      '"Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict critical specialization effect"',
   // Weapon Specialization as above
 
   'Nimble Dodge':
@@ -3713,12 +3717,12 @@ Pathfinder2E.FEATURES = {
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"+{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
-      '"+{rank.Thievery>=3?2:1} vs. traps",' +
-      '"+{rank.Thievery>=3?2:1} AC vs. traps"',
+      '"+%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
+      '"+%{rank.Thievery>=3?2:1} vs. traps",' +
+      '"+%{rank.Thievery>=3?2:1} AC vs. traps"',
   'Twin Feint':
     'Section=combat ' +
-    'Note="May Strike with each hand, inflicting flat-footed on the second"',
+    'Note="May use 2 actions to Strike with each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Section=combat ' +
     'Note="May use %{rank.Intimidation>=4 ? \'a free action\' : \'Reaction\'} for a +2 Intimidation to Demoralize another foe after current foe drops"',
@@ -3736,12 +3740,12 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits inflict flat-footed vs. self attacks for 1 rd"',
   'Battle Assessment':
     'Section=combat ' +
-    'Note="May use 1 action to learn enemy strengths and weaknesses"',
+    'Note="May use Perception vs. Deception or Stealth DC to determine foe strengths and weaknesses"',
   'Dread Striker':
     'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
   'Magical Trickster':
     'Section=magic ' +
-    'Note="Spell attacks vs. flat-footed foe inflict sneak attack damage"',
+    'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
   'Poison Weapon':
     'Section=combat Note="May apply poison to piercing and slashing weapons"',
   'Reactive Pursuit':
@@ -3752,36 +3756,37 @@ Pathfinder2E.FEATURES = {
   // Scout's Warning as above
   'Gang Up':
     'Section=combat ' +
-    'Note="Attacks from allies inflict flat-footed on foes vs. self attacks"',
+    'Note="Threats from allies inflict flat-footed on foes vs. self attacks"',
   'Light Step':
     'Section=ability Note="May move normally through difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Section=combat ' +
-    'Note="Sneak attacks inflict %{(level+7)//6} persistent bleed damage"',
+    'Note="Sneak attacks inflict %{(level+7)//6} HP persistent bleed damage"',
   // Blind-Fight as above
   'Delay Trap':
     'Section=skill ' +
     'Note="May attempt a +5 DC Thievery to delay or disable trap activation"',
   'Improved Poison Weapon':
     'Section=combat ' +
-    'Note="Poisoned weapons inflict +2d4 damage/Critical miss does not waste poison"',
+    'Note="Poisoned weapons inflict +2d4 HP damage/Critical miss does not waste poison"',
   'Nimble Roll':
     'Section=save ' +
-    'Note="May use Nimble Dodge before a Reflex save; success allows 10\' Stride"',
+    'Note="May use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
   'Opportune Backstab':
-    'Section=combat Note="May use Reaction to Strike a foe that hits an ally"',
+    'Section=combat ' +
+    'Note="May use Reaction after an ally hits a foe to Strike the same foe"',
   'Sidestep':
     'Section=combat ' +
     'Note="May use Reaction to redirect a failed Strike on self to an adjacent creature"',
   'Sly Striker':
     'Section=combat ' +
-    'Note="Successful Strikes with sneak attack weapons inflict +%{level>=14 ? 2 : 1}d6 damage"',
+    'Note="Successful Strikes with sneak attack weapons inflict +%{level>=14 ? 2 : 1}d6 HP damage"',
   'Precise Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may inflict +2d6 damage or flat-footed"',
+    'Note="Debilitating Strike may inflict +2d6 HP damage or flat-footed"',
   'Sneak Savant':
-    'Section=skill Note="Normal failures with Sneak actions are successes"',
+    'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
     'Section=combat ' +
     'Note="Debilitating Strike may prevent reactions or flanking"',
@@ -3790,13 +3795,13 @@ Pathfinder2E.FEATURES = {
     'Note="Debilitating Strike may inflict weakness 5 to choice of weapon type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Strike forces Fortitude save; critical failure paralyzes for 1 rd, failure/success inflict slows 2/1 for 1 rd"',
+    'Note="Debilitating Strike forces foe Fortitude saves; critical failure paralyzes for 1 rd; failure/success inflicts slowed 2/1 for 1 rd"',
   'Fantastic Leap':
     'Section=combat ' +
     'Note="May use 2 actions to Strike after a High Jump or Long Jump, using Long Jump distance for either"',
   'Felling Shot':
     'Section=combat ' +
-    'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds for 1 rd, failure causes 120\' fall"',
+    'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds for 1 rd; failure causes 120\' fall"',
   'Reactive Interference':
     'Section=combat ' +
     'Note="May use Reaction to prevent foe Reaction; requires an attack against a higher-level foe"',
@@ -3807,7 +3812,7 @@ Pathfinder2E.FEATURES = {
     'Note="May negate half damage from an attack that would reduce self to 0 HP 1/10 min"',
   'Instant Opening':
     'Section=combat ' +
-    'Note="R30\' May use a distraction to make a foe flat-footed against self for 1 rd"',
+    'Note="R30\' May use a distraction to inflict flat-footed vs. self for 1 rd"',
   'Leave An Opening':
     'Section=combat ' +
     'Note="A critical hit vs. a flat-footed foe gives an ally an Attack Of Opportunity"',
@@ -3821,24 +3826,23 @@ Pathfinder2E.FEATURES = {
     'Section=save Note="May use Reaction to suppress a mental effect for 1 rd"',
   'Dispelling Slice':
     'Section=combat ' +
-    'Note="May use 2 actions to dispel magical effect with a successful sneak attack"',
+    'Note="May use 2 actions to dispel a magical effect on target with a successful sneak attack"',
   'Perfect Distraction':
     'Section=magic Note="May use <i>Mislead</i> effects 1/10 min"',
   'Implausible Infiltration':
     'Section=ability ' +
     'Note="May use 2 actions to move through up to 10\' of wood, plaster, or stone"',
   'Powerful Sneak':
-    'Section=combat ' +
-    'Note="May change sneak attack damage to to match weapon type"',
+    'Section=combat Note="May change sneak attack damage to match weapon type"',
   "Trickster's Ace":
     'Section=magic ' +
-    'Note="May use Reaction to evoke effects of a spell up to level 4"',
+    'Note="May use Reaction to evoke effects of a prepared spell up to level 4"',
   'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hr"',
   'Impossible Striker':
     'Section=combat Note="May use sneak attack vs. non-flat-footed foe"',
   'Reactive Distraction':
     'Section=combat ' +
-    'Note="May use Reaction to redirect attack from self to decoy"',
+    'Note="May use Reaction to redirect effect or attack from self to decoy"',
 
   // Sorcerer
   // Alertness as above
@@ -5870,7 +5874,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('combatNotes.ruffian',
       '', '=', '"Trained"',
-      'rank.Light Armor', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
+      'rank.Light Armor', '=', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
     );
     rules.defineRule('featureNotes.rogueFeats', classLevel, '=', null);
     rules.defineRule('featureNotes.skillIncreases',
@@ -6082,10 +6086,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
     let noteName =
       section + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
     let matchInfo =
-      note.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
+      note.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\((.*)\)$/i);
     if(matchInfo) {
       let rank =
-        matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
+        matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
       let choices = '';
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+|%V)/);
@@ -6099,11 +6103,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
           noteName, '+=', choices.replace('+', '')
         );
     }
-    matchInfo = note.match(/Perception\s(Expert|Master|Trained)$/i);
+    matchInfo = note.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
     if(matchInfo) {
-      rules.defineRule('rank.Perception',
-        noteName, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
-      );
+      let rank =
+        matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
+      rules.defineRule('rank.Perception', noteName, '^=', rank);
     }
     matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
     if(matchInfo) {
@@ -6432,11 +6436,11 @@ Pathfinder2E.featureListRules = function(
   for(let i = 0; i < features.length; i++) {
     let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
     let matchInfo =
-      feature.match(/([A-Z]\w*)\s(Expert|Master|Trained)\s*\((.*)\)$/i);
+      feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\((.*)\)$/i);
     if(matchInfo) {
       let choices = '';
       let rank =
-        matchInfo[2] == 'Master' ? 3 : matchInfo[2] == 'Expert' ? 2 : 1;
+        matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+)/);
         if(m)
@@ -6450,11 +6454,11 @@ Pathfinder2E.featureListRules = function(
           setName + '.' + feature, '+=', choices.replace('+', '')
         );
     }
-    matchInfo = feature.match(/Perception\s(Expert|Master|Trained)$/i);
+    matchInfo = feature.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
     if(matchInfo) {
-      rules.defineRule('rank.Perception',
-        setName + '.' + feature, '^=', matchInfo[1] == 'Master' ? 3 : matchInfo[1] == 'Expert' ? '2' : '1'
-      );
+      let rank =
+        matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
+      rules.defineRule('rank.Perception', setName + '.' + feature, '^=', rank);
     }
     matchInfo =
       feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
@@ -7049,10 +7053,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Master|Trained)\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Expert|Master|Trained)\s+\([^\)]*\)/gi))==null)
+         (matchInfo = notes[attr].match(/Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
         matched.split(/\s*;\s*/).forEach(boost => {
