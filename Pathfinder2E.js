@@ -382,7 +382,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Alchemist Skills",' +
       '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Alchemist)",' +
       '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
@@ -402,20 +402,43 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Barbarian Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
-      '"1:Rage","1:Instinct","1:Barbarian Feats","2:Skill Feats",' +
-      '"3:Deny Advantage","3:General Feats","3:Skill Increases",' +
-      '"5:Brutality","7:Juggernaut","7:Weapon Specialization",' +
+      '"1:Rage","1:Instinct","1:Barbarian Feats",' +
+      '"features.Animal Instinct ? 1:Bestial Rage",' +
+      '"features.Dragon Instinct ? 1:Draconic Rage",' +
+      '"features.Giant Instinct ? 1:Titan Mauler",' +
+      '"features.Spirit Instinct ? 1:Spirit Rage",' +
+      '"2:Skill Feats","3:Deny Advantage","3:General Feats",' +
+      '"3:Skill Increases","5:Brutality","7:Juggernaut",' +
+      '"7:Specialization Ability","7:Weapon Specialization",' +
       '"9:Lightning Reflexes","9:Raging Resistance","11:Mighty Rage",' +
       '"13:Greater Juggernaut","13:Medium Armor Expertise","13:Weapon Fury",' +
       '"15:Greater Weapon Specialization","15:Indomitable Will",' +
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
       '"19:Devastator" ' +
     'Selectables=' +
-      '"1:Animal Instinct:Instinct","1:Dragon Instinct:Instinct",' +
       '"1:Fury Instinct:Instinct","1:Giant Instinct:Instinct",' +
-      '"1:Spirit Instinct:Instinct"',
+      '"1:Spirit Instinct:Instinct",' +
+      '"1:Animal Instinct (Ape):Instinct",' +
+      '"1:Animal Instinct (Bear):Instinct",' +
+      '"1:Animal Instinct (Bull):Instinct",' +
+      '"1:Animal Instinct (Cat):Instict",' +
+      '"1:Animal Instinct (Deer):Instinct",' +
+      '"1:Animal Instinct (Frog):Instict",' +
+      '"1:Animal Instinct (Shark):Instinct",' +
+      '"1:Animal Instinct (Snake):Instict",' +
+      '"1:Animal Instinct (Wolf):Instinct",' +
+      '"1:Dragon Instinct (Black):Instinct",' +
+      '"1:Dragon Instinct (Blue):Instinct",' +
+      '"1:Dragon Instinct (Green):Instinct",' +
+      '"1:Dragon Instinct (Red):Instinct",' +
+      '"1:Dragon Instinct (White):Instinct",' +
+      '"1:Dragon Instinct (Brass):Instinct",' +
+      '"1:Dragon Instinct (Bronze):Instinct",' +
+      '"1:Dragon Instinct (Copper):Instinct",' +
+      '"1:Dragon Instinct (Gold):Instinct",' +
+      '"1:Dragon Instinct (Silver):Instinct"',
   'Bard':
     'Ability=charisma HitPoints=8 ' +
     'Features=' +
@@ -424,7 +447,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Bard Skills",' +
       '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Bard)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
@@ -442,7 +465,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Champion Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
       '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
@@ -462,7 +485,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Cleric Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored)",' +
+      '"1:Armor Trained (Unarmored Defense)",' +
       '"1:Class Trained (Cleric)",' +
       '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","2:Cleric Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases","5:Alertness",' +
@@ -476,7 +499,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Druid Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Druid)",' +
       '"1:Primal Spellcasting","1:Druidic Language","1:Druidic Order",' +
       '"1:Shield Block","1:Wild Empathy","2:Druid Feats","2:Skill Feats",' +
@@ -493,7 +516,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Fighter Skills",' +
       '"1:Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)","1:Weapon Trained (Advanced Weapons)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases",' +
@@ -510,7 +533,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Defense Expert (Unarmored)",' +
+      '"1:Defense Expert (Unarmored Defense)",' +
       '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
       '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
       '"3:Mystic Strikes","3:Skill Increases","5:Alertness",' +
@@ -527,7 +550,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
       '"1:Ranger Skills",' +
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Ranger)",' +
       '"1:Hunt Prey","1:Hunter\'s Edge","1:Ranger Feats","2:Skill Feats",' +
       '"3:General Feats","3:Iron Will","3:Skill Increases",' +
@@ -546,7 +569,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
       '"1:Rogue Skills",' +
       '"1:Weapon Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Unarmored)",' +
+      '"1:Armor Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Rogue)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"1:Rogue Feats","1:Skill Feats","2:Skill Increases",' +
@@ -566,7 +589,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Sorcerer Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored)",' +
+      '"1:Armor Trained (Unarmored Defense)",' +
       '"1:Class Trained (Sorcerer)",' +
       '"1:Bloodline","1:Sorcerer Spellcasting","1:Spell Repertoire",' +
       '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
@@ -583,7 +606,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Will)","Save Expert (Fortitude; Reflex)",' +
       '"1:Wizard Skills",' +
       '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored)",' +
+      '"1:Armor Trained (Unarmored Defense)",' +
       '"1:Class Trained (Wizard)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
@@ -2789,7 +2812,7 @@ Pathfinder2E.FEATURES = {
   'Perfect Mutagen':'Section=feature Note="FILL"',
 
   // Barbarian
-  'Animal Instinct':'Section=feature Note="FILL"',
+  'Bestial Rage':'Section=combat Note="%V inflicts 1d%1%2 HP during rage"',
   'Armor Of Fury':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
@@ -2800,7 +2823,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use melee and unarmed weapon specialization features while raging"',
+      '"May use melee and unarmed weapon critial specialization effects while raging"',
   'Deny Advantage':
     'Section=combat ' +
     'Note="Foes of equal or lower level cannot inflict flat-footed"',
@@ -2809,9 +2832,10 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Master (Barbarian)",' +
       '"Successful melee Strikes ignore 10 points of physical resistance"',
-  'Dragon Instinct':'Section=feature Note="FILL"',
-  'Fury Instinct':'Section=feature Note="FILL"',
-  'Giant Instinct':'Section=feature Note="FILL"',
+  'Draconic Rage':
+    'Section=combat ' +
+    'Note="May inflict +4 HP %V damage instead of +2 HP weapon damage during rage"',
+  'Fury Instinct':'Section=feature Note="+1 Class Feat"',
   'Greater Juggernaut':
     'Section=save,save ' +
     'Note=' +
@@ -2830,20 +2854,28 @@ Pathfinder2E.FEATURES = {
   'Lightning Reflexes':'Section=save Note="Save Expert (Reflex)"',
   // Medium Armor Expertise as above
   'Mighty Rage':'Section=combat Note="May use 2-action rage activities"',
-  'Quick Rage':'Section=combat Note="May use Rage again after 1 turn"',
+  'Quick Rage':'Section=combat Note="May re-enter Rage after 1 turn"',
   'Rage':
     'Section=combat ' +
-    'Note="May gain %{level+constitutionModifier} HP and +2 melee damage, and suffer -1 AC and no concentration actions, for 1 min; requires 1 min break between rages"',
+    'Note="May gain %{level+constitutionModifier} temporary HP and +%V HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
   'Raging Resistance':
     'Section=save ' +
-    'Note="Resistance %{3+constitutionModifier} to instinct damage type while raging"',
-  'Spirit Instinct':'Section=feature Note="FILL"',
+    'Note="Resistance %{3+constitutionModifier} to %V while raging"',
+  'Specialization Ability':
+     // TODO frog and deer reach => 10'
+    'Section=combat Note="Rage damage bonus%1 increases to +%V"',
+  'Spirit Rage':
+    'Section=combat ' +
+    'Note="May inflict +3 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage"',
+  'Titan Mauler':
+    'Section=combat ' +
+    'Note="May use weapons made for a larger creature, gaining +6 damage and suffering clumsy 1"',
   'Weapon Fury':
     'Section=combat ' +
     'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
-  'Acute Vision':'Section=feature Note="Has Darkvision during rage"',
+  'Acute Vision':'Section=feature Note="Has Darkvision feature during rage"',
   'Moment Of Clarity':
     'Section=combat Note="May use concentration actions during rage"',
   'Raging Intimidation':
@@ -2853,28 +2885,32 @@ Pathfinder2E.FEATURES = {
       '"May use Demoralize during rage"',
   'Raging Thrower':
     'Section=combat ' +
-    'Note="+2 HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
+    'Note="+%{combatNotes.rage} HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
   'Sudden Charge':
     'Section=combat Note="May make a melee Strike after a double Stride"',
   'Acute Scent':'Section=ability Note="R30\' imprecise scent"',
   'Furious Finish':
     'Section=combat ' +
-    'Note="May gain additional damage on a Strike during rage; suffers loss of rage and fatigue until 10 min rest"',
+    'Note="May gain additional damage on a Strike during rage; suffers end of rage and fatigue until 10 min rest"',
   'No Escape':
     'Section=combat ' +
     'Note="May use Reaction to Stride along with retreating foe"',
   'Second Wind':
     'Section=combat ' +
-    'Note="May start a second rage without waiting; suffers fatigue afterwards until 10 min rest"',
+    'Note="May immediately re-enter rage; suffers fatigue afterwards until 10 min rest"',
   'Shake It Off':
     'Section=combat ' +
     'Note="May reduce frightened condition by 1 and gain a Fortitude save to reduce sickened condition during rage"',
   'Fast Movement':'Section=combat Note="+10 speed during rage"',
   'Raging Athlete':
     'Section=skill ' +
-    'Note="Gains %{speed} climb and swim speed, -10 jump DC, and 5\'/%{speed>=30?20:15}\' vertical/horizontal Leap during rage"',
-  'Swipe':'Section=combat Note="May attack two adjacent foes with one Strike"',
-  'Wounded Rage':'Section=combat Note="May use a Reaction to enter rage"',
+    'Note="Gains %{speed}\' climb and swim speed, -10 jump DC, and 5\'/%{speed>=30?20:15}\' vertical/horizontal Leap during rage"',
+  'Swipe':
+    'Section=combat ' +
+    'Note="May use two actions to attack two adjacent foes with one Strike"',
+  'Wounded Rage':
+    'Section=combat ' +
+    'Note="May use a Reaction after taking damage to enter rage"',
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -2886,43 +2922,46 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving"',
   'Brutal Bully':
     'Section=combat ' +
-    'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier} damage"',
+    'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier}B HP damage during rage"',
   'Cleave':
     'Section=combat ' +
     'Note="May use a Reaction after killing or knocking unconscious to Strike an adjacent foe"',
   "Dragon's Rage Breath":
     'Section=combat ' +
-    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line (Ref neg; half damage for a 2nd breath use within 1 hr)"',
+    // TODO automate
+    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line (Ref neg; half distance and damage for a 2nd breath use within 1 hr)"',
   "Giant's Stature":
-    'Section=combat Note="May grow to Large size until rage ends"',
-  "Spirit's Interference":
+    'Section=combat ' +
+    'Note="May grow to Large size, gaining +5\' reach and suffering clumsy 1, until rage ends"',
+  "Spirits' Interference":
     'Section=combat ' +
     'Note="Foe ranged attacks require a DC 5 flat check until rage ends"',
   'Animal Rage':
     'Section=magic ' +
     'Note="May use <i>Animal Form</i> to transform into spirit animal at will"',
-  'Furious Bully':'Section=combat Note="+2 Athletics for attacks during range"',
+  'Furious Bully':'Section=combat Note="+2 Athletics for attacks during rage"',
   'Renewed Vigor':
     'Section=combat ' +
     'Note="May gain %{level//2+constitutionModifier} temporary HP"',
   'Share Rage':
-    'Section=combat Note="R30\' May give an ally the effects of rage 1/rage"',
+    'Section=combat Note="R30\' May give an ally the effects of Rage 1/rage"',
   'Sudden Leap':
     'Section=combat ' +
     'Note="May use 2 actions to make a Strike during a Leap, High Jump, or Long Jump"',
   'Thrash':
     'Section=combat ' +
-    'Note="May inflict %{strengthModifier+2}+specialization damage to grabbed foe (Fort neg)"',
+    // TODO automate
+    'Note="May inflict %{strengthModifier+combatNotes.rage}+specialization damage to grabbed foe (Fort neg)"',
   'Come And Get Me':
     'Section=combat ' +
-    'Note="May suffer flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success %{constitutionModifier*2}) until rage ends"',
+    'Note="May suffer flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success +%{constitutionModifier*2}) until rage ends"',
   'Furious Sprint':
     'Section=combat ' +
     'Note="May use 2 actions to Stride %{speed*5}\' in a straight line, or 3 actions to Stride %{speed*8}\'"',
   'Great Cleave':
     'Section=combat ' +
-    'Note="May continue to Cleave adjacent foes as long as Strike incapacitates"',
-  'Knockback':'Section=combat Note="Successful Strike moves foe 5\'"',
+    'Note="May continue to Cleave adjacent foes as long as Strikes incapacitate"',
+  'Knockback':'Section=combat Note="Successful Strike Shoves foe 5\'"',
   'Terrifying Howl':
     'Section=combat ' +
     'Note="R30\' Successful Intimidate Demoralizes multiple foes"',
@@ -2935,7 +2974,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May Strike after moving %{speed}\'"',
   "Spirit's Wrath":'Section=feature Note="FILL"',
   "Titan's Stature":
-    'Section=combat Note="May grow to Huge size until rage ends"',
+    'Section=combat ' +
+    'Note="May grow to Huge size, gaining +10\' reach and suffering clumsy 1, until rage ends"',
   'Awesome Blow':
     'Section=combat ' +
     'Note="A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe"',
@@ -2952,7 +2992,7 @@ Pathfinder2E.FEATURES = {
   'Dragon Transformation':'Section=feature Note="FILL"',
   'Reckless Abandon':
     'Section=feature ' +
-    'Note="When dropped to %{hitPoints//2} HP, may suffer -2 AC and -1 Saves to gain +2 attacks"',
+    'Note="When reduced to %{hitPoints//2} HP, may suffer -2 AC and -1 saves to gain +2 attacks"',
   'Brutal Critical':
     'Section=combat ' +
     'Note="Critical melee hits inflict +1 damage die and 2 dice bleed damage"',
@@ -2962,7 +3002,9 @@ Pathfinder2E.FEATURES = {
   'Vicious Evisceration':
     'Section=combat ' +
     'Note="May use 2 actions to inflict drained 1 (critical success drained 2)"',
-  'Contagious Rage':'Section=feature Note="FILL"',
+  'Contagious Rage':
+    'Section=combat ' +
+    'Note="May use Share Rage unlimited times, shring instinct and specialization abilities"',
   'Quaking Stomp':
     'Section=magic Note="May use effects of <i>Earthquake</i> 1/10 min"',
 
@@ -4934,6 +4976,7 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
     rules.defineRule(a,
+      // TODO ability boosts add only 1 above 18
       'abilityBoosts.' + a, '+', 'source * 2',
       '', 'v', '20'
     );
@@ -5828,6 +5871,111 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Barbarian') {
+    // TODO make this less hard-coded
+    rules.defineRule('features.Animal Instinct',
+      'features.Animal Instinct (Ape)', '=', '1',
+      'features.Animal Instinct (Bear)', '=', '1',
+      'features.Animal Instinct (Bull)', '=', '1',
+      'features.Animal Instinct (Cat)', '=', '1',
+      'features.Animal Instinct (Deer)', '=', '1',
+      'features.Animal Instinct (Frog)', '=', '1',
+      'features.Animal Instinct (Shark)', '=', '1',
+      'features.Animal Instinct (Snake)', '=', '1',
+      'features.Animal Instinct (Wolf)', '=', '1'
+    );
+    rules.defineRule('features.Dragon Instinct',
+      'features.Dragon Instinct (Black)', '=', '1',
+      'features.Dragon Instinct (Blue)', '=', '1',
+      'features.Dragon Instinct (Green)', '=', '1',
+      'features.Dragon Instinct (Red)', '=', '1',
+      'features.Dragon Instinct (White)', '=', '1',
+      'features.Dragon Instinct (Brass)', '=', '1',
+      'features.Dragon Instinct (Bronze)', '=', '1',
+      'features.Dragon Instinct (Copper)', '=', '1',
+      'features.Dragon Instinct (Gold)', '=', '1',
+      'features.Dragon Instinct (Silver)', '=', '1'
+    );
+    rules.defineRule('combatNotes.bestialRage',
+      '', '=', '"Jaws"',
+      'features.Animal Instinct (Ape)', '=', '"Fist"',
+      'features.Animal Instinct (Bull)', '=', '"Horn"',
+      'features.Animal Instinct (Deer)', '=', '"Antler"',
+      'features.Animal Instinct (Snake)', '=', '"Fangs"'
+      // TODO Bear also claws for 1d6S
+      // TODO Cat also claws for 1d6S
+      // TODO Frog also tongue for 1d4B
+    );
+    rules.defineRule('combatNotes.bestialRage.1',
+      'features.Bestial Rage', '?', null,
+      '', '=', '10',
+      'level', '+', 'source>=7 ? 2 : null'
+    );
+    rules.defineRule('combatNotes.bestialRage.2',
+      'features.Bestial Rage', '?', null,
+      '', '=', '"P"',
+      'features.Animal Instinct (Ape)', '=', '"B"',
+      'features.Animal Instinct (Frog)', '=', '"B"',
+    );
+    rules.defineRule('combatNotes.specializationAbility',
+      '', '=', '6',
+      'features.Animal Instinct', '=', '5',
+      'features.Dragon Instinct', '=', '8',
+      'features.Giant Instinct', '=', '10',
+      'features.Spirit Instinct', '=', '7',
+      'combatNotes.specializationAbility.2', '^', null
+    );
+    rules.defineRule('combatNotes.specializationAbility.1',
+      'features.Specialization Ability', '?', null,
+      '', '=', '""',
+      'features.Animal Instinct', '=', '" with natural weapon"',
+      'features.Giant Instinct', '=', '" with larger weapon"',
+      'features.Spirit Instinct', '=', '" with Spirit Rage"'
+    );
+    rules.defineRule('combatNotes.specializationAbility.2',
+      'features.Specialization Ability', '?', null,
+      'features.Greater Weapon Specialization', '?', null,
+      '', '=', '12',
+      'features.Dragon Instinct', '=', '16',
+      'features.Giant Instinct', '=', '18',
+      'features.Spirit Instinct', '=', '13'
+    );
+    rules.defineRule('combatNotes.draconicRage',
+      '', '=', '"fire"',
+      'features.Draconic Instinct (Black)', '=', '"acid"',
+      'features.Draconic Instinct (Blue)', '=', '"electricity"',
+      'features.Draconic Instinct (Green)', '=', '"poison"',
+      'features.Draconic Instinct (White)', '=', '"cold"',
+      'features.Draconic Instinct (Brass)', '=', '"fire"',
+      'features.Draconic Instinct (Bronze)', '=', '"electricity"',
+      'features.Draconic Instinct (Copper)', '=', '"acid"',
+      'features.Draconic Instinct (Silver)', '=', '"cold"'
+    );
+    rules.defineRule('combatNotes.rage',
+      '', '=', '2',
+      'combatNotes.rage.1', '^', null
+    );
+    rules.defineRule('combatNotes.rage.1',
+      'features.Rage', '?', null,
+      'features.Specialization Ability', '?', null,
+      'features.Dragon Instinct', '=', '8',
+      'features.Fury Instinct', '=', '6',
+      'features.Greater Weapon Specialization', '*', '2'
+    );
+    rules.defineRule('saveNotes.ragingResistance',
+      'features.Animal Instinct', '=', '"piercing and slashing"',
+      'features.Dragon Instinct (Black)', '=', '"acid"',
+      'features.Dragon Instinct (Blue)', '=', '"electricty"',
+      'features.Dragon Instinct (Green)', '=', '"poison"',
+      'features.Dragon Instinct (Red)', '=', '"fire"',
+      'features.Dragon Instinct (White)', '=', '"cold"',
+      'features.Dragon Instinct (Brass)', '=', '"fire"',
+      'features.Dragon Instinct (Bronze)', '=', '"electricity"',
+      'features.Dragon Instinct (Copper)', '=', '"acid"',
+      'features.Dragon Instinct (Gold)', '=', '"fire"',
+      'features.Dragon Instinct (Silver)', '=', '"cold"',
+      'features.Fury Instinct', '=', '"bludgeoning and choice of cold, electricity, or fire"',
+      'features.Spirit Instinct', '=', '"negative damage and damage from undead"',
+    );
     rules.defineRule('selectableFeatureCount.Barbarian (Instinct)',
       'featureNotes.instinct', '=', '1'
     );
