@@ -423,11 +423,11 @@ Pathfinder2E.CLASSES = {
       '"1:Animal Instinct (Ape):Instinct",' +
       '"1:Animal Instinct (Bear):Instinct",' +
       '"1:Animal Instinct (Bull):Instinct",' +
-      '"1:Animal Instinct (Cat):Instict",' +
+      '"1:Animal Instinct (Cat):Instinct",' +
       '"1:Animal Instinct (Deer):Instinct",' +
-      '"1:Animal Instinct (Frog):Instict",' +
+      '"1:Animal Instinct (Frog):Instinct",' +
       '"1:Animal Instinct (Shark):Instinct",' +
-      '"1:Animal Instinct (Snake):Instict",' +
+      '"1:Animal Instinct (Snake):Instinct",' +
       '"1:Animal Instinct (Wolf):Instinct",' +
       '"1:Dragon Instinct (Black):Instinct",' +
       '"1:Dragon Instinct (Blue):Instinct",' +
@@ -467,7 +467,7 @@ Pathfinder2E.CLASSES = {
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
-      '"1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
+      '"1:Cause","1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
       '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
@@ -476,7 +476,11 @@ Pathfinder2E.CLASSES = {
       '"9:Lightning Reflexes","11:Alertness","11:Divine Will","11:Exalt",' +
       '"13:Armor Mastery","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
-      '"17:Legendary Armor","19:Hero\'s Defiance"',
+      '"17:Legendary Armor","19:Hero\'s Defiance" ' +
+    'Selectables=' +
+      '"1:Tenets Of Good:Champion\'s Code",' +
+      '"1:Divine Ally (Blade):Divine Ally","1:Divine Ally (Shield):Divine Ally","1:Divine Ally (Steed):Divine Ally",' +
+      '"1:Paladin:Cause","1:Redeemer:Cause","1:Liberator:Cause"',
   'Cleric':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
@@ -519,7 +523,7 @@ Pathfinder2E.CLASSES = {
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
-      '"2:Skill Feats","3:General Feats","3:Skill Increases",' +
+      '"2:Skill Feats","3:Bravery","3:General Feats","3:Skill Increases",' +
       '"5:Fighter Weapon Mastery","7:Battlefield Surveyor",' +
       '"7:Weapon Specialization","9:Combat Flexibility","9:Juggernaut",' +
       '"11:Armor Expertise","11:Fighter Expertise","13:Weapon Legend",' +
@@ -985,7 +989,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard Require="level >= 2","features.Maestro Muse"',
   "Loremaster's Etude":
     'Type=Class,Bard Require="level >= 2","features.Enigma Muse"',
-  'Mutifarious Muse':'Type=Class,Bard Require="level >= 2"',
+  'Multifarious Muse':'Type=Class,Bard Require="level >= 2"',
   'Inspire Defense':
     'Type=Class,Bard Require="level >= 4","features.Maestro Muse"',
   'Melodious Spell':'Type=Class,Bard Require="level >= 4"',
@@ -1041,9 +1045,9 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard Require="level >= 20","features.Harmonize"',
 
   "Deity's Domain":'Type=Class,Champion',
-  'Ranged Reprisal':'Type=Class,Champion Require="features.Paladin Cause"',
-  'Unimpeded Step':'Type=Class,Champion Require="features.Liberator Cause"',
-  'Weight Of Guilt':'Type=Class,Champion Require="features.Redeemer Cause"',
+  'Ranged Reprisal':'Type=Class,Champion Require="features.Paladin"',
+  'Unimpeded Step':'Type=Class,Champion Require="features.Liberator"',
+  'Weight Of Guilt':'Type=Class,Champion Require="features.Redeemer"',
   'Divine Grace':'Type=Class,Champion Require="level >= 2"',
   'Dragonslayer Oath':
     'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
@@ -1052,7 +1056,7 @@ Pathfinder2E.FEATS = {
   'Shining Oath':
     'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
   'Vengeful Oath':
-    'Type=Class,Champion Require="level >= 2","features.Paladin Cause"',
+    'Type=Class,Champion Require="level >= 2","features.Paladin"',
   'Aura Of Courage':
     'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
   'Divine Health':
@@ -1084,9 +1088,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 8","features.Divine Ally (Steed)","spells.Lay On Hands"',
   'Quick Shield Block':
     'Type=Class,Champion,Fighter ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"levels.Champion || features.Shield Block && features.Reactive Shield"',
+    'Require="level >= 8","features.Shield Block"',
   'Second Ally':
     'Type=Class,Champion Require="level >= 8","features.Divine Ally"',
   'Sense Evil':
@@ -1123,9 +1125,9 @@ Pathfinder2E.FEATS = {
     'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
   'Divine Wall':'Type=Class,Champion Require="level >= 12"',
   'Lasting Doubt':
-    'Type=Class,Champion Require="level >= 12","features.Redeemer Cause"',
+    'Type=Class,Champion Require="level >= 12","features.Redeemer"',
   'Liberating Stride':
-    'Type=Class,Champion Require="level >= 12","features.Liberator Cause"',
+    'Type=Class,Champion Require="level >= 12","features.Liberator"',
   'Anchoring Aura':
     'Type=Class,Champion Require="level >= 14","features.Fiendsbane Oath"',
   'Aura Of Life':
@@ -1134,7 +1136,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
   'Aura Of Vengeance':
     'Type=Class,Champion ' +
-    'Require="level >= 14","features.Exalt","features.Vengeance Oath"',
+    'Require="level >= 14","features.Exalt","features.Vengeful Oath"',
   'Divine Reflexes':'Type=Class,Champion Require="level >= 14"',
   'Litany Of Righteousness':
     'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
@@ -1950,8 +1952,7 @@ Pathfinder2E.FEATS = {
     'Type=Archetype Require="level >= 6","features.Basic Devotion"',
   "Champion's Reaction":
     'Type=Archetype Require="level >= 6","features.Champion Dedication"',
-  'Divine Ally':
-    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
+  // Divine Ally as above
   'Diverse Armor Expert':
     'Type=Archetype ' +
     'Require=' +
@@ -2668,7 +2669,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+%{$\'features.General Training\'} General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="Successful saves vs. control are critical successs/Foe Intimidation (Coerce) fails are critical fails"',
+    'Note="Successful saves vs. control are critical successes/Foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=features Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
   'Unconventional Weaponry':
@@ -2754,7 +2755,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Fortitude)",' +
-      '"Successes on fortitude saves are critical successes"',
+      '"Successes on Fortitude saves are critical successes"',
   'Perpetual Potency':'Section=feature Note="FILL"',
   'Greater Field Discovery':'Section=feature Note="FILL"',
   'Medium Armor Expertise':
@@ -2823,7 +2824,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use melee and unarmed weapon critial specialization effects while raging"',
+      '"May use melee and unarmed weapon critical specialization effects while raging"',
   'Deny Advantage':
     'Section=combat ' +
     'Note="Foes of equal or lower level cannot inflict flat-footed"',
@@ -2887,7 +2888,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
   'Sudden Charge':
-    'Section=combat Note="May make a melee Strike after a double Stride"',
+    'Section=combat ' +
+    'Note="May use 2 actions to make a melee Strike after a double Stride"',
   'Acute Scent':'Section=ability Note="R30\' imprecise scent"',
   'Furious Finish':
     'Section=combat ' +
@@ -3004,7 +3006,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to inflict drained 1 (critical success drained 2)"',
   'Contagious Rage':
     'Section=combat ' +
-    'Note="May use Share Rage unlimited times, shring instinct and specialization abilities"',
+    'Note="May use Share Rage unlimited times, sharing instinct and specialization abilities"',
   'Quaking Stomp':
     'Section=magic Note="May use effects of <i>Earthquake</i> 1/10 min"',
 
@@ -3039,7 +3041,7 @@ Pathfinder2E.FEATURES = {
   'Esoteric Polymath':'Section=feature Note="FILL"',
   'Inspire Competence':'Section=feature Note="FILL"',
   "Loremaster's Etude":'Section=feature Note="FILL"',
-  'Mutifarious Muse':'Section=feature Note="FILL"',
+  'Multifarious Muse':'Section=feature Note="FILL"',
   'Inspire Defense':'Section=feature Note="FILL"',
   'Melodious Spell':'Section=feature Note="FILL"',
   'Triple Time':'Section=feature Note="FILL"',
@@ -3068,12 +3070,17 @@ Pathfinder2E.FEATURES = {
   'Symphony Of The Muse':'Section=feature Note="FILL"',
 
   // Champion
+  'Cause':'Section=feature Note="1 selection"',
+  'Divine Ally':'Section=feature Note="1 selection"',
+  'Paladin':'Section=feature Note="FILL"',
+  'Redeemer':'Section=feature Note="FILL"',
+  'Liberator':'Section=feature Note="FILL"',
   // Alertness as above
   'Armor Expertise':
     'Section=combat,combat ' +
     'Note=' +
       '"Armor Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      '"May use specialization effects of medium and heavy armor"',
+      '"May use the specialization effects of medium and heavy armor"',
   'Armor Mastery':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
@@ -3082,11 +3089,13 @@ Pathfinder2E.FEATURES = {
   'Champion Mastery':'Section=feature Note="FILL"',
   'Champion Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
-  "Champion's Code":'Section=feature Note="FILL"',
+  "Champion's Code":'Section=feature Note="1 selection"',
   "Champion's Reaction":'Section=feature Note="FILL"',
   'Deific Weapon':'Section=feature Note="FILL"',
   'Devotion Spells':'Section=feature Note="FILL"',
-  'Divine Ally':'Section=feature Note="FILL"',
+  'Divine Ally (Blade)':'Section=feature Note="FILL"',
+  'Divine Ally (Shield)':'Section=feature Note="FILL"',
+  'Divine Ally (Steed)':'Section=feature Note="FILL"',
   'Divine Smite':'Section=feature Note="FILL"',
   'Divine Will':'Section=feature Note="FILL"',
   'Exalt':'Section=feature Note="FILL"',
@@ -3299,7 +3308,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Expert (Will)",' +
-      '"Success on Will save vs. fear is a critical save/Reduce value of frightened condition by 1"',
+      '"Successes on Will saves vs. fear are critical saves/Reduce value of frightened condition by 1"',
   'Combat Flexibility':
     'Section=combat ' +
     'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each dy"',
@@ -3311,7 +3320,7 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
   'Fighter Weapon Mastery':
     'Section=combat ' +
-    'Note="Weapon Master with common weapons of chosen group/Weapon Expert with advanced weapons/May use critical specialization effects of all weapons with master proficiency"',
+    'Note="Weapon Master with common weapons and Weapon Expert with advanced weapons of chosen group/May use critical specialization effects of all weapons with master proficiency"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
     'Section=combat Note="Increased Combat Flexibility effects"',
@@ -3323,8 +3332,8 @@ Pathfinder2E.FEATURES = {
   'Weapon Legend':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"Weapon Legendary in common weapons of chosen group/Weapon Master in advanced weapons"',
+      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Expert (Advanced Weapons)",' +
+      '"Weapon Legendary in common weapons and Weapon Master in advanced weapons of chosen group"',
 
   // Weapon Specialization as above
   'Double Slice':
@@ -3334,10 +3343,10 @@ Pathfinder2E.FEATURES = {
     'Note="Failed attack does not count toward multi-attack penalty"',
   'Point-Blank Shot':
     'Section=combat ' +
-    'Note="Suffers no volley penalty from ranged volley weapon/+2 attack at close range with ranged non-volley weapon"',
+    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon"',
   'Power Attack':
     'Section=combat ' +
-    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra dice damage; counts as two Strikes for multi-attack penalty"',
+    'Note="May use 2 actions for a melee Strike that inflicts %{level<10?1:level<18?2:3} extra dice damage and counts as two Strikes for multi-attack penalty"',
   'Reactive Shield':
     'Section=combat Note="May use Reaction to make a Raise a Shield action"',
   'Snagging Strike':
@@ -3349,7 +3358,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Shield Block to move foe 5\' or cause it to become flat-footed (foe\'s choice)"',
   'Assisting Shot':
     'Section=combat ' +
-    'Note="Successful ranged Strike gives next attack on foe +1 attack (critical success +2)"',
+    'Note="Successful ranged Strike gives next ally attack on foe +1 attack (critical success +2)"',
   'Brutish Shove':
     'Section=combat ' +
     'Note="Two-handed Strike inflicts flat-footed until end of turn; success allows subsequent Shove"',
@@ -3370,69 +3379,71 @@ Pathfinder2E.FEATURES = {
     'Note="Increases damage from 2-handed weapon by number of damage dice and other weapon by one step"',
   'Knockdown':
     'Section=combat ' +
-    'Note="May follow successful Strike with an Athletic check to Trip"',
+    'Note="May follow a successful Strike with an Athletics check to Trip"',
   'Powerful Shove':
     'Section=combat ' +
-    'Note="May use Aggressive Block and Brutish Shove on foes two sizes larger/Shoved creature takes %{strengthModifier>?1} damage from hitting an object"',
+    'Note="May use Aggressive Block and Brutish Shove on foes two sizes larger/Shoved creatures take %{strengthModifier>?1} damage from hitting an object"',
   'Quick Reversal':
     'Section=combat Note="May use an attack to Strike two flanking foes"',
   'Shielded Stride':
     'Section=combat ' +
-    'Note="May Stride at half Speed without provoking Attacks of Opportunity"',
+    'Note="May Stride with shield raised at half Speed without triggering Reactions"',
   // Swipe as above
   'Twin Parry':
     'Section=combat ' +
-    'Note="Wielding two weapons give +1 AC, or +2 with parry trait"',
+    'Note="Wielding two weapons gives +1 AC (+2 AC with weapon parry trait)"',
   'Advanced Weapon Training':
     'Section=combat ' +
-    'Note="Weapon Trained with advanced weapons in chosen group"',
+    'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
   'Advantageous Assault':
     'Section=combat ' +
-    'Note="Strike on grabbed, prone, or restrained foe inflicts +damage dice HP damage (+damage dice + 2 if wielded two-handed), even on failure"',
+    'Note="Strike on grabbed, prone, or restrained foe inflicts +damage dice HP damage (+damage dice + 2 HP if wielded two-handed), even on failure"',
   'Disarming Stance':
     'Section=combat ' +
-    'Note="+1 to Disarm; +2 vs. Disarm/May Disarm foes two sizes larger"',
+    'Note="Stance gives +1 to Disarm and +2 vs. Disarm when wielding a one-handed weapon with the other hand free and allows Disarming foes two sizes larger"',
   'Furious Focus':
     'Section=combat ' +
     'Note="Two-handed power attacks count as single attacks for multi-attack penalty"',
   "Guardian's Deflection":
     'Section=combat Note="May use Reaction to give adjacent ally +2 AC"',
   'Reflexive Shield':
-    'Section=save Note="Raised shield adds bonus to Reflex saves"',
+    'Section=save Note="Raised shield adds shield bonus to Reflex saves"',
   'Revealing Stab':
     'Section=combat ' +
     'Note="May leave a piercing weapon embedded in a corporeal concealed or hidden foe to reveal it to others"',
   'Shatter Defenses':
     'Section=combat ' +
-    'Note="A successful Strike vs. a frightened foe inflicts flat-footed while fright lasts"',
+    'Note="A successful Strike vs. a frightened foe inflicts flat-footed while frightened condition lasts"',
   // Shield Warden as above
   'Triple Shot':
     'Section=combat ' +
-    'Note="May use Double Shot against a single foe/May make three ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
+    'Note="May use Double Shot against a single foe/May use 2 actions to make three ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
   'Blind-Fight':
     'Section=combat ' +
     'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check/Does not suffer flat-footed with hidden foes"',
   'Dueling Riposte':
     'Section=combat ' +
-    'Note="May use a Reaction to Strike or Disarm a foe who critically misses an attack on self"',
+    'Note="May use a Reaction to Strike or Disarm a foe who critically fails an attack on self"',
   'Felling Strike':
     'Section=combat ' +
-    'Note="May spend 2 actions to attack a flying foe; a successful Strike causes it to fall 120\', and a critical hit grounds it for 1 rd"',
+    'Note="May use 2 actions to attack a flying foe; a successful Strike causes it to fall 120\', and a critical hit grounds it for 1 rd"',
   'Incredible Aim':
     'Section=combat ' +
-    'Note="May spend 2 actions to gain +2 on a ranged attack that ignores concealment"',
+    'Note="May use 2 actions to gain +2 on a ranged attack that ignores concealment"',
   'Mobile Shot Stance':
     'Section=combat ' +
-    'Note="Ranged Strikes do not trigger reactions/May use Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
+    'Note="Stance negates Reactions from Ranged Strikes and allows Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
   'Positioning Assault':
     'Section=combat ' +
-    'Note="May use 2 actions to move target 5\' within reach with a successful Strike"',
+    'Note="May use 2 actions to move target 5\' to within reach with a successful Strike"',
   // Quick Shield Block as above
   // Sudden Leap as above
-  'Agile Grace':'Section=combat Note="Reduces multi-attack penalty to -3/-6"',
+  'Agile Grace':
+    'Section=combat ' +
+    'Note="Reduces multi-attack penalty with agile weapons to -3/-6"',
   'Certain Strike':
     'Section=combat ' +
-    'Note="Failed Strike inflicts normal damage other than damage dice"',
+    'Note="Failed Strikes inflict normal damage other than damage dice"',
   'Combat Reflexes':
     'Section=combat ' +
     'Note="May use an additional Reaction to make an Attack Of Opportunity 1/tn"',
@@ -3444,7 +3455,7 @@ Pathfinder2E.FEATURES = {
     'Note="A successful Strike with a one-handed melee weapon and the other hand free inflicts Disarm; failure inflicts flat-footed until the end of tn"',
   'Disruptive Stance':
     'Section=combat ' +
-    'Note="May use Attack Of Opportunity in response to a concentrate action; successful Strike disrupts"',
+    'Note="Stance allows Attack Of Opportunity in response to a concentrate action; any successful Strike disrupts"',
   'Fearsome Brute':
     'Section=combat ' +
     'Note="Strikes against frightened foes inflict +frighted value x %{rank.Intimidation>=2?3:2} HP damage"',
@@ -3452,61 +3463,62 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use Knockdown without a Trip check"',
   'Mirror Shield':
     'Section=combat ' +
-    'Note="May use a Reaction to reflect a spell back upon caster with a ranged Strike"',
+    'Note="May use a Reaction to reflect a spell back upon caster with a ranged Strike or spell attack"',
   'Twin Riposte':
     'Section=combat ' +
-    'Note="May use a Reaction to Strike or Disarm a foe who critically fails on a Strike on self"',
+    'Note="May use a Reaction to Strike or Disarm a foe who critically fails a Strike on self"',
   'Brutal Finish':
     'Section=combat ' +
     'Note="May end turn with a two-handed Strike that inflicts +%{level>=18?2:1} damage dice, even on a failure"',
   'Dueling Dance':
     'Section=combat ' +
-    'Note="+2 AC when wielding a one-handed weapon with a hand free"',
+    'Note="Stance gives +2 AC when wielding a one-handed weapon with a hand free"',
   'Flinging Shove':'Section=combat Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed; Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
   'Improved Dueling Riposte':
     'Section=combat ' +
     'Note="May use an additional Reaction to make a Dueling Riposte 1/tn"',
   'Incredible Ricochet':
     'Section=combat ' +
-    'Note="Second ranged attack against the same foe ignores concealment and cover"',
+    'Note="Second ranged attack in turn against the same foe ignores concealment and cover"',
   'Lunging Stance':
-    'Section=combat Note="May make an Attack Of Opportunity with Lunge"',
+    'Section=combat Note="Stance gives +5\' reach on Attacks Of Opportunity"',
   "Paragon's Guard":
-    'Section=combat Note="Constantly gain the benefits of a Raised shield"',
+    'Section=combat Note="Stance gives continuous benefits of Raise a Shield"',
   'Spring Attack':
-    'Section=combat Note="May attack foes before and after full speed Stride"',
+    'Section=combat Note="May Strike a foe after Striding away from another"',
   'Desperate Finisher':
     'Section=combat ' +
-    'Note="May use a press action as a Reaction at the end of turn"',
+    'Note="May use a press action as a Reaction, foregoing any further Reactions this turn"',
   'Determination':
     'Section=save ' +
-    'Note="May end a nonpermanent spell (%{level/2} counteract Will save) or condition affecting self 1/dy"',
+    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/dy"',
   'Guiding Finish':
     'Section=combat ' +
-    'Note="May move target 10\' within reach with a successful Strike (unsuccessful 5\')"',
+    'Note="May move target 10\' within reach with a successful Strike (failure 5\') when wielding a one-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
     'Note="May move target 10\' within reach with a successful Dueling Riposte Strike"',
   'Improved Twin Riposte':
     'Section=combat ' +
     'Note="May use an additional Reaction to make a Twin Riposte 1/tn"',
-  'Stance Savant':'Section=combat Note="May enter a stance upon initiative"',
+  'Stance Savant':'Section=combat Note="May enter a stance during initiative"',
   'Two-Weapon Flurry':
     'Section=combat Note="May Strike with two weapons simultaneously"',
   // Whirlwind Strike as above
   'Graceful Poise':
     'Section=combat ' +
-    'Note="Double Slice with an agile weapon counts as one attack"',
+    'Note="Stance allows Double Slice with an agile weapon to count as one attack"',
   'Improved Reflexive Shield':
     'Section=combat ' +
     'Note="May use Shield Block to protect both self and adjacent allies"',
   'Multishot Stance':
-    'Section=combat Note="Double/Triple Shot penalty reduced to -1/-2"',
+    'Section=combat ' +
+    'Note="Stance reduces Double Shot/Triple Shot penalty to -1/-2"',
   'Twinned Defense':
-    'Section=combat Note="Gives constant benefits of Twin Parry"',
+    'Section=combat Note="Stance gives continuous benefits of Twin Parry"',
   'Impossible Volley':
     'Section=combat ' +
-    'Note="May use 3 actions to make a -2 ranged attack against all foes in a 10\' radius"',
+    'Note="May use 3 actions to make a -2 ranged Strike against all foes in a 10\' radius"',
   'Savage Critical':
     'Section=combat ' +
     'Note="Successful rolls of 19 with a legendary weapon are critical successes"',
@@ -4315,7 +4327,7 @@ Pathfinder2E.FEATURES = {
   'Quick Unlock':'Section=skill Note="May Pick a Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
-    'Note="May roll a single Steath check to Avoid Notice when leading a group"',
+    'Note="May roll a single Stealth check to Avoid Notice when leading a group"',
   'Rapid Mantel':
     'Section=skill ' +
     'Note="May stand immediately after a successful Grab an Edge/May use Athletics to Grab an Edge"',
@@ -4806,6 +4818,12 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
+    'Description="FILL"',
+  'Lay On Hands':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
     'Description="FILL"'
 };
 Pathfinder2E.WEAPONS = {
@@ -5014,7 +5032,6 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.choiceRules(rules, 'Shield', s, shields[s]);
   for(let w in weapons) {
     let pattern = w.replace(/  */g, '\\s+');
-    let prefix = w.charAt(0).toLowerCase() + w.substring(1).replaceAll(' ', '');
     rules.choiceRules(rules, 'Goody', w,
       // To avoid triggering additional weapons with a common suffix (e.g.,
       // "* punching dagger +2" also makes regular dagger +2), require that
@@ -5914,7 +5931,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Bestial Rage', '?', null,
       '', '=', '"P"',
       'features.Animal Instinct (Ape)', '=', '"B"',
-      'features.Animal Instinct (Frog)', '=', '"B"',
+      'features.Animal Instinct (Frog)', '=', '"B"'
     );
     rules.defineRule('combatNotes.specializationAbility',
       '', '=', '6',
@@ -5964,7 +5981,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('saveNotes.ragingResistance',
       'features.Animal Instinct', '=', '"piercing and slashing"',
       'features.Dragon Instinct (Black)', '=', '"acid"',
-      'features.Dragon Instinct (Blue)', '=', '"electricty"',
+      'features.Dragon Instinct (Blue)', '=', '"electricity"',
       'features.Dragon Instinct (Green)', '=', '"poison"',
       'features.Dragon Instinct (Red)', '=', '"fire"',
       'features.Dragon Instinct (White)', '=', '"cold"',
@@ -5974,7 +5991,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Dragon Instinct (Gold)', '=', '"fire"',
       'features.Dragon Instinct (Silver)', '=', '"cold"',
       'features.Fury Instinct', '=', '"bludgeoning and choice of cold, electricity, or fire"',
-      'features.Spirit Instinct', '=', '"negative damage and damage from undead"',
+      'features.Spirit Instinct', '=', '"negative damage and damage from undead"'
     );
     rules.defineRule('selectableFeatureCount.Barbarian (Instinct)',
       'featureNotes.instinct', '=', '1'
@@ -5998,6 +6015,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Champion') {
+    rules.defineRule('selectableFeatureCount.Champion (Cause)',
+      'featureNotes.cause', '=', '1'
+    );
+    rules.defineRule("selectableFeatureCount.Champion (Champion's Code)",
+      "featureNotes.champion'sCode", '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Champion (Divine Ally)',
+      'featureNotes.divineAlly', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Cleric') {
