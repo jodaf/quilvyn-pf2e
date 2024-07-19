@@ -467,20 +467,32 @@ Pathfinder2E.CLASSES = {
       '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
-      '"1:Cause","1:Champion\'s Code","Deific Weapon","Champion\'s Reaction",' +
-      '"1:Retributive Strike","1:Glimpse Of Redemption","1:Liberating Step",' +
+      '"1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Champion\'s Reaction",' +
+      '"featureNotes.liberator ? 1:Liberating Step",' +
+      '"featureNotes.paladin ? 1:Retributive Strike",' +
+      '"featureNotes.redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
-      '"9:Champion Expertise","9:Divine Smite","9:Juggernaut",' +
-      '"9:Lightning Reflexes","11:Alertness","11:Divine Will","11:Exalt",' +
+      '"9:Champion Expertise",' +
+      '"featureNotes.liberator ? 9:Divine Smite (Liberator)",' +
+      '"featureNotes.paladin ? 9:Divine Smite (Paladin)",' +
+      '"featureNotes.redeemer ? 9:Divine Smite (Redeemer)",' +
+      '"9:Juggernaut",' +
+      '"9:Lightning Reflexes","11:Alertness","11:Divine Will",' +
+      '"featureNotes.liberator ? 11:Exalt (Liberator)",' +
+      '"featureNotes.paladin ? 11:Exalt (Paladin)",' +
+      '"featureNotes.redeemer ? 11:Exalt (Redeemer)",' +
       '"13:Armor Mastery","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
       '"17:Legendary Armor","19:Hero\'s Defiance" ' +
     'Selectables=' +
-      '"1:Tenets Of Good:Champion\'s Code",' +
+      '"1:The Tenets Of Good:Champion\'s Code",' +
       '"1:Divine Ally (Blade):Divine Ally","1:Divine Ally (Shield):Divine Ally","1:Divine Ally (Steed):Divine Ally",' +
-      '"1:Paladin:Cause","1:Redeemer:Cause","1:Liberator:Cause"',
+      '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
+      '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
+      '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
   'Cleric':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
@@ -649,7 +661,7 @@ Pathfinder2E.DEITIES = {
     'Domain=Confidence,Destruction,Might,Zeal ' +
     'Spells="1:True Strike",2:Enlarge,"4:Weapon Storm"',
   'Gozreh':
-    'Alignment=N Font=Heal Skill=Survival Weapon=trident ' +
+    'Alignment=N Font=Heal Skill=Survival Weapon=Trident ' +
     'Domain=Air,Nature,Travel,Water ' +
     'Spells="1:Gust Of Wind","3:Lightning Bolt","5:Control Water"',
   'Iomedae':
@@ -1050,36 +1062,37 @@ Pathfinder2E.FEATS = {
   'Weight Of Guilt':'Type=Class,Champion Require="features.Redeemer"',
   'Divine Grace':'Type=Class,Champion Require="level >= 2"',
   'Dragonslayer Oath':
-    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 2","features.The Tenets Of Good"',
   'Fiendsbane Oath':
-    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 2","features.The Tenets Of Good"',
   'Shining Oath':
-    'Type=Class,Champion Require="level >= 2","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 2","features.The Tenets Of Good"',
   'Vengeful Oath':
     'Type=Class,Champion Require="level >= 2","features.Paladin"',
   'Aura Of Courage':
-    'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Divine Health':
-    'Type=Class,Champion Require="level >= 4","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Mercy':
     'Type=Class,Champion Require="level >= 4","spells.Lay On Hands"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Type=Class,Champion ' +
-    'Require="level >= 6","features.Devotion Spells","features.Tenets Of Good"',
+    'Require=' +
+      '"level >= 6","features.Devotion Spells","features.The Tenets Of Good"',
   'Loyal Warhorse':
     'Type=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
   'Shield Warden':
     'Type=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Divine Ally (Shield && features.Tenets Of Good || features.Shield Block"',
+      '"features.Divine Ally (Shield && features.The Tenets Of Good || features.Shield Block"',
   'Smite Evil':
     'Type=Class,Champion ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Divine Ally (Blade)",' +
-      '"features.Tenets Of Good"',
+      '"features.The Tenets Of Good"',
   "Advanced Deity's Domain":
     'Type=Class,Champion Require="level >= 8","features.Deity\'s Domain"',
   'Greater Mercy':'Type=Class,Champion Require="level >= 8","features.Mercy"',
@@ -1092,7 +1105,7 @@ Pathfinder2E.FEATS = {
   'Second Ally':
     'Type=Class,Champion Require="level >= 8","features.Divine Ally"',
   'Sense Evil':
-    'Type=Class,Champion Require="level >= 8","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 8","features.The Tenets Of Good"',
   'Devoted Focus':
     'Type=Class,Champion Require="level >= 10","features.Devotion Spells"',
   'Imposing Destrier':
@@ -1106,7 +1119,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 10",' +
       '"features.Devotion Spells",' +
-      '"features.Tenets Of Good"',
+      '"features.The Tenets Of Good"',
   'Radiant Blade Spirit':
     'Type=Class,Champion Require="level >= 10","features.Divine Ally (Blade)"',
   'Shield Of Reckoning':
@@ -1118,11 +1131,11 @@ Pathfinder2E.FEATS = {
   'Affliction Mercy':
     'Type=Class,Champion Require="level >= 12","features.Mercy"',
   'Aura Of Faith':
-    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   'Blade Of Justice':
-    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
-    'Type=Class,Champion Require="level >= 12","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   'Divine Wall':'Type=Class,Champion Require="level >= 12"',
   'Lasting Doubt':
     'Type=Class,Champion Require="level >= 12","features.Redeemer"',
@@ -1133,13 +1146,14 @@ Pathfinder2E.FEATS = {
   'Aura Of Life':
     'Type=Class,Champion Require="level >= 14","features.Shining Oath"',
   'Aura Of Righteousness':
-    'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
+  // TODO is Exalt req redundant, since all Champions get it at level 11?
   'Aura Of Vengeance':
     'Type=Class,Champion ' +
-    'Require="level >= 14","features.Exalt","features.Vengeful Oath"',
+    'Require="level >= 14","features.Vengeful Oath"',
   'Divine Reflexes':'Type=Class,Champion Require="level >= 14"',
   'Litany Of Righteousness':
-    'Type=Class,Champion Require="level >= 14","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
   'Wyrmbane Aura':
     'Type=Class,Champion Require="level >= 14","features.Dragonslayer Oath"',
   'Auspicious Mount':
@@ -1153,11 +1167,11 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 16",' +
       '"features.Divine Ally (Blade)",' +
-      '"features.Tenets Of Good"',
+      '"features.The Tenets Of Good"',
   'Shield Of Grace':
     'Type=Class,Champion Require="level >= 16","features.Shield Warden"',
   'Celestial Form':
-    'Type=Class,Champion Require="level >= 18","features.Tenets Of Good"',
+    'Type=Class,Champion Require="level >= 18","features.The Tenets Of Good"',
   'Ultimate Mercy':
     'Type=Class,Champion Require="level >= 18","features.Mercy"',
   'Celestial Mount':
@@ -1165,7 +1179,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 20",' +
       '"features.Divine Ally (Steed)",' +
-      '"features.Tenets Of Good"',
+      '"features.The Tenets Of Good"',
   'Radiant Blade Master':
     'Type=Class,Champion ' +
     'Require=' +
@@ -1950,8 +1964,6 @@ Pathfinder2E.FEATS = {
     'Type=Archetype Require="level >= 4","features.Champion Dedication"',
   'Advanced Devotion':
     'Type=Archetype Require="level >= 6","features.Basic Devotion"',
-  "Champion's Reaction":
-    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
   // Divine Ally as above
   'Diverse Armor Expert':
     'Type=Archetype ' +
@@ -2749,7 +2761,7 @@ Pathfinder2E.FEATURES = {
   'Iron Will':'Section=feature Note="FILL"',
   'Perpetual Infusions':'Section=feature Note="FILL"',
   'Alchemical Expertise':'Section=feature Note="FILL"',
-  'Alertness':'Section=feature Note="FILL"',
+  'Alertness':'Section=skill Note="Perception Expert"',
   'Double Brew':'Section=feature Note="FILL"',
   'Juggernaut':
     'Section=save,save ' +
@@ -2763,7 +2775,7 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="+%{combatNotes.greaterWeaponSpecialization?4:2}/+%{combatNotes.greaterWeaponSpecialization?6:3}/+%{combatNotes.greaterWeaponSpecialization?8:4} HP damage with expert/master/legendary weapons"',
+    'Note="+%V/%{combatNotes.weaponSpecialization*1.5}/%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapons"',
   'Alchemical Alacrity':'Section=feature Note="FILL"',
   'Evasion':
     'Section=save,save ' +
@@ -3070,11 +3082,6 @@ Pathfinder2E.FEATURES = {
   'Symphony Of The Muse':'Section=feature Note="FILL"',
 
   // Champion
-  'Cause':'Section=feature Note="1 selection"',
-  'Divine Ally':'Section=feature Note="1 selection"',
-  'Paladin':'Section=feature Note="FILL"',
-  'Redeemer':'Section=feature Note="FILL"',
-  'Liberator':'Section=feature Note="FILL"',
   // Alertness as above
   'Armor Expertise':
     'Section=combat,combat ' +
@@ -3084,65 +3091,187 @@ Pathfinder2E.FEATURES = {
   'Armor Mastery':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-  'Champion Expertise':'Section=feature Note="FILL"',
+  'Cause':'Section=feature Note="1 selection"',
+  'Champion Expertise':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Class Expert (Champion)",' +
+      '"FILL"', // TODO Expert Divine Spell Attack and DC
   'Champion Feats':'Section=feature Note="%V selections"',
-  'Champion Mastery':'Section=feature Note="FILL"',
+  'Champion Mastery':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Class Master (Champion)",' +
+      '"FILL"', // TODO Master Divine Spell Attack and DC
   'Champion Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   "Champion's Code":'Section=feature Note="1 selection"',
-  "Champion's Reaction":'Section=feature Note="FILL"',
-  'Deific Weapon':'Section=feature Note="FILL"',
-  'Devotion Spells':'Section=feature Note="FILL"',
-  'Divine Ally (Blade)':'Section=feature Note="FILL"',
-  'Divine Ally (Shield)':'Section=feature Note="FILL"',
-  'Divine Ally (Steed)':'Section=feature Note="FILL"',
-  'Divine Smite':'Section=feature Note="FILL"',
-  'Divine Will':'Section=feature Note="FILL"',
-  'Exalt':'Section=feature Note="FILL"',
-  'Glimpse Of Redemption':'Section=feature Note="FILL"',
+  "Champion's Reaction":'Section=feature Note="Has %V feature"',
+  'Deific Weapon':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Deific unarmed attacks and simple weapons increase damage die 1 step",'+
+      '"Has access to deity weapon (%{deityWeapon})"',
+  'Devotion Spells':'Section=magic Note="FILL"',
+  'Divine Ally':'Section=feature Note="1 selection"',
+  'Divine Ally (Blade)':
+    'Section=combat ' +
+    'Note="May apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day; also gains critical specialization effect"',
+  // TODO automate
+  'Divine Ally (Shield)':
+    'Section=combat Note="+2 shield hardness/+50% shield HP and BT"',
+  'Divine Ally (Steed)':
+    'Section=feature Note="Has a mount as an animal companion"',
+  'Divine Smite (Liberator)':
+    'Section=combat ' +
+    'Note="Inflicts %{charismaModifier} HP persistent good damage on Liberating Step foe who restrains an ally"',
+  'Divine Smite (Paladin)':
+    'Section=combat ' +
+    'Note="Inflicts %{charismaModifier} HP persistent good damage on Retributive Strike target"',
+  'Divine Smite (Redeemer)':
+    'Section=combat ' +
+    'Note="Inflicts %{charismaModifier} HP persistent good damage on Glimpse Of Redemption target who response with damage"',
+  'Divine Will':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will saves are critical successes"',
+  'Exalt (Liberator)':
+    'Section=combat ' +
+    'Note="R15\' Liberating Step allows all allys to Step if target ally does not attempt to break free"',
+  'Exalt (Paladin)':
+    'Section=combat ' +
+    'Note="R15\' Retributive Strike allows allies a -5 melee Strike against target"',
+  'Exalt (Redeemer)':
+    'Section=combat ' +
+    'Note="R15\' May use Glimpse Of Redemption to grant allies %{level} damage resistance"',
+  'Glimpse Of Redemption':
+    'Section=combat ' +
+    'Note="R15\' May use Reaction to negate damage to a struck ally or to grant ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
-  "Hero's Defiance":'Section=feature Note="FILL"',
+  "Hero's Defiance":'Section=magic Note="Knows <i>Hero\'s Defiance</i> spell"',
   // Juggernaut as above
-  'Legendary Armor':'Section=feature Note="FILL"',
-  'Liberating Step':'Section=feature Note="FILL"',
+  'Legendary Armor':
+    'Section=combat ' +
+    'Note="Armor Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+  'Liberating Step':
+    'Section=combat ' +
+    'Note="R15\' May use Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
+  'Liberator':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must always respect others\' freedom and oppose tyranny",' +
+      '"Knows <i>Lay On Hands</i> spell"',
   // Lightning Reflexes as above
-  'Retributive Strike':'Section=feature Note="FILL"',
+  'Paladin':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must always act with honor and respect lawful authority",' +
+      '"Knows <i>Lay On Hands</i> spell"',
+  'Redeemer':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must always show compassion for others and attempt to redeem the wicked",' +
+      '"Knows <i>Lay On Hands</i> spell"',
+  'Retributive Strike':
+    'Section=combat ' +
+    'Note="R15\' May use Reaction to grant an ally damage resistance %{level+2}, plus make a melee Strike against the triggering foe if within reach"',
   // Shield Block as below
-  'Weapon Expertise':'Section=feature Note="FILL"',
-  'Weapon Mastery':'Section=feature Note="FILL"',
+  'The Tenets Of Good':
+    'Section=feature ' +
+    'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
+  'Weapon Expertise':
+    'Section=combat ' +
+    'Note="Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+  'Weapon Mastery':
+    'Section=combat ' +
+    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
-  "Deity's Domain":'Section=feature Note="FILL"',
-  'Ranged Reprisal':'Section=feature Note="FILL"',
-  'Unimpeded Step':'Section=feature Note="FILL"',
-  'Weight Of Guilt':'Section=feature Note="FILL"',
-  'Divine Grace':'Section=feature Note="FILL"',
-  'Dragonslayer Oath':'Section=feature Note="FILL"',
-  'Fiendsbane Oath':'Section=feature Note="FILL"',
-  'Shining Oath':'Section=feature Note="FILL"',
-  'Vengeful Oath':'Section=feature Note="FILL"',
-  'Aura Of Courage':'Section=feature Note="FILL"',
-  'Divine Health':'Section=feature Note="FILL"',
-  'Mercy':'Section=feature Note="FILL"',
+  "Deity's Domain":'Section=magic Note="Knows a domain spell of deity"',
+  'Ranged Reprisal':
+    'Section=combat ' +
+    'Note="May make a Retribute Strike using a ranged attack or a Step and a melee Strike"',
+  'Unimpeded Step':
+    'Section=combat ' +
+    'Note="Liberating Step target may Step normally in difficult terrain"',
+  'Weight Of Guilt':
+    'Section=combat ' +
+    'Note="May make Glimpse Of Redemption traget stupefied instead of enfeebled"',
+  'Divine Grace':'Section=combat Note="May use Reaction to gain +2 save"',
+  'Dragonslayer Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used with an evil dragon",' +
+      '"Must attempt to slay evil dragons whenever possible"',
+  'Fiendsbane Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used with a fiends",' +
+      '"Must attempt to banish or slay fiends whenever possible"',
+  'Shining Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used with undead",' +
+      '"Must attempt to put undead to rest whenever possible"',
+  'Vengeful Oath':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
+      '"May use <i>Lay On Hands</i> to harm creatures seen harming innocents or good allies"',
+  'Aura Of Courage':
+    'Section=save ' +
+    'Note="R15\' Reduces value of frightened for self and allies by 1"',
+  'Divine Health':
+    'Section=save ' +
+    'Note="+1 vs. disease/Successes vs. disease are critical successes"',
+  'Mercy':
+    'Section=magic ' +
+    'Note="<i>Lay On Hands</i> may also counteract choice of fear or paralysis"',
   // Attack Of Opportunity as above
-  'Litany Against Wrath':'Section=feature Note="FILL"',
-  'Loyal Warhorse':'Section=feature Note="FILL"',
+  'Litany Against Wrath':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Points",' +
+      '"Knows <i>Litany Against Wrath</i> spell"',
+  'Loyal Warhorse':
+    'Section=feature Note="Mount is mature and will not attack self"',
   'Shield Warden':
     'Section=combat Note="May use Shield Block to protect an adjacent ally"',
-  'Smite Evil':'Section=feature Note="FILL"',
-  "Advanced Deity's Domain":'Section=feature Note="FILL"',
-  'Greater Mercy':'Section=feature Note="FILL"',
-  'Heal Mount':'Section=feature Note="FILL"',
+  'Smite Evil':
+    'Section=combat ' +
+    'Note="Blade ally inflicts +4 HP good (master proficiency +6 HP) vs. target for 1 rd (extended while target attacks an ally)"',
+  "Advanced Deity's Domain":
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Points",' +
+      '"Knows ad advanced domain spell"',
+  'Greater Mercy':
+    'Section=magic Note="May use Mercy to counteract blinded, deafened, sickened, or slowed"',
+  'Heal Mount':
+    'Section=magic ' +
+    'Note="<i>Lay On Hands</i> on mount heals 10 HP +10 HP/heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="May use an additional Reaction for a Shield Block 1/tn"',
-  'Second Ally':'Section=feature Note="FILL"',
-  'Sense Evil':'Section=feature Note="FILL"',
-  'Devoted Focus':'Section=feature Note="FILL"',
-  'Imposing Destrier':'Section=feature Note="FILL"',
-  'Litany Against Sloth':'Section=feature Note="FILL"',
-  'Radiant Blade Spirit':'Section=feature Note="FILL"',
-  'Shield Of Reckoning':'Section=feature Note="FILL"',
+  'Second Ally':'Section=feature Note="+1 selection"',
+  'Sense Evil':
+    'Section=feature ' +
+    'Note="Can detect the presence of powerful evil auras (Deception vs. Perception neg)"',
+  'Devoted Focus':'Section=magic Note="Recovers 2 Focus Points from Refocus"',
+  'Imposing Destrier':
+    'Section=feature ' +
+    'Note="Mount is a nimble or savage animal companion and may Stride or Strike without a command"',
+  'Litany Against Sloth':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Point",' +
+      '"Knows <i>Litany Against Sloth</i>"',
+  'Radiant Blade Spirit':
+    'Section=magic ' +
+    'Note="Ally blade has <i>flaming</i> and <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> properties"',
+  'Shield Of Reckoning':
+    'Section=combat Note="May apply Shield Block and Champion\'s Reaction to an ally"',
   'Affliction Mercy':'Section=feature Note="FILL"',
   'Aura Of Faith':'Section=feature Note="FILL"',
   'Blade Of Justice':'Section=feature Note="FILL"',
@@ -4031,7 +4160,6 @@ Pathfinder2E.FEATURES = {
   'Champion Resiliency':'Section=feature Note="FILL"',
   'Healing Touch':'Section=feature Note="FILL"',
   'Advanced Devotion':'Section=feature Note="FILL"',
-  // Champion's Reaction as above
   // Divine Ally as above
   'Diverse Armor Expert':'Section=feature Note="FILL"',
 
@@ -4845,7 +4973,8 @@ Pathfinder2E.WEAPONS = {
     'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Shove',
   'Morningstar':
     'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait="Versatile P"',
-  'Sickle':'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+  'Sickle':
+    'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
   'Spear':
     'Category=Simple Price=0.1 Damage=1d6P Bulk=1 Hands=1 Group=Spear Trait=Thrown Range=20',
   'Spiked Gauntlet':
@@ -5338,8 +5467,11 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   } else if(type == 'Deity')
     Pathfinder2E.deityRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Alignment'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Font'),
       QuilvynUtils.getAttrValueArray(attrs, 'Domain'),
-      QuilvynUtils.getAttrValue(attrs, 'Sphere')
+      QuilvynUtils.getAttrValue(attrs, 'Weapon'),
+      QuilvynUtils.getAttrValue(attrs, 'Skill'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Spells')
     );
   else if(type == 'Feat') {
     Pathfinder2E.featRules(rules, name,
@@ -5885,6 +6017,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   let classLevel = 'levels.' + name;
 
   if(name == 'Alchemist') {
+    rules.defineRule('combatNotes.weaponSpecialization',
+      '', '=', '2',
+      'combatNotes.greaterWeaponSpecialization', '+', '2'
+    );
     rules.defineRule
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Barbarian') {
@@ -6015,6 +6151,29 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Champion') {
+    rules.defineRule('combatNotes.dragonslayerOath',
+      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
+      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a second Step"',
+      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
+    );
+    rules.defineRule('combatNotes.fiendsbaneOath',
+      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
+      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a second Step"',
+      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
+    );
+    rules.defineRule('combatNotes.shiningOath',
+      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
+      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a second Step"',
+      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
+    );
+    rules.defineRule('combatNotes.liberatingStep',
+      "featureNotes.champion'sReaction", '+', 'null' // italics
+    );
+    rules.defineRule("featureNotes.champion'sReaction",
+      'features.Liberator', '=', '"<i>Liberating Step</i>"',
+      'features.Paladin', '=', '"<i>Retributive Strike</i>"',
+      'features.Redeemer', '=', '"<i>Glimpse Of Redemption</i>"'
+    );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.cause', '=', '1'
     );
@@ -6022,7 +6181,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       "featureNotes.champion'sCode", '=', '1'
     );
     rules.defineRule('selectableFeatureCount.Champion (Divine Ally)',
-      'featureNotes.divineAlly', '=', '1'
+      'featureNotes.divineAlly', '=', '1',
+      'featureNotes.secondAlly', '+', '1'
     );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
@@ -6071,10 +6231,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with deity #name#. #alignment# gives
- * the deity's alignment, #domains# the associated domains, and #sphere# any
- * sphere of influence.
+ * the deity's alignment, #fonts# and #domains# lists the divine fonts and
+ * associated domains, #weapon# is the deity's favored weapon, #skill# the
+ * divine skill, and #spells# lists associated cleric spells.
  */
-Pathfinder2E.deityRules = function(rules, name, alignment, domains, sphere) {
+Pathfinder2E.deityRules = function(
+  rules, name, alignment, fonts, domains, weapon, skill, spells
+) {
 
   if(!name) {
     console.log('Empty deity name');
@@ -6084,22 +6247,44 @@ Pathfinder2E.deityRules = function(rules, name, alignment, domains, sphere) {
     console.log('Bad alignment "' + alignment + '" for deity ' + name);
     return;
   }
+  if(!Array.isArray(fonts)) {
+    console.log('Bad fonts list "' + fonts + '" for deity ' + name);
+    return;
+  }
   if(!Array.isArray(domains)) {
     console.log('Bad domains list "' + domains + '" for deity ' + name);
+    return;
+  }
+  if(weapon && typeof(weapon) != 'string') {
+    console.log('Bad weapon "' + weapon + '" for deity ' + name);
+    return;
+  }
+  if(skill && typeof(skill) != 'string') {
+    console.log('Bad skill "' + skill + '" for deity ' + name);
+    return;
+  }
+  if(!Array.isArray(spells)) {
+    console.log('Bad spells list "' + spells + '" for deity ' + name);
     return;
   }
 
   if(rules.deityStats == null) {
     rules.deityStats = {
       alignment:{},
+      fonts:{},
       domains:{},
-      sphere:{}
+      weapon:{},
+      skill:{},
+      spells:{}
     };
   }
 
   rules.deityStats.alignment[name] = alignment;
+  rules.deityStats.fonts[name] = fonts.join('/');
   rules.deityStats.domains[name] = domains.join('/');
-  rules.deityStats.sphere[name] = sphere;
+  rules.deityStats.weapon[name] = weapon;
+  rules.deityStats.skill[name] = skill;
+  rules.deityStats.spells[name] = spells.join('/');
 
   rules.defineRule('deityAlignment',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.alignment) + '[source]'
@@ -6107,9 +6292,17 @@ Pathfinder2E.deityRules = function(rules, name, alignment, domains, sphere) {
   rules.defineRule('deityDomains',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.domains) + '[source]'
   );
-  rules.defineRule('deitySphere',
-    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.sphere) + '[source]'
+  rules.defineRule('deityWeapon',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
   );
+
+  let allWeapons = rules.getChoices('weapons');
+  if(weapon in allWeapons &&
+     allWeapons[weapon].match(/Category=(Simple|Unarmed)/))
+    rules.defineRule('weaponDieTypeBonus.' + weapon,
+      'combatNotes.deificWeapon', '?', null,
+      'deityWeapon', '=', 'source == "' + weapon + '" ? 2 : null'
+    );
 
 };
 
@@ -6568,6 +6761,10 @@ Pathfinder2E.weaponRules = function(
     weaponName, '=', '0',
     'weaponDamageAdjustment.' + name, '+', null
   );
+  rules.defineRule('weaponDieType.' + name,
+    weaponName, '=', damage.replace(/^\d(d)?/, ''),
+    'weaponDieTypeBonus.' + name, '+', null
+  );
   if(!isRanged || isThrown)
     rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   else if(isPropulsive)
@@ -6578,7 +6775,10 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule(weaponName + '.1',
     'attackBonus.' + name, '=', 'QuilvynUtils.signed(source)'
   );
-  rules.defineRule(weaponName + '.2', weaponName, '=', '"' + damage + '"');
+  rules.defineRule(weaponName + '.2',
+    weaponName, '=', '"' + damage + '"',
+    'weaponDieType.' + name, '=', '"' + damage.replace(/d\d+/, 'd') + '" + source'
+  );
   rules.defineRule(weaponName + '.3',
     'damageBonus.' + name, '=', 'source == 0 ? "" : QuilvynUtils.signed(source)'
   );
