@@ -332,7 +332,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Noble':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Society; Choose 1 from Geneology Lore, Heraldry Lore)","1:Courtly Graces"',
+      '"1:Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)","1:Courtly Graces"',
   'Nomad':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
@@ -3191,13 +3191,13 @@ Pathfinder2E.FEATURES = {
   "Deity's Domain":'Section=magic Note="Knows a domain spell of deity"',
   'Ranged Reprisal':
     'Section=combat ' +
-    'Note="May make a Retribute Strike using a ranged attack or a Step and a melee Strike"',
+    'Note="May make a Retributive Strike using a ranged attack or a Step and a melee Strike"',
   'Unimpeded Step':
     'Section=combat ' +
     'Note="Liberating Step target may Step normally in difficult terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
-    'Note="May make Glimpse Of Redemption traget stupefied instead of enfeebled"',
+    'Note="May make Glimpse Of Redemption target stupefied instead of enfeebled"',
   'Divine Grace':'Section=combat Note="May use Reaction to gain +2 save"',
   'Dragonslayer Oath':
     'Section=combat,feature ' +
@@ -3269,31 +3269,73 @@ Pathfinder2E.FEATURES = {
       '"Knows <i>Litany Against Sloth</i>"',
   'Radiant Blade Spirit':
     'Section=magic ' +
-    'Note="Ally blade has <i>flaming</i> and <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> properties"',
+    'Note="May choose <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
   'Shield Of Reckoning':
     'Section=combat Note="May apply Shield Block and Champion\'s Reaction to an ally"',
-  'Affliction Mercy':'Section=feature Note="FILL"',
-  'Aura Of Faith':'Section=feature Note="FILL"',
-  'Blade Of Justice':'Section=feature Note="FILL"',
-  "Champion's Sacrifice":'Section=feature Note="FILL"',
-  'Divine Wall':'Section=feature Note="FILL"',
-  'Lasting Doubt':'Section=feature Note="FILL"',
-  'Liberating Stride':'Section=feature Note="FILL"',
-  'Anchoring Aura':'Section=feature Note="FILL"',
-  'Aura Of Life':'Section=feature Note="FILL"',
-  'Aura Of Righteousness':'Section=feature Note="FILL"',
-  'Aura Of Vengeance':'Section=feature Note="FILL"',
-  'Divine Reflexes':'Section=feature Note="FILL"',
-  'Litany Of Righteousness':'Section=feature Note="FILL"',
-  'Wyrmbane Aura':'Section=feature Note="FILL"',
-  'Auspicious Mount':'Section=feature Note="FILL"',
-  'Instrument Of Zeal':'Section=feature Note="FILL"',
-  'Shield Of Grace':'Section=feature Note="FILL"',
-  'Celestial Form':'Section=feature Note="FILL"',
-  'Ultimate Mercy':'Section=feature Note="FILL"',
-  'Celestial Mount':'Section=feature Note="FILL"',
-  'Radiant Blade Master':'Section=feature Note="FILL"',
-  'Shield Paragon':'Section=feature Note="FILL"',
+  'Affliction Mercy':
+    'Section=magic Note="May use Mercy to counteract a curse, disease, or poison"',
+  'Aura Of Faith':
+    'Section=combat ' +
+    'Note="R15\' All self Strikes, and the first Strike of allies each rd, inflict +1 HP good damage vs. evil creatures"',
+  'Blade Of Justice':
+    'Section=combat Note="May use 2 actions to add two extra damage dice on a Strike vs. an evil foe and convert all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
+  "Champion's Sacrifice":
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Point",' +
+      '"Knows <i>Champion\'s Sacrifice</i>"',
+  'Divine Wall':
+    'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
+  'Lasting Doubt':
+    'Section=combat ' +
+    'Note="Effects of Glimpse Of Redemption linger at half intensity for 1 min"',
+  'Liberating Stride':
+    'Section=combat ' +
+    'Note="Target of Liberating Step may Stride half their Speed"',
+  'Anchoring Aura':
+    'Section=magic Note="R15\' Aura counteracts fiend teleportation"',
+  'Aura Of Life':
+    'Section=save ' +
+    'Note="R15\' Aura grants resistance 5 to negative energy and +1 vs. necromancy"',
+  'Aura Of Righteousness':
+    'Section=save Note="R15\' Aura grants resistance 5 to evil"',
+  'Aura Of Vengeance':
+    'Section=combat ' +
+    // TODO automate
+    'Note="Ally Strikes in response to Retributive Strike suffer a -2 penalty"',
+  'Divine Reflexes':
+    'Section=combat ' +
+    'Note="May use an additional Reaction for Champion\'s Reaction 1/tn"',
+  'Litany Of Righteousness':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Point",' +
+      '"Knows <i>Litany Of Righteousness</i>"',
+  'Wyrmbane Aura':
+    'Section=save ' +
+    'Note="R15\' Self and allies have resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level} from dragons)"',
+  'Auspicious Mount':
+    'Section=feature ' +
+    'Note="Mount is a specialized animal companion with expert proficiency in Religion, speech, +2 Intelligence, and +1 Wisdom"',
+  'Instrument Of Zeal':
+    'Section=combat ' +
+    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 for 1 rd"',
+  'Shield Of Grace':
+    'Section=combat ' +
+    'Note="May suffer half of excess damage when using Shield Block to protect an ally"',
+  'Celestial Form':
+    'Section=feature Note="Has a celestial form with Darkvision and flight"',
+  'Ultimate Mercy':
+    'Section=magic ' +
+    'Note="May use <i>Lay On Hands</i> to restore life to a target who died in the previous rd"',
+  'Celestial Mount':
+    'Section=feature Note="Mount gains a celestial form with Darkvision, +40 HP, weakness 10 to evil damage, and flight"',
+  'Radiant Blade Master':
+    'Section=magic ' +
+    'Note="May choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
+  'Shield Paragon':
+    'Section=combat ' +
+    'Note="+50% shield HP and BT; automatically remade after 1 dy if destroyed"',
 
   // Cleric
   // Alertness as above
@@ -4712,7 +4754,7 @@ Pathfinder2E.SKILLS = {
   // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Planar Lore':'Ability=Intelligence', // pg 247 excluded
-  // Common lore subcatigories pg 248
+  // Common lore subcategories pg 248
   'Academia Lore':'Ability=Intelligence',
   'Accounting Lore':'Ability=Intelligence',
   'Architecture Lore':'Ability=Intelligence',
@@ -4723,7 +4765,7 @@ Pathfinder2E.SKILLS = {
   'Fishing Lore':'Ability=Intelligence',
   'Fortune-Telling Lore':'Ability=Intelligence',
   'Games Lore':'Ability=Intelligence',
-  'Geneology Lore':'Ability=Intelligence',
+  'Genealogy Lore':'Ability=Intelligence',
   'Gladitorial Lore':'Ability=Intelligence',
   'Guild Lore':'Ability=Intelligence',
   'Heraldry Lore':'Ability=Intelligence',
