@@ -2775,7 +2775,7 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="+%V/%{combatNotes.weaponSpecialization*1.5}/%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapons"',
+    'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapons"',
   'Alchemical Alacrity':'Section=feature Note="FILL"',
   'Evasion':
     'Section=save,save ' +
@@ -3199,7 +3199,8 @@ Pathfinder2E.FEATURES = {
   'Weight Of Guilt':
     'Section=combat ' +
     'Note="May make Glimpse Of Redemption target stupefied instead of enfeebled"',
-  'Divine Grace':'Section=combat Note="May use Reaction to gain +2 save"',
+  'Divine Grace':
+    'Section=combat Note="May use Reaction to gain +2 save vs. a spell"',
   'Dragonslayer Oath':
     'Section=combat,feature ' +
     'Note=' +
@@ -3208,7 +3209,7 @@ Pathfinder2E.FEATURES = {
   'Fiendsbane Oath':
     'Section=combat,feature ' +
     'Note=' +
-      '"%V when used with a fiends",' +
+      '"%V when used with a fiend",' +
       '"Must attempt to banish or slay fiends whenever possible"',
   'Shining Oath':
     'Section=combat,feature ' +
@@ -3219,10 +3220,10 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
-      '"May use <i>Lay On Hands</i> to harm creatures seen harming innocents or good allies"',
+      '"May use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
   'Aura Of Courage':
     'Section=save ' +
-    'Note="R15\' Reduces value of frightened for self and allies by 1"',
+    'Note="R15\' Reduces value of frightened condition for self and allies by 1"',
   'Divine Health':
     'Section=save ' +
     'Note="+1 vs. disease/Successes vs. disease are critical successes"',
@@ -3241,17 +3242,18 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use Shield Block to protect an adjacent ally"',
   'Smite Evil':
     'Section=combat ' +
-    'Note="Blade ally inflicts +4 HP good (master proficiency +6 HP) vs. target for 1 rd (extended while target attacks an ally)"',
+    'Note="Blade ally inflicts +4 HP good (master proficiency +6 HP) vs. target for 1 rd, extended as long as the target attacks an ally"',
   "Advanced Deity's Domain":
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Knows ad advanced domain spell"',
+      '"Knows an advanced domain spell of deity"',
   'Greater Mercy':
-    'Section=magic Note="May use Mercy to counteract blinded, deafened, sickened, or slowed"',
+    'Section=magic ' +
+    'Note="<i>Lay On Hands</i> may also counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> on mount heals 10 HP +10 HP/heightened level"',
+    'Note="<i>Lay On Hands</i> on mount restores 10 HP +10 HP/heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="May use an additional Reaction for a Shield Block 1/tn"',
@@ -3259,7 +3261,7 @@ Pathfinder2E.FEATURES = {
   'Sense Evil':
     'Section=feature ' +
     'Note="Can detect the presence of powerful evil auras (Deception vs. Perception neg)"',
-  'Devoted Focus':'Section=magic Note="Recovers 2 Focus Points from Refocus"',
+  'Devoted Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Imposing Destrier':
     'Section=feature ' +
     'Note="Mount is a nimble or savage animal companion and may Stride or Strike without a command"',
@@ -3267,24 +3269,26 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Point",' +
-      '"Knows <i>Litany Against Sloth</i>"',
+      '"Knows <i>Litany Against Sloth</i> spell"',
   'Radiant Blade Spirit':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="May choose <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
   'Shield Of Reckoning':
-    'Section=combat Note="May apply Shield Block and Champion\'s Reaction to an ally"',
+    'Section=combat ' +
+    'Note="May use 1 Reaction to apply Shield Block and Champion\'s Reaction with an ally"',
   'Affliction Mercy':
-    'Section=magic Note="May use Mercy to counteract a curse, disease, or poison"',
+    'Section=magic ' +
+    'Note="<i>Lay On Hands</i> may also counteract a curse, disease, or poison"',
   'Aura Of Faith':
     'Section=combat ' +
-    'Note="R15\' All self Strikes, and the first Strike of allies each rd, inflict +1 HP good damage vs. evil creatures"',
+    'Note="R15\' All self Strikes and the first Strike each ally each rd inflict +1 HP good damage vs. evil creatures"',
   'Blade Of Justice':
     'Section=combat Note="May use 2 actions to add two extra damage dice on a Strike vs. an evil foe and convert all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Point",' +
-      '"Knows <i>Champion\'s Sacrifice</i>"',
+      '"Knows <i>Champion\'s Sacrifice</i> spell"',
   'Divine Wall':
     'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
   'Lasting Doubt':
@@ -3294,15 +3298,15 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Target of Liberating Step may Stride half their Speed"',
   'Anchoring Aura':
-    'Section=magic Note="R15\' Aura counteracts fiend teleportation"',
+    'Section=magic Note="R15\' Aura counteracts teleportation spells cast by fiends"',
   'Aura Of Life':
     'Section=save ' +
-    'Note="R15\' Aura grants resistance 5 to negative energy and +1 vs. necromancy"',
+    'Note="R15\' Grants resistance 5 to negative energy and +1 saves vs. necromancy"',
   'Aura Of Righteousness':
-    'Section=save Note="R15\' Aura grants resistance 5 to evil"',
+    'Section=save Note="R15\' Grants resistance 5 to evil"',
   'Aura Of Vengeance':
     'Section=combat ' +
-    'Note="Ally Strikes in response to Retributive Strike suffer a -2 penalty"',
+    'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
   'Divine Reflexes':
     'Section=combat ' +
     'Note="May use an additional Reaction for Champion\'s Reaction 1/tn"',
@@ -3310,13 +3314,13 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Point",' +
-      '"Knows <i>Litany Of Righteousness</i>"',
+      '"Knows <i>Litany Of Righteousness</i> spell"',
   'Wyrmbane Aura':
     'Section=save ' +
-    'Note="R15\' Self and allies have resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level} from dragons)"',
+    'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level} from dragons)"',
   'Auspicious Mount':
     'Section=feature ' +
-    'Note="Mount is a specialized animal companion with expert proficiency in Religion, speech, +2 Intelligence, and +1 Wisdom"',
+    'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
   'Instrument Of Zeal':
     'Section=combat ' +
     'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 for 1 rd"',
@@ -3329,13 +3333,15 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May use <i>Lay On Hands</i> to restore life to a target who died in the previous rd"',
   'Celestial Mount':
-    'Section=feature Note="Mount gains a celestial form with Darkvision, +40 HP, weakness 10 to evil damage, and flight"',
+    'Section=feature Note="Mount has a celestial form with Darkvision, +40 HP, weakness 10 to evil damage, and flight"',
   'Radiant Blade Master':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="May choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
   'Shield Paragon':
-    'Section=combat ' +
-    'Note="+50% shield HP and BT; automatically remade after 1 dy if destroyed"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"+50% shield HP",' +
+      '"Shield is always raised and is automatically remade after 1 dy if destroyed"',
 
   // Cleric
   // Alertness as above
@@ -6237,7 +6243,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'combatNotes.divineAlly(Shield)', '+', '2'
     );
     rules.defineRule('shieldHP',
-      'combatNotes.divineAlly(Shield)', '*', '1.5'
+      'shieldHP.1', '*', null
+    );
+    rules.defineRule('shieldHP.1',
+      'combatNotes.divineAlly(Shield)', '=', '1.5',
+      'combatNotes.shieldParagon', '^=', '2'
     );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
