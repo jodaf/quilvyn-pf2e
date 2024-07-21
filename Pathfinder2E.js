@@ -576,7 +576,11 @@ Pathfinder2E.CLASSES = {
       '"11:Wild Stride","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","15:Improved Evasion",' +
       '"15:Incredible Senses","17:Masterful Hunter","19:Second Skin",' +
-      '"19:Swift Prey"',
+      '"19:Swift Prey" ' +
+    'Selectables=' +
+      '"1:Flurry:Hunter\'s Edge",' +
+      '"1:Precision:Hunter\'s Edge",' +
+      '"1:Outwit:Hunter\'s Edge"',
   'Rogue':
     'Ability=charisma,constitution,dexterity,intelligence,strength,wisdom HitPoints=8 ' +
     'Features=' +
@@ -2758,7 +2762,7 @@ Pathfinder2E.FEATURES = {
   'Field Discovery':'Section=feature Note="FILL"',
   'Powerful Alchemy':'Section=feature Note="FILL"',
   'Alchemical Weapon Expertise':'Section=feature Note="FILL"',
-  'Iron Will':'Section=feature Note="FILL"',
+  'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Perpetual Infusions':'Section=feature Note="FILL"',
   'Alchemical Expertise':'Section=feature Note="FILL"',
   'Alertness':'Section=skill Note="Perception Expert"',
@@ -3792,7 +3796,10 @@ Pathfinder2E.FEATURES = {
   // Evasion as above
   // Greater Weapon Specialization as above
   'Hunt Prey':'Section=feature Note="FILL"',
-  "Hunter's Edge":'Section=feature Note="FILL"',
+  "Hunter's Edge":'Section=feature Note="1 selection"',
+  'Flurry':'Section=feature Note="FILL"',
+  'Outwit':'Section=feature Note="FILL"',
+  'Precision':'Section=feature Note="FILL"',
   'Improved Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -3804,11 +3811,15 @@ Pathfinder2E.FEATURES = {
   'Masterful Hunter':'Section=feature Note="FILL"',
   // Medium Armor Expertise as above
   "Nature's Edge":'Section=feature Note="FILL"',
-  'Ranger Expertise':'Section=feature Note="FILL"',
+  'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
   'Ranger Feats':'Section=feature Note="%V selections"',
   'Ranger Skills':
     'Section=skill Note="Skill Trained (Nature; Survival; Choose %V from any)"',
-  'Ranger Weapon Expertise':'Section=feature Note="FILL"',
+  'Ranger Weapon Expertise':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"May use critical specialization effects of ranger weapons when attacking hunted prey"',
   'Second Skin':'Section=feature Note="FILL"',
   'Swift Prey':'Section=feature Note="FILL"',
   'Trackless Step':'Section=feature Note="FILL"',
@@ -6265,6 +6276,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Ranger') {
+    rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
+      "featureNotes.hunter'sEdge", '=', '1'
+    );
     rules.defineRule
       ('skillNotes.rangerSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Rogue') {
