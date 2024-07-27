@@ -2779,7 +2779,7 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapons"',
+    'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
   'Alchemical Alacrity':'Section=feature Note="FILL"',
   'Evasion':
     'Section=save,save ' +
@@ -3432,7 +3432,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May use Diplomacy to Make an Impression on animals and make simple Requests"',
 
-  'Animal Companion':'Section=feature Note="FILL"',
+  'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey and Flurry, Precision, or Outwit effects\':\'\'}"',
   'Leshy Familiar':'Section=feature Note="FILL"',
   // Reach Spell as above
   'Storm Born':'Section=feature Note="FILL"',
@@ -3443,7 +3443,9 @@ Pathfinder2E.FEATURES = {
   'Order Explorer':'Section=feature Note="FILL"',
   // Poison Resistance as above
   'Form Control':'Section=feature Note="FILL"',
-  'Mature Animal Companion':'Section=feature Note="FILL"',
+  'Mature Animal Companion':
+    'Section=feature ' +
+    'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
   'Order Magic':'Section=feature Note="FILL"',
   'Thousand Faces':'Section=feature Note="FILL"',
   'Woodland Stride':'Section=feature Note="FILL"',
@@ -3453,19 +3455,23 @@ Pathfinder2E.FEATURES = {
   'Storm Retribution':'Section=feature Note="FILL"',
   'Ferocious Shape':'Section=feature Note="FILL"',
   'Fey Caller':'Section=feature Note="FILL"',
-  'Incredible Companion':'Section=feature Note="FILL"',
+  'Incredible Companion':
+    'Section=feature Note="Animal Companion is a nimble or savage companion"',
   'Soaring Shape':'Section=feature Note="FILL"',
   'Wind Caller':'Section=feature Note="FILL"',
   'Elemental Shape':'Section=feature Note="FILL"',
   'Healing Transformation':'Section=feature Note="FILL"',
   'Overwhelming Energy':'Section=feature Note="FILL"',
   'Plant Shape':'Section=feature Note="FILL"',
-  'Side By Side':'Section=feature Note="FILL"',
+  'Side By Side':
+    'Section=combat ' +
+    'Note="Self and companion automatically flank a foe that both attack"',
   'Dragon Shape':'Section=feature Note="FILL"',
   'Green Tongue':'Section=feature Note="FILL"',
   'Primal Focus':'Section=feature Note="FILL"',
   'Primal Summons':'Section=feature Note="FILL"',
-  'Specialized Companion':'Section=feature Note="FILL"',
+  'Specialized Companion':
+    'Section=feature Note="Animal Companion has choice of specialization"',
   'Timeless Nature':'Section=feature Note="FILL"',
   'Verdant Metamorphosis':'Section=feature Note="FILL"',
   // Effortless Concentration as above
@@ -3798,20 +3804,20 @@ Pathfinder2E.FEATURES = {
   // Evasion as above
   // Greater Weapon Specialization as above
   'Hunt Prey':
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="+2 Perception to Seek and +2 Survival to Track designated creature"',
   "Hunter's Edge":'Section=feature Note="1 selection"',
   'Flurry':
     'Section=combat ' +
-    'Note="-3/-6 penalty for second/third attack (-2/-4 with an agile weapon) on Hunt Prey target"',
+    'Note="Reduces penalty for second/third attack on Hunt Prey target to -3/-6 (-2/-4 with an agile weapon)"',
   'Outwit':
     'Section=combat,skill ' +
     'Note=' +
-      '"+1 Armor Class with Hunt Prey target",' +
+      '"+1 Armor Class vs. Hunt Prey target",' +
       '"+2 Deception, Intimidation, Stealth, and Recall Knowledge checks with Hunt Prey target"',
   'Precision':
     'Section=combat ' +
-    'Note="Inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage on first hit on Hunt Prey target each rd"',
+    'Note="First hit on Hunt Prey target inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage each rd"',
   'Improved Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -3824,14 +3830,14 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill,skill ' +
     'Note=' +
       '"Class Master (Ranger)",' +
-      '"No penalty for shooting into 2nd and 3rd range increments with master weapon",' +
-      '"+4 Perception to Seek target of Hunt Prey",' +
-      '"+4 Survival to Track target of Hunt Prey"',
+      '"No range penalty when attacking Hunt Prey target in the 2nd or 3rd range increment of a ranged weapon with master proficiency",' +
+      '"+4 Perception to Seek Hunt Prey target",' +
+      '"+4 Survival to Track Hunt Prey target"',
       // TODO increased Hunter's Prey effects
   // Medium Armor Expertise as above
   "Nature's Edge":
     'Section=combat ' +
-    'Note="Foes suffer flat-footed to self in natural terrain and in difficult terrain from snares"',
+    'Note="Foes suffer flat-footed vs. self in in natural and snare-imposed difficult terrain"',
   'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
   'Ranger Feats':'Section=feature Note="%V selections"',
   'Ranger Skills':
@@ -3840,7 +3846,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use critical specialization effects of ranger weapons when attacking Hunt Prey target"',
+      '"May use critical specialization effects of unarmed attacks and simple and martial weapons when attacking Hunt Prey target"',
   'Second Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -3851,14 +3857,14 @@ Pathfinder2E.FEATURES = {
     'Note="May use Hunt Prey as a free action at the beginning of each rd"',
   'Trackless Step':
     'Section=skill ' +
-    'Note="Gains benefit of Cover Tracks action continuously at full Speed in natural terrain"',
+    'Note="Has the benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
   // Vigilant Senses as above
   'Wild Stride':
     'Section=ability Note="May move normally through non-magical difficult terrain"',
   // Weapon Mastery as above
   // Weapon Specialization as above
 
-  // TODO Animal Companion as above
+  // Animal Companion as above
   'Crossbow Ace':
     'Section=combat ' +
     'Note="Crossbow inflicts +2 HP damage on Hunt Prey target or immediately after reloading; simple crossbow also increases damage die by 1 step"',
@@ -3867,7 +3873,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 1 action to make two ranged Strikes against Hunt Prey target 1/rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="May attempt to Recall Knowledge on Hunt Prey target; critical success gives +1 attack to self and allies for 1 rd"',
+    'Note="May attempt to Recall Knowledge as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd"',
   'Twin Takedown':
     'Section=combat ' +
     'Note="May use 1 action to make one melee Strike with each hand against Hunt Prey target 1/rd"',
@@ -3879,7 +3885,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to gain +2 attack and ignore concealment of Hunt Prey target"',
   'Monster Warden':
     'Section=combat ' +
-    'Note="Successful use of Monster Hunter also gives self and alies +1 to Armor Class and +1 on next save vs. Hunt Prey target"',
+    'Note="Successful use of Monster Hunter also gives self and alies +%V to Armor Class and +%V on next save vs. Hunt Prey target"',
   'Quick Draw':
     'Section=combat Note="May use 1 action to draw a weapon and Strike"',
   // Wild Empathy as above
@@ -3898,9 +3904,9 @@ Pathfinder2E.FEATURES = {
   "Scout's Warning":'Section=combat Note="May give allies +1 initiative"',
   'Snare Specialist':
     'Section=skill ' +
-    'Note="Knows the formulas for %{rank.Crafting<3?3:rank.Crafter<4?6:9} snares; may prepare %{rank.Crafting<3?4:rank.Crafting<4?6:8} each day"',
+    'Note="Knows the formulas for %{rank.Crafting<3?3:rank.Crafting<4?6:9} snares; may prepare %V each day"',
   // Twin Parry as above
-  // TODO Mature Animal Companion as above
+  // Mature Animal Companion as above
   'Quick Snares':
     'Section=skill Note="May prepare snares with 3 Interact actions"',
   'Skirmish Strike':'Section=combat Note="May use 1 action to Step and Strike"',
@@ -3925,38 +3931,76 @@ Pathfinder2E.FEATURES = {
     'Note="May train for 1 hr to temporarily change favored terrain"',
   "Warden's Boon":
     'Section=combat Note="May share Hunt Prey benefits with an ally for 1 rd"',
-  'Camouflage':'Section=feature Note="FILL"',
-  // TODO Incredible Companion as above
-  'Master Monster Hunter':'Section=feature Note="FILL"',
-  'Penetrating Shot':'Section=feature Note="FILL"',
+  'Camouflage':
+    'Section=skill Note="May Hide and Sneak in natural terrain without cover"',
+  // Incredible Companion as above
+  'Master Monster Hunter':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Monster Hunter effects take effect on simple success",' +
+      '"May use Nature to Recall Knowledge on any creature"',
+  'Penetrating Shot':
+    'Section=combat ' +
+    'Note="May use 2 actions to Strike both a target and a creature giving it lesser cover"',
   // Twin Riposte as above
-  "Warden's Step":'Section=feature Note="FILL"',
-  'Distracting Shot':'Section=feature Note="FILL"',
-  'Double Prey':'Section=feature Note="FILL"',
-  'Lightning Snares':'Section=feature Note="FILL"',
-  'Second Sting':'Section=feature Note="FILL"',
+  "Warden's Step":'Section=skill Note="May extend Avoid Notice to allies"',
+  'Distracting Shot':
+    'Section=combat ' +
+    'Note="Critical or double hit on Hunt Prey target inflicts flat-footed for 1 rd"',
+  'Double Prey':'Section=combat Note="May use Hunt Prey on two targets"',
+  'Lightning Snares':'Section=skill Note="May craft a trap with 1 action"',
+  'Second Sting':
+    'Section=combat ' +
+    'Note="Failed Strike with a weapon in one hand deals non-dice damage of the weapon in the other"',
   // Side By Side as above
   'Sense The Unseen':
     'Section=skill Note="Failed Seeks make undetected foes hidden"',
-  'Shared Prey':'Section=feature Note="FILL"',
-  'Stealthy Companion':'Section=feature Note="FILL"',
-  'Targeting Shot':'Section=feature Note="FILL"',
-  "Warden's Guidance":'Section=feature Note="FILL"',
-  'Greater Distracting Shot':'Section=feature Note="FILL"',
+  'Shared Prey':
+    'Section=combat ' +
+    'Note="May share with an ally the benifits of Hunt Prey on a single target"',
+  'Stealthy Companion':
+    'Section=skill ' +
+    'Note="Companion gains benefits of Camouflage; ambusher gains increase in Stealth rank"',
+  'Targeting Shot':
+    'Section=combat ' +
+    'Note="Ranged attack vs. Hunt Prey target ignores cover and concealment"',
+  "Warden's Guidance":
+    'Section=skill ' +
+    'Note="Seeking of Hunt Prey target by self and allies automatically succeed"',
+  'Greater Distracting Shot':
+    'Section=combat ' +
+    'Note="Ranged hit on Hunt Prey target inflicts flat-footed for 1 rd"',
   // Improved Twin Riposte as above
-  'Legendary Monster Hunter':'Section=feature Note="FILL"',
+  'Legendary Monster Hunter':
+    'Section=feature Note="Increased Monster Hunter effects"',
   // Specialized Companion as above
-  'Ubiquitous Snares':'Section=feature Note="FILL"',
-  'Impossible Flurry':'Section=feature Note="FILL"',
+  'Ubiquitous Snares':'Section=skill Note="Increased Snare Specialist effects"',
+  'Impossible Flurry':
+    'Section=combat ' +
+    'Note="May use 3 actions to make 3 melee Strikes at the maximum multiple attack penalty"',
   // Impossible Volley as above
-  'Manifold Edge':'Section=feature Note="FILL"',
-  'Masterful Companion':'Section=feature Note="FILL"',
-  'Perfect Shot':'Section=feature Note="FILL"',
-  'Shadow Hunter':'Section=feature Note="FILL"',
-  'Legendary Shot':'Section=feature Note="FILL"',
-  'To The Ends Of The Earth':'Section=feature Note="FILL"',
-  'Triple Threat':'Section=feature Note="FILL"',
-  'Ultimate Skirmisher':'Section=feature Note="FILL"',
+  'Manifold Edge':
+    'Section=combat ' +
+    'Note="May use a different hunter\'s edge benefit with Hunt Prey"',
+  'Masterful Companion':
+    'Section=combat Note="Companion gains Masterful Hunter effects"',
+  'Perfect Shot':
+    'Section=combat ' +
+    'Note="May use 3 actions to inflict maximum damage with a ranged attack on a Hunt Prey target"',
+  'Shadow Hunter':
+    'Section=skill ' +
+    'Note="Has continuous concealment from foes other than Hunt Prey targets in natural surroundings"',
+  'Legendary Shot':'Section=combat Note="May ignore five range increments when attacking a Hunt Prey target with a master proficiency weapon"',
+  'To The Ends Of The Earth':
+    'Section=skill Note="May follow a Hunt Prey target across any distance"',
+  'Triple Threat':
+    'Section=feature ' +
+    'Note="May use Hunt Prey with 3 targets or share single-target Hunt Prey effects with two allies"',
+  'Ultimate Skirmisher':
+    'Section=ability,save ' +
+    'Note=' +
+      '"May move normally through difficult and hazardous terrain",' +
+      '"Does not trigger movement-connected traps"',
 
   // Rogue
   'Debilitating Strike':
@@ -6344,6 +6388,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Ranger') {
+    rules.defineRule('combatNotes.monsterHunter',
+      '', '=', '1',
+      'combatNotes.legendaryMonsterHunter', '+', '1'
+    );
+    rules.defineRule('combatNotes.monsterWarden',
+      '', '=', '1',
+      'combatNotes.legendaryMonsterHunter', '+', '1'
+    );
     rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
       "featureNotes.hunter'sEdge", '=', '1'
     );
@@ -6353,6 +6405,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.masterfulHunter-1', 'rank.Survival', '?', 'source >= 3');
     rules.defineRule
       ('skillNotes.rangerSkills', 'intelligenceModifier', '=', '4 + source');
+    rules.defineRule('skillNotes.snareSpecialist',
+      'rank.Crafting', '=', 'source<3 ? 4 : source<4 ? 6 : 8',
+      'skillNotes.ubiquitousSnares', '*', '2'
+    );
   } else if(name == 'Rogue') {
     rules.defineRule('selectableFeatureCount.Rogue (Racket)',
       "featureNotes.rogue'sRacket", '=', '1'
