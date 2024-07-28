@@ -71,7 +71,7 @@ function Pathfinder2E() {
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
-    Pathfinder2E.LANGUAGES, Pathfinder2E.SKILLS
+    Pathfinder2E.LANGUAGES, Pathfinder2E.SKILLS, Pathfinder2E.TERRAINS
   );
 
   Quilvyn.addRuleSet(rules);
@@ -83,7 +83,7 @@ Pathfinder2E.VERSION = '2.4.1.0';
 Pathfinder2E.CHOICES = [
   'Alignment', 'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Feat',
   'Feature', 'Goody', 'Language', 'Lore', 'School', 'Shield', 'Skill', 'Spell',
-  'Weapon'
+  'Terrain', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -1564,7 +1564,7 @@ Pathfinder2E.FEATS = {
   'Hunted Shot':'Type=Class,Ranger',
   'Monster Hunter':'Type=Class,Ranger',
   'Twin Takedown':'Type=Class,Ranger',
-  'Favored Terrain':'Type=Class,Ranger Require="level >= 2"',
+  'Favored Terrain (%terrain)':'Type=Class,Ranger Require="level >= 2"',
   "Hunter's Aim":'Type=Class,Ranger Require="level >= 2"',
   'Monster Warden':
     'Type=Class,Ranger Require="level >= 2","features.Monster Hunter"',
@@ -3430,7 +3430,7 @@ Pathfinder2E.FEATURES = {
   // Weapon Specialization as above
   'Wild Empathy':
     'Section=skill ' +
-    'Note="May use Diplomacy to Make an Impression on animals and make simple Requests"',
+    'Note="May use Diplomacy with animals to Make an Impression and make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey and Flurry, Precision, or Outwit effects\':\'\'}"',
   'Leshy Familiar':'Section=feature Note="FILL"',
@@ -3465,7 +3465,7 @@ Pathfinder2E.FEATURES = {
   'Plant Shape':'Section=feature Note="FILL"',
   'Side By Side':
     'Section=combat ' +
-    'Note="Self and companion automatically flank a foe that both attack"',
+    'Note="Self and companion automatically flank a foe adjacent to both"',
   'Dragon Shape':'Section=feature Note="FILL"',
   'Green Tongue':'Section=feature Note="FILL"',
   'Primal Focus':'Section=feature Note="FILL"',
@@ -3580,7 +3580,7 @@ Pathfinder2E.FEATURES = {
   // Swipe as above
   'Twin Parry':
     'Section=combat ' +
-    'Note="Wielding two weapons gives +1 AC (+2 AC with weapon parry trait)"',
+    'Note="May parry with two weapons to gain +1 AC for 1 rd (+2 AC with weapon parry trait)"',
   'Advanced Weapon Training':
     'Section=combat ' +
     'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
@@ -3809,15 +3809,15 @@ Pathfinder2E.FEATURES = {
   "Hunter's Edge":'Section=feature Note="1 selection"',
   'Flurry':
     'Section=combat ' +
-    'Note="Reduces penalty for second/third attack on Hunt Prey target to -3/-6 (-2/-4 with an agile weapon)"',
+    'Note="Reduces penalty for second/third attack on a Hunt Prey target to -3/-6 (-2/-4 with an agile weapon)"',
   'Outwit':
     'Section=combat,skill ' +
     'Note=' +
-      '"+1 Armor Class vs. Hunt Prey target",' +
-      '"+2 Deception, Intimidation, Stealth, and Recall Knowledge checks with Hunt Prey target"',
+      '"+1 Armor Class vs. a Hunt Prey target",' +
+      '"+2 Deception, Intimidation, Stealth, and Recall Knowledge checks with a Hunt Prey target"',
   'Precision':
     'Section=combat ' +
-    'Note="First hit on Hunt Prey target inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage each rd"',
+    'Note="First hit on a Hunt Prey target inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage each rd"',
   'Improved Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -3830,9 +3830,9 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill,skill ' +
     'Note=' +
       '"Class Master (Ranger)",' +
-      '"No range penalty when attacking Hunt Prey target in the 2nd or 3rd range increment of a ranged weapon with master proficiency",' +
-      '"+4 Perception to Seek Hunt Prey target",' +
-      '"+4 Survival to Track Hunt Prey target"',
+      '"No range penalty when attacking a Hunt Prey target in the 2nd or 3rd range increment of a ranged weapon with master proficiency",' +
+      '"+4 Perception to Seek a Hunt Prey target",' +
+      '"+4 Survival to Track a Hunt Prey target"',
       // TODO increased Hunter's Prey effects
   // Medium Armor Expertise as above
   "Nature's Edge":
@@ -3846,7 +3846,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use critical specialization effects of unarmed attacks and simple and martial weapons when attacking Hunt Prey target"',
+      '"May use critical specialization effects of unarmed attacks and simple and martial weapons when attacking a Hunt Prey target"',
   'Second Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -3867,34 +3867,64 @@ Pathfinder2E.FEATURES = {
   // Animal Companion as above
   'Crossbow Ace':
     'Section=combat ' +
-    'Note="Crossbow inflicts +2 HP damage on Hunt Prey target or immediately after reloading; simple crossbow also increases damage die by 1 step"',
+    'Note="Crossbow inflicts +2 HP damage on a Hunt Prey target or immediately after reloading; simple crossbow also increases damage die by 1 step"',
   'Hunted Shot':
     'Section=combat ' +
-    'Note="May use 1 action to make two ranged Strikes against Hunt Prey target 1/rd"',
+    'Note="May use 1 action to make two ranged Strikes against a Hunt Prey target 1/rd"',
   'Monster Hunter':
     'Section=combat ' +
     'Note="May attempt to Recall Knowledge as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd"',
   'Twin Takedown':
     'Section=combat ' +
-    'Note="May use 1 action to make one melee Strike with each hand against Hunt Prey target 1/rd"',
-  'Favored Terrain':
+    'Note="May use 1 action to make a melee Strike with each hand against a Hunt Prey target 1/rd"',
+  'Favored Terrain (Aquatic)':
     'Section=ability ' +
-    'Note="May move normally through difficult terrain in chosen terrain type"',
+    'Note="May move normally through underwater difficult terrain/%{speed}\' swim Speed"',
+  'Favored Terrain (Arctic)':
+    'Section=ability,feature ' +
+    'Note=' +
+      '"May move normally through icy or snowy difficult terrain without a need to Balance",' +
+      '"Can survive on 1/10 normal food and water"',
+  'Favored Terrain (Desert)':
+    'Section=ability,feature ' +
+    'Note=' +
+      '"May move normally through sandy difficult terrain without a need to Balance",' +
+      '"Can survive on 1/10 normal food and water"',
+  'Favored Terrain (Forest)':
+    'Section=ability ' +
+    'Note="May move normally through forested difficult terrain/%{speed}\' climb Speed"',
+  'Favored Terrain (Mountain)':
+    'Section=ability ' +
+    'Note="May move normally through mountainous difficult terrain/%{speed}\' climb Speed"',
+  'Favored Terrain (Plains)':
+    'Section=ability,ability ' +
+    'Note=' +
+      '"+10 Speed",' +
+      '"May move normally through difficult terrain in plains"',
+  'Favored Terrain (Sky)':
+    'Section=ability ' +
+    'Note="May move normally through difficult terrain in the sky/%{speed}\' fly Speed"',
+  'Favored Terrain (Swamp)':
+    'Section=ability ' +
+    'Note="May move normally through boggy greater difficult terrain"',
+  'Favored Terrain (Underground)':
+    'Section=ability ' +
+    'Note="May move normally through underground difficult terrain/%{speed}\' climb Speed"',
   "Hunter's Aim":
     'Section=combat ' +
-    'Note="May use 2 actions to gain +2 attack and ignore concealment of Hunt Prey target"',
+    'Note="May use 2 actions to gain +2 attack and ignore concealment of a Hunt Prey target"',
   'Monster Warden':
     'Section=combat ' +
-    'Note="Successful use of Monster Hunter also gives self and alies +%V to Armor Class and +%V on next save vs. Hunt Prey target"',
+    'Note="Successful use of Monster Hunter also gives self and allies +%V Armor Class on next attack and +%V on next save vs. a Hunt Prey target"',
   'Quick Draw':
     'Section=combat Note="May use 1 action to draw a weapon and Strike"',
   // Wild Empathy as above
   "Companion's Cry":
     'Section=combat ' +
-    'Note="May use 2 actions to Command an Animal to give companion an additional action"',
+    'Note="May use 2 actions for Command an Animal to give companion an additional action"',
   'Disrupt Prey':
     'Section=combat ' +
-    'Note="May use a Reaction to Strike Hunt Prey target; critical success disrupts its action"',
+    'Note="May use a Reaction to to make a Strike on a Hunt Prey target; critical success disrupts its action"',
   'Far Shot':'Section=combat Note="Doubles ranged weapon increments"',
   'Favored Enemy':
     'Section=combat ' +
@@ -3907,8 +3937,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the formulas for %{rank.Crafting<3?3:rank.Crafting<4?6:9} snares; may prepare %V each day"',
   // Twin Parry as above
   // Mature Animal Companion as above
-  'Quick Snares':
-    'Section=skill Note="May prepare snares with 3 Interact actions"',
+  'Quick Snares':'Section=skill Note="May prepare snares with 3 actions"',
   'Skirmish Strike':'Section=combat Note="May use 1 action to Step and Strike"',
   'Snap Shot':
     'Section=combat ' +
@@ -3917,7 +3946,7 @@ Pathfinder2E.FEATURES = {
   // Blind-Fight as above
   'Deadly Aim':
     'Section=combat ' +
-    'Note="May suffer -2 range Strike penalty with Hunt Prey target to gain +%{level<11?4:level<15?6:8} HP damage"',
+    'Note="May suffer -2 ranged Strike penalty vs. a Hunt Prey target to gain +%{level<11?4:level<15?6:8} HP damage"',
   'Hazard Finder':
     'Section=combat,skill ' +
     'Note=' +
@@ -3925,7 +3954,7 @@ Pathfinder2E.FEATURES = {
       '"+1 Perception to find traps; may find traps even when not searching"',
   'Powerful Snares':
     'Section=skill ' +
-    'Note="Created snares have a DC of at least %{ClassDC.Ranger}"',
+    'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
     'Section=ability ' +
     'Note="May train for 1 hr to temporarily change favored terrain"',
@@ -3938,41 +3967,44 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"Monster Hunter effects take effect on simple success",' +
-      '"May use Nature to Recall Knowledge on any creature"',
+      '"May use Nature to Recall Knowledge to identify any creature"',
   'Penetrating Shot':
     'Section=combat ' +
     'Note="May use 2 actions to Strike both a target and a creature giving it lesser cover"',
   // Twin Riposte as above
-  "Warden's Step":'Section=skill Note="May extend Avoid Notice to allies"',
+  "Warden's Step":
+    'Section=skill ' +
+    'Note="May include allies in an Avoid Notice action in natural terrain"',
   'Distracting Shot':
     'Section=combat ' +
-    'Note="Critical or double hit on Hunt Prey target inflicts flat-footed for 1 rd"',
+    'Note="Critical or double hit on a Hunt Prey target inflicts flat-footed for 1 rd"',
   'Double Prey':'Section=combat Note="May use Hunt Prey on two targets"',
   'Lightning Snares':'Section=skill Note="May craft a trap with 1 action"',
   'Second Sting':
     'Section=combat ' +
-    'Note="Failed Strike with a weapon in one hand deals non-dice damage of the weapon in the other"',
+    'Note="Failed Strike with a weapon in one hand inflicts non-dice damage of the weapon in the other"',
   // Side By Side as above
   'Sense The Unseen':
-    'Section=skill Note="Failed Seeks make undetected foes hidden"',
+    'Section=skill ' +
+    'Note="May use a Reaction on a failed Seek to make undetected foes hidden"',
   'Shared Prey':
     'Section=combat ' +
-    'Note="May share with an ally the benifits of Hunt Prey on a single target"',
+    'Note="May share with an ally the benifits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
   'Stealthy Companion':
     'Section=skill ' +
-    'Note="Companion gains benefits of Camouflage; ambusher gains increase in Stealth rank"',
+    'Note="Companion gains benefits of Camouflage; ambusher companion gains an increase in Stealth rank"',
   'Targeting Shot':
     'Section=combat ' +
-    'Note="Ranged attack vs. Hunt Prey target ignores cover and concealment"',
+    'Note="Ranged attack vs. a Hunt Prey target ignores cover and concealment"',
   "Warden's Guidance":
     'Section=skill ' +
-    'Note="Seeking of Hunt Prey target by self and allies automatically succeed"',
+    'Note="Failures and critical failures on Seek of a Hunt Prey target by self and allies are succeesses"',
   'Greater Distracting Shot':
     'Section=combat ' +
-    'Note="Ranged hit on Hunt Prey target inflicts flat-footed for 1 rd"',
+    'Note="Ranged hit on a Hunt Prey target inflicts flat-footed for 1 rd"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
-    'Section=feature Note="Increased Monster Hunter effects"',
+    'Section=combat Note="Increased Monster Hunter effects"',
   // Specialized Companion as above
   'Ubiquitous Snares':'Section=skill Note="Increased Snare Specialist effects"',
   'Impossible Flurry':
@@ -3983,7 +4015,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use a different hunter\'s edge benefit with Hunt Prey"',
   'Masterful Companion':
-    'Section=combat Note="Companion gains Masterful Hunter effects"',
+    'Section=combat ' +
+    'Note="Companion gains Masterful Hunter effects vs. a Hunt Prey target"',
   'Perfect Shot':
     'Section=combat ' +
     'Note="May use 3 actions to inflict maximum damage with a ranged attack on a Hunt Prey target"',
@@ -3995,12 +4028,12 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May follow a Hunt Prey target across any distance"',
   'Triple Threat':
     'Section=feature ' +
-    'Note="May use Hunt Prey with 3 targets or share single-target Hunt Prey effects with two allies"',
+    'Note="May use Hunt Prey with 3 targets, share two-target Hunt Prey with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
   'Ultimate Skirmisher':
     'Section=ability,save ' +
     'Note=' +
-      '"May move normally through difficult and hazardous terrain",' +
-      '"Does not trigger movement-connected traps"',
+      '"May move normally through difficult, greater difficult, and hazardous terrain",' +
+      '"Never triggers movement-connected traps"',
 
   // Rogue
   'Debilitating Strike':
@@ -4667,16 +4700,7 @@ Pathfinder2E.FEATURES = {
   'Swift Sneak':
     'Section=skill ' +
     'Note="May Sneak at full Speed and while Burrowing, Climbing, Flying, or Swimming"',
-  'Terrain Expertise (Aquatic)':'Section=skill Note="+1 Survival (aquatic)"',
-  'Terrain Expertise (Arctic)':'Section=skill Note="+1 Survival (arctic)"',
-  'Terrain Expertise (Desert)':'Section=skill Note="+1 Survival (desert)"',
-  'Terrain Expertise (Forest)':'Section=skill Note="+1 Survival (forest)"',
-  'Terrain Expertise (Mountain)':'Section=skill Note="+1 Survival (mountain)"',
-  'Terrain Expertise (Plains)':'Section=skill Note="+1 Survival (plains)"',
-  'Terrain Expertise (Sky)':'Section=skill Note="+1 Survival (sky)"',
-  'Terrain Expertise (Swamp)':'Section=skill Note="+1 Survival (swamp)"',
-  'Terrain Expertise (Underground)':
-    'Section=skill Note="+1 Survival (underground)"',
+  'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
   'Terrain Stalker':
     'Section=skill ' +
     'Note="May Sneak without a Stealth check in choice of difficult terrain"',
@@ -5125,6 +5149,17 @@ Pathfinder2E.SPELLS = {
     'Cast=1 ' +
     'Description="FILL"'
 };
+Pathfinder2E.TERRAINS = {
+  'Aquatic':'',
+  'Arctic':'',
+  'Desert':'',
+  'Forest':'',
+  'Mountain':'',
+  'Plains':'',
+  'Sky':'',
+  'Swamp':'',
+  'Underground':''
+};
 Pathfinder2E.WEAPONS = {
 
   'Fist':
@@ -5513,7 +5548,7 @@ Pathfinder2E.magicRules = function(rules, schools, spells) {
 
 /* Defines rules related to character aptitudes. */
 Pathfinder2E.talentRules = function(
-  rules, feats, features, goodies, languages, skills
+  rules, feats, features, goodies, languages, skills, terrains
 ) {
 
   let matchInfo;
@@ -5522,6 +5557,7 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
+  QuilvynUtils.checkAttrTable(terrains, []);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
@@ -5529,6 +5565,8 @@ Pathfinder2E.talentRules = function(
     rules.choiceRules(rules, 'Language', l, languages[l]);
     rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
   }
+  for(let t in terrains)
+    rules.choiceRules(rules, 'Terrain', t, terrains[t]);
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
     rules.defineRule
@@ -5693,6 +5731,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Cast'),
       QuilvynUtils.getAttrValue(attrs, 'Description')
     );
+  else if(type == 'Terrain')
+    Pathfinder2E.terrainRules(rules, name);
   else if(type == 'Weapon')
     Pathfinder2E.weaponRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
@@ -6617,6 +6657,16 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
     );
+  } else if(name == 'Far Shot') {
+    let allWeapons = rules.getChoices('weapons');
+    for(let w in allWeapons) {
+      let range = QuilvynUtils.getAttrValue(allWeapons[w], 'Range');
+      if(range)
+        rules.defineRule
+          ('weaponRangeAdjustment.' + w, 'combatNotes.farShot', '+=', range);
+    }
+  } else if(name.match(/^Favored Terrain/)) {
+    rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'source<2');
     rules.defineRule
@@ -6869,6 +6919,15 @@ Pathfinder2E.spellRules = function(
   rules, name, school, level, traditions, cast, description
 ) {
   // TODO
+};
+
+/* Defines in #rules# the rules associated with terrain #name#. */
+Pathfinder2E.terrainRules = function(rules, name) {
+  if(!name) {
+    console.log('Empty terrain name');
+    return;
+  }
+  // No rules pertain to terrain
 };
 
 /*
