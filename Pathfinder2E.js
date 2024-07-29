@@ -1483,7 +1483,7 @@ Pathfinder2E.FEATS = {
   'Tiger Stance':'Type=Class,Monk"',
   'Wolf Stance':'Type=Class,Monk"',
   'Brawling Focus':'Type=Class,Monk Require="level >= 2"',
-  'Cruising Grab':'Type=Class,Monk Require="level >= 2"',
+  'Crushing Grab':'Type=Class,Monk Require="level >= 2"',
   'Dancing Leaf':'Type=Class,Monk Require="level >= 2"',
   'Elemental Fist':'Type=Class,Monk Require="level >= 2","features.Ki Strike"',
   'Stunning Fist':
@@ -1547,6 +1547,7 @@ Pathfinder2E.FEATS = {
   'Enlightened Presence':'Type=Class,Monk Require="level >= 16"',
   'Master Of Many Styles':
     'Type=Class,Monk Require="level >= 16","features.Stance Savant"',
+  'Quivering Palm':'Type=Class,Monk Require="level>=16","features.Ki Spells"',
   'Shattering Strike':'Type=Class,Monk Require="level >= 16"',
   'Diamond Fists':'Type=Class,Monk Require="level >= 18"',
   'Empty Body':
@@ -3749,7 +3750,7 @@ Pathfinder2E.FEATURES = {
   'Tiger Stance':'Section=feature Note="FILL"',
   'Wolf Stance':'Section=feature Note="FILL"',
   'Brawling Focus':'Section=feature Note="FILL"',
-  'Cruising Grab':'Section=feature Note="FILL"',
+  'Crushing Grab':'Section=feature Note="FILL"',
   'Dancing Leaf':'Section=feature Note="FILL"',
   'Elemental Fist':'Section=feature Note="FILL"',
   'Stunning Fist':'Section=feature Note="FILL"',
@@ -3791,6 +3792,7 @@ Pathfinder2E.FEATURES = {
   'Wild Winds Gust':'Section=feature Note="FILL"',
   'Enlightened Presence':'Section=feature Note="FILL"',
   'Master Of Many Styles':'Section=feature Note="FILL"',
+  'Quivering Palm':'Section=feature Note="FILL"',
   'Shattering Strike':'Section=feature Note="FILL"',
   'Diamond Fists':'Section=feature Note="FILL"',
   'Empty Body':'Section=feature Note="FILL"',
@@ -5402,7 +5404,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     ('armorClass.2', 'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source]');
   rules.defineRule('rank.Armor',
     'armorCategory', '=', '0',
-    'rank.Unarmored', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
+    'rank.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
     'rank.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
     'rank.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
     'rank.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
@@ -6675,6 +6677,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('skillNotes.gnomeObsession-2', 'level', '?', 'source>=7 && source<15');
     rules.defineRule('skillNotes.gnomeObsession-3', 'level', '?', 'source>=15');
     rules.defineRule('skillNotes.gnomeObsession-4', 'level', '?', 'source>=2');
+  } else if(name == 'Ki Rush') {
+    rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
+  } else if(name == 'Ki Strike') {
+    rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', null,
