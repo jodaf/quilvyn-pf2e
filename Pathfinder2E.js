@@ -549,7 +549,8 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Defense Expert (Unarmored Defense)",' +
+      '"1:Armor Trained (Unarmored Defense)",' +
+      '"1:Class Trained (Monk)",' +
       '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
       '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
       '"3:Mystic Strikes","3:Skill Increases","5:Alertness",' +
@@ -3720,25 +3721,56 @@ Pathfinder2E.FEATURES = {
     'Note="Permanently quickened; may use additional actions only to Strike"',
 
   // Monk
-  'Adamantine Strikes':'Section=feature Note="FILL"',
+  'Adamantine Strikes':
+    'Section=combat Note="Unarmed attacks count as adamantine"',
   // Alertness as above
-  'Expert Strikes':'Section=feature Note="FILL"',
-  'Flurry Of Blows':'Section=feature Note="FILL"',
-  'Graceful Legend':'Section=feature Note="FILL"',
-  'Graceful Mastery':'Section=feature Note="FILL"',
+  'Expert Strikes':
+    'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
+  'Flurry Of Blows':
+    'Section=combat Note="May use 1 action to make 2 unarmed Strikes"',
+  'Graceful Legend':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Armor Legendary (Unarmored Defense)/Class Master (Monk)",' +
+      // TODO Master ki spell attack spell DC
+      '"FILL"',
+  'Graceful Mastery':'Section=combat Note="Armor Master (Unarmored Defense)"',
   // Greater Weapon Specialization as above
-  'Incredible Movement':'Section=feature Note="FILL"',
-  'Master Strikes':'Section=feature Note="FILL"',
-  'Metal Strikes':'Section=feature Note="FILL"',
-  'Monk Expertise':'Section=feature Note="FILL"',
+  'Incredible Movement':'Section=ability Note="+%V Speed in no armor"',
+  'Master Strikes':
+    'Section=combat Note="Weapon Master (Simple Weapons; Unarmed Attacks)"',
+  'Metal Strikes':
+    'Section=combat Note="Unarmed attacks count as cold iron and silver"',
+  'Monk Expertise':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Class Expert (Monk)",' +
+      // TODO Expert in ki spell attack and DC
+      '"FILL"',
   'Monk Feats':'Section=feature Note="%V selections"',
   'Monk Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
-  'Mystic Strikes':'Section=feature Note="FILL"',
-  'Path To Perfection':'Section=feature Note="FILL"',
-  'Perfected Form':'Section=feature Note="FILL"',
-  'Powerful Fist':'Section=feature Note="FILL"',
-  'Second Path To Perfection':'Section=feature Note="FILL"',
-  'Third Path To Perfection':'Section=feature Note="FILL"',
+  'Mystic Strikes':'Section=combat Note="Unarmed attacks count as magical"',
+  'Path To Perfection':
+     'Section=save,save ' +
+     'Note=' +
+       '"Save Master (Choose 1 from any)",' +
+       '"Successes on chosen save type are critical successes"',
+  'Perfected Form':
+    'Section=combat ' +
+    'Note="Rolls of less than 10 on first Strike each tn are treated as 10s"',
+  'Powerful Fist':
+    'Section=combat ' +
+    'Note="Fists inflict 1d6 HP damage/No attack penalty for inflicting lethal damage with fists"',
+  'Second Path To Perfection':
+     'Section=save,save ' +
+     'Note=' +
+       '"Save Master (Choose 1 from any)",' +
+       '"Successes on chosen save type are critical successes"',
+  'Third Path To Perfection':
+     'Section=save,save ' +
+     'Note=' +
+       '"Save Master (Choose 1 from any)",' +
+       '"Successes on chosen save type are critical successes"',
   // Weapon Specialization as above
 
   'Crane Stance':'Section=feature Note="FILL"',
@@ -4414,8 +4446,9 @@ Pathfinder2E.FEATURES = {
   'Basic Trickery':'Section=feature Note="FILL"',
   'Sneak Attacker':'Section=feature Note="FILL"',
   'Advanced Trickery':'Section=feature Note="FILL"',
-  // TODO trained in one skill, expert in one skill
-  'Skill Mastery':'Section=feature Note="FILL"',
+  'Skill Mastery':
+    'Section=skill ' +
+    'Note="Skill Trained (Choose 1 from any)/Skill Expert (Choose 1 from any)"',
   'Uncanny Dodge':'Section=feature Note="FILL"',
   'Evasiveness':'Section=feature Note="FILL"',
 
@@ -6427,8 +6460,19 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Monk') {
+    rules.defineRule('abilityNotes.incredibleMovement',
+      'level', '=', 'Math.floor((source + 5) / 4) * 5'
+    );
+    rules.defineRule('abilityNotes.incredibleMovement.1',
+      'features.Incredible Movement', '?', null,
+      'armor', '?', 'source == "None"',
+      'abilityNotes.incredibleMovement', '=', null
+    );
     rules.defineRule
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
+    rules.defineRule('speed', 'abilityNotes.incredibleMovement.1', '+', null);
+    rules.defineRule
+      ('weaponDieType.Fist', 'combatNotes.powerfulFist', '^', '6');
   } else if(name == 'Ranger') {
     rules.defineRule('combatNotes.monsterHunter',
       '', '=', '1',
@@ -6716,7 +6760,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
     let noteName =
       section + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
     let matchInfo =
-      note.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\((.*)\)$/i);
+      note.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let rank =
         matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
@@ -6739,7 +6783,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
         matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
       rules.defineRule('rank.Perception', noteName, '^=', rank);
     }
-    matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
+    matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[2].match(/flaw/i);
       let choices = '';
@@ -7082,7 +7126,7 @@ Pathfinder2E.featureListRules = function(
   for(let i = 0; i < features.length; i++) {
     let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
     let matchInfo =
-      feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\((.*)\)$/i);
+      feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let choices = '';
       let rank =
@@ -7107,7 +7151,7 @@ Pathfinder2E.featureListRules = function(
       rules.defineRule('rank.Perception', setName + '.' + feature, '^=', rank);
     }
     matchInfo =
-      feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\((.*)\)$/i);
+      feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[2].match(/flaw/i);
       let choices = '';
@@ -7647,7 +7691,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     choices = [];
     for(let attr in armors) {
       let category = QuilvynUtils.getAttrValue(armors[attr], 'Category');
-      if(('rank.' + category + ' Armor') in attrs)
+      if(category == 'Unarmored' && 'rank.Unarmored Defense' in attrs)
+        choices.push(attr);
+      else if(('rank.' + category + ' Armor') in attrs)
         choices.push(attr);
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
@@ -7662,7 +7708,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       if((matchInfo = attr.match(/\wfeatures.Ability\s+Boost\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
+         (matchInfo=notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
         let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
@@ -7691,71 +7737,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         });
       });
     }
-  } else if(attribute == 'skills') {
-    let boostsAllocated = {};
-    let allSkills = this.getChoices('skills');
-    for(attr in this.getChoices('skills'))
-      boostsAllocated[attr] = attributes['skillBoosts.' + attr] || 0;
-    attrs = this.applyRules(attributes);
-    let notes = this.getChoices('notes');
-    for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi)))
-        ; // empty
-      else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi))==null)
-        continue;
-      matchInfo.forEach(matched => {
-        matched.split(/\s*;\s*/).forEach(boost => {
-          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
-          if(m) {
-            howMany = m[1] == '%V' ? attrs[attr] : +m[1];
-            if(m[2].match(/^any$/i))
-              choices = Object.keys(allSkills);
-            else if(m[2].match(/^any\slore$/i))
-              choices = Object.keys(allSkills).filter(x => x.includes('Lore'));
-            else if(m[2].match(/^any\s/i))
-              choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
-            else
-              choices = m[2].split(/\s*,\s*/);
-            choices.forEach(choice => {
-              if(howMany > 0 && boostsAllocated[choice] > 0) {
-                howMany--;
-                boostsAllocated[choice]--;
-              }
-            });
-            while(howMany > 0 && choices.length > 0) {
-              let choice = randomElement(choices);
-              attributes['skillIncreases.' + choice] =
-                (attributes['skillIncreases.' + choice] || 0) + 1;
-              howMany--;
-              choices = choices.filter(x => x != choice);
-            }
-          }
-        });
-      });
-    }
-  } else if(attribute == 'armor') {
-    let armors = this.getChoices('armors');
-    attrs = this.applyRules(attributes);
-    choices = [];
-    for(attr in armors) {
-      let weight = QuilvynUtils.getAttrValue(armors[attr], 'Weight');
-      if(weight == null)
-        weight = 0;
-      else if((weight + '').match(/light/i))
-        weight = 1;
-      else if((weight + '').match(/medium/i))
-        weight = 2;
-      else if((weight + '').match(/heavy/i))
-        weight = 3;
-      if(weight == 0 ||
-         attrs['armorProficiency.Heavy'] ||
-         weight <= 2 && attrs['armorProficiency.Medium'] ||
-         weight == 1 && attrs['armorProficiency.Light'] ||
-         attrs['armorProficiency.' + attr])
-        choices.push(attr);
-    }
-    attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'deity') {
     /* Pick a deity that's no more than one alignment position removed. */
     let aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
@@ -7926,6 +7907,50 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     // no shield?
     choices = Object.keys(this.getChoices('shields'));
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
+  } else if(attribute == 'skills') {
+    let boostsAllocated = {};
+    let allSkills = this.getChoices('skills');
+    for(attr in this.getChoices('skills'))
+      boostsAllocated[attr] = attributes['skillBoosts.' + attr] || 0;
+    attrs = this.applyRules(attributes);
+    let notes = this.getChoices('notes');
+    for(attr in attrs) {
+      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi)))
+        ; // empty
+      else if(!notes[attr] ||
+         (matchInfo = notes[attr].match(/Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi))==null)
+        continue;
+      // TODO how to handle allocations above Trained?
+      matchInfo.forEach(matched => {
+        matched.split(/\s*;\s*/).forEach(boost => {
+          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+          if(m) {
+            howMany = m[1] == '%V' ? attrs[attr] : +m[1];
+            if(m[2].match(/^any$/i))
+              choices = Object.keys(allSkills);
+            else if(m[2].match(/^any\slore$/i))
+              choices = Object.keys(allSkills).filter(x => x.includes('Lore'));
+            else if(m[2].match(/^any\s/i))
+              choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
+            else
+              choices = m[2].split(/\s*,\s*/);
+            choices.forEach(choice => {
+              if(howMany > 0 && boostsAllocated[choice] > 0) {
+                howMany--;
+                boostsAllocated[choice]--;
+              }
+            });
+            while(howMany > 0 && choices.length > 0) {
+              let choice = randomElement(choices);
+              attributes['skillIncreases.' + choice] =
+                (attributes['skillIncreases.' + choice] || 0) + 1;
+              howMany--;
+              choices = choices.filter(x => x != choice);
+            }
+          }
+        });
+      });
+    }
   } else if(attribute == 'spells') {
 /*
     let availableSpellsByGroupAndLevel = {};
