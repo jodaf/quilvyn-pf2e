@@ -558,7 +558,11 @@ Pathfinder2E.CLASSES = {
       '"9:Metal Strikes","9:Monk Expertise","11:Second Path To Perfection",' +
       '"13:Graceful Mastery","13:Master Strikes",' +
       '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
-      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form"',
+      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form" ' +
+    'Selectables=' +
+      '"7:Path To Perfection (Fortitude):Perfection",' +
+      '"7:Path To Perfection (Reflex):Perfection",' +
+      '"7:Path To Perfection (Will):Perfection"',
   'Ranger':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -3145,7 +3149,7 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Exalt (Liberator)':
     'Section=combat ' +
-    'Note="R15\' Liberating Step allows all allys to Step if target ally does not attempt to break free"',
+    'Note="R15\' Liberating Step allows all allies to Step if target ally does not attempt to break free"',
   'Exalt (Paladin)':
     'Section=combat ' +
     'Note="R15\' Retributive Strike allows allies a %V melee Strike against target"',
@@ -3750,67 +3754,133 @@ Pathfinder2E.FEATURES = {
   'Monk Feats':'Section=feature Note="%V selections"',
   'Monk Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Mystic Strikes':'Section=combat Note="Unarmed attacks count as magical"',
-  'Path To Perfection':
+  'Path To Perfection':'Section=feature Note="%V selections"',
+  'Path To Perfection (Fortitude)':
      'Section=save,save ' +
      'Note=' +
-       '"Save Master (Choose 1 from any)",' +
-       '"Successes on chosen save type are critical successes"',
+       '"Save Master (Fortitude)",' +
+       '"Successes on Fortitude saves are critical successes"',
+  'Path To Perfection (Reflex)':
+     'Section=save,save ' +
+     'Note=' +
+       '"Save Master (Reflex)",' +
+       '"Successes on Reflex saves are critical successes"',
+  'Path To Perfection (Will)':
+     'Section=save,save ' +
+     'Note=' +
+       '"Save Master (Will)",' +
+       '"Successes on Will saves are critical successes"',
   'Perfected Form':
     'Section=combat ' +
     'Note="Rolls of less than 10 on first Strike each tn are treated as 10s"',
   'Powerful Fist':
     'Section=combat ' +
     'Note="Fists inflict 1d6 HP damage/No attack penalty for inflicting lethal damage with fists"',
-  'Second Path To Perfection':
-     'Section=save,save ' +
-     'Note=' +
-       '"Save Master (Choose 1 from any)",' +
-       '"Successes on chosen save type are critical successes"',
-  'Third Path To Perfection':
-     'Section=save,save ' +
-     'Note=' +
-       '"Save Master (Choose 1 from any)",' +
-       '"Successes on chosen save type are critical successes"',
   // Weapon Specialization as above
 
-  'Crane Stance':'Section=feature Note="FILL"',
-  'Dragon Stance':'Section=feature Note="FILL"',
-  'Ki Rush':'Section=feature Note="FILL"',
-  'Ki Strike':'Section=feature Note="FILL"',
-  'Monastic Weaponry':'Section=feature Note="FILL"',
-  'Mountain Stance':'Section=feature Note="FILL"',
-  'Tiger Stance':'Section=feature Note="FILL"',
-  'Wolf Stance':'Section=feature Note="FILL"',
-  'Brawling Focus':'Section=feature Note="FILL"',
-  'Crushing Grab':'Section=feature Note="FILL"',
-  'Dancing Leaf':'Section=feature Note="FILL"',
-  'Elemental Fist':'Section=feature Note="FILL"',
-  'Stunning Fist':'Section=feature Note="FILL"',
-  'Deflect Arrow':'Section=feature Note="FILL"',
-  'Flurry Of Maneuvers':'Section=feature Note="FILL"',
-  'Flying Kick':'Section=feature Note="FILL"',
-  'Guarded Movement':'Section=feature Note="FILL"',
-  'Stand Still':'Section=feature Note="FILL"',
-  'Wholeness Of Body':'Section=feature Note="FILL"',
-  'Abundant Step':'Section=feature Note="FILL"',
-  'Crane Flutter':'Section=feature Note="FILL"',
-  'Dragon Roar':'Section=feature Note="FILL"',
-  'Ki Blast':'Section=feature Note="FILL"',
-  'Mountain Stronghold':'Section=feature Note="FILL"',
-  'Tiger Slash':'Section=feature Note="FILL"',
-  'Water Step':'Section=feature Note="FILL"',
-  'Whirling Throw':'Section=feature Note="FILL"',
-  'Wolf Drag':'Section=feature Note="FILL"',
-  'Arrow Snatching':'Section=feature Note="FILL"',
-  'Ironblood Stance':'Section=feature Note="FILL"',
-  'Mixed Maneuver':'Section=feature Note="FILL"',
-  'Tangled Forest Stance':'Section=feature Note="FILL"',
-  'Wall Run':'Section=feature Note="FILL"',
-  'Wild Winds Initiate':'Section=feature Note="FILL"',
-  'Knockback Strike':'Section=feature Note="FILL"',
-  'Sleeper Hold':'Section=feature Note="FILL"',
-  'Wind Jump':'Section=feature Note="FILL"',
-  'Winding Flow':'Section=feature Note="FILL"',
+  'Crane Stance':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Stance while unarmored gives +1 Armor Class and restricts attacks to 1d6B HP crane wing attacks",' +
+      '"Stance while unarmored gives -5 jump DC and +2\'/+5\' vertical/horizontal Leap"',
+  'Dragon Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored allows leg Strikes that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
+  'Ki Rush':
+    'Section=magic ' +
+    'Note="Knows <i>Ki Rush</i> spell/Focus pool has 1 Focus Point"',
+  'Ki Strike':
+    'Section=magic ' +
+    'Note="Knows <i>Ki Strike</i> spell/Focus pool has 1 Focus Point"',
+  'Monastic Weaponry':'Section=combat Note="Weapon %V (Monk Weapons)"',
+  'Mountain Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored gives +%{4-(dexterityModifier-(combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed"',
+  'Tiger Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored allows 10\' Steps and claw attacks that inflict 1d8S HP, plus 1d4 HP persistent bleed damage on critical success"',
+  'Wolf Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored allows claw attacks that inflict 1d8P HP, with the trip trait when flanking"',
+  'Brawling Focus':
+    'Section=combat ' +
+    'Note="May use the critical specialization effects of trained monk weapons and unarmed Strikes"',
+  'Crushing Grab':
+    'Section=combat ' +
+    'Note="May inflict %{strengthModifier}B HP with a successful Grapple"',
+  'Dancing Leaf':
+    'Section=skill ' +
+    'Note="+5\' Jump and Leap/Takes no damage from falling when adjacent to a wall"',
+  'Elemental Fist':
+    'Section=magic ' +
+    'Note="May inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
+  'Stunning Fist':
+    'Section=combat ' +
+    'Note="May inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude neg; critical failure inflicts stunned 3)"',
+  'Deflect Arrow':
+    'Section=combat ' +
+    'Note="May use a Reaction to gain +4 Armor Class vs. a physical ranged attack"',
+  'Flurry Of Maneuvers':
+    'Section=combat ' +
+    'Note="May use Flurry Of Blows to Grapple, Shove, or Trip"',
+  'Flying Kick':
+    'Section=combat ' +
+    'Note="May use 2 actions to Strike a foe during a Leap or Jump"',
+  'Guarded Movement':
+    'Section=combat Note="+4 Armor Class vs. movement reactions"',
+  'Stand Still':
+    'Section=combat Note="May use a Reaction to Strike an adjacent moving foe"',
+  'Wholeness Of Body':
+    'Section=magic Note="Knows <i>Wholeness Of Body</i> spell/+1 Focus Points"',
+  'Abundant Step':
+    'Section=magic Note="Knows <i>Abundant Step</i> spell/+1 Focus Points"',
+  'Crane Flutter':
+    'Section=combat ' +
+    'Note="While in Crane Stance, may use a Reaction to gain +3 Armor Class; a missed melee attack allows an immediate -2 crane wing Strike"',
+  'Dragon Roar':
+    'Section=combat ' +
+    'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes 1/1d4 rd (DC %{skillModifier.Intimidation} Will neg; critical failure inflicts frightened 2); first successful attack in the next rd on a frightened foe inflicts +4 HP"',
+  'Ki Blast':
+    'Section=magic Note="Knows <i>Ki Blast</i> spell/+1 Focus Points"',
+  'Mountain Stronghold':
+    'Section=combat ' +
+    'Note="While in Mountain Stance, may gain +2 Armor Class for 1 rd"',
+  'Tiger Slash':
+    'Section=combat ' +
+    'Note="While in Tiger Stance, may use 2 actions to inflict +%{level>14?3:2} damage dice and a 5\' push; critical success inflicts +%{strengthModifier} HP persistent bleed damage"',
+  'Water Step':'Section=ability Note="May Stride across liquids"',
+  'Whirling Throw':
+    'Section=combat ' +
+    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC allows throwing it %{10+5*strengthModifier}\'"',
+  'Wolf Drag':
+    'Section=combat ' +
+    'Note="While in Wolf Stance, may use 2 actions to inflict d12P HP and knocked prone"',
+  'Arrow Snatching':
+    'Section=combat ' +
+    'Note="After a successful Deflect Arrow, may use the projectile to make an immediate ranged Strike"',
+  'Ironblood Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8B HP and gives resistance %{level<12?2:level<16?3:level<20?4:5} to all damage"',
+  'Mixed Maneuver':
+    'Section=combat ' +
+    'Note="May use 2 actions to attempt 2 choices of Grapple, Shove, and Trip simultaneously"',
+  'Tangled Forest Stance':
+    'Section=combat ' +
+    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8S HP and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics neg)"',
+  'Wall Run':'Section=ability Note="May Stride on vertical surfaces"',
+  'Wild Winds Initiate':
+    'Section=magic Note="Knows <i>Wild Winds Stance</i> spell/+1 Focus Points"',
+  'Knockback Strike':
+    'Section=combat ' +
+    'Note="May use 2 actions to Shove with a successful unarmed attack"',
+  'Sleeper Hold':
+    'Section=combat ' +
+    'Note="A successful Grapple allows inflicting clumsy 1 for 1 tn (critical success inflicts unconscious for 1 min)"',
+  'Wind Jump':
+    'Section=magic Note="Knows <i>Wind Jump</i> spell/+1 Focus Points"',
+  'Winding Flow':
+    'Section=combat ' +
+    'Note="May use 1 action to perform 2 choices of Stand, Step, and Stride"',
   'Diamond Soul':'Section=feature Note="FILL"',
   'Disrupt Ki':'Section=feature Note="FILL"',
   'Improved Knockback':'Section=feature Note="FILL"',
@@ -4023,7 +4093,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction on a failed Seek to make undetected foes hidden"',
   'Shared Prey':
     'Section=combat ' +
-    'Note="May share with an ally the benifits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
+    'Note="May share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
   'Stealthy Companion':
     'Section=skill ' +
     'Note="Companion gains benefits of Camouflage; ambusher companion gains an increase in Stealth rank"',
@@ -4032,7 +4102,7 @@ Pathfinder2E.FEATURES = {
     'Note="Ranged attack vs. a Hunt Prey target ignores cover and concealment"',
   "Warden's Guidance":
     'Section=skill ' +
-    'Note="Failures and critical failures on Seek of a Hunt Prey target by self and allies are succeesses"',
+    'Note="Failures and critical failures on Seek of a Hunt Prey target by self and allies are successes"',
   'Greater Distracting Shot':
     'Section=combat ' +
     'Note="Ranged hit on a Hunt Prey target inflicts flat-footed for 1 rd"',
@@ -6467,6 +6537,21 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Incredible Movement', '?', null,
       'armor', '?', 'source == "None"',
       'abilityNotes.incredibleMovement', '=', null
+    );
+    rules.defineRule('featureNotes.pathToPerfection',
+      '', '=', '1',
+      'features.Second Path To Perfection', '+', '1',
+      'features.Third Path To Perfection', '+', '1'
+    );
+    rules.defineRule('combatNotes.monasticWeaponry',
+      '', '=', '"Trained"',
+      'rank.Unarmed Attacks', '=', 'source>2 ? "Master" : source>1 ? "Expert" : null'
+    );
+    rules.defineRule('rank.Monk',
+      'combatNotes.monasticWeaponry', '=', 'source=="Expert" ? 3 : source=="Master" ? 2 : 1'
+    );
+    rules.defineRule('selectableFeatureCount.Monk (Perfection)',
+      'featureNotes.pathToPerfection', '=', null
     );
     rules.defineRule
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
