@@ -395,7 +395,7 @@ Pathfinder2E.CLASSES = {
       '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
       '"17:Perpetual Perfection","19:Medium Armor Mastery"',
   'Barbarian':
-    'Ability=intelligence HitPoints=8 ' +
+    'Ability=strength HitPoints=12 ' +
     'Features=' +
       '"1:Ability Boosts","1:Ability Boost (Strength)",' +
       '"1:Perception Expert",' +
@@ -551,7 +551,7 @@ Pathfinder2E.CLASSES = {
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored Defense)",' +
+      '"1:Armor Expert (Unarmored Defense)",' +
       '"1:Class Trained (Monk)",' +
       '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
       '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
@@ -589,7 +589,8 @@ Pathfinder2E.CLASSES = {
       '"1:Precision:Hunter\'s Edge",' +
       '"1:Outwit:Hunter\'s Edge"',
   'Rogue':
-    'Ability=charisma,constitution,dexterity,intelligence,strength,wisdom HitPoints=8 ' +
+    // TODO "Other" ability depending on racket
+    'Ability=dexterity HitPoints=8 ' +
     'Features=' +
       '"1:Ability Boosts","1:Ability Boost (Choose 1 from any)",' +
       '"1:Perception Expert",' +
@@ -3736,7 +3737,7 @@ Pathfinder2E.FEATURES = {
   'Expert Strikes':
     'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
   'Flurry Of Blows':
-    'Section=combat Note="May use 1 action to make 2 unarmed Strikes"',
+    'Section=combat Note="May use 1 action to make 2 unarmed Strikes 1/tn"',
   'Graceful Legend':
     'Section=combat,magic ' +
     'Note=' +
@@ -3780,7 +3781,7 @@ Pathfinder2E.FEATURES = {
     'Note="Rolls of less than 10 on first Strike each tn are treated as 10s"',
   'Powerful Fist':
     'Section=combat ' +
-    'Note="Fists inflict 1d6 HP damage/No attack penalty for inflicting lethal damage with fists"',
+    'Note="Fists inflict 1d6 HP damage/No attack penalty for inflicting lethal damage with unarmed attacks"',
   // Weapon Specialization as above
 
   'Crane Stance':
@@ -6338,15 +6339,24 @@ Pathfinder2E.classRules = function(
   rules.defineRule
     ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
 
+  rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%S (%1; %2)');
+  rules.defineRule
+    ('classDifficultyClass.' + name + '.1', '', '=', '"' + abilities[0] + '"');
   let classAbilityModifier = abilities[0];
   if(abilities.length > 1) {
     classAbilityModifier = 'bestAbilityModifier.' + name;
-    rules.defineRule
-      (classAbilityModifier, abilities[0] + 'Modifier', '=', null);
-    for(let i = 1; i < abilities.length; i++)
+    rules.defineRule(classAbilityModifier, classLevel, '?', null);
+    abilities.forEach(a => {
       rules.defineRule
-        (classAbilityModifier, abilities[i] + 'Modifier', '^=', null);
+        (classAbilityModifier, a + 'Modifier', '^=', null);
+      rules.defineRule('classDifficultyClass.' + name + '.1',
+        a + 'Modifier', '=', 'dict["' + classAbilityModifier + '"]==source ? "' + a + '" : null'
+      );
+    });
   }
+  rules.defineRule('classDifficultyClass.' + name + '.2',
+    'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
+  );
   rules.defineRule('classDifficultyClass.' + name,
     'levels.' + name, '?', null,
     classAbilityModifier, '=', '10 + source',
