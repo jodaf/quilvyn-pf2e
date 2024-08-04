@@ -456,7 +456,9 @@ Pathfinder2E.CLASSES = {
       '"11:Bard Weapon Expertise","11:Vigilant Senses",' +
       '"13:Light Armor Expertise","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
-      '"19:Legendary Spellcaster"',
+      '"19:Legendary Spellcaster" ' +
+    'Selectables=' +
+      '"1:Enigma Muse:Muse","1:Maestro Muse:Muse","1:Polymath Muse:Muse"',
   'Champion':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -3039,6 +3041,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   'Composition Spells':'Section=feature Note="FILL"',
+  'Enigma Muse':'Section=feature Note="FILL"',
   'Expert Spellcaster':'Section=feature Note="FILL"',
   'Great Fortitude':'Section=feature Note="Save Expert (Fortitude)"',
   'Greater Resolve':'Section=feature Note="FILL"',
@@ -3046,10 +3049,12 @@ Pathfinder2E.FEATURES = {
   'Light Armor Expertise':
     'Section=combat Note="Armor Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
+  'Maestro Muse':'Section=feature Note="FILL"',
   'Magnum Opus':'Section=feature Note="FILL"',
   'Master Spellcaster':'Section=feature Note="FILL"',
-  'Muses':'Section=feature Note="FILL"',
+  'Muses':'Section=feature Note="%V selections"',
   'Occult Spellcasting':'Section=feature Note="FILL"',
+  'Polymath Muse':'Section=feature Note="FILL"',
   'Resolve':'Section=feature Note="FILL"',
   'Signature Spells':'Section=feature Note="FILL"',
   'Vigilant Senses':'Section=skill Note="Perception Master"',
@@ -6500,6 +6505,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.ragingIntimidation.1', '=', 'source=="" ? null : 1'
     );
   } else if(name == 'Bard') {
+    rules.defineRule('featureNotes.muses', '', '=', '1');
+    rules.defineRule
+      ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Champion') {
