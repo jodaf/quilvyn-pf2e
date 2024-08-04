@@ -3795,7 +3795,7 @@ Pathfinder2E.FEATURES = {
   'Monastic Weaponry':'Section=combat Note="Weapon %V (Monk Weapons)"',
   'Mountain Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored gives +%{4-(dexterityModifier-(combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed"',
+    'Note="Stance while unarmored gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed"',
   'Tiger Stance':
     'Section=combat ' +
     'Note="Stance while unarmored allows 10\' Steps and claw attacks that inflict 1d8S HP, plus 1d4 HP persistent bleed damage on critical success"',
@@ -3860,7 +3860,7 @@ Pathfinder2E.FEATURES = {
     'Note="After a successful Deflect Arrow, may use the projectile to make an immediate ranged Strike"',
   'Ironblood Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8B HP and gives resistance %{level<12?2:level<16?3:level<20?4:5} to all damage"',
+    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8B HP and gives resistance %V to all damage"',
   'Mixed Maneuver':
     'Section=combat ' +
     'Note="May use 2 actions to attempt 2 choices of Grapple, Shove, and Trip simultaneously"',
@@ -3872,7 +3872,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows <i>Wild Winds Stance</i> spell/+1 Focus Points"',
   'Knockback Strike':
     'Section=combat ' +
-    'Note="May use 2 actions to Shove with a successful unarmed attack"',
+    'Note="May use 2 actions to Shove 5\' with a successful unarmed attack"',
   'Sleeper Hold':
     'Section=combat ' +
     'Note="A successful Grapple allows inflicting clumsy 1 for 1 tn (critical success inflicts unconscious for 1 min)"',
@@ -3881,28 +3881,64 @@ Pathfinder2E.FEATURES = {
   'Winding Flow':
     'Section=combat ' +
     'Note="May use 1 action to perform 2 choices of Stand, Step, and Stride"',
-  'Diamond Soul':'Section=feature Note="FILL"',
-  'Disrupt Ki':'Section=feature Note="FILL"',
-  'Improved Knockback':'Section=feature Note="FILL"',
-  'Meditative Focus':'Section=feature Note="FILL"',
+  'Diamond Soul':'Section=save Note="+1 vs. magic"',
+  'Disrupt Ki':
+    'Section=combat ' +
+    'Note="May use 2 actions to inflict %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
+  'Improved Knockback':
+    'Section=combat ' +
+    'Note="Successful Shove moves 5\' (critical success 10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)}B HP"',
+  'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
-  'Ironblood Surge':'Section=feature Note="FILL"',
-  'Mountain Quake':'Section=feature Note="FILL"',
-  'Tangled Forest Rake':'Section=feature Note="FILL"',
-  'Timeless Body':'Section=feature Note="FILL"',
-  'Tongue Of Sun And Moon':'Section=feature Note="FILL"',
-  'Wild Winds Gust':'Section=feature Note="FILL"',
-  'Enlightened Presence':'Section=feature Note="FILL"',
-  'Master Of Many Styles':'Section=feature Note="FILL"',
-  'Quivering Palm':'Section=feature Note="FILL"',
-  'Shattering Strike':'Section=feature Note="FILL"',
-  'Diamond Fists':'Section=feature Note="FILL"',
-  'Empty Body':'Section=feature Note="FILL"',
-  'Meditative Wellspring':'Section=feature Note="FILL"',
-  'Swift River':'Section=feature Note="FILL"',
-  'Enduring Quickness':'Section=feature Note="FILL"',
-  'Fuse Stance':'Section=feature Note="FILL"',
-  'Impossible Technique':'Section=feature Note="FILL"',
+  'Ironblood Surge':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Ironblood Stance resistance increases to %V",' +
+      '"When in Ironblood Stance, may gain +1 Armor Class for 1 rd"',
+  'Mountain Quake':
+    'Section=combat ' +
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fort HP only) 1/1d4 rd"',
+  'Tangled Forest Rake':
+    'Section=combat ' +
+    'Note="May move target to a space within reach with a successful Tangled Forest Stance Strike"',
+  'Timeless Body':
+    'Section=feature,save ' +
+    'Note=' +
+      '"Does not age",' +
+      '"+2 vs. poisons and diseases/Resistance %{level//2} to poison damage"',
+  'Tongue Of Sun And Moon':
+    'Section=skill Note="Can speak and understand all spoken languages"',
+  'Wild Winds Gust':
+    'Section=combat ' +
+    'Note="May make a Wild Winds Stnace attack against all creatures in a 30\' cone or 60\' line"',
+  'Enlightened Presence':
+    'Section=save Note="R15\' Self and allies gain +2 Will vs. mental effects"',
+  'Master Of Many Styles':
+    'Section=combat ' +
+    'Note="May enter a stance at the beginning of a turn as a free action"',
+  'Quivering Palm':
+    'Section=magic Note="Knows <i>Quivering Palm</i> spell/+1 Focus Points"',
+  'Shattering Strike':
+    'Section=combat ' +
+    'Note="May use 2 actions for an unarmed Strike that bypasses target resistances and ignores half of target\'s hardness"',
+  'Diamond Fists':
+    'Section=combat Note="Unarmed attacks gain the forceful trait"',
+  'Empty Body':
+    'Section=magic Note="Knows <i>Empty Body</i> spell/+1 Focus Points"',
+  'Meditative Wellspring':
+    'Section=magic Note="Refocus restores 3 Focus Points"',
+  'Swift River':
+    'Section=combat ' +
+    'Note="May end one speed status penalty or condition at end of turn as a free action"',
+  'Enduring Quickness':
+    'Section=combat ' +
+    'Note="May use an additional action each rd to Stride, Leap, or Jump"',
+  'Fuse Stance':
+    'Section=combat ' +
+    'Note="Has merged two known stances into a unique new stance that grants the effects of both"',
+  'Impossible Technique':
+    'Section=combat ' +
+    'Note="May use a reaction to force a foe reroll on a hit or self reroll on a failed save"',
 
   // Ranger
   // Evasion as above
@@ -6806,6 +6842,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('skillNotes.gnomeObsession-2', 'level', '?', 'source>=7 && source<15');
     rules.defineRule('skillNotes.gnomeObsession-3', 'level', '?', 'source>=15');
     rules.defineRule('skillNotes.gnomeObsession-4', 'level', '?', 'source>=2');
+  } else if(name == 'Ironblood Stance') {
+    rules.defineRule('combatNotes.ironbloodStance',
+      'level', '=', 'source<12 ? 2 : source<16 ? 3 : source<20 ? 4 : 5',
+      'combatNotes.ironbloodSurge', '^', null
+    );
+  } else if(name == 'Ironblood Surge') {
+    rules.defineRule
+      ('combatNotes.ironbloodSurge', 'strengthModifier', '=', null);
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
   } else if(name == 'Ki Strike') {
