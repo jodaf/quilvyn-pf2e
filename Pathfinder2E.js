@@ -3780,18 +3780,20 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Rolls of less than 10 on first Strike each tn are treated as 10s"',
   'Powerful Fist':
-    'Section=combat ' +
-    'Note="Fists inflict 1d6 HP damage/No attack penalty for inflicting lethal damage with unarmed attacks"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Fists inflict 1d6 HP damage",' +
+      '"Suffers no attack penalty for inflicting lethal damage with unarmed attacks"',
   // Weapon Specialization as above
 
   'Crane Stance':
     'Section=combat,skill ' +
     'Note=' +
-      '"Stance while unarmored gives +1 Armor Class and restricts attacks to 1d6B HP crane wing attacks",' +
-      '"Stance while unarmored gives -5 jump DC and +2\'/+5\' vertical/horizontal Leap"',
+      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6B HP unarmed hand attacks",' +
+      '"Unarmored stance gives -5 jump DC and +2\'/+5\' vertical/horizontal Leap"',
   'Dragon Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows leg Strikes that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
+    'Note="Unarmored stance allows leg attacks that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
     'Note="Knows <i>Ki Rush</i> spell/Focus pool has 1 Focus Point"',
@@ -3801,19 +3803,19 @@ Pathfinder2E.FEATURES = {
   'Monastic Weaponry':'Section=combat Note="Weapon %V (Monk Weapons)"',
   'Mountain Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8B HP unarmed hand attacks"',
   'Tiger Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows 10\' Steps and claw attacks that inflict 1d8S HP, plus 1d4 HP persistent bleed damage on critical success"',
+    'Note="Unarmored stance allows 10\' Steps and unarmed hand attacks that inflict 1d8S HP, plus 1d4 HP persistent bleed damage on critical success"',
   'Wolf Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows claw attacks that inflict 1d8P HP, with the trip trait when flanking"',
+    'Note="Unarmored stance allows unarmed hand attacks that inflict 1d8P HP, with the trip trait when flanking"',
   'Brawling Focus':
     'Section=combat ' +
-    'Note="May use the critical specialization effects of trained monk weapons and unarmed Strikes"',
+    'Note="May use the critical specialization effects of trained monk weapons and brawling weapons"',
   'Crushing Grab':
     'Section=combat ' +
-    'Note="May inflict %{strengthModifier}B HP with a successful Grapple"',
+    'Note="May inflict %{strengthModifier}B HP, lethal or non-lethal, with a successful Grapple"',
   'Dancing Leaf':
     'Section=skill ' +
     'Note="+5\' Jump and Leap/Takes no damage from falling when adjacent to a wall"',
@@ -3831,7 +3833,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Flurry Of Blows to Grapple, Shove, or Trip"',
   'Flying Kick':
     'Section=combat ' +
-    'Note="May use 2 actions to Strike a foe during a Leap or Jump"',
+    'Note="May use 2 actions to Strike a foe at the end of a Leap or Jump"',
   'Guarded Movement':
     'Section=combat Note="+4 Armor Class vs. movement reactions"',
   'Stand Still':
@@ -3842,10 +3844,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows <i>Abundant Step</i> spell/+1 Focus Points"',
   'Crane Flutter':
     'Section=combat ' +
-    'Note="While in Crane Stance, may use a Reaction to gain +3 Armor Class; a missed melee attack allows an immediate -2 crane wing Strike"',
+    'Note="While in Crane Stance, may use a Reaction to gain +3 Armor Class; a missed melee attack allows an immediate -2 Strike"',
   'Dragon Roar':
     'Section=combat ' +
-    'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes 1/1d4 rd (DC %{skillModifier.Intimidation} Will neg; critical failure inflicts frightened 2); first successful attack in the next rd on a frightened foe inflicts +4 HP"',
+    'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes 1/1d4 rd (DC %{skillModifiers.Intimidation} Will neg; critical failure inflicts frightened 2); first successful attack in the next rd on a frightened foe inflicts +4 HP"',
   'Ki Blast':
     'Section=magic Note="Knows <i>Ki Blast</i> spell/+1 Focus Points"',
   'Mountain Stronghold':
@@ -3866,13 +3868,13 @@ Pathfinder2E.FEATURES = {
     'Note="After a successful Deflect Arrow, may use the projectile to make an immediate ranged Strike"',
   'Ironblood Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8B HP and gives resistance %V to all damage"',
+    'Note="Unarmored stance allows unarmed attacks that inflict 1d8B HP and gives resistance %V to all damage"',
   'Mixed Maneuver':
     'Section=combat ' +
     'Note="May use 2 actions to attempt 2 choices of Grapple, Shove, and Trip simultaneously"',
   'Tangled Forest Stance':
     'Section=combat ' +
-    'Note="Stance while unarmored allows unarmed attacks that inflict 1d8S HP and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics neg)"',
+    'Note="Unarmored stance allows unarmed attacks that inflict 1d8S HP and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics neg)"',
   'Wall Run':'Section=ability Note="May Stride on vertical surfaces"',
   'Wild Winds Initiate':
     'Section=magic Note="Knows <i>Wild Winds Stance</i> spell/+1 Focus Points"',
@@ -3890,7 +3892,7 @@ Pathfinder2E.FEATURES = {
   'Diamond Soul':'Section=save Note="+1 vs. magic"',
   'Disrupt Ki':
     'Section=combat ' +
-    'Note="May use 2 actions to inflict %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
+    'Note="May use 2 actions to inflict %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 with an unarmed Strike"',
   'Improved Knockback':
     'Section=combat ' +
     'Note="Successful Shove moves 5\' (critical success 10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)}B HP"',
@@ -3906,7 +3908,7 @@ Pathfinder2E.FEATURES = {
     'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fort HP only) 1/1d4 rd"',
   'Tangled Forest Rake':
     'Section=combat ' +
-    'Note="May move target to a space within reach with a successful Tangled Forest Stance Strike"',
+    'Note="May move target 5\' into a space within reach with a successful Tangled Forest Stance Strike"',
   'Timeless Body':
     'Section=feature,save ' +
     'Note=' +
@@ -3916,7 +3918,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can speak and understand all spoken languages"',
   'Wild Winds Gust':
     'Section=combat ' +
-    'Note="May make a Wild Winds Stnace attack against all creatures in a 30\' cone or 60\' line"',
+    'Note="May use 2 actions to make a Wild Winds Stance Strike against all creatures in a 30\' cone or 60\' line"',
   'Enlightened Presence':
     'Section=save Note="R15\' Self and allies gain +2 Will vs. mental effects"',
   'Master Of Many Styles':
@@ -3926,16 +3928,17 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows <i>Quivering Palm</i> spell/+1 Focus Points"',
   'Shattering Strike':
     'Section=combat ' +
-    'Note="May use 2 actions for an unarmed Strike that bypasses target resistances and ignores half of target\'s hardness"',
+    'Note="May use 2 actions for an unarmed Strike that bypasses target resistances and ignores half of target\'s Hardness"',
   'Diamond Fists':
-    'Section=combat Note="Unarmed attacks gain the forceful trait"',
+    'Section=combat ' +
+    'Note="Unarmed attacks gain the forceful trait or increase damage by 1 die step"',
   'Empty Body':
     'Section=magic Note="Knows <i>Empty Body</i> spell/+1 Focus Points"',
   'Meditative Wellspring':
     'Section=magic Note="Refocus restores 3 Focus Points"',
   'Swift River':
     'Section=combat ' +
-    'Note="May end one speed status penalty or condition at end of turn as a free action"',
+    'Note="May end one speed status penalty or condition at end of each turn as a free action"',
   'Enduring Quickness':
     'Section=combat ' +
     'Note="May use an additional action each rd to Stride, Leap, or Jump"',
@@ -3944,7 +3947,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has merged two known stances into a unique new stance that grants the effects of both"',
   'Impossible Technique':
     'Section=combat ' +
-    'Note="May use a reaction to force a foe reroll on a hit or self reroll on a failed save"',
+    'Note="May use a Reaction to force a foe reroll on a hit or to gain a reroll on a failed save"',
 
   // Ranger
   // Evasion as above
@@ -5036,13 +5039,13 @@ Pathfinder2E.SKILLS = {
   'Stealth':'Ability=Dexterity',
   'Survival':'Ability=Wisdom',
   'Thievery':'Ability=Dexterity',
-  // creature (ancestry) lores from ancestry chapter pg 33ff
+  // creature (ancestry) lore skills from ancestry chapter pg 33ff
   'Dwarven Lore':'Ability=Intelligence Category="Creature Lore"',
   'Elven Lore':'Ability=Intelligence Category="Creature Lore"',
   'Gnome Lore':'Ability=Intelligence Category="Creature Lore"', // added
   'Goblin Lore':'Ability=Intelligence Category="Creature Lore"',
   'Halfling Lore':'Ability=Intelligence Category="Creature Lore"',
-  // terrain lores from background chapter pg 60ff
+  // terrain lore skills from background chapter pg 60ff
   'Cave Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Cavern Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Desert Lore':'Ability=Intelligence Category="Terrain Lore"',
@@ -6339,7 +6342,7 @@ Pathfinder2E.classRules = function(
   rules.defineRule
     ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
 
-  rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%S (%1; %2)');
+  rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
   rules.defineRule
     ('classDifficultyClass.' + name + '.1', '', '=', '"' + abilities[0] + '"');
   let classAbilityModifier = abilities[0];
@@ -6906,47 +6909,49 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
     let section = sections[i];
     let noteName =
       section + 'Notes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-    let matchInfo =
-      note.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)$/i);
-    if(matchInfo) {
-      let rank =
-        matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
-      let choices = '';
-      matchInfo[3].split(/;\s*/).forEach(element => {
-        let m = element.match(/Choose (\d+|%V)/);
-        if(m)
-          choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
-        else
-          rules.defineRule('rank.' + element, noteName, '^=', rank);
-      });
-      if(choices)
-        rules.defineRule('choiceCount.' + matchInfo[1],
-          noteName, '+=', choices.replace('+', '')
-        );
-    }
-    matchInfo = note.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
-    if(matchInfo) {
-      let rank =
-        matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-      rules.defineRule('rank.Perception', noteName, '^=', rank);
-    }
-    matchInfo = note.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
-    if(matchInfo) {
-      let flaw = matchInfo[2].match(/flaw/i);
-      let choices = '';
-      matchInfo[3].split(/;\s*/).forEach(element => {
-        let m = element.match(/Choose (\d+|%V)/);
-        if(m)
-          choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
-        else
-          rules.defineRule
-            (element.toLowerCase(), noteName, '+', flaw ? '-2' : '2');
-      });
-      if(choices)
-        rules.defineRule('choiceCount.' + matchInfo[1],
-          noteName, '+=', choices.replace('+', '')
-        );
-    }
+    note.split(/\s*\/\s*/).forEach(n => {
+      let matchInfo =
+        n.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i);
+      if(matchInfo) {
+        let rank =
+          matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
+        let choices = '';
+        matchInfo[3].split(/;\s*/).forEach(element => {
+          let m = element.match(/Choose (\d+|%V)/);
+          if(m)
+            choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
+          else
+            rules.defineRule('rank.' + element, noteName, '^=', rank);
+        });
+        if(choices)
+          rules.defineRule('choiceCount.' + matchInfo[1],
+            noteName, '+=', choices.replace('+', '')
+          );
+      }
+      matchInfo = n.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
+      if(matchInfo) {
+        let rank =
+          matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
+        rules.defineRule('rank.Perception', noteName, '^=', rank);
+      }
+      matchInfo = n.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
+      if(matchInfo) {
+        let flaw = matchInfo[2].match(/flaw/i);
+        let choices = '';
+        matchInfo[3].split(/;\s*/).forEach(element => {
+          let m = element.match(/Choose (\d+|%V)/);
+          if(m)
+            choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
+          else
+            rules.defineRule
+              (element.toLowerCase(), noteName, '+', flaw ? '-2' : '2');
+        });
+        if(choices)
+          rules.defineRule('choiceCount.' + matchInfo[1],
+            noteName, '+=', choices.replace('+', '')
+          );
+      }
+    });
   }
 };
 
