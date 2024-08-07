@@ -458,7 +458,19 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Enigma Muse:Muse","1:Maestro Muse:Muse","1:Polymath Muse:Muse"',
+      '"1:Enigma Muse:Muse","1:Maestro Muse:Muse","1:Polymath Muse:Muse" ' +
+    'SpellSlots=' +
+      'B0:5@1,' +
+      'B1:2@1;3@2,' +
+      'B2:2@3;3@4,' +
+      'B3:2@5;3@6,' +
+      'B4:2@7;3@8,' +
+      'B5:2@9;3@10,' +
+      'B6:2@11;3@12,' +
+      'B7:2@13;3@14,' +
+      'B8:2@15;3@16,' +
+      'B9:2@17;3@18,' +
+      'B10:1@19',
   'Champion':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -508,7 +520,19 @@ Pathfinder2E.CLASSES = {
       '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","2:Cleric Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases","5:Alertness",' +
       '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
-      '"13:Weapon Specialization","19:Miraculous Spell"',
+      '"13:Weapon Specialization","19:Miraculous Spell" ' +
+    'SpellSlots=' +
+      'C0:5@1,' +
+      'C1:2@1;3@2,' +
+      'C2:2@3;3@4,' +
+      'C3:2@5;3@6,' +
+      'C4:2@7;3@8,' +
+      'C5:2@9;3@10,' +
+      'C6:2@11;3@12,' +
+      'C7:2@13;3@14,' +
+      'C8:2@15;3@16,' +
+      'C9:2@17;3@18,' +
+      'C10:1@19',
   'Druid':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
@@ -525,7 +549,19 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"11:Druid Weapon Expertise","11:Resolve","13:Medium Armor Expertise",' +
       '"13:Weapon Specialization","15:Master Spellcaster",' +
-      '"19:Legendary Spellcaster","19:Primal Hierophant"',
+      '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
+    'SpellSlots=' +
+      'D0:5@1,' +
+      'D1:2@1;3@2,' +
+      'D2:2@3;3@4,' +
+      'D3:2@5;3@6,' +
+      'D4:2@7;3@8,' +
+      'D5:2@9;3@10,' +
+      'D6:2@11;3@12,' +
+      'D7:2@13;3@14,' +
+      'D8:2@15;3@16,' +
+      'D9:2@17;3@18,' +
+      'D10:1@19',
   'Fighter':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -625,7 +661,19 @@ Pathfinder2E.CLASSES = {
       '"7:Expert Spellcaster","9:Lightning Reflexes","11:Alertness",' +
       '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
-      '"19:Legendary Spellcaster"',
+      '"19:Legendary Spellcaster" ' +
+    'SpellSlots=' +
+      'S0:5@1,' +
+      'S1:3@1;4@2,' +
+      'S2:3@3;4@4,' +
+      'S3:3@5;4@6,' +
+      'S4:3@7;4@8,' +
+      'S5:3@9;4@10,' +
+      'S6:3@11;4@12,' +
+      'S7:3@13;4@14,' +
+      'S8:3@15;4@16,' +
+      'S9:3@17;4@18,' +
+      'S10:1@19',
   'Wizard':
     'Ability=intelligence HitPoints=6 ' +
     'Features=' +
@@ -640,7 +688,19 @@ Pathfinder2E.CLASSES = {
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
-      '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster"'
+      '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
+    'SpellSlots=' +
+      'W0:5@1,' +
+      'W1:2@1;3@2,' +
+      'W2:2@3;3@4,' +
+      'W3:2@5;3@6,' +
+      'W4:2@7;3@8,' +
+      'W5:2@9;3@10,' +
+      'W6:2@11;3@12,' +
+      'W7:2@13;3@14,' +
+      'W8:2@15;3@16,' +
+      'W9:2@17;3@18,' +
+      'W10:1@19',
 };
 Pathfinder2E.DEITIES = {
   'None':'',
@@ -1810,16 +1870,16 @@ Pathfinder2E.FEATS = {
   'Primal Evolution':
     'Type=Class,Sorcerer Require="level >= 4","features.Primal Spells"',
   'Advanced Bloodline':
-    'Type=Class,Sorcerer Require="level >= 6","features.Bloodline Spell"',
+    'Type=Class,Sorcerer Require="level >= 6","features.Bloodline Spells"',
   // Steady Spellcasting as above
   'Bloodline Resistance':'Type=Class,Sorcerer Require="level >= 8"',
   'Crossblooded Evolution':'Type=Class,Sorcerer Require="level >= 8"',
   'Greater Bloodline':
-    'Type=Class,Sorcerer Require="level >= 10","features.Bloodline Spell"',
+    'Type=Class,Sorcerer Require="level >= 10","features.Bloodline Spells"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':
-    'Type=Class,Sorcerer Require="level >= 12","features.Bloodline Spell"',
+    'Type=Class,Sorcerer Require="level >= 12","features.Bloodline Spells"',
   'Magic Sense':'Type=Class,Sorcerer,Wizard Require="level >= 12"',
   'Interweave Spell':
     'Type=Class,Sorcerer Require="level >= 14","spells.Dispel Magic"',
@@ -3041,7 +3101,9 @@ Pathfinder2E.FEATURES = {
   'Bard Skills':
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
-  'Composition Spells':'Section=feature Note="FILL"',
+  // TODO description needs extending
+  'Composition Spells':
+    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
   'Enigma Muse':'Section=feature Note="FILL"',
   'Expert Spellcaster':'Section=feature Note="FILL"',
   'Great Fortitude':'Section=feature Note="Save Expert (Fortitude)"',
@@ -3128,7 +3190,9 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Deity favored unarmed attacks and simple weapons increase damage die 1 step",'+
       '"Has access to deity weapon (%{deityWeapon})"',
-  'Devotion Spells':'Section=magic Note="FILL"',
+  // TODO more to it than this
+  'Devotion Spells':
+    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
   'Divine Ally':
     'Section=feature ' +
     'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
@@ -3284,7 +3348,7 @@ Pathfinder2E.FEATURES = {
   'Litany Against Sloth':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 Focus Point",' +
+      '"+1 Focus Points",' +
       '"Knows <i>Litany Against Sloth</i> spell"',
   'Radiant Blade Spirit':
     'Section=combat ' +
@@ -3303,7 +3367,7 @@ Pathfinder2E.FEATURES = {
   "Champion's Sacrifice":
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 Focus Point",' +
+      '"+1 Focus Points",' +
       '"Knows <i>Champion\'s Sacrifice</i> spell"',
   'Divine Wall':
     'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
@@ -3329,7 +3393,7 @@ Pathfinder2E.FEATURES = {
   'Litany Of Righteousness':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 Focus Point",' +
+      '"+1 Focus Points",' +
       '"Knows <i>Litany Of Righteousness</i> spell"',
   'Wyrmbane Aura':
     'Section=save ' +
@@ -3427,7 +3491,9 @@ Pathfinder2E.FEATURES = {
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=feature Note="FILL"',
-  'Druidic Order':'Section=feature Note="FILL"',
+  // TODO more to it than this
+  'Druidic Order':
+    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
   'Druid Weapon Expertise':'Section=feature Note="FILL"',
   // Expert Spellcaster as above
   // Great Fortitude as above
@@ -3796,10 +3862,10 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows leg attacks that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows <i>Ki Rush</i> spell/Focus pool has 1 Focus Point"',
+    'Note="Knows <i>Ki Rush</i> spell/Has a Focus Pool with 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows <i>Ki Strike</i> spell/Focus pool has 1 Focus Point"',
+    'Note="Knows <i>Ki Strike</i> spell/Has a Focus Pool with 1 Focus Point"',
   'Monastic Weaponry':'Section=combat Note="Weapon %V (Monk Weapons)"',
   'Mountain Stance':
     'Section=combat ' +
@@ -4383,7 +4449,9 @@ Pathfinder2E.FEATURES = {
   // Sorcerer
   // Alertness as above
   'Bloodline Paragon':'Section=feature Note="FILL"',
-  'Bloodline':'Section=feature Note="FILL"',
+  // TODO more to it than this
+  'Bloodline':
+    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
   'Defensive Robes':'Section=feature Note="FILL"',
   // Expert Spellcaster as above
   // Legendary Spellcaster as above
@@ -4434,7 +4502,9 @@ Pathfinder2E.FEATURES = {
   // Wizard
   // Alertness as above
   'Arcane Bond':'Section=feature Note="FILL"',
-  'Arcane School':'Section=feature Note="FILL"',
+  // TODO more to it than this
+  'Arcane School':
+    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
   'Arcane Spellcasting':'Section=feature Note="FILL"',
   'Arcane Thesis':'Section=feature Note="FILL"',
   "Archwizard's Spellcraft":'Section=feature Note="FILL"',
@@ -6520,6 +6590,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   } else if(name == 'Bard') {
     rules.defineRule('featureNotes.muses', '', '=', '1');
     rules.defineRule
+      ('features.Focus Pool', 'magicNotes.compositionSpells', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
+    rules.defineRule
       ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
@@ -6546,6 +6619,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.liberatingStep',
       "featureNotes.champion'sReaction", '+', 'null' // italics
     );
+    rules.defineRule
+      ('features.Focus Pool', 'magicNotes.devotionSpells', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.devotionSpells', '+=', '1');
     rules.defineRule("featureNotes.champion'sReaction",
       'features.Liberator', '=', '"<i>Liberating Step</i>"',
       'features.Paladin', '=', '"<i>Retributive Strike</i>"',
@@ -6580,6 +6656,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Druid') {
+    rules.defineRule
+      ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.druidicOrder', '+=', '1');
     rules.defineRule
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Fighter') {
@@ -6656,8 +6735,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.rogueSkills', 'intelligenceModifier', '=', '7 + source');
   } else if(name == 'Sorcerer') {
     rules.defineRule
+      ('features.Bloodline Spells', 'features.Bloodline', '=', '1');
+    rules.defineRule('features.Focus Pool', 'magicNotes.bloodline', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
+    rules.defineRule
       ('skillNotes.sorcererSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Wizard') {
+    rules.defineRule
+      ('features.Focus Pool', 'magicNotes.arcaneSchool', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
     rules.defineRule
       ('skillNotes.wizardSkills', 'intelligenceModifier', '=', '2 + source');
   }
@@ -6873,8 +6959,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('combatNotes.ironbloodSurge', 'strengthModifier', '=', null);
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
+    rules.defineRule
+      ('features.Focus Pool', 'magicNotes.kiRush', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.kiRush', '+=', '1');
   } else if(name == 'Ki Strike') {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
+    rules.defineRule
+      ('features.Focus Pool', 'magicNotes.kiStrike', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', null,
@@ -7530,6 +7622,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'SpellStats', within: 'SpellPart', separator: innerSep},
               {name: 'Spells Known', within: 'SpellStats', separator: listSep},
               {name: 'Spell Slots', within: 'SpellStats', separator:listSep},
+              {name: 'Focus Points', within: 'SpellStats', separator:listSep},
               {name: 'Spell Attack Modifier', within: 'SpellStats',
                format: '<b>Attack</b>: %V', separator: listSep},
               {name: 'Spell Difficulty Class', within: 'SpellStats',
