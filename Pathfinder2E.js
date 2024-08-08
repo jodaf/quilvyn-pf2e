@@ -460,17 +460,17 @@ Pathfinder2E.CLASSES = {
     'Selectables=' +
       '"1:Enigma Muse:Muse","1:Maestro Muse:Muse","1:Polymath Muse:Muse" ' +
     'SpellSlots=' +
-      'B0:5@1,' +
-      'B1:2@1;3@2,' +
-      'B2:2@3;3@4,' +
-      'B3:2@5;3@6,' +
-      'B4:2@7;3@8,' +
-      'B5:2@9;3@10,' +
-      'B6:2@11;3@12,' +
-      'B7:2@13;3@14,' +
-      'B8:2@15;3@16,' +
-      'B9:2@17;3@18,' +
-      'B10:1@19',
+      'O0:5@1,' +
+      'O1:2@1;3@2,' +
+      'O2:2@3;3@4,' +
+      'O3:2@5;3@6,' +
+      'O4:2@7;3@8,' +
+      'O5:2@9;3@10,' +
+      'O6:2@11;3@12,' +
+      'O7:2@13;3@14,' +
+      'O8:2@15;3@16,' +
+      'O9:2@17;3@18,' +
+      'O10:1@19',
   'Champion':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -522,17 +522,17 @@ Pathfinder2E.CLASSES = {
       '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
       '"13:Weapon Specialization","19:Miraculous Spell" ' +
     'SpellSlots=' +
-      'C0:5@1,' +
-      'C1:2@1;3@2,' +
-      'C2:2@3;3@4,' +
-      'C3:2@5;3@6,' +
-      'C4:2@7;3@8,' +
-      'C5:2@9;3@10,' +
-      'C6:2@11;3@12,' +
-      'C7:2@13;3@14,' +
-      'C8:2@15;3@16,' +
-      'C9:2@17;3@18,' +
-      'C10:1@19',
+      'D0:5@1,' +
+      'D1:2@1;3@2,' +
+      'D2:2@3;3@4,' +
+      'D3:2@5;3@6,' +
+      'D4:2@7;3@8,' +
+      'D5:2@9;3@10,' +
+      'D6:2@11;3@12,' +
+      'D7:2@13;3@14,' +
+      'D8:2@15;3@16,' +
+      'D9:2@17;3@18,' +
+      'D10:1@19',
   'Druid':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
@@ -551,17 +551,17 @@ Pathfinder2E.CLASSES = {
       '"13:Weapon Specialization","15:Master Spellcaster",' +
       '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
     'SpellSlots=' +
-      'D0:5@1,' +
-      'D1:2@1;3@2,' +
-      'D2:2@3;3@4,' +
-      'D3:2@5;3@6,' +
-      'D4:2@7;3@8,' +
-      'D5:2@9;3@10,' +
-      'D6:2@11;3@12,' +
-      'D7:2@13;3@14,' +
-      'D8:2@15;3@16,' +
-      'D9:2@17;3@18,' +
-      'D10:1@19',
+      'P0:5@1,' +
+      'P1:2@1;3@2,' +
+      'P2:2@3;3@4,' +
+      'P3:2@5;3@6,' +
+      'P4:2@7;3@8,' +
+      'P5:2@9;3@10,' +
+      'P6:2@11;3@12,' +
+      'P7:2@13;3@14,' +
+      'P8:2@15;3@16,' +
+      'P9:2@17;3@18,' +
+      'P10:1@19',
   'Fighter':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -662,6 +662,7 @@ Pathfinder2E.CLASSES = {
       '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
+    // TODO depends on bloodline
     'SpellSlots=' +
       'S0:5@1,' +
       'S1:3@1;4@2,' +
@@ -690,17 +691,17 @@ Pathfinder2E.CLASSES = {
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
       '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
     'SpellSlots=' +
-      'W0:5@1,' +
-      'W1:2@1;3@2,' +
-      'W2:2@3;3@4,' +
-      'W3:2@5;3@6,' +
-      'W4:2@7;3@8,' +
-      'W5:2@9;3@10,' +
-      'W6:2@11;3@12,' +
-      'W7:2@13;3@14,' +
-      'W8:2@15;3@16,' +
-      'W9:2@17;3@18,' +
-      'W10:1@19',
+      'A0:5@1,' +
+      'A1:2@1;3@2,' +
+      'A2:2@3;3@4,' +
+      'A3:2@5;3@6,' +
+      'A4:2@7;3@8,' +
+      'A5:2@9;3@10,' +
+      'A6:2@11;3@12,' +
+      'A7:2@13;3@14,' +
+      'A8:2@15;3@16,' +
+      'A9:2@17;3@18,' +
+      'A10:1@19',
 };
 Pathfinder2E.DEITIES = {
   'None':'',
@@ -5184,7 +5185,7 @@ Pathfinder2E.SKILLS = {
 Pathfinder2E.SPELLS = {
   'Abyssal Plague':
     'Level=5 ' +
-    'School=Evocation ' +
+    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description="FILL"',
@@ -5195,7 +5196,7 @@ Pathfinder2E.SPELLS = {
     'Cast=2 ' +
     'Description="FILL"',
   'Acid Splash':
-    'Level=1 ' + // Cantrip
+    'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -5360,6 +5361,456 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Calm Emotions':
+    'Level=2 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Cataclysm':
+    'Level=10 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Chain Lightning':
+    'Level=6 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Charm':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Chill Touch':
+    'Level=Cantrip ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Chilling Darkness':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Chromatic Wall':
+    'Level=5 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Circle Of Protection':
+    'Level=3 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Clairaudience':
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Clairvoyance':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Cloak Of Colors':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Cloudkill':
+    'Level=5 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Collective Transposition':
+    'Level=6 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Color Spray':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Command':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Comprehend Language':
+    'Level=2 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Cone Of Cold':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Confusion':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Contingency':
+    'Level=7 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Continual Flame':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Control Water':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Create Food':
+    'Level=2 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast="1 hr" ' +
+    'Description="FILL"',
+  'Create Water':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Creation':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Crisis Of Faith':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Crusade':
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Crushing Despair':
+    'Level=5 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dancing Lights':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Darkness':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Darkvision':
+    'Level=2 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Daze':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Deafness':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Death Knell':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Death Ward':
+    'Level=5 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Detect Alignment':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Detect Magic':
+    'Level=Cantrip ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Detect Poison':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Detect Scrying':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dimension Door':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dimensional Anchor':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dimensional Lock':
+    'Level=7 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dinosaur Form':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Disappearance':
+    'Level=8 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Discern Lies':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Discern Location':
+    'Level=8 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Disintegrate':
+    'Level=6 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Disjunctino':
+    'Level=9 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dispel Magic':
+    'Level=2 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Disrupt Undead':
+    'Level=Cantrip ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Disrupting Weapons':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Aura':
+    'Level=8 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Decree':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Inspiration':
+    'Level=8 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Lance':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Vessel':
+    'Level=7 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Divine Wrath':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dominate':
+    'Level=6 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dragon Form':
+    'Level=6 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dream Council':
+    'Level=8 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Dream Message':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Dreaming Potential':
+    'Level=5 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Drop Dead':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Duplicate Foe':
+    'Level=7 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Earthbind':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Earthquake':
+    'Level=8 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Eclipse Burst':
+    'Level=7 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Electric Arc':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Elemental Form':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Endure Elements':
+    'Level=2 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Energy Aegis':
+    'Level=7 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Enhance Victuals':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Enlarge':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Entangle':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Enthrall':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ethereal Jaunt':
+    'Level=7 ' +
+    'School=Conjuration ' +
+    'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description="FILL"',
   'Lay On Hands':
@@ -7212,6 +7663,26 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
 Pathfinder2E.spellRules = function(
   rules, name, school, level, traditions, cast, description
 ) {
+  if(!name) {
+    console.log('Empty spell name');
+    return;
+  }
+  if(!school || !(school in rules.getChoices('schools'))) {
+    console.log('Bad school "' + school + '" for spell ' + name);
+    return;
+  }
+  if(typeof(level) != 'number' && level != 'Cantrip') {
+    console.log('Bad level "' + level + '" for spell ' + name);
+    return;
+  }
+  if(typeof(cast) != 'number' && typeof(cast) != 'string') {
+    console.log('Bad cast "' + cast + '" for spell ' + name);
+    return;
+  }
+  if(typeof(description) != 'string') {
+    console.log('Bad description "' + description + '" for spell ' + name);
+    return;
+  }
   // TODO
 };
 
