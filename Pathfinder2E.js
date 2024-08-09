@@ -5813,11 +5813,437 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description="FILL"',
+  'Fabricated Truth':
+    'Level=10 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Faerie Fire':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'False Life':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'False Vision':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Fear':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Feather Fall':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Feeblemind':
+    'Level=6 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Feet To Fins':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Field Of Life':
+    'Level=6 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Field Of Life':
+    'Level=6 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fiery Body':
+    'Level=7 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Finger Of Death':
+    'Level=7 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fire Seeds':
+    'Level=6 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fire Shield':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fireball':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Flame Strike':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Flaming Sphere':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fleet Step':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Flesh To Stone':
+    'Level=6 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Floating Disk':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Fly':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Forbidding Ward':
+    'Level=Cantrip ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Foresight':
+    'Level=9 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Freedom Of Movement':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Gaseous Form':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Gate':
+    'Level=10 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Gentle Repose':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ghost Sound':
+    'Level=Cantrip ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ghostly Weapon':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ghoulish Cravings':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Glibness':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Glitterdust':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Globe Of Invulnerability':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Glyph Of Warding':
+    'Level=3 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Goblin Pox':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Grease':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Grim Tendrils':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Guidance':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Gust Of Wind':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hallucination':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hallucinatory Terrain':
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Harm':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Haste':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Heal':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Heroism':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hideous Laughter':
+    'Level=2 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Holy Cascade':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Horrid Wilting':
+    'Level=8 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Humanoid Form':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hydraulic Push':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hydraulic Torrent':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hypercognition':
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Hypnotic Pattern':
+    'Level=3 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Illusory Creature':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Illusory Disguise':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Illusory Object':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Illusory Scene':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Implosion':
+    'Level=9 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Insect Form':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Invisibility':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Invisibility Sphere':
+    'Level=3 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Item Facade':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Jump':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Knock':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Know Direction':
+    'Level=Cantrip ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
   'Lay On Hands':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
+    'Description="FILL"',
+  'Levitate':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Light':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Lightning Bolt':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Locate':
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Lock':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Longstrider':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
     'Description="FILL"'
 };
 Pathfinder2E.TERRAINS = {
