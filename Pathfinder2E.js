@@ -6244,6 +6244,408 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
+    'Description="FILL"',
+  'Mage Armor':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mage Hand':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Magic Aura':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Magic Fang':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Magic Missile':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Magic Mouth':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Magic Weapon':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Magnificent Mansion':
+    'Level=7 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  "Mariner's Curse":
+    'Level=5 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mask Of Terror':
+    'Level=7 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Massacre':
+    'Level=9 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Maze':
+    'Level=8 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Meld Into Stone':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mending':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Message':
+    'Level=Cantrip ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Meteor Swarm':
+    'Level=9 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mind Blank':
+    'Level=8 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mind Probe':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Mind Reading':
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mindlink':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Miracle':
+    'Level=10 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Mirror Image':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Misdirection':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Mislead':
+    'Level=6 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Modify Memory':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Moment Of Renewal':
+    'Level=8 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Monstrosity Form':
+    'Level=8 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Moon Frenzy':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Nature Incarnate':
+    'Level=10 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  "Nature's Enmity":
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Negate Aroma':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Neutralize Poison':
+    'Level=3 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Nightmare':
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Nondetection':
+    'Level=3 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Obscuring Mist':
+    'Level=2 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  "Outcast's Curse":
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Overwhelming Presence':
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Paralyze':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Paranoia':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Pass Without Trace':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Passwall':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Pest Form':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Phantasmal Calamity':
+    'Level=6 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Phantasmal Killer':
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Phantom Pain':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Phantom Steed':
+    'Level=2 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Plane Shift':
+    'Level=7 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Plant Form':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Polar Ray':
+    'Level=8 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Possession':
+    'Level=7 ' +
+    'School=Necromancy ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Power Word Blind':
+    'Level=7 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Power Word Kill':
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Power Word Stun':
+    'Level=8 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Prestidigitation':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Primal Herd':
+    'Level=10 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Primal Phenomenon':
+    'Level=10 ' +
+    'School=Divination ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Prismatic Sphere':
+    'Level=9 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Prismatic Spray':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Prismatic Wall':
+    'Level=8 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Private Sanctum':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Produce Flame':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Project Image':
+    'Level=7 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Protection':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Prying Eye':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Punishing Winds':
+    'Level=8 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Purify Food And Drink':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Purple Worm Sting':
+    'Level=6 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
     'Description="FILL"'
 };
 Pathfinder2E.TERRAINS = {
