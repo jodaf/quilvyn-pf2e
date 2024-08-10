@@ -6203,12 +6203,6 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description="FILL"',
-  'Lay On Hands':
-    'Level=1 ' +
-    'School=Necromancy ' +
-    'Traditions=Divine ' +
-    'Cast=1 ' +
-    'Description="FILL"',
   'Levitate':
     'Level=3 ' +
     'School=Evocation ' +
@@ -6646,6 +6640,1386 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
+    'Description="FILL"',
+  'Raise Dead':
+    'Level=6 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Ray Of Enfeeblement':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ray Of Frost':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Read Aura':
+    'Level=Cantrip ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Read Omens':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Regenerate':
+    'Level=7 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Remake':
+    'Level=10 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast="1 hr" ' +
+    'Description="FILL"',
+  'Remove Curse':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Remove Disease':
+    'Level=3 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Remove Fear':
+    'Level=2 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Remove Paralysis':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Repulsion':
+    'Level=6 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Resilient Sphere':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Resist Energy':
+    'Level=2 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Respendent Mansion':
+    'Level=9 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Restoration':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Restore Senses':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Retrocognition':
+    'Level=7 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Reverse Gravity':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Revival':
+    'Level=10 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Righteous Might':
+    'Level=6 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Rope Trick':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Sanctified Ground':
+    'Level=3 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Sanctuary':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Scintillating Pattern':
+    'Level=8 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Scrying':
+    'Level=6 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Searing Light':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Secret Page':
+    'Level=3 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'See Invisibility':
+    'Level=2 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Sending':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Shadow Blast':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shadow Siphon':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Shadow Walk':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Shape Stone':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shape Wood':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shapechange':
+    'Level=9 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shatter':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shield':
+    'Level=Cantrip ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Shield Other':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shillelagh':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shocking Grasp':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shrink':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Shrink Item':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Sigil':
+    'Level=Cantrip ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Silence':
+    'Level=2 ' +
+    'School=Illusion ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Sleep':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Slow':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Solid Fog':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Soothe':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Sound Burst':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Speak With Animals':
+    'Level=2 ' +
+    'School=Divination ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Speak With Plants':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spectral Hand':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spell Immunity':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spell Turning':
+    'Level=7 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spellwrack':
+    'Level=6 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spider Climb':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spider Sting':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spirit Blast':
+    'Level=6 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spirit Link':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spirit Song':
+    'Level=8 ' +
+    'School=Necromancy ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spiritual Epidemic':
+    'Level=8 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spiritual Guardian':
+    'Level=5 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Spiritual Weapon':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stabilize':
+    'Level=Cantrip ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Status':
+    'Level=2 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stinking Cloud':
+    'Level=3 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stone Tell':
+    'Level=6 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stone To Flesh':
+    'Level=6 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stoneskin':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Storm Of Vengeance':
+    'Level=9 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Subconscious Suggestion':
+    'Level=5 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Suggestion':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Summon Animal':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Celestial':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Construct':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Dragon':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Elemental':
+    'Level=2 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Entity':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Fey':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Occult,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Fiend':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Giant':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Summon Plant Or Fungus':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Sunburst':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Synaptic Pulse':
+    'Level=5 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Synesthesia':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Talking Corpse':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Tanglefoot':
+    'Level=Cantrip ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Tangling Creepers':
+    'Level=6 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Telekinetic Haul':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Telekinetic Maneuver':
+    'Level=2 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Telekinetic Projectile':
+    'Level=Cantrip ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Telepathic Bond':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Telepathic Demand':
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Telepathy':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Teleport':
+    'Level=6 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Time Stop':
+    'Level=10 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Tongues':
+    'Level=5 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Toiuch Of Idiocy':
+    'Level=2 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Tree Shape':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Tree Stride':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'True Seeing':
+    'Level=6 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'True Strike':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'True Target':
+    'Level=7 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Uncontrollable Dance':
+    'Level=8 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Undetectable Alignment':
+    'Level=2 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Unfathomable Song':
+    'Level=9 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Unfettered Pack':
+    'Level=7 ' +
+    'School=Abjuration ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Unrelenting Observation':
+    'Level=8 ' +
+    'School=Divination ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Unseen Servant':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Vampiric Exsanguination':
+    'Level=6 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Vampiric Touch':
+    'Level=3 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Veil':
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ventriloquism':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Vibrant Pattern':
+    'Level=6 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Visions Of Danger':
+    'Level=7 ' +
+    'School=Illusion ' +
+    'Traditions=Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Vital Beacon':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Volcanic Eruption':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Wail Of The Banshee':
+    'Level=9 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Wall Of Fire':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Wall Of Force':
+    'Level=6 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Wall Of Ice':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Wall Of Stone':
+    'Level=5 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Wall Of Thorns':
+    'Level=3 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Wall Of Wind':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  "Wanderer's Guide":
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Warp Mind':
+    'Level=7 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Water Breathing':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Water Walk':
+    'Level=2 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Weapon Of Judgment':
+    'Level=9 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Weapon Storm':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Web':
+    'Level=2 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Weird':
+    'Level=9 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Wind Walk':
+    'Level=8 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast="10 min" ' +
+    'Description="FILL"',
+  'Wish':
+    'Level=10 ' +
+    'School=Divination ' +
+    'Traditions=Arcane ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Zealous Conviction':
+    'Level=6 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Zone Of Truth':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Allegro':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Counter Performance':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Dirge Of Doom':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Fatal Aria':
+    'Level=10 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'House Of Imaginary':
+    'Level=Cantrip ' +
+    'School=Illusion ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Inspire Competence':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Inspire Courage':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Inspire Defense':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Inspire Heroics':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=Free ' +
+    'Description="FILL"',
+  'Lingering Composition':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=Free ' +
+    'Description="FILL"',
+  "Loremaster's Etude":
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Occult ' +
+    'Cast=Free ' +
+    'Description="FILL"',
+  'Soothing Ballad':
+    'Level=7 ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Triple Time':
+    'Level=Cantrip ' +
+    'School=Enchantment ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Champion's Sacrifice":
+    'Level=6 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  "Hero's Defiance":
+    'Level=10 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=Free ' +
+    'Description="FILL"',
+  'Lay On Hands':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Litany Against Sloth':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Litany Against Wrath':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Litany Of Righteousness':
+    'Level=7 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Agile Feet':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Appearance Of Wealth':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Artistic Flourish':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Athletic Rush':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Bit Of Luck':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Blind Ambition':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Captivating Adoration':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Charming Touch':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Cloak Of Shadow':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Commanding Lash':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Competitive Edge':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Cry Of Destruction':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Darkened Eyes':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dazzling Flash':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  "Death's Call":
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Delusional Pride':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Destructive Aura':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Disperse Into Air':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Downpour':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  "Dreamer's Call":
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Enduring Might':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Eradicate Undeath':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Face In The Crowd':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Fire Ray':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Flame Barrier':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Forced Quiet':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Glimpse The Truth':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Healer's Blesssing":
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Hurtling Stone':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Know The Enemy':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Localized Quake':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Lucky Break':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  "Magic's Vessel":
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Malignant Sustenance':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Moonbeam':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Mystic Beacon':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Nature's Bounty":
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Overstuff':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Perfected Form':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Perfected Mind':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Positive Luminance':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Precious Metals':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Protector's Sacrifice":
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  "Protector's Sphere":
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Pulse Of The City':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Pushing Gust':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Read Fate':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Rebuke Death':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Retributive Pain':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Safeguard Secret':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast="1 min" ' +
+    'Description="FILL"',
+  'Savor The Sting':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Scholarly Recollection':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Shared Nightmare':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Soothing Words':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Splash Of Art':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Sudden Shift':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Sweet Dream':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description="FILL"',
+  'Take Its Course':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Tempt Fate':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Tidal Surge':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Touch Of Obedience':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Touch Of The Moon':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Touch Of Undeath':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Traveler's Transit":
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  "Trickster's Twin":
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Unimpeded Stride':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Unity':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Veil Of Confidence':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Vibrant Thorns':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Waking Nightmare':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Weapon Surge':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Word Of Freedom':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Word Of Truth':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Zeal For Battle':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
     'Description="FILL"'
 };
 Pathfinder2E.TERRAINS = {
@@ -7222,15 +8596,19 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Ability'),
       QuilvynUtils.getAttrValue(attrs, 'Category')
     );
-  else if(type == 'Spell')
+  else if(type == 'Spell') {
+    let level = QuilvynUtils.getAttrValue(attrs, 'Level');
+    let school = QuilvynUtils.getAttrValue(attrs, 'School');
+    let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
+    name += ' (' + trads.map(x => x.charAt(0)).join('/') + ' ' + level + ')';
     Pathfinder2E.spellRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'School'),
-      QuilvynUtils.getAttrValue(attrs, 'Level'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Traditions'),
+      school,
+      level,
+      trads,
       QuilvynUtils.getAttrValue(attrs, 'Cast'),
       QuilvynUtils.getAttrValue(attrs, 'Description')
     );
-  else if(type == 'Terrain')
+  } else if(type == 'Terrain')
     Pathfinder2E.terrainRules(rules, name);
   else if(type == 'Weapon')
     Pathfinder2E.weaponRules(rules, name,
@@ -8503,6 +9881,16 @@ Pathfinder2E.spellRules = function(
     console.log('Bad level "' + level + '" for spell ' + name);
     return;
   }
+  if(!Array.isArray(traditions)) {
+    console.log('Bad traditions list "' + traditions + '" for spell ' + name);
+    return;
+  }
+  traditions.forEach(t => {
+    if(!t.match(/^(Arcane|Divine|Occult|Primal)$/)) {
+      console.log('Bad tradition "' + t + '" for spell ' + name);
+      return;
+    }
+  });
   if(typeof(cast) != 'number' && typeof(cast) != 'string') {
     console.log('Bad cast "' + cast + '" for spell ' + name);
     return;
