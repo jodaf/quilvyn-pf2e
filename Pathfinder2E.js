@@ -5863,12 +5863,6 @@ Pathfinder2E.SPELLS = {
     'Description="FILL"',
   'Field Of Life':
     'Level=6 ' +
-    'School=Enchantment ' +
-    'Traditions=Divine,Primal ' +
-    'Cast=2 ' +
-    'Description="FILL"',
-  'Field Of Life':
-    'Level=6 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -8020,6 +8014,396 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
+    'Description="FILL"',
+  'Goodberry':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Heal Animal':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Impaling Briars':
+    'Level=8 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Primal Summons':
+    'Level=6 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=Free ' +
+    'Description="FILL"',
+  'Storm Lord':
+    'Level=9 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Stormwind Flight':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Tempest Surge':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Wild Morph':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Wild Shape':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Abundant Step':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Empty Body':
+    'Level=9 ' +
+    'School=Conjuration ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ki Blast':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Ki Rush':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Ki Strike':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Quivering Palm':
+    'Level=8 ' +
+    'School=Necromancy ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Wholeness Of Body':
+    'Level=2 ' +
+    'School=Necromancy ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Wild Winds Stance':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Wind Jump':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Occult ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Aberrant Whispers':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Abyssal Wrath':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Ancestral Memories':
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Antelic Halo':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Angelic Wings':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Arcane Countermeasure':
+    'Level=5 ' +
+    'School=Abjuration ' +
+    'Traditions=Primal ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Celestial Brand':
+    'Level=5 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Diabolic Edict':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Dragon Breath':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Dragon Claws':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Dragon Wings':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Drain Life':
+    'Level=3 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Elemental Blast':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Elemental Motion':
+    'Level=3 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Elemental Toss':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Embrace The Pit':
+    'Level=3 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Extend Spell':
+    'Level=3 ' +
+    'School=Divination ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Faerie Dust':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Fey Disappearance':
+    'Level=3 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Fey Glamour':
+    'Level=5 ' +
+    'School=Illusion ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  "Glutton's Jaws":
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Grasping Grave':
+    'Level=5 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Hellfire Plume':
+    'Level=5 ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Horrific Visage':
+    'Level=3 ' +
+    'School=Illusion ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Jealous Hex':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Swamp Of Sloth':
+    'Level=3 ' +
+    'School=Conjuration ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Tentacular Limbs':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Undeath's Blessing":
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Unusual Anatomy':
+    'Level=5 ' +
+    'School=Transmutation ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "You're Mine":
+    'Level=5 ' +
+    'School=Enchantment ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Augment Summoning':
+    'Level=1 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Call Of The Grave':
+    'Level=1 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Charming Words':
+    'Level=1 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Dimensional Steps':
+    'Level=4 ' +
+    'School=Conjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  "Diviner's Sight":
+    'Level=1 ' +
+    'School=Divination ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Dread Aura':
+    'Level=4 ' +
+    'School=Enchantment ' +
+    'Traditions=Arcane ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Elemental Tempest':
+    'Level=4 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Energy Absorption':
+    'Level=4 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Force Bolt':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Hand Of The Apprentice':
+    'Level=1 ' +
+    'School=Evocation ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Invisibility Cloak':
+    'Level=4 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane ' +
+    'Cast=2 ' +
+    'Description="FILL"',
+  'Life Siphon':
+    'Level=4 ' +
+    'School=Necromancy ' +
+    'Traditions=Arcane ' +
+    'Cast=Reaction ' +
+    'Description="FILL"',
+  'Physical Boost':
+    'Level=1 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Protective Ward':
+    'Level=1 ' +
+    'School=Abjuration ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Shifting Form':
+    'Level=4 ' +
+    'School=Transmutation ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Vigilant Eye':
+    'Level=4 ' +
+    'School=Divination ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="FILL"',
+  'Warped Terrain':
+    'Level=1 ' +
+    'School=Illusion ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description="FILL"'
 };
 Pathfinder2E.TERRAINS = {
@@ -8600,7 +8984,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
     let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
-    name += ' (' + trads.map(x => x.charAt(0)).join('/') + ' ' + level + ')';
+    name += ' (' + trads.map(x => x.charAt(0)).join('/') + level + ' ' + school.substring(0, 4) + ')';
     Pathfinder2E.spellRules(rules, name,
       school,
       level,
