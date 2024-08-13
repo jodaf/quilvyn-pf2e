@@ -522,6 +522,8 @@ Pathfinder2E.CLASSES = {
       '"2:Skill Feats","3:General Feats","3:Skill Increases","5:Alertness",' +
       '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
       '"13:Weapon Specialization","19:Miraculous Spell" ' +
+    'Selectables=' +
+      '"1:Healing Font:Divine Font","1:Harmful Font:Divine Font" ' +
     'SpellSlots=' +
       'D0:5@1,' +
       'D1:2@1;3@2,' +
@@ -1301,7 +1303,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Cleric Require="level >= 8","features.Domain Initiate"',
   'Align Armament':
     'Type=Class,Cleric ' +
-    'Require="level >= 8","deityDomain =~ \'Chaotic|Evil|Good|Lawful\'"',
+    'Require="level >= 8","deityAlignment =~ \'Chaotic|Evil|Good|Lawful\'"',
   'Channeled Succor':
     'Type=Class,Cleric Require="level >= 8","features.Healing Font"',
   'Cremate Undead':'Type=Class,Cleric Require="level >= 8"',
@@ -3515,7 +3517,7 @@ Pathfinder2E.FEATURES = {
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Divine Defense':'Section=feature Note="FILL"',
-  'Divine Font':'Section=feature Note="FILL"',
+  'Divine Font':'Section=feature Note="1 selection"',
   'Divine Spellcasting':'Section=feature Note="FILL"',
   'Doctrine':'Section=feature Note="FILL"',
   // Lightning Reflexes as above
@@ -9855,6 +9857,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Cleric') {
+    rules.defineRule('selectableFeatureCount.Cleric (Divine Font)',
+      'featureNotes.divineFont', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Druid') {
