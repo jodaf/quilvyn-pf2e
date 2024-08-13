@@ -1077,9 +1077,12 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard Require="level >= 2","features.Maestro Muse"',
   "Loremaster's Etude":
     'Type=Class,Bard Require="level >= 2","features.Enigma Muse"',
-  'Multifarious Muse (Enigma Muse)':'Type=Class,Bard Require="level >= 2"',
-  'Multifarious Muse (Maestro Muse)':'Type=Class,Bard Require="level >= 2"',
-  'Multifarious Muse (Polymath Muse)':'Type=Class,Bard Require="level >= 2"',
+  'Multifarious Muse (Enigma Muse)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Enigma Muse == 0"',
+  'Multifarious Muse (Maestro Muse)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Maestro Muse == 0"',
+  'Multifarious Muse (Polymath Muse)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Polymath Muse == 0"',
   'Inspire Defense':
     'Type=Class,Bard Require="level >= 4","features.Maestro Muse"',
   'Melodious Spell':'Type=Class,Bard Require="level >= 4"',
@@ -3162,13 +3165,15 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows <i>Lingering Composition</i> spell/+1 Focus Points"',
   'Reach Spell':'Section=magic Note="May extend spell range by 30\'"',
-  'Versatile Performance':'Section=feature Note="FILL"',
+  'Versatile Performance':
+    'Section=skill ' +
+    'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':'Section=magic Note="Knows two additional cantrips"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
       '"May use Occultism to add spells to spellbook",' +
-      '"May learn 1 spell from spellbook each dy; spells from repertoire may be treated as signature spells"',
+      '"May learn 1 additional spell from spellbook each dy, treating it as a signature spell if it is in repertoire"',
   'Inspire Competence':
     'Section=magic Note="Knows the <i>Inspire Competence</i> cantrip"',
   "Loremaster's Etude":
@@ -3193,7 +3198,7 @@ Pathfinder2E.FEATURES = {
   'Melodious Spell':
     'Section=skill ' +
     'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
-  'Triple Time':'Section=magic Note="Knows <i>Triple Time</i> spell"',
+  'Triple Time':'Section=magic Note="Knows <i>Triple Time</i> cantrip"',
   'Versatile Signature':
     'Section=magic Note="May change 1 signature spell each dy"',
   'Dirge Of Doom':'Section=magic Note="Knows <i>Dirge Of Doom</i> cantrip"',
@@ -3201,7 +3206,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="A successful DC flat check avoids spellcasting disruption"',
+    'Note="A successful DC flat check negates self spellcasting disruption"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
@@ -3211,18 +3216,18 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows <i>Inspire Heroics<i> spell/+1 Focus Points"',
   'Know-It-All':
     'Section=skill ' +
-    'Note="Successful Recall Knowledge grants additional information"',
+    'Note="A successful Recall Knowledge grants additional information"',
   'House Of Imaginary Walls':
     'Section=magic Note="Knows <i>Imaginary Walls</i> cantrip"',
   'Quickened Casting':
     'Section=magic ' +
-    'Note="May reduce the time required to cast a spell by 1 action"',
+    'Note="Reduces the time required to cast a spell of level %1 or lower by 1 action"',
   'Unusual Composition':
     'Section=magic ' +
-    'Note="May replace somatic components of a composition spell with verbal components and vice versa"',
+    'Note="May replace somatic components of a composition spell with verbal components or vice versa"',
   'Eclectic Polymath':
     'Section=magic ' +
-    'Note="May retain Esoteric Polymath spell in repertoire, losing a spell of the same level"',
+    'Note="May retain Esoteric Polymath spell in repertoire by removing a spell of the same level"',
   'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Allegro':'Section=magic Note="Knows <i>Allegro</i> cantrip"',
   'Soothing Ballad':
@@ -3233,7 +3238,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May freely extend the duration of 1 spell"',
   'Studious Capacity':
     'Section=magic ' +
-    'Note="May cast 1 additional spell of less than maximum slot level each dy"',
+    'Note="May cast 1 additional spell of level %1 or lower each dy"',
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
@@ -5210,7 +5215,6 @@ Pathfinder2E.SKILLS = {
   'Forest Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Plains Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Swamp Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Bardic Lore':'Ability=Intelligence', // Bardic Lore class feat pg 99
   'Military Lore':'Ability=Intelligence', // pg 247
   // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
   // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
@@ -7568,7 +7572,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="FILL"',
-  'House Of Imaginary':
+  'House Of Imaginary Walls':
     'Level=Cantrip ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
@@ -9752,13 +9756,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
-    rules.defineRule('rank.Bardic Lore',
-      'features.Bardic Lore', '=', '1',
-      'rank.Occultism', '+', 'source>=4 ? 1 : null'
-    );
     rules.defineRule
       ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
-    rules.defineRule('spellSlots.O10', 'magicNotes.magnumOpus', '+', '1');
+    rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
     rules.defineRule
       ('spells.Allegro (O0 Ench)', 'magicNotes.allegro', '=', '1');
     rules.defineRule('spells.Counter Performance (O1 Ench)',
@@ -9768,8 +9768,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spells.Dirge Of Doom (O0 Ench)', 'magicNotes.dirgeOfDoom', '=', '1');
     rules.defineRule
       ('spells.Fatal Aria (O10 Ench)', 'magicNotes.fatalAria', '=', '1');
-    rules.defineRule
-      ('spells.Imaginary Walls', 'magicNotes.imaginaryWalls', '=', '1');
+    rules.defineRule('spells.House Of Imaginary Walls (O0 Illu)',
+      'magicNotes.houseOfImaginaryWalls', '=', '1'
+    );
     rules.defineRule('spells.Inspire Competence (O0 Ench)',
       'magicNotes.inspireCompetence', '=', '1'
     );
@@ -10096,6 +10097,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Animal Accomplice') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
+  } else if(name == 'Bardic Lore') {
+    Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
+    rules.defineRule('rank.Bardic Lore',
+      'skillNotes.bardicLore', '=', '1',
+      'rank.Occultism', '+', '1'
+    );
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
@@ -10188,11 +10195,34 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Orc Sight') {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
+  } else if(name == 'Quickened Casting') {
+    rules.defineRule('magicNotes.quickenedCasting.1',
+      'features.Quickened Casting', '?', null,
+      '', '=', '0'
+    );
+    [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
+      rules.defineRule('magicNotes.quickenedCasting.1',
+        'spellSlots.A' + l, '^', l - 2,
+        'spellSlots.D' + l, '^', l - 2,
+        'spellSlots.O' + l, '^', l - 2,
+        'spellSlots.P' + l, '^', l - 2
+      );
+    });
   } else if(name == 'Rough Rider') {
     rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
+  } else if(name == 'Studious Capacity') {
+    rules.defineRule('magicNotes.studiousCapacity.1',
+      'features.Studious Capacity', '?', null,
+      '', '=', '0'
+    );
+    [2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
+      rules.defineRule('magicNotes.studiousCapacity.1',
+        'spellSlots.O' + l, '^', l - 1
+      );
+    });
   }
 };
 
