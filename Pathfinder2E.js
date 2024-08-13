@@ -444,11 +444,12 @@ Pathfinder2E.CLASSES = {
     'Features=' +
       '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
       '"1:Perception Expert",' +
-      '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
+      '"1:Save Trained (Fortitude; Reflex)","1:Save Expert (Will)",' +
       '"1:Bard Skills",' +
       '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Bard)",' +
+      '"1:Spell Trained (Occult)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
       '"3:Lightning Reflexes","3:Signature Spells","3:Skill Increases",' +
@@ -1074,7 +1075,9 @@ Pathfinder2E.FEATS = {
     'Type=Class,Bard Require="level >= 2","features.Maestro Muse"',
   "Loremaster's Etude":
     'Type=Class,Bard Require="level >= 2","features.Enigma Muse"',
-  'Multifarious Muse':'Type=Class,Bard Require="level >= 2"',
+  'Multifarious Muse (Enigma Muse)':'Type=Class,Bard Require="level >= 2"',
+  'Multifarious Muse (Maestro Muse)':'Type=Class,Bard Require="level >= 2"',
+  'Multifarious Muse (Polymath Muse)':'Type=Class,Bard Require="level >= 2"',
   'Inspire Defense':
     'Type=Class,Bard Require="level >= 4","features.Maestro Muse"',
   'Melodious Spell':'Type=Class,Bard Require="level >= 4"',
@@ -3097,68 +3100,150 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May use effects of <i>Earthquake</i> 1/10 min"',
 
   // Bard
-  'Bard Weapon Expertise':'Section=feature Note="FILL"',
+  'Bard Weapon Expertise':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Expert (Simple; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
+      '"May use critical specialization effects of any simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, and whip"',
   'Bard Feats':'Section=feature Note="%V selections"',
   'Bard Skills':
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   // TODO description needs extending
   'Composition Spells':
-    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
-  'Enigma Muse':'Section=feature Note="FILL"',
-  'Expert Spellcaster':'Section=feature Note="FILL"',
-  'Great Fortitude':'Section=feature Note="Save Expert (Fortitude)"',
-  'Greater Resolve':'Section=feature Note="FILL"',
-  'Legendary Spellcaster':'Section=feature Note="FILL"',
+    'Section=magic ' +
+    'Note="Has a Focus Pool with 1 Focus Point/Knows <i>Counter Performance</i> and <i>Inspire Courage</i> spells"',
+  'Enigma Muse':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has Bardic Lore feature",' +
+      '"Knows the <i>True Strike</i> spell"',
+  'Expert Spellcaster':'Section=magic Note="Spell Expert (Occult)"',
+  'Great Fortitude':'Section=save Note="Save Expert (Fortitude)"',
+  'Greater Resolve':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Will)",' +
+      '"Critical faiures on Will saves are normal failures/Takes half damage on failed Will saves"',
+  'Legendary Spellcaster':'Section=magic Note="Spell Legendary (Occult)"',
   'Light Armor Expertise':
     'Section=combat Note="Armor Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
-  'Maestro Muse':'Section=feature Note="FILL"',
-  'Magnum Opus':'Section=feature Note="FILL"',
-  'Master Spellcaster':'Section=feature Note="FILL"',
+  'Maestro Muse':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has Lingering Composition feature",' +
+      '"Knows the <i>Soothe</i> spell"',
+  'Magnum Opus':'Section=magic Note="Knows two 10th-level occult spells"',
+  'Master Spellcaster':'Section=magic Note="Spell Master (Occult)"',
   'Muses':'Section=feature Note="%V selections"',
-  'Occult Spellcasting':'Section=feature Note="FILL"',
-  'Polymath Muse':'Section=feature Note="FILL"',
-  'Resolve':'Section=feature Note="FILL"',
-  'Signature Spells':'Section=feature Note="FILL"',
+  'Occult Spellcasting':
+    'Section=magic Note="May learn spells from the occult tradition"',
+  'Polymath Muse':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has Versatile Performance feature",' +
+      '"Knows the <i>Unseen Servant</i> spell"',
+  'Resolve':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will saves are critical successes"',
+  'Signature Spells':
+    'Section=magic Note="May freely heighten a chosen spell of each level"',
   'Vigilant Senses':'Section=skill Note="Perception Master"',
   // Weapon Specialization as above
 
-  'Bardic Lore':'Section=feature Note="FILL"',
-  'Lingering Composition':'Section=feature Note="FILL"',
-  'Reach Spell':'Section=feature Note="FILL"',
+  'Bardic Lore':
+    'Section=skill Note="May use Bardic Lore to Recall Knowledge on any topic"',
+  'Lingering Composition':
+    'Section=magic ' +
+    'Note="Knows <i>Lingering Composition</i> spell/+1 Focus Points"',
+  'Reach Spell':'Section=magic Note="May extend spell range by 30\'"',
   'Versatile Performance':'Section=feature Note="FILL"',
-  'Cantrip Expansion':'Section=feature Note="FILL"',
-  'Esoteric Polymath':'Section=feature Note="FILL"',
-  'Inspire Competence':'Section=feature Note="FILL"',
-  "Loremaster's Etude":'Section=feature Note="FILL"',
-  'Multifarious Muse':'Section=feature Note="FILL"',
-  'Inspire Defense':'Section=feature Note="FILL"',
-  'Melodious Spell':'Section=feature Note="FILL"',
-  'Triple Time':'Section=feature Note="FILL"',
-  'Versatile Signature':'Section=feature Note="FILL"',
-  'Dirge Of Doom':'Section=feature Note="FILL"',
-  'Harmonize':'Section=feature Note="FILL"',
-  'Steady Spellcasting':'Section=feature Note="FILL"',
-  'Eclectic Skill':'Section=feature Note="FILL"',
-  'Inspire Heroics':'Section=feature Note="FILL"',
-  'Know-It-All':'Section=feature Note="FILL"',
-  'House Of Imaginary Walls':'Section=feature Note="FILL"',
-  'Quickened Casting':'Section=feature Note="FILL"',
-  'Unusual Composition':'Section=feature Note="FILL"',
-  'Eclectic Polymath':'Section=feature Note="FILL"',
-  'Inspirational Focus':'Section=feature Note="FILL"',
-  'Allegro':'Section=feature Note="FILL"',
-  'Soothing Ballad':'Section=feature Note="FILL"',
-  'True Hypercognition':'Section=feature Note="FILL"',
-  'Effortless Concentration':'Section=feature Note="FILL"',
-  'Studious Capacity':'Section=feature Note="FILL"',
-  'Deep Lore':'Section=feature Note="FILL"',
-  'Eternal Composition':'Section=feature Note="FILL"',
-  'Impossible Polymath':'Section=feature Note="FILL"',
-  'Fatal Aria':'Section=feature Note="FILL"',
-  'Perfect Encore':'Section=feature Note="FILL"',
-  'Symphony Of The Muse':'Section=feature Note="FILL"',
+  'Cantrip Expansion':'Section=magic Note="Knows two additional cantrips"',
+  'Esoteric Polymath':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"May use Occultism to add spells to spellbook",' +
+      '"May learn 1 spell from spellbook each dy; spells from repertoire may be treated as signature spells"',
+  'Inspire Competence':
+    'Section=magic Note="Knows the <i>Inspire Competence</i> cantrip"',
+  "Loremaster's Etude":
+    'Section=magic ' +
+    'Note="Knows <i>Loremaster\'s Etude<i> spell/+1 Focus Points"',
+  'Multifarious Muse (Enigma Muse)':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"May learn enigma muse feats",' +
+      '"Knows a 1st-level enigma muse spell"',
+  'Multifarious Muse (Maestro Muse)':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"May learn maestro muse feats",' +
+      '"Knows a 1st-level maestro muse spell"',
+  'Multifarious Muse (Polymath Muse)':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"May learn polymath muse feats",' +
+      '"Knows a 1st-level polymath muse spell"',
+  'Inspire Defense':'Section=magic Note="Knows <i>Inspire Defense</i> cantrip"',
+  'Melodious Spell':
+    'Section=skill ' +
+    'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
+  'Triple Time':'Section=magic Note="Knows <i>Triple Time</i> spell"',
+  'Versatile Signature':
+    'Section=magic Note="May change 1 signature spell each dy"',
+  'Dirge Of Doom':'Section=magic Note="Knows <i>Dirge Of Doom</i> cantrip"',
+  'Harmonize':
+    'Section=magic Note="May have 2 composition spells active simultaneously"',
+  'Steady Spellcasting':
+    'Section=magic ' +
+    'Note="A successful DC flat check avoids spellcasting disruption"',
+  'Eclectic Skill':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"+%{level} untrained skills",' +
+      '"May attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
+  'Inspire Heroics':
+    'Section=magic Note="Knows <i>Inspire Heroics<i> spell/+1 Focus Points"',
+  'Know-It-All':
+    'Section=skill ' +
+    'Note="Successful Recall Knowledge grants additional information"',
+  'House Of Imaginary Walls':
+    'Section=magic Note="Knows <i>Imaginary Walls</i> cantrip"',
+  'Quickened Casting':
+    'Section=magic ' +
+    'Note="May reduce the time required to cast a spell by 1 action"',
+  'Unusual Composition':
+    'Section=magic ' +
+    'Note="May replace somatic components of a composition spell with verbal components and vice versa"',
+  'Eclectic Polymath':
+    'Section=magic ' +
+    'Note="May retain Esoteric Polymath spell in repertoire, losing a spell of the same level"',
+  'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+  'Allegro':'Section=magic Note="Knows <i>Allegro</i> cantrip"',
+  'Soothing Ballad':
+    'Section=magic Note="Knows <i>Soothing Ballad<i> spell/+1 Focus Points"',
+  'True Hypercognition':
+    'Section=skill Note="May use 1 action for 5 Recall Knowledge actions"',
+  'Effortless Concentration':
+    'Section=magic Note="May freely extend the duration of 1 spell"',
+  'Studious Capacity':
+    'Section=magic ' +
+    'Note="May cast 1 additional spell of less than maximum slot level each dy"',
+  'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
+  'Eternal Composition':
+    'Section=magic ' +
+    'Note="May use an additional action each rd to cast a composition cantrip"',
+  'Impossible Polymath':
+    'Section=magic Note="May add spells from trained traditions to spellbook"',
+  'Fatal Aria':
+    'Section=magic Note="Knows <i>Fatal Aria<i> spell/+1 Focus Points"',
+  'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
+  'Symphony Of The Muse':
+    'Section=magic ' +
+    'Note="May have any number of composition spells active simultaneously"',
 
   // Champion
   // Alertness as above
@@ -8984,7 +9069,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
     let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
-    name += ' (' + trads.map(x => x.charAt(0)).join('/') + level + ' ' + school.substring(0, 4) + ')';
+    name += ' (' + trads.map(x => x.charAt(0)).join('/') + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 4) + ')';
     Pathfinder2E.spellRules(rules, name,
       school,
       level,
@@ -9431,18 +9516,30 @@ Pathfinder2E.classRules = function(
     for(let j = 0; j < spellSlots.length; j++) {
       let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
       let spellType = spellTypeAndLevel.replace(/\d+/, '');
+      spellType =
+        spellType == 'A' ? 'Arcane' :
+        spellType == 'D' ? 'Divine' :
+        spellType == 'O' ? 'Occult' :
+        spellType == 'P' ? 'Primal' : spellType;
       let spellLevel = spellTypeAndLevel.replace(spellType, '');
       let spellModifier = abilities[0] + 'Modifier';
       if(spellType != name)
         rules.defineRule
           ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
+      rules.defineRule('spellProficiencyBonus.' + spellType,
+        'casterLevels.' + spellType, '?', null,
+        'rank.' + spellType, '=', 'source * 2',
+        'level', '+', null
+      );
       rules.defineRule('spellAttackModifier.' + spellType,
         'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', null
+        spellModifier, '=', null,
+        'spellProficiencyBonus.' + spellType, '+', null
       );
       rules.defineRule('spellDifficultyClass.' + spellType,
         'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', '8 + source'
+        spellModifier, '=', '8 + source',
+        'spellProficiencyBonus.' + spellType, '+', null
       );
     }
   }
@@ -9631,12 +9728,76 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   } else if(name == 'Bard') {
     rules.defineRule('featureNotes.muses', '', '=', '1');
     rules.defineRule
+      ('features.Bardic Lore', 'featureNotes.enigmaMuse', '=', '1');
+    rules.defineRule('features.Enigma Muse',
+      'featureNotes.multifariousMuse(EnigmaMuse)', '=', '1'
+    );
+    rules.defineRule
       ('features.Focus Pool', 'magicNotes.compositionSpells', '=', '1');
+    rules.defineRule
+      ('features.Lingering Composition', 'featureNotes.maestroMuse', '=', '1');
+    rules.defineRule('features.Maestro Muse',
+      'featureNotes.multifariousMuse(MaestroMuse)', '=', '1'
+    );
+    rules.defineRule('features.Polymath Muse',
+      'featureNotes.multifariousMuse(PolymathMuse)', '=', '1'
+    );
+    rules.defineRule('features.Versatile Performance',
+      'featureNotes.polymathMuse', '=', '1'
+    );
     rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
     rules.defineRule
       ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
+    rules.defineRule('rank.Bardic Lore',
+      'features.Bardic Lore', '=', '1',
+      'rank.Occultism', '+', 'source>=4 ? 1 : null'
+    );
+    rules.defineRule
+      ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
+    rules.defineRule('spellSlots.O10', 'magicNotes.magnumOpus', '+', '1');
+    rules.defineRule
+      ('spells.Allegro (O0 Ench)', 'magicNotes.allegro', '=', '1');
+    rules.defineRule('spells.Counter Performance (O1 Ench)',
+      'magicNotes.compositionSpells', '=', '1'
+    );
+    rules.defineRule
+      ('spells.Dirge Of Doom (O0 Ench)', 'magicNotes.dirgeOfDoom', '=', '1');
+    rules.defineRule
+      ('spells.Fatal Aria (O10 Ench)', 'magicNotes.fatalAria', '=', '1');
+    rules.defineRule
+      ('spells.Imaginary Walls', 'magicNotes.imaginaryWalls', '=', '1');
+    rules.defineRule('spells.Inspire Competence (O0 Ench)',
+      'magicNotes.inspireCompetence', '=', '1'
+    );
+    rules.defineRule('spells.Inspire Heroics (O4 Ench)',
+      'magicNotes.inspireHeroics', '=', '1'
+    );
+    rules.defineRule('spells.Inspire Courage (O0 Ench)',
+      'magicNotes.compositionSpells', '=', '1'
+    );
+    rules.defineRule('spells.Inspire Defense (O0 Ench)',
+      'magicNotes.inspireDefense', '=', '1'
+    );
+    rules.defineRule('spells.Lingering Composition (O1 Ench)',
+      'magicNotes.lingeringComposition', '=', '1'
+    );
+    rules.defineRule("spells.Loremaster's Etude (O1 Divi)",
+      "magicNotes.loremaster'sEtude", '=', '1'
+    );
+    rules.defineRule
+      ('spells.Soothe (O1 Ench)', 'magicNotes.maestroMuse', '=', '1');
+    rules.defineRule('spells.Soothing Ballad (O7 Ench)',
+      'magicNotes.soothingBallad', '=', '1'
+    );
+    rules.defineRule
+      ('spells.Triple Time (O0 Ench)', 'magicNotes.tripleTime', '=', '1');
+    rules.defineRule
+      ('spells.True Strike (A/O1 Divi)', 'magicNotes.enigmaMuse', '=', '1');
+    rules.defineRule('spells.Unseen Servant (A/O1 Conj)',
+      'featureNotes.polymathMuse', '=', '1'
+    );
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.dragonslayerOath',
       'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
@@ -9949,7 +10110,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
     rules.defineRule('rank.Reflex',
-      'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
+      'saveNotes.cannyAcumen(Reflex)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Will)') {
     rules.defineRule('saveNotes.cannyAcumen(Will)',
@@ -10223,6 +10384,8 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     ('rank.' + name, 'skillIncreases.' + name, '+=', null);
   rules.defineRule('rankLevelBonus.' + name,
     'rank.' + name, '=', 'source>0 ? 0 : null',
+    // TODO right place for this, or in featRulesExtra?
+    'skillNotes.eclecticSkill', '=', '0',
     'level', '+', null
   );
   rules.defineRule('rankBonus.' + name,
@@ -10284,6 +10447,7 @@ Pathfinder2E.spellRules = function(
     return;
   }
   // TODO
+  rules.defineChoice('notes', 'spells.' + name + ':' + description);
 };
 
 /* Defines in #rules# the rules associated with terrain #name#. */
