@@ -518,12 +518,14 @@ Pathfinder2E.CLASSES = {
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored Defense)",' +
       '"1:Class Trained (Cleric)",' +
-      '"1:Divine Spellcasting","1:Divine Font","1:Doctrine","2:Cleric Feats",' +
-      '"2:Skill Feats","3:General Feats","3:Skill Increases","5:Alertness",' +
-      '"9:Resolve","11:Lightning Reflexes","13:Divine Defense",' +
-      '"13:Weapon Specialization","19:Miraculous Spell" ' +
+      '"1:Spell Trained (Divine)",' +
+      '"1:Deity","1:Divine Spellcasting","1:Divine Font","1:Doctrine",' +
+      '"2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
+      '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
-      '"1:Healing Font:Divine Font","1:Harmful Font:Divine Font" ' +
+      '"1:Healing Font:Divine Font","1:Harmful Font:Divine Font",' +
+      '"1:Cloistered Cleric:Doctrine","1:Warpriest:Doctrine" ' +
     'SpellSlots=' +
       'D0:5@1,' +
       'D1:2@1;3@2,' +
@@ -1305,8 +1307,7 @@ Pathfinder2E.FEATS = {
   'Advanced Domain':
     'Type=Class,Cleric Require="level >= 8","features.Domain Initiate"',
   'Align Armament':
-    'Type=Class,Cleric ' +
-    'Require="level >= 8","deityAlignment =~ \'Chaotic|Evil|Good|Lawful\'"',
+    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'C|E|G|L\'"',
   'Channeled Succor':
     'Type=Class,Cleric Require="level >= 8","features.Healing Font"',
   'Cremate Undead':'Type=Class,Cleric Require="level >= 8"',
@@ -3108,7 +3109,7 @@ Pathfinder2E.FEATURES = {
   'Bard Weapon Expertise':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
+      '"Weapon Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
       '"May use critical specialization effects of any simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, and whip"',
   'Bard Feats':'Section=feature Note="%V selections"',
   'Bard Skills':
@@ -3521,13 +3522,37 @@ Pathfinder2E.FEATURES = {
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
-  'Divine Defense':'Section=feature Note="FILL"',
+  'Cloistered Cleric':
+    'Section=combat,combat,feature,magic,save ' +
+    'Note=' +
+      '"Weapon Expert (%V; Simple Weapons; Unarmed Attacks)",' +
+      '"May use critical specialization effects of %{deityWeapon}",' +
+      '"Has Domain Initiate features",' +
+      '"Spell %V (Divine)",' +
+      '"Save Expert (Fortitude)"',
+  'Deity':
+    'Section=combat,magic,skill ' +
+    'Note=' +
+      '"Weapon Trained (%V)",' +
+      '"Has access to %V spells",' +
+      '"Skill Trained (%V)"',
+  'Divine Defense':'Section=combat Note="Armor Expert (Unarmored Defense)"',
   'Divine Font':'Section=feature Note="1 selection"',
-  'Divine Spellcasting':'Section=feature Note="FILL"',
-  'Doctrine':'Section=feature Note="FILL"',
+  'Divine Spellcasting':
+    'Section=magic Note="May learn spells from the divine tradition"',
+  'Doctrine':'Section=feature Note="1 selection"',
   // Lightning Reflexes as above
-  'Miraculous Spell':'Section=feature Note="FILL"',
+  'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
   // Resolve as above
+  'Warpriest':
+    'Section=combat,combat,feature,magic,save,save ' +
+    'Note=' +
+      '"Armor %V (Light Armor; Medium Armor)%{level>=3?\'/Weapon Trained (Martial Weapons)\':\'\'}%{level>=7?\'Weapon Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
+      '"May use critical specialization effects of %{deityWeapon}",' +
+      '"Has Shield Block%1 features",' +
+      '"Spell %V (Divine)",' +
+      '"Save %V (Fortitude)",' +
+      '"Successes on Fortitude saves are critical successes"',
   // Weapon Specialization as above
 
   'Deadly Simplicity':'Section=feature Note="FILL"',
@@ -9858,11 +9883,70 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Cleric') {
+    rules.defineRule('combatNotes.cloisteredCleric',
+      'level', '?', 'source>=11',
+      'deityWeapon', '=', null
+    );
+    rules.defineRule('combatNotes.warpriest',
+      '', '=', '"Trained"',
+      'features.Divine Defense', '=', '"Expert"'
+    );
+    rules.defineRule('combatNotes.warpriest.1',
+      'features.Warpriest', '?', null,
+      'deityWeapon', '=', null
+    );
+    rules.defineRule
+      ('combatNotes.cloisteredCleric-1', 'level', '?', 'source>=11');
+    rules.defineRule('combatNotes.deity', 'deityWeapon', '=', null);
+    rules.defineRule('combatNotes.warpriest-1', 'level', '?', 'source>=7');
+    rules.defineRule('featureNotes.warpriest.1',
+      'features.Warpriest', '?', null,
+      'deityWeapon', '=', 'Pathfinder2E.WEAPONS[source].match(/Simple|Unarmed/) ? " and Deadly Simplicity" : ""'
+    );
+    rules.defineRule('features.Deadly Simplicity',
+      'featureNotes.warpriest.1', '=', 'source ? 1 : null'
+    );
+    rules.defineRule
+      ('features.Domain Initiate', 'featureNotes.cloisteredCleric', '=', '1');
+    rules.defineRule
+      ('features.Shield Block', 'featureNotes.warpriest', '=', '1');
+    rules.defineRule('magicNotes.cloisteredCleric',
+      'level', '?', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
+    );
+    rules.defineRule('magicNotes.deity',
+      'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
+    );
+    rules.defineRule('magicNotes.warpriest',
+      'level', '?', 'source<19 ? "Expert" : "Master"'
+    );
+    rules.defineRule('rank.Divine',
+      'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
+      'magicNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
+    );
+    rules.defineRule('rank.Fortitude',
+      'saveNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
+    );
+    rules.defineRule('rank.Light Armor',
+      'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
+    );
+    rules.defineRule('rank.Medium Armor',
+      'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
+    );
+    rules.defineRule('saveNotes.cloisteredCleric', 'level', '?', 'source>=3');
+    rules.defineRule
+      ('saveNotes.warpriest', 'level', '=', 'source<15 ? "Expert" : "Master"');
+    rules.defineRule('saveNotes.warpriest-1', 'level', '?', 'source>=15');
     rules.defineRule('selectableFeatureCount.Cleric (Divine Font)',
       'featureNotes.divineFont', '=', '1'
     );
+    rules.defineRule('selectableFeatureCount.Cleric (Doctrine)',
+      'featureNotes.doctrine', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
+    rules.defineRule
+      ('spellSlots.D10', 'magicNotes.miraculousSpell', '=', 'null'); // italics
   } else if(name == 'Druid') {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
@@ -10021,8 +10105,23 @@ Pathfinder2E.deityRules = function(
   rules.defineRule('deityDomains',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.domains) + '[source]'
   );
+  rules.defineRule('deitySkill',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.skill) + '[source]'
+  );
+  rules.defineRule('deitySpells',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.spells) + '[source]'
+  );
   rules.defineRule('deityWeapon',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
+  );
+
+  rules.defineRule('rank.' + skill,
+    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
+  );
+  rules.defineRule('rank.' + weapon,
+    'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
+    'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
+    'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
   );
 
   let allWeapons = rules.getChoices('weapons');
@@ -10249,7 +10348,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
           let m = element.match(/Choose (\d+|%V)/);
           if(m)
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
-          else
+          else if(!element.startsWith('%'))
             rules.defineRule('rank.' + element, noteName, '^=', rank);
         });
         if(choices)
