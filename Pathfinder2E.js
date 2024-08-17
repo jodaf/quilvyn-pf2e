@@ -1272,11 +1272,12 @@ Pathfinder2E.FEATS = {
   'Shield Paragon':
     'Type=Class,Champion Require="level >= 20","features.Divine Ally (Shield)"',
 
-  'Deadly Simplicity':'Type=Class,Cleric',
+  'Deadly Simplicity':
+    'Type=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
   'Domain Initiate':'Type=Class,Cleric',
-  'Harming Hands':'Type=Class,Cleric',
-  'Healing Hands':'Type=Class,Cleric',
-  'Holy Castigation':'Type=Class,Cleric',
+  'Harming Hands':'Type=Class,Cleric Require="features.Harmful Font"',
+  'Healing Hands':'Type=Class,Cleric Require="features.Healing Font"',
+  'Holy Castigation':'Type=Class,Cleric Require="alignment =~ \'Good\'"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':'Type=Class,Cleric Require="level >= 2"',
@@ -1285,6 +1286,7 @@ Pathfinder2E.FEATS = {
   'Turn Undead':'Type=Class,Cleric Require="level >= 2"',
   'Versatile Font':
     'Type=Class,Cleric ' +
+    // TODO also "deity that allows clerics to have both fonts"
     'Require="level >= 2","features.Harmful Font || features.Healing Font"',
   'Channel Smite':
     'Type=Class,Cleric ' +
@@ -3555,36 +3557,82 @@ Pathfinder2E.FEATURES = {
       '"Successes on Fortitude saves are critical successes"',
   // Weapon Specialization as above
 
-  'Deadly Simplicity':'Section=feature Note="FILL"',
-  'Domain Initiate':'Section=feature Note="FILL"',
-  'Harming Hands':'Section=feature Note="FILL"',
-  'Healing Hands':'Section=feature Note="FILL"',
-  'Holy Castigation':'Section=feature Note="FILL"',
+  'Deadly Simplicity':
+    'Section=combat Note="+1 damage die step on %{deityWeapon}"',
+  'Domain Initiate':
+    'Section=magic ' +
+    'Note="Knows 1 domain spell/Has a Focus Pool with 1 Focus Point"',
+  'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
+  'Healing Hands':'Section=magic Note="<i>Heal</i> die type increases to d10"',
+  'Holy Castigation':
+    'Section=magic Note="May use <i>Heal</i> to damage fiends"',
   // Reach Spell as above
   // Cantrip Expansion as above
-  'Communal Healing':'Section=feature Note="FILL"',
-  'Emblazon Armament':'Section=feature Note="FILL"',
-  'Sap Life':'Section=feature Note="FILL"',
-  'Turn Undead':'Section=feature Note="FILL"',
-  'Versatile Font':'Section=feature Note="FILL"',
-  'Channel Smite':'Section=feature Note="FILL"',
-  'Command Undead':'Section=feature Note="FILL"',
-  'Directed Channel':'Section=feature Note="FILL"',
-  'Improved Communal Healing':'Section=feature Note="FILL"',
-  'Necrotic Infusion':'Section=feature Note="FILL"',
-  'Cast Down':'Section=feature Note="FILL"',
-  'Divine Weapon':'Section=feature Note="FILL"',
-  'Selective Energy':'Section=feature Note="FILL"',
+  'Communal Healing':
+    'Section=magic ' +
+    'Note="Casting <i>Heal</i> on another creature restores HP to self equal to spell level"',
+  'Emblazon Armament':
+    'Section=magic ' +
+    'Note="10 min process gives target shield +1 Harness or weapon +1 HP damage"',
+  'Sap Life':
+    'Section=magic ' +
+    'Note="Casting <i>Harm</i> on another creature restores HP to self equal to spell level"',
+  'Turn Undead':
+    'Section=magic ' +
+    'Note="Critical failure by undead damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
+  'Versatile Font':
+    'Section=magic ' +
+    'Note="May use font slot to prepare either <i>Harm</i> or <i>Heal</i>"',
+  'Channel Smite':
+    'Section=combat ' +
+    'Note="May use 2 actions to add <i>Heal</i> or <i>Harm</i> effects to a melee Strike"',
+  'Command Undead':
+    'Section=magic ' +
+    'Note="<i>Harm</i> may control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hr)"',
+  'Directed Channel':
+    'Section=magic Note="May cast <i>Harm</i> or <i>Heal</i> in a 60\' cone"',
+  'Improved Communal Healing':
+    'Section=magic ' +
+    'Note="May give additional HP from Communal Healing to another"',
+  'Necrotic Infusion':
+    'Section=magic ' +
+    'Note="<i>Harm</i> cast on undead allows target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
+  'Cast Down':
+    'Section=magic ' +
+    'Note="May have <i>Harm</i> or <i>Heal</i> that inflicts damage also inflict knocked prone (target critical fail also slows for 1 min)"',
+  'Divine Weapon':
+    'Section=magic ' +
+    'Note="Casting a spell causes wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
+  'Selective Energy':
+    'Section=magic ' +
+    'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting area harm or heal spell"',
   // Steady Spellcasting as above
-  'Advanced Domain':'Section=feature Note="FILL"',
-  'Align Armament':'Section=feature Note="FILL"',
-  'Channeled Succor':'Section=feature Note="FILL"',
-  'Cremate Undead':'Section=feature Note="FILL"',
-  'Emblazon Energy':'Section=feature Note="FILL"',
-  'Castigating Weapon':'Section=feature Note="FILL"',
-  'Heroic Recovery':'Section=feature Note="FILL"',
-  'Improved Command Undead':'Section=feature Note="FILL"',
-  'Replenishment Of War':'Section=feature Note="FILL"',
+  'Advanced Domain':
+    'Section=magic ' +
+    'Note="Knows 1 advanced domain spell/+1 Focus Point"',
+  'Align Armament':
+    'Section=combat ' +
+    'Note="May touch a weapon to have it inflict +1d6 HP alignment for 1 rd"',
+  'Channeled Succor':
+    'Section=magic ' +
+    'Note="May cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared heal spell"',
+  'Cremate Undead':
+    'Section=magic ' +
+    'Note="Heal spell cast upon undead inflicts fire damage equal to spell level"',
+  'Emblazon Energy':
+    'Section=magic ' +
+    'Note="Emblazon Armanent upon a shield gives save bonus and allows Shield Block vs. selected energy type; having a matching domain spell also gives it +%{level//2} resistance; cast upon a weapon gives it +1d4 HP energy (+1d6 with matching domain spell)"',
+  'Castigating Weapon':
+    'Section=magic ' +
+    'Note="Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
+  'Heroic Recovery':
+    'Section=magic ' +
+    'Note="Successful single-target heal spell also gives +5\' Speed, +1 attack, and +1 HP damage for 1 rd"',
+  'Improved Command Undead':
+    'Section=magic ' +
+    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hr"',
+  'Replenishment Of War':
+    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary HP for 1 rd (critical hit %{level} temporary HP)"',
   'Defensive Recovery':'Section=feature Note="FILL"',
   'Domain Focus':'Section=feature Note="FILL"',
   'Emblazon Antimagic':'Section=feature Note="FILL"',
@@ -9827,6 +9875,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.polymathMuse', '=', '1'
     );
   } else if(name == 'Champion') {
+    rules.defineRule('combatNotes.deificWeapon',
+      'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
+    );
     rules.defineRule('combatNotes.dragonslayerOath',
       'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
       'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a second Step"',
@@ -9901,7 +9952,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.warpriest-1', 'level', '?', 'source>=7');
     rules.defineRule('featureNotes.warpriest.1',
       'features.Warpriest', '?', null,
-      'deityWeapon', '=', 'Pathfinder2E.WEAPONS[source].match(/Simple|Unarmed/) ? " and Deadly Simplicity" : ""'
+      'deityWeaponCategory', '=', 'source.match(/Simple|Unarmed/) ? " and Deadly Simplicity" : ""'
     );
     rules.defineRule('features.Deadly Simplicity',
       'featureNotes.warpriest.1', '=', 'source ? 1 : null'
@@ -9916,6 +9967,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.deity',
       'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
     );
+    rules.defineRule('focusPoints', 'magicNotes.domainInitiate', '+=', '1');
     rules.defineRule('magicNotes.warpriest',
       'level', '?', 'source<19 ? "Expert" : "Master"'
     );
@@ -10087,6 +10139,7 @@ Pathfinder2E.deityRules = function(
       fonts:{},
       domains:{},
       weapon:{},
+      weaponCategory:{},
       skill:{},
       spells:{}
     };
@@ -10096,6 +10149,8 @@ Pathfinder2E.deityRules = function(
   rules.deityStats.fonts[name] = fonts.join('/');
   rules.deityStats.domains[name] = domains.join('/');
   rules.deityStats.weapon[name] = weapon;
+  rules.deityStats.weaponCategory[name] =
+    QuilvynUtils.getAttrValue(rules.getChoices('weapons')[weapon] || '', "Category");
   rules.deityStats.skill[name] = skill;
   rules.deityStats.spells[name] = spells.join('/');
 
@@ -10114,6 +10169,9 @@ Pathfinder2E.deityRules = function(
   rules.defineRule('deityWeapon',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
   );
+  rules.defineRule('deityWeaponCategory',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
+  );
 
   rules.defineRule('rank.' + skill,
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
@@ -10124,13 +10182,10 @@ Pathfinder2E.deityRules = function(
     'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
   );
 
-  let allWeapons = rules.getChoices('weapons');
-  if(weapon in allWeapons &&
-     allWeapons[weapon].match(/Category=(Simple|Unarmed)/))
-    rules.defineRule('weaponDieTypeBonus.' + weapon,
-      'combatNotes.deificWeapon', '?', null,
-      'deityWeapon', '=', 'source == "' + weapon + '" ? 2 : null'
-    );
+  rules.defineRule('weaponDieTypeBonus.' + weapon,
+    'combatNotes.deificWeapon', '+=', '2',
+    'combatNotes.deadlySimplicity', '+=', '2'
+  );
 
 };
 
