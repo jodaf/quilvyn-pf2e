@@ -519,8 +519,8 @@ Pathfinder2E.CLASSES = {
       '"1:Armor Trained (Unarmored Defense)",' +
       '"1:Class Trained (Cleric)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Deity","1:Divine Spellcasting","1:Divine Font","1:Doctrine",' +
-      '"2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"1:Anathema","1:Deity","1:Divine Spellcasting","1:Divine Font",' +
+      '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
@@ -1306,8 +1306,18 @@ Pathfinder2E.FEATS = {
   'Divine Weapon':'Type=Class,Cleric Require="level >= 6"',
   'Selective Energy':'Type=Class,Cleric Require="level >= 6"',
   // Steady Spellcasting as above
-  'Advanced Domain':
-    'Type=Class,Cleric Require="level >= 8","features.Domain Initiate"',
+  'Advanced Domain (Chaotic)':
+    'Type=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'C\'"',
+  'Advanced Domain (Evil)':
+    'Type=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'E\'"',
+  'Advanced Domain (Good)':
+    'Type=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'G\'"',
+  'Advanced Domain (Lawful)':
+    'Type=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'L\'"',
   'Align Armament':
     'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'C|E|G|L\'"',
   'Channeled Succor':
@@ -3171,7 +3181,8 @@ Pathfinder2E.FEATURES = {
   'Versatile Performance':
     'Section=skill ' +
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
-  'Cantrip Expansion':'Section=magic Note="Knows two additional cantrips"',
+  'Cantrip Expansion':
+    'Section=magic Note="May prepare two additional cantrips each dy"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
@@ -3209,7 +3220,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="A successful DC flat check negates self spellcasting disruption"',
+    'Note="A successful DC 15 flat check negates self spellcasting disruption"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
@@ -3521,6 +3532,9 @@ Pathfinder2E.FEATURES = {
 
   // Cleric
   // Alertness as above
+  'Anathema':
+    'Section=feature ' +
+    'Note="May not perform acts or cast spells prohibited by %{deity}"',
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
@@ -3543,6 +3557,8 @@ Pathfinder2E.FEATURES = {
   'Divine Spellcasting':
     'Section=magic Note="May learn spells from the divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
+  'Harmful Font':'Section=magic Note="+1 D%V slot"',
+  'Healing Font':'Section=magic Note="+1 D%V slot"',
   // Lightning Reflexes as above
   'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
   // Resolve as above
@@ -3562,44 +3578,44 @@ Pathfinder2E.FEATURES = {
   'Domain Initiate':
     'Section=magic ' +
     'Note="Knows 1 domain spell/Has a Focus Pool with 1 Focus Point"',
-  'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
-  'Healing Hands':'Section=magic Note="<i>Heal</i> die type increases to d10"',
+  'Harming Hands':'Section=magic Note="Harm spells die types increase to d10"',
+  'Healing Hands':'Section=magic Note="Heal spells die types increase to d10"',
   'Holy Castigation':
-    'Section=magic Note="May use <i>Heal</i> to damage fiends"',
+    'Section=magic Note="May use heal spells to damage fiends"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
     'Section=magic ' +
-    'Note="Casting <i>Heal</i> on another creature restores HP to self equal to spell level"',
+    'Note="Casting a heal spell on another creature restores HP to self equal to spell level"',
   'Emblazon Armament':
     'Section=magic ' +
-    'Note="10 min process gives target shield +1 Harness or weapon +1 HP damage"',
+    'Note="10 min process gives target shield +1 Hardness or weapon +1 HP damage"',
   'Sap Life':
     'Section=magic ' +
-    'Note="Casting <i>Harm</i> on another creature restores HP to self equal to spell level"',
+    'Note="Casting a harm spell on another creature restores HP to self equal to spell level"',
   'Turn Undead':
     'Section=magic ' +
-    'Note="Critical failure by undead damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
+    'Note="Critical failure by undead damaged by a heal spell inflicts fleeing for 1 rd"',
   'Versatile Font':
     'Section=magic ' +
-    'Note="May use font slot to prepare either <i>Harm</i> or <i>Heal</i>"',
+    'Note="May use font slot to prepare either a harm or a heal spell"',
   'Channel Smite':
     'Section=combat ' +
-    'Note="May use 2 actions to add <i>Heal</i> or <i>Harm</i> effects to a melee Strike"',
+    'Note="May use 2 actions to add the effects of a heal or harm spell to a melee Strike"',
   'Command Undead':
     'Section=magic ' +
-    'Note="<i>Harm</i> may control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hr)"',
+    'Note="May use a harm spell to control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hr)"',
   'Directed Channel':
-    'Section=magic Note="May cast <i>Harm</i> or <i>Heal</i> in a 60\' cone"',
+    'Section=magic Note="May cast an area harm or heal spell in a 60\' cone"',
   'Improved Communal Healing':
     'Section=magic ' +
     'Note="May give additional HP from Communal Healing to another"',
   'Necrotic Infusion':
     'Section=magic ' +
-    'Note="<i>Harm</i> cast on undead allows target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
+    'Note="Harm spells cast on an undead allow target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
   'Cast Down':
     'Section=magic ' +
-    'Note="May have <i>Harm</i> or <i>Heal</i> that inflicts damage also inflict knocked prone (target critical fail also slows for 1 min)"',
+    'Note="May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10\' Speed for 1 min)"',
   'Divine Weapon':
     'Section=magic ' +
     'Note="Casting a spell causes wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
@@ -3607,12 +3623,21 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting area harm or heal spell"',
   // Steady Spellcasting as above
-  'Advanced Domain':
+  'Advanced Domain (Chaotic)':
     'Section=magic ' +
-    'Note="Knows 1 advanced domain spell/+1 Focus Point"',
+    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
+  'Advanced Domain (Evil)':
+    'Section=magic ' +
+    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
+  'Advanced Domain (Good)':
+    'Section=magic ' +
+    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
+  'Advanced Domain (Lawful)':
+    'Section=magic ' +
+    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
   'Align Armament':
     'Section=combat ' +
-    'Note="May touch a weapon to have it inflict +1d6 HP alignment for 1 rd"',
+    'Note="May touch a weapon to have it inflict +1d6 HP alignment for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
   'Channeled Succor':
     'Section=magic ' +
     'Note="May cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared heal spell"',
@@ -3621,35 +3646,62 @@ Pathfinder2E.FEATURES = {
     'Note="Heal spell cast upon undead inflicts fire damage equal to spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="Emblazon Armanent upon a shield gives save bonus and allows Shield Block vs. selected energy type; having a matching domain spell also gives it +%{level//2} resistance; cast upon a weapon gives it +1d4 HP energy (+1d6 with matching domain spell)"',
+    'Note="May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type; having a matching domain spell also gives it +%{level//2} resistance; may use on a weapon gives it +1d4 HP chosen energy type (+1d6 with matching domain spell)"',
   'Castigating Weapon':
     'Section=magic ' +
     'Note="Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
   'Heroic Recovery':
     'Section=magic ' +
-    'Note="Successful single-target heal spell also gives +5\' Speed, +1 attack, and +1 HP damage for 1 rd"',
+    'Note="Single-target heal spell also gives +5\' Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
     'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hr"',
   'Replenishment Of War':
-    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary HP for 1 rd (critical hit %{level} temporary HP)"',
-  'Defensive Recovery':'Section=feature Note="FILL"',
-  'Domain Focus':'Section=feature Note="FILL"',
-  'Emblazon Antimagic':'Section=feature Note="FILL"',
-  'Shared Replenishment':'Section=feature Note="FILL"',
-  "Deity's Protection":'Section=feature Note="FILL"',
-  'Extend Armament Alignment':'Section=feature Note="FILL"',
-  'Fast Channel':'Section=feature Note="FILL"',
-  'Swift Banishment':'Section=feature Note="FILL"',
-  'Eternal Bane':'Section=feature Note="FILL"',
-  'Eternal Blessing':'Section=feature Note="FILL"',
-  'Resurrectionist':'Section=feature Note="FILL"',
-  'Domain Wellspring':'Section=feature Note="FILL"',
-  'Echoing Channel':'Section=feature Note="FILL"',
-  'Improved Swift Banishment':'Section=feature Note="FILL"',
-  "Avatar's Audience":'Section=feature Note="FILL"',
-  'Maker Of Miracles':'Section=feature Note="FILL"',
-  'Metamagic Channel':'Section=feature Note="FILL"',
+    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary HP for 1 rd (critical hit %{level} temporary HP) for 1 rd"',
+  'Defensive Recovery':
+    'Section=magic ' +
+    'Note="May use a heal spell to also give +2 AC and saves for 1 rd"',
+  'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+  'Emblazon Antimagic':
+    'Section=magic ' +
+    'Note="May use Emblazon Armament on a shield to allow Shield Block vs. spells or on a weapon to have a critical hit also counteract a spell using 1/2 the wielder\'s level"',
+  'Shared Replenishment':
+    'Section=combat ' +
+    'Note="May give temporary HP from Replenishment Of War to an ally"',
+  "Deity's Protection":
+    'Section=magic ' +
+    'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
+  'Extend Armament Alignment':
+    'Section=combat Note="Increased Align Armament effects"',
+  'Fast Channel':
+    'Section=magic ' +
+    'Note="May use 2 actions to cast a 3-action harm or heal spell"',
+  'Swift Banishment':
+    'Section=magic ' +
+    'Note="May use a Reaction to cast <i>Banishment</i> with a critical hit"',
+  'Eternal Bane':
+    'Section=magic ' +
+    'Note="R15\' Surrounded by continuous level %{level//2} <i>Bane</i> effects"',
+  'Eternal Blessing':
+    'Section=magic ' +
+    'Note="R15\' Surrounded by continuous level %{level//2} <i>Bless</i> effects"',
+  'Resurrectionist':
+    'Section=magic ' +
+    'Note="Restoring HP to a dying or dead target also gives fast healing 5 for 1 min"',
+  'Domain Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
+  'Echoing Channel':
+    'Section=magic ' +
+    'Note="May have a 2-action harm or heal spell also cause 1-action effects on an adjacent creature"',
+  'Improved Swift Banishment':
+    'Section=magic ' +
+    'Note="May sacrifice a 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
+  "Avatar's Audience":
+    'Section=magic ' +
+    'Note="May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/dy"',
+  'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
+  'Metamagic Channel':
+    'Section=magic ' +
+    'Note="May freely apply 1 metamagic action to harm and heal spells"',
 
   // Druid
   // Alertness as above
@@ -4830,7 +4882,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="May take ancestry feats from chosen ancestry"',
   'Ancestral Paragon':'Section=feature Note="FILL"',
   'Armor Proficiency':
-    'Section=feature ' +
+    'Section=combat ' +
     // TODO interacts w/other sources of Armor Trained
     'Note="Armor Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
   'Breath Control':
@@ -9962,14 +10014,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Shield Block', 'featureNotes.warpriest', '=', '1');
     rules.defineRule('magicNotes.cloisteredCleric',
-      'level', '?', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
+      'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
     rules.defineRule('magicNotes.deity',
       'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
     );
     rules.defineRule('focusPoints', 'magicNotes.domainInitiate', '+=', '1');
     rules.defineRule('magicNotes.warpriest',
-      'level', '?', 'source<19 ? "Expert" : "Master"'
+      'level', '=', 'source<19 ? "Expert" : "Master"'
     );
     rules.defineRule('rank.Divine',
       'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
@@ -9997,8 +10049,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
-    rules.defineRule
-      ('spellSlots.D10', 'magicNotes.miraculousSpell', '=', 'null'); // italics
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+      rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
+      rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
+      rules.defineRule('spellSlots.D' + l,
+        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? 1 : null',
+        'magicNotes.healingFont', '+', 'source==' + l + ' ? 1 : null'
+      );
+    });
+    rules.defineRule('spellSlots.D10',
+      'magicNotes.miraculousSpell', '=', 'null', // italics
+      'magicNotes.makerOfMiracles', '+', '1'
+    );
   } else if(name == 'Druid') {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
@@ -10248,9 +10310,20 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('rank.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
+  } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
+    rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Animal Accomplice') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
+  } else if(name == 'Armor Proficiency') {
+    rules.defineRule
+      ('rank.Light Armor', 'combatNotes.armorProficiency', '=', '1');
+    rules.defineRule('rank.Medium Armor',
+      'feats.Armor Proficiency', '=', 'source>=2 ? 1 : null'
+    );
+    rules.defineRule('rank.Heavy Armor',
+      'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
+    );
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
     rules.defineRule('rank.Bardic Lore',
@@ -10298,6 +10371,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Elf Atavism') {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
+    );
+  } else if(name == 'Extend Armament Alignment') {
+    rules.defineRule('combatNotes.alignArmament',
+      'combatNotes.extendArmamentAlignment', '=', 'null' // italics
     );
   } else if(name == 'Far Shot') {
     let allWeapons = rules.getChoices('weapons');

@@ -9,16 +9,17 @@ var attributes = {
   "_path":"ztest/pf2e/class/cleric 20", 
   "abilityBoosts.charisma":4, "abilityBoosts.constitution":4, "abilityBoosts.dexterity":4, 
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":4, "abilityBoosts.wisdom":4, 
-  "abilityGeneration":"All 10s", "alignment":"Neutral Good", "ancestry":"Human", "armor":"None", 
+  "abilityGeneration":"All 10s", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Leather", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":19500, "feats.Advanced Domain":1, "feats.Align Armament":1, 
+  "experience":19500, "feats.Advanced Domain (Chaotic)":1, "feats.Advanced Domain (Evil)":1, 
+  "feats.Advanced Domain (Good)":1, "feats.Advanced Domain (Lawful)":1, "feats.Align Armament":1, 
   "feats.Armor Proficiency":1, "feats.Assurance (Deception)":1, "feats.Assurance (Mercantile Lore)":1, 
   "feats.Avatar's Audience":1, "feats.Bargain Hunter":1, "feats.Breath Control":1, 
   "feats.Cantrip Expansion":1, "feats.Cast Down":1, "feats.Castigating Weapon":1, "feats.Channel Smite":1, 
   "feats.Channeled Succor":1, "feats.Clever Improviser":1, "feats.Command Undead":1, 
   "feats.Communal Healing":1, "feats.Cooperative Nature":1, "feats.Cremate Undead":1, 
   "feats.Deadly Simplicity":1, "feats.Defensive Recovery":1, "feats.Deity's Protection":1, 
-  "feats.Directed Channel":1, "feats.Divine Weapon":1, "feats.Domain Focus":1, "feats.Domain Initiate":1, 
+  "feats.Directed Channel":1, "feats.Divine Weapon":1, "feats.Domain Focus":1, 
   "feats.Domain Wellspring":1, "feats.Echoing Channel":1, "feats.Emblazon Antimagic":1, 
   "feats.Emblazon Armament":1, "feats.Emblazon Energy":1, "feats.Eternal Bane":1, 
   "feats.Eternal Blessing":1, "feats.Extend Armament Alignment":1, "feats.Fast Channel":1, 
@@ -29,21 +30,21 @@ var attributes = {
   "feats.Metamagic Channel":1, "feats.Natural Ambition":1, "feats.Necrotic Infusion":1, 
   "feats.Reach Spell":1, "feats.Replenishment Of War":1, "feats.Resurrectionist":1, 
   "feats.Sap Life":1, "feats.Selective Energy":1, "feats.Shared Replenishment":1, 
-  "feats.Shield Block":1, "feats.Skill Training (Absalom Lore)":1, 
-  "feats.Skill Training (Deception)":1, "feats.Skill Training (Milling Lore)":1, 
-  "feats.Skill Training (Performance)":1, "feats.Skill Training (River Lore)":1, "feats.Skill Training (Society)":1, 
+  "feats.Skill Training (Absalom Lore)":1, "feats.Skill Training (Deception)":1, 
+  "feats.Skill Training (Milling Lore)":1, "feats.Skill Training (Performance)":1, 
+  "feats.Skill Training (River Lore)":1, "feats.Skill Training (Society)":1, 
   "feats.Skill Training (Underworld Lore)":1, "feats.Steady Spellcasting":1, "feats.Swift Banishment":1, 
   "feats.Turn Undead":1, "feats.Versatile Font":1, "gender":"Male", "intelligence":10, 
   "languages.Aklo":1, "languages.Celestial":1, "languages.Draconic":1, "languages.Elven":1, 
   "languages.Shadowtongue":1, "levels.Cleric":20, "name":"Class-Cleric 20", 
-  "selectableFeatures.Cleric - Harmful Font":1, "selectableFeatures.Cleric - Healing Font":1, 
+  "selectableFeatures.Cleric - Cloistered Cleric":1, "selectableFeatures.Cleric - Harmful Font":1, 
+  "selectableFeatures.Cleric - Healing Font":1, "selectableFeatures.Cleric - Warpriest":1, 
   "selectableFeatures.Human - Half-Elf":1, "shield":"Wooden", "skillIncreases.Aberration Lore":1, 
   "skillIncreases.Abyss Lore":1, "skillIncreases.Deception":1, "skillIncreases.Diplomacy":1, 
   "skillIncreases.Fishing Lore":1, "skillIncreases.Genealogy Lore":1, "skillIncreases.Gnome Lore":1, 
   "skillIncreases.Halfling Lore":1, "skillIncreases.Heaven Lore":1, "skillIncreases.Iomedae Lore":1, 
   "skillIncreases.Mercantile Lore":1, "skillIncreases.Milling Lore":2, "skillIncreases.Scouting Lore":2, 
-  "strength":10, "weapons.Dagger":1, "weapons.Spiked Gauntlet":1, "weapons.Staff":1, 
-  "wisdom":10
+  "strength":10, "weapons.Dagger":1, "weapons.Glaive":1, "weapons.Staff":1, "wisdom":10
 };
   </script>
 </head>
@@ -96,14 +97,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 5; Class: 11; General: 5; Skill: 10</td>
-        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Cleric (Doctrine); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Advanced Domain; Align Armament; Armor Proficiency; Assurance (Deception); Assurance (Mercantile Lore); Avatar's Audience; Bargain Hunter; Breath Control; Cantrip Expansion; Cast Down; Castigating Weapon; Channel Smite; Channeled Succor; Clever Improviser; Command Undead; Communal Healing; Cooperative Nature; Cremate Undead; Deadly Simplicity; Defensive Recovery; Deity's Protection; Directed Channel; Divine Weapon; Domain Focus; Domain Initiate; Domain Wellspring; Echoing Channel; Emblazon Antimagic; Emblazon Armament; Emblazon Energy; Eternal Bane; Eternal Blessing; Extend Armament Alignment; Fast Channel; Fast Recovery; General Training; Harming Hands; Healing Hands; Heroic Recovery; Holy Castigation; Improved Command Undead; Improved Communal Healing; Improved Swift Banishment; Incredible Improvisation; Incredible Initiative; Maker Of Miracles; Metamagic Channel; Natural Ambition; Necrotic Infusion; Reach Spell; Replenishment Of War; Resurrectionist; Sap Life; Selective Energy; Shared Replenishment; Shield Block; Skill Training (Absalom Lore); Skill Training (Deception); Skill Training (Milling Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Society); Skill Training (Underworld Lore); Steady Spellcasting; Swift Banishment; Turn Undead; Versatile Font</td>
-        <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Armor Trained (Unarmored Defense); Class Trained (Cleric); Cleric Feats; Cleric Skills; Divine Defense; Divine Font; Divine Spellcasting; Doctrine; General Feats; Harmful Font; Healing Font; Lightning Reflexes; Miraculous Spell; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Weapon Specialization; Weapon Trained (Simple Weapons; Unarmed Attacks)</td>
+        <td><b>Feats</b>: Advanced Domain (Chaotic); Advanced Domain (Evil); Advanced Domain (Good); Advanced Domain (Lawful); Align Armament; Armor Proficiency; Assurance (Deception); Assurance (Mercantile Lore); Avatar's Audience; Bargain Hunter; Breath Control; Cantrip Expansion; Cast Down; Castigating Weapon; Channel Smite; Channeled Succor; Clever Improviser; Command Undead; Communal Healing; Cooperative Nature; Cremate Undead; Deadly Simplicity; Defensive Recovery; Deity's Protection; Directed Channel; Divine Weapon; Domain Focus; Domain Wellspring; Echoing Channel; Emblazon Antimagic; Emblazon Armament; Emblazon Energy; Eternal Bane; Eternal Blessing; Extend Armament Alignment; Fast Channel; Fast Recovery; General Training; Harming Hands; Healing Hands; Heroic Recovery; Holy Castigation; Improved Command Undead; Improved Communal Healing; Improved Swift Banishment; Incredible Improvisation; Incredible Initiative; Maker Of Miracles; Metamagic Channel; Natural Ambition; Necrotic Infusion; Reach Spell; Replenishment Of War; Resurrectionist; Sap Life; Selective Energy; Shared Replenishment; Skill Training (Absalom Lore); Skill Training (Deception); Skill Training (Milling Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Society); Skill Training (Underworld Lore); Steady Spellcasting; Swift Banishment; Turn Undead; Versatile Font</td>
+        <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Anathema; Armor Trained (Unarmored Defense); Class Trained (Cleric); Cleric Feats; Cleric Skills; Cloistered Cleric; Deity; Divine Defense; Divine Font; Divine Spellcasting; Doctrine; General Feats; Harmful Font; Healing Font; Lightning Reflexes; Miraculous Spell; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Divine); Warpriest; Weapon Specialization; Weapon Trained (Simple Weapons; Unarmed Attacks)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
       </tr></table>
@@ -113,13 +114,15 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Armor Proficiency: Armor Trained (Light Armor)</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Cleric Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Cloistered Cleric: Has Domain Initiate features</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Divine Font: 1 selection</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Doctrine: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>General Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
@@ -127,103 +130,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
-        <td>Advanced Domain: FILL</td>
+        <td><i>Warpriest: Has Shield Block features</i></td>
       </tr><tr style="text-align:center">
-        <td>Align Armament: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Avatar's Audience: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Cast Down: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Castigating Weapon: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Channel Smite: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Channeled Succor: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Command Undead: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Communal Healing: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Cremate Undead: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Deadly Simplicity: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Defensive Recovery: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Deity's Protection: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Directed Channel: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Divine Defense: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Divine Spellcasting: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Divine Weapon: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Doctrine: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Domain Focus: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Domain Initiate: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Domain Wellspring: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Echoing Channel: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Emblazon Antimagic: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Emblazon Armament: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Emblazon Energy: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Eternal Bane: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Eternal Blessing: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Extend Armament Alignment: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Fast Channel: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Harming Hands: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Healing Hands: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Heroic Recovery: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Holy Castigation: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Improved Command Undead: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Improved Communal Healing: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Improved Swift Banishment: FILL</td>
+        <td>Anathema: May not perform acts or cast spells prohibited by Shelyn</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
-      </tr><tr style="text-align:center">
-        <td>Maker Of Miracles: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Metamagic Channel: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Miraculous Spell: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Necrotic Infusion: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Replenishment Of War: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Resurrectionist: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Sap Life: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Selective Energy: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Shared Replenishment: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Swift Banishment: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Turn Undead: FILL</td>
-      </tr><tr style="text-align:center">
-        <td>Versatile Font: FILL</td>
       </tr></table>
 </td>
     </tr></table>
@@ -290,6 +201,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Cleric Skills: Skill Trained (Religion; Choose 6 from any)</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Deity: Skill Trained (Performance)</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +4 Language Count</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
@@ -333,34 +246,60 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 248</td>
-        <td><b>Armor Class</b>: 35 (dexterity; trained)</td>
+        <td><b>Armor Class</b>: 36 (dexterity (4 max); trained)</td>
         <td><b>Class DC</b>: Cleric: 52 (wisdom; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="Gear" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Armor</b>: None</td>
+        <td><b>Armor</b>: Leather</td>
         <td><b>Shield</b>: Wooden (+2 AC when raised; hardness 3; HP 12)</td>
-        <td><b>Weapons</b>: Dagger (+26 1d4+4 P/S R10'); Spiked Gauntlet (+26 1d4+4 P); Staff (+26 1d4+4 B [2h d8])</td>
+        <td><b>Weapons</b>: Dagger (+28 1d6+4 P/S R10'); Glaive (+26 1d10+4 S [Crit +d8]); Staff (+28 1d6+4 B [2h d8])</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
+        <td><i>Armor Proficiency: Armor Trained (Light Armor)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Cloistered Cleric: Weapon Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Deadly Simplicity: +1 damage die step on Glaive</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Deity: Weapon Trained (Glaive)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Divine Defense: Armor Expert (Unarmored Defense)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Extend Armament Alignment: Increased Align Armament effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Incredible Initiative: +2 Initiative</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Warpriest: Armor Expert (Light Armor; Medium Armor)/Weapon Trained (Martial Weapons)Weapon Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
+      </tr><tr style="text-align:center">
+        <td>Align Armament: May touch a weapon to have it inflict +1d6 HP alignment for 1 min</td>
+      </tr><tr style="text-align:center">
+        <td>Channel Smite: May use 2 actions to add the effects of a heal or harm spell to a melee Strike</td>
+      </tr><tr style="text-align:center">
+        <td>Cloistered Cleric: May use critical specialization effects of Glaive</td>
+      </tr><tr style="text-align:center">
         <td>Incredible Improvisation: May add +4 to an untrained skill check 1/dy</td>
       </tr><tr style="text-align:center">
+        <td>Replenishment Of War: Successful Strike with Glaive gives self 10 temporary HP for 1 rd (critical hit 20 temporary HP) for 1 rd</td>
+      </tr><tr style="text-align:center">
+        <td>Shared Replenishment: May give temporary HP from Replenishment Of War to an ally</td>
+      </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Warpriest: May use critical specialization effects of Glaive</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: +2/+3/+4 HP damage with expert/master/legendary weapon proficiency</td>
       </tr></table>
@@ -370,19 +309,25 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +26 (constitution; trained); Reflex: +28 (dexterity; expert); Will: +31 (wisdom; master)</td>
+      <td><b>Save</b>: Fortitude: +30 (constitution; master); Reflex: +28 (dexterity; expert); Will: +31 (wisdom; master)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
+        <td><i>Cloistered Cleric: Save Expert (Fortitude)</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Lightning Reflexes: Save Expert (Reflex)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Resolve: Save Master (Will)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Warpriest: Save Master (Fortitude)</i></td>
       </tr><tr style="text-align:center">
         <td>Breath Control: +1 vs. inhaled threats/Success vs. inhaled threat is always a critical success</td>
       </tr><tr style="text-align:center">
         <td>Fast Recovery: Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. ongoing disease or poison reduces stage by 2 (1 if virulent; 3 or 2 with critical success)</td>
       </tr><tr style="text-align:center">
         <td>Resolve: Successes on Will saves are critical successes</td>
+      </tr><tr style="text-align:center">
+        <td>Warpriest: Successes on Fortitude saves are critical successes</td>
       </tr></table>
 </td>
     </tr></table>
@@ -396,9 +341,10 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: D0: 5; D10: 1; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 3; D7: 3; D8: 3; D9: 3</td>
-        <td><b>Attack</b>: Divine: 5</td>
-        <td><b>Spell DC</b>: Divine: 13</td>
+        <td><b>Spell Slots</b>: D0: 5; D10: 2; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 3; D7: 3; D8: 3; D9: 5</td>
+        <td><b>Focus Points</b>: 5</td>
+        <td><b>Attack</b>: Divine: 33</td>
+        <td><b>Spell DC</b>: Divine: 41</td>
       </tr></table>
 </td>
     </tr></table>
@@ -406,11 +352,107 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Cantrip Expansion: Knows two additional cantrips</td>
+      <td><i>Advanced Domain (Chaotic): Knows 1 advanced domain spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Domain (Evil): Knows 1 advanced domain spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Domain (Good): Knows 1 advanced domain spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Domain (Lawful): Knows 1 advanced domain spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Cloistered Cleric: Spell Legendary (Divine)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Domain Initiate: Knows 1 domain spell/Has a Focus Pool with 1 Focus Point</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Harmful Font: +1 D9 slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Healing Font: +1 D9 slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Maker Of Miracles: +1 10th level spell slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Miraculous Spell: Has 1 10th-level spell slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Warpriest: Spell Master (Divine)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Avatar's Audience: May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/dy</td>
+    </tr><tr style="text-align:center">
+      <td>Cantrip Expansion: May prepare two additional cantrips each dy</td>
+    </tr><tr style="text-align:center">
+      <td>Cast Down: May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10' Speed for 1 min)</td>
+    </tr><tr style="text-align:center">
+      <td>Castigating Weapon: Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd</td>
+    </tr><tr style="text-align:center">
+      <td>Channeled Succor: May cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared heal spell</td>
+    </tr><tr style="text-align:center">
+      <td>Command Undead: May use a harm spell to control undead up to level 17 for 1 min (Will neg; critical failure extends to 1 hr)</td>
+    </tr><tr style="text-align:center">
+      <td>Communal Healing: Casting a heal spell on another creature restores HP to self equal to spell level</td>
+    </tr><tr style="text-align:center">
+      <td>Cremate Undead: Heal spell cast upon undead inflicts fire damage equal to spell level</td>
+    </tr><tr style="text-align:center">
+      <td>Defensive Recovery: May use a heal spell to also give +2 AC and saves for 1 rd</td>
+    </tr><tr style="text-align:center">
+      <td>Deity's Protection: Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd</td>
+    </tr><tr style="text-align:center">
+      <td>Deity: Has access to <i>Color Spray</i>, <i>Enthrall</i>, <i>Creation</i> spells</td>
+    </tr><tr style="text-align:center">
+      <td>Directed Channel: May cast an area harm or heal spell in a 60' cone</td>
+    </tr><tr style="text-align:center">
+      <td>Divine Spellcasting: May learn spells from the divine tradition</td>
+    </tr><tr style="text-align:center">
+      <td>Divine Weapon: Casting a spell causes wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn</td>
+    </tr><tr style="text-align:center">
+      <td>Domain Focus: Refocus restores 2 Focus Points</td>
+    </tr><tr style="text-align:center">
+      <td>Domain Wellspring: Refocus restores 3 Focus Points</td>
+    </tr><tr style="text-align:center">
+      <td>Echoing Channel: May have a 2-action harm or heal spell also cause 1-action effects on an adjacent creature</td>
+    </tr><tr style="text-align:center">
+      <td>Emblazon Antimagic: May use Emblazon Armament on a shield to allow Shield Block vs. spells or on a weapon to have a critical hit also counteract a spell using 1/2 the wielder's level</td>
+    </tr><tr style="text-align:center">
+      <td>Emblazon Armament: 10 min process gives target shield +1 Hardness or weapon +1 HP damage</td>
+    </tr><tr style="text-align:center">
+      <td>Emblazon Energy: May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type; having a matching domain spell also gives it +10 resistance; may use on a weapon gives it +1d4 HP chosen energy type (+1d6 with matching domain spell)</td>
+    </tr><tr style="text-align:center">
+      <td>Eternal Bane: R15' Surrounded by continuous level 10 <i>Bane</i> effects</td>
+    </tr><tr style="text-align:center">
+      <td>Eternal Blessing: R15' Surrounded by continuous level 10 <i>Bless</i> effects</td>
+    </tr><tr style="text-align:center">
+      <td>Fast Channel: May use 2 actions to cast a 3-action harm or heal spell</td>
+    </tr><tr style="text-align:center">
+      <td>Harming Hands: Harm spells die types increase to d10</td>
+    </tr><tr style="text-align:center">
+      <td>Healing Hands: Heal spells die types increase to d10</td>
+    </tr><tr style="text-align:center">
+      <td>Heroic Recovery: Single-target heal spell also gives +5' Speed, +1 attack, and +1 HP damage for 1 rd</td>
+    </tr><tr style="text-align:center">
+      <td>Holy Castigation: May use heal spells to damage fiends</td>
+    </tr><tr style="text-align:center">
+      <td>Improved Command Undead: Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hr</td>
+    </tr><tr style="text-align:center">
+      <td>Improved Communal Healing: May give additional HP from Communal Healing to another</td>
+    </tr><tr style="text-align:center">
+      <td>Improved Swift Banishment: May sacrifice a 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty</td>
+    </tr><tr style="text-align:center">
+      <td>Metamagic Channel: May freely apply 1 metamagic action to harm and heal spells</td>
+    </tr><tr style="text-align:center">
+      <td>Necrotic Infusion: Harm spells cast on an undead allow target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: May extend spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Steady Spellcasting: A successful DC flat check negates self spellcasting disruption</td>
+      <td>Resurrectionist: Restoring HP to a dying or dead target also gives fast healing 5 for 1 min</td>
+    </tr><tr style="text-align:center">
+      <td>Sap Life: Casting a harm spell on another creature restores HP to self equal to spell level</td>
+    </tr><tr style="text-align:center">
+      <td>Selective Energy: May choose 4 creatures to be unaffected when casting area harm or heal spell</td>
+    </tr><tr style="text-align:center">
+      <td>Steady Spellcasting: A successful DC 15 flat check negates self spellcasting disruption</td>
+    </tr><tr style="text-align:center">
+      <td>Swift Banishment: May use a Reaction to cast <i>Banishment</i> with a critical hit</td>
+    </tr><tr style="text-align:center">
+      <td>Turn Undead: Critical failure by undead damaged by a heal spell inflicts fleeing for 1 rd</td>
+    </tr><tr style="text-align:center">
+      <td>Versatile Font: May use font slot to prepare either a harm or a heal spell</td>
     </tr></table>
 </td>
   </tr></table>
@@ -422,13 +464,21 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Align Armament Feat: Requires level (currently 20) >= 8 and deity alignment (currently NG) matches 'Chaotic|Evil|Good|Lawful'</td>
+        <td>Advanced Domain (Chaotic) Feat: Requires level (currently 20) >= 8, domain initiate feature (currently 1) and deity alignment (currently NG) matches 'C'</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 11 available vs. 47 allocated</td>
+        <td>Advanced Domain (Evil) Feat: Requires level (currently 20) >= 8, domain initiate feature (currently 1) and deity alignment (currently NG) matches 'E'</td>
+      </tr><tr style="text-align:center">
+        <td>Advanced Domain (Lawful) Feat: Requires level (currently 20) >= 8, domain initiate feature (currently 1) and deity alignment (currently NG) matches 'L'</td>
+      </tr><tr style="text-align:center">
+        <td>Class Feats Allocation: 11 available vs. 49 allocated</td>
       </tr><tr style="text-align:center">
         <td>Command Undead Feat: Requires level (currently 20) >= 4, harmful font feature (currently 1) and alignment (currently Neutral Good) matches 'Evil'</td>
       </tr><tr style="text-align:center">
+        <td>Deadly Simplicity Feat: Requires deity weapon category (currently Martial) matches 'Simple|Unarmed'</td>
+      </tr><tr style="text-align:center">
         <td>Eternal Bane Feat: Requires level (currently 20) >= 16 and alignment (currently Neutral Good) matches 'Evil'</td>
+      </tr><tr style="text-align:center">
+        <td>General Feats Allocation: 5 available vs. 4 allocated</td>
       </tr><tr style="text-align:center">
         <td>Improved Command Undead Feat: Requires level (currently 20) >= 10, harmful font feature (currently 1), command undead feature (currently 1) and alignment (currently Neutral Good) matches 'Evil'</td>
       </tr><tr style="text-align:center">
