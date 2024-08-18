@@ -30,7 +30,12 @@ var attributes = {
   "feats.Skill Training (Scouting Lore)":1, "feats.Steady Spellcasting":1, "feats.Toughness":1, 
   "feats.Untrained Improvisation":1, "feats.Widen Spell":1, "gender":"Male", "intelligence":10, 
   "languages.Gnoll":1, "languages.Infernal":1, "languages.Jotun":1, "languages.Necril":1, 
-  "languages.Orcish":1, "levels.Sorcerer":20, "name":"Class-Sorcerer 20", "shield":"Wooden", 
+  "languages.Orcish":1, "levels.Sorcerer":20, "name":"Class-Sorcerer 20", 
+  "selectableFeatures.Sorcerer - Aberrant":1, "selectableFeatures.Sorcerer - Angelic":1, 
+  "selectableFeatures.Sorcerer - Demonic":1, "selectableFeatures.Sorcerer - Diabolic":1, 
+  "selectableFeatures.Sorcerer - Draconic":1, "selectableFeatures.Sorcerer - Elemental":1, 
+  "selectableFeatures.Sorcerer - Fey":1, "selectableFeatures.Sorcerer - Hag":1, 
+  "selectableFeatures.Sorcerer - Imperial":1, "selectableFeatures.Sorcerer - Undead":1, "shield":"Wooden", 
   "skillIncreases.Academia Lore":1, "skillIncreases.Arcana":1, "skillIncreases.Astral Plane Lore":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, "skillIncreases.Demon Lore":1, 
   "skillIncreases.Elven Lore":1, "skillIncreases.Forest Lore":1, "skillIncreases.Gladitorial Lore":2, 
@@ -96,7 +101,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adaptive Adept; Advanced Bloodline; Arcane Evolution; Armor Proficiency; Assurance (Demon Lore); Assurance (Performance); Bespell Weapon; Bloodline Conduit; Bloodline Focus; Bloodline Perfection; Bloodline Resistance; Bloodline Wellspring; Canny Acumen (Will); Cantrip Expansion; Clever Improviser; Cooperative Nature; Counterspell; Crossblooded Evolution; Dangerous Sorcery; Divine Evolution; Effortless Concentration; Enhanced Familiar; Familiar; Fast Recovery; Greater Bloodline; Greater Crossblooded Evolution; Greater Mental Evolution; Greater Vital Evolution; Interweave Spell; Magic Sense; Metamagic Mastery; Natural Ambition; Natural Skill; Occult Evolution; Overwhelming Energy; Primal Evolution; Quickened Casting; Reach Spell; Reflect Spell; Skill Training (Abyss Lore); Skill Training (Acrobatics); Skill Training (Astral Plane Lore); Skill Training (Crafting); Skill Training (Mining Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Scouting Lore); Steady Spellcasting; Toughness; Untrained Improvisation; Widen Spell</td>
-        <td><b>Sorcerer Features</b>: Ability Boost (Charisma); Ability Boosts; Alertness; Armor Trained (Unarmored Defense); Bloodline Paragon; Bloodline; Class Trained (Sorcerer); Defensive Robes; Expert Spellcaster; General Feats; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Spell Repertoire; Weapon Expertise; Weapon Specialization; Weapon Trained (Simple Weapons; Unarmed Attacks)</td>
+        <td><b>Sorcerer Features</b>: Aberrant; Ability Boost (Charisma); Ability Boosts; Alertness; Angelic; Armor Trained (Unarmored Defense); Blood Magic (Aberrant); Blood Magic (Angelic); Blood Magic (Demonic); Blood Magic (Diabolic); Blood Magic (Draconic); Blood Magic (Elemental); Blood Magic (Fey); Blood Magic (Hag); Blood Magic (Imperial); Blood Magic (Undead); Bloodline Paragon; Bloodline Skills (Aberrant); Bloodline Skills (Angelic); Bloodline Skills (Demonic); Bloodline Skills (Diabolic); Bloodline Skills (Draconic); Bloodline Skills (Elemental); Bloodline Skills (Fey); Bloodline Skills (Hag); Bloodline Skills (Imperial); Bloodline Skills (Undead); Bloodline Spells (Aberrant); Bloodline Spells (Angelic); Bloodline Spells (Demonic); Bloodline Spells (Diabolic); Bloodline Spells (Draconic); Bloodline Spells (Elemental); Bloodline Spells (Fey); Bloodline Spells (Hag); Bloodline Spells (Imperial); Bloodline Spells (Undead); Bloodline; Defensive Robes; Demonic; Diabolic; Draconic; Elemental; Expert Spellcaster; Fey; General Feats; Hag; Imperial; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Spell Repertoire; Undead; Weapon Expertise; Weapon Specialization; Weapon Trained (Simple Weapons; Unarmed Attacks)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats</td>
       </tr></table>
@@ -170,8 +175,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Reflect Spell: FILL</td>
       </tr><tr style="text-align:center">
-        <td>Sorcerer Spellcasting: FILL</td>
-      </tr><tr style="text-align:center">
         <td>Spell Repertoire: FILL</td>
       </tr><tr style="text-align:center">
         <td>Widen Spell: FILL</td>
@@ -189,7 +192,7 @@ var attributes = {
     <tr style="text-align:left">
       <td>Abyss Lore: +26 (intelligence; trained)</td>
       <td>Elven Lore: +26 (intelligence; trained)</td>
-      <td>Occultism: +4 (intelligence; untrained)</td>
+      <td>Occultism: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Academia Lore: +26 (intelligence; trained)</td>
       <td>Forest Lore: +26 (intelligence; trained)</td>
@@ -212,14 +215,14 @@ var attributes = {
       <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Baking Lore: +26 (intelligence; trained)</td>
-      <td>Intimidation: +5 (charisma; untrained)</td>
-      <td>Society: +4 (intelligence; untrained)</td>
+      <td>Intimidation: +27 (charisma; trained)</td>
+      <td>Society: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +26 (intelligence; trained)</td>
       <td>Legal Lore: +26 (intelligence; trained)</td>
       <td>Stealth: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +5 (charisma; untrained)</td>
+      <td>Deception: +27 (charisma; trained)</td>
       <td>Medicine: +4 (wisdom; untrained)</td>
       <td>Survival: +26 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
@@ -227,8 +230,8 @@ var attributes = {
       <td>Mining Lore: +26 (intelligence; trained)</td>
       <td>Thievery: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +5 (charisma; untrained)</td>
-      <td>Nature: +4 (wisdom; untrained)</td>
+      <td>Diplomacy: +27 (charisma; trained)</td>
+      <td>Nature: +26 (wisdom; trained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -238,6 +241,26 @@ var attributes = {
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Alertness: Perception Expert</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Aberrant): Skill Trained (Intimidation; Occultism)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Angelic): Skill Trained (Diplomacy; Religion)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Demonic): Skill Trained (Intimidation; Religion)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Diabolic): Skill Trained (Deception; Religion)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Draconic): Skill Trained (Arcana; Intimidation)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Elemental): Skill Trained (Intimidation; Nature)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Fey): Skill Trained (Deception; Nature)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Hag): Skill Trained (Deception; Occultism)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Imperial): Skill Trained (Arcana; Society)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bloodline Skills (Undead): Skill Trained (Intimidation; Religion)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +4 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -287,7 +310,6 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 228</td>
         <td><b>Armor Class</b>: 35 (dexterity; trained)</td>
-        <td><b>Class DC</b>: Sorcerer: 52 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -350,10 +372,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: S0: 5; S10: 1; S1: 4; S2: 4; S3: 4; S4: 4; S5: 4; S6: 4; S7: 4; S8: 4; S9: 4</td>
+        <td><b>Spell Slots</b>: A0: 10; A10: 2; A1: 8; A2: 8; A3: 8; A4: 8; A5: 8; A6: 8; A7: 8; A8: 8; A9: 8; D0: 20; D10: 4; D1: 16; D2: 16; D3: 16; D4: 16; D5: 16; D6: 16; D7: 16; D8: 16; D9: 16; O0: 10; O10: 2; O1: 8; O2: 8; O3: 8; O4: 8; O5: 8; O6: 8; O7: 8; O8: 8; O9: 8; P0: 10; P10: 2; P1: 8; P2: 8; P3: 8; P4: 8; P5: 8; P6: 8; P7: 8; P8: 8; P9: 8</td>
         <td><b>Focus Points</b>: 1</td>
-        <td><b>Attack</b>: S: 5</td>
-        <td><b>Spell DC</b>: S: 13</td>
       </tr></table>
 </td>
     </tr></table>
@@ -371,15 +391,37 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Adaptive Adept: Knows a cantrip or level 1 spell from a different tradition</td>
     </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Aberrant): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Angelic): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Demonic): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Diabolic): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Draconic): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Elemental): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Fey): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Hag): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Imperial): FILL</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells (Undead): FILL</td>
+    </tr><tr style="text-align:center">
       <td>Cantrip Expansion: May prepare two additional cantrips each dy</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: May freely extend the duration of 1 spell</td>
     </tr><tr style="text-align:center">
-      <td>Quickened Casting: Reduces the time required to cast a spell of level 0 or lower by 1 action</td>
+      <td>Quickened Casting: Reduces the time required to cast a spell of level 8 or lower by 1 action</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: May extend spell range by 30'</td>
     </tr><tr style="text-align:center">
       <td>Signature Spells: May freely heighten a chosen spell of each level</td>
+    </tr><tr style="text-align:center">
+      <td>Sorcerer Spellcasting: May learn spells from the tradition connected to bloodline</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: A successful DC 15 flat check negates self spellcasting disruption</td>
     </tr></table>
