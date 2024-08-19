@@ -661,11 +661,11 @@ Pathfinder2E.CLASSES = {
       '"1:Sorcerer Skills",' +
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored Defense)",' +
-      '"1:Bloodline","1:Sorcerer Spellcasting","1:Spell Repertoire",' +
-      '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
-      '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
-      '"7:Expert Spellcaster","9:Lightning Reflexes","11:Alertness",' +
-      '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
+      '"1:Bloodline","1:Sorcerer Spellcasting","2:Skill Feats",' +
+      '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
+      '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
+      '"9:Lightning Reflexes","11:Alertness","11:Weapon Expertise",' +
+      '"13:Defensive Robes","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster",' +
       '"features.Aberrant ? 1:Bloodline Skills (Aberrant)",' +
@@ -1908,14 +1908,18 @@ Pathfinder2E.FEATS = {
   // Cantrip Expansion as above
   // Enhanced Familiar as above
   'Arcane Evolution':
-    'Type=Class,Sorcerer Require="level >= 4","features.Arcane Spells"',
+    'Type=Class,Sorcerer ' +
+    'Require="level >= 4","bloodlineTradition == \'Arcane\'"',
   'Bespell Weapon':'Type=Class,Sorcerer,Wizard Require="level >= 4"',
   'Divine Evolution':
-    'Type=Class,Sorcerer Require="level >= 4","features.Divine Spells"',
+    'Type=Class,Sorcerer ' +
+    'Require="level >= 4","bloodlineTradition == \'Divine\'"',
   'Occult Evolution':
-    'Type=Class,Sorcerer Require="level >= 4","features.Occult Spells"',
+    'Type=Class,Sorcerer ' +
+     'Require="level >= 4","bloodlineTradition == \'Occult\'"',
   'Primal Evolution':
-    'Type=Class,Sorcerer Require="level >= 4","features.Primal Spells"',
+    'Type=Class,Sorcerer ' +
+    'Require="level >= 4","bloodlineTradition == \'Primal\'"',
   'Advanced Bloodline':
     'Type=Class,Sorcerer Require="level >= 6","features.Bloodline Spells"',
   // Steady Spellcasting as above
@@ -3168,7 +3172,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Save Legendary (Will)",' +
       '"Critical faiures on Will saves are normal failures/Takes half damage on failed Will saves"',
-  'Legendary Spellcaster':'Section=magic Note="Spell Legendary (Occult)"',
+  'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Armor Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
@@ -3643,7 +3647,7 @@ Pathfinder2E.FEATURES = {
     'Note="May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10\' Speed for 1 min)"',
   'Divine Weapon':
     'Section=magic ' +
-    'Note="Casting a spell causes wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
+    'Note="Casting a spell causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
   'Selective Energy':
     'Section=magic ' +
     'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting area harm or heal spell"',
@@ -3757,10 +3761,13 @@ Pathfinder2E.FEATURES = {
   'Leshy Familiar':'Section=feature Note="FILL"',
   // Reach Spell as above
   'Storm Born':'Section=feature Note="FILL"',
-  'Widen Spell':'Section=feature Note="FILL"',
+  'Widen Spell':
+    'Section=magic ' +
+    'Note="May increase the effect of 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or a longer line or cone spell by 10\'"',
   'Wild Shape':'Section=feature Note="FILL"',
   'Call Of The Wild':'Section=feature Note="FILL"',
-  'Enhanced Familiar':'Section=feature Note="FILL"',
+  'Enhanced Familiar':
+    'Section=feature Note="May select 4 familiar or master abilities each dy"',
   'Order Explorer':'Section=feature Note="FILL"',
   // Poison Resistance as above
   'Form Control':'Section=feature Note="FILL"',
@@ -3782,7 +3789,9 @@ Pathfinder2E.FEATURES = {
   'Wind Caller':'Section=feature Note="FILL"',
   'Elemental Shape':'Section=feature Note="FILL"',
   'Healing Transformation':'Section=feature Note="FILL"',
-  'Overwhelming Energy':'Section=feature Note="FILL"',
+  'Overwhelming Energy':
+    'Section=magic ' +
+    'Note="May have spells ignore resistance %{level} to choice of energy"',
   'Plant Shape':'Section=feature Note="FILL"',
   'Side By Side':
     'Section=combat ' +
@@ -4702,108 +4711,150 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Bloodline Skills (Aberrant)':
     'Section=skill Note="Skill Trained (Intimidation; Occultism)"',
-  'Bloodline Spells (Aberrant)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Aberrant)':
+    'Section=magic Note="Knows <i>Tentacular Limbs</i> spell"',
   'Bloodline Magic (Aberrant)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target +2 Will save for 1 rd"',
   'Bloodline Skills (Angelic)':'Section=skill Note="Skill Trained (Diplomacy; Religion)"',
-  'Bloodline Spells (Angelic)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Angelic)':
+    'Section=magic Note="Knows <i>Angelic Halo</i> spell"',
   'Bloodline Magic (Angelic)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target +1 saves for 1 rd"',
   'Bloodline Skills (Demonic)':
     'Section=skill Note="Skill Trained (Intimidation; Religion)"',
-  'Bloodline Spells (Demonic)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Demonic)':
+    'Section=magic Note="Knows <i>Glutton\'s Jaws</i> spell"',
   'Bloodline Magic (Demonic)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd"',
   'Bloodline Skills (Diabolic)':'Section=skill Note="Skill Trained (Deception; Religion)"',
-  'Bloodline Spells (Diabolic)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Diabolic)':
+    'Section=magic Note="Knows <i>Diabolic Edict</i> spell"',
   'Bloodline Magic (Diabolic)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts +1 HP fire per spell level on target for 1 rd"',
   'Bloodline Skills (Draconic)':'Section=skill Note="Skill Trained (Arcana; Intimidation)"',
-  'Bloodline Spells (Draconic)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Draconic)':
+    'Section=magic Note="KNows <i>Dragon Claws</i> spell"',
   'Bloodline Magic (Draconic)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target +1 AC for 1 rd"',
   'Bloodline Skills (Elemental)':
     'Section=skill Note="Skill Trained (Intimidation; Nature)"',
-  'Bloodline Spells (Elemental)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Elemental)':
+    'Section=magic Note="Knows <i>Elemental Toss</i> spell"',
   'Bloodline Magic (Elemental)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts +1 HP bludgeoning or fire per spell level on target for 1 rd"',
   'Bloodline Skills (Fey)':'Section=skill Note="Skill Trained (Deception; Nature)"',
-  'Bloodline Spells (Fey)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Fey)':
+    'Section=magic Note="Knows <i>Faerie Dust</i> spell"',
   'Bloodline Magic (Fey)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target concealment for 1 rd"',
   'Bloodline Skills (Hag)':'Section=skill Note="Skill Trained (Deception; Occultism)"',
-  'Bloodline Spells (Hag)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Hag)':
+    'Section=magic Note="Knows <i>Jealous Hex</i> spell"',
   'Bloodline Magic (Hag)':
     'Section=magic ' +
     'Note="Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd"',
   'Bloodline Skills (Imperial)':'Section=skill Note="Skill Trained (Arcana; Society)"',
-  'Bloodline Spells (Imperial)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Imperial)':
+    'Section=magic Note="Knows <i>Ancestral Memories</i> spell"',
   'Bloodline Magic (Imperial)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target +1 skill checks for 1 rd"',
   'Bloodline Skills (Undead)':'Section=skill Note="Skill Trained (Intimidation; Religion)"',
-  'Bloodline Spells (Undead)':'Section=magic Note="FILL"',
+  'Bloodline Spells (Undead)':
+    'Section=magic Note="Knows <i>Undeath\'s Blessing</i> spell"',
   'Bloodline Magic (Undead)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd"',
-  'Bloodline Paragon':'Section=feature Note="FILL"',
   'Bloodline':
     'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
-  'Defensive Robes':'Section=feature Note="FILL"',
+  'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
+  'Defensive Robes':'Section=combat Note="Armor Expert (Unarmored Defense)"',
   // Expert Spellcaster as above
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
-  'Magical Fortitude':'Section=feature Note="FILL"',
+  'Magical Fortitude':'Section=save Note="Save Expert (Fortitude)"',
   // Master Spellcaster as above
   // Resolve as above
   // Signature Spells as above
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic ' +
-    'Note="May learn spells from the tradition connected to bloodline"',
-  'Spell Repertoire':'Section=feature Note="FILL"',
+    'Section=magic Note="May learn spells from the %V tradition"',
   // Weapon Expertise as above
   // Weapon Specialization as above
 
-  'Counterspell':'Section=feature Note="FILL"',
-  'Dangerous Sorcery':'Section=feature Note="FILL"',
-  'Familiar':'Section=feature Note="FILL"',
+  'Counterspell':
+    'Section=magic Note="May expend a spell slot to counteract a known spell"',
+  'Dangerous Sorcery':
+    'Section=magic ' +
+    'Note="Instantaneous spells inflict additional damage equal to their levels"',
+  'Familiar':'Section=feature Note="May have a familiar"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
   // Enhanced Familiar as above
-  'Arcane Evolution':'Section=feature Note="FILL"',
-  'Bespell Weapon':'Section=feature Note="FILL"',
-  'Divine Evolution':'Section=feature Note="FILL"',
-  'Occult Evolution':'Section=feature Note="FILL"',
-  'Primal Evolution':'Section=feature Note="FILL"',
-  'Advanced Bloodline':'Section=feature Note="FILL"',
+  'Arcane Evolution':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"May learn 1 additional spell from spellbook each dy, treating it as a signature spell if it is in repertoire",' +
+      '"Skill Trained (Choose 1 from any)"',
+  'Bespell Weapon':
+    'Section=magic ' +
+    'Note="Casting a spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school"',
+  'Divine Evolution':
+    'Section=magic Note="+1 D%V slot for a heal or harm spell"',
+  'Occult Evolution':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"May learn 1 unknown mental spell each dy",' +
+      '"Skill Trained (Choose 1 from any)"',
+  'Primal Evolution':
+    'Section=magic ' +
+    'Note="+1 P%V slot for a <i>Summon Animal</i> or a <i>Summon Plant Or Fungus</i> spell"',
+  'Advanced Bloodline':
+    // TODO automate
+    'Section=magic Note="Knows advanced bloodline spell/+1 Focus Points"',
   // Steady Spellcasting as above
-  'Bloodline Resistance':'Section=feature Note="FILL"',
-  'Crossblooded Evolution':'Section=feature Note="FILL"',
-  'Greater Bloodline':'Section=feature Note="FILL"',
+  'Bloodline Resistance':
+    'Section=save Note="+1 vs. spells and magical effects"',
+  'Crossblooded Evolution':
+    'Section=magic Note="May know 1 spell from a different tradition"',
+  'Greater Bloodline':
+    // TODO automate
+    'Section=magic Note="Knows greater bloodline spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Bloodline Focus':'Section=feature Note="FILL"',
-  'Magic Sense':'Section=feature Note="FILL"',
-  'Interweave Spell':'Section=feature Note="FILL"',
-  'Reflect Spell':'Section=feature Note="FILL"',
+  'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+  'Magic Sense':
+    'Section=magic Note="Has continuous <i>Detect Magic</i> effects"',
+  'Interweave Spell':
+    'Section=magic ' +
+    'Note="May expend a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
+  'Reflect Spell':
+    'Section=magic ' +
+    'Note="May have a successful Counterspell on a targeted spell inflict the spell effects on the caster"',
   // Effortless Concentration as above
-  'Greater Mental Evolution':'Section=feature Note="FILL"',
-  'Greater Vital Evolution':'Section=feature Note="FILL"',
-  'Bloodline Wellspring':'Section=feature Note="FILL"',
-  'Greater Crossblooded Evolution':'Section=feature Note="FILL"',
-  'Bloodline Conduit':'Section=feature Note="FILL"',
-  'Bloodline Perfection':'Section=feature Note="FILL"',
-  'Metamagic Mastery':'Section=feature Note="FILL"',
+  'Greater Mental Evolution':'Section=magic Note="+1 spell slot of each level"',
+  'Greater Vital Evolution':
+    'Section=feature ' +
+    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted 1/dy"',
+  'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
+  'Greater Crossblooded Evolution':
+    'Section=magic ' +
+    'Note="May know 3 spells of different levels from a different tradition"',
+  'Bloodline Conduit':
+    'Section=magic ' +
+    'Note="May cast spells of 5th level and lower without expending a spell slot"',
+  'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
+  'Metamagic Mastery':
+    'Section=magic Note="May freely use 1-action metamatic actions"',
 
   // Wizard
   // Alertness as above
@@ -9048,7 +9099,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
-    (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'CasterLevelArcane', 'CasterLevelDivine', 'SpellSlots']);
+    (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
 
   for(let a in alignments)
@@ -9229,8 +9280,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
-      QuilvynUtils.getAttrValue(attrs, 'CasterLevelArcane'),
-      QuilvynUtils.getAttrValue(attrs, 'CasterLevelDivine'),
       QuilvynUtils.getAttrValueArray(attrs, 'SpellSlots')
     );
     Pathfinder2E.classRulesExtra(rules, name);
@@ -9639,22 +9688,17 @@ Pathfinder2E.backgroundRules = function(rules, name, features) {
 
 /*
  * Defines in #rules# the rules associated with class #name#, which has the list
- * of hard prerequisites #requires#. The class grants #hitDie# (format [n]'d'n)
- * additional hit points with each level advance. #features# and #selectables#
- * list the fixed and selectable features acquired as the character advances in
- * class level, and #languages# lists any automatic languages for the class.
- * #casterLevelArcane# and #casterLevelDivine#, if specified, give the
- * Javascript expression for determining the caster level for the class; these
- * can incorporate a class level attribute (e.g., 'levels.Cleric') or the
- * character level attribute 'level'. #spellAbility#, if specified, names the
- * ability for computing spell difficulty class. #spellSlots# lists the
- * number of spells per level per day that the class can cast, and #spells#
- * lists spells defined by the class. #spellDict# is the dictionary of all
- * spells used to look up individual spell attributes.
+ * of hard prerequisites #requires#. The class grants #hitPoints# additional
+ * hit points with each level advance. #features# and #selectables# list the
+ * fixed and selectable features acquired as the character advances in class
+ * level, and #languages# lists any automatic languages for the class.
+ * #spellSlots# lists the number of spells per level per day that the class can
+ * cast, and #spells# lists spells defined by the class. #spellDict# is the
+ * dictionary of all spells used to look up individual spell attributes.
  */
 Pathfinder2E.classRules = function(
   rules, name, requires, abilities, hitPoints, features, selectables,
-  languages, casterLevelArcane, casterLevelDivine, spellSlots
+  languages, spellSlots
 ) {
 
   if(!name) {
@@ -9716,21 +9760,7 @@ Pathfinder2E.classRules = function(
   );
 
   if(spellSlots.length > 0) {
-    let casterLevelExpr = casterLevelArcane || casterLevelDivine || classLevel;
-    if(casterLevelExpr.match(new RegExp('\\b' + classLevel + '\\b', 'i'))) {
-      rules.defineRule('casterLevels.' + name,
-        classLevel, '=', casterLevelExpr.replace(new RegExp('\\b' + classLevel + '\\b', 'gi'), 'source')
-      );
-    } else {
-      rules.defineRule('casterLevels.' + name,
-        classLevel, '?', null,
-        'level', '=', casterLevelExpr.replace(new RegExp('\\blevel\\b', 'gi'), 'source')
-      );
-    }
-    if(casterLevelArcane)
-      rules.defineRule('casterLevelArcane', 'casterLevels.' + name, '+=', null);
-    if(casterLevelDivine)
-      rules.defineRule('casterLevelDivine', 'casterLevels.' + name, '+=', null);
+    rules.defineRule('casterLevels.' + name, classLevel, '=', null);
     QuilvynRules.spellSlotRules(rules, 'casterLevels.' + name, spellSlots);
     for(let j = 0; j < spellSlots.length; j++) {
       let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
@@ -9965,6 +9995,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.polymathMuse', '=', '1'
     );
     rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
+    rules.defineRule('magicNotes.legendarySpellcaster',
+      'bardFeatures.legendarySpellcaster', '=', '"Occult"'
+    );
+    rules.defineRule
+      ('rank.Occult', 'bardFeatures.legendarySpellcaster', '^', '4');
     rules.defineRule
       ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
     rules.defineRule
@@ -10274,18 +10309,57 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     ];
     for(let b in bloodlineTraditions) {
       let level = b.toLowerCase() + 'Level';
+      let trad = bloodlineTraditions[b];
       rules.defineRule(level,
         'features.' + b, '?', null,
-        'level', '=', null
+        'levels.Sorcerer', '=', null
       );
-      QuilvynRules.spellSlotRules(rules, level, spellSlots.map(x => x.replace(/./, bloodlineTraditions[b].charAt(0))));
+      rules.defineRule('casterLevels.' + trad, level, '=', null);
+      rules.defineRule
+        ('magicNotes.legendarySpellcaster', 'bloodlineTradition', '=', null);
+      rules.defineRule('magicNotes.sorcererSpellcasting',
+        'bloodlineTradition', '=', 'source.toLowerCase()'
+      );
+      rules.defineRule('rank.' + trad,
+        'magicNotes.legendarySpellcaster', '=', 'source=="' + trad + '" ? 4 : null'
+      );
+      rules.defineRule('bloodlineTradition', level, '=', '"' + trad + '"');
+      Pathfinder2E.featureRules
+        (rules, b, ['magic'], ['Spell Trained (' + trad + ')']);
+      QuilvynRules.spellSlotRules(rules, level, spellSlots.map(x => x.replace(/./, trad.charAt(0))));
     }
     rules.defineRule
       ('features.Bloodline Spells', 'features.Bloodline', '=', '1');
     rules.defineRule('features.Focus Pool', 'magicNotes.bloodline', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
     rules.defineRule
+      ('spellSlots.O10', 'magicNotes.bloodlineParagon', '+', 'null'); // italics
+    rules.defineRule
       ('skillNotes.sorcererSkills', 'intelligenceModifier', '=', '2 + source');
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+      rules.defineRule
+        ('magicNotes.divineEvolution', 'spellSlots.D' + l, '^=', l);
+      rules.defineRule('spellSlots.D' + l,
+        'magicNotes.divineEvolution', '+', 'source==' + l + ' ? 1 : null'
+      );
+      rules.defineRule
+        ('magicNotes.primalEvolution', 'spellSlots.P' + l, '^=', l);
+      rules.defineRule
+        ('spellSlots.A' + l, 'magicNotes.greaterMentalEvolution', '+', '1');
+      rules.defineRule
+        ('spellSlots.O' + l, 'magicNotes.greaterMentalEvolution', '+', '1');
+      rules.defineRule('spellSlots.P' + l,
+        'magicNotes.primalEvolution', '+', 'source==' + l + ' ? 1 : null'
+      );
+    });
+    rules.defineRule
+      ('spellSlots.A10', 'magicNotes.bloodlinePerfection', '+', '1');
+    rules.defineRule
+      ('spellSlots.D10', 'magicNotes.bloodlinePerfection', '+', '1');
+    rules.defineRule
+      ('spellSlots.O10', 'magicNotes.bloodlinePerfection', '+', '1');
+    rules.defineRule
+      ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.arcaneSchool', '=', '1');
@@ -11325,8 +11399,6 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Features', 'Features', 'text', [40]],
       ['Selectables', 'Selectable Features', 'text', [40]],
       ['Languages', 'Languages', 'text', [30]],
-      ['CasterLevelArcane', 'Arcane Level', 'text', [10]],
-      ['CasterLevelDivine', 'Divine Level', 'text', [10]],
       ['SpellAbility', 'Spell Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
       ['SpellSlots', 'Spells Slots', 'text', [40]],
       ['Spells', 'Spells', 'text', [40]]
