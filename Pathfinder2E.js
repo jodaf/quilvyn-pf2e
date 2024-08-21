@@ -2280,7 +2280,9 @@ Pathfinder2E.FEATS = {
   'Ride':'Type=General',
   'Shield Block':'Type=General',
   'Toughness':'Type=General',
-  'Weapon Proficiency':'Type=General',
+  'Weapon Proficiency (Martial Weapons)':'Type=General',
+  'Weapon Proficiency (Simple Weapons)':'Type=General',
+  'Weapon Proficiency (%weapon)':'Type=General',
   'Ancestral Paragon':'Type=General Require="level >= 3"',
   'Untrained Improvisation':'Type=General Require="level >= 3"',
   'Expeditious Search':
@@ -4737,7 +4739,7 @@ Pathfinder2E.FEATURES = {
     'Note="Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd"',
   'Bloodline Skills (Draconic)':'Section=skill Note="Skill Trained (Arcana; Intimidation)"',
   'Bloodline Spells (Draconic)':
-    'Section=magic Note="KNows <i>Dragon Claws</i> spell"',
+    'Section=magic Note="Knows <i>Dragon Claws</i> spell"',
   'Blood Magic (Draconic)':
     'Section=magic ' +
     'Note="Casting a bloodline spell gives self or target +1 AC for 1 rd"',
@@ -4852,13 +4854,13 @@ Pathfinder2E.FEATURES = {
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
-    'Note="May know 3 spells of different levels from a different tradition"',
+    'Note="May know 3 spells of different levels from different traditions"',
   'Bloodline Conduit':
     'Section=magic ' +
-    'Note="May cast spells of 5th level and lower without expending a spell slot"',
+    'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
-    'Section=magic Note="May freely use 1-action metamatic actions"',
+    'Section=magic Note="May freely use metamatic single actions"',
 
   // Wizard
   // Alertness as above
@@ -5061,7 +5063,12 @@ Pathfinder2E.FEATURES = {
       '"-1 DC on recovery checks"',
   'Untrained Improvisation':
     'Section=skill Note="+%{level<7?level//2:level} on untrained skill checks"',
-  'Weapon Proficiency':'Section=combat Note="+1 Weapon Proficiency Rank"',
+  'Weapon Proficiency (Martial Weapons)':
+    'Section=combat Note="Weapon Trained (Martial Weapons)"',
+  'Weapon Proficiency (Simple Weapons)':
+    'Section=combat Note="Weapon Trained (Simple Weapons)"',
+  'Weapon Proficiency (%weapon)':
+    'Section=combat Note="Weapon Trained (%weapon)"',
 
   // General Skill Feats
   'Assurance (%skill)':'Section=skill Note="May take 10 on %skill rolls"',
@@ -11257,14 +11264,13 @@ Pathfinder2E.createViewers = function(rules, viewers) {
       let outerSep = name == '\n';
       viewer.addElements(
         {name: '_top', borders: 1, separator: '\n'},
-        {name: 'Header', within: '_top'},
-          {name: 'Identity', within: 'Header', separator: ''},
-            {name: 'Name', within: 'Identity', format: '<b>%V</b>'},
-            {name: 'Gender', within: 'Identity', format: ' -- <b>%V</b>'},
-            {name: 'Heritage', within: 'Identity', format: ' <b>%V</b>'},
-            {name: 'Levels', within: 'Identity', format: ' <b>%V</b>',
-             separator: '/'},
-          {name: 'Image Url', within: 'Header', format: '<img src="%V"/>'},
+        {name: 'Header', within: '_top', separator: ''},
+          {name: 'Image Url', within: 'Header', format: '<img src="%V" alt="No Image" style="height:75px; vertical-align:middle"/>&nbsp;&nbsp;'},
+          {name: 'Name', within: 'Header', format: '<b>%V</b>'},
+          {name: 'Gender', within: 'Header', format: ' -- <b>%V</b>'},
+          {name: 'Heritage', within: 'Header', format: ' <b>%V</b>'},
+          {name: 'Levels', within: 'Header', format: ' <b>%V</b>',
+           separator: '/'},
         {name: 'Attributes', within: '_top', separator: outerSep},
           {name: 'Abilities', within: 'Attributes', separator: innerSep},
             {name: 'Strength', within: 'Abilities'},
