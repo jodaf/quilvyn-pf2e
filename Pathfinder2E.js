@@ -667,37 +667,7 @@ Pathfinder2E.CLASSES = {
       '"9:Lightning Reflexes","11:Alertness","11:Sorcerer Weapon Expertise",' +
       '"13:Defensive Robes","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
-      '"19:Legendary Spellcaster",' +
-      '"features.Aberrant ? 1:Bloodline Skills (Aberrant)",' +
-      '"features.Aberrant ? 1:Bloodline Spells (Aberrant)",' +
-      '"features.Aberrant ? 1:Blood Magic (Aberrant)",' +
-      '"features.Angelic ? 1:Bloodline Skills (Angelic)",' +
-      '"features.Angelic ? 1:Bloodline Spells (Angelic)",' +
-      '"features.Angelic ? 1:Blood Magic (Angelic)",' +
-      '"features.Demonic ? 1:Bloodline Skills (Demonic)",' +
-      '"features.Demonic ? 1:Bloodline Spells (Demonic)",' +
-      '"features.Demonic ? 1:Blood Magic (Demonic)",' +
-      '"features.Diabolic ? 1:Bloodline Skills (Diabolic)",' +
-      '"features.Diabolic ? 1:Bloodline Spells (Diabolic)",' +
-      '"features.Diabolic ? 1:Blood Magic (Diabolic)",' +
-      '"features.Draconic ? 1:Bloodline Skills (Draconic)",' +
-      '"features.Draconic ? 1:Bloodline Spells (Draconic)",' +
-      '"features.Draconic ? 1:Blood Magic (Draconic)",' +
-      '"features.Elemental ? 1:Bloodline Skills (Elemental)",' +
-      '"features.Elemental ? 1:Bloodline Spells (Elemental)",' +
-      '"features.Elemental ? 1:Blood Magic (Elemental)",' +
-      '"features.Fey ? 1:Bloodline Skills (Fey)",' +
-      '"features.Fey ? 1:Bloodline Spells (Fey)",' +
-      '"features.Fey ? 1:Blood Magic (Fey)",' +
-      '"features.Hag ? 1:Bloodline Skills (Hag)",' +
-      '"features.Hag ? 1:Bloodline Spells (Hag)",' +
-      '"features.Hag ? 1:Blood Magic (Hag)",' +
-      '"features.Imperial ? 1:Bloodline Skills (Imperial)",' +
-      '"features.Imperial ? 1:Bloodline Spells (Imperial)",' +
-      '"features.Imperial ? 1:Blood Magic (Imperial)",' +
-      '"features.Undead ? 1:Bloodline Skills (Undead)",' +
-      '"features.Undead ? 1:Bloodline Spells (Undead)",' +
-      '"features.Undead ? 1:Blood Magic (Undead)" ' +
+      '"19:Legendary Spellcaster" ' +
     'Selectables=' +
       '"1:Aberrant:Bloodline","1:Angelic:Bloodline","1:Demonic:Bloodline",' +
       '"1:Diabolic:Bloodline","1:Draconic:Bloodline","1:Elemental:Bloodline",' +
@@ -720,6 +690,16 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
       '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
+    'Selectables=' +
+      '"1:Abjuration:School Specialization",' +
+      '"1:Conjuration:School Specialization",' +
+      '"1:Divination:School Specialization",' +
+      '"1:Enchantment:School Specialization",' +
+      '"1:Evocation:School Specialization",' +
+      '"1:Illusion:School Specialization",' +
+      '"1:Necromancy:School Specialization",' +
+      '"1:Transmutation:School Specialization",' +
+      '"1:Universalist:School Specialization" ' +
     'SpellSlots=' +
       'A0:5@1,' +
       'A1:2@1;3@2,' +
@@ -1961,8 +1941,7 @@ Pathfinder2E.FEATS = {
   // Counterspell as above
   'Eschew Materials':'Type=Class,Wizard',
   // Familiar as above
-  'Hand Of The Apprentice':
-    'Type=Class,Wizard Require="features.Universalist Wizard"',
+  'Hand Of The Apprentice':'Type=Class,Wizard Require="features.Universalist"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -1984,7 +1963,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Wizard ' +
     'Require=' +
       '"level >= 8",' +
-      '"features.Universality Wizard",' +
+      '"features.Universalist",' +
       '"features.Hand Of The Apprentice"',
   // Overwhelming Energy as above
   // Quickened Casting as above
@@ -4711,69 +4690,76 @@ Pathfinder2E.FEATURES = {
 
   // Sorcerer
   // Alertness as above
-  'Bloodline Skills (Aberrant)':
-    'Section=skill Note="Skill Trained (Intimidation; Occultism)"',
-  'Bloodline Spells (Aberrant)':
-    'Section=magic Note="Knows <i>Tentacular Limbs</i> spell"',
-  'Blood Magic (Aberrant)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self or target +2 Will saves for 1 rd"',
-  'Bloodline Skills (Angelic)':'Section=skill Note="Skill Trained (Diplomacy; Religion)"',
-  'Bloodline Spells (Angelic)':
-    'Section=magic Note="Knows <i>Angelic Halo</i> spell"',
-  'Blood Magic (Angelic)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self or target +1 saves for 1 rd"',
-  'Bloodline Skills (Demonic)':
-    'Section=skill Note="Skill Trained (Intimidation; Religion)"',
-  'Bloodline Spells (Demonic)':
-    'Section=magic Note="Knows <i>Glutton\'s Jaws</i> spell"',
-  'Blood Magic (Demonic)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd"',
-  'Bloodline Skills (Diabolic)':'Section=skill Note="Skill Trained (Deception; Religion)"',
-  'Bloodline Spells (Diabolic)':
-    'Section=magic Note="Knows <i>Diabolic Edict</i> spell"',
-  'Blood Magic (Diabolic)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd"',
-  'Bloodline Skills (Draconic)':'Section=skill Note="Skill Trained (Arcana; Intimidation)"',
-  'Bloodline Spells (Draconic)':
-    'Section=magic Note="Knows <i>Dragon Claws</i> spell"',
-  'Blood Magic (Draconic)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self or target +1 AC for 1 rd"',
-  'Bloodline Skills (Elemental)':
-    'Section=skill Note="Skill Trained (Intimidation; Nature)"',
-  'Bloodline Spells (Elemental)':
-    'Section=magic Note="Knows <i>Elemental Toss</i> spell"',
-  'Blood Magic (Elemental)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd"',
-  'Bloodline Skills (Fey)':'Section=skill Note="Skill Trained (Deception; Nature)"',
-  'Bloodline Spells (Fey)':
-    'Section=magic Note="Knows <i>Faerie Dust</i> spell"',
-  'Blood Magic (Fey)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self or target concealment for 1 rd"',
-  'Bloodline Skills (Hag)':'Section=skill Note="Skill Trained (Deception; Occultism)"',
-  'Bloodline Spells (Hag)':
-    'Section=magic Note="Knows <i>Jealous Hex</i> spell"',
-  'Blood Magic (Hag)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd"',
-  'Bloodline Skills (Imperial)':'Section=skill Note="Skill Trained (Arcana; Society)"',
-  'Bloodline Spells (Imperial)':
-    'Section=magic Note="Knows <i>Ancestral Memories</i> spell"',
-  'Blood Magic (Imperial)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self or target +1 skill checks for 1 rd"',
-  'Bloodline Skills (Undead)':'Section=skill Note="Skill Trained (Intimidation; Religion)"',
-  'Bloodline Spells (Undead)':
-    'Section=magic Note="Knows <i>Undeath\'s Blessing</i> spell"',
-  'Blood Magic (Undead)':
-    'Section=magic ' +
-    'Note="Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd"',
+  'Aberrant':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)",' +
+      '"Knows <i>Tentacular Limbs</i> spell",' +
+      '"Casting a bloodline spell gives self or target +2 Will saves for 1 rd",' +
+      '"Skill Trained (Intimidation; Occultism)"',
+  'Angelic':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)",' +
+      '"Knows <i>Angelic Halo</i> spell",' +
+      '"Casting a bloodline spell gives self or target +1 saves for 1 rd",' +
+      '"Skill Trained (Diplomacy; Religion)"',
+  'Demonic':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)",' +
+      '"Knows <i>Glutton\'s Jaws</i> spell",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd",' +
+      '"Skill Trained (Intimidation; Religion)"',
+  'Diabolic':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)",' +
+      '"Knows <i>Diabolic Edict</i> spell",' +
+      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd",' +
+      '"Skill Trained (Deception; Religion)"',
+  'Draconic':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane))",' +
+      '"Knows <i>Dragon Claws</i> spell",' +
+      '"Casting a bloodline spell gives self or target +1 AC for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Elemental':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)",' +
+      '"Knows <i>Elemental Toss</i> spell",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd",' +
+      '"Skill Trained (Intimidation; Nature)"',
+  'Fey':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)",' +
+      '"Knows <i>Faerie Dust</i> spell",' +
+      '"Casting a bloodline spell gives self or target concealment for 1 rd",' +
+      '"Skill Trained (Deception; Nature)"',
+  'Hag':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)",' +
+      '"Knows <i>Jealous Hex</i> spell",' +
+      '"Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd",' +
+      '"Skill Trained (Deception; Occultism)"',
+  'Imperial':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)",' +
+      '"Knows <i>Ancestral Memories</i> spell",' +
+      '"Casting a bloodline spell gives self or target +1 skill checks for 1 rd",' +
+      '"Skill Trained (Arcana; Society)"',
+  'Undead':
+    'Section=magic,magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)",' +
+      '"Knows <i>Undeath\'s Blessing</i> spell",' +
+      '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
+      '"Skill Trained (Intimidation; Religion)"',
   'Bloodline':
     'Section=feature,magic ' +
     'Note=' +
@@ -4867,7 +4853,10 @@ Pathfinder2E.FEATURES = {
   'Arcane Bond':'Section=feature Note="FILL"',
   // TODO more to it than this
   'Arcane School':
-    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a Focus Pool with 1 Focus Point"',
   'Arcane Spellcasting':'Section=feature Note="FILL"',
   'Arcane Thesis':'Section=feature Note="FILL"',
   "Archwizard's Spellcraft":'Section=feature Note="FILL"',
@@ -4930,7 +4919,12 @@ Pathfinder2E.FEATURES = {
   'Instinct Ability':'Section=feature Note="FILL"',
   "Juggernaut's Fortitude":'Section=feature Note="FILL"',
 
-  'Bard Dedication':'Section=feature Note="FILL"',
+  'Bard Dedication':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"May choose a bardic muse",' +
+      '"FILL",' +
+      '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':'Section=feature Note="FILL"',
   "Basic Muse's Whispers":'Section=feature Note="FILL"',
   "Advanced Muse's Whispers":'Section=feature Note="FILL"',
@@ -5000,7 +4994,8 @@ Pathfinder2E.FEATURES = {
   'Uncanny Dodge':'Section=feature Note="FILL"',
   'Evasiveness':'Section=feature Note="FILL"',
 
-  'Sorcerer Dedication':'Section=feature Note="FILL"',
+  'Sorcerer Dedication':
+    'Section=feature Note="May select a sorcerer bloodline"',
   'Basic Sorcerer Spellcasting':'Section=feature Note="FILL"',
   'Basic Blood Potency':'Section=feature Note="FILL"',
   'Basic Bloodline Spell':'Section=feature Note="FILL"',
@@ -5025,7 +5020,7 @@ Pathfinder2E.FEATURES = {
   // General Feats
   'Adopted Ancestry':
     'Section=feature Note="May take ancestry feats from chosen ancestry"',
-  'Ancestral Paragon':'Section=feature Note="FILL"',
+  'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
   'Armor Proficiency':
     'Section=combat ' +
     // TODO interacts w/other sources of Armor Trained
@@ -10321,7 +10316,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'x10:1@19'
     ];
     rules.defineRule('bloodlineTraditions',
-      classLevel, '?', null,
+      'features.Bloodline', '?', null,
       '', '=', '""'
     );
     for(let b in bloodlineTraditions) {
@@ -10335,8 +10330,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         bloodLevel, '=', 'dict.bloodlineTraditions=="" ? "' + bloodTrad + '" : !dict.bloodlineTraditions.includes("' + bloodTrad + '") ? dict.bloodlineTraditions + "; ' + bloodTrad + '" : dict.bloodlineTraditions'
       );
       rules.defineRule('casterLevels.' + bloodTrad, bloodLevel, '^=', null);
-      Pathfinder2E.featureRules
-        (rules, b, ['magic'], ['Spell Trained (' + bloodTrad + ')']);
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
     rules.defineRule
@@ -10351,26 +10344,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
       ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', null);
-    rules.defineRule('rank.Arcane',
-      'magicNotes.expertSpellcaster', '^=', 'source.includes("Arcane") ? 2 : null',
-      'magicNotes.masterSpellcaster', '^=', 'source.includes("Arcane") ? 3 : null',
-      'magicNotes.legendarySpellcaster', '^=', 'source.includes("Arcane") ? 4 : null'
-    );
-    rules.defineRule('rank.Divine',
-      'magicNotes.expertSpellcaster', '^=', 'source.includes("Divine") ? 2 : null',
-      'magicNotes.masterSpellcaster', '^=', 'source.includes("Divine") ? 3 : null',
-      'magicNotes.legendarySpellcaster', '^=', 'source.includes("Divine") ? 4 : null'
-    );
-    rules.defineRule('rank.Occult',
-      'magicNotes.expertSpellcaster', '^=', 'source.includes("Occult") ? 2 : null',
-      'magicNotes.masterSpellcaster', '^=', 'source.includes("Occult") ? 3 : null',
-      'magicNotes.legendarySpellcaster', '^=', 'source.includes("Occult") ? 4 : null'
-    );
-    rules.defineRule('rank.Primal',
-      'magicNotes.expertSpellcaster', '^=', 'source.includes("Primal") ? 2 : null',
-      'magicNotes.masterSpellcaster', '^=', 'source.includes("Primal") ? 3 : null',
-      'magicNotes.legendarySpellcaster', '^=', 'source.includes("Primal") ? 4 : null'
-    );
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('rank.' + t,
+        'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
+        'magicNotes.masterSpellcaster', '^=', 'source.includes("' + t + '") ? 3 : null',
+        'magicNotes.legendarySpellcaster', '^=', 'source.includes("' + t + '") ? 4 : null'
+      );
+    });
     rules.defineRule('selectableFeatureCount.Sorcerer (Bloodline)',
       'featureNotes.bloodline', '=', '1'
     );
@@ -10406,6 +10386,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.arcaneSchool', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
+    rules.defineRule('selectableFeatureCount.Wizard (School Specialization)',
+      'featureNotes.arcaneSchool', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.wizardSkills', 'intelligenceModifier', '=', '2 + source');
   }
@@ -10586,6 +10569,16 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
+  } else if(name == 'Bard Dedication') {
+    rules.defineRule('selectableFeatureCount.Bard (Muse)',
+      'featureNotes.bardDedication', '=', '1'
+    );
+    // TODO generalize
+    ['Enigma', 'Maestro', 'Polymath'].forEach(m => {
+      rules.defineRule('validationNotes.bard-' + m + 'MuseSelectableFeature',
+        'featureNotes.bardDedication', '+', '1'
+      );
+    });
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
@@ -10697,6 +10690,24 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
   } else if(name == 'Rough Rider') {
     rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
+  } else if(name == 'Sorcerer Dedication') {
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let bloodlines =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
+    rules.defineRule('sorcererFeatures.Bloodline',
+      'featureNotes.sorcererDedication', '=', '1'
+    );
+    bloodlines.forEach(b => {
+      rules.defineRule('validationNotes.sorcerer-' + b + 'SelectableFeature',
+        'featureNotes.sorcererDedication', '+', '1'
+      );
+      rules.defineRule('magicNotes.' + b.toLowerCase() + '-1',
+        'featureNotes.sorcererDedication', 'v', '0'
+      );
+      rules.defineRule('magicNotes.' + b.toLowerCase() + '-2',
+        'featureNotes.sorcererDedication', 'v', '0'
+      );
+    });
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
