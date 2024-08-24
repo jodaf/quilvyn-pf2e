@@ -10315,7 +10315,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'x10:1@19'
     ];
     for(let b in bloodlineTraditions) {
-      let bloodLevel = b.toLowerCase + 'Level';
+      let bloodLevel = b.toLowerCase() + 'Level';
       let bloodTrad = bloodlineTraditions[b];
       rules.defineRule(bloodLevel,
         'features.' + b, '?', null,
