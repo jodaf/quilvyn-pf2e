@@ -7,10 +7,10 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/class/wizard 20", 
-  "abilityBoosts.charisma":4, "abilityBoosts.constitution":3, "abilityBoosts.dexterity":4, 
+  "abilityBoosts.charisma":4, "abilityBoosts.constitution":4, "abilityBoosts.dexterity":4, 
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":4, "abilityBoosts.wisdom":4, 
-  "abilityGeneration":"All 10s", "alignment":"Chaotic Evil", "ancestry":"Dwarf", "armor":"None", 
-  "background":"Acolyte", "charisma":10, "constitution":10, "deity":"None", "dexterity":10, 
+  "abilityGeneration":"All 10s", "alignment":"Neutral Good", "ancestry":"Human", "armor":"None", 
+  "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":19500, "feats.Advanced School Spell":1, "feats.Archwizard's Might":1, 
   "feats.Assurance (Crafting)":1, "feats.Bespell Weapon":1, "feats.Bizarre Magic":1, 
   "feats.Bond Conservation":1, "feats.Bonded Focus":1, "feats.Canny Acumen (Fortitude)":1, 
@@ -29,21 +29,23 @@ var attributes = {
   "feats.Stonewalker":1, "feats.Superior Bond":1, "feats.Universal Versatility":1, 
   "feats.Weapon Proficiency (Halfling Sling Staff)":1, "feats.Weapon Proficiency (Longsword)":1, 
   "feats.Weapon Proficiency (Shortbow)":1, "feats.Weapon Proficiency (Simple Weapons)":1, "feats.Widen Spell":1, 
-  "intelligence":10, "languages.Aklo":1, "languages.Aquan":1, "languages.Halfling":1, 
-  "languages.Ignan":1, "languages.Sylvan":1, "levels.Wizard":20, "name":"Class-Wizard 20", 
+  "gender":"Male", "intelligence":10, "languages.Aklo":1, "languages.Aquan":1, 
+  "languages.Auran":1, "languages.Halfling":1, "languages.Ignan":1, "languages.Sylvan":1, 
+  "levels.Wizard":20, "name":"Class-Wizard 20", "selectableFeatures.Human - Half-Elf":1, 
   "selectableFeatures.Wizard - Abjuration":1, "selectableFeatures.Wizard - Universalist":1, "shield":"None", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Crafting":2, "skillIncreases.Diplomacy":1, 
   "skillIncreases.Hunting Lore":1, "skillIncreases.Medicine":1, "skillIncreases.Mining Lore":1, 
   "skillIncreases.Occultism":3, "skillIncreases.Owlbear Lore":1, "skillIncreases.Performance":1, 
   "skillIncreases.Thievery":1, "skillIncreases.Troll Lore":1, "skillIncreases.Underworld Lore":1, 
-  "skillIncreases.Vampire Lore":1, "strength":10, "wisdom":10
+  "skillIncreases.Vampire Lore":1, "strength":10, "weapons.Blowgun":1, "weapons.Dart":1, 
+  "weapons.Morningstar":1, "wisdom":10
 };
   </script>
 </head>
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Class-Wizard 20</b> <b>Wizard: 20</b></td>
+  <td style="border:1px solid black"><b>Class-Wizard 20</b> -- <b>Male</b> <b>Half-Elf</b> <b>Wizard: 20</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -53,16 +55,16 @@ var attributes = {
       <td><b>Dexterity</b>: 18 (+4)</td>
       <td><b>Constitution</b>: 18 (+4)</td>
       <td><b>Intelligence</b>: 20 (+5)</td>
-      <td><b>Wisdom</b>: 20 (+5)</td>
-      <td><b>Charisma</b>: 16 (+3)</td>
+      <td><b>Wisdom</b>: 18 (+4)</td>
+      <td><b>Charisma</b>: 18 (+4)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td>    <table id="Description" style="width:100%">
     <tr style="text-align:center">
       <td><b>Background</b>: Acolyte</td>
-      <td><b>Alignment</b>: Chaotic Evil</td>
-      <td><b>Deity</b>: None</td>
+      <td><b>Alignment</b>: Neutral Good</td>
+      <td><b>Deity</b>: Shelyn (NG)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -70,15 +72,13 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Experience</b>: 19500/20000</td>
       <td><b>Level</b>: 20</td>
-      <td><b>Speed</b>: 20</td>
+      <td><b>Speed</b>: 25</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td><b>Ability Notes</b>:     <table id="AbilityNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Slow: -5 Speed</i></td>
     </tr><tr style="text-align:center">
       <td>Rock Runner: May move normally through stone and earth difficult terrain</td>
     </tr></table>
@@ -93,7 +93,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 5; Class: 10; General: 5; Skill: 10</td>
-        <td><b>Selectable Feature Count</b>: Dwarf (Heritage); Wizard (School Specialization)</td>
+        <td><b>Selectable Feature Count</b>: Human (Heritage); Wizard (School Specialization)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -102,7 +102,7 @@ var attributes = {
         <td><b>Feats</b>: Advanced School Spell; Archwizard's Might; Assurance (Crafting); Bespell Weapon; Bizarre Magic; Bond Conservation; Bonded Focus; Canny Acumen (Fortitude); Cantrip Expansion; Clever Counterspell; Conceal Spell; Counterspell; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Effortless Concentration; Enhanced Familiar; Eschew Materials; Familiar; Hand Of The Apprentice; Infinite Possibilities; Linked Focus; Magic Sense; Metamagic Mastery; Overwhelming Energy; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Rock Runner; Scroll Savant; Silent Spell; Skill Training (Butchering Lore); Skill Training (Deception); Skill Training (Farming Lore); Skill Training (Halfling Lore); Skill Training (Military Lore); Skill Training (Tanning Lore); Spell Combination; Spell Penetration; Spell Tinker; Steady Spellcasting; Stonewalker; Superior Bond; Universal Versatility; Weapon Proficiency (Halfling Sling Staff); Weapon Proficiency (Longsword); Weapon Proficiency (Shortbow); Weapon Proficiency (Simple Weapons); Widen Spell</td>
         <td><b>Wizard Features</b>: Ability Boost (Intelligence); Ability Boosts; Abjuration; Alertness; Arcane Bond; Arcane School; Arcane Spellcasting; Arcane Thesis; Archwizard's Spellcraft; Armor Trained (Unarmored Defense); Expert Spellcaster; General Feats; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Perception Trained; Resolve; Save Expert (Fortitude; Reflex); Save Expert (Will); Skill Feats; Skill Increases; Spell Trained (Arcane); Universalist; Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks); Wizard Feats; Wizard Skills; Wizard Weapon Expertise</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
-        <td><b>Dwarf Features</b>: Ability Boost (Constitution; Wisdom; Choose 1 from any); Ability Flaw (Charisma); Ancestry Feats; Clan Dagger; Darkvision; Slow</td>
+        <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -113,6 +113,8 @@ var attributes = {
         <td><i>Arcane School: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>General Feats: 5 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Half-Elf: Has Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
@@ -138,8 +140,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Conceal Spell: FILL</td>
       </tr><tr style="text-align:center">
-        <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
-      </tr><tr style="text-align:center">
         <td>Enhanced Familiar: May select 4 familiar or master abilities each dy</td>
       </tr><tr style="text-align:center">
         <td>Eschew Materials: FILL</td>
@@ -151,6 +151,8 @@ var attributes = {
         <td>Infinite Possibilities: FILL</td>
       </tr><tr style="text-align:center">
         <td>Linked Focus: FILL</td>
+      </tr><tr style="text-align:center">
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
         <td>Recognize Spell: FILL</td>
       </tr><tr style="text-align:center">
@@ -176,7 +178,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Perception</b>: +29 (wisdom; expert)</td>
+    <td><b>Perception</b>: +28 (wisdom; expert)</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Modifiers</b>:     <table id="SkillModifiers" style="width:100%">
     <col style="width:33%"/>
@@ -184,39 +186,39 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +26 (dexterity; trained)</td>
-      <td>Intimidation: +3 (charisma; untrained)</td>
+      <td>Intimidation: +4 (charisma; untrained)</td>
       <td>Society: +5 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +27 (intelligence; trained)</td>
-      <td>Medicine: +27 (wisdom; trained)</td>
+      <td>Medicine: +26 (wisdom; trained)</td>
       <td>Stealth: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +4 (strength; untrained)</td>
       <td>Military Lore: +27 (intelligence; trained)</td>
-      <td>Survival: +5 (wisdom; untrained)</td>
+      <td>Survival: +4 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Butchering Lore: +27 (intelligence; trained)</td>
       <td>Mining Lore: +27 (intelligence; trained)</td>
       <td>Tanning Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +29 (intelligence; expert)</td>
-      <td>Nature: +5 (wisdom; untrained)</td>
+      <td>Nature: +4 (wisdom; untrained)</td>
       <td>Thievery: +26 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +25 (charisma; trained)</td>
+      <td>Deception: +26 (charisma; trained)</td>
       <td>Occultism: +31 (intelligence; master)</td>
       <td>Troll Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +25 (charisma; trained)</td>
+      <td>Diplomacy: +26 (charisma; trained)</td>
       <td>Owlbear Lore: +27 (intelligence; trained)</td>
       <td>Underworld Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Farming Lore: +27 (intelligence; trained)</td>
-      <td>Performance: +25 (charisma; trained)</td>
+      <td>Performance: +26 (charisma; trained)</td>
       <td>Vampire Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Halfling Lore: +27 (intelligence; trained)</td>
-      <td>Religion: +27 (wisdom; trained)</td>
+      <td>Religion: +26 (wisdom; trained)</td>
       <td></td>
     </tr><tr style="text-align:left">
       <td>Hunting Lore: +27 (intelligence; trained)</td>
@@ -225,7 +227,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Aklo; Aquan; Common; Dwarven; Halfling; Ignan; Sylvan</td>
+    <td><b>Languages</b>: Aklo; Aquan; Auran; Common; Halfling; Ignan; Sylvan</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -267,7 +269,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 210</td>
+        <td><b>Hit Points</b>: 208</td>
         <td><b>Armor Class</b>: 35 (dexterity; trained)</td>
       </tr></table>
 </td>
@@ -276,7 +278,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: None</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Clan Dagger (+26 1d4+4 P/B)</td>
+        <td><b>Weapons</b>: Blowgun (+26 1 P R20'); Dart (+26 1d4+4 P R20'); Morningstar (+26 1d6+4 B/P)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -312,7 +314,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +30 (constitution; master); Reflex: +28 (dexterity; expert); Will: +31 (wisdom; master)</td>
+      <td><b>Save</b>: Fortitude: +30 (constitution; master); Reflex: +28 (dexterity; expert); Will: +30 (wisdom; master)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
