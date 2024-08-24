@@ -1901,16 +1901,16 @@ Pathfinder2E.FEATS = {
     'Type=Class,Sorcerer ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Primal\'"',
   'Advanced Bloodline':
-    'Type=Class,Sorcerer Require="level >= 6","features.Bloodline Spells"',
+    'Type=Class,Sorcerer Require="level >= 6","features.Bloodline"',
   // Steady Spellcasting as above
   'Bloodline Resistance':'Type=Class,Sorcerer Require="level >= 8"',
   'Crossblooded Evolution':'Type=Class,Sorcerer Require="level >= 8"',
   'Greater Bloodline':
-    'Type=Class,Sorcerer Require="level >= 10","features.Bloodline Spells"',
+    'Type=Class,Sorcerer Require="level >= 10","features.Bloodline"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':
-    'Type=Class,Sorcerer Require="level >= 12","features.Bloodline Spells"',
+    'Type=Class,Sorcerer Require="level >= 12","features.Bloodline"',
   'Magic Sense':'Type=Class,Sorcerer,Wizard Require="level >= 12"',
   'Interweave Spell':
     'Type=Class,Sorcerer Require="level >= 14","spells.Dispel Magic"',
@@ -3152,7 +3152,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Critical faiures on Will saves are normal failures/Takes half damage on failed Will saves"',
+      '"Critical failures on Will saves are normal failures/Takes half damage on failed Will saves"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Armor Expert (Light Armor; Unarmored Defense)"',
@@ -3162,9 +3162,9 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Has Lingering Composition feature",' +
       '"Knows the <i>Soothe</i> spell"',
-  'Magnum Opus':'Section=magic Note="Knows two 10th-level occult spells"',
+  'Magnum Opus':'Section=magic Note="Knows 2 10th-level occult spells"',
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
-  'Muses':'Section=feature Note="%V selections"',
+  'Muses':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
     'Section=magic Note="May learn spells from the Occult tradition"',
   'Polymath Muse':
@@ -4922,8 +4922,8 @@ Pathfinder2E.FEATURES = {
   'Bard Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"May choose a bardic muse",' +
-      '"FILL",' +
+      '"Has Muses feature",' +
+      '"Spell Trained(Occult)/Knows 2 Occult cantrips",' +
       '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':'Section=feature Note="FILL"',
   "Basic Muse's Whispers":'Section=feature Note="FILL"',
@@ -4995,7 +4995,10 @@ Pathfinder2E.FEATURES = {
   'Evasiveness':'Section=feature Note="FILL"',
 
   'Sorcerer Dedication':
-    'Section=feature Note="May select a sorcerer bloodline"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has Bloodline feature",' +
+      '"Knows 2 %V cantrips"',
   'Basic Sorcerer Spellcasting':'Section=feature Note="FILL"',
   'Basic Blood Potency':'Section=feature Note="FILL"',
   'Basic Bloodline Spell':'Section=feature Note="FILL"',
@@ -5723,7 +5726,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"15\' cone inflicts 2d6 HP fire (Ref neg; heightened +2d6 HP fire/level)"',
   'Calm Emotions':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6000,7 +6004,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description="FILL"',
-  'Disjunctino':
+  'Disjunction':
     'Level=9 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
@@ -7080,7 +7084,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description="FILL"',
-  'Respendent Mansion':
+  'Resplendent Mansion':
     'Level=9 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
@@ -7584,7 +7588,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="FILL"',
-  'Toiuch Of Idiocy':
+  'Touch Of Idiocy':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
@@ -8094,7 +8098,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description="FILL"',
-  "Healer's Blesssing":
+  "Healer's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
@@ -9766,8 +9770,7 @@ Pathfinder2E.classRules = function(
   );
 
   if(spellSlots.length > 0) {
-    rules.defineRule('casterLevels.' + name, classLevel, '=', null);
-    QuilvynRules.spellSlotRules(rules, 'casterLevels.' + name, spellSlots);
+    QuilvynRules.spellSlotRules(rules, classLevel, spellSlots);
     for(let j = 0; j < spellSlots.length; j++) {
       let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
       let spellType = spellTypeAndLevel.replace(/\d+/, '');
@@ -9778,23 +9781,17 @@ Pathfinder2E.classRules = function(
         spellType == 'P' ? 'Primal' : spellType;
       let spellLevel = spellTypeAndLevel.replace(spellType, '');
       let spellModifier = abilities[0] + 'Modifier';
-      if(spellType != name)
-        rules.defineRule
-          ('casterLevels.' + spellType, 'casterLevels.' + name, '^=', null);
       rules.defineRule('spellProficiencyBonus.' + spellType,
-        'casterLevels.' + spellType, '?', null,
         'rank.' + spellType, '=', 'source * 2',
         'level', '+', null
       );
       rules.defineRule('spellAttackModifier.' + spellType,
-        'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', null,
-        'spellProficiencyBonus.' + spellType, '+', null
+        'spellProficiencyBonus.' + spellType, '=', null,
+        spellModifier, '+', null
       );
       rules.defineRule('spellDifficultyClass.' + spellType,
-        'casterLevels.' + spellType, '?', null,
-        spellModifier, '=', '8 + source',
-        'spellProficiencyBonus.' + spellType, '+', null
+        'spellProficiencyBonus.' + spellType, '=', null,
+        spellModifier, '+', '8 + source'
       );
     }
   }
@@ -9981,7 +9978,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.ragingIntimidation.1', '=', 'source=="" ? null : 1'
     );
   } else if(name == 'Bard') {
-    rules.defineRule('featureNotes.muses', '', '=', '1');
     rules.defineRule
       ('features.Bardic Lore', 'featureNotes.enigmaMuse', '=', '1');
     rules.defineRule('features.Enigma Muse',
@@ -10004,12 +10000,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Occult"');
     rules.defineRule('magicNotes.legendarySpellcaster',
-      'bardFeatures.legendarySpellcaster', '=', '"Occult"'
+      'bardFeatures.Legendary Spellcaster', '=', '"Occult"'
     );
     rules.defineRule
       ('magicNotes.masterSpellcaster', classLevel, '=', '"Occult"');
     rules.defineRule
-      ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', null);
+      ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', '1');
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule
@@ -10196,6 +10192,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.druidicOrder', '+=', '1');
+    rules.defineRule('magicNotes.legendarySpellcaster',
+      'druidFeatures.Legendary Spellcaster', '=', '"Primal"'
+    );
     rules.defineRule
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
   } else if(name == 'Fighter') {
@@ -10229,14 +10228,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'magicNotes.kiTradition(Occult)', '=', '"Occult"'
     );
     rules.defineRule('rank.Divine',
-      'magicNotes.gracefulLegent', '^=', 'source=="Divine" ? 3 : null',
+      'magicNotes.gracefulLegend', '^=', 'source=="Divine" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Divine" ? 2 : null'
     );
     rules.defineRule('rank.Monk',
       'combatNotes.monasticWeaponry', '=', 'source=="Expert" ? 3 : source=="Master" ? 2 : 1'
     );
     rules.defineRule('rank.Occult',
-      'magicNotes.gracefulLegent', '^=', 'source=="Occult" ? 3 : null',
+      'magicNotes.gracefulLegend', '^=', 'source=="Occult" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Occult" ? 2 : null'
     );
     rules.defineRule('selectableFeatureCount.Monk (Perfection)',
@@ -10315,25 +10314,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'x9:3@17;4@18',
       'x10:1@19'
     ];
-    rules.defineRule('bloodlineTraditions',
-      'features.Bloodline', '?', null,
-      '', '=', '""'
-    );
     for(let b in bloodlineTraditions) {
-      let bloodLevel = b.toLowerCase() + 'Level';
+      let bloodLevel = b.toLowerCase + 'Level';
       let bloodTrad = bloodlineTraditions[b];
       rules.defineRule(bloodLevel,
         'features.' + b, '?', null,
         classLevel, '=', null
       );
       rules.defineRule('bloodlineTraditions',
-        bloodLevel, '=', 'dict.bloodlineTraditions=="" ? "' + bloodTrad + '" : !dict.bloodlineTraditions.includes("' + bloodTrad + '") ? dict.bloodlineTraditions + "; ' + bloodTrad + '" : dict.bloodlineTraditions'
+        'features.' + b, '=', '!dict.bloodlineTraditions ? "' + bloodTrad + '" : !dict.bloodlineTraditions.includes("' + bloodTrad + '") ? dict.bloodlineTraditions + "; ' + bloodTrad + '" : dict.bloodlineTraditions'
       );
-      rules.defineRule('casterLevels.' + bloodTrad, bloodLevel, '^=', null);
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
-    rules.defineRule
-      ('features.Bloodline Spells', 'features.Bloodline', '=', '1');
     rules.defineRule('features.Focus Pool', 'magicNotes.bloodline', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
     rules.defineRule
@@ -10388,6 +10380,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
     rules.defineRule('selectableFeatureCount.Wizard (School Specialization)',
       'featureNotes.arcaneSchool', '=', '1'
+    );
+    rules.defineRule('magicNotes.legendarySpellcaster',
+      'wizardFeatures.Legendary Spellcaster', '=', '"Arcane"'
     );
     rules.defineRule
       ('skillNotes.wizardSkills', 'intelligenceModifier', '=', '2 + source');
@@ -10563,22 +10558,31 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('rank.Heavy Armor',
       'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
     );
+  } else if(name == 'Bard Dedication') {
+    rules.defineRule('features.Muses', 'featureNotes.bardDedication', '=', '1');
+    rules.defineRule('spellSlots.O0', 'magicNotes.bardDedication', '+=', '2');
+    // Suppress validation errors for selected muses and the notes for
+    // features of muses that don't come with Bard Dedication
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let muses =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Muse')).map(x => x.replace('Bard - ', '').replace(' Muse', ''));
+    muses.forEach(m => {
+      rules.defineRule('validationNotes.bard-' + m + 'MuseSelectableFeature',
+        'featureNotes.bardDedication', '+', '1'
+      );
+      rules.defineRule('featureNotes.' + m.toLowerCase() + 'Muse',
+        'featureNotes.bardDedication', '?', '!source'
+      );
+      rules.defineRule('magicNotes.' + m.toLowerCase() + 'Muse',
+        'featureNotes.bardDedication', '?', '!source'
+      );
+    });
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
     rules.defineRule('rank.Bardic Lore',
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
-  } else if(name == 'Bard Dedication') {
-    rules.defineRule('selectableFeatureCount.Bard (Muse)',
-      'featureNotes.bardDedication', '=', '1'
-    );
-    // TODO generalize
-    ['Enigma', 'Maestro', 'Polymath'].forEach(m => {
-      rules.defineRule('validationNotes.bard-' + m + 'MuseSelectableFeature',
-        'featureNotes.bardDedication', '+', '1'
-      );
-    });
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
@@ -10691,23 +10695,35 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Rough Rider') {
     rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
   } else if(name == 'Sorcerer Dedication') {
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let bloodlines =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
     rules.defineRule('sorcererFeatures.Bloodline',
       'featureNotes.sorcererDedication', '=', '1'
     );
+    rules.defineRule
+      ('magicNotes.sorcererDedication', 'bloodlineTraditions', '=', null);
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('spellSlots.' + t.charAt(0) + '0',
+        'magicNotes.sorcererDedication', '+=', 'source.includes("' + t + '") ? 2 : null'
+      );
+    });
+    // Suppress validation errors for selected bloodlines and the notes for
+    // features of bloodlines that don't come with Sorcerer Dedication
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let bloodlines =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
     bloodlines.forEach(b => {
       rules.defineRule('validationNotes.sorcerer-' + b + 'SelectableFeature',
         'featureNotes.sorcererDedication', '+', '1'
       );
       rules.defineRule('magicNotes.' + b.toLowerCase() + '-1',
-        'featureNotes.sorcererDedication', 'v', '0'
+        'featureNotes.sorcererDedication', '?', '!source'
       );
       rules.defineRule('magicNotes.' + b.toLowerCase() + '-2',
-        'featureNotes.sorcererDedication', 'v', '0'
+        'featureNotes.sorcererDedication', '?', '!source'
       );
     });
+    rules.defineRule('magicNotes.bloodline',
+      'featureNotes.sorcererDedication', '?', '!source'
+    );
   } else if(name == 'Stonewalker') {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
