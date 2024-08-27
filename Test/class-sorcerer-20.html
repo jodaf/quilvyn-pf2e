@@ -334,8 +334,8 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: A0: 10; A10: 3; A1: 9; A2: 9; A3: 9; A4: 9; A5: 9; A6: 9; A7: 9; A8: 9; A9: 9; D0: 20; D10: 5; D1: 16; D2: 16; D3: 16; D4: 16; D5: 16; D6: 16; D7: 16; D8: 16; D9: 17; O0: 10; O10: 3; O1: 9; O2: 9; O3: 9; O4: 9; O5: 9; O6: 9; O7: 9; O8: 9; O9: 9; P0: 10; P10: 3; P1: 8; P2: 8; P3: 8; P4: 8; P5: 8; P6: 8; P7: 8; P8: 8; P9: 9</td>
         <td><b>Focus Points</b>: 3</td>
-        <td><b>Attack</b>: Arcane: 32; Divine: 32; Occult: 33; Primal: 32</td>
-        <td><b>Spell DC</b>: Arcane: 40; Divine: 40; Occult: 41; Primal: 40</td>
+        <td><b>Attack</b>: Arcane: +32 (intelligence; legendary); Divine: +32 (wisdom; legendary); Occult: +33 (charisma; legendary); Primal: +32 (wisdom; legendary)</td>
+        <td><b>Spell DC</b>: Arcane: 40 (intelligence; legendary); Divine: 40 (wisdom; legendary); Occult: 41 (charisma; legendary); Primal: 40 (wisdom; legendary)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -387,13 +387,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Aberrant: Casting a bloodline spell gives self or target +2 Will saves for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Aberrant: Knows <i>Tentacular Limbs</i> spell</td>
+      <td>Aberrant: Knows the <i>Tentacular Limbs</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Adaptive Adept: Knows a cantrip or level 1 spell from a different tradition</td>
     </tr><tr style="text-align:center">
       <td>Angelic: Casting a bloodline spell gives self or target +1 saves for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Angelic: Knows <i>Angelic Halo</i> spell</td>
+      <td>Angelic: Knows the <i>Angelic Halo</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Arcane Evolution: May learn 1 additional spell from spellbook each dy, treating it as a signature spell if it is in repertoire</td>
     </tr><tr style="text-align:center">
@@ -407,7 +407,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: May prepare two additional cantrips each dy</td>
     </tr><tr style="text-align:center">
-      <td>Counterspell: May expend a spell slot to counteract a known spell</td>
+      <td>Counterspell: May use a Reaction and expend a spell slot to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
       <td>Crossblooded Evolution: May know 1 spell from a different tradition</td>
     </tr><tr style="text-align:center">
@@ -415,41 +415,41 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Demonic: Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Demonic: Knows <i>Glutton's Jaws</i> spell</td>
+      <td>Demonic: Knows the <i>Glutton's Jaws</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Diabolic: Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Diabolic: Knows <i>Diabolic Edict</i> spell</td>
+      <td>Diabolic: Knows the <i>Diabolic Edict</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Draconic: Casting a bloodline spell gives self or target +1 AC for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Draconic: Knows <i>Dragon Claws</i> spell</td>
+      <td>Draconic: Knows the <i>Dragon Claws</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: May freely extend the duration of 1 spell</td>
     </tr><tr style="text-align:center">
       <td>Elemental: Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Elemental: Knows <i>Elemental Toss</i> spell</td>
+      <td>Elemental: Knows the <i>Elemental Toss</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Fey: Casting a bloodline spell gives self or target concealment for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Fey: Knows <i>Faerie Dust</i> spell</td>
+      <td>Fey: Knows the <i>Faerie Dust</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Greater Crossblooded Evolution: May know 3 spells of different levels from different traditions</td>
     </tr><tr style="text-align:center">
       <td>Hag: Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Hag: Knows <i>Jealous Hex</i> spell</td>
+      <td>Hag: Knows the <i>Jealous Hex</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Imperial: Casting a bloodline spell gives self or target +1 skill checks for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Imperial: Knows <i>Ancestral Memories</i> spell</td>
+      <td>Imperial: Knows the <i>Ancestral Memories</i> spell</td>
     </tr><tr style="text-align:center">
       <td>Interweave Spell: May expend a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous <i>Detect Magic</i> effects</td>
     </tr><tr style="text-align:center">
-      <td>Metamagic Mastery: May freely use metamatic single actions</td>
+      <td>Metamagic Mastery: May use a 1-action metamatic effect as a free action</td>
     </tr><tr style="text-align:center">
       <td>Occult Evolution: May learn 1 unknown mental spell each dy</td>
     </tr><tr style="text-align:center">
@@ -469,9 +469,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Undead: Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Undead: Knows <i>Undeath's Blessing</i> spell</td>
+      <td>Undead: Knows the <i>Undeath's Blessing</i> spell</td>
     </tr><tr style="text-align:center">
-      <td>Widen Spell: May increase the effect of 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
+      <td>Widen Spell: May increase the effect of a 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
     </tr></table>
 </td>
   </tr></table>

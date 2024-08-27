@@ -680,7 +680,7 @@ Pathfinder2E.CLASSES = {
     'Features=' +
       '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
       '"1:Perception Trained",' +
-      '"1:Save Expert (Will)","Save Expert (Fortitude; Reflex)",' +
+      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Wizard Skills",' +
       '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)",' +
       '"1:Armor Trained (Unarmored Defense)",' +
@@ -689,21 +689,23 @@ Pathfinder2E.CLASSES = {
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
-      '"17:Resolve","19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
+      '"13:Defensive Robes","13:Weapon Specialization",' +
+      '"15:Master Spellcaster","17:Resolve","19:Archwizard\'s Spellcraft",' +
+      '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Abjuration:School Specialization",' +
-      '"1:Conjuration:School Specialization",' +
-      '"1:Divination:School Specialization",' +
-      '"1:Enchantment:School Specialization",' +
-      '"1:Evocation:School Specialization",' +
-      '"1:Illusion:School Specialization",' +
-      '"1:Necromancy:School Specialization",' +
-      '"1:Transmutation:School Specialization",' +
-      '"1:Universalist:School Specialization",' +
-      '"1:Improved Familiar Attunement:Arcane Thesis",' +
-      '"1:Metamagical Experimentation:Arcane Thesis",' +
-      '"1:Spell Blending:Arcane Thesis",' +
-      '"1:Spell Substitution:Arcane Thesis" ' +
+      '"1:Abjuration:Specialization",' +
+      '"1:Conjuration:Specialization",' +
+      '"1:Divination:Specialization",' +
+      '"1:Enchantment:Specialization",' +
+      '"1:Evocation:Specialization",' +
+      '"1:Illusion:Specialization",' +
+      '"1:Necromancy:Specialization",' +
+      '"1:Transmutation:Specialization",' +
+      '"1:Universalist:Specialization",' +
+      '"1:Improved Familiar Attunement:Thesis",' +
+      '"1:Metamagical Experimentation:Thesis",' +
+      '"1:Spell Blending:Thesis",' +
+      '"1:Spell Substitution:Thesis" ' +
     'SpellSlots=' +
       'A0:5@1,' +
       'A1:2@1;3@2,' +
@@ -3144,7 +3146,7 @@ Pathfinder2E.FEATURES = {
   // TODO description needs extending
   'Composition Spells':
     'Section=magic ' +
-    'Note="Has a Focus Pool with 1 Focus Point/Knows <i>Counter Performance</i> and <i>Inspire Courage</i> spells"',
+    'Note="Has a Focus Pool with 1 Focus Point/Knows the <i>Counter Performance</i> and <i>Inspire Courage</i> spells"',
   'Enigma Muse':
     'Section=feature,magic ' +
     'Note=' +
@@ -3190,7 +3192,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May use Bardic Lore to Recall Knowledge on any topic"',
   'Lingering Composition':
     'Section=magic ' +
-    'Note="Knows <i>Lingering Composition</i> spell/+1 Focus Points"',
+    'Note="Knows the <i>Lingering Composition</i> spell/+1 Focus Points"',
   'Reach Spell':'Section=magic Note="May extend spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
@@ -3206,7 +3208,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the <i>Inspire Competence</i> cantrip"',
   "Loremaster's Etude":
     'Section=magic ' +
-    'Note="Knows <i>Loremaster\'s Etude<i> spell/+1 Focus Points"',
+    'Note="Knows the <i>Loremaster\'s Etude<i> spell/+1 Focus Points"',
   'Multifarious Muse (Enigma Muse)':
     'Section=feature,magic ' +
     'Note=' +
@@ -3222,14 +3224,15 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"May learn polymath muse feats",' +
       '"Knows a 1st-level polymath muse spell"',
-  'Inspire Defense':'Section=magic Note="Knows <i>Inspire Defense</i> cantrip"',
+  'Inspire Defense':
+    'Section=magic Note="Knows the <i>Inspire Defense</i> cantrip"',
   'Melodious Spell':
     'Section=skill ' +
     'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
-  'Triple Time':'Section=magic Note="Knows <i>Triple Time</i> cantrip"',
+  'Triple Time':'Section=magic Note="Knows the <i>Triple Time</i> cantrip"',
   'Versatile Signature':
     'Section=magic Note="May change 1 signature spell each dy"',
-  'Dirge Of Doom':'Section=magic Note="Knows <i>Dirge Of Doom</i> cantrip"',
+  'Dirge Of Doom':'Section=magic Note="Knows the <i>Dirge Of Doom</i> cantrip"',
   'Harmonize':
     'Section=magic Note="May have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
@@ -3241,12 +3244,13 @@ Pathfinder2E.FEATURES = {
       '"+%{level} untrained skills",' +
       '"May attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
   'Inspire Heroics':
-    'Section=magic Note="Knows <i>Inspire Heroics<i> spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the <i>Inspire Heroics<i> spell/+1 Focus Points"',
   'Know-It-All':
     'Section=skill ' +
     'Note="A successful Recall Knowledge grants additional information"',
   'House Of Imaginary Walls':
-    'Section=magic Note="Knows <i>Imaginary Walls</i> cantrip"',
+    'Section=magic Note="Knows the <i>Imaginary Walls</i> cantrip"',
   'Quickened Casting':
     'Section=magic ' +
     'Note="Reduces the time required to cast a spell of level %1 or lower by 1 action"',
@@ -3257,9 +3261,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May retain Esoteric Polymath spell in repertoire by removing a spell of the same level"',
   'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Allegro':'Section=magic Note="Knows <i>Allegro</i> cantrip"',
+  'Allegro':'Section=magic Note="Knows the <i>Allegro</i> cantrip"',
   'Soothing Ballad':
-    'Section=magic Note="Knows <i>Soothing Ballad<i> spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the <i>Soothing Ballad<i> spell/+1 Focus Points"',
   'True Hypercognition':
     'Section=skill Note="May use 1 action for 5 Recall Knowledge actions"',
   'Effortless Concentration':
@@ -3274,7 +3279,7 @@ Pathfinder2E.FEATURES = {
   'Impossible Polymath':
     'Section=magic Note="May add spells from trained traditions to spellbook"',
   'Fatal Aria':
-    'Section=magic Note="Knows <i>Fatal Aria<i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>Fatal Aria<i> spell/+1 Focus Points"',
   'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
   'Symphony Of The Muse':
     'Section=magic ' +
@@ -3351,7 +3356,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' May use Reaction to negate damage to a struck ally or to grant ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
-  "Hero's Defiance":'Section=magic Note="Knows <i>Hero\'s Defiance</i> spell"',
+  "Hero's Defiance":
+    'Section=magic Note="Knows the <i>Hero\'s Defiance</i> spell"',
   // Juggernaut as above
   'Legendary Armor':
     'Section=combat ' +
@@ -3363,18 +3369,18 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Must always respect others\' freedom and oppose tyranny",' +
-      '"Knows <i>Lay On Hands</i> spell"',
+      '"Knows the <i>Lay On Hands</i> spell"',
   // Lightning Reflexes as above
   'Paladin':
     'Section=feature,magic ' +
     'Note=' +
       '"Must always act with honor and respect lawful authority",' +
-      '"Knows <i>Lay On Hands</i> spell"',
+      '"Knows the <i>Lay On Hands</i> spell"',
   'Redeemer':
     'Section=feature,magic ' +
     'Note=' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
-      '"Knows <i>Lay On Hands</i> spell"',
+      '"Knows the <i>Lay On Hands</i> spell"',
   'Retributive Strike':
     'Section=combat ' +
     'Note="R15\' May use Reaction when an ally is damaged to grant them damage resistance %{level+2}, plus make a melee Strike against the triggering foe if within reach"',
@@ -3436,7 +3442,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Knows <i>Litany Against Wrath</i> spell"',
+      '"Knows the <i>Litany Against Wrath</i> spell"',
   'Loyal Warhorse':
     'Section=feature Note="Mount is mature and will not attack self"',
   'Shield Warden':
@@ -3470,7 +3476,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Knows <i>Litany Against Sloth</i> spell"',
+      '"Knows the <i>Litany Against Sloth</i> spell"',
   'Radiant Blade Spirit':
     'Section=combat ' +
     'Note="May choose <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
@@ -3489,7 +3495,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Knows <i>Champion\'s Sacrifice</i> spell"',
+      '"Knows the <i>Champion\'s Sacrifice</i> spell"',
   'Divine Wall':
     'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
   'Lasting Doubt':
@@ -3515,7 +3521,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Knows <i>Litany Of Righteousness</i> spell"',
+      '"Knows the <i>Litany Of Righteousness</i> spell"',
   'Wyrmbane Aura':
     'Section=save ' +
     'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level} from dragons)"',
@@ -3748,7 +3754,7 @@ Pathfinder2E.FEATURES = {
   'Storm Born':'Section=feature Note="FILL"',
   'Widen Spell':
     'Section=magic ' +
-    'Note="May increase the effect of 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
+    'Note="May increase the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
   'Wild Shape':'Section=feature Note="FILL"',
   'Call Of The Wild':'Section=feature Note="FILL"',
   'Enhanced Familiar':
@@ -4108,10 +4114,10 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows leg attacks that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows <i>Ki Rush</i> spell/Has a Focus Pool with 1 Focus Point"',
+    'Note="Knows the <i>Ki Rush</i> spell/Has a Focus Pool with 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows <i>Ki Strike</i> spell/Has a Focus Pool with 1 Focus Point"',
+    'Note="Knows the <i>Ki Strike</i> spell/Has a Focus Pool with 1 Focus Point"',
   'Monastic Weaponry':'Section=combat Note="Weapon %V (Monk Weapons)"',
   'Mountain Stance':
     'Section=combat ' +
@@ -4151,9 +4157,10 @@ Pathfinder2E.FEATURES = {
   'Stand Still':
     'Section=combat Note="May use a Reaction to Strike an adjacent moving foe"',
   'Wholeness Of Body':
-    'Section=magic Note="Knows <i>Wholeness Of Body</i> spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the <i>Wholeness Of Body</i> spell/+1 Focus Points"',
   'Abundant Step':
-    'Section=magic Note="Knows <i>Abundant Step</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>Abundant Step</i> spell/+1 Focus Points"',
   'Crane Flutter':
     'Section=combat ' +
     'Note="While in Crane Stance, may use a Reaction to gain +3 Armor Class; a missed melee attack allows an immediate -2 Strike"',
@@ -4161,7 +4168,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes 1/1d4 rd (DC %{skillModifiers.Intimidation} Will neg; critical failure inflicts frightened 2); first successful attack in the next rd on a frightened foe inflicts +4 HP"',
   'Ki Blast':
-    'Section=magic Note="Knows <i>Ki Blast</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>Ki Blast</i> spell/+1 Focus Points"',
   'Mountain Stronghold':
     'Section=combat ' +
     'Note="While in Mountain Stance, may gain +2 Armor Class for 1 rd"',
@@ -4189,7 +4196,8 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows unarmed attacks that inflict 1d8S HP and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics neg)"',
   'Wall Run':'Section=ability Note="May Stride on vertical surfaces"',
   'Wild Winds Initiate':
-    'Section=magic Note="Knows <i>Wild Winds Stance</i> spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the <i>Wild Winds Stance</i> spell/+1 Focus Points"',
   'Knockback Strike':
     'Section=combat ' +
     'Note="May use 2 actions to Shove 5\' with a successful unarmed attack"',
@@ -4197,7 +4205,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="A successful Grapple allows inflicting clumsy 1 for 1 tn (critical success inflicts unconscious for 1 min)"',
   'Wind Jump':
-    'Section=magic Note="Knows <i>Wind Jump</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>Wind Jump</i> spell/+1 Focus Points"',
   'Winding Flow':
     'Section=combat ' +
     'Note="May use 1 action to perform 2 choices of Stand, Step, and Stride"',
@@ -4237,7 +4245,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May enter a stance at the beginning of a turn as a free action"',
   'Quivering Palm':
-    'Section=magic Note="Knows <i>Quivering Palm</i> spell/+1 Focus Points"',
+    'Section=magic ' +
+    'Note="Knows the <i>Quivering Palm</i> spell/+1 Focus Points"',
   'Shattering Strike':
     'Section=combat ' +
     'Note="May use 2 actions for an unarmed Strike that bypasses target resistances and ignores half of target\'s Hardness"',
@@ -4245,7 +4254,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Unarmed attacks gain the forceful trait or increase damage by 1 die step"',
   'Empty Body':
-    'Section=magic Note="Knows <i>Empty Body</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>Empty Body</i> spell/+1 Focus Points"',
   'Meditative Wellspring':
     'Section=magic Note="Refocus restores 3 Focus Points"',
   'Swift River':
@@ -4698,70 +4707,70 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)",' +
-      '"Knows <i>Tentacular Limbs</i> spell",' +
+      '"Knows the <i>Tentacular Limbs</i> spell",' +
       '"Casting a bloodline spell gives self or target +2 Will saves for 1 rd",' +
       '"Skill Trained (Intimidation; Occultism)"',
   'Angelic':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"Knows <i>Angelic Halo</i> spell",' +
+      '"Knows the <i>Angelic Halo</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 saves for 1 rd",' +
       '"Skill Trained (Diplomacy; Religion)"',
   'Demonic':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"Knows <i>Glutton\'s Jaws</i> spell",' +
+      '"Knows the <i>Glutton\'s Jaws</i> spell",' +
       '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Diabolic':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"Knows <i>Diabolic Edict</i> spell",' +
+      '"Knows the <i>Diabolic Edict</i> spell",' +
       '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd",' +
       '"Skill Trained (Deception; Religion)"',
   'Draconic':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane))",' +
-      '"Knows <i>Dragon Claws</i> spell",' +
+      '"Knows the <i>Dragon Claws</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 AC for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Elemental':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)",' +
-      '"Knows <i>Elemental Toss</i> spell",' +
+      '"Knows the <i>Elemental Toss</i> spell",' +
       '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Fey':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)",' +
-      '"Knows <i>Faerie Dust</i> spell",' +
+      '"Knows the <i>Faerie Dust</i> spell",' +
       '"Casting a bloodline spell gives self or target concealment for 1 rd",' +
       '"Skill Trained (Deception; Nature)"',
   'Hag':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)",' +
-      '"Knows <i>Jealous Hex</i> spell",' +
+      '"Knows the <i>Jealous Hex</i> spell",' +
       '"Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd",' +
       '"Skill Trained (Deception; Occultism)"',
   'Imperial':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)",' +
-      '"Knows <i>Ancestral Memories</i> spell",' +
+      '"Knows the <i>Ancestral Memories</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 skill checks for 1 rd",' +
       '"Skill Trained (Arcana; Society)"',
   'Undead':
     'Section=magic,magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"Knows <i>Undeath\'s Blessing</i> spell",' +
+      '"Knows the <i>Undeath\'s Blessing</i> spell",' +
       '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Bloodline':
@@ -4787,7 +4796,8 @@ Pathfinder2E.FEATURES = {
   // Weapon Specialization as above
 
   'Counterspell':
-    'Section=magic Note="May expend a spell slot to counteract a known spell"',
+    'Section=magic ' +
+    'Note="May use a Reaction and expend a spell slot to counteract a spell with the same spell"',
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Instantaneous spells inflict additional damage equal to their levels"',
@@ -4850,7 +4860,7 @@ Pathfinder2E.FEATURES = {
     'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
-    'Section=magic Note="May freely use metamatic single actions"',
+    'Section=magic Note="May use a 1-action metamatic effect as a free action"',
 
   // Wizard
   'Abjuration':
@@ -4861,7 +4871,7 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Arcane Bond':
     'Section=magic ' +
-    'Note="May cast an expended spell using power stored in a possession 1/dy"',
+    'Note="May use Drain Bonded Item to cast an expended spell using power stored in a possession 1/dy"',
   // TODO more to it than this
   'Arcane School':
     'Section=feature,magic ' +
@@ -4901,7 +4911,7 @@ Pathfinder2E.FEATURES = {
       '"Knows 1 additional 1st-level Illusion spell"',
   'Improved Familiar Attunement':
     'Section=feature ' +
-    'Note="Familiar has %{level//6+1} additional abilit%{level>5?\'ies\':\'y\'}"',
+    'Note="Familiar is focus of Arcane Bond and has %{level//6+1} additional abilit%{level>5?\'ies\':\'y\'}"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Magical Fortitude as above
@@ -4922,7 +4932,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 spell slots from a level to prepare a spell two levels higher/May use a spell slot to prepare 2 cantrips"',
   'Spell Substitution':
     'Section=magic ' +
-    'Note="May use a 10-minute process to replace 1 prepred spell with a different spell"',
+    'Note="May use a 10-minute process to replace 1 prepared spell with a different spell"',
   'Transmutation':
     'Section=magic,magic ' +
     'Note=' +
@@ -4947,7 +4957,7 @@ Pathfinder2E.FEATURES = {
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
-    'Note="Knows <i>Hand Of The Apprentice</i> spell/Has a Focus Pool with 1 Focus Point"',
+    'Note="Knows the <i>Hand Of The Apprentice</i> spell/Has a Focus Pool with 1 Focus Point"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -4962,41 +4972,42 @@ Pathfinder2E.FEATURES = {
   'Silent Spell':
     'Section=magic Note="Does not need verbal components to cast spells"',
   'Spell Penetration':
-    'Section=magic Note="Spell targets reduce status bonus to saves vs. magic by 1"',
+    'Section=magic ' +
+    'Note="Targets reduce any status bonus to saves vs. self spells by 1"',
   // Steady Spellcasting as above
   'Advanced School Spell':
-    'Section=magic Note="Knows <i>%V</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
   'Bond Conservation':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell 2 levels lower withing 1 rd"',
+    'Note="May use Drain Bonded Item to cast another spell 2 levels lower within 1 rd"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"May select a school spell during daily preparations"',
+      '"May select a school spell during daily preparations and Refocus"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary spell scrolls each dy"',
+    'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each dy"',
   'Clever Counterspell':
     'Section=magic ' +
-    'Note="May Counterspell a known spell using any spell that shares its school and another trait"',
+    'Note="May Counterspell with a -2 penalty a known spell using any spell that shares its school and another trait"',
   // Magic Sense as above
   'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell 2 levels lower 1/dy"',
+    'Note="May use Drain Bonded Item to cast another spell up to level %V 1/dy"',
   // Effortless Concentration as above
   'Spell Tinker':
-    'Section=magic Note="May alter effect choice of spell cast on self"',
+    'Section=magic Note="May alter effect choice of a spell cast on self"',
   'Infinite Possibilities':
     'Section=magic ' +
     'Note="May designate a spell slot to allow casting of any known spell of 2 levels lower"',
   'Reprepare Spell':
     'Section=magic ' +
-    'Note="May spend 10 min to reprepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
+    'Note="May spend 10 min to prepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
   "Archwizard's Might":'Section=magic Note="+1 10th level spell slot"',
   // Metamagic Mastery as above
   'Spell Combination':
@@ -10496,13 +10507,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.legendarySpellcaster',
       'wizardFeatures.Legendary Spellcaster', '=', '"Arcane"'
     );
+    rules.defineRule
+      ('magicNotes.masterSpellcaster', classLevel, '=', '"Arcane"');
     rules.defineRule('magicNotes.metamagicalExperimentation',
       classLevel, '?', 'source >= 4'
     );
-    rules.defineRule('selectableFeatureCount.Wizard (School Specialization)',
+    rules.defineRule('selectableFeatureCount.Wizard (Specialization)',
       'featureNotes.arcaneSchool', '=', '1'
     );
-    rules.defineRule('selectableFeatureCount.Wizard (Arcane Thesis)',
+    rules.defineRule('selectableFeatureCount.Wizard (Thesis)',
       'featureNotes.arcaneThesis', '=', '1'
     );
     rules.defineRule
@@ -10521,7 +10534,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     };
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('School')).map(x => x.replace('Wizard - ', '')).filter(s => schoolSpells[s]);
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Specialization')).map(x => x.replace('Wizard - ', '')).filter(s => schoolSpells[s]);
     schools.forEach(s => {
       let note = 'magicNotes.' + s.toLowerCase();
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
@@ -10532,6 +10545,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       );
       rules.defineRule('spells.' + schoolSpells[s][0], note, '=', '1');
       rules.defineRule('spells.' + schoolSpells[s][1], note, '=', '1');
+    });
+    [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
+      rules.defineRule
+        ('magicNotes.scrollSavant', 'spellSlots.A' + l, '^=', 'source - 2');
+      rules.defineRule
+        ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', 'source - 2');
     });
   }
 
