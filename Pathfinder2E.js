@@ -547,13 +547,18 @@ Pathfinder2E.CLASSES = {
       '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Primal)",' +
-      '"1:Primal Spellcasting","1:Druidic Language","1:Druidic Order",' +
-      '"1:Shield Block","1:Wild Empathy","2:Druid Feats","2:Skill Feats",' +
-      '"3:Alertness","3:General Feats","3:Great Fortitude",' +
+      '"1:Primal Spellcasting","1:Anathema","1:Druidic Language",' +
+      '"1:Druidic Order","1:Shield Block","1:Wild Empathy","2:Druid Feats",' +
+      '"2:Skill Feats","3:Alertness","3:General Feats","3:Great Fortitude",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"11:Druid Weapon Expertise","11:Resolve","13:Medium Armor Expertise",' +
       '"13:Weapon Specialization","15:Master Spellcaster",' +
       '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
+    'Selectables=' +
+      '"1:Animal Order:Order",' +
+      '"1:Leaf Order:Order",' +
+      '"1:Storm Order:Order",' +
+      '"1:Wild Order:Order" ' +
     'SpellSlots=' +
       'P0:5@1,' +
       'P1:2@1;3@2,' +
@@ -1393,7 +1398,8 @@ Pathfinder2E.FEATS = {
   'Wild Shape':'Type=Class,Druid Require="features.Wild Order"',
   'Call Of The Wild':'Type=Class,Druid Require="level >= 2"',
   'Enhanced Familiar':
-    'Type=Class,Druid,Sorcerer,Wizard Require="level >= 2","features.Familiar"',
+    'Type=Class,Druid,Sorcerer,Wizard ' +
+    'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
   'Order Explorer':'Type=Class,Druid Require="level >= 2"',
   // Poison Resistance as above
   'Form Control':
@@ -3725,25 +3731,34 @@ Pathfinder2E.FEATURES = {
 
   // Druid
   // Alertness as above
+  'Animal Order':'Section=feature Note="FILL"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
-  'Druidic Language':'Section=feature Note="FILL"',
+  'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
   // TODO more to it than this
   'Druidic Order':
-    'Section=magic Note="Has a Focus Pool with 1 Focus Point"',
-  'Druid Weapon Expertise':'Section=feature Note="FILL"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a Focus Pool with 1 Focus Point"',
+  'Druid Weapon Expertise':
+    'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
   // Great Fortitude as above
+  'Leaf Order':'Section=feature Note="FILL"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Master Spellcaster as above
   // Medium Armor Expertise as above
-  'Primal Hierophant':'Section=feature Note="FILL"',
-  'Primal Spellcasting':'Section=feature Note="FILL"',
+  'Primal Hierophant':'Section=magic Note="Has 1 10th-level spell slot"',
+  'Primal Spellcasting':
+    'Section=magic Note="May learn spells from the Primal tradition"',
   // Resolve as above
   // Shield Block as below
+  'Storm Order':'Section=feature Note="FILL"',
   // Weapon Specialization as above
+  'Wild Order':'Section=feature Note="FILL"',
   'Wild Empathy':
     'Section=skill ' +
     'Note="May use Diplomacy with animals to Make an Impression and make simple Requests"',
@@ -10313,11 +10328,22 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.druidicOrder', '+=', '1');
+    rules.defineRule
+      ('languages.Druidic', 'skillNotes.druidicLanguage', '=', '1');
+    rules.defineRule
+      ('magicNotes.expertSpellcaster', classLevel, '=', '"Primal"');
     rules.defineRule('magicNotes.legendarySpellcaster',
       'druidFeatures.Legendary Spellcaster', '=', '"Primal"'
     );
     rules.defineRule
+      ('magicNotes.masterSpellcaster', classLevel, '=', '"Primal"');
+    rules.defineRule('selectableFeatureCount.Druid (Order)',
+      'featureNotes.druidicOrder', '=', '1'
+    );
+    rules.defineRule
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule
+      ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
   } else if(name == 'Fighter') {
     rules.defineRule('rank.Will', 'saveNotes.bravery', '^=', '2');
     rules.defineRule
