@@ -3731,7 +3731,12 @@ Pathfinder2E.FEATURES = {
 
   // Druid
   // Alertness as above
-  'Animal Order':'Section=feature Note="FILL"',
+  'Animal Order':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has Animal Companion feature",' +
+      '"Knows <i>Heal Animal</i> spell",' +
+      '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
@@ -3746,7 +3751,12 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
   // Great Fortitude as above
-  'Leaf Order':'Section=feature Note="FILL"',
+  'Leaf Order':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has Leshy Familiar feature",' +
+      '"Knows <i>Goodberry</i> spell/+1 Focus Points",' +
+      '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Master Spellcaster as above
@@ -3756,9 +3766,19 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May learn spells from the Primal tradition"',
   // Resolve as above
   // Shield Block as below
-  'Storm Order':'Section=feature Note="FILL"',
+  'Storm Order':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has Storm Born feature",' +
+      '"Knows <i>Tempest Surge</i> spell/+1 Focus Points",' +
+      '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
-  'Wild Order':'Section=feature Note="FILL"',
+  'Wild Order':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has Wild Shape feature",' +
+      '"Knows <i>Wild Morph</i> spell",' +
+      '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
     'Note="May use Diplomacy with animals to Make an Impression and make simple Requests"',
@@ -10326,7 +10346,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Druid') {
     rules.defineRule
+      ('features.Anaimal Companion', 'featureNotes.animalOrder', '=', '1');
+    rules.defineRule
       ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
+    rules.defineRule
+      ('features.Leshy Familiar', 'featureNotes.leafOrder', '=', '1');
+    rules.defineRule
+      ('features.Storm Born', 'featureNotes.stormOrder', '=', '1');
+    rules.defineRule('features.Wild Shape', 'featureNotes.wildOrder', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.druidicOrder', '+=', '1');
     rules.defineRule
       ('languages.Druidic', 'skillNotes.druidicLanguage', '=', '1');
@@ -10344,6 +10371,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
+    rules.defineRule('spells.Heal Animal', 'magicNotes.animalOrder', '=', '1');
+    rules.defineRule('spells.Goodberry', 'magicNotes.leafOrder', '=', '1');
+    rules.defineRule('spells.Tempest Surge', 'magicNotes.stormOrder', '=', '1');
+    rules.defineRule('spells.Wild Morph', 'magicNotes.wildOrder', '=', '1');
   } else if(name == 'Fighter') {
     rules.defineRule('rank.Will', 'saveNotes.bravery', '^=', '2');
     rules.defineRule
