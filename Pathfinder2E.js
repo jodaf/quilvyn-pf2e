@@ -1390,17 +1390,27 @@ Pathfinder2E.FEATS = {
   'Metamagic Channel':'Type=Class,Cleric Require="level >= 20"',
 
   'Animal Companion':
-    'Type=Class,Druid,Ranger Require="features.Animal Order || levels.Ranger"',
-  'Leshy Familiar':'Type=Class,Druid Require="features.Leaf Order"',
+    'Type=Class,Druid,Ranger ' +
+    'Require="features.Animal Order || features.Order Explorer (Animal Order) || levels.Ranger"',
+  'Leshy Familiar':
+    'Type=Class,Druid ' +
+    'Require="features.Leaf Order || features.Order Explorer (Leaf Order)"',
   // Reach Spell as above
-  'Storm Born':'Type=Class,Druid Require="features.Storm Order"',
+  'Storm Born':
+    'Type=Class,Druid ' +
+    'Require="features.Storm Order || features.Order Explorer (Storm Order)"',
   'Widen Spell':'Type=Class,Druid,Sorcerer,Wizard',
-  'Wild Shape':'Type=Class,Druid Require="features.Wild Order"',
+  'Wild Shape':
+    'Type=Class,Druid ' +
+    'Require="features.Wild Order || features.Order Explorer (Wild Order)"',
   'Call Of The Wild':'Type=Class,Druid Require="level >= 2"',
   'Enhanced Familiar':
     'Type=Class,Druid,Sorcerer,Wizard ' +
     'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
-  'Order Explorer':'Type=Class,Druid Require="level >= 2"',
+  'Order Explorer (Animal Order)':'Type=Class,Druid Require="level >= 2"',
+  'Order Explorer (Leaf Order)':'Type=Class,Druid Require="level >= 2"',
+  'Order Explorer (Storm Order)':'Type=Class,Druid Require="level >= 2"',
+  'Order Explorer (Wild Order)':'Type=Class,Druid Require="level >= 2"',
   // Poison Resistance as above
   'Form Control':
     'Type=Class,Druid ' +
@@ -1410,20 +1420,39 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
-  'Order Magic':
-    'Type=Class,Druid Require="level >= 4","features.Order Explorer"',
+  'Order Magic (Animal Order)':
+    'Type=Class,Druid ' +
+    'Require="level >= 4","features.Order Explorer (Animal Order)"',
+  'Order Magic (Leaf Order)':
+    'Type=Class,Druid ' +
+    'Require="level >= 4","features.Order Explorer (Leaf Order)"',
+  'Order Magic (Storm Order)':
+    'Type=Class,Druid ' +
+    'Require="level >= 4","features.Order Explorer (Storm Order)"',
+  'Order Magic (Wild Order)':
+    'Type=Class,Druid ' +
+    'Require="level >= 4","features.Order Explorer (Wild Order)"',
   'Thousand Faces':
     'Type=Class,Druid Require="level >= 4","features.Wild Shape"',
   'Woodland Stride':
-    'Type=Class,Druid Require="level >= 4","features.Leaf Order"',
+    'Type=Class,Druid ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Green Empathy':
-    'Type=Class,Druid Require="level >= 6","features.Leaf Order"',
+    'Type=Class,Druid ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Insect Shape':
     'Type=Class,Druid Require="level >= 6","features.Wild Shape"',
   // Steady Spellcasting as above
   'Storm Retribution':
     'Type=Class,Druid ' +
-    'Require="level >= 6","features.Storm Order","spells.Tempest Surge"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Storm Order || features.Order Explorer (Storm Order)",' +
+      '"spells.Tempest Surge"',
   'Ferocious Shape':
     'Type=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Fey Caller':'Type=Class,Druid Require="level >= 8"',
@@ -1435,7 +1464,10 @@ Pathfinder2E.FEATS = {
   'Soaring Shape':
     'Type=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Wind Caller':
-    'Type=Class,Druid Require="level >= 8","features.Storm Order"',
+    'Type=Class,Druid ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Storm Order || features.Order Explorer (Storm Order)"',
   'Elemental Shape':
     'Type=Class,Druid Require="level >= 10","features.Wild Shape"',
   'Healing Transformation':'Type=Class,Druid Require="level >= 10"',
@@ -1443,7 +1475,9 @@ Pathfinder2E.FEATS = {
     'Type=Class,Druid,Sorcerer,Wizard Require="level >= 10"',
   'Plant Shape':
     'Type=Class,Druid ' +
-    'Require="level >= 10","features.Leaf Order || features.Wild Shape"',
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Leaf Order || features.Order Explorer (Leaf Order) || features.Wild Shape"',
   'Side By Side':
     'Type=Class,Druid,Ranger ' +
     'Require=' +
@@ -1463,10 +1497,16 @@ Pathfinder2E.FEATS = {
       '"features.Incredible Companion"',
   'Timeless Nature':'Type=Class,Druid Require="level >= 14"',
   'Verdant Metamorphosis':
-    'Type=Class,Druid Require="level >= 14","features.Leaf Order"',
+    'Type=Class,Druid ' +
+    'Require=' +
+      '"level >= 14",' +
+      '"features.Leaf Order || features.Order Explorer (Leaf Order)"',
   // Effortless Concentration as above
   'Impaling Briars':
-    'Type=Class,Druid Require="level >= 16","features.Leaf Order"',
+    'Type=Class,Druid ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Leaf Order || features.Order Explorer (Leaf Order)"',
   'Monstrosity Shape':
     'Type=Class,Druid Require="level >= 16","features.Wild Shape"',
   'Invoke Disaster':
@@ -2907,7 +2947,8 @@ Pathfinder2E.FEATURES = {
   'Alchemical Savant':'Section=feature Note="FILL"',
   'Far Lobber':'Section=feature Note="FILL"',
   'Quick Bomber':'Section=feature Note="FILL"',
-  'Poison Resistance':'Section=feature Note="FILL"',
+  'Poison Resistance':
+    'Section=save Note="Poison resistance %{level//2}/+1 saves vs. poison"',
   'Revivifying Mutagen':'Section=feature Note="FILL"',
   'Smoke Bomb':'Section=feature Note="FILL"',
   'Calculated Splash':'Section=feature Note="FILL"',
@@ -3784,41 +3825,97 @@ Pathfinder2E.FEATURES = {
     'Note="May use Diplomacy with animals to Make an Impression and make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey and Flurry, Precision, or Outwit effects\':\'\'}"',
-  'Leshy Familiar':'Section=feature Note="FILL"',
+  'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
   // Reach Spell as above
-  'Storm Born':'Section=feature Note="FILL"',
+  'Storm Born':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"Suffers no penalties from weather on ranged spells",' +
+      '"Suffers no penalties from weather on Perception"',
   'Widen Spell':
     'Section=magic ' +
-    'Note="May increase the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
-  'Wild Shape':'Section=feature Note="FILL"',
-  'Call Of The Wild':'Section=feature Note="FILL"',
+    'Note="May increase the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', and the effect of a longer line or cone spell by 10\'"',
+  'Wild Shape':'Section=magic Note="Knows the <i>Wild Shape</i> spell"',
+  'Call Of The Wild':
+    'Section=magic ' +
+    'Note="May spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
     'Section=feature Note="May select 4 familiar or master abilities each dy"',
-  'Order Explorer':'Section=feature Note="FILL"',
+  'Order Explorer (Animal Order)':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"+1 Class Feat",' +
+      '"May learn Animal Order feats"',
+  'Order Explorer (Leaf Order)':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"+1 Class Feat",' +
+      '"May learn Leaf Order feats"',
+  'Order Explorer (Storm Order)':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"+1 Class Feat",' +
+      '"May learn Storm Order feats"',
+  'Order Explorer (Wild Order)':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"+1 Class Feat",' +
+      '"May learn Wild Order feats"',
   // Poison Resistance as above
-  'Form Control':'Section=feature Note="FILL"',
+  'Form Control':
+    'Section=magic ' +
+    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hr"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
-  'Order Magic':'Section=feature Note="FILL"',
-  'Thousand Faces':'Section=feature Note="FILL"',
-  'Woodland Stride':'Section=feature Note="FILL"',
-  'Green Empathy':'Section=feature Note="FILL"',
-  'Insect Shape':'Section=feature Note="FILL"',
+  'Order Magic (Animal Order)':
+    'Section=magic Note="Knows <i>Heal Animal</i>spell"',
+  'Order Magic (Leaf Order)':
+    'Section=magic Note="Knows <i>Goodberry</i>spell"',
+  'Order Magic (Storm Order)':
+    'Section=magic Note="Knows <i>Tempest Surge</i>spell"',
+  'Order Magic (Wild Order)':
+    'Section=magic Note="Knows <i>Wild Morph</i>spell"',
+  'Thousand Faces':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Small or Medium Humanoid"',
+  'Woodland Stride':
+    'Section=ability ' +
+    'Note="May move normally through difficult terrain caused by plants"',
+  'Green Empathy':
+    'Section=skill ' +
+    'Note="May use Diplomacy at +2 with plants and fungi to Make an Impression and make simple Requests"',
+  'Insect Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
   // Steady Spellcasting as above
-  'Storm Retribution':'Section=feature Note="FILL"',
-  'Ferocious Shape':'Section=feature Note="FILL"',
-  'Fey Caller':'Section=feature Note="FILL"',
+  'Storm Retribution':
+    'Section=combat Note="May use a Reaction on a foe critical melee hit to push foe 5\' (Ref neg; pushes 10\' on critical failure)"',
+  'Ferocious Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Large dinosaur and gain +1 on Athletics checks"',
+  'Fey Caller':
+    'Section=magic ' +
+    'Note="Knows <i>Illusory Disguise</i>, <i>Illusory Object</i>, <i>Illusory Scene</i>, and <i>Veil</i> primal spells"',
   'Incredible Companion':
     'Section=feature Note="Animal Companion is a nimble or savage companion"',
-  'Soaring Shape':'Section=feature Note="FILL"',
-  'Wind Caller':'Section=feature Note="FILL"',
-  'Elemental Shape':'Section=feature Note="FILL"',
-  'Healing Transformation':'Section=feature Note="FILL"',
+  'Soaring Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird and gain +1 on Athletics checks"',
+  'Wind Caller':
+    'Section=magic ' +
+    'Note="Knows <i>Stormwind Flight</i> spell/+1 Focus Points"',
+  'Elemental Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Medium elemental and gain resistance 5 to fire"',
+  'Healing Transformation':
+    'Section=magic Note="Self polymorph spells also heal 1d6 HP/spell level"',
   'Overwhelming Energy':
     'Section=magic ' +
     'Note="May have spells ignore resistance %{level} to choice of energy"',
-  'Plant Shape':'Section=feature Note="FILL"',
+  'Plant Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Large plant and gain resistance 5 to poison"',
   'Side By Side':
     'Section=combat ' +
     'Note="Self and companion automatically flank a foe adjacent to both"',
@@ -10365,7 +10462,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', classLevel, '=', '"Primal"');
     rules.defineRule('selectableFeatureCount.Druid (Order)',
-      'featureNotes.druidicOrder', '=', '1'
+      'featureNotes.druidicOrder', '=', '1',
+      'featureNotes.orderExplorer', '+', null
     );
     rules.defineRule
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
@@ -10862,6 +10960,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if(name.match(/^Favored Terrain/)) {
     rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
+  } else if(name == 'Fey Caller') {
+    rules.defineRule
+      ('spells.Illusory Disguise', 'magicNotes.feyCaller', '=', '1');
+    rules.defineRule
+      ('spells.Illusory Object', 'magicNotes.feyCaller', '=', '1');
+    rules.defineRule('spells.Illusory Scene', 'magicNotes.feyCaller', '=', '1');
+    rules.defineRule('spells.Veil', 'magicNotes.feyCaller', '=', '1');
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'source<2');
     rules.defineRule
@@ -10908,6 +11013,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Orc Sight') {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
+  } else if(name == 'Order Magic (Animal Order)') {
+    rules.defineRule
+      ('spells.Heal Animal', 'magicNotes.orderMagic(AnimalOrder)', '=', '1');
+  } else if(name == 'Order Magic (Leaf Order)') {
+    rules.defineRule
+      ('spells.Goodberry', 'magicNotes.orderMagic(LeafOrder)', '=', '1');
+  } else if(name == 'Order Magic (Storm Order)') {
+    rules.defineRule
+      ('spells.Tempest Surge', 'magicNotes.orderMagic(StormOrder)', '=', '1');
+  } else if(name == 'Order Magic (Wild Order)') {
+    rules.defineRule
+      ('spells.Wild Morph', 'magicNotes.orderMagic(WildOrder)', '=', '1');
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
@@ -10966,6 +11083,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'spellSlots.O' + l, '^', l - 1
       );
     });
+  } else if(name == 'Wild Shape') {
+    rules.defineRule('spells.Wild Shape', 'magicNotes.wildShape', '=', '1');
+  } else if(name == 'Wind Caller') {
+    rules.defineRule
+      ('spells.Stormwind Flight', 'magicNotes.windCaller', '=', '1');
   }
 };
 
