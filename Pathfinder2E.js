@@ -384,7 +384,7 @@ Pathfinder2E.CLASSES = {
       '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
       '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Alchemist)",' +
-      '"1:Alchemical Crafting","1:Advanced Alchemy","1:Quick Alchemy",' +
+      '"1:Alchemy","1:Infused Reagents","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
       '"1:Alchemist Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Field Discovery","5:Powerful Alchemy",' +
@@ -393,7 +393,11 @@ Pathfinder2E.CLASSES = {
       '"11:Juggernaut","11:Perpetual Potency","13:Greater Field Discovery",' +
       '"13:Medium Armor Expertise","13:Weapon Specialization",' +
       '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
-      '"17:Perpetual Perfection","19:Medium Armor Mastery"',
+      '"17:Perpetual Perfection","19:Medium Armor Mastery" ' +
+    'Selectables=' +
+      '"1:Bomber:Research Field",' +
+      '"1:Chirurgeon:Research Field",' +
+      '"1:Mutagenist:Research Field"',
   'Barbarian':
     'Ability=strength HitPoints=12 ' +
     'Features=' +
@@ -418,7 +422,8 @@ Pathfinder2E.CLASSES = {
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
       '"19:Devastator" ' +
     'Selectables=' +
-      '"1:Fury Instinct:Instinct","1:Giant Instinct:Instinct",' +
+      '"1:Fury Instinct:Instinct",' +
+      '"1:Giant Instinct:Instinct",' +
       '"1:Spirit Instinct:Instinct",' +
       '"1:Animal Instinct (Ape):Instinct",' +
       '"1:Animal Instinct (Bear):Instinct",' +
@@ -861,7 +866,7 @@ Pathfinder2E.FEATS = {
     'Type=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
   // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
   'Energized Font':
-    'Type=Ancestry,Gnome Require="level >= 5","features.Focus Pool"',
+    'Type=Ancestry,Gnome Require="level >= 5","focusPoints"',
   'Gnome Weapon Innovator':
     'Type=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
@@ -972,8 +977,8 @@ Pathfinder2E.FEATS = {
   'Feral Mutagen':'Type=Class,Alchemist Require="level >= 8"',
   'Sticky Bomb':'Type=Class,Alchemist Require="level >= 8"',
   'Elastic Mutagen':'Type=Class,Alchemist Require="level >= 10"',
-  'Extended Splash':
-    'Type=Class,Alchemist Require="level >= 10","features.Calculated Spash"',
+  'Expanded Splash':
+    'Type=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
   'Greater Debilitating Bomb':
     'Type=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
   'Merciful Elixir':'Type=Class,Alchemist Require="level >= 10"',
@@ -1407,10 +1412,14 @@ Pathfinder2E.FEATS = {
   'Enhanced Familiar':
     'Type=Class,Druid,Sorcerer,Wizard ' +
     'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
-  'Order Explorer (Animal Order)':'Type=Class,Druid Require="level >= 2"',
-  'Order Explorer (Leaf Order)':'Type=Class,Druid Require="level >= 2"',
-  'Order Explorer (Storm Order)':'Type=Class,Druid Require="level >= 2"',
-  'Order Explorer (Wild Order)':'Type=Class,Druid Require="level >= 2"',
+  'Order Explorer (Animal Order)':
+    'Type=Class,Druid Require="level >= 2","features.Animal Order == 0"',
+  'Order Explorer (Leaf Order)':
+    'Type=Class,Druid Require="level >= 2","features.Leaf Order == 0"',
+  'Order Explorer (Storm Order)':
+    'Type=Class,Druid Require="level >= 2","features.Storm Order == 0"',
+  'Order Explorer (Wild Order)':
+    'Type=Class,Druid Require="level >= 2","features.Wild Order == 0"',
   // Poison Resistance as above
   'Form Control':
     'Type=Class,Druid ' +
@@ -2903,45 +2912,53 @@ Pathfinder2E.FEATURES = {
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
-  // Alchemical Crafting as below
+  'Advanced Alchemy':'Section=feature Note="FILL"',
+  'Alchemical Alacrity':'Section=feature Note="FILL"',
+  'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
+  'Alchemical Mastery':'Section=combat Note="Class Expert (Alchemist)"',
+  'Alchemical Weapon Expertise':
+    'Section=combat ' +
+    'Note="Weapon Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
-  'Advanced Alchemy':'Section=feature Note="FILL"',
-  'Quick Alchemy':'Section=feature Note="FILL"',
-  'Formula Book':'Section=feature Note="FILL"',
-  'Research Field':'Section=feature Note="FILL"',
-  'Mutagenic Flashback':'Section=feature Note="FILL"',
-  'Field Discovery':'Section=feature Note="FILL"',
-  'Powerful Alchemy':'Section=feature Note="FILL"',
-  'Alchemical Weapon Expertise':'Section=feature Note="FILL"',
-  'Iron Will':'Section=save Note="Save Expert (Will)"',
-  'Perpetual Infusions':'Section=feature Note="FILL"',
-  'Alchemical Expertise':'Section=feature Note="FILL"',
+  'Alchemy':'Section=feature Note="FILL"',
   'Alertness':'Section=skill Note="Perception Expert"',
+  'Bomber':'Section=feature Note="FILL"',
+  'Chirurgeon':'Section=feature Note="FILL"',
   'Double Brew':'Section=feature Note="FILL"',
-  'Juggernaut':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Fortitude)",' +
-      '"Successes on Fortitude saves are critical successes"',
-  'Perpetual Potency':'Section=feature Note="FILL"',
-  'Greater Field Discovery':'Section=feature Note="FILL"',
-  'Medium Armor Expertise':
-    'Section=combat ' +
-    'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
-  'Weapon Specialization':
-    'Section=combat ' +
-    'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
-  'Alchemical Alacrity':'Section=feature Note="FILL"',
   'Evasion':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
-  'Alchemical Mastery':'Section=feature Note="FILL"',
+  'Field Discovery':'Section=feature Note="FILL"',
+  'Formula Book':'Section=feature Note="FILL"',
+  'Greater Field Discovery':'Section=feature Note="FILL"',
+  'Infused Reagents':'Section=feature Note="FILL"',
+  'Iron Will':'Section=save Note="Save Expert (Will)"',
+  'Juggernaut':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Fortitude)",' +
+      '"Successes on Fortitude saves are critical successes"',
+  'Medium Armor Expertise':
+    'Section=combat ' +
+    'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
+  'Medium Armor Mastery':
+    'Section=combat ' +
+    'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
+  'Mutagenic Flashback':'Section=feature Note="FILL"',
+  'Mutagenist':'Section=feature Note="FILL"',
+  'Perpetual Infusions':'Section=feature Note="FILL"',
   'Perpetual Perfection':'Section=feature Note="FILL"',
-  'Medium Armor Mastery':'Section=feature Note="FILL"',
+  'Perpetual Potency':'Section=feature Note="FILL"',
+  'Powerful Alchemy':'Section=feature Note="FILL"',
+  'Quick Alchemy':'Section=feature Note="FILL"',
+  'Research Field':'Section=feature Note="1 selection"',
+  'Weapon Specialization':
+    'Section=combat ' +
+    'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
 
   'Alchemical Familiar':'Section=feature Note="FILL"',
   'Alchemical Savant':'Section=feature Note="FILL"',
@@ -2960,7 +2977,7 @@ Pathfinder2E.FEATURES = {
   'Feral Mutagen':'Section=feature Note="FILL"',
   'Sticky Bomb':'Section=feature Note="FILL"',
   'Elastic Mutagen':'Section=feature Note="FILL"',
-  'Extended Splash':'Section=feature Note="FILL"',
+  'Expanded Splash':'Section=feature Note="FILL"',
   'Greater Debilitating Bomb':'Section=feature Note="FILL"',
   'Merciful Elixir':'Section=feature Note="FILL"',
   'Potent Poisoner':'Section=feature Note="FILL"',
@@ -2983,13 +3000,13 @@ Pathfinder2E.FEATURES = {
   'Perfect Mutagen':'Section=feature Note="FILL"',
 
   // Barbarian
-  'Bestial Rage':'Section=combat Note="%V inflicts 1d%1%2 HP during rage"',
   'Armor Of Fury':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Barbarian Feats':'Section=feature Note="%V selections"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
+  'Bestial Rage':'Section=combat Note="%V inflicts 1d%1%2 HP during rage"',
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
@@ -3315,7 +3332,7 @@ Pathfinder2E.FEATURES = {
   'True Hypercognition':
     'Section=skill Note="May use 1 action for 5 Recall Knowledge actions"',
   'Effortless Concentration':
-    'Section=magic Note="May freely extend the duration of 1 spell"',
+    'Section=magic Note="May extend the duration of 1 spell as a free action"',
   'Studious Capacity':
     'Section=magic ' +
     'Note="May cast 1 additional spell of level %1 or lower each dy"',
@@ -3601,7 +3618,7 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Anathema':
     'Section=feature ' +
-    'Note="May not perform acts or cast spells prohibited by %{deity}"',
+    'Note="May not perform acts or cast spells prohibited by %{levels.Druid?\'druidic order\'+($\'features.Order Explorer\'?\'s\':\'\'):deity}"',
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
@@ -3776,7 +3793,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Animal Companion feature",' +
-      '"Knows <i>Heal Animal</i> spell",' +
+      '"Knows the <i>Heal Animal</i> spell",' +
       '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
@@ -3796,7 +3813,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Leshy Familiar feature",' +
-      '"Knows <i>Goodberry</i> spell/+1 Focus Points",' +
+      '"Knows the <i>Goodberry</i> spell/+1 Focus Points",' +
       '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -3811,18 +3828,18 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Storm Born feature",' +
-      '"Knows <i>Tempest Surge</i> spell/+1 Focus Points",' +
+      '"Knows the <i>Tempest Surge</i> spell/+1 Focus Points",' +
       '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
   'Wild Order':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Wild Shape feature",' +
-      '"Knows <i>Wild Morph</i> spell",' +
+      '"Knows the <i>Wild Morph</i> spell",' +
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
-    'Note="May use Diplomacy with animals to Make an Impression and make simple Requests"',
+    'Note="May use Diplomacy with animals to Make an Impression and to make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey and Flurry, Precision, or Outwit effects\':\'\'}"',
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
@@ -3830,8 +3847,8 @@ Pathfinder2E.FEATURES = {
   'Storm Born':
     'Section=magic,skill ' +
     'Note=' +
-      '"Suffers no penalties from weather on ranged spells",' +
-      '"Suffers no penalties from weather on Perception"',
+      '"Suffers no ranged spell penalties from weather",' +
+      '"Suffers no Perception penalties from weather"',
   'Widen Spell':
     'Section=magic ' +
     'Note="May increase the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', and the effect of a longer line or cone spell by 10\'"',
@@ -3869,47 +3886,48 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
   'Order Magic (Animal Order)':
-    'Section=magic Note="Knows <i>Heal Animal</i>spell"',
+    'Section=magic Note="Knows the <i>Heal Animal</i> spell"',
   'Order Magic (Leaf Order)':
-    'Section=magic Note="Knows <i>Goodberry</i>spell"',
+    'Section=magic Note="Knows the <i>Goodberry</i> spell"',
   'Order Magic (Storm Order)':
-    'Section=magic Note="Knows <i>Tempest Surge</i>spell"',
+    'Section=magic Note="Knows the <i>Tempest Surge</i> spell"',
   'Order Magic (Wild Order)':
-    'Section=magic Note="Knows <i>Wild Morph</i>spell"',
+    'Section=magic Note="Knows the <i>Wild Morph</i> spell"',
   'Thousand Faces':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Small or Medium Humanoid"',
   'Woodland Stride':
     'Section=ability ' +
-    'Note="May move normally through difficult terrain caused by plants"',
+    'Note="May move normally through difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
-    'Note="May use Diplomacy at +2 with plants and fungi to Make an Impression and make simple Requests"',
+    'Note="May use Diplomacy with plants and fungi to Make an Impression and (at +2) to make simple Requests"',
   'Insect Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
   // Steady Spellcasting as above
   'Storm Retribution':
-    'Section=combat Note="May use a Reaction on a foe critical melee hit to push foe 5\' (Ref neg; pushes 10\' on critical failure)"',
+    'Section=combat Note="May use a Reaction on a foe critical melee hit to push foe 5\' (Ref neg; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Large dinosaur and gain +1 on Athletics checks"',
   'Fey Caller':
     'Section=magic ' +
-    'Note="Knows <i>Illusory Disguise</i>, <i>Illusory Object</i>, <i>Illusory Scene</i>, and <i>Veil</i> primal spells"',
+    'Note="Knows the <i>Illusory Disguise</i>, <i>Illusory Object</i>, <i>Illusory Scene</i>, and <i>Veil</i> primal spells"',
   'Incredible Companion':
-    'Section=feature Note="Animal Companion is a nimble or savage companion"',
+    'Section=feature ' +
+    'Note="Animal Companion gains choice of nimble or savage characteristics"',
   'Soaring Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird and gain +1 on Athletics checks"',
   'Wind Caller':
     'Section=magic ' +
-    'Note="Knows <i>Stormwind Flight</i> spell/+1 Focus Points"',
+    'Note="Knows the <i>Stormwind Flight</i> spell/+1 Focus Points"',
   'Elemental Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Medium elemental and gain resistance 5 to fire"',
   'Healing Transformation':
-    'Section=magic Note="Self polymorph spells also heal 1d6 HP/spell level"',
+    'Section=magic Note="Self polymorph spells restore 1d6 HP/spell level"',
   'Overwhelming Energy':
     'Section=magic ' +
     'Note="May have spells ignore resistance %{level} to choice of energy"',
@@ -3919,23 +3937,52 @@ Pathfinder2E.FEATURES = {
   'Side By Side':
     'Section=combat ' +
     'Note="Self and companion automatically flank a foe adjacent to both"',
-  'Dragon Shape':'Section=feature Note="FILL"',
-  'Green Tongue':'Section=feature Note="FILL"',
-  'Primal Focus':'Section=feature Note="FILL"',
-  'Primal Summons':'Section=feature Note="FILL"',
+  'Dragon Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a Large dragon and gain resistance 5 to choice of acid, cold, electricity, fire, or poison"',
+  'Green Tongue':
+    'Section=magic ' +
+    'Note="Self and any leshy familiar have continuous <i>Speak With Plants</i> effects"',
+  'Primal Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+  'Primal Summons':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Knows the <i>Primal Summons</i> spell",' +
+      '"Summoned creatures gain choice of air, earth, fire, or water elemental power"',
   'Specialized Companion':
     'Section=feature Note="Animal Companion has choice of specialization"',
-  'Timeless Nature':'Section=feature Note="FILL"',
-  'Verdant Metamorphosis':'Section=feature Note="FILL"',
+  'Timeless Nature':
+    'Section=feature,save ' +
+    'Note=' +
+      '"Does not age",' +
+      '"+2 saves vs. disease and primal magic"',
+  'Verdant Metamorphosis':
+    'Section=combat,combat,feature,magic ' +
+    'Note=' +
+      '"Has Armor Class 30",' +
+      '"10 min in sunlight restores half Hit Points; daily rest restores all Hit Points and removes non-permanent conditions, poisons, and diseases",' +
+      '"Has plant, not humanoid, trait",' +
+      '"Has continuous <i>Tree Shape</i> effects"',
   // Effortless Concentration as above
-  'Impaling Briars':'Section=feature Note="FILL"',
-  'Monstrosity Shape':'Section=feature Note="FILL"',
-  'Invoke Disaster':'Section=feature Note="FILL"',
-  'Perfect Form Control':'Section=feature Note="FILL"',
-  'Primal Wellspring':'Section=feature Note="FILL"',
-  "Hierophant's Power":'Section=feature Note="FILL"',
-  'Leyline Conduit':'Section=feature Note="FILL"',
-  'True Shapeshifter':'Section=feature Note="FILL"',
+  'Impaling Briars':
+    'Section=magic ' +
+    'Note="Knows the <i>Impaling Briars</i> spell/+1 Focus Points"',
+  'Monstrosity Shape':
+    'Section=magic ' +
+    'Note="May use <i>Wild Shape</i> to change into a %{$\'features.Soaring Shape\'?\'phoenix, \':\'\'}purple worm or sea serpent"',
+  'Invoke Disaster':
+    'Section=magic Note="Knows the <i>Storm Lord</i> spell/+1 Focus Points"',
+  'Perfect Form Control':
+    'Section=magic ' +
+    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape permanently"',
+  'Primal Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
+  "Hierophant's Power":'Section=magic Note="+1 10th level spell slot"',
+  'Leyline Conduit':
+    'Section=magic ' +
+    'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
+  'True Shapeshifter':
+    'Section=magic ' +
+    'Note="May change shapes during <i>Wild Shape</i>/May <i>Wild Shape</i> into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/dy"',
 
   // Fighter
   // Armor Expertise as above
@@ -4992,7 +5039,7 @@ Pathfinder2E.FEATURES = {
     'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
-    'Section=magic Note="May use a 1-action metamatic effect as a free action"',
+    'Section=magic Note="May use a 1-action metamagic effect as a free action"',
 
   // Wizard
   'Abjuration':
@@ -8749,7 +8796,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description="FILL"',
-  'Antelic Halo':
+  'Angelic Halo':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
@@ -9787,10 +9834,15 @@ Pathfinder2E.ancestryRules = function(
   heritages.forEach(h => {
     h = h.replace(/^\d+:/, '').replace(/:.*/, '');
     rules.defineRule('heritage', 'features.' + h, '=', '"' + h + '"');
+    rules.defineRule(prefix + 'SelectedHeritageCount',
+      'selectableFeatures.' + name + ' - ' + h, '+=', '1'
+    );
   });
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
+  QuilvynRules.validAllocationRules
+    (rules, prefix + 'Heritage', 'selectableFeatureCount.' + name + ' (Heritage)', prefix + 'SelectedHeritageCount');
 
 };
 
@@ -10000,6 +10052,20 @@ Pathfinder2E.classRules = function(
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
 
+  let validatedSelectionTypes = [];
+  selectables.forEach(s => {
+    let pieces = s.split(':');
+    let selectionType = pieces[2].replaceAll(' ', '');
+    rules.defineRule(prefix + 'Selected' + selectionType + 'Count',
+      'selectableFeatures.' + name + ' - ' + pieces[1], '+=', '1'
+    );
+    if(!validatedSelectionTypes.includes(selectionType)) {
+      QuilvynRules.validAllocationRules
+        (rules, prefix + selectionType, 'selectableFeatureCount.' + name + ' (' + pieces[2] + ')', prefix + 'Selected' + selectionType + 'Count');
+      validatedSelectionTypes.push(selectionType);
+    }
+  });
+
   if(languages.length > 0) {
     rules.defineRule('languageCount', classLevel, '+', languages.length);
     for(let i = 0; i < languages.length; i++) {
@@ -10103,6 +10169,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.weaponSpecialization',
       '', '=', '2',
       'combatNotes.greaterWeaponSpecialization', '+', '2'
+    );
+    rules.defineRule('selectableFeatureCount.Alchemist (Research Field)',
+      'featureNotes.researchField', '=', '1'
     );
     rules.defineRule
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
@@ -10237,8 +10306,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.multifariousMuse(EnigmaMuse)', '=', '1'
     );
     rules.defineRule
-      ('features.Focus Pool', 'magicNotes.compositionSpells', '=', '1');
-    rules.defineRule
       ('features.Lingering Composition', 'featureNotes.maestroMuse', '=', '1');
     rules.defineRule('features.Maestro Muse',
       'featureNotes.multifariousMuse(MaestroMuse)', '=', '1'
@@ -10332,8 +10399,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.liberatingStep',
       "featureNotes.champion'sReaction", '+', 'null' // italics
     );
-    rules.defineRule
-      ('features.Focus Pool', 'magicNotes.devotionSpells', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.devotionSpells', '+=', '1');
     rules.defineRule("featureNotes.champion'sReaction",
       'features.Liberator', '=', '"<i>Liberating Step</i>"',
@@ -10443,9 +10508,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Druid') {
     rules.defineRule
-      ('features.Anaimal Companion', 'featureNotes.animalOrder', '=', '1');
-    rules.defineRule
-      ('features.Focus Pool', 'magicNotes.druidicOrder', '=', '1');
+      ('features.Animal Companion', 'featureNotes.animalOrder', '=', '1');
     rules.defineRule
       ('features.Leshy Familiar', 'featureNotes.leafOrder', '=', '1');
     rules.defineRule
@@ -10517,7 +10580,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Monk (Perfection)',
       'featureNotes.pathToPerfection', '=', null
     );
-    rules.defineRule('selectableFeatureCount.Monk (Tradition)',
+    rules.defineRule('selectableFeatureCount.Monk (Ki Tradition)',
       'featureNotes.kiTradition', '=', null
     );
     rules.defineRule
@@ -10602,7 +10665,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       );
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
-    rules.defineRule('features.Focus Pool', 'magicNotes.bloodline', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
@@ -10651,8 +10713,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
-    rules.defineRule
-      ('features.Focus Pool', 'magicNotes.arcaneSchool', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
     rules.defineRule('spellSlots.O10',
       "magicNotes.archwizard'sSpellcraft", '+', 'null' // italics
@@ -10981,6 +11041,17 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spells.Hand Of The Apprentice',
       'magicNotes.handOfTheApprentice', '=', '1'
     );
+  } else if(name == "Hierophant's Power") {
+    rules.defineRule
+      ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
+  } else if(name == 'Impaling Briars') {
+    rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
+    rules.defineRule
+      ('spells.Impaling Briars', 'magicNotes.impalingBriars', '=', '1');
+  } else if(name == 'Invoke Disaster') {
+    rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
+    rules.defineRule
+      ('spells.Storm Lord', 'magicNotes.invokeDisaster', '=', '1');
   } else if(name == 'Ironblood Stance') {
     rules.defineRule('combatNotes.ironbloodStance',
       'level', '=', 'source<12 ? 2 : source<16 ? 3 : source<20 ? 4 : 5',
@@ -10991,13 +11062,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('combatNotes.ironbloodSurge', 'strengthModifier', '=', null);
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
-    rules.defineRule
-      ('features.Focus Pool', 'magicNotes.kiRush', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.kiRush', '+=', '1');
   } else if(name == 'Ki Strike') {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
-    rules.defineRule
-      ('features.Focus Pool', 'magicNotes.kiStrike', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
@@ -11013,6 +11080,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Orc Sight') {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
+  } else if(name.match(/^Order Explorer/)) {
+    rules.defineRule('features.Order Explorer', 'feats.' + name, '=', '1');
   } else if(name == 'Order Magic (Animal Order)') {
     rules.defineRule
       ('spells.Heal Animal', 'magicNotes.orderMagic(AnimalOrder)', '=', '1');
@@ -11025,6 +11094,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Order Magic (Wild Order)') {
     rules.defineRule
       ('spells.Wild Morph', 'magicNotes.orderMagic(WildOrder)', '=', '1');
+  } else if(name == 'Primal Summons') {
+    rules.defineRule
+      ('spells.Primal Summons', 'magicNotes.primalSummons', '=', '1');
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
@@ -11083,6 +11155,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'spellSlots.O' + l, '^', l - 1
       );
     });
+  } else if(name == 'Verdant Metamorphosis') {
+    rules.defineRule
+      ('armorClass', 'combatNotes.verdantMetamorphosis', '^', '30');
   } else if(name == 'Wild Shape') {
     rules.defineRule('spells.Wild Shape', 'magicNotes.wildShape', '=', '1');
   } else if(name == 'Wind Caller') {
