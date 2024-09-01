@@ -390,7 +390,10 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Field Discovery","5:Powerful Alchemy",' +
       '"7:Alchemical Weapon Expertise","7:Iron Will","7:Perpetual Infusions",' +
       '"9:Alchemical Expertise","9:Alertness","9:Double Brew",' +
-      '"11:Juggernaut","11:Perpetual Potency","13:Greater Field Discovery",' +
+      '"11:Juggernaut","11:Perpetual Potency",' +
+      '"features.Bomber ? 13:Greater Field Discovery (Bomber)",' +
+      '"features.Chirurgeon ? 13:Greater Field Discovery (Chirurgeon)",' +
+      '"features.Mutagenist ? 13:Greater Field Discovery (Mutagenist)",' +
       '"13:Medium Armor Expertise","13:Weapon Specialization",' +
       '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
       '"17:Perpetual Perfection","19:Medium Armor Mastery" ' +
@@ -2912,8 +2915,12 @@ Pathfinder2E.FEATURES = {
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
-  'Advanced Alchemy':'Section=feature Note="FILL"',
-  'Alchemical Alacrity':'Section=feature Note="FILL"',
+  'Advanced Alchemy':
+    'Section=magic ' +
+    'Note="May use an infused reagent to create a pair of infused alchemical items of up to level %{level}"',
+  'Alchemical Alacrity':
+    'Section=magic ' +
+    'Note="May use Quick Alchemy to create 3 alchemical items simultaneously"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Mastery':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Weapon Expertise':
@@ -2922,20 +2929,35 @@ Pathfinder2E.FEATURES = {
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
-  'Alchemy':'Section=feature Note="FILL"',
+  'Alchemy':'Section=feature Note="Has Alchemical Crafting features"',
   'Alertness':'Section=skill Note="Perception Expert"',
-  'Bomber':'Section=feature Note="FILL"',
-  'Chirurgeon':'Section=feature Note="FILL"',
-  'Double Brew':'Section=feature Note="FILL"',
+  'Bomber':
+    'Section=combat Note="May have splash bomb affect only a single target"',
+  'Chirurgeon':'Section=skill Note="May use Crafting in place of Medicine"',
+  'Double Brew':
+    'Section=magic ' +
+    'Note="May use Quick Alchemy to create 2 alchemical items simultaneously"',
   'Evasion':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
-  'Field Discovery':'Section=feature Note="FILL"',
-  'Formula Book':'Section=feature Note="FILL"',
-  'Greater Field Discovery':'Section=feature Note="FILL"',
-  'Infused Reagents':'Section=feature Note="FILL"',
+  'Field Discovery':
+    'Section=magic ' +
+    'Note="Using Advanced Alchemy creates three alchemical items"',
+  'Formula Book':
+    'Section=magic ' +
+    'Note="Has a book that contains at least %{level*2} alchemical formulas"',
+  'Greater Field Discovery (Bomber)':
+    'Section=magic ' +
+    'Note="May increase bomb splash to %{$\'features.Expanded Flash\'?15:10}\'"',
+  'Greater Field Discovery (Chururgeon)':
+    'Section=magic Note="Elixirs restore the maximum number of Hit Points"',
+  'Greater Field Discovery (Mutagenist)':
+    'Section=magic Note="May use 2 polymorphic mutagens simultaneously"',
+  'Infused Reagents':
+    'Section=magic ' +
+    'Note="May create %{level+intelligenceModifier} infused reagents each dy"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -2948,22 +2970,37 @@ Pathfinder2E.FEATURES = {
   'Medium Armor Mastery':
     'Section=combat ' +
     'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
-  'Mutagenic Flashback':'Section=feature Note="FILL"',
-  'Mutagenist':'Section=feature Note="FILL"',
-  'Perpetual Infusions':'Section=feature Note="FILL"',
-  'Perpetual Perfection':'Section=feature Note="FILL"',
-  'Perpetual Potency':'Section=feature Note="FILL"',
-  'Powerful Alchemy':'Section=feature Note="FILL"',
-  'Quick Alchemy':'Section=feature Note="FILL"',
+  'Mutagenic Flashback':
+    'Section=magic ' +
+    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/dy"',
+  'Mutagenist':'Section=feature Note="Has Mutagenic Flashback features"',
+  'Perpetual Infusions':
+    'Section=magic ' +
+    'Note="May create choice of 2 1st-level alchemical items without using infused reagents"',
+  'Perpetual Perfection':
+    'Section=magic ' +
+    'Note="May use Quick Alchemy to create items of up to 11th level"',
+  'Perpetual Potency':
+    'Section=magic ' +
+    'Note="May use Quick Alchemy to create items of up to %{features.Chururgeon?\'6th\':\'3rd\'} level"',
+  'Powerful Alchemy':
+    'Section=combat ' +
+    'Note="Items created with Quick Alchemy have DC %{classDifficultyClass.Alchemist}"',
+  'Quick Alchemy':
+    'Section=magic ' +
+    'Note="May use a batch of infused reagents to create 1 alchemical consumable item of up to level %{level} for 1 tn"',
   'Research Field':'Section=feature Note="1 selection"',
   'Weapon Specialization':
     'Section=combat ' +
     'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
 
-  'Alchemical Familiar':'Section=feature Note="FILL"',
-  'Alchemical Savant':'Section=feature Note="FILL"',
-  'Far Lobber':'Section=feature Note="FILL"',
-  'Quick Bomber':'Section=feature Note="FILL"',
+  'Alchemical Familiar':'Section=feature Note="Has Familiar features"',
+  'Alchemical Savant':
+    'Section=kill ' +
+    'Note="May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas, and critical failures on known formulas are normal failures"',
+  'Far Lobber':'Section=combat Note="Bombs have 30\' range"',
+  'Quick Bomber':
+    'Section=combat Note="May use a single action to draw and throw a bomb"',
   'Poison Resistance':
     'Section=save Note="Poison resistance %{level//2}/+1 saves vs. poison"',
   'Revivifying Mutagen':'Section=feature Note="FILL"',
@@ -10170,6 +10207,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '2',
       'combatNotes.greaterWeaponSpecialization', '+', '2'
     );
+    rules.defineRule
+      ('features.Alchemical Crafting', 'featureNotes.alchemy', '=', '1');
+    rules.defineRule
+      ('features.Mutagenic Flashback', 'featureNotes.mutagenist', '=', '1');
     rules.defineRule('selectableFeatureCount.Alchemist (Research Field)',
       'featureNotes.researchField', '=', '1'
     );
@@ -10927,6 +10968,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
+  } else if(name == 'Alchemical Familiar') {
+    rules.defineRule
+      ('features.Familiar', 'featureRules.alchemicalFamiliar', '=', '1');
   } else if(name == 'Animal Accomplice') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
