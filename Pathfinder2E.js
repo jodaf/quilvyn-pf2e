@@ -2554,7 +2554,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful saves vs. necromancy effects are critical successes"',
   'Fey-Touched Gnome':
     'Section=magic ' +
-    'Note="May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/dy"',
+    'Note="May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
@@ -2659,7 +2659,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Meld Into Stone</i> 1/dy",' +
+      '"May cast <i>Meld Into Stone</i> 1/day",' +
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -2668,7 +2668,7 @@ Pathfinder2E.FEATURES = {
     'Note="Weapon Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
-    'Section=skill Note="May become Trained in choice of skill 1/dy"',
+    'Section=skill Note="May become Trained in choice of skill 1/day"',
   'Elven Lore':
     'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
@@ -2697,7 +2697,7 @@ Pathfinder2E.FEATURES = {
     'Note="Ancestral Longevity also gives expert level in a chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
   'Universal Longevity':
     'Section=skill ' +
-    'Note="May replace Ancestral Longevity and Expert Longevity skills 1/dy"',
+    'Note="May replace Ancestral Longevity and Expert Longevity skills 1/day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
@@ -2736,13 +2736,13 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"May speak with all animals",' +
       '"+1 to Make an Impression on animals"',
-  'Energized Font':'Section=magic Note="May regain 1 Focus Point 1/dy"',
+  'Energized Font':'Section=magic Note="May regain 1 Focus Point 1/day"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/dy"',
+     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier+level//2} HP"',
@@ -2802,7 +2802,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Lore':
     'Section=skill Note="Skill Trained (Acrobatics; Stealth; Halfling Lore)"',
   'Halfling Luck':
-    'Section=feature Note="May reroll a skill check or save 1/dy"',
+    'Section=feature Note="May reroll a skill check or save 1/day"',
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -2829,7 +2829,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict critical specialization effect"',
   'Guiding Luck':
     'Section=skill ' +
-    'Note="May reroll a failed Perception check or attack roll 1/dy"',
+    'Note="May reroll a failed Perception check or attack roll 1/day"',
   'Irrepressible':
     'Section=save ' +
     'Note=' +
@@ -2867,7 +2867,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Failures and critical failures when using Aid with expert skills are successes"',
   'Incredible Improvisation':
-    'Section=combat Note="May add +4 to an untrained skill check 1/dy"',
+    'Section=combat Note="May add +4 to an untrained skill check 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':
     'Section=combat ' +
@@ -2879,7 +2879,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="After a critical success using a skill, may use Reaction to Aid an ally on the same skill"',
   'Supernatural Charm':
-    'Section=magic Note="May cast 1st level <i>Charm</i> 1/dy"',
+    'Section=magic Note="May cast 1st level <i>Charm</i> 1/day"',
   'Monstrous Peacemaker':
     'Section=skill ' +
     'Note="+1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society"',
@@ -2900,7 +2900,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Gains %{constitutionModifier} temporary HP for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
-  'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hr"',
+  'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hour"',
   'Orc Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
@@ -2917,10 +2917,10 @@ Pathfinder2E.FEATURES = {
   // Alchemist
   'Advanced Alchemy':
     'Section=skill ' +
-    'Note="May use an infused reagent to create a pair of infused alchemical items of up to level %{level}"',
+    'Note="May use an infused reagent to create a pair of infused alchemical items of up to level %{level} without a Crafting check"',
   'Alchemical Alacrity':'Section=skill Note="Increased Quick Alchemy effects"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
-  'Alchemical Mastery':'Section=combat Note="Class Expert (Alchemist)"',
+  'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
   'Alchemical Weapon Expertise':
     'Section=combat ' +
     'Note="Weapon Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
@@ -2930,7 +2930,7 @@ Pathfinder2E.FEATURES = {
   'Alchemy':'Section=feature Note="Has Alchemical Crafting features"',
   'Alertness':'Section=skill Note="Perception Expert"',
   'Bomber':
-    'Section=combat Note="May have splash bomb affect only a single target"',
+    'Section=combat Note="May have a bomb splash affect only a single target"',
   'Chirurgeon':'Section=skill Note="May use Crafting in place of Medicine"',
   'Double Brew':'Section=skill Note="Increased Quick Alchemy effects"',
   'Evasion':
@@ -2939,11 +2939,10 @@ Pathfinder2E.FEATURES = {
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
   'Field Discovery':
-    'Section=combat ' +
-    'Note="Using Advanced Alchemy creates three alchemical items"',
+    'Section=combat Note="Using Advanced Alchemy creates 3 alchemical items"',
   'Formula Book':
     'Section=combat ' +
-    'Note="Has a book that contains at least %{level*2} alchemical formulas"',
+    'Note="Has a book that contains at least %{level*2+6} alchemical formulas"',
   'Greater Field Discovery (Bomber)':
     'Section=combat ' +
     'Note="May increase bomb splash to %{$\'features.Expanded Flash\'?15:10}\'"',
@@ -2952,8 +2951,8 @@ Pathfinder2E.FEATURES = {
   'Greater Field Discovery (Mutagenist)':
     'Section=combat Note="May use 2 polymorphic mutagens simultaneously"',
   'Infused Reagents':
-    'Section=combat ' +
-    'Note="May create %{level+intelligenceModifier} infused reagents each dy"',
+    'Section=skill ' +
+    'Note="May create %{level+intelligenceModifier} infused reagents each day"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -2968,7 +2967,7 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Mutagenic Flashback':
     'Section=combat ' +
-    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/dy"',
+    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day"',
   'Mutagenist':'Section=feature Note="Has Mutagenic Flashback features"',
   'Perpetual Infusions':
     'Section=combat ' +
@@ -2980,8 +2979,12 @@ Pathfinder2E.FEATURES = {
     'Note="Items created with Quick Alchemy have DC %{classDifficultyClass.Alchemist}"',
   'Quick Alchemy':
     'Section=skill ' +
-    'Note="May use a batch of infused reagents to create %V alchemical item of up to level %{level}%{level>10?(\', or 2 items of up to level %1,\':\'\'} for 1 tn"',
-  'Research Field':'Section=feature Note="1 selection"',
+    'Note="May use a batch of infused reagents to create %V alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{level}%{level>10?\', or 2 items of up to level %1,\':\'\'} for 1 tn"',
+  'Research Field':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Using Advanced Alchemy creates 3 signature items from research field"',
   'Weapon Specialization':
     'Section=combat ' +
     'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
@@ -3000,13 +3003,13 @@ Pathfinder2E.FEATURES = {
     'Note="May use 1 action to end mutagen effects and regain 1d6 Hit Points per 2 levels of the mutagen"',
   'Smoke Bomb':
     'Section=combat ' +
-    'Note="May use Quick Alchemy to create a bomb up to level %{level-1} that creates smoke in a 10\'-radius burst for 1 min"',
+    'Note="May use Quick Alchemy to create a bomb up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min"',
   'Calculated Splash':
     'Section=combat ' +
-    'Note="May have bombs inflict %{intelligenceModifier} HP splash damage"',
+    'Note="May increase the splash damage of bombs to %{intelligenceModifier} Hit Points"',
   'Efficient Alchemy':
     'Section=skill ' +
-    'Note="May produce dbl the usual number of alchemical items in a given time"',
+    'Note="May produce twice the usual number of alchemical items in a given time"',
   'Enduring Alchemy':
     'Section=skill ' +
     'Note="Quick Alchemy products last until the end of next turn"',
@@ -3015,8 +3018,9 @@ Pathfinder2E.FEATURES = {
     'Note="May create a single elixir that has the effects of two"',
   'Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fort neg})"',
-  'Directional Bombs':'Section=combat Note="May have bombs splash a 15\' cone"',
+    'Note="May create bombs up to level %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fort neg})"',
+  'Directional Bombs':
+    'Section=combat Note="May restrict bomb splash to a 15\' cone"',
   'Feral Mutagen':
     'Section=combat,skill ' +
     'Note=' +
@@ -3027,38 +3031,38 @@ Pathfinder2E.FEATURES = {
     'Note="May create bombs up to level %{level-2} that inflict persistent damage equal to splash damage"',
   'Elastic Mutagen':
     'Section=skill ' +
-    'Note="Consuming a quicksilver mutagen allows 10\' Step and moving through tight spaces as 1 size smaller"',
+    'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as 1 size smaller"',
   'Expanded Splash':
     'Section=combat ' +
-    'Note="Thrown bombs inflict +%{intelligenceModifier} in a 10\' radius"',
+    'Note="Thrown bombs inflict +%{intelligenceModifier} HP damage in a 10\' radius"',
   'Greater Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to %{level-2} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fort neg})"',
+    'Note="May create bombs up to level %{level-3} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fort neg)"',
   'Merciful Elixir':
     'Section=skill ' +
-    'Note="Make make elixir of life that also gives a +{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect"',
+    'Note="Make make elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
-    'Note="Increases crafted poison DCs by 4 (%{classDifficultyClass.Alchemist} max)"',
+    'Note="+4 crafted poison DCs (%{classDifficultyClass.Alchemist} max)"',
   'Extend Elixir':'Section=skill Note="Doubles elixir duration"',
   'Invincible Mutagen':
     'Section=combat ' +
     'Note="Consuming a juggernaut elixir gives resistance %{intelligenceModifier>?0} to all physical damage"',
   'Uncanny Bombs':
     'Section=combat ' +
-    'Note="Thrown bombs have range 60\' reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature"',
+    'Note="Thrown bombs have range 60\', reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature"',
   'Glib Mutagen':
     'Section=skill ' +
-    'Note="Consuming a silvertongue mutagen removes Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers"',
+    'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers"',
   'Greater Merciful Elixir':
     'Section=skill ' +
-    'Note="Make make elixir of life that also gives a +{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition"',
+    'Note="Make make elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fort neg}) or a lesser condition that requires a critical success to negate"',
+    'Note="May create bombs up to level %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fort neg) or a lesser condition that requires a critical success to negate"',
   'Eternal Elixir':
     'Section=skill ' +
-    'Note="May extend duration of an elixir up to level %{level//2} indefinitely"',
+    'Note="May extend indefinitely the duration of an elixir of up to level %{level//2}"',
   'Exploitive Bomb':
     'Section=combat ' +
     'Note="May make a bomb up to level %{level-2} that overcomes resistance %{level}"',
@@ -3067,7 +3071,7 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
   'Persistent Mutagen':
     'Section=skill ' +
-    'Note="May extend the duration of a mutagen until the next day"',
+    'Note="May extend the duration of a mutagen until the next day 1/day"',
   'Improbable Elixirs':
     'Section=skill ' +
     'Note="May create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'}"',
@@ -3208,7 +3212,7 @@ Pathfinder2E.FEATURES = {
   "Dragon's Rage Breath":
     'Section=combat ' +
     // TODO automate
-    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line (Ref neg; half distance and damage for a 2nd breath use within 1 hr)"',
+    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line (Ref neg; half distance and damage for a 2nd breath use within 1 hour)"',
   "Giant's Stature":
     'Section=combat ' +
     'Note="May grow to Large size, gaining +5\' reach and suffering clumsy 1, until rage ends"',
@@ -3352,12 +3356,12 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':
-    'Section=magic Note="May prepare two additional cantrips each dy"',
+    'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
       '"May use Occultism to add spells to spellbook",' +
-      '"May learn 1 additional spell from spellbook each dy, treating it as a signature spell if it is in repertoire"',
+      '"May learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire"',
   'Inspire Competence':
     'Section=magic Note="Knows the <i>Inspire Competence</i> cantrip"',
   "Loremaster's Etude":
@@ -3385,7 +3389,7 @@ Pathfinder2E.FEATURES = {
     'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
   'Triple Time':'Section=magic Note="Knows the <i>Triple Time</i> cantrip"',
   'Versatile Signature':
-    'Section=magic Note="May change 1 signature spell each dy"',
+    'Section=magic Note="May change 1 signature spell each day"',
   'Dirge Of Doom':'Section=magic Note="Knows the <i>Dirge Of Doom</i> cantrip"',
   'Harmonize':
     'Section=magic Note="May have 2 composition spells active simultaneously"',
@@ -3425,7 +3429,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May extend the duration of 1 spell as a free action"',
   'Studious Capacity':
     'Section=magic ' +
-    'Note="May cast 1 additional spell of level %1 or lower each dy"',
+    'Note="May cast 1 additional spell of level %1 or lower each day"',
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
@@ -3702,7 +3706,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"+50% shield HP",' +
-      '"Shield is always raised and is automatically remade after 1 dy if destroyed"',
+      '"Shield is always raised and is automatically remade after 1 day if destroyed"',
 
   // Cleric
   // Alertness as above
@@ -3778,7 +3782,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to add the effects of a heal or harm spell to a melee Strike"',
   'Command Undead':
     'Section=magic ' +
-    'Note="May use a harm spell to control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hr)"',
+    'Note="May use a harm spell to control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hour)"',
   'Directed Channel':
     'Section=magic Note="May cast an area harm or heal spell in a 60\' cone"',
   'Improved Communal Healing':
@@ -3829,7 +3833,7 @@ Pathfinder2E.FEATURES = {
     'Note="Single-target heal spell also gives +5\' Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
-    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hr"',
+    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hour"',
   'Replenishment Of War':
     'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary HP for 1 rd (critical hit %{level} temporary HP) for 1 rd"',
   'Defensive Recovery':
@@ -3871,7 +3875,7 @@ Pathfinder2E.FEATURES = {
     'Note="May sacrifice a 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
   "Avatar's Audience":
     'Section=magic ' +
-    'Note="May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/dy"',
+    'Note="May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/day"',
   'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Channel':
     'Section=magic ' +
@@ -3947,7 +3951,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
-    'Section=feature Note="May select 4 familiar or master abilities each dy"',
+    'Section=feature Note="May select 4 familiar or master abilities each day"',
   'Order Explorer (Animal Order)':
     'Section=feature,feature ' +
     'Note=' +
@@ -3971,7 +3975,7 @@ Pathfinder2E.FEATURES = {
   // Poison Resistance as above
   'Form Control':
     'Section=magic ' +
-    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hr"',
+    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hour"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
@@ -3994,7 +3998,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Diplomacy with plants and fungi to Make an Impression and (at +2) to make simple Requests"',
   'Insect Shape':
     'Section=magic ' +
-    'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
+    'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hour"',
   // Steady Spellcasting as above
   'Storm Retribution':
     'Section=combat Note="May use a Reaction on a foe critical melee hit to push foe 5\' (Ref neg; critical failure pushes 10\')"',
@@ -4072,7 +4076,7 @@ Pathfinder2E.FEATURES = {
     'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
   'True Shapeshifter':
     'Section=magic ' +
-    'Note="May change shapes during <i>Wild Shape</i>/May <i>Wild Shape</i> into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/dy"',
+    'Note="May change shapes during <i>Wild Shape</i>/May <i>Wild Shape</i> into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/day"',
 
   // Fighter
   // Armor Expertise as above
@@ -4090,7 +4094,7 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves vs. fear are critical saves/Reduce value of frightened condition by 1"',
   'Combat Flexibility':
     'Section=combat ' +
-    'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each dy"',
+    'Note="May use chosen fighter feat of up to 8th level %{$\'features.Improved Flexibility\'?\' and chosen fighter feat of up to 14th level\':\'\'} each day"',
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
@@ -4196,7 +4200,7 @@ Pathfinder2E.FEATURES = {
   // Shield Warden as above
   'Triple Shot':
     'Section=combat ' +
-    'Note="May use Double Shot against a single foe/May use 2 actions to make three ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
+    'Note="May use Double Shot against a single foe/May use 2 actions to make 3 ranged Strikes against a single foe, suffering a -4 attack penalty on each"',
   'Blind-Fight':
     'Section=combat ' +
     'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check/Does not suffer flat-footed with hidden foes"',
@@ -4270,7 +4274,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a press action as a Reaction, foregoing any further Reactions this turn"',
   'Determination':
     'Section=save ' +
-    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/dy"',
+    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/day"',
   'Guiding Finish':
     'Section=combat ' +
     'Note="May move target 10\' within reach with a successful Strike (failure 5\') when wielding a one-handed weapon with a hand free"',
@@ -4696,7 +4700,7 @@ Pathfinder2E.FEATURES = {
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
     'Section=ability ' +
-    'Note="May train for 1 hr to temporarily change favored terrain"',
+    'Note="May train for 1 hour to temporarily change favored terrain"',
   "Warden's Boon":
     'Section=combat Note="May share Hunt Prey benefits with an ally for 1 rd"',
   'Camouflage':
@@ -4794,7 +4798,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"Successful Strikes on flat-footed foes force Fortitude saves; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"Successful Strikes on flat-footed foes force Fortitude saves; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hours, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -4963,7 +4967,7 @@ Pathfinder2E.FEATURES = {
   "Trickster's Ace":
     'Section=magic ' +
     'Note="May use Reaction to evoke effects of a prepared spell up to level 4"',
-  'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hr"',
+  'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hour"',
   'Impossible Striker':
     'Section=combat Note="May use sneak attack vs. non-flat-footed foe"',
   'Reactive Distraction':
@@ -5078,7 +5082,7 @@ Pathfinder2E.FEATURES = {
   'Arcane Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May learn 1 additional spell from spellbook each dy, treating it as a signature spell if it is in repertoire",' +
+      '"May learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
       '"Skill Trained (Choose 1 from any)"',
   'Bespell Weapon':
     'Section=magic ' +
@@ -5088,7 +5092,7 @@ Pathfinder2E.FEATURES = {
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May learn 1 unknown mental spell each dy",' +
+      '"May learn 1 unknown mental spell each day",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
@@ -5119,7 +5123,7 @@ Pathfinder2E.FEATURES = {
   'Greater Mental Evolution':'Section=magic Note="+1 spell slot of each level"',
   'Greater Vital Evolution':
     'Section=feature ' +
-    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted 1/dy"',
+    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted 1/day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
@@ -5140,7 +5144,7 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Arcane Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast an expended spell using power stored in a possession 1/dy"',
+    'Note="May use Drain Bonded Item to cast an expended spell using power stored in a possession 1/day"',
   // TODO more to it than this
   'Arcane School':
     'Section=feature,magic ' +
@@ -5258,7 +5262,7 @@ Pathfinder2E.FEATURES = {
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each dy"',
+    'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
   'Clever Counterspell':
     'Section=magic ' +
     'Note="May Counterspell with a -2 penalty a known spell using any spell that shares its school and another trait"',
@@ -5267,7 +5271,7 @@ Pathfinder2E.FEATURES = {
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell up to level %V 1/dy"',
+    'Note="May use Drain Bonded Item to cast another spell up to level %V 1/day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Section=magic Note="May alter effect choice of a spell cast on self"',
@@ -5455,7 +5459,7 @@ Pathfinder2E.FEATURES = {
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Fail on Recall Knowledge yields a mix of true and false info"',
-  'Magical Shorthand':'Section=skill Note="May learn new spells in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} per spell level; may retry 1 week after failure"',
+  'Magical Shorthand':'Section=skill Note="May learn new spells in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hour\'} per spell level; may retry 1 week after failure"',
   'Quick Identification':'Section=skill Note="May Identify Magic %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'in 1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'as a 3-action activity\':\'in 1 min\'}"',
   'Quick Recognition':'Section=skill Note="May Recognize a Spell as a free action 1/rd"',
   'Recognize Spell':'Section=feature Note="FILL"',
@@ -5467,7 +5471,8 @@ Pathfinder2E.FEATURES = {
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore Lore)"',
   'Alchemical Crafting':
-    'Section=skill Note="May use Craft to create alchemical items"',
+    'Section=skill ' +
+    'Note="May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
     'Note="May cast <i>Detect Magic</i> at level %{rank.Arcana>=4?4:rank.Arcana>=3?3:1} at will"',
@@ -5477,7 +5482,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May Demoralize a foe during initiative%{rank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
   'Battle Medicine':
-    'Section=skill Note="May use Medicine for Treat Wounds 1/target/dy"',
+    'Section=skill Note="May use Medicine for Treat Wounds 1/target/day"',
   'Bizarre Magic':
     'Section=magic ' +
     'Note="Self spells require +5 DC to Recognize Spells and Identify Magic"',
@@ -5563,7 +5568,7 @@ Pathfinder2E.FEATURES = {
     'Note="May establish basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="May use 1 hr process and a successful Medicine check to remove a disease or condition 1/target/dy"',
+    'Note="May use 1 hour process and a successful Medicine check to remove a disease or condition 1/target/day"',
   'Legendary Negotiation':
     'Section=skill ' +
     'Note="May convince a foe to negotiate with a successful Make and Impression followed by a successful Request"',
@@ -6238,7 +6243,7 @@ Pathfinder2E.SPELLS = {
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
-    'Cast="1 hr" ' +
+    'Cast="1 hour" ' +
     'Description="FILL"',
   'Create Water':
     'Level=1 ' +
@@ -7420,7 +7425,7 @@ Pathfinder2E.SPELLS = {
     'Level=10 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
-    'Cast="1 hr" ' +
+    'Cast="1 hour" ' +
     'Description="FILL"',
   'Remove Curse':
     'Level=4 ' +
@@ -10214,7 +10219,7 @@ Pathfinder2E.classRules = function(
   rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
   rules.defineRule
     ('classDifficultyClass.' + name + '.1', '', '=', '"' + abilities[0] + '"');
-  let classAbilityModifier = abilities[0];
+  let classAbilityModifier = abilities[0] + 'Modifier';
   if(abilities.length > 1) {
     classAbilityModifier = 'bestAbilityModifier.' + name;
     rules.defineRule(classAbilityModifier, classLevel, '?', null);
@@ -10269,10 +10274,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.alchemistSkills', 'intelligenceModifier', '=', '3 + source');
+    rules.defineRule('skillNotes.quickAlchemy',
+      '', '=', '1',
+      'skillNotes.doubleBrew', '^', '2',
+      'skillNotes.alchemicalAlacrity', '^', '3'
+    );
     rules.defineRule('skillNotes.quickAlchemy.1',
-      'featureNotes.perpetualPotency', '=', '3',
+      'skillNotes.perpetualPotency', '=', '3',
       'features.Chirurgeon', '^', '6',
-      'featureNotes.perpetualPerfection', '^', '11'
+      'skillNotes.perpetualPerfection', '^', '11'
     );
   } else if(name == 'Barbarian') {
     // TODO make this less hard-coded
@@ -11028,7 +11038,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Alchemical Familiar') {
     rules.defineRule
-      ('features.Familiar', 'featureRules.alchemicalFamiliar', '=', '1');
+      ('features.Familiar', 'featureNotes.alchemicalFamiliar', '=', '1');
   } else if(name == 'Animal Accomplice') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
@@ -11177,8 +11187,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('featCount.Class', 'featureNotes.multitalented', '+', '1');
   } else if(name == 'Orc Ferocity') {
     rules.defineRule('combatNotes.orcFerocity',
-      '', '=', '"dy"',
-      'combatNotes.incredibleFerocity', '=', '"hr"'
+      '', '=', '"day"',
+      'combatNotes.incredibleFerocity', '=', '"hour"'
     );
   } else if(name == 'Orc Sight') {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
@@ -11199,12 +11209,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Primal Summons') {
     rules.defineRule
       ('spells.Primal Summons', 'magicNotes.primalSummons', '=', '1');
-  } else if(name == 'Quickened Alchemy') {
-    rules.defineRule('skillNotes.quickenedAlchemy',
-      '', '=', '1',
-      'skillNotes.doubleBrew', '^', '2',
-      'skillNotes.AlchemicalAlacrity', '^', '3'
-    );
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,

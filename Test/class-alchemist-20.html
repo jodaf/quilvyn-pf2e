@@ -106,6 +106,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
+        <td><i>Alchemical Familiar: Has Familiar features</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Alchemist Feats: 11 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Alchemy: Has Alchemical Crafting features</i></td>
@@ -126,7 +128,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Adopted Ancestry: May take ancestry feats from chosen ancestry</td>
       </tr><tr style="text-align:center">
-        <td>Alchemical Familiar: Has Familiar features</td>
+        <td>Familiar: May have a familiar</td>
       </tr></table>
 </td>
     </tr></table>
@@ -189,11 +191,19 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Alchemical Alacrity: Increased Quick Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Alchemist Skills: Skill Trained (Crafting; Choose 8 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Alertness: Perception Expert</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Double Brew: Increased Quick Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +5 Language Count</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Perpetual Perfection: Increased Quick Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Perpetual Potency: Increased Quick Alchemy effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -215,11 +225,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Milling Lore): Skill Trained (Milling Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Advanced Alchemy: May use an infused reagent to create a pair of infused alchemical items of up to level 20</td>
+      <td>Advanced Alchemy: May use an infused reagent to create a pair of infused alchemical items of up to level 20 without a Crafting check</td>
     </tr><tr style="text-align:center">
-      <td>Alchemical Alacrity: Increased Quick Alchemy effects</td>
-    </tr><tr style="text-align:center">
-      <td>Alchemical Crafting: May use Craft to create alchemical items</td>
+      <td>Alchemical Crafting: May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items</td>
     </tr><tr style="text-align:center">
       <td>Alchemical Savant: May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas, and critical failures on known formulas are normal failures</td>
     </tr><tr style="text-align:center">
@@ -235,15 +243,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Craft Philosopher's Stone: Knows the formula for creating a philosopher's stone</td>
     </tr><tr style="text-align:center">
-      <td>Double Brew: Increased Quick Alchemy effects</td>
+      <td>Efficient Alchemy: May produce twice the usual number of alchemical items in a given time</td>
     </tr><tr style="text-align:center">
-      <td>Efficient Alchemy: May produce dbl the usual number of alchemical items in a given time</td>
-    </tr><tr style="text-align:center">
-      <td>Elastic Mutagen: Consuming a quicksilver mutagen allows 10' Step and moving through tight spaces as 1 size smaller</td>
+      <td>Elastic Mutagen: Consuming a quicksilver mutagen allows 10' Steps and moving through tight spaces as 1 size smaller</td>
     </tr><tr style="text-align:center">
       <td>Enduring Alchemy: Quick Alchemy products last until the end of next turn</td>
     </tr><tr style="text-align:center">
-      <td>Eternal Elixir: May extend duration of an elixir up to level 10 indefinitely</td>
+      <td>Eternal Elixir: May extend indefinitely the duration of an elixir of up to level 10</td>
     </tr><tr style="text-align:center">
       <td>Extend Elixir: Doubles elixir duration</td>
     </tr><tr style="text-align:center">
@@ -251,23 +257,25 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Genius Mutagen: Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60' telepathic communication</td>
     </tr><tr style="text-align:center">
-      <td>Glib Mutagen: Consuming a silvertongue mutagen removes Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers</td>
+      <td>Glib Mutagen: Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers</td>
     </tr><tr style="text-align:center">
-      <td>Greater Merciful Elixir: Make make elixir of life that also gives a +{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition</td>
+      <td>Greater Merciful Elixir: Make make elixir of life that also gives a +31 counteract on a blinded, deafened, sickened, or slowed condition</td>
     </tr><tr style="text-align:center">
       <td>Improbable Elixirs: May create elixirs that replicate the effects of 5 potions</td>
     </tr><tr style="text-align:center">
-      <td>Merciful Elixir: Make make elixir of life that also gives a +{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect</td>
+      <td>Infused Reagents: May create 25 infused reagents each day</td>
+    </tr><tr style="text-align:center">
+      <td>Merciful Elixir: Make make elixir of life that also gives a +31 counteract on a fear or paralyzing effect</td>
     </tr><tr style="text-align:center">
       <td>Perfect Mutagen: Does not suffer drawbacks from consuming mutagens</td>
     </tr><tr style="text-align:center">
-      <td>Perpetual Perfection: Increased Quick Alchemy effects</td>
+      <td>Persistent Mutagen: May extend the duration of a mutagen until the next day 1/day</td>
     </tr><tr style="text-align:center">
-      <td>Perpetual Potency: Increased Quick Alchemy effects</td>
+      <td>Potent Poisoner: +4 crafted poison DCs (41 max)</td>
     </tr><tr style="text-align:center">
-      <td>Persistent Mutagen: May extend the duration of a mutagen until the next day</td>
+      <td>Quick Alchemy: May use a batch of infused reagents to create 3 alchemical items of up to level 20, or 2 items of up to level 11, for 1 tn</td>
     </tr><tr style="text-align:center">
-      <td>Potent Poisoner: Increases crafted poison DCs by 4 (54 max)</td>
+      <td>Research Field: Using Advanced Alchemy creates 3 signature items from research field</td>
     </tr><tr style="text-align:center">
       <td>Skilled Heritage Human-1: Skill Expert (Choose 1 from any)</td>
     </tr><tr style="text-align:center">
@@ -289,7 +297,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 248</td>
         <td><b>Armor Class</b>: 38 (dexterity (1 max); master)</td>
-        <td><b>Class DC</b>: Alchemist: 54 (intelligence; expert)</td>
+        <td><b>Class DC</b>: Alchemist: 41 (intelligence; master)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -305,7 +313,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Alchemical Expertise: Class Expert (Alchemist)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Alchemical Mastery: Class Expert (Alchemist)</i></td>
+        <td><i>Alchemical Mastery: Class Master (Alchemist)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Alchemical Weapon Expertise: Weapon Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
@@ -331,15 +339,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Warhammer): Weapon Trained (Warhammer)</i></td>
       </tr><tr style="text-align:center">
-        <td>Bomber: May have splash bomb affect only a single target</td>
+        <td>Bomber: May have a bomb splash affect only a single target</td>
       </tr><tr style="text-align:center">
-        <td>Calculated Splash: May have bombs inflict 5 HP splash damage</td>
+        <td>Calculated Splash: May increase the splash damage of bombs to 5 Hit Points</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Bomb: May create bombs up to 18 that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC 54 Fort neg})</td>
+        <td>Debilitating Bomb: May create bombs up to level 18 that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC 41 Fort neg})</td>
       </tr><tr style="text-align:center">
-        <td>Directional Bombs: May have bombs splash a 15' cone</td>
+        <td>Directional Bombs: May restrict bomb splash to a 15' cone</td>
       </tr><tr style="text-align:center">
-        <td>Expanded Splash: Thrown bombs inflict +5 in a 10' radius</td>
+        <td>Expanded Splash: Thrown bombs inflict +5 HP damage in a 10' radius</td>
       </tr><tr style="text-align:center">
         <td>Exploitive Bomb: May make a bomb up to level 18 that overcomes resistance 20</td>
       </tr><tr style="text-align:center">
@@ -347,11 +355,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Feral Mutagen: Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; may also increase AC penalty to -2 to increase claws and jaws damage by 1 die step</td>
       </tr><tr style="text-align:center">
-        <td>Field Discovery: Using Advanced Alchemy creates three alchemical items</td>
+        <td>Field Discovery: Using Advanced Alchemy creates 3 alchemical items</td>
       </tr><tr style="text-align:center">
-        <td>Formula Book: Has a book that contains at least 40 alchemical formulas</td>
+        <td>Formula Book: Has a book that contains at least 46 alchemical formulas</td>
       </tr><tr style="text-align:center">
-        <td>Greater Debilitating Bomb: May create bombs up to 18 that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC 54 Fort neg})</td>
+        <td>Greater Debilitating Bomb: May create bombs up to level 17 that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC 41 Fort neg)</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Bomber): May increase bomb splash to 10'</td>
       </tr><tr style="text-align:center">
@@ -359,33 +367,31 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Mutagenist): May use 2 polymorphic mutagens simultaneously</td>
       </tr><tr style="text-align:center">
-        <td>Infused Reagents: May create 25 infused reagents each dy</td>
-      </tr><tr style="text-align:center">
         <td>Invincible Mutagen: Consuming a juggernaut elixir gives resistance 5 to all physical damage</td>
       </tr><tr style="text-align:center">
         <td>Mega Bomb: May throw a bomb 60' to affect all creatures in a 30' radius (Ref neg)</td>
       </tr><tr style="text-align:center">
         <td>Miracle Worker: May administer a true elixir of life to restore life to a creature dead for up to 2 rd</td>
       </tr><tr style="text-align:center">
-        <td>Mutagenic Flashback: May regain the effects of a mutagen consumed earlier in the day for 1 min 1/dy</td>
+        <td>Mutagenic Flashback: May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day</td>
       </tr><tr style="text-align:center">
         <td>Perfect Debilitation: Debilitating Bombs require a critical save to avoid effects</td>
       </tr><tr style="text-align:center">
         <td>Perpetual Infusions: May create choice of 2 1st-level alchemical items without using infused reagents</td>
       </tr><tr style="text-align:center">
-        <td>Powerful Alchemy: Items created with Quick Alchemy have DC 54</td>
+        <td>Powerful Alchemy: Items created with Quick Alchemy have DC 41</td>
       </tr><tr style="text-align:center">
         <td>Quick Bomber: May use a single action to draw and throw a bomb</td>
       </tr><tr style="text-align:center">
         <td>Revivifying Mutagen: May use 1 action to end mutagen effects and regain 1d6 Hit Points per 2 levels of the mutagen</td>
       </tr><tr style="text-align:center">
-        <td>Smoke Bomb: May use Quick Alchemy to create a bomb up to level 19 that creates smoke in a 10'-radius burst for 1 min</td>
+        <td>Smoke Bomb: May use Quick Alchemy to create a bomb up to level 19 that also creates smoke in a 10'-radius burst for 1 min</td>
       </tr><tr style="text-align:center">
         <td>Sticky Bomb: May create bombs up to level 18 that inflict persistent damage equal to splash damage</td>
       </tr><tr style="text-align:center">
-        <td>True Debilitating Bomb: May create bombs up to 18 that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC 54 Fort neg}) or a lesser condition that requires a critical success to negate</td>
+        <td>True Debilitating Bomb: May create bombs up to level 18 that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC 41 Fort neg) or a lesser condition that requires a critical success to negate</td>
       </tr><tr style="text-align:center">
-        <td>Uncanny Bombs: Thrown bombs have range 60' reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature</td>
+        <td>Uncanny Bombs: Thrown bombs have range 60', reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: +2/+3/+4 HP damage with expert/master/legendary weapon proficiency</td>
       </tr></table>
