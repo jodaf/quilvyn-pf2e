@@ -58,8 +58,10 @@ function Pathfinder2E() {
     'levels:Class Levels,bag,levels',
     'abilityGeneration:Ability Generation,select-one,abilgens'
   );
-  rules.addChoice('abilgens', 'All 10s', '');
-  rules.addChoice('abilgens', 'Each 4d6, discarding lowest', '');
+  rules.addChoice('abilgens', 'All 10s; standard ancestry boosts', '');
+  rules.addChoice('abilgens', 'All 10s; two free ancestry boosts', '');
+  rules.addChoice('abilgens', 'Each 4d6, standard ancestry boosts', '');
+  rules.addChoice('abilgens', 'Each 4d6, one free ancestry boost', '');
 
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
@@ -122,8 +124,11 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=10 ' +
     'Features=' +
       '1:Slow,' +
-      '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
-      '"1:Ability Flaw (Charisma)",' +
+      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Constitution; Wisdom)",' +
+      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
       '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
@@ -134,8 +139,11 @@ Pathfinder2E.ANCESTRIES = {
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
-      '"1:Ability Flaw (Constitution)",' +
+      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
+      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Constitution)",' +
       '"1:Low-Light Vision","1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Arctic Elf:Heritage","1:Cavern Elf:Heritage","1:Seer Elf:Heritage",' +
@@ -145,8 +153,11 @@ Pathfinder2E.ANCESTRIES = {
   'Gnome':
     'HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
-      '"1:Ability Flaw (Strength)",' +
+      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
+      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
       '"1:Low-Light Vision",1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage","1:Fey-Touched Gnome:Heritage",' +
@@ -157,8 +168,11 @@ Pathfinder2E.ANCESTRIES = {
   'Goblin':
     'HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
-      '"1:Ability Flaw (Wisdom)",' +
+      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
+      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Wisdom)",' +
       '1:Darkvision,1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage","1:Irongut Goblin:Heritage",' +
@@ -168,8 +182,11 @@ Pathfinder2E.ANCESTRIES = {
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
-      '"1:Ability Flaw (Strength)",' +
+      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
+      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
       '"1:Keen Eyes",1:Small,"1:Ancestry Feats" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage","1:Hillock Halfling:Heritage",' +
@@ -180,7 +197,9 @@ Pathfinder2E.ANCESTRIES = {
   'Human':
     'HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boost (Choose 2 from any)","1:Ancestry Feats" ' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"1:Ancestry Feats" ' +
     'Selectables=' +
       '1:Half-Elf:Heritage,1:Half-Orc:Heritage,' +
       '"1:Skilled Heritage Human:Heritage",' +
@@ -218,137 +237,168 @@ Pathfinder2E.ARMORS = {
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",'+
       '"1:Skill Trained (Religion; Scribing Lore)","1:Student Of The Canon"',
   'Acrobat':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Acrobatics; Circus Lore)","1:Steady Balance"',
   'Animal Whisperer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Wisdom)",' +
       '"1:Skill Trained (Nature; Choose 1 from any Terrain Lore)",' +
       '"1:Train Animal"',
   'Artisan':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Strength)",' +
       '"1:Skill Trained (Crafting; Guild Lore)","1:Specialty Crafting"',
   'Artist':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
       '"1:Skill Trained (Crafting; Art Lore)","1:Specialty Crafting"',
   'Barkeep':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Constitution)",' +
       '"1:Skill Trained (Diplomacy; Alcohol Lore)",1:Hobnobber',
   'Barrister':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Diplomacy; Legal Lore)","1:Group Impression"',
   'Bounty Hunter':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom)",' +
       '"1:Skill Trained (Survival; Legal Lore)","1:Experienced Tracker"',
   'Charlatan':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Deception; Underworld Lore)","1:Charming Liar"',
   'Criminal':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Detective':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
       '"1:Skill Trained (Society; Underworld Lore)",1:Streetwise',
   'Emissary':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",1:Multilingual',
   'Entertainer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
       '"1:Skill Trained (Performance; Theater Lore)",' +
       '"1:Fascinating Performance"',
   'Farmhand':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
       '"1:Skill Trained (Athletics; Farming Lore)","1:Assurance (Athletics)"',
   'Field Medic':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
-      '"1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost; Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Occultism; Fortune-Telling Lore)",' +
       '"1:Oddity Identification"',
   'Gambler':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
       '"1:Skill Trained (Deception; Games Lore)","1:Lie To Me"',
   'Gladiator':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Strength)",' +
       '"1:Skill Trained (Performance; Gladitorial Lore)",' +
       '"1:Impressive Performance"',
   'Guard':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Strength)",' +
       '"1:Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)","1:Quick Coercion"',
   'Herbalist':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
       '"1:Skill Trained (Nature; Herbalism Lore)","1:Natural Medicine"',
   'Hermit':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Intelligence)",' +
       '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any Terrain Lore)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom)",' +
       '"1:Skill Trained (Survival; Tanning Lore)","1:Survey Wildlife"',
   'Laborer':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
   'Martial Disciple':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
       // TODO These only work if Acrobatics/Athletics aren't otherwise chosen
       '"rank.Acrobatics>0 ? 1:Cat Fall",' +
       '"rank.Athletics>0 ? 1:Quick Jump"',
   'Merchant':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Diplomacy; Mercantile Lore)","1:Bargain Hunter"',
   'Miner':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom)",' +
       '"1:Skill Trained (Survival; Mining Lore)",' +
       '"1:Terrain Expertise (Underground)"',
   'Noble':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)","1:Courtly Graces"',
   'Nomad':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
       '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
       '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Sailor':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
   'Scholar':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
       '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
       // TODO this will erroneously add feats for other trained skills
       '"rank.Arcana>0 ? 1:Assurance (Arcana)",' +
@@ -357,20 +407,24 @@ Pathfinder2E.BACKGROUNDS = {
       '"rank.Religion>0  ? 1:Assurance (Religion)"',
   'Scout':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom)",' +
       '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
       '1:Forager',
   'Street Urchin':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity)",' +
       '"1:Skill Trained (Thievery; Choose 1 from any Settlement Lore)",1:Pickpocket',
   'Tinker':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence)",' +
       '"1:Skill Trained (Crafting; Engineering Lore)","1:Specialty Crafting"',
   'Warrior':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
@@ -9511,8 +9565,7 @@ Pathfinder2E.identityRules = function(
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('abilityNotes.abilityBoosts',
-    'level', '=', '4 + Math.floor(source / 5) * 4',
-    'abilityGeneration', '+', 'source.match(/4d6/) ? -1 : null'
+    'level', '=', '4 + Math.floor(source / 5) * 4'
   );
   rules.defineRule('featureNotes.ancestryFeats',
     'level', '=', 'Math.floor((source + 3) / 4)'
