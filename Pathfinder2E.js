@@ -12322,12 +12322,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Ability\s+Boost\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/^\w+features.Ability\s+Boost\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
          (matchInfo=notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
+        matched = matched.replace(/.*\(/i, '').replace(/\)/, '');
         let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
         matched.split(/\s*;\s*/).forEach(boost => {
           let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
@@ -12343,6 +12344,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                 boostsAllocated[choice]--;
               }
             });
+            while(howMany > choices.length) {
+              // Probably only true for level-based ability boosts
+              choices.forEach(c => {
+                attributes['abilityBoosts.' + c] = (attributes['abilityBoosts.' + c] || 0) + 1;
+              });
+              howMany -= choices.length;
+            }
             while(howMany > 0 && choices.length > 0) {
               let choice = randomElement(choices);
               attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
@@ -12525,10 +12533,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     choices = Object.keys(this.getChoices('shields'));
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'skills') {
-    let boostsAllocated = {};
+    let increasesAllocated = {};
     let allSkills = this.getChoices('skills');
     for(attr in this.getChoices('skills'))
-      boostsAllocated[attr] = attributes['skillBoosts.' + attr] || 0;
+      increasesAllocated[attr] = attributes['skillIncreases.' + attr] || 0;
     attrs = this.applyRules(attributes);
     let notes = this.getChoices('notes');
     for(attr in attrs) {
@@ -12539,8 +12547,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         continue;
       // TODO how to handle allocations above Trained?
       matchInfo.forEach(matched => {
-        matched.split(/\s*;\s*/).forEach(boost => {
-          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+        matched.split(/\s*;\s*/).forEach(increase => {
+          let m = increase.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
             howMany = m[1] == '%V' ? attrs[attr] : +m[1];
             if(m[2].match(/^any$/i))
@@ -12552,9 +12560,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             else
               choices = m[2].split(/\s*,\s*/);
             choices.forEach(choice => {
-              if(howMany > 0 && boostsAllocated[choice] > 0) {
+              if(howMany > 0 && increasesAllocated[choice] > 0) {
                 howMany--;
-                boostsAllocated[choice]--;
+                increasesAllocated[choice]--;
               }
             });
             while(howMany > 0 && choices.length > 0) {
