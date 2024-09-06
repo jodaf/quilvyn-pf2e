@@ -122,6 +122,7 @@ Pathfinder2E.ALIGNMENTS = {
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
     'HitPoints=10 ' +
+    'Size=Medium ' +
     'Features=' +
       '1:Slow,' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
@@ -129,7 +130,8 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
       '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats" ' +
+      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats",' +
+      '"features.Ancient-Blooded Dwarf ? 1:Call On Ancient Blood" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
       '"1:Forge Dwarf:Heritage","1:Rock Dwarf:Heritage",' +
@@ -138,6 +140,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Dwarven',
   'Elf':
     'HitPoints=6 ' +
+    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
@@ -152,6 +155,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Elven',
   'Gnome':
     'HitPoints=8 ' +
+    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
@@ -167,6 +171,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
     'HitPoints=6 ' +
+    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
@@ -181,6 +186,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Goblin',
   'Halfling':
     'HitPoints=6 ' +
+    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
@@ -196,6 +202,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Halfling',
   'Human':
     'HitPoints=8 ' +
+    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 2 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
@@ -2587,11 +2594,13 @@ Pathfinder2E.FEATURES = {
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
   'Ancient-Blooded Dwarf':
-    'Section=save ' +
-    'Note="May use Reaction upon save vs. magic to gain +1 vs. magic for 1 rd"',
+    'Section=feature Note="Has Call On Ancient Blood feature"',
   'Arctic Elf':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
+  'Call On Ancient Blood':
+    'Section=save ' +
+    'Note="May use a Reaction upon save vs. magic to gain +1 vs. magic until the end of turn"',
   'Cavern Elf':'Section=feature Note="Has Darkvision feature"',
   'Chameleon Gnome':
     'Section=feature,skill ' +
@@ -2634,8 +2643,8 @@ Pathfinder2E.FEATURES = {
   // TODO Add jaws to weapon list?
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6P HP"',
   'Rock Dwarf':
-    'Section=save ' +
-    'Note="+2 vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance"',
+    'Section=combat ' +
+    'Note="+2 DC vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance of 10\' or more"',
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
@@ -2655,7 +2664,8 @@ Pathfinder2E.FEATURES = {
     'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
-    'Note="Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1), critical successes by 3 (virulent 2)"',
+    'Note=' +
+      '"Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1); critical successes by 3 (virulent 2)"',
   'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
   'Umbral Gnome':'Section=feature Note="Has Darkvision feature"',
   'Unbreakable Goblin':
@@ -2668,7 +2678,7 @@ Pathfinder2E.FEATURES = {
     'Note="May attempt a 60\' Seek using hearing; +2 within 30\'"',
   'Wildwood Halfling':
     'Section=feature ' +
-    'Note="May move normally through foliage difficult terrain"',
+    'Note="May move normally over foliage difficult terrain"',
   'Woodland Elf':
     'Section=ability,combat ' +
     'Note=' +
@@ -2682,12 +2692,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Battle Axe; Pick; Warhammer)",' +
+      // TODO implement
       '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower"',
   'Rock Runner':
     'Section=ability,skill ' +
     'Note=' +
-      '"May move normally through stone and earth difficult terrain",' +
-      '"Not flat-footed when using Acrobatics to Balance on stone and earth; successes are critical successes"',
+      '"May move normally over stone and earth difficult terrain",' +
+      '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth; successes to do so are critical successes"',
   'Stonecunning':
     'Section=skill ' +
     'Note="+2 Perception (unusual stonework)/Gains an automatic -2 check to note unusual stonework"',
@@ -2695,13 +2706,13 @@ Pathfinder2E.FEATURES = {
     'Section=ability,ability ' +
     'Note=' +
       '"Suffers no Speed penalty from armor",' +
-      '"Reduces non-armor Speed penalties by 5"',
+      '"Reduces non-armor Speed penalties by 5\'"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="+1 per die weapon damage vs. choice of drow, duergar, giant, or orc and for 1 min on any foe that inflicts a critical success on attack"',
+    'Note="+1 per die weapon damage vs. ancestral foes and for 1 min on any foe that inflicts a critical success on attack"',
   'Boulder Roll':
     'Section=combat ' +
-    'Note="May Step into a foe\'s space to force a 5\' move (Fort vs. Athletics neg but inflicts %{level+strengthModifier}B HP)"',
+    'Note="May Step into a foe\'s square to force a 5\' move (Fort vs. Athletics critical success neg; normal success neg but inflicts %{level+strengthModifier}B HP)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict critical specialization effect"',
@@ -2709,7 +2720,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"+%{level} Hit Points",' +
-      '"-%{1+(features.Toughness||0)*3} dying recovery DC"',
+      '"-%{1+(features.Toughness||0)*2} dying recovery DC"',
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
@@ -4046,7 +4057,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use <i>Wild Shape</i> to change into a Small or Medium Humanoid"',
   'Woodland Stride':
     'Section=ability ' +
-    'Note="May move normally through difficult terrain caused by plants or fungi"',
+    'Note="May move normally over difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
     'Note="May use Diplomacy with plants and fungi to Make an Impression and (at +2) to make simple Requests"',
@@ -4657,7 +4668,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has the benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
   // Vigilant Senses as above
   'Wild Stride':
-    'Section=ability Note="May move normally through non-magical difficult terrain"',
+    'Section=ability Note="May move normally over non-magical difficult terrain"',
   // Weapon Mastery as above
   // Weapon Specialization as above
 
@@ -4680,33 +4691,33 @@ Pathfinder2E.FEATURES = {
   'Favored Terrain (Arctic)':
     'Section=ability,feature ' +
     'Note=' +
-      '"May move normally through icy or snowy difficult terrain without a need to Balance",' +
+      '"May move normally over icy or snowy difficult terrain without a need to Balance",' +
       '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Desert)':
     'Section=ability,feature ' +
     'Note=' +
-      '"May move normally through sandy difficult terrain without a need to Balance",' +
+      '"May move normally over sandy difficult terrain without a need to Balance",' +
       '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
-    'Note="May move normally through forested difficult terrain/%{speed}\' climb Speed"',
+    'Note="May move normally over forested difficult terrain/%{speed}\' climb Speed"',
   'Favored Terrain (Mountain)':
     'Section=ability ' +
-    'Note="May move normally through mountainous difficult terrain/%{speed}\' climb Speed"',
+    'Note="May move normally over mountainous difficult terrain/%{speed}\' climb Speed"',
   'Favored Terrain (Plains)':
     'Section=ability,ability ' +
     'Note=' +
       '"+10 Speed",' +
-      '"May move normally through difficult terrain in plains"',
+      '"May move normally over difficult terrain in plains"',
   'Favored Terrain (Sky)':
     'Section=ability ' +
     'Note="May move normally through difficult terrain in the sky/%{speed}\' fly Speed"',
   'Favored Terrain (Swamp)':
     'Section=ability ' +
-    'Note="May move normally through boggy greater difficult terrain"',
+    'Note="May move normally over boggy greater difficult terrain"',
   'Favored Terrain (Underground)':
     'Section=ability ' +
-    'Note="May move normally through underground difficult terrain/%{speed}\' climb Speed"',
+    'Note="May move normally over underground difficult terrain/%{speed}\' climb Speed"',
   "Hunter's Aim":
     'Section=combat ' +
     'Note="May use 2 actions to gain +2 attack and ignore concealment of a Hunt Prey target"',
@@ -4829,7 +4840,7 @@ Pathfinder2E.FEATURES = {
   'Ultimate Skirmisher':
     'Section=ability,save ' +
     'Note=' +
-      '"May move normally through difficult, greater difficult, and hazardous terrain",' +
+      '"May move normally over difficult, greater difficult, and hazardous terrain",' +
       '"Never triggers movement-connected traps"',
 
   // Rogue
@@ -4942,7 +4953,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Threats from allies inflict flat-footed on foes vs. self attacks"',
   'Light Step':
-    'Section=ability Note="May move normally through difficult terrain"',
+    'Section=ability Note="May move normally over difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Section=combat ' +
@@ -9545,7 +9556,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Size', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'SpellSlots']);
@@ -9697,6 +9708,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     Pathfinder2E.ancestryRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
+      QuilvynUtils.getAttrValue(attrs, 'Size'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
@@ -9918,11 +9930,12 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 /*
  * Defines in #rules# the rules associated with ancestry #name#, which has the
  * list of hard prerequisites #requires#. #features# and #heritages# list
- * associated features and available heritages, #languages# any automatic
- * languages, and #hitPoints# the number of HP gained each level.
+ * associated features and available heritages, and #languages# any automatic
+ * languages. #hitPoints# gives the number of HP granted at level 1, and #size#
+ * specifies the size of characters with the ancestry.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, hitPoints, features, heritages, traits, languages
+  rules, name, requires, hitPoints, size, features, heritages, traits, languages
 ) {
 
   if(!name) {
@@ -9935,6 +9948,9 @@ Pathfinder2E.ancestryRules = function(
   }
   if(typeof hitPoints != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
+  }
+  if(!(size+'').match(/^(Small|Medium|Large)$/)) {
+    console.log('Bad size "' + size + '" for ancestry ' + name);
   }
   if(!Array.isArray(features)) {
     console.log('Bad features list "' + features + '" for ancestry ' + name);
@@ -9989,6 +10005,7 @@ Pathfinder2E.ancestryRules = function(
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
+  rules.defineRule('size', ancestryLevel, '=', '"' + size + '"');
   QuilvynRules.validAllocationRules
     (rules, prefix + 'Heritage', 'selectableFeatureCount.' + name + ' (Heritage)', prefix + 'SelectedHeritageCount');
 
@@ -10000,10 +10017,15 @@ Pathfinder2E.ancestryRules = function(
  */
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Dwarf') {
-    rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
     rules.defineRule('abilityNotes.armorSpeedPenalty',
       'abilityNotes.unburdenedIron', '^', '0'
     );
+    rules.defineRule('features.Call On Ancient Blood',
+      'featureNotes.ancient-BloodedDwarf', '=', 'null' // italics
+    );
+    rules.defineRule
+      ('spells.Meld Into Stone', 'magicNotes.stonewalker', '=', '1');
+    rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
   } else if(name == 'Gnome') {
@@ -11912,6 +11934,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
                format: '/%V'},
             {name: 'Level', within: 'AbilityStats'},
             {name: 'Speed', within: 'AbilityStats'},
+            {name: 'Size', within: 'AbilityStats'},
             {name: 'LoadInfo', within: 'AbilityStats', separator: ''},
               {name: 'Carry', within: 'LoadInfo',
                format: '<b>Carry/Lift:</b> %V'},
@@ -12221,7 +12244,8 @@ Pathfinder2E.randomName = function(ancestry) {
   }[ancestry];
   let diphthongs = {a:'wy', e:'aei', o: 'aiouy', u: 'ae'};
   let syllables = QuilvynUtils.random(0, 99);
-  syllables = syllables < 50 ? 2 :
+  syllables = ancestry == 'Dwarf' ? 2 : // Core rulebook states this
+              syllables < 50 ? 2 :
               syllables < 75 ? 3 :
               syllables < 90 ? 4 :
               syllables < 95 ? 5 :
@@ -12846,6 +12870,11 @@ Pathfinder2E.ruleNotes = function() {
     '<h3>Usage Notes</h3>\n' +
     '<p>\n' +
     '<ul>\n' +
+    'To simplify the tracking of character level, the PF2E plugin assumes ' +
+    'that the experience points entered for a character are cumulative from ' +
+    'the character creation, rather than only the experience points over the ' +
+    'amount required to advance to their current level. For example, a 5th ' +
+    'level character would have between 5000 and 5999 experience points.\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
