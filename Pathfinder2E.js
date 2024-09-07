@@ -155,7 +155,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Elven',
   'Gnome':
     'HitPoints=8 ' +
-    'Size=Medium ' +
+    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
@@ -171,7 +171,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
     'HitPoints=6 ' +
-    'Size=Medium ' +
+    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
@@ -186,7 +186,7 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Goblin',
   'Halfling':
     'HitPoints=6 ' +
-    'Size=Medium ' +
+    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
@@ -898,7 +898,6 @@ Pathfinder2E.FEATS = {
     'Type=Ancestry,Dwarf ' +
     'Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
-  // NOTE requires age >= 100
   'Ancestral Longevity':'Type=Ancestry,Elf',
   'Elven Lore':'Type=Ancestry,Elf',
   'Elven Weapon Familiarity':'Type=Ancestry,Elf',
@@ -2605,11 +2604,11 @@ Pathfinder2E.FEATURES = {
   'Chameleon Gnome':
     'Section=feature,skill ' +
     'Note=' +
-      '"May change skin and hair colors",' +
-      '"May use an action to change coloration and gain +2 Stealth"',
+      '"May use a 1 hr process to change skin and hair colors",' +
+      '"May use 1 action to adjust coloration, gaining +2 Stealth"',
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}/DC 10 to recover from fire damage (DC 5 with help)"',
+    'Note="Has fire resistance %{level//2>?1}/DC 10 to recover from fire damage; DC 5 with help"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
@@ -2626,7 +2625,7 @@ Pathfinder2E.FEATURES = {
   'Half-Elf':'Section=feature Note="Has Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has Low-Light Vision feature"',
   'Hillock Halfling':
-    'Section=combat Note="Regains +%{level} HP from rest or treatment"',
+    'Section=combat Note="Regains +%{level} Hit Points from rest or treatment"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
@@ -2638,9 +2637,8 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"DC 3/9 to target a concealed/hidden foe",' +
       '"R30\' +2 Seek to find hidden creatures"',
-  'Nomadic Halfling':
-    'Section=skill Note="+%{2+(feats.Multilingual||0)} Language Count"',
-  // TODO Add jaws to weapon list?
+  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
+  // TODO Add jaws to weapon list? finesse, unarmed, brawling
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6P HP"',
   'Rock Dwarf':
     'Section=combat ' +
@@ -2651,8 +2649,7 @@ Pathfinder2E.FEATURES = {
       '"May cast <i>Detect Magic</i> cantrip at will",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
-    'Section=skill ' +
-    'Note="R30\' May locate a creature by smell/R30\' +2 Perception (locate a creature)"',
+    'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
   'Skilled Heritage Human':
     'Section=skill,skill ' +
     'Note=' +
@@ -2666,7 +2663,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note=' +
       '"Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1); critical successes by 3 (virulent 2)"',
-  'Twilight Halfling':'Section=combat Note="Has Low-Light Vision feature"',
+  'Twilight Halfling':'Section=feature Note="Has Low-Light Vision feature"',
   'Umbral Gnome':'Section=feature Note="Has Darkvision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
@@ -2674,16 +2671,15 @@ Pathfinder2E.FEATURES = {
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
   'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
   'Whisper Elf':
-    'Section=combat ' +
-    'Note="May attempt a 60\' Seek using hearing; +2 within 30\'"',
+    'Section=skill ' +
+    'Note="May attempt a R60\' Seek using hearing; +2 within 30\'"',
   'Wildwood Halfling':
-    'Section=feature ' +
-    'Note="May move normally over foliage difficult terrain"',
+    'Section=ability Note="May move normally over foliage difficult terrain"',
   'Woodland Elf':
-    'Section=ability,combat ' +
+    'Section=combat,skill ' +
     'Note=' +
-      '"%{speed//2}\' climb Speed (foliage) (critical success %{speed}\')",' +
-      '"May always Take Cover within forest terrain"',
+      '"May always Take Cover within forest terrain",' +
+      '"May Climb in foliage at %{speed//2}\'; critical success %{speed}\'"',
 
   // Ancestry feats
   'Dwarven Lore':
@@ -2715,7 +2711,7 @@ Pathfinder2E.FEATURES = {
     'Note="May Step into a foe\'s square to force a 5\' move (Fort vs. Athletics critical success neg; normal success neg but inflicts %{level+strengthModifier}B HP)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
-    'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict critical specialization effect"',
+    'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
   "Mountain's Stoutness":
     'Section=combat,combat ' +
     'Note=' +
@@ -2733,13 +2729,15 @@ Pathfinder2E.FEATURES = {
     'Note="Weapon Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
-    'Section=skill Note="May become Trained in choice of skill 1/day"',
+    'Section=skill ' +
+    'Note="May gain Trained proficiency in choice of skill during daily preparations"',
   'Elven Lore':
     'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
+      // TODO implement
       '"Has access to uncommon elf weapons/Treats elf weapons as one category lower"',
   'Forlorn':
     'Section=save ' +
@@ -2752,11 +2750,11 @@ Pathfinder2E.FEATURES = {
     'Note="May reduce duration of mental effects by 1 rd/+1 degree of success vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May gain a +2 bonus on a check by spending double the time required/Suffers a critical failure only on a roll 10 lower than DC"',
+    'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
-    'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict critical specialization effect"',
-  'Elf Step':'Section=combat Note="May take a second Step 5\'"',
+    'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
+  'Elf Step':'Section=combat Note="May use 1 action to take two 5\' Steps"',
   'Expert Longevity':
     'Section=skill ' +
     'Note="Ancestral Longevity also gives expert level in a chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
@@ -2778,18 +2776,14 @@ Pathfinder2E.FEATURES = {
   'First World Magic':
     'Section=magic Note="May cast chosen primal cantrip at will"',
   'Gnome Obsession':
-    'Section=skill,skill,skill,skill,skill ' +
+    'Section=skill ' +
     'Note=' +
-      '"Skill Trained (Choose 1 from any Lore)",' +
-      '"Skill Expert (Choose 1 from any Lore)",' +
-      '"Skill Master (Choose 1 from any Lore)",' +
-      '"Skill Legendary (Choose 1 from any Lore)",' +
-      // TODO figure out how to automate this
-      '"Skill %{level<7\'Expert\':level<15?\'Master\':\'Legendary\'} in background lore skill"',
+      '"Skill %V (Choose 1 from any Lore; %{background} Lore skill)"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Glaive; Kukri)",' +
+      // TODO implement
       '"Has access to uncommon gnome weapons/Treats gnome weapons as one category lower"',
   'Illusion Sense':
     'Section=save,skill ' +
@@ -2804,13 +2798,13 @@ Pathfinder2E.FEATURES = {
   'Energized Font':'Section=magic Note="May regain 1 Focus Point 1/day"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
-    'Note="Critical hits with a glaive, kukri, or gnome weapon inflict critical specialization effect"',
+    'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
      'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/day"',
   'Vivacious Conduit':
     'Section=combat ' +
-    'Note="10 min rest restores %{constitutionModifier+level//2} HP"',
+    'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
@@ -2820,7 +2814,7 @@ Pathfinder2E.FEATURES = {
   'Burn It!':
     'Section=combat,magic ' +
     'Note=' +
-      '"+1 HP persistent fire damage",' +
+      '"+1 HP persistent fire damage/+1/4 item level fire damage from alchemical items",' +
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
@@ -2829,7 +2823,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
     'Section=combat ' +
-    'Note="May use Reaction to take a Step when an ally moves to an adjacent position"',
+    'Note="May use a Reaction to take a Step when an ally moves to an adjacent position"',
   'Goblin Song':
     'Section=skill ' +
     'Note="R30\' May use Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, critical success for 1 min"',
@@ -2837,6 +2831,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Dogslicer; Horsechopper)",' +
+      // TODO implement
       '"Has access to uncommon goblin weapons/Treats goblin weapons as one category lower"',
   'Junk Tinker':
     'Section=skill Note="May use Crafting on junk to create level 0 items"',
@@ -2850,10 +2845,10 @@ Pathfinder2E.FEATURES = {
     'Note="+5\' Sneak/May Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
-    'Note="Critical hits with a goblin weapon inflict critical specialization effect"',
+    'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
   'Cave Climber':'Section=ability Note="10\' climb Speed"',
   'Skittering Scuttle':
-    'Section=combat Note="May move up to %{speed//2}\' using Goblin Scuttle"',
+    'Section=combat Note="May use Goblin Scuttle to Stride %{speed//2}\'"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
@@ -2867,11 +2862,13 @@ Pathfinder2E.FEATURES = {
   'Halfling Lore':
     'Section=skill Note="Skill Trained (Acrobatics; Stealth; Halfling Lore)"',
   'Halfling Luck':
-    'Section=feature Note="May reroll a skill check or save 1/day"',
+    'Section=feature ' +
+    'Note="May reroll a skill check or save as a free action 1/day"',
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Trained (Sling; Halfling Sling Staff; Shortsword)",' +
+      // TODO implement
       '"Has access to uncommon halfling weapons/Treats halfling weapons as one category lower"',
   'Sure Feet':
     'Section=skill ' +
@@ -2885,15 +2882,15 @@ Pathfinder2E.FEATURES = {
   'Watchful Halfling':
     'Section=combat,skill ' +
     'Note=' +
-      '"May use Aid to overcome enchantment",' +
+      '"May use Aid to help another overcome enchantment",' +
       '"+2 Perception (sense enchantment)/Gains an automatic -2 check to note enchantment"',
   'Cultural Adaptability':
     'Section=feature Note="+1 Ancestry feat/Has Adopted Ancestry feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
-    'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict critical specialization effect"',
+    'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict its critical specialization effect"',
   'Guiding Luck':
-    'Section=skill ' +
+    'Section=feature ' +
     'Note="May reroll a failed Perception check or attack roll 1/day"',
   'Irrepressible':
     'Section=save ' +
@@ -2942,17 +2939,18 @@ Pathfinder2E.FEATURES = {
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
     'Section=skill ' +
-    'Note="After a critical success using a skill, may use Reaction to Aid an ally on the same skill"',
+    'Note="After a critical success using a skill, may use a Reaction to Aid an ally on the same skill"',
   'Supernatural Charm':
     'Section=magic Note="May cast 1st level <i>Charm</i> 1/day"',
   'Monstrous Peacemaker':
     'Section=skill ' +
     'Note="+1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society"',
   'Orc Ferocity':
-    'Section=combat Note="May retain 1 HP when brought to 0 HP 1/%V"',
+    'Section=combat ' +
+    'Note="May retain 1 Hit Point when brought to 0 Hit Points 1/%V"',
   'Orc Sight':'Section=feature Note="Has Darkvision feature"',
   'Orc Superstition':
-    'Section=save Note="May use Reaction to gain +1 vs. magic"',
+    'Section=save Note="May use a Reaction to gain +1 vs. magic"',
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -2960,10 +2958,10 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon orc weapons/Treats orc weapons as one category lower"',
   'Orc Weapon Carnage':
     'Section=combat ' +
-    'Note="Critical hits with a falchion, greataxe, or orc weapon inflict critical specialization effect"',
+    'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
   'Victorious Vigor':
     'Section=combat ' +
-    'Note="Gains %{constitutionModifier} temporary HP for 1 rd when foe drops"',
+    'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
   'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hour"',
   'Orc Weapon Expertise':
@@ -2992,7 +2990,7 @@ Pathfinder2E.FEATURES = {
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
-  'Alchemy':'Section=feature Note="Has Alchemical Crafting features"',
+  'Alchemy':'Section=feature Note="Has Alchemical Crafting feature"',
   'Alertness':'Section=skill Note="Perception Expert"',
   'Bomber':
     'Section=combat Note="May have a bomb splash affect only a single target"',
@@ -3033,7 +3031,7 @@ Pathfinder2E.FEATURES = {
   'Mutagenic Flashback':
     'Section=combat ' +
     'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day"',
-  'Mutagenist':'Section=feature Note="Has Mutagenic Flashback features"',
+  'Mutagenist':'Section=feature Note="Has Mutagenic Flashback feature"',
   'Perpetual Infusions':
     'Section=combat ' +
     'Note="May create choice of 2 1st-level alchemical items without using infused reagents"',
@@ -3054,7 +3052,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="+%V/+%{combatNotes.weaponSpecialization*1.5}/+%{combatNotes.weaponSpecialization*2} HP damage with expert/master/legendary weapon proficiency"',
 
-  'Alchemical Familiar':'Section=feature Note="Has Familiar features"',
+  'Alchemical Familiar':'Section=feature Note="Has Familiar feature"',
   'Alchemical Savant':
     'Section=skill ' +
     'Note="May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas, and critical failures on known formulas are normal failures"',
@@ -3204,7 +3202,7 @@ Pathfinder2E.FEATURES = {
   'Quick Rage':'Section=combat Note="May re-enter Rage after 1 turn"',
   'Rage':
     'Section=combat ' +
-    'Note="May gain %{level+constitutionModifier} temporary HP and +%V HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
+    'Note="May gain %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
   'Raging Resistance':
     'Section=save ' +
     'Note="Resistance %{3+constitutionModifier} to %V while raging"',
@@ -3228,7 +3226,7 @@ Pathfinder2E.FEATURES = {
   'Raging Intimidation':
     'Section=skill,skill ' +
     'Note=' +
-      '"Has Intimidating Glare%1 features",' +
+      '"Has Intimidating Glare%1 feature",' +
       '"May use Demoralize during rage"',
   'Raging Thrower':
     'Section=combat ' +
@@ -3242,7 +3240,7 @@ Pathfinder2E.FEATURES = {
     'Note="May gain additional damage on a Strike during rage; suffers end of rage and fatigue until 10 min rest"',
   'No Escape':
     'Section=combat ' +
-    'Note="May use Reaction to Stride along with retreating foe"',
+    'Note="May use a Reaction to Stride along with retreating foe"',
   'Second Wind':
     'Section=combat ' +
     'Note="May immediately re-enter rage; suffers fatigue afterwards until 10 min rest"',
@@ -3290,7 +3288,7 @@ Pathfinder2E.FEATURES = {
   'Furious Bully':'Section=combat Note="+2 Athletics for attacks during rage"',
   'Renewed Vigor':
     'Section=combat ' +
-    'Note="May gain %{level//2+constitutionModifier} temporary HP"',
+    'Note="May gain %{level//2+constitutionModifier} temporary Hit Points"',
   'Share Rage':
     'Section=combat Note="R30\' May give an ally the effects of Rage 1/rage"',
   'Sudden Leap':
@@ -3302,7 +3300,7 @@ Pathfinder2E.FEATURES = {
     'Note="May inflict %{strengthModifier+combatNotes.rage}+specialization damage to grabbed foe (Fort neg)"',
   'Come And Get Me':
     'Section=combat ' +
-    'Note="May suffer flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary HP from successful Strikes (critical success +%{constitutionModifier*2}) until rage ends"',
+    'Note="May suffer flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary Hit Points from successful Strikes (critical success +%{constitutionModifier*2}) until rage ends"',
   'Furious Sprint':
     'Section=combat ' +
     'Note="May use 2 actions to Stride %{speed*5}\' in a straight line, or 3 actions to Stride %{speed*8}\'"',
@@ -3332,7 +3330,7 @@ Pathfinder2E.FEATURES = {
     'Note="Melee weapons and unarmed attacks gain reach 10\' until rage ends"',
   'Vengeful Strike':
     'Section=combat ' +
-    'Note="May use Reaction to make a Strike when hit by a Strike"',
+    'Note="May use a Reaction to make a Strike when hit by a Strike"',
   'Whirlwind Strike':
     'Section=combat Note="May use 3 actions to Strike each foe within reach"',
   'Collateral Thrash':
@@ -3340,7 +3338,7 @@ Pathfinder2E.FEATURES = {
   'Dragon Transformation':'Section=feature Note="FILL"',
   'Reckless Abandon':
     'Section=feature ' +
-    'Note="When reduced to %{hitPoints//2} HP, may suffer -2 AC and -1 saves to gain +2 attacks"',
+    'Note="When reduced to %{hitPoints//2} Hit Points, may suffer -2 AC and -1 saves to gain +2 attacks"',
   'Brutal Critical':
     'Section=combat ' +
     'Note="Critical melee hits inflict +1 damage die and 2 dice bleed damage"',
@@ -3549,7 +3547,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day; also gains critical specialization effect"',
   'Divine Ally (Shield)':
-    'Section=combat Note="+2 shield hardness/+50% shield HP"',
+    'Section=combat Note="+2 shield hardness/+50% shield Hit Points"',
   'Divine Ally (Steed)':
     'Section=feature Note="Has a mount as an animal companion"',
   'Divine Smite (Liberator)':
@@ -3577,7 +3575,7 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' May use Glimpse Of Redemption to grant allies %{level} damage resistance"',
   'Glimpse Of Redemption':
     'Section=combat ' +
-    'Note="R15\' May use Reaction to negate damage to a struck ally or to grant ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
+    'Note="R15\' May use a Reaction to negate damage to a struck ally or to grant ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
   "Hero's Defiance":
     'Section=magic Note="Knows the <i>Hero\'s Defiance</i> spell"',
@@ -3587,7 +3585,7 @@ Pathfinder2E.FEATURES = {
     'Note="Armor Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
   'Liberating Step':
     'Section=combat ' +
-    'Note="R15\' May use Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
+    'Note="R15\' May use a Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
   'Liberator':
     'Section=feature,magic ' +
     'Note=' +
@@ -3606,7 +3604,7 @@ Pathfinder2E.FEATURES = {
       '"Knows the <i>Lay On Hands</i> spell"',
   'Retributive Strike':
     'Section=combat ' +
-    'Note="R15\' May use Reaction when an ally is damaged to grant them damage resistance %{level+2}, plus make a melee Strike against the triggering foe if within reach"',
+    'Note="R15\' May use a Reaction when an ally is damaged to grant them damage resistance %{level+2}, plus make a melee Strike against the triggering foe if within reach"',
   // Shield Block as below
   'The Tenets Of Good':
     'Section=feature ' +
@@ -3630,7 +3628,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May make Glimpse Of Redemption target stupefied instead of enfeebled"',
   'Divine Grace':
-    'Section=combat Note="May use Reaction to gain +2 save vs. a spell"',
+    'Section=combat Note="May use a Reaction to gain +2 save vs. a spell"',
   'Dragonslayer Oath':
     'Section=combat,feature ' +
     'Note=' +
@@ -3683,7 +3681,7 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Lay On Hands</i> may also counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> on mount restores 10 HP +10 HP/heightened level"',
+    'Note="<i>Lay On Hands</i> on mount restores 10 Hit Points +10 Hit Points/heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="May use an additional Reaction for a Shield Block 1/tn"',
@@ -3763,14 +3761,14 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May use <i>Lay On Hands</i> to restore life to a target who died in the previous rd"',
   'Celestial Mount':
-    'Section=feature Note="Mount has a celestial form with Darkvision, +40 HP, weakness 10 to evil damage, and flight"',
+    'Section=feature Note="Mount has a celestial form with Darkvision, +40 Hit Points, weakness 10 to evil damage, and flight"',
   'Radiant Blade Master':
     'Section=combat ' +
     'Note="May choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
   'Shield Paragon':
     'Section=combat,combat ' +
     'Note=' +
-      '"+50% shield HP",' +
+      '"+50% shield Hit Points",' +
       '"Shield is always raised and is automatically remade after 1 day if destroyed"',
 
   // Cleric
@@ -3786,7 +3784,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Weapon Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"May use critical specialization effects of %{deityWeapon}",' +
-      '"Has Domain Initiate features",' +
+      '"Has Domain Initiate feature",' +
       '"Spell %V (Divine)",' +
       '"Save Expert (Fortitude)"',
   'Deity':
@@ -3810,7 +3808,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Armor %V (Light Armor; Medium Armor)%{level>=3?\'/Weapon Trained (Martial Weapons)\':\'\'}%{level>=7?\'Weapon Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
       '"May use critical specialization effects of %{deityWeapon}",' +
-      '"Has Shield Block%1 features",' +
+      '"Has Shield Block%1 feature",' +
       '"Spell %V (Divine)",' +
       '"Save %V (Fortitude)",' +
       '"Successes on Fortitude saves are critical successes"',
@@ -3829,13 +3827,13 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Communal Healing':
     'Section=magic ' +
-    'Note="Casting a heal spell on another creature restores HP to self equal to spell level"',
+    'Note="Casting a heal spell on another creature restores Hit Points to self equal to spell level"',
   'Emblazon Armament':
     'Section=magic ' +
     'Note="10 min process gives target shield +1 Hardness or weapon +1 HP damage"',
   'Sap Life':
     'Section=magic ' +
-    'Note="Casting a harm spell on another creature restores HP to self equal to spell level"',
+    'Note="Casting a harm spell on another creature restores Hit Points to self equal to spell level"',
   'Turn Undead':
     'Section=magic ' +
     'Note="Critical failure by undead damaged by a heal spell inflicts fleeing for 1 rd"',
@@ -3852,7 +3850,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May cast an area harm or heal spell in a 60\' cone"',
   'Improved Communal Healing':
     'Section=magic ' +
-    'Note="May give additional HP from Communal Healing to another"',
+    'Note="May give additional Hit Points from Communal Healing to another"',
   'Necrotic Infusion':
     'Section=magic ' +
     'Note="Harm spells cast on an undead allow target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
@@ -3889,7 +3887,7 @@ Pathfinder2E.FEATURES = {
     'Note="Heal spell cast upon undead inflicts fire damage equal to spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type; having a matching domain spell also gives it +%{level//2} resistance; may use on a weapon gives it +1d4 HP chosen energy type (+1d6 with matching domain spell)"',
+    'Note="May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type; having a matching domain spell also gives it +%{level//2} resistance; may use on a weapon to give it +1d4 HP chosen energy type (+1d6 with matching domain spell)"',
   'Castigating Weapon':
     'Section=magic ' +
     'Note="Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
@@ -3900,7 +3898,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hour"',
   'Replenishment Of War':
-    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary HP for 1 rd (critical hit %{level} temporary HP) for 1 rd"',
+    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary Hit Points for 1 rd (critical hit %{level} temporary Hit Points) for 1 rd"',
   'Defensive Recovery':
     'Section=magic ' +
     'Note="May use a heal spell to also give +2 AC and saves for 1 rd"',
@@ -3910,7 +3908,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Emblazon Armament on a shield to allow Shield Block vs. spells or on a weapon to have a critical hit also counteract a spell using 1/2 the wielder\'s level"',
   'Shared Replenishment':
     'Section=combat ' +
-    'Note="May give temporary HP from Replenishment Of War to an ally"',
+    'Note="May give temporary Hit Points from Replenishment Of War to an ally"',
   "Deity's Protection":
     'Section=magic ' +
     'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
@@ -3930,7 +3928,7 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' Surrounded by continuous level %{level//2} <i>Bless</i> effects"',
   'Resurrectionist':
     'Section=magic ' +
-    'Note="Restoring HP to a dying or dead target also gives fast healing 5 for 1 min"',
+    'Note="Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min"',
   'Domain Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Echoing Channel':
     'Section=magic ' +
@@ -4086,7 +4084,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Medium elemental and gain resistance 5 to fire"',
   'Healing Transformation':
-    'Section=magic Note="Self polymorph spells restore 1d6 HP/spell level"',
+    'Section=magic ' +
+    'Note="Self polymorph spells restore 1d6 Hit Points/spell level"',
   'Overwhelming Energy':
     'Section=magic ' +
     'Note="May have spells ignore resistance %{level} to choice of energy"',
@@ -4196,7 +4195,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use 2 actions for a melee Strike that inflicts %{level<10?1:level<18?2:3} extra dice damage and counts as two Strikes for multi-attack penalty"',
   'Reactive Shield':
-    'Section=combat Note="May use Reaction to make a Raise a Shield action"',
+    'Section=combat Note="May use a Reaction to make a Raise a Shield action"',
   'Snagging Strike':
     'Section=combat ' +
     'Note="Successful Strike inflicts flat-footed on target for 1 rd"',
@@ -4253,7 +4252,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Two-handed power attacks count as single attacks for multi-attack penalty"',
   "Guardian's Deflection":
-    'Section=combat Note="May use Reaction to give adjacent ally +2 AC"',
+    'Section=combat Note="May use a Reaction to give adjacent ally +2 AC"',
   'Reflexive Shield':
     'Section=save Note="Raised shield adds shield bonus to Reflex saves"',
   'Revealing Stab':
@@ -4668,7 +4667,8 @@ Pathfinder2E.FEATURES = {
     'Note="Has the benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
   // Vigilant Senses as above
   'Wild Stride':
-    'Section=ability Note="May move normally over non-magical difficult terrain"',
+    'Section=ability ' +
+    'Note="May move normally over non-magical difficult terrain"',
   // Weapon Mastery as above
   // Weapon Specialization as above
 
@@ -4904,11 +4904,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict critical specialization effect"',
+      '"Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict its critical specialization effect"',
   // Weapon Specialization as above
 
   'Nimble Dodge':
-    'Section=combat Note="May use Reaction to gain +2 AC against 1 attacker"',
+    'Section=combat Note="May use a Reaction to gain +2 AC against 1 attacker"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
@@ -4945,7 +4945,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May apply poison to piercing and slashing weapons"',
   'Reactive Pursuit':
     'Section=combat ' +
-    'Note="May use Reaction to remain adjacent to a retreating foe"',
+    'Note="May use a Reaction to remain adjacent to a retreating foe"',
   'Sabotage':
     'Section=skill Note="May use Thievery to damage an item in a foe\'s hand"',
   // Scout's Warning as above
@@ -4970,10 +4970,10 @@ Pathfinder2E.FEATURES = {
     'Note="May use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
   'Opportune Backstab':
     'Section=combat ' +
-    'Note="May use Reaction after an ally hits a foe to Strike the same foe"',
+    'Note="May use a Reaction after an ally hits a foe to Strike the same foe"',
   'Sidestep':
     'Section=combat ' +
-    'Note="May use Reaction to redirect a failed Strike on self to an adjacent creature"',
+    'Note="May use a Reaction to redirect a failed Strike on self to an adjacent creature"',
   'Sly Striker':
     'Section=combat ' +
     'Note="Successful Strikes with sneak attack weapons inflict +%{level>=14 ? 2 : 1}d6 HP damage"',
@@ -4999,12 +4999,12 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds for 1 rd; failure causes 120\' fall"',
   'Reactive Interference':
     'Section=combat ' +
-    'Note="May use Reaction to prevent foe Reaction; requires an attack against a higher-level foe"',
+    'Note="May use a Reaction to prevent foe Reaction; requires an attack against a higher-level foe"',
   'Spring From The Shadows':
     'Section=combat Note="May Strike an unaware foe after a Stride"',
   'Defensive Roll':
     'Section=combat ' +
-    'Note="May negate half damage from an attack that would reduce self to 0 HP 1/10 min"',
+    'Note="May negate half damage from an attack that would reduce self to 0 Hit Points 1/10 min"',
   'Instant Opening':
     'Section=combat ' +
     'Note="R30\' May use a distraction to inflict flat-footed vs. self for 1 rd"',
@@ -5018,7 +5018,7 @@ Pathfinder2E.FEATURES = {
   'Cloud Step':
     'Section=ability Note="May Stride over insubstantial surfaces and traps"',
   'Cognitive Loophole':
-    'Section=save Note="May use Reaction to suppress a mental effect for 1 rd"',
+    'Section=save Note="May use a Reaction to suppress a mental effect for 1 rd"',
   'Dispelling Slice':
     'Section=combat ' +
     'Note="May use 2 actions to dispel a magical effect on target with a successful sneak attack"',
@@ -5031,13 +5031,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May change sneak attack damage to match weapon type"',
   "Trickster's Ace":
     'Section=magic ' +
-    'Note="May use Reaction to evoke effects of a prepared spell up to level 4"',
+    'Note="May use a Reaction to evoke effects of a prepared spell up to level 4"',
   'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hour"',
   'Impossible Striker':
     'Section=combat Note="May use sneak attack vs. non-flat-footed foe"',
   'Reactive Distraction':
     'Section=combat ' +
-    'Note="May use Reaction to redirect effect or attack from self to decoy"',
+    'Note="May use a Reaction to redirect effect or attack from self to decoy"',
 
   // Sorcerer
   // Alertness as above
@@ -5109,7 +5109,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Spell Trained (Divine)",' +
       '"Knows the <i>Undeath\'s Blessing</i> spell",' +
-      '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
+      '"Casting a bloodline spell gives self 1 temporary Hit Points per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Bloodline':
     'Section=feature,magic ' +
@@ -9459,12 +9459,27 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'shield:%V%1%2%3%4',
     'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
   );
+  rules.defineRule('training.Armor',
+    'armorCategory', '=', '0',
+    'training.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
+    'training.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
+    'training.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
+    'training.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
+  );
+  rules.defineRule('rank.Armor', 'training.Armor', '=', null);
+  rules.defineRule('proficiencyLevelBonus.Armor',
+    'rank.Armor', '=', 'source>0 ? 0 : null',
+    'level', '+', null
+  );
+  rules.defineRule('proficiencyBonus.Armor',
+    'rank.Armor', '=', '2 * source',
+    'proficiencyLevelBonus.Armor', '+', null
+  );
   rules.defineRule('armorClass',
     '', '=', '10',
+    'proficiencyBonus.Armor', '+', null,
     'armorACBonus', '+', null,
-    'combatNotes.dexterityArmorClassAdjustment', '+', null,
-    'rank.Armor', '+', null,
-    'rankLevelBonus.Armor', '+', null
+    'combatNotes.dexterityArmorClassAdjustment', '+', null
   );
   rules.defineRule('armorClass.1',
     '', '=', '""',
@@ -9472,20 +9487,9 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   );
   rules.defineRule
     ('armorClass.2', 'rank.Armor', '=', 'Pathfinder2E.RANK_NAMES[source]');
-  rules.defineRule('rank.Armor',
-    'armorCategory', '=', '0',
-    'rank.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
-    'rank.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
-    'rank.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
-    'rank.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
-  );
   rules.defineRule('combatNotes.dexterityArmorClassAdjustment',
     'dexterityModifier', '=', null,
     'armorDexterityCap', 'v', null
-  );
-  rules.defineRule('rankLevelBonus.Armor',
-    'rank.Armor', '=', 'source>0 ? 0 : null',
-    'level', '+', null
   );
   rules.defineRule('shield.1',
     '', '=', '""',
@@ -9529,18 +9533,19 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
     rules.defineChoice('notes', 'save.' + s + ':%S (' + saves[s] + '; %1)');
-    rules.defineRule('rank.' + s, '', '=', '0');
-    rules.defineRule('rankLevelBonus.' + s,
-      'rank.' + s, '=', 'source>0 ? 0 : null',
-      'level', '+', null
+    rules.defineRule('training.' + s, '', '=', '0');
+    rules.defineRule('rank.' + s, 'training.' + s, '=', null);
+    rules.defineRule('proficiencyLevelBonus.' + s,
+      'rank.' + s, '?', 'source > 0',
+      'level', '=', null
     );
-    rules.defineRule('rankBonus.' + s,
+    rules.defineRule('proficiencyBonus.' + s,
       'rank.' + s, '=', '2 * source',
-      'rankLevelBonus.' + s, '+', null
+      'proficiencyLevelBonus.' + s, '+', null
     );
     rules.defineRule('save.' + s,
-      saves[s] + 'Modifier', '=', null,
-      'rankBonus.' + s, '+', null,
+      'proficiencyBonus.' + s, '=', null,
+      saves[s] + 'Modifier', '+', null,
       'skillNotes.goodies' + s + 'Adjustment', '+', null
     );
     rules.defineRule('save.' + s + '.1',
@@ -9664,24 +9669,25 @@ Pathfinder2E.talentRules = function(
     }
   }
 
+  rules.defineRule
+    ('languageCount', 'skillNotes.intelligenceLanguageBonus', '+', null);
   rules.defineChoice('notes',
     'perception:%S (wisdom; %1)',
     'skillNotes.intelligenceLanguageBonus:+%V Language Count'
   );
-  rules.defineRule
-    ('languageCount', 'skillNotes.intelligenceLanguageBonus', '+', null);
-  rules.defineRule('rank.Perception', '', '=', '0');
-  rules.defineRule('rankLevelBonus.Perception',
-    'rank.Perception', '=', 'source>0 ? 0 : null',
-    'level', '+', null
+  rules.defineRule('training.Perception', '', '=', '0');
+  rules.defineRule('rank.Perception', 'training.Perception', '=', null);
+  rules.defineRule('proficiencyLevelBonus.Perception',
+    'rank.Perception', '?', 'source > 0',
+    'level', '=', null
   );
-  rules.defineRule('rankBonus.Perception',
+  rules.defineRule('proficiencyBonus.Perception',
     'rank.Perception', '=', '2 * source',
-    'rankLevelBonus.Perception', '+', null
+    'proficiencyLevelBonus.Perception', '+', null
   );
   rules.defineRule('perception',
-    'wisdomModifier', '=', null,
-    'rankBonus.Perception', '+', null,
+    'proficiencyBonus.Perception', '=', null,
+    'wisdomModifier', '+', null,
     'skillNotes.goodiesPerceptionAdjustment', '+', null
   );
   rules.defineRule('perception.1',
@@ -10028,12 +10034,17 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
+    rules.defineRule('spells.Detect Magic', 'magicNotes.seerElf', '=', '1');
   } else if(name == 'Gnome') {
     rules.defineRule
       ('features.Darkvision', 'featureNotes.umbralGnome', '=', '1');
   } else if(name == 'Halfling') {
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.twilightHalfling', '=', '1');
+    rules.defineRule('skillNotes.nomadicHalfling',
+      '', '=', '2',
+      'features.Multilingual', '+', null
+    );
   } else if(name == 'Human') {
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
@@ -10260,21 +10271,26 @@ Pathfinder2E.classRules = function(
         spellType == 'P' ? 'Primal' : spellType;
       let spellLevel = spellTypeAndLevel.replace(spellType, '');
       let spellModifier = abilities[0] + 'Modifier';
-      rules.defineRule('spellProficiencyBonus.' + spellType,
-        'rank.' + spellType, '=', 'source * 2',
-        'level', '+', null
-      );
-      rules.defineRule('spellAttackModifier.' + spellType,
-        'spellProficiencyBonus.' + spellType, '=', null,
-        spellModifier, '+', null
-      );
-      rules.defineRule('spellDifficultyClass.' + spellType,
-        'spellProficiencyBonus.' + spellType, '=', null,
-        spellModifier, '+', '8 + source'
-      );
       rules.defineChoice('notes',
         'spellAttackModifier.' + spellType + ':%S (' + abilities[0] + '; %1)',
         'spellDifficultyClass.' + spellType + ':%V (' + abilities[0] + '; %1)'
+      );
+      rules.defineRule('rank.' + spellType, 'training.' + spellType, '=', null);
+      rules.defineRule('proficiencyLevelBonus.' + spellType,
+        'rank.' + spellType, '?', 'source > 0',
+        'level', '=', null
+      );
+      rules.defineRule('proficiencyBonus.' + spellType,
+        'rank.' + spellType, '=', '2 * source',
+        'proficiencyLevelBonus.' + spellType, '+', null
+      );
+      rules.defineRule('spellAttackModifier.' + spellType,
+        'proficiencyBonus.' + spellType, '=', null,
+        spellModifier, '+', null
+      );
+      rules.defineRule('spellDifficultyClass.' + spellType,
+        'proficiencyBonus.' + spellType, '=', null,
+        spellModifier, '+', '8 + source'
       );
       rules.defineRule('spellAttackModifier.' + spellType + '.1',
         'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
@@ -10292,6 +10308,7 @@ Pathfinder2E.classRules = function(
     ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
 
   rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
+  rules.defineRule('rank.' + name, 'training.' + name, '=', null);
   rules.defineRule
     ('classDifficultyClass.' + name + '.1', '', '=', '"' + abilities[0] + '"');
   let classAbilityModifier = abilities[0] + 'Modifier';
@@ -10306,21 +10323,20 @@ Pathfinder2E.classRules = function(
       );
     });
   }
-  rules.defineRule('classDifficultyClass.' + name + '.2',
-    'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
+  rules.defineRule('proficiencyLevelBonus.' + name,
+    'rank.' + name, '?', 'source > 0',
+    classLevel, '=', null
+  );
+  rules.defineRule('proficiencyBonus.' + name,
+    'rank.' + name, '=', '2 * source',
+    'proficiencyLevelBonus.' + name, '+', null
   );
   rules.defineRule('classDifficultyClass.' + name,
-    'rank.' + name, '?', null,
-    classAbilityModifier, '=', '10 + source',
-    'rankBonus.' + name, '+', null
+    'proficiencyBonus.' + name, '=', null,
+    classAbilityModifier, '+', '10 + source'
   );
-  rules.defineRule('rankLevelBonus.' + name,
-    'rank.' + name, '=', 'source>0 ? 0 : null',
-    'levels.' + name, '+', null
-  );
-  rules.defineRule('rankBonus.' + name,
-    'rank.' + name, '=', '2 * source',
-    'rankLevelBonus.' + name, '+', null
+  rules.defineRule('classDifficultyClass.' + name + '.2',
+    'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
 
   rules.defineRule('hitPoints', classLevel, '+=', 'source * ' + hitPoints);
@@ -10652,17 +10668,17 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.warpriest',
       'level', '=', 'source<19 ? "Expert" : "Master"'
     );
-    rules.defineRule('rank.Divine',
+    rules.defineRule('training.Divine',
       'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
       'magicNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
     );
-    rules.defineRule('rank.Fortitude',
+    rules.defineRule('training.Fortitude',
       'saveNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
     );
-    rules.defineRule('rank.Light Armor',
+    rules.defineRule('training.Light Armor',
       'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
     );
-    rules.defineRule('rank.Medium Armor',
+    rules.defineRule('training.Medium Armor',
       'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
     );
     rules.defineRule('saveNotes.cloisteredCleric', 'level', '?', 'source>=3');
@@ -10721,7 +10737,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spells.Tempest Surge', 'magicNotes.stormOrder', '=', '1');
     rules.defineRule('spells.Wild Morph', 'magicNotes.wildOrder', '=', '1');
   } else if(name == 'Fighter') {
-    rules.defineRule('rank.Will', 'saveNotes.bravery', '^=', '2');
+    rules.defineRule('training.Will', 'saveNotes.bravery', '^=', '2');
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
   } else if(name == 'Monk') {
@@ -10740,7 +10756,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('combatNotes.monasticWeaponry',
       '', '=', '"Trained"',
-      'rank.Unarmed Attacks', '=', 'source>2 ? "Master" : source>1 ? "Expert" : null'
+      'training.Unarmed Attacks', '=', 'source>2 ? "Master" : source>1 ? "Expert" : null'
     );
     rules.defineRule('magicNotes.gracefulLegend',
       'magicNotes.kiTradition(Divine)', '=', '"Divine"',
@@ -10750,14 +10766,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'magicNotes.kiTradition(Divine)', '=', '"Divine"',
       'magicNotes.kiTradition(Occult)', '=', '"Occult"'
     );
-    rules.defineRule('rank.Divine',
+    rules.defineRule('training.Divine',
       'magicNotes.gracefulLegend', '^=', 'source=="Divine" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Divine" ? 2 : null'
     );
-    rules.defineRule('rank.Monk',
+    rules.defineRule('training.Monk',
       'combatNotes.monasticWeaponry', '=', 'source=="Expert" ? 3 : source=="Master" ? 2 : 1'
     );
-    rules.defineRule('rank.Occult',
+    rules.defineRule('training.Occult',
       'magicNotes.gracefulLegend', '^=', 'source=="Occult" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Occult" ? 2 : null'
     );
@@ -10806,7 +10822,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('featureNotes.skillIncreases',
       classLevel, '^=', 'source>=2 ? Math.floor(source / 2) : null'
     );
-    rules.defineRule('rank.Medium Armor',
+    rules.defineRule('training.Medium Armor',
       'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
     rules.defineRule
@@ -10859,7 +10875,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', null);
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('rank.' + t,
+      rules.defineRule('training.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
         'magicNotes.masterSpellcaster', '^=', 'source.includes("' + t + '") ? 3 : null',
         'magicNotes.legendarySpellcaster', '^=', 'source.includes("' + t + '") ? 4 : null'
@@ -11034,10 +11050,10 @@ Pathfinder2E.deityRules = function(
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
   );
 
-  rules.defineRule('rank.' + skill,
+  rules.defineRule('training.' + skill,
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
   );
-  rules.defineRule('rank.' + weapon,
+  rules.defineRule('training.' + weapon,
     'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
     'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
     'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
@@ -11106,7 +11122,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.additionalLore(' + matchInfo[1] + ')',
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule('rank.' + matchInfo[1] + ' Lore',
+    rules.defineRule('training.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
   } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
@@ -11119,11 +11135,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
   } else if(name == 'Armor Proficiency') {
     rules.defineRule
-      ('rank.Light Armor', 'combatNotes.armorProficiency', '=', '1');
-    rules.defineRule('rank.Medium Armor',
+      ('training.Light Armor', 'combatNotes.armorProficiency', '=', '1');
+    rules.defineRule('training.Medium Armor',
       'feats.Armor Proficiency', '=', 'source>=2 ? 1 : null'
     );
-    rules.defineRule('rank.Heavy Armor',
+    rules.defineRule('training.Heavy Armor',
       'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
     );
   } else if(name == 'Bard Dedication') {
@@ -11147,7 +11163,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
-    rules.defineRule('rank.Bardic Lore',
+    rules.defineRule('training.Bardic Lore',
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
@@ -11155,28 +11171,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('rank.Fortitude',
+    rules.defineRule('training.Fortitude',
       'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Perception)') {
     rules.defineRule('skillNotes.cannyAcumen(Perception)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('rank.Perception',
+    rules.defineRule('training.Perception',
       'skillNotes.cannyAcumen(Perception)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Reflex)') {
     rules.defineRule('saveNotes.cannyAcumen(Reflex)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('rank.Reflex',
+    rules.defineRule('training.Reflex',
       'saveNotes.cannyAcumen(Reflex)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Will)') {
     rules.defineRule('saveNotes.cannyAcumen(Will)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('rank.Will',
+    rules.defineRule('training.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Clever Improviser') {
@@ -11214,14 +11230,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('spells.Illusory Object', 'magicNotes.feyCaller', '=', '1');
     rules.defineRule('spells.Illusory Scene', 'magicNotes.feyCaller', '=', '1');
     rules.defineRule('spells.Veil', 'magicNotes.feyCaller', '=', '1');
+  } else if(name == 'First World Adept') {
+    rules.defineRule
+      ('spells.Faerie Fire', 'magicNotes.firstWorldAdept', '=', '1');
+    rules.defineRule
+      ('spells.Invisibility', 'magicNotes.firstWorldAdept', '=', '1');
   } else if(name == 'Gnome Obsession') {
-    rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'source<2');
+    // TODO find a less klunky way to do this
     rules.defineRule
-      ('skillNotes.gnomeObsession-1', 'level', '?', 'source>=2 && source<7');
-    rules.defineRule
-      ('skillNotes.gnomeObsession-2', 'level', '?', 'source>=7 && source<15');
-    rules.defineRule('skillNotes.gnomeObsession-3', 'level', '?', 'source>=15');
-    rules.defineRule('skillNotes.gnomeObsession-4', 'level', '?', 'source>=2');
+      ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', '1');
+    rules.defineRule('skillNotes.gnomeObsession',
+      'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
+    );
   } else if(name == 'Hand Of The Apprentice') {
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
@@ -11377,7 +11397,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
           if(m)
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
           else if(!element.startsWith('%'))
-            rules.defineRule('rank.' + element, noteName, '^=', rank);
+            rules.defineRule('training.' + element, noteName, '^=', rank);
         });
         if(choices)
           rules.defineRule('choiceCount.' + matchInfo[1],
@@ -11388,7 +11408,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
       if(matchInfo) {
         let rank =
           matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-        rules.defineRule('rank.Perception', noteName, '^=', rank);
+        rules.defineRule('training.Perception', noteName, '^=', rank);
       }
       matchInfo = n.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
       if(matchInfo) {
@@ -11538,26 +11558,29 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   ability = ability.toLowerCase();
   rules.defineChoice
     ('notes', 'skillModifiers.' + name + ':%S (' + ability + '; %1)');
-  if(!name.match(/Lore$/))
-    rules.defineRule('rank.' + name, '', '=', '0');
-  else
+  if(name.match(/Lore$/)) {
+    rules.defineRule('training.' + name, 'skillIncreases.' + name, '=', '0');
     rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
-  rules.defineRule
-    ('rank.' + name, 'skillIncreases.' + name, '+=', null);
-  rules.defineRule('rankLevelBonus.' + name,
-    'rank.' + name, '=', 'source>0 ? 0 : null',
+  } else {
+    rules.defineRule('training.' + name, '', '=', '0');
+  }
+  rules.defineRule('rank.' + name,
+    'training.' + name, '=', null,
+    'skillIncreases.' + name, '+', null
+  );
+  rules.defineRule('proficiencyLevelBonus.' + name,
+    'rank.' + name, '=', 'source > 0 ? 0 : null',
     // TODO right place for this, or in featRulesExtra?
     'skillNotes.eclecticSkill', '=', '0',
     'level', '+', null
   );
-  rules.defineRule('rankBonus.' + name,
+  rules.defineRule('proficiencyBonus.' + name,
     'rank.' + name, '=', '2 * source',
-    'rankLevelBonus.' + name, '+', null
+    'proficiencyLevelBonus.' + name, '+', null
   );
   rules.defineRule('skillModifiers.' + name,
-    'rank.' + name, '?', 'source != null',
-    ability + 'Modifier', '=', null,
-    'rankBonus.' + name, '+', null,
+    'proficiencyBonus.' + name, '=', null,
+    ability + 'Modifier', '+', null,
     'skillNotes.goodies' + name + 'Adjustment', '+', null
   );
   if(['dexterity', 'strength'].includes(ability))
@@ -11700,7 +11723,7 @@ Pathfinder2E.weaponRules = function(
     ('weaponAttackAdjustment.' + name, 'weapons.' + name, '=', '0');
   rules.defineRule
     ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
-  rules.defineRule('weaponProficiencyBonus.' + name,
+  rules.defineRule('proficiencyBonus.' + name,
     weaponName, '?', null,
     'rank.' + (category!='Unarmed' ? category + ' Weapons' : 'Unarmed Attacks'), '=', 'source * 2',
     'rank.' + name, '^=', 'source * 2',
@@ -11711,7 +11734,7 @@ Pathfinder2E.weaponRules = function(
     isFinesse ? 'maxStrOrDexModifier' :
     isRanged ? 'combatNotes.dexterityAttackAdjustment' :
                'combatNotes.strengthAttackAdjustment', '+', null,
-    'weaponProficiencyBonus.' + name, '+', null,
+    'proficiencyBonus.' + name, '+', null,
     'weaponAttackAdjustment.' + name, '+', null
   );
   rules.defineRule('damageBonus.' + name,
@@ -11778,18 +11801,20 @@ Pathfinder2E.featureListRules = function(
           choices += '+' + m[1];
         else
           rules.defineRule
-            ('rank.' + element, setName + '.' + feature, '^=', rank);
+            ('training.' + element, setName + '.' + feature, '^=', rank);
       });
       if(choices)
         rules.defineRule('choiceCount.' + matchInfo[1],
           setName + '.' + feature, '+=', choices.replace('+', '')
         );
     }
-    matchInfo = feature.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
+    matchInfo =
+      feature.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
     if(matchInfo) {
       let rank =
         matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-      rules.defineRule('rank.Perception', setName + '.' + feature, '^=', rank);
+      rules.defineRule
+        ('training.Perception', setName + '.' + feature, '^=', rank);
     }
     matchInfo =
       feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
@@ -12881,6 +12906,8 @@ Pathfinder2E.ruleNotes = function() {
     '<h3>Limitations</h3>\n' +
     '<p>\n' +
     '<ul>\n' +
+    'Quilvyn does not note the age requirement for the elven Ancestral ' +
+    'Longevity feat.\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
