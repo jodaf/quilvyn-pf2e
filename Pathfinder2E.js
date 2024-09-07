@@ -11559,7 +11559,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   rules.defineChoice
     ('notes', 'skillModifiers.' + name + ':%S (' + ability + '; %1)');
   if(name.match(/Lore$/)) {
-    rules.defineRule('training.' + name, 'skillIncreases.' + name, '=', '0');
+    rules.defineRule('training.' + name, 'skillIncreases.' + name, '^=', '0');
     rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
   } else {
     rules.defineRule('training.' + name, '', '=', '0');
@@ -11707,6 +11707,7 @@ Pathfinder2E.weaponRules = function(
     traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
+  category =  category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
   damage = matchInfo[1];
   let damageType = matchInfo[3];
   traits.forEach(t => {
@@ -11718,17 +11719,25 @@ Pathfinder2E.weaponRules = function(
   let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%5'" : '') + ')';
 
   rules.defineChoice('notes', weaponName + ':' + format);
+  rules.defineRule('rank.' + category, 'training.' + category, '=', null);
+  rules.defineRule('rank.' + name, 'training.' + name, '=', null);
+  rules.defineRule('proficiencyLevelBonus.' + name,
+    weaponName, '?', null,
+    'rank.' + name, '=', '0',
+    'rank.' + category, '=', '0',
+    'level', '+', null
+  );
+  rules.defineRule('proficiencyBonus.' + name,
+    weaponName, '?', null,
+    'rank.' + category, '=', 'source * 2',
+    'rank.' + name, '^=', 'source * 2',
+    'proficiencyLevelBonus.' + name, '+', null
+  );
 
   rules.defineRule
     ('weaponAttackAdjustment.' + name, 'weapons.' + name, '=', '0');
   rules.defineRule
     ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
-  rules.defineRule('proficiencyBonus.' + name,
-    weaponName, '?', null,
-    'rank.' + (category!='Unarmed' ? category + ' Weapons' : 'Unarmed Attacks'), '=', 'source * 2',
-    'rank.' + name, '^=', 'source * 2',
-    'level', '+', null
-  );
   rules.defineRule('attackBonus.' + name,
     weaponName, '=', '0',
     isFinesse ? 'maxStrOrDexModifier' :

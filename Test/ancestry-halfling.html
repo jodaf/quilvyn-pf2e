@@ -16,7 +16,7 @@ var attributes = {
   "feats.Halfling Weapon Expertise":1, "feats.Halfling Weapon Familiarity":1, "feats.Halfling Weapon Trickster":1, 
   "feats.Irrepressible":1, "feats.Point-Blank Shot":1, "feats.Sure Feet":1, "feats.Titan Slinger":1, 
   "feats.Unfettered Halfling":1, "feats.Watchful Halfling":1, "gender":"Female", "intelligence":10, 
-  "levels.Fighter":1, "name":"Ancestry-Halfling", 
+  "languages.Draconic":1, "languages.Sylvan":1, "levels.Fighter":1, "name":"Ancestry-Halfling", 
   "selectableFeatures.Halfling - Gutsy Halfling":1, "selectableFeatures.Halfling - Hillock Halfling":1, 
   "selectableFeatures.Halfling - Nomadic Halfling":1, "selectableFeatures.Halfling - Twilight Halfling":1, 
   "selectableFeatures.Halfling - Wildwood Halfling":1, "shield":"None", "skillIncreases.Athletics":1, 
@@ -56,10 +56,17 @@ var attributes = {
       <td><b>Experience</b>: 0/1000</td>
       <td><b>Level</b>: 1</td>
       <td><b>Speed</b>: 25</td>
+      <td><b>Size</b>: Small</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Ability Notes</b>: <i>Ability Boosts: Ability Boost (Choose 4 from any)</i></td>
+    <td><b>Ability Notes</b>:     <table id="AbilityNotes" style="width:100%">
+    <tr style="text-align:center">
+      <td><i>Ability Boosts: Ability Boost (Choose 4 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Wildwood Halfling: May move normally over foliage difficult terrain</td>
+    </tr></table>
+</td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -91,11 +98,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Twilight Halfling: Has Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
         <td>Adopted Ancestry: May take ancestry feats from chosen ancestry</td>
       </tr><tr style="text-align:center">
-        <td>Halfling Luck: May reroll a skill check or save 1/day</td>
+        <td>Guiding Luck: May reroll a failed Perception check or attack roll 1/day</td>
       </tr><tr style="text-align:center">
-        <td>Wildwood Halfling: May move normally through foliage difficult terrain</td>
+        <td>Halfling Luck: May reroll a skill check or save as a free action 1/day</td>
+      </tr><tr style="text-align:center">
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -122,7 +133,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Crafting: +0 (intelligence; untrained)</td>
       <td>Medicine: +3 (wisdom; untrained)</td>
-      <td>Stealth: +7 (dexterity; trained)</td>
+      <td>Stealth: +9 (dexterity; expert)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +2 (charisma; untrained)</td>
       <td>Nature: +3 (wisdom; untrained)</td>
@@ -138,7 +149,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Halfling</td>
+    <td><b>Languages</b>: Common; Draconic; Halfling; Sylvan</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -146,9 +157,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Halfling Lore: Skill Trained (Acrobatics; Stealth; Halfling Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Distracting Shadows: May use larger creatures as cover for Hide and Sneak</td>
+      <td><i>Nomadic Halfling: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td>Guiding Luck: May reroll a failed Perception check or attack roll 1/day</td>
+      <td>Distracting Shadows: May use larger creatures as cover for Hide and Sneak</td>
     </tr><tr style="text-align:center">
       <td>Keen Eyes: R30' +2 Seek to find hidden creatures</td>
     </tr><tr style="text-align:center">
@@ -169,7 +180,7 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 16</td>
-        <td><b>Armor Class</b>: 16 (dexterity; trained)</td>
+        <td><b>Armor Class</b>: 17 (dexterity; trained)</td>
         <td><b>Class DC</b>: Fighter: 17 (dexterity; trained)</td>
       </tr></table>
 </td>
@@ -197,9 +208,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Halfling Weapon Familiarity: Has access to uncommon halfling weapons/Treats halfling weapons as one category lower</td>
       </tr><tr style="text-align:center">
-        <td>Halfling Weapon Trickster: Critical hits with a shortsword, sling, or halfling weapon weapon inflict critical specialization effect</td>
+        <td>Halfling Weapon Trickster: Critical hits with a shortsword, sling, or halfling weapon weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
-        <td>Hillock Halfling: Regains +1 HP from rest or treatment</td>
+        <td>Hillock Halfling: Regains +1 Hit Points from rest or treatment</td>
       </tr><tr style="text-align:center">
         <td>Keen Eyes: DC 3/9 to target a concealed/hidden foe</td>
       </tr><tr style="text-align:center">
@@ -209,11 +220,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Titan Slinger: +1 damage die step on slings vs. Large and larger foes</td>
       </tr><tr style="text-align:center">
-        <td>Twilight Halfling: Has Low-Light Vision feature</td>
-      </tr><tr style="text-align:center">
         <td>Unfettered Halfling: Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check</td>
       </tr><tr style="text-align:center">
-        <td>Watchful Halfling: May use Aid to overcome enchantment</td>
+        <td>Watchful Halfling: May use Aid to help another overcome enchantment</td>
       </tr></table>
 </td>
     </tr></table>

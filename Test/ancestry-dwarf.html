@@ -56,6 +56,7 @@ var attributes = {
       <td><b>Experience</b>: 874/1000</td>
       <td><b>Level</b>: 1</td>
       <td><b>Speed</b>: 20</td>
+      <td><b>Size</b>: Medium</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -67,9 +68,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Unburdened Iron: Suffers no Speed penalty from armor</i></td>
     </tr><tr style="text-align:center">
-      <td>Rock Runner: May move normally through stone and earth difficult terrain</td>
+      <td>Rock Runner: May move normally over stone and earth difficult terrain</td>
     </tr><tr style="text-align:center">
-      <td>Unburdened Iron: Reduces non-armor Speed penalties by 5</td>
+      <td>Unburdened Iron: Reduces non-armor Speed penalties by 5'</td>
     </tr></table>
 </td>
   </tr></table>
@@ -91,13 +92,15 @@ var attributes = {
         <td><b>Feats</b>: Boulder Roll; Dwarven Lore; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Mountain's Stoutness; Point-Blank Shot; Rock Runner; Stonecunning; Stonewalker; Unburdened Iron; Vengeful Hatred</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Weapon Trained (Advanced Weapons)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
-        <td><b>Dwarf Features</b>: Ability Boost (Constitution; Wisdom; Choose 1 from any); Ability Flaw (Charisma); Ancestry Feats; Ancient-Blooded Dwarf; Clan Dagger; Darkvision; Death Warden Dwarf; Forge Dwarf; Rock Dwarf; Slow; Strong-Blooded Dwarf</td>
+        <td><b>Dwarf Features</b>: Ability Boost (Constitution; Wisdom; Choose 1 from any); Ability Flaw (Charisma); Ancestry Feats; Ancient-Blooded Dwarf; Call On Ancient Blood; Clan Dagger; Darkvision; Death Warden Dwarf; Forge Dwarf; Rock Dwarf; Slow; Strong-Blooded Dwarf</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Ancient-Blooded Dwarf: Has Call On Ancient Blood feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -160,7 +163,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td>Rock Runner: Not flat-footed when using Acrobatics to Balance on stone and earth; successes are critical successes</td>
+      <td>Rock Runner: Does not suffer flat-footed when using Acrobatics to Balance on stone and earth; successes to do so are critical successes</td>
     </tr><tr style="text-align:center">
       <td>Stonecunning: +2 Perception (unusual stonework)/Gains an automatic -2 check to note unusual stonework</td>
     </tr><tr style="text-align:center">
@@ -179,7 +182,7 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 22</td>
-        <td><b>Armor Class</b>: 17 (dexterity (1 max); trained)</td>
+        <td><b>Armor Class</b>: 18 (dexterity (1 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 15 (strength; trained)</td>
       </tr></table>
 </td>
@@ -210,9 +213,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Boulder Roll: May Step into a foe's space to force a 5' move (Fort vs. Athletics neg but inflicts 3B HP)</td>
+        <td>Boulder Roll: May Step into a foe's square to force a 5' move (Fort vs. Athletics critical success neg; normal success neg but inflicts 3B HP)</td>
       </tr><tr style="text-align:center">
-        <td>Dwarven Weapon Cunning: Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict critical specialization effect</td>
+        <td>Dwarven Weapon Cunning: Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Dwarven Weapon Familiarity: Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower</td>
       </tr><tr style="text-align:center">
@@ -220,9 +223,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Point-Blank Shot: Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
+        <td>Rock Dwarf: +2 DC vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance of 10' or more</td>
+      </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Vengeful Hatred: +1 per die weapon damage vs. choice of drow, duergar, giant, or orc and for 1 min on any foe that inflicts a critical success on attack</td>
+        <td>Vengeful Hatred: +1 per die weapon damage vs. ancestral foes and for 1 min on any foe that inflicts a critical success on attack</td>
       </tr></table>
 </td>
     </tr></table>
@@ -234,15 +239,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Ancient-Blooded Dwarf: May use Reaction upon save vs. magic to gain +1 vs. magic for 1 rd</td>
+        <td>Call On Ancient Blood: May use a Reaction upon save vs. magic to gain +1 vs. magic until the end of turn</td>
       </tr><tr style="text-align:center">
         <td>Death Warden Dwarf: Successful saves vs. necromancy effects are critical successes</td>
       </tr><tr style="text-align:center">
         <td>Forge Dwarf: Has fire resistance 1/Treats environmental heat as 1 step less extreme</td>
       </tr><tr style="text-align:center">
-        <td>Rock Dwarf: +2 vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance</td>
-      </tr><tr style="text-align:center">
-        <td>Strong-Blooded Dwarf: Has poison resistance 1/Successful saves vs. poison reduce stage by 2 (virulent 1), critical successes by 3 (virulent 2)</td>
+        <td>Strong-Blooded Dwarf: Has poison resistance 1/Successful saves vs. poison reduce stage by 2 (virulent 1); critical successes by 3 (virulent 2)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -252,7 +255,9 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
-    <td><b>Magic Notes</b>: Stonewalker: May cast <i>Meld Into Stone</i> 1/day</td>
+    <td><b>Spells</b>: Meld Into Stone</td>
+  </tr><tr style="text-align:center">
+    <td><b>Magic Notes</b>: <i>Stonewalker: May cast <i>Meld Into Stone</i> 1/day</i></td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">

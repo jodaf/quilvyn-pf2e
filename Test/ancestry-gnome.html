@@ -20,9 +20,9 @@ var attributes = {
   "name":"Ancestry-Gnome", "selectableFeatures.Gnome - Chameleon Gnome":1, 
   "selectableFeatures.Gnome - Fey-Touched Gnome":1, "selectableFeatures.Gnome - Sensate Gnome":1, 
   "selectableFeatures.Gnome - Umbral Gnome":1, "selectableFeatures.Gnome - Wellspring Gnome":1, "shield":"None", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Architecture Lore":1, "skillIncreases.Astral Plane Lore":1, 
-  "skillIncreases.Diplomacy":1, "skillIncreases.Gladitorial Lore":1, "skillIncreases.Heaven Lore":1, 
-  "skillIncreases.Warfare Lore":1, "strength":10, "wisdom":10
+  "skillIncreases.Acrobatics":1, "skillIncreases.Astral Plane Lore":1, "skillIncreases.Diplomacy":1, 
+  "skillIncreases.Gladitorial Lore":1, "skillIncreases.Heaven Lore":1, "skillIncreases.Warfare Lore":1, 
+  "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -57,6 +57,7 @@ var attributes = {
       <td><b>Experience</b>: 0/1000</td>
       <td><b>Level</b>: 1</td>
       <td><b>Speed</b>: 25</td>
+      <td><b>Size</b>: Small</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -94,7 +95,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Umbral Gnome: Has Darkvision feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Chameleon Gnome: May change skin and hair colors</td>
+        <td>Chameleon Gnome: May use a 1 hr process to change skin and hair colors</td>
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
@@ -115,35 +116,31 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +4 (dexterity; trained)</td>
       <td>Gladitorial Lore: +5 (intelligence; trained)</td>
-      <td>Scribing Lore: +5 (intelligence; trained)</td>
+      <td>Religion: +5 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +2 (intelligence; untrained)</td>
       <td>Heaven Lore: +5 (intelligence; trained)</td>
-      <td>Society: +2 (intelligence; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Architecture Lore: +5 (intelligence; trained)</td>
-      <td>Intimidation: +2 (charisma; untrained)</td>
-      <td>Stealth: +1 (dexterity; untrained)</td>
+      <td>Scribing Lore: +5 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Astral Plane Lore: +5 (intelligence; trained)</td>
-      <td>Medicine: +2 (wisdom; untrained)</td>
-      <td>Survival: +2 (wisdom; untrained)</td>
+      <td>Intimidation: +2 (charisma; untrained)</td>
+      <td>Society: +2 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +0 (strength; untrained)</td>
-      <td>Nature: +2 (wisdom; untrained)</td>
-      <td>Thievery: +1 (dexterity; untrained)</td>
+      <td>Medicine: +2 (wisdom; untrained)</td>
+      <td>Stealth: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +2 (intelligence; untrained)</td>
-      <td>Occultism: +2 (intelligence; untrained)</td>
-      <td>Warfare Lore: +5 (intelligence; trained)</td>
+      <td>Nature: +2 (wisdom; untrained)</td>
+      <td>Survival: +2 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +2 (charisma; untrained)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
-      <td></td>
+      <td>Occultism: +2 (intelligence; untrained)</td>
+      <td>Thievery: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +5 (charisma; trained)</td>
-      <td>Religion: +5 (wisdom; trained)</td>
-      <td></td>
+      <td>Performance: +2 (charisma; untrained)</td>
+      <td>Warfare Lore: +5 (intelligence; trained)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -153,7 +150,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 5 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Gnome Obsession: Skill Trained (Choose 1 from any Lore)</i></td>
+      <td><i>Gnome Obsession: Skill Trained (Choose 1 from any Lore; Acolyte Lore skill)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -161,13 +158,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Burrow Elocutionist: May speak with burrowing animals</td>
     </tr><tr style="text-align:center">
-      <td>Chameleon Gnome: May use an action to change coloration and gain +2 Stealth</td>
+      <td>Chameleon Gnome: May use 1 action to adjust coloration, gaining +2 Stealth</td>
     </tr><tr style="text-align:center">
       <td>Fey Fellowship: +2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey and retry after 1 min conversation</td>
     </tr><tr style="text-align:center">
       <td>Illusion Sense: +1 Perception (illusions)</td>
     </tr><tr style="text-align:center">
-      <td>Sensate Gnome: R30' May locate a creature by smell/R30' +2 Perception (locate a creature)</td>
+      <td>Sensate Gnome: R30' +2 Perception to locate a creature by smell</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
     </tr></table>
@@ -182,7 +179,7 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 20</td>
-        <td><b>Armor Class</b>: 13 (dexterity; trained)</td>
+        <td><b>Armor Class</b>: 14 (dexterity; trained)</td>
         <td><b>Class DC</b>: Fighter: 14 (dexterity; trained)</td>
       </tr></table>
 </td>
@@ -210,13 +207,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Gnome Weapon Familiarity: Has access to uncommon gnome weapons/Treats gnome weapons as one category lower</td>
       </tr><tr style="text-align:center">
-        <td>Gnome Weapon Innovator: Critical hits with a glaive, kukri, or gnome weapon inflict critical specialization effect</td>
+        <td>Gnome Weapon Innovator: Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Point-Blank Shot: Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Vivacious Conduit: 10 min rest restores 2 HP</td>
+        <td>Vivacious Conduit: 10 min rest restores 1 Hit Points</td>
       </tr></table>
 </td>
     </tr></table>
@@ -240,15 +237,23 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Faerie Fire</td>
+    </tr><tr style="text-align:left">
+      <td>Invisibility</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>First World Adept: May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/day</i></td>
+    </tr><tr style="text-align:center">
       <td>Animal Elocutionist: May speak with all animals</td>
     </tr><tr style="text-align:center">
       <td>Energized Font: May regain 1 Focus Point 1/day</td>
     </tr><tr style="text-align:center">
       <td>Fey-Touched Gnome: May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/day</td>
-    </tr><tr style="text-align:center">
-      <td>First World Adept: May cast <i>Faerie Fire</i> and <i>Invisibility</i> as level 2 spells 1/day</td>
     </tr><tr style="text-align:center">
       <td>First World Magic: May cast chosen primal cantrip at will</td>
     </tr><tr style="text-align:center">

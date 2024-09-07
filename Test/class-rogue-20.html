@@ -79,6 +79,7 @@ var attributes = {
       <td><b>Experience</b>: 19228/20000</td>
       <td><b>Level</b>: 20</td>
       <td><b>Speed</b>: 25</td>
+      <td><b>Size</b>: Medium</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -90,7 +91,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Implausible Infiltration: May use 2 actions to move through up to 10' of wood, plaster, or stone</td>
     </tr><tr style="text-align:center">
-      <td>Light Step: May move normally through difficult terrain</td>
+      <td>Light Step: May move normally over difficult terrain</td>
     </tr></table>
 </td>
   </tr></table>
@@ -152,12 +153,12 @@ var attributes = {
       <td>Society: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +26 (intelligence; trained)</td>
-      <td>Heraldry Lore: +26 (intelligence; trained)</td>
+      <td>Heraldry Lore: +28 (intelligence; expert)</td>
       <td>Stabling Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +4 (strength; untrained)</td>
       <td>Intimidation: +26 (charisma; trained)</td>
-      <td>Stealth: +33 (dexterity; legendary)</td>
+      <td>Stealth: +35 (dexterity; %1)</td>
     </tr><tr style="text-align:left">
       <td>Cave Lore: +26 (intelligence; trained)</td>
       <td>Medicine: +4 (wisdom; untrained)</td>
@@ -165,9 +166,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Crafting: +26 (intelligence; trained)</td>
       <td>Military Lore: +26 (intelligence; trained)</td>
-      <td>Thievery: +27 (dexterity; trained)</td>
+      <td>Thievery: +29 (dexterity; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +32 (charisma; legendary)</td>
+      <td>Deception: +34 (charisma; %1)</td>
       <td>Nature: +28 (wisdom; expert)</td>
       <td>Underworld Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
@@ -248,7 +249,7 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 268</td>
-        <td><b>Armor Class</b>: 37 (dexterity (3 max); master)</td>
+        <td><b>Armor Class</b>: 40 (dexterity (3 max); master)</td>
         <td><b>Class DC</b>: Rogue: 41 (dexterity; master)</td>
       </tr></table>
 </td>
@@ -283,7 +284,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Rogue Expertise: Class Expert (Rogue)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Ruffian: Armor Master (Medium Armor)</i></td>
+        <td><i>Ruffian: Armor Trained (Medium Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
@@ -307,7 +308,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Debilitating Strike: Successful Strike against a flat-footed foe inflicts choice of -10' Speed or enfeebled 1</td>
       </tr><tr style="text-align:center">
-        <td>Defensive Roll: May negate half damage from an attack that would reduce self to 0 HP 1/10 min</td>
+        <td>Defensive Roll: May negate half damage from an attack that would reduce self to 0 Hit Points 1/10 min</td>
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Foes of equal or lower level cannot inflict flat-footed</td>
       </tr><tr style="text-align:center">
@@ -337,9 +338,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Mobility: May Stride half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
-        <td>Nimble Dodge: May use Reaction to gain +2 AC against 1 attacker</td>
+        <td>Nimble Dodge: May use a Reaction to gain +2 AC against 1 attacker</td>
       </tr><tr style="text-align:center">
-        <td>Opportune Backstab: May use Reaction after an ally hits a foe to Strike the same foe</td>
+        <td>Opportune Backstab: May use a Reaction after an ally hits a foe to Strike the same foe</td>
       </tr><tr style="text-align:center">
         <td>Poison Weapon: May apply poison to piercing and slashing weapons</td>
       </tr><tr style="text-align:center">
@@ -349,11 +350,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Quick Draw: May use 1 action to draw a weapon and Strike</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Distraction: May use Reaction to redirect effect or attack from self to decoy</td>
+        <td>Reactive Distraction: May use a Reaction to redirect effect or attack from self to decoy</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Interference: May use Reaction to prevent foe Reaction; requires an attack against a higher-level foe</td>
+        <td>Reactive Interference: May use a Reaction to prevent foe Reaction; requires an attack against a higher-level foe</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Pursuit: May use Reaction to remain adjacent to a retreating foe</td>
+        <td>Reactive Pursuit: May use a Reaction to remain adjacent to a retreating foe</td>
       </tr><tr style="text-align:center">
         <td>Ruffian: May sneak attack with any simple weapon/May apply critical specialization on a successful Strike with a d8 or lighter simple weapon on a flat-footed foe</td>
       </tr><tr style="text-align:center">
@@ -361,7 +362,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Scout's Warning: May give allies +1 initiative</td>
       </tr><tr style="text-align:center">
-        <td>Sidestep: May use Reaction to redirect a failed Strike on self to an adjacent creature</td>
+        <td>Sidestep: May use a Reaction to redirect a failed Strike on self to an adjacent creature</td>
       </tr><tr style="text-align:center">
         <td>Skirmish Strike: May use 1 action to Step and Strike</td>
       </tr><tr style="text-align:center">
@@ -389,7 +390,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: +4/+6/+8 HP damage with expert/master/legendary weapon proficiency</td>
       </tr><tr style="text-align:center">
-        <td>Weapon Tricks: Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict critical specialization effect</td>
+        <td>Weapon Tricks: Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>You're Next: May use Reaction for a +2 Intimidation to Demoralize another foe after current foe drops</td>
       </tr></table>
@@ -417,7 +418,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Blank Slate: Immune to detection, revelation and scrying effects of less than 10 counteract level</td>
       </tr><tr style="text-align:center">
-        <td>Cognitive Loophole: May use Reaction to suppress a mental effect for 1 rd</td>
+        <td>Cognitive Loophole: May use a Reaction to suppress a mental effect for 1 rd</td>
       </tr><tr style="text-align:center">
         <td>Evasion: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
@@ -451,7 +452,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Perfect Distraction: May use <i>Mislead</i> effects 1/10 min</td>
     </tr><tr style="text-align:center">
-      <td>Trickster's Ace: May use Reaction to evoke effects of a prepared spell up to level 4</td>
+      <td>Trickster's Ace: May use a Reaction to evoke effects of a prepared spell up to level 4</td>
     </tr></table>
 </td>
   </tr></table>
