@@ -983,7 +983,8 @@ Pathfinder2E.FEATS = {
     'Type=Ancestry,Halfling ' +
     'Require="level >= 13","features.Halfling Weapon Familiarity"',
 
-  'Adapted Cantrip':'Type=Ancestry,Human Require=features.Spellcasting',
+  // TODO requires any Spellcasting feature
+  'Adapted Cantrip':'Type=Ancestry,Human',
   'Cooperative Nature':'Type=Ancestry,Human',
   'General Training':'Type=Ancestry,Human',
   'Haughty Obstinacy':'Type=Ancestry,Human',
@@ -2650,11 +2651,7 @@ Pathfinder2E.FEATURES = {
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
-  'Skilled Heritage Human':
-    'Section=skill,skill ' +
-    'Note=' +
-      '"Skill Trained (Choose 1 from any)",' +
-      '"Skill Expert (Choose 1 from any)"',
+  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
@@ -2725,7 +2722,6 @@ Pathfinder2E.FEATURES = {
   'Dwarven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater rank
-     // TODO featureNotes treats "Dwarf Weapons" as a name instead of a category
     'Note="Weapon Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
@@ -2764,7 +2760,6 @@ Pathfinder2E.FEATURES = {
   'Elven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-     // TODO featureNotes treats "Elf Weapons" as a name instead of a category
     'Note="Weapon Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':'Section=feature Note="Has Familiar feature"',
@@ -2808,7 +2803,6 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-     // TODO featureNotes treats "Gnome Weapons" as a name instead of a category
     'Note="Weapon Expert (Glaive; Kukri; Gnome Weapons)"',
 
   'Burn It!':
@@ -2852,7 +2846,6 @@ Pathfinder2E.FEATURES = {
   'Goblin Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-     // TODO featureNotes treats "Goblin Weapons" as a name instead of a category
     'Note="Weapon Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
     'Section=combat Note="May Sneak at full speed and without cover"',
@@ -2902,21 +2895,23 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-     // TODO featureNotes treats "Halfling Weapons" as a name instead of a category
     'Note="Weapon Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a different tradition"',
   'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
   'General Training':
-    'Section=feature Note="+%{$\'features.General Training\'} General Feat"',
+    'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="Successful saves vs. control are critical successes/Foe Intimidation (Coerce) fails are critical fails"',
-  'Natural Ambition':'Section=features Note="+1 Class Feat"',
+    'Note="Successful saves vs. mental control are critical successes/Foe Intimidation (Coerce) fails are critical fails"',
+  'Natural Ambition':'Section=feature Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
+  // TODO how does the player choose? there's nothing in the menu that allows it
   'Unconventional Weaponry':
-    'Section=combat Note="Weapon Trained (Choose 1 from any)"',
+    'Section=combat ' +
+    // TODO implement
+    'Note="Weapon Trained (Choose 1 from any)/Treats chosen weapon as one category lower"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -2929,7 +2924,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Failures and critical failures when using Aid with expert skills are successes"',
   'Incredible Improvisation':
-    'Section=combat Note="May add +4 to an untrained skill check 1/day"',
+    'Section=combat ' +
+    'Note="May add +4 to an untrained skill check as a free action 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':
     'Section=combat ' +
@@ -2939,7 +2935,7 @@ Pathfinder2E.FEATURES = {
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
     'Section=skill ' +
-    'Note="After a critical success using a skill, may use a Reaction to Aid an ally on the same skill"',
+    'Note="After a critical success using a skill, may immediately Aid an ally on the same skill"',
   'Supernatural Charm':
     'Section=magic Note="May cast 1st level <i>Charm</i> 1/day"',
   'Monstrous Peacemaker':
@@ -2947,7 +2943,7 @@ Pathfinder2E.FEATURES = {
     'Note="+1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society"',
   'Orc Ferocity':
     'Section=combat ' +
-    'Note="May retain 1 Hit Point when brought to 0 Hit Points 1/%V"',
+    'Note="May use a Reaction to retain 1 Hit Point when brought to 0 Hit Points 1/%V"',
   'Orc Sight':'Section=feature Note="Has Darkvision feature"',
   'Orc Superstition':
     'Section=save Note="May use a Reaction to gain +1 vs. magic"',
@@ -2961,13 +2957,12 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
   'Victorious Vigor':
     'Section=combat ' +
-    'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
+    'Note="May use a Reaction to gain %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
-  'Incredible Ferocity':'Section=combat Note="May use Orc Ferocity 1/hour"',
+  'Incredible Ferocity':'Section=combat Note="Increased Orc Ferocity effects"',
   'Orc Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-     // TODO featureNotes treats "Orc Weapons" as a name instead of a category
     'Note="Weapon Expert (Falchion; Greataxe; Orc Weapons)"',
 
   // Class Features and Feats
@@ -10046,14 +10041,16 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       'features.Multilingual', '+', null
     );
   } else if(name == 'Human') {
+    rules.defineRule('choiceCount.Skill',
+      'skillNotes.skilledHeritageHuman', '+=', 'source=="Trained" ? 1 : 2'
+    );
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Elf', '=', '1');
     rules.defineRule
       ('features.Low-Light Vision', 'featureNotes.half-Orc', '=', '1');
-    rules.defineRule
-      ('skillNotes.skilledHeritageHuman', 'level', '?', 'source < 5');
-    rules.defineRule
-      ('skillNotes.skilledHeritageHuman-1', 'level', '?', 'source >= 5');
+    rules.defineRule('skillNotes.skilledHeritageHuman',
+      'level', '=', 'source<5 ? "Trained" : "Expert"'
+    );
   }
 };
 
@@ -11209,6 +11206,15 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
     );
+    // Suppress validation errors for selected half-elf heritages
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let elfHeritages =
+      Object.keys(allSelectables).filter(x => x.includes('Elf -')).map(x => x.replace('Elf - ', ''));
+    elfHeritages.forEach(h => {
+      rules.defineRule('validationNotes.elf-' + h.replaceAll(' ', '') + 'SelectableFeature',
+        'featureNotes.elfAtavism', '+', '1'
+      );
+    });
   } else if(name == 'Extend Armament Alignment') {
     rules.defineRule('combatNotes.alignArmament',
       'combatNotes.extendArmamentAlignment', '=', 'null' // italics
@@ -11362,6 +11368,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'spellSlots.O' + l, '^', l - 1
       );
     });
+  } else if(name == 'Supernatural Charm') {
+    rules.defineRule('spells.Charm', 'magicNotes.supernaturalCharm', '=', '1');
   } else if(name == 'Verdant Metamorphosis') {
     rules.defineRule
       ('armorClass', 'combatNotes.verdantMetamorphosis', '^', '30');

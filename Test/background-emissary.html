@@ -11,9 +11,9 @@ var attributes = {
   "abilityBoosts.strength":2, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Chain Shirt", 
   "background":"Emissary", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":105, "feats.General Training":1, "feats.Reactive Shield":1, "gender":"Male", 
-  "intelligence":10, "languages.Celestial":1, "languages.Draconic":1, "languages.Halfling":1, 
-  "levels.Fighter":1, "name":"Background-Emissary", 
+  "experience":105, "feats.General Training":1, "feats.Reactive Shield":1, "feats.Toughness":1, 
+  "gender":"Male", "intelligence":10, "languages.Celestial":1, "languages.Draconic":1, 
+  "languages.Halfling":1, "levels.Fighter":1, "name":"Background-Emissary", 
   "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Tower", "skillIncreases.Absalom Lore":1, 
   "skillIncreases.Alcohol Lore":1, "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, 
   "skillIncreases.Crafting":1, "skillIncreases.Medicine":1, "skillIncreases.Midwifery Lore":1, 
@@ -66,14 +66,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
+        <td><b>Feat Count</b>: Ancestry; Class; General</td>
         <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: General Training; Reactive Shield</td>
+        <td><b>Feats</b>: General Training; Reactive Shield; Toughness</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Weapon Trained (Advanced Weapons)</td>
         <td><b>Emissary Features</b>: Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
@@ -85,6 +85,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>General Training: +1 General Feat</i></td>
       </tr></table>
 </td>
     </tr></table>
@@ -149,7 +151,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 18</td>
+        <td><b>Hit Points</b>: 19</td>
         <td><b>Armor Class</b>: 17 (dexterity (3 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 15 (dexterity; trained)</td>
       </tr></table>
@@ -171,6 +173,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Toughness: +1 Hit Points</i></td>
+      </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: May use a Reaction to Strike a foe that uses a manipulate action, makes a ranged attack, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Reactive Shield: May use a Reaction to make a Raise a Shield action</td>
@@ -184,6 +188,8 @@ var attributes = {
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
       <td><b>Save</b>: Fortitude: +5 (constitution; expert); Reflex: +7 (dexterity; expert); Will: +6 (wisdom; trained)</td>
+    </tr><tr style="text-align:center">
+      <td><b>Save Notes</b>: Toughness: -1 DC on recovery checks</td>
     </tr></table>
 </td>
   </tr></table>

@@ -45,8 +45,8 @@ var attributes = {
   "selectableFeatures.Ranger - Outwit":1, "selectableFeatures.Ranger - Precision":1, "shield":"Wooden", 
   "skillIncreases.Crafting":3, "skillIncreases.Hunting Lore":1, "skillIncreases.Intimidation":1, 
   "skillIncreases.Labor Lore":1, "skillIncreases.Nature":4, "skillIncreases.Stealth":3, 
-  "skillIncreases.Survival":4, "strength":10, "weapons.Light Pick":1, "weapons.Longbow":1, 
-  "weapons.Pick":1, "wisdom":10
+  "skillIncreases.Survival":4, "skillIncreases.Troll Lore":1, "skillIncreases.Underworld Lore":1, 
+  "strength":10, "weapons.Light Pick":1, "weapons.Longbow":1, "weapons.Pick":1, "wisdom":10
 };
   </script>
 </head>
@@ -183,35 +183,39 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Absalom Lore: +26 (intelligence; trained)</td>
-      <td>Diplomacy: +5 (charisma; untrained)</td>
-      <td>Performance: +5 (charisma; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Accounting Lore: +26 (intelligence; trained)</td>
       <td>Games Lore: +26 (intelligence; trained)</td>
-      <td>Religion: +26 (wisdom; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Acrobatics: +4 (dexterity; untrained)</td>
-      <td>Hunting Lore: +26 (intelligence; trained)</td>
       <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +4 (intelligence; untrained)</td>
-      <td>Intimidation: +27 (charisma; trained)</td>
+      <td>Accounting Lore: +26 (intelligence; trained)</td>
+      <td>Hunting Lore: +26 (intelligence; trained)</td>
       <td>Society: +4 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +4 (strength; untrained)</td>
-      <td>Labor Lore: +26 (intelligence; trained)</td>
+      <td>Acrobatics: +4 (dexterity; untrained)</td>
+      <td>Intimidation: +27 (charisma; trained)</td>
       <td>Stealth: +30 (dexterity; master)</td>
     </tr><tr style="text-align:left">
-      <td>Circus Lore: +26 (intelligence; trained)</td>
-      <td>Medicine: +4 (wisdom; untrained)</td>
+      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Labor Lore: +26 (intelligence; trained)</td>
       <td>Survival: +34 (wisdom; %1)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +30 (intelligence; master)</td>
-      <td>Nature: +34 (wisdom; %1)</td>
+      <td>Athletics: +4 (strength; untrained)</td>
+      <td>Medicine: +4 (wisdom; untrained)</td>
       <td>Thievery: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +5 (charisma; untrained)</td>
+      <td>Circus Lore: +26 (intelligence; trained)</td>
+      <td>Nature: +34 (wisdom; %1)</td>
+      <td>Troll Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Crafting: +30 (intelligence; master)</td>
       <td>Occultism: +4 (intelligence; untrained)</td>
+      <td>Underworld Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Deception: +5 (charisma; untrained)</td>
+      <td>Performance: +5 (charisma; untrained)</td>
+      <td></td>
+    </tr><tr style="text-align:left">
+      <td>Diplomacy: +5 (charisma; untrained)</td>
+      <td>Religion: +26 (wisdom; trained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -235,6 +239,8 @@ var attributes = {
       <td><i>Skill Training (Circus Lore): Skill Trained (Circus Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Games Lore): Skill Trained (Games Lore)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Skilled Heritage Human: Skill Expert (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Ubiquitous Snares: Increased Snare Specialist effects</i></td>
     </tr><tr style="text-align:center">
@@ -279,8 +285,6 @@ var attributes = {
       <td>Sense The Unseen: May use a Reaction on a failed Seek to make undetected foes hidden</td>
     </tr><tr style="text-align:center">
       <td>Shadow Hunter: Has continuous concealment from foes other than Hunt Prey targets in natural surroundings</td>
-    </tr><tr style="text-align:center">
-      <td>Skilled Heritage Human-1: Skill Expert (Choose 1 from any)</td>
     </tr><tr style="text-align:center">
       <td>Snare Crafting: May use Craft to create snares; knows the formulas for 4 common snares</td>
     </tr><tr style="text-align:center">
@@ -354,7 +358,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Expertise: Weapon Expert (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Weaponry: Weapon Trained (Choose 1 from any)</i></td>
+        <td><i>Unconventional Weaponry: Weapon Trained (Choose 1 from any)/Treats chosen weapon as one category lower</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Mastery: Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
@@ -470,7 +474,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Evasion: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Haughty Obstinacy: Successful saves vs. control are critical successes/Foe Intimidation (Coerce) fails are critical fails</td>
+        <td>Haughty Obstinacy: Successful saves vs. mental control are critical successes/Foe Intimidation (Coerce) fails are critical fails</td>
       </tr><tr style="text-align:center">
         <td>Improved Evasion: Critical failures on Reflex saves are normal failures/Suffers half normal damage from failed Reflex saves</td>
       </tr><tr style="text-align:center">
