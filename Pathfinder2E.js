@@ -367,9 +367,9 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
-      // TODO These only work if Acrobatics/Athletics aren't otherwise chosen
-      '"rank.Acrobatics>0 ? 1:Cat Fall",' +
-      '"rank.Athletics>0 ? 1:Quick Jump"',
+      // TODO Add a note for this
+      '"skillIncreases.Acrobatics>0 ? 1:Cat Fall",' +
+      '"skillIncreases.Acrobatics==0 ? 1:Quick Jump"',
   'Merchant':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
@@ -408,10 +408,10 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
       '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
       // TODO this will erroneously add feats for other trained skills
-      '"rank.Arcana>0 ? 1:Assurance (Arcana)",' +
-      '"rank.Nature>0  ? 1:Assurance (Nature)",' +
-      '"rank.Occultism>0  ? 1:Assurance (Occultism)",' +
-      '"rank.Religion>0  ? 1:Assurance (Religion)"',
+      '"skillIncreases.Arcana>0 ? 1:Assurance (Arcana)",' +
+      '"skillIncreases.Nature>0  ? 1:Assurance (Nature)",' +
+      '"skillIncreases.Occultism>0  ? 1:Assurance (Occultism)",' +
+      '"skillIncreases.Religion>0  ? 1:Assurance (Religion)"',
   'Scout':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
@@ -5542,7 +5542,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May Demoralize a foe during initiative%{rank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
   'Battle Medicine':
-    'Section=skill Note="May use Medicine for Treat Wounds 1/target/day"',
+    'Section=skill Note="May use Medicine to Treat Wounds 1/target/day"',
   'Bizarre Magic':
     'Section=magic ' +
     'Note="Self spells require +5 DC to Recognize Spells and Identify Magic"',
@@ -5585,7 +5585,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stealth to conceal a small item gains a minimum %{rank.Stealth>=4?\'success\':rank.Steak>=3\'15\':\'10\'} on roll"',
   'Experienced Tracker':
     'Section=skill ' +
-    'Note="May Track at full Speed%{rank.Survival<3\' at a -5 penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
+    'Note="May Track at full Speed%{rank.Survival<3?\' at a -5 penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
     'Note="May fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
@@ -5657,8 +5657,7 @@ Pathfinder2E.FEATURES = {
     'Note="May craft magic items/Learns formulas for 4 common magic items of 2nd level or lower"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
-    'Section=skill ' +
-    'Note="May use Nature to Treat Wounds, +2 checks in wilderness"',
+    'Section=skill Note="May use Nature to Treat Wounds; +2 in wilderness"',
   'Nimble Crawl':
     'Section=ability ' +
     'Note="May crawl at %{rank.Acrobatics>=3?\'full\':\'half\'} speed%{rank.Acrobatics>=4?\'/Being prone does not inflict flat-footed\':\'\'}"',
@@ -5727,7 +5726,7 @@ Pathfinder2E.FEATURES = {
   'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="May use Survival-2 to Recall Knowledge about local creatures after 10 min study"',
+    'Note="May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min study"',
   'Swift Sneak':
     'Section=skill ' +
     'Note="May Sneak at full Speed and while Burrowing, Climbing, Flying, or Swimming"',
@@ -5742,7 +5741,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May Disarm, Grapple, Shove, or Trip creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
-    'Section=companion ' +
+    'Section=feature ' +
     'Note="May use a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +

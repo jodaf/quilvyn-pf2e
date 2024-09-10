@@ -11,12 +11,13 @@ var attributes = {
   "abilityBoosts.strength":3, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Hide", 
   "background":"Guard", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":693, "feats.Double Slice":1, "feats.Natural Ambition":1, "gender":"Male", 
-  "intelligence":10, "languages.Draconic":1, "languages.Halfling":1, "levels.Fighter":1, 
-  "name":"Background-Guard", "selectableFeatures.Human - Half-Orc":1, "shield":"None", 
-  "skillIncreases.Accounting Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Engineering Lore":1, 
-  "skillIncreases.Games Lore":1, "skillIncreases.Legal Lore":1, "skillIncreases.Warfare Lore":1, 
-  "strength":10, "weapons.Dart":1, "weapons.Gauntlet":1, "weapons.Greatsword":1, "wisdom":10
+  "experience":693, "feats.Double Slice":1, "feats.Natural Ambition":1, 
+  "feats.Snagging Strike":1, "gender":"Male", "intelligence":10, "languages.Draconic":1, 
+  "languages.Halfling":1, "levels.Fighter":1, "name":"Background-Guard", 
+  "selectableFeatures.Human - Half-Orc":1, "shield":"None", "skillIncreases.Accounting Lore":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Engineering Lore":1, "skillIncreases.Games Lore":1, 
+  "skillIncreases.Legal Lore":1, "skillIncreases.Warfare Lore":1, "strength":10, "weapons.Dart":1, 
+  "weapons.Gauntlet":1, "weapons.Greatsword":1, "wisdom":10
 };
   </script>
 </head>
@@ -72,7 +73,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Double Slice; Natural Ambition</td>
+        <td><b>Feats</b>: Double Slice; Natural Ambition; Snagging Strike</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Weapon Trained (Advanced Weapons)</td>
         <td><b>Guard Features</b>: Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any); Quick Coercion; Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Orc</td>
@@ -181,6 +182,8 @@ var attributes = {
         <td>Double Slice: May attack with two weapons simultaneously</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Snagging Strike: Successful Strike inflicts flat-footed on target for 1 rd</td>
       </tr></table>
 </td>
     </tr></table>
@@ -189,16 +192,6 @@ var attributes = {
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
       <td><b>Save</b>: Fortitude: +7 (constitution; expert); Reflex: +7 (dexterity; expert); Will: +4 (wisdom; trained)</td>
-    </tr></table>
-</td>
-  </tr></table>
-</td>
-</tr><tr style="text-align:center">
-  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
-  <tr style="text-align:center">
-    <td>    <table id="ValidationPart" style="width:100%">
-    <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 2 available vs. 1 allocated</td>
     </tr></table>
 </td>
   </tr></table>

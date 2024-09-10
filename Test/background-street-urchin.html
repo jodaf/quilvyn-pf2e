@@ -11,13 +11,13 @@ var attributes = {
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Leather", 
   "background":"Street Urchin", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":515, "feats.Exacting Strike":1, "feats.Natural Ambition":1, "gender":"Female", 
-  "intelligence":10, "languages.Draconic":1, "languages.Halfling":1, "levels.Fighter":1, 
-  "name":"Background-Street Urchin", "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Wooden", 
-  "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, 
-  "skillIncreases.Dwarven Lore":1, "skillIncreases.Herbalism Lore":1, "skillIncreases.Magnimar Lore":1, 
-  "skillIncreases.Nature":1, "strength":10, "weapons.Guisarme":1, "weapons.Hatchet":1, 
-  "weapons.Starknife":1, "wisdom":10
+  "experience":515, "feats.Exacting Strike":1, "feats.Natural Ambition":1, 
+  "feats.Power Attack":1, "gender":"Female", "intelligence":10, "languages.Draconic":1, 
+  "languages.Halfling":1, "levels.Fighter":1, "name":"Background-Street Urchin", 
+  "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Wooden", "skillIncreases.Alcohol Lore":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, "skillIncreases.Dwarven Lore":1, 
+  "skillIncreases.Herbalism Lore":1, "skillIncreases.Magnimar Lore":1, "skillIncreases.Nature":1, "strength":10, 
+  "weapons.Guisarme":1, "weapons.Hatchet":1, "weapons.Starknife":1, "wisdom":10
 };
   </script>
 </head>
@@ -73,7 +73,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Exacting Strike; Natural Ambition</td>
+        <td><b>Feats</b>: Exacting Strike; Natural Ambition; Power Attack</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Weapon Trained (Advanced Weapons)</td>
         <td><b>Street Urchin Features</b>: Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any); Pickpocket; Skill Trained (Thievery; Choose 1 from any Settlement Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
@@ -179,6 +179,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Exacting Strike: Failed attack does not count toward multi-attack penalty</td>
       </tr><tr style="text-align:center">
+        <td>Power Attack: May use 2 actions for a melee Strike that inflicts 1 extra dice damage and counts as two Strikes for multi-attack penalty</td>
+      </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr></table>
 </td>
@@ -188,16 +190,6 @@ var attributes = {
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
       <td><b>Save</b>: Fortitude: +6 (constitution; expert); Reflex: +6 (dexterity; expert); Will: +4 (wisdom; trained)</td>
-    </tr></table>
-</td>
-  </tr></table>
-</td>
-</tr><tr style="text-align:center">
-  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
-  <tr style="text-align:center">
-    <td>    <table id="ValidationPart" style="width:100%">
-    <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 2 available vs. 1 allocated</td>
     </tr></table>
 </td>
   </tr></table>

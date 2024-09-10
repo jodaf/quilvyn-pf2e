@@ -11,13 +11,13 @@ var attributes = {
   "abilityBoosts.intelligence":2, "abilityBoosts.strength":2, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Chain Mail", 
   "background":"Tinker", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":40, "feats.Double Slice":1, "feats.Natural Ambition":1, "gender":"Female", 
-  "intelligence":10, "languages.Auran":1, "languages.Goblin":1, "languages.Halfling":1, 
-  "levels.Fighter":1, "name":"Background-Tinker", "selectableFeatures.Human - Half-Orc":1, 
-  "shield":"Buckler", "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Games Lore":1, "skillIncreases.Religion":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Tanning Lore":1, "strength":10, "weapons.Bo Staff":1, "weapons.Gauntlet":1, 
-  "weapons.Longspear":1, "wisdom":10
+  "experience":40, "feats.Double Slice":1, "feats.Natural Ambition":1, 
+  "feats.Point-Blank Shot":1, "gender":"Female", "intelligence":10, "languages.Auran":1, 
+  "languages.Goblin":1, "languages.Halfling":1, "levels.Fighter":1, "name":"Background-Tinker", 
+  "selectableFeatures.Human - Half-Orc":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Games Lore":1, "skillIncreases.Religion":1, 
+  "skillIncreases.Stealth":1, "skillIncreases.Tanning Lore":1, "strength":10, "weapons.Bo Staff":1, 
+  "weapons.Gauntlet":1, "weapons.Longspear":1, "wisdom":10
 };
   </script>
 </head>
@@ -79,7 +79,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Double Slice; Natural Ambition</td>
+        <td><b>Feats</b>: Double Slice; Natural Ambition; Point-Blank Shot</td>
         <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Attack Of Opportunity; Class Trained (Fighter); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Weapon Trained (Advanced Weapons)</td>
         <td><b>Tinker Features</b>: Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Skill Trained (Crafting; Engineering Lore); Specialty Crafting</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Orc</td>
@@ -189,6 +189,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Double Slice: May attack with two weapons simultaneously</td>
       </tr><tr style="text-align:center">
+        <td>Point-Blank Shot: Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon</td>
+      </tr><tr style="text-align:center">
         <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
       </tr></table>
 </td>
@@ -198,16 +200,6 @@ var attributes = {
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
       <td><b>Save</b>: Fortitude: +7 (constitution; expert); Reflex: +7 (dexterity; expert); Will: +3 (wisdom; trained)</td>
-    </tr></table>
-</td>
-  </tr></table>
-</td>
-</tr><tr style="text-align:center">
-  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
-  <tr style="text-align:center">
-    <td>    <table id="ValidationPart" style="width:100%">
-    <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 2 available vs. 1 allocated</td>
     </tr></table>
 </td>
   </tr></table>
