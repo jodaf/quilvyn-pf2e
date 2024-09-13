@@ -442,8 +442,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Alchemist Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Alchemist)",' +
       '"1:Alchemy","1:Infused Reagents","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
@@ -469,8 +469,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Barbarian Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
       '"1:Rage","1:Instinct","1:Barbarian Feats",' +
       '"features.Animal Instinct ? 1:Bestial Rage",' +
@@ -515,8 +515,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Trained (Fortitude; Reflex)","1:Save Expert (Will)",' +
       '"1:Bard Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Occult)",' +
       '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
@@ -547,8 +547,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Champion Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
       '"1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
@@ -584,8 +584,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Cleric Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Divine)",' +
       '"1:Anathema","1:Deity","1:Divine Spellcasting","1:Divine Font",' +
       '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
@@ -613,8 +613,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Druid Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Primal)",' +
       '"1:Primal Spellcasting","1:Anathema","1:Druidic Language",' +
       '"1:Druidic Order","1:Shield Block","1:Wild Empathy","2:Druid Feats",' +
@@ -647,8 +647,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Fighter Skills",' +
-      '"1:Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)","1:Weapon Trained (Advanced Weapons)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"1:Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)","1:Attack Trained (Advanced Weapons)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
       '"2:Skill Feats","3:Bravery","3:General Feats","3:Skill Increases",' +
@@ -664,8 +664,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Expert (Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Expert (Unarmored Defense)",' +
       '"1:Class Trained (Monk)",' +
       '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
       '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
@@ -689,8 +689,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
       '"1:Ranger Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Ranger)",' +
       '"1:Hunt Prey","1:Hunter\'s Edge","1:Ranger Feats","2:Skill Feats",' +
       '"3:General Feats","3:Iron Will","3:Skill Increases",' +
@@ -713,8 +713,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Expert",' +
       '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
       '"1:Rogue Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"1:Armor Trained (Light Armor; Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Rogue)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"1:Rogue Feats","1:Skill Feats","2:Skill Increases",' +
@@ -733,8 +733,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Sorcerer Skills",' +
-      '"1:Weapon Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored Defense)",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Bloodline","1:Sorcerer Spellcasting","2:Skill Feats",' +
       '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
       '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
@@ -756,8 +756,8 @@ Pathfinder2E.CLASSES = {
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Wizard Skills",' +
-      '"1:Weapon Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)",' +
-      '"1:Armor Trained (Unarmored Defense)",' +
+      '"1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Arcane)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
@@ -1371,8 +1371,10 @@ Pathfinder2E.FEATS = {
   'Turn Undead':'Type=Class,Cleric Require="level >= 2"',
   'Versatile Font':
     'Type=Class,Cleric ' +
-    // TODO also "deity that allows clerics to have both fonts"
-    'Require="level >= 2","features.Harmful Font || features.Healing Font"',
+    'Require=' +
+      '"level >= 2",' +
+      '"deityFonts =~ \'Harm\' && deityFonts =~ \'Heal\'",' +
+      '"features.Harmful Font || features.Healing Font"',
   'Channel Smite':
     'Type=Class,Cleric ' +
     'Require="level >= 4","features.Harmful Font || features.Healing Font"',
@@ -2684,7 +2686,7 @@ Pathfinder2E.FEATURES = {
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Battle Axe; Pick; Warhammer)",' +
+      '"Attack Trained (Battle Axe; Pick; Warhammer)",' +
       // TODO implement
       '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower"',
   'Rock Runner':
@@ -2722,7 +2724,7 @@ Pathfinder2E.FEATURES = {
   'Dwarven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater rank
-    'Note="Weapon Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
+    'Note="Attack Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
     'Section=skill ' +
@@ -2732,7 +2734,7 @@ Pathfinder2E.FEATURES = {
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
+      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
       // TODO implement
       '"Has access to uncommon elf weapons/Treats elf weapons as one category lower"',
   'Forlorn':
@@ -2760,7 +2762,7 @@ Pathfinder2E.FEATURES = {
   'Elven Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
+    'Note="Attack Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':'Section=feature Note="Has Familiar feature"',
   'Burrow Elocutionist':
@@ -2777,7 +2779,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Glaive; Kukri)",' +
+      '"Attack Trained (Glaive; Kukri)",' +
       // TODO implement
       '"Has access to uncommon gnome weapons/Treats gnome weapons as one category lower"',
   'Illusion Sense':
@@ -2803,7 +2805,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Glaive; Kukri; Gnome Weapons)"',
+    'Note="Attack Expert (Glaive; Kukri; Gnome Weapons)"',
 
   'Burn It!':
     'Section=combat,magic ' +
@@ -2824,7 +2826,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Dogslicer; Horsechopper)",' +
+      '"Attack Trained (Dogslicer; Horsechopper)",' +
       // TODO implement
       '"Has access to uncommon goblin weapons/Treats goblin weapons as one category lower"',
   'Junk Tinker':
@@ -2846,7 +2848,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
+    'Note="Attack Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
     'Section=combat Note="May Sneak at full speed and without cover"',
 
@@ -2860,7 +2862,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Sling; Halfling Sling Staff; Shortsword)",' +
+      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)",' +
       // TODO implement
       '"Has access to uncommon halfling weapons/Treats halfling weapons as one category lower"',
   'Sure Feet':
@@ -2895,7 +2897,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
+    'Note="Attack Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a different tradition"',
@@ -2911,7 +2913,7 @@ Pathfinder2E.FEATURES = {
   'Unconventional Weaponry':
     'Section=combat ' +
     // TODO implement
-    'Note="Weapon Trained (Choose 1 from any)/Treats chosen weapon as one category lower"',
+    'Note="Attack Trained (Choose 1 from any)/Treats chosen weapon as one category lower"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -2930,7 +2932,7 @@ Pathfinder2E.FEATURES = {
   'Unconventional Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Choose 1 from any)"',
+    'Note="Attack Expert (Choose 1 from any)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -2950,7 +2952,7 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Trained (Falchion; Greataxe)",' +
+      '"Attack Trained (Falchion; Greataxe)",' +
       '"Has access to uncommon orc weapons/Treats orc weapons as one category lower"',
   'Orc Weapon Carnage':
     'Section=combat ' +
@@ -2963,7 +2965,7 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Expertise':
     'Section=combat ' +
      // TODO only if another feature grants expert or greater
-    'Note="Weapon Expert (Falchion; Greataxe; Orc Weapons)"',
+    'Note="Attack Expert (Falchion; Greataxe; Orc Weapons)"',
 
   // Class Features and Feats
 
@@ -2975,13 +2977,13 @@ Pathfinder2E.FEATURES = {
   // Alchemist
   'Advanced Alchemy':
     'Section=skill ' +
-    'Note="May use an infused reagent to create a pair of infused alchemical items of up to level %{level} without a Crafting check"',
+    'Note="May use a batch of infused reagents to create a pair of infused alchemical items of up to level %{level} without a Crafting check"',
   'Alchemical Alacrity':'Section=skill Note="Increased Quick Alchemy effects"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
   'Alchemical Weapon Expertise':
     'Section=combat ' +
-    'Note="Weapon Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
+    'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
@@ -2997,10 +2999,11 @@ Pathfinder2E.FEATURES = {
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
   'Field Discovery':
-    'Section=combat Note="Using Advanced Alchemy creates 3 alchemical items"',
+    'Section=combat ' +
+    'Note="Using Advanced Alchemy creates 3 alchemical items from research field"',
   'Formula Book':
     'Section=combat ' +
-    'Note="Has a book that contains at least %{level*2+6} alchemical formulas"',
+    'Note="Has a book that contains at least %{level*2+8} alchemical formulas"',
   'Greater Field Discovery (Bomber)':
     'Section=combat ' +
     'Note="May increase bomb splash to %{$\'features.Expanded Flash\'?15:10}\'"',
@@ -3010,7 +3013,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use 2 polymorphic mutagens simultaneously"',
   'Infused Reagents':
     'Section=skill ' +
-    'Note="May create %{level+intelligenceModifier} infused reagents each day"',
+    'Note="May create %{level+intelligenceModifier} batches of infused reagents each day"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -3019,25 +3022,27 @@ Pathfinder2E.FEATURES = {
       '"Successes on Fortitude saves are critical successes"',
   'Medium Armor Expertise':
     'Section=combat ' +
-    'Note="Armor Expert (Light Armor; Medium Armor; Unarmored Defense)"',
+    'Note="Defense Expert (Light Armor; Medium Armor; Unarmored Defense)"',
   'Medium Armor Mastery':
     'Section=combat ' +
-    'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
+    'Note="Defense Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Mutagenic Flashback':
     'Section=combat ' +
-    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day"',
+    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min as a free action 1/day"',
   'Mutagenist':'Section=feature Note="Has Mutagenic Flashback feature"',
   'Perpetual Infusions':
-    'Section=combat ' +
-    'Note="May create choice of 2 1st-level alchemical items without using infused reagents"',
-  'Perpetual Perfection':'Section=skill Note="Increased Quick Alchemy effects"',
-  'Perpetual Potency': 'Section=skill Note="Increased Quick Alchemy effects"',
+    'Section=skill ' +
+    'Note="May create 2 alchemical items of up to level %V from research field without using infused reagents"',
+  'Perpetual Perfection':
+    'Section=skill Note="Increased Perpetual Infusions effects"',
+  'Perpetual Potency':
+    'Section=skill Note="Increased Perpetual Infusions effects"',
   'Powerful Alchemy':
     'Section=combat ' +
     'Note="Items created with Quick Alchemy have DC %{classDifficultyClass.Alchemist}"',
   'Quick Alchemy':
     'Section=skill ' +
-    'Note="May use a batch of infused reagents to create %V alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{level}%{level>10?\', or 2 items of up to level %1,\':\'\'} for 1 tn"',
+    'Note="May use batches of infused reagents to create %V alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{level} for 1 tn"',
   'Research Field':
     'Section=feature,skill ' +
     'Note=' +
@@ -3154,7 +3159,7 @@ Pathfinder2E.FEATURES = {
   // Barbarian
   'Armor Of Fury':
     'Section=combat ' +
-    'Note="Armor Master (Light Armor; Medium Armor; Unarmored Defense)"',
+    'Note="Defense Master (Light Armor; Medium Armor; Unarmored Defense)"',
   'Barbarian Feats':'Section=feature Note="%V selections"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
@@ -3162,7 +3167,7 @@ Pathfinder2E.FEATURES = {
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"May use melee and unarmed weapon critical specialization effects while raging"',
   'Deny Advantage':
     'Section=combat ' +
@@ -3212,7 +3217,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use weapons made for a larger creature, gaining +6 damage and suffering clumsy 1"',
   'Weapon Fury':
     'Section=combat ' +
-    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   'Acute Vision':'Section=feature Note="Has Darkvision feature during rage"',
@@ -3255,7 +3260,7 @@ Pathfinder2E.FEATURES = {
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
-      '"Armor Expert (Unarmored Defense)",' +
+      '"Defense Expert (Unarmored Defense)",' +
       // TODO Dex cap
       '"+%{$\'features.Greater Juggernaut\'?3:2} AC during rage"',
   'Attack Of Opportunity':
@@ -3353,7 +3358,7 @@ Pathfinder2E.FEATURES = {
   'Bard Weapon Expertise':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
+      '"Attack Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
       '"May use critical specialization effects of any simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, and whip"',
   'Bard Feats':'Section=feature Note="%V selections"',
   'Bard Skills':
@@ -3377,7 +3382,7 @@ Pathfinder2E.FEATURES = {
       '"Critical failures on Will saves are normal failures/Takes half damage on failed Will saves"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
-    'Section=combat Note="Armor Expert (Light Armor; Unarmored Defense)"',
+    'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
   'Maestro Muse':
     'Section=feature,magic ' +
@@ -3506,11 +3511,11 @@ Pathfinder2E.FEATURES = {
   'Armor Expertise':
     'Section=combat,combat ' +
     'Note=' +
-      '"Armor Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"May use the specialization effects of medium and heavy armor"',
   'Armor Mastery':
     'Section=combat ' +
-    'Note="Armor Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+    'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
   'Cause':'Section=feature Note="1 selection"',
   'Champion Expertise':
     'Section=combat,magic ' +
@@ -3577,7 +3582,7 @@ Pathfinder2E.FEATURES = {
   // Juggernaut as above
   'Legendary Armor':
     'Section=combat ' +
-    'Note="Armor Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+    'Note="Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
   'Liberating Step':
     'Section=combat ' +
     'Note="R15\' May use a Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
@@ -3606,10 +3611,10 @@ Pathfinder2E.FEATURES = {
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
   'Weapon Expertise':
     'Section=combat ' +
-    'Note="Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+    'Note="Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   'Weapon Mastery':
     'Section=combat ' +
-    'Note="Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   "Deity's Domain":'Section=magic Note="Knows a domain spell of deity"',
@@ -3777,7 +3782,7 @@ Pathfinder2E.FEATURES = {
   'Cloistered Cleric':
     'Section=combat,combat,feature,magic,save ' +
     'Note=' +
-      '"Weapon Expert (%V; Simple Weapons; Unarmed Attacks)",' +
+      '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"May use critical specialization effects of %{deityWeapon}",' +
       '"Has Domain Initiate feature",' +
       '"Spell %V (Divine)",' +
@@ -3785,10 +3790,10 @@ Pathfinder2E.FEATURES = {
   'Deity':
     'Section=combat,magic,skill ' +
     'Note=' +
-      '"Weapon Trained (%V)",' +
+      '"Attack Trained (%V)",' +
       '"Has access to %V spells",' +
       '"Skill Trained (%V)"',
-  'Divine Defense':'Section=combat Note="Armor Expert (Unarmored Defense)"',
+  'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   'Divine Font':'Section=feature Note="1 selection"',
   'Divine Spellcasting':
     'Section=magic Note="May learn spells from the Divine tradition"',
@@ -3801,7 +3806,7 @@ Pathfinder2E.FEATURES = {
   'Warpriest':
     'Section=combat,combat,feature,magic,save,save ' +
     'Note=' +
-      '"Armor %V (Light Armor; Medium Armor)%{level>=3?\'/Weapon Trained (Martial Weapons)\':\'\'}%{level>=7?\'Weapon Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
+      '"Armor %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
       '"May use critical specialization effects of %{deityWeapon}",' +
       '"Has Shield Block%1 feature",' +
       '"Spell %V (Divine)",' +
@@ -3958,7 +3963,7 @@ Pathfinder2E.FEATURES = {
       '"1 selection",' +
       '"Has a Focus Pool with 1 Focus Point"',
   'Druid Weapon Expertise':
-    'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
+    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
   // Great Fortitude as above
   'Leaf Order':
@@ -4162,7 +4167,7 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
   'Fighter Weapon Mastery':
     'Section=combat ' +
-    'Note="Weapon Master with common weapons and Weapon Expert with advanced weapons of chosen group/May use critical specialization effects of all weapons with master proficiency"',
+    'Note="Attack Master with common weapons and Attack Expert with advanced weapons of chosen group/May use critical specialization effects of all weapons with master proficiency"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
     'Section=combat Note="Increased Combat Flexibility effects"',
@@ -4170,12 +4175,12 @@ Pathfinder2E.FEATURES = {
   // Shield Block as below
   'Versatile Legend':
     'Section=combat ' +
-    'Note="Weapon Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Master (Advanced Weapons)/Class Master (Fighter)"',
+    'Note="Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)"',
   'Weapon Legend':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Weapon Expert (Advanced Weapons)",' +
-      '"Weapon Legendary in common weapons and Weapon Master in advanced weapons of chosen group"',
+      '"Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)",' +
+      '"Attack Legendary in common weapons and Attack Master in advanced weapons of chosen group"',
 
   // Weapon Specialization as above
   'Double Slice':
@@ -4376,15 +4381,15 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Unarmed attacks count as adamantine"',
   // Alertness as above
   'Expert Strikes':
-    'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
+    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   'Flurry Of Blows':
     'Section=combat Note="May use 1 action to make 2 unarmed Strikes 1/tn"',
   'Graceful Legend':
     'Section=combat,magic ' +
     'Note=' +
-      '"Armor Legendary (Unarmored Defense)/Class Master (Monk)",' +
+      '"Defense Legendary (Unarmored Defense)/Class Master (Monk)",' +
       '"Spell Master (%V)"',
-  'Graceful Mastery':'Section=combat Note="Armor Master (Unarmored Defense)"',
+  'Graceful Mastery':'Section=combat Note="Defense Master (Unarmored Defense)"',
   // Greater Weapon Specialization as above
   'Incredible Movement':'Section=ability Note="+%V Speed in no armor"',
   'Ki Tradition':'Section=feature Note="1 selection"',
@@ -4399,7 +4404,7 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (Occult)",' +
       '"May learn spells from the Occult tradition"',
   'Master Strikes':
-    'Section=combat Note="Weapon Master (Simple Weapons; Unarmed Attacks)"',
+    'Section=combat Note="Attack Master (Simple Weapons; Unarmed Attacks)"',
   'Metal Strikes':
     'Section=combat Note="Unarmed attacks count as cold iron and silver"',
   'Monk Expertise':
@@ -4647,12 +4652,12 @@ Pathfinder2E.FEATURES = {
   'Ranger Weapon Expertise':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"May use critical specialization effects of unarmed attacks and simple and martial weapons when attacking a Hunt Prey target"',
   'Second Skin':
     'Section=combat,combat ' +
     'Note=' +
-      '"Armor Master (Light Armor; Medium Armor; Unarmored Defense)",' +
+      '"Defense Master (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"May rest normally in light or medium armor"',
   'Swift Prey':
     'Section=combat ' +
@@ -4853,7 +4858,7 @@ Pathfinder2E.FEATURES = {
   // Incredible Senses as above
   // Light Armor Expertise as above
   'Light Armor Mastery':
-    'Section=combat Note="Armor Master (Light Armor; Unarmored Defense)"',
+    'Section=combat Note="Defense Master (Light Armor; Unarmored Defense)"',
   'Master Strike':
     'Section=combat,combat ' +
     'Note=' +
@@ -4861,7 +4866,7 @@ Pathfinder2E.FEATURES = {
       '"Successful Strikes on flat-footed foes force Fortitude saves; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hours, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
-    'Note="Weapon Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
+    'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
   'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
   'Rogue Feats':'Section=feature Note="%V selections"',
   'Rogue Skills':
@@ -4898,7 +4903,7 @@ Pathfinder2E.FEATURES = {
   'Weapon Tricks':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
+      '"Attack Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
       '"Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict its critical specialization effect"',
   // Weapon Specialization as above
 
@@ -5112,7 +5117,7 @@ Pathfinder2E.FEATURES = {
       '"1 selection",' +
       '"Has a Focus Pool with 1 Focus Point"',
   'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
-  'Defensive Robes':'Section=combat Note="Armor Expert (Unarmored Defense)"',
+  'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   // Expert Spellcaster as above
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -5125,7 +5130,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Spellcasting':
     'Section=magic Note="May learn spells from the %V tradition"',
   'Sorcerer Weapon Expertise':
-    'Section=combat Note="Weapon Expert (Simple Weapons; Unarmed Attacks)"',
+    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   'Counterspell':
@@ -5282,7 +5287,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Weapon Expertise':
     'Section=feature ' +
-    'Note="Weapon Expert (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)"',
+    'Note="Attack Expert (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)"',
 
   // Counterspell as above
   'Eschew Materials':
@@ -5470,8 +5475,8 @@ Pathfinder2E.FEATURES = {
   'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
   'Armor Proficiency':
     'Section=combat ' +
-    // TODO interacts w/other sources of Armor Trained
-    'Note="Armor Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
+    // TODO interacts w/other sources of Defense Trained
+    'Note="Defense Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
   'Breath Control':
     'Section=attribute,save ' +
     'Note=' +
@@ -5506,11 +5511,11 @@ Pathfinder2E.FEATURES = {
   'Untrained Improvisation':
     'Section=skill Note="+%{level<7?level//2:level} on untrained skill checks"',
   'Weapon Proficiency (Martial Weapons)':
-    'Section=combat Note="Weapon Trained (Martial Weapons)"',
+    'Section=combat Note="Attack Trained (Martial Weapons)"',
   'Weapon Proficiency (Simple Weapons)':
-    'Section=combat Note="Weapon Trained (Simple Weapons)"',
+    'Section=combat Note="Attack Trained (Simple Weapons)"',
   'Weapon Proficiency (%weapon)':
-    'Section=combat Note="Weapon Trained (%weapon)"',
+    'Section=combat Note="Attack Trained (%weapon)"',
 
   // General Skill Feats
   'Assurance (%skill)':'Section=skill Note="May take 10 on %skill rolls"',
@@ -10366,9 +10371,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.doubleBrew', '^', '2',
       'skillNotes.alchemicalAlacrity', '^', '3'
     );
-    rules.defineRule('skillNotes.quickAlchemy.1',
-      'skillNotes.perpetualPotency', '=', '3',
-      'features.Chirurgeon', '^', '6',
+    rules.defineRule('skillNotes.perpetualInfusions',
+      '', '=', '1',
+      'skillNotes.perpetualPotency', '^', 'dict["features.Chirurgeon"] ? 6 : 3',
       'skillNotes.perpetualPerfection', '^', '11'
     );
   } else if(name == 'Barbarian') {
@@ -11033,6 +11038,9 @@ Pathfinder2E.deityRules = function(
   rules.defineRule('deityDomains',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.domains) + '[source]'
   );
+  rules.defineRule('deityFonts',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.fonts) + '[source]'
+  );
   rules.defineRule('deitySkill',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.skill) + '[source]'
   );
@@ -11396,6 +11404,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
       let matchInfo =
         n.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i);
       if(matchInfo) {
+        let group = matchInfo[1];
         let rank =
           matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
         let choices = '';
@@ -11405,9 +11414,18 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes) {
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
           else if(!element.startsWith('%'))
             rules.defineRule('training.' + element, noteName, '^=', rank);
+          if(group == 'Attack') {
+            rules.defineRule('attackProficiency.' + element,
+              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+            );
+          } else if(group == 'Defense') {
+            rules.defineRule('defenseProficiency.' + element,
+              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+            );
+          }
         });
         if(choices)
-          rules.defineRule('choiceCount.' + matchInfo[1],
+          rules.defineRule('choiceCount.' + group,
             noteName, '+=', choices.replace('+', '')
           );
       }
@@ -11809,18 +11827,28 @@ Pathfinder2E.featureListRules = function(
       feature.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let choices = '';
+      let group = matchInfo[1];
       let rank =
         matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
       matchInfo[3].split(/;\s*/).forEach(element => {
         let m = element.match(/Choose (\d+)/);
         if(m)
           choices += '+' + m[1];
-        else
+        else {
           rules.defineRule
             ('training.' + element, setName + '.' + feature, '^=', rank);
+          if(group == 'Attack')
+            rules.defineRule('attackProficiency.' + element,
+              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+            );
+          else if(group == 'Defense')
+            rules.defineRule('defenseProficiency.' + element,
+              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+            );
+        }
       });
       if(choices)
-        rules.defineRule('choiceCount.' + matchInfo[1],
+        rules.defineRule('choiceCount.' + group,
           setName + '.' + feature, '+=', choices.replace('+', '')
         );
     }
@@ -12034,6 +12062,14 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Attacks Per Round', within: 'CombatStats'},
               {name: 'Class Difficulty Class', within: 'CombatStats',
                format: '<b>Class DC</b>: %V', separator: '; '},
+/* TODO include this?
+            {name: 'CombatProficiencies', within: 'CombatPart',
+             separator: innerSep},
+              {name: 'Defense Proficiency', within: 'CombatProficiencies',
+               separator: '; '},
+              {name: 'Attack Proficiency', within: 'CombatProficiencies',
+               separator: '; '},
+*/
             {name: 'Gear', within: 'CombatPart', separator: innerSep},
               {name: 'Armor', within: 'Gear'},
               {name: 'Shield', within: 'Gear'},

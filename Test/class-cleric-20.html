@@ -101,7 +101,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Advanced Domain (Chaotic); Advanced Domain (Evil); Advanced Domain (Good); Advanced Domain (Lawful); Align Armament; Armor Proficiency; Assurance (Deception); Assurance (Mercantile Lore); Avatar's Audience; Bargain Hunter; Breath Control; Canny Acumen (Fortitude); Cantrip Expansion; Cast Down; Castigating Weapon; Channel Smite; Channeled Succor; Clever Improviser; Command Undead; Communal Healing; Cooperative Nature; Cremate Undead; Deadly Simplicity; Defensive Recovery; Deity's Protection; Directed Channel; Divine Weapon; Domain Focus; Domain Wellspring; Echoing Channel; Emblazon Antimagic; Emblazon Armament; Emblazon Energy; Eternal Bane; Eternal Blessing; Extend Armament Alignment; Fast Channel; Fast Recovery; General Training; Harming Hands; Healing Hands; Heroic Recovery; Holy Castigation; Improved Command Undead; Improved Communal Healing; Improved Swift Banishment; Incredible Improvisation; Incredible Initiative; Maker Of Miracles; Metamagic Channel; Natural Ambition; Necrotic Infusion; Reach Spell; Replenishment Of War; Resurrectionist; Sap Life; Selective Energy; Shared Replenishment; Skill Training (Absalom Lore); Skill Training (Deception); Skill Training (Milling Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Society); Skill Training (Underworld Lore); Steady Spellcasting; Swift Banishment; Toughness; Turn Undead; Versatile Font</td>
-        <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Anathema; Armor Trained (Unarmored Defense); Cleric Feats; Cleric Skills; Cloistered Cleric; Deity; Divine Defense; Divine Font; Divine Spellcasting; Doctrine; General Feats; Harmful Font; Healing Font; Lightning Reflexes; Miraculous Spell; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Divine); Warpriest; Weapon Specialization; Weapon Trained (Simple Weapons; Unarmed Attacks)</td>
+        <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Anathema; Attack Trained (Simple Weapons; Unarmed Attacks); Cleric Feats; Cleric Skills; Cloistered Cleric; Defense Trained (Unarmored Defense); Deity; Divine Defense; Divine Font; Divine Spellcasting; Doctrine; General Feats; Harmful Font; Healing Font; Lightning Reflexes; Miraculous Spell; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Divine); Warpriest; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
       </tr></table>
@@ -261,21 +261,21 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Armor Proficiency: Armor Trained (Light Armor)</i></td>
+        <td><i>Armor Proficiency: Defense Trained (Light Armor)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cloistered Cleric: Weapon Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
+        <td><i>Cloistered Cleric: Attack Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deadly Simplicity: +1 damage die step on Glaive</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Deity: Weapon Trained (Glaive)</i></td>
+        <td><i>Deity: Attack Trained (Glaive)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Divine Defense: Armor Expert (Unarmored Defense)</i></td>
+        <td><i>Divine Defense: Defense Expert (Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Extend Armament Alignment: Increased Align Armament effects</i></td>
       </tr><tr style="text-align:center">
@@ -285,7 +285,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Toughness: +20 Hit Points</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Warpriest: Armor Expert (Light Armor; Medium Armor)/Weapon Trained (Martial Weapons)Weapon Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
+        <td><i>Warpriest: Armor Expert (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)Attack Expert (Glaive; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td>Align Armament: May touch a weapon to have it inflict +1d6 HP alignment for 1 min</td>
       </tr><tr style="text-align:center">
@@ -491,6 +491,8 @@ var attributes = {
         <td>Improved Command Undead Feat: Requires level (currently 20) >= 10, harmful font feature (currently 1), command undead feature (currently 1) and alignment (currently Neutral Good) matches 'Evil'</td>
       </tr><tr style="text-align:center">
         <td>Necrotic Infusion Feat: Requires level (currently 20) >= 4, harmful font feature (currently 1) and alignment (currently Neutral Good) matches 'Evil'</td>
+      </tr><tr style="text-align:center">
+        <td>Versatile Font Feat: Requires level (currently 20) >= 2, deity fonts (currently Heal) matches 'Harm' && deity fonts (currently Heal) matches 'Heal' and harmful font feature (currently 1) or healing font feature (currently 1)</td>
       </tr></table>
 </td>
     </tr></table>

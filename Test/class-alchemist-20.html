@@ -100,7 +100,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adopted Ancestry; Alchemical Familiar; Alchemical Savant; Ancestral Paragon; Armor Proficiency; Calculated Splash; Clever Improviser; Combine Elixirs; Cooperative Nature; Cooperative Soul; Craft Philosopher's Stone; Debilitating Bomb; Directional Bombs; Efficient Alchemy; Elastic Mutagen; Enduring Alchemy; Eternal Elixir; Expanded Splash; Exploitive Bomb; Extend Elixir; Far Lobber; Feral Mutagen; General Training; Genius Mutagen; Glib Mutagen; Greater Debilitating Bomb; Greater Merciful Elixir; Improbable Elixirs; Invincible Mutagen; Mega Bomb; Merciful Elixir; Mindblank Mutagen; Miracle Worker; Perfect Debilitation; Perfect Mutagen; Persistent Mutagen; Poison Resistance; Potent Poisoner; Quick Bomber; Revivifying Mutagen; Skill Training (Cavern Lore); Skill Training (Demon Lore); Skill Training (Engineering Lore); Skill Training (Folktale Lore); Skill Training (Labor Lore); Skill Training (Legal Lore); Skill Training (Library Lore); Skill Training (Medicine); Skill Training (Milling Lore); Smoke Bomb; Snare Crafting; Sticky Bomb; Toughness; True Debilitating Bomb; Uncanny Bombs; Unconventional Expertise; Unconventional Weaponry; Weapon Proficiency (Temple Sword); Weapon Proficiency (Warhammer)</td>
-        <td><b>Alchemist Features</b>: Ability Boost (Intelligence); Ability Boosts; Advanced Alchemy; Alchemical Alacrity; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemist Feats; Alchemist Skills; Alchemy; Alertness; Armor Trained (Light Armor; Medium Armor; Unarmored Defense); Bomber; Chirurgeon; Class Trained (Alchemist); Double Brew; Evasion; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Infused Reagents; Iron Will; Juggernaut; Medium Armor Expertise; Medium Armor Mastery; Mutagenic Flashback; Mutagenist; Perception Trained; Perpetual Infusions; Perpetual Perfection; Perpetual Potency; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Weapon Specialization; Weapon Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</td>
+        <td><b>Alchemist Features</b>: Ability Boost (Intelligence); Ability Boosts; Advanced Alchemy; Alchemical Alacrity; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemist Feats; Alchemist Skills; Alchemy; Alertness; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Bomber; Chirurgeon; Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Evasion; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Infused Reagents; Iron Will; Juggernaut; Medium Armor Expertise; Medium Armor Mastery; Mutagenic Flashback; Mutagenist; Perception Trained; Perpetual Infusions; Perpetual Perfection; Perpetual Potency; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
       </tr></table>
@@ -209,9 +209,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +5 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Perpetual Perfection: Increased Quick Alchemy effects</i></td>
+      <td><i>Perpetual Perfection: Increased Perpetual Infusions effects</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Perpetual Potency: Increased Quick Alchemy effects</i></td>
+      <td><i>Perpetual Potency: Increased Perpetual Infusions effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -235,7 +235,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skilled Heritage Human: Skill Expert (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Advanced Alchemy: May use an infused reagent to create a pair of infused alchemical items of up to level 20 without a Crafting check</td>
+      <td>Advanced Alchemy: May use a batch of infused reagents to create a pair of infused alchemical items of up to level 20 without a Crafting check</td>
     </tr><tr style="text-align:center">
       <td>Alchemical Crafting: May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items</td>
     </tr><tr style="text-align:center">
@@ -273,17 +273,19 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Improbable Elixirs: May create elixirs that replicate the effects of 5 potions</td>
     </tr><tr style="text-align:center">
-      <td>Infused Reagents: May create 25 infused reagents each day</td>
+      <td>Infused Reagents: May create 25 batches of infused reagents each day</td>
     </tr><tr style="text-align:center">
       <td>Merciful Elixir: Make make elixir of life that also gives a +31 counteract on a fear or paralyzing effect</td>
     </tr><tr style="text-align:center">
       <td>Perfect Mutagen: Does not suffer drawbacks from consuming mutagens</td>
     </tr><tr style="text-align:center">
+      <td>Perpetual Infusions: May create 2 alchemical items of up to level 11 from research field without using infused reagents</td>
+    </tr><tr style="text-align:center">
       <td>Persistent Mutagen: May extend the duration of a mutagen until the next day 1/day</td>
     </tr><tr style="text-align:center">
       <td>Potent Poisoner: +4 crafted poison DCs (41 max)</td>
     </tr><tr style="text-align:center">
-      <td>Quick Alchemy: May use a batch of infused reagents to create 3 alchemical items of up to level 20, or 2 items of up to level 11, for 1 tn</td>
+      <td>Quick Alchemy: May use batches of infused reagents to create 3 alchemical items of up to level 20 for 1 tn</td>
     </tr><tr style="text-align:center">
       <td>Research Field: Using Advanced Alchemy creates 3 signature items from research field</td>
     </tr><tr style="text-align:center">
@@ -323,9 +325,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Alchemical Mastery: Class Master (Alchemist)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Alchemical Weapon Expertise: Weapon Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
+        <td><i>Alchemical Weapon Expertise: Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Armor Proficiency: Armor Trained (Light Armor)</i></td>
+        <td><i>Armor Proficiency: Defense Trained (Light Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
@@ -333,21 +335,21 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Medium Armor Expertise: Armor Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
+        <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Medium Armor Mastery: Armor Master (Light Armor; Medium Armor; Unarmored Defense)</i></td>
+        <td><i>Medium Armor Mastery: Defense Master (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Toughness: +20 Hit Points</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Expertise: Weapon Expert (Choose 1 from any)</i></td>
+        <td><i>Unconventional Expertise: Attack Expert (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Weaponry: Weapon Trained (Choose 1 from any)/Treats chosen weapon as one category lower</i></td>
+        <td><i>Unconventional Weaponry: Attack Trained (Choose 1 from any)/Treats chosen weapon as one category lower</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Temple Sword): Weapon Trained (Temple Sword)</i></td>
+        <td><i>Weapon Proficiency (Temple Sword): Attack Trained (Temple Sword)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Warhammer): Weapon Trained (Warhammer)</i></td>
+        <td><i>Weapon Proficiency (Warhammer): Attack Trained (Warhammer)</i></td>
       </tr><tr style="text-align:center">
         <td>Bomber: May have a bomb splash affect only a single target</td>
       </tr><tr style="text-align:center">
@@ -365,9 +367,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Feral Mutagen: Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; may also increase AC penalty to -2 to increase claws and jaws damage by 1 die step</td>
       </tr><tr style="text-align:center">
-        <td>Field Discovery: Using Advanced Alchemy creates 3 alchemical items</td>
+        <td>Field Discovery: Using Advanced Alchemy creates 3 alchemical items from research field</td>
       </tr><tr style="text-align:center">
-        <td>Formula Book: Has a book that contains at least 46 alchemical formulas</td>
+        <td>Formula Book: Has a book that contains at least 48 alchemical formulas</td>
       </tr><tr style="text-align:center">
         <td>Greater Debilitating Bomb: May create bombs up to level 17 that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC 41 Fort neg)</td>
       </tr><tr style="text-align:center">
@@ -383,11 +385,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Miracle Worker: May administer a true elixir of life to restore life to a creature dead for up to 2 rd</td>
       </tr><tr style="text-align:center">
-        <td>Mutagenic Flashback: May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day</td>
+        <td>Mutagenic Flashback: May regain the effects of a mutagen consumed earlier in the day for 1 min as a free action 1/day</td>
       </tr><tr style="text-align:center">
         <td>Perfect Debilitation: Debilitating Bombs require a critical save to avoid effects</td>
-      </tr><tr style="text-align:center">
-        <td>Perpetual Infusions: May create choice of 2 1st-level alchemical items without using infused reagents</td>
       </tr><tr style="text-align:center">
         <td>Powerful Alchemy: Items created with Quick Alchemy have DC 41</td>
       </tr><tr style="text-align:center">
