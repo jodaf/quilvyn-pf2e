@@ -2688,7 +2688,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Battle Axe; Pick; Warhammer)",' +
       // TODO implement
-      '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category lower"',
+      '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category simpler"',
   'Rock Runner':
     'Section=ability,skill ' +
     'Note=' +
@@ -2736,7 +2736,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
       // TODO implement
-      '"Has access to uncommon elf weapons/Treats elf weapons as one category lower"',
+      '"Has access to uncommon elf weapons/Treats elf weapons as one category simpler"',
   'Forlorn':
     'Section=save ' +
     'Note="+1 vs. emotion effects; successes are critical successes"',
@@ -2781,7 +2781,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Glaive; Kukri)",' +
       // TODO implement
-      '"Has access to uncommon gnome weapons/Treats gnome weapons as one category lower"',
+      '"Has access to uncommon gnome weapons/Treats gnome weapons as one category simpler"',
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
@@ -2828,7 +2828,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Dogslicer; Horsechopper)",' +
       // TODO implement
-      '"Has access to uncommon goblin weapons/Treats goblin weapons as one category lower"',
+      '"Has access to uncommon goblin weapons/Treats goblin weapons as one category simpler"',
   'Junk Tinker':
     'Section=skill Note="May use Crafting on junk to create level 0 items"',
   'Rough Rider':
@@ -2864,7 +2864,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)",' +
       // TODO implement
-      '"Has access to uncommon halfling weapons/Treats halfling weapons as one category lower"',
+      '"Has access to uncommon halfling weapons/Treats halfling weapons as one category simpler"',
   'Sure Feet':
     'Section=skill ' +
     'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
@@ -2913,7 +2913,7 @@ Pathfinder2E.FEATURES = {
   'Unconventional Weaponry':
     'Section=combat ' +
     // TODO implement
-    'Note="Attack Trained (Choose 1 from any)/Treats chosen weapon as one category lower"',
+    'Note="Attack Trained (Choose 1 from any)/Treats chosen weapon as one category simpler"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -2953,7 +2953,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Trained (Falchion; Greataxe)",' +
-      '"Has access to uncommon orc weapons/Treats orc weapons as one category lower"',
+      '"Has access to uncommon orc weapons/Treats orc weapons as one category simpler"',
   'Orc Weapon Carnage':
     'Section=combat ' +
     'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
@@ -3055,10 +3055,10 @@ Pathfinder2E.FEATURES = {
   'Alchemical Familiar':'Section=feature Note="Has Familiar feature"',
   'Alchemical Savant':
     'Section=skill ' +
-    'Note="May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas, and critical failures on known formulas are normal failures"',
+    'Note="May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas; critical failures on known formulas are normal failures"',
   'Far Lobber':'Section=combat Note="Bombs have 30\' range"',
   'Quick Bomber':
-    'Section=combat Note="May use a single action to draw and throw a bomb"',
+    'Section=combat Note="May use 1 action to draw and throw a bomb"',
   'Poison Resistance':
     'Section=save Note="Poison resistance %{level//2}/+1 saves vs. poison"',
   'Revivifying Mutagen':
@@ -3072,13 +3072,13 @@ Pathfinder2E.FEATURES = {
     'Note="May increase the splash damage of bombs to %{intelligenceModifier} Hit Points"',
   'Efficient Alchemy':
     'Section=skill ' +
-    'Note="May produce twice the usual number of alchemical items in a given time"',
+    'Note="May produce twice the usual number of alchemical items during downtime"',
   'Enduring Alchemy':
     'Section=skill ' +
     'Note="Quick Alchemy products last until the end of next turn"',
   'Combine Elixirs':
     'Section=skill ' +
-    'Note="May create a single elixir that has the effects of two"',
+    'Note="May create a single elixir that has the effects of two elixirs of up to level %{level-2}"',
   'Debilitating Bomb':
     'Section=combat ' +
     'Note="May create bombs up to level %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fort neg})"',
@@ -3097,29 +3097,31 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as 1 size smaller"',
   'Expanded Splash':
     'Section=combat ' +
-    'Note="Thrown bombs inflict +%{intelligenceModifier} HP damage in a 10\' radius"',
+    'Note="May throw bombs to inflict +%{intelligenceModifier} HP damage in a 10\' radius"',
   'Greater Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to level %{level-3} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fort neg)"',
+    'Note="May create bombs up to level %{level-2} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fort neg)"',
   'Merciful Elixir':
     'Section=skill ' +
-    'Note="Make make elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect"',
+    'Note="May make an elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
-    'Note="+4 crafted poison DCs (%{classDifficultyClass.Alchemist} max)"',
+    'Note="+4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
   'Extend Elixir':'Section=skill Note="Doubles elixir duration"',
   'Invincible Mutagen':
     'Section=combat ' +
     'Note="Consuming a juggernaut elixir gives resistance %{intelligenceModifier>?0} to all physical damage"',
   'Uncanny Bombs':
-    'Section=combat ' +
-    'Note="Thrown bombs have range 60\', reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Thrown bombs have range 60\'",' +
+      '"Thrown bombs reduce target cover AC bonus by 1 and automatically succeed on the flat check to target a concealed creature"',
   'Glib Mutagen':
     'Section=skill ' +
     'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers"',
   'Greater Merciful Elixir':
     'Section=skill ' +
-    'Note="Make make elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition"',
+    'Note="May make an elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
     'Section=combat ' +
     'Note="May create bombs up to level %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fort neg) or a lesser condition that requires a critical success to negate"',
@@ -3128,7 +3130,7 @@ Pathfinder2E.FEATURES = {
     'Note="May extend indefinitely the duration of an elixir of up to level %{level//2}"',
   'Exploitive Bomb':
     'Section=combat ' +
-    'Note="May make a bomb up to level %{level-2} that overcomes resistance %{level}"',
+    'Note="May use Quick Alchemy to make a bomb up to level %{level-2} that negates resistance %{level}"',
   'Genius Mutagen':
     'Section=skill ' +
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
@@ -3137,10 +3139,10 @@ Pathfinder2E.FEATURES = {
     'Note="May extend the duration of a mutagen until the next day 1/day"',
   'Improbable Elixirs':
     'Section=skill ' +
-    'Note="May create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'}"',
+    'Note="May create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
   'Mindblank Mutagen':
     'Section=save ' +
-    'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying"',
+    'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=combat ' +
     'Note="May administer a true elixir of life to restore life to a creature dead for up to 2 rd"',
@@ -3152,7 +3154,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the formula for creating a philosopher\'s stone"',
   'Mega Bomb':
     'Section=combat ' +
-    'Note="May throw a bomb 60\' to affect all creatures in a 30\' radius (Ref neg)"',
+    'Note="May throw a bomb up to 60\' that affects all creatures in a 30\' radius (Ref neg)"',
   'Perfect Mutagen':
     'Section=skill Note="Does not suffer drawbacks from consuming mutagens"',
 
@@ -3856,7 +3858,7 @@ Pathfinder2E.FEATURES = {
     'Note="Harm spells cast on an undead allow target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
   'Cast Down':
     'Section=magic ' +
-    'Note="May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10\' Speed for 1 min)"',
+    'Note="May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10 Speed for 1 min)"',
   'Divine Weapon':
     'Section=magic ' +
     'Note="Casting a spell causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
@@ -3893,7 +3895,7 @@ Pathfinder2E.FEATURES = {
     'Note="Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
   'Heroic Recovery':
     'Section=magic ' +
-    'Note="Single-target heal spell also gives +5\' Speed, +1 attack, and +1 HP damage for 1 rd"',
+    'Note="Single-target heal spell also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
     'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hour"',
@@ -4846,7 +4848,7 @@ Pathfinder2E.FEATURES = {
   // Rogue
   'Debilitating Strike':
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe inflicts choice of -10\' Speed or enfeebled 1"',
+    'Note="Successful Strike against a flat-footed foe inflicts choice of -10 Speed or enfeebled 1"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
@@ -9375,7 +9377,18 @@ Pathfinder2E.WEAPONS = {
   'Sling':
     'Category=Simple Price=0 Damage=1d6B Bulk=L Hands=1 Group=Sling Trait=Propulsive,"Reload 1" Range=50',
 
-  // TODO Alchemical bomb
+  'Lesser Acid Flask':
+    'Category=Martial Price=0 Damage=1E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+  "Lesser Alchemist's Fire":
+    'Category=Martial Price=0 Damage=1d8E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+  'Lesser Bottled Lightning':
+    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+  'Lesser Frost Vial':
+    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+  'Lesser Tanglefoot Bag':
+    'Category=Martial Price=0 Damage=0E Bulk=L Hands=1 Group=Bomb Trait=Thrown Range=20',
+  'Lesser Thunderstone':
+    'Category=Martial Price=0 Damage=1d4E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
   'Composite Longbow':
     'Category=Martial Price=20 Damage=1d8P Bulk=2 Hands=2 Group=Bow Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
   'Composite Shortbow':
@@ -11226,6 +11239,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.alignArmament',
       'combatNotes.extendArmamentAlignment', '=', 'null' // italics
     );
+  } else if(name == 'Far Lobber') {
+    let allWeapons = rules.getChoices('weapons');
+    for(let w in allWeapons) {
+      if(allWeapons[w].includes('Bomb'))
+        rules.defineRule
+          ('weaponRangeAdjustment.' + w, 'combatNotes.farLobber', '^=', '10');
+    }
   } else if(name == 'Far Shot') {
     let allWeapons = rules.getChoices('weapons');
     for(let w in allWeapons) {
@@ -11377,6 +11397,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
   } else if(name == 'Supernatural Charm') {
     rules.defineRule('spells.Charm', 'magicNotes.supernaturalCharm', '=', '1');
+  } else if(name == 'Uncanny Bombs') {
+    let allWeapons = rules.getChoices('weapons');
+    for(let w in allWeapons) {
+      if(allWeapons[w].includes('Bomb'))
+        rules.defineRule
+          ('weaponRangeAdjustment.' + w, 'combatNotes.uncannyBombs', '^=', '40');
+    }
   } else if(name == 'Verdant Metamorphosis') {
     rules.defineRule
       ('armorClass', 'combatNotes.verdantMetamorphosis', '^', '30');
@@ -11696,7 +11723,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BPS])$/);
+  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BEPS])$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
@@ -11711,7 +11738,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad hands "' + hands + '" for weapon ' + name);
     return;
   }
-  if(!(group+'').match(/^(Axe|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Spear|Sword)$/)) {
+  if(!(group+'').match(/^(Axe|Bomb|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Spear|Sword)$/)) {
     console.log('Bad group "' + group + '" for weapon ' + name);
     return;
   }
@@ -11724,16 +11751,18 @@ Pathfinder2E.weaponRules = function(
   }
 
   let isFinesse = traits.includes('Finesse');
-  let isRanged = group.match(/Bow|Dart|Sling/);
+  let isRanged = group.match(/Bomb|Bow|Dart|Sling/);
   let isPropulsive = traits.includes('Propulsive');
+  let isSplash = traits.includes('Splash');
   let isThrown = traits.includes('Thrown');
   let specialDamage =
     traits.filter(x => x.match(/Two-hand/)).map(x => x.replace('Two-hand', '2h')).concat(
     traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
-  category =  category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
+  category = category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
   damage = matchInfo[1];
+  group = group != 'Bomb' ? group + 's' : 'Alchemical Bombs';
   let damageType = matchInfo[3];
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
@@ -11745,16 +11774,19 @@ Pathfinder2E.weaponRules = function(
 
   rules.defineChoice('notes', weaponName + ':' + format);
   rules.defineRule('rank.' + category, 'training.' + category, '=', null);
+  rules.defineRule('rank.' + group, 'training.' + group, '=', null);
   rules.defineRule('rank.' + name, 'training.' + name, '=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
-    'rank.' + name, '=', '0',
     'rank.' + category, '=', '0',
+    'rank.' + group, '=', '0',
+    'rank.' + name, '=', '0',
     'level', '+', null
   );
   rules.defineRule('proficiencyBonus.' + name,
     weaponName, '?', null,
     'rank.' + category, '=', 'source * 2',
+    'rank.' + group, '^=', 'source * 2',
     'rank.' + name, '^=', 'source * 2',
     'proficiencyLevelBonus.' + name, '+', null
   );
@@ -11779,7 +11811,9 @@ Pathfinder2E.weaponRules = function(
     weaponName, '=', damage.replace(/^\d(d)?/, ''),
     'weaponDieTypeBonus.' + name, '+', null
   );
-  if(!isRanged || isThrown)
+  if(damage == '0')
+    ; // empty
+  else if(!isRanged || (isThrown && !isSplash))
     rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   else if(isPropulsive)
     rules.defineRule('damageBonus.' + name,

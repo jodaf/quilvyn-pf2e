@@ -43,7 +43,8 @@ var attributes = {
   "skillIncreases.Medicine":1, "skillIncreases.Military Lore":1, "skillIncreases.Milling Lore":1, 
   "skillIncreases.Nature":1, "skillIncreases.Scouting Lore":1, "skillIncreases.Scribing Lore":1, 
   "skillIncreases.Tea Lore":1, "skillIncreases.Troll Lore":1, "skillIncreases.Underworld Lore":1, 
-  "strength":10, "weapons.Mace":1, "weapons.Morningstar":1, "weapons.Spear":1, "wisdom":10
+  "strength":10, "weapons.Lesser Bottled Lightning":1, "weapons.Mace":1, 
+  "weapons.Morningstar":1, "weapons.Spear":1, "wisdom":10
 };
   </script>
 </head>
@@ -239,13 +240,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Alchemical Crafting: May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items</td>
     </tr><tr style="text-align:center">
-      <td>Alchemical Savant: May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas, and critical failures on known formulas are normal failures</td>
+      <td>Alchemical Savant: May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas; critical failures on known formulas are normal failures</td>
     </tr><tr style="text-align:center">
       <td>Chirurgeon: May use Crafting in place of Medicine</td>
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May use any skill untrained</td>
     </tr><tr style="text-align:center">
-      <td>Combine Elixirs: May create a single elixir that has the effects of two</td>
+      <td>Combine Elixirs: May create a single elixir that has the effects of two elixirs of up to level 18</td>
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
@@ -253,7 +254,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Craft Philosopher's Stone: Knows the formula for creating a philosopher's stone</td>
     </tr><tr style="text-align:center">
-      <td>Efficient Alchemy: May produce twice the usual number of alchemical items in a given time</td>
+      <td>Efficient Alchemy: May produce twice the usual number of alchemical items during downtime</td>
     </tr><tr style="text-align:center">
       <td>Elastic Mutagen: Consuming a quicksilver mutagen allows 10' Steps and moving through tight spaces as 1 size smaller</td>
     </tr><tr style="text-align:center">
@@ -269,13 +270,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Glib Mutagen: Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers</td>
     </tr><tr style="text-align:center">
-      <td>Greater Merciful Elixir: Make make elixir of life that also gives a +31 counteract on a blinded, deafened, sickened, or slowed condition</td>
+      <td>Greater Merciful Elixir: May make an elixir of life that also gives a +31 counteract on a blinded, deafened, sickened, or slowed condition</td>
     </tr><tr style="text-align:center">
-      <td>Improbable Elixirs: May create elixirs that replicate the effects of 5 potions</td>
+      <td>Improbable Elixirs: May create elixirs that replicate the effects of 5 potions of up to level 9</td>
     </tr><tr style="text-align:center">
       <td>Infused Reagents: May create 25 batches of infused reagents each day</td>
     </tr><tr style="text-align:center">
-      <td>Merciful Elixir: Make make elixir of life that also gives a +31 counteract on a fear or paralyzing effect</td>
+      <td>Merciful Elixir: May make an elixir of life that also gives a +31 counteract on a fear or paralyzing effect</td>
     </tr><tr style="text-align:center">
       <td>Perfect Mutagen: Does not suffer drawbacks from consuming mutagens</td>
     </tr><tr style="text-align:center">
@@ -283,7 +284,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Persistent Mutagen: May extend the duration of a mutagen until the next day 1/day</td>
     </tr><tr style="text-align:center">
-      <td>Potent Poisoner: +4 crafted poison DCs (41 max)</td>
+      <td>Potent Poisoner: +4 crafted poison DCs (+41 max)</td>
     </tr><tr style="text-align:center">
       <td>Quick Alchemy: May use batches of infused reagents to create 3 alchemical items of up to level 20 for 1 tn</td>
     </tr><tr style="text-align:center">
@@ -315,7 +316,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Chain Mail</td>
         <td><b>Shield</b>: Tower (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Mace (+28 1d6+4 B); Morningstar (+28 1d6+4 B/P); Spear (+28 1d6+4 P R20')</td>
+        <td><b>Weapons</b>: Lesser Bottled Lightning (+28 1d6 E R60'); Mace (+28 1d6+4 B); Morningstar (+28 1d6+4 B/P); Spear (+28 1d6+4 P R20')</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -335,6 +336,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Far Lobber: Bombs have 30' range</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Mastery: Defense Master (Light Armor; Medium Armor; Unarmored Defense)</i></td>
@@ -343,9 +346,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Toughness: +20 Hit Points</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Uncanny Bombs: Thrown bombs have range 60'</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Unconventional Expertise: Attack Expert (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Weaponry: Attack Trained (Choose 1 from any)/Treats chosen weapon as one category lower</i></td>
+        <td><i>Unconventional Weaponry: Attack Trained (Choose 1 from any)/Treats chosen weapon as one category simpler</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Temple Sword): Attack Trained (Temple Sword)</i></td>
       </tr><tr style="text-align:center">
@@ -359,11 +364,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Directional Bombs: May restrict bomb splash to a 15' cone</td>
       </tr><tr style="text-align:center">
-        <td>Expanded Splash: Thrown bombs inflict +5 HP damage in a 10' radius</td>
+        <td>Expanded Splash: May throw bombs to inflict +5 HP damage in a 10' radius</td>
       </tr><tr style="text-align:center">
-        <td>Exploitive Bomb: May make a bomb up to level 18 that overcomes resistance 20</td>
-      </tr><tr style="text-align:center">
-        <td>Far Lobber: Bombs have 30' range</td>
+        <td>Exploitive Bomb: May use Quick Alchemy to make a bomb up to level 18 that negates resistance 20</td>
       </tr><tr style="text-align:center">
         <td>Feral Mutagen: Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; may also increase AC penalty to -2 to increase claws and jaws damage by 1 die step</td>
       </tr><tr style="text-align:center">
@@ -371,7 +374,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Formula Book: Has a book that contains at least 48 alchemical formulas</td>
       </tr><tr style="text-align:center">
-        <td>Greater Debilitating Bomb: May create bombs up to level 17 that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC 41 Fort neg)</td>
+        <td>Greater Debilitating Bomb: May create bombs up to level 18 that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC 41 Fort neg)</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Bomber): May increase bomb splash to 10'</td>
       </tr><tr style="text-align:center">
@@ -381,7 +384,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Invincible Mutagen: Consuming a juggernaut elixir gives resistance 5 to all physical damage</td>
       </tr><tr style="text-align:center">
-        <td>Mega Bomb: May throw a bomb 60' to affect all creatures in a 30' radius (Ref neg)</td>
+        <td>Mega Bomb: May throw a bomb up to 60' that affects all creatures in a 30' radius (Ref neg)</td>
       </tr><tr style="text-align:center">
         <td>Miracle Worker: May administer a true elixir of life to restore life to a creature dead for up to 2 rd</td>
       </tr><tr style="text-align:center">
@@ -391,7 +394,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Powerful Alchemy: Items created with Quick Alchemy have DC 41</td>
       </tr><tr style="text-align:center">
-        <td>Quick Bomber: May use a single action to draw and throw a bomb</td>
+        <td>Quick Bomber: May use 1 action to draw and throw a bomb</td>
       </tr><tr style="text-align:center">
         <td>Revivifying Mutagen: May use 1 action to end mutagen effects and regain 1d6 Hit Points per 2 levels of the mutagen</td>
       </tr><tr style="text-align:center">
@@ -401,7 +404,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>True Debilitating Bomb: May create bombs up to level 18 that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC 41 Fort neg) or a lesser condition that requires a critical success to negate</td>
       </tr><tr style="text-align:center">
-        <td>Uncanny Bombs: Thrown bombs have range 60', reduce target cover AC bonus by 1, and automatically succeed on flat check targeting a concealed creature</td>
+        <td>Uncanny Bombs: Thrown bombs reduce target cover AC bonus by 1 and automatically succeed on the flat check to target a concealed creature</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: +2/+3/+4 HP damage with expert/master/legendary weapon proficiency</td>
       </tr></table>
@@ -425,7 +428,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Juggernaut: Successes on Fortitude saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Mindblank Mutagen: Consuming a serene mutagen gives immunity to detection, revelation, and scrying</td>
+        <td>Mindblank Mutagen: Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9</td>
       </tr><tr style="text-align:center">
         <td>Poison Resistance: Poison resistance 10/+1 saves vs. poison</td>
       </tr><tr style="text-align:center">
