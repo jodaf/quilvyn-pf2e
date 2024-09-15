@@ -9541,6 +9541,9 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'strengthModifier', '=', null,
     'dexterityModifier', '^', null
   );
+  rules.defineRule('maxStrOrDex',
+    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
+  );
   rules.defineRule('skillNotes.armorSkillPenalty',
     'armorCheckPenalty', '=', null,
     'armorStrengthRequirement', '=', 'null',
@@ -11788,24 +11791,26 @@ Pathfinder2E.weaponRules = function(
   });
 
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%5'" : '') + ')';
+  let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%7'" : '') + '; %5; %6)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
   rules.defineRule('rank.' + category, 'training.' + category, '=', null);
   rules.defineRule('rank.' + group, 'training.' + group, '=', null);
   rules.defineRule('rank.' + name, 'training.' + name, '=', null);
+  rules.defineRule('weaponRank.' + name,
+    weaponName, '?', null,
+    'rank.' + category, '=', null,
+    'rank.' + group, '^=', null,
+    'rank.' + name, '^=', null
+  );
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
-    'rank.' + category, '=', '0',
-    'rank.' + group, '=', '0',
-    'rank.' + name, '=', '0',
+    'weaponRank.' + name, '=', '0',
     'level', '+', null
   );
   rules.defineRule('proficiencyBonus.' + name,
     weaponName, '?', null,
-    'rank.' + category, '=', 'source * 2',
-    'rank.' + group, '^=', 'source * 2',
-    'rank.' + name, '^=', 'source * 2',
+    'weaponRank.' + name, '^=', 'source * 2',
     'proficiencyLevelBonus.' + name, '+', null
   );
 
@@ -11850,12 +11855,22 @@ Pathfinder2E.weaponRules = function(
   );
   rules.defineRule
     (weaponName + '.4', weaponName, '=', '"' + damageType + '"');
+  rules.defineRule(weaponName + '.5',
+    weaponName, '?', null,
+    '', '=', isRanged ? '"dexterity"' : '"strength"', '=', null
+  );
+  if(isFinesse)
+    rules.defineRule(weaponName + '.5', 'maxStrOrDex', '=', null);
+  rules.defineRule(weaponName + '.6',
+    weaponName, '=', '"untrained"',
+    'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
+  );
   if(range) {
     rules.defineRule('range.' + name,
       weaponName, '=', range,
       'weaponRangeAdjustment.' + name, '+', null
     );
-    rules.defineRule(weaponName + '.5', 'range.' + name, '=', null);
+    rules.defineRule(weaponName + '.7', 'range.' + name, '=', null);
   }
 
 };
