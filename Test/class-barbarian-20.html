@@ -9,7 +9,7 @@ var attributes = {
   "_path":"ztest/pf2e/class/barbarian 20", 
   "abilityBoosts.charisma":4, "abilityBoosts.constitution":4, "abilityBoosts.dexterity":4, 
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":4, "abilityBoosts.wisdom":4, 
-  "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"None", 
+  "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Leather", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":19500, "feats.Acute Scent":1, "feats.Acute Vision":1, "feats.Animal Rage":1, 
   "feats.Animal Skin":1, "feats.Armor Proficiency":1, "feats.Assurance (Athletics)":1, 
@@ -21,19 +21,19 @@ var attributes = {
   "feats.Fast Movement":1, "feats.Furious Bully":1, "feats.Furious Finish":1, "feats.Furious Grab":1, 
   "feats.Furious Sprint":1, "feats.Giant's Lunge":1, "feats.Giant's Stature":1, "feats.Great Cleave":1, 
   "feats.Haughty Obstinacy":1, "feats.Incredible Initiative":1, "feats.Knockback":1, 
-  "feats.Moment Of Clarity":1, "feats.Multitalented":1, "feats.Natural Ambition":1, 
-  "feats.Natural Skill":1, "feats.No Escape":1, "feats.Perfect Clarity":1, "feats.Predator's Pounce":1, 
-  "feats.Quaking Stomp":1, "feats.Quick Jump":1, "feats.Raging Athlete":1, 
-  "feats.Raging Intimidation":1, "feats.Raging Thrower":1, "feats.Reckless Abandon":1, 
-  "feats.Renewed Vigor":1, "feats.Second Wind":1, "feats.Shake It Off":1, "feats.Share Rage":1, 
-  "feats.Skill Training (Athletics)":1, "feats.Skill Training (Forest Lore)":1, 
-  "feats.Skill Training (Gnome Lore)":1, "feats.Skill Training (Nature)":1, "feats.Skill Training (River Lore)":1, 
-  "feats.Skill Training (Tea Lore)":1, "feats.Spirit's Wrath":1, "feats.Spirits' Interference":1, 
-  "feats.Sudden Charge":1, "feats.Sudden Leap":1, "feats.Swipe":1, "feats.Terrifying Howl":1, 
-  "feats.Thrash":1, "feats.Titan's Stature":1, "feats.Vengeful Strike":1, 
-  "feats.Vicious Evisceration":1, "feats.Whirlwind Strike":1, "feats.Wounded Rage":1, "gender":"Male", 
-  "intelligence":10, "languages.Dwarven":1, "languages.Gnoll":1, "languages.Gnomish":1, 
-  "languages.Goblin":1, "languages.Orcish":1, "levels.Barbarian":20, "name":"Class-Barbarian 20", 
+  "feats.Moment Of Clarity":1, "feats.Natural Ambition":1, "feats.Natural Skill":1, "feats.No Escape":1, 
+  "feats.Perfect Clarity":1, "feats.Predator's Pounce":1, "feats.Quaking Stomp":1, "feats.Quick Jump":1, 
+  "feats.Raging Athlete":1, "feats.Raging Intimidation":1, "feats.Raging Thrower":1, 
+  "feats.Reckless Abandon":1, "feats.Renewed Vigor":1, "feats.Second Wind":1, "feats.Shake It Off":1, 
+  "feats.Share Rage":1, "feats.Skill Training (Athletics)":1, 
+  "feats.Skill Training (Forest Lore)":1, "feats.Skill Training (Gnome Lore)":1, "feats.Skill Training (Nature)":1, 
+  "feats.Skill Training (River Lore)":1, "feats.Skill Training (Tea Lore)":1, "feats.Spirit's Wrath":1, 
+  "feats.Spirits' Interference":1, "feats.Sudden Charge":1, "feats.Sudden Leap":1, "feats.Swipe":1, 
+  "feats.Terrifying Howl":1, "feats.Thrash":1, "feats.Titan's Stature":1, 
+  "feats.Unconventional Weaponry":1, "feats.Vengeful Strike":1, "feats.Vicious Evisceration":1, 
+  "feats.Whirlwind Strike":1, "feats.Wounded Rage":1, "gender":"Male", "intelligence":10, 
+  "languages.Dwarven":1, "languages.Gnoll":1, "languages.Gnomish":1, "languages.Goblin":1, 
+  "languages.Orcish":1, "levels.Barbarian":20, "name":"Class-Barbarian 20", 
   "selectableFeatures.Barbarian - Animal Instinct (Ape)":1, "selectableFeatures.Barbarian - Animal Instinct (Bear)":1, 
   "selectableFeatures.Barbarian - Animal Instinct (Bull)":1, "selectableFeatures.Barbarian - Animal Instinct (Cat)":1, 
   "selectableFeatures.Barbarian - Animal Instinct (Deer)":1, "selectableFeatures.Barbarian - Animal Instinct (Frog)":1, 
@@ -50,7 +50,8 @@ var attributes = {
   "skillIncreases.Gnome Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Intimidation":1, 
   "skillIncreases.Labor Lore":2, "skillIncreases.Nature":1, "skillIncreases.Occultism":1, 
   "skillIncreases.Plains Lore":1, "skillIncreases.Scribing Lore":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Tea Lore":1, "skillIncreases.Vampire Lore":1, "strength":10, "wisdom":10
+  "skillIncreases.Tea Lore":1, "skillIncreases.Vampire Lore":1, "strength":10, "weapons.Light Hammer":1, 
+  "weapons.Longsword":1, "weapons.Sap":1, "wisdom":10
 };
   </script>
 </head>
@@ -89,13 +90,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Ability Notes</b>:     <table id="AbilityNotes" style="width:100%">
-    <tr style="text-align:center">
-      <td><i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
-    </tr><tr style="text-align:center">
-      <td>Acute Scent: R30' imprecise scent</td>
-    </tr></table>
-</td>
+    <td><b>Ability Notes</b>: <i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -105,14 +100,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 5; Class: 14; General: 5; Skill: 10</td>
+        <td><b>Feat Count</b>: Ancestry: 5; Class: 13; General: 5; Skill: 10</td>
         <td><b>Selectable Feature Count</b>: Barbarian (Instinct); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Acute Scent; Acute Vision; Animal Rage; Animal Skin; Armor Proficiency; Assurance (Athletics); Assurance (Farming Lore); Assurance (Nature); Attack Of Opportunity; Awesome Blow; Breath Control; Brutal Bully; Brutal Critical; Canny Acumen (Perception); Cleave; Collateral Thrash; Come And Get Me; Contagious Rage; Cooperative Nature; Dragon Transformation; Dragon's Rage Breath; Dragon's Rage Wings; Expeditious Search; Fast Movement; Furious Bully; Furious Finish; Furious Grab; Furious Sprint; Giant's Lunge; Giant's Stature; Great Cleave; Haughty Obstinacy; Incredible Initiative; Knockback; Moment Of Clarity; Multitalented; Natural Ambition; Natural Skill; No Escape; Perfect Clarity; Predator's Pounce; Quaking Stomp; Quick Jump; Raging Athlete; Raging Intimidation; Raging Thrower; Reckless Abandon; Renewed Vigor; Second Wind; Shake It Off; Share Rage; Skill Training (Athletics); Skill Training (Forest Lore); Skill Training (Gnome Lore); Skill Training (Nature); Skill Training (River Lore); Skill Training (Tea Lore); Spirit's Wrath; Spirits' Interference; Sudden Charge; Sudden Leap; Swipe; Terrifying Howl; Thrash; Titan's Stature; Vengeful Strike; Vicious Evisceration; Whirlwind Strike; Wounded Rage</td>
+        <td><b>Feats</b>: Acute Scent; Acute Vision; Animal Rage; Animal Skin; Armor Proficiency; Assurance (Athletics); Assurance (Farming Lore); Assurance (Nature); Attack Of Opportunity; Awesome Blow; Breath Control; Brutal Bully; Brutal Critical; Canny Acumen (Perception); Cleave; Collateral Thrash; Come And Get Me; Contagious Rage; Cooperative Nature; Dragon Transformation; Dragon's Rage Breath; Dragon's Rage Wings; Expeditious Search; Fast Movement; Furious Bully; Furious Finish; Furious Grab; Furious Sprint; Giant's Lunge; Giant's Stature; Great Cleave; Haughty Obstinacy; Incredible Initiative; Knockback; Moment Of Clarity; Natural Ambition; Natural Skill; No Escape; Perfect Clarity; Predator's Pounce; Quaking Stomp; Quick Jump; Raging Athlete; Raging Intimidation; Raging Thrower; Reckless Abandon; Renewed Vigor; Second Wind; Shake It Off; Share Rage; Skill Training (Athletics); Skill Training (Forest Lore); Skill Training (Gnome Lore); Skill Training (Nature); Skill Training (River Lore); Skill Training (Tea Lore); Spirit's Wrath; Spirits' Interference; Sudden Charge; Sudden Leap; Swipe; Terrifying Howl; Thrash; Titan's Stature; Unconventional Weaponry; Vengeful Strike; Vicious Evisceration; Whirlwind Strike; Wounded Rage</td>
         <td><b>Barbarian Features</b>: Ability Boost (Strength); Ability Boosts; Animal Instinct (Ape); Animal Instinct (Bear); Animal Instinct (Bull); Animal Instinct (Cat); Animal Instinct (Deer); Animal Instinct (Frog); Animal Instinct (Shark); Animal Instinct (Snake); Animal Instinct (Wolf); Armor Of Fury; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Barbarian Feats; Barbarian Skills; Bestial Rage; Brutality; Class Trained (Barbarian); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Deny Advantage; Devastator; Draconic Rage; Dragon Instinct (Black); Dragon Instinct (Blue); Dragon Instinct (Brass); Dragon Instinct (Bronze); Dragon Instinct (Copper); Dragon Instinct (Gold); Dragon Instinct (Green); Dragon Instinct (Red); Dragon Instinct (Silver); Dragon Instinct (White); Fury Instinct; General Feats; Giant Instinct; Greater Juggernaut; Greater Weapon Specialization; Heightened Senses; Indomitable Will; Instinct; Juggernaut; Lightning Reflexes; Medium Armor Expertise; Mighty Rage; Perception Expert; Quick Rage; Rage; Raging Resistance; Save Expert (Fortitude; Will); Save Trained (Reflex); Skill Feats; Skill Increases; Specialization Ability; Spirit Instinct; Spirit Rage; Titan Mauler; Weapon Fury; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Orc</td>
@@ -139,13 +134,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Acute Vision: Has Darkvision feature during rage</td>
       </tr><tr style="text-align:center">
-        <td>Dragon Transformation: FILL</td>
-      </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
-        <td>Reckless Abandon: When reduced to 164 Hit Points, may suffer -2 AC and -1 saves to gain +2 attacks</td>
-      </tr><tr style="text-align:center">
-        <td>Spirit's Wrath: FILL</td>
+        <td>Reckless Abandon: When reduced to 164 or fewer Hit Points during rage, may suffer -2 AC and -1 saves to gain +2 attacks</td>
       </tr></table>
 </td>
     </tr></table>
@@ -226,6 +217,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Tea Lore): Skill Trained (Tea Lore)</i></td>
     </tr><tr style="text-align:center">
+      <td>Acute Scent: R30' imprecise scent</td>
+    </tr><tr style="text-align:center">
       <td>Assurance (Athletics): May take 10 on Athletics rolls</td>
     </tr><tr style="text-align:center">
       <td>Assurance (Farming Lore): May take 10 on Farming Lore rolls</td>
@@ -257,15 +250,16 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 328</td>
-        <td><b>Armor Class</b>: 40 (dexterity; master)</td>
+        <td><b>Armor Class</b>: 41 (dexterity (4 max); master)</td>
         <td><b>Class DC</b>: Barbarian: 41 (strength; master)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="Gear" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Armor</b>: None</td>
+        <td><b>Armor</b>: Leather</td>
         <td><b>Shield</b>: None</td>
+        <td><b>Weapons</b>: Light Hammer (+31 1d6+5 B R20'); Longsword (+31 1d8+5 S/P); Sap (+31 1d6+5 B)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -293,9 +287,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multitalented: +1 Class Feat (multiclass dedication)</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +5</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Unconventional Weaponry: Attack Trained (Choose 1 from any)/Treats chosen weapon as one category simpler</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Fury: Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
@@ -305,29 +299,29 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Awesome Blow: A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage: Fangs inflicts 1d12B HP during rage</td>
+        <td>Bestial Rage: Fangs inflict 1d12B HP, tongue 1d6B HP during rage</td>
       </tr><tr style="text-align:center">
         <td>Brutal Bully: Successful Disarm, Grapple, Shove, or Trip inflicts 5B HP damage during rage</td>
       </tr><tr style="text-align:center">
-        <td>Brutal Critical: Critical melee hits inflict +1 damage die and 2 dice bleed damage</td>
+        <td>Brutal Critical: Critical melee hits inflict +1 damage die and 2 damage dice bleed damage</td>
       </tr><tr style="text-align:center">
         <td>Brutality: May use melee and unarmed weapon critical specialization effects while raging</td>
       </tr><tr style="text-align:center">
-        <td>Cleave: May use a Reaction after killing or knocking unconscious to Strike an adjacent foe</td>
+        <td>Cleave: May use a Reaction after killing or knocking unconscious a foe to Strike an adjacent foe</td>
       </tr><tr style="text-align:center">
-        <td>Collateral Thrash: Successful Thrash affects an adjacent foe</td>
+        <td>Collateral Thrash: May affect another adjacent foe (DC 41 Ref neg) with a successful Thrash</td>
       </tr><tr style="text-align:center">
-        <td>Come And Get Me: May suffer flat-footed and +2 HP foe damage to gain +4 temporary Hit Points from successful Strikes (critical success +8) until rage ends</td>
+        <td>Come And Get Me: May suffer flat-footed and +2 HP foe damage to gain +4 temporary Hit Points from a successful Strike (critical success +8) on a successful attacker until rage ends</td>
       </tr><tr style="text-align:center">
-        <td>Contagious Rage: May use Share Rage unlimited times, sharing instinct and specialization abilities</td>
+        <td>Contagious Rage: May use Share Rage unlimited times, also sharing instinct and specialization abilities</td>
       </tr><tr style="text-align:center">
-        <td>Deny Advantage: Foes of equal or lower level cannot inflict flat-footed</td>
+        <td>Deny Advantage: Does not suffer flat-footed to foes of equal or lower level</td>
       </tr><tr style="text-align:center">
-        <td>Devastator: Successful melee Strikes ignore 10 points of physical resistance</td>
+        <td>Devastator: Successful melee Strikes ignore 10 points of physical damage resistance</td>
       </tr><tr style="text-align:center">
         <td>Draconic Rage: May inflict +4 HP fire damage instead of +2 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
-        <td>Dragon's Rage Breath: May use breath to inflict 20d6 damage in a 30' cone or 60' line (Ref neg; half distance and damage for a 2nd breath use within 1 hour)</td>
+        <td>Dragon's Rage Breath: May use breath to inflict 20d6 damage in a 30' cone or 60' line 1/rage (Ref neg; half distance and damage for a 2nd breath use within 1 hour)</td>
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Wings: May fly 25'/rd during rage</td>
       </tr><tr style="text-align:center">
@@ -341,25 +335,25 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Furious Sprint: May use 2 actions to Stride 125' in a straight line, or 3 actions to Stride 200'</td>
       </tr><tr style="text-align:center">
-        <td>Giant's Lunge: Melee weapons and unarmed attacks gain reach 10' until rage ends</td>
+        <td>Giant's Lunge: May extend reach of melee weapons and unarmed attacks to 10' until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Giant's Stature: May grow to Large size, gaining +5' reach and suffering clumsy 1, until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Great Cleave: May continue to Cleave adjacent foes as long as Strikes incapacitate</td>
       </tr><tr style="text-align:center">
-        <td>Knockback: Successful Strike Shoves foe 5'</td>
+        <td>Knockback: May shove foe 5' after a successful Strike</td>
       </tr><tr style="text-align:center">
-        <td>Mighty Rage: May use 2-action rage activities</td>
+        <td>Mighty Rage: May use a rage action as a free action when entering rage</td>
       </tr><tr style="text-align:center">
-        <td>Moment Of Clarity: May use concentration actions during rage</td>
+        <td>Moment Of Clarity: During rage, may use 1 action to allow use of concentration actions for the remainder of the turn</td>
       </tr><tr style="text-align:center">
         <td>No Escape: May use a Reaction to Stride along with retreating foe</td>
       </tr><tr style="text-align:center">
-        <td>Perfect Clarity: May end rage for +2 reroll on failed attack or Will save</td>
+        <td>Perfect Clarity: May use a Reaction to end rage for a +2 reroll on a failed attack or Will save</td>
       </tr><tr style="text-align:center">
-        <td>Predator's Pounce: May Strike after moving 25'</td>
+        <td>Predator's Pounce: May Strike after moving 25' in light or no armor</td>
       </tr><tr style="text-align:center">
-        <td>Quick Rage: May re-enter Rage after 1 turn</td>
+        <td>Quick Rage: May re-enter rage after 1 turn</td>
       </tr><tr style="text-align:center">
         <td>Rage: May gain 24 temporary Hit Points and +12 HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages</td>
       </tr><tr style="text-align:center">
@@ -369,7 +363,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Second Wind: May immediately re-enter rage; suffers fatigue afterwards until 10 min rest</td>
       </tr><tr style="text-align:center">
-        <td>Shake It Off: May reduce frightened condition by 1 and gain a Fortitude save to reduce sickened condition during rage</td>
+        <td>Shake It Off: May reduce a frightened condition by 1 and reduce a sickened condition by 1/2/3 with a fail/success/critical success on a Fortitude save during rage</td>
       </tr><tr style="text-align:center">
         <td>Share Rage: R30' May give an ally the effects of Rage 1/rage</td>
       </tr><tr style="text-align:center">
@@ -377,25 +371,27 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Spirit Rage: May inflict +3 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
+        <td>Spirit's Wrath: May make a R120' +33 spirit Strike that inflicts 4d8+4 HP negative or positive damage; a citical hit also inflits frightened 1</td>
+      </tr><tr style="text-align:center">
         <td>Spirits'Interference: Foe ranged attacks require a DC 5 flat check until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Sudden Charge: May use 2 actions to make a melee Strike after a double Stride</td>
       </tr><tr style="text-align:center">
         <td>Sudden Leap: May use 2 actions to make a Strike during a Leap, High Jump, or Long Jump</td>
       </tr><tr style="text-align:center">
-        <td>Swipe: May use two actions to attack two adjacent foes with one Strike</td>
+        <td>Swipe: May use 2 actions to attack 2 adjacent foes with a single Strike</td>
       </tr><tr style="text-align:center">
         <td>Terrifying Howl: R30' Successful Intimidate Demoralizes multiple foes</td>
       </tr><tr style="text-align:center">
-        <td>Thrash: May inflict 17+specialization damage to grabbed foe (Fort neg)</td>
+        <td>Thrash: May inflict 17B HP + specialization damage to grabbed foe (Fort neg)</td>
       </tr><tr style="text-align:center">
-        <td>Titan Mauler: May use weapons made for a larger creature, gaining +6 damage and suffering clumsy 1</td>
+        <td>Titan Mauler: May use weapons made for a larger creature, gaining +6 HP damage and suffering clumsy 1</td>
       </tr><tr style="text-align:center">
         <td>Titan's Stature: May grow to Huge size, gaining +10' reach and suffering clumsy 1, until rage ends</td>
       </tr><tr style="text-align:center">
-        <td>Vengeful Strike: May use a Reaction to make a Strike when hit by a Strike</td>
+        <td>Vengeful Strike: May use a Reaction while using Come And Get Me to make a Strike when hit by a Strike</td>
       </tr><tr style="text-align:center">
-        <td>Vicious Evisceration: May use 2 actions to inflict drained 1 (critical success drained 2)</td>
+        <td>Vicious Evisceration: May use 2 actions for a Strike that inflicts drained 1 (critical success drained 2)</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: +4/+6/+8 HP damage with expert/master/legendary weapon proficiency</td>
       </tr><tr style="text-align:center">
@@ -441,11 +437,23 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Animal Form</td>
+    </tr><tr style="text-align:left">
+      <td>Dragon Form</td>
+    </tr><tr style="text-align:left">
+      <td>Earthquake</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Animal Rage: May use <i>Animal Form</i> to transform into spirit animal at will</td>
+      <td><i>Animal Rage: May use <i>Animal Form</i> effects to transform into spirit animal at will</i></td>
     </tr><tr style="text-align:center">
-      <td>Quaking Stomp: May use effects of <i>Earthquake</i> 1/10 min</td>
+      <td><i>Dragon Transformation: May use <i>Dragon Form</i> effects, with +20 fly speed, +12 dragon Strikes, and +14 HP breath weapon damage, during rage</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Quaking Stomp: May use <i>Earthquake</i> effects 1/10 min</i></td>
     </tr></table>
 </td>
   </tr></table>
@@ -459,7 +467,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Barbarian Instinct Allocation: 1 available vs. 22 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 14 available vs. 49 allocated</td>
+        <td>Class Feats Allocation: 13 available vs. 49 allocated</td>
       </tr></table>
 </td>
     </tr></table>
