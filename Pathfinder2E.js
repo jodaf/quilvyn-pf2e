@@ -554,11 +554,8 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Deity","1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -3558,7 +3555,6 @@ Pathfinder2E.FEATURES = {
   'Champion Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   "Champion's Code":'Section=feature Note="1 selection"',
-  "Champion's Reaction":'Section=feature Note="Has %V feature"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -3576,7 +3572,7 @@ Pathfinder2E.FEATURES = {
   'Divine Ally (Shield)':
     'Section=combat Note="+2 shield hardness/+50% shield Hit Points"',
   'Divine Ally (Steed)':
-    'Section=feature Note="Has a mount as an animal companion"',
+    'Section=feature Note="Has a mount as a young animal companion"',
   'Divine Smite (Liberator)':
     'Section=combat ' +
     'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
@@ -3602,7 +3598,7 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' May use Glimpse Of Redemption to grant allies %{level} damage resistance"',
   'Glimpse Of Redemption':
     'Section=combat ' +
-    'Note="R15\' May use a Reaction to negate damage to a struck ally or to grant ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
+    'Note="R15\' May use a Reaction to negate damage to a struck ally or to grant the ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
   "Hero's Defiance":
     'Section=magic Note="Knows the <i>Hero\'s Defiance</i> spell"',
@@ -3615,19 +3611,22 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' May use a Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
   'Liberator':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Liberating Step feature for Champion\'s Reaction",' +
       '"Must always respect others\' freedom and oppose tyranny",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Retributive Strike feature for Champion\'s Reaction",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   'Redeemer':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Glimpse Of Redemption feature for Champion\'s Reaction",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   'Retributive Strike':
@@ -10640,19 +10639,17 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a second Step"',
       'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
     );
-    rules.defineRule('combatNotes.liberatingStep',
-      "featureNotes.champion'sReaction", '+', 'null' // italics
-    );
     rules.defineRule('focusPoints', 'magicNotes.devotionSpells', '+=', '1');
-    rules.defineRule("featureNotes.champion'sReaction",
-      'features.Liberator', '=', '"<i>Liberating Step</i>"',
-      'features.Paladin', '=', '"<i>Retributive Strike</i>"',
-      'features.Redeemer', '=', '"<i>Glimpse Of Redemption</i>"'
-    );
     rules.defineRule('featureNotes.divineAlly',
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
     );
+    rules.defineRule
+      ('features.Glimpse Of Redemption', 'featureNotes.redeemer', '=', '1');
+    rules.defineRule
+      ('features.Liberating Step', 'featureNotes.liberator', '=', '1');
+    rules.defineRule
+      ('features.Retributive Strike', 'featureNotes.paladin', '=', '1');
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.cause', '=', '1'
     );
@@ -10678,6 +10675,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule
+      ("spells.Hero's Defiance", "magicNotes.hero'sDefiance", '=', '1');
   } else if(name == 'Cleric') {
     rules.defineRule('combatNotes.cloisteredCleric',
       'level', '?', 'source>=11',
