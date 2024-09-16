@@ -7,16 +7,17 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/background/nomad", 
-  "abilityBoosts.charisma":2, "abilityBoosts.constitution":2, "abilityBoosts.strength":4, 
+  "abilityBoosts.charisma":2, "abilityBoosts.constitution":2, "abilityBoosts.strength":3, 
   "abilityBoosts.wisdom":1, "abilityGeneration":"All 10s; standard ancestry boosts", 
   "alignment":"Neutral Good", "ancestry":"Human", "armor":"Scale Mail", "background":"Nomad", 
   "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, "experience":508, 
   "feats.Exacting Strike":1, "feats.Haughty Obstinacy":1, "gender":"Female", "intelligence":10, 
   "languages.Ignan":1, "levels.Fighter":1, "name":"Background-Nomad", 
-  "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Steel", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Alcohol Lore":1, "skillIncreases.Crafting":1, "skillIncreases.Desert Lore":1, 
-  "skillIncreases.Diplomacy":1, "skillIncreases.Scouting Lore":1, "strength":10, "weapons.Bastard Sword":1, 
-  "weapons.Falchion":1, "weapons.Morningstar":1, "wisdom":10
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Steel", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Crafting":1, 
+  "skillIncreases.Desert Lore":1, "skillIncreases.Diplomacy":1, "skillIncreases.Scouting Lore":1, 
+  "strength":10, "weapons.Bastard Sword":1, "weapons.Falchion":1, "weapons.Morningstar":1, 
+  "wisdom":10
 };
   </script>
 </head>
@@ -66,14 +67,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Exacting Strike; Haughty Obstinacy</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Nomad Features</b>: Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any); Assurance (Survival); Skill Trained (Survival; Choose 1 from any Terrain Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
       </tr></table>
@@ -84,6 +85,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr></table>
 </td>
     </tr></table>

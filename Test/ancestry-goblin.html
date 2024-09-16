@@ -7,7 +7,7 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/ancestry/goblin", 
-  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":2, 
+  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":1, 
   "abilityBoosts.intelligence":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Goblin", "armor":"None", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
@@ -17,12 +17,12 @@ var attributes = {
   "feats.Junk Tinker":1, "feats.Point-Blank Shot":1, "feats.Rough Rider":1, 
   "feats.Skittering Scuttle":1, "feats.Very Sneaky":1, "feats.Very, Very Sneaky":1, "gender":"Female", 
   "intelligence":10, "languages.Halfling":1, "languages.Ignan":1, "levels.Fighter":1, 
-  "name":"Ancestry-Goblin", "selectableFeatures.Goblin - Charhide Goblin":1, 
-  "selectableFeatures.Goblin - Irongut Goblin":1, "selectableFeatures.Goblin - Razortooth Goblin":1, 
-  "selectableFeatures.Goblin - Snow Goblin":1, "selectableFeatures.Goblin - Unbreakable Goblin":1, "shield":"None", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Folktale Lore":1, "skillIncreases.Heaven Lore":1, 
-  "skillIncreases.Magnimar Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Owlbear Lore":1, 
-  "strength":10, "wisdom":10
+  "name":"Ancestry-Goblin", "selectableFeatures.Fighter - Dexterity":1, 
+  "selectableFeatures.Goblin - Charhide Goblin":1, "selectableFeatures.Goblin - Irongut Goblin":1, 
+  "selectableFeatures.Goblin - Razortooth Goblin":1, "selectableFeatures.Goblin - Snow Goblin":1, 
+  "selectableFeatures.Goblin - Unbreakable Goblin":1, "shield":"None", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Folktale Lore":1, "skillIncreases.Heaven Lore":1, "skillIncreases.Magnimar Lore":1, 
+  "skillIncreases.Mercantile Lore":1, "skillIncreases.Owlbear Lore":1, "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -78,14 +78,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Goblin (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Goblin (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Burn It!; Cave Climber; City Scavenger; Goblin Lore; Goblin Scuttle; Goblin Song; Goblin Weapon Expertise; Goblin Weapon Familiarity; Goblin Weapon Frenzy; Junk Tinker; Point-Blank Shot; Rough Rider; Skittering Scuttle; Very Sneaky; Very, Very Sneaky</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Goblin Features</b>: Ability Boost (Charisma; Dexterity; Choose 1 from any); Ability Flaw (Wisdom); Ancestry Feats; Charhide Goblin; Darkvision; Irongut Goblin; Razortooth Goblin; Small; Snow Goblin; Unbreakable Goblin</td>
       </tr></table>
@@ -96,6 +96,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Rough Rider: Has Ride feature</i></td>
       </tr><tr style="text-align:center">

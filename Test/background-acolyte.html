@@ -7,13 +7,13 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/background/acolyte", 
-  "abilityBoosts.constitution":2, "abilityBoosts.dexterity":2, "abilityBoosts.intelligence":2, 
+  "abilityBoosts.constitution":2, "abilityBoosts.dexterity":1, "abilityBoosts.intelligence":2, 
   "abilityBoosts.strength":1, "abilityBoosts.wisdom":2, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Hide", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":502, "feats.Exacting Strike":1, "feats.Haughty Obstinacy":1, "gender":"Female", 
   "intelligence":10, "languages.Goblin":1, "languages.Halfling":1, "languages.Shadowtongue":1, 
-  "levels.Fighter":1, "name":"Background-Acolyte", 
+  "levels.Fighter":1, "name":"Background-Acolyte", "selectableFeatures.Fighter - Dexterity":1, 
   "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Buckler", "skillIncreases.Alcohol Lore":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, "skillIncreases.Milling Lore":1, 
   "skillIncreases.Taldan History Lore":1, "skillIncreases.Tea Lore":1, "skillIncreases.Theater Lore":1, "strength":10, 
@@ -73,14 +73,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Exacting Strike; Haughty Obstinacy</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
       </tr></table>
@@ -91,6 +91,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr></table>
 </td>
     </tr></table>

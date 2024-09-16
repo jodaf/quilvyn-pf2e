@@ -7,17 +7,18 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/background/scout", 
-  "abilityBoosts.charisma":1, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":2, 
+  "abilityBoosts.charisma":1, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":1, 
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":1, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Hide", 
   "background":"Scout", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":23, "feats.Natural Skill":1, "feats.Power Attack":1, "gender":"Male", 
   "intelligence":10, "languages.Draconic":1, "languages.Halfling":1, "levels.Fighter":1, 
-  "name":"Background-Scout", "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Buckler", 
-  "skillIncreases.Academia Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, 
-  "skillIncreases.Astral Plane Lore":1, "skillIncreases.Forest Lore":1, "skillIncreases.Goblin Lore":1, 
-  "skillIncreases.Herbalism Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Stealth":1, 
-  "strength":10, "weapons.Bo Staff":1, "weapons.Glaive":1, "weapons.Javelin":1, "wisdom":10
+  "name":"Background-Scout", "selectableFeatures.Fighter - Dexterity":1, 
+  "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"Buckler", "skillIncreases.Academia Lore":1, 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Astral Plane Lore":1, 
+  "skillIncreases.Forest Lore":1, "skillIncreases.Goblin Lore":1, "skillIncreases.Herbalism Lore":1, 
+  "skillIncreases.Mercantile Lore":1, "skillIncreases.Stealth":1, "strength":10, "weapons.Bo Staff":1, 
+  "weapons.Glaive":1, "weapons.Javelin":1, "wisdom":10
 };
   </script>
 </head>
@@ -73,14 +74,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Natural Skill; Power Attack</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Scout Features</b>: Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any); Forager; Skill Trained (Survival; Choose 1 from any Terrain Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
       </tr></table>
@@ -91,6 +92,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr></table>
 </td>
     </tr></table>

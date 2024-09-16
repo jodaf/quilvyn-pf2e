@@ -8,16 +8,16 @@
 var attributes = {
   "_path":"ztest/pf2e/background/miner", 
   "abilityBoosts.charisma":1, "abilityBoosts.constitution":2, "abilityBoosts.dexterity":2, 
-  "abilityBoosts.intelligence":1, "abilityBoosts.strength":3, 
+  "abilityBoosts.intelligence":1, "abilityBoosts.strength":2, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Full Plate", 
   "background":"Miner", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":955, "feats.Canny Acumen (Perception)":1, "feats.Snagging Strike":1, 
   "feats.Unconventional Weaponry":1, "gender":"Male", "intelligence":10, "languages.Halfling":1, 
   "languages.Jotun":1, "levels.Fighter":1, "name":"Background-Miner", 
-  "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"Tower", "skillIncreases.Accounting Lore":1, 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Herbalism Lore":1, 
-  "skillIncreases.Library Lore":1, "strength":10, "weapons.Hatchet":1, "weapons.Scimitar":1, "weapons.Whip":1, 
-  "wisdom":10
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"Tower", 
+  "skillIncreases.Accounting Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, 
+  "skillIncreases.Herbalism Lore":1, "skillIncreases.Library Lore":1, "strength":10, "weapons.Hatchet":1, 
+  "weapons.Scimitar":1, "weapons.Whip":1, "wisdom":10
 };
   </script>
 </head>
@@ -73,14 +73,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry; Class; General</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Canny Acumen (Perception); Snagging Strike; Unconventional Weaponry</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Miner Features</b>: Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any); Skill Trained (Survival; Mining Lore); Terrain Expertise (Underground)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Versatile Heritage Human</td>
       </tr></table>
@@ -91,6 +91,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Heritage Human: +1 General Feat</i></td>
       </tr></table>

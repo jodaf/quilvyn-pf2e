@@ -7,18 +7,18 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/background/noble", 
-  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":1, 
-  "abilityBoosts.intelligence":3, "abilityBoosts.strength":1, "abilityBoosts.wisdom":1, 
+  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.intelligence":3, 
+  "abilityBoosts.strength":1, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Full Plate", 
   "background":"Noble", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":499, "feats.Canny Acumen (Perception)":1, "feats.Haughty Obstinacy":1, 
   "feats.Sudden Charge":1, "gender":"Female", "intelligence":10, "languages.Gnoll":1, 
   "languages.Gnomish":1, "languages.Goblin":1, "languages.Halfling":1, "levels.Fighter":1, 
-  "name":"Background-Noble", "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"Wooden", 
-  "skillIncreases.Athletics":1, "skillIncreases.Engineering Lore":1, "skillIncreases.Forest Lore":1, 
-  "skillIncreases.Heraldry Lore":2, "skillIncreases.Midwifery Lore":1, "skillIncreases.Mountain Lore":1, 
-  "skillIncreases.Stabling Lore":1, "strength":10, "weapons.Greatpick":1, "weapons.Kukri":1, 
-  "weapons.Warhammer":1, "wisdom":10
+  "name":"Background-Noble", "selectableFeatures.Fighter - Dexterity":1, 
+  "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"Wooden", "skillIncreases.Athletics":1, 
+  "skillIncreases.Engineering Lore":1, "skillIncreases.Forest Lore":1, "skillIncreases.Heraldry Lore":2, 
+  "skillIncreases.Midwifery Lore":1, "skillIncreases.Mountain Lore":1, "skillIncreases.Stabling Lore":1, 
+  "strength":10, "weapons.Greatpick":1, "weapons.Kukri":1, "weapons.Warhammer":1, "wisdom":10
 };
   </script>
 </head>
@@ -74,14 +74,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry; Class; General</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Canny Acumen (Perception); Haughty Obstinacy; Sudden Charge</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Noble Features</b>: Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Courtly Graces; Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Versatile Heritage Human</td>
       </tr></table>
@@ -92,6 +92,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Heritage Human: +1 General Feat</i></td>
       </tr></table>

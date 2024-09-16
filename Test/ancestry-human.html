@@ -7,7 +7,7 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2e/ancestry/human", 
-  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":2, 
+  "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.dexterity":1, 
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"None", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
@@ -22,12 +22,13 @@ var attributes = {
   "feats.Supernatural Charm":1, "feats.Toughness":1, "feats.Unconventional Expertise":1, 
   "feats.Unconventional Weaponry":1, "feats.Victorious Vigor":1, "gender":"Female", "intelligence":10, 
   "languages.Goblin":1, "languages.Halfling":1, "levels.Fighter":1, "name":"Ancestry-Human", 
-  "selectableFeatures.Bard - Enigma Muse":1, "selectableFeatures.Elf - Woodland Elf":1, 
-  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Human - Half-Orc":1, 
-  "selectableFeatures.Human - Skilled Heritage Human":1, "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"None", 
-  "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Dwarven Lore":1, 
-  "skillIncreases.Games Lore":1, "skillIncreases.Goblin Lore":1, "skillIncreases.Milling Lore":1, 
-  "skillIncreases.Scouting Lore":1, "skillIncreases.Theater Lore":1, "strength":10, "wisdom":10
+  "selectableFeatures.Bard - Enigma":1, "selectableFeatures.Elf - Woodland Elf":1, 
+  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Human - Half-Elf":1, 
+  "selectableFeatures.Human - Half-Orc":1, "selectableFeatures.Human - Skilled Heritage Human":1, 
+  "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"None", "skillIncreases.Alcohol Lore":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Dwarven Lore":1, "skillIncreases.Games Lore":1, 
+  "skillIncreases.Goblin Lore":1, "skillIncreases.Milling Lore":1, "skillIncreases.Scouting Lore":1, 
+  "skillIncreases.Theater Lore":1, "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -77,15 +78,15 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 3; General: 2</td>
-        <td><b>Selectable Feature Count</b>: Bard (Muse); Elf (Heritage); Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Bard (Muse); Elf (Heritage); Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Bard Dedication; Clever Improviser; Cooperative Nature; Cooperative Soul; Double Slice; Elf Atavism; General Training; Haughty Obstinacy; Incredible Ferocity; Incredible Improvisation; Inspire Imitation; Monstrous Peacemaker; Multitalented; Natural Ambition; Natural Skill; Orc Ferocity; Orc Sight; Orc Superstition; Orc Weapon Carnage; Orc Weapon Expertise; Orc Weapon Familiarity; Pervasive Superstition; Ride; Snagging Strike; Supernatural Charm; Toughness; Unconventional Expertise; Unconventional Weaponry; Victorious Vigor</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
-        <td><b>Bard Features</b>: Enigma Muse</td>
+        <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Bard Features</b>: Enigma</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Half-Orc; Skilled Heritage Human; Versatile Heritage Human</td>
         <td><b>Elf Features</b>: Woodland Elf</td>
@@ -102,6 +103,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Elf Atavism: Has an elven heritage</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Enigma: Has Bardic Lore feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>General Training: +1 General Feat</i></td>
@@ -109,6 +112,8 @@ var attributes = {
         <td><i>Half-Elf: Has Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Half-Orc: Has Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Muses: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -137,35 +142,39 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +2 (dexterity; untrained)</td>
       <td>Games Lore: +4 (intelligence; trained)</td>
-      <td>Religion: +4 (wisdom; trained)</td>
+      <td>Scouting Lore: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Alcohol Lore: +4 (intelligence; trained)</td>
       <td>Goblin Lore: +4 (intelligence; trained)</td>
-      <td>Scouting Lore: +4 (intelligence; trained)</td>
+      <td>Scribing Lore: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +1 (intelligence; untrained)</td>
       <td>Intimidation: +2 (charisma; untrained)</td>
-      <td>Scribing Lore: +4 (intelligence; trained)</td>
+      <td>Society: +1 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +5 (strength; trained)</td>
       <td>Medicine: +1 (wisdom; untrained)</td>
-      <td>Society: +1 (intelligence; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Crafting: +1 (intelligence; untrained)</td>
-      <td>Milling Lore: +4 (intelligence; trained)</td>
       <td>Stealth: +2 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +2 (charisma; untrained)</td>
-      <td>Nature: +1 (wisdom; untrained)</td>
+      <td>Bardic Lore: +6 (intelligence; expert)</td>
+      <td>Milling Lore: +4 (intelligence; trained)</td>
       <td>Survival: +1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +2 (charisma; untrained)</td>
-      <td>Occultism: +4 (intelligence; trained)</td>
+      <td>Crafting: +1 (intelligence; untrained)</td>
+      <td>Nature: +1 (wisdom; untrained)</td>
       <td>Theater Lore: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Dwarven Lore: +4 (intelligence; trained)</td>
-      <td>Performance: +5 (charisma; trained)</td>
+      <td>Deception: +2 (charisma; untrained)</td>
+      <td>Occultism: +4 (intelligence; trained)</td>
       <td>Thievery: +2 (dexterity; untrained)</td>
+    </tr><tr style="text-align:left">
+      <td>Diplomacy: +2 (charisma; untrained)</td>
+      <td>Performance: +5 (charisma; trained)</td>
+      <td></td>
+    </tr><tr style="text-align:left">
+      <td>Dwarven Lore: +4 (intelligence; trained)</td>
+      <td>Religion: +4 (wisdom; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -174,6 +183,8 @@ var attributes = {
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Bard Dedication: Skill Trained (Occultism; Performance)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Bardic Lore: May use Bardic Lore to Recall Knowledge on any topic</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -298,17 +309,25 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: O0: 2</td>
         <td><b>Attack</b>: Occult: +5 (charisma; trained)</td>
-        <td><b>Spell DC</b>: Occult: 13 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Occult: 15 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Spells</b>: Charm</td>
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Charm: 1</td>
+    </tr><tr style="text-align:left">
+      <td>True Strike (A/O1 Divi): FILL</td>
+    </tr></table>
+</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Bard Dedication: Spell Trained(Occult)/Knows 2 Occult cantrips</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Enigma: Knows the <i>True Strike</i> spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Supernatural Charm: May cast 1st level <i>Charm</i> 1/day</i></td>
     </tr><tr style="text-align:center">
@@ -331,6 +350,8 @@ var attributes = {
         <td>Ancestry Feats Allocation: 1 available vs. 26 allocated</td>
       </tr><tr style="text-align:center">
         <td>Bard Dedication Feat: Requires level (currently 1) >= 2 and charisma (currently 14) >= 14</td>
+      </tr><tr style="text-align:center">
+        <td>Bard-Enigma Selectable Feature: Requires bard level</td>
       </tr><tr style="text-align:center">
         <td>Clever Improviser Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">

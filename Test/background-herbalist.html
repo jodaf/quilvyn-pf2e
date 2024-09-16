@@ -8,16 +8,16 @@
 var attributes = {
   "_path":"ztest/pf2e/background/herbalist", 
   "abilityBoosts.charisma":1, "abilityBoosts.constitution":2, "abilityBoosts.dexterity":1, 
-  "abilityBoosts.intelligence":1, "abilityBoosts.strength":2, "abilityBoosts.wisdom":2, 
+  "abilityBoosts.intelligence":1, "abilityBoosts.strength":1, "abilityBoosts.wisdom":2, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Chain Mail", 
   "background":"Herbalist", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":995, "feats.Power Attack":1, "feats.Unconventional Weaponry":1, "gender":"Male", 
   "intelligence":10, "languages.Halfling":1, "languages.Orcish":1, "levels.Fighter":1, 
-  "name":"Background-Herbalist", "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"None", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Baking Lore":1, 
-  "skillIncreases.Folktale Lore":1, "skillIncreases.Performance":1, "skillIncreases.Vampire Lore":1, 
-  "strength":10, "weapons.Hand Crossbow":1, "weapons.Katana":1, "weapons.Light Hammer":1, 
-  "wisdom":10
+  "name":"Background-Herbalist", "selectableFeatures.Fighter - Strength":1, 
+  "selectableFeatures.Human - Skilled Heritage Human":1, "shield":"None", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Alcohol Lore":1, "skillIncreases.Baking Lore":1, "skillIncreases.Folktale Lore":1, 
+  "skillIncreases.Performance":1, "skillIncreases.Vampire Lore":1, "strength":10, "weapons.Hand Crossbow":1, 
+  "weapons.Katana":1, "weapons.Light Hammer":1, "wisdom":10
 };
   </script>
 </head>
@@ -73,14 +73,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Power Attack; Unconventional Weaponry</td>
-        <td><b>Fighter Features</b>: Ability Boost (Choose 1 from Dexterity, Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
+        <td><b>Fighter Features</b>: Ability Boost (Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Herbalist Features</b>: Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any); Natural Medicine; Skill Trained (Nature; Herbalism Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
       </tr></table>
@@ -91,6 +91,8 @@ var attributes = {
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Key Ability: 1 selection</i></td>
       </tr></table>
 </td>
     </tr></table>

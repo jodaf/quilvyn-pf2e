@@ -527,7 +527,7 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Enigma Muse:Muse","1:Maestro Muse:Muse","1:Polymath Muse:Muse" ' +
+      '"1:Enigma:Muse","1:Maestro:Muse","1:Polymath:Muse" ' +
     'SpellSlots=' +
       'O0:5@1,' +
       'O1:2@1;3@2,' +
@@ -543,7 +543,10 @@ Pathfinder2E.CLASSES = {
   'Champion':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Champion Skills",' +
@@ -572,6 +575,7 @@ Pathfinder2E.CLASSES = {
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
       '"17:Legendary Armor","19:Hero\'s Defiance" ' +
     'Selectables=' +
+      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
       '"1:The Tenets Of Good:Champion\'s Code",' +
       '"1:Divine Ally (Blade):Divine Ally","1:Divine Ally (Shield):Divine Ally","1:Divine Ally (Steed):Divine Ally",' +
       '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
@@ -643,7 +647,10 @@ Pathfinder2E.CLASSES = {
   'Fighter':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Fighter Skills",' +
@@ -656,11 +663,16 @@ Pathfinder2E.CLASSES = {
       '"7:Weapon Specialization","9:Combat Flexibility","9:Juggernaut",' +
       '"11:Armor Expertise","11:Fighter Expertise","13:Weapon Legend",' +
       '"15:Evasion","15:Greater Weapon Specialization",' +
-      '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend"',
+      '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
+    'Selectables=' +
+      '"1:Dexterity:Key Ability","1:Strength:Key Ability"',
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
@@ -677,6 +689,7 @@ Pathfinder2E.CLASSES = {
       '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
       '"features.Ki Spells ? 1:Ki Tradition" ' +
     'Selectables=' +
+      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
       '"1:Ki Tradition (Divine):Ki Tradition",' +
       '"1:Ki Tradition (Occult):Ki Tradition",' +
       '"7:Path To Perfection (Fortitude):Perfection",' +
@@ -685,7 +698,10 @@ Pathfinder2E.CLASSES = {
   'Ranger':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
       '"1:Ranger Skills",' +
@@ -702,6 +718,7 @@ Pathfinder2E.CLASSES = {
       '"15:Incredible Senses","17:Masterful Hunter","19:Second Skin",' +
       '"19:Swift Prey" ' +
     'Selectables=' +
+      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
       '"1:Flurry:Hunter\'s Edge",' +
       '"1:Precision:Hunter\'s Edge",' +
       '"1:Outwit:Hunter\'s Edge"',
@@ -1152,66 +1169,66 @@ Pathfinder2E.FEATS = {
     'Type=Class,Barbarian Require="level >= 20","features.Share Rage"',
   'Quaking Stomp':'Type=Class,Barbarian Require="level >= 20"',
 
-  'Bardic Lore':'Type=Class,Bard Require="features.Enigma Muse"',
-  'Lingering Composition':'Type=Class,Bard Require="features.Maestro Muse"',
+  'Bardic Lore':'Type=Class,Bard Require="features.Enigma"',
+  'Lingering Composition':'Type=Class,Bard Require="features.Maestro"',
   'Reach Spell':'Type=Class,Bard,Cleric,Druid,Sorcerer,Wizard',
-  'Versatile Performance':'Type=Class,Bard Require="features.Polymath Muse"',
+  'Versatile Performance':'Type=Class,Bard Require="features.Polymath"',
   'Cantrip Expansion':
     'Type=Class,Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
   'Esoteric Polymath':
-    'Type=Class,Bard Require="level >= 2","features.Polymath Muse"',
+    'Type=Class,Bard Require="level >= 2","features.Polymath"',
   'Inspire Competence':
-    'Type=Class,Bard Require="level >= 2","features.Maestro Muse"',
+    'Type=Class,Bard Require="level >= 2","features.Maestro"',
   "Loremaster's Etude":
-    'Type=Class,Bard Require="level >= 2","features.Enigma Muse"',
-  'Multifarious Muse (Enigma Muse)':
-    'Type=Class,Bard Require="level >= 2","bardFeatures.Enigma Muse == 0"',
-  'Multifarious Muse (Maestro Muse)':
-    'Type=Class,Bard Require="level >= 2","bardFeatures.Maestro Muse == 0"',
-  'Multifarious Muse (Polymath Muse)':
-    'Type=Class,Bard Require="level >= 2","bardFeatures.Polymath Muse == 0"',
+    'Type=Class,Bard Require="level >= 2","features.Enigma"',
+  'Multifarious Muse (Enigma)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Enigma == 0"',
+  'Multifarious Muse (Maestro)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Maestro == 0"',
+  'Multifarious Muse (Polymath)':
+    'Type=Class,Bard Require="level >= 2","bardFeatures.Polymath == 0"',
   'Inspire Defense':
-    'Type=Class,Bard Require="level >= 4","features.Maestro Muse"',
+    'Type=Class,Bard Require="level >= 4","features.Maestro"',
   'Melodious Spell':'Type=Class,Bard Require="level >= 4"',
   'Triple Time':'Type=Class,Bard Require="level >= 4"',
   'Versatile Signature':
-    'Type=Class,Bard Require="level >= 4","features.Polymath Muse"',
+    'Type=Class,Bard Require="level >= 4","features.Polymath"',
   'Dirge Of Doom':'Type=Class,Bard Require="level >= 6"',
-  'Harmonize':'Type=Class,Bard Require="level >= 6","features.Maestro Muse"',
+  'Harmonize':'Type=Class,Bard Require="level >= 6","features.Maestro"',
   'Steady Spellcasting':
     'Type=Class,Bard,Cleric,Druid,Sorcerer,Wizard Require="level >= 6"',
   'Eclectic Skill':
     'Type=Class,Bard ' +
     'Require=' +
       '"level >= 8",' +
-      '"features.Polymath Muse",' +
+      '"features.Polymath",' +
       '"rank.Occultism >= 3"',
   'Inspire Heroics':
-    'Type=Class,Bard Require="level >= 8","features.Maestro Muse"',
+    'Type=Class,Bard Require="level >= 8","features.Maestro"',
   'Know-It-All':
-    'Type=Class,Bard Require="level >= 8","features.Enigma Muse"',
+    'Type=Class,Bard Require="level >= 8","features.Enigma"',
   'House Of Imaginary Walls':'Type=Class,Bard Require="level >= 10"',
   'Quickened Casting':'Type=Class,Bard,Sorcerer,Wizard Require="level >= 10"',
   'Unusual Composition':
-    'Type=Class,Bard Require="level >= 10","features.Polymath Muse"',
+    'Type=Class,Bard Require="level >= 10","features.Polymath"',
   'Eclectic Polymath':
     'Type=Class,Bard Require="level >= 12","features.Esoteric Polymath"',
   'Inspirational Focus':'Type=Class,Bard Require="level >= 12"',
   'Allegro':'Type=Class,Bard Require="level >= 14"',
   'Soothing Ballad':'Type=Class,Bard Require="level >= 14"',
   'True Hypercognition':
-    'Type=Class,Bard Require="level >= 14","features.Enigma Muse"',
+    'Type=Class,Bard Require="level >= 14","features.Enigma"',
   'Effortless Concentration':
     'Type=Class,Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
   'Studious Capacity':
     'Type=Class,Bard ' +
     'Require=' +
       '"level >= 16",' +
-      '"features.Enigma Muse",' +
+      '"features.Enigma",' +
       '"rank.Occultism >= 4"',
   'Deep Lore':'Type=Class,Bard Require="level >= 18"',
   'Eternal Composition':
-    'Type=Class,Bard Require="level >= 18","features.Maestro Muse"',
+    'Type=Class,Bard Require="level >= 18","features.Maestro"',
   'Impossible Polymath':
     'Type=Class,Bard ' +
     'Require=' +
@@ -3377,7 +3394,7 @@ Pathfinder2E.FEATURES = {
   'Composition Spells':
     'Section=magic ' +
     'Note="Has a Focus Pool with 1 Focus Point/Knows the <i>Counter Performance</i> and <i>Inspire Courage</i> spells"',
-  'Enigma Muse':
+  'Enigma':
     'Section=feature,magic ' +
     'Note=' +
       '"Has Bardic Lore feature",' +
@@ -3393,7 +3410,7 @@ Pathfinder2E.FEATURES = {
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
   // Lightning Reflexes as above
-  'Maestro Muse':
+  'Maestro':
     'Section=feature,magic ' +
     'Note=' +
       '"Has Lingering Composition feature",' +
@@ -3403,7 +3420,7 @@ Pathfinder2E.FEATURES = {
   'Muses':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
     'Section=magic Note="May learn spells from the Occult tradition"',
-  'Polymath Muse':
+  'Polymath':
     'Section=feature,magic ' +
     'Note=' +
       '"Has Versatile Performance feature",' +
@@ -3428,6 +3445,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':
+    // TODO Bard: add 2 cantrips from your spell list to your repertoire
     'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
@@ -3439,21 +3457,21 @@ Pathfinder2E.FEATURES = {
   "Loremaster's Etude":
     'Section=magic ' +
     'Note="Knows the <i>Loremaster\'s Etude<i> spell/+1 Focus Points"',
-  'Multifarious Muse (Enigma Muse)':
-    'Section=feature,magic ' +
+  'Multifarious Muse (Enigma)':
+    'Section=feature,feature ' +
     'Note=' +
-      '"May learn enigma muse feats",' +
-      '"Knows a 1st-level enigma muse spell"',
-  'Multifarious Muse (Maestro Muse)':
-    'Section=feature,magic ' +
+      '"+1 Class Feat",' +
+      '"May learn enigma muse feats"',
+  'Multifarious Muse (Maestro)':
+    'Section=feature,feature ' +
     'Note=' +
-      '"May learn maestro muse feats",' +
-      '"Knows a 1st-level maestro muse spell"',
-  'Multifarious Muse (Polymath Muse)':
-    'Section=feature,magic ' +
+      '"+1 Class Feat",' +
+      '"May learn maestro muse feats"',
+  'Multifarious Muse (Polymath)':
+    'Section=feature,feature ' +
     'Note=' +
-      '"May learn polymath muse feats",' +
-      '"Knows a 1st-level polymath muse spell"',
+      '"+1 Class Feat",' +
+      '"May learn polymath muse feats"',
   'Inspire Defense':
     'Section=magic Note="Knows the <i>Inspire Defense</i> cantrip"',
   'Melodious Spell':
@@ -3461,7 +3479,7 @@ Pathfinder2E.FEATURES = {
     'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
   'Triple Time':'Section=magic Note="Knows the <i>Triple Time</i> cantrip"',
   'Versatile Signature':
-    'Section=magic Note="May change 1 signature spell each day"',
+    'Section=magic Note="May replace 1 signature spell each day"',
   'Dirge Of Doom':'Section=magic Note="Knows the <i>Dirge Of Doom</i> cantrip"',
   'Harmonize':
     'Section=magic Note="May have 2 composition spells active simultaneously"',
@@ -3480,10 +3498,10 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="A successful Recall Knowledge grants additional information"',
   'House Of Imaginary Walls':
-    'Section=magic Note="Knows the <i>Imaginary Walls</i> cantrip"',
+    'Section=magic Note="Knows the <i>House Of Imaginary Walls</i> cantrip"',
   'Quickened Casting':
     'Section=magic ' +
-    'Note="Reduces the time required to cast a spell of level %1 or lower by 1 action"',
+    'Note="May reduce the time required to cast a spell of level %1 or lower by 1 action 1/day"',
   'Unusual Composition':
     'Section=magic ' +
     'Note="May replace somatic components of a composition spell with verbal components or vice versa"',
@@ -3496,7 +3514,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the <i>Soothing Ballad<i> spell/+1 Focus Points"',
   'True Hypercognition':
-    'Section=skill Note="May use 1 action for 5 Recall Knowledge actions"',
+    'Section=skill Note="May use 1 action to Recall Knowledge 5 times"',
   'Effortless Concentration':
     'Section=magic Note="May extend the duration of 1 spell as a free action"',
   'Studious Capacity':
@@ -3589,6 +3607,7 @@ Pathfinder2E.FEATURES = {
   "Hero's Defiance":
     'Section=magic Note="Knows the <i>Hero\'s Defiance</i> spell"',
   // Juggernaut as above
+  'Key Ability':'Section=feature Note="1 selection"',
   'Legendary Armor':
     'Section=combat ' +
     'Note="Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
@@ -10314,7 +10333,7 @@ Pathfinder2E.classRules = function(
       );
       rules.defineRule('spellDifficultyClass.' + spellType,
         'proficiencyBonus.' + spellType, '=', null,
-        spellModifier, '+', '8 + source'
+        spellModifier, '+', '10 + source'
       );
       rules.defineRule('spellAttackModifier.' + spellType + '.1',
         'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
@@ -10333,17 +10352,20 @@ Pathfinder2E.classRules = function(
 
   rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
   rules.defineRule('rank.' + name, 'training.' + name, '=', null);
-  rules.defineRule
-    ('classDifficultyClass.' + name + '.1', '', '=', '"' + abilities[0] + '"');
+  rules.defineRule('classDifficultyClass.' + name + '.1',
+    'classDifficultyClass.' + name, '=', '"' + abilities[0] + '"'
+  );
   let classAbilityModifier = abilities[0] + 'Modifier';
   if(abilities.length > 1) {
-    classAbilityModifier = 'bestAbilityModifier.' + name;
-    rules.defineRule(classAbilityModifier, classLevel, '?', null);
+    classAbilityModifier = 'chosenAbilityModifier';
     abilities.forEach(a => {
-      rules.defineRule
-        (classAbilityModifier, a + 'Modifier', '^=', null);
+      let modifier = a + 'Modifier';
+      a = a.charAt(0).toUpperCase() + a.substring(1);
+      rules.defineRule(classAbilityModifier,
+        modifier, '=', 'dict["features.' + a + '"] ? source : null'
+      );
       rules.defineRule('classDifficultyClass.' + name + '.1',
-        a + 'Modifier', '=', 'dict["' + classAbilityModifier + '"]==source ? "' + a + '" : null'
+        'features.' + a, '=', '"' + a.toLowerCase() + '"'
       );
     });
   }
@@ -10528,22 +10550,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.ragingIntimidation.1', '=', 'source=="" ? null : 1'
     );
   } else if(name == 'Bard') {
+    rules.defineRule('features.Bardic Lore', 'featureNotes.enigma', '=', '1');
     rules.defineRule
-      ('features.Bardic Lore', 'featureNotes.enigmaMuse', '=', '1');
-    rules.defineRule('features.Enigma Muse',
-      'featureNotes.multifariousMuse(EnigmaMuse)', '=', '1'
+      ('features.Enigma', 'featureNotes.multifariousMuse(Enigma)', '=', '1');
+    rules.defineRule
+      ('features.Lingering Composition', 'featureNotes.maestro', '=', '1');
+    rules.defineRule
+      ('features.Maestro', 'featureNotes.multifariousMuse(Maestro)', '=', '1');
+    rules.defineRule('features.Polymath',
+      'featureNotes.multifariousMuse(Polymath)', '=', '1'
     );
     rules.defineRule
-      ('features.Lingering Composition', 'featureNotes.maestroMuse', '=', '1');
-    rules.defineRule('features.Maestro Muse',
-      'featureNotes.multifariousMuse(MaestroMuse)', '=', '1'
-    );
-    rules.defineRule('features.Polymath Muse',
-      'featureNotes.multifariousMuse(PolymathMuse)', '=', '1'
-    );
-    rules.defineRule('features.Versatile Performance',
-      'featureNotes.polymathMuse', '=', '1'
-    );
+      ('features.Versatile Performance', 'featureNotes.polymath', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Occult"');
@@ -10589,18 +10607,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule("spells.Loremaster's Etude (O1 Divi)",
       "magicNotes.loremaster'sEtude", '=', '1'
     );
-    rules.defineRule
-      ('spells.Soothe (O1 Ench)', 'magicNotes.maestroMuse', '=', '1');
+    rules.defineRule('spells.Soothe (O1 Ench)', 'magicNotes.maestro', '=', '1');
     rules.defineRule('spells.Soothing Ballad (O7 Ench)',
       'magicNotes.soothingBallad', '=', '1'
     );
     rules.defineRule
       ('spells.Triple Time (O0 Ench)', 'magicNotes.tripleTime', '=', '1');
     rules.defineRule
-      ('spells.True Strike (A/O1 Divi)', 'magicNotes.enigmaMuse', '=', '1');
-    rules.defineRule('spells.Unseen Servant (A/O1 Conj)',
-      'featureNotes.polymathMuse', '=', '1'
-    );
+      ('spells.True Strike (A/O1 Divi)', 'magicNotes.enigma', '=', '1');
+    rules.defineRule
+      ('spells.Unseen Servant (A/O1 Conj)', 'magicNotes.polymath', '=', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
@@ -10645,6 +10661,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('selectableFeatureCount.Champion (Divine Ally)',
       'featureNotes.divineAlly', '=', null
+    );
+    rules.defineRule('selectableFeatureCount.Champion (Key Ability)',
+      classLevel, '?', null,
+      'featureNotes.keyAbility', '=', '1'
     );
     rules.defineRule('shieldHardness',
       'combatNotes.divineAlly(Shield)', '+', '2'
@@ -10765,9 +10785,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spells.Tempest Surge', 'magicNotes.stormOrder', '=', '1');
     rules.defineRule('spells.Wild Morph', 'magicNotes.wildOrder', '=', '1');
   } else if(name == 'Fighter') {
-    rules.defineRule('training.Will', 'saveNotes.bravery', '^=', '2');
+    rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
+      classLevel, '?', null,
+      'featureNotes.keyAbility', '=', '1'
+    );
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
+    rules.defineRule('training.Will', 'saveNotes.bravery', '^=', '2');
   } else if(name == 'Monk') {
     rules.defineRule('abilityNotes.incredibleMovement',
       'level', '=', 'Math.floor((source + 5) / 4) * 5'
@@ -10794,6 +10818,19 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'magicNotes.kiTradition(Divine)', '=', '"Divine"',
       'magicNotes.kiTradition(Occult)', '=', '"Occult"'
     );
+    rules.defineRule('selectableFeatureCount.Monk (Key Ability)',
+      classLevel, '?', null,
+      'featureNotes.keyAbility', '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Monk (Ki Tradition)',
+      'featureNotes.kiTradition', '=', null
+    );
+    rules.defineRule('selectableFeatureCount.Monk (Perfection)',
+      'featureNotes.pathToPerfection', '=', null
+    );
+    rules.defineRule
+      ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
+    rules.defineRule('speed', 'abilityNotes.incredibleMovement.1', '+', null);
     rules.defineRule('training.Divine',
       'magicNotes.gracefulLegend', '^=', 'source=="Divine" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Divine" ? 2 : null'
@@ -10805,15 +10842,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'magicNotes.gracefulLegend', '^=', 'source=="Occult" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Occult" ? 2 : null'
     );
-    rules.defineRule('selectableFeatureCount.Monk (Perfection)',
-      'featureNotes.pathToPerfection', '=', null
-    );
-    rules.defineRule('selectableFeatureCount.Monk (Ki Tradition)',
-      'featureNotes.kiTradition', '=', null
-    );
-    rules.defineRule
-      ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
-    rules.defineRule('speed', 'abilityNotes.incredibleMovement.1', '+', null);
     rules.defineRule
       ('weaponDieType.Fist', 'combatNotes.powerfulFist', '^', '6');
   } else if(name == 'Ranger') {
@@ -10827,6 +10855,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
       "featureNotes.hunter'sEdge", '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Ranger (Key Ability)',
+      classLevel, '?', null,
+      'featureNotes.keyAbility', '=', '1'
     );
     rules.defineRule
       ('skillNotes.masterfulHunter', 'rank.Perception', '?', 'source >= 3');
