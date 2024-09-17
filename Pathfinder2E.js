@@ -66,7 +66,8 @@ function Pathfinder2E() {
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
     (rules, Pathfinder2E.ARMORS, Pathfinder2E.SHIELDS, Pathfinder2E.WEAPONS);
-  Pathfinder2E.magicRules(rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS);
+  Pathfinder2E.magicRules
+    (rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS, Pathfinder2E.DOMAINS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
     Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
@@ -83,9 +84,9 @@ Pathfinder2E.VERSION = '2.4.1.0';
 
 /* List of items handled by choiceRules method. */
 Pathfinder2E.CHOICES = [
-  'Alignment', 'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Feat',
-  'Feature', 'Goody', 'Language', 'Lore', 'School', 'Shield', 'Skill', 'Spell',
-  'Terrain', 'Weapon'
+  'Alignment', 'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain',
+  'Feat', 'Feature', 'Goody', 'Language', 'Lore', 'School', 'Shield', 'Skill',
+  'Spell', 'Terrain', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -892,6 +893,46 @@ Pathfinder2E.DEITIES = {
     'Domain=Ambition,Darkness,Destruction,Pain ' +
     'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"',
 };
+Pathfinder2E.DOMAINS = {
+  'Air':'Spell="Pushing Gust" AdvancedSpell="Disperse Into Air"',
+  'Ambition':'Spell="Blind Ambition" AdvancedSpell="Competitive Edge"',
+  'Cities':'Spell="Face In The Crowd" AdvancedSpell="Pulse Of The City"',
+  'Confidence':'Spell="Veil Of Confidence" AdvancedSpell="Delusional Pride"',
+  'Creation':'Spell="Splash Of Art" AdvancedSpell="Artistic Flourish"',
+  'Darkness':'Spell="Cloak Of Shadow" AdvancedSpell="Darkened Eyes"',
+  'Death':'Spell="Death\'s Call" AdvancedSpell="Eradicate Undeath"',
+  'Destruction':'Spell="Cry Of Destruction" AdvancedSpell="Destructive Aura"',
+  'Dreams':'Spell="Sweet Dream" AdvancedSpell="Dreamer\'s Call"',
+  'Earth':'Spell="Hurtling Stone" AdvancedSpell="Localize Quake"',
+  'Family':'Spell="Soothing Words" AdvancedSpell="Unity"',
+  'Fate':'Spell="Read Fate" AdvancedSpell="Tempt Fate"',
+  'Fire':'Spell="Fire Ray" AdvancedSpell="Flame Barrier"',
+  'Freedom':'Spell="Unimpeded Stride" AdvancedSpell="Word Of Freedom"',
+  'Healing':'Spell="Healer\'s Blessing" AdvancedSpell="Rebuke Death"',
+  'Indulgence':'Spell="Overstuff" AdvancedSpell="Take Its Course"',
+  'Knowledge':'Spell="Scholarly Recollection" AdvancedSpell="Know The Enemy"',
+  'Luck':'Spell="Bit Of Luck" AdvancedSpell="Lucky Break"',
+  'Magic':'Spell="Magic\'s Vessel" AdvancedSpell="Mystic Beacon"',
+  'Might':'Spell="Athletic Rush" AdvancedSpell="Enduring Might"',
+  'Moon':'Spell="Moonbeam" AdvancedSpell="Touch Of The Moon"',
+  'Nature':'Spell="Vibrant Thorns" AdvancedSpell="Nature\'s Bounty"',
+  'Nightmares':'Spell="Waking Nightmare" AdvancedSpell="Shared Nightmare"',
+  'Pain':'Spell="Savor The Sting" AdvancedSpell="Retributive Pain"',
+  'Passion':'Spell="Charming Touch" AdvancedSpell="Captivating Adoration"',
+  'Perfection':'Spell="Perfected Mind" AdvancedSpell="Perfected Form"',
+  'Protection':
+    'Spell="Protector\'s Sacrifice" AdvancedSpell="Protector\'s Sphere"',
+  'Secrecy':'Spell="Forced Quiet" AdvancedSpell="Safeguard Secret"',
+  'Sun':'Spell="Dazzling Flash" AdvancedSpell="Positive Luminance"',
+  'Travel':'Spell="Agile Feet" AdvancedSpell="Traveler\'s Transit"',
+  'Trickery':'Spell="Sudden Shift" AdvancedSpell="trickster\'s Twin"',
+  'Truth':'Spell="Word Of Truth" AdvancedSpell="Glimpse The Truth"',
+  'Tyranny':'Spell="Touch Of Obedience" AdvancedSpell="Commanding Lash"',
+  'Undeath':'Spell="Touch Of Undeath" AdvancedSpell="Malignant Sustenance"',
+  'Water':'Spell="Tidal Surge" AdvancedSpell="Downpour"',
+  'Wealth':'Spell="Appearance Of Wealth" AdvancedSpell="Precious Metals"',
+  'Zeal':'Spell="Weapon Surge" AdvancedSpell="Zeal For Battle"'
+};
 Pathfinder2E.FEATS = {
 
   // Ancestries
@@ -1238,7 +1279,8 @@ Pathfinder2E.FEATS = {
   'Symphony Of The Muse':
     'Type=Class,Bard Require="level >= 20","features.Harmonize"',
 
-  "Deity's Domain":'Type=Class,Champion',
+  "Deity's Domain (%domain)":
+    'Type=Class,Champion Require="deityDomains =~ \'%domain\'"',
   'Ranged Reprisal':'Type=Class,Champion Require="features.Paladin"',
   'Unimpeded Step':'Type=Class,Champion Require="features.Liberator"',
   'Weight Of Guilt':'Type=Class,Champion Require="features.Redeemer"',
@@ -1275,8 +1317,11 @@ Pathfinder2E.FEATS = {
       '"level >= 6",' +
       '"features.Divine Ally (Blade)",' +
       '"features.The Tenets Of Good"',
-  "Advanced Deity's Domain":
-    'Type=Class,Champion Require="level >= 8","features.Deity\'s Domain"',
+  "Advanced Deity's Domain (%domain)":
+    'Type=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (%domain)"',
   'Greater Mercy':'Type=Class,Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':
     'Type=Class,Champion ' +
@@ -3644,13 +3689,13 @@ Pathfinder2E.FEATURES = {
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
-  "Deity's Domain":'Section=magic Note="Knows a domain spell of deity"',
+  "Deity's Domain (%domain)":'Section=magic Note="Knows the %V spell"',
   'Ranged Reprisal':
     'Section=combat ' +
     'Note="May make a Retributive Strike using a ranged attack or a Step and a melee Strike"',
   'Unimpeded Step':
     'Section=combat ' +
-    'Note="Liberating Step target may Step normally in difficult terrain"',
+    'Note="Liberating Step target may Step normally in any terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
     'Note="May make Glimpse Of Redemption target stupefied instead of enfeebled"',
@@ -3687,22 +3732,17 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Lay On Hands</i> may also counteract choice of fear or paralysis"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows the <i>Litany Against Wrath</i> spell"',
+    'Section=magic ' +
+    'Note="+1 Focus Points/Knows the <i>Litany Against Wrath</i> spell"',
   'Loyal Warhorse':
-    'Section=feature Note="Mount is mature and will not attack self"',
+    'Section=feature Note="Mount is mature and will never attack self"',
   'Shield Warden':
     'Section=combat Note="May use Shield Block to protect an adjacent ally"',
   'Smite Evil':
     'Section=combat ' +
     'Note="Blade ally inflicts +4 HP good (master proficiency +6 HP) vs. target for 1 rd, extended as long as the target attacks an ally"',
-  "Advanced Deity's Domain":
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows an advanced domain spell of deity"',
+  "Advanced Deity's Domain (%domain)":
+    'Section=magic Note="+1 Focus Points/Knows the %V spell"',
   'Greater Mercy':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> may also counteract blinded, deafened, sickened, or slowed"',
@@ -3721,10 +3761,9 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Mount is a nimble or savage animal companion and may Stride or Strike without a command"',
   'Litany Against Sloth':
-    'Section=magic,magic ' +
+    'Section=magic ' +
     'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows the <i>Litany Against Sloth</i> spell"',
+      '"+1 Focus Points/Knows the <i>Litany Against Sloth</i> spell"',
   'Radiant Blade Spirit':
     'Section=combat ' +
     'Note="May choose <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
@@ -3736,14 +3775,12 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Lay On Hands</i> may also counteract a curse, disease, or poison"',
   'Aura Of Faith':
     'Section=combat ' +
-    'Note="R15\' All self Strikes and the first Strike each ally each rd inflict +1 HP good damage vs. evil creatures"',
+    'Note="R15\' All self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
   'Blade Of Justice':
     'Section=combat Note="May use 2 actions to add two extra damage dice on a Strike vs. an evil foe and convert all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows the <i>Champion\'s Sacrifice</i> spell"',
+    'Section=magic ' +
+    'Note="+1 Focus Points/Knows the <i>Champion\'s Sacrifice</i> spell"',
   'Divine Wall':
     'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
   'Lasting Doubt':
@@ -3766,13 +3803,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use an additional Reaction for Champion\'s Reaction 1/tn"',
   'Litany Of Righteousness':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows the <i>Litany Of Righteousness</i> spell"',
+    'Section=magic ' +
+    'Note="+1 Focus Points/Knows the <i>Litany Of Righteousness</i> spell"',
   'Wyrmbane Aura':
     'Section=save ' +
-    'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level} from dragons)"',
+    'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level//2} from dragons)"',
   'Auspicious Mount':
     'Section=feature ' +
     'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
@@ -9649,7 +9684,7 @@ Pathfinder2E.identityRules = function(
 };
 
 /* Defines rules related to magic use. */
-Pathfinder2E.magicRules = function(rules, schools, spells) {
+Pathfinder2E.magicRules = function(rules, schools, spells, domains) {
 
   QuilvynUtils.checkAttrTable(schools, ['Features']);
   QuilvynUtils.checkAttrTable
@@ -9659,6 +9694,8 @@ Pathfinder2E.magicRules = function(rules, schools, spells) {
     rules.choiceRules(rules, 'School', s, schools[s]);
   for(let s in spells)
     rules.choiceRules(rules, 'Spell', s, spells[s]);
+  for(let d in domains)
+    rules.choiceRules(rules, 'Domain', d, domains[d]);
 
 };
 
@@ -9797,6 +9834,11 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Weapon'),
       QuilvynUtils.getAttrValue(attrs, 'Skill'),
       QuilvynUtils.getAttrValueArray(attrs, 'Spells')
+    );
+  else if(type == 'Domain')
+    Pathfinder2E.domainRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Spell'),
+      QuilvynUtils.getAttrValue(attrs, 'AdvancedSpell')
     );
   else if(type == 'Feat') {
     Pathfinder2E.featRules(rules, name,
@@ -11129,6 +11171,13 @@ Pathfinder2E.deityRules = function(
 };
 
 /*
+ * Defines in #rules# the rules associated with domain #name#. #spell# and
+ * #advancedSpell# designate the spells associated with the domain.
+ */
+Pathfinder2E.domainRules = function(rules, name, spell, advanceSpell) {
+};
+
+/*
  * Defines in #rules# the rules associated with feat #name#. #require# and
  * #implies# list any hard and soft prerequisites for the feat, and #types#
  * lists the categories of the feat.
@@ -11187,6 +11236,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
+  } else if((matchInfo = name.match(/^(Advanced )?Deity.s Domain \((.*)\)$/)) != null) {
+    let advanced = matchInfo[1] == 'Advanced ';
+    let domain = matchInfo[2];
+    let allDomains = rules.getChoices('domains');
+    if(domain in allDomains) {
+      let spell =
+        QuilvynUtils.getAttrValue(allDomains[domain], (advanced ? 'Advanced' : '') + 'Spell');
+      let note =
+        'magicNotes.' + (advanced ? 'advancedD' : 'd') + "eity'sDomain(" + domain.replaceAll(' ', '') + ')';
+      rules.defineRule(note, '', '=', '"' + spell + '"');
+      rules.defineRule('spells.' + spell, note, '=', '1');
+    }
   } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Alchemical Familiar') {
@@ -11258,6 +11319,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('training.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
+    );
+  } else if(name == "Champion's Sacrifice") {
+    rules.defineRule("spells.Champion's Sacrifice",
+      "magicNotes.champion'sSacrifice", '=', '1'
     );
   } else if(name == 'Clever Improviser') {
     rules.defineRule('features.Untrained Improvisation',
@@ -11356,6 +11421,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Ki Strike') {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
+  } else if(name == 'Litany Against Sloth') {
+    rules.defineRule('spells.Litany Against Sloth',
+      'magicNotes.litanyAgainstSloth', '=', '1'
+    );
+  } else if(name == 'Litany Against Wrath') {
+    rules.defineRule('spells.Litany Against Wrath',
+      'magicNotes.litanyAgainstWrath', '=', '1'
+    );
+  } else if(name == 'Litany Of Righteousness') {
+    rules.defineRule('spells.Litany Of Righteousness',
+      'magicNotes.litanyOfRighteousness', '=', '1'
+    );
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', null,
