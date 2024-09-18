@@ -811,85 +811,105 @@ Pathfinder2E.CLASSES = {
 Pathfinder2E.DEITIES = {
   'None':'',
   'Abadar':
-    'Alignment=LN Font=Harm,Heal Skill=Society Weapon=Crossbow ' +
+    'Alignment=LN FollowerAlignments=LG,LN,LE ' +
+    'Font=Harm,Heal Skill=Society Weapon=Crossbow ' +
     'Domain=Cities,Earth,Travel,Wealth ' +
     'Spells="1:Illusory Object",4:Creation,"7:Magnificent Mansion"',
   'Asmodeus':
-    'Alignment=LE Font=Harm Skill=Deception Weapon=Mace ' +
+    'Alignment=LE FollowerAlignments=LE ' +
+    'Font=Harm Skill=Deception Weapon=Mace ' +
     'Domain=Confidence,Fire,Trickery,Tyranny ' +
     'Spells=1:Charm,4:Suggestion,6:Mislead',
   'Calistra':
-    'Alignment=CN Font=Harm,Heal Skill=Deception Weapon=Whip ' +
+    'Alignment=CN FollowerAlignments=CG,CN,CE ' +
+    'Font=Harm,Heal Skill=Deception Weapon=Whip ' +
     'Domain=Pain,Passion,Secrecy,Trickery ' +
     'Spells=1:Charm,3:Enthrall,6:Mislead',
   'Cayden Cailean':
-    'Alignment=CG Font=Heal Skill=Athletics Weapon=Rapier ' +
+    'Alignment=CG FollowerAlignments=NG,CG,CN ' +
+    'Font=Heal Skill=Athletics Weapon=Rapier ' +
     'Domain=Cities,Freedom,Indulgence,Might ' +
     'Spells="1:Fleet Step","2:Touch Of Idiocy",5:Hallucination',
   'Desna':
-    'Alignment=CG Font=Heal Skill=Acrobatics Weapon=Starknife ' +
+    'Alignment=CG FollowerAlignments=NG,CG,CN ' +
+    'Font=Heal Skill=Acrobatics Weapon=Starknife ' +
     'Domain=Dreams,Luck,Moon,Travel ' +
     'Spells=1:Sleep,"3:Dream Message","6:Dreaming Potential"',
   'Erastil':
-    'Alignment=LG Font=Heal Skill=Survival Weapon=Longbow ' +
+    'Alignment=LG FollowerAlignments=LG,NG,LN ' +
+    'Font=Heal Skill=Survival Weapon=Longbow ' +
     'Domain=Earth,Family,Nature,Wealth ' +
     'Spells="1:True Strike","3:Wall Of Thorns","5:Tree Stride"',
   'Gorum':
-    'Alignment=CN Font=Harm,Heal Skill=Athletics Weapon=Greatsword ' +
+    'Alignment=CN FollowerAlignments=CN,CE ' +
+    'Font=Harm,Heal Skill=Athletics Weapon=Greatsword ' +
     'Domain=Confidence,Destruction,Might,Zeal ' +
     'Spells="1:True Strike",2:Enlarge,"4:Weapon Storm"',
   'Gozreh':
-    'Alignment=N Font=Heal Skill=Survival Weapon=Trident ' +
+    'Alignment=N FollowerAlignments=NG,LN,N,CN,NE ' +
+    'Font=Heal Skill=Survival Weapon=Trident ' +
     'Domain=Air,Nature,Travel,Water ' +
     'Spells="1:Gust Of Wind","3:Lightning Bolt","5:Control Water"',
   'Iomedae':
-    'Alignment=LG Font=Heal Skill=Intimidation Weapon=Longsword ' +
+    'Alignment=LG FollowerAlignments=LG,NG ' +
+    'Font=Heal Skill=Intimidation Weapon=Longsword ' +
     'Domain=Confidence,Might,Truth,Zeal ' +
     'Spells="1:True Strike","2:See Invisibility","5:Fire Shield"',
   'Irori':
-    'Alignment=LN Font=Harm,Heal Skill=Athletics Weapon=Fist ' +
+    'Alignment=LN FollowerAlignments=LG,LN,LE ' +
+    'Font=Harm,Heal Skill=Athletics Weapon=Fist ' +
     'Domain=Knowledge,Might,Perfection,Truth ' +
     'Spells=1:Jump,3:Haste,4:Stoneskin',
   'Lamashtu':
-    'Alignment=CE Font=Harm,Heal Skill=Survival Weapon=Falchion ' +
+    'Alignment=CE FollowerAlignments=CE ' +
+    'Font=Harm,Heal Skill=Survival Weapon=Falchion ' +
     'Domain=Family,Might,Nightmares,Trickery ' +
     'Spells="1:Magic Fang","2:Animal Form",4:Nightmare',
   'Nethys':
-    'Alignment=N Font=Harm,Heal Skill=Arcana Weapon=Staff ' +
+    'Alignment=N FollowerAlignments=NG,LN,N,CN,NE ' +
+    'Font=Harm,Heal Skill=Arcana Weapon=Staff ' +
     'Domain=Destruction,Knowledge,Magic,Protection ' +
     'Spells=' +
       '"1:Magic Missile","2:Magic Mouth",3:Levitate,4:Blink,' +
       '"5:Prying Eye","6:Wall Of Force","7:Warp Mind",8:Maze,9:Destruction',
   'Norgorber':
-    'Alignment=NE Font=Harm Skill=Stealth Weapon=Shortsword ' +
+    'Alignment=NE FollowerAlignments=LE,NE,CE ' +
+    'Font=Harm Skill=Stealth Weapon=Shortsword ' +
     'Domain=Death,Secrecy,Trickery,Wealth ' +
     'Spells="1:Illusory Disguise",2:Invisibility,"4:Phantasmal Killer"',
   'Pharasma':
-    'Alignment=N Font=Heal Skill=Medicine Weapon=Dagger ' +
+    'Alignment=N FollowerAlignments=NG,LN,N ' +
+    'Font=Heal Skill=Medicine Weapon=Dagger ' +
     'Domain=Death,Fate,Healing,Knowledge ' +
     'Spells=1:Mindlink,"3:Ghostly Weapon","4:Phantasmal Killer"',
   'Rovagug':
-    'Alignment=CE Font=Harm Skill=Athletics Weapon=Greataxe ' +
+    'Alignment=CE FollowerAlignments=NE,CE ' +
+    'Font=Harm Skill=Athletics Weapon=Greataxe ' +
     'Domain=Air,Destruction,Earth,Zeal ' +
     'Spells="1:Burning Hands",2:Enlarge,6:Disintegrate',
   'Sarenrae':
-    'Alignment=NG Font=Heal Skill=Medicine Weapon=Scimitar ' +
+    'Alignment=NG FollowerAlignments=LG,NG,CG ' +
+    'Font=Heal Skill=Medicine Weapon=Scimitar ' +
     'Domain=Fire,Healing,Sun,Truth ' +
     'Spells="1:Burning Hands",3:Fireball,"4:Wall Of Fire"',
   'Shelyn':
-    'Alignment=NG Font=Heal Skill=Crafting,Performance Weapon=Glaive ' +
+    'Alignment=NG FollowerAlignments=LG,NG,CG ' +
+    'Font=Heal Skill=Crafting,Performance Weapon=Glaive ' +
     'Domain=Creation,Family,Passion,Protection ' +
     'Spells="1:Color Spray",3:Enthrall,4:Creation',
   'Torag':
-    'Alignment=LG Font=Heal Skill=Crafting Weapon=Warhammer ' +
+    'Alignment=LG FollowerAlignments=LG,LN ' +
+    'Font=Heal Skill=Crafting Weapon=Warhammer ' +
     'Domain=Creation,Earth,Family,Protection ' +
     'Spells=1:Mindlink,3:Earthbind,4:Creation',
   'Urgathoa':
-    'Alignment=NE Font=Harm Skill=Intimidation Weapon=Scythe ' +
+    'Alignment=NE FollowerAlignments=LE,NE,CE ' +
+    'Font=Harm Skill=Intimidation Weapon=Scythe ' +
     'Domain=Indulgence,Magic,Might,Undeath ' +
     'Spells="1:Goblin Pox","2:False Life","7:Mask Of Terror"',
   'Zon-Kuthon':
-    'Alignment=LE Font=Harm Skill=Intimidation Weapon="Spiked Chain" ' +
+    'Alignment=LE FollowerAlignments=LN,LE,NE ' +
+    'Font=Harm Skill=Intimidation Weapon="Spiked Chain" ' +
     'Domain=Ambition,Darkness,Destruction,Pain ' +
     'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"',
 };
@@ -1418,7 +1438,7 @@ Pathfinder2E.FEATS = {
 
   'Deadly Simplicity':
     'Type=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
-  'Domain Initiate':'Type=Class,Cleric',
+  'Domain Initiate (%domain)':'Type=Class,Cleric',
   'Harming Hands':'Type=Class,Cleric Require="features.Harmful Font"',
   'Healing Hands':'Type=Class,Cleric Require="features.Healing Font"',
   'Holy Castigation':'Type=Class,Cleric Require="alignment =~ \'Good\'"',
@@ -1432,7 +1452,7 @@ Pathfinder2E.FEATS = {
     'Type=Class,Cleric ' +
     'Require=' +
       '"level >= 2",' +
-      '"deityFonts =~ \'Harm\' && deityFonts =~ \'Heal\'",' +
+      '"deityFonts =~ \'Harm/Heal|Heal/Harm\'",' +
       '"features.Harmful Font || features.Healing Font"',
   'Channel Smite':
     'Type=Class,Cleric ' +
@@ -1452,20 +1472,17 @@ Pathfinder2E.FEATS = {
   'Divine Weapon':'Type=Class,Cleric Require="level >= 6"',
   'Selective Energy':'Type=Class,Cleric Require="level >= 6"',
   // Steady Spellcasting as above
-  'Advanced Domain (Chaotic)':
+  'Advanced Domain (%domain)':
     'Type=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'C\'"',
-  'Advanced Domain (Evil)':
-    'Type=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'E\'"',
-  'Advanced Domain (Good)':
-    'Type=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'G\'"',
-  'Advanced Domain (Lawful)':
-    'Type=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate","deityAlignment =~ \'L\'"',
-  'Align Armament':
-    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'C|E|G|L\'"',
+    'Require="level >= 8","features.Domain Initiate (%domain)"',
+  'Align Armament (Chaotic)':
+    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'C\'"',
+  'Align Armament (Evil)':
+    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'E\'"',
+  'Align Armament (Good)':
+    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'G\'"',
+  'Align Armament (Lawful)':
+    'Type=Class,Cleric Require="level >= 8","deityAlignment =~ \'L\'"',
   'Channeled Succor':
     'Type=Class,Cleric Require="level >= 8","features.Healing Font"',
   'Cremate Undead':'Type=Class,Cleric Require="level >= 8"',
@@ -3488,6 +3505,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':
     // TODO Bard: add 2 cantrips from your spell list to your repertoire
+    // TODO Cleric: can prepare 2 additional cantrips each day
     'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
@@ -3603,7 +3621,7 @@ Pathfinder2E.FEATURES = {
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
-      '"Deity favored unarmed attacks and simple weapons increase damage die 1 step",'+
+      '"+1 damage die step on %V",' +
       '"Has access to deity weapon (%{deityWeapon})"',
   // TODO more to it than this
   'Devotion Spells':
@@ -3846,7 +3864,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"May use critical specialization effects of %{deityWeapon}",' +
-      '"Has Domain Initiate feature",' +
+      '"+1 Class Feat (Domain Initiate feat)",' +
       '"Spell %V (Divine)",' +
       '"Save Expert (Fortitude)"',
   'Deity':
@@ -3860,8 +3878,8 @@ Pathfinder2E.FEATURES = {
   'Divine Spellcasting':
     'Section=magic Note="May learn spells from the Divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
-  'Harmful Font':'Section=magic Note="+1 D%V slot"',
-  'Healing Font':'Section=magic Note="+1 D%V slot"',
+  'Harmful Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
+  'Healing Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   // Lightning Reflexes as above
   'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
   // Resolve as above
@@ -3876,101 +3894,102 @@ Pathfinder2E.FEATURES = {
       '"Successes on Fortitude saves are critical successes"',
   // Weapon Specialization as above
 
-  'Deadly Simplicity':
-    'Section=combat Note="+1 damage die step on %{deityWeapon}"',
-  'Domain Initiate':
+  'Deadly Simplicity':'Section=combat Note="+1 damage die step on %V"',
+  'Domain Initiate (%domain)':
     'Section=magic ' +
-    'Note="Knows 1 domain spell/Has a Focus Pool with 1 Focus Point"',
-  'Harming Hands':'Section=magic Note="Harm spells die types increase to d10"',
-  'Healing Hands':'Section=magic Note="Heal spells die types increase to d10"',
+    'Note="Knows %V spell/Has a Focus Pool with 1 Focus Point"',
+  // TODO Implement?
+  'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
+  // TODO Implement?
+  'Healing Hands':'Section=magic Note="<i>Heal</i> die type increases to d10"',
   'Holy Castigation':
-    'Section=magic Note="May use heal spells to damage fiends"',
+    'Section=magic Note="May use <i>Heal</i> to damage fiends"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
     'Section=magic ' +
-    'Note="Casting a heal spell on another creature restores Hit Points to self equal to spell level"',
+    'Note="Casting <i>Heal</i> on another creature restores Hit Points to self equal to the spell level"',
   'Emblazon Armament':
     'Section=magic ' +
     'Note="10 min process gives target shield +1 Hardness or weapon +1 HP damage"',
   'Sap Life':
     'Section=magic ' +
-    'Note="Casting a harm spell on another creature restores Hit Points to self equal to spell level"',
+    'Note="Casting <i>Harm</i> on another creature restores Hit Points to self equal to the spell level"',
   'Turn Undead':
     'Section=magic ' +
-    'Note="Critical failure by undead damaged by a heal spell inflicts fleeing for 1 rd"',
+    'Note="Critical failure by undead up to level %{level} damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
   'Versatile Font':
     'Section=magic ' +
-    'Note="May use font slot to prepare either a harm or a heal spell"',
+    'Note="May use a font slot to prepare either <i>Harm</i> or <i>Heal</i>"',
   'Channel Smite':
     'Section=combat ' +
-    'Note="May use 2 actions to add the effects of a heal or harm spell to a melee Strike"',
+    'Note="May use 2 actions to add the effects of <i>Heal</i> or <i>Harm</i> to a melee Strike"',
   'Command Undead':
     'Section=magic ' +
-    'Note="May use a harm spell to control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hour)"',
+    'Note="May use <i>Harm</i> to control undead up to level %{level-3} for 1 min (Will neg; critical failure extends to 1 hour)"',
   'Directed Channel':
-    'Section=magic Note="May cast an area harm or heal spell in a 60\' cone"',
+    'Section=magic ' +
+    'Note="May cast an area <i>Harm</i> or <i>Heal</i> in a 60\' cone"',
   'Improved Communal Healing':
     'Section=magic ' +
     'Note="May give additional Hit Points from Communal Healing to another"',
   'Necrotic Infusion':
     'Section=magic ' +
-    'Note="Harm spells cast on an undead allow target to inflict +1d6 HP (5th level spell 2d6; 8th level 8d6) with first melee Strike in next rd"',
+    'Note="<i>Harm</i> cast on an undead allows the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in next rd"',
   'Cast Down':
     'Section=magic ' +
-    'Note="May cast a harm or heal spell that inflicts damage also inflict knocked prone (target critical fail also inflicts -10 Speed for 1 min)"',
+    'Note="May modify <i>Harm</i> or <i>Heal</i> to also inflict knocked prone (target critical fail also inflicts -10 Speed for 1 min)"',
   'Divine Weapon':
     'Section=magic ' +
-    'Note="Casting a spell causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment until end of turn"',
+    'Note="Casting a spell causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of turn"',
   'Selective Energy':
     'Section=magic ' +
-    'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting area harm or heal spell"',
+    'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i>"',
   // Steady Spellcasting as above
-  'Advanced Domain (Chaotic)':
-    'Section=magic ' +
-    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
-  'Advanced Domain (Evil)':
-    'Section=magic ' +
-    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
-  'Advanced Domain (Good)':
-    'Section=magic ' +
-    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
-  'Advanced Domain (Lawful)':
-    'Section=magic ' +
-    'Note="Knows 1 advanced domain spell/+1 Focus Points"',
-  'Align Armament':
+  'Advanced Domain (%domain)':
+    'Section=magic Note="Knows %V spell/+1 Focus Points"',
+  'Align Armament (Chaotic)':
     'Section=combat ' +
-    'Note="May touch a weapon to have it inflict +1d6 HP alignment for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+    'Note="May touch a weapon to have it inflict +1d6 HP chaotic for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+  'Align Armament (Evil)':
+    'Section=combat ' +
+    'Note="May touch a weapon to have it inflict +1d6 HP evil for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+  'Align Armament (Good)':
+    'Section=combat ' +
+    'Note="May touch a weapon to have it inflict +1d6 HP good for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+  'Align Armament (Lawful)':
+    'Section=combat ' +
+    'Note="May touch a weapon to have it inflict +1d6 HP lawful for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
   'Channeled Succor':
     'Section=magic ' +
-    'Note="May cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared heal spell"',
+    'Note="May cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i>"',
   'Cremate Undead':
     'Section=magic ' +
-    'Note="Heal spell cast upon undead inflicts fire damage equal to spell level"',
+    'Note="<i>Heal</i> cast upon undead inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type; having a matching domain spell also gives it +%{level//2} resistance; may use on a weapon to give it +1d4 HP chosen energy type (+1d6 with matching domain spell)"',
+    'Note="May use Emblazon Armament on a shield to give a save bonus and Shield Block vs. chosen energy type, and having a matching domain spell also gives it +%{level//2} resistance; may use on a weapon to give it +1d4 HP chosen energy type, or +1d6 HP with a matching domain spell"',
   'Castigating Weapon':
     'Section=magic ' +
-    'Note="Damaging a fiend with a heal spell gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
+    'Note="Damaging a fiend with <i>Heal</i> gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
   'Heroic Recovery':
     'Section=magic ' +
-    'Note="Single-target heal spell also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
+    'Note="Casting a single-target <i>Heal</i> also gives the target +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
-    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hour"',
+    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hours"',
   'Replenishment Of War':
-    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary Hit Points for 1 rd (critical hit %{level} temporary Hit Points) for 1 rd"',
+    'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary Hit Points (critical hit %{level} temporary Hit Points) for 1 rd"',
   'Defensive Recovery':
     'Section=magic ' +
-    'Note="May use a heal spell to also give +2 AC and saves for 1 rd"',
+    'Note="Casting a single-target <i>Heal</i> also gives +2 AC and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
-    'Note="May use Emblazon Armament on a shield to allow Shield Block vs. spells or on a weapon to have a critical hit also counteract a spell using 1/2 the wielder\'s level"',
+    'Note="May use Emblazon Armament on a shield to give a bonus on saves vs. magic and allow Shield Block vs. spells, or on a weapon to have a critical hit also counteract a spell using 1/2 the wielder\'s level"',
   'Shared Replenishment':
     'Section=combat ' +
-    'Note="May give temporary Hit Points from Replenishment Of War to an ally"',
+    'Note="R10\' May give temporary Hit Points from Replenishment Of War to an ally"',
   "Deity's Protection":
     'Section=magic ' +
     'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
@@ -3978,10 +3997,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Increased Align Armament effects"',
   'Fast Channel':
     'Section=magic ' +
-    'Note="May use 2 actions to cast a 3-action harm or heal spell"',
+    'Note="May use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i>"',
   'Swift Banishment':
     'Section=magic ' +
-    'Note="May use a Reaction to cast <i>Banishment</i> with a critical hit"',
+    'Note="May use a Reaction to apply <i>Banishment</i> effects with a critical hit"',
   'Eternal Bane':
     'Section=magic ' +
     'Note="R15\' Surrounded by continuous level %{level//2} <i>Bane</i> effects"',
@@ -3994,17 +4013,17 @@ Pathfinder2E.FEATURES = {
   'Domain Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Echoing Channel':
     'Section=magic ' +
-    'Note="May have a 2-action harm or heal spell also cause 1-action effects on an adjacent creature"',
+    'Note="May have a 2-action, single-target <i>Harm</i> or <i>Heal</i> also cause 1-action effects on an adjacent creature"',
   'Improved Swift Banishment':
     'Section=magic ' +
-    'Note="May sacrifice a 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
+    'Note="May sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
   "Avatar's Audience":
     'Section=magic ' +
     'Note="May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/day"',
   'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Channel':
     'Section=magic ' +
-    'Note="May freely apply 1 metamagic action to harm and heal spells"',
+    'Note="May apply a metamagic action to <i>Harm</i> and <i>Heal</i> as a free action"',
 
   // Druid
   // Alertness as above
@@ -9640,7 +9659,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'SpellSlots']);
-  QuilvynUtils.checkAttrTable(deities, ['Alignment', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
+  QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
 
   for(let a in alignments)
     rules.choiceRules(rules, 'Alignment', a, alignments[a]);
@@ -9829,6 +9848,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   } else if(type == 'Deity')
     Pathfinder2E.deityRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Alignment'),
+      QuilvynUtils.getAttrValueArray(attrs, 'FollowerAlignments'),
       QuilvynUtils.getAttrValueArray(attrs, 'Font'),
       QuilvynUtils.getAttrValueArray(attrs, 'Domain'),
       QuilvynUtils.getAttrValue(attrs, 'Weapon'),
@@ -10660,7 +10680,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spells.Unseen Servant (A/O1 Conj)', 'magicNotes.polymath', '=', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
-      'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
+      'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
+      'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.dragonslayerOath',
       'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
@@ -10719,9 +10740,20 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule
       ("spells.Hero's Defiance", "magicNotes.hero'sDefiance", '=', '1');
+    rules.defineChoice
+      ('notes', 'validationNotes.championAlignment:Requires followerAligns =~ alignment');
+    rules.defineRule('validationNotes.championAlignment',
+      classLevel, '?', null,
+      'followerAligns', '?', null,
+      'alignment', '=', 'dict.followerAligns.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
+    );
   } else if(name == 'Cleric') {
     rules.defineRule('combatNotes.cloisteredCleric',
       'level', '?', 'source>=11',
+      'deityWeapon', '=', null
+    );
+    rules.defineRule('combatNotes.deadlySimplicity',
+      'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
       'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.warpriest',
@@ -10743,8 +10775,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('features.Deadly Simplicity',
       'featureNotes.warpriest.1', '=', 'source ? 1 : null'
     );
-    rules.defineRule
-      ('features.Domain Initiate', 'featureNotes.cloisteredCleric', '=', '1');
     rules.defineRule
       ('features.Shield Block', 'featureNotes.warpriest', '=', '1');
     rules.defineRule('magicNotes.cloisteredCleric',
@@ -10787,13 +10817,20 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('spellSlots.D' + l,
-        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? 1 : null',
-        'magicNotes.healingFont', '+', 'source==' + l + ' ? 1 : null'
+        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? dict["charismaModifier"]+1 : null',
+        'magicNotes.healingFont', '+', 'source==' + l + ' ? dict["charismaModifier"]+1 : null'
       );
     });
     rules.defineRule('spellSlots.D10',
       'magicNotes.miraculousSpell', '=', 'null', // italics
       'magicNotes.makerOfMiracles', '+', '1'
+    );
+    rules.defineChoice
+      ('notes', 'validationNotes.clericAlignment:Requires followerAligns =~ alignment');
+    rules.defineRule('validationNotes.clericAlignment',
+      classLevel, '?', null,
+      'followerAligns', '?', null,
+      'alignment', '=', 'dict.followerAligns.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
   } else if(name == 'Druid') {
     rules.defineRule
@@ -11074,12 +11111,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with deity #name#. #alignment# gives
- * the deity's alignment, #fonts# and #domains# lists the divine fonts and
- * associated domains, #weapon# is the deity's favored weapon, #skill# the
- * divine skill, and #spells# lists associated cleric spells.
+ * the deity's alignment, #followerAlignments# lists the alignments permitted
+ * for followers, #fonts# and #domains# lists the divine fonts and associated
+ * domains, #weapon# is the deity's favored weapon, #skill# the divine skill,
+ * and #spells# lists associated cleric spells.
  */
 Pathfinder2E.deityRules = function(
-  rules, name, alignment, fonts, domains, weapon, skill, spells
+  rules, name, alignment, followerAlignments, fonts, domains, weapon, skill,
+  spells
 ) {
 
   if(!name) {
@@ -11088,6 +11127,10 @@ Pathfinder2E.deityRules = function(
   }
   if(name != 'None' && !(alignment+'').match(/^(N|[LNC]G|[LNC]E|[LC]N)$/i)) {
     console.log('Bad alignment "' + alignment + '" for deity ' + name);
+    return;
+  }
+  if(!Array.isArray(followerAlignments)) {
+    console.log('Bad follower alignments list "' + followerAlignments + '" for deity ' + name);
     return;
   }
   if(!Array.isArray(fonts)) {
@@ -11114,6 +11157,7 @@ Pathfinder2E.deityRules = function(
   if(rules.deityStats == null) {
     rules.deityStats = {
       alignment:{},
+      followerAlignments:{},
       fonts:{},
       domains:{},
       weapon:{},
@@ -11124,6 +11168,7 @@ Pathfinder2E.deityRules = function(
   }
 
   rules.deityStats.alignment[name] = alignment;
+  rules.deityStats.followerAlignments[name] = followerAlignments.join('/');
   rules.deityStats.fonts[name] = fonts.join('/');
   rules.deityStats.domains[name] = domains.join('/');
   rules.deityStats.weapon[name] = weapon;
@@ -11134,6 +11179,9 @@ Pathfinder2E.deityRules = function(
 
   rules.defineRule('deityAlignment',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.alignment) + '[source]'
+  );
+  rules.defineRule('followerAligns',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.followerAlignments) + '[source]'
   );
   rules.defineRule('deityDomains',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.domains) + '[source]'
@@ -11164,8 +11212,8 @@ Pathfinder2E.deityRules = function(
   );
 
   rules.defineRule('weaponDieTypeBonus.' + weapon,
-    'combatNotes.deificWeapon', '+=', '2',
-    'combatNotes.deadlySimplicity', '+=', '2'
+    'combatNotes.deificWeapon', '+=', 'source=="' + weapon + '" ? 2 : null',
+    'combatNotes.deadlySimplicity', '+=', 'source=="' + weapon + '" ? 2 : null'
   );
 
 };
@@ -11236,17 +11284,19 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.' + matchInfo[1] + ' Lore',
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
-  } else if((matchInfo = name.match(/^(Advanced )?Deity.s Domain \((.*)\)$/)) != null) {
-    let advanced = matchInfo[1] == 'Advanced ';
+  } else if((matchInfo = name.match(/^(Advanced Deity's Domain|Advanced Domain|Deity's Domain|Domain Initiate) \((.*)\)$/)) != null) {
+    let advanced = matchInfo[1].includes('Advanced');
     let domain = matchInfo[2];
     let allDomains = rules.getChoices('domains');
     if(domain in allDomains) {
       let spell =
         QuilvynUtils.getAttrValue(allDomains[domain], (advanced ? 'Advanced' : '') + 'Spell');
       let note =
-        'magicNotes.' + (advanced ? 'advancedD' : 'd') + "eity'sDomain(" + domain.replaceAll(' ', '') + ')';
+        'magicNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
       rules.defineRule(note, '', '=', '"' + spell + '"');
       rules.defineRule('spells.' + spell, note, '=', '1');
+      if(name.startsWith('Domain Initiate'))
+        rules.defineRule('focusPoints', note, '+=', '1');
     }
   } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
