@@ -3400,7 +3400,7 @@ Pathfinder2E.FEATURES = {
   "Predator's Pounce":
     'Section=combat ' +
     'Note="May Strike after moving %{speed}\' in light or no armor"',
-  "Spirit's Wrath":'Section=combat Note="May make a R120\' +%{$\'training.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a citical hit also inflits frightened 1"',
+  "Spirit's Wrath":'Section=combat Note="May make a R120\' +%{$\'training.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
     'Note="May grow to Huge size, gaining +10\' reach and suffering clumsy 1, until rage ends"',
@@ -4353,7 +4353,7 @@ Pathfinder2E.FEATURES = {
     'Note="May attack concealed foes without a prior check and hidden creatures with a DC 5 check/Does not suffer flat-footed with hidden foes"',
   'Dueling Riposte':
     'Section=combat ' +
-    'Note="May use a Reaction while using Dueling Prry to Strike or Disarm a foe who critically fails an attack on self"',
+    'Note="May use a Reaction while using Dueling Parry to Strike or Disarm a foe who critically fails an attack on self"',
   'Felling Strike':
     'Section=combat ' +
     'Note="May use 2 actions to attack a flying foe; a successful Strike causes it to fall 120\', and a critical hit grounds it for 1 rd"',
@@ -4399,7 +4399,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction when using Twin Parry to Strike or Disarm a foe who critically fails a Strike on self"',
   'Brutal Finish':
     'Section=combat ' +
-    'Note="May end turn with a two-handed Strike that inflicts +%{level>=18?2:1} damage dice, even on a failure"',
+    'Note="May end turn with a two-handed Strike that inflicts +%{level>=18?2:1} damage dice, even on failure"',
   'Dueling Dance':
     'Section=combat ' +
     'Note="Stance gives +2 AC when wielding a one-handed weapon with a hand free"',
@@ -4409,7 +4409,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use an additional Reaction to make a Dueling Riposte 1/tn"',
   'Incredible Ricochet':
     'Section=combat ' +
-    'Note="Second ranged attack in turn against the same foe ignores concealment and cover"',
+    'Note="May follow a ranged Strike with another against the same foe that ignores concealment and cover"',
   'Lunging Stance':
     'Section=combat Note="Stance gives +5\' reach on Attacks Of Opportunity"',
   "Paragon's Guard":
@@ -4418,22 +4418,24 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May Strike a foe after Striding away from another"',
   'Desperate Finisher':
     'Section=combat ' +
-    'Note="May use a press action as a Reaction, foregoing any further Reactions this turn"',
+    'Note="After taking the last action in a turn, may use a press action as a Reaction, losing any further Reactions this turn"',
   'Determination':
     'Section=save ' +
-    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/day"',
+    'Note="May use 1 action to end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/day"',
   'Guiding Finish':
     'Section=combat ' +
-    'Note="May move target 10\' within reach with a successful Strike (failure 5\') when wielding a one-handed weapon with a hand free"',
+    'Note="May move target 10\' to a spot within reach with a successful Strike (failure 5\') when wielding a one-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
-    'Note="May move target 10\' within reach with a successful Dueling Riposte Strike"',
+    'Note="May move target 10\' to a spot within reach with a successful Dueling Riposte Strike"',
   'Improved Twin Riposte':
     'Section=combat ' +
     'Note="May use an additional Reaction to make a Twin Riposte 1/tn"',
-  'Stance Savant':'Section=combat Note="May enter a stance during initiative"',
+  'Stance Savant':
+    'Section=combat ' +
+    'Note="May enter a stance during initiative as a free action"',
   'Two-Weapon Flurry':
-    'Section=combat Note="May Strike with two weapons simultaneously"',
+    'Section=combat Note="May use 1 action to Strike with two weapons"',
   // Whirlwind Strike as above
   'Graceful Poise':
     'Section=combat ' +
