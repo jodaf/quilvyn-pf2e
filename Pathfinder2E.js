@@ -2015,7 +2015,10 @@ Pathfinder2E.FEATS = {
     'Type=Class,Rogue Require="level >= 2","features.Ruffian"',
   'Distracting Feint':
     'Type=Class,Rogue Require="level >= 2","features.Scoundrel"',
-  'Minor Magic':'Type=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Arcane)':'Type=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Divine)':'Type=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Occult)':'Type=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Primal)':'Type=Class,Rogue Require="level >= 2"',
   'Mobility':'Type=Class,Rogue Require="level >= 2"',
   // Quick Draw as above
   'Unbalancing Blow':
@@ -4883,7 +4886,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"+1 Armor Class vs. traps",' +
-      '"+1 Perception to find traps/May find traps even when not Searching"',
+      '"+1 Perception to find traps/Automatic Search to find traps"',
   'Powerful Snares':
     'Section=skill ' +
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
@@ -5032,7 +5035,7 @@ Pathfinder2E.FEATURES = {
   // Weapon Specialization as above
 
   'Nimble Dodge':
-    'Section=combat Note="May use a Reaction to gain +2 AC against 1 attacker"',
+    'Section=combat Note="May use a Reaction to gain +2 AC against an attack"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
@@ -5044,19 +5047,38 @@ Pathfinder2E.FEATURES = {
     'Note="May use 2 actions to Strike with each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Section=combat ' +
-    'Note="May use %{rank.Intimidation>=4 ? \'a free action\' : \'Reaction\'} for a +2 Intimidation to Demoralize another foe after current foe drops"',
+    'Note="May use a %{rank.Intimidation>=4 ? \'free action\' : \'Reaction\'} for a +2 Intimidation to Demoralize another foe after current foe drops"',
   'Brutal Beating':
     'Section=combat Note="Critical success on a Strike inflicts frightened 1"',
   'Distracting Feint':
     'Section=combat ' +
     'Note="A successful Feint inflicts -2 Perception and Reflex saves"',
-  'Minor Magic':'Section=magic Note="Knows 2 cantrips from chosen tradition"',
+  'Minor Magic (Arcane)':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Spell Trained (Arcane)",' +
+      '"Knows 2 arcane cantrips"',
+  'Minor Magic (Divine)':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Spell Trained (Divine)",' +
+      '"Knows 2 divine cantrips"',
+  'Minor Magic (Occult)':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Spell Trained (Occult)",' +
+      '"Knows 2 occult cantrips"',
+  'Minor Magic (Primal)':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Spell Trained (Primal)",' +
+      '"Knows 2 primal cantrips"',
   'Mobility':
     'Section=combat Note="May Stride half Speed without triggering reactions"',
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
-    'Note="Critical hits inflict flat-footed vs. self attacks for 1 rd"',
+    'Note="Critical hits inflict flat-footed vs. self attacks until the end of your next turn"',
   'Battle Assessment':
     'Section=combat ' +
     'Note="May use Perception vs. Deception or Stealth DC to determine foe strengths and weaknesses"',
@@ -5066,22 +5088,24 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
   'Poison Weapon':
-    'Section=combat Note="May apply poison to piercing and slashing weapons"',
+    'Section=combat ' +
+    'Note="May prepare %{level} poisons each day that inflict 1d4 HP damage/May apply poison to piercing and slashing weapons"',
   'Reactive Pursuit':
     'Section=combat ' +
     'Note="May use a Reaction to remain adjacent to a retreating foe"',
   'Sabotage':
-    'Section=skill Note="May use Thievery to damage an item in a foe\'s hand"',
+    'Section=skill ' +
+    'Note="May use Thievery vs. Reflex to inflict %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item possessed by a creature within reach"',
   // Scout's Warning as above
   'Gang Up':
     'Section=combat ' +
-    'Note="Threats from allies inflict flat-footed on foes vs. self attacks"',
+    'Note="Flanking by allies inflict flat-footed on foes vs. self attacks"',
   'Light Step':
-    'Section=ability Note="May move normally over difficult terrain"',
+    'Section=ability Note="May Stride or Step normally over difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Section=combat ' +
-    'Note="Sneak attacks inflict %{(level+7)//6} HP persistent bleed damage"',
+    'Note="May inflict %{(level+7)//6} HP persistent bleed damage with a sneak attack"',
   // Blind-Fight as above
   'Delay Trap':
     'Section=skill ' +
@@ -5100,10 +5124,10 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction to redirect a failed Strike on self to an adjacent creature"',
   'Sly Striker':
     'Section=combat ' +
-    'Note="Successful Strikes with sneak attack weapons inflict +%{level>=14 ? 2 : 1}d6 HP damage"',
+    'Note="Successful Strikes with a sneak attack weapon inflict +%{level>=14 ? 2 : 1}d6 HP precision damage"',
   'Precise Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may inflict +2d6 HP damage or flat-footed"',
+    'Note="Debilitating Strike may inflict +2d6 HP precision damage or flat-footed"',
   'Sneak Savant':
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
@@ -5111,30 +5135,30 @@ Pathfinder2E.FEATURES = {
     'Note="Debilitating Strike may prevent reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may inflict weakness 5 to choice of weapon type or clumsy 1"',
+    'Note="Debilitating Strike may inflict weakness 5 to choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Strike forces foe Fortitude saves; critical failure paralyzes for 1 rd; failure/success inflicts slowed 2/1 for 1 rd"',
+    'Note="Debilitating Strike may force a foe Fortitude save; critical failure paralyzes until the end of your next turn; failure/success inflicts slowed 2/1 until the end of your next turn"',
   'Fantastic Leap':
     'Section=combat ' +
     'Note="May use 2 actions to Strike after a High Jump or Long Jump, using Long Jump distance for either"',
   'Felling Shot':
     'Section=combat ' +
-    'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds for 1 rd; failure causes 120\' fall"',
+    'Note="May use 2 actions to force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds until the end of your next turn; failure causes 120\' fall"',
   'Reactive Interference':
     'Section=combat ' +
-    'Note="May use a Reaction to prevent foe Reaction; requires an attack against a higher-level foe"',
+    'Note="May use a Reaction to prevent a foe Reaction; requires an attack against a higher-level foe"',
   'Spring From The Shadows':
     'Section=combat Note="May Strike an unaware foe after a Stride"',
   'Defensive Roll':
     'Section=combat ' +
-    'Note="May negate half damage from an attack that would reduce self to 0 Hit Points 1/10 min"',
+    'Note="May negate half damage from an attack that would reduce self to 0 HP as a free action 1/10 min"',
   'Instant Opening':
     'Section=combat ' +
-    'Note="R30\' May use a distraction to inflict flat-footed vs. self for 1 rd"',
+    'Note="R30\' May use a distraction to inflict flat-footed vs. self until the end of your next turn"',
   'Leave An Opening':
     'Section=combat ' +
-    'Note="A critical hit vs. a flat-footed foe gives an ally an Attack Of Opportunity"',
+    'Note="May follow a critical hit on a flat-footed foe by giving a chosen ally an Attack Of Opportunity"',
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
@@ -5142,12 +5166,13 @@ Pathfinder2E.FEATURES = {
   'Cloud Step':
     'Section=ability Note="May Stride over insubstantial surfaces and traps"',
   'Cognitive Loophole':
-    'Section=save Note="May use a Reaction to suppress a mental effect for 1 rd"',
+    'Section=save Note="May use a Reaction to suppress a mental effect until the end of your next turn"',
   'Dispelling Slice':
     'Section=combat ' +
-    'Note="May use 2 actions to dispel a magical effect on target with a successful sneak attack"',
+    'Note="May use 2 actions to attempt a level %{(level+1)//2}, DC %{classDifficultyClass.Rogue-10} counteract to dispel a magical effect on the target of a successful sneak attack"',
   'Perfect Distraction':
-    'Section=magic Note="May use <i>Mislead</i> effects 1/10 min"',
+    'Section=magic ' +
+    'Note="May create a decoy that invokes <i>Mislead</i> effects 1/10 min"',
   'Implausible Infiltration':
     'Section=ability ' +
     'Note="May use 2 actions to move through up to 10\' of wood, plaster, or stone"',
@@ -5155,85 +5180,80 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May change sneak attack damage to match weapon type"',
   "Trickster's Ace":
     'Section=magic ' +
-    'Note="May use a Reaction to evoke effects of a prepared spell up to level 4"',
-  'Hidden Paragon':'Section=magic Note="May become invisible for 1 min 1/hour"',
+    'Note="May use a Reaction to evoke the effects of a prepared spell up to level 4 on self"',
+  'Hidden Paragon':
+    'Section=magic ' +
+    'Note="May become invisible for 1 min when hidden from foes 1/hour"',
   'Impossible Striker':
-    'Section=combat Note="May use sneak attack vs. non-flat-footed foe"',
+    'Section=combat ' +
+    'Note="May inflict sneak attack damage on a non-flat-footed foe"',
   'Reactive Distraction':
     'Section=combat ' +
-    'Note="May use a Reaction to redirect effect or attack from self to decoy"',
+    'Note="May use a Reaction to redirect an effect or attack from self to Perfect Distraction decoy"',
 
   // Sorcerer
   // Alertness as above
   'Aberrant':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)",' +
-      '"Knows the <i>Tentacular Limbs</i> spell",' +
+      '"Spell Trained (Occult)/Knows the <i>Tentacular Limbs</i> spell",' +
       '"Casting a bloodline spell gives self or target +2 Will saves for 1 rd",' +
       '"Skill Trained (Intimidation; Occultism)"',
   'Angelic':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows the <i>Angelic Halo</i> spell",' +
+      '"Spell Trained (Divine)/Knows the <i>Angelic Halo</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 saves for 1 rd",' +
       '"Skill Trained (Diplomacy; Religion)"',
   'Demonic':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows the <i>Glutton\'s Jaws</i> spell",' +
+      '"Spell Trained (Divine)/Knows the <i>Glutton\'s Jaws</i> spell",' +
       '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Diabolic':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows the <i>Diabolic Edict</i> spell",' +
-      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on target for 1 rd",' +
+      '"Spell Trained (Divine)/Knows the <i>Diabolic Edict</i> spell",' +
+      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
       '"Skill Trained (Deception; Religion)"',
   'Draconic':
-    'Section=magic,magic,magic,skill ' +
+    'Section=feature,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Arcane))",' +
-      '"Knows the <i>Dragon Claws</i> spell",' +
+      '"Shows physical relationship to chosen dragon type",' +
+      '"Spell Trained (Arcane))/Knows the <i>Dragon Claws</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 AC for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Elemental':
-    'Section=magic,magic,magic,skill ' +
+    'Section=feature,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)",' +
-      '"Knows the <i>Elemental Toss</i> spell",' +
+      '"Shows physical relationship to chosen elemental type",' +
+      '"Spell Trained (Primal)/Knows the <i>Elemental Toss</i> spell",' +
       '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Fey':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)",' +
-      '"Knows the <i>Faerie Dust</i> spell",' +
+      '"Spell Trained (Primal)/Knows the <i>Faerie Dust</i> spell",' +
       '"Casting a bloodline spell gives self or target concealment for 1 rd",' +
       '"Skill Trained (Deception; Nature)"',
   'Hag':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)",' +
-      '"Knows the <i>Jealous Hex</i> spell",' +
-      '"Casting a bloodline spell inflicts 2 HP mental per spell level to first successful attacker for 1 rd",' +
+      '"Spell Trained (Occult)/Knows the <i>Jealous Hex</i> spell",' +
+      '"Casting a bloodline spell inflicts 2 HP mental per spell level (Will neg) to first successful attacker for 1 rd",' +
       '"Skill Trained (Deception; Occultism)"',
   'Imperial':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Arcane)",' +
-      '"Knows the <i>Ancestral Memories</i> spell",' +
+      '"Spell Trained (Arcane)/Knows the <i>Ancestral Memories</i> spell",' +
       '"Casting a bloodline spell gives self or target +1 skill checks for 1 rd",' +
       '"Skill Trained (Arcana; Society)"',
   'Undead':
-    'Section=magic,magic,magic,skill ' +
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows the <i>Undeath\'s Blessing</i> spell",' +
-      '"Casting a bloodline spell gives self 1 temporary Hit Points per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
+      '"Spell Trained (Divine)/Knows the <i>Undeath\'s Blessing</i> spell",' +
+      '"Casting a bloodline spell gives self 1 temporary Hit Point per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Bloodline':
     'Section=feature,magic ' +
@@ -5287,16 +5307,14 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="+1 P%V slot for a <i>Summon Animal</i> or a <i>Summon Plant Or Fungus</i> spell"',
   'Advanced Bloodline':
-    // TODO automate
-    'Section=magic Note="Knows advanced bloodline spell/+1 Focus Points"',
+    'Section=magic Note="Knows %V spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
     'Section=save Note="+1 vs. spells and magical effects"',
   'Crossblooded Evolution':
     'Section=magic Note="May know 1 spell from a different tradition"',
   'Greater Bloodline':
-    // TODO automate
-    'Section=magic Note="Knows greater bloodline spell/+1 Focus Points"',
+    'Section=magic Note="Knows %V spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
@@ -10417,32 +10435,43 @@ Pathfinder2E.classRules = function(
         spellType == 'O' ? 'Occult' :
         spellType == 'P' ? 'Primal' : spellType;
       let spellLevel = spellTypeAndLevel.replace(spellType, '');
-      let spellModifier = abilities[0] + 'Modifier';
       rules.defineChoice('notes',
-        'spellAttackModifier.' + spellType + ':%S (' + abilities[0] + '; %1)',
-        'spellDifficultyClass.' + spellType + ':%V (' + abilities[0] + '; %1)'
+        'spellAttackModifier.' + spellType + ':%S (' + '%1; %2)',
+        'spellDifficultyClass.' + spellType + ':%V (' + '%1; %2)'
       );
       rules.defineRule('rank.' + spellType, 'training.' + spellType, '=', null);
       rules.defineRule('proficiencyLevelBonus.' + spellType,
         'rank.' + spellType, '?', 'source > 0',
         'level', '=', null
       );
+      rules.defineRule('spellModifier.' + name,
+        classLevel, '?', null,
+        abilities[0] + 'Modifier', '=', null
+      );
+      rules.defineRule
+        ('spellModifier.' + spellType, 'spellModifier.' + name, '=', null);
       rules.defineRule('proficiencyBonus.' + spellType,
         'rank.' + spellType, '=', '2 * source',
         'proficiencyLevelBonus.' + spellType, '+', null
       );
       rules.defineRule('spellAttackModifier.' + spellType,
         'proficiencyBonus.' + spellType, '=', null,
-        spellModifier, '+', null
+        'spellModifier.' + spellType, '+', null
+      );
+      rules.defineRule('spellAttackModifier.' + spellType + '.1',
+        classLevel, '=', '"' + abilities[0] + '"'
+      );
+      rules.defineRule('spellAttackModifier.' + spellType + '.2',
+        'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
       );
       rules.defineRule('spellDifficultyClass.' + spellType,
         'proficiencyBonus.' + spellType, '=', null,
-        spellModifier, '+', '10 + source'
-      );
-      rules.defineRule('spellAttackModifier.' + spellType + '.1',
-        'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
+        'spellModifier.' + spellType, '+', '10 + source'
       );
       rules.defineRule('spellDifficultyClass.' + spellType + '.1',
+        classLevel, '=', '"' + abilities[0] + '"'
+      );
+      rules.defineRule('spellDifficultyClass.' + spellType + '.2',
         'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
       );
     }
@@ -10781,6 +10810,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule('spellModifier.Champion',
+      classLevel, '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifier.Champion', '=', null);
+    rules.defineRule
+      ('spellAttackModifier.Divine.1', classLevel, '=', '"charisma"');
+    rules.defineRule
+      ('spellDifficultyClass.Divine.1', classLevel, '=', '"charisma"');
     rules.defineRule
       ("spells.Hero's Defiance", "magicNotes.hero'sDefiance", '=', '1');
     rules.defineChoice
@@ -10954,6 +10993,30 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule('speed', 'abilityNotes.incredibleMovement.1', '+', null);
+    rules.defineRule('spellModifierDivine.Monk',
+      'magicNotes.kiTradition(Divine)', '?', null,
+      'wisdomModifier', '=', null
+    );
+    rules.defineRule('spellModifierOccult.Monk',
+      'magicNotes.kiTradition(Occult)', '?', null,
+      'wisdomModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifierDivine.Monk', '=', null);
+    rules.defineRule
+      ('spellModifier.Occult', 'spellModifierOccult.Monk', '=', null);
+    rules.defineRule('spellAttackModifier.Divine.1',
+      'spellModifierDivine.Monk', '=', '"wisdom"'
+    );
+    rules.defineRule('spellAttackModifier.Occult.1',
+      'spellModifierOccult.Monk', '=', '"wisdom"'
+    );
+    rules.defineRule('spellDifficultyClass.Divine.1',
+      'spellModifierDivine.Monk', '=', '"wisdom"'
+    );
+    rules.defineRule('spellDifficultyClass.Occult.1',
+      'spellModifierOccult.Monk', '=', '"wisdom"'
+    );
     rules.defineRule('training.Divine',
       'magicNotes.gracefulLegend', '^=', 'source=="Divine" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Divine" ? 2 : null'
@@ -11028,6 +11091,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.rogueSkills', 'intelligenceModifier', '=', '7 + source');
   } else if(name == 'Sorcerer') {
+    let bloodlineSpells = {
+      'Aberrant':'Tentacular Limbs',
+      'Angelic':'Angelic Halo',
+      'Demonic':"Glutton's Jaws",
+      'Diabolic':'Diabolic Edict',
+      'Draconic':'Dragon Claws',
+      'Elemental':'Elemental Toss',
+      'Fey':'Faerie Dust',
+      'Hag':'Jealous Hex',
+      'Imperial':'Ancestral Memories',
+      'Undead':"Undeath's Blessing"
+    };
     let bloodlineTraditions = {
       'Aberrant':'Occult',
       'Angelic':'Divine',
@@ -11053,6 +11128,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'x9:3@17;4@18',
       'x10:1@19'
     ];
+    rules.defineRule('spellModifier.Sorcerer',
+      classLevel, '?', null,
+      'charismaModifier', '=', null
+    );
+    for(let b in bloodlineSpells) {
+      rules.defineRule('spells.' + bloodlineSpells[b],
+        'magicNotes.' + b.charAt(0).toLowerCase() + b.substring(1).replaceAll(' ', ''), '=', '1'
+      );
+    }
     for(let b in bloodlineTraditions) {
       let bloodLevel = b.toLowerCase() + 'Level';
       let bloodTrad = bloodlineTraditions[b];
@@ -11062,6 +11146,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       );
       rules.defineRule('bloodlineTraditions',
         'features.' + b, '=', '!dict.bloodlineTraditions ? "' + bloodTrad + '" : !dict.bloodlineTraditions.includes("' + bloodTrad + '") ? dict.bloodlineTraditions + "; ' + bloodTrad + '" : dict.bloodlineTraditions'
+      );
+      rules.defineRule('spellModifier.' + b,
+        bloodLevel, '?', null,
+        'charismaModifier', '=', null
+      );
+      rules.defineRule
+        ('spellModifier.' + bloodTrad, 'spellModifier.' + b, '=', null);
+      rules.defineRule('spellAttackModifier.' + bloodTrad + '.1',
+        bloodLevel, '=', '"charisma"'
+      );
+      rules.defineRule('spellDifficultyClass.' + bloodTrad + '.1',
+        bloodLevel, '=', '"charisma"'
       );
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
@@ -11365,6 +11461,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Alchemical Familiar') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.alchemicalFamiliar', '=', '1');
+  } else if(name == 'Advanced Bloodline') {
+    let bloodSpells = {
+      'Aberrant':'Aberrant Whispers',
+      'Angelic':'Angelic Wings',
+      'Demonic':'Swamp Of Sloth',
+      'Diabolic':'Embrace The Pit',
+      'Draconic':'Dragon Breath',
+      'Elemental':'Elemental Motion',
+      'Fey':'Fey Disappearance',
+      'Hag':'Horrific Visage',
+      'Imperial':'Extend Spell',
+      'Undead':'Drain Life'
+    };
+    for(let b in bloodSpells) {
+      rules.defineRule('magicNotes.advancedBloodline',
+        'features.' + b, '=', '"' + bloodSpells[b] + '"'
+      );
+      rules.defineRule('spells.' + bloodSpells[b],
+        'magicNotes.advancedBloodline', '=', 'null', // italics
+        'features.' + b, '=', '1'
+      );
+    }
   } else if(name == 'Animal Accomplice') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.animalAccomplice', '=', '1');
@@ -11380,6 +11498,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
     );
   } else if(name == 'Bard Dedication') {
+    rules.defineRule('spellModifier.' + name,
+      'magicNotes.bardDedication', '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Occult', 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAttackModifier.Occult.1',
+      'magicNotes.bardDedication', '=', '"charisma"'
+    );
+    rules.defineRule('spellDifficultyClass.Occult.1',
+      'magicNotes.bardDedication', '=', '"charisma"'
+    );
     rules.defineRule('features.Muses', 'featureNotes.bardDedication', '=', '1');
     rules.defineRule('spellSlots.O0', 'magicNotes.bardDedication', '+=', '2');
     // Suppress validation errors for selected muses and the notes for
@@ -11502,6 +11632,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
+  } else if(name == 'Greater Bloodline') {
+    let bloodSpells = {
+      'Aberrant':'Unusual Anatomy',
+      'Angelic':'Celestial Brand',
+      'Demonic':'Abyssal Wrath',
+      'Diabolic':'Hellfire Plume',
+      'Draconic':'Dragon Wings',
+      'Elemental':'Elemental Blast',
+      'Fey':'Fey Glamour',
+      'Hag':"You're Mine",
+      'Imperial':'Arcane Countermeasure',
+      'Undead':'Grasping Grave'
+    };
+    for(let b in bloodSpells) {
+      rules.defineRule('magicNotes.greaterBloodline',
+        'features.' + b, '=', '"' + bloodSpells[b] + '"'
+      );
+      rules.defineRule('spells.' + bloodSpells[b],
+        'magicNotes.greaterBloodline', '=', 'null', // italics
+        'features.' + b, '=', '1'
+      );
+    }
   } else if(name == 'Hand Of The Apprentice') {
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
@@ -11549,6 +11701,22 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('featureNotes.animalCompanion',
       'combatNotes.masterfulCompanion', '=', 'null' // italics
     );
+  } else if((matchInfo = name.match(/^Minor Magic \((.*)\)$/)) != null) {
+    let trad = matchInfo[1];
+    let note = 'magicNotes.minorMagic(' + trad + ')';
+    rules.defineRule('spellModifier.' + name,
+      note, '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.' + trad, 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAttackModifier.' + trad + '.1',
+      note, '=', '"charisma"'
+    );
+    rules.defineRule('spellDifficultyClass.' + trad + '.1',
+      note, '=', '"charisma"'
+    );
+    rules.defineRule('spellSlots.' + trad.charAt(0) + '0', note, '+=', '2');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', null,
@@ -12243,7 +12411,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Charisma', within: 'Abilities', format: '%V'},
           {name: 'Section 2', within: '_top', separator: '; '},
             {name: 'Perception', within: 'Section 2'},
-            {name: 'Skill Modifier', within: 'Section 2', separator: '/'},
+            {name: 'Skill Modifiers', within: 'Section 2', separator: '/'},
             {name: 'Feats', within: 'Section 2', separator: '/'},
             {name: 'Languages', within: 'Section 2', separator: '/'},
             {name: 'Spells', within: 'Section 2', separator: '/'},
