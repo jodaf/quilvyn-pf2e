@@ -2133,7 +2133,7 @@ Pathfinder2E.FEATS = {
   'Bloodline Focus':
     'Type=Class,Sorcerer Require="level >= 12","features.Bloodline"',
   'Magic Sense':'Type=Class,Sorcerer,Wizard Require="level >= 12"',
-  'Interweave Spell':
+  'Interweave Dispel':
     'Type=Class,Sorcerer Require="level >= 14","spells.Dispel Magic"',
   'Reflect Spell':
     'Type=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
@@ -3522,8 +3522,10 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':
-    // TODO Bard: add 2 cantrips from your spell list to your repertoire
-    // TODO Cleric: can prepare 2 additional cantrips each day
+    // TODO
+    // Bard: add two additional cantrips from your spell list to your repertoire
+    // Cleric: can prepare 2 additional cantrips each day
+    // Sorcerer: add two additional cantrips from your spell list to your repertoire
     'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
@@ -3579,7 +3581,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the <i>House Of Imaginary Walls</i> cantrip"',
   'Quickened Casting':
     'Section=magic ' +
-    'Note="May reduce the time required to cast a spell of level %1 or lower by 1 action 1/day"',
+    'Note="May reduce the time required to cast a spell of level %1 or lower by 1 action as a free action 1/day"',
   'Unusual Composition':
     'Section=magic ' +
     'Note="May replace somatic components of a composition spell with verbal components or vice versa"',
@@ -5282,7 +5284,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a Reaction and expend a spell slot to counteract a spell with the same spell"',
   'Dangerous Sorcery':
     'Section=magic ' +
-    'Note="Instantaneous spells inflict additional damage equal to their levels"',
+    'Note="Casting an instantaneous harmful spell inflicts additional damage equal to its level"',
   'Familiar':'Section=feature Note="May have a familiar"',
   // Reach Spell as above
   // Widen Spell as above
@@ -5297,37 +5299,40 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Casting a spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school"',
   'Divine Evolution':
-    'Section=magic Note="+1 D%V slot for a heal or harm spell"',
+    'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May learn 1 unknown mental spell each day",' +
+      '"May temporarily add 1 unknown mental spell to repretoire each day",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
-    'Note="+1 P%V slot for a <i>Summon Animal</i> or a <i>Summon Plant Or Fungus</i> spell"',
+    'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
   'Advanced Bloodline':
     'Section=magic Note="Knows %V spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
     'Section=save Note="+1 vs. spells and magical effects"',
   'Crossblooded Evolution':
-    'Section=magic Note="May know 1 spell from a different tradition"',
+    'Section=magic ' +
+    'Note="May have 1 spell from a different tradition in repertoire"',
   'Greater Bloodline':
     'Section=magic Note="Knows %V spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Magic Sense':
-    'Section=magic Note="Has continuous <i>Detect Magic</i> effects"',
-  'Interweave Spell':
+    'Section=magic ' +
+    'Note="Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek"',
+  'Interweave Dispel':
     'Section=magic ' +
     'Note="May expend a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
   'Reflect Spell':
     'Section=magic ' +
-    'Note="May have a successful Counterspell on a targeted spell inflict the spell effects on the caster"',
+    'Note="May have a successful Counterspell inflict the spell effects on the caster"',
   // Effortless Concentration as above
-  'Greater Mental Evolution':'Section=magic Note="+1 spell slot of each level"',
+  'Greater Mental Evolution':
+    'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
     'Section=feature ' +
     'Note="May cast two additional spells of different levels after spell slots in each level are exhausted 1/day"',
@@ -11192,10 +11197,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       );
       rules.defineRule
         ('magicNotes.primalEvolution', 'spellSlots.P' + l, '^=', l);
-      rules.defineRule
-        ('spellSlots.A' + l, 'magicNotes.greaterMentalEvolution', '+', '1');
-      rules.defineRule
-        ('spellSlots.O' + l, 'magicNotes.greaterMentalEvolution', '+', '1');
       rules.defineRule('spellSlots.P' + l,
         'magicNotes.primalEvolution', '+', 'source==' + l + ' ? 1 : null'
       );
