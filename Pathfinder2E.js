@@ -2215,7 +2215,7 @@ Pathfinder2E.FEATS = {
   // Archetype
   'Alchemist Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","intelligence >= 14"',
+    'Require="level >= 2","intelligence >= 14","levels.Alchemist == 0"',
   'Basic Concoction':
     'Type=Archetype Require="level >= 4","features.Alchemist Dedication"',
   'Quick Alchemy':
@@ -2231,7 +2231,11 @@ Pathfinder2E.FEATS = {
 
   'Barbarian Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","strength >= 14","constitution >= 14"',
+    'Require=' +
+      '"level >= 2",' +
+      '"strength >= 14",' +
+      '"constitution >= 14",' +
+      '"levels.Barbarian == 0"',
   // TODO requires "class granting no more HP/level than 10 + conmod"
   'Barbarian Resiliency':
     'Type=Archetype Require="level >= 4","features.Barbarian Dedication"',
@@ -2250,7 +2254,7 @@ Pathfinder2E.FEATS = {
 
   'Bard Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","charisma >= 14"',
+    'Require="level >= 2","charisma >= 14","levels.Bard == 0"',
   'Basic Bard Spellcasting':
     'Type=Archetype Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
@@ -2278,7 +2282,11 @@ Pathfinder2E.FEATS = {
 
   'Champion Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","strength >= 14","charisma >= 14"',
+    'Require=' +
+      '"level >= 2",' +
+      '"strength >= 14",' +
+      '"charisma >= 14",' +
+      '"levels.Champion == 0"',
   'Basic Devotion':
     'Type=Archetype Require="level >= 4","features.Champion Dedication"',
   // TODO requires "class granting no more HP/level than 8 + conmod"
@@ -2288,7 +2296,10 @@ Pathfinder2E.FEATS = {
     'Type=Archetype Require="level >= 4","features.Champion Dedication"',
   'Advanced Devotion':
     'Type=Archetype Require="level >= 6","features.Basic Devotion"',
-  // Divine Ally as above
+  "Champion's Reaction":
+    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
+  'Divine Ally':
+    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
   'Diverse Armor Expert':
     'Type=Archetype ' +
     'Require=' +
@@ -2296,7 +2307,8 @@ Pathfinder2E.FEATS = {
       '"rank.Unarmored Defense >= 2 || rank.Light Armor >=2 || rank.Medium Armor >=2 || rank.Heavy Armor >= 2"',
 
   'Cleric Dedication':
-    'Type=Archetype,Dedication,Multiclass Require="level >= 2","wisdom >= 14"',
+    'Type=Archetype,Dedication,Multiclass ' +
+    'Require="level >= 2","wisdom >= 14","levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
     'Type=Archetype Require="level >= 4","features.Cleric Dedication"',
   'Basic Dogma':
@@ -2319,7 +2331,8 @@ Pathfinder2E.FEATS = {
       '"rank.Religion >= 4"',
 
   'Druid Dedication':
-    'Type=Archetype,Dedication,Multiclass Require="level >= 2","wisdom >= 14"',
+    'Type=Archetype,Dedication,Multiclass ' +
+    'Require="level >= 2","wisdom >= 14","levels.Druid == 0"',
   'Basic Druid Spellcasting':
     'Type=Archetype Require="level >= 4","features.Druid Dedication"',
   'Basic Wilding':
@@ -2345,7 +2358,11 @@ Pathfinder2E.FEATS = {
 
   'Fighter Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","strength >= 14","dexterity >= 14"',
+    'Require=' +
+      '"level >= 2",' +
+      '"strength >= 14",' +
+      '"dexterity >= 14",' +
+      '"levels.Fighter == 0"',
   'Basic Maneuver':
     'Type=Archetype Require="level >= 4","features.Fighter Dedication"',
   // TODO requires "class granting no more HP/level than 8 + conmod"
@@ -2364,7 +2381,11 @@ Pathfinder2E.FEATS = {
 
   'Monk Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","strength >= 14","dexterity >= 14"',
+    'Require=' +
+      '"level >= 2",' +
+      '"strength >= 14",' +
+      '"dexterity >= 14",' +
+      '"levels.Monk == 0"',
   'Basic Kata':'Type=Archetype Require="level >= 4","feats.Monk Dedication"',
   // TODO requires "class granting no more HP/level than 8 + conmod"
   'Monk Resiliency':
@@ -2381,7 +2402,7 @@ Pathfinder2E.FEATS = {
 
   'Ranger Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","dexterity >= 14"',
+    'Require="level >= 2","dexterity >= 14","levels.Ranger == 0"',
   "Basic Hunter's Trick":
     'Type=Archetype Require="level >= 4","features.Ranger Dedication"',
   // TODO requires "class granting no more HP/level than 8 + conmod"
@@ -2395,7 +2416,7 @@ Pathfinder2E.FEATS = {
 
   'Rogue Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","dexterity >= 14"',
+    'Require="level >= 2","dexterity >= 14","levels.Rogue == 0"',
   'Basic Trickery':
     'Type=Archetype Require="level >= 4","features.Rogue Dedication"',
   'Sneak Attacker':
@@ -2413,7 +2434,7 @@ Pathfinder2E.FEATS = {
 
   'Sorcerer Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","charisma >= 14"',
+    'Require="level >= 2","charisma >= 14","levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
     'Type=Archetype Require="level >= 4","features.Sorcerer Dedication"',
   'Basic Blood Potency':
@@ -2440,7 +2461,7 @@ Pathfinder2E.FEATS = {
 
   'Wizard Dedication':
     'Type=Archetype,Dedication,Multiclass ' +
-    'Require="level >= 2","intelligence >= 14"',
+    'Require="level >= 2","intelligence >= 14","levels.Wizard == 0"',
   'Arcane School Spell':
     'Type=Archetype Require="level >= 4","features.Wizard Dedication"',
   'Basic Arcana':
@@ -3526,6 +3547,7 @@ Pathfinder2E.FEATURES = {
     // Bard: add two additional cantrips from your spell list to your repertoire
     // Cleric: can prepare 2 additional cantrips each day
     // Sorcerer: add two additional cantrips from your spell list to your repertoire
+    // Wizard: can prepare 2 additional cantrips each day
     'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
@@ -4190,7 +4212,7 @@ Pathfinder2E.FEATURES = {
     'Note="Self polymorph spells restore 1d6 Hit Points per spell level"',
   'Overwhelming Energy':
     'Section=magic ' +
-    'Note="May have spells ignore resistance %{level} to choice of energy"',
+    'Note="May cast a spell that ignores resistance %{level} to choice of energy"',
   'Plant Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Large plant and to gain resistance 5 to poison"',
@@ -5297,7 +5319,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Choose 1 from any)"',
   'Bespell Weapon':
     'Section=magic ' +
-    'Note="Casting a spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school"',
+    'Note="Casting a non-cantrip spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
@@ -5395,8 +5417,10 @@ Pathfinder2E.FEATURES = {
       '"+1 spell slot each level/Knows the <i>Warped Terrain</i> spell",' +
       '"Knows 1 additional 1st-level Illusion spell"',
   'Improved Familiar Attunement':
-    'Section=feature ' +
-    'Note="Familiar is focus of Arcane Bond and has %{level//6+1} additional %{level>5?\'abilities\':\'ability\'}"',
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has Familiar feature",' +
+      '"Familiar is focus of Arcane Bond and has %{level//6+1} additional %{level>5?\'abilities\':\'ability\'}"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Magical Fortitude as above
@@ -5438,7 +5462,8 @@ Pathfinder2E.FEATURES = {
 
   // Counterspell as above
   'Eschew Materials':
-    'Section=magic Note="Does not need material components to cast spells"',
+    'Section=magic ' +
+    'Note="May replace spell material components with sigils drawn in the air"',
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
@@ -5448,14 +5473,14 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Conceal Spell':
     'Section=skill ' +
-    'Note="May hide spellcasting from observers with successful Deception and Stealth vs. Perception"',
+    'Note="May hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
     'Section=magic ' +
     'Note="Draining a bonded item to cast a spell restores 1 Focus Point"',
   'Silent Spell':
-    'Section=magic Note="Does not need verbal components to cast spells"',
+    'Section=magic Note="May cast a spell without its verbal components"',
   'Spell Penetration':
     'Section=magic ' +
     'Note="Targets reduce any status bonus to saves vs. self spells by 1"',
@@ -5464,7 +5489,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
   'Bond Conservation':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell 2 levels lower within 1 rd"',
+    'Note="May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
@@ -5477,7 +5502,7 @@ Pathfinder2E.FEATURES = {
     'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
   'Clever Counterspell':
     'Section=magic ' +
-    'Note="May Counterspell with a -2 penalty a known spell using any spell that shares its school and another trait"',
+    'Note="May Counterspell with a -2 penalty a known spell using any spell that shares a non-tradition trait with it"',
   // Magic Sense as above
   'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Reflect Spell as above
@@ -5486,10 +5511,11 @@ Pathfinder2E.FEATURES = {
     'Note="May use Drain Bonded Item to cast another spell up to level %V 1/day"',
   // Effortless Concentration as above
   'Spell Tinker':
-    'Section=magic Note="May alter effect choice of a spell cast on self"',
+    'Section=magic ' +
+    'Note="May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
   'Infinite Possibilities':
     'Section=magic ' +
-    'Note="May designate a spell slot to allow casting of any known spell of 2 levels lower"',
+    'Note="May prepare a spell slot to allow casting of any known spell of 2 levels lower"',
   'Reprepare Spell':
     'Section=magic ' +
     'Note="May spend 10 min to prepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
@@ -5497,7 +5523,7 @@ Pathfinder2E.FEATURES = {
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
-    'Note="May use 1 spell slot of each level to cast two spells of 2 levels lower"',
+    'Note="May use 1 spell slot of each level above 2nd to cast a combaination of two spells of 2 levels lower"',
 
   // Archetype
   'Alchemist Dedication':'Section=feature Note="FILL"',
@@ -5536,6 +5562,7 @@ Pathfinder2E.FEATURES = {
   'Champion Resiliency':'Section=feature Note="FILL"',
   'Healing Touch':'Section=feature Note="FILL"',
   'Advanced Devotion':'Section=feature Note="FILL"',
+  // Champion's Reaction as above
   // Divine Ally as above
   'Diverse Armor Expert':'Section=feature Note="FILL"',
 
@@ -9616,6 +9643,11 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'shield:%V%1%2%3%4',
     'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
   );
+  rules.defineRule('rank.Light Armor', 'training.Light Armor', '=', null);
+  rules.defineRule('rank.Medium Armor', 'training.Medium Armor', '=', null);
+  rules.defineRule('rank.Heavy Armor', 'training.Heavy Armor', '=', null);
+  rules.defineRule
+    ('rank.Unarmored Defense', 'training.Unarmored Defense', '=', null);
   rules.defineRule('training.Armor',
     'armorCategory', '=', '0',
     'training.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
@@ -9809,6 +9841,15 @@ Pathfinder2E.talentRules = function(
     rules.choiceRules(rules, 'Skill', s, skills[s]);
     rules.defineRule
       ('skillIncreasesAllocated', 'skillIncreases.' + s, '+=', null);
+    let pattern =
+      s.replaceAll('(', '\\(').replaceAll(')', '\\)').replace(/\s+/, '\\b\\s*');
+    rules.choiceRules(rules, 'Goody', s,
+      'Pattern="([-+]\\d).*\\s+' + pattern + '\\s+Skill|' + pattern + '\\s+skill\\s+([-+]\\d)"' +
+      'Effect=add ' +
+      'Value="$1 || $2" ' +
+      'Attribute="skillModifiers.' + s + '" ' +
+      'Section=skill Note="%V ' + s + '"'
+    );
   }
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
@@ -11210,6 +11251,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
+    rules.defineRule('features.Familiar',
+      'featureNotes.improvedFamiliarAttunement', '=', '1'
+    );
     rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
     rules.defineRule('spellSlots.O10',
       "magicNotes.archwizard'sSpellcraft", '+', 'null' // italics
@@ -11260,9 +11304,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     });
     [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
       rules.defineRule
-        ('magicNotes.scrollSavant', 'spellSlots.A' + l, '^=', 'source - 2');
+        ('magicNotes.scrollSavant', 'spellSlots.A' + l, '^=', l - 2);
       rules.defineRule
-        ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', 'source - 2');
+        ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', l - 2);
     });
   }
 
@@ -11424,7 +11468,7 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
       QuilvynRules.validAllocationRules
         (rules, t + 'Feats', 'featCount.' + t, 'sum' + t + 'Feats');
   });
-  rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+', null);
+  rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+=', null);
 
 };
 

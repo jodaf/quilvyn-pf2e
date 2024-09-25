@@ -17,8 +17,8 @@ var attributes = {
   "feats.Cantrip Expansion":1, "feats.Clever Counterspell":1, "feats.Conceal Spell":1, 
   "feats.Counterspell":1, "feats.Dwarven Weapon Cunning":1, "feats.Dwarven Weapon Expertise":1, 
   "feats.Dwarven Weapon Familiarity":1, "feats.Effortless Concentration":1, "feats.Enhanced Familiar":1, 
-  "feats.Eschew Materials":1, "feats.Familiar":1, "feats.Hand Of The Apprentice":1, 
-  "feats.Infinite Possibilities":1, "feats.Linked Focus":1, "feats.Magic Sense":1, "feats.Metamagic Mastery":1, 
+  "feats.Eschew Materials":1, "feats.Hand Of The Apprentice":1, "feats.Infinite Possibilities":1, 
+  "feats.Linked Focus":1, "feats.Magic Sense":1, "feats.Metamagic Mastery":1, 
   "feats.Overwhelming Energy":1, "feats.Quick Recognition":1, "feats.Quickened Casting":1, 
   "feats.Reach Spell":1, "feats.Recognize Spell":1, "feats.Reflect Spell":1, 
   "feats.Reprepare Spell":1, "feats.Rock Runner":1, "feats.Scroll Savant":1, "feats.Silent Spell":1, 
@@ -105,7 +105,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Advanced School Spell; Archwizard's Might; Assurance (Crafting); Bespell Weapon; Bizarre Magic; Bond Conservation; Bonded Focus; Canny Acumen (Fortitude); Cantrip Expansion; Clever Counterspell; Conceal Spell; Counterspell; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Effortless Concentration; Enhanced Familiar; Eschew Materials; Familiar; Hand Of The Apprentice; Infinite Possibilities; Linked Focus; Magic Sense; Metamagic Mastery; Overwhelming Energy; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Rock Runner; Scroll Savant; Silent Spell; Skill Training (Butchering Lore); Skill Training (Deception); Skill Training (Farming Lore); Skill Training (Halfling Lore); Skill Training (Military Lore); Skill Training (Tanning Lore); Spell Combination; Spell Penetration; Spell Tinker; Steady Spellcasting; Stonewalker; Superior Bond; Universal Versatility; Weapon Proficiency (Halfling Sling Staff); Weapon Proficiency (Longsword); Weapon Proficiency (Shortbow); Weapon Proficiency (Simple Weapons); Widen Spell</td>
+        <td><b>Feats</b>: Advanced School Spell; Archwizard's Might; Assurance (Crafting); Bespell Weapon; Bizarre Magic; Bond Conservation; Bonded Focus; Canny Acumen (Fortitude); Cantrip Expansion; Clever Counterspell; Conceal Spell; Counterspell; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Effortless Concentration; Enhanced Familiar; Eschew Materials; Hand Of The Apprentice; Infinite Possibilities; Linked Focus; Magic Sense; Metamagic Mastery; Overwhelming Energy; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Rock Runner; Scroll Savant; Silent Spell; Skill Training (Butchering Lore); Skill Training (Deception); Skill Training (Farming Lore); Skill Training (Halfling Lore); Skill Training (Military Lore); Skill Training (Tanning Lore); Spell Combination; Spell Penetration; Spell Tinker; Steady Spellcasting; Stonewalker; Superior Bond; Universal Versatility; Weapon Proficiency (Halfling Sling Staff); Weapon Proficiency (Longsword); Weapon Proficiency (Shortbow); Weapon Proficiency (Simple Weapons); Widen Spell</td>
         <td><b>Wizard Features</b>: Ability Boost (Intelligence); Ability Boosts; Abjuration; Alertness; Arcane Bond; Arcane School; Arcane Spellcasting; Arcane Thesis; Archwizard's Spellcraft; Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks); Conjuration; Defense Trained (Unarmored Defense); Defensive Robes; Divination; Enchantment; Evocation; Expert Spellcaster; General Feats; Illusion; Improved Familiar Attunement; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Metamagical Experimentation; Necromancy; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Blending; Spell Substitution; Spell Trained (Arcane); Transmutation; Universalist; Weapon Specialization; Wizard Feats; Wizard Skills; Wizard Weapon Expertise</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
@@ -123,6 +123,8 @@ var attributes = {
         <td><i>General Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Half-Elf: Has Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Improved Familiar Attunement: Has Familiar feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Metamagical Experimentation: +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
@@ -223,7 +225,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Crafting): May take 10 on Crafting rolls</td>
     </tr><tr style="text-align:center">
-      <td>Conceal Spell: May hide spellcasting from observers with successful Deception and Stealth vs. Perception</td>
+      <td>Conceal Spell: May hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells</td>
     </tr><tr style="text-align:center">
       <td>Quick Recognition: May Recognize a Spell as a free action 1/rd</td>
     </tr><tr style="text-align:center">
@@ -409,17 +411,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Arcane Spellcasting: May learn spells from the Arcane tradition</td>
     </tr><tr style="text-align:center">
-      <td>Bespell Weapon: Casting a spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school</td>
+      <td>Bespell Weapon: Casting a non-cantrip spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school</td>
     </tr><tr style="text-align:center">
       <td>Bizarre Magic: Self spells require +5 DC to Recognize Spells and Identify Magic</td>
     </tr><tr style="text-align:center">
-      <td>Bond Conservation: May use Drain Bonded Item to cast another spell 2 levels lower within 1 rd</td>
+      <td>Bond Conservation: May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn</td>
     </tr><tr style="text-align:center">
       <td>Bonded Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: May prepare two additional cantrips each day</td>
     </tr><tr style="text-align:center">
-      <td>Clever Counterspell: May Counterspell with a -2 penalty a known spell using any spell that shares its school and another trait</td>
+      <td>Clever Counterspell: May Counterspell with a -2 penalty a known spell using any spell that shares a non-tradition trait with it</td>
     </tr><tr style="text-align:center">
       <td>Conjuration: Knows 1 additional 1st-level Conjuration spell</td>
     </tr><tr style="text-align:center">
@@ -431,13 +433,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Enchantment: Knows 1 additional 1st-level Enchantment spell</td>
     </tr><tr style="text-align:center">
-      <td>Eschew Materials: Does not need material components to cast spells</td>
+      <td>Eschew Materials: May replace spell material components with sigils drawn in the air</td>
     </tr><tr style="text-align:center">
       <td>Evocation: Knows 1 additional 1st-level Evocation spell</td>
     </tr><tr style="text-align:center">
       <td>Illusion: Knows 1 additional 1st-level Illusion spell</td>
     </tr><tr style="text-align:center">
-      <td>Infinite Possibilities: May designate a spell slot to allow casting of any known spell of 2 levels lower</td>
+      <td>Infinite Possibilities: May prepare a spell slot to allow casting of any known spell of 2 levels lower</td>
     </tr><tr style="text-align:center">
       <td>Linked Focus: Draining a bonded item to cast a spell restores 1 Focus Point</td>
     </tr><tr style="text-align:center">
@@ -449,7 +451,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Necromancy: Knows 1 additional 1st-level Necromancy spell</td>
     </tr><tr style="text-align:center">
-      <td>Overwhelming Energy: May have spells ignore resistance 20 to choice of energy</td>
+      <td>Overwhelming Energy: May cast a spell that ignores resistance 20 to choice of energy</td>
     </tr><tr style="text-align:center">
       <td>Quickened Casting: May reduce the time required to cast a spell of level 8 or lower by 1 action as a free action 1/day</td>
     </tr><tr style="text-align:center">
@@ -459,23 +461,23 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reprepare Spell: May spend 10 min to prepare a cast spell or another spell of the same level</td>
     </tr><tr style="text-align:center">
-      <td>Scroll Savant: May prepare 4 temporary scrolls with spells up to level 9 each day</td>
+      <td>Scroll Savant: May prepare 4 temporary scrolls with spells up to level 8 each day</td>
     </tr><tr style="text-align:center">
-      <td>Silent Spell: Does not need verbal components to cast spells</td>
+      <td>Silent Spell: May cast a spell without its verbal components</td>
     </tr><tr style="text-align:center">
       <td>Spell Blending: May use 2 spell slots from a level to prepare a spell two levels higher/May use a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
-      <td>Spell Combination: May use 1 spell slot of each level to cast two spells of 2 levels lower</td>
+      <td>Spell Combination: May use 1 spell slot of each level above 2nd to cast a combaination of two spells of 2 levels lower</td>
     </tr><tr style="text-align:center">
       <td>Spell Penetration: Targets reduce any status bonus to saves vs. self spells by 1</td>
     </tr><tr style="text-align:center">
       <td>Spell Substitution: May use a 10-minute process to replace 1 prepared spell with a different spell</td>
     </tr><tr style="text-align:center">
-      <td>Spell Tinker: May alter effect choice of a spell cast on self</td>
+      <td>Spell Tinker: May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: A successful DC 15 flat check negates self spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Superior Bond: May use Drain Bonded Item to cast another spell up to level 9 1/day</td>
+      <td>Superior Bond: May use Drain Bonded Item to cast another spell up to level 8 1/day</td>
     </tr><tr style="text-align:center">
       <td>Transmutation: Knows 1 additional 1st-level Transmutation spell</td>
     </tr><tr style="text-align:center">
@@ -495,7 +497,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 12 available vs. 32 allocated</td>
+        <td>Class Feats Allocation: 12 available vs. 31 allocated</td>
       </tr><tr style="text-align:center">
         <td>Wizard Specialization Allocation: 1 available vs. 9 allocated</td>
       </tr><tr style="text-align:center">
