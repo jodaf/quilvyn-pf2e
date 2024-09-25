@@ -575,7 +575,9 @@ Pathfinder2E.CLASSES = {
     'Selectables=' +
       '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
       '"1:The Tenets Of Good:Champion\'s Code",' +
-      '"1:Divine Ally (Blade):Divine Ally","1:Divine Ally (Shield):Divine Ally","1:Divine Ally (Steed):Divine Ally",' +
+      '"1:Divine Ally (Blade):Divine Ally",' +
+      '"1:Divine Ally (Shield):Divine Ally",' +
+      '"1:Divine Ally (Steed):Divine Ally",' +
       '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
       '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
       '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
@@ -2214,272 +2216,294 @@ Pathfinder2E.FEATS = {
 
   // Archetype
   'Alchemist Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Alchemist ' +
     'Require="level >= 2","intelligence >= 14","levels.Alchemist == 0"',
   'Basic Concoction':
-    'Type=Archetype Require="level >= 4","features.Alchemist Dedication"',
+    'Type=Archetype,Alchemist ' +
+    'Require="level >= 4","features.Alchemist Dedication"',
   'Quick Alchemy':
-    'Type=Archetype Require="level >= 4","features.Alchemist Dedication"',
+    'Type=Archetype,Alchemist ' +
+    'Require="level >= 4","features.Alchemist Dedication"',
   'Advanced Concoction':
-    'Type=Archetype Require="level >= 6","features.Basic Concoction"',
+    'Type=Archetype,Alchemist Require="level >= 6","features.Basic Concoction"',
   'Expert Alchemy':
-    'Type=Archetype ' +
+    'Type=Archetype,Alchemist ' +
     'Require="level >= 6","features.Alchemist Dedication","rank.Crafting >= 2"',
   'Master Alchemy':
-    'Type=Archetype ' +
+    'Type=Archetype,Alchemist ' +
     'Require="level >= 12","features.Expert Alchemy","rank.Crafting >= 3"',
 
   'Barbarian Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Barbarian ' +
     'Require=' +
       '"level >= 2",' +
       '"strength >= 14",' +
       '"constitution >= 14",' +
       '"levels.Barbarian == 0"',
-  // TODO requires "class granting no more HP/level than 10 + conmod"
   'Barbarian Resiliency':
-    'Type=Archetype Require="level >= 4","features.Barbarian Dedication"',
+    'Type=Archetype,Barbarian ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Barbarian Dedication",' +
+      '"classHitPoints <= 10"',
   'Basic Fury':
-    'Type=Archetype Require="level >= 4","features.Barbarian Dedication"',
+    'Type=Archetype,Barbarian ' +
+    'Require="level >= 4","features.Barbarian Dedication"',
   'Advanced Fury':
-    'Type=Archetype Require="level >= 6","features.Basic Fury"',
+    'Type=Archetype,Barbarian Require="level >= 6","features.Basic Fury"',
   'Instinct Ability':
-    'Type=Archetype Require="level >= 6","features.Barbarian Dedication"',
+    'Type=Archetype,Barbarian ' +
+    'Require="level >= 6","features.Barbarian Dedication"',
   "Juggernaut's Fortitude":
-    'Type=Archetype ' +
+    'Type=Archetype,Barbarian ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Barbarian Dedication",' +
       '"rank.Fortitude >= 2"',
 
   'Bard Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Bard ' +
     'Require="level >= 2","charisma >= 14","levels.Bard == 0"',
   'Basic Bard Spellcasting':
-    'Type=Archetype Require="level >= 4","features.Bard Dedication"',
+    'Type=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
-    'Type=Archetype Require="level >= 4","features.Bard Dedication"',
+    'Type=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Advanced Muse's Whispers":
-    'Type=Archetype Require="level >= 4","features.Basic Muse\'s Whispers"',
+    'Type=Archetype,Bard ' +
+    'Require="level >= 4","features.Basic Muse\'s Whispers"',
   'Counter Perform':
-    'Type=Archetype Require="level >= 6","features.Bard Dedication"',
-  'Inspiration Performance':
-    'Type=Archetype Require="level >= 8","features.Bard Dedication"',
+    'Type=Archetype,Bard Require="level >= 6","features.Bard Dedication"',
+  'Inspirational Performance':
+    'Type=Archetype,Bard Require="level >= 8","features.Bard Dedication"',
   'Occult Breadth':
-    'Type=Archetype Require="level >= 8","features.Basic Bard Spellcasting"',
+    'Type=Archetype,Bard ' +
+    'Require="level >= 8","features.Basic Bard Spellcasting"',
   'Expert Bard Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Bard ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Bard Spellcasting",' +
       '"rank.Occultism >= 3"',
   'Master Bard Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Bard ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Bard Spellcasting",' +
       '"rank.Occultism >= 4"',
 
   'Champion Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Champion ' +
     'Require=' +
       '"level >= 2",' +
       '"strength >= 14",' +
       '"charisma >= 14",' +
       '"levels.Champion == 0"',
   'Basic Devotion':
-    'Type=Archetype Require="level >= 4","features.Champion Dedication"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
+    'Type=Archetype,Champion ' +
+    'Require="level >= 4","features.Champion Dedication"',
   'Champion Resiliency':
-    'Type=Archetype Require="level >= 4","features.Champion Dedication"',
+    'Type=Archetype,Champion ' +
+    'Require="level >= 4","features.Champion Dedication","classHitPoints <= 8"',
   'Healing Touch':
-    'Type=Archetype Require="level >= 4","features.Champion Dedication"',
+    'Type=Archetype,Champion ' +
+    'Require="level >= 4","features.Champion Dedication"',
   'Advanced Devotion':
-    'Type=Archetype Require="level >= 6","features.Basic Devotion"',
+    'Type=Archetype,Champion Require="level >= 6","features.Basic Devotion"',
   "Champion's Reaction":
-    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
+    'Type=Archetype,Champion ' +
+    'Require="level >= 6","features.Champion Dedication"',
   'Divine Ally':
-    'Type=Archetype Require="level >= 6","features.Champion Dedication"',
+    'Type=Archetype,Champion ' +
+    'Require="level >= 6","features.Champion Dedication"',
   'Diverse Armor Expert':
-    'Type=Archetype ' +
+    'Type=Archetype,Champion ' +
     'Require=' +
       '"level >= 14",' +
       '"rank.Unarmored Defense >= 2 || rank.Light Armor >=2 || rank.Medium Armor >=2 || rank.Heavy Armor >= 2"',
 
   'Cleric Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Cleric ' +
     'Require="level >= 2","wisdom >= 14","levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
-    'Type=Archetype Require="level >= 4","features.Cleric Dedication"',
+    'Type=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
   'Basic Dogma':
-    'Type=Archetype Require="level >= 4","features.Cleric Dedication"',
+    'Type=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
   'Advanced Dogma':
-    'Type=Archetype Require="level >= 6","features.Basic Dogma"',
+    'Type=Archetype,Cleric Require="level >= 6","features.Basic Dogma"',
   'Divine Breadth':
-    'Type=Archetype Require="level >= 8","features.Basic Cleric Spellcasting"',
+    'Type=Archetype,Cleric ' +
+    'Require="level >= 8","features.Basic Cleric Spellcasting"',
   'Expert Cleric Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Cleric ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Cleric Spellcasting",' +
       '"rank.Religion >= 3"',
   'Master Cleric Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Cleric ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Cleric Spellcasting",' +
       '"rank.Religion >= 4"',
 
   'Druid Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Druid ' +
     'Require="level >= 2","wisdom >= 14","levels.Druid == 0"',
   'Basic Druid Spellcasting':
-    'Type=Archetype Require="level >= 4","features.Druid Dedication"',
+    'Type=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Basic Wilding':
-    'Type=Archetype Require="level >= 4","features.Druid Dedication"',
+    'Type=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Order Spell':
-    'Type=Archetype Require="level >= 4","features.Druid Dedication"',
+    'Type=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Advanced Wilding':
-    'Type=Archetype Require="level >= 6","features.Basic Wilding"',
+    'Type=Archetype,Druid Require="level >= 6","features.Basic Wilding"',
   'Primal Breadth':
-    'Type=Archetype Require="level >= 8","features.Basic Druid Spellcasting"',
+    'Type=Archetype,Druid ' +
+    'Require="level >= 8","features.Basic Druid Spellcasting"',
   'Expert Druid Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Druid ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Druid Spellcasting",' +
       '"rank.Nature >= 3"',
   'Master Druid Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Druid ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Druid Spellcasting",' +
       '"rank.Nature >= 4"',
 
   'Fighter Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
       '"level >= 2",' +
       '"strength >= 14",' +
       '"dexterity >= 14",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
-    'Type=Archetype Require="level >= 4","features.Fighter Dedication"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
+    'Type=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
   'Fighter Resiliency':
-    'Type=Archetype Require="level >= 4","features.Fighter Dedication"',
+    'Type=Archetype,Fighter ' +
+    'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
   'Opportunist':
-    'Type=Archetype Require="level >= 4","features.Fighter Dedication"',
+    'Type=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
   'Advanced Maneuver':
-    'Type=Archetype Require="level >= 6","features.Basic Maneuver"',
+    'Type=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
   'Diverse Weapon Expert':
-    'Type=Archetype ' +
+    'Type=Archetype,Fighter ' +
     'Require=' +
       '"level >= 12",' +
       // TODO or rank.any weapon >= 3
       '"rank.Unarmed Attacks >= 3"',
 
   'Monk Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
       '"level >= 2",' +
       '"strength >= 14",' +
       '"dexterity >= 14",' +
       '"levels.Monk == 0"',
-  'Basic Kata':'Type=Archetype Require="level >= 4","feats.Monk Dedication"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
+  'Basic Kata':
+    'Type=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
   'Monk Resiliency':
-    'Type=Archetype Require="level >= 4","feats.Monk Dedication"',
-  'Advanced Kata':'Type=Archetype Require="level >= 6","feats.Basic Kata"',
-  'Monk Moves':'Type=Archetype Require="level >= 8","feats.Monk Dedication"',
+    'Type=Archetype,Monk ' +
+    'Require="level >= 4","feats.Monk Dedication","classHitPoints <= 8"',
+  'Advanced Kata':'Type=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
+  'Monk Moves':'Type=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
   "Monk's Flurry":
-    'Type=Archetype Require="level >= 10","feats.Monk Dedication"',
+    'Type=Archetype,Monk Require="level >= 10","feats.Monk Dedication"',
   "Perfection's Path":
-    'Type=Archetype ' +
+    'Type=Archetype,Monk ' +
     'Require=' +
       '"level >= 12",' +
       '"rank.Fortitude >= 3 || rank.Reflex >= 3 || rank.Will >= 3"',
 
   'Ranger Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Ranger ' +
     'Require="level >= 2","dexterity >= 14","levels.Ranger == 0"',
   "Basic Hunter's Trick":
-    'Type=Archetype Require="level >= 4","features.Ranger Dedication"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
+    'Type=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
   'Ranger Resiliency':
-    'Type=Archetype Require="level >= 4","features.Ranger Dedication"',
+    'Type=Archetype,Ranger ' +
+    'Require="level >= 4","features.Ranger Dedication","classHitPoints <= 8"',
   "Advanced Hunter's Trick":
-    'Type=Archetype Require="level >= 6","features.Basic Hunter\'s Trick"',
+    'Type=Archetype,Ranger ' +
+    'Require="level >= 6","features.Basic Hunter\'s Trick"',
   'Master Spotter':
-    'Type=Archetype ' +
+    'Type=Archetype,Ranger ' +
     'Require="level >= 12","features.Ranger Dedication","rank.Perception >= 3"',
 
   'Rogue Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Rogue ' +
     'Require="level >= 2","dexterity >= 14","levels.Rogue == 0"',
   'Basic Trickery':
-    'Type=Archetype Require="level >= 4","features.Rogue Dedication"',
+    'Type=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Sneak Attacker':
-    'Type=Archetype Require="level >= 4","features.Rogue Dedication"',
+    'Type=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Advanced Trickery':
-    'Type=Archetype Require="level >= 6","features.Basic Trickery"',
+    'Type=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
   // TODO trained in one skill, expert in one skill
   'Skill Mastery':
-    'Type=Archetype Require="level >= 8","features.Rogue Dedication"',
+    'Type=Archetype,Rogue Require="level >= 8","features.Rogue Dedication"',
   'Uncanny Dodge':
-    'Type=Archetype Require="level >= 10","features.Rogue Dedication"',
+    'Type=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
   'Evasiveness':
-    'Type=Archetype ' +
+    'Type=Archetype,Rogue ' +
     'Require="level >= 12","features.Rogue Dedication","rank.Reflex >= 2"',
 
   'Sorcerer Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Sorcerer ' +
     'Require="level >= 2","charisma >= 14","levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
-    'Type=Archetype Require="level >= 4","features.Sorcerer Dedication"',
+    'Type=Archetype,Sorcerer ' +
+    'Require="level >= 4","features.Sorcerer Dedication"',
   'Basic Blood Potency':
-    'Type=Archetype Require="level >= 4","features.Sorcerer Dedication"',
+    'Type=Archetype,Sorcerer ' +
+    'Require="level >= 4","features.Sorcerer Dedication"',
   'Basic Bloodline Spell':
-    'Type=Archetype Require="level >= 4","features.Sorcerer Dedication"',
+    'Type=Archetype,Sorcerer ' +
+    'Require="level >= 4","features.Sorcerer Dedication"',
   'Advanced Blood Potency':
-    'Type=Archetype Require="level >= 6","features.Basic Blood Potency"',
+    'Type=Archetype,Sorcerer ' +
+    'Require="level >= 6","features.Basic Blood Potency"',
   'Bloodline Breadth':
-    'Type=Archetype ' +
+    'Type=Archetype,Sorcerer ' +
     'Require="level >= 8","features.Basic Sorcerer Spellcasting"',
   'Expert Sorcerer Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Sorcerer ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Sorcerer Spellcasting",' +
       '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3"',
   'Master Sorcerer Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Sorcerer ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Master Sorcerer Spellcasting",' +
       '"rank.Arcana >= 4 || rank.Nature >= 4 || rank.Occultism >= 4 || rank.Religion >= 4"',
 
   'Wizard Dedication':
-    'Type=Archetype,Dedication,Multiclass ' +
+    'Type=Archetype,Dedication,Multiclass,Wizard ' +
     'Require="level >= 2","intelligence >= 14","levels.Wizard == 0"',
   'Arcane School Spell':
-    'Type=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Type=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Basic Arcana':
-    'Type=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Type=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Basic Wizard Spellcasting':
-    'Type=Archetype Require="level >= 4","features.Wizard Dedication"',
+    'Type=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Advanced Arcana':
-    'Type=Archetype Require="level >= 6","features.Basic Arcana"',
+    'Type=Archetype,Wizard Require="level >= 6","features.Basic Arcana"',
   'Arcane Breadth':
-    'Type=Archetype Require="level >= 8","features.Basic Wizard Spellcasting"',
+    'Type=Archetype,Wizard ' +
+    'Require="level >= 8","features.Basic Wizard Spellcasting"',
   'Expert Wizard Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Wizard ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Wizard Spellcasting",' +
       '"rank.Arcana >= 3"',
   'Master Wizard Spellcasting':
-    'Type=Archetype ' +
+    'Type=Archetype,Wizard ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Basic Wizard Spellcasting",' +
@@ -3128,7 +3152,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use 2 polymorphic mutagens simultaneously"',
   'Infused Reagents':
     'Section=skill ' +
-    'Note="May create %{level+intelligenceModifier} batches of infused reagents each day"',
+    'Note="May create %{advancedAlchemyLevel+intelligenceModifier} batches of infused reagents each day"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -5526,39 +5550,61 @@ Pathfinder2E.FEATURES = {
     'Note="May use 1 spell slot of each level above 2nd to cast a combaination of two spells of 2 levels lower"',
 
   // Archetype
-  'Alchemist Dedication':'Section=feature Note="FILL"',
-  'Basic Concoction':'Section=feature Note="FILL"',
+  'Alchemist Dedication':
+    'Section=combat,feature,skill ' +
+    'Note=' +
+      '"Attack Trained (Alchemical Bombs)/Class Trained (Alchemist)",' +
+      '"Has Alchemical Crafting and Infused Reagents features",' +
+      '"Skill Trained (Crafting)"',
+  'Basic Concoction':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
   // Quick Alchemy as above
-  'Advanced Concoction':'Section=feature Note="FILL"',
-  'Expert Alchemy':'Section=feature Note="FILL"',
-  'Master Alchemy':'Section=feature Note="FILL"',
+  'Advanced Concoction':'Section=feature Note="+1 Class Feat (alchemist)"',
+  'Expert Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
+  'Master Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
 
-  'Barbarian Dedication':'Section=feature Note="FILL"',
-  // TODO requires "class granting no more HP/level than 10 + conmod"
-  'Barbarian Resiliency':'Section=feature Note="FILL"',
-  'Basic Fury':'Section=feature Note="FILL"',
-  'Advanced Fury':'Section=feature Note="FILL"',
-  'Instinct Ability':'Section=feature Note="FILL"',
-  "Juggernaut's Fortitude":'Section=feature Note="FILL"',
+  'Barbarian Dedication':
+    'Section=combat,feature,skill ' +
+    'Note=' +
+      '"Class Trained (Barbarian)",' +
+      '"Has Instinct and Rage features",' +
+      '"Skill Trained (Athletics)"',
+  'Barbarian Resiliency':'Section=combat Note="+%V Hit Points"',
+  'Basic Fury':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
+  'Advanced Fury':'Section=feature Note="+%V Class Feat (barbarian)"',
+  'Instinct Ability':'Section=feature Note="Has %V feature"',
+  "Juggernaut's Fortitude":'Section=save Note="Save Master (Fortitude)"',
 
   'Bard Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Muses feature",' +
-      '"Spell Trained(Occult)/Knows 2 Occult cantrips",' +
+      '"Spell Trained (Occult)/Knows 2 Occult cantrips",' +
       '"Skill Trained (Occultism; Performance)"',
-  'Basic Bard Spellcasting':'Section=feature Note="FILL"',
-  "Basic Muse's Whispers":'Section=feature Note="FILL"',
-  "Advanced Muse's Whispers":'Section=feature Note="FILL"',
-  'Counter Perform':'Section=feature Note="FILL"',
-  'Inspiration Performance':'Section=feature Note="FILL"',
-  'Occult Breadth':'Section=feature Note="FILL"',
-  'Expert Bard Spellcasting':'Section=feature Note="FILL"',
-  'Master Bard Spellcasting':'Section=feature Note="FILL"',
+  'Basic Bard Spellcasting':
+    'Section=magic Note="Knows%1 1 1st-level bard spell"',
+  "Basic Muse's Whispers":
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level bard)"',
+  "Advanced Muse's Whispers":'Section=feature Note="+1 Class Feat (bard)"',
+  'Counter Perform':
+    'Section=magic ' +
+    'Note="Knows the <i>Counter Performance</i> spell/Has a Focus Pool with 1 Focus Point"',
+  'Inspirational Performance':
+    'Section=magic Note="Knows the <i>Inspire Courage</i> cantrip"',
+  'Occult Breadth':
+    'Section=magic Note="+1 Occult spell slot of each level up to %V"',
+  'Expert Bard Spellcasting':
+    'Section=magic Note="Spell Expert (Occult)/Knows%1 4th-level bard spell"',
+  'Master Bard Spellcasting':
+    'Section=magic Note="Spell Master (Occult)/Knows%1 7th-level bard spell"',
 
-  'Champion Dedication':'Section=feature Note="FILL"',
+  'Champion Dedication':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Defense Trained (Light Armor; Medium Armor; Heavy Armor)/Class Trained (Champion)",' +
+      '"Has Anathema, Cause, and Deity features"',
   'Basic Devotion':'Section=feature Note="FILL"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
   'Champion Resiliency':'Section=feature Note="FILL"',
   'Healing Touch':'Section=feature Note="FILL"',
   'Advanced Devotion':'Section=feature Note="FILL"',
@@ -5585,7 +5631,6 @@ Pathfinder2E.FEATURES = {
 
   'Fighter Dedication':'Section=feature Note="FILL"',
   'Basic Maneuver':'Section=feature Note="FILL"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
   'Fighter Resiliency':'Section=feature Note="FILL"',
   'Opportunist':'Section=feature Note="FILL"',
   'Advanced Maneuver':'Section=feature Note="FILL"',
@@ -5593,7 +5638,6 @@ Pathfinder2E.FEATURES = {
 
   'Monk Dedication':'Section=feature Note="FILL"',
   'Basic Kata':'Section=feature Note="FILL"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
   'Monk Resiliency':'Section=feature Note="FILL"',
   'Advanced Kata':'Section=feature Note="FILL"',
   'Monk Moves':'Section=feature Note="FILL"',
@@ -5602,7 +5646,6 @@ Pathfinder2E.FEATURES = {
 
   'Ranger Dedication':'Section=feature Note="FILL"',
   "Basic Hunter's Trick":'Section=feature Note="FILL"',
-  // TODO requires "class granting no more HP/level than 8 + conmod"
   'Ranger Resiliency':'Section=feature Note="FILL"',
   "Advanced Hunter's Trick":'Section=feature Note="FILL"',
   'Master Spotter':'Section=feature Note="FILL"',
@@ -9899,6 +9942,7 @@ Pathfinder2E.talentRules = function(
   rules.defineRule('skillNotes.intelligenceLanguageBonus',
     'intelligenceModifier', '=', 'source>0 ? source : null'
   );
+  rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+=', null);
   QuilvynRules.validAllocationRules
     (rules, 'language', 'languageCount', 'languagesSpoken');
   QuilvynRules.validAllocationRules
@@ -10523,6 +10567,7 @@ Pathfinder2E.classRules = function(
     }
   }
 
+  rules.defineRule('classHitPoints', classLevel, '=', hitPoints);
   rules.defineRule('featureNotes.' + prefix + 'Feats',
     classLevel, '=', 'Math.floor(source / 2)' + (features.includes('1:' + name + ' Feats') ? ' + 1' : '')
   );
@@ -10577,6 +10622,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   let classLevel = 'levels.' + name;
 
   if(name == 'Alchemist') {
+    rules.defineRule('advancedAlchemyLevel', classLevel, '=', null);
     rules.defineRule('combatNotes.weaponSpecialization',
       '', '=', '2',
       'combatNotes.greaterWeaponSpecialization', '+', '2'
@@ -11467,8 +11513,14 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, types) {
     if(['Ancestry', 'Class', 'General', 'Skill'].includes(t))
       QuilvynRules.validAllocationRules
         (rules, t + 'Feats', 'featCount.' + t, 'sum' + t + 'Feats');
+    if(t == 'Archetype') {
+      let classes =
+        types.filter(t => !t.match(/Archetype|Dedication|Multiclass/));
+      if(classes.length > 0)
+        rules.defineRule
+          ('sum' + classes[0] + 'ArchetypeFeats', 'feats.' + name, '+=', null);
+    }
   });
-  rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+=', null);
 
 };
 
@@ -11503,9 +11555,21 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
+  } else if(name == 'Advanced Fury') {
+    rules.defineRule
+      ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
   } else if(name == 'Alchemical Familiar') {
     rules.defineRule
       ('features.Familiar', 'featureNotes.alchemicalFamiliar', '=', '1');
+  } else if(name == 'Alchemist Dedication') {
+    rules.defineRule
+      ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
+    rules.defineRule('features.Alchemical Crafting',
+      'featureNotes.alchemistDedication', '=', '1'
+    );
+    rules.defineRule('features.Infused Reagents',
+      'featureNotes.alchemistDedication', '=', '1'
+    );
   } else if(name == 'Advanced Bloodline') {
     let bloodSpells = {
       'Aberrant':'Aberrant Whispers',
@@ -11542,6 +11606,24 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.Heavy Armor',
       'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
     );
+  } else if(name == 'Barbarian Dedication') {
+    rules.defineRule
+      ('features.Instinct', 'featureNotes.barbarianDedication', '=', '1');
+    rules.defineRule
+      ('features.Rage', 'featureNotes.barbarianDedication', '=', '1');
+    // Suppress validation errors for selected instinct
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let instincts =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', '').replaceAll(' ', ''));
+    instincts.forEach(i => {
+      rules.defineRule('validationNotes.barbarian-' + i + 'SelectableFeature',
+        'featureNotes.barbarianDedication', '+', '1'
+      );
+    });
+  } else if(name == 'Barbarian Resiliency') {
+    rules.defineRule('combatNotes.barbarianResiliency',
+      'sumBarbarianArchetypeFeats', '=', 'source * 3'
+    );
   } else if(name == 'Bard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.bardDedication', '?', null,
@@ -11557,19 +11639,19 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('features.Muses', 'featureNotes.bardDedication', '=', '1');
     rules.defineRule('spellSlots.O0', 'magicNotes.bardDedication', '+=', '2');
-    // Suppress validation errors for selected muses and the notes for
-    // features of muses that don't come with Bard Dedication
+    // Suppress validation errors for selected muse and the notes for features
+    // of muse that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let muses =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Muse')).map(x => x.replace('Bard - ', '').replace(' Muse', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Muse')).map(x => x.replace('Bard - ', '').replaceAll(' ', ''));
     muses.forEach(m => {
-      rules.defineRule('validationNotes.bard-' + m + 'MuseSelectableFeature',
+      rules.defineRule('validationNotes.bard-' + m + 'SelectableFeature',
         'featureNotes.bardDedication', '+', '1'
       );
-      rules.defineRule('featureNotes.' + m.toLowerCase() + 'Muse',
+      rules.defineRule('featureNotes.' + m.charAt(0).toLowerCase() + m.substring(1),
         'featureNotes.bardDedication', '?', '!source'
       );
-      rules.defineRule('magicNotes.' + m.toLowerCase() + 'Muse',
+      rules.defineRule('magicNotes.' + m.charAt(0).toLowerCase() + m.substring(1),
         'featureNotes.bardDedication', '?', '!source'
       );
     });
@@ -11578,6 +11660,19 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.Bardic Lore',
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
+    );
+  } else if(name == 'Basic Bard Spellcasting') {
+    rules.defineRule('magicNotes.basicBardSpellcasting.1',
+      'features.Basic Bard Spellcasting', '?', null,
+      'level', '=', 'source>=8 ? " 1 3rd-level, 1 2nd-level, and" : source>=6 ? " 1 2nd level and" : ""'
+    );
+    rules.defineRule
+      ('spellSlots.O1', 'magicNotes.basicBardSpellcasting', '+=', '1');
+    rules.defineRule('spellSlots.O2',
+      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("2nd") ? 1 : null'
+    );
+    rules.defineRule('spellSlots.O3',
+      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("3rd") ? 1 : null'
     );
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
@@ -11607,6 +11702,27 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
     );
+  } else if(name == 'Champion Dedication') {
+    rules.defineRule
+      ('features.Anathema', 'featureNotes.championDedication', '=', '1');
+    rules.defineRule
+      ('features.Cause', 'featureNotes.championDedication', '=', '1');
+    rules.defineRule
+      ('features.Deity', 'featureNotes.championDedication', '=', '1');
+    // Suppress validation errors for selected cause and the deity notes that
+    // don't come with Champion Dedication
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let causes =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Cause')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
+    causes.forEach(c => {
+      rules.defineRule('validationNotes.champion-' + c + 'SelectableFeature',
+        'featureNotes.championDedication', '+', '1'
+      );
+    });
+    rules.defineRule
+      ('combatNotes.deity', 'featureNotes.championDedication', '?', '!source');
+    rules.defineRule
+      ('magicNotes.deity', 'featureNotes.championDedication', '?', '!source');
   } else if(name == "Champion's Sacrifice") {
     rules.defineRule("spells.Champion's Sacrifice",
       "magicNotes.champion'sSacrifice", '=', '1'
@@ -11615,12 +11731,26 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Untrained Improvisation',
       'featureNotes.cleverImproviser', '=', '1'
     );
+  } else if(name == 'Counter Perform') {
+    rules.defineRule
+      ('spells.Counter Performance', 'magicNotes.counterPerform', '=', '1');
+    rules.defineRule('focusPoints', 'magicNotes.counterPerform', '+=', '1');
   } else if(name == 'Cultural Adaptability') {
     rules.defineRule('features.Adopted Ancestry',
       'featureNotes.culturalAdaptability', '=', '1'
     );
     rules.defineRule
       ('featCount.Ancestry', 'featureNotes.culturalAdaptability', '+', '1');
+  } else if(name == 'Divine Ally') {
+    // Suppress validation errors for selected ally
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let allies =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Divine Ally')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
+    allies.forEach(a => {
+      rules.defineRule('validationNotes.champion-' + a + 'SelectableFeature',
+        'feats.Divine Ally', '+', '1'
+      );
+    });
   } else if(name == 'Dragon Transformation') {
     rules.defineRule
       ('spells.Dragon Form', 'magicNotes.dragonTransformation', '=', '1');
@@ -11637,6 +11767,24 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'featureNotes.elfAtavism', '+', '1'
       );
     });
+  } else if(name == 'Expert Alchemy') {
+    rules.defineRule
+      ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
+    rules.defineRule
+      ('featureNotes.expertAlchemy', 'level', '=', 'source>=10 ? 5 : 3');
+  } else if(name == 'Expert Bard Spellcasting') {
+    rules.defineRule('magicNotes.expertBardSpellcasting.1',
+      'features.Expert Bard Spellcasting', '?', null,
+      'level', '=', 'source>=16 ? " 1 6th-level, 1 5th-level, and" : source>=14 ? " 1 5th level and" : ""'
+    );
+    rules.defineRule
+      ('spellSlots.O4', 'magicNotes.expertBardSpellcasting', '+=', '1');
+    rules.defineRule('spellSlots.O5',
+      'magicNotes.expertBardSpellcasting.1', '+=', 'source.includes("5h") ? 1 : null'
+    );
+    rules.defineRule('spellSlots.O6',
+      'magicNotes.expertBardSpellcasting.1', '+=', 'source.includes("6th") ? 1 : null'
+    );
   } else if(name == 'Extend Armament Alignment') {
     rules.defineRule('combatNotes.alignArmament',
       'combatNotes.extendArmamentAlignment', '=', 'null' // italics
@@ -11712,6 +11860,23 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
     rules.defineRule
       ('spells.Impaling Briars', 'magicNotes.impalingBriars', '=', '1');
+  } else if(name == 'Inspirational Performance') {
+    rules.defineRule('spells.Inspire Courage',
+      'magicNotes.inspirationalPerformance', '=', '1'
+    );
+  } else if(name == 'Instinct Ability') {
+    // TODO What about homebrew instincts?
+    let instinctFeatures =
+      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES['Barbarian'], 'Features').filter(f => f.match(/^features.*Instinct\s*\?/));
+    instinctFeatures.forEach(f => {
+      let pieces = f.split(/\s*\?\s*/);
+      pieces[1] = pieces[1].replace(/\d+:/, '');
+      rules.defineRule
+        ('featureNotes.instinctAbility', pieces[0], '=', '"' + pieces[1] + '"');
+      rules.defineRule('features.' + pieces[1],
+        'featureNotes.instinctAbility', '=', 'source == "' + pieces[1] + '" ? 1 : null'
+      );
+    });
   } else if(name == 'Invoke Disaster') {
     rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
     rules.defineRule
@@ -11742,6 +11907,21 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spells.Litany Of Righteousness',
       'magicNotes.litanyOfRighteousness', '=', '1'
     );
+  } else if(name == 'Master Alchemy') {
+    rules.defineRule
+      ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
+    rules.defineRule
+      ('featureNotes.masterAlchemy', 'level', '=', 'source - 5');
+  } else if(name == 'Master Bard Spellcasting') {
+    rules.defineRule('magicNotes.masterBardSpellcasting.1',
+      'features.Master Bard Spellcasting', '?', null,
+      'level', '=', 'source>=20 ? " 1 8th level and" : ""'
+    );
+    rules.defineRule
+      ('spellSlots.O7', 'magicNotes.masterBardSpellcasting', '+=', '1');
+    rules.defineRule('spellSlots.O8',
+      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("8th") ? 1 : null'
+    );
   } else if(name == 'Masterful Companion') {
     rules.defineRule('featureNotes.animalCompanion',
       'combatNotes.masterfulCompanion', '=', 'null' // italics
@@ -11769,6 +11949,17 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Multitalented') {
     rules.defineRule('featCount.Class', 'featureNotes.multitalented', '+', '1');
+  } else if(name == 'Occult Breadth') {
+    rules.defineRule('magicNotes.occultBreadth',
+      'magicNotes.basicBardSpellcasting.1', '=', '1',
+      'magicNotes.expertBardSpellcasting.1', '^', 'source.includes("6th") ? 4 : source.includes("5th") ? 3 : 2',
+      'magicNotes.masterBardSpellcasting.1', '^', 'source.includes("8th") ? 6 : 5'
+    );
+    [1, 2, 3, 4, 5, 6].forEach(l => {
+      rules.defineRule('spellSlots.O' + l,
+        'magicNotes.occultBreadth', '+', 'source>=' + l + ' ? 1 : null'
+      );
+    });
   } else if(name == 'Orc Ferocity') {
     rules.defineRule('combatNotes.orcFerocity',
       '', '=', '"day"',
