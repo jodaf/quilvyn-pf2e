@@ -557,6 +557,9 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity","1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
+      '"features.Liberator ? 1:Liberating Step",' +
+      '"features.Paladin ? 1:Retributive Strike",' +
+      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -3541,7 +3544,7 @@ Pathfinder2E.FEATURES = {
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
   'Muses':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
-    'Section=magic Note="May learn spells from the Occult tradition"',
+    'Section=magic Note="May learn spells from the occult tradition"',
   'Polymath':
     'Section=feature,magic ' +
     'Note=' +
@@ -3684,6 +3687,7 @@ Pathfinder2E.FEATURES = {
   'Champion Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   "Champion's Code":'Section=feature Note="1 selection"',
+  "Champion's Reaction":'Section=feature Note="Has the %V feature"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -3740,22 +3744,19 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' May use a Reaction to grant an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
   'Liberator':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Liberating Step feature for Champion\'s Reaction",' +
       '"Must always respect others\' freedom and oppose tyranny",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Retributive Strike feature for Champion\'s Reaction",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   'Redeemer':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Glimpse Of Redemption feature for Champion\'s Reaction",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the <i>Lay On Hands</i> spell"',
   'Retributive Strike':
@@ -3942,7 +3943,7 @@ Pathfinder2E.FEATURES = {
   'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   'Divine Font':'Section=feature Note="1 selection"',
   'Divine Spellcasting':
-    'Section=magic Note="May learn spells from the Divine tradition"',
+    'Section=magic Note="May learn spells from the divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
   'Harmful Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   'Healing Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
@@ -4103,7 +4104,6 @@ Pathfinder2E.FEATURES = {
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
-  // TODO more to it than this
   'Druidic Order':
     'Section=feature,magic ' +
     'Note=' +
@@ -4125,7 +4125,7 @@ Pathfinder2E.FEATURES = {
   // Medium Armor Expertise as above
   'Primal Hierophant':'Section=magic Note="Has 1 10th-level spell slot"',
   'Primal Spellcasting':
-    'Section=magic Note="May learn spells from the Primal tradition"',
+    'Section=magic Note="May learn spells from the primal tradition"',
   // Resolve as above
   // Shield Block as below
   'Storm':
@@ -4548,12 +4548,12 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"May learn spells from the Divine tradition"',
+      '"May learn spells from the divine tradition"',
   'Ki Tradition (Occult)':
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Occult)",' +
-      '"May learn spells from the Occult tradition"',
+      '"May learn spells from the occult tradition"',
   'Master Strikes':
     'Section=combat Note="Attack Master (Simple Weapons; Unarmed Attacks)"',
   'Metal Strikes':
@@ -5410,7 +5410,7 @@ Pathfinder2E.FEATURES = {
       '"1 selection",' +
       '"Has a Focus Pool with 1 Focus Point"',
   'Arcane Spellcasting':
-    'Section=magic Note="May learn spells from the Arcane tradition"',
+    'Section=magic Note="May learn spells from the arcane tradition"',
   'Arcane Thesis':'Section=feature Note="1 selection"',
   "Archwizard's Spellcraft":'Section=magic Note="Has 1 10th-level spell slot"',
   'Conjuration':
@@ -5580,7 +5580,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has Muses feature",' +
-      '"Spell Trained (Occult)/Knows 2 Occult cantrips",' +
+      '"Spell Trained (Occult)/Knows 2 occult cantrips",' +
       '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':
     'Section=magic Note="Knows%1 1 1st-level bard spell"',
@@ -5593,41 +5593,69 @@ Pathfinder2E.FEATURES = {
   'Inspirational Performance':
     'Section=magic Note="Knows the <i>Inspire Courage</i> cantrip"',
   'Occult Breadth':
-    'Section=magic Note="+1 Occult spell slot of each level up to %V"',
+    'Section=magic Note="+1 occult spell slot of each level up to %V"',
   'Expert Bard Spellcasting':
     'Section=magic Note="Spell Expert (Occult)/Knows%1 4th-level bard spell"',
   'Master Bard Spellcasting':
     'Section=magic Note="Spell Master (Occult)/Knows%1 7th-level bard spell"',
 
   'Champion Dedication':
-    'Section=combat,feature ' +
+    'Section=combat,feature,skill ' +
     'Note=' +
       '"Defense Trained (Light Armor; Medium Armor; Heavy Armor)/Class Trained (Champion)",' +
-      '"Has Anathema, Cause, and Deity features"',
-  'Basic Devotion':'Section=feature Note="FILL"',
-  'Champion Resiliency':'Section=feature Note="FILL"',
-  'Healing Touch':'Section=feature Note="FILL"',
-  'Advanced Devotion':'Section=feature Note="FILL"',
+      '"Has Anathema, Cause, and Deity features",' +
+      '"Skill Trained (Religion)"',
+  'Basic Devotion':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level champion)"',
+  'Champion Resiliency':'Section=combat Note="+%V Hit Points"',
+  'Healing Touch':
+    'Section=magic ' +
+    'Note="Knows the <i>Lay On Hands</i> spell/Has a Focus Pool with 1 Focus Point"',
+  'Advanced Devotion':'Section=feature Note="+1 Class Feat (champion)"',
   // Champion's Reaction as above
   // Divine Ally as above
-  'Diverse Armor Expert':'Section=feature Note="FILL"',
+  'Diverse Armor Expert':
+    'Section=combat ' +
+    'Note="Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
 
-  'Cleric Dedication':'Section=feature Note="FILL"',
-  'Basic Cleric Spellcasting':'Section=feature Note="FILL"',
-  'Basic Dogma':'Section=feature Note="FILL"',
-  'Advanced Dogma':'Section=feature Note="FILL"',
-  'Divine Breadth':'Section=feature Note="FILL"',
-  'Expert Cleric Spellcasting':'Section=feature Note="FILL"',
-  'Master Cleric Spellcasting':'Section=feature Note="FILL"',
+  'Cleric Dedication':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has Anathema feature",' +
+      '"Spell Trained (Divine)/May prepare 2 divine cantrips each day",' +
+      '"Skill Trained (Religion)"',
+  'Basic Cleric Spellcasting':
+    'Section=magic Note="Knows%1 1 1st-level cleric spell"',
+  'Basic Dogma':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
+  'Advanced Dogma':'Section=feature Note="+1 Class Feat (cleric)"',
+  'Divine Breadth':
+    'Section=magic Note="+1 divine spell slot of each level up to %V"',
+  'Expert Cleric Spellcasting':
+    'Section=magic Note="Spell Expert (Divine)/Knows%1 4th-level divine spell"',
+  'Master Cleric Spellcasting':
+    'Section=magic Note="Spell Master (Divine)/Knows%1 7th-level divine spell"',
 
-  'Druid Dedication':'Section=feature Note="FILL"',
-  'Basic Druid Spellcasting':'Section=feature Note="FILL"',
-  'Basic Wilding':'Section=feature Note="FILL"',
-  'Order Spell':'Section=feature Note="FILL"',
-  'Advanced Wilding':'Section=feature Note="FILL"',
-  'Primal Breadth':'Section=feature Note="FILL"',
-  'Expert Druid Spellcasting':'Section=feature Note="FILL"',
-  'Master Druid Spellcasting':'Section=feature Note="FILL"',
+  'Druid Dedication':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Druidic Language and Druidic Order features",' +
+      '"Spell Trained (Primal)/May prepare 2 primal cantrips each day",' +
+      '"Skill Trained (Nature)"',
+  'Basic Druid Spellcasting':
+    'Section=magic Note="Knows%1 1 1st-level druid spell"',
+  'Basic Wilding':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
+  'Order Spell':
+    'Section=magic ' +
+    'Note="Knows the <i>%V</i> spell/Has a focus pool with 1 Focus Point"',
+  'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
+  'Primal Breadth':
+    'Section=magic Note="+1 primal spell slot of each level up to %V"',
+  'Expert Druid Spellcasting':
+    'Section=magic Note="Spell Expert (Primal)/Knows%1 4th-level primal spell"',
+  'Master Druid Spellcasting':
+    'Section=magic Note="Spell Master (Primal)/Knows%1 7th-level primal spell"',
 
   'Fighter Dedication':'Section=feature Note="FILL"',
   'Basic Maneuver':'Section=feature Note="FILL"',
@@ -10871,12 +10899,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
     );
-    rules.defineRule
-      ('features.Glimpse Of Redemption', 'featureNotes.redeemer', '=', '1');
-    rules.defineRule
-      ('features.Liberating Step', 'featureNotes.liberator', '=', '1');
-    rules.defineRule
-      ('features.Retributive Strike', 'featureNotes.paladin', '=', '1');
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.cause', '=', '1'
     );
@@ -11614,7 +11636,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected instinct
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', '').replaceAll(' ', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Barbarian (Instinct)')).map(x => x.replace('Barbarian - ', '').replaceAll(' ', ''));
     instincts.forEach(i => {
       rules.defineRule('validationNotes.barbarian-' + i + 'SelectableFeature',
         'featureNotes.barbarianDedication', '+', '1'
@@ -11643,7 +11665,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // of muse that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let muses =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Muse')).map(x => x.replace('Bard - ', '').replaceAll(' ', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bard (Muse)')).map(x => x.replace('Bard - ', '').replaceAll(' ', ''));
     muses.forEach(m => {
       rules.defineRule('validationNotes.bard-' + m + 'SelectableFeature',
         'featureNotes.bardDedication', '+', '1'
@@ -11661,18 +11683,21 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
-  } else if(name == 'Basic Bard Spellcasting') {
-    rules.defineRule('magicNotes.basicBardSpellcasting.1',
-      'features.Basic Bard Spellcasting', '?', null,
+  } else if((matchInfo = name.match(/^Basic (\w+) Spellcasting$/)) != null) {
+    let c = matchInfo[1];
+    // TODO pick up from class spec
+    let trad = c=='Bard' ? 'O' : c=='Cleric' ? 'D' : c=='Druid' ? 'P' : 'A';
+    let note = 'magicNotes.basic' + c + 'Spellcasting.1';
+    rules.defineRule(note,
+      'features.Basic ' + c + ' Spellcasting', '?', null,
       'level', '=', 'source>=8 ? " 1 3rd-level, 1 2nd-level, and" : source>=6 ? " 1 2nd level and" : ""'
     );
-    rules.defineRule
-      ('spellSlots.O1', 'magicNotes.basicBardSpellcasting', '+=', '1');
-    rules.defineRule('spellSlots.O2',
-      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("2nd") ? 1 : null'
+    rules.defineRule('spellSlots.' + trad + '1', note, '+=', '1');
+    rules.defineRule('spellSlots.' + trad + '2',
+      note, '+=', 'source.includes("2nd") ? 1 : null'
     );
-    rules.defineRule('spellSlots.O3',
-      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("3rd") ? 1 : null'
+    rules.defineRule('spellSlots.' + trad + '3',
+      note, '+=', 'source.includes("3rd") ? 1 : null'
     );
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
@@ -11709,24 +11734,65 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('features.Cause', 'featureNotes.championDedication', '=', '1');
     rules.defineRule
       ('features.Deity', 'featureNotes.championDedication', '=', '1');
-    // Suppress validation errors for selected cause and the deity notes that
-    // don't come with Champion Dedication
+    // Suppress validation errors for selected cause and the cause and deity
+    // notes that don't come with Champion Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Cause')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
     causes.forEach(c => {
       rules.defineRule('validationNotes.champion-' + c + 'SelectableFeature',
         'featureNotes.championDedication', '+', '1'
+      );
+      rules.defineRule('magicNotes.' + c.charAt(0).toLowerCase() + c.substring(1),
+        'featureNotes.championDedication', '?', '!source'
       );
     });
     rules.defineRule
       ('combatNotes.deity', 'featureNotes.championDedication', '?', '!source');
     rules.defineRule
       ('magicNotes.deity', 'featureNotes.championDedication', '?', '!source');
+  } else if(name == 'Champion Resiliency') {
+    rules.defineRule('combatNotes.championResiliency',
+      'sumChampionArchetypeFeats', '=', 'source * 3'
+    );
+  } else if(name == "Champion's Reaction") {
+    // TODO What about homebrew reactions?
+    let reactions =
+      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES['Champion'], 'Features').filter(f => f.match(/\?\s*1:/));
+    reactions.forEach(f => {
+      let pieces = f.split(/\s*\?\s*/);
+      pieces[1] = pieces[1].replace(/\d+:/, '');
+      rules.defineRule("featureNotes.champion'sReaction",
+        pieces[0], '=', '"' + pieces[1] + '"'
+      );
+      rules.defineRule('features.' + pieces[1],
+        "featureNotes.champion'sReaction", '=', 'source == "' + pieces[1] + '" ? 1 : null'
+      );
+    });
   } else if(name == "Champion's Sacrifice") {
     rules.defineRule("spells.Champion's Sacrifice",
       "magicNotes.champion'sSacrifice", '=', '1'
     );
+  } else if(name == 'Cleric Dedication') {
+    rules.defineRule('spellModifier.' + name,
+      'magicNotes.clericDedication', '?', null,
+      'wisdomModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAttackModifier.Divine.1',
+      'magicNotes.bardDedication', '=', '"wisdom"'
+    );
+    rules.defineRule('spellDifficultyClass.Divine.1',
+      'magicNotes.bardDedication', '=', '"wisdom"'
+    );
+    rules.defineRule('spellSlots.D0', 'magicNotes.clericDedication', '+=', '2');
+    // Suppress the deity notes that don't come with Cleric Dedication
+    // TODO Champion w/Cleric Dedication?
+    rules.defineRule
+      ('combatNotes.deity', 'featureNotes.clericDedication', '?', '!source');
+    rules.defineRule
+      ('magicNotes.deity', 'featureNotes.clericDedication', '?', '!source');
   } else if(name == 'Clever Improviser') {
     rules.defineRule('features.Untrained Improvisation',
       'featureNotes.cleverImproviser', '=', '1'
@@ -11745,15 +11811,62 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
     let allies =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Divine Ally')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Divine Ally)')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
     allies.forEach(a => {
       rules.defineRule('validationNotes.champion-' + a + 'SelectableFeature',
         'feats.Divine Ally', '+', '1'
       );
     });
+  } else if(name == 'Divine Breadth') {
+    rules.defineRule('magicNotes.divineBreadth',
+      'magicNotes.basicClericSpellcasting.1', '=', '1',
+      'magicNotes.expertClericSpellcasting.1', '^', 'source.includes("6th") ? 4 : source.includes("5th") ? 3 : 2',
+      'magicNotes.masterClericSpellcasting.1', '^', 'source.includes("8th") ? 6 : 5'
+    );
+    [1, 2, 3, 4, 5, 6].forEach(l => {
+      rules.defineRule('spellSlots.D' + l,
+        'magicNotes.divineBreadth', '+', 'source>=' + l + ' ? 1 : null'
+      );
+    });
   } else if(name == 'Dragon Transformation') {
     rules.defineRule
       ('spells.Dragon Form', 'magicNotes.dragonTransformation', '=', '1');
+  } else if(name == 'Druid Dedication') {
+    rules.defineRule('spellModifier.' + name,
+      'magicNotes.druidDedication', '?', null,
+      'wisdomModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Primal', 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAttackModifier.Occult.1',
+      'magicNotes.druidDedication', '=', '"wisdom"'
+    );
+    rules.defineRule('spellDifficultyClass.Occult.1',
+      'magicNotes.druidDedication', '=', '"wisdom"'
+    );
+    rules.defineRule
+      ('features.Druidic Language', 'featureNotes.druidDedication', '=', '1');
+    rules.defineRule
+      ('features.Druidic Order', 'featureNotes.druidDedication', '=', '1');
+    rules.defineRule('spellSlots.P0', 'magicNotes.druidDedication', '+=', '2');
+    // Suppress validation errors for selected order and the notes for features
+    // of Druidic Order that don't come with Druid Dedication
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let orders =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Druid (Order)')).map(x => x.replace('Druid - ', '').replaceAll(' ', ''));
+    orders.forEach(o => {
+      rules.defineRule('validationNotes.druid-' + o + 'SelectableFeature',
+        'featureNotes.druidDedication', '+', '1'
+      );
+      rules.defineRule('featureNotes.' + o.charAt(0).toLowerCase() + o.substring(1),
+        'featureNotes.druidDedication', '?', '!source'
+      );
+      rules.defineRule('magicNotes.' + o.charAt(0).toLowerCase() + o.substring(1),
+        'featureNotes.druidDedication', '?', '!source'
+      );
+    });
+    rules.defineRule
+      ('magicNotes.druidOrder', 'featureNotes.druidDedication', '?', '!source');
   } else if(name == 'Elf Atavism') {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
@@ -11772,18 +11885,21 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.expertAlchemy', 'level', '=', 'source>=10 ? 5 : 3');
-  } else if(name == 'Expert Bard Spellcasting') {
-    rules.defineRule('magicNotes.expertBardSpellcasting.1',
-      'features.Expert Bard Spellcasting', '?', null,
+  } else if((matchInfo = name.match(/^Expert (\w+) Spellcasting$/)) != null) {
+    let c = matchInfo[1];
+    // TODO pick up from class spec
+    let trad = c=='Bard' ? 'O' : c=='Cleric' ? 'D' : c=='Druid' ? 'P' : 'A';
+    let note = 'magicNotes.expert' + c + 'Spellcasting.1';
+    rules.defineRule(note,
+      'features.Expert ' + c + ' Spellcasting', '?', null,
       'level', '=', 'source>=16 ? " 1 6th-level, 1 5th-level, and" : source>=14 ? " 1 5th level and" : ""'
     );
-    rules.defineRule
-      ('spellSlots.O4', 'magicNotes.expertBardSpellcasting', '+=', '1');
-    rules.defineRule('spellSlots.O5',
-      'magicNotes.expertBardSpellcasting.1', '+=', 'source.includes("5h") ? 1 : null'
+    rules.defineRule('spellSlots.' + trad + '4', note, '+=', '1');
+    rules.defineRule('spellSlots.' + trad + '5',
+      note, '+=', 'source.includes("5h") ? 1 : null'
     );
-    rules.defineRule('spellSlots.O6',
-      'magicNotes.expertBardSpellcasting.1', '+=', 'source.includes("6th") ? 1 : null'
+    rules.defineRule('spellSlots.' + trad + '6',
+      note, '+=', 'source.includes("6th") ? 1 : null'
     );
   } else if(name == 'Extend Armament Alignment') {
     rules.defineRule('combatNotes.alignArmament',
@@ -11853,6 +11969,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spells.Hand Of The Apprentice',
       'magicNotes.handOfTheApprentice', '=', '1'
     );
+  } else if(name == 'Healing Touch') {
+    rules.defineRule('focusPoints', 'magicNotes.healingTouch', '+=', '1');
+    rules.defineRule
+      ('spells.Lay On Hands', 'magicNotes.healingTouch', '=', '1');
   } else if(name == "Hierophant's Power") {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
@@ -11912,15 +12032,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.masterAlchemy', 'level', '=', 'source - 5');
-  } else if(name == 'Master Bard Spellcasting') {
-    rules.defineRule('magicNotes.masterBardSpellcasting.1',
-      'features.Master Bard Spellcasting', '?', null,
+  } else if((matchInfo = name.match(/^Master (\w+) Spellcasting$/)) != null) {
+    let c = matchInfo[1];
+    // TODO pick up from class spec
+    let trad = c=='Bard' ? 'O' : c=='Cleric' ? 'D' : c=='Druid' ? 'P' : 'A';
+    let note = 'magicNotes.master' + c + 'Spellcasting.1';
+    rules.defineRule(note,
+      'features.Master ' + c + ' Spellcasting', '?', null,
       'level', '=', 'source>=20 ? " 1 8th level and" : ""'
     );
-    rules.defineRule
-      ('spellSlots.O7', 'magicNotes.masterBardSpellcasting', '+=', '1');
-    rules.defineRule('spellSlots.O8',
-      'magicNotes.basicBardSpellcasting.1', '+=', 'source.includes("8th") ? 1 : null'
+    rules.defineRule('spellSlots.' + trad + '7', note, '+=', '1');
+    rules.defineRule('spellSlots.' + trad + '8',
+      note, '+=', 'source.includes("8th") ? 1 : null'
     );
   } else if(name == 'Masterful Companion') {
     rules.defineRule('featureNotes.animalCompanion',
@@ -11969,6 +12092,26 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Darkvision', 'featureNotes.orcSight', '=', '1');
   } else if(name.match(/^Order Explorer/)) {
     rules.defineRule('features.Order Explorer', 'feats.' + name, '=', '1');
+  } else if(name == 'Order Spell') {
+    // TODO get rid of hard-coding
+    rules.defineRule('magicNotes.orderSpell',
+      'features.Animal', '=', '"Heal Animal"',
+      'features.Leaf', '=', '"Goodberry"',
+      'features.Storm', '=', '"Tempest Surge"',
+      'features.Wil', '=', '"Wild Morph"'
+    );
+    rules.defineRule('spells.Heal Animal',
+      'magicNotes.orderSpell', '=', 'source=="Heal Animal" ? 1 : null'
+    );
+    rules.defineRule('spells.Goodberry',
+      'magicNotes.orderSpell', '=', 'source=="Goodberry" ? 1 : null'
+    );
+    rules.defineRule('spells.Tempest Surge',
+      'magicNotes.orderSpell', '=', 'source=="Tempest Surge" ? 1 : null'
+    );
+    rules.defineRule('spells.Wild Morph',
+      'magicNotes.orderSpell', '=', 'source=="Wild Morph" ? 1 : null'
+    );
   } else if(name == 'Order Magic (Animal)') {
     rules.defineRule
       ('spells.Heal Animal', 'magicNotes.orderMagic(Animal)', '=', '1');
