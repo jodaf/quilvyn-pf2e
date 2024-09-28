@@ -5710,17 +5710,27 @@ Pathfinder2E.FEATURES = {
   'Master Sorcerer Spellcasting':'Section=feature Note="FILL"',
 
   'Wizard Dedication':
-    'Section=magic,skill ' +
+    'Section=feature,magic,magic,skill ' +
     'Note=' +
-      '"Owns a spellbook with 4 arcane cantrips; may prepare 2 each day",' +
+      '"Has the Arcane School feature",' +
+      '"Spell Trained (Arcane)/May prepare 2 arcane cantrips each day",' +
+      '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
-  'Arcane School Spell':'Section=feature Note="FILL"',
-  'Basic Arcana':'Section=feature Note="FILL"',
-  'Basic Wizard Spellcasting':'Section=feature Note="FILL"',
-  'Advanced Arcana':'Section=feature Note="FILL"',
-  'Arcane Breadth':'Section=feature Note="FILL"',
-  'Expert Wizard Spellcasting':'Section=feature Note="FILL"',
-  'Master Wizard Spellcasting':'Section=feature Note="FILL"',
+  'Arcane School Spell':
+    'Section=magic Note="Knows the <i>%V</i> spell/Has a focus pool with 1 focus point"',
+  'Basic Arcana':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
+  'Basic Wizard Spellcasting':
+    'Section=magic Note="Knows 1 1st-level%1 arcane spell"',
+  'Advanced Arcana':'Section=feature Note="+1 Class Feat (wizard)"',
+  'Arcane Breadth':
+    'Section=magic Note="+1 arcane spell slot of each level up to %V"',
+  'Expert Wizard Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Expert (Arcane)/Knows 1 4th-level%1 arcane spell"',
+  'Master Wizard Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Master (Arcane)/Knows 1 7th-level%1 arcane spell"',
 
   // General Feats
   'Adopted Ancestry':
@@ -11641,6 +11651,26 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         note, '+', 'source>=' + l + ' ? 1 : null'
       );
     });
+  } else if(name == 'Arcane School Spell') {
+    // TODO get rid of hard-coding
+    let schoolSpells = {
+      'Abjuration':'Protective Ward',
+      'Conjuration':'Augment Summoning',
+      'Divination':"Diviner\'s Sight",
+      'Enchantment':'Charming Words',
+      'Evocation':'Force Bolt',
+      'Illusion':'Warped Terrain',
+      'Necromancy':'Call Of The Grave',
+      'Transmutation':'Physical Boost'
+    };
+    let note = 'magicNotes.arcaneSchoolSpell';
+    for(let s in schoolSpells) {
+      let spell = schoolSpells[s];
+      rules.defineRule(note, 'features.' + s, '=', '"' + spell + '"');
+      rules.defineRule
+        ('spells.' + spell, note, '=', 'source=="' + spell + '" ? 1 : null');
+    }
+    rules.defineRule('focusPoints', note, '+=', '1');
   } else if(name == 'Armor Proficiency') {
     rules.defineRule
       ('training.Light Armor', 'combatNotes.armorProficiency', '=', '1');
@@ -12205,6 +12235,43 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Wind Caller') {
     rules.defineRule
       ('spells.Stormwind Flight', 'magicNotes.windCaller', '=', '1');
+  } else if(name == 'Wizard Dedication') {
+    rules.defineRule
+      ('features.Arcane School', 'featureNotes.wizardDedication', '=', '1');
+    rules.defineRule('spellModifier.' + name,
+      'magicNotes.wizardDedication', '?', null,
+      'intelligenceModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Arcane', 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAttackModifier.Arcane.1',
+      'magicNotes.wizardDedication', '=', '"intelligence"'
+    );
+    rules.defineRule('spellDifficultyClass.Arcane.1',
+      'magicNotes.wizardDedication', '=', '"intelligence"'
+    );
+    rules.defineRule
+      ('features.Specialization', 'featureNotes.wizardDedication', '=', '1');
+    rules.defineRule('spellSlots.A0', 'magicNotes.wizardDedication', '+=', '2');
+    // Suppress validation errors for selected school and the notes for
+    // features of the school that don't come with Wizard Dedication
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let schools =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '').replaceAll(' ', '')).filter(x => x != 'Universalist');
+    schools.forEach(s => {
+      rules.defineRule('validationNotes.wizard-' + s + 'SelectableFeature',
+        'featureNotes.wizardDedication', '+', '1'
+      );
+      rules.defineRule('magicNotes.' + s.charAt(0).toLowerCase() + s.substring(1),
+        'featureNotes.wizardDedication', '?', '!source'
+      );
+      rules.defineRule('magicNotes.' + s.charAt(0).toLowerCase() + s.substring(1) + '-1',
+        'featureNotes.wizardDedication', '?', '!source'
+      );
+    });
+    rules.defineRule('magicNotes.arcaneSchool',
+      'featureNotes.wizardDedication', '?', '!source'
+    );
   }
 };
 
