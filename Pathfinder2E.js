@@ -5726,7 +5726,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"+1 Skill Feat",' +
-      '"Skill Trained (Choose 1 from any)/Skill Expert (Choose 1 from any)"',
+      '"Skill Expert (Choose 1 from any)/Skill Master (Choose 1 from any)"',
   'Uncanny Dodge':'Section=feature Note="Has the Deny Advantage feature"',
   'Evasiveness':'Section=save Note="Save Master (Reflex)"',
 
@@ -5737,7 +5737,7 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditions} spell"',
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLc} spell"',
   'Basic Blood Potency':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell':
@@ -5746,13 +5746,13 @@ Pathfinder2E.FEATURES = {
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
-    'Note="+1 %{bloodlineTraditions} spell slot of each level up to %V"',
+    'Note="+1 %{bloodlineTraditionsLc} spell slot of each level up to %V"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%{bloodlineTradtions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditions} spell"',
+    'Note="Spell Expert (%{bloodlineTradtions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%{bloodlineTradtions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditions} spell"',
+    'Note="Spell Master (%{bloodlineTradtions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -11339,6 +11339,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       );
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
+    rules.defineRule('bloodlineTraditionsLc',
+      'bloodlineTraditions', '=', 'source.toLowerCase()'
+    );
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
@@ -11827,7 +11830,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ['A', 'D', 'O', 'P'].forEach(trad => {
         for(let s in slots) {
           rules.defineRule('spellSlots.' + trad + s,
-            note, '+=', 'bloodlineTraditions=~"' + trad + '"' + (slots[s] > 0 ? '&&dict.level>=' + slots[s] : '') + ' ? 1 : null'
+            note, '+=', '(dict.bloodlineTraditions+"").includes("' + trad + '")' + (slots[s] > 0 ? '&&dict.level>=' + slots[s] : '') + ' ? 1 : null'
           );
         }
       });
@@ -12245,6 +12248,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('features.Surprise Attack', 'featureNotes.rangerDedication', '=', '1');
   } else if(name == 'Rough Rider') {
     rules.defineRule('features.Ride', 'featureNotes.roughRider', '=', '1');
+  } else if(name == 'Sneak Attacker') {
+    rules.defineRule
+      ('features.Sneak Attack', 'featureNotes.sneakAttacker', '=', '1');
   } else if(name == 'Sorcerer Dedication') {
     rules.defineRule('sorcererFeatures.Bloodline',
       'featureNotes.sorcererDedication', '=', '1'
