@@ -5352,7 +5352,7 @@ Pathfinder2E.FEATURES = {
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May temporarily add 1 unknown mental spell to repretoire each day",' +
+      '"May temporarily add 1 unknown mental spell to repertoire each day",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
@@ -5550,7 +5550,7 @@ Pathfinder2E.FEATURES = {
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
-    'Note="May use 1 spell slot of each level above 2nd to cast a combaination of two spells of 2 levels lower"',
+    'Note="May use 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
 
   // Archetype
   'Alchemist Dedication':
@@ -5749,10 +5749,10 @@ Pathfinder2E.FEATURES = {
     'Note="+1 %{bloodlineTraditionsLc} spell slot of each level up to %V"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%{bloodlineTradtions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
+    'Note="Spell Expert (%{bloodlineTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%{bloodlineTradtions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
+    'Note="Spell Master (%{bloodlineTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -11326,16 +11326,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'features.' + b, '=', '!dict.bloodlineTraditions ? "' + bloodTrad + '" : !dict.bloodlineTraditions.includes("' + bloodTrad + '") ? dict.bloodlineTraditions + "; ' + bloodTrad + '" : dict.bloodlineTraditions'
       );
       rules.defineRule('spellModifier.' + b,
-        bloodLevel, '?', null,
+        'features.' + b, '?', null,
         'charismaModifier', '=', null
       );
       rules.defineRule
         ('spellModifier.' + bloodTrad, 'spellModifier.' + b, '=', null);
       rules.defineRule('spellAttackModifier.' + bloodTrad + '.1',
-        bloodLevel, '=', '"charisma"'
+        'features.' + b, '=', '"charisma"'
       );
       rules.defineRule('spellDifficultyClass.' + bloodTrad + '.1',
-        bloodLevel, '=', '"charisma"'
+        'features.' + b, '=', '"charisma"'
       );
       QuilvynRules.spellSlotRules(rules, bloodLevel, spellSlots.map(x => x.replace(/./, bloodTrad.charAt(0))));
     }
@@ -11688,20 +11688,34 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Animal Rage') {
     rules.defineRule('spells.Animal Form', 'magicNotes.animalRage', '=', '1');
   } else if((matchInfo = name.match(/^(Arcane|Bloodline|Divine|Occult|Primal) Breadth$/)) != null) {
-    // TODO Bloodline
     let trad = matchInfo[1];
     let c = {'Arcane':'Wizard', 'Bloodline':'Sorcerer', 'Divine':'Cleric', 'Occult':'Bard', 'Primal':'Druid'}[trad];
     let note = 'magicNotes.' + trad.toLowerCase() + 'Breadth';
     rules.defineRule(note,
+      'level', '?', null, // force recomputation when level changes
       'magicNotes.basic' + c + 'Spellcasting', '=', '1',
       'magicNotes.expert' + c + 'Spellcasting', '^', 'dict.level>=16 ? 4 : dict.level>=14 ? 3 : 2',
       'magicNotes.master' + c + 'Spellcasting', '^', 'dict.level>=20 ? 6 : 5'
     );
-    [1, 2, 3, 4, 5, 6].forEach(l => {
-      rules.defineRule('spellSlots.' + trad.charAt(0) + l,
-        note, '+', 'source>=' + l + ' ? 1 : null'
-      );
-    });
+    if(c == 'Sorcerer') {
+      ['A', 'D', 'O', 'P'].forEach(trad => {
+        rules.defineRule(note + '.' + trad + '.1',
+          'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+           note, '=', null
+        );
+        [1, 2, 3, 4, 5, 6].forEach(l => {
+          rules.defineRule('spellSlots.' + trad.charAt(0) + l,
+            note + '.' + trad + '.1', '+', 'source>=' + l + ' ? 1 : null'
+          );
+        });
+      });
+    } else {
+      [1, 2, 3, 4, 5, 6].forEach(l => {
+        rules.defineRule('spellSlots.' + trad.charAt(0) + l,
+          note, '+', 'source>=' + l + ' ? 1 : null'
+        );
+      });
+    }
   } else if(name == 'Arcane School Spell') {
     // TODO get rid of hard-coding
     let schoolSpells = {
@@ -11820,20 +11834,27 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let trad =
       (QuilvynUtils.getAttrValue(Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
     let note = 'magicNotes.' + level.toLowerCase() + c + 'Spellcasting';
-    if(c != 'Sorcerer') {
-      for(let s in slots) {
-        rules.defineRule('spellSlots.' + trad + s,
-          note, '+=', slots[s] > 0 ? 'dict.level>=' + slots[s] + ' ? 1 : null' : '1'
-        );
-      }
-    } else {
+    if(c == 'Sorcerer') {
       ['A', 'D', 'O', 'P'].forEach(trad => {
         for(let s in slots) {
-          rules.defineRule('spellSlots.' + trad + s,
-            note, '+=', '(dict.bloodlineTraditions+"").includes("' + trad + '")' + (slots[s] > 0 ? '&&dict.level>=' + slots[s] : '') + ' ? 1 : null'
+          if(slots[s] > 0)
+            rules.defineRule
+              (note + '.' + trad + '.' + s, 'level', '?', 'source>' + slots[s]);
+          rules.defineRule(note + '.' + trad + '.' + s,
+            'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+             note, '=', '1'
           );
+          rules.defineRule
+            ('spellSlots.' + trad + s, note + '.' + trad + '.' + s, '+=', null);
         }
       });
+    } else {
+      for(let s in slots) {
+        if(slots[s] > 0)
+          rules.defineRule(note + '.' + s, 'level', '?', 'source>' + slots[s]);
+        rules.defineRule(note + '.' + s, note, '=', '1');
+        rules.defineRule('spellSlots.' + trad + s, note + '.' + s, '+=', null);
+      }
     }
   } else if(name == 'Canny Acumen (Fortitude)') {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
@@ -11890,7 +11911,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == "Champion's Reaction") {
     // TODO What about homebrew reactions?
     let reactions =
-      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES['Champion'], 'Features').filter(f => f.match(/\?\s*1:/));
+      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES.Champion, 'Features').filter(f => f.match(/\?\s*1:/));
     reactions.forEach(f => {
       let pieces = f.split(/\s*\?\s*/);
       pieces[1] = pieces[1].replace(/\d+:/, '');
@@ -12096,7 +12117,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Instinct Ability') {
     // TODO What about homebrew instincts?
     let instinctFeatures =
-      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES['Barbarian'], 'Features').filter(f => f.match(/^features.*Instinct\s*\?/));
+      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES.Barbarian, 'Features').filter(f => f.match(/^features.*Instinct\s*\?/));
     instinctFeatures.forEach(f => {
       let pieces = f.split(/\s*\?\s*/);
       pieces[1] = pieces[1].replace(/\d+:/, '');
@@ -12196,7 +12217,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'features.Animal', '=', '"Heal Animal"',
       'features.Leaf', '=', '"Goodberry"',
       'features.Storm', '=', '"Tempest Surge"',
-      'features.Wil', '=', '"Wild Morph"'
+      'features.Wild', '=', '"Wild Morph"'
     );
     rules.defineRule('spells.Heal Animal',
       'magicNotes.orderSpell', '=', 'source=="Heal Animal" ? 1 : null'
@@ -12276,6 +12297,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     bloodlines.forEach(b => {
       rules.defineRule('validationNotes.sorcerer-' + b + 'SelectableFeature',
         'featureNotes.sorcererDedication', '+', '1'
+      );
+      rules.defineRule('magicNotes.' + b.toLowerCase(),
+        'featureNotes.sorcererDedication', '?', '!source'
       );
       rules.defineRule('magicNotes.' + b.toLowerCase() + '-1',
         'featureNotes.sorcererDedication', '?', '!source'
