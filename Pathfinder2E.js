@@ -2578,7 +2578,7 @@ Pathfinder2E.FEATS = {
   'Kip Up':'Type=Skill Require="level >= 7","rank.Acrobatics >= 3"',
   'Arcane Sense':'Type=Skill Require="rank.Arcana >= 1"',
   'Unified Theory':
-    'Type=Skill Require="level >= 15","rank.Acrobatics >= 4"',
+    'Type=Skill Require="level >= 15","rank.Arcana >= 4"',
   'Combat Climber':'Type=Skill Require="rank.Athletics >= 1"',
   'Hefty Hauler':'Type=Skill Require="rank.Athletics >= 1"',
   'Quick Jump':'Type=Skill Require="rank.Athletics >= 1"',
@@ -5874,16 +5874,16 @@ Pathfinder2E.FEATURES = {
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
   'Charming Liar':
     'Section=skill ' +
-    'Note="Critical success on a Lie improves attitude by 1 step"',
+    'Note="Critical success on a Lie improves attitude by 1 step 1/conversation"',
   'Cloud Jump':
     'Section=skill ' +
-    'Note="May long jump triple normal distance, high jump normal long jump distance, and add %{speed} to jump distance for every additional action spent"',
+    'Note="May long jump triple normal distance, high jump normal long jump distance, and add %{speed}\' to jump distance for every additional action spent"',
   'Combat Climber':
     'Section=skill ' +
     'Note="Does not suffer flat-footed and may fight while Climbing/May Climb with one hand occupied"',
   'Confabulator':
     'Section=skill ' +
-    'Note="Target of Deception gains %{rank.Deception>=4?\'no\':rank.Deception==3?\'+1\':\'+2\'} bonus for previous attempts"',
+    'Note="Reduces bonus given to target of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
   'Connections':
     'Section=skill ' +
     'Note="May use Society to gain meeting with an important figure or to exchange favors"',
@@ -5924,6 +5924,7 @@ Pathfinder2E.FEATURES = {
   'Group Impression':
     'Section=skill ' +
     'Note="May use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
+  // TODO implement
   'Hefty Hauler':'Section=ability Note="x2 maximum and encumbered Bulk"',
   'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{levels.Diplomacy>=3?\'/Gather Information in normal time cannot critically fail\':\'\'}"',
   'Impeccable Crafting':
@@ -5935,8 +5936,10 @@ Pathfinder2E.FEATURES = {
   'Intimidating Prowess':
     'Section=skill ' +
     'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
-  'Inventor':'Section=skill Note="May use Craft o create formulas"',
-  'Kip Up':'Section=combat Note="May stand without triggering reactions"',
+  'Inventor':'Section=skill Note="May use Crafting to create formulas"',
+  'Kip Up':
+    'Section=combat ' +
+    'Note="May stand as a free action without triggering reactions"',
   'Lasting Coercion':
     'Section=skill ' +
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
@@ -5974,7 +5977,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May use Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
-    'Note="May craft magic items/Learns formulas for 4 common magic items of 2nd level or lower"',
+    'Note="May craft magic items/Knows formulas for 4 common magic items of 2nd level or lower"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
     'Section=skill Note="May use Nature to Treat Wounds; +2 in wilderness"',
@@ -5991,7 +5994,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May jump 5\' vertically and +5\' horizontally"',
   'Quick Climb':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'/May Climb at full Speed\':\'Climb normal/critical success increases distance by 5\'/10\'}"',
+    'Note="%{rank.Athletics>=4?\'May Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
   'Quick Coercion':'Section=skill Note="May Coerce in 1 rd"',
   'Quick Disguise':'Section=skill Note="May create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
@@ -6002,10 +6005,10 @@ Pathfinder2E.FEATURES = {
     'Note="May Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
   'Quick Squeeze':
     'Section=skill ' +
-    'Note="May Squeeze %{rank.Athletics>=4?\'at full Speed\':\\"5\'/rd (critical success 10\'\\"}"',
+    'Note="May Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
   'Quick Swim':
     'Section=skill ' +
-    'Note="May Swim %{rank.Athletics>=4?\'at full Speed\':\\"5\'/rd (critical success 10\'\\"}"',
+    'Note="%{rank.Athletics>=4?\'May Swim at full Speed\':\\"Swimming success increases distance by 5\', critical success by 10\'\\"}"',
   'Quick Unlock':'Section=skill Note="May Pick a Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
@@ -6031,9 +6034,9 @@ Pathfinder2E.FEATURES = {
     'Note="Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
   'Snare Crafting':
     'Section=skill ' +
-    'Note="May use Craft to create snares; knows the formulas for 4 common snares"',
+    'Note="May use Crafting to create snares; knows the formulas for 4 common snares"',
   'Specialty Crafting':
-    'Section=skill Note="+%{rank.Crafting>=3?2:1} Craft on selected type"',
+    'Section=skill Note="+%{rank.Crafting>=3?2:1} Crafting on selected type"',
   'Steady Balance':
     'Section=skill ' +
     'Note="All Balance successes are critical successes/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
@@ -6065,7 +6068,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
-    'Note="Never flat-footed in water/Suffers no penalty for bludgeoning or slashing weapons"',
+    'Note="Does not suffer flat-footed from being in water/Suffers no penalty when using bludgeoning and slashing weapons in water"',
   'Unified Theory':
     'Section=skill ' +
     'Note="May use Arcana in place of Nature, Occultism, or Religion"',
@@ -6076,7 +6079,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
-    'Section=skill Note="May follow a jump with another if adjacent to a wall"',
+    'Section=skill ' +
+    'Note="May follow a jump with another 1-action jump when adjacent to a wall 1/turn"',
   'Ward Medic':
     'Section=skill ' +
     'Note="May use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
