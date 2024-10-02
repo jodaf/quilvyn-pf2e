@@ -11,7 +11,7 @@ var attributes = {
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":4, "abilityBoosts.wisdom":4, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Chain Mail", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":19500, "feats.Adopted Ancestry":1, "feats.Alchemical Familiar":1, 
+  "experience":19500, "feats.Adopted Ancestry (Halfling)":1, "feats.Alchemical Familiar":1, 
   "feats.Alchemical Savant":1, "feats.Ancestral Paragon":1, "feats.Armor Proficiency":1, 
   "feats.Calculated Splash":1, "feats.Clever Improviser":1, "feats.Combine Elixirs":1, 
   "feats.Cooperative Nature":1, "feats.Cooperative Soul":1, "feats.Craft Philosopher's Stone":1, 
@@ -100,7 +100,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adopted Ancestry; Alchemical Familiar; Alchemical Savant; Ancestral Paragon; Armor Proficiency; Calculated Splash; Clever Improviser; Combine Elixirs; Cooperative Nature; Cooperative Soul; Craft Philosopher's Stone; Debilitating Bomb; Directional Bombs; Efficient Alchemy; Elastic Mutagen; Enduring Alchemy; Eternal Elixir; Expanded Splash; Exploitive Bomb; Extend Elixir; Far Lobber; Feral Mutagen; General Training; Genius Mutagen; Glib Mutagen; Greater Debilitating Bomb; Greater Merciful Elixir; Improbable Elixirs; Invincible Mutagen; Mega Bomb; Merciful Elixir; Mindblank Mutagen; Miracle Worker; Perfect Debilitation; Perfect Mutagen; Persistent Mutagen; Poison Resistance; Potent Poisoner; Quick Bomber; Revivifying Mutagen; Skill Training (Cavern Lore); Skill Training (Demon Lore); Skill Training (Engineering Lore); Skill Training (Folktale Lore); Skill Training (Labor Lore); Skill Training (Legal Lore); Skill Training (Library Lore); Skill Training (Medicine); Skill Training (Milling Lore); Smoke Bomb; Snare Crafting; Sticky Bomb; Toughness; True Debilitating Bomb; Uncanny Bombs; Unconventional Expertise; Unconventional Weaponry; Weapon Proficiency (Temple Sword); Weapon Proficiency (Warhammer)</td>
+        <td><b>Feats</b>: Adopted Ancestry (Halfling); Alchemical Familiar; Alchemical Savant; Ancestral Paragon; Armor Proficiency; Calculated Splash; Clever Improviser; Combine Elixirs; Cooperative Nature; Cooperative Soul; Craft Philosopher's Stone; Debilitating Bomb; Directional Bombs; Efficient Alchemy; Elastic Mutagen; Enduring Alchemy; Eternal Elixir; Expanded Splash; Exploitive Bomb; Extend Elixir; Far Lobber; Feral Mutagen; General Training; Genius Mutagen; Glib Mutagen; Greater Debilitating Bomb; Greater Merciful Elixir; Improbable Elixirs; Invincible Mutagen; Mega Bomb; Merciful Elixir; Mindblank Mutagen; Miracle Worker; Perfect Debilitation; Perfect Mutagen; Persistent Mutagen; Poison Resistance; Potent Poisoner; Quick Bomber; Revivifying Mutagen; Skill Training (Cavern Lore); Skill Training (Demon Lore); Skill Training (Engineering Lore); Skill Training (Folktale Lore); Skill Training (Labor Lore); Skill Training (Legal Lore); Skill Training (Library Lore); Skill Training (Medicine); Skill Training (Milling Lore); Smoke Bomb; Snare Crafting; Sticky Bomb; Toughness; True Debilitating Bomb; Uncanny Bombs; Unconventional Expertise; Unconventional Weaponry; Weapon Proficiency (Temple Sword); Weapon Proficiency (Warhammer)</td>
         <td><b>Alchemist Features</b>: Ability Boost (Intelligence); Ability Boosts; Advanced Alchemy; Alchemical Alacrity; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemist Feats; Alchemist Skills; Alchemy; Alertness; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Bomber; Chirurgeon; Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Evasion; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Infused Reagents; Iron Will; Juggernaut; Medium Armor Expertise; Medium Armor Mastery; Mutagenic Flashback; Mutagenist; Perception Trained; Perpetual Infusions; Perpetual Perfection; Perpetual Potency; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Skilled Heritage Human</td>
@@ -131,7 +131,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
-        <td>Adopted Ancestry: May take ancestry feats from chosen ancestry</td>
+        <td>Adopted Ancestry (Halfling): May take Halfling ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Familiar: May have a familiar</td>
       </tr></table>
@@ -146,12 +146,12 @@ var attributes = {
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
-      <td>Acrobatics: +4 (dexterity; untrained)</td>
+      <td>Acrobatics: +24 (dexterity; untrained)</td>
       <td>Folktale Lore: +27 (intelligence; trained)</td>
-      <td>Performance: +4 (charisma; untrained)</td>
+      <td>Performance: +24 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +5 (intelligence; untrained)</td>
-      <td>Intimidation: +4 (charisma; untrained)</td>
+      <td>Arcana: +25 (intelligence; untrained)</td>
+      <td>Intimidation: +24 (charisma; untrained)</td>
       <td>Religion: +26 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +28 (strength; expert)</td>
@@ -164,23 +164,23 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cavern Lore: +27 (intelligence; trained)</td>
       <td>Legal Lore: +29 (intelligence; expert)</td>
-      <td>Society: +5 (intelligence; untrained)</td>
+      <td>Society: +25 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +29 (intelligence; expert)</td>
       <td>Library Lore: +27 (intelligence; trained)</td>
-      <td>Stealth: +4 (dexterity; untrained)</td>
+      <td>Stealth: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +4 (charisma; untrained)</td>
+      <td>Deception: +24 (charisma; untrained)</td>
       <td>Magnimar Lore: +27 (intelligence; trained)</td>
-      <td>Survival: +4 (wisdom; untrained)</td>
+      <td>Survival: +24 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Demon Lore: +27 (intelligence; trained)</td>
       <td>Medicine: +28 (wisdom; expert)</td>
       <td>Tea Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +4 (charisma; untrained)</td>
+      <td>Diplomacy: +24 (charisma; untrained)</td>
       <td>Military Lore: +27 (intelligence; trained)</td>
-      <td>Thievery: +4 (dexterity; untrained)</td>
+      <td>Thievery: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Dwarven Lore: +27 (intelligence; trained)</td>
       <td>Milling Lore: +29 (intelligence; expert)</td>
@@ -191,7 +191,7 @@ var attributes = {
       <td>Underworld Lore: +27 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Engineering Lore: +27 (intelligence; trained)</td>
-      <td>Occultism: +5 (intelligence; untrained)</td>
+      <td>Occultism: +25 (intelligence; untrained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -235,6 +235,8 @@ var attributes = {
       <td><i>Skill Training (Milling Lore): Skill Trained (Milling Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skilled Heritage Human: Skill Expert (Choose 1 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Untrained Improvisation: +20 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
       <td>Advanced Alchemy: May use a batch of infused reagents to create a pair of infused alchemical items of up to level 20 without a Crafting check</td>
     </tr><tr style="text-align:center">
@@ -293,8 +295,6 @@ var attributes = {
       <td>Snare Crafting: May use Craft to create snares; knows the formulas for 4 common snares</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
-    </tr><tr style="text-align:center">
-      <td>Untrained Improvisation: +20 on untrained skill checks</td>
     </tr></table>
 </td>
   </tr></table>
@@ -328,7 +328,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Alchemical Weapon Expertise: Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Armor Proficiency: Defense Trained (Light Armor)</i></td>
+        <td><i>Armor Proficiency: Defense Trained (Heavy Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">

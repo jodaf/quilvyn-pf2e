@@ -150,19 +150,19 @@ var attributes = {
       <td>Gnome Lore: +26 (intelligence; trained)</td>
       <td>Religion: +26 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Arcana: +24 (intelligence; untrained)</td>
       <td>Halfling Lore: +26 (intelligence; trained)</td>
       <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Astral Plane Lore: +26 (intelligence; trained)</td>
       <td>Intimidation: +26 (charisma; trained)</td>
-      <td>Society: +4 (intelligence; untrained)</td>
+      <td>Society: +24 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +31 (strength; master)</td>
-      <td>Medicine: +4 (wisdom; untrained)</td>
-      <td>Stealth: +4 (dexterity; untrained)</td>
+      <td>Medicine: +24 (wisdom; untrained)</td>
+      <td>Stealth: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; untrained)</td>
+      <td>Crafting: +24 (intelligence; untrained)</td>
       <td>Midwifery Lore: +26 (intelligence; trained)</td>
       <td>Survival: +26 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
@@ -174,12 +174,12 @@ var attributes = {
       <td>Mining Lore: +26 (intelligence; trained)</td>
       <td>Tea Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +4 (charisma; untrained)</td>
-      <td>Nature: +4 (wisdom; untrained)</td>
-      <td>Thievery: +4 (dexterity; untrained)</td>
+      <td>Diplomacy: +24 (charisma; untrained)</td>
+      <td>Nature: +24 (wisdom; untrained)</td>
+      <td>Thievery: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Engineering Lore: +26 (intelligence; trained)</td>
-      <td>Occultism: +4 (intelligence; untrained)</td>
+      <td>Occultism: +24 (intelligence; untrained)</td>
       <td>Troll Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Fishing Lore: +26 (intelligence; trained)</td>
@@ -218,9 +218,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Troll Lore): Skill Trained (Troll Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Plains Lore): May take 10 on Plains Lore rolls</td>
+      <td><i>Untrained Improvisation: +20 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Survival): May take 10 on Survival rolls</td>
+      <td>Assurance (Plains Lore): May forgo rolling a Plains Lore check for an automatic 32</td>
+    </tr><tr style="text-align:center">
+      <td>Assurance (Survival): May forgo rolling a Survival check for an automatic 32</td>
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May use any skill untrained</td>
     </tr><tr style="text-align:center">
@@ -228,9 +230,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Group Coercion: May use Intimidation to Coerce 2 targets</td>
     </tr><tr style="text-align:center">
-      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+      <td>Incredible Initiative: +2 on initiative rolls</td>
     </tr><tr style="text-align:center">
-      <td>Untrained Improvisation: +20 on untrained skill checks</td>
+      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
     </tr></table>
 </td>
   </tr></table>
@@ -261,7 +263,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Armor Mastery: Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Armor Proficiency: Defense Trained (Light Armor)</i></td>
+        <td><i>Armor Proficiency: Defense Trained (Heavy Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
@@ -270,8 +272,6 @@ var attributes = {
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Increased Weapon Specialization effects</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Incredible Initiative: +2 Initiative</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +5</i></td>
       </tr><tr style="text-align:center">
@@ -293,7 +293,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: May use a Reaction to make a melee Strike on foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Battlefield Surveyor: +2 Perception for Initiative</td>
+        <td>Battlefield Surveyor: +2 Perception for initiative</td>
       </tr><tr style="text-align:center">
         <td>Blind-Fight: May attack concealed foes without a prior check and hidden creatures with a DC 5 check/Does not suffer flat-footed with hidden foes</td>
       </tr><tr style="text-align:center">
@@ -411,7 +411,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shatter Defenses: A successful Strike vs. a frightened foe inflicts flat-footed while frightened condition lasts</td>
       </tr><tr style="text-align:center">
-        <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
+        <td>Shield Block: May use a Reaction when shield is raised to negate damage up to its hardness and have it absorb half of remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Shield Warden: May use Shield Block to protect an adjacent ally</td>
       </tr><tr style="text-align:center">

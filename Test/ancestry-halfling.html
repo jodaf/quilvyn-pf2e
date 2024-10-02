@@ -11,7 +11,7 @@ var attributes = {
   "abilityBoosts.wisdom":2, "abilityGeneration":"All 10s; standard ancestry boosts", 
   "alignment":"Neutral Good", "ancestry":"Halfling", "armor":"None", "background":"Acolyte", 
   "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, "experience":0, 
-  "feats.Ceaseless Shadows":1, "feats.Cultural Adaptability":1, "feats.Distracting Shadows":1, 
+  "feats.Ceaseless Shadows":1, "feats.Cultural Adaptability (Human)":1, "feats.Distracting Shadows":1, 
   "feats.Guiding Luck":1, "feats.Halfling Lore":1, "feats.Halfling Luck":1, 
   "feats.Halfling Weapon Expertise":1, "feats.Halfling Weapon Familiarity":1, "feats.Halfling Weapon Trickster":1, 
   "feats.Irrepressible":1, "feats.Point-Blank Shot":1, "feats.Sure Feet":1, "feats.Titan Slinger":1, 
@@ -76,14 +76,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 2; Class: 1; General: 0</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 0</td>
         <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Halfling (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Ceaseless Shadows; Cultural Adaptability; Distracting Shadows; Guiding Luck; Halfling Lore; Halfling Luck; Halfling Weapon Expertise; Halfling Weapon Familiarity; Halfling Weapon Trickster; Irrepressible; Point-Blank Shot; Sure Feet; Titan Slinger; Unfettered Halfling; Watchful Halfling</td>
+        <td><b>Feats</b>: Ceaseless Shadows; Cultural Adaptability (Human); Distracting Shadows; Guiding Luck; Halfling Lore; Halfling Luck; Halfling Weapon Expertise; Halfling Weapon Familiarity; Halfling Weapon Trickster; Irrepressible; Point-Blank Shot; Sure Feet; Titan Slinger; Unfettered Halfling; Watchful Halfling</td>
         <td><b>Fighter Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Halfling Features</b>: Ability Boost (Dexterity; Wisdom; Choose 1 from any); Ability Flaw (Strength); Ancestry Feats; Gutsy Halfling; Hillock Halfling; Keen Eyes; Nomadic Halfling; Small; Twilight Halfling; Wildwood Halfling</td>
@@ -94,7 +94,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cultural Adaptability: +1 Ancestry feat/Has the Adopted Ancestry feature</i></td>
+        <td><i>Cultural Adaptability (Human): +1 Ancestry feat/Has the Adopted Ancestry (Human) feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -102,7 +102,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Twilight Halfling: Has the Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
-        <td>Adopted Ancestry: May take ancestry feats from chosen ancestry</td>
+        <td>Adopted Ancestry (Human): May take Human ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Guiding Luck: May reroll a failed Perception check or attack roll 1/day</td>
       </tr><tr style="text-align:center">
@@ -218,7 +218,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Point-Blank Shot: Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
-        <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
+        <td>Shield Block: May use a Reaction when shield is raised to negate damage up to its hardness and have it absorb half of remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Titan Slinger: +1 damage die step on slings vs. Large and larger foes</td>
       </tr><tr style="text-align:center">
@@ -252,11 +252,11 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Ancestry Feats Allocation: 2 available vs. 14 allocated</td>
+        <td>Ancestry Feats Allocation: 1 available vs. 14 allocated</td>
       </tr><tr style="text-align:center">
         <td>Ceaseless Shadows Feat: Requires level (currently 1) >= 13 and distracting shadows feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Cultural Adaptability Feat: Requires level (currently 1) >= 5</td>
+        <td>Cultural Adaptability (Human) Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
         <td>Guiding Luck Feat: Requires level (currently 1) >= 9 and halfling luck feature (currently 1)</td>
       </tr><tr style="text-align:center">

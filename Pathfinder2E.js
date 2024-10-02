@@ -1064,7 +1064,8 @@ Pathfinder2E.FEATS = {
   'Titan Slinger':'Type=Ancestry,Halfling',
   'Unfettered Halfling':'Type=Ancestry,Halfling',
   'Watchful Halfling':'Type=Ancestry,Halfling',
-  'Cultural Adaptability':'Type=Ancestry,Halfling Require="level >= 5"',
+  'Cultural Adaptability (%ancestry)':
+    'Type=Ancestry,Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
     'Type=Ancestry,Halfling ' +
     'Require="level >= 5","features.Halfling Weapon Familiarity"',
@@ -2514,7 +2515,7 @@ Pathfinder2E.FEATS = {
       '"rank.Arcana >= 4"',
 
   // General
-  'Adopted Ancestry':'Type=General',
+  'Adopted Ancestry (%ancestry)':'Type=General',
   'Armor Proficiency':'Type=General',
   'Breath Control':'Type=General',
   'Canny Acumen (Fortitude)':'Type=General',
@@ -2541,8 +2542,8 @@ Pathfinder2E.FEATS = {
 
   // Skill
   'Assurance (%skill)':'Type=Skill Require="rank.%skill >= 1"',
-  'Dubious Knowledge':
-    'Type=Skill Require="rank.Recall Knowledge >= 1"',
+  // TODO requires "trained in a skill with the Recall Knowledge action"
+  'Dubious Knowledge':'Type=Skill"',
   'Quick Identification':
     'Type=Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
@@ -3022,8 +3023,9 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"May use Aid to help another overcome enchantment",' +
       '"+2 Perception (sense enchantment)/Gains an automatic -2 check to note enchantment"',
-  'Cultural Adaptability':
-    'Section=feature Note="+1 Ancestry feat/Has the Adopted Ancestry feature"',
+  'Cultural Adaptability (%ancestry)':
+    'Section=feature ' +
+    'Note="+1 Ancestry feat/Has the Adopted Ancestry (%ancestry) feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict its critical specialization effect"',
@@ -4298,7 +4300,7 @@ Pathfinder2E.FEATURES = {
   'Battlefield Surveyor':
     'Section=combat,skill ' +
     'Note=' +
-      '"+2 Perception for Initiative",' +
+      '"+2 Perception for initiative",' +
       '"Perception Master"',
   'Bravery':
     'Section=save,save ' +
@@ -5779,15 +5781,12 @@ Pathfinder2E.FEATURES = {
     'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell"',
 
   // General Feats
-  'Adopted Ancestry':
-    'Section=feature Note="May take ancestry feats from chosen ancestry"',
+  'Adopted Ancestry (%ancestry)':
+    'Section=feature Note="May take %ancestry ancestry feats"',
   'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
-  'Armor Proficiency':
-    'Section=combat ' +
-    // TODO interacts w/other sources of Defense Trained
-    'Note="Defense Trained (%{$\'feats.Armor Proficiency\'>=3?\'Heavy\':$\'feats.Armor Proficiency\'>=2?\'Medium\':\'Light\'} Armor)"',
+  'Armor Proficiency':'Section=combat Note="Defense Trained (%V Armor)"',
   'Breath Control':
-    'Section=attribute,save ' +
+    'Section=ability,save ' +
     'Note=' +
       '"May hold breath 25x as long as usual without suffocating",' +
       '"+1 vs. inhaled threats/Success vs. inhaled threat is always a critical success"',
@@ -5801,24 +5800,24 @@ Pathfinder2E.FEATURES = {
     'Note="May Search at %{rank.Perception>=4?4:2}x normal Speed"',
   'Fast Recovery':
     'Section=save ' +
-    'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. ongoing disease or poison reduces stage by 2 (1 if virulent; 3 or 2 with critical success)"',
+    'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
   'Feather Step':'Section=ability Note="May Step into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
-  'Incredible Initiative':'Section=combat Note="+2 Initiative"',
+  'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
   'Incredible Investiture':'Section=magic Note="May invest 12 items"',
   'Ride':
     'Section=feature ' +
-    'Note="Command an Animal to move automatically succeeds/Mount acts on self turn"',
+    'Note="Automatically succeeds when using Command an Animal to move/Mount acts on self turn"',
   'Shield Block':
     'Section=combat ' +
-    'Note="Shield negates damage up to its hardness and absorbs half of remaining damage"',
+    'Note="May use a Reaction when shield is raised to negate damage up to its hardness and have it absorb half of remaining damage"',
   'Toughness':
     'Section=combat,save ' +
     'Note=' +
       '"+%{level} Hit Points",' +
       '"-1 DC on recovery checks"',
   'Untrained Improvisation':
-    'Section=skill Note="+%{level<7?level//2:level} on untrained skill checks"',
+    'Section=skill Note="+%V on untrained skill checks"',
   'Weapon Proficiency (Martial Weapons)':
     'Section=combat Note="Attack Trained (Martial Weapons)"',
   'Weapon Proficiency (Simple Weapons)':
@@ -5827,20 +5826,27 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Attack Trained (%weapon)"',
 
   // General Skill Feats
-  'Assurance (%skill)':'Section=skill Note="May take 10 on %skill rolls"',
+  'Assurance (%skill)':
+    'Section=skill ' +
+    'Note="May forgo rolling a %skill check for an automatic %{10+$\'proficiencyBonus.%skill\'}"',
   'Automatic Knowledge (%skill)':
-    'Section=skill Note="May use Recall Knowledge with %skill 1/rd"',
+    'Section=skill ' +
+    'Note="May use Assurance (%skill) to Recall Knowledge as a free action 1/rd"',
   'Dubious Knowledge':
     'Section=skill ' +
-    'Note="Fail on Recall Knowledge yields a mix of true and false info"',
-  'Magical Shorthand':'Section=skill Note="May learn new spells in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hour\'} per spell level; may retry 1 week after failure"',
-  'Quick Identification':'Section=skill Note="May Identify Magic %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'in 1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'as a 3-action activity\':\'in 1 min\'}"',
-  'Quick Recognition':'Section=skill Note="May Recognize a Spell as a free action 1/rd"',
-  'Recognize Spell':'Section=feature Note="FILL"',
+    'Note="Failure on a Recall Knowledge test yields a mix of true and false information"',
+  'Magical Shorthand':'Section=skill Note="May learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hour\'} of study per spell level; may retry 1 week after failure"',
+  'Quick Identification':'Section=skill Note="May use %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
+  'Quick Recognition':
+    'Section=skill ' +
+    'Note="May use a skill with master proficiency to Recognize a Spell as a free action 1/rd"',
+  'Recognize Spell':
+    'Section=skill ' +
+    'Note="May use a Reaction for guaranteed success in recognizing an unknown common spell up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':
     'Section=skill ' +
-    'Note="Successful check on related skill allows temporary activation of a magic item"',
+    'Note="A successful check on the related skill allows temporary activation of a magic item"',
 
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore Lore)"',
@@ -6120,12 +6126,6 @@ Pathfinder2E.GOODIES = {
     'Value="$1 || $2" ' +
     'Attribute=featCount.General ' +
     'Section=feature Note="%V General Feat"',
-  'Initiative':
-    'Pattern="([-+]\\d)\\s+initiative|initiative\\s+([-+]\\d)" ' +
-    'Effect=add ' +
-    'Value="$1 || $2" ' +
-    'Attribute=initiative ' +
-    'Section=combat Note="%V Initiative"',
   'Intelligence':
     'Pattern="([-+]\\d)\\s+int(?:elligence)?|int(?:elligence)?\\s+([-+]\\d)" ' +
     'Effect=add ' +
@@ -9783,14 +9783,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('rank.Heavy Armor', 'training.Heavy Armor', '=', null);
   rules.defineRule
     ('rank.Unarmored Defense', 'training.Unarmored Defense', '=', null);
-  rules.defineRule('training.Armor',
+  rules.defineRule('rank.Armor',
     'armorCategory', '=', '0',
-    'training.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
-    'training.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
-    'training.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
-    'training.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
+    'rank.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
+    'rank.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
+    'rank.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
+    'rank.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
   );
-  rules.defineRule('rank.Armor', 'training.Armor', '=', null);
   rules.defineRule('proficiencyLevelBonus.Armor',
     'rank.Armor', '=', 'source>0 ? 0 : null',
     'level', '+', null
@@ -11737,13 +11736,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
     rules.defineRule('focusPoints', note, '+=', '1');
   } else if(name == 'Armor Proficiency') {
-    rules.defineRule
-      ('training.Light Armor', 'combatNotes.armorProficiency', '=', '1');
-    rules.defineRule('training.Medium Armor',
-      'feats.Armor Proficiency', '=', 'source>=2 ? 1 : null'
+    rules.defineRule('combatNotes.armorProficiency',
+      '', '=', '["", "Light", "Medium", "Heavy"][source] || "Heavy"',
+      'training.Light Armor', '=', '["", "Medium", "Heavy"][source] || "Heavy"',
+      'training.Medium Armor', '=', '"Heavy"'
     );
-    rules.defineRule('training.Heavy Armor',
-      'feats.Armor Proficiency', '=', 'source>=3 ? 1 : null'
+    rules.defineRule
+      ('rank.Light Armor', 'combatNotes.armorProficiency', '^=', '1');
+    rules.defineRule('rank.Medium Armor',
+      'combatNotes.armorProficiency', '^=', 'source!="Light" ? 1 : null'
+    );
+    rules.defineRule('rank.Heavy Armor',
+      'combatNotes.armorProficiency', '^=', 'source=="Heavy" ? 1 : null'
     );
   } else if(name == 'Barbarian Dedication') {
     rules.defineRule
@@ -11958,9 +11962,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spells.Counter Performance', 'magicNotes.counterPerform', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.counterPerform', '+=', '1');
-  } else if(name == 'Cultural Adaptability') {
-    rules.defineRule('features.Adopted Ancestry',
-      'featureNotes.culturalAdaptability', '=', '1'
+  } else if((matchInfo = name.match(/^Cultural Adaptability \((.*)\)$/)) != null) {
+    let race = matchInfo[1];
+    rules.defineRule('features.Adopted Ancestry (' + race + ')',
+      'featureNotes.culturalAdaptability(' + race + ')', '=', '1'
     );
     rules.defineRule
       ('featCount.Ancestry', 'featureNotes.culturalAdaptability', '+', '1');
@@ -12336,6 +12341,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Uncanny Dodge') {
     rules.defineRule
       ('features.Deny Advantage', 'featureNotes.uncannyDodge', '=', '1');
+  } else if(name == 'Untrained Improvisation') {
+    rules.defineRule('skillNotes.untrainedImprovisation',
+      'level', '=', 'source<7 ? Math.floor(source / 2) : source'
+    );
   } else if(name == 'Wild Shape') {
     rules.defineRule('spells.Wild Shape', 'magicNotes.wildShape', '=', '1');
   } else if(name == 'Wind Caller') {
@@ -12590,6 +12599,8 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     'rank.' + name, '=', 'source > 0 ? 0 : null',
     // TODO right place for this, or in featRulesExtra?
     'skillNotes.eclecticSkill', '=', '0',
+    // TODO this is ugly
+    'skillNotes.untrainedImprovisation', '=', 'dict["rank.' + name + '"] || dict["skillNotes.eclecticSkill"] ? null : dict.level<7 ? Math.floor(-dict.level / 2) : 0',
     'level', '+', null
   );
   rules.defineRule('proficiencyBonus.' + name,
@@ -12947,7 +12958,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Levels', within: 'Identity', format: ' <b>%V</b>',
                separator: '/'},
             {name: 'Hit Points', within: 'Section 1', format: '<b>HP</b> %V'},
-            {name: 'Initiative', within: 'Section 1', format: '<b>Init</b> %V'},
             {name: 'Speed', within: 'Section 1', format: '<b>Speed</b> %V'},
             {name: 'Armor Class', within: 'Section 1', format: '<b>AC</b> %V'},
             {name: 'Class Difficulty Class', within: 'Section 1',
@@ -13069,7 +13079,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
           {name: 'CombatPart', within: 'Combat', separator: '\n'},
             {name: 'CombatStats', within: 'CombatPart', separator: innerSep},
               {name: 'Hit Points', within: 'CombatStats'},
-              {name: 'Initiative', within: 'CombatStats'},
               {name: 'Armor Class', within: 'CombatStats'},
               {name: 'Attacks Per Round', within: 'CombatStats'},
               {name: 'Class Difficulty Class', within: 'CombatStats',

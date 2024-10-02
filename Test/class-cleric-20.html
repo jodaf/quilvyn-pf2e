@@ -83,7 +83,13 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Ability Notes</b>: <i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
+    <td><b>Ability Notes</b>:     <table id="AbilityNotes" style="width:100%">
+    <tr style="text-align:center">
+      <td><i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Breath Control: May hold breath 25x as long as usual without suffocating</td>
+    </tr></table>
+</td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -156,32 +162,32 @@ var attributes = {
       <td>Heaven Lore: +26 (intelligence; trained)</td>
       <td>Scouting Lore: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Acrobatics: +4 (dexterity; untrained)</td>
-      <td>Intimidation: +4 (charisma; untrained)</td>
+      <td>Acrobatics: +24 (dexterity; untrained)</td>
+      <td>Intimidation: +24 (charisma; untrained)</td>
       <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Arcana: +24 (intelligence; untrained)</td>
       <td>Iomedae Lore: +26 (intelligence; trained)</td>
       <td>Society: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +4 (strength; untrained)</td>
-      <td>Medicine: +5 (wisdom; untrained)</td>
-      <td>Stealth: +4 (dexterity; untrained)</td>
+      <td>Athletics: +24 (strength; untrained)</td>
+      <td>Medicine: +25 (wisdom; untrained)</td>
+      <td>Stealth: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; untrained)</td>
+      <td>Crafting: +24 (intelligence; untrained)</td>
       <td>Mercantile Lore: +26 (intelligence; trained)</td>
-      <td>Survival: +5 (wisdom; untrained)</td>
+      <td>Survival: +25 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +28 (charisma; expert)</td>
       <td>Milling Lore: +30 (intelligence; master)</td>
-      <td>Thievery: +4 (dexterity; untrained)</td>
+      <td>Thievery: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +26 (charisma; trained)</td>
-      <td>Nature: +5 (wisdom; untrained)</td>
+      <td>Nature: +25 (wisdom; untrained)</td>
       <td>Underworld Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Fishing Lore: +26 (intelligence; trained)</td>
-      <td>Occultism: +4 (intelligence; untrained)</td>
+      <td>Occultism: +24 (intelligence; untrained)</td>
       <td></td>
     </tr><tr style="text-align:left">
       <td>Genealogy Lore: +26 (intelligence; trained)</td>
@@ -218,9 +224,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Underworld Lore): Skill Trained (Underworld Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Deception): May take 10 on Deception rolls</td>
+      <td><i>Untrained Improvisation: +20 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Mercantile Lore): May take 10 on Mercantile Lore rolls</td>
+      <td>Assurance (Deception): May forgo rolling a Deception check for an automatic 34</td>
+    </tr><tr style="text-align:center">
+      <td>Assurance (Mercantile Lore): May forgo rolling a Mercantile Lore check for an automatic 32</td>
     </tr><tr style="text-align:center">
       <td>Bargain Hunter: +2 initial gold/May use Diplomacy to Earn Income</td>
     </tr><tr style="text-align:center">
@@ -228,9 +236,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
-      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+      <td>Incredible Initiative: +2 on initiative rolls</td>
     </tr><tr style="text-align:center">
-      <td>Untrained Improvisation: +20 on untrained skill checks</td>
+      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
     </tr></table>
 </td>
   </tr></table>
@@ -243,7 +251,7 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 268</td>
-        <td><b>Armor Class</b>: 37 (dexterity (4 max); trained)</td>
+        <td><b>Armor Class</b>: 39 (dexterity (4 max); expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -257,7 +265,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Armor Proficiency: Defense Trained (Light Armor)</i></td>
+        <td><i>Armor Proficiency: Defense Trained (Heavy Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Cloistered Cleric: Attack Expert (Crossbow; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
@@ -274,8 +282,6 @@ var attributes = {
         <td><i>Divine Defense: Defense Expert (Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Extend Armament Alignment: Increased Align Armament effects</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Incredible Initiative: +2 Initiative</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
@@ -297,7 +303,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shared Replenishment: R10' May give temporary Hit Points from Replenishment Of War to an ally</td>
       </tr><tr style="text-align:center">
-        <td>Shield Block: Shield negates damage up to its hardness and absorbs half of remaining damage</td>
+        <td>Shield Block: May use a Reaction when shield is raised to negate damage up to its hardness and have it absorb half of remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Warpriest: May use critical specialization effects of Crossbow</td>
       </tr><tr style="text-align:center">
@@ -325,7 +331,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Breath Control: +1 vs. inhaled threats/Success vs. inhaled threat is always a critical success</td>
       </tr><tr style="text-align:center">
-        <td>Fast Recovery: Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. ongoing disease or poison reduces stage by 2 (1 if virulent; 3 or 2 with critical success)</td>
+        <td>Fast Recovery: Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent</td>
       </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental control are critical successes/Foe Intimidation (Coerce) fails are critical fails</td>
       </tr><tr style="text-align:center">
