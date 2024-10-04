@@ -5917,7 +5917,7 @@ Pathfinder2E.FEATURES = {
     'Note="Using Survival to Subsist always succeeds; may provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="May attempt to Make an Impression using Diplomacy immediately upon meeting; may retry after 1 min"',
+    'Note="May use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting; may retry after 1 min"',
   'Group Coercion':
     'Section=skill ' +
     'Note="May use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
@@ -5926,7 +5926,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   // TODO implement
   'Hefty Hauler':'Section=ability Note="x2 maximum and encumbered Bulk"',
-  'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{levels.Diplomacy>=3?\'/Gather Information in normal time cannot critically fail\':\'\'}"',
+  'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Crafting success with Specialty Crafting is always a critical success"',
@@ -5954,7 +5954,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use 1 hour process and a successful Medicine check to remove a disease or condition 1/target/day"',
   'Legendary Negotiation':
     'Section=skill ' +
-    'Note="May convince a foe to negotiate with a successful Make and Impression followed by a successful Request"',
+    'Note="May use 3 actions for Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
     'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Performance to Earn Income increases audience by 2 levels"',
@@ -6023,10 +6023,10 @@ Pathfinder2E.FEATURES = {
     'Note="Success on Treat a Disease or a Poison gives +4 bonus/Patient success is always a critical success"',
   'Scare To Death':
     'Section=skill ' +
-    'Note="R30\' May test Intimidation vs. foe Will DC; critical success kills foe (Fortitude save frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
+    'Note="R30\' May test Intimidation vs. foe Will DC; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
-    'Note="-2 DC and no critical failures for an outrageous request"',
+    'Note="-2 DC for an outrageous request, and critical failures are normal failures"',
   'Sign Language':
     'Section=skill Note="Knows the sign equivalents of all known languages"',
   'Slippery Secrets':
