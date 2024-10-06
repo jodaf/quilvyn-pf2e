@@ -1022,7 +1022,7 @@ Pathfinder2E.FEATS = {
   'Illusion Sense':'Type=Ancestry,Gnome',
   'Animal Elocutionist':
     'Type=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
-  // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least on of your focus spells"
+  // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
   'Energized Font':
     'Type=Ancestry,Gnome Require="level >= 5","focusPoints"',
   'Gnome Weapon Innovator':
@@ -5849,7 +5849,7 @@ Pathfinder2E.FEATURES = {
     'Note="A successful check on the related skill allows temporary activation of a magic item"',
 
   // Specific Skill Feats
-  'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore Lore)"',
+  'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
   'Alchemical Crafting':
     'Section=skill ' +
     'Note="May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
@@ -10179,6 +10179,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   type = type == 'Class' ? 'levels' :
          (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
   rules.addChoice(type, name, attrs);
+  if(type == 'skills' && name.endsWith(' Lore'))
+    rules.addChoice('lores', name, attrs);
 };
 
 /*
@@ -11625,10 +11627,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
-    rules.defineRule('skillNotes.additionalLore(' + matchInfo[1] + ')',
+    rules.defineRule('skillNotes.additionalLore(' + matchInfo[1].replaceAll(' ', '') + ')',
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule('training.' + matchInfo[1] + ' Lore',
+    rules.defineRule('training.' + matchInfo[1],
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
   } else if((matchInfo = name.match(/^(Advanced Deity's Domain|Advanced Domain|Deity's Domain|Domain Initiate) \((.*)\)$/)) != null) {
@@ -12599,6 +12601,8 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     'training.' + name, '=', null,
     'skillIncreases.' + name, '+', null
   );
+  if(name.endsWith(' Lore'))
+    rules.defineRule('rank.Lore', 'rank.' + name, '^=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
     'rank.' + name, '=', 'source > 0 ? 0 : null',
     // TODO right place for this, or in featRulesExtra?
