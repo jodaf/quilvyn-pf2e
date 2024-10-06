@@ -11,22 +11,22 @@ var attributes = {
   "abilityBoosts.intelligence":2, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"None", 
   "background":"Acolyte", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
-  "experience":1500, "feats.Additional Lore (Abadar Lore)":1, "feats.Cooperative Nature":1, 
-  "feats.Experienced Professional":1, "feats.Familiar":1, "feats.Legendary Professional":1, 
-  "feats.Unmistakable Lore":1, "feats.Widen Spell":1, "gender":"Male", "intelligence":10, 
-  "languages.Dwarven":1, "languages.Elven":1, "languages.Goblin":1, "languages.Jotun":1, 
-  "levels.Wizard":2, "name":"Feats-Skill-Lore", "selectableFeatures.Human - Half-Elf":1, 
-  "selectableFeatures.Wizard - Illusion":1, "selectableFeatures.Wizard - Metamagical Experimentation":1, 
-  "shield":"None", "skillIncreases.Abadar Lore":1, "skillIncreases.Arcana":1, 
-  "skillIncreases.Crafting":1, "skillIncreases.Medicine":1, "skillIncreases.Society":1, "strength":10, 
-  "wisdom":10
+  "experience":2500, "feats.Additional Lore (Abadar Lore)":1, "feats.Canny Acumen (Reflex)":1, 
+  "feats.Cooperative Nature":1, "feats.Experienced Professional":1, "feats.Familiar":1, 
+  "feats.Legendary Professional":1, "feats.Unmistakable Lore":1, "feats.Widen Spell":1, "gender":"Male", 
+  "intelligence":10, "languages.Dwarven":1, "languages.Elven":1, "languages.Goblin":1, 
+  "languages.Jotun":1, "levels.Wizard":3, "name":"Feats-Skill-Lore", 
+  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Wizard - Illusion":1, 
+  "selectableFeatures.Wizard - Metamagical Experimentation":1, "shield":"None", "skillIncreases.Arcana":1, "skillIncreases.Crafting":1, 
+  "skillIncreases.Medicine":1, "skillIncreases.Nature":1, "skillIncreases.Society":1, 
+  "skillIncreases.Survival":1, "strength":10, "wisdom":10
 };
   </script>
 </head>
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Feats-Skill-Lore</b> -- <b>Male</b> <b>Half-Elf</b> <b>Wizard: 2</b></td>
+  <td style="border:1px solid black"><b>Feats-Skill-Lore</b> -- <b>Male</b> <b>Half-Elf</b> <b>Wizard: 3</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -51,8 +51,8 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="AbilityStats" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Experience</b>: 1500/2000</td>
-      <td><b>Level</b>: 2</td>
+      <td><b>Experience</b>: 2500/3000</td>
+      <td><b>Level</b>: 3</td>
       <td><b>Speed</b>: 25</td>
       <td><b>Size</b>: Medium</td>
     </tr></table>
@@ -68,15 +68,15 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 1; Class: 2; General: 0; Skill: 1</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 2; General: 1; Skill: 1</td>
         <td><b>Selectable Feature Count</b>: Human (Heritage); Wizard (Specialization); Wizard (Thesis)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Abadar Lore); Cooperative Nature; Experienced Professional; Familiar; Legendary Professional; Unmistakable Lore; Widen Spell</td>
-        <td><b>Wizard Features</b>: Ability Boost (Intelligence); Ability Boosts; Arcane Bond; Arcane School; Arcane Spellcasting; Arcane Thesis; Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks); Defense Trained (Unarmored Defense); Illusion; Metamagical Experimentation; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Spell Trained (Arcane); Wizard Feats; Wizard Skills</td>
+        <td><b>Feats</b>: Additional Lore (Abadar Lore); Canny Acumen (Reflex); Cooperative Nature; Experienced Professional; Familiar; Legendary Professional; Unmistakable Lore; Widen Spell</td>
+        <td><b>Wizard Features</b>: Ability Boost (Intelligence); Ability Boosts; Arcane Bond; Arcane School; Arcane Spellcasting; Arcane Thesis; Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks); Defense Trained (Unarmored Defense); General Feats; Illusion; Metamagical Experimentation; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Arcane); Wizard Feats; Wizard Skills</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
       </tr></table>
@@ -89,6 +89,8 @@ var attributes = {
         <td><i>Arcane School: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Arcane Thesis: 1 selection</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>General Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Half-Elf: Has the Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
@@ -106,32 +108,32 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Perception</b>: +5 (wisdom; trained)</td>
+    <td><b>Perception</b>: +6 (wisdom; trained)</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Modifiers</b>:     <table id="SkillModifiers" style="width:100%">
     <col style="width:33%"/>
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
-      <td>Abadar Lore: +9 (intelligence; expert)</td>
+      <td>Abadar Lore: +10 (intelligence; expert)</td>
       <td>Diplomacy: +1 (charisma; untrained)</td>
-      <td>Religion: +5 (wisdom; trained)</td>
+      <td>Religion: +6 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Acrobatics: +1 (dexterity; untrained)</td>
       <td>Intimidation: +1 (charisma; untrained)</td>
-      <td>Scribing Lore: +7 (intelligence; trained)</td>
+      <td>Scribing Lore: +8 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +9 (intelligence; expert)</td>
-      <td>Medicine: +5 (wisdom; trained)</td>
-      <td>Society: +7 (intelligence; trained)</td>
+      <td>Arcana: +10 (intelligence; expert)</td>
+      <td>Medicine: +6 (wisdom; trained)</td>
+      <td>Society: +8 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +2 (strength; untrained)</td>
-      <td>Nature: +1 (wisdom; untrained)</td>
+      <td>Nature: +6 (wisdom; trained)</td>
       <td>Stealth: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +7 (intelligence; trained)</td>
+      <td>Crafting: +8 (intelligence; trained)</td>
       <td>Occultism: +3 (intelligence; untrained)</td>
-      <td>Survival: +1 (wisdom; untrained)</td>
+      <td>Survival: +6 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +1 (charisma; untrained)</td>
       <td>Performance: +1 (charisma; untrained)</td>
@@ -143,21 +145,23 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Additional Lore (Abadar Lore): Skill Trained (Abadar Lore)</i></td>
+      <td><i>Additional Lore (Abadar Lore): Skill Expert (Abadar Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +3 Language Count</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Skill Increases: Skill Increase (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Wizard Skills: Skill Trained (Arcana; Choose 5 from any)</i></td>
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
-      <td>Experienced Professional: A critical failure when using Lore to Earn Income becomes a normal failure, and a normal failure gives twice normal income</td>
+      <td>Experienced Professional: Critical failures when using Lore to Earn Income are normal failures; normal failures give twice the income</td>
     </tr><tr style="text-align:center">
-      <td>Legendary Professional: NPCs' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Lore to Earn Income increases job level</td>
+      <td>Legendary Professional: NPCs' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Lore increases job level</td>
     </tr><tr style="text-align:center">
-      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+      <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Unmistakable Lore: Critical failure on any trained Lore check is a normal failure</td>
+      <td>Unmistakable Lore: Critical failures on any trained Lore are normal failures</td>
     </tr></table>
 </td>
   </tr></table>
@@ -169,8 +173,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 22</td>
-        <td><b>Armor Class</b>: 15 (dexterity; trained)</td>
+        <td><b>Hit Points</b>: 29</td>
+        <td><b>Armor Class</b>: 16 (dexterity; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -183,7 +187,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Constitution Hit Points Adjustment: +2</i></td>
+        <td><i>Constitution Hit Points Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
@@ -197,7 +201,9 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +5 (constitution; trained); Reflex: +5 (dexterity; trained); Will: +7 (wisdom; expert)</td>
+      <td><b>Save</b>: Fortitude: +6 (constitution; trained); Reflex: +8 (dexterity; expert); Will: +8 (wisdom; expert)</td>
+    </tr><tr style="text-align:center">
+      <td><b>Save Notes</b>: <i>Canny Acumen (Reflex): Save Expert (Reflex)</i></td>
     </tr></table>
 </td>
   </tr></table>
@@ -209,10 +215,10 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: A0: 6; A1: 4</td>
+        <td><b>Spell Slots</b>: A0: 6; A1: 4; A2: 3</td>
         <td><b>Focus Points</b>: 1</td>
-        <td><b>Attack</b>: Arcane: +7 (intelligence; trained)</td>
-        <td><b>Spell DC</b>: Arcane: 17 (intelligence; trained)</td>
+        <td><b>Attack</b>: Arcane: +8 (intelligence; trained)</td>
+        <td><b>Spell DC</b>: Arcane: 18 (intelligence; trained)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -250,7 +256,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Legendary Professional Feat: Requires level (currently 2) >= 15 and lore rank (currently 2) >= 4</td>
+        <td>Legendary Professional Feat: Requires level (currently 3) >= 15 and lore rank (currently 2) >= 4</td>
       </tr><tr style="text-align:center">
         <td>Skill Feats Allocation: 1 available vs. 4 allocated</td>
       </tr></table>

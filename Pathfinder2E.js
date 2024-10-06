@@ -2699,7 +2699,9 @@ Pathfinder2E.FEATS = {
       '"rank.Society >= 4",' +
       '"features.Multilingual"',
   'Experienced Smuggler':'Type=Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker':'Type=Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Rubble)':'Type=Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Snow)':'Type=Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Underbrush)':'Type=Skill Require="rank.Stealth >= 1"',
   'Quiet Allies':
     'Type=Skill Require="level >= 2","rank.Stealth >= 2"',
   'Foil Senses':
@@ -2715,7 +2717,7 @@ Pathfinder2E.FEATS = {
   'Experienced Tracker':'Type=Skill Require="rank.Survival >= 1"',
   'Forager':'Type=Skill Require="rank.Survival >= 1"',
   'Survey Wildlife':'Type=Skill Require="rank.Survival >= 1"',
-  'Terrain Expertise':'Type=Skill Require="rank.Survival >= 1"',
+  'Terrain Expertise (%terrain)':'Type=Skill Require="rank.Survival >= 1"',
   'Planar Survival':
     'Type=Skill Require="level >= 7","rank.Survival >= 3"',
   'Legendary Survivalist':
@@ -5834,7 +5836,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Assurance (%skill) to Recall Knowledge as a free action 1/rd"',
   'Dubious Knowledge':
     'Section=skill ' +
-    'Note="Failure on a Recall Knowledge test yields a mix of true and false information"',
+    'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
   'Magical Shorthand':'Section=skill Note="May learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hour\'} of study per spell level; may retry 1 week after failure"',
   'Quick Identification':'Section=skill Note="May use %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
   'Quick Recognition':
@@ -5862,13 +5864,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May Demoralize a foe during initiative%{rank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
   'Battle Medicine':
-    'Section=skill Note="May use Medicine to Treat Wounds 1/target/day"',
+    'Section=skill Note="May use Medicine to restore Hit Points 1/target/day"',
   'Bizarre Magic':
     'Section=magic ' +
-    'Note="Self spells require +5 DC to Recognize Spells and Identify Magic"',
+    'Note="Others suffer +5 DC to Recognize Spells and Identify Magic on self spells"',
   'Bonded Animal':
     'Section=skill ' +
-    'Note="May make an animal permanently helpful with 1 week interaction and a successful DC 20 Nature test"',
+    'Note="May make an animal permanently helpful with 1 week of interaction and a successful DC 20 Nature check"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
@@ -5886,7 +5888,7 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces bonus given to target of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
   'Connections':
     'Section=skill ' +
-    'Note="May use Society to gain meeting with an important figure or to exchange favors"',
+    'Note="May use Society to gain a meeting with an important figure or to exchange favors"',
   'Continual Recovery':
     'Section=skill Note="May repeat Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
@@ -5896,25 +5898,25 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May ignore secondary Crafting requirements"',
   'Divine Guidance':
     'Section=skill ' +
-    'Note="May use Religion after 10 min Deciphering Writing on religious text to gain a hint with current problem"',
+    'Note="May 10 min Deciphering Writing on religious text and a successful Religion check to gain a hint for a current problem"',
   'Experienced Professional':
     'Section=skill ' +
-    'Note="A critical failure when using Lore to Earn Income becomes a normal failure, and a normal failure gives twice normal income"',
+    'Note="Critical failures when using Lore to Earn Income are normal failures; normal failures give twice the income"',
   'Experienced Smuggler':
     'Section=skill ' +
-    'Note="Stealth to conceal a small item gains a minimum %{rank.Stealth>=4?\'success\':rank.Steak>=3\'15\':\'10\'} on roll"',
+    'Note="%{rank.Stealth>=4?\'Automatic success\':rank.Steak>=3\'Minimum 15\':\'Minimum 10\'} on Stealth rolls to conceal a small item/Earn Income using Underworld Lore gives increased earnings"',
   'Experienced Tracker':
     'Section=skill ' +
-    'Note="May Track at full Speed%{rank.Survival<3?\' at a -5 penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a new roll every hour to Track\':\'\'}"',
+    'Note="May Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a Survival check every hour to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
     'Note="May fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
-    'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak actions"',
+    'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak"',
   'Forager':
     'Section=skill ' +
-    'Note="Using Survival to Subsist always succeeds; may provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
+    'Note="Failures and critical failures on Survival to Subsist are successes; may provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
   'Glad-Hand':
     'Section=skill ' +
     'Note="May use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting; may retry after 1 min"',
@@ -5945,22 +5947,22 @@ Pathfinder2E.FEATURES = {
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
   'Legendary Codebreaker':
     'Section=skill ' +
-    'Note="May use Society to Decipher Writing at full Speed; success at normal Speed is always a critical success"',
+    'Note="May use Society to Decipher Writing at full Speed; successes at normal Speed are critical successes"',
   'Legendary Linguist':
     'Section=skill ' +
     'Note="May establish basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="May use 1 hour process and a successful Medicine check to remove a disease or condition 1/target/day"',
+    'Note="May use a 1 hour process and a successful Medicine check to remove a disease or condition 1/target/day"',
   'Legendary Negotiation':
     'Section=skill ' +
     'Note="May use 3 actions for Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
-    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Performance to Earn Income increases audience by 2 levels"',
+    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Performance increases audience by 2 levels"',
   'Legendary Professional':
     'Section=skill ' +
-    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Lore to Earn Income increases job level"',
+    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Lore increases job level"',
   'Legendary Sneak':
     'Section=skill ' +
     'Note="May Hide and Sneak without cover/Automatically uses Avoiding Notice when exploring"',
@@ -5969,7 +5971,7 @@ Pathfinder2E.FEATURES = {
     'Note="May survive indefinitely without food and water and endure incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
-    'Note="May attempt a Steal-5 check to take actively wielded and highly noticeable items"',
+    'Note="May attempt Steal with a -5 penalty to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
     'Note="May remain hidden after a Create a Diversion attempt critically succeeds"',
@@ -5987,7 +5989,7 @@ Pathfinder2E.FEATURES = {
   'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait"',
   'Pickpocket':
     'Section=skill ' +
-    'Note="May Steal a closely-guarded object without penalty%{levels.Thievery>=3?\'/May use Steal-5 on an alert creature\':\'\'}"',
+    'Note="May Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/May use Steal with a -5 penalty on an alert creature\':\'\'}"',
   'Planar Survival':
     'Section=skill Note="May use Survival to Subsist on different planes"',
   'Powerful Leap':
@@ -6009,7 +6011,7 @@ Pathfinder2E.FEATURES = {
   'Quick Swim':
     'Section=skill ' +
     'Note="%{rank.Athletics>=4?\'May Swim at full Speed\':\\"Swimming success increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Unlock':'Section=skill Note="May Pick a Lock in 1 action"',
+  'Quick Unlock':'Section=skill Note="May use 1 action to Pick a Lock"',
   'Quiet Allies':
     'Section=skill ' +
     'Note="May roll a single Stealth check to Avoid Notice when leading a group"',
@@ -6017,18 +6019,18 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May stand immediately after a successful Grab an Edge/May use Athletics to Grab an Edge"',
   'Read Lips':
-    'Section=skill Note="May read the lips of those who can be seen clearly"',
+    'Section=skill Note="May read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
   'Robust Recovery':
     'Section=skill ' +
-    'Note="Success on Treat a Disease or a Poison gives +4 bonus/Patient success is always a critical success"',
+    'Note="Success on Treat a Disease or a Poison gives a +4 bonus/Patient success is always a critical success"',
   'Scare To Death':
     'Section=skill ' +
-    'Note="R30\' May test Intimidation vs. foe Will DC; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
+    'Note="R30\' May attempt Intimidation vs. foe Will DC; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
     'Note="-2 DC for an outrageous request, and critical failures are normal failures"',
   'Sign Language':
-    'Section=skill Note="Knows the sign equivalents of all known languages"',
+    'Section=skill Note="Knows the sign equivalents of understood languages"',
   'Slippery Secrets':
     'Section=skill ' +
     'Note="Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
@@ -6042,21 +6044,22 @@ Pathfinder2E.FEATURES = {
     'Note="All Balance successes are critical successes/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
-    'Note="May use Society instead of Diplomacy to Gather Information/May use Recall Knowledge to know information in familiar settlements"',
+    'Note="May use Society to Gather Information and to Recall Knowledge in familiar settlements"',
   'Student Of The Canon':
     'Section=skill ' +
-    'Note="All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith"',
-  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion"',
+    'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
+  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/May remain undetected when using Palm an Object or Steal after a successful Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min study"',
-  'Swift Sneak':
-    'Section=skill ' +
-    'Note="May Sneak at full Speed and while Burrowing, Climbing, Flying, or Swimming"',
+    'Note="May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
+  'Swift Sneak':'Section=skill Note="May Sneak at full Speed"',
   'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
-  'Terrain Stalker':
-    'Section=skill ' +
-    'Note="May Sneak without a Stealth check in choice of difficult terrain"',
+  'Terrain Stalker (Rubble)':
+    'Section=skill Note="May Sneak in rubble without a Stealth check"',
+  'Terrain Stalker (Snow)':
+    'Section=skill Note="May Sneak in snow without a Stealth check"',
+  'Terrain Stalker (Underbrush)':
+    'Section=skill Note="May Sneak in underbrush without a Stealth check"',
   'Terrified Retreat':
     'Section=skill ' +
     'Note="Critical success on Demoralize causes lower-level target to flee for 1 rd"',
@@ -6065,7 +6068,7 @@ Pathfinder2E.FEATURES = {
     'Note="May Disarm, Grapple, Shove, or Trip creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
     'Section=feature ' +
-    'Note="May use a successful Nature check to teach an animal to perform a trick"',
+    'Note="May use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
     'Note="Does not suffer flat-footed from being in water/Suffers no penalty when using bludgeoning and slashing weapons in water"',
@@ -6074,7 +6077,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
-    'Note="Critical failure on any trained Lore check is a normal failure"',
+    'Note="Critical failures on any trained Lore are normal failures"',
   'Virtuosic Performer':
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
@@ -6084,7 +6087,8 @@ Pathfinder2E.FEATURES = {
   'Ward Medic':
     'Section=skill ' +
     'Note="May use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
-  'Wary Disarmament':'Section=skill Note="+2 AC vs. triggered trap"',
+  'Wary Disarmament':
+    'Section=skill Note="+2 AC vs. a trap triggered while disarming it"',
 
 };
 Pathfinder2E.GOODIES = {
@@ -12076,7 +12080,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spells.Invisibility', 'magicNotes.firstWorldAdept', '=', '1');
   } else if(name == 'Gnome Obsession') {
-    // TODO find a less klunky way to do this
+    // TODO find a less clunky way to do this
     rules.defineRule
       ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', '1');
     rules.defineRule('skillNotes.gnomeObsession',
@@ -13618,8 +13622,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       if(assignedLevels > 0)
         attributes.level = assignedLevels;
       else if(attributes.experience)
-        attributes.level =
-          Math.floor((1 + Math.sqrt(1 + attributes.experience/125)) / 2);
+        attributes.level = Math.floor(attributes.experience / 1000) + 1
       else
         // Random 1..8 with each value half as likely as the previous one.
         attributes.level =

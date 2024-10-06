@@ -18,9 +18,8 @@ var attributes = {
   "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Rogue - Dexterity":1, 
   "selectableFeatures.Rogue - Thief":1, "shield":"None", "skillIncreases.Abadar Lore":1, 
   "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Diplomacy":1, 
-  "skillIncreases.Gladitorial Lore":1, "skillIncreases.Legal Lore":1, "skillIncreases.Nature":1, 
-  "skillIncreases.Scouting Lore":1, "skillIncreases.Survival":1, "skillIncreases.Thievery":1, "strength":10, 
-  "wisdom":10
+  "skillIncreases.Legal Lore":1, "skillIncreases.Nature":1, "skillIncreases.Survival":1, 
+  "skillIncreases.Thievery":3, "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -111,8 +110,8 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Abadar Lore: +6 (intelligence; trained)</td>
-      <td>Gladitorial Lore: +6 (intelligence; trained)</td>
-      <td>Scouting Lore: +6 (intelligence; trained)</td>
+      <td>Diplomacy: +7 (charisma; trained)</td>
+      <td>Religion: +6 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Acrobatics: +5 (dexterity; trained)</td>
       <td>Intimidation: +3 (charisma; untrained)</td>
@@ -132,14 +131,10 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Crafting: +2 (intelligence; untrained)</td>
       <td>Occultism: +2 (intelligence; untrained)</td>
-      <td>Thievery: +7 (dexterity; expert)</td>
+      <td>Thievery: +11 (dexterity; legendary)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +3 (charisma; untrained)</td>
       <td>Performance: +3 (charisma; untrained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Diplomacy: +7 (charisma; trained)</td>
-      <td>Religion: +6 (wisdom; trained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -158,17 +153,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
-      <td>Legendary Thief: May attempt a Steal-5 check to take actively wielded and highly noticeable items</td>
+      <td>Legendary Thief: May attempt Steal with a -5 penalty to take actively wielded and highly noticeable items</td>
     </tr><tr style="text-align:center">
-      <td>Pickpocket: May Steal a closely-guarded object without penalty</td>
+      <td>Pickpocket: May Steal a closely-guarded object without penalty/May use Steal with a -5 penalty on an alert creature</td>
     </tr><tr style="text-align:center">
-      <td>Quick Unlock: May Pick a Lock in 1 action</td>
+      <td>Quick Unlock: May use 1 action to Pick a Lock</td>
     </tr><tr style="text-align:center">
-      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+      <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Subtle Theft: Successful Steal inflicts -2 Perception on observers to detect/May remain undetected after Palm an Object or Steal action after Create a Diversion</td>
+      <td>Subtle Theft: Successful Steal inflicts -2 Perception on observers to detect/May remain undetected when using Palm an Object or Steal after a successful Create a Diversion</td>
     </tr><tr style="text-align:center">
-      <td>Wary Disarmament: +2 AC vs. triggered trap</td>
+      <td>Wary Disarmament: +2 AC vs. a trap triggered while disarming it</td>
     </tr></table>
 </td>
   </tr></table>
@@ -229,9 +224,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Legendary Thief Feat: Requires level (currently 2) >= 15, thievery rank (currently 2) >= 4 and pickpocket feature (currently 1)</td>
+        <td>Legendary Thief Feat: Requires level (currently 2) >= 15, thievery rank (currently 4) >= 4 and pickpocket feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Quick Unlock Feat: Requires level (currently 2) >= 7 and thievery rank (currently 2) >= 3</td>
+        <td>Quick Unlock Feat: Requires level (currently 2) >= 7 and thievery rank (currently 4) >= 3</td>
       </tr><tr style="text-align:center">
         <td>Skill Feats Allocation: 2 available vs. 5 allocated</td>
       </tr></table>

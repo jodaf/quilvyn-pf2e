@@ -14,12 +14,12 @@ var attributes = {
   "experience":1500, "feats.Cooperative Nature":1, "feats.Experienced Tracker":1, 
   "feats.Favored Terrain (Sky)":1, "feats.Forager":1, "feats.Legendary Survivalist":1, 
   "feats.Monster Hunter":1, "feats.Planar Survival":1, "feats.Survey Wildlife":1, 
-  "feats.Terrain Expertise":1, "gender":"Female", "intelligence":10, "languages.Celestial":1, 
+  "feats.Terrain Expertise (Forest)":1, "gender":"Female", "intelligence":10, "languages.Celestial":1, 
   "languages.Gnoll":1, "languages.Necril":1, "levels.Ranger":2, "name":"Feats-Skill-Survival", 
   "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Ranger - Dexterity":1, 
   "selectableFeatures.Ranger - Outwit":1, "shield":"None", "skillIncreases.Acrobatics":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Nature":1, "skillIncreases.River Lore":1, 
-  "skillIncreases.Swamp Lore":1, "skillIncreases.Underworld Lore":1, "strength":10, "wisdom":10
+  "skillIncreases.Survival":1, "skillIncreases.Swamp Lore":1, "strength":10, "wisdom":10
 };
   </script>
 </head>
@@ -81,7 +81,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Cooperative Nature; Experienced Tracker; Favored Terrain (Sky); Forager; Legendary Survivalist; Monster Hunter; Planar Survival; Survey Wildlife; Terrain Expertise</td>
+        <td><b>Feats</b>: Cooperative Nature; Experienced Tracker; Favored Terrain (Sky); Forager; Legendary Survivalist; Monster Hunter; Planar Survival; Survey Wildlife; Terrain Expertise (Forest)</td>
         <td><b>Ranger Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Class Trained (Ranger); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Dexterity; Hunt Prey; Hunter's Edge; Key Ability; Outwit; Perception Expert; Ranger Feats; Ranger Skills; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf</td>
@@ -125,7 +125,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Athletics: +5 (strength; trained)</td>
       <td>Occultism: +2 (intelligence; untrained)</td>
-      <td>Survival: +5 (wisdom; trained)</td>
+      <td>Survival: +7 (wisdom; expert)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +2 (intelligence; untrained)</td>
       <td>Performance: +1 (charisma; untrained)</td>
@@ -137,7 +137,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Diplomacy: +1 (charisma; untrained)</td>
       <td>River Lore: +6 (intelligence; trained)</td>
-      <td>Underworld Lore: +6 (intelligence; trained)</td>
+      <td></td>
     </tr><tr style="text-align:left">
       <td>Intimidation: +1 (charisma; untrained)</td>
       <td>Scribing Lore: +6 (intelligence; trained)</td>
@@ -155,9 +155,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
-      <td>Experienced Tracker: May Track at full Speed at a -5 penalty</td>
+      <td>Experienced Tracker: May Track at full Speed, suffering a -5 Survival penalty</td>
     </tr><tr style="text-align:center">
-      <td>Forager: Using Survival to Subsist always succeeds; may provide for self and 4 others (x2 with a critical success)</td>
+      <td>Forager: Failures and critical failures on Survival to Subsist are successes; may provide for self and 8 others (x2 with a critical success)</td>
     </tr><tr style="text-align:center">
       <td>Hunt Prey: +2 Perception to Seek and +2 Survival to Track designated creature</td>
     </tr><tr style="text-align:center">
@@ -167,9 +167,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Planar Survival: May use Survival to Subsist on different planes</td>
     </tr><tr style="text-align:center">
-      <td>Student Of The Canon: All critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Cannot fail to Recall Knowledge about own faith</td>
+      <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Survey Wildlife: May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min study</td>
+      <td>Survey Wildlife: May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study</td>
+    </tr><tr style="text-align:center">
+      <td>Terrain Expertise (Forest): +1 Survival in Forest</td>
     </tr></table>
 </td>
   </tr></table>
@@ -228,9 +230,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Legendary Survivalist Feat: Requires level (currently 2) >= 15 and survival rank (currently 1) >= 4</td>
+        <td>Legendary Survivalist Feat: Requires level (currently 2) >= 15 and survival rank (currently 2) >= 4</td>
       </tr><tr style="text-align:center">
-        <td>Planar Survival Feat: Requires level (currently 2) >= 7 and survival rank (currently 1) >= 3</td>
+        <td>Planar Survival Feat: Requires level (currently 2) >= 7 and survival rank (currently 2) >= 3</td>
       </tr><tr style="text-align:center">
         <td>Skill Feats Allocation: 1 available vs. 6 allocated</td>
       </tr></table>
