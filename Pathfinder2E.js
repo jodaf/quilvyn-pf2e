@@ -2832,9 +2832,8 @@ Pathfinder2E.FEATURES = {
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Battle Axe; Pick; Warhammer)",' +
-      // TODO implement
-      '"Has access to uncommon dwarf weapons/Treats dwarf weapons as one category simpler"',
+      '"Attack Trained (Battle Axe; Pick; Warhammer)/Treats dwarf weapons as one category simpler",' +
+      '"Has access to uncommon dwarf weapons"',
   'Rock Runner':
     'Section=ability,skill ' +
     'Note=' +
@@ -2880,9 +2879,8 @@ Pathfinder2E.FEATURES = {
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)",' +
-      // TODO implement
-      '"Has access to uncommon elf weapons/Treats elf weapons as one category simpler"',
+      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)/Treats elf weapons as one category simpler",' +
+      '"Has access to uncommon elf weapons"',
   'Forlorn':
     'Section=save ' +
     'Note="+1 vs. emotion effects; successes are critical successes"',
@@ -2925,9 +2923,8 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Glaive; Kukri)",' +
-      // TODO implement
-      '"Has access to uncommon gnome weapons/Treats gnome weapons as one category simpler"',
+      '"Attack Trained (Glaive; Kukri)/Treats gnome weapons as one category simpler",' +
+      '"Has access to uncommon gnome weapons"',
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
@@ -2972,9 +2969,8 @@ Pathfinder2E.FEATURES = {
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Dogslicer; Horsechopper)",' +
-      // TODO implement
-      '"Has access to uncommon goblin weapons/Treats goblin weapons as one category simpler"',
+      '"Attack Trained (Dogslicer; Horsechopper)/Treats goblin weapons as one category simpler",' +
+      '"Has access to uncommon goblin weapons"',
   'Junk Tinker':
     'Section=skill Note="May use Crafting on junk to create level 0 items"',
   'Rough Rider':
@@ -3008,9 +3004,8 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)",' +
-      // TODO implement
-      '"Has access to uncommon halfling weapons/Treats halfling weapons as one category simpler"',
+      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)/Treats halfling weapons as one category simpler",' +
+      '"Has access to uncommon halfling weapons"',
   'Sure Feet':
     'Section=skill ' +
     'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
@@ -3100,8 +3095,8 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Falchion; Greataxe)",' +
-      '"Has access to uncommon orc weapons/Treats orc weapons as one category simpler"',
+      '"Attack Trained (Falchion; Greataxe)/Treats orc weapons as one category simpler",' +
+      '"Has access to uncommon orc weapons"',
   'Orc Weapon Carnage':
     'Section=combat ' +
     'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
@@ -12701,8 +12696,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad name for weapon  "' + name + '"');
     return;
   }
-  if(category == null ||
-     !(category + '').match(/^(Unarmed|Simple|Martial|Advanced)$/)) {
+  if(!(category + '').match(/^(Unarmed|Simple|Martial|Advanced)$/)) {
     console.log('Bad category "' + category + '" for weapon ' + name);
     return;
   }
@@ -12771,6 +12765,22 @@ Pathfinder2E.weaponRules = function(
     'rank.' + group, '^=', null,
     'rank.' + name, '^=', null
   );
+  let allFeats = rules.getChoices('feats') || {};
+  traits.forEach(t => {
+    let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
+    if((feat in Pathfinder2E.FEATS || feat in allFeats) &&
+       category.match(/^(Advanced|Martial) Weapons$/)) {
+      let lowerCategory =
+        category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
+      let note = 'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
+      rules.defineRule('ancestryWeaponRank.' + name,
+        note, '=', '0',
+        'rank.' + lowerCategory, '^', null
+      );
+      rules.defineRule
+        ('weaponRank.' + name, 'ancestryWeaponRank.' + name, '^=', null);
+    }
+  });
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
     'weaponRank.' + name, '=', '0',
