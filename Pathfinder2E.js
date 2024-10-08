@@ -1086,7 +1086,7 @@ Pathfinder2E.FEATS = {
   'Haughty Obstinacy':'Type=Ancestry,Human',
   'Natural Ambition':'Type=Ancestry,Human',
   'Natural Skill':'Type=Ancestry,Human',
-  'Unconventional Weaponry':'Type=Ancestry,Human',
+  'Unconventional Weaponry (%weapon)':'Type=Ancestry,Human',
   // TODO requires "can cast 3rd level spells"
   'Adaptive Adept':
     'Type=Ancestry,Human Require="level >= 5","features.Adapted Cantrip"',
@@ -3059,11 +3059,8 @@ Pathfinder2E.FEATURES = {
     'Note="Successful saves vs. mental control are critical successes/Foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=feature Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  // TODO how does the player choose? there's nothing in the menu that allows it
-  'Unconventional Weaponry':
-    'Section=combat ' +
-    // TODO implement
-    'Note="Attack Trained (Choose 1 from any)/Treats chosen weapon as one category simpler"',
+  'Unconventional Weaponry (%weapon)':
+    'Section=combat Note="Treats %weapon as one category simpler"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -3080,10 +3077,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May add +4 to an untrained skill check 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  'Unconventional Expertise':
-    'Section=combat ' +
-     // TODO only if another feature grants expert or greater
-    'Note="Attack Expert (Choose 1 from any)"',
+  // TODO only if another feature grants expert or greater
+  'Unconventional Expertise':'Section=combat Note="Attack Expert (%V)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -12568,6 +12563,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Uncanny Dodge') {
     rules.defineRule
       ('features.Deny Advantage', 'featureNotes.uncannyDodge', '=', '1');
+  } else if((matchInfo = name.match(/^Unconventional Weaponry \((.*)\)$/)) != null) {
+    rules.defineRule
+      ('features.Unconventional Weaponry', 'feats.' + name, '=', '1');
+    rules.defineRule('combatNotes.unconventionalExpertise',
+      'combatNotes.unconventionalWeaponry(' + matchInfo[1].replaceAll(' ', '') + ')', '=', '"' + matchInfo[1] + '"'
+    );
   } else if(name == 'Untrained Improvisation') {
     rules.defineRule('skillNotes.untrainedImprovisation',
       'level', '=', 'source<7 ? Math.floor(source / 2) : source'
@@ -13084,6 +13085,8 @@ Pathfinder2E.weaponRules = function(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
   category = category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
+  let lowerCategory =
+    category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
   damage = matchInfo[1];
   group = group != 'Bomb' ? group + 's' : 'Alchemical Bombs';
   let damageType = matchInfo[3];
@@ -13103,24 +13106,25 @@ Pathfinder2E.weaponRules = function(
     weaponName, '?', null,
     'rank.' + category, '=', null,
     'rank.' + group, '^=', null,
-    'rank.' + name, '^=', null
+    'rank.' + name, '^=', null,
+    'specialWeaponRank.' + name, '^=', null
   );
   let allFeats = rules.getChoices('feats') || {};
   traits.forEach(t => {
     let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
     if((feat in Pathfinder2E.FEATS || feat in allFeats) &&
        category.match(/^(Advanced|Martial) Weapons$/)) {
-      let lowerCategory =
-        category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
       let note = 'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
-      rules.defineRule('ancestryWeaponRank.' + name,
+      rules.defineRule('specialWeaponRank.' + name,
         note, '=', '0',
         'rank.' + lowerCategory, '^', null
       );
-      rules.defineRule
-        ('weaponRank.' + name, 'ancestryWeaponRank.' + name, '^=', null);
     }
   });
+  rules.defineRule('specialWeaponRank.' + name,
+    'combatNotes.unconventionalWeaponry(' + name.replaceAll(' ', '') + ')', '=', '0',
+    'combatNotes.unconventionalExpertise', '^', 'source=="' + name + '" ? 2 : null'
+  );
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
     'weaponRank.' + name, '=', '0',
