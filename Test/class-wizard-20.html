@@ -116,6 +116,8 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Arcane Bond: Has Drain Bonded Item feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Arcane School: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Arcane Thesis: 1 selection</i></td>
@@ -227,7 +229,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Recognition: May use a skill with master proficiency to Recognize a Spell as a free action 1/rd</td>
     </tr><tr style="text-align:center">
-      <td>Recognize Spell: May use a Reaction for guaranteed success in recognizing an unknown common spell up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill</td>
+      <td>Recognize Spell: <b>(R)</b> May gain guaranteed success in recognizing an unknown common spell up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill</td>
     </tr><tr style="text-align:center">
       <td>Rock Runner: Does not suffer flat-footed when using Acrobatics to Balance on stone and earth; successes to do so are critical successes</td>
     </tr><tr style="text-align:center">
@@ -407,15 +409,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Abjuration: Knows 1 additional 1st-level Abjuration spell</td>
     </tr><tr style="text-align:center">
-      <td>Arcane Bond: May use Drain Bonded Item to cast an expended spell using power stored in a possession 1/day</td>
-    </tr><tr style="text-align:center">
       <td>Arcane Spellcasting: May learn spells from the arcane tradition</td>
     </tr><tr style="text-align:center">
-      <td>Bespell Weapon: Casting a non-cantrip spell causes a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school</td>
+      <td>Bespell Weapon: <b>(F)</b> May cast a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school</td>
     </tr><tr style="text-align:center">
       <td>Bizarre Magic: Others suffer +5 DC to Recognize Spells and Identify Magic on self spells</td>
     </tr><tr style="text-align:center">
-      <td>Bond Conservation: May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn</td>
+      <td>Bond Conservation: <b>(1)</b> May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn</td>
     </tr><tr style="text-align:center">
       <td>Bonded Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
@@ -425,11 +425,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Conjuration: Knows 1 additional 1st-level Conjuration spell</td>
     </tr><tr style="text-align:center">
-      <td>Counterspell: May use a Reaction and expend a spell slot to counteract a spell with the same spell</td>
+      <td>Counterspell: <b>(R)</b> May expend a spell slot to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
       <td>Divination: Knows 1 additional 1st-level Divination spell</td>
     </tr><tr style="text-align:center">
-      <td>Effortless Concentration: May extend the duration of 1 spell as a free action</td>
+      <td>Drain Bonded Item: <b>(R)</b> May cast an expended spell using power stored in a possession 1/day</td>
+    </tr><tr style="text-align:center">
+      <td>Effortless Concentration: <b>(F)</b> May extend the duration of 1 spell</td>
     </tr><tr style="text-align:center">
       <td>Enchantment: Knows 1 additional 1st-level Enchantment spell</td>
     </tr><tr style="text-align:center">
@@ -451,11 +453,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Necromancy: Knows 1 additional 1st-level Necromancy spell</td>
     </tr><tr style="text-align:center">
-      <td>Overwhelming Energy: May cast a spell that ignores resistance 20 to choice of energy</td>
+      <td>Overwhelming Energy: <b>(1)</b> May cast a spell that ignores resistance 20 to choice of energy</td>
     </tr><tr style="text-align:center">
-      <td>Quickened Casting: May reduce the time required to cast a spell of level 8 or lower by 1 action as a free action 1/day</td>
+      <td>Quickened Casting: <b>(F)</b> May reduce the time required to cast a spell of level 8 or lower by 1 action 1/day</td>
     </tr><tr style="text-align:center">
-      <td>Reach Spell: May extend spell range by 30'</td>
+      <td>Reach Spell: <b>(1)</b> May extend spell range by 30'</td>
     </tr><tr style="text-align:center">
       <td>Reflect Spell: May have a successful Counterspell inflict the spell effects on the caster</td>
     </tr><tr style="text-align:center">
@@ -463,7 +465,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Scroll Savant: May prepare 4 temporary scrolls with spells up to level 8 each day</td>
     </tr><tr style="text-align:center">
-      <td>Silent Spell: May cast a spell without its verbal components</td>
+      <td>Silent Spell: <b>(1)</b> May cast a spell without its verbal components</td>
     </tr><tr style="text-align:center">
       <td>Spell Blending: May use 2 spell slots from a level to prepare a spell two levels higher/May use a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
@@ -473,7 +475,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Spell Substitution: May use a 10-minute process to replace 1 prepared spell with a different spell</td>
     </tr><tr style="text-align:center">
-      <td>Spell Tinker: May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
+      <td>Spell Tinker: <b>(2)</b> May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: A successful DC 15 flat check negates self spellcasting disruption</td>
     </tr><tr style="text-align:center">
@@ -485,7 +487,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Universalist: May use Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell</td>
     </tr><tr style="text-align:center">
-      <td>Widen Spell: May increase the effect of a 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', and the effect of a longer line or cone spell by 10'</td>
+      <td>Widen Spell: <b>(1)</b> May increase the effect of a 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', and the effect of a longer line or cone spell by 10'</td>
     </tr></table>
 </td>
   </tr></table>
