@@ -363,14 +363,16 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
-  'Martial Disciple':
+  'Martial Disciple (Acrobatics)':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
-      '"1:Skill Trained (Choose 1 from Acrobatics, Athletics; Warfare Lore)",' +
-      // TODO Add a note for this
-      '"skillIncreases.Acrobatics>0 ? 1:Cat Fall",' +
-      '"skillIncreases.Acrobatics==0 ? 1:Quick Jump"',
+      '"1:Skill Trained (Acrobatics; Warfare Lore)","1:Cat Fall"',
+  'Martial Disciple (Athletics)':
+    'Features=' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Skill Trained (Athletics; Warfare Lore)","1:Quick Jump"',
   'Merchant':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
@@ -403,16 +405,26 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
-  'Scholar':
+  'Scholar (Arcana)':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
-      '"1:Skill Trained (Choose 1 from Arcana, Nature, Occultism, Religion; Academia Lore)",' +
-      // TODO this will erroneously add feats for other trained skills
-      '"skillIncreases.Arcana>0 ? 1:Assurance (Arcana)",' +
-      '"skillIncreases.Nature>0  ? 1:Assurance (Nature)",' +
-      '"skillIncreases.Occultism>0  ? 1:Assurance (Occultism)",' +
-      '"skillIncreases.Religion>0  ? 1:Assurance (Religion)"',
+      '"1:Skill Trained (Arcana; Academia Lore)","Assurance (Arcana)"',
+  'Scholar (Nature)':
+    'Features=' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
+      '"1:Skill Trained (Nature; Academia Lore)","Assurance (Nature)"',
+  'Scholar (Occultism)':
+    'Features=' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
+      '"1:Skill Trained (Occultism; Academia Lore)","Assurance (Occultism)"',
+  'Scholar (Religion)':
+    'Features=' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
+      '"1:Skill Trained (Religion; Academia Lore)","Assurance (Religion)"',
   'Scout':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
