@@ -1088,19 +1088,24 @@ Pathfinder2E.FEATS = {
   'Natural Ambition':'Trait=Ancestry,Human',
   'Natural Skill':'Trait=Ancestry,Human',
   'Unconventional Weaponry (%weapon)':'Trait=Ancestry,Human',
-  // TODO requires "can cast 3rd level spells"
   'Adaptive Adept':
-    'Trait=Ancestry,Human Require="level >= 5","features.Adapted Cantrip"',
+    'Trait=Ancestry,Human ' +
+    'Require=' +
+      '"level >= 5",' +
+      '"features.Adapted Cantrip",' +
+      '"spellSlots.A3 || spellSlots.D3 || spellSlots.O3 || spellSlots.P3"',
   'Clever Improviser':'Trait=Ancestry,Human Require="level >= 5"',
   'Cooperative Soul':
     'Trait=Ancestry,Human Require="level >= 9","features.Cooperative Nature"',
   'Incredible Improvisation':
     'Trait=Ancestry,Human Require="level >= 9","features.Clever Improviser"',
   'Multitalented':'Trait=Ancestry,Human Require="level >= 9"',
-  // TODO requires "trained in the weapon you chose for Unconventional Weaponry"
   'Unconventional Expertise':
     'Trait=Ancestry,Human ' +
-    'Require="level >= 13","features.Unconventional Weaponry"',
+    'Require=' +
+      '"level >= 13",' +
+      '"features.Unconventional Weaponry",' +
+      '"unconventionalWeaponRank >= 2"',
   'Elf Atavism':'Trait=Ancestry,Half-Elf',
   'Inspire Imitation':'Trait=Ancestry,Half-Elf Require="level >= 5"',
   'Supernatural Charm':'Trait=Ancestry,Half-Elf Require="level >= 5"',
@@ -2933,7 +2938,6 @@ Pathfinder2E.FEATURES = {
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater rank
     'Note="Attack Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
@@ -2971,7 +2975,6 @@ Pathfinder2E.FEATURES = {
     'Note="May replace Ancestral Longevity and Expert Longevity skills 1/day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater
     'Note="Attack Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
@@ -3014,7 +3017,6 @@ Pathfinder2E.FEATURES = {
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater
     'Note="Attack Expert (Glaive; Kukri; Gnome Weapons)"',
 
   'Burn It!':
@@ -3058,7 +3060,6 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use Goblin Scuttle to Stride %{speed//2}\'"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater
     'Note="Attack Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
     'Section=combat Note="May Sneak at full Speed and without cover"',
@@ -3109,7 +3110,6 @@ Pathfinder2E.FEATURES = {
     'Note="May use Hide and Sneak without cover and gain additional cover from creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater
     'Note="Attack Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
@@ -3140,7 +3140,6 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May add +4 to an untrained skill check 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  // TODO only if another feature grants expert or greater
   'Unconventional Expertise':'Section=combat Note="Attack Expert (%V)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
@@ -3175,7 +3174,6 @@ Pathfinder2E.FEATURES = {
   'Incredible Ferocity':'Section=combat Note="Increased Orc Ferocity effects"',
   'Orc Weapon Expertise':
     'Section=combat ' +
-     // TODO only if another feature grants expert or greater
     'Note="Attack Expert (Falchion; Greataxe; Orc Weapons)"',
 
   // Class Features and Feats
@@ -10991,6 +10989,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 
   if(name == 'Alchemist') {
     rules.defineRule('advancedAlchemyLevel', classLevel, '=', null);
+    rules.defineRule('classWeaponExpertise',
+      'features.Alchemical Weapon Expertise', '=', '1'
+    );
     rules.defineRule('combatNotes.weaponSpecialization',
       '', '=', '2',
       'combatNotes.greaterWeaponSpecialization', '+', '2'
@@ -11015,6 +11016,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.perpetualPerfection', '^', '11'
     );
   } else if(name == 'Barbarian') {
+    rules.defineRule('classWeaponExpertise', 'features.Brutality', '=', '1');
     // TODO make this less hard-coded
     rules.defineRule('features.Animal Instinct',
       'features.Animal Instinct (Ape)', '=', '1',
@@ -11143,6 +11145,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.ragingIntimidation.1', '=', 'source=="" ? null : 1'
     );
   } else if(name == 'Bard') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Bard Weapon Expertise', '=', '1');
     rules.defineRule('features.Bardic Lore', 'featureNotes.enigma', '=', '1');
     rules.defineRule
       ('features.Enigma', 'featureNotes.multifariousMuse(Enigma)', '=', '1');
@@ -11211,6 +11215,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spells.Unseen Servant (A/O1 Conj)', 'magicNotes.polymath', '=', '1');
   } else if(name == 'Champion') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Weapon Expertise', '=', '1');
     rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
       'deityWeapon', '=', null
@@ -11284,6 +11290,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'alignment', '=', 'dict.followerAligns.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
   } else if(name == 'Cleric') {
+    rules.defineRule('classWeaponExpertise',
+      'features.Cloistered Cleric', '=', '1',
+      'features.Warpriest', '=', '1'
+    );
     rules.defineRule('combatNotes.cloisteredCleric',
       'level', '?', 'source>=11',
       'deityWeapon', '=', null
@@ -11369,6 +11379,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Druid') {
     rules.defineRule
+      ('classWeaponExpertise', 'features.Druid Weapon Expertise', '=', '1');
+    rules.defineRule
       ('features.Animal Companion', 'featureNotes.animal', '=', '1');
     rules.defineRule
       ('features.Leshy Familiar', 'featureNotes.leaf', '=', '1');
@@ -11398,6 +11410,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spells.Tempest Surge', 'magicNotes.storm', '=', '1');
     rules.defineRule('spells.Wild Morph', 'magicNotes.wild', '=', '1');
   } else if(name == 'Fighter') {
+    rules.defineRule('classWeaponExpertise', 'levels.Fighter', '=', '1');
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       classLevel, '?', null,
       'featureNotes.keyAbility', '=', '1'
@@ -11414,6 +11427,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'armor', '?', 'source == "None"',
       'abilityNotes.incredibleMovement', '=', null
     );
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Expert Strikes', '=', '1');
     rules.defineRule('featureNotes.pathToPerfection',
       '', '=', '1',
       'featureNotes.secondPathToPerfection', '+', '1'
@@ -11484,6 +11499,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('weaponDieSides.Fist', 'combatNotes.powerfulFist', '^', '6');
   } else if(name == 'Ranger') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Ranger Weapon Expertise', '=', '1');
     rules.defineRule('combatNotes.monsterHunter',
       '', '=', '1',
       'combatNotes.legendaryMonsterHunter', '+', '1'
@@ -11514,6 +11531,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.ubiquitousSnares', '*', '2'
     );
   } else if(name == 'Rogue') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Weapon Tricks', '=', '1');
     rules.defineRule('combatNotes.ruffian',
       '', '=', '"Trained"',
       'rank.Light Armor', '=', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
@@ -11544,6 +11563,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.rogueSkills', 'intelligenceModifier', '=', '7 + source');
   } else if(name == 'Sorcerer') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Sorcerer Weapon Expertise', '=', '1');
     let bloodlineSpells = {
       'Aberrant':'Tentacular Limbs',
       'Angelic':'Angelic Halo',
@@ -11661,6 +11682,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
+    rules.defineRule
+      ('classWeaponExpertise', 'features.Wizard Weapon Expertise', '=', '1');
     rules.defineRule
       ('features.Drain Bonded Item', 'featureNotes.arcaneBond', '=', '1');
     rules.defineRule('features.Familiar',
@@ -12297,6 +12320,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
     rules.defineRule
       ('magicNotes.druidOrder', 'featureNotes.druidDedication', '?', '!source');
+  } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/) || name == 'Unconventional Expertise') {
+    let note = 'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+    rules.defineRule(note, 'classWeaponExpertise', '?', null);
   } else if(name == 'Elf Atavism') {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
@@ -13164,7 +13190,8 @@ Pathfinder2E.weaponRules = function(
     'rank.' + category, '=', null,
     'rank.' + group, '^=', null,
     'rank.' + name, '^=', null,
-    'specialWeaponRank.' + name, '^=', null
+    'ancestralWeaponRank.' + name, '^=', null,
+    'unconventionalWeaponRank.' + name, '^=', null
   );
   let allFeats = rules.getChoices('feats') || {};
   traits.forEach(t => {
@@ -13172,16 +13199,18 @@ Pathfinder2E.weaponRules = function(
     if((feat in Pathfinder2E.FEATS || feat in allFeats) &&
        category.match(/^(Advanced|Martial) Weapons$/)) {
       let note = 'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
-      rules.defineRule('specialWeaponRank.' + name,
+      rules.defineRule('ancestralWeaponRank.' + name,
         note, '=', '0',
         'rank.' + lowerCategory, '^', null
       );
     }
   });
-  rules.defineRule('specialWeaponRank.' + name,
+  rules.defineRule('unconventionalWeaponRank.' + name,
     'combatNotes.unconventionalWeaponry(' + name.replaceAll(' ', '') + ')', '=', '0',
     'combatNotes.unconventionalExpertise', '^', 'source=="' + name + '" ? 2 : null'
   );
+  rules.defineRule
+     ('unconventionalWeaponRank', 'unconventionalWeaponRank.' + name, '=', '1');
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
     'weaponRank.' + name, '=', '0',
@@ -13953,7 +13982,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           }
         }
       } else if(attrs['features.' + attr] == null) {
-        availableChoices[attr] = types;
+        availableChoices[attr] = traits;
       }
     }
     if(attribute == 'feat') {
