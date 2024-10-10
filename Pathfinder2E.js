@@ -363,16 +363,18 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
-  'Martial Disciple (Acrobatics)':
+  'Martial Disciple':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
-      '"1:Skill Trained (Acrobatics; Warfare Lore)","1:Cat Fall"',
-  'Martial Disciple (Athletics)':
-    'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
-      '"1:Skill Trained (Athletics; Warfare Lore)","1:Quick Jump"',
+      '"1:Martial Focus",' +
+      '"martialDiscipleFeatures.Acrobatics ? 1:Skill Trained (Acrobatics; Warfare Lore)",' +
+      '"martialDiscipleFeatures.Acrobatics ? 1:Cat Fall",' +
+      '"martialDiscipleFeatures.Athletics ? 1:Skill Trained (Athletics; Warfare Lore)",' +
+      '"martialDiscipleFeatures.Athletics ? 1:Quick Jump" ' +
+    'Selectables=' +
+      '"1:Acrobatics:Martial Focus",' +
+      '"1:Athletics:Martial Focus"',
   'Merchant':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
@@ -405,26 +407,24 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
-  'Scholar (Arcana)':
+  'Scholar':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
-      '"1:Skill Trained (Arcana; Academia Lore)","Assurance (Arcana)"',
-  'Scholar (Nature)':
-    'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
-      '"1:Skill Trained (Nature; Academia Lore)","Assurance (Nature)"',
-  'Scholar (Occultism)':
-    'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
-      '"1:Skill Trained (Occultism; Academia Lore)","Assurance (Occultism)"',
-  'Scholar (Religion)':
-    'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
-      '"1:Skill Trained (Religion; Academia Lore)","Assurance (Religion)"',
+      '"1:Scholarly Tradition",' +
+      '"scholarFeatures.Arcana ? 1:Skill Trained (Arcana; Academia Lore)",' +
+      '"scholarFeatures.Arcana ? 1:Assurance (Arcana)",' +
+      '"scholarFeatures.Nature ? 1:Skill Trained (Nature; Academia Lore)",' +
+      '"scholarFeatures.Nature ? 1:Assurance (Nature)",' +
+      '"scholarFeatures.Occultism ? 1:Skill Trained (Occultism; Academia Lore)",' +
+      '"scholarFeatures.Occultism ? 1:Assurance (Occultism)",' +
+      '"scholarFeatures.Religion ? 1:Skill Trained (Religion; Academia Lore)",' +
+      '"scholarFeatures.Religion ? 1:Assurance (Religion)" ' +
+    'Selectables=' +
+      '"1:Arcana:Scholarly Tradition",' +
+      '"1:Nature:Scholarly Tradition",' +
+      '"1:Occultism:Scholarly Tradition",' +
+      '"1:Religion:Scholarly Tradition"',
   'Scout':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
@@ -3187,6 +3187,10 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Expertise':
     'Section=combat ' +
     'Note="Attack Expert (Falchion; Greataxe; Orc Weapons)"',
+
+  // Backgrounds
+  'Martial Focus':'Section=feature Note="1 selection"',
+  'Scholarly Tradition':'Section=feature Note="1 selection"',
 
   // Class Features and Feats
 
@@ -10172,7 +10176,7 @@ Pathfinder2E.identityRules = function(
 
   QuilvynUtils.checkAttrTable(alignments, []);
   QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Size', 'Languages', 'Traits']);
-  QuilvynUtils.checkAttrTable(backgrounds, ['Features']);
+  QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
@@ -10343,11 +10347,13 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Languages')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
-  } else if(type == 'Background')
+  } else if(type == 'Background') {
     Pathfinder2E.backgroundRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Features')
+      QuilvynUtils.getAttrValueArray(attrs, 'Features'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
-  else if(type == 'Armor')
+    Pathfinder2E.backgroundRulesExtra(rules, name);
+  } else if(type == 'Armor')
     Pathfinder2E.armorRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
       QuilvynUtils.getAttrValue(attrs, 'Price'),
@@ -10790,9 +10796,10 @@ Pathfinder2E.armorRules = function(
 
 /*
  * Defines in #rules# the rules associated with background #name#. #features#
- * lists the background's associated features.
+ * and #selectables# list the background's associated features and any
+ * selectable features.
  */
-Pathfinder2E.backgroundRules = function(rules, name, features) {
+Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
   let prefix =
     name.substring(0, 1).toLowerCase() + name.substring(1).replaceAll(' ', '');
   let backgroundLevel = prefix + 'Level';
@@ -10801,8 +10808,35 @@ Pathfinder2E.backgroundRules = function(rules, name, features) {
     'level', '=', null
   );
   Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
+  Pathfinder2E.featureListRules
+    (rules, selectables, name, backgroundLevel, true);
+  selectables.forEach(selectable => {
+    let pieces = selectable.split(':');
+    let s = pieces[pieces.length > 1 && pieces[0].match(/^\d+$/) ? 1 : 0];
+    let sType = s == s[pieces.length - 1] ? '' : pieces[pieces.length - 1];
+    let sCount = prefix + sType.replaceAll(' ', '') + 'Count';
+    rules.defineRule(sCount, prefix + 'Features.' + pieces[1], '+=', '1');
+    QuilvynRules.validAllocationRules
+      (rules, prefix + sType.replaceAll(' ', ''), 'selectableFeatureCount.' + name + ' (' + sType + ')', sCount);
+  });
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
+};
+
+/*
+ * Defines in #rules# the rules associated with background #name# that cannot
+ * be derived directly from the attributes passed to backgroundRules.
+ */
+Pathfinder2E.backgroundRulesExtra = function(rules, name) {
+  if(name == 'Martial Disciple') {
+    rules.defineRule('selectableFeatureCount.Martial Disciple (Martial Focus)',
+      'featureNotes.martialFocus', '=', '1'
+    );
+  } else if(name == 'Scholar') {
+    rules.defineRule('selectableFeatureCount.Scholar (Scholarly Tradition)',
+      'featureNotes.scholarlyTradition', '=', '1'
+    );
+  }
 };
 
 /*

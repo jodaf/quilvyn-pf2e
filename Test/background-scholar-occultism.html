@@ -10,14 +10,14 @@ var attributes = {
   "abilityBoosts.charisma":1, "abilityBoosts.constitution":1, 
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":2, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"All 10s; standard ancestry boosts", "alignment":"Neutral Good", "ancestry":"Human", "armor":"Half Plate", 
-  "background":"Scholar (Occultism)", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
+  "background":"Scholar", "charisma":10, "constitution":10, "deity":"Shelyn", "dexterity":10, 
   "experience":489, "feats.Canny Acumen (Reflex)":1, "feats.Natural Ambition":1, 
   "feats.Point-Blank Shot":1, "feats.Power Attack":1, "gender":"Male", "intelligence":10, 
   "languages.Halfling":1, "languages.Necril":1, "levels.Fighter":1, 
   "name":"Background-Scholar-Occultism", "selectableFeatures.Fighter - Strength":1, 
-  "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"Buckler", "skillIncreases.Athletics":1, 
-  "skillIncreases.Desert Lore":1, "skillIncreases.Legal Lore":1, "skillIncreases.Medicine":1, 
-  "skillIncreases.Religion":1, "skillIncreases.Sailing Lore":1, "strength":10, "weapons.Greatclub":1, 
+  "selectableFeatures.Human - Versatile Heritage Human":1, "selectableFeatures.Scholar - Occultism":1, "shield":"Buckler", 
+  "skillIncreases.Athletics":1, "skillIncreases.Desert Lore":1, "skillIncreases.Legal Lore":1, 
+  "skillIncreases.Medicine":1, "skillIncreases.Religion":1, "strength":10, "weapons.Greatclub":1, 
   "weapons.Light Pick":1, "weapons.Spiked Gauntlet":1, "wisdom":10
 };
   </script>
@@ -42,7 +42,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="Description" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Background</b>: Scholar (Occultism)</td>
+      <td><b>Background</b>: Scholar</td>
       <td><b>Alignment</b>: Neutral Good</td>
       <td><b>Deity</b>: Shelyn (NG)</td>
     </tr></table>
@@ -68,7 +68,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 2; General: 1</td>
-        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Ability); Human (Heritage); Scholar (Scholarly Tradition)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -76,7 +76,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Feats</b>: Canny Acumen (Reflex); Natural Ambition; Point-Blank Shot; Power Attack</td>
         <td><b>Fighter Features</b>: Ability Boost (Strength); Ability Boosts; Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Of Opportunity; Attack Trained (Advanced Weapons); Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Skills; Key Ability; Perception Expert; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
-        <td><b>Scholar (Occultism) Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Assurance (Occultism); Skill Trained (Occultism; Academia Lore)</td>
+        <td><b>Scholar Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Assurance (Occultism); Occultism; Scholarly Tradition; Skill Trained (Occultism; Academia Lore)</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Versatile Heritage Human</td>
       </tr></table>
 </td>
@@ -90,6 +90,8 @@ var attributes = {
         <td><i>Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Natural Ambition: +1 Class Feat</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Scholarly Tradition: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Heritage Human: +1 General Feat</i></td>
       </tr></table>
@@ -110,23 +112,23 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Acrobatics: +0 (dexterity; untrained)</td>
       <td>Intimidation: +1 (charisma; untrained)</td>
-      <td>Sailing Lore: +4 (intelligence; trained)</td>
+      <td>Society: +1 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +1 (intelligence; untrained)</td>
       <td>Legal Lore: +4 (intelligence; trained)</td>
-      <td>Society: +1 (intelligence; untrained)</td>
+      <td>Stealth: +0 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +6 (strength; trained)</td>
       <td>Medicine: +6 (wisdom; trained)</td>
-      <td>Stealth: +0 (dexterity; untrained)</td>
+      <td>Survival: +3 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +1 (intelligence; untrained)</td>
       <td>Nature: +3 (wisdom; untrained)</td>
-      <td>Survival: +3 (wisdom; untrained)</td>
+      <td>Thievery: +0 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +1 (charisma; untrained)</td>
       <td>Occultism: +4 (intelligence; trained)</td>
-      <td>Thievery: +0 (dexterity; untrained)</td>
+      <td></td>
     </tr><tr style="text-align:left">
       <td>Desert Lore: +4 (intelligence; trained)</td>
       <td>Performance: +1 (charisma; untrained)</td>
@@ -191,16 +193,6 @@ var attributes = {
       <td><b>Save</b>: Fortitude: +6 (constitution; expert); Reflex: +5 (dexterity; expert); Will: +6 (wisdom; trained)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>: <i>Canny Acumen (Reflex): Save Expert (Reflex)</i></td>
-    </tr></table>
-</td>
-  </tr></table>
-</td>
-</tr><tr style="text-align:center">
-  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
-  <tr style="text-align:center">
-    <td>    <table id="ValidationPart" style="width:100%">
-    <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Skill Increase Allocation: 5 available vs. 6 allocated</td>
     </tr></table>
 </td>
   </tr></table>
