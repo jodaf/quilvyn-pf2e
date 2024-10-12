@@ -10789,7 +10789,7 @@ Pathfinder2E.armorRules = function(
 
   rules.defineRule('rank.' + name, 'training.' + name);
   rules.defineRule('rank.Armor',
-    'rank.' + name, '^', 'dict["armor"]=="' + name + '" ? source : null
+    'rank.' + name, '^', 'dict["armor"]=="' + name + '" ? source : null'
   );
 
 };
@@ -12085,9 +12085,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('focusPoints', note, '+=', '1');
   } else if(name == 'Armor Proficiency') {
     rules.defineRule('combatNotes.armorProficiency',
-      '', '=', '["", "Light", "Medium", "Heavy"][source] || "Heavy"',
-      'training.Light Armor', '=', '["", "Medium", "Heavy"][source] || "Heavy"',
-      'training.Medium Armor', '=', '"Heavy"'
+      '', '=', '"Light"',
+      'training.Light Armor', '=', 'source>0 ? "Medium" : null',
+      'training.Medium Armor', '=', 'source>0 ? "Heavy" : null'
     );
     rules.defineRule
       ('rank.Light Armor', 'combatNotes.armorProficiency', '^=', '1');
