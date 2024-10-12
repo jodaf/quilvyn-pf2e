@@ -10066,25 +10066,10 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'shield:%V%1%2%3%4',
     'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
   );
-  rules.defineRule('rank.Light Armor', 'training.Light Armor', '=', null);
-  rules.defineRule('rank.Medium Armor', 'training.Medium Armor', '=', null);
-  rules.defineRule('rank.Heavy Armor', 'training.Heavy Armor', '=', null);
-  rules.defineRule
-    ('rank.Unarmored Defense', 'training.Unarmored Defense', '=', null);
-  rules.defineRule('rank.Armor',
-    'armorCategory', '=', '0',
-    'rank.Unarmored Defense', '=', 'dict["armorCategory"]=="Unarmored" ? source : null',
-    'rank.Light Armor', '=', 'dict["armorCategory"]=="Light" ? source : null',
-    'rank.Medium Armor', '=', 'dict["armorCategory"]=="Medium" ? source : null',
-    'rank.Heavy Armor', '=', 'dict["armorCategory"]=="Heavy" ? source : null'
-  );
-  rules.defineRule('proficiencyLevelBonus.Armor',
-    'rank.Armor', '=', 'source>0 ? 0 : null',
-    'level', '+', null
-  );
-  rules.defineRule('proficiencyBonus.Armor',
-    'rank.Armor', '=', '2 * source',
-    'proficiencyLevelBonus.Armor', '+', null
+  rules.defineRule('abilityNotes.armorSpeedPenalty',
+    'armorSpeedReduction', '=', null,
+    'armorStrengthRequirement', '=', 'null',
+    'strength', '?', 'source<dict["armorStrengthRequirement"]'
   );
   rules.defineRule('armorClass',
     '', '=', '10',
@@ -10102,6 +10087,39 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'dexterityModifier', '=', null,
     'armorDexterityCap', 'v', null
   );
+  rules.defineRule
+    ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
+  rules.defineRule
+    ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
+  // For weapons with the finesse trait
+  rules.defineRule('maxStrOrDexModifier',
+    'strengthModifier', '=', null,
+    'dexterityModifier', '^', null
+  );
+  rules.defineRule('maxStrOrDex',
+    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
+  );
+  rules.defineRule('proficiencyLevelBonus.Armor',
+    'rank.Armor', '=', 'source>0 ? 0 : null',
+    'level', '+', null
+  );
+  rules.defineRule('proficiencyBonus.Armor',
+    'rank.Armor', '=', '2 * source',
+    'proficiencyLevelBonus.Armor', '+', null
+  );
+  rules.defineRule('rank.Armor', 'armorCategory', '=', '0');
+  ['Unarmored Defense', 'Light Armor', 'Medium Armor', 'Heavy Armor'].forEach(a => {
+    rules.defineRule('rank.Armor',
+      'rank.' + a, '=', 'dict["armorCategory"]=="' + a.replace(/\s.*/, '') + '" ? source : null'
+    );
+    rules.defineRule('training.' + a, '', '=', '0');
+    rules.defineRule('rank.' + a, 'training.' + a, '=', null);
+  });
+  rules.defineRule('skillNotes.armorSkillPenalty',
+    'armorCheckPenalty', '=', null,
+    'armorStrengthRequirement', '=', 'null',
+    'strength', '?', 'source<dict["armorStrengthRequirement"]'
+  );
   rules.defineRule('shield.1',
     '', '=', '""',
     'shieldACBonus', '=', 'source>0 ? " (+" + source + " AC when raised" : ""'
@@ -10117,29 +10135,6 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('shield.4',
     '', '=', '""',
     'shieldACBonus', '=', 'source>0 ? ")" : ""'
-  );
-
-  rules.defineRule('abilityNotes.armorSpeedPenalty',
-    'armorSpeedReduction', '=', null,
-    'armorStrengthRequirement', '=', 'null',
-    'strength', '?', 'source<dict["armorStrengthRequirement"]'
-  );
-  rules.defineRule
-    ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
-  rules.defineRule
-    ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
-  // For weapons with the finesse trait
-  rules.defineRule('maxStrOrDexModifier',
-    'strengthModifier', '=', null,
-    'dexterityModifier', '^', null
-  );
-  rules.defineRule('maxStrOrDex',
-    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
-  );
-  rules.defineRule('skillNotes.armorSkillPenalty',
-    'armorCheckPenalty', '=', null,
-    'armorStrengthRequirement', '=', 'null',
-    'strength', '?', 'source<dict["armorStrengthRequirement"]'
   );
   rules.defineRule('speed', 'abilityNotes.armorSpeedPenalty', '+', null);
 
@@ -10790,6 +10785,11 @@ Pathfinder2E.armorRules = function(
   );
   rules.defineRule('armorStrengthRequirement',
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.str) + '[source]'
+  );
+
+  rules.defineRule('rank.' + name, 'training.' + name);
+  rules.defineRule('rank.Armor',
+    'rank.' + name, '^', 'dict["armor"]=="' + name + '" ? source : null
   );
 
 };
@@ -13928,9 +13928,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     choices = [];
     for(let attr in armors) {
       let category = QuilvynUtils.getAttrValue(armors[attr], 'Category');
-      if(category == 'Unarmored' && 'rank.Unarmored Defense' in attrs)
+      if(category == 'Unarmored')
         choices.push(attr);
-      else if(('rank.' + category + ' Armor') in attrs)
+      else if(('rank.' + category + ' Armor') in attrs &&
+              attrs['rank.' + category + 'Armor'] > 0)
         choices.push(attr);
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
@@ -13983,22 +13984,15 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       });
     }
   } else if(attribute == 'deity') {
-    /* Pick a deity that's no more than one alignment position removed. */
-    let aliInfo = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
-    let aliPat;
-    if(aliInfo == null) /* Neutral character */
-      aliPat = 'N[EG]?|[CL]N';
-    else if(aliInfo[1] == 'N') /* NG or NE */
-      aliPat = 'N|[CLN]' + aliInfo[2];
-    else if(aliInfo[2] == 'N') /* CN or LN */
-      aliPat = 'N|' + aliInfo[1] + '[GNE]';
-    else /* [LC]G or [LC]E */
-      aliPat = aliInfo[1] + '[N' + aliInfo[2] + ']|N' + aliInfo[2];
+    let alignment = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
+    alignment = alignment ? alignment[1] + alignment[2] : 'N';
     choices = [];
     let deities = this.getChoices('deitys');
-    for(attr in deities) {
-      if(deities[attr].match('=' + aliPat + '\\b'))
-        choices.push(attr);
+    for(let d in deities) {
+      let allowed =
+        QuilvynUtils.getAttrValueArray(deities[d], 'FollowerAlignments');
+      if(allowed.includes(alignment))
+        choices.push(d);
     }
     if(choices.length > 0)
       attributes.deity = choices[QuilvynUtils.random(0, choices.length - 1)];
@@ -14018,6 +14012,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let allChoices = this.getChoices(prefix);
     for(attr in allChoices) {
       let traits = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Trait');
+      if(traits.length == 0)
+        traits = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Type');
       if(attrs[prefix + '.' + attr] != null) {
         for(i = 0; i < traits.length; i++) {
           let t = traits[i];
