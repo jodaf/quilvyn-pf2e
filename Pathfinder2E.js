@@ -1570,9 +1570,8 @@ Pathfinder2E.FEATS = {
       '"features.Harmful Font",' +
       '"features.Command Undead",' +
       '"alignment =~ \'Evil\'"',
-  // TODO requires expert in deity's favored weapon
   'Replenishment Of War':
-    'Trait=Class,Cleric Require="level >= 10"',
+    'Trait=Class,Cleric Require="level >= 10","deityWeaponRank >= 1"',
   'Defensive Recovery':
     'Trait=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 12","features.Harmful Font || features.Healing Font"',
@@ -2466,8 +2465,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Fighter ' +
     'Require=' +
       '"level >= 12",' +
-      // TODO or rank.any weapon >= 3
-      '"rank.Unarmed Attacks >= 3"',
+      '"maxWeaponRank >= 2 || rank.Unarmed Attacks >= 2"',
 
   'Monk Dedication':
     'Trait=Archetype,Dedication,Multiclass,Monk ' +
@@ -12631,6 +12629,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Ranger Dedication') {
     rules.defineRule
       ('features.Hunt Prey', 'featureNotes.rangerDedication', '=', '1');
+  } else if(name == 'Replenishment Of War') {
+    rules.defineRule('deityWeaponRank',
+      'levels.Cleric', '=', '0',
+      'deityWeapon', '=', 'null'
+    );
+    let allDeities = rules.getChoices('deitys');
+    for(let d in allDeities) {
+      let w = QuilvynUtils.getAttrValue(allDeities[d], 'Weapon');
+      rules.defineRule('deityWeaponRank',
+        'rank.' + w, '^', 'dict.deityWeapon=="' + w + '" ? source : null'
+      );
+    }
   } else if(name == 'Rogue Dedication') {
     rules.defineRule
       ('features.Surprise Attack', 'featureNotes.rangerDedication', '=', '1');
@@ -13252,6 +13262,7 @@ Pathfinder2E.weaponRules = function(
     'ancestralWeaponRank.' + name, '^=', null,
     'unconventionalWeaponRank.' + name, '^=', null
   );
+  rules.defineRule('maxWeaponRank', 'rank.' + name, '^=', null);
   let allFeats = rules.getChoices('feats') || {};
   traits.forEach(t => {
     let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
