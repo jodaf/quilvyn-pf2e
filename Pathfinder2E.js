@@ -10003,10 +10003,9 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
 
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
-    rules.defineRule(a,
-      'base' + a.charAt(0).toUpperCase() + a.substring(1), '=', null,
-      // TODO ability boosts add only 1 above 18
-      'abilityBoosts.' + a, '+', 'source * 2'
+    let baseAbility = 'base' + a.charAt(0).toUpperCase() + a.substring(1);
+    rules.defineRule(a, baseAbility, '=', null,
+      'abilityBoosts.' + a, '+', 'source * 2 - Math.max(Math.floor((dict["' + baseAbility + '"] + source * 2 - 20) / 2), 0)'
     );
     rules.defineRule
       (a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
@@ -10030,14 +10029,14 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   QuilvynRules.validAllocationRules
     (rules, 'abilityBoost', 'choiceCount.Ability', 'abilityBoostsAllocated');
   rules.defineChoice('notes',
-    'validationNotes.maxInitialAbility:Abilities may not exceed 18 until level >= 2'
+    'validationNotes.maximumInitialAbility:Abilities may not exceed 18 until level >= 2'
   );
-  rules.defineRule('validationNotes.maxInitialAbility',
+  rules.defineRule('validationNotes.maximumInitialAbility',
     'level', '?', 'source == 1'
   );
   for(let a in abilities) {
     rules.defineRule
-      ('validationNotes.maxInitialAbility', a, '=', 'source>18 ? 1 : null');
+      ('validationNotes.maximumInitialAbility', a, '=', 'source>18 ? 1 : null');
   }
 
 };
@@ -12932,9 +12931,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           let m = element.match(/Choose (\d+|%V)/);
           if(m)
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
+          else if(matchInfo[1] == 'Skill')
+            rules.defineRule('skillIncreases.' + element, noteName, '+', '1');
           else
             rules.defineRule
-              (element.toLowerCase(), noteName, '+', flaw ? '-2' : '2');
+              ('abilityBoosts.' + element, noteName, '+', flaw ? '-1' : '1');
         });
         if(choices)
           rules.defineRule('choiceCount.' + matchInfo[1],
