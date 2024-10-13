@@ -21,9 +21,9 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 "use strict";
 
 /*
- * This module loads the rules from the Pathfinder Reference Document v2. The
+ * This module loads the rules from the Pathfinder Second Edition rules. The
  * Pathfinder2E function contains methods that load rules for particular parts
- * of the PRD: ancestryRules for character ancestries, magicRules for spells,
+ * of the rules: ancestryRules for character ancestries, magicRules for spells,
  * etc. These member methods can be called independently in order to use a
  * subset of the PRD v2 rules. Similarly, the constant fields of Pathfinder2E
  * (ALIGNMENTS, FEATS, etc.) can be manipulated to modify the choices.
@@ -58,10 +58,6 @@ function Pathfinder2E() {
     'levels:Class Levels,bag,levels',
     'abilityGeneration:Ability Generation,select-one,abilgens'
   );
-  rules.addChoice('abilgens', 'All 10s; standard ancestry boosts', '');
-  rules.addChoice('abilgens', 'All 10s; two free ancestry boosts', '');
-  rules.addChoice('abilgens', 'Each 4d6, standard ancestry boosts', '');
-  rules.addChoice('abilgens', 'Each 4d6, one free ancestry boost', '');
 
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
@@ -10008,17 +10004,23 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
     rules.defineRule(a,
+      'base' + a.charAt(0).toUpperCase() + a.substring(1), '=', null,
       // TODO ability boosts add only 1 above 18
-      'abilityBoosts.' + a, '+', 'source * 2',
-      '', 'v', '20'
+      'abilityBoosts.' + a, '+', 'source * 2'
     );
-    rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
     rules.defineRule
-      (a + '.1', a + 'Modifier', '=', 'source>=0 ? "+" + source : source');
+      (a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
+    rules.defineRule(a + '.1',
+      a + 'Modifier', '=', 'source>=0 ? "+" + source : source'
+    );
     rules.defineRule
       ('abilityBoostsAllocated', 'abilityBoosts.' + a, '+=', null);
   }
 
+  rules.defineChoice('abilgens',
+    'All 10s; standard ancestry boosts', 'All 10s; two free ancestry boosts',
+    'Each 4d6, standard ancestry boosts', 'Each 4d6, one free ancestry boost'
+  );
   rules.defineRule('combatNotes.constitutionHitPointsAdjustment',
     'constitutionModifier', '=', null,
     'level', '*', null
@@ -10027,6 +10029,16 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   QuilvynRules.validAllocationRules
     (rules, 'abilityBoost', 'choiceCount.Ability', 'abilityBoostsAllocated');
+  rules.defineChoice('notes',
+    'validationNotes.maxInitialAbility:Abilities may not exceed 18 until level >= 2'
+  );
+  rules.defineRule('validationNotes.maxInitialAbility',
+    'level', '?', 'source == 1'
+  );
+  for(let a in abilities) {
+    rules.defineRule
+      ('validationNotes.maxInitialAbility', a, '=', 'source>18 ? 1 : null');
+  }
 
 };
 
@@ -13767,17 +13779,17 @@ Pathfinder2E.initialEditorElements = function() {
     ['levels', 'Levels', 'bag', 'levels'],
     ['imageUrl', 'Image URL', 'text', [20]],
     ['abilityGeneration', 'Ability Generation', 'select-one', 'abilgens'],
-    ['strength', 'Str/Boosts', 'select-one', abilityChoices],
+    ['baseStrength', 'Str/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.strength', '', 'text', [3]],
-    ['dexterity', 'Dex/Boosts', 'select-one', abilityChoices],
+    ['baseDexterity', 'Dex/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.dexterity', '', 'text', [3]],
-    ['constitution', 'Con/Boosts', 'select-one', abilityChoices],
+    ['baseConstitution', 'Con/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.constitution', '', 'text', [3]],
-    ['intelligence', 'Int/Boosts', 'select-one', abilityChoices],
+    ['baseIntelligence', 'Int/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.intelligence', '', 'text', [3]],
-    ['wisdom', 'Wis/Boosts', 'select-one', abilityChoices],
+    ['baseWisdom', 'Wis/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.wisdom', '', 'text', [3]],
-    ['charisma', 'Cha/Boosts', 'select-one', abilityChoices],
+    ['baseCharisma', 'Cha/Boosts', 'select-one', abilityChoices],
     ['abilityBoosts.charisma', '', 'text', [3]],
     ['player', 'Player', 'text', [20]],
     ['alignment', 'Alignment', 'select-one', 'alignments'],
@@ -13912,14 +13924,15 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     for(attr in Pathfinder2E.ABILITIES) {
       if(attribute != attr && attribute != 'abilities')
         continue;
+      let baseAttr = 'base' + attr.charAt(0).toUpperCase() + attr.substring(1);
       if((attributes.abilityGeneration + '').match(/4d6/)) {
         let rolls = [];
         for(i = 0; i < 4; i++)
           rolls.push(QuilvynUtils.random(1, 6));
         rolls.sort();
-        attributes[attr] = rolls[1] + rolls[2] + rolls[3];
+        attributes[baseAttr] = rolls[1] + rolls[2] + rolls[3];
       } else {
-        attributes[attr] = 10;
+        attributes[baseAttr] = 10;
       }
     }
   } else if(attribute == 'armor') {
