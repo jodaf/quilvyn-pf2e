@@ -2606,203 +2606,202 @@ Pathfinder2E.FEATS = {
   'Incredible Investiture':
     'Trait=General Require="level >= 11","charisma >= 16"',
 
-  // TODO Skill feats are also general feats
   // Skill
-  'Assurance (%skill)':'Trait=Fortune,Skill Require="rank.%skill >= 1"',
+  'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
   // TODO requires "trained in a skill with the Recall Knowledge action"
-  'Dubious Knowledge':'Trait=Skill"',
+  'Dubious Knowledge':'Trait=General,Skill"',
   'Quick Identification':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Recognize Spell':
-    'Trait=Secret,Skill ' +
+    'Trait=Secret,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Skill Training (%skill)':'Trait=Skill Require="intelligence >= 12"',
+  'Skill Training (%skill)':'Trait=General,Skill Require="intelligence >= 12"',
   'Trick Magic Item':
-    'Trait=Manipulate,Skill ' +
+    'Trait=Manipulate,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Automatic Knowledge (%skill)':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 2",' +
       '"rank.%skill >= 2",' +
       '"features.Assurance (%skill)"',
   'Magical Shorthand':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
   'Quick Recognition':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 7",' +
       '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
       '"features.Recognize Spell"',
 
-  'Cat Fall':'Trait=Skill Require="rank.Acrobatics >= 1"',
-  'Quick Squeeze':'Trait=Skill Require="rank.Acrobatics >= 1"',
-  'Steady Balance':'Trait=Skill Require="rank.Acrobatics >= 1"',
+  'Cat Fall':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
+  'Quick Squeeze':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
+  'Steady Balance':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
   'Nimble Crawl':
-    'Trait=Skill Require="level >= 2","rank.Acrobatics >= 2"',
-  'Kip Up':'Trait=Skill Require="level >= 7","rank.Acrobatics >= 3"',
-  'Arcane Sense':'Trait=Skill Require="rank.Arcana >= 1"',
+    'Trait=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
+  'Kip Up':'Trait=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
+  'Arcane Sense':'Trait=General,Skill Require="rank.Arcana >= 1"',
   'Unified Theory':
-    'Trait=Skill Require="level >= 15","rank.Arcana >= 4"',
-  'Combat Climber':'Trait=Skill Require="rank.Athletics >= 1"',
-  'Hefty Hauler':'Trait=Skill Require="rank.Athletics >= 1"',
-  'Quick Jump':'Trait=Skill Require="rank.Athletics >= 1"',
-  'Titan Wrestler':'Trait=Skill Require="rank.Athletics >= 1"',
-  'Underwater Marauder':'Trait=Skill Require="rank.Athletics >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Arcana >= 4"',
+  'Combat Climber':'Trait=General,Skill Require="rank.Athletics >= 1"',
+  'Hefty Hauler':'Trait=General,Skill Require="rank.Athletics >= 1"',
+  'Quick Jump':'Trait=General,Skill Require="rank.Athletics >= 1"',
+  'Titan Wrestler':'Trait=General,Skill Require="rank.Athletics >= 1"',
+  'Underwater Marauder':'Trait=General,Skill Require="rank.Athletics >= 1"',
   'Powerful Leap':
-    'Trait=Skill Require="level >= 2","rank.Athletics >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
   'Rapid Mantel':
-    'Trait=Skill Require="level >= 2","rank.Athletics >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
   'Quick Climb':
-    'Trait=Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Quick Swim':
-    'Trait=Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Wall Jump':
-    'Trait=Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Cloud Jump':
-    'Trait=Skill Require="level >= 15","rank.Athletics >= 4"',
-  'Alchemical Crafting':'Trait=Skill Require="rank.Crafting >= 1"',
-  'Quick Repair':'Trait=Skill Require="rank.Crafting >= 1"',
-  'Snare Crafting':'Trait=Skill Require="rank.Crafting >= 1"',
-  'Specialty Crafting':'Trait=Skill Require="rank.Crafting >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Athletics >= 4"',
+  'Alchemical Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
+  'Quick Repair':'Trait=General,Skill Require="rank.Crafting >= 1"',
+  'Snare Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
+  'Specialty Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
   'Magical Crafting':
-    'Trait=Skill Require="level >= 2","rank.Crafting >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Crafting >= 2"',
   'Impeccable Crafting':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 7",' +
       '"rank.Crafting >= 3",' +
       '"features.Specialty Crafting"',
   'Inventor':
-    'Trait=Downtime,Skill Require="level >= 7","rank.Crafting >= 3"',
+    'Trait=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
   'Craft Anything':
-    'Trait=Skill Require="level >= 15","rank.Crafting >= 4"',
-  'Charming Liar':'Trait=Skill Require="rank.Deception >= 1"',
-  'Lengthy Diversion':'Trait=Skill Require="rank.Deception >= 1"',
-  'Lie To Me':'Trait=Skill Require="rank.Deception >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Crafting >= 4"',
+  'Charming Liar':'Trait=General,Skill Require="rank.Deception >= 1"',
+  'Lengthy Diversion':'Trait=General,Skill Require="rank.Deception >= 1"',
+  'Lie To Me':'Trait=General,Skill Require="rank.Deception >= 1"',
   'Confabulator':
-    'Trait=Skill Require="level >= 2","rank.Deception >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Quick Disguise':
-    'Trait=Skill Require="level >= 2","rank.Deception >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Slippery Secrets':
-    'Trait=Skill Require="level >= 7","rank.Deception >= 3"',
-  'Bargain Hunter':'Trait=Skill Require="rank.Diplomacy >= 1"',
-  'Group Impression':'Trait=Skill Require="rank.Diplomacy >= 1"',
-  'Hobnobber':'Trait=Skill Require="rank.Diplomacy >= 1"',
+    'Trait=General,Skill Require="level >= 7","rank.Deception >= 3"',
+  'Bargain Hunter':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
+  'Group Impression':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
+  'Hobnobber':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
   'Glad-Hand':
-    'Trait=Skill Require="level >= 2","rank.Diplomacy >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Diplomacy >= 2"',
   'Shameless Request':
-    'Trait=Skill Require="level >= 7","rank.Diplomacy >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
   'Legendary Negotiation':
-    'Trait=Skill Require="level >= 15","rank.Diplomacy >= 4"',
-  'Group Coercion':'Trait=Skill Require="rank.Intimidation >= 1"',
-  'Intimidating Glare':'Trait=Skill Require="rank.Intimidation >= 1"',
-  'Quick Coercion':'Trait=Skill Require="rank.Intimidation >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
+  'Group Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
+  'Intimidating Glare':'Trait=General,Skill Require="rank.Intimidation >= 1"',
+  'Quick Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require="level >= 2","strength >= 16","rank.Intimidation >= 2"',
   'Lasting Coercion':
-    'Trait=Skill Require="level >= 2","rank.Intimidation >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
   'Battle Cry':
-    'Trait=Skill Require="level >= 7","rank.Intimidation >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Terrified Retreat':
-    'Trait=Skill Require="level >= 7","rank.Intimidation >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Scare To Death':
-    'Trait=Emotion,Fear,Incapacitation,Skill ' +
+    'Trait=Emotion,Fear,Incapacitation,General,Skill ' +
     'Require="level >= 15","rank.Intimidation >= 4"',
-  'Additional Lore (%lore)':'Trait=Skill Require="rank.Lore >= 1"',
-  'Experienced Professional':'Trait=Skill Require="rank.Lore >= 1"',
+  'Additional Lore (%lore)':'Trait=General,Skill Require="rank.Lore >= 1"',
+  'Experienced Professional':'Trait=General,Skill Require="rank.Lore >= 1"',
   'Unmistakable Lore':
-    'Trait=Skill Require="level >= 2","rank.Lore >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Lore >= 2"',
   'Legendary Professional':
-    'Trait=Skill Require="level >= 15","rank.Lore >= 4"',
+    'Trait=General,Skill Require="level >= 15","rank.Lore >= 4"',
   'Battle Medicine':
-    'Trait=Healing,Manipulate,Skill Require="rank.Medicine >= 1"',
+    'Trait=Healing,Manipulate,General,Skill Require="rank.Medicine >= 1"',
   'Continual Recovery':
-    'Trait=Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Robust Recovery':
-    'Trait=Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Ward Medic':
-    'Trait=Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Legendary Medic':
-    'Trait=Skill Require="level >= 15","rank.Medicine >= 4"',
-  'Natural Medicine':'Trait=Skill Require="rank.Nature >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Medicine >= 4"',
+  'Natural Medicine':'Trait=General,Skill Require="rank.Nature >= 1"',
   'Train Animal':
-    'Trait=Downtime,Manipulate,Skill Require="rank.Nature >= 1"',
+    'Trait=Downtime,Manipulate,General,Skill Require="rank.Nature >= 1"',
   'Bonded Animal':
-    'Trait=Downtime,Skill Require="level >= 2","rank.Nature >= 2"',
-  'Oddity Identification':'Trait=Skill Require="rank.Occultism >= 1"',
+    'Trait=Downtime,General,Skill Require="level >= 2","rank.Nature >= 2"',
+  'Oddity Identification':'Trait=General,Skill Require="rank.Occultism >= 1"',
   'Bizarre Magic':
-    'Trait=Skill Require="level >= 7","rank.Occultism >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Occultism >= 3"',
   'Fascinating Performance':
-    'Trait=Skill Require="rank.Performance >= 1"',
+    'Trait=General,Skill Require="rank.Performance >= 1"',
   'Impressive Performance':
-    'Trait=Skill Require="rank.Performance >= 1"',
-  'Virtuosic Performer':'Trait=Skill Require="rank.Performance >= 1"',
+    'Trait=General,Skill Require="rank.Performance >= 1"',
+  'Virtuosic Performer':'Trait=General,Skill Require="rank.Performance >= 1"',
   'Legendary Performer':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Performance >= 4",' +
       '"features.Virtuosic Performer"',
-  'Student Of The Canon':'Trait=Skill Require="rank.Religion >= 1"',
+  'Student Of The Canon':'Trait=General,Skill Require="rank.Religion >= 1"',
   'Divine Guidance':
-    'Trait=Skill Require="level >= 15","rank.Religion >= 4"',
-  'Courtly Graces':'Trait=Skill Require="rank.Society >= 1"',
-  'Multilingual':'Trait=Skill Require="rank.Society >= 1"',
-  'Read Lips':'Trait=Skill Require="rank.Society >= 1"',
-  'Sign Language':'Trait=Skill Require="rank.Society >= 1"',
-  'Streetwise':'Trait=Skill Require="rank.Society >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Religion >= 4"',
+  'Courtly Graces':'Trait=General,Skill Require="rank.Society >= 1"',
+  'Multilingual':'Trait=General,Skill Require="rank.Society >= 1"',
+  'Read Lips':'Trait=General,Skill Require="rank.Society >= 1"',
+  'Sign Language':'Trait=General,Skill Require="rank.Society >= 1"',
+  'Streetwise':'Trait=General,Skill Require="rank.Society >= 1"',
   'Connections':
-    'Trait=Uncommon,Skill ' +
+    'Trait=Uncommon,General,Skill ' +
     'Require=' +
       '"level >= 2",' +
       '"rank.Society >= 2",' +
       '"features.Courtly Graces"',
   'Legendary Codebreaker':
-    'Trait=Skill Require="level >= 15","rank.Society >= 4"',
+    'Trait=General,Skill Require="level >= 15","rank.Society >= 4"',
   'Legendary Linguist':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Society >= 4",' +
       '"features.Multilingual"',
-  'Experienced Smuggler':'Trait=Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Rubble)':'Trait=Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Snow)':'Trait=Skill Require="rank.Stealth >= 1"',
+  'Experienced Smuggler':'Trait=General,Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Rubble)':'Trait=General,Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Snow)':'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Underbrush)':
-    'Trait=Skill Require="rank.Stealth >= 1"',
+    'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Quiet Allies':
-    'Trait=Skill Require="level >= 2","rank.Stealth >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Stealth >= 2"',
   'Foil Senses':
-    'Trait=Skill Require="level >= 7","rank.Stealth >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Swift Sneak':
-    'Trait=Skill Require="level >= 7","rank.Stealth >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Legendary Sneak':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Stealth >= 4",' +
       '"features.Swift Sneak"',
-  'Experienced Tracker':'Trait=Skill Require="rank.Survival >= 1"',
-  'Forager':'Trait=Skill Require="rank.Survival >= 1"',
-  'Survey Wildlife':'Trait=Skill Require="rank.Survival >= 1"',
+  'Experienced Tracker':'Trait=General,Skill Require="rank.Survival >= 1"',
+  'Forager':'Trait=General,Skill Require="rank.Survival >= 1"',
+  'Survey Wildlife':'Trait=General,Skill Require="rank.Survival >= 1"',
   'Terrain Expertise (%terrain)':
-    'Trait=Skill Require="rank.Survival >= 1"',
+    'Trait=General,Skill Require="rank.Survival >= 1"',
   'Planar Survival':
-    'Trait=Skill Require="level >= 7","rank.Survival >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Survival >= 3"',
   'Legendary Survivalist':
-    'Trait=Skill Require="level >= 15","rank.Survival >= 4"',
-  'Pickpocket':'Trait=Skill Require="rank.Thievery >= 1"',
-  'Subtle Theft':'Trait=Skill Require="rank.Thievery >= 1"',
+    'Trait=General,Skill Require="level >= 15","rank.Survival >= 4"',
+  'Pickpocket':'Trait=General,Skill Require="rank.Thievery >= 1"',
+  'Subtle Theft':'Trait=General,Skill Require="rank.Thievery >= 1"',
   'Wary Disarmament':
-    'Trait=Skill Require="level >= 2","rank.Thievery >= 2"',
+    'Trait=General,Skill Require="level >= 2","rank.Thievery >= 2"',
   'Quick Unlock':
-    'Trait=Skill Require="level >= 7","rank.Thievery >= 3"',
+    'Trait=General,Skill Require="level >= 7","rank.Thievery >= 3"',
   'Legendary Thief':
-    'Trait=Skill ' +
+    'Trait=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Thievery >= 4",' +
@@ -10228,6 +10227,10 @@ Pathfinder2E.identityRules = function(
   );
   QuilvynRules.validAllocationRules
     (rules, 'level', 'level', 'Sum "^levels\\."');
+  QuilvynRules.validAllocationRules
+    (rules, 'AncestryFeats', 'featCount.Ancestry', 'sumAncestryFeats');
+  QuilvynRules.validAllocationRules
+    (rules, 'ClassFeats', 'featCount.Class', 'sumClassFeats');
 
 };
 
@@ -10335,6 +10338,31 @@ Pathfinder2E.talentRules = function(
     (rules, 'language', 'languageCount', 'languagesSpoken');
   QuilvynRules.validAllocationRules
     (rules, 'skillIncrease', 'choiceCount.Skill', 'skillIncreasesAllocated');
+  // Because skill feats are also general feats, the number of selected general
+  // feats must equal the sum of featCount.{General,Skill}, and the number of
+  // selected skill feats may validly exceed featCount.Skill
+  rules.defineRule('generalAndSkillFeatCount',
+    'featCount.General', '+=', null,
+    'featCount.Skill', '+=', null
+  );
+  QuilvynRules.validAllocationRules
+    (rules, 'generalAndSkillFeat', 'generalAndSkillFeatCount',
+     'sumGeneralFeats');
+  let note = 'validationNotes.skillFeatAllocation';
+  rules.defineChoice('notes', note + ':%1 available vs. %2 allocated');
+  rules.defineRule(note + '.1',
+    '', '=', '0',
+    'featCount.Skill', '+', null
+  );
+  rules.defineRule(note + '.2',
+    '', '=', '0',
+    'sumSkillFeats', '+', null
+  );
+  rules.defineRule(note,
+    note + '.1', '=', '-source',
+    note + '.2', '+=', null,
+    '', 'v', '0'
+  );
 
 };
 
@@ -11961,9 +11989,6 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
   rules.defineRule('features.' + name, 'feats.' + name, '=', null);
   traits.forEach(t => {
     rules.defineRule('sum' + t + 'Feats', 'feats.' + name, '+=', null);
-    if(['Ancestry', 'Class', 'General', 'Skill'].includes(t))
-      QuilvynRules.validAllocationRules
-        (rules, t + 'Feats', 'featCount.' + t, 'sum' + t + 'Feats');
     if(t == 'Archetype') {
       let classes =
         traits.filter(t => !t.match(/Archetype|Dedication|Multiclass/));
