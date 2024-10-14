@@ -11929,6 +11929,10 @@ Pathfinder2E.deityRules = function(
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
   );
 
+  rules.defineRule('deityWeaponRank',
+    'deityWeapon', '=', 'null',
+    'rank.' + weapon, '=', 'dict.deityWeapon=="' + weapon + '" ? source : null'
+  );
   rules.defineRule('training.' + skill,
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
   );
@@ -11937,7 +11941,6 @@ Pathfinder2E.deityRules = function(
     'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
     'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
   );
-
   rules.defineRule('weaponDieSidesBonus.' + weapon,
     'combatNotes.deificWeapon', '+=', 'source=="' + weapon + '" ? 2 : null',
     'combatNotes.deadlySimplicity', '+=', 'source=="' + weapon + '" ? 2 : null'
@@ -12661,18 +12664,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Ranger Dedication') {
     rules.defineRule
       ('features.Hunt Prey', 'featureNotes.rangerDedication', '=', '1');
-  } else if(name == 'Replenishment Of War') {
-    rules.defineRule('deityWeaponRank',
-      'levels.Cleric', '=', '0',
-      'deityWeapon', '=', 'null'
-    );
-    let allDeities = rules.getChoices('deitys');
-    for(let d in allDeities) {
-      let w = QuilvynUtils.getAttrValue(allDeities[d], 'Weapon');
-      rules.defineRule('deityWeaponRank',
-        'rank.' + w, '^', 'dict.deityWeapon=="' + w + '" ? source : null'
-      );
-    }
   } else if(name == 'Rogue Dedication') {
     rules.defineRule
       ('features.Surprise Attack', 'featureNotes.rangerDedication', '=', '1');
