@@ -454,18 +454,18 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Alchemist)",' +
-      '"1:Alchemy","1:Infused Reagents","1:Advanced Alchemy","1:Quick Alchemy",' +
+      '1:Alchemy,"1:Infused Reagents","1:Advanced Alchemy","1:Quick Alchemy",' +
       '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
       '"1:Alchemist Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Field Discovery","5:Powerful Alchemy",' +
       '"7:Alchemical Weapon Expertise","7:Iron Will","7:Perpetual Infusions",' +
-      '"9:Alchemical Expertise","9:Alertness","9:Double Brew",' +
-      '"11:Juggernaut","11:Perpetual Potency",' +
+      '"9:Alchemical Expertise",9:Alertness,"9:Double Brew",' +
+      '11:Juggernaut,"11:Perpetual Potency",' +
       '"features.Bomber ? 13:Greater Field Discovery (Bomber)",' +
       '"features.Chirurgeon ? 13:Greater Field Discovery (Chirurgeon)",' +
       '"features.Mutagenist ? 13:Greater Field Discovery (Mutagenist)",' +
       '"13:Medium Armor Expertise","13:Weapon Specialization",' +
-      '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
+      '"15:Alchemical Alacrity",15:Evasion,"17:Alchemical Mastery",' +
       '"17:Perpetual Perfection","19:Medium Armor Mastery" ' +
     'Selectables=' +
       '"1:Bomber:Research Field",' +
@@ -481,19 +481,19 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
-      '"1:Rage","1:Instinct","1:Barbarian Feats",' +
+      '1:Rage,1:Instinct,"1:Barbarian Feats",' +
       '"features.Animal Instinct ? 1:Bestial Rage",' +
       '"features.Dragon Instinct ? 1:Draconic Rage",' +
       '"features.Giant Instinct ? 1:Titan Mauler",' +
       '"features.Spirit Instinct ? 1:Spirit Rage",' +
       '"2:Skill Feats","3:Deny Advantage","3:General Feats",' +
-      '"3:Skill Increases","5:Brutality","7:Juggernaut",' +
+      '"3:Skill Increases",5:Brutality,7:Juggernaut,' +
       '"7:Specialization Ability","7:Weapon Specialization",' +
       '"9:Lightning Reflexes","9:Raging Resistance","11:Mighty Rage",' +
       '"13:Greater Juggernaut","13:Medium Armor Expertise","13:Weapon Fury",' +
       '"15:Greater Weapon Specialization","15:Indomitable Will",' +
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
-      '"19:Devastator" ' +
+      '19:Devastator ' +
     'Selectables=' +
       '"1:Fury Instinct:Instinct",' +
       '"1:Giant Instinct:Instinct",' +
@@ -527,16 +527,16 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Occult)",' +
-      '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
+      '"1:Occult Spellcasting","1:Composition Spells",1:Muses,' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
       '"3:Lightning Reflexes","3:Signature Spells","3:Skill Increases",' +
-      '"7:Expert Spellcaster","9:Great Fortitude","9:Resolve",' +
+      '"7:Expert Spellcaster","9:Great Fortitude",9:Resolve,' +
       '"11:Bard Weapon Expertise","11:Vigilant Senses",' +
       '"13:Light Armor Expertise","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Enigma:Muse","1:Maestro:Muse","1:Polymath:Muse" ' +
+      '1:Enigma:Muse,1:Maestro:Muse,1:Polymath:Muse ' +
     'SpellSlots=' +
       'O0:5@1,' +
       'O1:2@1;3@2,' +
@@ -563,7 +563,7 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Deity","1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '1:Deity,1:Cause,"1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
       '"features.Liberator ? 1:Liberating Step",' +
       '"features.Paladin ? 1:Retributive Strike",' +
@@ -575,8 +575,7 @@ Pathfinder2E.CLASSES = {
       '"features.Liberator ? 9:Divine Smite (Liberator)",' +
       '"features.Paladin ? 9:Divine Smite (Paladin)",' +
       '"features.Redeemer ? 9:Divine Smite (Redeemer)",' +
-      '"9:Juggernaut",' +
-      '"9:Lightning Reflexes","11:Alertness","11:Divine Will",' +
+      '9:Juggernaut,"9:Lightning Reflexes",11:Alertness,"11:Divine Will",' +
       '"features.Liberator ? 11:Exalt (Liberator)",' +
       '"features.Paladin ? 11:Exalt (Paladin)",' +
       '"features.Redeemer ? 11:Exalt (Redeemer)",' +
@@ -602,9 +601,9 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Anathema","1:Deity","1:Divine Spellcasting","1:Divine Font",' +
-      '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
-      '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
+      '1:Anathema,1:Deity,"1:Divine Spellcasting","1:Divine Font",' +
+      '1:Doctrine,"2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"3:Skill Increases",5:Alertness,9:Resolve,"11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
       '"1:Healing Font:Divine Font","1:Harmful Font:Divine Font",' +
@@ -631,18 +630,18 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Primal)",' +
-      '"1:Primal Spellcasting","1:Anathema","1:Druidic Language",' +
+      '"1:Primal Spellcasting",1:Anathema,"1:Druidic Language",' +
       '"1:Druidic Order","1:Shield Block","1:Wild Empathy","2:Druid Feats",' +
-      '"2:Skill Feats","3:Alertness","3:General Feats","3:Great Fortitude",' +
+      '"2:Skill Feats",3:Alertness,"3:General Feats","3:Great Fortitude",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
-      '"11:Druid Weapon Expertise","11:Resolve","13:Medium Armor Expertise",' +
+      '"11:Druid Weapon Expertise",11:Resolve,"13:Medium Armor Expertise",' +
       '"13:Weapon Specialization","15:Master Spellcaster",' +
       '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
     'Selectables=' +
-      '"1:Animal:Order",' +
-      '"1:Leaf:Order",' +
-      '"1:Storm:Order",' +
-      '"1:Wild:Order" ' +
+      '1:Animal:Order,' +
+      '1:Leaf:Order,' +
+      '1:Storm:Order,' +
+      '1:Wild:Order ' +
     'SpellSlots=' +
       'P0:5@1,' +
       'P1:2@1;3@2,' +
@@ -669,11 +668,11 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Fighter)",' +
       '"1:Attack Of Opportunity","1:Shield Block","1:Fighter Feats",' +
-      '"2:Skill Feats","3:Bravery","3:General Feats","3:Skill Increases",' +
+      '"2:Skill Feats",3:Bravery,"3:General Feats","3:Skill Increases",' +
       '"5:Fighter Weapon Mastery","7:Battlefield Surveyor",' +
-      '"7:Weapon Specialization","9:Combat Flexibility","9:Juggernaut",' +
+      '"7:Weapon Specialization","9:Combat Flexibility",9:Juggernaut,' +
       '"11:Armor Expertise","11:Fighter Expertise","13:Weapon Legend",' +
-      '"15:Evasion","15:Greater Weapon Specialization",' +
+      '15:Evasion,"15:Greater Weapon Specialization",' +
       '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
     'Selectables=' +
       '"1:Dexterity:Key Ability","1:Strength:Key Ability"',
@@ -727,7 +726,7 @@ Pathfinder2E.CLASSES = {
       '"3:General Feats","3:Iron Will","3:Skill Increases",' +
       '"5:Ranger Weapon Expertise","5:Trackless Step","7:Evasion",' +
       '"7:Vigilant Senses","7:Weapon Specialization","9:Nature\'s Edge",' +
-      '"9:Ranger Expertise","11:Juggernaut","11:Medium Armor Expertise",' +
+      '"9:Ranger Expertise",11:Juggernaut,"11:Medium Armor Expertise",' +
       '"11:Wild Stride","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","15:Improved Evasion",' +
       '"15:Incredible Senses","17:Masterful Hunter","19:Second Skin",' +
@@ -756,7 +755,7 @@ Pathfinder2E.CLASSES = {
       '"1:Class Trained (Rogue)",' +
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"1:Rogue Feats","1:Skill Feats","2:Skill Increases",' +
-      '"3:Deny Advantage","3:General Feats","5:Weapon Tricks","7:Evasion",' +
+      '"3:Deny Advantage","3:General Feats","5:Weapon Tricks",7:Evasion,' +
       '"7:Vigilant Senses","7:Weapon Specialization","9:Debilitating Strike",' +
       '"9:Great Fortitude","11:Rogue Expertise","13:Improved Evasion",' +
       '"13:Incredible Senses","13:Light Armor Expertise","13:Master Tricks",' +
@@ -766,9 +765,9 @@ Pathfinder2E.CLASSES = {
       '"1:Dexterity:Key Ability",' +
       '"features.Ruffian ? 1:Strength:Key Ability",' +
       '"features.Scoundrel ? 1:Charisma:Key Ability",' +
-      '"1:Ruffian:Racket",' +
-      '"1:Scoundrel:Racket",' +
-      '"1:Thief:Racket"',
+      '1:Ruffian:Racket,' +
+      '1:Scoundrel:Racket,' +
+      '1:Thief:Racket',
   'Sorcerer':
     'Ability=charisma HitPoints=6 ' +
     'Features=' +
@@ -778,18 +777,18 @@ Pathfinder2E.CLASSES = {
       '"1:Sorcerer Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
-      '"1:Bloodline","1:Sorcerer Spellcasting","2:Skill Feats",' +
+      '1:Bloodline,"1:Sorcerer Spellcasting","2:Skill Feats",' +
       '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
       '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
-      '"9:Lightning Reflexes","11:Alertness","11:Sorcerer Weapon Expertise",' +
+      '"9:Lightning Reflexes",11:Alertness,"11:Sorcerer Weapon Expertise",' +
       '"13:Defensive Robes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
+      '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Aberrant:Bloodline","1:Angelic:Bloodline","1:Demonic:Bloodline",' +
-      '"1:Diabolic:Bloodline","1:Draconic:Bloodline","1:Elemental:Bloodline",' +
-      '"1:Fey:Bloodline","1:Hag:Bloodline","1:Imperial:Bloodline",' +
-      '"1:Undead:Bloodline" ' +
+      '1:Aberrant:Bloodline,1:Angelic:Bloodline,1:Demonic:Bloodline,' +
+      '1:Diabolic:Bloodline,1:Draconic:Bloodline,1:Elemental:Bloodline,' +
+      '1:Fey:Bloodline,1:Hag:Bloodline,1:Imperial:Bloodline,' +
+      '1:Undead:Bloodline ' +
     // SpellSlots depends on bloodline
     'SpellSlots=',
   'Wizard':
@@ -805,20 +804,20 @@ Pathfinder2E.CLASSES = {
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
-      '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
+      '"9:Magical Fortitude",11:Alertness,"11:Wizard Weapon Expertise",' +
       '"13:Defensive Robes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster","17:Resolve","19:Archwizard\'s Spellcraft",' +
+      '"15:Master Spellcaster",17:Resolve,"19:Archwizard\'s Spellcraft",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Abjuration:Specialization",' +
-      '"1:Conjuration:Specialization",' +
-      '"1:Divination:Specialization",' +
-      '"1:Enchantment:Specialization",' +
-      '"1:Evocation:Specialization",' +
-      '"1:Illusion:Specialization",' +
-      '"1:Necromancy:Specialization",' +
-      '"1:Transmutation:Specialization",' +
-      '"1:Universalist:Specialization",' +
+      '1:Abjuration:Specialization,' +
+      '1:Conjuration:Specialization,' +
+      '1:Divination:Specialization,' +
+      '1:Enchantment:Specialization,' +
+      '1:Evocation:Specialization,' +
+      '1:Illusion:Specialization,' +
+      '1:Necromancy:Specialization,' +
+      '1:Transmutation:Specialization,' +
+      '1:Universalist:Specialization,' +
       '"1:Improved Familiar Attunement:Thesis",' +
       '"1:Metamagical Experimentation:Thesis",' +
       '"1:Spell Blending:Thesis",' +
