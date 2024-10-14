@@ -93,7 +93,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
   'levels', 'boosts', 'features', 'feats', 'skills', 'languages',
-  'armor', 'weapons', 'shield', 'spells', 'boosts'
+  'armor', 'weapons', 'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard'];
 
@@ -122,12 +122,12 @@ Pathfinder2E.ANCESTRIES = {
     'Size=Medium ' +
     'Features=' +
       '1:Slow,' +
-      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Constitution; Wisdom)",' +
-      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Constitution; Wisdom)",' +
+      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats",' +
+      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage",' +
       '"features.Ancient-Blooded Dwarf ? 1:Call On Ancient Blood" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
@@ -139,12 +139,12 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=6 ' +
     'Size=Medium ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
-      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
+      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Constitution)",' +
-      '"1:Low-Light Vision","1:Ancestry Feats" ' +
+      '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
     'Selectables=' +
       '"1:Arctic Elf:Heritage","1:Cavern Elf:Heritage","1:Seer Elf:Heritage",' +
       '"1:Whisper Elf:Heritage","1:Woodland Elf:Heritage" ' +
@@ -154,12 +154,12 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=8 ' +
     'Size=Small ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
-      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
+      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
-      '"1:Low-Light Vision",1:Small,"1:Ancestry Feats" ' +
+      '"1:Low-Light Vision",1:Small,"1:Ancestry Feats","1:Gnome Heritage" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage","1:Fey-Touched Gnome:Heritage",' +
       '"1:Sensate Gnome:Heritage","1:Umbral Gnome:Heritage",' +
@@ -170,12 +170,12 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=6 ' +
     'Size=Small ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
-      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
+      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Wisdom)",' +
-      '1:Darkvision,1:Small,"1:Ancestry Feats" ' +
+      '1:Darkvision,1:Small,"1:Ancestry Feats","1:Goblin Heritage" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage","1:Irongut Goblin:Heritage",' +
       '"1:Razortooth Goblin:Heritage","1:Snow Goblin:Heritage",' +
@@ -185,12 +185,12 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=6 ' +
     'Size=Small ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s..standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6..standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
-      '"abilityGeneration =~ \'10s..two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6..one free\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
+      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
+      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
-      '"1:Keen Eyes",1:Small,"1:Ancestry Feats" ' +
+      '"1:Keen Eyes",1:Small,"1:Ancestry Feats","1:Halfling Heritage" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage","1:Hillock Halfling:Heritage",' +
       '"1:Nomadic Halfling:Heritage","1:Twilight Halfling:Heritage",' +
@@ -203,7 +203,7 @@ Pathfinder2E.ANCESTRIES = {
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 2 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"1:Ancestry Feats" ' +
+      '"1:Ancestry Feats","1:Human Heritage" ' +
     'Selectables=' +
       '1:Half-Elf:Heritage,1:Half-Orc:Heritage,' +
       '"1:Skilled Heritage Human:Heritage",' +
@@ -2838,18 +2838,24 @@ Pathfinder2E.FEATURES = {
   'Death Warden Dwarf':
     'Section=save ' +
     'Note="Successful saves vs. necromancy effects are critical successes"',
+  'Dwarf Heritage':'Section=feature Note="1 selection"',
+  'Elf Heritage':'Section=feature Note="1 selection"',
   'Fey-Touched Gnome':
     'Section=magic ' +
     'Note="May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
+  'Gnome Heritage':'Section=feature Note="1 selection"',
+  'Goblin Heritage':'Section=feature Note="1 selection"',
   'Gutsy Halfling':
     'Section=save Note="Successful saves vs. emotion are critical successes"',
   'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Halfling Heritage':'Section=feature Note="1 selection"',
   'Hillock Halfling':
     'Section=combat Note="Regains +%{level} Hit Points from rest or treatment"',
+  'Human Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
@@ -10629,8 +10635,9 @@ Pathfinder2E.ancestryRules = function(
     QuilvynRules.prerequisiteRules
       (rules, 'validation', prefix + 'Ancestry', ancestryLevel, requires);
 
-  rules.defineRule
-    ('selectableFeatureCount.' + name + ' (Heritage)', ancestryLevel, '=', '1');
+  rules.defineRule('selectableFeatureCount.' + name + ' (Heritage)',
+    'featureNotes.' + prefix + 'Heritage', '=', '1'
+  );
 
   if(languages.length > 0) {
     rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
@@ -11916,6 +11923,7 @@ Pathfinder2E.deityRules = function(
  * #advancedSpell# designate the spells associated with the domain.
  */
 Pathfinder2E.domainRules = function(rules, name, spell, advanceSpell) {
+  // TODO
 };
 
 /*
