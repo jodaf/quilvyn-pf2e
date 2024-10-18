@@ -127,8 +127,7 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
       '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
-      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage",' +
-      '"features.Ancient-Blooded Dwarf ? 1:Call On Ancient Blood" ' +
+      '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
       '"1:Forge Dwarf:Heritage","1:Rock Dwarf:Heritage",' +
@@ -10269,7 +10268,7 @@ Pathfinder2E.talentRules = function(
   }
   for(let t in terrains)
     rules.choiceRules(rules, 'Terrain', t, terrains[t]);
-  // feats and features after skills because those that contain %skill
+  // feats and features after skills because some contain %skill
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
       for(let c in rules.getChoices(matchInfo[2] + 's')) {
@@ -10599,13 +10598,15 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with ancestry #name#, which has the
- * list of hard prerequisites #requires#. #features# and #heritages# list
- * associated features and available heritages, and #languages# any automatic
- * languages. #hitPoints# gives the number of HP granted at level 1, and #size#
- * specifies the size of characters with the ancestry.
+ * list of hard prerequisites #requires#. #hitPoints# gives the number of HP
+ * granted at level 1, and #size# specifies the size of characters with the
+ * ancestry. * #features# and #selectables# list associated automatic and
+ * selectable features, #traits# any traits granted by the ancestry, and
+ * #languages# any automatic languages.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, hitPoints, size, features, heritages, traits, languages
+  rules, name, requires, hitPoints, size, features, selectables, traits,
+  languages
 ) {
 
   if(!name) {
@@ -10626,8 +10627,8 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad features list "' + features + '" for ancestry ' + name);
     return;
   }
-  if(!Array.isArray(heritages)) {
-    console.log('Bad heritages list "' + heritages + '" for ancestry ' + name);
+  if(!Array.isArray(selectables)) {
+    console.log('Bad selectables list "' + selectables + '" for ancestry ' + name);
     return;
   }
   if(!Array.isArray(traits)) {
@@ -10665,20 +10666,29 @@ Pathfinder2E.ancestryRules = function(
   }
 
   Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
-  Pathfinder2E.featureListRules(rules, heritages, name, ancestryLevel, true);
-  heritages.forEach(h => {
-    h = h.replace(/^\d+:/, '').replace(/:.*/, '');
-    rules.defineRule('heritage', 'features.' + h, '=', '"' + h + '"');
-    rules.defineRule(prefix + 'SelectedHeritageCount',
-      'selectableFeatures.' + name + ' - ' + h, '+=', '1'
+  Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
+
+  let validatedSelectionTypes = [];
+  selectables.forEach(s => {
+    let pieces = s.split(':');
+    let selectionType = pieces[2].replaceAll(' ', '');
+    rules.defineRule(prefix + 'Selected' + selectionType + 'Count',
+      'selectableFeatures.' + name + ' - ' + pieces[1], '+=', '1'
     );
+    if(!validatedSelectionTypes.includes(selectionType)) {
+      QuilvynRules.validAllocationRules
+        (rules, prefix + selectionType, 'selectableFeatureCount.' + name + ' (' + pieces[2] + ')', prefix + 'Selected' + selectionType + 'Count');
+      validatedSelectionTypes.push(selectionType);
+    }
+    if(selectionType == 'Heritage')
+      rules.defineRule
+        ('heritage', 'features.' + pieces[1], '=', '"' + pieces[1] + '"');
   });
+
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
   rules.defineRule('size', ancestryLevel, '=', '"' + size + '"');
-  QuilvynRules.validAllocationRules
-    (rules, prefix + 'Heritage', 'selectableFeatureCount.' + name + ' (Heritage)', prefix + 'SelectedHeritageCount');
 
 };
 
@@ -10692,7 +10702,7 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       'abilityNotes.unburdenedIron', '^', '0'
     );
     rules.defineRule('features.Call On Ancient Blood',
-      'featureNotes.ancient-BloodedDwarf', '=', 'null' // italics
+      'featureNotes.ancient-BloodedDwarf', '=', '1'
     );
     rules.defineRule
       ('spells.Meld Into Stone', 'magicNotes.stonewalker', '=', '1');
