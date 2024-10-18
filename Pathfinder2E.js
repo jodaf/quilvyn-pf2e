@@ -10003,43 +10003,39 @@ Pathfinder2E.RANK_NAMES =
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
 
+  rules.defineChoice('abilgens',
+    'All 10s; standard ancestry boosts', 'All 10s; two free ancestry boosts',
+    'Each 4d6, standard ancestry boosts', 'Each 4d6, one free ancestry boost'
+  );
+  rules.defineChoice('notes',
+    'validationNotes.maximumInitialAbility:' +
+      'Abilities may not exceed 18 until level >= 2'
+  );
+
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
     let baseAbility = 'base' + a.charAt(0).toUpperCase() + a.substring(1);
     rules.defineRule(a, baseAbility, '=', null,
       'abilityBoosts.' + a, '+', 'source * 2 - Math.max(Math.floor((dict["' + baseAbility + '"] + source * 2 - 20) / 2), 0)'
     );
+    rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
     rules.defineRule
-      (a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
-    rules.defineRule(a + '.1',
-      a + 'Modifier', '=', 'source>=0 ? "+" + source : source'
-    );
+      (a + '.1', a + 'Modifier', '=', 'QuilvynUtils.signed(source)');
     rules.defineRule
       ('abilityBoostsAllocated', 'abilityBoosts.' + a, '+=', null);
-  }
-
-  rules.defineChoice('abilgens',
-    'All 10s; standard ancestry boosts', 'All 10s; two free ancestry boosts',
-    'Each 4d6, standard ancestry boosts', 'Each 4d6, one free ancestry boost'
-  );
-  rules.defineRule('combatNotes.constitutionHitPointsAdjustment',
-    'constitutionModifier', '=', null,
-    'level', '*', null
-  );
-  rules.defineRule
-    ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
-  QuilvynRules.validAllocationRules
-    (rules, 'abilityBoost', 'choiceCount.Ability', 'abilityBoostsAllocated');
-  rules.defineChoice('notes',
-    'validationNotes.maximumInitialAbility:Abilities may not exceed 18 until level >= 2'
-  );
-  rules.defineRule('validationNotes.maximumInitialAbility',
-    'level', '?', 'source == 1'
-  );
-  for(let a in abilities) {
     rules.defineRule
       ('validationNotes.maximumInitialAbility', a, '=', 'source>18 ? 1 : null');
   }
+
+  rules.defineRule('abilityNotes.abilityBoosts',
+    'level', '=', '4 + Math.floor(source / 5) * 4'
+  );
+  rules.defineRule('speed', '', '=', '25');
+  rules.defineRule
+    ('validationNotes.maximumInitialAbility', 'level', '?', 'source == 1');
+
+  QuilvynRules.validAllocationRules
+    (rules, 'abilityBoost', 'choiceCount.Ability', 'abilityBoostsAllocated');
 
 };
 
@@ -10052,6 +10048,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     (shields, ['Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP']);
   QuilvynUtils.checkAttrTable
     (weapons, ['Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Trait', 'Range']);
+
+  rules.defineChoice('notes',
+    'abilityNotes.armorSpeedPenalty:%V Speed',
+    'armorClass:%V (dexterity%1; %2)',
+    'shield:%V%1%2%3%4',
+    'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
+  );
 
   for(let a in armors)
     rules.choiceRules(rules, 'Armor', a, armors[a]);
@@ -10073,12 +10076,6 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.choiceRules(rules, 'Weapon', w, weapons[w]);
   }
 
-  rules.defineChoice('notes',
-    'abilityNotes.armorSpeedPenalty:%V Speed',
-    'armorClass:%V (dexterity%1; %2)',
-    'shield:%V%1%2%3%4',
-    'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
-  );
   rules.defineRule('abilityNotes.armorSpeedPenalty',
     'armorSpeedReduction', '=', null,
     'armorStrengthRequirement', '=', 'null',
@@ -10100,25 +10097,31 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     'dexterityModifier', '=', null,
     'armorDexterityCap', 'v', null
   );
+  rules.defineRule('combatNotes.constitutionHitPointsAdjustment',
+    'constitutionModifier', '=', null,
+    'level', '*', null
+  );
   rules.defineRule
     ('combatNotes.dexterityAttackAdjustment', 'dexterityModifier', '=', null);
   rules.defineRule
     ('combatNotes.strengthAttackAdjustment', 'strengthModifier', '=', null);
+  rules.defineRule
+    ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   // For weapons with the finesse trait
+  rules.defineRule('maxStrOrDex',
+    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
+  );
   rules.defineRule('maxStrOrDexModifier',
     'strengthModifier', '=', null,
     'dexterityModifier', '^', null
   );
-  rules.defineRule('maxStrOrDex',
-    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
+  rules.defineRule('proficiencyBonus.Armor',
+    'rank.Armor', '=', '2 * source',
+    'proficiencyLevelBonus.Armor', '+', null
   );
   rules.defineRule('proficiencyLevelBonus.Armor',
     'rank.Armor', '=', 'source>0 ? 0 : null',
     'level', '+', null
-  );
-  rules.defineRule('proficiencyBonus.Armor',
-    'rank.Armor', '=', '2 * source',
-    'proficiencyLevelBonus.Armor', '+', null
   );
   rules.defineRule('rank.Armor', 'armorCategory', '=', '0');
   ['Unarmored Defense', 'Light Armor', 'Medium Armor', 'Heavy Armor'].forEach(a => {
@@ -10128,11 +10131,6 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.defineRule('training.' + a, '', '=', '0');
     rules.defineRule('rank.' + a, 'training.' + a, '=', null);
   });
-  rules.defineRule('skillNotes.armorSkillPenalty',
-    'armorCheckPenalty', '=', null,
-    'armorStrengthRequirement', '=', 'null',
-    'strength', '?', 'source<dict["armorStrengthRequirement"]'
-  );
   rules.defineRule('shield.1',
     '', '=', '""',
     'shieldACBonus', '=', 'source>0 ? " (+" + source + " AC when raised" : ""'
@@ -10148,6 +10146,11 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('shield.4',
     '', '=', '""',
     'shieldACBonus', '=', 'source>0 ? ")" : ""'
+  );
+  rules.defineRule('skillNotes.armorSkillPenalty',
+    'armorCheckPenalty', '=', null,
+    'armorStrengthRequirement', '=', 'null',
+    'strength', '?', 'source<dict["armorStrengthRequirement"]'
   );
   rules.defineRule('speed', 'abilityNotes.armorSpeedPenalty', '+', null);
 
@@ -10186,7 +10189,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Size', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
-    (classes, ['Require', 'HitPoints', 'Ability', 'Attack', 'SkillPoints', 'Fortitude', 'Reflex', 'Will', 'Skills', 'Features', 'Selectables', 'Languages', 'SpellSlots']);
+    (classes, ['Require', 'HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
 
   for(let a in alignments)
@@ -10200,37 +10203,11 @@ Pathfinder2E.identityRules = function(
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
 
-  rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
-  rules.defineRule('abilityNotes.abilityBoosts',
-    'level', '=', '4 + Math.floor(source / 5) * 4'
-  );
-  rules.defineRule('featureNotes.ancestryFeats',
-    'level', '=', 'Math.floor((source + 3) / 4)'
-  );
-  rules.defineRule('featureNotes.generalFeats',
-    'level', '=', 'source>=3 ? Math.floor((source + 1) / 4) : null'
-  );
-  rules.defineRule('featureNotes.skillFeats',
-    'level', '=', 'source>=2 ? Math.floor(source / 2) : null'
-  );
-  rules.defineRule('skillNotes.skillIncreases',
-    'level', '=', 'source>=3 ? Math.floor((source - 1) / 2) : null'
-  );
-  rules.defineRule
-    ('featCount.Ancestry', 'featureNotes.ancestryFeats', '=', null);
-  rules.defineRule('featCount.General', 'featureNotes.generalFeats', '=', null);
-  rules.defineRule('featCount.Skill', 'featureNotes.skillFeats', '=', null);
-  rules.defineRule('speed',
-    '', '=', '25',
-    'elfLevel', '+', '5'
-  );
+  rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
+
   QuilvynRules.validAllocationRules
     (rules, 'level', 'level', 'Sum "^levels\\."');
-  QuilvynRules.validAllocationRules
-    (rules, 'AncestryFeats', 'featCount.Ancestry', 'sumAncestryFeats');
-  QuilvynRules.validAllocationRules
-    (rules, 'ClassFeats', 'featCount.Class', 'sumClassFeats');
 
 };
 
@@ -10259,9 +10236,16 @@ Pathfinder2E.talentRules = function(
 
   QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Trait']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note', 'Action']);
+  QuilvynUtils.checkAttrTable
+    (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
   QuilvynUtils.checkAttrTable(terrains, []);
+
+  rules.defineChoice('notes',
+    'perception:%S (wisdom; %1)',
+    'skillNotes.intelligenceLanguageBonus:+%V Language Count'
+  );
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
@@ -10269,8 +10253,6 @@ Pathfinder2E.talentRules = function(
     rules.choiceRules(rules, 'Language', l, languages[l]);
     rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
   }
-  for(let t in terrains)
-    rules.choiceRules(rules, 'Terrain', t, terrains[t]);
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
     rules.defineRule
@@ -10278,13 +10260,16 @@ Pathfinder2E.talentRules = function(
     let pattern =
       s.replaceAll('(', '\\(').replaceAll(')', '\\)').replace(/\s+/, '\\b\\s*');
     rules.choiceRules(rules, 'Goody', s,
-      'Pattern="([-+]\\d).*\\s+' + pattern + '\\s+Skill|' + pattern + '\\s+skill\\s+([-+]\\d)"' +
+      'Pattern="([-+]\\d+).*\\s+' + pattern + '\\s+Skill|' + pattern + '\\s+skill\\s+([-+]\\d+)"' +
       'Effect=add ' +
       'Value="$1 || $2" ' +
       'Attribute="skillModifiers.' + s + '" ' +
       'Section=skill Note="%V ' + s + '"'
     );
   }
+  for(let t in terrains)
+    rules.choiceRules(rules, 'Terrain', t, terrains[t]);
+  // feats and features after skills because those that contain %skill
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
       for(let c in rules.getChoices(matchInfo[2] + 's')) {
@@ -10307,21 +10292,20 @@ Pathfinder2E.talentRules = function(
   }
 
   rules.defineRule
+    ('featCount.Ancestry', 'featureNotes.ancestryFeats', '=', null);
+  rules.defineRule('featCount.General', 'featureNotes.generalFeats', '=', null);
+  rules.defineRule('featCount.Skill', 'featureNotes.skillFeats', '=', null);
+  rules.defineRule('featureNotes.ancestryFeats',
+    'level', '=', 'Math.floor((source + 3) / 4)'
+  );
+  rules.defineRule('featureNotes.generalFeats',
+    'level', '=', 'source>=3 ? Math.floor((source + 1) / 4) : null'
+  );
+  rules.defineRule('featureNotes.skillFeats',
+    'level', '=', 'source>=2 ? Math.floor(source / 2) : null'
+  );
+  rules.defineRule
     ('languageCount', 'skillNotes.intelligenceLanguageBonus', '+', null);
-  rules.defineChoice('notes',
-    'perception:%S (wisdom; %1)',
-    'skillNotes.intelligenceLanguageBonus:+%V Language Count'
-  );
-  rules.defineRule('training.Perception', '', '=', '0');
-  rules.defineRule('rank.Perception', 'training.Perception', '=', null);
-  rules.defineRule('proficiencyLevelBonus.Perception',
-    'rank.Perception', '?', 'source > 0',
-    'level', '=', null
-  );
-  rules.defineRule('proficiencyBonus.Perception',
-    'rank.Perception', '=', '2 * source',
-    'proficiencyLevelBonus.Perception', '+', null
-  );
   rules.defineRule('perception',
     'proficiencyBonus.Perception', '=', null,
     'wisdomModifier', '+', null,
@@ -10330,39 +10314,45 @@ Pathfinder2E.talentRules = function(
   rules.defineRule('perception.1',
     'rank.Perception', '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
+  rules.defineRule('proficiencyBonus.Perception',
+    'rank.Perception', '=', '2 * source',
+    'proficiencyLevelBonus.Perception', '+', null
+  );
+  rules.defineRule('proficiencyLevelBonus.Perception',
+    'rank.Perception', '?', 'source > 0',
+    'level', '=', null
+  );
+  rules.defineRule('rank.Perception', 'training.Perception', '=', null);
   rules.defineRule('skillNotes.intelligenceLanguageBonus',
     'intelligenceModifier', '=', 'source>0 ? source : null'
   );
+  rules.defineRule('skillNotes.skillIncreases',
+    'level', '=', 'source>=3 ? Math.floor((source - 1) / 2) : null'
+  );
   rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+=', null);
+  rules.defineRule('training.Perception', '', '=', '0');
+
+  QuilvynRules.validAllocationRules
+    (rules, 'AncestryFeats', 'featCount.Ancestry', 'sumAncestryFeats');
+  QuilvynRules.validAllocationRules
+    (rules, 'ClassFeats', 'featCount.Class', 'sumClassFeats');
   QuilvynRules.validAllocationRules
     (rules, 'language', 'languageCount', 'languagesSpoken');
   QuilvynRules.validAllocationRules
     (rules, 'skillIncrease', 'choiceCount.Skill', 'skillIncreasesAllocated');
   // Because skill feats are also general feats, the number of selected general
-  // feats must equal the sum of featCount.{General,Skill}, and the number of
-  // selected skill feats may validly exceed featCount.Skill
-  rules.defineRule('generalAndSkillFeatCount',
+  // feats must equal featCount.General + featCount.Skill, and the number of
+  // selected skill feats may validly exceed featCount.Skill.
+  rules.defineRule('generalPlusSkillFeatCount',
     'featCount.General', '+=', null,
     'featCount.Skill', '+=', null
   );
   QuilvynRules.validAllocationRules
-    (rules, 'generalAndSkillFeat', 'generalAndSkillFeatCount',
+    (rules, 'generalAndSkillFeat', 'generalPlusSkillFeatCount',
      'sumGeneralFeats');
-  let note = 'validationNotes.skillFeatAllocation';
-  rules.defineChoice('notes', note + ':%1 available vs. %2 allocated');
-  rules.defineRule(note + '.1',
-    '', '=', '0',
-    'featCount.Skill', '+', null
-  );
-  rules.defineRule(note + '.2',
-    '', '=', '0',
-    'sumSkillFeats', '+', null
-  );
-  rules.defineRule(note,
-    note + '.1', '=', '-source',
-    note + '.2', '+=', null,
-    '', 'v', '0'
-  );
+  QuilvynRules.validAllocationRules
+    (rules, 'skillFeat', 'featCount.Skill', 'sumSkillFeats');
+  rules.defineRule('validationNotes.skillFeatAllocation', '', 'v', '0');
 
 };
 
@@ -10709,6 +10699,7 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('features.Darkvision', 'featureNotes.cavernElf', '=', '1');
+    rules.defineRule('speed', 'elfLevel', '+', '5');
     rules.defineRule('spells.Detect Magic', 'magicNotes.seerElf', '=', '1');
   } else if(name == 'Gnome') {
     rules.defineRule
