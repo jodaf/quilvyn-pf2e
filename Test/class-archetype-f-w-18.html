@@ -38,13 +38,15 @@ var attributes = {
   "feats.Weapon Proficiency (Lesser Thunderstone)":1, "feats.Wizard Dedication":1, "gender":"Male", "languages.Elven":1, 
   "languages.Halfling":1, "languages.Jotun":1, "languages.Undercommon":1, "levels.Alchemist":18, 
   "name":"Class-Archetype F-W 18", "selectableFeatures.Alchemist - Mutagenist":1, 
-  "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Sorcerer - Aberrant":1, 
-  "selectableFeatures.Wizard - Abjuration":1, "shield":"None", "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":3, 
-  "skillIncreases.Athletics":2, "skillIncreases.Crafting":1, "skillIncreases.Deception":2, 
-  "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, 
-  "skillIncreases.Nature":1, "skillIncreases.Occultism":1, "skillIncreases.Performance":1, 
-  "skillIncreases.Religion":1, "skillIncreases.Society":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Survival":1, "skillIncreases.Thievery":2, "weapons.Fist":1
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Half-Elf":1, 
+  "selectableFeatures.Monk - Strength":1, "selectableFeatures.Ranger - Strength":1, 
+  "selectableFeatures.Sorcerer - Aberrant":1, "selectableFeatures.Wizard - Abjuration":1, "shield":"None", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":3, "skillIncreases.Athletics":2, 
+  "skillIncreases.Crafting":1, "skillIncreases.Deception":2, "skillIncreases.Diplomacy":1, 
+  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, "skillIncreases.Nature":1, 
+  "skillIncreases.Occultism":1, "skillIncreases.Performance":1, "skillIncreases.Religion":1, 
+  "skillIncreases.Society":1, "skillIncreases.Stealth":1, "skillIncreases.Survival":1, 
+  "skillIncreases.Thievery":2, "weapons.Fist":1
 };
   </script>
 </head>
@@ -100,7 +102,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 5; Class: 24; General: 4; Skill: 11</td>
-        <td><b>Selectable Feature Count</b>: Alchemist (Research Field); Human (Heritage); Sorcerer (Bloodline); Wizard (Specialization)</td>
+        <td><b>Selectable Feature Count</b>: Alchemist (Research Field); Fighter (Key Ability); Human (Heritage); Monk (Key Ability); Ranger (Key Ability); Sorcerer (Bloodline); Wizard (Specialization)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -109,6 +111,9 @@ var attributes = {
         <td><b>Feats</b>: Advanced Arcana; Advanced Blood Potency; Advanced Hunter's Trick; Advanced Kata; Advanced Maneuver; Advanced Trickery; Arcane Breadth; Arcane School Spell; Assurance (Deception); Assurance (Thievery); Basic Arcana; Basic Blood Potency; Basic Bloodline Spell; Basic Hunter's Trick; Basic Kata; Basic Maneuver; Basic Sorcerer Spellcasting; Basic Trickery; Basic Wizard Spellcasting; Bloodline Breadth; Canny Acumen (Perception); Clever Improviser; Diverse Weapon Expert; Effortless Concentration; Evasiveness; Expert Sorcerer Spellcasting; Expert Wizard Spellcasting; Fighter Dedication; Fighter Resiliency; Harmonize; Haughty Obstinacy; Incredible Improvisation; Inspirational Focus; Inspire Heroics; Lingering Composition; Master Sorcerer Spellcasting; Master Spotter; Master Wizard Spellcasting; Monk Dedication; Monk Moves; Monk Resiliency; Monk's Flurry; Multifarious Muse (Maestro); Natural Ambition; Natural Skill; Opportunist; Perfection's Path (Fortitude); Perfection's Path; Ranger Dedication; Ranger Resiliency; Rogue Dedication; Skill Mastery; Skill Training (Absalom Lore); Skill Training (Art Lore); Skill Training (Baking Lore); Skill Training (Cave Lore); Skill Training (Farming Lore); Skill Training (Military Lore); Skill Training (Milling Lore); Skill Training (Owlbear Lore); Skill Training (Sailing Lore); Sneak Attacker; Sorcerer Dedication; Steady Spellcasting; Uncanny Dodge; Weapon Proficiency (Javelin); Weapon Proficiency (Lance); Weapon Proficiency (Lesser Thunderstone); Wizard Dedication</td>
         <td><b>Wizard Features</b>: Abjuration</td>
         <td><b>Sorcerer Features</b>: Aberrant</td>
+        <td><b>Ranger Features</b>: Strength</td>
+        <td><b>Monk Features</b>: Strength</td>
+        <td><b>Fighter Features</b>: Strength</td>
         <td><b>Alchemist Features</b>: Ability Boost (Intelligence); Ability Boosts; Advanced Alchemy; Alchemical Alacrity; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemist Feats; Alchemist Skills; Alchemy; Alertness; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Evasion; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Mutagenist); Infused Reagents; Iron Will; Juggernaut; Medium Armor Expertise; Mutagenic Flashback; Mutagenist; Perception Trained; Perpetual Infusions; Perpetual Perfection; Perpetual Potency; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
@@ -153,6 +158,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Fighter Key Ability: 1 selection</i></td>
+      </tr><tr style="text-align:center">
         <td><i>General Feats: 4 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Half-Elf: Has the Low-Light Vision feature</i></td>
@@ -162,6 +169,8 @@ var attributes = {
         <td><i>Maestro: Has the Lingering Composition feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Monk Dedication: Has the Powerful Fist feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Monk Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Monk's Flurry: Has the Flurry Of Blows feature</i></td>
       </tr><tr style="text-align:center">
@@ -174,6 +183,8 @@ var attributes = {
         <td><i>Opportunist: Has the Attack Of Opportunity feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Ranger Dedication: Has the Hunt Prey feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Ranger Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Research Field: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -338,7 +349,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 260</td>
         <td><b>Armor Class</b>: 37 (dexterity; expert)</td>
-        <td><b>Class DC</b>: Alchemist: 37 (intelligence; master); Fighter: 2 (strength; trained); Monk: 2 (strength; trained); Ranger: 2 (strength; trained); Rogue: 2 (dexterity; trained)</td>
+        <td><b>Class DC</b>: Alchemist: 37 (intelligence; master); Fighter: 14 (strength; trained); Monk: 14 (strength; trained); Ranger: 14 (strength; trained); Rogue: 17 (dexterity; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
