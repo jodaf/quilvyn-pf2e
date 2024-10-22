@@ -1875,7 +1875,7 @@ Pathfinder2E.FEATS = {
   'Crane Flutter':
     'Trait=Class,Monk Require="level >= 6","features.Crane Stance"',
   'Dragon Roar':
-    'Trait=Class,Monk,Audiotry,Emotion,Fear,Mental ' +
+    'Trait=Class,Monk,Auditory,Emotion,Fear,Mental ' +
     'Require="level >= 6","features.Dragon Stance"',
   'Ki Blast':
     'Trait=Class,Monk Require="level >= 6","features.Ki Spells"',
@@ -3903,7 +3903,6 @@ Pathfinder2E.FEATURES = {
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
-  "Deity's Domain (%domain)":'Section=magic Note="Knows the %V spell"',
   'Ranged Reprisal':
     'Section=combat ' +
     'Note="May make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
@@ -3957,8 +3956,6 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="May have Blade ally inflict +4 HP good (master proficiency +6 HP) vs. target for 1 rd, extended as long as the target attacks an ally"',
-  "Advanced Deity's Domain (%domain)":
-    'Section=magic Note="+1 Focus Points/Knows the %V spell"',
   'Greater Mercy':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> may also counteract blinded, deafened, sickened, or slowed"',
@@ -4096,9 +4093,6 @@ Pathfinder2E.FEATURES = {
   // Weapon Specialization as above
 
   'Deadly Simplicity':'Section=combat Note="+1 damage die step on %V"',
-  'Domain Initiate (%domain)':
-    'Section=magic ' +
-    'Note="Knows %V spell/Has a focus pool with 1 Focus Point"',
   // TODO Implement?
   'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
   // TODO Implement?
@@ -4152,8 +4146,6 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May choose %{charismaModifier>?1} creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i>"',
   // Steady Spellcasting as above
-  'Advanced Domain (%domain)':
-    'Section=magic Note="Knows %V spell/+1 Focus Points"',
   'Align Armament (Chaotic)':
     'Action=1 ' +
     'Section=combat ' +
@@ -5633,7 +5625,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
   'Advanced Bloodline':
-    'Section=magic Note="Knows %V spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
     'Section=save Note="+1 vs. spells and magical effects"',
@@ -5641,7 +5633,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May have 1 spell from a different tradition in repertoire"',
   'Greater Bloodline':
-    'Section=magic Note="Knows %V spell/+1 Focus Points"',
+    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
@@ -11848,8 +11840,44 @@ Pathfinder2E.deityRules = function(
  * Defines in #rules# the rules associated with domain #name#. #spell# and
  * #advancedSpell# designate the spells associated with the domain.
  */
-Pathfinder2E.domainRules = function(rules, name, spell, advanceSpell) {
-  // TODO
+Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
+
+  Pathfinder2E.featureRules(
+    rules, "Advanced Deity's Domain (" + name + ')', ['magic'],
+    ['Knows the <i>' + advancedSpell + '</i> spell/+1 Focus Points'], null
+  );
+  Pathfinder2E.featureRules(
+    rules, 'Advanced Domain (' + name + ')', ['magic'],
+    ['Knows the <i>' + advancedSpell + '</i> spell/+1 Focus Points'], null
+  );
+  Pathfinder2E.featureRules(
+    rules, "Deity's Domain (" + name + ')', ['magic'],
+     ['Knows the <i>' + spell + '</i> spell'], null
+  );
+  Pathfinder2E.featureRules(
+    rules, 'Domain Initiate (' + name + ')', ['magic'],
+    ['Knows the <i>' + spell + '</i> spell/Has a focus pool with 1 Focus Point'], null
+  );
+
+  let compressed = name.replaceAll(' ', '');
+  rules.defineRule('domain',
+    "magicNotes.deity'sDomain(" + compressed + ')', '=', '"' + name + '"',
+    'magicNotes.domainInitiate(' + compressed + ')', '=', '"' + name + '"'
+  );
+  rules.defineRule('features.Advanced Domain',
+    'features.Advanced Domain (' + name + ')', '=', '1'
+  );
+  rules.defineRule
+    ('focusPoints', 'magicNotes.domainInitiate(' + compressed + ')', '+=', '1');
+  rules.defineRule('spells.' + spell,
+    "magicNotes.deity'sDomain(" + compressed + ')', '=', '1',
+    'magicNotes.domainInitiate(' + compressed + ')', '=', '1'
+  );
+  rules.defineRule('spells.' + advancedSpell,
+    "magicNotes.advancedDeity'sDomain(" + compressed + ')', '=', '1',
+    'magicNotes.advancedDomain(' + compressed + ')', '=', '1'
+  );
+
 };
 
 /*
@@ -11904,9 +11932,11 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
  * derived directly from the attributes passed to featRules.
  */
 Pathfinder2E.featRulesExtra = function(rules, name) {
+
   let matchInfo;
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+
   if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
     rules.defineRule('skillNotes.additionalLore(' + matchInfo[1].replaceAll(' ', '') + ')',
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
@@ -11914,23 +11944,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('training.' + matchInfo[1],
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
-  } else if((matchInfo = name.match(/^(Advanced Deity's Domain|Advanced Domain|Deity's Domain|Domain Initiate) \((.*)\)$/)) != null) {
-    let advanced = matchInfo[1].includes('Advanced');
-    let domain = matchInfo[2];
-    let allDomains = rules.getChoices('domains');
-    if(domain in allDomains) {
-      let spell =
-        QuilvynUtils.getAttrValue(allDomains[domain], (advanced ? 'Advanced' : '') + 'Spell');
-      let note =
-        'magicNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-      rules.defineRule(note, '', '=', '"' + spell + '"');
-      rules.defineRule('spells.' + spell, note, '=', '1');
-      if(name.startsWith('Domain Initiate'))
-        rules.defineRule('focusPoints', note, '+=', '1');
-      rules.defineRule('domain', note, '=', '"' + domain + '"');
-    }
-  } else if((matchInfo = name.match(/^Advanced Domain/)) != null) {
-    rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Advanced Fury') {
     rules.defineRule
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
@@ -12669,6 +12682,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'featureNotes.wizardDedication', '?', '!source'
     );
   }
+
 };
 
 /*
