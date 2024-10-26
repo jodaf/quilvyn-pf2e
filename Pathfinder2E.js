@@ -66,7 +66,8 @@ function Pathfinder2E() {
     (rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS, Pathfinder2E.DOMAINS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
-    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
+    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES,
+    Pathfinder2E.BLOODLINES
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
@@ -81,9 +82,9 @@ Pathfinder2E.VERSION = '2.4.1.0';
 
 /* List of items handled by choiceRules method. */
 Pathfinder2E.CHOICES = [
-  'Alignment', 'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain',
-  'Feat', 'Feature', 'Goody', 'Language', 'Lore', 'School', 'Shield', 'Skill',
-  'Spell', 'Terrain', 'Weapon'
+  'Alignment', 'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class',
+  'Deity', 'Domain', 'Feat', 'Feature', 'Goody', 'Language', 'Lore', 'School',
+  'Shield', 'Skill', 'Spell', 'Terrain', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -442,6 +443,60 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
+};
+Pathfinder2E.BLOODLINES = {
+  'Aberrant':
+      'SpellList=Occult ' +
+      'BloodlineSkills=Intimidation,Occultism ' +
+      'BloodlineSpells="Tentacular Limbs","Aberrant Whispers","Unusual Anatomy" ' +
+      'BloodMagic="self or target +2 Will saves for 1 rd"',
+  'Angelic':
+      'SpellList=Divine ' +
+      'BloodlineSkills=Diplomacy,Religion ' +
+      'BloodlineSpells="Angelic Halo","Angelic Wings","Celestrial Brand" ' +
+      'BloodMagic="self or target +1 saves for 1 rd"',
+  'Demonic':
+      'SpellList=Divine ' +
+      'BloodlineSkills=Intimidation,Religion ' +
+      'BloodlineSpells="Glutton\'s Jaws","Swamp Of Sloth","Abyssal Wrath" ' +
+      'BloodMagic="self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd"',
+  'Diabolic':
+      'SpellList=Divine ' +
+      'BloodlineSkills=Decpetion,Religion ' +
+      'BloodlineSpells="Diabolic Edict","Embrace The Pit","Hellfire Plume" ' +
+      'BloodMagic="self +1 Deception for 1 rd or inflicts 1 HP fire per spell level"',
+  'Draconic':
+      'SpellList=Arcane ' +
+      'BloodlineSkills=Arcana,Intimidation ' +
+      'BloodlineSpells="Dragon Claws","Dragon Breath","Dragon Wings" ' +
+      // TODO '"Shows physical relationship to chosen dragon type",' +
+      'BloodMagic="self or target +1 AC for 1 rd"',
+  'Elemental':
+      'SpellList=Primal ' +
+      'BloodlineSkills=Intimidation,Nature ' +
+      'BloodlineSpells="Elemental Toss","Elemental Motion","Elemental Blast" ' +
+      // TODO '"Shows physical relationship to chosen elemental type",' +
+      'BloodMagic="self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd"',
+  'Fey':
+      'SpellList=Primal ' +
+      'BloodlineSkills=Deception,Nature ' +
+      'BloodlineSpells="Faerie Dust","Fey Disappearance","Fey Glamour" ' +
+      'BloodMagic="self or target concealment for 1 rd"',
+  'Hag':
+      'SpellList=Occult ' +
+      'BloodlineSkills=Deception,Occultism ' +
+      'BloodlineSpells="Jealous Hex","Horrific Visage","You\'re Mine" ' +
+      'BloodMagic="2 HP mental per spell level (Will neg) to first successful attacker for 1 rd"',
+  'Imperial':
+      'SpellList=Arcane ' +
+      'BloodlineSkills=Arcana,Society ' +
+      'BloodlineSpells="Ancestral Memories","Extend Spell","Arcane Countermeaure" ' +
+      'BloodMagic="self or target +1 skill checks for 1 rd"',
+  'Undead':
+      'SpellList=Divine ' +
+      'BloodlineSkills=Intimidation,Religion ' +
+      'BloodlineSpells="Undeath\'s Bleassing","Drain Life","Grasping Grave" ' +
+      'BloodMagic="self 1 temporary Hit Point per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd"'
 };
 Pathfinder2E.CLASSES = {
   'Alchemist':
@@ -10180,7 +10235,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
 /* Defines rules related to basic character identity. */
 Pathfinder2E.identityRules = function(
-  rules, alignments, ancestries, backgrounds, classes, deities
+  rules, alignments, ancestries, backgrounds, classes, deities, bloodlines
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
@@ -10189,6 +10244,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
+  QuilvynUtils.checkAttrTable(bloodlines, ['SpellList', 'BloodlineSkills', 'GrantedSpells', 'BloodlineSpells', 'BloodMagic']);
 
   for(let a in alignments)
     rules.choiceRules(rules, 'Alignment', a, alignments[a]);
@@ -10200,6 +10256,8 @@ Pathfinder2E.identityRules = function(
     rules.choiceRules(rules, 'Class', c, classes[c]);
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
+  for(let b in bloodlines)
+    rules.choiceRules(rules, 'Bloodline', b, bloodlines[b]);
 
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
@@ -10385,6 +10443,14 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
     Pathfinder2E.backgroundRulesExtra(rules, name);
+  } else if(type == 'Bloodline') {
+    Pathfinder2E.bloodlineRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'SpellList'),
+      QuilvynUtils.getAttrValueArray(attrs, 'BloodlineSkills'),
+      QuilvynUtils.getAttrValueArray(attrs, 'GrantedSpells'),
+      QuilvynUtils.getAttrValueArray(attrs, 'BloodlineSpells'),
+      QuilvynUtils.getAttrValue(attrs, 'BloodMagic')
+    );
   } else if(type == 'Class') {
     Pathfinder2E.classRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
@@ -10871,6 +10937,37 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
       'featureNotes.scholarlyTradition', '=', '1'
     );
   }
+};
+
+Pathfinder2E.bloodlineRules = function(
+  rules, name, spellList, bloodlineSkills, grantedSpells, bloodlineSpells,
+  bloodMagic)
+{
+  if(!name) {
+    console.log('Empty bloodline name');
+    return;
+  }
+  if(!(spellList+'').match(/^(Arcane|Divine|Occult|Primal)$/)) {
+    console.log('Bad spell list "' + spellList + '" for bloodline ' + name);
+    return;
+  }
+  if(!Array.isArray(bloodlineSkills)) {
+    console.log('Bad skills list "' + bloodlineSkills + '" for bloodline ' + name);
+    return;
+  }
+  if(!Array.isArray(grantedSpells)) {
+    console.log('Bad granted spells list "' + grantedSpells + '" for bloodline ' + name);
+    return;
+  }
+  if(!Array.isArray(bloodlineSpells)) {
+    console.log('Bad bloodline spells list "' + bloodlineSpells + '" for bloodline ' + name);
+    return;
+  }
+  if(typeof(bloodMagic) != 'string') {
+    console.log('Bad blood magic "' + bloodMagic + '" for bloodline ' + name);
+    return;
+  }
+  // TODO
 };
 
 /*
