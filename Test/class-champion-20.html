@@ -105,7 +105,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adopted Ancestry (Halfling); Advanced Deity's Domain (Fate); Affliction Mercy; Anchoring Aura; Assurance (Absalom Lore); Attack Of Opportunity; Aura Of Courage; Aura Of Faith; Aura Of Life; Aura Of Righteousness; Aura Of Vengeance; Auspicious Mount; Blade Of Justice; Canny Acumen (Fortitude); Canny Acumen (Will); Celestial Form; Celestial Mount; Champion's Sacrifice; Clever Improviser; Cooperative Nature; Deity's Domain (Fate); Devoted Focus; Divine Grace; Divine Health; Divine Reflexes; Divine Wall; Dragonslayer Oath; Fiendsbane Oath; Forager; Greater Mercy; Haughty Obstinacy; Heal Mount; Imposing Destrier; Incredible Investiture; Instrument Of Zeal; Lasting Doubt; Liberating Stride; Litany Against Sloth; Litany Against Wrath; Litany Of Righteousness; Loyal Warhorse; Mercy; Natural Skill; Quick Shield Block; Radiant Blade Master; Radiant Blade Spirit; Ranged Reprisal; Second Ally; Sense Evil; Shield Of Grace; Shield Of Reckoning; Shield Paragon; Shield Warden; Shining Oath; Skill Training (Absalom Lore); Skill Training (Baking Lore); Skill Training (Games Lore); Skill Training (Herbalism Lore); Skill Training (Magnimar Lore); Skill Training (Milling Lore); Skill Training (Occultism); Skill Training (Survival); Smite Evil; Supernatural Charm; Ultimate Mercy; Unimpeded Step; Untrained Improvisation; Vengeful Oath; Weight Of Guilt; Wyrmbane Aura</td>
-        <td><b>Champion Features</b>: Ability Boost (Dexterity); Ability Boosts; Alertness; Armor Expertise; Armor Mastery; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Cause; Champion Expertise; Champion Feats; Champion Key Ability; Champion Mastery; Champion Skills; Champion's Code; Champion's Reaction; Class Trained (Champion); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Deific Weapon; Deity; Devotion Spells; Dexterity; Divine Ally (Blade); Divine Ally (Shield); Divine Ally (Steed); Divine Ally; Divine Smite (Liberator); Divine Smite (Paladin); Divine Smite (Redeemer); Divine Will; Exalt (Liberator); Exalt (Paladin); Exalt (Redeemer); General Feats; Glimpse Of Redemption; Greater Weapon Specialization; Hero's Defiance; Juggernaut; Legendary Armor; Liberating Step; Liberator; Lightning Reflexes; Paladin; Perception Trained; Redeemer; Retributive Strike; Save Expert (Fortitude; Will); Save Trained (Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Divine); The Tenets Of Good; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
+        <td><b>Champion Features</b>: Ability Boost (Dexterity); Ability Boosts; Alertness; Armor Expertise; Armor Mastery; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Champion Expertise; Champion Feats; Champion Key Ability; Champion Mastery; Champion Skills; Champion's Code; Champion's Reaction; Class Trained (Champion); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Deific Weapon; Deity And Cause; Devotion Spells; Dexterity; Divine Ally (Blade); Divine Ally (Shield); Divine Ally (Steed); Divine Ally; Divine Smite (Liberator); Divine Smite (Paladin); Divine Smite (Redeemer); Divine Will; Exalt (Liberator); Exalt (Paladin); Exalt (Redeemer); General Feats; Greater Weapon Specialization; Hero's Defiance; Juggernaut; Legendary Armor; Liberator; Lightning Reflexes; Paladin; Perception Trained; Redeemer; Save Expert (Fortitude; Will); Save Trained (Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Divine); The Tenets Of Good; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
       </tr></table>
@@ -117,8 +117,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Auspicious Mount: Mount is a specialized animal companion with Pharasma's mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cause: 1 selection</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Champion Feats: 11 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Champion Key Ability: 1 selection</i></td>
@@ -128,6 +126,8 @@ var attributes = {
         <td><i>Champion's Reaction: Has the Glimpse Of Redemption feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has Untrained Improvisation feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Deity And Cause: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Divine Ally: 2 selections</i></td>
       </tr><tr style="text-align:center">
@@ -242,7 +242,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Champion Skills: Skill Trained (Religion; Choose 6 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Deity: Skill Trained (Medicine)</i></td>
+      <td><i>Deity And Cause: Skill Trained (Medicine)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +4 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -318,7 +318,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Deific Weapon: +1 damage die step on Dagger</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Deity: Attack Trained (Dagger)</i></td>
+        <td><i>Deity And Cause: Attack Trained (Dagger)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
@@ -362,7 +362,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Divine Wall: Adjacent spaces are difficult terrain for foes</td>
       </tr><tr style="text-align:center">
-        <td>Dragonslayer Oath: Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency) when used with an evil dragon</td>
+        <td>Dragonslayer Oath: Glimpse Of Redemption grants 27 damage resistance when used with an evil dragon</td>
       </tr><tr style="text-align:center">
         <td>Exalt (Liberator): R15' Liberating Step allows all allies to Step if target ally does not attempt to break free</td>
       </tr><tr style="text-align:center">
@@ -370,15 +370,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Exalt (Redeemer): R15' May use Glimpse Of Redemption to grant allies 20 damage resistance</td>
       </tr><tr style="text-align:center">
-        <td>Fiendsbane Oath: Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency) when used with a fiend</td>
+        <td>Fiendsbane Oath: Glimpse Of Redemption grants 27 damage resistance when used with a fiend</td>
       </tr><tr style="text-align:center">
         <td>Glimpse Of Redemption: <b>(R)</b> R15' May negate damage to a struck ally or grant the ally damage resistance 22 and inflict enfeebled 2 on triggering foe for 1 rd (foe's choice)</td>
       </tr><tr style="text-align:center">
         <td>Instrument Of Zeal: Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 for 1 rd</td>
       </tr><tr style="text-align:center">
         <td>Lasting Doubt: Effects of Glimpse Of Redemption linger at half intensity for 1 min</td>
-      </tr><tr style="text-align:center">
-        <td>Liberating Step: <b>(R)</b> R15' May grant an ally damage resistance 22, an Escape action or save from a restraint, and a Step</td>
       </tr><tr style="text-align:center">
         <td>Liberating Stride: Target of Liberating Step may Stride half their Speed</td>
       </tr><tr style="text-align:center">
@@ -390,8 +388,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Ranged Reprisal: May make a Retributive Strike using a ranged Strike or a Step and a melee Strike</td>
       </tr><tr style="text-align:center">
-        <td>Retributive Strike: <b>(R)</b> R15' When an ally is damaged, may grant them damage resistance 22, plus make a melee Strike against the triggering foe if within reach</td>
-      </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> When shield is raised, may negate damage up to its hardness and have it absorb half of remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Shield Of Grace: May suffer half of excess damage when using Shield Block to protect an ally</td>
@@ -402,7 +398,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Warden: May use Shield Block to protect an adjacent ally</td>
       </tr><tr style="text-align:center">
-        <td>Shining Oath: Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency) when used with undead</td>
+        <td>Shining Oath: Glimpse Of Redemption grants 27 damage resistance when used with undead</td>
       </tr><tr style="text-align:center">
         <td>Smite Evil: <b>(1)</b> May have Blade ally inflict +4 HP good (master proficiency +6 HP) vs. target for 1 rd, extended as long as the target attacks an ally</td>
       </tr><tr style="text-align:center">
@@ -518,7 +514,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Anchoring Aura: R15' Aura counteracts teleportation spells cast by fiends</td>
     </tr><tr style="text-align:center">
-      <td>Deity: Has access to <i>Mindlink</i>, <i>Ghostly Weapon</i>, <i>Phantasmal Killer</i> spells</td>
+      <td>Deity And Cause: Has access to <i>Mindlink</i>, <i>Ghostly Weapon</i>, <i>Phantasmal Killer</i> spells</td>
     </tr><tr style="text-align:center">
       <td>Devoted Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">

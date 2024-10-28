@@ -618,11 +618,8 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
-      '1:Deity,1:Cause,"1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -3854,7 +3851,6 @@ Pathfinder2E.FEATURES = {
   'Armor Mastery':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-  'Cause':'Section=feature Note="1 selection"',
   'Champion Expertise':
     'Section=combat,magic ' +
     'Note=' +
@@ -3876,6 +3872,13 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Has access to deity weapon (%{deityWeapon})",' +
       '"+1 damage die step on %V"',
+  'Deity And Cause':
+    'Section=combat,feature,magic,skill ' +
+    'Note=' +
+      '"Attack Trained (%V)",' +
+      '"1 selection",' +
+      '"Has access to %V spells",' +
+      '"Skill Trained (%V)"',
   'Devotion Spells':
     'Section=magic Note="Has a focus pool with 1 Focus Point"',
   'Divine Ally':
@@ -10888,6 +10891,9 @@ Pathfinder2E.bloodlineRules = function(
   rules.defineRule('magicNotes.advancedBloodline',
     'features.' + name, '=', '"' + bloodlineSpells[1] + '"'
   );
+  rules.defineRule('magicNotes.basicBloodlineSpell',
+    'features.' + name, '=', '"' + bloodlineSpells[0] + '"'
+  );
   rules.defineRule('magicNotes.greaterBloodline',
     'features.' + name, '=', '"' + bloodlineSpells[2] + '"'
   );
@@ -10903,8 +10909,10 @@ Pathfinder2E.bloodlineRules = function(
   );
   rules.defineRule
     ('spellModifier.' + spellList, 'spellModifier.' + name, '=', null);
-  rules.defineRule
-    ('spells.' + bloodlineSpells[0], 'magicNotes.' + prefix, '=', '1');
+  rules.defineRule('spells.' + bloodlineSpells[0],
+    'magicNotes.' + prefix, '=', '1',
+    'magicNotes.basicBloodlineSpell', '=', 'source=="' + bloodlineSpells[0] + '" ? 1 : null'
+  );
   rules.defineRule('spells.' + bloodlineSpells[1],
     'magicNotes.advancedBloodline', '=', 'source=="' + bloodlineSpells[1] + '" ? 1 : null'
   );
@@ -11326,7 +11334,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('hasClassWeaponExpertise', 'features.Weapon Expertise', '=', '1');
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
-      'featureNotes.cause', '=', '1'
+      'featureNotes.deityAndCause', '=', '1'
     );
     rules.defineRule("selectableFeatureCount.Champion (Champion's Code)",
       "featureNotes.champion'sCode", '=', '1'
@@ -11377,6 +11385,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.deity', 'deityWeapon', '=', null);
+    rules.defineRule('combatNotes.deityAndCause', 'deityWeapon', '=', null);
     rules.defineRule('combatNotes.warpriest',
       '', '=', '"Trained"',
       'features.Divine Defense', '=', '"Expert"'
@@ -11398,6 +11407,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
     rules.defineRule('magicNotes.deity',
+      'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
+    );
+    rules.defineRule('magicNotes.deityAndCause',
       'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
     );
     rules.defineRule
@@ -11428,6 +11440,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
+    rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
     [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
       rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
@@ -11802,11 +11815,13 @@ Pathfinder2E.deityRules = function(
     'rank.' + weapon, '=', 'dict.deityWeapon=="' + weapon + '" ? source : null'
   );
   rules.defineRule('training.' + skill,
-    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
+    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
+    'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
   );
   rules.defineRule('training.' + weapon,
     'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
     'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
+    'combatNotes.deityAndCause', '^=', 'source=="' + weapon + '" ? 1 : null',
     'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
   );
   rules.defineRule('weaponDieSidesBonus.' + weapon,
@@ -12010,17 +12025,15 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // of muse that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let muses =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bard (Muse)')).map(x => x.replace('Bard - ', '').replaceAll(' ', ''));
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bard (Muse)')).map(x => x.replace('Bard - ', ''));
     muses.forEach(m => {
-      rules.defineRule('validationNotes.bard-' + m + 'SelectableFeature',
+      let noteName =
+        m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
+      rules.defineRule('validationNotes.bard-' + m.replaceAll(' ', '') + 'SelectableFeature',
         'featureNotes.bardDedication', '+', '1'
       );
-      rules.defineRule('featureNotes.' + m.charAt(0).toLowerCase() + m.substring(1),
-        'featureNotes.bardDedication', '?', '!source'
-      );
-      rules.defineRule('magicNotes.' + m.charAt(0).toLowerCase() + m.substring(1),
-        'featureNotes.bardDedication', '?', '!source'
-      );
+      rules.defineRule('featureNotes.' + noteName, 'levels.Bard', '?', null);
+      rules.defineRule('magicNotes.' + noteName, 'levels.Bard', '?', null);
     });
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
@@ -12028,29 +12041,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
-  } else if(name == 'Basic Bloodline Spell') {
-    // TODO remove hard-coding
-    let bloodSpells = {
-      'Aberrant':'Tentacular Limbs',
-      'Angelic':'Angelic Halo',
-      'Demonic':"Glutton's Jaws",
-      'Diabolic':'Diabolic Edict',
-      'Draconic':'Dragon Claws',
-      'Elemental':'Elemental Toss',
-      'Fey':'Faerie Dust',
-      'Hag':'Jealous Hex',
-      'Imperial':'Ancestral Memories',
-      'Undead':"Undeath's Blessing"
-    };
-    for(let b in bloodSpells) {
-      let spell = bloodSpells[b];
-      rules.defineRule('magicNotes.basicBloodlineSpell',
-        'features.' + b, '=', '"' + spell + '"'
-      );
-      rules.defineRule('spells.' + spell,
-        'magicNotes.basicBloodlineSpell', '=', 'source=="' + spell + '" ? 1 : null'
-      );
-    }
   } else if((matchInfo = name.match(/^(Basic|Expert|Master) (\w+) Spellcasting$/)) != null) {
     let c = matchInfo[2];
     let level = matchInfo[1];
@@ -12125,34 +12115,40 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let causes =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', '').replaceAll(' ', ''));
     causes.forEach(c => {
+      let prefix =
+        c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '');
       rules.defineRule('validationNotes.champion-' + c + 'SelectableFeature',
         'featureNotes.championDedication', '+', '1'
       );
-      rules.defineRule('magicNotes.' + c.charAt(0).toLowerCase() + c.substring(1),
-        'featureNotes.championDedication', '?', '!source'
-      );
+      rules.defineRule('magicNotes.' + prefix, 'levels.Champion', '?', null);
     });
-    rules.defineRule
-      ('combatNotes.deity', 'featureNotes.championDedication', '?', '!source');
-    rules.defineRule
-      ('magicNotes.deity', 'featureNotes.championDedication', '?', '!source');
+    rules.defineRule('combatNotes.deityAndCause',
+      'championFeatures.Deity And Cause', '?', null
+    );
+    rules.defineRule('magicNotes.deityAndCause',
+      'championFeatures.Deity And Cause', '?', null
+    );
     rules.defineRule('features.Champion Key Ability',
       'features.Champion Dedication', '=', '1'
     );
+    rules.defineRule('features.Deity And Cause',
+      'features.Champion Dedication', '=', '1'
+    );
   } else if(name == "Champion's Reaction") {
-    // TODO What about homebrew reactions?
-    let reactions =
-      QuilvynUtils.getAttrValueArray(Pathfinder2E.CLASSES.Champion, 'Features').filter(f => f.match(/\?\s*1:/));
-    reactions.forEach(f => {
-      let pieces = f.split(/\s*\?\s*/);
-      pieces[1] = pieces[1].replace(/\d+:/, '');
-      rules.defineRule("featureNotes.champion'sReaction",
-        pieces[0], '=', '"' + pieces[1] + '"'
-      );
-      rules.defineRule('features.' + pieces[1],
-        "featureNotes.champion'sReaction", '=', 'source == "' + pieces[1] + '" ? 1 : null'
-      );
-    });
+    rules.defineRule("featureNotes.champion'sReaction",
+      'features.Liberator', '=', '"Liberating Step"',
+      'features.Paladin', '=', '"Retributive Strike"',
+      'features.Redeemer', '=', '"Glimpse Of Redemption"'
+    );
+    rules.defineRule('features.Glimpse Of Redemption',
+      "featureNotes.champion'sReaction", '=', 'source=="Glimpse Of Redemption" ? 1 : null'
+    );
+    rules.defineRule('features.Liberating Step',
+      "featureNotes.champion'sReaction", '=', 'source=="Liberating Step" ? 1 : null'
+    );
+    rules.defineRule('features.Retributive Strike',
+      "featureNotes.champion'sReaction", '=', 'source=="Retributive Strike" ? 1 : null'
+    );
   } else if(name == "Champion's Sacrifice") {
     rules.defineRule("spells.Champion's Sacrifice",
       "magicNotes.champion'sSacrifice", '=', '1'
