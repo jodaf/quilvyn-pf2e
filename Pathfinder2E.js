@@ -2561,9 +2561,9 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Advanced Trickery':
     'Trait=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
-  // TODO requires trained in one skill, expert in one skill
   'Skill Mastery':
-    'Trait=Archetype,Rogue Require="level >= 8","features.Rogue Dedication"',
+    'Trait=Archetype,Rogue ' +
+    'Require="level >= 8","features.Rogue Dedication","maxSkillRank>=2"',
   'Uncanny Dodge':
     'Trait=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
   'Evasiveness':
@@ -2656,7 +2656,6 @@ Pathfinder2E.FEATS = {
 
   // Skill
   'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
-  // TODO requires "trained in a skill with the Recall Knowledge action"
   'Dubious Knowledge':'Trait=General,Skill"',
   'Quick Identification':
     'Trait=General,Skill ' +
@@ -2914,7 +2913,6 @@ Pathfinder2E.FEATURES = {
       '"DC 3/9 to target a concealed/hidden foe",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
-  // TODO Add jaws to weapon list? finesse, unarmed, brawling
   'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6P HP"',
   'Rock Dwarf':
     'Section=combat ' +
@@ -9859,7 +9857,12 @@ Pathfinder2E.WEAPONS = {
     'Category=Martial Price=1 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait=Forceful,Sweep',
   'Scythe':
     'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm Trait="Deadly d10",Tripe',
-  // TODO Shield bash, boss, spikes
+  'Shield':
+    'Category=Martial Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Shield',
+  'Shield Boss':
+    'Category=Martial Price=0.5 Damage=1d6B Bulk=0 Hands=1 Group=Shield',
+  'Shield Spikes':
+    'Category=Martial Price=0.5 Damage=1d6P Bulk=0 Hands=1 Group=Shield',
   'Shortsword':
    'Category=Martial Price=0.9 Damage=1d6P Bulk=L Hands=1 Group=Sword Trait=Agile,Finesse,"Versatile S"',
   'Starknife':
@@ -10014,19 +10017,21 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   for(let s in shields)
     rules.choiceRules(rules, 'Shield', s, shields[s]);
   for(let w in weapons) {
-    let pattern = w.replace(/  */g, '\\s+');
-    rules.choiceRules(rules, 'Goody', w,
-      // To avoid triggering additional weapons with a common suffix (e.g.,
-      // "* punching dagger +2" also makes regular dagger +2), require that
-      // weapon goodies with a trailing value have no preceding word or be
-      // enclosed in parentheses.
-      'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
-      'Effect=add ' +
-      'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
-      'Value="$1 || $2" ' +
-      'Section=combat Note="%V Attack and damage"'
-    );
     rules.choiceRules(rules, 'Weapon', w, weapons[w]);
+    if(w != 'Shield') {
+      let pattern = w.replace(/  */g, '\\s+');
+      rules.choiceRules(rules, 'Goody', w,
+        // To avoid triggering additional weapons with a common suffix (e.g.,
+        // "* punching dagger +2" also makes regular dagger +2), require that
+        // weapon goodies with a trailing value have no preceding word or be
+        // enclosed in parentheses.
+        'Pattern="([-+]\\d)\\s+' + pattern + '|(?:^\\W*|\\()' + pattern + '\\s+([-+]\\d)" ' +
+        'Effect=add ' +
+        'Attribute="weaponAttackAdjustment.' + w + '","weaponDamageAdjustment.' + w + '" ' +
+        'Value="$1 || $2" ' +
+        'Section=combat Note="%V Attack and damage"'
+      );
+    }
   }
 
   rules.defineRule('abilityNotes.armorSpeedPenalty',
@@ -10663,6 +10668,10 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
     rules.defineRule('spells.Detect Magic', 'magicNotes.seerElf', '=', '1');
+  } else if(name == 'Goblin') {
+    Pathfinder2E.weaponRules
+      (rules, 'Jaws', 'Unarmed', 0, '1d6P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
+    rules.defineRule('weapons.Jaws', 'combatNotes.razortoothGoblin', '=', '1');
   } else if(name == 'Halfling') {
     rules.defineRule('skillNotes.nomadicHalfling',
       '', '=', '2',
@@ -12952,6 +12961,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     'training.' + name, '=', null,
     'skillIncreases.' + name, '+', null
   );
+  rules.defineRule('maxSkillRank', 'rank.' + name, '^=', null);
   if(name.endsWith(' Lore'))
     rules.defineRule('rank.Lore', 'rank.' + name, '^=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
@@ -13069,11 +13079,11 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad bulk "' + bulk + '" for weapon ' + name);
     return;
   }
-  if(hands != 1 && hands != 2) {
+  if(!(hands+'').match(/^(0|1|2)$/)) {
     console.log('Bad hands "' + hands + '" for weapon ' + name);
     return;
   }
-  if(!(group+'').match(/^(Axe|Bomb|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Spear|Sword)$/)) {
+  if(!(group+'').match(/^(Axe|Bomb|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Shield|Spear|Sword)$/)) {
     console.log('Bad group "' + group + '" for weapon ' + name);
     return;
   }
@@ -14358,6 +14368,9 @@ Pathfinder2E.ruleNotes = function() {
     '<ul>\n' +
     'Quilvyn does not note the age requirement for the elven Ancestral ' +
     'Longevity feat.\n' +
+    '</ul><ul>\n' +
+    'Quilvyn does not note the skill training requirement for the Dubious ' +
+    'Knowledge feat.\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
