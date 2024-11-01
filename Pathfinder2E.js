@@ -3044,6 +3044,7 @@ Pathfinder2E.FEATURES = {
   'Gnome Obsession':
     'Section=skill ' +
     'Note=' +
+      // TODO implement
       '"Skill %V (Choose 1 from any Lore; %{background} Lore skill)"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
@@ -3629,7 +3630,7 @@ Pathfinder2E.FEATURES = {
   "Spirit's Wrath":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May make a R120\' +%{$\'training.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
+    'Note="May make a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
     'Note="May grow to Huge size, gaining +10\' reach and suffering clumsy 1, until rage ends"',
@@ -10086,8 +10087,8 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     rules.defineRule('rank.Armor',
       'rank.' + a, '=', 'dict["armorCategory"]=="' + a.replace(/\s.*/, '') + '" ? source : null'
     );
-    rules.defineRule('training.' + a, '', '=', '0');
-    rules.defineRule('rank.' + a, 'training.' + a, '=', null);
+    rules.defineRule('trainingLevel.' + a, '', '=', '0');
+    rules.defineRule('rank.' + a, 'trainingLevel.' + a, '=', null);
   });
   rules.defineRule('shield.1',
     '', '=', '""',
@@ -10116,8 +10117,8 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     {'Fortitude':'constitution', 'Reflex':'dexterity', 'Will':'wisdom'};
   for(let s in saves) {
     rules.defineChoice('notes', 'save.' + s + ':%S (' + saves[s] + '; %1)');
-    rules.defineRule('training.' + s, '', '=', '0');
-    rules.defineRule('rank.' + s, 'training.' + s, '=', null);
+    rules.defineRule('trainingLevel.' + s, '', '=', '0');
+    rules.defineRule('rank.' + s, 'trainingLevel.' + s, '=', null);
     rules.defineRule('proficiencyLevelBonus.' + s,
       'rank.' + s, '?', 'source > 0',
       'level', '=', null
@@ -10281,12 +10282,12 @@ Pathfinder2E.talentRules = function(
     'rank.Perception', '?', 'source > 0',
     'level', '=', null
   );
-  rules.defineRule('rank.Perception', 'training.Perception', '=', null);
+  rules.defineRule('rank.Perception', 'trainingLevel.Perception', '=', null);
   rules.defineRule('skillNotes.intelligenceLanguageBonus',
     'intelligenceModifier', '=', 'source>0 ? source : null'
   );
   rules.defineRule('sumClassFeats', 'sumArchetypeFeats', '+=', null);
-  rules.defineRule('training.Perception', '', '=', '0');
+  rules.defineRule('trainingLevel.Perception', '', '=', '0');
 
   QuilvynRules.validAllocationRules
     (rules, 'AncestryFeats', 'featCount.Ancestry', 'sumAncestryFeats');
@@ -10798,7 +10799,7 @@ Pathfinder2E.armorRules = function(
     'armor', '=', QuilvynUtils.dictLit(rules.armorStats.str) + '[source]'
   );
 
-  rules.defineRule('rank.' + name, 'training.' + name);
+  rules.defineRule('rank.' + name, 'trainingLevel.' + name);
   rules.defineRule('rank.Armor',
     'rank.' + name, '^', 'dict["armor"]=="' + name + '" ? source : null'
   );
@@ -11028,7 +11029,8 @@ Pathfinder2E.classRules = function(
         'spellAttackModifier.' + spellType + ':%S (' + '%1; %2)',
         'spellDifficultyClass.' + spellType + ':%V (' + '%1; %2)'
       );
-      rules.defineRule('rank.' + spellType, 'training.' + spellType, '=', null);
+      rules.defineRule
+        ('rank.' + spellType, 'trainingLevel.' + spellType, '=', null);
       rules.defineRule('proficiencyLevelBonus.' + spellType,
         'rank.' + spellType, '?', 'source > 0',
         'level', '=', null
@@ -11114,7 +11116,7 @@ Pathfinder2E.classRules = function(
     'rank.' + name, '?', 'source > 0',
     classLevel, '=', null
   );
-  rules.defineRule('rank.' + name, 'training.' + name, '=', null);
+  rules.defineRule('rank.' + name, 'trainingLevel.' + name, '=', null);
   rules.defineRule('skillNotes.skillIncreases',
     classLevel, '=', 'source>=3 ? Math.floor((source - 1) / 2) : null'
   );
@@ -11420,17 +11422,17 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('magicNotes.warpriest', 'level', '=', 'source<19 ? "Expert" : "Master"');
-    rules.defineRule('training.Divine',
+    rules.defineRule('trainingLevel.Divine',
       'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
       'magicNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
     );
-    rules.defineRule('training.Fortitude',
+    rules.defineRule('trainingLevel.Fortitude',
       'saveNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
     );
-    rules.defineRule('training.Light Armor',
+    rules.defineRule('trainingLevel.Light Armor',
       'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
     );
-    rules.defineRule('training.Medium Armor',
+    rules.defineRule('trainingLevel.Medium Armor',
       'combatNotes.warpriest', '^=', 'source=="Expert" ? 2 : 1'
     );
     rules.defineRule('saveNotes.cloisteredCleric', 'level', '?', 'source>=3');
@@ -11497,7 +11499,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
-    rules.defineRule('training.Will', 'saveNotes.bravery', '^=', '2');
+    rules.defineRule('trainingLevel.Will', 'saveNotes.bravery', '^=', '2');
   } else if(name == 'Monk') {
     rules.defineRule('abilityNotes.incredibleMovement',
       'level', '=', 'Math.floor((source + 5) / 4) * 5'
@@ -11509,7 +11511,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('combatNotes.monasticWeaponry',
       '', '=', '"Trained"',
-      'training.Unarmed Attacks', '=', 'source>2 ? "Master" : source>1 ? "Expert" : null'
+      'trainingLevel.Unarmed Attacks', '=', 'source>2 ? "Master" : source>1 ? "Expert" : null'
     );
     rules.defineRule('featureNotes.pathToPerfection',
       '', '=', '1',
@@ -11564,14 +11566,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spellDifficultyClass.Occult.1',
       'spellModifierOccult.Monk', '=', '"wisdom"'
     );
-    rules.defineRule('training.Divine',
+    rules.defineRule('trainingLevel.Divine',
       'magicNotes.gracefulLegend', '^=', 'source=="Divine" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Divine" ? 2 : null'
     );
-    rules.defineRule('training.Monk',
+    rules.defineRule('trainingLevel.Monk',
       'combatNotes.monasticWeaponry', '=', 'source=="Expert" ? 3 : source=="Master" ? 2 : 1'
     );
-    rules.defineRule('training.Occult',
+    rules.defineRule('trainingLevel.Occult',
       'magicNotes.gracefulLegend', '^=', 'source=="Occult" ? 3 : null',
       'magicNotes.monkExpertise', '^=', 'source=="Occult" ? 2 : null'
     );
@@ -11630,7 +11632,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.skillIncreases',
       classLevel, '=', 'source>=2 ? source - 1 : null'
     );
-    rules.defineRule('training.Medium Armor',
+    rules.defineRule('trainingLevel.Medium Armor',
       'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
   } else if(name == 'Sorcerer') {
@@ -11650,7 +11652,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', null);
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('training.' + t,
+      rules.defineRule('trainingLevel.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
         'magicNotes.masterSpellcaster', '^=', 'source.includes("' + t + '") ? 3 : null',
         'magicNotes.legendarySpellcaster', '^=', 'source.includes("' + t + '") ? 4 : null'
@@ -11820,11 +11822,11 @@ Pathfinder2E.deityRules = function(
     'deityWeapon', '=', 'null',
     'rank.' + weapon, '=', 'dict.deityWeapon=="' + weapon + '" ? source : null'
   );
-  rules.defineRule('training.' + skill,
+  rules.defineRule('trainingLevel.' + skill,
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
     'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
   );
-  rules.defineRule('training.' + weapon,
+  rules.defineRule('trainingLevel.' + weapon,
     'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
     'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
     'combatNotes.deityAndCause', '^=', 'source=="' + weapon + '" ? 1 : null',
@@ -11942,7 +11944,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.additionalLore(' + matchInfo[1].replaceAll(' ', '') + ')',
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule('training.' + matchInfo[1],
+    rules.defineRule('trainingLevel.' + matchInfo[1],
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
   } else if(name == 'Advanced Fury') {
@@ -11987,8 +11989,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Armor Proficiency') {
     rules.defineRule('combatNotes.armorProficiency',
       '', '=', '"Light"',
-      'training.Light Armor', '=', 'source>0 ? "Medium" : null',
-      'training.Medium Armor', '=', 'source>0 ? "Heavy" : null'
+      'trainingLevel.Light Armor', '=', 'source>0 ? "Medium" : null',
+      'trainingLevel.Medium Armor', '=', 'source>0 ? "Heavy" : null'
     );
     rules.defineRule
       ('rank.Light Armor', 'combatNotes.armorProficiency', '^=', '1');
@@ -12044,7 +12046,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
   } else if(name == 'Bardic Lore') {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
-    rules.defineRule('training.Bardic Lore',
+    rules.defineRule('trainingLevel.Bardic Lore',
       'skillNotes.bardicLore', '=', '1',
       'rank.Occultism', '+', '1'
     );
@@ -12084,28 +12086,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('training.Fortitude',
+    rules.defineRule('trainingLevel.Fortitude',
       'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Perception)') {
     rules.defineRule('skillNotes.cannyAcumen(Perception)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('training.Perception',
+    rules.defineRule('trainingLevel.Perception',
       'skillNotes.cannyAcumen(Perception)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Reflex)') {
     rules.defineRule('saveNotes.cannyAcumen(Reflex)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('training.Reflex',
+    rules.defineRule('trainingLevel.Reflex',
       'saveNotes.cannyAcumen(Reflex)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Canny Acumen (Will)') {
     rules.defineRule('saveNotes.cannyAcumen(Will)',
       'level', '=', 'source<17 ? "Expert" : "Master"'
     );
-    rules.defineRule('training.Will',
+    rules.defineRule('trainingLevel.Will',
       'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
     );
   } else if(name == 'Champion Dedication') {
@@ -12294,12 +12296,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spells.Invisibility', 'magicNotes.firstWorldAdept', '=', '1');
   } else if(name == 'Gnome Obsession') {
-    // TODO find a less clunky way to do this
-    rules.defineRule
-      ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', '1');
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
+    rules.defineRule
+      ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
   } else if(name == 'Hand Of The Apprentice') {
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
@@ -12505,7 +12506,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'bloodlineTraditions', '=', 'source.toLowerCase()'
     );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('training.' + t,
+      rules.defineRule('trainingLevel.' + t,
         'magicNotes.sorcererDedication', '^=', 'source.includes("' + t + '") ? 1 : null'
       );
       rules.defineRule('spellSlots.' + t.charAt(0) + '0',
@@ -12706,7 +12707,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           adjusted = 'save.' + adjusted;
         } else if(section == 'skill' &&
                   adjusted != 'Language Count' &&
-                  adjusted != 'Skill Points' &&
                   adjusted.match(/^[A-Z][a-z]*(\s[A-Z][a-z]*)*(\s\([A-Z][a-z]*(\s[A-Z][a-z]*)*\))?$/)) {
           adjusted = 'skillModifier.' + adjusted;
         } else if(adjusted.match(/^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/)) {
@@ -12726,25 +12726,27 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
 
     notes[i].split(/\s*\/\s*/).forEach(n => {
       let matchInfo =
-        n.match(/([A-Z]\w*)\s(Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i);
+        n.match(/([A-Z]\w*)\s(%V|Expert|Legendary|Master|Trained)\s*\(([^\)]*)\)/i);
       if(matchInfo) {
         let group = matchInfo[1];
         let rank =
-          matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
+          matchInfo[2] == '%V' ? 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4' : matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
         let choices = '';
         matchInfo[3].split(/;\s*/).forEach(element => {
           let m = element.match(/Choose (\d+|%V)/);
           if(m)
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
-          else if(!element.startsWith('%'))
-            rules.defineRule('training.' + element, note, '^=', rank);
+          else if(!element.startsWith('%')) {
+            rules.defineRule('trainingLevel.' + element, note, '^=', rank);
+            rules.defineRule('trainingCount.' + element, note, '+=', '1');
+          }
           if(group == 'Attack') {
             rules.defineRule('attackProficiency.' + element,
-              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
           } else if(group == 'Defense') {
             rules.defineRule('defenseProficiency.' + element,
-              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
           }
         });
@@ -12757,7 +12759,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       if(matchInfo) {
         let rank =
           matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
-        rules.defineRule('training.Perception', note, '^=', rank);
+        rules.defineRule('trainingLevel.Perception', note, '^=', rank);
       }
       matchInfo = n.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
       if(matchInfo) {
@@ -12952,13 +12954,14 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   rules.defineChoice
     ('notes', 'skillModifiers.' + name + ':%S (' + ability + '; %1)');
   if(name.match(/Lore$/)) {
-    rules.defineRule('training.' + name, 'skillIncreases.' + name, '^=', '0');
+    rules.defineRule
+      ('trainingLevel.' + name, 'skillIncreases.' + name, '^=', '0');
     rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
   } else {
-    rules.defineRule('training.' + name, '', '=', '0');
+    rules.defineRule('trainingLevel.' + name, '', '=', '0');
   }
   rules.defineRule('rank.' + name,
-    'training.' + name, '=', null,
+    'trainingLevel.' + name, '=', null,
     'skillIncreases.' + name, '+', null
   );
   rules.defineRule('maxSkillRank', 'rank.' + name, '^=', null);
@@ -13120,9 +13123,9 @@ Pathfinder2E.weaponRules = function(
   let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%7'" : '') + '; %5; %6)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
-  rules.defineRule('rank.' + category, 'training.' + category, '=', null);
-  rules.defineRule('rank.' + group, 'training.' + group, '=', null);
-  rules.defineRule('rank.' + name, 'training.' + name, '=', null);
+  rules.defineRule('rank.' + category, 'trainingLevel.' + category, '=', null);
+  rules.defineRule('rank.' + group, 'trainingLevel.' + group, '=', null);
+  rules.defineRule('rank.' + name, 'trainingLevel.' + name, '=', null);
   rules.defineRule('weaponRank.' + name,
     weaponName, '?', null,
     'rank.' + category, '=', null,
@@ -13250,14 +13253,14 @@ Pathfinder2E.featureListRules = function(
           choices += '+' + m[1];
         else {
           rules.defineRule
-            ('training.' + element, setName + '.' + feature, '^=', rank);
+            ('trainingLevel.' + element, setName + '.' + feature, '^=', rank);
           if(group == 'Attack')
             rules.defineRule('attackProficiency.' + element,
-              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
           else if(group == 'Defense')
             rules.defineRule('defenseProficiency.' + element,
-              'training.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
+              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
         }
       });
@@ -13272,7 +13275,7 @@ Pathfinder2E.featureListRules = function(
       let rank =
         matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
       rules.defineRule
-        ('training.Perception', setName + '.' + feature, '^=', rank);
+        ('trainingLevel.Perception', setName + '.' + feature, '^=', rank);
     }
     matchInfo =
       feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
