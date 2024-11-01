@@ -26,9 +26,9 @@ var attributes = {
   "feats.Perfect Clarity":1, "feats.Predator's Pounce":1, "feats.Quaking Stomp":1, "feats.Quick Jump":1, 
   "feats.Raging Athlete":1, "feats.Raging Intimidation":1, "feats.Raging Thrower":1, 
   "feats.Reckless Abandon":1, "feats.Renewed Vigor":1, "feats.Second Wind":1, "feats.Shake It Off":1, 
-  "feats.Share Rage":1, "feats.Skill Training (Athletics)":1, 
-  "feats.Skill Training (Forest Lore)":1, "feats.Skill Training (Gnome Lore)":1, "feats.Skill Training (Nature)":1, 
-  "feats.Skill Training (River Lore)":1, "feats.Skill Training (Tea Lore)":1, "feats.Spirit's Wrath":1, 
+  "feats.Share Rage":1, "feats.Skill Training (Forest Lore)":1, 
+  "feats.Skill Training (Gnome Lore)":1, "feats.Skill Training (Nature)":1, "feats.Skill Training (River Lore)":1, 
+  "feats.Skill Training (Tea Lore)":1, "feats.Skill Training (Warfare Lore)":1, "feats.Spirit's Wrath":1, 
   "feats.Spirits' Interference":1, "feats.Sudden Charge":1, "feats.Sudden Leap":1, "feats.Swipe":1, 
   "feats.Terrifying Howl":1, "feats.Thrash":1, "feats.Titan's Stature":1, 
   "feats.Unconventional Weaponry (Sawtooth Saber)":1, "feats.Vengeful Strike":1, "feats.Vicious Evisceration":1, 
@@ -114,7 +114,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Acute Scent; Acute Vision; Animal Rage; Animal Skin; Armor Proficiency; Assurance (Athletics); Assurance (Farming Lore); Assurance (Nature); Attack Of Opportunity; Awesome Blow; Breath Control; Brutal Bully; Brutal Critical; Canny Acumen (Perception); Cleave; Collateral Thrash; Come And Get Me; Contagious Rage; Cooperative Nature; Dragon Transformation; Dragon's Rage Breath; Dragon's Rage Wings; Expeditious Search; Fast Movement; Furious Bully; Furious Finish; Furious Grab; Furious Sprint; Giant's Lunge; Giant's Stature; Great Cleave; Haughty Obstinacy; Incredible Initiative; Knockback; Moment Of Clarity; Natural Ambition; Natural Skill; No Escape; Perfect Clarity; Predator's Pounce; Quaking Stomp; Quick Jump; Raging Athlete; Raging Intimidation; Raging Thrower; Reckless Abandon; Renewed Vigor; Second Wind; Shake It Off; Share Rage; Skill Training (Athletics); Skill Training (Forest Lore); Skill Training (Gnome Lore); Skill Training (Nature); Skill Training (River Lore); Skill Training (Tea Lore); Spirit's Wrath; Spirits' Interference; Sudden Charge; Sudden Leap; Swipe; Terrifying Howl; Thrash; Titan's Stature; Unconventional Weaponry (Sawtooth Saber); Vengeful Strike; Vicious Evisceration; Whirlwind Strike; Wounded Rage</td>
+        <td><b>Feats</b>: Acute Scent; Acute Vision; Animal Rage; Animal Skin; Armor Proficiency; Assurance (Athletics); Assurance (Farming Lore); Assurance (Nature); Attack Of Opportunity; Awesome Blow; Breath Control; Brutal Bully; Brutal Critical; Canny Acumen (Perception); Cleave; Collateral Thrash; Come And Get Me; Contagious Rage; Cooperative Nature; Dragon Transformation; Dragon's Rage Breath; Dragon's Rage Wings; Expeditious Search; Fast Movement; Furious Bully; Furious Finish; Furious Grab; Furious Sprint; Giant's Lunge; Giant's Stature; Great Cleave; Haughty Obstinacy; Incredible Initiative; Knockback; Moment Of Clarity; Natural Ambition; Natural Skill; No Escape; Perfect Clarity; Predator's Pounce; Quaking Stomp; Quick Jump; Raging Athlete; Raging Intimidation; Raging Thrower; Reckless Abandon; Renewed Vigor; Second Wind; Shake It Off; Share Rage; Skill Training (Forest Lore); Skill Training (Gnome Lore); Skill Training (Nature); Skill Training (River Lore); Skill Training (Tea Lore); Skill Training (Warfare Lore); Spirit's Wrath; Spirits' Interference; Sudden Charge; Sudden Leap; Swipe; Terrifying Howl; Thrash; Titan's Stature; Unconventional Weaponry (Sawtooth Saber); Vengeful Strike; Vicious Evisceration; Whirlwind Strike; Wounded Rage</td>
         <td><b>Barbarian Features</b>: Ability Boost (Strength); Ability Boosts; Animal Instinct (Ape); Animal Instinct (Bear); Animal Instinct (Bull); Animal Instinct (Cat); Animal Instinct (Deer); Animal Instinct (Frog); Animal Instinct (Shark); Animal Instinct (Snake); Animal Instinct (Wolf); Armor Of Fury; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Barbarian Feats; Barbarian Skills; Brutality; Class Trained (Barbarian); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Deny Advantage; Devastator; Dragon Instinct (Black); Dragon Instinct (Blue); Dragon Instinct (Brass); Dragon Instinct (Bronze); Dragon Instinct (Copper); Dragon Instinct (Gold); Dragon Instinct (Green); Dragon Instinct (Red); Dragon Instinct (Silver); Dragon Instinct (White); Fury Instinct; General Feats; Giant Instinct; Greater Juggernaut; Greater Weapon Specialization; Heightened Senses; Indomitable Will; Instinct Ability; Instinct; Juggernaut; Lightning Reflexes; Medium Armor Expertise; Mighty Rage; Perception Expert; Quick Rage; Rage; Raging Resistance; Save Expert (Fortitude; Will); Save Trained (Reflex); Skill Feats; Skill Increases; Specialization Ability; Spirit Instinct; Weapon Fury; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Orc; Human Heritage</td>
@@ -161,40 +161,44 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +26 (dexterity; trained)</td>
-      <td>Gnome Lore: +28 (intelligence; expert)</td>
-      <td>Religion: +26 (wisdom; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Alcohol Lore: +26 (intelligence; trained)</td>
       <td>Halfling Lore: +26 (intelligence; trained)</td>
-      <td>River Lore: +26 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Arcana: +4 (intelligence; untrained)</td>
-      <td>Intimidation: +26 (charisma; trained)</td>
       <td>Scribing Lore: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +33 (strength; legendary)</td>
-      <td>Labor Lore: +28 (intelligence; expert)</td>
+      <td>Alcohol Lore: +26 (intelligence; trained)</td>
+      <td>Intimidation: +26 (charisma; trained)</td>
       <td>Society: +4 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; untrained)</td>
-      <td>Medicine: +4 (wisdom; untrained)</td>
+      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Labor Lore: +28 (intelligence; expert)</td>
       <td>Stealth: +26 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +4 (charisma; untrained)</td>
-      <td>Nature: +28 (wisdom; expert)</td>
+      <td>Athletics: +33 (strength; legendary)</td>
+      <td>Medicine: +4 (wisdom; untrained)</td>
       <td>Survival: +4 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +4 (charisma; untrained)</td>
-      <td>Occultism: +26 (intelligence; trained)</td>
+      <td>Crafting: +4 (intelligence; untrained)</td>
+      <td>Nature: +28 (wisdom; expert)</td>
       <td>Tea Lore: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Farming Lore: +26 (intelligence; trained)</td>
-      <td>Performance: +4 (charisma; untrained)</td>
+      <td>Deception: +4 (charisma; untrained)</td>
+      <td>Occultism: +26 (intelligence; trained)</td>
       <td>Thievery: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Forest Lore: +26 (intelligence; trained)</td>
-      <td>Plains Lore: +26 (intelligence; trained)</td>
+      <td>Diplomacy: +4 (charisma; untrained)</td>
+      <td>Performance: +4 (charisma; untrained)</td>
       <td>Vampire Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Farming Lore: +26 (intelligence; trained)</td>
+      <td>Plains Lore: +26 (intelligence; trained)</td>
+      <td>Warfare Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Forest Lore: +26 (intelligence; trained)</td>
+      <td>Religion: +26 (wisdom; trained)</td>
+      <td></td>
+    </tr><tr style="text-align:left">
+      <td>Gnome Lore: +28 (intelligence; expert)</td>
+      <td>River Lore: +26 (intelligence; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -216,8 +220,6 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Skill Training (Athletics): Skill Trained (Athletics)</i></td>
-    </tr><tr style="text-align:center">
       <td><i>Skill Training (Forest Lore): Skill Trained (Forest Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Gnome Lore): Skill Trained (Gnome Lore)</i></td>
@@ -227,6 +229,8 @@ var attributes = {
       <td><i>Skill Training (River Lore): Skill Trained (River Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Tea Lore): Skill Trained (Tea Lore)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Skill Training (Warfare Lore): Skill Trained (Warfare Lore)</i></td>
     </tr><tr style="text-align:center">
       <td>Acute Scent: R30' imprecise scent</td>
     </tr><tr style="text-align:center">

@@ -26,8 +26,8 @@ var attributes = {
   "feats.Order Magic (Storm)":1, "feats.Order Magic (Wild)":1, "feats.Overwhelming Energy":1, 
   "feats.Perfect Form Control":1, "feats.Plant Shape":1, "feats.Poison Resistance":1, "feats.Primal Focus":1, 
   "feats.Primal Summons":1, "feats.Primal Wellspring":1, "feats.Reach Spell":1, "feats.Side By Side":1, 
-  "feats.Skill Training (Athletics)":1, "feats.Skill Training (Diplomacy)":1, "feats.Skill Training (Labor Lore)":1, 
-  "feats.Skill Training (Society)":1, "feats.Skill Training (Vampire Lore)":1, "feats.Soaring Shape":1, 
+  "feats.Skill Training (Crafting)":1, "feats.Skill Training (Labor Lore)":1, "feats.Skill Training (Society)":1, 
+  "feats.Skill Training (Vampire Lore)":1, "feats.Skill Training (Warfare Lore)":1, "feats.Soaring Shape":1, 
   "feats.Specialized Companion":1, "feats.Steady Spellcasting":1, "feats.Storm Retribution":1, 
   "feats.Thousand Faces":1, "feats.Timeless Nature":1, "feats.Train Animal":1, 
   "feats.True Shapeshifter":1, "feats.Unconventional Weaponry (Bastard Sword)":1, 
@@ -107,7 +107,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Assurance (Athletics); Assurance (Religion); Bargain Hunter; Call Of The Wild; Clever Improviser; Cooperative Nature; Courtly Graces; Dragon Shape; Effortless Concentration; Elemental Shape; Enhanced Familiar; Feather Step; Ferocious Shape; Fey Caller; Form Control; Green Empathy; Green Tongue; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Insect Shape; Invoke Disaster; Leyline Conduit; Mature Animal Companion; Monstrosity Shape; Natural Skill; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Wild); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Wild); Overwhelming Energy; Perfect Form Control; Plant Shape; Poison Resistance; Primal Focus; Primal Summons; Primal Wellspring; Reach Spell; Side By Side; Skill Training (Athletics); Skill Training (Diplomacy); Skill Training (Labor Lore); Skill Training (Society); Skill Training (Vampire Lore); Soaring Shape; Specialized Companion; Steady Spellcasting; Storm Retribution; Thousand Faces; Timeless Nature; Train Animal; True Shapeshifter; Unconventional Weaponry (Bastard Sword); Verdant Metamorphosis; Weapon Proficiency (Club); Weapon Proficiency (Greatclub); Weapon Proficiency (Hand Crossbow); Weapon Proficiency (Longsword); Widen Spell; Wind Caller; Woodland Stride</td>
+        <td><b>Feats</b>: Assurance (Athletics); Assurance (Religion); Bargain Hunter; Call Of The Wild; Clever Improviser; Cooperative Nature; Courtly Graces; Dragon Shape; Effortless Concentration; Elemental Shape; Enhanced Familiar; Feather Step; Ferocious Shape; Fey Caller; Form Control; Green Empathy; Green Tongue; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Insect Shape; Invoke Disaster; Leyline Conduit; Mature Animal Companion; Monstrosity Shape; Natural Skill; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Wild); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Wild); Overwhelming Energy; Perfect Form Control; Plant Shape; Poison Resistance; Primal Focus; Primal Summons; Primal Wellspring; Reach Spell; Side By Side; Skill Training (Crafting); Skill Training (Labor Lore); Skill Training (Society); Skill Training (Vampire Lore); Skill Training (Warfare Lore); Soaring Shape; Specialized Companion; Steady Spellcasting; Storm Retribution; Thousand Faces; Timeless Nature; Train Animal; True Shapeshifter; Unconventional Weaponry (Bastard Sword); Verdant Metamorphosis; Weapon Proficiency (Club); Weapon Proficiency (Greatclub); Weapon Proficiency (Hand Crossbow); Weapon Proficiency (Longsword); Widen Spell; Wind Caller; Woodland Stride</td>
         <td><b>Druid Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Anathema; Animal; Attack Trained (Simple Weapons; Unarmed Attacks); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Druid Feats; Druid Skills; Druid Weapon Expertise; Druidic Language; Druidic Order; Expert Spellcaster; General Feats; Great Fortitude; Leaf; Legendary Spellcaster; Lightning Reflexes; Master Spellcaster; Medium Armor Expertise; Perception Trained; Primal Hierophant; Primal Spellcasting; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Primal); Storm; Weapon Specialization; Wild Empathy; Wild</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
@@ -205,7 +205,7 @@ var attributes = {
       <td>Intimidation: +27 (charisma; expert)</td>
       <td>Society: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +24 (intelligence; untrained)</td>
+      <td>Crafting: +26 (intelligence; trained)</td>
       <td>Labor Lore: +26 (intelligence; trained)</td>
       <td>Stealth: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
@@ -227,7 +227,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Farming Lore: +26 (intelligence; trained)</td>
       <td>Occultism: +24 (intelligence; untrained)</td>
-      <td></td>
+      <td>Warfare Lore: +26 (intelligence; trained)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -251,15 +251,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Skill Training (Athletics): Skill Trained (Athletics)</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Skill Training (Diplomacy): Skill Trained (Diplomacy)</i></td>
+      <td><i>Skill Training (Crafting): Skill Trained (Crafting)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Labor Lore): Skill Trained (Labor Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Society): Skill Trained (Society)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Vampire Lore): Skill Trained (Vampire Lore)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Skill Training (Warfare Lore): Skill Trained (Warfare Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Storm: Skill Trained (Acrobatics)</i></td>
     </tr><tr style="text-align:center">

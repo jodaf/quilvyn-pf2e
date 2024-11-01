@@ -10216,8 +10216,15 @@ Pathfinder2E.talentRules = function(
     rules.choiceRules(rules, 'Language', l, languages[l]);
     rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
   }
+  rules.defineChoice
+    ('notes', 'skillNotes.duplicatedTraining:Skill Trained (Choose %V from any)');
+  rules.defineRule
+    ('choiceCount.Skill', 'skillNotes.duplicatedTraining', '+=', null);
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
+    rules.defineRule('skillNotes.duplicatedTraining',
+      'trainingCount.' + s, '+=', 'source>1 ? source - 1 : null'
+    );
     rules.defineRule
       ('skillIncreasesAllocated', 'skillIncreases.' + s, '+=', null);
     let pattern =
