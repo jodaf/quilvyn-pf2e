@@ -14052,51 +14052,82 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     choices = Object.keys(this.getChoices('shields'));
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'skills') {
-    let increasesAllocated = {};
-    let allSkills = this.getChoices('skills');
-    for(attr in this.getChoices('skills'))
-      increasesAllocated[attr] = attributes['skillIncreases.' + attr] || 0;
     attrs = this.applyRules(attributes);
+    let skillRanks = {};
+    let allSkills = this.getChoices('skills');
+    for(attr in allSkills)
+      skillRanks[attr] = attrs['rank.' + attr] || 0;
     let notes = this.getChoices('notes');
+    let anyChoices = [];
+    let increaseChoices = [];
+    let limitedChoices = [];
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/gi)))
         ; // empty
       else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Expert|Legendary|Master|Trained)\s+\([^\)]*\)/gi))==null)
+         (matchInfo = notes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/gi))==null)
         continue;
-      // TODO how to handle allocations above Trained?
       matchInfo.forEach(matched => {
-        matched.split(/\s*;\s*/).forEach(increase => {
-          let m = increase.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+        let n = matched.match(/Trained|Expert|Master|Legendary|Increase/i);
+        matched.split(/\s*;\s*/).forEach(increased => {
+          let m = increased.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
           if(m) {
             howMany = m[1] == '%V' ? attrs[attr] : +m[1];
-            if(m[2].match(/^any$/i))
-              choices = Object.keys(allSkills);
-            else if(m[2].match(/^any\slore$/i))
-              choices = Object.keys(allSkills).filter(x => x.includes('Lore'));
-            else if(m[2].match(/^any\s/i))
-              choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
+            if(n[0].match(/Increase/i))
+              increaseChoices.push([n[0], m[2], howMany]);
+            else if(m[2].match(/^any\b/))
+              anyChoices.push([n[0], m[2], howMany]);
             else
-              choices = m[2].split(/\s*,\s*/);
-            choices.forEach(choice => {
-              if(howMany > 0 && increasesAllocated[choice] > 0) {
-                howMany--;
-                increasesAllocated[choice]--;
-              }
-            });
-            while(howMany > 0 && choices.length > 0) {
-              let choice = randomElement(choices);
-              attributes['skillIncreases.' + choice] =
-                (attributes['skillIncreases.' + choice] || 0) + 1;
-              howMany--;
-              choices = choices.filter(x => x != choice);
-            }
+              limitedChoices.push([n[0], m[2], howMany]);
           }
         });
       });
     }
+    // Handle limited choices before those with a large number of options
+    limitedChoices.concat(anyChoices).concat(increaseChoices).forEach(c => {
+      console.log(c);
+      let increaseType = c[0];
+      let options = c[1];
+      let maxCurrentRank =
+        increaseType == 'Trained' ? 0 :
+        increaseType == 'Expert' ? 1 :
+        increaseType == 'Master' ? 2 :
+        increaseType == 'Legendary' ? 3 :
+        attrs.level < 7 ? 1 :
+        attrs.level < 15 ? 2 : 3;
+      howMany = c[2];
+      if(options.match(/^any$/i))
+        choices = Object.keys(allSkills);
+      else if(options.match(/^any\s/i))
+        choices = Object.keys(allSkills).filter(x => allSkills[x].includes(options.replace(/any\s+/, '')));
+      else
+        choices = options.split(/\s*,\s*/);
+      (choices.concat([])).forEach(c => {
+        // TODO What about choices that appear in more than one feature?
+        // TODO How does this apply to skill increases?
+        if(skillRanks[c] > maxCurrentRank) {
+          console.log('Remove ' + c + ' for being gt ' + maxCurrentRank);
+          choices = choices.filter(x => x != c);
+          if((attributes['skillIncreases.' + c] || 0) > 0)
+            howMany--;
+        } else if(increaseType != 'Increase' && skillRanks[c] != maxCurrentRank) {
+          console.log('Remove ' + c + ' for being ne ' + maxCurrentRank);
+          choices = choices.filter(x => x != c);
+        }
+      });
+      console.log(choices);
+      console.log(howMany);
+      while(howMany > 0 && choices.length > 0) {
+        let choice = randomElement(choices);
+        attributes['skillIncreases.' + choice] =
+          (attributes['skillIncreases.' + choice] || 0) + 1;
+        skillRanks[choice]++;
+        howMany--;
+        choices = choices.filter(x => x != choice);
+      }
+    });
   } else if(attribute == 'spells') {
-/*
+/* TODO
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
     attrs = this.applyRules(attributes);
