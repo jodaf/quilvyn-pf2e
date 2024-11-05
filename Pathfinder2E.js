@@ -14053,65 +14053,84 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'skills') {
     attrs = this.applyRules(attributes);
-    let skillRanks = {};
+    let allNotes = this.getChoices('notes');
     let allSkills = this.getChoices('skills');
+    let skillRanks = {};
     for(attr in allSkills)
       skillRanks[attr] = attrs['rank.' + attr] || 0;
-    let notes = this.getChoices('notes');
+    // Collect info for each feature and note that provides a skill choice,
+    // split into choices limited to specified skills and choices of any skill
     let anyChoices = [];
     let increaseChoices = [];
     let limitedChoices = [];
     for(attr in attrs) {
-      if((matchInfo = attr.match(/\wfeatures.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/^features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/g)))
         ; // empty
-      else if(!notes[attr] ||
-         (matchInfo = notes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/gi))==null)
+      else if(!allNotes[attr] ||
+         (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\([^\)]*\)/g)) == null)
         continue;
-      matchInfo.forEach(matched => {
-        let n = matched.match(/Trained|Expert|Master|Legendary|Increase/i);
-        matched.split(/\s*;\s*/).forEach(increased => {
-          let m = increased.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+      console.log(matchInfo);
+      matchInfo.forEach(match => {
+        let skillLevel =
+          match.match(/Trained|Expert|Master|Legendary|Increase|%V/)[0];
+        if(skillLevel == '%V')
+          skillLevel = attrs[attr];
+        match.split(/\s*;\s*/).forEach(increased => {
+          let m = increased.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/);
           if(m) {
-            howMany = m[1] == '%V' ? attrs[attr] : +m[1];
-            if(n[0].match(/Increase/i))
-              increaseChoices.push([n[0], m[2], howMany]);
-            else if(m[2].match(/^any\b/))
-              anyChoices.push([n[0], m[2], howMany]);
+            howMany = m[1] == '%V' ? +attrs[attr] : +m[1];
+            let options = m[2];
+            if(skillLevel == 'Increase')
+              increaseChoices.push([skillLevel, options, howMany]);
+            else if(options.match(/^any\b/))
+              anyChoices.push([skillLevel, options, howMany]);
             else
-              limitedChoices.push([n[0], m[2], howMany]);
+              limitedChoices.push([skillLevel, options, howMany]);
           }
         });
       });
     }
-    // Handle limited choices before those with a large number of options
+    // Allocate limited choices before those with a large number of options,
+    // and do increases last, since they can boost beyond trained
     limitedChoices.concat(anyChoices).concat(increaseChoices).forEach(c => {
       console.log(c);
-      let increaseType = c[0];
+      let skillLevel = c[0];
       let options = c[1];
-      let maxCurrentRank =
-        increaseType == 'Trained' ? 0 :
-        increaseType == 'Expert' ? 1 :
-        increaseType == 'Master' ? 2 :
-        increaseType == 'Legendary' ? 3 :
+      howMany = c[2];
+      // Unsure if the restriction of applying multiple ability boosts to the
+      // same ability also applies to skill increases. Possibly moot, since
+      // the issue might only arise with Skill Trained, where the max rank
+      // would prevent doubling up, or Skill Increase, which typically grants
+      // only a single increase
+      let maxRankAllowed =
+        skillLevel == 'Trained' ? 0 :
+        skillLevel == 'Expert' ? 1 :
+        skillLevel == 'Master' ? 2 :
+        skillLevel == 'Legendary' ? 3 :
+        // Increase
         attrs.level < 7 ? 1 :
         attrs.level < 15 ? 2 : 3;
-      howMany = c[2];
-      if(options.match(/^any$/i))
+      if(options == 'any')
         choices = Object.keys(allSkills);
-      else if(options.match(/^any\s/i))
+      else if(options.match(/^any\s/))
         choices = Object.keys(allSkills).filter(x => allSkills[x].includes(options.replace(/any\s+/, '')));
       else
         choices = options.split(/\s*,\s*/);
+      // Try to determine whether any choices from this feature have already
+      // been selected
       (choices.concat([])).forEach(c => {
-        // TODO What about choices that appear in more than one feature?
-        // TODO How does this apply to skill increases?
-        if(skillRanks[c] > maxCurrentRank) {
-          console.log('Remove ' + c + ' for being gt ' + maxCurrentRank);
+        if(skillRanks[c] > maxRankAllowed) {
+          console.log('Remove ' + c + ' for being gt ' + maxRankAllowed);
           choices = choices.filter(x => x != c);
+/*
           if((attributes['skillIncreases.' + c] || 0) > 0)
+            // Assume a choice from this feature has already been applied to
+            // this skill. Note that this assumption may be incorrect when
+            // multiple features allow choosing the same skill.
             howMany--;
-        } else if(increaseType != 'Increase' && skillRanks[c] != maxCurrentRank) {
-          console.log('Remove ' + c + ' for being ne ' + maxCurrentRank);
+*/
+        } else if(skillLevel != 'Increase' && skillRanks[c] != maxRankAllowed) {
+          console.log('Remove ' + c + ' for being ne ' + maxRankAllowed);
           choices = choices.filter(x => x != c);
         }
       });
