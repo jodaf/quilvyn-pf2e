@@ -11322,24 +11322,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
       'deityWeapon', '=', null
     );
-    // TODO merge these somehow?
-    rules.defineRule('combatNotes.dragonslayerOath',
-      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
-      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a 2nd Step"',
-      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
-    );
+    ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
+      rules.defineRule('combatNotes.' + f,
+        'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
+        'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a 2nd Step"',
+        'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
+      );
+    });
     rules.defineRule('combatNotes.exalt(Paladin)',
       'combatNotes.auraOfVengeance', '=', 'null' // italics
-    );
-    rules.defineRule('combatNotes.fiendsbaneOath',
-      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
-      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a 2nd Step"',
-      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
-    );
-    rules.defineRule('combatNotes.shiningOath',
-      'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
-      'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a 2nd Step"',
-      'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
     );
     rules.defineRule('focusPoints', 'magicNotes.devotionSpells', '+=', '1');
     rules.defineRule('featureNotes.divineAlly',
@@ -13845,12 +13836,12 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       boostsAllocated[attr] = attributes['abilityBoosts.' + attr] || 0;
     }
     attrs = this.applyRules(attributes);
-    let notes = this.getChoices('notes');
+    let allNotes = this.getChoices('notes');
     for(attr in attrs) {
       if((matchInfo = attr.match(/^\w+features.Ability\s+Boost\s+\([^\)]*\)/gi)))
         ; // empty
-      else if(!notes[attr] ||
-         (matchInfo=notes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
+      else if(!allNotes[attr] ||
+         (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
         continue;
       matchInfo.forEach(matched => {
         matched = matched.replace(/.*\(/i, '').replace(/\)/, '');
@@ -13952,17 +13943,25 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
       howMany = toAllocateByTrait[attr];
       debug.push('Choose ' + howMany + ' ' + attr + ' ' + prefix);
+      let setsPicked = {};
       while(howMany > 0 &&
-            (choices=QuilvynUtils.getKeys(availableChoicesInTrait)).length>0) {
-        debug.push(
-          'Pick ' + howMany + ' from ' +
-          QuilvynUtils.getKeys(availableChoicesInTrait).length
-        );
+            (choices=Object.keys(availableChoicesInTrait)).length > 0) {
+        debug.push('Pick ' + howMany + ' from ' + choices.length);
         let pick;
         let picks = {};
         pickAttrs(picks, '', choices, howMany, 1);
         debug.push('From ' + QuilvynUtils.getKeys(picks).join(", ") + ' reject');
         for(pick in picks) {
+          // Only choose 1 choice from choice sets, like Assurance (skill) feats
+          if(pick.includes('(')) {
+            let pickSet = pick.replace(/ \(.*/, '');
+            if(pickSet in setsPicked) {
+              delete picks[pick];
+              delete availableChoicesInTrait[pick];
+              continue;
+            }
+            setsPicked[pickSet] = pick;
+          }
           attributes[prefix + '.' + pick] = 1;
           delete availableChoicesInTrait[pick];
         }
@@ -14069,7 +14068,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       else if(!allNotes[attr] ||
          (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\([^\)]*\)/g)) == null)
         continue;
-      console.log(matchInfo);
       matchInfo.forEach(match => {
         let skillLevel =
           match.match(/Trained|Expert|Master|Legendary|Increase|%V/)[0];
@@ -14093,7 +14091,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     // Allocate limited choices before those with a large number of options,
     // and do increases last, since they can boost beyond trained
     limitedChoices.concat(anyChoices).concat(increaseChoices).forEach(c => {
-      console.log(c);
       let skillLevel = c[0];
       let options = c[1];
       howMany = c[2];
@@ -14120,7 +14117,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       // been selected
       (choices.concat([])).forEach(c => {
         if(skillRanks[c] > maxRankAllowed) {
-          console.log('Remove ' + c + ' for being gt ' + maxRankAllowed);
           choices = choices.filter(x => x != c);
 /*
           if((attributes['skillIncreases.' + c] || 0) > 0)
@@ -14130,12 +14126,9 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             howMany--;
 */
         } else if(skillLevel != 'Increase' && skillRanks[c] != maxRankAllowed) {
-          console.log('Remove ' + c + ' for being ne ' + maxRankAllowed);
           choices = choices.filter(x => x != c);
         }
       });
-      console.log(choices);
-      console.log(howMany);
       while(howMany > 0 && choices.length > 0) {
         let choice = randomElement(choices);
         attributes['skillIncreases.' + choice] =
