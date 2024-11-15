@@ -10437,14 +10437,18 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
     let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
-    name += ' (' + trads.map(x => x.charAt(0)).join('/') + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 4) + ')';
-    Pathfinder2E.spellRules(rules, name,
-      school,
-      level,
-      trads,
-      QuilvynUtils.getAttrValue(attrs, 'Cast'),
-      QuilvynUtils.getAttrValue(attrs, 'Description')
-    );
+    trads.forEach(t => {
+      let spellName =
+        name + ' (' + t.charAt(0) + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 3) + ')';
+      Pathfinder2E.spellRules(rules, spellName,
+        school,
+        level,
+        t,
+        QuilvynUtils.getAttrValue(attrs, 'Cast'),
+        QuilvynUtils.getAttrValue(attrs, 'Description')
+      );
+      rules.addChoice('spells', spellName, attrs);
+    });
   } else if(type == 'Terrain')
     Pathfinder2E.terrainRules(rules, name);
   else if(type == 'Weapon')
@@ -10464,7 +10468,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   }
   type = type == 'Class' ? 'levels' :
          (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
-  rules.addChoice(type, name, attrs);
+  if(type != 'spells')
+    rules.addChoice(type, name, attrs);
   if(type == 'skills' && name.endsWith(' Lore'))
     rules.addChoice('lores', name, attrs);
 };
@@ -11278,45 +11283,45 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
     rules.defineRule
-      ('spells.Allegro (O0 Ench)', 'magicNotes.allegro', '=', '1');
-    rules.defineRule('spells.Counter Performance (O1 Ench)',
+      ('spells.Allegro (O0 Enc)', 'magicNotes.allegro', '=', '1');
+    rules.defineRule('spells.Counter Performance (O1 Enc)',
       'magicNotes.compositionSpells', '=', '1'
     );
     rules.defineRule
-      ('spells.Dirge Of Doom (O0 Ench)', 'magicNotes.dirgeOfDoom', '=', '1');
+      ('spells.Dirge Of Doom (O0 Enc)', 'magicNotes.dirgeOfDoom', '=', '1');
     rules.defineRule
-      ('spells.Fatal Aria (O10 Ench)', 'magicNotes.fatalAria', '=', '1');
-    rules.defineRule('spells.House Of Imaginary Walls (O0 Illu)',
+      ('spells.Fatal Aria (O10 Enc)', 'magicNotes.fatalAria', '=', '1');
+    rules.defineRule('spells.House Of Imaginary Walls (O0 Ill)',
       'magicNotes.houseOfImaginaryWalls', '=', '1'
     );
-    rules.defineRule('spells.Inspire Competence (O0 Ench)',
+    rules.defineRule('spells.Inspire Competence (O0 Enc)',
       'magicNotes.inspireCompetence', '=', '1'
     );
-    rules.defineRule('spells.Inspire Heroics (O4 Ench)',
+    rules.defineRule('spells.Inspire Heroics (O4 Enc)',
       'magicNotes.inspireHeroics', '=', '1'
     );
-    rules.defineRule('spells.Inspire Courage (O0 Ench)',
+    rules.defineRule('spells.Inspire Courage (O0 Enc)',
       'magicNotes.compositionSpells', '=', '1'
     );
-    rules.defineRule('spells.Inspire Defense (O0 Ench)',
+    rules.defineRule('spells.Inspire Defense (O0 Enc)',
       'magicNotes.inspireDefense', '=', '1'
     );
-    rules.defineRule('spells.Lingering Composition (O1 Ench)',
+    rules.defineRule('spells.Lingering Composition (O1 Enc)',
       'magicNotes.lingeringComposition', '=', '1'
     );
-    rules.defineRule("spells.Loremaster's Etude (O1 Divi)",
+    rules.defineRule("spells.Loremaster's Etude (O1 Div)",
       "magicNotes.loremaster'sEtude", '=', '1'
     );
-    rules.defineRule('spells.Soothe (O1 Ench)', 'magicNotes.maestro', '=', '1');
-    rules.defineRule('spells.Soothing Ballad (O7 Ench)',
+    rules.defineRule('spells.Soothe (O1 Enc)', 'magicNotes.maestro', '=', '1');
+    rules.defineRule('spells.Soothing Ballad (O7 Enc)',
       'magicNotes.soothingBallad', '=', '1'
     );
     rules.defineRule
-      ('spells.Triple Time (O0 Ench)', 'magicNotes.tripleTime', '=', '1');
+      ('spells.Triple Time (O0 Enc)', 'magicNotes.tripleTime', '=', '1');
     rules.defineRule
-      ('spells.True Strike (A/O1 Divi)', 'magicNotes.enigma', '=', '1');
+      ('spells.True Strike (O1 Div)', 'magicNotes.enigma', '=', '1');
     rules.defineRule
-      ('spells.Unseen Servant (A/O1 Conj)', 'magicNotes.polymath', '=', '1');
+      ('spells.Unseen Servant (O1 Con)', 'magicNotes.polymath', '=', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon-1',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
@@ -12993,12 +12998,12 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
 
 /*
  * Defines in #rules# the rules associated with spell #name#, which is from
- * magic school #school#. #casterGroup# and #level# are used to compute any
+ * magic school #school#. #tradition# and #level# are used to compute any
  * saving throw value required by the spell. #description# is a verbose
  * description of the spell's effects.
  */
 Pathfinder2E.spellRules = function(
-  rules, name, school, level, traditions, cast, description
+  rules, name, school, level, tradition, cast, description
 ) {
   if(!name) {
     console.log('Empty spell name');
@@ -13012,16 +13017,10 @@ Pathfinder2E.spellRules = function(
     console.log('Bad level "' + level + '" for spell ' + name);
     return;
   }
-  if(!Array.isArray(traditions)) {
-    console.log('Bad traditions list "' + traditions + '" for spell ' + name);
+  if(!(tradition+'').match(/^(Arcane|Divine|Occult|Primal)$/)) {
+    console.log('Bad tradition "' + tradition + '" for spell ' + name);
     return;
   }
-  traditions.forEach(t => {
-    if(!t.match(/^(Arcane|Divine|Occult|Primal)$/)) {
-      console.log('Bad tradition "' + t + '" for spell ' + name);
-      return;
-    }
-  });
   if(typeof(cast) != 'number' && typeof(cast) != 'string') {
     console.log('Bad cast "' + cast + '" for spell ' + name);
     return;
