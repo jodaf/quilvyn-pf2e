@@ -453,7 +453,7 @@ Pathfinder2E.BLOODLINES = {
   'Angelic':
       'SpellList=Divine ' +
       'BloodlineSkills=Diplomacy,Religion ' +
-      'BloodlineSpells="Angelic Halo","Angelic Wings","Celestrial Brand" ' +
+      'BloodlineSpells="Angelic Halo","Angelic Wings","Celestial Brand" ' +
       'BloodMagic="gives self or target +1 saves for 1 rd"',
   'Demonic':
       'SpellList=Divine ' +
@@ -490,7 +490,7 @@ Pathfinder2E.BLOODLINES = {
   'Imperial':
       'SpellList=Arcane ' +
       'BloodlineSkills=Arcana,Society ' +
-      'BloodlineSpells="Ancestral Memories","Extend Spell","Arcane Countermeaure" ' +
+      'BloodlineSpells="Ancestral Memories","Extend Spell","Arcane Countermeasure" ' +
       'BloodMagic="gives self or target +1 skill checks for 1 rd"',
   'Undead':
       'SpellList=Divine ' +
@@ -997,7 +997,7 @@ Pathfinder2E.DOMAINS = {
   'Death':'Spell="Death\'s Call" AdvancedSpell="Eradicate Undeath"',
   'Destruction':'Spell="Cry Of Destruction" AdvancedSpell="Destructive Aura"',
   'Dreams':'Spell="Sweet Dream" AdvancedSpell="Dreamer\'s Call"',
-  'Earth':'Spell="Hurtling Stone" AdvancedSpell="Localize Quake"',
+  'Earth':'Spell="Hurtling Stone" AdvancedSpell="Localized Quake"',
   'Family':'Spell="Soothing Words" AdvancedSpell="Unity"',
   'Fate':'Spell="Read Fate" AdvancedSpell="Tempt Fate"',
   'Fire':'Spell="Fire Ray" AdvancedSpell="Flame Barrier"',
@@ -1019,7 +1019,7 @@ Pathfinder2E.DOMAINS = {
   'Secrecy':'Spell="Forced Quiet" AdvancedSpell="Safeguard Secret"',
   'Sun':'Spell="Dazzling Flash" AdvancedSpell="Positive Luminance"',
   'Travel':'Spell="Agile Feet" AdvancedSpell="Traveler\'s Transit"',
-  'Trickery':'Spell="Sudden Shift" AdvancedSpell="trickster\'s Twin"',
+  'Trickery':'Spell="Sudden Shift" AdvancedSpell="Trickster\'s Twin"',
   'Truth':'Spell="Word Of Truth" AdvancedSpell="Glimpse The Truth"',
   'Tyranny':'Spell="Touch Of Obedience" AdvancedSpell="Commanding Lash"',
   'Undeath':'Spell="Touch Of Undeath" AdvancedSpell="Malignant Sustenance"',
@@ -6807,7 +6807,7 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (Will critical success neg, success dazzled 1 rd, critical failure blinded for 1 min)"',
   'Command':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6819,7 +6819,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Target can understand choice of heard language for 1 hr (heightended 3rd may also speak language; heighted 4th affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'School=Evocation ' +
@@ -6891,7 +6891,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\'/rd while sustained"',
   'Darkness':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6903,7 +6903,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Self can see in darkness for 1 hr (heightened 3rd affects touched target; heightened 5th lasts until daily preparations)"',
   'Daze':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -6939,7 +6939,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Allows self to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (heightened 3rd reveals school of heighest-level effect; heightened 4th reveals source of highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
     'School=Divination ' +
@@ -7017,7 +7017,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to taret undead (heightened +1d6/level)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7203,13 +7203,13 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Inflicts frightened 2 on target (Will critical success neg; success frightened 1; critical failure frightened 3 and flees for 1 rd; heightened 3rd affect 5 targets)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description="R60\' Falling target slows to 60\'/rd and takes no damage from fall for 1 min or until lands"',
   'Feeblemind':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7257,7 +7257,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R500\' 20\' burst inflicts 6d6 HP fire (heightened +2d6 HP/level)"',
   'Flame Strike':
     'Level=5 ' +
     'School=Evocation ' +
@@ -7269,7 +7269,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Inflicts 3d6 HP fire (Ref neg; heightened +1d6 HP/level) in a 15\' sq while sustained for up to 1 min"',
   'Fleet Step':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7293,7 +7293,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (heightened 7th lasts 1 hr)"',
   'Forbidding Ward':
     'Level=Cantrip ' +
     'School=Abjuration ' +
@@ -7425,7 +7425,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Target gains an extra Strike or Stride action each rd for 1 min (heightened 7th affects 6 targets)"',
   'Heal':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7485,7 +7485,7 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R120\' 10\' burst inflicts dazzled and fascinated while sustained up to 1 min (Will dazzled only; critical failure inflicts loss of reactions)"',
   'Illusory Creature':
     'Level=2 ' +
     'School=Illusion ' +
@@ -9537,13 +9537,14 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    // TODO line/cone, energy type, and save type depend on dragon type
+    'Description="30\' cone or 60\' line inflicts 5d6 HP energy (heightened +2d6/level)"',
   'Dragon Claws':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description="Self fingers inflict 1d6S HP+1d6 energy HP for 1 min; self gains resistance 5 to energy (heightened 5th 2d6S HP and resistance 10; heightened 9th 3d6S HP and resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -10680,7 +10681,8 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
-    rules.defineRule('spells.Detect Magic', 'magicNotes.seerElf', '=', '1');
+    rules.defineRule
+      ('spells.Detect Magic (A0 Div)', 'magicNotes.seerElf', '=', '1');
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
       (rules, 'Jaws', 'Unarmed', 0, '1d6P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
@@ -10907,6 +10909,15 @@ Pathfinder2E.bloodlineRules = function(
   rules.defineRule('bloodlineTraditions',
     'features.' + name, '=', '!dict.bloodlineTraditions ? "' + spellList + '" : !dict.bloodlineTraditions.includes("' + spellList + '") ? dict.bloodlineTraditions + "; ' + spellList + '" : dict.bloodlineTraditions'
   );
+  let allSpells = Object.keys(rules.getChoices('spells'));
+  for(let i = 0; i < bloodlineSpells.length; i++) {
+    let matchingSpells =
+      allSpells.filter(x => x.startsWith(bloodlineSpells[i]));
+    if(matchingSpells.length > 0)
+      bloodlineSpells[i] = matchingSpells[0];
+    else
+      console.log('Unknown bloodline spell "' + bloodlineSpells[i] + '"');
+  }
   rules.defineRule('magicNotes.advancedBloodline',
     'features.' + name, '=', '"' + bloodlineSpells[1] + '"'
   );
@@ -11875,14 +11886,25 @@ Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
   );
   rules.defineRule
     ('focusPoints', 'magicNotes.domainInitiate(' + condensed + ')', '+=', '1');
-  rules.defineRule('spells.' + spell,
-    "magicNotes.deity'sDomain(" + condensed + ')', '=', '1',
-    'magicNotes.domainInitiate(' + condensed + ')', '=', '1'
-  );
-  rules.defineRule('spells.' + advancedSpell,
-    "magicNotes.advancedDeity'sDomain(" + condensed + ')', '=', '1',
-    'magicNotes.advancedDomain(' + condensed + ')', '=', '1'
-  );
+  let allSpells = Object.keys(rules.getChoices('spells'));
+  let matchingSpells =
+    allSpells.filter(x => x.startsWith(spell) && x.includes('(D'));
+  if(matchingSpells.length > 0)
+    rules.defineRule('spells.' + matchingSpells[0],
+      "magicNotes.deity'sDomain(" + condensed + ')', '=', '1',
+      'magicNotes.domainInitiate(' + condensed + ')', '=', '1'
+    );
+  else
+    console.log('Unknown domain spell "' + spell + '"');
+  matchingSpells =
+    allSpells.filter(x => x.startsWith(advancedSpell) && x.includes('(D'));
+  if(matchingSpells.length > 0)
+    rules.defineRule('spells.' + matchingSpells[0],
+      "magicNotes.advancedDeity'sDomain(" + condensed + ')', '=', '1',
+      'magicNotes.advancedDomain(' + condensed + ')', '=', '1'
+    );
+  else
+    console.log('Unknown domain spell "' + advancedSpell + '"');
 
 };
 
