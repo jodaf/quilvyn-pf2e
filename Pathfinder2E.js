@@ -5965,7 +5965,7 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLc} spell"',
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
   'Basic Blood Potency':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell':
@@ -5974,13 +5974,13 @@ Pathfinder2E.FEATURES = {
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
-    'Note="+1 %{bloodlineTraditionsLc} spell slot of each level up to %V"',
+    'Note="+1 %{bloodlineTraditionsLowered} spell slot of each level up to %V"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%{bloodlineTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
+    'Note="Spell Expert (%{bloodlineTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%{bloodlineTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLc} spell"',
+    'Note="Spell Master (%{bloodlineTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -6566,7 +6566,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self becomes choice of a medium bat, bird, pterosaur, or wasp (<b>heightened 5th</b> large creature; <b>6th</b> huge creature) for 1 min"',
   'Air Bubble':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -6680,7 +6681,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} DC on an unarmed attack or inflicting 12 HP vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} AC"',
   'Blade Barrier':
     'Level=6 ' +
     'School=Evocation ' +
@@ -6723,7 +6725,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 2d6 HP fire (Ref neg; heightened +2d6 HP fire/level)"',
+      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save</b> Ref half; critical success/failure neg/double)"',
   'Calm Emotions':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6807,7 +6809,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (Will critical success neg, success dazzled 1 rd, critical failure blinded for 1 min)"',
+    'Description=' +
+      '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save</b> Will dazzled 1 rd; critical success/failure neg/blinded for 1 min)"',
   'Command':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6819,7 +6822,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="R30\' Target can understand choice of heard language for 1 hr (heightended 3rd may also speak language; heighted 4th affects 10 targets)"',
+    'Description=' +
+      '"R30\' Target can understand choice of heard language for 1 hr (<b>heightened 3rd</b> may also speak language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'School=Evocation ' +
@@ -6891,7 +6895,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\'/rd while sustained"',
+    'Description=' +
+      '"R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\'/rd while sustained"',
   'Darkness':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6903,7 +6908,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="Self can see in darkness for 1 hr (heightened 3rd affects touched target; heightened 5th lasts until daily preparations)"',
+    'Description=' +
+      '"Self can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily preparations)"',
   'Daze':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -6939,7 +6945,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="Allows self to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (heightened 3rd reveals school of heighest-level effect; heightened 4th reveals source of highest-level effect)"',
+    'Description=' +
+      '"Allows self to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
     'School=Divination ' +
@@ -7017,7 +7024,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to taret undead (heightened +1d6/level)"',
+    'Description=' +
+      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to target undead (heightened +1d6/level)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7131,7 +7139,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self becomes choice of a medium air, earth, water, or fire elemental (<b>heightened 6th</b> large elemental; <b>7th</b> huge elemental) for 1 min"',
   'Endure Elements':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -7203,13 +7212,15 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="R30\' Inflicts frightened 2 on target (Will critical success neg; success frightened 1; critical failure frightened 3 and flees for 1 rd; heightened 3rd affect 5 targets)"',
+    'Description=' +
+      '"R30\' Inflicts frightened 2 on target (<b>heightened 3rd</b> affect 5 targets) (<b>save</b> Will frightened 1; critical success/failure neg/frightened 3 and flees for 1 rd)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
-    'Description="R60\' Falling target slows to 60\'/rd and takes no damage from fall for 1 min or until lands"',
+    'Description=' +
+      '"R60\' Falling target slows to 60\'/rd and takes no damage from fall for 1 min or until landing"',
   'Feeblemind':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7251,13 +7262,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R500\' 20\' burst inflicts 6d6 HP fire (heightened +2d6 HP/level)"',
+    'Description=' +
+      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save</b> Ref half; critical success/failure neg/double)"',
   'Flame Strike':
     'Level=5 ' +
     'School=Evocation ' +
@@ -7269,7 +7282,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R30\' Inflicts 3d6 HP fire (Ref neg; heightened +1d6 HP/level) in a 15\' sq while sustained for up to 1 min"',
+    'Description=' +
+      '"R30\' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15\' sq while sustained for up to 1 min (<b>save</b> Ref neg; critical failure double)"',
   'Fleet Step':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7293,7 +7307,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (heightened 7th lasts 1 hr)"',
+    'Description=' +
+      '"Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (<b>heightened 7th</b> lasts 1 hr)"',
   'Forbidding Ward':
     'Level=Cantrip ' +
     'School=Abjuration ' +
@@ -7425,7 +7440,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="R30\' Target gains an extra Strike or Stride action each rd for 1 min (heightened 7th affects 6 targets)"',
+    'Description=' +
+      '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)"',
   'Heal':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7485,7 +7501,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="R120\' 10\' burst inflicts dazzled and fascinated while sustained up to 1 min (Will dazzled only; critical failure inflicts loss of reactions)"',
+    'Description=' +
+      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save</b> Will dazzled only; critical failure inflicts loss of reactions)"',
   'Illusory Creature':
     'Level=2 ' +
     'School=Illusion ' +
@@ -7527,7 +7544,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> lasts 1 min, hostile action does not end)"',
   'Invisibility Sphere':
     'Level=3 ' +
     'School=Illusion ' +
@@ -7575,7 +7593,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save</b> Ref half, critical success/failure neg/double)"',
   'Locate':
     'Level=3 ' +
     'School=Divination ' +
@@ -7599,13 +7618,15 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains +1 AC with a +5 maximum Dexterity modifier until next daily preparations (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)"',
   'Mage Hand':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Allows self to move a light object 20\'/rd while sustained (<b>heightened 3rd</b> may move Bulk 1 object; <b>5th</b> move 60\'/rd; <b>7th</b> may move Bulk 2 object)"',
   'Magic Aura':
     'Level=1 ' +
     'School=Illusion ' +
@@ -7623,7 +7644,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 1 missile per action inflicts 1d4+1 force damage (<b>heightened +2</b> 1 additional missile per action)"',
   'Magic Mouth':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8079,7 +8101,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched target gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> resistance 10 and two targets; <b>7th</b> resistance 15 and 5 targets)"',
   'Resplendent Mansion':
     'Level=9 ' +
     'School=Conjuration ' +
@@ -8169,7 +8192,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last 8 hr)"',
   'Sending':
     'Level=5 ' +
     'School=Divination ' +
@@ -8241,7 +8265,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)"',
   'Shrink':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -8337,7 +8362,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains a climb Speed equal to its Speed for 10 min (<b>heightened 5th</b> effects last for 1 hr)"',
   'Spider Sting':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8457,7 +8483,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Conjured dragon up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
   'Summon Elemental':
     'Level=2 ' +
     'School=Conjuration ' +
@@ -8655,7 +8682,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' Invisible servant obeys commands to move and manipulate objects while sustained"',
   'Vampiric Exsanguination':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8715,7 +8743,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 5\'x60\'x10\' line or 10\' radius inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> +1d6 HP)"',
   'Wall Of Force':
     'Level=6 ' +
     'School=Evocation ' +
@@ -9538,13 +9567,15 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     // TODO line/cone, energy type, and save type depend on dragon type
-    'Description="30\' cone or 60\' line inflicts 5d6 HP energy (heightened +2d6/level)"',
+    'Description=' +
+      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>heightened +1</b> +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="Self fingers inflict 1d6S HP+1d6 energy HP for 1 min; self gains resistance 5 to energy (heightened 5th 2d6S HP and resistance 10; heightened 9th 3d6S HP and resistance 15)"',
+    'Description=' +
+      '"Self fingers inflict 1d6S HP+1d6 energy HP for 1 min; self gains resistance 5 to energy (<b>heightened 5th</b> 2d6S HP and resistance 10; <b>9th</b> 3d6S HP and resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -11650,7 +11681,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
   } else if(name == 'Sorcerer') {
-    rules.defineRule('bloodlineTraditionsLc',
+    rules.defineRule('bloodlineTraditionsLowered',
       'bloodlineTraditions', '=', 'source.toLowerCase()'
     );
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
