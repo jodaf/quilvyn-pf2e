@@ -6694,7 +6694,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"5\' radius gives allies +1 attack for 1 min; may use a concentrate action to extend to 10\'"',
   'Blindness':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -6718,7 +6719,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' Prevents target death and restores 4d8+%{spellModifier.Divine} HP"',
   'Burning Hands':
     'Level=1 ' +
     'School=Evocation ' +
@@ -6816,7 +6818,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save</b> Will neg; critical failure uses all actions on next turn to obey)"',
   'Comprehend Language':
     'Level=2 ' +
     'School=Divination ' +
@@ -6915,7 +6918,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save</b> Will half; critical success/failure neg/double plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -6952,7 +6956,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Self learns whether target creature or object is venonous or poisoned (<b>heightened 2nd</b> learn the number and types of poison)"',
   'Detect Scrying':
     'Level=4 ' +
     'School=Divination ' +
@@ -7018,7 +7023,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' A successful counteract check removes 1 spell effect from target or make a magic item inert for 10 min"',
   'Disrupt Undead':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -7067,7 +7073,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save</b> Fort half HP only; critical success/failure neg/sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
   'Dominate':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7146,7 +7153,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched protected from choice of severe cold or heat until next daily preparations (<b>heightened 3rd</b> protected from both cold and heat; <b>5th</b> protected from extreme cold and heat</b>)"',
   'Energy Aegis':
     'Level=7 ' +
     'School=Abjuration ' +
@@ -7276,7 +7284,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save</b> Ref half; critical success/failure neg/doubled; creatures immune to fire increase save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
     'School=Evocation ' +
@@ -9044,7 +9053,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"15\' cone inflicts blinded for 1 rd (Interact action ends) and dazzled for 1 min (<b>save</b> Fort dazzled for 1 rd; critical success/failure neg/dazzled for 1 hr) (<b>heightened 3rd</b> 30\' cone)"',
   "Death's Call":
     'Level=1 ' +
     'School=Necromancy ' +
