@@ -6751,7 +6751,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target becomes friendly (<b>save</b> Will neg; critical success/failure target identifies spell/target becomes helpful)"',
   'Chill Touch':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -6892,7 +6893,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"30\' cone prevents reactions and inflicts slowed 1 for 1 min <b>Will</b> slowed for 1 turn; critical success/failure neg/slowed for 1 min)"',
   'Dancing Lights':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -6969,7 +6971,7 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R120\' Teleports self to a visible target location"',
   'Dimensional Anchor':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -7246,7 +7248,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' 20\' burst restores 1d8 HP/rd to living and inflicts 1d8 HP positive/rd to undead while sustained up to 1 min (<b>heightened 8th</b> 1d10 HP; <b>9th</b> 1d12 HP)"',
   'Fiery Body':
     'Level=7 ' +
     'School=Transmutation ' +
@@ -7389,7 +7392,7 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="10\' burst inflicts <i>Dispel Magic</i> effects for 10 min"',
   'Glyph Of Warding':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -7456,7 +7459,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"<b>(1)</b> Touched, <b>(2)</b> R30\' target, or <b>(3)</b> 30\' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> half; critical success/failure neg/double) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
   'Heroism':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -7596,7 +7600,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched object lights a 20\' radius until next daily preparations (<b>heightened 4th</b> 60\' radius)"',
   'Lightning Bolt':
     'Level=3 ' +
     'School=Evocation ' +
@@ -7609,7 +7614,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Reveals direction to named object or the nearest object of a named type while sustained (<b>heightened 5th</b> reveals direction to a creature or ancestry)"',
   'Lock':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -7666,7 +7672,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched weapon gains +1 attack and a second damage die for 1 min"',
   'Magnificent Mansion':
     'Level=7 ' +
     'School=Conjuration ' +
@@ -7714,7 +7721,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Self may hold a private conversation with visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'School=Evocation ' +
@@ -7816,7 +7824,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Allows a counteract check against 1 poison affecting touched"',
   'Nightmare':
     'Level=4 ' +
     'School=Illusion ' +
@@ -8020,7 +8029,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Removes contaminates from 1 cubic foot of food or water"',
   'Purple Worm Sting':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8032,7 +8041,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description="R10\' Restores soul to a willing creature up to level 13 dead up to 3 days; gives target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8086,7 +8095,7 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8189,7 +8198,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success double HP) (<b>heightened +1</b> +2d6 HP)"',
   'Secret Page':
     'Level=3 ' +
     'School=Illusion ' +
@@ -8299,7 +8308,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched target makes no sound for 1 min (<b>heightened 4th</b> affects a 10\' radius around target)"',
   'Sleep':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -8414,7 +8424,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R120\' Spectral weapon attacks 1/rd, inflicting 1d8 HP force or weapon type while sustained up to 1 min (<b>heighted +2</b> +1d8 HP)"',
   'Stabilize':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -8480,7 +8490,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Conjured celestial up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
   'Summon Construct':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -8493,7 +8504,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"Conjured dragon up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
+      '"R30\' Conjured dragon up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
   'Summon Elemental':
     'Level=2 ' +
     'School=Conjuration ' +
@@ -8867,7 +8878,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Allies in a 60\' radius may substitute self Performance roll for save"',
   'Dirge Of Doom':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9138,7 +9150,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target gains +2 HP from healing spells for 1 min (<b>heightened +1</b> +1 HP)"',
   'Hurtling Stone':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9216,7 +9229,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"10\' radius light inflicts 2 HP positive to successful undead attackers for 1 min; may increase radius by 10\' and damage by 2 HP each rd; may end the spell early to heal a living creature or damage an undead creature by double HP (<b>heightened +1</b> +0.5 HP)"',
   'Precious Metals':
     'Level=4 ' +
     'School=Transmutation ' +
