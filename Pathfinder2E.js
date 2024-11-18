@@ -6752,7 +6752,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target becomes friendly (<b>save</b> Will neg; critical success/failure target identifies spell/target becomes helpful)"',
+      '"R30\' Target becomes friendly (<b>save</b> Will neg; critical success/failure target notices spell/target becomes helpful)"',
   'Chill Touch':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -7362,7 +7362,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Creates sound equivalent to four humans shouting while sustained (<b>heightened 3rd</b> R60\'; <b>5th</b> 120\')"',
   'Ghostly Weapon':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7410,7 +7411,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' 4 5\' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save</b> Ref or Acrobatics neg; critical failure drop object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7434,7 +7436,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Changes target\'s perception of 1 object (<b>save</b> Will target knows that it\'s hallucinating; critical success/failure neg/-4 saves to disbelieve)"',
   'Hallucinatory Terrain':
     'Level=4 ' +
     'School=Illusion ' +
@@ -7466,13 +7469,15 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> +2; <b>8th</b> +3)"',
   'Hideous Laughter':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts slowed 1 and loss of reactions on target while sustained (<b>save</b> Will loss of reactions only; critical success/failure neg/target falls prone for 1 rd, then slowed 1 and loss of reactions)"',
   'Holy Cascade':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7564,7 +7569,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"10\' emanation makes creatures within invisible for 10 min or until any affected perform a hostile act (<b>heightened 5th</b> lasts for 1 rd)"',
   'Item Facade':
     'Level=1 ' +
     'School=Illusion ' +
@@ -8333,7 +8339,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> +1d10+4 HP)"',
   'Sound Burst':
     'Level=2 ' +
     'School=Evocation ' +
@@ -8478,7 +8485,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target follows a reasonable suggestion for 1 min (<b>save</b> Will neg; critical success/failure target notices spell/lasts 1 hr) (<b>heightened 8th</b> targets 10 creatures)"',
   'Summon Animal':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -8630,7 +8638,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Target can understand and speak all languages for 1 hr (<b>heightened 7th</b> lasts for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -8885,7 +8894,7 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description="Inflicts frightened 1 on foes in a 30\' emination for 1 rd"',
   'Fatal Aria':
     'Level=10 ' +
     'School=Enchantment ' +
@@ -8903,31 +8912,36 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' Allows use of Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=Cantrip ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"60\' emanation gives +1 attack, damage, and saves vs. fear for 1 rd"',
   'Inspire Defense':
     'Level=Cantrip ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description' +
+      '"60\' emanation gives +1 AC and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
   'Inspire Heroics':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Allows a Performance check to increase effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success +3; no loss of Focus Point on failure)"',
   'Lingering Composition':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Allows a Performance check to increase the duration of a subsequent cantrip composition to 3 rd (critical success 4 rd; no loss of Focus Point on failure)"',
   "Loremaster's Etude":
     'Level=1 ' +
     'School=Divination ' +
