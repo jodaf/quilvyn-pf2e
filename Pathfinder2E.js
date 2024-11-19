@@ -7207,7 +7207,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 10\' burst makes concealed creatures visible and invisible creatures concealed for 5 min"',
   'False Life':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8884,7 +8885,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' target becomes quickened and may take an additional Strike, Stride, or Step for 1 rd"',
   'Counter Performance':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -8903,7 +8905,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts death (target up to level 16 or up to 50 HP), 0 HP and dying 1 (target level 17), or 50 HP damage (target level 18+)"',
   'House Of Imaginary Walls':
     'Level=Cantrip ' +
     'School=Illusion ' +
@@ -8968,7 +8971,7 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description="R30\' Redirects damage from an ally to self"',
   "Hero's Defiance":
     'Level=10 ' +
     'School=Necromancy ' +
@@ -9004,7 +9007,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains +5 Speed and may ignore difficult terrain for the remainder of turn"',
   'Appearance Of Wealth':
     'Level=1 ' +
     'School=Illusion ' +
@@ -9571,13 +9575,15 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> expert in chosen skill)"',
   'Angelic Halo':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"15\' emanation increases the effects of <i>Heal</i> by double the <i>Heal</i> spell\'s level"',
   'Angelic Wings':
     'Level=3 ' +
     'School=Evocation ' +
@@ -9601,7 +9607,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target performs stated task, gaining +1 attack and skill checks, for 1 rd; refusal inflicts -1 attack and skill checks for 1 rd"',
   'Dragon Breath':
     'Level=3 ' +
     'School=Evocation ' +
@@ -9628,7 +9635,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save</b> Fort half; critical success/failure neg/double) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9646,7 +9654,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -9664,7 +9673,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' 5\' burst per action inflicts loss fo reactions and -2 Perception and will for 1 rd (<b>save</b> Will neg; critical failure also inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
   'Fey Disappearance':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -9742,19 +9752,22 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target summoned creature gains +1 to all checks for 1 min"',
   'Call Of The Grave':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Spell attack inflicts sickened 1 (critical success sickened 2 and slowed 1)"',
   'Charming Words':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Prevents target from taking hostile actions against self for 1 rd (<b>save</b> Will target suffers -1 attack and damage vs. self; critical success/failure neg/inflicts stunned 1)"',
   'Dimensional Steps':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -9766,7 +9779,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target may substitute self d20 roll for a saving throw or skill check within 1 rd"',
   'Dread Aura':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -9790,7 +9804,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts 1d4+1 force damage (<b>heightened +2</b> +1d4+1 HP)"',
   'Hand Of The Apprentice':
     'Level=1 ' +
     'School=Evocation ' +
@@ -10549,7 +10564,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
 
 /*
  * Removes #name# from the set of user #type# choices, reversing the effects of
- * choiceRules.
+ * choiceRules. TODO
  */
 Pathfinder2E.removeChoice = function(rules, type, name) {
   let group =
@@ -10992,7 +11007,6 @@ Pathfinder2E.bloodlineRules = function(
   rules.defineRule('magicNotes.greaterBloodline',
     'features.' + name, '=', '"' + bloodlineSpells[2] + '"'
   );
-  let allSpells = rules.getChoices('spells');
   for(let i = 0; i < bloodlineSpells.length; i++) {
     let note =
       ['basicBloodlineSpell', 'advancedBloodline', 'greaterBloodline'][i];
@@ -13173,6 +13187,8 @@ Pathfinder2E.featureSpell = function(
     school = QuilvynUtils.getAttrValue(spellAttrs, 'School');
   if(!level)
     level = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
+  if(level == 'Cantrip')
+    level = 0;
   if(!tradition)
     tradition = QuilvynUtils.getAttrValue(spellAttrs, 'Traditions');
   if(!cast)
