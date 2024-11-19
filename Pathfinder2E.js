@@ -1722,7 +1722,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 6",' +
       '"features.Storm || features.Order Explorer (Storm)",' +
-      '"spells.Tempest Surge"',
+      '"spells.Tempest Surge (P1 Evo)"',
   'Ferocious Shape':
     'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Fey Caller':'Trait=Class,Druid Require="level >= 8"',
@@ -10748,19 +10748,15 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('abilityNotes.armorSpeedPenalty',
       'abilityNotes.unburdenedIron', '^', '0'
     );
-    let spellAttrs = Pathfinder2E.SPELLS['Meld Into Stone'];
-    Pathfinder2E.spellRules(rules, 'Meld Into Stone (D3 Tra)',
-      'Transmutation', 3, 'Divine',
-      QuilvynUtils.getAttrValue(spellAttrs, 'Cast'),
-      QuilvynUtils.getAttrValue(spellAttrs, 'Description')
-    );
-    rules.defineRule
-      ('spells.Meld Into Stone (D3 Tra)', 'magicNotes.stonewalker', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.stonewalker', '1', 'Meld Into Stone', null, null,
+       'Divine', null, null);
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
-    rules.defineRule
-      ('spells.Detect Magic (A0 Div)', 'magicNotes.seerElf', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.seerElf', '1', 'Detect Magic', null, null, 'Arcane',
+       null, null);
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
       (rules, 'Jaws', 'Unarmed', 0, '1d6P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
@@ -10998,29 +10994,16 @@ Pathfinder2E.bloodlineRules = function(
   );
   let allSpells = rules.getChoices('spells');
   for(let i = 0; i < bloodlineSpells.length; i++) {
-    let matchingSpells =
-      Object.keys(allSpells).filter(x => x.startsWith(bloodlineSpells[i]));
-    if(matchingSpells.length == 0) {
-      console.log('Unknown bloodline spell "' + bloodlineSpells[i] + '"');
-      continue;
-    }
-    let attrs = allSpells[matchingSpells[0]];
-    let spellCast = QuilvynUtils.getAttrValue(attrs, 'Cast');
-    let spellDescription = QuilvynUtils.getAttrValue(attrs, 'Description');
-    let spellLevel = QuilvynUtils.getAttrValue(attrs, 'Level');
-    let spellSchool = QuilvynUtils.getAttrValue(attrs, 'School');
-    let spellName =
-      bloodlineSpells[i] + ' (' + spellList.charAt(0) + spellLevel + ' ' + spellSchool.substring(0,3) + ')';
-    // Make sure this spell is defined for this tradition
-    Pathfinder2E.spellRules
-      (rules, spellName, spellSchool, spellLevel, spellList, spellCast, spellDescription);
-    let step =
+    let note =
       ['basicBloodlineSpell', 'advancedBloodline', 'greaterBloodline'][i];
-    rules.defineRule('spells.' + spellName,
-      'magicNotes.' + step, '=', 'source=="' + bloodlineSpells[i] + '" ? 1 : null'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.' + note,
+       'source=="' + bloodlineSpells[i] + '" ? 1 : null', bloodlineSpells[i],
+       null, null, spellList, null, null);
     if(i == 0)
-      rules.defineRule('spells.' + spellName, 'magicNotes.' + prefix, '=', '1');
+      Pathfinder2E.featureSpell
+        (rules, 'magicNotes.' + prefix, '1', bloodlineSpells[0], null, null,
+         spellList, null, null);
   }
   rules.defineRule('spellAttackModifier.' + spellList + '.1',
     'features.' + name, '=', '"charisma"'
@@ -11378,46 +11361,57 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
-    rules.defineRule
-      ('spells.Allegro (O0 Enc)', 'magicNotes.allegro', '=', '1');
-    rules.defineRule('spells.Counter Performance (O1 Enc)',
-      'magicNotes.compositionSpells', '=', '1'
-    );
-    rules.defineRule
-      ('spells.Dirge Of Doom (O0 Enc)', 'magicNotes.dirgeOfDoom', '=', '1');
-    rules.defineRule
-      ('spells.Fatal Aria (O10 Enc)', 'magicNotes.fatalAria', '=', '1');
-    rules.defineRule('spells.House Of Imaginary Walls (O0 Ill)',
-      'magicNotes.houseOfImaginaryWalls', '=', '1'
-    );
-    rules.defineRule('spells.Inspire Competence (O0 Enc)',
-      'magicNotes.inspireCompetence', '=', '1'
-    );
-    rules.defineRule('spells.Inspire Heroics (O4 Enc)',
-      'magicNotes.inspireHeroics', '=', '1'
-    );
-    rules.defineRule('spells.Inspire Courage (O0 Enc)',
-      'magicNotes.compositionSpells', '=', '1'
-    );
-    rules.defineRule('spells.Inspire Defense (O0 Enc)',
-      'magicNotes.inspireDefense', '=', '1'
-    );
-    rules.defineRule('spells.Lingering Composition (O1 Enc)',
-      'magicNotes.lingeringComposition', '=', '1'
-    );
-    rules.defineRule("spells.Loremaster's Etude (O1 Div)",
-      "magicNotes.loremaster'sEtude", '=', '1'
-    );
-    rules.defineRule('spells.Soothe (O1 Enc)', 'magicNotes.maestro', '=', '1');
-    rules.defineRule('spells.Soothing Ballad (O7 Enc)',
-      'magicNotes.soothingBallad', '=', '1'
-    );
-    rules.defineRule
-      ('spells.Triple Time (O0 Enc)', 'magicNotes.tripleTime', '=', '1');
-    rules.defineRule
-      ('spells.True Strike (O1 Div)', 'magicNotes.enigma', '=', '1');
-    rules.defineRule
-      ('spells.Unseen Servant (O1 Con)', 'magicNotes.polymath', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.allegro', '1', 'Allegro', null, null, 'Occult', null,
+       null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.compositionSpells', '1', 'Counter Performance', null,
+       null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.compositionSpells', '1', 'Inspire Courage', null,
+       null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.dirgeOfDoom', '1', 'Dirge Of Doom', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.fatalAria', '1', 'Fatal Aria', null, null, 'Occult',
+       null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.houseOfImaginaryWalls', '1',
+       'House Of Imaginary Walls', null, null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.inspireCompetence', '1', 'Inspire Competence', null,
+       null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.inspireCourage', '1', 'Inspire Courage', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.inspireDefense', '1', 'Inspire Defense', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.inspireHeroics', '1', 'Inspire Heroics', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.lingeringComposition', '1', 'Lingering Composition',
+       null, null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, "magicNotes.loremaster'sEtude", '1', "Loremaster's Etude", null,
+       null, 'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.maestro', '1', 'Soothe', null, null, 'Occult', null,
+       null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.soothingBallad', '1', 'Soothing Ballad', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.tripleTime', '1', 'Triple Time', null, null,
+       'Occult', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.enigma', '1', 'True Strike', null, null, 'Occult',
+       null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.polymath', '1', 'Unseen Servant', null, null,
+       'Occult', null, null);
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon-1',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
@@ -11471,14 +11465,19 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellAttackModifier.Divine.1', classLevel, '=', '"charisma"');
     rules.defineRule
       ('spellDifficultyClass.Divine.1', classLevel, '=', '"charisma"');
-    rules.defineRule("spells.Hero's Defiance (D10 Nec)",
-      "magicNotes.hero'sDefiance", '=', '1'
-    );
-    rules.defineRule('spells.Lay On Hands (D1 Nec)',
-      'magicNotes.liberator', '=', '1',
-      'magicNotes.paladin', '=', '1',
-      'magicNotes.redeemer', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, "magicNotes.hero'sDefiance", '1', "Hero's Defiance", null, null,
+       'Divine', null,
+       null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.liberator', '1', 'Lay On Hands', null, null,
+       'Divine', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.paladin', '1', 'Lay On Hands', null, null, 'Divine',
+       null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.redeemer', '1', 'Lay On Hands', null, null, 'Divine',
+       null, null);
     rules.defineChoice
       ('notes', 'validationNotes.championAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.championAlignment',
@@ -11593,12 +11592,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
-    rules.defineRule
-      ('spells.Heal Animal (P1 Nec)', 'magicNotes.animal', '=', '1');
-    rules.defineRule('spells.Goodberry (P1 Nec)', 'magicNotes.leaf', '=', '1');
-    rules.defineRule
-      ('spells.Tempest Surge (P1 Evo)', 'magicNotes.storm', '=', '1');
-    rules.defineRule('spells.Wild Morph (P1 Tra)', 'magicNotes.wild', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.animal', '1', 'Heal Animal', null, null, 'Primal',
+       null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.leaf', '1', 'Goodberry', null, null, 'Primal', null,
+       null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.storm', '1', 'Tempest Surge', null, null, 'Primal',
+       null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.wild', '1', 'Wild Morph', null, null, 'Primal', null,
+       null);
   } else if(name == 'Fighter') {
     rules.defineRule('hasClassWeaponExpertise', 'levels.Fighter', '=', '1');
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
@@ -11979,25 +11984,18 @@ Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
   );
   rules.defineRule
     ('focusPoints', 'magicNotes.domainInitiate(' + condensed + ')', '+=', '1');
-  let allSpells = Object.keys(rules.getChoices('spells'));
-  let matchingSpells =
-    allSpells.filter(x => x.startsWith(spell) && x.includes('(D'));
-  if(matchingSpells.length > 0)
-    rules.defineRule('spells.' + matchingSpells[0],
-      "magicNotes.deity'sDomain(" + condensed + ')', '=', '1',
-      'magicNotes.domainInitiate(' + condensed + ')', '=', '1'
-    );
-  else
-    console.log('Unknown domain spell "' + spell + '"');
-  matchingSpells =
-    allSpells.filter(x => x.startsWith(advancedSpell) && x.includes('(D'));
-  if(matchingSpells.length > 0)
-    rules.defineRule('spells.' + matchingSpells[0],
-      "magicNotes.advancedDeity'sDomain(" + condensed + ')', '=', '1',
-      'magicNotes.advancedDomain(' + condensed + ')', '=', '1'
-    );
-  else
-    console.log('Unknown domain spell "' + advancedSpell + '"');
+  Pathfinder2E.featureSpell
+    (rules, "magicNotes.deity'sDomain(" + condensed + ')', '1', spell, null,
+     null, 'Divine', null, null);
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.domainInitiate(' + condensed + ')', '1', spell, null,
+     null, 'Divine', null, null);
+  Pathfinder2E.featureSpell
+    (rules, "magicNotes.advancedDeity'sDomain(" + condensed + ')', '1',
+     advancedSpell, null, null, 'Divine', null, null);
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.advancedDomain(' + condensed + ')', '1', advancedSpell,
+     null, null, 'Divine', null, null);
 
 };
 
@@ -12071,8 +12069,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
-  } else if(name == 'Animal Rage') {
-    rules.defineRule('spells.Animal Form', 'magicNotes.animalRage', '=', '1');
   } else if((matchInfo = name.match(/^(Arcane|Bloodline|Divine|Occult|Primal) Breadth$/)) != null) {
     let trad = matchInfo[1];
     let c = {'Arcane':'Wizard', 'Bloodline':'Sorcerer', 'Divine':'Cleric', 'Occult':'Bard', 'Primal':'Druid'}[trad];
@@ -12278,9 +12274,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       "featureNotes.champion'sReaction", '=', 'source=="Retributive Strike" ? 1 : null'
     );
   } else if(name == "Champion's Sacrifice") {
-    rules.defineRule("spells.Champion's Sacrifice (D6 Abj)",
-      "magicNotes.champion'sSacrifice", '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, "magicNotes.champion'sSacrifice", '1', "Champion's Sacrifice",
+       null, null, 'Divine', null, null);
   } else if(name == 'Cleric Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.clericDedication', '?', null,
@@ -12299,9 +12295,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
   } else if(name == 'Counter Perform') {
-    rules.defineRule('spells.Counter Performance (O1 Enc)',
-      'magicNotes.counterPerform', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.counterPerform', '1', 'Counter Performance', null,
+       null, 'Occult', null, null);
     rules.defineRule('focusPoints', 'magicNotes.counterPerform', '+=', '1');
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
@@ -12314,9 +12310,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'feats.Divine Ally', '+', '1'
       );
     });
-  } else if(name == 'Dragon Transformation') {
-    rules.defineRule
-      ('spells.Dragon Form', 'magicNotes.dragonTransformation', '=', '1');
   } else if(name == 'Druid Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.druidDedication', '?', null,
@@ -12390,12 +12383,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name.match(/^Favored Terrain/)) {
     rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
   } else if(name == 'Fey Caller') {
-    rules.defineRule
-      ('spells.Illusory Disguise', 'magicNotes.feyCaller', '=', '1');
-    rules.defineRule
-      ('spells.Illusory Object', 'magicNotes.feyCaller', '=', '1');
-    rules.defineRule('spells.Illusory Scene', 'magicNotes.feyCaller', '=', '1');
-    rules.defineRule('spells.Veil', 'magicNotes.feyCaller', '=', '1');
+    ['Illusory Disguise', 'Illusory Object', 'Illusory Scene', 'Veil'].forEach(s => {
+      Pathfinder2E.featureSpell
+        (rules, 'magicNotes.feyCaller', '1', s, null, null, 'Primal', null,
+         null);
+    });
   } else if(name == 'Fighter Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -12410,18 +12402,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Fighter Key Ability', 'features.Fighter Dedication', '=', '1');
   } else if(name == 'First World Adept') {
-    rules.defineRule
-      ('spells.Faerie Fire (P2 Evo)', 'magicNotes.firstWorldAdept', '=', '1');
-    rules.defineRule
-      ('spells.Invisibility (P2 Ill)', 'magicNotes.firstWorldAdept', '=', '1');
-    let allSpells = rules.getChoices('spells');
-    let invisibilityAttrs =
-      allSpells[Object.keys(allSpells).filter(x => x.startsWith('Invisibility ('))[0]];
-    let castingTime = QuilvynUtils.getAttrValue(invisibilityAttrs, 'Cast');
-    let description =
-      QuilvynUtils.getAttrValue(invisibilityAttrs, 'Description');
-    Pathfinder2E.spellRules
-      (rules, 'Invisibility (P2 Ill)', 'Illusion', 2, 'Primal', castingTime, description);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.firstWorldAdept', '1', 'Faerie Fire', null, null,
+       'Primal', null, null);
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.firstWorldAdept', '1', 'Invisibility', null, null,
+       'Primal', null, null);
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
@@ -12429,26 +12415,28 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
   } else if(name == 'Hand Of The Apprentice') {
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.handOfTheApprentice', '1', 'Hand Of The Apprentice',
+       null, null, 'Arcane', null, null);
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
-    rules.defineRule('spells.Hand Of The Apprentice (A1 Evo)',
-      'magicNotes.handOfTheApprentice', '=', '1'
-    );
   } else if(name == 'Healing Touch') {
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.healingTouch', '1', 'Lay On Hands', null, null,
+       'Divine', null, null);
     rules.defineRule('focusPoints', 'magicNotes.healingTouch', '+=', '1');
-    rules.defineRule
-      ('spells.Lay On Hands (D1 Nec)', 'magicNotes.healingTouch', '=', '1');
   } else if(name == "Hierophant's Power") {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
   } else if(name == 'Impaling Briars') {
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.impalingBriars', '1', 'Impaling Briars', null, null,
+       'Primal', null, null);
     rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
-    rules.defineRule
-      ('spells.Impaling Briars', 'magicNotes.impalingBriars', '=', '1');
   } else if(name == 'Inspirational Performance') {
-    rules.defineRule('spells.Inspire Courage',
-      'magicNotes.inspirationalPerformance', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.inspirationalPerformance', '1', 'Inspire Courage',
+       null, null, 'Occult', null, null);
   } else if(name == 'Instinct Ability') {
     // TODO What about homebrew instincts?
     rules.defineRule('featureNotes.instinctAbility',
@@ -12470,9 +12458,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'featureNotes.instinctAbility', '=', 'source=="Titan Mauler" ? 1 : null'
     );
   } else if(name == 'Invoke Disaster') {
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.invokeDisaster', '1', 'Storm Lord', null, null,
+       'Primal', null, null);
     rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
-    rules.defineRule
-      ('spells.Storm Lord', 'magicNotes.invokeDisaster', '=', '1');
   } else if(name == 'Ironblood Stance') {
     rules.defineRule('combatNotes.ironbloodStance',
       'level', '=', 'source<12 ? 2 : source<16 ? 3 : source<20 ? 4 : 5',
@@ -12488,17 +12477,17 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
   } else if(name == 'Litany Against Sloth') {
-    rules.defineRule('spells.Litany Against Sloth (D5 Evo)',
-      'magicNotes.litanyAgainstSloth', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.litanyAgainstSloth', '1', 'Litany Against Sloth',
+       null, null, 'Divine', null, null);
   } else if(name == 'Litany Against Wrath') {
-    rules.defineRule('spells.Litany Against Wrath (D3 Evo)',
-      'magicNotes.litanyAgainstWrath', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.litanyAgainstWrath', '1', 'Litany Against Wrath',
+       null, null, 'Divine', null, null);
   } else if(name == 'Litany Of Righteousness') {
-    rules.defineRule('spells.Litany Of Righteousness (D7 Evo)',
-      'magicNotes.litanyOfRighteousness', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.litanyOfRighteousness', '1',
+       'Litany Of Righteousness', null, null, 'Divine', null, null);
   } else if(name == 'Master Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
@@ -12576,24 +12565,25 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'magicNotes.orderSpell', '=', 'source=="Wild Morph" ? 1 : null'
     );
   } else if(name == 'Order Magic (Animal)') {
-    rules.defineRule('spells.Heal Animal (P1 Nec)',
-      'magicNotes.orderMagic(Animal)', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.orderMagic(Animal)', '1', 'Heal Animal', null, null,
+       'Primal', null, null);
   } else if(name == 'Order Magic (Leaf)') {
-    rules.defineRule
-      ('spells.Goodberry (P1 Nec)', 'magicNotes.orderMagic(Leaf)', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.orderMagic(Leaf)', '1', 'Goodberry', null, null,
+       'Primal', null, null);
   } else if(name == 'Order Magic (Storm)') {
-    rules.defineRule('spells.Tempest Surge (P1 Evo)',
-      'magicNotes.orderMagic(Storm)', '=', '1'
-    );
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.orderMagic(Storm)', '1', 'Tempest Surge', null, null,
+       'Primal', null, null);
   } else if(name == 'Order Magic (Wild)') {
-    rules.defineRule
-      ('spells.Wild Morph (P1 Tra)', 'magicNotes.orderMagic(Wild)', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.orderMagic(Wild)', '1', 'Wild Morph', null, null,
+       'Primal', null, null);
   } else if(name == 'Primal Summons') {
-    rules.defineRule
-      ('spells.Primal Summons', 'magicNotes.primalSummons', '=', '1');
-  } else if(name == 'Quaking Stomp') {
-    rules.defineRule('spells.Earthquake', 'magicNotes.quakingStomp', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.primalSummons', '1', 'Primal Summons', null, null,
+       'Primal', null, null);
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
@@ -12674,13 +12664,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Supernatural Charm') {
-    let charmSpell = Pathfinder2E.SPELLS['Charm'];
-    Pathfinder2E.spellRules
-      (rules, 'Charm (D1 Enc)', 'Enchantment', 1, 'Divine',
-       QuilvynUtils.getAttrValue(charmSpell, 'Cast'),
-       QuilvynUtils.getAttrValue(charmSpell, 'Description'));
-    rules.defineRule
-      ('spells.Charm (D1 Enc)', 'magicNotes.supernaturalCharm', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.supernaturalCharm', '1', 'Charm', null, null,
+       'Divine', null, null);
   } else if(name == 'Uncanny Bombs') {
     let allWeapons = rules.getChoices('weapons');
     for(let w in allWeapons) {
@@ -12699,10 +12685,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'level', '=', 'source<7 ? Math.floor(source / 2) : source'
     );
   } else if(name == 'Wild Shape') {
-    rules.defineRule('spells.Wild Shape', 'magicNotes.wildShape', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.wildShape', '1', 'Wild Shape', null, null, 'Primal',
+       null, null);
   } else if(name == 'Wind Caller') {
-    rules.defineRule
-      ('spells.Stormwind Flight', 'magicNotes.windCaller', '=', '1');
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.windCaller', '1', 'Stormwind Flight', null, null,
+       'Primal', null, null);
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.wizardDedication', '?', null,
@@ -12988,24 +12977,17 @@ Pathfinder2E.schoolRules = function(rules, name, spell, advancedSpell) {
   rules.defineRule('magicNotes.arcaneSchoolSpell',
     'features.' + name, '=', '"' + spell + '"'
   );
-  if(advancedSpell in Pathfinder2E.SPELLS) {
-    let spellName =
-      advancedSpell + ' (A' + QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[advancedSpell], 'Level') + ' ' + name.substring(0, 3) + ')';
-    rules.defineRule('spells.' + spellName,
-      'magicNotes.advancedSchoolSpell', '=', 'source == "' + advancedSpell + '" ? 1 : null'
-    );
-  } else {
-    console.log('Unknown ' + name + ' spell "' + advancedSpell + '"');
-  }
-  if(spell in Pathfinder2E.SPELLS) {
-    let spellName =
-      spell + ' (A' + QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level') + ' ' + name.substring(0, 3) + ')';
-    rules.defineRule('spells.' + spellName,
-      'magicNotes.arcaneSchoolSpell', '=', 'source == "' + spell + '" ? 1 : null'
-    );
-  } else {
-    console.log('Unknown ' + name + ' spell "' + spell + '"');
-  }
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.advancedSchoolSpell',
+     'source=="' + advancedSpell + '" ? 1 : null', advancedSpell, null, null,
+     'Arcane', null, null);
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.arcaneSchoolSpell',
+     'source=="' + spell + '" ? 1 : null', spell, null, null, 'Arcane', null,
+     null);
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.' + prefix, '1', spell, null, null, 'Arcane', null,
+     null);
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
     rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
   });
@@ -13152,7 +13134,7 @@ Pathfinder2E.spellRules = function(
     console.log('Empty spell name');
     return;
   }
-  if(!school || !(school in rules.getChoices('schools'))) {
+  if(!school || !(school in Pathfinder2E.SCHOOLS)) {
     console.log('Bad school "' + school + '" for spell ' + name);
     return;
   }
@@ -13174,6 +13156,36 @@ Pathfinder2E.spellRules = function(
   }
   // TODO
   rules.defineChoice('notes', 'spells.' + name + ':' + description);
+};
+
+/*
+ * TODO
+ */
+Pathfinder2E.featureSpell = function(
+  rules, note, expr, name, school, level, tradition, cast, description
+) {
+  if(!(name in Pathfinder2E.SPELLS)) {
+    console.log('Unknown feature spell "' + name + '"');
+    return;
+  }
+  let spellAttrs = Pathfinder2E.SPELLS[name];
+  if(!school)
+    school = QuilvynUtils.getAttrValue(spellAttrs, 'School');
+  if(!level)
+    level = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
+  if(!tradition)
+    tradition = QuilvynUtils.getAttrValue(spellAttrs, 'Traditions');
+  if(!cast)
+    cast = QuilvynUtils.getAttrValue(spellAttrs, 'Cast');
+  if(!description)
+    description = QuilvynUtils.getAttrValue(spellAttrs, 'Description');
+  let spellName =
+    name + ' (' + tradition.charAt(0) + level + ' ' +
+    school.substring(0, 3) + ')';
+  Pathfinder2E.spellRules
+    (rules, spellName, school, level, tradition, cast, description);
+  if(note)
+    rules.defineRule('spells.' + spellName, note, '=', expr || '1');
 };
 
 /* Defines in #rules# the rules associated with terrain #name#. */
