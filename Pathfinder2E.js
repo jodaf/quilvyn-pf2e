@@ -7536,19 +7536,22 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Illusion makes self look differently for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)"',
   'Illusory Object':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> unlimited duration)"',
   'Illusory Scene':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> unlimited duration)"',
   'Implosion':
     'Level=9 ' +
     'School=Evocation ' +
@@ -8915,7 +8918,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Creates an invisible, illusionary, 10\'x10\' wall with AC 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -8980,7 +8984,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Free ' +
-    'Description="FILL"',
+    'Description="Self recovers 10d4+20 HP"',
   'Lay On Hands':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9458,19 +9462,22 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> +1 berry)"',
   'Heal Animal':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched animal regains 1d8 HP, or R30\' animal regains 1d8+8 HP (<b>heightened +1</b> +1d8 HP or +1d8+8 HP)"',
   'Impaling Briars':
     'Level=8 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save</b> Ref neg; critical failure immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'School=Conjuration ' +
@@ -9695,13 +9702,15 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self jaws inflict 1d8P HP, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save</b> Ref half HP only; critical success/failure neg/double HP and immobilized) (<b>heightened +1</b> +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9719,7 +9728,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupified 1, based on target\'s highest ability modifier, until target saves up to 1 min (<b>save</b> Will neg; critical failure inflicts condition 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
     'School=Conjuration ' +
@@ -9814,7 +9824,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Allows a remote attack with a melee weapon%{spellModifier.Arcane>strengthModifier?\', +\'+spellModifier.Arcane-strengthModifier+\' damage\':spellModifier.Arcane<strengthModifier?\', \'+spellModifier.Arcane-strengthModifier+\' damage\':\'\'}"',
   'Invisibility Cloak':
     'Level=4 ' +
     'School=Illusion ' +
