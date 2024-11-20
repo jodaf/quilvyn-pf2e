@@ -7967,7 +7967,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R10\' Performs choice of cooking, lifting, make a minor object, or tidying while sustained"',
   'Primal Herd':
     'Level=10 ' +
     'School=Transmutation ' +
@@ -8063,7 +8064,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> +1d4 HP)"',
   'Read Aura':
     'Level=Cantrip ' +
     'School=Divination ' +
@@ -8813,7 +8815,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Reveals a route to chosen destination and reduces movement penalty from difficult terrain by half until next daily preparations"',
   'Warp Mind':
     'Level=7 ' +
     'School=Enchantment ' +
