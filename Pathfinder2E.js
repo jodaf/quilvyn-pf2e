@@ -8680,7 +8680,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Next self Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
   'True Target':
     'Level=7 ' +
     'School=Divination ' +
@@ -8741,7 +8742,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Up to 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets may appear as specific individuals)"',
   'Ventriloquism':
     'Level=1 ' +
     'School=Illusion ' +
@@ -8976,7 +8978,7 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description="60\' emanation gives allies +10\' Speed for 1 rd"',
   "Champion's Sacrifice":
     'Level=6 ' +
     'School=Abjuration ' +
@@ -9376,7 +9378,8 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Target gains +1 on triggering save, making it either a critical success or critical failure"',
   'Tidal Surge':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9406,7 +9409,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains choice of climb or swim Speed equal to Speed for 1 min (<b>hieightened 5th</b> may choose fly speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'School=Illusion ' +
@@ -9521,13 +9525,15 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 persistent bleed and 2d6 persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 persistent bleed and 4d6 persistent poison"',
   'Wild Shape':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Transforms self into a pest for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an animal form)"',
   'Abundant Step':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -9755,13 +9761,15 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Extends self reach for touch spells and unarmed Strikes to 10\'; adding another action to touch spells extends reach to 20\' for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
   "Undeath's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains undead responses to <i>Heal</i> and <i>Harm</i> for 1 min, and <i>Harm</i> restores +2 HP (<b>save</b> Will <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
   'Unusual Anatomy':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -9884,7 +9892,7 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"'
+    'Description="60\' 5\' burst (10\'/15\' burst for 2/3 actions) appears to be difficult terrain for 1 min (<b>heightened 4th</b> may affect air instead of surface)"'
 };
 Pathfinder2E.TERRAINS = {
   'Aquatic':'',
