@@ -1509,7 +1509,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Champion Require="level >= 14","features.Shining Oath"',
   'Aura Of Righteousness':
     'Trait=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
-  // NOTE: Exalt req appears redundant, since all Champions get it at level 11
+  // NOTE: Exalt requirement redundant? All Champions get it at level 11
   'Aura Of Vengeance':
     'Trait=Class,Champion ' +
     'Require="level >= 14","features.Vengeful Oath"',
@@ -6557,13 +6557,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Spell attack inflicts 3d8 HP acid (critical hit doubles) plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 initial and +1d6 HP persistent)"',
   'Acid Splash':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Spell attack inflicts 1d6 HP acid (critical hit also 1 HP persistent acid) and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 5 HP persistent, and 4 HP splash)"',
   'Aerial Form':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -6576,19 +6578,20 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description="R60\' Allows target to breathe normally for 1 min"',
   'Air Walk':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Touched may walk on air up to a 45-degree angle for 5 min"',
   'Alarm':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"20\' burst triggers choice of mental or audible alarm when a Small or larger corporeal creature enters without saying the specified password for 8 hr"',
   'Alter Reality':
     'Level=10 ' +
     'School=Divination ' +
@@ -6606,25 +6609,29 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self transforms into choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and animal-specific attacks for 1 min (<b>heightened 3rd</b> 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> Large animal with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> Huge animal with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
   'Animal Messenger':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Target Tiny animal carries a small object or note to specified destination for up to 24 hr"',
   'Animal Vision':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Self can share target animal\'s senses (<b>save</b> Will negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched can carry +3 Bulk without encumbrance and +6 Bulk maximum for 8 hr"',
   'Antimagic Field':
     'Level=8 ' +
     'School=Abjuration ' +
@@ -8972,7 +8979,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and up to 9 allies gain choice of couteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
+      '"R30\' Self and up to 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9410,7 +9417,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains choice of climb or swim Speed equal to Speed for 1 min (<b>hieightened 5th</b> may choose fly speed)"',
+      '"Self gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> may choose fly speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'School=Illusion ' +
@@ -9593,13 +9600,15 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"5\' emanation (10\'/15\' emanation for 2/3 actions) inflicts stupefied 2 (<b>save</b> Will negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
   'Abyssal Wrath':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save</b> Ref half; critical success/failure negates/doubles) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Ancestral Memories':
     'Level=1 ' +
     'School=Divination ' +
@@ -9619,13 +9628,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self may fly at full Speed and casts a 30\' radius bright list for 3 rd (<b>heightened 5th</b> lasts 1 min)"',
   'Arcane Countermeasure':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Reduces target heightened spell\'s level by 1 and gives that spell\'s targets +2 saves, skill checks, AC, or DC against it"',
   'Celestial Brand':
     'Level=5 ' +
     'School=Necromancy ' +
