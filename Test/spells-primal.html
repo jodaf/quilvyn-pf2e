@@ -360,7 +360,7 @@ var attributes = {
     <tr style="text-align:left">
       <td>Aberrant Whispers (P3 Enc): 5' emanation (10'/15' emanation for 2/3 actions) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5')</td>
     </tr><tr style="text-align:left">
-      <td>Abyssal Wrath (P5 Evo): 60' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Ref</b> half; critical success/failure negates/doubles) (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Abyssal Wrath (P5 Evo): 60' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Acid Arrow (P2 Evo): R120' Spell attack inflicts 3d8 HP acid (critical hit doubles) plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 initial and +1d6 HP persistent)</td>
     </tr><tr style="text-align:left">
@@ -390,15 +390,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Arcane Countermeasure (P5 Abj): R120' Reduces target heightened spell's level by 1 and gives that spell's targets +2 saves, skill checks, AC, or DC against it</td>
     </tr><tr style="text-align:left">
-      <td>Baleful Polymorph (P6 Tra): R30' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success/failure negates/transformation lasts indefinitely; save may be repeated each rd)</td>
+      <td>Baleful Polymorph (P6 Tra): R30' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely; save may be repeated each rd)</td>
     </tr><tr style="text-align:left">
-      <td>Banishment (P5 Abj): R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success/failure inflicts stunned 1 on caster/target cannot return for 1 week) (<b>heightened 9th</b> may target up to 10 creatures)</td>
+      <td>Banishment (P5 Abj): R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> may target up to 10 creatures)</td>
     </tr><tr style="text-align:left">
       <td>Barkskin (P2 Abj): Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> +2 resistances and +3 weakness)</td>
     </tr><tr style="text-align:left">
-      <td>Blindness (P3 Nec): R30' Blinds target for 1 min (<b>save Fort</b> effects last until next turn; critical success/failure negates/effects are permanent)</td>
+      <td>Blindness (P3 Nec): R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure makes effects permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Burning Hands (P1 Evo): 15' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Ref</b> half; critical success/failure negates/doubles)</td>
+      <td>Burning Hands (P1 Evo): 15' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> half; critical success negates; critical failure doubles)</td>
     </tr><tr style="text-align:left">
       <td>Cataclysm (P10 Evo): FILL</td>
     </tr><tr style="text-align:left">
@@ -406,7 +406,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Chain Lightning (P6 Evo): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Charm (P1 Enc): R30' Target becomes friendly (<b>save Will</b> negates; critical success/failure target notices spell/target becomes helpful)</td>
+      <td>Charm (P1 Enc): R30' Target becomes friendly (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful)</td>
     </tr><tr style="text-align:left">
       <td>Cloudkill (P5 Nec): FILL</td>
     </tr><tr style="text-align:left">
@@ -454,7 +454,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Dragon Wings (P5 Tra): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Drain Life (P3 Nec): R30' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fort</b> half; critical success/failure negates/doubles) (<b>heightened +1</b> +1d4 HP)</td>
+      <td>Drain Life (P3 Nec): R30' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fortitude</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)</td>
     </tr><tr style="text-align:left">
       <td>Earthbind (P3 Tra): FILL</td>
     </tr><tr style="text-align:left">
@@ -490,7 +490,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Faerie Fire (P2 Evo): R120' 10' burst makes concealed creatures visible and invisible creatures concealed for 5 min</td>
     </tr><tr style="text-align:left">
-      <td>Fear (P1 Enc): R30' Inflicts frightened 2 on target (<b>heightened 3rd</b> affect 5 targets) (<b>save Will</b> frightened 1; critical success/failure negates/inflicts frightened 3 and flees for 1 rd)</td>
+      <td>Fear (P1 Enc): R30' Taret suffers frightened 2 (<b>heightened 3rd</b> 5 targets) (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd)</td>
     </tr><tr style="text-align:left">
       <td>Feather Fall (P1 Abj): R60' Falling target slows to 60'/rd and takes no damage from fall for 1 min or until landing</td>
     </tr><tr style="text-align:left">
@@ -510,9 +510,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Fire Shield (P4 Evo): Self gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Fireball (P3 Evo): R500' 20' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Ref</b> half; critical success/failure negates/doubles)</td>
+      <td>Fireball (P3 Evo): R500' 20' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP)</td>
     </tr><tr style="text-align:left">
-      <td>Flaming Sphere (P2 Evo): R30' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15' sq while sustained for up to 1 min (<b>save Ref</b> negates; critical failure doubles)</td>
+      <td>Flaming Sphere (P2 Evo): R30' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP)</td>
     </tr><tr style="text-align:left">
       <td>Fleet Step (P1 Tra): FILL</td>
     </tr><tr style="text-align:left">
@@ -536,9 +536,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Goodberry (P1 Nec): Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> +1 berry)</td>
     </tr><tr style="text-align:left">
-      <td>Grasping Grave (P5 Nec): R60' 20' radius inflicts 6d6S HP and -10' Speed for 10 min (<b>save Ref</b> half HP only; critical success/failure negates/doubles HP and inflicts immobilized) (<b>heightened +1</b> +2d6 HP)</td>
+      <td>Grasping Grave (P5 Nec): R60' 20' radius inflicts 6d6S HP and -10' Speed for 10 min (<b>save Reflex</b> half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Grease (P1 Con): R30' 4 5' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Ref</b> or Acrobatics negates; critical failure inflicts dropped object)</td>
+      <td>Grease (P1 Con): R30' 4 5' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Reflex</b> or Acrobatics negates; critical failure inflicts dropped object)</td>
     </tr><tr style="text-align:left">
       <td>Guidance (P1 Div): FILL</td>
     </tr><tr style="text-align:left">
@@ -548,7 +548,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Haste (P3 Tra): R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Heal (P1 Nec): <b>(1)</b> Touched, <b>(2)</b> R30' target, or <b>(3)</b> 30' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> half; critical success/failure negates/doubles) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> </td>
+      <td>Heal (P1 Nec): <b>(1)</b> Touched, <b>(2)</b> R30' target, or <b>(3)</b> 30' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> </td>
     </tr><tr style="text-align:left">
       <td>Heal Animal (P1 Nec): Touched animal regains 1d8 HP, or R30' animal regains 1d8+8 HP (<b>heightened +1</b> +1d8 HP or +1d8+8 HP)</td>
     </tr><tr style="text-align:left">
@@ -570,13 +570,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Illusory Scene (P5 Ill): R500' Creates in a 30' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> unlimited duration)</td>
     </tr><tr style="text-align:left">
-      <td>Impaling Briars (P8 Con): 100' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Ref</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min</td>
+      <td>Impaling Briars (P8 Con): 100' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min</td>
     </tr><tr style="text-align:left">
       <td>Implosion (P9 Evo): FILL</td>
     </tr><tr style="text-align:left">
       <td>Insect Form (P3 Tra): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Jealous Hex (P1 Nec): R30' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target's highest ability modifier, until target saves up to 1 min (<b>save Will</b> negates; critical failure inflicts condition 2)</td>
+      <td>Jealous Hex (P1 Nec): R30' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target's highest ability modifier, until target saves up to 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)</td>
     </tr><tr style="text-align:left">
       <td>Jump (P1 Tra): FILL</td>
     </tr><tr style="text-align:left">
@@ -584,7 +584,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Light (P0 Evo): Touched object lights a 20' radius until next daily preparations (<b>heightened 4th</b> 60' radius)</td>
     </tr><tr style="text-align:left">
-      <td>Lightning Bolt (P3 Evo): 120' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Ref</b> half, critical success/failure negates/doubles)</td>
+      <td>Lightning Bolt (P3 Evo): 120' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Reflex</b> half, critical success negates; critical failure inflicts double HP)</td>
     </tr><tr style="text-align:left">
       <td>Longstrider (P1 Tra): FILL</td>
     </tr><tr style="text-align:left">
@@ -672,7 +672,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Revival (P10 Nec): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Searing Light (P3 Evo): R120' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success double HP) (<b>heightened +1</b> +2d6 HP)</td>
+      <td>Searing Light (P3 Evo): R120' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success inficts double HP) (<b>heightened +1</b> +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Shape Stone (P4 Tra): FILL</td>
     </tr><tr style="text-align:left">
@@ -712,7 +712,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Stoneskin (P4 Abj): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Storm Lord (P9 Evo): 100' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Ref</b> half; critical success/failure negates/doubles), while sustained up to 1 min</td>
+      <td>Storm Lord (P9 Evo): 100' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP), while sustained up to 1 min</td>
     </tr><tr style="text-align:left">
       <td>Storm Of Vengeance (P9 Evo): FILL</td>
     </tr><tr style="text-align:left">
@@ -736,7 +736,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Tangling Creepers (P6 Con): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Tempest Surge (P1 Evo): R30' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Ref</b> HP only; critical success/failure negates/doubles)</td>
+      <td>Tempest Surge (P1 Evo): R30' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Reflex</b> HP only; critical success negates; critical failure inflicts double HP)</td>
     </tr><tr style="text-align:left">
       <td>Tentacular Limbs (P1 Tra): Extends self reach for touch spells and unarmed Strikes to 10'; adding another action to touch spells extends reach to 20' for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30')</td>
     </tr><tr style="text-align:left">
