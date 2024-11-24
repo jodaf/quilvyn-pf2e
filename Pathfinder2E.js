@@ -6624,7 +6624,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R120\' Self can share target animal\'s senses (<b>save</b> Will negates) for 1 hr"',
+      '"R120\' Self can share target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -6655,7 +6655,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success/failure negates/transformation lasts indefinitely; save may be repeated each rd)"',
   'Bane':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6667,13 +6668,15 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success/failure inflicts stunned 1 on caster/target cannot return for 1 week) (<b>heightened 9th</b> may target up to 10 creatures)"',
   'Barkskin':
     'Level=2 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> +2 resistances and +3 weakness)"',
   'Bind Soul':
     'Level=9 ' +
     'School=Necromancy ' +
@@ -6711,7 +6714,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Blinds target for 1 min (<b>save Fort</b> effects last until next turn; critical success/failure negates/effects are permanent)"',
   'Blink':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -6737,7 +6741,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save</b> Ref half; critical success/failure negates/doubles)"',
+      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Ref</b> half; critical success/failure negates/doubles)"',
   'Calm Emotions':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6762,7 +6766,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target becomes friendly (<b>save</b> Will negates; critical success/failure target notices spell/target becomes helpful)"',
+      '"R30\' Target becomes friendly (<b>save Will</b> negates; critical success/failure target notices spell/target becomes helpful)"',
   'Chill Touch':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -6823,14 +6827,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save</b> Will dazzled 1 rd; critical success/failure negates/inflicts blinded for 1 min)"',
+      '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> dazzled 1 rd; critical success/failure negates/inflicts blinded for 1 min)"',
   'Command':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save</b> Will negates; critical failure uses all actions on next turn to obey)"',
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure uses all actions on next turn to obey)"',
   'Comprehend Language':
     'Level=2 ' +
     'School=Divination ' +
@@ -6931,7 +6935,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save</b> Will half; critical success/failure negates/doubles plus inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
+      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save Will</b> half; critical success/failure negates/doubles plus inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7086,7 +7090,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save</b> Fort half HP only; critical success/failure negates/inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
+      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save Fort</b> half HP only; critical success/failure negates/inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
   'Dominate':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7234,7 +7238,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts frightened 2 on target (<b>heightened 3rd</b> affect 5 targets) (<b>save</b> Will frightened 1; critical success/failure negates/inflicts frightened 3 and flees for 1 rd)"',
+      '"R30\' Inflicts frightened 2 on target (<b>heightened 3rd</b> affect 5 targets) (<b>save Will</b> frightened 1; critical success/failure negates/inflicts frightened 3 and flees for 1 rd)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -7292,21 +7296,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save</b> Ref half; critical success/failure negates/doubles)"',
+      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Ref</b> half; critical success/failure negates/doubles)"',
   'Flame Strike':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save</b> Ref half; critical success/failure negates/doubles; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
+      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Ref</b> half; critical success/failure negates/doubles; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15\' sq while sustained for up to 1 min (<b>save</b> Ref negates; critical failure doubles)"',
+      '"R30\' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15\' sq while sustained for up to 1 min (<b>save Ref</b> negates; critical failure doubles)"',
   'Fleet Step':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7423,7 +7427,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 4 5\' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save</b> Ref or Acrobatics negates; critical failure inflicts dropped object)"',
+      '"R30\' 4 5\' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Ref</b> or Acrobatics negates; critical failure inflicts dropped object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7448,7 +7452,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Changes target\'s perception of 1 object (<b>save</b> Will target knows that it\'s hallucinating; critical success/failure negates/inflicts -4 saves to disbelieve)"',
+      '"R30\' Changes target\'s perception of 1 object (<b>save Will</b> target knows that it\'s hallucinating; critical success/failure negates/inflicts -4 saves to disbelieve)"',
   'Hallucinatory Terrain':
     'Level=4 ' +
     'School=Illusion ' +
@@ -7488,7 +7492,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts slowed 1 and loss of reactions on target while sustained (<b>save</b> Will loss of reactions only; critical success/failure negates/inflicts prone for 1 rd, then slowed 1 and loss of reactions)"',
+      '"R30\' Inflicts slowed 1 and loss of reactions on target while sustained (<b>save Will</b> loss of reactions only; critical success/failure negates/inflicts prone for 1 rd, then slowed 1 and loss of reactions)"',
   'Holy Cascade':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7531,7 +7535,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save</b> Will dazzled only; critical failure inflicts loss of reactions)"',
+      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of reactions)"',
   'Illusory Creature':
     'Level=2 ' +
     'School=Illusion ' +
@@ -7628,7 +7632,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save</b> Ref half, critical success/failure negates/doubles)"',
+      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Ref</b> half, critical success/failure negates/doubles)"',
   'Locate':
     'Level=3 ' +
     'School=Divination ' +
@@ -8504,7 +8508,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target follows a reasonable suggestion for 1 min (<b>save</b> Will negates; critical success/failure target notices spell/effects last 1 hr) (<b>heightened 8th</b> targets 10 creatures)"',
+      '"R30\' Target follows a reasonable suggestion for 1 min (<b>save Will</b> negates; critical success/failure target notices spell/effects last 1 hr) (<b>heightened 8th</b> targets 10 creatures)"',
   'Summon Animal':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -9004,21 +9008,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Restores 6 HP and gives +2 AC for 1 rd to touched living; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save</b> Fort half HP only; critical success/failure negates/doubles HP) (<b>heightened +1</b> +6 HP or +1d6 damage)"',
+      '"Restores 6 HP and gives +2 AC for 1 rd to touched living; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save Fort</b> half HP only; critical success/failure negates/doubles HP) (<b>heightened +1</b> +6 HP or +1d6 damage)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Evil target suffers reaction prevention and slowed 1 for 1 rd (<b>save</b> Will reaction prevention only; critical success/failure negates/inflicts slowed 2)"',
+      '"R30\' Evil target suffers reaction prevention and slowed 1 for 1 rd (<b>save Will</b> reaction prevention only; critical success/failure negates/inflicts slowed 2)"',
   'Litany Against Wrath':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Evil target suffers 3d6 HP good whenever it damages a good creature for 1 rd (<b>save</b> Will first time damaging a good creature only; critical success/failure negates/inflicts enfeebled 2)"',
+      '"R30\' Evil target suffers 3d6 HP good whenever it damages a good creature for 1 rd (<b>save Will</b> first time damaging a good creature only; critical success/failure negates/inflicts enfeebled 2)"',
   'Litany Of Righteousness':
     'Level=7 ' +
     'School=Evocation ' +
@@ -9111,7 +9115,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts blinded for 1 rd (Interact action ends) and dazzled for 1 min (<b>save</b> Fort dazzled for 1 rd; critical success/failure negates/inflicts dazzled for 1 hr) (<b>heightened 3rd</b> 30\' cone)"',
+      '"15\' cone inflicts blinded for 1 rd (Interact action ends) and dazzled for 1 min (<b>save Fort</b> dazzled for 1 rd; critical success/failure negates/inflicts dazzled for 1 hr) (<b>heightened 3rd</b> 30\' cone)"',
   "Death's Call":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9498,7 +9502,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save</b> Ref negates; critical failure inflicts immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min"',
+      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Ref</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'School=Conjuration ' +
@@ -9512,7 +9516,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save</b> Ref half; critical success/failure negates/doubles), while sustained up to 1 min"',
+      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Ref</b> half; critical success/failure negates/doubles), while sustained up to 1 min"',
   'Stormwind Flight':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -9526,7 +9530,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save</b> Ref HP only; critical success/failure negates/doubles)"',
+      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Ref</b> HP only; critical success/failure negates/doubles)"',
   'Wild Morph':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -9601,14 +9605,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"5\' emanation (10\'/15\' emanation for 2/3 actions) inflicts stupefied 2 (<b>save</b> Will negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
+      '"5\' emanation (10\'/15\' emanation for 2/3 actions) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
   'Abyssal Wrath':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save</b> Ref half; critical success/failure negates/doubles) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Ref</b> half; critical success/failure negates/doubles) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Ancestral Memories':
     'Level=1 ' +
     'School=Divination ' +
@@ -9677,7 +9681,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save</b> Fort half; critical success/failure negates/doubles) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fort</b> half; critical success/failure negates/doubles) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9715,7 +9719,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst per action inflicts loss of reactions and -2 Perception and will for 1 rd (<b>save</b> Will negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
+      '"R30\' 5\' burst per action inflicts loss of reactions and -2 Perception and will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
   'Fey Disappearance':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -9741,7 +9745,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save</b> Ref half HP only; critical success/failure negates/doubles HP and inflicts immobilized) (<b>heightened +1</b> +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save Ref</b> half HP only; critical success/failure negates/doubles HP and inflicts immobilized) (<b>heightened +1</b> +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9760,7 +9764,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target\'s highest ability modifier, until target saves up to 1 min (<b>save</b> Will negates; critical failure inflicts condition 2)"',
+      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target\'s highest ability modifier, until target saves up to 1 min (<b>save Will</b> negates; critical failure inflicts condition 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
     'School=Conjuration ' +
@@ -9780,7 +9784,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched gains undead responses to <i>Heal</i> and <i>Harm</i> for 1 min, and <i>Harm</i> restores +2 HP (<b>save</b> Will <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
+      '"Touched gains undead responses to <i>Heal</i> and <i>Harm</i> for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
   'Unusual Anatomy':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -9813,7 +9817,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Prevents target from taking hostile actions against self for 1 rd (<b>save</b> Will target suffers -1 attack and damage vs. self; critical success/failure negates/inflicts stunned 1)"',
+      '"R30\' Prevents target from taking hostile actions against self for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. self; critical success/failure negates/inflicts stunned 1)"',
   'Dimensional Steps':
     'Level=4 ' +
     'School=Conjuration ' +
