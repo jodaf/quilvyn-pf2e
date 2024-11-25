@@ -6753,13 +6753,14 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R1000\' 60\' burst inflicts 3d10 HP acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save Reflex</b> inflicts half HP; critical success negates, critical failure inflicts double HP)"',
   'Chain Lightning':
     'Level=6 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save Reflex</b> inflicts half damage; critical save negates and ends chain; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6814,7 +6815,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Cloud move 10\' away from self each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Collective Transposition':
     'Level=6 ' +
     'School=Conjuration ' +
@@ -6847,7 +6849,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' cone inflicts 12d6 HP cold (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Confusion':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -6865,31 +6868,33 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description="Touched object glows as a torch until dismissed"',
   'Control Water':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R500\' Raises or lowers water in a 50\'x50\' are by 10\'"',
   'Create Food':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 hour" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\ Creates food for 6 Medium creatures that remains edible for 1 dy (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
   'Create Water':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R0\' Creates 2 gallons of water that remains for 1 day"',
   'Creation':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R0\' Creates an object of up to 5 cubic feet made from vegetable matter (<b>heightened 5th</b> may create an object of metal and common minerals)"',
   'Crisis Of Faith':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -6921,7 +6926,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' 20\' burst counteracts natural light and magical light of equal or lesser level (<b>heightened 4th</b> creatures with darkvision treat targets as concealed)"',
   'Darkvision':
     'Level=2 ' +
     'School=Divination ' +
@@ -6941,7 +6947,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Deafens target for 10 min (<b>save Fortitude</b> lasts 1 rd; critical success negates; critical failure effects are permanent)"',
   'Death Knell':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -6953,7 +6960,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains +4 saves vs. death and negative effects, negative resistance 10, and suppressed doomed effects for 10 min"',
   'Detect Alignment':
     'Level=1 ' +
     'School=Divination ' +
@@ -7003,7 +7011,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self transforms into choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and dinosaur-specific attacks for 1 min (<b>heightened 5th</b> Huge dinosaur with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> Gargantuan dinosaur with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
   'Disappearance':
     'Level=8 ' +
     'School=Illusion ' +
@@ -7033,7 +7042,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Allows a counteract check to deactivate a non-artifact magic item; critical success destroys it"',
   'Dispel Magic':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -7047,7 +7057,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to target undead (heightened +1d6/level)"',
+      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to target undead (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7102,7 +7112,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self transforms into choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and dragon-specific attacks for 1 min (<b>heightened 8th</b> Huge dragon with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (+14 on breath weapon), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
     'School=Illusion ' +
@@ -7238,7 +7249,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Taret suffers frightened 2 (<b>heightened 3rd</b> 5 targets) (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd)"',
+      '"R30\' Target suffers frightened 2 (<b>heightened 3rd</b> 5 targets) (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -8225,7 +8236,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success inficts double HP) (<b>heightened +1</b> +2d6 HP)"',
+    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success inflicts double HP) (<b>heightened +1</b> +2d6 HP)"',
   'Secret Page':
     'Level=3 ' +
     'School=Illusion ' +
@@ -9646,7 +9657,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Self and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> +1 HP good)"',
   'Diabolic Edict':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9674,7 +9686,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains %{Speed>?60} fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)"',
   'Drain Life':
     'Level=3 ' +
     'School=Necromancy ' +
