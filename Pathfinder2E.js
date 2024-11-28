@@ -7149,25 +7149,29 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Brings flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure lasts 1 min"',
   'Earthquake':
     'Level=8 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, falling into 40\' fissures (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> half HP and prone; critical success half HP; critical failure falls into fissure)"',
   'Eclipse Burst':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' 60\' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save Reflex</b> half HP; critical success negates; critical failure inflicts double damage and blinded) (<b>heightened +1</b> +1d10 HP cold and +1d4 HP negative)"',
   'Electric Arc':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up to 2 targets (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double damage) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Form':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -7187,25 +7191,29 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened</b> gives resistance 10)"',
   'Enhance Victuals':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Removes poison and improves quality of touched 1 gallon of water or 5 pounds of food for 1 hr (<b>heightened +1 affects +1 gallon or +5 pounds</b>"',
   'Enlarge':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Willing target becomes Large, gaining 10\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining 10\' reach and +4 melee damage; <b>8th</b> affects up to 10 creatures)"',
   'Entangle':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Plants in 20\' burst create difficult terrain and -10\' Speed for 1 min (<b>save Reflex</b> negates Speed penalty; critical failure inflicts immobilized for 1 rd)"',
   'Enthrall':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -7268,7 +7276,8 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Allows willing touched to swim at full Speed, but reduces land Speed to 5\', for 10 min (<b>heightened 6th</b> effects last until next daily preparations)"',
   'Field Of Life':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -7281,19 +7290,21 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increase fly Speed to 60\'"',
   'Finger Of Death':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' Target suffers 70 HP negative, dying at 0 HP (<b>heightened +1</b> inflicts +10 HP)"',
   'Fire Seeds':
     'Level=6 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Creates 4 acorns that may be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
   'Fire Shield':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7327,13 +7338,14 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="Self gains +30\' Speed for 1 min"',
   'Flesh To Stone':
     'Level=6 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Target suffers slowed 1, plus an additional slowed 1 on a failed save each rd until immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts slowed 2)"',
   'Floating Disk':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -7364,7 +7376,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Relieves touched of Speed penalty effects and gives automatic success on Escape attempts for 10 min"',
   'Gaseous Form':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -9700,13 +9713,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP bludgeoning or fire (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +dd6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self may fly at full Speed, swim at full speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b>+20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9719,13 +9734,15 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives resistance 10/2 and weakness 10)"',
   'Extend Spell':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Duration of subsequent targeted spell of less than maximum spell level increases from 1 min to 10 min"',
   'Faerie Dust':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9738,13 +9755,14 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Self becomes invisible and may ignore natural difficult terrain until the end of next turn; performing a hostile action ends invisibility (<b>heightened 5th</b> hostile action does not end invisibility)"',
   'Fey Glamour':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description="R30\' 30\' burst cloaks up to 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
     'School=Necromancy ' +
