@@ -6741,7 +6741,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> half; critical success negates; critical failure doubles)"',
+      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
   'Calm Emotions':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6760,7 +6760,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save Reflex</b> inflicts half damage; critical save negates and ends chain; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d12 HP)"',
+      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save Reflex</b> inflicts half HP; critical save negates and ends chain; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6941,7 +6941,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save Will</b> half; critical success negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
+      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save Will</b> inflicts half HP; critical success negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7100,7 +7100,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save Fortitude</b> half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
+      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
   'Dominate':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7157,21 +7157,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, falling into 40\' fissures (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> half HP and prone; critical success half HP; critical failure falls into fissure)"',
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, falling into 40\' fissures (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts fall into fissure)"',
   'Eclipse Burst':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save Reflex</b> half HP; critical success negates; critical failure inflicts double damage and blinded) (<b>heightened +1</b> +1d10 HP cold and +1d4 HP negative)"',
+      '"R500\' 60\' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and blinded) (<b>heightened +1</b> +1d10 HP cold and +1d4 HP negative)"',
   'Electric Arc':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up to 2 targets (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double damage) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up to 2 targets (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Form':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -7192,14 +7192,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened</b> gives resistance 10)"',
+      '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened 9th</b> gives resistance 10)"',
   'Enhance Victuals':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Removes poison and improves quality of touched 1 gallon of water or 5 pounds of food for 1 hr (<b>heightened +1 affects +1 gallon or +5 pounds</b>"',
+      '"Removes poison and improves quality of touched 1 gallon of water or 5 pounds of food for 1 hr (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>"',
   'Enlarge':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -7318,14 +7318,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP)"',
+      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
   'Flame Strike':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
+      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
     'School=Evocation ' +
@@ -7451,7 +7451,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 4 5\' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Reflex</b> or Acrobatics negates; critical failure inflicts dropped object)"',
+      '"R30\' 4 5\' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure inflicts dropped object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7502,7 +7502,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"<b>(1)</b> Touched, <b>(2)</b> R30\' target, or <b>(3)</b> 30\' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
+      '"<b>(1)</b> Touched, <b>(2)</b> R30\' target, or <b>(3)</b> 30\' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
   'Heroism':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -7656,7 +7656,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Reflex</b> half, critical success negates; critical failure inflicts double HP)"',
+      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
   'Locate':
     'Level=3 ' +
     'School=Divination ' +
@@ -9032,7 +9032,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Restores 6 HP and gives +2 AC for 1 rd to touched living; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save Fortitude</b> half HP only; critical success negates; critical failure inflicts doubles HP) (<b>heightened +1</b> +6 HP or +1d6 damage)"',
+      '"Restores 6 HP and gives +2 AC for 1 rd to touched living; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts doubles HP) (<b>heightened +1</b> +6 HP or +1d6 damage)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9540,7 +9540,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP), while sustained up to 1 min"',
+      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP), while sustained up to 1 min"',
   'Stormwind Flight':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -9636,7 +9636,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Reflex</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Ancestral Memories':
     'Level=1 ' +
     'School=Divination ' +
@@ -9707,7 +9707,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fortitude</b> half; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9776,7 +9776,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save Reflex</b> half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'School=Evocation ' +
