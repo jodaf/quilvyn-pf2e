@@ -6551,7 +6551,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Acid Arrow':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6572,7 +6573,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a medium bat, bird, pterosaur, or wasp (<b>heightened 5th</b> large creature; <b>6th</b> huge creature) for 1 min"',
+      '"Caster becomes choice of a medium bat, bird, pterosaur, or wasp (<b>heightened 5th</b> large creature; <b>6th</b> huge creature) for 1 min"',
   'Air Bubble':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -6597,20 +6598,22 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Anathematic Reprisal':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Animal Form':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self transforms into choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and animal-specific attacks for 1 min (<b>heightened 3rd</b> 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> Large animal with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> Huge animal with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
+      '"Caster transforms into choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and animal-specific attacks for 1 min (<b>heightened 3rd</b> 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> Large animal with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> Huge animal with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
   'Animal Messenger':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6624,7 +6627,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R120\' Self can share target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
+      '"R120\' Caster can share target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -6637,19 +6640,22 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Augury':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Avatar':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Baleful Polymorph':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -6662,7 +6668,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Banishment':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6682,13 +6689,15 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Bind Undead':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Black Tentacles':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -6701,7 +6710,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Bless':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6721,13 +6731,15 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Blur':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Breath Of Life':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -6747,7 +6759,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Cataclysm':
     'Level=10 ' +
     'School=Evocation ' +
@@ -6773,56 +6786,64 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Chilling Darkness':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Chromatic Wall':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Circle Of Protection':
     'Level=3 ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Clairaudience':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Clairvoyance':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Cloak Of Colors':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Cloudkill':
     'Level=5 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Cloud move 10\' away from self each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R120\' Cloud moves 10\' away from caster each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Collective Transposition':
     'Level=6 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Color Spray':
     'Level=1 ' +
     'School=Illusion ' +
@@ -6856,13 +6877,15 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Contingency':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Continual Flame':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6900,13 +6923,15 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Crusade':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Crushing Despair':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -6934,7 +6959,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily preparations)"',
+      '"Caster can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily preparations)"',
   'Daze':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -6954,7 +6979,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Death Ward':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6967,76 +6993,84 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Detect Magic':
     'Level=Cantrip ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
+      '"Allows caster to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self learns whether target creature or object is venomous or poisoned (<b>heightened 2nd</b> learn the number and types of poison)"',
+      '"R30\' Caster learns whether target creature or object is venomous or poisoned (<b>heightened 2nd</b> learn the number and types of poison)"',
   'Detect Scrying':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dimension Door':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="R120\' Teleports self to a visible target location"',
+    'Description="R120\' Teleports caster to a visible target location"',
   'Dimensional Anchor':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dimensional Lock':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dinosaur Form':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self transforms into choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and dinosaur-specific attacks for 1 min (<b>heightened 5th</b> Huge dinosaur with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> Gargantuan dinosaur with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
+      '"Caster transforms into choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and dinosaur-specific attacks for 1 min (<b>heightened 5th</b> Huge dinosaur with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> Gargantuan dinosaur with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
   'Disappearance':
     'Level=8 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Discern Lies':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Discern Location':
     'Level=8 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Disintegrate':
     'Level=6 ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Disjunction':
     'Level=9 ' +
     'School=Abjuration ' +
@@ -7063,37 +7097,43 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Aura':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Decree':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Inspiration':
     'Level=8 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Lance':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Vessel':
     'Level=7 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Divine Wrath':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7106,44 +7146,50 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dragon Form':
     'Level=6 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self transforms into choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and dragon-specific attacks for 1 min (<b>heightened 8th</b> Huge dragon with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (+14 on breath weapon), +28 Athletics)"',
+      '"Caster transforms into choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and dragon-specific attacks for 1 min (<b>heightened 8th</b> Huge dragon with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (+14 on breath weapon), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dream Message':
     'Level=3 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dreaming Potential':
     'Level=5 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Drop Dead':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Duplicate Foe':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Earthbind':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7178,7 +7224,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a medium air, earth, water, or fire elemental (<b>heightened 6th</b> large elemental; <b>7th</b> huge elemental) for 1 min"',
+      '"Caster becomes choice of a medium air, earth, water, or fire elemental (<b>heightened 6th</b> large elemental; <b>7th</b> huge elemental) for 1 min"',
   'Endure Elements':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -7219,19 +7265,22 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ethereal Jaunt':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Fabricated Truth':
     'Level=10 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Faerie Fire':
     'Level=2 ' +
     'School=Evocation ' +
@@ -7244,13 +7293,15 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'False Vision':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Fear':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -7270,7 +7321,8 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Feet To Fins':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7291,7 +7343,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increase fly Speed to 60\'"',
+      '"Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increase fly Speed to 60\'"',
   'Finger Of Death':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -7311,7 +7363,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)"',
+      '"Caster gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
     'School=Evocation ' +
@@ -7338,7 +7390,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="Self gains +30\' Speed for 1 min"',
+    'Description="Caster gains +30\' Speed for 1 min"',
   'Flesh To Stone':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -7351,7 +7403,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Fly':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -7364,13 +7417,15 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Foresight':
     'Level=9 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Freedom Of Movement':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -7383,19 +7438,22 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10\' fly Speed  for 5 min or until target or caster dismisses"',
   'Gate':
     'Level=10 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Gentle Repose':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touched corpse resists decay and cannot be made undead until next daily preparations (<b>heightened 5th</b> effects are permanent)"',
   'Ghost Sound':
     'Level=Cantrip ' +
     'School=Illusion ' +
@@ -7408,25 +7466,29 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ghoulish Cravings':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Glibness':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Glitterdust':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R120\' Inflicts dazzled and negates invisibility for 1 min upon creatures in a 10\' burst (<b>save Reflex</b> negates invisibility only for 2 rd; critical success negates; critical failure blinds for 1 rd and dazzles and negates invisibility for 10 min)"',
   'Globe Of Invulnerability':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -7438,13 +7500,15 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Goblin Pox':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 dy (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)"',
   'Grease':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -7457,19 +7521,22 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Guidance':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check before the start of the caster\'s next turn; cannot be repeated on the same target for 1 hr"',
   'Gust Of Wind':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
   'Hallucination':
     'Level=5 ' +
     'School=Illusion ' +
@@ -7482,13 +7549,15 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily preparations (<b>heightened 5th</b> illusion may mask or incorporate structures)"',
   'Harm':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Haste':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7522,37 +7591,43 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Horrid Wilting':
     'Level=8 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"500\' radius inflicts 10d10 HP negative (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP; plant and water creatures use result one step worse) (<b>heightened +1</b> +1d10 HP)"',
   'Humanoid Form':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> may transform into a Large humanoid)"',
   'Hydraulic Push':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' Ranged attack inflicts 3d6 HP bludgeoning and knocks back 5\' (critical success 6d6 HP and 10\') (<b>heightened +1</b> +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"60\' line inflicts 8d6 HP bludgeoning and push 5\' (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure pushes 10\')"',
   'Hypercognition':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Hypnotic Pattern':
     'Level=3 ' +
     'School=Illusion ' +
@@ -7565,14 +7640,15 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Illusory Disguise':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Illusion makes self look differently for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)"',
+      '"Illusion makes caster look differently for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)"',
   'Illusory Object':
     'Level=1 ' +
     'School=Illusion ' +
@@ -7592,13 +7668,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R30\' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
   'Insect Form':
     'Level=3 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Caster transforms into choice of Medium insect with 10 temporary HP, AC %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and insect-specific attacks for 1 min (<b>heightened 4th</b> Large insect with +5\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> Huge insect with +10\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
     'School=Illusion ' +
@@ -7618,31 +7696,36 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Jump':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Caster may jump 30\' (<b>heightened 3rd</b> affects creature touched and lasts for 1 min)"',
   'Knock':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Know Direction':
     'Level=Cantrip ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Caster knows which direction is north (<b>heightened 7th</b> gives direction to a familiar location)"',
   'Levitate':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Light':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -7669,39 +7752,43 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Longstrider':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"Caster gains +10\' Speed for 1 hr (<b>heightened 2nd</b> effects last 8 hr)"',
   'Mage Armor':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains +1 AC with a +5 maximum Dexterity modifier until next daily preparations (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)"',
+      '"Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily preparations (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)"',
   'Mage Hand':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows self to move a light object 20\'/rd while sustained (<b>heightened 3rd</b> may move Bulk 1 object; <b>5th</b> move 60\'/rd; <b>7th</b> may move Bulk 2 object)"',
+      '"R30\' Allows caster to move a light object 20\'/rd while sustained (<b>heightened 3rd</b> may move Bulk 1 object; <b>5th</b> move 60\'/rd; <b>7th</b> may move Bulk 2 object)"',
   'Magic Aura':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Magic Fang':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Magic Missile':
     'Level=1 ' +
     'School=Evocation ' +
@@ -7714,7 +7801,8 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Magic Weapon':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7727,147 +7815,169 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Mariner's Curse":
     'Level=5 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mask Of Terror':
     'Level=7 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Massacre':
     'Level=9 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Maze':
     'Level=8 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Meld Into Stone':
     'Level=3 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may enter touched stone, retaining the ability to hear outside sounds, for 10 min"',
+      '"Caster may enter touched stone, retaining the ability to hear outside sounds, for 10 min"',
   'Mending':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Message':
     'Level=Cantrip ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Self may hold a private conversation with visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
+      '"R120\' Caster may hold a private conversation with visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mind Blank':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mind Probe':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mind Reading':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mindlink':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Miracle':
     'Level=10 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mirror Image':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Misdirection':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mislead':
     'Level=6 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Modify Memory':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Moment Of Renewal':
     'Level=8 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Monstrosity Form':
     'Level=8 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Moon Frenzy':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Nature Incarnate':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Nature's Enmity":
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Negate Aroma':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Neutralize Poison':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -7880,127 +7990,148 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Nondetection':
     'Level=3 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Obscuring Mist':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Outcast's Curse":
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Overwhelming Presence':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Paralyze':
     'Level=3 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Paranoia':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Pass Without Trace':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Passwall':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Pest Form':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Phantasmal Killer':
     'Level=4 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Phantom Pain':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Phantom Steed':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Plane Shift':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Plant Form':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Polar Ray':
     'Level=8 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Possession':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Power Word Blind':
     'Level=7 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Power Word Kill':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Power Word Stun':
     'Level=8 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Prestidigitation':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8013,67 +8144,78 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Primal Phenomenon':
     'Level=10 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Prismatic Sphere':
     'Level=9 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Prismatic Spray':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Prismatic Wall':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Private Sanctum':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Produce Flame':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Project Image':
     'Level=7 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Protection':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Prying Eye':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Punishing Winds':
     'Level=8 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Purify Food And Drink':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8085,7 +8227,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Raise Dead':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8097,7 +8240,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ray Of Frost':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8110,37 +8254,43 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Read Omens':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Regenerate':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Remake':
     'Level=10 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hour" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Remove Curse':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Remove Disease':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Remove Fear':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -8152,19 +8302,22 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Repulsion':
     'Level=6 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Resilient Sphere':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Resist Energy':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -8177,73 +8330,85 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Restoration':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Retrocognition':
     'Level=7 ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Reverse Gravity':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Revival':
     'Level=10 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Righteous Might':
     'Level=6 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Rope Trick':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sanctified Ground':
     'Level=3 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sanctuary':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Scintillating Pattern':
     'Level=8 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Scrying':
     'Level=6 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Searing Light':
     'Level=3 ' +
     'School=Evocation ' +
@@ -8255,105 +8420,120 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'See Invisibility':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last 8 hr)"',
+      '"Caster treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last 8 hr)"',
   'Sending':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shadow Blast':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shadow Siphon':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shadow Walk':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shape Stone':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shape Wood':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shapechange':
     'Level=9 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shatter':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shield':
     'Level=Cantrip ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shield Other':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shillelagh':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shocking Grasp':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)"',
+      '"Caster touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)"',
   'Shrink':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shrink Item':
     'Level=3 ' +
     'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sigil':
     'Level=Cantrip ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Silence':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8366,19 +8546,22 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Slow':
     'Level=3 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Solid Fog':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Soothe':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -8391,43 +8574,50 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Speak With Animals':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Speak With Plants':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spectral Hand':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spell Immunity':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spell Turning':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spellwrack':
     'Level=6 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spider Climb':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -8440,37 +8630,43 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spirit Blast':
     'Level=6 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spirit Link':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spirit Song':
     'Level=8 ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spiritual Epidemic':
     'Level=8 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spiritual Guardian':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Spiritual Weapon':
     'Level=2 ' +
     'School=Evocation ' +
@@ -8483,49 +8679,57 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Status':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Stinking Cloud':
     'Level=3 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Stone Tell':
     'Level=6 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Stone To Flesh':
     'Level=6 ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Stoneskin':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Storm Of Vengeance':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Suggestion':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -8538,7 +8742,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Celestial':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8551,7 +8756,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Dragon':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8564,121 +8770,141 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Entity':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Fey':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Fiend':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Giant':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Summon Plant Or Fungus':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sunburst':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Synaptic Pulse':
     'Level=5 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Synesthesia':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Talking Corpse':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tangling Creepers':
     'Level=6 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telekinetic Haul':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telekinetic Maneuver':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telekinetic Projectile':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telepathic Bond':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telepathic Demand':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Telepathy':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Teleport':
     'Level=6 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Time Stop':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tongues':
     'Level=5 ' +
     'School=Divination ' +
@@ -8691,68 +8917,78 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tree Shape':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tree Stride':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'True Seeing':
     'Level=6 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'True Strike':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Next self Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
+      '"Next caster Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
   'True Target':
     'Level=7 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Undetectable Alignment':
     'Level=2 ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unfathomable Song':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unfettered Pack':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unrelenting Observation':
     'Level=8 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unseen Servant':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -8765,13 +9001,15 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Vampiric Touch':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Veil':
     'Level=4 ' +
     'School=Illusion ' +
@@ -8784,37 +9022,43 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Vibrant Pattern':
     'Level=6 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Visions Of Danger':
     'Level=7 ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Vital Beacon':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Volcanic Eruption':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wall Of Fire':
     'Level=4 ' +
     'School=Evocation ' +
@@ -8827,31 +9071,36 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wall Of Ice':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wall Of Stone':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wall Of Thorns':
     'Level=3 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wall Of Wind':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Wanderer's Guide":
     'Level=3 ' +
     'School=Divination ' +
@@ -8864,67 +9113,78 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Water Breathing':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Water Walk':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Weapon Storm':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Web':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Weird':
     'Level=9 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wind Walk':
     'Level=8 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast="10 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wish':
     'Level=10 ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Zealous Conviction':
     'Level=6 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Zone Of Truth':
     'Level=3 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Allegro':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -8938,7 +9198,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allies in a 60\' radius may substitute self Performance roll for save"',
+      '"Allies in a 60\' radius may substitute caster Performance roll for save"',
   'Dirge Of Doom':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9007,7 +9267,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and up to 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
+      '"R30\' Caster and up to 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9019,13 +9279,13 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="R30\' Redirects damage from an ally to self"',
+    'Description="R30\' Redirects damage from an ally to caster"',
   "Hero's Defiance":
     'Level=10 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Free ' +
-    'Description="Self recovers 10d4+20 HP"',
+    'Description="Caster recovers 10d4+20 HP"',
   'Lay On Hands':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9060,79 +9320,91 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +5 Speed and may ignore difficult terrain for the remainder of turn"',
+      '"Caster gains +5 Speed and may ignore difficult terrain for the remainder of turn"',
   'Appearance Of Wealth':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Artistic Flourish':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Athletic Rush':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Bit Of Luck':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Blind Ambition':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Captivating Adoration':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Charming Touch':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Cloak Of Shadow':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Commanding Lash':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Competitive Edge':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Cry Of Destruction':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Darkened Eyes':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Dazzling Flash':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9145,79 +9417,92 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Delusional Pride':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Destructive Aura':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Disperse Into Air':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Downpour':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Dreamer's Call":
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Enduring Might':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Eradicate Undeath':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Face In The Crowd':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Fire Ray':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Flame Barrier':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Forced Quiet':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Glimpse The Truth':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Healer's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9230,73 +9515,85 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Know The Enemy':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Localized Quake':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Lucky Break':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Magic's Vessel":
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Malignant Sustenance':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Moonbeam':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Mystic Beacon':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Nature's Bounty":
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Overstuff':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Perfected Form':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Perfected Mind':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Positive Luminance':
     'Level=4 ' +
     'School=Necromancy ' +
@@ -9309,31 +9606,36 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Protector's Sacrifice":
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Protector's Sphere":
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Pulse Of The City':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Pushing Gust':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Read Fate':
     'Level=1 ' +
     'School=Divination ' +
@@ -9346,37 +9648,43 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Retributive Pain':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Safeguard Secret':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Savor The Sting':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Scholarly Recollection':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Shared Nightmare':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Soothing Words':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9389,25 +9697,29 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sudden Shift':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Sweet Dream':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Take Its Course':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tempt Fate':
     'Level=4 ' +
     'School=Divination ' +
@@ -9420,92 +9732,106 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Touch Of Obedience':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Touch Of The Moon':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Touch Of Undeath':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Traveler's Transit":
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> may choose fly speed)"',
+      '"Caster gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> may choose fly speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unimpeded Stride':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Unity':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Veil Of Confidence':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Vibrant Thorns':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Waking Nightmare':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Weapon Surge':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Word Of Freedom':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Word Of Truth':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Zeal For Battle':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Goodberry':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9547,7 +9873,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may fly equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not suffer difficult terrain effects)"',
+      '"Caster may fly equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not suffer difficult terrain effects)"',
   'Tempest Surge':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9561,68 +9887,77 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 persistent bleed and 2d6 persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 persistent bleed and 4d6 persistent poison"',
+      '"Caster gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 persistent bleed and 2d6 persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 persistent bleed and 4d6 persistent poison"',
   'Wild Shape':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Transforms self into a pest for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an animal form)"',
+      '"Transforms caster into a pest for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an animal form)"',
   'Abundant Step':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Empty Body':
     'Level=9 ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ki Blast':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ki Rush':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Ki Strike':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Quivering Palm':
     'Level=8 ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wholeness Of Body':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wild Winds Stance':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Wind Jump':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Aberrant Whispers':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -9643,7 +9978,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> expert in chosen skill)"',
+      '"Caster becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> expert in chosen skill)"',
   'Angelic Halo':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -9657,7 +9992,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may fly at full Speed and casts a 30\' radius bright list for 3 rd (<b>heightened 5th</b> lasts 1 min)"',
+      '"Caster may fly at full Speed and casts a 30\' radius bright list for 3 rd (<b>heightened 5th</b> lasts 1 min)"',
   'Arcane Countermeasure':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -9671,7 +10006,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Self and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> +1 HP good)"',
+      '"R30\' Caster and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> +1 HP good)"',
   'Diabolic Edict':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9693,21 +10028,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self fingers inflict 1d6S HP+1d6 energy HP for 1 min; self gains resistance 5 to energy (<b>heightened 5th</b> 2d6S HP and resistance 10; <b>9th</b> 3d6S HP and resistance 15)"',
+      '"Caster fingers inflict 1d6S HP+1d6 energy HP for 1 min, and caster gains resistance 5 to energy (<b>heightened 5th</b> 2d6S HP and resistance 10; <b>9th</b> 3d6S HP and resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains %{Speed>?60} fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)"',
+      '"Caster gains %{Speed>?60} fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)"',
   'Drain Life':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative; self gains equal temporary HP (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9721,7 +10056,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may fly at full Speed, swim at full speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b>+20\' Speed)"',
+      '"Caster may fly at full Speed, swim at full speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b>+20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9735,7 +10070,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives resistance 10/2 and weakness 10)"',
+      '"Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives resistance 10/2 and weakness 10)"',
   'Extend Spell':
     'Level=3 ' +
     'School=Divination ' +
@@ -9756,7 +10091,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self becomes invisible and may ignore natural difficult terrain until the end of next turn; performing a hostile action ends invisibility (<b>heightened 5th</b> hostile action does not end invisibility)"',
+      '"Caster becomes invisible and may ignore natural difficult terrain until the end of next turn; performing a hostile action ends invisibility (<b>heightened 5th</b> hostile action does not end invisibility)"',
   'Fey Glamour':
     'Level=5 ' +
     'School=Illusion ' +
@@ -9769,7 +10104,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self jaws inflict 1d8P HP, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
+      '"Caster jaws inflict 1d8P HP, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -9782,13 +10117,15 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"R60\' 10\' radius inflicts 4d6 HP fire and 4d6 HP evil (<b>save Reflex</b> inflicts half damage; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d6 HP fire and evil)"',
   'Horrific Visage':
     'Level=3 ' +
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"30\' radius inflicts frightened 1 (<b>save Will</b> negates; critical failure inflicts frightened 2) (<b>heightened 5th</b> inflicts frightened 1/2/3 and fleeing for 1 rd on save success/failure/critical failure)"',
   'Jealous Hex':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9801,14 +10138,15 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Tentacular Limbs':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Extends self reach for touch spells and unarmed Strikes to 10\'; adding another action to touch spells extends reach to 20\' for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
+      '"Extends caster reach for touch spells and unarmed Strikes to 10\'; adding another action to touch spells extends reach to 20\' for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
   "Undeath's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9821,13 +10159,15 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "You're Mine":
     'Level=5 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Augment Summoning':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -9848,38 +10188,42 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Prevents target from taking hostile actions against self for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. self; critical success negates; critical failure inflicts stunned 1)"',
+      '"R30\' Prevents target from taking hostile actions against caster for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. caster; critical success negates; critical failure inflicts stunned 1)"',
   'Dimensional Steps':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   "Diviner's Sight":
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target may substitute self d20 roll for a saving throw or skill check within 1 rd"',
+      '"R30\' Target may substitute caster d20 roll for a saving throw or skill check within 1 rd"',
   'Dread Aura':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Elemental Tempest':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Energy Absorption':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Force Bolt':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9899,13 +10243,15 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Life Siphon':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Physical Boost':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -9926,13 +10272,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of +20\' Speed, climb or swim at half Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8S HP for 1 min"',
+      '"Caster gains choice of +20\' Speed, climb or swim at half Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8S HP for 1 min"',
   'Vigilant Eye':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="FILL"',
+    'Description=' +
+      '"FILL"',
   'Warped Terrain':
     'Level=1 ' +
     'School=Illusion ' +
