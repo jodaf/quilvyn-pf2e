@@ -7501,7 +7501,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Target container or 10\'x10\' area sets off a chosen spell of lower level in response to specified trigger"',
   'Goblin Pox':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7788,7 +7788,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Gives touched creature\'s unarmed attack +1 attack and 2 damage dice"',
   'Magic Missile':
     'Level=1 ' +
     'School=Evocation ' +
@@ -7823,21 +7823,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched suffers sickened 1, plus slowed 1 on the open sea, until curse is removed (<b>save Will</b> inflicts sickened 1 until condition is reduced; critical success negates; critical success inflicts sickened 2)"',
   'Mask Of Terror':
     'Level=7 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)"',
   'Massacre':
     'Level=9 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line (<b>save Fort</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
     'School=Conjuration ' +
@@ -7858,7 +7858,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> affects a 1 Bulk object; <b>3rd</b> affects a 2 Bulk or magical 1 Bulk object)"',
   'Message':
     'Level=Cantrip ' +
     'School=Illusion ' +
@@ -7872,7 +7872,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' 4 meteors inflict 6d10 HP bludgeoning in 1 10\' burst and 14d6 HP fire in a 40\' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10 bludgeoning and +2d6 fire)"',
   'Mind Blank':
     'Level=8 ' +
     'School=Abjuration ' +
@@ -7941,43 +7941,42 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="6 touched instantly gain the effects of 24 hr of rest"',
   'Monstrosity Form':
     'Level=8 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster transforms into choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, AC %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> 25 temporary HP, AC %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
   'Moon Frenzy':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs/claws that inflict 2d6P HP/2d6S HP plus 1d4 HP persistent bleed on a critical hit, and increase a size up to large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6P HP/3d6S HP, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6P HP/4d6S HP, weakness 20 to silver)"',
   'Nature Incarnate':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster transforms into choice of a Medium green man, or a Gargantuan kaiju with 30 temporary HP, AC %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10S HP (DC 8 flat negates; <b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Negates scent of willing touched for 1 hr (<b>heightened 5th</b> R30\' affects up to 10 targets)"',
   'Neutralize Poison':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -7998,14 +7997,13 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains automatic counteract vs. magical divinations for 8 hr"',
   'Obscuring Mist':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="R120\' 20\' burst conceals creatures for 1 min"',
   "Outcast's Curse":
     'Level=4 ' +
     'School=Enchantment ' +
