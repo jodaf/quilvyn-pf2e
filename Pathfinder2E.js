@@ -8038,21 +8038,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Raises DC to Track caster by 4 or up to spell DC for 1 hr (<b>heightened 2nd</b> effects last 8 hr; <b>4th</b> effects last 8 hr and affect a 20\' area and up to 10 creatures)"',
   'Passwall':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20\', appears as normal wall, and can be entered only by password or trigger)"',
   'Pest Form':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster transforms into choice of Tiny animal with AC %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> may become a creature with a 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'School=Illusion ' +
@@ -8080,28 +8080,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <b>Air Walk</b> for 1 rd; <b>6th</b> mount has an 80\' Speed and may fly)"',
   'Plane Shift':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Shifts caster and up to 8 willing targets to a different plane"',
   'Plant Form':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster transforms into choice of Large plant with 12 temporary HP, AC %{level+19}, +27 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> Huge plant with +5\' reach, 24 temporary HP, AC %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
   'Polar Ray':
     'Level=8 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Spell attack inflicts 10d8 HP cold (double on critical success) and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)"',
   'Possession':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -8143,14 +8143,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision AC %{level+22}, tusk attack that inflicts 4d8+19P HP, trunk attack that inflicts 4d6+16B HP, foot attack that inflicts 4d6+16B HP, low-light vision, resistance 10 to poison, +30 Athletics modifier, and trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
   'Prismatic Sphere':
     'Level=9 ' +
     'School=Abjuration ' +
@@ -8185,7 +8185,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP fire (double HP plus 1d4 persistent fire damage on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)"',
   'Project Image':
     'Level=7 ' +
     'School=Illusion ' +
@@ -8213,7 +8213,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R100\' 30\' radius drags down flying creatures 40\', creates greater difficult terrain for flying creatures and those trying to exit, and creates difficult terrain for others while sustained up to 1 min"',
   'Purify Food And Drink':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8226,7 +8226,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP o failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Raise Dead':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8253,7 +8253,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Caster detects whether target object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 objects; <b>6th</b> affects unlimited objects)"',
   'Read Omens':
     'Level=4 ' +
     'School=Divination ' +
