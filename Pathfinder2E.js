@@ -8267,14 +8267,13 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched target regains 15 HP and regrows a damaged organ each rd for 1 min; suffering new acid or fire damage deactivates for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
   'Remake':
     'Level=10 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hour" ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Fully re-creates a known object up to 5\' cu"',
   'Remove Curse':
     'Level=4 ' +
     'School=Necromancy ' +
@@ -8287,21 +8286,21 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows a counteract attempt on 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
+    'Description=' +
+      '"Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows a counteract attempt vs. a single paralysis effect affecting touched (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'School=Abjuration ' +
@@ -8336,14 +8335,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster chooses to reduce a clumsy, enfeebled, or stupified condition affecting touched by 2, reduce 2 of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce drained, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows a counteract attempt vs. a magical blindness or deafness effect affecting touched"',
   'Retrocognition':
     'Level=7 ' +
     'School=Divination ' +
@@ -8364,7 +8363,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' radius restores 10d8+40 HP and raises dead with the same number of temporary HP while sustained up to 1 min"',
   'Righteous Might':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -8460,29 +8459,26 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Reshapes touch 10\'x10\'x10\' stone"',
   'Shape Wood':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Reshapes touched 20 cubic feet of wood"',
   'Shapechange':
     'Level=9 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Replicates any known polymorph spell of up to 8th level"',
   'Shatter':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts 2d10 HP sonic on unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
   'Shield':
     'Level=Cantrip ' +
     'School=Abjuration ' +
@@ -8503,7 +8499,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched staff gains +1 attack and 2 damage dice (3 damage dice vs. aberrations, extraplanar creatures, and undead) for 1 min"',
   'Shocking Grasp':
     'Level=1 ' +
     'School=Evocation ' +
@@ -8517,7 +8513,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Will target becomes Tiny for 5 min (<b>heightened 6th</b> may affect 10 creatures)"',
   'Shrink Item':
     'Level=3 ' +
     'School=Transmutation ' +
