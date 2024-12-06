@@ -8226,7 +8226,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP o failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
+      '"Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Raise Dead':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8335,7 +8335,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Caster chooses to reduce a clumsy, enfeebled, or stupified condition affecting touched by 2, reduce 2 of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce drained, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
+      '"Caster chooses to reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce 2 of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce drained, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8527,7 +8527,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Inscribes 1\\" sq magical mark on touched for 1 week or until scrubbed off (<b>heightened 3rd</b> effects last 1 month; <b>5th</b> effects last 1 year; <b>7th</b> effects are permanent)"',
   'Silence':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8548,14 +8548,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts slowed 1 for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 2)"',
   'Solid Fog':
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 20\' burst conceals creatures and inflicts difficult terrain for 1 min"',
   'Soothe':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -8575,15 +8575,13 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows caster to communicate with animals for 10 min"',
   'Speak With Plants':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows caster to communicate with plants for 10 min"',
   'Spectral Hand':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8625,7 +8623,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 1d4P HP, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4P HP and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Spirit Blast':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -8673,22 +8671,21 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="R30\' Removes dying condition from target"',
   'Status':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster knows touched\'s direction, distance, and conditions until next daily preparations (<b>heightened 4th</b> R10\' may affect up to 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 20\' burst conceals creatures and inflicts sickened 1 and slowed 1 for 1 min (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts sickened 2 and slowed 1)"',
   'Stone Tell':
     'Level=6 ' +
     'School=Evocation ' +
@@ -8702,21 +8699,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Restores touched petrified creature or transforms human-sized stone object into flesh"',
   'Stoneskin':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
   'Storm Of Vengeance':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R800\' 360\' burst inflicts -r ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10B HP (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -8737,7 +8734,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Level -1 creature appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
   'Summon Celestial':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8765,7 +8762,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Level -1 elemental appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 elemental; <b>3rd</b> level 2 elemental; <b>4th</b> level 3 elemental; <b>5th</b> level 5 elemental; <b>6th</b> level 7 elemental; <b>7th</b> level 9 elemental; <b>8th</b> level 11 elemental; <b>9th</b> level 13 elemental; <b>10th</b> level 15 elemental)"',
   'Summon Entity':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8779,7 +8776,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Level -1 fey appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 fey; <b>3rd</b> level 2 fey; <b>4th</b> level 3 fey; <b>5th</b> level 5 fey; <b>6th</b> level 7 fey; <b>7th</b> level 9 fey; <b>8th</b> level 11 fey; <b>9th</b> level 13 fey; <b>10th</b> level 15 fey)"',
   'Summon Fiend':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8793,21 +8790,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Level 5 giant appears and fights for caster while sustained up to 1 min (<b>heightened 6th</b> level 7 giant; <b>7th</b> level 9 giant; <b>8th</b> level 11 giant; <b>9th</b> level 13 giant; <b>10th</b> level 15 giant)"',
   'Summon Plant Or Fungus':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Level -1 plant or fungus appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
   'Sunburst':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' 60\' burst inflicts 8d10 HP fire plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> +1d10 HP fire and positive)"',
   'Synaptic Pulse':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -8835,14 +8832,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Ranged attack inflicts -10\' Speed for 1 rd (Escape negates; critical success inflicts immobilized for 1 rd) (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd each rd (Escape negates) for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'School=Evocation ' +
@@ -8918,22 +8915,21 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Caster becomes a Large tree with AC 20 for 8 hr"',
   'Tree Stride':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster teleports from an adjacent to tree to another of the same species within 5 miles (<b>heightened 6th</b> teleports 50 miles; <b>8th</b> teleports 500 miles; <b>9th</b> teleports anywhere on the planet)"',
   'True Seeing':
     'Level=6 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Caster sees through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
     'School=Divination ' +
@@ -10133,7 +10129,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 5\' burst (2/3 actions 10\'/15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> +5\' radius inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
     'School=Transmutation ' +
