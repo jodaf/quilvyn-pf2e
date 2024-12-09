@@ -8971,7 +8971,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> also ignore greater difficult terrain)"',
   'Unrelenting Observation':
     'Level=8 ' +
     'School=Divination ' +
@@ -9013,7 +9013,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster may project voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last 1 hr; allows changing voice quality and requires an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
     'School=Illusion ' +
@@ -9034,14 +9034,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Touch heals once each rd for 4 rd, 4d10 HP, 4d8HP, 4d6HP, then 4d4 HP (<b>heightened +1</b> +1 die of healing)"',
   'Volcanic Eruption':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 5\' radius inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and difficult terrain to flying creatures (<b>save Reflex</b>inflicts half HP; critical success negates; critical failure inflicts double HP), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'School=Necromancy ' +
@@ -9069,28 +9069,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with AC 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> +10 HP and +1d6 HP from rubble)"',
   'Wall Of Stone':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with AC 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4P HP for 1 min"',
   'Wall Of Wind':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) may pass as difficult terrain; critical success negates; critical failure pushes back 10\')"',
   "Wanderer's Guide":
     'Level=3 ' +
     'School=Divination ' +
@@ -9111,14 +9111,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 5 targets may breathe water for 1 hr (<b>heightened 3rd</b> effects last 8 hr; <b>4th</b> effects last until next daily preparations)"',
   'Water Walk':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects up to 10 creatures and effects last 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'School=Evocation ' +
@@ -9132,14 +9132,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Weapon swing inflicts 4 dice of damage in a 30\' cone or 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> +1 damage die)"',
   'Web':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until Escape; Athletics also clears squares upon leaving)"',
   'Weird':
     'Level=9 ' +
     'School=Illusion ' +
@@ -10150,14 +10150,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on non-reach melee attackers for 1 min (<b>heightened +2</b> +5 resistances and inflicts +1d6 HP acid)"',
   "You're Mine":
     'Level=5 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' inflicts stunned 1 for 1 rd and allows caster to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure allows control for 1 rd) (<b>heightened 7th</b> controls for 1 rd; critical failure allows control for 1 min or until save)"',
   'Augment Summoning':
     'Level=1 ' +
     'School=Conjuration ' +
