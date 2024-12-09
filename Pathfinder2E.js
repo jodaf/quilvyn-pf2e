@@ -9153,7 +9153,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster and up to 5 creatures become clouds and move 20 MPH for 8 hr; attack or spellcasting ends"',
   'Wish':
     'Level=10 ' +
     'School=Divination ' +
