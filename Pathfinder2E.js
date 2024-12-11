@@ -6559,40 +6559,41 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 3d8 HP acid (critical hit doubles) plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 initial and +1d6 HP persistent)"',
+      '"R120\' Spell attack inflicts 3d8 HP acid (critical success inflicts double HP) plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Acid Splash':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d6 HP acid (critical hit also 1 HP persistent acid) and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 5 HP persistent, and 4 HP splash)"',
+      '"R30\' Spell attack inflicts 1d6 HP acid (critical success also inflicts 1 HP persistent acid) and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 5 HP persistent, and 4 HP splash)"',
   'Aerial Form':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of a medium bat, bird, pterosaur, or wasp (<b>heightened 5th</b> large creature; <b>6th</b> huge creature) for 1 min"',
+      '"Caster becomes choice of a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, AC %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Athletics modifier, and creature-specific feaures for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Athletics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, AC %{level+21}, +21 attack, +4 damage with double damage dice, +23 Athletics)"',
   'Air Bubble':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
-    'Description="R60\' Allows target to breathe normally for 1 min"',
+    'Description=' +
+      '"R60\' Allows target to breathe normally in any environment for 1 min"',
   'Air Walk':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="Touched may walk on air up to a 45-degree angle for 5 min"',
+    'Description="Touched may walk up to a 45-degree angle on air for 5 min"',
   'Alarm':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"20\' burst triggers choice of mental or audible alarm when a Small or larger corporeal creature enters without saying the specified password for 8 hr"',
+      '"20\' burst triggers choice of mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr"',
   'Alter Reality':
     'Level=10 ' +
     'School=Divination ' +
@@ -6613,14 +6614,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and animal-specific attacks for 1 min (<b>heightened 3rd</b> 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> Large animal with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> Huge animal with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
+      '"Caster becomes choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and creature-specific features for 1 min (<b>heightened 3rd</b> gives 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
   'Animal Messenger':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R120\' Target Tiny animal carries a small object or note to specified destination for up to 24 hr"',
+      '"R120\' Target Tiny animal carries a small object or note to a specified destination for up to 24 hr"',
   'Animal Vision':
     'Level=3 ' +
     'School=Divination ' +
@@ -6662,7 +6663,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely; save may be repeated each rd)"',
+      '"R30\' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely, repeating save each rd)"',
   'Bane':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6676,7 +6677,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> may target up to 10 creatures)"',
+      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> may affect up to 10 targets)"',
   'Barkskin':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -6725,7 +6726,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure makes effects permanent)"',
+      '"R30\' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure makes blindness permanent)"',
   'Blink':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -6753,7 +6754,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 2d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
+      '"15\' cone inflicts 2d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Calm Emotions':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -6766,14 +6767,14 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R1000\' 60\' burst inflicts 3d10 HP acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save Reflex</b> inflicts half HP; critical success negates, critical failure inflicts double HP)"',
+    'Description="R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
   'Chain Lightning':
     'Level=6 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save Reflex</b> inflicts half HP; critical save negates and ends chain; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d12 HP)"',
+      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical save ends chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6836,7 +6837,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Cloud moves 10\' away from caster each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R120\' Cloud moves 10\' away from caster each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Collective Transposition':
     'Level=6 ' +
     'School=Conjuration ' +
@@ -6871,7 +6872,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' cone inflicts 12d6 HP cold (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' cone inflicts 12d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Confusion':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -6897,7 +6898,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R500\' Raises or lowers water in a 50\'x50\' are by 10\'"',
+    'Description="R500\' Raises or lowers water in a 50\'x50\' area by 10\'"',
   'Create Food':
     'Level=2 ' +
     'School=Conjuration ' +
@@ -6945,14 +6946,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\'/rd while sustained"',
+      '"R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\' each rd while sustained"',
   'Darkness':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 20\' burst counteracts natural light and magical light of equal or lesser level (<b>heightened 4th</b> creatures with darkvision treat targets as concealed)"',
+      '"R120\' 20\' burst counteracts natural light and magical light of equal or lesser level (<b>heightened 4th</b> causes creatures with darkvision to treat targets within darkness as concealed)"',
   'Darkvision':
     'Level=2 ' +
     'School=Divination ' +
@@ -6973,7 +6974,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Deafens target for 10 min (<b>save Fortitude</b> lasts 1 rd; critical success negates; critical failure effects are permanent)"',
+      '"R30\' Deafens target for 10 min (<b>save Fortitude</b> lasts 1 rd; critical success negates; critical failure deafness is permanent)"',
   'Death Knell':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7001,14 +7002,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows caster to discern the presence of magic in a 30\' radius; detects illusions up up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
+      '"Allows caster to discern the presence of magic in a 30\' radius and detect illusions of up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster learns whether target creature or object is venomous or poisoned (<b>heightened 2nd</b> learn the number and types of poison)"',
+      '"R30\' Reveals whether the target creature or object is venomous or poisoned (<b>heightened 2nd</b> reveals the number and types of poison)"',
   'Detect Scrying':
     'Level=4 ' +
     'School=Divination ' +
@@ -7042,7 +7043,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and dinosaur-specific attacks for 1 min (<b>heightened 5th</b> Huge dinosaur with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> Gargantuan dinosaur with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
+      '"Caster becomes choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
   'Disappearance':
     'Level=8 ' +
     'School=Illusion ' +
@@ -7084,14 +7085,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' A successful counteract check removes 1 spell effect from target or make a magic item inert for 10 min"',
+      '"R120\' Allows a counteract check to remove 1 spell effect from target or to make a magic item inert for 10 min"',
   'Disrupt Undead':
     'Level=Cantrip ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive to target undead (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive and enfeebled 1 for 1 rd on target undead (<b>save Fortitude</b> inflicts HP only) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7154,7 +7155,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and dragon-specific attacks for 1 min (<b>heightened 8th</b> Huge dragon with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (+14 on breath weapon), +28 Athletics)"',
+      '"Caster becomes choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
     'School=Illusion ' +
@@ -7196,35 +7197,35 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Brings flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure lasts 1 min"',
+      '"R120\' Brings flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure lasts 1 min)"',
   'Earthquake':
     'Level=8 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, falling into 40\' fissures (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts fall into fissure)"',
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40\' fall)"',
   'Eclipse Burst':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and blinded) (<b>heightened +1</b> +1d10 HP cold and +1d4 HP negative)"',
+      '"R500\' 60\' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)"',
   'Electric Arc':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up to 2 targets (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Form':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of a medium air, earth, water, or fire elemental (<b>heightened 6th</b> large elemental; <b>7th</b> huge elemental) for 1 min"',
+      '"Caster becomes choice of Medium elemental with 10 temporary HP, AC %{level+19}, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> Large creature with 10\' reach, 15 temporary HP, AC %{level+22}, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> Huge creature with 15\' reach, 20 temporary HP, AC %{level+22}, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)"',
   'Endure Elements':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -9954,21 +9955,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"5\' emanation (10\'/15\' emanation for 2/3 actions) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
+      '"5\' emanation (2/3 actions give a 10\'/15\' emanation) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
   'Abyssal Wrath':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' cone inflicts 4d6 HP of variable type (roll d4): bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"60\' cone inflicts 4d6 HP of random type: bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Ancestral Memories':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> expert in chosen skill)"',
+      '"Caster becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> becomes expert in chosen skill)"',
   'Angelic Halo':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -9982,21 +9983,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may fly at full Speed and casts a 30\' radius bright list for 3 rd (<b>heightened 5th</b> lasts 1 min)"',
+      '"Caster may fly at full Speed and casts a 30\' radius bright light for 3 rd (<b>heightened 5th</b> effects last 1 min)"',
   'Arcane Countermeasure':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R120\' Reduces target heightened spell\'s level by 1 and gives that spell\'s targets +2 saves, skill checks, AC, or DC against it"',
+      '"R120\' Reduces target spell\'s level by 1 if heightened and gives that spell\'s targets +2 saves, skill checks, AC, and DC against it"',
   'Celestial Brand':
     'Level=5 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Caster and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> +1 HP good)"',
+      '"R30\' Caster and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> good creature attacks inflict +1 HP good)"',
   'Diabolic Edict':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -10011,42 +10012,42 @@ Pathfinder2E.SPELLS = {
     'Cast=2 ' +
     // TODO line/cone, energy type, and save type depend on dragon type
     'Description=' +
-      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>heightened +1</b> +2d6 HP)"',
+      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster fingers inflict 1d6S HP+1d6 energy HP for 1 min, and caster gains resistance 5 to energy (<b>heightened 5th</b> 2d6S HP and resistance 10; <b>9th</b> 3d6S HP and resistance 15)"',
+      '"Caster\'s fingers inflict 1d6S HP and 1d6 energy HP, and caster gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflict 2d6S HP and gains resistance 10; <b>9th</b> inflicts 3d6S HP and gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains %{Speed>?60} fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)"',
+      '"Caster gains %{Speed>?60}\' fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)"',
   'Drain Life':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP bludgeoning or fire (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +dd6 HP)"',
+      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP bludgeoning or fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may fly at full Speed, swim at full speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b>+20\' Speed)"',
+      '"Caster may fly at full Speed, swim at full Speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b> +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'School=Evocation ' +
@@ -10060,7 +10061,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives resistance 10/2 and weakness 10)"',
+      '"Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
   'Extend Spell':
     'Level=3 ' +
     'School=Divination ' +
