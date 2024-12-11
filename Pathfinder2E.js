@@ -6705,7 +6705,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} DC on an unarmed attack or inflicting 12 HP vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} AC"',
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} DC on an unarmed attack or inflicting 12 HP vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} AC"',
   'Blade Barrier':
     'Level=6 ' +
     'School=Evocation ' +
@@ -7204,7 +7204,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40\' fall)"',
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40\' fall)"',
   'Eclipse Burst':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -7309,14 +7309,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers frightened 2 (<b>heightened 3rd</b> 5 targets) (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd)"',
+      '"R30\' Target suffers frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd) (<b>heightened 3rd</b> affects up to 5 targets)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Falling target slows to 60\'/rd and takes no damage from fall for 1 min or until landing"',
+      '"R60\' Falling target slows to 60\' per rd and takes no damage from fall for 1 min or until landing"',
   'Feeblemind':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -7337,14 +7337,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 20\' burst restores 1d8 HP/rd to living and inflicts 1d8 HP positive/rd to undead while sustained up to 1 min (<b>heightened 8th</b> 1d10 HP; <b>9th</b> 1d12 HP)"',
+      '"R30\' 20\' burst restores 1d8 HP per rd to living and inflicts 1d8 HP positive per rd to undead while sustained up to 1 min (<b>heightened 8th</b> inflicts 1d10 HP; <b>9th</b> inflicts 1d12 HP)"',
   'Fiery Body':
     'Level=7 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increase fly Speed to 60\'"',
+      '"Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire to unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire to unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
   'Finger Of Death':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -7357,21 +7357,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates 4 acorns that may be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
+      '"Creates 4 acorns that may be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
   'Fire Shield':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)"',
+      '"Caster gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
+      '"R500\' 20\' burst inflicts 6d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Flame Strike':
     'Level=5 ' +
     'School=Evocation ' +
@@ -7385,7 +7385,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15\' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP)"',
+      '"R30\' Inflicts 3d6 HP fire in a 15\' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Fleet Step':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7412,7 +7412,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (<b>heightened 7th</b> lasts 1 hr)"',
+      '"Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (<b>heightened 7th</b> effects last 1 hr)"',
   'Forbidding Ward':
     'Level=Cantrip ' +
     'School=Abjuration ' +
@@ -7502,7 +7502,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Target container or 10\'x10\' area sets off a chosen spell of lower level in response to specified trigger"',
+      '"Target container or 10\'x10\' area triggers a chosen spell of lower level in response to a specified trigger"',
   'Goblin Pox':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7537,7 +7537,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
+      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6B HP)"',
   'Hallucination':
     'Level=5 ' +
     'School=Illusion ' +
@@ -7565,14 +7565,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)"',
+      '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects up to 6 targets)"',
   'Heal':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"<b>(1)</b> Touched, <b>(2)</b> R30\' target, or <b>(3)</b> 30\' emanation recovers 1d8 HP (1d8+8 HP for <b>(2)</b>); undead suffer 1d8HP (<b>save</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
+      '"<b>(1)</b> Touched regains 1d8 HP, <b>(2)</b> R30\' target regains 1d8+8 HP, or <b>(3)</b> 30\' emanation restores 1d8 HP; undead suffer 1d8 HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
   'Heroism':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -7600,7 +7600,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"500\' radius inflicts 10d10 HP negative (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP; plant and water creatures use result one step worse) (<b>heightened +1</b> +1d10 HP)"',
+      '"500\' radius inflicts 10d10 HP negative (<b>save basic Fortitude</b>; plant and water creatures use result one step worse) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Humanoid Form':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -7614,14 +7614,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Ranged attack inflicts 3d6 HP bludgeoning and knocks back 5\' (critical success 6d6 HP and 10\') (<b>heightened +1</b> +2d6 HP)"',
+      '"R60\' Ranged attack inflicts 3d6B HP and 5\' push (critical success inflicts 6d6B HP and 10\' push) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 8d6 HP bludgeoning and push 5\' (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure pushes 10\')"',
+      '"60\' line inflicts 8d6B HP and 5\' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts 10\' push)"',
   'Hypercognition':
     'Level=3 ' +
     'School=Divination ' +
@@ -7656,28 +7656,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> unlimited duration)"',
+      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> effects are permanent)"',
   'Illusory Scene':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> unlimited duration)"',
+      '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> effects are permanent)"',
   'Implosion':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
+      '"R30\' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save basic Fortitude</b>)"',
   'Insect Form':
     'Level=3 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Medium insect with 10 temporary HP, AC %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and insect-specific attacks for 1 min (<b>heightened 4th</b> Large insect with +5\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> Huge insect with +10\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
+      '"Caster transforms into choice of Medium insect with 10 temporary HP, AC %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> Large insect with +5\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> Huge insect with +10\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
     'School=Illusion ' +
@@ -7733,14 +7733,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched object lights a 20\' radius until next daily preparations (<b>heightened 4th</b> 60\' radius)"',
+      '"Touched object lights a 20\' radius until next daily preparations (<b>heightened 4th</b> lights a 60\' radius)"',
   'Lightning Bolt':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)"',
+      '"120\' line inflicts 4d12 HP electricity (<b>heightened +1</b> inflicts +1d12 HP) (<b>save basic Reflex</b>)"',
   'Locate':
     'Level=3 ' +
     'School=Divination ' +
@@ -7873,7 +7873,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 4 meteors inflict 6d10 HP bludgeoning in 1 10\' burst and 14d6 HP fire in a 40\' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10 bludgeoning and +2d6 fire)"',
+      '"R500\' 4 meteors inflict 6d10B HP in 1 10\' burst and 14d6 HP fire in a 40\' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)"',
   'Mind Blank':
     'Level=8 ' +
     'School=Abjuration ' +
@@ -9829,21 +9829,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> +1 berry)"',
+      '"Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> affects +1 berry)"',
   'Heal Animal':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched animal regains 1d8 HP, or R30\' animal regains 1d8+8 HP (<b>heightened +1</b> +1d8 HP or +1d8+8 HP)"',
+      '"Touched animal regains 1d8 HP, or R30\' animal regains 1d8+8 HP (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
   'Impaling Briars':
     'Level=8 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficulty terrain each rd while sustained up to 1 min"',
+      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain each rd while sustained up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'School=Conjuration ' +
@@ -10075,7 +10075,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst per action inflicts loss of reactions and -2 Perception and will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
+      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
   'Fey Disappearance':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -10095,7 +10095,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster jaws inflict 1d8P HP, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
+      '"Caster\'s bite inflicts 1d8P HP, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -10109,7 +10109,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 10\' radius inflicts 4d6 HP fire and 4d6 HP evil (<b>save Reflex</b> inflicts half damage; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> +1d6 HP fire and evil)"',
+      '"R60\' 10\' radius inflicts 4d6 HP fire and 4d6 HP evil (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP fire and evil)"',
   'Horrific Visage':
     'Level=3 ' +
     'School=Illusion ' +

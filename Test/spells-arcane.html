@@ -391,7 +391,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Bind Undead (A3 Nec): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Black Tentacles (A5 Con): R120' Successful attack vs. Fortitude DC in a 20' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a 29 DC on an unarmed attack or inflicting 12 HP vs. a 29 AC</td>
+      <td>Black Tentacles (A5 Con): R120' Successful attack vs. Fortitude DC in a 20' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a 29 DC on an unarmed attack or inflicting 12 HP vs. a 29 AC</td>
     </tr><tr style="text-align:left">
       <td>Blindness (A3 Nec): R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure makes blindness permanent)</td>
     </tr><tr style="text-align:left">
@@ -501,7 +501,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Earthbind (A3 Tra): R120' Brings flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure lasts 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Earthquake (A8 Evo): R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40' fall)</td>
+      <td>Earthquake (A8 Evo): R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40' fall)</td>
     </tr><tr style="text-align:left">
       <td>Eclipse Burst (A7 Nec): R500' 60' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)</td>
     </tr><tr style="text-align:left">
@@ -525,21 +525,21 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>False Vision (A5 Ill): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Fear (A1 Enc): R30' Target suffers frightened 2 (<b>heightened 3rd</b> 5 targets) (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd)</td>
+      <td>Fear (A1 Enc): R30' Target suffers frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd) (<b>heightened 3rd</b> affects up to 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Feather Fall (A1 Abj): R60' Falling target slows to 60'/rd and takes no damage from fall for 1 min or until landing</td>
+      <td>Feather Fall (A1 Abj): R60' Falling target slows to 60' per rd and takes no damage from fall for 1 min or until landing</td>
     </tr><tr style="text-align:left">
       <td>Feeblemind (A6 Enc): FILL</td>
     </tr><tr style="text-align:left">
       <td>Feet To Fins (A3 Tra): Allows willing touched to swim at full Speed, but reduces land Speed to 5', for 10 min (<b>heightened 6th</b> effects last until next daily preparations)</td>
     </tr><tr style="text-align:left">
-      <td>Fiery Body (A7 Tra): Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increase fly Speed to 60'</td>
+      <td>Fiery Body (A7 Tra): Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire to unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire to unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60')</td>
     </tr><tr style="text-align:left">
-      <td>Fire Shield (A4 Evo): Caster gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> cold resistance +5, damage +1d6 HP)</td>
+      <td>Fire Shield (A4 Evo): Caster gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Fireball (A3 Evo): R500' 20' burst inflicts 6d6 HP fire (<b>heightened +1</b> +2d6 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)</td>
+      <td>Fireball (A3 Evo): R500' 20' burst inflicts 6d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Flaming Sphere (A2 Evo): R30' Inflicts 3d6 HP fire (<b>heightened +1</b> +1d6 HP) in a 15' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP)</td>
+      <td>Flaming Sphere (A2 Evo): R30' Inflicts 3d6 HP fire in a 15' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Fleet Step (A1 Tra): Caster gains +30' Speed for 1 min</td>
     </tr><tr style="text-align:left">
@@ -547,7 +547,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Floating Disk (A1 Con): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Fly (A4 Tra): Touched gains a fly Speed of the greater of its Speed or 20' for 5 min (<b>heightened 7th</b> lasts 1 hr)</td>
+      <td>Fly (A4 Tra): Touched gains a fly Speed of the greater of its Speed or 20' for 5 min (<b>heightened 7th</b> effects last 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Force Bolt (A1 Evo): R30' Inflicts 1d4+1 force damage (<b>heightened +2</b> +1d4+1 HP)</td>
     </tr><tr style="text-align:left">
@@ -569,7 +569,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Globe Of Invulnerability (A4 Abj): 10' burst inflicts <i>Dispel Magic</i> effects for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Glyph Of Warding (A3 Abj): Target container or 10'x10' area sets off a chosen spell of lower level in response to specified trigger</td>
+      <td>Glyph Of Warding (A3 Abj): Target container or 10'x10' area triggers a chosen spell of lower level in response to a specified trigger</td>
     </tr><tr style="text-align:left">
       <td>Goblin Pox (A1 Nec): Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 dy (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)</td>
     </tr><tr style="text-align:left">
@@ -577,7 +577,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Grim Tendrils (A1 Nec): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Gust Of Wind (A1 Evo): 60' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30', knocks prone, and inflicts 2d6 HP bludgeoning)</td>
+      <td>Gust Of Wind (A1 Evo): 60' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30', knocks prone, and inflicts 2d6B HP)</td>
     </tr><tr style="text-align:left">
       <td>Hallucination (A5 Ill): R30' Changes target's perception of 1 object (<b>save Will</b> target knows that it's hallucinating; critical success negates; critical failure inflicts -4 saves to disbelieve)</td>
     </tr><tr style="text-align:left">
@@ -585,15 +585,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hand Of The Apprentice (A1 Evo): R500' Allows a remote attack with a melee weapon</td>
     </tr><tr style="text-align:left">
-      <td>Haste (A3 Tra): R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
+      <td>Haste (A3 Tra): R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects up to 6 targets)</td>
     </tr><tr style="text-align:left">
       <td>Hideous Laughter (A2 Enc): R30' Inflicts slowed 1 and loss of reactions on target while sustained (<b>save Will</b> loss of reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of reactions)</td>
     </tr><tr style="text-align:left">
-      <td>Horrid Wilting (A8 Nec): 500' radius inflicts 10d10 HP negative (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP; plant and water creatures use result one step worse) (<b>heightened +1</b> +1d10 HP)</td>
+      <td>Horrid Wilting (A8 Nec): 500' radius inflicts 10d10 HP negative (<b>save basic Fortitude</b>; plant and water creatures use result one step worse) (<b>heightened +1</b> inflicts +1d10 HP)</td>
     </tr><tr style="text-align:left">
       <td>Humanoid Form (A2 Tra): Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> may transform into a Large humanoid)</td>
     </tr><tr style="text-align:left">
-      <td>Hydraulic Push (A1 Evo): R60' Ranged attack inflicts 3d6 HP bludgeoning and knocks back 5' (critical success 6d6 HP and 10') (<b>heightened +1</b> +2d6 HP)</td>
+      <td>Hydraulic Push (A1 Evo): R60' Ranged attack inflicts 3d6B HP and 5' push (critical success inflicts 6d6B HP and 10' push) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Hypnotic Pattern (A3 Ill): R120' 10' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of reactions)</td>
     </tr><tr style="text-align:left">
@@ -601,11 +601,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Illusory Disguise (A1 Ill): Illusion makes caster look differently for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Object (A1 Ill): R500' Creates an illusion of a stationary object in a 20' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> unlimited duration)</td>
+      <td>Illusory Object (A1 Ill): R500' Creates an illusion of a stationary object in a 20' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Scene (A5 Ill): R500' Creates in a 30' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> unlimited duration)</td>
+      <td>Illusory Scene (A5 Ill): R500' Creates in a 30' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Implosion (A9 Evo): R30' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP)</td>
+      <td>Implosion (A9 Evo): R30' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save basic Fortitude</b>)</td>
     </tr><tr style="text-align:left">
       <td>Invisibility (A2 Ill): Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> lasts 1 min, hostile action does not end)</td>
     </tr><tr style="text-align:left">
@@ -623,9 +623,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Life Siphon (A4 Nec): FILL</td>
     </tr><tr style="text-align:left">
-      <td>Light (A0 Evo): Touched object lights a 20' radius until next daily preparations (<b>heightened 4th</b> 60' radius)</td>
+      <td>Light (A0 Evo): Touched object lights a 20' radius until next daily preparations (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
-      <td>Lightning Bolt (A3 Evo): 120' line inflicts 4d12 HP electricity (<b>heightened +1</b> +1d12 HP) (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP)</td>
+      <td>Lightning Bolt (A3 Evo): 120' line inflicts 4d12 HP electricity (<b>heightened +1</b> inflicts +1d12 HP) (<b>save basic Reflex</b>)</td>
     </tr><tr style="text-align:left">
       <td>Locate (A3 Div): R500' Reveals direction to named object or the nearest object of a named type while sustained (<b>heightened 5th</b> reveals direction to a creature or ancestry)</td>
     </tr><tr style="text-align:left">
@@ -661,7 +661,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Message (A0 Ill): R120' Caster may hold a private conversation with visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
     </tr><tr style="text-align:left">
-      <td>Meteor Swarm (A9 Evo): R500' 4 meteors inflict 6d10 HP bludgeoning in 1 10' burst and 14d6 HP fire in a 40' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10 bludgeoning and +2d6 fire)</td>
+      <td>Meteor Swarm (A9 Evo): R500' 4 meteors inflict 6d10B HP in 1 10' burst and 14d6 HP fire in a 40' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)</td>
     </tr><tr style="text-align:left">
       <td>Mind Blank (A8 Abj): FILL</td>
     </tr><tr style="text-align:left">
