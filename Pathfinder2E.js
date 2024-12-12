@@ -3571,7 +3571,7 @@ Pathfinder2E.FEATURES = {
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line 1/rage (Ref negates; half distance and damage for a 2nd breath use within 1 hour)"',
+    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line 1/rage (Ref negates; half distance and damage for a 2nd breath use within 1 hr)"',
   "Giant's Stature":
     'Action=1 ' +
     'Section=combat ' +
@@ -4180,7 +4180,7 @@ Pathfinder2E.FEATURES = {
   'Command Undead':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May use <i>Harm</i> to control undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hour)"',
+    'Note="May use <i>Harm</i> to control undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
   'Directed Channel':
     'Section=magic ' +
     'Note="May cast an area <i>Harm</i> or <i>Heal</i> in a 60\' cone"',
@@ -4237,7 +4237,7 @@ Pathfinder2E.FEATURES = {
     'Note="May cast a single-target <i>Heal</i> that also gives the target +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
-    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hours"',
+    'Note="Target success/failure/critical failure vs. Command Undead gives self control for 1 rd/10 min/24 hr"',
   'Replenishment Of War':
     'Section=combat Note="Successful Strike with %{deityWeapon} gives self %{level//2} temporary Hit Points (critical hit %{level} temporary Hit Points) for 1 rd"',
   'Defensive Recovery':
@@ -4384,7 +4384,7 @@ Pathfinder2E.FEATURES = {
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hour"',
+    'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hr"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
@@ -4407,7 +4407,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Diplomacy with plants and fungi to Make an Impression and to make simple Requests with a +2 bonus"',
   'Insect Shape':
     'Section=magic ' +
-    'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hour"',
+    'Note="May use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
   // Steady Spellcasting as above
   'Storm Retribution':
     'Action=Reaction ' +
@@ -5231,7 +5231,7 @@ Pathfinder2E.FEATURES = {
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
     'Section=ability ' +
-    'Note="May train for 1 hour to temporarily change favored terrain"',
+    'Note="May train for 1 hr to temporarily change favored terrain"',
   "Warden's Boon":
     'Action=1 ' +
     'Section=combat ' +
@@ -5339,7 +5339,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"May have a successful Strike on a flat-footed foe force a Fortitude save 1/target/day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hours, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"May have a successful Strike on a flat-footed foe force a Fortitude save 1/target/day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -5555,7 +5555,7 @@ Pathfinder2E.FEATURES = {
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May become invisible for 1 min when hidden from foes 1/hour"',
+    'Note="May become invisible for 1 min when hidden from foes once per hr"',
   'Impossible Striker':
     'Section=combat ' +
     'Note="May inflict sneak attack damage on a non-flat-footed foe"',
@@ -6065,7 +6065,7 @@ Pathfinder2E.FEATURES = {
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
-  'Magical Shorthand':'Section=skill Note="May learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hour\'} of study per spell level; may retry 1 week after failure"',
+  'Magical Shorthand':'Section=skill Note="May learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level; may retry 1 week after failure"',
   'Quick Identification':'Section=skill Note="May use %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
   'Quick Recognition':
     'Section=skill ' +
@@ -6139,7 +6139,7 @@ Pathfinder2E.FEATURES = {
     'Note="%{rank.Stealth>=4?\'Automatic success\':rank.Steak>=3\'Minimum 15\':\'Minimum 10\'} on Stealth rolls to conceal a small item/Earn Income using Underworld Lore gives increased earnings"',
   'Experienced Tracker':
     'Section=skill ' +
-    'Note="May Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a Survival check every hour to Track\':\'\'}"',
+    'Note="May Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a Survival check every hr to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
     'Note="May fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
@@ -6184,7 +6184,7 @@ Pathfinder2E.FEATURES = {
     'Note="May establish basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="May use a 1 hour process and a successful Medicine check to remove a disease or condition 1/target/day"',
+    'Note="May use a 1 hr process and a successful Medicine check to remove a disease or condition 1/target/day"',
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
@@ -6552,7 +6552,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts drained 1 and cannot recover for 1 day or until cured (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day or until contracted; critical success negates; critical failure inflicts drained 2)"',
   'Acid Arrow':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6607,7 +6607,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target who has committed an anathema act suffers 4d6 HP mental and stupefied 1 for 1 rd (<b>save Will</b> half HP only; critical success negates; critical failure inflicts double HP)"',
   'Animal Form':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -6642,21 +6642,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"10\' emanation disables spells and magic items while sustained up to 1 min"',
   'Augury':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster may gain a general idea whether the results of a proposed action up to 30 min in the future will be good or bad"',
   'Avatar':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster becomes a Huge creature with 30 temporary HP, AC %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
   'Baleful Polymorph':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -6670,7 +6670,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"5\' emanation inflicts -1 attack on foes for 1 min; caster may use an action each rd to increase radius by 5\' (<b>save Will</b> negates)"',
   'Banishment':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6691,14 +6691,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Entraps soul of a corpse dead less than 1 min in a gem until counteracted or gem is destroyed"',
   'Bind Undead':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Controls the actions of a mindless undead of level less than the spell level for 1 day"',
   'Black Tentacles':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -6712,7 +6712,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 20\'x120\'x2\\" will inflicts 7d8 HP force for 1 min (<b>save basic Reflex</b>; critical failure prevents passage) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Bless':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -6903,9 +6903,9 @@ Pathfinder2E.SPELLS = {
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
-    'Cast="1 hour" ' +
+    'Cast="1 hr" ' +
     'Description=' +
-      '"R30\ Creates food for 6 Medium creatures that remains edible for 1 dy (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
+      '"R30\ Creates food for 6 Medium creatures that remains edible for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
   'Create Water':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -7509,7 +7509,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 dy (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)"',
+      '"Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 day (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)"',
   'Grease':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -8272,7 +8272,7 @@ Pathfinder2E.SPELLS = {
     'Level=10 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
-    'Cast="1 hour" ' +
+    'Cast="1 hr" ' +
     'Description="Fully re-creates a known object up to 5\' cu"',
   'Remove Curse':
     'Level=4 ' +
@@ -9317,35 +9317,35 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 5\' burst fascinates creatures attracted to wealth while sustained up to 1 min (<b>save Will</b> effects last 1 rd; critical success negates)"',
   'Artistic Flourish':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R15\' Target weapon gains +%{(rank.Crafting||0)-1<?1>?0} attack, or target skill tool gains +%{(rank.Crafting||0)-1<?1>?0} checks, for 10 min (<b>heightened 7th</b> gives +%{(rank.Crafting||0)-1<?2>?0} bonus; <b>10th</b> gives +%{(rank.Crafting||0)-1<?3>?0} bonus)"',
   'Athletic Rush':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains +10\' Speed and +2 Athletics for 1 rd and may immediately Stride, Leap, Climb, or Swim"',
   'Bit Of Luck':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Willing target may use the better of two rolls on 1 save within 1 min once per target per day"',
   'Blind Ambition':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Target suffers -2 to resist attempts to Coerce it to advance its ambitions for 10 min (<b>save Will</b> inflicts -1 resistance; critical success negates; critical failure causes single-minded focus on its ambitions)"',
   'Captivating Adoration':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -10464,6 +10464,13 @@ Pathfinder2E.WEAPONS = {
 
 };
 
+Pathfinder2E.ACTION_MARKS = {
+  1: '<b>(1)</b> ',
+  2: '<b>(2)</b> ',
+  3: '<b>(3)</b> ',
+  Free: '<b>(F)</b> ',
+  Reaction: '<b>(R)</b> ' // '<b>&larrhk;</b> '
+};
 Pathfinder2E.RANK_NAMES =
   ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
@@ -12976,7 +12983,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Orc Ferocity') {
     rules.defineRule('combatNotes.orcFerocity',
       '', '=', '"day"',
-      'combatNotes.incredibleFerocity', '=', '"hour"'
+      'combatNotes.incredibleFerocity', '=', '"hr"'
     );
   } else if(name.match(/^Order Explorer/)) {
     rules.defineRule('features.Order Explorer', 'feats.' + name, '=', '1');
@@ -13191,14 +13198,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     return;
   }
 
-  let actionMarks = {
-    1: '<b>(1)</b> ',
-    2: '<b>(2)</b> ',
-    3: '<b>(3)</b> ',
-    Free: '<b>(F)</b> ',
-    Reaction: '<b>(R)</b> ' // '<b>&larrhk;</b> '
-  };
-
   notes = notes.map(x => QuilvynRules.wrapVarsContainingSpace(x));
 
   let prefix =
@@ -13218,7 +13217,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     if(priorInSection > 0)
       note += '-' + priorInSection;
 
-    let noteText = (actionMarks[action] || '') + effects;
+    let noteText = (Pathfinder2E.ACTION_MARKS[action] || '') + effects;
     rules.defineChoice('notes', note + ':' + noteText);
     rules.defineRule
       (note, 'features.' + name, effects.indexOf('%V') >= 0 ? '?' : '=', null);
@@ -13590,8 +13589,10 @@ Pathfinder2E.spellRules = function(
     console.log('Bad description "' + description + '" for spell ' + name);
     return;
   }
+  let action = Pathfinder2E.ACTION_MARKS[cast] || ('<b>(' + cast + ')</b>');
   // TODO
-  rules.defineChoice('notes', 'spells.' + name + ':' + description);
+  rules.defineChoice
+    ('notes', 'spells.' + name + ':' + action + ' ' + description);
 };
 
 /*
