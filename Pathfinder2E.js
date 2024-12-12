@@ -6677,7 +6677,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> may affect up to 10 targets)"',
+      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)"',
   'Barkskin':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -7253,7 +7253,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Willing target becomes Large, gaining 10\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining 10\' reach and +4 melee damage; <b>8th</b> affects up to 10 creatures)"',
+      '"R30\' Willing target becomes Large, gaining 10\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining 10\' reach and +4 melee damage; <b>8th</b> affects 10 creatures)"',
   'Entangle':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -7309,7 +7309,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd) (<b>heightened 3rd</b> affects up to 5 targets)"',
+      '"R30\' Target suffers frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd) (<b>heightened 3rd</b> affects 5 targets)"',
   'Feather Fall':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -7565,7 +7565,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects up to 6 targets)"',
+      '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)"',
   'Heal':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7873,7 +7873,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 4 meteors inflict 6d10B HP in 1 10\' burst and 14d6 HP fire in a 40\' burst (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)"',
+      '"R500\' 4 meteors inflict 6d10B HP in 1 10\' burst and 14d6 HP fire in a 40\' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)"',
   'Mind Blank':
     'Level=8 ' +
     'School=Abjuration ' +
@@ -7956,28 +7956,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs/claws that inflict 2d6P HP/2d6S HP plus 1d4 HP persistent bleed on a critical hit, and increase a size up to large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6P HP/3d6S HP, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6P HP/4d6S HP, weakness 20 to silver)"',
+      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs and claws that inflict 2d6P HP and 2d6S HP plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6P HP and 3d6S HP, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6P HP and 4d6S HP, weakness 20 to silver)"',
   'Nature Incarnate':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of a Medium green man, or a Gargantuan kaiju with 30 temporary HP, AC %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
+      '"Caster transforms into choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, AC %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10S HP (DC 8 flat negates; <b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
+      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10S HP and flat-footed (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Negates scent of willing touched for 1 hr (<b>heightened 5th</b> R30\' affects up to 10 targets)"',
+      '"Negates scent of willing touched for 1 hr (<b>heightened 5th</b> R30\' affects 10 targets)"',
   'Neutralize Poison':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -8039,21 +8039,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Raises DC to Track caster by 4 or up to spell DC for 1 hr (<b>heightened 2nd</b> effects last 8 hr; <b>4th</b> effects last 8 hr and affect a 20\' area and up to 10 creatures)"',
+      '"Raises DC to Track caster by 4 or up to spell DC for 1 hr (<b>heightened 2nd</b> effects last 8 hr; <b>4th</b> effects last 8 hr and affect a 20\' area and 10 creatures)"',
   'Passwall':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20\', appears as normal wall, and can be entered only by password or trigger)"',
+      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
   'Pest Form':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Tiny animal with AC %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> may become a creature with a 20\' fly Speed)"',
+      '"Caster becomes choice of Tiny animal with AC %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> gives 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'School=Illusion ' +
@@ -8081,14 +8081,13 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <b>Air Walk</b> for 1 rd; <b>6th</b> mount has an 80\' Speed and may fly)"',
+      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has an 80\' Speed and may fly)"',
   'Plane Shift':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description=' +
-      '"Shifts caster and up to 8 willing targets to a different plane"',
+    'Description="Shifts caster and 8 willing targets to a different plane"',
   'Plant Form':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -8144,7 +8143,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision AC %{level+22}, tusk attack that inflicts 4d8+19P HP, trunk attack that inflicts 4d6+16B HP, foot attack that inflicts 4d6+16B HP, low-light vision, resistance 10 to poison, +30 Athletics modifier, and trample action for 1 min"',
+      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, AC %{level+22}, a tusk attack that inflicts 4d8+19P HP, a trunk attack that inflicts 4d6+16B HP, a foot attack that inflicts 4d6+16B HP, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'School=Divination ' +
@@ -8233,7 +8232,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
-    'Description="R10\' Restores soul to a willing creature up to level 13 dead up to 3 days; gives target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
+    'Description="R10\' Restores soul to a willing creature up to level 13 dead for at most 3 days; gives target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8247,7 +8246,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> +1d4 HP)"',
+      '"R120\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Read Aura':
     'Level=Cantrip ' +
     'School=Divination ' +
@@ -8294,14 +8293,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
+      '"Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. a single paralysis effect affecting touched (<b>heightened 6th</b> R30\' and may affect 10 targets)"',
+      '"Allows a counteract attempt vs. a single paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'School=Abjuration ' +
@@ -8322,7 +8321,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched target gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> resistance 10 and two targets; <b>7th</b> resistance 15 and 5 targets)"',
+      '"Touched target gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)"',
   'Resplendent Mansion':
     'Level=9 ' +
     'School=Conjuration ' +
@@ -8336,7 +8335,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Caster chooses to reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce 2 of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce drained, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
+      '"Gives choice of: reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce two of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> reduce drained condition, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> reduce a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8412,7 +8411,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, +5d6 HP good to fiends and undead (critical success inflicts double HP) (<b>heightened +1</b> +2d6 HP)"',
+    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Secret Page':
     'Level=3 ' +
     'School=Illusion ' +
@@ -8460,7 +8459,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="Reshapes touch 10\'x10\'x10\' stone"',
+    'Description="Reshapes touched 10\'x10\'x10\' stone"',
   'Shape Wood':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -8479,7 +8478,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 2d10 HP sonic on unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
+      '"R30\' Inflicts 2d10 HP sonic on an unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
   'Shield':
     'Level=Cantrip ' +
     'School=Abjuration ' +
@@ -8507,14 +8506,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)"',
+      '"Touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. an armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)"',
   'Shrink':
     'Level=2 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Will target becomes Tiny for 5 min (<b>heightened 6th</b> may affect 10 creatures)"',
+      '"R30\' Willing target becomes Tiny for 5 min (<b>heightened 6th</b> affects 10 creatures)"',
   'Shrink Item':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -8528,7 +8527,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Inscribes 1\\" sq magical mark on touched for 1 week or until scrubbed off (<b>heightened 3rd</b> effects last 1 month; <b>5th</b> effects last 1 year; <b>7th</b> effects are permanent)"',
+      '"Inscribes a 1\\" sq magical mark on touched for 1 week or until scrubbed off (<b>heightened 3rd</b> effects last 1 month; <b>5th</b> effects last 1 year; <b>7th</b> effects are permanent)"',
   'Silence':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8679,7 +8678,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster knows touched\'s direction, distance, and conditions until next daily preparations (<b>heightened 4th</b> R10\' may affect up to 10 targets)"',
+      '"Caster knows touched\'s direction, distance, and conditions until next daily preparations (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
     'School=Conjuration ' +
@@ -8700,21 +8699,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Restores touched petrified creature or transforms human-sized stone object into flesh"',
+      '"Restores touched petrified creature or transforms a human-sized stone object into flesh"',
   'Stoneskin':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
+      '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
   'Storm Of Vengeance':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R800\' 360\' burst inflicts -r ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10B HP (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10B HP (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -8805,7 +8804,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts 8d10 HP fire plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> +1d10 HP fire and positive)"',
+      '"R500\' 60\' burst inflicts 8d10 HP fire plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)"',
   'Synaptic Pulse':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -9119,7 +9118,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects up to 10 creatures and effects last 1 hr)"',
+      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures and effects last 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'School=Evocation ' +
@@ -9154,7 +9153,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster and up to 5 creatures become clouds and move 20 MPH for 8 hr; attack or spellcasting ends"',
+      '"Caster and 5 creatures become clouds and move 20 MPH for 8 hr; attack or spellcasting ends"',
   'Wish':
     'Level=10 ' +
     'School=Divination ' +
@@ -9202,7 +9201,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts death (target up to level 16 or up to 50 HP), 0 HP and dying 1 (target level 17), or 50 HP damage (target level 18+)"',
+      '"R30\' Inflicts death (target up to level 16 or 50 HP), 0 HP and dying 1 (target level 17), or 50 HP damage (target level 18+)"',
   'House Of Imaginary Walls':
     'Level=Cantrip ' +
     'School=Illusion ' +
@@ -9258,7 +9257,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster and up to 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
+      '"R30\' Caster and 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9850,21 +9849,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Free ' +
     'Description=' +
-      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature choice of: 60\' fly Speed; 20\' burrow speed and -10\' Speed); +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; 60\' swim Speed, Shove after melee attack, and resistance 5 to fire"',
+      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature choice of: 60\' fly Speed; 20\' burrow speed and -10\' Speed; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; 60\' swim Speed, Shove after melee attack, and resistance 5 to fire"',
   'Storm Lord':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy(-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficulty terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP), while sustained up to 1 min"',
+      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy (-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficult terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save basic Reflex</b>), while sustained up to 1 min"',
   'Stormwind Flight':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may fly equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not suffer difficult terrain effects)"',
+      '"Caster gains fly Speed equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not inflict difficult terrain effects)"',
   'Tempest Surge':
     'Level=1 ' +
     'School=Evocation ' +
@@ -10088,7 +10087,7 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="R30\' 30\' burst cloaks up to 10 targets for 10 min"',
+    'Description="R30\' 30\' burst cloaks 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -10130,7 +10129,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 5\' burst (2/3 actions 10\'/15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> +5\' radius inflicts +1d6 HP)"',
+      '"R120\' 5\' burst (10\'/15\' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> +5\' radius inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
     'School=Transmutation ' +
