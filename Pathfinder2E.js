@@ -8929,7 +8929,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Caster sees through illusions and transmutations for 10 min"',
+      '"R60\' Allows caster to see through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
     'School=Divination ' +
@@ -8971,7 +8971,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> also ignore greater difficult terrain)"',
+      '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> ignores environmental greater difficult terrain)"',
   'Unrelenting Observation':
     'Level=8 ' +
     'School=Divination ' +
@@ -9034,14 +9034,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touch heals once each rd for 4 rd, 4d10 HP, 4d8HP, 4d6HP, then 4d4 HP (<b>heightened +1</b> +1 die of healing)"',
+      '"Touch heals once each rd for 4 rd: 4d10 HP, 4d8HP, 4d6HP, then 4d4 HP (<b>heightened +1</b> restores +1 die each rd)"',
   'Volcanic Eruption':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\' radius inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and difficult terrain to flying creatures (<b>save Reflex</b>inflicts half HP; critical success negates; critical failure inflicts double HP), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\' radius inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and difficult terrain to flying creatures (<b>save basic Reflex</b>), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'School=Necromancy ' +
@@ -9055,7 +9055,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 5\'x60\'x10\' line or 10\' radius inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> +1d6 HP)"',
+      '"R120\' 5\'x60\'x10\' line or 10\' radius inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Wall Of Force':
     'Level=6 ' +
     'School=Evocation ' +
@@ -9069,21 +9069,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with AC 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> +10 HP and +1d6 HP from rubble)"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with AC 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with AC 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> +15 HP)"',
+      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with AC 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4P HP for 1 min"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4P HP for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
     'School=Evocation ' +
@@ -9132,7 +9132,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Weapon swing inflicts 4 dice of damage in a 30\' cone or 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> +1 damage die)"',
+      '"Weapon swing inflicts 4 dice of damage in a 30\' cone or 10\' emanation (<b>save basic Reflex</b>; critical failure also inflicts critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
   'Web':
     'Level=2 ' +
     'School=Conjuration ' +
@@ -9153,7 +9153,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster and 5 creatures become clouds and move 20 MPH for 8 hr; attack or spellcasting ends"',
+      '"Caster and 5 creatures become clouds and move 20 MPH for 8 hr; attacks or spellcasting ends"',
   'Wish':
     'Level=10 ' +
     'School=Divination ' +
@@ -9870,14 +9870,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Reflex</b> HP only; critical success negates; critical failure inflicts double HP)"',
+      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Reflex</b> inflicts HP only; critical success negates; critical failure inflicts double HP)"',
   'Wild Morph':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 persistent bleed and 2d6 persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 persistent bleed and 4d6 persistent poison"',
+      '"Caster gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)"',
   'Wild Shape':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -10136,7 +10136,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Extends caster reach for touch spells and unarmed Strikes to 10\'; adding another action to touch spells extends reach to 20\' for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
+      '"Extends caster reach for touch spells and unarmed Strikes to 10\', and adding another action to touch spells extends reach to 20\', for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
   "Undeath's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -10150,7 +10150,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on non-reach melee attackers for 1 min (<b>heightened +2</b> +5 resistances and inflicts +1d6 HP acid)"',
+      '"Caster gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on non-reach melee attackers for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP acid)"',
   "You're Mine":
     'Level=5 ' +
     'School=Enchantment ' +
