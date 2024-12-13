@@ -6761,7 +6761,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 10\' burst calms creatures and prevents them from hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure hostile actions do not end)"',
   'Cataclysm':
     'Level=10 ' +
     'School=Evocation ' +
@@ -6788,14 +6788,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 1d4+%{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
   'Chilling Darkness':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Ranged spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials (critical success inflicts double HP), and allows a counteract attempt vs. magical light) (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
   'Chromatic Wall':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6809,7 +6809,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"10\' emanation around touch gives +1 AC and saves vs. creatures of specified alignment; +3 vs. summoned creatures and on effects that affect touched (<b>heightened 4th</b> effects last for 1 hr)"',
   'Clairaudience':
     'Level=3 ' +
     'School=Divination ' +
@@ -6925,14 +6925,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts 6d6 HP mental, or 6d8 HP mental and stupified 1 for 1 rd on divine casters (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, stupefied 1 for 1 rd, and no divine casting for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP, or +2d8 HP on divine casters)"',
   'Crusade':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' 4 targets dedicate actions to specified cause for 10 min; ends if an ally attacks target or for a level 14th target reduced to half HP (<b>save Will</b> for level 15 each rd ends) (<b>heightened 10th</b> ends for a level 16th target reduced to half HP or a level 17th target who saves)"',
   'Crushing Despair':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -9352,49 +9352,49 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> +15\' radius)"',
   'Charming Touch':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Causes touched to become friendly (helpful if already friendly), preventing hostile actions, for 10 min (<b>save Will</b> negates; critical success target recognizes attempt; critical failure target becomes helpful)"',
   'Cloak Of Shadow':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"20\' emanation around touched reduces bright light to dim and conceals touched for 1 min; touched may remove and move away from cloak"',
   'Commanding Lash':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R100\' Target harmed by caster\'s most recent action obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on next turn to obey)"',
   'Competitive Edge':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains +1 attack and skill checks (+3 immediately after a foe within 20\' critically succeeds on the same), while sustained up to 1 min (<b>heightened 7th</b> gives +2 bonus; +4 after foe critical success)"',
   'Cry Of Destruction':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"15\' cone inflicts 1d8 HP sonic, or 1d12 if caster has already inflicted damage this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> +1d8 HP or +1d12 HP)"',
   'Darkened Eyes':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Suppresses target\'s darkvision or low-light vision for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure also blinds target until a successful save)"',
   'Dazzling Flash':
     'Level=1 ' +
     'School=Evocation ' +
