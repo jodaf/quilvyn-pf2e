@@ -6981,7 +6981,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Kills touched target with 0 HP and gives caster 10 temporary HP and +1 attack and damage for 10 min (<b>save Will</b> increases target\'s dying value by 1; critical success negates)"',
   'Death Ward':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6995,7 +6995,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' emanation allows caster to detect auras of specified alignment (<b>heightened 2nd</b> reveals each aura\'s location and strength)"',
   'Detect Magic':
     'Level=Cantrip ' +
     'School=Divination ' +
@@ -7029,14 +7029,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Allows counteract attempt vs. any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last 1 min; critical success negates; critical failure effects last 1 hr)"',
   'Dimensional Lock':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 60\' burst allows counteract attempts vs. any teleportation or planar travel until next daily preparations"',
   'Dinosaur Form':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -7056,15 +7056,14 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Caster gains +4 Perception vs. lies for 10 min"',
   'Discern Location':
     'Level=8 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster knows exact location of specified familiar creature or object for 10 min"',
   'Disintegrate':
     'Level=6 ' +
     'School=Evocation ' +
@@ -7099,42 +7098,42 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> three weapons inflicts +3d4 HP)"',
   'Divine Aura':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"10\' emanation (+10\' after first sustained) gives allies +1 AC and saves, +2 vs. creatures opposed to specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained up to 1 min"',
   'Divine Decree':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R40\' 40\' emanation inflicts 7d10 HP specified alignment damage (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP, enfeebled 2 for 1 min, banishment, and, for level 10 and lower, paralysis for 1 min (<b>save Will</b> negates; critical failure inflicts death); matching alignment negates; unopposed alignment inflicts half HP)"',
   'Divine Inspiration':
     'Level=8 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Willing touched recovers 1 6th-level or lower spell or slot or regains Focus Points"',
   'Divine Lance':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Ranged attack inflicts 1d4+%{spellModifier.Divine} HP of chosen alignment (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Divine Vessel':
     'Level=7 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster becomes Large and gains 40 temporary HP, %{speed} fly Speed, +1 vs. spellls, darkvision, +1 HP of chosen alignment on unarmed attacks, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> 60 temporary HP and weakness 15, lasting 10 min)"',
   'Divine Wrath':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9408,28 +9407,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R20\' Gives caster temporary HP for 1 min equal to the level of a living creature that dies or double the level of an undead creature that is destroyed"',
   'Delusional Pride':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn (-2 if it fails twice) for 10 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure  extends effects to 24 hr)"',
   'Destructive Aura':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"15\' emanation inflicts -2 resistances (<b>heightened +2</b> inflicts an additional -2 resistances)"',
   'Disperse Into Air':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"After taking damage, caster becomes air with no actions and immunity to attacks until the end of turn, then reforms anywhere within 15\'"',
   'Downpour':
     'Level=4 ' +
     'School=Evocation ' +
