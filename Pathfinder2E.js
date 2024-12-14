@@ -6573,7 +6573,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, AC %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Athletics modifier, and creature-specific feaures for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Athletics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, AC %{level+21}, +21 attack, +4 damage with double damage dice, +23 Athletics)"',
+      '"Caster becomes choice of a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, AC %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Athletics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Athletics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, AC %{level+21}, +21 attack, +4 damage with double damage dice, +23 Athletics)"',
   'Air Bubble':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -6925,7 +6925,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 6d6 HP mental, or 6d8 HP mental and stupified 1 for 1 rd on divine casters (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, stupefied 1 for 1 rd, and no divine casting for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP, or +2d8 HP on divine casters)"',
+      '"R30\' Inflicts 6d6 HP mental, or 6d8 HP mental and stupefied 1 for 1 rd on divine casters (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, stupefied 1 for 1 rd, and no divine casting for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP, or +2d8 HP on divine casters)"',
   'Crusade':
     'Level=9 ' +
     'School=Enchantment ' +
@@ -7133,7 +7133,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes Large and gains 40 temporary HP, %{speed} fly Speed, +1 vs. spellls, darkvision, +1 HP of chosen alignment on unarmed attacks, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> 60 temporary HP and weakness 15, lasting 10 min)"',
+      '"Caster becomes Large and gains 40 temporary HP, %{speed} fly Speed, +1 vs. spells, darkvision, +1 HP of chosen alignment on unarmed attacks, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> 60 temporary HP and weakness 15, lasting 10 min)"',
   'Divine Wrath':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7168,7 +7168,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Allows caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b>) allows sending speech to 10 familiar creatures)"',
   'Dreaming Potential':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -7182,7 +7182,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Upon receiving a wound, target becomes invisible and replaced by an illusionary corpse while sustained up to 1 min; a hostile act by target ends (<b>heightened 7th</b> hostile acts do not end)"',
   'Duplicate Foe':
     'Level=7 ' +
     'School=Conjuration ' +
@@ -7273,7 +7273,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster moves to Ethereal Plane while sustained up to 1 min (<b>heightened 9th</b> R30\' affects up to 5 additional creatures and lasts 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
     'School=Enchantment ' +
@@ -7418,14 +7418,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target gains +1 AC and saves vs. specified foe while sustained up to 1 min (<b>heightened 6th</b> gives +2 bonus)"',
   'Foresight':
     'Level=9 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains +2 initiative and negates flat-footed vs. undetected and flaking creatures, and caster may use a Reaction to give the target the better of two rolls in response to danger, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -7446,7 +7446,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Opens a 40\' radius gate to another plane while sustained up to 1 min"',
   'Gentle Repose':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7474,7 +7474,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched suffers 3d8 HP negative and regains half HP for 1 day (<b>save Fortitude</b> negates; critical failure inflicts 3d8 HP negative and regains no HP for 1 day)"',
   'Glibness':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -7557,7 +7557,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"<b>(1)</b> Touched suffers 1d8 HP negative, <b>(2)</b> R30\' target suffers 1d8 HP negative, or <b>(3)</b> 30\' emanation inflicts 1d8 HP negative; undead regain 1d8 HP, +8 HP for <b>(2)</b></b> (<b>heightened +1</b> inflicts or restores +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
   'Haste':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7592,7 +7592,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP positive to undead and 6d6 HP good to fiends (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP positive and good)"',
   'Horrid Wilting':
     'Level=8 ' +
     'School=Necromancy ' +
@@ -9435,63 +9435,63 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 30\' burst extinguishes non-magical flames and gives concealment and fire resistance 10 for 1 min (<b>heightened +1</b> gives +2 fire resistance)"',
   "Dreamer's Call":
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target obeys a suggestion and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> flat-footed and fascinated only; critical success negates; critical failure target takes no other actions)"',
   'Enduring Might':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"Upon taking damage, caster gains resistance %{8+strengthModifier} to that damage (<b>heightened +1</b> gives +2 resistance)"',
   'Eradicate Undeath':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' cone inflicts 4d12 HP positive to undead (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Face In The Crowd':
     'Level=1 ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains +2 Deception and Stealth to blend into a crowd and ignores crowd difficult terrain for 1 min (<b>heightened 3rd</b> R10\' affects 10 creatures)"',
   'Fire Ray':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Spell attack inflicts 2d6 HP fire; critical success inflicts double HP and 1d4 HP persistent fire (<b>heightened +1</b> inflicts +2d6 HP initial and +1d4 HP persistent)"',
   'Flame Barrier':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Target gains fire resistance 15 against triggering effect (<b>heightened +2</b> +5 resistance)"',
   'Forced Quiet':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target can speak only at a whisper, requiring others 10+\' away to succeed on a DC %{spellDifficultyClass.Divine} Perception to hear, for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure effects last 10 min)"',
   'Glimpse The Truth':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' emanation gives counteract attempts that allow caster to see through illusions for 1 rd (<b>heightened 7th</b> caster may reveal illusions to others)"',
   "Healer's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9505,14 +9505,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Spell attack inflicts 1d6+%{strengthModifier} HP bludgeoning, critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Know The Enemy':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"During initiative, allows the caster to take the better of two rolls on an immediate Recall Knowledge to recall a visible creature\'s abilities"',
   'Localized Quake':
     'Level=4 ' +
     'School=Transmutation ' +
