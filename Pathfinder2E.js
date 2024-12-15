@@ -7753,7 +7753,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched latch or lock opens only for caster until next daily preparations; a successful DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Divine||spellDifficultyClass.Occult} Athletics or Thievery check (or +4 lock DC if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
   'Longstrider':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7907,7 +7907,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
   'Mirror Image':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8010,14 +8010,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched suffers one step worse initial attitudes and worse of two Deception, Diplomacy, Intimidation, and Performance checks (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> creatures must pay tribute twice; critical success negates; critical failure uses all actions each turn)"',
   'Paralyze':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -9519,56 +9519,55 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Choice of 15\' emanation or cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP)"',
   'Lucky Break':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows the caster to reroll a failed save once per 10 min"',
   "Magic's Vessel":
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains +1 saves; subsequent casting sustains the spell up to 1 min and gives the target resistance to spell damage equal to the cast spell\'s level"',
   'Malignant Sustenance':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched undead gains fast healing 7 for 1 min (<b>heightened +1</b> gives +2 fast healing)"',
   'Moonbeam':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP) (<b>heightened +1</b> inflcits +1d6 HP)"',
   'Mystic Beacon':
     'Level=4 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Gives the next damage or healing spell cast by target within 1 rd heightened +1 effects"',
   "Nature's Bounty":
     'Level=4 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Creates a fruit or vegatable that restores 3d10+12 HP if eaten within 1 min (<b>hightened +1</b> restores +6 HP)"',
   'Overstuff':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> an action ends sickened condition; critical success negates; critical failure inflicts sickened 2)"',
   'Perfected Form':
     'Level=4 ' +
     'School=Abjuration ' +
