@@ -6809,7 +6809,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"10\' emanation around touch gives +1 AC and saves vs. creatures of specified alignment; +3 vs. summoned creatures and on effects that affect touched (<b>heightened 4th</b> effects last for 1 hr)"',
+      '"10\' emanation around touched gives +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)"',
   'Clairaudience':
     'Level=3 ' +
     'School=Divination ' +
@@ -8198,14 +8198,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min"',
   'Prying Eye':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Allows the caster to see from the target location, which can be moved 30\' each rd, while sustained"',
   'Punishing Winds':
     'Level=8 ' +
     'School=Evocation ' +
@@ -8238,7 +8238,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Spell attack inflicts enfeebled 2 for 1 min (critical success increases by 1 step) (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3)"',
   'Ray Of Frost':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8259,7 +8259,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster receives a clue or advance about a proposed activity up to 1 week away"',
   'Regenerate':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -8279,7 +8279,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Allows a counteract attempt vs. one curse affecting touched"',
   'Remove Disease':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -8306,7 +8306,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Up to 40\' emanation prevents creatures from approaching (<b>save Will</b> inflicts difficult terrain; critical success negates)"',
   'Resilient Sphere':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -8369,7 +8369,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to phyical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged), and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -9574,14 +9574,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to reroll a failed save vs. a morph, petrification, or polymorph effect and use the better result"',
   'Perfected Mind':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster a second Will save vs. a mental effect once per effect"',
   'Positive Luminance':
     'Level=4 ' +
     'School=Necromancy ' +
@@ -9595,35 +9595,35 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Transforms touched metal item into cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> may transform into admantine or mithral)"',
   "Protector's Sacrifice":
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Transfers 3 HP damage from an attack from target to caster (<b>heightened +1</b> transfers +3 HP)"',
   "Protector's Sphere":
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"15\' emanation gives resistance 3 to all damage to caster and allies (<b>heightened +1</> +1 resistance)"',
   'Pulse Of The City':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R25 miles; reveals information about the nearest settlement within range (<b>heightened 5th</b> increases range to 100 miles)"',
   'Pushing Gust':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Moves target away from caster 10\' (<b>save Fortitude</b> move target 5\'; critical success negates; critical failure moves target 10\' and knocks prone)"',
   'Read Fate':
     'Level=1 ' +
     'School=Divination ' +
@@ -9637,14 +9637,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"20\' emanation restores 3d6 HP to 1 target (2/3 targets for 2/3 actions) and recovers from dying condition without suffering wounded condition (<b>heightened +1</b> restores +1d6 HP)"',
   'Retributive Pain':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target that damages the caster suffers half as many HP mental"',
   'Safeguard Secret':
     'Level=4 ' +
     'School=Abjuration ' +
