@@ -3001,7 +3001,7 @@ Pathfinder2E.FEATURES = {
 
   'Ancestral Longevity':
     'Section=skill ' +
-    'Note="May gain Trained proficiency in choice of skill during daily preparations"',
+    'Note="May gain Trained proficiency in choice of skill during daily prep"',
   'Elven Lore':
     'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
@@ -5751,7 +5751,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"May select a school spell during daily preparations and Refocus"',
+      '"May select a school spell during daily prep and Refocus"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
@@ -6960,7 +6960,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily preparations)"',
+      '"Caster can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily prep)"',
   'Daze':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -7036,7 +7036,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 60\' burst allows counteract attempts vs. any teleportation or planar travel until next daily preparations"',
+      '"R120\' 60\' burst allows counteract attempts vs. any teleportation or planar travel until next daily prep"',
   'Dinosaur Form':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -7231,7 +7231,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Touched protected from choice of severe cold or heat until next daily preparations (<b>heightened 3rd</b> protected from both cold and heat; <b>5th</b> protected from extreme cold and heat</b>)"',
+      '"Touched protected from choice of severe cold or heat until next daily prep (<b>heightened 3rd</b> protected from both cold and heat; <b>5th</b> protected from extreme cold and heat</b>)"',
   'Energy Aegis':
     'Level=7 ' +
     'School=Abjuration ' +
@@ -7329,7 +7329,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows willing touched to swim at full Speed, but reduces land Speed to 5\', for 10 min (<b>heightened 6th</b> effects last until next daily preparations)"',
+      '"Allows willing touched to swim at full Speed, but reduces land Speed to 5\', for 10 min (<b>heightened 6th</b> effects last until next daily prep)"',
   'Field Of Life':
     'Level=6 ' +
     'School=Necromancy ' +
@@ -7453,7 +7453,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched corpse resists decay and cannot be made undead until next daily preparations (<b>heightened 5th</b> effects are permanent)"',
+      '"Touched corpse resists decay and cannot be made undead until next daily prep (<b>heightened 5th</b> effects are permanent)"',
   'Ghost Sound':
     'Level=Cantrip ' +
     'School=Illusion ' +
@@ -7550,7 +7550,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily preparations (<b>heightened 5th</b> illusion may mask or incorporate structures)"',
+      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion may mask or incorporate structures)"',
   'Harm':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7732,7 +7732,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched object lights a 20\' radius until next daily preparations (<b>heightened 4th</b> lights a 60\' radius)"',
+      '"Touched object lights a 20\' radius until next daily prep (<b>heightened 4th</b> lights a 60\' radius)"',
   'Lightning Bolt':
     'Level=3 ' +
     'School=Evocation ' +
@@ -7753,7 +7753,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched latch or lock opens only for caster until next daily preparations; a successful DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Divine||spellDifficultyClass.Occult} Athletics or Thievery check (or +4 lock DC if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
+      '"Touched latch or lock opens only for caster until next daily prep; a successful DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Divine||spellDifficultyClass.Occult} Athletics or Thievery check (or +4 lock DC if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
   'Longstrider':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7767,7 +7767,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily preparations (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)"',
+      '"Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)"',
   'Mage Hand':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8383,14 +8383,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"30\' burst gives +1 AC, attack, damage, and saves vs. choice of aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends spell; critical failure prevents attacks until spell ends)"',
   'Scintillating Pattern':
     'Level=8 ' +
     'School=Illusion ' +
@@ -8430,15 +8430,14 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows caster to send a 25-word message to a known creature"',
   'Shadow Blast':
     'Level=5 ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Choice of 30\' cone, R120\' 15\' burst, or 50\ line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Shadow Siphon':
     'Level=5 ' +
     'School=Illusion ' +
@@ -8484,14 +8483,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains +1 AC and use of Shield Block with Hardness 5 until beginning of next turn (<b>heightened +2</b> +5 Hardness)"',
   'Shield Other':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Transfers half of damage suffered by target to caster for 10 min or until either is reduced to 0 HP"',
   'Shillelagh':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -8568,7 +8567,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 10\' burst inflicts 2d10 HP sonic (<b>save Fortitude</b> inflicts half HP; critical save negates; critical failure inflicts double HP, deafened for 1 min, and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Speak With Animals':
     'Level=2 ' +
     'School=Divination ' +
@@ -8594,7 +8593,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Gives touched an automatic counteract attempt vs. a specified spell until next daily prep"',
   'Spell Turning':
     'Level=7 ' +
     'School=Abjuration ' +
@@ -8608,7 +8607,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force damage and the duration of all spells affecting it is reduced by 1 rd (<b>save Will</b> effects last 1 min; critical success negates; critical failure inflicts 4d12 HP)"',
   'Spider Climb':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -8629,14 +8628,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target\'s spirit suffers 16d6 HP force (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spirit Link':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Transfers 2 HP of damage each rd from the willing target to the caster for 10 min (<b>heightened +1</b> transfers +2 HP)"',
   'Spirit Song':
     'Level=8 ' +
     'School=Necromancy ' +
@@ -8650,14 +8649,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stufpefied 1 permanently, and also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
   'Spiritual Guardian':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Summoned guardian with 50 HP absorbs 10 HP of damage or attacks to inflict 2d8 HP force each rd while sustained up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'School=Evocation ' +
@@ -8677,7 +8676,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster knows touched\'s direction, distance, and conditions until next daily preparations (<b>heightened 4th</b> R10\' affects 10 targets)"',
+      '"Caster knows touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
     'School=Conjuration ' +
@@ -8690,8 +8689,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Allows caster to converse with stone for 10 min"',
   'Stone To Flesh':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -8782,7 +8780,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Conjured fiend up to level 5 fights foes while sustained up to 1 min (<b>heightened 6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
   'Summon Giant':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8824,7 +8822,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Caster may have touched corpse answer questions truthfully (<b>save Will</b> target may lie or refuse to answer; critical success caster cannot rest for 24 hr; critical failure target suffers -2 on Deception checks)"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'School=Conjuration ' +
@@ -8873,7 +8871,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows caster to exchange 25-word messages with existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'School=Divination ' +
@@ -9096,7 +9094,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Reveals a route to chosen destination and reduces movement penalty from difficult terrain by half until next daily preparations"',
+      '"Reveals a route to chosen destination and reduces movement penalty from difficult terrain by half until next daily prep"',
   'Warp Mind':
     'Level=7 ' +
     'School=Enchantment ' +
@@ -9110,7 +9108,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' 5 targets may breathe water for 1 hr (<b>heightened 3rd</b> effects last 8 hr; <b>4th</b> effects last until next daily preparations)"',
+      '"R30\' 5 targets may breathe water for 1 hr (<b>heightened 3rd</b> effects last 8 hr; <b>4th</b> effects last until next daily prep)"',
   'Water Walk':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -9651,28 +9649,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"10\' Caster and allies gain +4 skill checks to conceal a specified piece of knowledge for 1 hr"',
   'Savor The Sting':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 1d4 HP mental and 1d4 HP persistent mental and gives caster +1 attack and skill checks vs. target (<b>save Will</b> inflicts half initial HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Scholarly Recollection':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"Allows caster to reroll a Seek or Recall Knowledge check and use the better result"',
   'Shared Nightmare':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on caster for 1 action next turn; critical success inflicts confused on caster for 1 rd; critical failure inflicts confused for 1 min)"',
   'Soothing Words':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9686,28 +9684,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 5\' burst inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, fightened 1, or clumsy 1 for 1 rd, randomly chosen (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to Step and become concealed until the end of next turn"',
   'Sweet Dream':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Willing target who sleeps for 1 min gains choice of +1 intelligence- or charisma-based skill checks or +5\' Speed for remainder of 10 min"',
   'Take Its Course':
     'Level=4 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched gains an immediate save vs. an affliction, with a +2 or -2 modifiier, or an immidate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> may affect multiple afflictions and poisons)"',
   'Tempt Fate':
     'Level=4 ' +
     'School=Divination ' +
@@ -9721,28 +9719,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Moves target 5\' on ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
   'Touch Of Obedience':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts stupefied 1 until the end of next turn (<b>save Will</b> inflicts stupefied 1 until the end of current turn; critical success negates; critical failure inflicts stupefied 1 for 1 min)"',
   'Touch Of The Moon':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Target emits dim light and may gain +1 attack and +4 damage, +1 attack, +1 AC, +1 saves, and +4 damage, or +1 AC and saves, depending on the current moon phase, for 1 min"',
   'Touch Of Undeath':
     'Level=1 ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 1d6 HP negative and half healing for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical success inflicts double HP and half healing for 1 min) (<b>heightened +1</b> inflics +1d6 HP)"',
   "Traveler's Transit":
     'Level=4 ' +
     'School=Evocation ' +
@@ -9756,7 +9754,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target believes that caster is in a location up to 100\' distant for 1 min or until succeeding at a Will save in response to interacting with the illusion or to the illusion performing a nonsensical or hostile action (<b>save Will</b> no subsequent Will save is necessary; critical success negates; critical failure requires critical success on a Will save to end spell)"',
   'Unimpeded Stride':
     'Level=1 ' +
     'School=Transmutation ' +
