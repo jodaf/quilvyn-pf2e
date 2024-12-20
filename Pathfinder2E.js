@@ -8369,7 +8369,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to phyical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged), and +29 Athletics)"',
+      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged), and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -8649,7 +8649,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stufpefied 1 permanently, and also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
+      '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently, and also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
   'Spiritual Guardian':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -8954,7 +8954,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Touched appears neutral to alignment detection until next daily prep"',
   'Unfathomable Song':
     'Level=9 ' +
     'School=Enchantment ' +
@@ -8989,14 +8989,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' cone inflicts 12d6 HP negative, giving caster temporary HP for 1 min equal to half inflicted on most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vampiric Touch':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touch inflicts 6d6 HP negative, giving caster temporary HP for 1 min equal to half inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Veil':
     'Level=4 ' +
     'School=Illusion ' +
@@ -9045,7 +9045,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"40\' emanation inflicts 8d10 HP negative and drained 1d4 (<b>save Fortitude</b> inflicts HP only; critical success negates; critical failure inflicts double HP and drained 4)"',
   'Wall Of Fire':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9122,7 +9122,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"+{spellAttackModifier.Divine} attacks by force weapon inflict 3d10+%{spellModifier.Divine} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9164,14 +9164,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 10 targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with the caster\'s requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened +1</b> gives 18 temporary HP and +3 Will)"',
   'Zone Of Truth':
     'Level=3 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 20\' burst prevents lies and inflicts -2 Deception for 10 min (<b>save Will</b> inflicts -2 Deception only; critical success negates; critical failure inflicts -4 Deception)"',
   'Allegro':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9544,7 +9544,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP) (<b>heightened +1</b> inflcits +1d6 HP)"',
+      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Mystic Beacon':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9558,7 +9558,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates a fruit or vegatable that restores 3d10+12 HP if eaten within 1 min (<b>hightened +1</b> restores +6 HP)"',
+      '"Creates a fruit or vegetable that restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
   'Overstuff':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -9593,7 +9593,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Transforms touched metal item into cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> may transform into admantine or mithral)"',
+      '"Transforms touched metal item into cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> may transform into adamantine or mithral)"',
   "Protector's Sacrifice":
     'Level=1 ' +
     'School=Abjuration ' +
@@ -9684,7 +9684,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5\' burst inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, fightened 1, or clumsy 1 for 1 rd, randomly chosen (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
+      '"R30\' 5\' burst inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd, randomly chosen (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -9705,7 +9705,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains an immediate save vs. an affliction, with a +2 or -2 modifiier, or an immidate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> may affect multiple afflictions and poisons)"',
+      '"Touched gains an immediate save vs. an affliction, with a +2 or -2 modifier, or an immediate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> may affect multiple afflictions and poisons)"',
   'Tempt Fate':
     'Level=4 ' +
     'School=Divination ' +
@@ -9740,7 +9740,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch inflicts 1d6 HP negative and half healing for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical success inflicts double HP and half healing for 1 min) (<b>heightened +1</b> inflics +1d6 HP)"',
+      '"Touch inflicts 1d6 HP negative and half healing for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical success inflicts double HP and half healing for 1 min) (<b>heightened +1</b> inflicts +1d6 HP)"',
   "Traveler's Transit":
     'Level=4 ' +
     'School=Evocation ' +
@@ -9761,63 +9761,63 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster escapes from magical holds of level less than or equal to spell, then may Stride, ignoring Speed penalties"',
   'Unity':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Allies may use caster\'s saving throw vs. triggering spell or ability"',
   'Veil Of Confidence':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Reduces any frightened condition on caster by 1 for 1 min; critical failure ends spell and increases frightened condition by 1"',
   'Vibrant Thorns':
     'Level=1 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Unarmed and adjacent melee attacks on caster inflict 1P HP for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
   'Waking Nightmare':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3; failure while sleeping also inflicts fleeing for 1 rd)"',
   'Weapon Surge':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Held weapon gains +1 attack and an additional die of damage on next attach before the start of next turn"',
   'Word Of Freedom':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Suppresses choice of confused, frightened, grabbed, paralyzed, or restrained condition affecting target for 1 rd"',
   'Word Of Truth':
     'Level=1 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"Speaking a true statement causes a glowing deity symbol to appear above caster\'s head while sustained up to 1 min"',
   'Zeal For Battle':
     'Level=4 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R10\' Allows the caster and 1 ally to both use the higher of their two initiative rolls"',
   'Goodberry':
     'Level=1 ' +
     'School=Necromancy ' +
