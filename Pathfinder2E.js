@@ -6552,7 +6552,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts drained 1 and cannot recover for 1 day or until cured (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day or until contracted; critical success negates; critical failure inflicts drained 2)"',
+      '"Touch inflicts drained 1 and cannot recover for 1 day or until cured (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day; critical success negates; critical failure inflicts drained 2)"',
   'Acid Arrow':
     'Level=2 ' +
     'School=Evocation ' +
@@ -6649,7 +6649,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster may gain a general idea whether the results of a proposed action up to 30 min in the future will be good or bad"',
+      '"Caster may gain a general idea of whether the results of a proposed action up to 30 min in the future will be good or bad"',
   'Avatar':
     'Level=10 ' +
     'School=Transmutation ' +
@@ -6670,7 +6670,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"5\' emanation inflicts -1 attack on foes for 1 min; caster may use an action each rd to increase radius by 5\' (<b>save Will</b> negates)"',
+      '"5\' emanation inflicts -1 attack on foes for 1 min; caster may use an action each rd to increase the radius by 5\' (<b>save Will</b> negates)"',
   'Banishment':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6698,7 +6698,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Controls the actions of a mindless undead of level less than the spell level for 1 day"',
+      '"R30\' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day"',
   'Black Tentacles':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -6712,21 +6712,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 20\'x120\'x2\\" will inflicts 7d8 HP force for 1 min (<b>save basic Reflex</b>; critical failure prevents passage) (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R120\' 20\'x120\'x2\\" wall inflicts 7d8 HP force for 1 min (<b>save basic Reflex</b>; critical failure prevents passage) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Bless':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"5\' radius gives allies +1 attack for 1 min; may use a concentrate action to extend to 10\'"',
+      '"5\' radius gives allies +1 attack for 1 min; caster may use a concentrate action to extend to 10\'"',
   'Blindness':
     'Level=3 ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure makes blindness permanent)"',
+      '"R30\' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)"',
   'Blink':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -6761,7 +6761,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst calms creatures and prevents them from hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure hostile actions do not end)"',
+      '"R120\' 10\' burst calms creatures and prevents them from hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)"',
   'Cataclysm':
     'Level=10 ' +
     'School=Evocation ' +
@@ -6788,14 +6788,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 1d4+%{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
+      '"Touch inflicts 1d4+%{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
   'Chilling Darkness':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Ranged spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials (critical success inflicts double HP), and allows a counteract attempt vs. magical light) (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
+      '"R120\' Ranged spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials (critical success inflicts double HP), and allows a counteract attempt vs. magical light (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
   'Chromatic Wall':
     'Level=5 ' +
     'School=Abjuration ' +
@@ -6905,13 +6905,13 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 hr" ' +
     'Description=' +
-      '"R30\ Creates food for 6 Medium creatures that remains edible for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
+      '"R30\' Creates food for 6 Medium creatures that remains edible for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
   'Create Water':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R0\' Creates 2 gallons of water that remains for 1 day"',
+    'Description="Creates 2 gallons of water that remains for 1 day"',
   'Creation':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -6974,7 +6974,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Deafens target for 10 min (<b>save Fortitude</b> lasts 1 rd; critical success negates; critical failure deafness is permanent)"',
+      '"R30\' Deafens target for 10 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure inflicts permanent deafness)"',
   'Death Knell':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7098,14 +7098,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> three weapons inflicts +3d4 HP)"',
+      '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> three weapons inflict +3d4 HP)"',
   'Divine Aura':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"10\' emanation (+10\' after first sustained) gives allies +1 AC and saves, +2 vs. creatures opposed to specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained up to 1 min"',
+      '"10\' emanation (+10\' after first sustain) gives allies +1 AC and saves, +2 vs. creatures opposed to specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained up to 1 min"',
   'Divine Decree':
     'Level=7 ' +
     'School=Evocation ' +
@@ -7133,7 +7133,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes Large and gains 40 temporary HP, %{speed} fly Speed, +1 vs. spells, darkvision, +1 HP of chosen alignment on unarmed attacks, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> 60 temporary HP and weakness 15, lasting 10 min)"',
+      '"Caster becomes Large and gains 40 temporary HP, %{speed}\' fly Speed, +1 vs. spells, darkvision, +1 HP of chosen alignment on unarmed attacks, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> gives 60 temporary HP and weakness 15, lasting 10 min)"',
   'Divine Wrath':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7168,7 +7168,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b>) allows sending speech to 10 familiar creatures)"',
+      '"Allows caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b> allows sending speech to 10 familiar creatures)"',
   'Dreaming Potential':
     'Level=5 ' +
     'School=Enchantment ' +
@@ -7231,7 +7231,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Touched protected from choice of severe cold or heat until next daily prep (<b>heightened 3rd</b> protected from both cold and heat; <b>5th</b> protected from extreme cold and heat</b>)"',
+      '"Protects touched from choice of severe cold or heat until next daily prep (<b>heightened 3rd</b> protects from both cold and heat; <b>5th</b> protects from extreme cold and heat</b>)"',
   'Energy Aegis':
     'Level=7 ' +
     'School=Abjuration ' +
@@ -7273,7 +7273,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster moves to Ethereal Plane while sustained up to 1 min (<b>heightened 9th</b> R30\' affects up to 5 additional creatures and lasts 10 min)"',
+      '"Caster moves to Ethereal Plane while sustained up to 1 min (<b>heightened 9th</b> R30\' affects up to 5 additional willing creatures and lasts 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
     'School=Enchantment ' +
@@ -7377,7 +7377,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> +2d6 HP)"',
+      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
     'School=Evocation ' +
@@ -7425,7 +7425,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and negates flat-footed vs. undetected and flaking creatures, and caster may use a Reaction to give the target the better of two rolls in response to danger, for 1 hr"',
+      '"Touched gains +2 initiative and negates flat-footed vs. undetected and flanking creatures, and caster may use a Reaction to give the target the better of two rolls in response to danger, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -7578,7 +7578,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> +2; <b>8th</b> +3)"',
+      '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> gives +2 bonus; <b>8th</b> gives +3 bonus)"',
   'Hideous Laughter':
     'Level=2 ' +
     'School=Enchantment ' +
@@ -7746,7 +7746,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Reveals direction to named object or the nearest object of a named type while sustained (<b>heightened 5th</b> reveals direction to a creature or ancestry)"',
+      '"R500\' Reveals direction to a named object or the nearest object of a named type while sustained (<b>heightened 5th</b> reveals direction to a creature or ancestry)"',
   'Lock':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -8010,14 +8010,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers one step worse initial attitudes and worse of two Deception, Diplomacy, Intimidation, and Performance checks (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
+      '"Touched suffers one step worse initial attitudes and worse of two Deception, Diplomacy, Intimidation, and Performance checks until removed (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> creatures must pay tribute twice; critical success negates; critical failure uses all actions each turn)"',
+      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure affected uses all actions each turn to pay tribute)"',
   'Paralyze':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -8086,7 +8086,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
-    'Description="Shifts caster and 8 willing targets to a different plane"',
+    'Description=' +
+      '"Transports caster and 8 willing targets to a different plane"',
   'Plant Form':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -8135,7 +8136,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R10\' Performs choice of cooking, lifting, make a minor object, or tidying while sustained"',
+      '"R10\' Performs choice of cooking, lifting, making a minor object, or tidying while sustained"',
   'Primal Herd':
     'Level=10 ' +
     'School=Transmutation ' +
@@ -8198,14 +8199,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min"',
+      '"Touched gains +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on control effects, for 1 min"',
   'Prying Eye':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R500\' Allows the caster to see from the target location, which can be moved 30\' each rd, while sustained"',
+      '"R500\' Creates a sensor that allows the caster to see from the target location and which can be moved 30\' each rd while sustained"',
   'Punishing Winds':
     'Level=8 ' +
     'School=Evocation ' +
@@ -9279,7 +9280,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Restores 6 HP and gives +2 AC for 1 rd to touched living; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts doubles HP) (<b>heightened +1</b> +6 HP or +1d6 damage)"',
+      '"Touched living regains 6 HP and gains +2 AC for 1 rd; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 damage)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9300,7 +9301,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Evil target suffers weakness 7 to good for 1 rd (<b>heightened +1</b> weakness +1)"',
+      '"R30\' Evil target suffers weakness 7 to good for 1 rd (<b>heightened +1</b> inflicts weakness +1)"',
   'Agile Feet':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -9349,14 +9350,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> +15\' radius)"',
+      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> extends emanation by 15\')"',
   'Charming Touch':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Causes touched to become friendly (helpful if already friendly), preventing hostile actions, for 10 min (<b>save Will</b> negates; critical success target recognizes attempt; critical failure target becomes helpful)"',
+      '"Causes touched to become friendly, or helpful if already friendly and prevents hostile actions for 10 min (<b>save Will</b> negates; critical success target recognizes attempt; critical failure target becomes helpful)"',
   'Cloak Of Shadow':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9377,14 +9378,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains +1 attack and skill checks (+3 immediately after a foe within 20\' critically succeeds on the same), while sustained up to 1 min (<b>heightened 7th</b> gives +2 bonus; +4 after foe critical success)"',
+      '"Caster gains +1 attack and skill checks, or +3 immediately after a foe within 20\' critically succeeds on the same, while sustained up to 1 min (<b>heightened 7th</b> gives +2 bonus or +4 after a foe critical success)"',
   'Cry Of Destruction':
     'Level=1 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 1d8 HP sonic, or 1d12 if caster has already inflicted damage this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> +1d8 HP or +1d12 HP)"',
+      '"15\' cone inflicts 1d8 HP sonic, or 1d12 if caster has already inflicted damage this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP or +1d12 HP)"',
   'Darkened Eyes':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -9412,7 +9413,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn (-2 if it fails twice) for 10 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure  extends effects to 24 hr)"',
+      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn (-2 if it fails twice) for 10 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure effects last 24 hr)"',
   'Destructive Aura':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9461,7 +9462,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains +2 Deception and Stealth to blend into a crowd and ignores crowd difficult terrain for 1 min (<b>heightened 3rd</b> R10\' affects 10 creatures)"',
+      '"Caster gains +2 Deception and Stealth to blend into a crowd and ignores difficult terrain from crowds for 1 min (<b>heightened 3rd</b> R10\' affects 10 creatures)"',
   'Fire Ray':
     'Level=1 ' +
     'School=Evocation ' +
@@ -9475,21 +9476,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Target gains fire resistance 15 against triggering effect (<b>heightened +2</b> +5 resistance)"',
+      '"R60\' Target gains fire resistance 15 against triggering effect (<b>heightened +2</b> gives +5 resistance)"',
   'Forced Quiet':
     'Level=1 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target can speak only at a whisper, requiring others 10+\' away to succeed on a DC %{spellDifficultyClass.Divine} Perception to hear, for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure effects last 10 min)"',
+      '"R30\' Target can speak only at a whisper, requiring others 10\'+ away to succeed on a DC %{spellDifficultyClass.Divine} Perception to hear, for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure effects last 10 min)"',
   'Glimpse The Truth':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"30\' emanation gives counteract attempts that allow caster to see through illusions for 1 rd (<b>heightened 7th</b> caster may reveal illusions to others)"',
+      '"30\' emanation gives counteract attempts to allow caster to see through illusions for 1 rd (<b>heightened 7th</b> caster may reveal illusions to others)"',
   "Healer's Blessing":
     'Level=1 ' +
     'School=Necromancy ' +
@@ -9510,7 +9511,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"During initiative, allows the caster to take the better of two rolls on an immediate Recall Knowledge to recall a visible creature\'s abilities"',
+      '"During initiative, allows the caster to take the better of two rolls on an immediate Recall Knowledge to remember a visible creature\'s abilities"',
   'Localized Quake':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -9544,7 +9545,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Mystic Beacon':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9565,7 +9566,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> an action ends sickened condition; critical success negates; critical failure inflicts sickened 2)"',
+      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> target may use an action to end sickened condition; critical success negates; critical failure inflicts sickened 2)"',
   'Perfected Form':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -9586,14 +9587,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"10\' radius light inflicts 2 HP positive to successful undead attackers for 1 min; may increase radius by 10\' and damage by 2 HP each rd; may end the spell early to heal a living creature or damage an undead creature by double HP (<b>heightened +1</b> +0.5 HP)"',
+      '"10\' radius light inflicts 2 HP positive to successful undead attackers for 1 min; caster may increase radius by 10\' and damage by 2 HP each rd and may end the spell early to heal a living creature or damage an undead creature by double HP (<b>heightened +1</b> inflicts +0.5 HP)"',
   'Precious Metals':
     'Level=4 ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Transforms touched metal item into cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> may transform into adamantine or mithral)"',
+      '"Transforms touched metal item into choice of cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> may transform into adamantine or mithral)"',
   "Protector's Sacrifice":
     'Level=1 ' +
     'School=Abjuration ' +
@@ -9607,7 +9608,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' emanation gives resistance 3 to all damage to caster and allies (<b>heightened +1</> +1 resistance)"',
+      '"15\' emanation gives resistance 3 to all damage to caster and allies (<b>heightened +1</b> gives +1 resistance)"',
   'Pulse Of The City':
     'Level=4 ' +
     'School=Divination ' +
@@ -9621,7 +9622,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Moves target away from caster 10\' (<b>save Fortitude</b> move target 5\'; critical success negates; critical failure moves target 10\' and knocks prone)"',
+      '"R500\' Moves target away from caster 10\' (<b>save Fortitude</b> moves target 5\'; critical success negates; critical failure moves target 10\' and knocks prone)"',
   'Read Fate':
     'Level=1 ' +
     'School=Divination ' +
@@ -10461,11 +10462,11 @@ Pathfinder2E.WEAPONS = {
 };
 
 Pathfinder2E.ACTION_MARKS = {
-  1: '<b>(1)</b> ',
-  2: '<b>(2)</b> ',
-  3: '<b>(3)</b> ',
-  Free: '<b>(F)</b> ',
-  Reaction: '<b>(R)</b> ' // '<b>&larrhk;</b> '
+  1: '<b>(1)</b>',
+  2: '<b>(2)</b>',
+  3: '<b>(3)</b>',
+  Free: '<b>(F)</b>',
+  Reaction: '<b>(R)</b>' // '<b>&larrhk;</b> '
 };
 Pathfinder2E.RANK_NAMES =
   ['untrained', 'trained', 'expert', 'master', 'legendary'];
@@ -13213,7 +13214,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     if(priorInSection > 0)
       note += '-' + priorInSection;
 
-    let noteText = (Pathfinder2E.ACTION_MARKS[action] || '') + effects;
+    let noteText =
+      (action in Pathfinder2E.ACTION_MARKS ? Pathfinder2E.ACTION_MARKS[action] + ' ' : '') + effects;
     rules.defineChoice('notes', note + ':' + noteText);
     rules.defineRule
       (note, 'features.' + name, effects.indexOf('%V') >= 0 ? '?' : '=', null);
