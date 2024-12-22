@@ -8232,7 +8232,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
-    'Description="R10\' Restores soul to a willing creature up to level 13 dead for at most 3 days; gives target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
+    'Description="R10\' Restores soul to a willing creature up to level 13 dead for at most 3 days, giving target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -8253,21 +8253,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Caster detects whether target object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 objects; <b>6th</b> affects unlimited objects)"',
+      '"R30\' Allows caster to detect whether a target object is magical and the related school of magic (<b>heightened 3rd</b> caster detects 10 objects; <b>6th</b> caster detects unlimited objects)"',
   'Read Omens':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster receives a clue or advance about a proposed activity up to 1 week away"',
+      '"Caster receives a clue or advice about a proposed activity up to 1 week in the future"',
   'Regenerate':
     'Level=7 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched target regains 15 HP and regrows a damaged organ each rd for 1 min; suffering new acid or fire damage deactivates for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
+      '"Touched target regains 15 HP and regrows a damaged organ each rd for 1 min; suffering new acid or fire damage deactivates effects for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
   'Remake':
     'Level=10 ' +
     'School=Conjuration ' +
@@ -8286,21 +8286,21 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
-    'Description="Allows a counteract attempt on 1 disease affecting touched"',
+    'Description="Allows a counteract attempt vs. 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. a single fear effect affecting touched target (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Allows a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. a single paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Allows a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'School=Abjuration ' +
@@ -8335,7 +8335,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Gives choice of: reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce two of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> reduce drained condition, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> reduce a permanent doomed condition)"',
+      '"Gives choice of: reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce two of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce a drained condition, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8370,7 +8370,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged), and +29 Athletics)"',
+      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with %{deityWeapon}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -8568,7 +8568,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts 2d10 HP sonic (<b>save Fortitude</b> inflicts half HP; critical save negates; critical failure inflicts double HP, deafened for 1 min, and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
+      '"R30\' 10\' burst inflicts 2d10 HP sonic (<b>save basic Fortitude</b>; critical failure also inflicts deafened for 1 min and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Speak With Animals':
     'Level=2 ' +
     'School=Divination ' +
@@ -8650,21 +8650,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently, and also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
+      '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently; also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
   'Spiritual Guardian':
     'Level=5 ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Summoned guardian with 50 HP absorbs 10 HP of damage or attacks to inflict 2d8 HP force each rd while sustained up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
+      '"R120\' Summoned guardian with 50 HP absorbs 10 HP of damage, or attacks to inflict 2d8 HP force, each rd while sustained up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spectral weapon attacks 1/rd, inflicting 1d8 HP force or weapon type while sustained up to 1 min (<b>heightened +2</b> +1d8 HP)"',
+      '"R120\' Spectral weapon attacks once each rd, inflicting 1d8 HP force or weapon damage type, while sustained up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
   'Stabilize':
     'Level=Cantrip ' +
     'School=Necromancy ' +
@@ -8739,7 +8739,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Conjured celestial up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
+      '"R30\' Conjured celestial up to level 5 fights foes while sustained up to 1 min (<b>heightened +1</b> summons creature of +2 level)"',
   'Summon Construct':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -8781,7 +8781,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Conjured fiend up to level 5 fights foes while sustained up to 1 min (<b>heightened 6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"R30\' Conjured fiend up to level 5 fights foes while sustained up to 1 min (<b>heightened +1</b> summons creature of +2 level)"', 
   'Summon Giant':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8872,7 +8872,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Allows caster to exchange 25-word messages with existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
+      '"Allows caster to exchange 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'School=Divination ' +
@@ -9032,7 +9032,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touch heals once each rd for 4 rd: 4d10 HP, 4d8HP, 4d6HP, then 4d4 HP (<b>heightened +1</b> restores +1 die each rd)"',
+      '"Touch heals once each rd for 4 rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP (<b>heightened +1</b> restores +1 die each rd)"',
   'Volcanic Eruption':
     'Level=7 ' +
     'School=Evocation ' +
@@ -9095,7 +9095,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Reveals a route to chosen destination and reduces movement penalty from difficult terrain by half until next daily prep"',
+      '"Reveals a route to a specified destination and reduces the movement penalty from difficult terrain by half until next daily prep"',
   'Warp Mind':
     'Level=7 ' +
     'School=Enchantment ' +
@@ -9116,14 +9116,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures and effects last 1 hr)"',
+      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"+{spellAttackModifier.Divine} attacks by force weapon inflict 3d10+%{spellModifier.Divine} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
+      '"+%{spellAttackModifier.Divine} attacks by force weapon inflict 3d10+%{spellModifier.Divine} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9629,7 +9629,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R10\' Successful DC 6 flat check gives a one-word to target\'s short-term fate"',
+      '"R10\' Successful DC 6 flat check gives a one-word clue to target\'s short-term fate"',
   'Rebuke Death':
     'Level=4 ' +
     'School=Necromancy ' +
@@ -9671,14 +9671,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on caster for 1 action next turn; critical success inflicts confused on caster for 1 rd; critical failure inflicts confused for 1 min)"',
+      '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on caster for 1 action next turn; critical success inflicts confused on caster for 1 rd; critical failure inflicts confused on target for 1 min)"',
   'Soothing Words':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' target gains +1 Will and +2 vs. emotion effects for 1 rd; also counteracts an existing emotion effect (<b>heightened 5th</b> +2 Will and +3 vs. emotion effects)"',
+      '"R30\' Gives +1 Will and +2 vs. emotion effects for 1 rd; also counteracts an existing emotion effect (<b>heightened 5th</b> gives +2 Will and +3 vs. emotion effects)"',
   'Splash Of Art':
     'Level=1 ' +
     'School=Illusion ' +
@@ -9748,7 +9748,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> may choose fly speed)"',
+      '"Caster gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> caster may choose to gain fly speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'School=Illusion ' +
@@ -9783,7 +9783,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Unarmed and adjacent melee attacks on caster inflict 1P HP for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
+      '"Unarmed and adjacent melee attacks on caster inflict 1P HP on attacker for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
   'Waking Nightmare':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9804,7 +9804,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Suppresses choice of confused, frightened, grabbed, paralyzed, or restrained condition affecting target for 1 rd"',
+      '"R30\' Suppresses choice of a confused, frightened, grabbed, paralyzed, or restrained condition affecting target for 1 rd"',
   'Word Of Truth':
     'Level=1 ' +
     'School=Divination ' +
