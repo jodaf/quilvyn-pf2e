@@ -402,9 +402,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Blindness (O3 Nec): <b>(2)</b> R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
-      <td>Blink (O4 Con): <b>(2)</b> FILL</td>
+      <td>Blink (O4 Con): <b>(2)</b> Caster gains resistance 5 to non-force damage and may use Sustain to randomly teleport 10' for 1 min (<b>heightened +2</b> gives +3 resistance)</td>
     </tr><tr style="text-align:left">
-      <td>Blur (O2 Ill): <b>(2)</b> FILL</td>
+      <td>Blur (O2 Ill): <b>(2)</b> Touched becomes concealed for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Calm Emotions (O2 Enc): <b>(2)</b> R120' 10' burst calms creatures and prevents them from hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)</td>
     </tr><tr style="text-align:left">
@@ -412,17 +412,17 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Chill Touch (O0 Nec): <b>(2)</b> Touch inflicts 1d4+4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
     </tr><tr style="text-align:left">
-      <td>Chromatic Wall (O5 Abj): <b>(3)</b> FILL</td>
+      <td>Chromatic Wall (O5 Abj): <b>(3)</b> R120' 60'x30' will shines 20' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</b> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)</td>
     </tr><tr style="text-align:left">
       <td>Circle Of Protection (O3 Abj): <b>(3)</b> 10' emanation around touched gives +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Clairaudience (O3 Div): <b>(1 min)</b> FILL</td>
+      <td>Clairaudience (O3 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the caster to listen from the target location for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Clairvoyance (O4 Div): <b>(1 min)</b> FILL</td>
+      <td>Clairvoyance (O4 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the caster to see from the target location for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Cloak Of Colors (O5 Ill): <b>(2)</b> FILL</td>
+      <td>Cloak Of Colors (O5 Ill): <b>(2)</b> R30' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd) for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Collective Transposition (O6 Con): <b>(2)</b> FILL</td>
+      <td>Collective Transposition (O6 Con): <b>(2)</b> Teleports 2 targets within a 30' radius (<b>save Will</b> negates; critical success allows target to control teleport) (<b>heightened +1</b> affects +1 target)</td>
     </tr><tr style="text-align:left">
       <td>Color Spray (O1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> dazzled 1 rd; critical success negates; critical failure inflicts blinded for 1 min)</td>
     </tr><tr style="text-align:left">
@@ -430,7 +430,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Comprehend Language (O2 Div): <b>(2)</b> R30' Target can understand choice of heard language for 1 hr (<b>heightened 3rd</b> may also speak language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Confusion (O4 Enc): <b>(2)</b> FILL</td>
+      <td>Confusion (O4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until successful save (<b>save Will<</b> inflicts stunned 1; critical success negates; critical failure inflicts confused for 1 min with no further saves)</td>
     </tr><tr style="text-align:left">
       <td>Continual Flame (O2 Evo): <b>(3)</b> Touched object glows as a torch until dismissed</td>
     </tr><tr style="text-align:left">
@@ -676,7 +676,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Protection (O1 Abj): <b>(2)</b> Touched gains +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on control effects, for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Prying Eye (O5 Div): <b>(1 min)</b> R500' Creates a sensor that allows the caster to see from the target location and which can be moved 30' each rd while sustained</td>
+      <td>Prying Eye (O5 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the caster to see from the target location and which can be moved 30' each rd while sustained</td>
     </tr><tr style="text-align:left">
       <td>Quivering Palm (O8 Nec): <b>(2)</b> FILL</td>
     </tr><tr style="text-align:left">

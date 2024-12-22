@@ -6733,14 +6733,13 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Caster gains resistance 5 to non-force damage and may use Sustain to randomly teleport 10\' for 1 min (<b>heightened +2</b> gives +3 resistance)"',
   'Blur':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description=' +
-      '"FILL"',
+    'Description="Touched becomes concealed for 1 min"',
   'Breath Of Life':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -6802,7 +6801,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 60\'x30\' will shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</b> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)"',
   'Circle Of Protection':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -6816,21 +6815,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Creates an invisible sensor that allows the caster to listen from the target location for 10 min"',
   'Clairvoyance':
     'Level=4 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Creates an invisible sensor that allows the caster to see from the target location for 10 min"',
   'Cloak Of Colors':
     'Level=5 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd) for 1 min"',
   'Cloudkill':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -6844,7 +6843,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Teleports 2 targets within a 30\' radius (<b>save Will</b> negates; critical success allows target to control teleport) (<b>heightened +1</b> affects +1 target)"',
   'Color Spray':
     'Level=1 ' +
     'School=Illusion ' +
@@ -6879,14 +6878,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts confused for 1 min or until successful save (<b>save Will<</b> inflicts stunned 1; critical success negates; critical failure inflicts confused for 1 min with no further saves)"',
   'Contingency':
     'Level=7 ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Prepares a spell of up to level 4 to activate as a Reaction to a specified trigger (<b>heightened 8th</b> may prepare a 5th level spell; <b>9th</b> may prepare a 6th level spell; <b>10th</b> may  prepare a 7th level spell)"',
   'Continual Flame':
     'Level=2 ' +
     'School=Evocation ' +
@@ -8206,7 +8205,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R500\' Creates a sensor that allows the caster to see from the target location and which can be moved 30\' each rd while sustained"',
+      '"R500\' Creates an invisible sensor that allows the caster to see from the target location and which can be moved 30\' each rd while sustained"',
   'Punishing Winds':
     'Level=8 ' +
     'School=Evocation ' +
