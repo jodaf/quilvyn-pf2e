@@ -7779,7 +7779,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to determine the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)"',
   'Magic Fang':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7793,14 +7793,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 1 missile per action inflicts 1d4+1 force damage (<b>heightened +2</b> 1 additional missile per action)"',
+      '"R120\' 1 missile per action inflicts 1d4+1 force damage (<b>heightened +2</b> +1 missile per action)"',
   'Magic Mouth':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Illusory mouth appears on touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30\'"',
   'Magic Weapon':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7814,7 +7814,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Creates an entrance to a 40\'x40\'x40\' demiplane that may only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people"',
   "Mariner's Curse":
     'Level=5 ' +
     'School=Necromancy ' +
@@ -7842,7 +7842,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Transports target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on a DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} Survival or Perception check"',
   'Meld Into Stone':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7877,21 +7877,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target gains +4 saves vs. mental effects and automatic +1 spell level counteract attempts vs. detection, revelation, and scrying until next daily prep"',
   'Mind Probe':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Allows caster to gain answers from target, allowing a DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
   'Mind Reading':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Allows caster to learn surface thoughts of target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows target to learn caster\'s surface thoughts instead; critical failure allows sustaining without additional saves for 1 min)"',
   'Mindlink':
     'Level=1 ' +
     'School=Divination ' +
@@ -7912,21 +7912,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Creates three duplicates that have an equal chance of misdirecting attacks on caster for 1 min; any hit on a duplicate destroys it, and a critical success also hits the caster with a normal success"',
   'Misdirection':
     'Level=2 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Changes the magical aura of one target to copy a different target until next daily prep"',
   'Mislead':
     'Level=6 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Turns the caster invisible and creates an illusory duplicate while sustained up to 1 min"',
   'Modify Memory':
     'Level=4 ' +
     'School=Divination ' +
@@ -7988,7 +7988,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Causes a familiar target to have nightmares and awaken fatigued (<b>save Will</b> inflicts nightmares only; critical success negates; critical failure also inflicts drained 2 until no longer fatigued)"',
   'Nondetection':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -8022,7 +8022,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rounds, allowing additional saves to shorten or end the effects) (<b>heightened 7th</b> affects 10 targets)"',
   'Paranoia':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8057,14 +8057,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent successful Will) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 on a critical failure)"',
   'Phantom Pain':
     'Level=1 ' +
     'School=Illusion ' +
