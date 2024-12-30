@@ -6801,7 +6801,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 60\'x30\' will shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)"',
+      '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)"',
   'Circle Of Protection':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -7465,7 +7465,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched weapon becomes transluscent and can affect incorporeal creatures for 5 min"',
+      '"Touched weapon becomes translucent and can affect incorporeal creatures for 5 min"',
   'Ghoulish Cravings':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7639,7 +7639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusory image of a Large or smaller creature (AC %{spellDifficltyClass.Arcane||spellDifficultyClass.Occult}; +%{spellAttack.Arcane||spellAttack.Occult} attack; 1d4+%{spellModifier.Arcane||spellModifier.Occult} HP nonlethal mental damage; +%{(spellDifficultClass.Arcane||spellDifficultyClass.Occult)-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
+      '"R500\' Creates an illusory image of a Large or smaller creature (AC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult}; +%{spellAttack.Arcane||spellAttack.Occult} attack; 1d4+%{spellModifier.Arcane||spellModifier.Occult} HP nonlethal mental damage; +%{(spellDifficultClass.Arcane||spellDifficultyClass.Occult)-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'School=Illusion ' +
@@ -8113,21 +8113,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Permanently blinds a target of level 11 or lower, blinds level 12 or 13 for 1d4 min, or dazzles level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Kill':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Kills a target of level 14 or lower or less than 51 HP, inflicts 0 HP and dying 1 on level 15 with more than 50 HP, or inflicts 50 HP on level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Stun':
     'Level=8 ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on level 14 or 15, or stunned 1 on level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)"',
   'Prestidigitation':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8155,28 +8155,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R10\' 10\' radius emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Spray':
     'Level=7 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"30\' cone inflicts a random effect: (1) 50 HP fire; (2) 60 HP acid; (3) 70 HP electricity; (4) 30 HP poison and enfeebled 1 for 1 min; (5) <i>Flesh To Stone</i> effects; (6) <i>Warp Mind</i> effects; (7) slowed 1 for 1 min; two of the preceding effects (<b>save Reflex</b> (1), (2), (3), <b>Fortitude</b> (4), (5), or <b>Will</b> (6), (7) negates; critical failure on (7) also inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Wall':
     'Level=8 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Creates a 60\'x30\' wall that emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Private Sanctum':
     'Level=4 ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"100\' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep"',
   'Produce Flame':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -8190,7 +8190,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Creates an illusory copy of the caster, with the same AC and saves, that can be used as a source of spells while sustained up to 1 min or until damaged (<b>heightened +2</b> +10 min maximum sustain)"',
   'Protection':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -8312,7 +8312,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Creates an impassible force sphere around target with AC 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -8326,7 +8326,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Creates a 300\'x300\' mansion, with entrances protected by <i>Alarm</i> effects and containing provisions for up to 150 people, until next daily prep"',
   'Restoration':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8354,7 +8354,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Objects in a 20\'x40\' cylinder fall upward for 1 min"',
   'Revival':
     'Level=10 ' +
     'School=Necromancy ' +
@@ -8375,7 +8375,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Touched rope leads to an extradimensional space that hold 8 Medium creatures for 8 hr"',
   'Sanctified Ground':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -8396,7 +8396,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 20\' burst inflicts confused for 1d4 rd and dazzled in a 40\' radius while sustained up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts stunned for 1d4 rd, then confused for the remaining duration)"',
   'Scrying':
     'Level=6 ' +
     'School=Divination ' +
