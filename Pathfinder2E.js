@@ -8403,7 +8403,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Creates an invisible sensor that allows the caster to see a target creature while sustained up to 10 min (<b>save Will</b> negates; critical success allows target to glimpse caster; critical failure allows sensor to follow target; unmet target lowers DC by 2; unknown target lowers DC by 10)"',
   'Searing Light':
     'Level=3 ' +
     'School=Evocation ' +
@@ -8416,7 +8416,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Makes the text on a touched page appear as different text unless a specified password is spoken"',
   'See Invisibility':
     'Level=2 ' +
     'School=Divination ' +
@@ -8443,14 +8443,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Allows a counteract attempt on a damaging trigger spell at +2 the spell level; reduces the damage by half if successful"',
   'Shadow Walk':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster and 9 willing creatures to travel through the Shadow Plane at 20x Speed for 8 hr"',
   'Shape Stone':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -8517,7 +8517,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Transforms a non-magical object up to 80 Bulk and 20 cubic feet into the size of a coin with negligible Bulk until next daily prep"',
   'Sigil':
     'Level=Cantrip ' +
     'School=Transmutation ' +
@@ -8538,7 +8538,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' 5\' burst makes creatures unconscious for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a success Perception check"',
   'Slow':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -8585,7 +8585,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Allows the caster to deliver touch spells via a crawling, spectral hand for 1 min or until the hand takes damage, which inflicts 1d6 HP to the caster"',
   'Spell Immunity':
     'Level=4 ' +
     'School=Abjuration ' +
@@ -8599,7 +8599,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to use a Reaction to reflect spells via a successful counterspell for 1 hr"',
   'Spellwrack':
     'Level=6 ' +
     'School=Abjuration ' +
@@ -8716,7 +8716,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Target follows a reasonable, 1 min suggestion upon a specified trigger until next daily prep (<b>save Will</b> negates; critical success allows target to detect attempt; critical failure inflicts following suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)"',
   'Suggestion':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -8730,35 +8730,35 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Level -1 creature appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"R30\' Level -1 animal appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
   'Summon Celestial':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Conjured celestial up to level 5 fights foes while sustained up to 1 min (<b>heightened +1</b> summons creature of +2 level)"',
+      '"R30\' Level 5 celestial appears and fights for caster while sustained up to 1 min (<b>heightened +1</b> +2 level creature)"',
   'Summon Construct':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Level -1 construct appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
   'Summon Dragon':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Conjured dragon up to level 5 (<b>heightened +1</b> +2 level) fights foes while sustained up to 1 min"',
+      '"R30\' Level 5 dragon appears and fights for caster while sustained up to 1 min (<b>heightened +1</b> +2 level creature)"',
   'Summon Elemental':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Level -1 elemental appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 elemental; <b>3rd</b> level 2 elemental; <b>4th</b> level 3 elemental; <b>5th</b> level 5 elemental; <b>6th</b> level 7 elemental; <b>7th</b> level 9 elemental; <b>8th</b> level 11 elemental; <b>9th</b> level 13 elemental; <b>10th</b> level 15 elemental)"',
+      '"R30\' Level -1 elemental appears and fights for caster while sustained up to 1 min (<b>heightened 2nd</b> level 1 elemental; <b>3rd</b> level 2 elemental; <b>4th</b> level 3 elemental; <b>5th</b> level 5 elemental; <b>6th</b> level 7 elemental; <b>7th</b> level 9 elemental; <b>8th</b> level 11 elemental; <b>9th</b> level 13 elemental; <b>10th</b> level 15 elemental)"',
   'Summon Entity':
     'Level=5 ' +
     'School=Conjuration ' +
@@ -8842,28 +8842,28 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Allows caster to move an object up to 80 Bulk and 20\' dimensions 20\' per rd whie sustained up to 1 min"',
   'Telekinetic Maneuver':
     'Level=2 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Allows the caster to use a spell attack to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=Cantrip ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.Arcane||spellModifier.Occult} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster and 4 willing creatures to communicate telepathically for 8 hr"',
   'Telepathic Demand':
     'Level=9 ' +
     'School=Enchantment ' +
@@ -8877,21 +8877,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to communicate telepathically with any creature in a 30\' radius (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"FILL"',
+      '"Transports the caster and 4 willing creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>9th</b> transports to any planet in the same galaxy)"',
   'Time Stop':
     'Level=10 ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Allows the caster to perform 3 rd of actions that don\'t affect others until the spell ends"',
   'Tongues':
     'Level=5 ' +
     'School=Divination ' +
@@ -8905,7 +8905,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Inflicts stupefied 2 (<b>save Will</b> negates; critical failure iflicts stupefied 4)"',
   'Tree Shape':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -8939,7 +8939,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R60\' Allies negate concealed or hidden and gain the best of two rolls on the next attack within 1 rd on a designated creature"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'School=Enchantment ' +
