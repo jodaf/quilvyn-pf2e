@@ -6566,7 +6566,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d6 HP acid (critical success also inflicts 1 HP persistent acid) and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.Arcane||spellModifier.Primal} HP initial, 5 HP persistent, and 4 HP splash)"',
+      '"R30\' Spell attack inflicts 1d6 HP acid (critical success also inflicts 1 HP persistent acid) and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.%tradition} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.%tradition} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.%tradition} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.%tradition} HP initial, 5 HP persistent, and 4 HP splash)"',
   'Aerial Form':
     'Level=4 ' +
     'School=Transmutation ' +
@@ -6705,7 +6705,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} DC on an unarmed attack or inflicting 12 HP vs. a %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} AC"',
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a %{spellDifficultyClass.%tradition} DC on an unarmed attack or inflicting 12 HP vs. a %{spellDifficultyClass.%tradition} AC"',
   'Blade Barrier':
     'Level=6 ' +
     'School=Evocation ' +
@@ -6746,7 +6746,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Prevents target death and restores 4d8+%{spellModifier.Divine} HP"',
+      '"R60\' Prevents target death and restores 4d8+%{spellModifier.%tradition} HP"',
   'Burning Hands':
     'Level=1 ' +
     'School=Evocation ' +
@@ -6787,7 +6787,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 1d4+%{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
+      '"Touch inflicts 1d4+%{spellModifier.%tradition} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
   'Chilling Darkness':
     'Level=3 ' +
     'School=Evocation ' +
@@ -6966,7 +6966,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Target suffers %{spellModifier.Arcane||spellModifier.Divine||spellModifier.Occult} HP mental (<b>save Will</b> inflicts half HP; critical success negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
+      '"R60\' Target suffers %{spellModifier.%tradition} HP mental (<b>save Will</b> inflicts half HP; critical success negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7089,7 +7089,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d6+%{spellModifier.Divine||spellModifier.Primal||0} HP positive and enfeebled 1 for 1 rd on target undead (<b>save Fortitude</b> inflicts HP only) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Inflicts 1d6+%{spellModifier.%tradition} HP positive and enfeebled 1 for 1 rd on target undead (<b>save Fortitude</b> inflicts HP only) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Disrupting Weapons':
     'Level=1 ' +
     'School=Necromancy ' +
@@ -7124,7 +7124,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Ranged attack inflicts 1d4+%{spellModifier.Divine} HP of chosen alignment (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Ranged attack inflicts 1d4+%{spellModifier.%tradition} HP of chosen alignment (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Divine Vessel':
     'Level=7 ' +
     'School=Transmutation ' +
@@ -7215,7 +7215,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} electricity up on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Inflicts 1d4+%{spellModifier.%tradition} electricity up on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Form':
     'Level=5 ' +
     'School=Transmutation ' +
@@ -7292,7 +7292,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains %{6+(spellModifier.Arcane||spellModifier.Occult)} temporary HP for 8 hr (<b>heightened +1</b> gives +3 HP)"',
+      '"Caster gains %{6+spellModifier.%tradition} temporary HP for 8 hr (<b>heightened +1</b> gives +3 HP)"',
   'False Vision':
     'Level=5 ' +
     'School=Illusion ' +
@@ -7639,7 +7639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusory image of a Large or smaller creature (AC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult}; +%{spellAttack.Arcane||spellAttack.Occult} attack; 1d4+%{spellModifier.Arcane||spellModifier.Occult} HP nonlethal mental damage; +%{(spellDifficultClass.Arcane||spellDifficultyClass.Occult)-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
+      '"R500\' Creates an illusory image of a Large or smaller creature (AC %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'School=Illusion ' +
@@ -7751,7 +7751,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched latch or lock opens only for caster until next daily prep; a successful DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Divine||spellDifficultyClass.Occult} Athletics or Thievery check (or +4 lock DC if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
+      '"Touched latch or lock opens only for caster until next daily prep; a successful DC %{spellDifficultyClass.%tradition} Athletics or Thievery check (or +4 lock DC if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
   'Longstrider':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7842,7 +7842,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transports target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on a DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} Survival or Perception check"',
+      '"R30\' Transports target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on a DC %{spellDifficultyClass.%tradition} Survival or Perception check"',
   'Meld Into Stone':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7884,7 +7884,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Allows caster to gain answers from target, allowing a DC %{spellDifficultyClass.Arcane||spellDifficultyClass.Occult} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
+      '"R30\' Allows caster to gain answers from target, allowing a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
   'Mind Reading':
     'Level=3 ' +
     'School=Divination ' +
@@ -8183,7 +8183,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP fire (double HP plus 1d4 persistent fire damage on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)"',
+      '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP fire (double HP plus 1d4 persistent fire damage on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)"',
   'Project Image':
     'Level=7 ' +
     'School=Illusion ' +
@@ -8244,7 +8244,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 1d4+%{spellModifier.Arcane||spellModifier.Primal} HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R120\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Read Aura':
     'Level=Cantrip ' +
     'School=Divination ' +
@@ -8856,7 +8856,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.Arcane||spellModifier.Occult} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"Allows the caster to use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
     'School=Divination ' +
@@ -9121,7 +9121,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"+%{spellAttackModifier.Divine} attacks by force weapon inflict 3d10+%{spellModifier.Divine} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
+      '"+%{spellAttackModifier.%tradition} attacks by force weapon inflict 3d10+%{spellModifier.%tradition} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'School=Evocation ' +
@@ -9481,7 +9481,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target can speak only at a whisper, requiring others 10\'+ away to succeed on a DC %{spellDifficultyClass.Divine} Perception to hear, for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure effects last 10 min)"',
+      '"R30\' Target can speak only at a whisper, requiring others 10\'+ away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure effects last 10 min)"',
   'Glimpse The Truth':
     'Level=4 ' +
     'School=Divination ' +
@@ -10222,7 +10222,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R500\' Allows a remote attack with a melee weapon%{spellModifier.Arcane>strengthModifier?\', +\'+spellModifier.Arcane-strengthModifier+\' damage\':spellModifier.Arcane<strengthModifier?\', \'+spellModifier.Arcane-strengthModifier+\' damage\':\'\'}"',
+      '"R500\' Allows a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', +\'+spellModifier.%tradition-strengthModifier+\' damage\':spellModifier.%tradition<strengthModifier?\', \'+spellModifier.%tradition-strengthModifier+\' damage\':\'\'}"',
   'Invisibility Cloak':
     'Level=4 ' +
     'School=Illusion ' +
@@ -10957,7 +10957,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
         level,
         t,
         QuilvynUtils.getAttrValue(attrs, 'Cast'),
-        QuilvynUtils.getAttrValue(attrs, 'Description')
+        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
       rules.addChoice('spells', spellName, attrs);
     });
@@ -13618,7 +13618,7 @@ Pathfinder2E.featureSpell = function(
     name + ' (' + tradition.charAt(0) + level + ' ' +
     school.substring(0, 3) + ')';
   Pathfinder2E.spellRules
-    (rules, spellName, school, level, tradition, cast, description);
+    (rules, spellName, school, level, tradition, cast, description.replaceAll('%tradition', tradition));
   if(note)
     rules.defineRule('spells.' + spellName, note, '=', expr || '1');
 };
