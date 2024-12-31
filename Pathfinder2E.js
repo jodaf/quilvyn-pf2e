@@ -3428,7 +3428,7 @@ Pathfinder2E.FEATURES = {
     'Note="May administer a true elixir of life to restore life to a creature dead for up to 2 rd"',
   'Perfect Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Bombs require a critical save to avoid effects"',
+    'Note="Debilitating Bombs require a critical success to avoid effects"',
   "Craft Philosopher's Stone":
     'Section=skill ' +
     'Note="Knows the formula for creating a philosopher\'s stone"',
@@ -4505,7 +4505,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Expert (Will)",' +
-      '"Successes on Will saves vs. fear are critical saves/Reduces value of frightened condition by 1"',
+      '"Successes on Will saves vs. fear are critical successes/Reduces value of frightened condition by 1"',
   'Combat Flexibility':
     'Section=combat ' +
     'Note="May use a chosen fighter feat of up to 8th level each day"',
@@ -6773,7 +6773,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical save ends chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
+      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical success ends chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -7264,7 +7264,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Fascinates creatures within 120\' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical save target notices attempt; critical failure allows no save for disagreement)"',
+      '"Fascinates creatures within 120\' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical success target notices attempt; critical failure allows no save for disagreement)"',
   'Ethereal Jaunt':
     'Level=7 ' +
     'School=Conjuration ' +
@@ -8946,7 +8946,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last 3 rd and target spends 1 action each turn dancing; critical success negates; critical failure effects last 1 min and target spends all actions each rd dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -8974,7 +8974,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R100\' 5 targets in a 20\' burst can see a 6th target for 1 hr (<b>save Will</b> effects last 1 min; critical success negates)"',
   'Unseen Servant':
     'Level=1 ' +
     'School=Conjuration ' +
@@ -9016,7 +9016,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' 10\' burst dazzles and blinds creatures while sustained up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min)"',
   'Visions Of Danger':
     'Level=7 ' +
     'School=Illusion ' +
@@ -9058,7 +9058,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"R30\' Creates an invisible 50\'x20\' wall with AC 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
   'Wall Of Ice':
     'Level=5 ' +
     'School=Evocation ' +
@@ -9100,7 +9100,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure effects are permanent)"',
   'Water Breathing':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -9142,7 +9142,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"FILL"',
+      '"R120\' Inflicts 16d6 HP mental and frightened 2 (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double damage, frightened 2 and fleeing (critical success negates fleeing) on success)"',
   'Wind Walk':
     'Level=8 ' +
     'School=Transmutation ' +
@@ -9156,7 +9156,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"FILL"',
+      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
   'Zealous Conviction':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -10264,7 +10264,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"FILL"',
+      '"R500\' Creates an invisible sensor that allows the caster to see from the target location for 1 hr"',
   'Warped Terrain':
     'Level=1 ' +
     'School=Illusion ' +
