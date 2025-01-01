@@ -377,7 +377,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Air Bubble (A1 Con): <b>(R)</b> R60' Allows target to breathe normally in any environment for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Alarm (A1 Abj): <b>(10 min)</b> 20' burst triggers choice of mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr</td>
+      <td>Alarm (A1 Abj): <b>(10 min)</b> 20' burst triggers choice of a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr</td>
     </tr><tr style="text-align:left">
       <td>Ant Haul (A1 Tra): <b>(2)</b> Touched can carry +3 Bulk without encumbrance and +6 Bulk maximum for 8 hr</td>
     </tr><tr style="text-align:left">
@@ -385,13 +385,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Augment Summoning (A1 Con): <b>(1)</b> R30' Target summoned creature gains +1 to all checks for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Baleful Polymorph (A6 Tra): <b>(2)</b> R30' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely, repeating save each rd)</td>
+      <td>Baleful Polymorph (A6 Tra): <b>(2)</b> R30' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely, allowing a new save each rd)</td>
     </tr><tr style="text-align:left">
       <td>Banishment (A5 Abj): <b>(2)</b> R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Bind Undead (A3 Nec): <b>(2)</b> R30' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day</td>
     </tr><tr style="text-align:left">
-      <td>Black Tentacles (A5 Con): <b>(3)</b> R120' Successful attack vs. Fortitude DC in a 20' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a 29 DC on an unarmed attack or inflicting 12 HP vs. a 29 AC</td>
+      <td>Black Tentacles (A5 Con): <b>(3)</b> R120' Successful attack vs. Fortitude DC in a 20' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a DC 29 on an unarmed attack or inflicting 12 HP vs. an AC 29</td>
     </tr><tr style="text-align:left">
       <td>Blindness (A3 Nec): <b>(2)</b> R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
@@ -409,9 +409,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Charm (A1 Enc): <b>(2)</b> R30' Target becomes friendly (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful)</td>
     </tr><tr style="text-align:left">
-      <td>Charming Words (A1 Enc): <b>(1)</b> R30' Prevents target from taking hostile actions against caster for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. caster; critical success negates; critical failure inflicts stunned 1)</td>
+      <td>Charming Words (A1 Enc): <b>(1)</b> R30' Prevents target from taking hostile actions against the caster for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. caster; critical success negates; critical failure inflicts stunned 1)</td>
     </tr><tr style="text-align:left">
-      <td>Chill Touch (A0 Nec): <b>(2)</b> Touch inflicts 1d4+3 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
+      <td>Chill Touch (A0 Nec): <b>(2)</b> Touch inflicts 1d4+3 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on an undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
     </tr><tr style="text-align:left">
       <td>Chromatic Wall (A5 Abj): <b>(3)</b> R120' 60'x30' wall shines 20' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)</td>
     </tr><tr style="text-align:left">
@@ -421,21 +421,21 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cloak Of Colors (A5 Ill): <b>(2)</b> R30' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd) for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Cloudkill (A5 Nec): <b>(3)</b> R120' Cloud moves 10' away from caster each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)</td>
+      <td>Cloudkill (A5 Nec): <b>(3)</b> R120' Creates a cloud that moves 10' away from caster each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Collective Transposition (A6 Con): <b>(2)</b> Teleports 2 targets within a 30' radius (<b>save Will</b> negates; critical success allows target to control teleport) (<b>heightened +1</b> affects +1 target)</td>
     </tr><tr style="text-align:left">
-      <td>Color Spray (A1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> dazzled 1 rd; critical success negates; critical failure inflicts blinded for 1 min)</td>
+      <td>Color Spray (A1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)</td>
     </tr><tr style="text-align:left">
       <td>Command (A1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on next turn to obey)</td>
     </tr><tr style="text-align:left">
       <td>Comprehend Language (A2 Div): <b>(2)</b> R30' Target can understand choice of heard language for 1 hr (<b>heightened 3rd</b> may also speak language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Cone Of Cold (A5 Evo): <b>(2)</b> R60' cone inflicts 12d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Cone Of Cold (A5 Evo): <b>(2)</b> 60' cone inflicts 12d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Confusion (A4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts confused for 1 min with no further saves)</td>
+      <td>Confusion (A4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further saves)</td>
     </tr><tr style="text-align:left">
-      <td>Contingency (A7 Abj): <b>(10 min)</b> Prepares a spell of up to level 4 to activate as a Reaction to a specified trigger (<b>heightened 8th</b> may prepare a 5th level spell; <b>9th</b> may prepare a 6th level spell; <b>10th</b> may  prepare a 7th level spell)</td>
+      <td>Contingency (A7 Abj): <b>(10 min)</b> Prepares a spell of up to level 4 to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)</td>
     </tr><tr style="text-align:left">
       <td>Continual Flame (A2 Evo): <b>(3)</b> Touched object glows as a torch until dismissed</td>
     </tr><tr style="text-align:left">
@@ -445,9 +445,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Create Water (A1 Con): <b>(2)</b> Creates 2 gallons of water that remains for 1 day</td>
     </tr><tr style="text-align:left">
-      <td>Creation (A4 Con): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made from vegetable matter (<b>heightened 5th</b> may create an object of metal and common minerals)</td>
+      <td>Creation (A4 Con): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of vegetable matter (<b>heightened 5th</b> allows an object made of metal and common minerals)</td>
     </tr><tr style="text-align:left">
-      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents reactions and inflicts slowed 1 for 1 min <b>Will</b> slowed for 1 turn; critical success negates; critical failure inflicts slowed for 1 min)</td>
+      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents reactions and inflicts slowed 1 for 1 min (<b>save Will</b> inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min)</td>
     </tr><tr style="text-align:left">
       <td>Dancing Lights (A0 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that may be moved 60' each rd while sustained</td>
     </tr><tr style="text-align:left">
@@ -461,11 +461,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Detect Magic (A0 Div): <b>(2)</b> Allows caster to discern the presence of magic in a 30' radius and detect illusions of up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)</td>
     </tr><tr style="text-align:left">
-      <td>Detect Scrying (A4 Div): <b>(2)</b> Caster learns of scrying effects in a 30' emanation; also the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)</td>
+      <td>Detect Scrying (A4 Div): <b>(2)</b> Caster learns of scrying effects in a 30' emanation, and the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
       <td>Dimension Door (A4 Con): <b>(2)</b> R120' Teleports caster to a visible target location</td>
     </tr><tr style="text-align:left">
-      <td>Dimensional Anchor (A4 Abj): <b>(2)</b> R30' Allows counteract attempt vs. any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last 1 min; critical success negates; critical failure effects last 1 hr)</td>
+      <td>Dimensional Anchor (A4 Abj): <b>(2)</b> R30' Allows a counteract attempt vs. any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last 1 min; critical success negates; critical failure effects last 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Dimensional Lock (A7 Abj): <b>(2)</b> R120' 60' burst allows counteract attempts vs. any teleportation or planar travel until next daily prep</td>
     </tr><tr style="text-align:left">
@@ -475,37 +475,37 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Discern Lies (A4 Div): <b>(2)</b> Caster gains +4 Perception vs. lies for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Discern Location (A8 Div): <b>(10 min)</b> Caster knows exact location of specified familiar creature or object for 10 min</td>
+      <td>Discern Location (A8 Div): <b>(10 min)</b> Caster knows exact location of a specified familiar creature or object for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Disintegrate (A6 Evo): <b>(2)</b> R120' Spell attack inflicts 12d10 HP, reducing target to dust at 0 HP, or destroys non-artifact 10' cube object (<b>heightened +1</b> inflicts +2d10 HP)</td>
+      <td>Disintegrate (A6 Evo): <b>(2)</b> R120' Spell attack inflicts 12d10 HP, reducing target to dust at 0 HP, or destroys a non-artifact 10' cube object (<b>heightened +1</b> inflicts +2d10 HP)</td>
     </tr><tr style="text-align:left">
       <td>Disjunction (A9 Abj): <b>(2)</b> R120' Allows a counteract check to deactivate a non-artifact magic item; critical success destroys it</td>
     </tr><tr style="text-align:left">
-      <td>Dispel Magic (A2 Abj): <b>(2)</b> R120' Allows a counteract check to remove 1 spell effect from target or to make a magic item inert for 10 min</td>
+      <td>Dispel Magic (A2 Abj): <b>(2)</b> R120' Allows a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Diviner's Sight (A1 Div): <b>(1)</b> R30' Target may substitute caster d20 roll for a saving throw or skill check within 1 rd</td>
+      <td>Diviner's Sight (A1 Div): <b>(1)</b> R30' Target may substitute caster's d20 roll for a saving throw or skill check within 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Dominate (A6 Enc): <b>(2)</b> R30' Caster controls actions of target until next daily prep; successful save at end of a turn ends (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts control with subsequent saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)</td>
+      <td>Dominate (A6 Enc): <b>(2)</b> R30' Caster controls the actions of the target until next daily prep; a successful save at end of each turn ends (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts control with subsequent saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Dragon Form (A6 Tra): <b>(2)</b> Caster becomes choice of Large dragon with 10 temporary HP, AC 30, +22 attack, +6 damage, a breath weapon, resistance 10 to breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5' reach, 15 temporary HP, AC 33, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
+      <td>Dragon Form (A6 Tra): <b>(2)</b> Caster becomes choice of Large dragon with 10 temporary HP, AC 30, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5' reach, 15 temporary HP, AC 33, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
     </tr><tr style="text-align:left">
       <td>Dread Aura (A4 Enc): <b>(2)</b> 30' emanation inflicts frightened 1 on foes while sustained up to 1 min</td>
     </tr><tr style="text-align:left">
       <td>Dream Council (A8 Ill): <b>(10 min)</b> Allows 12 known targets to communicate through a shared dream for 1 hr</td>
     </tr><tr style="text-align:left">
-      <td>Dream Message (A3 Enc): <b>(10 min)</b> Allows caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b> allows sending speech to 10 familiar creatures)</td>
+      <td>Dream Message (A3 Enc): <b>(10 min)</b> Allows the caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b> allows sending speech to 10 familiar creatures)</td>
     </tr><tr style="text-align:left">
-      <td>Drop Dead (A5 Ill): <b>(R)</b> R120' Upon receiving a wound, target becomes invisible and replaced by an illusionary corpse while sustained up to 1 min; a hostile act by target ends (<b>heightened 7th</b> hostile acts do not end)</td>
+      <td>Drop Dead (A5 Ill): <b>(R)</b> R120' Upon receiving a wound, the target becomes invisible and is replaced by an illusionary corpse while sustained up to 1 min; a hostile act by the target ends (<b>heightened 7th</b> a hostile act does not end)</td>
     </tr><tr style="text-align:left">
-      <td>Duplicate Foe (A7 Con): <b>(3)</b> R30' Creates a copy of a target up to level 15 under caster's control with 70 HP and no special abilities while sustained up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP each turn (<b>save Fortitude</b> copy inflicts half damage and lasts 2 rd; critical success negates) (<b>heightened +1</b> may create a copy that has 80 HP of a target up to level 17)</td>
+      <td>Duplicate Foe (A7 Con): <b>(3)</b> R30' Creates a copy of a target up to level 15 under the caster's control with 70 HP and no special abilities while sustained up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP each turn (<b>save Fortitude</b> copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> may create a copy of a target up to level 17 with 80 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Earthbind (A3 Tra): <b>(2)</b> R120' Brings flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure lasts 1 min)</td>
+      <td>Earthbind (A3 Tra): <b>(2)</b> R120' Brings a flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure effects last 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Earthquake (A8 Evo): <b>(2)</b> R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP; critical failure inflicts 40' fall)</td>
+      <td>Earthquake (A8 Evo): <b>(2)</b> R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40' fall)</td>
     </tr><tr style="text-align:left">
       <td>Eclipse Burst (A7 Nec): <b>(2)</b> R500' 60' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)</td>
     </tr><tr style="text-align:left">
-      <td>Electric Arc (A0 Evo): <b>(2)</b> R30' Inflicts 1d4+3 electricity up on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)</td>
+      <td>Electric Arc (A0 Evo): <b>(2)</b> R30' Inflicts 1d4+3 electricity on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
       <td>Elemental Form (A5 Tra): <b>(2)</b> Caster becomes choice of Medium elemental with 10 temporary HP, AC 31, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> Large creature with 10' reach, 15 temporary HP, AC 34, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> Huge creature with 15' reach, 20 temporary HP, AC 34, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)</td>
     </tr><tr style="text-align:left">
@@ -519,13 +519,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Enlarge (A2 Tra): <b>(2)</b> R30' Willing target becomes Large, gaining 10' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining 10' reach and +4 melee damage; <b>8th</b> affects 10 creatures)</td>
     </tr><tr style="text-align:left">
-      <td>Enthrall (A3 Enc): <b>(2)</b> Fascinates creatures within 120' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical success target notices attempt; critical failure allows no save for disagreement)</td>
+      <td>Enthrall (A3 Enc): <b>(2)</b> Fascinates creatures within 120' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical success target notices attempt; critical failure allows no subsequent save for disagreement)</td>
     </tr><tr style="text-align:left">
       <td>False Life (A2 Nec): <b>(2)</b> Caster gains 9 temporary HP for 8 hr (<b>heightened +1</b> gives +3 HP)</td>
     </tr><tr style="text-align:left">
       <td>False Vision (A5 Ill): <b>(10 min)</b> Allows the caster to control the image shown by scrying a 100' burst until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Fear (A1 Enc): <b>(2)</b> R30' Target suffers frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and target flees for 1 rd) (<b>heightened 3rd</b> affects 5 targets)</td>
+      <td>Fear (A1 Enc): <b>(2)</b> R30' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3, and the target flees for 1 rd) (<b>heightened 3rd</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
       <td>Feather Fall (A1 Abj): <b>(R)</b> R60' Falling target slows to 60' per rd and takes no damage from fall for 1 min or until landing</td>
     </tr><tr style="text-align:left">
@@ -543,19 +543,19 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Fleet Step (A1 Tra): <b>(2)</b> Caster gains +30' Speed for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Flesh To Stone (A6 Tra): <b>(2)</b> R120' Target suffers slowed 1, plus an additional slowed 1 on a failed save each rd until immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts slowed 2)</td>
+      <td>Flesh To Stone (A6 Tra): <b>(2)</b> R120' Inflicts slowed 1, plus an additional slowed 1 on a failed save each rd until target becomes immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts slowed 2)</td>
     </tr><tr style="text-align:left">
       <td>Floating Disk (A1 Con): <b>(2)</b> Creates an invisible 2' radius disk that follows the caster and holds 5 Bulk for 8 hr</td>
     </tr><tr style="text-align:left">
       <td>Fly (A4 Tra): <b>(2)</b> Touched gains a fly Speed of the greater of its Speed or 20' for 5 min (<b>heightened 7th</b> effects last 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Force Bolt (A1 Evo): <b>(1)</b> R30' Inflicts 1d4+1 force damage (<b>heightened +2</b> +1d4+1 HP)</td>
+      <td>Force Bolt (A1 Evo): <b>(1)</b> R30' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)</td>
     </tr><tr style="text-align:left">
       <td>Foresight (A9 Div): <b>(2)</b> Touched gains +2 initiative and negates flat-footed vs. undetected and flanking creatures, and caster may use a Reaction to give the target the better of two rolls in response to danger, for 1 hr</td>
     </tr><tr style="text-align:left">
       <td>Freedom Of Movement (A4 Abj): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Gaseous Form (A4 Tra): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10' fly Speed  for 5 min or until target or caster dismisses</td>
+      <td>Gaseous Form (A4 Tra): <b>(2)</b> Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10' fly Speed  for 5 min or until the target or the caster ends the spell</td>
     </tr><tr style="text-align:left">
       <td>Gate (A10 Con): <b>(2)</b> R120' Opens a 40' radius gate to another plane while sustained up to 1 min</td>
     </tr><tr style="text-align:left">
@@ -565,7 +565,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Ghostly Weapon (A3 Tra): <b>(2)</b> Touched weapon becomes translucent and can affect incorporeal creatures for 5 min</td>
     </tr><tr style="text-align:left">
-      <td>Glitterdust (A2 Evo): <b>(2)</b> R120' Inflicts dazzled and negates invisibility for 1 min upon creatures in a 10' burst (<b>save Reflex</b> negates invisibility only for 2 rd; critical success negates; critical failure blinds for 1 rd and dazzles and negates invisibility for 10 min)</td>
+      <td>Glitterdust (A2 Evo): <b>(2)</b> R120' 10' burst inflicts dazzled and negates invisibility for 1 min (<b>save Reflex</b> negates invisibility only for 2 rd; critical success negates; critical failure blinds for 1 rd and dazzles and negates invisibility for 10 min)</td>
     </tr><tr style="text-align:left">
       <td>Globe Of Invulnerability (A4 Abj): <b>(2)</b> 10' burst inflicts <i>Dispel Magic</i> effects for 10 min</td>
     </tr><tr style="text-align:left">
@@ -573,7 +573,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Goblin Pox (A1 Nec): <b>(2)</b> Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 day (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)</td>
     </tr><tr style="text-align:left">
-      <td>Grease (A1 Con): <b>(2)</b> R30' 4 5' squares cause falls or 1 target object inflicts a -2 penalty to checks for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure inflicts dropped object)</td>
+      <td>Grease (A1 Con): <b>(2)</b> R30' 4 5' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure inflicts dropped object)</td>
     </tr><tr style="text-align:left">
       <td>Grim Tendrils (A1 Nec): <b>(2)</b> 30' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half negative HP only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed</td>
     </tr><tr style="text-align:left">
@@ -583,7 +583,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hallucinatory Terrain (A4 Ill): <b>(10 min)</b> R500' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion may mask or incorporate structures)</td>
     </tr><tr style="text-align:left">
-      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Allows a remote attack with a melee weapon</td>
+      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Allows the caster to make a remote attack with a melee weapon</td>
     </tr><tr style="text-align:left">
       <td>Haste (A3 Tra): <b>(2)</b> R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
     </tr><tr style="text-align:left">
@@ -593,27 +593,27 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Humanoid Form (A2 Tra): <b>(2)</b> Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> may transform into a Large humanoid)</td>
     </tr><tr style="text-align:left">
-      <td>Hydraulic Push (A1 Evo): <b>(2)</b> R60' Ranged attack inflicts 3d6B HP and 5' push (critical success inflicts 6d6B HP and 10' push) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Hydraulic Push (A1 Evo): <b>(2)</b> R60' Ranged attack inflicts 3d6B HP and a 5' push (critical success inflicts 6d6B HP and a 10' push) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Hypnotic Pattern (A3 Ill): <b>(2)</b> R120' 10' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of reactions)</td>
+      <td>Hypnotic Pattern (A3 Ill): <b>(2)</b> R120' 10' burst inflicts dazzled and fascinated while sustained up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of Reactions)</td>
     </tr><tr style="text-align:left">
       <td>Illusory Creature (A2 Ill): <b>(2)</b> R500' Creates an illusory image of a Large or smaller creature (AC 29; +19 attack; 1d4+3 HP nonlethal mental damage; +19 saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Disguise (A1 Ill): <b>(2)</b> Illusion makes caster look differently for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)</td>
+      <td>Illusory Disguise (A1 Ill): <b>(2)</b> Illusion makes the caster appear different for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)</td>
     </tr><tr style="text-align:left">
       <td>Illusory Object (A1 Ill): <b>(2)</b> R500' Creates an illusion of a stationary object in a 20' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells; <b>5th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Scene (A5 Ill): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures, or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> effects are permanent)</td>
+      <td>Illusory Scene (A5 Ill): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
       <td>Implosion (A9 Evo): <b>(2)</b> R30' Inflicts 75 HP on 1 target each rd while sustained up to 1 min (<b>save basic Fortitude</b>)</td>
     </tr><tr style="text-align:left">
-      <td>Invisibility (A2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> lasts 1 min, hostile action does not end)</td>
+      <td>Invisibility (A2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> lasts 1 min, and hostile action does not end)</td>
     </tr><tr style="text-align:left">
       <td>Invisibility Cloak (A4 Ill): <b>(2)</b> Caster becomes invisible for 10 min or until it uses a hostile action (<b>heightened 6th</b> lasts 10 min; <b>8th</b> lasts 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Invisibility Sphere (A3 Ill): <b>(2)</b> 10' emanation makes creatures within invisible for 10 min or until any affected perform a hostile act (<b>heightened 5th</b> lasts for 1 rd)</td>
+      <td>Invisibility Sphere (A3 Ill): <b>(2)</b> 10' emanation makes creatures within invisible for 10 min or until any affected performs a hostile act (<b>heightened 5th</b> lasts for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Item Facade (A1 Ill): <b>(2)</b> Makes target object up to 10' cube to decrepit or perfect for 1 hr (<b>heightened 2nd</b> lasts 24 hr; <b>3rd</b> effects are permanent)</td>
+      <td>Item Facade (A1 Ill): <b>(2)</b> Makes the target object up to a 10' cube appear decrepit or perfect for 1 hr (<b>heightened 2nd</b> lasts 24 hr; <b>3rd</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
       <td>Jump (A1 Tra): <b>(1)</b> Caster may jump 30' (<b>heightened 3rd</b> affects creature touched and lasts for 1 min)</td>
     </tr><tr style="text-align:left">
@@ -621,7 +621,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Levitate (A3 Evo): <b>(2)</b> Caster may use an action to move the touched object or willing creature up or down 10' for 5 min</td>
     </tr><tr style="text-align:left">
-      <td>Life Siphon (A4 Nec): <b>(R)</b> When casting a necromancy spell, gives the caster temporary HP equal to 1d8 HP per spell level</td>
+      <td>Life Siphon (A4 Nec): <b>(R)</b> Gives the caster temporary HP equal to 1d8 HP per spell level as a Reaction to casting a necromancy spell</td>
     </tr><tr style="text-align:left">
       <td>Light (A0 Evo): <b>(2)</b> Touched object lights a 20' radius until next daily prep (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
@@ -633,43 +633,43 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Longstrider (A1 Tra): <b>(2)</b> Caster gains +10' Speed for 1 hr (<b>heightened 2nd</b> effects last 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Mage Armor (A1 Abj): <b>(2)</b> Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also +1 saves; <b>6th</b> +2 AC)</td>
+      <td>Mage Armor (A1 Abj): <b>(2)</b> Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 AC)</td>
     </tr><tr style="text-align:left">
-      <td>Mage Hand (A0 Evo): <b>(2)</b> R30' Allows caster to move a light object 20'/rd while sustained (<b>heightened 3rd</b> may move Bulk 1 object; <b>5th</b> move 60'/rd; <b>7th</b> may move Bulk 2 object)</td>
+      <td>Mage Hand (A0 Evo): <b>(2)</b> R30' Allows the caster to move a light object 20' per rd while sustained (<b>heightened 3rd</b> may move a Bulk 1 object; <b>5th</b> may move 60' per rd; <b>7th</b> may move a Bulk 2 object)</td>
     </tr><tr style="text-align:left">
-      <td>Magic Aura (A1 Ill): <b>(1 min)</b> Allows the caster to determine the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)</td>
+      <td>Magic Aura (A1 Ill): <b>(1 min)</b> Allows the caster to alter the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)</td>
     </tr><tr style="text-align:left">
-      <td>Magic Missile (A1 Evo): <b>(1)</b> R120' 1 missile per action inflicts 1d4+1 force damage (<b>heightened +2</b> +1 missile per action)</td>
+      <td>Magic Missile (A1 Evo): <b>(1)</b> R120' 1 missile per action inflicts 1d4+1 HP force (<b>heightened +2</b> +1 missile per action)</td>
     </tr><tr style="text-align:left">
-      <td>Magic Mouth (A2 Ill): <b>(2)</b> Illusory mouth appears on touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30'</td>
+      <td>Magic Mouth (A2 Ill): <b>(2)</b> Illusory mouth appears on a touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30'</td>
     </tr><tr style="text-align:left">
       <td>Magic Weapon (A1 Tra): <b>(2)</b> Touched weapon gains +1 attack and a second damage die for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Magnificent Mansion (A7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x40' demiplane that may only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
     </tr><tr style="text-align:left">
-      <td>Mariner's Curse (A5 Nec): <b>(2)</b> Touched suffers sickened 1, plus slowed 1 on the open sea, until curse is removed (<b>save Will</b> inflicts sickened 1 until condition is reduced; critical success negates; critical success inflicts sickened 2)</td>
+      <td>Mariner's Curse (A5 Nec): <b>(2)</b> Touched suffers sickened 1, plus slowed 1 on the open sea, until the curse is removed (<b>save Will</b> inflicts sickened 1 until the condition is reduced; critical success negates; critical success inflicts sickened 2)</td>
     </tr><tr style="text-align:left">
       <td>Mask Of Terror (A7 Ill): <b>(2)</b> R30' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
       <td>Massacre (A9 Nec): <b>(2)</b> 60' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line (<b>save Fort</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)</td>
     </tr><tr style="text-align:left">
-      <td>Maze (A8 Con): <b>(2)</b> R30' Transports target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on a DC 29 Survival or Perception check</td>
+      <td>Maze (A8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on a DC 29 Survival or Perception check</td>
     </tr><tr style="text-align:left">
-      <td>Meld Into Stone (A3 Tra): <b>(2)</b> Caster may enter touched stone, retaining the ability to hear outside sounds, for 10 min</td>
+      <td>Meld Into Stone (A3 Tra): <b>(2)</b> Allows the caster to enter the touched stone, retaining the ability to hear outside sounds, for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Mending (A1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> affects a 1 Bulk object; <b>3rd</b> affects a 2 Bulk or magical 1 Bulk object)</td>
+      <td>Mending (A1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> may affect a 1 Bulk object; <b>3rd</b> may affect a 2 Bulk or magical 1 Bulk object)</td>
     </tr><tr style="text-align:left">
-      <td>Message (A0 Ill): <b>(1)</b> R120' Caster may hold a private conversation with visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
+      <td>Message (A0 Ill): <b>(1)</b> R120' Allows the caster to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
     </tr><tr style="text-align:left">
-      <td>Meteor Swarm (A9 Evo): <b>(2)</b> R500' 4 meteors inflict 6d10B HP in 1 10' burst and 14d6 HP fire in a 40' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)</td>
+      <td>Meteor Swarm (A9 Evo): <b>(2)</b> R500' 4 meteors each inflict 6d10B HP in a 10' burst and 14d6 HP fire in a 40' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)</td>
     </tr><tr style="text-align:left">
       <td>Mind Blank (A8 Abj): <b>(2)</b> R30' Target gains +4 saves vs. mental effects and automatic +1 spell level counteract attempts vs. detection, revelation, and scrying until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Mind Probe (A5 Div): <b>(1 min)</b> R30' Allows caster to gain answers from target, allowing a DC 29 Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)</td>
+      <td>Mind Probe (A5 Div): <b>(1 min)</b> R30' Allows the caster to gain answers from the target, allowing a DC 29 Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)</td>
     </tr><tr style="text-align:left">
-      <td>Mind Reading (A3 Div): <b>(2)</b> R30' Allows caster to learn surface thoughts of target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows target to learn caster's surface thoughts instead; critical failure allows sustaining without additional saves for 1 min)</td>
+      <td>Mind Reading (A3 Div): <b>(2)</b> R30' Allows the caster to learn surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn the caster's surface thoughts instead; critical failure allows sustaining without subsequent saves for 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Mirror Image (A2 Ill): <b>(2)</b> Creates three duplicates that have an equal chance of misdirecting attacks on caster for 1 min; any hit on a duplicate destroys it, and a critical success also hits the caster with a normal success</td>
+      <td>Mirror Image (A2 Ill): <b>(2)</b> Creates three duplicates that have an equal chance of misdirecting attacks on the caster for 1 min; any hit on a duplicate destroys it, and a critical success also hits the caster with a normal success</td>
     </tr><tr style="text-align:left">
       <td>Misdirection (A2 Ill): <b>(1 min)</b> R30' Changes the magical aura of one target to copy a different target until next daily prep</td>
     </tr><tr style="text-align:left">
@@ -677,17 +677,17 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Monstrosity Form (A8 Tra): <b>(2)</b> Caster transforms into choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, AC 32, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> 25 temporary HP, AC 34, +31 attack, an additional damage die, +33 Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Negate Aroma (A1 Abj): <b>(2)</b> Negates scent of willing touched for 1 hr (<b>heightened 5th</b> R30' affects 10 targets)</td>
+      <td>Negate Aroma (A1 Abj): <b>(2)</b> Negates scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Nightmare (A4 Ill): <b>(10 min)</b> Causes a familiar target to have nightmares and awaken fatigued (<b>save Will</b> inflicts nightmares only; critical success negates; critical failure also inflicts drained 2 until no longer fatigued)</td>
     </tr><tr style="text-align:left">
-      <td>Nondetection (A3 Abj): <b>(10 min)</b> Touched gains automatic counteract vs. magical divinations for 8 hr</td>
+      <td>Nondetection (A3 Abj): <b>(10 min)</b> Touched gains automatic counteract attempts vs. magical divinations for 8 hr</td>
     </tr><tr style="text-align:left">
       <td>Obscuring Mist (A2 Con): <b>(3)</b> R120' 20' burst conceals creatures for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Outcast's Curse (A4 Enc): <b>(2)</b> Touched suffers one step worse initial attitudes and worse of two Deception, Diplomacy, Intimidation, and Performance checks until removed (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)</td>
+      <td>Outcast's Curse (A4 Enc): <b>(2)</b> Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance checks until removed (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)</td>
     </tr><tr style="text-align:left">
-      <td>Paralyze (A3 Enc): <b>(2)</b> R30' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rounds, allowing additional saves to shorten or end the effects) (<b>heightened 7th</b> affects 10 targets)</td>
+      <td>Paralyze (A3 Enc): <b>(2)</b> R30' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rounds, allowing subsequent saves to shorten or end the effects) (<b>heightened 7th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Passwall (A5 Con): <b>(2)</b> Creates a 5'x10'x10' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20', appears as normal wall, and can be entered only using a password or trigger)</td>
     </tr><tr style="text-align:left">
@@ -695,9 +695,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Phantasmal Calamity (A6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent successful Will) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Killer (A4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 on a critical failure)</td>
+      <td>Phantasmal Killer (A4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on critical failure)</td>
     </tr><tr style="text-align:left">
-      <td>Phantom Steed (A2 Con): <b>(10 min)</b> R30' Conjures a magical mount (AC 20, HP 10, 40' Speed) that can only be ridden by designated creature for 8 hr (<b>heightened 4th</b> mount has 60' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has an 80' Speed and may fly)</td>
+      <td>Phantom Steed (A2 Con): <b>(10 min)</b> R30' Conjures a magical mount (AC 20, HP 10, 40' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has an 80' Speed and may fly)</td>
     </tr><tr style="text-align:left">
       <td>Physical Boost (A1 Tra): <b>(1)</b> Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within next rd</td>
     </tr><tr style="text-align:left">
@@ -707,7 +707,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Power Word Blind (A7 Enc): <b>(1)</b> R30' Permanently blinds a target of level 11 or lower, blinds level 12 or 13 for 1d4 min, or dazzles level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)</td>
     </tr><tr style="text-align:left">
-      <td>Power Word Kill (A9 Enc): <b>(1)</b> R30' Kills a target of level 14 or lower or less than 51 HP, inflicts 0 HP and dying 1 on level 15 with more than 50 HP, or inflicts 50 HP on level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)</td>
+      <td>Power Word Kill (A9 Enc): <b>(1)</b> R30' Kills a target of level 14 or lower or with fewer than 51 HP, inflicts 0 HP and dying 1 on level 15 with more than 50 HP, or inflicts 50 HP on level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)</td>
     </tr><tr style="text-align:left">
       <td>Power Word Stun (A8 Enc): <b>(1)</b> R30' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on level 14 or 15, or stunned 1 on level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)</td>
     </tr><tr style="text-align:left">
@@ -715,35 +715,35 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Prismatic Sphere (A9 Abj): <b>(2)</b> R10' 10' radius emits 20' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
     </tr><tr style="text-align:left">
-      <td>Prismatic Spray (A7 Evo): <b>(2)</b> 30' cone inflicts a random effect: (1) 50 HP fire; (2) 60 HP acid; (3) 70 HP electricity; (4) 30 HP poison and enfeebled 1 for 1 min; (5) <i>Flesh To Stone</i> effects; (6) <i>Warp Mind</i> effects; (7) slowed 1 for 1 min; two of the preceding effects (<b>save Reflex</b> (1), (2), (3), <b>Fortitude</b> (4), (5), or <b>Will</b> (6), (7) negates; critical failure on (7) also inflicts <i>Plane Shift</i> effects)</td>
+      <td>Prismatic Spray (A7 Evo): <b>(2)</b> 30' cone inflicts a random effect: (1) 50 HP fire; (2) 60 HP acid; (3) 70 HP electricity; (4) 30 HP poison and enfeebled 1 for 1 min; (5) <i>Flesh To Stone</i> effects; (6) <i>Warp Mind</i> effects; (7) slowed 1 for 1 min; (8) two of the preceding effects (<b>save Reflex</b> (1), (2), (3), <b>Fortitude</b> (4), (5), or <b>Will</b> (6), (7) negates; critical failure on (7) also inflicts <i>Plane Shift</i> effects)</td>
     </tr><tr style="text-align:left">
       <td>Prismatic Wall (A8 Abj): <b>(3)</b> R120' Creates a 60'x30' wall that emits 20' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
     </tr><tr style="text-align:left">
       <td>Private Sanctum (A4 Abj): <b>(10 min)</b> 100' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Produce Flame (A0 Evo): <b>(2)</b> R30' Spell attack inflicts 1d4+3 HP fire (double HP plus 1d4 persistent fire damage on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)</td>
+      <td>Produce Flame (A0 Evo): <b>(2)</b> R30' Spell attack inflicts 1d4+3 HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)</td>
     </tr><tr style="text-align:left">
       <td>Project Image (A7 Ill): <b>(2)</b> R30' Creates an illusory copy of the caster, with the same AC and saves, that can be used as a source of spells while sustained up to 1 min or until damaged (<b>heightened +2</b> +10 min maximum sustain)</td>
     </tr><tr style="text-align:left">
       <td>Protective Ward (A1 Abj): <b>(1)</b> 5' emanation gives +1 AC while sustained up to 1 min; radius increases by 5' for every sustain</td>
     </tr><tr style="text-align:left">
-      <td>Prying Eye (A5 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the caster to see from the target location and which can be moved 30' each rd while sustained</td>
+      <td>Prying Eye (A5 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the caster to see from the target location and that can be moved 30' each rd while sustained</td>
     </tr><tr style="text-align:left">
       <td>Purple Worm Sting (A6 Nec): <b>(2)</b> Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)</td>
     </tr><tr style="text-align:left">
       <td>Ray Of Enfeeblement (A1 Nec): <b>(2)</b> R30' Spell attack inflicts enfeebled 2 for 1 min (critical success increases by 1 step) (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3)</td>
     </tr><tr style="text-align:left">
-      <td>Ray Of Frost (A0 Evo): <b>(2)</b> R120' Spell attack inflicts 1d4+3 HP cold (critical success inflicts double damage and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
+      <td>Ray Of Frost (A0 Evo): <b>(2)</b> R120' Spell attack inflicts 1d4+3 HP cold (critical success inflicts double HP and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Read Aura (A0 Div): <b>(1 min)</b> R30' Allows caster to detect whether a target object is magical and the related school of magic (<b>heightened 3rd</b> caster detects 10 objects; <b>6th</b> caster detects unlimited objects)</td>
+      <td>Read Aura (A0 Div): <b>(1 min)</b> R30' Allows the caster to detect whether an object is magical and the related school of magic (<b>heightened 3rd</b> allows detection on 10 objects; <b>6th</b> allows detection on unlimited objects)</td>
     </tr><tr style="text-align:left">
       <td>Remake (A10 Con): <b>(1 hr)</b> Fully re-creates a known object up to 5' cu</td>
     </tr><tr style="text-align:left">
       <td>Repulsion (A6 Abj): <b>(2)</b> Up to 40' emanation prevents creatures from approaching (<b>save Will</b> inflicts difficult terrain; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Resilient Sphere (A4 Abj): <b>(2)</b> R30' Creates an impassible force sphere around target with AC 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)</td>
+      <td>Resilient Sphere (A4 Abj): <b>(2)</b> R30' Creates an impassible force sphere around the target with AC 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Resist Energy (A2 Abj): <b>(2)</b> Touched target gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)</td>
+      <td>Resist Energy (A2 Abj): <b>(2)</b> Touched gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)</td>
     </tr><tr style="text-align:left">
       <td>Resplendent Mansion (A9 Con): <b>(1 min)</b> R500' Creates a 300'x300' mansion, with entrances protected by <i>Alarm</i> effects and containing provisions for up to 150 people, until next daily prep</td>
     </tr><tr style="text-align:left">
@@ -773,7 +773,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Shifting Form (A4 Tra): <b>(1)</b> Caster gains choice of +20' Speed, climb or swim at half Speed, darkvision, 60' imprecise scent, or claws that inflict 1d8S HP for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Shocking Grasp (A1 Evo): <b>(2)</b> Touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent damage vs. an armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)</td>
+      <td>Shocking Grasp (A1 Evo): <b>(2)</b> Touch inflicts 2d12 HP electricity; +1 attack and 1d4 HP persistent vs. an armored foe (<b>heightened +1</b> +1d12 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
       <td>Shrink (A2 Tra): <b>(2)</b> R30' Willing target becomes Tiny for 5 min (<b>heightened 6th</b> affects 10 creatures)</td>
     </tr><tr style="text-align:left">
@@ -793,7 +793,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Spell Turning (A7 Abj): <b>(2)</b> Allows the caster to use a Reaction to reflect spells via a successful counterspell for 1 hr</td>
     </tr><tr style="text-align:left">
-      <td>Spellwrack (A6 Abj): <b>(2)</b> R30' Each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force damage and the duration of all spells affecting it is reduced by 1 rd (<b>save Will</b> effects last 1 min; critical success negates; critical failure inflicts 4d12 HP)</td>
+      <td>Spellwrack (A6 Abj): <b>(2)</b> R30' Each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force and the duration of all spells affecting it is reduced by 1 rd (<b>save Will</b> effects last 1 min; critical success negates; critical failure inflicts 4d12 HP)</td>
     </tr><tr style="text-align:left">
       <td>Spider Climb (A2 Tra): <b>(2)</b> Touched gains a climb Speed equal to its Speed for 10 min (<b>heightened 5th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
@@ -883,7 +883,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Web (A2 Con): <b>(3)</b> R30' 10' burst inflicts difficult terrain and -10' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until Escape; Athletics also clears squares upon leaving)</td>
     </tr><tr style="text-align:left">
-      <td>Weird (A9 Ill): <b>(2)</b> R120' Inflicts 16d6 HP mental and frightened 2 (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double damage, frightened 2 and fleeing (critical success negates fleeing) on success)</td>
+      <td>Weird (A9 Ill): <b>(2)</b> R120' Inflicts 16d6 HP mental and frightened 2 (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)</td>
     </tr><tr style="text-align:left">
       <td>Wish (A10 Div): <b>(3)</b> Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level</td>
     </tr></table>
