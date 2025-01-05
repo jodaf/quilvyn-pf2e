@@ -1913,7 +1913,7 @@ Pathfinder2E.FEATS = {
   "Paragon's Guard":'Trait=Class,Fighter,Stance Require="level >= 12"',
   'Spring Attack':'Trait=Class,Fighter,Press Require="level >= 12"',
   'Desperate Finisher':'Trait=Class,Fighter Require="level >= 14"',
-  'Determination':'Trait=Class,Fighter,Concentration Require="level >= 14"',
+  'Determination':'Trait=Class,Fighter,Concentrate Require="level >= 14"',
   'Guiding Finish':'Trait=Class,Fighter,Press Require="level >= 14"',
   'Guiding Riposte':
     'Trait=Class,Fighter Require="level >= 14","features.Dueling Riposte"',
@@ -1941,14 +1941,14 @@ Pathfinder2E.FEATS = {
   'Boundless Reprisals':'Trait=Class,Fighter Require="level >= 20"',
   'Weapon Supremacy':'Trait=Class,Fighter Require="level >= 20"',
 
-  'Crane Stance':'Trait=Class,Monk,Stance"',
-  'Dragon Stance':'Trait=Class,Monk,Stance"',
-  'Ki Rush':'Trait=Class,Monk"',
-  'Ki Strike':'Trait=Class,Monk"',
-  'Monastic Weaponry':'Trait=Class,Monk"',
-  'Mountain Stance':'Trait=Class,Monk,Stance"',
-  'Tiger Stance':'Trait=Class,Monk,Stance"',
-  'Wolf Stance':'Trait=Class,Monk,Stance"',
+  'Crane Stance':'Trait=Class,Monk,Stance',
+  'Dragon Stance':'Trait=Class,Monk,Stance',
+  'Ki Rush':'Trait=Class,Monk',
+  'Ki Strike':'Trait=Class,Monk',
+  'Monastic Weaponry':'Trait=Class,Monk',
+  'Mountain Stance':'Trait=Class,Monk,Stance',
+  'Tiger Stance':'Trait=Class,Monk,Stance',
+  'Wolf Stance':'Trait=Class,Monk,Stance',
   'Brawling Focus':'Trait=Class,Monk Require="level >= 2"',
   'Crushing Grab':'Trait=Class,Monk Require="level >= 2"',
   'Dancing Leaf':'Trait=Class,Monk Require="level >= 2"',
@@ -2701,7 +2701,7 @@ Pathfinder2E.FEATS = {
 
   // Skill
   'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
-  'Dubious Knowledge':'Trait=General,Skill"',
+  'Dubious Knowledge':'Trait=General,Skill',
   'Quick Identification':
     'Trait=General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
