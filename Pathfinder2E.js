@@ -1,5 +1,5 @@
 /*
-Copyright 2024, James J. Hayes
+Copyright 2025, James J. Hayes
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -25,8 +25,9 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  * Pathfinder2E function contains methods that load rules for particular parts
  * of the rules: ancestryRules for character ancestries, magicRules for spells,
  * etc. These member methods can be called independently in order to use a
- * subset of the PRD v2 rules. Similarly, the constant fields of Pathfinder2E
- * (ALIGNMENTS, FEATS, etc.) can be manipulated to modify the choices.
+ * subset of the Pathfinder2E rules. Similarly, the constant fields of
+ * Pathfinder2E (ALIGNMENTS, FEATS, etc.) can be manipulated to modify the
+ * choices.
  */
 function Pathfinder2E() {
 
@@ -80,11 +81,13 @@ function Pathfinder2E() {
 
 Pathfinder2E.VERSION = '2.4.1.0';
 
-/* List of items handled by choiceRules method. */
+/* List of choices that can be expanded by house rules. */
+// Note: Left Goody out of this list for now because inclusion would require
+// documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
   'Alignment', 'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class',
-  'Deity', 'Domain', 'Feat', 'Feature', 'Goody', 'Language', 'Lore', 'School',
-  'Shield', 'Skill', 'Spell', 'Terrain', 'Weapon'
+  'Deity', 'Domain', 'Feat', 'Feature', 'Language', 'Lore', 'Shield', 'Skill',
+  'Spell', 'Terrain', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -97,7 +100,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'levels', 'boosts', 'features', 'feats', 'skills', 'languages',
   'armor', 'weapons', 'shield', 'spells'
 ];
-Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard'];
+Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
 
 Pathfinder2E.ABILITIES = {
   'charisma':'',
@@ -131,8 +134,10 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
       '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage" ' +
     'Selectables=' +
-      '"1:Ancient-Blooded Dwarf:Heritage","1:Death Warden Dwarf:Heritage",' +
-      '"1:Forge Dwarf:Heritage","1:Rock Dwarf:Heritage",' +
+      '"1:Ancient-Blooded Dwarf:Heritage",' +
+      '"1:Death Warden Dwarf:Heritage",' +
+      '"1:Forge Dwarf:Heritage",' +
+      '"1:Rock Dwarf:Heritage",' +
       '"1:Strong-Blooded Dwarf:Heritage" ' +
     'Traits=Dwarf,Humanoid ' +
     'Languages=Common,Dwarven',
@@ -147,8 +152,11 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Constitution)",' +
       '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
     'Selectables=' +
-      '"1:Arctic Elf:Heritage","1:Cavern Elf:Heritage","1:Seer Elf:Heritage",' +
-      '"1:Whisper Elf:Heritage","1:Woodland Elf:Heritage" ' +
+      '"1:Arctic Elf:Heritage",' +
+      '"1:Cavern Elf:Heritage",' +
+      '"1:Seer Elf:Heritage",' +
+      '"1:Whisper Elf:Heritage",' +
+      '"1:Woodland Elf:Heritage" ' +
     'Traits=Elf,Humanoid ' +
     'Languages=Common,Elven',
   'Gnome':
@@ -162,8 +170,10 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
       '"1:Low-Light Vision",1:Small,"1:Ancestry Feats","1:Gnome Heritage" ' +
     'Selectables=' +
-      '"1:Chameleon Gnome:Heritage","1:Fey-Touched Gnome:Heritage",' +
-      '"1:Sensate Gnome:Heritage","1:Umbral Gnome:Heritage",' +
+      '"1:Chameleon Gnome:Heritage",' +
+      '"1:Fey-Touched Gnome:Heritage",' +
+      '"1:Sensate Gnome:Heritage",' +
+      '"1:Umbral Gnome:Heritage",' +
       '"1:Wellspring Gnome:Heritage" ' +
     'Traits=Gnome,Humanoid ' +
     'Languages=Common,Gnomish,Sylvan',
@@ -178,8 +188,10 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Wisdom)",' +
       '1:Darkvision,1:Small,"1:Ancestry Feats","1:Goblin Heritage" ' +
     'Selectables=' +
-      '"1:Charhide Goblin:Heritage","1:Irongut Goblin:Heritage",' +
-      '"1:Razortooth Goblin:Heritage","1:Snow Goblin:Heritage",' +
+      '"1:Charhide Goblin:Heritage",' +
+      '"1:Irongut Goblin:Heritage",' +
+      '"1:Razortooth Goblin:Heritage",' +
+      '"1:Snow Goblin:Heritage",' +
       '"1:Unbreakable Goblin:Heritage" ' +
     'Languages=Common,Goblin',
   'Halfling':
@@ -193,8 +205,10 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
       '"1:Keen Eyes",1:Small,"1:Ancestry Feats","1:Halfling Heritage" ' +
     'Selectables=' +
-      '"1:Gutsy Halfling:Heritage","1:Hillock Halfling:Heritage",' +
-      '"1:Nomadic Halfling:Heritage","1:Twilight Halfling:Heritage",' +
+      '"1:Gutsy Halfling:Heritage",' +
+      '"1:Hillock Halfling:Heritage",' +
+      '"1:Nomadic Halfling:Heritage",' +
+      '"1:Twilight Halfling:Heritage",' +
       '"1:Wildwood Halfling:Heritage" ' +
     'Traits=Humanoid,Halfling ' +
     'Languages=Common,Halfling',
@@ -206,7 +220,8 @@ Pathfinder2E.ANCESTRIES = {
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
       '"1:Ancestry Feats","1:Human Heritage" ' +
     'Selectables=' +
-      '1:Half-Elf:Heritage,1:Half-Orc:Heritage,' +
+      '1:Half-Elf:Heritage,' +
+      '1:Half-Orc:Heritage,' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
     'Traits=Humanoid,Human ' +
@@ -215,29 +230,41 @@ Pathfinder2E.ANCESTRIES = {
 Pathfinder2E.ARMORS = {
   'None':'Category=Unarmored Price=0 AC=0 Check=0 Str=0 Speed=0 Bulk=0',
   "Explorer's Clothing":
-    'Category=Unarmored Price=0.1 AC=0 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+    'Category=Unarmored Price=0.1 AC=0 Check=0 Str=3 Speed=0 Bulk=L ' +
+    'Group=Cloth Trait=Comfort',
   'Padded':
-    'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Str=3 Speed=0 Bulk=L Group=Cloth Trait=Comfort',
+    'Category=Light Price=0.2 AC=1 Dex=3 Str=10 Check=0 Str=3 Speed=0 Bulk=L ' +
+    'Group=Cloth Trait=Comfort',
   'Leather':
-    'Category=Light Price=2 AC=1 Dex=4 Check=-1 Str=10 Speed=0 Bulk=1 Group=Leather',
+    'Category=Light Price=2 AC=1 Dex=4 Check=-1 Str=10 Speed=0 Bulk=1 ' +
+    'Group=Leather',
   'Studded Leather':
-    'Category=Light Price=2 AC=1 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 Group=Leather',
+    'Category=Light Price=2 AC=1 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 ' +
+    'Group=Leather',
   'Chain Shirt':
-    'Category=Light Price=5 AC=2 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 Group=Chain Trait=Flexible,Noisy',
+    'Category=Light Price=5 AC=2 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 ' +
+    'Group=Chain Trait=Flexible,Noisy',
   'Hide':
-    'Category=Medium Price=2 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 Group=Leather',
+    'Category=Medium Price=2 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 ' +
+    'Group=Leather',
   'Scale Mail':
-    'Category=Medium Price=4 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 Group=Composite',
+    'Category=Medium Price=4 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 ' +
+    'Group=Composite',
   'Chain Mail':
-    'Category=Medium Price=6 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 Group=Chain Trait=Flexible,Noisy',
+    'Category=Medium Price=6 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 ' +
+    'Group=Chain Trait=Flexible,Noisy',
   'Breastplate':
-    'Category=Medium Price=8 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 Group=Plate',
+    'Category=Medium Price=8 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 ' +
+    'Group=Plate',
   'Splint Mail':
-    'Category=Heavy Price=13 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 Group=Composite',
+    'Category=Heavy Price=13 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 ' +
+    'Group=Composite',
   'Half Plate':
-    'Category=Heavy Price=18 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 Group=Plate',
+    'Category=Heavy Price=18 AC=5 Dex=1 Check=-3 Speed=-10 Str=16 Bulk=3 ' +
+    'Group=Plate',
   'Full Plate':
-    'Category=Heavy Price=18 AC=6 Dex=0 Check=-3 Speed=-10 Str=18 Bulk=4 Group=Plate Trait=Bulwark'
+    'Category=Heavy Price=18 AC=6 Dex=0 Check=-3 Speed=-10 Str=18 Bulk=4 ' +
+    'Group=Plate Trait=Bulwark'
 };
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
@@ -300,7 +327,8 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
-      '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",1:Multilingual',
+      '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",' +
+      '1:Multilingual',
   'Entertainer':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
@@ -319,8 +347,8 @@ Pathfinder2E.BACKGROUNDS = {
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost; Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost; Choose 1 from Charisma, Intelligence)",' +
+      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
       '"1:Skill Trained (Occultism; Fortune-Telling Lore)",' +
       '"1:Oddity Identification"',
   'Gambler':
@@ -338,7 +366,8 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Strength)",' +
-      '"1:Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)","1:Quick Coercion"',
+      '"1:Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)",' +
+      '"1:Quick Coercion"',
   'Herbalist':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
@@ -387,7 +416,8 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
-      '"1:Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)","1:Courtly Graces"',
+      '"1:Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)",' +
+      '"1:Courtly Graces"',
   'Nomad':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
@@ -426,13 +456,13 @@ Pathfinder2E.BACKGROUNDS = {
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom)",' +
-      '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
-      '1:Forager',
+      '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",1:Forager',
   'Street Urchin':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity)",' +
-      '"1:Skill Trained (Thievery; Choose 1 from any Settlement Lore)",1:Pickpocket',
+      '"1:Skill Trained (Thievery; Choose 1 from any Settlement Lore)",' +
+      '1:Pickpocket',
   'Tinker':
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
@@ -469,13 +499,11 @@ Pathfinder2E.BLOODLINES = {
       'SpellList=Arcane ' +
       'BloodlineSkills=Arcana,Intimidation ' +
       'BloodlineSpells="Dragon Claws","Dragon Breath","Dragon Wings" ' +
-      // TODO '"Shows physical relationship to chosen dragon type",' +
       'BloodMagic="gives self or target +1 AC for 1 rd"',
   'Elemental':
       'SpellList=Primal ' +
       'BloodlineSkills=Intimidation,Nature ' +
       'BloodlineSpells="Elemental Toss","Elemental Motion","Elemental Blast" ' +
-      // TODO '"Shows physical relationship to chosen elemental type",' +
       'BloodMagic="gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd"',
   'Fey':
       'SpellList=Primal ' +
@@ -587,7 +615,9 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster","17:Greater Resolve","19:Magnum Opus",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '1:Enigma:Muse,1:Maestro:Muse,1:Polymath:Muse ' +
+      '1:Enigma:Muse,' +
+      '1:Maestro:Muse,' +
+      '1:Polymath:Muse ' +
     'SpellSlots=' +
       'O0:5@1,' +
       'O1:2@1;3@2,' +
@@ -631,7 +661,8 @@ Pathfinder2E.CLASSES = {
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
       '"17:Legendary Armor","19:Hero\'s Defiance" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability",' +
       '"1:The Tenets Of Good:Champion\'s Code",' +
       '"1:Divine Ally (Blade):Divine Ally",' +
       '"1:Divine Ally (Shield):Divine Ally",' +
@@ -654,8 +685,10 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases",5:Alertness,9:Resolve,"11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
-      '"1:Healing Font:Divine Font","1:Harmful Font:Divine Font",' +
-      '"1:Cloistered Cleric:Doctrine","1:Warpriest:Doctrine" ' +
+      '"1:Healing Font:Divine Font",' +
+      '"1:Harmful Font:Divine Font",' +
+      '"1:Cloistered Cleric:Doctrine",' +
+      '"1:Warpriest:Doctrine" ' +
     'SpellSlots=' +
       'D0:5@1,' +
       'D1:2@1;3@2,' +
@@ -723,7 +756,8 @@ Pathfinder2E.CLASSES = {
       '15:Evasion,"15:Greater Weapon Specialization",' +
       '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability","1:Strength:Key Ability"',
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability"',
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -747,7 +781,8 @@ Pathfinder2E.CLASSES = {
       '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
       '"features.Ki Spells ? 1:Ki Tradition" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability",' +
       '"1:Ki Tradition (Divine):Ki Tradition",' +
       '"1:Ki Tradition (Occult):Ki Tradition",' +
       '"7:Path To Perfection (Fortitude):Perfection",' +
@@ -779,7 +814,8 @@ Pathfinder2E.CLASSES = {
       '"15:Incredible Senses","17:Masterful Hunter","19:Second Skin",' +
       '"19:Swift Prey" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability","1:Strength:Key Ability",' +
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability",' +
       '"1:Flurry:Hunter\'s Edge",' +
       '"1:Precision:Hunter\'s Edge",' +
       '"1:Outwit:Hunter\'s Edge"',
@@ -832,9 +868,15 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '1:Aberrant:Bloodline,1:Angelic:Bloodline,1:Demonic:Bloodline,' +
-      '1:Diabolic:Bloodline,1:Draconic:Bloodline,1:Elemental:Bloodline,' +
-      '1:Fey:Bloodline,1:Hag:Bloodline,1:Imperial:Bloodline,' +
+      '1:Aberrant:Bloodline,' +
+      '1:Angelic:Bloodline,' +
+      '1:Demonic:Bloodline,' +
+      '1:Diabolic:Bloodline,' +
+      '1:Draconic:Bloodline,' +
+      '1:Elemental:Bloodline,' +
+      '1:Fey:Bloodline,' +
+      '1:Hag:Bloodline,' +
+      '1:Imperial:Bloodline,' +
       '1:Undead:Bloodline ' +
     // SpellSlots depends on bloodline
     'SpellSlots=',
@@ -880,7 +922,7 @@ Pathfinder2E.CLASSES = {
       'A7:2@13;3@14,' +
       'A8:2@15;3@16,' +
       'A9:2@17;3@18,' +
-      'A10:1@19',
+      'A10:1@19'
 };
 Pathfinder2E.DEITIES = {
   'None':'',
@@ -985,7 +1027,7 @@ Pathfinder2E.DEITIES = {
     'Alignment=LE FollowerAlignments=LN,LE,NE ' +
     'Font=Harm Skill=Intimidation Weapon="Spiked Chain" ' +
     'Domain=Ambition,Darkness,Destruction,Pain ' +
-    'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"',
+    'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"'
 };
 Pathfinder2E.DOMAINS = {
   'Air':'Spell="Pushing Gust" AdvancedSpell="Disperse Into Air"',
@@ -6488,9 +6530,7 @@ Pathfinder2E.SKILLS = {
   'Plains Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Swamp Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Military Lore':'Ability=Intelligence', // pg 247
-  // 'Adventuring Lore':'Ability=Intelligence', // pg 247 excluded
-  // 'Magic Lore':'Ability=Intelligence', // pg 247 excluded
-  // 'Planar Lore':'Ability=Intelligence', // pg 247 excluded
+  // Adventuring Lore, Magic Lore, Planar Lore pg 247 examples of excluded Lore
   // Common lore subcategories pg 248
   'Academia Lore':'Ability=Intelligence',
   'Accounting Lore':'Ability=Intelligence',
@@ -10284,176 +10324,260 @@ Pathfinder2E.TERRAINS = {
 Pathfinder2E.WEAPONS = {
 
   'Fist':
-    'Category=Unarmed Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Brawling Trait=Agile,Finesse,Nonlethal,Unarmed',
+    'Category=Unarmed Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Brawling ' +
+    'Trait=Agile,Finesse,Nonlethal,Unarmed',
 
   'Club':
-    'Category=Simple Price=0 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Thrown Range=10',
+    'Category=Simple Price=0 Damage=1d6B Bulk=1 Hands=1 Group=Club ' +
+    'Trait=Thrown Range=10',
   'Dagger':
-    'Category=Simple Price=0.2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Thrown,"Versatile S" Range=10',
+    'Category=Simple Price=0.2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Finesse,Thrown,"Versatile S" Range=10',
   'Gauntlet':
-    'Category=Simple Price=0.2 Damage=1d4B Bulk=L Hands=1 Group=Brawling Trait=Agile,Free-hand',
+    'Category=Simple Price=0.2 Damage=1d4B Bulk=L Hands=1 Group=Brawling ' +
+    'Trait=Agile,Free-hand',
   'Light Mace':
-    'Category=Simple Price=0.4 Damage=1d4B Bulk=L Hands=1 Group=Club Trait=Agile,Finesse,Shove',
+    'Category=Simple Price=0.4 Damage=1d4B Bulk=L Hands=1 Group=Club ' +
+    'Trait=Agile,Finesse,Shove',
   'Longspear':
-    'Category=Simple Price=0.5 Damage=1d8P Bulk=2 Hands=2 Group=Spear Trait=Reach',
+    'Category=Simple Price=0.5 Damage=1d8P Bulk=2 Hands=2 Group=Spear ' +
+    'Trait=Reach',
   'Mace':
     'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Shove',
   'Morningstar':
-    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait="Versatile P"',
+    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club ' +
+    'Trait="Versatile P"',
   'Sickle':
-    'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+    'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Finesse,Trip',
   'Spear':
-    'Category=Simple Price=0.1 Damage=1d6P Bulk=1 Hands=1 Group=Spear Trait=Thrown Range=20',
+    'Category=Simple Price=0.1 Damage=1d6P Bulk=1 Hands=1 Group=Spear ' +
+    'Trait=Thrown Range=20',
   'Spiked Gauntlet':
-    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Brawling Trait=Agile,Free-hand',
+    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Brawling ' +
+    'Trait=Agile,Free-hand',
   'Staff':
-    'Category=Simple Price=0 Damage=1d4B Bulk=1 Hands=1 Group=Club Trait="Two-hand d8"',
+    'Category=Simple Price=0 Damage=1d4B Bulk=1 Hands=1 Group=Club ' +
+    'Trait="Two-hand d8"',
 
   'Clan Dagger':
-    'Category=Simple Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
+    'Category=Simple Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
   'Katar':
-    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,"Deadly d6",Monk,Uncommon',
+    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,"Deadly d6",Monk,Uncommon',
 
   'Bastard Sword':
-    'Category=Martial Price=4 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait="Two-hand d12"',
+    'Category=Martial Price=4 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Trait="Two-hand d12"',
   'Battle Axe':
-    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Axe Trait="Sweep"',
+    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Axe ' +
+    'Trait="Sweep"',
   'Bo Staff':
-    'Category=Martial Price=0.2 Damage=1d8B Bulk=2 Hands=2 Group=Club Trait=Monk,Parry,Reach,Trip',
+    'Category=Martial Price=0.2 Damage=1d8B Bulk=2 Hands=2 Group=Club ' +
+    'Trait=Monk,Parry,Reach,Trip',
   'Falchion':
-    'Category=Martial Price=3 Damage=1d10S Bulk=2 Hands=2 Group=Sword Trait=Forceful,Sweep',
+    'Category=Martial Price=3 Damage=1d10S Bulk=2 Hands=2 Group=Sword ' +
+    'Trait=Forceful,Sweep',
   'Flail':
-    'Category=Martial Price=0.8 Damage=1d6B Bulk=1 Hands=1 Group=Flail Trait=Disarm,Sweep,Trip',
+    'Category=Martial Price=0.8 Damage=1d6B Bulk=1 Hands=1 Group=Flail ' +
+    'Trait=Disarm,Sweep,Trip',
   'Glaive':
-    'Category=Martial Price=1 Damage=1d8S Bulk=2 Hands=2 Group=Polearm Trait="Deadly d8",Forceful,Reach',
+    'Category=Martial Price=1 Damage=1d8S Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait="Deadly d8",Forceful,Reach',
   'Greataxe':
-    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Axe Trait=Sweep',
+    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Axe ' +
+    'Trait=Sweep',
   'Greatclub':
-    'Category=Martial Price=1 Damage=1d10B Bulk=2 Hands=2 Group=Club Trait=Backswing,Shove',
+    'Category=Martial Price=1 Damage=1d10B Bulk=2 Hands=2 Group=Club ' +
+    'Trait=Backswing,Shove',
   'Greatpick':
-    'Category=Martial Price=1 Damage=1d10P Bulk=2 Hands=2 Group=Pick Trait="Fatal d12"',
-  'Greatsword':'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Sword Trait="Versatile P"',
-  'Guisarme':'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm Trait=Reach,Trip',
-  'Halberd':'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm Trait=Reach,"Versatile S"',
+    'Category=Martial Price=1 Damage=1d10P Bulk=2 Hands=2 Group=Pick ' +
+    'Trait="Fatal d12"',
+  'Greatsword':
+    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Sword ' +
+    'Trait="Versatile P"',
+  'Guisarme':
+    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait=Reach,Trip',
+  'Halberd':
+    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait=Reach,"Versatile S"',
   'Hatchet':
-    'Category=Martial Price=0.4 Damage=1d6S Bulk=L Hands=1 Group=Axe Trait=Agile,Sweep,Thrown Range=10',
+    'Category=Martial Price=0.4 Damage=1d6S Bulk=L Hands=1 Group=Axe ' +
+    'Trait=Agile,Sweep,Thrown Range=10',
   'Lance':
-    'Category=Martial Price=1 Damage=1d8P Bulk=2 Hands=2 Group=Spear Trait="Deadly d8","Jousting d6",Reach',
+    'Category=Martial Price=1 Damage=1d8P Bulk=2 Hands=2 Group=Spear ' +
+    'Trait="Deadly d8","Jousting d6",Reach',
   'Light Hammer':
-    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer Trait=Agile,Thrown Range=20',
+    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer ' +
+    'Trait=Agile,Thrown Range=20',
   'Light Pick':
-    'Category=Martial Price=0.4 Damage=1d4P Bulk=L Hands=1 Group=Pick Trait=Agile,"Fatal d8"',
+    'Category=Martial Price=0.4 Damage=1d4P Bulk=L Hands=1 Group=Pick ' +
+    'Trait=Agile,"Fatal d8"',
   'Longsword':
-    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait="Versatile P"',
+    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Trait="Versatile P"',
   'Main-gauche':
-    'Category=Martial Price=0.5 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Finesse,Parry,"Versatile S"',
+    'Category=Martial Price=0.5 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Disarm,Finesse,Parry,"Versatile S"',
   'Maul':
-    'Category=Martial Price=3 Damage=1d12B Bulk=2 Hands=2 Group=Hammer Trait=Shove',
+    'Category=Martial Price=3 Damage=1d12B Bulk=2 Hands=2 Group=Hammer ' +
+    'Trait=Shove',
   'Pick':
-    'Category=Martial Price=0.7 Damage=1d6P Bulk=1 Hands=1 Group=Pick Trait="Fatal d10"',
+    'Category=Martial Price=0.7 Damage=1d6P Bulk=1 Hands=1 Group=Pick ' +
+    'Trait="Fatal d10"',
   'Ranseur':
-    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm Trait=Disarm,Reach',
+    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait=Disarm,Reach',
   'Rapier':
-    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword Trait="Deadly d8",Disarm,Finesse',
+    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword ' +
+    'Trait="Deadly d8",Disarm,Finesse',
   'Sap':
-    'Category=Martial Price=0.1 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Agile,Nonlethal',
+    'Category=Martial Price=0.1 Damage=1d6B Bulk=L Hands=1 Group=Club ' +
+    'Trait=Agile,Nonlethal',
   'Scimitar':
-    'Category=Martial Price=1 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait=Forceful,Sweep',
+    'Category=Martial Price=1 Damage=1d6S Bulk=1 Hands=1 Group=Sword ' +
+    'Trait=Forceful,Sweep',
   'Scythe':
-    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm Trait="Deadly d10",Tripe',
-  'Shield':
-    'Category=Martial Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Shield',
+    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait="Deadly d10",Tripe',
+  'Shield':'Category=Martial Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Shield',
   'Shield Boss':
     'Category=Martial Price=0.5 Damage=1d6B Bulk=0 Hands=1 Group=Shield',
   'Shield Spikes':
     'Category=Martial Price=0.5 Damage=1d6P Bulk=0 Hands=1 Group=Shield',
   'Shortsword':
-   'Category=Martial Price=0.9 Damage=1d6P Bulk=L Hands=1 Group=Sword Trait=Agile,Finesse,"Versatile S"',
+    'Category=Martial Price=0.9 Damage=1d6P Bulk=L Hands=1 Group=Sword ' +
+    'Trait=Agile,Finesse,"Versatile S"',
   'Starknife':
-    'Category=Martial Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
+    'Category=Martial Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
   'Trident':
-    'Category=Martial Price=1 Damage=1d8P Bulk=1 Hands=1 Group=Spear Trait=Thrown Range=20',
+    'Category=Martial Price=1 Damage=1d8P Bulk=1 Hands=1 Group=Spear ' +
+    'Trait=Thrown Range=20',
   'War Flail':
-    'Category=Martial Price=2 Damage=1d10B Bulk=2 Hands=2 Group=Flail Trait=Disarm,Sweep,Trip',
+    'Category=Martial Price=2 Damage=1d10B Bulk=2 Hands=2 Group=Flail ' +
+    'Trait=Disarm,Sweep,Trip',
   'Warhammer':
-    'Category=Martial Price=1 Damage=1d8B Bulk=1 Hands=1 Group=Hammer Trait=Shove',
+    'Category=Martial Price=1 Damage=1d8B Bulk=1 Hands=1 Group=Hammer ' +
+    'Trait=Shove',
   'Whip':
-    'Category=Martial Price=0.1 Damage=1d4S Bulk=1 Hands=1 Group=Flail Trait=Disarm,Finesse,Nonlethal,Trip',
+    'Category=Martial Price=0.1 Damage=1d4S Bulk=1 Hands=1 Group=Flail ' +
+    'Trait=Disarm,Finesse,Nonlethal,Trip',
 
   'Dogslicer':
-    'Category=Martial Price=0.1 Damage=1d6S Bulk=L Hands=1 Group=Sword Trait=Agile,Backstabber,Finesse,Goblin,Uncommon',
+    'Category=Martial Price=0.1 Damage=1d6S Bulk=L Hands=1 Group=Sword ' +
+    'Trait=Agile,Backstabber,Finesse,Goblin,Uncommon',
   'Elven Curve Blade':
-    'Category=Martial Price=4 Damage=1d8S Bulk=2 Hands=2 Group=Sword Trait=Elf,Finesse,Forceful,Uncommon',
+    'Category=Martial Price=4 Damage=1d8S Bulk=2 Hands=2 Group=Sword ' +
+    'Trait=Elf,Finesse,Forceful,Uncommon',
   "Filcher's Fork":
-    'Category=Martial Price=1 Damage=1d4P Bulk=L Hands=1 Group=Spear Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon Range=20',
+    'Category=Martial Price=1 Damage=1d4P Bulk=L Hands=1 Group=Spear ' +
+    'Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon ' +
+    'Range=20',
   'Gnome Hooked Hammer':
-    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer Trait=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
+    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer ' +
+    'Trait=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
   'Horsechopper':
-    'Category=Martial Price=0.9 Damage=1d8S Bulk=2 Hands=2 Group=Polearm Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
+    'Category=Martial Price=0.9 Damage=1d8S Bulk=2 Hands=2 Group=Polearm ' +
+    'Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
   'Kama':
-    'Category=Martial Price=1 Damage=1d6S Bulk=L Hands=1 Group=Knife Trait=Agile,Monk,Trip,Uncommon',
+    'Category=Martial Price=1 Damage=1d6S Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Monk,Trip,Uncommon',
   'Katana':
-    'Category=Martial Price=2 Damage=1d6S Bulk=1 Hands=1 Group=Sword Trait="Deadly d8","Two-hand d10","Versatile P"',
+    'Category=Martial Price=2 Damage=1d6S Bulk=1 Hands=1 Group=Sword ' +
+    'Trait="Deadly d8","Two-hand d10","Versatile P"',
   'Kukri':
-    'Category=Martial Price=0.6 Damage=1d6S Bulk=L Hands=1 Group=Knife Trait=Agile,Finesse,Trip',
+    'Category=Martial Price=0.6 Damage=1d6S Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Finesse,Trip',
   'Nunchaku':
-    'Category=Martial Price=0.2 Damage=1d6B Bulk=L Hands=1 Group=Club Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
+    'Category=Martial Price=0.2 Damage=1d6B Bulk=L Hands=1 Group=Club ' +
+    'Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
   'Orc Knuckle Dragger':
-    'Category=Martial Price=0.7 Damage=1d6P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Orc,Uncommon',
+    'Category=Martial Price=0.7 Damage=1d6P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Disarm,Orc,Uncommon',
   'Sai':
-    'Category=Martial Price=0.6 Damage=1d4P Bulk=L Hands=1 Group=Knife Trait=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
+    'Category=Martial Price=0.6 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Trait=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
   'Spiked Chain':
-    'Category=Martial Price=3 Damage=1d8S Bulk=1 Hands=2 Group=Flail Trait=Disarm,Finesse,Trip,Uncommon',
-  'Temple Sword':'Category=Martial Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Sword Trait=Monk,Trip,Uncommon',
+    'Category=Martial Price=3 Damage=1d8S Bulk=1 Hands=2 Group=Flail ' +
+    'Trait=Disarm,Finesse,Trip,Uncommon',
+  'Temple Sword':
+    'Category=Martial Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Trait=Monk,Trip,Uncommon',
 
   'Dwarven Waraxe':
-    'Category=Advanced Price=3 Damage=1d8S Bulk=2 Hands=1 Group=Axe Trait=Dwarf,Sweep,"Two-hand d12",Uncommon',
+    'Category=Advanced Price=3 Damage=1d8S Bulk=2 Hands=1 Group=Axe ' +
+    'Trait=Dwarf,Sweep,"Two-hand d12",Uncommon',
   'Gnome Flickmace':
-    'Category=Advanced Price=3 Damage=1d6B Bulk=1 Hands=1 Group=Flail Trait=Gnome,Reach,Sweep,Uncommon',
+    'Category=Advanced Price=3 Damage=1d6B Bulk=1 Hands=1 Group=Flail ' +
+    'Trait=Gnome,Reach,Sweep,Uncommon',
   'Orc Necksplitter':
-    'Category=Advanced Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Axe Trait=Forceful,Orc,Sweep,Uncommon',
+    'Category=Advanced Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Axe ' +
+    'Trait=Forceful,Orc,Sweep,Uncommon',
   'Sawtooth Saber':
-    'Category=Advanced Price=5 Damage=1d6S Bulk=L Hands=1 Group=Sword Trait=Agile,Finesse,Twin,Uncommon',
+    'Category=Advanced Price=5 Damage=1d6S Bulk=L Hands=1 Group=Sword ' +
+    'Trait=Agile,Finesse,Twin,Uncommon',
 
   'Blowgun':
-    'Category=Simple Price=0.1 Damage=1P Bulk=L Hands=1 Group=Dart Trait=Agile,Nonlethal,"Reload 1" Range=20',
+    'Category=Simple Price=0.1 Damage=1P Bulk=L Hands=1 Group=Dart ' +
+    'Trait=Agile,Nonlethal,"Reload 1" Range=20',
   'Crossbow':
-    'Category=Simple Price=3 Damage=1d8P Bulk=1 Hands=2 Group=Bow Trait="Reload 1", Range=120',
+    'Category=Simple Price=3 Damage=1d8P Bulk=1 Hands=2 Group=Bow ' +
+    'Trait="Reload 1", Range=120',
   'Dart':
-    'Category=Simple Price=0.01 Damage=1d4P Bulk=L Hands=1 Group=Dart Trait=Agile,Thrown Range=20',
+    'Category=Simple Price=0.01 Damage=1d4P Bulk=L Hands=1 Group=Dart ' +
+    'Trait=Agile,Thrown Range=20',
   'Hand Crossbow':
-    'Category=Simple Price=3 Damage=1d6P Bulk=L Hands=1 Group=Bow Trait="Reload 1", Range=60',
+    'Category=Simple Price=3 Damage=1d6P Bulk=L Hands=1 Group=Bow ' +
+    'Trait="Reload 1", Range=60',
   'Heavy Crossbow':
-    'Category=Simple Price=4 Damage=1d10P Bulk=2 Hands=2 Group=Bow Trait="Reload 2", Range=120',
+    'Category=Simple Price=4 Damage=1d10P Bulk=2 Hands=2 Group=Bow ' +
+    'Trait="Reload 2", Range=120',
   'Javelin':
-    'Category=Simple Price=0.1 Damage=1d6P Bulk=L Hands=1 Group=Dart Trait=Thrown Range=30',
+    'Category=Simple Price=0.1 Damage=1d6P Bulk=L Hands=1 Group=Dart ' +
+    'Trait=Thrown Range=30',
   'Sling':
-    'Category=Simple Price=0 Damage=1d6B Bulk=L Hands=1 Group=Sling Trait=Propulsive,"Reload 1" Range=50',
+    'Category=Simple Price=0 Damage=1d6B Bulk=L Hands=1 Group=Sling ' +
+    'Trait=Propulsive,"Reload 1" Range=50',
 
   'Lesser Acid Flask':
-    'Category=Martial Price=0 Damage=1E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+    'Category=Martial Price=0 Damage=1E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown,Splash Range=20',
   "Lesser Alchemist's Fire":
-    'Category=Martial Price=0 Damage=1d8E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+    'Category=Martial Price=0 Damage=1d8E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown,Splash Range=20',
   'Lesser Bottled Lightning':
-    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown,Splash Range=20',
   'Lesser Frost Vial':
-    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown,Splash Range=20',
   'Lesser Tanglefoot Bag':
-    'Category=Martial Price=0 Damage=0E Bulk=L Hands=1 Group=Bomb Trait=Thrown Range=20',
+    'Category=Martial Price=0 Damage=0E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown Range=20',
   'Lesser Thunderstone':
-    'Category=Martial Price=0 Damage=1d4E Bulk=L Hands=1 Group=Bomb Trait=Thrown,Splash Range=20',
+    'Category=Martial Price=0 Damage=1d4E Bulk=L Hands=1 Group=Bomb ' +
+    'Trait=Thrown,Splash Range=20',
   'Composite Longbow':
-    'Category=Martial Price=20 Damage=1d8P Bulk=2 Hands=2 Group=Bow Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
+    'Category=Martial Price=20 Damage=1d8P Bulk=2 Hands=2 Group=Bow ' +
+    'Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
   'Composite Shortbow':
-    'Category=Martial Price=14 Damage=1d6P Bulk=1 Hands=2 Group=Bow Trait="Deadly d10",Propulsive Range=60',
+    'Category=Martial Price=14 Damage=1d6P Bulk=1 Hands=2 Group=Bow ' +
+    'Trait="Deadly d10",Propulsive Range=60',
   'Longbow':
-    'Category=Martial Price=6 Damage=1d8P Bulk=2 Hands=2 Group=Bow Trait="Deadly d10","Volley 30\'" Range=100',
+    'Category=Martial Price=6 Damage=1d8P Bulk=2 Hands=2 Group=Bow ' +
+    'Trait="Deadly d10","Volley 30\'" Range=100',
   'Shortbow':
-    'Category=Martial Price=3 Damage=1d6P Bulk=1 Hands=2 Group=Bow Trait="Deadly d10" Range=60',
+    'Category=Martial Price=3 Damage=1d6P Bulk=1 Hands=2 Group=Bow ' +
+    'Trait="Deadly d10" Range=60',
   'Halfling Sling Staff':
-    'Category=Martial Price=5 Damage=1d10B Bulk=1 Hands=2 Group=Sling Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
+    'Category=Martial Price=5 Damage=1d10B Bulk=1 Hands=2 Group=Sling ' +
+    'Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
   'Shuriken':
-    'Category=Martial Price=0.01 Damage=1d4P Bulk=0 Hands=1 Group=Dart Trait=Agile,Monk,Thrown,Uncommon Range=20'
+    'Category=Martial Price=0.01 Damage=1d4P Bulk=0 Hands=1 Group=Dart ' +
+    'Trait=Agile,Monk,Thrown,Uncommon Range=20'
 
 };
 
@@ -10509,19 +10633,16 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
 /* Defines the rules related to combat. */
 Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
-  QuilvynUtils.checkAttrTable
-    (armors, ['Category', 'Price', 'AC', 'Dex', 'Check', 'Speed', 'Str', 'Bulk', 'Group', 'Trait']);
-  QuilvynUtils.checkAttrTable
-    (shields, ['Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP']);
-  QuilvynUtils.checkAttrTable
-    (weapons, ['Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Trait', 'Range']);
-
-  rules.defineChoice('notes',
-    'abilityNotes.armorSpeedPenalty:%V Speed',
-    'armorClass:%V (dexterity%1; %2)',
-    'shield:%V%1%2%3%4',
-    'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
-  );
+  QuilvynUtils.checkAttrTable(armors, [
+    'Category', 'Price', 'AC', 'Dex', 'Check', 'Speed', 'Str', 'Bulk',
+    'Group', 'Trait'
+  ]);
+  QuilvynUtils.checkAttrTable(shields, [
+    'Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP'
+  ]);
+  QuilvynUtils.checkAttrTable(weapons, [
+    'Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Trait', 'Range'
+  ]);
 
   for(let a in armors)
     rules.choiceRules(rules, 'Armor', a, armors[a]);
@@ -10545,9 +10666,16 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
     }
   }
 
+  rules.defineChoice('notes',
+    'abilityNotes.armorSpeedPenalty:%V Speed',
+    'armorClass:%V (dexterity%1; %2)',
+    'shield:%V%1%2%3%4',
+    'skillNotes.armorSkillPenalty:%V strength and dexterity skills'
+  );
+
   rules.defineRule('abilityNotes.armorSpeedPenalty',
     'armorSpeedReduction', '=', null,
-    'armorStrengthRequirement', '=', 'null',
+    'armorStrengthRequirement', '=', 'null', // recomputation trigger
     'strength', '?', 'source<dict["armorStrengthRequirement"]'
   );
   rules.defineRule('armorClass',
@@ -10577,7 +10705,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   // For weapons with the finesse trait
-  rules.defineRule('maxStrOrDex',
+  rules.defineRule('maxStrOrDexAbility',
     'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
   );
   rules.defineRule('maxStrOrDexModifier',
@@ -10618,7 +10746,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   );
   rules.defineRule('skillNotes.armorSkillPenalty',
     'armorCheckPenalty', '=', null,
-    'armorStrengthRequirement', '=', 'null',
+    'armorStrengthRequirement', '=', 'null', // recomputation trigger
     'strength', '?', 'source<dict["armorStrengthRequirement"]'
   );
   rules.defineRule('speed', 'abilityNotes.armorSpeedPenalty', '+', null);
@@ -10715,21 +10843,12 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
   QuilvynUtils.checkAttrTable(terrains, []);
 
-  rules.defineChoice('notes',
-    'perception:%S (wisdom; %1)',
-    'skillNotes.intelligenceLanguageBonus:+%V Language Count'
-  );
-
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
   for(let l in languages) {
     rules.choiceRules(rules, 'Language', l, languages[l]);
     rules.defineRule('languagesSpoken', 'languages.' + l, '+=', '1');
   }
-  rules.defineChoice
-    ('notes', 'skillNotes.duplicatedTraining:Skill Trained (Choose %V from any)');
-  rules.defineRule
-    ('choiceCount.Skill', 'skillNotes.duplicatedTraining', '+=', null);
   for(let s in skills) {
     rules.choiceRules(rules, 'Skill', s, skills[s]);
     rules.defineRule('skillNotes.duplicatedTraining',
@@ -10771,6 +10890,14 @@ Pathfinder2E.talentRules = function(
     }
   }
 
+  rules.defineChoice('notes',
+    'perception:%S (wisdom; %1)',
+    'skillNotes.duplicatedTraining:Skill Trained (Choose %V from any)',
+    'skillNotes.intelligenceLanguageBonus:+%V Language Count'
+  );
+
+  rules.defineRule
+    ('choiceCount.Skill', 'skillNotes.duplicatedTraining', '+=', null);
   rules.defineRule
     ('featCount.Ancestry', 'featureNotes.ancestryFeats', '=', null);
   rules.defineRule('featCount.General',
@@ -10986,7 +11113,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
 
 /*
  * Removes #name# from the set of user #type# choices, reversing the effects of
- * choiceRules. TODO
+ * choiceRules.
  */
 Pathfinder2E.removeChoice = function(rules, type, name) {
   let group =
@@ -11088,7 +11215,7 @@ Pathfinder2E.alignmentRules = function(rules, name) {
  * Defines in #rules# the rules associated with ancestry #name#, which has the
  * list of hard prerequisites #requires#. #hitPoints# gives the number of HP
  * granted at level 1, and #size# specifies the size of characters with the
- * ancestry. * #features# and #selectables# list associated automatic and
+ * ancestry. #features# and #selectables# list associated automatic and
  * selectable features, #traits# any traits granted by the ancestry, and
  * #languages# any automatic languages.
  */
@@ -11145,13 +11272,11 @@ Pathfinder2E.ancestryRules = function(
     'featureNotes.' + prefix + 'Heritage', '=', '1'
   );
 
-  if(languages.length > 0) {
-    rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
-    for(let i = 0; i < languages.length; i++) {
-      if(languages[i] != 'any')
-        rules.defineRule('languages.' + languages[i], ancestryLevel, '=', '1');
-    }
-  }
+  rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
+  languages.forEach(l => {
+    if(l != 'any')
+      rules.defineRule('languages.' + l, ancestryLevel, '=', '1');
+  });
 
   Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
@@ -11182,12 +11307,6 @@ Pathfinder2E.ancestryRules = function(
  */
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Dwarf') {
-    rules.defineRule('abilityNotes.armorSpeedPenalty',
-      'abilityNotes.unburdenedIron', '^', '0'
-    );
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.stonewalker', '1', 'Meld Into Stone', null, null,
-       'Divine', null, null);
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
@@ -11376,6 +11495,9 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
   }
 };
 
+/*
+ * TODO
+ */
 Pathfinder2E.bloodlineRules = function(
   rules, name, spellList, bloodlineSkills, grantedSpells, bloodlineSpells,
   bloodMagic
@@ -11611,7 +11733,7 @@ Pathfinder2E.classRules = function(
       let modifier = a + 'Modifier';
       a = a.charAt(0).toUpperCase() + a.substring(1).toLowerCase();
       rules.defineRule('classDifficultyClass.' + name,
-        modifier, '+', 'null',
+        modifier, '+', 'null', // recomputation trigger
         prefix + 'Features.' + a, '+', '10 + dict["' + modifier + '"]'
       );
       rules.defineRule('classDifficultyClass.' + name + '.1',
@@ -12359,30 +12481,32 @@ Pathfinder2E.deityRules = function(
   rules.defineRule('deitySpells',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.spells) + '[source]'
   );
-  rules.defineRule('deityWeapon',
-    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
-  );
-  rules.defineRule('deityWeaponCategory',
-    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
-  );
 
-  rules.defineRule('deityWeaponRank',
-    'deityWeapon', '=', 'null',
-    'rank.' + weapon, '=', 'dict.deityWeapon=="' + weapon + '" ? source : null'
-  );
+  if(weapon) {
+    rules.defineRule('deityWeapon',
+      'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
+    );
+    rules.defineRule('deityWeaponCategory',
+      'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
+    );
+    rules.defineRule('deityWeaponRank',
+      'deityWeapon', '=', 'null', // recomputation trigger
+      'rank.' + weapon, '=', 'dict.deityWeapon=="' + weapon + '" ? source : null'
+    );
+    rules.defineRule('trainingLevel.' + weapon,
+      'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
+      'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
+      'combatNotes.deityAndCause', '^=', 'source=="' + weapon + '" ? 1 : null',
+      'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
+    );
+    rules.defineRule('weaponDieSidesBonus.' + weapon,
+      'combatNotes.deificWeapon-1', '+=', 'source=="' + weapon + '" ? 2 : null',
+      'combatNotes.deadlySimplicity', '+=', 'source=="' + weapon + '" ? 2 : null'
+    );
+  }
   rules.defineRule('trainingLevel.' + skill,
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
     'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
-  );
-  rules.defineRule('trainingLevel.' + weapon,
-    'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
-    'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
-    'combatNotes.deityAndCause', '^=', 'source=="' + weapon + '" ? 1 : null',
-    'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
-  );
-  rules.defineRule('weaponDieSidesBonus.' + weapon,
-    'combatNotes.deificWeapon-1', '+=', 'source=="' + weapon + '" ? 2 : null',
-    'combatNotes.deadlySimplicity', '+=', 'source=="' + weapon + '" ? 2 : null'
   );
 
 };
@@ -12849,7 +12973,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
     rules.defineRule
-      ('choiceCount.skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
+      ('choiceCount.Skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
   } else if(name == 'Hand Of The Apprentice') {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.handOfTheApprentice', '1', 'Hand Of The Apprentice',
@@ -13087,6 +13211,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
   } else if(name == 'Stonewalker') {
+    Pathfinder2E.featureSpell
+      (rules, 'magicNotes.stonewalker', '1', 'Meld Into Stone', null, null,
+       'Divine', null, null);
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   } else if(name == 'Studious Capacity') {
@@ -13103,6 +13230,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.supernaturalCharm', '1', 'Charm', null, null,
        'Divine', null, null);
+  } else if(name == 'Unburdened Iron') {
+    rules.defineRule('abilityNotes.armorSpeedPenalty',
+      'abilityNotes.unburdenedIron', '^', '0'
+    );
   } else if(name == 'Uncanny Bombs') {
     let allWeapons = rules.getChoices('weapons');
     for(let w in allWeapons) {
@@ -13293,11 +13424,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('trainingLevel.' + element, note, '^=', rank);
             rules.defineRule('trainingCount.' + element, note, '+=', '1');
           }
-          if(group == 'Attack') {
+          if(group == 'Attack' && !element.startsWith('%')) {
             rules.defineRule('attackProficiency.' + element,
               'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
-          } else if(group == 'Defense') {
+          } else if(group == 'Defense' && !element.startsWith('%')) {
             rules.defineRule('defenseProficiency.' + element,
               'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
             );
@@ -13333,9 +13464,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             note, '+=', choices.replace('+', '')
           );
       }
+      // Anathema, Cause, and Deity
       matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
       if(matchInfo && !matchInfo[1].includes('%')) {
-        let features = matchInfo[1].split(/\s*,\s*|\s+and\s+/);
+        let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         features.forEach(f => {
           f = f.trim();
           if(f != '')
@@ -13584,7 +13716,6 @@ Pathfinder2E.spellRules = function(
     return;
   }
   let action = Pathfinder2E.ACTION_MARKS[cast] || ('<b>(' + cast + ')</b>');
-  // TODO
   rules.defineChoice
     ('notes', 'spells.' + name + ':' + action + ' ' + description);
 };
@@ -13616,7 +13747,8 @@ Pathfinder2E.featureSpell = function(
     name + ' (' + tradition.charAt(0) + level + ' ' +
     school.substring(0, 3) + ')';
   Pathfinder2E.spellRules
-    (rules, spellName, school, level, tradition, cast, description.replaceAll('%tradition', tradition));
+    (rules, spellName, school, level, tradition, cast,
+     description.replaceAll('%tradition', tradition));
   if(note)
     rules.defineRule('spells.' + spellName, note, '=', expr || '1');
 };
@@ -13795,7 +13927,7 @@ Pathfinder2E.weaponRules = function(
     '', '=', isRanged ? '"dexterity"' : '"strength"', '=', null
   );
   if(isFinesse)
-    rules.defineRule(weaponName + '.5', 'maxStrOrDex', '=', null);
+    rules.defineRule(weaponName + '.5', 'maxStrOrDexAbility', '=', null);
   rules.defineRule(weaponName + '.6',
     weaponName, '=', '"untrained"',
     'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
