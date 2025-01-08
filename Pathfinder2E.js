@@ -1200,8 +1200,7 @@ Pathfinder2E.FEATS = {
     'Trait=Ancestry,Human ' +
     'Require=' +
       '"level >= 13",' +
-      '"features.Unconventional Weaponry",' +
-      '"unconventionalWeaponRank >= 2"',
+      '"features.Unconventional Weaponry"',
   'Elf Atavism':'Trait=Ancestry,Half-Elf',
   'Inspire Imitation':'Trait=Ancestry,Half-Elf Require="level >= 5"',
   'Supernatural Charm':'Trait=Ancestry,Half-Elf Require="level >= 5"',
@@ -5593,7 +5592,7 @@ Pathfinder2E.FEATURES = {
   "Trickster's Ace":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May evoke the effects of a prepared spell up to level 4 on self"',
+    'Note="May evoke the effects of a prepared spell of up to level 4 on self"',
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -5807,7 +5806,7 @@ Pathfinder2E.FEATURES = {
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell up to level %V 1/day"',
+    'Note="May use Drain Bonded Item to cast another spell of up to level %V 1/day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Action=2 ' +
@@ -6115,7 +6114,7 @@ Pathfinder2E.FEATURES = {
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="May gain guaranteed success in recognizing an unknown common spell up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
+    'Note="May gain guaranteed success in recognizing an unknown common spell of up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':
     'Action=1 ' +
@@ -6640,7 +6639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
+      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Anathematic Reprisal':
     'Level=4 ' +
     'School=Enchantment ' +
@@ -6731,7 +6730,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Entraps soul of a corpse dead less than 1 min in a gem until counteracted or gem is destroyed"',
+      '"R30\' Entraps the soul of a corpse dead less than 1 min in a gem until counteracted or gem is destroyed"',
   'Bind Undead':
     'Level=3 ' +
     'School=Necromancy ' +
@@ -6745,7 +6744,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. an AC %{spellDifficultyClass.%tradition}"',
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. AC %{spellDifficultyClass.%tradition}"',
   'Blade Barrier':
     'Level=6 ' +
     'School=Evocation ' +
@@ -6800,7 +6799,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst calms creatures and prevents them from hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)"',
+      '"R120\' 10\' burst calms creatures and prevents them from taking hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)"',
   'Cataclysm':
     'Level=10 ' +
     'School=Evocation ' +
@@ -6841,7 +6840,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); effects as with another option, but inflicts -2 saves)"',
+      '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)"',
   'Circle Of Protection':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -6869,7 +6868,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd) for 1 min"',
+      '"R30\' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)"',
   'Cloudkill':
     'Level=5 ' +
     'School=Necromancy ' +
@@ -6897,14 +6896,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on next turn to obey)"',
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes target to use all actions on next turn to obey)"',
   'Comprehend Language':
     'Level=2 ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target can understand choice of heard language for 1 hr (<b>heightened 3rd</b> may also speak language; <b>4th</b> affects 10 targets)"',
+      '"R30\' Allows target to understand choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'School=Evocation ' +
@@ -6918,7 +6917,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further saves)"',
+      '"R30\' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts)"',
   'Contingency':
     'Level=7 ' +
     'School=Abjuration ' +
@@ -6978,7 +6977,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents reactions and inflicts slowed 1 for 1 min (<b>save Will</b> inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min)"',
+      '"30\' cone prevents Reactions and inflicts slowed 1 for 1 min (<b>save Will</b> inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min)"',
   'Dancing Lights':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -6999,14 +6998,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily prep)"',
+      '"Allows caster to see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily prep)"',
   'Daze':
     'Level=Cantrip ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Target suffers %{spellModifier.%tradition} HP mental (<b>save Will</b> inflicts half HP; critical success negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
+      '"R60\' Target suffers %{spellModifier.%tradition} HP mental (<b>save Will</b> negates; critical failure inflicts double HP plus stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -7034,14 +7033,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' emanation allows caster to detect auras of specified alignment (<b>heightened 2nd</b> reveals each aura\'s location and strength)"',
+      '"30\' emanation allows the caster to detect auras of specified alignment (<b>heightened 2nd</b> reveals each aura\'s location and strength)"',
   'Detect Magic':
     'Level=Cantrip ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows caster to discern the presence of magic in a 30\' radius and detect illusions of up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
+      '"30\' emanation allows the caster to discern the presence of magic and detect illusions of up to the spell level (<b>heightened 3rd</b> reveals school of highest-level effect; <b>4th</b> reveals source of highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
     'School=Divination ' +
@@ -7055,7 +7054,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster learns of scrying effects in a 30\' emanation, and the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)"',
+      '"30\' emanation allows the caster to learn of scrying effects, along with the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)"',
   'Dimension Door':
     'Level=4 ' +
     'School=Conjuration ' +
@@ -7101,7 +7100,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster knows exact location of a specified familiar creature or object for 10 min"',
+      '"Caster knows the exact location of a specified familiar creature or object for 10 min"',
   'Disintegrate':
     'Level=6 ' +
     'School=Evocation ' +
@@ -7185,7 +7184,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster controls the actions of the target until next daily prep; a successful save at end of each turn ends (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts control with subsequent saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)"',
+      '"R30\' Caster controls the actions of the target until next daily prep; a successful save at end of each turn ends (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts control allowing further saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)"',
   'Dragon Form':
     'Level=6 ' +
     'School=Transmutation ' +
@@ -7304,14 +7303,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Fascinates creatures within 120\' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical success target notices attempt; critical failure allows no subsequent save for disagreement)"',
+      '"Fascinates creatures within 120\' while sustained (<b>save Will</b> each rd or upon disagreement negates; critical success target notices attempt; critical failure allows no further saves for disagreement)"',
   'Ethereal Jaunt':
     'Level=7 ' +
     'School=Conjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster moves to Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects up to 5 additional willing creatures and lasts 10 min)"',
+      '"Caster moves to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects up to 5 additional willing creatures and lasts 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
     'School=Enchantment ' +
@@ -7623,7 +7622,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts slowed 1 and loss of reactions on target while sustained (<b>save Will</b> loss of reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of reactions)"',
+      '"R30\' Inflicts slowed 1 and loss of Reactions while sustained (<b>save Will</b> inflicts loss of Reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of Reactions)"',
   'Holy Cascade':
     'Level=4 ' +
     'School=Evocation ' +
@@ -7644,7 +7643,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> may transform into a Large humanoid)"',
+      '"Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> caster may transform into a Large humanoid)"',
   'Hydraulic Push':
     'Level=1 ' +
     'School=Evocation ' +
@@ -7699,7 +7698,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in scene can speak; <b>8th</b> effects are permanent)"',
+      '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)"',
   'Implosion':
     'Level=9 ' +
     'School=Evocation ' +
@@ -7755,14 +7754,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster knows which direction is north (<b>heightened 7th</b> gives direction to a familiar location)"',
+      '"Tells the caster which direction is north (<b>heightened 7th</b> gives direction to a familiar location)"',
   'Levitate':
     'Level=3 ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may use an action to move the touched object or willing creature up or down 10\' for 5 min"',
+      '"Allows the caster to use an action to move the touched object or willing creature up or down 10\' for 5 min"',
   'Light':
     'Level=Cantrip ' +
     'School=Evocation ' +
@@ -7818,7 +7817,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Allows the caster to alter the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)"',
+      '"Allows the caster to alter the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)"',
   'Magic Fang':
     'Level=1 ' +
     'School=Transmutation ' +
@@ -7944,7 +7943,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
+      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Mirror Image':
     'Level=2 ' +
     'School=Illusion ' +
@@ -8187,7 +8186,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
+      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Prismatic Sphere':
     'Level=9 ' +
     'School=Abjuration ' +
@@ -9195,7 +9194,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell up to 9th level or of a common spell of up to 7th level"',
+      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Zealous Conviction':
     'Level=6 ' +
     'School=Enchantment ' +
@@ -9216,7 +9215,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' target becomes quickened and may take an additional Strike, Stride, or Step for 1 rd"',
+      '"R30\' Target becomes quickened and may take an additional Strike, Stride, or Step for 1 rd"',
   'Counter Performance':
     'Level=1 ' +
     'School=Enchantment ' +
@@ -9229,7 +9228,7 @@ Pathfinder2E.SPELLS = {
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="Inflicts frightened 1 on foes in a 30\' emanation for 1 rd"',
+    'Description="30\' emanation inflicts frightened 1 on foes for 1 rd"',
   'Fatal Aria':
     'Level=10 ' +
     'School=Enchantment ' +
@@ -9250,7 +9249,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allows use of Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
+      '"R60\' Allows the caster to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=Cantrip ' +
     'School=Enchantment ' +
@@ -9271,14 +9270,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"Allows a Performance check to increase effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success +3; no loss of Focus Point on failure)"',
+      '"Allows the caster to use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)"',
   'Lingering Composition':
     'Level=1 ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"Allows a Performance check to increase the duration of a subsequent cantrip composition to 3 rd (critical success 4 rd; no loss of Focus Point on failure)"',
+      '"Allows a Performance check to increase the duration of a subsequent cantrip composition to 3 rd (critical success 4 rd; failure does not expend a Focus Point)"',
   "Loremaster's Etude":
     'Level=1 ' +
     'School=Divination ' +
@@ -9931,7 +9930,7 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="Caster moves to Ethereal Plane for 1 min"',
+    'Description="Caster moves to the Ethereal Plane for 1 min"',
   'Ki Blast':
     'Level=3 ' +
     'School=Evocation ' +
@@ -13866,10 +13865,9 @@ Pathfinder2E.weaponRules = function(
   });
   rules.defineRule('unconventionalWeaponRank.' + name,
     'combatNotes.unconventionalWeaponry(' + name.replaceAll(' ', '') + ')', '=', '0',
+    'rank.' + lowerCategory, '^', null,
     'combatNotes.unconventionalExpertise', '^', 'source=="' + name + '" ? 2 : null'
   );
-  rules.defineRule
-     ('unconventionalWeaponRank', 'unconventionalWeaponRank.' + name, '=', '1');
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
     'weaponRank.' + name, '=', '0',
