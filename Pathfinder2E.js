@@ -7922,14 +7922,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Allows the caster to gain answers from the target, allowing a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
+      '"R30\' Allows the caster to gain answers from the target, requiring a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
   'Mind Reading':
     'Level=3 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows the caster to learn surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn the caster\'s surface thoughts instead; critical failure allows sustaining without subsequent saves for 1 min)"',
+      '"R30\' Allows the caster to learn surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn the caster\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
   'Mindlink':
     'Level=1 ' +
     'School=Divination ' +
@@ -7957,7 +7957,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Changes the magical aura of one target to copy a different target until next daily prep"',
+      '"R30\' Changes the magical aura of one target to mimic a second target until next daily prep"',
   'Mislead':
     'Level=6 ' +
     'School=Illusion ' +
@@ -7971,7 +7971,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Changes 1 rd of target\'s memory each rd while sustained for up to 5 min (<b>save Will</b> negates; critical success target notices attempt)"',
+      '"R30\' Changes 1 rd of the target\'s memory each rd while sustained for up to 5 min (<b>save Will</b> negates; critical success target notices attempt)"',
   'Moment Of Renewal':
     'Level=8 ' +
     'School=Necromancy ' +
@@ -8046,14 +8046,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance checks until removed (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
+      '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until removed (<b>save Will</b> effects last 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure affected uses all actions each turn to pay tribute)"',
+      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)"',
   'Paralyze':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -8067,7 +8067,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure target treats all others an enemies) (<b>heightened 6th</b> effects 5 targets)"',
+      '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last 1 rd; critical success negates; critical failure causes target to treat all others an enemies) (<b>heightened 6th</b> effects 5 targets)"',
   'Pass Without Trace':
     'Level=1 ' +
     'School=Abjuration ' +
@@ -8095,7 +8095,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent successful Will) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a successful subsequent Will save) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
     'School=Illusion ' +
@@ -8116,7 +8116,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has an 80\' Speed and may fly)"',
+      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and may fly)"',
   'Plane Shift':
     'Level=7 ' +
     'School=Conjuration ' +
@@ -8144,7 +8144,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster inhabits and controls the target\'s body for 1 min (<b>save Will</b> the caster inhabits but cannot control; critical success negates; critical failure the caster has full control; success on Will saves each turn negates caster control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last 10 min, and the caster\'s body is protected from harm)"',
+      '"R30\' Caster inhabits and controls the target\'s body for 1 min (<b>save Will</b> the caster inhabits but cannot control; critical success negates; critical failure gives the caster full control; success on subsequent Will saves each turn negates caster control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last 10 min, and the caster\'s body is protected from harm)"',
   'Power Word Blind':
     'Level=7 ' +
     'School=Enchantment ' +
@@ -8193,7 +8193,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R10\' 10\' radius emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
+      '"R10\' 10\' radius emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Spray':
     'Level=7 ' +
     'School=Evocation ' +
@@ -8350,7 +8350,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates an impassible force sphere around the target with AC 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
+      '"R30\' Creates an impassible force sphere with AC 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
     'School=Abjuration ' +
@@ -8371,7 +8371,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Gives choice of: reduce a clumsy, enfeebled, or stupefied condition affecting touched by 2, reduce two of these conditions by 1 each, or reduce a toxin affecting touched by 1 stage (<b>heightened 4th</b> may reduce a drained condition, lessen a toxin by 2 stages, or reduce a non-permanent doomed condition by 1; <b>6th</b> may reduce a permanent doomed condition)"',
+      '"Gives choice of a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
     'School=Necromancy ' +
@@ -8385,7 +8385,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Caster receives impressions of 1 day of past events at the current location per 1 min concentration; traumatic events requires a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
+      '"Caster receives impressions of 1 day of past events at the current location per 1 min concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
   'Reverse Gravity':
     'Level=7 ' +
     'School=Evocation ' +
@@ -8413,7 +8413,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Touched rope leads to an extradimensional space that hold 8 Medium creatures for 8 hr"',
+      '"Touched rope leads to an extradimensional space that can hold 8 Medium creatures for 8 hr"',
   'Sanctified Ground':
     'Level=3 ' +
     'School=Abjuration ' +
@@ -8427,7 +8427,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends spell; critical failure prevents attacks until spell ends)"',
+      '"Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends spell; critical failure allows no further save attempts)"',
   'Scintillating Pattern':
     'Level=8 ' +
     'School=Illusion ' +
@@ -8474,7 +8474,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 30\' cone, R120\' 15\' burst, or 50\ line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"Choice of 30\' cone, R120\' 15\' burst, or 50\' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Shadow Siphon':
     'Level=5 ' +
     'School=Illusion ' +
@@ -8713,7 +8713,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster knows touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
+      '"Allows caster to know touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
     'School=Conjuration ' +
@@ -8768,70 +8768,70 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level -1 animal appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"R30\' A level -1 animal appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Celestial':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level 5 celestial appears and fights for the caster while sustained for up to 1 min (<b>heightened +1</b> +2 level creature)"',
+      '"R30\' A level 5 celestial appears and fights for the caster while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Construct':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level -1 construct appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"R30\' A level -1 construct appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Dragon':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level 5 dragon appears and fights for the caster while sustained for up to 1 min (<b>heightened +1</b> +2 level creature)"',
+      '"R30\' A level 5 dragon appears and fights for the caster while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Elemental':
     'Level=2 ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level -1 elemental appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> level 1 elemental; <b>3rd</b> level 2 elemental; <b>4th</b> level 3 elemental; <b>5th</b> level 5 elemental; <b>6th</b> level 7 elemental; <b>7th</b> level 9 elemental; <b>8th</b> level 11 elemental; <b>9th</b> level 13 elemental; <b>10th</b> level 15 elemental)"',
+      '"R30\' A level -1 elemental appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Entity':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Level 5 aberration appears and fights for the caster while sustained for up to 1 min (<b>heightened 6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"R30\' A level 5 aberration appears and fights for the caster while sustained for up to 1 min (<b>heightened 6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Fey':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Level -1 fey appears and fights for caster while sustained for up to 1 min (<b>heightened 2nd</b> level 1 fey; <b>3rd</b> level 2 fey; <b>4th</b> level 3 fey; <b>5th</b> level 5 fey; <b>6th</b> level 7 fey; <b>7th</b> level 9 fey; <b>8th</b> level 11 fey; <b>9th</b> level 13 fey; <b>10th</b> level 15 fey)"',
+      '"A level -1 fey appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 fey; <b>3rd</b> summons a level 2 fey; <b>4th</b> summons a level 3 fey; <b>5th</b> summons a level 5 fey; <b>6th</b> summons a level 7 fey; <b>7th</b> summons a level 9 fey; <b>8th</b> summons a level 11 fey; <b>9th</b> summons a level 13 fey; <b>10th</b> summons a level 15 fey)"',
   'Summon Fiend':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Conjured fiend up to level 5 fights foes while sustained for up to 1 min (<b>heightened +1</b> summons creature of +2 level)"', 
+      '"R30\' A level 5 fiend appears and fights for the caster while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"', 
   'Summon Giant':
     'Level=5 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Level 5 giant appears and fights for caster while sustained for up to 1 min (<b>heightened 6th</b> level 7 giant; <b>7th</b> level 9 giant; <b>8th</b> level 11 giant; <b>9th</b> level 13 giant; <b>10th</b> level 15 giant)"',
+      '"A level 5 giant appears and fights for the caster while sustained for up to 1 min (<b>heightened 6th</b> summons a level 7 giant; <b>7th</b> summons a level 9 giant; <b>8th</b> summons a level 11 giant; <b>9th</b> summons a level 13 giant; <b>10th</b> summons a level 15 giant)"',
   'Summon Plant Or Fungus':
     'Level=1 ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Level -1 plant or fungus appears and fights for caster while sustained for up to 1 min (<b>heightened 2nd</b> level 1 creature; <b>3rd</b> level 2 creature; <b>4th</b> level 3 creature; <b>5th</b> level 5 creature; <b>6th</b> level 7 creature; <b>7th</b> level 9 creature; <b>8th</b> level 11 creature; <b>9th</b> level 13 creature; <b>10th</b> level 15 creature)"',
+      '"A level -1 plant or fungus appears and fights for the caster while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Sunburst':
     'Level=7 ' +
     'School=Evocation ' +
@@ -8859,7 +8859,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Caster may have touched corpse answer questions truthfully (<b>save Will</b> target may lie or refuse to answer; critical success caster cannot rest for 24 hr; critical failure target suffers -2 on Deception checks)"',
+      '"Allows caster to gain truthful answers from touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents caster from resting for 24 hr; critical failure inflicts -2 on target Deception checks)"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'School=Conjuration ' +
@@ -8970,14 +8970,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"The caster\'s next Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
+      '"Caster\'s next Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
   'True Target':
     'Level=7 ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies attacks within 1 rd on a designated creature ignore concealed or hidden status and gain the best of two rolls"',
+      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed or hidden status and gain the best of two rolls"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'School=Enchantment ' +
@@ -9047,7 +9047,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may project its voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last 1 hr; allows changing voice quality and requires an active Perception to attempt to disbelieve)"',
+      '"Allows caster to project its voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
     'School=Illusion ' +
@@ -9138,7 +9138,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure effects are permanent)"',
+      '"R120\' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure inflicts permanent confusion)"',
   'Water Breathing':
     'Level=2 ' +
     'School=Transmutation ' +
@@ -9958,7 +9958,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"A successful Strike allows the caster to inflict stunned 3 and 80 HP on the target anytime within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)"',
+      '"A successful Strike allows the caster to inflict stunned 3 and 80 HP on the target any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)"',
   'Wholeness Of Body':
     'Level=2 ' +
     'School=Necromancy ' +
