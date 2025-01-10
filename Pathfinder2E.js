@@ -2556,7 +2556,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Fighter ' +
     'Require=' +
       '"level >= 12",' +
-      '"maxWeaponRank >= 2 || rank.Unarmed Attacks >= 2"',
+      '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
 
   'Monk Dedication':
     'Trait=Archetype,Dedication,Multiclass,Monk ' +
@@ -3223,8 +3223,8 @@ Pathfinder2E.FEATURES = {
     'Note="Successful saves vs. mental control are critical successes/Foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=feature Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  'Unconventional Weaponry (%weapon)':
-    'Section=combat Note="Treats %weapon as one category simpler"',
+  'Unconventional Weaponry':
+    'Section=combat Note="Treats %V as one category simpler"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a different tradition"',
@@ -3241,7 +3241,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May add +4 to an untrained skill check 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  'Unconventional Expertise':'Section=combat Note="Attack Expert (%V)"',
+  'Unconventional Expertise':'Section=combat Note="Attack %1 (%V)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -11785,9 +11785,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '2',
       'combatNotes.greaterWeaponSpecialization', '+', '2'
     );
-    rules.defineRule('hasClassWeaponExpertise',
-      'features.Alchemical Weapon Expertise', '=', '1'
-    );
     rules.defineRule('selectableFeatureCount.Alchemist (Research Field)',
       'featureNotes.researchField', '=', '1'
     );
@@ -11874,7 +11871,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       else if(i.includes('Dragon Instinct'))
         rules.defineRule('features.Dragon Instinct', 'features.' + i, '=', '1');
     });
-    rules.defineRule('hasClassWeaponExpertise', 'features.Brutality', '=', '1');
     rules.defineRule('saveNotes.ragingResistance',
       'features.Animal Instinct', '=', '"piercing and slashing"',
       'features.Dragon Instinct', '=', '"fire"',
@@ -11903,8 +11899,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Bard') {
     rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Bard Weapon Expertise', '=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Occult"');
     rules.defineRule
@@ -11989,8 +11983,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
     );
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Weapon Expertise', '=', '1');
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.deityAndCause', '=', '1'
     );
@@ -12068,10 +12060,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Warpriest', '?', null,
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
     );
-    rules.defineRule('hasClassWeaponExpertise',
-      'features.Cloistered Cleric', '=', '1',
-      'features.Warpriest', '=', '1'
-    );
     rules.defineRule('magicNotes.cloisteredCleric',
       'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
@@ -12130,8 +12118,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'alignment', '=', 'dict.deityFollowerAlignments.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
   } else if(name == 'Druid') {
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Druid Weapon Expertise', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.druidicOrder', '+=', '1');
     rules.defineRule
       ('languages.Druidic', 'skillNotes.druidicLanguage', '=', '1');
@@ -12162,7 +12148,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       (rules, 'magicNotes.wild', '1', 'Wild Morph', null, null, 'Primal', null,
        null);
   } else if(name == 'Fighter') {
-    rules.defineRule('hasClassWeaponExpertise', 'levels.Fighter', '=', '1');
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
     );
@@ -12186,8 +12171,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'featureNotes.secondPathToPerfection', '+', '1'
     );
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Expert Strikes', '=', '1');
     rules.defineRule('magicNotes.gracefulLegend',
       'magicNotes.kiTradition(Divine)', '=', '"Divine"',
       'magicNotes.kiTradition(Occult)', '=', '"Occult"'
@@ -12257,8 +12240,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'combatNotes.legendaryMonsterHunter', '+', '1'
     );
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Ranger Weapon Expertise', '=', '1');
     rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
       "featureNotes.hunter'sEdge", '=', '1'
     );
@@ -12288,8 +12269,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       classLevel, '=', '1 + Math.floor(source / 2)'
     );
     rules.defineRule('featureNotes.skillFeats', classLevel, '=', null);
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Weapon Tricks', '=', '1');
     rules.defineRule('selectableFeatureCount.Rogue (Racket)',
       "featureNotes.rogue'sRacket", '=', '1'
     );
@@ -12309,9 +12288,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'bloodlineTraditions', '=', 'source.toLowerCase()'
     );
     rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
-    rules.defineRule('hasClassWeaponExpertise',
-      'features.Sorcerer Weapon Expertise', '=', '1'
-    );
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
@@ -12360,8 +12336,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
     rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
-    rules.defineRule
-      ('hasClassWeaponExpertise', 'features.Wizard Weapon Expertise', '=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Arcane"');
     rules.defineRule('magicNotes.legendarySpellcaster',
@@ -12899,8 +12873,16 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
     rules.defineRule('magicNotes.druidOrder', 'levels.Druid', '?', null);
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/) || name == 'Unconventional Expertise') {
-    let note = 'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-    rules.defineRule(note, 'hasClassWeaponExpertise', '?', null);
+    let note =
+      'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+    rules.defineRule(note, 'maxWeaponTraining', '?', 'source >= 2');
+    if(name == 'Unconventional Expertise') {
+      rules.defineRule(note, 'combatNotes.unconventionalWeaponry', '=', null);
+      rules.defineRule(note + '.1',
+        note, '?', null,
+        'maxWeaponTraining', '=', 'source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
+      );
+    }
   } else if(name == 'Elf Atavism') {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
@@ -13241,10 +13223,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
           ('weaponRangeAdjustment.' + w, 'combatNotes.uncannyBombs', '^=', '40');
     }
   } else if((matchInfo = name.match(/^Unconventional Weaponry \((.*)\)$/)) != null) {
+    let weapon = matchInfo[1];
     rules.defineRule
-      ('features.Unconventional Weaponry', 'feats.' + name, '=', '1');
-    rules.defineRule('combatNotes.unconventionalExpertise',
-      'combatNotes.unconventionalWeaponry(' + matchInfo[1].replaceAll(' ', '') + ')', '=', '"' + matchInfo[1] + '"'
+      ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
+    rules.defineRule('combatNotes.unconventionalWeaponry',
+      'features.' + name, '=', '"' + weapon + '"'
     );
   } else if(name == 'Untrained Improvisation') {
     rules.defineRule('skillNotes.untrainedImprovisation',
@@ -13842,15 +13825,20 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule('rank.' + category, 'trainingLevel.' + category, '=', null);
   rules.defineRule('rank.' + group, 'trainingLevel.' + group, '=', null);
   rules.defineRule('rank.' + name, 'trainingLevel.' + name, '=', null);
+  rules.defineRule('maxWeaponTraining',
+    'trainingLevel.' + category, '^=', null,
+    'trainingLevel.' + group, '^=', null,
+    'trainingLevel.' + name, '^=', null
+  );
   rules.defineRule('weaponRank.' + name,
     weaponName, '?', null,
     'rank.' + category, '=', null,
     'rank.' + group, '^=', null,
     'rank.' + name, '^=', null,
     'ancestralWeaponRank.' + name, '^=', null,
-    'unconventionalWeaponRank.' + name, '^=', null
+    'combatNotes.unconventionalWeaponry', '^=', 'source=="' + name + '" ? dict["rank.' + lowerCategory + '"] : null',
+    'combatNotes.unconventionalExpertise', '^=', 'source=="' + name + '" ? dict.maxWeaponTraining : null'
   );
-  rules.defineRule('maxWeaponRank', 'rank.' + name, '^=', null);
   let allFeats = rules.getChoices('feats') || {};
   traits.forEach(t => {
     let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
@@ -13863,11 +13851,6 @@ Pathfinder2E.weaponRules = function(
       );
     }
   });
-  rules.defineRule('unconventionalWeaponRank.' + name,
-    'combatNotes.unconventionalWeaponry(' + name.replaceAll(' ', '') + ')', '=', '0',
-    'rank.' + lowerCategory, '^', null,
-    'combatNotes.unconventionalExpertise', '^', 'source=="' + name + '" ? 2 : null'
-  );
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
     'weaponRank.' + name, '=', '0',
