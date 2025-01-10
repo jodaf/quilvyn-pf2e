@@ -43,7 +43,8 @@ var attributes = {
   "skillIncreases.Diplomacy":1, "skillIncreases.Fishing Lore":1, "skillIncreases.Genealogy Lore":1, 
   "skillIncreases.Gnome Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Heaven Lore":1, 
   "skillIncreases.Iomedae Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Milling Lore":2, 
-  "skillIncreases.Scouting Lore":2, "weapons.Crossbow":1, "weapons.Dagger":1, "weapons.Staff":1
+  "skillIncreases.Scouting Lore":2, "spells.Harm (D1 Nec)":1, "spells.Heal (D1 Nec)":1, "weapons.Crossbow":1, 
+  "weapons.Dagger":1, "weapons.Staff":1
 };
   </script>
 </head>
@@ -368,6 +369,10 @@ var attributes = {
     <tr style="text-align:left">
       <td>Agile Feet (D1 Tra): <b>(1)</b> Caster gains +5 Speed and may ignore difficult terrain for the remainder of turn</td>
     </tr><tr style="text-align:left">
+      <td>Harm (D1 Nec): <b>(1)</b> <b>(1)</b> Touched suffers 1d10 HP negative, <b>(2)</b> R30' target suffers 1d10 HP negative, or <b>(3)</b> 30' emanation inflicts 1d10 HP negative; undead regain 1d10 HP, +8 HP for <b>(2)</b></b> (<b>heightened +1</b> inflicts or restores +1d10 HP and +8 HP for <b>(2)</b>)</b> </td>
+    </tr><tr style="text-align:left">
+      <td>Heal (D1 Nec): <b>(1)</b> <b>(1)</b> Touched regains 1d10 HP, <b>(2)</b> R30' target regains 1d10+8 HP, or <b>(3)</b> 30' emanation restores 1d10 HP; undead suffer 1d10 HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d10 HP and +8 HP for <b>(2)</b>)</b> </td>
+    </tr><tr style="text-align:left">
       <td>Traveler's Transit (D4 Evo): <b>(2)</b> Caster gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> caster may choose to gain fly speed)</td>
     </tr></table>
 </td>
@@ -382,7 +387,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Harmful Font: +5 D9 slots</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Harming Hands: <i>Harm</i> die type increases to d10</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Healing Font: +5 D9 slots</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Healing Hands: <i>Heal</i> die type increases to d10</i></td>
     </tr><tr style="text-align:center">
       <td><i>Maker Of Miracles: +1 10th level spell slot</i></td>
     </tr><tr style="text-align:center">
@@ -435,10 +444,6 @@ var attributes = {
       <td>Eternal Blessing: R15' Surrounded by continuous level 10 <i>Bless</i> effects</td>
     </tr><tr style="text-align:center">
       <td>Fast Channel: May use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i></td>
-    </tr><tr style="text-align:center">
-      <td>Harming Hands: <i>Harm</i> die type increases to d10</td>
-    </tr><tr style="text-align:center">
-      <td>Healing Hands: <i>Heal</i> die type increases to d10</td>
     </tr><tr style="text-align:center">
       <td>Heroic Recovery: <b>(1)</b> May cast a single-target <i>Heal</i> that also gives the target +5 Speed, +1 attack, and +1 HP damage for 1 rd</td>
     </tr><tr style="text-align:center">

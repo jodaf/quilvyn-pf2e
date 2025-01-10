@@ -3785,8 +3785,8 @@ Pathfinder2E.FEATURES = {
   'Cantrip Expansion':
     // TODO
     // Bard: add two additional cantrips from your spell list to your repertoire
-    // Cleric: can prepare 2 additional cantrips each day
     // Sorcerer: add two additional cantrips from your spell list to your repertoire
+    // Cleric: can prepare 2 additional cantrips each day
     // Wizard: can prepare 2 additional cantrips each day
     'Section=magic Note="May prepare two additional cantrips each day"',
   'Esoteric Polymath':
@@ -3886,8 +3886,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      // TODO: give details of effects for current armor (pg 275)
-      '"May use the specialization effects of medium and heavy armor"',
+      '"Benefits from the specialization effects of medium and heavy armor"',
   'Armor Mastery':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
@@ -4191,9 +4190,7 @@ Pathfinder2E.FEATURES = {
   // Weapon Specialization as above
 
   'Deadly Simplicity':'Section=combat Note="+1 damage die step on %V"',
-  // TODO Implement?
   'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
-  // TODO Implement?
   'Healing Hands':'Section=magic Note="<i>Heal</i> die type increases to d10"',
   'Holy Castigation':
     'Section=magic Note="May use <i>Heal</i> to damage fiends"',
@@ -7593,7 +7590,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"<b>(1)</b> Touched suffers 1d8 HP negative, <b>(2)</b> R30\' target suffers 1d8 HP negative, or <b>(3)</b> 30\' emanation inflicts 1d8 HP negative; undead regain 1d8 HP, +8 HP for <b>(2)</b></b> (<b>heightened +1</b> inflicts or restores +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
+      '"<b>(1)</b> Touched suffers 1d%{harmSpellDie} HP negative, <b>(2)</b> R30\' target suffers 1d%{harmSpellDie} HP negative, or <b>(3)</b> 30\' emanation inflicts 1d%{harmSpellDie} HP negative; undead regain 1d%{harmSpellDie} HP, +8 HP for <b>(2)</b></b> (<b>heightened +1</b> inflicts or restores +1d%{harmSpellDie} HP and +8 HP for <b>(2)</b>)</b> "',
   'Haste':
     'Level=3 ' +
     'School=Transmutation ' +
@@ -7607,7 +7604,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"<b>(1)</b> Touched regains 1d8 HP, <b>(2)</b> R30\' target regains 1d8+8 HP, or <b>(3)</b> 30\' emanation restores 1d8 HP; undead suffer 1d8 HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d8 HP and +8 HP for <b>(2)</b>)</b> "',
+      '"<b>(1)</b> Touched regains 1d%{healSpellDie} HP, <b>(2)</b> R30\' target regains 1d%{healSpellDie}+8 HP, or <b>(3)</b> 30\' emanation restores 1d%{healSpellDie} HP; undead suffer 1d%{healSpellDie} HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP and +8 HP for <b>(2)</b>)</b> "',
   'Heroism':
     'Level=3 ' +
     'School=Enchantment ' +
@@ -12963,6 +12960,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
        null, null, 'Arcane', null, null);
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
+  } else if(name == 'Harming Hands') {
+    rules.defineRule('harmSpellDie', 'magicNotes.harmingHands', '^', '10');
+  } else if(name == 'Healing Hands') {
+    rules.defineRule('healSpellDie', 'magicNotes.healingHands', '^', '10');
   } else if(name == 'Healing Touch') {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.healingTouch', '1', 'Lay On Hands', null, null,
@@ -13702,6 +13703,10 @@ Pathfinder2E.spellRules = function(
   let action = Pathfinder2E.ACTION_MARKS[cast] || ('<b>(' + cast + ')</b>');
   rules.defineChoice
     ('notes', 'spells.' + name + ':' + action + ' ' + description);
+  if(name.startsWith('Harm ('))
+    rules.defineRule('harmSpellDie', 'spells.' + name, '=', '8');
+  else if(name.startsWith('Heal ('))
+    rules.defineRule('healSpellDie', 'spells.' + name, '=', '8');
 };
 
 /*
