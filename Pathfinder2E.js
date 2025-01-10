@@ -6199,8 +6199,7 @@ Pathfinder2E.FEATURES = {
   'Group Impression':
     'Section=skill ' +
     'Note="May use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
-  // TODO implement
-  'Hefty Hauler':'Section=ability Note="x2 maximum and encumbered Bulk"',
+  'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
   'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
@@ -10620,6 +10619,8 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   rules.defineRule('abilityNotes.abilityBoosts',
     'level', '=', '4 + Math.floor(source / 5) * 4'
   );
+  rules.defineRule('encumberedBulk', 'strengthModifier', '=', '5 + source');
+  rules.defineRule('maximumBulk', 'strengthModifier', '=', '10 + source');
   rules.defineRule('speed', '', '=', '25');
   rules.defineRule
     ('validationNotes.maximumInitialAbility', 'level', '?', 'source == 1');
@@ -14126,9 +14127,9 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Speed', within: 'AbilityStats'},
             {name: 'Size', within: 'AbilityStats'},
             {name: 'LoadInfo', within: 'AbilityStats', separator: ''},
-              {name: 'Carry', within: 'LoadInfo',
-               format: '<b>Carry/Lift:</b> %V'},
-              {name: 'Lift', within: 'LoadInfo', format: '/%V'}
+              {name: 'Encumbered Bulk', within: 'LoadInfo',
+               format: '<b>Encumbered/Maximum Bulk:</b> %V'},
+              {name: 'Maximum Bulk', within: 'LoadInfo', format: '/%V'}
       );
       if(name != 'Collected Notes') {
         viewer.addElements(
