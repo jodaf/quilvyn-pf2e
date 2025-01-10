@@ -3038,7 +3038,7 @@ Pathfinder2E.FEATURES = {
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
+    'Note="Attack %V (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
     'Section=skill ' +
@@ -3075,7 +3075,7 @@ Pathfinder2E.FEATURES = {
     'Note="May replace Ancestral Longevity and Expert Longevity skills 1/day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
+    'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
   'Burrow Elocutionist':
@@ -3118,7 +3118,7 @@ Pathfinder2E.FEATURES = {
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Glaive; Kukri; Gnome Weapons)"',
+    'Note="Attack %V (Glaive; Kukri; Gnome Weapons)"',
 
   'Burn It!':
     'Section=combat,magic ' +
@@ -3161,7 +3161,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May use Goblin Scuttle to Stride %{speed//2}\'"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Dogslicer; Horsechopper; Goblin Weapons)"',
+    'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
     'Section=combat Note="May Sneak at full Speed and without cover"',
 
@@ -3211,7 +3211,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Hide and Sneak without cover and gain additional cover from creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
+    'Note="Attack %V (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a different tradition"',
@@ -3241,7 +3241,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May add +4 to an untrained skill check 1/day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  'Unconventional Expertise':'Section=combat Note="Attack %1 (%V)"',
+  'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -3275,7 +3275,7 @@ Pathfinder2E.FEATURES = {
   'Incredible Ferocity':'Section=combat Note="Increased Orc Ferocity effects"',
   'Orc Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack Expert (Falchion; Greataxe; Orc Weapons)"',
+    'Note="Attack %V (Falchion; Greataxe; Orc Weapons)"',
 
   // Backgrounds
   'Martial Focus':'Section=feature Note="1 selection"',
@@ -12875,12 +12875,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/) || name == 'Unconventional Expertise') {
     let note =
       'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-    rules.defineRule(note, 'maxWeaponTraining', '?', 'source >= 2');
+    rules.defineRule(note,
+      'maxWeaponTraining', '=', 'source<2 ? null : source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
+    );
     if(name == 'Unconventional Expertise') {
-      rules.defineRule(note, 'combatNotes.unconventionalWeaponry', '=', null);
       rules.defineRule(note + '.1',
         note, '?', null,
-        'maxWeaponTraining', '=', 'source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
+        'combatNotes.unconventionalWeaponry', '=', null
       );
     }
   } else if(name == 'Elf Atavism') {
@@ -13835,7 +13836,6 @@ Pathfinder2E.weaponRules = function(
     'rank.' + category, '=', null,
     'rank.' + group, '^=', null,
     'rank.' + name, '^=', null,
-    'ancestralWeaponRank.' + name, '^=', null,
     'combatNotes.unconventionalWeaponry', '^=', 'source=="' + name + '" ? dict["rank.' + lowerCategory + '"] : null',
     'combatNotes.unconventionalExpertise', '^=', 'source=="' + name + '" ? dict.maxWeaponTraining : null'
   );
@@ -13844,11 +13844,18 @@ Pathfinder2E.weaponRules = function(
     let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
     if((feat in Pathfinder2E.FEATS || feat in allFeats) &&
        category.match(/^(Advanced|Martial) Weapons$/)) {
-      let note = 'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
-      rules.defineRule('ancestralWeaponRank.' + name,
-        note, '=', '0',
-        'rank.' + lowerCategory, '^', null
+      let note =
+        'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
+      rules.defineRule('weaponRank.' + name,
+        note, '^=', 'dict["rank.' + lowerCategory + '"]'
       );
+    }
+    feat = t.replace(/f$/, 'ven') + ' Weapon Expertise';
+    if(feat in Pathfinder2E.FEATS || feat in allFeats) {
+      let note =
+        'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
+      rules.defineRule
+        ('weaponRank.' + name, note, '^=', 'dict["rank.maxWeaponTraining"]');
     }
   });
   rules.defineRule('proficiencyLevelBonus.' + name,
