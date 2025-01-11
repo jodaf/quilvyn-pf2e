@@ -478,51 +478,90 @@ Pathfinder2E.BLOODLINES = {
   'Aberrant':
       'SpellList=Occult ' +
       'BloodlineSkills=Intimidation,Occultism ' +
+      'GrantedSpells=' +
+        'Daze,"Spider Sting","Touch Of Idiocy","Vampiric Touch",Confusion,' +
+        '"Black Tentacles",Feeblemind,"Warp Mind","Uncontrollable Dance",' +
+        '"Unfathomable Song" ' +
       'BloodlineSpells="Tentacular Limbs","Aberrant Whispers","Unusual Anatomy" ' +
       'BloodMagic="gives self or target +2 Will saves for 1 rd"',
   'Angelic':
       'SpellList=Divine ' +
       'BloodlineSkills=Diplomacy,Religion ' +
+      'GrantedSpells=' +
+        'Light,Heal,"Spiritual Weapon","Searing Light","Divine Wrath",' +
+        '"Flame Strike","Blade Barrier","Divine Decree","Divine Aura",' +
+        'Foresight ' +
       'BloodlineSpells="Angelic Halo","Angelic Wings","Celestial Brand" ' +
       'BloodMagic="gives self or target +1 saves for 1 rd"',
   'Demonic':
       'SpellList=Divine ' +
       'BloodlineSkills=Intimidation,Religion ' +
+      'GrantedSpells=' +
+        '"Acid Splash",Fear,Enlarge,Slow,"Divine Wrath","Abyssal Plague",' +
+        'Disintegrate,"Divine Decree","Divine Aura",Implosion ' +
       'BloodlineSpells="Glutton\'s Jaws","Swamp Of Sloth","Abyssal Wrath" ' +
       'BloodMagic="gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd"',
   'Diabolic':
       'SpellList=Divine ' +
       'BloodlineSkills=Deception,Religion ' +
+      'GrantedSpells=' +
+        '"Produce Flame",Charm,"Flaming Sphere",Enthrall,Suggestion,' +
+        '"Crushing Despair","True Seeing","Divine Decree","Divine Aura",' +
+        '"Meteor Swarm" ' +
       'BloodlineSpells="Diabolic Edict","Embrace The Pit","Hellfire Plume" ' +
       'BloodMagic="gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level"',
   'Draconic':
       'SpellList=Arcane ' +
       'BloodlineSkills=Arcana,Intimidation ' +
+      'GrantedSpells=' +
+        'Shield,"True Strike","Resist Energy",Haste,"Spell Immunity",' +
+        '"Chromatic Wall","Dragon Form","Mask Of Terror","Prismatic Wall",' +
+        '"Overwhelming Presence" ' +
       'BloodlineSpells="Dragon Claws","Dragon Breath","Dragon Wings" ' +
       'BloodMagic="gives self or target +1 AC for 1 rd"',
   'Elemental':
       'SpellList=Primal ' +
       'BloodlineSkills=Intimidation,Nature ' +
+      'GrantedSpells=' +
+        '"Produce Flame","Burning Hands","Resist Energy",Fireball,' +
+        '"Freedom Of Movement","Elemental Form",Repulsion,"Energy Aegis",' +
+        '"Prismatic Wall","Storm Of Vengeance" ' +
       'BloodlineSpells="Elemental Toss","Elemental Motion","Elemental Blast" ' +
       'BloodMagic="gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd"',
   'Fey':
       'SpellList=Primal ' +
       'BloodlineSkills=Deception,Nature ' +
+      'GrantedSpells=' +
+        '"Ghost Sound",Charm,"Hideous Laughter",Enthrall,Suggestion,' +
+        '"Cloak Of Colors",Mislead,"Visions Of Danger",' +
+        '"Uncontrollable Dance","Resplendent Mansion" ' +
       'BloodlineSpells="Faerie Dust","Fey Disappearance","Fey Glamour" ' +
       'BloodMagic="gives self or target concealment for 1 rd"',
   'Hag':
       'SpellList=Occult ' +
       'BloodlineSkills=Deception,Occultism ' +
+      'GrantedSpells=' +
+        'Daze,"Illusory Disguise","Touch Of Idiocy",Blindness,' +
+        '"Outcast\'s Curse","Mariner\'s Curse","Baleful Polymorph",' +
+        '"Warp Mind","Spiritual Epidemic","Nature\'s Enmity" ' +
       'BloodlineSpells="Jealous Hex","Horrific Visage","You\'re Mine" ' +
       'BloodMagic="inflicts 2 HP mental per spell level (Will negates) to first successful attacker for 1 rd"',
   'Imperial':
       'SpellList=Arcane ' +
       'BloodlineSkills=Arcana,Society ' +
+      'GrantedSpells=' +
+        '"Detect Magic","Magic Missile","Dispel Magic",Haste,' +
+        '"Dimension Door","Prying Eye",Disintegrate,"Prismatic Spray",Maze,' +
+        '"Prismatic Sphere" ' +
       'BloodlineSpells="Ancestral Memories","Extend Spell","Arcane Countermeasure" ' +
       'BloodMagic="gives self or target +1 skill checks for 1 rd"',
   'Undead':
       'SpellList=Divine ' +
       'BloodlineSkills=Intimidation,Religion ' +
+      'GrantedSpells=' +
+        '"Chill Touch",Harm,"False Life","Bind Undead","Talking Corpse",' +
+        'Cloudkill,"Vampiric Exsanguination","Finger Of Death",' +
+        '"Horrid Wilting","Wail Of The Banshee" ' +
       'BloodlineSpells="Undeath\'s Blessing","Drain Life","Grasping Grave" ' +
       'BloodMagic="gives self 1 temporary Hit Point per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd"'
 };
@@ -3087,9 +3126,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May cast chosen primal cantrip at will"',
   'Gnome Obsession':
     'Section=skill ' +
-    'Note=' +
-      // TODO implement
-      '"Skill %V (Choose 1 from any Lore; %{background} Lore skill)"',
+    'Note="Skill %V (Choose 1 from any Lore; background Lore skill)"',
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -10037,7 +10074,6 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    // TODO line/cone, energy type, and save type depend on dragon type
     'Description=' +
       '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> +2d6 HP)"',
   'Dragon Claws':
@@ -11320,7 +11356,6 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       'features.Multilingual', '+', null
     );
   } else if(name == 'Human') {
-    // TODO: proper way to handle skill expert?
     rules.defineRule('choiceCount.Skill',
       'skillNotes.skilledHeritageHuman', '+=', 'source=="Trained" ? 1 : 2'
     );
@@ -11493,7 +11528,14 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
 };
 
 /*
- * TODO
+ * Defines in #rules# the rules associated with sorcerer bloodline #name#.
+ * #spellList# gives the tradition (one of "Arcane", "Divine", "Occult" or
+ * "Primal") from which the character draws spells. #bloodlineSkills# lists the
+ * skills the bloodline grants Trained status for. #grantedSpells# lists the
+ * initial spell granted by the bloodline and the spells granted by the
+ * Advanced Bloodline and Greater Bloodline feats. #bloodlineSpells# list the
+ * spells that the bloodline adds to the character's reperetoire, and
+ * #bloodMagic# describes the added effects of casting a bloodline spell.
  */
 Pathfinder2E.bloodlineRules = function(
   rules, name, spellList, bloodlineSkills, grantedSpells, bloodlineSpells,
@@ -11512,7 +11554,11 @@ Pathfinder2E.bloodlineRules = function(
     console.log('Bad skills list "' + bloodlineSkills + '" for bloodline ' + name);
     return;
   }
-  if(!Array.isArray(grantedSpells)) {
+  bloodlineSkills.forEach(s => {
+    if(!(s in (rules.getChoices('skills') || Pathfinder2E.SKILLS)))
+      console.log('Unknown skill "' + s + '" for bloodline ' + name);
+  });
+  if(!Array.isArray(grantedSpells) || grantedSpells.length != 10) {
     console.log('Bad granted spells list "' + grantedSpells + '" for bloodline ' + name);
     return;
   }
@@ -11520,6 +11566,13 @@ Pathfinder2E.bloodlineRules = function(
     console.log('Bad bloodline spells list "' + bloodlineSpells + '" for bloodline ' + name);
     return;
   }
+  grantedSpells.concat(bloodlineSpells).forEach(s => {
+    let allSpells = rules.getChoices('spells') || Pathfinder2E.SPELLS;
+    let matchingSpells =
+      QuilvynUtils.getKeys(allSpells, new RegExp(s + ' \\('));
+    if(matchingSpells.length == 0)
+      console.log('Unknown spell "' + s + '" for bloodline ' + name);
+  });
   if(typeof(bloodMagic) != 'string') {
     console.log('Bad blood magic "' + bloodMagic + '" for bloodline ' + name);
     return;
