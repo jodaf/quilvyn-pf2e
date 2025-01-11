@@ -11555,7 +11555,8 @@ Pathfinder2E.bloodlineRules = function(
     return;
   }
   bloodlineSkills.forEach(s => {
-    if(!(s in (rules.getChoices('skills') || Pathfinder2E.SKILLS)))
+    let allSkills = rules.getChoices('skills') || Pathfinder2E.SKILLS;
+    if(!(s in allSkills))
       console.log('Unknown skill "' + s + '" for bloodline ' + name);
   });
   if(!Array.isArray(grantedSpells) || grantedSpells.length != 10) {
@@ -11567,11 +11568,15 @@ Pathfinder2E.bloodlineRules = function(
     return;
   }
   grantedSpells.concat(bloodlineSpells).forEach(s => {
-    let allSpells = rules.getChoices('spells') || Pathfinder2E.SPELLS;
-    let matchingSpells =
-      QuilvynUtils.getKeys(allSpells, new RegExp(s + ' \\('));
-    if(matchingSpells.length == 0)
-      console.log('Unknown spell "' + s + '" for bloodline ' + name);
+    if(s in Pathfinder2E.SPELLS)
+      ; // empty
+    else {
+      let allSpells = rules.getChoices('spells') || {};
+      let matchingSpells =
+        QuilvynUtils.getKeys(allSpells, new RegExp(s + ' \\('));
+      if(matchingSpells.length == 0)
+        console.log('Unknown spell "' + s + '" for bloodline ' + name);
+    }
   });
   if(typeof(bloodMagic) != 'string') {
     console.log('Bad blood magic "' + bloodMagic + '" for bloodline ' + name);
@@ -13695,11 +13700,9 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   if(name.endsWith(' Lore'))
     rules.defineRule('rank.Lore', 'rank.' + name, '^=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
-    'rank.' + name, '=', 'source > 0 ? 0 : null',
-    // TODO right place for this, or in featRulesExtra?
+    'trainingLevel.' + name, '=', 'source > 0 ? 0 : null',
     'skillNotes.eclecticSkill', '=', '0',
-    // TODO this is ugly
-    'skillNotes.untrainedImprovisation', '=', 'dict["rank.' + name + '"] || dict["skillNotes.eclecticSkill"] ? null : dict.level<7 ? Math.floor(-dict.level / 2) : 0',
+    'skillNotes.untrainedImprovisation', '^=', 'dict.level<7 ? Math.floor(-dict.level / 2) : 0',
     'level', '+', null
   );
   rules.defineRule('proficiencyBonus.' + name,
