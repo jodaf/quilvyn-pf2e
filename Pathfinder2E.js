@@ -174,7 +174,10 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Fey-Touched Gnome:Heritage",' +
       '"1:Sensate Gnome:Heritage",' +
       '"1:Umbral Gnome:Heritage",' +
-      '"1:Wellspring Gnome:Heritage" ' +
+      '"1:Wellspring Gnome:Heritage",' +
+      '"1:Arcane:Wellspring Tradition",' +
+      '"1:Divine:Wellspring Tradition",' +
+      '"1:Occult:Wellspring Tradition" ' +
     'Traits=Gnome,Humanoid ' +
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
@@ -1163,8 +1166,9 @@ Pathfinder2E.FEATS = {
   'Gnome Weapon Innovator':
     'Trait=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
-  // TODO requires "at least one primal innate spell"
-  'First World Adept':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'First World Adept':
+    'Trait=Ancestry,Gnome ' +
+    'Require="level >= 9","spellDifficultyClass.Innate Primal >= 1"',
   'Vivacious Conduit':'Trait=Ancestry,Gnome Require="level >= 9"',
   'Gnome Weapon Expertise':
     'Trait=Ancestry,Gnome ' +
@@ -2334,7 +2338,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Sorcerer,Wizard,Detection,Divination Require="level >= 12"',
   'Interweave Dispel':
     'Trait=Class,Sorcerer,Metamagic ' +
-    'Require="level >= 14","spells.Dispel Magic"',
+    'Require="level >= 14","knowsDispelMagicSpell"',
   'Reflect Spell':
     'Trait=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
@@ -2733,7 +2737,7 @@ Pathfinder2E.FEATS = {
   'Ancestral Paragon':'Trait=General Require="level >= 3"',
   'Untrained Improvisation':'Trait=General Require="level >= 3"',
   'Expeditious Search':
-    'Trait=General Require="level >= 7","perception >= 2"',
+    'Trait=General Require="level >= 7","rank.Perception >= 2"',
   'Incredible Investiture':
     'Trait=General Require="level >= 11","charisma >= 16"',
 
@@ -2970,7 +2974,7 @@ Pathfinder2E.FEATURES = {
   'Elf Heritage':'Section=feature Note="1 selection"',
   'Fey-Touched Gnome':
     'Section=magic ' +
-    'Note="May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/day"',
+    'Note="May cast chosen primal cantrip as an innate spell at will; may spend 10 min to replace chosen cantrip 1/day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
@@ -3003,7 +3007,7 @@ Pathfinder2E.FEATURES = {
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Detect Magic</i> cantrip at will",' +
+      '"May cast <i>Detect Magic</i> cantrip as an arcane innate spell at will",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
@@ -3022,7 +3026,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat,save ' +
     'Note="+4 Hit Points","Suffers half distance falling damage"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
-  'Wellspring Gnome':'Section=magic Note="May cast chosen cantrip at will"',
+  'Wellspring Gnome':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"May cast chosen cantrip as an innate spell at will"',
   'Whisper Elf':
     'Section=skill ' +
     'Note="May attempt a R60\' Seek using hearing; +2 within 30\'"',
@@ -3073,7 +3081,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Meld Into Stone</i> 1/day",' +
+      '"May cast <i>Meld Into Stone</i> as a divine innate spell 1/day",' +
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3094,7 +3102,8 @@ Pathfinder2E.FEATURES = {
     'Note="+1 vs. emotion effects; successes are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
-    'Section=magic Note="May cast chosen cantrip at will"',
+    'Section=magic ' +
+    'Note="May cast chosen arcane cantrip as an innate spell at will"',
   'Unwavering Mien':
     'Section=save ' +
     'Note="May reduce duration of mental effects by 1 rd/+1 degree of success vs. sleep effects"',
@@ -3123,7 +3132,8 @@ Pathfinder2E.FEATURES = {
     'Section=save,skill ' +
     'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey and retry after 1 min conversation"',
   'First World Magic':
-    'Section=magic Note="May cast chosen primal cantrip at will"',
+    'Section=magic ' +
+    'Note="May cast chosen primal cantrip as an innate spell at will"',
   'Gnome Obsession':
     'Section=skill ' +
     'Note="Skill %V (Choose 1 from any Lore; background Lore skill)"',
@@ -3149,7 +3159,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> at level 2 1/day"',
+     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as 2nd-level primal innate spells 1/day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
@@ -3285,7 +3295,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="After a critical success using a skill, may immediately Aid an ally on the same skill"',
   'Supernatural Charm':
-    'Section=magic Note="May cast 1st level <i>Charm</i> 1/day"',
+    'Section=magic ' +
+    'Note="May cast <i>Charm</i> as a 1st-level primal innate spell 1/day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -4357,7 +4368,7 @@ Pathfinder2E.FEATURES = {
     'Note="May sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
   "Avatar's Audience":
     'Section=magic ' +
-    'Note="May speak for deity, <i>Commune</i> without cost, and <i>Plane Shift</i> to deity 1/day"',
+    'Note="May speak for deity, conduct the <i>Commune</i> ritual to contact %{deity} without cost, and <i>Plane Shift</i> to %{deity}\'s realm 1/day"',
   'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Channel':
     'Action=Free ' +
@@ -6162,7 +6173,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
-    'Note="May cast <i>Detect Magic</i> at level %{rank.Arcana>=4?4:rank.Arcana>=3?3:1} at will"',
+    'Note="May cast %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'}-level <i>Detect Magic</i> as an arcane innate spell will"',
   'Bargain Hunter':
     'Section=skill Note="+2 initial gold/May use Diplomacy to Earn Income"',
   'Battle Cry':
@@ -7413,7 +7424,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire to unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire to unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
+      '"Caster gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire to unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire to unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
   'Finger Of Death':
     'Level=7 ' +
     'School=Necromancy ' +
@@ -10859,6 +10870,34 @@ Pathfinder2E.magicRules = function(rules, schools, spells, domains) {
   for(let d in domains)
     rules.choiceRules(rules, 'Domain', d, domains[d]);
 
+  ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+    let innate = 'Innate ' + t;
+    rules.defineChoice('notes',
+      'spellAttackModifier.' + innate + ':%S (charisma; %1)',
+      'spellDifficultyClass.' + innate + ':%V (charisma; %1)'
+    );
+    rules.defineRule('proficiencyBonus.' + innate,
+      'rank.' + t, '+', '2 * (source - 1)',
+      'level', '+', null
+    );
+    rules.defineRule('spellAttackModifier.' + innate,
+      'proficiencyBonus.' + innate, '=', null,
+      'charismaModifier', '+', null
+    );
+    rules.defineRule('spellAttackModifier.' + innate + '.1',
+      'spellAttackModifier.' + innate, '?', null,
+      '', '=', '"trained"',
+      'rank.' + t, '=', 'source>3 ? "legendary" : source>2 ? "master" : source>1 ? "expert" : null'
+    );
+    rules.defineRule('spellDifficultyClass.' + innate,
+      'proficiencyBonus.' + innate, '=', null,
+      'charismaModifier', '+', '10 + source'
+    );
+    rules.defineRule('spellDifficultyClass.' + innate + '.1',
+      'spellAttackModifier.' + innate + '.1', '=', null
+    );
+  });
+
 };
 
 /* Defines rules related to character aptitudes. */
@@ -11346,6 +11385,18 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.seerElf', '1', 'Detect Magic', null, null, 'Arcane',
        null, null);
+    rules.defineRule
+      ('proficiencyBonus.Innate Arcane', 'features.Seer Elf', '=', '2');
+  } else if(name == 'Gnome') {
+    rules.defineRule('selectableFeatureCount.Gnome (Wellspring Tradition)',
+      'featureNotes.wellspringGnome', '=', '1'
+    );
+    rules.defineRule
+      ('proficiencyBonus.Innate Arcane', 'gnomeFeatures.Arcane', '=', '2');
+    rules.defineRule
+      ('proficiencyBonus.Innate Divine', 'gnomeFeatures.Divine', '=', '2');
+    rules.defineRule
+      ('proficiencyBonus.Innate Occult', 'gnomeFeatures.Occult', '=', '2');
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
       (rules, 'Jaws', 'Unarmed', 0, '1d6P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
@@ -12960,8 +13011,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('featureNotes.expertAlchemy', 'level', '=', 'source>=10 ? 5 : 3');
   } else if(name == 'Extend Armament Alignment') {
-    rules.defineRule('combatNotes.alignArmament',
+    rules.defineRule('combatNotes.alignArmament(Chaotic)',
       'combatNotes.extendArmamentAlignment', '=', 'null' // italics
+    );
+    rules.defineRule('features.Align Armament',
+      'features.Align Armament (Chaotic)', '=', '1',
+      'features.Align Armament (Evil)', '=', '1',
+      'features.Align Armament (Good)', '=', '1',
+      'features.Align Armament (Lawful)', '=', '1'
     );
   } else if(name == 'Far Lobber') {
     let allWeapons = rules.getChoices('weapons');
@@ -13039,6 +13096,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.inspirationalPerformance', '1', 'Inspire Courage',
        null, null, 'Occult', null, null);
+  } else if(name == 'Interweave Dispel') {
+    // TODO Remove hard-coding?
+    rules.defineRule('knowsDispelMagicSpell',
+      'spells.Dispel Magic (A2 Abj)', '=', '1',
+      'spells.Dispel Magic (D2 Abj)', '=', '1',
+      'spells.Dispel Magic (O2 Abj)', '=', '1',
+      'spells.Dispel Magic (P2 Abj)', '=', '1'
+    );
   } else if(name == 'Instinct Ability') {
     // TODO What about homebrew instincts?
     rules.defineRule('featureNotes.instinctAbility',
@@ -13182,6 +13247,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.orderMagic(Wild)', '1', 'Wild Morph', null, null,
        'Primal', null, null);
+  } else if(name == 'Otherworldly Magic') {
+    rules.defineRule
+      ('proficiencyBonus.Innate Arcane', 'features.' + name, '=', '2');
   } else if(name == 'Primal Summons') {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.primalSummons', '1', 'Primal Summons', null, null,
@@ -13257,6 +13325,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       (rules, 'magicNotes.stonewalker', '1', 'Meld Into Stone', null, null,
        'Divine', null, null);
     rules.defineRule
+      ('proficiencyBonus.Innate Divine', 'features.' + name, '=', '2');
+    rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   } else if(name == 'Studious Capacity') {
     rules.defineRule('magicNotes.studiousCapacity.1',
@@ -13272,6 +13342,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     Pathfinder2E.featureSpell
       (rules, 'magicNotes.supernaturalCharm', '1', 'Charm', null, null,
        'Divine', null, null);
+    rules.defineRule
+      ('proficiencyBonus.Innate Primal', 'features.' + name, '=', '2');
   } else if(name == 'Unburdened Iron') {
     rules.defineRule('abilityNotes.armorSpeedPenalty',
       'abilityNotes.unburdenedIron', '^', '0'
@@ -13701,6 +13773,7 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     rules.defineRule('rank.Lore', 'rank.' + name, '^=', null);
   rules.defineRule('proficiencyLevelBonus.' + name,
     'trainingLevel.' + name, '=', 'source > 0 ? 0 : null',
+    'skillIncreases.' + name, '=', 'source > 0 ? 0 : null',
     'skillNotes.eclecticSkill', '=', '0',
     'skillNotes.untrainedImprovisation', '^=', 'dict.level<7 ? Math.floor(-dict.level / 2) : 0',
     'level', '+', null
@@ -14244,14 +14317,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
               {name: 'Attacks Per Round', within: 'CombatStats'},
               {name: 'Class Difficulty Class', within: 'CombatStats',
                format: '<b>Class DC</b>: %V', separator: '; '},
-/* TODO include this?
-            {name: 'CombatProficiencies', within: 'CombatPart',
-             separator: innerSep},
-              {name: 'Defense Proficiency', within: 'CombatProficiencies',
-               separator: '; '},
-              {name: 'Attack Proficiency', within: 'CombatProficiencies',
-               separator: '; '},
-*/
             {name: 'Gear', within: 'CombatPart', separator: innerSep},
               {name: 'Armor', within: 'Gear'},
               {name: 'Shield', within: 'Gear'},
@@ -14454,7 +14519,6 @@ Pathfinder2E.initialEditorElements = function() {
     ['armor', 'Armor', 'select-one', 'armors'],
     ['shield', 'Shield', 'select-one', 'shields'],
     ['weapons', 'Weapons', 'setbag', 'weapons'],
-    ['weaponsChosen', 'Proficiency', 'set', 'weapons'],
     ['spells', 'Spells', 'fset', 'spells'],
     ['notes', 'Notes', 'textarea', [40,10]],
     ['hiddenNotes', 'Hidden Notes', 'textarea', [40,10]]
@@ -14908,7 +14972,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     });
   } else if(attribute == 'spells') {
-/* TODO
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
     attrs = this.applyRules(attributes);
@@ -14934,7 +14997,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
            QuilvynUtils.sumMatching(attributes, '^spells\\..*[(]' + groupAndLevel + '[^0]'), 1);
       }
     }
-  */
   } else if(attribute == 'weapons') {
     let weapons = this.getChoices('weapons');
     let clas = 'Fighter';

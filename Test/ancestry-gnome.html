@@ -19,11 +19,11 @@ var attributes = {
   "feats.Illusion Sense":1, "feats.Vivacious Conduit":1, "gender":"Male", "languages.Goblin":1, 
   "languages.Halfling":1, "levels.Cleric":1, "name":"Ancestry-Gnome", 
   "selectableFeatures.Cleric - Cloistered Cleric":1, "selectableFeatures.Cleric - Healing Font":1, 
-  "selectableFeatures.Gnome - Chameleon Gnome":1, "selectableFeatures.Gnome - Fey-Touched Gnome":1, 
-  "selectableFeatures.Gnome - Sensate Gnome":1, "selectableFeatures.Gnome - Umbral Gnome":1, 
-  "selectableFeatures.Gnome - Wellspring Gnome":1, "shield":"None", "skillIncreases.Astral Plane Lore":1, 
-  "skillIncreases.Diplomacy":1, "skillIncreases.Gladitorial Lore":1, "skillIncreases.Heaven Lore":1, 
-  "skillIncreases.Vampire Lore":1
+  "selectableFeatures.Gnome - Arcane":1, "selectableFeatures.Gnome - Chameleon Gnome":1, 
+  "selectableFeatures.Gnome - Fey-Touched Gnome":1, "selectableFeatures.Gnome - Sensate Gnome":1, 
+  "selectableFeatures.Gnome - Umbral Gnome":1, "selectableFeatures.Gnome - Wellspring Gnome":1, "shield":"None", 
+  "skillIncreases.Astral Plane Lore":1, "skillIncreases.Diplomacy":1, "skillIncreases.Gladitorial Lore":1, 
+  "skillIncreases.Heaven Lore":1, "skillIncreases.Vampire Lore":1
 };
   </script>
 </head>
@@ -74,7 +74,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; General: 0</td>
-        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Cleric (Doctrine); Gnome (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Cleric (Doctrine); Gnome (Heritage); Gnome (Wellspring Tradition)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -83,7 +83,7 @@ var attributes = {
         <td><b>Feats</b>: Animal Accomplice; Animal Elocutionist; Burrow Elocutionist; Domain Initiate (Family); Energized Font; Fey Fellowship; First World Adept; First World Magic; Gnome Obsession; Gnome Weapon Expertise; Gnome Weapon Familiarity; Gnome Weapon Innovator; Illusion Sense; Vivacious Conduit</td>
         <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Anathema; Attack Trained (Simple Weapons; Unarmed Attacks); Cleric Skills; Cloistered Cleric; Defense Trained (Unarmored Defense); Deity; Divine Font; Divine Spellcasting; Doctrine; Healing Font; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Spell Trained (Divine)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
-        <td><b>Gnome Features</b>: Ability Boost (Charisma; Constitution; Choose 1 from any); Ability Flaw (Strength); Ancestry Feats; Chameleon Gnome; Fey-Touched Gnome; Gnome Heritage; Low-Light Vision; Sensate Gnome; Small; Umbral Gnome; Wellspring Gnome</td>
+        <td><b>Gnome Features</b>: Ability Boost (Charisma; Constitution; Choose 1 from any); Ability Flaw (Strength); Ancestry Feats; Arcane; Chameleon Gnome; Fey-Touched Gnome; Gnome Heritage; Low-Light Vision; Sensate Gnome; Small; Umbral Gnome; Wellspring Gnome</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -102,6 +102,8 @@ var attributes = {
         <td><i>Gnome Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Umbral Gnome: Has the Darkvision feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Wellspring Gnome: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or cast spells prohibited by Shelyn</td>
       </tr><tr style="text-align:center">
@@ -248,8 +250,8 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: D0: 5; D1: 5</td>
         <td><b>Focus Points</b>: 1</td>
-        <td><b>Attack</b>: Divine: +7 (wisdom; expert)</td>
-        <td><b>Spell DC</b>: Divine: 17 (wisdom; expert)</td>
+        <td><b>Attack</b>: Divine: +7 (wisdom; expert); Innate Arcane: +5 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Divine: 17 (wisdom; expert); Innate Arcane: 15 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -271,7 +273,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Domain Initiate (Family): Knows the <i>Soothing Words</i> spell/Has a focus pool with 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
-      <td><i>First World Adept: May cast <i>Faerie Fire</i> and <i>Invisibility</i> at level 2 1/day</i></td>
+      <td><i>First World Adept: May cast <i>Faerie Fire</i> and <i>Invisibility</i> as 2nd-level primal innate spells 1/day</i></td>
     </tr><tr style="text-align:center">
       <td><i>Healing Font: +3 D1 slots</i></td>
     </tr><tr style="text-align:center">
@@ -283,11 +285,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Energized Font: <b>(1)</b> May regain 1 Focus Point 1/day</td>
     </tr><tr style="text-align:center">
-      <td>Fey-Touched Gnome: May cast chosen cantrip at will; may spend 10 min to replace chosen cantrip 1/day</td>
+      <td>Fey-Touched Gnome: May cast chosen primal cantrip as an innate spell at will; may spend 10 min to replace chosen cantrip 1/day</td>
     </tr><tr style="text-align:center">
-      <td>First World Magic: May cast chosen primal cantrip at will</td>
+      <td>First World Magic: May cast chosen primal cantrip as an innate spell at will</td>
     </tr><tr style="text-align:center">
-      <td>Wellspring Gnome: May cast chosen cantrip at will</td>
+      <td>Wellspring Gnome: May cast chosen cantrip as an innate spell at will</td>
     </tr></table>
 </td>
   </tr></table>
@@ -307,7 +309,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Energized Font Feat: Requires level (currently 1) >= 5 and focus points (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>First World Adept Feat: Requires level (currently 1) >= 9</td>
+        <td>First World Adept Feat: Requires level (currently 1) >= 9 and innate primal spell difficulty clas</td>
       </tr><tr style="text-align:center">
         <td>Gnome Heritage Allocation: 1 available vs. 5 allocated</td>
       </tr><tr style="text-align:center">
