@@ -85,9 +85,8 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
-  'Alignment', 'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class',
-  'Deity', 'Domain', 'Feat', 'Feature', 'Language', 'Lore', 'Shield', 'Skill',
-  'Spell', 'Terrain', 'Weapon'
+  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain', 'Feat',
+  'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Terrain', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -124,7 +123,6 @@ Pathfinder2E.ALIGNMENTS = {
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
     'HitPoints=10 ' +
-    'Size=Medium ' +
     'Features=' +
       '1:Slow,' +
       '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
@@ -143,7 +141,6 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Dwarven',
   'Elf':
     'HitPoints=6 ' +
-    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
@@ -161,7 +158,6 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Elven',
   'Gnome':
     'HitPoints=8 ' +
-    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
@@ -182,7 +178,6 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Gnomish,Sylvan',
   'Goblin':
     'HitPoints=6 ' +
-    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
@@ -199,7 +194,6 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Goblin',
   'Halfling':
     'HitPoints=6 ' +
-    'Size=Small ' +
     'Features=' +
       '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
@@ -217,7 +211,6 @@ Pathfinder2E.ANCESTRIES = {
     'Languages=Common,Halfling',
   'Human':
     'HitPoints=8 ' +
-    'Size=Medium ' +
     'Features=' +
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 2 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
@@ -11364,7 +11357,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Size', 'Languages', 'Traits']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Require', 'Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
@@ -11577,7 +11570,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     Pathfinder2E.ancestryRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
-      QuilvynUtils.getAttrValue(attrs, 'Size'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
@@ -11824,14 +11816,12 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 /*
  * Defines in #rules# the rules associated with ancestry #name#, which has the
  * list of hard prerequisites #requires#. #hitPoints# gives the number of HP
- * granted at level 1, and #size# specifies the size of characters with the
- * ancestry. #features# and #selectables# list associated automatic and
- * selectable features, #traits# any traits granted by the ancestry, and
- * #languages# any automatic languages.
+ * granted at level 1. #features# and #selectables# list associated
+ * automatic and selectable features, #traits# any traits granted by the
+ * ancestry, and #languages# any automatic languages.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, hitPoints, size, features, selectables, traits,
-  languages
+  rules, name, requires, hitPoints, features, selectables, traits, languages
 ) {
 
   if(!name) {
@@ -11844,9 +11834,6 @@ Pathfinder2E.ancestryRules = function(
   }
   if(typeof hitPoints != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
-  }
-  if(!(size+'').match(/^(Small|Medium|Large)$/)) {
-    console.log('Bad size "' + size + '" for ancestry ' + name);
   }
   if(!Array.isArray(features)) {
     console.log('Bad features list "' + features + '" for ancestry ' + name);
@@ -11907,7 +11894,6 @@ Pathfinder2E.ancestryRules = function(
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
-  rules.defineRule('size', ancestryLevel, '=', '"' + size + '"');
 
 };
 
@@ -14922,26 +14908,39 @@ Pathfinder2E.createViewers = function(rules, viewers) {
 Pathfinder2E.choiceEditorElements = function(rules, type) {
   let result = [];
   let zeroToTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  if(type == 'Alignment')
+  if(type == 'Ancestry')
     result.push(
-      // empty
+      ['Require', 'Prerequisites', 'text', [40]],
+      ['HitPoints', 'Hit Points', 'text', [3]],
+      ['Features', 'Features', 'text', [60]],
+      ['Selectables', 'Selectables', 'text', [60]],
+      ['Languages', 'Languages', 'text', [30]],
+      ['Traits', 'Traits', 'text', [30]]
     );
   else if(type == 'Armor') {
+    let armorCategories = ['Unarmored', 'Light', 'Medium', 'Heavy'];
+    let armorGroups =
+      ['Unarmored', 'Cloth', 'Leather', 'Chain', 'Composite', 'Plate'];
     let tenToEighteen = [10, 11, 12, 13, 14, 15, 16, 17, 18];
     result.push(
-      ['AC', 'AC Bonus', 'select-one', [0, 1, 2, 3, 4, 5]],
-      ['Bulky', 'Bulky', 'checkbox', ['']],
+      ['Category', 'Category', 'select-one', armorCategories],
+      ['Price', 'Price (GP)', 'text', [4]],
+      ['AC', 'AC Bonus', 'select-one', [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9, 10]],
       ['Dex', 'Max Dex', 'select-one', zeroToTen],
+      ['Check', 'Check Penalty', 'select-one', [0, -1, -2, -3, -4, -5]],
+      ['Speed', 'Speed Penalty', 'select-one', [0, -5, -10, -15, -20]],
       ['Str', 'Min Str', 'select-one', tenToEighteen],
-      ['Weight', 'Weight', 'select-one', ['None', 'Light', 'Medium', 'Heavy']]
+      ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
+      ['Group', 'Group', 'select-one', armorGroups],
+      ['Trait', 'Traits', 'text', [20]]
     );
-  } else if(type == 'Background') {
+  } else if(type == 'Background')
     result.push(
-      ['Equipment', 'Equipment', 'text', [40]],
-      ['Features', 'Features', 'text', [40]],
-      ['Languages', 'Languages', 'text', [40]]
+      ['Ability', 'Ability', 'text', [40]],
+      ['Skill', 'Skill', 'text', [40]],
+      ['Feat', 'Feat', 'text', [40]]
     );
-  } else if(type == 'Class') {
+  else if(type == 'Class') {
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
@@ -14974,22 +14973,6 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   } else if(type == 'Language')
     result.push(
       // empty
-    );
-  else if(type == 'Ancestry')
-    result.push(
-      ['Require', 'Prerequisites', 'text', [40]],
-      ['Features', 'Features', 'text', [60]],
-      ['Selectables', 'Selectables', 'text', [60]],
-      ['Languages', 'Languages', 'text', [30]],
-      ['SpellAbility', 'Spell Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
-      ['SpellSlots', 'Spells Slots', 'text', [40]],
-      ['Spells', 'Spells', 'text', [80]]
-    );
-  else if(type == 'Background')
-    result.push(
-      ['Ability', 'Ability', 'text', [40]],
-      ['Skill', 'Skill', 'text', [40]],
-      ['Feat', 'Feat', 'text', [40]]
     );
   else if(type == 'School')
     result.push(
@@ -15785,11 +15768,17 @@ Pathfinder2E.ruleNotes = function() {
     '<h3>Usage Notes</h3>\n' +
     '<p>\n' +
     '<ul>\n' +
-    'To simplify the tracking of character level, the PF2E plugin assumes ' +
-    'that the experience points entered for a character are cumulative from ' +
-    'the character creation, rather than only the experience points over the ' +
-    'amount required to advance to their current level. For example, a 5th ' +
-    'level character would have between 5000 and 5999 experience points.\n' +
+    '  <li>\n' +
+    '  To simplify tracking character level, the PF2E plugin interprets the ' +
+    '  experience points entered for a character to be cumulative from ' +
+    '  initial character creation, rather than only the experience points ' +
+    '  over the amount required to advance to their current level. For ' +
+    '  example, a 5th-level character would have between 5000 and 5999 ' +
+    '  experience points.\n' +
+    '  </li><li>\n' +
+    '  Discussion of adding different types of homebrew options to the\n' +
+    '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
+    '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
     '\n' +
