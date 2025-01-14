@@ -72,7 +72,7 @@ function Pathfinder2E() {
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
-    Pathfinder2E.LANGUAGES, Pathfinder2E.SKILLS, Pathfinder2E.TERRAINS
+    Pathfinder2E.LANGUAGES, Pathfinder2E.SKILLS
   );
 
   Quilvyn.addRuleSet(rules);
@@ -85,8 +85,8 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
-  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain', 'Feat',
-  'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Terrain', 'Weapon'
+  'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class', 'Deity', 'Domain',
+  'Feat', 'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -137,8 +137,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Forge Dwarf:Heritage",' +
       '"1:Rock Dwarf:Heritage",' +
       '"1:Strong-Blooded Dwarf:Heritage" ' +
-    'Traits=Dwarf,Humanoid ' +
-    'Languages=Common,Dwarven',
+    'Languages=Common,Dwarven ' +
+    'Traits=Dwarf,Humanoid',
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
@@ -154,8 +154,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Seer Elf:Heritage",' +
       '"1:Whisper Elf:Heritage",' +
       '"1:Woodland Elf:Heritage" ' +
-    'Traits=Elf,Humanoid ' +
-    'Languages=Common,Elven',
+    'Languages=Common,Elven ' +
+    'Traits=Elf,Humanoid',
   'Gnome':
     'HitPoints=8 ' +
     'Features=' +
@@ -174,8 +174,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Arcane:Wellspring Tradition",' +
       '"1:Divine:Wellspring Tradition",' +
       '"1:Occult:Wellspring Tradition" ' +
-    'Traits=Gnome,Humanoid ' +
-    'Languages=Common,Gnomish,Sylvan',
+    'Languages=Common,Gnomish,Sylvan ' +
+    'Traits=Gnome,Humanoid',
   'Goblin':
     'HitPoints=6 ' +
     'Features=' +
@@ -191,7 +191,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Razortooth Goblin:Heritage",' +
       '"1:Snow Goblin:Heritage",' +
       '"1:Unbreakable Goblin:Heritage" ' +
-    'Languages=Common,Goblin',
+    'Languages=Common,Goblin ' +
+    'Traits=Goblin,Humaoid',
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
@@ -207,8 +208,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Nomadic Halfling:Heritage",' +
       '"1:Twilight Halfling:Heritage",' +
       '"1:Wildwood Halfling:Heritage" ' +
-    'Traits=Humanoid,Halfling ' +
-    'Languages=Common,Halfling',
+    'Languages=Common,Halfling ' +
+    'Traits=Humanoid,Halfling',
   'Human':
     'HitPoints=8 ' +
     'Features=' +
@@ -220,8 +221,8 @@ Pathfinder2E.ANCESTRIES = {
       '1:Half-Orc:Heritage,' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
-    'Traits=Humanoid,Human ' +
-    'Languages=Common,any'
+    'Languages=Common,any ' +
+    'Traits=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
   'None':'Category=Unarmored Price=0 AC=0 Check=0 Str=0 Speed=0 Bulk=0',
@@ -963,7 +964,7 @@ Pathfinder2E.DEITIES = {
   'None':'',
   'Abadar':
     'Alignment=LN FollowerAlignments=LG,LN,LE ' +
-    'Font=Harm,Heal Skill=Society Weapon=Crossbow ' +
+    'Font=Either Skill=Society Weapon=Crossbow ' +
     'Domain=Cities,Earth,Travel,Wealth ' +
     'Spells="1:Illusory Object",4:Creation,"7:Magnificent Mansion"',
   'Asmodeus':
@@ -973,7 +974,7 @@ Pathfinder2E.DEITIES = {
     'Spells=1:Charm,4:Suggestion,6:Mislead',
   'Calistra':
     'Alignment=CN FollowerAlignments=CG,CN,CE ' +
-    'Font=Harm,Heal Skill=Deception Weapon=Whip ' +
+    'Font=Either Skill=Deception Weapon=Whip ' +
     'Domain=Pain,Passion,Secrecy,Trickery ' +
     'Spells=1:Charm,3:Enthrall,6:Mislead',
   'Cayden Cailean':
@@ -993,7 +994,7 @@ Pathfinder2E.DEITIES = {
     'Spells="1:True Strike","3:Wall Of Thorns","5:Tree Stride"',
   'Gorum':
     'Alignment=CN FollowerAlignments=CN,CE ' +
-    'Font=Harm,Heal Skill=Athletics Weapon=Greatsword ' +
+    'Font=Either Skill=Athletics Weapon=Greatsword ' +
     'Domain=Confidence,Destruction,Might,Zeal ' +
     'Spells="1:True Strike",2:Enlarge,"4:Weapon Storm"',
   'Gozreh':
@@ -1008,17 +1009,17 @@ Pathfinder2E.DEITIES = {
     'Spells="1:True Strike","2:See Invisibility","5:Fire Shield"',
   'Irori':
     'Alignment=LN FollowerAlignments=LG,LN,LE ' +
-    'Font=Harm,Heal Skill=Athletics Weapon=Fist ' +
+    'Font=Either Skill=Athletics Weapon=Fist ' +
     'Domain=Knowledge,Might,Perfection,Truth ' +
     'Spells=1:Jump,3:Haste,4:Stoneskin',
   'Lamashtu':
     'Alignment=CE FollowerAlignments=CE ' +
-    'Font=Harm,Heal Skill=Survival Weapon=Falchion ' +
+    'Font=Either Skill=Survival Weapon=Falchion ' +
     'Domain=Family,Might,Nightmares,Trickery ' +
     'Spells="1:Magic Fang","2:Animal Form",4:Nightmare',
   'Nethys':
     'Alignment=N FollowerAlignments=NG,LN,N,CN,NE ' +
-    'Font=Harm,Heal Skill=Arcana Weapon=Staff ' +
+    'Font=Either Skill=Arcana Weapon=Staff ' +
     'Domain=Destruction,Knowledge,Magic,Protection ' +
     'Spells=' +
       '"1:Magic Missile","2:Magic Mouth",3:Levitate,4:Blink,' +
@@ -1645,7 +1646,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Cleric ' +
     'Require=' +
       '"level >= 2",' +
-      '"deityFonts =~ \'Harm/Heal|Heal/Harm\'",' +
+      '"deityFont == \'Either\'",' +
       '"features.Harmful Font || features.Healing Font"',
   'Channel Smite':
     'Trait=Class,Cleric,Divine,Necromancy ' +
@@ -6565,6 +6566,11 @@ Pathfinder2E.SKILLS = {
   'Forest Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Plains Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Swamp Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Underground Lore':'Ability=Intelligence Category="Terrain Lore"',
+  // terrain lore skills from Ranger favored terrain feat pg 171
+  'Aquatic Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Arctic Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Sky Lore':'Ability=Intelligence Category="Terrain Lore"',
   'Military Lore':'Ability=Intelligence', // pg 247
   // Adventuring Lore, Magic Lore, Planar Lore pg 247 examples of excluded Lore
   // Common lore subcategories pg 248
@@ -10882,17 +10888,6 @@ Pathfinder2E.SPELLS = {
     'Cast=1 ' +
     'Description="60\' 5\' burst (10\'/15\' burst for 2/3 actions) appears to be difficult terrain for 1 min (<b>heightened 4th</b> may affect air instead of surface)"'
 };
-Pathfinder2E.TERRAINS = {
-  'Aquatic':'',
-  'Arctic':'',
-  'Desert':'',
-  'Forest':'',
-  'Mountain':'',
-  'Plains':'',
-  'Sky':'',
-  'Swamp':'',
-  'Underground':''
-};
 Pathfinder2E.WEAPONS = {
 
   'Fist':
@@ -11379,6 +11374,11 @@ Pathfinder2E.identityRules = function(
 
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
+  rules.defineRule('size',
+    '', '=', '"Medium"',
+    "features.Large", '=', '"Large"',
+    "features.Small", '=', '"Small"'
+  );
 
   QuilvynRules.validAllocationRules
     (rules, 'level', 'level', 'Sum "^levels\\."');
@@ -11432,7 +11432,7 @@ Pathfinder2E.magicRules = function(rules, schools, spells, domains) {
 
 /* Defines rules related to character aptitudes. */
 Pathfinder2E.talentRules = function(
-  rules, feats, features, goodies, languages, skills, terrains
+  rules, feats, features, goodies, languages, skills
 ) {
 
   let matchInfo;
@@ -11443,7 +11443,6 @@ Pathfinder2E.talentRules = function(
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
   QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
-  QuilvynUtils.checkAttrTable(terrains, []);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
@@ -11468,8 +11467,6 @@ Pathfinder2E.talentRules = function(
       'Section=skill Note="%V ' + s + '"'
     );
   }
-  for(let t in terrains)
-    rules.choiceRules(rules, 'Terrain', t, terrains[t]);
   // feats and features after skills because some contain %skill
   for(let f in feats) {
     if((matchInfo = f.match(/(%(\w+))/)) != null) {
@@ -11572,8 +11569,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Languages')
+      QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
   } else if(type == 'Armor')
@@ -11617,7 +11614,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     Pathfinder2E.deityRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Alignment'),
       QuilvynUtils.getAttrValueArray(attrs, 'FollowerAlignments'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Font'),
+      QuilvynUtils.getAttrValue(attrs, 'Font'),
       QuilvynUtils.getAttrValueArray(attrs, 'Domain'),
       QuilvynUtils.getAttrValue(attrs, 'Weapon'),
       QuilvynUtils.getAttrValue(attrs, 'Skill'),
@@ -11688,9 +11685,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       );
       rules.addChoice('spells', spellName, attrs);
     });
-  } else if(type == 'Terrain')
-    Pathfinder2E.terrainRules(rules, name);
-  else if(type == 'Weapon')
+  } else if(type == 'Weapon')
     Pathfinder2E.weaponRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
       QuilvynUtils.getAttrValue(attrs, 'Price'),
@@ -11711,6 +11706,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     rules.addChoice(type, name, attrs);
   if(type == 'skills' && name.endsWith(' Lore'))
     rules.addChoice('lores', name, attrs);
+  if(type == 'skills' && attrs.includes('Terrain Lore'))
+    rules.addChoice('terrains', name.replace(' Lore', ''), '');
 };
 
 /*
@@ -11817,11 +11814,12 @@ Pathfinder2E.alignmentRules = function(rules, name) {
  * Defines in #rules# the rules associated with ancestry #name#, which has the
  * list of hard prerequisites #requires#. #hitPoints# gives the number of HP
  * granted at level 1. #features# and #selectables# list associated
- * automatic and selectable features, #traits# any traits granted by the
- * ancestry, and #languages# any automatic languages.
+ * automatic and selectable features, #languages# lists languages automatically
+ * known by characters with the ancestry, and #traits# any traits associated
+ * with it.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, requires, hitPoints, features, selectables, traits, languages
+  rules, name, requires, hitPoints, features, selectables, languages, traits
 ) {
 
   if(!name) {
@@ -11843,12 +11841,12 @@ Pathfinder2E.ancestryRules = function(
     console.log('Bad selectables list "' + selectables + '" for ancestry ' + name);
     return;
   }
-  if(!Array.isArray(traits)) {
-    console.log('Bad traits list "' + traits + '" for ancestry ' + name);
-    return;
-  }
   if(!Array.isArray(languages)) {
     console.log('Bad languages list "' + languages + '" for ancestry ' + name);
+    return;
+  }
+  if(!Array.isArray(traits)) {
+    console.log('Bad traits list "' + traits + '" for ancestry ' + name);
     return;
   }
 
@@ -13002,12 +13000,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 /*
  * Defines in #rules# the rules associated with deity #name#. #alignment# gives
  * the deity's alignment, #followerAlignments# lists the alignments permitted
- * for followers, #fonts# and #domains# lists the divine fonts and associated
- * domains, #weapon# is the deity's favored weapon, #skill# the divine skill,
- * and #spells# lists associated cleric spells.
+ * for followers, #font# contains the divine font(s), #domains# lists the
+ * associated domains, #weapon# is the deity's favored weapon, #skill# the
+ * divine skill, and #spells# lists associated cleric spells.
  */
 Pathfinder2E.deityRules = function(
-  rules, name, alignment, followerAlignments, fonts, domains, weapon, skill,
+  rules, name, alignment, followerAlignments, font, domains, weapon, skill,
   spells
 ) {
 
@@ -13023,21 +13021,41 @@ Pathfinder2E.deityRules = function(
     console.log('Bad follower alignments list "' + followerAlignments + '" for deity ' + name);
     return;
   }
-  if(!Array.isArray(fonts)) {
-    console.log('Bad fonts list "' + fonts + '" for deity ' + name);
+  followerAlignments.forEach(a => {
+    if(!a.match(/^(N|[LNC]G|[LNC]E|[LC]N)$/i)) {
+      console.log('Bad follower alignment "' + a + '" for deity ' + name);
+      return;
+    }
+  });
+  if(font && !(font+'').match(/^(Either|Harm|Heal)$/)) {
+    console.log('Bad font "' + font + '" for deity ' + name);
     return;
   }
   if(!Array.isArray(domains)) {
     console.log('Bad domains list "' + domains + '" for deity ' + name);
     return;
   }
+  domains.forEach(d => {
+    if(!(d in rules.getChoices('domains'))) {
+      console.log('Unknown domain "' + d + '" for deity ' + name);
+      return;
+    }
+  });
   if(weapon && typeof(weapon) != 'string') {
     console.log('Bad weapon "' + weapon + '" for deity ' + name);
+    return;
+  } else if(weapon && !(weapon in rules.getChoices('weapons'))) {
+    console.log('Unknown weapon "' + weapon + '" for deity ' + name);
     return;
   }
   if(skill && typeof(skill) != 'string') {
     console.log('Bad skill "' + skill + '" for deity ' + name);
     return;
+  /* Skills are not yet defined
+  } else if(!(skill in rules.getChoices('skills'))) {
+    console.log('Unknown skill "' + skill + '" for deity ' + name);
+    return;
+  */
   }
   if(!Array.isArray(spells)) {
     console.log('Bad spells list "' + spells + '" for deity ' + name);
@@ -13048,7 +13066,7 @@ Pathfinder2E.deityRules = function(
     rules.deityStats = {
       alignment:{},
       followerAlignments:{},
-      fonts:{},
+      font:{},
       domains:{},
       weapon:{},
       weaponCategory:{},
@@ -13059,7 +13077,7 @@ Pathfinder2E.deityRules = function(
 
   rules.deityStats.alignment[name] = alignment;
   rules.deityStats.followerAlignments[name] = followerAlignments.join('/');
-  rules.deityStats.fonts[name] = fonts.join('/');
+  rules.deityStats.font[name] = font;
   rules.deityStats.domains[name] = domains.join('/');
   rules.deityStats.weapon[name] = weapon;
   rules.deityStats.weaponCategory[name] =
@@ -13076,8 +13094,8 @@ Pathfinder2E.deityRules = function(
   rules.defineRule('deityFollowerAlignments',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.followerAlignments) + '[source]'
   );
-  rules.defineRule('deityFonts',
-    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.fonts) + '[source]'
+  rules.defineRule('deityFont',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.font) + '[source]'
   );
   rules.defineRule('deitySkill',
     'deity', '=', QuilvynUtils.dictLit(rules.deityStats.skill) + '[source]'
@@ -14902,6 +14920,72 @@ Pathfinder2E.createViewers = function(rules, viewers) {
 };
 
 /*
+  else if(type == 'Feat') {
+    Pathfinder2E.featRules(rules, name,
+      QuilvynUtils.getAttrValueArray(attrs, 'Require'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+    );
+    Pathfinder2E.featRulesExtra(rules, name);
+  } else if(type == 'Feature')
+    Pathfinder2E.featureRules(rules, name,
+      QuilvynUtils.getAttrValueArray(attrs, 'Section'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Note'),
+      QuilvynUtils.getAttrValue(attrs, 'Action')
+    );
+  else if(type == 'Language')
+    Pathfinder2E.languageRules(rules, name);
+  else if(type == 'School')
+    Pathfinder2E.schoolRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Spell'),
+      QuilvynUtils.getAttrValue(attrs, 'AdvancedSpell')
+    );
+  else if(type == 'Shield')
+    Pathfinder2E.shieldRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Price'),
+      QuilvynUtils.getAttrValue(attrs, 'AC'),
+      QuilvynUtils.getAttrValue(attrs, 'Speed'),
+      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
+      QuilvynUtils.getAttrValue(attrs, 'Hardness'),
+      QuilvynUtils.getAttrValue(attrs, 'HP')
+    );
+  else if(type == 'Skill')
+    Pathfinder2E.skillRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Ability'),
+      QuilvynUtils.getAttrValue(attrs, 'Category')
+    );
+  else if(type == 'Spell') {
+    let level = QuilvynUtils.getAttrValue(attrs, 'Level');
+    let school = QuilvynUtils.getAttrValue(attrs, 'School');
+    let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
+    trads.forEach(t => {
+      let spellName =
+        name + ' (' + t.charAt(0) + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 3) + ')';
+      Pathfinder2E.spellRules(rules, spellName,
+        school,
+        level,
+        t,
+        QuilvynUtils.getAttrValue(attrs, 'Cast'),
+        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t),
+        QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+      );
+      rules.addChoice('spells', spellName, attrs);
+    });
+  } else if(type == 'Terrain')
+    Pathfinder2E.terrainRules(rules, name);
+  else if(type == 'Weapon')
+    Pathfinder2E.weaponRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Category'),
+      QuilvynUtils.getAttrValue(attrs, 'Price'),
+      QuilvynUtils.getAttrValue(attrs, 'Damage'),
+      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
+      QuilvynUtils.getAttrValue(attrs, 'Hands'),
+      QuilvynUtils.getAttrValue(attrs, 'Group'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+      QuilvynUtils.getAttrValue(attrs, 'Range')
+*/
+
+/*
  * Returns the list of editing elements needed by #choiceRules# to add a #type#
  * item to #rules#.
  */
@@ -14911,7 +14995,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   if(type == 'Ancestry')
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
-      ['HitPoints', 'Hit Points', 'text', [3]],
+      ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]],
       ['Languages', 'Languages', 'text', [30]],
@@ -14925,7 +15009,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Category', 'Category', 'select-one', armorCategories],
       ['Price', 'Price (GP)', 'text', [4]],
-      ['AC', 'AC Bonus', 'select-one', [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9, 10]],
+      ['AC', 'AC Bonus', 'select-one', zeroToTen],
       ['Dex', 'Max Dex', 'select-one', zeroToTen],
       ['Check', 'Check Penalty', 'select-one', [0, -1, -2, -3, -4, -5]],
       ['Speed', 'Speed Penalty', 'select-one', [0, -5, -10, -15, -20]],
@@ -14936,26 +15020,43 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   } else if(type == 'Background')
     result.push(
-      ['Ability', 'Ability', 'text', [40]],
-      ['Skill', 'Skill', 'text', [40]],
-      ['Feat', 'Feat', 'text', [40]]
+      ['Features', 'Features', 'text', [60]],
+      ['Selectables', 'Selectables', 'text', [60]]
+    );
+  else if(type == 'Bloodline')
+    result.push(
+      ['SpellList', 'Spell List', 'select-one', ['Arcane', 'Divine', 'Occult', 'Primal']],
+      ['BloodlineSkills', 'Bloodline Skills', 'text', [30]],
+      ['GrantedSpells', 'Granted Spells', 'text', [60]],
+      ['BloodlineSpells', 'Bloodline Spells', 'text', [40]],
+      ['BloodMagic', 'Blood Magic', 'text', [60]]
     );
   else if(type == 'Class') {
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
+      ['Ability', 'Ability', 'text', [20]],
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
       ['Features', 'Features', 'text', [40]],
       ['Selectables', 'Selectable Features', 'text', [40]],
-      ['Languages', 'Languages', 'text', [30]],
-      ['SpellAbility', 'Spell Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
-      ['SpellSlots', 'Spells Slots', 'text', [40]],
-      ['Spells', 'Spells', 'text', [40]]
+      ['SpellSlots', 'Spells Slots', 'text', [40]]
     );
-  } else if(type == 'Deity')
+  } else if(type == 'Deity') {
+    let shortAlignments = [];
+    for(let a in QuilvynUtils.getKeys(rules.getChoices('alignments')))
+      shortAlignments.push(a.replaceAll(/[a-z ]/g, ''));
     result.push(
-      ['Alignment', 'Alignment', 'select-one', QuilvynUtils.getKeys(rules.getChoices('alignments'))],
+      ['Alignment', 'Alignment', 'select-one', shortAlignments],
+      ['FollowerAlignments', 'Follower Alignments', 'text', [30]],
+      ['Font', 'Divine Font', 'select-one', ['Harm', 'Heal', 'Either']],
+      ['Skill', 'Divine Skill', 'select-one', QuilvynUtils.getKeys(rules.getChoices('skills'))],
+      ['Weapon', 'Favored Weapon', 'select-one', QuilvynUtils.getKeys(rules.getChoices('weapons'))],
       ['Domain', 'Domains', 'text', [30]],
-      ['Sphere', 'Sphere', 'text', [15]]
+      ['Spells', 'Spells', 'text', [60]]
+    );
+  } else if(type == 'Domain')
+    result.push(
+      ['Spell', 'Spell', 'text', [20]],
+      ['AdvancedSpell', 'Advanced Spell', 'text', [20]]
     );
   else if(type == 'Feat')
     result.push(
