@@ -11122,7 +11122,7 @@ Pathfinder2E.WEAPONS = {
     'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   'Lesser Tanglefoot Bag':
-    'Category=Martial Price=0 Damage=0E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage=0 Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown Range=20',
   'Lesser Thunderstone':
     'Category=Martial Price=0 Damage=1d4E Bulk=L Hands=1 Group=Bomb ' +
@@ -11680,8 +11680,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
         level,
         t,
         QuilvynUtils.getAttrValue(attrs, 'Cast'),
-        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t),
-        QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+        QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
       rules.addChoice('spells', spellName, attrs);
     });
@@ -13974,7 +13974,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     console.log(sections.length + ' sections, ' + notes.length + ' notes for feature ' + name);
     return;
   }
-  if(action != null && !(action+'').match(/^(1|2|3|Free|Reaction)$/)) {
+  if(action != null && !(action+'').match(/^(1|2|3|Free|Reaction|None)$/)) {
     console.log('Bad action "' + action + '" for feature ' + name);
     return;
   }
@@ -14341,11 +14341,11 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
 /*
  * Defines in #rules# the rules associated with spell #name#, which is from
  * magic school #school#. #tradition# and #level# are used to compute any
- * saving throw value required by the spell. #description# is a verbose
- * description of the spell's effects. #traits# lists any traits the spell has.
+ * saving throw value required by the spell. #traits# lists any traits the
+ * spell has, and #description# is a verbose description of the spell's effects.
  */
 Pathfinder2E.spellRules = function(
-  rules, name, school, level, tradition, cast, description, traits
+  rules, name, school, level, tradition, cast, traits, description
 ) {
   if(!name) {
     console.log('Empty spell name');
@@ -14367,12 +14367,12 @@ Pathfinder2E.spellRules = function(
     console.log('Bad cast "' + cast + '" for spell ' + name);
     return;
   }
-  if(typeof(description) != 'string') {
-    console.log('Bad description "' + description + '" for spell ' + name);
-    return;
-  }
   if(!Array.isArray(traits)) {
     console.log('Bad traits "' + traits + '" for spell ' + name);
+    return;
+  }
+  if(typeof(description) != 'string') {
+    console.log('Bad description "' + description + '" for spell ' + name);
     return;
   }
   let action = Pathfinder2E.ACTION_MARKS[cast] || ('<b>(' + cast + ')</b>');
@@ -14405,15 +14405,15 @@ Pathfinder2E.featureSpell = function(
     tradition = QuilvynUtils.getAttrValue(spellAttrs, 'Traditions');
   if(!cast)
     cast = QuilvynUtils.getAttrValue(spellAttrs, 'Cast');
+  let traits = QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait');
   if(!description)
     description = QuilvynUtils.getAttrValue(spellAttrs, 'Description');
-  let traits = QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait');
   let spellName =
     name + ' (' + tradition.charAt(0) + level + ' ' +
     school.substring(0, 3) + ')';
   Pathfinder2E.spellRules
-    (rules, spellName, school, level, tradition, cast,
-     description.replaceAll('%tradition', tradition), traits);
+    (rules, spellName, school, level, tradition, cast, traits,
+     description.replaceAll('%tradition', tradition));
   if(note)
     rules.defineRule('spells.' + spellName, note, '=', expr || '1');
 };
@@ -14453,7 +14453,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BEPS])$/);
+  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BEPS]?)$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
@@ -14920,72 +14920,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
 };
 
 /*
-  else if(type == 'Feat') {
-    Pathfinder2E.featRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Require'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
-    );
-    Pathfinder2E.featRulesExtra(rules, name);
-  } else if(type == 'Feature')
-    Pathfinder2E.featureRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Section'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Note'),
-      QuilvynUtils.getAttrValue(attrs, 'Action')
-    );
-  else if(type == 'Language')
-    Pathfinder2E.languageRules(rules, name);
-  else if(type == 'School')
-    Pathfinder2E.schoolRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Spell'),
-      QuilvynUtils.getAttrValue(attrs, 'AdvancedSpell')
-    );
-  else if(type == 'Shield')
-    Pathfinder2E.shieldRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Price'),
-      QuilvynUtils.getAttrValue(attrs, 'AC'),
-      QuilvynUtils.getAttrValue(attrs, 'Speed'),
-      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
-      QuilvynUtils.getAttrValue(attrs, 'Hardness'),
-      QuilvynUtils.getAttrValue(attrs, 'HP')
-    );
-  else if(type == 'Skill')
-    Pathfinder2E.skillRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Ability'),
-      QuilvynUtils.getAttrValue(attrs, 'Category')
-    );
-  else if(type == 'Spell') {
-    let level = QuilvynUtils.getAttrValue(attrs, 'Level');
-    let school = QuilvynUtils.getAttrValue(attrs, 'School');
-    let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
-    trads.forEach(t => {
-      let spellName =
-        name + ' (' + t.charAt(0) + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 3) + ')';
-      Pathfinder2E.spellRules(rules, spellName,
-        school,
-        level,
-        t,
-        QuilvynUtils.getAttrValue(attrs, 'Cast'),
-        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t),
-        QuilvynUtils.getAttrValueArray(attrs, 'Trait')
-      );
-      rules.addChoice('spells', spellName, attrs);
-    });
-  } else if(type == 'Terrain')
-    Pathfinder2E.terrainRules(rules, name);
-  else if(type == 'Weapon')
-    Pathfinder2E.weaponRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Category'),
-      QuilvynUtils.getAttrValue(attrs, 'Price'),
-      QuilvynUtils.getAttrValue(attrs, 'Damage'),
-      QuilvynUtils.getAttrValue(attrs, 'Bulk'),
-      QuilvynUtils.getAttrValue(attrs, 'Hands'),
-      QuilvynUtils.getAttrValue(attrs, 'Group'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
-      QuilvynUtils.getAttrValue(attrs, 'Range')
-*/
-
-/*
  * Returns the list of editing elements needed by #choiceRules# to add a #type#
  * item to #rules#.
  */
@@ -15065,44 +14999,69 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Trait', 'Traits', 'text', [20]]
     );
   else if(type == 'Feature') {
-    let sections =
-      ['ability', 'combat', 'companion', 'feature', 'magic', 'skill'];
+    let sections = ['ability', 'combat', 'feature', 'magic', 'skill'];
     result.push(
       ['Section', 'Section', 'select-one', sections],
-      ['Note', 'Note', 'text', [60]]
+      ['Note', 'Note', 'text', [60]],
+      ['Action', 'Action', 'select-one', ['Free', 'Reaction', '1', '2', '3']]
     );
   } else if(type == 'Language')
     result.push(
       // empty
     );
-  else if(type == 'School')
-    result.push(
-      ['Features', 'Features', 'text', [40]]
-    );
   else if(type == 'Shield')
     result.push(
-      ['AC', 'Armor Class', 'select-one', [1, 2, 3, 4, 5]]
+      ['Price', 'Price (GP)', 'text', [4]],
+      ['AC', 'AC Bonus', 'select-one', zeroToTen],
+      ['Speed', 'Speed Penalty', 'select-one', [0, -5, -10, -15, -20]],
+      ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
+      ['Hardness', 'Hardness', 'select-one', zeroToTen],
+      ['HP', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']]
     );
   else if(type == 'Skill')
     result.push(
       ['Ability', 'Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
-      ['Class', 'Class Skill', 'text', [30]]
+      ['Category', 'Category', 'text' [30]]
     );
   else if(type == 'Spell') {
+      Pathfinder2E.spellRules(rules, spellName,
+        school,
+        level,
+        t,
+        QuilvynUtils.getAttrValue(attrs, 'Cast'),
+        QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
+      );
     let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     result.push(
       ['School', 'School', 'select-one', QuilvynUtils.getKeys(rules.getChoices('schools'))],
-      ['Group', 'Caster Group', 'text', [15]],
       ['Level', 'Level', 'select-one', zeroToNine],
+      ['Tradition', 'Tradition', 'text', [15]],
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
+    let weaponDamages = [
+      0, '1B', '1E', '1P', '1S',
+      '1d4B', '1d4E', '1d4P', '1d4S',
+      '1d6B', '1d6E', '1d6P', '1d6S',
+      '1d8B', '1d8E', '1d8P', '1d8S',
+      '1d10B', '1d10E', '1d10P', '1d10S',
+      '1d12B', '1d12E', '1d12P', '1d12S'
+    ];
+    let weaponGroups = [
+      'Axe', 'Bomb', 'Bow', 'Brawling', 'Club', 'Dart', 'Flail', 'Hammer', 
+      'Knife', 'Pick', 'Polearm', 'Shield', 'Sling', 'Spear', 'Sword'
+    ];
     let zeroToOneFifty =
       [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
     result.push(
-      ['Category', 'Category', 'select-one', ['Simple', 'Martial']],
-      ['Property', 'Property', 'select-one', ['Unarmed', 'Light', 'One-Handed', 'Two-Handed', 'Ranged']],
-      ['Damage', 'Damage', 'select-one', QuilvynUtils.getKeys(Pathfinder2E.VERSATILE_WEAPON_DAMAGE)],
+      ['Category', 'Category', 'select-one', ['Unarmed', 'Simple', 'Martial', 'Advanced']],
+      ['Price', 'Price (GP)', 'text', [4]],
+      ['Damage', 'Damage', 'select-one', weaponDamages],
+      ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
+      ['Hands', 'Hands', 'select-one', [1, 2]],
+      ['Group', 'Group', 'select-one', weaponGroups],
+      ['Trait', 'Trait', 'text', [40]],
       ['Range', 'Range in Feet', 'select-one', zeroToOneFifty]
     );
   }

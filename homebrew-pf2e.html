@@ -48,6 +48,7 @@ below show only the beginning portion of longer values entered into text boxes.
   <li><a href="#ancestryfeature">Ancestry Features</a></li>
   <li><a href="#armor">Armors</a></li>
   <li><a href="#background">Backgrounds</a></li>
+  <li><a href="#bloodline">Bloodlines</a></li>
   <li><a href="#class">Classes</a></li>
   <li><a href="#classfeature">Class Features</a></li>
   <li><a href="#deity">Deities</a></li>
@@ -87,33 +88,26 @@ automatically, and the Traits field lists traits that all characters with this
 ancestry share.
 </p><p>
 TODO
-The example shows the entry for the Lizardfolk character race from the Monster
-Manual. Features for this race are: Lizardfolk Ability Adjustment; Lizardfolk
-Skills; Bonus Feat; Scaly Hide; Lizardfolk Weapons; and Hold Breath. (Most of
-these feature names are created for this example; the MM simply lists the
-effects.) The corresponding feature entries for the first two of these are
-shown. Scaletongue is included with the list of automatic languages to
-illustrate the use of the language shown in the
 <a href="#language">adding a language</a> example.
 </p>
 </td></tr>
 
 <tr><td colspan="2"><hr/></td></tr>
 <tr><td>
-<a name="armor"><h2>Armors and Shields</h2></a>
+<a name="armor"><h2>Armors</h2></a>
 <img src='../Images/hbpf2e-armor.jpg' alt='Homebrew Armor'/>
 </td><td>
 <p>
-For homebrew armors and shields, Quilvyn displays fields for entering the boost
-to armor class gained by using the armor or shield, the weight category, the
-maximum dexterity armor class bonus allowed, the penalty applied to skills such
-as Escape Artist, and the percentage chance of failure when casting arcane
-spells.
+For homebrew armors, Quilvyn displays fields for entering the armor category
+("Unarmored", "Light", "Medium", or "Heavy"), its price, the boost to armor
+class gained by using the armor, the maximum dexterity armor class bonus
+allowed, the penalties applied to speed and skills such as Acrobatics, the
+minimum strength required to negate these penalties, the armor's bulk, its
+group, and any traits that apply to the armor. The armor price is expressed in
+gold pieces; enter a decimal for armors that cost less than 1 GP, e.g., "0.5"
+for an armor that costs 5 SP.
 </p><p>
-The example shown gives the values for a breastplate made from mithral, as
-discussed in the Special Materials section of the SRD. Making armor or a shield
-from mithral reduces its weight by 1 category, spell failure chances by 10%,
-and armor check penalty by 3, while increasing the maximum dexterity bonus by 2.
+TODO
 </p>
 </td></tr>
 
@@ -123,57 +117,47 @@ and armor check penalty by 3, while increasing the maximum dexterity bonus by 2.
 <img src='../Images/hbpf2e-background.jpg' alt='Homebrew Background'/>
 </td><td>
 <p>
-For homebrew backgrounds, Quilvyn displays fields for entering the features and
-equipment provided by the background. Any languages and proficiencies gained
-from the background can be included in the list of background features.
+For homebrew backgrounds, Quilvyn displays fields for entering the features
+provided by the background. Along with fixed features, Quilvyn provides an
+entry box for selectable features, such as the Scholar's tradition.
 </p><p>
-The example shown gives the values for an Apprentice background, which provides
-the character with a set of artisan's tools, common clothes, and 15 GP. Its
-features are a choice of one language, proficiency in a choice of artisan's
-tools, proficiency in the Insight and Perception skills, and a
-background-specific feature called Quick Repair.
+TODO
 </p>
 </td></tr>
 
 <tr><td colspan="2"><hr/></td></tr>
 <tr><td>
-<a name="class"><h2>Base, Prestige, and NPC Classes</h2></a>
+<a name="bloodline"><h2>Bloodlines</h2></a>
+<img src='../Images/hbpf2e-bloodline.jpg' alt='Homebrew Bloodline'/><br/>
+</td><td>
+When adding a homebrew sorcerous bloodline, Quilvyn displays fields that allow
+you to enter the spell list (i.e, tradition) associated with the bloodline,
+the skills and spells it grants, and the blood magic effect triggered by
+casting a bloodline spell.
+<p>
+</p><p>
+TODO
+</p>
+</td></tr>
+
+<tr><td colspan="2"><hr/></td></tr>
+<tr><td>
+<a name="class"><h2>Classes</h2></a>
 <img src='../Images/hbpf2e-npc.jpg' alt='Homebrew Class'/><br/>
 </td><td>
 <p>
-When adding a homebrew base class, prestige class, or NPC class, Quilvyn
-displays fields that allow you to specify optional class prerequisites, the
-class hit dice, base attack and save progressions, skill points per level,
-class skills and features, any automatic languages known by characters with the
-class (e.g, druidic for druids), and information about class spellcasting.
+When adding a homebrew class, Quilvyn displays fields that allow you to specify
+optional class prerequisites, the primary ability (or choice of abilities)
+associated with the class, the number of hit points granted each level,
+features granted by the class, and any spell slots the class grants.
 </p><p>
-The base attack entry gives a choice of 1/2 (increases by 1 every 2 levels, as
-with the wizard class), 3/4 (increases by 3 every 4 levels, as with clerics),
-or 1 (increases by 1 every level, as with fighters). Save entries give a choice
-of 1/3 (sometimes referred to as "poor") or 1/2 ("good"). Features that are
-acquired after level 1 (for example, the rogue Evasion feature acquired at
-level 2) should be preceded by the level and a colon (so, 2:Evasion). For
-classes that cast spells, the spell type, spell ability, and spell slots input
-fields provide places to enter the type of spells (Arcane or Divine), the basic
-ability used to calculate spell DCs, and the progression of spell slots
-available to the caster. Each item in the spell slot text box gives a spell
-type and level followed by a colon, then by a series of
-&lt;count&gt;@&lt;level&gt; terms, each of which indicates how many spell slots
-the class receives at the given level. For example, the spell slot entry for
-the cleric class would include C2: 1@3; 2@4; 3@6; 4@9; 5@13, indicating that
-clerics acquire 1 C2 slot at level 3, 2 at level 4, 3 at level 6, 4 at level 9,
-and 5 at level 13.
+Each item in the spell slot text box gives a spell type and level followed by a
+colon, then by a series of &lt;count&gt;@&lt;level&gt; terms, each of which
+indicates how many spell slots the class receives at the given level. For
+example, the spell slot entry for the cleric class would include "D2:2@3;3@4",
+indicating that clerics acquire 2 D2 slots at level 3 and a third at level 4.
 </p><p>
-The example shows the entry for a Shaman NPC class that has the same features
-as the core rules' Adept NPC class. It has no prerequisites, d6 hit dice, and 2
-skill points per level. Its base attack, fortitude save, and reflex save
-progressions are poor and its will save progression good. Class skills are
-Concentration, Craft, Handle Animal, Heal, Knowledge, Profession, Spellcraft,
-and Survival. The only class features are Weapon Proficiency (Simple) and
-Summon Familiar, with the latter acquired at level 2. The Shaman casts divine
-spells with wisdom as the relevant ability. A Shaman receives 3 Adept0 spell
-slots at level 1 (and no additional Adept0 slots thereafter), 1 Adept1 spell
-slot at level 1, increasing to 2 at level 3 and 3 at level 7, and so on.
+TODO
 </p>
 </td></tr>
 
@@ -185,6 +169,7 @@ slot at level 1, increasing to 2 at level 3 and 3 at level 7, and so on.
 <img src='../Images/hbpf2e-race-feature.jpg' alt='Homebrew Race Feature'/>
 </td><td>
 <p>
+TODO
 Quilvyn allows you to give classes and races new features and to replace
 predefined features with homebrew ones. For homebrew features, Quilvyn displays
 entries for the name of the class or race that gains the feature and the level
@@ -213,11 +198,12 @@ with a homebrew feature named Underground Warrior.
 </td><td>
 <p>
 When adding a homebrew deity, Quilvyn displays fields to specify the deity's
-alignment, favored weapon or weapons, and domains. As discussed above, multiple
-domains entered in the Domains text box should be separated by commas.
-Similarly, if the deity's favored weapon includes multiple weapons (e.g., all
-flails), the individual weapons should be listed in the Favored Weapons text
-box separated by commas.
+alignment, allowed follower alignment(s), divine font and skill, favored
+weapon, domain, and cleric spells. As discussed above, multiple values entered
+in the Follower Alignments, Domains, and Spells text boxes should be separated
+by commas.
+</p><p>
+TODO
 </p>
 </td></tr>
 
@@ -229,29 +215,22 @@ box separated by commas.
 <img src='../Images/hbpf2e-feat-feature.jpg' alt='Homebrew Feat'/>
 </td><td>
 <p>
-For homebrew feats, Quilvyn displays fields to note the feat type and
-any requirements that must be met to select it. The feat type will typically
-be one of "General", "Item Creation", or "Metamagic"; you can also include
-"Fighter" in the feat type box to indicate that this feat can be selected as a
-fighter bonus feat. Quilvyn allows you to specify two kinds of requirements for
-a feat. The Prerequisite box lists any requirements that must be met to select
-the feat; Quilvyn generates a validation error if the feat is selected for a
-character who does not meet these requirements. The Implies box lists any
-requirements that, while not strictly required, make the feat useless if not
-met. For example, although the rules don't require a caster level to select it,
-the Combat Casting feat from the core rules is likely to be useful only to a
-spell caster. Quilvyn will generate a validation warning if the Implies
-requirements are not met. When specified, the Prerequisite and Implies fields
-will normally contain references to character attributes; see the discussion of
+For homebrew feats, Quilvyn displays fields to note any requirements that
+must be met to select the feat and any traits associated with it. Quilvyn
+allows you to specify two kinds of requirements for a feat. The Prerequisite
+box lists any requirements that must be met to select the feat; Quilvyn
+generates a validation error if the feat is selected for a character who does
+not meet these requirements. The Implies box lists any requirements that, while
+not strictly required, make the feat useless if not met. For example, although
+the rules don't require possessing a shield to select it, the Shield Block feat
+from the core rules will be useless to a character without one. Quilvyn will
+generate a validation warning if the Implies requirements are not met. When
+specified, the Prerequisite and Implies fields will normally contain references
+to character attributes; see the discussion of
 <a href="#attrs">using character attributes</a> for how to include these. The
 effects of a feat are entered separately as a feature.
 </p><p>
-The example shows the entry for a general feat named Flail Expert that can be
-selected as a fighter bonus feat. The Prerequisite box notes that it requires a
-baseAttack value of at least 1 and Weapon Proficiency (Martial), and the
-Implies box notes that the feat is useless unless the character possesses a
-flail. The example also shows the corresponding feature that describes the
-effect of selecting the Flail Expert feat.
+TODO
 </p>
 </td></tr>
 
@@ -264,15 +243,14 @@ effect of selecting the Flail Expert feat.
 In Quilvyn, <i>features</i> describe the effects of feats, class features, and
 racial features. When adding a homebrew feature, enter the section of the
 character sheet (one of attributes, combat, companion, feature, magic, save, or
-skill) where the note for the feature should appear, then enter the note text.
-You can enter multiple sections and notes, but the number of sections entered
-must equal the number of notes. Feature notes can both reference and modify
-character attributes; see the discussion of
+skill) where the note for the feature should appear, the note text, and the
+number or type of action associated with the feature. You can enter multiple
+sections and notes, but the number of sections entered must equal the number of
+notes. Feature notes can both reference and modify character attributes; see
+the discussion of
 <a href="#attrs">using character attributes</a> for how to do this.
 </p><p>
-The example shows the entry for a feature named Glib with a note that appears
-in the skill section of the character sheet. It adds 2 to the skill modifiers
-of the Bluff and Perform (Oratory) skills.
+TODO
 </p>
 </td></tr>
 
@@ -286,8 +264,7 @@ Adding a homebrew language requires only specifying the name. Once added,
 languages can be added to a character by selecting from the language list and
 can be included in the list of languages automatically known by homebrew races.
 </p><p>
-The example shows the entry for a language called Scaletongue, used in
-the example for <a href="#race">adding a race</a>.
+TODO
 </p>
 </td></tr>
 
@@ -308,19 +285,31 @@ The example shows the entry for a school named Control that grants no features.
 
 <tr><td colspan="2"><hr/></td></tr>
 <tr><td>
+<a name="shield"><h2>Shields</h2></a>
+<img src='../Images/hbpf2e-shield.jpg' alt='Homebrew Shield'/>
+</td><td>
+<p>
+For homebrew shields, Quilvyn displays fields that allow you to specify the
+price, the bonus to armor class when the shield is raised, and the shield's
+bulk, hardness, and hit points.
+</p><p>
+TODO
+</p>
+</td></tr>
+
+<tr><td colspan="2"><hr/></td></tr>
+<tr><td>
 <a name="skill"><h2>Skills</h2></a>
 <img src='../Images/hbpf2e-skill.jpg' alt='Homebrew Skill'/>
 </td><td>
 <p>
 When adding a homebrew skill, Quilvyn displays fields for the skill's key
-ability, whether the skill can be used untrained, the list of classes for which
-the new skill is a class skill, and any synergies that the skill has with other
-skills.
+ability and any categories that the skill belongs to. Quilvyn uses skill
+categories when assigning skills for features that give Trained status in a
+particular kind of lore, such as "Creature Lore", "Deity Lore", "Food Lore",
+and so on.
 </p><p>
-The example shows the entry for a Sailing skill, which is related to
-intelligence, requires training to use, and is a class skill for several core
-classes. It has a synergy with the Use Rope skill, so 5 ranks in Sailing gives
-a +2 to Use Rope checks.
+TODO
 </p>
 </td></tr>
 
@@ -331,18 +320,15 @@ a +2 to Use Rope checks.
 </td><td>
 <p>
 When adding a homebrew spell, Quilvyn displays fields that allow you to enter
-the spell's school, the list of classes and levels for the spell, the
-description of the spell, and whether or not the spell can be placed into a
-potion that can be drunk or an oil that can be applied. Spell descriptions can
-embed references to character attributes; see the discussion of
+the spell's school, level, tradition(s), the number of actions or amount of
+time required to cast the spell, any traits associated with the spell, and the
+description of the spell. Spell descriptions can embed references to character
+attributes; see the discussion of
 <a href=#attrs>using character attributes</a> for how to include these. Unlike
 most text boxes, the Description field only accepts a single value; if you
 enter multiple values, Quilvyn ignores all but the last.
 </p><p>
-The example shows the entry for the transmutation spell <i>Enhance Skill</i>,
-which is a level 3 spell for clerics, sorcerers, and wizards. It can be invoked
-using an imbibed potion, and the description notes that the spell can be cast
-over short range and lasts for a number of rounds equal to the caster level.
+TODO
 </p>
 </td></tr>
 
@@ -353,13 +339,11 @@ over short range and lasts for a number of rounds equal to the caster level.
 </td><td>
 <p>
 When adding a homebrew weapon, Quilvyn displays fields that allow you to enter
-the weapon's group (Simple, Martial, or Exotic), category (Unarmed, Light,
-One-Handed, Two-Handed, or Ranged), damage, critical threat range and
-multiplier, and (for ranged weapons) range increment.
+the weapon's category (Unarmed, Simple, Martial, or Advanced), its price, the
+amount of damage it inflicts, its bulk, the number of hands needed to wield it,
+its group, any associated traits, and (for ranged weapons) range increment.
 </p><p>
-The example shows the entry for a boomerang, an exotic ranged weapon with a
-40' range increment that inflicts d4 damage, with critical threat and damage
-of 19-20/x2.
+TODO
 </p>
 </td></tr>
 <tr><td colspan="2"><hr/></td></tr>
