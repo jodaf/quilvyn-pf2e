@@ -68,7 +68,7 @@ function Pathfinder2E() {
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
     Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES,
-    Pathfinder2E.BLOODLINES
+    Pathfinder2E.ORDERS, Pathfinder2E.BLOODLINES
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
@@ -86,7 +86,7 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
   'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class', 'Deity', 'Domain',
-  'Feat', 'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
+  'Feat', 'Feature', 'Language', 'Order', 'Shield', 'Skill', 'Spell', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -1257,7 +1257,6 @@ Pathfinder2E.FEATS = {
     'Trait=Ancestry,Half-Orc ' +
     'Require="level >= 13","features.Orc Weapon Familiarity"',
 
-  // TODO: add class or dedication to class feat requirements?
   // Class
   'Alchemical Familiar':'Trait=Class,Alchemist',
   'Alchemical Savant':
@@ -1751,14 +1750,6 @@ Pathfinder2E.FEATS = {
   'Enhanced Familiar':
     'Trait=Class,Druid,Sorcerer,Wizard ' +
     'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
-  'Order Explorer (Animal)':
-    'Trait=Class,Druid Require="level >= 2","features.Animal == 0"',
-  'Order Explorer (Leaf)':
-    'Trait=Class,Druid Require="level >= 2","features.Leaf == 0"',
-  'Order Explorer (Storm)':
-    'Trait=Class,Druid Require="level >= 2","features.Storm == 0"',
-  'Order Explorer (Wild)':
-    'Trait=Class,Druid Require="level >= 2","features.Wild == 0"',
   // Poison Resistance as above
   'Form Control':
     'Trait=Class,Druid,Manipulate,Metamagic ' +
@@ -1768,18 +1759,6 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
-  'Order Magic (Animal)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Animal)"',
-  'Order Magic (Leaf)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Leaf)"',
-  'Order Magic (Storm)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Storm)"',
-  'Order Magic (Wild)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Wild)"',
   'Thousand Faces':
     'Trait=Class,Druid Require="level >= 4","features.Wild Shape"',
   'Woodland Stride':
@@ -3577,8 +3556,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Resistance %{3+constitutionModifier} to %V while raging"',
   'Specialization Ability':
-     // TODO frog and deer reach => 10'
-    'Section=combat Note="Rage damage bonus%1 increases to +%V"',
+    'Section=combat Note="Rage damage bonus%1 increases to +%V%2"',
   'Spirit Rage':
     'Section=combat ' +
     'Note="May inflict +3 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage"',
@@ -3825,12 +3803,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="May use Performance in place of Deception, Diplomacy, and Intimidation"',
   'Cantrip Expansion':
-    // TODO
-    // Bard: add two additional cantrips from your spell list to your repertoire
-    // Sorcerer: add two additional cantrips from your spell list to your repertoire
-    // Cleric: can prepare 2 additional cantrips each day
-    // Wizard: can prepare 2 additional cantrips each day
-    'Section=magic Note="May prepare two additional cantrips each day"',
+    'Section=magic ' +
+    'Note="May prepare two additional cantrips each day or add two additional cantrips to spell repertoire"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
@@ -4371,31 +4345,15 @@ Pathfinder2E.FEATURES = {
 
   // Druid
   // Alertness as above
-  'Animal':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Animal Companion feature",' +
-      '"Knows the <i>Heal Animal</i> spell",' +
-      '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
-  'Druidic Order':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"1 selection",' +
-      '"Has a focus pool with 1 Focus Point"',
+  'Druidic Order':'Section=feature Note="1 selection"',
   'Druid Weapon Expertise':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
   // Great Fortitude as above
-  'Leaf':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Leshy Familiar feature",' +
-      '"Knows the <i>Goodberry</i> spell/+1 Focus Points",' +
-      '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Master Spellcaster as above
@@ -4405,19 +4363,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="May learn spells from the primal tradition"',
   // Resolve as above
   // Shield Block as below
-  'Storm':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Storm Born feature",' +
-      '"Knows the <i>Tempest Surge</i> spell/+1 Focus Points",' +
-      '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
-  'Wild':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Wild Shape feature",' +
-      '"Knows the <i>Wild Morph</i> spell",' +
-      '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
     'Note="May use Diplomacy with animals to Make an Impression and to make simple Requests"',
@@ -4440,26 +4386,6 @@ Pathfinder2E.FEATURES = {
     'Note="May spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
     'Section=feature Note="May select 4 familiar or master abilities each day"',
-  'Order Explorer (Animal)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"May learn Animal order feats"',
-  'Order Explorer (Leaf)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"May learn Leaf order feats"',
-  'Order Explorer (Storm)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"May learn Storm order feats"',
-  'Order Explorer (Wild)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"May learn Wild order feats"',
   // Poison Resistance as above
   'Form Control':
     'Action=1 ' +
@@ -4468,14 +4394,6 @@ Pathfinder2E.FEATURES = {
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
-  'Order Magic (Animal)':
-    'Section=magic Note="Knows the <i>Heal Animal</i> spell"',
-  'Order Magic (Leaf)':
-    'Section=magic Note="Knows the <i>Goodberry</i> spell"',
-  'Order Magic (Storm)':
-    'Section=magic Note="Knows the <i>Tempest Surge</i> spell"',
-  'Order Magic (Wild)':
-    'Section=magic Note="Knows the <i>Wild Morph</i> spell"',
   'Thousand Faces':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
@@ -6518,6 +6436,17 @@ Pathfinder2E.LANGUAGES = {
   'Necril':'',
   'Shadowtongue':'',
   'Terran':''
+};
+Pathfinder2E.ORDERS = {
+  'Animal':
+    'Feature="Animal Companion" Spell="Heal Animal" Skill=Athletics ' +
+    'FocusPoints=1',
+  'Leaf':
+    'Feature="Leshy Familiar" Spell=Goodberry Skill=Diplomacy FocusPoints=2',
+  'Storm':
+    'Feature="Storm Born" Spell="Tempest Surge" Skill=Acrobatics FocusPoints=2',
+  'Wild':
+    'Feature="Wild Shape" Spell="Wild Morph" Skill=Intimidation FocusPoints=1'
 };
 Pathfinder2E.SCHOOLS = {
   'Abjuration':'Spell="Protective Ward" AdvancedSpell="Energy Absorption"',
@@ -11348,7 +11277,8 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
 /* Defines rules related to basic character identity. */
 Pathfinder2E.identityRules = function(
-  rules, alignments, ancestries, backgrounds, classes, deities, bloodlines
+  rules, alignments, ancestries, backgrounds, classes, deities, orders,
+  bloodlines
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
@@ -11357,6 +11287,8 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
+  QuilvynUtils.checkAttrTable
+    (orders, ['Feature', 'Spell', 'Skill', 'FocusPoints']);
   QuilvynUtils.checkAttrTable(bloodlines, ['SpellList', 'BloodlineSkills', 'GrantedSpells', 'BloodlineSpells', 'BloodMagic']);
 
   for(let a in alignments)
@@ -11369,6 +11301,8 @@ Pathfinder2E.identityRules = function(
     rules.choiceRules(rules, 'Class', c, classes[c]);
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
+  for(let o in orders)
+    rules.choiceRules(rules, 'Order', o, orders[o]);
   for(let b in bloodlines)
     rules.choiceRules(rules, 'Bloodline', b, bloodlines[b]);
 
@@ -11649,6 +11583,13 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Language')
     Pathfinder2E.languageRules(rules, name);
+  else if(type == 'Order')
+    Pathfinder2E.orderRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Feature'),
+      QuilvynUtils.getAttrValue(attrs, 'Spell'),
+      QuilvynUtils.getAttrValue(attrs, 'Skill'),
+      QuilvynUtils.getAttrValue(attrs, 'FocusPoints')
+    );
   else if(type == 'School')
     Pathfinder2E.schoolRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Spell'),
@@ -12455,7 +12396,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Dragon Instinct', '=', '8',
       'features.Giant Instinct', '=', '10',
       'features.Spirit Instinct', '=', '7',
-      'combatNotes.specializationAbility.2', '^', null
+      'combatNotes.specializationAbility.3', '^', null
     );
     rules.defineRule('combatNotes.specializationAbility.1',
       'features.Specialization Ability', '=', '""',
@@ -12464,6 +12405,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Spirit Instinct', '=', '" with Spirit Rage"'
     );
     rules.defineRule('combatNotes.specializationAbility.2',
+      'features.Specialization Ability', '=', '""',
+      'features.Animal Instinct (Deer)', '=', '", and reach increases to 10\'"',
+      'features.Animal Instinct (Frog)', '=', '", and reach increases to 10\'"'
+    );
+    rules.defineRule('combatNotes.specializationAbility.3',
       'features.Greater Weapon Specialization', '?', null,
       'features.Specialization Ability', '=', '12',
       'features.Dragon Instinct', '=', '16',
@@ -12764,18 +12710,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.druidSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.animal', '1', 'Heal Animal', null, null, 'Primal',
-       null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.leaf', '1', 'Goodberry', null, null, 'Primal', null,
-       null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.storm', '1', 'Tempest Surge', null, null, 'Primal',
-       null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.wild', '1', 'Wild Morph', null, null, 'Primal', null,
-       null);
   } else if(name == 'Fighter') {
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
@@ -13751,44 +13685,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       '', '=', '"day"',
       'combatNotes.incredibleFerocity', '=', '"hr"'
     );
-  } else if(name.match(/^Order Explorer/)) {
-    rules.defineRule('features.Order Explorer', 'feats.' + name, '=', '1');
   } else if(name == 'Order Spell') {
-    // TODO get rid of hard-coding
-    rules.defineRule('magicNotes.orderSpell',
-      'features.Animal', '=', '"Heal Animal"',
-      'features.Leaf', '=', '"Goodberry"',
-      'features.Storm', '=', '"Tempest Surge"',
-      'features.Wild', '=', '"Wild Morph"'
-    );
-    rules.defineRule('spells.Heal Animal (P1 Nec)',
-      'magicNotes.orderSpell', '=', 'source=="Heal Animal" ? 1 : null'
-    );
-    rules.defineRule('spells.Goodberry (P1 Nec)',
-      'magicNotes.orderSpell', '=', 'source=="Goodberry" ? 1 : null'
-    );
-    rules.defineRule('spells.Tempest Surge (P1 Evo)',
-      'magicNotes.orderSpell', '=', 'source=="Tempest Surge" ? 1 : null'
-    );
-    rules.defineRule('spells.Wild Morph (P1 Tra)',
-      'magicNotes.orderSpell', '=', 'source=="Wild Morph" ? 1 : null'
-    );
-  } else if(name == 'Order Magic (Animal)') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.orderMagic(Animal)', '1', 'Heal Animal', null, null,
-       'Primal', null, null);
-  } else if(name == 'Order Magic (Leaf)') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.orderMagic(Leaf)', '1', 'Goodberry', null, null,
-       'Primal', null, null);
-  } else if(name == 'Order Magic (Storm)') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.orderMagic(Storm)', '1', 'Tempest Surge', null, null,
-       'Primal', null, null);
-  } else if(name == 'Order Magic (Wild)') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.orderMagic(Wild)', '1', 'Wild Morph', null, null,
-       'Primal', null, null);
+    rules.defineRule('focusPoints', 'magicNotes.orderSpell', '+=', '1');
   } else if(name == 'Otherworldly Magic') {
     rules.defineRule
       ('proficiencyBonus.Innate Arcane', 'features.' + name, '=', '2');
@@ -14161,6 +14059,91 @@ Pathfinder2E.languageRules = function(rules, name) {
     return;
   }
   // No rules pertain to language
+};
+
+/*
+ * Defines in #rules# the rules associated with order #name#, which grants
+ * the feature #feature#, the focus spell #spell#, Training in #skill#, and
+ * #focusPoints# initial focus points.
+ */
+Pathfinder2E.orderRules = function(
+  rules, name, feature, spell, skill, focusPoints
+) {
+
+  if(!name) {
+    console.log('Empty order name');
+    return;
+  }
+  if(!feature) {
+    console.log('Bad feature "' + feature + '" for order ' + name);
+    return;
+  }
+  if(!spell) {
+    console.log('Bad spell "' + spell + '" for order ' + name);
+    return;
+  }
+  if(!skill) {
+    console.log('Bad skill "' + skill + '" for order ' + name);
+    return;
+  }
+  if(typeof(focusPoints) != 'number') {
+    console.log('Bad focus points "' + focusPoints + '" for order ' + name);
+    return;
+  }
+  if(!(spell in Pathfinder2E.SPELLS)) {
+    console.log('Bad spell "' + spell + '" for order ' + name);
+    return;
+  }
+  let allSkills = rules.getChoices('skills') || Pathfinder2E.SKILLS;
+  if(!(skill in allSkills)) {
+    console.log('Bad skill "' + skill + '" for order ' + name);
+    return;
+  }
+
+  let noteName =
+    'magicNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+
+  rules.defineRule('focusPoints', noteName, '+=', focusPoints);
+
+  Pathfinder2E.featureRules(rules, name, ['feature', 'magic', 'skill'],
+    ['Has the ' + feature + ' feature',
+     'Knows the <i>' + spell + '</i> spell/Has a focus pool with ' + focusPoints + ' Focus Point' + (focusPoints > 1 ? 's' : ''),
+     'Skill Trained (' + skill + ')']);
+  Pathfinder2E.featureSpell
+    (rules, noteName, '1', spell, null, null, 'Primal', null, null);
+
+  Pathfinder2E.featRules
+    (rules, 'Order Explorer (' + name + ')',
+     ['level >= 2', 'features.' + name + ' == 0'], [], ['Class', 'Druid']);
+  Pathfinder2E.featureRules(rules, 'Order Explorer (' + name + ')',
+    ['feature', 'feature'],
+    ['+1 Class Feat', 'May learn ' + name + ' order feats']);
+  rules.defineRule('features.Order Explorer',
+    'features.Order Explorer (' + name + ')', '=', '1'
+  );
+
+  Pathfinder2E.featRules
+    (rules, 'Order Magic (' + name + ')',
+     ['level >= 4', 'features.Order Explorer (' + name + ')'], [],
+     ['Class', 'Druid']);
+  Pathfinder2E.featureRules(rules, 'Order Magic (' + name + ')', ['magic'],
+    ['Knows the <i>' + spell + '</i> spell']);
+  Pathfinder2E.featureSpell
+    (rules, 'magicNotes.orderMagic(' + name + ')', '1', spell, null, null,
+     'Primal', null, null);
+
+  let spellLevel =
+    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level');
+  let spellSchool =
+    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'School');
+  let spellName =
+    spell + ' (P' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')';
+  rules.defineRule
+    ('magicNotes.orderSpell', 'features.' + name, '=', '"' + spell + '"');
+  rules.defineRule('spells.' + spellName,
+    'magicNotes.orderSpell', '=', 'source=="' + spell + '" ? 1 : null'
+  );
+
 };
 
 /*
@@ -15008,6 +14991,12 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   } else if(type == 'Language')
     result.push(
       // empty
+    );
+  else if(type == 'Order')
+    result.push(
+      ['Feature', 'Feature', 'text', [20]],
+      ['Spell', 'Spell', 'text', [20]],
+      ['Skill', 'Skill', 'text', [20]]
     );
   else if(type == 'Shield')
     result.push(
