@@ -15560,7 +15560,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'spells') {
     let availableSpellsByGroupAndLevel = {};
     let groupAndLevel;
-    let allSpells = this.getChoice('spells');
+    let allSpells = this.getChoices('spells');
     attrs = this.applyRules(attributes);
     for(attr in allSpells) {
       if(allSpells[attr].includes('Focus'))
