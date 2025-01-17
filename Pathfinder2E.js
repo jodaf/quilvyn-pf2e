@@ -2980,7 +2980,7 @@ Pathfinder2E.FEATURES = {
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Detect Magic</i> cantrip as an arcane innate spell at will",' +
+      '"Knows the Detect Magic arcane cantrip",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
@@ -3054,7 +3054,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"May cast <i>Meld Into Stone</i> as a divine innate spell 1/day",' +
+      '"Knows the Meld Into Stone divine spell; may cast it 1/day",' +
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3132,7 +3132,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="May cast <i>Faerie Fire</i> and <i>Invisibility</i> as 2nd-level primal innate spells 1/day"',
+     'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each 1/day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
@@ -3269,7 +3269,7 @@ Pathfinder2E.FEATURES = {
     'Note="After a critical success using a skill, may immediately Aid an ally on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
-    'Note="May cast <i>Charm</i> as a 1st-level primal innate spell 1/day"',
+    'Note="Knows the Charm arcane spell; may cast it 1/day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -3751,12 +3751,12 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   'Composition Spells':
     'Section=magic ' +
-    'Note="Has a focus pool with 1 Focus Point/Knows the <i>Counter Performance</i> and <i>Inspire Courage</i> spells"',
+    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool with 1 Focus Point"',
   'Enigma':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Bardic Lore feature",' +
-      '"Knows the <i>True Strike</i> spell"',
+      '"Knows the True Strike occult spell"',
   'Expert Spellcaster':'Section=magic Note="Spell Expert (%V)"',
   'Great Fortitude':'Section=save Note="Save Expert (Fortitude)"',
   'Greater Resolve':
@@ -3772,7 +3772,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Lingering Composition feature",' +
-      '"Knows the <i>Soothe</i> spell"',
+      '"Knows the Soothe occult spell"',
   'Magnum Opus':'Section=magic Note="Knows 2 10th-level occult spells"',
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
   'Muses':'Section=feature Note="1 selection"',
@@ -3782,7 +3782,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Versatile Performance feature",' +
-      '"Knows the <i>Unseen Servant</i> spell"',
+      '"Knows the Unseen Servant occult spell"',
   'Resolve':
     'Section=save,save ' +
     'Note=' +
@@ -3797,7 +3797,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May use Bardic Lore to Recall Knowledge on any topic"',
   'Lingering Composition':
     'Section=magic ' +
-    'Note="Knows the <i>Lingering Composition</i> spell/+1 Focus Points"',
+    'Note="Knows the Lingering Composition occult spell/+1 Focus Points"',
   'Reach Spell':'Action=1 Section=magic Note="May extend spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
@@ -3811,10 +3811,10 @@ Pathfinder2E.FEATURES = {
       '"May use Occultism to add spells to spellbook",' +
       '"May learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire"',
   'Inspire Competence':
-    'Section=magic Note="Knows the <i>Inspire Competence</i> cantrip"',
+    'Section=magic Note="Knows the Inspire Competence occult cantrip"',
   "Loremaster's Etude":
     'Section=magic ' +
-    'Note="Knows the <i>Loremaster\'s Etude<i> spell/+1 Focus Points"',
+    'Note="Knows the Loremaster\'s Etude occult spell/+1 Focus Points"',
   'Multifarious Muse (Enigma)':
     'Section=feature,feature ' +
     'Note=' +
@@ -3831,15 +3831,15 @@ Pathfinder2E.FEATURES = {
       '"Has the Polymath feature/+1 Class Feat",' +
       '"May learn polymath muse feats"',
   'Inspire Defense':
-    'Section=magic Note="Knows the <i>Inspire Defense</i> cantrip"',
+    'Section=magic Note="Knows the Inspire Defense occult cantrip"',
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
     'Note="May hide spellcasting from observers with a successful Performance vs. Perception"',
-  'Triple Time':'Section=magic Note="Knows the <i>Triple Time</i> cantrip"',
+  'Triple Time':'Section=magic Note="Knows the Triple Time occult cantrip"',
   'Versatile Signature':
     'Section=magic Note="May replace 1 signature spell each day"',
-  'Dirge Of Doom':'Section=magic Note="Knows the <i>Dirge Of Doom</i> cantrip"',
+  'Dirge Of Doom':'Section=magic Note="Knows the Dirge Of Doom occult cantrip"',
   'Harmonize':
     'Action=1 ' +
     'Section=magic ' +
@@ -3854,12 +3854,12 @@ Pathfinder2E.FEATURES = {
       '"May attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
   'Inspire Heroics':
     'Section=magic ' +
-    'Note="Knows the <i>Inspire Heroics<i> spell/+1 Focus Points"',
+    'Note="Knows the Inspire Heroics occult spell/+1 Focus Points"',
   'Know-It-All':
     'Section=skill ' +
     'Note="A successful Recall Knowledge grants additional information"',
   'House Of Imaginary Walls':
-    'Section=magic Note="Knows the <i>House Of Imaginary Walls</i> cantrip"',
+    'Section=magic Note="Knows the House Of Imaginary Walls occult cantrip"',
   'Quickened Casting':
     'Action=Free ' +
     'Section=magic ' +
@@ -3872,10 +3872,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May retain Esoteric Polymath spell in repertoire by removing a spell of the same level"',
   'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Allegro':'Section=magic Note="Knows the <i>Allegro</i> cantrip"',
+  'Allegro':'Section=magic Note="Knows the Allegro occult cantrip"',
   'Soothing Ballad':
     'Section=magic ' +
-    'Note="Knows the <i>Soothing Ballad<i> spell/+1 Focus Points"',
+    'Note="Knows the Soothing Ballad occult spell/+1 Focus Points"',
   'True Hypercognition':
     'Action=1 Section=skill Note="May Recall Knowledge 5 times"',
   'Effortless Concentration':
@@ -3890,7 +3890,7 @@ Pathfinder2E.FEATURES = {
   'Impossible Polymath':
     'Section=magic Note="May add spells from trained traditions to spellbook"',
   'Fatal Aria':
-    'Section=magic Note="Knows the <i>Fatal Aria<i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Fatal Aria occult spell/+1 Focus Points"',
   'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
   'Symphony Of The Muse':
     'Section=magic ' +
@@ -3975,7 +3975,7 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' May negate damage to a struck ally or grant the ally damage resistance %{2+level} and inflict enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
   "Hero's Defiance":
-    'Section=magic Note="Knows the <i>Hero\'s Defiance</i> spell"',
+    'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
   // Juggernaut as above
   'Legendary Armor':
     'Section=combat ' +
@@ -3988,18 +3988,18 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Must always respect others\' freedom and oppose tyranny",' +
-      '"Knows the <i>Lay On Hands</i> spell"',
+      '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
     'Section=feature,magic ' +
     'Note=' +
       '"Must always act with honor and respect lawful authority",' +
-      '"Knows the <i>Lay On Hands</i> spell"',
+      '"Knows the Lay On Hands divine spell"',
   'Redeemer':
     'Section=feature,magic ' +
     'Note=' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
-      '"Knows the <i>Lay On Hands</i> spell"',
+      '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4060,7 +4060,7 @@ Pathfinder2E.FEATURES = {
   // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the <i>Litany Against Wrath</i> spell"',
+    'Note="+1 Focus Points/Knows the Litany Against Wrath divine spell"',
   'Loyal Warhorse':
     'Section=feature Note="Mount is mature and will never attack self"',
   'Shield Warden':
@@ -4089,7 +4089,7 @@ Pathfinder2E.FEATURES = {
   'Litany Against Sloth':
     'Section=magic ' +
     'Note=' +
-      '"+1 Focus Points/Knows the <i>Litany Against Sloth</i> spell"',
+      '"+1 Focus Points/Knows the Litany Against Sloth divine spell"',
   'Radiant Blade Spirit':
     'Section=combat ' +
     'Note="May choose <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
@@ -4108,7 +4108,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="May add two extra damage dice on a Strike vs. an evil foe and convert all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the <i>Champion\'s Sacrifice</i> spell"',
+    'Note="+1 Focus Points/Knows the Champion\'s Sacrifice divine spell"',
   'Divine Wall':
     'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
   'Lasting Doubt':
@@ -4132,7 +4132,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use an additional Reaction for Champion\'s Reaction 1/turn"',
   'Litany Of Righteousness':
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the <i>Litany Of Righteousness</i> spell"',
+    'Note="+1 Focus Points/Knows the Litany Of Righteousness divine spell"',
   'Wyrmbane Aura':
     'Section=save ' +
     'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level//2} from dragons)"',
@@ -4380,7 +4380,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="May increase the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', and the effect of a longer line or cone spell by 10\'"',
-  'Wild Shape':'Section=magic Note="Knows the <i>Wild Shape</i> spell"',
+  'Wild Shape':'Section=magic Note="Knows the Wild Shape primal spell"',
   'Call Of The Wild':
     'Section=magic ' +
     'Note="May spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
@@ -4416,7 +4416,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use <i>Wild Shape</i> to change into a Large dinosaur and to gain +1 on Athletics checks"',
   'Fey Caller':
     'Section=magic ' +
-    'Note="Knows the <i>Illusory Disguise</i>, <i>Illusory Object</i>, <i>Illusory Scene</i>, and <i>Veil</i> primal spells"',
+    'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
   'Incredible Companion':
     'Section=feature ' +
     'Note="Animal Companion gains choice of nimble or savage characteristics"',
@@ -4425,7 +4425,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird and to gain +1 on Acrobatics checks"',
   'Wind Caller':
     'Section=magic ' +
-    'Note="Knows the <i>Stormwind Flight</i> spell/+1 Focus Points"',
+    'Note="Knows the Stormwind Flight primal spell/+1 Focus Points"',
   'Elemental Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Medium elemental and to gain resistance 5 to fire"',
@@ -4453,7 +4453,7 @@ Pathfinder2E.FEATURES = {
   'Primal Summons':
     'Section=magic,magic ' +
     'Note=' +
-      '"Knows the <i>Primal Summons</i> spell",' +
+      '"Knows the Primal Summons primal spell",' +
       '"Summoned creatures gain choice of air, earth, fire, or water elemental power"',
   'Specialized Companion':
     'Section=feature Note="Animal Companion has choice of specialization"',
@@ -4470,12 +4470,12 @@ Pathfinder2E.FEATURES = {
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
-    'Note="Knows the <i>Impaling Briars</i> spell/+1 Focus Points"',
+    'Note="Knows the Impaling Briars primal spell/+1 Focus Points"',
   'Monstrosity Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a %{$\'features.Soaring Shape\'?\'phoenix, \':\'\'}purple worm or sea serpent"',
   'Invoke Disaster':
-    'Section=magic Note="Knows the <i>Storm Lord</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Storm Lord primal spell/+1 Focus Points"',
   'Perfect Form Control':
     'Section=magic ' +
     'Note="May cast <i>Wild Shape</i> 2 levels lower to retain shape permanently"',
@@ -4488,7 +4488,7 @@ Pathfinder2E.FEATURES = {
   'True Shapeshifter':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="May change shapes during <i>Wild Shape</i>/May <i>Wild Shape</i> into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/day"',
+    'Note="May change shapes during <i>Wild Shape</i>/May use <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/day"',
 
   // Fighter
   // Armor Expertise as above
@@ -4878,10 +4878,10 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows the <i>Ki Rush</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Ki Rush occult spell/Has a focus pool with 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows the <i>Ki Strike</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Ki Strike occult spell/Has a focus pool with 1 Focus Point"',
   'Monastic Weaponry':'Section=combat Note="Attack %V (Monk Weapons)"',
   'Mountain Stance':
     'Action=1 ' +
@@ -4927,9 +4927,9 @@ Pathfinder2E.FEATURES = {
     'Action=Reaction Section=combat Note="May Strike an adjacent moving foe"',
   'Wholeness Of Body':
     'Section=magic ' +
-    'Note="Knows the <i>Wholeness Of Body</i> spell/+1 Focus Points"',
+    'Note="Knows the Wholeness Of Body occult spell/+1 Focus Points"',
   'Abundant Step':
-    'Section=magic Note="Knows the <i>Abundant Step</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Abundant Step occult spell/+1 Focus Points"',
   'Crane Flutter':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4939,7 +4939,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes 1/1d4 rd (DC %{skillModifiers.Intimidation} Will negates; critical failure inflicts frightened 2); first successful self Strike in the next rd on a frightened foe inflicts +4 HP"',
   'Ki Blast':
-    'Section=magic Note="Knows the <i>Ki Blast</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
   'Mountain Stronghold':
     'Action=1 ' +
     'Section=combat ' +
@@ -4976,7 +4976,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 Section=ability Note="May Stride on vertical surfaces"',
   'Wild Winds Initiate':
     'Section=magic ' +
-    'Note="Knows the <i>Wild Winds Stance</i> spell/+1 Focus Points"',
+    'Note="Knows the Wild Winds Stance occult spell/+1 Focus Points"',
   'Knockback Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -4986,7 +4986,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use Grapple to inflict clumsy 1 for 1 turn (critical success unconscious for 1 min)"',
   'Wind Jump':
-    'Section=magic Note="Knows the <i>Wind Jump</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Wind Jump occult spell/+1 Focus Points"',
   'Winding Flow':
     'Action=1 ' +
     'Section=combat ' +
@@ -5034,7 +5034,7 @@ Pathfinder2E.FEATURES = {
     'Note="May enter a stance at the beginning of a turn"',
   'Quivering Palm':
     'Section=magic ' +
-    'Note="Knows the <i>Quivering Palm</i> spell/+1 Focus Points"',
+    'Note="Knows the Quivering Palm occult spell/+1 Focus Points"',
   'Shattering Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5043,7 +5043,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Unarmed Strikes gain the forceful trait or increase damage by 1 die step"',
   'Empty Body':
-    'Section=magic Note="Knows the <i>Empty Body</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Empty Body occult spell/+1 Focus Points"',
   'Meditative Wellspring':
     'Section=magic Note="Refocus restores 3 Focus Points"',
   'Swift River':
@@ -5619,7 +5619,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
   'Advanced Bloodline':
-    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
     'Section=save Note="+1 vs. spells and magical effects"',
@@ -5627,7 +5627,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="May have 1 spell from a different tradition in repertoire"',
   'Greater Bloodline':
-    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
@@ -5719,7 +5719,7 @@ Pathfinder2E.FEATURES = {
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
-    'Note="Knows the <i>Hand Of The Apprentice</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool with 1 Focus Point"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -5740,7 +5740,7 @@ Pathfinder2E.FEATURES = {
     'Note="Targets reduce any status bonus to saves vs. self spells by 1"',
   // Steady Spellcasting as above
   'Advanced School Spell':
-    'Section=magic Note="Knows the <i>%V</i> spell/+1 Focus Points"',
+    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
@@ -5822,9 +5822,9 @@ Pathfinder2E.FEATURES = {
   "Advanced Muse's Whispers":'Section=feature Note="+1 Class Feat (bard)"',
   'Counter Perform':
     'Section=magic ' +
-    'Note="Knows the <i>Counter Performance</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Counter Performance occult spell/Has a focus pool with 1 Focus Point"',
   'Inspirational Performance':
-    'Section=magic Note="Knows the <i>Inspire Courage</i> cantrip"',
+    'Section=magic Note="Knows the Inspire Courage occult cantrip"',
   'Occult Breadth':
     'Section=magic Note="+1 occult spell slot of each level up to %V"',
   'Expert Bard Spellcasting':
@@ -5846,7 +5846,7 @@ Pathfinder2E.FEATURES = {
   // NOTE: Might not be Lay On Hands for other causes
   'Healing Touch':
     'Section=magic ' +
-    'Note="Knows the <i>Lay On Hands</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Lay On Hands divine spell/Has a focus pool with 1 Focus Point"',
   'Advanced Devotion':'Section=feature Note="+1 Class Feat (champion)"',
   // Champion's Reaction as above
   // Divine Ally as above
@@ -5888,7 +5888,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
   'Order Spell':
     'Section=magic ' +
-    'Note="Knows the <i>%V</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the %V divine spell/Has a focus pool with 1 Focus Point"',
   'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
@@ -5971,7 +5971,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell':
     'Section=magic ' +
-    'Note="Knows the <i>%V</i> spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the %V spell/Has a focus pool with 1 Focus Point"',
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
@@ -5991,7 +5991,7 @@ Pathfinder2E.FEATURES = {
       '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
   'Arcane School Spell':
-    'Section=magic Note="Knows the <i>%V</i> spell/Has a focus pool with 1 focus point"',
+    'Section=magic Note="Knows the %V arcane spell/Has a focus pool with 1 focus point"',
   'Basic Arcana':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
   'Basic Wizard Spellcasting':
@@ -11845,9 +11845,6 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.seerElf', '1', 'Detect Magic', null, null, 'Arcane',
-       null, null);
     rules.defineRule
       ('proficiencyBonus.Innate Arcane', 'features.Seer Elf', '=', '2');
   } else if(name == 'Gnome') {
@@ -12103,7 +12100,7 @@ Pathfinder2E.bloodlineRules = function(
   Pathfinder2E.featureRules(rules, name,
     ['magic', 'magic', 'skill'], [
       'Spell Trained (' + spellList + ')/' +
-      'Knows the <i>' + bloodlineSpells[0] + '</i> spell',
+      'Knows the ' + bloodlineSpells[0] + ' ' + spellList.toLowerCase() + ' spell',
       'Casting a bloodline spell ' + bloodMagic,
       'Skill Trained (' + bloodlineSkills.join('; ') + ')'
     ], null);
@@ -12111,27 +12108,24 @@ Pathfinder2E.bloodlineRules = function(
   rules.defineRule('bloodlineTraditions',
     'features.' + name, '=', '!dict.bloodlineTraditions ? "' + spellList + '" : !dict.bloodlineTraditions.includes("' + spellList + '") ? dict.bloodlineTraditions + "; ' + spellList + '" : dict.bloodlineTraditions'
   );
-  rules.defineRule('magicNotes.advancedBloodline',
-    'features.' + name, '=', '"' + bloodlineSpells[1] + '"'
-  );
-  rules.defineRule('magicNotes.basicBloodlineSpell',
-    'features.' + name, '=', '"' + bloodlineSpells[0] + '"'
-  );
-  rules.defineRule('magicNotes.greaterBloodline',
-    'features.' + name, '=', '"' + bloodlineSpells[2] + '"'
-  );
-  for(let i = 0; i < bloodlineSpells.length; i++) {
-    let note =
-      ['basicBloodlineSpell', 'advancedBloodline', 'greaterBloodline'][i];
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.' + note,
-       'source=="' + bloodlineSpells[i] + '" ? 1 : null', bloodlineSpells[i],
-       null, null, spellList, null, null);
-    if(i == 0)
-      Pathfinder2E.featureSpell
-        (rules, 'magicNotes.' + prefix, '1', bloodlineSpells[0], null, null,
-         spellList, null, null);
-  }
+  [0, 1, 2].forEach(i => {
+    let spellName = bloodlineSpells[i];
+    let noteName =
+      ['basicBloodlineSpell', 'advanceBloodlineSpell', 'greaterBloodline'][i];
+    let spellLevel =
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Level');
+    let spellSchool =
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'School');
+    let spell =
+      'spells.' + spellName + ' (' + spellList[0] + spellLevel + ' ' +
+      spellSchool.substring(0, 3) + ')';
+    rules.defineRule('magicNotes.' + noteName,
+      'features.' + name, '=', '"' + bloodlineSpells[0] + '"'
+    );
+    rules.defineRule(spell,
+      'magicNotes.' + noteName, '=', 'source=="' + bloodlineSpells[0] + '" ? 1 : null'
+    );
+  });
   rules.defineRule('spellAttackModifier.' + spellList + '.1',
     'features.' + name, '=', '"charisma"'
   );
@@ -12487,57 +12481,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.allegro', '1', 'Allegro', null, null, 'Occult', null,
-       null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.compositionSpells', '1', 'Counter Performance', null,
-       null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.compositionSpells', '1', 'Inspire Courage', null,
-       null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.dirgeOfDoom', '1', 'Dirge Of Doom', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.fatalAria', '1', 'Fatal Aria', null, null, 'Occult',
-       null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.houseOfImaginaryWalls', '1',
-       'House Of Imaginary Walls', null, null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.inspireCompetence', '1', 'Inspire Competence', null,
-       null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.inspireCourage', '1', 'Inspire Courage', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.inspireDefense', '1', 'Inspire Defense', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.inspireHeroics', '1', 'Inspire Heroics', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.lingeringComposition', '1', 'Lingering Composition',
-       null, null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, "magicNotes.loremaster'sEtude", '1', "Loremaster's Etude", null,
-       null, 'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.maestro', '1', 'Soothe', null, null, 'Occult', null,
-       null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.soothingBallad', '1', 'Soothing Ballad', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.tripleTime', '1', 'Triple Time', null, null,
-       'Occult', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.enigma', '1', 'True Strike', null, null, 'Occult',
-       null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.polymath', '1', 'Unseen Servant', null, null,
-       'Occult', null, null);
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon-1',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
@@ -12589,19 +12532,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellAttackModifier.Divine.1', classLevel, '=', '"charisma"');
     rules.defineRule
       ('spellDifficultyClass.Divine.1', classLevel, '=', '"charisma"');
-    Pathfinder2E.featureSpell
-      (rules, "magicNotes.hero'sDefiance", '1', "Hero's Defiance", null, null,
-       'Divine', null,
-       null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.liberator', '1', 'Lay On Hands', null, null,
-       'Divine', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.paladin', '1', 'Lay On Hands', null, null, 'Divine',
-       null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.redeemer', '1', 'Lay On Hands', null, null, 'Divine',
-       null, null);
     rules.defineChoice
       ('notes', 'validationNotes.championAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.championAlignment',
@@ -13075,19 +13005,19 @@ Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
 
   Pathfinder2E.featureRules(
     rules, "Advanced Deity's Domain (" + name + ')', ['magic'],
-    ['Knows the <i>' + advancedSpell + '</i> spell/+1 Focus Points'], null
+    ['Knows the ' + advancedSpell + ' divine spell/+1 Focus Points'], null
   );
   Pathfinder2E.featureRules(
     rules, 'Advanced Domain (' + name + ')', ['magic'],
-    ['Knows the <i>' + advancedSpell + '</i> spell/+1 Focus Points'], null
+    ['Knows the ' + advancedSpell + ' divine spell/+1 Focus Points'], null
   );
   Pathfinder2E.featureRules(
     rules, "Deity's Domain (" + name + ')', ['magic'],
-     ['Knows the <i>' + spell + '</i> spell'], null
+     ['Knows the ' + spell + ' divine spell'], null
   );
   Pathfinder2E.featureRules(
     rules, 'Domain Initiate (' + name + ')', ['magic'],
-    ['Knows the <i>' + spell + '</i> spell/Has a focus pool with 1 Focus Point'], null
+    ['Knows the ' + spell + ' divine spell/Has a focus pool with 1 Focus Point'], null
   );
 
   let condensed = name.replaceAll(' ', '');
@@ -13100,18 +13030,6 @@ Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
   );
   rules.defineRule
     ('focusPoints', 'magicNotes.domainInitiate(' + condensed + ')', '+=', '1');
-  Pathfinder2E.featureSpell
-    (rules, "magicNotes.deity'sDomain(" + condensed + ')', '1', spell, null,
-     null, 'Divine', null, null);
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.domainInitiate(' + condensed + ')', '1', spell, null,
-     null, 'Divine', null, null);
-  Pathfinder2E.featureSpell
-    (rules, "magicNotes.advancedDeity'sDomain(" + condensed + ')', '1',
-     advancedSpell, null, null, 'Divine', null, null);
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.advancedDomain(' + condensed + ')', '1', advancedSpell,
-     null, null, 'Divine', null, null);
 
 };
 
@@ -13389,10 +13307,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Retributive Strike',
       "featureNotes.champion'sReaction", '=', 'source=="Retributive Strike" ? 1 : null'
     );
-  } else if(name == "Champion's Sacrifice") {
-    Pathfinder2E.featureSpell
-      (rules, "magicNotes.champion'sSacrifice", '1', "Champion's Sacrifice",
-       null, null, 'Divine', null, null);
   } else if(name == 'Cleric Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.clericDedication', '?', null,
@@ -13411,9 +13325,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
   } else if(name == 'Counter Perform') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.counterPerform', '1', 'Counter Performance', null,
-       null, 'Occult', null, null);
     rules.defineRule('focusPoints', 'magicNotes.counterPerform', '+=', '1');
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
@@ -13513,12 +13424,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if(name.match(/^Favored Terrain/)) {
     rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
-  } else if(name == 'Fey Caller') {
-    ['Illusory Disguise', 'Illusory Object', 'Illusory Scene', 'Veil'].forEach(s => {
-      Pathfinder2E.featureSpell
-        (rules, 'magicNotes.feyCaller', '1', s, null, null, 'Primal', null,
-         null);
-    });
   } else if(name == 'Fighter Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -13532,13 +13437,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
     rules.defineRule
       ('features.Fighter Key Ability', 'features.Fighter Dedication', '=', '1');
-  } else if(name == 'First World Adept') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.firstWorldAdept', '1', 'Faerie Fire', null, null,
-       'Primal', null, null);
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.firstWorldAdept', '1', 'Invisibility', null, null,
-       'Primal', null, null);
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
@@ -13546,9 +13444,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('choiceCount.Skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
   } else if(name == 'Hand Of The Apprentice') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.handOfTheApprentice', '1', 'Hand Of The Apprentice',
-       null, null, 'Arcane', null, null);
     rules.defineRule
       ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
   } else if(name == 'Harming Hands') {
@@ -13556,24 +13451,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Healing Hands') {
     rules.defineRule('healSpellDie', 'magicNotes.healingHands', '^', '10');
   } else if(name == 'Healing Touch') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.healingTouch', '1', 'Lay On Hands', null, null,
-       'Divine', null, null);
     rules.defineRule('focusPoints', 'magicNotes.healingTouch', '+=', '1');
   } else if(name == "Hierophant's Power") {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
   } else if(name == 'Impaling Briars') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.impalingBriars', '1', 'Impaling Briars', null, null,
-       'Primal', null, null);
     rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
-  } else if(name == 'Inspirational Performance') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.inspirationalPerformance', '1', 'Inspire Courage',
-       null, null, 'Occult', null, null);
   } else if(name == 'Interweave Dispel') {
-    // TODO Remove hard-coding?
     rules.defineRule('knowsDispelMagicSpell',
       'spells.Dispel Magic (A2 Abj)', '=', '1',
       'spells.Dispel Magic (D2 Abj)', '=', '1',
@@ -13601,9 +13485,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'featureNotes.instinctAbility', '=', 'source=="Titan Mauler" ? 1 : null'
     );
   } else if(name == 'Invoke Disaster') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.invokeDisaster', '1', 'Storm Lord', null, null,
-       'Primal', null, null);
     rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
   } else if(name == 'Ironblood Stance') {
     rules.defineRule('combatNotes.ironbloodStance',
@@ -13619,18 +13500,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Ki Strike') {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
     rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
-  } else if(name == 'Litany Against Sloth') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.litanyAgainstSloth', '1', 'Litany Against Sloth',
-       null, null, 'Divine', null, null);
-  } else if(name == 'Litany Against Wrath') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.litanyAgainstWrath', '1', 'Litany Against Wrath',
-       null, null, 'Divine', null, null);
-  } else if(name == 'Litany Of Righteousness') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.litanyOfRighteousness', '1',
-       'Litany Of Righteousness', null, null, 'Divine', null, null);
   } else if(name == 'Master Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
@@ -13690,10 +13559,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Otherworldly Magic') {
     rules.defineRule
       ('proficiencyBonus.Innate Arcane', 'features.' + name, '=', '2');
-  } else if(name == 'Primal Summons') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.primalSummons', '1', 'Primal Summons', null, null,
-       'Primal', null, null);
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
@@ -13761,9 +13626,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
   } else if(name == 'Stonewalker') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.stonewalker', '1', 'Meld Into Stone', null, null,
-       'Divine', null, null);
     rules.defineRule
       ('proficiencyBonus.Innate Divine', 'features.' + name, '=', '2');
     rules.defineRule
@@ -13779,9 +13641,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Supernatural Charm') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.supernaturalCharm', '1', 'Charm', null, null,
-       'Divine', null, null);
     rules.defineRule
       ('proficiencyBonus.Innate Primal', 'features.' + name, '=', '2');
   } else if(name == 'Unburdened Iron') {
@@ -13806,14 +13665,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.untrainedImprovisation',
       'level', '=', 'source<7 ? Math.floor(source / 2) : source'
     );
-  } else if(name == 'Wild Shape') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.wildShape', '1', 'Wild Shape', null, null, 'Primal',
-       null, null);
-  } else if(name == 'Wind Caller') {
-    Pathfinder2E.featureSpell
-      (rules, 'magicNotes.windCaller', '1', 'Stormwind Flight', null, null,
-       'Primal', null, null);
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.wizardDedication', '?', null,
@@ -14019,7 +13870,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             note, '+=', choices.replace('+', '')
           );
       }
-      // Anathema, Cause, and Deity
       matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
       if(matchInfo && !matchInfo[1].includes('%')) {
         let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
@@ -14027,6 +13877,37 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           f = f.trim();
           if(f != '')
             rules.defineRule('features.' + f, note, '=', '1');
+        });
+      }
+      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(cantrip|spell)s?($|;)/);
+      if(matchInfo && !matchInfo[1].includes('%')) {
+        let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
+        spells.forEach(s => {
+          s = s.replace('<i>', '').replace('</i>', '').trim();
+          if(s == '') {
+            // empty
+          } else if(!(s in Pathfinder2E.SPELLS)) {
+            console.log('Unknown spell "' + s + '" for feature ' + name);
+          } else {
+            let spellAttrs = Pathfinder2E.SPELLS[s];
+            let spellLevel = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
+            if(spellLevel == 'Cantrip')
+              spellLevel = 0;
+            let spellSchool = QuilvynUtils.getAttrValue(spellAttrs, 'School');
+            let spellTrad =
+              matchInfo[2].charAt(0).toUpperCase() + matchInfo[2].substring(1);
+            let spellName =
+              s + ' (' + spellTrad.charAt(0) + spellLevel + ' ' + spellSchool.substring(0, 3) + ')';
+            rules.defineRule('spells.' + spellName, note, '=', '1');
+            Pathfinder2E.spellRules(rules, spellName,
+              spellSchool,
+              spellLevel,
+              spellTrad,
+              QuilvynUtils.getAttrValue(spellAttrs, 'Cast'),
+              QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait'),
+              QuilvynUtils.getAttrValue(spellAttrs, 'Description').replaceAll('%tradition', spellTrad)
+            );
+          }
         });
       }
     });
@@ -14107,10 +13988,8 @@ Pathfinder2E.orderRules = function(
 
   Pathfinder2E.featureRules(rules, name, ['feature', 'magic', 'skill'],
     ['Has the ' + feature + ' feature',
-     'Knows the <i>' + spell + '</i> spell/Has a focus pool with ' + focusPoints + ' Focus Point' + (focusPoints > 1 ? 's' : ''),
+     'Knows the ' + spell + ' primal spell/Has a focus pool with ' + focusPoints + ' Focus Point' + (focusPoints > 1 ? 's' : ''),
      'Skill Trained (' + skill + ')']);
-  Pathfinder2E.featureSpell
-    (rules, noteName, '1', spell, null, null, 'Primal', null, null);
 
   Pathfinder2E.featRules
     (rules, 'Order Explorer (' + name + ')',
@@ -14127,10 +14006,7 @@ Pathfinder2E.orderRules = function(
      ['level >= 4', 'features.Order Explorer (' + name + ')'], [],
      ['Class', 'Druid']);
   Pathfinder2E.featureRules(rules, 'Order Magic (' + name + ')', ['magic'],
-    ['Knows the <i>' + spell + '</i> spell']);
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.orderMagic(' + name + ')', '1', spell, null, null,
-     'Primal', null, null);
+    ['Knows the ' + spell + ' primal spell']);
 
   let spellLevel =
     QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level');
@@ -14169,7 +14045,7 @@ Pathfinder2E.schoolRules = function(rules, name, spell, advancedSpell) {
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
   Pathfinder2E.featureRules(rules, name, ['magic', 'magic'],
-    ['+1 spell slot each level/Knows the <i>' + spell + '</i> spell',
+    ['+1 spell slot each level/Knows the ' + spell + ' arcane spell',
      'Knows 1 additional 1st-level ' + name + ' spell']);
 
   rules.defineRule('magicNotes.advancedSchoolSpell',
@@ -14178,17 +14054,18 @@ Pathfinder2E.schoolRules = function(rules, name, spell, advancedSpell) {
   rules.defineRule('magicNotes.arcaneSchoolSpell',
     'features.' + name, '=', '"' + spell + '"'
   );
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.advancedSchoolSpell',
-     'source=="' + advancedSpell + '" ? 1 : null', advancedSpell, null, null,
-     'Arcane', null, null);
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.arcaneSchoolSpell',
-     'source=="' + spell + '" ? 1 : null', spell, null, null, 'Arcane', null,
-     null);
-  Pathfinder2E.featureSpell
-    (rules, 'magicNotes.' + prefix, '1', spell, null, null, 'Arcane', null,
-     null);
+  let spellLevel =
+    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[advancedSpell], 'Level');
+  let spellSchool =
+    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[advancedSpell], 'School');
+  rules.defineRule('spells.' + advancedSpell + ' (A' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')',
+    'magicNotes.advancedSchoolSpell', '=', 'source=="' + advancedSpell + '" ? 1 : null'
+  );
+  spellLevel = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level');
+  spellSchool = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'School');
+  rules.defineRule('spells.' + spell + ' (A' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')',
+    'magicNotes.arcanedSchoolSpell', '=', 'source=="' + spell + '" ? 1 : null'
+  );
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
     rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
   });
@@ -14365,40 +14242,6 @@ Pathfinder2E.spellRules = function(
     rules.defineRule('harmSpellDie', 'spells.' + name, '=', '8');
   else if(name.startsWith('Heal ('))
     rules.defineRule('healSpellDie', 'spells.' + name, '=', '8');
-};
-
-/*
- * TODO
- */
-Pathfinder2E.featureSpell = function(
-  rules, note, expr, name, school, level, tradition, cast, description
-) {
-  if(!(name in Pathfinder2E.SPELLS)) {
-    console.log('Unknown feature spell "' + name + '"');
-    return;
-  }
-  let spellAttrs = Pathfinder2E.SPELLS[name];
-  if(!school)
-    school = QuilvynUtils.getAttrValue(spellAttrs, 'School');
-  if(!level)
-    level = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
-  if(level == 'Cantrip')
-    level = 0;
-  if(!tradition)
-    tradition = QuilvynUtils.getAttrValue(spellAttrs, 'Traditions');
-  if(!cast)
-    cast = QuilvynUtils.getAttrValue(spellAttrs, 'Cast');
-  let traits = QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait');
-  if(!description)
-    description = QuilvynUtils.getAttrValue(spellAttrs, 'Description');
-  let spellName =
-    name + ' (' + tradition.charAt(0) + level + ' ' +
-    school.substring(0, 3) + ')';
-  Pathfinder2E.spellRules
-    (rules, spellName, school, level, tradition, cast, traits,
-     description.replaceAll('%tradition', tradition));
-  if(note)
-    rules.defineRule('spells.' + spellName, note, '=', expr || '1');
 };
 
 /* Defines in #rules# the rules associated with terrain #name#. */
