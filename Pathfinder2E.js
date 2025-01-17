@@ -12111,19 +12111,27 @@ Pathfinder2E.bloodlineRules = function(
   [0, 1, 2].forEach(i => {
     let spellName = bloodlineSpells[i];
     let noteName =
-      ['basicBloodlineSpell', 'advanceBloodlineSpell', 'greaterBloodline'][i];
+      ['basicBloodlineSpell', 'advancedBloodline', 'greaterBloodline'][i];
     let spellLevel =
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Level');
     let spellSchool =
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'School');
     let spell =
-      'spells.' + spellName + ' (' + spellList[0] + spellLevel + ' ' +
+      spellName + ' (' + spellList.charAt(0) + spellLevel + ' ' +
       spellSchool.substring(0, 3) + ')';
     rules.defineRule('magicNotes.' + noteName,
-      'features.' + name, '=', '"' + bloodlineSpells[0] + '"'
+      'features.' + name, '=', '"' + bloodlineSpells[i] + '"'
     );
-    rules.defineRule(spell,
-      'magicNotes.' + noteName, '=', 'source=="' + bloodlineSpells[0] + '" ? 1 : null'
+    rules.defineRule('spells.' + spell,
+      'magicNotes.' + noteName, '=', 'source=="' + bloodlineSpells[i] + '" ? 1 : null'
+    );
+    Pathfinder2E.spellRules(rules, spell,
+      spellSchool,
+      spellLevel,
+      spellList,
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Cast'),
+      QuilvynUtils.getAttrValueArray(Pathfinder2E.SPELLS[spellName], 'Trait'),
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Description').replaceAll('%tradition', spellList)
     );
   });
   rules.defineRule('spellAttackModifier.' + spellList + '.1',
@@ -14064,7 +14072,7 @@ Pathfinder2E.schoolRules = function(rules, name, spell, advancedSpell) {
   spellLevel = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level');
   spellSchool = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'School');
   rules.defineRule('spells.' + spell + ' (A' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')',
-    'magicNotes.arcanedSchoolSpell', '=', 'source=="' + spell + '" ? 1 : null'
+    'magicNotes.arcaneSchoolSpell', '=', 'source=="' + spell + '" ? 1 : null'
   );
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
     rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
