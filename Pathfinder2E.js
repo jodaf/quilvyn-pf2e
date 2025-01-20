@@ -600,11 +600,30 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
-      '1:Rage,1:Instinct,"1:Instinct Ability","1:Barbarian Feats",' +
+      '1:Rage,1:Instinct,"1:Barbarian Feats",' +
+      '"features.Fury Instinct == 0 ? 1:Anathema",' +
+      '"features.Animal Instinct (Ape) ? 1:Bestial Rage (Ape)",' +
+      '"features.Animal Instinct (Bear) ? 1:Bestial Rage (Bear)",' +
+      '"features.Animal Instinct (Bull) ? 1:Bestial Rage (Bull)",' +
+      '"features.Animal Instinct (Cat) ? 1:Bestial Rage (Cat)",' +
+      '"features.Animal Instinct (Deer) ? 1:Bestial Rage (Deer)",' +
+      '"features.Animal Instinct (Frog) ? 1:Bestial Rage (Frog)",' +
+      '"features.Animal Instinct (Shark) ? 1:Bestial Rage (Shark)",' +
+      '"features.Animal Instinct (Snake) ? 1:Bestial Rage (Snake)",' +
+      '"features.Animal Instinct (Wolf) ? 1:Bestial Rage (Wolf)",' +
+      '"features.Dragon Instinct ? 1:Draconic Rage",' +
+      '"features.Giant Instinct ? 1:Titan Mauler",' +
+      '"features.Spirit Instinct ? 1:Spirit Rage",' +
       '"2:Skill Feats","3:Deny Advantage","3:General Feats",' +
       '"3:Skill Increases",5:Brutality,7:Juggernaut,' +
       '"7:Specialization Ability","7:Weapon Specialization",' +
-      '"9:Lightning Reflexes","9:Raging Resistance","11:Mighty Rage",' +
+      '"9:Lightning Reflexes",' +
+      '"features.Animal Instinct ? 9:Raging Resistance (Animal)",' +
+      '"features.Dragon Instinct ? 9:Raging Resistance (Dragon)",' +
+      '"features.Fury Instinct ? 9:Raging Resistance (Fury)",' +
+      '"features.Giant Instinct ? 9:Raging Resistance (Giant)",' +
+      '"features.Spirit Instinct ? 9:Raging Resistance (Spirit)",' +
+      '"11:Mighty Rage",' +
       '"13:Greater Juggernaut","13:Medium Armor Expertise","13:Weapon Fury",' +
       '"15:Greater Weapon Specialization","15:Indomitable Will",' +
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
@@ -2522,7 +2541,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Champion ' +
     'Require=' +
       '"level >= 14",' +
-      '"rank.Unarmored Defense >= 2 || rank.Light Armor >=2 || rank.Medium Armor >=2 || rank.Heavy Armor >= 2"',
+      '"rank.Unarmored Defense >= 2 || rank.Light Armor >= 2 || rank.Medium Armor >= 2 || rank.Heavy Armor >= 2"',
 
   'Cleric Dedication':
     'Trait=Archetype,Dedication,Multiclass,Cleric ' +
@@ -3532,7 +3551,33 @@ Pathfinder2E.FEATURES = {
   'Barbarian Feats':'Section=feature Note="%V selections"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
-  'Bestial Rage':'Section=combat Note="%V inflict%{combatNotes.bestialRage=~\'s$\'?\'\':\'s\'} 1d%{level>=7?12:10}%1 HP%2 during rage"',
+  'Bestial Rage (Ape)':
+    'Section=combat ' +
+    'Note="May use fists to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}B HP during rage"',
+  'Bestial Rage (Bear)':
+    'Section=combat ' +
+    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'}S HP during rage"',
+  'Bestial Rage (Bull)':
+    'Section=combat ' +
+    'Note="May use horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+  'Bestial Rage (Cat)':
+    'Section=combat ' +
+    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6}S HP, during rage"',
+  'Bestial Rage (Deer)':
+    'Section=combat ' +
+    'Note="May use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
+  'Bestial Rage (Frog)':
+    'Section=combat ' +
+    'Note="May use jaws and tongue to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}B HP and 1d%{combatNotes.greaterWeaponSpecialization?\'6+12\':combatNotes.specializationAbility?\'6+5\':\'4+2\'}B HP%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'}, during rage"',
+  'Bestial Rage (Shark)':
+    'Section=combat ' +
+    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+  'Bestial Rage (Snake)':
+    'Section=combat ' +
+    'Note="May use fangs to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+  'Bestial Rage (Wolf)':
+    'Section=combat ' +
+    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
@@ -3548,7 +3593,7 @@ Pathfinder2E.FEATURES = {
       '"Successful melee Strikes ignore 10 points of physical damage resistance"',
   'Draconic Rage':
     'Section=combat ' +
-    'Note="May inflict +4 HP %V damage instead of +2 HP weapon damage during rage"',
+    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +2 HP weapon damage during rage"',
   'Fury Instinct':'Section=feature Note="+1 Class Feat"',
   'Greater Juggernaut':
     'Section=save,save ' +
@@ -3575,18 +3620,30 @@ Pathfinder2E.FEATURES = {
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May gain %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
-  'Raging Resistance':
+    'Note="May gain %{level+constitutionModifier} temporary Hit Points and +%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
+  'Raging Resistance (Animal)':
     'Section=save ' +
-    'Note="Resistance %{3+constitutionModifier} to %V while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to piercing and slashing while raging"',
+  'Raging Resistance (Dragon)':
+    'Section=save ' +
+    'Note="Has resistance %{3+constitutionModifier} to piercing and %{combatNotes.draconicRage||\'fire\'} while raging"',
+  'Raging Resistance (Fury)':
+    'Section=save ' +
+    'Note="Has resistance %{3+constitutionModifier} to physical weapons while raging"',
+  'Raging Resistance (Giant)':
+    'Section=save ' +
+    'Note="Has resistance %{3+constitutionModifier} to bludgeoning and choice of cold, electricity, or fire while raging"',
+  'Raging Resistance (Spirit)':
+    'Section=save ' +
+    'Note="Has resistance %{3+constitutionModifier} to negative and undead while raging"',
   'Specialization Ability':
-    'Section=combat Note="Rage damage bonus%1 increases to +%V%2"',
+    'Section=combat Note="Increased instinct ability rage effects"',
   'Spirit Rage':
     'Section=combat ' +
-    'Note="May inflict +3 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage"',
+    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage"',
   'Titan Mauler':
     'Section=combat ' +
-    'Note="May use weapons made for a larger creature, gaining +6 HP damage and suffering clumsy 1"',
+    'Note="May use weapons made for a larger creature, suffering clumsy 1 and gaining +%{combatNotes.greaterWeaponSpecialization?18:combatNotes.specializationAbility?10:6} HP instead of +2 HP weapon damage during rage"',
   'Weapon Fury':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
@@ -3606,7 +3663,7 @@ Pathfinder2E.FEATURES = {
       '"Has the Scare To Death feature"',
   'Raging Thrower':
     'Section=combat ' +
-    'Note="+%{combatNotes.rage} HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
+    'Note="+%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP thrown weapon damage during rage/Brutal Critical and Devastator effects apply to thrown weapons"',
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
@@ -3685,7 +3742,7 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{strengthModifier+combatNotes.rage}B HP + specialization damage to grabbed foe (Fort negates)"',
+    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier}B HP + specialization damage to grabbed foe (Fort negates)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
@@ -4189,7 +4246,7 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Anathema':
     'Section=feature ' +
-    'Note="May not perform acts or cast spells prohibited by %{levels.Druid?\'druidic order\'+($\'features.Order Explorer\'?\'s\':\'\'):deity}"',
+    'Note="May not perform acts or cast spells prohibited by %{levels.Druid?\'druidic order\'+($\'features.Order Explorer\'?\'s\':\'\'):levels.Barbarian?\'barbarian instinct\':deity}"',
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
@@ -5881,7 +5938,9 @@ Pathfinder2E.FEATURES = {
   'Basic Fury':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
   'Advanced Fury':'Section=feature Note="+%V Class Feat (barbarian)"',
-  'Instinct Ability':'Section=feature Note="Has the %V feature"',
+  'Instinct Ability':
+    'Section=feature ' +
+    'Note="Has the instinct ability for chosen barbarian instinct"',
   "Juggernaut's Fortitude":'Section=save Note="Save Master (Fortitude)"',
 
   'Bard Dedication':
@@ -12424,94 +12483,29 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.perpetualPerfection', '^', '11'
     );
   } else if(name == 'Barbarian') {
-    // TODO: Use a table for Animal and Dragon Instinct attacks?
-    rules.defineRule('combatNotes.bestialRage',
-      '', '=', '"Jaws"',
-      'features.Animal Instinct (Ape)', '=', '"Fist"',
-      'features.Animal Instinct (Bull)', '=', '"Horn"',
-      'features.Animal Instinct (Deer)', '=', '"Antlers"',
-      'features.Animal Instinct (Snake)', '=', '"Fangs"'
-    );
-    rules.defineRule('combatNotes.bestialRage.1',
-      'features.Bestial Rage', '=', '"P"',
-      'features.Animal Instinct (Ape)', '=', '"B"',
-      'features.Animal Instinct (Frog)', '=', '"B"'
-    );
-    rules.defineRule('combatNotes.bestialRage.2',
-      'features.Bestial Rage', '=', '""',
-      'features.Animal Instinct (Bear)', '=', '" and claws 1d%{level>=7?8:6}S HP"',
-      'features.Animal Instinct (Cat)', '=', '" and claws 1d%{level>=7?8:6}6S HP"',
-      'features.Animal Instinct (Frog)', '=', '" and tongue 1d%{level>=7?6:4}B HP"'
-    );
-    rules.defineRule('combatNotes.specializationAbility',
-      '', '=', '6',
-      'features.Animal Instinct', '=', '5',
-      'features.Dragon Instinct', '=', '8',
-      'features.Giant Instinct', '=', '10',
-      'features.Spirit Instinct', '=', '7',
-      'combatNotes.specializationAbility.3', '^', null
-    );
-    rules.defineRule('combatNotes.specializationAbility.1',
-      'features.Specialization Ability', '=', '""',
-      'features.Animal Instinct', '=', '" with natural weapon"',
-      'features.Giant Instinct', '=', '" with a larger weapon"',
-      'features.Spirit Instinct', '=', '" with Spirit Rage"'
-    );
-    rules.defineRule('combatNotes.specializationAbility.2',
-      'features.Specialization Ability', '=', '""',
-      'features.Animal Instinct (Deer)', '=', '", and reach increases to 10\'"',
-      'features.Animal Instinct (Frog)', '=', '", and reach increases to 10\'"'
-    );
-    rules.defineRule('combatNotes.specializationAbility.3',
-      'features.Greater Weapon Specialization', '?', null,
-      'features.Specialization Ability', '=', '12',
-      'features.Dragon Instinct', '=', '16',
-      'features.Giant Instinct', '=', '18',
-      'features.Spirit Instinct', '=', '13'
-    );
     rules.defineRule('combatNotes.draconicRage',
       '', '=', '"fire"',
-      'features.Draconic Instinct (Black)', '=', '"acid"',
-      'features.Draconic Instinct (Blue)', '=', '"electricity"',
-      'features.Draconic Instinct (Green)', '=', '"poison"',
-      'features.Draconic Instinct (White)', '=', '"cold"',
-      'features.Draconic Instinct (Bronze)', '=', '"electricity"',
-      'features.Draconic Instinct (Copper)', '=', '"acid"',
-      'features.Draconic Instinct (Silver)', '=', '"cold"'
+      'features.Draconic Rage (Black)', '=', '"acid"',
+      'features.Draconic Rage (Blue)', '=', '"electricity"',
+      'features.Draconic Rage (Green)', '=', '"poison"',
+      'features.Draconic Rage (White)', '=', '"cold"',
+      'features.Draconic Rage (Bronze)', '=', '"electricity"',
+      'features.Draconic Rage (Copper)', '=', '"acid"',
+      'features.Draconic Rage (Silver)', '=', '"cold"'
     );
     rules.defineRule('combatNotes.rage',
-      '', '=', '2',
-      'combatNotes.rage.1', '^', null
-    );
-    rules.defineRule('combatNotes.rage.1',
-      'features.Rage', '?', null,
-      'features.Specialization Ability', '?', null,
-      'features.Dragon Instinct', '=', '8',
-      'features.Fury Instinct', '=', '6',
-      'features.Greater Weapon Specialization', '*', '2'
+      'combatNotes.specializationAbility', '+', 'null' // italics
     );
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Instinct')).map(x => x.replace('Barbarian - ', ''));
     instincts.forEach(i => {
-      if(i.includes('Animal Instinct'))
-        rules.defineRule('features.Animal Instinct', 'features.' + i, '=', '1');
-      else if(i.includes('Dragon Instinct'))
-        rules.defineRule('features.Dragon Instinct', 'features.' + i, '=', '1');
+      if(i.includes('(')) {
+        let instinctGroup = i.replace(/\s*\(.*/, '');
+        rules.defineRule
+          ('features.' + instinctGroup, 'features.' + i, '=', '1');
+      }
     });
-    rules.defineRule('saveNotes.ragingResistance',
-      'features.Animal Instinct', '=', '"piercing and slashing"',
-      'features.Dragon Instinct', '=', '"fire"',
-      'features.Dragon Instinct (Black)', '=', '"acid"',
-      'features.Dragon Instinct (Blue)', '=', '"electricity"',
-      'features.Dragon Instinct (Green)', '=', '"poison"',
-      'features.Dragon Instinct (White)', '=', '"cold"',
-      'features.Dragon Instinct (Bronze)', '=', '"electricity"',
-      'features.Dragon Instinct (Copper)', '=', '"acid"',
-      'features.Dragon Instinct (Silver)', '=', '"cold"',
-      'features.Fury Instinct', '=', '"bludgeoning and choice of cold, electricity, or fire"',
-      'features.Spirit Instinct', '=', '"negative damage and damage from undead"'
-    );
     rules.defineRule('selectableFeatureCount.Barbarian (Instinct)',
       'featureNotes.instinct', '=', '1'
     );
@@ -13531,26 +13525,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'spells.Dispel Magic (D2 Abj)', '=', '1',
       'spells.Dispel Magic (O2 Abj)', '=', '1',
       'spells.Dispel Magic (P2 Abj)', '=', '1'
-    );
-  } else if(name == 'Instinct Ability') {
-    // TODO What about homebrew instincts?
-    rules.defineRule('featureNotes.instinctAbility',
-      'features.Animal Instinct', '=', '"Bestial Rage"',
-      'features.Dragon Instinct', '=', '"Draconic Rage"',
-      'features.Giant Instinct', '=', '"Titan Mauler"',
-      'features.Spirit Instinct', '=', '"Spirit Rage"'
-    );
-    rules.defineRule('features.Bestial Rage',
-      'featureNotes.instinctAbility', '=', 'source=="Bestial Rage" ? 1 : null'
-    );
-    rules.defineRule('features.Draconic Rage',
-      'featureNotes.instinctAbility', '=', 'source=="Draconic Rage" ? 1 : null'
-    );
-    rules.defineRule('features.Spirit Rage',
-      'featureNotes.instinctAbility', '=', 'source=="Spirit Rage" ? 1 : null'
-    );
-    rules.defineRule('features.Titan Mauler',
-      'featureNotes.instinctAbility', '=', 'source=="Titan Mauler" ? 1 : null'
     );
   } else if(name == 'Invoke Disaster') {
     rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
@@ -15281,9 +15255,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'name') {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
-    // TODO The rules have no restrictions on shield use; give, e.g., Wizards
-    // no shield?
-    choices = Object.keys(this.getChoices('shields'));
+    // The rules have no restrictions on shield use, but it seems weird to give
+    // Wizards, etc. a shield. It seems reasonable to restrict shields to those
+    // with a rank in armor.
+    attrs = this.applyRules(attributes);
+    choices = attrs['rank.Light Armor']>0 ? Object.keys(this.getChoices('shields')) : ['None'];
     attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'skills') {
     attrs = this.applyRules(attributes);

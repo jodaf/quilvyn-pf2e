@@ -116,7 +116,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Acute Scent; Acute Vision; Animal Rage; Animal Skin; Armor Proficiency; Assurance (Athletics); Assurance (Farming Lore); Assurance (Nature); Attack Of Opportunity; Awesome Blow; Breath Control; Brutal Bully; Brutal Critical; Canny Acumen (Perception); Cleave; Collateral Thrash; Come And Get Me; Contagious Rage; Cooperative Nature; Dragon Transformation; Dragon's Rage Breath; Dragon's Rage Wings; Expeditious Search; Fast Movement; Furious Bully; Furious Finish; Furious Grab; Furious Sprint; Giant's Lunge; Giant's Stature; Great Cleave; Haughty Obstinacy; Incredible Initiative; Knockback; Moment Of Clarity; Natural Ambition; Natural Skill; No Escape; Perfect Clarity; Predator's Pounce; Quaking Stomp; Quick Jump; Raging Athlete; Raging Intimidation; Raging Thrower; Reckless Abandon; Renewed Vigor; Second Wind; Shake It Off; Share Rage; Skill Training (Forest Lore); Skill Training (Gnome Lore); Skill Training (Nature); Skill Training (River Lore); Skill Training (Tea Lore); Skill Training (Warfare Lore); Spirit's Wrath; Spirits' Interference; Sudden Charge; Sudden Leap; Swipe; Terrifying Howl; Thrash; Titan's Stature; Unconventional Weaponry (Sawtooth Saber); Vengeful Strike; Vicious Evisceration; Whirlwind Strike; Wounded Rage</td>
-        <td><b>Barbarian Features</b>: Ability Boost (Strength); Ability Boosts; Animal Instinct (Ape); Animal Instinct (Bear); Animal Instinct (Bull); Animal Instinct (Cat); Animal Instinct (Deer); Animal Instinct (Frog); Animal Instinct (Shark); Animal Instinct (Snake); Animal Instinct (Wolf); Armor Of Fury; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Barbarian Feats; Barbarian Skills; Brutality; Class Trained (Barbarian); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Deny Advantage; Devastator; Dragon Instinct (Black); Dragon Instinct (Blue); Dragon Instinct (Brass); Dragon Instinct (Bronze); Dragon Instinct (Copper); Dragon Instinct (Gold); Dragon Instinct (Green); Dragon Instinct (Red); Dragon Instinct (Silver); Dragon Instinct (White); Fury Instinct; General Feats; Giant Instinct; Greater Juggernaut; Greater Weapon Specialization; Heightened Senses; Indomitable Will; Instinct Ability; Instinct; Juggernaut; Lightning Reflexes; Medium Armor Expertise; Mighty Rage; Perception Expert; Quick Rage; Rage; Raging Resistance; Save Expert (Fortitude; Will); Save Trained (Reflex); Skill Feats; Skill Increases; Specialization Ability; Spirit Instinct; Weapon Fury; Weapon Specialization</td>
+        <td><b>Barbarian Features</b>: Ability Boost (Strength); Ability Boosts; Animal Instinct (Ape); Animal Instinct (Bear); Animal Instinct (Bull); Animal Instinct (Cat); Animal Instinct (Deer); Animal Instinct (Frog); Animal Instinct (Shark); Animal Instinct (Snake); Animal Instinct (Wolf); Armor Of Fury; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Barbarian Feats; Barbarian Skills; Bestial Rage (Ape); Bestial Rage (Bear); Bestial Rage (Bull); Bestial Rage (Cat); Bestial Rage (Deer); Bestial Rage (Frog); Bestial Rage (Shark); Bestial Rage (Snake); Bestial Rage (Wolf); Brutality; Class Trained (Barbarian); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Deny Advantage; Devastator; Draconic Rage; Dragon Instinct (Black); Dragon Instinct (Blue); Dragon Instinct (Brass); Dragon Instinct (Bronze); Dragon Instinct (Copper); Dragon Instinct (Gold); Dragon Instinct (Green); Dragon Instinct (Red); Dragon Instinct (Silver); Dragon Instinct (White); Fury Instinct; General Feats; Giant Instinct; Greater Juggernaut; Greater Weapon Specialization; Heightened Senses; Indomitable Will; Instinct; Juggernaut; Lightning Reflexes; Medium Armor Expertise; Mighty Rage; Perception Expert; Quick Rage; Rage; Raging Resistance (Animal); Raging Resistance (Dragon); Raging Resistance (Fury); Raging Resistance (Giant); Raging Resistance (Spirit); Save Expert (Fortitude; Will); Save Trained (Reflex); Skill Feats; Skill Increases; Specialization Ability; Spirit Instinct; Spirit Rage; Titan Mauler; Weapon Fury; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Orc; Human Heritage</td>
       </tr></table>
@@ -135,8 +135,6 @@ var attributes = {
         <td><i>Half-Orc: Has the Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Instinct Ability: Has the Spirit Rage feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Instinct: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -303,6 +301,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Specialization Ability: Increased instinct ability rage effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +5</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Sawtooth Saber as one category simpler</i></td>
@@ -314,6 +314,24 @@ var attributes = {
         <td>Attack Of Opportunity: <b>(R)</b> May make a melee Strike on foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Awesome Blow: A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Ape): May use fists to inflict 1d12+12B HP during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Bear): May use jaws and claws to inflict 1d12+12P and 1d8+12S HP during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Bull): May use horn to inflict 1d12+12P HP during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Cat): May use jaws and claws to inflict 1d12+12P HP and 1d8+12S HP, during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Deer): May use antlers to inflict 1d12+12P HP with a 10' reach during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Frog): May use jaws and tongue to inflict 1d12+12B HP and 1d6+12B HP with a 10' reach, during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Shark): May use jaws to inflict 1d12+12P HP during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Snake): May use fangs to inflict 1d12+12P HP during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Bestial Rage (Wolf): May use jaws to inflict 1d12+12P HP during rage</td>
       </tr><tr style="text-align:center">
         <td>Brutal Bully: Successful Disarm, Grapple, Shove, or Trip inflicts 5B HP damage during rage</td>
       </tr><tr style="text-align:center">
@@ -332,6 +350,8 @@ var attributes = {
         <td>Deny Advantage: Does not suffer flat-footed to foes of equal or lower level</td>
       </tr><tr style="text-align:center">
         <td>Devastator: Successful melee Strikes ignore 10 points of physical damage resistance</td>
+      </tr><tr style="text-align:center">
+        <td>Draconic Rage: May inflict +16 HP fire damage instead of +2 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Breath: <b>(2)</b> May use breath to inflict 20d6 damage in a 30' cone or 60' line 1/rage (Ref negates; half distance and damage for a 2nd breath use within 1 hr)</td>
       </tr><tr style="text-align:center">
@@ -379,9 +399,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Share Rage: <b>(1)</b> R30' May give an ally the effects of Rage 1/rage</td>
       </tr><tr style="text-align:center">
-        <td>Specialization Ability: Rage damage bonus with Spirit Rage increases to +13, and reach increases to 10'</td>
-      </tr><tr style="text-align:center">
-        <td>Spirit Rage: May inflict +3 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage</td>
+        <td>Spirit Rage: May inflict +13 HP positive or negative damage, along with <i>ghost touch</i>, instead of +2 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Spirit's Wrath: <b>(1)</b> May make a R120' +33 spirit Strike that inflicts 4d8+4 HP negative or positive damage; a critical hit also inflicts frightened 1</td>
       </tr><tr style="text-align:center">
@@ -396,6 +414,8 @@ var attributes = {
         <td>Terrifying Howl: <b>(1)</b> R30' Successful Intimidate Demoralizes multiple foes</td>
       </tr><tr style="text-align:center">
         <td>Thrash: <b>(1)</b> May inflict 17B HP + specialization damage to grabbed foe (Fort negates)</td>
+      </tr><tr style="text-align:center">
+        <td>Titan Mauler: May use weapons made for a larger creature, suffering clumsy 1 and gaining +18 HP instead of +2 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Titan's Stature: May grow to Huge size, gaining +10' reach and suffering clumsy 1, until rage ends</td>
       </tr><tr style="text-align:center">
@@ -437,7 +457,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Juggernaut: Successes on Fortitude saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Raging Resistance: Resistance 7 to negative damage and damage from undead while raging</td>
+        <td>Raging Resistance (Animal): Has resistance 7 to piercing and slashing while raging</td>
+      </tr><tr style="text-align:center">
+        <td>Raging Resistance (Dragon): Has resistance 7 to piercing and fire while raging</td>
+      </tr><tr style="text-align:center">
+        <td>Raging Resistance (Fury): Has resistance 7 to physical weapons while raging</td>
+      </tr><tr style="text-align:center">
+        <td>Raging Resistance (Giant): Has resistance 7 to bludgeoning and choice of cold, electricity, or fire while raging</td>
+      </tr><tr style="text-align:center">
+        <td>Raging Resistance (Spirit): Has resistance 7 to negative and undead while raging</td>
       </tr></table>
 </td>
     </tr></table>
