@@ -13519,6 +13519,24 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
   } else if(name == 'Impaling Briars') {
     rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
+  } else if(name == 'Instinct Ability') {
+    // Extend test rules to allow characters with the Instinct Ability
+    // archetype feature to acquire barbarian instinct abilities.
+    // NOTE: Placing this code here means that the tests won't be regenerated
+    // when adding homebrew instincts.
+    let instinctAbilities =
+      QuilvynUtils.getAttrValueArray
+        (rules.getChoices('levels').Barbarian, 'Features')
+        .filter(x => x.match(/Instinct\s*(\(.*\)\s*)?\?\s*[A-Z1]/))
+        .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
+    console.log(instinctAbilities);
+    instinctAbilities.forEach(ia => {
+      rules.defineRule
+        ('barbarianFeatures.' + ia, 'featureNotes.instinctAbility', '=', '1');
+      rules.defineRule('testNotes.barbarianFeatures.' + ia,
+        'featureNotes.instinctAbility', '=', '-1'
+      );
+    });
   } else if(name == 'Interweave Dispel') {
     rules.defineRule('knowsDispelMagicSpell',
       'spells.Dispel Magic (A2 Abj)', '=', '1',
