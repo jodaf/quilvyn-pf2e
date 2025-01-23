@@ -3016,7 +3016,8 @@ Pathfinder2E.FEATURES = {
       '"DC 3/9 to target a concealed/hidden foe",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
-  'Razortooth Goblin':'Section=combat Note="Jaw attack inflicts 1d6P HP"',
+  'Razortooth Goblin':
+    'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
   'Rock Dwarf':
     'Section=combat ' +
     'Note="+2 DC vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance of 10\' or more"',
@@ -3085,7 +3086,7 @@ Pathfinder2E.FEATURES = {
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Step into a foe\'s square to force a 5\' move (Fort vs. Athletics critical success negates; normal success negates but inflicts %{level+strengthModifier}B HP)"',
+    'Note="May Step into a foe\'s square to force a 5\' move (Fort vs. Athletics critical success negates; normal success negates but inflicts %{level+strengthModifier} HP bludgeoning)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
@@ -3553,31 +3554,31 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
   'Bestial Rage (Ape)':
     'Section=combat ' +
-    'Note="May use fists to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}B HP during rage"',
+    'Note="May use fists to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning during rage"',
   'Bestial Rage (Bear)':
     'Section=combat ' +
-    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'}S HP during rage"',
+    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
   'Bestial Rage (Bull)':
     'Section=combat ' +
-    'Note="May use horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+    'Note="May use horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Cat)':
     'Section=combat ' +
-    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6}S HP, during rage"',
+    'Note="May use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6} HP slashing during rage"',
   'Bestial Rage (Deer)':
     'Section=combat ' +
-    'Note="May use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
+    'Note="May use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Frog)':
     'Section=combat ' +
-    'Note="May use jaws and tongue to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}B HP and 1d%{combatNotes.greaterWeaponSpecialization?\'6+12\':combatNotes.specializationAbility?\'6+5\':\'4+2\'}B HP%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'}, during rage"',
+    'Note="May use jaws and tongue to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning and 1d%{combatNotes.greaterWeaponSpecialization?\'6+12\':combatNotes.specializationAbility?\'6+5\':\'4+2\'} HP bludgeoning%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Shark)':
     'Section=combat ' +
-    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Snake)':
     'Section=combat ' +
-    'Note="May use fangs to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+    'Note="May use fangs to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Wolf)':
     'Section=combat ' +
-    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'}P HP during rage"',
+    'Note="May use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
@@ -3705,7 +3706,7 @@ Pathfinder2E.FEATURES = {
     'Note="May make a melee Strike on foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
   'Brutal Bully':
     'Section=combat ' +
-    'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier}B HP damage during rage"',
+    'Note="Successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier} HP bludgeoning during rage"',
   'Cleave':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -3742,7 +3743,7 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier}B HP + specialization damage to grabbed foe (Fort negates)"',
+    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning + specialization damage to grabbed foe (Fort negates)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
@@ -5003,12 +5004,12 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6B HP hand Unarmed Strikes",' +
+      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6 HP bludgeoning hand Unarmed Strikes",' +
       '"Unarmored stance gives -5 jump DC and +2\'/+5\' vertical/horizontal Leap"',
   'Dragon Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10B HP and ignoring first square of difficult terrain when Striding"',
+    'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10 HP bludgeoning and ignoring first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
     'Note="Knows the Ki Rush occult spell/Has a focus pool with 1 Focus Point"',
@@ -5019,21 +5020,21 @@ Pathfinder2E.FEATURES = {
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8B HP hand Unarmed Strikes"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Unarmed Strikes"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 10\' Steps and hand Unarmed Strikes that inflict 1d8S HP, plus 1d4 HP persistent bleed damage on critical success"',
+    'Note="Unarmored stance allows 10\' Steps and hand Unarmed Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on critical success"',
   'Wolf Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows hand Unarmed Strikes that inflict 1d8P HP, with the trip trait when flanking"',
+    'Note="Unarmored stance allows hand Unarmed Strikes that inflict 1d8 HP piercing, with the trip trait when flanking"',
   'Brawling Focus':
     'Section=combat ' +
     'Note="May use the critical specialization effects of trained monk weapons and brawling weapons"',
   'Crushing Grab':
     'Section=combat ' +
-    'Note="May inflict %{strengthModifier}B HP, lethal or non-lethal, with a successful Grapple"',
+    'Note="May inflict %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
   'Dancing Leaf':
     'Section=skill ' +
     'Note="+5\' Jump and Leap/Takes no damage from falling when adjacent to a wall"',
@@ -5085,18 +5086,18 @@ Pathfinder2E.FEATURES = {
   'Whirling Throw':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC allows throwing it %{10+5*strengthModifier}\', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier}B HP"',
+    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC allows throwing it %{10+5*strengthModifier}\', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning"',
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, may inflict 1d12P HP and knocked prone"',
+    'Note="While in Wolf Stance, may inflict 1d12 HP piercing and knocked prone"',
   'Arrow Snatching':
     'Section=combat ' +
     'Note="After a successful Deflect Arrow, may use the projectile to make an immediate ranged Strike"',
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8B HP and gives resistance %V to all damage"',
+    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP bludgeoning and gives resistance %V to all damage"',
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
@@ -5104,7 +5105,7 @@ Pathfinder2E.FEATURES = {
   'Tangled Forest Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8S HP and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
+    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
   'Wall Run':
     'Action=1 Section=ability Note="May Stride on vertical surfaces"',
   'Wild Winds Initiate':
@@ -5131,7 +5132,7 @@ Pathfinder2E.FEATURES = {
     'Note="May inflict %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 with an Unarmed Strike"',
   'Improved Knockback':
     'Section=combat ' +
-    'Note="Successful Shove moves 5\' (critical success 10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)}B HP"',
+    'Note="Successful Shove moves 5\' (critical success 10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
@@ -6837,7 +6838,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> +2 resistances and +3 weakness)"',
+      '"Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> gives +2 resistances and +3 weakness)"',
   'Bind Soul':
     'Level=9 ' +
     'Trait= ' +
@@ -6861,7 +6862,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6B HP and grabbed for 1 min, plus 1d6B HP each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. AC %{spellDifficultyClass.%tradition}"',
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. AC %{spellDifficultyClass.%tradition}"',
   'Blade Barrier':
     'Level=6 ' +
     'Trait= ' +
@@ -7357,7 +7358,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> +1d10 HP)"',
+      '"R120\' 20\' burst inflicts 4d10 HP chosen alignment damage and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1; creatures with matching alignment are unaffected and neutral creatures improve save by 1 step) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Dominate':
     'Level=6 ' +
     'Trait= ' +
@@ -7429,7 +7430,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40\' fall)"',
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40\' fall)"',
   'Eclipse Burst':
     'Level=7 ' +
     'Trait= ' +
@@ -7810,7 +7811,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6B HP)"',
+      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
   'Hallucination':
     'Level=5 ' +
     'Trait= ' +
@@ -7898,7 +7899,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Ranged attack inflicts 3d6B HP and a 5\' push (critical success inflicts 6d6B HP and a 10\' push) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' Ranged attack inflicts 3d6 HP bludgeoning and a 5\' push (critical success inflicts 6d6 HP bludgeoning and a 10\' push) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
     'Trait= ' +
@@ -7906,7 +7907,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 8d6B HP and 5\' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts 10\' push)"',
+      '"60\' line inflicts 8d6 HP bludgeoning and 5\' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts 10\' push)"',
   'Hypercognition':
     'Level=3 ' +
     'Trait= ' +
@@ -8105,7 +8106,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 1 missile per action inflicts 1d4+1 HP force (<b>heightened +2</b> +1 missile per action)"',
+      '"R120\' 1 missile per action inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)"',
   'Magic Mouth':
     'Level=2 ' +
     'Trait= ' +
@@ -8193,7 +8194,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 4 meteors each inflict 6d10B HP in a 10\' burst and 14d6 HP fire in a 40\' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)"',
+      '"R500\' 4 meteors each inflict 6d10 HP bludgeoning in a 10\' burst and 14d6 HP fire in a 40\' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10 HP bludgeoning and +2d6 HP fire)"',
   'Mind Blank':
     'Level=8 ' +
     'Trait= ' +
@@ -8288,7 +8289,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs and claws that inflict 2d6P HP and 2d6S HP plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6P HP and 3d6S HP, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6P HP and 4d6S HP, weakness 20 to silver)"',
+      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs and claws that inflict 2d6 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6 HP piercing and 4d6 HP slashing, weakness 20 to silver)"',
   'Nature Incarnate':
     'Level=10 ' +
     'Trait= ' +
@@ -8304,7 +8305,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10S HP and flat-footed (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
+      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
     'Trait= ' +
@@ -8503,7 +8504,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, AC %{level+22}, a tusk attack that inflicts 4d8+19P HP, a trunk attack that inflicts 4d6+16B HP, a foot attack that inflicts 4d6+16B HP, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
+      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, AC %{level+22}, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'Trait= ' +
@@ -8551,7 +8552,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)"',
+      '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Project Image':
     'Level=7 ' +
     'Trait= ' +
@@ -8559,7 +8560,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates an illusory copy of the caster, with the same AC and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> +10 min maximum sustain)"',
+      '"R30\' Creates an illusory copy of the caster, with the same AC and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain by 10 min)"',
   'Protection':
     'Level=1 ' +
     'Trait= ' +
@@ -8598,7 +8599,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
+      '"Touch inflicts 3d6 HP piercing, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6 HP piercing and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Raise Dead':
     'Level=6 ' +
     'Trait= ' +
@@ -8982,7 +8983,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> +1d10+4 HP)"',
+      '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)"',
   'Sound Burst':
     'Level=2 ' +
     'Trait= ' +
@@ -9052,7 +9053,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 1d4P HP, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4P HP and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
+      '"Touch inflicts 1d4 HP piercing, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4 HP piercing and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Spirit Blast':
     'Level=6 ' +
     'Trait= ' +
@@ -9154,7 +9155,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10B HP (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'Trait= ' +
@@ -9577,7 +9578,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4P HP for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
     'Trait= ' +
@@ -10053,7 +10054,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +2 HP from healing spells for 1 min (<b>heightened +1</b> +1 HP)"',
+      '"R30\' Target gains +2 HP from healing spells for 1 min (<b>heightened +1</b> restores +1 HP)"',
   'Hurtling Stone':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10380,7 +10381,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Unarmed and adjacent melee attacks on caster inflict 1P HP on attacker for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
+      '"Unarmed and adjacent melee attacks on caster inflict 1 HP piercing on attacker for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
   'Waking Nightmare':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10484,7 +10485,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)"',
+      '"Caster gains choice of claws that inflict 1d6 HP slashing, jaws that inflict 1d8 HP piercing, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)"',
   'Wild Shape':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10555,7 +10556,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster may use R30\' unarmed strikes to inflict 1d6B HP and gains +2 AC vs. ranged attacks until leaving the stance"',
+      '"Caster may use R30\' unarmed strikes to inflict 1d6 HP bludgeoning and gains +2 AC vs. ranged attacks until leaving the stance"',
   'Wind Jump':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -10635,7 +10636,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> +2d6 HP)"',
+      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10643,7 +10644,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster\'s fingers inflict 1d6S HP and 1d6 energy HP, and caster gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflict 2d6S HP and gains resistance 10; <b>9th</b> inflicts 3d6S HP and gains resistance 15)"',
+      '"Caster\'s fingers inflict 1d6 HP slashing and 1d6 HP energy, and caster gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflicts 2d6 HP slashing and gains resistance 10; <b>9th</b> inflicts 3d6 HP slashing and gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -10659,7 +10660,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -10675,7 +10676,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster may fly at full Speed, swim at full Speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> +10\' Speed; <b>9th</b> +20\' Speed)"',
+      '"Caster may fly at full Speed, swim at full Speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10683,7 +10684,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> +1d8 HP)"',
+      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'Trait=Focus ' +
@@ -10691,7 +10692,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
+      '"Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
   'Extend Spell':
     'Level=3 ' +
     'Trait=Focus ' +
@@ -10707,7 +10708,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5\' radius)"',
+      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5\')"',
   'Fey Disappearance':
     'Level=3 ' +
     'Trait=Focus ' +
@@ -10730,7 +10731,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster\'s bite inflicts 1d8P HP, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
+      '"Caster\'s bite inflicts 1d8 HP piercing, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -10738,7 +10739,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6S HP and -10\' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10\' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -10770,7 +10771,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 5\' burst (10\'/15\' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> +5\' radius inflicts +1d6 HP)"',
+      '"R120\' 5\' burst (10\'/15\' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases burst radius by 5\' and inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10922,7 +10923,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains choice of +20\' Speed, climb or swim at half Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8S HP for 1 min"',
+      '"Caster gains choice of +20\' Speed, climb or swim at half Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
   'Vigilant Eye':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -10942,259 +10943,259 @@ Pathfinder2E.SPELLS = {
 Pathfinder2E.WEAPONS = {
 
   'Fist':
-    'Category=Unarmed Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Brawling ' +
+    'Category=Unarmed Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Brawling ' +
     'Trait=Agile,Finesse,Nonlethal,Unarmed',
 
   'Club':
-    'Category=Simple Price=0 Damage=1d6B Bulk=1 Hands=1 Group=Club ' +
+    'Category=Simple Price=0 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
     'Trait=Thrown Range=10',
   'Dagger':
-    'Category=Simple Price=0.2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Simple Price=0.2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Finesse,Thrown,"Versatile S" Range=10',
   'Gauntlet':
-    'Category=Simple Price=0.2 Damage=1d4B Bulk=L Hands=1 Group=Brawling ' +
+    'Category=Simple Price=0.2 Damage="1d4 B" Bulk=L Hands=1 Group=Brawling ' +
     'Trait=Agile,Free-hand',
   'Light Mace':
-    'Category=Simple Price=0.4 Damage=1d4B Bulk=L Hands=1 Group=Club ' +
+    'Category=Simple Price=0.4 Damage="1d4 B" Bulk=L Hands=1 Group=Club ' +
     'Trait=Agile,Finesse,Shove',
   'Longspear':
-    'Category=Simple Price=0.5 Damage=1d8P Bulk=2 Hands=2 Group=Spear ' +
+    'Category=Simple Price=0.5 Damage="1d8 P" Bulk=2 Hands=2 Group=Spear ' +
     'Trait=Reach',
   'Mace':
-    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club Trait=Shove',
+    'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club Trait=Shove',
   'Morningstar':
-    'Category=Simple Price=1 Damage=1d6B Bulk=1 Hands=1 Group=Club ' +
+    'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
     'Trait="Versatile P"',
   'Sickle':
-    'Category=Simple Price=0.2 Damage=1d4S Bulk=L Hands=1 Group=Knife ' +
+    'Category=Simple Price=0.2 Damage="1d4 S" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Finesse,Trip',
   'Spear':
-    'Category=Simple Price=0.1 Damage=1d6P Bulk=1 Hands=1 Group=Spear ' +
+    'Category=Simple Price=0.1 Damage="1d6 P" Bulk=1 Hands=1 Group=Spear ' +
     'Trait=Thrown Range=20',
   'Spiked Gauntlet':
-    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Brawling ' +
+    'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Brawling ' +
     'Trait=Agile,Free-hand',
   'Staff':
-    'Category=Simple Price=0 Damage=1d4B Bulk=1 Hands=1 Group=Club ' +
+    'Category=Simple Price=0 Damage="1d4 B" Bulk=1 Hands=1 Group=Club ' +
     'Trait="Two-hand d8"',
 
   'Clan Dagger':
-    'Category=Simple Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Simple Price=2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
   'Katar':
-    'Category=Simple Price=0.3 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,"Deadly d6",Monk,Uncommon',
 
   'Bastard Sword':
-    'Category=Martial Price=4 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=4 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
     'Trait="Two-hand d12"',
   'Battle Axe':
-    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Axe ' +
+    'Category=Martial Price=1 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
     'Trait="Sweep"',
   'Bo Staff':
-    'Category=Martial Price=0.2 Damage=1d8B Bulk=2 Hands=2 Group=Club ' +
+    'Category=Martial Price=0.2 Damage="1d8 B" Bulk=2 Hands=2 Group=Club ' +
     'Trait=Monk,Parry,Reach,Trip',
   'Falchion':
-    'Category=Martial Price=3 Damage=1d10S Bulk=2 Hands=2 Group=Sword ' +
+    'Category=Martial Price=3 Damage="1d10 S" Bulk=2 Hands=2 Group=Sword ' +
     'Trait=Forceful,Sweep',
   'Flail':
-    'Category=Martial Price=0.8 Damage=1d6B Bulk=1 Hands=1 Group=Flail ' +
+    'Category=Martial Price=0.8 Damage="1d6 B" Bulk=1 Hands=1 Group=Flail ' +
     'Trait=Disarm,Sweep,Trip',
   'Glaive':
-    'Category=Martial Price=1 Damage=1d8S Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=1 Damage="1d8 S" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait="Deadly d8",Forceful,Reach',
   'Greataxe':
-    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Axe ' +
+    'Category=Martial Price=2 Damage="1d12 S" Bulk=2 Hands=2 Group=Axe ' +
     'Trait=Sweep',
   'Greatclub':
-    'Category=Martial Price=1 Damage=1d10B Bulk=2 Hands=2 Group=Club ' +
+    'Category=Martial Price=1 Damage="1d10 B" Bulk=2 Hands=2 Group=Club ' +
     'Trait=Backswing,Shove',
   'Greatpick':
-    'Category=Martial Price=1 Damage=1d10P Bulk=2 Hands=2 Group=Pick ' +
+    'Category=Martial Price=1 Damage="1d10 P" Bulk=2 Hands=2 Group=Pick ' +
     'Trait="Fatal d12"',
   'Greatsword':
-    'Category=Martial Price=2 Damage=1d12S Bulk=2 Hands=2 Group=Sword ' +
+    'Category=Martial Price=2 Damage="1d12 S" Bulk=2 Hands=2 Group=Sword ' +
     'Trait="Versatile P"',
   'Guisarme':
-    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=2 Damage="1d10 S" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait=Reach,Trip',
   'Halberd':
-    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=2 Damage="1d10 P" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait=Reach,"Versatile S"',
   'Hatchet':
-    'Category=Martial Price=0.4 Damage=1d6S Bulk=L Hands=1 Group=Axe ' +
+    'Category=Martial Price=0.4 Damage="1d6 S" Bulk=L Hands=1 Group=Axe ' +
     'Trait=Agile,Sweep,Thrown Range=10',
   'Lance':
-    'Category=Martial Price=1 Damage=1d8P Bulk=2 Hands=2 Group=Spear ' +
+    'Category=Martial Price=1 Damage="1d8 P" Bulk=2 Hands=2 Group=Spear ' +
     'Trait="Deadly d8","Jousting d6",Reach',
   'Light Hammer':
-    'Category=Martial Price=0.3 Damage=1d6B Bulk=L Hands=1 Group=Hammer ' +
+    'Category=Martial Price=0.3 Damage="1d6 B" Bulk=L Hands=1 Group=Hammer ' +
     'Trait=Agile,Thrown Range=20',
   'Light Pick':
-    'Category=Martial Price=0.4 Damage=1d4P Bulk=L Hands=1 Group=Pick ' +
+    'Category=Martial Price=0.4 Damage="1d4 P" Bulk=L Hands=1 Group=Pick ' +
     'Trait=Agile,"Fatal d8"',
   'Longsword':
-    'Category=Martial Price=1 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=1 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
     'Trait="Versatile P"',
   'Main-gauche':
-    'Category=Martial Price=0.5 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=0.5 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Disarm,Finesse,Parry,"Versatile S"',
   'Maul':
-    'Category=Martial Price=3 Damage=1d12B Bulk=2 Hands=2 Group=Hammer ' +
+    'Category=Martial Price=3 Damage="1d12 B" Bulk=2 Hands=2 Group=Hammer ' +
     'Trait=Shove',
   'Pick':
-    'Category=Martial Price=0.7 Damage=1d6P Bulk=1 Hands=1 Group=Pick ' +
+    'Category=Martial Price=0.7 Damage="1d6 P" Bulk=1 Hands=1 Group=Pick ' +
     'Trait="Fatal d10"',
   'Ranseur':
-    'Category=Martial Price=2 Damage=1d10P Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=2 Damage="1d10 P" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait=Disarm,Reach',
   'Rapier':
-    'Category=Martial Price=2 Damage=1d6P Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=2 Damage="1d6 P" Bulk=1 Hands=1 Group=Sword ' +
     'Trait="Deadly d8",Disarm,Finesse',
   'Sap':
-    'Category=Martial Price=0.1 Damage=1d6B Bulk=L Hands=1 Group=Club ' +
+    'Category=Martial Price=0.1 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
     'Trait=Agile,Nonlethal',
   'Scimitar':
-    'Category=Martial Price=1 Damage=1d6S Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=1 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
     'Trait=Forceful,Sweep',
   'Scythe':
-    'Category=Martial Price=2 Damage=1d10S Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=2 Damage="1d10 S" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait="Deadly d10",Tripe',
-  'Shield':'Category=Martial Price=0 Damage=1d4B Bulk=0 Hands=1 Group=Shield',
+  'Shield':'Category=Martial Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Shield',
   'Shield Boss':
-    'Category=Martial Price=0.5 Damage=1d6B Bulk=0 Hands=1 Group=Shield',
+    'Category=Martial Price=0.5 Damage="1d6 B" Bulk=0 Hands=1 Group=Shield',
   'Shield Spikes':
-    'Category=Martial Price=0.5 Damage=1d6P Bulk=0 Hands=1 Group=Shield',
+    'Category=Martial Price=0.5 Damage="1d6 P" Bulk=0 Hands=1 Group=Shield',
   'Shortsword':
-    'Category=Martial Price=0.9 Damage=1d6P Bulk=L Hands=1 Group=Sword ' +
+    'Category=Martial Price=0.9 Damage="1d6 P" Bulk=L Hands=1 Group=Sword ' +
     'Trait=Agile,Finesse,"Versatile S"',
   'Starknife':
-    'Category=Martial Price=2 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
   'Trident':
-    'Category=Martial Price=1 Damage=1d8P Bulk=1 Hands=1 Group=Spear ' +
+    'Category=Martial Price=1 Damage="1d8 P" Bulk=1 Hands=1 Group=Spear ' +
     'Trait=Thrown Range=20',
   'War Flail':
-    'Category=Martial Price=2 Damage=1d10B Bulk=2 Hands=2 Group=Flail ' +
+    'Category=Martial Price=2 Damage="1d10 B" Bulk=2 Hands=2 Group=Flail ' +
     'Trait=Disarm,Sweep,Trip',
   'Warhammer':
-    'Category=Martial Price=1 Damage=1d8B Bulk=1 Hands=1 Group=Hammer ' +
+    'Category=Martial Price=1 Damage="1d8 B" Bulk=1 Hands=1 Group=Hammer ' +
     'Trait=Shove',
   'Whip':
-    'Category=Martial Price=0.1 Damage=1d4S Bulk=1 Hands=1 Group=Flail ' +
+    'Category=Martial Price=0.1 Damage="1d4 S" Bulk=1 Hands=1 Group=Flail ' +
     'Trait=Disarm,Finesse,Nonlethal,Trip',
 
   'Dogslicer':
-    'Category=Martial Price=0.1 Damage=1d6S Bulk=L Hands=1 Group=Sword ' +
+    'Category=Martial Price=0.1 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
     'Trait=Agile,Backstabber,Finesse,Goblin,Uncommon',
   'Elven Curve Blade':
-    'Category=Martial Price=4 Damage=1d8S Bulk=2 Hands=2 Group=Sword ' +
+    'Category=Martial Price=4 Damage="1d8 S" Bulk=2 Hands=2 Group=Sword ' +
     'Trait=Elf,Finesse,Forceful,Uncommon',
   "Filcher's Fork":
-    'Category=Martial Price=1 Damage=1d4P Bulk=L Hands=1 Group=Spear ' +
+    'Category=Martial Price=1 Damage="1d4 P" Bulk=L Hands=1 Group=Spear ' +
     'Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon ' +
     'Range=20',
   'Gnome Hooked Hammer':
-    'Category=Martial Price=2 Damage=1d6B Bulk=1 Hands=1 Group=Hammer ' +
+    'Category=Martial Price=2 Damage="1d6 B" Bulk=1 Hands=1 Group=Hammer ' +
     'Trait=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
   'Horsechopper':
-    'Category=Martial Price=0.9 Damage=1d8S Bulk=2 Hands=2 Group=Polearm ' +
+    'Category=Martial Price=0.9 Damage="1d8 S" Bulk=2 Hands=2 Group=Polearm ' +
     'Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
   'Kama':
-    'Category=Martial Price=1 Damage=1d6S Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=1 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Monk,Trip,Uncommon',
   'Katana':
-    'Category=Martial Price=2 Damage=1d6S Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=2 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
     'Trait="Deadly d8","Two-hand d10","Versatile P"',
   'Kukri':
-    'Category=Martial Price=0.6 Damage=1d6S Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=0.6 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Finesse,Trip',
   'Nunchaku':
-    'Category=Martial Price=0.2 Damage=1d6B Bulk=L Hands=1 Group=Club ' +
+    'Category=Martial Price=0.2 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
     'Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
   'Orc Knuckle Dragger':
-    'Category=Martial Price=0.7 Damage=1d6P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=0.7 Damage="1d6 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Disarm,Orc,Uncommon',
   'Sai':
-    'Category=Martial Price=0.6 Damage=1d4P Bulk=L Hands=1 Group=Knife ' +
+    'Category=Martial Price=0.6 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
     'Trait=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
   'Spiked Chain':
-    'Category=Martial Price=3 Damage=1d8S Bulk=1 Hands=2 Group=Flail ' +
+    'Category=Martial Price=3 Damage="1d8 S" Bulk=1 Hands=2 Group=Flail ' +
     'Trait=Disarm,Finesse,Trip,Uncommon',
   'Temple Sword':
-    'Category=Martial Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Sword ' +
+    'Category=Martial Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
     'Trait=Monk,Trip,Uncommon',
 
   'Dwarven Waraxe':
-    'Category=Advanced Price=3 Damage=1d8S Bulk=2 Hands=1 Group=Axe ' +
+    'Category=Advanced Price=3 Damage="1d8 S" Bulk=2 Hands=1 Group=Axe ' +
     'Trait=Dwarf,Sweep,"Two-hand d12",Uncommon',
   'Gnome Flickmace':
-    'Category=Advanced Price=3 Damage=1d6B Bulk=1 Hands=1 Group=Flail ' +
+    'Category=Advanced Price=3 Damage="1d6 B" Bulk=1 Hands=1 Group=Flail ' +
     'Trait=Gnome,Reach,Sweep,Uncommon',
   'Orc Necksplitter':
-    'Category=Advanced Price=2 Damage=1d8S Bulk=1 Hands=1 Group=Axe ' +
+    'Category=Advanced Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
     'Trait=Forceful,Orc,Sweep,Uncommon',
   'Sawtooth Saber':
-    'Category=Advanced Price=5 Damage=1d6S Bulk=L Hands=1 Group=Sword ' +
+    'Category=Advanced Price=5 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
     'Trait=Agile,Finesse,Twin,Uncommon',
 
   'Blowgun':
-    'Category=Simple Price=0.1 Damage=1P Bulk=L Hands=1 Group=Dart ' +
+    'Category=Simple Price=0.1 Damage="1 P" Bulk=L Hands=1 Group=Dart ' +
     'Trait=Agile,Nonlethal,"Reload 1" Range=20',
   'Crossbow':
-    'Category=Simple Price=3 Damage=1d8P Bulk=1 Hands=2 Group=Bow ' +
+    'Category=Simple Price=3 Damage="1d8 P" Bulk=1 Hands=2 Group=Bow ' +
     'Trait="Reload 1", Range=120',
   'Dart':
-    'Category=Simple Price=0.01 Damage=1d4P Bulk=L Hands=1 Group=Dart ' +
+    'Category=Simple Price=0.01 Damage="1d4 P" Bulk=L Hands=1 Group=Dart ' +
     'Trait=Agile,Thrown Range=20',
   'Hand Crossbow':
-    'Category=Simple Price=3 Damage=1d6P Bulk=L Hands=1 Group=Bow ' +
+    'Category=Simple Price=3 Damage="1d6 P" Bulk=L Hands=1 Group=Bow ' +
     'Trait="Reload 1", Range=60',
   'Heavy Crossbow':
-    'Category=Simple Price=4 Damage=1d10P Bulk=2 Hands=2 Group=Bow ' +
+    'Category=Simple Price=4 Damage="1d10 P" Bulk=2 Hands=2 Group=Bow ' +
     'Trait="Reload 2", Range=120',
   'Javelin':
-    'Category=Simple Price=0.1 Damage=1d6P Bulk=L Hands=1 Group=Dart ' +
+    'Category=Simple Price=0.1 Damage="1d6 P" Bulk=L Hands=1 Group=Dart ' +
     'Trait=Thrown Range=30',
   'Sling':
-    'Category=Simple Price=0 Damage=1d6B Bulk=L Hands=1 Group=Sling ' +
+    'Category=Simple Price=0 Damage="1d6 B" Bulk=L Hands=1 Group=Sling ' +
     'Trait=Propulsive,"Reload 1" Range=50',
 
   'Lesser Acid Flask':
-    'Category=Martial Price=0 Damage=1E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   "Lesser Alchemist's Fire":
-    'Category=Martial Price=0 Damage=1d8E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="1d8 E" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   'Lesser Bottled Lightning':
-    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   'Lesser Frost Vial':
-    'Category=Martial Price=0 Damage=1d6E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   'Lesser Tanglefoot Bag':
-    'Category=Martial Price=0 Damage=0 Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="0" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown Range=20',
   'Lesser Thunderstone':
-    'Category=Martial Price=0 Damage=1d4E Bulk=L Hands=1 Group=Bomb ' +
+    'Category=Martial Price=0 Damage="1d4 E" Bulk=L Hands=1 Group=Bomb ' +
     'Trait=Thrown,Splash Range=20',
   'Composite Longbow':
-    'Category=Martial Price=20 Damage=1d8P Bulk=2 Hands=2 Group=Bow ' +
+    'Category=Martial Price=20 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
     'Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
   'Composite Shortbow':
-    'Category=Martial Price=14 Damage=1d6P Bulk=1 Hands=2 Group=Bow ' +
+    'Category=Martial Price=14 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
     'Trait="Deadly d10",Propulsive Range=60',
   'Longbow':
-    'Category=Martial Price=6 Damage=1d8P Bulk=2 Hands=2 Group=Bow ' +
+    'Category=Martial Price=6 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
     'Trait="Deadly d10","Volley 30\'" Range=100',
   'Shortbow':
-    'Category=Martial Price=3 Damage=1d6P Bulk=1 Hands=2 Group=Bow ' +
+    'Category=Martial Price=3 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
     'Trait="Deadly d10" Range=60',
   'Halfling Sling Staff':
-    'Category=Martial Price=5 Damage=1d10B Bulk=1 Hands=2 Group=Sling ' +
+    'Category=Martial Price=5 Damage="1d10 B" Bulk=1 Hands=2 Group=Sling ' +
     'Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
   'Shuriken':
-    'Category=Martial Price=0.01 Damage=1d4P Bulk=0 Hands=1 Group=Dart ' +
+    'Category=Martial Price=0.01 Damage="1d4 P" Bulk=0 Hands=1 Group=Dart ' +
     'Trait=Agile,Monk,Thrown,Uncommon Range=20'
 
 };
@@ -11969,7 +11970,7 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       ('proficiencyBonus.Innate Occult', 'gnomeFeatures.Occult', '=', '2');
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
-      (rules, 'Jaws', 'Unarmed', 0, '1d6P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
+      (rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
     rules.defineRule('weapons.Jaws', 'combatNotes.razortoothGoblin', '=', '1');
   } else if(name == 'Halfling') {
     rules.defineRule('skillNotes.nomadicHalfling',
@@ -14260,7 +14261,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad price "' + price + '" for weapon ' + name);
     return;
   }
-  let matchInfo = (damage + '').match(/^(\d(d\d+)?)([BEPS]?)$/);
+  let matchInfo = (damage + '').match(/^(\d(d\d+)?)( ([BEPS]))?$/);
   if(!matchInfo) {
     console.log('Bad damage "' + damage + '" for weapon ' + name);
     return;
@@ -14302,7 +14303,7 @@ Pathfinder2E.weaponRules = function(
     category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
   damage = matchInfo[1];
   group = group != 'Bomb' ? group + 's' : 'Alchemical Bombs';
-  let damageType = matchInfo[3];
+  let damageType = matchInfo[4];
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
       damageType += '/' + t.charAt(t.length - 1);
@@ -14783,8 +14784,9 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   } else if(type == 'Deity') {
     let shortAlignments = [];
-    for(let a in QuilvynUtils.getKeys(rules.getChoices('alignments')))
-      shortAlignments.push(a.replaceAll(/[a-z ]/g, ''));
+    QuilvynUtils.getKeys(rules.getChoices('alignments')).forEach(a => {
+      shortAlignments.push(a.replaceAll(/[a-z ]/g, ''))
+    });
     result.push(
       ['Alignment', 'Alignment', 'select-one', shortAlignments],
       ['FollowerAlignments', 'Follower Alignments', 'text', [30]],
@@ -14806,9 +14808,8 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Trait', 'Traits', 'text', [20]]
     );
   else if(type == 'Feature') {
-    let sections = ['ability', 'combat', 'feature', 'magic', 'skill'];
     result.push(
-      ['Section', 'Section', 'select-one', sections],
+      ['Section', 'Section', 'text', [30]],
       ['Note', 'Note', 'text', [60]],
       ['Action', 'Action', 'select-one', ['None', 'Free', 'Reaction', '1', '2', '3']]
     );
@@ -14823,23 +14824,15 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Speed', 'Speed Penalty', 'select-one', [0, -5, -10, -15, -20]],
       ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
       ['Hardness', 'Hardness', 'select-one', zeroToTen],
-      ['HP', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']]
+      ['HP', 'Hit Points', 'select-one', [4, 6, 8, 10, 12, 20]]
     );
   else if(type == 'Skill')
     result.push(
-      ['Ability', 'Ability', 'select-one', ['charisma', 'constitution', 'dexterity', 'intelligence', 'strength', 'wisdom']],
-      ['Category', 'Category', 'text' [30]]
+      ['Ability', 'Ability', 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
+      ['Category', 'Category', 'text', [30]]
     );
   else if(type == 'Spell') {
-      Pathfinder2E.spellRules(rules, spellName,
-        school,
-        level,
-        t,
-        QuilvynUtils.getAttrValue(attrs, 'Cast'),
-        QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
-        QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
-      );
-    let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     result.push(
       ['School', 'School', 'select-one', QuilvynUtils.getKeys(rules.getChoices('schools'))],
       ['Level', 'Level', 'select-one', zeroToNine],
@@ -14847,25 +14840,28 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
-    let weaponDamages = [
-      0, '1B', '1E', '1P', '1S',
-      '1d4B', '1d4E', '1d4P', '1d4S',
-      '1d6B', '1d6E', '1d6P', '1d6S',
-      '1d8B', '1d8E', '1d8P', '1d8S',
-      '1d10B', '1d10E', '1d10P', '1d10S',
-      '1d12B', '1d12E', '1d12P', '1d12S'
-    ];
-    let weaponGroups = [
-      'Axe', 'Bomb', 'Bow', 'Brawling', 'Club', 'Dart', 'Flail', 'Hammer', 
-      'Knife', 'Pick', 'Polearm', 'Shield', 'Sling', 'Spear', 'Sword'
-    ];
+    let weaponDamages = [0];
+    ['B', 'E', 'P', 'S'].forEach(t => {
+      weaponDamages.push('1 ' + t);
+      [4, 6, 8, 10, 12].forEach(s => {
+        weaponDamages.push('1d' + s + ' ' + t);
+      });
+    });
+    let weaponGroups = [];
+    let allWeapons = rules.getChoices('weapons');
+    for(let w in allWeapons) {
+      let group = QuilvynUtils.getAttrValue(allWeapons[w], 'Group');
+      if(group && !(group in weaponGroups))
+        weaponGroups.push(group);
+    }
+    weaponGroups.sort();
     let zeroToOneFifty =
       [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
     result.push(
       ['Category', 'Category', 'select-one', ['Unarmed', 'Simple', 'Martial', 'Advanced']],
       ['Price', 'Price (GP)', 'text', [4]],
       ['Damage', 'Damage', 'select-one', weaponDamages],
-      ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
+      ['Bulk', 'Bulk', 'select-one', [0, 'L', 1, 2, 3, 4, 5]],
       ['Hands', 'Hands', 'select-one', [1, 2]],
       ['Group', 'Group', 'select-one', weaponGroups],
       ['Trait', 'Trait', 'text', [40]],

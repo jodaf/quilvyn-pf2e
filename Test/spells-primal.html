@@ -395,7 +395,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Banishment (P5 Abj): <b>(2)</b> R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on caster; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Barkskin (P2 Abj): <b>(2)</b> Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> +2 resistances and +3 weakness)</td>
+      <td>Barkskin (P2 Abj): <b>(2)</b> Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> gives +2 resistances and +3 weakness)</td>
     </tr><tr style="text-align:left">
       <td>Blindness (P3 Nec): <b>(2)</b> R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
@@ -447,19 +447,19 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Disrupt Undead (P0 Nec): <b>(2)</b> R30' Inflicts 1d6+3 HP positive and enfeebled 1 for 1 rd on target undead (<b>save Fortitude</b> inflicts HP only) (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Dragon Breath (P3 Evo): <b>(2)</b> 30' cone or 60' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> +2d6 HP)</td>
+      <td>Dragon Breath (P3 Evo): <b>(2)</b> 30' cone or 60' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Dragon Claws (P1 Tra): <b>(1)</b> Caster's fingers inflict 1d6S HP and 1d6 energy HP, and caster gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflict 2d6S HP and gains resistance 10; <b>9th</b> inflicts 3d6S HP and gains resistance 15)</td>
+      <td>Dragon Claws (P1 Tra): <b>(1)</b> Caster's fingers inflict 1d6 HP slashing and 1d6 HP energy, and caster gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflicts 2d6 HP slashing and gains resistance 10; <b>9th</b> inflicts 3d6 HP slashing and gains resistance 15)</td>
     </tr><tr style="text-align:left">
       <td>Dragon Form (P6 Tra): <b>(2)</b> Caster becomes choice of Large dragon with 10 temporary HP, AC 30, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5' reach, 15 temporary HP, AC 33, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
     </tr><tr style="text-align:left">
       <td>Dragon Wings (P5 Tra): <b>(2)</b> Caster gains 60' fly Speed for 1 min (<b>heightened 8th</b> effects last 10 min)</td>
     </tr><tr style="text-align:left">
-      <td>Drain Life (P3 Nec): <b>(1)</b> R30' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> +1d4 HP)</td>
+      <td>Drain Life (P3 Nec): <b>(1)</b> R30' Target suffers 3d4 HP negative, and caster gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
       <td>Earthbind (P3 Tra): <b>(2)</b> R120' Brings a flying target to the ground and prevents flight for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure effects last 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Earthquake (P8 Evo): <b>(2)</b> R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6B HP (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40' fall)</td>
+      <td>Earthquake (P8 Evo): <b>(2)</b> R500' 60' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40' fall)</td>
     </tr><tr style="text-align:left">
       <td>Eclipse Burst (P7 Nec): <b>(2)</b> R500' 60' burst blocks magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)</td>
     </tr><tr style="text-align:left">
@@ -469,11 +469,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Elemental Form (P5 Tra): <b>(2)</b> Caster becomes choice of Medium elemental with 10 temporary HP, AC 31, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> Large creature with 10' reach, 15 temporary HP, AC 34, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> Huge creature with 15' reach, 20 temporary HP, AC 34, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Elemental Motion (P3 Evo): <b>(2)</b> Caster may fly at full Speed, swim at full Speed and breathe water, or burrow at 10' for 1 min (<b>heightened 6th</b> +10' Speed; <b>9th</b> +20' Speed)</td>
+      <td>Elemental Motion (P3 Evo): <b>(2)</b> Caster may fly at full Speed, swim at full Speed and breathe water, or burrow at 10' for 1 min (<b>heightened 6th</b> gives +10' Speed; <b>9th</b> gives +20' Speed)</td>
     </tr><tr style="text-align:left">
-      <td>Elemental Toss (P1 Evo): <b>(1)</b> R30' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> +1d8 HP)</td>
+      <td>Elemental Toss (P1 Evo): <b>(1)</b> R30' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Embrace The Pit (P3 Tra): <b>(1)</b> Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)</td>
+      <td>Embrace The Pit (P3 Tra): <b>(1)</b> Caster gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)</td>
     </tr><tr style="text-align:left">
       <td>Endure Elements (P2 Abj): <b>(10 min)</b> Protects touched from choice of severe cold or heat until next daily prep (<b>heightened 3rd</b> protects from both cold and heat; <b>5th</b> protects from extreme cold and heat</b>)</td>
     </tr><tr style="text-align:left">
@@ -487,7 +487,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Extend Spell (P3 Div): <b>(1)</b> Duration of subsequent targeted spell of less than maximum spell level increases from 1 min to 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Faerie Dust (P1 Enc): <b>(1)</b> R30' 5' burst (2/3 actions give a 10'/15' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> +5' radius)</td>
+      <td>Faerie Dust (P1 Enc): <b>(1)</b> R30' 5' burst (2/3 actions give a 10'/15' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5')</td>
     </tr><tr style="text-align:left">
       <td>Faerie Fire (P2 Evo): <b>(2)</b> R120' 10' burst makes concealed creatures visible and invisible creatures concealed for 5 min</td>
     </tr><tr style="text-align:left">
@@ -529,7 +529,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Glitterdust (P2 Evo): <b>(2)</b> R120' 10' burst inflicts dazzled and negates invisibility for 1 min (<b>save Reflex</b> negates invisibility only for 2 rd; critical success negates; critical failure blinds for 1 rd and dazzles and negates invisibility for 10 min)</td>
     </tr><tr style="text-align:left">
-      <td>Glutton's Jaws (P1 Nec): <b>(1)</b> Caster's bite inflicts 1d8P HP, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)</td>
+      <td>Glutton's Jaws (P1 Nec): <b>(1)</b> Caster's bite inflicts 1d8 HP piercing, giving caster 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)</td>
     </tr><tr style="text-align:left">
       <td>Glyph Of Warding (P3 Abj): <b>(10 min)</b> Target container or 10'x10' area triggers a chosen spell of lower level in response to a specified trigger</td>
     </tr><tr style="text-align:left">
@@ -537,13 +537,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Goodberry (P1 Nec): <b>(2)</b> Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> affects +1 berry)</td>
     </tr><tr style="text-align:left">
-      <td>Grasping Grave (P5 Nec): <b>(2)</b> R60' 20' radius inflicts 6d6S HP and -10' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> +2d6 HP)</td>
+      <td>Grasping Grave (P5 Nec): <b>(2)</b> R60' 20' radius inflicts 6d6 HP slashing and -10' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Grease (P1 Con): <b>(2)</b> R30' 4 5' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure inflicts dropped object)</td>
     </tr><tr style="text-align:left">
       <td>Guidance (P1 Div): <b>(2)</b> R30' Target gains +1 on choice of attack, Perception, save, or skill check before the start of the caster's next turn; cannot be repeated on the same target for 1 hr</td>
     </tr><tr style="text-align:left">
-      <td>Gust Of Wind (P1 Evo): <b>(2)</b> 60' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30', knocks prone, and inflicts 2d6B HP)</td>
+      <td>Gust Of Wind (P1 Evo): <b>(2)</b> 60' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30', knocks prone, and inflicts 2d6 HP bludgeoning)</td>
     </tr><tr style="text-align:left">
       <td>Hallucinatory Terrain (P4 Ill): <b>(10 min)</b> R500' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion may mask or incorporate structures)</td>
     </tr><tr style="text-align:left">
@@ -561,9 +561,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Humanoid Form (P2 Tra): <b>(2)</b> Caster transforms into choice of Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry (<b>heightened 3rd</b> caster gains darkvision or low-light vision if appropriate to ancestry; <b>5th</b> caster may transform into a Large humanoid)</td>
     </tr><tr style="text-align:left">
-      <td>Hydraulic Push (P1 Evo): <b>(2)</b> R60' Ranged attack inflicts 3d6B HP and a 5' push (critical success inflicts 6d6B HP and a 10' push) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Hydraulic Push (P1 Evo): <b>(2)</b> R60' Ranged attack inflicts 3d6 HP bludgeoning and a 5' push (critical success inflicts 6d6 HP bludgeoning and a 10' push) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Hydraulic Torrent (P4 Evo): <b>(2)</b> 60' line inflicts 8d6B HP and 5' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts 10' push)</td>
+      <td>Hydraulic Torrent (P4 Evo): <b>(2)</b> 60' line inflicts 8d6 HP bludgeoning and 5' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts 10' push)</td>
     </tr><tr style="text-align:left">
       <td>Illusory Disguise (P1 Ill): <b>(2)</b> Illusion makes the caster appear different for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> may copy a specific individual)</td>
     </tr><tr style="text-align:left">
@@ -601,17 +601,17 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Mending (P1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> may affect a 1 Bulk object; <b>3rd</b> may affect a 2 Bulk or magical 1 Bulk object)</td>
     </tr><tr style="text-align:left">
-      <td>Meteor Swarm (P9 Evo): <b>(2)</b> R500' 4 meteors each inflict 6d10B HP in a 10' burst and 14d6 HP fire in a 40' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10B HP and +2d6 HP fire)</td>
+      <td>Meteor Swarm (P9 Evo): <b>(2)</b> R500' 4 meteors each inflict 6d10 HP bludgeoning in a 10' burst and 14d6 HP fire in a 40' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10 HP bludgeoning and +2d6 HP fire)</td>
     </tr><tr style="text-align:left">
       <td>Moment Of Renewal (P8 Nec): <b>(2)</b> 6 touched instantly gain the effects of 24 hr of rest</td>
     </tr><tr style="text-align:left">
       <td>Monstrosity Form (P8 Tra): <b>(2)</b> Caster transforms into choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, AC 32, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> 25 temporary HP, AC 34, +31 attack, an additional damage die, +33 Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Moon Frenzy (P5 Tra): <b>(2)</b> R30' 5 willing targets gain 5 temporary HP, +10' Speed, fangs and claws that inflict 2d6P HP and 2d6S HP plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6P HP and 3d6S HP, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6P HP and 4d6S HP, weakness 20 to silver)</td>
+      <td>Moon Frenzy (P5 Tra): <b>(2)</b> R30' 5 willing targets gain 5 temporary HP, +10' Speed, fangs and claws that inflict 2d6 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> 10 temporary HP, inflict 3d6 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> 20 temporary HP, inflict 4d6 HP piercing and 4d6 HP slashing, weakness 20 to silver)</td>
     </tr><tr style="text-align:left">
       <td>Nature Incarnate (P10 Tra): <b>(2)</b> Caster transforms into choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, AC 37, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Nature's Enmity (P9 Enc): <b>(2)</b> R120' 5 targets in a 500' burst suffer -10' Speed, attacks from animals that inflict 2d10S HP and flat-footed (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min</td>
+      <td>Nature's Enmity (P9 Enc): <b>(2)</b> R120' 5 targets in a 500' burst suffer -10' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Negate Aroma (P1 Abj): <b>(2)</b> Negates scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
@@ -637,19 +637,19 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Prestidigitation (P0 Evo): <b>(2)</b> R10' Performs choice of cooking, lifting, making a minor object, or tidying while sustained</td>
     </tr><tr style="text-align:left">
-      <td>Primal Herd (P10 Tra): <b>(2)</b> R30' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40' Speed, low-light vision, AC 34, a tusk attack that inflicts 4d8+19P HP, a trunk attack that inflicts 4d6+16B HP, a foot attack that inflicts 4d6+16B HP, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min</td>
+      <td>Primal Herd (P10 Tra): <b>(2)</b> R30' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40' Speed, low-light vision, AC 34, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Primal Phenomenon (P10 Div): <b>(3)</b> Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level</td>
     </tr><tr style="text-align:left">
       <td>Primal Summons (P6 Con): <b>(F)</b> Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature choice of: 60' fly Speed; 20' burrow speed and -10' Speed; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; 60' swim Speed, Shove after melee attack, and resistance 5 to fire</td>
     </tr><tr style="text-align:left">
-      <td>Produce Flame (P0 Evo): <b>(2)</b> R30' Spell attack inflicts 1d4+3 HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> +1d4 HP initial and persistent)</td>
+      <td>Produce Flame (P0 Evo): <b>(2)</b> R30' Spell attack inflicts 1d4+3 HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)</td>
     </tr><tr style="text-align:left">
       <td>Punishing Winds (P8 Evo): <b>(3)</b> R100' 30' radius drags down flying creatures 40', creates greater difficult terrain for flying creatures and those trying to exit, and creates difficult terrain for others while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
       <td>Purify Food And Drink (P1 Nec): <b>(2)</b> Removes contaminates from 1 cubic foot of food or water</td>
     </tr><tr style="text-align:left">
-      <td>Purple Worm Sting (P6 Nec): <b>(2)</b> Touch inflicts 3d6P HP, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6P HP and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)</td>
+      <td>Purple Worm Sting (P6 Nec): <b>(2)</b> Touch inflicts 3d6 HP piercing, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6 HP piercing and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)</td>
     </tr><tr style="text-align:left">
       <td>Ray Of Frost (P0 Evo): <b>(2)</b> R120' Spell attack inflicts 1d4+3 HP cold (critical success inflicts double HP and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
@@ -701,7 +701,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Spider Climb (P2 Tra): <b>(2)</b> Touched gains a climb Speed equal to its Speed for 10 min (<b>heightened 5th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Spider Sting (P1 Nec): <b>(2)</b> Touch inflicts 1d4P HP, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4P HP and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)</td>
+      <td>Spider Sting (P1 Nec): <b>(2)</b> Touch inflicts 1d4 HP piercing, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4 HP piercing and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)</td>
     </tr><tr style="text-align:left">
       <td>Stabilize (P0 Nec): <b>(2)</b> R30' Removes dying condition from target</td>
     </tr><tr style="text-align:left">
@@ -715,7 +715,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Storm Lord (P9 Evo): <b>(2)</b> 100' emanation produces the effects of choice of calm, foggy (conceals), rainy (-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficult terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save basic Reflex</b>), while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Storm Of Vengeance (P9 Evo): <b>(3)</b> R800' 360' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10B HP (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200' 1000' burst)</td>
+      <td>Storm Of Vengeance (P9 Evo): <b>(3)</b> R800' 360' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200' 1000' burst)</td>
     </tr><tr style="text-align:left">
       <td>Stormwind Flight (P4 Tra): <b>(2)</b> Caster gains fly Speed equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not inflict difficult terrain effects)</td>
     </tr><tr style="text-align:left">
@@ -731,7 +731,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Sunburst (P7 Evo): <b>(2)</b> R500' 60' burst inflicts 8d10 HP fire plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)</td>
     </tr><tr style="text-align:left">
-      <td>Swamp Of Sloth (P3 Con): <b>(1)</b> R120' 5' burst (10'/15' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> +5' radius inflicts +1d6 HP)</td>
+      <td>Swamp Of Sloth (P3 Con): <b>(1)</b> R120' 5' burst (10'/15' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases burst radius by 5' and inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Tanglefoot (P0 Con): <b>(2)</b> R30' Ranged attack inflicts -10' Speed for 1 rd (Escape negates; critical success inflicts immobilized for 1 rd) (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
     </tr><tr style="text-align:left">
@@ -767,7 +767,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Wall Of Stone (P5 Con): <b>(3)</b> R120' Creates a permanent 120'x20'x1" stone wall with AC 10, Hardness 14, and 50 HP per 10' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wall Of Thorns (P3 Con): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with AC 10, Hardness 10, and 20 HP per 10' section that inflicts difficult terrain and 3d4P HP for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)</td>
+      <td>Wall Of Thorns (P3 Con): <b>(3)</b> R60' Creates a 60'x10'x5' bramble wall with AC 10, Hardness 10, and 20 HP per 10' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)</td>
     </tr><tr style="text-align:left">
       <td>Wall Of Wind (P3 Evo): <b>(3)</b> R120' Creates a 60'x30'x5' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) may pass as difficult terrain; critical success negates; critical failure pushes back 10')</td>
     </tr><tr style="text-align:left">
@@ -779,7 +779,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Web (P2 Con): <b>(3)</b> R30' 10' burst inflicts difficult terrain and -10' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until Escape; Athletics also clears squares upon leaving)</td>
     </tr><tr style="text-align:left">
-      <td>Wild Morph (P1 Tra): <b>(1)</b> Caster gains choice of claws that inflict 1d6S HP, jaws that inflict 1d8P HP, resistance 5 to critical hits and precision damage, 10' reach, or 30' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)</td>
+      <td>Wild Morph (P1 Tra): <b>(1)</b> Caster gains choice of claws that inflict 1d6 HP slashing, jaws that inflict 1d8 HP piercing, resistance 5 to critical hits and precision damage, 10' reach, or 30' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)</td>
     </tr><tr style="text-align:left">
       <td>Wild Shape (P1 Tra): <b>(2)</b> Transforms caster into a pest for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an animal form)</td>
     </tr><tr style="text-align:left">
