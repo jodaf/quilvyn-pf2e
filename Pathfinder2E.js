@@ -13529,7 +13529,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         (rules.getChoices('levels').Barbarian, 'Features')
         .filter(x => x.match(/Instinct\s*(\(.*\)\s*)?\?\s*[A-Z1]/))
         .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
-    console.log(instinctAbilities);
     instinctAbilities.forEach(ia => {
       rules.defineRule
         ('barbarianFeatures.' + ia, 'featureNotes.instinctAbility', '=', '1');
@@ -14811,7 +14810,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Section', 'Section', 'select-one', sections],
       ['Note', 'Note', 'text', [60]],
-      ['Action', 'Action', 'select-one', ['Free', 'Reaction', '1', '2', '3']]
+      ['Action', 'Action', 'select-one', ['None', 'Free', 'Reaction', '1', '2', '3']]
     );
   } else if(type == 'Language')
     result.push(
