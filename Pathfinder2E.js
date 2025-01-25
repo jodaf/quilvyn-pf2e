@@ -3743,7 +3743,7 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning + specialization damage to grabbed foe (Fort negates)"',
+    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage to grabbed foe (Fort negates)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
