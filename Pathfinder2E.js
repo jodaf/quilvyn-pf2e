@@ -67,8 +67,7 @@ function Pathfinder2E() {
     (rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS, Pathfinder2E.DOMAINS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
-    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES,
-    Pathfinder2E.BLOODLINES
+    Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
   );
   Pathfinder2E.talentRules(
     rules, Pathfinder2E.FEATS, Pathfinder2E.FEATURES, Pathfinder2E.GOODIES,
@@ -85,8 +84,8 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
-  'Ancestry', 'Armor', 'Background', 'Bloodline', 'Class', 'Deity', 'Domain',
-  'Feat', 'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
+  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain', 'Feat',
+  'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -170,10 +169,9 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Fey-Touched Gnome:Heritage",' +
       '"1:Sensate Gnome:Heritage",' +
       '"1:Umbral Gnome:Heritage",' +
-      '"1:Wellspring Gnome:Heritage",' +
-      '"1:Arcane:Wellspring Tradition",' +
-      '"1:Divine:Wellspring Tradition",' +
-      '"1:Occult:Wellspring Tradition" ' +
+      '"1:Wellspring Gnome (Arcane):Heritage",' +
+      '"1:Wellspring Gnome (Divine):Heritage",' +
+      '"1:Wellspring Gnome (Occult):Heritage" ' +
     'Languages=Common,Gnomish,Sylvan ' +
     'Traits=Gnome,Humanoid',
   'Goblin':
@@ -933,8 +931,19 @@ Pathfinder2E.CLASSES = {
       '1:Hag:Bloodline,' +
       '1:Imperial:Bloodline,' +
       '1:Undead:Bloodline ' +
-    // SpellSlots depends on bloodline
-    'SpellSlots=',
+    // SpellSlots tradition depends on bloodline--see classRules
+    'SpellSlots=' +
+      '0:5@1,' +
+      '1:3@1;4@2,' +
+      '2:3@3;4@4,' +
+      '3:3@5;4@6,' +
+      '4:3@7;4@8,' +
+      '5:3@9;4@10,' +
+      '6:3@11;4@12,' +
+      '7:3@13;4@14,' +
+      '8:3@15;4@16,' +
+      '9:3@17;4@18,' +
+      '10:1@19',
   'Wizard':
     'Ability=intelligence HitPoints=6 ' +
     'Features=' +
@@ -1181,7 +1190,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
   'First World Adept':
     'Trait=Ancestry,Gnome ' +
-    'Require="level >= 9","spellDifficultyClass.Innate Primal >= 1"',
+    'Require="level >= 9","rank.Primal Innate >= 1"',
   'Vivacious Conduit':'Trait=Ancestry,Gnome Require="level >= 9"',
   'Gnome Weapon Expertise':
     'Trait=Ancestry,Gnome ' +
@@ -3024,7 +3033,7 @@ Pathfinder2E.FEATURES = {
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Detect Magic arcane cantrip",' +
+      '"Knows the Detect Magic arcane innate cantrip",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
     'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
@@ -3043,11 +3052,15 @@ Pathfinder2E.FEATURES = {
     'Section=combat,save ' +
     'Note="+4 Hit Points","Suffers half distance falling damage"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
-  'Wellspring Gnome':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"1 selection",' +
-      '"May cast chosen cantrip as an innate spell at will"',
+  'Wellspring Gnome (Arcane)':
+    'Section=magic ' +
+    'Note="May cast chosen arcane cantrip as an innate spell at will"',
+  'Wellspring Gnome (Divine)':
+    'Section=magic ' +
+    'Note="May cast chosen divine cantrip as an innate spell at will"',
+  'Wellspring Gnome (Occult)':
+    'Section=magic ' +
+    'Note="May cast chosen occult cantrip as an innate spell at will"',
   'Whisper Elf':
     'Section=skill ' +
     'Note="May attempt a R60\' Seek using hearing; +2 within 30\'"',
@@ -3098,7 +3111,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Meld Into Stone divine spell; may cast it 1/day",' +
+      '"Knows the Meld Into Stone divine innate spell; may cast it 1/day",' +
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3313,7 +3326,7 @@ Pathfinder2E.FEATURES = {
     'Note="After a critical success using a skill, may immediately Aid an ally on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
-    'Note="Knows the Charm arcane spell; may cast it 1/day"',
+    'Note="Knows the Charm arcane innate spell; may cast it 1/day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -5698,7 +5711,6 @@ Pathfinder2E.FEATURES = {
 
   // Sorcerer
   // Alertness as above
-  // bloodlines handled by bloodlineRules
   'Bloodline':
     'Section=feature,magic ' +
     'Note=' +
@@ -5720,6 +5732,67 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Weapon Expertise':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
+
+  'Aberrant':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)/Knows the Tentacular Limbs occult spell",' +
+      '"Casting a bloodline spell gives the caster or target +2 Will saves for 1 rd",' +
+      '"Skill Trained (Intimidation; Occultism)"',
+  'Angelic':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)/Knows the Angelic Halo divine spell",' +
+      '"Casting a bloodline spell gives the caster or target +1 saves for 1 rd",' +
+      '"Skill Trained (Diplomacy; Religion)"',
+  'Demonic':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
+      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd",' +
+      '"Skill Trained (Intimidation; Religion)"',
+  'Diabolic':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
+      '"Casting a bloodline spell gives the caster +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
+      '"Skill Trained (Deception; Religion)"',
+  'Draconic':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives the caster or target +1 AC for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Elemental':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
+      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level for 1 rd",' +
+      '"Skill Trained (Intimidation; Nature)"',
+  'Fey':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)/Knows the Faerie Dust primal spell",' +
+      '"Casting a bloodline spell gives the caster or target concealment for 1 rd",' +
+      '"Skill Trained (Deception; Nature)"',
+  'Hag':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
+      '"Casting a bloodline spell inficts 2 HP mental per spell level (Will negates) on first successful attacker for 1 rd",' +
+      '"Skill Trained (Deception; Occultism)"',
+  'Imperial':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell",' +
+      '"Casting a bloodline spell gives the caster or target +1 skill checks for 1 rd",' +
+      '"Skill Trained (Arcana; Society)"',
+  'Undead':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
+      '"Casting a bloodline spell gives the caster 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level for 1 rd",' +
+      '"Skill Trained (Intimidation; Religion)"',
 
   'Counterspell':
     'Action=Reaction ' +
@@ -6219,7 +6292,7 @@ Pathfinder2E.FEATURES = {
     'Note="May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
-    'Note="May cast %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'}-level <i>Detect Magic</i> as an arcane innate spell will"',
+    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
     'Section=skill Note="+2 initial gold/May use Diplomacy to Earn Income"',
   'Battle Cry':
@@ -11400,7 +11473,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
 /* Defines rules related to basic character identity. */
 Pathfinder2E.identityRules = function(
-  rules, alignments, ancestries, backgrounds, classes, deities, bloodlines
+  rules, alignments, ancestries, backgrounds, classes, deities
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
@@ -11409,7 +11482,6 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable
     (classes, ['Require', 'HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
-  QuilvynUtils.checkAttrTable(bloodlines, ['SpellList', 'BloodlineSkills', 'GrantedSpells', 'BloodlineSpells', 'BloodMagic']);
 
   for(let a in alignments)
     rules.choiceRules(rules, 'Alignment', a, alignments[a]);
@@ -11421,8 +11493,6 @@ Pathfinder2E.identityRules = function(
     rules.choiceRules(rules, 'Class', c, classes[c]);
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
-  for(let b in bloodlines)
-    rules.choiceRules(rules, 'Bloodline', b, bloodlines[b]);
 
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
@@ -11453,30 +11523,53 @@ Pathfinder2E.magicRules = function(rules, schools, spells, domains) {
     rules.choiceRules(rules, 'Domain', d, domains[d]);
 
   ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-    let innate = 'Innate ' + t;
+    let innate = t + ' Innate';
     rules.defineChoice('notes',
+      'spellAttackModifier.' + t + ':%S (' + '%{spellAbility.' + t + '}; %1)',
+      'spellDifficultyClass.' + t + ':%V (' + '%{spellAbility.' + t + '}; %1)',
       'spellAttackModifier.' + innate + ':%S (charisma; %1)',
       'spellDifficultyClass.' + innate + ':%V (charisma; %1)'
     );
+    rules.defineRule('rank.' + t, 'trainingLevel.' + t, '=', null);
     rules.defineRule('proficiencyBonus.' + innate,
-      'rank.' + t, '+', '2 * (source - 1)',
+      'rank.' + innate, '=', '2 * source',
       'level', '+', null
+    );
+    rules.defineRule('proficiencyBonus.' + t,
+      'rank.' + t, '=', '2 * source',
+      'proficiencyLevelBonus.' + t, '+', null
+    );
+    rules.defineRule('proficiencyLevelBonus.' + t,
+      'rank.' + t, '?', 'source > 0',
+      'level', '=', null
     );
     rules.defineRule('spellAttackModifier.' + innate,
       'proficiencyBonus.' + innate, '=', null,
       'charismaModifier', '+', null
     );
+    rules.defineRule('spellAttackModifier.' + t,
+      'proficiencyBonus.' + t, '=', null,
+      'spellModifier.' + t, '+', null
+    );
     rules.defineRule('spellAttackModifier.' + innate + '.1',
-      'spellAttackModifier.' + innate, '?', null,
-      '', '=', '"trained"',
-      'rank.' + t, '=', 'source>3 ? "legendary" : source>2 ? "master" : source>1 ? "expert" : null'
+      'rank.' + innate, '=', 'Pathfinder2E.RANK_NAMES[source]'
+    );
+    rules.defineRule('spellAttackModifier.' + t + '.1',
+      'rank.' + t, '=', 'Pathfinder2E.RANK_NAMES[source]'
     );
     rules.defineRule('spellDifficultyClass.' + innate,
       'proficiencyBonus.' + innate, '=', null,
       'charismaModifier', '+', '10 + source'
     );
+    rules.defineRule('spellDifficultyClass.' + t,
+      'proficiencyBonus.' + t, '=', null,
+      'spellModifier.' + t, '+', '10 + source'
+    );
     rules.defineRule('spellDifficultyClass.' + innate + '.1',
-      'spellAttackModifier.' + innate + '.1', '=', null
+      'rank.' + innate, '=', 'Pathfinder2E.RANK_NAMES[source]'
+    );
+    rules.defineRule('spellDifficultyClass.' + t + '.1',
+      'rank.' + t, '=', 'Pathfinder2E.RANK_NAMES[source]'
     );
   });
 
@@ -11644,14 +11737,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
     Pathfinder2E.backgroundRulesExtra(rules, name);
-  } else if(type == 'Bloodline') {
-    Pathfinder2E.bloodlineRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'SpellList'),
-      QuilvynUtils.getAttrValueArray(attrs, 'BloodlineSkills'),
-      QuilvynUtils.getAttrValueArray(attrs, 'GrantedSpells'),
-      QuilvynUtils.getAttrValueArray(attrs, 'BloodlineSpells'),
-      QuilvynUtils.getAttrValue(attrs, 'BloodMagic')
-    );
   } else if(type == 'Class') {
     Pathfinder2E.classRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
@@ -11956,18 +12041,6 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
-    rules.defineRule
-      ('proficiencyBonus.Innate Arcane', 'features.Seer Elf', '=', '2');
-  } else if(name == 'Gnome') {
-    rules.defineRule('selectableFeatureCount.Gnome (Wellspring Tradition)',
-      'featureNotes.wellspringGnome', '=', '1'
-    );
-    rules.defineRule
-      ('proficiencyBonus.Innate Arcane', 'gnomeFeatures.Arcane', '=', '2');
-    rules.defineRule
-      ('proficiencyBonus.Innate Divine', 'gnomeFeatures.Divine', '=', '2');
-    rules.defineRule
-      ('proficiencyBonus.Innate Occult', 'gnomeFeatures.Occult', '=', '2');
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
       (rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
@@ -12149,72 +12222,13 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
   }
 };
 
-/*
- * Defines in #rules# the rules associated with sorcerer bloodline #name#.
- * #spellList# gives the tradition (one of "Arcane", "Divine", "Occult" or
- * "Primal") from which the character draws spells. #bloodlineSkills# lists the
- * skills the bloodline grants Trained status for. #grantedSpells# lists the
- * initial spell granted by the bloodline and the spells granted by the
- * Advanced Bloodline and Greater Bloodline feats. #bloodlineSpells# list the
- * spells that the bloodline adds to the character's reperetoire, and
- * #bloodMagic# describes the added effects of casting a bloodline spell.
- */
 Pathfinder2E.bloodlineRules = function(
   rules, name, spellList, bloodlineSkills, grantedSpells, bloodlineSpells,
   bloodMagic
 ) {
 
-  if(!name) {
-    console.log('Empty bloodline name');
-    return;
-  }
-  if(!(spellList+'').match(/^(Arcane|Divine|Occult|Primal)$/)) {
-    console.log('Bad spell list "' + spellList + '" for bloodline ' + name);
-    return;
-  }
-  if(!Array.isArray(bloodlineSkills)) {
-    console.log('Bad skills list "' + bloodlineSkills + '" for bloodline ' + name);
-    return;
-  }
-  bloodlineSkills.forEach(s => {
-    let allSkills = rules.getChoices('skills') || Pathfinder2E.SKILLS;
-    if(!(s in allSkills))
-      console.log('Unknown skill "' + s + '" for bloodline ' + name);
-  });
-  if(!Array.isArray(grantedSpells) || grantedSpells.length != 10) {
-    console.log('Bad granted spells list "' + grantedSpells + '" for bloodline ' + name);
-    return;
-  }
-  if(!Array.isArray(bloodlineSpells) || bloodlineSpells.length != 3) {
-    console.log('Bad bloodline spells list "' + bloodlineSpells + '" for bloodline ' + name);
-    return;
-  }
-  grantedSpells.concat(bloodlineSpells).forEach(s => {
-    if(s in Pathfinder2E.SPELLS)
-      ; // empty
-    else {
-      let allSpells = rules.getChoices('spells') || {};
-      let matchingSpells =
-        QuilvynUtils.getKeys(allSpells, new RegExp(s + ' \\('));
-      if(matchingSpells.length == 0)
-        console.log('Unknown spell "' + s + '" for bloodline ' + name);
-    }
-  });
-  if(typeof(bloodMagic) != 'string') {
-    console.log('Bad blood magic "' + bloodMagic + '" for bloodline ' + name);
-    return;
-  }
-
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-
-  Pathfinder2E.featureRules(rules, name,
-    ['magic', 'magic', 'skill'], [
-      'Spell Trained (' + spellList + ')/' +
-      'Knows the ' + bloodlineSpells[0] + ' ' + spellList.toLowerCase() + ' spell',
-      'Casting a bloodline spell ' + bloodMagic,
-      'Skill Trained (' + bloodlineSkills.join('; ') + ')'
-    ], null);
 
   rules.defineRule('bloodlineTraditions',
     'features.' + name, '=', '!dict.bloodlineTraditions ? "' + spellList + '" : !dict.bloodlineTraditions.includes("' + spellList + '") ? dict.bloodlineTraditions + "; ' + spellList + '" : dict.bloodlineTraditions'
@@ -12245,10 +12259,7 @@ Pathfinder2E.bloodlineRules = function(
       QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Description').replaceAll('%tradition', spellList)
     );
   });
-  rules.defineRule('spellAttackModifier.' + spellList + '.1',
-    'features.' + name, '=', '"charisma"'
-  );
-  rules.defineRule('spellDifficultyClass.' + spellList + '.1',
+  rules.defineRule('spellAbility.' + spellList,
     'features.' + name, '=', '"charisma"'
   );
   rules.defineRule('spellModifier.' + name,
@@ -12257,26 +12268,6 @@ Pathfinder2E.bloodlineRules = function(
   );
   rules.defineRule
     ('spellModifier.' + spellList, 'spellModifier.' + name, '=', null);
-
-  let spellSlots = [
-    '0:5@1',
-    '1:3@1;4@2',
-    '2:3@3;4@4',
-    '3:3@5;4@6',
-    '4:3@7;4@8',
-    '5:3@9;4@10',
-    '6:3@11;4@12',
-    '7:3@13;4@14',
-    '8:3@15;4@16',
-    '9:3@17;4@18',
-    '10:1@19'
-  ];
-  rules.defineRule(prefix + 'Level',
-    'features.' + name, '?', null,
-    'levels.Sorcerer', '=', null
-  );
-  QuilvynRules.spellSlotRules
-    (rules, prefix + 'Level', spellSlots.map(x => x.replace(/^/, spellList.charAt(0))));
 
 };
 
@@ -12346,56 +12337,26 @@ Pathfinder2E.classRules = function(
   });
 
   if(spellSlots.length > 0) {
-    QuilvynRules.spellSlotRules(rules, classLevel, spellSlots);
-    for(let j = 0; j < spellSlots.length; j++) {
-      let spellTypeAndLevel = spellSlots[j].replace(/:.*/, '');
-      let spellType = spellTypeAndLevel.replace(/\d+/, '');
-      spellType =
-        spellType == 'A' ? 'Arcane' :
-        spellType == 'D' ? 'Divine' :
-        spellType == 'O' ? 'Occult' :
-        spellType == 'P' ? 'Primal' : spellType;
-      let spellLevel = spellTypeAndLevel.replace(spellType, '');
-      rules.defineChoice('notes',
-        'spellAttackModifier.' + spellType + ':%S (' + '%1; %2)',
-        'spellDifficultyClass.' + spellType + ':%V (' + '%1; %2)'
-      );
-      rules.defineRule
-        ('rank.' + spellType, 'trainingLevel.' + spellType, '=', null);
-      rules.defineRule('proficiencyLevelBonus.' + spellType,
-        'rank.' + spellType, '?', 'source > 0',
-        'level', '=', null
-      );
-      rules.defineRule('spellModifier.' + name,
-        classLevel, '?', null,
-        abilities[0] + 'Modifier', '=', null
-      );
+    rules.defineRule('spellModifier.' + name,
+      classLevel, '?', null,
+      abilities[0] + 'Modifier', '=', null
+    );
+    if('ADOP'.includes(spellSlots[0].charAt(0))) {
+      QuilvynRules.spellSlotRules(rules, classLevel, spellSlots);
+      let spellType =
+        {'A':'Arcane', 'D':'Divine', 'O':'Occult', 'P':'Primal'}[spellSlots[0].charAt(0)];
       rules.defineRule
         ('spellModifier.' + spellType, 'spellModifier.' + name, '=', null);
-      rules.defineRule('proficiencyBonus.' + spellType,
-        'rank.' + spellType, '=', '2 * source',
-        'proficiencyLevelBonus.' + spellType, '+', null
-      );
-      rules.defineRule('spellAttackModifier.' + spellType,
-        'proficiencyBonus.' + spellType, '=', null,
-        'spellModifier.' + spellType, '+', null
-      );
-      rules.defineRule('spellAttackModifier.' + spellType + '.1',
+      rules.defineRule('spellAbility.' + spellType,
         classLevel, '=', '"' + abilities[0] + '"'
       );
-      rules.defineRule('spellAttackModifier.' + spellType + '.2',
-        'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
-      );
-      rules.defineRule('spellDifficultyClass.' + spellType,
-        'proficiencyBonus.' + spellType, '=', null,
-        'spellModifier.' + spellType, '+', '10 + source'
-      );
-      rules.defineRule('spellDifficultyClass.' + spellType + '.1',
-        classLevel, '=', '"' + abilities[0] + '"'
-      );
-      rules.defineRule('spellDifficultyClass.' + spellType + '.2',
-        'rank.' + spellType, '=', 'Pathfinder2E.RANK_NAMES[source]'
-      );
+    } else if('0123456789'.includes(spellSlots[0].charAt(0))) {
+      ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+        let l = t.charAt(0);
+        let tLevel = prefix + t + 'Level';
+        let tSlots = spellSlots.map(x => l + x);
+        QuilvynRules.spellSlotRules(rules, tLevel, tSlots);
+      });
     }
   }
 
@@ -12583,9 +12544,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellModifier.Divine', 'spellModifier.Champion', '=', null);
     rules.defineRule
-      ('spellAttackModifier.Divine.1', classLevel, '=', '"charisma"');
-    rules.defineRule
-      ('spellDifficultyClass.Divine.1', classLevel, '=', '"charisma"');
+      ('spellAbility.Divine', classLevel, '=', '"charisma"');
     rules.defineChoice
       ('notes', 'validationNotes.championAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.championAlignment',
@@ -12758,16 +12717,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellModifier.Divine', 'spellModifierDivine.Monk', '=', null);
     rules.defineRule
       ('spellModifier.Occult', 'spellModifierOccult.Monk', '=', null);
-    rules.defineRule('spellAttackModifier.Divine.1',
+    rules.defineRule('spellAbility.Divine',
       'spellModifierDivine.Monk', '=', '"wisdom"'
     );
-    rules.defineRule('spellAttackModifier.Occult.1',
-      'spellModifierOccult.Monk', '=', '"wisdom"'
-    );
-    rules.defineRule('spellDifficultyClass.Divine.1',
-      'spellModifierDivine.Monk', '=', '"wisdom"'
-    );
-    rules.defineRule('spellDifficultyClass.Occult.1',
+    rules.defineRule('spellAbility.Occult',
       'spellModifierOccult.Monk', '=', '"wisdom"'
     );
     rules.defineRule('trainingLevel.Divine',
@@ -13230,10 +13183,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.Occult', 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAttackModifier.Occult.1',
-      'magicNotes.bardDedication', '=', '"charisma"'
-    );
-    rules.defineRule('spellDifficultyClass.Occult.1',
+    rules.defineRule('spellAbility.Occult',
       'magicNotes.bardDedication', '=', '"charisma"'
     );
     rules.defineRule('spellSlots.O0', 'magicNotes.bardDedication', '+=', '2');
@@ -13373,10 +13323,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.Divine', 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAttackModifier.Divine.1',
-      'magicNotes.clericDedication', '=', '"wisdom"'
-    );
-    rules.defineRule('spellDifficultyClass.Divine.1',
+    rules.defineRule('spellAbility.Divine',
       'magicNotes.clericDedication', '=', '"wisdom"'
     );
     rules.defineRule('spellSlots.D0', 'magicNotes.clericDedication', '+=', '2');
@@ -13403,10 +13350,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.Primal', 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAttackModifier.Primal.1',
-      'magicNotes.druidDedication', '=', '"wisdom"'
-    );
-    rules.defineRule('spellDifficultyClass.Primal.1',
+    rules.defineRule('spellAbility.Primal',
       'magicNotes.druidDedication', '=', '"wisdom"'
     );
     rules.defineRule('spellSlots.P0', 'magicNotes.druidDedication', '+=', '2');
@@ -13578,10 +13522,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.' + trad, 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAttackModifier.' + trad + '.1',
-      note, '=', '"charisma"'
-    );
-    rules.defineRule('spellDifficultyClass.' + trad + '.1',
+    rules.defineRule('spellAbility.' + trad,
       note, '=', '"charisma"'
     );
     rules.defineRule('spellSlots.' + trad.charAt(0) + '0', note, '+=', '2');
@@ -13618,9 +13559,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
   } else if(name == 'Order Spell') {
     rules.defineRule('focusPoints', 'magicNotes.orderSpell', '^=', '1');
-  } else if(name == 'Otherworldly Magic') {
-    rules.defineRule
-      ('proficiencyBonus.Innate Arcane', 'features.' + name, '=', '2');
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
@@ -13689,8 +13627,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
   } else if(name == 'Stonewalker') {
     rules.defineRule
-      ('proficiencyBonus.Innate Divine', 'features.' + name, '=', '2');
-    rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   } else if(name == 'Studious Capacity') {
     rules.defineRule('magicNotes.studiousCapacity.1',
@@ -13702,9 +13638,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'spellSlots.O' + l, '^', l - 1
       );
     });
-  } else if(name == 'Supernatural Charm') {
-    rules.defineRule
-      ('proficiencyBonus.Innate Primal', 'features.' + name, '=', '2');
   } else if(name == 'Unburdened Iron') {
     rules.defineRule('abilityNotes.armorSpeedPenalty',
       'abilityNotes.unburdenedIron', '^', '0'
@@ -13734,10 +13667,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.Arcane', 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAttackModifier.Arcane.1',
-      'magicNotes.wizardDedication', '=', '"intelligence"'
-    );
-    rules.defineRule('spellDifficultyClass.Arcane.1',
+    rules.defineRule('spellAbility.Arcane',
       'magicNotes.wizardDedication', '=', '"intelligence"'
     );
     rules.defineRule('spellSlots.A0', 'magicNotes.wizardDedication', '+=', '2');
@@ -13941,7 +13871,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('features.' + f, note, '=', '1');
         });
       }
-      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(cantrip|spell)s?($|;)/);
+      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(innate\s)?(cantrip|spell)s?($|;)/);
       if(matchInfo && !matchInfo[1].includes('%')) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
@@ -13971,6 +13901,23 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             );
           }
         });
+      }
+      matchInfo = n.match(/\s(arcane|divine|occult|primal)\s/);
+      if(matchInfo && n.includes('innate spell')) {
+        let trad =
+          matchInfo[1].charAt(0).toUpperCase() + matchInfo[1].substring(1);
+        rules.defineRule('rank.' + trad + ' Innate',
+          'features.' + name, '=', '1',
+          'rank.' + trad, '^', null
+        );
+      }
+      matchInfo = n.match(/Spell Trained \((.*)\)/);
+      if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name)) {
+        let trad = matchInfo[1];
+        rules.defineRule('sorcerer' + trad + 'Level',
+          'features.' + name, '=', '0',
+          'levels.Sorcerer', '+', null
+        );
       }
     });
   }
@@ -14764,14 +14711,6 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]]
-    );
-  else if(type == 'Bloodline')
-    result.push(
-      ['SpellList', 'Spell List', 'select-one', ['Arcane', 'Divine', 'Occult', 'Primal']],
-      ['BloodlineSkills', 'Bloodline Skills', 'text', [30]],
-      ['GrantedSpells', 'Granted Spells', 'text', [60]],
-      ['BloodlineSpells', 'Bloodline Spells', 'text', [40]],
-      ['BloodMagic', 'Blood Magic', 'text', [60]]
     );
   else if(type == 'Class') {
     result.push(
