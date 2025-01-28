@@ -169,9 +169,10 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Fey-Touched Gnome:Heritage",' +
       '"1:Sensate Gnome:Heritage",' +
       '"1:Umbral Gnome:Heritage",' +
-      '"1:Wellspring Gnome (Arcane):Heritage",' +
-      '"1:Wellspring Gnome (Divine):Heritage",' +
-      '"1:Wellspring Gnome (Occult):Heritage" ' +
+      '"1:Wellspring Gnome:Heritage",' +
+      '"1:Arcane Wellspring:Wellspring",' +
+      '"1:Divine Wellspring:Wellspring",' +
+      '"1:Occult Wellspring:Wellspring" ' +
     'Languages=Common,Gnomish,Sylvan ' +
     'Traits=Gnome,Humanoid',
   'Goblin':
@@ -468,57 +469,6 @@ Pathfinder2E.BACKGROUNDS = {
       '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
       '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
-};
-Pathfinder2E.BLOODLINES = {
-  'Aberrant':
-      'GrantedSpells=' +
-        'Daze,"Spider Sting","Touch Of Idiocy","Vampiric Touch",Confusion,' +
-        '"Black Tentacles",Feeblemind,"Warp Mind","Uncontrollable Dance",' +
-        '"Unfathomable Song"',
-  'Angelic':
-      'GrantedSpells=' +
-        'Light,Heal,"Spiritual Weapon","Searing Light","Divine Wrath",' +
-        '"Flame Strike","Blade Barrier","Divine Decree","Divine Aura",' +
-        'Foresight',
-  'Demonic':
-      'GrantedSpells=' +
-        '"Acid Splash",Fear,Enlarge,Slow,"Divine Wrath","Abyssal Plague",' +
-        'Disintegrate,"Divine Decree","Divine Aura",Implosion',
-  'Diabolic':
-      'GrantedSpells=' +
-        '"Produce Flame",Charm,"Flaming Sphere",Enthrall,Suggestion,' +
-        '"Crushing Despair","True Seeing","Divine Decree","Divine Aura",' +
-        '"Meteor Swarm"',
-  'Draconic':
-      'GrantedSpells=' +
-        'Shield,"True Strike","Resist Energy",Haste,"Spell Immunity",' +
-        '"Chromatic Wall","Dragon Form","Mask Of Terror","Prismatic Wall",' +
-        '"Overwhelming Presence"',
-  'Elemental':
-      'GrantedSpells=' +
-        '"Produce Flame","Burning Hands","Resist Energy",Fireball,' +
-        '"Freedom Of Movement","Elemental Form",Repulsion,"Energy Aegis",' +
-        '"Prismatic Wall","Storm Of Vengeance"',
-  'Fey':
-      'GrantedSpells=' +
-        '"Ghost Sound",Charm,"Hideous Laughter",Enthrall,Suggestion,' +
-        '"Cloak Of Colors",Mislead,"Visions Of Danger",' +
-        '"Uncontrollable Dance","Resplendent Mansion"',
-  'Hag':
-      'GrantedSpells=' +
-        'Daze,"Illusory Disguise","Touch Of Idiocy",Blindness,' +
-        '"Outcast\'s Curse","Mariner\'s Curse","Baleful Polymorph",' +
-        '"Warp Mind","Spiritual Epidemic","Nature\'s Enmity"',
-  'Imperial':
-      'GrantedSpells=' +
-        '"Detect Magic","Magic Missile","Dispel Magic",Haste,' +
-        '"Dimension Door","Prying Eye",Disintegrate,"Prismatic Spray",Maze,' +
-        '"Prismatic Sphere"',
-  'Undead':
-      'GrantedSpells=' +
-        '"Chill Touch",Harm,"False Life","Bind Undead","Talking Corpse",' +
-        'Cloudkill,"Vampiric Exsanguination","Finger Of Death",' +
-        '"Horrid Wilting","Wail Of The Banshee"',
 };
 Pathfinder2E.CLASSES = {
   'Alchemist':
@@ -3012,6 +2962,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,save ' +
     'Note="+4 Hit Points","Suffers half distance falling damage"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
+  'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
     'Section=magic ' +
     'Note="May cast chosen arcane cantrip as an innate spell at will"',
@@ -12076,6 +12027,16 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Elf') {
     rules.defineRule('speed', 'elfLevel', '+', '5');
+  } else if(name == 'Gnome') {
+    rules.defineRule('selectableFeatureCount.Gnome (Wellspring)',
+      'featureNotes.wellspringGnome', '=', '1'
+    );
+    ['Arcane', 'Divine', 'Occult'].forEach(t => {
+      rules.defineRule('features.Wellspring Gnome (' + t + ')',
+        'features.Wellspring Gnome', '?', null,
+        'features.' + t + ' Wellspring', '=', '1'
+      );
+    });
   } else if(name == 'Goblin') {
     Pathfinder2E.weaponRules
       (rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
