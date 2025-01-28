@@ -471,94 +471,54 @@ Pathfinder2E.BACKGROUNDS = {
 };
 Pathfinder2E.BLOODLINES = {
   'Aberrant':
-      'SpellList=Occult ' +
-      'BloodlineSkills=Intimidation,Occultism ' +
       'GrantedSpells=' +
         'Daze,"Spider Sting","Touch Of Idiocy","Vampiric Touch",Confusion,' +
         '"Black Tentacles",Feeblemind,"Warp Mind","Uncontrollable Dance",' +
-        '"Unfathomable Song" ' +
-      'BloodlineSpells="Tentacular Limbs","Aberrant Whispers","Unusual Anatomy" ' +
-      'BloodMagic="gives self or target +2 Will saves for 1 rd"',
+        '"Unfathomable Song"',
   'Angelic':
-      'SpellList=Divine ' +
-      'BloodlineSkills=Diplomacy,Religion ' +
       'GrantedSpells=' +
         'Light,Heal,"Spiritual Weapon","Searing Light","Divine Wrath",' +
         '"Flame Strike","Blade Barrier","Divine Decree","Divine Aura",' +
-        'Foresight ' +
-      'BloodlineSpells="Angelic Halo","Angelic Wings","Celestial Brand" ' +
-      'BloodMagic="gives self or target +1 saves for 1 rd"',
+        'Foresight',
   'Demonic':
-      'SpellList=Divine ' +
-      'BloodlineSkills=Intimidation,Religion ' +
       'GrantedSpells=' +
         '"Acid Splash",Fear,Enlarge,Slow,"Divine Wrath","Abyssal Plague",' +
-        'Disintegrate,"Divine Decree","Divine Aura",Implosion ' +
-      'BloodlineSpells="Glutton\'s Jaws","Swamp Of Sloth","Abyssal Wrath" ' +
-      'BloodMagic="gives self +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd"',
+        'Disintegrate,"Divine Decree","Divine Aura",Implosion',
   'Diabolic':
-      'SpellList=Divine ' +
-      'BloodlineSkills=Deception,Religion ' +
       'GrantedSpells=' +
         '"Produce Flame",Charm,"Flaming Sphere",Enthrall,Suggestion,' +
         '"Crushing Despair","True Seeing","Divine Decree","Divine Aura",' +
-        '"Meteor Swarm" ' +
-      'BloodlineSpells="Diabolic Edict","Embrace The Pit","Hellfire Plume" ' +
-      'BloodMagic="gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level"',
+        '"Meteor Swarm"',
   'Draconic':
-      'SpellList=Arcane ' +
-      'BloodlineSkills=Arcana,Intimidation ' +
       'GrantedSpells=' +
         'Shield,"True Strike","Resist Energy",Haste,"Spell Immunity",' +
         '"Chromatic Wall","Dragon Form","Mask Of Terror","Prismatic Wall",' +
-        '"Overwhelming Presence" ' +
-      'BloodlineSpells="Dragon Claws","Dragon Breath","Dragon Wings" ' +
-      'BloodMagic="gives self or target +1 AC for 1 rd"',
+        '"Overwhelming Presence"',
   'Elemental':
-      'SpellList=Primal ' +
-      'BloodlineSkills=Intimidation,Nature ' +
       'GrantedSpells=' +
         '"Produce Flame","Burning Hands","Resist Energy",Fireball,' +
         '"Freedom Of Movement","Elemental Form",Repulsion,"Energy Aegis",' +
-        '"Prismatic Wall","Storm Of Vengeance" ' +
-      'BloodlineSpells="Elemental Toss","Elemental Motion","Elemental Blast" ' +
-      'BloodMagic="gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level on target for 1 rd"',
+        '"Prismatic Wall","Storm Of Vengeance"',
   'Fey':
-      'SpellList=Primal ' +
-      'BloodlineSkills=Deception,Nature ' +
       'GrantedSpells=' +
         '"Ghost Sound",Charm,"Hideous Laughter",Enthrall,Suggestion,' +
         '"Cloak Of Colors",Mislead,"Visions Of Danger",' +
-        '"Uncontrollable Dance","Resplendent Mansion" ' +
-      'BloodlineSpells="Faerie Dust","Fey Disappearance","Fey Glamour" ' +
-      'BloodMagic="gives self or target concealment for 1 rd"',
+        '"Uncontrollable Dance","Resplendent Mansion"',
   'Hag':
-      'SpellList=Occult ' +
-      'BloodlineSkills=Deception,Occultism ' +
       'GrantedSpells=' +
         'Daze,"Illusory Disguise","Touch Of Idiocy",Blindness,' +
         '"Outcast\'s Curse","Mariner\'s Curse","Baleful Polymorph",' +
-        '"Warp Mind","Spiritual Epidemic","Nature\'s Enmity" ' +
-      'BloodlineSpells="Jealous Hex","Horrific Visage","You\'re Mine" ' +
-      'BloodMagic="inflicts 2 HP mental per spell level (Will negates) to first successful attacker for 1 rd"',
+        '"Warp Mind","Spiritual Epidemic","Nature\'s Enmity"',
   'Imperial':
-      'SpellList=Arcane ' +
-      'BloodlineSkills=Arcana,Society ' +
       'GrantedSpells=' +
         '"Detect Magic","Magic Missile","Dispel Magic",Haste,' +
         '"Dimension Door","Prying Eye",Disintegrate,"Prismatic Spray",Maze,' +
-        '"Prismatic Sphere" ' +
-      'BloodlineSpells="Ancestral Memories","Extend Spell","Arcane Countermeasure" ' +
-      'BloodMagic="gives self or target +1 skill checks for 1 rd"',
+        '"Prismatic Sphere"',
   'Undead':
-      'SpellList=Divine ' +
-      'BloodlineSkills=Intimidation,Religion ' +
       'GrantedSpells=' +
         '"Chill Touch",Harm,"False Life","Bind Undead","Talking Corpse",' +
         'Cloudkill,"Vampiric Exsanguination","Finger Of Death",' +
-        '"Horrid Wilting","Wail Of The Banshee" ' +
-      'BloodlineSpells="Undeath\'s Blessing","Drain Life","Grasping Grave" ' +
-      'BloodMagic="gives self 1 temporary Hit Point per spell level for 1 rd or inflicts 1 HP negative per spell level on target for 1 rd"'
+        '"Horrid Wilting","Wail Of The Banshee"',
 };
 Pathfinder2E.CLASSES = {
   'Alchemist':
@@ -5779,7 +5739,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
-      '"Casting a bloodline spell inficts 2 HP mental per spell level (Will negates) on first successful attacker for 1 rd",' +
+      '"Casting a bloodline spell inflicts 2 HP mental per spell level (Will negates) on first successful attacker for 1 rd",' +
       '"Skill Trained (Deception; Occultism)"',
   'Imperial':
     'Section=magic,magic,skill ' +
@@ -5825,16 +5785,64 @@ Pathfinder2E.FEATURES = {
   'Primal Evolution':
     'Section=magic ' +
     'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
-  'Advanced Bloodline':
-    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
+  'Advanced Bloodline (Aberrant)':
+    'Section=magic ' +
+    'Note="Knows the Aberrant Whispers occult spell/+1 Focus Points"',
+  'Advanced Bloodline (Angelic)':
+    'Section=magic Note="Knows the Angelic Wings divine spell/+1 Focus Points"',
+  'Advanced Bloodline (Demonic)':
+    'Section=magic ' +
+    'Note="Knows the Swamp Of Sloth divine spell/+1 Focus Points"',
+  'Advanced Bloodline (Diabolic)':
+    'Section=magic ' +
+    'Note="Knows the Embrace The Pit divine spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic)':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Elemental)':
+    'Section=magic ' +
+    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
+  'Advanced Bloodline (Fey)':
+    'Section=magic ' +
+    'Note="Knows the Fey Disappearance primal spell/+1 Focus Points"',
+  'Advanced Bloodline (Hag)':
+    'Section=magic ' +
+    'Note="Knows the Horrific Visage occult spell/+1 Focus Points"',
+  'Advanced Bloodline (Imperial)':
+    'Section=magic Note="Knows the Extend Spell arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Undead)':
+    'Section=magic Note="Knows the Drain Life divine spell/+1 Focus Points"',
   // Steady Spellcasting as above
   'Bloodline Resistance':
     'Section=save Note="+1 vs. spells and magical effects"',
   'Crossblooded Evolution':
     'Section=magic ' +
     'Note="May have 1 spell from a different tradition in repertoire"',
-  'Greater Bloodline':
-    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
+  'Greater Bloodline (Aberrant)':
+    'Section=magic ' +
+    'Note="Knows the Unusual Anatomy occult spell/+1 Focus Points"',
+  'Greater Bloodline (Angelic)':
+    'Section=magic ' +
+    'Note="Knows the Celestial Brand divine spell/+1 Focus Points"',
+  'Greater Bloodline (Demonic)':
+    'Section=magic Note="Knows the Abyssal Wrath divine spell/+1 Focus Points"',
+  'Greater Bloodline (Diabolic)':
+    'Section=magic ' +
+    'Note="Knows the Hellfire Plume divine spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic)':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Elemental)':
+    'Section=magic ' +
+    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+  'Greater Bloodline (Fey)':
+    'Section=magic Note="Knows the Fey Glamour primal spell/+1 Focus Points"',
+  'Greater Bloodline (Hag)':
+    'Section=magic Note="Knows the You\'re Mine occult spell/+1 Focus Points"',
+  'Greater Bloodline (Imperial)':
+    'Section=magic ' +
+    'Note="Knows the Arcane Countermeasure arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Undead)':
+    'Section=magic ' +
+    'Note="Knows the Grasping Grave divine spell/+1 Focus Points"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
@@ -6176,9 +6184,36 @@ Pathfinder2E.FEATURES = {
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
   'Basic Blood Potency':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
-  'Basic Bloodline Spell':
+  'Basic Bloodline Spell (Aberrant)':
     'Section=magic ' +
-    'Note="Knows the %V spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Tentacular Limbs occult spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Angelic)':
+    'Section=magic ' +
+    'Note="Knows the Angelic Halo divine spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Demonic)':
+    'Section=magic ' +
+    'Note="Knows the Glutton\'s Jaws divine spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Diabolic)':
+    'Section=magic ' +
+    'Note="Knows the Diabolic Edict divine spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic)':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Elemental)':
+    'Section=magic ' +
+    'Note="Knows the Elemental Toss primal spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Fey)':
+    'Section=magic ' +
+    'Note="Knows the Faerie Dust primal spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Hag)':
+    'Section=magic ' +
+    'Note="Knows the Jealous Hex occult spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Imperial)':
+    'Section=magic ' +
+    'Note="Knows the Ancestral Memories arcane spell/Has a focus pool with 1 Focus Point"',
+  'Basic Bloodline Spell (Undead)':
+    'Section=magic ' +
+    'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool with 1 Focus Point"',
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
@@ -12222,55 +12257,6 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
   }
 };
 
-Pathfinder2E.bloodlineRules = function(
-  rules, name, spellList, bloodlineSkills, grantedSpells, bloodlineSpells,
-  bloodMagic
-) {
-
-  let prefix =
-    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-
-  rules.defineRule('bloodlineTraditions',
-    'features.' + name, '=', '!dict.bloodlineTraditions ? "' + spellList + '" : !dict.bloodlineTraditions.includes("' + spellList + '") ? dict.bloodlineTraditions + "; ' + spellList + '" : dict.bloodlineTraditions'
-  );
-  [0, 1, 2].forEach(i => {
-    let spellName = bloodlineSpells[i];
-    let noteName =
-      ['basicBloodlineSpell', 'advancedBloodline', 'greaterBloodline'][i];
-    let spellLevel =
-      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Level');
-    let spellSchool =
-      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'School');
-    let spell =
-      spellName + ' (' + spellList.charAt(0) + spellLevel + ' ' +
-      spellSchool.substring(0, 3) + ')';
-    rules.defineRule('magicNotes.' + noteName,
-      'features.' + name, '=', '"' + bloodlineSpells[i] + '"'
-    );
-    rules.defineRule('spells.' + spell,
-      'magicNotes.' + noteName, '=', 'source=="' + bloodlineSpells[i] + '" ? 1 : null'
-    );
-    Pathfinder2E.spellRules(rules, spell,
-      spellSchool,
-      spellLevel,
-      spellList,
-      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Cast'),
-      QuilvynUtils.getAttrValueArray(Pathfinder2E.SPELLS[spellName], 'Trait'),
-      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spellName], 'Description').replaceAll('%tradition', spellList)
-    );
-  });
-  rules.defineRule('spellAbility.' + spellList,
-    'features.' + name, '=', '"charisma"'
-  );
-  rules.defineRule('spellModifier.' + name,
-    'features.' + name, '?', null,
-    'charismaModifier', '=', null
-  );
-  rules.defineRule
-    ('spellModifier.' + spellList, 'spellModifier.' + name, '=', null);
-
-};
-
 /*
  * Defines in #rules# the rules associated with class #name#, which has the
  * list of hard prerequisites #requires#. #abilities# lists the possible
@@ -12341,21 +12327,32 @@ Pathfinder2E.classRules = function(
       classLevel, '?', null,
       abilities[0] + 'Modifier', '=', null
     );
-    if('ADOP'.includes(spellSlots[0].charAt(0))) {
+    let firstChar = spellSlots[0].charAt(0);
+    if('ADOP'.includes(firstChar)) {
       QuilvynRules.spellSlotRules(rules, classLevel, spellSlots);
       let spellType =
-        {'A':'Arcane', 'D':'Divine', 'O':'Occult', 'P':'Primal'}[spellSlots[0].charAt(0)];
-      rules.defineRule
-        ('spellModifier.' + spellType, 'spellModifier.' + name, '=', null);
+        {'A':'Arcane', 'D':'Divine', 'O':'Occult', 'P':'Primal'}[firstChar];
       rules.defineRule('spellAbility.' + spellType,
         classLevel, '=', '"' + abilities[0] + '"'
       );
-    } else if('0123456789'.includes(spellSlots[0].charAt(0))) {
+      rules.defineRule
+        ('spellModifier.' + spellType, 'spellModifier.' + name, '=', null);
+    } else if('0123456789'.includes(firstChar)) {
+      // Sorcerer slots depend on bloodline. Generate rules here based on a
+      // tradition-specific level that is set by featureRules.
       ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
         let l = t.charAt(0);
         let tLevel = prefix + t + 'Level';
         let tSlots = spellSlots.map(x => l + x);
         QuilvynRules.spellSlotRules(rules, tLevel, tSlots);
+        rules.defineRule
+          ('spellAbility.' + t, tLevel, '=', '"' + abilities[0] + '"');
+        rules.defineRule('spellModifier' + t + '.' + name,
+          tLevel, '?', null,
+          'spellModifier.' + name, '=', null
+        );
+        rules.defineRule
+          ('spellModifier.' + t, 'spellModifier' + t + '.' + name, '=', null);
       });
     }
   }
@@ -12377,7 +12374,7 @@ Pathfinder2E.classRules = function(
       a = a.charAt(0).toUpperCase() + a.substring(1).toLowerCase();
       rules.defineRule('classDifficultyClass.' + name,
         modifier, '+', 'null', // recomputation trigger
-        prefix + 'Features.' + a, '+', '10 + dict["' + modifier + '"]'
+        prefix + 'Features.' + a, '+', '10 + dict.' + modifier
       );
       rules.defineRule('classDifficultyClass.' + name + '.1',
         prefix + 'Features.' + a, '=', '"' + a.toLowerCase() + '"'
@@ -13606,6 +13603,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       rules.defineRule('spellSlots.' + t.charAt(0) + '0',
         'magicNotes.sorcererDedication', '+=', 'source.includes("' + t + '") ? 2 : null'
       );
+      rules.defineRule('spellModifier' + t + '.' + name,
+        'features.Sorcerer Dedication', '?', null,
+        'bloodlineTraditions', '?', 'source && source.includes("' + t + '")',
+        'charismaModifier', '=', null
+      );
+      rules.defineRule
+        ('spellModifier.' + t, 'spellModifier' + t + '.' + name, '=', null);
     });
     // Suppress validation errors for selected bloodlines and the notes for
     // features of bloodlines that don't come with Sorcerer Dedication
@@ -13912,11 +13916,26 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         );
       }
       matchInfo = n.match(/Spell Trained \((.*)\)/);
-      if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name)) {
+      if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name + ':Bloodline')) {
         let trad = matchInfo[1];
         rules.defineRule('sorcerer' + trad + 'Level',
-          'features.' + name, '=', '0',
-          'levels.Sorcerer', '+', null
+          'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+          'levels.Sorcerer', '=', null
+        );
+        rules.defineRule('bloodlineTraditions',
+          'features.' + name, '=', '!dict.bloodlineTraditions ? "' + trad + '" : !dict.bloodlineTraditions.includes("' + trad + '") ? dict.bloodlineTraditions + "; ' + trad + '" : dict.bloodlineTraditions'
+        );
+        rules.defineRule('features.Advanced Bloodline (' + name + ')',
+          'features.Advanced Bloodline', '?', null,
+          'features.' + name, '=', '1'
+        );
+        rules.defineRule('features.Basic Bloodline Spell (' + name + ')',
+          'features.Basic Bloodline Spell', '?', null,
+          'features.' + name, '=', '1'
+        );
+        rules.defineRule('features.Greater Bloodline (' + name + ')',
+          'features.Greater Bloodline', '?', null,
+          'features.' + name, '=', '1'
         );
       }
     });
