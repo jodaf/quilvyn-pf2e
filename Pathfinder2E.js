@@ -63,8 +63,7 @@ function Pathfinder2E() {
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
     (rules, Pathfinder2E.ARMORS, Pathfinder2E.SHIELDS, Pathfinder2E.WEAPONS);
-  Pathfinder2E.magicRules
-    (rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS, Pathfinder2E.DOMAINS);
+  Pathfinder2E.magicRules(rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
     Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
@@ -84,8 +83,8 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
-  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Domain', 'Feat',
-  'Feature', 'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
+  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Feat', 'Feature',
+  'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -95,7 +94,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
-  'levels', 'boosts', 'features', 'feats', 'skills', 'languages',
+  'levels', 'boosts', 'selectableFeatures', 'feats', 'skills', 'languages',
   'armor', 'weapons', 'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
@@ -1003,46 +1002,6 @@ Pathfinder2E.DEITIES = {
     'Domain=Ambition,Darkness,Destruction,Pain ' +
     'Spells="1:Phantom Pain","3:Wall Of Thorns","5:Shadow Walk"'
 };
-Pathfinder2E.DOMAINS = {
-  'Air':'Spell="Pushing Gust" AdvancedSpell="Disperse Into Air"',
-  'Ambition':'Spell="Blind Ambition" AdvancedSpell="Competitive Edge"',
-  'Cities':'Spell="Face In The Crowd" AdvancedSpell="Pulse Of The City"',
-  'Confidence':'Spell="Veil Of Confidence" AdvancedSpell="Delusional Pride"',
-  'Creation':'Spell="Splash Of Art" AdvancedSpell="Artistic Flourish"',
-  'Darkness':'Spell="Cloak Of Shadow" AdvancedSpell="Darkened Eyes"',
-  'Death':'Spell="Death\'s Call" AdvancedSpell="Eradicate Undeath"',
-  'Destruction':'Spell="Cry Of Destruction" AdvancedSpell="Destructive Aura"',
-  'Dreams':'Spell="Sweet Dream" AdvancedSpell="Dreamer\'s Call"',
-  'Earth':'Spell="Hurtling Stone" AdvancedSpell="Localized Quake"',
-  'Family':'Spell="Soothing Words" AdvancedSpell="Unity"',
-  'Fate':'Spell="Read Fate" AdvancedSpell="Tempt Fate"',
-  'Fire':'Spell="Fire Ray" AdvancedSpell="Flame Barrier"',
-  'Freedom':'Spell="Unimpeded Stride" AdvancedSpell="Word Of Freedom"',
-  'Healing':'Spell="Healer\'s Blessing" AdvancedSpell="Rebuke Death"',
-  'Indulgence':'Spell="Overstuff" AdvancedSpell="Take Its Course"',
-  'Knowledge':'Spell="Scholarly Recollection" AdvancedSpell="Know The Enemy"',
-  'Luck':'Spell="Bit Of Luck" AdvancedSpell="Lucky Break"',
-  'Magic':'Spell="Magic\'s Vessel" AdvancedSpell="Mystic Beacon"',
-  'Might':'Spell="Athletic Rush" AdvancedSpell="Enduring Might"',
-  'Moon':'Spell="Moonbeam" AdvancedSpell="Touch Of The Moon"',
-  'Nature':'Spell="Vibrant Thorns" AdvancedSpell="Nature\'s Bounty"',
-  'Nightmares':'Spell="Waking Nightmare" AdvancedSpell="Shared Nightmare"',
-  'Pain':'Spell="Savor The Sting" AdvancedSpell="Retributive Pain"',
-  'Passion':'Spell="Charming Touch" AdvancedSpell="Captivating Adoration"',
-  'Perfection':'Spell="Perfected Mind" AdvancedSpell="Perfected Form"',
-  'Protection':
-    'Spell="Protector\'s Sacrifice" AdvancedSpell="Protector\'s Sphere"',
-  'Secrecy':'Spell="Forced Quiet" AdvancedSpell="Safeguard Secret"',
-  'Sun':'Spell="Dazzling Flash" AdvancedSpell="Positive Luminance"',
-  'Travel':'Spell="Agile Feet" AdvancedSpell="Traveler\'s Transit"',
-  'Trickery':'Spell="Sudden Shift" AdvancedSpell="Trickster\'s Twin"',
-  'Truth':'Spell="Word Of Truth" AdvancedSpell="Glimpse The Truth"',
-  'Tyranny':'Spell="Touch Of Obedience" AdvancedSpell="Commanding Lash"',
-  'Undeath':'Spell="Touch Of Undeath" AdvancedSpell="Malignant Sustenance"',
-  'Water':'Spell="Tidal Surge" AdvancedSpell="Downpour"',
-  'Wealth':'Spell="Appearance Of Wealth" AdvancedSpell="Precious Metals"',
-  'Zeal':'Spell="Weapon Surge" AdvancedSpell="Zeal For Battle"'
-};
 Pathfinder2E.FEATS = {
 
   // Ancestries
@@ -1421,8 +1380,80 @@ Pathfinder2E.FEATS = {
   'Symphony Of The Muse':
     'Trait=Class,Bard Require="level >= 20","features.Harmonize"',
 
-  "Deity's Domain (%domain)":
-    'Trait=Class,Champion Require="deityDomains =~ \'%domain\'"',
+  "Deity's Domain (Air)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Air\'"',
+  "Deity's Domain (Ambition)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Ambition\'"',
+  "Deity's Domain (Cities)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Cities\'"',
+  "Deity's Domain (Confidence)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Confidence\'"',
+  "Deity's Domain (Creation)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Creation\'"',
+  "Deity's Domain (Darkness)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Darkness\'"',
+  "Deity's Domain (Death)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Death\'"',
+  "Deity's Domain (Destruction)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Destruction\'"',
+  "Deity's Domain (Dreams)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Dreams\'"',
+  "Deity's Domain (Earth)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Earth\'"',
+  "Deity's Domain (Family)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Family\'"',
+  "Deity's Domain (Fate)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Fate\'"',
+  "Deity's Domain (Fire)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Fire\'"',
+  "Deity's Domain (Freedom)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Freedom\'"',
+  "Deity's Domain (Healing)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Healing\'"',
+  "Deity's Domain (Indulgence)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Indulgence\'"',
+  "Deity's Domain (Knowledge)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Knowledge\'"',
+  "Deity's Domain (Luck)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Luck\'"',
+  "Deity's Domain (Magic)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Magic\'"',
+  "Deity's Domain (Might)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Might\'"',
+  "Deity's Domain (Moon)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Moon\'"',
+  "Deity's Domain (Nature)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Nature\'"',
+  "Deity's Domain (Nightmares)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Nightmares\'"',
+  "Deity's Domain (Pain)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Pain\'"',
+  "Deity's Domain (Passion)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Passion\'"',
+  "Deity's Domain (Perfection)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Perfection\'"',
+  "Deity's Domain (Protection)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Protection\'"',
+  "Deity's Domain (Secrecy)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Secrecy\'"',
+  "Deity's Domain (Sun)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Sun\'"',
+  "Deity's Domain (Travel)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Travel\'"',
+  "Deity's Domain (Trickery)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Trickery\'"',
+  "Deity's Domain (Truth)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Truth\'"',
+  "Deity's Domain (Tyranny)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Tyranny\'"',
+  "Deity's Domain (Undeath)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Undeath\'"',
+  "Deity's Domain (Water)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Water\'"',
+  "Deity's Domain (Wealth)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Wealth\'"',
+  "Deity's Domain (Zeal)":
+    'Trait=Class,Champion Require="deityDomains =~ \'Zeal\'"',
   'Ranged Reprisal':'Trait=Class,Champion Require="features.Paladin"',
   'Unimpeded Step':'Trait=Class,Champion Require="features.Liberator"',
   'Weight Of Guilt':'Trait=Class,Champion Require="features.Redeemer"',
@@ -1464,11 +1495,191 @@ Pathfinder2E.FEATS = {
       '"level >= 6",' +
       '"features.Divine Ally (Blade)",' +
       '"features.The Tenets Of Good"',
-  "Advanced Deity's Domain (%domain)":
+  "Advanced Deity's Domain (Air)":
     'Trait=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
-      '"features.Deity\'s Domain (%domain)"',
+      '"features.Deity\'s Domain (Air)"',
+  "Advanced Deity's Domain (Ambition)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Ambition)"',
+  "Advanced Deity's Domain (Cities)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Cities)"',
+  "Advanced Deity's Domain (Confidence)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Confidence)"',
+  "Advanced Deity's Domain (Creation)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Creation)"',
+  "Advanced Deity's Domain (Darkness)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Darkness)"',
+  "Advanced Deity's Domain (Death)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Death)"',
+  "Advanced Deity's Domain (Destruction)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Destruction)"',
+  "Advanced Deity's Domain (Dreams)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Dreams)"',
+  "Advanced Deity's Domain (Earth)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Earth)"',
+  "Advanced Deity's Domain (Family)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Family)"',
+  "Advanced Deity's Domain (Fate)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Fate)"',
+  "Advanced Deity's Domain (Fire)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Fire)"',
+  "Advanced Deity's Domain (Freedom)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Freedom)"',
+  "Advanced Deity's Domain (Healing)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Healing)"',
+  "Advanced Deity's Domain (Indulgence)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Indulgence)"',
+  "Advanced Deity's Domain (Knowledge)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Knowledge)"',
+  "Advanced Deity's Domain (Luck)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Luck)"',
+  "Advanced Deity's Domain (Magic)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Magic)"',
+  "Advanced Deity's Domain (Might)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Might)"',
+  "Advanced Deity's Domain (Moon)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Moon)"',
+  "Advanced Deity's Domain (Nature)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Nature)"',
+  "Advanced Deity's Domain (Nightmares)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Nightmares)"',
+  "Advanced Deity's Domain (Pain)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Pain)"',
+  "Advanced Deity's Domain (Passion)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Passion)"',
+  "Advanced Deity's Domain (Perfection)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Perfection)"',
+  "Advanced Deity's Domain (Protection)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Protection)"',
+  "Advanced Deity's Domain (Secrecy)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Secrecy)"',
+  "Advanced Deity's Domain (Sun)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Sun)"',
+  "Advanced Deity's Domain (Travel)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Travel)"',
+  "Advanced Deity's Domain (Trickery)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Trickery)"',
+  "Advanced Deity's Domain (Truth)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Truth)"',
+  "Advanced Deity's Domain (Tyranny)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Tyranny)"',
+  "Advanced Deity's Domain (Undeath)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Undeath)"',
+  "Advanced Deity's Domain (Water)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Water)"',
+  "Advanced Deity's Domain (Wealth)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Wealth)"',
+  "Advanced Deity's Domain (Zeal)":
+    'Trait=Class,Champion ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Deity\'s Domain (Zeal)"',
   'Greater Mercy':'Trait=Class,Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':
     'Trait=Class,Champion ' +
@@ -1568,8 +1779,80 @@ Pathfinder2E.FEATS = {
 
   'Deadly Simplicity':
     'Trait=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
-  'Domain Initiate (%domain)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'%domain\'"',
+  'Domain Initiate (Air)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Air\'"',
+  'Domain Initiate (Ambition)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Ambition\'"',
+  'Domain Initiate (Cities)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Cities\'"',
+  'Domain Initiate (Confidence)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Confidence\'"',
+  'Domain Initiate (Creation)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Creation\'"',
+  'Domain Initiate (Darkness)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Darkness\'"',
+  'Domain Initiate (Death)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Death\'"',
+  'Domain Initiate (Destruction)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Destruction\'"',
+  'Domain Initiate (Dreams)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Dreams\'"',
+  'Domain Initiate (Earth)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Earth\'"',
+  'Domain Initiate (Family)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Family\'"',
+  'Domain Initiate (Fate)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Fate\'"',
+  'Domain Initiate (Fire)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Fire\'"',
+  'Domain Initiate (Freedom)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Freedom\'"',
+  'Domain Initiate (Healing)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Healing\'"',
+  'Domain Initiate (Indulgence)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Indulgence\'"',
+  'Domain Initiate (Knowledge)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Knowledge\'"',
+  'Domain Initiate (Luck)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Luck\'"',
+  'Domain Initiate (Magic)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Magic\'"',
+  'Domain Initiate (Might)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Might\'"',
+  'Domain Initiate (Moon)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Moon\'"',
+  'Domain Initiate (Nature)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Nature\'"',
+  'Domain Initiate (Nightmares)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Nightmares\'"',
+  'Domain Initiate (Pain)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Pain\'"',
+  'Domain Initiate (Passion)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Passion\'"',
+  'Domain Initiate (Perfection)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Perfection\'"',
+  'Domain Initiate (Protection)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Protection\'"',
+  'Domain Initiate (Secrecy)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Secrecy\'"',
+  'Domain Initiate (Sun)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Sun\'"',
+  'Domain Initiate (Travel)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Travel\'"',
+  'Domain Initiate (Trickery)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Trickery\'"',
+  'Domain Initiate (Truth)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Truth\'"',
+  'Domain Initiate (Tyranny)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Tyranny\'"',
+  'Domain Initiate (Undeath)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Undeath\'"',
+  'Domain Initiate (Water)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Water\'"',
+  'Domain Initiate (Wealth)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Wealth\'"',
+  'Domain Initiate (Zeal)':
+    'Trait=Class,Cleric Require="deityDomains =~ \'Zeal\'"',
   'Harming Hands':'Trait=Class,Cleric Require="features.Harmful Font"',
   'Healing Hands':'Trait=Class,Cleric Require="features.Healing Font"',
   'Holy Castigation':'Trait=Class,Cleric Require="alignment =~ \'Good\'"',
@@ -1603,9 +1886,117 @@ Pathfinder2E.FEATS = {
   'Divine Weapon':'Trait=Class,Cleric Require="level >= 6"',
   'Selective Energy':'Trait=Class,Cleric Require="level >= 6"',
   // Steady Spellcasting as above
-  'Advanced Domain (%domain)':
+  'Advanced Domain (Air)':
     'Trait=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (%domain)"',
+    'Require="level >= 8","features.Domain Initiate (Air)"',
+  'Advanced Domain (Ambition)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Ambition)"',
+  'Advanced Domain (Cities)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Cities)"',
+  'Advanced Domain (Confidence)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Confidence)"',
+  'Advanced Domain (Creation)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Creation)"',
+  'Advanced Domain (Darkness)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Darkness)"',
+  'Advanced Domain (Death)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Death)"',
+  'Advanced Domain (Destruction)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Destruction)"',
+  'Advanced Domain (Dreams)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Dreams)"',
+  'Advanced Domain (Earth)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Earth)"',
+  'Advanced Domain (Family)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Family)"',
+  'Advanced Domain (Fate)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Fate)"',
+  'Advanced Domain (Fire)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Fire)"',
+  'Advanced Domain (Freedom)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Freedom)"',
+  'Advanced Domain (Healing)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Healing)"',
+  'Advanced Domain (Indulgence)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Indulgence)"',
+  'Advanced Domain (Knowledge)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Knowledge)"',
+  'Advanced Domain (Luck)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Luck)"',
+  'Advanced Domain (Magic)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Magic)"',
+  'Advanced Domain (Might)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Might)"',
+  'Advanced Domain (Moon)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Moon)"',
+  'Advanced Domain (Nature)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Nature)"',
+  'Advanced Domain (Nightmares)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Nightmares)"',
+  'Advanced Domain (Pain)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Pain)"',
+  'Advanced Domain (Passion)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Passion)"',
+  'Advanced Domain (Perfection)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Perfection)"',
+  'Advanced Domain (Protection)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Protection)"',
+  'Advanced Domain (Secrecy)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Secrecy)"',
+  'Advanced Domain (Sun)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Sun)"',
+  'Advanced Domain (Travel)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Travel)"',
+  'Advanced Domain (Trickery)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Trickery)"',
+  'Advanced Domain (Truth)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Truth)"',
+  'Advanced Domain (Tyranny)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Tyranny)"',
+  'Advanced Domain (Undeath)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Undeath)"',
+  'Advanced Domain (Water)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Water)"',
+  'Advanced Domain (Wealth)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Wealth)"',
+  'Advanced Domain (Zeal)':
+    'Trait=Class,Cleric ' +
+    'Require="level >= 8","features.Domain Initiate (Zeal)"',
   'Align Armament (Chaotic)':
     'Trait=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'C\'"',
@@ -1641,7 +2032,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 12","features.Harmful Font || features.Healing Font"',
   'Domain Focus':
-    'Trait=Class,Cleric Require="level >= 12",domain',
+    'Trait=Class,Cleric Require="level >= 12","features.Domain Initiate"',
   'Emblazon Antimagic':
     'Trait=Class,Cleric Require="level >= 12","features.Emblazon Armament"',
   'Shared Replenishment':
@@ -3904,6 +4295,117 @@ Pathfinder2E.FEATURES = {
 
   // Champion
   // Alertness as above
+  "Advanced Deity's Domain (Air)":
+    'Section=magic ' +
+    'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Ambition)":
+    'Section=magic ' +
+    'Note="Knows the Competitive Edge divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Cities)":
+    'Section=magic ' +
+    'Note="Knows the Pulse Of The City divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Confidence)":
+    'Section=magic ' +
+    'Note="Knows the Delusional Pride divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Creation)":
+    'Section=magic ' +
+    'Note="Knows the Artistic Flourish divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Darkness)":
+    'Section=magic ' +
+    'Note="Knows the Darkened Eyes divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Death)":
+    'Section=magic ' +
+    'Note="Knows the Eradicate Undeath divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Destruction)":
+    'Section=magic ' +
+    'Note="Knows the Destructive Aura divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Dreams)":
+    'Section=magic ' +
+    'Note="Knows the Dreamer\'s Call divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Earth)":
+    'Section=magic ' +
+    'Note="Knows the Localized Quake divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Family)":
+    'Section=magic ' +
+    'Note="Knows the Unity divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Fate)":
+    'Section=magic ' +
+    'Note="Knows the Tempt Fate divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Fire)":
+    'Section=magic ' +
+    'Note="Knows the Flame Barrier divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Freedom)":
+    'Section=magic ' +
+    'Note="Knows the Word Of Freedom divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Healing)":
+    'Section=magic ' +
+    'Note="Knows the Rebuke Death divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Indulgence)":
+    'Section=magic ' +
+    'Note="Knows the Take Its Course divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Knowledge)":
+    'Section=magic ' +
+    'Note="Knows the Know The Enemy divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Luck)":
+    'Section=magic ' +
+    'Note="Knows the Lucky Break divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Magic)":
+    'Section=magic ' +
+    'Note="Knows the Mystic Beacon divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Might)":
+    'Section=magic ' +
+    'Note="Knows the Enduring Might divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Moon)":
+    'Section=magic ' +
+    'Note="Knows the Touch Of The Moon divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Nature)":
+    'Section=magic ' +
+    'Note="Knows the Nature\'s Bounty divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Nightmares)":
+    'Section=magic ' +
+    'Note="Knows the Shared Nightmare divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Pain)":
+    'Section=magic ' +
+    'Note="Knows the Retributive Pain divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Passion)":
+    'Section=magic ' +
+    'Note="Knows the Captivating Adoration divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Perfection)":
+    'Section=magic ' +
+    'Note="Knows the Perfected Form divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Protection)":
+    'Section=magic ' +
+    'Note="Knows the Protector\'s Sphere divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Secrecy)":
+    'Section=magic ' +
+    'Note="Knows the Safeguard Secret divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Sun)":
+    'Section=magic ' +
+    'Note="Knows the Positive Luminance divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Travel)":
+    'Section=magic ' +
+    'Note="Knows the Traveler\'s Transit divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Trickery)":
+    'Section=magic ' +
+    'Note="Knows the Trickster\'s Twin divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Truth)":
+    'Section=magic ' +
+    'Note="Knows the Glimpse The Truth divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Tyranny)":
+    'Section=magic ' +
+    'Note="Knows the Commanding Lash divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Undeath)":
+    'Section=magic ' +
+    'Note="Knows the Malignant Sustenance divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Water)":
+    'Section=magic ' +
+    'Note="Knows the Downpour divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Wealth)":
+    'Section=magic ' +
+    'Note="Knows the Precious Metals divine spell/+1 Focus Points"',
+  "Advanced Deity's Domain (Zeal)":
+    'Section=magic ' +
+    'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
   'Armor Expertise':
     'Section=combat,combat ' +
     'Note=' +
@@ -3940,6 +4442,78 @@ Pathfinder2E.FEATURES = {
       '"1 selection",' +
       '"Has access to %V spells",' +
       '"Skill Trained (%V)"',
+  "Deity's Domain (Air)":
+    'Section=magic Note="Knows the Pushing Gust divine spell"',
+  "Deity's Domain (Ambition)":
+    'Section=magic Note="Knows the Blind Ambition divine spell"',
+  "Deity's Domain (Cities)":
+    'Section=magic Note="Knows the Face In The Crowd divine spell"',
+  "Deity's Domain (Confidence)":
+    'Section=magic Note="Knows the Veil Of Confidence divine spell"',
+  "Deity's Domain (Creation)":
+    'Section=magic Note="Knows the Splash Of Art divine spell"',
+  "Deity's Domain (Darkness)":
+    'Section=magic Note="Knows the Cloak Of Shadow divine spell"',
+  "Deity's Domain (Death)":
+    'Section=magic Note="Knows the Death\'s Call divine spell"',
+  "Deity's Domain (Destruction)":
+    'Section=magic Note="Knows the Cry Of Destruction divine spell"',
+  "Deity's Domain (Dreams)":
+    'Section=magic Note="Knows the Sweet Dream divine spell"',
+  "Deity's Domain (Earth)":
+    'Section=magic Note="Knows the Hurtling Stone divine spell"',
+  "Deity's Domain (Family)":
+    'Section=magic Note="Knows the Soothing Words divine spell"',
+  "Deity's Domain (Fate)":
+    'Section=magic Note="Knows the Read Fate divine spell"',
+  "Deity's Domain (Fire)":
+    'Section=magic Note="Knows the Fire Ray divine spell"',
+  "Deity's Domain (Freedom)":
+    'Section=magic Note="Knows the Unimpeded Stride divine spell"',
+  "Deity's Domain (Healing)":
+    'Section=magic Note="Knows the Healer\'s Blessing divine spell"',
+  "Deity's Domain (Indulgence)":
+    'Section=magic Note="Knows the Overstuff divine spell"',
+  "Deity's Domain (Luck)":
+    'Section=magic Note="Knows the Bit Of Luck divine spell"',
+  "Deity's Domain (Magic)":
+    'Section=magic Note="Knows the Magic\'s Vessel divine spell"',
+  "Deity's Domain (Might)":
+    'Section=magic Note="Knows the Athletic Rush divine spell"',
+  "Deity's Domain (Moon)":
+    'Section=magic Note="Knows the Moonbeam divine spell"',
+  "Deity's Domain (Nature)":
+    'Section=magic Note="Knows the Vibrant Thorns divine spell"',
+  "Deity's Domain (Nightmares)":
+    'Section=magic Note="Knows the Waking Nightmare divine spell"',
+  "Deity's Domain (Pain)":
+    'Section=magic Note="Knows the Savor The Sting divine spell"',
+  "Deity's Domain (Passion)":
+    'Section=magic Note="Knows the Charming Touch divine spell"',
+  "Deity's Domain (Perfection)":
+    'Section=magic Note="Knows the Perfected Mind divine spell"',
+  "Deity's Domain (Protection)":
+    'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
+  "Deity's Domain (Secrecy)":
+    'Section=magic Note="Knows the Forced Quiet divine spell"',
+  "Deity's Domain (Sun)":
+    'Section=magic Note="Knows the Dazzling Flash divine spell"',
+  "Deity's Domain (Travel)":
+    'Section=magic Note="Knows the Agile Feet divine spell"',
+  "Deity's Domain (Trickery)":
+    'Section=magic Note="Knows the Sudden Shift divine spell"',
+  "Deity's Domain (Truth)":
+    'Section=magic Note="Knows the Word Of Truth divine spell"',
+  "Deity's Domain (Tyranny)":
+    'Section=magic Note="Knows the Touch Of Obedience divine spell"',
+  "Deity's Domain (Undeath)":
+    'Section=magic Note="Knows the Touch Of Undeath divine spell"',
+  "Deity's Domain (Water)":
+    'Section=magic Note="Knows the Tidal Surge divine spell"',
+  "Deity's Domain (Wealth)":
+    'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
+  "Deity's Domain (Zeal)":
+    'Section=magic Note="Knows the Weapon Surge divine spell"',
   'Devotion Spells':
     'Section=magic Note="Has a focus pool with 1 Focus Point"',
   'Divine Ally':
@@ -4169,6 +4743,117 @@ Pathfinder2E.FEATURES = {
 
   // Cleric
   // Alertness as above
+  'Advanced Domain (Air)':
+    'Section=magic ' +
+    'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
+  'Advanced Domain (Ambition)':
+    'Section=magic ' +
+    'Note="Knows the Competitive Edge divine spell/+1 Focus Points"',
+  'Advanced Domain (Cities)':
+    'Section=magic ' +
+    'Note="Knows the Pulse Of The City divine spell/+1 Focus Points"',
+  'Advanced Domain (Confidence)':
+    'Section=magic ' +
+    'Note="Knows the Delusional Pride divine spell/+1 Focus Points"',
+  'Advanced Domain (Creation)':
+    'Section=magic ' +
+    'Note="Knows the Artistic Flourish divine spell/+1 Focus Points"',
+  'Advanced Domain (Darkness)':
+    'Section=magic ' +
+    'Note="Knows the Darkened Eyes divine spell/+1 Focus Points"',
+  'Advanced Domain (Death)':
+    'Section=magic ' +
+    'Note="Knows the Eradicate Undeath divine spell/+1 Focus Points"',
+  'Advanced Domain (Destruction)':
+    'Section=magic ' +
+    'Note="Knows the Destructive Aura divine spell/+1 Focus Points"',
+  'Advanced Domain (Dreams)':
+    'Section=magic ' +
+    'Note="Knows the Dreamer\'s Call divine spell/+1 Focus Points"',
+  'Advanced Domain (Earth)':
+    'Section=magic ' +
+    'Note="Knows the Localized Quake divine spell/+1 Focus Points"',
+  'Advanced Domain (Family)':
+    'Section=magic ' +
+    'Note="Knows the Unity divine spell/+1 Focus Points"',
+  'Advanced Domain (Fate)':
+    'Section=magic ' +
+    'Note="Knows the Tempt Fate divine spell/+1 Focus Points"',
+  'Advanced Domain (Fire)':
+    'Section=magic ' +
+    'Note="Knows the Flame Barrier divine spell/+1 Focus Points"',
+  'Advanced Domain (Freedom)':
+    'Section=magic ' +
+    'Note="Knows the Word Of Freedom divine spell/+1 Focus Points"',
+  'Advanced Domain (Healing)':
+    'Section=magic ' +
+    'Note="Knows the Rebuke Death divine spell/+1 Focus Points"',
+  'Advanced Domain (Indulgence)':
+    'Section=magic ' +
+    'Note="Knows the Take Its Course divine spell/+1 Focus Points"',
+  'Advanced Domain (Knowledge)':
+    'Section=magic ' +
+    'Note="Knows the Know The Enemy divine spell/+1 Focus Points"',
+  'Advanced Domain (Luck)':
+    'Section=magic ' +
+    'Note="Knows the Lucky Break divine spell/+1 Focus Points"',
+  'Advanced Domain (Magic)':
+    'Section=magic ' +
+    'Note="Knows the Mystic Beacon divine spell/+1 Focus Points"',
+  'Advanced Domain (Might)':
+    'Section=magic ' +
+    'Note="Knows the Enduring Might divine spell/+1 Focus Points"',
+  'Advanced Domain (Moon)':
+    'Section=magic ' +
+    'Note="Knows the Touch Of The Moon divine spell/+1 Focus Points"',
+  'Advanced Domain (Nature)':
+    'Section=magic ' +
+    'Note="Knows the Nature\'s Bounty divine spell/+1 Focus Points"',
+  'Advanced Domain (Nightmares)':
+    'Section=magic ' +
+    'Note="Knows the Shared Nightmare divine spell/+1 Focus Points"',
+  'Advanced Domain (Pain)':
+    'Section=magic ' +
+    'Note="Knows the Retributive Pain divine spell/+1 Focus Points"',
+  'Advanced Domain (Passion)':
+    'Section=magic ' +
+    'Note="Knows the Captivating Adoration divine spell/+1 Focus Points"',
+  'Advanced Domain (Perfection)':
+    'Section=magic ' +
+    'Note="Knows the Perfected Form divine spell/+1 Focus Points"',
+  'Advanced Domain (Protection)':
+    'Section=magic ' +
+    'Note="Knows the Protector\'s Sphere divine spell/+1 Focus Points"',
+  'Advanced Domain (Secrecy)':
+    'Section=magic ' +
+    'Note="Knows the Safeguard Secret divine spell/+1 Focus Points"',
+  'Advanced Domain (Sun)':
+    'Section=magic ' +
+    'Note="Knows the Positive Luminance divine spell/+1 Focus Points"',
+  'Advanced Domain (Travel)':
+    'Section=magic ' +
+    'Note="Knows the Traveler\'s Transit divine spell/+1 Focus Points"',
+  'Advanced Domain (Trickery)':
+    'Section=magic ' +
+    'Note="Knows the Trickster\'s Twin divine spell/+1 Focus Points"',
+  'Advanced Domain (Truth)':
+    'Section=magic ' +
+    'Note="Knows the Glimpse The Truth divine spell/+1 Focus Points"',
+  'Advanced Domain (Tyranny)':
+    'Section=magic ' +
+    'Note="Knows the Commanding Lash divine spell/+1 Focus Points"',
+  'Advanced Domain (Undeath)':
+    'Section=magic ' +
+    'Note="Knows the Malignant Sustenance divine spell/+1 Focus Points"',
+  'Advanced Domain (Water)':
+    'Section=magic ' +
+    'Note="Knows the Downpour divine spell/+1 Focus Points"',
+  'Advanced Domain (Wealth)':
+    'Section=magic ' +
+    'Note="Knows the Precious Metals divine spell/+1 Focus Points"',
+  'Advanced Domain (Zeal)':
+    'Section=magic ' +
+    'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
   'Anathema':
     'Section=feature ' +
     'Note="May not perform acts or cast spells prohibited by %{levels.Druid?\'druidic order\'+($\'features.Order Explorer\'?\'s\':\'\'):levels.Barbarian?\'barbarian instinct\':deity}"',
@@ -4194,6 +4879,114 @@ Pathfinder2E.FEATURES = {
   'Divine Spellcasting':
     'Section=magic Note="May learn spells from the divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
+  'Domain Initiate (Air)':
+    'Section=magic ' +
+    'Note="Knows the Pushing Gust divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Ambition)':
+    'Section=magic ' +
+    'Note="Knows the Blind Ambition divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Cities)':
+    'Section=magic ' +
+    'Note="Knows the Face In The Crowd divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Confidence)':
+    'Section=magic ' +
+    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Creation)':
+    'Section=magic ' +
+    'Note="Knows the Splash Of Art divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Darkness)':
+    'Section=magic ' +
+    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Death)':
+    'Section=magic ' +
+    'Note="Knows the Death\'s Call divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Destruction)':
+    'Section=magic ' +
+    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Dreams)':
+    'Section=magic ' +
+    'Note="Knows the Sweet Dream divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Earth)':
+    'Section=magic ' +
+    'Note="Knows the Hurtling Stone divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Family)':
+    'Section=magic ' +
+    'Note="Knows the Soothing Words divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Fate)':
+    'Section=magic ' +
+    'Note="Knows the Read Fate divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Fire)':
+    'Section=magic ' +
+    'Note="Knows the Fire Ray divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Freedom)':
+    'Section=magic ' +
+    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Healing)':
+    'Section=magic ' +
+    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Indulgence)':
+    'Section=magic ' +
+    'Note="Knows the Overstuff divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Luck)':
+    'Section=magic ' +
+    'Note="Knows the Bit Of Luck divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Magic)':
+    'Section=magic ' +
+    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Might)':
+    'Section=magic ' +
+    'Note="Knows the Athletic Rush divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Moon)':
+    'Section=magic ' +
+    'Note="Knows the Moonbeam divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Nature)':
+    'Section=magic ' +
+    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Nightmares)':
+    'Section=magic ' +
+    'Note="Knows the Waking Nightmare divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Pain)':
+    'Section=magic ' +
+    'Note="Knows the Savor The Sting divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Passion)':
+    'Section=magic ' +
+    'Note="Knows the Charming Touch divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Perfection)':
+    'Section=magic ' +
+    'Note="Knows the Perfected Mind divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Protection)':
+    'Section=magic ' +
+    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Secrecy)':
+    'Section=magic ' +
+    'Note="Knows the Forced Quiet divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Sun)':
+    'Section=magic ' +
+    'Note="Knows the Dazzling Flash divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Travel)':
+    'Section=magic ' +
+    'Note="Knows the Agile Feet divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Trickery)':
+    'Section=magic ' +
+    'Note="Knows the Sudden Shift divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Truth)':
+    'Section=magic ' +
+    'Note="Knows the Word Of Truth divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Tyranny)':
+    'Section=magic ' +
+    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Undeath)':
+    'Section=magic ' +
+    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Water)':
+    'Section=magic ' +
+    'Note="Knows the Tidal Surge divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Wealth)':
+    'Section=magic ' +
+    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool with 1 Focus Point"',
+  'Domain Initiate (Zeal)':
+    'Section=magic ' +
+    'Note="Knows the Weapon Surge divine spell/Has a focus pool with 1 Focus Point"',
   'Harmful Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   'Healing Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   // Lightning Reflexes as above
@@ -11494,19 +12287,16 @@ Pathfinder2E.identityRules = function(
 };
 
 /* Defines rules related to magic use. */
-Pathfinder2E.magicRules = function(rules, schools, spells, domains) {
+Pathfinder2E.magicRules = function(rules, schools, spells) {
 
   QuilvynUtils.checkAttrTable(schools, ['Spell', 'AdvancedSpell']);
   QuilvynUtils.checkAttrTable
     (spells, ['School', 'Level', 'Traditions', 'Cast', 'Description', 'Trait']);
-  QuilvynUtils.checkAttrTable(domains, ['Spell', 'AdvancedSpell']);
 
   for(let s in schools)
     rules.choiceRules(rules, 'School', s, schools[s]);
   for(let s in spells)
     rules.choiceRules(rules, 'Spell', s, spells[s]);
-  for(let d in domains)
-    rules.choiceRules(rules, 'Domain', d, domains[d]);
 
   ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
     let innate = t + ' Innate';
@@ -11742,11 +12532,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Weapon'),
       QuilvynUtils.getAttrValue(attrs, 'Skill'),
       QuilvynUtils.getAttrValueArray(attrs, 'Spells')
-    );
-  else if(type == 'Domain')
-    Pathfinder2E.domainRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Spell'),
-      QuilvynUtils.getAttrValue(attrs, 'AdvancedSpell')
     );
   else if(type == 'Feat') {
     Pathfinder2E.featRules(rules, name,
@@ -12869,12 +13654,6 @@ Pathfinder2E.deityRules = function(
     console.log('Bad domains list "' + domains + '" for deity ' + name);
     return;
   }
-  domains.forEach(d => {
-    if(!(d in rules.getChoices('domains'))) {
-      console.log('Unknown domain "' + d + '" for deity ' + name);
-      return;
-    }
-  });
   if(weapon && typeof(weapon) != 'string') {
     console.log('Bad weapon "' + weapon + '" for deity ' + name);
     return;
@@ -12968,42 +13747,6 @@ Pathfinder2E.deityRules = function(
 };
 
 /*
- * Defines in #rules# the rules associated with domain #name#. #spell# and
- * #advancedSpell# designate the spells associated with the domain.
- */
-Pathfinder2E.domainRules = function(rules, name, spell, advancedSpell) {
-
-  Pathfinder2E.featureRules(
-    rules, "Advanced Deity's Domain (" + name + ')', ['magic'],
-    ['Knows the ' + advancedSpell + ' divine spell/+1 Focus Points'], null
-  );
-  Pathfinder2E.featureRules(
-    rules, 'Advanced Domain (' + name + ')', ['magic'],
-    ['Knows the ' + advancedSpell + ' divine spell/+1 Focus Points'], null
-  );
-  Pathfinder2E.featureRules(
-    rules, "Deity's Domain (" + name + ')', ['magic'],
-     ['Knows the ' + spell + ' divine spell'], null
-  );
-  Pathfinder2E.featureRules(
-    rules, 'Domain Initiate (' + name + ')', ['magic'],
-    ['Knows the ' + spell + ' divine spell/Has a focus pool with 1 Focus Point'], null
-  );
-
-  let condensed = name.replaceAll(' ', '');
-  rules.defineRule('domain',
-    "magicNotes.deity'sDomain(" + condensed + ')', '=', '"' + name + '"',
-    'magicNotes.domainInitiate(' + condensed + ')', '=', '"' + name + '"'
-  );
-  rules.defineRule('features.Advanced Domain',
-    'features.Advanced Domain (' + name + ')', '=', '1'
-  );
-  rules.defineRule
-    ('focusPoints', 'magicNotes.domainInitiate(' + condensed + ')', '+=', '1');
-
-};
-
-/*
  * Defines in #rules# the rules associated with feat #name#. #require# and
  * #implies# list any hard and soft prerequisites for the feat, and #traits#
  * lists the traits of the feat.
@@ -13067,6 +13810,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('trainingLevel.' + matchInfo[1],
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
+  } else if(name.startsWith('Advanced Domain')) {
+    rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
   } else if(name == 'Advanced Fury') {
     rules.defineRule
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
@@ -13301,6 +14046,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'feats.Divine Ally', '+', '1'
       );
     });
+  } else if(name.startsWith('Domain Initiate')) {
+    let note = 'magicNotes.d' + name.substring(1).replaceAll(' ', '');
+    rules.defineRule('focusPoints', note, '+=', '1');
+    rules.defineRule('features.Domain Initiate', 'features.' + name, '=', '1');
   } else if(name == 'Druid Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.druidDedication', '?', null,
@@ -14715,12 +15464,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Domain', 'Domains', 'text', [30]],
       ['Spells', 'Spells', 'text', [60]]
     );
-  } else if(type == 'Domain')
-    result.push(
-      ['Spell', 'Spell', 'text', [20]],
-      ['AdvancedSpell', 'Advanced Spell', 'text', [20]]
-    );
-  else if(type == 'Feat')
+  } else if(type == 'Feat')
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
       ['Imply', 'Implies', 'text', [40]],
