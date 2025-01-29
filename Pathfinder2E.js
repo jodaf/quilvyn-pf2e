@@ -26,7 +26,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  * of the rules: ancestryRules for character ancestries, magicRules for spells,
  * etc. These member methods can be called independently in order to use a
  * subset of the Pathfinder2E rules. Similarly, the constant fields of
- * Pathfinder2E (ALIGNMENTS, FEATS, etc.) can be manipulated to modify the
+ * Pathfinder2E (BACKGROUNDS, FEATS, etc.) can be manipulated to modify the
  * choices.
  */
 function Pathfinder2E() {
@@ -123,11 +123,8 @@ Pathfinder2E.ANCESTRIES = {
     'HitPoints=10 ' +
     'Features=' +
       '1:Slow,' +
-      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Constitution; Wisdom)",' +
-      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Charisma)",' +
+      '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
+      '"1:Ability Flaw (Charisma)",' +
       '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage" ' +
     'Selectables=' +
       '"1:Ancient-Blooded Dwarf:Heritage",' +
@@ -140,11 +137,8 @@ Pathfinder2E.ANCESTRIES = {
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Intelligence)",' +
-      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Constitution)",' +
+      '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
+      '"1:Ability Flaw (Constitution)",' +
       '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
     'Selectables=' +
       '"1:Arctic Elf:Heritage",' +
@@ -157,11 +151,8 @@ Pathfinder2E.ANCESTRIES = {
   'Gnome':
     'HitPoints=8 ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Constitution)",' +
-      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
+      '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
+      '"1:Ability Flaw (Strength)",' +
       '"1:Low-Light Vision",1:Small,"1:Ancestry Feats","1:Gnome Heritage" ' +
     'Selectables=' +
       '"1:Chameleon Gnome:Heritage",' +
@@ -177,11 +168,8 @@ Pathfinder2E.ANCESTRIES = {
   'Goblin':
     'HitPoints=6 ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Charisma; Dexterity)",' +
-      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Wisdom)",' +
+      '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
+      '"1:Ability Flaw (Wisdom)",' +
       '1:Darkvision,1:Small,"1:Ancestry Feats","1:Goblin Heritage" ' +
     'Selectables=' +
       '"1:Charhide Goblin:Heritage",' +
@@ -194,11 +182,8 @@ Pathfinder2E.ANCESTRIES = {
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s.*standard\' ? 1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6.*standard\' ? 1:Ability Boost (Dexterity; Wisdom)",' +
-      '"abilityGeneration =~ \'10s.*two free\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6.*one free\' ? 1:Ability Boost (Choose 1 from any)",' +
-      '"abilityGeneration =~ \'standard\' ? 1:Ability Flaw (Strength)",' +
+      '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
+      '"1:Ability Flaw (Strength)",' +
       '"1:Keen Eyes",1:Small,"1:Ancestry Feats","1:Halfling Heritage" ' +
     'Selectables=' +
       '"1:Gutsy Halfling:Heritage",' +
@@ -211,8 +196,7 @@ Pathfinder2E.ANCESTRIES = {
   'Human':
     'HitPoints=8 ' +
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 2 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from any)",' +
+      '"1:Ability Boost (Choose 2 from any)",' +
       '"1:Ancestry Feats","1:Human Heritage" ' +
     'Selectables=' +
       '1:Half-Elf:Heritage,' +
@@ -264,130 +248,106 @@ Pathfinder2E.ARMORS = {
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",'+
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",'+
       '"1:Skill Trained (Religion; Scribing Lore)","1:Student Of The Canon"',
   'Acrobat':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Acrobatics; Circus Lore)","1:Steady Balance"',
   'Animal Whisperer':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Nature; Choose 1 from any Terrain Lore)",' +
       '"1:Train Animal"',
   'Artisan':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Crafting; Guild Lore)","1:Specialty Crafting"',
   'Artist':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
       '"1:Skill Trained (Crafting; Art Lore)","1:Specialty Crafting"',
   'Barkeep':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Constitution)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Constitution; Choose 1 from any)",' +
       '"1:Skill Trained (Diplomacy; Alcohol Lore)",1:Hobnobber',
   'Barrister':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Diplomacy; Legal Lore)","1:Group Impression"',
   'Bounty Hunter':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Legal Lore)","1:Experienced Tracker"',
   'Charlatan':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Deception; Underworld Lore)","1:Charming Liar"',
   'Criminal':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Detective':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Society; Underworld Lore)",1:Streetwise',
   'Emissary':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",' +
       '1:Multilingual',
   'Entertainer':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
       '"1:Skill Trained (Performance; Theater Lore)",' +
       '"1:Fascinating Performance"',
   'Farmhand':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Athletics; Farming Lore)","1:Assurance (Athletics)"',
   'Field Medic':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Occultism; Fortune-Telling Lore)",' +
       '"1:Oddity Identification"',
   'Gambler':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Dexterity)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
       '"1:Skill Trained (Deception; Games Lore)","1:Lie To Me"',
   'Gladiator':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Performance; Gladitorial Lore)",' +
       '"1:Impressive Performance"',
   'Guard':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Intimidation; Choose 1 from Legal Lore, Warfare Lore)",' +
       '"1:Quick Coercion"',
   'Herbalist':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Nature; Herbalism Lore)","1:Natural Medicine"',
   'Hermit':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any Terrain Lore)",' +
       '"1:Dubious Knowledge"',
   'Hunter':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Tanning Lore)","1:Survey Wildlife"',
   'Laborer':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Athletics; Labor Lore)","1:Hefty Hauler"',
   'Martial Disciple':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"1:Martial Focus",' +
       '"martialDiscipleFeatures.Acrobatics ? 1:Skill Trained (Acrobatics; Warfare Lore)",' +
       '"martialDiscipleFeatures.Acrobatics ? 1:Cat Fall",' +
@@ -398,41 +358,34 @@ Pathfinder2E.BACKGROUNDS = {
       '"1:Athletics:Martial Focus"',
   'Merchant':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Diplomacy; Mercantile Lore)","1:Bargain Hunter"',
   'Miner':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Strength, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Strength, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Mining Lore)",' +
       '"1:Terrain Expertise (Underground)"',
   'Noble':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Charisma, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)",' +
       '"1:Courtly Graces"',
   'Nomad':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",' +
       '"1:Assurance (Survival)"',
   'Prisoner':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Stealth; Underworld Lore)","1:Experienced Smuggler"',
   'Sailor':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
   'Scholar':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Intelligence, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Scholarly Tradition",' +
       '"scholarFeatures.Arcana ? 1:Skill Trained (Arcana; Academia Lore)",' +
       '"scholarFeatures.Arcana ? 1:Assurance (Arcana)",' +
@@ -449,24 +402,20 @@ Pathfinder2E.BACKGROUNDS = {
       '"1:Religion:Scholarly Tradition"',
   'Scout':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Wisdom)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Choose 1 from any Terrain Lore)",1:Forager',
   'Street Urchin':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Dexterity)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Dexterity; Choose 1 from any)",' +
       '"1:Skill Trained (Thievery; Choose 1 from any Settlement Lore)",' +
       '1:Pickpocket',
   'Tinker':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Dexterity, Intelligence)",' +
+      '"1:Ability Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Crafting; Engineering Lore)","1:Specialty Crafting"',
   'Warrior':
     'Features=' +
-      '"abilityGeneration =~ \'10s\' ? 1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
-      '"abilityGeneration =~ \'4d6\' ? 1:Ability Boost (Choose 1 from Constitution, Strength)",' +
+      '"1:Ability Boost (Choose 1 from Constitution, Strength; Choose 1 from any)",' +
       '"1:Skill Trained (Intimidation; Warfare Lore)","1:Intimidating Glare"'
 };
 Pathfinder2E.CLASSES = {
@@ -3277,7 +3226,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="Has the Call On Ancient Blood feature"',
   'Arctic Elf':
     'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
+    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Call On Ancient Blood':
     'Action=Reaction ' +
     'Section=save ' +
@@ -3290,7 +3239,7 @@ Pathfinder2E.FEATURES = {
       '"May use 1 action to adjust coloration, gaining +2 Stealth"',
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}/DC 10 to recover from fire damage; DC 5 with help"',
+    'Note="Has fire resistance %{level//2>?1} and recovers from fire damage with success on a DC 10 check, or DC 5 with help"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
@@ -3300,10 +3249,10 @@ Pathfinder2E.FEATURES = {
   'Elf Heritage':'Section=feature Note="1 selection"',
   'Fey-Touched Gnome':
     'Section=magic ' +
-    'Note="May cast chosen primal cantrip as an innate spell at will; may spend 10 min to replace chosen cantrip 1/day"',
+    'Note="May cast chosen primal cantrip as an innate spell at will; may spend 10 min to replace the chosen cantrip once per day"',
   'Forge Dwarf':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}/Treats environmental heat as 1 step less extreme"',
+    'Note="Has fire resistance %{level//2>?1} and treats environmental heat as 1 step less extreme"',
   'Gnome Heritage':'Section=feature Note="1 selection"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
   'Gutsy Halfling':
@@ -3323,14 +3272,14 @@ Pathfinder2E.FEATURES = {
   'Keen Eyes':
     'Section=combat,skill ' +
     'Note=' +
-      '"DC 3/9 to target a concealed/hidden foe",' +
+      '"Reduces the DC to target a concealed foe by 3 and a hidden foe by 9",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
   'Razortooth Goblin':
     'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
   'Rock Dwarf':
     'Section=combat ' +
-    'Note="+2 DC vs. Shove, Trip, and magical knock prone/Suffers half any forced move distance of 10\' or more"',
+    'Note="+2 DC vs. Shove, Trip, and magical knock prone/Reduces any forced move distance of 10\' or more by half"',
   'Seer Elf':
     'Section=magic,skill ' +
     'Note=' +
@@ -3342,16 +3291,18 @@ Pathfinder2E.FEATURES = {
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1}/Treats environmental cold as 1 step less extreme"',
+    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note=' +
-      '"Has poison resistance %{level//2>?1}/Successful saves vs. poison reduce stage by 2 (virulent 1); critical successes by 3 (virulent 2)"',
+      '"Has poison resistance %{level//2>?1} and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) on a critical success"',
   'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
-    'Note="+4 Hit Points","Suffers half distance falling damage"',
+    'Note=' +
+      '"+4 Hit Points",' +
+      '"Reduces falling damage by half distance"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
@@ -3365,14 +3316,14 @@ Pathfinder2E.FEATURES = {
     'Note="May cast chosen occult cantrip as an innate spell at will"',
   'Whisper Elf':
     'Section=skill ' +
-    'Note="May attempt a R60\' Seek using hearing; +2 within 30\'"',
+    'Note="May attempt a R60\' Seek using hearing and gains +2 within 30\'"',
   'Wildwood Halfling':
     'Section=ability Note="May move normally over foliage difficult terrain"',
   'Woodland Elf':
     'Section=combat,skill ' +
     'Note=' +
       '"May always Take Cover within forest terrain",' +
-      '"May Climb in foliage at %{speed//2}\'; critical success %{speed}\'"',
+      '"May Climb in foliage at %{speed//2}\', or %{speed}\' on a critical success"',
 
   // Ancestry feats
   'Dwarven Lore':
@@ -3401,7 +3352,7 @@ Pathfinder2E.FEATURES = {
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Step into a foe\'s square to force a 5\' move (Fort vs. Athletics critical success negates; normal success negates but inflicts %{level+strengthModifier} HP bludgeoning)"',
+    'Note="May Step into a foe\'s square to force a 5\' move (Fortitude vs. Athletics critical success negates; normal success negates but inflicts %{level+strengthModifier} HP bludgeoning)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
@@ -3413,7 +3364,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Meld Into Stone divine innate spell; may cast it 1/day",' +
+      '"Knows the Meld Into Stone divine innate spell; may cast it once per day",' +
       '"May find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3431,14 +3382,14 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon elf weapons"',
   'Forlorn':
     'Section=save ' +
-    'Note="+1 vs. emotion effects; successes are critical successes"',
+    'Note="+1 vs. emotion effects and successes are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
     'Section=magic ' +
     'Note="May cast chosen arcane cantrip as an innate spell at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="May reduce duration of mental effects by 1 rd/+1 degree of success vs. sleep effects"',
+    'Note="May reduce duration of mental effects by 1 rd/Gains +1 degree of success vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
     'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
@@ -3448,11 +3399,11 @@ Pathfinder2E.FEATURES = {
   'Elf Step':'Action=1 Section=combat Note="May take two 5\' Steps"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Ancestral Longevity also gives expert level in a chosen trained skill; upon expiration, may replace an existing skill increase with one chosen"',
+    'Note="Ancestral Longevity also gives expert level in a chosen trained skill; upon expiration, may replace an existing skill increase with the one chosen"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="May replace Ancestral Longevity and Expert Longevity skills 1/day"',
+    'Note="May replace Ancestral Longevity and Expert Longevity skills once per day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
@@ -3462,7 +3413,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="May speak with burrowing animals"',
   'Fey Fellowship':
     'Section=save,skill ' +
-    'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy - 5 to Make an Impression with fey and retry after 1 min conversation"',
+    'Note="+2 vs. fey","+2 Perception (fey)/May attempt an immediate Diplomacy with a -5 penalty to Make an Impression with fey, and may retry after 1 min conversation"',
   'First World Magic':
     'Section=magic ' +
     'Note="May cast chosen primal cantrip as an innate spell at will"',
@@ -3485,13 +3436,13 @@ Pathfinder2E.FEATURES = {
       '"May speak with all animals",' +
       '"+1 to Make an Impression on animals"',
   'Energized Font':
-    'Action=1 Section=magic Note="May regain 1 Focus Point 1/day"',
+    'Action=1 Section=magic Note="May regain 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each 1/day"',
+     'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each once per day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
@@ -3502,11 +3453,11 @@ Pathfinder2E.FEATURES = {
   'Burn It!':
     'Section=combat,magic ' +
     'Note=' +
-      '"+1 HP persistent fire damage/+1/4 item level fire damage from alchemical items",' +
+      '"Persistent fire damage inflicts +1 HP/Fire alchemical items inflict additional damage equal to one quarter the item level",' +
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May make +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival check to Earn Income while using Subsist in a settlement"',
+    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May make a +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival check to Earn Income while using Subsist in a settlement"',
   'Goblin Lore':
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
@@ -3516,7 +3467,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Song':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' May use Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, critical success for 1 min"',
+    'Note="R30\' May use Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3551,7 +3502,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="May reroll a failed skill check or save 1/day"',
+    'Note="May reroll a failed skill check or save once per day"',
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3580,7 +3531,7 @@ Pathfinder2E.FEATURES = {
   'Guiding Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="May reroll a failed Perception check or attack roll 1/day"',
+    'Note="May reroll a failed Perception check or attack roll once per day"',
   'Irrepressible':
     'Section=save ' +
     'Note=' +
@@ -3618,17 +3569,17 @@ Pathfinder2E.FEATURES = {
   'Incredible Improvisation':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="May add +4 to an untrained skill check 1/day"',
+    'Note="May add +4 to an untrained skill check once per day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
     'Section=skill ' +
-    'Note="After a critical success using a skill, may immediately Aid an ally on the same skill"',
+    'Note="May immediately Aid an ally using a skill after a critical success on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
-    'Note="Knows the Charm arcane innate spell; may cast it 1/day"',
+    'Note="Knows the Charm arcane innate spell; may cast it once per day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -3636,7 +3587,7 @@ Pathfinder2E.FEATURES = {
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May retain 1 Hit Point when brought to 0 Hit Points 1/%V"',
+    'Note="May retain 1 Hit Point when brought to 0 Hit Points once per %V"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
   'Orc Superstition':'Action=1 Section=save Note="May gain +1 vs. magic"',
   'Orc Weapon Familiarity':
@@ -3723,7 +3674,7 @@ Pathfinder2E.FEATURES = {
   'Mutagenic Flashback':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min 1/day"',
+    'Note="May regain the effects of a mutagen consumed earlier in the day for 1 min once per day"',
   'Mutagenist':'Section=feature Note="Has the Mutagenic Flashback feature"',
   'Perpetual Infusions':
     'Section=skill ' +
@@ -3751,11 +3702,12 @@ Pathfinder2E.FEATURES = {
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
     'Section=skill ' +
-    'Note="May use Crafting to Identify Alchemy as a single action/+2 to Identify known formulas; critical failures on known formulas are normal failures"',
-  'Far Lobber':'Section=combat Note="Bombs have 30\' range"',
+    'Note="May use Crafting to Identify Alchemy as a single action/Gains +2 to Identify known formulas, and critical failures on known formulas are normal failures"',
+  'Far Lobber':'Section=combat Note="Bombs have a 30\' range"',
   'Quick Bomber':'Action=1 Section=combat Note="May draw and throw a bomb"',
   'Poison Resistance':
-    'Section=save Note="Has poison resistance %{level//2}/+1 saves vs. poison"',
+    'Section=save ' +
+    'Note="Has poison resistance %{level//2} and gains +1 saves vs. poison"',
   'Revivifying Mutagen':
     'Section=combat ' +
     'Note="May use 1 action to end mutagen effects and regain 1d6 Hit Points per 2 levels of the mutagen"',
@@ -3779,14 +3731,14 @@ Pathfinder2E.FEATURES = {
   'Debilitating Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="May create bombs up to level %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fort negates)"',
+    'Note="May create bombs up to level %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates)"',
   'Directional Bombs':
     'Section=combat Note="May restrict bomb splash to a 15\' cone"',
   'Feral Mutagen':
     'Section=combat,skill ' +
     'Note=' +
-      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; may also increase AC penalty to -2 to increase claws and jaws damage by 1 die step",' +
-      '"Consuming a bestial mutagen adds item bonus to Intimidation"',
+      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; may also increase the AC penalty to -2 to increase claws and jaws damage by 1 die step",' +
+      '"Consuming a bestial mutagen adds the item bonus to Intimidation"',
   'Sticky Bomb':
     'Action=Free ' +
     'Section=combat ' +
@@ -3799,11 +3751,11 @@ Pathfinder2E.FEATURES = {
     'Note="May throw bombs to inflict +%{intelligenceModifier} HP damage in a 10\' radius"',
   'Greater Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to level %{level-2} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fort negates)"',
+    'Note="May create bombs up to level %{level-2} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates)"',
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="May make an elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a fear or paralyzing effect"',
+    'Note="May make an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
     'Note="+4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
@@ -3814,17 +3766,17 @@ Pathfinder2E.FEATURES = {
   'Uncanny Bombs':
     'Section=combat,combat ' +
     'Note=' +
-      '"Thrown bombs have 60\' range",' +
+      '"Thrown bombs have a 60\' range",' +
       '"Thrown bombs reduce target cover AC bonus by 1 and automatically succeed on the flat check to target a concealed creature"',
   'Glib Mutagen':
     'Section=skill ' +
     'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers"',
   'Greater Merciful Elixir':
     'Section=skill ' +
-    'Note="May make an elixir of life that also gives a +%{classDifficultyClass.Alchemist-10} counteract on a blinded, deafened, sickened, or slowed condition"',
+    'Note="May make an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
     'Section=combat ' +
-    'Note="May create bombs up to level %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fort negates) or a lesser condition that requires a critical success to negate"',
+    'Note="May create bombs up to level %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) or a lesser condition that requires a critical success to negate"',
   'Eternal Elixir':
     'Section=skill ' +
     'Note="May extend indefinitely the duration of an elixir of up to level %{level//2}"',
@@ -3837,7 +3789,7 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
   'Persistent Mutagen':
     'Section=skill ' +
-    'Note="May extend the duration of a mutagen until the next day 1/day"',
+    'Note="May extend the duration of a mutagen until the next day once per day"',
   'Improbable Elixirs':
     'Section=skill ' +
     'Note="May create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
@@ -3856,7 +3808,7 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May throw a bomb up to 60\' that affects all creatures in a 30\' radius (Ref negates)"',
+    'Note="May throw a bomb up to 60\' that affects all creatures in a 30\' radius (DC %{classDifficultyClass.Alchemist} Reflex negates)"',
   'Perfect Mutagen':
     'Section=skill Note="Does not suffer drawbacks from consuming mutagens"',
 
@@ -3898,10 +3850,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use melee and unarmed weapon critical specialization effects while raging"',
+      '"May use melee and unarmed weapon critical specialization effects during rage"',
   'Deny Advantage':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed to foes of equal or lower level"',
+    'Note="Does not suffer flat-footed vs. foes of equal or lower level"',
   'Devastator':
     'Section=combat,combat ' +
     'Note=' +
@@ -3915,7 +3867,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Fortitude)",' +
-      '"Critical failures on Fortitude saves are normal failures/Suffers half damage on failed Fortitude save"',
+      '"Critical failures on Fortitude saves are normal failures, and suffers half damage on a failed Fortitude save"',
   'Greater Weapon Specialization':
     'Section=combat Note="Increased Weapon Specialization effects"',
   'Heightened Senses':'Section=skill Note="Perception Master"',
@@ -3939,19 +3891,19 @@ Pathfinder2E.FEATURES = {
     'Note="May gain %{level+constitutionModifier} temporary Hit Points and +%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP melee damage (agile weapon +1 HP), and suffer -1 AC and no concentration actions, for 1 min; requires 1 min between rages"',
   'Raging Resistance (Animal)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to piercing and slashing while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
   'Raging Resistance (Dragon)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to piercing and %{combatNotes.draconicRage||\'fire\'} while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to piercing and %{combatNotes.draconicRage||\'fire\'} during rage"',
   'Raging Resistance (Fury)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to physical weapons while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to physical weapons during rage"',
   'Raging Resistance (Giant)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to bludgeoning and choice of cold, electricity, or fire while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to bludgeoning and choice of cold, electricity, or fire during rage"',
   'Raging Resistance (Spirit)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to negative and undead while raging"',
+    'Note="Has resistance %{3+constitutionModifier} to negative and undead during rage"',
   'Specialization Ability':
     'Section=combat Note="Increased instinct ability rage effects"',
   'Spirit Rage':
@@ -3970,7 +3922,7 @@ Pathfinder2E.FEATURES = {
   'Moment Of Clarity':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="During rage, may use concentration actions for the remainder of the turn"',
+    'Note="Allows use concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
     'Section=skill,skill,skill ' +
     'Note=' +
@@ -4029,7 +3981,7 @@ Pathfinder2E.FEATURES = {
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line 1/rage (Ref negates; half distance and damage for a 2nd breath use within 1 hr)"',
+    'Note="May use breath to inflict %{level}d6 damage in a 30\' cone or 60\' line once per rage (Reflex negates; half distance and damage for a 2nd breath use within 1 hr)"',
   "Giant's Stature":
     'Action=1 ' +
     'Section=combat ' +
@@ -4050,7 +4002,7 @@ Pathfinder2E.FEATURES = {
   'Share Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' May give an ally the effects of Rage 1/rage"',
+    'Note="R30\' May give an ally the effects of Rage once per rage"',
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -4058,7 +4010,7 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage to grabbed foe (Fort negates)"',
+    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage to grabbed foe (Fortitude negates)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
@@ -4066,20 +4018,20 @@ Pathfinder2E.FEATURES = {
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Stride %{speed*5}\' in a straight line/May use an additional action to Stride %{speed*8}\'"',
+    'Note="May Stride %{speed*5}\' in a straight line, or use an additional action to Stride %{speed*8}\'"',
   'Great Cleave':
     'Section=combat ' +
     'Note="May continue to Cleave adjacent foes as long as Strikes incapacitate"',
   'Knockback':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May shove foe 5\' after a successful Strike"',
+    'Note="May shove a foe 5\' after a successful Strike"',
   'Terrifying Howl':
     'Action=1 ' +
     'Section=combat ' +
     'Note="R30\' Successful Intimidate Demoralizes multiple foes"',
   "Dragon's Rage Wings":
-    'Action=1 Section=combat Note="May fly %{speed}\'/rd during rage"',
+    'Action=1 Section=combat Note="May fly %{speed}\' per rd during rage"',
   'Furious Grab':
     'Action=1 ' +
     'Section=combat ' +
@@ -4110,7 +4062,7 @@ Pathfinder2E.FEATURES = {
     'Action=3 Section=combat Note="May Strike each foe within reach"',
   'Collateral Thrash':
     'Section=combat ' +
-    'Note="May affect another adjacent foe (DC %{classDifficultyClass.Barbarian} Ref negates) with a successful Thrash"',
+    'Note="May affect another adjacent foe (DC %{classDifficultyClass.Barbarian} Reflex negates) with a successful Thrash"',
   'Dragon Transformation':
     'Action=1 ' +
     'Section=magic ' +
@@ -4134,7 +4086,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="May use Share Rage unlimited times, also sharing instinct and specialization abilities"',
   'Quaking Stomp':
-    'Action=1 Section=magic Note="May use <i>Earthquake</i> effects 1/10 min"',
+    'Action=1 Section=magic Note="May use <i>Earthquake</i> effects once per 10 min"',
 
   // Bard
   'Bard Weapon Expertise':
@@ -4160,7 +4112,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Critical failures on Will saves are normal failures/Takes half damage on failed Will saves"',
+      '"Critical failures on Will saves are normal failures and takes half damage on failed Will saves"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
@@ -4243,7 +4195,7 @@ Pathfinder2E.FEATURES = {
     'Note="May have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="A successful DC 15 flat check negates self spellcasting disruption"',
+    'Note="May overcome spellcasting disruption with a successful DC 15 flat check"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
@@ -4260,14 +4212,14 @@ Pathfinder2E.FEATURES = {
   'Quickened Casting':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="May reduce the time required to cast a spell of level %1 or lower by 1 action 1/day"',
+    'Note="May reduce the time required to cast a spell of level %1 or lower by 1 action once per day"',
   'Unusual Composition':
     'Action=1 ' +
     'Section=magic ' +
     'Note="May replace somatic components of a composition spell with verbal components or vice versa"',
   'Eclectic Polymath':
     'Section=magic ' +
-    'Note="May retain Esoteric Polymath spell in repertoire by removing a spell of the same level"',
+    'Note="May retain chosen Esoteric Polymath spell in repertoire by removing a spell of the same level"',
   'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Allegro':'Section=magic Note="Knows the Allegro occult cantrip"',
   'Soothing Ballad':
@@ -4657,7 +4609,7 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Lay On Hands</i> on mount restores 10 Hit Points +10 Hit Points/heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
-    'Note="May use an additional Reaction for a Shield Block 1/turn"',
+    'Note="May use an additional Reaction for a Shield Block once per turn"',
   'Second Ally':'Section=feature Note="+1 selection"',
   'Sense Evil':
     'Section=feature ' +
@@ -4709,7 +4661,7 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
   'Divine Reflexes':
     'Section=combat ' +
-    'Note="May use an additional Reaction for Champion\'s Reaction 1/turn"',
+    'Note="May use an additional Reaction for Champion\'s Reaction once per turn"',
   'Litany Of Righteousness':
     'Section=magic ' +
     'Note="+1 Focus Points/Knows the Litany Of Righteousness divine spell"',
@@ -5135,7 +5087,7 @@ Pathfinder2E.FEATURES = {
     'Note="May sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
   "Avatar's Audience":
     'Section=magic ' +
-    'Note="May speak for deity, conduct the <i>Commune</i> ritual to contact %{deity} without cost, and <i>Plane Shift</i> to %{deity}\'s realm 1/day"',
+    'Note="May speak for deity, conduct the <i>Commune</i> ritual to contact %{deity} without cost, and <i>Plane Shift</i> to %{deity}\'s realm once per day"',
   'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Channel':
     'Action=Free ' +
@@ -5261,7 +5213,7 @@ Pathfinder2E.FEATURES = {
   'Storm Retribution':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="On a foe critical melee hit, may cast <i>Tempest Surge</i>, pushing foe 5\' (Ref negates; critical failure pushes 10\')"',
+    'Note="On a foe critical melee hit, may cast <i>Tempest Surge</i>, pushing foe 5\' (Reflex negates; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
     'Note="May use <i>Wild Shape</i> to change into a Large dinosaur and to gain +1 on Athletics checks"',
@@ -5339,7 +5291,7 @@ Pathfinder2E.FEATURES = {
   'True Shapeshifter':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="May change shapes during <i>Wild Shape</i>/May use <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} 1/day"',
+    'Note="May change shapes during <i>Wild Shape</i>/May use <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
 
   // Fighter
   // Armor Expertise as above
@@ -5526,7 +5478,7 @@ Pathfinder2E.FEATURES = {
     'Note="May make a Strike that inflicts normal damage other than damage dice on failure"',
   'Combat Reflexes':
     'Section=combat ' +
-    'Note="May use an additional Reaction to make an Attack Of Opportunity 1/turn"',
+    'Note="May use an additional Reaction to make an Attack Of Opportunity once per turn"',
   'Debilitating Shot':
     'Action=2 ' +
     'Section=combat ' +
@@ -5563,7 +5515,7 @@ Pathfinder2E.FEATURES = {
   'Flinging Shove':'Section=combat Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed; Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
   'Improved Dueling Riposte':
     'Section=combat ' +
-    'Note="May use an additional Reaction to make a Dueling Riposte 1/turn"',
+    'Note="May use an additional Reaction to make a Dueling Riposte once per turn"',
   'Incredible Ricochet':
     'Action=1 ' +
     'Section=combat ' +
@@ -5587,7 +5539,7 @@ Pathfinder2E.FEATURES = {
   'Determination':
     'Action=1 ' +
     'Section=save ' +
-    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self 1/day"',
+    'Note="May end a nonpermanent spell (level %{level/2} Will save) or condition affecting self once per day"',
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
@@ -5597,7 +5549,7 @@ Pathfinder2E.FEATURES = {
     'Note="May move target 10\' to a spot within reach with a successful Dueling Riposte Strike"',
   'Improved Twin Riposte':
     'Section=combat ' +
-    'Note="May use an additional Reaction to make a Twin Riposte 1/turn"',
+    'Note="May use an additional Reaction to make a Twin Riposte once per turn"',
   'Stance Savant':
     'Action=Free Section=combat Note="May enter a stance during initiative"',
   'Two-Weapon Flurry':
@@ -5627,7 +5579,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful rolls of 19 with a legendary weapon are critical successes"',
   'Boundless Reprisals':
      'Section=combat ' +
-     'Note="May use an additional Reaction to use a fighter feat or class feature 1/foe turn"',
+     'Note="May use an additional Reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
     'Note="Permanently quickened; may use additional actions only to Strike"',
@@ -5639,7 +5591,7 @@ Pathfinder2E.FEATURES = {
   'Expert Strikes':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   'Flurry Of Blows':
-    'Action=1 Section=combat Note="May make 2 Unarmed Strikes 1/turn"',
+    'Action=1 Section=combat Note="May make 2 Unarmed Strikes once per turn"',
   'Graceful Legend':
     'Section=combat,magic ' +
     'Note=' +
@@ -5760,7 +5712,7 @@ Pathfinder2E.FEATURES = {
     'Note="May inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
   'Stunning Fist':
     'Section=combat ' +
-    'Note="May inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fort negates; critical failure inflicts stunned 3)"',
+    'Note="May inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5861,7 +5813,7 @@ Pathfinder2E.FEATURES = {
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fort HP only) 1/1d4 rd"',
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fortitude HP only) 1/1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
@@ -5989,14 +5941,14 @@ Pathfinder2E.FEATURES = {
   'Hunted Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May make two ranged Strikes against hunted prey 1/rd"',
+    'Note="May make two ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="May attempt to Recall Knowledge as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd 1/target/day"',
+    'Note="May attempt to Recall Knowledge as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd once per target per day"',
   'Twin Takedown':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May make a melee Strike with each hand against hunted prey 1/rd"',
+    'Note="May make a melee Strike with each hand against hunted prey once per rd"',
   'Favored Terrain (Aquatic)':
     'Section=ability ' +
     'Note="May move normally through underwater difficult terrain/%{speed}\' swim Speed"',
@@ -6188,7 +6140,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"May have a successful Strike on a flat-footed foe force a Fortitude save 1/target/day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"May have a successful Strike on a flat-footed foe force a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -6605,7 +6557,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
     'Section=feature ' +
-    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted 1/day"',
+    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted once per day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
@@ -6635,7 +6587,7 @@ Pathfinder2E.FEATURES = {
   'Drain Bonded Item':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May cast an expended spell using power stored in a possession 1/day"',
+    'Note="May cast an expended spell using power stored in a possession once per day"',
   // Expert Spellcaster as above
   'Improved Familiar Attunement':
     'Section=feature,feature ' +
@@ -6722,7 +6674,7 @@ Pathfinder2E.FEATURES = {
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell of up to level %V 1/day"',
+    'Note="May use Drain Bonded Item to cast another spell of up to level %V once per day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Action=2 ' +
@@ -7045,7 +6997,7 @@ Pathfinder2E.FEATURES = {
     'Note="May forgo rolling a %skill check for an automatic %{10+$\'proficiencyBonus.%skill\'}"',
   'Automatic Knowledge (%skill)':
     'Section=skill ' +
-    'Note="May use Assurance (%skill) to Recall Knowledge as a free action 1/rd"',
+    'Note="May use Assurance (%skill) to Recall Knowledge as a free action once per rd"',
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
@@ -7053,7 +7005,7 @@ Pathfinder2E.FEATURES = {
   'Quick Identification':'Section=skill Note="May use %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
   'Quick Recognition':
     'Section=skill ' +
-    'Note="May use a skill with master proficiency to Recognize a Spell as a free action 1/rd"',
+    'Note="May use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -7080,7 +7032,7 @@ Pathfinder2E.FEATURES = {
   'Battle Medicine':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="May use Medicine to restore Hit Points 1/target/day"',
+    'Note="May use Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
     'Note="Others suffer +5 DC to Recognize Spells and Identify Magic on self spells"',
@@ -7092,7 +7044,7 @@ Pathfinder2E.FEATURES = {
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
   'Charming Liar':
     'Section=skill ' +
-    'Note="Critical success on a Lie improves attitude by 1 step 1/conversation"',
+    'Note="Critical success on a Lie improves attitude by 1 step once per conversation"',
   'Cloud Jump':
     'Section=skill ' +
     'Note="May long jump triple normal distance, high jump normal long jump distance, and add %{speed}\' to jump distance for every additional action spent"',
@@ -7167,7 +7119,7 @@ Pathfinder2E.FEATURES = {
     'Note="May establish basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="May use a 1 hr process and a successful Medicine check to remove a disease or condition 1/target/day"',
+    'Note="May use a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
@@ -7299,7 +7251,7 @@ Pathfinder2E.FEATURES = {
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="May follow a jump with another 1-action jump when adjacent to a wall 1/turn"',
+    'Note="May follow a jump with another 1-action jump when adjacent to a wall once per turn"',
   'Ward Medic':
     'Section=skill ' +
     'Note="May use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
@@ -9006,7 +8958,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line (<b>save Fort</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)"',
+      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
     'Trait= ' +
