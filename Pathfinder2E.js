@@ -3706,7 +3706,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Savant':
     'Section=skill ' +
     'Note="May use Crafting to Identify Alchemy as a single action/Gains +2 to Identify known formulas, and critical failures on known formulas are normal failures"',
-  'Far Lobber':'Section=combat Note="Bombs have a 30\' range"',
+  'Far Lobber':'Section=combat Note="Thrown bombs have a 30\' range"',
   'Quick Bomber':'Action=1 Section=combat Note="May draw and throw a bomb"',
   'Poison Resistance':
     'Section=save ' +
@@ -3870,7 +3870,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Fortitude)",' +
-      '"Critical failures on Fortitude saves are normal failures, and suffers half damage on a failed Fortitude save"',
+      '"Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save"',
   'Greater Weapon Specialization':
     'Section=combat Note="Increased Weapon Specialization effects"',
   'Heightened Senses':'Section=skill Note="Perception Master"',
@@ -4013,7 +4013,7 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage to grabbed foe (Fortitude negates)"',
+    'Note="May inflict %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage to a grabbed foe (Fortitude negates)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
@@ -4115,7 +4115,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Critical failures on Will saves are normal failures and takes half damage on failed Will saves"',
+      '"Critical failures on Will saves are normal failures and suffers half damage on failed Will saves"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
@@ -5296,7 +5296,7 @@ Pathfinder2E.FEATURES = {
   'True Shapeshifter':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="May change shapes during <i>Wild Shape</i>/May use <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
+    'Note="May change shapes during <i>Wild Shape</i> and may use <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
 
   // Fighter
   // Armor Expertise as above
@@ -5818,7 +5818,7 @@ Pathfinder2E.FEATURES = {
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fortitude HP only) 1/1d4 rd"',
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fortitude HP only) once per 1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
@@ -8367,7 +8367,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Falling target slows to 60\' per rd and takes no damage from fall for 1 min or until landing"',
+      '"R60\' Falling target slows to 60\' per rd and suffers no damage from a fall for 1 min or until landing"',
   'Feeblemind':
     'Level=6 ' +
     'Trait= ' +
@@ -9822,7 +9822,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Allows the caster to deliver touch spells via a crawling, spectral hand for 1 min or until the hand takes damage, which inflicts 1d6 HP to the caster"',
+      '"R120\' Allows the caster to deliver touch spells via a crawling, spectral hand for 1 min or until the hand suffers damage, which inflicts 1d6 HP to the caster"',
   'Spell Immunity':
     'Level=4 ' +
     'Trait= ' +
@@ -13966,10 +13966,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // archetype feature to acquire champion reactions.
     // NOTE: Placing this code here means that the tests won't be regenerated
     // when adding homebrew causes.
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let champion = rules.getChoices('levels').Champion;
+    let causes =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', ''));
     let reactions =
       QuilvynUtils.getAttrValueArray
         (rules.getChoices('levels').Champion, 'Features')
-        .filter(x => x.match(/features.[\w\s]+\s*\?\s*[1A-Z]/))
+        .filter(x => x.match(new RegExp('features.(' + causes.join('|') + ')\\s*\\?\\s*(1:)?[A-Z]')))
         .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
     reactions.forEach(r => {
       rules.defineRule
