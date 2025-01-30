@@ -557,6 +557,9 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
+      '"features.Paladin ? 1:Retributive Strike",' +
+      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
+      '"features.Liberator ? 1:Liberating Step",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -3239,7 +3242,7 @@ Pathfinder2E.FEATURES = {
       '"May use 1 action to adjust coloration, gaining +2 Stealth"',
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1} and recovers from fire damage with success on a DC 10 check, or DC 5 with help"',
+    'Note="Has fire resistance %{level//2>?1} and recovers from fire damage with success on a DC 10 flat check, or DC 5 with help"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
@@ -3295,7 +3298,7 @@ Pathfinder2E.FEATURES = {
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note=' +
-      '"Has poison resistance %{level//2>?1} and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) on a critical success"',
+      '"Has poison resistance %{level//2>?1} and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) with a critical success"',
   'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Unbreakable Goblin':
@@ -3382,7 +3385,7 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon elf weapons"',
   'Forlorn':
     'Section=save ' +
-    'Note="+1 vs. emotion effects and successes are critical successes"',
+    'Note="+1 vs. emotion effects, and successes are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
     'Section=magic ' +
@@ -4381,7 +4384,9 @@ Pathfinder2E.FEATURES = {
   'Champion Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   "Champion's Code":'Section=feature Note="1 selection"',
-  "Champion's Reaction":'Section=feature Note="Has the %V feature"',
+  "Champion's Reaction":
+    'Section=feature ' +
+    'Note="Has the Champion\'s Reaction for chosen champion cause"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -4477,7 +4482,7 @@ Pathfinder2E.FEATURES = {
   'Divine Ally (Shield)':
     'Section=combat Note="+2 shield hardness/+50% shield Hit Points"',
   'Divine Ally (Steed)':
-    'Section=feature Note="Has a mount as a young animal companion"',
+    'Section=feature Note="Has a young animal companion for a mount"',
   'Divine Smite (Liberator)':
     'Section=combat ' +
     'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
@@ -4556,7 +4561,7 @@ Pathfinder2E.FEATURES = {
     'Note="Liberating Step target may Step normally in any terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
-    'Note="May make Glimpse Of Redemption target stupefied instead of enfeebled"',
+    'Note="May make a Glimpse Of Redemption target stupefied instead of enfeebled"',
   'Divine Grace':
     'Action=Reaction Section=combat Note="May gain +2 save vs. a spell"',
   'Dragonslayer Oath':
@@ -4584,7 +4589,7 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' Reduces value of frightened condition for self and allies by 1"',
   'Divine Health':
     'Section=save ' +
-    'Note="+1 vs. disease/Successes vs. disease are critical successes"',
+    'Note="+1 vs. disease, and successes vs. disease are critical successes"',
   'Mercy':
     'Action=1 ' +
     'Section=magic ' +
@@ -4600,13 +4605,13 @@ Pathfinder2E.FEATURES = {
   'Smite Evil':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May have Blade ally inflict +4 HP good (master proficiency +6 HP) vs. target for 1 rd, extended as long as the target attacks an ally"',
+    'Note="May have Blade ally inflict +4 HP good (master proficiency +6 HP) vs. a target for 1 rd, extended as long as the target attacks an ally"',
   'Greater Mercy':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> may also counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> on mount restores 10 Hit Points +10 Hit Points/heightened level"',
+    'Note="<i>Lay On Hands</i> on mount restores 10 Hit Points +10 Hit Points per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="May use an additional Reaction for a Shield Block once per turn"',
@@ -4628,7 +4633,7 @@ Pathfinder2E.FEATURES = {
   'Shield Of Reckoning':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May apply Shield Block and Champion\'s Reaction with an ally"',
+    'Note="May apply Shield Block and Champion\'s Reaction to an ally"',
   'Affliction Mercy':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> may also counteract a curse, disease, or poison"',
@@ -4653,9 +4658,9 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="R15\' Aura counteracts teleportation spells cast by fiends"',
   'Aura Of Life':
     'Section=save ' +
-    'Note="R15\' Grants resistance 5 to negative energy and +1 saves vs. necromancy"',
+    'Note="R15\' Gives resistance 5 to negative energy and +1 saves vs. necromancy"',
   'Aura Of Righteousness':
-    'Section=save Note="R15\' Grants resistance 5 to evil"',
+    'Section=save Note="R15\' Gives resistance 5 to evil"',
   'Aura Of Vengeance':
     'Section=combat ' +
     'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
@@ -4667,7 +4672,7 @@ Pathfinder2E.FEATURES = {
     'Note="+1 Focus Points/Knows the Litany Of Righteousness divine spell"',
   'Wyrmbane Aura':
     'Section=save ' +
-    'Note="R15\' Grants self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level//2} from dragons)"',
+    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level//2} from dragons)"',
   'Auspicious Mount':
     'Section=feature ' +
     'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
@@ -13957,20 +13962,22 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'features.Champion Dedication', '=', '1'
     );
   } else if(name == "Champion's Reaction") {
-    rules.defineRule("featureNotes.champion'sReaction",
-      'features.Liberator', '=', '"Liberating Step"',
-      'features.Paladin', '=', '"Retributive Strike"',
-      'features.Redeemer', '=', '"Glimpse Of Redemption"'
-    );
-    rules.defineRule('features.Glimpse Of Redemption',
-      "featureNotes.champion'sReaction", '=', 'source=="Glimpse Of Redemption" ? 1 : null'
-    );
-    rules.defineRule('features.Liberating Step',
-      "featureNotes.champion'sReaction", '=', 'source=="Liberating Step" ? 1 : null'
-    );
-    rules.defineRule('features.Retributive Strike',
-      "featureNotes.champion'sReaction", '=', 'source=="Retributive Strike" ? 1 : null'
-    );
+    // Extend test rules to allow characters with the Champion's Reaction
+    // archetype feature to acquire champion reactions.
+    // NOTE: Placing this code here means that the tests won't be regenerated
+    // when adding homebrew causes.
+    let reactions =
+      QuilvynUtils.getAttrValueArray
+        (rules.getChoices('levels').Champion, 'Features')
+        .filter(x => x.match(/features.[\w\s]+\s*\?\s*[1A-Z]/))
+        .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
+    reactions.forEach(r => {
+      rules.defineRule
+        ('championFeatures.' + r, "featureNotes.champion'sReaction", '=', '1');
+      rules.defineRule('testNotes.championFeatures.' + r,
+        "featureNotes.champion'sReaction", '=', '-1'
+      );
+    });
   } else if(name == 'Cleric Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.clericDedication', '?', null,
