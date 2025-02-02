@@ -229,7 +229,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Crafting): May forgo rolling a Crafting check for an automatic 34</td>
     </tr><tr style="text-align:center">
-      <td>Conceal Spell: May hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells</td>
+      <td>Conceal Spell: Allows hiding spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells</td>
     </tr><tr style="text-align:center">
       <td>Quick Recognition: May use a skill with master proficiency to Recognize a Spell as a free action once per rd</td>
     </tr><tr style="text-align:center">
@@ -325,7 +325,7 @@ var attributes = {
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: A0: 13; A10: 2; A1: 11; A2: 11; A3: 11; A4: 11; A5: 11; A6: 11; A7: 11; A8: 11; A9: 11</td>
-        <td><b>Focus Points</b>: 4</td>
+        <td><b>Focus Points</b>: 11</td>
         <td><b>Attack</b>: Arcane: +33 (intelligence; legendary); Divine Innate: +26 (charisma; trained)</td>
         <td><b>Spell DC</b>: Arcane: 43 (intelligence; legendary); Divine Innate: 36 (charisma; trained)</td>
       </tr></table>
@@ -341,11 +341,23 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Charming Words (A1 Enc): <b>(1)</b> R30' Prevents target from taking hostile actions against the caster for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. caster; critical success negates; critical failure inflicts stunned 1)</td>
     </tr><tr style="text-align:left">
+      <td>Dimensional Steps (A4 Con): <b>(1)</b> Teleports caster to a visible location within 20' (<b>heightened +1</b> increases teleport distance by 5')</td>
+    </tr><tr style="text-align:left">
       <td>Diviner's Sight (A1 Div): <b>(1)</b> R30' Target may substitute caster's d20 roll for a saving throw or skill check within 1 rd</td>
+    </tr><tr style="text-align:left">
+      <td>Dread Aura (A4 Enc): <b>(2)</b> 30' emanation inflicts frightened 1 on foes while sustained for up to 1 min</td>
+    </tr><tr style="text-align:left">
+      <td>Elemental Tempest (A4 Evo): <b>(1)</b> Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type in a 10' emanation</td>
+    </tr><tr style="text-align:left">
+      <td>Energy Absorption (A4 Abj): <b>(R)</b> Gives caster resistance 15 to damage from the triggering acid, cold, electricity, or fire effect (<b>heightened +1</b> gives +5 resistance)</td>
     </tr><tr style="text-align:left">
       <td>Force Bolt (A1 Evo): <b>(1)</b> R30' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)</td>
     </tr><tr style="text-align:left">
       <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Allows the caster to make a remote attack with a melee weapon, inflicting +1 damage</td>
+    </tr><tr style="text-align:left">
+      <td>Invisibility Cloak (A4 Ill): <b>(2)</b> Caster becomes invisible for 10 min or until it uses a hostile action (<b>heightened 6th</b> lasts 10 min; <b>8th</b> lasts 1 hr)</td>
+    </tr><tr style="text-align:left">
+      <td>Life Siphon (A4 Nec): <b>(R)</b> Gives the caster temporary HP equal to 1d8 HP per spell level as a Reaction to casting a necromancy spell</td>
     </tr><tr style="text-align:left">
       <td>Meld Into Stone (D3 Tra): <b>(2)</b> Allows the caster to enter the touched stone, retaining the ability to hear outside sounds, for 10 min</td>
     </tr><tr style="text-align:left">
@@ -355,6 +367,8 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Shifting Form (A4 Tra): <b>(1)</b> Caster gains choice of +20' Speed, climb or swim at half Speed, darkvision, 60' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min</td>
     </tr><tr style="text-align:left">
+      <td>Vigilant Eye (A4 Div): <b>(1)</b> R500' Creates an invisible sensor that allows the caster to see from the target location for 1 hr</td>
+    </tr><tr style="text-align:left">
       <td>Warped Terrain (A1 Ill): <b>(1)</b> 60' 5' burst (10'/15' burst for 2/3 actions) appears to be difficult terrain for 1 min (<b>heightened 4th</b> may affect air instead of surface)</td>
     </tr></table>
 </td>
@@ -363,7 +377,21 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Abjuration: +1 spell slot each level/Knows the Protective Ward arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced School Spell: Knows the Shifting Form spell/+1 Focus Points</i></td>
+      <td><i>Advanced School Spell (Abjuration): Knows the Energy Absorption arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Conjuration): Knows the Dimensional Steps arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Divination): Knows the Vigilant Eye arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Enchantment): Knows the Dread Aura arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Evocation): Knows the Elemental Tempest arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Illusion): Knows the Invisibility Cloak arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Necromancy): Knows the Life Siphon arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (Transmutation): Knows the Shifting Form arcane spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Arcane School: Has a focus pool with 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
@@ -397,41 +425,41 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Universal Versatility: +1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td>Abjuration: Knows 1 additional 1st-level Abjuration spell</td>
+      <td>Abjuration: Knows 1 additional 1st-level abjuration spell</td>
     </tr><tr style="text-align:center">
-      <td>Arcane Spellcasting: May learn spells from the arcane tradition</td>
+      <td>Arcane Spellcasting: Allows learning spells from the arcane tradition</td>
     </tr><tr style="text-align:center">
       <td>Bespell Weapon: <b>(F)</b> Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on the spell school</td>
     </tr><tr style="text-align:center">
       <td>Bizarre Magic: Others suffer +5 DC to Recognize Spells and Identify Magic on self spells</td>
     </tr><tr style="text-align:center">
-      <td>Bond Conservation: <b>(1)</b> May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn</td>
+      <td>Bond Conservation: <b>(1)</b> Allows using Drain Bonded Item to cast another spell 2 levels lower by the end of next turn</td>
     </tr><tr style="text-align:center">
       <td>Bonded Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Allows preparing two additional cantrips each day or adding two additional cantrips to spell repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Clever Counterspell: May Counterspell with a -2 penalty a known spell using any spell that shares a non-tradition trait with it</td>
+      <td>Clever Counterspell: Allows counterspell attempt with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it</td>
     </tr><tr style="text-align:center">
-      <td>Conjuration: Knows 1 additional 1st-level Conjuration spell</td>
+      <td>Conjuration: Knows 1 additional 1st-level conjuration spell</td>
     </tr><tr style="text-align:center">
       <td>Counterspell: <b>(R)</b> Expends a spell slot to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
-      <td>Divination: Knows 1 additional 1st-level Divination spell</td>
+      <td>Divination: Knows 1 additional 1st-level divination spell</td>
     </tr><tr style="text-align:center">
-      <td>Drain Bonded Item: <b>(R)</b> May cast an expended spell using power stored in a possession once per day</td>
+      <td>Drain Bonded Item: <b>(R)</b> Allows casting an expended spell using power stored in a possession once per day</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Allows extending the duration of 1 spell</td>
     </tr><tr style="text-align:center">
-      <td>Enchantment: Knows 1 additional 1st-level Enchantment spell</td>
+      <td>Enchantment: Knows 1 additional 1st-level enchantment spell</td>
     </tr><tr style="text-align:center">
-      <td>Eschew Materials: May replace spell material components with sigils drawn in the air</td>
+      <td>Eschew Materials: Allows replacing spell material components with sigils drawn in the air</td>
     </tr><tr style="text-align:center">
-      <td>Evocation: Knows 1 additional 1st-level Evocation spell</td>
+      <td>Evocation: Knows 1 additional 1st-level illusion spell</td>
     </tr><tr style="text-align:center">
-      <td>Illusion: Knows 1 additional 1st-level Illusion spell</td>
+      <td>Illusion: Knows 1 additional 1st-level illusion spell</td>
     </tr><tr style="text-align:center">
-      <td>Infinite Possibilities: May prepare a spell slot to allow casting of any known spell of 2 levels lower</td>
+      <td>Infinite Possibilities: Allows preparing a spell slot to allow casting of any known spell of 2 levels lower</td>
     </tr><tr style="text-align:center">
       <td>Linked Focus: Draining a bonded item to cast a spell restores 1 Focus Point</td>
     </tr><tr style="text-align:center">
@@ -439,9 +467,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Metamagic Mastery: Allows using a 1-action metamagic effect as a free action</td>
     </tr><tr style="text-align:center">
-      <td>Metamagical Experimentation: May select 1 metamagic feat of up to level 10 to use each day</td>
+      <td>Metamagical Experimentation: Allows selecting 1 metamagic feat of up to level 10 to use each day</td>
     </tr><tr style="text-align:center">
-      <td>Necromancy: Knows 1 additional 1st-level Necromancy spell</td>
+      <td>Necromancy: Knows 1 additional 1st-level necromancy spell</td>
     </tr><tr style="text-align:center">
       <td>Overwhelming Energy: <b>(1)</b> Subsequent spell ignores resistance 20 to choice of energy</td>
     </tr><tr style="text-align:center">
@@ -451,31 +479,31 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reflect Spell: Allows causing a successful Counterspell to inflict the spell effects on the caster</td>
     </tr><tr style="text-align:center">
-      <td>Reprepare Spell: May spend 10 min to prepare a cast spell or another spell of the same level</td>
+      <td>Reprepare Spell: Allows spending 10 min to prepare a cast spell or another spell of the same level</td>
     </tr><tr style="text-align:center">
-      <td>Scroll Savant: May prepare 4 temporary scrolls with spells up to level 8 each day</td>
+      <td>Scroll Savant: Allows preparing 4 temporary scrolls with spells up to level 8 each day</td>
     </tr><tr style="text-align:center">
-      <td>Silent Spell: <b>(1)</b> May cast a spell without its verbal components</td>
+      <td>Silent Spell: <b>(1)</b> Allows casting a spell without its verbal components</td>
     </tr><tr style="text-align:center">
-      <td>Spell Blending: May use 2 spell slots from a level to prepare a spell two levels higher/May use a spell slot to prepare 2 cantrips</td>
+      <td>Spell Blending: Allows using 2 spell slots from a level to prepare a spell two levels higher or using a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
-      <td>Spell Combination: May use 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower</td>
+      <td>Spell Combination: Allows using 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower</td>
     </tr><tr style="text-align:center">
       <td>Spell Penetration: Targets reduce any status bonus to saves vs. self spells by 1</td>
     </tr><tr style="text-align:center">
-      <td>Spell Substitution: May use a 10-minute process to replace 1 prepared spell with a different spell</td>
+      <td>Spell Substitution: Allows using a 10-minute process to replace 1 prepared spell with a different spell</td>
     </tr><tr style="text-align:center">
-      <td>Spell Tinker: <b>(2)</b> May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
+      <td>Spell Tinker: <b>(2)</b> Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Allows overcoming spellcasting disruption with a successful DC 15 flat check</td>
     </tr><tr style="text-align:center">
-      <td>Superior Bond: May use Drain Bonded Item to cast another spell of up to level 8 once per day</td>
+      <td>Superior Bond: Allows using Drain Bonded Item to cast another spell of up to level 8 once per day</td>
     </tr><tr style="text-align:center">
-      <td>Transmutation: Knows 1 additional 1st-level Transmutation spell</td>
+      <td>Transmutation: Knows 1 additional 1st-level transmutation spell</td>
     </tr><tr style="text-align:center">
-      <td>Universal Versatility: May select a school spell during daily prep and Refocus</td>
+      <td>Universal Versatility: Allows selecting a school spell during daily prep and Refocus</td>
     </tr><tr style="text-align:center">
-      <td>Universalist: May use Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell</td>
+      <td>Universalist: Allows using Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', and the effect of a longer line or cone spell by 10'</td>
     </tr></table>

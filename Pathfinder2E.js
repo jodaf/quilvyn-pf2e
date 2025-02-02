@@ -63,7 +63,7 @@ function Pathfinder2E() {
   Pathfinder2E.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2E.combatRules
     (rules, Pathfinder2E.ARMORS, Pathfinder2E.SHIELDS, Pathfinder2E.WEAPONS);
-  Pathfinder2E.magicRules(rules, Pathfinder2E.SCHOOLS, Pathfinder2E.SPELLS);
+  Pathfinder2E.magicRules(rules, Pathfinder2E.SPELLS);
   Pathfinder2E.identityRules(
     rules, Pathfinder2E.ALIGNMENTS, Pathfinder2E.ANCESTRIES,
     Pathfinder2E.BACKGROUNDS, Pathfinder2E.CLASSES, Pathfinder2E.DEITIES
@@ -6620,7 +6620,6 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using a 1-action metamagic effect as a free action"',
 
   // Wizard
-  // schools handled in schoolRules
   // Alertness as above
   'Arcane Bond':'Section=feature Note="Has the Drain Bonded Item feature"',
   'Arcane School':
@@ -6629,14 +6628,14 @@ Pathfinder2E.FEATURES = {
       '"1 selection",' +
       '"Has a focus pool with 1 Focus Point"',
   'Arcane Spellcasting':
-    'Section=magic Note="May learn spells from the arcane tradition"',
+    'Section=magic Note="Allows learning spells from the arcane tradition"',
   'Arcane Thesis':'Section=feature Note="1 selection"',
   "Archwizard's Spellcraft":'Section=magic Note="Has 1 10th-level spell slot"',
   // Defensive Robes as above
   'Drain Bonded Item':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May cast an expended spell using power stored in a possession once per day"',
+    'Note="Allows casting an expended spell using power stored in a possession once per day"',
   // Expert Spellcaster as above
   'Improved Familiar Attunement':
     'Section=feature,feature ' +
@@ -6651,19 +6650,19 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"May select 1 metamagic feat of up to level %{level//2} to use each day"',
+      '"Allows selecting 1 metamagic feat of up to level %{level//2} to use each day"',
   // Resolve as above
   'Spell Blending':
     'Section=magic ' +
-    'Note="May use 2 spell slots from a level to prepare a spell two levels higher/May use a spell slot to prepare 2 cantrips"',
+    'Note="Allows using 2 spell slots from a level to prepare a spell two levels higher or using a spell slot to prepare 2 cantrips"',
   'Spell Substitution':
     'Section=magic ' +
-    'Note="May use a 10-minute process to replace 1 prepared spell with a different spell"',
+    'Note="Allows using a 10-minute process to replace 1 prepared spell with a different spell"',
   'Universalist':
     'Section=feature,magic ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"May use Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell"',
+      '"Allows using Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell"',
   // Weapon Specialization as above
   'Wizard Feats':'Section=feature Note="%V selections"',
   'Wizard Skills':
@@ -6672,10 +6671,51 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Attack Expert (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)"',
 
+  'Abjuration':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Protective Ward arcane spell",' +
+      '"Knows 1 additional 1st-level abjuration spell"',
+  'Conjuration':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Augment Summoning arcane spell",' +
+      '"Knows 1 additional 1st-level conjuration spell"',
+  'Divination':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Diviner\'s Sight arcane spell",' +
+      '"Knows 1 additional 1st-level divination spell"',
+  'Enchantment':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Charming Words arcane spell",' +
+      '"Knows 1 additional 1st-level enchantment spell"',
+  'Evocation':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Force Bolt arcane spell",' +
+      '"Knows 1 additional 1st-level illusion spell"',
+  'Illusion':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Warped Terrain arcane spell",' +
+      '"Knows 1 additional 1st-level illusion spell"',
+  'Necromancy':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Call Of The Grave arcane spell",' +
+      '"Knows 1 additional 1st-level necromancy spell"',
+  'Transmutation':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 spell slot each level/Knows the Physical Boost arcane spell",' +
+      '"Knows 1 additional 1st-level transmutation spell"',
+
   // Counterspell as above
   'Eschew Materials':
     'Section=magic ' +
-    'Note="May replace spell material components with sigils drawn in the air"',
+    'Note="Allows replacing spell material components with sigils drawn in the air"',
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
@@ -6685,7 +6725,7 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Conceal Spell':
     'Section=skill ' +
-    'Note="May hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
+    'Note="Allows hiding spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
@@ -6694,52 +6734,74 @@ Pathfinder2E.FEATURES = {
   'Silent Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May cast a spell without its verbal components"',
+    'Note="Allows casting a spell without its verbal components"',
   'Spell Penetration':
     'Section=magic ' +
     'Note="Targets reduce any status bonus to saves vs. self spells by 1"',
   // Steady Spellcasting as above
-  'Advanced School Spell':
-    'Section=magic Note="Knows the %V spell/+1 Focus Points"',
+  'Advanced School Spell (Abjuration)':
+    'Section=magic ' +
+    'Note="Knows the Energy Absorption arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Conjuration)':
+    'Section=magic ' +
+    'Note="Knows the Dimensional Steps arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Divination)':
+    'Section=magic ' +
+    'Note="Knows the Vigilant Eye arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Enchantment)':
+    'Section=magic ' +
+    'Note="Knows the Dread Aura arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Evocation)':
+    'Section=magic ' +
+    'Note="Knows the Elemental Tempest arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Illusion)':
+    'Section=magic ' +
+    'Note="Knows the Invisibility Cloak arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Necromancy)':
+    'Section=magic ' +
+    'Note="Knows the Life Siphon arcane spell/+1 Focus Points"',
+  'Advanced School Spell (Transmutation)':
+    'Section=magic ' +
+    'Note="Knows the Shifting Form arcane spell/+1 Focus Points"',
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell 2 levels lower by the end of next turn"',
+    'Note="Allows using Drain Bonded Item to cast another spell 2 levels lower by the end of next turn"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"May select a school spell during daily prep and Refocus"',
+      '"Allows selecting a school spell during daily prep and Refocus"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="May prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
+    'Note="Allows preparing %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
   'Clever Counterspell':
     'Section=magic ' +
-    'Note="May Counterspell with a -2 penalty a known spell using any spell that shares a non-tradition trait with it"',
+    'Note="Allows counterspell attempt with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
   // Magic Sense as above
   'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="May use Drain Bonded Item to cast another spell of up to level %V once per day"',
+    'Note="Allows using Drain Bonded Item to cast another spell of up to level %V once per day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="May alter the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
+    'Note="Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
   'Infinite Possibilities':
     'Section=magic ' +
-    'Note="May prepare a spell slot to allow casting of any known spell of 2 levels lower"',
+    'Note="Allows preparing a spell slot to allow casting of any known spell of 2 levels lower"',
   'Reprepare Spell':
     'Section=magic ' +
-    'Note="May spend 10 min to prepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
+    'Note="Allows spending 10 min to prepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
   "Archwizard's Might":'Section=magic Note="+1 10th level spell slot"',
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
-    'Note="May use 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
+    'Note="Allows using 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
 
   // Archetype
   'Alchemist Dedication':
@@ -6977,8 +7039,30 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (Arcane)/May prepare 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
-  'Arcane School Spell':
-    'Section=magic Note="Knows the %V arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Abjuration)':
+    'Section=magic ' +
+    'Note="Knows the Protective Ward arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Conjuration)':
+    'Section=magic ' +
+    'Note="Knows the Augment Summoning arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Divination)':
+    'Section=magic ' +
+    'Note="Knows the Diviner\'s Sight arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Enchantment)':
+    'Section=magic ' +
+    'Note="Knows the Charming Words arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Evocation)':
+    'Section=magic ' +
+    'Note="Knows the Force Bolt arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Illusion)':
+    'Section=magic ' +
+    'Note="Knows the Warped Terrain arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Necromancy)':
+    'Section=magic ' +
+    'Note="Knows the Call Of The Grave arcane spell/Has a focus pool with 1 focus point"',
+  'Arcane School Spell (Transmutation)':
+    'Section=magic ' +
+    'Note="Knows the Physical Boost arcane spell/Has a focus pool with 1 focus point"',
   'Basic Arcana':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
   'Basic Wizard Spellcasting':
@@ -7423,16 +7507,6 @@ Pathfinder2E.LANGUAGES = {
   'Necril':'',
   'Shadowtongue':'',
   'Terran':''
-};
-Pathfinder2E.SCHOOLS = {
-  'Abjuration':'Spell="Protective Ward" AdvancedSpell="Energy Absorption"',
-  'Conjuration':'Spell="Augment Summoning" AdvancedSpell="Dimensional Steps"',
-  'Divination':'Spell="Diviner\'s Sight" AdvancedSpell="Vigilant Eye"',
-  'Enchantment':'Spell="Charming Words" AdvancedSpell="Dread Aura"',
-  'Evocation':'Spell="Force Bolt" AdvancedSpell="Elemental Tempest"',
-  'Illusion':'Spell="Warped Terrain" AdvancedSpell="Invisibility Cloak"',
-  'Necromancy':'Spell="Call Of The Grave" AdvancedSpell="Life Siphon"',
-  'Transmutation':'Spell="Physical Boost" AdvancedSpell="Shifting Form"'
 };
 Pathfinder2E.SHIELDS = {
   'None':'Price=0 AC=0 Speed=0 Bulk=0 Hardness=0 HP=0',
@@ -12288,14 +12362,11 @@ Pathfinder2E.identityRules = function(
 };
 
 /* Defines rules related to magic use. */
-Pathfinder2E.magicRules = function(rules, schools, spells) {
+Pathfinder2E.magicRules = function(rules, spells) {
 
-  QuilvynUtils.checkAttrTable(schools, ['Spell', 'AdvancedSpell']);
   QuilvynUtils.checkAttrTable
     (spells, ['School', 'Level', 'Traditions', 'Cast', 'Description', 'Trait']);
 
-  for(let s in schools)
-    rules.choiceRules(rules, 'School', s, schools[s]);
   for(let s in spells)
     rules.choiceRules(rules, 'Spell', s, spells[s]);
 
@@ -12558,11 +12629,6 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Language')
     Pathfinder2E.languageRules(rules, name);
-  else if(type == 'School')
-    Pathfinder2E.schoolRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Spell'),
-      QuilvynUtils.getAttrValue(attrs, 'AdvancedSpell')
-    );
   else if(type == 'Shield')
     Pathfinder2E.shieldRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Price'),
@@ -13816,6 +13882,22 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Advanced Fury') {
     rules.defineRule
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
+  } else if(name == 'Advanced School Spell') {
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let schools =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '')).filter(x => x != 'Universalist');
+    schools.forEach(s => {
+      rules.defineRule('features.Advanced School Spell (' + s + ')',
+        'features.Advanced School Spell', '?', null,
+        'features.' + s, '=', '1'
+      );
+      let prefix =
+        s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
+      // Rules for the individual school features, placed here for convenience
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+        rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
+      });
+    });
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
@@ -13849,7 +13931,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       });
     }
   } else if(name == 'Arcane School Spell') {
-    rules.defineRule('focusPoints', 'magicNotes.arcaneSchoolSpell', '+=', '1');
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let schools =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '')).filter(x => x != 'Universalist');
+    schools.forEach(s => {
+      rules.defineRule('features.Arcane School Spell (' + s + ')',
+        'features.Arcane School Spell', '?', null,
+        'features.' + s, '=', '1'
+      );
+      rules.defineRule('focusPoints',
+        'magicNotes.arcaneSchoolSpell(' + s.replaceAll(' ', '') + ')', '+=', '1'
+      );
+    });
   } else if(name == 'Armor Proficiency') {
     rules.defineRule('combatNotes.armorProficiency',
       '', '=', '"Light"',
@@ -14688,56 +14781,6 @@ Pathfinder2E.languageRules = function(rules, name) {
 };
 
 /*
- * Defines in #rules# the rules associated with magic school #name#, which
- * has the associated spells #spell# and #advancedSpell#.
- */
-Pathfinder2E.schoolRules = function(rules, name, spell, advancedSpell) {
-
-  if(!name) {
-    console.log('Empty school name');
-    return;
-  }
-  if(!spell) {
-    console.log('Empty spell for school ' + name);
-    return;
-  }
-  if(!advancedSpell) {
-    console.log('Empty advanced spell for school ' + name);
-    return;
-  }
-
-  let prefix =
-    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-
-  Pathfinder2E.featureRules(rules, name, ['magic', 'magic'],
-    ['+1 spell slot each level/Knows the ' + spell + ' arcane spell',
-     'Knows 1 additional 1st-level ' + name + ' spell']);
-
-  rules.defineRule('magicNotes.advancedSchoolSpell',
-    'features.' + name, '=', '"' + advancedSpell + '"'
-  );
-  rules.defineRule('magicNotes.arcaneSchoolSpell',
-    'features.' + name, '=', '"' + spell + '"'
-  );
-  let spellLevel =
-    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[advancedSpell], 'Level');
-  let spellSchool =
-    QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[advancedSpell], 'School');
-  rules.defineRule('spells.' + advancedSpell + ' (A' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')',
-    'magicNotes.advancedSchoolSpell', '=', 'source=="' + advancedSpell + '" ? 1 : null'
-  );
-  spellLevel = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'Level');
-  spellSchool = QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS[spell], 'School');
-  rules.defineRule('spells.' + spell + ' (A' + spellLevel + ' ' + spellSchool.substring(0, 3) + ')',
-    'magicNotes.arcaneSchoolSpell', '=', 'source=="' + spell + '" ? 1 : null'
-  );
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
-    rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
-  });
-
-};
-
-/*
  * Defines in #rules# the rules associated with shield #name#, which costs
  * #price# gold pieces, adds #ac# to the character's armor class, reduces the
  * character's speed by #speed#, weight #bulk#, has hardness #hardness#, and
@@ -14876,7 +14919,10 @@ Pathfinder2E.spellRules = function(
     console.log('Empty spell name');
     return;
   }
-  if(!school || !(school in Pathfinder2E.SCHOOLS)) {
+  let wizard = (rules.getChoices('levels') || Pathfinder2E.CLASSES).Wizard;
+  let schools =
+    wizard.match(/[\w\s]*:Specialization/g).map(x => x.replace(':Specialization', ''));
+  if(!school || !(schools.includes(school))) {
     console.log('Bad school "' + school + '" for spell ' + name);
     return;
   }
