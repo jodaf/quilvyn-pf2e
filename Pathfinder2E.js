@@ -5223,7 +5223,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using <i>Wild Shape</i> to change into a Small or Medium humanoid"',
   'Woodland Stride':
     'Section=ability ' +
-    'Note="Allows normal Movement over difficult terrain caused by plants or fungi"',
+    'Note="Allows normal movement over difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
     'Note="Allows using Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
@@ -5909,7 +5909,7 @@ Pathfinder2E.FEATURES = {
   "Hunter's Edge":'Section=feature Note="1 selection"',
   'Flurry':
     'Section=combat ' +
-    'Note="Reduces penalty for 2nd/3rd attack on hunted prey to -3/-6 (-2/-4 with an agile weapon)"',
+    'Note="Reduces penalty for 2nd and 3rd attack on hunted prey to -3 and -6 (-2 and -4 with an agile weapon)"',
   'Outwit':
     'Section=combat,skill ' +
     'Note=' +
@@ -5922,7 +5922,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Reflex)",' +
-      '"Critical failures on Reflex saves are normal failures/Suffers half normal damage from failed Reflex saves"',
+      '"Critical failures on Reflex saves are normal failures, and suffers half normal damage from failed Reflex saves"',
   'Incredible Senses':'Section=skill Note="Perception Legendary"',
   // Iron Will as above
   // Juggernaut as above
@@ -5948,22 +5948,21 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"May use critical specialization effects of unarmed attacks and simple and martial weapons when attacking hunted prey"',
+      '"Allows using critical specialization effects of unarmed attacks and simple and martial weapons when attacking hunted prey"',
   'Second Skin':
     'Section=combat,combat ' +
     'Note=' +
       '"Defense Master (Light Armor; Medium Armor; Unarmored Defense)",' +
-      '"May rest normally in light or medium armor"',
+      '"Allows resting normally in light or medium armor"',
   'Swift Prey':
     'Section=combat ' +
-    'Note="May use Hunt Prey as a free action at the beginning of each turn"',
+    'Note="Allows using Hunt Prey as a free action at the beginning of each turn"',
   'Trackless Step':
     'Section=skill ' +
     'Note="Has the benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
   // Vigilant Senses as above
   'Wild Stride':
-    'Section=ability ' +
-    'Note="May move normally over non-magical difficult terrain"',
+    'Section=ability Note="Moves normally over non-magical difficult terrain"',
   // Weapon Mastery as above
   // Weapon Specialization as above
 
@@ -5974,87 +5973,95 @@ Pathfinder2E.FEATURES = {
   'Hunted Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May make two ranged Strikes against hunted prey once per rd"',
+    'Note="Allows two ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="May attempt to Recall Knowledge as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd once per target per day"',
+    'Note="Allows Recall Knowledge attempt as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd once per target per day"',
   'Twin Takedown':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May make a melee Strike with each hand against hunted prey once per rd"',
+    'Note="Allows a melee Strike with each hand against hunted prey once per rd"',
   'Favored Terrain (Aquatic)':
     'Section=ability ' +
-    'Note="May move normally through underwater difficult terrain/%{speed}\' swim Speed"',
+    'Note="Allows normal movement through underwater difficult terrain/Has %{speed}\' swim Speed"',
   'Favored Terrain (Arctic)':
     'Section=ability,feature ' +
     'Note=' +
-      '"May move normally over icy or snowy difficult terrain without a need to Balance",' +
+      '"Allows normal movement over difficult terrain caused by ice and snow without a need to Balance",' +
       '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Desert)':
     'Section=ability,feature ' +
     'Note=' +
-      '"May move normally over sandy difficult terrain without a need to Balance",' +
+      '"Allows normal movement over difficult terrain caused by sand without a need to Balance",' +
       '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
-    'Note="May move normally over forested difficult terrain/%{speed}\' climb Speed"',
+    'Note="Allows normal movement over difficult terrain caused by forest/Has %{speed}\' climb Speed"',
   'Favored Terrain (Mountain)':
     'Section=ability ' +
-    'Note="May move normally over mountainous difficult terrain/%{speed}\' climb Speed"',
+    'Note="Allows normal movement over difficult terrain caused by mountains/Has %{speed}\' climb Speed"',
   'Favored Terrain (Plains)':
     'Section=ability,ability ' +
     'Note=' +
       '"+10 Speed",' +
-      '"May move normally over difficult terrain in plains"',
+      '"Allows normal movement over difficult terrain in plains"',
   'Favored Terrain (Sky)':
     'Section=ability ' +
-    'Note="May move normally through difficult terrain in the sky/%{speed}\' fly Speed"',
+    'Note="Allows normal movement through difficult terrain in the sky/Has %{speed}\' fly Speed"',
   'Favored Terrain (Swamp)':
     'Section=ability ' +
-    'Note="May move normally over boggy greater difficult terrain"',
+    'Note="Allows normal movement over greater difficult terrain caused by bogs"',
   'Favored Terrain (Underground)':
     'Section=ability ' +
-    'Note="May move normally over underground difficult terrain/%{speed}\' climb Speed"',
+    'Note="Allows normal movement over difficult terrain underground/Has %{speed}\' climb Speed"',
   "Hunter's Aim":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May make a +2 attack that ignores concealment of hunted prey"',
+    'Note="+2 attack ignores concealment of hunted prey"',
   'Monster Warden':
     'Section=combat ' +
     'Note="Successful use of Monster Hunter also gives self and allies +%V Armor Class on next attack and +%V on next save vs. hunted prey"',
-  'Quick Draw':'Action=1 Section=combat Note="May draw a weapon and Strike"',
+  'Quick Draw':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Allows drawing a weapon and an immediate Strike"',
   // Wild Empathy as above
   "Companion's Cry":
     'Section=combat ' +
-    'Note="May use 2 actions for Command an Animal to give companion an additional action"',
+    'Note="Allows using 2 actions for Command an Animal to give companion an additional action"',
   'Disrupt Prey':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May make an Attack of Opportunity on hunted prey; critical success disrupts its action"',
+    'Note="Allows an Attack of Opportunity on hunted prey; critical success disrupts its action"',
   'Far Shot':'Section=combat Note="Doubles ranged weapon increments"',
   'Favored Enemy':
     'Section=combat ' +
-    'Note="May use Hunt Prey with chosen creature type as a free action during initiative"',
+    'Note="Allows using Hunt Prey with chosen creature type as a free action during initiative"',
   'Running Reload':
-    'Action=1 Section=combat Note="May Reload during Stride, Step, and Sneak"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Allows Reloading during Stride, Step, and Sneak"',
   "Scout's Warning":
-    'Action=Free Section=combat Note="May give allies +1 initiative"',
+    'Action=Free Section=combat Note="Gives allies +1 initiative"',
   'Snare Specialist':
     'Section=skill ' +
     'Note="Knows the formulas for %{rank.Crafting<3?3:rank.Crafting<4?6:9} snares; may prepare %V each day"',
   // Twin Parry as above
   // Mature Animal Companion as above
-  'Quick Snares':'Section=skill Note="May prepare snares with 3 actions"',
-  'Skirmish Strike':'Action=1 Section=combat Note="May Step and Strike"',
+  'Quick Snares':'Section=skill Note="Allows preparing snares with 3 actions"',
+  'Skirmish Strike':
+    'Action=1 Section=combat Note="Allows Steping before or after Strike"',
   'Snap Shot':
     'Section=combat ' +
-    'Note="May use a ranged weapon during a Reaction to Strike an adjacent creature"',
-  'Swift Tracker':'Section=skill Note="May Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/May perform other exploration while tracking\':\'\'}"',
+    'Note="Allows using a ranged weapon during a Reaction to Strike an adjacent creature"',
+  'Swift Tracker':
+    'Section=skill ' +
+    'Note="Allows Tracking at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Allows performing other exploration while tracking\':\'\'}"',
   // Blind-Fight as above
   'Deadly Aim':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May suffer -2 ranged Strike penalty vs. hunted prey to gain +%{level<11?4:level<15?6:8} HP damage"',
+    'Note="Ranged Strike with a -2 penalty vs. hunted prey to inflicts +%{level<11?4:level<15?6:8} HP damage"',
   'Hazard Finder':
     'Section=combat,skill ' +
     'Note=' +
@@ -6065,32 +6072,34 @@ Pathfinder2E.FEATURES = {
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
     'Section=ability ' +
-    'Note="May train for 1 hr to temporarily change favored terrain"',
+    'Note="Allows training for 1 hr to temporarily change favored terrain"',
   "Warden's Boon":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May share Hunt Prey benefits with an ally for 1 rd"',
+    'Note="Shares Hunt Prey benefits with an ally for 1 rd"',
   'Camouflage':
-    'Section=skill Note="May Hide and Sneak in natural terrain without cover"',
+    'Section=skill ' +
+    'Note="Allows using Hide and Sneak in natural terrain without cover"',
   // Incredible Companion as above
   'Master Monster Hunter':
     'Section=combat,skill ' +
     'Note=' +
       '"Monster Hunter effects take effect on simple success",' +
-      '"May use Nature to Recall Knowledge to identify any creature"',
+      '"Allows using Nature to Recall Knowledge to identify any creature"',
   'Penetrating Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Strike both a target and a creature giving it lesser cover"',
+    'Note="Strike affects both a target and a creature giving it lesser cover"',
   // Twin Riposte as above
   "Warden's Step":
     'Section=skill ' +
-    'Note="May include allies in an Avoid Notice action in natural terrain"',
+    'Note="Allows including allies in an Avoid Notice action in natural terrain"',
   'Distracting Shot':
     'Section=combat ' +
     'Note="Critical or double hit on hunted prey inflicts flat-footed for 1 rd"',
-  'Double Prey':'Section=combat Note="May use Hunt Prey on two targets"',
-  'Lightning Snares':'Section=skill Note="May craft a trap with 1 action"',
+  'Double Prey':'Section=combat Note="Allows using Hunt Prey on two targets"',
+  'Lightning Snares':
+    'Section=skill Note="Allows crafting a trap with 1 action"',
   'Second Sting':
     'Action=1 ' +
     'Section=combat ' +
@@ -6099,23 +6108,23 @@ Pathfinder2E.FEATURES = {
   'Sense The Unseen':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Upon a failed Seek, may make undetected foes hidden"',
+    'Note="Makes undetected foes hidden after failed Seek"',
   'Shared Prey':
     'Section=combat ' +
-    'Note="May share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
+    'Note="Share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
   'Stealthy Companion':
     'Section=skill ' +
-    'Note="Companion gains benefits of Camouflage; ambusher companion gains an increase in Stealth rank"',
+    'Note="Companion gains benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank"',
   'Targeting Shot':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Ranged attack vs. hunted prey ignores cover and concealment"',
   "Warden's Guidance":
     'Section=skill ' +
-    'Note="While observing hunted prey, Seek failures and critical failures by allies are successes"',
+    'Note="While observing hunted prey, changes Seek failures and critical failures by allies into successes"',
   'Greater Distracting Shot':
     'Section=combat ' +
-    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd; critical hit until end of next turn"',
+    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until end of next turn on a critical success"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
     'Section=combat Note="Increases Monster Hunter effects"',
@@ -6124,38 +6133,40 @@ Pathfinder2E.FEATURES = {
   'Impossible Flurry':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="While wielding 2 weapons, may make 3 melee Strikes with each at the maximum multiple attack penalty"',
+    'Note="While wielding 2 weapons, makes 3 melee Strikes with each at the maximum multiple attack penalty"',
   // Impossible Volley as above
   'Manifold Edge':
     'Section=combat ' +
-    'Note="May use a different hunter\'s edge benefit with Hunt Prey"',
+    'Note="Allows using a different hunter\'s edge benefit with Hunt Prey"',
   'Masterful Companion':
     'Section=combat ' +
-    'Note="Companion gains Masterful Hunter effects vs. hunted prey"',
+    'Note="Gives companion Masterful Hunter effects vs. hunted prey"',
   'Perfect Shot':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="May inflict maximum damage with a ranged Strike on hunted prey"',
+    'Note="A ranged Strike on hunted prey inflicts maximum damage"',
   'Shadow Hunter':
     'Section=skill ' +
     'Note="Has continuous concealment from foes other than hunted prey in natural surroundings"',
-  'Legendary Shot':'Section=combat Note="May ignore five range increments when attacking hunted prey with a master proficiency weapon"',
+  'Legendary Shot':
+    'Section=combat ' +
+    'Note="Ignores five range increments when attacking hunted prey with a master proficiency weapon"',
   'To The Ends Of The Earth':
-    'Section=skill Note="May follow hunted prey across any distance"',
+    'Section=skill Note="Allows following hunted prey across any distance"',
   'Triple Threat':
     'Section=feature ' +
-    'Note="May use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
+    'Note="Allows using Hunt Prey with 3 targets, sharing two-target Hunt Prey effects with 1 ally, or sharing single-target Hunt Prey effects with 2 allies"',
   'Ultimate Skirmisher':
     'Section=ability,save ' +
     'Note=' +
-      '"May move normally over difficult, greater difficult, and hazardous terrain",' +
+      '"Allows normal movement over difficult, greater difficult, and hazardous terrain",' +
       '"Never triggers movement-connected traps"',
 
   // Rogue
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="May have a successful Strike against a flat-footed foe inflict choice of -10 Speed or enfeebled 1 until end of next turn"',
+    'Note="Allows a successful Strike against a flat-footed foe to inflict choice of -10 Speed or enfeebled 1 until end of next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
@@ -6173,7 +6184,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"May have a successful Strike on a flat-footed foe force a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"Allows a successful Strike on a flat-footed foe to force a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -6187,12 +6198,12 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Defense %V (Medium Armor)",' +
-      '"May sneak attack with any simple weapon/May apply critical specialization on a critical hit with a d8 or lighter simple weapon on a flat-footed foe",' +
+      '"Allows using any simple weapon to sneak attack/Allows use of critical specialization on a critical hit with a d8 or lighter simple weapon on a flat-footed foe",' +
       '"Skill Trained (Intimidation)"',
   'Scoundrel':
     'Section=combat,skill ' +
     'Note=' +
-      '"A successful Feint inflicts flat-footed on foe vs. self attacks (critical success all attacks) for until the end of next turn",' +
+      '"A successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of next turn",' +
       '"Skill Trained (Deception; Diplomacy)"',
   'Slippery Mind':
     'Section=save,save ' +
@@ -6201,10 +6212,10 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sneak Attack':
     'Section=combat ' +
-    'Note="+%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP damage vs. flat-footed foe with agile, finesse, or ranged weapons"',
+    'Note="+%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP damage vs. flat-footed foe using an agile, finesse, or ranged weapon"',
   'Surprise Attack':
     'Section=combat ' +
-    'Note="May use Deception or Stealth for initiative to inflict flat-footed on creatures that haven\'t acted"',
+    'Note="Allows using Deception or Stealth for initiative to inflict flat-footed on creatures that haven\'t acted"',
   'Thief':
     'Section=combat,skill ' +
     'Note=' +
@@ -6215,25 +6226,25 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"Critical hits vs. a flat-footed foe with unarmed attacks and agile, finesse, and rogue weapons inflict its critical specialization effect"',
+      '"A critical hit vs. a flat-footed foe with an unarmed attack or an agile, finesse, or rogue weapon inflicts its critical specialization effect"',
   // Weapon Specialization as above
 
   'Nimble Dodge':
-    'Action=Reaction Section=combat Note="May gain +2 AC against an attack"',
+    'Action=Reaction Section=combat Note="Gives +2 AC against an attack"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"+%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps/May disable traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
+      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
       '"+%{rank.Thievery>=3?2:1} vs. traps",' +
       '"+%{rank.Thievery>=3?2:1} AC vs. traps"',
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Strike with each hand, inflicting flat-footed on the second"',
+    'Note="Allows Striking with each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May gain +2 Intimidation to Demoralize another foe after current foe drops"',
+    'Note="Gives +2 Intimidation to Demoralize another foe after current foe drops"',
   'Brutal Beating':
     'Section=combat Note="Critical success on a Strike inflicts frightened 1"',
   'Distracting Feint':
@@ -6260,7 +6271,8 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (Primal)",' +
       '"Knows 2 primal cantrips"',
   'Mobility':
-    'Section=combat Note="May Stride half Speed without triggering reactions"',
+    'Section=combat ' +
+    'Note="Allows Striding at half Speed without triggering reactions"',
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
@@ -6268,7 +6280,7 @@ Pathfinder2E.FEATURES = {
   'Battle Assessment':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May use Perception vs. Deception or Stealth DC to determine foe strengths and weaknesses"',
+    'Note="A successful Perception vs. Deception or Stealth DC determines foe strengths and weaknesses"',
   'Dread Striker':
     'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
   'Magical Trickster':
@@ -6277,126 +6289,129 @@ Pathfinder2E.FEATURES = {
   'Poison Weapon':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May prepare %{level} poisons each day that inflict 1d4 HP damage/May apply poison to piercing and slashing weapons"',
+    'Note="Allows preparing %{level} poisons each day that inflict 1d4 HP damage and appling poison to piercing and slashing weapons"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May remain adjacent to a retreating foe"',
+    'Note="Allows a move to remain adjacent to a retreating foe"',
   'Sabotage':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="May use Thievery vs. Reflex to inflict %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item possessed by a creature within reach"',
+    'Note="Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item possessed by a creature within reach"',
   // Scout's Warning as above
   'Gang Up':
     'Section=combat ' +
-    'Note="Flanking by allies inflict flat-footed on foes vs. self attacks"',
+    'Note="Flanking by allies inflicts flat-footed on foes vs. self attacks"',
   'Light Step':
-    'Section=ability Note="May Stride or Step normally over difficult terrain"',
+    'Section=ability ' +
+    'Note="Allows Striding or Steping normally over difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="May inflict %{(level+7)//6} HP persistent bleed damage with a sneak attack"',
+    'Note="Inflicts %{(level+7)//6} HP persistent bleed damage with a sneak attack"',
   // Blind-Fight as above
   'Delay Trap':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="May attempt a +5 DC Thievery to delay or disable trap activation"',
+    'Note="A successful +5 DC Thievery check delays or disables trap activation"',
   'Improved Poison Weapon':
     'Section=combat ' +
-    'Note="Poisoned weapons inflict +2d4 HP damage/Critical miss does not waste poison"',
+    'Note="Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison"',
   'Nimble Roll':
     'Section=save ' +
-    'Note="May use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
+    'Note="Allows using Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
   'Opportune Backstab':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="After an ally hits a foe, may Strike the same foe"',
+    'Note="Allows a Strike on a foe immediately after an ally hits it"',
   'Sidestep':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May redirect a failed Strike on self to an adjacent creature"',
+    'Note="Redirects a failed Strike on self to an adjacent creature"',
   'Sly Striker':
     'Section=combat ' +
     'Note="Successful Strikes with a sneak attack weapon inflict +%{level>=14 ? 2 : 1}d6 HP precision damage"',
   'Precise Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may inflict +2d6 HP precision damage or flat-footed"',
+    'Note="Allows Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
   'Sneak Savant':
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may prevent reactions or flanking"',
+    'Note="Allows Debilitating Strike to prevent reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
-    'Note="Debilitating Strike may inflict weakness 5 to choice of damage type or clumsy 1"',
+    'Note="Allows Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Strike may force a foe Fortitude save; critical failure paralyzes until the end of next turn; failure/success inflicts slowed 2/1 until the end of next turn"',
+    'Note="Allows Debilitating Strike to force a foe Fortitude save; critical failure paralyzes until the end of next turn; failure/success inflicts slowed 2/1 until the end of next turn"',
   'Fantastic Leap':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May Strike after a High Jump or Long Jump, using Long Jump distance for either"',
+    'Note="Strike after a High Jump or Long Jump that uses Long Jump distance"',
   'Felling Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May force a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds until the end of next turn; failure causes 120\' fall"',
+    'Note="Forces a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds until the end of next turn; failure causes 120\' fall"',
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May prevent a foe Reaction; requires an attack against a higher-level foe"',
+    'Note="Prevent a foe Reaction; requires an attack against a higher-level foe"',
   'Spring From The Shadows':
-    'Action=1 Section=combat Note="May Strike an unaware foe after a Stride"',
+    'Action=1 Section=combat Note="Strikes an unaware foe after a Stride"',
   'Defensive Roll':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="May negate half damage from an attack that would reduce self to 0 HP 1/10 min"',
+    'Note="Negates half damage from an attack that would reduce self to 0 HP once per 10 min"',
   'Instant Opening':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' May use a distraction to inflict flat-footed vs. self until the end of next turn"',
+    'Note="R30\' Distraction inflicts flat-footed vs. self until the end of next turn"',
   'Leave An Opening':
     'Section=combat ' +
-    'Note="May follow a critical hit on a flat-footed foe by giving a chosen ally an Attack Of Opportunity"',
+    'Note="Allows following a critical hit on a flat-footed foe by giving a chosen ally an Attack Of Opportunity"',
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
     'Note="Immune to detection, revelation and scrying effects of less than 10 counteract level"',
   'Cloud Step':
-    'Section=ability Note="May Stride over insubstantial surfaces and traps"',
+    'Section=ability ' +
+    'Note="Allows Striding over insubstantial surfaces and traps"',
   'Cognitive Loophole':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="May suppress a mental effect until the end of next turn"',
+    'Note="Suppresses a mental effect until the end of next turn"',
   'Dispelling Slice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="May attempt a level %{(level+1)//2}, DC %{classDifficultyClass.Rogue-10} counteract to dispel a magical effect on the target of a successful sneak attack"',
+    'Note="Allows a level %{(level+1)//2}, DC %{classDifficultyClass.Rogue-10} counteract attempt to dispel a magical effect on the target of a successful sneak attack"',
   'Perfect Distraction':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May create a decoy that invokes <i>Mislead</i> effects 1/10 min"',
+    'Note="Creates a decoy that invokes <i>Mislead</i> effects once per 10 min"',
   'Implausible Infiltration':
     'Action=2 ' +
     'Section=ability ' +
-    'Note="May move through up to 10\' of wood, plaster, or stone"',
+    'Note="Allow movement through up to 10\' of wood, plaster, or stone"',
   'Powerful Sneak':
-    'Section=combat Note="May change sneak attack damage to match weapon type"',
+    'Section=combat ' +
+    'Note="Allows changing sneak attack damage to match weapon type"',
   "Trickster's Ace":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May evoke the effects of a prepared spell of up to level 4 on self"',
+    'Note="Evokes the effects of a prepared spell of up to level 4 on self"',
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May become invisible for 1 min when hidden from foes once per hr"',
+    'Note="Makes self invisible for 1 min when hidden from foes once per hr"',
   'Impossible Striker':
     'Section=combat ' +
-    'Note="May inflict sneak attack damage on a non-flat-footed foe"',
+    'Note="Allows inflicting sneak attack damage on a non-flat-footed foe"',
   'Reactive Distraction':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="May redirect an effect or attack from self to Perfect Distraction decoy"',
+    'Note="Redirects an effect or attack from self to Perfect Distraction decoy"',
 
   // Sorcerer
   // Alertness as above
@@ -6417,7 +6432,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic Note="May learn spells from the %V tradition"',
+    'Section=magic Note="Allows learning spells from the %V tradition"',
   'Sorcerer Weapon Expertise':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
@@ -6486,11 +6501,11 @@ Pathfinder2E.FEATURES = {
   'Counterspell':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="May expend a spell slot to counteract a spell with the same spell"',
+    'Note="Expends a spell slot to counteract a spell with the same spell"',
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Casting an instantaneous harmful spell inflicts additional damage equal to its level"',
-  'Familiar':'Section=feature Note="May have a familiar"',
+  'Familiar':'Section=feature Note="Allows acquiring a familiar"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -6498,18 +6513,18 @@ Pathfinder2E.FEATURES = {
   'Arcane Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
+      '"Allows learning 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
       '"Skill Trained (Choose 1 from any)"',
   'Bespell Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="May cast a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on spell school"',
+    'Note="Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"May temporarily add 1 unknown mental spell to repertoire each day",' +
+      '"Allows temporarily adding 1 unknown mental spell to repertoire each day",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
@@ -6545,7 +6560,7 @@ Pathfinder2E.FEATURES = {
     'Section=save Note="+1 vs. spells and magical effects"',
   'Crossblooded Evolution':
     'Section=magic ' +
-    'Note="May have 1 spell from a different tradition in repertoire"',
+    'Note="Allows adding 1 spell from a different tradition to repertoire"',
   'Greater Bloodline (Aberrant)':
     'Section=magic ' +
     'Note="Knows the Unusual Anatomy occult spell/+1 Focus Points"',
@@ -6581,27 +6596,28 @@ Pathfinder2E.FEATURES = {
   'Interweave Dispel':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May expend a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
+    'Note="Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
   'Reflect Spell':
     'Section=magic ' +
-    'Note="May have a successful Counterspell inflict the spell effects on the caster"',
+    'Note="Allows causing a successful Counterspell to inflict the spell effects on the caster"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
     'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
     'Section=feature ' +
-    'Note="May cast two additional spells of different levels after spell slots in each level are exhausted once per day"',
+    'Note="Allows casting two additional spells of different levels after spell slots in each level are exhausted once per day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
-    'Note="May know 3 spells of different levels from different traditions"',
+    'Note="Allows adding 3 spells of different levels from different traditions to repertoire"',
   'Bloodline Conduit':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="May cast instantaneous spells of 5th level and lower without expending a spell slot"',
+    'Note="Allows casting instantaneous spells of 5th level and lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
-    'Section=magic Note="May use a 1-action metamagic effect as a free action"',
+    'Section=magic ' +
+    'Note="Allows using a 1-action metamagic effect as a free action"',
 
   // Wizard
   // schools handled in schoolRules
