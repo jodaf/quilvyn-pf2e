@@ -6882,7 +6882,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Anathema and Deity features",' +
-      '"Spell Trained (Divine)/May prepare 2 divine cantrips each day",' +
+      '"Spell Trained (Divine)/Allows preparing 2 divine cantrips each day",' +
       '"Skill Trained (Religion)"',
   'Basic Cleric Spellcasting':
     'Section=magic ' +
@@ -6903,14 +6903,25 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Druidic Language and Druidic Order features",' +
-      '"Spell Trained (Primal)/May prepare 2 primal cantrips each day",' +
+      '"Spell Trained (Primal)/Allows preparing 2 primal cantrips each day",' +
       '"Skill Trained (Nature)"',
   'Basic Druid Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell"',
   'Basic Wilding':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
-  'Order Spell':'Section=magic Note="Knows the initial druidic order spell"',
+  'Order Spell (Animal)':
+    'Section=magic ' +
+    'Note="Knows the Heal Animal primal spell/Has a focus pool with 1 Focus Point"',
+  'Order Spell (Leaf)':
+    'Section=magic ' +
+    'Note="Knows the Goodberry primal spell/Has a focus pool with 1 Focus Point"',
+  'Order Spell (Storm)':
+    'Section=magic ' +
+    'Note="Knows the Tempest Surge primal spell/Has a focus pool with 1 Focus Point"',
+  'Order Spell (Wild)':
+    'Section=magic ' +
+    'Note="Knows the Wild Morph primal spell/Has a focus pool with 1 Focus Point"',
   'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
@@ -7036,7 +7047,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,magic,skill ' +
     'Note=' +
       '"Has the Arcane School feature",' +
-      '"Spell Trained (Arcane)/May prepare 2 arcane cantrips each day",' +
+      '"Spell Trained (Arcane)/Allows preparing 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
   'Arcane School Spell (Abjuration)':
@@ -7080,14 +7091,14 @@ Pathfinder2E.FEATURES = {
 
   // General Feats
   'Adopted Ancestry (%ancestry)':
-    'Section=feature Note="May take %ancestry ancestry feats"',
+    'Section=feature Note="Allows taking %ancestry ancestry feats"',
   'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
   'Armor Proficiency':'Section=combat Note="Defense Trained (%V Armor)"',
   'Breath Control':
     'Section=ability,save ' +
     'Note=' +
-      '"May hold breath 25x as long as usual without suffocating",' +
-      '"+1 vs. inhaled threats/Success vs. inhaled threat is always a critical success"',
+      '"Allows holding breath 25x as long as usual without suffocating",' +
+      '"+1 vs. inhaled threats, and successes vs. inhaled threat are critical successes"',
   'Canny Acumen (Fortitude)':'Section=save Note="Save %V (Fortitude)"',
   'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
   'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
@@ -7095,21 +7106,22 @@ Pathfinder2E.FEATURES = {
   'Diehard':'Section=combat Note="Remains alive until dying 5"',
   'Expeditious Search':
     'Section=skill ' +
-    'Note="May Search at %{rank.Perception>=4?4:2}x normal Speed"',
+    'Note="Allows Searching at %{rank.Perception>=4?4:2}x normal Speed"',
   'Fast Recovery':
     'Section=save ' +
     'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
-  'Feather Step':'Section=ability Note="May Step into difficult terrain"',
+  'Feather Step':
+    'Section=ability Note="Allows Stepping into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
   'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
-  'Incredible Investiture':'Section=magic Note="May invest 12 items"',
+  'Incredible Investiture':'Section=magic Note="Allows investing 12 items"',
   'Ride':
     'Section=feature ' +
     'Note="Automatically succeeds when using Command an Animal to move/Mount acts on self turn"',
   'Shield Block':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="When shield is raised, may negate damage up to its hardness and have it absorb half of remaining damage"',
+    'Note="When shield is raised, it negates damage up to its hardness and absorbs half of any remaining damage"',
   'Toughness':
     'Section=combat,save ' +
     'Note=' +
@@ -7127,51 +7139,56 @@ Pathfinder2E.FEATURES = {
   // General Skill Feats
   'Assurance (%skill)':
     'Section=skill ' +
-    'Note="May forgo rolling a %skill check for an automatic %{10+$\'proficiencyBonus.%skill\'}"',
+    'Note="Allows taking an automatic %{10+$\'proficiencyBonus.%skill\'} on %skill checks"',
   'Automatic Knowledge (%skill)':
     'Section=skill ' +
-    'Note="May use Assurance (%skill) to Recall Knowledge as a free action once per rd"',
+    'Note="Allows using Assurance (%skill) to Recall Knowledge as a free action once per rd"',
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
-  'Magical Shorthand':'Section=skill Note="May learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level; may retry 1 week after failure"',
-  'Quick Identification':'Section=skill Note="May use %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
+  'Magical Shorthand':
+    'Section=skill ' +
+    'Note="Allows learning new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retrying 1 week after a failure"',
+  'Quick Identification':
+    'Section=skill ' +
+    'Note="Allows using %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
   'Quick Recognition':
     'Section=skill ' +
-    'Note="May use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
+    'Note="Allows using a skill with master proficiency to Recognize a Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="May gain guaranteed success in recognizing an unknown common spell of up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
+    'Note="Guarantees success in recognizing an unknown common spell of up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="A successful check on the related skill allows temporary activation of a magic item"',
+    'Note="Allows a successful check on the related skill to temporarily activate a magic item"',
 
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
   'Alchemical Crafting':
     'Section=skill ' +
-    'Note="May use Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
+    'Note="Allows using Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
-    'Section=skill Note="+2 initial gold/May use Diplomacy to Earn Income"',
+    'Section=skill ' +
+    'Note="Gives +2 initial gold/Allows using Diplomacy to Earn Income"',
   'Battle Cry':
     'Section=combat ' +
-    'Note="May Demoralize a foe during initiative%{rank.Intimidation>=4?\' or on attack critical success\':\'\'}"',
+    'Note="Allows using Demoralize on a foe during initiative%{rank.Intimidation>=4?\' or on an attack critical success\':\'\'}"',
   'Battle Medicine':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="May use Medicine to restore Hit Points once per target per day"',
+    'Note="Allows using Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
     'Note="Others suffer +5 DC to Recognize Spells and Identify Magic on self spells"',
   'Bonded Animal':
     'Section=skill ' +
-    'Note="May make an animal permanently helpful with 1 week of interaction and a successful DC 20 Nature check"',
+    'Note="Allows using 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
@@ -7180,83 +7197,85 @@ Pathfinder2E.FEATURES = {
     'Note="Critical success on a Lie improves attitude by 1 step once per conversation"',
   'Cloud Jump':
     'Section=skill ' +
-    'Note="May long jump triple normal distance, high jump normal long jump distance, and add %{speed}\' to jump distance for every additional action spent"',
+    'Note="Gives triple normal distance on a long jump, normal long jump distance on a high jump, and +%{speed}\' to jump distance for every additional action spent"',
   'Combat Climber':
     'Section=skill ' +
-    'Note="Does not suffer flat-footed and may fight while Climbing/May Climb with one hand occupied"',
+    'Note="Allows Climbing with one hand occupied and negates flat-footed and allows fighting while Climbing"',
   'Confabulator':
     'Section=skill ' +
     'Note="Reduces bonus given to target of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
   'Connections':
     'Section=skill ' +
-    'Note="May use Society to gain a meeting with an important figure or to exchange favors"',
+    'Note="Allows using Society to gain a meeting with an important figure or to exchange favors"',
   'Continual Recovery':
-    'Section=skill Note="May repeat Treat Wounds on a patient after 10 min"',
+    'Section=skill ' +
+    'Note="Allows repeating Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
     'Section=skill ' +
-    'Note="May use Society to impersonate a noble or to Make an Impression on one"',
+    'Note="Allows using Society to impersonate a noble or to Make an Impression on one"',
   'Craft Anything':
-    'Section=skill Note="May ignore secondary Crafting requirements"',
+    'Section=skill Note="Negates need for secondary Crafting requirements"',
   'Divine Guidance':
     'Section=skill ' +
-    'Note="May 10 min Deciphering Writing on religious text and a successful Religion check to gain a hint for a current problem"',
+    'Note="Allows using 10 min Deciphering Writing on a religious text and a successful Religion check to gain a hint for a current problem"',
   'Experienced Professional':
     'Section=skill ' +
-    'Note="Critical failures when using Lore to Earn Income are normal failures; normal failures give twice the income"',
+    'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income"',
   'Experienced Smuggler':
     'Section=skill ' +
-    'Note="%{rank.Stealth>=4?\'Automatic success\':rank.Steak>=3\'Minimum 15\':\'Minimum 10\'} on Stealth rolls to conceal a small item/Earn Income using Underworld Lore gives increased earnings"',
+    'Note="%{rank.Stealth>=4?\'Automatic success\':rank.Steak>=3\'Minimum 15\':\'Minimum 10\'} on Stealth rolls to conceal a small item/Earning Income using Underworld Lore gives increased earnings"',
   'Experienced Tracker':
     'Section=skill ' +
-    'Note="May Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Does not require a Survival check every hr to Track\':\'\'}"',
+    'Note="Allows Tracking at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Negates need for a Survival check every hr to Track\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
-    'Note="May fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+    'Note="Allows fascinating %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
     'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak"',
   'Forager':
     'Section=skill ' +
-    'Note="Failures and critical failures on Survival to Subsist are successes; may provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
+    'Note="Failures and critical failures on Survival to Subsist are successes/Allows providing for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="May use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting; may retry after 1 min"',
+    'Note="Allows using Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and retrying after 1 min"',
   'Group Coercion':
     'Section=skill ' +
-    'Note="May use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
+    'Note="Allows using Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
-    'Note="May use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
+    'Note="Allows using Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
-  'Hobnobber':'Section=skill Note="May Gather Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
+  'Hobnobber':'Section=skill Note="Allows Gathering Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
-    'Note="Crafting success with Specialty Crafting is always a critical success"',
+    'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
-    'Section=skill Note="May use Performance to Make an Impression"',
-  'Intimidating Glare':'Section=skill Note="May use glare to Demoralize"',
+    'Section=skill Note="Allows using Performance to Make an Impression"',
+  'Intimidating Glare':'Section=skill Note="Allows using glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
     'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
-  'Inventor':'Section=skill Note="May use Crafting to create formulas"',
+  'Inventor':'Section=skill Note="Allows using Crafting to create formulas"',
   'Kip Up':
-    'Action=Free Section=combat Note="May stand without triggering reactions"',
+    'Action=Free ' +
+    'Section=combat Note="Allows standing up without triggering reactions"',
   'Lasting Coercion':
     'Section=skill ' +
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
   'Legendary Codebreaker':
     'Section=skill ' +
-    'Note="May use Society to Decipher Writing at full Speed; successes at normal Speed are critical successes"',
+    'Note="Allows using Society to Decipher Writing at full Speed, and successes at normal Speed are critical successes"',
   'Legendary Linguist':
     'Section=skill ' +
-    'Note="May establish basic communication with any creature that uses language"',
+    'Note="Allows establishing basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="May use a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
+    'Note="Allows using a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="May use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
+    'Note="Allows using Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
     'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Performance increases audience by 2 levels"',
@@ -7265,38 +7284,42 @@ Pathfinder2E.FEATURES = {
     'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Lore increases job level"',
   'Legendary Sneak':
     'Section=skill ' +
-    'Note="May Hide and Sneak without cover/Automatically uses Avoiding Notice when exploring"',
+    'Note="Allows using Hide and Sneak without cover/Automatically uses Avoiding Notice when exploring"',
   'Legendary Survivalist':
     'Section=skill ' +
-    'Note="May survive indefinitely without food and water and endure incredible temperatures without damage"',
+    'Note="Allows indefinite survival without food and water and enduring incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
-    'Note="May attempt Steal with a -5 penalty to take actively wielded and highly noticeable items"',
+    'Note="Allows using Steal with a -5 penalty to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
-    'Note="May remain hidden after a Create a Diversion attempt critically succeeds"',
+    'Note="Allows remaining hidden after a Create a Diversion attempt critically succeeds"',
   'Lie To Me':
-    'Section=skill Note="May use Deception to detect lies in a conversation"',
+    'Section=skill ' +
+    'Note="Allows using Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
-    'Note="May craft magic items/Knows formulas for 4 common magic items of 2nd level or lower"',
+    'Note="Allows crafting magic items/Knows formulas for 4 common magic items of 2nd level or lower"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
-    'Section=skill Note="May use Nature to Treat Wounds; +2 in wilderness"',
+    'Section=skill ' +
+    'Note="Allows using Nature to Treat Wounds; gives a +2 bonus in wilderness"',
   'Nimble Crawl':
     'Section=ability ' +
-    'Note="May crawl at %{rank.Acrobatics>=3?\'full\':\'half\'} Speed%{rank.Acrobatics>=4?\'/Being prone does not inflict flat-footed\':\'\'}"',
-  'Oddity Identification':'Section=skill Note="+2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait"',
+    'Note="Allows crawling at %{rank.Acrobatics>=3?\'full\':\'half\'} Speed%{rank.Acrobatics>=4?\'/Being prone does not inflict flat-footed\':\'\'}"',
+  'Oddity Identification':
+    'Section=skill ' +
+    'Note="Gives +2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait"',
   'Pickpocket':
     'Section=skill ' +
-    'Note="May Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/May use Steal with a -5 penalty on an alert creature\':\'\'}"',
+    'Note="Allows Stealing a closely-guarded object without penalty%{rank.Thievery>=3?\'/Allows using Steal with a -5 penalty on an alert creature\':\'\'}"',
   'Planar Survival':
-    'Section=skill Note="May use Survival to Subsist on different planes"',
+    'Section=skill Note="Allows using Survival to Subsist on different planes"',
   'Powerful Leap':
-    'Section=skill Note="May jump 5\' vertically and +5\' horizontally"',
+    'Section=skill Note="Gives 5\' vertical and +5\' horizontal jumps"',
   'Quick Climb':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'May Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
+    'Note="%{rank.Athletics>=4?\'Allows Climbing at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
   'Quick Coercion':'Section=skill Note="May Coerce in 1 rd"',
   'Quick Disguise':'Section=skill Note="May create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
@@ -14173,12 +14196,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'featureNotes.druidDedication', '+', '1'
       );
       rules.defineRule('featureNotes.' + noteName, 'levels.Druid', '?', null);
-      rules.defineRule('testNotes.' + noteName,
-        'levels.Druid', '=', '1',
-        'magicNotes.orderSpell', '=', '1'
-      );
-      rules.defineRule
-        ('magicNotes.' + noteName, 'testNotes.' + noteName, '?', null);
+      rules.defineRule('magicNotes.' + noteName, 'levels.Druid', '?', null);
     });
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/) || name == 'Unconventional Expertise') {
     let note =
@@ -14366,6 +14384,15 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
   } else if(name == 'Order Spell') {
     rules.defineRule('focusPoints', 'magicNotes.orderSpell', '^=', '1');
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let orders =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Druid (Order)')).map(x => x.replace('Druid - ', ''));
+    orders.forEach(o => {
+      rules.defineRule('features.Order Spell (' + o + ')',
+        'features.Order Spell', '?', null,
+        'features.' + o, '=', '1'
+      );
+    });
   } else if(name == 'Quickened Casting') {
     rules.defineRule('magicNotes.quickenedCasting.1',
       'features.Quickened Casting', '?', null,
