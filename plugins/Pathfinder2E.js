@@ -83,8 +83,9 @@ Pathfinder2E.VERSION = '2.4.1.0';
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
 Pathfinder2E.CHOICES = [
-  'Ancestry', 'Armor', 'Background', 'Class', 'Deity', 'Feat', 'Feature',
-  'Language', 'Shield', 'Skill', 'Spell', 'Weapon'
+  'Ancestry', 'Ancestry Feature', 'Armor', 'Background', 'Background Feature',
+  'Class', 'Class Feature', 'Deity', 'Feat', 'Feature', 'Language', 'Shield',
+  'Skill', 'Spell', 'Weapon'
 ];
 /*
  * List of items handled by randomizeOneAttribute method. The order handles
@@ -12589,7 +12590,15 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
-  } else if(type == 'Armor')
+  } else if(type == 'Ancestry Feature')
+    Pathfinder2E.ancestryFeatureRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Ancestry'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Require'),
+      QuilvynUtils.getAttrValue(attrs, 'Level'),
+      QuilvynUtils.getAttrValue(attrs, 'Selectable'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Replace')
+    );
+  else if(type == 'Armor')
     Pathfinder2E.armorRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
       QuilvynUtils.getAttrValue(attrs, 'Price'),
@@ -12608,7 +12617,15 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
     Pathfinder2E.backgroundRulesExtra(rules, name);
-  } else if(type == 'Class') {
+  } else if(type == 'Background Feature')
+    Pathfinder2E.backgroundFeatureRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Background'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Require'),
+      QuilvynUtils.getAttrValue(attrs, 'Level'),
+      QuilvynUtils.getAttrValue(attrs, 'Selectable'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Replace')
+    );
+  else if(type == 'Class') {
     Pathfinder2E.classRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
       QuilvynUtils.getAttrValueArray(attrs, 'Ability'),
@@ -12618,7 +12635,15 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'SpellSlots')
     );
     Pathfinder2E.classRulesExtra(rules, name);
-  } else if(type == 'Deity')
+  } else if(type == 'Class Feature')
+    Pathfinder2E.classFeatureRules(rules, name,
+      QuilvynUtils.getAttrValue(attrs, 'Class'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Require'),
+      QuilvynUtils.getAttrValue(attrs, 'Level'),
+      QuilvynUtils.getAttrValue(attrs, 'Selectable'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Replace')
+    );
+  else if(type == 'Deity')
     Pathfinder2E.deityRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Alignment'),
       QuilvynUtils.getAttrValueArray(attrs, 'FollowerAlignments'),
@@ -12932,6 +12957,71 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
 };
 
 /*
+ * Defines in #rules# the rules required to give feature #name# to ancestry
+ * #ancestryName# at level #level#. #selectable# gives the category if this
+ * feature is selectable; it is otherwise null. #require# lists any hard
+ * prerequisites for the feature, and #replace# lists any ancestry features
+ * that this new one replaces.
+ */
+Pathfinder2E.ancestryFeatureRules = function(
+  rules, name, ancestryName, require, level, selectable, replace
+) {
+
+  if(!name) {
+    console.log('Empty ancestry feature name');
+    return;
+  }
+  if(!(ancestryName in rules.getChoices('ancestrys'))) {
+    console.log('Bad ancestry "' + ancestryName + '" for ancestry feature ' + name);
+    return;
+  }
+  if(!Array.isArray(require)) {
+    console.log('Bad require list "' + require + '" for ancestry feature ' + name);
+    return;
+  }
+  if(typeof level != 'number') {
+    console.log('Bad level "' + level + '" for ancestry feature ' + name);
+    return;
+  }
+  if(selectable && typeof selectable != 'string') {
+    console.log('Bad selectable "' + selectable + '" for ancestry feature ' + name);
+    return;
+  }
+  if(!Array.isArray(replace)) {
+    console.log('Bad replace list "' + replace + '" for ancestry feature ' + name);
+    return;
+  }
+
+  let prefix =
+    ancestryName.charAt(0).toLowerCase() + ancestryName.substring(1).replaceAll(' ','');
+  let ancestryLevel = prefix + 'Level';
+  let featureSpec = level + ':' + name;
+  if(selectable)
+    featureSpec += ':' + selectable;
+  if(require.length > 0)
+    featureSpec = require.join('/') + ' ? ' + featureSpec;
+  QuilvynRules.featureListRules
+    (rules, [featureSpec], ancestryName, ancestryLevel, selectable ? true : false);
+  if(selectable) {
+    let countVar =
+      'selectableFeatureCount.' + ancestryName + ' (' + selectable + ')';
+    if(!rules.getSources(countVar))
+      rules.defineRule(countVar,
+        ancestryLevel, '=', level>1 ? 'source>=' + level + ' ? 1 : null' : '1'
+      );
+  }
+  replace.forEach(f => {
+    let hasVar = 'has' + f.replaceAll(' ', '');
+    rules.defineRule(prefix + 'Features.' + f, hasVar, '?', 'source==1');
+    rules.defineRule(hasVar,
+      ancestryLevel, '=', '1',
+      prefix + 'Features.' + name, '=', '0'
+    );
+  });
+
+};
+
+/*
  * Defines in #rules# the rules associated with armor #name#, which belongs
  * to category #category#, costs #price# gold pieces, adds #ac# to the
  * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
@@ -13091,6 +13181,55 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
       'featureNotes.scholarlyTradition', '=', '1'
     );
   }
+};
+
+/*
+ * Defines in #rules# the rules required to give feature #name# to background
+ * #backgroundName#. #replace# lists any background features that this new one
+ * replaces.
+ */
+Pathfinder2E.backgroundFeatureRules = function(
+  rules, name, backgroundName, require, level, replace
+) {
+
+  if(!name) {
+    console.log('Empty background feature name');
+    return;
+  }
+  if(!(backgroundName in rules.getChoices('backgrounds'))) {
+    console.log('Bad background "' + backgroundName + '" for background feature ' + name);
+    return;
+  }
+  if(!Array.isArray(require)) {
+    console.log('Bad require list "' + require + '" for background feature ' + name);
+    return;
+  }
+  if(typeof level != 'number') {
+    console.log('Bad level "' + level + '" for background feature ' + name);
+    return;
+  }
+  if(!Array.isArray(replace)) {
+    console.log('Bad replace list "' + replace + '" for background feature ' + name);
+    return;
+  }
+
+  let featureSpec = level + ':' + name;
+  if(require.length > 0)
+    featureSpec = require.join('/') + ' ? ' + featureSpec;
+  let prefix =
+    backgroundName.charAt(0).toLowerCase() + backgroundName.substring(1).replaceAll(' ', '');
+  let backgroundLevel = prefix + 'Level';
+  QuilvynRules.featureListRules
+    (rules, [featureSpec], backgroundName, backgroundLevel, false);
+  replace.forEach(f => {
+    let hasVar = 'has' + f.replaceAll(' ', '');
+    rules.defineRule(prefix + 'Features.' + f, hasVar, '?', 'source==1');
+    rules.defineRule(hasVar,
+      'features.' + backgroundName, '=', '1',
+      prefix + 'Features.' + name, '=', '0'
+    );
+  });
+
 };
 
 /*
@@ -13703,6 +13842,71 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', l - 2);
     });
   }
+
+};
+
+/*
+ * Defines in #rules# the rules required to give feature #name# to class
+ * #className# at level #level#. #selectable# gives the category if this feature
+ * is selectable; it is otherwise null. #require# lists any hard prerequisites
+ * for the feature, and #replace# lists any class features that this new one
+ * replaces.
+ */
+Pathfinder2E.classFeatureRules = function(
+  rules, name, className, require, level, selectable, replace
+) {
+
+  if(!name) {
+    console.log('Empty class feature name');
+    return;
+  }
+  if(!(className in rules.getChoices('levels'))) {
+    console.log('Bad class "' + className + '" for class feature ' + name);
+    return;
+  }
+  if(!Array.isArray(require)) {
+    console.log('Bad require list "' + require + '" for class feature ' + name);
+    return;
+  }
+  if(typeof level != 'number') {
+    console.log('Bad level "' + level + '" for class feature ' + name);
+    return;
+  }
+  if(selectable && typeof selectable != 'string') {
+    console.log('Bad selectable "' + selectable + '" for class feature ' + name);
+    return;
+  }
+  if(!Array.isArray(replace)) {
+    console.log('Bad replace list "' + replace + '" for class feature ' + name);
+    return;
+  }
+
+  let classLevel = 'levels.' + className;
+  let featureSpec = level + ':' + name;
+  let prefix =
+    className.charAt(0).toLowerCase() + className.substring(1).replaceAll(' ', '');
+  if(selectable)
+    featureSpec += ':' + selectable;
+  if(require.length > 0)
+    featureSpec = require.join('/') + ' ? ' + featureSpec;
+  QuilvynRules.featureListRules
+    (rules, [featureSpec], className, classLevel, selectable ? true : false);
+  if(selectable) {
+    let countVar =
+      'selectableFeatureCount.' + className + ' (' + selectable + ')';
+    if(!rules.getSources(countVar))
+      rules.defineRule(countVar,
+        classLevel, '=', level>1 ? 'source>=' + level + ' ? 1 : null' : '1'
+      );
+  }
+  replace.forEach(f => {
+    let hasVar = 'has' + f.replaceAll(' ', '');
+    rules.defineRule(prefix + 'Features.' + f, hasVar, '?', 'source==1');
+    rules.defineRule(hasVar,
+      classLevel, '=', '1',
+      prefix + 'Features.' + name, '=', '0'
+    );
+  });
 
 };
 
@@ -15489,6 +15693,9 @@ Pathfinder2E.createViewers = function(rules, viewers) {
  */
 Pathfinder2E.choiceEditorElements = function(rules, type) {
   let result = [];
+  let oneToTwenty = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+  ];
   let zeroToTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if(type == 'Ancestry')
     result.push(
@@ -15498,6 +15705,14 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Selectables', 'Selectables', 'text', [60]],
       ['Languages', 'Languages', 'text', [30]],
       ['Traits', 'Traits', 'text', [30]]
+    );
+  else if(type == 'Ancestry Feature')
+    result.push(
+      ['Ancestry', 'Ancestry', 'select-one', Object.keys(rules.getChoices('ancestrys'))],
+      ['Require', 'Prerequisite', 'text', [40]],
+      ['Level', 'Level', 'select-one', oneToTwenty],
+      ['Selectable', 'Selectable Type', 'text', [20]],
+      ['Replace', 'Replace', 'text', [40]]
     );
   else if(type == 'Armor') {
     let armorCategories = ['Unarmored', 'Light', 'Medium', 'Heavy'];
@@ -15521,6 +15736,14 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]]
     );
+  else if(type == 'Background Feature')
+    result.push(
+      ['Background', 'Background', 'select-one', Object.keys(rules.getChoices('backgrounds'))],
+      ['Require', 'Prerequisite', 'text', [40]],
+      ['Level', 'Level', 'select-one', oneToTwenty],
+      ['Selectable', 'Selectable Type', 'text', [20]],
+      ['Replace', 'Replace', 'text', [40]]
+    );
   else if(type == 'Class') {
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
@@ -15530,17 +15753,23 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Selectables', 'Selectable Features', 'text', [40]],
       ['SpellSlots', 'Spells Slots', 'text', [40]]
     );
-  } else if(type == 'Deity') {
-    let shortAlignments = [];
-    QuilvynUtils.getKeys(rules.getChoices('alignments')).forEach(a => {
-      shortAlignments.push(a.replaceAll(/[a-z ]/g, ''))
-    });
+  } else if(type == 'Class Feature')
+    result.push(
+      ['Class', 'Class', 'select-one', Object.keys(rules.getChoices('levels'))],
+      ['Require', 'Prerequisite', 'text', [40]],
+      ['Level', 'Level', 'select-one', oneToTwenty],
+      ['Selectable', 'Selectable Type', 'text', [20]],
+      ['Replace', 'Replace', 'text', [40]]
+    );
+  else if(type == 'Deity') {
+    let shortAlignments =
+      Object.keys(rules.getChoices('alignments')).map(a => a.replaceAll(/[a-z ]/g, ''));
     result.push(
       ['Alignment', 'Alignment', 'select-one', shortAlignments],
       ['FollowerAlignments', 'Follower Alignments', 'text', [30]],
       ['Font', 'Divine Font', 'select-one', ['Harm', 'Heal', 'Either']],
-      ['Skill', 'Divine Skill', 'select-one', QuilvynUtils.getKeys(rules.getChoices('skills'))],
-      ['Weapon', 'Favored Weapon', 'select-one', QuilvynUtils.getKeys(rules.getChoices('weapons'))],
+      ['Skill', 'Divine Skill', 'select-one', Object.keys(rules.getChoices('skills'))],
+      ['Weapon', 'Favored Weapon', 'select-one', Object.keys(rules.getChoices('weapons'))],
       ['Domain', 'Domains', 'text', [30]],
       ['Spells', 'Spells', 'text', [60]]
     );
@@ -15922,7 +16151,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         let pick;
         let picks = {};
         pickAttrs(picks, '', choices, howMany, 1);
-        debug.push('From ' + QuilvynUtils.getKeys(picks).join(", ") + ' reject');
+        debug.push('From ' + Object.keys(picks).join(", ") + ' reject');
         for(pick in picks) {
           // Only choose 1 choice from choice sets, like Assurance (skill) feats
           if(pick.includes('(')) {
@@ -15989,7 +16218,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let min = (attributes.level - 1) * 1000;
     if(!attributes.experience || attributes.experience < min)
       attributes.experience = QuilvynUtils.random(min, max);
-    choices = QuilvynUtils.getKeys(this.getChoices('levels'));
+    choices = Object.keys(this.getChoices('levels'));
     if(assignedLevels == 0) {
       let classesToChoose =
         attributes.level == 1 || QuilvynUtils.random(1,10) < 9 ? 1 : 2;
