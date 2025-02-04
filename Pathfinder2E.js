@@ -15575,11 +15575,18 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Category', 'Category', 'text', [30]]
     );
   else if(type == 'Spell') {
+    // TODO generalize this
+    let schools = [
+      'Abjuration', 'Conjuration', 'Divination', 'Enchantment',
+      'Evocation','Illusion', 'Necromancy', 'Transmutation'
+    ];
     let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     result.push(
-      ['School', 'School', 'select-one', QuilvynUtils.getKeys(rules.getChoices('schools'))],
+      ['School', 'School', 'select-one', schools],
       ['Level', 'Level', 'select-one', zeroToNine],
       ['Tradition', 'Tradition', 'text', [15]],
+      ['Cast', 'Cast', 'text', [15]],
+      ['Traits', 'Traits', 'text', [25]],
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {

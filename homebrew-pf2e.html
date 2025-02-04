@@ -45,11 +45,10 @@ below show only the beginning portion of longer values entered into text boxes.
 
 <ul>
   <li><a href="#ancestry">Ancestries</a></li>
-  <li><a href="#ancestryfeature">Ancestry Features</a></li>
+  <li><a href="#ancestryfeature">Ancestry, Background, and Class Features</a></li>
   <li><a href="#armor">Armors</a></li>
   <li><a href="#background">Backgrounds</a></li>
   <li><a href="#class">Classes</a></li>
-  <li><a href="#classfeature">Class Features</a></li>
   <li><a href="#deity">Deities</a></li>
   <li><a href="#feat">Feats</a></li>
   <li><a href="#feature">Features</a></li>
@@ -86,7 +85,40 @@ ancestry share.
 The example shows the entry for the Catfolk ancestry from the Advanced Players
 Guide source book. Features for this ancestry are: Low-Light Vision; Land On
 Your Feet; Ability Boost (Charisma; Dexterity; Choose 1 from any); Ability Flaw
-(Wisdom). The corresponding feature entry for the first of these is shown. 
+(Wisdom). The corresponding feature entry for Land On Your Feet is shown. 
+</p>
+</td></tr>
+
+<tr><td colspan="2"><hr/></td>
+</tr><tr><td>
+<a name="ancestryfeature"><h2>Ancestry, Background, and Class Features</h2></a>
+<img src='../Images/hbpf2e-ancestry-feature.jpg' alt='Homebrew Ancestry Feature'/>
+<hr style="width:75%"/>
+<img src='../Images/hbpf2e-background-feature.jpg' alt='Homebrew Background Feature'/>
+<hr style="width:75%"/>
+<img src='../Images/hbpf2e-class-feature.jpg' alt='Homebrew Class Feature'/>
+</td><td>
+<p>
+TODO
+Quilvyn allows you to give ancestries, backgrounds, and classes new features
+and to replace predefined features with homebrew ones. For homebrew features,
+Quilvyn displays entries for the name of the class or ancestry that gains the
+feature and the level at which the feature is gained. If the feature is gained
+only if selected by the user (e.g, a Cleric doctrine), enter the type in the
+Selectable Type box ("Doctrine"); otherwise, leave the box empty, indicating
+that all characters of the given ancestry, background, or class gain the
+feature. Unlike most text boxes, the Selectable Type field only accepts a
+single value. The Prerequisite box lists any requirements that must be met to
+gain the feature, and Replace lists any predefined features that this one
+replaces.
+</p><p>
+TODO
+The first example shown adds another choice, Forge Domain, to the domains that
+can be selected by clerics at level 1. It's a valid choice only for a cleric
+whose deity has 'Forge' in their list of domains.
+</p><p>
+The second example replaces the predefined Dodge Giants feature for all dwarves
+with a homebrew feature named Underground Warrior.
 </p>
 </td></tr>
 
@@ -102,8 +134,8 @@ class gained by using the armor, the maximum dexterity armor class bonus
 allowed, the penalties applied to speed and skills such as Acrobatics, the
 minimum strength required to negate these penalties, the armor's bulk, its
 group, and any traits that apply to the armor. The armor price is expressed in
-gold pieces; enter a decimal for armors that cost less than 1 GP, e.g., "0.5"
-for a type of armor that costs 5 SP.
+gold pieces; enter a decimal for armors that cost less than 1 GP&mdash;for
+example, enter "0.5" for a type of armor that costs 5 SP.
 </p><p>
 The example shows the entry for Mithral Chain Mail armor, as described in the
 Crafting &amp; Treasure section of the core rules.
@@ -114,13 +146,19 @@ Crafting &amp; Treasure section of the core rules.
 <tr><td>
 <a name="background"><h2>Backgrounds</h2></a>
 <img src='../Images/hbpf2e-background.jpg' alt='Homebrew Background'/>
+<hr style="width:75%"/>
+<img src='../Images/hbpf2e-background-feature.jpg' alt='Homebrew Background Feature'/>
 </td><td>
 <p>
 For homebrew backgrounds, Quilvyn displays fields for entering the features
 provided by the background. Along with fixed features, Quilvyn provides an
 entry box for selectable features, such as the Scholar's tradition.
 </p><p>
-TODO
+The example shows the entry for the barber background from the Advanced Players
+Guide source book. Features for this background are: Risky Surgery; Skill
+Trained (Medicine; Surgery Lore); Ability Boost (Choose 1 from Dexteriy,
+Wisdom; Choose 1 from any). The corresponding feature entry for Risky Surgery
+is shown. 
 </p>
 </td></tr>
 
@@ -145,35 +183,6 @@ The example shows the entry for the Swashbuckler class from the Advanced
 Players Guide. The effects of each of the class features&mdash;Panache,
 Swashbuckler Style, Precise Strike, and so on&mdash; would be described in a
 <a href="#feature">homebrew feature</a> of the same name. 
-</p>
-</td></tr>
-
-<tr><td colspan="2"><hr/></td>
-</tr><tr><td>
-<a name="classfeature"><h2>Class and Ancestry Features</h2></a>
-<img src='../Images/hbpf2e-class-feature.jpg' alt='Homebrew Class Feature'/>
-<hr style="width:75%"/>
-<img src='../Images/hbpf2e-ancestry-feature.jpg' alt='Homebrew Ancestry Feature'/>
-</td><td>
-<p>
-TODO
-Quilvyn allows you to give classes and ancestries new features and to replace
-predefined features with homebrew ones. For homebrew features, Quilvyn displays
-entries for the name of the class or ancestry that gains the feature and the
-level at which the feature is gained. If the feature is gained only if selected
-by the user (e.g, a Cleric domain), enter the type in the Selectable Type box
-("Domain"); otherwise, leave the box empty, indicating that all characters of
-the given class or ancestry gain the feature. Unlike most text boxes, the
-Selectable Type field only accepts a single value. The Prerequisite box lists
-any requirements that must be met to gain the feature, and Replace lists any
-predefined features that this one replaces.
-</p><p>
-The first example shown adds another choice, Forge Domain, to the domains that
-can be selected by clerics at level 1. It's a valid choice only for a cleric
-whose deity has 'Forge' in their list of domains.
-</p><p>
-The second example replaces the predefined Dodge Giants feature for all dwarves
-with a homebrew feature named Underground Warrior.
 </p>
 </td></tr>
 
@@ -228,12 +237,12 @@ with the <a href="#feature">feature entry</a> that describes its effects.
 <img src='../Images/hbpf2e-feature.jpg' alt='Homebrew Feature'/>
 </td><td>
 <p>
-In Quilvyn, <i>features</i> describe the effects of feats, class features,
-ancestry features, and background features. When adding a homebrew feature,
-enter the section of the character sheet (one of attributes, combat, companion,
-feature, magic, save, or skill) where the note for the feature should appear,
-the note text, and the action count or type of associated with the feature. You
-can enter multiple sections and notes, but the number of sections entered must
+In Quilvyn, <i>features</i> describe the effects of feats, ancestry features,
+background features, and class features. When adding a homebrew feature,
+enter the section of the character sheet (one of attributes, combat, feature,
+magic, save, or skill) where the note for the feature should appear, the note
+text, and the action count or type of associated with the feature. You can
+enter multiple sections and notes, but the number of sections entered must
 equal the number of notes. Feature notes can both reference and modify
 character attributes; see the discussion of
 <a href="#attrs">using character attributes</a> for how to do this.
@@ -317,8 +326,9 @@ Learning</i>, which is a level 4 spell in the arcane and occult traditions.
 <p>
 When adding a homebrew weapon, Quilvyn displays fields that allow you to enter
 the weapon's category (Unarmed, Simple, Martial, or Advanced), its price, the
-amount of damage it inflicts, its bulk, the number of hands needed to wield it,
-its group, any associated traits, and (for ranged weapons) range increment.
+amount and type of damage it inflicts, its bulk, the number of hands needed to
+wield it, its group, any associated traits, and (for ranged weapons) range
+increment.
 </p><p>
 The example shows the entry for a boomerang, an advanced weapon with a 30'
 range increment that inflicts 1d6 HP bludgeoning damage. 
