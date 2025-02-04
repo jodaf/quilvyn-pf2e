@@ -7340,19 +7340,19 @@ Pathfinder2E.FEATURES = {
     'Note="May roll a single Stealth check to Avoid Notice when leading a group"',
   'Rapid Mantel':
     'Section=skill ' +
-    'Note="May stand immediately after a successful Grab an Edge/May use Athletics to Grab an Edge"',
+    'Note="Allows standing immediately after a successful Grab an Edge and using Athletics to Grab an Edge"',
   'Read Lips':
-    'Section=skill Note="May read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
+    'Section=skill Note="Allows reading the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
   'Robust Recovery':
     'Section=skill ' +
-    'Note="Success on Treat a Disease or a Poison gives a +4 bonus/Patient success is always a critical success"',
+    'Note="Success on Treat a Disease or a Poison gives a +4 bonus, and patient successes are critical successes"',
   'Scare To Death':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' May attempt Intimidation vs. foe Will DC; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); success inflicts frightened 2; failure inflicts frightened 1"',
+    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
-    'Note="-2 DC for an outrageous request, and critical failures are normal failures"',
+    'Note="Reduces DC for an outrageous request by 2 and changes critical failures into normal failures"',
   'Sign Language':
     'Section=skill Note="Knows the sign equivalents of understood languages"',
   'Slippery Secrets':
@@ -7360,45 +7360,45 @@ Pathfinder2E.FEATURES = {
     'Note="Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
   'Snare Crafting':
     'Section=skill ' +
-    'Note="May use Crafting to create snares; knows the formulas for 4 common snares"',
+    'Note="Allows using Crafting to create snares/Knows the formulas for 4 common snares"',
   'Specialty Crafting':
     'Section=skill Note="+%{rank.Crafting>=3?2:1} Crafting on selected type"',
   'Steady Balance':
     'Section=skill ' +
-    'Note="All Balance successes are critical successes/Never flat-footed during Balance/May use Acrobatics to Grab an Edge"',
+    'Note="Balance successes are critical successes/Never flat-footed during Balance/Allows using Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
-    'Note="May use Society to Gather Information and to Recall Knowledge in familiar settlements"',
+    'Note="Allows using Society to Gather Information and to Recall Knowledge in familiar settlements"',
   'Student Of The Canon':
     'Section=skill ' +
     'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
-  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/May remain undetected when using Palm an Object or Steal after a successful Create a Diversion"',
+  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="May use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
-  'Swift Sneak':'Section=skill Note="May Sneak at full Speed"',
+    'Note="Allows using Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
+  'Swift Sneak':'Section=skill Note="Allows Sneaking at full Speed"',
   'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
   'Terrain Stalker (Rubble)':
-    'Section=skill Note="May Sneak in rubble without a Stealth check"',
+    'Section=skill Note="Sneaking in rubble requires no Stealth check"',
   'Terrain Stalker (Snow)':
-    'Section=skill Note="May Sneak in snow without a Stealth check"',
+    'Section=skill Note="Sneaking in snow reaquires no Stealth check"',
   'Terrain Stalker (Underbrush)':
-    'Section=skill Note="May Sneak in underbrush without a Stealth check"',
+    'Section=skill Note="Sneaking in underbrush requires no Stealth check"',
   'Terrified Retreat':
     'Section=skill ' +
     'Note="Critical success on Demoralize causes lower-level target to flee for 1 rd"',
   'Titan Wrestler':
     'Section=skill ' +
-    'Note="May Disarm, Grapple, Shove, or Trip creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
+    'Note="Allows using Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
     'Section=feature ' +
-    'Note="May use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
+    'Note="Allows teaching an animal to perform a trick with 7 days\' training and a successful Nature check"',
   'Underwater Marauder':
     'Section=combat ' +
     'Note="Does not suffer flat-footed from being in water/Suffers no penalty when using bludgeoning and slashing weapons in water"',
   'Unified Theory':
     'Section=skill ' +
-    'Note="May use Arcana in place of Nature, Occultism, or Religion"',
+    'Note="Allows using Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
     'Note="Critical failures on any trained Lore are normal failures"',
@@ -7407,10 +7407,10 @@ Pathfinder2E.FEATURES = {
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="May follow a jump with another 1-action jump when adjacent to a wall once per turn"',
+    'Note="Allows following a jump with another 1-action jump when adjacent to a wall once per turn"',
   'Ward Medic':
     'Section=skill ' +
-    'Note="May use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
+    'Note="Allows using Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
   'Wary Disarmament':
     'Section=skill Note="+2 AC vs. a trap triggered while disarming it"',
 
