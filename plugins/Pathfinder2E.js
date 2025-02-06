@@ -7557,23 +7557,23 @@ Pathfinder2E.SKILLS = {
   'Survival':'Ability=Wisdom',
   'Thievery':'Ability=Dexterity',
   // creature (ancestry) lore skills from ancestry chapter pg 33ff
-  'Dwarven Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Elven Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Gnome Lore':'Ability=Intelligence Category="Creature Lore"', // added
-  'Goblin Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Halfling Lore':'Ability=Intelligence Category="Creature Lore"',
+  'Dwarven Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Elven Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Gnome Lore':'Ability=Intelligence Subcategory="Creature Lore"', // added
+  'Goblin Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Halfling Lore':'Ability=Intelligence Subcategory="Creature Lore"',
   // terrain lore skills from background chapter pg 60ff
-  'Cave Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Cavern Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Desert Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Forest Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Plains Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Swamp Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Underground Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Cave Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Cavern Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Desert Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Forest Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Plains Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Swamp Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Underground Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
   // terrain lore skills from Ranger favored terrain feat pg 171
-  'Aquatic Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Arctic Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Sky Lore':'Ability=Intelligence Category="Terrain Lore"',
+  'Aquatic Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Arctic Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Sky Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
   'Military Lore':'Ability=Intelligence', // pg 247
   // Adventuring Lore, Magic Lore, Planar Lore pg 247 examples of excluded Lore
   // Common lore subcategories pg 248
@@ -7596,23 +7596,23 @@ Pathfinder2E.SKILLS = {
   'Labor Lore':'Ability=Intelligence',
   'Legal Lore':'Ability=Intelligence',
   'Library Lore':'Ability=Intelligence',
-  'Abadar Lore':'Ability=Intelligence Category="Deity Lore"',
-  'Iomedae Lore':'Ability=Intelligence Category="Deity Lore"',
-  'Demon Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Owlbear Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Vampire Lore':'Ability=Intelligence Category="Creature Lore"',
-  'Abyss Lore':'Ability=Intelligence Category="Planar Lore"',
-  'Astral Plane Lore':'Ability=Intelligence Category="Planar Lore"',
-  'Heaven Lore':'Ability=Intelligence Category="Planar Lore"',
-  'Absalom Lore':'Ability=Intelligence Category="Settlement Lore"',
-  'Magnimar Lore':'Ability=Intelligence Category="Settlement Lore"',
-  'Mountain Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'River Lore':'Ability=Intelligence Category="Terrain Lore"',
-  'Alcohol Lore':'Ability=Intelligence Category="Food Lore"',
-  'Baking Lore':'Ability=Intelligence Category="Food Lore"',
-  'Butchering Lore':'Ability=Intelligence Category="Food Lore"',
-  'Cooking Lore':'Ability=Intelligence Category="Food Lore"',
-  'Tea Lore':'Ability=Intelligence Category="Food Lore"',
+  'Abadar Lore':'Ability=Intelligence Subcategory="Deity Lore"',
+  'Iomedae Lore':'Ability=Intelligence Subcategory="Deity Lore"',
+  'Demon Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Owlbear Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Vampire Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Abyss Lore':'Ability=Intelligence Subcategory="Planar Lore"',
+  'Astral Plane Lore':'Ability=Intelligence Subcategory="Planar Lore"',
+  'Heaven Lore':'Ability=Intelligence Subcategory="Planar Lore"',
+  'Absalom Lore':'Ability=Intelligence Subcategory="Settlement Lore"',
+  'Magnimar Lore':'Ability=Intelligence Subcategory="Settlement Lore"',
+  'Mountain Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'River Lore':'Ability=Intelligence Subcategory="Terrain Lore"',
+  'Alcohol Lore':'Ability=Intelligence Subcategory="Food Lore"',
+  'Baking Lore':'Ability=Intelligence Subcategory="Food Lore"',
+  'Butchering Lore':'Ability=Intelligence Subcategory="Food Lore"',
+  'Cooking Lore':'Ability=Intelligence Subcategory="Food Lore"',
+  'Tea Lore':'Ability=Intelligence Subcategory="Food Lore"',
   'Mercantile Lore':'Ability=Intelligence',
   'Midwifery Lore':'Ability=Intelligence',
   'Milling Lore':'Ability=Intelligence',
@@ -7626,8 +7626,8 @@ Pathfinder2E.SKILLS = {
   'Underworld Lore':'Ability=Intelligence',
   'Warfare Lore':'Ability=Intelligence',
   'Folktale Lore':'Ability=Intelligence', // pg 503
-  'Aberration Lore':'Ability=Intelligence Category="Creature Lore"', // pg 504
-  'Troll Lore':'Ability=Intelligence Category="Creature Lore"', // pg 505
+  'Aberration Lore':'Ability=Intelligence Subcategory="Creature Lore"', // pg 504
+  'Troll Lore':'Ability=Intelligence Subcategory="Creature Lore"', // pg 505
   'Taldan History Lore':'Ability=Intelligence' // pg 506
 };
 Pathfinder2E.SPELLS = {
@@ -12459,7 +12459,7 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
-  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Category']);
+  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Subcategory']);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
@@ -12689,7 +12689,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Skill')
     Pathfinder2E.skillRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Ability'),
-      QuilvynUtils.getAttrValue(attrs, 'Category')
+      QuilvynUtils.getAttrValue(attrs, 'Subcategory')
     );
   else if(type == 'Spell') {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
@@ -15077,9 +15077,9 @@ Pathfinder2E.shieldRules = function(
 /*
  * Defines in #rules# the rules associated with skill #name#, associated with
  * #ability# (one of 'strength', 'intelligence', etc.) that belongs to
- * category #category#.
+ * subcategory #subcategory#.
  */
-Pathfinder2E.skillRules = function(rules, name, ability, category) {
+Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
 
   if(!name) {
     console.log('Empty skill name');
@@ -15090,8 +15090,8 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
     console.log('Bad ability "' + ability + '" for skill ' + name);
     return;
   }
-  if(category && typeof(category) != 'string') {
-    console.log('Bad category "' + category + '" for skill ' + name);
+  if(subcategory && typeof(subcategory) != 'string') {
+    console.log('Bad subcategory "' + subcategory + '" for skill ' + name);
     return;
   }
 
@@ -15101,7 +15101,6 @@ Pathfinder2E.skillRules = function(rules, name, ability, category) {
   if(name.match(/Lore$/)) {
     rules.defineRule
       ('trainingLevel.' + name, 'skillIncreases.' + name, '^=', '0');
-    rules.defineRule('totalLoreRanks', 'rank.' + name, '+=', null);
   } else {
     rules.defineRule('trainingLevel.' + name, '', '=', '0');
   }
@@ -15801,7 +15800,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   else if(type == 'Skill')
     result.push(
       ['Ability', 'Ability', 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
-      ['Category', 'Category', 'text', [30]]
+      ['Subcategory', 'Subcategory', 'text', [30]]
     );
   else if(type == 'Spell') {
     // TODO generalize this
@@ -16092,7 +16091,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     if(choices.length > 0)
       attributes.deity = choices[QuilvynUtils.random(0, choices.length - 1)];
-  } else if(attribute == 'feats' || attribute == 'features') {
+  } else if(attribute == 'feats' || attribute == 'selectableFeatures') {
     let debug = [];
     attribute = attribute == 'feats' ? 'feat' : 'selectableFeature';
     let countPrefix = attribute + 'Count.';
@@ -16620,8 +16619,12 @@ Pathfinder2E.ruleNotes = function() {
     '  example, a 5th-level character would have between 5000 and 5999 ' +
     '  experience points.\n' +
     '  </li><li>\n' +
-    '  Discussion of adding different types of homebrew options to the\n' +
+    '  Discussion of adding different types of homebrew options to the ' +
     '  Pathfinder rule set can be found in <a href="plugins/homebrew-pf2e.html">Pathfinder 2E Homebrew Examples</a>.\n' +
+    '  </li><li>\n' +
+    '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
+    '  sheet to note features that require 1, 2, or 3 actions or can be ' +
+    '  taken as a free action or reaction.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
