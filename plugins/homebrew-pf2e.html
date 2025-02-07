@@ -71,21 +71,18 @@ below show only the beginning portion of longer values entered into text boxes.
 </td><td>
 <p>
 When adding a homebrew ancestry, Quilvyn displays fields that allow you to
-enter prerequisites, hit points, features, languages, and traits for the
-ancestry. Although none of the core ancestries have requirements, Quilvyn
-provides the Prerequisite entry to allow you to specify an ancestry that has,
-for example, a minimum strength requirement. Most ancestries will have fixed
-features, such as an ability boost. Quilvyn also allows entering selectable
-features to support variations such as heritages. Each feature in these lists
-will require <a href="#feature">adding a feature</a> to describe its effects.
-The Languages field lists the languages that characters of this ancestry know
-automatically, and the Traits field lists traits that all characters with this
-ancestry share.
+hit points, features, languages, and traits for the ancestry. Most ancestries
+will have fixed features, such as an ability boost. Quilvyn also allows
+entering selectable features to support variations such as heritages. Each
+feature in these lists will require <a href="#feature">adding a feature</a> to
+describe its effects. The Languages field lists the languages that characters
+of this ancestry know automatically, and the Traits field lists traits that all
+characters with this ancestry share.
 </p><p>
 The example shows the entry for the Catfolk ancestry from the Advanced Players
-Guide source book. Features for this ancestry are: Low-Light Vision; Land On
-Your Feet; Ability Boost (Charisma; Dexterity; Choose 1 from any); Ability Flaw
-(Wisdom). The corresponding feature entry for Land On Your Feet is shown. 
+Guide. Features for this ancestry are: Low-Light Vision; Land On Your Feet;
+Ability Boost (Charisma; Dexterity; Choose 1 from any); Ability Flaw (Wisdom).
+The corresponding feature entry for Land On Your Feet is shown. 
 </p>
 </td></tr>
 
@@ -107,16 +104,16 @@ feature is gained only if selected by the user (e.g, a Cleric doctrine), enter
 the type in the Selectable Type box ("Doctrine"); otherwise, leave the box
 empty, indicating that all characters of the given ancestry, background, or
 class gain the feature. Unlike most text boxes, the Selectable Type field only
-accepts a single value. The Prerequisite box lists any requirements that must
-be met to gain the feature, and Replace lists any predefined features that
-this one replaces.
+accepts a single value. The Replace box lists any predefined features that
+this one replaces. For class features, the Prerequisite box narrows the scope
+of this feature to a subset of characters in the class&mdash;for example, a
+new Champion cause that requires a particular alignment to select.
 </p><p>
 The first example replaces the predefined Darkvision feature for all dwarves
 with a homebrew feature named Underground Warrior.
 </p><p>
 The second and third examples show two of the features that would be added to
-the Champion class to support the Tyrant cause from the Advanced Players Guide
-source book.
+the Champion class to support the Tyrant cause from the Advanced Players Guide.
 </p>
 </td></tr>
 
@@ -133,7 +130,7 @@ allowed, the penalties applied to speed and skills such as Acrobatics, the
 minimum strength required to negate these penalties, the armor's bulk, its
 group, and any traits that apply to the armor. The armor price is expressed in
 gold pieces; enter a decimal for armors that cost less than 1 GP&mdash;for
-example, enter "0.5" for a type of armor that costs 5 SP.
+example, "0.5" for a type of armor that costs 5 SP.
 </p><p>
 The example shows the entry for Mithral Chain Mail armor, as described in the
 Crafting &amp; Treasure section of the core rules.
@@ -153,10 +150,9 @@ provided by the background. Along with fixed features, Quilvyn provides an
 entry box for selectable features, such as the Scholar's tradition.
 </p><p>
 The example shows the entry for the barber background from the Advanced Players
-Guide source book. Features for this background are: Risky Surgery; Skill
-Trained (Medicine; Surgery Lore); Ability Boost (Choose 1 from Dexteriy,
-Wisdom; Choose 1 from any). The corresponding feature entry for Risky Surgery
-is shown. 
+Guide. Features for this background are: Risky Surgery; Skill Trained
+(Medicine; Surgery Lore); Ability Boost (Choose 1 from Dexterity, Wisdom;
+Choose 1 from any). The corresponding feature entry for Risky Surgery is shown. 
 </p>
 </td></tr>
 
@@ -167,9 +163,9 @@ is shown.
 </td><td>
 <p>
 When adding a homebrew class, Quilvyn displays fields that allow you to specify
-optional class prerequisites, the primary ability (or choice of abilities)
-associated with the class, the number of hit points granted each level,
-features granted by the class, and any spell slots the class grants.
+the primary ability (or choice of abilities) associated with the class, the
+number of hit points granted at each level, features granted by the class, and
+any spell slots connected to the class.
 </p><p>
 Each item in the spell slot text box gives a spell type and level followed by a
 colon, then by a series of &lt;count&gt;@&lt;level&gt; terms, each of which
@@ -271,8 +267,8 @@ Catfolk.
 </td><td>
 <p>
 For homebrew shields, Quilvyn displays fields that allow you to specify the
-price, the bonus to armor class when the shield is raised, and the shield's
-bulk, hardness, and hit points.
+price, the bonus to armor class when the shield is raised, the speed penalty
+incurred from using the shield, and the shield's bulk, hardness, and hit points.
 </p><p>
 The example shows the entry for a standard-grade mithral shield as described in
 the Crafting &amp; Treasure section of the core rules.
@@ -325,7 +321,7 @@ Learning</i>, which is a level 4 spell in the arcane and occult traditions.
 When adding a homebrew weapon, Quilvyn displays fields that allow you to enter
 the weapon's category (Unarmed, Simple, Martial, or Advanced), its price, the
 amount and type of damage it inflicts, its bulk, the number of hands needed to
-wield it, its group, any associated traits, and (for ranged weapons) range
+wield it, its group, any associated traits, and (for ranged weapons) its range
 increment.
 </p><p>
 The example shows the entry for a boomerang, an advanced weapon with a 30'
@@ -339,14 +335,15 @@ range increment that inflicts 1d6 HP bludgeoning damage.
 <a name="attrs"><h2>Using Character Attributes in Prerequisites and Notes</h2></a>
 <p>
 There are three places that you might want to use references to character
-attributes when adding homebrew choices: prerequisites for homebrew ancestries,
-classes, feats, and class and ancestry features; in feature notes that modify
-character attributes; and embedded in feature notes and spell descriptions.
-Attribute references appear somewhat differently in each of these contexts.
+attributes when adding homebrew choices: prerequisites for homebrew feats; in
+feature notes that modify character attributes; and embedded in feature notes
+and spell descriptions. Attribute references appear somewhat differently in
+each of these contexts.
 </p><p>
 The examples below develop a homebrew feat named Alert Dodger that allows a
-character to substitute their wisdom modifier for their dexterity modifier when
-determining their armor class. The initial entry for the feat looks like this:
+character to add the (positive) difference between their wisdom modifier and
+their dexterity modifier to their armor class. The initial entry for the feat
+looks like this:
 </p>
 <img src='../Images/hbpf2e-attr-0.jpg' alt='Alert Dodger feat'/>
 
@@ -355,7 +352,7 @@ determining their armor class. The initial entry for the feat looks like this:
 <p>
 In the core rules, many feats have prerequisites&mdash;attribute values that
 the character must have to take the feat. Quilvyn allows you to specify similar
-prerequisites when entering a homebrew ancestry, class, or feat.
+prerequisites when entering a homebrew feat.
 </p><p>
 Since the effects of the Alert Dodger feat come from battle experience, it
 makes sense to require a minimum level&mdash;say, 7&mdash;to take the
@@ -414,7 +411,7 @@ note will fit best in the combat section of the character sheet.
 </p><p>
 To illustrate how Quilvyn processes feature notes, we'll initially define the
 Alert Dodger feat to add a fixed +2 to the character's armor class, switching
-later to adding the wisdom modifier instead.
+later to computing the value instead.
 </p>
 
 <img src='../Images/hbpf2e-attr-feature-0.jpg' alt='Alert Dodger feature'/>
@@ -437,83 +434,52 @@ skillModifiers. prefixes are not necessary:
 <h2>Embedding attributes in features notes and spell descriptions</h2>
 
 <p>
-Some feats, many class features, and nearly all spells have effects that vary
-based on character attributes. For example: the Spell Mastery feat allows a
-wizard to prepare a number of spells equal to their intelligence modifier
-without referring to their spellbook; an assassin's Death Attack can inflict
-paralysis for 1d6 rounds + 1 round per assassin level; and the
-<i>Acid Splash</i> spell has a range of 25' + 5' per 2 caster levels.
+Some feats, spells, and ancestry, background, and class features have effects
+that vary based on character attributes. For example: the Expeditious Search
+feat allows searching at either two or four times normal speed, depending on
+the character's Perception rank; the <i>Enduring Might</i> clerical focus spell
+for the Might domain gives resistance equal to eight plus the character's
+strength modifier; and the Victorious Vigor half-orc ancestry feat gives the
+character temporary hit points equal to their constitution modifier.
 </p><p>
 You can embed references to character attributes in the text of feature notes
 and spell descriptions by enclosing them within the characters %{}. Using this
-ability, the note for the Spell Mastery feat looks like this:
+ability, the note text for the Victorious Vigor feat looks like this:
 </p>
 
-<code>May prepare %{intelligenceModifier} spells w/out spellbook</code>
+<code>Gives %{constitutionModifier} temporary Hit Points for 1 rd when foe drops</code>
 
 <p>
 When Quilvyn displays this note on the character sheet, it first replaces the
-reference to the character's intelligenceModifier attribute with its value, so
+reference to the character's constitutionModifier attribute with its value, so
 the note might appear on the sheet as
 </p><p>
-<code>May prepare 2 spells w/out spellbook</code>
+<code>Gives 2 temporary Hit Points for 1 rd when foe drops</code>
 </p><p>
 We can use this ability to replace the fixed +2 entered earlier for the effects
-of the Alert Dodger feature with an amount equal to the character's wisdom
-modifier, giving us its final definition:
+of the Alert Dodger feature with the difference between the character's wisdom
+and dexterity modifiers, giving us its final definition:
 </p>
 
 <img src='../Images/hbpf2e-attr-feature-1.jpg' alt='Alert Dodger feature'/>
 
 <p>
-Given this note, Quilvyn will automatically generate a rule to add the
-character's wisdom modifier to their armor class and will display the note in
-italics.
+Given this note, Quilvyn will automatically generate a rule to add the computed
+value to their armor class and will display the note in italics.
 </p><p>
-Beyond simple references, Quilvyn supports performing calculations within
-embedded references. The note for the assassin's Death Attack feature looks
-like this:
-</p><p>
-<code>Sneak attack after 3 rd of study causes death or paralysis for 1d6+%{levels.Assassin} rd (DC %{10 + levels.Assassin + intelligenceModifier} Fort neg)</code>
-</p><p>
-As this note shows, individual notes and descriptions can contain multiple
-embedded references, and individual references can use multiple attributes.
-</p><p>
-Within embedded references, Quilvyn supports the common comparison operators
-(&lt;, &lt;=, &gt;, &gt;=, ==, !=), the common arithmetic operators
-(+, -, *, /, unary -), AND (&amp;&amp;), OR (||), matching (=~, !~),
-and integer division (//). It also supports the ternary if-then-else operator
-(?:) and the operators &lt;? and &gt;?, which return the smaller and larger
-of their two operands, respectively. Using these operators, we can define the
-note for the barbarian Rage feature as follows, which takes into account the
-fact that the larger constitution bonuses of the Greater Rage and Mighty Rage
-features extend the duration of the rage:
+As this note shows attribute references can use multiple attributes. Within
+embedded references, Quilvyn supports the common comparison operators (&lt;,
+&lt;=, &gt;, &gt;=, ==, !=), the common arithmetic operators (+, -, *, /, unary
+-), AND (&amp;&amp;), OR (||), matching (=~, !~), and integer division (//). It
+also supports the ternary if-then-else operator (?:) and the operators &lt;?
+and &gt;?, which return the smaller and larger of their two operands,
+respectively. Using these operators, we can define the note for the monk
+Whirling Throw feature like this:
 </p>
 
-<code>+4 Str, +4 Con, +2 Will, -2 AC for %{constitutionModifier + 5 + (features.Greater Rage ? 1 : 0) + (features.Mighty Rage ? 1 : 0)} rd %{1 + levels.Barbarian // 4}/dy</code>
+<code>A successful Athletics vs. a grabbed or restrained foe's Fortitude DC allows throwing it %{10+5*strengthModifier}', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning</code>
 
-<p>
-Within spell descriptions, in addition to <a href="#attrs">common character
-attributes</a>, Quilvyn makes available the special character attribute lvl.
-This variable refers to the caster level appropriate to the specific spell:
-casterLevels.Cleric for the C1 spell <i>Bane</i>, casterLevels.Bard for the B0
-spell <i>Dancing Lights</i>, casterLevels.Sorcerer for the S2 spell <i>Arcane
-Lock</i>, and so on. Using the lvl attribute allows you to incorporate the
-caster level into a spell description that works for multiple classes. The
-description of the <i>Enhance Skill</i> spell example from
-<a href="#spell">adding a spell</a> reads:
-</p>
-
-<code>R%{25+lvl//2*5}' Target gains +4 on chosen skill for %{lvl} rd</code>
-
-<p>
-When showing this description on the character sheet, Quilvyn will replace the
-references to lvl with the character's cleric, sorcerer, or wizard level, as
-appropriate. For example, the description for the S3 <i>Enhance Skill</i>
-spell for a level 7 sorcerer will read:
-</p>
-
-<code>R40' Target gains +4 on chosen skill for 7 rd</code>
+<p></p>
 
 <hr style="width: 100%"/>
 
@@ -609,9 +575,10 @@ useful in entering homebrew ancestries, classes, feats, and features.
 <li>languages.&lt;name&gt;, e.g.,<br/>
   languages.Common<br/>
   languages.Sylvan</li>
-<li>skills.&lt;name&gt;, e.g.,<br/>
-  skills.Handle Animal<br/>
-  skills.Ride</li>
+<li>rank.&lt;name&gt;, e.g.,<br/>
+  rank.Religion<br/>
+  rank.Simple Weapons<br/>
+  <i>this attribute is a number from 0, meaning Untrained, to 4, meaning Legendary</i></li>
 <li>skillModifiers.&lt;name&gt;, e.g.,<br/>
   skillModifiers.Athletics<br/>
   skillModifiers.Survival</li>
