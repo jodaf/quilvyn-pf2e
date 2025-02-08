@@ -180,7 +180,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Snow Goblin:Heritage",' +
       '"1:Unbreakable Goblin:Heritage" ' +
     'Languages=Common,Goblin ' +
-    'Traits=Goblin,Humaoid',
+    'Traits=Goblin,Humanoid',
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
@@ -4625,7 +4625,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="Mount is mature and will never attack self"',
   'Shield Warden':
     'Section=combat ' +
-    'Note="Alows using Shield Block to protect an adjacent ally"',
+    'Note="Allows using Shield Block to protect an adjacent ally"',
   'Smite Evil':
     'Action=1 ' +
     'Section=combat ' +
@@ -6053,7 +6053,7 @@ Pathfinder2E.FEATURES = {
   // Mature Animal Companion as above
   'Quick Snares':'Section=skill Note="Allows preparing snares with 3 actions"',
   'Skirmish Strike':
-    'Action=1 Section=combat Note="Allows Steping before or after Strike"',
+    'Action=1 Section=combat Note="Allows Stepping before or after Strike"',
   'Snap Shot':
     'Section=combat ' +
     'Note="Allows using a ranged weapon during a Reaction to Strike an adjacent creature"',
@@ -6292,7 +6292,7 @@ Pathfinder2E.FEATURES = {
   'Poison Weapon':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows preparing %{level} poisons each day that inflict 1d4 HP damage and appling poison to piercing and slashing weapons"',
+    'Note="Allows preparing %{level} poisons each day that inflict 1d4 HP damage and applying poison to piercing and slashing weapons"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6307,7 +6307,7 @@ Pathfinder2E.FEATURES = {
     'Note="Flanking by allies inflicts flat-footed on foes vs. self attacks"',
   'Light Step':
     'Section=ability ' +
-    'Note="Allows Striding or Steping normally over difficult terrain"',
+    'Note="Allows Striding or Stepping normally over difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Action=1 ' +
@@ -7384,7 +7384,7 @@ Pathfinder2E.FEATURES = {
   'Terrain Stalker (Rubble)':
     'Section=skill Note="Sneaking in rubble requires no Stealth check"',
   'Terrain Stalker (Snow)':
-    'Section=skill Note="Sneaking in snow reaquires no Stealth check"',
+    'Section=skill Note="Sneaking in snow requires no Stealth check"',
   'Terrain Stalker (Underbrush)':
     'Section=skill Note="Sneaking in underbrush requires no Stealth check"',
   'Terrified Retreat':
