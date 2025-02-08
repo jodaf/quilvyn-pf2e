@@ -138,6 +138,7 @@ Pathfinder2E.ANCESTRIES = {
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
+      '1:Fast,' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Ability Flaw (Constitution)",' +
       '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
@@ -3250,6 +3251,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful saves vs. necromancy effects are critical successes"',
   'Dwarf Heritage':'Section=feature Note="1 selection"',
   'Elf Heritage':'Section=feature Note="1 selection"',
+  'Fast':'Section=ability Note="+5 Speed"',
   'Fey-Touched Gnome':
     'Section=magic ' +
     'Note="Allows casting a chosen primal cantrip as an innate spell at will and spending 10 min to replace the chosen cantrip once per day"',
@@ -6847,7 +6849,7 @@ Pathfinder2E.FEATURES = {
   "Advanced Muse's Whispers":'Section=feature Note="+1 Class Feat (bard)"',
   'Counter Perform':
     'Section=magic ' +
-    'Note="Knows the Counter Performance occult spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Counter Performance occult spell/Has at least 1 Focus Point"',
   'Inspirational Performance':
     'Section=magic Note="Knows the Inspire Courage occult cantrip"',
   'Occult Breadth':
@@ -6871,7 +6873,7 @@ Pathfinder2E.FEATURES = {
   // NOTE: Might not be Lay On Hands for other causes
   'Healing Touch':
     'Section=magic ' +
-    'Note="Knows the Lay On Hands divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Lay On Hands divine spell/Has at least 1 Focus Point"',
   'Advanced Devotion':'Section=feature Note="+1 Class Feat (champion)"',
   // Champion's Reaction as above
   // Divine Ally as above
@@ -6913,16 +6915,16 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
   'Order Spell (Animal)':
     'Section=magic ' +
-    'Note="Knows the Heal Animal primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Heal Animal primal spell/Has at least 1 Focus Point"',
   'Order Spell (Leaf)':
     'Section=magic ' +
-    'Note="Knows the Goodberry primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Goodberry primal spell/Has at least 1 Focus Point"',
   'Order Spell (Storm)':
     'Section=magic ' +
-    'Note="Knows the Tempest Surge primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Tempest Surge primal spell/Has at least 1 Focus Point"',
   'Order Spell (Wild)':
     'Section=magic ' +
-    'Note="Knows the Wild Morph primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Wild Morph primal spell/Has at least 1 Focus Point"',
   'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
@@ -7005,34 +7007,34 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell (Aberrant)':
     'Section=magic ' +
-    'Note="Knows the Tentacular Limbs occult spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Tentacular Limbs occult spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Angelic)':
     'Section=magic ' +
-    'Note="Knows the Angelic Halo divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Angelic Halo divine spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Demonic)':
     'Section=magic ' +
-    'Note="Knows the Glutton\'s Jaws divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Glutton\'s Jaws divine spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Diabolic)':
     'Section=magic ' +
-    'Note="Knows the Diabolic Edict divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Diabolic Edict divine spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Draconic)':
     'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Dragon Claws arcane spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Elemental)':
     'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Elemental Toss primal spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Fey)':
     'Section=magic ' +
-    'Note="Knows the Faerie Dust primal spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Faerie Dust primal spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Hag)':
     'Section=magic ' +
-    'Note="Knows the Jealous Hex occult spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Jealous Hex occult spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Imperial)':
     'Section=magic ' +
-    'Note="Knows the Ancestral Memories arcane spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Ancestral Memories arcane spell/Has at least 1 Focus Point"',
   'Basic Bloodline Spell (Undead)':
     'Section=magic ' +
-    'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Undeath\'s Blessing divine spell/Has at least 1 Focus Point"',
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
@@ -7053,28 +7055,28 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Arcana)"',
   'Arcane School Spell (Abjuration)':
     'Section=magic ' +
-    'Note="Knows the Protective Ward arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Protective Ward arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Conjuration)':
     'Section=magic ' +
-    'Note="Knows the Augment Summoning arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Augment Summoning arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Divination)':
     'Section=magic ' +
-    'Note="Knows the Diviner\'s Sight arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Diviner\'s Sight arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Enchantment)':
     'Section=magic ' +
-    'Note="Knows the Charming Words arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Charming Words arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Evocation)':
     'Section=magic ' +
-    'Note="Knows the Force Bolt arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Force Bolt arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Illusion)':
     'Section=magic ' +
-    'Note="Knows the Warped Terrain arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Warped Terrain arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Necromancy)':
     'Section=magic ' +
-    'Note="Knows the Call Of The Grave arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Call Of The Grave arcane spell/Has at least 1 Focus Point"',
   'Arcane School Spell (Transmutation)':
     'Section=magic ' +
-    'Note="Knows the Physical Boost arcane spell/Has a focus pool with 1 focus point"',
+    'Note="Knows the Physical Boost arcane spell/Has at least 1 Focus Point"',
   'Basic Arcana':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
   'Basic Wizard Spellcasting':
@@ -12176,7 +12178,10 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
     let baseAbility = 'base' + a.charAt(0).toUpperCase() + a.substring(1);
-    rules.defineRule(a, baseAbility, '=', null,
+    rules.defineRule(a,
+      baseAbility, '=', null,
+      // Somewhat complicated computation here handles the rule that boosts
+      // that take the ability above 18 only increase the ability by 1
       'abilityBoosts.' + a, '+', 'source * 2 - Math.max(Math.floor((dict["' + baseAbility + '"] + source * 2 - 20) / 2), 0)'
     );
     rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
@@ -12578,6 +12583,7 @@ Pathfinder2E.talentRules = function(
  * related to selecting that choice.
  */
 Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
+
   if(type == 'Alignment')
     Pathfinder2E.alignmentRules(rules, name);
   else if(type == 'Ancestry') {
@@ -12719,14 +12725,12 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     console.log('Unknown choice type "' + type + '"');
     return;
   }
+
   type = type == 'Class' ? 'levels' :
          (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
   if(type != 'spells')
     rules.addChoice(type, name, attrs);
-  if(type == 'skills' && name.endsWith(' Lore'))
-    rules.addChoice('lores', name, attrs);
-  if(type == 'skills' && attrs.includes('Terrain Lore'))
-    rules.addChoice('terrains', name.replace(' Lore', ''), '');
+
 };
 
 /*
@@ -12734,12 +12738,14 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
  * choiceRules.
  */
 Pathfinder2E.removeChoice = function(rules, type, name) {
+
   let group =
     type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's';
   let choices = rules.getChoices(group);
   if(!choices)
     return;
   let currentAttrs = choices[name];
+
   if(currentAttrs) {
     delete choices[name];
     // Q defines no way to delete rules outright; instead, we override with a
@@ -12755,17 +12761,19 @@ Pathfinder2E.removeChoice = function(rules, type, name) {
       let first = Object.keys(choices)[0];
       if(first)
         rules.choiceRules(rules, type, first, choices[first]);
-    } else if(type.match(/^(Class|NPC|Prestige|Race)$/)) {
+    } else if(type.match(/^(Ancestry|Background|Class)$/)) {
       let prefix =
         name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-      let level = type == 'Race' ? prefix + 'Level' : ('levels.' + name);
+      let level = type == 'Class' ? 'levels.' + name : (prefix + 'Level');
       let targets = rules.allTargets(level);
       targets.forEach(x => {
         rules.defineRule(x, level, '=', 'null');
       });
-    } else if(type.match(/^(Class|Race) Feature/)) {
-      let base = QuilvynUtils.getAttrValue(currentAttrs, 'Class') ||
-                 QuilvynUtils.getAttrValue(currentAttrs, 'Race');
+    } else if(type.match(/^(Ancestry|Background|Class) Feature/)) {
+      let base =
+        QuilvynUtils.getAttrValue(currentAttrs, 'Ancestry') ||
+        QuilvynUtils.getAttrValue(currentAttrs, 'Background') ||
+        QuilvynUtils.getAttrValue(currentAttrs, 'Class');
       let prefix =
         base.charAt(0).toLowerCase() + base.substring(1).replaceAll(' ', '');
       let source =
@@ -12786,23 +12794,12 @@ Pathfinder2E.removeChoice = function(rules, type, name) {
     }
   } else if(choices && type == 'Spell') {
     let notes = rules.getChoices('notes');
-    let potions = rules.getChoices('potions');
-    let scrolls = rules.getChoices('scrolls');
-    QuilvynUtils.getKeys(choices, '^' + name + '\\(').forEach(s => {
+    QuilvynUtils.getKeys(choices, '^' + name + ' \\(').forEach(s => {
       delete choices[s];
       delete notes['spells.' + s];
-      if(potions) {
-        delete potions[s.replace('(', ' Oil (')];
-        delete potions[s.replace('(', ' Potion (')];
-        delete notes['potions.' + s.replace('(', ' Oil (')];
-        delete notes['potions.' + s.replace('(', ' Potion (')];
-      }
-      if(scrolls) {
-        delete scrolls[s];
-        delete notes['scrolls.' + s];
-      }
     });
   }
+
   // If this choice overloaded a plugin-defined one (e.g., a homebrew Fighter
   // class), restore the plugin version
   let constantName = type.toUpperCase().replaceAll(' ', '_') + 'S';
@@ -12818,6 +12815,7 @@ Pathfinder2E.removeChoice = function(rules, type, name) {
       break;
     }
   }
+
 };
 
 /* Defines in #rules# the rules associated with alignment #name#. */
@@ -12831,7 +12829,7 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with ancestry #name#. #hitPoints#
- * gives the number of HP granted at level 1. #features# and #selectables# list
+ * gives the number of HP granted at level 1, #features# and #selectables# list
  * associated automatic and selectable features, #languages# lists languages
  * automatically known by characters with the ancestry, and #traits# lists any
  * traits associated with it.
@@ -12877,6 +12875,7 @@ Pathfinder2E.ancestryRules = function(
     'featureNotes.' + prefix + 'Heritage', '=', '1'
   );
 
+  rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
   rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
   languages.forEach(l => {
     if(l != 'any')
@@ -12901,7 +12900,6 @@ Pathfinder2E.ancestryRules = function(
 
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
-  rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
 
 };
 
@@ -12912,8 +12910,6 @@ Pathfinder2E.ancestryRules = function(
 Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Dwarf') {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
-  } else if(name == 'Elf') {
-    rules.defineRule('speed', 'elfLevel', '+', '5');
   } else if(name == 'Gnome') {
     rules.defineRule('selectableFeatureCount.Gnome (Wellspring)',
       'featureNotes.wellspringGnome', '=', '1'
@@ -12946,7 +12942,7 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
 /*
  * Defines in #rules# the rules required to give feature #name# to ancestry
  * #ancestryName# at level #level#. #selectable# gives the category if this
- * feature is selectable; it is otherwise null.  #replace# lists any ancestry
+ * feature is selectable; it is otherwise null. #replace# lists any ancestry
  * features that this new one replaces.
  */
 Pathfinder2E.ancestryFeatureRules = function(
@@ -13006,9 +13002,9 @@ Pathfinder2E.ancestryFeatureRules = function(
  * to category #category#, costs #price# gold pieces, adds #ac# to the
  * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
  * imposes #checkPenalty# on specific skills, slows the character by
- * #speedPenalty#, requires a strength of at least #minStr# to use, adds #bulk#
- * to the character's burden, belongs to group #group#, and has the list of
- * traits #traits#.
+ * #speedPenalty#, requires a strength of at least #minStr# to use without
+ * penalties, adds #bulk# to the character's burden, belongs to group #group#,
+ * and has the list of traits #traits#.
  */
 Pathfinder2E.armorRules = function(
   rules, name, category, price, ac, maxDex, checkPenalty, speedPenalty, minStr,
@@ -13113,6 +13109,7 @@ Pathfinder2E.armorRules = function(
 
   rules.defineRule('rank.' + name, 'trainingLevel.' + name);
   rules.defineRule('rank.Armor',
+    'armor', '=', 'null', // recomputation trigger
     'rank.' + name, '^', 'dict["armor"]=="' + name + '" ? source : null'
   );
 
@@ -13124,16 +13121,20 @@ Pathfinder2E.armorRules = function(
  * selectable features.
  */
 Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
+
   let prefix =
     name.substring(0, 1).toLowerCase() + name.substring(1).replaceAll(' ', '');
   let backgroundLevel = prefix + 'Level';
+
   rules.defineRule(backgroundLevel,
     'background', '?', 'source == "' + name + '"',
     'level', '=', null
   );
+
   Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
   Pathfinder2E.featureListRules
     (rules, selectables, name, backgroundLevel, true);
+
   selectables.forEach(selectable => {
     let pieces = selectable.split(':');
     let s = pieces[pieces.length > 1 && pieces[0].match(/\d+$/) ? 1 : 0];
@@ -13143,8 +13144,10 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
     QuilvynRules.validAllocationRules
       (rules, prefix + sType.replaceAll(' ', ''), 'selectableFeatureCount.' + name + (sType != '' ? ' (' + sType + ')' : ''), sCount);
   });
+
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
+
 };
 
 /*
@@ -13165,8 +13168,8 @@ Pathfinder2E.backgroundRulesExtra = function(rules, name) {
 
 /*
  * Defines in #rules# the rules required to give feature #name# to background
- * #backgroundName#. #replace# lists any background features that this new one
- * replaces.
+ * #backgroundName# at level #level#. #replace# lists any background features
+ * that this new one replaces.
  */
 Pathfinder2E.backgroundFeatureRules = function(
   rules, name, backgroundName, level, replace
@@ -13193,6 +13196,7 @@ Pathfinder2E.backgroundFeatureRules = function(
   let prefix =
     backgroundName.charAt(0).toLowerCase() + backgroundName.substring(1).replaceAll(' ', '');
   let backgroundLevel = prefix + 'Level';
+
   QuilvynRules.featureListRules
     (rules, [featureSpec], backgroundName, backgroundLevel, false);
   replace.forEach(f => {
@@ -13211,7 +13215,7 @@ Pathfinder2E.backgroundFeatureRules = function(
  * the possible class abilities for the class. The class grants #hitPoints#
  * additional hit points with each level advance. #features# and #selectables#
  * list the fixed and selectable features acquired as the character advances in
- * class level. #spellSlots# lists the number of spells per level per day that
+ * class level, and #spellSlots# the number of spells per level per day that
  * the class can cast.
  */
 Pathfinder2E.classRules = function(
@@ -13249,8 +13253,6 @@ Pathfinder2E.classRules = function(
 
   Pathfinder2E.featureListRules(rules, features, name, classLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, classLevel, true);
-  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
-  rules.defineChoice('extras', prefix + 'Features');
 
   selectables.forEach(selectable => {
     let pieces = selectable.split(':');
@@ -13281,9 +13283,9 @@ Pathfinder2E.classRules = function(
       // Sorcerer slots depend on bloodline. Generate rules here based on a
       // tradition-specific level that is set by featureRules.
       ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-        let l = t.charAt(0);
+        let firstChar = t.charAt(0);
         let tLevel = prefix + t + 'Level';
-        let tSlots = spellSlots.map(x => l + x);
+        let tSlots = spellSlots.map(x => firstChar + x);
         QuilvynRules.spellSlotRules(rules, tLevel, tSlots);
         rules.defineRule
           ('spellAbility.' + t, tLevel, '=', '"' + abilities[0] + '"');
@@ -13297,8 +13299,10 @@ Pathfinder2E.classRules = function(
     }
   }
 
-  rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
+  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
+  rules.defineChoice('extras', prefix + 'Features');
 
+  rules.defineChoice('notes', 'classDifficultyClass.' + name + ':%V (%1; %2)');
   rules.defineRule
     ('classDifficultyClass.' + name, 'proficiencyBonus.' + name, '=', null);
   if(abilities.length == 1) {
@@ -13324,6 +13328,7 @@ Pathfinder2E.classRules = function(
   rules.defineRule('classDifficultyClass.' + name + '.2',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
+
   rules.defineRule('classHitPoints', classLevel, '=', hitPoints);
   rules.defineRule('featureNotes.' + prefix + 'Feats',
     classLevel, '=', 'Math.floor(source / 2)' + (features.includes('1:' + name + ' Feats') ? ' + 1' : '')
@@ -13378,6 +13383,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('skillNotes.perpetualInfusions',
       '', '=', '1',
+      'features.Chirurgeon', '=', 'null', // recomputation trigger
       'skillNotes.perpetualPotency', '^', 'dict["features.Chirurgeon"] ? 6 : 3',
       'skillNotes.perpetualPerfection', '^', '11'
     );
@@ -13419,7 +13425,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'level', '?', 'source>=15'
     );
   } else if(name == 'Bard') {
-    rules.defineRule('focusPoints', 'magicNotes.compositionSpells', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Occult"');
     rules.defineRule
@@ -13448,7 +13453,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.exalt(Paladin)',
       'combatNotes.auraOfVengeance', '=', 'null' // italics
     );
-    rules.defineRule('focusPoints', 'magicNotes.devotionSpells', '+=', '1');
     rules.defineRule('featureNotes.divineAlly',
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
@@ -13573,12 +13577,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'alignment', '=', 'dict.deityFollowerAlignments.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
   } else if(name == 'Druid') {
-    rules.defineRule('focusPoints',
-      'magicNotes.animal', '+=', '1',
-      'magicNotes.leaf', '+=', '2',
-      'magicNotes.storm', '+=', '2',
-      'magicNotes.wild', '+=', '1'
-    );
     rules.defineRule
       ('languages.Druidic', 'skillNotes.druidicLanguage', '=', '1');
     rules.defineRule
@@ -13729,7 +13727,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('bloodlineTraditionsLowered',
       'bloodlineTraditions', '=', 'source.toLowerCase()'
     );
-    rules.defineRule('focusPoints', 'magicNotes.bloodline', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
@@ -13777,7 +13774,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
-    rules.defineRule('focusPoints', 'magicNotes.arcaneSchool', '+=', '1');
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Arcane"');
     rules.defineRule('magicNotes.legendarySpellcaster',
@@ -13925,7 +13921,7 @@ Pathfinder2E.deityRules = function(
     return;
   }
   let allSkills = rules.getChoices('skills') || Pathfinder2E.SKILLS;
-  if(!(skill in allSkills)) {
+  if(skill && !(skill in allSkills)) {
     console.log('Unknown skill "' + skill + '" for deity ' + name);
     return;
   }
@@ -14002,6 +13998,10 @@ Pathfinder2E.deityRules = function(
     'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
     'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
   );
+
+  domains.forEach(d => {
+    rules.addChoice('domains', d, '');
+  });
 
 };
 
@@ -14131,9 +14131,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       rules.defineRule('features.Arcane School Spell (' + s + ')',
         'features.Arcane School Spell', '?', null,
         'features.' + s, '=', '1'
-      );
-      rules.defineRule('focusPoints',
-        'magicNotes.arcaneSchoolSpell(' + s.replaceAll(' ', '') + ')', '+=', '1'
       );
     });
   } else if(name == 'Armor Proficiency') {
@@ -14297,7 +14294,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // NOTE: Placing this code here means that the tests won't be regenerated
     // when adding homebrew causes.
     let allSelectables = rules.getChoices('selectableFeatures');
-    let champion = rules.getChoices('levels').Champion;
     let causes =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', ''));
     let reactions =
@@ -14326,8 +14322,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress the deity notes that don't come with Cleric Dedication
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
-  } else if(name == 'Counter Perform') {
-    rules.defineRule('focusPoints', 'magicNotes.counterPerform', '+=', '1');
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14340,8 +14334,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name.startsWith('Domain Initiate')) {
-    let note = 'magicNotes.d' + name.substring(1).replaceAll(' ', '');
-    rules.defineRule('focusPoints', note, '+=', '1');
     rules.defineRule('features.Domain Initiate', 'features.' + name, '=', '1');
   } else if(name == 'Druid Dedication') {
     rules.defineRule('spellModifier.' + name,
@@ -14445,20 +14437,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('choiceCount.Skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
-  } else if(name == 'Hand Of The Apprentice') {
-    rules.defineRule
-      ('focusPoints', 'magicNotes.handOfTheApprentice', '+=', '1');
   } else if(name == 'Harming Hands') {
     rules.defineRule('harmSpellDie', 'magicNotes.harmingHands', '^', '10');
   } else if(name == 'Healing Hands') {
     rules.defineRule('healSpellDie', 'magicNotes.healingHands', '^', '10');
-  } else if(name == 'Healing Touch') {
-    rules.defineRule('focusPoints', 'magicNotes.healingTouch', '+=', '1');
   } else if(name == "Hierophant's Power") {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
-  } else if(name == 'Impaling Briars') {
-    rules.defineRule('focusPoints', 'magicNotes.impalingBriars', '+=', '1');
   } else if(name == 'Instinct Ability') {
     // Extend test rules to allow characters with the Instinct Ability
     // archetype feature to acquire barbarian instinct abilities.
@@ -14483,8 +14468,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'spells.Dispel Magic (O2 Abj)', '=', '1',
       'spells.Dispel Magic (P2 Abj)', '=', '1'
     );
-  } else if(name == 'Invoke Disaster') {
-    rules.defineRule('focusPoints', 'magicNotes.invokeDisaster', '+=', '1');
   } else if(name == 'Ironblood Stance') {
     rules.defineRule('combatNotes.ironbloodStance',
       'level', '=', 'source<12 ? 2 : source<16 ? 3 : source<20 ? 4 : 5',
@@ -14495,10 +14478,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('combatNotes.ironbloodSurge', 'strengthModifier', '=', null);
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
-    rules.defineRule('focusPoints', 'magicNotes.kiRush', '+=', '1');
   } else if(name == 'Ki Strike') {
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
-    rules.defineRule('focusPoints', 'magicNotes.kiStrike', '+=', '1');
   } else if(name == 'Master Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
@@ -14553,7 +14534,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name.match(/^Order Explorer/)) {
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
   } else if(name == 'Order Spell') {
-    rules.defineRule('focusPoints', 'magicNotes.orderSpell', '^=', '1');
     let allSelectables = rules.getChoices('selectableFeatures');
     let orders =
       Object.keys(allSelectables).filter(x => allSelectables[x].includes('Druid (Order)')).map(x => x.replace('Druid - ', ''));
@@ -14945,6 +14925,12 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           'features.' + name, '=', '1'
         );
       }
+      matchInfo = n.match(/focus pool with (\d) Focus Point/);
+      if(matchInfo)
+        rules.defineRule('focusPoints', note, '+=', matchInfo[1]);
+      matchInfo = n.match(/at least (\d) Focus Point/);
+      if(matchInfo)
+        rules.defineRule('focusPoints', note, '^=', matchInfo[1]);
     });
   }
 };
@@ -15099,6 +15085,11 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
   rules.defineRule('skillModifiers.' + name + '.1',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
+
+  if(name.endsWith(' Lore'))
+    rules.addChoice('lores', name, '');
+  if(subcategory == 'Terrain Lore')
+    rules.addChoice('terrains', name.replace(' Lore', ''), '');
 
 };
 
@@ -16338,7 +16329,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       if(attr.match(/^levels\./))
         clas = attr.replace('levels.', '');
     }
-    let race = attributes.race || 'Human';
+    let ancestry = attributes.ancestry || 'Human';
     attrs = this.applyRules(attributes);
     choices = [];
     howMany = 3;
@@ -16350,7 +16341,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
       if(weapons[attr].includes('Uncommon') &&
          !weapons[attr].includes(clas) &&
-         !weapons[attr].includes(race))
+         !weapons[attr].includes(ancestry))
         continue;
       category += category == 'Unarmed' ? ' Attacks' : ' Weapons';
       if(attrs['rank.' + category] || attrs['rank.' + attr])
