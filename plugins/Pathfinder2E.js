@@ -4124,7 +4124,7 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   'Composition Spells':
     'Section=magic ' +
-    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and +1 Focus Point"',
   'Enigma':
     'Section=feature,magic ' +
     'Note=' +
@@ -4495,7 +4495,7 @@ Pathfinder2E.FEATURES = {
   "Deity's Domain (Zeal)":
     'Section=magic Note="Knows the Weapon Surge divine spell"',
   'Devotion Spells':
-    'Section=magic Note="Has a focus pool with 1 Focus Point"',
+    'Section=magic Note="Has a focus pool and +1 Focus Point"',
   'Divine Ally':
     'Section=feature ' +
     'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
@@ -4863,112 +4863,112 @@ Pathfinder2E.FEATURES = {
   'Doctrine':'Section=feature Note="1 selection"',
   'Domain Initiate (Air)':
     'Section=magic ' +
-    'Note="Knows the Pushing Gust divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Pushing Gust divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Ambition)':
     'Section=magic ' +
-    'Note="Knows the Blind Ambition divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Blind Ambition divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Cities)':
     'Section=magic ' +
-    'Note="Knows the Face In The Crowd divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Face In The Crowd divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Confidence)':
     'Section=magic ' +
-    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Creation)':
     'Section=magic ' +
-    'Note="Knows the Splash Of Art divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Splash Of Art divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Darkness)':
     'Section=magic ' +
-    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Death)':
     'Section=magic ' +
-    'Note="Knows the Death\'s Call divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Death\'s Call divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Destruction)':
     'Section=magic ' +
-    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Dreams)':
     'Section=magic ' +
-    'Note="Knows the Sweet Dream divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Sweet Dream divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Earth)':
     'Section=magic ' +
-    'Note="Knows the Hurtling Stone divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Hurtling Stone divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Family)':
     'Section=magic ' +
-    'Note="Knows the Soothing Words divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Soothing Words divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Fate)':
     'Section=magic ' +
-    'Note="Knows the Read Fate divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Read Fate divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Fire)':
     'Section=magic ' +
-    'Note="Knows the Fire Ray divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Fire Ray divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Freedom)':
     'Section=magic ' +
-    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Healing)':
     'Section=magic ' +
-    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Indulgence)':
     'Section=magic ' +
-    'Note="Knows the Overstuff divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Overstuff divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Luck)':
     'Section=magic ' +
-    'Note="Knows the Bit Of Luck divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Bit Of Luck divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Magic)':
     'Section=magic ' +
-    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Might)':
     'Section=magic ' +
-    'Note="Knows the Athletic Rush divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Athletic Rush divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Moon)':
     'Section=magic ' +
-    'Note="Knows the Moonbeam divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Moonbeam divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Nature)':
     'Section=magic ' +
-    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Nightmares)':
     'Section=magic ' +
-    'Note="Knows the Waking Nightmare divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Waking Nightmare divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Pain)':
     'Section=magic ' +
-    'Note="Knows the Savor The Sting divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Savor The Sting divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Passion)':
     'Section=magic ' +
-    'Note="Knows the Charming Touch divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Charming Touch divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Perfection)':
     'Section=magic ' +
-    'Note="Knows the Perfected Mind divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Perfected Mind divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Protection)':
     'Section=magic ' +
-    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Secrecy)':
     'Section=magic ' +
-    'Note="Knows the Forced Quiet divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Forced Quiet divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Sun)':
     'Section=magic ' +
-    'Note="Knows the Dazzling Flash divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Dazzling Flash divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Travel)':
     'Section=magic ' +
-    'Note="Knows the Agile Feet divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Agile Feet divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Trickery)':
     'Section=magic ' +
-    'Note="Knows the Sudden Shift divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Sudden Shift divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Truth)':
     'Section=magic ' +
-    'Note="Knows the Word Of Truth divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Word Of Truth divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Tyranny)':
     'Section=magic ' +
-    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Undeath)':
     'Section=magic ' +
-    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Water)':
     'Section=magic ' +
-    'Note="Knows the Tidal Surge divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Tidal Surge divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Wealth)':
     'Section=magic ' +
-    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool and +1 Focus Point"',
   'Domain Initiate (Zeal)':
     'Section=magic ' +
-    'Note="Knows the Weapon Surge divine spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Weapon Surge divine spell/Has a focus pool and +1 Focus Point"',
   'Harmful Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   'Healing Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
   // Lightning Reflexes as above
@@ -5131,7 +5131,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Animal Companion feature",' +
-      '"Knows the Heal Animal primal spell/Has a focus pool with 1 Focus Point",' +
+      '"Knows the Heal Animal primal spell/Has a focus pool and +1 Focus Point",' +
       '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
@@ -5146,7 +5146,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Leshy Familiar feature",' +
-      '"Knows the Goodberry primal spell/Has a focus pool with 2 Focus Points",' +
+      '"Knows the Goodberry primal spell/Has a focus pool and +2 Focus Points",' +
       '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -5161,14 +5161,14 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Storm Born feature",' +
-      '"Knows the Tempest Surge primal spell/Has a focus pool with 2 Focus Points",' +
+      '"Knows the Tempest Surge primal spell/Has a focus pool and +2 Focus Points",' +
       '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
   'Wild':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Wild Shape feature",' +
-      '"Knows the Wild Morph primal spell/Has a focus pool with 1 Focus Point",' +
+      '"Knows the Wild Morph primal spell/Has a focus pool and +1 Focus Point",' +
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
@@ -5717,10 +5717,10 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10 HP bludgeoning and ignoring the first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows the Ki Rush occult spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Ki Rush occult spell/Has a focus pool and +1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows the Ki Strike occult spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Ki Strike occult spell/Has a focus pool and +1 Focus Point"',
   'Monastic Weaponry':'Section=combat Note="Attack %V (Monk Weapons)"',
   'Mountain Stance':
     'Action=1 ' +
@@ -6422,7 +6422,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"1 selection",' +
-      '"Has a focus pool with 1 Focus Point"',
+      '"Has a focus pool and +1 Focus Point"',
   'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   // Expert Spellcaster as above
@@ -6629,7 +6629,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"1 selection",' +
-      '"Has a focus pool with 1 Focus Point"',
+      '"Has a focus pool and +1 Focus Point"',
   'Arcane Spellcasting':
     'Section=magic Note="Allows learning spells from the arcane tradition"',
   'Arcane Thesis':'Section=feature Note="1 selection"',
@@ -6722,7 +6722,7 @@ Pathfinder2E.FEATURES = {
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
-    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool and +1 Focus Point"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -6849,7 +6849,7 @@ Pathfinder2E.FEATURES = {
   "Advanced Muse's Whispers":'Section=feature Note="+1 Class Feat (bard)"',
   'Counter Perform':
     'Section=magic ' +
-    'Note="Knows the Counter Performance occult spell/Has at least 1 Focus Point"',
+    'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
   'Inspirational Performance':
     'Section=magic Note="Knows the Inspire Courage occult cantrip"',
   'Occult Breadth':
@@ -6873,7 +6873,7 @@ Pathfinder2E.FEATURES = {
   // NOTE: Might not be Lay On Hands for other causes
   'Healing Touch':
     'Section=magic ' +
-    'Note="Knows the Lay On Hands divine spell/Has at least 1 Focus Point"',
+    'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Devotion':'Section=feature Note="+1 Class Feat (champion)"',
   // Champion's Reaction as above
   // Divine Ally as above
@@ -6915,16 +6915,16 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
   'Order Spell (Animal)':
     'Section=magic ' +
-    'Note="Knows the Heal Animal primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Heal Animal primal spell/Has a focus pool and at least 1 Focus Point"',
   'Order Spell (Leaf)':
     'Section=magic ' +
-    'Note="Knows the Goodberry primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Goodberry primal spell/Has a focus pool and at least 1 Focus Point"',
   'Order Spell (Storm)':
     'Section=magic ' +
-    'Note="Knows the Tempest Surge primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Tempest Surge primal spell/Has a focus pool and at least 1 Focus Point"',
   'Order Spell (Wild)':
     'Section=magic ' +
-    'Note="Knows the Wild Morph primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
@@ -7007,34 +7007,34 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell (Aberrant)':
     'Section=magic ' +
-    'Note="Knows the Tentacular Limbs occult spell/Has at least 1 Focus Point"',
+    'Note="Knows the Tentacular Limbs occult spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Angelic)':
     'Section=magic ' +
-    'Note="Knows the Angelic Halo divine spell/Has at least 1 Focus Point"',
+    'Note="Knows the Angelic Halo divine spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Demonic)':
     'Section=magic ' +
-    'Note="Knows the Glutton\'s Jaws divine spell/Has at least 1 Focus Point"',
+    'Note="Knows the Glutton\'s Jaws divine spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Diabolic)':
     'Section=magic ' +
-    'Note="Knows the Diabolic Edict divine spell/Has at least 1 Focus Point"',
+    'Note="Knows the Diabolic Edict divine spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Draconic)':
     'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Elemental)':
     'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Fey)':
     'Section=magic ' +
-    'Note="Knows the Faerie Dust primal spell/Has at least 1 Focus Point"',
+    'Note="Knows the Faerie Dust primal spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Hag)':
     'Section=magic ' +
-    'Note="Knows the Jealous Hex occult spell/Has at least 1 Focus Point"',
+    'Note="Knows the Jealous Hex occult spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Imperial)':
     'Section=magic ' +
-    'Note="Knows the Ancestral Memories arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Ancestral Memories arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Undead)':
     'Section=magic ' +
-    'Note="Knows the Undeath\'s Blessing divine spell/Has at least 1 Focus Point"',
+    'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
   'Bloodline Breadth':
     'Section=magic ' +
@@ -7055,28 +7055,28 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Arcana)"',
   'Arcane School Spell (Abjuration)':
     'Section=magic ' +
-    'Note="Knows the Protective Ward arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Protective Ward arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Conjuration)':
     'Section=magic ' +
-    'Note="Knows the Augment Summoning arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Augment Summoning arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Divination)':
     'Section=magic ' +
-    'Note="Knows the Diviner\'s Sight arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Diviner\'s Sight arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Enchantment)':
     'Section=magic ' +
-    'Note="Knows the Charming Words arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Charming Words arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Evocation)':
     'Section=magic ' +
-    'Note="Knows the Force Bolt arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Force Bolt arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Illusion)':
     'Section=magic ' +
-    'Note="Knows the Warped Terrain arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Warped Terrain arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Necromancy)':
     'Section=magic ' +
-    'Note="Knows the Call Of The Grave arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Call Of The Grave arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Arcane School Spell (Transmutation)':
     'Section=magic ' +
-    'Note="Knows the Physical Boost arcane spell/Has at least 1 Focus Point"',
+    'Note="Knows the Physical Boost arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Arcana':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
   'Basic Wizard Spellcasting':
@@ -14925,12 +14925,14 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           'features.' + name, '=', '1'
         );
       }
-      matchInfo = n.match(/focus pool with (\d) Focus Point/);
-      if(matchInfo)
-        rules.defineRule('focusPoints', note, '+=', matchInfo[1]);
-      matchInfo = n.match(/at least (\d) Focus Point/);
-      if(matchInfo)
-        rules.defineRule('focusPoints', note, '^=', matchInfo[1]);
+      matchInfo = n.match(/^Has a focus pool and (at least |\+)?(\d) Focus Points?/);
+      if(matchInfo) {
+        rules.defineRule('features.Focus Pool', note, '=', '1');
+        rules.defineRule('focusPoints',
+          'features.Focus Pool', '=', '0',
+          note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]
+        );
+      }
     });
   }
 };
