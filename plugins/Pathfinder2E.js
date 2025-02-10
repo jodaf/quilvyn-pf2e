@@ -3878,7 +3878,7 @@ Pathfinder2E.FEATURES = {
       '"Successful melee Strikes ignore 10 points of physical damage resistance"',
   'Draconic Rage':
     'Section=combat ' +
-    'Note="Allows substituting +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage for +2 HP weapon damage during rage"',
+    'Note="Allows inflicting +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +2 HP weapon damage during rage"',
   'Fury Instinct':'Section=feature Note="+1 Class Feat"',
   'Greater Juggernaut':
     'Section=save,save ' +
@@ -3941,11 +3941,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Allows use concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
-    'Section=skill,skill,skill ' +
+    'Section=feature,feature,skill ' +
     'Note=' +
       '"Has the Intimidating Glare feature",' +
-      '"Allows using Demoralize during rage",' +
-      '"Has the Scare To Death feature"',
+      '"Has the Scare To Death feature",' +
+      '"Allows using Demoralize during rage"',
   'Raging Thrower':
     'Section=combat ' +
     'Note="Gives +%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP thrown weapon damage and applies Brutal Critical and Devastator effects to thrown weapons during rage"',
@@ -13417,10 +13417,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.barbarianSkills', 'intelligenceModifier', '=', '3 + source');
     rules.defineRule
-      ('skillNotes.ragingIntimidation', 'rank.Intimidation', '?', null);
-    rules.defineRule
-      ('skillNotes.ragingIntimidation-1', 'rank.Intimidation', '?', null);
-    rules.defineRule('skillNotes.ragingIntimidation-2',
+      ('featureNotes.ragingIntimidation', 'rank.Intimidation', '?', null);
+    rules.defineRule('featureNotes.ragingIntimidation-1',
       'rank.Intimidation', '?', 'source>=4',
       'level', '?', 'source>=15'
     );
