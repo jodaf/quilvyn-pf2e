@@ -3598,7 +3598,7 @@ Pathfinder2E.FEATURES = {
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows retaining 1 Hit Point when brought to 0 Hit Points once per %V"',
+    'Note="Allows retaining 1 Hit Point when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
   'Orc Superstition':'Action=1 Section=save Note="Gives +1 vs. magic"',
   'Orc Weapon Familiarity':
@@ -4503,7 +4503,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Allows applying choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day; also allows using the weapon\'s critical specialization effect"',
   'Divine Ally (Shield)':
-    'Section=combat Note="+2 shield hardness/+50% shield Hit Points"',
+    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
   'Divine Ally (Steed)':
     'Section=feature Note="Has a young animal companion for a mount"',
   'Divine Smite (Liberator)':
@@ -5979,7 +5979,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows two ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="Allows Recall Knowledge attempt as part of Hunt Prey action; critical success gives +%V attack to self and allies for 1 rd once per target per day"',
+    'Note="Allows Recall Knowledge attempt as part of Hunt Prey action; critical success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies for 1 rd once per target per day"',
   'Twin Takedown':
     'Action=1 ' +
     'Section=combat ' +
@@ -6023,7 +6023,7 @@ Pathfinder2E.FEATURES = {
     'Note="+2 attack ignores concealment of hunted prey"',
   'Monster Warden':
     'Section=combat ' +
-    'Note="Successful use of Monster Hunter also gives self and allies +%V Armor Class on next attack and +%V on next save vs. hunted prey"',
+    'Note="Successful use of Monster Hunter also gives self and allies +%{1+(combatNotes.legendaryMonsterHunter||0)} Armor Class on next attack and +%{1+(combatNotes.legendaryMonsterHunter||0)} on next save vs. hunted prey"',
   'Quick Draw':
     'Action=1 ' +
     'Section=combat ' +
@@ -12315,7 +12315,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   );
   rules.defineRule('shield.3',
     '', '=', '""',
-    'shieldHP', '=', 'source>0 ? "; HP " + source : ""'
+    'shieldHitPoints', '=', 'source>0 ? "; HP " + source : ""'
   );
   rules.defineRule('shield.4',
     '', '=', '""',
@@ -12377,6 +12377,10 @@ Pathfinder2E.identityRules = function(
   for(let d in deities)
     rules.choiceRules(rules, 'Deity', d, deities[d]);
 
+  rules.defineRule('combatNotes.weaponSpecialization',
+    '', '=', '2',
+    'combatNotes.greaterWeaponSpecialization', '+', '2'
+  );
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('size',
@@ -12921,8 +12925,10 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Goblin') {
-    Pathfinder2E.weaponRules
-      (rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Finesse', 'Unarmed'], null);
+    Pathfinder2E.weaponRules(
+      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
     rules.defineRule('weapons.Jaws', 'combatNotes.razortoothGoblin', '=', '1');
   } else if(name == 'Halfling') {
     rules.defineRule('skillNotes.nomadicHalfling',
@@ -13367,10 +13373,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 
   if(name == 'Alchemist') {
     rules.defineRule('advancedAlchemyLevel', classLevel, '=', null);
-    rules.defineRule('combatNotes.weaponSpecialization',
-      '', '=', '2',
-      'combatNotes.greaterWeaponSpecialization', '+', '2'
-    );
     rules.defineRule('selectableFeatureCount.Alchemist (Research Field)',
       'featureNotes.researchField', '=', '1'
     );
@@ -13468,9 +13470,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.championKeyAbility', '=', '1'
     );
     rules.defineRule
-      ('shieldHardness', 'combatNotes.divineAlly(Shield)', '+', '2');
-    rules.defineRule('shieldHP', 'shieldHP.1', '*', null);
-    rules.defineRule('shieldHP.1',
+      ('shieldHitPoints', 'combatNotes.divineAlly(Shield).1', '*', null);
+    rules.defineRule('combatNotes.divineAlly(Shield).1',
       'combatNotes.divineAlly(Shield)', '=', '1.5',
       'combatNotes.shieldParagon', '^', '2'
     );
@@ -13514,7 +13515,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('combatNotes.warpriest-1', 'level', '?', 'source>=7');
     rules.defineRule('featureNotes.warpriest-1',
-      'features.Warpriest', '?', null,
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
     );
     rules.defineRule('magicNotes.cloisteredCleric',
@@ -13559,8 +13559,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('spellSlots.D' + l,
-        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? dict["charismaModifier"]+1 : null',
-        'magicNotes.healingFont', '+', 'source==' + l + ' ? dict["charismaModifier"]+1 : null'
+        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? dict.charismaModifier + 1 : null',
+        'magicNotes.healingFont', '+', 'source==' + l + ' ? dict.charismaModifier + 1 : null'
       );
     });
     rules.defineRule('spellSlots.D10',
@@ -13597,7 +13597,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
-    rules.defineRule('trainingLevel.Will', 'saveNotes.bravery', '^=', '2');
   } else if(name == 'Monk') {
     rules.defineRule('abilityNotes.incredibleMovement',
       'level', '=', 'Math.floor((source + 5) / 4) * 5'
@@ -13671,12 +13670,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('weaponDieSides.Fist', 'combatNotes.powerfulFist', '^', '6');
   } else if(name == 'Ranger') {
     rules.defineRule('combatNotes.monsterHunter',
-      '', '=', '1',
-      'combatNotes.legendaryMonsterHunter', '+', '1'
-    );
-    rules.defineRule('combatNotes.monsterWarden',
-      '', '=', '1',
-      'combatNotes.legendaryMonsterHunter', '+', '1'
+      'combatNotes.legendaryMonsterHunter', '+', 'null' // italics
     );
     rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
       "featureNotes.hunter'sEdge", '=', '1'
@@ -13739,6 +13733,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'magicNotes.masterSpellcaster', '^=', 'source.includes("' + t + '") ? 3 : null',
         'magicNotes.legendarySpellcaster', '^=', 'source.includes("' + t + '") ? 4 : null'
       );
+      rules.defineRule('spellSlots.' + t.charAt(0) + '10',
+        'magicNotes.bloodlinePerfection', '+', '1'
+      );
     });
     rules.defineRule('selectableFeatureCount.Sorcerer (Bloodline)',
       'featureNotes.bloodline', '=', '1'
@@ -13763,14 +13760,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'magicNotes.primalEvolution', '+', 'source==' + l + ' ? 1 : null'
       );
     });
-    rules.defineRule
-      ('spellSlots.A10', 'magicNotes.bloodlinePerfection', '+', '1');
-    rules.defineRule
-      ('spellSlots.D10', 'magicNotes.bloodlinePerfection', '+', '1');
-    rules.defineRule
-      ('spellSlots.O10', 'magicNotes.bloodlinePerfection', '+', '1');
-    rules.defineRule
-      ('spellSlots.P10', 'magicNotes.bloodlinePerfection', '+', '1');
   } else if(name == 'Wizard') {
     rules.defineRule
       ('magicNotes.expertSpellcaster', classLevel, '=', '"Arcane"');
@@ -14097,7 +14086,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let c = {'Arcane':'Wizard', 'Bloodline':'Sorcerer', 'Divine':'Cleric', 'Occult':'Bard', 'Primal':'Druid'}[trad];
     let note = 'magicNotes.' + trad.toLowerCase() + 'Breadth';
     rules.defineRule(note,
-      'level', '?', null, // force recomputation when level changes
+      'level', '?', null, // recomputation trigger
       'magicNotes.basic' + c + 'Spellcasting', '=', '1',
       'magicNotes.expert' + c + 'Spellcasting', '^', 'dict.level>=16 ? 4 : dict.level>=14 ? 3 : 2',
       'magicNotes.master' + c + 'Spellcasting', '^', 'dict.level>=20 ? 6 : 5'
@@ -14197,8 +14186,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let level = matchInfo[1];
     let slots =
       level=='Basic' ? {'1':0, '2':6, '3':8} :
-      level=='Expert' ? {'4':0, '5':14, '6':16} :
-      {'7':0, '8':20};
+      level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
       (QuilvynUtils.getAttrValue(Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
     let note = 'magicNotes.' + level.toLowerCase() + c + 'Spellcasting';
@@ -14414,7 +14402,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         rules.defineRule
           ('weaponRangeAdjustment.' + w, 'combatNotes.farShot', '+=', range);
     }
-  } else if(name.match(/^Favored Terrain/)) {
+  } else if(name.startsWith('Favored Terrain')) {
     rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
   } else if(name == 'Fighter Dedication') {
     // Suppress validation errors for selected key ability
@@ -14496,9 +14484,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('spellModifier.' + trad, 'spellModifier.' + name, '=', null);
-    rules.defineRule('spellAbility.' + trad,
-      note, '=', '"charisma"'
-    );
+    rules.defineRule('spellAbility.' + trad, note, '=', '"charisma"');
     rules.defineRule('spellSlots.' + trad.charAt(0) + '0', note, '+=', '2');
   } else if(name == 'Monk Dedication') {
     // Suppress validation errors for selected key ability
@@ -14526,8 +14512,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Orc Ferocity') {
     rules.defineRule('combatNotes.orcFerocity',
-      '', '=', '"day"',
-      'combatNotes.incredibleFerocity', '=', '"hr"'
+      'combatNotes.incredibleFerocity', '=', 'null' // italics
     );
   } else if(name.match(/^Order Explorer/)) {
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
@@ -15020,7 +15005,7 @@ Pathfinder2E.shieldRules = function(
   rules.defineRule('shieldHardness',
     'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hardness) + '[source]'
   );
-  rules.defineRule('shieldHP',
+  rules.defineRule('shieldHitPoints',
     'shield', '=', QuilvynUtils.dictLit(rules.shieldStats.hp) + '[source]'
   );
 
