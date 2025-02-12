@@ -5801,7 +5801,7 @@ Pathfinder2E.FEATURES = {
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP bludgeoning and gives resistance %V to all damage"',
+    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP bludgeoning and gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage"',
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
@@ -5843,7 +5843,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat,combat ' +
     'Note=' +
-      '"Ironblood Stance resistance increases to %V",' +
+      '"Increases Ironblood Stance effects",' +
       '"When in Ironblood Stance, gains +1 Armor Class for 1 rd"',
   'Mountain Quake':
     'Action=1 ' +
@@ -7131,7 +7131,8 @@ Pathfinder2E.FEATURES = {
       '"+%{level} Hit Points",' +
       '"-1 DC on recovery checks"',
   'Untrained Improvisation':
-    'Section=skill Note="+%V on untrained skill checks"',
+    'Section=skill ' +
+    'Note="+%{level<7 ? level // 2 : level} on untrained skill checks"',
   'Weapon Proficiency (Martial Weapons)':
     'Section=combat Note="Attack Trained (Martial Weapons)"',
   'Weapon Proficiency (Simple Weapons)':
@@ -14234,15 +14235,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // cause and deity notes that don't come with Champion Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Key Ability)')).map(x => x.replace('Champion - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Key Ability)'))
+      .map(x => x.replace('Champion - ', ''));
     abilities.forEach(a => {
-      let condensed = a.replaceAll(' ', '');
-      rules.defineRule('validationNotes.champion-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.champion-' + a + 'SelectableFeature',
         'features.Champion Dedication', '+', '1'
       );
     });
     let causes =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Cause)'))
+      .map(x => x.replace('Champion - ', ''));
     causes.forEach(c => {
       let condensed = c.replaceAll(' ', '');
       let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
@@ -14266,11 +14270,14 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == "Champion's Reaction") {
     // Extend test rules to allow characters with the Champion's Reaction
     // archetype feature to acquire champion reactions.
-    // NOTE: Placing this code here means that the tests won't be regenerated
-    // when adding homebrew causes.
+    // NOTE: Because this code is run only when the feat is processed, any
+    // homebrew reactions will still generate validation errors if selected by
+    // a non-champion.
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Cause)')).map(x => x.replace('Champion - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Cause)'))
+      .map(x => x.replace('Champion - ', ''));
     let reactions =
       QuilvynUtils.getAttrValueArray
         (rules.getChoices('levels').Champion, 'Features')
@@ -14301,10 +14308,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
     let allies =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Champion (Divine Ally)')).map(x => x.replace('Champion - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Divine Ally)'))
+      .map(x => x.replace('Champion - ', ''));
     allies.forEach(a => {
-      let condensed = a.replaceAll(' ', '');
-      rules.defineRule('validationNotes.champion-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.champion-' + a.replaceAll(' ', '') + 'SelectableFeature',
         'feats.Divine Ally', '+', '1'
       );
     });
@@ -14325,7 +14333,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // of Druidic Order that don't come with Druid Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let orders =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Druid (Order)')).map(x => x.replace('Druid - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Druid (Order)'))
+      .map(x => x.replace('Druid - ', ''));
     orders.forEach(o => {
       let condensed = o.replaceAll(' ', '');
       let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
@@ -14354,10 +14364,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected half-elf heritages
     let allSelectables = rules.getChoices('selectableFeatures');
     let elfHeritages =
-      Object.keys(allSelectables).filter(x => x.includes('Elf -')).map(x => x.replace('Elf - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => x.includes('Elf -'))
+      .map(x => x.replace('Elf - ', ''));
     elfHeritages.forEach(h => {
-      let condensed = h.replaceAll(' ', '');
-      rules.defineRule('validationNotes.elf-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.elf-' + h.replaceAll(' ', '') + 'SelectableFeature',
         'featureNotes.elfAtavism', '+', '1'
       );
     });
@@ -14397,10 +14408,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Fighter (Key Ability)')).map(x => x.replace('Fighter - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Fighter (Key Ability)'))
+      .map(x => x.replace('Fighter - ', ''));
     abilities.forEach(a => {
-      let condensed = a.replaceAll(' ', '');
-      rules.defineRule('validationNotes.fighter-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.fighter-' + a + 'SelectableFeature',
         'features.Fighter Dedication', '+', '1'
       );
     });
@@ -14422,8 +14434,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Instinct Ability') {
     // Extend test rules to allow characters with the Instinct Ability
     // archetype feature to acquire barbarian instinct abilities.
-    // NOTE: Placing this code here means that the tests won't be regenerated
-    // when adding homebrew instincts.
+    // NOTE: Because this code is run only when the feat is processed, any
+    // homebrew instincts will still generate validation errors if selected by
+    // a non-barbarian.
     let instinctAbilities =
       QuilvynUtils.getAttrValueArray
         (rules.getChoices('levels').Barbarian, 'Features')
@@ -14443,14 +14456,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'spells.Dispel Magic (O2 Abj)', '=', '1',
       'spells.Dispel Magic (P2 Abj)', '=', '1'
     );
-  } else if(name == 'Ironblood Stance') {
-    rules.defineRule('combatNotes.ironbloodStance',
-      'level', '=', 'source<12 ? 2 : source<16 ? 3 : source<20 ? 4 : 5',
-      'combatNotes.ironbloodSurge', '^', null
-    );
   } else if(name == 'Ironblood Surge') {
-    rules.defineRule
-      ('combatNotes.ironbloodSurge', 'strengthModifier', '=', null);
+    rules.defineRule('combatNotes.ironbloodStance',
+      'combatNotes.ironbloodSurge', '=', 'null', // italics
+    );
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
   } else if(name == 'Ki Strike') {
@@ -14479,10 +14488,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Monk (Key Ability)')).map(x => x.replace('Monk - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Monk (Key Ability)'))
+      .map(x => x.replace('Monk - ', ''));
     abilities.forEach(a => {
-      let condensed = a.replaceAll(' ', '');
-      rules.defineRule('validationNotes.monk-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.monk-' + a + 'SelectableFeature',
         'features.Monk Dedication', '+', '1'
       );
     });
@@ -14508,7 +14518,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Order Spell') {
     let allSelectables = rules.getChoices('selectableFeatures');
     let orders =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Druid (Order)')).map(x => x.replace('Druid - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Druid (Order)'))
+      .map(x => x.replace('Druid - ', ''));
     orders.forEach(o => {
       rules.defineRule('features.Order Spell (' + o + ')',
         'features.Order Spell', '?', null,
@@ -14516,10 +14528,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Quickened Casting') {
-    rules.defineRule('magicNotes.quickenedCasting.1',
-      'features.Quickened Casting', '?', null,
-      '', '=', '0'
-    );
+    rules.defineRule
+      ('magicNotes.quickenedCasting.1', 'features.Quickened Casting', '=', '0');
     [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
       rules.defineRule('magicNotes.quickenedCasting.1',
         'spellSlots.A' + l, '^', l - 2,
@@ -14532,17 +14542,18 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Ranger (Key Ability)')).map(x => x.replace('Ranger - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Ranger (Key Ability)'))
+      .map(x => x.replace('Ranger - ', ''));
     abilities.forEach(a => {
-      let condensed = a.replaceAll(' ', '');
-      rules.defineRule('validationNotes.ranger-' + condensed + 'SelectableFeature',
+      rules.defineRule('validationNotes.ranger-' + a + 'SelectableFeature',
         'features.Ranger Dedication', '+', '1'
       );
     });
     rules.defineRule
       ('features.Ranger Key Ability', 'features.Ranger Dedication', '=', '1');
   } else if(name == 'Rogue Dedication') {
-    // The key ability for Rogue Dedication is always dexterity--no racket.
+    // NOTE: key ability for Rogue Dedication is always Dexterity--no racket.
     rules.defineRule('classDifficultyClass.Rogue',
       'features.Rogue Dedication', '+', '10 + dict["dexterityModifier"]'
     );
@@ -14553,7 +14564,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.sorcererDedication', 'bloodlineTraditions', '=', null);
     rules.defineRule('magicNotes.sorcererDedication.1',
-      'bloodlineTraditions', '=', 'source.toLowerCase()'
+      'bloodlineTraditionsLowered', '=', null
     );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
@@ -14569,12 +14580,17 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
       rules.defineRule
         ('spellModifier.' + t, 'spellModifier' + t + '.' + name, '=', null);
+      rules.defineRule('spellAbility.' + t,
+        'spellModifier' + t + '.' + name, '=', '"charisma"'
+      );
     });
     // Suppress validation errors for selected bloodlines and the notes for
     // features of bloodlines that don't come with Sorcerer Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let bloodlines =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Bloodline'))
+      .map(x => x.replace('Sorcerer - ', ''));
     bloodlines.forEach(b => {
       let condensed = b.replaceAll(' ', '');
       let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
@@ -14592,10 +14608,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   } else if(name == 'Studious Capacity') {
-    rules.defineRule('magicNotes.studiousCapacity.1',
-      'features.Studious Capacity', '?', null,
-      '', '=', '0'
-    );
+    rules.defineRule
+      ('magicNotes.studiousCapacity.1', 'features.Studious Capacity', '=', '0');
     [2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
       rules.defineRule('magicNotes.studiousCapacity.1',
         'spellSlots.O' + l, '^', l - 1
@@ -14609,8 +14623,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let allWeapons = rules.getChoices('weapons');
     for(let w in allWeapons) {
       if(allWeapons[w].includes('Bomb'))
-        rules.defineRule
-          ('weaponRangeAdjustment.' + w, 'combatNotes.uncannyBombs', '^=', '40');
+        rules.defineRule('weaponRangeAdjustment.' + w,
+          'combatNotes.uncannyBombs', '^=', '40'
+        );
     }
   } else if((matchInfo = name.match(/^Unconventional Weaponry \((.*)\)$/)) != null) {
     let weapon = matchInfo[1];
@@ -14618,10 +14633,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
     rules.defineRule('combatNotes.unconventionalWeaponry',
       'features.' + name, '=', '"' + weapon + '"'
-    );
-  } else if(name == 'Untrained Improvisation') {
-    rules.defineRule('skillNotes.untrainedImprovisation',
-      'level', '=', 'source<7 ? Math.floor(source / 2) : source'
     );
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
@@ -14638,7 +14649,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // features of the school that don't come with Wizard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '')).filter(x => x != 'Universalist');
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Wizard (Specialization)'))
+      .map(x => x.replace('Wizard - ', ''))
+      .filter(x => x != 'Universalist');
     schools.forEach(s => {
       let condensed = s.replaceAll(' ', '');
       let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
