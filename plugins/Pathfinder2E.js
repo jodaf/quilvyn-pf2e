@@ -13789,6 +13789,17 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       rules.defineRule
         ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', l - 2);
     });
+    let schools =
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
+      .map(x => x.replace(':Specialization', ''))
+      .filter(x => x != 'Universalist');
+    schools.forEach(s => {
+      let prefix =
+        s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+        rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
+      });
+    });
   }
 
 };
@@ -14051,7 +14062,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
   if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
-    rules.defineRule('skillNotes.additionalLore(' + matchInfo[1].replaceAll(' ', '') + ')',
+    rules.defineRule('skillNotes.' + prefix,
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
     rules.defineRule('trainingLevel.' + matchInfo[1],
@@ -14063,20 +14074,15 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
   } else if(name == 'Advanced School Spell') {
-    let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '')).filter(x => x != 'Universalist');
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
+      .map(x => x.replace(':Specialization', ''))
+      .filter(x => x != 'Universalist');
     schools.forEach(s => {
       rules.defineRule('features.Advanced School Spell (' + s + ')',
         'features.Advanced School Spell', '?', null,
         'features.' + s, '=', '1'
       );
-      let prefix =
-        s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
-      // Rules for the individual school features, placed here for convenience
-      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
-        rules.defineRule('spellSlots.A' + l, 'magicNotes.' + prefix, '+', '1');
-      });
     });
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
@@ -14092,28 +14098,29 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'magicNotes.master' + c + 'Spellcasting', '^', 'dict.level>=20 ? 6 : 5'
     );
     if(c == 'Sorcerer') {
-      ['A', 'D', 'O', 'P'].forEach(trad => {
-        rules.defineRule(note + '.' + trad + '.1',
-          'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+      ['A', 'D', 'O', 'P'].forEach(t => {
+        rules.defineRule(note + '.' + t + '.1',
+          'bloodlineTraditions', '?', 'source && source.includes("' + t + '")',
            note, '=', null
         );
         [1, 2, 3, 4, 5, 6].forEach(l => {
-          rules.defineRule('spellSlots.' + trad.charAt(0) + l,
-            note + '.' + trad + '.1', '+', 'source>=' + l + ' ? 1 : null'
+          rules.defineRule('spellSlots.' + t + l,
+            note + '.' + t + '.1', '+', 'source>=' + l + ' ? 1 : null'
           );
         });
       });
     } else {
+      let t = trad.charAt(0);
       [1, 2, 3, 4, 5, 6].forEach(l => {
-        rules.defineRule('spellSlots.' + trad.charAt(0) + l,
-          note, '+', 'source>=' + l + ' ? 1 : null'
-        );
+        rules.defineRule
+          ('spellSlots.' + t + l, note, '+', 'source>=' + l + ' ? 1 : null');
       });
     }
   } else if(name == 'Arcane School Spell') {
-    let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Wizard (Specialization)')).map(x => x.replace('Wizard - ', '')).filter(x => x != 'Universalist');
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
+      .map(x => x.replace(':Specialization', ''))
+      .filter(x => x != 'Universalist');
     schools.forEach(s => {
       rules.defineRule('features.Arcane School Spell (' + s + ')',
         'features.Arcane School Spell', '?', null,
@@ -14138,7 +14145,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress validation errors for selected instinct
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =
-      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Barbarian (Instinct)')).map(x => x.replace('Barbarian - ', ''));
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Barbarian (Instinct)'))
+      .map(x => x.replace('Barbarian - ', ''));
     instincts.forEach(i => {
       let condensed = i.replaceAll(' ', '');
       rules.defineRule('validationNotes.barbarian-' + condensed + 'SelectableFeature',
@@ -14179,7 +14188,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     Pathfinder2E.skillRules(rules, 'Bardic Lore', 'Intelligence');
     rules.defineRule('trainingLevel.Bardic Lore',
       'skillNotes.bardicLore', '=', '1',
-      'rank.Occultism', '+', '1'
+      'rank.Occultism', '+', 'source>=4 ? 1 : null'
     );
   } else if((matchInfo = name.match(/^(Basic|Expert|Master) (\w+) Spellcasting$/)) != null) {
     let c = matchInfo[2];
@@ -14189,7 +14198,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
       (QuilvynUtils.getAttrValue(Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
-    let note = 'magicNotes.' + level.toLowerCase() + c + 'Spellcasting';
+    let note =
+      'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
     if(c == 'Sorcerer') {
       ['A', 'D', 'O', 'P'].forEach(trad => {
         for(let s in slots) {
@@ -14212,34 +14222,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         rules.defineRule('spellSlots.' + trad + s, note + '.' + s, '+=', null);
       }
     }
-  } else if(name == 'Canny Acumen (Fortitude)') {
-    rules.defineRule('saveNotes.cannyAcumen(Fortitude)',
-      'level', '=', 'source<17 ? "Expert" : "Master"'
-    );
-    rules.defineRule('trainingLevel.Fortitude',
-      'saveNotes.cannyAcumen(Fortitude)', '^=', 'source=="Expert" ? 2 : 3'
-    );
-  } else if(name == 'Canny Acumen (Perception)') {
-    rules.defineRule('skillNotes.cannyAcumen(Perception)',
-      'level', '=', 'source<17 ? "Expert" : "Master"'
-    );
-    rules.defineRule('trainingLevel.Perception',
-      'skillNotes.cannyAcumen(Perception)', '^=', 'source=="Expert" ? 2 : 3'
-    );
-  } else if(name == 'Canny Acumen (Reflex)') {
-    rules.defineRule('saveNotes.cannyAcumen(Reflex)',
-      'level', '=', 'source<17 ? "Expert" : "Master"'
-    );
-    rules.defineRule('trainingLevel.Reflex',
-      'saveNotes.cannyAcumen(Reflex)', '^=', 'source=="Expert" ? 2 : 3'
-    );
-  } else if(name == 'Canny Acumen (Will)') {
-    rules.defineRule('saveNotes.cannyAcumen(Will)',
-      'level', '=', 'source<17 ? "Expert" : "Master"'
-    );
-    rules.defineRule('trainingLevel.Will',
-      'saveNotes.cannyAcumen(Will)', '^=', 'source=="Expert" ? 2 : 3'
-    );
+  } else if((matchInfo = name.match(/^Canny Acumen \((.*)\)$/)) != null) {
+    let target = matchInfo[1];
+    let note =
+      (target == 'Perception' ? 'skill' : 'save') + 'Notes.cannyAcumen(' + target + ')';
+    rules.defineRule(note, 'level', '=', 'source<17 ? "Expert" : "Master"');
+    rules.defineRule
+      ('trainingLevel.' + target, note, '^=', 'source=="Expert" ? 2 : 3');
   } else if(name == 'Champion Dedication') {
     // Suppress validation errors for selected cause and key ability and the
     // cause and deity notes that don't come with Champion Dedication
