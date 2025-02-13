@@ -14684,6 +14684,12 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     console.log('Bad sections list "' + sections + '" for feature ' + name);
     return;
   }
+  sections.forEach(s => {
+    if(!(s.match(/^(ability|combat|feature|magic|save|skill)$/i))) {
+      console.log('Bad section "' + s + '" for feature ' + name);
+      return;
+    }
+  });
   if(!Array.isArray(notes)) {
     console.log('Bad notes list "' + notes + '" for feature ' + name);
     return;
@@ -14708,11 +14714,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
     let effects = notes[i];
     let matchInfo;
     let maxSubnote =
-      effects.includes('%1') ? +effects.match(/%\d/g).sort().pop().replace('%') :
+      effects.includes('%1') ? +effects.match(/%\d/g).sort().pop().replace('%', '') :
       effects.includes('%V') ? 0 : -1;
     let note = section + 'Notes.' + prefix;
     let priorInSection =
-      sections.slice(0, i).filter(x => x.toLowerCase() == section.toLowerCase()).length;
+      sections.slice(0, i).filter(x => x.toLowerCase() == section).length;
     if(priorInSection > 0)
       note += '-' + priorInSection;
 
@@ -14799,15 +14805,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('trainingLevel.' + element, note, '^=', rank);
             rules.defineRule('trainingCount.' + element, note, '+=', '1');
           }
-          if(group == 'Attack' && !element.startsWith('%')) {
-            rules.defineRule('attackProficiency.' + element,
-              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
-            );
-          } else if(group == 'Defense' && !element.startsWith('%')) {
-            rules.defineRule('defenseProficiency.' + element,
-              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
-            );
-          }
         });
         if(choices)
           rules.defineRule('choiceCount.' + group,
@@ -14840,7 +14837,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           );
       }
       matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
-      if(matchInfo && !matchInfo[1].includes('%')) {
+      if(matchInfo) {
         let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         features.forEach(f => {
           f = f.trim();
@@ -14849,7 +14846,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         });
       }
       matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(innate\s)?(cantrip|spell)s?($|;)/);
-      if(matchInfo && !matchInfo[1].includes('%')) {
+      if(matchInfo) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
           s = s.replace('<i>', '').replace('</i>', '').trim();
@@ -14954,7 +14951,7 @@ Pathfinder2E.languageRules = function(rules, name) {
 /*
  * Defines in #rules# the rules associated with shield #name#, which costs
  * #price# gold pieces, adds #ac# to the character's armor class, reduces the
- * character's speed by #speed#, weight #bulk#, has hardness #hardness#, and
+ * character's speed by #speed#, weighs #bulk#, has hardness #hardness#, and
  * can absorb #hp# damage before becoming useless.
  */
 Pathfinder2E.shieldRules = function(
@@ -15084,8 +15081,9 @@ Pathfinder2E.skillRules = function(rules, name, ability, subcategory) {
 /*
  * Defines in #rules# the rules associated with spell #name#, which is from
  * magic school #school#. #tradition# and #level# are used to compute any
- * saving throw value required by the spell. #traits# lists any traits the
- * spell has, and #description# is a verbose description of the spell's effects.
+ * saving throw value required by the spell. #cast# gives the casting actions
+ * or time required to cast the spell, #traits# lists any traits the spell has,
+ * and #description# is a verbose description of the spell's effects.
  */
 Pathfinder2E.spellRules = function(
   rules, name, school, level, tradition, cast, traits, description
@@ -15353,14 +15351,6 @@ Pathfinder2E.featureListRules = function(
         else {
           rules.defineRule
             ('trainingLevel.' + element, setName + '.' + feature, '^=', rank);
-          if(group == 'Attack')
-            rules.defineRule('attackProficiency.' + element,
-              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
-            );
-          else if(group == 'Defense')
-            rules.defineRule('defenseProficiency.' + element,
-              'trainingLevel.' + element, '=', 'Pathfinder2E.RANK_NAMES[source]'
-            );
         }
       });
       if(choices)
