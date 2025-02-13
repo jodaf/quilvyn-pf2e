@@ -15261,10 +15261,8 @@ Pathfinder2E.weaponRules = function(
     'proficiencyLevelBonus.' + name, '+', null
   );
 
-  rules.defineRule
-    ('weaponAttackAdjustment.' + name, 'weapons.' + name, '=', '0');
-  rules.defineRule
-    ('weaponDamageAdjustment.' + name, 'weapons.' + name, '=', '0');
+  rules.defineRule('weaponAttackAdjustment.' + name, weaponName, '=', '0');
+  rules.defineRule('weaponDamageAdjustment.' + name, weaponName, '=', '0');
   rules.defineRule('attackBonus.' + name,
     weaponName, '=', '0',
     isFinesse ? 'maxStrOrDexModifier' :
@@ -15300,11 +15298,9 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule(weaponName + '.3',
     'damageBonus.' + name, '=', 'source == 0 ? "" : QuilvynUtils.signed(source)'
   );
-  rules.defineRule
-    (weaponName + '.4', weaponName, '=', '"' + damageType + '"');
+  rules.defineRule(weaponName + '.4', weaponName, '=', '"' + damageType + '"');
   rules.defineRule(weaponName + '.5',
-    weaponName, '?', null,
-    '', '=', isRanged ? '"dexterity"' : '"strength"', '=', null
+    weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
   );
   if(isFinesse)
     rules.defineRule(weaponName + '.5', 'maxStrOrDexAbility', '=', null);
@@ -15332,9 +15328,13 @@ Pathfinder2E.weaponRules = function(
 Pathfinder2E.featureListRules = function(
   rules, features, setName, levelAttr, selectable
 ) {
+
   QuilvynRules.featureListRules
     (rules, features, setName, levelAttr, selectable);
-  setName = setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
+
+  setName =
+    setName.charAt(0).toLowerCase() + setName.substring(1).replaceAll(' ', '') + 'Features';
+
   for(let i = 0; i < features.length; i++) {
     let feature = features[i].replace(/^(.*\?\s*)?\d+:/, '');
     let matchInfo =
@@ -15385,6 +15385,7 @@ Pathfinder2E.featureListRules = function(
         );
     }
   }
+
 };
 
 /*
@@ -15449,7 +15450,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
              separator: '/'},
             {name: 'Alignment', within: 'Section 1', format: '<b>Ali</b> %V'},
             {name: 'Save', within: 'Section 1', separator: '/'},
-            {name: 'Resistance', within: 'Section 1', separator: '/'},
             {name: 'Abilities', within: 'Section 1',
              format: '<b>Str/Int/Wis/Dex/Con/Cha</b> %V', separator: '/'},
               {name: 'Strength', within: 'Abilities', format: '%V'},
@@ -15466,7 +15466,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'Spells', within: 'Section 2', separator: '/'},
             {name: 'Spell Difficulty Class', within: 'Section 2',
              separator: '/'},
-            {name: 'Domains', within: 'Section 2', separator: '/'},
             {name: 'Notes', within: 'Section 2'},
             {name: 'Hidden Notes', within: 'Section 2', format: '%V'}
       );
@@ -15563,7 +15562,6 @@ Pathfinder2E.createViewers = function(rules, viewers) {
             {name: 'CombatStats', within: 'CombatPart', separator: innerSep},
               {name: 'Hit Points', within: 'CombatStats'},
               {name: 'Armor Class', within: 'CombatStats'},
-              {name: 'Attacks Per Round', within: 'CombatStats'},
               {name: 'Class Difficulty Class', within: 'CombatStats',
                format: '<b>Class DC</b>: %V', separator: '; '},
             {name: 'Gear', within: 'CombatPart', separator: innerSep},
@@ -15590,8 +15588,8 @@ Pathfinder2E.createViewers = function(rules, viewers) {
          format: '<b>Magic</b><br/>%V'},
           {name: 'SpellPart', within: 'Magic', separator: '\n'},
             {name: 'SpellStats', within: 'SpellPart', separator: innerSep},
-              {name: 'Spells Known', within: 'SpellStats', separator: listSep},
               {name: 'Spell Slots', within: 'SpellStats', separator:listSep},
+              {name: 'Spell Points', within: 'SpellStats'},
               {name: 'Focus Points', within: 'SpellStats', separator:listSep},
               {name: 'Spell Attack Modifier', within: 'SpellStats',
                format: '<b>Attack</b>: %V', separator: listSep},
@@ -15734,11 +15732,10 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Subcategory', 'Subcategory', 'text', [30]]
     );
   else if(type == 'Spell') {
-    // TODO generalize this
-    let schools = [
-      'Abjuration', 'Conjuration', 'Divination', 'Enchantment',
-      'Evocation','Illusion', 'Necromancy', 'Transmutation'
-    ];
+    let schools =
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
+      .map(x => x.replace(':Specialization', ''))
+      .filter(x => x != 'Universalist');
     let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     result.push(
       ['School', 'School', 'select-one', schools],
