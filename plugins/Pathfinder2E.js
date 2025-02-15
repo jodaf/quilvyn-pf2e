@@ -3321,15 +3321,15 @@ Pathfinder2E.FEATURES = {
     'Note="Allows casting chosen occult cantrip as an innate spell at will"',
   'Whisper Elf':
     'Section=skill ' +
-    'Note="Allows a R60\' Seek using hearing and gives +2 within 30\'"',
+    'Note="Can Seek in a 60\' cone using hearing; +2 within 30\'"',
   'Wildwood Halfling':
     'Section=ability ' +
     'Note="Allows normal movement over difficult terrain caused by foliage"',
   'Woodland Elf':
     'Section=combat,skill ' +
     'Note=' +
-      '"May always Take Cover within forest terrain",' +
-      '"Allows Climbing in foliage at %{speed//2}\', or %{speed}\' on a critical success"',
+      '"Can always Take Cover within forest terrain",' +
+      '"Can Climb foliage at %{speed//2}\', or %{speed}\' on a critical success"',
 
   // Ancestry feats
   'Dwarven Lore':
@@ -3342,11 +3342,11 @@ Pathfinder2E.FEATURES = {
   'Rock Runner':
     'Section=ability,skill ' +
     'Note=' +
-      '"Allows normal Movement over difficult terrain caused by stone or earth",' +
+      '"Moves normally over difficult terrain caused by stone or earth",' +
       '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth; successes to do so are critical successes"',
   'Stonecunning':
     'Section=skill ' +
-    'Note="+2 Perception (unusual stonework)/Gains an automatic -2 check to note unusual stonework"',
+    'Note="+2 Perception (unusual stonework)/Automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\'\':\' -2\'} check to notice unusual stonework"',
   'Unburdened Iron':
     'Section=ability,ability ' +
     'Note=' +
@@ -3354,7 +3354,7 @@ Pathfinder2E.FEATURES = {
       '"Reduces non-armor Speed penalties by 5\'"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="Inflicts +1 HP per die weapon damage vs. ancestral foes and for 1 min on any foe that inflicts a critical success on an attack"',
+    'Note="Inflicts +1 HP per die vs. ancestral foes and for 1 min vs. any foe that inflicts a critical success on an attack"',
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
@@ -3366,19 +3366,19 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"+%{level} Hit Points",' +
-      '"-%{1+(features.Toughness||0)*2} dying recovery DC"',
+      '"-%{1+(features.Toughness?3:0)} dying recovery DC"',
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
       '"Knows the Meld Into Stone divine innate spell; may cast it once per day",' +
-      '"Allows finding unusual stonework that requires legendary Perception"',
+      '"Can find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
   'Ancestral Longevity':
     'Section=skill ' +
-    'Note="Gives Trained proficiency in choice of skill during daily prep"',
+    'Note="Gains Trained proficiency in choice of skill during daily prep"',
   'Elven Lore':
     'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
@@ -3395,21 +3395,21 @@ Pathfinder2E.FEATURES = {
     'Note="Allows casting a chosen arcane cantrip as an innate spell at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="Reduces the duration of mental effects by 1 rd/Gives +1 degree of success vs. sleep effects"',
+    'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/+1 degree of success vs. sleep effects"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="Allows spending double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
+    'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
-  'Elf Step':'Action=1 Section=combat Note="Allows taking two 5\' Steps"',
+  'Elf Step':'Action=1 Section=combat Note="Can Step twice in 1 action"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Gives expert level in a chosen trained skill during daily prep and allows replacing an existing skill increase with the one chosen upon expiration"',
+    'Note="Gains expert level in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Allows replacing Ancestral Longevity and Expert Longevity skills once per day"',
+    'Note="Replaces Ancestral Longevity and Expert Longevity skills once per day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
@@ -12887,6 +12887,23 @@ Pathfinder2E.ancestryRules = function(
       rules.defineRule('languages.' + l, ancestryLevel, '=', '1');
   });
 
+  let boostFeature = features.filter(x => x.includes('Ability Boost'))[0];
+  if(boostFeature) {
+    features = features.filter(x => !x.includes('Ability Boost'));
+    if(boostFeature.includes('(Choose 2 from any')) {
+      features.push(
+        'abilityGeneration =~ "10" ? ' + boostFeature,
+        'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('2 from', '1 from')
+      );
+    } else {
+      features.push(
+        'abilityGeneration =~ "10.*standard" ? ' + boostFeature,
+        'abilityGeneration =~ "10.*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 2 from any)'),
+        'abilityGeneration =~ "4d6.*standard" ? ' + boostFeature.replace('; Choose 1 from any', ''),
+        'abilityGeneration =~ "4d6.*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 1 from any)')
+      );
+    }
+  }
   Pathfinder2E.featureListRules(rules, features, name, ancestryLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, ancestryLevel, true);
 
@@ -13138,6 +13155,19 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
     'level', '=', null
   );
 
+  let boostFeature = features.filter(x => x.includes('Ability Boost'))[0];
+  if(boostFeature) {
+    features = features.filter(x => !x.includes('Ability Boost'));
+    features.push('abilityGeneration =~ "10" ? ' + boostFeature);
+    if(boostFeature.includes('(Choose 2 from any'))
+      features.push(
+        'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('2 from', '1 from')
+      );
+    else
+      features.push(
+        'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('; Choose 1 from any', '')
+      );
+  }
   Pathfinder2E.featureListRules(rules, features, name, backgroundLevel, false);
   Pathfinder2E.featureListRules
     (rules, selectables, name, backgroundLevel, true);
@@ -15919,6 +15949,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   }
 
+  /* Returns a random element from the array #list#. */
   function randomElement(list) {
     return list.length>0 ? list[QuilvynUtils.random(0, list.length - 1)] : '';
   }
@@ -15927,7 +15958,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   let attrs;
   let choices;
   let howMany;
-  let i;
   let matchInfo;
 
   if(attribute == 'abilities' || attribute in Pathfinder2E.ABILITIES) {
@@ -15937,7 +15967,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       let baseAttr = 'base' + attr.charAt(0).toUpperCase() + attr.substring(1);
       if((attributes.abilityGeneration + '').match(/4d6/)) {
         let rolls = [];
-        for(i = 0; i < 4; i++)
+        for(let i = 0; i < 4; i++)
           rolls.push(QuilvynUtils.random(1, 6));
         rolls.sort();
         attributes[baseAttr] = rolls[1] + rolls[2] + rolls[3];
@@ -15953,8 +15983,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       let category = QuilvynUtils.getAttrValue(armors[attr], 'Category');
       if(category == 'Unarmored')
         choices.push(attr);
-      else if(('rank.' + category + ' Armor') in attrs &&
-              attrs['rank.' + category + 'Armor'] > 0)
+      else if(attrs['rank.' + category + ' Armor'])
         choices.push(attr);
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
@@ -15966,44 +15995,42 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^\w+features.Ability\s+Boost\s+\([^\)]*\)/gi)))
+      if((matchInfo = attr.match(/^\w+features.Ability\s+Boost\s+\((.*)\)$/)))
         ; // empty
       else if(!allNotes[attr] ||
-         (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\([^\)]*\)/gi))==null)
+              (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) == null)
         continue;
-      matchInfo.forEach(matched => {
-        matched = matched.replace(/.*\(/i, '').replace(/\)/, '');
-        let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
-        matched.split(/\s*;\s*/).forEach(boost => {
-          let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
-          if(!m) {
-            anyChoices = anyChoices.filter(x => x != boost.toLowerCase());
-          } else {
-            howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
-            choices = m[2].match(/^any$/i) ? anyChoices : m[2].split(/\s*,\s*/);
-            choices = choices.map(x => x.toLowerCase());
-            choices.forEach(choice => {
-              if(howMany > 0 && boostsAllocated[choice] > 0) {
-                howMany--;
-                boostsAllocated[choice]--;
-              }
-            });
-            while(howMany > choices.length) {
-              // Probably only true for level-based ability boosts
-              choices.forEach(c => {
-                attributes['abilityBoosts.' + c] = (attributes['abilityBoosts.' + c] || 0) + 1;
-              });
-              howMany -= choices.length;
-            }
-            while(howMany > 0 && choices.length > 0) {
-              let choice = randomElement(choices);
-              attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
+      let matched = matchInfo[1];
+      let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
+      matched.split(/\s*;\s*/).forEach(boost => {
+        let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+        if(!m) {
+          anyChoices = anyChoices.filter(x => x != boost.toLowerCase());
+        } else {
+          howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
+          choices = m[2].match(/^any$/i) ? anyChoices : m[2].split(/\s*,\s*/);
+          choices = choices.map(x => x.toLowerCase());
+          choices.forEach(choice => {
+            if(howMany > 0 && boostsAllocated[choice] > 0) {
               howMany--;
-              choices = choices.filter(x => x != choice);
-              anyChoices = anyChoices.filter(x => x != choice);
+              boostsAllocated[choice]--;
             }
+          });
+          while(howMany > choices.length) {
+            // Probably only true for level-based ability boosts
+            choices.forEach(c => {
+              attributes['abilityBoosts.' + c] = (attributes['abilityBoosts.' + c] || 0) + 1;
+            });
+            howMany -= choices.length;
           }
-        });
+          while(howMany > 0 && choices.length > 0) {
+            let choice = randomElement(choices);
+            attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
+            howMany--;
+            choices = choices.filter(x => x != choice);
+            anyChoices = anyChoices.filter(x => x != choice);
+          }
+        }
       });
     }
   } else if(attribute == 'deity') {
@@ -16034,11 +16061,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let availableChoices = {};
     let allChoices = this.getChoices(prefix);
     for(attr in allChoices) {
-      let traits = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Trait');
-      if(traits.length == 0)
-        traits = QuilvynUtils.getAttrValueArray(allChoices[attr], 'Type');
+      let traits =
+        QuilvynUtils.getAttrValueArray(allChoices[attr], allChoices[attr].includes('Trait') ? 'Trait' : 'Type');
       if(attrs[prefix + '.' + attr] != null) {
-        for(i = 0; i < traits.length; i++) {
+        for(let i = 0; i < traits.length; i++) {
           let t = traits[i];
           if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
             debug.push(prefix + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByTrait[t]);
@@ -16053,11 +16079,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     if(attribute == 'feat') {
       debug.push('Replace Ancestry with ' + attributes.ancestry);
       toAllocateByTrait[attributes.ancestry] = toAllocateByTrait.Ancestry;
-      for(let a in this.getChoices('levels')) {
-        if(!attributes['levels.' + a])
+      for(let c in this.getChoices('levels')) {
+        if(!attributes['levels.' + c])
           continue;
-        debug.push('Replace Class with ' + a);
-        toAllocateByTrait[a] = toAllocateByTrait.Class;
+        debug.push('Replace Class with ' + c);
+        toAllocateByTrait[c] = toAllocateByTrait.Class;
         break;
       }
       delete toAllocateByTrait.Ancestry;
@@ -16175,12 +16201,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
     // The rules have no restrictions on shield use, but it seems weird to give
-    // Wizards, etc. a shield. It seems reasonable to restrict shields to those
-    // with a rank in armor.
+    // Wizards, etc. a shield, and so we restrict shields to characters with a
+    // rank in armor.
     attrs = this.applyRules(attributes);
     choices = attrs['rank.Light Armor']>0 ? Object.keys(this.getChoices('shields')) : ['None'];
-    attributes.shield = choices[QuilvynUtils.random(0, choices.length - 1)];
+    attributes.shield = randomElement(choices);
   } else if(attribute == 'skills') {
+    // TODO: buggy--will over-allocate if some skills are already allocated
     attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
     let allSkills = this.getChoices('skills');
@@ -16299,10 +16326,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
   } else if(attribute == 'weapons') {
     let weapons = this.getChoices('weapons');
-    let clas = 'Fighter';
+    let c = 'Fighter';
     for(attr in attributes) {
       if(attr.match(/^levels\./))
-        clas = attr.replace('levels.', '');
+        c = attr.replace('levels.', '');
     }
     let ancestry = attributes.ancestry || 'Human';
     attrs = this.applyRules(attributes);
@@ -16315,7 +16342,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
       let category = QuilvynUtils.getAttrValue(weapons[attr], 'Category');
       if(weapons[attr].includes('Uncommon') &&
-         !weapons[attr].includes(clas) &&
+         !weapons[attr].includes(c) &&
          !weapons[attr].includes(ancestry))
         continue;
       category += category == 'Unarmed' ? ' Attacks' : ' Weapons';
@@ -16544,7 +16571,7 @@ Pathfinder2E.ruleNotes = function() {
     '  experience points entered for a character to be cumulative from ' +
     '  initial character creation, rather than only the experience points ' +
     '  over the amount required to advance to their current level. For ' +
-    '  example, a 5th-level character would have between 5000 and 5999 ' +
+    '  example, a 5th-level character would have between 4000 and 4999 ' +
     '  experience points.\n' +
     '  </li><li>\n' +
     '  Discussion of adding different types of homebrew options to the ' +
