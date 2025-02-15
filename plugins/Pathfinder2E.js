@@ -79,6 +79,16 @@ function Pathfinder2E() {
 
 Pathfinder2E.VERSION = '2.4.1.0';
 
+Pathfinder2E.ACTION_MARKS = {
+  1: '<b>(1)</b>',
+  2: '<b>(2)</b>',
+  3: '<b>(3)</b>',
+  Free: '<b>(F)</b>',
+  Reaction: '<b>(R)</b>' // '<b>&larrhk;</b> '
+};
+Pathfinder2E.RANK_NAMES =
+  ['untrained', 'trained', 'expert', 'master', 'legendary'];
+
 /* List of choices that can be expanded by house rules. */
 // Note: Left Goody out of this list for now because inclusion would require
 // documenting how to construct regular expressions.
@@ -3240,10 +3250,10 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"May use a 1 hr process to change skin and hair colors",' +
-      '"May use 1 action to adjust coloration, gaining +2 Stealth"',
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Gains +2 Stealth until surroundings change"',
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1} and recovers from fire damage with success on a DC 10 flat check, or a DC 5 flat check with help"',
+    'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
@@ -3254,7 +3264,7 @@ Pathfinder2E.FEATURES = {
   'Fast':'Section=ability Note="+5 Speed"',
   'Fey-Touched Gnome':
     'Section=magic ' +
-    'Note="Allows casting a chosen primal cantrip as an innate spell at will and spending 10 min to replace the chosen cantrip once per day"',
+    'Note="Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1} and treats environmental heat as 1 step less extreme"',
@@ -3291,7 +3301,7 @@ Pathfinder2E.FEATURES = {
       '"Knows the Detect Magic arcane innate cantrip",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
-    'Section=skill Note="R30\' +2 Perception to locate a creature by smell"',
+    'Section=skill Note="R30\' +2 Perception to locate a creature using smell"',
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
@@ -3312,16 +3322,16 @@ Pathfinder2E.FEATURES = {
   'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
     'Section=magic ' +
-    'Note="Allows casting a chosen arcane cantrip as an innate spell at will"',
+    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
   'Wellspring Gnome (Divine)':
     'Section=magic ' +
-    'Note="Allows casting chosen divine cantrip as an innate spell at will"',
+    'Note="Can cast a chosen divine cantrip as an innate spell at will"',
   'Wellspring Gnome (Occult)':
     'Section=magic ' +
-    'Note="Allows casting chosen occult cantrip as an innate spell at will"',
+    'Note="Can cast a chosen occult cantrip as an innate spell at will"',
   'Whisper Elf':
     'Section=skill ' +
-    'Note="Can Seek in a 60\' cone using hearing; +2 within 30\'"',
+    'Note="Can Seek in a 60\' cone using hearing and gains +2 within 30\'"',
   'Wildwood Halfling':
     'Section=ability ' +
     'Note="Allows normal movement over difficult terrain caused by foliage"',
@@ -3343,7 +3353,7 @@ Pathfinder2E.FEATURES = {
     'Section=ability,skill ' +
     'Note=' +
       '"Moves normally over difficult terrain caused by stone or earth",' +
-      '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth; successes to do so are critical successes"',
+      '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes"',
   'Stonecunning':
     'Section=skill ' +
     'Note="+2 Perception (unusual stonework)/Automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\'\':\' -2\'} check to notice unusual stonework"',
@@ -3392,10 +3402,10 @@ Pathfinder2E.FEATURES = {
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
     'Section=magic ' +
-    'Note="Allows casting a chosen arcane cantrip as an innate spell at will"',
+    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
   'Unwavering Mien':
     'Section=save ' +
-    'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/+1 degree of success vs. sleep effects"',
+    'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
   'Ageless Patience':
     'Section=skill ' +
     'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
@@ -3409,22 +3419,21 @@ Pathfinder2E.FEATURES = {
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Replaces Ancestral Longevity and Expert Longevity skills once per day"',
+    'Note="Can replace Ancestral Longevity and Expert Longevity skills once per day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
   'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
-  'Burrow Elocutionist':
-    'Section=skill Note="Allows speaking with burrowing animals"',
+  'Burrow Elocutionist':'Section=skill Note="Can speak with burrowing animals"',
   'Fey Fellowship':
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. fey",' +
-      '"+2 Perception (fey)/Allows an immediate Diplomacy attempt with a -5 penalty to Make an Impression with fey and a retry after 1 min conversation"',
+      '"+2 Perception (fey)/May make an immediate -5 Diplomacy check to Make an Impression with fey and retry a failure after 1 min conversation"',
   'First World Magic':
     'Section=magic ' +
-    'Note="Allows casting a chosen primal cantrip as an innate spell at will"',
+    'Note="Can cast a chosen primal cantrip as an innate spell at will"',
   'Gnome Obsession':
     'Section=skill ' +
     // NOTE: would like to replace "background Lore skill" with the actual
@@ -3438,15 +3447,17 @@ Pathfinder2E.FEATURES = {
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
-      '"+1 vs. illusions/Gives a R10\' automatic disbelieve check",' +
+      '"+1 Will (illusions)/R10\' Automatically attempts checks to disbelieve illusions",' +
       '"+1 Perception (illusions)"',
   'Animal Elocutionist':
     'Section=magic,skill ' +
     'Note=' +
-      '"Allows speaking with all animals",' +
+      '"Can speak with all animals",' +
       '"+1 to Make an Impression on animals"',
   'Energized Font':
-    'Action=1 Section=magic Note="Allows regaining 1 Focus Point once per day"',
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Can use to regain 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
@@ -3467,17 +3478,17 @@ Pathfinder2E.FEATURES = {
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/Allows making a +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival check to Earn Income while using Subsist in a settlement"',
+    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival checks to Earn Income from using Subsist in a settlement"',
   'Goblin Lore':
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows taking a Step when an ally moves to an adjacent position"',
+    'Note="Can take a Step when an ally moves to an adjacent position"',
   'Goblin Song':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' Allows using Performance vs. target Will DC; success inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
+    'Note="R30\' Successful Performance vs. Will DC of %{rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8} target%{rank.Performance<2?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3485,25 +3496,24 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon goblin weapons"',
   'Junk Tinker':
     'Section=skill ' +
-    'Note="Allows using Crafting on junk to create level 0 items"',
+    'Note="Can use Crafting on junk to create shoddy level 0 items; suffers no penalty when using these"',
   'Rough Rider':
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Ride feature",' +
       '"+1 Nature (Command an Animal with a goblin dog or wolf mount)"',
-  'Very Sneaky':
-    'Section=skill Note="+5\' Sneak/Allows Sneaking between cover"',
+  'Very Sneaky':'Section=skill Note="+5\' Sneak/Can Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
     'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
-  'Cave Climber':'Section=ability Note="10\' climb Speed"',
+  'Cave Climber':'Section=ability Note="Has a 10\' climb Speed"',
   'Skittering Scuttle':
-    'Section=combat Note="Allows using Goblin Scuttle to Stride %{speed//2}\'"',
+    'Section=combat Note="Can use Goblin Scuttle to Stride %{speed//2}\'"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
-    'Section=combat Note="Allows Sneaking at full Speed and without cover"',
+    'Section=combat Note="Can Sneak at full Speed and without cover"',
 
   'Distracting Shadows':
     'Section=skill ' +
@@ -6508,7 +6518,7 @@ Pathfinder2E.FEATURES = {
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Casting an instantaneous harmful spell inflicts additional damage equal to its level"',
-  'Familiar':'Section=feature Note="Allows acquiring a familiar"',
+  'Familiar':'Section=feature Note="May have a familiar"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -12153,16 +12163,6 @@ Pathfinder2E.WEAPONS = {
     'Trait=Agile,Monk,Thrown,Uncommon Range=20'
 
 };
-
-Pathfinder2E.ACTION_MARKS = {
-  1: '<b>(1)</b>',
-  2: '<b>(2)</b>',
-  3: '<b>(3)</b>',
-  Free: '<b>(F)</b>',
-  Reaction: '<b>(R)</b>' // '<b>&larrhk;</b> '
-};
-Pathfinder2E.RANK_NAMES =
-  ['untrained', 'trained', 'expert', 'master', 'legendary'];
 
 /* Defines the rules related to character abilities. */
 Pathfinder2E.abilityRules = function(rules, abilities) {
