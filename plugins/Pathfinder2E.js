@@ -3276,7 +3276,8 @@ Pathfinder2E.FEATURES = {
   'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
   'Halfling Heritage':'Section=feature Note="1 selection"',
   'Hillock Halfling':
-    'Section=combat Note="Regains +%{level} Hit Points from rest or treatment"',
+    'Section=combat ' +
+    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
   'Human Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':
     'Section=feature,save ' +
@@ -3287,8 +3288,8 @@ Pathfinder2E.FEATURES = {
   'Keen Eyes':
     'Section=combat,skill ' +
     'Note=' +
-      '"Reduces the DC to target a concealed foe by 3 and a hidden foe by 9",' +
-      '"R30\' Gives +2 Seek to find hidden creatures"',
+      '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
+      '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
   'Razortooth Goblin':
     'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
@@ -3334,7 +3335,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can Seek in a 60\' cone using hearing and gains +2 within 30\'"',
   'Wildwood Halfling':
     'Section=ability ' +
-    'Note="Allows normal movement over difficult terrain caused by foliage"',
+    'Note="Moves normally over difficult terrain caused by foliage"',
   'Woodland Elf':
     'Section=combat,skill ' +
     'Note=' +
@@ -3516,14 +3517,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Can Sneak at full Speed and without cover"',
 
   'Distracting Shadows':
-    'Section=skill ' +
-    'Note="Allows using larger creatures as cover for Hide and Sneak"',
+    'Section=skill Note="Can use larger creatures as cover for Hide and Sneak"',
   'Halfling Lore':
     'Section=skill Note="Skill Trained (Acrobatics; Stealth; Halfling Lore)"',
   'Halfling Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Allows rerolling a failed skill check or save once per day"',
+    'Note="May reroll a failed skill check or save once per day"',
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3534,83 +3534,84 @@ Pathfinder2E.FEATURES = {
     'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
   'Titan Slinger':
     'Section=combat ' +
-    'Note="+1 damage die step on slings vs. Large and larger foes"',
+    'Note="Slings inflict +1 damage die step vs. Large and larger foes"',
   'Unfettered Halfling':
     'Section=combat ' +
     'Note="Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
   'Watchful Halfling':
     'Section=combat,skill ' +
     'Note=' +
-      '"Allows using Aid to help another overcome enchantment",' +
-      '"+2 Perception (sense enchantment) and gives an automatic -2 check to note enchantment"',
+      '"May use Aid to help another overcome enchantment or possession",' +
+      '"+2 Perception (sense enchantment or possession)/Automatically attempts a -2 check to notice enchantment or possession"',
   'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
     'Note="+1 Ancestry feat/Has the Adopted Ancestry (%ancestry) feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
-    'Note="Critical hits with a shortsword, sling, or halfling weapon weapon inflict its critical specialization effect"',
+    'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
   'Guiding Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Allows rerolling a failed Perception check or attack roll once per day"',
+    'Note="May reroll a failed Perception check or attack roll once per day"',
   'Irrepressible':
     'Section=save ' +
     'Note=' +
       '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
-    'Note="Allows using Hide and Sneak without cover and gives additional cover from creatures"',
+    'Note="Can use Hide and Sneak without cover/Using creatures gives one degree better cover"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
-    'Note="Attack %V (Sling; Halfling Sling; Shortsword; Halfling Weapons)"',
+    'Note="Attack %V (Sling; Halfling Sling Staff; Shortsword; Halfling Weapons)"',
 
   'Adapted Cantrip':
-    'Section=magic Note="Knows a cantrip from a different tradition"',
+    'Section=magic Note="Knows a cantrip from a second tradition"',
   'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
   'General Training':
     'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="Successful saves vs. mental control are critical successes, and foe Intimidation (Coerce) fails are critical fails"',
+    'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation (Coerce) fails are critical fails"',
   'Natural Ambition':'Section=feature Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
   'Unconventional Weaponry':
     'Section=combat Note="Treats %V as one category simpler"',
   'Adaptive Adept':
     'Section=magic ' +
-    'Note="Knows a cantrip or level 1 spell from a different tradition"',
+    'Note="Knows a cantrip or level 1 spell from a second tradition"',
   'Clever Improviser':
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Untrained Improvisation feature",' +
-      '"Allows using any skill untrained"',
+      '"May attempt any skill untrained"',
   'Cooperative Soul':
     'Section=skill ' +
     'Note="Failures and critical failures when using Aid with expert skills are successes"',
   'Incredible Improvisation':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Gives +4 on an untrained skill check once per day"',
+    'Note="Gains +4 on an untrained skill check once per day"',
+  // TODO: also, half-elves don't need to meet ability score
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
     'Section=skill ' +
-    'Note="Allows immediately Aiding an ally on a skill check after a critical success on the same skill"',
+    'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
     'Note="Knows the Charm arcane innate spell; may cast it once per day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
-    'Note="+1 Diplomacy and Perception to Sense Motive with creatures marginalized in human society"',
+    'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows retaining 1 Hit Point when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
+    'Note="Retains 1 Hit Point when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
-  'Orc Superstition':'Action=1 Section=save Note="Gives +1 vs. magic"',
+  'Orc Superstition':'Action=Reaction Section=save Note="+1 vs. magic"',
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3622,9 +3623,10 @@ Pathfinder2E.FEATURES = {
   'Victorious Vigor':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
+    'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
-  'Incredible Ferocity':'Section=combat Note="Increases Orc Ferocity effects"',
+  'Incredible Ferocity':
+    'Section=combat Note="Has increased Orc Ferocity effects"',
   'Orc Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Falchion; Greataxe; Orc Weapons)"',
