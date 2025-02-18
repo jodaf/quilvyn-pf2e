@@ -134,6 +134,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Advanced Trickery: +1 Class Feat (rogue)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Alchemical Crafting: Has the Formula Book feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Alchemist Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Alchemy: Has the Alchemical Crafting feature</i></td>
@@ -255,7 +257,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Aberrant: Skill Trained (Intimidation; Occultism)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Alchemical Alacrity: Increases Quick Alchemy effects</i></td>
+      <td><i>Alchemical Alacrity: Has increased Quick Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Alchemical Crafting: Knows formulas for 4 common 1st-level alchemical items</i></td>
     </tr><tr style="text-align:center">
       <td><i>Alchemist Skills: Skill Trained (Crafting; Choose 6 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -263,7 +267,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Canny Acumen (Perception): Perception Master</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Double Brew: Increases Quick Alchemy effects</i></td>
+      <td><i>Double Brew: Has increased Quick Alchemy effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Dedication: Skill Trained (Choose 1 from Acrobatics, Athletics)</i></td>
     </tr><tr style="text-align:center">
@@ -273,11 +277,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Monk Dedication: Skill Trained (Choose 1 from Acrobatics, Athletics)</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Mutagenist: Knows the formulas for 2 common 1st-level mutagens</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Natural Skill: Skill Trained (Choose 2 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Perpetual Perfection: Increases Perpetual Infusions effects</i></td>
+      <td><i>Perpetual Perfection: Has increased Perpetual Infusions effects</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Perpetual Potency: Increases Perpetual Infusions effects</i></td>
+      <td><i>Perpetual Potency: Has increased Perpetual Infusions effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Ranger Dedication: Skill Trained (Nature)</i></td>
     </tr><tr style="text-align:center">
@@ -309,9 +315,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Wizard Dedication: Skill Trained (Arcana)</i></td>
     </tr><tr style="text-align:center">
-      <td>Advanced Alchemy: Allows using a batch of infused reagents to create a pair of infused alchemical items of up to level 18 without a Crafting check</td>
+      <td>Advanced Alchemy: Can use a batch of infused reagents to create 2 infused alchemical items of up to level 18 without a Crafting check</td>
     </tr><tr style="text-align:center">
-      <td>Alchemical Crafting: Allows using Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items</td>
+      <td>Alchemical Crafting: Can use Crafting to create alchemical items</td>
     </tr><tr style="text-align:center">
       <td>Assurance (Deception): Allows taking an automatic 32 on Deception checks</td>
     </tr><tr style="text-align:center">
@@ -319,15 +325,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May attempt any skill untrained</td>
     </tr><tr style="text-align:center">
+      <td>Formula Book: Has a book that contains at least 42 alchemical formulas</td>
+    </tr><tr style="text-align:center">
       <td>Hunt Prey: <b>(1)</b> +2 Perception to Seek and +2 Survival to Track designated creature</td>
     </tr><tr style="text-align:center">
-      <td>Infused Reagents: Allows creating 21 batches of infused reagents each day</td>
+      <td>Infused Reagents: Can create 21 batches of infused reagents each day</td>
     </tr><tr style="text-align:center">
-      <td>Perpetual Infusions: Allows creating 2 alchemical items of up to level 11 from research field without using infused reagents</td>
+      <td>Perpetual Infusions: Can create 2 alchemical items of up to level 11 from research field without using infused reagents</td>
     </tr><tr style="text-align:center">
-      <td>Quick Alchemy: <b>(1)</b> Allows using batches of infused reagents to create 3 alchemical items of up to level 18 for 1 turn</td>
+      <td>Quick Alchemy: <b>(1)</b> Uses batches of infused reagents to create 3 consumable alchemical items of up to level 18 that last for 1 turn</td>
     </tr><tr style="text-align:center">
-      <td>Research Field: Allows using Advanced Alchemy to create 3 signature items from research field</td>
+      <td>Research Field: Can use 1 batch of infused reagents to create 3 signature items</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr></table>
@@ -401,21 +409,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer flat-footed vs. foes of equal or lower level</td>
       </tr><tr style="text-align:center">
-        <td>Field Discovery: Allows using Advanced Alchemy to create 3 alchemical items from research field</td>
+        <td>Field Discovery: Can use 1 batch of infused reagents create 3 items from research field</td>
       </tr><tr style="text-align:center">
         <td>Flurry Of Blows: <b>(1)</b> Allows 2 Unarmed Strikes once per turn</td>
       </tr><tr style="text-align:center">
-        <td>Formula Book: Has a book that contains at least 44 alchemical formulas</td>
-      </tr><tr style="text-align:center">
-        <td>Greater Field Discovery (Mutagenist): Allows using 2 polymorphic mutagens simultaneously</td>
+        <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
       </tr><tr style="text-align:center">
         <td>Hunt Prey: <b>(1)</b> Suffers no distance penalty for ranged Strikes in the 2nd range increment against designated creature</td>
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: <b>(F)</b> Gains +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Mutagenic Flashback: <b>(F)</b> Allows regaining the effects of a mutagen consumed earlier in the day for 1 min once per day</td>
+        <td>Mutagenic Flashback: <b>(F)</b> Regains the effects of a mutagen consumed earlier in the day for 1 min once per day</td>
       </tr><tr style="text-align:center">
-        <td>Powerful Alchemy: Gives items created with Quick Alchemy DC 37</td>
+        <td>Powerful Alchemy: Increases DC for items created with Quick Alchemy to 37</td>
       </tr><tr style="text-align:center">
         <td>Powerful Fist: Suffers no attack penalty for inflicting lethal damage with unarmed attacks</td>
       </tr><tr style="text-align:center">
@@ -423,7 +429,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Surprise Attack: Allows using Deception or Stealth for initiative to inflict flat-footed on creatures that haven't acted</td>
       </tr><tr style="text-align:center">
-        <td>Weapon Specialization: Gives +2, +3, and +4 HP damage with expert, master, and legendary weapon proficiency</td>
+        <td>Weapon Specialization: Inflicts +2, +3, and +4 HP damage with expert, master, and legendary weapon proficiency</td>
       </tr></table>
 </td>
     </tr></table>

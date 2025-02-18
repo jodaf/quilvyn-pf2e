@@ -3645,8 +3645,9 @@ Pathfinder2E.FEATURES = {
   // Alchemist
   'Advanced Alchemy':
     'Section=skill ' +
-    'Note="Allows using a batch of infused reagents to create a pair of infused alchemical items of up to level %{level} without a Crafting check"',
-  'Alchemical Alacrity':'Section=skill Note="Increases Quick Alchemy effects"',
+    'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check"',
+  'Alchemical Alacrity':
+    'Section=skill Note="Has increased Quick Alchemy effects"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
   'Alchemical Weapon Expertise':
@@ -3658,10 +3659,16 @@ Pathfinder2E.FEATURES = {
   'Alchemy':'Section=feature Note="Has the Alchemical Crafting feature"',
   'Alertness':'Section=skill Note="Perception Expert"',
   'Bomber':
-    'Section=combat Note="Allows directing a bomb splash onto a single target"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Can direct a bomb splash onto a single target",' +
+      '"Knows the formulas for 2 common 1st-level bombs"',
   'Chirurgeon':
-    'Section=skill Note="Allows using Crafting in place of Medicine"',
-  'Double Brew':'Section=skill Note="Increases Quick Alchemy effects"',
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Knows the formulas for 2 common 1st-level healing elixirs",' +
+      '"Can use Crafting in place of Medicine"',
+  'Double Brew':'Section=skill Note="Has increased Quick Alchemy effects"',
   'Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -3669,21 +3676,21 @@ Pathfinder2E.FEATURES = {
       '"Successes on Reflex saves are critical successes"',
   'Field Discovery':
     'Section=combat ' +
-    'Note="Allows using Advanced Alchemy to create 3 alchemical items from research field"',
+    'Note="Can use 1 batch of infused reagents create 3 items from research field"',
   'Formula Book':
-    'Section=combat ' +
-    'Note="Has a book that contains at least %{level*2+8} alchemical formulas"',
+    'Section=skill ' +
+    'Note="Has a book that contains at least %V alchemical formulas"',
   'Greater Field Discovery (Bomber)':
     'Section=combat ' +
-    'Note="Allows increasing bomb splash radius to %{$\'features.Expanded Flash\'?15:10}\'"',
+    'Note="Can increase bomb splash radius to %{$\'features.Expanded Splash\'?15:10}\'"',
   'Greater Field Discovery (Chirurgeon)':
     'Section=combat ' +
-    'Note="Enhances created elixirs to restore the maximum number of Hit Points"',
+    'Note="Created elixirs restore the maximum number of Hit Points"',
   'Greater Field Discovery (Mutagenist)':
-    'Section=combat Note="Allows using 2 polymorphic mutagens simultaneously"',
+    'Section=combat Note="Can use 2 polymorphic mutagens simultaneously"',
   'Infused Reagents':
     'Section=skill ' +
-    'Note="Allows creating %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents each day"',
+    'Note="Can create %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents each day"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -3699,135 +3706,142 @@ Pathfinder2E.FEATURES = {
   'Mutagenic Flashback':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows regaining the effects of a mutagen consumed earlier in the day for 1 min once per day"',
-  'Mutagenist':'Section=feature Note="Has the Mutagenic Flashback feature"',
+    'Note="Regains the effects of a mutagen consumed earlier in the day for 1 min once per day"',
+  'Mutagenist':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Mutagenic Flashback feature",' +
+      '"Knows the formulas for 2 common 1st-level mutagens"',
   'Perpetual Infusions':
     'Section=skill ' +
-    'Note="Allows creating 2 alchemical items of up to level %V from research field without using infused reagents"',
+    'Note="Can create 2 alchemical items of up to level %V from research field without using infused reagents"',
   'Perpetual Perfection':
-    'Section=skill Note="Increases Perpetual Infusions effects"',
+    'Section=skill Note="Has increased Perpetual Infusions effects"',
   'Perpetual Potency':
-    'Section=skill Note="Increases Perpetual Infusions effects"',
+    'Section=skill Note="Has increased Perpetual Infusions effects"',
   'Powerful Alchemy':
     'Section=combat ' +
-    'Note="Gives items created with Quick Alchemy DC %{classDifficultyClass.Alchemist}"',
+    'Note="Increases DC for items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
   'Quick Alchemy':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Allows using batches of infused reagents to create %V alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{level} for 1 turn"',
+    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that last for 1 turn"',
   'Research Field':
     'Section=feature,skill ' +
     'Note=' +
       '"1 selection",' +
-      '"Allows using Advanced Alchemy to create 3 signature items from research field"',
+      '"Can use 1 batch of infused reagents to create 3 signature items"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="Gives +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapon proficiency"',
+    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapon proficiency"',
 
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
     'Section=skill ' +
-    'Note="Allows using Crafting to Identify Alchemy as a single action/Gives +2 to Identify known formulas and changes critical failures on known formulas into normal failures"',
-  'Far Lobber':'Section=combat Note="Gives thrown bombs a 30\' range"',
+    'Note="Can use Crafting to Identify Alchemy in 1 action/+2 to Identify known formulas, and critical failures are normal failures"',
+  'Far Lobber':'Section=combat Note="Thrown bombs have a 30\' range"',
   'Quick Bomber':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows drawing and throwing a bomb in a single action"',
+    'Note="Can draw and Strike with a bomb in 1 action"',
   'Poison Resistance':
     'Section=save ' +
-    'Note="Gives poison resistance %{level//2} and +1 saves vs. poison"',
+    'Note="Has poison resistance %{level//2} and +1 saves vs. poison"',
   'Revivifying Mutagen':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows using 1 action to end mutagen effects and regain 1d6 Hit Points per 2 levels of the mutagen"',
+    'Note="Ends mutagen effects to restore 1d6 Hit Points per 2 levels of the mutagen"',
   'Smoke Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows using Quick Alchemy to create a bomb up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min"',
+    'Note="Creates a bomb of up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min"',
   'Calculated Splash':
     'Section=combat ' +
-    'Note="Increases the splash damage of bombs to %{intelligenceModifier} Hit Points"',
+    'Note="Can throw a bomb to inflict %{intelligenceModifier} HP splash damage"',
   'Efficient Alchemy':
     'Section=skill ' +
-    'Note="Allows producing twice the usual number of alchemical items during downtime"',
+    'Note="Can produce twice the usual number of alchemical items during downtime"',
   'Enduring Alchemy':
     'Section=skill ' +
-    'Note="Allows Quick Alchemy products to last until the end of next turn"',
+    'Note="Quick Alchemy products last until the end of next turn"',
   'Combine Elixirs':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Allows creating a single elixir that has the effects of two elixirs of up to level %{level-2}"',
+    'Note="Uses 2 additional batches of reagents to create a single elixir that has the effects of 2 elixirs of up to level %{level-2}"',
   'Debilitating Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows creating bombs up to level %{level-2} that also inflict dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates)"',
+    'Note="Creates a bomb of up to level %{level-2} that also inflicts dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 turn"',
   'Directional Bombs':
     'Section=combat ' +
-    'Note="Allows restricting bomb splash effects to a 15\' cone"',
+    'Note="Can restrict bomb splash effects to a 15\' cone in direction thrown"',
   'Feral Mutagen':
     'Section=combat,skill ' +
     'Note=' +
-      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait; also allows increasing the AC penalty to -2 to increase claws and jaws damage by 1 die step",' +
+      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the AC penalty to -2 to increase claws and jaws damage by 1 die step",' +
       '"Consuming a bestial mutagen adds the item bonus to Intimidation"',
   'Sticky Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows creating bombs up to level %{level-2} that inflict persistent damage equal to splash damage"',
+    'Note="Once per rd, creates a bomb of up to level %{level-2} that inflicts persistent damage equal to its splash damage"',
   'Elastic Mutagen':
     'Section=skill ' +
     'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as a creature 1 size smaller"',
   'Expanded Splash':
     'Section=combat ' +
-    'Note="Allows throwing bombs that inflict +%{intelligenceModifier} HP damage in a 10\' radius"',
+    'Note="Can throw bombs to inflict +%{intelligenceModifier} HP splash damage in a 10\' radius"',
   'Greater Debilitating Bomb':
     'Section=combat ' +
-    'Note="Allows creating bombs up to level %{level-2} that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates)"',
+    'Note="Can use Debilitating Bomb to create bombs that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 rd"',
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Allows making an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
+    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
-    'Note="Gives +4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
-  'Extend Elixir':'Section=skill Note="Doubles elixir duration"',
+    'Note="+4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
+  'Extend Elixir':
+    'Section=skill ' +
+    'Note="Doubles the duration of elixirs that last at least 1 min"',
   'Invincible Mutagen':
     'Section=combat ' +
     'Note="Consuming a juggernaut elixir gives resistance %{intelligenceModifier>?0} to all physical damage"',
   'Uncanny Bombs':
     'Section=combat,combat ' +
     'Note=' +
-      '"Gives thrown bombs a 60\' range",' +
-      '"Allows thrown bombs to reduce target cover AC bonus by 1 and to succeed automatically on the flat check to target a concealed creature"',
+      '"Thrown bombs have a 60\' range",' +
+      '"Thrown bombs reduce target cover AC bonus by 1 and succeed automatically on the flat check to target a concealed creature"',
   'Glib Mutagen':
     'Section=skill ' +
-    'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and language barriers"',
+    'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and linguistic barriers"',
   'Greater Merciful Elixir':
     'Section=skill ' +
-    'Note="Allows making an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a blinded, deafened, sickened, or slowed condition"',
+    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
     'Section=combat ' +
-    'Note="Allows making bombs up to level %{level-2} that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) or a lesser condition that requires a critical success to negate"',
+    'Note="Can use Debilitating Bomb to create bombs that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) or a lesser condition that requires a critical success to negate"',
   'Eternal Elixir':
     'Section=skill ' +
-    'Note="Allows extending the duration of an elixir of up to level %{level//2} indefinitely"',
+    'Note="Can indefinitely extend the duration of an elixir of up to level %{level//2} that lasts at least 1 min"',
   'Exploitive Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows using Quick Alchemy to make a bomb up to level %{level-2} that negates resistance %{level}"',
+    'Note="Creates a bomb of up to level %{level-2} that negates resistance %{level}"',
   'Genius Mutagen':
     'Section=skill ' +
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
   'Persistent Mutagen':
     'Section=skill ' +
-    'Note="Allows extending the duration of a mutagen until the next day once per day"',
+    'Note="Extends the duration of a mutagen until the next day once per day"',
   'Improbable Elixirs':
     'Section=skill ' +
-    'Note="Allows creating elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
+    'Note="Can create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
   'Mindblank Mutagen':
     'Section=save ' +
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=combat ' +
-    'Note="Allows administering a true elixir of life to restore life to a creature dead for up to 2 rd"',
+    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 Hit Point and wounded 1 to a creature dead for up to 2 rd"',
   'Perfect Debilitation':
     'Section=combat ' +
     'Note="Debilitating Bombs require a critical success to avoid effects"',
@@ -3837,9 +3851,9 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows throwing a bomb up to 60\' that affects all creatures in a 30\' radius (DC %{classDifficultyClass.Alchemist} Reflex negates)"',
+    'Note="Can throw a bomb of up to level %{advancedAlchemyLevel-2} that affects all creatures in a 30\' radius (<b>save basic Reflex</b> DC %{classDifficultyClass.Alchemist})"',
   'Perfect Mutagen':
-    'Section=skill Note="Suffer no drawbacks from consuming mutagens"',
+    'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
 
   // Barbarian
   'Armor Of Fury':
@@ -7106,7 +7120,7 @@ Pathfinder2E.FEATURES = {
 
   // General Feats
   'Adopted Ancestry (%ancestry)':
-    'Section=feature Note="Allows taking %ancestry ancestry feats"',
+    'Section=feature Note="May take %ancestry ancestry feats"',
   'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
   'Armor Proficiency':'Section=combat Note="Defense Trained (%V Armor)"',
   'Breath Control':
@@ -7184,8 +7198,11 @@ Pathfinder2E.FEATURES = {
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
   'Alchemical Crafting':
-    'Section=skill ' +
-    'Note="Allows using Crafting to create alchemical items/Knows formulas for four common 1st-level alchemical items"',
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Formula Book feature",' +
+      '"Knows formulas for 4 common 1st-level alchemical items",' +
+      '"Can use Crafting to create alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
@@ -13406,6 +13423,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
 
   if(name == 'Alchemist') {
     rules.defineRule('advancedAlchemyLevel', classLevel, '=', null);
+    rules.defineRule('skillNotes.formulaBook',
+      'skillNotes.alchemicalCrafting', '=', '4',
+      'levels.Alchemist', '+', 'source * 2',
+      'skillNotes.bomber', '+', '2',
+      'skillNotes.chirurgeon', '+', '2',
+      'skillNotes.mutagenist', '+', '2'
+    );
     rules.defineRule('selectableFeatureCount.Alchemist (Research Field)',
       'featureNotes.researchField', '=', '1'
     );
