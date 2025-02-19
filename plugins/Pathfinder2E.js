@@ -3864,39 +3864,39 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
   'Bestial Rage (Ape)':
     'Section=combat ' +
-    'Note="Allows using fists to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning during rage"',
+    'Note="Can use fists to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning during rage"',
   'Bestial Rage (Bear)':
     'Section=combat ' +
-    'Note="Allows using jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
+    'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
   'Bestial Rage (Bull)':
     'Section=combat ' +
-    'Note="Allows using a horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
+    'Note="Can use a horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Cat)':
     'Section=combat ' +
-    'Note="Allows using jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6} HP slashing during rage"',
+    'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6} HP slashing during rage"',
   'Bestial Rage (Deer)':
     'Section=combat ' +
-    'Note="Allows using antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
+    'Note="Can use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Frog)':
     'Section=combat ' +
-    'Note="Allows using jaws and tongue to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning and 1d%{combatNotes.greaterWeaponSpecialization?\'6+12\':combatNotes.specializationAbility?\'6+5\':\'4+2\'} HP bludgeoning%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
+    'Note="Can use jaws and tongue to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP bludgeoning and 1d%{combatNotes.greaterWeaponSpecialization?\'6+12\':combatNotes.specializationAbility?\'6+5\':\'4+2\'} HP bludgeoning%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Shark)':
     'Section=combat ' +
-    'Note="Allows using jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
+    'Note="Can use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Snake)':
     'Section=combat ' +
-    'Note="Allows using fangs to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
+    'Note="Can use fangs to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Wolf)':
     'Section=combat ' +
-    'Note="Allows using jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
+    'Note="Can use jaws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Brutality':
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"Allows using melee and unarmed weapon critical specialization effects during rage"',
+      '"Critical hits with a melee weapon or unarmed attack inflict its critical specialization effect during rage"',
   'Deny Advantage':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed vs. foes of equal or lower level"',
+    'Note="Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
   'Devastator':
     'Section=combat,combat ' +
     'Note=' +
@@ -3904,7 +3904,7 @@ Pathfinder2E.FEATURES = {
       '"Successful melee Strikes ignore 10 points of physical damage resistance"',
   'Draconic Rage':
     'Section=combat ' +
-    'Note="Allows inflicting +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +2 HP weapon damage during rage"',
+    'Note="Can inflict +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +%{combatNotes.rage} HP weapon damage during rage"',
   'Fury Instinct':'Section=feature Note="+1 Class Feat"',
   'Greater Juggernaut':
     'Section=save,save ' +
@@ -3912,7 +3912,7 @@ Pathfinder2E.FEATURES = {
       '"Save Legendary (Fortitude)",' +
       '"Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save"',
   'Greater Weapon Specialization':
-    'Section=combat Note="Increases Weapon Specialization effects"',
+    'Section=combat Note="Has increased Weapon Specialization effects"',
   'Heightened Senses':'Section=skill Note="Perception Master"',
   'Indomitable Will':
     'Section=save,save ' +
@@ -3924,14 +3924,16 @@ Pathfinder2E.FEATURES = {
   'Lightning Reflexes':'Section=save Note="Save Expert (Reflex)"',
   // Medium Armor Expertise as above
   'Mighty Rage':
-    'Action=Free ' +
-    'Section=combat ' +
-    'Note="Allows using a rage action when entering rage"',
-  'Quick Rage':'Section=combat Note="Allows re-entering rage after 1 turn"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Class Expert (Barbarian)",' +
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Can use a rage action when entering rage"',
+  'Quick Rage':
+    'Section=combat Note="Can rage again 1 turn after ending a rage"',
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives %{level+constitutionModifier} temporary Hit Points, +%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP melee damage (agile weapon +1 HP), -1 AC, and no concentration actions for 1 min; requires 1 min between rages"',
+    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +%{combatNotes.rage//2} HP) and suffers -1 AC and no concentration actions for 1 min; requires 1 min between rages"',
   'Raging Resistance (Animal)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
@@ -3940,7 +3942,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has resistance %{3+constitutionModifier} to piercing and %{combatNotes.draconicRage||\'fire\'} during rage"',
   'Raging Resistance (Fury)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to physical weapons during rage"',
+    'Note="Has resistance %{3+constitutionModifier} to physical weapon damage during rage"',
   'Raging Resistance (Giant)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to bludgeoning and choice of cold, electricity, or fire during rage"',
@@ -3948,13 +3950,13 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to negative and undead during rage"',
   'Specialization Ability':
-    'Section=combat Note="Increases instinct ability rage effects"',
+    'Section=combat Note="Has increased instinct ability rage effects"',
   'Spirit Rage':
     'Section=combat ' +
-    'Note="Allows substituting +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i>, for +2 HP weapon damage during rage"',
+    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i>, instead of +%{combatNotes.rage} HP weapon damage during rage"',
   'Titan Mauler':
     'Section=combat ' +
-    'Note="Allows using weapons made for a larger creature, suffering clumsy 1 and gaining +%{combatNotes.greaterWeaponSpecialization?18:combatNotes.specializationAbility?10:6} HP, instead of gaining +2 HP weapon damage during rage"',
+    'Note="Can use weapons made for a larger creature, suffering clumsy 1 and gaining +%{combatNotes.greaterWeaponSpecialization?18:combatNotes.specializationAbility?10:6} HP weapon damage, instead of gaining +%{combatNotes.rage} HP weapon damage during rage"',
   'Weapon Fury':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
@@ -3965,48 +3967,48 @@ Pathfinder2E.FEATURES = {
   'Moment Of Clarity':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows use concentration actions for the remainder of the turn during rage"',
+    'Note="Allows use of concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
     'Section=feature,feature,skill ' +
     'Note=' +
       '"Has the Intimidating Glare feature",' +
       '"Has the Scare To Death feature",' +
-      '"Allows using Demoralize during rage"',
+      '"Can use Demoralize during rage"',
   'Raging Thrower':
     'Section=combat ' +
-    'Note="Gives +%{$\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2} HP thrown weapon damage and applies Brutal Critical and Devastator effects to thrown weapons during rage"',
+    'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows making a melee Strike after a double Stride"',
-  'Acute Scent':'Section=skill Note="R30\' imprecise scent"',
+    'Note="Can make a melee Strike after a double Stride"',
+  'Acute Scent':'Section=skill Note="Has R30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives additional damage on a Strike during rage; suffers end of rage and fatigue until 10 min rest"',
+    'Note="Strike inflicts additional damage equal to the number of rounds remaining in rage, ending rage and causing fatigue until 10 min rest"',
   'No Escape':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows Striding along with a retreating foe"',
+    'Note="Stride keeps pace with a retreating foe"',
   'Second Wind':
     'Section=combat ' +
-    'Note="Allows re-entering rage immediately; suffers fatigue afterwards until 10 min rest"',
+    'Note="Can rage again immediately after ending a rage, suffering fatigue afterwards until 10 min rest"',
   'Shake It Off':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Reduce a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage"',
+    'Note="Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage"',
   'Fast Movement':'Section=combat Note="+10 Speed during rage"',
   'Raging Athlete':
     'Section=skill ' +
-    'Note="Gives a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
+    'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
   'Swipe':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows attacking 2 adjacent foes with a single Strike"',
+    'Note="Strike attacks 2 adjacent foes"',
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows entering rage after taking damage"',
+    'Note="Enters rage upon taking damage"',
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -13458,7 +13460,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Draconic Rage (Silver)', '=', '"cold"'
     );
     rules.defineRule('combatNotes.rage',
-      'combatNotes.specializationAbility', '+', 'null' // italics
+      '', '=', '2',
+      'features.Fury Instinct', '=', '6',
+      'combatNotes.specializationAbility', '=', '12'
     );
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =

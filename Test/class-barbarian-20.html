@@ -48,10 +48,9 @@ var attributes = {
   "selectableFeatures.Barbarian - Giant Instinct":1, "selectableFeatures.Barbarian - Spirit Instinct":1, 
   "selectableFeatures.Human - Half-Orc":1, "shield":"None", "skillIncreases.Acrobatics":1, 
   "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":3, "skillIncreases.Farming Lore":1, 
-  "skillIncreases.Gnome Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Intimidation":1, 
-  "skillIncreases.Labor Lore":2, "skillIncreases.Nature":1, "skillIncreases.Occultism":1, 
-  "skillIncreases.Plains Lore":1, "skillIncreases.Scribing Lore":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Tea Lore":1, "skillIncreases.Vampire Lore":1, "weapons.Light Hammer":1, 
+  "skillIncreases.Gnome Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Intimidation":4, 
+  "skillIncreases.Labor Lore":2, "skillIncreases.Nature":1, "skillIncreases.Scribing Lore":1, 
+  "skillIncreases.Stealth":1, "skillIncreases.Tea Lore":1, "weapons.Light Hammer":1, 
   "weapons.Longsword":1, "weapons.Sap":1
 };
   </script>
@@ -142,6 +141,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Raging Intimidation: Has the Intimidating Glare feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Raging Intimidation: Has the Scare To Death feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td>Acute Vision: Has the Darkvision feature during rage</td>
@@ -162,43 +163,39 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +26 (dexterity; trained)</td>
+      <td>Gnome Lore: +28 (intelligence; expert)</td>
+      <td>River Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Alcohol Lore: +26 (intelligence; trained)</td>
       <td>Halfling Lore: +26 (intelligence; trained)</td>
       <td>Scribing Lore: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Alcohol Lore: +26 (intelligence; trained)</td>
-      <td>Intimidation: +26 (charisma; trained)</td>
+      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Intimidation: +32 (charisma; legendary)</td>
       <td>Society: +4 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +4 (intelligence; untrained)</td>
+      <td>Athletics: +33 (strength; legendary)</td>
       <td>Labor Lore: +28 (intelligence; expert)</td>
       <td>Stealth: +26 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +33 (strength; legendary)</td>
+      <td>Crafting: +4 (intelligence; untrained)</td>
       <td>Medicine: +4 (wisdom; untrained)</td>
       <td>Survival: +4 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; untrained)</td>
+      <td>Deception: +4 (charisma; untrained)</td>
       <td>Nature: +28 (wisdom; expert)</td>
       <td>Tea Lore: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +4 (charisma; untrained)</td>
-      <td>Occultism: +26 (intelligence; trained)</td>
+      <td>Diplomacy: +4 (charisma; untrained)</td>
+      <td>Occultism: +4 (intelligence; untrained)</td>
       <td>Thievery: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +4 (charisma; untrained)</td>
-      <td>Performance: +4 (charisma; untrained)</td>
-      <td>Vampire Lore: +26 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
       <td>Farming Lore: +26 (intelligence; trained)</td>
-      <td>Plains Lore: +26 (intelligence; trained)</td>
+      <td>Performance: +4 (charisma; untrained)</td>
       <td>Warfare Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Forest Lore: +26 (intelligence; trained)</td>
       <td>Religion: +26 (wisdom; trained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Gnome Lore: +28 (intelligence; expert)</td>
-      <td>River Lore: +26 (intelligence; trained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -231,7 +228,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Warfare Lore): Skill Trained (Warfare Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Acute Scent: R30' imprecise scent</td>
+      <td>Acute Scent: Has R30' imprecise scent during rage</td>
     </tr><tr style="text-align:center">
       <td>Assurance (Athletics): Allows taking an automatic 38 on Athletics checks</td>
     </tr><tr style="text-align:center">
@@ -249,9 +246,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Jump: May use High Jump and Long Jump as 1 action without an initial Stride</td>
     </tr><tr style="text-align:center">
-      <td>Raging Athlete: Gives a 25' climb and swim Speed, -10 jump DC, and 5' and 15' vertical and horizontal Leaps during rage</td>
+      <td>Raging Athlete: Has a 25' climb and swim Speed, -10 jump DC, and 5' and 15' vertical and horizontal Leaps during rage</td>
     </tr><tr style="text-align:center">
-      <td>Raging Intimidation: Allows using Demoralize during rage</td>
+      <td>Raging Intimidation: Can use Demoralize during rage</td>
+    </tr><tr style="text-align:center">
+      <td>Scare To Death: <b>(1)</b> R30' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); failure inflicts frightened 1</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr></table>
@@ -297,11 +296,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Greater Weapon Specialization: Increases Weapon Specialization effects</i></td>
+        <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Specialization Ability: Increases instinct ability rage effects</i></td>
+        <td><i>Mighty Rage: Class Expert (Barbarian)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Specialization Ability: Has increased instinct ability rage effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +5</i></td>
       </tr><tr style="text-align:center">
@@ -315,29 +316,29 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Awesome Blow: A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Ape): Allows using fists to inflict 1d12+12 HP bludgeoning during rage</td>
+        <td>Bestial Rage (Ape): Can use fists to inflict 1d12+12 HP bludgeoning during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Bear): Allows using jaws and claws to inflict 1d12+12 HP piercing and 1d8+12 HP slashing during rage</td>
+        <td>Bestial Rage (Bear): Can use jaws and claws to inflict 1d12+12 HP piercing and 1d8+12 HP slashing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Bull): Allows using a horn to inflict 1d12+12 HP piercing during rage</td>
+        <td>Bestial Rage (Bull): Can use a horn to inflict 1d12+12 HP piercing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Cat): Allows using jaws and claws to inflict 1d12+12 HP piercing and 1d8+12 HP slashing during rage</td>
+        <td>Bestial Rage (Cat): Can use jaws and claws to inflict 1d12+12 HP piercing and 1d8+12 HP slashing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Deer): Allows using antlers to inflict 1d12+12 HP piercing with a 10' reach during rage</td>
+        <td>Bestial Rage (Deer): Can use antlers to inflict 1d12+12 HP piercing with a 10' reach during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Frog): Allows using jaws and tongue to inflict 1d12+12 HP bludgeoning and 1d6+12 HP bludgeoning with a 10' reach during rage</td>
+        <td>Bestial Rage (Frog): Can use jaws and tongue to inflict 1d12+12 HP bludgeoning and 1d6+12 HP bludgeoning with a 10' reach during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Shark): Allows using jaws to inflict 1d12+12 HP piercing during rage</td>
+        <td>Bestial Rage (Shark): Can use jaws to inflict 1d12+12 HP piercing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Snake): Allows using fangs to inflict 1d12+12 HP piercing during rage</td>
+        <td>Bestial Rage (Snake): Can use fangs to inflict 1d12+12 HP piercing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Bestial Rage (Wolf): Allows using jaws to inflict 1d12+12 HP piercing during rage</td>
+        <td>Bestial Rage (Wolf): Can use jaws to inflict 1d12+12 HP piercing during rage</td>
       </tr><tr style="text-align:center">
         <td>Brutal Bully: A successful Disarm, Grapple, Shove, or Trip during rage inflicts 5 HP bludgeoning</td>
       </tr><tr style="text-align:center">
         <td>Brutal Critical: Critical melee hits inflict +1 damage die and 2 damage dice bleed damage</td>
       </tr><tr style="text-align:center">
-        <td>Brutality: Allows using melee and unarmed weapon critical specialization effects during rage</td>
+        <td>Brutality: Critical hits with a melee weapon or unarmed attack inflict its critical specialization effect during rage</td>
       </tr><tr style="text-align:center">
         <td>Cleave: <b>(R)</b> Allows a Strike an adjacent foe after killing or knocking a foe unconscious</td>
       </tr><tr style="text-align:center">
@@ -347,11 +348,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Contagious Rage: Allows using Share Rage unlimited times, also sharing instinct and specialization abilities</td>
       </tr><tr style="text-align:center">
-        <td>Deny Advantage: Does not suffer flat-footed vs. foes of equal or lower level</td>
+        <td>Deny Advantage: Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
         <td>Devastator: Successful melee Strikes ignore 10 points of physical damage resistance</td>
       </tr><tr style="text-align:center">
-        <td>Draconic Rage: Allows inflicting +16 HP fire damage instead of +2 HP weapon damage during rage</td>
+        <td>Draconic Rage: Can inflict +16 HP fire damage instead of +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Breath: <b>(2)</b> Allows using breath to inflict 20d6 damage in a 30' cone or 60' line once per rage (Reflex negates; half distance and damage for a 2nd breath use within 1 hr)</td>
       </tr><tr style="text-align:center">
@@ -361,7 +362,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Furious Bully: Gives +2 Athletics for attacks during rage</td>
       </tr><tr style="text-align:center">
-        <td>Furious Finish: <b>(1)</b> Gives additional damage on a Strike during rage; suffers end of rage and fatigue until 10 min rest</td>
+        <td>Furious Finish: <b>(1)</b> Strike inflicts additional damage equal to the number of rounds remaining in rage, ending rage and causing fatigue until 10 min rest</td>
       </tr><tr style="text-align:center">
         <td>Furious Grab: <b>(1)</b> Allows grabbing a foe automatically after a successful Strike</td>
       </tr><tr style="text-align:center">
@@ -375,47 +376,47 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Knockback: <b>(1)</b> Allows Shoving a foe 5' after a successful Strike</td>
       </tr><tr style="text-align:center">
-        <td>Mighty Rage: <b>(F)</b> Allows using a rage action when entering rage</td>
+        <td>Mighty Rage: <b>(F)</b> Can use a rage action when entering rage</td>
       </tr><tr style="text-align:center">
-        <td>Moment Of Clarity: <b>(1)</b> Allows use concentration actions for the remainder of the turn during rage</td>
+        <td>Moment Of Clarity: <b>(1)</b> Allows use of concentration actions for the remainder of the turn during rage</td>
       </tr><tr style="text-align:center">
-        <td>No Escape: <b>(R)</b> Allows Striding along with a retreating foe</td>
+        <td>No Escape: <b>(R)</b> Stride keeps pace with a retreating foe</td>
       </tr><tr style="text-align:center">
         <td>Perfect Clarity: <b>(R)</b> Allows ending rage for a +2 reroll on a failed attack or Will save</td>
       </tr><tr style="text-align:center">
         <td>Predator's Pounce: <b>(1)</b> Allows Striking after moving 25' in light or no armor</td>
       </tr><tr style="text-align:center">
-        <td>Quick Rage: Allows re-entering rage after 1 turn</td>
+        <td>Quick Rage: Can rage again 1 turn after ending a rage</td>
       </tr><tr style="text-align:center">
-        <td>Rage: <b>(1)</b> Gives 24 temporary Hit Points, +12 HP melee damage (agile weapon +1 HP), -1 AC, and no concentration actions for 1 min; requires 1 min between rages</td>
+        <td>Rage: <b>(1)</b> Gains 24 temporary Hit Points and +12 HP melee damage (agile weapon +6 HP) and suffers -1 AC and no concentration actions for 1 min; requires 1 min between rages</td>
       </tr><tr style="text-align:center">
-        <td>Raging Thrower: Gives +12 HP thrown weapon damage and applies Brutal Critical and Devastator effects to thrown weapons during rage</td>
+        <td>Raging Thrower: +12 HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage</td>
       </tr><tr style="text-align:center">
         <td>Renewed Vigor: <b>(1)</b> Gives 14 temporary Hit Points</td>
       </tr><tr style="text-align:center">
-        <td>Second Wind: Allows re-entering rage immediately; suffers fatigue afterwards until 10 min rest</td>
+        <td>Second Wind: Can rage again immediately after ending a rage, suffering fatigue afterwards until 10 min rest</td>
       </tr><tr style="text-align:center">
-        <td>Shake It Off: <b>(1)</b> Reduce a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
+        <td>Shake It Off: <b>(1)</b> Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
       </tr><tr style="text-align:center">
         <td>Share Rage: <b>(1)</b> R30' Allows giving an ally the effects of Rage once per rage</td>
       </tr><tr style="text-align:center">
-        <td>Spirit Rage: Allows substituting +13 HP positive or negative damage, along with <i>ghost touch</i>, for +2 HP weapon damage during rage</td>
+        <td>Spirit Rage: May inflict +13 HP positive or negative damage, along with <i>ghost touch</i>, instead of +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Spirit's Wrath: <b>(1)</b> Allows making a R120' +33 spirit Strike that inflicts 4d8+4 HP negative or positive damage; a critical hit also inflicts frightened 1</td>
       </tr><tr style="text-align:center">
         <td>Spirits'Interference: <b>(1)</b> Foe ranged Strikes require a DC 5 flat check until rage ends</td>
       </tr><tr style="text-align:center">
-        <td>Sudden Charge: <b>(2)</b> Allows making a melee Strike after a double Stride</td>
+        <td>Sudden Charge: <b>(2)</b> Can make a melee Strike after a double Stride</td>
       </tr><tr style="text-align:center">
         <td>Sudden Leap: <b>(2)</b> Allows making a Strike during a Leap, High Jump, or Long Jump</td>
       </tr><tr style="text-align:center">
-        <td>Swipe: <b>(2)</b> Allows attacking 2 adjacent foes with a single Strike</td>
+        <td>Swipe: <b>(2)</b> Strike attacks 2 adjacent foes</td>
       </tr><tr style="text-align:center">
         <td>Terrifying Howl: <b>(1)</b> R30' Allows a successful Intimidate to Demoralize multiple foes</td>
       </tr><tr style="text-align:center">
         <td>Thrash: <b>(1)</b> Inflicts 17 HP bludgeoning, plus specialization damage on a grabbed foe (Fortitude negates)</td>
       </tr><tr style="text-align:center">
-        <td>Titan Mauler: Allows using weapons made for a larger creature, suffering clumsy 1 and gaining +18 HP, instead of gaining +2 HP weapon damage during rage</td>
+        <td>Titan Mauler: Can use weapons made for a larger creature, suffering clumsy 1 and gaining +18 HP weapon damage, instead of gaining +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Titan's Stature: Increases size to Huge, giving +10' reach and clumsy 1, until rage ends</td>
       </tr><tr style="text-align:center">
@@ -427,7 +428,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Whirlwind Strike: <b>(3)</b> Allows Striking each foe within reach</td>
       </tr><tr style="text-align:center">
-        <td>Wounded Rage: <b>(R)</b> Allows entering rage after taking damage</td>
+        <td>Wounded Rage: <b>(R)</b> Enters rage upon taking damage</td>
       </tr></table>
 </td>
     </tr></table>
@@ -461,7 +462,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Raging Resistance (Dragon): Has resistance 7 to piercing and fire during rage</td>
       </tr><tr style="text-align:center">
-        <td>Raging Resistance (Fury): Has resistance 7 to physical weapons during rage</td>
+        <td>Raging Resistance (Fury): Has resistance 7 to physical weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Raging Resistance (Giant): Has resistance 7 to bludgeoning and choice of cold, electricity, or fire during rage</td>
       </tr><tr style="text-align:center">
