@@ -4013,22 +4013,22 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Defense Expert (Unarmored Defense)",' +
-      '"Gives +%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} AC in no armor during rage"',
+      '"+%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} AC in no armor during rage"',
   'Attack Of Opportunity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows making a melee Strike on a foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
+    'Note="Makes a melee Strike on a foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
   'Brutal Bully':
     'Section=combat ' +
     'Note="A successful Disarm, Grapple, Shove, or Trip during rage inflicts %{strengthModifier} HP bludgeoning"',
   'Cleave':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows a Strike an adjacent foe after killing or knocking a foe unconscious"',
+    'Note="Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious"',
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows using breath to inflict %{level}d6 damage in a 30\' cone or 60\' line once per rage (Reflex negates; half distance and damage for a 2nd breath use within 1 hr)"',
+    'Note="Breath inflicts %{level}d6 damage in a 30\' cone or 60\' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)"',
   "Giant's Stature":
     'Action=1 ' +
     'Section=combat ' +
@@ -4036,13 +4036,10 @@ Pathfinder2E.FEATURES = {
   "Spirits' Interference":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Foe ranged Strikes require a DC 5 flat check until rage ends"',
+    'Note="Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends"',
   'Animal Rage':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Allows transforming into spirit animal at will"',
-  'Furious Bully':
-    'Section=combat Note="Gives +2 Athletics for attacks during rage"',
+    'Action=1 Section=magic Note="Transforms self into spirit animal"',
+  'Furious Bully':'Section=combat Note="+2 Athletics for attacks during rage"',
   'Renewed Vigor':
     'Action=1 ' +
     'Section=combat ' +
@@ -4050,53 +4047,47 @@ Pathfinder2E.FEATURES = {
   'Share Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Allows giving an ally the effects of Rage once per rage"',
+    'Note="R30\' Gives an ally the effects of Rage once per rage"',
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows making a Strike during a Leap, High Jump, or Long Jump"',
+    'Note="Makes a melee Strike while Leaping, High Jumping, or Long Jumping up to %{speed*2}\'"',
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Inflicts %{($\'features.Fury Instinct\'?(combatNotes.specializationAbility?12:6):2)+strengthModifier} HP bludgeoning, plus specialization damage on a grabbed foe (Fortitude negates)"',
+    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows suffering flat-footed and +2 HP foe damage to gain +%{constitutionModifier} temporary Hit Points from a successful Strike (critical success +%{constitutionModifier*2}) on a successful attacker until rage ends"',
+    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed for 1 rd, and a successful Strike on a foe gives %{constitutionModifier} temporary Hit Points (critical success %{constitutionModifier*2})"',
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows Striding %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
+    'Note="Can Stride %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
   'Great Cleave':
     'Section=combat ' +
-    'Note="Allows continuing to Cleave adjacent foes for as long as Strikes incapacitate"',
+    'Note="Can continue to Cleave adjacent foes for as long as Strikes incapacitate"',
   'Knockback':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Allows Shoving a foe 5\' after a successful Strike"',
+    'Action=1 Section=combat Note="Shoves a foe 5\' after a successful Strike"',
   'Terrifying Howl':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Allows a successful Intimidate to Demoralize multiple foes"',
+    'Note="A successful Intimidate Demoralizes all foes in a 30\' radius"',
   "Dragon's Rage Wings":
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Allows flying %{speed}\' per rd during rage"',
+    'Action=1 Section=combat Note="Gives %{speed}\' fly Speed during rage"',
   'Furious Grab':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Allows grabbing a foe automatically after a successful Strike"',
+    'Action=1 Section=combat Note="Grapples a foe after a successful Strike"',
   "Predator's Pounce":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows Striking after moving %{speed}\' in light or no armor"',
+    'Note="Strikes after moving up to %{speed}\' in light or no armor"',
   "Spirit's Wrath":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows making a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
+    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
-    'Note="Increases size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
+    'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
   'Awesome Blow':
     'Section=combat ' +
     'Note="A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe"',
