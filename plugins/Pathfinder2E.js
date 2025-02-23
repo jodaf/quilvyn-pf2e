@@ -3870,7 +3870,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
   'Bestial Rage (Bull)':
     'Section=combat ' +
-    'Note="Can use a horn to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
+    'Note="Can use horns to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Cat)':
     'Section=combat ' +
     'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6} HP slashing during rage"',
@@ -3927,9 +3927,9 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Barbarian)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Can use a rage action when entering rage"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a rage action when starting to rage"',
   'Quick Rage':
-    'Section=combat Note="Can rage again 1 turn after ending a rage"',
+    'Section=combat Note="Can rage again 1 turn after ending rage"',
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
@@ -3980,7 +3980,7 @@ Pathfinder2E.FEATURES = {
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Can make a melee Strike after a double Stride"',
+    'Note="Makes a melee Strike after a double Stride"',
   'Acute Scent':'Section=skill Note="Has R30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
@@ -3992,7 +3992,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stride keeps pace with a retreating foe"',
   'Second Wind':
     'Section=combat ' +
-    'Note="Can rage again immediately after ending a rage, suffering fatigue afterwards until 10 min rest"',
+    'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest"',
   'Shake It Off':
     'Action=1 ' +
     'Section=combat ' +
@@ -4008,7 +4008,7 @@ Pathfinder2E.FEATURES = {
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Enters rage upon taking damage"',
+    'Note="Begins rage upon taking damage"',
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -4017,7 +4017,7 @@ Pathfinder2E.FEATURES = {
   'Attack Of Opportunity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike on a foe that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
+    'Note="Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
   'Brutal Bully':
     'Section=combat ' +
     'Note="A successful Disarm, Grapple, Shove, or Trip during rage inflicts %{strengthModifier} HP bludgeoning"',
@@ -4063,10 +4063,10 @@ Pathfinder2E.FEATURES = {
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Can Stride %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
+    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
   'Great Cleave':
     'Section=combat ' +
-    'Note="Can continue to Cleave adjacent foes for as long as Strikes incapacitate"',
+    'Note="Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate"',
   'Knockback':
     'Action=1 Section=combat Note="Shoves a foe 5\' after a successful Strike"',
   'Terrifying Howl':
@@ -4090,7 +4090,7 @@ Pathfinder2E.FEATURES = {
     'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
   'Awesome Blow':
     'Section=combat ' +
-    'Note="A successful Athletics vs. Fortitude with Knockback Shoves and Trips foe"',
+    'Note="A success or critical success on an Athletics vs. Fortitude after using Knockback inflicts success or critical success effects of Shove and Trip"',
   "Giant's Lunge":
     'Action=1 ' +
     'Section=combat ' +
@@ -4098,38 +4098,40 @@ Pathfinder2E.FEATURES = {
   'Vengeful Strike':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows using Come And Get Me to make a Strike when hit by a Strike"',
+    'Note="While using Come And Get Me, responds to a successful foe attack with an immediate Strike"',
   'Whirlwind Strike':
-    'Action=3 Section=combat Note="Allows Striking each foe within reach"',
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Makes individual Strikes against all foes within reach"',
   'Collateral Thrash':
     'Section=combat ' +
-    'Note="Allows affecting another adjacent foe (DC %{classDifficultyClass.Barbarian} Reflex negates) with a successful Thrash"',
+    'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>, DC %{classDifficultyClass.Barbarian})"',
   'Dragon Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows using <i>Dragon Form</i> effects%{level>=18?\', with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage,\':\'\'} during rage"',
+    'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'} during rage"',
   'Reckless Abandon':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Gives -2 AC, -1 saves, and +2 attacks when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
+    'Note="Gives -2 AC, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
   'Brutal Critical':
     'Section=combat ' +
-    'Note="Critical melee hits inflict +1 damage die and 2 damage dice bleed damage"',
+    'Note="Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage"',
   'Perfect Clarity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows ending rage for a +2 reroll on a failed attack or Will save"',
+    'Note="Ends rage to gain a +2 reroll on a failed attack or Will save"',
   'Vicious Evisceration':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows a Strike to inflict drained 1 (critical success drained 2)"',
+    'Note="Strike also inflicts drained 1, or drained 2 on a critical success"',
   'Contagious Rage':
     'Section=combat ' +
-    'Note="Allows using Share Rage unlimited times, also sharing instinct and specialization abilities"',
+    'Note="Can use Share Rage unlimited times, also sharing instinct and specialization abilities"',
   'Quaking Stomp':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allow using <i>Earthquake</i> effects once per 10 min"',
+    'Note="Invokes <i>Earthquake</i> effects once per 10 min"',
 
   // Bard
   'Bard Weapon Expertise':
@@ -5423,7 +5425,7 @@ Pathfinder2E.FEATURES = {
   'Brutish Shove':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Two-handed melee Strike inflicts flat-footed until end of turn; success allows a subsequent Shove"',
+    'Note="Two-handed melee Strike inflicts flat-footed until the end of turn; success allows a subsequent Shove"',
   'Combat Grab':
     'Action=1 ' +
     'Section=combat ' +
@@ -6146,7 +6148,7 @@ Pathfinder2E.FEATURES = {
     'Note="While observing hunted prey, changes Seek failures and critical failures by allies into successes"',
   'Greater Distracting Shot':
     'Section=combat ' +
-    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until end of next turn on a critical success"',
+    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of next turn on a critical success"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
     'Section=combat Note="Increases Monster Hunter effects"',
@@ -6188,7 +6190,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows a successful Strike against a flat-footed foe to inflict choice of -10 Speed or enfeebled 1 until end of next turn"',
+    'Note="Allows a successful Strike against a flat-footed foe to inflict choice of -10 Speed or enfeebled 1 until the end of next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
@@ -6540,7 +6542,7 @@ Pathfinder2E.FEATURES = {
   'Bespell Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until end of turn; damage type depends on the spell school"',
+    'Note="Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
@@ -7119,7 +7121,7 @@ Pathfinder2E.FEATURES = {
   'Breath Control':
     'Section=ability,save ' +
     'Note=' +
-      '"Allows holding breath 25x as long as usual without suffocating",' +
+      '"Can hold breath 25x as long as usual without suffocating",' +
       '"+1 vs. inhaled threats, and successes vs. inhaled threat are critical successes"',
   'Canny Acumen (Fortitude)':'Section=save Note="Save %V (Fortitude)"',
   'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
@@ -7128,7 +7130,7 @@ Pathfinder2E.FEATURES = {
   'Diehard':'Section=combat Note="Remains alive until dying 5"',
   'Expeditious Search':
     'Section=skill ' +
-    'Note="Allows Searching at %{rank.Perception>=4?4:2}x normal Speed"',
+    'Note="Can Search at %{rank.Perception>=4?4:2}x normal Speed"',
   'Fast Recovery':
     'Section=save ' +
     'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
@@ -7162,10 +7164,10 @@ Pathfinder2E.FEATURES = {
   // General Skill Feats
   'Assurance (%skill)':
     'Section=skill ' +
-    'Note="Allows taking an automatic %{10+$\'proficiencyBonus.%skill\'} on %skill checks"',
+    'Note="Can take an automatic %{10+$\'proficiencyBonus.%skill\'} on %skill checks"',
   'Automatic Knowledge (%skill)':
     'Section=skill ' +
-    'Note="Allows using Assurance (%skill) to Recall Knowledge as a free action once per rd"',
+    'Note="Can use Assurance (%skill) to Recall Knowledge as a free action once per rd"',
   'Dubious Knowledge':
     'Section=skill ' +
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
@@ -7350,7 +7352,7 @@ Pathfinder2E.FEATURES = {
   'Quick Disguise':'Section=skill Note="May create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
     'Section=skill ' +
-    'Note="May use High Jump and Long Jump as 1 action without an initial Stride"',
+    'Note="Can use High Jump and Long Jump as 1 action without an initial Stride"',
   'Quick Repair':
     'Section=skill ' +
     'Note="May Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
