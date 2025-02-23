@@ -4138,14 +4138,14 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
-      '"Allows using critical specialization effects of any simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, and whip"',
+      '"Critical hits with a simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, or whip inflict its critical specialization effect when a composition spell is active"',
   'Bard Feats':'Section=feature Note="%V selections"',
   'Bard Skills':
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
   'Composition Spells':
     'Section=magic ' +
-    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and 1 Focus Point"',
   'Enigma':
     'Section=feature,magic ' +
     'Note=' +
@@ -4157,7 +4157,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Critical failures on Will saves are normal failures and suffers half damage on failed Will saves"',
+      '"Successes on Will saves are critical successes, critical failures are normal failures, and suffers half damage on failed Will saves"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
@@ -4171,7 +4171,7 @@ Pathfinder2E.FEATURES = {
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
   'Muses':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
-    'Section=magic Note="Allows learning spells from the occult tradition"',
+    'Section=magic Note="Can learn spells from the occult tradition"',
   'Polymath':
     'Section=feature,magic ' +
     'Note=' +
@@ -4183,28 +4183,29 @@ Pathfinder2E.FEATURES = {
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
   'Signature Spells':
-    'Section=magic Note="Allows heightening a chosen spell of each level"',
+    'Section=magic ' +
+    'Note="Can heighten 1 chosen spell of each level without learning a heightened version"',
   'Vigilant Senses':'Section=skill Note="Perception Master"',
   // Weapon Specialization as above
 
   'Bardic Lore':
     'Section=skill ' +
-    'Note="Allows using Bardic Lore to Recall Knowledge on any topic"',
+    'Note="Can use Bardic Lore to attempt to Recall Knowledge on any topic"',
   'Lingering Composition':
     'Section=magic ' +
     'Note="Knows the Lingering Composition occult spell/+1 Focus Points"',
   'Reach Spell':'Action=1 Section=magic Note="Extends spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
-    'Note="Allows using Performance in place of Deception, Diplomacy, and Intimidation"',
+    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
   'Cantrip Expansion':
     'Section=magic ' +
-    'Note="Allows preparing two additional cantrips each day or adding two additional cantrips to spell repertoire"',
+    'Note="Can prepare two additional cantrips each day or add two additional cantrips to repertoire"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
-      '"Allows using Occultism to add spells to spellbook",' +
-      '"Allows learning 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire"',
+      '"Can prepare 1 spell from spellbook each day, treating it as an additional signature spell if it is in repertoire",' +
+      '"Can use Occultism to add spells to spellbook"',
   'Inspire Competence':
     'Section=magic Note="Knows the Inspire Competence occult cantrip"',
   "Loremaster's Etude":
@@ -4230,23 +4231,23 @@ Pathfinder2E.FEATURES = {
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Hides spellcasting from observers with a successful Performance vs. Perception"',
+    'Note="A successful Performance vs. Perception hides subsequent spellcasting from observers"',
   'Triple Time':'Section=magic Note="Knows the Triple Time occult cantrip"',
   'Versatile Signature':
-    'Section=magic Note="Allows replacing 1 signature spell each day"',
+    'Section=magic Note="Can replace 1 signature spell each day"',
   'Dirge Of Doom':'Section=magic Note="Knows the Dirge Of Doom occult cantrip"',
   'Harmonize':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows having 2 composition spells active simultaneously"',
+    'Note="Can have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="Allows overcoming spellcasting disruption with a successful DC 15 flat check"',
+    'Note="A successful DC 15 flat check negates spellcasting disruption"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
       '"+%{level} untrained skills",' +
-      '"Allows attempting any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
+      '"Can attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
   'Inspire Heroics':
     'Section=magic ' +
     'Note="Knows the Inspire Heroics occult spell/+1 Focus Points"',
@@ -4262,35 +4263,37 @@ Pathfinder2E.FEATURES = {
   'Unusual Composition':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows replacing somatic components of a composition spell with verbal components or vice versa"',
+    'Note="Replaces the somatic components of a composition spell with verbal components or vice versa"',
   'Eclectic Polymath':
     'Section=magic ' +
-    'Note="Allows retaining the chosen Esoteric Polymath spell in repertoire by removing a spell of the same level"',
+    'Note="Can retain a chosen Esoteric Polymath spell in repertoire by removing a spell of the same level"',
   'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Allegro':'Section=magic Note="Knows the Allegro occult cantrip"',
   'Soothing Ballad':
     'Section=magic ' +
     'Note="Knows the Soothing Ballad occult spell/+1 Focus Points"',
   'True Hypercognition':
-    'Action=1 Section=skill Note="Allows using Recall Knowledge 5 times"',
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Can Recall Knowledge up to 5 times in 1 action"',
   'Effortless Concentration':
-    'Action=Free Section=magic Note="Allows extending the duration of 1 spell"',
+    'Action=Free Section=magic Note="Extends the duration of 1 spell"',
   'Studious Capacity':
     'Section=magic ' +
-    'Note="Allows casting 1 additional spell of level %1 or lower each day"',
+    'Note="Can cast 1 additional spell of level %1 or lower each day"',
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
-    'Note="Allows using an additional action each rd to cast a composition cantrip"',
+    'Note="Can use an additional action each rd to cast a composition cantrip"',
   'Impossible Polymath':
     'Section=magic ' +
-    'Note="Allows adding spells from trained traditions to spellbook"',
+    'Note="Can add arcane, divine, and primal spells to spellbook if trained in the corresponding skill"',
   'Fatal Aria':
     'Section=magic Note="Knows the Fatal Aria occult spell/+1 Focus Points"',
   'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
   'Symphony Of The Muse':
     'Section=magic ' +
-    'Note="Allowing have any number of composition spells active simultaneously"',
+    'Note="Can have any number of composition spells active simultaneously"',
 
   // Champion
   // Alertness as above
@@ -7134,8 +7137,7 @@ Pathfinder2E.FEATURES = {
   'Fast Recovery':
     'Section=save ' +
     'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
-  'Feather Step':
-    'Section=ability Note="Allows Stepping into difficult terrain"',
+  'Feather Step':'Section=ability Note="Can Step into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
   'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
   'Incredible Investiture':'Section=magic Note="Allows investing 12 items"',
@@ -7358,7 +7360,7 @@ Pathfinder2E.FEATURES = {
     'Note="May Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
   'Quick Squeeze':
     'Section=skill ' +
-    'Note="May Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
+    'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
   'Quick Swim':
     'Section=skill ' +
     'Note="%{rank.Athletics>=4?\'May Swim at full Speed\':\\"Swimming success increases distance by 5\', critical success by 10\'\\"}"',
@@ -10707,7 +10709,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allows the caster to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
+      '"R60\' Caster can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=Cantrip ' +
     'Trait=Focus ' +
@@ -10731,7 +10733,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"Allows the caster to use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)"',
+      '"Caster can use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)"',
   'Lingering Composition':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -10739,7 +10741,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"Allows a Performance check to increase the duration of a subsequent cantrip composition to 3 rd (critical success 4 rd; failure does not expend a Focus Point)"',
+      '"A successful Performance check increases the duration of a subsequent composition cantrip to 3 rd (critical success 4 rd; failure does not expend a Focus Point)"',
   "Loremaster's Etude":
     'Level=1 ' +
     'Trait=Focus ' +

@@ -259,7 +259,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Bard Skills: Skill Trained (Occultism; Performance; Choose 6 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Bardic Lore: Allows using Bardic Lore to Recall Knowledge on any topic</i></td>
+      <td><i>Bardic Lore: Can use Bardic Lore to attempt to Recall Knowledge on any topic</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -283,13 +283,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Know-It-All: Successful Recall Knowledge checks give additional information</td>
     </tr><tr style="text-align:center">
-      <td>Melodious Spell: <b>(1)</b> Hides spellcasting from observers with a successful Performance vs. Perception</td>
+      <td>Melodious Spell: <b>(1)</b> A successful Performance vs. Perception hides subsequent spellcasting from observers</td>
     </tr><tr style="text-align:center">
-      <td>Quick Squeeze: May Squeeze 5'/rd, or 10'/rd on a critical success</td>
+      <td>Quick Squeeze: Can Squeeze 5'/rd, or 10'/rd on a critical success</td>
     </tr><tr style="text-align:center">
       <td>Steady Balance: Balance successes are critical successes/Never flat-footed during Balance/Allows using Acrobatics to Grab an Edge</td>
     </tr><tr style="text-align:center">
-      <td>Versatile Performance: Allows using Performance in place of Deception, Diplomacy, and Intimidation</td>
+      <td>Versatile Performance: Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites</td>
     </tr><tr style="text-align:center">
       <td>Virtuosic Performer: +1 checks on chosen Performance type</td>
     </tr></table>
@@ -332,7 +332,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Shortbow): Attack Trained (Shortbow)</i></td>
       </tr><tr style="text-align:center">
-        <td>Bard Weapon Expertise: Allows using critical specialization effects of any simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, and whip</td>
+        <td>Bard Weapon Expertise: Critical hits with a simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, or whip inflict its critical specialization effect when a composition spell is active</td>
       </tr></table>
 </td>
     </tr></table>
@@ -563,13 +563,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Illusory Scene (O5 Ill): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Competence (O0 Enc): <b>(1)</b> R60' Allows the caster to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
+      <td>Inspire Competence (O0 Enc): <b>(1)</b> R60' Caster can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
     </tr><tr style="text-align:left">
       <td>Inspire Courage (O0 Enc): <b>(1)</b> 60' emanation gives +1 attack, damage, and saves vs. fear for 1 rd</td>
     </tr><tr style="text-align:left">
       <td>Inspire Defense (O0 Enc): <b>(1)</b> 60' emanation gives +1 AC and saves, plus resistance of half the spell level to physical damage, for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Heroics (O4 Enc): <b>(F)</b> Allows the caster to use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)</td>
+      <td>Inspire Heroics (O4 Enc): <b>(F)</b> Caster can use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)</td>
     </tr><tr style="text-align:left">
       <td>Invisibility (O2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> lasts 1 min, and hostile action does not end)</td>
     </tr><tr style="text-align:left">
@@ -591,7 +591,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Light (O0 Evo): <b>(2)</b> Touched object lights a 20' radius until next daily prep (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
-      <td>Lingering Composition (O1 Enc): <b>(F)</b> Allows a Performance check to increase the duration of a subsequent cantrip composition to 3 rd (critical success 4 rd; failure does not expend a Focus Point)</td>
+      <td>Lingering Composition (O1 Enc): <b>(F)</b> A successful Performance check increases the duration of a subsequent composition cantrip to 3 rd (critical success 4 rd; failure does not expend a Focus Point)</td>
     </tr><tr style="text-align:left">
       <td>Locate (O3 Div): <b>(10 min)</b> R500' Reveals direction to a named object or the nearest object of a named type while sustained (<b>heightened 5th</b> reveals direction to a creature or ancestry)</td>
     </tr><tr style="text-align:left">
@@ -855,7 +855,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Composition Spells: Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and +1 Focus Point</i></td>
+      <td><i>Composition Spells: Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
       <td><i>Enigma: Knows the True Strike occult spell</i></td>
     </tr><tr style="text-align:center">
@@ -863,7 +863,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Loremaster's Etude: Knows the Loremaster's Etude occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Occult Spellcasting: Allows learning spells from the occult tradition</i></td>
+      <td><i>Occult Spellcasting: Can learn spells from the occult tradition</i></td>
     </tr><tr style="text-align:center">
       <td><i>Polymath: Knows the Unseen Servant occult spell</i></td>
     </tr><tr style="text-align:center">
@@ -873,7 +873,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Signature Spells: Allows heightening a chosen spell of each level</td>
+      <td>Signature Spells: Can heighten 1 chosen spell of each level without learning a heightened version</td>
     </tr></table>
 </td>
   </tr></table>
