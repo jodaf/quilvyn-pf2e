@@ -569,9 +569,6 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
-      '"features.Liberator ? 1:Liberating Step",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -4433,7 +4430,7 @@ Pathfinder2E.FEATURES = {
   "Champion's Code":'Section=feature Note="1 selection"',
   "Champion's Reaction":
     'Section=feature ' +
-    'Note="Has the Champion\'s Reaction for chosen champion cause"',
+    'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -4518,14 +4515,13 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
   "Deity's Domain (Zeal)":
     'Section=magic Note="Knows the Weapon Surge divine spell"',
-  'Devotion Spells':
-    'Section=magic Note="Has a focus pool and +1 Focus Point"',
+  'Devotion Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
   'Divine Ally':
     'Section=feature ' +
     'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
   'Divine Ally (Blade)':
     'Section=combat ' +
-    'Note="Allows applying choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day; also allows using the weapon\'s critical specialization effect"',
+    'Note="Can apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
   'Divine Ally (Shield)':
     'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
   'Divine Ally (Steed)':
@@ -4549,14 +4545,14 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' Liberating Step allows all allies to Step if target ally does not attempt to break free"',
   'Exalt (Paladin)':
     'Section=combat ' +
-    'Note="R15\' Retributive Strike allows allies a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against target"',
+    'Note="R15\' Retributive Strike allows allies to use a Reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against target"',
   'Exalt (Redeemer)':
     'Section=combat ' +
-    'Note="R15\' Allows using Glimpse Of Redemption to give allies %{level} damage resistance"',
+    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to damage"',
   'Glimpse Of Redemption':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Allows negating damage to a struck ally or giving the ally damage resistance %{2+level} and inflicting enfeebled 2 on triggering foe for 1 rd (foe\'s choice)"',
+    'Note="R15\' Negates damage to a struck ally or gives the ally damage resistance %{2+level} and inflicts enfeebled 2 on the triggering foe for 1 rd (foe\'s choice)"',
   // Greater Weapon Specialization as above
   "Hero's Defiance":
     'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
@@ -4567,27 +4563,30 @@ Pathfinder2E.FEATURES = {
   'Liberating Step':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Gives an ally damage resistance %{2+level}, an Escape action or save from a restraint, and a Step"',
+    'Note="R15\' Gives an ally damage resistance %{2+level}, an Escape action or save from a restraint as a free action, and a Step as a free action"',
   'Liberator':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Liberating Step feature",' +
       '"Must always respect others\' freedom and oppose tyranny",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Retributive Strike feature",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the Lay On Hands divine spell"',
   'Redeemer':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2}, plus make a melee Strike against the attacking foe if within reach"',
+    'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
   // Shield Block as below
   'The Tenets Of Good':
     'Section=feature ' +
@@ -4602,67 +4601,66 @@ Pathfinder2E.FEATURES = {
 
   'Ranged Reprisal':
     'Section=combat ' +
-    'Note="Allows making a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
+    'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
   'Unimpeded Step':
     'Section=combat ' +
     'Note="Liberating Step target may Step normally in any terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
-    'Note="Allows making a Glimpse Of Redemption target stupefied instead of enfeebled"',
+    'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
   'Divine Grace':
     'Action=Reaction Section=combat Note="Gives +2 save vs. a spell"',
   'Dragonslayer Oath':
     'Section=combat,feature ' +
     'Note=' +
-      '"%V when used with an evil dragon",' +
+      '"%V when used vs. an evil dragon",' +
       '"Must attempt to slay evil dragons whenever possible"',
   'Fiendsbane Oath':
     'Section=combat,feature ' +
     'Note=' +
-      '"%V when used with a fiend",' +
+      '"%V when used vs. a fiend",' +
       '"Must attempt to banish or slay fiends whenever possible"',
   'Shining Oath':
     'Section=combat,feature ' +
     'Note=' +
-      '"%V when used with undead",' +
+      '"%V when used vs. undead",' +
       '"Must attempt to put undead to rest whenever possible"',
   'Vengeful Oath':
     'Section=feature,magic ' +
     'Note=' +
       '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
-      '"Allows using <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
+      '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
   'Aura Of Courage':
     'Section=save ' +
-    'Note="R15\' Reduces value of frightened condition for self and allies by 1"',
+    'Note="Reduces initial value of frightened condition by 1; reduction of frightened condition also reduces fright of allies within 15\'"',
   'Divine Health':
     'Section=save ' +
-    'Note="Gives +1 vs. disease, and changes successes vs. disease into critical successes"',
+    'Note="+1 vs. disease, and successes vs. disease are critical successes"',
   'Mercy':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows <i>Lay On Hands</i> to also counteract choice of fear or paralysis"',
+    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract fear or paralysis"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the Litany Against Wrath divine spell"',
+    'Note="Knows the Litany Against Wrath divine spell/+1 Focus Points"',
   'Loyal Warhorse':
     'Section=feature Note="Mount is mature and will never attack self"',
   'Shield Warden':
-    'Section=combat ' +
-    'Note="Allows using Shield Block to protect an adjacent ally"',
+    'Section=combat Note="Can use Shield Block to protect an adjacent ally"',
   'Smite Evil':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Blade ally inflicts +4 HP good (master proficiency +6 HP) vs. a target for 1 rd, extended as long as the target attacks an ally"',
+    'Note="Blade ally inflicts +4 HP good, or +6 HP with master proficiency, vs. a chosen target for 1 rd, extended as long as the target attacks an ally"',
   'Greater Mercy':
     'Section=magic ' +
-    'Note="Allows <i>Lay On Hands</i> to also counteract blinded, deafened, sickened, or slowed"',
+    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="Allows <i>Lay On Hands</i> on mount to restore 10 Hit Points +10 Hit Points per heightened level"',
+    'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points +10 Hit Points per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
-    'Note="Allows using an additional Reaction for a Shield Block once per turn"',
+    'Note="Can use an additional Reaction for a Shield Block once per turn"',
   'Second Ally':'Section=feature Note="+1 selection"',
   'Sense Evil':
     'Section=feature ' +
@@ -4674,36 +4672,36 @@ Pathfinder2E.FEATURES = {
   'Litany Against Sloth':
     'Section=magic ' +
     'Note=' +
-      '"+1 Focus Points/Knows the Litany Against Sloth divine spell"',
+      '"Knows the Litany Against Sloth divine spell/+1 Focus Points"',
   'Radiant Blade Spirit':
     'Section=combat ' +
-    'Note="Allows choosing <i>flaming</i> or <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
+    'Note="Can choose <i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
   'Shield Of Reckoning':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows applying Shield Block and Champion\'s Reaction to an ally"',
+    'Note="Uses Shield Block on an ally and Champion\'s Reaction on the attacking foe"',
   'Affliction Mercy':
     'Section=magic ' +
-    'Note="Allows <i>Lay On Hands</i> to also counteract a curse, disease, or poison"',
+    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract a curse, disease, or poison"',
   'Aura Of Faith':
     'Section=combat ' +
-    'Note="R15\' Causes all self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
+    'Note="R15\' All self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
   'Blade Of Justice':
     'Action=2 ' +
-    'Section=combat Note="Adds two extra damage dice on a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
+    'Section=combat Note="Adds 2 extra damage dice to a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the Champion\'s Sacrifice divine spell"',
+    'Note="Knows the Champion\'s Sacrifice divine spell/+1 Focus Points"',
   'Divine Wall':
-    'Section=combat Note="Makes adjacent spaces difficult terrain for foes"',
+    'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
   'Lasting Doubt':
     'Section=combat ' +
-    'Note="Extends effects of Glimpse Of Redemption at half intensity for 1 min"',
+    'Note="Extends the effects of Glimpse Of Redemption at half intensity for 1 min"',
   'Liberating Stride':
     'Section=combat ' +
     'Note="Target of Liberating Step may Stride half their Speed"',
   'Anchoring Aura':
-    'Section=magic Note="R15\' Aura counteracts teleportation spells cast by fiends"',
+    'Section=magic Note="R15\' Aura attempts to counteract teleportation spells cast by fiends"',
   'Aura Of Life':
     'Section=save ' +
     'Note="R15\' Gives resistance 5 to negative energy and +1 saves vs. necromancy"',
@@ -4714,33 +4712,36 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
   'Divine Reflexes':
     'Section=combat ' +
-    'Note="Allows using an additional Reaction for Champion\'s Reaction once per turn"',
+    'Note="Can use an additional Reaction for Champion\'s Reaction once per turn"',
   'Litany Of Righteousness':
     'Section=magic ' +
-    'Note="+1 Focus Points/Knows the Litany Of Righteousness divine spell"',
+    'Note="Knows the Litany Of Righteousness divine spell/+1 Focus Points"',
   'Wyrmbane Aura':
     'Section=save ' +
-    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison (resistance %{level//2} from dragons)"',
+    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison, or resistance %{level//2} if damage comes from dragon breath"',
   'Auspicious Mount':
     'Section=feature ' +
     'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
   'Instrument Of Zeal':
     'Section=combat ' +
-    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 for 1 rd"',
+    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts an additional damage die and slowed 1 for 1 rd"',
   'Shield Of Grace':
     'Section=combat ' +
-    'Note="Allows self to suffer half of excess damage when using Shield Block to protect an ally"',
+    'Note="May suffer half of excess damage when using Shield Block to protect an ally"',
   'Celestial Form':
-    'Section=feature Note="Has a celestial form with Darkvision and flight"',
+    'Section=ability,feature ' +
+    'Note=' +
+      '"Has a %{speed}\' fly speed",' +
+      '"Has the Darkvision feature"',
   'Ultimate Mercy':
     'Section=magic ' +
-    'Note="Allows <i>Lay On Hands</i> to restore life to a target who died in the previous rd"',
+    'Note="Can use <i>Lay On Hands</i> to restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd"',
   'Celestial Mount':
     'Section=feature ' +
-    'Note="Mount has a celestial form with Darkvision, +40 Hit Points, weakness 10 to evil damage, and flight"',
+    'Note="Mount has Darkvision, +40 Hit Points, and weakness 10 to evil damage and can fly at full Speed"',
   'Radiant Blade Master':
     'Section=combat ' +
-    'Note="Allows choosing <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
+    'Note="Can choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
   'Shield Paragon':
     'Section=combat,combat ' +
     'Note=' +
@@ -7140,14 +7141,14 @@ Pathfinder2E.FEATURES = {
   'Feather Step':'Section=ability Note="Can Step into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
   'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
-  'Incredible Investiture':'Section=magic Note="Allows investing 12 items"',
+  'Incredible Investiture':'Section=magic Note="Can invest 12 items"',
   'Ride':
     'Section=feature ' +
     'Note="Automatically succeeds when using Command an Animal to move/Mount acts on self turn"',
   'Shield Block':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="When shield is raised, it negates damage up to its hardness and absorbs half of any remaining damage"',
+    'Note="Raised shield negates damage up to its hardness and absorbs half of any remaining damage"',
   'Toughness':
     'Section=combat,save ' +
     'Note=' +
@@ -13513,6 +13514,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
     );
+    rules.defineRule('featureNotes.liberator',
+      "featureNotes.champion'sReaction", '=', 'null' // italics
+    );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.deityAndCause', '=', '1'
     );
@@ -13577,10 +13581,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
     rules.defineRule('magicNotes.deity',
-      'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
+      'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
     );
     rules.defineRule('magicNotes.deityAndCause',
-      'deitySpells', '=', '"<i>" + source.replaceAll(/[0-9]+:/g, "").replaceAll("/", "</i>, <i>") + "</i>"'
+      'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
     );
     rules.defineRule
       ('magicNotes.warpriest', 'level', '=', 'source<19 ? "Expert" : "Master"');

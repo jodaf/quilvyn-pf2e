@@ -115,7 +115,7 @@ var attributes = {
         <td><b>Feats</b>: Advanced Concoction; Advanced Devotion; Advanced Dogma; Advanced Fury; Advanced Muse's Whispers; Advanced Wilding; Alchemist Dedication; Assurance (Nature); Assurance (River Lore); Barbarian Dedication; Barbarian Resiliency; Bard Dedication; Basic Bard Spellcasting; Basic Cleric Spellcasting; Basic Concoction; Basic Devotion; Basic Dogma; Basic Druid Spellcasting; Basic Fury; Basic Muse's Whispers; Basic Wilding; Canny Acumen (Fortitude); Champion Dedication; Champion Resiliency; Champion's Reaction; Cleric Dedication; Clever Improviser; Cognitive Loophole; Counter Perform; Defensive Roll; Diverse Armor Expert; Divine Ally; Divine Breadth; Dread Striker; Druid Dedication; Enduring Alchemy; Experienced Smuggler; Expert Alchemy; Expert Bard Spellcasting; Expert Cleric Spellcasting; Expert Druid Spellcasting; Far Lobber; General Training; Haughty Obstinacy; Healing Touch; Impressive Performance; Incredible Initiative; Inspirational Performance; Instinct Ability; Juggernaut's Fortitude; Magical Trickster; Master Alchemy; Master Bard Spellcasting; Master Cleric Spellcasting; Master Druid Spellcasting; Mercy; Mobility; Natural Ambition; Natural Skill; Occult Breadth; Order Spell; Powerful Sneak; Primal Breadth; Quick Alchemy; Quick Draw; Raging Intimidation; Reactive Interference; Ride; Skill Training (Accounting Lore); Skill Training (Astral Plane Lore); Skill Training (Cave Lore); Skill Training (Circus Lore); Skill Training (Engineering Lore); Skill Training (Gnome Lore); Skill Training (Mining Lore); Skill Training (Occultism); Skill Training (Plains Lore); Skill Training (River Lore); Skill Training (Sailing Lore); Skill Training (Society); Skill Training (Survival); Skill Training (Theater Lore); Tactical Debilitations; Toughness; Twist The Knife; Weapon Proficiency (Pick); Weight Of Guilt</td>
         <td><b>Rogue Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks); Class Trained (Rogue); Debilitating Strike; Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; Double Debilitation; Evasion; General Feats; Great Fortitude; Greater Weapon Specialization; Improved Evasion; Incredible Senses; Light Armor Expertise; Master Tricks; Perception Expert; Rogue Expertise; Rogue Feats; Rogue Key Ability; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Scoundrel; Skill Feats; Skill Increases; Slippery Mind; Sneak Attack; Surprise Attack; Vigilant Senses; Weapon Specialization; Weapon Tricks</td>
         <td><b>Druid Features</b>: Leaf</td>
-        <td><b>Champion Features</b>: Dexterity; Divine Ally (Blade); Glimpse Of Redemption; Redeemer</td>
+        <td><b>Champion Features</b>: Dexterity; Divine Ally (Blade); Redeemer</td>
         <td><b>Bard Features</b>: Enigma</td>
         <td><b>Barbarian Features</b>: Animal Instinct (Ape); Bestial Rage (Ape)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
@@ -163,7 +163,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Champion Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Champion's Reaction: Has the Champion's Reaction for chosen champion cause</i></td>
+        <td><i>Champion's Reaction: Can use the Champion's Reaction for the chosen champion cause</i></td>
       </tr><tr style="text-align:center">
         <td><i>Cleric Dedication: Has the Anathema and Deity features</i></td>
       </tr><tr style="text-align:center">
@@ -198,6 +198,8 @@ var attributes = {
         <td><i>Natural Ambition: +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Raging Intimidation: Has the Intimidating Glare feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Redeemer: Has the Glimpse Of Redemption feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
@@ -446,13 +448,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
-        <td>Divine Ally (Blade): Allows applying choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day; also allows using the weapon's critical specialization effect</td>
+        <td>Divine Ally (Blade): Can apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Double Debilitation: Debilitating Strike inflicts choice of two debilitations</td>
       </tr><tr style="text-align:center">
         <td>Dread Striker: Frightened foes are flat-footed vs. self attacks</td>
       </tr><tr style="text-align:center">
-        <td>Glimpse Of Redemption: <b>(R)</b> R15' Allows negating damage to a struck ally or giving the ally damage resistance 20 and inflicting enfeebled 2 on triggering foe for 1 rd (foe's choice)</td>
+        <td>Glimpse Of Redemption: <b>(R)</b> R15' Negates damage to a struck ally or gives the ally damage resistance 20 and inflicts enfeebled 2 on the triggering foe for 1 rd (foe's choice)</td>
       </tr><tr style="text-align:center">
         <td>Mobility: Allows Striding at half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
@@ -478,7 +480,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Weapon Tricks: A critical hit vs. a flat-footed foe with an unarmed attack or an agile, finesse, or rogue weapon inflicts its critical specialization effect</td>
       </tr><tr style="text-align:center">
-        <td>Weight Of Guilt: Allows making a Glimpse Of Redemption target stupefied instead of enfeebled</td>
+        <td>Weight Of Guilt: Can make a Glimpse Of Redemption target stupefied instead of enfeebled</td>
       </tr></table>
 </td>
     </tr></table>
@@ -589,7 +591,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Magical Trickster: Spell attacks vs. flat-footed foes inflict sneak attack damage</td>
     </tr><tr style="text-align:center">
-      <td>Mercy: <b>(1)</b> Allows <i>Lay On Hands</i> to also counteract choice of fear or paralysis</td>
+      <td>Mercy: <b>(1)</b> Subsequent <i>Lay On Hands</i> can also attempt to counteract fear or paralysis</td>
     </tr></table>
 </td>
   </tr></table>
