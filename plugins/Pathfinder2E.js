@@ -3964,7 +3964,7 @@ Pathfinder2E.FEATURES = {
   'Moment Of Clarity':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows use of concentration actions for the remainder of the turn during rage"',
+    'Note="Can use concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
     'Section=feature,feature,skill ' +
     'Note=' +
@@ -4212,17 +4212,17 @@ Pathfinder2E.FEATURES = {
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Enigma feature/+1 Class Feat",' +
-      '"Allows selecting enigma muse feats"',
+      '"Can select enigma muse feats"',
   'Multifarious Muse (Maestro)':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Maestro feature/+1 Class Feat",' +
-      '"Allows selecting maestro muse feats"',
+      '"Can select maestro muse feats"',
   'Multifarious Muse (Polymath)':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Polymath feature/+1 Class Feat",' +
-      '"Allows selecting polymath muse feats"',
+      '"Can select polymath muse feats"',
   'Inspire Defense':
     'Section=magic Note="Knows the Inspire Defense occult cantrip"',
   'Melodious Spell':
@@ -5202,7 +5202,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
-    'Note="Allows using Diplomacy with animals to Make An Impression and to make simple Requests"',
+    'Note="Can use Diplomacy with animals to Make An Impression and to make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, or Outwit\':\'\')+\' effects\':\'\'}"',
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
@@ -5215,54 +5215,53 @@ Pathfinder2E.FEATURES = {
   'Widen Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Increases the effect of a 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', and the effect of a longer line or cone spell by 10\'"',
+    'Note="Increases the effect of a subsequent 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
   'Wild Shape':'Section=magic Note="Knows the Wild Shape primal spell"',
   'Call Of The Wild':
     'Section=magic ' +
-    'Note="Allows spending 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
+    'Note="Can spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
-    'Section=feature ' +
-    'Note="Allows selecting 4 familiar or master abilities each day"',
+    'Section=feature Note="Can select 4 familiar or master abilities each day"',
   'Order Explorer (Animal)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Allows learning Animal order feats"',
+      '"Can select Animal order feats"',
   'Order Explorer (Leaf)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Allows learning Leaf order feats"',
+      '"Can select Leaf order feats"',
   'Order Explorer (Storm)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Allows learning Storm order feats"',
+      '"Can select Storm order feats"',
   'Order Explorer (Wild)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Allows learning Wild order feats"',
+      '"Can select Wild order feats"',
   // Poison Resistance as above
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows casting <i>Wild Shape</i> 2 levels lower to retain shape for up to 1 hr"',
+    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts for 1 hr"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
   'Thousand Faces':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Small or Medium humanoid"',
+    'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
   'Woodland Stride':
     'Section=ability ' +
-    'Note="Allows normal movement over difficult terrain caused by plants or fungi"',
+    'Note="Moves normally over difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
-    'Note="Allows using Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
+    'Note="Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
   'Insect Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
+    'Note="Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
   'Order Magic (Animal)':
     'Section=magic Note="Knows the Heal Animal primal spell"',
   'Order Magic (Leaf)':
@@ -5275,25 +5274,25 @@ Pathfinder2E.FEATURES = {
   'Storm Retribution':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows casting <i>Tempest Surge</i> in reaction to a foe critical melee hit to push the foe 5\' (Reflex negates; critical failure pushes 10\')"',
+    'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (Reflex negates; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Large dinosaur and to gain +1 on Athletics checks"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 on Athletics checks"',
   'Fey Caller':
     'Section=magic ' +
     'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
   'Incredible Companion':
     'Section=feature ' +
-    'Note="Animal Companion gains choice of nimble or savage characteristics"',
+    'Note="Animal Companion has choice of nimble or savage characteristics"',
   'Soaring Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird and to gain +1 on Acrobatics checks"',
+    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 on Acrobatics checks"',
   'Wind Caller':
     'Section=magic ' +
     'Note="Knows the Stormwind Flight primal spell/+1 Focus Points"',
   'Elemental Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Medium elemental with resistance 5 to fire"',
+    'Note="Can use <i>Wild Shape</i> to change into a Medium elemental with resistance 5 to fire"',
   'Healing Transformation':
     'Action=1 ' +
     'Section=magic ' +
@@ -5301,16 +5300,16 @@ Pathfinder2E.FEATURES = {
   'Overwhelming Energy':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent spell ignores resistance %{level} to choice of energy"',
+    'Note="Subsequent spell ignores resistance %{level} to energy"',
   'Plant Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Large plant with resistance 5 to poison"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large plant with resistance 5 to poison"',
   'Side By Side':
     'Section=combat ' +
     'Note="Self and companion automatically flank a foe adjacent to both"',
   'Dragon Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a Large dragon with resistance 5 to choice of acid, cold, electricity, fire, or poison"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to choice of acid, cold, electricity, fire, or poison"',
   'Green Tongue':
     'Section=magic ' +
     'Note="Self and any leshy familiar have continuous <i>Speak With Plants</i> effects"',
@@ -5331,29 +5330,28 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has plant, not humanoid, trait",' +
-      '"Allows using <i>Tree Shape</i> effects at will; tree form raises AC to 30, allows 10 min in sunlight to restore half Hit Points, and allows daily rest to restore all Hit Points and remove all non-permanent conditions, poisons, and diseases"',
+      '"Can use <i>Tree Shape</i> effects at will; tree form raises AC to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
     'Note="Knows the Impaling Briars primal spell/+1 Focus Points"',
   'Monstrosity Shape':
     'Section=magic ' +
-    'Note="Allows using <i>Wild Shape</i> to change into a %{$\'features.Soaring Shape\'?\'phoenix, \':\'\'}purple worm or sea serpent"',
+    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Soaring Shape\'?\'phoenix, purple worm,\':\'purple worm\'} or sea serpent"',
   'Invoke Disaster':
     'Section=magic Note="Knows the Storm Lord primal spell/+1 Focus Points"',
   'Perfect Form Control':
-    'Section=magic ' +
-    'Note="Allows casting <i>Wild Shape</i> 2 levels lower to retain shape permanently"',
+    'Section=magic Note="Can use Form Control to retain shape permanently"',
   'Primal Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   "Hierophant's Power":'Section=magic Note="+1 10th level spell slot"',
   'Leyline Conduit':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows casting instantaneous spells of 5th level and lower without expending a spell slot"',
+    'Note="Subsequent casting of an instantaneous spell of 5th level or lower does not expend a spell slot once per min"',
   'True Shapeshifter':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Allows changing shapes during <i>Wild Shape</i> and using <i>Wild Shape</i> to change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
+    'Note="Changes shape during <i>Wild Shape</i>; can change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
 
   // Fighter
   // Armor Expertise as above
@@ -7247,7 +7245,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows repeating Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
     'Section=skill ' +
-    'Note="Allows using Society to impersonate a noble or to Make an Impression on one"',
+    'Note="Can use Society to impersonate a noble or to Make an Impression on one"',
   'Craft Anything':
     'Section=skill Note="Negates need for secondary Crafting requirements"',
   'Divine Guidance':
@@ -7427,7 +7425,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
     'Section=feature ' +
-    'Note="Allows teaching an animal to perform a trick with 7 days\' training and a successful Nature check"',
+    'Note="Can use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
     'Note="Does not suffer flat-footed from being in water/Suffers no penalty when using bludgeoning and slashing weapons in water"',
@@ -16006,6 +16004,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'armor') {
+    // TODO druids can't use metal armor
     attrs = this.applyRules(attributes);
     let armors = this.getChoices('armors');
     choices = [];
@@ -16230,6 +16229,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'name') {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
+    // TODO druids can't use metal shields
     // The rules have no restrictions on shield use, but it seems weird to give
     // Wizards, etc. a shield, and so we restrict shields to characters with a
     // rank in armor.
