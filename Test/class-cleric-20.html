@@ -235,7 +235,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Mercantile Lore): Can take an automatic 32 on Mercantile Lore checks</td>
     </tr><tr style="text-align:center">
-      <td>Bargain Hunter: Gives +2 initial gold/Allows using Diplomacy to Earn Income</td>
+      <td>Bargain Hunter: +2 initial gold/Can use Diplomacy to Earn Income</td>
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May attempt any skill untrained</td>
     </tr><tr style="text-align:center">
@@ -276,7 +276,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Deadly Simplicity: +1 damage die step on Crossbow</i></td>
+        <td><i>Deadly Simplicity: Crossbow inflicts +1 damage die step</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deity: Attack Trained (Crossbow)</i></td>
       </tr><tr style="text-align:center">
@@ -294,23 +294,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Bastard Sword as one category simpler</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Warpriest: Defense Expert (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)Attack Expert (Crossbow; Simple Weapons; Unarmed Attacks)</i></td>
+        <td><i>Warpriest: Defense Expert (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)/Attack Expert (Crossbow; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td>Align Armament (Lawful): <b>(1)</b> Touched weapon inflicts +1d6 HP lawful for 1 min</td>
       </tr><tr style="text-align:center">
-        <td>Channel Smite: <b>(2)</b> Allows adding the effects of <i>Heal</i> or <i>Harm</i> to a melee Strike</td>
+        <td>Channel Smite: <b>(2)</b> Adds the damage from <i>Heal</i> or <i>Harm</i> to a melee Strike</td>
       </tr><tr style="text-align:center">
-        <td>Cloistered Cleric: Allows using critical specialization effects of Crossbow</td>
+        <td>Cloistered Cleric: Critical hits with a crossbow inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
-        <td>Incredible Improvisation: <b>(F)</b> Gains +4 on an untrained skill check once per day</td>
+        <td>Incredible Improvisation: <b>(F)</b> Gives +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Replenishment Of War: Causes successful Strikes with Crossbow give self 10 temporary Hit Points (critical hit 20 temporary Hit Points) for 1 rd</td>
+        <td>Replenishment Of War: Successful Strikes with a crossbow give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Shared Replenishment: R10' Allows giving temporary Hit Points from Replenishment Of War to an ally</td>
+        <td>Shared Replenishment: Can give the temporary Hit Points from Replenishment Of War to any ally within 10'</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage up to its hardness and absorbs half of any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Warpriest: Allows using critical specialization effects of Crossbow</td>
+        <td>Warpriest: Critical hits with a crossbow inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, and +4 HP damage with expert, master, and legendary weapon proficiency</td>
       </tr></table>
@@ -356,7 +356,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: D0: 5; D10: 2; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 3; D7: 3; D8: 3; D9: 13</td>
+        <td><b>Spell Slots</b>: D0: 5; D10: 2; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 3; D7: 3; D8: 3; D9: 3</td>
         <td><b>Focus Points</b>: 2</td>
         <td><b>Attack</b>: Divine: +33 (wisdom; legendary)</td>
         <td><b>Spell DC</b>: Divine: 43 (wisdom; legendary)</td>
@@ -383,15 +383,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Cloistered Cleric: Spell Legendary (Divine)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Domain Initiate (Travel): Knows the Agile Feet divine spell/Has a focus pool and +1 Focus Point</i></td>
+      <td><i>Domain Initiate (Travel): Knows the Agile Feet divine spell/Has a focus pool and 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Harmful Font: +5 D9 slots</i></td>
+      <td><i>Harming Hands: Increases <i>Harm</i> die type to d10</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Harming Hands: <i>Harm</i> die type increases to d10</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Healing Font: +5 D9 slots</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Healing Hands: <i>Heal</i> die type increases to d10</i></td>
+      <td><i>Healing Hands: Increases <i>Heal</i> die type to d10</i></td>
     </tr><tr style="text-align:center">
       <td><i>Maker Of Miracles: +1 10th level spell slot</i></td>
     </tr><tr style="text-align:center">
@@ -399,81 +395,85 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Warpriest: Spell Master (Divine)</i></td>
     </tr><tr style="text-align:center">
-      <td>Avatar's Audience: Allows speaking for Abadar, conducting the <i>Commune</i> ritual to contact Abadar without cost, and using <i>Plane Shift</i> to travel to Abadar's realm once per day</td>
+      <td>Avatar's Audience: Can speak for Abadar, conduct the <i>Commune</i> ritual to contact Abadar without cost, and use <i>Plane Shift</i> to travel to Abadar's realm once per day</td>
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare two additional cantrips each day or add two additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Cast Down: <b>(1)</b> Modifies <i>Harm</i> or <i>Heal</i> to also inflict knocked prone (target critical fail also inflicts -10 Speed for 1 min)</td>
+      <td>Cast Down: <b>(1)</b> Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Castigating Weapon: Damaging a fiend with <i>Heal</i> gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd</td>
+      <td>Castigating Weapon: Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Channeled Succor: Allows casting <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i></td>
+      <td>Channeled Succor: Can cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i></td>
     </tr><tr style="text-align:center">
-      <td>Command Undead: <b>(1)</b> Allows using <i>Harm</i> to control undead up to level 17 for 1 min (Will negates; critical failure extends to 1 hr)</td>
+      <td>Command Undead: <b>(1)</b> <i>Harm</i> controls target undead up to level 17 for 1 min (Will negates; critical failure extends to 1 hr)</td>
     </tr><tr style="text-align:center">
       <td>Communal Healing: Casting <i>Heal</i> on another creature restores Hit Points to self equal to the spell level</td>
     </tr><tr style="text-align:center">
-      <td>Cremate Undead: Causes <i>Heal</i> cast upon undead to inflict persistent fire damage equal to the spell level</td>
+      <td>Cremate Undead: <i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level</td>
     </tr><tr style="text-align:center">
-      <td>Defensive Recovery: <b>(1)</b> Subsequently casting a single-target <i>Heal</i> also gives +2 AC and saves for 1 rd</td>
+      <td>Defensive Recovery: <b>(1)</b> Subsequent <i>Heal</i> cast on a single target also gives +2 AC and saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Deity's Protection: Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Deity: Has access to <i>Illusory Object</i>, <i>Creation</i>, and <i>Magnificent Mansion</i> spells</td>
     </tr><tr style="text-align:center">
-      <td>Directed Channel: Allows limiting the effects of an area <i>Harm</i> or <i>Heal</i> to a 60' cone</td>
+      <td>Directed Channel: Can direct the effects of an area <i>Harm</i> or <i>Heal</i> into a 60' cone</td>
     </tr><tr style="text-align:center">
-      <td>Divine Spellcasting: Allows learning spells from the divine tradition</td>
+      <td>Divine Spellcasting: Can learn spells from the divine tradition</td>
     </tr><tr style="text-align:center">
-      <td>Divine Weapon: <b>(F)</b> Allows casting a spell that also causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of turn</td>
+      <td>Divine Weapon: <b>(F)</b> Using a divine spell slot causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of the turn once per turn</td>
     </tr><tr style="text-align:center">
       <td>Domain Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
       <td>Domain Wellspring: Refocus restores 3 Focus Points</td>
     </tr><tr style="text-align:center">
-      <td>Echoing Channel: <b>(1)</b> Subsequent 2-action, single-target <i>Harm</i> or <i>Heal</i> also causes 1-action effects on an adjacent creature</td>
+      <td>Echoing Channel: <b>(1)</b> Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Antimagic: Allows using Emblazon Armament on a shield to give a bonus on saves vs. magic and allow Shield Block vs. spells, or on a weapon to have a critical hit also allow a counteract attempt vs. a spell using 1/2 the wielder's level</td>
+      <td>Emblazon Antimagic: Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using 1/2 the wielder's level</td>
     </tr><tr style="text-align:center">
       <td>Emblazon Armament: 10 min process gives a shield +1 Hardness or a weapon +1 HP damage</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Energy: Allows using Emblazon Armament on a shield to give it a save bonus and Shield Block vs. chosen energy type (having a matching domain spell also gives it +10 resistance), or on a weapon to have it inflict +1d4 HP chosen energy type (+1d6 HP with a matching domain spell)</td>
+      <td>Emblazon Energy: Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type (plus resistance 10 with a matching domain spell), or to cause a weapon to inflict +1d4 HP energy type damage (or +1d6 HP with a matching domain spell)</td>
     </tr><tr style="text-align:center">
       <td>Eternal Bane: R15' Aura gives continuous level 10 <i>Bane</i> effects</td>
     </tr><tr style="text-align:center">
       <td>Eternal Blessing: R15' Aura gives continuous level 10 <i>Bless</i> effects</td>
     </tr><tr style="text-align:center">
-      <td>Fast Channel: Allows using 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i></td>
+      <td>Fast Channel: Can use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
-      <td>Heroic Recovery: <b>(1)</b> Subsequently casting a single-target <i>Heal</i> also gives the target +5 Speed, +1 attack, and +1 HP damage for 1 rd</td>
+      <td>Harmful Font: Can cast <i>Harm</i> at level 10 an additional 5 times per day</td>
     </tr><tr style="text-align:center">
-      <td>Holy Castigation: Allows using <i>Heal</i> to damage fiends</td>
+      <td>Healing Font: Can cast <i>Heal</i> at level 10 an additional 5 times per day</td>
     </tr><tr style="text-align:center">
-      <td>Improved Command Undead: Target success, failure, or critical failure vs. Command Undead gives self control for 1 rd, 10 min, or 24 hr</td>
+      <td>Heroic Recovery: <b>(1)</b> Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Improved Communal Healing: Allows giving additional Hit Points from Communal Healing to another</td>
+      <td>Holy Castigation: Can use <i>Heal</i> to damage fiends</td>
     </tr><tr style="text-align:center">
-      <td>Improved Swift Banishment: Allows sacrificing any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty</td>
+      <td>Improved Command Undead: Command Undead gives control of target for 1 rd, 10 min, or 24 hr on save success, failure, or critical failure</td>
     </tr><tr style="text-align:center">
-      <td>Metamagic Channel: <b>(F)</b> Allows applying a metamagic action to <i>Harm</i> and <i>Heal</i></td>
+      <td>Improved Communal Healing: Can give the additional Hit Points from Communal Healing to another within range of the spell</td>
     </tr><tr style="text-align:center">
-      <td>Necrotic Infusion: <b>(1)</b> Allows <i>Harm</i> cast on an undead to cause the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in next rd</td>
+      <td>Improved Swift Banishment: Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty</td>
+    </tr><tr style="text-align:center">
+      <td>Metamagic Channel: <b>(F)</b> Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i></td>
+    </tr><tr style="text-align:center">
+      <td>Necrotic Infusion: <b>(1)</b> Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Resurrectionist: Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min</td>
+      <td>Resurrectionist: Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min or until the target is knocked unconscious</td>
     </tr><tr style="text-align:center">
       <td>Sap Life: Casting <i>Harm</i> on another creature restores Hit Points to self equal to the spell level</td>
     </tr><tr style="text-align:center">
-      <td>Selective Energy: Allows choosing 4 creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i></td>
+      <td>Selective Energy: Can choose 4 creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: A successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Swift Banishment: <b>(R)</b> Causes a critical hit to apply <i>Banishment</i> effects</td>
+      <td>Swift Banishment: <b>(R)</b> Immediately casts <i>Banishment</i> after a critical hit on an extraplanar foe</td>
     </tr><tr style="text-align:center">
       <td>Turn Undead: Critical failure by undead up to level 20 damaged by <i>Heal</i> inflicts fleeing for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Versatile Font: Allows using a font slot to prepare either <i>Harm</i> or <i>Heal</i></td>
+      <td>Versatile Font: Can use a font for either <i>Harm</i> or <i>Heal</i></td>
     </tr></table>
 </td>
   </tr></table>

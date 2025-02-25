@@ -3587,7 +3587,7 @@ Pathfinder2E.FEATURES = {
   'Incredible Improvisation':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Gains +4 on an untrained skill check once per day"',
+    'Note="Gives +4 on an untrained skill check once per day"',
   // TODO: also, half-elves don't need to meet ability score
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
@@ -4434,8 +4434,8 @@ Pathfinder2E.FEATURES = {
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
-      '"Has access to deity weapon (%{deityWeapon})",' +
-      '"+1 damage die step on %V"',
+      '"%{deityWeapon} inflicts +1 damage die step",' +
+      '"Has access to deity weapon (%{deityWeaponLowered})"',
   'Deity And Cause':
     'Section=combat,feature,magic,skill ' +
     'Note=' +
@@ -4871,7 +4871,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,feature,magic,save ' +
     'Note=' +
       '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
-      '"Allows using critical specialization effects of %{deityWeapon}",' +
+      '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"+1 Class Feat (Domain Initiate feat)",' +
       '"Spell %V (Divine)",' +
       '"Save Expert (Fortitude)"',
@@ -4884,126 +4884,130 @@ Pathfinder2E.FEATURES = {
   'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   'Divine Font':'Section=feature Note="1 selection"',
   'Divine Spellcasting':
-    'Section=magic Note="Allows learning spells from the divine tradition"',
+    'Section=magic Note="Can learn spells from the divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
   'Domain Initiate (Air)':
     'Section=magic ' +
-    'Note="Knows the Pushing Gust divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Pushing Gust divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Ambition)':
     'Section=magic ' +
-    'Note="Knows the Blind Ambition divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Blind Ambition divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Cities)':
     'Section=magic ' +
-    'Note="Knows the Face In The Crowd divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Face In The Crowd divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Confidence)':
     'Section=magic ' +
-    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Creation)':
     'Section=magic ' +
-    'Note="Knows the Splash Of Art divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Splash Of Art divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Darkness)':
     'Section=magic ' +
-    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Death)':
     'Section=magic ' +
-    'Note="Knows the Death\'s Call divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Death\'s Call divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Destruction)':
     'Section=magic ' +
-    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Dreams)':
     'Section=magic ' +
-    'Note="Knows the Sweet Dream divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Sweet Dream divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Earth)':
     'Section=magic ' +
-    'Note="Knows the Hurtling Stone divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Hurtling Stone divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Family)':
     'Section=magic ' +
-    'Note="Knows the Soothing Words divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Soothing Words divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Fate)':
     'Section=magic ' +
-    'Note="Knows the Read Fate divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Read Fate divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Fire)':
     'Section=magic ' +
-    'Note="Knows the Fire Ray divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Fire Ray divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Freedom)':
     'Section=magic ' +
-    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Healing)':
     'Section=magic ' +
-    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Indulgence)':
     'Section=magic ' +
-    'Note="Knows the Overstuff divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Overstuff divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Luck)':
     'Section=magic ' +
-    'Note="Knows the Bit Of Luck divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Bit Of Luck divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Magic)':
     'Section=magic ' +
-    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Might)':
     'Section=magic ' +
-    'Note="Knows the Athletic Rush divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Athletic Rush divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Moon)':
     'Section=magic ' +
-    'Note="Knows the Moonbeam divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Moonbeam divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Nature)':
     'Section=magic ' +
-    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Nightmares)':
     'Section=magic ' +
-    'Note="Knows the Waking Nightmare divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Waking Nightmare divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Pain)':
     'Section=magic ' +
-    'Note="Knows the Savor The Sting divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Savor The Sting divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Passion)':
     'Section=magic ' +
-    'Note="Knows the Charming Touch divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Charming Touch divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Perfection)':
     'Section=magic ' +
-    'Note="Knows the Perfected Mind divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Perfected Mind divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Protection)':
     'Section=magic ' +
-    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Secrecy)':
     'Section=magic ' +
-    'Note="Knows the Forced Quiet divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Forced Quiet divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Sun)':
     'Section=magic ' +
-    'Note="Knows the Dazzling Flash divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Dazzling Flash divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Travel)':
     'Section=magic ' +
-    'Note="Knows the Agile Feet divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Agile Feet divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Trickery)':
     'Section=magic ' +
-    'Note="Knows the Sudden Shift divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Sudden Shift divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Truth)':
     'Section=magic ' +
-    'Note="Knows the Word Of Truth divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Word Of Truth divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Tyranny)':
     'Section=magic ' +
-    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Undeath)':
     'Section=magic ' +
-    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Water)':
     'Section=magic ' +
-    'Note="Knows the Tidal Surge divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Tidal Surge divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Wealth)':
     'Section=magic ' +
-    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Zeal)':
     'Section=magic ' +
-    'Note="Knows the Weapon Surge divine spell/Has a focus pool and +1 Focus Point"',
-  'Harmful Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
-  'Healing Font':'Section=magic Note="+%{charismaModifier+1} D%V slots"',
+    'Note="Knows the Weapon Surge divine spell/Has a focus pool and 1 Focus Point"',
+  'Harmful Font':
+    'Section=magic ' +
+    'Note="Can cast <i>Harm</i> at level %V an additional %{charismaModifier+1} times per day"',
+  'Healing Font':
+    'Section=magic ' +
+    'Note="Can cast <i>Heal</i> at level %V an additional %{charismaModifier+1} times per day"',
   // Lightning Reflexes as above
   'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
   // Resolve as above
   'Warpriest':
     'Section=combat,combat,feature,feature,magic,save,save ' +
     'Note=' +
-      '"Defense %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
-      '"Allows using critical specialization effects of %{deityWeapon}",' +
+      '"Defense %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'/Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
+      '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"Has the Shield Block feature",' +
       '"Has the Deadly Simplicity feature",' +
       '"Spell %V (Divine)",' +
@@ -5011,11 +5015,12 @@ Pathfinder2E.FEATURES = {
       '"Successes on Fortitude saves are critical successes"',
   // Weapon Specialization as above
 
-  'Deadly Simplicity':'Section=combat Note="+1 damage die step on %V"',
-  'Harming Hands':'Section=magic Note="<i>Harm</i> die type increases to d10"',
-  'Healing Hands':'Section=magic Note="<i>Heal</i> die type increases to d10"',
+  'Deadly Simplicity':
+    'Section=combat Note="%{deityWeapon} inflicts +1 damage die step"',
+  'Harming Hands':'Section=magic Note="Increases <i>Harm</i> die type to d10"',
+  'Healing Hands':'Section=magic Note="Increases <i>Heal</i> die type to d10"',
   'Holy Castigation':
-    'Section=magic Note="Allows using <i>Heal</i> to damage fiends"',
+    'Section=magic Note="Can use <i>Heal</i> to damage fiends"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
@@ -5032,36 +5037,36 @@ Pathfinder2E.FEATURES = {
     'Note="Critical failure by undead up to level %{level} damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
   'Versatile Font':
     'Section=magic ' +
-    'Note="Allows using a font slot to prepare either <i>Harm</i> or <i>Heal</i>"',
+    'Note="Can use a font for either <i>Harm</i> or <i>Heal</i>"',
   'Channel Smite':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows adding the effects of <i>Heal</i> or <i>Harm</i> to a melee Strike"',
+    'Note="Adds the damage from <i>Heal</i> or <i>Harm</i> to a melee Strike"',
   'Command Undead':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows using <i>Harm</i> to control undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
+    'Note="<i>Harm</i> controls target undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
   'Directed Channel':
     'Section=magic ' +
-    'Note="Allows limiting the effects of an area <i>Harm</i> or <i>Heal</i> to a 60\' cone"',
+    'Note="Can direct the effects of an area <i>Harm</i> or <i>Heal</i> into a 60\' cone"',
   'Improved Communal Healing':
     'Section=magic ' +
-    'Note="Allows giving additional Hit Points from Communal Healing to another"',
+    'Note="Can give the additional Hit Points from Communal Healing to another within range of the spell"',
   'Necrotic Infusion':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows <i>Harm</i> cast on an undead to cause the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in next rd"',
+    'Note="Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd"',
   'Cast Down':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Modifies <i>Harm</i> or <i>Heal</i> to also inflict knocked prone (target critical fail also inflicts -10 Speed for 1 min)"',
+    'Note="Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min"',
   'Divine Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Allows casting a spell that also causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of turn"',
+    'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of the turn once per turn"',
   'Selective Energy':
     'Section=magic ' +
-    'Note="Allows choosing %{charismaModifier>?1} creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i>"',
+    'Note="Can choose %{charismaModifier>?1} creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i>"',
   // Steady Spellcasting as above
   'Align Armament (Chaotic)':
     'Action=1 ' +
@@ -5081,37 +5086,37 @@ Pathfinder2E.FEATURES = {
     'Note="Touched weapon inflicts +1d6 HP lawful for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
   'Channeled Succor':
     'Section=magic ' +
-    'Note="Allows casting <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i>"',
+    'Note="Can cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i>"',
   'Cremate Undead':
     'Section=magic ' +
-    'Note="Causes <i>Heal</i> cast upon undead to inflict persistent fire damage equal to the spell level"',
+    'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="Allows using Emblazon Armament on a shield to give it a save bonus and Shield Block vs. chosen energy type (having a matching domain spell also gives it +%{level//2} resistance), or on a weapon to have it inflict +1d4 HP chosen energy type (+1d6 HP with a matching domain spell)"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type (plus resistance %{level//2} with a matching domain spell), or to cause a weapon to inflict +1d4 HP energy type damage (or +1d6 HP with a matching domain spell)"',
   'Castigating Weapon':
     'Section=magic ' +
-    'Note="Damaging a fiend with <i>Heal</i> gives self weapons bonus good damage vs. fiends equal to half the spell level for 1 rd"',
+    'Note="Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd"',
   'Heroic Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequently casting a single-target <i>Heal</i> also gives the target +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
+    'Note="Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
   'Improved Command Undead':
     'Section=magic ' +
-    'Note="Target success, failure, or critical failure vs. Command Undead gives self control for 1 rd, 10 min, or 24 hr"',
+    'Note="Command Undead gives control of target for 1 rd, 10 min, or 24 hr on save success, failure, or critical failure"',
   'Replenishment Of War':
     'Section=combat ' +
-    'Note="Causes successful Strikes with %{deityWeapon} give self %{level//2} temporary Hit Points (critical hit %{level} temporary Hit Points) for 1 rd"',
+    'Note="Successful Strikes with a %{deityWeaponLowered} give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, for 1 rd"',
   'Defensive Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequently casting a single-target <i>Heal</i> also gives +2 AC and saves for 1 rd"',
+    'Note="Subsequent <i>Heal</i> cast on a single target also gives +2 AC and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
-    'Note="Allows using Emblazon Armament on a shield to give a bonus on saves vs. magic and allow Shield Block vs. spells, or on a weapon to have a critical hit also allow a counteract attempt vs. a spell using 1/2 the wielder\'s level"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using 1/2 the wielder\'s level"',
   'Shared Replenishment':
     'Section=combat ' +
-    'Note="R10\' Allows giving temporary Hit Points from Replenishment Of War to an ally"',
+    'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
   "Deity's Protection":
     'Section=magic ' +
     'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
@@ -5119,11 +5124,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Increases Align Armament effects"',
   'Fast Channel':
     'Section=magic ' +
-    'Note="Allows using 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i>"',
+    'Note="Can use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i>"',
   'Swift Banishment':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Causes a critical hit to apply <i>Banishment</i> effects"',
+    'Note="Immediately casts <i>Banishment</i> after a critical hit on an extraplanar foe"',
   'Eternal Bane':
     'Section=magic ' +
     'Note="R15\' Aura gives continuous level %{level//2} <i>Bane</i> effects"',
@@ -5132,23 +5137,23 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' Aura gives continuous level %{level//2} <i>Bless</i> effects"',
   'Resurrectionist':
     'Section=magic ' +
-    'Note="Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min"',
+    'Note="Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min or until the target is knocked unconscious"',
   'Domain Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Echoing Channel':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent 2-action, single-target <i>Harm</i> or <i>Heal</i> also causes 1-action effects on an adjacent creature"',
+    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature"',
   'Improved Swift Banishment':
     'Section=magic ' +
-    'Note="Allows sacrificing any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
+    'Note="Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
   "Avatar's Audience":
     'Section=magic ' +
-    'Note="Allows speaking for %{deity}, conducting the <i>Commune</i> ritual to contact %{deity} without cost, and using <i>Plane Shift</i> to travel to %{deity}\'s realm once per day"',
+    'Note="Can speak for %{deity}, conduct the <i>Commune</i> ritual to contact %{deity} without cost, and use <i>Plane Shift</i> to travel to %{deity}\'s realm once per day"',
   'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Channel':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Allows applying a metamagic action to <i>Harm</i> and <i>Heal</i>"',
+    'Note="Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
 
   // Druid
   // Alertness as above
@@ -5156,7 +5161,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Animal Companion feature",' +
-      '"Knows the Heal Animal primal spell/Has a focus pool and +1 Focus Point",' +
+      '"Knows the Heal Animal primal spell/Has a focus pool and 1 Focus Point",' +
       '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
@@ -5171,7 +5176,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Leshy Familiar feature",' +
-      '"Knows the Goodberry primal spell/Has a focus pool and +2 Focus Points",' +
+      '"Knows the Goodberry primal spell/Has a focus pool and 2 Focus Points",' +
       '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -5179,21 +5184,21 @@ Pathfinder2E.FEATURES = {
   // Medium Armor Expertise as above
   'Primal Hierophant':'Section=magic Note="Has 1 10th-level spell slot"',
   'Primal Spellcasting':
-    'Section=magic Note="Allows learning spells from the primal tradition"',
+    'Section=magic Note="Can learn spells from the primal tradition"',
   // Resolve as above
   // Shield Block as below
   'Storm':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Storm Born feature",' +
-      '"Knows the Tempest Surge primal spell/Has a focus pool and +2 Focus Points",' +
+      '"Knows the Tempest Surge primal spell/Has a focus pool and 2 Focus Points",' +
       '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
   'Wild':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Wild Shape feature",' +
-      '"Knows the Wild Morph primal spell/Has a focus pool and +1 Focus Point",' +
+      '"Knows the Wild Morph primal spell/Has a focus pool and 1 Focus Point",' +
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
@@ -5742,10 +5747,10 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10 HP bludgeoning and ignoring the first square of difficult terrain when Striding"',
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows the Ki Rush occult spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Ki Rush occult spell/Has a focus pool and 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows the Ki Strike occult spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Ki Strike occult spell/Has a focus pool and 1 Focus Point"',
   'Monastic Weaponry':'Section=combat Note="Attack %V (Monk Weapons)"',
   'Mountain Stance':
     'Action=1 ' +
@@ -6447,7 +6452,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"1 selection",' +
-      '"Has a focus pool and +1 Focus Point"',
+      '"Has a focus pool and 1 Focus Point"',
   'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   // Expert Spellcaster as above
@@ -6654,9 +6659,9 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"1 selection",' +
-      '"Has a focus pool and +1 Focus Point"',
+      '"Has a focus pool and 1 Focus Point"',
   'Arcane Spellcasting':
-    'Section=magic Note="Allows learning spells from the arcane tradition"',
+    'Section=magic Note="Can learn spells from the arcane tradition"',
   'Arcane Thesis':'Section=feature Note="1 selection"',
   "Archwizard's Spellcraft":'Section=magic Note="Has 1 10th-level spell slot"',
   // Defensive Robes as above
@@ -6747,7 +6752,7 @@ Pathfinder2E.FEATURES = {
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
-    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool and +1 Focus Point"',
+    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool and 1 Focus Point"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -7205,8 +7210,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
-    'Section=skill ' +
-    'Note="Gives +2 initial gold/Allows using Diplomacy to Earn Income"',
+    'Section=skill Note="+2 initial gold/Can use Diplomacy to Earn Income"',
   'Battle Cry':
     'Section=combat ' +
     'Note="Allows using Demoralize on a foe during initiative%{rank.Intimidation>=4?\' or on an attack critical success\':\'\'}"',
@@ -9745,7 +9749,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with %{deityWeapon}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with %{deityWeapon}, and +29 Athletics)"',
+      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'Trait= ' +
@@ -11888,7 +11892,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within next rd"',
+      '"Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within the next rd"',
   'Protective Ward':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -13496,9 +13500,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Champion') {
-    rules.defineRule('combatNotes.deificWeapon-1',
+    rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
-      'deityWeapon', '=', null
     );
     ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
       rules.defineRule('combatNotes.' + f,
@@ -13561,7 +13564,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('combatNotes.cloisteredCleric-1', 'level', '?', 'source>=11');
     rules.defineRule('combatNotes.deadlySimplicity',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)',
-      'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.deity', 'deityWeapon', '=', null);
     rules.defineRule('combatNotes.deityAndCause', 'deityWeapon', '=', null);
@@ -13615,13 +13617,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
     rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
-    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
       rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
-      rules.defineRule('spellSlots.D' + l,
-        'magicNotes.harmfulFont', '+', 'source==' + l + ' ? dict.charismaModifier + 1 : null',
-        'magicNotes.healingFont', '+', 'source==' + l + ' ? dict.charismaModifier + 1 : null'
-      );
     });
     rules.defineRule('spellSlots.D10',
       'magicNotes.miraculousSpell', '=', 'null', // italics
@@ -14034,6 +14032,8 @@ Pathfinder2E.deityRules = function(
     rules.defineRule('deityWeapon',
       'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weapon) + '[source]'
     );
+    rules.defineRule
+      ('deityWeaponLowered', 'deityWeapon', '=', 'source.toLowerCase()');
     rules.defineRule('deityWeaponCategory',
       'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
     );
@@ -14048,8 +14048,9 @@ Pathfinder2E.deityRules = function(
       'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
     );
     rules.defineRule('weaponDieSidesBonus.' + weapon,
-      'combatNotes.deificWeapon-1', '+=', 'source=="' + weapon + '" ? 2 : null',
-      'combatNotes.deadlySimplicity', '+=', 'source=="' + weapon + '" ? 2 : null'
+      'deityWeapon', '=', 'null', // recomputation trigger
+      'combatNotes.deificWeapon', '+=', 'dict.deityWeapon=="' + weapon + '" ? 2 : null',
+      'combatNotes.deadlySimplicity', '+=', 'dict.deityWeapon=="' + weapon + '" ? 2 : null'
     );
   }
   rules.defineRule('trainingLevel.' + skill,

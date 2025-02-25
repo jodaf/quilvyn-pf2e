@@ -301,7 +301,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Explorer's Clothing</td>
         <td><b>Shield</b>: Steel (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Battle Axe (+18 1d8+4 S; strength; trained); Morningstar (+18 1d6+4 B/P; strength; trained); Sap (+18 1d6+4 B; strength; trained)</td>
+        <td><b>Weapons</b>: Battle Axe (+18 1d8+4 S; strength; trained); Morningstar (+20 1d6+4 B/P; strength; expert); Sap (+18 1d6+4 B; strength; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -309,7 +309,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +24</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Deadly Simplicity: +1 damage die step on Staff</i></td>
+        <td><i>Deadly Simplicity: Staff inflicts +1 damage die step</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deity: Attack Trained (Staff)</i></td>
       </tr><tr style="text-align:center">
@@ -321,15 +321,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Halberd as one category simpler</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Warpriest: Defense Trained (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)Attack Expert (Staff; Simple Weapons; Unarmed Attacks)</i></td>
+        <td><i>Warpriest: Defense Trained (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)/Attack Expert (Staff; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Shield Boss): Attack Trained (Shield Boss)</i></td>
       </tr><tr style="text-align:center">
-        <td>Replenishment Of War: Causes successful Strikes with Staff give self 6 temporary Hit Points (critical hit 12 temporary Hit Points) for 1 rd</td>
+        <td>Replenishment Of War: Successful Strikes with a staff give self 6 temporary Hit Points, or 12 temporary Hit Points on a critical hit, for 1 rd</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage up to its hardness and absorbs half of any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Warpriest: Allows using critical specialization effects of Staff</td>
+        <td>Warpriest: Critical hits with a staff inflict its critical specialization effect</td>
       </tr></table>
 </td>
     </tr></table>
@@ -361,7 +361,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: D0: 5; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 7</td>
+        <td><b>Spell Slots</b>: D0: 5; D1: 3; D2: 3; D3: 3; D4: 3; D5: 3; D6: 3</td>
         <td><b>Attack</b>: Divine: +19 (wisdom; expert)</td>
         <td><b>Spell DC</b>: Divine: 29 (wisdom; expert)</td>
       </tr></table>
@@ -695,7 +695,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Revival (D10 Nec): <b>(2)</b> 30' radius restores 10d8+40 HP and raises dead with the same number of temporary HP while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Righteous Might (D6 Tra): <b>(2)</b> Caster gains AC 32, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with Staff, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10' reach, AC 33, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with Staff, and +29 Athletics)</td>
+      <td>Righteous Might (D6 Tra): <b>(2)</b> Caster gains AC 32, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a staff, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10' reach, AC 33, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a staff, and +29 Athletics)</td>
     </tr><tr style="text-align:left">
       <td>Safeguard Secret (D4 Abj): <b>(1 min)</b> 10' Caster and allies gain +4 skill checks to conceal a specified piece of knowledge for 1 hr</td>
     </tr><tr style="text-align:left">
@@ -833,17 +833,17 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Harmful Font: +4 D6 slots</i></td>
-    </tr><tr style="text-align:center">
       <td><i>Warpriest: Spell Expert (Divine)</i></td>
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare two additional cantrips each day or add two additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
       <td>Deity: Has access to <i>Magic Missile</i>, <i>Magic Mouth</i>, <i>Levitate</i>, <i>Blink</i>, <i>Prying Eye</i>, <i>Wall Of Force</i>, <i>Warp Mind</i>, <i>Maze</i>, and <i>Destruction</i> spells</td>
     </tr><tr style="text-align:center">
-      <td>Divine Spellcasting: Allows learning spells from the divine tradition</td>
+      <td>Divine Spellcasting: Can learn spells from the divine tradition</td>
     </tr><tr style="text-align:center">
-      <td>Divine Weapon: <b>(F)</b> Allows casting a spell that also causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of turn</td>
+      <td>Divine Weapon: <b>(F)</b> Using a divine spell slot causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of the turn once per turn</td>
+    </tr><tr style="text-align:center">
+      <td>Harmful Font: Can cast <i>Harm</i> at level 6 an additional 4 times per day</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends spell range by 30'</td>
     </tr><tr style="text-align:center">
