@@ -4001,7 +4001,7 @@ Pathfinder2E.FEATURES = {
   'Swipe':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike attacks 2 adjacent foes"',
+    'Note="Melee Strike attacks 2 adjacent foes"',
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4099,7 +4099,7 @@ Pathfinder2E.FEATURES = {
   'Whirlwind Strike':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes individual Strikes against all foes within reach"',
+    'Note="Makes individual Strikes at the current multiple attack penalty against all foes within reach"',
   'Collateral Thrash':
     'Section=combat ' +
     'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>, DC %{classDifficultyClass.Barbarian})"',
@@ -5366,10 +5366,10 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Expert (Will)",' +
-      '"Changes successes on Will saves vs. fear into critical successes and reduces the severity of the frightened condition by 1"',
+      '"Successes on Will saves vs. fear are critical successes, and the severity of frightened conditions are reduced by 1"',
   'Combat Flexibility':
     'Section=combat ' +
-    'Note="Allows using a chosen fighter feat of up to 8th level each day"',
+    'Note="Can select a fighter feat of up to 8th level to use each day"',
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
@@ -5379,11 +5379,11 @@ Pathfinder2E.FEATURES = {
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
   'Fighter Weapon Mastery':
     'Section=combat ' +
-    'Note="Attack Master with simple and martial weapons and Attack Expert with advanced weapons of chosen group/Allows using critical specialization effects of all weapons with master proficiency"',
+    'Note="Attack Master with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Expert with advanced weapons of the same group/Critical hits with a master proficiency weapon inflict its critical specialization effect"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
     'Section=combat ' +
-    'Note="Allows using a chosen fighter feat of up to 14th level each day"',
+    'Note="Can select a fighter feat of up to 14th level to use each day"',
   // Juggernaut as above
   // Shield Block as below
   'Versatile Legend':
@@ -5393,13 +5393,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)",' +
-      '"Attack Legendary in simple and martial weapons and Attack Master in advanced weapons of chosen group"',
+      '"Attack Legendary with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Master with advanced weapons of the same group"',
 
   // Weapon Specialization as above
   'Double Slice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows simultaneous Strikes with two melee weapons"',
+    'Note="Makes simultaneous Strikes with two melee weapons at the current multiple attack penalty"',
   'Exacting Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -5411,80 +5411,81 @@ Pathfinder2E.FEATURES = {
   'Power Attack':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike inflicts %{level<10?1:level<18?2:3} extra dice damage; counts as two Strikes for multiple attack penalty"',
+    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra dice damage and counts as two Strikes for multiple attack penalty"',
   'Reactive Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows Raising A Shield to absorb damage from a melee Strike"',
+    'Note="Performs Raise A Shield to absorb damage from a melee Strike"',
   'Snagging Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike with other hand free inflicts flat-footed on target for 1 rd if successful"',
+    'Note="Successful melee Strike with the other hand free inflicts flat-footed on target for 1 rd"',
   // Sudden Charge as above
   'Aggressive Block':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows using Shield Block to move a foe 5\' or to cause them to become flat-footed (foe\'s choice)"',
+    'Note="Shield Block moves foe 5\' or inflicts flat-footed (foe\'s choice)"',
   'Assisting Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ranged Strike gives the next ally attack on the target within 1 rd +1 attack if successful, or +2 with a critical success"',
+    'Note="Successful ranged Strike gives the next ally attack on the target within 1 rd +1 attack, or +2 with a critical success"',
   'Brutish Shove':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Two-handed melee Strike inflicts flat-footed until the end of turn; success allows a subsequent Shove"',
+    'Note="Two-handed melee Strike inflicts flat-footed until the end of turn; success also allows an automatic Shove"',
   'Combat Grab':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Melee Strike with a one-handed weapon allows grabbing the foe with the other hand if successful for 1 rd or until foe Escapes"',
+    'Note="Successful melee Strike with the other hand free inflicts grabbed for 1 rd or until the target Escapes"',
   'Dueling Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +2 AC when wielding a one-handed weapon with the other hand free"',
+    'Note="Gives +2 AC for 1 rd when wielding a one-handed melee weapon with the other hand free"',
   'Intimidating Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike inflicts frightened 1 if successful, or frightened 2 with a critical hit"',
-  'Lunge':'Action=1 Section=combat Note="Increases melee Strike range by 5\'"',
+    'Note="Successful melee Strike inflicts frightened 1, or frightened 2 with a critical hit"',
+  'Lunge':'Action=1 Section=combat Note="Melee Strike has a +5\' range"',
   'Double Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows two ranged Strikes against two foes, suffering a -2 attack penalty on each"',
+    'Note="Makes two ranged Strikes against different foes at the current multiple attack penalty -2"',
   'Dual-Handed Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="With a hand free, increases the damage from a 1-handed weapon with the 2-handed trait by its number of damage dice or a weapon without that trait by one step"',
+    'Note="Successful melee Strike with a 1-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the 2-handed trait or by one die step otherwise"',
   'Knockdown':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Follows a successful Strike with an Athletics check to Trip"',
+    'Note="Follows a successful melee Strike with an Athletics check to Trip"',
   'Powerful Shove':
     'Section=combat ' +
-    'Note="Allows using Aggressive Block and Brutish Shove on foes two sizes larger and inflicts %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
+    'Note="Can use Aggressive Block and Brutish Shove on foes up to two sizes larger, inflicting %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
   'Quick Reversal':
-    'Action=1 Section=combat Note="Strikes two foes flanking self"',
+    'Action=1 ' +
+    'Section=combat Note="Makes melee Strikes on two foes flanking self"',
   'Shielded Stride':
     'Section=combat ' +
-    'Note="Allows Striding at half Speed with shield raised without triggering Reactions"',
+    'Note="Can Stride at half Speed with shield raised without triggering Reactions"',
   // Swipe as above
   'Twin Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Parrying with two weapons gives +1 AC for 1 rd, or +2 AC if either weapon has the parry trait"',
+    'Note="Parrying with one melee weapon in each hand gives +1 AC for 1 rd, or +2 AC if either weapon has the parry trait"',
   'Advanced Weapon Training':
     'Section=combat ' +
     'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
   'Advantageous Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike on a grabbed, prone, or restrained foe inflicts +damage dice HP damage, or +damage dice + 2 HP if wielded two-handed, even on failure"',
+    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded two-handed, even on failure"',
   'Disarming Stance':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Stance gives +1 to Disarm and +2 vs. Disarm and allows Disarming foes two sizes larger when wielding a one-handed weapon with the other hand free"',
   'Furious Focus':
     'Section=combat ' +
-    'Note="Two-handed power attacks count as single attacks for multiple attack penalty"',
+    'Note="A two-handed Power Attack counts as a single attack for multiple attack penalty"',
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5499,26 +5500,26 @@ Pathfinder2E.FEATURES = {
   'Shatter Defenses':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts"',
+    'Note="A successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts"',
   // Shield Warden as above
   'Triple Shot':
     'Section=combat ' +
-    'Note="Allows using Double Shot against a single foe or using 2 actions to make 3 ranged Strikes, suffering a -4 attack penalty on each"',
+    'Note="Uses Double Shot against a single target, or uses three actions to make three ranged Strikes at the current multiple attack penalty -4"',
   'Blind-Fight':
     'Section=combat ' +
-    'Note="Allows attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Negates flat-footed with hidden foes"',
+    'Note="Can attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Does not suffer flat-footed vs. hidden foes/Treats adjacent undetected creatures up to level %{level} as hidden instead"',
   'Dueling Riposte':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="While using Dueling Parry, allows Striking or Disarming a foe who critically fails an attack on self"',
+    'Note="While using Dueling Parry, makes a Strike or Disarm attempt on a foe who critically fails an attack on self"',
   'Felling Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful attack a flying foe causes it to fall 120\', and a critical success grounds it for 1 rd"',
+    'Note="Successful Strike vs. a flying foe causes it to fall 120\', and a critical success grounds it for 1 rd"',
   'Incredible Aim':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Gives +2 on a ranged Strike that ignores concealment"',
+    'Note="Ranged Strike gains +2 attack and ignores concealment"',
   'Mobile Shot Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5526,23 +5527,23 @@ Pathfinder2E.FEATURES = {
   'Positioning Assault':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Moves a foe 5\' to within reach on a successful Strike with a 2-handed melee weapon"',
+    'Note="Successful Strike with a 2-handed melee weapon moves a foe 5\' to within reach"',
   // Quick Shield Block as above
   // Sudden Leap as above
   'Agile Grace':
     'Section=combat ' +
-    'Note="Reduces multiple attack penalty with agile weapons to -3/-6"',
+    'Note="Reduces multiple attack penalties with agile weapons to -3 and -6"',
   'Certain Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike inflicts normal non-dice damage on failure"',
+    'Note="Melee Strike inflicts normal non-dice damage on failure"',
   'Combat Reflexes':
     'Section=combat ' +
     'Note="Gives an additional Reaction to make an Attack Of Opportunity once per turn"',
   'Debilitating Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Ranged Strike slows the target for 1 rd"',
+    'Note="Successful ranged Strike also inflicts slowed 1 for 1 rd"',
   'Disarming Twist':
     'Action=1 ' +
     'Section=combat ' +
@@ -5550,31 +5551,32 @@ Pathfinder2E.FEATURES = {
   'Disruptive Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows using Attack Of Opportunity in response to a concentrate action; any successful Strike disrupts"',
+    'Note="Stance allows using Attack Of Opportunity in response to a concentrate action; a successful Strike disrupts"',
   'Fearsome Brute':
     'Section=combat ' +
-    'Note="Strikes against frightened foes inflict +frightened value x %{rank.Intimidation>=2?3:2} HP damage"',
+    'Note="Strikes against frightened foes inflict additional damage equal to %{rank.Intimidation>=2?3:2}x the frightened value"',
   'Improved Knockdown':
-    'Section=combat Note="Knockdown automatically inflicts a critical Trip"',
+    'Section=combat ' +
+    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
   'Mirror Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Reflects a spell back upon the caster with a ranged Strike or spell attack"',
+    'Note="Raised shield reflects a spell back upon the caster with a ranged Strike or spell attack"',
   'Twin Riposte':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="When using Twin Parry, allows Striking or Disarming a foe who critically fails a Strike on self"',
+    'Note="Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self"',
   'Brutal Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends turn with a two-handed Strike that inflicts +%{level>=18?\'2 damage dice\':\'1 damage die\'}, even on failure"',
+    'Note="Ends turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
   'Dueling Dance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +2 AC when wielding a one-handed weapon with a hand free"',
+    'Note="Stance gives continuous benefits of Dueling Parry"',
   'Flinging Shove':
     'Section=combat ' +
-    'Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed; Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
+    'Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed, and Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
   'Improved Dueling Riposte':
     'Section=combat ' +
     'Note="Gives an additional Reaction to make a Dueling Riposte once per turn"',
@@ -5593,31 +5595,33 @@ Pathfinder2E.FEATURES = {
   'Spring Attack':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows Striking a foe after Striding away from another"',
+    'Note="Makes a melee Strike on a foe after Striding away from another"',
   'Desperate Finisher':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows using a press action after taking the last action in a turn, losing any further Reactions during the turn"',
+    'Note="Allows using a press action after taking the last action in a turn, losing any further Reactions until next turn"',
   'Determination':
     'Action=1 ' +
     'Section=save ' +
-    'Note="Ends a nonpermanent spell (level %{level/2} Will save) or condition affecting self once per day"',
+    'Note="Ends a nonpermanent spell (requires a successful counteract attempt) or a condition affecting self once per day"',
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Moves a foe 10\' to a spot within reach with a successful Strike (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
+    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
-    'Note="Moves a foe 10\' to a spot within reach with a successful Dueling Riposte Strike"',
+    'Note="A successful Dueling Riposte Strike moves a foe 10\' to a spot within reach"',
   'Improved Twin Riposte':
     'Section=combat ' +
     'Note="Gives an additional Reaction to make a Twin Riposte once per turn"',
   'Stance Savant':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows entering a stance during initiative"',
+    'Note="Enters a stance during initiative"',
   'Two-Weapon Flurry':
-    'Action=1 Section=combat Note="Allows Striking with two weapons"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strikes simultaneously with one weapon in each hand"',
   // Whirlwind Strike as above
   'Graceful Poise':
     'Action=1 ' +
@@ -5625,7 +5629,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stance allows Double Slice with an agile weapon to count as one attack"',
   'Improved Reflexive Shield':
     'Section=combat ' +
-    'Note="Allows using Shield Block to protect both self and adjacent allies"',
+    'Note="Can use Shield Block on a Reflex save to protect both self and adjacent allies"',
   'Multishot Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5637,10 +5641,10 @@ Pathfinder2E.FEATURES = {
   'Impossible Volley':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Ranged Strike with a -2 penalty targets all foes in a 10\' radius"',
+    'Note="Ranged Strike with a -2 penalty attacks all foes in a 10\' radius"',
   'Savage Critical':
     'Section=combat ' +
-    'Note="Changes successful rolls of 19 with a legendary weapon into critical successes"',
+    'Note="Successful attack rolls of 19 with a legendary weapon are critical successes"',
   'Boundless Reprisals':
      'Section=combat ' +
      'Note="Gives an additional Reaction to use a fighter feat or class feature once per foe turn"',
@@ -7274,7 +7278,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and retrying after 1 min"',
   'Group Coercion':
     'Section=skill ' +
-    'Note="Allows using Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
+    'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
     'Note="Allows using Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
