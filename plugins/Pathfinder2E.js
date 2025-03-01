@@ -5659,7 +5659,7 @@ Pathfinder2E.FEATURES = {
   'Expert Strikes':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   'Flurry Of Blows':
-    'Action=1 Section=combat Note="Allows 2 Unarmed Strikes once per turn"',
+    'Action=1 Section=combat Note="Makes 2 unarmed Strikes once per turn"',
   'Graceful Legend':
     'Section=combat,magic ' +
     'Note=' +
@@ -5724,78 +5724,84 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Fortitude)",' +
-      '"Critical failures on Fortitude saves are normal failures and suffers half damage on failed Fortitude saves"',
+      '"Critical failures on Fortitude saves are normal failures, and failed Fortitude saves inflict half damage"',
   'Third Path To Perfection (Reflex)':
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Reflex)",' +
-      '"Critical failures on Reflex saves are normal failures and suffers half damage on failed Reflex saves"',
+      '"Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
   'Third Path To Perfection (Will)':
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Critical failures on Will saves are normal failures and suffers half damage on failed Will saves"',
+      '"Critical failures on Will saves are normal failures, and failed Will saves inflict half damage"',
   // Weapon Specialization as above
 
   'Crane Stance':
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"Unarmored stance gives +1 AC and restricts attacks to 1d6 HP bludgeoning hand Unarmed Strikes",' +
+      '"Unarmored stance gives +1 AC and restricts attacks to 1d6 HP bludgeoning hand Strikes",' +
       '"Unarmored stance gives -5 jump DC and +2\' and +5\' vertical and horizontal Leaps"',
   'Dragon Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows leg Unarmed Strikes that inflict 1d10 HP bludgeoning and ignoring the first square of difficult terrain when Striding"',
+    'Note="Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain"',
   'Ki Rush':
     'Section=magic ' +
     'Note="Knows the Ki Rush occult spell/Has a focus pool and 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
     'Note="Knows the Ki Strike occult spell/Has a focus pool and 1 Focus Point"',
-  'Monastic Weaponry':'Section=combat Note="Attack %V (Monk Weapons)"',
+  'Monastic Weaponry':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Attack %V (Monk Weapons)",' +
+      '"Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes"',
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} AC, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Unarmed Strikes"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} AC, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 10\' Steps and hand Unarmed Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on critical success"',
+    'Note="Unarmored stance allows 10\' Steps and hand Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on a critical success"',
   'Wolf Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows hand Unarmed Strikes that inflict 1d8 HP piercing, with the trip trait when flanking"',
+    'Note="Unarmored stance allows 1d8 HP piercing hand Strikes that have the trip trait when flanking"',
   'Brawling Focus':
     'Section=combat ' +
-    'Note="Allows using the critical specialization effects of trained monk weapons and brawling weapons"',
+    'Note="Critical hits with a brawling%{combatNotes.monasticWeaponry?\' or trained monk\':\'\'} weapon inflict its critical specialization effect"',
   'Crushing Grab':
     'Section=combat ' +
-    'Note="Allows inflicting %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
+    'Note="Can inflict %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
   'Dancing Leaf':
-    'Section=skill ' +
-    'Note="Gives +5\' Jump and Leap and negates falling damage when adjacent to a wall"',
+    'Section=ability,skill ' +
+    'Note=' +
+      '"Takes no falling damage when adjacent to a wall",' +
+      '"+5\' Jump and Leap distance"',
   'Elemental Fist':
     'Section=magic ' +
-    'Note="Allows inflicting electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
+    'Note="Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
   'Stunning Fist':
     'Section=combat ' +
-    'Note="Allows inflicting stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
+    'Note="Can inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
-    'Section=combat Note="Gives +4 AC vs. a physical ranged Strike"',
+    'Section=combat Note="Gives +4 AC vs. a physical ranged attack"',
   'Flurry Of Maneuvers':
     'Section=combat ' +
-    'Note="Allows using Flurry Of Blows to Grapple, Shove, or Trip"',
+    'Note="Can use Flurry Of Blows to Grapple, Shove, or Trip"',
   'Flying Kick':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Gives a Strike on a foe at the end of a Leap or Jump"',
-  'Guarded Movement':'Section=combat Note="+4 AC vs. movement reactions"',
+    'Note="Makes a Strike on a foe at the end of a Leap or Jump"',
+  'Guarded Movement':'Section=combat Note="+4 AC vs. movement Reactions"',
   'Stand Still':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows Striking an adjacent moving foe"',
+    'Note="Makes a melee Strike on an adjacent moving foe"',
   'Wholeness Of Body':
     'Section=magic ' +
     'Note="Knows the Wholeness Of Body occult spell/+1 Focus Points"',
@@ -5808,7 +5814,7 @@ Pathfinder2E.FEATURES = {
   'Dragon Roar':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R15\' Bellowing while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd (DC %{skillModifiers.Intimidation} Will negates; critical failure inflicts frightened 2); first successful self Strike in the next rd on a frightened foe inflicts +4 HP"',
+    'Note="R15\' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (DC %{skillModifiers.Intimidation} Will negates; critical failure inflicts frightened 2); first successful Strike in the next rd on a frightened foe inflicts +4 HP"',
   'Ki Blast':
     'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
   'Mountain Stronghold':
@@ -5817,92 +5823,93 @@ Pathfinder2E.FEATURES = {
   'Tiger Slash':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Tiger Stance, inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
-  'Water Step':'Section=ability Note="Allows Striding across liquids"',
+    'Note="While in Tiger Stance, claw attack inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
+  'Water Step':
+    'Section=ability ' +
+    'Note="Can Stride across liquids; must end on a solid surface"',
   'Whirling Throw':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC allows throwing it %{10+5*strengthModifier}\', inflicting up to %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning"',
+    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC, modified for size differences, allows throwing it %{10+5*strengthModifier}\', inflicting %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning"',
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, inflicts 1d12 HP piercing and knocked prone"',
+    'Note="While in Wolf Stance, wolf jaw attack inflicts 1d12 HP piercing and knocked prone"',
   'Arrow Snatching':
     'Section=combat ' +
-    'Note="After a successful Deflect Arrow, allows using the projectile to make an immediate ranged Strike"',
+    'Note="After a successful Deflect Arrow, can immediately use the projectile to make a ranged Strike"',
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP bludgeoning and gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage"',
+    'Note="Unarmored stance allows unarmed sweep Strikes that inflict 1d8 HP bludgeoning and gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage"',
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows attempting 2 choices of Grapple, Shove, and Trip simultaneously"',
+    'Note="Uses 2 choices of Grapple, Shove, and Trip at the current multiple attack penalty"',
   'Tangled Forest Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows Unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
+    'Note="Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
   'Wall Run':
-    'Action=1 Section=ability Note="Allows Striding on vertical surfaces"',
+    'Action=1 Section=ability Note="Strides on vertical surfaces"',
   'Wild Winds Initiate':
     'Section=magic ' +
     'Note="Knows the Wild Winds Stance occult spell/+1 Focus Points"',
   'Knockback Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="A successful Unarmed Strike also inflicts a 5\' Shove"',
+    'Note="A successful unarmed Strike also allows an Athletics check to Shove"',
   'Sleeper Hold':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success"',
+    'Note="Successful grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success"',
   'Wind Jump':
     'Section=magic Note="Knows the Wind Jump occult spell/+1 Focus Points"',
   'Winding Flow':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows performing 2 choices of Stand, Step, and Stride"',
+    'Note="Uses 2 choices of Stand, Step, and Stride"',
   'Diamond Soul':'Section=save Note="+1 vs. magic"',
   'Disrupt Ki':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="An Unarmed Strike inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
+    'Note="Unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
   'Improved Knockback':
     'Section=combat ' +
-    'Note="Successful Shove moves 5\' (critical success 10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
+    'Note="Successful Shove moves +5\' (critical success +10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
     'Action=1 ' +
     'Section=combat,combat ' +
     'Note=' +
-      '"Increases Ironblood Stance effects",' +
-      '"When in Ironblood Stance, gains +1 Armor Class for 1 rd"',
+      '"Has increased Ironblood Stance effects",' +
+      '"While in Ironblood Stance, gains +1 Armor Class for 1 rd"',
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (DC %{classDifficultyClass.Monk} Fortitude HP only) once per 1d4 rd"',
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (<b>save basic Fortitude</b>) once per 1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Moves a foe 5\' into a space within reach with a successful Tangled Forest Stance Strike"',
+    'Note="While in Tangled Forest Stance, a successful lashing Strike moves the target 5\' into a space within reach"',
   'Timeless Body':
     'Section=feature,save ' +
     'Note=' +
       '"Does not age",' +
-      '"+2 vs. poisons and diseases and has Resistance %{level//2} to poison damage"',
+      '"+2 vs. poisons and diseases and has Resistance %{level//2} to poison"',
   'Tongue Of Sun And Moon':
-    'Section=skill ' +
-    'Note="Allows speaking and understanding all spoken languages"',
+    'Section=skill Note="Can speak and understand all spoken languages"',
   'Wild Winds Gust':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Allows a Wild Winds Stance Strike against all creatures in a 30\' cone or 60\' line"',
+    'Note="Makes a Wild Winds Stance Strike against all creatures in a 30\' cone or 60\' line at the current multiple attack penalty"',
   'Enlightened Presence':
     'Section=save ' +
     'Note="R15\' Gives self and allies +2 Will vs. mental effects"',
   'Master Of Many Styles':
     'Action=Free ' +
-    'Section=combat Note="Allows entering a stance at the beginning of a turn"',
+    'Section=combat Note="Enters a stance at the beginning of a turn"',
   'Quivering Palm':
     'Section=magic ' +
     'Note="Knows the Quivering Palm occult spell/+1 Focus Points"',
@@ -5920,7 +5927,7 @@ Pathfinder2E.FEATURES = {
   'Swift River':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Ends one Speed status penalty or condition at end of each turn"',
+    'Note="Ends one Speed status penalty or condition at the end of a turn"',
   'Enduring Quickness':
     'Section=combat ' +
     'Note="Gives an additional action each rd to Stride, Leap, or Jump"',
@@ -6307,7 +6314,7 @@ Pathfinder2E.FEATURES = {
       '"Knows 2 primal cantrips"',
   'Mobility':
     'Section=combat ' +
-    'Note="Allows Striding at half Speed without triggering reactions"',
+    'Note="Allows Striding at half Speed without triggering Reactions"',
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
@@ -6374,7 +6381,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
     'Section=combat ' +
-    'Note="Allows Debilitating Strike to prevent reactions or flanking"',
+    'Note="Allows Debilitating Strike to prevent Reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
     'Note="Allows Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
@@ -7281,7 +7288,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
-    'Note="Allows using Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
+    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
   'Hobnobber':'Section=skill Note="Allows Gathering Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
@@ -7296,7 +7303,7 @@ Pathfinder2E.FEATURES = {
   'Inventor':'Section=skill Note="Allows using Crafting to create formulas"',
   'Kip Up':
     'Action=Free ' +
-    'Section=combat Note="Allows standing up without triggering reactions"',
+    'Section=combat Note="Allows standing up without triggering Reactions"',
   'Lasting Coercion':
     'Section=skill ' +
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
@@ -10801,7 +10808,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Evil target suffers reaction prevention and slowed 1 for 1 rd (<b>save Will</b> reaction prevention only; critical success negates; critical failure inflicts slowed 2)"',
+      '"R30\' Evil target suffers Reaction prevention and slowed 1 for 1 rd (<b>save Will</b> Reaction prevention only; critical success negates; critical failure inflicts slowed 2)"',
   'Litany Against Wrath':
     'Level=3 ' +
     'Trait=Focus ' +
@@ -11695,7 +11702,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5\')"',
+      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of Reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5\')"',
   'Fey Disappearance':
     'Level=3 ' +
     'Trait=Focus ' +
@@ -14331,9 +14338,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
   } else if(name == "Champion's Reaction") {
     // Extend test rules to allow characters with the Champion's Reaction
-    // archetype feature to acquire champion reactions.
+    // archetype feature to acquire Champion Reactions.
     // NOTE: Because this code is run only when the feat is processed, any
-    // homebrew reactions will still generate validation errors if selected by
+    // homebrew Reactions will still generate validation errors if selected by
     // a non-champion.
     let allSelectables = rules.getChoices('selectableFeatures');
     let causes =
@@ -16613,7 +16620,7 @@ Pathfinder2E.ruleNotes = function() {
     '  </li><li>\n' +
     '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
-    '  taken as a free action or reaction.\n' +
+    '  taken as a free action or Reaction.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +

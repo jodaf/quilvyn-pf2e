@@ -93,9 +93,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Incredible Movement: +30 Speed in no armor</i></td>
     </tr><tr style="text-align:center">
-      <td>Wall Run: <b>(1)</b> Allows Striding on vertical surfaces</td>
+      <td>Dancing Leaf: Takes no falling damage when adjacent to a wall</td>
     </tr><tr style="text-align:center">
-      <td>Water Step: Allows Striding across liquids</td>
+      <td>Wall Run: <b>(1)</b> Strides on vertical surfaces</td>
+    </tr><tr style="text-align:center">
+      <td>Water Step: Can Stride across liquids; must end on a solid surface</td>
     </tr></table>
 </td>
   </tr></table>
@@ -246,13 +248,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Crane Stance: <b>(1)</b> Unarmored stance gives -5 jump DC and +2' and +5' vertical and horizontal Leaps</td>
     </tr><tr style="text-align:center">
-      <td>Dancing Leaf: Gives +5' Jump and Leap and negates falling damage when adjacent to a wall</td>
+      <td>Dancing Leaf: +5' Jump and Leap distance</td>
     </tr><tr style="text-align:center">
-      <td>Group Impression: Allows using Diplomacy to Make an Impression with 2 targets</td>
+      <td>Group Impression: Can use Diplomacy to Make an Impression with 2 targets</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Tongue Of Sun And Moon: Allows speaking and understanding all spoken languages</td>
+      <td>Tongue Of Sun And Moon: Can speak and understand all spoken languages</td>
     </tr></table>
 </td>
   </tr></table>
@@ -294,7 +296,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Ironblood Surge: <b>(1)</b> Increases Ironblood Stance effects</i></td>
+        <td><i>Ironblood Surge: <b>(1)</b> Has increased Ironblood Stance effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Master Strikes: Attack Master (Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
@@ -314,57 +316,59 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Adamantine Strikes: Unarmed attacks count as adamantine weapons</td>
       </tr><tr style="text-align:center">
-        <td>Arrow Snatching: After a successful Deflect Arrow, allows using the projectile to make an immediate ranged Strike</td>
+        <td>Arrow Snatching: After a successful Deflect Arrow, can immediately use the projectile to make a ranged Strike</td>
       </tr><tr style="text-align:center">
-        <td>Brawling Focus: Allows using the critical specialization effects of trained monk weapons and brawling weapons</td>
+        <td>Brawling Focus: Critical hits with a brawling or trained monk weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Crane Flutter: <b>(R)</b> While in Crane Stance, gives +3 AC vs. a melee Strike, and a foe miss allows an immediate -2 Strike</td>
       </tr><tr style="text-align:center">
-        <td>Crane Stance: <b>(1)</b> Unarmored stance gives +1 AC and restricts attacks to 1d6 HP bludgeoning hand Unarmed Strikes</td>
+        <td>Crane Stance: <b>(1)</b> Unarmored stance gives +1 AC and restricts attacks to 1d6 HP bludgeoning hand Strikes</td>
       </tr><tr style="text-align:center">
-        <td>Crushing Grab: Allows inflicting 4 HP bludgeoning, lethal or non-lethal, with a successful Grapple</td>
+        <td>Crushing Grab: Can inflict 4 HP bludgeoning, lethal or non-lethal, with a successful Grapple</td>
       </tr><tr style="text-align:center">
-        <td>Deflect Arrow: <b>(R)</b> Gives +4 AC vs. a physical ranged Strike</td>
+        <td>Deflect Arrow: <b>(R)</b> Gives +4 AC vs. a physical ranged attack</td>
       </tr><tr style="text-align:center">
         <td>Diamond Fists: Unarmed Strikes gain the forceful trait or increase damage by 1 die step</td>
       </tr><tr style="text-align:center">
-        <td>Disrupt Ki: <b>(2)</b> An Unarmed Strike inflicts 3d6 HP persistent negative damage and enfeebled 1</td>
+        <td>Disrupt Ki: <b>(2)</b> Unarmed Strike also inflicts 3d6 HP persistent negative damage and enfeebled 1</td>
       </tr><tr style="text-align:center">
-        <td>Dragon Roar: <b>(1)</b> R15' Bellowing while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd (DC 26 Will negates; critical failure inflicts frightened 2); first successful self Strike in the next rd on a frightened foe inflicts +4 HP</td>
+        <td>Dragon Roar: <b>(1)</b> R15' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (DC 26 Will negates; critical failure inflicts frightened 2); first successful Strike in the next rd on a frightened foe inflicts +4 HP</td>
       </tr><tr style="text-align:center">
-        <td>Dragon Stance: <b>(1)</b> Unarmored stance allows leg Unarmed Strikes that inflict 1d10 HP bludgeoning and ignoring the first square of difficult terrain when Striding</td>
+        <td>Dragon Stance: <b>(1)</b> Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain</td>
       </tr><tr style="text-align:center">
         <td>Enduring Quickness: Gives an additional action each rd to Stride, Leap, or Jump</td>
       </tr><tr style="text-align:center">
-        <td>Flurry Of Blows: <b>(1)</b> Allows 2 Unarmed Strikes once per turn</td>
+        <td>Flurry Of Blows: <b>(1)</b> Makes 2 unarmed Strikes once per turn</td>
       </tr><tr style="text-align:center">
-        <td>Flurry Of Maneuvers: Allows using Flurry Of Blows to Grapple, Shove, or Trip</td>
+        <td>Flurry Of Maneuvers: Can use Flurry Of Blows to Grapple, Shove, or Trip</td>
       </tr><tr style="text-align:center">
-        <td>Flying Kick: <b>(2)</b> Gives a Strike on a foe at the end of a Leap or Jump</td>
+        <td>Flying Kick: <b>(2)</b> Makes a Strike on a foe at the end of a Leap or Jump</td>
       </tr><tr style="text-align:center">
         <td>Fuse Stance: Has merged two known stances into a unique new stance that grants the effects of both</td>
       </tr><tr style="text-align:center">
-        <td>Guarded Movement: +4 AC vs. movement reactions</td>
+        <td>Guarded Movement: +4 AC vs. movement Reactions</td>
       </tr><tr style="text-align:center">
         <td>Impossible Technique: <b>(R)</b> Forces a foe reroll on a hit or allows a reroll on a failed save</td>
       </tr><tr style="text-align:center">
-        <td>Improved Knockback: Successful Shove moves 5' (critical success 10') and allows following; pushing into an obstacle inflicts 10 HP bludgeoning</td>
+        <td>Improved Knockback: Successful Shove moves +5' (critical success +10') and allows following; pushing into an obstacle inflicts 10 HP bludgeoning</td>
       </tr><tr style="text-align:center">
-        <td>Ironblood Stance: <b>(1)</b> Unarmored stance allows Unarmed Strikes that inflict 1d8 HP bludgeoning and gives resistance 5 to all damage</td>
+        <td>Ironblood Stance: <b>(1)</b> Unarmored stance allows unarmed sweep Strikes that inflict 1d8 HP bludgeoning and gives resistance 5 to all damage</td>
       </tr><tr style="text-align:center">
-        <td>Ironblood Surge: <b>(1)</b> When in Ironblood Stance, gains +1 Armor Class for 1 rd</td>
+        <td>Ironblood Surge: <b>(1)</b> While in Ironblood Stance, gains +1 Armor Class for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Knockback Strike: <b>(2)</b> A successful Unarmed Strike also inflicts a 5' Shove</td>
+        <td>Knockback Strike: <b>(2)</b> A successful unarmed Strike also allows an Athletics check to Shove</td>
       </tr><tr style="text-align:center">
-        <td>Master Of Many Styles: <b>(F)</b> Allows entering a stance at the beginning of a turn</td>
+        <td>Master Of Many Styles: <b>(F)</b> Enters a stance at the beginning of a turn</td>
       </tr><tr style="text-align:center">
         <td>Metal Strikes: Unarmed attacks count as cold iron and silver weapons</td>
       </tr><tr style="text-align:center">
-        <td>Mixed Maneuver: <b>(2)</b> Allows attempting 2 choices of Grapple, Shove, and Trip simultaneously</td>
+        <td>Mixed Maneuver: <b>(2)</b> Uses 2 choices of Grapple, Shove, and Trip at the current multiple attack penalty</td>
       </tr><tr style="text-align:center">
-        <td>Mountain Quake: <b>(1)</b> R20' Stomp inflicts 4 HP and fall prone (DC 41 Fortitude HP only) once per 1d4 rd</td>
+        <td>Monastic Weaponry: Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes</td>
       </tr><tr style="text-align:center">
-        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 AC, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Unarmed Strikes</td>
+        <td>Mountain Quake: <b>(1)</b> R20' Stomp inflicts 4 HP and fall prone (<b>save basic Fortitude</b>) once per 1d4 rd</td>
+      </tr><tr style="text-align:center">
+        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 AC, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes</td>
       </tr><tr style="text-align:center">
         <td>Mountain Stronghold: <b>(1)</b> While in Mountain Stance, gives +2 AC for 1 rd</td>
       </tr><tr style="text-align:center">
@@ -380,33 +384,33 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage up to its hardness and absorbs half of any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Sleeper Hold: <b>(1)</b> Grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success</td>
+        <td>Sleeper Hold: <b>(1)</b> Successful grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success</td>
       </tr><tr style="text-align:center">
         <td>Stance Savant: <b>(F)</b> Enters a stance during initiative</td>
       </tr><tr style="text-align:center">
-        <td>Stand Still: <b>(R)</b> Allows Striking an adjacent moving foe</td>
+        <td>Stand Still: <b>(R)</b> Makes a melee Strike on an adjacent moving foe</td>
       </tr><tr style="text-align:center">
-        <td>Stunning Fist: Allows inflicting stunned 1 with a successful Flurry Of Blows (DC 41 Fortitude negates; critical failure inflicts stunned 3)</td>
+        <td>Stunning Fist: Can inflict stunned 1 with a successful Flurry Of Blows (DC 41 Fortitude negates; critical failure inflicts stunned 3)</td>
       </tr><tr style="text-align:center">
-        <td>Swift River: <b>(F)</b> Ends one Speed status penalty or condition at end of each turn</td>
+        <td>Swift River: <b>(F)</b> Ends one Speed status penalty or condition at the end of a turn</td>
       </tr><tr style="text-align:center">
-        <td>Tangled Forest Rake: <b>(1)</b> Moves a foe 5' into a space within reach with a successful Tangled Forest Stance Strike</td>
+        <td>Tangled Forest Rake: <b>(1)</b> While in Tangled Forest Stance, a successful lashing Strike moves the target 5' into a space within reach</td>
       </tr><tr style="text-align:center">
-        <td>Tangled Forest Stance: <b>(1)</b> Unarmored stance allows Unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC 41 Reflex, Acrobatics, or Athletics negates)</td>
+        <td>Tangled Forest Stance: <b>(1)</b> Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC 41 Reflex, Acrobatics, or Athletics negates)</td>
       </tr><tr style="text-align:center">
-        <td>Tiger Slash: <b>(2)</b> While in Tiger Stance, inflicts +3 damage dice and a 5' push; critical success also inflicts +4 HP persistent bleed damage</td>
+        <td>Tiger Slash: <b>(2)</b> While in Tiger Stance, claw attack inflicts +3 damage dice and a 5' push; critical success also inflicts +4 HP persistent bleed damage</td>
       </tr><tr style="text-align:center">
-        <td>Tiger Stance: <b>(1)</b> Unarmored stance allows 10' Steps and hand Unarmed Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on critical success</td>
+        <td>Tiger Stance: <b>(1)</b> Unarmored stance allows 10' Steps and hand Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, and +8 HP damage with expert, master, and legendary weapon proficiency</td>
       </tr><tr style="text-align:center">
-        <td>Whirling Throw: <b>(1)</b> A successful Athletics vs. a grabbed or restrained foe's Fortitude DC allows throwing it 30', inflicting up to 3d6+4 HP bludgeoning</td>
+        <td>Whirling Throw: <b>(1)</b> A successful Athletics vs. a grabbed or restrained foe's Fortitude DC, modified for size differences, allows throwing it 30', inflicting 3d6+4 HP bludgeoning</td>
       </tr><tr style="text-align:center">
-        <td>Winding Flow: <b>(1)</b> Allows performing 2 choices of Stand, Step, and Stride</td>
+        <td>Winding Flow: <b>(1)</b> Uses 2 choices of Stand, Step, and Stride</td>
       </tr><tr style="text-align:center">
-        <td>Wolf Drag: <b>(2)</b> While in Wolf Stance, inflicts 1d12 HP piercing and knocked prone</td>
+        <td>Wolf Drag: <b>(2)</b> While in Wolf Stance, wolf jaw attack inflicts 1d12 HP piercing and knocked prone</td>
       </tr><tr style="text-align:center">
-        <td>Wolf Stance: <b>(1)</b> Unarmored stance allows hand Unarmed Strikes that inflict 1d8 HP piercing, with the trip trait when flanking</td>
+        <td>Wolf Stance: <b>(1)</b> Unarmored stance allows 1d8 HP piercing hand Strikes that have the trip trait when flanking</td>
       </tr></table>
 </td>
     </tr></table>
@@ -436,9 +440,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Path To Perfection (Will): Successes on Will saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Third Path To Perfection (Reflex): Critical failures on Reflex saves are normal failures and suffers half damage on failed Reflex saves</td>
+        <td>Third Path To Perfection (Reflex): Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
       </tr><tr style="text-align:center">
-        <td>Timeless Body: +2 vs. poisons and diseases and has Resistance 10 to poison damage</td>
+        <td>Timeless Body: +2 vs. poisons and diseases and has Resistance 10 to poison</td>
       </tr></table>
 </td>
     </tr></table>
@@ -508,7 +512,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Wind Jump: Knows the Wind Jump occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td>Elemental Fist: Allows inflicting electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i></td>
+      <td>Elemental Fist: Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i></td>
     </tr><tr style="text-align:center">
       <td>Ki Tradition (Occult): Allows learning spells from the occult tradition</td>
     </tr><tr style="text-align:center">
@@ -516,7 +520,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Meditative Wellspring: Refocus restores 3 Focus Points</td>
     </tr><tr style="text-align:center">
-      <td>Wild Winds Gust: <b>(2)</b> Allows a Wild Winds Stance Strike against all creatures in a 30' cone or 60' line</td>
+      <td>Wild Winds Gust: <b>(2)</b> Makes a Wild Winds Stance Strike against all creatures in a 30' cone or 60' line at the current multiple attack penalty</td>
     </tr></table>
 </td>
   </tr></table>
