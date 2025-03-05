@@ -48,7 +48,7 @@ var attributes = {
   "skillIncreases.Swamp Lore":1, "skillIncreases.Taldan History Lore":1, "skillIncreases.Tanning Lore":1, 
   "skillIncreases.Tea Lore":1, "skillIncreases.Theater Lore":1, "skillIncreases.Troll Lore":1, 
   "skillIncreases.Underworld Lore":1, "skillIncreases.Vampire Lore":1, "skillIncreases.Warfare Lore":1, 
-  "spells.Dispel Magic (A2 Abj)":1
+  "spells.Dispel Magic (A2 Abj)":1, "weapons.Crossbow":1, "weapons.Sling":1, "weapons.Spear":1
 };
   </script>
 </head>
@@ -106,7 +106,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adapted Cantrip; Advanced Bloodline; Arcane Evolution; Armor Proficiency; Assurance (Demon Lore); Assurance (Performance); Bespell Weapon; Bloodline Conduit; Bloodline Focus; Bloodline Perfection; Bloodline Resistance; Bloodline Wellspring; Canny Acumen (Reflex); Canny Acumen (Will); Cantrip Expansion; Clever Improviser; Cooperative Nature; Counterspell; Crossblooded Evolution; Dangerous Sorcery; Divine Evolution; Effortless Concentration; Enhanced Familiar; Familiar; Fast Recovery; Greater Bloodline; Greater Crossblooded Evolution; Greater Mental Evolution; Greater Vital Evolution; Haughty Obstinacy; Interweave Dispel; Magic Sense; Metamagic Mastery; Natural Skill; Occult Evolution; Overwhelming Energy; Primal Evolution; Quickened Casting; Reach Spell; Reflect Spell; Skill Training (Abyss Lore); Skill Training (Acrobatics); Skill Training (Astral Plane Lore); Skill Training (Crafting); Skill Training (Mining Lore); Skill Training (Performance); Skill Training (River Lore); Skill Training (Scouting Lore); Steady Spellcasting; Untrained Improvisation; Widen Spell</td>
-        <td><b>Sorcerer Features</b>: Aberrant; Ability Boost (Charisma); Ability Boosts; Alertness; Angelic; Attack Trained (Simple Weapons; Unarmed Attacks); Bloodline Paragon; Bloodline; Defense Trained (Unarmored Defense); Defensive Robes; Demonic; Diabolic; Draconic; Elemental; Expert Spellcaster; Fey; General Feats; Hag; Imperial; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Sorcerer Weapon Expertise; Undead; Weapon Specialization</td>
+        <td><b>Sorcerer Features</b>: Aberrant; Ability Boost (Charisma); Ability Boosts; Alertness; Angelic; Attack Trained (Simple Weapons; Unarmed Attacks); Bloodline Paragon; Bloodline; Defense Trained (Unarmored Defense); Defensive Robes; Demonic; Diabolic; Draconic; Elemental; Expert Spellcaster; Fey; General Feats; Hag; Imperial; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Sorcerer Feats; Sorcerer Skills; Sorcerer Spellcasting; Undead; Weapon Expertise; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
       </tr></table>
@@ -134,7 +134,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Familiar: May have a familiar</td>
       </tr><tr style="text-align:center">
-        <td>Greater Vital Evolution: Allows casting two additional spells of different levels after spell slots in each level are exhausted once per day</td>
+        <td>Greater Vital Evolution: Can cast two additional spells of different levels after spell slots in each level are exhausted once per day</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
@@ -298,6 +298,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Explorer's Clothing</td>
         <td><b>Shield</b>: Wooden (+2 AC when raised; hardness 3; HP 12)</td>
+        <td><b>Weapons</b>: Crossbow (+28 1d8 P R120'; dexterity; expert); Sling (+28 1d6+2 B R50'; dexterity; expert); Spear (+28 1d6+4 P R20'; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -313,9 +314,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Sorcerer Weapon Expertise: Attack Expert (Simple Weapons; Unarmed Attacks)</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Weapon Expertise: Attack Expert (Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, and +4 HP damage with expert, master, and legendary weapon proficiency</td>
       </tr></table>
@@ -512,17 +513,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Undead: Spell Trained (Divine)/Knows the Undeath's Blessing divine spell</i></td>
     </tr><tr style="text-align:center">
-      <td>Aberrant: Casting a bloodline spell gives the caster or target +2 Will saves for 1 rd</td>
+      <td>Aberrant: Casting a bloodline spell gives self or target +2 Will saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Adapted Cantrip: Knows a cantrip from a second tradition</td>
     </tr><tr style="text-align:center">
-      <td>Angelic: Casting a bloodline spell gives the caster or target +1 saves for 1 rd</td>
+      <td>Angelic: Casting a bloodline spell gives self or target +1 saves for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Arcane Evolution: Allows learning 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire</td>
+      <td>Arcane Evolution: Can learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Bespell Weapon: <b>(F)</b> Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school</td>
+      <td>Bespell Weapon: <b>(F)</b> After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school</td>
     </tr><tr style="text-align:center">
-      <td>Bloodline Conduit: <b>(1)</b> Allows casting instantaneous spells of 5th level and lower without expending a spell slot</td>
+      <td>Bloodline Conduit: <b>(1)</b> Invokes an instantaneous spell of 5th level or lower without expending a spell slot</td>
     </tr><tr style="text-align:center">
       <td>Bloodline Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
@@ -530,39 +531,39 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare two additional cantrips each day or add two additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Counterspell: <b>(R)</b> Expends a spell slot to counteract a spell with the same spell</td>
+      <td>Counterspell: <b>(R)</b> Expends a spell slot to attempt to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
-      <td>Crossblooded Evolution: Allows adding 1 spell from a different tradition to repertoire</td>
+      <td>Crossblooded Evolution: Can have 1 spell from a different tradition in repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Dangerous Sorcery: Casting an instantaneous harmful spell inflicts additional damage equal to its level</td>
+      <td>Dangerous Sorcery: Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level</td>
     </tr><tr style="text-align:center">
-      <td>Demonic: Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts -1 Armor Class on target for 1 rd</td>
+      <td>Demonic: Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Diabolic: Casting a bloodline spell gives the caster +1 Deception for 1 rd or inflicts 1 HP fire per spell level</td>
+      <td>Diabolic: Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level</td>
     </tr><tr style="text-align:center">
-      <td>Draconic: Casting a bloodline spell gives the caster or target +1 Armor Class for 1 rd</td>
+      <td>Draconic: Casting a bloodline spell gives self or target +1 Armor Class for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Extends the duration of 1 spell</td>
     </tr><tr style="text-align:center">
-      <td>Elemental: Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level for 1 rd</td>
+      <td>Elemental: Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level</td>
     </tr><tr style="text-align:center">
-      <td>Fey: Casting a bloodline spell gives the caster or target concealment for 1 rd</td>
+      <td>Fey: Casting a bloodline spell gives self or target concealment for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Greater Crossblooded Evolution: Allows adding 3 spells of different levels from different traditions to repertoire</td>
+      <td>Greater Crossblooded Evolution: Can have 3 spells of different levels from different traditions in repertoire</td>
     </tr><tr style="text-align:center">
       <td>Greater Mental Evolution: Adds 1 spell of each level to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Hag: Casting a bloodline spell inflicts 2 HP mental per spell level (Will negates) on first successful attacker for 1 rd</td>
+      <td>Hag: Casting a bloodline spell inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Imperial: Casting a bloodline spell gives the caster or target +1 skill checks for 1 rd</td>
+      <td>Imperial: Casting a bloodline spell gives self or target +1 skill checks for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Interweave Dispel: <b>(1)</b> Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek</td>
     </tr><tr style="text-align:center">
-      <td>Metamagic Mastery: Allows using a 1-action metamagic effect as a free action</td>
+      <td>Metamagic Mastery: Can use a 1-action metamagic effect as a free action</td>
     </tr><tr style="text-align:center">
-      <td>Occult Evolution: Allows temporarily adding 1 unknown mental spell to repertoire each day</td>
+      <td>Occult Evolution: Can add 1 unknown mental occult spell to repertoire each day until next daily prep</td>
     </tr><tr style="text-align:center">
       <td>Overwhelming Energy: <b>(1)</b> Subsequent spell ignores resistance 20 to energy</td>
     </tr><tr style="text-align:center">
@@ -570,15 +571,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Reflect Spell: Allows causing a successful Counterspell to inflict the spell effects on the caster</td>
+      <td>Reflect Spell: Can cause a successful Counterspell to inflict the spell effects on the caster</td>
     </tr><tr style="text-align:center">
       <td>Signature Spells: Can heighten 1 chosen spell of each level without learning a heightened version</td>
     </tr><tr style="text-align:center">
-      <td>Sorcerer Spellcasting: Allows learning spells from the Occult; Divine; Arcane; Primal tradition</td>
+      <td>Sorcerer Spellcasting: Can learn spells from the occult; divine; arcane; primal tradition</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: A successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Undead: Casting a bloodline spell gives the caster 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level for 1 rd</td>
+      <td>Undead: Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
     </tr></table>

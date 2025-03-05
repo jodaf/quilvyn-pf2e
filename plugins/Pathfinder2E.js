@@ -786,7 +786,7 @@ Pathfinder2E.CLASSES = {
       '1:Bloodline,"1:Sorcerer Spellcasting","2:Skill Feats",' +
       '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
       '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
-      '"9:Lightning Reflexes",11:Alertness,"11:Sorcerer Weapon Expertise",' +
+      '"9:Lightning Reflexes",11:Alertness,"11:Weapon Expertise",' +
       '"13:Defensive Robes","13:Weapon Specialization",' +
       '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
@@ -4592,8 +4592,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
   'Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+    'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
   'Weapon Mastery':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
@@ -5419,7 +5418,7 @@ Pathfinder2E.FEATURES = {
   'Snagging Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with the other hand free inflicts flat-footed on target for 1 rd"',
+    'Note="Successful melee Strike with the other hand free inflicts flat-footed for 1 rd"',
   // Sudden Charge as above
   'Aggressive Block':
     'Action=Free ' +
@@ -6476,79 +6475,78 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic Note="Allows learning spells from the %V tradition"',
-  'Sorcerer Weapon Expertise':
-    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
+    'Section=magic Note="Can learn spells from the %V tradition"',
+  // Weapon Expertise as above
   // Weapon Specialization as above
 
   'Aberrant':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Tentacular Limbs occult spell",' +
-      '"Casting a bloodline spell gives the caster or target +2 Will saves for 1 rd",' +
+      '"Casting a bloodline spell gives self or target +2 Will saves for 1 rd",' +
       '"Skill Trained (Intimidation; Occultism)"',
   'Angelic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Angelic Halo divine spell",' +
-      '"Casting a bloodline spell gives the caster or target +1 saves for 1 rd",' +
+      '"Casting a bloodline spell gives self or target +1 saves for 1 rd",' +
       '"Skill Trained (Diplomacy; Religion)"',
   'Demonic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
-      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts -1 Armor Class on target for 1 rd",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Diabolic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
-      '"Casting a bloodline spell gives the caster +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
+      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
       '"Skill Trained (Deception; Religion)"',
   'Draconic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives the caster or target +1 Armor Class for 1 rd",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Elemental':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level for 1 rd",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Fey':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Faerie Dust primal spell",' +
-      '"Casting a bloodline spell gives the caster or target concealment for 1 rd",' +
+      '"Casting a bloodline spell gives self or target concealment for 1 rd",' +
       '"Skill Trained (Deception; Nature)"',
   'Hag':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
-      '"Casting a bloodline spell inflicts 2 HP mental per spell level (Will negates) on first successful attacker for 1 rd",' +
+      '"Casting a bloodline spell inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker for 1 rd",' +
       '"Skill Trained (Deception; Occultism)"',
   'Imperial':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell",' +
-      '"Casting a bloodline spell gives the caster or target +1 skill checks for 1 rd",' +
+      '"Casting a bloodline spell gives self or target +1 skill checks for 1 rd",' +
       '"Skill Trained (Arcana; Society)"',
   'Undead':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
-      '"Casting a bloodline spell gives the caster 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level for 1 rd",' +
+      '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level",' +
       '"Skill Trained (Intimidation; Religion)"',
 
   'Counterspell':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Expends a spell slot to counteract a spell with the same spell"',
+    'Note="Expends a spell slot to attempt to counteract a spell with the same spell"',
   'Dangerous Sorcery':
     'Section=magic ' +
-    'Note="Casting an instantaneous harmful spell inflicts additional damage equal to its level"',
+    'Note="Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level"',
   'Familiar':'Section=feature Note="May have a familiar"',
   // Reach Spell as above
   // Widen Spell as above
@@ -6557,18 +6555,18 @@ Pathfinder2E.FEATURES = {
   'Arcane Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"Allows learning 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
+      '"Can learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
       '"Skill Trained (Choose 1 from any)"',
   'Bespell Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Allows casting a non-cantrip spell to also cause a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school"',
+    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"Allows temporarily adding 1 unknown mental spell to repertoire each day",' +
+      '"Can add 1 unknown mental occult spell to repertoire each day until next daily prep",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
@@ -6604,7 +6602,7 @@ Pathfinder2E.FEATURES = {
     'Section=save Note="+1 vs. spells and magical effects"',
   'Crossblooded Evolution':
     'Section=magic ' +
-    'Note="Allows adding 1 spell from a different tradition to repertoire"',
+    'Note="Can have 1 spell from a different tradition in repertoire"',
   'Greater Bloodline (Aberrant)':
     'Section=magic ' +
     'Note="Knows the Unusual Anatomy occult spell/+1 Focus Points"',
@@ -6643,25 +6641,25 @@ Pathfinder2E.FEATURES = {
     'Note="Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
   'Reflect Spell':
     'Section=magic ' +
-    'Note="Allows causing a successful Counterspell to inflict the spell effects on the caster"',
+    'Note="Can cause a successful Counterspell to inflict the spell effects on the caster"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
     'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
     'Section=feature ' +
-    'Note="Allows casting two additional spells of different levels after spell slots in each level are exhausted once per day"',
+    'Note="Can cast two additional spells of different levels after spell slots in each level are exhausted once per day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
-    'Note="Allows adding 3 spells of different levels from different traditions to repertoire"',
+    'Note="Can have 3 spells of different levels from different traditions in repertoire"',
   'Bloodline Conduit':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows casting instantaneous spells of 5th level and lower without expending a spell slot"',
+    'Note="Invokes an instantaneous spell of 5th level or lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
     'Section=magic ' +
-    'Note="Allows using a 1-action metamagic effect as a free action"',
+    'Note="Can use a 1-action metamagic effect as a free action"',
 
   // Wizard
   // Alertness as above
@@ -10280,7 +10278,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows caster to gain truthful answers from touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents caster from resting for 24 hr; critical failure inflicts -2 on target Deception checks)"',
+      '"Allows caster to gain truthful answers from touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents caster from resting for 24 hr; critical failure inflicts -2 on Deception checks)"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -11250,7 +11248,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on caster for 1 action next turn; critical success inflicts confused on caster for 1 rd; critical failure inflicts confused on target for 1 min)"',
+      '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on caster for 1 action next turn; critical success inflicts confused on caster for 1 rd; critical failure inflicts confused for 1 min)"',
   'Soothing Words':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -13525,6 +13523,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.exalt(Paladin)',
       'combatNotes.auraOfVengeance', '=', 'null' // italics
     );
+    rules.defineRule('combatNotes.weaponExpertise',
+      '', '=', '"Simple Weapons"',
+      classLevel, '=', '"Simple Weapons; Martial Weapons"'
+    );
     rules.defineRule('featureNotes.divineAlly',
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
@@ -13560,6 +13562,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('spellModifier.Divine', 'spellModifier.Champion', '=', null);
     rules.defineRule
       ('spellAbility.Divine', classLevel, '=', '"charisma"');
+    rules.defineRule('trainingLevel.Martial Weapons',
+      'combatNotes.weaponExpertise', '^=', 'source.includes("Martial Weapons") ? 2 : null'
+    );
+    rules.defineRule('trainingLevel.Simple Weapons',
+      'combatNotes.weaponExpertise', '^=', 'source.includes("Simple Weapons") ? 2 : null'
+    );
     rules.defineChoice
       ('notes', 'validationNotes.championAlignment:Requires deityFollowerAlignments =~ alignment');
     rules.defineRule('validationNotes.championAlignment',
@@ -13792,7 +13800,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', null);
+      ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', 'source.toLowerCase()');
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
