@@ -3410,7 +3410,7 @@ Pathfinder2E.FEATURES = {
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
-  'Elf Step':'Action=1 Section=combat Note="Can Step twice in 1 action"',
+  'Elf Step':'Action=1 Section=combat Note="Steps twice in 1 action"',
   'Expert Longevity':
     'Section=skill ' +
     'Note="Gains expert level in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
@@ -3775,7 +3775,7 @@ Pathfinder2E.FEATURES = {
   'Feral Mutagen':
     'Section=combat,skill ' +
     'Note=' +
-      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the AC penalty to -2 to increase claws and jaws damage by 1 die step",' +
+      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the Armor Class penalty to -2 to increase claws and jaws damage by 1 die step",' +
       '"Consuming a bestial mutagen adds the item bonus to Intimidation"',
   'Sticky Bomb':
     'Action=Free ' +
@@ -3807,7 +3807,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Thrown bombs have a 60\' range",' +
-      '"Thrown bombs reduce target cover AC bonus by 1 and succeed automatically on the flat check to target a concealed creature"',
+      '"Thrown bombs reduce target cover Armor Class bonus by 1 and succeed automatically on the flat check to target a concealed creature"',
   'Glib Mutagen':
     'Section=skill ' +
     'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and linguistic barriers"',
@@ -3930,7 +3930,7 @@ Pathfinder2E.FEATURES = {
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +%{combatNotes.rage//2} HP) and suffers -1 AC and no concentration actions for 1 min; requires 1 min between rages"',
+    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +%{combatNotes.rage//2} HP) and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 min between rages"',
   'Raging Resistance (Animal)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
@@ -4010,7 +4010,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Defense Expert (Unarmored Defense)",' +
-      '"+%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} AC in no armor during rage"',
+      '"+%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} Armor Class in no armor during rage"',
   'Attack Of Opportunity':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4110,7 +4110,7 @@ Pathfinder2E.FEATURES = {
   'Reckless Abandon':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Gives -2 AC, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
+    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
   'Brutal Critical':
     'Section=combat ' +
     'Note="Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage"',
@@ -5109,7 +5109,7 @@ Pathfinder2E.FEATURES = {
   'Defensive Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +2 AC and saves for 1 rd"',
+    'Note="Subsequent <i>Heal</i> cast on a single target also gives +2 Armor Class and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
@@ -5330,7 +5330,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has plant, not humanoid, trait",' +
-      '"Can use <i>Tree Shape</i> effects at will; tree form raises AC to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
+      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
@@ -5440,7 +5440,7 @@ Pathfinder2E.FEATURES = {
   'Dueling Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +2 AC for 1 rd when wielding a one-handed melee weapon with the other hand free"',
+    'Note="Gives +2 Armor Class for 1 rd when wielding a one-handed melee weapon with the other hand free"',
   'Intimidating Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5471,7 +5471,7 @@ Pathfinder2E.FEATURES = {
   'Twin Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Parrying with one melee weapon in each hand gives +1 AC for 1 rd, or +2 AC if either weapon has the parry trait"',
+    'Note="Parrying with one melee weapon in each hand gives +1 Armor Class for 1 rd, or +2 Armor Class if either weapon has the parry trait"',
   'Advanced Weapon Training':
     'Section=combat ' +
     'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
@@ -5489,7 +5489,7 @@ Pathfinder2E.FEATURES = {
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an adjacent ally +2 AC when wielding a one-handed weapon with the other hand free"',
+    'Note="Gives an adjacent ally +2 Armor Class when wielding a one-handed weapon with the other hand free"',
   'Reflexive Shield':
     'Section=save ' +
     'Note="Raised shield adds shield bonus to Reflex saves"',
@@ -5741,7 +5741,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"Unarmored stance gives +1 AC and restricts attacks to 1d6 HP bludgeoning hand Strikes",' +
+      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6 HP bludgeoning hand Strikes",' +
       '"Unarmored stance gives -5 jump DC and +2\' and +5\' vertical and horizontal Leaps"',
   'Dragon Stance':
     'Action=1 ' +
@@ -5761,7 +5761,7 @@ Pathfinder2E.FEATURES = {
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} AC, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5789,7 +5789,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
-    'Section=combat Note="Gives +4 AC vs. a physical ranged attack"',
+    'Section=combat Note="Gives +4 Armor Class vs. a physical ranged attack"',
   'Flurry Of Maneuvers':
     'Section=combat ' +
     'Note="Can use Flurry Of Blows to Grapple, Shove, or Trip"',
@@ -5797,7 +5797,8 @@ Pathfinder2E.FEATURES = {
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a Strike on a foe at the end of a Leap or Jump"',
-  'Guarded Movement':'Section=combat Note="+4 AC vs. movement Reactions"',
+  'Guarded Movement':
+    'Section=combat Note="+4 Armor Class vs. movement Reactions"',
   'Stand Still':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5810,7 +5811,7 @@ Pathfinder2E.FEATURES = {
   'Crane Flutter':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="While in Crane Stance, gives +3 AC vs. a melee Strike, and a foe miss allows an immediate -2 Strike"',
+    'Note="While in Crane Stance, gives +3 Armor Class vs. a melee Strike, and a foe miss allows an immediate -2 Strike"',
   'Dragon Roar':
     'Action=1 ' +
     'Section=combat ' +
@@ -5819,7 +5820,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
   'Mountain Stronghold':
     'Action=1 ' +
-    'Section=combat Note="While in Mountain Stance, gives +2 AC for 1 rd"',
+    'Section=combat ' +
+    'Note="While in Mountain Stance, gives +2 Armor Class for 1 rd"',
   'Tiger Slash':
     'Action=2 ' +
     'Section=combat ' +
@@ -6206,7 +6208,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Allows a successful Strike against a flat-footed foe to inflict choice of -10 Speed or enfeebled 1 until the end of next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts choice of -10 Speed or enfeebled 1 until the end of next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
@@ -6220,11 +6222,10 @@ Pathfinder2E.FEATURES = {
   'Light Armor Mastery':
     'Section=combat Note="Defense Master (Light Armor; Unarmored Defense)"',
   'Master Strike':
-    'Action=Free ' +
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"Allows a successful Strike on a flat-footed foe to force a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, knocked unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe forces a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -6238,12 +6239,12 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Defense %V (Medium Armor)",' +
-      '"Allows using any simple weapon to sneak attack/Allows use of critical specialization on a critical hit with a d8 or lighter simple weapon on a flat-footed foe",' +
+      '"Can use any simple weapon to sneak attack/Critical hits with a d8 or lighter simple weapon on a flat-footed foe inflict its critical specialization effect",' +
       '"Skill Trained (Intimidation)"',
   'Scoundrel':
     'Section=combat,skill ' +
     'Note=' +
-      '"A successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of next turn",' +
+      '"Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of next turn",' +
       '"Skill Trained (Deception; Diplomacy)"',
   'Slippery Mind':
     'Section=save,save ' +
@@ -6252,44 +6253,46 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sneak Attack':
     'Section=combat ' +
-    'Note="+%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP damage vs. flat-footed foe using an agile, finesse, or ranged weapon"',
+    'Note="Successful strike using an agile, finesse, or ranged weapon vs. a flat-footed foe inflicts +%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP precision damage"',
   'Surprise Attack':
     'Section=combat ' +
-    'Note="Allows using Deception or Stealth for initiative to inflict flat-footed on creatures that haven\'t acted"',
+    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed on creatures that haven\'t acted"',
   'Thief':
     'Section=combat,skill ' +
     'Note=' +
-      '"+%{dexterityModifier-strengthModifier} HP damage with finesse melee weapons",' +
+      '"+%V damage with finesse melee weapons",' +
       '"Skill Trained (Thievery)"',
   // Vigilant Senses as above
   'Weapon Tricks':
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"A critical hit vs. a flat-footed foe with an unarmed attack or an agile, finesse, or rogue weapon inflicts its critical specialization effect"',
+      '"Critical hits with an unarmed attack, rogue weapon, or a simple agile or finesse weapon vs. a flat-footed foe inflict its critical specialization effect"',
   // Weapon Specialization as above
 
   'Nimble Dodge':
-    'Action=Reaction Section=combat Note="Gives +2 AC against an attack"',
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Gives +2 Armor Class against an attack when unencumbered"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
       '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
       '"+%{rank.Thievery>=3?2:1} vs. traps",' +
-      '"+%{rank.Thievery>=3?2:1} AC vs. traps"',
+      '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps"',
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows Striking with each hand, inflicting flat-footed on the second"',
+    'Note="Strikes with a weapon each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives +2 Intimidation to Demoralize another foe after current foe drops"',
+    'Note="After downing one foe, makes a +2 Intimidation check to Demoralize another"',
   'Brutal Beating':
-    'Section=combat Note="Critical success on a Strike inflicts frightened 1"',
+    'Section=combat Note="Critical successes on Strikes inflict frightened 1"',
   'Distracting Feint':
     'Section=combat ' +
-    'Note="A successful Feint inflicts -2 Perception and Reflex saves"',
+    'Note="Successful Feints inflict -2 Perception and Reflex saves while target remains flat-footed"',
   'Minor Magic (Arcane)':
     'Section=magic,magic ' +
     'Note=' +
@@ -6312,7 +6315,7 @@ Pathfinder2E.FEATURES = {
       '"Knows 2 primal cantrips"',
   'Mobility':
     'Section=combat ' +
-    'Note="Allows Striding at half Speed without triggering Reactions"',
+    'Note="Can Stride at half Speed without triggering Reactions"',
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
@@ -6320,7 +6323,7 @@ Pathfinder2E.FEATURES = {
   'Battle Assessment':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Perception vs. Deception or Stealth DC determines foe strengths and weaknesses"',
+    'Note="Successful Perception vs. Deception or Stealth DC determines target\'s strengths and weaknesses"',
   'Dread Striker':
     'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
   'Magical Trickster':
@@ -6329,95 +6332,97 @@ Pathfinder2E.FEATURES = {
   'Poison Weapon':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Allows preparing %{level} poisons each day that inflict 1d4 HP damage and applying poison to piercing and slashing weapons"',
+    'Note="Can prepare %{level} poisons each day that inflict 1d4 HP damage/Can apply poison that lasts for 1 turn to piercing and slashing weapons"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows a move to remain adjacent to a retreating foe"',
+    'Note="Moves to remain adjacent to a retreating foe"',
   'Sabotage':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item possessed by a creature within reach"',
+    'Note="Successful Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item with moving parts possessed by a creature within reach"',
   // Scout's Warning as above
   'Gang Up':
     'Section=combat ' +
-    'Note="Flanking by allies inflicts flat-footed on foes vs. self attacks"',
+    'Note="Foes within reach of an ally are flat-footed vs. self attacks"',
   'Light Step':
     'Section=ability ' +
-    'Note="Allows Striding or Stepping normally over difficult terrain"',
+    'Note="Can Stride or Step normally over difficult terrain"',
   // Skirmish Strike as above
   'Twist The Knife':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Inflicts %{(level+7)//6} HP persistent bleed damage with a sneak attack"',
+    'Note="Inflicts %{(level+7)//6} HP persistent bleed damage after a successful sneak attack on a flat-footed foe"',
   // Blind-Fight as above
   'Delay Trap':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="A successful +5 DC Thievery check delays or disables trap activation"',
+    'Note="Successful +5 DC Thievery check delays or disables trap activation"',
   'Improved Poison Weapon':
     'Section=combat ' +
     'Note="Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison"',
   'Nimble Roll':
     'Section=save ' +
-    'Note="Allows using Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
+    'Note="Can use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
   'Opportune Backstab':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows a Strike on a foe immediately after an ally hits it"',
+    'Note="Strikes a foe immediately after an ally hits it"',
   'Sidestep':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Redirects a failed Strike on self to an adjacent creature"',
   'Sly Striker':
     'Section=combat ' +
-    'Note="Successful Strikes with a sneak attack weapon inflict +%{level>=14 ? 2 : 1}d6 HP precision damage"',
+    'Note="Successful Strikes with a sneak attack weapon inflict %{combatNotes.impossibleStriker?\'full sneak attack\':level>=14?\'+2d6 HP precision\':\'+1d6 HP precision\'} damage"',
   'Precise Debilitations':
     'Section=combat ' +
-    'Note="Allows Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
+    'Note="Can use Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
   'Sneak Savant':
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
     'Section=combat ' +
-    'Note="Allows Debilitating Strike to prevent Reactions or flanking"',
+    'Note="Can use Debilitating Strike to prevent Reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
-    'Note="Allows Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
+    'Note="Can use Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Allows Debilitating Strike to force a foe Fortitude save; critical failure paralyzes until the end of next turn; failure/success inflicts slowed 2/1 until the end of next turn"',
+    'Note="Can use Debilitating Strike on a critical hit to force a foe Fortitude save; critical failure paralyzes until the end of next turn; failure or success inflicts slowed 2 or 1 until the end of next turn"',
   'Fantastic Leap':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike after a High Jump or Long Jump that uses Long Jump distance"',
+    'Note="Strikes after Long Jump or a High Jump that uses Long Jump distance"',
   'Felling Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Forces a Reflex save with a successful Strike vs. an airborne flat-footed foe; critical failure grounds until the end of next turn; failure causes 120\' fall"',
+    'Note="Successful Strike vs. a flat-footed airborne foe forces a Reflex save; failure inflicts a 120\' fall; critical failure also inflicts grounded until the end of next turn"',
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Prevent a foe Reaction; requires an attack against a higher-level foe"',
+    'Note="Prevents a foe Reaction; a higher-level foe requires a successful attack roll"',
   'Spring From The Shadows':
-    'Action=1 Section=combat Note="Strikes an unaware foe after a Stride"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strikes an unaware foe after a Stride, remaining undetected afterward"',
   'Defensive Roll':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Negates half damage from an attack that would reduce self to 0 HP once per 10 min"',
+    'Note="Reduces by half the damage from an attack that would reduce self to 0 HP once per 10 min"',
   'Instant Opening':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Distraction inflicts flat-footed vs. self until the end of next turn"',
+    'Note="R30\' Inflicts flat-footed vs. self on target until the end of next turn"',
   'Leave An Opening':
     'Section=combat ' +
-    'Note="Allows following a critical hit on a flat-footed foe by giving a chosen ally an Attack Of Opportunity"',
+    'Note="Critical hit on a flat-footed foe allows a chosen ally to make an Attack Of Opportunity"',
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
-    'Note="Immune to detection, revelation and scrying effects of less than 10 counteract level"',
+    'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
   'Cloud Step':
     'Section=ability ' +
-    'Note="Allows Striding over insubstantial surfaces and traps"',
+    'Note="Can Stride over insubstantial surfaces and traps"',
   'Cognitive Loophole':
     'Action=Reaction ' +
     'Section=save ' +
@@ -6425,29 +6430,28 @@ Pathfinder2E.FEATURES = {
   'Dispelling Slice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Allows a level %{(level+1)//2}, DC %{classDifficultyClass.Rogue-10} counteract attempt to dispel a magical effect on the target of a successful sneak attack"',
+    'Note="Successful sneak attack allows a level %{(level+1)//2}, +%{classDifficultyClass.Rogue-10} counteract attempt to dispel a magical effect"',
   'Perfect Distraction':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Creates a decoy that invokes <i>Mislead</i> effects once per 10 min"',
+    'Note="Creates a decoy that gives <i>Mislead</i> effects once per 10 min"',
   'Implausible Infiltration':
     'Action=2 ' +
     'Section=ability ' +
-    'Note="Allow movement through up to 10\' of wood, plaster, or stone"',
+    'Note="Can move through up to 10\' of wood, plaster, or stone"',
   'Powerful Sneak':
     'Section=combat ' +
-    'Note="Allows changing sneak attack damage to match weapon type"',
+    'Note="Can change sneak attack damage to match weapon damage type"',
   "Trickster's Ace":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Evokes the effects of a prepared spell of up to level 4 on self"',
+    'Note="Prespecified trigger invokes a prepared spell of up to level 4 on self"',
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Makes self invisible for 1 min when hidden from foes once per hr"',
+    'Note="Can become invisible for 1 min when hidden from foes once per hr"',
   'Impossible Striker':
-    'Section=combat ' +
-    'Note="Allows inflicting sneak attack damage on a non-flat-footed foe"',
+    'Section=combat Note="Has increased Sly Striker effects"',
   'Reactive Distraction':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6493,7 +6497,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
-      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts -1 AC on target for 1 rd",' +
+      '"Casting a bloodline spell gives the caster +1 Intimidation for 1 rd or inflicts -1 Armor Class on target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Diabolic':
     'Section=magic,magic,skill ' +
@@ -6505,7 +6509,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives the caster or target +1 AC for 1 rd",' +
+      '"Casting a bloodline spell gives the caster or target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Elemental':
     'Section=magic,magic,skill ' +
@@ -7294,7 +7298,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
     'Section=skill Note="Allows using Performance to Make an Impression"',
-  'Intimidating Glare':'Section=skill Note="Allows using glare to Demoralize"',
+  'Intimidating Glare':'Section=skill Note="Can use glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
     'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
@@ -7454,7 +7458,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Allows using Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
   'Wary Disarmament':
-    'Section=skill Note="+2 AC vs. a trap triggered while disarming it"',
+    'Section=skill ' +
+    'Note="+2 Armor Class vs. a trap triggered while disarming it"',
 
 };
 Pathfinder2E.GOODIES = {
@@ -7703,7 +7708,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, AC %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Athletics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Athletics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, AC %{level+21}, +21 attack, +4 damage with double damage dice, +23 Athletics)"',
+      '"Caster becomes choice of a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, Armor Class %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Athletics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Athletics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, Armor Class %{level+21}, +21 attack, +4 damage with double damage dice, +23 Athletics)"',
   'Air Bubble':
     'Level=1 ' +
     'Trait= ' +
@@ -7750,7 +7755,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of Medium animal with 5 temporary HP, AC %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and creature-specific features for 1 min (<b>heightened 3rd</b> gives 10 temporary HP, AC %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, AC %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
+      '"Caster becomes choice of Medium animal with 5 temporary HP, Armor Class %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and creature-specific features for 1 min (<b>heightened 3rd</b> gives 10 temporary HP, Armor Class %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, Armor Class %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, Armor Class %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
   'Animal Messenger':
     'Level=2 ' +
     'Trait= ' +
@@ -7798,7 +7803,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes a Huge creature with 30 temporary HP, AC %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
+      '"Caster becomes a Huge creature with 30 temporary HP, Armor Class %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
   'Baleful Polymorph':
     'Level=6 ' +
     'Trait= ' +
@@ -7854,7 +7859,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. AC %{spellDifficultyClass.%tradition}"',
+      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition}"',
   'Blade Barrier':
     'Level=6 ' +
     'Trait= ' +
@@ -7972,7 +7977,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"10\' emanation around touched gives +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)"',
+      '"10\' emanation around touched gives +1 Armor Class and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)"',
   'Clairaudience':
     'Level=3 ' +
     'Trait= ' +
@@ -8240,7 +8245,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of Large dinosaur with 15 temporary HP, AC %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
+      '"Caster becomes choice of Large dinosaur with 15 temporary HP, Armor Class %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20\' or 25\' reach, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
   'Disappearance':
     'Level=8 ' +
     'Trait= ' +
@@ -8310,7 +8315,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"10\' emanation (+10\' after first sustain) gives allies +1 AC and saves, +2 vs. creatures opposed to specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained for up to 1 min"',
+      '"10\' emanation (+10\' after first sustain) gives allies +1 Armor Class and saves, +2 vs. creatures opposed to specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained for up to 1 min"',
   'Divine Decree':
     'Level=7 ' +
     'Trait= ' +
@@ -8366,7 +8371,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of Large dragon with 10 temporary HP, AC %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5\' reach, 15 temporary HP, AC %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
+      '"Caster becomes choice of Large dragon with 10 temporary HP, Armor Class %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> Huge creature with +5\' reach, 15 temporary HP, Armor Class %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
     'Trait= ' +
@@ -8422,7 +8427,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, AC, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40\' fall)"',
+      '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, Armor Class, and skill checks, 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning (<b>save Reflex</b> inflicts half HP and prone; critical success inflicts half HP only ; critical failure also inflicts 40\' fall)"',
   'Eclipse Burst':
     'Level=7 ' +
     'Trait= ' +
@@ -8446,7 +8451,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of Medium elemental with 10 temporary HP, AC %{level+19}, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> Large creature with 10\' reach, 15 temporary HP, AC %{level+22}, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> Huge creature with 15\' reach, 20 temporary HP, AC %{level+22}, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)"',
+      '"Caster becomes choice of Medium elemental with 10 temporary HP, Armor Class %{level+19}, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> Large creature with 10\' reach, 15 temporary HP, Armor Class %{level+22}, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> Huge creature with 15\' reach, 20 temporary HP, Armor Class %{level+22}, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)"',
   'Endure Elements':
     'Level=2 ' +
     'Trait= ' +
@@ -8668,7 +8673,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains +1 AC and saves vs. specified foe while sustained for up to 1 min (<b>heightened 6th</b> gives +2 bonus)"',
+      '"R30\' Target gains +1 Armor Class and saves vs. specified foe while sustained for up to 1 min (<b>heightened 6th</b> gives +2 bonus)"',
   'Foresight':
     'Level=9 ' +
     'Trait= ' +
@@ -8922,7 +8927,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusory image of a Large or smaller creature (AC %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
+      '"R500\' Creates an illusory image of a Large or smaller creature (Armor Class %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows the caster to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'Trait= ' +
@@ -8962,7 +8967,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Medium insect with 10 temporary HP, AC %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> Large insect with +5\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> Huge insect with +10\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
+      '"Caster transforms into choice of Medium insect with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> Large insect with +5\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> Huge insect with +10\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
     'Trait= ' +
@@ -9066,7 +9071,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains +1 AC with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 AC)"',
+      '"Caster gains +1 Armor Class with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 Armor Class)"',
   'Mage Hand':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -9273,7 +9278,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, AC %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> 25 temporary HP, AC %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
+      '"Caster transforms into choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, Armor Class %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> 25 temporary HP, Armor Class %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
   'Moon Frenzy':
     'Level=5 ' +
     'Trait= ' +
@@ -9289,7 +9294,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, AC %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
+      '"Caster transforms into choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
     'Trait= ' +
@@ -9392,7 +9397,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster becomes choice of Tiny animal with AC %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> gives 20\' fly Speed)"',
+      '"Caster becomes choice of Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> gives 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'Trait= ' +
@@ -9424,7 +9429,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R30\' Conjures a magical mount (AC 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and may fly)"',
+      '"R30\' Conjures a magical mount (Armor Class 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and may fly)"',
   'Plane Shift':
     'Level=7 ' +
     'Trait= ' +
@@ -9440,7 +9445,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster transforms into choice of Large plant with 12 temporary HP, AC %{level+19}, +27 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> Huge plant with +5\' reach, 24 temporary HP, AC %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
+      '"Caster transforms into choice of Large plant with 12 temporary HP, Armor Class %{level+19}, +27 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> Huge plant with +5\' reach, 24 temporary HP, Armor Class %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
   'Polar Ray':
     'Level=8 ' +
     'Trait= ' +
@@ -9496,7 +9501,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, AC %{level+22}, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
+      '"R30\' Caster and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class %{level+22}, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'Trait= ' +
@@ -9552,7 +9557,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates an illusory copy of the caster, with the same AC and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain by 10 min)"',
+      '"R30\' Creates an illusory copy of the caster, with the same Armor Class and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain by 10 min)"',
   'Protection':
     'Level=1 ' +
     'Trait= ' +
@@ -9560,7 +9565,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +1 AC and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on control effects, for 1 min"',
+      '"Touched gains +1 Armor Class and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on control effects, for 1 min"',
   'Prying Eye':
     'Level=5 ' +
     'Trait= ' +
@@ -9692,7 +9697,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates an impassible force sphere with AC 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
+      '"R30\' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
     'Trait= ' +
@@ -9756,7 +9761,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Caster gains AC %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, AC %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
+      '"Caster gains Armor Class %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, Armor Class %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'Trait= ' +
@@ -9772,7 +9777,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"30\' burst gives +1 AC, attack, damage, and saves vs. choice of aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
+      '"30\' burst gives +1 Armor Class, attack, damage, and saves vs. choice of aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
     'Trait= ' +
@@ -9887,7 +9892,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster gains +1 AC and may use Shield Block with Hardness 5 until next turn (<b>heightened +2</b> gives +5 Hardness)"',
+      '"Caster gains +1 Armor Class and may use Shield Block with Hardness 5 until next turn (<b>heightened +2</b> gives +5 Hardness)"',
   'Shield Other':
     'Level=2 ' +
     'Trait= ' +
@@ -10378,7 +10383,7 @@ Pathfinder2E.SPELLS = {
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="Caster becomes a Large tree with AC 20 for 8 hr"',
+    'Description="Caster becomes a Large tree with Armor Class 20 for 8 hr"',
   'Tree Stride':
     'Level=5 ' +
     'Trait= ' +
@@ -10546,7 +10551,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Creates an invisible 50\'x20\' wall with AC 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
+      '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
   'Wall Of Ice':
     'Level=5 ' +
     'Trait= ' +
@@ -10554,7 +10559,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with AC 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP and rubble inflicts +1d6 HP)"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
     'Trait= ' +
@@ -10562,7 +10567,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with AC 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
+      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
     'Trait= ' +
@@ -10570,7 +10575,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Creates a 60\'x10\'x5\' bramble wall with AC 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
     'Trait= ' +
@@ -10713,7 +10718,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates an invisible, illusionary, 10\'x10\' wall with AC 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
+      '"Creates an invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
     'Level=Cantrip ' +
     'Trait=Focus ' +
@@ -10737,7 +10742,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' emanation gives +1 AC and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
+      '"60\' emanation gives +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
   'Inspire Heroics':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -10798,7 +10803,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched living regains 6 HP and gains +2 AC for 1 rd; undead suffers 1d6 HP and -2 AC for 1 rd (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
+      '"Touched living regains 6 HP and gains +2 Armor Class for 1 rd; undead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -11317,7 +11322,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Target emits dim light and may gain +1 attack and +4 damage, +1 attack, +1 AC, +1 saves, and +4 damage, or +1 AC and saves, depending on the current moon phase, for 1 min"',
+      '"Target emits dim light and may gain +1 attack and +4 damage, +1 attack, +1 Armor Class, +1 saves, and +4 damage, or +1 Armor Class and saves, depending on the current moon phase, for 1 min"',
   'Touch Of Undeath':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11548,7 +11553,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Caster may use R30\' unarmed strikes to inflict 1d6 HP bludgeoning and gains +2 AC vs. ranged attacks until leaving the stance"',
+      '"Caster may use R30\' unarmed strikes to inflict 1d6 HP bludgeoning and gains +2 Armor Class vs. ranged attacks until leaving the stance"',
   'Wind Jump':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -11604,7 +11609,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R120\' Reduces target spell\'s level by 1 if heightened and gives that spell\'s targets +2 saves, skill checks, AC, and DC against it"',
+      '"R120\' Reduces target spell\'s level by 1 if heightened and gives that spell\'s targets +2 saves, skill checks, Armor Class, and DC against it"',
   'Celestial Brand':
     'Level=5 ' +
     'Trait=Focus ' +
@@ -11907,7 +11912,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"5\' emanation gives +1 AC while sustained for up to 1 min; radius increases by 5\' for every sustain"',
+      '"5\' emanation gives +1 Armor Class while sustained for up to 1 min; radius increases by 5\' for every sustain"',
   'Shifting Form':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -13750,6 +13755,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '"Trained"',
       'rank.Light Armor', '=', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
     );
+    rules.defineRule('combatNotes.slyStriker',
+      'combatNotes.impossibleStriker', '+', 'null' // italics
+    );
+    rules.defineRule('combatNotes.thief',
+      'dexterityModifier', '=', null,
+      'strengthModifier', '+', '-source',
+      '', '^', '0'
+    );
     rules.defineRule('featureNotes.rogueFeats',
       classLevel, '=', '1 + Math.floor(source / 2)'
     );
@@ -15346,6 +15359,8 @@ Pathfinder2E.weaponRules = function(
     rules.defineRule('damageBonus.' + name,
       'strengthModifier', '+', 'source<0 ? source : Math.floor(source / 2)'
     );
+  if(isFinesse)
+    rules.defineRule('damageBonus.' + name, 'combatNotes.thief', '+', null);
 
   rules.defineRule(weaponName + '.1',
     'attackBonus.' + name, '=', 'QuilvynUtils.signed(source)'
