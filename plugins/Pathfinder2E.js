@@ -832,15 +832,15 @@ Pathfinder2E.CLASSES = {
       '"15:Master Spellcaster",17:Resolve,"19:Archwizard\'s Spellcraft",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '1:Abjuration:Specialization,' +
-      '1:Conjuration:Specialization,' +
-      '1:Divination:Specialization,' +
-      '1:Enchantment:Specialization,' +
-      '1:Evocation:Specialization,' +
-      '1:Illusion:Specialization,' +
-      '1:Necromancy:Specialization,' +
-      '1:Transmutation:Specialization,' +
-      '1:Universalist:Specialization,' +
+      '"1:Abjuration:Arcane School",' +
+      '"1:Conjuration:Arcane School",' +
+      '"1:Divination:Arcane School",' +
+      '"1:Enchantment:Arcane School",' +
+      '"1:Evocation:Arcane School",' +
+      '"1:Illusion:Arcane School",' +
+      '"1:Necromancy:Arcane School",' +
+      '"1:Transmutation:Arcane School",' +
+      '"1:Universalist:Arcane School",' +
       '"1:Improved Familiar Attunement:Thesis",' +
       '"1:Metamagical Experimentation:Thesis",' +
       '"1:Spell Blending:Thesis",' +
@@ -4191,7 +4191,8 @@ Pathfinder2E.FEATURES = {
   'Lingering Composition':
     'Section=magic ' +
     'Note="Knows the Lingering Composition occult spell/+1 Focus Points"',
-  'Reach Spell':'Action=1 Section=magic Note="Extends spell range by 30\'"',
+  'Reach Spell':
+    'Action=1 Section=magic Note="Extends subsequent spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
     'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
@@ -4239,7 +4240,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="A successful DC 15 flat check negates spellcasting disruption"',
+    'Note="Successful DC 15 flat check negates spellcasting disruption"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
@@ -6444,7 +6445,7 @@ Pathfinder2E.FEATURES = {
   "Trickster's Ace":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Prespecified trigger invokes a prepared spell of up to level 4 on self"',
+    'Note="Previously-specified trigger invokes a prepared spell of up to level 4 on self"',
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -6664,26 +6665,22 @@ Pathfinder2E.FEATURES = {
   // Wizard
   // Alertness as above
   'Arcane Bond':'Section=feature Note="Has the Drain Bonded Item feature"',
-  'Arcane School':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"1 selection",' +
-      '"Has a focus pool and 1 Focus Point"',
+  'Arcane School':'Section=feature Note="1 selection"',
   'Arcane Spellcasting':
     'Section=magic Note="Can learn spells from the arcane tradition"',
   'Arcane Thesis':'Section=feature Note="1 selection"',
   "Archwizard's Spellcraft":'Section=magic Note="Has 1 10th-level spell slot"',
   // Defensive Robes as above
   'Drain Bonded Item':
-    'Action=Reaction ' +
+    'Action=Free ' +
     'Section=magic ' +
-    'Note="Allows casting an expended spell using power stored in a possession once per day"',
+    'Note="Can cast an expended spell using power stored in a possession once per day"',
   // Expert Spellcaster as above
   'Improved Familiar Attunement':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Familiar feature",' +
-      '"Familiar is focus of Arcane Bond and has %{level//6+1} additional %{level>5?\'abilities\':\'ability\'}"',
+      '"Familiar is the focus of Arcane Bond and has %{level//6+1} additional %{level>5?\'abilities\':\'ability\'}"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
   // Magical Fortitude as above
@@ -6691,20 +6688,20 @@ Pathfinder2E.FEATURES = {
   'Metamagical Experimentation':
     'Section=feature,magic ' +
     'Note=' +
-      '"+1 Class Feat",' +
-      '"Allows selecting 1 metamagic feat of up to level %{level//2} to use each day"',
+      '"+1 Class Feat (metamagic wizard)",' +
+      '"Can choose 1 metamagic feat of up to level %{level//2} to use each day"',
   // Resolve as above
   'Spell Blending':
     'Section=magic ' +
-    'Note="Allows using 2 spell slots from a level to prepare a spell two levels higher or using a spell slot to prepare 2 cantrips"',
+    'Note="Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips"',
   'Spell Substitution':
     'Section=magic ' +
-    'Note="Allows using a 10-minute process to replace 1 prepared spell with a different spell"',
+    'Note="Can use a 10-minute process to replace 1 prepared spell with a different spell"',
   'Universalist':
     'Section=feature,magic ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Allows using Drain Bonded Item 1 per spell level/Knows 1 additional 1st-level spell"',
+      '"Can use Drain Bonded Item once per spell level each day/Knows 1 additional 1st-level spell"',
   // Weapon Specialization as above
   'Wizard Feats':'Section=feature Note="%V selections"',
   'Wizard Skills':
@@ -6716,48 +6713,48 @@ Pathfinder2E.FEATURES = {
   'Abjuration':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Protective Ward arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Ward arcane spell",' +
       '"Knows 1 additional 1st-level abjuration spell"',
   'Conjuration':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Augment Summoning arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Augment Summoning arcane spell",' +
       '"Knows 1 additional 1st-level conjuration spell"',
   'Divination':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Diviner\'s Sight arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Diviner\'s Sight arcane spell",' +
       '"Knows 1 additional 1st-level divination spell"',
   'Enchantment':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Charming Words arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Words arcane spell",' +
       '"Knows 1 additional 1st-level enchantment spell"',
   'Evocation':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Force Bolt arcane spell",' +
-      '"Knows 1 additional 1st-level illusion spell"',
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell",' +
+      '"Knows 1 additional 1st-level evocation spell"',
   'Illusion':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Warped Terrain arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Warped Terrain arcane spell",' +
       '"Knows 1 additional 1st-level illusion spell"',
   'Necromancy':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Call Of The Grave arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Call Of The Grave arcane spell",' +
       '"Knows 1 additional 1st-level necromancy spell"',
   'Transmutation':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Knows the Physical Boost arcane spell",' +
+      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Physical Boost arcane spell",' +
       '"Knows 1 additional 1st-level transmutation spell"',
 
   // Counterspell as above
   'Eschew Materials':
     'Section=magic ' +
-    'Note="Allows replacing spell material components with sigils drawn in the air"',
+    'Note="Can replace spell material components with sigils drawn in the air"',
   // Familiar as above
   'Hand Of The Apprentice':
     'Section=magic ' +
@@ -6767,7 +6764,7 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Conceal Spell':
     'Section=skill ' +
-    'Note="Allows hiding spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
+    'Note="Can hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
@@ -6776,10 +6773,10 @@ Pathfinder2E.FEATURES = {
   'Silent Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows casting a spell without its verbal components"',
+    'Note="Invokes a spell without its verbal components"',
   'Spell Penetration':
     'Section=magic ' +
-    'Note="Targets reduce any status bonus to saves vs. self spells by 1"',
+    'Note="Reduces any target status bonus to saves vs. self spells by 1"',
   // Steady Spellcasting as above
   'Advanced School Spell (Abjuration)':
     'Section=magic ' +
@@ -6808,26 +6805,26 @@ Pathfinder2E.FEATURES = {
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows using Drain Bonded Item to cast another spell 2 levels lower by the end of next turn"',
+    'Note="Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of next turn"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
       '"+1 Focus Points",' +
-      '"Allows selecting a school spell during daily prep and Refocus"',
+      '"Can prepare a school focus spell during daily prep and Refocus"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="Allows preparing %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
+    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
   'Clever Counterspell':
     'Section=magic ' +
-    'Note="Allows counterspell attempt with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
+    'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
   // Magic Sense as above
   'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="Allows using Drain Bonded Item to cast another spell of up to level %V once per day"',
+    'Note="Can use Drain Bonded Item to cast another spell of up to level %V once per day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Action=2 ' +
@@ -6835,15 +6832,15 @@ Pathfinder2E.FEATURES = {
     'Note="Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
   'Infinite Possibilities':
     'Section=magic ' +
-    'Note="Allows preparing a spell slot to allow casting of any known spell of 2 levels lower"',
+    'Note="Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower"',
   'Reprepare Spell':
     'Section=magic ' +
-    'Note="Allows spending 10 min to prepare a cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
+    'Note="Can spend 10 min to prepare a previously-cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
   "Archwizard's Might":'Section=magic Note="+1 10th level spell slot"',
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
-    'Note="Allows using 1 spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
+    'Note="Can prepare a spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
 
   // Archetype
   'Alchemist Dedication':
@@ -7196,11 +7193,11 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
   'Quick Recognition':
     'Section=skill ' +
-    'Note="Allows using a skill with master proficiency to Recognize a Spell as a free action once per rd"',
+    'Note="Can use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Guarantees success in recognizing an unknown common spell of up to level 2/4/6/10 with trained/expert/master/legendary proficiency in the connected skill"',
+    'Note="Guarantees success in recognizing an unknown common spell of up to level 2, 4, 6, or 10 with trained, expert, master, or legendary proficiency in the connected skill"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':
     'Action=1 ' +
@@ -7229,7 +7226,7 @@ Pathfinder2E.FEATURES = {
     'Note="Allows using Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
-    'Note="Others suffer +5 DC to Recognize Spells and Identify Magic on self spells"',
+    'Note="Self spells add +5 DC to Recognize Spells and Identify Magic"',
   'Bonded Animal':
     'Section=skill ' +
     'Note="Allows using 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
@@ -13845,7 +13842,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('magicNotes.metamagicalExperimentation',
       classLevel, '?', 'source >= 4'
     );
-    rules.defineRule('selectableFeatureCount.Wizard (Specialization)',
+    rules.defineRule('selectableFeatureCount.Wizard (Arcane School)',
       'featureNotes.arcaneSchool', '=', '1'
     );
     rules.defineRule('selectableFeatureCount.Wizard (Thesis)',
@@ -13864,8 +13861,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', l - 2);
     });
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
-      .map(x => x.replace(':Specialization', ''))
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      .map(x => x.replace(':Arcane School', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
       let prefix =
@@ -14152,8 +14149,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
   } else if(name == 'Advanced School Spell') {
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
-      .map(x => x.replace(':Specialization', ''))
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      .map(x => x.replace(':Arcane School', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
       rules.defineRule('features.Advanced School Spell (' + s + ')',
@@ -14195,8 +14192,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if(name == 'Arcane School Spell') {
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
-      .map(x => x.replace(':Specialization', ''))
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      .map(x => x.replace(':Arcane School', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
       rules.defineRule('features.Arcane School Spell (' + s + ')',
@@ -14730,7 +14727,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let schools =
       Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Wizard (Specialization)'))
+      .filter(x => allSelectables[x].includes('Wizard (Arcane School)'))
       .map(x => x.replace('Wizard - ', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
@@ -15174,7 +15171,7 @@ Pathfinder2E.spellRules = function(
   }
   let wizard = (rules.getChoices('levels') || Pathfinder2E.CLASSES).Wizard;
   let schools =
-    wizard.match(/[\w\s]*:Specialization/g).map(x => x.replace(':Specialization', ''));
+    wizard.match(/[\w\s]*:Arcane School/g).map(x => x.replace(':Arcane School', ''));
   if(!school || !(schools.includes(school))) {
     console.log('Bad school "' + school + '" for spell ' + name);
     return;
@@ -15815,8 +15812,8 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   else if(type == 'Spell') {
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Specialization)/g)
-      .map(x => x.replace(':Specialization', ''))
+      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      .map(x => x.replace(':Arcane School', ''))
       .filter(x => x != 'Universalist');
     let zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     result.push(
