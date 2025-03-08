@@ -469,7 +469,8 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
       '1:Rage,1:Instinct,"1:Barbarian Feats",' +
-      '"features.Fury Instinct == 0 ? 1:Anathema",' +
+      '"features.Animal Instinct || features.Dragon Instinct || ' +
+       'features.Giant Instinct || features.Spirit Instinct ? 1:Anathema",' +
       '"features.Animal Instinct (Ape) ? 1:Bestial Rage (Ape)",' +
       '"features.Animal Instinct (Bear) ? 1:Bestial Rage (Bear)",' +
       '"features.Animal Instinct (Bull) ? 1:Bestial Rage (Bull)",' +
@@ -569,6 +570,9 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
+      '"features.Liberator ? 1:Liberating Step",' +
+      '"features.Paladin ? 1:Retributive Strike",' +
+      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -4441,7 +4445,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,magic,skill ' +
     'Note=' +
       '"Attack Trained (%V)",' +
-      '"1 selection",' +
+      '"1 selection/Has the Anathema feature",' +
       '"Has access to %V spells",' +
       '"Skill Trained (%V)"',
   "Deity's Domain (Air)":
@@ -4566,22 +4570,19 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Gives an ally damage resistance %{2+level}, an Escape action or save from a restraint as a free action, and a Step as a free action"',
   'Liberator':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Liberating Step feature",' +
       '"Must always respect others\' freedom and oppose tyranny",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Retributive Strike feature",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the Lay On Hands divine spell"',
   'Redeemer':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
@@ -4863,7 +4864,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
   'Anathema':
     'Section=feature ' +
-    'Note="May not perform acts or cast spells prohibited by %{levels.Druid?\'druidic order\'+($\'features.Order Explorer\'?\'s\':\'\'):levels.Barbarian?\'barbarian instinct\':deity}"',
+    'Note="May not perform acts or cast spells prohibited by %V"',
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
@@ -6852,7 +6853,8 @@ Pathfinder2E.FEATURES = {
   'Basic Concoction':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
   // Quick Alchemy as above
-  'Advanced Concoction':'Section=feature Note="+1 Class Feat (alchemist)"',
+  'Advanced Concoction':
+    'Section=feature Note="+1 Class Feat (alchemist up to level %{level//2})"',
   'Expert Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
   'Master Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
 
@@ -6860,15 +6862,16 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Barbarian)",' +
-      '"Has the Instinct and Rage features",' +
+      '"Has the Anathema, Instinct, and Rage features",' +
       '"Skill Trained (Athletics)"',
   'Barbarian Resiliency':'Section=combat Note="+%V Hit Points"',
   'Basic Fury':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
-  'Advanced Fury':'Section=feature Note="+%V Class Feat (barbarian)"',
+  'Advanced Fury':
+    'Section=feature Note="+%V Class Feat (barbarian up to level %{level//2})"',
   'Instinct Ability':
     'Section=feature ' +
-    'Note="Has the instinct ability for chosen barbarian instinct"',
+    'Note="Has the instinct ability for the chosen barbarian instinct"',
   "Juggernaut's Fortitude":'Section=save Note="Save Master (Fortitude)"',
 
   'Bard Dedication':
@@ -6882,7 +6885,8 @@ Pathfinder2E.FEATURES = {
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} occult spell"',
   "Basic Muse's Whispers":
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level bard)"',
-  "Advanced Muse's Whispers":'Section=feature Note="+1 Class Feat (bard)"',
+  "Advanced Muse's Whispers":
+    'Section=feature Note="+1 Class Feat (bard up to level %{level//2})"',
   'Counter Perform':
     'Section=magic ' +
     'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
@@ -6910,7 +6914,8 @@ Pathfinder2E.FEATURES = {
   'Healing Touch':
     'Section=magic ' +
     'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Devotion':'Section=feature Note="+1 Class Feat (champion)"',
+  'Advanced Devotion':
+    'Section=feature Note="+1 Class Feat (champion up to level %{level//2})"',
   // Champion's Reaction as above
   // Divine Ally as above
   'Diverse Armor Expert':
@@ -6921,14 +6926,15 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Anathema and Deity features",' +
-      '"Spell Trained (Divine)/Allows preparing 2 divine cantrips each day",' +
+      '"Spell Trained (Divine)/Can prepare 2 divine cantrips each day",' +
       '"Skill Trained (Religion)"',
   'Basic Cleric Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
   'Basic Dogma':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
-  'Advanced Dogma':'Section=feature Note="+1 Class Feat (cleric)"',
+  'Advanced Dogma':
+    'Section=feature Note="+1 Class Feat (cleric up to level %{level//2})"',
   'Divine Breadth':
     'Section=magic Note="+1 divine spell slot of each level up to %V"',
   'Expert Cleric Spellcasting':
@@ -6941,7 +6947,7 @@ Pathfinder2E.FEATURES = {
   'Druid Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Druidic Language and Druidic Order features",' +
+      '"Has the Anathema, Druidic Language, and Druidic Order features",' +
       '"Spell Trained (Primal)/Allows preparing 2 primal cantrips each day",' +
       '"Skill Trained (Nature)"',
   'Basic Druid Spellcasting':
@@ -6961,7 +6967,8 @@ Pathfinder2E.FEATURES = {
   'Order Spell (Wild)':
     'Section=magic ' +
     'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Wilding':'Section=feature Note="+1 Class Feat (druid)"',
+  'Advanced Wilding':
+    'Section=feature Note="+1 Class Feat (druid up to level %{level//2})"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
   'Expert Druid Spellcasting':
@@ -12411,6 +12418,28 @@ Pathfinder2E.identityRules = function(
     'combatNotes.greaterWeaponSpecialization', '+', '2'
   );
   rules.defineRule('experienceNeeded', 'level', '=', 'source * 1000');
+  rules.defineRule('featureNotes.anathema',
+    'deity', '+', 'null', // recomputation trigger
+    'featureNotes.anathema.1', '=',
+      '[]' +
+        '.concat(source & 1 ? ["barbarian instinct"] : [])' +
+        '.concat(source & 2 || source & 4 ? [dict.deity] : [])' +
+        '.concat(source & 8 ? ["druidic order"] : [])' +
+        '.join(", ")' +
+        '.replace(/^([^,]*), ([^,]*)$/, "$1 or $2")' +
+        '.replace(/,([^,]*)$/, ", or$1")'
+  );
+  rules.defineRule('featureNotes.anathema.1',
+    'features.Anathema', '=', '0',
+    'levels.Barbarian', '+', '1',
+    'features.Barbarian Dedication', '+', '1',
+    'levels.Champion', '+', '2',
+    'features.Champion Dedication', '+', '2',
+    'levels.Cleric', '+', '4',
+    'features.Cleric Dedication', '+', '4',
+    'levels.Druid', '+', '8',
+    'features.Druid Dedication', '+', '8'
+  );
   rules.defineRule('level', 'experience', '=', 'Math.floor(source / 1000) + 1');
   rules.defineRule('size',
     '', '=', '"Medium"',
@@ -14514,7 +14543,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       QuilvynUtils.getAttrValueArray
         (rules.getChoices('levels').Barbarian, 'Features')
         .filter(x => x.match(/Instinct\s*(\(.*\)\s*)?\?\s*[A-Z1]/))
-        .map(x => x.replace(/^.*\?\s*(1:)?/, ''));
+        .map(x => x.replace(/^.*\?\s*(1:)?/, ''))
+        .filter(x => x != 'Anathema');
     instinctAbilities.forEach(ia => {
       rules.defineRule
         ('barbarianFeatures.' + ia, 'featureNotes.instinctAbility', '=', '1');

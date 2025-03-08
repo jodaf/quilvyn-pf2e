@@ -115,7 +115,7 @@ var attributes = {
         <td><b>Feats</b>: Advanced Concoction; Advanced Devotion; Advanced Dogma; Advanced Fury; Advanced Muse's Whispers; Advanced Wilding; Alchemist Dedication; Assurance (Nature); Assurance (River Lore); Barbarian Dedication; Barbarian Resiliency; Bard Dedication; Basic Bard Spellcasting; Basic Cleric Spellcasting; Basic Concoction; Basic Devotion; Basic Dogma; Basic Druid Spellcasting; Basic Fury; Basic Muse's Whispers; Basic Wilding; Canny Acumen (Fortitude); Champion Dedication; Champion Resiliency; Champion's Reaction; Cleric Dedication; Clever Improviser; Cognitive Loophole; Counter Perform; Defensive Roll; Diverse Armor Expert; Divine Ally; Divine Breadth; Dread Striker; Druid Dedication; Enduring Alchemy; Experienced Smuggler; Expert Alchemy; Expert Bard Spellcasting; Expert Cleric Spellcasting; Expert Druid Spellcasting; Far Lobber; General Training; Haughty Obstinacy; Healing Touch; Impressive Performance; Incredible Initiative; Inspirational Performance; Instinct Ability; Juggernaut's Fortitude; Magical Trickster; Master Alchemy; Master Bard Spellcasting; Master Cleric Spellcasting; Master Druid Spellcasting; Mercy; Mobility; Natural Ambition; Natural Skill; Occult Breadth; Order Spell; Powerful Sneak; Primal Breadth; Quick Alchemy; Quick Draw; Raging Intimidation; Reactive Interference; Ride; Skill Training (Accounting Lore); Skill Training (Astral Plane Lore); Skill Training (Cave Lore); Skill Training (Circus Lore); Skill Training (Engineering Lore); Skill Training (Gnome Lore); Skill Training (Mining Lore); Skill Training (Occultism); Skill Training (Plains Lore); Skill Training (River Lore); Skill Training (Sailing Lore); Skill Training (Society); Skill Training (Survival); Skill Training (Theater Lore); Tactical Debilitations; Toughness; Twist The Knife; Weapon Proficiency (Pick); Weight Of Guilt</td>
         <td><b>Rogue Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks); Class Trained (Rogue); Debilitating Strike; Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; Double Debilitation; Evasion; General Feats; Great Fortitude; Greater Weapon Specialization; Improved Evasion; Incredible Senses; Light Armor Expertise; Master Tricks; Perception Expert; Rogue Expertise; Rogue Feats; Rogue Key Ability; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Scoundrel; Skill Feats; Skill Increases; Slippery Mind; Sneak Attack; Surprise Attack; Vigilant Senses; Weapon Specialization; Weapon Tricks</td>
         <td><b>Druid Features</b>: Leaf</td>
-        <td><b>Champion Features</b>: Dexterity; Divine Ally (Blade); Redeemer</td>
+        <td><b>Champion Features</b>: Dexterity; Divine Ally (Blade); Glimpse Of Redemption; Redeemer</td>
         <td><b>Bard Features</b>: Enigma</td>
         <td><b>Barbarian Features</b>: Animal Instinct (Ape); Bestial Rage (Ape)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
@@ -125,17 +125,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Advanced Concoction: +1 Class Feat (alchemist)</i></td>
+        <td><i>Advanced Concoction: +1 Class Feat (alchemist up to level 9)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Advanced Devotion: +1 Class Feat (champion)</i></td>
+        <td><i>Advanced Devotion: +1 Class Feat (champion up to level 9)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Advanced Dogma: +1 Class Feat (cleric)</i></td>
+        <td><i>Advanced Dogma: +1 Class Feat (cleric up to level 9)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Advanced Fury: +1 Class Feat (barbarian)</i></td>
+        <td><i>Advanced Fury: +1 Class Feat (barbarian up to level 9)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Advanced Muse's Whispers: +1 Class Feat (bard)</i></td>
+        <td><i>Advanced Muse's Whispers: +1 Class Feat (bard up to level 9)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Advanced Wilding: +1 Class Feat (druid)</i></td>
+        <td><i>Advanced Wilding: +1 Class Feat (druid up to level 9)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Alchemical Crafting: Has the Formula Book feature</i></td>
       </tr><tr style="text-align:center">
@@ -143,7 +143,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Ancestry Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Barbarian Dedication: Has the Instinct and Rage features</i></td>
+        <td><i>Barbarian Dedication: Has the Anathema, Instinct, and Rage features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Bard Dedication: Has the Muses feature</i></td>
       </tr><tr style="text-align:center">
@@ -169,11 +169,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has the Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Deity And Cause: 1 selection</i></td>
+        <td><i>Deity And Cause: 1 selection/Has the Anathema feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Divine Ally: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Druid Dedication: Has the Druidic Language and Druidic Order features</i></td>
+        <td><i>Druid Dedication: Has the Anathema, Druidic Language, and Druidic Order features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Druidic Order: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -187,7 +187,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Instinct Ability: Has the instinct ability for chosen barbarian instinct</i></td>
+        <td><i>Instinct Ability: Has the instinct ability for the chosen barbarian instinct</i></td>
       </tr><tr style="text-align:center">
         <td><i>Instinct: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -199,8 +199,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Raging Intimidation: Has the Intimidating Glare feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Redeemer: Has the Glimpse Of Redemption feature</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Rogue Key Ability: 1 selection</i></td>
@@ -209,7 +207,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 18 selections</i></td>
       </tr><tr style="text-align:center">
-        <td>Anathema: May not perform acts or cast spells prohibited by Shelyn</td>
+        <td>Anathema: May not perform acts or cast spells prohibited by barbarian instinct, Shelyn, or  druidic order</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
@@ -559,7 +557,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Basic Druid Spellcasting: Knows 1 1st-level, 1 2nd-level, and 1 3rd-level primal spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Cleric Dedication: Spell Trained (Divine)/Allows preparing 2 divine cantrips each day</i></td>
+      <td><i>Cleric Dedication: Spell Trained (Divine)/Can prepare 2 divine cantrips each day</i></td>
     </tr><tr style="text-align:center">
       <td><i>Counter Perform: Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
