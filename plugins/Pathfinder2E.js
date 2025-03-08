@@ -6987,7 +6987,8 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level fighter)"',
   'Fighter Resiliency':'Section=combat Note="+%V Hit Points"',
   'Opportunist':'Section=feature Note="Has the Attack Of Opportunity feature"',
-  'Advanced Maneuver':'Section=feature Note="+1 Class Feat (fighter)"',
+  'Advanced Maneuver':
+    'Section=feature Note="+1 Class Feat (fighter up to level %{level//2})"',
   'Diverse Weapon Expert':
     'Section=combat ' +
     'Note="Attack Expert (Simple Weapons; Martial Weapons)/Attack Trained (Advanced Weapons)"',
@@ -7001,7 +7002,8 @@ Pathfinder2E.FEATURES = {
   'Basic Kata':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level monk)"',
   'Monk Resiliency':'Section=combat Note="+%V Hit Points"',
-  'Advanced Kata':'Section=feature Note="+1 Class Feat (monk)"',
+  'Advanced Kata':
+    'Section=feature Note="+1 Class Feat (monk up to level %{level//2})"',
   'Monk Moves':'Section=ability Note="+10 Speed in no armor"',
   "Monk's Flurry":'Section=feature Note="Has the Flurry Of Blows feature"',
   "Perfection's Path (Fortitude)":'Section=save Note="Save Master (Fortitude)"',
@@ -7013,11 +7015,12 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Trained (Ranger)",' +
       '"Has the Hunt Prey feature",' +
-      '"Skill Trained (Nature)"',
+      '"Skill Trained (Survival)"',
   "Basic Hunter's Trick":
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level ranger)"',
   'Ranger Resiliency':'Section=combat Note="+%V Hit Points"',
-  "Advanced Hunter's Trick":'Section=feature Note="+1 Class Feat (ranger)"',
+  "Advanced Hunter's Trick":
+    'Section=feature Note="+1 Class Feat (ranger up to level %{level//2})"',
   'Master Spotter':'Section=skill Note="Perception Master"',
 
   'Rogue Dedication':
@@ -7029,7 +7032,8 @@ Pathfinder2E.FEATURES = {
   'Basic Trickery':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level rogue)"',
   'Sneak Attacker':'Section=feature Note="Has the Sneak Attack feature"',
-  'Advanced Trickery':'Section=feature Note="+1 Class Feat (rogue)"',
+  'Advanced Trickery':
+    'Section=feature Note="+1 Class Feat (rogue up to level %{level//2})"',
   'Skill Mastery':
     'Section=feature,skill ' +
     'Note=' +
@@ -7078,7 +7082,8 @@ Pathfinder2E.FEATURES = {
   'Basic Bloodline Spell (Undead)':
     'Section=magic ' +
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Blood Potency':'Section=feature Note="+1 Class Feat (sorcerer)"',
+  'Advanced Blood Potency':
+    'Section=feature Note="+1 Class Feat (sorcerer up to level %{level//2})"',
   'Bloodline Breadth':
     'Section=magic ' +
     'Note="+1 %{bloodlineTraditionsLowered} spell slot of each level up to %V"',
@@ -7093,7 +7098,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,magic,skill ' +
     'Note=' +
       '"Has the Arcane School feature",' +
-      '"Spell Trained (Arcane)/Allows preparing 2 arcane cantrips each day",' +
+      '"Spell Trained (Arcane)/Can prepare 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
   'Arcane School Spell (Abjuration)':
@@ -7125,7 +7130,8 @@ Pathfinder2E.FEATURES = {
   'Basic Wizard Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
-  'Advanced Arcana':'Section=feature Note="+1 Class Feat (wizard)"',
+  'Advanced Arcana':
+    'Section=feature Note="+1 Class Feat (wizard up to level %{level//2})"',
   'Arcane Breadth':
     'Section=magic Note="+1 arcane spell slot of each level up to %V"',
   'Expert Wizard Spellcasting':
