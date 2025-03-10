@@ -12224,11 +12224,17 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     rules.defineChoice('notes', a + ':%V (%1)');
     let baseAbility = 'base' + a.charAt(0).toUpperCase() + a.substring(1);
-    rules.defineRule(a,
+    rules.defineRule('fullyBoosted.' + a,
       baseAbility, '=', null,
-      // Somewhat complicated computation here handles the rule that boosts
-      // that take the ability above 18 only increase the ability by 1
-      'abilityBoosts.' + a, '+', 'source * 2 - Math.max(Math.floor((dict["' + baseAbility + '"] + source * 2 - 20) / 2), 0)'
+      'abilityBoosts.' + a, '+', 'source * 2',
+      'fixedBoosts.' + a, '+', 'source * 2'
+    );
+    rules.defineRule('halfBoosts.' + a,
+      'fullyBoosted.' + a, '=', 'source>19 ? Math.floor((source - 18) / 2) : null'
+    );
+    rules.defineRule(a,
+      'fullyBoosted.' + a, '=', null,
+      'halfBoosts.' + a, '+', '-source'
     );
     rules.defineRule(a + 'Modifier', a, '=', 'Math.floor((source - 10) / 2)');
     rules.defineRule
@@ -14945,10 +14951,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           if(m)
             choices += '+' + (m[1] == '%V' ? 'source' : m[1]);
           else if(matchInfo[1] == 'Skill')
-            rules.defineRule('skillIncreases.' + element, note, '+', '1');
+            rules.defineRule('skillIncreases.' + element, note, '+=', '1');
           else
-            rules.defineRule
-              ('abilityBoosts.' + element, note, '+', flaw ? '-1' : '1');
+            rules.defineRule('fixedBoosts.' + element.toLowerCase(),
+              note, '+=', flaw ? '-1' : '1'
+            );
         });
         if(choices)
           rules.defineRule('choiceCount.' + matchInfo[1],
@@ -15496,9 +15503,12 @@ Pathfinder2E.featureListRules = function(
         let m = element.match(/Choose (\d+)/);
         if(m)
           choices += '+' + m[1];
+        else if(matchInfo[1] == 'Skill')
+          rules.defineRule('skillIncreases.' + element, note, '+=', '1');
         else
-          rules.defineRule
-            (element.toLowerCase(), setName + '.' + feature, '+', flaw ? '-2' : '2');
+          rules.defineRule('fixedBoosts.' + element.toLowerCase(),
+            setName + '.' + feature, '+=', flaw ? '-1' : '1'
+          );
       });
       if(choices)
         rules.defineRule('choiceCount.' + matchInfo[1],
