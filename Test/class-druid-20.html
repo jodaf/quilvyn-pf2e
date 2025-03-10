@@ -31,9 +31,9 @@ var attributes = {
   "feats.Specialized Companion":1, "feats.Steady Spellcasting":1, "feats.Storm Retribution":1, 
   "feats.Thousand Faces":1, "feats.Timeless Nature":1, "feats.Train Animal":1, 
   "feats.True Shapeshifter":1, "feats.Unconventional Weaponry (Bastard Sword)":1, 
-  "feats.Verdant Metamorphosis":1, "feats.Weapon Proficiency (Club)":1, 
-  "feats.Weapon Proficiency (Greatclub)":1, "feats.Weapon Proficiency (Hand Crossbow)":1, 
-  "feats.Weapon Proficiency (Longsword)":1, "feats.Widen Spell":1, "feats.Wind Caller":1, "feats.Woodland Stride":1, 
+  "feats.Verdant Metamorphosis":1, "feats.Weapon Proficiency (Dwarven Waraxe)":1, 
+  "feats.Weapon Proficiency (Martial Weapons)":1, "feats.Weapon Proficiency (Orc Necksplitter)":1, 
+  "feats.Weapon Proficiency (Sawtooth Saber)":1, "feats.Widen Spell":1, "feats.Wind Caller":1, "feats.Woodland Stride":1, 
   "gender":"Female", "languages.Aklo":1, "languages.Aquan":1, "languages.Draconic":1, 
   "languages.Goblin":1, "languages.Sylvan":1, "levels.Druid":20, "name":"Class-Druid 20", 
   "selectableFeatures.Druid - Animal":1, "selectableFeatures.Druid - Leaf":1, "selectableFeatures.Druid - Storm":1, 
@@ -108,7 +108,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Assurance (Athletics); Assurance (Religion); Bargain Hunter; Call Of The Wild; Clever Improviser; Cooperative Nature; Courtly Graces; Dragon Shape; Effortless Concentration; Elemental Shape; Enhanced Familiar; Feather Step; Ferocious Shape; Fey Caller; Form Control; Green Empathy; Green Tongue; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Insect Shape; Invoke Disaster; Leyline Conduit; Mature Animal Companion; Monstrosity Shape; Natural Skill; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Wild); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Wild); Overwhelming Energy; Perfect Form Control; Plant Shape; Poison Resistance; Primal Focus; Primal Summons; Primal Wellspring; Reach Spell; Side By Side; Skill Training (Crafting); Skill Training (Labor Lore); Skill Training (Society); Skill Training (Vampire Lore); Skill Training (Warfare Lore); Soaring Shape; Specialized Companion; Steady Spellcasting; Storm Retribution; Thousand Faces; Timeless Nature; Train Animal; True Shapeshifter; Unconventional Weaponry (Bastard Sword); Verdant Metamorphosis; Weapon Proficiency (Club); Weapon Proficiency (Greatclub); Weapon Proficiency (Hand Crossbow); Weapon Proficiency (Longsword); Widen Spell; Wind Caller; Woodland Stride</td>
+        <td><b>Feats</b>: Assurance (Athletics); Assurance (Religion); Bargain Hunter; Call Of The Wild; Clever Improviser; Cooperative Nature; Courtly Graces; Dragon Shape; Effortless Concentration; Elemental Shape; Enhanced Familiar; Feather Step; Ferocious Shape; Fey Caller; Form Control; Green Empathy; Green Tongue; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Insect Shape; Invoke Disaster; Leyline Conduit; Mature Animal Companion; Monstrosity Shape; Natural Skill; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Wild); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Wild); Overwhelming Energy; Perfect Form Control; Plant Shape; Poison Resistance; Primal Focus; Primal Summons; Primal Wellspring; Reach Spell; Side By Side; Skill Training (Crafting); Skill Training (Labor Lore); Skill Training (Society); Skill Training (Vampire Lore); Skill Training (Warfare Lore); Soaring Shape; Specialized Companion; Steady Spellcasting; Storm Retribution; Thousand Faces; Timeless Nature; Train Animal; True Shapeshifter; Unconventional Weaponry (Bastard Sword); Verdant Metamorphosis; Weapon Proficiency (Dwarven Waraxe); Weapon Proficiency (Martial Weapons); Weapon Proficiency (Orc Necksplitter); Weapon Proficiency (Sawtooth Saber); Widen Spell; Wind Caller; Woodland Stride</td>
         <td><b>Druid Features</b>: Ability Boost (Wisdom); Ability Boosts; Alertness; Anathema; Animal; Attack Trained (Simple Weapons; Unarmed Attacks); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Druid Feats; Druid Skills; Druid Weapon Expertise; Druidic Language; Druidic Order; Expert Spellcaster; General Feats; Great Fortitude; Leaf; Legendary Spellcaster; Lightning Reflexes; Master Spellcaster; Medium Armor Expertise; Perception Trained; Primal Hierophant; Primal Spellcasting; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Primal); Storm; Weapon Specialization; Wild Empathy; Wild</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
@@ -272,7 +272,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Religion): Can take an automatic 34 on Religion checks</td>
     </tr><tr style="text-align:center">
-      <td>Bargain Hunter: +2 initial gold/Can use Diplomacy to Earn Income</td>
+      <td>Bargain Hunter: +2 initial gold/Can use Diplomacy to purchase items at a discount</td>
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May attempt any skill untrained</td>
     </tr><tr style="text-align:center">
@@ -327,15 +327,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Bastard Sword as one category simpler</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Club): Attack Trained (Club)</i></td>
+        <td><i>Weapon Proficiency (Dwarven Waraxe): Attack Trained (Dwarven Waraxe)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Greatclub): Attack Trained (Greatclub)</i></td>
+        <td><i>Weapon Proficiency (Martial Weapons): Attack Trained (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Hand Crossbow): Attack Trained (Hand Crossbow)</i></td>
+        <td><i>Weapon Proficiency (Orc Necksplitter): Attack Trained (Orc Necksplitter)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Longsword): Attack Trained (Longsword)</i></td>
+        <td><i>Weapon Proficiency (Sawtooth Saber): Attack Trained (Sawtooth Saber)</i></td>
       </tr><tr style="text-align:center">
-        <td>Shield Block: <b>(R)</b> Raised shield negates damage up to its hardness and absorbs half of any remaining damage</td>
+        <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Side By Side: Self and companion automatically flank a foe adjacent to both</td>
       </tr><tr style="text-align:center">

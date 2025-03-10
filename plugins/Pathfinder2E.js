@@ -3024,7 +3024,7 @@ Pathfinder2E.FEATS = {
   'Toughness':'Trait=General',
   'Weapon Proficiency (Martial Weapons)':'Trait=General',
   'Weapon Proficiency (Simple Weapons)':'Trait=General',
-  'Weapon Proficiency (%weapon)':'Trait=General',
+  'Weapon Proficiency (%advancedWeapon)':'Trait=General',
   'Ancestral Paragon':'Trait=General Require="level >= 3"',
   'Untrained Improvisation':'Trait=General Require="level >= 3"',
   'Expeditious Search':
@@ -4689,7 +4689,8 @@ Pathfinder2E.FEATURES = {
     'Note="R15\' All self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
   'Blade Of Justice':
     'Action=2 ' +
-    'Section=combat Note="Adds 2 extra damage dice to a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
+    'Section=combat ' +
+    'Note="Adds 2 extra damage dice to a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
     'Section=magic ' +
     'Note="Knows the Champion\'s Sacrifice divine spell/+1 Focus Points"',
@@ -5600,7 +5601,7 @@ Pathfinder2E.FEATURES = {
   'Desperate Finisher':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Allows using a press action after taking the last action in a turn, losing any further Reactions until next turn"',
+    'Note="Can use a press action after taking the last action in a turn, losing any further Reactions until next turn"',
   'Determination':
     'Action=1 ' +
     'Section=save ' +
@@ -5674,12 +5675,12 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
-      '"Allows learning spells from the divine tradition"',
+      '"Can learn spells from the divine tradition"',
   'Ki Tradition (Occult)':
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Occult)",' +
-      '"Allows learning spells from the occult tradition"',
+      '"Can learn spells from the occult tradition"',
   'Master Strikes':
     'Section=combat Note="Attack Master (Simple Weapons; Unarmed Attacks)"',
   'Metal Strikes':
@@ -5940,7 +5941,7 @@ Pathfinder2E.FEATURES = {
   'Impossible Technique':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Forces a foe reroll on a hit or allows a reroll on a failed save"',
+    'Note="Forces a foe reroll on a hit or gives a reroll on a failed save"',
 
   // Ranger
   // Evasion as above
@@ -6278,7 +6279,7 @@ Pathfinder2E.FEATURES = {
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} in Thievery",' +
+      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery",' +
       '"+%{rank.Thievery>=3?2:1} vs. traps",' +
       '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps"',
   'Twin Feint':
@@ -6948,7 +6949,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Anathema, Druidic Language, and Druidic Order features",' +
-      '"Spell Trained (Primal)/Allows preparing 2 primal cantrips each day",' +
+      '"Spell Trained (Primal)/Can prepare 2 primal cantrips each day",' +
       '"Skill Trained (Nature)"',
   'Basic Druid Spellcasting':
     'Section=magic ' +
@@ -7149,8 +7150,8 @@ Pathfinder2E.FEATURES = {
   'Breath Control':
     'Section=ability,save ' +
     'Note=' +
-      '"Can hold breath 25x as long as usual without suffocating",' +
-      '"+1 vs. inhaled threats, and successes vs. inhaled threat are critical successes"',
+      '"Can hold breath for %{(5+constitutionModifier)*25} rd without suffocating",' +
+      '"+1 vs. inhaled threats, and successes vs. inhaled threats are critical successes"',
   'Canny Acumen (Fortitude)':'Section=save Note="Save %V (Fortitude)"',
   'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
   'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
@@ -7172,7 +7173,7 @@ Pathfinder2E.FEATURES = {
   'Shield Block':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Raised shield negates damage up to its hardness and absorbs half of any remaining damage"',
+    'Note="Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage"',
   'Toughness':
     'Section=combat,save ' +
     'Note=' +
@@ -7185,8 +7186,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Attack Trained (Martial Weapons)"',
   'Weapon Proficiency (Simple Weapons)':
     'Section=combat Note="Attack Trained (Simple Weapons)"',
-  'Weapon Proficiency (%weapon)':
-    'Section=combat Note="Attack Trained (%weapon)"',
+  'Weapon Proficiency (%advancedWeapon)':
+    'Section=combat Note="Attack Trained (%advancedWeapon)"',
 
   // General Skill Feats
   'Assurance (%skill)':
@@ -7200,22 +7201,22 @@ Pathfinder2E.FEATURES = {
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
   'Magical Shorthand':
     'Section=skill ' +
-    'Note="Allows learning new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retrying 1 week after a failure"',
+    'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure/Can learn new spells at a discounted cost"',
   'Quick Identification':
     'Section=skill ' +
-    'Note="Allows using %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'a 1 min process\'} to Identify Magic"',
+    'Note="Can Identify Magic in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'1 min\'}"',
   'Quick Recognition':
     'Section=skill ' +
     'Note="Can use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Guarantees success in recognizing an unknown common spell of up to level 2, 4, 6, or 10 with trained, expert, master, or legendary proficiency in the connected skill"',
+    'Note="Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to level 2, 4, 6, or 10"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Trick Magic Item':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Allows a successful check on the related skill to temporarily activate a magic item"',
+    'Note="Successful check on the related skill temporarily activates a magic item"',
 
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
@@ -7223,76 +7224,76 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill,skill ' +
     'Note=' +
       '"Has the Formula Book feature",' +
-      '"Knows formulas for 4 common 1st-level alchemical items",' +
+      '"Knows the formulas for 4 common 1st-level alchemical items",' +
       '"Can use Crafting to create alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
-    'Section=skill Note="+2 initial gold/Can use Diplomacy to Earn Income"',
+    'Section=skill Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
   'Battle Cry':
     'Section=combat ' +
-    'Note="Allows using Demoralize on a foe during initiative%{rank.Intimidation>=4?\' or on an attack critical success\':\'\'}"',
+    'Note="Can use Demoralize as a free action on a foe during initiative%{rank.Intimidation>=4?\' or as a Reaction on a critical hit\':\'\'}"',
   'Battle Medicine':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Allows using Medicine to restore Hit Points once per target per day"',
+    'Note="Can use Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
-    'Note="Self spells add +5 DC to Recognize Spells and Identify Magic"',
+    'Note="Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use"',
   'Bonded Animal':
     'Section=skill ' +
-    'Note="Allows using 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
+    'Note="Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
   'Charming Liar':
     'Section=skill ' +
-    'Note="Critical success on a Lie improves attitude by 1 step once per conversation"',
+    'Note="Critical successes on a Lie improve a target\'s attitude by 1 step once per conversation"',
   'Cloud Jump':
     'Section=skill ' +
-    'Note="Gives triple normal distance on a long jump, normal long jump distance on a high jump, and +%{speed}\' to jump distance for every additional action spent"',
+    'Note="Triples the distance of long jumps, increases high jump distance to normal long jump distance, and adds %{speed}\' to jump distances for every additional action spent"',
   'Combat Climber':
     'Section=skill ' +
-    'Note="Allows Climbing with one hand occupied and negates flat-footed and allows fighting while Climbing"',
+    'Note="Can Climb with one hand occupied, can fight while Climbing, and does not suffer flat-footed while Climbing"',
   'Confabulator':
     'Section=skill ' +
-    'Note="Reduces bonus given to target of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
+    'Note="Reduces the bonus given to targets of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
   'Connections':
     'Section=skill ' +
-    'Note="Allows using Society to gain a meeting with an important figure or to exchange favors"',
+    'Note="Can use Society to gain a meeting with an important figure or to exchange favors"',
   'Continual Recovery':
-    'Section=skill ' +
-    'Note="Allows repeating Treat Wounds on a patient after 10 min"',
+    'Section=skill Note="Can repeat Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
     'Section=skill ' +
     'Note="Can use Society to impersonate a noble or to Make an Impression on one"',
   'Craft Anything':
-    'Section=skill Note="Negates need for secondary Crafting requirements"',
+    'Section=skill ' +
+    'Note="Can craft items without meeting secondary requirements"',
   'Divine Guidance':
     'Section=skill ' +
-    'Note="Allows using 10 min Deciphering Writing on a religious text and a successful Religion check to gain a hint for a current problem"',
+    'Note="Can use 10 min Decipher Writing on a religious text and a successful Religion check to gain a hint about a current problem"',
   'Experienced Professional':
     'Section=skill ' +
     'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income"',
   'Experienced Smuggler':
     'Section=skill ' +
-    'Note="%{rank.Stealth>=4?\'Automatic success\':rank.Steak>=3\'Minimum 15\':\'Minimum 10\'} on Stealth rolls to conceal a small item/Earning Income using Underworld Lore gives increased earnings"',
+    'Note="Automatically %{rank.Stealth>=4?\'succeed\':rank.Steak>=3\' gets at least 15\':\' gets at least 10\'} on Stealth rolls to conceal a small item/Earning Income using Underworld Lore gives increased earnings"',
   'Experienced Tracker':
     'Section=skill ' +
     'Note="Can Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Can Track without hourly Survival checks\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
-    'Note="Allows fascinating %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+    'Note="Can fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
     'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak"',
   'Forager':
     'Section=skill ' +
-    'Note="Failures and critical failures on Survival to Subsist are successes/Allows providing for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others (x2 with a critical success)"',
+    'Note="Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others, or twice that number with a critical success"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="Allows using Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and retrying after 1 min"',
+    'Note="Can use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and to retry after 1 min"',
   'Group Coercion':
     'Section=skill ' +
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
@@ -7300,171 +7301,174 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
-  'Hobnobber':'Section=skill Note="Allows Gathering Information in half normal time%{rank.Diplomacy>=3?\'/Critical failures on Gather Information when taking normal time are normal failures\':\'\'}"',
+  'Hobnobber':'Section=skill Note="Can Gather Information in half normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
-    'Section=skill Note="Allows using Performance to Make an Impression"',
-  'Intimidating Glare':'Section=skill Note="Can use glare to Demoralize"',
+    'Section=skill Note="Can use Performance to Make an Impression"',
+  'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
     'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
-  'Inventor':'Section=skill Note="Allows using Crafting to create formulas"',
+  'Inventor':
+    'Section=skill Note="Can use Crafting to create unknown common formulas"',
   'Kip Up':
-    'Action=Free ' +
-    'Section=combat Note="Allows standing up without triggering Reactions"',
+    'Action=Free Section=combat Note="Stands up without triggering Reactions"',
   'Lasting Coercion':
     'Section=skill ' +
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
   'Legendary Codebreaker':
     'Section=skill ' +
-    'Note="Allows using Society to Decipher Writing at full Speed, and successes at normal Speed are critical successes"',
+    'Note="Can use Society to Decipher Writing at full Speed, and successes at normal Speed are critical successes"',
   'Legendary Linguist':
     'Section=skill ' +
-    'Note="Allows establishing basic communication with any creature that uses language"',
+    'Note="Can establish basic communication with any creature that uses language"',
   'Legendary Medic':
     'Section=skill ' +
-    'Note="Allows using a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
+    'Note="Can use a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="Allows using Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
+    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
-    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Performance increases audience by 2 levels"',
+    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Performance increases audience by 2 levels"',
   'Legendary Professional':
     'Section=skill ' +
-    'Note="NPCs\' successful DC 10 Society check to Recall Knowledge improves their attitude by 1 step/Earn Income using Lore increases job level"',
+    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Lore increases job level"',
   'Legendary Sneak':
     'Section=skill ' +
-    'Note="Allows using Hide and Sneak without cover/Automatically uses Avoiding Notice when exploring"',
+    'Note="Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring"',
   'Legendary Survivalist':
     'Section=skill ' +
-    'Note="Allows indefinite survival without food and water and enduring incredible temperatures without damage"',
+    'Note="Can survive indefinitely without food and water and endure incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
-    'Note="Allows using Steal with a -5 penalty to take actively wielded and highly noticeable items"',
+    'Note="Can use Steal with a -5 penalty to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
-    'Note="Allows remaining hidden after a Create a Diversion attempt critically succeeds"',
+    'Note="Can remain hidden after a Create a Diversion attempt critically succeeds"',
   'Lie To Me':
-    'Section=skill ' +
-    'Note="Allows using Deception to detect lies in a conversation"',
+    'Section=skill Note="Can use Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
-    'Note="Allows crafting magic items/Knows formulas for 4 common magic items of 2nd level or lower"',
+    'Note="Can craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
     'Section=skill ' +
-    'Note="Allows using Nature to Treat Wounds; gives a +2 bonus in wilderness"',
+    'Note="Can use Nature to Treat Wounds; gives a +2 bonus in wilderness"',
   'Nimble Crawl':
     'Section=ability ' +
-    'Note="Allows crawling at %{rank.Acrobatics>=3?\'full\':\'half\'} Speed%{rank.Acrobatics>=4?\'/Being prone does not inflict flat-footed\':\'\'}"',
+    'Note="Can Crawl at %{rank.Acrobatics>=3?\'full\':\'half\'} Speed%{rank.Acrobatics>=4?\'/Does not suffer flat-footed from being prone\':\'\'}"',
   'Oddity Identification':
     'Section=skill ' +
-    'Note="Gives +2 Occultism to Identify Magic with a mental, possession, predication, or scrying trait"',
+    'Note="+2 Occultism to Identify Magic with a mental, possession, prediction, or scrying trait"',
   'Pickpocket':
     'Section=skill ' +
-    'Note="Allows Stealing a closely-guarded object without penalty%{rank.Thievery>=3?\'/Allows using Steal with a -5 penalty on an alert creature\':\'\'}"',
+    'Note="Can Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/Can use 2 actions to Steal with a -5 penalty from an alert creature\':\'\'}"',
   'Planar Survival':
-    'Section=skill Note="Allows using Survival to Subsist on different planes"',
+    'Section=skill Note="Can use Survival to Subsist on different planes"',
   'Powerful Leap':
-    'Section=skill Note="Gives 5\' vertical and +5\' horizontal jumps"',
+    'Section=skill Note="Can make 5\' vertical and +5\' horizontal jumps"',
   'Quick Climb':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Allows Climbing at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Coercion':'Section=skill Note="May Coerce in 1 rd"',
-  'Quick Disguise':'Section=skill Note="May create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
+    'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
+  'Quick Coercion':'Section=skill Note="Can Coerce in 1 rd"',
+  'Quick Disguise':'Section=skill Note="Can create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
     'Section=skill ' +
     'Note="Can use High Jump and Long Jump as 1 action without an initial Stride"',
   'Quick Repair':
     'Section=skill ' +
-    'Note="May Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
+    'Note="Can Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
   'Quick Squeeze':
     'Section=skill ' +
     'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
   'Quick Swim':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'May Swim at full Speed\':\\"Swimming success increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Unlock':'Section=skill Note="May use 1 action to Pick a Lock"',
+    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', critical success by 10\'\\"}"',
+  'Quick Unlock':'Section=skill Note="Can Pick a Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
-    'Note="May roll a single Stealth check to Avoid Notice when leading a group"',
+    'Note="Rolls a single Stealth check to Avoid Notice when leading a group"',
   'Rapid Mantel':
     'Section=skill ' +
-    'Note="Allows standing immediately after a successful Grab an Edge and using Athletics to Grab an Edge"',
+    'Note="Can stand immediately after a successful Grab an Edge and use Athletics to Grab an Edge"',
   'Read Lips':
-    'Section=skill Note="Allows reading the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
+    'Section=skill Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
   'Robust Recovery':
     'Section=skill ' +
     'Note="Success on Treat a Disease or a Poison gives a +4 bonus, and patient successes are critical successes"',
   'Scare To Death':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts death (Fortitude save inflicts frightened 2 and flees for 1 rd); failure inflicts frightened 1"',
+    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical failure inflicts death); failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
-    'Note="Reduces DC for an outrageous request by 2 and changes critical failures into normal failures"',
+    'Note="Reduces the DC for an outrageous request by 2 and changes critical failures into normal failures"',
   'Sign Language':
     'Section=skill Note="Knows the sign equivalents of understood languages"',
   'Slippery Secrets':
     'Section=skill ' +
-    'Note="Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
+    'Note="Successful Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
   'Snare Crafting':
     'Section=skill ' +
-    'Note="Allows using Crafting to create snares/Knows the formulas for 4 common snares"',
+    'Note="Can use Crafting to create snares and knows the formulas for 4 common snares"',
   'Specialty Crafting':
-    'Section=skill Note="+%{rank.Crafting>=3?2:1} Crafting on selected type"',
+    'Section=skill ' +
+    'Note="+%{rank.Crafting>=3?2:1} Crafting on selected type of item"',
   'Steady Balance':
     'Section=skill ' +
-    'Note="Balance successes are critical successes/Never flat-footed during Balance/Allows using Acrobatics to Grab an Edge"',
+    'Note="Balance successes are critical successes/Never flat-footed during Balance/Can use Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
-    'Note="Allows using Society to Gather Information and to Recall Knowledge in familiar settlements"',
+    'Note="Can use Society to Gather Information and to Recall Knowledge in familiar settlements"',
   'Student Of The Canon':
     'Section=skill ' +
     'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
   'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="Allows using Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
-  'Swift Sneak':'Section=skill Note="Allows Sneaking at full Speed"',
+    'Note="Can use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
+  'Swift Sneak':'Section=skill Note="Can Sneak at full Speed"',
   'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
   'Terrain Stalker (Rubble)':
-    'Section=skill Note="Sneaking in rubble requires no Stealth check"',
+    'Section=skill ' +
+    'Note="Sneaking 5\' in rubble at least 10\' from foes requires no Stealth check"',
   'Terrain Stalker (Snow)':
-    'Section=skill Note="Sneaking in snow requires no Stealth check"',
+    'Section=skill ' +
+    'Note="Sneaking 5\' in snow at least 10\' from foes requires no Stealth check"',
   'Terrain Stalker (Underbrush)':
-    'Section=skill Note="Sneaking in underbrush requires no Stealth check"',
+    'Section=skill ' +
+    'Note="Sneaking 5\' in underbrush at least 10\' from foes requires no Stealth check"',
   'Terrified Retreat':
     'Section=skill ' +
-    'Note="Critical success on Demoralize causes lower-level target to flee for 1 rd"',
+    'Note="Critical success on Demoralize causes a lower-level target to flee for 1 rd"',
   'Titan Wrestler':
     'Section=skill ' +
-    'Note="Allows using Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
+    'Note="Can use Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
     'Section=feature ' +
     'Note="Can use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed from being in water/Suffers no penalty when using bludgeoning and slashing weapons in water"',
+    'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing weapons in water"',
   'Unified Theory':
     'Section=skill ' +
-    'Note="Allows using Arcana in place of Nature, Occultism, or Religion"',
+    'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
-    'Note="Critical failures on any trained Lore are normal failures"',
+    'Note="Critical failures on any trained Lore are normal failures and critical successes provide additional information"',
   'Virtuosic Performer':
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="Allows following a jump with another 1-action jump when adjacent to a wall once per turn"',
+    'Note="Can follow a jump that ends next to a wall with another 1-action jump once per turn"',
   'Ward Medic':
     'Section=skill ' +
-    'Note="Allows using Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
+    'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
   'Wary Disarmament':
     'Section=skill ' +
     'Note="+2 Armor Class vs. a trap triggered while disarming it"',
@@ -7724,7 +7728,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Allows target to breathe normally in any environment for 1 min"',
+      '"R60\' Target can breathe normally in any environment for 1 min"',
   'Air Walk':
     'Level=4 ' +
     'Trait= ' +
@@ -7969,7 +7973,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Ranged spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials (critical success inflicts double HP), and allows a counteract attempt vs. magical light (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
+      '"R120\' Ranged spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials (critical success inflicts double HP), and makes a counteract attempt vs. magical light (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
   'Chromatic Wall':
     'Level=5 ' +
     'Trait= ' +
@@ -8049,7 +8053,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows target to understand choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak language; <b>4th</b> affects 10 targets)"',
+      '"R30\' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'Trait= ' +
@@ -8110,7 +8114,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R0\' Creates an object of up to 5 cubic feet made of vegetable matter (<b>heightened 5th</b> allows an object made of metal and common minerals)"',
+      '"R0\' Creates an object of up to 5 cubic feet made of vegetable matter (<b>heightened 5th</b> object can include metal and common minerals)"',
   'Crisis Of Faith':
     'Level=3 ' +
     'Trait= ' +
@@ -8158,7 +8162,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows caster to see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily prep)"',
+      '"Caster can see in darkness for 1 hr (<b>heightened 3rd</b> affects touched target; <b>5th</b> lasts until next daily prep)"',
   'Daze':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -8237,7 +8241,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows a counteract attempt vs. any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last 1 min; critical success negates; critical failure effects last 1 hr)"',
+      '"R30\' Makes a counteract attempt vs. any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last 1 min; critical success negates; critical failure effects last 1 hr)"',
   'Dimensional Lock':
     'Level=7 ' +
     'Trait= ' +
@@ -8291,7 +8295,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Allows a counteract check to deactivate a non-artifact magic item; critical success destroys it"',
+      '"R120\' Makes a counteract check to deactivate a non-artifact magic item; critical success destroys it"',
   'Dispel Magic':
     'Level=2 ' +
     'Trait= ' +
@@ -8299,7 +8303,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Allows a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min"',
+      '"R120\' Makes a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min"',
   'Disrupt Undead':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -8387,7 +8391,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows 12 known targets to communicate through a shared dream for 1 hr"',
+      '"12 known targets can communicate through a shared dream for 1 hr"',
   'Dream Message':
     'Level=3 ' +
     'Trait= ' +
@@ -8395,7 +8399,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows the caster to send 1 min of speech to a familiar creature (<b>heightened 4th</b> allows sending speech to 10 familiar creatures)"',
+      '"Caster sends 1 min of speech to a familiar creature (<b>heightened 4th</b> sends speech to 10 familiar creatures)"',
   'Dreaming Potential':
     'Level=5 ' +
     'Trait= ' +
@@ -8403,7 +8407,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows touched to achieve a day of downtime retraining during 8 hr sleep"',
+      '"Touched achieves a day of downtime retraining during 8 hr sleep"',
   'Drop Dead':
     'Level=5 ' +
     'Trait= ' +
@@ -8547,7 +8551,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows the caster to control the image shown by scrying a 100\' burst until next daily prep"',
+      '"Caster can control the image shown by scrying a 100\' burst until next daily prep"',
   'Fear':
     'Level=1 ' +
     'Trait= ' +
@@ -8579,7 +8583,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows willing touched to swim at full Speed, but reduces land Speed to 5\', for 10 min (<b>heightened 6th</b> effects last until next daily prep)"',
+      '"Willing touched can swim at full Speed, but moves on land at 5\', for 10 min (<b>heightened 6th</b> effects last until next daily prep)"',
   'Field Of Life':
     'Level=6 ' +
     'Trait= ' +
@@ -8919,7 +8923,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description="Allows caster to use 6 Recall Knowledge actions immediately"',
+    'Description="Caster can use 6 Recall Knowledge actions immediately"',
   'Hypnotic Pattern':
     'Level=3 ' +
     'Trait= ' +
@@ -9031,7 +9035,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to use an action to move the touched object or willing creature up or down 10\' for 5 min"',
+      '"Caster can use an action to move the touched object or willing creature up or down 10\' for 5 min"',
   'Light':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -9087,7 +9091,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows the caster to move a light object 20\' per rd while sustained (<b>heightened 3rd</b> may move a Bulk 1 object; <b>5th</b> may move 60\' per rd; <b>7th</b> may move a Bulk 2 object)"',
+      '"R30\' Moves a light object 20\' per rd while sustained (<b>heightened 3rd</b> may move a Bulk 1 object; <b>5th</b> may move 60\' per rd; <b>7th</b> may move a Bulk 2 object)"',
   'Magic Aura':
     'Level=1 ' +
     'Trait= ' +
@@ -9095,7 +9099,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Allows the caster to alter the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)"',
+      '"Alters the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> may target a creature)"',
   'Magic Fang':
     'Level=1 ' +
     'Trait= ' +
@@ -9175,7 +9179,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to enter the touched stone, retaining the ability to hear outside sounds, for 10 min"',
+      '"Caster can enter the touched stone, retaining the ability to hear outside sounds, for 10 min"',
   'Mending':
     'Level=1 ' +
     'Trait= ' +
@@ -9191,7 +9195,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Allows the caster to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
+      '"R120\' Caster can hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'Trait= ' +
@@ -9215,7 +9219,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Allows the caster to gain answers from the target, requiring a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
+      '"R30\' Caster gains answers from the target, requiring a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
   'Mind Reading':
     'Level=3 ' +
     'Trait= ' +
@@ -9223,7 +9227,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Allows the caster to learn surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn the caster\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
+      '"R30\' Caster learns surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn the caster\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
   'Mindlink':
     'Level=1 ' +
     'Trait= ' +
@@ -9326,7 +9330,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract check against 1 poison affecting touched"',
+      '"Makes a counteract check against 1 poison affecting touched"',
   'Nightmare':
     'Level=4 ' +
     'Trait= ' +
@@ -9635,7 +9639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Allows the caster to detect whether an object is magical and the related school of magic (<b>heightened 3rd</b> allows detection on 10 objects; <b>6th</b> allows detection on unlimited objects)"',
+      '"R30\' Caster detects whether an object is magical and the related school of magic (<b>heightened 3rd</b> allows detection on 10 objects; <b>6th</b> allows detection on unlimited objects)"',
   'Read Omens':
     'Level=4 ' +
     'Trait= ' +
@@ -9666,14 +9670,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows a counteract attempt vs. one curse affecting touched"',
+      '"Makes a counteract attempt vs. one curse affecting touched"',
   'Remove Disease':
     'Level=3 ' +
     'Trait= ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
-    'Description="Allows a counteract attempt vs. 1 disease affecting touched"',
+    'Description="Makes a counteract attempt vs. 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
     'Trait= ' +
@@ -9681,7 +9685,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
     'Trait= ' +
@@ -9689,7 +9693,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'Trait= ' +
@@ -9737,7 +9741,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows a counteract attempt vs. a magical blindness or deafness effect affecting touched"',
+      '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched"',
   'Retrocognition':
     'Level=7 ' +
     'Trait= ' +
@@ -9832,14 +9836,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to treat invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last 8 hr)"',
+      '"Caster treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last 8 hr)"',
   'Sending':
     'Level=5 ' +
     'Trait= ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description="Allows the caster to send a 25-word message to a known creature"',
+    'Description="Caster sends a 25-word message to a known creature"',
   'Shadow Blast':
     'Level=5 ' +
     'Trait= ' +
@@ -9855,7 +9859,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Allows a counteract attempt on a damaging trigger spell at +2 the spell level; reduces the damage by half if successful"',
+      '"R60\' Makes a counteract attempt on a damaging trigger spell at +2 the spell level; reduces the damage by half if successful"',
   'Shadow Walk':
     'Level=5 ' +
     'Trait= ' +
@@ -9863,7 +9867,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Allows the caster and 9 willing creatures to travel through the Shadow Plane at 20x Speed for 8 hr"',
+      '"Caster and 9 willing creatures travel through the Shadow Plane at 20x Speed for 8 hr"',
   'Shape Stone':
     'Level=4 ' +
     'Trait= ' +
@@ -10003,14 +10007,14 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="Allows caster to communicate with animals for 10 min"',
+    'Description="Caster can communicate with animals for 10 min"',
   'Speak With Plants':
     'Level=4 ' +
     'Trait= ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="Allows caster to communicate with plants for 10 min"',
+    'Description="Caster can communicate with plants for 10 min"',
   'Spectral Hand':
     'Level=2 ' +
     'Trait= ' +
@@ -10018,7 +10022,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Allows the caster to deliver touch spells via a crawling, spectral hand for 1 min or until the hand suffers damage, which inflicts 1d6 HP to the caster"',
+      '"R120\' Caster can deliver touch spells via a crawling, spectral hand for 1 min or until the hand suffers damage, which inflicts 1d6 HP to the caster"',
   'Spell Immunity':
     'Level=4 ' +
     'Trait= ' +
@@ -10034,7 +10038,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to use a Reaction to reflect spells via a successful counterspell for 1 hr"',
+      '"Caster can use a Reaction to reflect spells via a successful counterspell for 1 hr"',
   'Spellwrack':
     'Level=6 ' +
     'Trait= ' +
@@ -10121,7 +10125,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows caster to know touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
+      '"Caster knows touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
     'Trait= ' +
@@ -10136,7 +10140,7 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="Allows caster to converse with stone for 10 min"',
+    'Description="Caster can converse with stone for 10 min"',
   'Stone To Flesh':
     'Level=6 ' +
     'Trait= ' +
@@ -10288,7 +10292,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Allows caster to gain truthful answers from touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents caster from resting for 24 hr; critical failure inflicts -2 on Deception checks)"',
+      '"Caster gains truthful answers from a touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents caster from resting for 24 hr; critical failure inflicts -2 on Deception checks)"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -10312,7 +10316,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Allows the caster to move an object up to 80 Bulk and 20\' dimensions 20\' per rd while sustained for up to 1 min"',
+      '"R120\' Caster can move an object up to 80 Bulk and 20\' dimensions 20\' per rd while sustained for up to 1 min"',
   'Telekinetic Maneuver':
     'Level=2 ' +
     'Trait= ' +
@@ -10320,7 +10324,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Allows the caster to use a spell attack to Disarm, Shove, or Trip"',
+      '"R60\' Caster can use a spell attack to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -10328,7 +10332,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"Caster can use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
     'Trait= ' +
@@ -10336,7 +10340,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Allows the caster and 4 willing creatures to communicate telepathically for 8 hr"',
+      '"Caster and 4 willing creatures can communicate telepathically for 8 hr"',
   'Telepathic Demand':
     'Level=9 ' +
     'Trait= ' +
@@ -10344,7 +10348,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Allows the caster to exchange 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
+      '"Caster can exchange 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'Trait= ' +
@@ -10352,7 +10356,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the caster to communicate telepathically with any creature in a 30\' radius (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
+      '"Caster can communicate telepathically with any creature in a 30\' radius (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
     'Trait= ' +
@@ -10368,7 +10372,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Allows the caster to perform 3 rd of actions that don\'t affect others until the spell ends"',
+      '"Caster performs 3 rd of actions that don\'t affect others until the spell ends"',
   'Tongues':
     'Level=5 ' +
     'Trait= ' +
@@ -10376,7 +10380,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows the target to understand and speak all languages for 1 hr (<b>heightened 7th</b> lasts for 8 hr)"',
+      '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> lasts for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
     'Trait= ' +
@@ -10407,7 +10411,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Allows the caster to see through illusions and transmutations for 10 min"',
+      '"R60\' Caster sees through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
     'Trait= ' +
@@ -10503,7 +10507,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows caster to project its voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
+      '"Caster project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
     'Trait= ' +
@@ -11090,7 +11094,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="Allows the caster to reroll a failed save once per 10 min"',
+    'Description="Caster rerolls a failed save once per 10 min"',
   "Magic's Vessel":
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11146,7 +11150,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows the caster to reroll a failed save vs. a morph, petrification, or polymorph effect and use the better result"',
+      '"Caster rerolls a failed save vs. a morph, petrification, or polymorph effect and uses the better result"',
   'Perfected Mind':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11154,7 +11158,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows the caster a second Will save vs. a mental effect once per effect"',
+      '"Gives the caster a second Will save vs. a mental effect once per effect"',
   'Positive Luminance':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -11250,7 +11254,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows caster to reroll a Seek or Recall Knowledge check and use the better result"',
+      '"Caster rerolls a Seek or Recall Knowledge check and uses the better result"',
   'Shared Nightmare':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -11282,7 +11286,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows the caster to Step and become concealed until the end of next turn"',
+      '"Caster Steps and becomes concealed until the end of next turn"',
   'Sweet Dream':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11426,7 +11430,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R10\' Allows the caster and 1 ally to both use the higher of their two initiative rolls"',
+      '"R10\' Caster and 1 ally both use the higher of their two initiative rolls"',
   'Goodberry':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11506,7 +11510,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows caster to teleport %{speed>?15}\' within line of sight"',
+      '"Teleports the caster to %{speed>?15}\' within line of sight"',
   'Empty Body':
     'Level=9 ' +
     'Trait=Focus ' +
@@ -11529,7 +11533,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows the caster to move twice and makes the caster concealed until next turn"',
+      '"Caster moves twice and becomes concealed until next turn"',
   'Ki Strike':
     'Level=1 ' +
     'Trait=Focus ' +
@@ -11888,7 +11892,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R500\' Allows the caster to make a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', inflicting +\'+(spellModifier.%tradition-strengthModifier)+\' damage\':spellModifier.%tradition<strengthModifier?\', inflicting \'+(spellModifier.%tradition-strengthModifier)+\' damage\':\'\'}"',
+      '"R500\' Caster makes a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', inflicting +\'+(spellModifier.%tradition-strengthModifier)+\' damage\':spellModifier.%tradition<strengthModifier?\', inflicting \'+(spellModifier.%tradition-strengthModifier)+\' damage\':\'\'}"',
   'Invisibility Cloak':
     'Level=4 ' +
     'Trait=Focus ' +
@@ -12798,6 +12802,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
          (type.charAt(0).toLowerCase() + type.substring(1).replaceAll(' ', '') + 's');
   if(type != 'spells')
     rules.addChoice(type, name, attrs);
+  if(type == 'weapons' && attrs.includes('Advanced'))
+    rules.addChoice('advancedWeapons', name, attrs);
 
 };
 

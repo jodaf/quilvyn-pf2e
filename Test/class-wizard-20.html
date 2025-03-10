@@ -28,8 +28,8 @@ var attributes = {
   "feats.Skill Training (Tanning Lore)":1, "feats.Spell Combination":1, "feats.Spell Penetration":1, 
   "feats.Spell Tinker":1, "feats.Steady Spellcasting":1, "feats.Stonewalker":1, 
   "feats.Superior Bond":1, "feats.Universal Versatility":1, 
-  "feats.Weapon Proficiency (Halfling Sling Staff)":1, "feats.Weapon Proficiency (Longsword)":1, 
-  "feats.Weapon Proficiency (Shortbow)":1, "feats.Weapon Proficiency (Simple Weapons)":1, "feats.Widen Spell":1, 
+  "feats.Weapon Proficiency (Martial Weapons)":1, "feats.Weapon Proficiency (Orc Necksplitter)":1, 
+  "feats.Weapon Proficiency (Sawtooth Saber)":1, "feats.Weapon Proficiency (Simple Weapons)":1, "feats.Widen Spell":1, 
   "gender":"Male", "languages.Aklo":1, "languages.Aquan":1, "languages.Auran":1, 
   "languages.Halfling":1, "languages.Ignan":1, "languages.Sylvan":1, "levels.Wizard":20, 
   "name":"Class-Wizard 20", "selectableFeatures.Human - Half-Elf":1, 
@@ -107,7 +107,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Advanced School Spell; Archwizard's Might; Assurance (Crafting); Bespell Weapon; Bizarre Magic; Bond Conservation; Bonded Focus; Canny Acumen (Fortitude); Cantrip Expansion; Clever Counterspell; Conceal Spell; Counterspell; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Effortless Concentration; Enhanced Familiar; Eschew Materials; Hand Of The Apprentice; Infinite Possibilities; Linked Focus; Magic Sense; Metamagic Mastery; Overwhelming Energy; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Rock Runner; Scroll Savant; Silent Spell; Skill Training (Butchering Lore); Skill Training (Deception); Skill Training (Farming Lore); Skill Training (Halfling Lore); Skill Training (Military Lore); Skill Training (Tanning Lore); Spell Combination; Spell Penetration; Spell Tinker; Steady Spellcasting; Stonewalker; Superior Bond; Universal Versatility; Weapon Proficiency (Halfling Sling Staff); Weapon Proficiency (Longsword); Weapon Proficiency (Shortbow); Weapon Proficiency (Simple Weapons); Widen Spell</td>
+        <td><b>Feats</b>: Advanced School Spell; Archwizard's Might; Assurance (Crafting); Bespell Weapon; Bizarre Magic; Bond Conservation; Bonded Focus; Canny Acumen (Fortitude); Cantrip Expansion; Clever Counterspell; Conceal Spell; Counterspell; Dwarven Weapon Cunning; Dwarven Weapon Expertise; Dwarven Weapon Familiarity; Effortless Concentration; Enhanced Familiar; Eschew Materials; Hand Of The Apprentice; Infinite Possibilities; Linked Focus; Magic Sense; Metamagic Mastery; Overwhelming Energy; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Rock Runner; Scroll Savant; Silent Spell; Skill Training (Butchering Lore); Skill Training (Deception); Skill Training (Farming Lore); Skill Training (Halfling Lore); Skill Training (Military Lore); Skill Training (Tanning Lore); Spell Combination; Spell Penetration; Spell Tinker; Steady Spellcasting; Stonewalker; Superior Bond; Universal Versatility; Weapon Proficiency (Martial Weapons); Weapon Proficiency (Orc Necksplitter); Weapon Proficiency (Sawtooth Saber); Weapon Proficiency (Simple Weapons); Widen Spell</td>
         <td><b>Wizard Features</b>: Ability Boost (Intelligence); Ability Boosts; Abjuration; Alertness; Arcane Bond; Arcane School; Arcane Spellcasting; Arcane Thesis; Archwizard's Spellcraft; Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks); Conjuration; Defense Trained (Unarmored Defense); Defensive Robes; Divination; Enchantment; Evocation; Expert Spellcaster; General Feats; Illusion; Improved Familiar Attunement; Legendary Spellcaster; Lightning Reflexes; Magical Fortitude; Master Spellcaster; Metamagical Experimentation; Necromancy; Perception Trained; Resolve; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Blending; Spell Substitution; Spell Trained (Arcane); Transmutation; Universalist; Weapon Specialization; Wizard Feats; Wizard Skills; Wizard Weapon Expertise</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Half-Elf; Human Heritage</td>
@@ -233,7 +233,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Recognition: Can use a skill with master proficiency to Recognize a Spell as a free action once per rd</td>
     </tr><tr style="text-align:center">
-      <td>Recognize Spell: <b>(R)</b> Guarantees success in recognizing an unknown common spell of up to level 2, 4, 6, or 10 with trained, expert, master, or legendary proficiency in the connected skill</td>
+      <td>Recognize Spell: <b>(R)</b> Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to level 2, 4, 6, or 10</td>
     </tr><tr style="text-align:center">
       <td>Rock Runner: Does not suffer flat-footed when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes</td>
     </tr><tr style="text-align:center">
@@ -278,11 +278,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Halfling Sling Staff): Attack Trained (Halfling Sling Staff)</i></td>
+        <td><i>Weapon Proficiency (Martial Weapons): Attack Trained (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Longsword): Attack Trained (Longsword)</i></td>
+        <td><i>Weapon Proficiency (Orc Necksplitter): Attack Trained (Orc Necksplitter)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Shortbow): Attack Trained (Shortbow)</i></td>
+        <td><i>Weapon Proficiency (Sawtooth Saber): Attack Trained (Sawtooth Saber)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Simple Weapons): Attack Trained (Simple Weapons)</i></td>
       </tr><tr style="text-align:center">
@@ -353,13 +353,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Force Bolt (A1 Evo): <b>(1)</b> R30' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Allows the caster to make a remote attack with a melee weapon, inflicting +1 damage</td>
+      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Caster makes a remote attack with a melee weapon, inflicting +1 damage</td>
     </tr><tr style="text-align:left">
       <td>Invisibility Cloak (A4 Ill): <b>(2)</b> Caster becomes invisible for 10 min or until it uses a hostile action (<b>heightened 6th</b> lasts 10 min; <b>8th</b> lasts 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Life Siphon (A4 Nec): <b>(R)</b> Gives the caster temporary HP equal to 1d8 HP per spell level as a Reaction to casting a necromancy spell</td>
     </tr><tr style="text-align:left">
-      <td>Meld Into Stone (D3 Tra): <b>(2)</b> Allows the caster to enter the touched stone, retaining the ability to hear outside sounds, for 10 min</td>
+      <td>Meld Into Stone (D3 Tra): <b>(2)</b> Caster can enter the touched stone, retaining the ability to hear outside sounds, for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Physical Boost (A1 Tra): <b>(1)</b> Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within the next rd</td>
     </tr><tr style="text-align:left">
@@ -429,7 +429,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Bespell Weapon: <b>(F)</b> After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school</td>
     </tr><tr style="text-align:center">
-      <td>Bizarre Magic: Self spells add +5 DC to Recognize Spells and Identify Magic</td>
+      <td>Bizarre Magic: Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use</td>
     </tr><tr style="text-align:center">
       <td>Bond Conservation: <b>(1)</b> Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of next turn</td>
     </tr><tr style="text-align:center">

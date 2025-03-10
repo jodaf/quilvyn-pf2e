@@ -31,8 +31,8 @@ var attributes = {
   "feats.Skill Training (Medicine)":1, "feats.Skill Training (Milling Lore)":1, "feats.Smoke Bomb":1, 
   "feats.Snare Crafting":1, "feats.Sticky Bomb":1, "feats.Toughness":1, 
   "feats.True Debilitating Bomb":1, "feats.Uncanny Bombs":1, "feats.Unconventional Expertise":1, 
-  "feats.Unconventional Weaponry (Bastard Sword)":1, "feats.Weapon Proficiency (Temple Sword)":1, 
-  "feats.Weapon Proficiency (Warhammer)":1, "gender":"Female", "languages.Abyssal":1, "languages.Auran":1, 
+  "feats.Unconventional Weaponry (Bastard Sword)":1, "feats.Weapon Proficiency (Martial Weapons)":1, 
+  "feats.Weapon Proficiency (Sawtooth Saber)":1, "gender":"Female", "languages.Abyssal":1, "languages.Auran":1, 
   "languages.Celestial":1, "languages.Elven":1, "languages.Gnomish":1, "languages.Terran":1, 
   "levels.Alchemist":20, "name":"Class-Alchemist 20", "selectableFeatures.Alchemist - Bomber":1, 
   "selectableFeatures.Alchemist - Chirurgeon":1, "selectableFeatures.Alchemist - Mutagenist":1, 
@@ -100,7 +100,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adopted Ancestry (Halfling); Alchemical Familiar; Alchemical Savant; Ancestral Paragon; Armor Proficiency; Calculated Splash; Clever Improviser; Combine Elixirs; Cooperative Nature; Cooperative Soul; Craft Philosopher's Stone; Debilitating Bomb; Directional Bombs; Efficient Alchemy; Elastic Mutagen; Enduring Alchemy; Eternal Elixir; Expanded Splash; Exploitive Bomb; Extend Elixir; Far Lobber; Feral Mutagen; General Training; Genius Mutagen; Glib Mutagen; Greater Debilitating Bomb; Greater Merciful Elixir; Improbable Elixirs; Invincible Mutagen; Mega Bomb; Merciful Elixir; Mindblank Mutagen; Miracle Worker; Perfect Debilitation; Perfect Mutagen; Persistent Mutagen; Poison Resistance; Potent Poisoner; Quick Bomber; Revivifying Mutagen; Skill Training (Cavern Lore); Skill Training (Demon Lore); Skill Training (Engineering Lore); Skill Training (Folktale Lore); Skill Training (Labor Lore); Skill Training (Legal Lore); Skill Training (Library Lore); Skill Training (Medicine); Skill Training (Milling Lore); Smoke Bomb; Snare Crafting; Sticky Bomb; Toughness; True Debilitating Bomb; Uncanny Bombs; Unconventional Expertise; Unconventional Weaponry (Bastard Sword); Weapon Proficiency (Temple Sword); Weapon Proficiency (Warhammer)</td>
+        <td><b>Feats</b>: Adopted Ancestry (Halfling); Alchemical Familiar; Alchemical Savant; Ancestral Paragon; Armor Proficiency; Calculated Splash; Clever Improviser; Combine Elixirs; Cooperative Nature; Cooperative Soul; Craft Philosopher's Stone; Debilitating Bomb; Directional Bombs; Efficient Alchemy; Elastic Mutagen; Enduring Alchemy; Eternal Elixir; Expanded Splash; Exploitive Bomb; Extend Elixir; Far Lobber; Feral Mutagen; General Training; Genius Mutagen; Glib Mutagen; Greater Debilitating Bomb; Greater Merciful Elixir; Improbable Elixirs; Invincible Mutagen; Mega Bomb; Merciful Elixir; Mindblank Mutagen; Miracle Worker; Perfect Debilitation; Perfect Mutagen; Persistent Mutagen; Poison Resistance; Potent Poisoner; Quick Bomber; Revivifying Mutagen; Skill Training (Cavern Lore); Skill Training (Demon Lore); Skill Training (Engineering Lore); Skill Training (Folktale Lore); Skill Training (Labor Lore); Skill Training (Legal Lore); Skill Training (Library Lore); Skill Training (Medicine); Skill Training (Milling Lore); Smoke Bomb; Snare Crafting; Sticky Bomb; Toughness; True Debilitating Bomb; Uncanny Bombs; Unconventional Expertise; Unconventional Weaponry (Bastard Sword); Weapon Proficiency (Martial Weapons); Weapon Proficiency (Sawtooth Saber)</td>
         <td><b>Alchemist Features</b>: Ability Boost (Intelligence); Ability Boosts; Advanced Alchemy; Alchemical Alacrity; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemist Feats; Alchemist Skills; Alchemy; Alertness; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Bomber; Chirurgeon; Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Evasion; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Infused Reagents; Iron Will; Juggernaut; Medium Armor Expertise; Medium Armor Mastery; Mutagenic Flashback; Mutagenist; Perception Trained; Perpetual Infusions; Perpetual Perfection; Perpetual Potency; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Weapon Specialization</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Human Heritage; Skilled Heritage Human</td>
@@ -206,7 +206,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Alchemical Alacrity: Has increased Quick Alchemy effects</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Alchemical Crafting: Knows formulas for 4 common 1st-level alchemical items</i></td>
+      <td><i>Alchemical Crafting: Knows the formulas for 4 common 1st-level alchemical items</i></td>
     </tr><tr style="text-align:center">
       <td><i>Alchemist Skills: Skill Trained (Crafting; Choose 8 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -306,7 +306,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Research Field: Can use 1 batch of infused reagents to create 3 signature items</td>
     </tr><tr style="text-align:center">
-      <td>Snare Crafting: Allows using Crafting to create snares/Knows the formulas for 4 common snares</td>
+      <td>Snare Crafting: Can use Crafting to create snares and knows the formulas for 4 common snares</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr></table>
@@ -366,9 +366,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Bastard Sword as one category simpler</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Temple Sword): Attack Trained (Temple Sword)</i></td>
+        <td><i>Weapon Proficiency (Martial Weapons): Attack Trained (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Warhammer): Attack Trained (Warhammer)</i></td>
+        <td><i>Weapon Proficiency (Sawtooth Saber): Attack Trained (Sawtooth Saber)</i></td>
       </tr><tr style="text-align:center">
         <td>Bomber: Can direct a bomb splash onto a single target</td>
       </tr><tr style="text-align:center">

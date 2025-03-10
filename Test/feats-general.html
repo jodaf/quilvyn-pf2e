@@ -20,7 +20,7 @@ var attributes = {
   "feats.Incredible Initiative":1, "feats.Incredible Investiture":1, "feats.Minor Magic (Primal)":1, 
   "feats.Natural Ambition":1, "feats.Quick Coercion":1, "feats.Quick Draw":1, "feats.Ride":1, 
   "feats.Shield Block":1, "feats.Toughness":1, "feats.Twin Feint":1, 
-  "feats.Untrained Improvisation":1, "feats.Weapon Proficiency (Bastard Sword)":1, "gender":"Male", 
+  "feats.Untrained Improvisation":1, "feats.Weapon Proficiency (Martial Weapons)":1, "gender":"Male", 
   "languages.Abyssal":1, "languages.Gnomish":1, "levels.Rogue":3, "name":"Feats-General", 
   "selectableFeatures.Human - Versatile Heritage Human":1, "selectableFeatures.Rogue - Charisma":1, 
   "selectableFeatures.Rogue - Scoundrel":1, "shield":"None", "skillIncreases.Acrobatics":1, "skillIncreases.Art Lore":1, 
@@ -76,7 +76,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Hefty Hauler: +2 Encumbered Bulk/+2 Maximum Bulk</i></td>
     </tr><tr style="text-align:center">
-      <td>Breath Control: Can hold breath 25x as long as usual without suffocating</td>
+      <td>Breath Control: Can hold breath for 175 rd without suffocating</td>
     </tr><tr style="text-align:center">
       <td>Feather Step: Can Step into difficult terrain</td>
     </tr></table>
@@ -97,7 +97,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adopted Ancestry (Elf); Ancestral Paragon; Armor Proficiency; Assurance (Deception); Breath Control; Canny Acumen (Fortitude); Canny Acumen (Perception); Canny Acumen (Reflex); Canny Acumen (Will); Diehard; Elven Weapon Familiarity; Expeditious Search; Fast Recovery; Feather Step; Fleet; Hefty Hauler; Incredible Initiative; Incredible Investiture; Minor Magic (Primal); Natural Ambition; Quick Coercion; Quick Draw; Ride; Shield Block; Toughness; Twin Feint; Untrained Improvisation; Weapon Proficiency (Bastard Sword)</td>
+        <td><b>Feats</b>: Adopted Ancestry (Elf); Ancestral Paragon; Armor Proficiency; Assurance (Deception); Breath Control; Canny Acumen (Fortitude); Canny Acumen (Perception); Canny Acumen (Reflex); Canny Acumen (Will); Diehard; Elven Weapon Familiarity; Expeditious Search; Fast Recovery; Feather Step; Fleet; Hefty Hauler; Incredible Initiative; Incredible Investiture; Minor Magic (Primal); Natural Ambition; Quick Coercion; Quick Draw; Ride; Shield Block; Toughness; Twin Feint; Untrained Improvisation; Weapon Proficiency (Martial Weapons)</td>
         <td><b>Rogue Features</b>: Ability Boost (Charisma); Ability Boosts; Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks); Charisma; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; General Feats; Perception Expert; Rogue Feats; Rogue Key Ability; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Scoundrel; Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ability Boost (Choose 2 from any); Ancestry Feats; Human Heritage; Versatile Heritage Human</td>
@@ -195,7 +195,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Incredible Initiative: +2 on initiative rolls</td>
     </tr><tr style="text-align:center">
-      <td>Quick Coercion: May Coerce in 1 rd</td>
+      <td>Quick Coercion: Can Coerce in 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr></table>
@@ -219,7 +219,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Hide</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Bastard Sword (+6 1d8+1 S [2h d12]; strength; trained); Dagger (+7 1d4+1 P/S R10'; dexterity; trained); Scimitar (+1 1d6+1 S; strength; untrained)</td>
+        <td><b>Weapons</b>: Bastard Sword (+6 1d8+1 S [2h d12]; strength; trained); Dagger (+7 1d4+1 P/S R10'; dexterity; trained); Scimitar (+6 1d6+1 S; strength; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -239,7 +239,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Toughness: +3 Hit Points</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Proficiency (Bastard Sword): Attack Trained (Bastard Sword)</i></td>
+        <td><i>Weapon Proficiency (Martial Weapons): Attack Trained (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
@@ -251,7 +251,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Scoundrel: Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of next turn</td>
       </tr><tr style="text-align:center">
-        <td>Shield Block: <b>(R)</b> Raised shield negates damage up to its hardness and absorbs half of any remaining damage</td>
+        <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Sneak Attack: Successful strike using an agile, finesse, or ranged weapon vs. a flat-footed foe inflicts +1d6 HP precision damage</td>
       </tr><tr style="text-align:center">
@@ -275,7 +275,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Canny Acumen (Will): Save Expert (Will)</i></td>
       </tr><tr style="text-align:center">
-        <td>Breath Control: +1 vs. inhaled threats, and successes vs. inhaled threat are critical successes</td>
+        <td>Breath Control: +1 vs. inhaled threats, and successes vs. inhaled threats are critical successes</td>
       </tr><tr style="text-align:center">
         <td>Fast Recovery: Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent</td>
       </tr><tr style="text-align:center">
