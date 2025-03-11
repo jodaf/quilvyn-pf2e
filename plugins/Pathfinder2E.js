@@ -56,7 +56,8 @@ function Pathfinder2E() {
   rules.defineChoice('preset',
     'ancestry:Ancestry,select-one,ancestrys',
     'background:Background,select-one,backgrounds',
-    'levels:Class Levels,bag,levels',
+    'class:Class,select-one,levels',
+    'experience:Experience,text,6',
     'abilityGeneration:Ability Generation,select-one,abilgens'
   );
 
@@ -105,7 +106,7 @@ Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
   'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
-  'levels', 'boosts', 'selectableFeatures', 'feats', 'skills', 'languages',
+  'boosts', 'selectableFeatures', 'feats', 'skills', 'languages',
   'armor', 'weapons', 'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
@@ -12463,9 +12464,6 @@ Pathfinder2E.identityRules = function(
     "features.Small", '=', '"Small"'
   );
 
-  QuilvynRules.validAllocationRules
-    (rules, 'level', 'level', 'Sum "^levels\\."');
-
 };
 
 /* Defines rules related to magic use. */
@@ -13362,6 +13360,11 @@ Pathfinder2E.classRules = function(
   let classLevel = 'levels.' + name;
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+
+  rules.defineRule(classLevel,
+    'class', '?', 'source=="' + name + '"',
+    'level', '=', null
+  );
 
   Pathfinder2E.featureListRules(rules, features, name, classLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, classLevel, true);
@@ -15917,8 +15920,8 @@ Pathfinder2E.initialEditorElements = function() {
     ['name', 'Name', 'text', [20]],
     ['ancestry', 'Ancestry', 'select-one', 'ancestrys'],
     ['background', 'Background', 'select-one', 'backgrounds'],
+    ['class', 'Class', 'select-one', 'levels'],
     ['experience', 'Experience', 'text', [8]],
-    ['levels', 'Levels', 'bag', 'levels'],
     ['imageUrl', 'Image URL', 'text', [20]],
     ['abilityGeneration', 'Ability Generation', 'select-one', 'abilgens'],
     ['baseStrength', 'Str/Boosts', 'select-one', abilityChoices],
@@ -16097,20 +16100,20 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^\w+features.Ability\s+Boost\s+\((.*)\)$/)))
+      if((matchInfo = attr.match(/^\w+Features.Ability\s+Boost\s+\((.*)\)$/)))
         ; // empty
       else if(!allNotes[attr] ||
               (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) == null)
         continue;
       let matched = matchInfo[1];
-      let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
+      let freeChoices = Object.keys(Pathfinder2E.ABILITIES);
       matched.split(/\s*;\s*/).forEach(boost => {
         let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
         if(!m) {
-          anyChoices = anyChoices.filter(x => x != boost.toLowerCase());
+          freeChoices = freeChoices.filter(x => x != boost.toLowerCase());
         } else {
           howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
-          choices = m[2].match(/^any$/i) ? anyChoices : m[2].split(/\s*,\s*/);
+          choices = m[2].match(/^any$/i) ? freeChoices : m[2].split(/\s*,\s*/);
           choices = choices.map(x => x.toLowerCase());
           choices.forEach(choice => {
             if(howMany > 0 && boostsAllocated[choice] > 0) {
@@ -16127,10 +16130,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           }
           while(howMany > 0 && choices.length > 0) {
             let choice = randomElement(choices);
-            attributes['abilityBoosts.' + choice] = (attributes['abilityBoosts.' + choice] || 0) + 1;
+            attributes['abilityBoosts.' + choice] =
+              (attributes['abilityBoosts.' + choice] || 0) + 1;
             howMany--;
             choices = choices.filter(x => x != choice);
-            anyChoices = anyChoices.filter(x => x != choice);
+            freeChoices = freeChoices.filter(x => x != choice);
           }
         }
       });
@@ -16257,48 +16261,6 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         choices.push(attr);
     }
     pickAttrs(attributes, 'languages.', choices, howMany, 1);
-  } else if(attribute == 'levels') {
-    let assignedLevels = QuilvynUtils.sumMatching(attributes, /^levels\./);
-    if(!attributes.level) {
-      if(assignedLevels > 0)
-        attributes.level = assignedLevels;
-      else if(attributes.experience)
-        attributes.level = Math.floor(attributes.experience / 1000) + 1;
-      else
-        // Random 1..8 with each value half as likely as the previous one.
-        attributes.level =
-          9 - Math.floor(Math.log(QuilvynUtils.random(2, 511)) / Math.log(2));
-    }
-    let max = attributes.level * 1000 - 1;
-    let min = (attributes.level - 1) * 1000;
-    if(!attributes.experience || attributes.experience < min)
-      attributes.experience = QuilvynUtils.random(min, max);
-    choices = Object.keys(this.getChoices('levels'));
-    if(assignedLevels == 0) {
-      let classesToChoose =
-        attributes.level == 1 || QuilvynUtils.random(1,10) < 9 ? 1 : 2;
-      // Find choices that are valid or can be made so
-      while(classesToChoose > 0) {
-        let which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
-        attributes[which] = 1;
-        if(QuilvynUtils.sumMatching(this.applyRules(attributes),
-             /^validationNotes.*(BaseAttack|CasterLevel|Spells)/) == 0) {
-          assignedLevels++;
-          classesToChoose--;
-        } else {
-          delete attributes[which];
-        }
-      }
-    }
-    while(assignedLevels < attributes.level) {
-      let which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
-      while(!attributes[which]) {
-        which = 'levels.' + choices[QuilvynUtils.random(0,choices.length-1)];
-      }
-      attributes[which]++;
-      assignedLevels++;
-    }
-    delete attributes.level;
   } else if(attribute == 'name') {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
