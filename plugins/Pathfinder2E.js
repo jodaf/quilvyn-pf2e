@@ -105,9 +105,9 @@ Pathfinder2E.CHOICES = [
 Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
-  'ancestry', 'gender', 'name', 'alignment', 'background', 'deity',
-  'boosts', 'selectableFeatures', 'feats', 'skills', 'languages',
-  'armor', 'weapons', 'shield', 'spells'
+  'gender', 'name', 'alignment', 'background', 'deity', 'boosts',
+  'selectableFeatures', 'feats', 'skills', 'languages', 'armor', 'weapons',
+  'shield', 'spells'
 ];
 Pathfinder2E.VIEWERS = ['Collected Notes', 'Compact', 'Standard', 'Stat Block'];
 
@@ -2714,7 +2714,10 @@ Pathfinder2E.FEATS = {
   // Archetype
   'Alchemist Dedication':
     'Trait=Archetype,Dedication,Multiclass,Alchemist ' +
-    'Require="level >= 2","intelligence >= 14","levels.Alchemist == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Alchemist == 0"',
   'Basic Concoction':
     'Trait=Archetype,Alchemist ' +
     'Require="level >= 4","features.Alchemist Dedication"',
@@ -2735,8 +2738,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Barbarian ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14",' +
-      '"constitution >= 14",' +
+      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"constitution >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Barbarian == 0"',
   'Barbarian Resiliency':
     'Trait=Archetype,Barbarian ' +
@@ -2761,7 +2764,10 @@ Pathfinder2E.FEATS = {
 
   'Bard Dedication':
     'Trait=Archetype,Dedication,Multiclass,Bard ' +
-    'Require="level >= 2","charisma >= 14","levels.Bard == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Bard == 0"',
   'Basic Bard Spellcasting':
     'Trait=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
@@ -2793,8 +2799,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Champion ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14",' +
-      '"charisma >= 14",' +
+      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Champion == 0"',
   'Basic Devotion':
     'Trait=Archetype,Champion ' +
@@ -2821,7 +2827,10 @@ Pathfinder2E.FEATS = {
 
   'Cleric Dedication':
     'Trait=Archetype,Dedication,Multiclass,Cleric ' +
-    'Require="level >= 2","wisdom >= 14","levels.Cleric == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
     'Trait=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
   'Basic Dogma':
@@ -2846,7 +2855,10 @@ Pathfinder2E.FEATS = {
 
   'Druid Dedication':
     'Trait=Archetype,Dedication,Multiclass,Druid ' +
-    'Require="level >= 2","wisdom >= 14","levels.Druid == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
     'Trait=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Basic Wilding':
@@ -2875,8 +2887,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14",' +
-      '"dexterity >= 14",' +
+      '"strength >= 14 || multitalentedHalfHelf",' +
+      '"dexterity >= 14 || multitalentedHalfHelf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
     'Trait=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
@@ -2897,8 +2909,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14",' +
-      '"dexterity >= 14",' +
+      '"strength >= 14 || multitalentedHalfHelf",' +
+      '"dexterity >= 14 || multitalentedHalfHelf",' +
       '"levels.Monk == 0"',
   'Basic Kata':
     'Trait=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
@@ -2918,7 +2930,10 @@ Pathfinder2E.FEATS = {
 
   'Ranger Dedication':
     'Trait=Archetype,Dedication,Multiclass,Ranger ' +
-    'Require="level >= 2","dexterity >= 14","levels.Ranger == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"dexterity >= 14 || multitalentedHalfHelf",' +
+      '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
     'Trait=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
   'Ranger Resiliency':
@@ -2933,7 +2948,10 @@ Pathfinder2E.FEATS = {
 
   'Rogue Dedication':
     'Trait=Archetype,Dedication,Multiclass,Rogue ' +
-    'Require="level >= 2","dexterity >= 14","levels.Rogue == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"dexterity >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Rogue == 0"',
   'Basic Trickery':
     'Trait=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Sneak Attacker':
@@ -2951,7 +2969,10 @@ Pathfinder2E.FEATS = {
 
   'Sorcerer Dedication':
     'Trait=Archetype,Dedication,Multiclass,Sorcerer ' +
-    'Require="level >= 2","charisma >= 14","levels.Sorcerer == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
     'Trait=Archetype,Sorcerer ' +
     'Require="level >= 4","features.Sorcerer Dedication"',
@@ -2982,7 +3003,10 @@ Pathfinder2E.FEATS = {
 
   'Wizard Dedication':
     'Trait=Archetype,Dedication,Multiclass,Wizard ' +
-    'Require="level >= 2","intelligence >= 14","levels.Wizard == 0"',
+    'Require=' +
+      '"level >= 2",' +
+      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Wizard == 0"',
   'Arcane School Spell':
     'Trait=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Basic Arcana':
@@ -3593,7 +3617,6 @@ Pathfinder2E.FEATURES = {
     'Action=Free ' +
     'Section=combat ' +
     'Note="Gives +4 on an untrained skill check once per day"',
-  // TODO: also, half-elves don't need to meet ability score
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
 
@@ -14633,6 +14656,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'rank.Society', '=', null,
       'feats.Multilingual', '*', null
     );
+  } else if(name == 'Multitalented') {
+    rules.defineRule('multiclassAbilityRequirementsWaived',
+      'features.Multitalented', '?', null,
+      'features.Half-Elf', '=', '1'
+    );
   } else if(name == 'Orc Ferocity') {
     rules.defineRule('combatNotes.orcFerocity',
       'combatNotes.incredibleFerocity', '=', 'null' // italics
@@ -16080,65 +16108,87 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       }
     }
   } else if(attribute == 'armor') {
-    // TODO druids can't use metal armor
     attrs = this.applyRules(attributes);
-    let armors = this.getChoices('armors');
+    let allArmors = this.getChoices('armors');
     choices = [];
-    for(let attr in armors) {
-      let category = QuilvynUtils.getAttrValue(armors[attr], 'Category');
+    for(let attr in allArmors) {
+      let category = QuilvynUtils.getAttrValue(allArmors[attr], 'Category');
       if(category == 'Unarmored')
         choices.push(attr);
+      else if(attributes['class'] == 'Druid' &&
+              allArmors[attr].match(/Chain|Composite|Plate/))
+        ; // empty
       else if(attrs['rank.' + category + ' Armor'])
         choices.push(attr);
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'boosts') {
     let boostsAllocated = {};
-    for(attr in Pathfinder2E.ABILITIES) {
+    for(attr in Pathfinder2E.ABILITIES)
       boostsAllocated[attr] = attributes['abilityBoosts.' + attr] || 0;
-    }
     attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
+    let boostTexts = [];
+    // Grab text of all Ability Boost features and notes
     for(attr in attrs) {
       if((matchInfo = attr.match(/^\w+Features.Ability\s+Boost\s+\((.*)\)$/)))
-        ; // empty
-      else if(!allNotes[attr] ||
-              (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) == null)
-        continue;
-      let matched = matchInfo[1];
-      let freeChoices = Object.keys(Pathfinder2E.ABILITIES);
-      matched.split(/\s*;\s*/).forEach(boost => {
-        let m = boost.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/i);
+        boostTexts.push(matchInfo[1]);
+      else if(allNotes[attr] &&
+              (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) != null)
+        boostTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
+    }
+    // Sort in order of most restrictive to least restrictive
+    boostTexts = boostTexts.sort((a, b) =>
+      a == b ? 0 :
+      a.match(/^Choose[^;]*from any$/) ? 1 :
+      b.match(/^Choose[^;]*from any$/) ? -1 :
+      a.includes('from any') ? 1 :
+      b.includes('from any') ? -1 : 0
+    );
+    boostTexts.forEach(text => {
+      let anyChoices = Object.keys(Pathfinder2E.ABILITIES);
+      text.split(/\s*;\s*/).forEach(boost => {
+        let m = boost.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
         if(!m) {
-          freeChoices = freeChoices.filter(x => x != boost.toLowerCase());
+          // Specific ability boost; remove from subsequent any choice
+          anyChoices = anyChoices.filter(x => x != boost.toLowerCase());
         } else {
-          howMany = m[1].startsWith('%') ? attrs[attr] : +m[1];
-          choices = m[2].match(/^any$/i) ? freeChoices : m[2].split(/\s*,\s*/);
+          howMany = +m[1];
+          choices = m[2].match(/^any$/i) ? anyChoices : m[2].split(/\s*,\s*/);
           choices = choices.map(x => x.toLowerCase());
-          choices.forEach(choice => {
-            if(howMany > 0 && boostsAllocated[choice] > 0) {
-              howMany--;
-              boostsAllocated[choice]--;
-            }
-          });
+          // If existing allocations have been applied to the abilities in
+          // choices, assume that they apply to this boost and reduce howMany
+          // and boostsAllocated appropriately
+          while(howMany > 0 &&
+                choices.reduce((total, choice) => total + boostsAllocated[choice], 0) > 0) {
+            choices.forEach(choice => {
+              if(howMany > 0 && boostsAllocated[choice] > 0) {
+                howMany--;
+                boostsAllocated[choice]--;
+              }
+            });
+          }
+          // While we have more to allocate than choices, assign a boost to
+          // each choice--this probably will only occur when assigning the
+          // boost acquired at every 5th level
           while(howMany > choices.length) {
-            // Probably only true for level-based ability boosts
             choices.forEach(c => {
               attributes['abilityBoosts.' + c] = (attributes['abilityBoosts.' + c] || 0) + 1;
             });
             howMany -= choices.length;
           }
+          // Finally, randomly assign any remaining allocations
           while(howMany > 0 && choices.length > 0) {
             let choice = randomElement(choices);
             attributes['abilityBoosts.' + choice] =
               (attributes['abilityBoosts.' + choice] || 0) + 1;
             howMany--;
             choices = choices.filter(x => x != choice);
-            freeChoices = freeChoices.filter(x => x != choice);
+            anyChoices = anyChoices.filter(x => x != choice);
           }
         }
       });
-    }
+    });
   } else if(attribute == 'deity') {
     let alignment = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
     alignment = alignment ? alignment[1] + alignment[2] : 'N';
@@ -16168,7 +16218,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     let allChoices = this.getChoices(prefix);
     for(attr in allChoices) {
       let traits =
-        QuilvynUtils.getAttrValueArray(allChoices[attr], allChoices[attr].includes('Trait') ? 'Trait' : 'Type');
+        QuilvynUtils.getAttrValueArray
+          (allChoices[attr], allChoices[attr].includes('Trait') ? 'Trait' : 'Type');
       if(attrs[prefix + '.' + attr] != null) {
         for(let i = 0; i < traits.length; i++) {
           let t = traits[i];
@@ -16185,13 +16236,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     if(attribute == 'feat') {
       debug.push('Replace Ancestry with ' + attributes.ancestry);
       toAllocateByTrait[attributes.ancestry] = toAllocateByTrait.Ancestry;
-      for(let c in this.getChoices('levels')) {
-        if(!attributes['levels.' + c])
-          continue;
-        debug.push('Replace Class with ' + c);
-        toAllocateByTrait[c] = toAllocateByTrait.Class;
-        break;
-      }
+      debug.push('Replace Class with ' + attributes['class']);
+      toAllocateByTrait[attributes['class']] = toAllocateByTrait.Class;
       delete toAllocateByTrait.Ancestry;
       delete toAllocateByTrait.Class;
     }
@@ -16264,15 +16310,16 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
   } else if(attribute == 'name') {
     attributes.name = Pathfinder2E.randomName(attributes.ancestry);
   } else if(attribute == 'shield') {
-    // TODO druids can't use metal shields
     // The rules have no restrictions on shield use, but it seems weird to give
     // Wizards, etc. a shield, and so we restrict shields to characters with a
     // rank in armor.
     attrs = this.applyRules(attributes);
     choices = attrs['rank.Light Armor']>0 ? Object.keys(this.getChoices('shields')) : ['None'];
+    if(attributes['class'] == 'Druid')
+      choices = choices.filter(x => !x.match(/Steel|Metal/));
     attributes.shield = randomElement(choices);
   } else if(attribute == 'skills') {
-    // TODO: buggy--will over-allocate if some skills are already allocated
+    // TODO: buggy--over-allocates if some skills are already allocated
     attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
     let allSkills = this.getChoices('skills');
