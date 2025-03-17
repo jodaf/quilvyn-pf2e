@@ -16123,13 +16123,13 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     attributes.armor = choices[QuilvynUtils.random(0, choices.length - 1)];
   } else if(attribute == 'boosts') {
+    attrs = this.applyRules(attributes);
     let boostsAllocated = {};
     for(attr in Pathfinder2E.ABILITIES)
       boostsAllocated[attr] = attributes['abilityBoosts.' + attr] || 0;
-    attrs = this.applyRules(attributes);
     let allNotes = this.getChoices('notes');
-    let boostTexts = [];
     // Grab text of all Ability Boost features and notes
+    let boostTexts = [];
     for(attr in attrs) {
       if((matchInfo = attr.match(/^\w+Features.Ability\s+Boost\s+\((.*)\)$/)))
         boostTexts.push(matchInfo[1]);
@@ -16319,93 +16319,82 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       choices = choices.filter(x => !x.match(/Steel|Metal/));
     attributes.shield = randomElement(choices);
   } else if(attribute == 'skills') {
-    // TODO: buggy--over-allocates if some skills are already allocated
     attrs = this.applyRules(attributes);
-    let allNotes = this.getChoices('notes');
     let allSkills = this.getChoices('skills');
-    let skillRanks = {};
+    let skillsAllocated = {};
     for(attr in allSkills)
-      skillRanks[attr] = attrs['rank.' + attr] || 0;
-    // Collect info for each feature and note that provides a skill choice,
-    // split into choices limited to specified skills and choices of any skill
-    let anyChoices = [];
-    let increaseChoices = [];
-    let limitedChoices = [];
+      skillsAllocated[attr] = attrs['skillIncreases.' + attr] || 0;
+    let allNotes = this.getChoices('notes');
+    // Get text and improvement level of all features and notes affecting skills
+    let skillTexts = [];
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\([^\)]*\)/g)))
+      if((matchInfo = attr.match(/^\w+Features.Skill\s+(Trained|Expert|Master|Legendary|Increase)\s+\((.*)\)$/)))
         ; // empty
       else if(!allNotes[attr] ||
-         (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\([^\)]*\)/g)) == null)
+         (matchInfo = allNotes[attr].match(/Skill\s+(Trained|Expert|Master|Legendary|Increase|%V)\s+\((.*?)\)/)) == null)
         continue;
-      matchInfo.forEach(match => {
-        let skillLevel =
-          match.match(/Trained|Expert|Master|Legendary|Increase|%V/)[0];
-        if(skillLevel == '%V')
-          skillLevel = attrs[attr];
-        match.split(/\s*;\s*/).forEach(increased => {
-          let m = increased.match(/Choose\s+(%V|\d+)\s+from\s+([\w,\s]*)/);
-          if(m) {
-            howMany = m[1] == '%V' ? +attrs[attr] : +m[1];
-            let options = m[2];
-            if(skillLevel == 'Increase')
-              increaseChoices.push([skillLevel, options, howMany]);
-            else if(options.match(/^any\b/))
-              anyChoices.push([skillLevel, options, howMany]);
-            else
-              limitedChoices.push([skillLevel, options, howMany]);
-          }
-        });
-      });
+      let improvement = matchInfo[1].replace('%V', attrs[attr]);
+      let prior =
+        {Trained:0, Expert:1, Master:2, Legendary:3, Increase:9}[improvement];
+      if(prior == null) {
+        console.log('Unknown skill improvement "' + improvement + '"');
+        continue;
+      }
+      skillTexts.push(prior + matchInfo[2].replaceAll('%V', attrs[attr]));
     }
-    // Allocate limited choices before those with a large number of options,
-    // and do increases last, since they can boost beyond trained
-    limitedChoices.concat(anyChoices).concat(increaseChoices).forEach(c => {
-      let skillLevel = c[0];
-      let options = c[1];
-      howMany = c[2];
-      // Unsure if the restriction of applying multiple ability boosts to the
-      // same ability also applies to skill increases. Possibly moot, since
-      // the issue might only arise with Skill Trained, where the max rank
-      // would prevent doubling up, or Skill Increase, which typically grants
-      // only a single increase
-      let maxRankAllowed =
-        skillLevel == 'Trained' ? 0 :
-        skillLevel == 'Expert' ? 1 :
-        skillLevel == 'Master' ? 2 :
-        skillLevel == 'Legendary' ? 3 :
-        // Increase
-        attrs.level < 7 ? 1 :
-        attrs.level < 15 ? 2 : 3;
-      if(options == 'any')
-        choices = Object.keys(allSkills);
-      else if(options.match(/^any\s/))
-        choices = Object.keys(allSkills).filter(x => allSkills[x].includes(options.replace(/any\s+/, '')));
-      else
-        choices = options.split(/\s*,\s*/);
-      // Try to determine whether any choices from this feature have already
-      // been selected
-      (choices.concat([])).forEach(c => {
-        if(skillRanks[c] > maxRankAllowed) {
-          choices = choices.filter(x => x != c);
-/*
-          if((attributes['skillIncreases.' + c] || 0) > 0)
-            // Assume a choice from this feature has already been applied to
-            // this skill. Note that this assumption may be incorrect when
-            // multiple features allow choosing the same skill.
+    // Sort in order of most restrictive to least restrictive
+    skillTexts = skillTexts.sort((a, b) =>
+      a.charAt(0) != b.charAt(0) ? a.charAt(0) - b.charAt(0) :
+      a == b ? 0 :
+      a.match(/^Choose[^;]*from any$/) ? 1 :
+      b.match(/^Choose[^;]*from any$/) ? -1 :
+      a.includes('from any') ? 1 :
+      b.includes('from any') ? -1 : 0
+    );
+    skillTexts.forEach(text => {
+      let improveFrom = text.charAt(0);
+      text = text.substring(1);
+      text.split(/\s*;\s*/).forEach(improvement => {
+        let m = improvement.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
+        if(!m) {
+          ; // Improve specific skill; nothing to allocate
+        } else {
+          howMany = +m[1];
+          if(m[2].match(/^any$/i))
+            choices = Object.keys(allSkills);
+          else if(m[2].match(/^any\s/))
+            // e.g., choose 2 from any Lore
+            choices = Object.keys(allSkills).filter(x => allSkills[x].includes(m[2].replace(/any\s+/, '')));
+          else
+            choices = m[2].split(/\s*,\s*/);
+          // If existing increases have been allocated to the skills in
+          // choices, assume that they apply to this improvement and reduce
+          // howMany and skillsAllocated appropriately
+          while(howMany > 0 &&
+                choices.reduce((total, choice) => total + skillsAllocated[choice], 0) > 0) {
+            choices.forEach(choice => {
+              if(howMany > 0 && skillsAllocated[choice] > 0) {
+                howMany--;
+                skillsAllocated[choice]--;
+              }
+            });
+          }
+          // Remove any choices that don't have the appropriate number of
+          // prior improvements
+          if(improveFrom != 9)
+            choices =
+              choices.filter(x => (attrs['rank.' + x] || 0) == improveFrom);
+          // Finally, randomly assign any remaining allocations
+          while(howMany > 0 && choices.length > 0) {
+            let choice = randomElement(choices);
+            attributes['skillIncreases.' + choice] =
+              (attributes['skillIncreases.' + choice] || 0) + 1;
+            attrs['rank.' + choice] = (attrs['rank.' + choice] || 0) + 1;
             howMany--;
-*/
-        } else if(skillLevel != 'Increase' && skillRanks[c] != maxRankAllowed) {
-          choices = choices.filter(x => x != c);
+            choices = choices.filter(x => x != choice);
+          }
         }
       });
-      while(howMany > 0 && choices.length > 0) {
-        let choice = randomElement(choices);
-        attributes['skillIncreases.' + choice] =
-          (attributes['skillIncreases.' + choice] || 0) + 1;
-        skillRanks[choice]++;
-        howMany--;
-        choices = choices.filter(x => x != choice);
-      }
     });
   } else if(attribute == 'spells') {
     let availableSpellsByGroupAndLevel = {};
