@@ -12830,7 +12830,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   if(type != 'spells')
     rules.addChoice(type, name, attrs);
   if(type == 'feats') {
-    type = attrs.includes('Ancestry') ? 'ancestryFeats' : attrs.includes('Class') || attrs.includes('Archetype') ? 'classFeats' : 'generalFeats';
+    type = attrs.includes('Ancestry') ? 'ancestryFeats' :
+           attrs.match(/Class|Archetype/) ? 'classFeats' : 'generalFeats';
     rules.addChoice(type, name, attrs);
     rules.defineRule('feats.' + name, type + '.' + name, '=', null);
   }
