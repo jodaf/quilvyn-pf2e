@@ -7847,7 +7847,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely, allowing a new save each rd)"',
+      '"R30\' Transforms target form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure makes permanent and includes mind)"',
   'Bane':
     'Level=1 ' +
     'Trait= ' +
@@ -7855,7 +7855,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"5\' emanation inflicts -1 attack on foes for 1 min; self may use an action each rd to increase the radius by 5\' (<b>save Will</b> negates)"',
+      '"5\' emanation inflicts -1 attack on foes for 1 min (<b>save Will</b> negates); allows using a concentrate action each rd to increase the radius by 5\'"',
   'Banishment':
     'Level=5 ' +
     'Trait= ' +
@@ -7863,7 +7863,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)"',
+      '"R30\' Returns target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)"',
   'Barkskin':
     'Level=2 ' +
     'Trait= ' +
@@ -7879,7 +7879,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Entraps the soul of a corpse dead less than 1 min in a gem until counteracted or gem is destroyed"',
+      '"R30\' Traps the soul of a corpse dead less than 1 min in a gem until counteracted or the gem is destroyed"',
   'Bind Undead':
     'Level=3 ' +
     'Trait= ' +
@@ -7895,7 +7895,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Successful attack vs. Fortitude DC in a 20\' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition}"',
+      '"R120\' Successful spell attacks vs. Fortitude DC in a 20\' burst inflict 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition}"',
   'Blade Barrier':
     'Level=6 ' +
     'Trait= ' +
@@ -7911,7 +7911,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"5\' radius gives allies +1 attack for 1 min; self may use a concentrate action to extend to 10\'"',
+      '"5\' radius gives allies +1 attack for 1 min; allows using a concentrate action each rd to increase the radius by 5\'"',
   'Blindness':
     'Level=3 ' +
     'Trait= ' +
@@ -7942,7 +7942,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Prevents target death and restores 4d8+%{spellModifier.%tradition} HP"',
+      '"R60\' Prevents target death, restoring 4d8+%{spellModifier.%tradition} HP"',
   'Burning Hands':
     'Level=1 ' +
     'Trait= ' +
@@ -7958,7 +7958,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst calms creatures and prevents them from taking hostile actions while maintained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)"',
+      '"R120\' 10\' burst calms creatures and prevents them from taking hostile actions while sustained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)"',
   'Cataclysm':
     'Level=10 ' +
     'Trait= ' +
@@ -7981,7 +7981,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target becomes friendly (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful)"',
+      '"R30\' Target becomes friendly and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affects 10 targets)"',
   'Chill Touch':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -8005,7 +8005,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)"',
+      '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects and creatures for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)"',
   'Circle Of Protection':
     'Level=3 ' +
     'Trait= ' +
@@ -8021,7 +8021,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R500\' Creates an invisible sensor that allows the self to listen from the target location for 10 min"',
+      '"R500\' Creates an invisible sensor that allows self to listen from the target location for 10 min"',
   'Clairvoyance':
     'Level=4 ' +
     'Trait= ' +
@@ -8029,7 +8029,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R500\' Creates an invisible sensor that allows the self to see from the target location for 10 min"',
+      '"R500\' Creates an invisible sensor that allows self to see from the target location for 10 min"',
   'Cloak Of Colors':
     'Level=5 ' +
     'Trait= ' +
@@ -8037,7 +8037,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)"',
+      '"R30\' Creatures adjacent to target suffer dazzled, and successful attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)"',
   'Cloudkill':
     'Level=5 ' +
     'Trait= ' +
@@ -8045,7 +8045,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a cloud that moves 10\' away from self each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R120\' Creates a cloud in a 20\' burst that moves 10\' away from self each rd, inflicting 6d8 HP poison each rd to creatures within, for 1 min (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Collective Transposition':
     'Level=6 ' +
     'Trait= ' +
@@ -8069,7 +8069,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes target to use all actions on next turn to obey)"',
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes target to use all actions on next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
   'Comprehend Language':
     'Level=2 ' +
     'Trait= ' +
@@ -8077,7 +8077,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak language; <b>4th</b> affects 10 targets)"',
+      '"R30\' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak the language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'Trait= ' +
@@ -8093,7 +8093,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts)"',
+      '"R30\' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts) (<b>heightened 8th</b> affects 10 targets)"',
   'Contingency':
     'Level=7 ' +
     'Trait= ' +
@@ -8101,21 +8101,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Prepares a spell of up to level 4 to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
+      '"Prepares a spell of up to 3 actions and 4th level to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
   'Continual Flame':
     'Level=2 ' +
     'Trait= ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
-    'Description="Touched object glows as a torch until dismissed"',
+    'Description="Touched object emits a heatless flame until dismissed"',
   'Control Water':
     'Level=5 ' +
     'Trait= ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R500\' Raises or lowers water in a 50\'x50\' area by 10\'"',
+    'Description="R500\' Raises or lowers water by 10\' and slows water creatures in a 50\'x50\' area"',
   'Create Food':
     'Level=2 ' +
     'Trait= ' +
@@ -8123,14 +8123,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 hr" ' +
     'Description=' +
-      '"R30\' Creates food for 6 Medium creatures that remains edible for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
+      '"R30\' Creates food for 6 Medium creatures that lasts for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
   'Create Water':
     'Level=1 ' +
     'Trait= ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="Creates 2 gallons of water that remains for 1 day"',
+    'Description="Creates 2 gallons of water that lasts for 1 day"',
   'Creation':
     'Level=4 ' +
     'Trait= ' +
@@ -8138,7 +8138,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R0\' Creates an object of up to 5 cubic feet made of vegetable matter (<b>heightened 5th</b> object can include metal and common minerals)"',
+      '"R0\' Creates an object of up to 5 cubic feet made of vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)"',
   'Crisis Of Faith':
     'Level=3 ' +
     'Trait= ' +
@@ -8154,7 +8154,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 4 targets dedicate actions to specified cause for 10 min; ends if an ally attacks target or for a level 14th target reduced to half HP (<b>save Will</b> for level 15 each rd ends) (<b>heightened 10th</b> ends for a level 16th target reduced to half HP or a level 17th target who saves)"',
+      '"R60\' 4 targets dedicate actions to a specified cause for 10 min; ends if an ally attacks a target or for a level 14 target reduced to half HP (<b>save Will</b> for level 15 each rd ends) (<b>heightened 10th</b> ends for a level 16 target reduced to half HP or a level 17 target who saves)"',
   'Crushing Despair':
     'Level=5 ' +
     'Trait= ' +
@@ -8162,7 +8162,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents Reactions and inflicts slowed 1 for 1 min (<b>save Will</b> inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min)"',
+      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -12830,7 +12830,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   if(type != 'spells')
     rules.addChoice(type, name, attrs);
   if(type == 'feats') {
-    type = attrs.includes('Ancestry') ? 'ancestryFeats' : attrs.includes('Class') ? 'classFeats' : 'generalFeats';
+    type = attrs.includes('Ancestry') ? 'ancestryFeats' : attrs.includes('Class') || attrs.includes('Archetype') ? 'classFeats' : 'generalFeats';
     rules.addChoice(type, name, attrs);
     rules.defineRule('feats.' + name, type + '.' + name, '=', null);
   }
