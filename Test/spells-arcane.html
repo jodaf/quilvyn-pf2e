@@ -386,13 +386,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Augment Summoning (A1 Con): <b>(1)</b> R30' Target summoned creature gains +1 to all checks for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Baleful Polymorph (A6 Tra): <b>(2)</b> R30' Transforms target into a harmless animal for 1 min (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure extends transformation indefinitely, allowing a new save each rd)</td>
+      <td>Baleful Polymorph (A6 Tra): <b>(2)</b> R30' Transforms target form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure makes permanent and includes mind)</td>
     </tr><tr style="text-align:left">
-      <td>Banishment (A5 Abj): <b>(2)</b> R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
+      <td>Banishment (A5 Abj): <b>(2)</b> R30' Returns target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents target return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Bind Undead (A3 Nec): <b>(2)</b> R30' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day</td>
     </tr><tr style="text-align:left">
-      <td>Black Tentacles (A5 Con): <b>(3)</b> R120' Successful attack vs. Fortitude DC in a 20' burst inflicts 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC 29 on an unarmed attack or inflicting 12 HP vs. Armor Class 29</td>
+      <td>Black Tentacles (A5 Con): <b>(3)</b> R120' Successful spell attacks vs. Fortitude DC in a 20' burst inflict 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC 29 on an unarmed attack or inflicting 12 HP vs. Armor Class 29</td>
     </tr><tr style="text-align:left">
       <td>Blindness (A3 Nec): <b>(2)</b> R30' Blinds target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
@@ -408,47 +408,47 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Chain Lightning (A6 Evo): <b>(2)</b> R500' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30' between each (<b>save basic Reflex</b>; critical success ends chain) (<b>heightened +1</b> inflicts +1d12 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Charm (A1 Enc): <b>(2)</b> R30' Target becomes friendly (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful)</td>
+      <td>Charm (A1 Enc): <b>(2)</b> R30' Target becomes friendly and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success target notices spell; critical failure makes target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Charming Words (A1 Enc): <b>(1)</b> R30' Prevents target from taking hostile actions against the self for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. self; critical success negates; critical failure inflicts stunned 1)</td>
     </tr><tr style="text-align:left">
       <td>Chill Touch (A0 Nec): <b>(2)</b> Touch inflicts 1d4+3 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on an undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
     </tr><tr style="text-align:left">
-      <td>Chromatic Wall (A5 Abj): <b>(3)</b> R120' 60'x30' wall shines 20' light and inflicts randomly-chosen effects on passing objects for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)</td>
+      <td>Chromatic Wall (A5 Abj): <b>(3)</b> R120' 60'x30' wall shines 20' light and inflicts randomly-chosen effects on passing objects and creatures for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)</td>
     </tr><tr style="text-align:left">
-      <td>Clairaudience (A3 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the self to listen from the target location for 10 min</td>
+      <td>Clairaudience (A3 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows self to listen from the target location for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Clairvoyance (A4 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows the self to see from the target location for 10 min</td>
+      <td>Clairvoyance (A4 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows self to see from the target location for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Cloak Of Colors (A5 Ill): <b>(2)</b> R30' Creatures adjacent to target suffer dazzled, and attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)</td>
+      <td>Cloak Of Colors (A5 Ill): <b>(2)</b> R30' Creatures adjacent to target suffer dazzled, and successful attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)</td>
     </tr><tr style="text-align:left">
-      <td>Cloudkill (A5 Nec): <b>(3)</b> R120' Creates a cloud that moves 10' away from self each rd, inflicting 6d8 HP poison each rd to creatures within (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)</td>
+      <td>Cloudkill (A5 Nec): <b>(3)</b> R120' Creates a cloud in a 20' burst that moves 10' away from self each rd, inflicting 6d8 HP poison each rd to creatures within, for 1 min (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Collective Transposition (A6 Con): <b>(2)</b> Teleports 2 targets within a 30' radius (<b>save Will</b> negates; critical success allows target to control teleport) (<b>heightened +1</b> affects +1 target)</td>
     </tr><tr style="text-align:left">
       <td>Color Spray (A1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Command (A1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes target to use all actions on next turn to obey)</td>
+      <td>Command (A1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes target to use all actions on next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Comprehend Language (A2 Div): <b>(2)</b> R30' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak language; <b>4th</b> affects 10 targets)</td>
+      <td>Comprehend Language (A2 Div): <b>(2)</b> R30' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> target may also speak the language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Cone Of Cold (A5 Evo): <b>(2)</b> 60' cone inflicts 12d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Confusion (A4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts)</td>
+      <td>Confusion (A4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts) (<b>heightened 8th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Contingency (A7 Abj): <b>(10 min)</b> Prepares a spell of up to level 4 to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)</td>
+      <td>Contingency (A7 Abj): <b>(10 min)</b> Prepares a spell of up to 3 actions and 4th level to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)</td>
     </tr><tr style="text-align:left">
-      <td>Continual Flame (A2 Evo): <b>(3)</b> Touched object glows as a torch until dismissed</td>
+      <td>Continual Flame (A2 Evo): <b>(3)</b> Touched object emits a heatless flame until dismissed</td>
     </tr><tr style="text-align:left">
-      <td>Control Water (A5 Evo): <b>(2)</b> R500' Raises or lowers water in a 50'x50' area by 10'</td>
+      <td>Control Water (A5 Evo): <b>(2)</b> R500' Raises or lowers water by 10' and slows water creatures in a 50'x50' area</td>
     </tr><tr style="text-align:left">
-      <td>Create Food (A2 Con): <b>(1 hr)</b> R30' Creates food for 6 Medium creatures that remains edible for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)</td>
+      <td>Create Food (A2 Con): <b>(1 hr)</b> R30' Creates food for 6 Medium creatures that lasts for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)</td>
     </tr><tr style="text-align:left">
-      <td>Create Water (A1 Con): <b>(2)</b> Creates 2 gallons of water that remains for 1 day</td>
+      <td>Create Water (A1 Con): <b>(2)</b> Creates 2 gallons of water that lasts for 1 day</td>
     </tr><tr style="text-align:left">
-      <td>Creation (A4 Con): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of vegetable matter (<b>heightened 5th</b> object can include metal and common minerals)</td>
+      <td>Creation (A4 Con): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)</td>
     </tr><tr style="text-align:left">
-      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents Reactions and inflicts slowed 1 for 1 min (<b>save Will</b> inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min)</td>
+      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
       <td>Dancing Lights (A0 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that may be moved 60' each rd while sustained</td>
     </tr><tr style="text-align:left">
