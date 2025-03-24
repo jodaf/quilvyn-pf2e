@@ -8551,7 +8551,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R100\' 5 targets believe a specified statement for 1 week (<b>save Will</b> negates; critical success target notices attempt; critical failure target believes statement permanently)"',
+      '"R100\' 5 targets believe a specified statement for 1 week (<b>save Will</b> negates; critical success the target notices the attempt; critical failure effects are permanent)"',
   'Faerie Fire':
     'Level=2 ' +
     'Trait= ' +
@@ -8575,7 +8575,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self can control the image shown by scrying a 100\' burst until next daily prep"',
+      '"Controls the image shown by scrying within a 100\' burst until next daily prep"',
   'Fear':
     'Level=1 ' +
     'Trait= ' +
@@ -8583,7 +8583,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3, and the target flees for 1 rd) (<b>heightened 3rd</b> affects 5 targets)"',
+      '"R30\' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and fleeing for 1 rd) (<b>heightened 3rd</b> affects 5 targets)"',
   'Feather Fall':
     'Level=1 ' +
     'Trait= ' +
@@ -8591,7 +8591,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Falling target slows to 60\' per rd and suffers no damage from a fall for 1 min or until landing"',
+      '"R60\' Falling target slows to 60\' per rd and suffers no falling damage for 1 min or until landing"',
   'Feeblemind':
     'Level=6 ' +
     'Trait= ' +
@@ -8599,7 +8599,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts stupefied 4 until curse is removed (<b>save Will</b> inflicts stupefied 2 for 1 rd; critical success negates; critical failure permanently changes a PC into an NPC, inflicting animal intelligence and -5 Charisma, Intelligence, and Wisdom modifiers)"',
+      '"R30\' Inflicts stupefied 4 until curse is removed (<b>save Will</b> inflicts stupefied 2 for 1 rd; critical success negates; critical failure inflicts permanent animal intelligence and -5 Charisma, Intelligence, and Wisdom modifiers and changes a PC into an NPC)"',
   'Feet To Fins':
     'Level=3 ' +
     'Trait= ' +
@@ -8615,7 +8615,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 20\' burst restores 1d8 HP per rd to living and inflicts 1d8 HP positive per rd to undead while sustained for up to 1 min (<b>heightened 8th</b> inflicts 1d10 HP; <b>9th</b> inflicts 1d12 HP)"',
+      '"R30\' 20\' burst restores 1d8 HP per rd to living and inflicts 1d8 HP positive per rd to undead while sustained for up to 1 min (<b>heightened 8th</b> restores and inflicts 1d10 HP; <b>9th</b> restores and inflicts 1d12 HP)"',
   'Fiery Body':
     'Level=7 ' +
     'Trait= ' +
@@ -8623,7 +8623,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire to unarmed attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire to unarmed attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
+      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on non-reach melee attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on non-reach melee attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
   'Finger Of Death':
     'Level=7 ' +
     'Trait= ' +
@@ -8662,7 +8662,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP; creatures immune to fire improve save by 1 degree) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R120\' 10\' radius inflicts 8d6 HP fire, reducing any resistance by half (<b>save basic Reflex</b>; fire immunity improves save by 1 degree) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
     'Trait= ' +
@@ -8670,7 +8670,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 3d6 HP fire in a 15\' sq while sustained for up to 1 min (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Movable flame inflicts 3d6 HP fire in a 15\' sq while sustained for up to 1 min (<b>save basic Reflex</b>; success negates) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Fleet Step':
     'Level=1 ' +
     'Trait= ' +
@@ -8685,7 +8685,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts slowed 1, plus an additional slowed 1 on a failed save each rd until target becomes immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts slowed 2)"',
+      '"R120\' Inflicts initial slowed 1; subsequent failed or successful saves each rd increase or decrease the degree slowed until the target is no longer slowed or becomes immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts initial slowed 2)"',
   'Floating Disk':
     'Level=1 ' +
     'Trait= ' +
@@ -8709,7 +8709,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains +1 Armor Class and saves vs. specified foe while sustained for up to 1 min (<b>heightened 6th</b> gives +2 bonus)"',
+      '"R30\' Target gains +1 Armor Class and saves vs. a specified foe while sustained for up to 1 min (<b>heightened 6th</b> gives +2 Armor Class and saves)"',
   'Foresight':
     'Level=9 ' +
     'Trait= ' +
@@ -8717,7 +8717,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and negates flat-footed vs. undetected and flanking creatures, and self may use a Reaction to give the target the better of two rolls in response to danger, for 1 hr"',
+      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a Reaction to give the target the better of two rolls or its foe the worse of two rolls, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'Trait= ' +
@@ -8725,7 +8725,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Relieves touched of Speed penalty effects and gives automatic success on Escape attempts for 10 min"',
+      '"Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to spell level for 10 min"',
   'Gaseous Form':
     'Level=4 ' +
     'Trait= ' +
@@ -8749,7 +8749,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched corpse resists decay and cannot be made undead until next daily prep (<b>heightened 5th</b> effects are permanent)"',
+      '"Touched corpse does not decay and cannot be made undead until next daily prep (<b>heightened 5th</b> effects are permanent)"',
   'Ghost Sound':
     'Level=Cantrip ' +
     'Trait= ' +
@@ -8773,7 +8773,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers 3d8 HP negative and regains half HP for 1 day (<b>save Fortitude</b> negates; critical failure inflicts 3d8 HP negative and regains no HP for 1 day)"',
+      '"Touched suffers stage 2 ghoul fever, which inflicts 3d8 HP negative and half normal healing; subsequent daily save failures will inflict an additional 3d8 HP at stage 3, 3d8 HP and no healing at stage 4 and stage 5, and death and transformation into a ghoul at stage 6 (<b>save Fortitude</b> inflicts stage 1 with no initial ill effects; critical success negates; critical failure inflicts stage 3)"',
   'Glibness':
     'Level=4 ' +
     'Trait= ' +
@@ -8781,7 +8781,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains +4 Deception to lie and against Perception to discern truth, plus level if untrained, for 10 min"',
+      '"Self gains +4 Deception to lie and against Perception to discern truth, and an additional +%{level} if untrained, for 10 min"',
   'Glitterdust':
     'Level=2 ' +
     'Trait= ' +
@@ -8796,7 +8796,7 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="10\' burst inflicts <i>Dispel Magic</i> effects for 10 min"',
+    'Description="10\' burst attempts to counteract outside spells at the spell level - 1 for 10 min"',
   'Glyph Of Warding':
     'Level=3 ' +
     'Trait= ' +
@@ -8804,7 +8804,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Target container or 10\'x10\' area triggers a chosen spell of lower level in response to a specified trigger"',
+      '"Specified trigger on a target container or 10\'x10\' area triggers a chosen spell of lower level"',
   'Goblin Pox':
     'Level=1 ' +
     'Trait= ' +
@@ -8812,7 +8812,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts sickened 1 for 1 rd, sickened 1 and slowed 1 for 1 rd, then irreversibly sickened 1 for 1 day (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2 immediately; goblins and goblin dogs are immune)"',
+      '"Touched suffers stage 1 goblin pox, which inflicts sickened 1 for 1 rd; subsequent failures after 1 rd will inflict sickened 1 and slowed 1 for 1 rd at stage 2, and incurably sickened 1 for 1 dy at stage 3 (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2; goblins and goblin dogs are immune)"',
   'Grease':
     'Level=1 ' +
     'Trait= ' +
@@ -8820,7 +8820,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure inflicts dropped object)"',
+      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes holder to drop target object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'Trait= ' +
@@ -8828,15 +8828,15 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half negative HP only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed"',
+      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed"',
   'Guidance':
-    'Level=1 ' +
+    'Level=Cantrip ' +
     'Trait= ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check before the start of self\'s next turn; cannot be repeated on the same target for 1 hr"',
+      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check within 1 rd; cannot be repeated on the same target for 1 hr"',
   'Gust Of Wind':
     'Level=1 ' +
     'Trait= ' +
@@ -8844,7 +8844,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
+      '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against the wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
   'Hallucination':
     'Level=5 ' +
     'Trait= ' +
