@@ -9158,7 +9158,7 @@ Pathfinder2E.SPELLS = {
     'Description="Touched weapon gains +1 attack and 2 damage dice for 1 min"',
   'Magnificent Mansion':
     'Level=7 ' +
-    'Trait=Uncommon,Conjuration,Extradimentional ' +
+    'Trait=Uncommon,Conjuration,Extradimensional ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9190,7 +9190,7 @@ Pathfinder2E.SPELLS = {
       '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
-    'Trait=Conjuration,Extradimentional,Teleportation ' +
+    'Trait=Conjuration,Extradimensional,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9397,7 +9397,7 @@ Pathfinder2E.SPELLS = {
       '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)"',
   'Paralyze':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9405,7 +9405,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rounds, allowing subsequent saves to shorten or end the effects) (<b>heightened 7th</b> affects 10 targets)"',
   'Paranoia':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9413,7 +9413,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others an enemies) (<b>heightened 6th</b> effects 5 targets)"',
   'Pass Without Trace':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9421,7 +9421,7 @@ Pathfinder2E.SPELLS = {
       '"Raises DC to Track self by 4 or up to spell DC for 1 hr (<b>heightened 2nd</b> effects last for 8 hr; <b>4th</b> effects last for 8 hr and affect a 20\' area and 10 creatures)"',
   'Passwall':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Earth ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9429,7 +9429,7 @@ Pathfinder2E.SPELLS = {
       '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
   'Pest Form':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9437,7 +9437,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes choice of Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> gives 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9445,7 +9445,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a successful subsequent Will save) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Death,Emotion,Fear,Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9453,7 +9453,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on critical failure)"',
   'Phantom Pain':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Illusion,Mental,Nonlethal ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9461,7 +9461,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 2d4 HP mental, 1d4 HP persistent mental, and sickened 1 for 1 min or until no longer sickened (<b>save Will</b> inflicts initial HP only; critical success negates; critical failure inflicts sickened 2) (<b>heightened +1</b> inflicts +2d4 HP initial and +1d4 HP persistent)"',
   'Phantom Steed':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9469,7 +9469,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Conjures a magical mount (Armor Class 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and may fly)"',
   'Plane Shift':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9477,7 +9477,7 @@ Pathfinder2E.SPELLS = {
       '"Transports self and 8 willing targets to a different plane"',
   'Plant Form':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Plant,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9485,7 +9485,7 @@ Pathfinder2E.SPELLS = {
       '"Self transforms into choice of Large plant with 12 temporary HP, Armor Class %{level+19}, +27 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> Huge plant with +5\' reach, 24 temporary HP, Armor Class %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
   'Polar Ray':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Attack,Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9493,7 +9493,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 10d8 HP cold (double on critical success) and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)"',
   'Possession':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Incapacitation,Mental,Necromancy,Possession ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9501,7 +9501,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self inhabits and controls the target\'s body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives self full control; success on subsequent Will saves each turn negates self control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last for 10 min, and self\'s body is protected from harm)"',
   'Power Word Blind':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Auditory,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9509,7 +9509,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Permanently blinds a target of level 11 or lower, blinds level 12 or 13 for 1d4 min, or dazzles level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Kill':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Auditory,Death,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9517,7 +9517,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Kills a target of level 14 or lower or with fewer than 51 HP, inflicts 0 HP and dying 1 on level 15 with more than 50 HP, or inflicts 50 HP on level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Stun':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Auditory,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9525,7 +9525,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on level 14 or 15, or stunned 1 on level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)"',
   'Prestidigitation':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9533,7 +9533,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' Performs choice of cooking, lifting, making a minor object, or tidying while sustained"',
   'Primal Herd':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9541,7 +9541,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class %{level+22}, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Divination ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -9549,7 +9549,7 @@ Pathfinder2E.SPELLS = {
       '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Prismatic Sphere':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Light ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9557,7 +9557,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' 10\' radius emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Spray':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9565,7 +9565,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone inflicts a random effect: (1) 50 HP fire; (2) 60 HP acid; (3) 70 HP electricity; (4) 30 HP poison and enfeebled 1 for 1 min; (5) <i>Flesh To Stone</i> effects; (6) <i>Warp Mind</i> effects; (7) slowed 1 for 1 min; (8) two of the preceding effects (<b>save Reflex</b> (1), (2), (3), <b>Fortitude</b> (4), (5), or <b>Will</b> (6), (7) negates; critical failure on (7) also inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Wall':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Light ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -9573,7 +9573,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a 60\'x30\' wall that emits 20\' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Will</b> negates); <i>Warp Mind</i> effects (<b>save Will</b> negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Private Sanctum':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9581,7 +9581,7 @@ Pathfinder2E.SPELLS = {
       '"100\' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep"',
   'Produce Flame':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Attack,Cantrip,Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9589,7 +9589,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP fire (double HP plus 1d4 HP persistent fire on critical success) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Project Image':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9597,7 +9597,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an illusory copy of self, with the same Armor Class and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain by 10 min)"',
   'Protection':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9605,7 +9605,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +1 Armor Class and saves vs. creatures of specified alignment, and +3 vs. summoned creatures and on control effects, for 1 min"',
   'Prying Eye':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
@@ -9613,7 +9613,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an invisible sensor that allows self to see from the target location and that can be moved 30\' each rd while sustained"',
   'Punishing Winds':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Air,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -9621,14 +9621,14 @@ Pathfinder2E.SPELLS = {
       '"R100\' 30\' radius drags down flying creatures 40\', creates greater difficult terrain for flying creatures and those trying to exit, and creates difficult terrain for others while sustained for up to 1 min"',
   'Purify Food And Drink':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Removes contaminates from 1 cubic foot of food or water"',
   'Purple Worm Sting':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Necromancy,Poison ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9636,14 +9636,14 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 3d6 HP piercing, enfeebled 2, and 3d6 HP poison, increasing to 4d6 HP and 6d6 HP on failed saves (<b>save Fortitude</b> inflicts 3d6 HP piercing and 3d6 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Raise Dead':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
     'Description="R10\' Restores soul to a willing creature up to level 13 dead for at most 3 days, giving target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Attack,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9651,7 +9651,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts enfeebled 2 for 1 min (critical success increases by 1 step) (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3)"',
   'Ray Of Frost':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Attack,Cantrip,Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9659,7 +9659,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP cold (critical success inflicts double HP and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Read Aura':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
@@ -9667,7 +9667,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self detects whether an object is magical and the related school of magic (<b>heightened 3rd</b> allows detection on 10 objects; <b>6th</b> allows detection on unlimited objects)"',
   'Read Omens':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Divination,Prediction ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -9675,7 +9675,7 @@ Pathfinder2E.SPELLS = {
       '"Self receives a clue or advice about a proposed activity up to 1 week in the future"',
   'Regenerate':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9683,14 +9683,14 @@ Pathfinder2E.SPELLS = {
       '"Touched target regains 15 HP and regrows a damaged organ each rd for 1 min; suffering new acid or fire damage deactivates effects for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
   'Remake':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hr" ' +
     'Description="Fully re-creates a known object up to 5\' cu"',
   'Remove Curse':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -9698,14 +9698,14 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. one curse affecting touched"',
   'Remove Disease':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
     'Description="Makes a counteract attempt vs. 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Enchantment ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9713,7 +9713,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9721,7 +9721,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Aura,Mental ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9729,7 +9729,7 @@ Pathfinder2E.SPELLS = {
       '"Up to 40\' emanation prevents creatures from approaching (<b>save Will</b> inflicts difficult terrain; critical success negates)"',
   'Resilient Sphere':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9737,7 +9737,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9745,7 +9745,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)"',
   'Resplendent Mansion':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9753,7 +9753,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates a 300\'x300\' mansion, with entrances protected by <i>Alarm</i> effects and containing provisions for up to 150 people, until next daily prep"',
   'Restoration':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
@@ -9761,7 +9761,7 @@ Pathfinder2E.SPELLS = {
       '"Gives choice of a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition)"',
   'Restore Senses':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9769,7 +9769,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched"',
   'Retrocognition':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Divination ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast="1 min" ' +
@@ -9777,7 +9777,7 @@ Pathfinder2E.SPELLS = {
       '"Self receives impressions of 1 day of past events at the current location per 1 min concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
   'Reverse Gravity':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -9785,7 +9785,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Objects in a 20\'x40\' cylinder fall upward for 1 min"',
   'Revival':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9793,7 +9793,7 @@ Pathfinder2E.SPELLS = {
       '"30\' radius restores 10d8+40 HP and raises dead with the same number of temporary HP while sustained for up to 1 min"',
   'Righteous Might':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -9801,7 +9801,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains Armor Class %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, Armor Class %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Extradimensional ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9809,7 +9809,7 @@ Pathfinder2E.SPELLS = {
       '"Touched rope leads to an extradimensional space that can hold 8 Medium creatures for 8 hr"',
   'Sanctified Ground':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Consecration ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
@@ -9817,7 +9817,7 @@ Pathfinder2E.SPELLS = {
       '"30\' burst gives +1 Armor Class, attack, damage, and saves vs. choice of aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9825,7 +9825,7 @@ Pathfinder2E.SPELLS = {
       '"Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends spell; critical failure allows no further save attempts)"',
   'Scintillating Pattern':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Illusion,Incapacitation,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9833,7 +9833,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst inflicts confused for 1d4 rd and dazzled in a 40\' radius while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts stunned for 1d4 rd, then confused for the remaining duration)"',
   'Scrying':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9841,14 +9841,14 @@ Pathfinder2E.SPELLS = {
       '"Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; an unmet target lowers the DC by 2; an unknown target lowers the DC by 10)"',
   'Searing Light':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Attack,Evocation,Fire,Good,Light ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Secret Page':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9856,7 +9856,7 @@ Pathfinder2E.SPELLS = {
       '"Makes the text on a touched page appear as different text unless a specified password is spoken"',
   'See Invisibility':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Divination,Revelation ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9864,14 +9864,14 @@ Pathfinder2E.SPELLS = {
       '"Self treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last for 8 hr)"',
   'Sending':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description="Self sends a 25-word message to a known creature"',
   'Shadow Blast':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Evocation,Shadow ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9879,7 +9879,7 @@ Pathfinder2E.SPELLS = {
       '"Choice of 30\' cone, R120\' 15\' burst, or 50\' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Shadow Siphon':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Illusion,Shadow ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
@@ -9887,7 +9887,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Makes a counteract attempt on a damaging trigger spell at +2 the spell level; reduces the damage by half if successful"',
   'Shadow Walk':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Shadow,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9895,28 +9895,28 @@ Pathfinder2E.SPELLS = {
       '"Self and 9 willing creatures travel through the Shadow Plane at 20x Speed for 8 hr"',
   'Shape Stone':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 10\'x10\'x10\' stone"',
   'Shape Wood':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 20 cubic feet of wood"',
   'Shapechange':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Replicates any known polymorph spell of up to 8th level"',
   'Shatter':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Evocation,Sonic ' +
     'School=Evocation ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
@@ -9924,7 +9924,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 2d10 HP sonic on an unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
   'Shield':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Abjuration,Cantrip,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
@@ -9932,7 +9932,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +1 Armor Class and may use Shield Block with Hardness 5 until next turn (<b>heightened +2</b> gives +5 Hardness)"',
   'Shield Other':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -9940,7 +9940,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transfers half of damage suffered by target to self for 10 min or until either is reduced to 0 HP"',
   'Shillelagh':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9948,7 +9948,7 @@ Pathfinder2E.SPELLS = {
       '"Touched staff gains +1 attack and 2 damage dice (3 damage dice vs. aberrations, extraplanar creatures, and undead) for 1 min"',
   'Shocking Grasp':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Attack,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9956,7 +9956,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 2d12 HP electricity; gives +1 attack and inflicts 1d4 HP persistent electricity vs. an armored foe (<b>heightened +1</b> inflicts +1d12 HP initial and +1 HP persistent)"',
   'Shrink':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9964,7 +9964,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target becomes Tiny for 5 min (<b>heightened 6th</b> affects 10 creatures)"',
   'Shrink Item':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
@@ -9972,7 +9972,7 @@ Pathfinder2E.SPELLS = {
       '"Transforms a non-magical object of up to 80 Bulk and 20 cubic feet into the size of a coin with negligible Bulk until next daily prep"',
   'Sigil':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Cantrip,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9980,7 +9980,7 @@ Pathfinder2E.SPELLS = {
       '"Inscribes a 1\\" sq magical mark on the touched object or creature for 1 week or until scrubbed off (<b>heightened 3rd</b> effects last for 1 month; <b>5th</b> effects last for 1 year; <b>7th</b> effects are permanent)"',
   'Silence':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Illusion ' +
     'School=Illusion ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9988,7 +9988,7 @@ Pathfinder2E.SPELLS = {
       '"Touched target makes no sound for 1 min (<b>heightened 4th</b> affects a 10\' radius around target)"',
   'Sleep':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Mental,Sleep ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9996,7 +9996,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5\' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check"',
   'Slow':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -10004,7 +10004,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts slowed 1 for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 2)"',
   'Solid Fog':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Conjuration,Water ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10012,7 +10012,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst conceals creatures and inflicts difficult terrain for 1 min"',
   'Soothe':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Emotion,Enchantment,Healing,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10020,7 +10020,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)"',
   'Sound Burst':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Evocation,Sonic ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10028,21 +10028,21 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10\' burst inflicts 2d10 HP sonic (<b>save basic Fortitude</b>; critical failure also inflicts deafened for 1 min and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Speak With Animals':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Divination ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Self can communicate with animals for 10 min"',
   'Speak With Plants':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Divination,Plant ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Self can communicate with plants for 10 min"',
   'Spectral Hand':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10050,7 +10050,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Self can deliver touch spells via a crawling, spectral hand for 1 min or until the hand suffers damage, which inflicts 1d6 HP to self"',
   'Spell Immunity':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10058,7 +10058,7 @@ Pathfinder2E.SPELLS = {
       '"Gives touched an automatic counteract attempt vs. a specified spell until next daily prep"',
   'Spell Turning':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -10066,7 +10066,7 @@ Pathfinder2E.SPELLS = {
       '"Self can use a Reaction to reflect spells via a successful counterspell for 1 hr"',
   'Spellwrack':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Curse,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10074,7 +10074,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force and the duration of all spells affecting it is reduced by 1 rd (<b>save Will</b> effects last for 1 min; critical success negates; critical failure inflicts 4d12 HP)"',
   'Spider Climb':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10082,7 +10082,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains a climb Speed equal to its Speed for 10 min (<b>heightened 5th</b> effects last for 1 hr)"',
   'Spider Sting':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Necromancy,Poison ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10090,7 +10090,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 1d4 HP piercing, 1d4 HP poison, and enfeebled 1, increasing to enfeebled 2 on failed saves (<b>save Fortitude</b> inflicts 1d4 HP piercing and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Spirit Blast':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Force,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10098,7 +10098,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target\'s spirit suffers 16d6 HP force (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spirit Link':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10106,7 +10106,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transfers 2 HP of damage each rd from the willing target to self for 10 min (<b>heightened +1</b> transfers +2 HP)"',
   'Spirit Song':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Force,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10114,7 +10114,7 @@ Pathfinder2E.SPELLS = {
       '"60\' cone inflicts 18d6 HP force, including on spirits (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spiritual Epidemic':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Curse,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10122,7 +10122,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently; also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
   'Spiritual Guardian':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Force ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -10130,7 +10130,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Summoned guardian with 50 HP absorbs 10 HP of damage, or attacks to inflict 2d8 HP force, each rd while sustained for up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10138,14 +10138,14 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spectral weapon attacks once each rd, inflicting 1d8 HP force or weapon damage type, while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
   'Stabilize':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Cantrip,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R30\' Removes dying condition from target"',
   'Status':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10153,7 +10153,7 @@ Pathfinder2E.SPELLS = {
       '"Self knows touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Conjuration,Poison ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10161,14 +10161,14 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst conceals creatures and inflicts sickened 1 and slowed 1 for 1 min (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts sickened 2 and slowed 1)"',
   'Stone Tell':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Evocation,Earth ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="Self can converse with stone for 10 min"',
   'Stone To Flesh':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -10176,7 +10176,7 @@ Pathfinder2E.SPELLS = {
       '"Restores touched petrified creature or transforms a human-sized stone object into flesh"',
   'Stoneskin':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Abjuration,Earth ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10184,7 +10184,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
   'Storm Of Vengeance':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Air,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10192,7 +10192,7 @@ Pathfinder2E.SPELLS = {
       '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10200,7 +10200,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target follows a reasonable, 1 min suggestion upon a specified trigger until next daily prep (<b>save Will</b> negates; critical success allows target to detect attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)"',
   'Suggestion':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10208,7 +10208,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target follows a reasonable suggestion for 1 min (<b>save Will</b> negates; critical success target notices spell; critical failure effects last for 1 hr) (<b>heightened 8th</b> targets 10 creatures)"',
   'Summon Animal':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10216,7 +10216,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 animal appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Celestial':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -10224,7 +10224,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 celestial appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Construct':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10232,7 +10232,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 construct appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Dragon':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10240,7 +10240,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 dragon appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Elemental':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10248,7 +10248,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Entity':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -10256,7 +10256,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 aberration appears and fights for self while sustained for up to 1 min (<b>heightened 6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Fey':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
@@ -10264,7 +10264,7 @@ Pathfinder2E.SPELLS = {
       '"A level -1 fey appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 fey; <b>3rd</b> summons a level 2 fey; <b>4th</b> summons a level 3 fey; <b>5th</b> summons a level 5 fey; <b>6th</b> summons a level 7 fey; <b>7th</b> summons a level 9 fey; <b>8th</b> summons a level 11 fey; <b>9th</b> summons a level 13 fey; <b>10th</b> summons a level 15 fey)"',
   'Summon Fiend':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -10272,7 +10272,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 fiend appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"', 
   'Summon Giant':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10280,7 +10280,7 @@ Pathfinder2E.SPELLS = {
       '"A level 5 giant appears and fights for self while sustained for up to 1 min (<b>heightened 6th</b> summons a level 7 giant; <b>7th</b> summons a level 9 giant; <b>8th</b> summons a level 11 giant; <b>9th</b> summons a level 13 giant; <b>10th</b> summons a level 15 giant)"',
   'Summon Plant Or Fungus':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10288,7 +10288,7 @@ Pathfinder2E.SPELLS = {
       '"A level -1 plant or fungus appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Sunburst':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Evocation,Fire,Light,Positive ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -10296,7 +10296,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 60\' burst inflicts 8d10 HP fire plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)"',
   'Synaptic Pulse':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10304,7 +10304,7 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation inflicts stunned 2 for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts stunned for 1 rd)"',
   'Synesthesia':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10312,7 +10312,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts a DC 5 flat check for concentration, treating all objects and creatures as concealed, clumsy 3, and -10 Speed for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts stunned 2) (<b>heightened 9th</b> affects 5 targets)"',
   'Talking Corpse':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -10320,7 +10320,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains truthful answers from a touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks)"',
   'Tanglefoot':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Attack,Cantrip,Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10328,7 +10328,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Ranged attack inflicts -10\' Speed for 1 rd (Escape negates; critical success inflicts immobilized for 1 rd) (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10336,7 +10336,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd each rd (Escape negates) for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10344,7 +10344,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Self can move an object up to 80 Bulk and 20\' dimensions 20\' per rd while sustained for up to 1 min"',
   'Telekinetic Maneuver':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Attack,Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10352,7 +10352,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Self can use a spell attack to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=Cantrip ' +
-    'Trait= ' +
+    'Trait=Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10360,7 +10360,7 @@ Pathfinder2E.SPELLS = {
       '"Self can use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -10368,7 +10368,7 @@ Pathfinder2E.SPELLS = {
       '"Self and 4 willing creatures can communicate telepathically for 8 hr"',
   'Telepathic Demand':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
@@ -10376,7 +10376,7 @@ Pathfinder2E.SPELLS = {
       '"Self can exchange 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Divination,Linguistic,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10384,7 +10384,7 @@ Pathfinder2E.SPELLS = {
       '"Self can communicate telepathically with any creature in a 30\' radius (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -10392,7 +10392,7 @@ Pathfinder2E.SPELLS = {
       '"Transports self and 4 willing creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>9th</b> transports to any planet in the same galaxy)"',
   'Time Stop':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10400,7 +10400,7 @@ Pathfinder2E.SPELLS = {
       '"Self performs 3 rd of actions that don\'t affect others until the spell ends"',
   'Tongues':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10408,7 +10408,7 @@ Pathfinder2E.SPELLS = {
       '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> lasts for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10416,14 +10416,14 @@ Pathfinder2E.SPELLS = {
       '"Inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
   'Tree Shape':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Plant,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Self becomes a Large tree with Armor Class 20 for 8 hr"',
   'Tree Stride':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Conjuration,Plant,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
@@ -10431,7 +10431,7 @@ Pathfinder2E.SPELLS = {
       '"Self teleports from an adjacent to tree to another of the same species within 5 miles (<b>heightened 6th</b> teleports 50 miles; <b>8th</b> teleports 500 miles; <b>9th</b> teleports anywhere on the planet)"',
   'True Seeing':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Divination,Revelation ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10439,7 +10439,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Self sees through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
@@ -10447,7 +10447,7 @@ Pathfinder2E.SPELLS = {
       '"Self\'s next Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
   'True Target':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Divination,Fortune,Prediction ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
@@ -10455,7 +10455,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed or hidden status and gain the best of two rolls"',
   'Uncontrollable Dance':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10463,7 +10463,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and target spends all actions each rd dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
@@ -10471,7 +10471,7 @@ Pathfinder2E.SPELLS = {
       '"Touched appears neutral to alignment detection until next daily prep"',
   'Unfathomable Song':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Auditory,Emotion,Enchantment,Fear,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10479,7 +10479,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Randomly inflicts frightened 2, confused for 1 rd, stupefied 4 for 1 rd, or blinded for 1 rd on 5 targets while sustained for up to 1 min (<b>save Will</b> negates for 1 rd; critical success negates; critical failure replaces frightened 2 with stunned for 1 rd and stupefied 1)"',
   'Unfettered Pack':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -10487,7 +10487,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> ignores environmental greater difficult terrain)"',
   'Unrelenting Observation':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10495,7 +10495,7 @@ Pathfinder2E.SPELLS = {
       '"R100\' 5 targets in a 20\' burst can see a 6th target for 1 hr (<b>save Will</b> effects last for 1 min; critical success negates)"',
   'Unseen Servant':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10503,7 +10503,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Invisible servant obeys commands to move and manipulate objects while sustained"',
   'Vampiric Exsanguination':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10511,7 +10511,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone inflicts 12d6 HP negative, giving self temporary HP for 1 min equal to half that inflicted on the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vampiric Touch':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10519,7 +10519,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 6d6 HP negative, giving self temporary HP for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Veil':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10527,7 +10527,7 @@ Pathfinder2E.SPELLS = {
       '"Up to 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets may appear as specific individuals)"',
   'Ventriloquism':
     'Level=1 ' +
-    'Trait= ' +
+    'Trait=Auditory,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10535,7 +10535,7 @@ Pathfinder2E.SPELLS = {
       '"Self project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Illusion,Incapacitation,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10543,7 +10543,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min)"',
   'Visions Of Danger':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Auditory,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -10551,7 +10551,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 30\' burst inflicts 8d8 HP mental for 1 min (<b>save basic Will</b>; critical success allows an attempt to disbelieve that negates the effects) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Vital Beacon':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
@@ -10559,7 +10559,7 @@ Pathfinder2E.SPELLS = {
       '"Touch heals once each rd for 4 rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP (<b>heightened +1</b> restores +1 die each rd)"',
   'Volcanic Eruption':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -10567,7 +10567,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5\' radius inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and difficult terrain to flying creatures (<b>save basic Reflex</b>), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Auditory,Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10575,7 +10575,7 @@ Pathfinder2E.SPELLS = {
       '"40\' emanation inflicts 8d10 HP negative and drained 1d4 (<b>save Fortitude</b> inflicts HP only; critical success negates; critical failure inflicts double HP and drained 4)"',
   'Wall Of Fire':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10583,7 +10583,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5\'x60\'x10\' line or 10\' radius inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Wall Of Force':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10591,7 +10591,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
   'Wall Of Ice':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Cold,Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10599,7 +10599,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
-    'Trait= ' +
+    'Trait=Conjuration,Earth ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10607,7 +10607,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10615,7 +10615,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Air,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10623,7 +10623,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) may pass as difficult terrain; critical success negates; critical failure pushes back 10\')"',
   "Wanderer's Guide":
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
@@ -10631,7 +10631,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals a route to a specified destination and reduces the movement penalty from difficult terrain by half until next daily prep"',
   'Warp Mind':
     'Level=7 ' +
-    'Trait= ' +
+    'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10639,7 +10639,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure inflicts permanent confusion)"',
   'Water Breathing':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
@@ -10647,7 +10647,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5 targets may breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)"',
   'Water Walk':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
@@ -10655,7 +10655,7 @@ Pathfinder2E.SPELLS = {
       '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last for 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -10663,7 +10663,7 @@ Pathfinder2E.SPELLS = {
       '"+%{spellAttackModifier.%tradition} attacks by force weapon inflict 3d10+%{spellModifier.%tradition} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
-    'Trait= ' +
+    'Trait=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10671,7 +10671,7 @@ Pathfinder2E.SPELLS = {
       '"Weapon swing inflicts 4 dice of damage in a 30\' cone or 10\' emanation (<b>save basic Reflex</b>; critical failure also inflicts critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
   'Web':
     'Level=2 ' +
-    'Trait= ' +
+    'Trait=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10679,7 +10679,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until Escape; Athletics also clears squares upon leaving)"',
   'Weird':
     'Level=9 ' +
-    'Trait= ' +
+    'Trait=Death,Emotion,Fear,Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10687,7 +10687,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts 16d6 HP mental and frightened 2 (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)"',
   'Wind Walk':
     'Level=8 ' +
-    'Trait= ' +
+    'Trait=Air,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast="10 min" ' +
@@ -10695,7 +10695,7 @@ Pathfinder2E.SPELLS = {
       '"Self and 5 creatures become clouds and move 20 MPH for 8 hr; attacks or spellcasting ends"',
   'Wish':
     'Level=10 ' +
-    'Trait= ' +
+    'Trait=Divination ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10703,7 +10703,7 @@ Pathfinder2E.SPELLS = {
       '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
   'Zealous Conviction':
     'Level=6 ' +
-    'Trait= ' +
+    'Trait=Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10711,7 +10711,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10 targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self\'s requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened +1</b> gives 18 temporary HP and +3 Will)"',
   'Zone Of Truth':
     'Level=3 ' +
-    'Trait= ' +
+    'Trait=Uncommon,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10719,7 +10719,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 20\' burst prevents lies and inflicts -2 Deception for 10 min (<b>save Will</b> inflicts -2 Deception only; critical success negates; critical failure inflicts -4 Deception)"',
   'Allegro':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10727,7 +10727,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target becomes quickened and may take an additional Strike, Stride, or Step for 1 rd"',
   'Counter Performance':
     'Level=1 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Composition,Enchantment,Fortune,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Reaction ' +
@@ -10735,14 +10735,14 @@ Pathfinder2E.SPELLS = {
       '"Allies in a 60\' radius may substitute self Performance roll for save"',
   'Dirge Of Doom':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="30\' emanation inflicts frightened 1 on foes for 1 rd"',
   'Fatal Aria':
     'Level=10 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Composition,Death,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10750,7 +10750,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts death (target up to level 16 or 50 HP), 0 HP and dying 1 (target level 17), or 50 HP (target level 18+)"',
   'House Of Imaginary Walls':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10758,7 +10758,7 @@ Pathfinder2E.SPELLS = {
       '"Creates an invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10766,7 +10766,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Self can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10774,7 +10774,7 @@ Pathfinder2E.SPELLS = {
       '"60\' emanation gives +1 attack, damage, and saves vs. fear for 1 rd"',
   'Inspire Defense':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10782,7 +10782,7 @@ Pathfinder2E.SPELLS = {
       '"60\' emanation gives +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
   'Inspire Heroics':
     'Level=4 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Enchantment,Metamagic ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10790,7 +10790,7 @@ Pathfinder2E.SPELLS = {
       '"Self can use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)"',
   'Lingering Composition':
     'Level=1 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Enchantment,Metamagic ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10798,7 +10798,7 @@ Pathfinder2E.SPELLS = {
       '"A successful Performance check increases the duration of a subsequent composition cantrip to 3 rd (critical success 4 rd; failure does not expend a Focus Point)"',
   "Loremaster's Etude":
     'Level=1 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10806,7 +10806,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target may take the better of two Recall Knowledge rolls"',
   'Soothing Ballad':
     'Level=7 ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10814,7 +10814,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self and 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=Cantrip ' +
-    'Trait=Focus ' +
+    'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -15301,14 +15301,17 @@ Pathfinder2E.spellRules = function(
 };
 Pathfinder2E.spellRules.traits = [
   'Abjuration', 'Acid', 'Air', 'Attack', 'Auditory', 'Aura', 'Cantrip',
-  'Chaotic', 'Cold', 'Conjuration', 'Curse', 'Darkness', 'Death', 'Detection',
-  'Disease', 'Divination', 'Earth', 'Electricity', 'Emotion', 'Enchantment',
-  'Evil', 'Evocation', 'Extradimentional', 'Fear', 'Fire', 'Focus', 'Force',
-  'Good', 'Healing', 'Illusion', 'Incapacitation', 'Light', 'Linguistic',
-  'Mental', 'Misfortune', 'Morph', 'Move', 'Necromancy', 'Negative',
-  'Nonlethal', 'Olfactory', 'Plant', 'Poison', 'Polymorph', 'Positive',
-  'Prediction', 'Rare', 'Revelation', 'Scrying', 'Sleep', 'Teleportation',
-  'Transmutation', 'Uncommon', 'Veil', 'Visual', 'Water'
+  'Chaotic', 'Cold', 'Conjuration', 'Consecration', 'Curse', 'Darkness',
+  'Death', 'Detection', 'Disease', 'Divination', 'Earth', 'Electricity',
+  'Emotion', 'Enchantment', 'Evil', 'Evocation', 'Extradimensional', 'Fear',
+  'Fire', 'Focus', 'Force', 'Fortune', 'Good', 'Healing', 'Illusion',
+  'Incapacitation', 'Light', 'Linguistic', 'Mental', 'Misfortune', 'Morph',
+  'Move', 'Necromancy', 'Negative', 'Nonlethal', 'Olfactory', 'Plant',
+  'Poison', 'Polymorph', 'Positive', 'Possession', 'Prediction', 'Rare',
+  'Revelation', 'Scrying', 'Shadow', 'Sleep', 'Sonic', 'Teleportation',
+  'Transmutation', 'Uncommon', 'Veil', 'Visual', 'Water',
+  // Focus
+  'Bard', 'Composition', 'Metamagic'
 ];
 
 /* Defines in #rules# the rules associated with terrain #name#. */
