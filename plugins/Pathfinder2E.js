@@ -7776,7 +7776,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known spell of up to 9th level or a common spell of up to 7th level"',
+      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known occult spell of up to 9th level or a common spell of up to 7th level"',
   'Anathematic Reprisal':
     'Level=4 ' +
     'Trait=Enchantment,Mental ' +
@@ -9267,7 +9267,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known spell of up to 9th level or a common spell of up to 7th level"',
+      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known divine spell of up to 9th level or a common spell of up to 7th level"',
   'Mirror Image':
     'Level=2 ' +
     'Trait=Illusion,Visual ' +
@@ -9331,7 +9331,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self transforms into choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
+      '"Self becomes choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
     'Trait=Enchantment ' +
@@ -9410,7 +9410,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others an enemies) (<b>heightened 6th</b> effects 5 targets)"',
+      '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others as enemies) (<b>heightened 6th</b> effects 5 targets)"',
   'Pass Without Trace':
     'Level=1 ' +
     'Trait=Abjuration ' +
@@ -9418,7 +9418,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Raises DC to Track self by 4 or up to spell DC for 1 hr (<b>heightened 2nd</b> effects last for 8 hr; <b>4th</b> effects last for 8 hr and affect a 20\' area and 10 creatures)"',
+      '"Increases the DC to Track self by 4 or to %{spellDifficultyClass.%tradition}, whichever is higher, for 1 hr (<b>heightened 2nd</b> effects last for 8 hr; <b>4th</b> effects last for 8 hr and affect a 20\' radius and 10 creatures)"',
   'Passwall':
     'Level=5 ' +
     'Trait=Uncommon,Conjuration,Earth ' +
@@ -9426,7 +9426,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
+      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> the tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
   'Pest Form':
     'Level=1 ' +
     'Trait=Polymorph,Transmutation ' +
@@ -9434,7 +9434,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> gives 20\' fly Speed)"',
+      '"Self becomes choice of a Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, R30\' imprecise scent, +10 Athletics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'Trait=Illusion,Mental ' +
@@ -9442,7 +9442,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a successful subsequent Will save) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
     'Trait=Death,Emotion,Fear,Illusion,Mental ' +
@@ -9474,7 +9474,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Transports self and 8 willing targets to a different plane"',
+      '"Transports self and 8 willing targets to an imprecise location on a different plane"',
   'Plant Form':
     'Level=5 ' +
     'Trait=Plant,Polymorph,Transmutation ' +
@@ -9482,7 +9482,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self transforms into choice of Large plant with 12 temporary HP, Armor Class %{level+19}, +27 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> Huge plant with +5\' reach, 24 temporary HP, Armor Class %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
+      '"Self becomes choice of a Large plant with 12 temporary HP, Armor Class %{level+19}, +17 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> becomes a Huge plant with +5\' reach, 24 temporary HP, Armor Class %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
   'Polar Ray':
     'Level=8 ' +
     'Trait=Attack,Cold,Evocation ' +
@@ -9498,7 +9498,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self inhabits and controls the target\'s body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives self full control; success on subsequent Will saves each turn negates self control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last for 10 min, and self\'s body is protected from harm)"',
+      '"R30\' Self inhabits and controls the target\'s body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives self full control; success on subsequent Will saves each turn negates self control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last for 10 min, and self body is protected from harm)"',
   'Power Word Blind':
     'Level=7 ' +
     'Trait=Uncommon,Auditory,Enchantment,Mental ' +
@@ -9506,7 +9506,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Permanently blinds a target of level 11 or lower, blinds level 12 or 13 for 1d4 min, or dazzles level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)"',
+      '"R30\' Permanently blinds a target of level 11 or lower, blinds a level 12 or 13 target for 1d4 min, or dazzles a target of level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Kill':
     'Level=9 ' +
     'Trait=Uncommon,Auditory,Death,Enchantment,Mental ' +
@@ -9514,7 +9514,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Kills a target of level 14 or lower or with fewer than 51 HP, inflicts 0 HP and dying 1 on level 15 with more than 50 HP, or inflicts 50 HP on level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)"',
+      '"R30\' Kills a target of level 14 or lower or with fewer than 51 HP, inflicts 0 HP and dying 1 on a level 15 target with more than 50 HP, or inflicts 50 HP on a target of level 16 or higher with more than 50 HP (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Stun':
     'Level=8 ' +
     'Trait=Uncommon,Auditory,Enchantment,Mental ' +
@@ -9522,7 +9522,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on level 14 or 15, or stunned 1 on level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)"',
+      '"R30\' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on a level 14 or 15 target, or stunned 1 on a target of level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)"',
   'Prestidigitation':
     'Level=Cantrip ' +
     'Trait=Cantrip,Evocation ' +
@@ -9538,7 +9538,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and 5 willing targets transform into Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class %{level+22}, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+16 HP bludgeoning, low-light vision, resistance 10 to poison, +30 Athletics modifier, and a trample action for 1 min"',
+      '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class level + 22, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, low-light vision, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'Trait=Divination ' +
@@ -9546,7 +9546,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
+      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known primal spell of up to 9th level or a common spell of up to 7th level"',
   'Prismatic Sphere':
     'Level=9 ' +
     'Trait=Abjuration,Light ' +
