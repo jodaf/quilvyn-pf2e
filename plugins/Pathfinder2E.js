@@ -9640,7 +9640,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
-    'Description="R10\' Restores soul to a willing creature up to level 13 dead for at most 3 days, giving target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened +2</b> level +2)"',
+    'Description="R10\' Restores willing soul up to level 13 to its corpse, dead for at most 3 days, giving the target 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened 7th</b> raises the maximum level to 15; <b>8th</b> level 17; <b>9th</b> level 19; <b>10th</b> level 21)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'Trait=Attack,Necromancy ' +
@@ -9648,7 +9648,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts enfeebled 2 for 1 min (critical success increases by 1 step) (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3)"',
+      '"R30\' Ranged spell attack inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3; critical success on attack worsens save by 1 degree)"',
   'Ray Of Frost':
     'Level=Cantrip ' +
     'Trait=Attack,Cantrip,Cold,Evocation ' +
@@ -9664,7 +9664,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Self detects whether an object is magical and the related school of magic (<b>heightened 3rd</b> allows detection on 10 objects; <b>6th</b> allows detection on unlimited objects)"',
+      '"R30\' Self detects whether an object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 targets; <b>6th</b> affects unlimited targets)"',
   'Read Omens':
     'Level=4 ' +
     'Trait=Uncommon,Divination,Prediction ' +
@@ -9672,7 +9672,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self receives a clue or advice about a proposed activity up to 1 week in the future"',
+      '"Reveals a clue or advice about a proposed activity up to 1 week in the future"',
   'Regenerate':
     'Level=7 ' +
     'Trait=Healing,Necromancy,Positive ' +
@@ -9687,7 +9687,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hr" ' +
-    'Description="Fully re-creates a known object up to 5\' cu"',
+    'Description=' +
+      '"R5\' Fully re-creates a known object up to 5\' cu from a remnant"',
   'Remove Curse':
     'Level=4 ' +
     'Trait=Healing,Necromancy ' +
@@ -9695,7 +9696,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Makes a counteract attempt vs. one curse affecting touched"',
+      '"Makes a counteract attempt vs. 1 curse affecting touched"',
   'Remove Disease':
     'Level=3 ' +
     'Trait=Healing,Necromancy ' +
@@ -9726,7 +9727,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Up to 40\' emanation prevents creatures from approaching (<b>save Will</b> inflicts difficult terrain; critical success negates)"',
+      '"Up to 40\' emanation prevents creatures from approaching for 1 min (<b>save Will</b> inflicts difficult terrain; critical success negates)"',
   'Resilient Sphere':
     'Level=4 ' +
     'Trait=Abjuration,Force ' +
@@ -9766,7 +9767,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched"',
+      '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Retrocognition':
     'Level=7 ' +
     'Trait=Divination ' +
@@ -9774,7 +9775,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Self receives impressions of 1 day of past events at the current location per 1 min concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
+      '"Reveals impressions of 1 day of past events at the current location per 1 min concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
   'Reverse Gravity':
     'Level=7 ' +
     'Trait=Uncommon,Evocation ' +
@@ -9798,7 +9799,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains Armor Class %{level+20}, 10 temporary HP, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (or +6 ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form, 10\' reach, Armor Class %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (or +12 ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
+      '"Self gains Armor Class %{level+20}, 10 temporary HP, 40\' Speed, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (+6 if ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives Large form with 10\' reach, Armor Class %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack, +15 damage (+12 if ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
     'Trait=Uncommon,Conjuration,Extradimensional ' +
@@ -9838,14 +9839,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; an unmet target lowers the DC by 2; an unknown target lowers the DC by 10)"',
+      '"Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; an unmet target lowers the save DC by 2, and an unknown target lowers it by 10)"',
   'Searing Light':
     'Level=3 ' +
     'Trait=Attack,Evocation,Fire,Good,Light ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
+    'Description="R120\' Ranged spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
   'Secret Page':
     'Level=3 ' +
     'Trait=Illusion,Visual ' +
@@ -9868,7 +9869,7 @@ Pathfinder2E.SPELLS = {
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
-    'Description="Self sends a 25-word message to a known creature"',
+    'Description="Self exchanges 25-word messages with a known creature"',
   'Shadow Blast':
     'Level=5 ' +
     'Trait=Evocation,Shadow ' +
