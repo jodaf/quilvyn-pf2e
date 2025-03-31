@@ -8131,7 +8131,7 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="Creates 2 gallons of water that lasts for 1 day"',
+    'Description="Creates 2 gallons of water that last for 1 day"',
   'Creation':
     'Level=4 ' +
     'Trait=Conjuration ' +
@@ -8544,7 +8544,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects 5 additional willing creatures and lasts 10 min)"',
+      '"Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects 5 additional willing creatures, and effects last for 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
@@ -8980,7 +8980,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> illusion includes sounds and smells and lasts for 1 hr; <b>5th</b> effects are permanent)"',
+      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)"',
   'Illusory Scene':
     'Level=5 ' +
     'Trait=Auditory,Illusion,Olfactory,Visual ' +
@@ -10319,7 +10319,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self gains truthful answers from a touched corpse (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks)"',
+      '"Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)"',
   'Tanglefoot':
     'Level=Cantrip ' +
     'Trait=Attack,Cantrip,Conjuration,Plant ' +
@@ -10327,7 +10327,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Ranged attack inflicts -10\' Speed for 1 rd (Escape negates; critical success inflicts immobilized for 1 rd) (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
+      '"R30\' Ranged spell attack inflicts -10\' Speed for 1 rd, or immobilized 1 for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
     'Trait=Conjuration,Plant ' +
@@ -10343,7 +10343,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Self can move an object up to 80 Bulk and 20\' dimensions 20\' per rd while sustained for up to 1 min"',
+      '"R120\' Moves an 80 Bulk, 20\' cubic object 20\' each rd while sustained for up to 1 min"',
   'Telekinetic Maneuver':
     'Level=2 ' +
     'Trait=Attack,Evocation,Force ' +
@@ -10351,7 +10351,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Self can use a spell attack to Disarm, Shove, or Trip"',
+      '"R60\' Ranged spell attack attempts to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=Cantrip ' +
     'Trait=Attack,Cantrip,Evocation ' +
@@ -10359,7 +10359,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can use a loose object to make a spell attack that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type; critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"Ranged spell attack hurls a loose object that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
     'Trait=Uncommon,Divination,Mental ' +
@@ -10367,7 +10367,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Self and 4 willing creatures can communicate telepathically for 8 hr"',
+      '"Self and 4 willing touched can communicate telepathically for 8 hr"',
   'Telepathic Demand':
     'Level=9 ' +
     'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
@@ -10375,7 +10375,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Self can exchange 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
+      '"Self exchanges 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'Trait=Divination,Linguistic,Mental ' +
@@ -10383,7 +10383,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can communicate telepathically with any creature in a 30\' radius (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
+      '"Self can communicate telepathically with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
@@ -10391,7 +10391,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Transports self and 4 willing creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>9th</b> transports to any planet in the same galaxy)"',
+      '"Transports self and 4 willing touched creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>10th</b> transports to any planet in the same galaxy)"',
   'Time Stop':
     'Level=10 ' +
     'Trait=Transmutation ' +
@@ -10399,7 +10399,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Self performs 3 rd of actions that don\'t affect others until the spell ends"',
+      '"Allows self to perform 3 rd of actions that don\'t affect others until the spell ends"',
   'Tongues':
     'Level=5 ' +
     'Trait=Uncommon,Divination ' +
@@ -10407,7 +10407,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> lasts for 8 hr)"',
+      '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
     'Trait=Enchantment,Mental ' +
@@ -10415,7 +10415,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
+      '"Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
   'Tree Shape':
     'Level=2 ' +
     'Trait=Plant,Polymorph,Transmutation ' +
@@ -10430,7 +10430,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Self teleports from an adjacent to tree to another of the same species within 5 miles (<b>heightened 6th</b> teleports 50 miles; <b>8th</b> teleports 500 miles; <b>9th</b> teleports anywhere on the planet)"',
+      '"Transports self from an adjacent to tree to another of the same species within 5 miles (<b>heightened 6th</b> transports 50 miles; <b>8th</b> transports 500 miles; <b>9th</b> transports anywhere on the planet)"',
   'True Seeing':
     'Level=6 ' +
     'Trait=Divination,Revelation ' +
@@ -10438,7 +10438,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Self sees through illusions and transmutations for 10 min"',
+      '"R60\' Makes counteract checks to see through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
     'Trait=Divination,Fortune ' +
@@ -10446,7 +10446,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self\'s next Strike in same turn uses the better of two rolls, ignores concealed or hidden, and ignores circumstance penalties"',
+      '"Self uses the better of two attack rolls, ignores concealed and hidden status, and ignores circumstance penalties on the next Strike in the same turn"',
   'True Target':
     'Level=7 ' +
     'Trait=Divination,Fortune,Prediction ' +
@@ -10454,7 +10454,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed or hidden status and gain the best of two rolls"',
+      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed and hidden status and use the better of two attack rolls"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
@@ -10462,7 +10462,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and target spends all actions each rd dancing)"',
+      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each rd dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
     'Trait=Uncommon,Abjuration ' +
@@ -10486,7 +10486,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> ignores environmental greater difficult terrain)"',
+      '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> targets ignore environmental greater difficult terrain)"',
   'Unrelenting Observation':
     'Level=8 ' +
     'Trait=Divination,Scrying ' +
@@ -10494,7 +10494,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R100\' 5 targets in a 20\' burst can see a 6th target for 1 hr (<b>save Will</b> effects last for 1 min; critical success negates)"',
+      '"R100\' 5 targets in a 20\' burst can see a 6th target for 1 hr; lead and running water block the vision (<b>save Will</b> effects last for 1 min; critical success negates)"',
   'Unseen Servant':
     'Level=1 ' +
     'Trait=Conjuration ' +
@@ -10502,7 +10502,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Invisible servant obeys commands to move and manipulate objects while sustained"',
+      '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained"',
   'Vampiric Exsanguination':
     'Level=6 ' +
     'Trait=Death,Necromancy,Negative ' +
@@ -10510,7 +10510,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone inflicts 12d6 HP negative, giving self temporary HP for 1 min equal to half that inflicted on the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"30\' cone inflicts 12d6 HP negative, giving self temporary HP for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vampiric Touch':
     'Level=3 ' +
     'Trait=Death,Necromancy,Negative ' +
@@ -10526,7 +10526,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Up to 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets may appear as specific individuals)"',
+      '"R30\' Makes 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets may appear to be familiar individuals)"',
   'Ventriloquism':
     'Level=1 ' +
     'Trait=Auditory,Illusion ' +
@@ -10534,7 +10534,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
+      '"Self can project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
     'Trait=Illusion,Incapacitation,Visual ' +
@@ -10542,7 +10542,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min)"',
+      '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd removes the blindness after leaving the area (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)"',
   'Visions Of Danger':
     'Level=7 ' +
     'Trait=Auditory,Illusion,Visual ' +
@@ -10558,7 +10558,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touch heals once each rd for 4 rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP (<b>heightened +1</b> restores +1 die each rd)"',
+      '"Touch heals once each rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)"',
   'Volcanic Eruption':
     'Level=7 ' +
     'Trait=Evocation,Fire ' +
@@ -10566,7 +10566,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\' radius inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and difficult terrain to flying creatures (<b>save basic Reflex</b>), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and a 20\' decent and difficult terrain to flying creatures (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'Trait=Auditory,Death,Necromancy,Negative ' +
