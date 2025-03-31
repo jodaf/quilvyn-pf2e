@@ -7832,7 +7832,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self may gain a general idea of whether the results of a proposed action up to 30 min in the future will be good or bad"',
+      '"Reveals a general idea of whether the results of a proposed action up to 30 min in the future will be good or bad"',
   'Avatar':
     'Level=10 ' +
     'Trait=Polymorph,Transmutation ' +
@@ -7928,7 +7928,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains resistance 5 to non-force damage and may use Sustain to randomly teleport 10\' for 1 min (<b>heightened +2</b> gives +3 resistance)"',
+      '"Self gains resistance 5 to non-force damage and can use Sustain to randomly teleport 10\' for 1 min (<b>heightened +2</b> gives +3 resistance)"',
   'Blur':
     'Level=2 ' +
     'Trait=Illusion,Veil ' +
@@ -8078,7 +8078,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> the target may also speak the language; <b>4th</b> affects 10 targets)"',
+      '"R30\' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
     'Trait=Cold,Evocation ' +
@@ -8171,7 +8171,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Creates 4 floating torch lights in a 10\' radius that may be moved 60\' each rd while sustained"',
+      '"R120\' Creates 4 floating torch lights in a 10\' radius that can be moved 60\' each rd while sustained"',
   'Darkness':
     'Level=2 ' +
     'Trait=Darkness,Evocation ' +
@@ -8624,7 +8624,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on non-reach melee attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, may cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on non-reach melee attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
+      '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on non-reach melee attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, can cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on non-reach melee attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
   'Finger Of Death':
     'Level=7 ' +
     'Trait=Death,Necromancy ' +
@@ -8639,7 +8639,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates 4 acorns that may be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
+      '"Creates 4 acorns that can be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
   'Fire Shield':
     'Level=4 ' +
     'Trait=Evocation,Fire ' +
@@ -8861,7 +8861,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion may mask or incorporate structures)"',
+      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion can mask or incorporate structures)"',
   'Harm':
     'Level=1 ' +
     'Trait=Necromancy,Negative ' +
@@ -8964,7 +8964,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusory image of a Large or smaller creature (Armor Class %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows self to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and may be one size larger)"',
+      '"R500\' Creates an illusory image of a Large or smaller creature (Armor Class %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows self to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
@@ -9124,7 +9124,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Alters the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> may affect a creature or all of its possessions)"',
+      '"Alters the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> can affect a creature or all of its possessions)"',
   'Magic Fang':
     'Level=1 ' +
     'Trait=Transmutation ' +
@@ -9211,7 +9211,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> may affect a 1 Bulk object; <b>3rd</b> may affect a 2 Bulk or magical 1 Bulk object)"',
+      '"Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)"',
   'Message':
     'Level=Cantrip ' +
     'Trait=Auditory,Cantrip,Illusion,Linguistic,Mental ' +
@@ -9466,7 +9466,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R30\' Conjures a magical mount (Armor Class 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount may also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and may fly)"',
+      '"R30\' Conjures a magical mount (Armor Class 20, HP 10, 40\' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount can also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
   'Plane Shift':
     'Level=7 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
@@ -9979,7 +9979,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Inscribes a 1\\" sq magical mark on a touched object or creature; the mark may be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks creature for 1 month; <b>5th</b> marks creature for 1 year; <b>7th</b> marks creature permanently)"',
+      '"Inscribes a 1\\" sq magical mark on a touched object or creature; the mark can be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks creature for 1 month; <b>5th</b> marks creature for 1 year; <b>7th</b> marks creature permanently)"',
   'Silence':
     'Level=2 ' +
     'Trait=Illusion ' +
@@ -10129,7 +10129,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Summoned guardian with 50 HP makes a +%{spellAttackModifier.%tradition} attack that inflicts 2d8 HP force or weapon type damage, or defends to absorb 10 HP of damage, each rd while sustained for up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
+      '"R120\' Summoned guardian with 50 HP makes a +%{spellAttackModifier.%tradition} attack that inflicts 2d8 HP force or weapon damage type, or defends to absorb 10 HP of damage, each rd while sustained for up to 1 min (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'Trait=Evocation,Force ' +
@@ -10137,7 +10137,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spectral weapon makes a +%{spellAttackModifier.%tradition} attack that inflicts 1d8 HP force or weapon type damage each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
+      '"R120\' Spectral weapon makes a +%{spellAttackModifier.%tradition} attack that inflicts 1d8 HP force or weapon damage type each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
   'Stabilize':
     'Level=Cantrip ' +
     'Trait=Cantrip,Healing,Necromancy,Positive ' +
@@ -10335,7 +10335,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd each rd (Escape negates) for 10 min"',
+      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd each rd (a successful Escape negates) for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Trait=Evocation ' +
@@ -10526,7 +10526,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Makes 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets may appear to be familiar individuals)"',
+      '"R30\' Makes 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets can appear to be familiar individuals)"',
   'Ventriloquism':
     'Level=1 ' +
     'Trait=Auditory,Illusion ' +
@@ -10582,7 +10582,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' 5\'x60\'x10\' line or 10\' radius inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R120\' 5\'x60\'x10\' line or 10\' radius ring inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Wall Of Force':
     'Level=6 ' +
     'Trait=Evocation,Force ' +
@@ -10598,7 +10598,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP and rubble inflicts +1d6 HP)"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
     'Trait=Conjuration,Earth ' +
@@ -10606,7 +10606,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
+      '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
     'Trait=Conjuration,Plant ' +
@@ -10614,7 +10614,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> each section gains +5 HP and inflicts +1d4 HP)"',
+      '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
     'Trait=Air,Evocation ' +
@@ -10622,7 +10622,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) may pass as difficult terrain; critical success negates; critical failure pushes back 10\')"',
+      '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) allows passage as difficult terrain; critical success negates; critical failure pushes back 10\')"',
   "Wanderer's Guide":
     'Level=3 ' +
     'Trait=Divination ' +
@@ -10646,7 +10646,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' 5 targets may breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)"',
+      '"R30\' 5 targets can breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)"',
   'Water Walk':
     'Level=2 ' +
     'Trait=Transmutation ' +
@@ -10654,7 +10654,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched may walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last for 1 hr)"',
+      '"Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last for 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
     'Trait=Evocation,Force ' +
@@ -10662,7 +10662,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"+%{spellAttackModifier.%tradition} attacks by force weapon inflict 3d10+%{spellModifier.%tradition} HP of choice of damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
+      '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'Trait=Evocation ' +
@@ -10670,7 +10670,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Weapon swing inflicts 4 dice of damage in a 30\' cone or 10\' emanation (<b>save basic Reflex</b>; critical failure also inflicts critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
+      '"Weapon swing inflicts 4 dice of damage to every creature in a 30\' cone or 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
   'Web':
     'Level=2 ' +
     'Trait=Conjuration ' +
@@ -10678,7 +10678,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until Escape; Athletics also clears squares upon leaving)"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; Athletics also clears squares upon leaving)"',
   'Weird':
     'Level=9 ' +
     'Trait=Death,Emotion,Fear,Illusion,Mental ' +
@@ -10686,7 +10686,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts 16d6 HP mental and frightened 2 (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)"',
+      '"R120\' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)"',
   'Wind Walk':
     'Level=8 ' +
     'Trait=Air,Transmutation ' +
@@ -10694,7 +10694,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self and 5 creatures become clouds and move 20 MPH for 8 hr; attacks or spellcasting ends"',
+      '"Self and 5 touched become clouds and move 20 MPH for 8 hr; attack or spellcasting ends"',
   'Wish':
     'Level=10 ' +
     'Trait=Divination ' +
@@ -10702,7 +10702,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
-      '"Duplicates the effects of a known spell of up to 9th level or of a common spell of up to 7th level"',
+      '"Reverses certain <i>Wish</i> effects or produces effects similar to a known arcane spell of up to 9th level or a common spell of up to 7th level"',
   'Zealous Conviction':
     'Level=6 ' +
     'Trait=Emotion,Enchantment,Mental ' +
@@ -10710,7 +10710,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 10 targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self\'s requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened +1</b> gives 18 temporary HP and +3 Will)"',
+      '"R30\' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)"',
   'Zone Of Truth':
     'Level=3 ' +
     'Trait=Uncommon,Enchantment,Mental ' +
