@@ -146,7 +146,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Rock Dwarf:Heritage",' +
       '"1:Strong-Blooded Dwarf:Heritage" ' +
     'Languages=Common,Dwarven ' +
-    'Traits=Dwarf,Humanoid',
+    'Trait=Dwarf,Humanoid',
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
@@ -161,7 +161,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Whisper Elf:Heritage",' +
       '"1:Woodland Elf:Heritage" ' +
     'Languages=Common,Elven ' +
-    'Traits=Elf,Humanoid',
+    'Trait=Elf,Humanoid',
   'Gnome':
     'HitPoints=8 ' +
     'Features=' +
@@ -178,7 +178,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Divine Wellspring:Wellspring",' +
       '"1:Occult Wellspring:Wellspring" ' +
     'Languages=Common,Gnomish,Sylvan ' +
-    'Traits=Gnome,Humanoid',
+    'Trait=Gnome,Humanoid',
   'Goblin':
     'HitPoints=6 ' +
     'Features=' +
@@ -192,7 +192,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Snow Goblin:Heritage",' +
       '"1:Unbreakable Goblin:Heritage" ' +
     'Languages=Common,Goblin ' +
-    'Traits=Goblin,Humanoid',
+    'Trait=Goblin,Humanoid',
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
@@ -206,7 +206,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Twilight Halfling:Heritage",' +
       '"1:Wildwood Halfling:Heritage" ' +
     'Languages=Common,Halfling ' +
-    'Traits=Humanoid,Halfling',
+    'Trait=Humanoid,Halfling',
   'Human':
     'HitPoints=8 ' +
     'Features=' +
@@ -218,7 +218,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
     'Languages=Common,any ' +
-    'Traits=Humanoid,Human'
+    'Trait=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
   'None':'Category=Unarmored Price=0 AC=0 Check=0 Str=0 Speed=0 Bulk=0',
@@ -7731,7 +7731,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R120\' Spell attack inflicts 3d8 HP acid (critical success inflicts double HP) plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Acid Splash':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Acid,Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
@@ -7984,7 +7984,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Target becomes friendly and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affects 10 targets)"',
   'Chill Touch':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
@@ -8165,7 +8165,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult,Primal ' +
@@ -8189,7 +8189,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Allows self to see in darkness for 1 hr (<b>heightened 3rd</b> affects a touched target; <b>5th</b> effects last until next daily prep)"',
   'Daze':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Enchantment,Mental,Nonlethal ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
@@ -8229,7 +8229,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"30\' emanation reveals auras of a specified alignment (<b>heightened 2nd</b> reveals each aura\'s location and strength)"',
   'Detect Magic':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -8330,7 +8330,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R120\' Makes a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min"',
   'Disrupt Undead':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
@@ -8370,7 +8370,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Willing touched recovers 1 6th-level or lower spell or slot or regains Focus Points"',
   'Divine Lance':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
@@ -8474,7 +8474,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R500\' 60\' burst attempts to counteract magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)"',
   'Electric Arc':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
@@ -8704,7 +8704,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (<b>heightened 7th</b> effects last for 1 hr)"',
   'Forbidding Ward':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Abjuration,Cantrip ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
@@ -8752,7 +8752,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Touched corpse does not decay and cannot be made undead until next daily prep (<b>heightened 5th</b> effects are permanent)"',
   'Ghost Sound':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Auditory,Cantrip,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
@@ -8831,7 +8831,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed"',
   'Guidance':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
@@ -9046,7 +9046,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self give an additional +%{level}"',
   'Know Direction':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
@@ -9062,7 +9062,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Self can use a concentrate action to move the touched object or willing creature up or down 10\' for 5 min"',
   'Light':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -9110,7 +9110,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Self gains +1 Armor Class with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 Armor Class; <b>8th</b> gives +2 saves; <b>10th</b> gives +3 Armor Class and saves)"',
   'Mage Hand':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
@@ -9213,7 +9213,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)"',
   'Message':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Auditory,Cantrip,Illusion,Linguistic,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult ' +
@@ -9524,7 +9524,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Inflicts stunned for 1d6 rd on a target of level 13 or lower, stunned for 1 rd on a level 14 or 15 target, or stunned 1 on a target of level 16 or higher (<b>heightened +1</b> increases outcome levels by 2)"',
   'Prestidigitation':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -9580,7 +9580,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"100\' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep"',
   'Produce Flame':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
@@ -9650,7 +9650,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Ranged spell attack inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3; critical success on attack worsens save by 1 degree)"',
   'Ray Of Frost':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Attack,Cantrip,Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
@@ -9658,7 +9658,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R120\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP cold (critical success inflicts double HP and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Read Aura':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -9925,7 +9925,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Inflicts 2d10 HP sonic on an unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
   'Shield':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Abjuration,Cantrip,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
@@ -9973,7 +9973,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Transforms a touched non-magical object of up to 80 Bulk and 20 cubic feet into the size of a coin with negligible Bulk until next daily prep"',
   'Sigil':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -10139,7 +10139,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R120\' Spectral weapon makes a +%{spellAttackModifier.%tradition} attack that inflicts 1d8 HP force or weapon damage type each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
   'Stabilize':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Cantrip,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
@@ -10321,7 +10321,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)"',
   'Tanglefoot':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Attack,Cantrip,Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
@@ -10353,7 +10353,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R60\' Ranged spell attack attempts to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
@@ -10720,7 +10720,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' 20\' burst prevents lies and inflicts -2 Deception for 10 min (<b>save Will</b> inflicts -2 Deception only; critical success negates; critical failure inflicts -4 Deception)"',
   'Allegro':
-    'Level=Cantrip ' +
+    'Level=7 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -10736,7 +10736,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Allies in a 60\' radius may substitute self Performance roll for save"',
   'Dirge Of Doom':
-    'Level=Cantrip ' +
+    'Level=3 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -10751,7 +10751,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Inflicts death (target up to level 16 or 50 HP), 0 HP and dying 1 (target level 17), or 50 HP (target level 18+)"',
   'House Of Imaginary Walls':
-    'Level=Cantrip ' +
+    'Level=5 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
@@ -10759,7 +10759,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"Creates an invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -10767,7 +10767,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R60\' Self can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -10775,7 +10775,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"60\' emanation gives +1 attack, damage, and saves vs. fear for 1 rd"',
   'Inspire Defense':
-    'Level=Cantrip ' +
+    'Level=1 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -10815,7 +10815,7 @@ Pathfinder2E.SPELLS = {
     'Description=' +
       '"R30\' Self and 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
-    'Level=Cantrip ' +
+    'Level=2 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
@@ -12439,7 +12439,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Trait']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
@@ -12694,7 +12694,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
   } else if(type == 'Ancestry Feature')
@@ -12799,9 +12799,12 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
     let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
+    let traits = QuilvynUtils.getAttrValueArray(attrs, 'Trait');
+    let isCantrip = traits.includes('Cantrip');
+    let isFocus = traits.includes('Focus');
     trads.forEach(t => {
       let spellName =
-        name + ' (' + t.charAt(0) + (level=='Cantrip' ? 0 : level) + ' ' + school.substring(0, 3) + ')';
+        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + (!isCantrip || level>1 ? level : '') + ' ' + (isFocus ? 'Foc ' : '') + school.substring(0, 3) + ')';
       Pathfinder2E.spellRules(rules, spellName,
         school,
         level,
@@ -15023,13 +15026,15 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           } else {
             let spellAttrs = Pathfinder2E.SPELLS[s];
             let spellLevel = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
-            if(spellLevel == 'Cantrip')
-              spellLevel = 0;
             let spellSchool = QuilvynUtils.getAttrValue(spellAttrs, 'School');
+            let spellTraits =
+              QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait');
             let spellTrad =
               matchInfo[2].charAt(0).toUpperCase() + matchInfo[2].substring(1);
+            let isCantrip = spellTraits.includes('Cantrip');
+            let isFocus = spellTraits.includes('Focus');
             let spellName =
-              s + ' (' + spellTrad.charAt(0) + spellLevel + ' ' + spellSchool.substring(0, 3) + ')';
+              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + (!isCantrip || spellLevel>1 ? spellLevel : '') + ' ' + (isFocus ? 'Foc ' : '') + spellSchool.substring(0, 3) + ')';
             rules.defineRule('spells.' + spellName, note, '=', '1');
             Pathfinder2E.spellRules(rules, spellName,
               spellSchool,
@@ -15829,7 +15834,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]],
       ['Languages', 'Languages', 'text', [30]],
-      ['Traits', 'Traits', 'text', [30]]
+      ['Trait', 'Trait', 'text', [30]]
     );
   else if(type == 'Ancestry Feature')
     result.push(
@@ -15853,7 +15858,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Str', 'Min Str', 'select-one', tenToEighteen],
       ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
       ['Group', 'Group', 'select-one', armorGroups],
-      ['Trait', 'Traits', 'text', [20]]
+      ['Trait', 'Trait', 'text', [20]]
     );
   } else if(type == 'Background')
     result.push(
@@ -15899,7 +15904,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
       ['Imply', 'Implies', 'text', [40]],
-      ['Trait', 'Traits', 'text', [20]]
+      ['Trait', 'Trait', 'text', [20]]
     );
   else if(type == 'Feature') {
     result.push(
@@ -15936,7 +15941,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Level', 'Level', 'select-one', zeroToNine],
       ['Tradition', 'Tradition', 'text', [15]],
       ['Cast', 'Cast', 'text', [15]],
-      ['Traits', 'Traits', 'text', [25]],
+      ['Trait', 'Trait', 'text', [25]],
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
