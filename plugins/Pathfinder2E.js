@@ -545,7 +545,7 @@ Pathfinder2E.CLASSES = {
       '1:Maestro:Muse,' +
       '1:Polymath:Muse ' +
     'SpellSlots=' +
-      'O0:5@1,' +
+      'OC1:5@1,' +
       'O1:2@1;3@2,' +
       'O2:2@3;3@4,' +
       'O3:2@5;3@6,' +
@@ -619,7 +619,7 @@ Pathfinder2E.CLASSES = {
       '"1:Cloistered Cleric:Doctrine",' +
       '"1:Warpriest:Doctrine" ' +
     'SpellSlots=' +
-      'D0:5@1,' +
+      'DC1:5@1,' +
       'D1:2@1;3@2,' +
       'D2:2@3;3@4,' +
       'D3:2@5;3@6,' +
@@ -653,7 +653,7 @@ Pathfinder2E.CLASSES = {
       '1:Storm:Order,' +
       '1:Wild:Order ' +
     'SpellSlots=' +
-      'P0:5@1,' +
+      'PC1:5@1,' +
       'P1:2@1;3@2,' +
       'P2:2@3;3@4,' +
       'P3:2@5;3@6,' +
@@ -852,7 +852,7 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Blending:Thesis",' +
       '"1:Spell Substitution:Thesis" ' +
     'SpellSlots=' +
-      'A0:5@1,' +
+      'AC1:5@1,' +
       'A1:2@1;3@2,' +
       'A2:2@3;3@4,' +
       'A3:2@5;3@6,' +
@@ -12804,7 +12804,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let isFocus = traits.includes('Focus');
     trads.forEach(t => {
       let spellName =
-        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + (!isCantrip || level>1 ? level : '') + ' ' + (isFocus ? 'Foc ' : '') + school.substring(0, 3) + ')';
+        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + level + ' ' + (isFocus ? 'Foc ' : '') + school.substring(0, 3) + ')';
       Pathfinder2E.spellRules(rules, spellName,
         school,
         level,
@@ -13589,7 +13589,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule
-      ('spellSlots.O0', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
+      ('spellSlots.OC1', 'magicNotes.occultSpellcasting', '=', 'null'); // italic
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
@@ -14328,7 +14328,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spellAbility.Occult',
       'magicNotes.bardDedication', '=', '"charisma"'
     );
-    rules.defineRule('spellSlots.O0', 'magicNotes.bardDedication', '+=', '2');
+    rules.defineRule('spellSlots.OC1', 'magicNotes.bardDedication', '+=', '2');
     // Suppress validation errors for selected muse and the notes for features
     // of muse that don't come with Bard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14458,7 +14458,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spellAbility.Divine',
       'magicNotes.clericDedication', '=', '"wisdom"'
     );
-    rules.defineRule('spellSlots.D0', 'magicNotes.clericDedication', '+=', '2');
+    rules.defineRule
+      ('spellSlots.DC1', 'magicNotes.clericDedication', '+=', '2');
     // Suppress the deity notes that don't come with Cleric Dedication
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
@@ -14486,7 +14487,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spellAbility.Primal',
       'magicNotes.druidDedication', '=', '"wisdom"'
     );
-    rules.defineRule('spellSlots.P0', 'magicNotes.druidDedication', '+=', '2');
+    rules.defineRule('spellSlots.PC1', 'magicNotes.druidDedication', '+=', '2');
     // Suppress validation errors for selected order and the notes for features
     // of Druidic Order that don't come with Druid Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14812,7 +14813,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('spellAbility.Arcane',
       'magicNotes.wizardDedication', '=', '"intelligence"'
     );
-    rules.defineRule('spellSlots.A0', 'magicNotes.wizardDedication', '+=', '2');
+    rules.defineRule
+      ('spellSlots.AC1', 'magicNotes.wizardDedication', '+=', '2');
     // Suppress validation errors for selected school and the notes for
     // features of the school that don't come with Wizard Dedication
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -15034,7 +15036,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             let isCantrip = spellTraits.includes('Cantrip');
             let isFocus = spellTraits.includes('Focus');
             let spellName =
-              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + (!isCantrip || spellLevel>1 ? spellLevel : '') + ' ' + (isFocus ? 'Foc ' : '') + spellSchool.substring(0, 3) + ')';
+              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + spellLevel + ' ' + (isFocus ? 'Foc ' : '') + spellSchool.substring(0, 3) + ')';
             rules.defineRule('spells.' + spellName, note, '=', '1');
             Pathfinder2E.spellRules(rules, spellName,
               spellSchool,
