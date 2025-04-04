@@ -8070,7 +8070,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
   'Comprehend Language':
     'Level=2 ' +
     'Trait=Divination ' +
@@ -10734,7 +10734,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allies in a 60\' radius may substitute self Performance roll for save"',
+      '"Allies in a 60\' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect"',
   'Dirge Of Doom':
     'Level=3 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
@@ -10749,7 +10749,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts death (target up to level 16 or 50 HP), 0 HP and dying 1 (target level 17), or 50 HP (target level 18+)"',
+      '"R30\' Inflicts death on a target up to level 16 or 50 HP, 0 HP and dying 1 on a level 17 target, or 50 HP on a level 18+ target"',
   'House Of Imaginary Walls':
     'Level=5 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
@@ -10765,7 +10765,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Self can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
+      '"R60\' Allows using Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=1 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
@@ -10773,15 +10773,15 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' emanation gives +1 attack, damage, and saves vs. fear for 1 rd"',
+      '"60\' emanation gives allies +1 attack, damage, and saves vs. fear for 1 rd"',
   'Inspire Defense':
-    'Level=1 ' +
+    'Level=2 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' emanation gives +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
+      '"60\' emanation gives allies +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
   'Inspire Heroics':
     'Level=4 ' +
     'Trait=Uncommon,Bard,Enchantment,Metamagic ' +
@@ -10789,7 +10789,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"Self can use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)"',
+      '"A successful Performance check increases the effects of a subsequent <i>Inspire Courage</i> or <i>Inspire Defense</i> to +2, or +3 on a critical success; failure does not expend a Focus Point"',
   'Lingering Composition':
     'Level=1 ' +
     'Trait=Uncommon,Bard,Enchantment,Metamagic ' +
@@ -10797,7 +10797,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"A successful Performance check increases the duration of a subsequent composition cantrip to 3 rd (critical success 4 rd; failure does not expend a Focus Point)"',
+      '"A successful Performance check increases the duration of a subsequent cantrip composition to 3 rd, or 4 rd on a critical success; failure does not expend a Focus Point"',
   "Loremaster's Etude":
     'Level=1 ' +
     'Trait=Uncommon,Bard,Divination,Fortune ' +
@@ -10805,7 +10805,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"R30\' Target may take the better of two Recall Knowledge rolls"',
+      '"R30\' Target may take the better of two rolls on the triggering Recall Knowledge"',
   'Soothing Ballad':
     'Level=7 ' +
     'Trait=Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
@@ -10813,7 +10813,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
+      '"R30\' Self and 9 allies gain a choice of a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=2 ' +
     'Trait=Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
@@ -10827,14 +10827,16 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="R30\' Redirects damage from an ally to self"',
+    'Description=' +
+      '"R30\' Redirects the damage of a Strike or failed save from an ally to self"',
   "Hero's Defiance":
     'Level=10 ' +
     'Trait=Uncommon,Champion,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Free ' +
-    'Description="Self recovers 10d4+20 HP"',
+    'Description=' +
+      '"Self recovers 10d4+20 HP before suffering damage that would reduce HP to 0 once per Refocus"',
   'Lay On Hands':
     'Level=1 ' +
     'Trait=Uncommon,Champion,Healing,Necromancy,Positive ' +
@@ -10842,15 +10844,15 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched living regains 6 HP and gains +2 Armor Class for 1 rd; undead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
+      '"Touched living regains 6 HP and gains +2 Armor Class for 1 rd; touched undead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'Trait=Uncommon,Champion,Evocation,Good,Litany ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
-    'Cast=2 ' +
+    'Cast=1 ' +
     'Description=' +
-      '"R30\' Evil target suffers Reaction prevention and slowed 1 for 1 rd (<b>save Will</b> Reaction prevention only; critical success negates; critical failure inflicts slowed 2)"',
+      '"R30\' Evil target suffers Reaction prevention and slowed 1 for 1 rd (<b>save Will</b> Reaction prevention only; critical success negates; critical failure inflicts slowed 2; slothful creatures worsen save by 1 degree)"',
   'Litany Against Wrath':
     'Level=3 ' +
     'Trait=Uncommon,Champion,Evocation,Good,Litany ' +
@@ -10858,7 +10860,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Evil target suffers 3d6 HP good whenever it damages a good creature for 1 rd (<b>save Will</b> first time damaging a good creature only; critical success negates; critical failure inflicts enfeebled 2)"',
+      '"R30\' Evil target suffers 3d6 HP good whenever it damages a good creature for 1 rd (<b>save Will</b> inflicts damage once; critical success negates; critical failure also inflicts enfeebled 2; wrathful creatures worsen save by 1 degree)"',
   'Litany Of Righteousness':
     'Level=7 ' +
     'Trait=Uncommon,Champion,Evocation,Good,Litany ' +
@@ -10874,7 +10876,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +5 Speed and may ignore difficult terrain for the remainder of turn"',
+      '"Self gains +5\' Speed and can move normally in difficult terrain for the remainder of the turn"',
   'Appearance Of Wealth':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Illusion ' +
@@ -10882,7 +10884,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5\' burst fascinates creatures attracted to wealth while sustained for up to 1 min (<b>save Will</b> effects last for 1 rd; critical success negates)"',
+      '"R30\' 5\' burst fascinates creatures attracted to wealth in a 20\' radius while sustained for up to 1 min (<b>save Will</b> effects last for 1 rd; critical success negates)"',
   'Artistic Flourish':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Transmutation ' +
@@ -10906,7 +10908,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Willing target may use the better of two rolls on 1 save within 1 min once per target per day"',
+      '"R30\' Willing target may use the better of two rolls on a save within 1 min once per target per day"',
   'Blind Ambition':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -10922,7 +10924,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> extends emanation by 15\')"',
+      '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last for 1 action; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> extends emanation by 15\')"',
   'Charming Touch':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -10930,7 +10932,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Causes touched to become friendly, or helpful if already friendly and prevents hostile actions for 10 min (<b>save Will</b> negates; critical success target recognizes attempt; critical failure target becomes helpful)"',
+      '"Touched becomes friendly, or helpful if already friendly, and cannot use hostile actions for 10 min (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful)"',
   'Cloak Of Shadow':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Darkness,Evocation,Shadow ' +
@@ -10938,7 +10940,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"20\' emanation around touched reduces bright light to dim and conceals touched for 1 min; touched may remove and move away from cloak"',
+      '"20\' emanation around willing touched reduces bright light to dim and conceals touched for 1 min or until another picks up the cloak after touched sheds it"',
   'Commanding Lash':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
@@ -10946,7 +10948,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R100\' Target harmed by self\'s most recent action obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on next turn to obey)"',
+      '"R100\' Target harmed by self\'s most recent action obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on its next turn to obey)"',
   'Competitive Edge':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -10954,7 +10956,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +1 attack and skill checks, or +3 immediately after a foe within 20\' critically succeeds on the same, while sustained for up to 1 min (<b>heightened 7th</b> gives +2 bonus or +4 after a foe critical success)"',
+      '"Self gains +1 attack and skill checks, increasing to +3 immediately after a foe within 20\' critically succeeds on the same, while sustained for up to 1 min (<b>heightened 7th</b> increases bonuses to +2 and +4)"',
   'Cry Of Destruction':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Evocation,Sonic ' +
@@ -10962,7 +10964,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts 1d8 HP sonic, or 1d12 if self has already inflicted damage this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP or +1d12 HP)"',
+      '"15\' cone inflicts 1d8 HP sonic, or 1d12 HP sonic if self has already damaged a foe this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP or +1d12 HP)"',
   'Darkened Eyes':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Darkness,Transmutation ' +
@@ -10970,7 +10972,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Suppresses target\'s darkvision or low-light vision for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure also blinds target until a successful save)"',
+      '"R60\' Suppresses target\'s darkvision or low-light vision for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure also blinds target until a successful save at the end of a turn)"',
   'Dazzling Flash':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Evocation,Light,Visual ' +
@@ -10978,7 +10980,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts blinded for 1 rd (Interact action ends) and dazzled for 1 min (<b>save Fortitude</b> dazzled for 1 rd; critical success negates; critical failure inflicts dazzled for 1 hr) (<b>heightened 3rd</b> 30\' cone)"',
+      '"15\' cone inflicts blinded for 1 rd (Interact action ends) and dazzled for 1 min (<b>save Fortitude</b> inflicts dazzled for 1 rd; critical success negates; critical failure inflicts dazzled for 1 hr) (<b>heightened 3rd</b> extends effects to a 30\' cone)"',
   "Death's Call":
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Necromancy ' +
@@ -10986,7 +10988,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R20\' Gives self temporary HP for 1 min equal to the level of a living creature that dies or double the level of an undead creature that is destroyed"',
+      '"R20\' Gives self temporary HP for 1 min equal to the level of a living creature that dies + %{spellModifier.%tradition} or double that for an undead creature that is destroyed"',
   'Delusional Pride':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -10994,7 +10996,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn (-2 if it fails twice) for 10 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects last for 24 hr)"',
+      '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn, or -2 if it fails twice, for 10 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects last for 24 hr)"',
   'Destructive Aura':
     'Level=4 ' +
     'Trait=Uncommon,Aura,Cleric,Evocation ' +
@@ -11018,7 +11020,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 30\' burst extinguishes non-magical flames and gives concealment and fire resistance 10 for 1 min (<b>heightened +1</b> gives +2 fire resistance)"',
+      '"R120\' 30\' burst extinguishes non-magical flames, gives concealment and fire resistance 10, and damages creatures with a water weakness for 1 min (<b>heightened +1</b> gives +2 fire resistance)"',
   "Dreamer's Call":
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
@@ -11026,7 +11028,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a suggestion and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> flat-footed and fascinated only; critical success negates; critical failure target takes no other actions)"',
+      '"R30\' Target obeys a suggestion and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> inflicts flat-footed and fascinated only; critical success negates; critical failure prevents target from taking other actions)"',
   'Enduring Might':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Cleric ' +
