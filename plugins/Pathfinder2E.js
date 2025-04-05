@@ -9450,7 +9450,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on critical failure)"',
+      '"R120\' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on a critical failure)"',
   'Phantom Pain':
     'Level=1 ' +
     'Trait=Illusion,Mental,Nonlethal ' +
@@ -9490,7 +9490,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 10d8 HP cold (double on critical success) and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)"',
+      '"R120\' Spell attack inflicts 10d8 HP cold, or double HP on a critical success, and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)"',
   'Possession':
     'Level=7 ' +
     'Trait=Uncommon,Incapacitation,Mental,Necromancy,Possession ' +
@@ -11060,7 +11060,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 2d6 HP fire; critical success inflicts double HP and 1d4 HP persistent fire (<b>heightened +1</b> inflicts +2d6 HP initial and +1d4 HP persistent)"',
+      '"R60\' Ranged spell attack inflicts 2d6 HP fire; critical success inflicts double HP and 1d4 HP persistent fire (<b>heightened +1</b> inflicts +2d6 HP initial and +1d4 HP persistent)"',
   'Flame Barrier':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Cleric ' +
@@ -11068,7 +11068,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Target gains fire resistance 15 against triggering effect (<b>heightened +2</b> gives +5 resistance)"',
+      '"R60\' Target gains fire resistance 15 against triggering fire damage (<b>heightened +2</b> gives +5 resistance)"',
   'Forced Quiet':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration,Cleric ' +
@@ -11076,7 +11076,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target can speak only at a whisper, requiring others 10\'+ away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure effects last for 10 min)"',
+      '"R30\' Target can speak only at a whisper, requiring others over 10\' away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure effects last for 10 min)"',
   'Glimpse The Truth':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Divination,Revelation ' +
@@ -11084,7 +11084,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"30\' emanation gives counteract attempts to allow self to see through illusions for 1 rd (<b>heightened 7th</b> self may reveal illusions to others)"',
+      '"Successful counteract attempts in a 30\' emanation allow self to see through illusions for 1 rd (<b>heightened 7th</b> allows others to see through illusions)"',
   "Healer's Blessing":
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Necromancy ' +
@@ -11092,7 +11092,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +2 HP from healing spells for 1 min (<b>heightened +1</b> restores +1 HP)"',
+      '"R30\' Healing spells affecting the target restore +2 HP for 1 min (<b>heightened +1</b> restores +1 HP)"',
   'Hurtling Stone':
     'Level=1 ' +
     'Trait=Uncommon,Attack,Cleric,Earth,Evocation ' +
@@ -11100,7 +11100,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 1d6+%{strengthModifier} HP bludgeoning, critical success inflicts double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R60\' Spell attack inflicts 1d6+%{strengthModifier} HP bludgeoning, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Know The Enemy':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Divination,Fortune ' +
@@ -11108,7 +11108,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"During initiative, allows self to take the better of two rolls on an immediate Recall Knowledge to remember a visible creature\'s abilities"',
+      '"Allows a Recall Knowledge check, using the better of two rolls, to remember a target\'s abilities during initiative or immediately after inflicting damage"',
   'Localized Quake':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Earth,Transmutation ' +
@@ -11116,14 +11116,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 15\' emanation or cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP)"',
+      '"Choice of 15\' emanation or 15\' cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Lucky Break':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="Self rerolls a failed save once per 10 min"',
+    'Description="Allows self to reroll a failed save once per 10 min"',
   "Magic's Vessel":
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Enchantment ' +
@@ -11147,7 +11147,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver; critical success inflicts dazzled for 1 min and double HP (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver, or dazzled for 1 min and double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Mystic Beacon':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Evocation ' +
@@ -11155,7 +11155,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Gives the next damage or healing spell cast by target within 1 rd heightened +1 effects"',
+      '"R30\' Gives heightened +1 effects to the next damage or healing spell cast by the target within 1 rd"',
   "Nature's Bounty":
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Conjuration,Plant,Positive ' +
@@ -11163,7 +11163,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates a fruit or vegetable that restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
+      '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
   'Overstuff':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Transmutation ' +
@@ -11179,7 +11179,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Self rerolls a failed save vs. a morph, petrification, or polymorph effect and uses the better result"',
+      '"Allows self to reroll a failed save vs. a morph, petrification, or polymorph effect"',
   'Perfected Mind':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration,Cleric ' +
@@ -11187,7 +11187,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Gives self a second Will save vs. a mental effect once per effect"',
+      '"Allows self an additional Will save vs. a mental effect once per effect"',
   'Positive Luminance':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Light,Necromancy,Positive ' +
@@ -11195,7 +11195,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"10\' radius light inflicts 2 HP positive to successful undead attackers for 1 min; self may increase radius by 10\' and damage by 2 HP each rd and may end the spell early to heal a living creature or damage an undead creature by double HP (<b>heightened +1</b> inflicts +0.5 HP)"',
+      '"10\' light emanation inflicts 2 HP positive to successful undead attackers for 1 min; self may increase the radius by 10\' and damage by 2 HP each rd and may end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
   'Precious Metals':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Transmutation ' +
@@ -11211,7 +11211,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Transfers 3 HP damage from an attack from target to self (<b>heightened +1</b> transfers +3 HP)"',
+      '"R30\' Transfers 3 HP attack damage from target to self (<b>heightened +1</b> transfers +3 HP)"',
   "Protector's Sphere":
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Aura,Cleric ' +
@@ -11219,7 +11219,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' emanation gives resistance 3 to all damage to self and allies (<b>heightened +1</b> gives +1 resistance)"',
+      '"15\' emanation gives resistance 3 to all damage to self and allies while sustained up to 1 min (<b>heightened +1</b> gives +1 resistance)"',
   'Pulse Of The City':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Divination,Scrying ' +
@@ -11227,7 +11227,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R25 miles; reveals information about the nearest settlement within range (<b>heightened 5th</b> increases range to 100 miles)"',
+      '"R25 miles; reveals information about the nearest settlement (<b>heightened 5th</b> increases range to 100 miles)"',
   'Pushing Gust':
     'Level=1 ' +
     'Trait=Uncommon,Air,Cleric,Conjuration ' +
@@ -11235,7 +11235,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Moves target away from self 10\' (<b>save Fortitude</b> moves target 5\'; critical success negates; critical failure moves target 10\' and knocks prone)"',
+      '"R500\' Pushes target away 10\' (<b>save Fortitude</b> pushes 5\'; critical success negates; critical failure pushes 10\' and knocks prone)"',
   'Read Fate':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Divination,Prediction ' +
@@ -11243,7 +11243,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R10\' Successful DC 6 flat check gives a one-word clue to target\'s short-term fate"',
+      '"R10\' Successful DC 6 flat check gives a one-word clue to the target\'s short-term fate"',
   'Rebuke Death':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Healing,Necromancy,Positive ' +
@@ -11251,7 +11251,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"20\' emanation restores 3d6 HP to 1 target (2/3 targets for 2/3 actions) and recovers from dying condition without suffering wounded condition (<b>heightened +1</b> restores +1d6 HP)"',
+      '"1 target per action in a 20\' emanation regains 3d6 HP and recovers from the dying condition without increasing its wounded condition (<b>heightened +1</b> restores +1d6 HP)"',
   'Retributive Pain':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Cleric,Mental,Nonlethal ' +
@@ -11259,7 +11259,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Target that damages self suffers half as many HP mental"',
+      '"R30\' Target that damaged self suffers half as many mental HP"',
   'Safeguard Secret':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Cleric,Mental ' +
@@ -11275,7 +11275,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch inflicts 1d4 HP mental and 1d4 HP persistent mental and gives self +1 attack and skill checks vs. target (<b>save Will</b> inflicts half initial HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
+      '"Touch inflicts 1d4 HP mental and 1d4 HP persistent mental and gives self +1 attack and skill checks vs. target while persistent damage continues (<b>save Will</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Scholarly Recollection':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Divination,Fortune ' +
@@ -11283,7 +11283,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Self rerolls a Seek or Recall Knowledge check and uses the better result"',
+      '"Allows self to use the best of two rolls on a Seek or Recall Knowledge check"',
   'Shared Nightmare':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -11299,7 +11299,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Gives +1 Will and +2 vs. emotion effects for 1 rd; also counteracts an existing emotion effect (<b>heightened 5th</b> gives +2 Will and +3 vs. emotion effects)"',
+      '"R30\' Gives the target +1 Will and +2 vs. emotion effects for 1 rd and attempts to counteract an existing emotion effect (<b>heightened 5th</b> gives +2 Will and +3 vs. emotion effects)"',
   'Splash Of Art':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Illusion,Visual ' +
@@ -11307,7 +11307,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5\' burst inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd, randomly chosen (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
+      '"R30\' 5\' burst randomly inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration,Cleric,Illusion ' +
@@ -11315,7 +11315,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Self Steps and becomes concealed until the end of next turn"',
+      '"Self Steps and becomes concealed until the end of next turn after a foe melee attack misses"',
   'Sweet Dream':
     'Level=1 ' +
     'Trait=Uncommon,Auditory,Cleric,Enchantment,Linguistic,Mental,Sleep ' +
@@ -11323,7 +11323,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Willing target who sleeps for 1 min gains choice of +1 intelligence- or charisma-based skill checks or +5\' Speed for remainder of 10 min"',
+      '"R30\' Willing target who sleeps for 1 min gains choice of +1 intelligence-based skill checks, +1 charisma-based skill checks, or +5\' Speed for 9 min"',
   'Take Its Course':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Necromancy ' +
@@ -11331,7 +11331,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains an immediate save vs. an affliction, with a +2 or -2 modifier, or an immediate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> may affect multiple afflictions and poisons)"',
+      '"Touched gains an immediate save with a +2 or -2 modifier vs. an affliction or an immediate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> affects multiple afflictions and poisons affecting the target)"',
   'Tempt Fate':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Divination,Fortune ' +
@@ -11339,7 +11339,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R120\' Target gains +1 on triggering save, making it either a critical success or critical failure"',
+      '"R120\' Gives the target +1 on the triggering save and turns a normal success into a critical success or a normal failure into a critical failure (<b>heightened 8th</b> gives +2 on the save)"',
   'Tidal Surge':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Evocation,Water ' +
@@ -11347,7 +11347,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Moves target 5\' on ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
+      '"R60\' Moves the target 5\' on ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
   'Touch Of Obedience':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Enchantment,Mental ' +
@@ -11363,7 +11363,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Target emits dim light and may gain +1 attack and +4 damage, +1 attack, +1 Armor Class, +1 saves, and +4 damage, or +1 Armor Class and saves, depending on the current moon phase, for 1 min"',
+      '"Target emits dim light in a 20\' radius and cycles through benefits each rd for 1 min: no benefit; +1 attack and +4 damage; +1 attack, +4 damage, +1 Armor Class, and +1 saves; +1 Armor Class and +1 saves"',
   'Touch Of Undeath':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Necromancy,Negative ' +
@@ -11379,7 +11379,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains choice of climb or swim Speed equal to Speed for 1 min (<b>heightened 5th</b> self may choose to gain fly speed)"',
+      '"Self gains choice of %{speed}\' climb Speed or %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing %{speed}\' fly Speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Illusion,Visual ' +
@@ -11395,7 +11395,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self escapes from magical holds of level less than or equal to spell, then may Stride, ignoring Speed penalties"',
+      '"Frees self from magical holds of a level less than or equal to the spell level and allows a Stride that ignores difficult terrain and Speed penalties"',
   'Unity':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Cleric,Fortune ' +
@@ -11403,7 +11403,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Allies may use self\'s saving throw vs. triggering spell or ability"',
+      '"R30\' Allows allies to use self\'s saving throw vs. the triggering spell or ability"',
   'Veil Of Confidence':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Enchantment,Mental ' +
@@ -11411,7 +11411,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Reduces any frightened condition on self by 1 for 1 min; critical failure ends spell and increases frightened condition by 1"',
+      '"Reduces any frightened condition on self by 1 for 1 min; critical failure on a subsequent save ends the spell and increases the frightened condition by 1"',
   'Vibrant Thorns':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Morph,Plant,Transmutation ' +
@@ -11419,7 +11419,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Unarmed and adjacent melee attacks on self inflict 1 HP piercing on attacker for 1 min; casting a positive spell increases damage to 1d6 for 1 turn (<b>heightened +1</b> inflicts +1 HP, +1d6 HP after positive casting)"',
+      '"Unarmed and adjacent melee attacks on self inflict 1 HP piercing on the attacker for 1 min; casting a positive spell increases the damage to 1d6 HP for 1 turn (<b>heightened +1</b> inflicts +1 HP, or +1d6 HP after casting a positive spell)"',
   'Waking Nightmare':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Fear,Mental ' +
@@ -11435,7 +11435,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Held weapon gains +1 attack and an additional die of damage on next attach before the start of next turn"',
+      '"Held weapon gains +1 attack and an additional die of damage on the next attack before the start of next turn"',
   'Word Of Freedom':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Enchantment,Mental ' +
@@ -11443,7 +11443,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Suppresses choice of a confused, frightened, grabbed, paralyzed, or restrained condition affecting target for 1 rd"',
+      '"R30\' Suppresses choice of a confused, frightened, grabbed, paralyzed, or restrained condition affecting the target for 1 rd"',
   'Word Of Truth':
     'Level=1 ' +
     'Trait=Uncommon,Cleric,Divination ' +
@@ -11451,7 +11451,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Speaking a true statement causes a glowing deity symbol to appear above self\'s head while sustained for up to 1 min"',
+      '"A glowing symbol of %{deity} appears when self speaks true statements of up to 25 words while sustained for up to 1 min"',
   'Zeal For Battle':
     'Level=4 ' +
     'Trait=Uncommon,Cleric,Emotion,Enchantment,Fortune,Mental ' +
@@ -11459,7 +11459,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R10\' Self and 1 ally both use the higher of their two initiative rolls"',
+      '"R10\' Self and an ally each use the higher of their initiative rolls"',
   'Goodberry':
     'Level=1 ' +
     'Trait=Uncommon,Druid,Healing,Necromancy ' +
@@ -11467,7 +11467,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Eating touched berry within 10 min restores 1d6+4 HP (<b>heightened +1</b> affects +1 berry)"',
+      '"Eating the touched berry within 10 min restores 1d6+4 HP, and six berries count as a full meal (<b>heightened +1</b> affects +1 berry)"',
   'Heal Animal':
     'Level=1 ' +
     'Trait=Uncommon,Druid,Healing,Necromancy,Positive ' +
@@ -11475,7 +11475,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched animal regains 1d8 HP, or R30\' animal regains 1d8+8 HP (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
+      '"Touched animal regains 1d8 HP, or using two actions restores 1d8+8 HP to an animal within 30\' (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
   'Impaling Briars':
     'Level=8 ' +
     'Trait=Uncommon,Conjuration,Druid,Plant ' +
