@@ -11491,7 +11491,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Free ' +
     'Description=' +
-      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature choice of: 60\' fly Speed; 20\' burrow speed and -10\' Speed; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; 60\' swim Speed, Shove after melee attack, and resistance 5 to fire"',
+      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature choice of: 60\' fly Speed; 20\' burrow speed, -10\' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; 60\' swim Speed, Shove after a melee attack, and resistance 5 to fire"',
   'Storm Lord':
     'Level=9 ' +
     'Trait=Uncommon,Air,Druid,Electricity,Evocation ' +
@@ -11499,7 +11499,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation produces the effects of choice of calm, foggy (conceals), rainy (-2 Acrobatics and Perception), or windy (-4 ranged attacks, flying suffers difficult terrain) weather, plus a bolt of lighting that inflicts 10d6 HP electricity each rd (<b>save basic Reflex</b>), while sustained for up to 1 min"',
+      '"100\' emanation produces a bolt of lighting that inflicts 10d6 HP electricity and deafened for 1 rd (<b>save basic Reflex</b>) each rd while sustained for up to 1 min, plus a choice of weather: calm; foggy (conceals); rainy (inflicts -2 Acrobatics and Perception); or windy (inflicts -4 ranged attacks and difficult terrain for flying)"',
   'Stormwind Flight':
     'Level=4 ' +
     'Trait=Uncommon,Air,Druid,Transmutation ' +
@@ -11507,7 +11507,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains fly Speed equal to Speed for 1 min (<b>heightened 6th</b> flying against the wind does not inflict difficult terrain effects)"',
+      '"Self gains %{speed}\' fly Speed for 1 min (<b>heightened 6th</b> negates difficult terrain effects when flying against the wind)"',
   'Tempest Surge':
     'Level=1 ' +
     'Trait=Uncommon,Air,Druid,Electricity,Evocation ' +
@@ -11515,7 +11515,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 persistent electricity (<b>save Reflex</b> inflicts HP only; critical success negates; critical failure inflicts double HP)"',
+      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 HP persistent electricity (<b>save basic Reflex</b> inflicts initial HP only)"',
   'Wild Morph':
     'Level=1 ' +
     'Trait=Uncommon,Druid,Morph,Transmutation ' +
@@ -11523,7 +11523,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of claws that inflict 1d6 HP slashing, jaws that inflict 1d8 HP piercing, resistance 5 to critical hits and precision damage, 10\' reach, or 30\' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, and claws and jaws inflict 2d6 HP persistent bleed and 2d6 HP persistent poison; <b>10th</b> may choose three effects, and claws and jaws inflict 4d6 HP persistent bleed and 4d6 HP persistent poison)"',
+      '"Self gains choice of claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape Shape</i>), or 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed dmage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Trait=Uncommon,Druid,Polymorph,Transmutation ' +
@@ -11531,22 +11531,21 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Transforms self into a pest for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an animal form)"',
+      '"Transforms self into a <i>Pest Form</i> creature for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an <i>Animal Form</i> creature)"',
   'Abundant Step':
     'Level=4 ' +
     'Trait=Uncommon,Conjuration,Monk,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
-    'Description=' +
-      '"Teleports self to %{speed>?15}\' within line of sight"',
+    'Description="Teleports self %{speed>?15}\' within line of sight"',
   'Empty Body':
     'Level=9 ' +
     'Trait=Uncommon,Conjuration,Monk,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
-    'Description="Self moves to the Ethereal Plane for 1 min"',
+    'Description="Moves self to the Ethereal Plane for 1 min"',
   'Ki Blast':
     'Level=3 ' +
     'Trait=Uncommon,Evocation,Force,Monk ' +
@@ -11554,7 +11553,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"15\' cone (2/3 actions give a 30\'/60\' cone) inflicts 2d6 HP force (2/3 actions inflicts 3d6/4d6 HP) (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP and 10\' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)"',
+      '"15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions inflicts 3d6 HP in a 30\' cone or 4d6 HP in a 60\' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)"',
   'Ki Rush':
     'Level=1 ' +
     'Trait=Uncommon,Monk,Transmutation ' +
@@ -11562,7 +11561,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self moves twice and becomes concealed until next turn"',
+      '"Allows self to move twice and become concealed until next turn"',
   'Ki Strike':
     'Level=1 ' +
     'Trait=Uncommon,Monk,Transmutation ' +
@@ -11586,7 +11585,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self regains 8 HP or may attempt to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)"',
+      '"Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)"',
   'Wild Winds Stance':
     'Level=4 ' +
     'Trait=Uncommon,Air,Evocation,Monk,Stance ' +
@@ -11594,7 +11593,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self may use R30\' unarmed strikes to inflict 1d6 HP bludgeoning and gains +2 Armor Class vs. ranged attacks until leaving the stance"',
+      '"Stance gives +2 Armor Class vs. ranged attacks and R30\' unarmed strikes that inflict 1d6 HP bludgeoning"',
   'Wind Jump':
     'Level=5 ' +
     'Trait=Uncommon,Air,Monk,Transmutation ' +
@@ -11602,7 +11601,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> self may attempt a DC 30 Acrobatics to avoid falling at the end of turn)"',
+      '"Self gains %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
   'Aberrant Whispers':
     'Level=3 ' +
     'Trait=Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
@@ -11610,7 +11609,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"5\' emanation (2/3 actions give a 10\'/15\' emanation) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
+      '"5\' emanation (2 or 3 actions give a 10\' or 15\' emanation) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases radius by 5\')"',
   'Abyssal Wrath':
     'Level=5 ' +
     'Trait=Uncommon,Evocation,Sorcerer ' +
@@ -11618,7 +11617,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' cone inflicts 4d6 HP of random type: bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"60\' cone inflicts 4d6 HP each of a random pair of damage types: bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP each)"',
   'Ancestral Memories':
     'Level=1 ' +
     'Trait=Uncommon,Divination,Sorcerer ' +
@@ -11626,7 +11625,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self becomes trained in choice of non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> becomes expert in chosen skill)"',
+      '"Self becomes trained in choice of a non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> becomes expert in the chosen skill)"',
   'Angelic Halo':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration,Aura,Good,Sorcerer ' +
@@ -11634,7 +11633,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"15\' emanation increases the effects of <i>Heal</i> by double the <i>Heal</i> spell\'s level"',
+      '"15\' emanation increases the effects of <i>Heal</i> by double the <i>Heal</i> spell\'s level for 1 min"',
   'Angelic Wings':
     'Level=3 ' +
     'Trait=Uncommon,Evocation,Light,Sorcerer ' +
