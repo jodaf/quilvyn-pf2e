@@ -12552,6 +12552,9 @@ Pathfinder2E.magicRules = function(rules, spells) {
       'rank.' + t, '=', 'Pathfinder2E.RANK_NAMES[source]'
     );
   });
+  // Define max focus points in a variable so that goodies can change it
+  rules.defineRule('focusPointMaximum', 'features.Focus Pool', '=', '3');
+  rules.defineRule('focusPoints', 'focusPointMaximum', 'v', null);
 
 };
 
