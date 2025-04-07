@@ -801,6 +801,7 @@ Pathfinder2E.CLASSES = {
       '1:Angelic:Bloodline,' +
       '1:Demonic:Bloodline,' +
       '1:Diabolic:Bloodline,' +
+       // TODO Choose type of dragon or elemental?
       '1:Draconic:Bloodline,' +
       '1:Elemental:Bloodline,' +
       '1:Fey:Bloodline,' +
@@ -2888,8 +2889,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfHelf",' +
-      '"dexterity >= 14 || multitalentedHalfHelf",' +
+      '"strength >= 14 || multitalentedHalfElf",' +
+      '"dexterity >= 14 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
     'Trait=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
@@ -2910,8 +2911,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfHelf",' +
-      '"dexterity >= 14 || multitalentedHalfHelf",' +
+      '"strength >= 14 || multitalentedHalfElf",' +
+      '"dexterity >= 14 || multitalentedHalfElf",' +
       '"levels.Monk == 0"',
   'Basic Kata':
     'Trait=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
@@ -2933,7 +2934,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Ranger ' +
     'Require=' +
       '"level >= 2",' +
-      '"dexterity >= 14 || multitalentedHalfHelf",' +
+      '"dexterity >= 14 || multitalentedHalfElf",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
     'Trait=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
@@ -8512,7 +8513,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Improves quality of touched 1 gallon of water or 5 pounds of food for 1 hr and attemtps to counteract any poison (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>"',
+      '"Improves quality of touched 1 gallon of water or 5 pounds of food for 1 hr and attempts to counteract any poison (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>"',
   'Enlarge':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
@@ -8639,7 +8640,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates 4 acorns that can be thrown 30\', inflicting 4d6 HP fire in a 6\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
+      '"Creates 4 acorns that can be thrown 30\', inflicting 4d6 HP fire in a 5\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 initial and 3d6 for 1 min)"',
   'Fire Shield':
     'Level=4 ' +
     'Trait=Evocation,Fire ' +
@@ -8647,7 +8648,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)"',
+      '"Self gains cold resistance 5, and melee attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
     'Trait=Evocation,Fire ' +
@@ -8861,7 +8862,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"R500\' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion can mask or incorporate structures)"',
+      '"R500\' 50\' burst illusion changes the look, sound, feel, and smell of the terrain until next daily prep (<b>heightened 5th</b> the illusion can mask or incorporate structures)"',
   'Harm':
     'Level=1 ' +
     'Trait=Necromancy,Negative ' +
@@ -8869,7 +8870,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"<b>(1)</b> Touched suffers 1d%{harmSpellDie} HP negative, <b>(2)</b> R30\' target suffers 1d%{harmSpellDie} HP negative, or <b>(3)</b> 30\' emanation inflicts 1d%{harmSpellDie} HP negative; undead regain 1d%{harmSpellDie} HP, +8 HP for <b>(2)</b></b> (<b>heightened +1</b> inflicts or restores +1d%{harmSpellDie} HP and +8 HP for <b>(2)</b>)</b> "',
+      '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) suffers 1d%{harmSpellDie} HP negative (<b>save basic Fortitude</b>); undead instead regain 1d%{harmSpellDie} HP, or 1d%{harmSpellDie}+8 HP with 2 actions (<b>heightened +1</b> restores or inflicts +1d%{harmSpellDie} HP; undead regain +8 HP with 2 actions)"',
   'Haste':
     'Level=3 ' +
     'Trait=Transmutation ' +
@@ -8885,7 +8886,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=0 ' +
     'Description=' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Touched regains 1d%{healSpellDie} HP, ' + Pathfinder2E.ACTION_MARKS['2'] + ' R30\' target regains 1d%{healSpellDie}+8 HP, or ' + Pathfinder2E.ACTION_MARKS['3'] + ' 30\' emanation restores 1d%{healSpellDie} HP; undead suffer 1d%{healSpellDie} HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP and +8 HP for <b>(2)</b>)</b> "',
+      '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) regains 1d%{healSpellDie} HP, or 1d%{healSpellDie}+8 HP with 2 actions; undead instead suffer 1d%{healSpellDie} HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP; restores +8 HP with 2 actions)"',
   'Heroism':
     'Level=3 ' +
     'Trait=Enchantment,Mental ' +
@@ -11483,7 +11484,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain each rd while sustained for up to 1 min"',
+      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'Trait=Uncommon,Conjuration,Druid ' +
@@ -11523,7 +11524,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape Shape</i>), or 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed dmage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains choice of claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape Shape</i>), or 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Trait=Uncommon,Druid,Polymorph,Transmutation ' +
@@ -11641,7 +11642,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may fly at full Speed and casts a 30\' radius bright light for 3 rd (<b>heightened 5th</b> effects last for 1 min)"',
+      '"Self gains a %{speed}\' fly Speed and shines a 30\' radius bright light for 3 rd (<b>heightened 5th</b> effects last for 1 min)"',
   'Arcane Countermeasure':
     'Level=5 ' +
     'Trait=Uncommon,Abjuration,Sorcerer ' +
@@ -11649,7 +11650,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R120\' Reduces target spell\'s level by 1 if heightened and gives that spell\'s targets +2 saves, skill checks, Armor Class, and DC against it"',
+      '"R120\' Reduces the target spell\'s heightened level by 1 and gives the spell\'s targets +2 saves, skill checks, Armor Class, and DC against it"',
   'Celestial Brand':
     'Level=5 ' +
     'Trait=Uncommon,Curse,Necromancy,Sorcerer ' +
@@ -11657,7 +11658,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Self and allies gain +1 attacks and skill checks vs. evil target, and attacks by good creatures inflict +1d4 HP good (<b>heightened +2</b> good creature attacks inflict +1 HP good)"',
+      '"R30\' Self and allies gain +1 attacks and skill checks vs. the evil target, and attacks by good creatures inflict +1d4 HP good, for 1 rd (<b>heightened +2</b> good creature attacks inflict +1 HP good)"',
   'Diabolic Edict':
     'Level=1 ' +
     'Trait=Uncommon,Enchantment,Sorcerer ' +
@@ -11665,7 +11666,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target performs stated task, gaining +1 attack and skill checks, for 1 rd; refusal inflicts -1 attack and skill checks for 1 rd"',
+      '"R30\' Willing target performs a stated task, gaining +1 attack and skill checks, for 1 rd; refusal inflicts -1 attack and skill checks for 1 rd"',
   'Dragon Breath':
     'Level=3 ' +
     'Trait=Uncommon,Evocation,Sorcerer ' +
@@ -11681,7 +11682,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self\'s fingers inflict 1d6 HP slashing and 1d6 HP energy, and self gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> inflicts 2d6 HP slashing and gains resistance 10; <b>9th</b> inflicts 3d6 HP slashing and gains resistance 15)"',
+      '"Claws inflict 1d6 HP slashing and 1d6 HP energy, and self gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'Trait=Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -11689,7 +11690,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains %{Speed>?60}\' fly Speed for 1 min (<b>heightened 8th</b> effects last for 10 min)"',
+      '"Self gains a %{Speed>?60}\' fly Speed for 1 min (<b>heightened 8th</b> effects last for 10 min)"',
   'Drain Life':
     'Level=3 ' +
     'Trait=Uncommon,Necromancy,Negative,Sorcerer ' +
@@ -11713,7 +11714,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self may fly at full Speed, swim at full Speed and breathe water, or burrow at 10\' for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
+      '"Self gains a %{speed}\' fly Speed, a %{speed}\' swim Speed and water breathing, or a 10\' burrow Speed for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Trait=Uncommon,Attack,Evocation,Sorcerer ' +
@@ -11721,7 +11722,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'Trait=Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
@@ -11737,7 +11738,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Duration of subsequent targeted spell of less than maximum spell level increases from 1 min to 10 min"',
+      '"Increases the duration of a subsequent targeted spell of less than maximum spell level from 1 min to 10 min"',
   'Faerie Dust':
     'Level=1 ' +
     'Trait=Uncommon,Enchantment,Mental,Sorcerer ' +
@@ -11745,7 +11746,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst (2/3 actions give a 10\'/15\' burst) inflicts loss of Reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5\')"',
+      '"R30\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts loss of Reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure also inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases burst radius by 5\')"',
   'Fey Disappearance':
     'Level=3 ' +
     'Trait=Uncommon,Enchantment,Sorcerer ' +
@@ -11753,14 +11754,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self becomes invisible and may ignore natural difficult terrain until the end of next turn; performing a hostile action ends invisibility (<b>heightened 5th</b> hostile action does not end invisibility)"',
+      '"Self becomes invisible and moves normally over natural difficult terrain until the end of next turn; performing a hostile action ends the invisibility (<b>heightened 5th</b> a hostile action does not end the invisibility)"',
   'Fey Glamour':
     'Level=5 ' +
     'Trait=Uncommon,Illusion,Sorcerer ' +
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="R30\' 30\' burst cloaks 10 targets for 10 min"',
+    'Description="R30\' 30\' burst disguises 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
     'Trait=Uncommon,Morph,Necromancy,Sorcerer ' +
@@ -11768,7 +11769,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self\'s bite inflicts 1d8 HP piercing, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
+      '"Bite inflicts 1d8 HP piercing, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
     'Trait=Uncommon,Necromancy,Sorcerer ' +
@@ -11776,7 +11777,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10\' Speed for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' 20\' radius inflicts 6d6 HP slashing and -10\' Speed for 1 rd for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
     'Trait=Uncommon,Evil,Evocation,Fire,Sorcerer ' +
@@ -11792,7 +11793,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' radius inflicts frightened 1 (<b>save Will</b> negates; critical failure inflicts frightened 2) (<b>heightened 5th</b> inflicts frightened 1/2/3 and fleeing for 1 rd on save success/failure/critical failure)"',
+      '"30\' radius inflicts frightened 1 (<b>save Will</b> negates; critical failure inflicts frightened 2) (<b>heightened 5th</b> inflicts frightened 1, 2, or 3 and fleeing for 1 rd on save success, failure, or critical failure)"',
   'Jealous Hex':
     'Level=1 ' +
     'Trait=Uncommon,Curse,Necromancy,Sorcerer ' +
@@ -11800,7 +11801,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target\'s highest ability modifier, until target saves up to 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
+      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target\'s highest ability modifier, until target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
     'Trait=Uncommon,Conjuration,Olfactory,Sorcerer ' +
@@ -11808,7 +11809,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 5\' burst (10\'/15\' burst for 2/3 actions) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases burst radius by 5\' and inflicts +1d6 HP)"',
+      '"R120\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases radius by 5\' and inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
     'Trait=Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -11816,7 +11817,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Extends self reach for touch spells and unarmed Strikes to 10\', and adding another action to touch spells extends reach to 20\', for 1 min (<b>heightened +2</b> adding another action extends touch spell reach to 30\')"',
+      '"Extends reach for touch spells and unarmed Strikes to 10\' for 1 min; adding an action to touch spells extends reach to 20\' (<b>heightened +2</b> adding an action gives +10\' touch spell reach)"',
   "Undeath's Blessing":
     'Level=1 ' +
     'Trait=Uncommon,Necromancy,Negative,Sorcerer ' +
@@ -11824,7 +11825,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched gains undead responses to <i>Heal</i> and <i>Harm</i> for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
+      '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
   'Unusual Anatomy':
     'Level=5 ' +
     'Trait=Uncommon,Polymorph,Sorcerer,Transmutation ' +
@@ -11832,7 +11833,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on non-reach melee attackers for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP acid)"',
+      '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on successful non-reach melee attacks for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP)"',
   "You're Mine":
     'Level=5 ' +
     'Trait=Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
@@ -11840,15 +11841,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure allows control for 1 rd) (<b>heightened 7th</b> controls for 1 rd; critical failure allows control for 1 min or until save)"',
+      '"R30\' Inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure gives control for 1 rd) (<b>heightened 7th</b> gives control for 1 rd; critical failure gives control for 1 min or until target saves)"',
   'Augment Summoning':
     'Level=1 ' +
     'Trait=Uncommon,Conjuration,Wizard ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description=' +
-      '"R30\' Target summoned creature gains +1 to all checks for 1 min"',
+    'Description="R30\' Summoned target gains +1 on all checks for 1 min"',
   'Call Of The Grave':
     'Level=1 ' +
     'Trait=Uncommon,Arcane,Attack,Necromancy,Wizard ' +
@@ -11856,7 +11856,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts sickened 1 (critical success sickened 2 and slowed 1)"',
+      '"R30\' Spell attack inflicts sickened 1 (critical success sickened 2 and slowed 1 until no longer sickened)"',
   'Charming Words':
     'Level=1 ' +
     'Trait=Uncommon,Auditory,Enchantment,Incapacitation,Linguistic,Mental,Wizard ' +
@@ -11872,7 +11872,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Teleports self to a visible location within 20\' (<b>heightened +1</b> increases teleport distance by 5\')"',
+      '"Teleports self to a visible location within 20\' (<b>heightened +1</b> gives +5\' teleport distance)"',
   "Diviner's Sight":
     'Level=1 ' +
     'Trait=Uncommon,Concentrate,Divination,Fortune,Wizard ' +
@@ -11896,7 +11896,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type in a 10\' emanation"',
+      '"Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type on foes in a 10\' emanation"',
   'Energy Absorption':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration,Wizard ' +
@@ -11920,7 +11920,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R500\' Self makes a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', inflicting +\'+(spellModifier.%tradition-strengthModifier)+\' damage\':spellModifier.%tradition<strengthModifier?\', inflicting \'+(spellModifier.%tradition-strengthModifier)+\' damage\':\'\'}"',
+      '"R500\' Makes a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', inflicting +\'+(spellModifier.%tradition-strengthModifier)+\' damage\':spellModifier.%tradition<strengthModifier?\', inflicting \'+(spellModifier.%tradition-strengthModifier)+\' damage\':\'\'}; a critical hit inflicts the critical specialization effect"',
   'Invisibility Cloak':
     'Level=4 ' +
     'Trait=Uncommon,Illusion,Wizard ' +
@@ -11928,7 +11928,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes invisible for 10 min or until it uses a hostile action (<b>heightened 6th</b> lasts 10 min; <b>8th</b> lasts 1 hr)"',
+      '"Self becomes invisible for 1 min or until using a hostile action (<b>heightened 6th</b> effects last 10 min; <b>8th</b> effects last 1 hr)"',
   'Life Siphon':
     'Level=4 ' +
     'Trait=Uncommon,Healing,Necromancy,Wizard ' +
@@ -11936,7 +11936,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Gives self temporary HP equal to 1d8 HP per spell level as a Reaction to casting a necromancy spell"',
+      '"Casting a necromancy spell restores 1d8 HP per spell level to self"',
   'Physical Boost':
     'Level=1 ' +
     'Trait=Uncommon,Transmutation,Wizard ' +
@@ -11944,7 +11944,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within the next rd"',
+      '"Touched gains +2 on the next Acrobatics check, Athletics check, Fortitude save, or Reflex save within the next rd"',
   'Protective Ward':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration,Aura,Wizard ' +
@@ -11952,7 +11952,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"5\' emanation gives +1 Armor Class while sustained for up to 1 min; radius increases by 5\' for every sustain"',
+      '"5\' emanation gives +1 Armor Class to self and allies while sustained for up to 1 min; each Sustain increases the radius by 5\'"',
   'Shifting Form':
     'Level=4 ' +
     'Trait=Uncommon,Morph,Transmutation,Wizard ' +
@@ -11960,7 +11960,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of +20\' Speed, climb or swim at half Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
+      '"Self gains choice of +20\' Speed, a %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
   'Vigilant Eye':
     'Level=4 ' +
     'Trait=Uncommon,Divination,Wizard ' +
@@ -11968,14 +11968,14 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R500\' Creates an invisible sensor that allows self to see from the target location for 1 hr"',
+      '"R500\' Creates an invisible sensor that allows self to see from the target location for 1 hr; spending a Focus Point extends the duration to 2 hr"',
   'Warped Terrain':
     'Level=1 ' +
     'Trait=Uncommon,Illusion,Visual,Wizard ' +
     'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
-    'Description="60\' 5\' burst (10\'/15\' burst for 2/3 actions) appears to be difficult terrain for 1 min (<b>heightened 4th</b> may affect air instead of surface)"'
+    'Description="R60\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) illusion inflicts difficult terrain for 1 min (<b>heightened 4th</b> affects air instead of surface)"'
 };
 Pathfinder2E.WEAPONS = {
 
@@ -13544,13 +13544,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
   } else if(name == 'Barbarian') {
     rules.defineRule('combatNotes.draconicRage',
       '', '=', '"fire"',
-      'features.Draconic Rage (Black)', '=', '"acid"',
-      'features.Draconic Rage (Blue)', '=', '"electricity"',
-      'features.Draconic Rage (Green)', '=', '"poison"',
-      'features.Draconic Rage (White)', '=', '"cold"',
-      'features.Draconic Rage (Bronze)', '=', '"electricity"',
-      'features.Draconic Rage (Copper)', '=', '"acid"',
-      'features.Draconic Rage (Silver)', '=', '"cold"'
+      'features.Dragon Instinct (Black)', '=', '"acid"',
+      'features.Dragon Instinct (Blue)', '=', '"electricity"',
+      'features.Dragon Instinct (Green)', '=', '"poison"',
+      'features.Dragon Instinct (White)', '=', '"cold"',
+      'features.Dragon Instinct (Bronze)', '=', '"electricity"',
+      'features.Dragon Instinct (Copper)', '=', '"acid"',
+      'features.Dragon Instinct (Silver)', '=', '"cold"'
     );
     rules.defineRule('combatNotes.rage',
       '', '=', '2',
@@ -15575,7 +15575,8 @@ Pathfinder2E.featureListRules = function(
         if(m)
           choices += '+' + m[1];
         else if(matchInfo[1] == 'Skill')
-          rules.defineRule('skillIncreases.' + element, note, '+=', '1');
+          rules.defineRule
+            ('skillIncreases.' + element, setName + '.' + feature, '+=', '1');
         else
           rules.defineRule('fixedBoosts.' + element.toLowerCase(),
             setName + '.' + feature, '+=', flaw ? '-1' : '1'

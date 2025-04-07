@@ -376,7 +376,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Abundant Step (O4 Con): <b>(1)</b> Teleports self to 25' within line of sight</td>
+      <td>Abundant Step (O4 Con): <b>(1)</b> Teleports self 25' within line of sight</td>
     </tr><tr style="text-align:left">
       <td>Abyssal Plague (O5 Nec): <b>(2)</b> Touch inflicts drained 1 and cannot recover for 1 day or until cured (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day; critical success negates; critical failure inflicts drained 2)</td>
     </tr><tr style="text-align:left">
@@ -428,7 +428,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Color Spray (O1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Command (O1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
+      <td>Command (O1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Comprehend Language (O2 Div): <b>(2)</b> R30' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
@@ -436,7 +436,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Continual Flame (O2 Evo): <b>(3)</b> Touched object emits a heatless flame until dismissed</td>
     </tr><tr style="text-align:left">
-      <td>Counter Performance (O1 Enc): <b>(R)</b> Allies in a 60' radius may substitute self Performance roll for save</td>
+      <td>Counter Performance (O1 Enc): <b>(R)</b> Allies in a 60' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect</td>
     </tr><tr style="text-align:left">
       <td>Crushing Despair (O5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
@@ -486,7 +486,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Duplicate Foe (O7 Con): <b>(3)</b> R30' Creates a minion copy of a target up to level 15 with 70 HP and no special abilities while sustained for up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)</td>
     </tr><tr style="text-align:left">
-      <td>Empty Body (O9 Con): <b>(2)</b> Self moves to the Ethereal Plane for 1 min</td>
+      <td>Empty Body (O9 Con): <b>(2)</b> Moves self to the Ethereal Plane for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Energy Aegis (O7 Abj): <b>(1 min)</b> Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened 9th</b> gives resistance 10)</td>
     </tr><tr style="text-align:left">
@@ -502,7 +502,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>False Vision (O5 Ill): <b>(10 min)</b> Controls the image shown by scrying within a 100' burst until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Fatal Aria (O10 Enc): <b>(1)</b> R30' Inflicts death (target up to level 16 or 50 HP), 0 HP and dying 1 (target level 17), or 50 HP (target level 18+)</td>
+      <td>Fatal Aria (O10 Enc): <b>(1)</b> R30' Inflicts death on a target up to level 16 or 50 HP, 0 HP and dying 1 on a level 17 target, or 50 HP on a level 18+ target</td>
     </tr><tr style="text-align:left">
       <td>Fear (O1 Enc): <b>(2)</b> R30' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and fleeing for 1 rd) (<b>heightened 3rd</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
@@ -540,7 +540,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hallucination (O5 Ill): <b>(2)</b> R30' Changes target's perception of an object or group for 1 hr (<b>save Will</b> target knows that it's hallucinating; critical success negates; critical failure inflicts -4 saves to disbelieve) (<b>heightened 6th</b> affects 10 targets or effects last until next daily prep; <b>8th</b> affects any number of targets or effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Hallucinatory Terrain (O4 Ill): <b>(10 min)</b> R500' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion can mask or incorporate structures)</td>
+      <td>Hallucinatory Terrain (O4 Ill): <b>(10 min)</b> R500' 50' burst illusion changes the look, sound, feel, and smell of the terrain until next daily prep (<b>heightened 5th</b> the illusion can mask or incorporate structures)</td>
     </tr><tr style="text-align:left">
       <td>Haste (O3 Tra): <b>(2)</b> R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
     </tr><tr style="text-align:left">
@@ -564,13 +564,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Illusory Scene (O5 Ill): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Competence (OC1 Enc): <b>(1)</b> R60' Self can use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
+      <td>Inspire Competence (OC1 Enc): <b>(1)</b> R60' Allows using Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Courage (OC1 Enc): <b>(1)</b> 60' emanation gives +1 attack, damage, and saves vs. fear for 1 rd</td>
+      <td>Inspire Courage (OC1 Enc): <b>(1)</b> 60' emanation gives allies +1 attack, damage, and saves vs. fear for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Defense (OC1 Enc): <b>(1)</b> 60' emanation gives +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd</td>
+      <td>Inspire Defense (OC1 Enc): 1</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Heroics (O4 Enc): <b>(F)</b> Self can use Performance to increase the effects of a subsequent Inspire Courage or Inspire Defense to +2 (critical success gives +3; failure does not expend a Focus Point)</td>
+      <td>Inspire Heroics (O4 Enc): <b>(F)</b> A successful Performance check increases the effects of a subsequent <i>Inspire Courage</i> or <i>Inspire Defense</i> to +2, or +3 on a critical success; failure does not expend a Focus Point</td>
     </tr><tr style="text-align:left">
       <td>Invisibility (O2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end)</td>
     </tr><tr style="text-align:left">
@@ -578,9 +578,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Item Facade (O1 Ill): <b>(2)</b> Makes the target object up to a 10' cube appear decrepit or perfect for 1 hr (<b>heightened 2nd</b> effects last for 24 hr; <b>3rd</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Ki Blast (O3 Evo): <b>(1)</b> 15' cone (2/3 actions give a 30'/60' cone) inflicts 2d6 HP force (2/3 actions inflicts 3d6/4d6 HP) (<b>save Fortitude</b> inflicts half HP; critical success negates; critical failure inflicts double HP and 10' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)</td>
+      <td>Ki Blast (O3 Evo): <b>(1)</b> 15' cone inflicts 2d6 HP force and a 5' push (2 or 3 actions inflicts 3d6 HP in a 30' cone or 4d6 HP in a 60' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)</td>
     </tr><tr style="text-align:left">
-      <td>Ki Rush (O1 Tra): <b>(1)</b> Self moves twice and becomes concealed until next turn</td>
+      <td>Ki Rush (O1 Tra): <b>(1)</b> Allows self to move twice and become concealed until next turn</td>
     </tr><tr style="text-align:left">
       <td>Ki Strike (O1 Tra): <b>(1)</b> Gives self +1 attack and +1d6 HP force, lawful, negative, or positive with an unarmed Strike or Flurry Of Blows (<b>heightened +4</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
@@ -592,13 +592,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Light (OC1 Evo): <b>(2)</b> Touched object lights a 20' radius until next daily prep (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
-      <td>Lingering Composition (O1 Enc): <b>(F)</b> A successful Performance check increases the duration of a subsequent composition cantrip to 3 rd (critical success 4 rd; failure does not expend a Focus Point)</td>
+      <td>Lingering Composition (O1 Enc): <b>(F)</b> A successful Performance check increases the duration of a subsequent cantrip composition to 3 rd, or 4 rd on a critical success; failure does not expend a Focus Point</td>
     </tr><tr style="text-align:left">
       <td>Locate (O3 Div): <b>(10 min)</b> R500' Reveals the direction to a named object or the nearest object of a named type while sustained; effects are blocked by lead and running water (<b>heightened 5th</b> reveals the direction to a creature or ancestry)</td>
     </tr><tr style="text-align:left">
       <td>Lock (O1 Abj): <b>(2)</b> Touched latch or lock opens only for self until next daily prep; a successful DC 30 Athletics or Thievery check (or lock DC + 4 if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Loremaster's Etude (O1 Div): <b>(F)</b> R30' Target may take the better of two Recall Knowledge rolls</td>
+      <td>Loremaster's Etude (O1 Div): <b>(F)</b> R30' Target may take the better of two rolls on the triggering Recall Knowledge</td>
     </tr><tr style="text-align:left">
       <td>Mage Armor (O1 Abj): <b>(2)</b> Self gains +1 Armor Class with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 Armor Class; <b>8th</b> gives +2 saves; <b>10th</b> gives +3 Armor Class and saves)</td>
     </tr><tr style="text-align:left">
@@ -654,7 +654,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Phantasmal Calamity (O6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Killer (O4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on critical failure)</td>
+      <td>Phantasmal Killer (O4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on a critical failure)</td>
     </tr><tr style="text-align:left">
       <td>Phantom Pain (O1 Ill): <b>(2)</b> R30' Inflicts 2d4 HP mental, 1d4 HP persistent mental, and sickened 1 for 1 min or until no longer sickened (<b>save Will</b> inflicts initial HP only; critical success negates; critical failure inflicts sickened 2) (<b>heightened +1</b> inflicts +2d4 HP initial and +1d4 HP persistent)</td>
     </tr><tr style="text-align:left">
@@ -746,7 +746,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Soothe (O1 Enc): <b>(2)</b> R30' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Soothing Ballad (O7 Enc): <b>(2)</b> R30' Self and 9 allies gain choice of counteracted fear effects, counteracted paralysis, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)</td>
+      <td>Soothing Ballad (O7 Enc): <b>(2)</b> R30' Self and 9 allies gain a choice of a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Sound Burst (O2 Evo): <b>(2)</b> R30' 10' burst inflicts 2d10 HP sonic and deafened for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, deafened for 1 min, and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)</td>
     </tr><tr style="text-align:left">
@@ -842,11 +842,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Weird (O9 Ill): <b>(2)</b> R120' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)</td>
     </tr><tr style="text-align:left">
-      <td>Wholeness Of Body (O2 Nec): <b>(1)</b> Self regains 8 HP or may attempt to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)</td>
+      <td>Wholeness Of Body (O2 Nec): <b>(1)</b> Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wild Winds Stance (O4 Evo): <b>(1)</b> Self may use R30' unarmed strikes to inflict 1d6 HP bludgeoning and gains +2 Armor Class vs. ranged attacks until leaving the stance</td>
+      <td>Wild Winds Stance (O4 Evo): <b>(1)</b> Stance gives +2 Armor Class vs. ranged attacks and R30' unarmed strikes that inflict 1d6 HP bludgeoning</td>
     </tr><tr style="text-align:left">
-      <td>Wind Jump (O5 Tra): <b>(1)</b> Self gains 25' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> self may attempt a DC 30 Acrobatics to avoid falling at the end of turn)</td>
+      <td>Wind Jump (O5 Tra): <b>(1)</b> Self gains 25' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)</td>
     </tr><tr style="text-align:left">
       <td>Zealous Conviction (O6 Enc): <b>(2)</b> R30' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)</td>
     </tr><tr style="text-align:left">

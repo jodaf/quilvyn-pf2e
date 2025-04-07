@@ -386,7 +386,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Antimagic Field (A8 Abj): <b>(3)</b> 10' emanation disables spells and magic items while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Augment Summoning (A1 Con): <b>(1)</b> R30' Target summoned creature gains +1 to all checks for 1 min</td>
+      <td>Augment Summoning (A1 Con): <b>(1)</b> R30' Summoned target gains +1 on all checks for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Baleful Polymorph (A6 Tra): <b>(2)</b> R30' Transforms the target's form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure makes permanent and includes mind)</td>
     </tr><tr style="text-align:left">
@@ -404,7 +404,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Burning Hands (A1 Evo): <b>(2)</b> 15' cone inflicts 2d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Call Of The Grave (A1 Nec): <b>(2)</b> R30' Spell attack inflicts sickened 1 (critical success sickened 2 and slowed 1)</td>
+      <td>Call Of The Grave (A1 Nec): <b>(2)</b> R30' Spell attack inflicts sickened 1 (critical success sickened 2 and slowed 1 until no longer sickened)</td>
     </tr><tr style="text-align:left">
       <td>Cataclysm (A10 Evo): <b>(2)</b> R1000' 60' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)</td>
     </tr><tr style="text-align:left">
@@ -430,7 +430,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Color Spray (A1 Ill): <b>(2)</b> 15' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)</td>
     </tr><tr style="text-align:left">
-      <td>Command (A1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
+      <td>Command (A1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Comprehend Language (A2 Div): <b>(2)</b> R30' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
@@ -472,7 +472,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Dimensional Lock (A7 Abj): <b>(2)</b> R120' 60' burst attempts to counteract any teleportation or planar travel until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Dimensional Steps (A4 Con): <b>(1)</b> Teleports self to a visible location within 20' (<b>heightened +1</b> increases teleport distance by 5')</td>
+      <td>Dimensional Steps (A4 Con): <b>(1)</b> Teleports self to a visible location within 20' (<b>heightened +1</b> gives +5' teleport distance)</td>
     </tr><tr style="text-align:left">
       <td>Disappearance (A8 Ill): <b>(2)</b> Touched becomes undetectable by any sense for 10 min</td>
     </tr><tr style="text-align:left">
@@ -512,7 +512,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Elemental Form (A5 Tra): <b>(2)</b> Self becomes choice of Medium elemental with 10 temporary HP, Armor Class 31, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> becomes a Large creature with 10' reach, 15 temporary HP, Armor Class 34, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> becomes a Huge creature with 15' reach, 20 temporary HP, Armor Class 34, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Elemental Tempest (A4 Evo): <b>(1)</b> Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type in a 10' emanation</td>
+      <td>Elemental Tempest (A4 Evo): <b>(1)</b> Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type on foes in a 10' emanation</td>
     </tr><tr style="text-align:left">
       <td>Endure Elements (A2 Abj): <b>(10 min)</b> Protects touched from choice of severe cold or heat until next daily prep (<b>heightened 3rd</b> protects from both cold and heat; <b>5th</b> protects from extreme cold and heat</b>)</td>
     </tr><tr style="text-align:left">
@@ -538,7 +538,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Fiery Body (A7 Tra): <b>(2)</b> Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on non-reach melee attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, can cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on non-reach melee attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60')</td>
     </tr><tr style="text-align:left">
-      <td>Fire Shield (A4 Evo): <b>(2)</b> Self gains cold resistance 5, and unarmed attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)</td>
+      <td>Fire Shield (A4 Evo): <b>(2)</b> Self gains cold resistance 5, and melee attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Fireball (A3 Evo): <b>(2)</b> R500' 20' burst inflicts 6d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
@@ -584,9 +584,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hallucination (A5 Ill): <b>(2)</b> R30' Changes target's perception of an object or group for 1 hr (<b>save Will</b> target knows that it's hallucinating; critical success negates; critical failure inflicts -4 saves to disbelieve) (<b>heightened 6th</b> affects 10 targets or effects last until next daily prep; <b>8th</b> affects any number of targets or effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Hallucinatory Terrain (A4 Ill): <b>(10 min)</b> R500' Illusion changes look, sound, feel, and smell of terrain until next daily prep (<b>heightened 5th</b> illusion can mask or incorporate structures)</td>
+      <td>Hallucinatory Terrain (A4 Ill): <b>(10 min)</b> R500' 50' burst illusion changes the look, sound, feel, and smell of the terrain until next daily prep (<b>heightened 5th</b> the illusion can mask or incorporate structures)</td>
     </tr><tr style="text-align:left">
-      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Self makes a remote attack with a melee weapon</td>
+      <td>Hand Of The Apprentice (A1 Evo): <b>(1)</b> R500' Makes a remote attack with a melee weapon; a critical hit inflicts the critical specialization effect</td>
     </tr><tr style="text-align:left">
       <td>Haste (A3 Tra): <b>(2)</b> R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
     </tr><tr style="text-align:left">
@@ -612,7 +612,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Invisibility (A2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end)</td>
     </tr><tr style="text-align:left">
-      <td>Invisibility Cloak (A4 Ill): <b>(2)</b> Self becomes invisible for 10 min or until it uses a hostile action (<b>heightened 6th</b> lasts 10 min; <b>8th</b> lasts 1 hr)</td>
+      <td>Invisibility Cloak (A4 Ill): <b>(2)</b> Self becomes invisible for 1 min or until using a hostile action (<b>heightened 6th</b> effects last 10 min; <b>8th</b> effects last 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Invisibility Sphere (A3 Ill): <b>(2)</b> 10' emanation makes creatures within invisible for 10 min or until any affected performs a hostile act (<b>heightened 5th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
@@ -624,7 +624,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Levitate (A3 Evo): <b>(2)</b> Self can use a concentrate action to move the touched object or willing creature up or down 10' for 5 min</td>
     </tr><tr style="text-align:left">
-      <td>Life Siphon (A4 Nec): <b>(R)</b> Gives self temporary HP equal to 1d8 HP per spell level as a Reaction to casting a necromancy spell</td>
+      <td>Life Siphon (A4 Nec): <b>(R)</b> Casting a necromancy spell restores 1d8 HP per spell level to self</td>
     </tr><tr style="text-align:left">
       <td>Light (AC1 Evo): <b>(2)</b> Touched object lights a 20' radius until next daily prep (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
@@ -698,15 +698,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Phantasmal Calamity (A6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Killer (A4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on critical failure)</td>
+      <td>Phantasmal Killer (A4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on a critical failure)</td>
     </tr><tr style="text-align:left">
       <td>Phantom Steed (A2 Con): <b>(10 min)</b> R30' Conjures a magical mount (Armor Class 20, HP 10, 40' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount can also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80' Speed and can fly)</td>
     </tr><tr style="text-align:left">
-      <td>Physical Boost (A1 Tra): <b>(1)</b> Touched gains +2 on next Acrobatics, Athletics, Fortitude, or Reflex check within the next rd</td>
+      <td>Physical Boost (A1 Tra): <b>(1)</b> Touched gains +2 on the next Acrobatics check, Athletics check, Fortitude save, or Reflex save within the next rd</td>
     </tr><tr style="text-align:left">
       <td>Plane Shift (A7 Con): <b>(10 min)</b> Transports self and 8 willing targets to an imprecise location on a different plane</td>
     </tr><tr style="text-align:left">
-      <td>Polar Ray (A8 Evo): <b>(2)</b> R120' Spell attack inflicts 10d8 HP cold (double on critical success) and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)</td>
+      <td>Polar Ray (A8 Evo): <b>(2)</b> R120' Spell attack inflicts 10d8 HP cold, or double HP on a critical success, and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Power Word Blind (A7 Enc): <b>(1)</b> R30' Permanently blinds a target of level 11 or lower, blinds a level 12 or 13 target for 1d4 min, or dazzles a target of level 14 or higher for 1 min (<b>heightened +1</b> increases outcome levels by 2)</td>
     </tr><tr style="text-align:left">
@@ -728,7 +728,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Project Image (A7 Ill): <b>(2)</b> R30' Creates an illusory copy of self, with the same Armor Class and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain to 10 min)</td>
     </tr><tr style="text-align:left">
-      <td>Protective Ward (A1 Abj): <b>(1)</b> 5' emanation gives +1 Armor Class while sustained for up to 1 min; radius increases by 5' for every sustain</td>
+      <td>Protective Ward (A1 Abj): <b>(1)</b> 5' emanation gives +1 Armor Class to self and allies while sustained for up to 1 min; each Sustain increases the radius by 5'</td>
     </tr><tr style="text-align:left">
       <td>Prying Eye (A5 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows self to see from the target location and that can be moved 30' each rd while sustained</td>
     </tr><tr style="text-align:left">
@@ -774,7 +774,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Shield (AC1 Abj): <b>(1)</b> Self gains +1 Armor Class for 1 rd; may end spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)</td>
     </tr><tr style="text-align:left">
-      <td>Shifting Form (A4 Tra): <b>(1)</b> Self gains choice of +20' Speed, climb or swim at half Speed, darkvision, 60' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min</td>
+      <td>Shifting Form (A4 Tra): <b>(1)</b> Self gains choice of +20' Speed, a 12' climb or swim Speed, darkvision, 60' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Shocking Grasp (A1 Evo): <b>(2)</b> Touch inflicts 2d12 HP electricity; gives +1 attack and inflicts 1d4 HP persistent electricity vs. an armored foe (<b>heightened +1</b> inflicts +1d12 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
@@ -862,7 +862,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Vibrant Pattern (A6 Ill): <b>(2)</b> R120' 10' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd removes the blindness after leaving the area (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)</td>
     </tr><tr style="text-align:left">
-      <td>Vigilant Eye (A4 Div): <b>(1)</b> R500' Creates an invisible sensor that allows self to see from the target location for 1 hr</td>
+      <td>Vigilant Eye (A4 Div): <b>(1)</b> R500' Creates an invisible sensor that allows self to see from the target location for 1 hr; spending a Focus Point extends the duration to 2 hr</td>
     </tr><tr style="text-align:left">
       <td>Wall Of Fire (A4 Evo): <b>(3)</b> R120' 5'x60'x10' line or 10' radius ring inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
@@ -876,7 +876,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Warp Mind (A7 Enc): <b>(2)</b> R120' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure inflicts permanent confusion)</td>
     </tr><tr style="text-align:left">
-      <td>Warped Terrain (A1 Ill): <b>(1)</b> 60' 5' burst (10'/15' burst for 2/3 actions) appears to be difficult terrain for 1 min (<b>heightened 4th</b> may affect air instead of surface)</td>
+      <td>Warped Terrain (A1 Ill): <b>(1)</b> R60' 5' burst (2 or 3 actions give a 10' or 15' burst) illusion inflicts difficult terrain for 1 min (<b>heightened 4th</b> affects air instead of surface)</td>
     </tr><tr style="text-align:left">
       <td>Water Breathing (A2 Tra): <b>(1 min)</b> R30' 5 targets can breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
