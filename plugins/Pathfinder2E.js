@@ -3790,7 +3790,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can produce twice the usual number of alchemical items during downtime"',
   'Enduring Alchemy':
     'Section=skill ' +
-    'Note="Quick Alchemy products last until the end of next turn"',
+    'Note="Quick Alchemy products last until the end of the next turn"',
   'Combine Elixirs':
     'Action=Free ' +
     'Section=skill ' +
@@ -6193,7 +6193,7 @@ Pathfinder2E.FEATURES = {
     'Note="While observing hunted prey, ally failures and critical failures to Seek prey are successes"',
   'Greater Distracting Shot':
     'Section=combat ' +
-    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of next turn on a critical success or double hit"',
+    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of the next turn on a critical success or double hit"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
     'Section=combat Note="Has increased Monster Hunter effects"',
@@ -6236,7 +6236,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts choice of -10 Speed or enfeebled 1 until the end of next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts choice of -10 Speed or enfeebled 1 until the end of the next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
@@ -6272,7 +6272,7 @@ Pathfinder2E.FEATURES = {
   'Scoundrel':
     'Section=combat,skill ' +
     'Note=' +
-      '"Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of next turn",' +
+      '"Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn",' +
       '"Skill Trained (Deception; Diplomacy)"',
   'Slippery Mind':
     'Section=save,save ' +
@@ -6347,7 +6347,7 @@ Pathfinder2E.FEATURES = {
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
-    'Note="Critical hits inflict flat-footed vs. self attacks until the end of next turn"',
+    'Note="Critical hits inflict flat-footed vs. self attacks until the end of the next turn"',
   'Battle Assessment':
     'Action=1 ' +
     'Section=combat ' +
@@ -6416,7 +6416,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Can use Debilitating Strike on a critical hit to force a foe Fortitude save; critical failure paralyzes until the end of next turn; failure or success inflicts slowed 2 or 1 until the end of next turn"',
+    'Note="Can use Debilitating Strike on a critical hit to force a foe Fortitude save; critical failure paralyzes until the end of the next turn; failure or success inflicts slowed 2 or 1 until the end of the next turn"',
   'Fantastic Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -6424,7 +6424,7 @@ Pathfinder2E.FEATURES = {
   'Felling Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike vs. a flat-footed airborne foe forces a Reflex save; failure inflicts a 120\' fall; critical failure also inflicts grounded until the end of next turn"',
+    'Note="Successful Strike vs. a flat-footed airborne foe forces a Reflex save; failure inflicts a 120\' fall; critical failure also inflicts grounded until the end of the next turn"',
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6440,7 +6440,7 @@ Pathfinder2E.FEATURES = {
   'Instant Opening':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Inflicts flat-footed vs. self on target until the end of next turn"',
+    'Note="R30\' Inflicts flat-footed vs. self on target until the end of the next turn"',
   'Leave An Opening':
     'Section=combat ' +
     'Note="Critical hit on a flat-footed foe allows a chosen ally to make an Attack Of Opportunity"',
@@ -6454,7 +6454,7 @@ Pathfinder2E.FEATURES = {
   'Cognitive Loophole':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Suppresses a mental effect until the end of next turn"',
+    'Note="Suppresses a mental effect until the end of the next turn"',
   'Dispelling Slice':
     'Action=2 ' +
     'Section=combat ' +
@@ -6833,7 +6833,7 @@ Pathfinder2E.FEATURES = {
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of next turn"',
+    'Note="Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
@@ -7809,7 +7809,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R120\' Self can share target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
+      '"R120\' Self can share the target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
     'Trait=Transmutation ' +
@@ -7849,7 +7849,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transforms the target\'s form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure transforms permanently and affects mind)"',
+      '"R30\' Transforms the target\'s form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure transforms permanently and also affects the target\'s mind)"',
   'Bane':
     'Level=1 ' +
     'Trait=Enchantment,Mental ' +
@@ -7975,7 +7975,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Inflicts 8d12 HP electricity to a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical success ends the chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
+      '"R500\' Inflicts 8d12 HP electricity on a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical success ends the chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
     'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
@@ -8156,7 +8156,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 4 targets dedicate their actions to a specified cause for 10 min; the spell ends if an ally attacks a target or for a level 14+ target reduced to half HP (<b>save Will</b> for level 15+ each rd ends the spell) (<b>heightened 10th</b> the spell ends for a level 16+ target reduced to half HP or a level 17+ target who saves)"',
+      '"R60\' 4 targets dedicate their actions to a specified cause for 10 min; the spell ends if an ally attacks a target or for a level 14+ target reduced to half HP (<b>save Will</b> for level 15+ each rd ends the spell) (<b>heightened 10th</b> the spell ends only for a level 16+ target reduced to half HP or a level 17+ target who saves)"',
   'Crushing Despair':
     'Level=5 ' +
     'Trait=Emotion,Enchantment,Mental ' +
@@ -8164,7 +8164,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
+      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
@@ -8259,7 +8259,7 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="R120\' Teleports self to a visible location (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
+    'Description="Teleports self to a visible location within 120\' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
   'Dimensional Anchor':
     'Level=4 ' +
     'Trait=Abjuration ' +
@@ -8377,7 +8377,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP of chosen alignment (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP of chosen alignment, or double HP on a critical success (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Divine Vessel':
     'Level=7 ' +
     'Trait=Morph,Transmutation ' +
@@ -11315,7 +11315,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Self Steps and becomes concealed until the end of next turn after a foe melee attack misses"',
+      '"Self Steps and becomes concealed until the end of the next turn after a foe melee attack misses"',
   'Sweet Dream':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Auditory,Cleric,Enchantment,Linguistic,Mental,Sleep ' +
@@ -11435,7 +11435,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Held weapon gains +1 attack and an additional die of damage on the next attack before the start of next turn"',
+      '"Held weapon gains +1 attack and an additional die of damage on the next attack before the start of the next turn"',
   'Word Of Freedom':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
@@ -11753,7 +11753,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self becomes invisible and moves normally over natural difficult terrain until the end of next turn; performing a hostile action ends the spell (<b>heightened 5th</b> a hostile action does not end the spell)"',
+      '"Self becomes invisible and moves normally over natural difficult terrain until the end of the next turn; performing a hostile action ends the spell (<b>heightened 5th</b> a hostile action does not end the spell)"',
   'Fey Glamour':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Illusion,Sorcerer ' +
