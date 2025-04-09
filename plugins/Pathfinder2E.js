@@ -8783,7 +8783,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains +4 Deception to lie and against Perception to discern truth, and an additional +%{level} if untrained, for 10 min"',
+      '"Self gains +%{rank.Deception?4:(4+level)} Deception to lie and against Perception to discern truth for 10 min"',
   'Glitterdust':
     'Level=2 ' +
     'Trait=Evocation ' +
@@ -8822,7 +8822,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes holder to drop target object)"',
+      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes the holder to drop the target object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'Trait=Necromancy,Negative ' +
@@ -8830,7 +8830,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed"',
+      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +2d4 HP initial and +1 HP persistent)"',
   'Guidance':
     'Level=1 ' +
     'Trait=Cantrip,Divination ' +
@@ -8838,7 +8838,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check within 1 rd; cannot be repeated on the same target for 1 hr"',
+      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check within 1 rd once per target per hr"',
   'Gust Of Wind':
     'Level=1 ' +
     'Trait=Air,Evocation ' +
@@ -8926,7 +8926,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)"',
+      '"Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)"',
   'Hydraulic Push':
     'Level=1 ' +
     'Trait=Attack,Evocation,Water ' +
@@ -8957,7 +8957,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of Reactions)"',
+      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts loss of Reactions)"',
   'Illusory Creature':
     'Level=2 ' +
     'Trait=Auditory,Illusion,Olfactory,Visual ' +
@@ -8965,7 +8965,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusory image of a Large or smaller creature (Armor Class %{spellDifficultyClass.%tradition}; +%{spellAttackModifier.%tradition} attack; 1d4+%{spellModifier.%tradition} HP nonlethal mental damage; +%{spellDifficultyClass.%tradition-10} saves) while sustained or until damaged; each Sustain allows self to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
+      '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
@@ -8973,7 +8973,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Illusion makes self appear different and gives +%{4+(rank.Deception?0:level)} Deception to avoid uncovering disguise for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> allows copying a specific individual)"',
+      '"Makes self appear different and gives +%{4+(rank.Deception?0:level)} Deception to avoid uncovering the disguise for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> allows copying a specific individual)"',
   'Illusory Object':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
@@ -8981,7 +8981,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an illusion of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)"',
+      '"R500\' Creates an image of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)"',
   'Illusory Scene':
     'Level=5 ' +
     'Trait=Auditory,Illusion,Olfactory,Visual ' +
@@ -9005,7 +9005,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a Medium critter with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
+      '"Self becomes a Medium critter with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
     'Trait=Illusion ' +
@@ -9037,7 +9037,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self can jump 30\' (<b>heightened 3rd</b> affects creature touched, and effects last for 1 min)"',
+      '"Allows self to jump 30\' immediately (<b>heightened 3rd</b> affects touched, and effects last for 1 min)"',
   'Knock':
     'Level=2 ' +
     'Trait=Transmutation ' +
@@ -9045,7 +9045,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self give an additional +%{level}"',
+      '"R30\' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self gain an additional +%{level}"',
   'Know Direction':
     'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
@@ -9053,7 +9053,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Reveals which direction is north (<b>heightened 7th</b> gives direction to a familiar location)"',
+      '"Reveals which direction is north (<b>heightened 7th</b> reveals direction to a familiar location)"',
   'Levitate':
     'Level=3 ' +
     'Trait=Evocation ' +
@@ -9061,7 +9061,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can use a concentrate action to move the touched object or willing creature up or down 10\' for 5 min"',
+      '"Allows self to use concentrate actions to move the touched object or willing creature up or down 10\' for 5 min"',
   'Light':
     'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
@@ -9141,7 +9141,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' 1 missile per action inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)"',
+      '"R120\' 1 missile (2 or 3 actions gives 2 or 3 missiles) inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)"',
   'Magic Mouth':
     'Level=2 ' +
     'Trait=Auditory,Illusion,Visual ' +
@@ -9149,7 +9149,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"An illusory mouth appears on a touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30\'"',
+      '"The image of a mouth appears on the touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30\'"',
   'Magic Weapon':
     'Level=1 ' +
     'Trait=Transmutation ' +
@@ -9172,7 +9172,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers incurable sickened 1, plus slowed 1 on the open sea, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)"',
+      '"Touched suffers incurable sickened 1, plus slowed 1 on open water, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)"',
   'Mask Of Terror':
     'Level=7 ' +
     'Trait=Emotion,Fear,Illusion,Mental,Visual ' +
@@ -9188,7 +9188,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (save 10d6 HP) on creatures up to level 19)"',
+      '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within the line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (<b>save Fortitude</b> 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
     'Trait=Conjuration,Extradimensional,Teleportation ' +
@@ -9196,7 +9196,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transports the target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on DC %{spellDifficultyClass.%tradition} Survival or Perception checks"',
+      '"R30\' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC %{spellDifficultyClass.%tradition} Survival or Perception checks"',
   'Meld Into Stone':
     'Level=3 ' +
     'Trait=Earth,Transmutation ' +
@@ -9220,7 +9220,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Self can hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
+      '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'Trait=Evocation,Fire ' +
@@ -9252,7 +9252,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self learns surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn self\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
+      '"R30\' Reveals the surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to read self\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
   'Mindlink':
     'Level=1 ' +
     'Trait=Divination,Mental ' +
@@ -9316,7 +9316,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, Armor Class %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> gives 25 temporary HP, Armor Class %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
+      '"Self becomes a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, Armor Class %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> gives 25 temporary HP, Armor Class %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
   'Moon Frenzy':
     'Level=5 ' +
     'Trait=Morph,Transmutation ' +
@@ -9332,7 +9332,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes choice of a Medium green man or a Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
+      '"Self becomes a Medium green man or Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
     'Trait=Enchantment ' +
@@ -9340,7 +9340,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed for 1 rd (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from any bonded animal, fungus, and plant for 10 min"',
+      '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed for 1 rd (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from bonded animals, fungi, and plants for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
     'Trait=Abjuration ' +
@@ -9348,7 +9348,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Negates scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30\' affects 10 targets)"',
+      '"Negates the scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30\' affects 10 targets)"',
   'Neutralize Poison':
     'Level=3 ' +
     'Trait=Healing,Necromancy ' +
@@ -9387,7 +9387,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
+      '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'Trait=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
@@ -10765,7 +10765,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allows using Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
+      '"R60\' Allows self to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
@@ -10844,7 +10844,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched living regains 6 HP and gains +2 Armor Class for 1 rd; touched undead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
+      '"Touched regains 6 HP and gains +2 Armor Class for 1 rd; touched undead instead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
   'Litany Against Sloth':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
@@ -11108,7 +11108,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows a Recall Knowledge check, using the better of two rolls, to remember a target\'s abilities during initiative or immediately after inflicting damage"',
+      '"Allows a Recall Knowledge check, using the better of two rolls, during initiative or immediately after inflicting damage to remember a target\'s abilities"',
   'Localized Quake':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Earth,Transmutation ' +
@@ -11116,7 +11116,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 15\' emanation or 15\' cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"Choice of a 15\' emanation or 15\' cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Lucky Break':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
@@ -11139,7 +11139,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched undead gains fast healing 7 for 1 min (<b>heightened +1</b> gives +2 fast healing)"',
+      '"Touched undead gains fast healing 7 for 1 min (<b>heightened +1</b> gives fast healing +2)"',
   'Moonbeam':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Cleric,Evocation,Fire,Light ' +
@@ -11467,7 +11467,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Eating the touched berry within 10 min restores 1d6+4 HP, and six berries count as a full meal (<b>heightened +1</b> affects +1 berry)"',
+      '"Eating the touched berry within 10 min restores 1d6+4 HP; six berries also count as a full meal (<b>heightened +1</b> affects +1 berry)"',
   'Heal Animal':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
@@ -11475,7 +11475,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched animal regains 1d8 HP, or using two actions restores 1d8+8 HP to an animal within 30\' (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
+      '"Touched animal (2 actions gives R30\') regains 1d8 HP, or 1d8+8 HP with 2 actions (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
   'Impaling Briars':
     'Level=8 ' +
     'Trait=Focus,Uncommon,Conjuration,Druid,Plant ' +
@@ -11561,7 +11561,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows self to move twice and become concealed until next turn"',
+      '"Allows self to move twice and become concealed until the next turn"',
   'Ki Strike':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Monk,Transmutation ' +
@@ -11569,7 +11569,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Gives self +1 attack and +1d6 HP force, lawful, negative, or positive with an unarmed Strike or Flurry Of Blows (<b>heightened +4</b> inflicts +1d6 HP)"',
+      '"An unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, lawful, negative, or positive (<b>heightened +4</b> inflicts +1d6 HP)"',
   'Quivering Palm':
     'Level=8 ' +
     'Trait=Focus,Uncommon,Incapacitation,Monk,Necromancy ' +
@@ -11800,7 +11800,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on target\'s highest ability modifier, until target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
+      '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on the target\'s highest ability modifier, until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
@@ -11927,7 +11927,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes invisible for 1 min or until using a hostile action (<b>heightened 6th</b> effects last 10 min; <b>8th</b> effects last 1 hr)"',
+      '"Self becomes invisible for 1 min; using a hostile action ends the spell (<b>heightened 6th</b> effects last 10 min; <b>8th</b> effects last 1 hr)"',
   'Life Siphon':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Healing,Necromancy,Wizard ' +
