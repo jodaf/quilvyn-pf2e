@@ -26,8 +26,8 @@ var attributes = {
   "skillIncreases.Abyss Lore":1, "skillIncreases.Dwarven Lore":1, "skillIncreases.Elven Lore":1, 
   "skillIncreases.Fishing Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Heraldry Lore":2, 
   "skillIncreases.Medicine":1, "skillIncreases.Plains Lore":1, "skillIncreases.Survival":1, 
-  "skillIncreases.Tea Lore":2, "spells.Abundant Step (O4 Con)":1, "spells.Abyssal Plague (O5 Nec)":1, 
-  "spells.Alarm (O1 Abj)":1, "spells.Allegro (OC7 Enc)":1, "spells.Alter Reality (O10 Div)":1, 
+  "skillIncreases.Tea Lore":2, "spells.Abundant Step (O4 Foc Con)":1, "spells.Abyssal Plague (O5 Nec)":1, 
+  "spells.Alarm (O1 Abj)":1, "spells.Allegro (OC7 Foc Enc)":1, "spells.Alter Reality (O10 Div)":1, 
   "spells.Antimagic Field (O8 Abj)":1, "spells.Augury (O2 Div)":1, "spells.Bane (O1 Enc)":1, 
   "spells.Banishment (O5 Abj)":1, "spells.Bind Soul (O9 Nec)":1, "spells.Bind Undead (O3 Nec)":1, 
   "spells.Black Tentacles (O5 Con)":1, "spells.Bless (O1 Enc)":1, "spells.Blindness (O3 Nec)":1, 
@@ -37,18 +37,18 @@ var attributes = {
   "spells.Cloak Of Colors (O5 Ill)":1, "spells.Collective Transposition (O6 Con)":1, 
   "spells.Color Spray (O1 Ill)":1, "spells.Command (O1 Enc)":1, "spells.Comprehend Language (O2 Div)":1, 
   "spells.Confusion (O4 Enc)":1, "spells.Continual Flame (O2 Evo)":1, 
-  "spells.Counter Performance (O1 Enc)":1, "spells.Crushing Despair (O5 Enc)":1, "spells.Dancing Lights (OC1 Evo)":1, 
+  "spells.Counter Performance (O1 Foc Enc)":1, "spells.Crushing Despair (O5 Enc)":1, "spells.Dancing Lights (OC1 Evo)":1, 
   "spells.Darkness (O2 Evo)":1, "spells.Darkvision (O2 Div)":1, "spells.Daze (OC1 Enc)":1, 
   "spells.Deafness (O2 Nec)":1, "spells.Death Knell (O2 Nec)":1, "spells.Death Ward (O5 Abj)":1, 
   "spells.Detect Alignment (O1 Div)":1, "spells.Detect Magic (OC1 Div)":1, "spells.Detect Scrying (O4 Div)":1, 
   "spells.Dimension Door (O4 Con)":1, "spells.Dimensional Anchor (O4 Abj)":1, 
-  "spells.Dimensional Lock (O7 Abj)":1, "spells.Dirge Of Doom (OC3 Enc)":1, "spells.Disappearance (O8 Ill)":1, 
+  "spells.Dimensional Lock (O7 Abj)":1, "spells.Dirge Of Doom (OC3 Foc Enc)":1, "spells.Disappearance (O8 Ill)":1, 
   "spells.Discern Lies (O4 Div)":1, "spells.Discern Location (O8 Div)":1, "spells.Dispel Magic (O2 Abj)":1, 
   "spells.Dominate (O6 Enc)":1, "spells.Dream Council (O8 Ill)":1, "spells.Dream Message (O3 Enc)":1, 
-  "spells.Dreaming Potential (O5 Enc)":1, "spells.Duplicate Foe (O7 Con)":1, "spells.Empty Body (O9 Con)":1, 
+  "spells.Dreaming Potential (O5 Enc)":1, "spells.Duplicate Foe (O7 Con)":1, "spells.Empty Body (O9 Foc Con)":1, 
   "spells.Energy Aegis (O7 Abj)":1, "spells.Enthrall (O3 Enc)":1, "spells.Ethereal Jaunt (O7 Con)":1, 
   "spells.Fabricated Truth (O10 Enc)":1, "spells.Faerie Fire (O2 Evo)":1, "spells.False Life (O2 Nec)":1, 
-  "spells.False Vision (O5 Ill)":1, "spells.Fatal Aria (O10 Enc)":1, "spells.Fear (O1 Enc)":1, 
+  "spells.False Vision (O5 Ill)":1, "spells.Fatal Aria (O10 Foc Enc)":1, "spells.Fear (O1 Enc)":1, 
   "spells.Feeblemind (O6 Enc)":1, "spells.Floating Disk (O1 Con)":1, "spells.Fly (O4 Tra)":1, 
   "spells.Forbidding Ward (OC1 Abj)":1, "spells.Foresight (O9 Div)":1, "spells.Gaseous Form (O4 Tra)":1, 
   "spells.Gate (O10 Con)":1, "spells.Gentle Repose (O2 Nec)":1, "spells.Ghost Sound (OC1 Ill)":1, 
@@ -56,59 +56,60 @@ var attributes = {
   "spells.Globe Of Invulnerability (O4 Abj)":1, "spells.Glyph Of Warding (O3 Abj)":1, "spells.Grim Tendrils (O1 Nec)":1, 
   "spells.Guidance (OC1 Div)":1, "spells.Hallucination (O5 Ill)":1, 
   "spells.Hallucinatory Terrain (O4 Ill)":1, "spells.Haste (O3 Tra)":1, "spells.Heroism (O3 Enc)":1, 
-  "spells.Hideous Laughter (O2 Enc)":1, "spells.House Of Imaginary Walls (OC5 Ill)":1, 
+  "spells.Hideous Laughter (O2 Enc)":1, "spells.House Of Imaginary Walls (OC5 Foc Ill)":1, 
   "spells.Humanoid Form (O2 Tra)":1, "spells.Hypercognition (O3 Div)":1, "spells.Hypnotic Pattern (O3 Ill)":1, 
   "spells.Illusory Creature (O2 Ill)":1, "spells.Illusory Disguise (O1 Ill)":1, "spells.Illusory Object (O1 Ill)":1, 
-  "spells.Illusory Scene (O5 Ill)":1, "spells.Inspire Competence (OC1 Enc)":1, 
-  "spells.Inspire Courage (OC1 Enc)":1, "spells.Inspire Defense (OC1 Enc)":1, "spells.Inspire Heroics (O4 Enc)":1, 
-  "spells.Invisibility (O2 Ill)":1, "spells.Invisibility Sphere (O3 Ill)":1, "spells.Item Facade (O1 Ill)":1, 
-  "spells.Ki Blast (O3 Evo)":1, "spells.Ki Rush (O1 Tra)":1, "spells.Ki Strike (O1 Tra)":1, 
-  "spells.Knock (O2 Tra)":1, "spells.Know Direction (OC1 Div)":1, "spells.Levitate (O3 Evo)":1, 
-  "spells.Light (OC1 Evo)":1, "spells.Lingering Composition (O1 Enc)":1, "spells.Locate (O3 Div)":1, 
-  "spells.Lock (O1 Abj)":1, "spells.Loremaster's Etude (O1 Div)":1, "spells.Mage Armor (O1 Abj)":1, 
-  "spells.Mage Hand (OC1 Evo)":1, "spells.Magic Aura (O1 Ill)":1, "spells.Magic Missile (O1 Evo)":1, 
-  "spells.Magic Mouth (O2 Ill)":1, "spells.Magic Weapon (O1 Tra)":1, "spells.Magnificent Mansion (O7 Con)":1, 
-  "spells.Mariner's Curse (O5 Nec)":1, "spells.Mask Of Terror (O7 Ill)":1, "spells.Maze (O8 Con)":1, 
-  "spells.Mending (O1 Tra)":1, "spells.Message (OC1 Ill)":1, "spells.Mind Blank (O8 Abj)":1, 
-  "spells.Mind Probe (O5 Div)":1, "spells.Mind Reading (O3 Div)":1, "spells.Mindlink (O1 Div)":1, 
-  "spells.Mirror Image (O2 Ill)":1, "spells.Misdirection (O2 Ill)":1, "spells.Mislead (O6 Ill)":1, 
-  "spells.Modify Memory (O4 Div)":1, "spells.Nightmare (O4 Ill)":1, "spells.Nondetection (O3 Abj)":1, 
-  "spells.Outcast's Curse (O4 Enc)":1, "spells.Overwhelming Presence (O9 Enc)":1, "spells.Paralyze (O3 Enc)":1, 
-  "spells.Paranoia (O2 Ill)":1, "spells.Phantasmal Calamity (O6 Ill)":1, 
-  "spells.Phantasmal Killer (O4 Ill)":1, "spells.Phantom Pain (O1 Ill)":1, "spells.Phantom Steed (O2 Con)":1, 
-  "spells.Plane Shift (O7 Con)":1, "spells.Possession (O7 Nec)":1, "spells.Prestidigitation (OC1 Evo)":1, 
-  "spells.Prismatic Sphere (O9 Abj)":1, "spells.Prismatic Spray (O7 Evo)":1, "spells.Prismatic Wall (O8 Abj)":1, 
-  "spells.Private Sanctum (O4 Abj)":1, "spells.Project Image (O7 Ill)":1, "spells.Protection (O1 Abj)":1, 
-  "spells.Prying Eye (O5 Div)":1, "spells.Quivering Palm (O8 Nec)":1, "spells.Ray Of Enfeeblement (O1 Nec)":1, 
-  "spells.Read Aura (OC1 Div)":1, "spells.Read Omens (O4 Div)":1, "spells.Remake (O10 Con)":1, 
-  "spells.Remove Curse (O4 Nec)":1, "spells.Remove Fear (O2 Enc)":1, "spells.Remove Paralysis (O2 Nec)":1, 
-  "spells.Repulsion (O6 Abj)":1, "spells.Resilient Sphere (O4 Abj)":1, "spells.Resist Energy (O2 Abj)":1, 
-  "spells.Resplendent Mansion (O9 Con)":1, "spells.Restoration (O2 Nec)":1, "spells.Restore Senses (O2 Nec)":1, 
-  "spells.Retrocognition (O7 Div)":1, "spells.Reverse Gravity (O7 Evo)":1, "spells.Rope Trick (O4 Con)":1, 
-  "spells.Sanctuary (O1 Abj)":1, "spells.Scintillating Pattern (O8 Ill)":1, "spells.Scrying (O6 Div)":1, 
-  "spells.Secret Page (O3 Ill)":1, "spells.See Invisibility (O2 Div)":1, "spells.Sending (O5 Div)":1, 
-  "spells.Shadow Blast (O5 Evo)":1, "spells.Shadow Siphon (O5 Ill)":1, "spells.Shadow Walk (O5 Con)":1, 
-  "spells.Shatter (O2 Evo)":1, "spells.Shield (OC1 Abj)":1, "spells.Sigil (OC1 Tra)":1, 
-  "spells.Silence (O2 Ill)":1, "spells.Sleep (O1 Enc)":1, "spells.Slow (O3 Tra)":1, 
-  "spells.Soothe (O1 Enc)":1, "spells.Soothing Ballad (O7 Enc)":1, "spells.Sound Burst (O2 Evo)":1, 
-  "spells.Spectral Hand (O2 Nec)":1, "spells.Spell Immunity (O4 Abj)":1, "spells.Spellwrack (O6 Abj)":1, 
-  "spells.Spirit Blast (O6 Nec)":1, "spells.Spirit Link (O1 Nec)":1, "spells.Spirit Song (O8 Nec)":1, 
-  "spells.Spiritual Epidemic (O8 Nec)":1, "spells.Spiritual Weapon (O2 Evo)":1, "spells.Status (O2 Div)":1, 
-  "spells.Subconscious Suggestion (O5 Enc)":1, "spells.Suggestion (O4 Enc)":1, "spells.Summon Entity (O5 Con)":1, 
-  "spells.Summon Fey (O1 Con)":1, "spells.Synaptic Pulse (O5 Enc)":1, "spells.Synesthesia (O5 Div)":1, 
-  "spells.Talking Corpse (O4 Nec)":1, "spells.Telekinetic Haul (O5 Evo)":1, 
-  "spells.Telekinetic Maneuver (O2 Evo)":1, "spells.Telekinetic Projectile (OC1 Evo)":1, 
-  "spells.Telepathic Bond (O5 Div)":1, "spells.Telepathic Demand (O9 Enc)":1, "spells.Telepathy (O4 Div)":1, 
-  "spells.Teleport (O6 Con)":1, "spells.Time Stop (O10 Tra)":1, "spells.Tongues (O5 Div)":1, 
-  "spells.Touch Of Idiocy (O2 Enc)":1, "spells.Triple Time (OC2 Enc)":1, "spells.True Seeing (O6 Div)":1, 
-  "spells.True Strike (O1 Div)":1, "spells.True Target (O7 Div)":1, "spells.Uncontrollable Dance (O8 Enc)":1, 
-  "spells.Undetectable Alignment (O2 Abj)":1, "spells.Unfathomable Song (O9 Enc)":1, 
-  "spells.Unrelenting Observation (O8 Div)":1, "spells.Unseen Servant (O1 Con)":1, 
-  "spells.Vampiric Exsanguination (O6 Nec)":1, "spells.Vampiric Touch (O3 Nec)":1, "spells.Veil (O4 Ill)":1, 
-  "spells.Ventriloquism (O1 Ill)":1, "spells.Vibrant Pattern (O6 Ill)":1, "spells.Visions Of Danger (O7 Ill)":1, 
+  "spells.Illusory Scene (O5 Ill)":1, "spells.Inspire Competence (OC1 Foc Enc)":1, 
+  "spells.Inspire Courage (OC1 Foc Enc)":1, "spells.Inspire Defense (OC2 Foc Enc)":1, 
+  "spells.Inspire Heroics (O4 Foc Enc)":1, "spells.Invisibility (O2 Ill)":1, "spells.Invisibility Sphere (O3 Ill)":1, 
+  "spells.Item Facade (O1 Ill)":1, "spells.Ki Blast (O3 Foc Evo)":1, "spells.Ki Rush (O1 Foc Tra)":1, 
+  "spells.Ki Strike (O1 Foc Tra)":1, "spells.Knock (O2 Tra)":1, "spells.Know Direction (OC1 Div)":1, 
+  "spells.Levitate (O3 Evo)":1, "spells.Light (OC1 Evo)":1, "spells.Lingering Composition (O1 Foc Enc)":1, 
+  "spells.Locate (O3 Div)":1, "spells.Lock (O1 Abj)":1, "spells.Loremaster's Etude (O1 Foc Div)":1, 
+  "spells.Mage Armor (O1 Abj)":1, "spells.Mage Hand (OC1 Evo)":1, "spells.Magic Aura (O1 Ill)":1, 
+  "spells.Magic Missile (O1 Evo)":1, "spells.Magic Mouth (O2 Ill)":1, "spells.Magic Weapon (O1 Tra)":1, 
+  "spells.Magnificent Mansion (O7 Con)":1, "spells.Mariner's Curse (O5 Nec)":1, "spells.Mask Of Terror (O7 Ill)":1, 
+  "spells.Maze (O8 Con)":1, "spells.Mending (O1 Tra)":1, "spells.Message (OC1 Ill)":1, 
+  "spells.Mind Blank (O8 Abj)":1, "spells.Mind Probe (O5 Div)":1, "spells.Mind Reading (O3 Div)":1, 
+  "spells.Mindlink (O1 Div)":1, "spells.Mirror Image (O2 Ill)":1, "spells.Misdirection (O2 Ill)":1, 
+  "spells.Mislead (O6 Ill)":1, "spells.Modify Memory (O4 Div)":1, "spells.Nightmare (O4 Ill)":1, 
+  "spells.Nondetection (O3 Abj)":1, "spells.Outcast's Curse (O4 Enc)":1, 
+  "spells.Overwhelming Presence (O9 Enc)":1, "spells.Paralyze (O3 Enc)":1, "spells.Paranoia (O2 Ill)":1, 
+  "spells.Phantasmal Calamity (O6 Ill)":1, "spells.Phantasmal Killer (O4 Ill)":1, "spells.Phantom Pain (O1 Ill)":1, 
+  "spells.Phantom Steed (O2 Con)":1, "spells.Plane Shift (O7 Con)":1, "spells.Possession (O7 Nec)":1, 
+  "spells.Prestidigitation (OC1 Evo)":1, "spells.Prismatic Sphere (O9 Abj)":1, "spells.Prismatic Spray (O7 Evo)":1, 
+  "spells.Prismatic Wall (O8 Abj)":1, "spells.Private Sanctum (O4 Abj)":1, "spells.Project Image (O7 Ill)":1, 
+  "spells.Protection (O1 Abj)":1, "spells.Prying Eye (O5 Div)":1, "spells.Quivering Palm (O8 Foc Nec)":1, 
+  "spells.Ray Of Enfeeblement (O1 Nec)":1, "spells.Read Aura (OC1 Div)":1, "spells.Read Omens (O4 Div)":1, 
+  "spells.Remake (O10 Con)":1, "spells.Remove Curse (O4 Nec)":1, "spells.Remove Fear (O2 Enc)":1, 
+  "spells.Remove Paralysis (O2 Nec)":1, "spells.Repulsion (O6 Abj)":1, "spells.Resilient Sphere (O4 Abj)":1, 
+  "spells.Resist Energy (O2 Abj)":1, "spells.Resplendent Mansion (O9 Con)":1, "spells.Restoration (O2 Nec)":1, 
+  "spells.Restore Senses (O2 Nec)":1, "spells.Retrocognition (O7 Div)":1, "spells.Reverse Gravity (O7 Evo)":1, 
+  "spells.Rope Trick (O4 Con)":1, "spells.Sanctuary (O1 Abj)":1, "spells.Scintillating Pattern (O8 Ill)":1, 
+  "spells.Scrying (O6 Div)":1, "spells.Secret Page (O3 Ill)":1, "spells.See Invisibility (O2 Div)":1, 
+  "spells.Sending (O5 Div)":1, "spells.Shadow Blast (O5 Evo)":1, "spells.Shadow Siphon (O5 Ill)":1, 
+  "spells.Shadow Walk (O5 Con)":1, "spells.Shatter (O2 Evo)":1, "spells.Shield (OC1 Abj)":1, 
+  "spells.Sigil (OC1 Tra)":1, "spells.Silence (O2 Ill)":1, "spells.Sleep (O1 Enc)":1, 
+  "spells.Slow (O3 Tra)":1, "spells.Soothe (O1 Enc)":1, "spells.Soothing Ballad (O7 Foc Enc)":1, 
+  "spells.Sound Burst (O2 Evo)":1, "spells.Spectral Hand (O2 Nec)":1, "spells.Spell Immunity (O4 Abj)":1, 
+  "spells.Spellwrack (O6 Abj)":1, "spells.Spirit Blast (O6 Nec)":1, "spells.Spirit Link (O1 Nec)":1, 
+  "spells.Spirit Song (O8 Nec)":1, "spells.Spiritual Epidemic (O8 Nec)":1, 
+  "spells.Spiritual Weapon (O2 Evo)":1, "spells.Status (O2 Div)":1, "spells.Subconscious Suggestion (O5 Enc)":1, 
+  "spells.Suggestion (O4 Enc)":1, "spells.Summon Entity (O5 Con)":1, "spells.Summon Fey (O1 Con)":1, 
+  "spells.Synaptic Pulse (O5 Enc)":1, "spells.Synesthesia (O5 Div)":1, "spells.Talking Corpse (O4 Nec)":1, 
+  "spells.Telekinetic Haul (O5 Evo)":1, "spells.Telekinetic Maneuver (O2 Evo)":1, 
+  "spells.Telekinetic Projectile (OC1 Evo)":1, "spells.Telepathic Bond (O5 Div)":1, "spells.Telepathic Demand (O9 Enc)":1, 
+  "spells.Telepathy (O4 Div)":1, "spells.Teleport (O6 Con)":1, "spells.Time Stop (O10 Tra)":1, 
+  "spells.Tongues (O5 Div)":1, "spells.Touch Of Idiocy (O2 Enc)":1, "spells.Triple Time (OC2 Foc Enc)":1, 
+  "spells.True Seeing (O6 Div)":1, "spells.True Strike (O1 Div)":1, "spells.True Target (O7 Div)":1, 
+  "spells.Uncontrollable Dance (O8 Enc)":1, "spells.Undetectable Alignment (O2 Abj)":1, 
+  "spells.Unfathomable Song (O9 Enc)":1, "spells.Unrelenting Observation (O8 Div)":1, 
+  "spells.Unseen Servant (O1 Con)":1, "spells.Vampiric Exsanguination (O6 Nec)":1, 
+  "spells.Vampiric Touch (O3 Nec)":1, "spells.Veil (O4 Ill)":1, "spells.Ventriloquism (O1 Ill)":1, 
+  "spells.Vibrant Pattern (O6 Ill)":1, "spells.Visions Of Danger (O7 Ill)":1, 
   "spells.Wail Of The Banshee (O9 Nec)":1, "spells.Wall Of Force (O6 Evo)":1, "spells.Wanderer's Guide (O3 Div)":1, 
-  "spells.Warp Mind (O7 Enc)":1, "spells.Weird (O9 Ill)":1, "spells.Wholeness Of Body (O2 Nec)":1, 
-  "spells.Wild Winds Stance (O4 Evo)":1, "spells.Wind Jump (O5 Tra)":1, "spells.Zealous Conviction (O6 Enc)":1, 
+  "spells.Warp Mind (O7 Enc)":1, "spells.Weird (O9 Ill)":1, "spells.Wholeness Of Body (O2 Foc Nec)":1, 
+  "spells.Wild Winds Stance (O4 Foc Evo)":1, "spells.Wind Jump (O5 Foc Tra)":1, "spells.Zealous Conviction (O6 Enc)":1, 
   "spells.Zone Of Truth (O3 Enc)":1, "weapons.Blowgun":1, "weapons.Sling":1, "weapons.Spiked Gauntlet":1
 };
   </script>
@@ -376,31 +377,31 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Abundant Step (O4 Con): <b>(1)</b> Teleports self 25' within line of sight</td>
+      <td>Abundant Step (O4 Foc Con): <b>(1)</b> Teleports self 25' within line of sight</td>
     </tr><tr style="text-align:left">
-      <td>Abyssal Plague (O5 Nec): <b>(2)</b> Touch inflicts drained 1 and cannot recover for 1 day or until cured (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day; critical success negates; critical failure inflicts drained 2)</td>
+      <td>Abyssal Plague (O5 Nec): <b>(2)</b> Touched suffers stage 1 Abyssal plague, which inflicts unrecoverable drained 1 until cured; subsequent failures after 1 day will inflict drained 2 at stage 2 (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day; critical success negates; critical failure inflicts stage 2)</td>
     </tr><tr style="text-align:left">
-      <td>Alarm (O1 Abj): <b>(10 min)</b> 20' burst triggers choice of a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr (<b>heightened 3rd</b> allows specifying characteristics for triggering creatures)</td>
+      <td>Alarm (O1 Abj): <b>(10 min)</b> 20' burst triggers a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr (<b>heightened 3rd</b> allows specifying characteristics of triggering creatures)</td>
     </tr><tr style="text-align:left">
-      <td>Allegro (OC7 Enc): <b>(1)</b> R30' Target becomes quickened and may take an additional Strike, Stride, or Step for 1 rd</td>
+      <td>Allegro (OC7 Foc Enc): <b>(1)</b> R30' Target may take an additional Strike, Stride, or Step for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Alter Reality (O10 Div): <b>(3)</b> Reverses certain <i>Wish</i> effects or produces effects similar to a known occult spell of up to 9th level or a common spell of up to 7th level</td>
+      <td>Alter Reality (O10 Div): <b>(3)</b> Acts as <i>Wish</i> to reverse effects or produces effects similar to a known occult spell of up to 9th level or a common spell of up to 7th level</td>
     </tr><tr style="text-align:left">
       <td>Antimagic Field (O8 Abj): <b>(3)</b> 10' emanation disables spells and magic items while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Augury (O2 Div): <b>(10 min)</b> Reveals a general idea of whether the results of a proposed action up to 30 min in the future will be good or bad</td>
+      <td>Augury (O2 Div): <b>(10 min)</b> Reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad</td>
     </tr><tr style="text-align:left">
-      <td>Bane (O1 Enc): <b>(2)</b> 5' emanation inflicts -1 attack on foes for 1 min (<b>save Will</b> negates); allows using a concentrate action each rd to increase the radius by 5'</td>
+      <td>Bane (O1 Enc): <b>(2)</b> 5' emanation inflicts -1 attack on foes for 1 min (<b>save Will</b> negates); a concentrate action each rd increases the radius by 5'</td>
     </tr><tr style="text-align:left">
       <td>Banishment (O5 Abj): <b>(2)</b> R30' Returns the target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents the target's return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Bind Soul (O9 Nec): <b>(2)</b> R30' Traps the soul of a corpse dead less than 1 min in a gem until counteracted or the gem is destroyed</td>
+      <td>Bind Soul (O9 Nec): <b>(2)</b> R30' Traps the soul of a corpse dead for less than 1 min in a gem until counteracted or the gem is destroyed</td>
     </tr><tr style="text-align:left">
       <td>Bind Undead (O3 Nec): <b>(2)</b> R30' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day</td>
     </tr><tr style="text-align:left">
       <td>Black Tentacles (O5 Con): <b>(3)</b> R120' Successful spell attacks vs. Fortitude DC in a 20' burst inflict 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC 30 on an unarmed attack or inflicting 12 HP vs. Armor Class 30</td>
     </tr><tr style="text-align:left">
-      <td>Bless (O1 Enc): <b>(2)</b> 5' radius gives allies +1 attack for 1 min; allows using a concentrate action each rd to increase the radius by 5'</td>
+      <td>Bless (O1 Enc): <b>(2)</b> 5' radius gives allies +1 attack for 1 min; a concentrate action each rd increases the radius by 5'</td>
     </tr><tr style="text-align:left">
       <td>Blindness (O3 Nec): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
@@ -408,13 +409,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Blur (O2 Ill): <b>(2)</b> Touched becomes concealed for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Calm Emotions (O2 Enc): <b>(2)</b> R120' 10' burst calms creatures and prevents them from taking hostile actions while sustained up to 1 min; hostile actions aimed at a creature end (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows spell to continue after hostile actions)</td>
+      <td>Calm Emotions (O2 Enc): <b>(2)</b> R120' 10' burst calms creatures and prevents them from taking hostile actions while sustained for up to 1 min; a hostile action ends the spell for the target (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows the effects to continue after a hostile action)</td>
     </tr><tr style="text-align:left">
-      <td>Charm (O1 Enc): <b>(2)</b> R30' Target becomes friendly and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affects 10 targets)</td>
+      <td>Charm (O1 Enc): <b>(2)</b> R30' Target becomes friendly, or helpful if already friendly, and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affect 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Chill Touch (OC1 Nec): <b>(2)</b> Touch inflicts 1d4+4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on an undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
     </tr><tr style="text-align:left">
-      <td>Chromatic Wall (O5 Abj): <b>(3)</b> R120' 60'x30' wall shines 20' light and inflicts randomly-chosen effects on passing objects and creatures for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 HP poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last for 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as with another option, but inflicts -2 saves)</td>
+      <td>Chromatic Wall (O5 Abj): <b>(3)</b> R120' 60'x30' wall shines 20' light and inflicts randomly-chosen effects on passing objects and creatures for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 HP poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last for 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as another option, but with -2 saves)</td>
     </tr><tr style="text-align:left">
       <td>Circle Of Protection (O3 Abj): <b>(3)</b> 10' emanation around touched gives +1 Armor Class and saves vs. creatures of a specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
@@ -430,25 +431,25 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Command (O1 Enc): <b>(2)</b> R30' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Comprehend Language (O2 Div): <b>(2)</b> R30' Target understands choice of heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)</td>
+      <td>Comprehend Language (O2 Div): <b>(2)</b> R30' Target understands a chosen heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Confusion (O4 Enc): <b>(2)</b> R30' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts) (<b>heightened 8th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Continual Flame (O2 Evo): <b>(3)</b> Touched object emits a heatless flame until dismissed</td>
     </tr><tr style="text-align:left">
-      <td>Counter Performance (O1 Enc): <b>(R)</b> Allies in a 60' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect</td>
+      <td>Counter Performance (O1 Foc Enc): <b>(R)</b> Allies in a 60' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect</td>
     </tr><tr style="text-align:left">
-      <td>Crushing Despair (O5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1 for 1 min (<b>save Will</b> prevents Reactions and failure on a second save inflicts slowed 1 for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
+      <td>Crushing Despair (O5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
       <td>Dancing Lights (OC1 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that can be moved 60' each rd while sustained</td>
     </tr><tr style="text-align:left">
-      <td>Darkness (O2 Evo): <b>(3)</b> R120' 20' burst suppresses natural light and magical light of equal or lesser level for 1 min (<b>heightened 4th</b> causes creatures with darkvision to treat targets within the darkness as concealed)</td>
+      <td>Darkness (O2 Evo): <b>(3)</b> R120' 20' burst suppresses natural light and magical light of equal or lesser level for 1 min (<b>heightened 4th</b> conceals targets within the darkness from creatures with darkvision)</td>
     </tr><tr style="text-align:left">
       <td>Darkvision (O2 Div): <b>(2)</b> Allows self to see in darkness for 1 hr (<b>heightened 3rd</b> affects a touched target; <b>5th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
-      <td>Daze (OC1 Enc): <b>(2)</b> R60' Target suffers 4 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)</td>
+      <td>Daze (OC1 Enc): <b>(2)</b> R60' Inflicts 4 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Deafness (O2 Nec): <b>(2)</b> R30' Deafens the target for 10 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts permanent deafness)</td>
+      <td>Deafness (O2 Nec): <b>(2)</b> R30' Inflicts deafness for 10 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts permanent deafness)</td>
     </tr><tr style="text-align:left">
       <td>Death Knell (O2 Nec): <b>(2)</b> Kills a touched target with 0 HP and gives self 10 temporary HP and +1 attack and damage for 10 min (<b>save Will</b> increases the target's dying value by 1; critical success negates)</td>
     </tr><tr style="text-align:left">
@@ -460,41 +461,41 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Detect Scrying (O4 Div): <b>(2)</b> 30' emanation reveals scrying effects, along with the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)</td>
     </tr><tr style="text-align:left">
-      <td>Dimension Door (O4 Con): <b>(2)</b> R120' Teleports self to a visible target location (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)</td>
+      <td>Dimension Door (O4 Con): <b>(2)</b> Teleports self to a visible location within 120' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)</td>
     </tr><tr style="text-align:left">
-      <td>Dimensional Anchor (O4 Abj): <b>(2)</b> R30' Attempts to counteract any effect that would move target to a different plane for 10 min (<b>save Will</b> effects last for 1 min; critical success negates; critical failure effects last for 1 hr)</td>
+      <td>Dimensional Anchor (O4 Abj): <b>(2)</b> R30' Attempts to counteract any effect that would move the target to a different plane for 10 min (<b>save Will</b> effects last for 1 min; critical success negates; critical failure effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Dimensional Lock (O7 Abj): <b>(2)</b> R120' 60' burst attempts to counteract any teleportation or planar travel until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Dirge Of Doom (OC3 Enc): <b>(1)</b> 30' emanation inflicts frightened 1 on foes for 1 rd</td>
+      <td>Dirge Of Doom (OC3 Foc Enc): <b>(1)</b> 30' emanation inflicts frightened 1 on foes for 1 rd</td>
     </tr><tr style="text-align:left">
       <td>Disappearance (O8 Ill): <b>(2)</b> Touched becomes undetectable by any sense for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Discern Lies (O4 Div): <b>(2)</b> Self gains +4 Perception vs. lies for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Discern Location (O8 Div): <b>(10 min)</b> Self knows the exact location of a specified familiar creature or object for 10 min</td>
+      <td>Discern Location (O8 Div): <b>(10 min)</b> Reveals the exact location of a specified familiar creature or object for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Dispel Magic (O2 Abj): <b>(2)</b> R120' Makes a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Dominate (O6 Enc): <b>(2)</b> R30' Self controls the actions of the target until next daily prep; a successful save at end of each turn ends (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows further saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)</td>
+      <td>Dominate (O6 Enc): <b>(2)</b> R30' Self controls the actions of the target until next daily prep; a successful save at end of each turn ends the spell (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows further saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Dream Council (O8 Ill): <b>(10 min)</b> 12 known targets can communicate through a shared dream for 1 hr</td>
+      <td>Dream Council (O8 Ill): <b>(10 min)</b> Allows 12 known targets to communicate through a shared dream for 1 hr</td>
     </tr><tr style="text-align:left">
       <td>Dream Message (O3 Enc): <b>(10 min)</b> Self sends 1 min of speech to a familiar creature, received the next time they sleep (<b>heightened 4th</b> sends speech to 10 familiar creatures)</td>
     </tr><tr style="text-align:left">
       <td>Dreaming Potential (O5 Enc): <b>(10 min)</b> Touched receives a day of downtime retraining during 8 hr sleep</td>
     </tr><tr style="text-align:left">
-      <td>Duplicate Foe (O7 Con): <b>(3)</b> R30' Creates a minion copy of a target up to level 15 with 70 HP and no special abilities while sustained for up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)</td>
+      <td>Duplicate Foe (O7 Con): <b>(3)</b> R30' Creates a minion copy of a target up to level 15 with 70 HP and no special abilities while sustained for up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> the copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)</td>
     </tr><tr style="text-align:left">
-      <td>Empty Body (O9 Con): <b>(2)</b> Moves self to the Ethereal Plane for 1 min</td>
+      <td>Empty Body (O9 Foc Con): <b>(2)</b> Moves self to the Ethereal Plane for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Energy Aegis (O7 Abj): <b>(1 min)</b> Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened 9th</b> gives resistance 10)</td>
     </tr><tr style="text-align:left">
-      <td>Enthrall (O3 Enc): <b>(2)</b> Fascinates creatures within 120' while sustained, with additional saves for disagreement (<b>save Will</b> negates; critical success the target notices the attempt; critical failure allows no further saves)</td>
+      <td>Enthrall (O3 Enc): <b>(2)</b> Fascinates creatures within 120' while sustained, with additional saves for disagreement (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure allows no further saves)</td>
     </tr><tr style="text-align:left">
       <td>Ethereal Jaunt (O7 Con): <b>(2)</b> Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30' affects 5 additional willing creatures, and effects last for 10 min)</td>
     </tr><tr style="text-align:left">
-      <td>Fabricated Truth (O10 Enc): <b>(3)</b> R100' 5 targets believe a specified statement for 1 week (<b>save Will</b> negates; critical success the target notices the attempt; critical failure effects are permanent)</td>
+      <td>Fabricated Truth (O10 Enc): <b>(3)</b> R100' 5 targets believe a specified statement for 1 week (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure effects are permanent)</td>
     </tr><tr style="text-align:left">
       <td>Faerie Fire (O2 Evo): <b>(2)</b> R120' 10' burst makes concealed creatures visible and invisible creatures concealed for 5 min</td>
     </tr><tr style="text-align:left">
@@ -502,11 +503,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>False Vision (O5 Ill): <b>(10 min)</b> Controls the image shown by scrying within a 100' burst until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Fatal Aria (O10 Enc): <b>(1)</b> R30' Inflicts death on a target up to level 16 or 50 HP, 0 HP and dying 1 on a level 17 target, or 50 HP on a level 18+ target</td>
+      <td>Fatal Aria (O10 Foc Enc): <b>(1)</b> R30' Kills a target up to level 16 or 50 HP, inflicts 0 HP and dying 1 on a level 17 target, or inflicts 50 HP on a level 18+ target</td>
     </tr><tr style="text-align:left">
       <td>Fear (O1 Enc): <b>(2)</b> R30' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and fleeing for 1 rd) (<b>heightened 3rd</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Feeblemind (O6 Enc): <b>(2)</b> R30' Inflicts stupefied 4 until curse is removed (<b>save Will</b> inflicts stupefied 2 for 1 rd; critical success negates; critical failure inflicts permanent animal intelligence and -5 Charisma, Intelligence, and Wisdom modifiers and changes a PC into an NPC)</td>
+      <td>Feeblemind (O6 Enc): <b>(2)</b> R30' Inflicts stupefied 4 until the curse is removed (<b>save Will</b> inflicts stupefied 2 for 1 rd; critical success negates; critical failure inflicts permanent animal intelligence and -5 Charisma, Intelligence, and Wisdom modifiers and changes a PC into an NPC)</td>
     </tr><tr style="text-align:left">
       <td>Floating Disk (O1 Con): <b>(2)</b> Creates an invisible 2' radius disk that follows self and holds 5 Bulk for 8 hr</td>
     </tr><tr style="text-align:left">
@@ -528,15 +529,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Ghoulish Cravings (O2 Nec): <b>(2)</b> Touched suffers stage 2 ghoul fever, which inflicts 3d8 HP negative and half normal healing; subsequent daily save failures will inflict an additional 3d8 HP at stage 3, 3d8 HP and no healing at stage 4 and stage 5, and death and transformation into a ghoul at stage 6 (<b>save Fortitude</b> inflicts stage 1 with no initial ill effects; critical success negates; critical failure inflicts stage 3)</td>
     </tr><tr style="text-align:left">
-      <td>Glibness (O4 Enc): <b>(2)</b> Self gains +4 Deception to lie and against Perception to discern truth, and an additional +12 if untrained, for 10 min</td>
+      <td>Glibness (O4 Enc): <b>(2)</b> Self gains +16 Deception to lie and against Perception to discern truth for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Globe Of Invulnerability (O4 Abj): <b>(2)</b> 10' burst attempts to counteract outside spells at the spell level - 1 for 10 min</td>
     </tr><tr style="text-align:left">
       <td>Glyph Of Warding (O3 Abj): <b>(10 min)</b> Specified trigger on a target container or 10'x10' area triggers a chosen spell of lower level</td>
     </tr><tr style="text-align:left">
-      <td>Grim Tendrils (O1 Nec): <b>(2)</b> 30' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double negative and persistent bleed HP) (<b>heightened +1</b> inflicts +2d4 HP negative and +1 HP persistent bleed</td>
+      <td>Grim Tendrils (O1 Nec): <b>(2)</b> 30' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +2d4 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
-      <td>Guidance (OC1 Div): <b>(2)</b> R30' Target gains +1 on choice of attack, Perception, save, or skill check within 1 rd; cannot be repeated on the same target for 1 hr</td>
+      <td>Guidance (OC1 Div): <b>(2)</b> R30' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr</td>
     </tr><tr style="text-align:left">
       <td>Hallucination (O5 Ill): <b>(2)</b> R30' Changes target's perception of an object or group for 1 hr (<b>save Will</b> target knows that it's hallucinating; critical success negates; critical failure inflicts -4 saves to disbelieve) (<b>heightened 6th</b> affects 10 targets or effects last until next daily prep; <b>8th</b> affects any number of targets or effects are permanent)</td>
     </tr><tr style="text-align:left">
@@ -548,57 +549,57 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hideous Laughter (O2 Enc): <b>(2)</b> R30' Inflicts slowed 1 and loss of Reactions while sustained (<b>save Will</b> inflicts loss of Reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of Reactions)</td>
     </tr><tr style="text-align:left">
-      <td>House Of Imaginary Walls (OC5 Ill): <b>(1)</b> Creates an invisible, illusionary, 10'x10' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd</td>
+      <td>House Of Imaginary Walls (OC5 Foc Ill): <b>(1)</b> Creates an invisible, illusionary, 10'x10' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Humanoid Form (O2 Tra): <b>(2)</b> Self becomes choice of a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
+      <td>Humanoid Form (O2 Tra): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
     </tr><tr style="text-align:left">
       <td>Hypercognition (O3 Div): <b>(1)</b> Allows self to use 6 Recall Knowledge actions immediately</td>
     </tr><tr style="text-align:left">
-      <td>Hypnotic Pattern (O3 Ill): <b>(2)</b> R120' 10' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> dazzled only; critical failure inflicts loss of Reactions)</td>
+      <td>Hypnotic Pattern (O3 Ill): <b>(2)</b> R120' 10' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts loss of Reactions)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Creature (O2 Ill): <b>(2)</b> R500' Creates an illusory image of a Large or smaller creature (Armor Class 30; +20 attack; 1d4+4 HP nonlethal mental damage; +20 saves) while sustained or until damaged; each Sustain allows self to direct two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)</td>
+      <td>Illusory Creature (O2 Ill): <b>(2)</b> R500' Creates an image of a Large or smaller creature with Armor Class 30, +20 attack, 1d4+4 HP nonlethal mental damage, and +20 saves while sustained or until damaged; each Sustain allows directing two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Disguise (O1 Ill): <b>(2)</b> Illusion makes self appear different and gives +16 Deception to avoid uncovering disguise for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> allows copying a specific individual)</td>
+      <td>Illusory Disguise (O1 Ill): <b>(2)</b> Makes self appear different and gives +16 Deception to avoid uncovering the disguise for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> allows copying a specific individual)</td>
     </tr><tr style="text-align:left">
-      <td>Illusory Object (O1 Ill): <b>(2)</b> R500' Creates an illusion of a stationary object in a 20' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)</td>
+      <td>Illusory Object (O1 Ill): <b>(2)</b> R500' Creates an image of a stationary object in a 20' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
       <td>Illusory Scene (O5 Ill): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Competence (OC1 Enc): <b>(1)</b> R60' Allows using Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
+      <td>Inspire Competence (OC1 Foc Enc): <b>(1)</b> R60' Allows self to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Courage (OC1 Enc): <b>(1)</b> 60' emanation gives allies +1 attack, damage, and saves vs. fear for 1 rd</td>
+      <td>Inspire Courage (OC1 Foc Enc): <b>(1)</b> 60' emanation gives allies +1 attack, damage, and saves vs. fear for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Defense (OC1 Enc): 1</td>
+      <td>Inspire Defense (OC2 Foc Enc): <b>(1)</b> 60' emanation gives allies +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>Inspire Heroics (O4 Enc): <b>(F)</b> A successful Performance check increases the effects of a subsequent <i>Inspire Courage</i> or <i>Inspire Defense</i> to +2, or +3 on a critical success; failure does not expend a Focus Point</td>
+      <td>Inspire Heroics (O4 Foc Enc): <b>(F)</b> A successful Performance check increases the effects of a subsequent <i>Inspire Courage</i> or <i>Inspire Defense</i> to +2, or +3 on a critical success; failure does not expend a Focus Point</td>
     </tr><tr style="text-align:left">
-      <td>Invisibility (O2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end)</td>
+      <td>Invisibility (O2 Ill): <b>(2)</b> Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)</td>
     </tr><tr style="text-align:left">
       <td>Invisibility Sphere (O3 Ill): <b>(2)</b> 10' emanation makes creatures within invisible for 10 min or until any affected performs a hostile act (<b>heightened 5th</b> effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
       <td>Item Facade (O1 Ill): <b>(2)</b> Makes the target object up to a 10' cube appear decrepit or perfect for 1 hr (<b>heightened 2nd</b> effects last for 24 hr; <b>3rd</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Ki Blast (O3 Evo): <b>(1)</b> 15' cone inflicts 2d6 HP force and a 5' push (2 or 3 actions inflicts 3d6 HP in a 30' cone or 4d6 HP in a 60' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)</td>
+      <td>Ki Blast (O3 Foc Evo): <b>(1)</b> 15' cone inflicts 2d6 HP force and a 5' push (2 or 3 actions inflicts 3d6 HP in a 30' cone or 4d6 HP in a 60' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)</td>
     </tr><tr style="text-align:left">
-      <td>Ki Rush (O1 Tra): <b>(1)</b> Allows self to move twice and become concealed until next turn</td>
+      <td>Ki Rush (O1 Foc Tra): <b>(1)</b> Allows self to move twice and become concealed until the next turn</td>
     </tr><tr style="text-align:left">
-      <td>Ki Strike (O1 Tra): <b>(1)</b> Gives self +1 attack and +1d6 HP force, lawful, negative, or positive with an unarmed Strike or Flurry Of Blows (<b>heightened +4</b> inflicts +1d6 HP)</td>
+      <td>Ki Strike (O1 Foc Tra): <b>(1)</b> An unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, lawful, negative, or positive (<b>heightened +4</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Knock (O2 Tra): <b>(2)</b> R30' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self give an additional +12</td>
+      <td>Knock (O2 Tra): <b>(2)</b> R30' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self gain an additional +12</td>
     </tr><tr style="text-align:left">
-      <td>Know Direction (OC1 Div): <b>(2)</b> Reveals which direction is north (<b>heightened 7th</b> gives direction to a familiar location)</td>
+      <td>Know Direction (OC1 Div): <b>(2)</b> Reveals which direction is north (<b>heightened 7th</b> reveals direction to a familiar location)</td>
     </tr><tr style="text-align:left">
-      <td>Levitate (O3 Evo): <b>(2)</b> Self can use a concentrate action to move the touched object or willing creature up or down 10' for 5 min</td>
+      <td>Levitate (O3 Evo): <b>(2)</b> Allows self to use concentrate actions to move the touched object or willing creature up or down 10' for 5 min</td>
     </tr><tr style="text-align:left">
       <td>Light (OC1 Evo): <b>(2)</b> Touched object lights a 20' radius until next daily prep (<b>heightened 4th</b> lights a 60' radius)</td>
     </tr><tr style="text-align:left">
-      <td>Lingering Composition (O1 Enc): <b>(F)</b> A successful Performance check increases the duration of a subsequent cantrip composition to 3 rd, or 4 rd on a critical success; failure does not expend a Focus Point</td>
+      <td>Lingering Composition (O1 Foc Enc): <b>(F)</b> A successful Performance check increases the duration of a subsequent cantrip composition to 3 rd, or 4 rd on a critical success; failure does not expend a Focus Point</td>
     </tr><tr style="text-align:left">
       <td>Locate (O3 Div): <b>(10 min)</b> R500' Reveals the direction to a named object or the nearest object of a named type while sustained; effects are blocked by lead and running water (<b>heightened 5th</b> reveals the direction to a creature or ancestry)</td>
     </tr><tr style="text-align:left">
       <td>Lock (O1 Abj): <b>(2)</b> Touched latch or lock opens only for self until next daily prep; a successful DC 30 Athletics or Thievery check (or lock DC + 4 if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Loremaster's Etude (O1 Div): <b>(F)</b> R30' Target may take the better of two rolls on the triggering Recall Knowledge</td>
+      <td>Loremaster's Etude (O1 Foc Div): <b>(F)</b> R30' Target may take the better of two rolls on the triggering Recall Knowledge check</td>
     </tr><tr style="text-align:left">
       <td>Mage Armor (O1 Abj): <b>(2)</b> Self gains +1 Armor Class with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 Armor Class; <b>8th</b> gives +2 saves; <b>10th</b> gives +3 Armor Class and saves)</td>
     </tr><tr style="text-align:left">
@@ -606,29 +607,29 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Magic Aura (O1 Ill): <b>(1 min)</b> Alters the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> can affect a creature or all of its possessions)</td>
     </tr><tr style="text-align:left">
-      <td>Magic Missile (O1 Evo): <b>(1)</b> R120' 1 missile per action inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)</td>
+      <td>Magic Missile (O1 Evo): <b>(1)</b> R120' 1 missile (2 or 3 actions gives 2 or 3 missiles) inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)</td>
     </tr><tr style="text-align:left">
-      <td>Magic Mouth (O2 Ill): <b>(2)</b> An illusory mouth appears on a touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30'</td>
+      <td>Magic Mouth (O2 Ill): <b>(2)</b> The image of a mouth appears on the touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30'</td>
     </tr><tr style="text-align:left">
       <td>Magic Weapon (O1 Tra): <b>(2)</b> Touched weapon gains +1 attack and 2 damage dice for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Magnificent Mansion (O7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x40' demiplane that can only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
     </tr><tr style="text-align:left">
-      <td>Mariner's Curse (O5 Nec): <b>(2)</b> Touched suffers incurable sickened 1, plus slowed 1 on the open sea, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)</td>
+      <td>Mariner's Curse (O5 Nec): <b>(2)</b> Touched suffers incurable sickened 1, plus slowed 1 on open water, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)</td>
     </tr><tr style="text-align:left">
       <td>Mask Of Terror (O7 Ill): <b>(2)</b> R30' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Maze (O8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until a critical success or 2 successive normal successes on DC 30 Survival or Perception checks</td>
+      <td>Maze (O8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC 30 Survival or Perception checks</td>
     </tr><tr style="text-align:left">
       <td>Mending (O1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)</td>
     </tr><tr style="text-align:left">
-      <td>Message (OC1 Ill): <b>(1)</b> R120' Self can hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
+      <td>Message (OC1 Ill): <b>(1)</b> R120' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
     </tr><tr style="text-align:left">
       <td>Mind Blank (O8 Abj): <b>(2)</b> R30' Target gains +4 saves vs. mental effects and automatic counteract attempts at the spell level + 1 vs. detection, revelation, and scrying until next daily prep</td>
     </tr><tr style="text-align:left">
       <td>Mind Probe (O5 Div): <b>(1 min)</b> R30' Self gains answers from the target, requiring a DC 30 Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)</td>
     </tr><tr style="text-align:left">
-      <td>Mind Reading (O3 Div): <b>(2)</b> R30' Self learns surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to learn self's surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)</td>
+      <td>Mind Reading (O3 Div): <b>(2)</b> R30' Reveals the surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to read self's surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)</td>
     </tr><tr style="text-align:left">
       <td>Mindlink (O1 Div): <b>(2)</b> Telepathically transmits 10 min of information from self to touched</td>
     </tr><tr style="text-align:left">
@@ -638,39 +639,39 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Mislead (O6 Ill): <b>(2)</b> Turns self invisible and creates an illusory duplicate while sustained for up to 1 min; a successful Deception vs. Perception can make it appear that a self action originated with the duplicate</td>
     </tr><tr style="text-align:left">
-      <td>Modify Memory (O4 Div): <b>(2)</b> R30' Changes 1 rd of the target's memory each rd while sustained for up to 5 min (<b>save Will</b> negates; critical success the target notices the attempt) (<b>heightened 6th</b> erases all memory of a specified topic from a willing target)</td>
+      <td>Modify Memory (O4 Div): <b>(2)</b> R30' Changes 1 rd of the target's memory each rd while sustained for up to 5 min (<b>save Will</b> negates; critical success allows the target to notice the attempt) (<b>heightened 6th</b> erases all memory of a specified topic from a willing target)</td>
     </tr><tr style="text-align:left">
       <td>Nightmare (O4 Ill): <b>(10 min)</b> Causes a familiar target to have nightmares and awaken fatigued (<b>save Will</b> inflicts nightmares only; critical success negates; critical failure also inflicts drained 2 until no longer fatigued)</td>
     </tr><tr style="text-align:left">
       <td>Nondetection (O3 Abj): <b>(10 min)</b> Touched gains automatic counteract attempts vs. magical divinations for 8 hr</td>
     </tr><tr style="text-align:left">
-      <td>Outcast's Curse (O4 Enc): <b>(2)</b> Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)</td>
+      <td>Outcast's Curse (O4 Enc): <b>(2)</b> Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)</td>
     </tr><tr style="text-align:left">
       <td>Overwhelming Presence (O9 Enc): <b>(2)</b> 40' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)</td>
     </tr><tr style="text-align:left">
-      <td>Paralyze (O3 Enc): <b>(2)</b> R30' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rounds, allowing subsequent saves to shorten or end the effects) (<b>heightened 7th</b> affects 10 targets)</td>
+      <td>Paralyze (O3 Enc): <b>(2)</b> R30' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rd; subsequent successful saves shorten the effects by 1 rd, and a critical success ends them) (<b>heightened 7th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Paranoia (O2 Ill): <b>(2)</b> R30' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others as enemies) (<b>heightened 6th</b> effects 5 targets)</td>
     </tr><tr style="text-align:left">
       <td>Phantasmal Calamity (O6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Killer (O4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP or +3d6 HP on a critical failure)</td>
+      <td>Phantasmal Killer (O4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP, or +3d6 HP on a critical failure)</td>
     </tr><tr style="text-align:left">
       <td>Phantom Pain (O1 Ill): <b>(2)</b> R30' Inflicts 2d4 HP mental, 1d4 HP persistent mental, and sickened 1 for 1 min or until no longer sickened (<b>save Will</b> inflicts initial HP only; critical success negates; critical failure inflicts sickened 2) (<b>heightened +1</b> inflicts +2d4 HP initial and +1d4 HP persistent)</td>
     </tr><tr style="text-align:left">
-      <td>Phantom Steed (O2 Con): <b>(10 min)</b> R30' Conjures a magical mount (Armor Class 20, HP 10, 40' Speed) that can only be ridden by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount can also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80' Speed and can fly)</td>
+      <td>Phantom Steed (O2 Con): <b>(10 min)</b> R30' Conjures a magical mount (Armor Class 20, HP 10, 40' Speed) that can be ridden only by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount can also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80' Speed and can fly)</td>
     </tr><tr style="text-align:left">
       <td>Plane Shift (O7 Con): <b>(10 min)</b> Transports self and 8 willing targets to an imprecise location on a different plane</td>
     </tr><tr style="text-align:left">
-      <td>Possession (O7 Nec): <b>(2)</b> R30' Self inhabits and controls the target's body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives self full control; success on subsequent Will saves each turn negates self control for 1 rd, and critical success ends the spell) (<b>heightened 9th</b> effects last for 10 min, and self body is protected from harm)</td>
+      <td>Possession (O7 Nec): <b>(2)</b> R30' Self inhabits and controls the target's body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives control without further saves); a success on subsequent Will saves each turn negates control for 1 rd, and a critical success ends the spell (<b>heightened 9th</b> effects last for 10 min, and self body merges into possessed body)</td>
     </tr><tr style="text-align:left">
-      <td>Prestidigitation (OC1 Evo): <b>(2)</b> R10' Performs choice of cooking, lifting, making a minor object, or tidying while sustained</td>
+      <td>Prestidigitation (OC1 Evo): <b>(2)</b> R10' Performs cooking, lifting, making a minor object, or tidying while sustained</td>
     </tr><tr style="text-align:left">
-      <td>Prismatic Sphere (O9 Abj): <b>(2)</b> R10' 10' burst emits 20' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
+      <td>Prismatic Sphere (O9 Abj): <b>(2)</b> R10' 20' bright light in a 10' burst inflicts blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min) and these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
     </tr><tr style="text-align:left">
-      <td>Prismatic Spray (O7 Evo): <b>(2)</b> 30' cone inflicts a random effect: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) two of the preceding effects</td>
+      <td>Prismatic Spray (O7 Evo): <b>(2)</b> 30' cone randomly inflicts one of these effects on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) two of the preceding effects</td>
     </tr><tr style="text-align:left">
-      <td>Prismatic Wall (O8 Abj): <b>(3)</b> R120' Creates a 60'x30' wall that emits 20' bright light, inflicting blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min), and that inflicts these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
+      <td>Prismatic Wall (O8 Abj): <b>(3)</b> R120' 20' bright light emitted by a 60'x30' wall inflicts blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min) and these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)</td>
     </tr><tr style="text-align:left">
       <td>Private Sanctum (O4 Abj): <b>(10 min)</b> 100' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep</td>
     </tr><tr style="text-align:left">
@@ -680,15 +681,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Prying Eye (O5 Div): <b>(1 min)</b> R500' Creates an invisible sensor that allows self to see from the target location and that can be moved 30' each rd while sustained</td>
     </tr><tr style="text-align:left">
-      <td>Quivering Palm (O8 Nec): <b>(2)</b> A successful Strike allows self to inflict stunned 3 and 80 HP on the target any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)</td>
+      <td>Quivering Palm (O8 Foc Nec): <b>(2)</b> A successful Strike allows self to inflict stunned 3 and 80 HP on the target at any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)</td>
     </tr><tr style="text-align:left">
-      <td>Ray Of Enfeeblement (O1 Nec): <b>(2)</b> R30' Ranged spell attack inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3; critical success on attack worsens save by 1 degree)</td>
+      <td>Ray Of Enfeeblement (O1 Nec): <b>(2)</b> R30' Spell attack inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3; critical success on attack worsens save by 1 degree)</td>
     </tr><tr style="text-align:left">
-      <td>Read Aura (OC1 Div): <b>(1 min)</b> R30' Self detects whether an object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 targets; <b>6th</b> affects unlimited targets)</td>
+      <td>Read Aura (OC1 Div): <b>(1 min)</b> R30' Reveals whether an object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 targets; <b>6th</b> affects unlimited targets)</td>
     </tr><tr style="text-align:left">
       <td>Read Omens (O4 Div): <b>(10 min)</b> Reveals a clue or advice about a proposed activity up to 1 week in the future</td>
     </tr><tr style="text-align:left">
-      <td>Remake (O10 Con): <b>(1 hr)</b> R5' Fully re-creates a known object up to 5' cu from a remnant</td>
+      <td>Remake (O10 Con): <b>(1 hr)</b> R5' Fully re-creates a known object up to 5'x5'x5' from a remnant</td>
     </tr><tr style="text-align:left">
       <td>Remove Curse (O4 Nec): <b>(10 min)</b> Makes a counteract attempt vs. 1 curse affecting touched</td>
     </tr><tr style="text-align:left">
@@ -696,47 +697,47 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Remove Paralysis (O2 Nec): <b>(2)</b> Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Repulsion (O6 Abj): <b>(2)</b> Up to 40' emanation prevents creatures from approaching for 1 min (<b>save Will</b> inflicts difficult terrain; critical success negates)</td>
+      <td>Repulsion (O6 Abj): <b>(2)</b> Emanation up to 40' prevents creatures from approaching for 1 min (<b>save Will</b> inflicts difficult terrain; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Resilient Sphere (O4 Abj): <b>(2)</b> R30' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases sphere HP to 10; critical success negates)</td>
+      <td>Resilient Sphere (O4 Abj): <b>(2)</b> R30' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Resist Energy (O2 Abj): <b>(2)</b> Touched gains resistance 5 vs. chosen energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)</td>
+      <td>Resist Energy (O2 Abj): <b>(2)</b> Touched gains resistance 5 vs. a specified energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)</td>
     </tr><tr style="text-align:left">
       <td>Resplendent Mansion (O9 Con): <b>(1 min)</b> R500' Creates a 300'x300' mansion, with entrances protected by <i>Alarm</i> effects and containing provisions for up to 150 people, until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Restoration (O2 Nec): <b>(1 min)</b> Gives choice of a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition)</td>
+      <td>Restoration (O2 Nec): <b>(1 min)</b> Gives a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition by 1)</td>
     </tr><tr style="text-align:left">
       <td>Restore Senses (O2 Nec): <b>(2)</b> Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched (<b>heightened 6th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Retrocognition (O7 Div): <b>(1 min)</b> Reveals impressions of 1 day of past events at the current location per 1 min concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)</td>
+      <td>Retrocognition (O7 Div): <b>(1 min)</b> Reveals impressions of 1 day of past events at the current location per 1 min of concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)</td>
     </tr><tr style="text-align:left">
       <td>Reverse Gravity (O7 Evo): <b>(3)</b> R120' Objects in a 20'x40' cylinder fall upward for 1 min</td>
     </tr><tr style="text-align:left">
       <td>Rope Trick (O4 Con): <b>(10 min)</b> Touched rope leads to an extradimensional space that can hold 8 Medium creatures for 8 hr</td>
     </tr><tr style="text-align:left">
-      <td>Sanctuary (O1 Abj): <b>(2)</b> Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends spell; critical failure allows no further save attempts)</td>
+      <td>Sanctuary (O1 Abj): <b>(2)</b> Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends the spell; critical failure allows no further save attempts)</td>
     </tr><tr style="text-align:left">
       <td>Scintillating Pattern (O8 Ill): <b>(2)</b> R120' 20' burst inflicts confused for 1d4 rd and dazzled in a 40' radius while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts stunned for 1d4 rd, then confused for the remaining duration)</td>
     </tr><tr style="text-align:left">
-      <td>Scrying (O6 Div): <b>(10 min)</b> Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; an unmet target lowers the save DC by 2, and an unknown target lowers it by 10)</td>
+      <td>Scrying (O6 Div): <b>(10 min)</b> Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; scrying an unfamiliar target lowers the save DC by 2, and scrying an unknown target lowers it by 10)</td>
     </tr><tr style="text-align:left">
       <td>Secret Page (O3 Ill): <b>(1 min)</b> Makes the text on a touched page appear as different text unless a specified password is spoken</td>
     </tr><tr style="text-align:left">
       <td>See Invisibility (O2 Div): <b>(2)</b> Self treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Sending (O5 Div): <b>(3)</b> Self exchanges 25-word messages with a known creature</td>
+      <td>Sending (O5 Div): <b>(3)</b> Self exchanges a pair of 25-word messages with a known creature</td>
     </tr><tr style="text-align:left">
-      <td>Shadow Blast (O5 Evo): <b>(2)</b> Choice of 30' cone, R120' 15' burst, or 50' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)</td>
+      <td>Shadow Blast (O5 Evo): <b>(2)</b> 30' cone, R120' 15' burst, or 50' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Shadow Siphon (O5 Ill): <b>(R)</b> R60' Makes a counteract attempt on a damaging trigger spell at +2 the spell level, reducing the damage by half if successful</td>
     </tr><tr style="text-align:left">
-      <td>Shadow Walk (O5 Con): <b>(1 min)</b> Self and 9 willing touched travel through the Shadow Plane at 20x Speed for 8 hr</td>
+      <td>Shadow Walk (O5 Con): <b>(1 min)</b> Allows self and 9 willing touched to travel through the Shadow Plane at 20x Speed for 8 hr</td>
     </tr><tr style="text-align:left">
-      <td>Shatter (O2 Evo): <b>(2)</b> R30' Inflicts 2d10 HP sonic on an unattended target object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)</td>
+      <td>Shatter (O2 Evo): <b>(2)</b> R30' Inflicts 2d10 HP sonic on an unattended object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)</td>
     </tr><tr style="text-align:left">
-      <td>Shield (OC1 Abj): <b>(1)</b> Self gains +1 Armor Class for 1 rd; may end spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)</td>
+      <td>Shield (OC1 Abj): <b>(1)</b> Self gains +1 Armor Class for 1 rd; may end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)</td>
     </tr><tr style="text-align:left">
-      <td>Sigil (OC1 Tra): <b>(2)</b> Inscribes a 1" sq magical mark on a touched object or creature; the mark can be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks creature for 1 month; <b>5th</b> marks creature for 1 year; <b>7th</b> marks creature permanently)</td>
+      <td>Sigil (OC1 Tra): <b>(2)</b> Inscribes a 1" sq magical mark on a touched object or creature; the mark can be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks a creature for 1 month; <b>5th</b> marks a creature for 1 year; <b>7th</b> marks a creature permanently)</td>
     </tr><tr style="text-align:left">
       <td>Silence (O2 Ill): <b>(2)</b> Willing touched makes no sound for 1 min (<b>heightened 4th</b> affects a 10' radius around touched)</td>
     </tr><tr style="text-align:left">
@@ -746,7 +747,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Soothe (O1 Enc): <b>(2)</b> R30' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Soothing Ballad (O7 Enc): <b>(2)</b> R30' Self and 9 allies gain a choice of a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)</td>
+      <td>Soothing Ballad (O7 Foc Enc): <b>(2)</b> R30' Self and 9 allies gain a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Sound Burst (O2 Evo): <b>(2)</b> R30' 10' burst inflicts 2d10 HP sonic and deafened for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, deafened for 1 min, and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)</td>
     </tr><tr style="text-align:left">
@@ -754,7 +755,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Spell Immunity (O4 Abj): <b>(2)</b> Gives touched an automatic counteract attempt vs. a specified spell until next daily prep</td>
     </tr><tr style="text-align:left">
-      <td>Spellwrack (O6 Abj): <b>(2)</b> R30' Each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force and the duration of every spell affecting it is reduced by 1 rd (<b>save Will</b> effects last for 1 min; critical success negates; critical failure inflicts 4d12 HP)</td>
+      <td>Spellwrack (O6 Abj): <b>(2)</b> R30' Until the curse is removed, each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force and the duration of every spell affecting it is reduced by 1 rd (<b>save Will</b> effects last for 1 min; critical success negates; critical failure inflicts 4d12 HP)</td>
     </tr><tr style="text-align:left">
       <td>Spirit Blast (O6 Nec): <b>(2)</b> R30' Target's spirit suffers 16d6 HP force (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
@@ -762,13 +763,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Spirit Song (O8 Nec): <b>(2)</b> 60' cone inflicts 18d6 HP force on spirits, including any hidden in solid barriers (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Spiritual Epidemic (O8 Nec): <b>(2)</b> R120' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently; also affects creatures casting divine or occult spells on target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)</td>
+      <td>Spiritual Epidemic (O8 Nec): <b>(2)</b> R120' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently; also affects creatures who later cast divine or occult spells on the target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)</td>
     </tr><tr style="text-align:left">
       <td>Spiritual Weapon (O2 Evo): <b>(2)</b> R120' Spectral weapon makes a +20 attack that inflicts 1d8 HP force or weapon damage type each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Status (O2 Div): <b>(2)</b> Reveals willing touched's direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10' affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Subconscious Suggestion (O5 Enc): <b>(2)</b> R30' Target follows a reasonable, 1 min suggestion upon a specified trigger until next daily prep (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)</td>
+      <td>Subconscious Suggestion (O5 Enc): <b>(2)</b> R30' Specified trigger prompts the target to follow a reasonable, 1 min suggestion until next daily prep (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Suggestion (O4 Enc): <b>(2)</b> R30' Target follows a reasonable suggestion for 1 min (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure effects last for 1 hr) (<b>heightened 8th</b> targets 10 creatures)</td>
     </tr><tr style="text-align:left">
@@ -778,21 +779,21 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Synaptic Pulse (O5 Enc): <b>(2)</b> 30' emanation inflicts stunned 2 (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts stunned for 1 rd)</td>
     </tr><tr style="text-align:left">
-      <td>Synesthesia (O5 Div): <b>(2)</b> R30' Inflicts a DC 5 flat check for concentration, treating all objects and creatures as concealed, clumsy 3, and -10 Speed for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts stunned 2) (<b>heightened 9th</b> affects 5 targets)</td>
+      <td>Synesthesia (O5 Div): <b>(2)</b> R30' Inflicts a DC 5 flat check for concentration, clumsy 3, -10 Speed, and concealment of all objects and creatures for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts stunned 2) (<b>heightened 9th</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Talking Corpse (O4 Nec): <b>(10 min)</b> Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)</td>
+      <td>Talking Corpse (O4 Nec): <b>(10 min)</b> Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows lying or refusing to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)</td>
     </tr><tr style="text-align:left">
       <td>Telekinetic Haul (O5 Evo): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Maneuver (O2 Evo): <b>(2)</b> R60' Ranged spell attack attempts to Disarm, Shove, or Trip</td>
+      <td>Telekinetic Maneuver (O2 Evo): <b>(2)</b> R60' Spell attack attempts to Disarm, Shove, or Trip</td>
     </tr><tr style="text-align:left">
-      <td>Telekinetic Projectile (OC1 Evo): <b>(2)</b> Ranged spell attack hurls a loose object that inflicts 1d6+4 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
+      <td>Telekinetic Projectile (OC1 Evo): <b>(2)</b> Spell attack hurls a loose object that inflicts 1d6+4 HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Telepathic Bond (O5 Div): <b>(1 min)</b> Self and 4 willing touched can communicate telepathically for 8 hr</td>
     </tr><tr style="text-align:left">
-      <td>Telepathic Demand (O9 Enc): <b>(3)</b> Self exchanges 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)</td>
+      <td>Telepathic Demand (O9 Enc): <b>(3)</b> Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)</td>
     </tr><tr style="text-align:left">
-      <td>Telepathy (O4 Div): <b>(2)</b> Self can communicate telepathically with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
+      <td>Telepathy (O4 Div): <b>(2)</b> Allows self to communicate telepathically with any creature in a 30' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)</td>
     </tr><tr style="text-align:left">
       <td>Teleport (O6 Con): <b>(10 min)</b> Transports self and 4 willing touched creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>10th</b> transports to any planet in the same galaxy)</td>
     </tr><tr style="text-align:left">
@@ -802,15 +803,15 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Touch Of Idiocy (O2 Enc): <b>(2)</b> Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)</td>
     </tr><tr style="text-align:left">
-      <td>Triple Time (OC2 Enc): <b>(1)</b> 60' emanation gives allies +10' Speed for 1 rd</td>
+      <td>Triple Time (OC2 Foc Enc): <b>(1)</b> 60' emanation gives allies +10' Speed for 1 rd</td>
     </tr><tr style="text-align:left">
-      <td>True Seeing (O6 Div): <b>(2)</b> R60' Makes counteract checks to see through illusions and transmutations for 10 min</td>
+      <td>True Seeing (O6 Div): <b>(2)</b> R60' Makes counteract checks to allow self to see through illusions and transmutations for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>True Strike (O1 Div): <b>(1)</b> Self uses the better of two attack rolls, ignores concealed and hidden status, and ignores circumstance penalties on the next Strike in the same turn</td>
+      <td>True Strike (O1 Div): <b>(1)</b> Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn</td>
     </tr><tr style="text-align:left">
-      <td>True Target (O7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature ignore concealed and hidden status and use the better of two attack rolls</td>
+      <td>True Target (O7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls</td>
     </tr><tr style="text-align:left">
-      <td>Uncontrollable Dance (O8 Enc): <b>(2)</b> Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each rd dancing)</td>
+      <td>Uncontrollable Dance (O8 Enc): <b>(2)</b> Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
     </tr><tr style="text-align:left">
       <td>Undetectable Alignment (O2 Abj): <b>(1 min)</b> Touched appears neutral to alignment detection until next daily prep</td>
     </tr><tr style="text-align:left">
@@ -818,7 +819,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Unrelenting Observation (O8 Div): <b>(2)</b> R100' 5 targets in a 20' burst can see a 6th target for 1 hr; lead and running water block the vision (<b>save Will</b> effects last for 1 min; critical success negates)</td>
     </tr><tr style="text-align:left">
-      <td>Unseen Servant (O1 Con): <b>(3)</b> R60' Invisible servant with 4 Hit Points and a 30' fly Speed obeys commands to move and manipulate objects while sustained</td>
+      <td>Unseen Servant (O1 Con): <b>(3)</b> R60' Invisible servant with 4 Hit Points and a 30' fly Speed obeys commands to move and manipulate objects while sustained or until reduced to 0 HP</td>
     </tr><tr style="text-align:left">
       <td>Vampiric Exsanguination (O6 Nec): <b>(2)</b> 30' cone inflicts 12d6 HP negative, giving self temporary HP for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
@@ -826,9 +827,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Veil (O4 Ill): <b>(2)</b> R30' Makes 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets can appear to be familiar individuals)</td>
     </tr><tr style="text-align:left">
-      <td>Ventriloquism (O1 Ill): <b>(2)</b> Self can project their voice up to 60' for 10 min (<b>heightened 2nd</b> effects last for 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)</td>
+      <td>Ventriloquism (O1 Ill): <b>(2)</b> Allows self to project their voice up to 60' for 10 min (<b>heightened 2nd</b> effects last for 1 hr, allow changing voice quality, and require an active Perception to attempt to disbelieve)</td>
     </tr><tr style="text-align:left">
-      <td>Vibrant Pattern (O6 Ill): <b>(2)</b> R120' 10' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd removes the blindness after leaving the area (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)</td>
+      <td>Vibrant Pattern (O6 Ill): <b>(2)</b> R120' 10' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd after leaving the area removes the blindness (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)</td>
     </tr><tr style="text-align:left">
       <td>Visions Of Danger (O7 Ill): <b>(3)</b> R500' 30' burst inflicts 8d8 HP mental for 1 min (<b>save basic Will</b>; critical success allows an attempt to disbelieve that negates the effects) (<b>heightened +1</b> inflicts +1d8 HP)</td>
     </tr><tr style="text-align:left">
@@ -836,19 +837,19 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Wall Of Force (O6 Evo): <b>(3)</b> R30' Creates an invisible 50'x20' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wanderer's Guide (O3 Div): <b>(1 min)</b> Reveals a route to a specified destination and reduces the movement penalty from difficult terrain by half until next daily prep</td>
+      <td>Wanderer's Guide (O3 Div): <b>(1 min)</b> Reveals a route to a specified destination and reduces the movement penalty from difficult terrain while following it by half until next daily prep</td>
     </tr><tr style="text-align:left">
       <td>Warp Mind (O7 Enc): <b>(2)</b> R120' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure inflicts permanent confusion)</td>
     </tr><tr style="text-align:left">
-      <td>Weird (O9 Ill): <b>(2)</b> R120' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)</td>
+      <td>Weird (O9 Ill): <b>(2)</b> R120' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed subsequent Fortitude save or double HP, frightened 2 and fleeing on success; critical success negates fleeing)</td>
     </tr><tr style="text-align:left">
-      <td>Wholeness Of Body (O2 Nec): <b>(1)</b> Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)</td>
+      <td>Wholeness Of Body (O2 Foc Nec): <b>(1)</b> Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Wild Winds Stance (O4 Evo): <b>(1)</b> Stance gives +2 Armor Class vs. ranged attacks and R30' unarmed strikes that inflict 1d6 HP bludgeoning</td>
+      <td>Wild Winds Stance (O4 Foc Evo): <b>(1)</b> Stance gives +2 Armor Class vs. ranged attacks and R30' unarmed strikes that ignore concealment and cover and inflict 1d6 HP bludgeoning</td>
     </tr><tr style="text-align:left">
-      <td>Wind Jump (O5 Tra): <b>(1)</b> Self gains 25' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)</td>
+      <td>Wind Jump (O5 Foc Tra): <b>(1)</b> Self gains a 25' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)</td>
     </tr><tr style="text-align:left">
-      <td>Zealous Conviction (O6 Enc): <b>(2)</b> R30' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)</td>
+      <td>Zealous Conviction (O6 Enc): <b>(2)</b> R30' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)</td>
     </tr><tr style="text-align:left">
       <td>Zone Of Truth (O3 Enc): <b>(2)</b> R30' 20' burst prevents lies and inflicts -2 Deception for 10 min (<b>save Will</b> inflicts -2 Deception only; critical success negates; critical failure inflicts -4 Deception)</td>
     </tr></table>

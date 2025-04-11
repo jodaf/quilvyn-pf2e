@@ -1444,7 +1444,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Mercy':
     'Trait=Class,Champion,Concentrate,Metamagic ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Nec)"',
+    'Require="level >= 4","spells.Lay On Hands (D1 Foc Nec)"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Trait=Class,Champion ' +
@@ -1654,7 +1654,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 8",' +
       '"features.Divine Ally (Steed)",' +
-      '"spells.Lay On Hands (D1 Nec)"',
+      '"spells.Lay On Hands (D1 Foc Nec)"',
   'Quick Shield Block':
     'Trait=Class,Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
@@ -2100,7 +2100,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 6",' +
       '"features.Storm || features.Order Explorer (Storm)",' +
-      '"spells.Tempest Surge (P1 Evo)"',
+      '"spells.Tempest Surge (P1 Foc Evo)"',
   'Ferocious Shape':
     'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Fey Caller':'Trait=Class,Druid Require="level >= 8"',
@@ -7785,7 +7785,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Target who committed the triggering anathema act suffers 4d6 HP mental and stupefied 1 for 1 rd (<b>save basic Will</b>; success negates stupefication) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Target who committed the triggering anathema act suffers 4d6 HP mental and stupefied 1 for 1 rd (<b>save basic Will</b>; success negates stupefied) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Animal Form':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
@@ -7809,7 +7809,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R120\' Self can share the target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
+      '"R120\' Allows self to share the target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
     'Trait=Transmutation ' +
@@ -8838,7 +8838,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target gains +1 on choice of attack, Perception, save, or skill check within 1 rd once per target per hr"',
+      '"R30\' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr"',
   'Gust Of Wind':
     'Level=1 ' +
     'Trait=Air,Evocation ' +
@@ -10535,7 +10535,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr and allow changing voice quality; requires an active Perception to attempt to disbelieve)"',
+      '"Allows self to project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr, allow changing voice quality, and require an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
     'Trait=Illusion,Incapacitation,Visual ' +
@@ -10543,7 +10543,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd removes the blindness after leaving the area (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)"',
+      '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd after leaving the area removes the blindness (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)"',
   'Visions Of Danger':
     'Level=7 ' +
     'Trait=Auditory,Illusion,Visual ' +
@@ -10567,7 +10567,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, -10\' Speed, clumsy 1, and a 20\' decent and difficult terrain to flying creatures (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), plus 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, -10\' Speed, and clumsy 1, plus a 20\' descent and difficult terrain on flying creatures (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'Trait=Auditory,Death,Necromancy,Negative ' +
@@ -10599,7 +10599,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x10\'x1\' wall or 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)"',
+      '"R120\' Creates a 60\'x10\'x1\' wall or a 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
     'Trait=Conjuration,Earth ' +
@@ -10623,7 +10623,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) allows passage as difficult terrain; critical success negates; critical failure pushes back 10\')"',
+      '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) allows passage as difficult terrain; critical success negates; critical failure inflicts a 10\' push)"',
   "Wanderer's Guide":
     'Level=3 ' +
     'Trait=Divination ' +
@@ -10631,7 +10631,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Reveals a route to a specified destination and reduces the movement penalty from difficult terrain by half until next daily prep"',
+      '"Reveals a route to a specified destination and reduces the movement penalty from difficult terrain while following it by half until next daily prep"',
   'Warp Mind':
     'Level=7 ' +
     'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
@@ -10679,7 +10679,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; Athletics also clears squares upon leaving)"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving)"',
   'Weird':
     'Level=9 ' +
     'Trait=Death,Emotion,Fear,Illusion,Mental ' +
@@ -10687,7 +10687,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or double HP, frightened 2 and fleeing (critical success negates fleeing) on success)"',
+      '"R120\' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed subsequent Fortitude save or double HP, frightened 2 and fleeing on success; critical success negates fleeing)"',
   'Wind Walk':
     'Level=8 ' +
     'Trait=Air,Transmutation ' +
@@ -10695,7 +10695,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Self and 5 touched become clouds and move 20 MPH for 8 hr; attack or spellcasting ends the spell"',
+      '"Self and 5 touched become clouds that can move 20 MPH for 8 hr; attacking or spellcasting ends the spell"',
   'Wish':
     'Level=10 ' +
     'Trait=Divination ' +
@@ -11381,7 +11381,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains choice of a %{speed}\' climb Speed or a %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing a %{speed}\' fly Speed)"',
+      '"Self gains a %{speed}\' climb Speed or a %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing a %{speed}\' fly Speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
@@ -11445,7 +11445,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Suppresses choice of a confused, frightened, grabbed, paralyzed, or restrained condition affecting the target for 1 rd"',
+      '"R30\' Suppresses a confused, frightened, grabbed, paralyzed, or restrained condition affecting the target for 1 rd"',
   'Word Of Truth':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Divination ' +
@@ -11453,7 +11453,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"A glowing symbol of %{deity} appears when self speaks true statements of up to 25 words while sustained for up to 1 min"',
+      '"Causes a glowing symbol of %{deity} to appear when self speaks true statements of up to 25 words while sustained for up to 1 min"',
   'Zeal For Battle':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Fortune,Mental ' +
@@ -11485,7 +11485,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"100\' emanation inflicts choice of difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
+      '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
     'Trait=Focus,Uncommon,Conjuration,Druid ' +
@@ -11525,7 +11525,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains choice of claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape Shape</i>), or 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
@@ -11595,7 +11595,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Stance gives +2 Armor Class vs. ranged attacks and R30\' unarmed strikes that inflict 1d6 HP bludgeoning"',
+      '"Stance gives +2 Armor Class vs. ranged attacks and R30\' unarmed strikes that ignore concealment and cover and inflict 1d6 HP bludgeoning"',
   'Wind Jump':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Air,Monk,Transmutation ' +
@@ -11603,7 +11603,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
+      '"Self gains a %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
   'Aberrant Whispers':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
@@ -11842,7 +11842,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure gives control for 1 rd) (<b>heightened 7th</b> gives control for 1 rd; critical failure gives control for 1 min or until target saves)"',
+      '"R30\' Inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure gives control for 1 rd) (<b>heightened 7th</b> gives control for 1 rd; critical failure gives control for 1 min or until the target succeeds on a save at the end of each turn)"',
   'Augment Summoning':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Conjuration,Wizard ' +
