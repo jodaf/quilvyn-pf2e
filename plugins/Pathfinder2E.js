@@ -10321,7 +10321,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows target to lie or refuse to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)"',
+      '"Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows lying or refusing to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)"',
   'Tanglefoot':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Conjuration,Plant ' +
@@ -10337,7 +10337,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd each rd (a successful Escape negates) for 10 min"',
+      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd (a successful Escape negates) each rd for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Trait=Evocation ' +
@@ -10376,7 +10376,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"Self exchanges 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
+      '"Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
     'Trait=Divination,Linguistic,Mental ' +
@@ -10384,7 +10384,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self can communicate telepathically with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
+      '"Allows self to communicate telepathically with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
@@ -10431,7 +10431,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Transports self from an adjacent to tree to another of the same species within 5 miles (<b>heightened 6th</b> transports 50 miles; <b>8th</b> transports 500 miles; <b>9th</b> transports anywhere on the planet)"',
+      '"Transports self from an adjacent tree to another of the same species within 5 miles (<b>heightened 6th</b> transports 50 miles; <b>8th</b> transports 500 miles; <b>9th</b> transports anywhere on the planet)"',
   'True Seeing':
     'Level=6 ' +
     'Trait=Divination,Revelation ' +
@@ -10439,7 +10439,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Makes counteract checks to see through illusions and transmutations for 10 min"',
+      '"R60\' Makes counteract checks to allow self to see through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
     'Trait=Divination,Fortune ' +
@@ -10447,7 +10447,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self uses the better of two attack rolls, ignores concealed and hidden status, and ignores circumstance penalties on the next Strike in the same turn"',
+      '"Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn"',
   'True Target':
     'Level=7 ' +
     'Trait=Divination,Fortune,Prediction ' +
@@ -10455,7 +10455,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed and hidden status and use the better of two attack rolls"',
+      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
@@ -10463,7 +10463,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each rd dancing)"',
+      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
     'Trait=Uncommon,Abjuration ' +
@@ -10503,7 +10503,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
-      '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained"',
+      '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained or until reduced to 0 HP"',
   'Vampiric Exsanguination':
     'Level=6 ' +
     'Trait=Death,Necromancy,Negative ' +
@@ -11333,7 +11333,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains an immediate save with a +2 or -2 modifier vs. an affliction or an immediate DC 5 or 20 flat check against poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> affects multiple afflictions and poisons affecting the target)"',
+      '"Touched gains an immediate save with a +2 or -2 modifier vs. an affliction, or an immediate DC 5 or 20 flat check against persistent poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> affects multiple afflictions and poisons affecting the target)"',
   'Tempt Fate':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
@@ -11349,7 +11349,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Moves the target 5\' on ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
+      '"R60\' Moves the target 5\' over ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
   'Touch Of Obedience':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
@@ -11381,7 +11381,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains choice of %{speed}\' climb Speed or %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing %{speed}\' fly Speed)"',
+      '"Self gains choice of a %{speed}\' climb Speed or a %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing a %{speed}\' fly Speed)"',
   "Trickster's Twin":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
@@ -11834,7 +11834,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on successful non-reach melee attacks for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP)"',
+      '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on successful non-reach melee attackers for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP)"',
   "You're Mine":
     'Level=5 ' +
     'Trait=Focus,Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
