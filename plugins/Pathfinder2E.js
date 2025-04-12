@@ -801,9 +801,20 @@ Pathfinder2E.CLASSES = {
       '1:Angelic:Bloodline,' +
       '1:Demonic:Bloodline,' +
       '1:Diabolic:Bloodline,' +
-       // TODO Choose type of dragon or elemental?
-      '1:Draconic:Bloodline,' +
-      '1:Elemental:Bloodline,' +
+      '"1:Draconic (Brass):Bloodline",' +
+      '"1:Draconic (Bronze):Bloodline",' +
+      '"1:Draconic (Copper):Bloodline",' +
+      '"1:Draconic (Gold):Bloodline",' +
+      '"1:Draconic (Silver):Bloodline",' +
+      '"1:Draconic (Black):Bloodline",' +
+      '"1:Draconic (Blue):Bloodline",' +
+      '"1:Draconic (Green):Bloodline",' +
+      '"1:Draconic (Red):Bloodline",' +
+      '"1:Draconic (White):Bloodline",' +
+      '"1:Elemental (Air):Bloodline",' +
+      '"1:Elemental (Earth):Bloodline",' +
+      '"1:Elemental (Fire):Bloodline",' +
+      '"1:Elemental (Water):Bloodline",' +
       '1:Fey:Bloodline,' +
       '1:Hag:Bloodline,' +
       '1:Imperial:Bloodline,' +
@@ -6532,13 +6543,85 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
       '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
       '"Skill Trained (Deception; Religion)"',
-  'Draconic':
+  'Draconic (Brass)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
       '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
-  'Elemental':
+  'Draconic (Bronze)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Copper)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Gold)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Silver)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Black)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Blue)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Green)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (Red)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Draconic (White)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
+      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
+      '"Skill Trained (Arcana; Intimidation)"',
+  'Elemental (Air)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Skill Trained (Intimidation; Nature)"',
+  'Elemental (Earth)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Skill Trained (Intimidation; Nature)"',
+  'Elemental (Fire)':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Skill Trained (Intimidation; Nature)"',
+  'Elemental (Water)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
@@ -6611,9 +6694,36 @@ Pathfinder2E.FEATURES = {
   'Advanced Bloodline (Diabolic)':
     'Section=magic ' +
     'Note="Knows the Embrace The Pit divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic)':
+  'Advanced Bloodline (Draconic (Black))':
     'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental)':
+  'Advanced Bloodline (Draconic (Blue))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Brass))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Bronze))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Copper))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Gold))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Green))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Red))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (Silver))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Draconic (White))':
+    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
+  'Advanced Bloodline (Elemental (Air))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
+  'Advanced Bloodline (Elemental (Earth))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
+  'Advanced Bloodline (Elemental (Fire))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
+  'Advanced Bloodline (Elemental (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
   'Advanced Bloodline (Fey)':
@@ -6643,9 +6753,36 @@ Pathfinder2E.FEATURES = {
   'Greater Bloodline (Diabolic)':
     'Section=magic ' +
     'Note="Knows the Hellfire Plume divine spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic)':
+  'Greater Bloodline (Draconic (Black))':
     'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Elemental)':
+  'Greater Bloodline (Draconic (Blue))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Brass))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Bronze))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Copper))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Gold))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Green))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Red))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (Silver))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Draconic (White))':
+    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+  'Greater Bloodline (Elemental (Air))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+  'Greater Bloodline (Elemental (Earth))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+  'Greater Bloodline (Elemental (Fire))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+  'Greater Bloodline (Elemental (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
   'Greater Bloodline (Fey)':
@@ -7091,10 +7228,46 @@ Pathfinder2E.FEATURES = {
   'Basic Bloodline Spell (Diabolic)':
     'Section=magic ' +
     'Note="Knows the Diabolic Edict divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic)':
+  'Basic Bloodline Spell (Draconic (Black))':
     'Section=magic ' +
     'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental)':
+  'Basic Bloodline Spell (Draconic (Blue))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Brass))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Bronze))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Copper))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Gold))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Green))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Red))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (Silver))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Draconic (White))':
+    'Section=magic ' +
+    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Elemental (Air))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Elemental (Earth))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Elemental (Fire))':
+    'Section=magic ' +
+    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
+  'Basic Bloodline Spell (Elemental (Water))':
     'Section=magic ' +
     'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Fey)':
@@ -11675,7 +11848,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone or 60\' line inflicts 5d6 HP energy (<b>save basic Fortitude or Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"%{draconicColor<\'Green\'?\\"60\' line\\":\\"30\' cone\\"} inflicts 5d6 HP %{draconicEnergy||\'fire\'} (<b>save basic %{draconicColor==\'Green\'?\'Fortitude\':\'Reflex\'}</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -11683,7 +11856,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Claws inflict 1d6 HP slashing and 1d6 HP energy, and self gains resistance 5 to energy, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
+      '"Claws inflict 1d6 HP slashing and 1d6 HP %{draconicEnergy||\'fire\'}, and self gains resistance 5 to %{draconicEnergy||\'fire\'}, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -11707,7 +11880,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP bludgeoning or fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
@@ -11715,7 +11888,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains a %{speed}\' fly Speed, a %{speed}\' swim Speed and water breathing, or a 10\' burrow Speed for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
+      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?speed+\\"\' swim Speed and water breathing\\":(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
@@ -11723,7 +11896,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d8 HP bludgeoning or fire, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R30\' Spell attack inflicts 1d8 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
@@ -13881,6 +14054,21 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('bloodlineTraditionsLowered',
       'bloodlineTraditions', '=', 'source.toLowerCase()'
     );
+    rules.defineRule('draconicColor',
+      'features.Draconic (Black)', '=', '"Black"',
+      'features.Draconic (Blue)', '=', '"Blue"',
+      'features.Draconic (Brass)', '=', '"Brass"',
+      'features.Draconic (Bronze)', '=', '"Bronze"',
+      'features.Draconic (Copper)', '=', '"Copper"',
+      'features.Draconic (Gold)', '=', '"Gold"',
+      'features.Draconic (Green)', '=', '"Green"',
+      'features.Draconic (Red)', '=', '"Red"',
+      'features.Draconic (Silver)', '=', '"Silver"',
+      'features.Draconic (White)', '=', '"White"'
+    );
+    rules.defineRule('draconicEnergy',
+      'draconicColor', '=', '{Black:"acid", Blue:"electricity", Bronze:"electricity", Copper:"acid", Green:"poison", Silver:"cold", White:"cold"}[source] || "fire"'
+    );
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
@@ -13898,6 +14086,16 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       rules.defineRule('spellSlots.' + t.charAt(0) + '10',
         'magicNotes.bloodlinePerfection', '+', '1'
       );
+    });
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let bloodlines =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Bloodline')).map(x => x.replace('Sorcerer - ', ''));
+    bloodlines.forEach(b => {
+      if(b.includes('(')) {
+        let bloodlineGroup = b.replace(/\s*\(.*/, '');
+        rules.defineRule
+          ('features.' + bloodlineGroup, 'features.' + b, '=', '1');
+      }
     });
     rules.defineRule('selectableFeatureCount.Sorcerer (Bloodline)',
       'featureNotes.bloodline', '=', '1'
