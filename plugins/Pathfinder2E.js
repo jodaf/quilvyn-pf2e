@@ -12818,7 +12818,8 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
         QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
         QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
-      rules.addChoice('spells', spellName, attrs);
+      if(!isFocus)
+        rules.addChoice('spells', spellName, attrs);
     });
   } else if(type == 'Weapon')
     Pathfinder2E.weaponRules(rules, name,
