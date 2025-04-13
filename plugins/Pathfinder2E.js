@@ -12620,6 +12620,8 @@ Pathfinder2E.identityRules = function(
     (classes, ['HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
 
+  rules.defineRule('heritage', 'ancestry', '=', null);
+
   for(let a in alignments)
     rules.choiceRules(rules, 'Alignment', a, alignments[a]);
   for(let a in ancestries)
