@@ -20,6 +20,16 @@ lines to the file plugins/plugins.js:
       url:'plugins/Pathfinder2E.js',
       group:'Pathfinder'
     };
+    RULESETS['Pathfinder 2E Remaster'] = {
+      url:'plugins/Pathfinder2ERemaster.js',
+      group:'Pathfinder',
+      require:'Pathfinder2E.js'
+    };
+    RULESETS['Pathfinder 2E Remaster w/legacy features'] = {
+      url:'plugins/Pathfinder2ERemaster.js',
+      group:'Pathfinder',
+      require:'Pathfinder2E.js'
+    };
 
 ### Usage
 
