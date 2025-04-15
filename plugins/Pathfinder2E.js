@@ -1344,7 +1344,9 @@ Pathfinder2E.FEATS = {
       '"level >= 16",' +
       '"features.Enigma",' +
       '"rank.Occultism >= 4"',
-  'Deep Lore':'Trait=Class,Bard Require="level >= 18"',
+  'Deep Lore':
+    'Trait=Class,Bard ' +
+    'Require="level >= 18","features.Enigma","rank.Occultism >= 4"',
   'Eternal Composition':
     'Trait=Class,Bard Require="level >= 18","features.Maestro"',
   'Impossible Polymath':
@@ -2006,7 +2008,7 @@ Pathfinder2E.FEATS = {
       '"features.Command Undead",' +
       '"alignment =~ \'Evil\'"',
   'Replenishment Of War':
-    'Trait=Class,Cleric Require="level >= 10","deityWeaponRank >= 1"',
+    'Trait=Class,Cleric Require="level >= 10","deityWeaponRank >= 2"',
   'Defensive Recovery':
     'Trait=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 12","features.Harmful Font || features.Healing Font"',
@@ -15474,7 +15476,8 @@ Pathfinder2E.spellRules = function(
     console.log('Empty spell name');
     return;
   }
-  let wizard = (rules.getChoices('levels') || Pathfinder2E.CLASSES).Wizard;
+  let wizard =
+    (rules.getChoices('levels') || {}).Wizard || Pathfinder2E.CLASSES.Wizard;
   let schools =
     wizard.match(/[\w\s]*:Arcane School/g).map(x => x.replace(':Arcane School', ''));
   if(!school || !(schools.includes(school))) {
