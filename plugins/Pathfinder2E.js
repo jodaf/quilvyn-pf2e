@@ -12173,7 +12173,8 @@ Pathfinder2E.WEAPONS = {
     'Category=Simple Price=0.5 Damage="1d8 P" Bulk=2 Hands=2 Group=Spear ' +
     'Trait=Reach',
   'Mace':
-    'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club Trait=Shove',
+    'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
+    'Trait=Shove',
   'Morningstar':
     'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
     'Trait="Versatile P"',
@@ -12271,8 +12272,9 @@ Pathfinder2E.WEAPONS = {
     'Trait=Forceful,Sweep',
   'Scythe':
     'Category=Martial Price=2 Damage="1d10 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait="Deadly d10",Tripe',
-  'Shield':'Category=Martial Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Shield',
+    'Trait="Deadly d10",Trip',
+  'Shield':
+    'Category=Martial Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Shield',
   'Shield Boss':
     'Category=Martial Price=0.5 Damage="1d6 B" Bulk=0 Hands=1 Group=Shield',
   'Shield Spikes':
@@ -12317,10 +12319,10 @@ Pathfinder2E.WEAPONS = {
     'Trait=Agile,Monk,Trip,Uncommon',
   'Katana':
     'Category=Martial Price=2 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait="Deadly d8","Two-hand d10","Versatile P"',
+    'Trait="Deadly d8","Two-hand d10",Uncommon,"Versatile P"',
   'Kukri':
     'Category=Martial Price=0.6 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Finesse,Trip',
+    'Trait=Agile,Finesse,Trip,Uncommon',
   'Nunchaku':
     'Category=Martial Price=0.2 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
     'Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
@@ -12402,6 +12404,7 @@ Pathfinder2E.WEAPONS = {
   'Shortbow':
     'Category=Martial Price=3 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
     'Trait="Deadly d10" Range=60',
+
   'Halfling Sling Staff':
     'Category=Martial Price=5 Damage="1d10 B" Bulk=1 Hands=2 Group=Sling ' +
     'Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
@@ -15530,15 +15533,6 @@ Pathfinder2E.spellRules.traits = [
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate'
 ];
 
-/* Defines in #rules# the rules associated with terrain #name#. */
-Pathfinder2E.terrainRules = function(rules, name) {
-  if(!name) {
-    console.log('Empty terrain name');
-    return;
-  }
-  // No rules pertain to terrain
-};
-
 /*
  * Defines in #rules# the rules associated with weapon #name#, which costs
  * #price# gold pieces, requires a #category# proficiency level to use
@@ -15580,7 +15574,7 @@ Pathfinder2E.weaponRules = function(
     console.log('Bad hands "' + hands + '" for weapon ' + name);
     return;
   }
-  if(!(group+'').match(/^(Axe|Bomb|Bow|Brawling|Club|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Shield|Spear|Sword)$/)) {
+  if(!(group+'').match(/^(Axe|Bomb|Bow|Brawling|Club|Crossbow|Dart|Flail|Hammer|Knife|Pick|Polearm|Sling|Shield|Spear|Sword)$/)) {
     console.log('Bad group "' + group + '" for weapon ' + name);
     return;
   }
@@ -15593,7 +15587,7 @@ Pathfinder2E.weaponRules = function(
   }
 
   let isFinesse = traits.includes('Finesse');
-  let isRanged = group.match(/Bomb|Bow|Dart|Sling/);
+  let isRanged = group.match(/Bomb|Bow|Crossbow|Dart|Sling/);
   let isPropulsive = traits.includes('Propulsive');
   let isSplash = traits.includes('Splash');
   let isThrown = traits.includes('Thrown');
@@ -16438,7 +16432,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       });
     });
   } else if(attribute == 'deity') {
-    let alignment = attributes.alignment.match(/^([CLN]).*\s([GEN])/);
+    let alignment =
+      (attributes.alignment || 'Neutral').match(/^([CLN]).*\s([GEN])/);
     alignment = alignment ? alignment[1] + alignment[2] : 'N';
     choices = [];
     let deities = this.getChoices('deitys');
