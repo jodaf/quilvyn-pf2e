@@ -3304,8 +3304,10 @@ Pathfinder2E.FEATURES = {
   'Elf Heritage':'Section=feature Note="1 selection"',
   'Fast':'Section=ability Note="+5 Speed"',
   'Fey-Touched Gnome':
-    'Section=magic ' +
-    'Note="Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Fey trait",' +
+      '"Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1} and treats environmental heat as 1 step less extreme"',
@@ -3343,7 +3345,8 @@ Pathfinder2E.FEATURES = {
       '"Knows the Detect Magic arcane innate cantrip",' +
       '"+1 to Identify Magic and Decipher Writing of a magical nature"',
   'Sensate Gnome':
-    'Section=skill Note="R30\' +2 Perception to locate a creature using smell"',
+    'Section=skill ' +
+    'Note="Has 30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
@@ -3497,9 +3500,7 @@ Pathfinder2E.FEATURES = {
       '"Can speak with all animals",' +
       '"+1 to Make an Impression on animals"',
   'Energized Font':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Can use to regain 1 Focus Point once per day"',
+    'Action=1 Section=magic Note="Regains 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
     'Section=combat ' +
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',

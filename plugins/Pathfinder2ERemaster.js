@@ -2956,16 +2956,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
-  'Arctic Elf':
-    'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
+  'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
+  'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
-  'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
-  'Chameleon Gnome':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"May use a 1 hr process to change skin and hair colors",' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Gains +2 Stealth until surroundings change"',
+  'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
+  'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
   'Charhide Goblin':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
@@ -2975,9 +2970,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dwarf Heritage':'Section=feature Note="1 selection"',
   'Elf Heritage':'Section=feature Note="1 selection"',
   'Fast':'Section=ability Note="+5 Speed"',
-  'Fey-Touched Gnome':
-    'Section=magic ' +
-    'Note="Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
+  'Fey-Touched Gnome':Pathfinder2E.FEATURES['Fey-Touched Gnome'],
   'Forge Dwarf':Pathfinder2E.FEATURES['Forge Dwarf'],
   'Gnome Heritage':'Section=feature Note="1 selection"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
@@ -3007,13 +3000,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
-  'Seer Elf':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Knows the Detect Magic arcane innate cantrip",' +
-      '"+1 to Identify Magic and Decipher Writing of a magical nature"',
-  'Sensate Gnome':
-    'Section=skill Note="R30\' +2 Perception to locate a creature using smell"',
+  'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
+  'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
@@ -3021,34 +3009,28 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Strong-Blooded Dwarf':Pathfinder2E.FEATURES['Strong-Blooded Dwarf'],
   'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
+  'Umbral Gnome':Pathfinder2E.FEATURES['Umbral Gnome'],
   'Unbreakable Goblin':
     'Section=combat,save ' +
     'Note=' +
       '"+4 Hit Points",' +
       '"Reduces falling damage by half distance"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
-  'Wellspring Gnome':'Section=feature Note="1 selection"',
+  'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
   'Wellspring Gnome (Arcane)':
-    'Section=magic ' +
-    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
+    Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
   'Wellspring Gnome (Divine)':
-    'Section=magic ' +
-    'Note="Can cast a chosen divine cantrip as an innate spell at will"',
+    Pathfinder2E.FEATURES['Wellspring Gnome (Divine)'],
   'Wellspring Gnome (Occult)':
-    'Section=magic ' +
-    'Note="Can cast a chosen occult cantrip as an innate spell at will"',
+    Pathfinder2E.FEATURES['Wellspring Gnome (Occult)'],
+  // Changed
   'Whisper Elf':
     'Section=skill ' +
-    'Note="Can Seek in a 60\' cone using hearing and gains +2 within 30\'"',
+    'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
   'Wildwood Halfling':
     'Section=ability ' +
     'Note="Moves normally over difficult terrain caused by foliage"',
-  'Woodland Elf':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Can always Take Cover within forest terrain",' +
-      '"Can Climb foliage at %{speed//2}\', or %{speed}\' on a critical success"',
+  'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   // Ancestry feats
   'Dwarven Doughtiness':
@@ -3059,8 +3041,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Additional Lore (Dwarven Lore) feature",' +
       '"Skill Trained (Crafting; Religion)"',
+  // Changed
+  // TODO probably change how weapon familiarity is handed in Pathfinder2E.js
   'Dwarven Weapon Familiarity':
-    Pathfinder2E.FEATURES['Dwarven Weapon Familiarity'],
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Dwarf Weapons; Battle Axe; Pick; Warhammer)",' +
+      '"Has access to uncommon dwarf weapons%{level>=5?\'/Critical hits with a dwarf weapon, battle axe, pick, or warhammer inflict its critical specialization effect\':\'\'}"',
   'Rock Runner':
     Pathfinder2E.FEATURES['Rock Runner'].replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
@@ -3104,90 +3091,89 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Self becomes petrified until the end of turn, negating damage from the triggering effect or failed Fortitude save that would not affect stone"',
 
-  'Ancestral Longevity':
-    'Section=skill ' +
-    'Note="Gains Trained proficiency in choice of skill during daily prep"',
-  'Elven Lore':
-    'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
+  'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
+  'Elven Lore':Pathfinder2E.FEATURES['Elven Lore'],
+  // Changed
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)/Treats elf weapons as one category simpler",' +
-      '"Has access to uncommon elf weapons"',
-  'Forlorn':
-    'Section=save ' +
-    'Note="+1 vs. emotion effects, and successes are critical successes"',
-  'Nimble Elf':'Section=ability Note="+5 Speed"',
-  'Otherworldly Magic':
-    'Section=magic ' +
-    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
-  'Unwavering Mien':
-    'Section=save ' +
-    'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
-  'Ageless Patience':
-    'Section=skill ' +
-    'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
-  'Elven Weapon Elegance':
-    'Section=combat ' +
-    'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
-  'Elf Step':'Action=1 Section=combat Note="Steps twice in 1 action"',
-  'Expert Longevity':
-    'Section=skill ' +
-    'Note="Gains expert level in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
-  'Universal Longevity':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="Can replace Ancestral Longevity and Expert Longevity skills once per day"',
-  'Elven Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
-
-  'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
-  'Burrow Elocutionist':'Section=skill Note="Can speak with burrowing animals"',
-  'Fey Fellowship':
+      '"Weapon Familiarity (Elf Weapons; Longbow; Composite Longbow; Rapier; Shortbow; Composite Shortbow)",' +
+      '"Has access to uncommon elf weapons%{level>=5?\'/Critical hits with an elf weapon, longbow, composite longbow, rapier, shortbow, or composite shortbow inflict its critical specialization effect\':\'\'}"',
+  'Forlorn':Pathfinder2E.FEATURES.Forlorn,
+  'Nimble Elf':Pathfinder2E.FEATURES['Nimble Elf'],
+  'Otherworldly Magic':Pathfinder2E.FEATURES['Otherworldly Magic'],
+  'Unwavering Mien':Pathfinder2E.FEATURES['Unwavering Mien'],
+  'Ageless Patience':Pathfinder2E.FEATURES['Ageless Patience'],
+  'Ancestral Suspicion':
     'Section=save,skill ' +
     'Note=' +
-      '"+2 vs. fey",' +
-      '"+2 Perception (fey)/May make an immediate -5 Diplomacy check to Make an Impression with fey and retry a failure after 1 min conversation"',
-  'First World Magic':
+      '"+2 vs. control effects, and successes are critical successes",' +
+      '"+2 Perception to detect controlled creatures"',
+  'Martial Experience':
+    'Section=combat ' +
+    'Note="%{level>=11?\'Skill Trained (Simple Weapons; Martial Weapons; Advanced Weapons)\':\'+\'+level+\' attack with untrained weapons\'}"',
+  'Elf Step':Pathfinder2E.FEATURES['Elf Step'],
+  'Expert Longevity':Pathfinder2E.FEATURES['Expert Longevity'],
+  'Otherworldly Acumen':
     'Section=magic ' +
-    'Note="Can cast a chosen primal cantrip as an innate spell at will"',
-  'Gnome Obsession':
+    'Note="Can cast a chosen 2nd-rank spell as an innate spell once per day and use a day of downtime to change the spell chosen"',
+  'Tree Climber':'Section=ability Note="Has a 20\' climb Speed"',
+  'Avenge Ally':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Uses the better of two rolls on a Strike when within 30\' of a dying ally once per 10 min"',
+  'Universal Longevity':Pathfinder2E.FEATURES['Universal Longevity'],
+  'Magic Rider':
+    'Section=magic ' +
+    'Note="Can teleport another person when affected by a multiple-target teleportation spell, and always arrives within 1 mile of the desired location"',
+
+  'Animal Accomplice':Pathfinder2E.FEATURES['Animal Accomplice'],
+  // Changed from Burrow Elocutionist
+  'Animal Elocutionist':
     'Section=skill ' +
-    // NOTE: would like to replace "background Lore skill" with the actual
-    // skill, but backgrounds that allow a choice of skills make this difficult
-    'Note="Skill %V (Choose 1 from any Lore; background Lore skill)"',
+    'Note="Can speak with animals and gains +1 to Make An Impression with them"',
+  'Fey Fellowship':Pathfinder2E.FEATURES['Fey Fellowship'],
+  'First World Magic':Pathfinder2E.FEATURES['First World Magic'],
+  // Changed
+  'Gnome Obsession':
+    'Section=feature ' +
+    // TODO trouble randomizing?
+    'Note="+1 Skill Feat (Additional Lore)/+1 Skill Feat (Assurance)"',
+  // Changed
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Glaive; Kukri)/Treats gnome weapons as one category simpler",' +
-      '"Has access to uncommon gnome weapons"',
-  'Illusion Sense':
-    'Section=save,skill ' +
-    'Note=' +
-      '"+1 Will (illusions)/R10\' Automatically attempts checks to disbelieve illusions",' +
-      '"+1 Perception (illusions)"',
-  'Animal Elocutionist':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Can speak with all animals",' +
-      '"+1 to Make an Impression on animals"',
-  'Energized Font':
+      '"Weapon Familiarity (Gnome Weapons; Glaive; Kukri)",' +
+      '"Has access to kukris and uncommon gnome weapons%{level>=5?\'/Critical hits with a gnome weapon, kukri, or glaive inflict its critical specialization effect\':\'\'}"',
+  'Illusion Sense':Pathfinder2E.FEATURES['Illusion Sense'],
+  'Razzle-Dazzle':
+    'Section=magic ' +
+    'Note="Inflicted blinded or dazzled conditions last 1 additional rd"',
+  'Energized Font':Pathfinder2E.FEATURES['Energized Font'],
+  'Project Persona':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Can use to regain 1 Focus Point once per day"',
-  'Gnome Weapon Innovator':
-    'Section=combat ' +
-    'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
+    // TODO Will DC
+    'Note="Places an illusion of normal cloting over armor"',
+  'Cautious Curiosity':
+    'Section=magic ' +
+    // TODO arcane or occult
+    'Note="Knows the Disguise Magic and Silence occult innate spells; can cast each at 2nd-rank on self once per day"',
+  // Changed
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each once per day"',
-  'Vivacious Conduit':
-    'Section=combat ' +
-    'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
-  'Gnome Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack %V (Glaive; Kukri; Gnome Weapons)"',
+     'Note="Knows the Invisibility and Revealing Light primal innate spells; may cast each once per day"',
+  'Life Leap':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Passes through an adjacent creature to the opposite side"',
+  'Vivacious Conduit':Pathfinder2E.FEATURES['Vivacious Conduit'],
+  'Instinctive Obfuscation':
+    'Action=Reaction ' +
+    'Section=magic ' +
+    'Note="Illusory double forces a successful DC 10 flat check on an attacking foe once per hour; failure negates the attack"',
+  'Homeward Bound':
+    'Section=magic Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
   'Burn It!':
     'Section=combat,magic ' +
@@ -12223,6 +12209,21 @@ Pathfinder2ERemaster.featRules = function(
  */
 Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   Pathfinder2E.featRulesExtra(rules, name);
+  if(name == 'Martial Experience') {
+    rules.defineRule('combatNotes.martialExperience.1',
+      'features.Martial Experience', '?', null,
+      'level', '=', 'source>=11 ? 1 : null'
+    );
+    rules.defineRule('trainingLevel.Simple Weapons',
+      'combatNotes.martialExperience.1', '^', null
+    );
+    rules.defineRule('trainingLevel.Martial Weapons',
+      'combatNotes.martialExperience.1', '^', null
+    );
+    rules.defineRule('trainingLevel.Advanced Weapons',
+      'combatNotes.martialExperience.1', '^', null
+    );
+  }
 };
 
 /*
@@ -12310,6 +12311,9 @@ Pathfinder2ERemaster.weaponRules = function(
 ) {
   Pathfinder2E.weaponRules(
     rules, name, category, price, damage, bulk, hands, group, traits, range
+  );
+  rules.defineRule('proficiencyLevelBonus.' + name,
+    'combatNotes.martialExperience', '=', '0',
   );
 };
 
