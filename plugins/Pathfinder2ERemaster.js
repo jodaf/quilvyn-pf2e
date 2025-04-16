@@ -693,146 +693,129 @@ Pathfinder2ERemaster.FEATS = {
 
   // Ancestries
   'Dwarven Doughtiness':'Trait=Ancestry,Dwarf',
-  'Dwarven Lore':'Trait=Ancestry,Dwarf',
-  'Dwarven Weapon Familiarity':'Trait=Ancestry,Dwarf',
+  'Dwarven Lore':Pathfinder2E.FEATS['Dwarven Lore'],
+  'Dwarven Weapon Familiarity':Pathfinder2E.FEATS['Dwarven Weapon Familiarity'],
   'Mountain Strategy':'Trait=Ancestry,Dwarf',
-  'Rock Runner':'Trait=Ancestry,Dwarf',
-  "Stonemason's Eye":'Trait=Ancestry,Dwarf',
-  'Unburdened Iron':'Trait=Ancestry,Dwarf',
-  'Boulder Roll':
-    'Trait=Ancestry,Dwarf Require="level >= 5","features.Rock Runner"',
+  'Rock Runner':Pathfinder2E.FEATS['Rock Runner'],
+  "Stonemason's Eye":Pathfinder2E.FEATS.Stonecunning,
+  'Unburdened Iron':Pathfinder2E.FEATS['Unburdened Iron'],
+  'Boulder Roll':Pathfinder2E.FEATS['Boulder Roll'],
   'Defy The Darkness':
     'Trait=Ancestry,Dwarf Require="level >= 5","features.Darkvision"',
   'Dwarven Reinforcement':
     'Trait=Ancestry,Dwarf Require="level >= 5","rank.Crafting >= 2"',
   'Echoes In Stone':'Trait=Ancestry,Dwarf Require="level >= 9"',
-  "Mountain's Stoutness":'Trait=Ancestry,Dwarf Require="level >= 9"',
+  "Mountain's Stoutness":Pathfinder2E.FEATS["Mountain's Stoutness"],
   'Stone Bones':'Trait=Ancestry,Dwarf Require="level >= 9"',
-  'Stonewalker':'Trait=Ancestry,Dwarf Require="level >= 9"',
+  'Stonewalker':Pathfinder2E.FEATS.Stonewalker,
   'March The Mines':'Trait=Ancestry,Dwarf Require="level >= 13"',
   'Telluric Power':'Trait=Ancestry,Dwarf Require="level >= 13"',
   'Stonegate':'Trait=Ancestry,Dwarf Require="level >= 17"',
   'Stonewall':'Trait=Ancestry,Dwarf Require="level >= 17"',
 
-  'Ancestral Longevity':'Trait=Ancestry,Elf',
-  'Elven Lore':'Trait=Ancestry,Elf',
-  'Elven Weapon Familiarity':'Trait=Ancestry,Elf',
-  'Forlorn':'Trait=Ancestry,Elf',
-  'Nimble Elf':'Trait=Ancestry,Elf',
-  'Otherworldly Magic':'Trait=Ancestry,Elf',
-  'Unwavering Mien':'Trait=Ancestry,Elf',
-  'Ageless Patience':'Trait=Ancestry,Elf Require="level >= 5"',
-  'Ancestral Suspicion':'Trait=Anestry,Elf Require="level >= 5"',
-  'Martial Experience':'Trait=Anestry,Elf Require="level >= 5"',
-  'Elf Step':'Trait=Ancestry,Elf Require="level >= 9"',
-  'Expert Longevity':
-    'Trait=Ancestry,Elf Require="level >= 9","features.Ancestral Longevity"',
+  'Ancestral Longevity':Pathfinder2E.FEATS['Ancestral Longevity'],
+  'Elven Lore':Pathfinder2E.FEATS['Elven Lore'],
+  'Elven Weapon Familiarity':Pathfinder2E.FEATS['Elven Weapon Familiarity'],
+  'Forlorn':Pathfinder2E.FEATS.Forlorn,
+  'Nimble Elf':Pathfinder2E.FEATS['Nimble Elf'],
+  'Otherworldly Magic':Pathfinder2E.FEATS['Otherworldly Magic'],
+  'Unwavering Mien':Pathfinder2E.FEATS['Unwavering Mien'],
+  'Ageless Patience':Pathfinder2E.FEATS['Ageless Patience'],
+  'Ancestral Suspicion':'Trait=Ancestry,Elf Require="level >= 5"',
+  'Martial Experience':'Trait=Ancestry,Elf Require="level >= 5"',
+  'Elf Step':Pathfinder2E.FEATS['Elf Step'],
+  'Expert Longevity':Pathfinder2E.FEATS['Expert Longevity'],
   // TODO requires "at least one innate spell gained from an elf ancestry feat"
-  'Otherworldly Acumen':
-    'Trait=Ancestry,Elf Require="level >= 9"',
+  'Otherworldly Acumen':'Trait=Ancestry,Elf Require="level >= 9"',
   'Tree Climber':'Trait=Ancestry,Elf Require="level >= 9"',
   'Avenge Ally':'Trait=Ancestry,Elf Require="level >= 13"',
-  'Universal Longevity':
-    'Trait=Ancestry,Elf Require="level >= 13","features.Ancestral Longevity"',
+  'Universal Longevity':Pathfinder2E.FEATS['Universal Longevity'],
   'Magic Rider':'Trait=Ancestry,Elf Require="level >= 17"',
 
-  'Animal Accomplice':'Trait=Ancestry,Gnome',
-  'Animal Elocutionist':'Trait=Ancestry,Gnome',
-  'Fey Fellowship':'Trait=Ancestry,Gnome',
-  'First World Magic':'Trait=Ancestry,Gnome',
-  'Gnome Obsession':'Trait=Ancestry,Gnome',
-  'Gnome Weapon Familiarity':'Trait=Ancestry,Gnome',
-  'Illusion Sense':'Trait=Ancestry,Gnome',
+  'Animal Accomplice':Pathfinder2E.FEATS['Animal Accomplice'],
+  'Animal Elocutionist':Pathfinder2E.FEATS['Burrow Elocutionist'],
+  'Fey Fellowship':Pathfinder2E.FEATS['Fey Fellowship'],
+  'First World Magic':Pathfinder2E.FEATS['First World Magic'],
+  'Gnome Obsession':Pathfinder2E.FEATS['Gnome Obsession'],
+  'Gnome Weapon Familiarity':Pathfinder2E.FEATS['Gnome Weapon Familiarity'],
+  'Illusion Sense':Pathfinder2E.FEATS['Illusion Sense'],
   'Razzle-Dazzle':'Trait=Ancestry,Gnome',
-  // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
-  'Energized Font':
-    'Trait=Ancestry,Gnome Require="level >= 5","focusPoints"',
+  'Energized Font':Pathfinder2E.FEATS['Energized Font'],
   'Project Persona':'Trait=Ancestry,Gnome Require="level >= 5"',
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
-  'Cautious Curiosity':
-    'Trait=Ancestry,Gnome Require="level >= 9"',
-  'First World Adept':
-    'Trait=Ancestry,Gnome ' +
-    'Require="level >= 9","rank.Primal Innate >= 1"',
+  'Cautious Curiosity':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Trait=Ancestry,Gnome Require="level >= 9"',
-  'Vivacious Conduit':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
   'Instinctive Obfuscation':'Trait=Ancestry,Gnome Require="level >= 13"',
   'Homeward Bound':'Trait=Ancestry,Gnome Require="level >= 17"',
 
-  'Burn It!':'Trait=Ancestry,Goblin',
-  'City Scavenger':'Trait=Ancestry,Goblin',
-  'Goblin Lore':'Trait=Ancestry,Goblin',
-  'Goblin Scuttle':'Trait=Ancestry,Goblin',
-  'Goblin Song':'Trait=Ancestry,Goblin',
-  'Goblin Weapon Familiarity':'Trait=Ancestry,Goblin',
-  'Junk Tinker':'Trait=Ancestry,Goblin',
-  'Rough Rider':'Trait=Ancestry,Goblin',
-  'Very Sneaky':'Trait=Ancestry,Goblin',
+  'Burn It!':Pathfinder2E.FEATS['Burn It!'],
+  'City Scavenger':Pathfinder2E.FEATS['City Scavenger'],
+  'Goblin Lore':Pathfinder2E.FEATS['Goblin Lore'],
+  'Goblin Scuttle':Pathfinder2E.FEATS['Goblin Scuttle'],
+  'Goblin Song':Pathfinder2E.FEATS['Goblin Song'],
+  'Goblin Weapon Familiarity':Pathfinder2E.FEATS['Goblin Weapon Familiarity'],
+  'Junk Tinker':Pathfinder2E.FEATS['Junk Tinker'],
+  'Rough Rider':Pathfinder2E.FEATS['Rough Rider'],
+  'Very Sneaky':Pathfinder2E.FEATS['Very Sneaky'],
   'Kneecap':'Trait=Ancestry,Goblin Require="level >= 5"',
   'Loud Singer':
     'Trait=Ancestry,Goblin Require="level >= 5","features.Goblin Song"',
   'Vandal':'Trait=Ancestry,Goblin Require="level >= 5"',
-  'Cave Climber':'Trait=Ancestry,Goblin Require="level >= 9"',
+  'Cave Climber':Pathfinder2E.FEATS['Cave Climber'],
   'Cling':'Trait=Ancestry,Goblin Require="level >= 9"',
-  'Skittering Scuttle':
-    'Trait=Ancestry,Goblin Require="level >= 9","features.Goblin Scuttle"',
-  'Very, Very Sneaky':
-    'Trait=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
+  'Skittering Scuttle':Pathfinder2E.FEATS['Skittering Scuttle'],
+  'Very, Very Sneaky':Pathfinder2E.FEATS['Very, Very Sneaky'],
   'Reckless Abandon':'Trait=Ancestry,Goblin Require="level >= 17"',
 
-  'Distracting Shadows':'Trait=Ancestry,Halfling',
+  'Distracting Shadows':Pathfinder2E.FEATS['Distracting Shadows'],
   'Folksy Patter':'Trait=Ancestry,Halfling',
-  'Halfling Lore':'Trait=Ancestry,Halfling',
-  'Halfling Luck':'Trait=Ancestry,Halfling,Fortune',
-  'Halfling Weapon Familiarity':'Trait=Ancestry,Halfling',
+  'Halfling Lore':Pathfinder2E.FEATS['Halfling Lore'],
+  'Halfling Luck':Pathfinder2E.FEATS['Halfling Luck'],
+  'Halfling Weapon Familiarity':
+    Pathfinder2E.FEATS['Halfling Weapon Familiarity'],
   'Prarie Rider':'Trait=Ancestry,Halfling',
-  'Sure Feet':'Trait=Ancestry,Halfling',
-  'Titan Slinger':'Trait=Ancestry,Halfling',
-  'Unfettered Halfling':'Trait=Ancestry,Halfling',
-  'Watchful Halfling':'Trait=Ancestry,Halfling',
+  'Sure Feet':Pathfinder2E.FEATS['Sure Feet'],
+  'Titan Slinger':Pathfinder2E.FEATS['Titan Slinger'],
+  'Unfettered Halfling':Pathfinder2E.FEATS['Unfettered Halfling'],
+  'Watchful Halfling':Pathfinder2E.FEATS['Watchful Halfling'],
   'Cultural Adaptability (%ancestry)':
-    'Trait=Ancestry,Halfling Require="level >= 5"',
+    Pathfinder2E.FEATS['Cultural Adaptability (%ancestry)'],
   'Step Lively':'Trait=Ancestry,Halfling Require="level >= 5"',
   'Dance Underfoot':
     'Trait=Ancestry,Halfling Require="level >= 9","features.Step Lively"',
-  'Guiding Luck':
-    'Trait=Ancestry,Halfling Require="level >= 9","features.Halfling Luck"',
-  'Irrepressible':'Trait=Ancestry,Halfling Require="level >= 9"',
+  'Guiding Luck':Pathfinder2E.FEATS['Guiding Luck'],
+  'Irrepressible':Pathfinder2E.FEATS.Irrepressible,
   'Unhampered Passage':'Trait=Ancestry,Halfling Require="level >= 9"',
-  'Ceaseless Shadows':
-    'Trait=Ancestry,Halfling ' +
-    'Require="level >= 13","features.Distracting Shadows"',
+  'Ceaseless Shadows':Pathfinder2E.FEATS['Ceaseless Shadows'],
   'Toppling Dance':
     'Trait=Ancestry,Halfling ' +
     'Require="level >= 13","features.Dance Underfoot"',
   'Shadow Self':
     'Trait=Ancestry,Halfling Require="level >= 17","rank.Stealth >= 4"',
 
-  'Adapted Cantrip':
-    'Trait=Ancestry,Human ' +
-    'Require="features.Arcane Spellcasting || features.Divine Spellcasting || features.Occult Spellcasting || features.Primal Spellcasting || features.Sorcerer Spellcasting"',
-  'Cooperative Nature':'Trait=Ancestry,Human',
-  'General Training':'Trait=Ancestry,Human',
-  'Haughty Obstinacy':'Trait=Ancestry,Human',
-  'Natural Ambition':'Trait=Ancestry,Human',
-  'Natural Skill':'Trait=Ancestry,Human',
-  'Unconventional Weaponry (%weapon)':'Trait=Ancestry,Human',
-  'Adaptive Adept':
-    'Trait=Ancestry,Human ' +
-    'Require=' +
-      '"level >= 5",' +
-      '"features.Adapted Cantrip",' +
-      '"spellSlots.A3 || spellSlots.D3 || spellSlots.O3 || spellSlots.P3"',
-  'Clever Improviser':'Trait=Ancestry,Human Require="level >= 5"',
+  'Adapted Cantrip':Pathfinder2E.FEATS['Adapted Cantrip'],
+  'Cooperative Nature':Pathfinder2E.FEATS['Cooperative Nature'],
+  'General Training':Pathfinder2E.FEATS['General Training'],
+  'Haughty Obstinacy':Pathfinder2E.FEATS['Haughty Obstinacy'],
+  'Natural Ambition':Pathfinder2E.FEATS['Natural Ambition'],
+  'Natural Skill':Pathfinder2E.FEATS['Natural Skill'],
+  'Unconventional Weaponry (%weapon)':
+    Pathfinder2E.FEATS['Unconventional Weaponry (%weapon)'],
+  'Adaptive Adept':Pathfinder2E.FEATS['Adaptive Adept'],
+  'Clever Improviser':Pathfinder2E.FEATS['Clever Improviser'],
   'Sense Allies':'Trait=Ancestry,Human Require="level >= 5"',
+  // Requirements changed
   'Cooperative Soul':'Trait=Ancestry,Human Require="level >= 9"',
   'Group Aid':'Trait=Ancestry,Human Require="level >= 9"',
   'Hardy Traveler':'Trait=Ancestry,Human Require="level >= 9"',
+  // Requirements changed
   'Incredible Improvisation':'Trait=Ancestry,Human Require="level >= 9"',
-  'Multitalented':'Trait=Ancestry,Human Require="level >= 9"',
+  'Multitalented':Pathfinder2E.FEATS.Multitalented,
   'Advanced General Training':'Trait=Ancestry,Human Require="level >= 13"',
   'Bounce Back':'Trait=Ancestry,Human Require="level >= 13"',
   'Stubborn Persistence':'Trait=Ancestry,Human Require="level >= 13"',
@@ -864,11 +847,12 @@ Pathfinder2ERemaster.FEATS = {
 
   'Beast Trainer':'Trait=Ancestry,Orc',
   'Iron Fists':'Trait=Ancestry,Orc',
-  'Orc Ferocity':'Trait=Ancestry,Orc',
+  'Orc Ferocity':Pathfinder2E.FEATS['Orc Ferocity'],
   'Orc Lore':'Trait=Ancestry,Orc',
+  // Requirements changed
   'Orc Superstition':'Trait=Ancestry,Orc',
   'Hold Mark':'Trait=Ancestry,Orc',
-  'Orc Weapon Familiarity':'Trait=Ancestry,Orc',
+  'Orc Weapon Familiarity':Pathfinder2E.FEATS['Orc Weapon Familiarity'],
   'Tusks':'Trait=Ancestry,Orc',
   'Athletic Might':'Trait=Ancestry,Orc Require="level >= 5"',
   'Bloody Blows':'Trait=Ancestry,Orc Require="level >= 5"',
@@ -879,8 +863,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
   'Undying Ferocity':
     'Trait=Ancestry,Orc Require="level >= 9","features.Orc Ferocity"',
-  'Incredible Ferocity':
-    'Trait=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
+  'Incredible Ferocity':Pathfinder2E.FEATS['Incredible Ferocity'],
   // TODO requires "animal companion, Pet, or Bonded Animal"
   'Ferocious Beasts':
     'Trait=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
@@ -1605,7 +1588,7 @@ Pathfinder2ERemaster.FEATS = {
   'Versatile Font':Pathfinder2E.FEATS['Versatile Font'],
   "Warpriest's Armor":
     'Trait=Class,Cleric Require="level >= 2","features.Warpriest"',
-  // Traits and requirements have changed
+  // Traits and requirements changed
   'Channel Smite':'Trait=Class,Cleric,Divine Require="level >= 4"',
   'Directed Channel':Pathfinder2E.FEATS['Directed Channel'],
   'Divine Infusion':
@@ -1615,7 +1598,7 @@ Pathfinder2ERemaster.FEATS = {
   'Sacred Ground':
     'Trait=Class,Cleric,Consecration,Divine,Exploration ' +
     'Require="level >= 4","features.Harmful Font || feature.Healing Font"',
-  // Traits and requirements have changed
+  // Traits and requirements changed
   'Cast Down':'Trait=Class,Cleric,Concentrate,Spellshape Require="level >= 6"',
   'Divine Rebuttal':'Trait=Class,Cleric,Divine Require="level >= 6"',
   'Divine Weapon':Pathfinder2E.FEATS['Divine Weapon'],
@@ -1680,7 +1663,7 @@ Pathfinder2ERemaster.FEATS = {
   'Zealous Rish':'Trait=Class,Cleric Require="level >= 8"',
   'Castigating Weapon':
     Pathfinder2E.FEATS['Castigating Weapon'].replace('Holy Castigation', 'Divine Castigation'),
-  // Traits and requirements have changed
+  // Traits and requirements changed
   'Heroic Recovery':
     'Trait=Class,Cleric,Concentrate,Spellshape ' +
     'Require="level >= 10","features.Healing Font"',
@@ -1710,9 +1693,9 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Cleric Require="level >= 14","features.Sanctify Armament"',
   'Premonition Of Clarity':'Trait=Class,Cleric Require="level >= 14"',
   'Swift Banishment':Pathfinder2E.FEATS['Swift Banishment'],
-  // Requirement has changed
+  // Requirements changed
   'Eternal Bane':'Trait=Class,Cleric Require="level >= 16","features.Unholy"',
-  // Requirement has changed
+  // Requirements changed
   'Eternal Blessing':'Trait=Class,Cleric Require="level >= 16","features.Holy"',
   'Rebounding Smite':
     'Trait=Class,Cleric Require="level >= 16","features.Channel Smite"',
