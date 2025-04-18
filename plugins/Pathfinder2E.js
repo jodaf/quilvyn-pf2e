@@ -3362,7 +3362,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,save ' +
     'Note=' +
       '"+4 Hit Points",' +
-      '"Reduces falling damage by half distance"',
+      '"Reduces falling damage by half the distance"',
   'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
@@ -3517,7 +3517,7 @@ Pathfinder2E.FEATURES = {
   'Burn It!':
     'Section=combat,magic ' +
     'Note=' +
-      '"Persistent fire damage from an attack inflicts +1 HP, and fire alchemical items inflict additional damage equal to one quarter the item level",' +
+      '"Persistent fire damage from an attack inflicts +1 HP, and alchemical fire items inflict additional damage equal to one quarter the item level",' +
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
@@ -3531,7 +3531,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Song':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' Successful Performance vs. Will DC of %{rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8} target%{rank.Performance<2?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
+    'Note="R%{skillNotes.loudSinger?60:30}\' Successful Performance vs. Will DC of %{(rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8)+(skillNotes.loudSinger?1:0)} target%{rank.Performance<2&&!skillNotes.loudSinger?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3583,11 +3583,11 @@ Pathfinder2E.FEATURES = {
   'Watchful Halfling':
     'Section=combat,skill ' +
     'Note=' +
-      '"May use Aid to help another overcome enchantment or possession",' +
+      '"Can use Aid to help another overcome enchantment or possession",' +
       '"+2 Perception (sense enchantment or possession)/Automatically attempts a -2 check to notice enchantment or possession"',
   'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
-    'Note="+1 Ancestry feat/Has the Adopted Ancestry (%ancestry) feature"',
+    'Note="+1 Ancestry Feat/Has the Adopted Ancestry (%ancestry) feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',

@@ -97,7 +97,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
   'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey'),
   'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
   'Halfling':Pathfinder2E.ANCESTRIES.Halfling.replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
-  'Human':Pathfinder2E.ANCESTRIES.Human.replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', ''),
+  'Human':Pathfinder2E.ANCESTRIES.Human.replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '').replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
@@ -2961,9 +2961,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
-  'Charhide Goblin':
-    'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
+  'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
   'Darkvision':Pathfinder2E.FEATURES['Darkvision'],
   'Death Warden Dwarf':
     Pathfinder2E.FEATURES['Death Warden Dwarf'].replace('necromancy', 'void and undead'),
@@ -2974,20 +2972,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Forge Dwarf':Pathfinder2E.FEATURES['Forge Dwarf'],
   'Gnome Heritage':'Section=feature Note="1 selection"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
-  'Gutsy Halfling':
-    'Section=save Note="Successful saves vs. emotion are critical successes"',
+  'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
   'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
   'Halfling Heritage':'Section=feature Note="1 selection"',
-  'Hillock Halfling':
-    'Section=combat ' +
-    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
+  'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
   'Human Heritage':'Section=feature Note="1 selection"',
-  'Irongut Goblin':
-    'Section=feature,save ' +
-    'Note=' +
-      '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs. afflictions and sickened from ingestion, and successes on saves are critical successes"',
+  'Irongut Goblin':Pathfinder2E.FEATURES['Irongut Goblin'],
+  'Jinx':
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)"',
+  'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
   'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Keen Eyes':
     'Section=combat,skill ' +
@@ -2995,27 +2991,20 @@ Pathfinder2ERemaster.FEATURES = {
       '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Leshy Heritage':'Section=feature Note="1 selection"',
-  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
-  'Razortooth Goblin':
-    'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
+  'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
+  'Razortooth Goblin':Pathfinder2E.FEATURES['Razortooth Goblin'],
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
   'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
   'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
-  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
+  'Skilled Human':Pathfinder2E.FEATURES['Skilled Heritage Human'],
   'Slow':'Section=ability Note="-5 Speed"',
-  'Snow Goblin':
-    'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
+  'Snow Goblin':Pathfinder2E.FEATURES['Snow Goblin'],
   'Strong-Blooded Dwarf':Pathfinder2E.FEATURES['Strong-Blooded Dwarf'],
-  'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Twilight Halfling':Pathfinder2E.FEATURES['Twilight Halfling'],
   'Umbral Gnome':Pathfinder2E.FEATURES['Umbral Gnome'],
-  'Unbreakable Goblin':
-    'Section=combat,save ' +
-    'Note=' +
-      '"+4 Hit Points",' +
-      '"Reduces falling damage by half distance"',
-  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
+  'Unbreakable Goblin':Pathfinder2E.FEATURES['Unbreakable Goblin'],
+  'Versatile Human':Pathfinder2E.FEATURES['Versatile Heritage Human'],
   'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
   'Wellspring Gnome (Arcane)':
     Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
@@ -3027,9 +3016,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Whisper Elf':
     'Section=skill ' +
     'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
-  'Wildwood Halfling':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by foliage"',
+  'Wildwood Halfling':Pathfinder2E.FEATURES['Wildwood Halfling'],
   'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   // Ancestry feats
@@ -3175,127 +3162,117 @@ Pathfinder2ERemaster.FEATURES = {
   'Homeward Bound':
     'Section=magic Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
-  'Burn It!':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Persistent fire damage from an attack inflicts +1 HP, and fire alchemical items inflict additional damage equal to one quarter the item level",' +
-      '"Fire spells inflict additional damage equal to half the spell level"',
-  'City Scavenger':
-    'Section=skill ' +
-    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival checks to Earn Income from using Subsist in a settlement"',
-  'Goblin Lore':
-    'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
-  'Goblin Scuttle':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Can take a Step when an ally moves to an adjacent position"',
-  'Goblin Song':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="R30\' Successful Performance vs. Will DC of %{rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8} target%{rank.Performance<2?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
+  'Burn It!':Pathfinder2E.FEATURES['Burn It!'],
+  'City Scavenger':Pathfinder2E.FEATURES['City Scavenger'],
+  'Goblin Lore':Pathfinder2E.FEATURES['Goblin Lore'],
+  'Goblin Scuttle':Pathfinder2E.FEATURES['Goblin Scuttle'],
+  'Goblin Song':Pathfinder2E.FEATURES['Goblin Song'],
+  // Changed
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Dogslicer; Horsechopper)/Treats goblin weapons as one category simpler",' +
-      '"Has access to uncommon goblin weapons"',
-  'Junk Tinker':
-    'Section=skill ' +
-    'Note="Can use Crafting on junk to create shoddy level 0 items; suffers no penalty when using these"',
-  'Rough Rider':
-    'Section=feature,skill ' +
+      '"Weapon Familiarity (Goblin Weapons)/Treats goblin weapons as one category simpler",' +
+      '"Has access to uncommon goblin weapons%{level>=5?\'/Critical hits with a goblin weapon inflict its critical specialization effect\':\'\'}"',
+  'Junk Tinker':Pathfinder2E.FEATURES['Junk Tinker'],
+  'Rough Rider':Pathfinder2E.FEATURES['Rough Rider'],
+  'Very Sneaky':Pathfinder2E.FEATURES['Very Sneaky'],
+  'Kneecap':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Strike inflicts -10\' Speed for 1 rd, or -15\' Speed on a critical success"',
+  'Loud Singer':'Section=skill Note="Has increased Goblin Song effects"',
+  'Vandal':
+    'Section=combat,skill ' +
     'Note=' +
-      '"Has the Ride feature",' +
-      '"+1 Nature (Command an Animal with a goblin dog or wolf mount)"',
-  'Very Sneaky':'Section=skill Note="+5\' Sneak/Can Sneak between cover"',
-  'Goblin Weapon Frenzy':
+      '"Strikes agains unattended objects and traps ignore 5 Hardness",' +
+      '"Skill Trained (Thievery)"',
+  'Cave Climber':Pathfinder2E.FEATURES['Cave Climber'],
+  'Cling':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
-  'Cave Climber':'Section=ability Note="Has a 10\' climb Speed"',
-  'Skittering Scuttle':
-    'Section=combat Note="Can use Goblin Scuttle to Stride %{speed//2}\'"',
-  'Goblin Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
-  'Very, Very Sneaky':
-    'Section=combat Note="Can Sneak at full Speed and without cover"',
-
-  'Distracting Shadows':
-    'Section=skill Note="Can use larger creatures as cover for Hide and Sneak"',
-  'Halfling Lore':
-    'Section=skill Note="Skill Trained (Acrobatics; Stealth; Halfling Lore)"',
-  'Halfling Luck':
+    'Note="Moves with target after a successful Strike with a hand free until a successful DC %{skillModifier.Acrobatics} Escape"',
+  'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
+  'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
+  'Recless Abandon':
     'Action=Free ' +
-    'Section=feature ' +
-    'Note="May reroll a failed skill check or save once per day"',
+    'Section=save ' +
+    'Note="Critical failures on saves are normal failures and result in minimum damage until end of turn once per day"',
+
+  'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
+  'Folksy Patter':
+    'Section=skill ' +
+    'Note="Can transmit a 3-word hidden message to a target who succeeeds on a DC 20 Perception check; DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
+  'Halfling Lore':Pathfinder2E.FEATURES['Halfling Lore'],
+  'Halfling Luck':Pathfinder2E.FEATURES['Halfling Luck'],
+  // Changed
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)/Treats halfling weapons as one category simpler",' +
-      '"Has access to uncommon halfling weapons"',
+      '"Weapon Fammiliarity (Halfling Weapons; Sling; Shortsword)",' +
+      '"Has access to uncommon halfling weapons%{level>=5?\'/Critical hits with a halfling weapon, sling, or shortsword inflict its critical specialization effect\':\'\'}"',
+  'Prairie Rider':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Nature)",' +
+      '"+1 Command An Animal with traditional halfling mounts"',
   'Sure Feet':
-    'Section=skill ' +
-    'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
-  'Titan Slinger':
-    'Section=combat ' +
-    'Note="Slings inflict +1 damage die step vs. Large and larger foes"',
+    Pathfinder2E.FEATURES['Sure Feet'].replace('flat-footed', 'off-guard'),
+  'Titan Slinger':Pathfinder2E.FEATURES['Titan Slinger'],
   'Unfettered Halfling':
-    'Section=combat ' +
-    'Note="Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
+    Pathfinder2E.FEATURES['Halfling Luck'].replace(/.Foe Grab.*/, ''),
   'Watchful Halfling':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"May use Aid to help another overcome enchantment or possession",' +
-      '"+2 Perception (sense enchantment or possession)/Automatically attempts a -2 check to notice enchantment or possession"',
+    Pathfinder2E.FEATURES['Watchful Halfling'].replace('-2 ', ''),
   'Cultural Adaptability (%ancestry)':
-    'Section=feature ' +
-    'Note="+1 Ancestry feat/Has the Adopted Ancestry (%ancestry) feature"',
-  'Halfling Weapon Trickster':
+    Pathfinder2E.FEATURES['Cultural Adaptability (%ancestry)'],
+  'Step Lively':
+    'Section=combat Note="Follows a foe move that leaves it adjacent with a Step to a different adjacent space"',
+  'Dance Underfoot':
     'Section=combat ' +
-    'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
-  'Guiding Luck':
-    'Action=Free ' +
-    'Section=feature ' +
-    'Note="May reroll a failed Perception check or attack roll once per day"',
-  'Irrepressible':
-    'Section=save ' +
-    'Note=' +
-      '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
-  'Ceaseless Shadows':
-    'Section=combat ' +
-    'Note="Can use Hide and Sneak without cover/Using creatures gives one degree better cover"',
-  'Halfling Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack %V (Sling; Halfling Sling Staff; Shortsword; Halfling Weapons)"',
-
-  'Adapted Cantrip':
-    'Section=magic Note="Knows a cantrip from a second tradition"',
-  'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
-  'General Training':
-    'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
-  'Haughty Obstinacy':
-    'Section=save ' +
-    'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation (Coerce) fails are critical fails"',
-  'Natural Ambition':'Section=feature Note="+1 Class Feat"',
-  'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  'Unconventional Weaponry':
-    'Section=combat Note="Treats %V as one category simpler"',
-  'Adaptive Adept':
+    'Note="Can end a Tumble Through or Step Lively action in the same space as a Large or larger foe"',
+  'Guiding Luck':Pathfinder2E.FEATURES['Guiding Luck'],
+  'Irrepressible':Pathfinder2E.FEATURES.Irrepressible,
+  'Unhampered Passage':
     'Section=magic ' +
-    'Note="Knows a cantrip or level 1 spell from a second tradition"',
-  'Clever Improviser':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Untrained Improvisation feature",' +
-      '"May attempt any skill untrained"',
-  'Cooperative Soul':
-    'Section=skill ' +
-    'Note="Failures and critical failures when using Aid with expert skills are successes"',
-  'Incredible Improvisation':
-    'Action=Free ' +
+    'Note="Knows the Unhampered Passage primal spell; can cast it on self once per day"',
+  'Ceaseless Shadows':Pathfinder2E.FEATURES['Ceaseless Shadows'],
+  'Toppling Dance':
     'Section=combat ' +
-    'Note="Gives +4 on an untrained skill check once per day"',
-  'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
+    'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/May share space with a Large or larger prone creature"',
+  'Shadow Self':
+    'Section=skill ' +
+    'Note="Can follow a successful Hide or Sneak with 1 min invisibility; a hostile act ends"',
+
+  'Adapted Cantrip':Pathfinder2E.FEATURES['Adapted Cantrip'],
+  'Cooperative Nature':Pathfinder2E.FEATURES['Cooperative Nature'],
+  'General Training':Pathfinder2E.FEATURES['General Training'],
+  'Haughty Obstinacy':Pathfinder2E.FEATURES['Haughty Obstinacy'],
+  'Natural Ambition':Pathfinder2E.FEATURES['Natural Ambition'],
+  'Natural Skill':Pathfinder2E.FEATURES['Natural Skill'],
+  'Unconventional Weaponry':Pathfinder2E.FEATURES['Unconventional Weaponry'],
+  'Adaptive Adept':Pathfinder2E.FEATURES['Adaptive Adept'],
+  'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
+  'Sense Allies':
+    'Section=skill ' +
+    'Note="R60\' Willing undetected allies are hidden instead; may target hidden allies with a DC 5 flat check"',
+  'Cooperative Soul':Pathfinder2E.FEATURES['Cooperative Soul'],
+  'Group Aid':
+    'Action=Free ' +
+    'Section=skill ' +
+    'Note="After Aiding an ally, can Aid another on the same skill"',
+  'Handy Traveler':
+    'Section=ability,ability ' +
+    'Note=' +
+      '"+1 Encumbered Bulk/+1 Maximum Bulk",' +
+      '"+10\' Speed during overland travel"',
+  'Incredible Improvisation':Pathfinder2E.FEATURES['Incredible Improvisation'],
+  'Multitalented':Pathfinder2E.FEATURES.Multitalented,
+  'Advanced General Training':
+    'Section=feature Note="+1 General Feat (7th level)"',
+  'Stubborn Persistence':
+    'Section=save Note="Can avoid fatigue with a successful DC 17 flat check"',
+  'Heroic Presence':
+    'Section=magic ' +
+    'Note="Can generate the effects of a 6th-level Zealous Conviction once per day"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -3812,7 +3789,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'} during rage"',
-  'Reckless Abandon':
+  'Reckless Abandon (Barbarian)':
     'Action=Free ' +
     'Section=feature ' +
     'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
