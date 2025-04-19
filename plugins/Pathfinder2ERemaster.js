@@ -2958,6 +2958,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
+  'Cactus Leshy':
+    'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
@@ -2970,8 +2972,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Fast':'Section=ability Note="+5 Speed"',
   'Fey-Touched Gnome':Pathfinder2E.FEATURES['Fey-Touched Gnome'],
   'Forge Dwarf':Pathfinder2E.FEATURES['Forge Dwarf'],
+  'Fruit Leshy':
+    'Section=magic ' +
+    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hour after removal"',
+  'Fungus Leshy':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Darkvision feature",' +
+      '"Has the fungus trait, not the plant trait"',
   'Gnome Heritage':'Section=feature Note="1 selection"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
+  'Gourd Leshy':
+    'Section=feature Note="Can store 1 Bulk of objects within head"',
   'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
   'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
@@ -2984,6 +2996,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)"',
   'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
+  'Leaf Leshy':'Section=save Note="Takes no damage from falling"',
+  'Lotus Leshy':
+    'Section=ability ' +
+    'Note="Can walk at %{speed//2}\' Speed across still liquids and Balance to move across flowing water"',
   'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Keen Eyes':
     'Section=combat,skill ' +
@@ -2995,6 +3011,17 @@ Pathfinder2ERemaster.FEATURES = {
   'Razortooth Goblin':Pathfinder2E.FEATURES['Razortooth Goblin'],
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
+  'Root Leshy':
+    'Section=combat,combat,feature ' +
+    'Note=' +
+      '"+2 Hit Points",' +
+      '"+2 vs. attempts to Reposition, Shove, or Trip",' +
+      '"Can go 2 weeks without sunlight before starving"',
+  'Seaweek Leshy':
+    'Section=ability,ability ' +
+    'Note=' +
+      '"-5 Speed",' +
+      '"Has a 20\' swim Speed and can breathe water"',
   'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
   'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
   'Skilled Human':Pathfinder2E.FEATURES['Skilled Heritage Human'],
@@ -3005,6 +3032,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Umbral Gnome':Pathfinder2E.FEATURES['Umbral Gnome'],
   'Unbreakable Goblin':Pathfinder2E.FEATURES['Unbreakable Goblin'],
   'Versatile Human':Pathfinder2E.FEATURES['Versatile Heritage Human'],
+  'Vine Leshy':
+    'Section=skill ' +
+    'Note="Can Climb with both hands occupied, and successes to Climb are critical successes"',
   'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
   'Wellspring Gnome (Arcane)':
     Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
