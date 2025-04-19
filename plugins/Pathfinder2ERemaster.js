@@ -92,12 +92,12 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
   Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => x != 'alignment');
 
 Pathfinder2ERemaster.ANCESTRIES = {
-  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf,
-  'Elf':Pathfinder2E.ANCESTRIES.Elf.replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
-  'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey'),
-  'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
-  'Halfling':Pathfinder2E.ANCESTRIES.Halfling.replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
-  'Human':Pathfinder2E.ANCESTRIES.Human.replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '').replaceAll(/Heritage Human/g, 'Human'),
+  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf.replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Elf':Pathfinder2E.ANCESTRIES.Elf.replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Ancient Elf:Heritage",'),
+  'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey').replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Goblin':Pathfinder2E.ANCESTRIES.Goblin.replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Halfling':Pathfinder2E.ANCESTRIES.Halfling.replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Jinxed Halfling:Heritage",'),
+  'Human':Pathfinder2E.ANCESTRIES.Human.replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '"1:Versatile Heritage",').replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
@@ -105,6 +105,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Ability Flaw (Intelligence)",' +
       '1:Small,"1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage","Plant Nourishment" ' +
     'Selectables=' +
+      '"1:Versatile Heritage:Heritage",' +
       '"1:Cactus Leshy:Heritage",' +
       '"1:Fruit Leshy:Heritage",' +
       '"1:Fungus Leshy:Heritage",' +
@@ -122,6 +123,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Ability Boost (Choose 2 from any)",' +
       '1:Darkvision,"1:Ancestry Feats","1:Orc Heritage" ' +
     'Selectables=' +
+      '"1:Versatile Heritage:Heritage",' +
       '"1:Badlands Orc:Heritage",' +
       '"1:Battle-Ready Orc:Heritage",' +
       '"1:Deep Orc:Heritage",' +
@@ -849,9 +851,11 @@ Pathfinder2ERemaster.FEATS = {
   'Iron Fists':'Trait=Ancestry,Orc',
   'Orc Ferocity':Pathfinder2E.FEATS['Orc Ferocity'],
   'Orc Lore':'Trait=Ancestry,Orc',
-  // Requirements changed
-  'Orc Superstition':'Trait=Ancestry,Orc',
-  'Hold Mark':'Trait=Ancestry,Orc',
+  'Orc Superstition':Pathfinder2E.FEATS['Orc Superstition'],
+  'Hold Mark (Burning Sun)':'Trait=Ancestry,Orc',
+  "Hold Mark (Death's Head)":'Trait=Ancestry,Orc',
+  'Hold Mark (Defiled Corpse)':'Trait=Ancestry,Orc',
+  'Hold Mark (Empty Hand)':'Trait=Ancestry,Orc',
   'Orc Weapon Familiarity':Pathfinder2E.FEATS['Orc Weapon Familiarity'],
   'Tusks':'Trait=Ancestry,Orc',
   'Athletic Might':'Trait=Ancestry,Orc Require="level >= 5"',
@@ -871,6 +875,57 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Ancestry,Orc Require="level >= 13","features.Orc Superstition"',
   'Rampaging Ferocity':
     'Trait=Ancestry,Orc Require="level >= 17","features.Orc Ferocity"',
+
+  'Changeling Lore':'Trait="Ancestry,Changeling"',
+  'Hag Claws':'Trait="Ancestry,Changeling"',
+  "Hag's Sight":'Trait="Ancestry,Changeling"',
+  'Called':'Trait="Ancestry,Changeling" Require="level >= 5"',
+  'Mist Child':'Trait="Ancestry,Changeling" Require="level >= 5"',
+  'Accursed Claws':
+    'Trait="Ancestry,Changeling" Require="level >= 9",weapons.Claws',
+  'Occult Resistance':
+    'Trait="Ancestry,Changeling" Require="level >= 9","rank.Occultism >= 2"',
+  'Hag Magic':'Trait="Ancestry,Changeling" Require="level >= 13"',
+
+  'Bestial Minifestation':'Trait="Ancestry,Nephilim"',
+  'Halo':'Trait="Ancestry,Nephilim"',
+  'Nephilim Eyes':'Trait="Ancestry,Nephilim"',
+  'Nephilim Lore':'Trait="Ancestry,Nephilim"',
+  'Nimble Hooves':'Trait="Ancestry,Nephilim"',
+  'Blessed Blood':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  'Extraplanar Supplication':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  'Nephilim Resistance':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  'Scion Of Many Planes':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  'Skillful Tail':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  // TODO Requires celestial lineage
+  'Celestial Magic':'Trait="Ancestry,Nephilim" Require="level >= 9"',
+  'Divine Countermeasures':'Trait="Ancestry,Nephilim" Require="level >= 9"',
+  'Divine Wings':'Trait="Ancestry,Nephilim" Require="level >= 9"',
+  'Fiendish Magic':
+    'Trait="Ancestry,Nephilim" ' +
+    'Require=' +
+      '"level >= 9",' +
+      '"features.Grimspawn || features.Pitborn || features.Hellspawn"',
+  // TODO Requires celestial lineage
+  'Celestial Mercy':'Trait="Ancestry,Nephilim" Require="level >= 13"',
+  // TODO Requires fiendish lineage
+  'Slip Sideways':'Trait="Ancestry,Nephilim" Require="level >= 13"',
+  // TODO Requires nephilim lineage
+  'Summon Nephilim Kin':'Trait="Ancestry,Nephilim" Require="level >= 13"',
+  'Divine Declaration':'Trait="Ancestry,Nephilim" Require="level >= 17"',
+  'Eternal Wings':
+    'Trait="Ancestry,Nephilim" Require="level >= 17","features.Divine Wings"',
+
+  'Earned Glory':'Trait="Ancestry,Aiuvarin"',
+  'Elf Atavism':
+     Pathfinder2E.FEATS['Inspire Imitation'].replace('Half-Elf', 'Aiuvarin'),
+  'Inspire Imitation':'Trait="Ancestry,Aiuvarin" Require="level >= 5"',
+  'Supernatural Charm':
+     Pathfinder2E.FEATS['Supernatural Charm'].replace('Half-Elf', 'Aiuvarin'),
+
+  'Monstrous Peacemaker':
+     Pathfinder2E.FEATS['Monstrous Peacemaker'].replace('Half-Orc', 'Dromaar'),
+  'Orc Sight':Pathfinder2E.FEATS['Orc Sight'].replace('Half-Orc', 'Dromaar'),
 
   // Class
 /*
@@ -2954,10 +3009,21 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Ancestry
   'Ancestry Feats':'Section=feature Note="%V selections"',
+  'Versatile Heritage':'Section=feature Note="1 selection"',
 
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
+  'Badlands Orc':
+    'Section=ability,save ' +
+    'Note=' +
+      '"Can Hustle twice the normal duration while exploring",' +
+      '"Treats environmental heat as 1 step less extreme"',
+  'Battle-Ready Orc':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Intimidating Glare feature",' +
+      '"Skill Trained (Intimidation)"',
   'Cactus Leshy':
     'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
@@ -2967,6 +3033,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Darkvision':Pathfinder2E.FEATURES['Darkvision'],
   'Death Warden Dwarf':
     Pathfinder2E.FEATURES['Death Warden Dwarf'].replace('necromancy', 'void and undead'),
+  'Deep Orc':
+    'Section=feature ' +
+    'Note="Has the Combat Climber and Terrain Expertise (Underground) features"',
   'Dwarf Heritage':'Section=feature Note="1 selection"',
   'Elf Heritage':'Section=feature Note="1 selection"',
   'Fast':'Section=ability Note="+5 Speed"',
@@ -2984,11 +3053,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Goblin Heritage':'Section=feature Note="1 selection"',
   'Gourd Leshy':
     'Section=feature Note="Can store 1 Bulk of objects within head"',
+  'Grave Orc':
+    'Section=save ' +
+    'Note="Has resistance %{level//2>?1} to void damage/+1 vs. death and void effects"',
   'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
   'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
   'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
   'Halfling Heritage':'Section=feature Note="1 selection"',
   'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
+  'Hold-Scarred Orc':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"+2 Hit Points",' +
+      '"Has the Diehard feature"',
   'Human Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':Pathfinder2E.FEATURES['Irongut Goblin'],
   'Jinx':
@@ -3008,6 +3085,12 @@ Pathfinder2ERemaster.FEATURES = {
       '"R30\' +2 Seek to find hidden creatures"',
   'Leshy Heritage':'Section=feature Note="1 selection"',
   'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
+  'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
+  'Rainfall Orc':
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. disease",' +
+      '"+2 Athletics to Climb or Swim"',
   'Razortooth Goblin':Pathfinder2E.FEATURES['Razortooth Goblin'],
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
@@ -3047,6 +3130,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
   'Wildwood Halfling':Pathfinder2E.FEATURES['Wildwood Halfling'],
+  'Winter Orc':
+    'Section=save,skill ' +
+    'Note=' +
+      '"Treats environmental cold as 1 step less extreme",' +
+      '"Skill Trained (Survival)"',
+    
   'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   // Ancestry feats
@@ -3238,7 +3327,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Fammiliarity (Halfling Weapons; Sling; Shortsword)",' +
+      '"Weapon Familiarity (Halfling Weapons; Sling; Shortsword)",' +
       '"Has access to uncommon halfling weapons%{level>=5?\'/Critical hits with a halfling weapon, sling, or shortsword inflict its critical specialization effect\':\'\'}"',
   'Prairie Rider':
     'Section=skill,skill ' +
@@ -3304,28 +3393,141 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can generate the effects of a 6th-level Zealous Conviction once per day"',
 
-  'Elf Atavism':'Section=feature Note="Has an elven heritage"',
-  'Inspire Imitation':
+  'Grasping Reach':
+    'Section=combat ' +
+    'Note="Can reach 10\' with two-handed weapons; doing so reduces the damage die by 1 step"',
+  'Harmlessly Cute':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Shameless Request feature",' +
+      '"+1 Initiative when using Deception"',
+  'Leshy Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Leshy Lore) feature",' +
+      '"Skill Trained (Nature; Stealth)"',
+  'Leshy Superstition':
+    'Action=Reaction Section=save Note="+1 on triggering save"',
+  'Seedpod':
+    'Section=combat ' +
+    'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed on a critical success"',
+  'Shadow Of The Wilds':
     'Section=skill ' +
-    'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
-  'Supernatural Charm':
+    'Note="Has continuous Covering Tracks effects outside of urban environments"',
+  'Undaunted':
+    'Section=save ' +
+    'Note="+1 vs. emotion effects, and successes are critical successes"',
+  'Anchoring Roots':
+    'Section=feature Note="Has the Anchor and Steady Balance features"',
+  'Anchor':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gives +2 vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends"',
+  'Leshy Glide':
+    'Action=1 ' +
+    'Section=ability ' +
+    'Note="Can glide downward, moving 5\' down and up to 25\' forward each rd"',
+  // TODO check One With Plants spell
+  'Ritual Reversion':
+    'Action=2 Section=magic Note="Transforms self into a normal plant"',
+  'Speak With Kindred':
+    'Section=skill ' +
+    'Note="Can speak with plants and fungi/+2 Diplomacy with plants or fungi of the same kind as self"',
+  'Bark And Tendril':
     'Section=magic ' +
-    'Note="Knows the Charm arcane innate spell; may cast it once per day"',
+    'Note="Knows the Entangling Flora and Oaken Resilience primal innate spells; can cast each at rank 2 once per day"',
+  'Lucky Keepsake':
+    'Section=save Note="+1 vs. spells and magical effects"',
+  'Solar Rejuvenation':
+    'Section=combat ' +
+    'Note="Regains %{constitutionModifier+level//2} HP from 10 min rest in a suitable environment"',
+  'Thorned Seedpod':
+    'Section=combat ' +
+    'Note="Critical hits with seedpods inflict 1d4 HP persistent piercing"',
+  'Call Of The Green Man':
+    'Section=magic ' +
+    'Note="Knows the Plant Form primal innate spell; can cast it at rank %{level>=17?6:5} once per day"',
+  'Cloak Of Poison':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min"',
+  'Flourish And Run':
+    'Section=magic ' +
+    'Note="Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at rank 6 once per day"',
+  'Regrowth':
+    'Section=magic ' +
+    'Note="Knows the Regenerate primal innate spell; can cast it at rank 7 once per day"',
+
+  'Beast Trainer':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+1 General Feat (Pet or Train Animal)",' +
+      '"Skill Trained (Nature)"',
+  'Iron Fists':
+    'Section=combat Note="Fists can inflict lethal damage and can shove"',
+  'Orc Ferocity':Pathfinder2E.FEATURES['Orc Ferocity'],
+  'Orc Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Orc Lore) feature",' +
+      '"Skill Trained (Athletics; Survival)"',
+  'Orc Superstition':Pathfinder2E.FEATURES['Orc Superstition'],
+  'Hold Mark (Burning Sun)':
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. arcane spells",' +
+      '"Skill Trained (Diplomacy)"',
+  "Hold Mark (Death's Head)":
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. primal spells",' +
+      '"Skill Trained (Survival)"',
+  'Hold Mark (Defiled Corpse)':
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. divine spells",' +
+      '"Skill Trained (Religion)"',
+  'Hold Mark (Empty Hand)':
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. occult spells",' +
+      '"Skill Trained (Intimidation)"',
+  // Changed
+  'Orc Weapon Familiarity':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Orc Weapons; Falchion; Greataxe)",' +
+      '"Has access to uncommon orc weapons%{level>=5?\'/Critical hits with a orc weapon, falchion, or greataxe inflict its critical specialization effect\':\'\'}"',
+  'Tusks':'Section=combat Note="Tusks inflict 1d6 HP piercing"',
+  'Athletic Might':
+    'Section=skill ' +
+    'Note="Successes on Athletics to Climb or Swim are critical successes"',
+  'Bloody Blows':
+    'Section=combat ' +
+    'Note="Lethal unarmed attacks inflict 1d4 HP persistent bleed damage"',
+  'Defy Death':
+    'Section=save ' +
+    'Note="-1 DC on dying recovery checks/Suffers no debilitation after being returned to life"',
+  'Scar-Thick Skin':'Section=save Note="=5 DC to end persistent bleed damage"',
+  'Pervasive Superstition':Pathfinder2E.FEATURES['Pervasive Superstition'],
+  'Undying Ferocity':
+    'Section=combat Note="Using Orc Ferocity gives %{level} temporary HP"',
+  'Incredible Ferocity':Pathfinder2E.FEATURES['Incredible Ferocity'],
+  'Ferocious Beasts':
+    'Section=combat ' +
+    'Note="Partnered animals have the Orc Ferocity %{$\'features.Undying Ferocity\'?\'and Undying Ferocity features\':\'feature\'}"',
+  'Spell Devourer':
+    'Section=save ' +
+    'Note="Successful saves vs. magic give temporary HP equal do double the spell rank or equal to the effect level"',
+  'Rampaging Ferocity':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if Strike reduces foe to 0 HP"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
     'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
-  'Orc Ferocity':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Retains 1 Hit Point when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
-  'Orc Superstition':'Action=Reaction Section=save Note="+1 vs. magic"',
-  'Orc Weapon Familiarity':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Attack Trained (Falchion; Greataxe)/Treats orc weapons as one category simpler",' +
-      '"Has access to uncommon orc weapons"',
   'Orc Weapon Carnage':
     'Section=combat ' +
     'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
@@ -3333,12 +3535,18 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
-  'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
-  'Incredible Ferocity':
-    'Section=combat Note="Has increased Orc Ferocity effects"',
   'Orc Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Falchion; Greataxe; Orc Weapons)"',
+
+
+  'Elf Atavism':'Section=feature Note="Has an elven heritage"',
+  'Inspire Imitation':
+    'Section=skill ' +
+    'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
+  'Supernatural Charm':
+    'Section=magic ' +
+    'Note="Knows the Charm arcane innate spell; may cast it once per day"',
 
   // Backgrounds
   'Martial Focus':'Section=feature Note="1 selection"',
@@ -11736,6 +11944,28 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description="R60\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) illusion inflicts difficult terrain for 1 min (<b>heightened 4th</b> affects air instead of surface)"'
 };
+Pathfinder2ERemaster.VERSATILE_HERITAGES = {
+  'Changeling':
+    'Features=' +
+      '"1:Lineage" ' +
+    'Selectables=' +
+      '"1:Brine May:Lineage",' +
+      '"1:Callow May:Lineage",' +
+      '"1:Dream May:Lineage",' +
+      '"1:Slag May:Lineage"',
+  'Nephilim':
+    'Features=' +
+      '"1:Lineage" ' +
+    'Selectables=' +
+      '"1:Angelkin:Lineage",' +
+      '"1:Grimspawn:Lineage",' +
+      '"1:Hellspawn:Lineage",' +
+      '"1:Lawbringer:Lineage",' +
+      '"1:Musetouched:Lineage",' +
+      '"1:Pitborn:Lineage"',
+  'Aiuvarin':'',
+  'Dromaars':''
+};
 Pathfinder2ERemaster.WEAPONS = {
 
   'Fist':Pathfinder2E.WEAPONS.Fist,
@@ -11883,6 +12113,9 @@ Pathfinder2ERemaster.identityRules = function(
 ) {
   Pathfinder2E.identityRules
     (rules, {}, ancestries, backgrounds, classes, deities);
+  rules.defineRule('selectableFeatureCount.Versatile Heritage',
+    'featureNotes.versatileHeritage', '=', '1'
+  );
 };
 
 /* Defines rules related to magic use. */
