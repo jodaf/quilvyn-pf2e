@@ -57,7 +57,7 @@ function Pathfinder2E() {
     'ancestry:Ancestry,select-one,ancestrys',
     'background:Background,select-one,backgrounds',
     'class:Class,select-one,levels',
-    'experience:Experience,text,6',
+    'level:Level,text,3',
     'abilityGeneration:Ability Generation,select-one,abilgens'
   );
 
@@ -106,7 +106,7 @@ Pathfinder2E.CHOICES = [
 Pathfinder2E.RANDOMIZABLE_ATTRIBUTES = [
   'abilities',
   'strength', 'constitution', 'dexterity', 'intelligence', 'wisdom', 'charisma',
-  'gender', 'name', 'alignment', 'background', 'deity', 'boosts',
+  'gender', 'name', 'alignment', 'background', 'deity', 'boosts', 'experience',
   'selectableFeatures', 'feats', 'skills', 'languages', 'armor', 'weapons',
   'shield', 'spells'
 ];
@@ -13249,9 +13249,6 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       'features.Multilingual', '+', null
     );
   } else if(name == 'Human') {
-    rules.defineRule('choiceCount.Skill',
-      'skillNotes.skilledHeritageHuman', '+=', 'source=="Trained" ? 1 : 2'
-    );
     rules.defineRule('skillNotes.skilledHeritageHuman',
       'level', '=', 'source<5 ? "Trained" : "Expert"'
     );
@@ -14793,8 +14790,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
-    rules.defineRule
-      ('choiceCount.Skill', 'skillNotes.gnomeObsession', '+=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4');
   } else if(name == 'Harming Hands') {
     rules.defineRule('harmSpellDie', 'magicNotes.harmingHands', '^', '10');
   } else if(name == 'Healing Hands') {
@@ -15177,7 +15172,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       if(matchInfo) {
         let group = matchInfo[1];
         let rank =
-          matchInfo[2] == '%V' ? 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4' : matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
+          matchInfo[2] == '%V' ? '(source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4)' : matchInfo[2] == 'Trained' ? 1 : matchInfo[2] == 'Expert' ? 2 : matchInfo[2] == 'Master' ? 3 : 4;
         let choices = '';
         matchInfo[3].split(/;\s*/).forEach(element => {
           let m = element.match(/Choose (\d+|%V)/);
@@ -15188,10 +15183,15 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('trainingCount.' + element, note, '+=', '1');
           }
         });
-        if(choices)
-          rules.defineRule('choiceCount.' + group,
-            note, '+=', choices.replace('+', '')
-          );
+        if(choices) {
+          choices = choices.replace('+', '');
+          let choiceCount =
+            rank == 1 ? choices :
+            choices == '1' ? rank :
+            choices.includes('+') ? '(' + choices + ') * ' + rank :
+            (choices + ' * ' + rank);
+          rules.defineRule('choiceCount.' + group, note, '+=', choiceCount);
+        }
       }
       matchInfo = n.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
       if(matchInfo) {
@@ -15235,10 +15235,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           s = s.replace('<i>', '').replace('</i>', '').trim();
           if(s == '') {
             // empty
-          } else if(!(s in Pathfinder2E.SPELLS)) {
+          // TODO this is ugly...
+          } else if(!(s in Object.assign({}, Pathfinder2E.SPELLS, rules.plugin.SPELLS))) {
             console.log('Unknown spell "' + s + '" for feature ' + name);
           } else {
-            let spellAttrs = Pathfinder2E.SPELLS[s];
+            // TODO ... and so is this
+            let spellAttrs =
+              Object.assign({}, Pathfinder2E.SPELLS, rules.plugin.SPELLS)[s];
             let spellLevel = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
             let spellSchool = QuilvynUtils.getAttrValue(spellAttrs, 'School');
             let spellTraits =
@@ -16449,56 +16452,53 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     }
     if(choices.length > 0)
       attributes.deity = choices[QuilvynUtils.random(0, choices.length - 1)];
+  } else if(attribute == 'experience') {
+    let level = attributes.level || 1;
+    delete attributes.level;
+    attributes.experience = (level - 1) * 1000 + QuilvynUtils.random(0, 999);
   } else if(attribute == 'feats' || attribute == 'selectableFeatures') {
-    let debug = [];
-    attribute = attribute == 'feats' ? 'feat' : 'selectableFeature';
-    let countPrefix = attribute + 'Count.';
-    let prefix = attribute + 's';
-    let suffix = attribute.charAt(0).toUpperCase() + attribute.substring(1);
-    let toAllocateByTrait = {};
     attrs = this.applyRules(attributes);
+    let debug = [];
+    let countPrefix = attribute.replace(/s$/, '') + 'Count.';
+    let toAllocateByTrait = {};
     for(attr in attrs) {
       if(attr.startsWith(countPrefix))
         toAllocateByTrait[attr.replace(countPrefix, '')] = attrs[attr];
     }
     let availableChoices = {};
-    let allChoices = this.getChoices(prefix);
+    let allChoices =
+      attribute == 'feats' ?
+        Object.assign({}, this.getChoices('ancestryFeats'), this.getChoices('classFeats'), this.getChoices('generalFeats')) :
+        this.getChoices('selectableFeatures');
     for(attr in allChoices) {
       let traits =
         QuilvynUtils.getAttrValueArray
           (allChoices[attr], allChoices[attr].includes('Trait') ? 'Trait' : 'Type');
-      if(attrs[prefix + '.' + attr] != null) {
-        for(let i = 0; i < traits.length; i++) {
-          let t = traits[i];
+      if(attrs[attribute + '.' + attr] != null) {
+        traits.forEach(t => {
           if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
-            debug.push(prefix + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByTrait[t]);
+            debug.push(attribute + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByTrait[t]);
             toAllocateByTrait[t]--;
-            break;
           }
-        }
+        });
       } else if(attrs['features.' + attr] == null) {
         availableChoices[attr] = traits;
       }
     }
-    if(attribute == 'feat') {
-      debug.push('Replace Ancestry with ' + attributes.ancestry);
-      toAllocateByTrait[attributes.ancestry] = toAllocateByTrait.Ancestry;
-      debug.push('Replace Class with ' + attributes['class']);
-      toAllocateByTrait[attributes['class']] = toAllocateByTrait.Class;
-      delete toAllocateByTrait.Ancestry;
-      delete toAllocateByTrait.Class;
-    }
     for(attr in toAllocateByTrait) {
-      let availableChoicesInTrait = {};
+      let availableChoicesWithTrait = {};
+      let prefix =
+        attribute == 'feats' ? (attr == 'Skill' ? 'general' : attr.toLowerCase()) + 'Feats' : attribute;
       for(let a in availableChoices) {
-        if(availableChoices[a].includes(attr))
-          availableChoicesInTrait[a] = '';
+        let trait = attr == 'Ancestry' ? attributes.ancestry : attr == 'Class' ? attributes['class'] : attr;
+        if(availableChoices[a].includes(trait))
+          availableChoicesWithTrait[a] = '';
       }
       howMany = toAllocateByTrait[attr];
-      debug.push('Choose ' + howMany + ' ' + attr + ' ' + prefix);
+      debug.push('Choose ' + howMany + ' ' + attr + ' ' + attribute);
       let setsPicked = {};
       while(howMany > 0 &&
-            (choices=Object.keys(availableChoicesInTrait)).length > 0) {
+            (choices=Object.keys(availableChoicesWithTrait)).length > 0) {
         debug.push('Pick ' + howMany + ' from ' + choices.length);
         let pick;
         let picks = {};
@@ -16510,22 +16510,24 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             let pickSet = pick.replace(/ \(.*/, '');
             if(pickSet in setsPicked) {
               delete picks[pick];
-              delete availableChoicesInTrait[pick];
+              delete availableChoicesWithTrait[pick];
               continue;
             }
             setsPicked[pickSet] = pick;
           }
           attributes[prefix + '.' + pick] = 1;
-          delete availableChoicesInTrait[pick];
+          delete availableChoicesWithTrait[pick];
         }
         let validate = this.applyRules(attributes);
         for(pick in picks) {
           let name = pick.charAt(0).toLowerCase() +
                      pick.substring(1).replaceAll(' ', '').
                      replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+          let note =
+            name + attribute.charAt(0).toUpperCase() + attribute.substring(1).replace(/s$/, '');
           if(QuilvynUtils.sumMatching
                (validate,
-                new RegExp('^(sanity|validation)Notes.'+name+suffix)) != 0) {
+                new RegExp('^(sanity|validation)Notes.' + note)) != 0) {
             delete attributes[prefix + '.' + pick];
             debug[debug.length - 1] += ' ' + name;
           } else {
