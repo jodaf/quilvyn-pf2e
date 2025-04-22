@@ -57,7 +57,7 @@ function Pathfinder2ERemaster(edition) {
     'ancestry:Ancestry,select-one,ancestrys',
     'background:Background,select-one,backgrounds',
     'class:Class,select-one,levels',
-    'experience:Experience,text,6'
+    'level:Level,text,3'
   );
 
   let choices = {};
@@ -69,6 +69,7 @@ function Pathfinder2ERemaster(edition) {
     else
       choices[c] = Pathfinder2ERemaster[c];
   });
+
   Pathfinder2ERemaster.abilityRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2ERemaster.combatRules
     (rules, choices.ARMORS, choices.SHIELDS, choices.WEAPONS);
@@ -413,7 +414,6 @@ Pathfinder2ERemaster.CLASSES = {
       'D8:2@15;3@16,' +
       'D9:2@17;3@18,' +
       'D10:1@19',
-/*
   'Druid':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
@@ -423,19 +423,20 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Druid Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
-      '"1:Spell Trained (Primal)",' +
-      '"1:Primal Spellcasting",1:Anathema,"1:Druidic Language",' +
-      '"1:Druidic Order","1:Shield Block","1:Wild Empathy","2:Druid Feats",' +
-      '"2:Skill Feats","3:Perception Expertise","3:General Feats","3:Fortitude Expertise",' +
-      '"3:Skill Increases","5:Reflex Expertise","7:Expert Spellcaster",' +
-      '"11:Druid Weapon Expertise",11:Resolve,"13:Medium Armor Expertise",' +
+      '"1:Spell Trained (Druid)","Class Trained (Druid)",' +
+      '"1:Druid Spellcasting",1:Anathema,"1:Druidic Order","1:Shield Block",' +
+      '"1:Voice Of Nature",1:Wildsong,"2:Druid Feats",' +
+      '"2:Skill Feats","3:Perception Expertise","3:General Feats",' +
+      '"3:Fortitude Expertise","3:Skill Increases","5:Reflex Expertise",' +
+      '"7:Expert Spellcaster","11:Druid Weapon Expertise",' +
+      '"11:Wild Willpower","13:Medium Armor Expertise",' +
       '"13:Weapon Specialization","15:Master Spellcaster",' +
       '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
     'Selectables=' +
       '1:Animal:Order,' +
       '1:Leaf:Order,' +
       '1:Storm:Order,' +
-      '1:Wild:Order ' +
+      '1:Untamed:Order ' +
     'SpellSlots=' +
       'PC1:5@1,' +
       'P1:2@1;3@2,' +
@@ -448,6 +449,7 @@ Pathfinder2ERemaster.CLASSES = {
       'P8:2@15;3@16,' +
       'P9:2@17;3@18,' +
       'P10:1@19',
+/*
   'Fighter':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -1770,38 +1772,27 @@ Pathfinder2ERemaster.FEATS = {
   'Maker Of Miracles':Pathfinder2E.FEATS['Maker Of Miracles'],
   'Spellshape Channel':Pathfinder2E.FEATS['Metamagic Channel'],
 
-/*
-  'Animal Companion':
-    'Trait=Class,Druid,Ranger ' +
-    'Require="features.Animal || features.Order Explorer (Animal) || levels.Ranger"',
-  'Leshy Familiar':
-    'Trait=Class,Druid ' +
-    'Require="features.Leaf || features.Order Explorer (Leaf)"',
+  'Animal Companion':Pathfinder2E.FEATS['Animal Companion'],
+  'Animal Empathy':'Trait=Class,Druid',
+  'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
+  'Plant Empathy':'Trait=Class,Druid',
+  'Storm Born':Pathfinder2E.FEATS['Storm Born'],
+  'Verdant Weapon':'Trait=Class,Druid,Exploration',
   // Reach Spell as above
-  'Storm Born':
+  'Widen Spell':
+    Pathfinder2E.FEATS['Widen Spell'].replace('Metamagic', 'Spellshape'),
+  'Untamed Form':
     'Trait=Class,Druid ' +
-    'Require="features.Storm || features.Order Explorer (Storm)"',
-  'Widen Spell':'Trait=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic',
-  'Wild Shape':
-    'Trait=Class,Druid ' +
-    'Require="features.Wild || features.Order Explorer (Wild)"',
-  'Call Of The Wild':'Trait=Class,Druid Require="level >= 2"',
-  'Enhanced Familiar':
-    'Trait=Class,Druid,Sorcerer,Wizard ' +
-    'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
-  'Order Explorer (Animal)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 2","features.Animal == 0"',
-  'Order Explorer (Leaf)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 2","features.Leaf == 0"',
-  'Order Explorer (Storm)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 2","features.Storm == 0"',
-  'Order Explorer (Wild)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 2","features.Wild == 0"',
+    'Require="features.Untamed || features.Order Explorer (Untamed)"',
+  'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
+  'Enhanced Familiar':Pathfinder2E.FEATS['Enhanced Familiar'],
+  'Order Explorer (Animal)':Pathfinder2E.FEATS['Order Explorer (Animal)'],
+  'Order Explorer (Leaf)':Pathfinder2E.FEATS['Order Explorer (Leaf)'],
+  'Order Explorer (Storm)':Pathfinder2E.FEATS['Order Explorer (Storm)'],
+  'Order Explorer (Untamed)':
+    Pathfinder2E.FEATS['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
   // Poison Resistance as above
+/*
   'Form Control':
     'Trait=Class,Druid,Manipulate,Metamagic ' +
     'Require="level >= 4","strength >= 14","features.Wild Shape"',
@@ -7680,6 +7671,63 @@ Pathfinder2ERemaster.SKILLS = {
   'Warfare Lore':Pathfinder2E.SKILLS['Warfare Lore']
 };
 Pathfinder2ERemaster.SPELLS = {
+  // TODO
+  'Disguise Magic':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Entangling Flora':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Interplanar Teleport':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Magic Passage':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Oaken Resilience':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Revealing Light':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Unhampered Passage':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'School=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   // TODO
   'Abyssal Plague':
     'Level=5 ' +
