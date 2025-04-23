@@ -1792,118 +1792,127 @@ Pathfinder2ERemaster.FEATS = {
   'Order Explorer (Untamed)':
     Pathfinder2E.FEATS['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
   // Poison Resistance as above
-/*
-  'Form Control':
-    'Trait=Class,Druid,Manipulate,Metamagic ' +
-    'Require="level >= 4","strength >= 14","features.Wild Shape"',
-  'Mature Animal Companion':
-    'Trait=Class,Druid,Ranger ' +
-    'Require=' +
-      '"levels.Druid >= 4 || levels.Ranger >= 6",' +
-      '"features.Animal Companion"',
-  'Order Magic (Animal)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Animal)"',
-  'Order Magic (Leaf)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Leaf)"',
-  'Order Magic (Storm)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Storm)"',
-  'Order Magic (Wild)':
-    'Trait=Class,Druid ' +
-    'Require="level >= 4","features.Order Explorer (Wild)"',
-  'Thousand Faces':
-    'Trait=Class,Druid Require="level >= 4","features.Wild Shape"',
-  'Woodland Stride':
+  'Anthropomorphic Shape':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 4",' +
+      '"features.Untamed Form"',
+  'Elemental Summons':'Trait=Class,Druid Require="level >= 4"',
+  'Forest Passage':Pathfinder2E.FEATS['Woodland Stride'],
+  'Leshy Familiar Secrets':
+    'Trait=Class,Druid ' +
+    'Require=' +
+      '"level >=4",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
-  'Green Empathy':
+  'Mature Animal Companion':Pathfinder2E.FEATS['Mature Animal Companion'],
+  'Order Magic (Animal)':Pathfinder2E.FEATS['Order Magic (Animal)'],
+  'Order Magic (Leaf)':Pathfinder2E.FEATS['Order Magic (Leaf)'],
+  'Order Magic (Storm)':Pathfinder2E.FEATS['Order Magic (Storm)'],
+  'Order Magic (Untamed)':
+    Pathfinder2E.FEATS['Order Magic (Wild)'].replace('Wild', 'Untamed'),
+  'Snowdrift Spell':
+    'Trait=Class,Druid,Cold,Manipulate,Spellshape ' +
+    'Require="level >= 4","features.Storm"',
+  'Current Spell':
+    'Trait=Class,Druid,Concentrate,Spellshape Require="level >= 6"',
+  'Grown Of Oak':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Insect Shape':
-    'Trait=Class,Druid Require="level >= 6","features.Wild Shape"',
-  // Steady Spellcasting as above
-  'Storm Retribution':
+    Pathfinder2E.FEATS['Insect Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Instinctive Support':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Storm || features.Order Explorer (Storm)",' +
-      '"spells.Tempest Surge (P1 Foc Evo)"',
-  'Ferocious Shape':
-    'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
-  'Fey Caller':'Trait=Class,Druid Require="level >= 8"',
-  'Incredible Companion':
-    'Trait=Class,Druid,Ranger ' +
-    'Require=' +
-      '"levels.Druid >= 8 || levels.Ranger >= 10",' +
-      '"features.Mature Animal Companion"',
-  'Soaring Shape':
-    'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
-  'Wind Caller':
+      '"features.Animal Companion"',
+  // Steady Spellcasting as above
+  'Storm Retribution':Pathfinder2E.FEATS['Storm Retribution'],
+  'Deimatic Display':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 8",' +
-      '"features.Storm || features.Order Explorer (Storm)"',
+      '"rank.Intimidation >= 1"',
+  'Ferocious Shape':
+    Pathfinder2E.FEATS['Ferocious Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Fey Caller':Pathfinder2E.FEATS['Fey Caller'],
+  'Floral Restoration':
+    'Trait=Class,Druid,Healing,Vitality ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Leaf || features.Order Explorer (Leaf)"',
+  'Incredible Companion':Pathfinder2E.FEATS['Incredible Companion'],
+  'Raise Menhir':'Trait=Class,Druid Require="level >= 8"',
+  'Soaring Shape':
+    Pathfinder2E.FEATS['Soaring Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Wind Caller':Pathfinder2E.FEATS['Wind Caller'],
   'Elemental Shape':
-    'Trait=Class,Druid Require="level >= 10","features.Wild Shape"',
-  'Healing Transformation':'Trait=Class,Druid,Metamagic Require="level >= 10"',
+    Pathfinder2E.FEATS['Elemental Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Healing Transformation':
+    Pathfinder2E.FEATS['Healing Transformation'].replace('Metamagic', 'Spellshape'),
   'Overwhelming Energy':
-    'Trait=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic ' +
-    'Require="level >= 10"',
+    Pathfinder2E.FEATS['Overwhelming Energy'].replace('Metamagic', 'Spellshape'),
   'Plant Shape':
+    Pathfinder2E.FEATS['Plant Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Primal Howl':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Leaf || features.Order Explorer (Leaf) || features.Wild Shape"',
-  'Side By Side':
-    'Trait=Class,Druid,Ranger ' +
-    'Require=' +
-      '"levels.Druid >= 10 || levels.Ranger >= 12",' +
-      '"features.Animal Companion"',
-  'Dragon Shape':
-    'Trait=Class,Druid Require="level >= 12","features.Soaring Shape"',
-  'Green Tongue':
-    'Trait=Class,Druid Require="level >= 12","features.Green Empathy"',
-  'Primal Focus':'Trait=Class,Druid Require="level >= 12"',
-  'Primal Summons':
-    'Trait=Class,Druid Require="level >= 12","features.Call Of The Wild"',
-  'Specialized Companion':
-    'Trait=Class,Druid,Ranger ' +
-    'Require=' +
-      '"levels.Druid >= 14 || levels.Ranger >= 16",' +
       '"features.Incredible Companion"',
-  'Timeless Nature':'Trait=Class,Druid Require="level >= 14"',
-  'Verdant Metamorphosis':
+  'Pristine Weapon':
+    'Trait=Class,Druid ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Verdant Weapon"',
+  'Side By Side':Pathfinder2E.FEATS['Side By Side'],
+  'Thunderclap Spell':
+    'Trait=Class,Druid,Sonic,Spellshape ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Storm || features.Order Explorer (Storm)"',
+  'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
+  'Garland Spell':
+    'Trait=Class,Druid,Manipulate,Spellshape ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Plant || features.Order Explorer (Plant)"',
+  'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
+  'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
+  'Wandering Oasis':
+    'Trait=Class,Druid ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"rank.Survival >= 3"',
+  'Reactive Transformation':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 14",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
+      '"features.Untaimed Form",' +
+      '"features.Dragon Shape || features.Elemental Shape || features.Plant Shape || features.Soaring Shape"',
+  'Sow Spell':'Trait=Class,Druid,Concentrate,Spellshape Require="level >= 14"',
+  'Specialized Companion':Pathfinder2E.FEATS['Specialized Companion'],
+  'Timeless Nature':Pathfinder2E.FEATS['Timeless Nature'],
+  'Verdant Metamorphosis':Pathfinder2E.FEATS['Verdant Metamorphosis'],
   // Effortless Concentration as above
-  'Impaling Briars':
+  'Impaling Briars':Pathfinder2E.FEATS['Verdant Metamorphosis'],
+  'Monstrosity Shape':
+    Pathfinder2E.FEATS['Monstrosity Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Uplifting Winds':
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 16",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
-  'Monstrosity Shape':
-    'Trait=Class,Druid Require="level >= 16","features.Wild Shape"',
-  'Invoke Disaster':
-    'Trait=Class,Druid Require="level >= 18","features.Wind Caller"',
-  'Perfect Form Control':
-    'Trait=Class,Druid ' +
-    'Require="level >= 18","features.Form Control","strength >= 18"',
-  'Primal Wellspring':
-    'Trait=Class,Druid Require="level >= 18","features.Primal Focus"',
-  "Hierophant's Power":'Trait=Class,Druid Require="level >= 20"',
-  'Leyline Conduit':
-    'Trait=Class,Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
+      '"features.Storm || features.Order Explorer (Storm)"',
+  'Invoke Disaster':Pathfinder2E.FEATS['Invoke Disaster'],
+  // Change from Strength to modifier
+  'Perfect Form Control':Pathfinder2E.FEATS['Perfect Form Control'],
+  'Primal Aegis':'Trait=Class,Druid Require="level >= 18"',
+  "Hierophant's Power":Pathfinder2E.FEATS["Hierophant's Power"],
+  'Ley Line Conduit':
+    Pathfinder2E.FEATS['Leyline Conduit'].replace('Metamagic', 'Spellshape'),
   'True Shapeshifter':
-    'Trait=Class,Druid,Concentrate ' +
-    'Require="level >= 20","features.Dragon Shape","features.Wild Shape"',
+    Pathfinder2E.FEATS['True Shapeshifter'].replace('Wild Shape', 'Untamed Form'),
+/*
 
   'Double Slice':'Trait=Class,Fighter',
   'Exacting Strike':'Trait=Class,Fighter,Press',
