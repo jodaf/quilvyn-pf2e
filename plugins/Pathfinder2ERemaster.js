@@ -675,6 +675,43 @@ Pathfinder2ERemaster.CLASSES = {
       '9:3@17;4@18,' +
       '10:1@19',
 */
+  'Witch':
+    'Ability=intelligence HitPoints=6 ' +
+    'Features=' +
+      '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
+      '"1:Witch Skills",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
+      '"1:Spell Trained (Witch)","1:Class Trained (Witch)",' +
+      '"1:Witch Spellcasting","1:Familiar","1:Hex Spells","2:Skill Feats",' +
+      '"2:Witch Feats","3:General Feats","3:Skill Increases",' +
+      '"5:Magical Fortitude","7:Expert Spellcaster","9:Reflex Expertise",' +
+      '"11:Perception Expertise","11:Weapon Expertise","13:Defensive Robes",' +
+      '"13:Weapon Specialization","15:Master Spellcaster",' +
+      '"17:Will Of The Pupil","19:Legendary Spellcaster","19:Patron\'s Gift" ' +
+    'Selectables=' +
+      '"1:Faith\'s Flamekeeper:Patron",' +
+      '"1:The Inscribed One:Patron",' +
+      '"1:The Resentment:Patron",' +
+      '"1:Silence In Snow:Patron",' +
+      '"1:Spinner Of Threads:Patron",' +
+      '"1:Starless Shadow:Patron",' +
+      '"1:Wilding Steward:Patron" ' +
+    // SpellSlots tradition depends on patron--see classRules
+    'SpellSlots=' +
+      '0:5@1,' +
+      '1:3@1;4@2,' +
+      '2:3@3;4@4,' +
+      '3:3@5;4@6,' +
+      '4:3@7;4@8,' +
+      '5:3@9;4@10,' +
+      '6:3@11;4@12,' +
+      '7:3@13;4@14,' +
+      '8:3@15;4@16,' +
+      '9:3@17;4@18,' +
+      '10:1@19',
   'Wizard':
     // 1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks) => 1:Attack Trained (Simple Weapons; Unarmed Attacks)
     // TODO 1:Spell Trained (Arcane) => 1:Spell Trained (Wizard)?
@@ -702,16 +739,6 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Master Spellcaster","17:Prodigious Will",' +
       '"19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Abjuration:Arcane School",' +
-      '"1:Conjuration:Arcane School",' +
-      '"1:Divination:Arcane School",' +
-      '"1:Enchantment:Arcane School",' +
-      '"1:Evocation:Arcane School",' +
-      '"1:Illusion:Arcane School",' +
-      '"1:Necromancy:Arcane School",' +
-      '"1:Transmutation:Arcane School",' +
-      '"1:Universalist:Arcane School",' +
-/* TODO
       '"1:Ars Grammatica:Arcane School",' +
       '"1:Battle Magic:Arcane School",' +
       '"1:Boundary:Arcane School",' +
@@ -719,7 +746,6 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Mentalism:Arcane School",' +
       '"1:Protean Form:Arcane School",' +
       '"1:Unified Magical Theory:Arcane School",' +
-*/
       '"1:Experimental Spellshaping:Thesis",' +
       '"1:Improved Familiar Attunement:Thesis",' +
       '"1:Spell Blending:Thesis",' +
@@ -1158,10 +1184,10 @@ Pathfinder2ERemaster.FEATS = {
   'Lingering Composition':Pathfinder2E.FEATS['Lingering Composition'],
   'Martial Performance':'Trait=Class,Bard Require="features.Warrior"',
   'Reach Spell':
-    Pathfinder2E.FEATS['Reach Spell'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Reach Spell'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
   'Versatile Performance':Pathfinder2E.FEATS['Versatile Performance'],
   'Well-Versed':'Trait=Class,Bard"',
-  'Cantrip Expansion':Pathfinder2E.FEATS['Cantrip Expansion'],
+  'Cantrip Expansion':Pathfinder2E.FEATS['Cantrip Expansion'].replace('Trait=', 'Trait=Witch,'),
   'Directed Audience':'Trait=Class,Bard Require="level >= 2"',
   'Emotional Push':'Trait=Class,Bard,Concentrate Require="level >= 2"',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
@@ -1201,7 +1227,8 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Bard,Concentrate Require="level >= 6","features.Well-Versed"',
   'Harmonize':Pathfinder2E.FEATS.Harmonize.replace('Metamagic', 'Spellshape'),
   'Song Of Marching':'Trait=Class,Bard Require="level >= 6"',
-  'Steady Spellcasting':Pathfinder2E.FEATS['Steady Spellcasting'],
+  'Steady Spellcasting':
+    Pathfinder2E.FEATS['Steady Spellcasting'].replace('Trait=', 'Trait=Witch,'),
   'Accompany':'Trait=Class,Bard,Concentrate,Manipulate Require="level >= 8"',
   'Call And Response':
     'Trait=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
@@ -1219,7 +1246,7 @@ Pathfinder2ERemaster.FEATS = {
   'House Of Imaginary Walls':Pathfinder2E.FEATS['House Of Imaginary Walls'],
   'Ode To Ouroboros':'Trait=Class,Bard Require="level >= 10"',
   'Quickened Casting':
-    Pathfinder2E.FEATS['Quickened Casting'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Quickened Casting'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
   'Symphony Of The Unfettered Heart':'Trait=Class,Bard Require="level >= 10"',
   'Unusual Composition':
     Pathfinder2E.FEATS['Unusual Composition'].replace('Metamagic', 'Spellshape'),
@@ -1244,7 +1271,8 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 16",' +
       '"features.Courageous Advance",' +
       '"features.Courageous Assault"',
-  'Effortless Concentration':Pathfinder2E.FEATS['Effortless Concentration'],
+  'Effortless Concentration':
+    Pathfinder2E.FEATS['Effortless Concentration'].replace('Trait=', 'Trait=Witch,'),
   'Resounding Finale':
     'Trait=Class,Bard,Concentrate Require="level >= 16","features.Maestro"',
   'Studious Capacity':Pathfinder2E.FEATS['Studious Capacity'],
@@ -1853,10 +1881,11 @@ Pathfinder2ERemaster.FEATS = {
   'Verdant Weapon':'Trait=Class,Druid,Exploration',
   // Reach Spell as above
   'Widen Spell':
-    Pathfinder2E.FEATS['Widen Spell'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Widen Spell'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
   'Untamed Form':Pathfinder2E.FEATS['Wild Shape'].replaceAll('Wild', 'Untamed'),
   'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
-  'Enhanced Familiar':Pathfinder2E.FEATS['Enhanced Familiar'],
+  'Enhanced Familiar':
+    Pathfinder2E.FEATS['Enhanced Familiar'].replace('Trait=', 'Trait=Witch,'),
   'Order Explorer (Animal)':Pathfinder2E.FEATS['Order Explorer (Animal)'],
   'Order Explorer (Leaf)':Pathfinder2E.FEATS['Order Explorer (Leaf)'],
   'Order Explorer (Storm)':Pathfinder2E.FEATS['Order Explorer (Storm)'],
@@ -2356,8 +2385,9 @@ Pathfinder2ERemaster.FEATS = {
   'Impossible Striker':Pathfinder2E.FEATS['Impossible Striker'],
   'Reactive Distraction':Pathfinder2E.FEATS['Reactive Distraction'],
 
+  'Counterspell':
+    Pathfinder2E.FEATS.Counterspell.replace('Trait=', 'Trait=Witch,'),
 /*
-  'Counterspell':'Trait=Class,Sorcerer,Wizard,Abjuration',
   'Dangerous Sorcery':'Trait=Class,Sorcerer',
   'Familiar':'Trait=Class,Sorcerer,Wizard',
   // Reach Spell as above
@@ -2367,7 +2397,9 @@ Pathfinder2ERemaster.FEATS = {
   'Arcane Evolution':
     'Trait=Class,Sorcerer,Arcane ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Arcane\'"',
-  'Bespell Weapon':'Trait=Class,Sorcerer,Wizard Require="level >= 4"',
+*/
+  'Bespell Strikes':Pathfinder2E.FEATS['Bespell Weapon'],
+/*
   'Divine Evolution':
     'Trait=Class,Sorcerer,Divine ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Divine\'"',
@@ -2393,8 +2425,10 @@ Pathfinder2ERemaster.FEATS = {
   'Interweave Dispel':
     'Trait=Class,Sorcerer,Metamagic ' +
     'Require="level >= 14","knowsDispelMagicSpell"',
+  */
   'Reflect Spell':
-    'Trait=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
+    Pathfinder2E.FEATS['Reflect Spell'].replace('Trait=', 'Trait=Witch,'),
+  /*
   // Effortless Concentration as above
   'Greater Mental Evolution':
     'Trait=Class,Sorcerer ' +
@@ -2414,8 +2448,54 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Conduit':'Trait=Class,Sorcerer,Metamagic Require="level >= 20"',
   'Bloodline Perfection':
     'Trait=Class,Sorcerer Require="level >= 20","features.Bloodline Paragon"',
-  'Metamagic Mastery':'Trait=Class,Sorcerer,Wizard Require="level >= 20"',
 */
+  'Spellshape Mastery':Pathfinder2E.FEATS['Metamagic Mastery'],
+
+  'Cackle':'Trait=Class,Witch',
+  'Cauldron':'Trait=Class,Witch',
+  // Counterspell as above
+  // Widen Spell as above
+  "Witch's Armaments":'Trait=Class,Witch',
+  'Basic Lesson':'Trait=Class,Witch Require="level >= 2"',
+  // Cantrip Expansion as above
+  'Conceal Spell':
+    Pathfinder2E.FEATS['Conceal Spell'].replace('Manipulate,Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
+  // Enhanced Familiar as above
+  "Familiar's Language":'Trait=Class,Witch Require="level >= 2"',
+  'Rites Of Convocation':'Trait=Class,Witch Require="level >= 4"',
+  'Sympathetic Strike':
+    'Trait=Class,Witch Require="level >= 4","features.Witch\'s Armaments"',
+  'Cermonial Knife':'Trait=Class,Witch Require="level >= 6"',
+  'Greater Lesson':'Trait=Class,Witch Require="level >= 6"',
+  // Steady Spellcasting as above
+  "Witch's Charge":'Trait=Class,Witch,Detection Require="level >= 6"',
+  'Incredible Familiar':
+    'Trait=Class,Witch Require="level >= 8","features.Enhanced Familiar"',
+  'Murksight':'Trait=Class,Witch Require="level >= 8"',
+  // TODO Requires "divine or occult patron"
+  'Spirit Familiar':'Trait=Class,Witch Require="level >= 8"',
+  // TODO Requires "arcane or primal patron"
+  'Stitched Familiar':'Trait=Class,Witch Require="level >= 8"',
+  "Witch's Bottle":'Trait=Class,Witch Require="level >= 8","features.Cauldron"',
+  'Double Double':'Trait=Class,Witch Require="level >= 10","features.Cauldron"',
+  'Major Lesson':'Trait=Class,Witch Require="level >= 10"',
+  // Quickened Casting as above
+  "Witch's Communion":
+    'Trait=Class,Witch Require="level >= 10","features.Witch\'s Charge"',
+  'Coven Spell':'Trait=Class,Witch,Spellshape Require="level >= 12"',
+  'Hex Focus':'Trait=Class,Witch Require="level >= 12"',
+  "Witch's Broom":'Trait=Class,Witch Require="level >= 12"',
+  // Reflect Spell as above
+  'Rites of Transfiguration':'Trait=Class,Witch Require="level >= 14"',
+  "Patron's Presence":'Trait=Class,Witch Require="level >= 14"',
+  // Effortless Concentration as above
+  'Siphon Power':'Trait=Class,Witch Require="level >= 16"',
+  'Split Hex':'Trait=Class,Witch,Concentrate,Spellshape Require="level >= 18"',
+  "Patron's Claim":'Trait=Class,Witch Require="level >= 18"',
+  'Hex Master':'Trait=Class,Witch Require="level >= 20"',
+  "Patron's Truth":
+    'Trait=Class,Witch Require="level >= 20","features.Patron\'s Gift"',
+  "Witch's Hut":'Trait=Class,Witch Require="level >= 20"',
 
   // Wizard
   // Counterspell as above
@@ -2424,57 +2504,56 @@ Pathfinder2ERemaster.FEATS = {
   'Spellbook Prodigy':'Trait=Class,Wizard Require="rank.Arcana >= 1"',
   // Widen Spell as above
   // Cantrip Expansion as above
-  'Conceal Spell':
-    Pathfinder2E.FEATS['Conceal Spell'].replace('Manipulate,Metamagic', 'Spellshape'),
+  // Conceal Spell as above
   'Energy Ablation':'Trait=Class,Wizard,Spellshape Require="level >= 2"',
   // Enhanced Familiar as above
   'Nonlethal Spell':
     'Trait=Class,Wizard,Manipulate,Spellshape Require="level >= 2"',
   // Bespell Weapon as above
-  'Linked Focus':
-    'Trait=Class,Wizard ' +
-    'Require="level >= 4","features.Arcane Bond","features.Arcane School"',
-  'Silent Spell':
-    'Trait=Class,Wizard,Concentrate,Metamagic ' +
-    'Require="level >= 4","features.Conceal Spell"',
-  'Spell Penetration':'Trait=Class,Wizard Require="level >= 6"',
+  'Call Wizardly Tools':
+    'Trait=Class,Wizard,Concentrate,Teleportation ' +
+    'Require="level >= 4","features.Arcane Bond"',
+  'Linked Focus':Pathfinder2E.FEATS['Linked Focus'],
+  'Spell Protection Array':
+    'Trait=Class,Wizard,Arcane,Manipulate Require="level >= 4"',
+  'Convincing Illusion':
+    'Trait=Class,Wizard Require="level >= 6","rank.Deception >= 2"',
+  'Explosive Arrival':
+    'Trait=Class,Wizard,Concentrate,Manipulate,Spellshape Require="level >= 6"',
+  'Irresistable Magic':Pathfinder2E.FEATS['Spell Penetration'],
+  'Split Slot':'Trait=Class,Wizard Require="level >= 6"',
   // Steady Spellcasting as above
-  'Advanced School Spell':
-    'Trait=Class,Wizard Require="level >= 8","features.Arcane School"',
+
+  'Advanced School Spell':Pathfinder2E.FEATS['Advanced School Spell'],
   'Bond Conservation':
-    'Trait=Class,Wizard,Manipulate,Metamagic ' +
-    'Require="level >= 8","features.Arcane Bond"',
-  'Universal Versatility':
-    'Trait=Class,Wizard ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Universalist",' +
-      '"features.Hand Of The Apprentice"',
+    Pathfinder2E.FEATS['Bond Conservation'].replace('Metamagic', 'Spellshape'),
+  'Form Retention':'Trait=Class,Wizard Require="level >= 8"',
+  'Knowledge Is Power':'Trait=Class,Wizard Require="level >= 8"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Scroll Savant':
-    'Trait=Class,Wizard Require="level >= 10","rank.Crafting >= 2"',
-  'Clever Counterspell':
-    'Trait=Class,Wizard ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Counterspell",' +
-      '"features.Quick Recognition"',
+  'Scroll Adept':Pathfinder2E.FEATS['Scroll Savant'],
+  'Clever Counterspell':Pathfinder2E.FEATS['Clever Counterspell'],
+  'Forcible Energy':
+    'Trait=Class,Wizard,Manipulate,Spellshape Require="level >= 12"',
+  'Keen Magical Detection':'Trait=Class,Wizard,Fortune Require="level >= 12"',
   // Magic Sense as above
-  'Bonded Focus':
-    'Trait=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+  'Bonded Focus':Pathfinder2E.FEATS['Bonded Focus'],
   // Reflect Spell as above
-  'Superior Bond':
-    'Trait=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+  'Secondary Detonation Array':
+    'Trait=Class,Wizard,Manipulate,Spellshape Require="level >= 14"',
+  'Superior Bond':Pathfinder2E.FEATS['Superior Bond'],
   // Effortless Concentration as above
-  'Spell Tinker':'Trait=Class,Wizard,Concentrate Require="level >= 16"',
-  'Infinite Possibilities':'Trait=Class,Wizard Require="level >= 18"',
-  'Reprepare Spell':'Trait=Class,Wizard Require="level >= 18"',
-  "Archwizard's Might":
-    'Trait=Class,Wizard ' +
-    'Require="level >= 20","features.Archwizard\'s Spellcraft"',
-  // Metamagic Mastery as above
-  'Spell Combination':'Trait=Class,Wizard Require="level >= 20"',
+  'Scintillating Spell':
+    'Trait=Class,Wizard,Concentrate,Light,Spellshape Require="level >= 16"',
+  'Spell Tinker':Pathfinder2E.FEATS['Spell Tinker'],
+  'Infinite Possibilities':Pathfinder2E.FEATS['Infinite Possibilities'],
+  'Reprepare Spell':Pathfinder2E.FEATS['Reprepare Spell'],
+  'Second Thoughts':
+    'Trait=Class,Wizard,Concentrate,Mental Require="level >= 18"',
+  "Archwizard's Might":Pathfinder2E.FEATS["Archwizard's Might"],
+  'Spell Combination':Pathfinder2E.FEATS['Spell Combination'],
+  'Spell Mastery':'Trait=Class,Wizard Require="level >= 20"',
+  // Spellshape Mastery as above
 
 /*
   // Archetype
@@ -6920,6 +6999,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can prepare a spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
 
+/*
   // Archetype
   'Alchemist Dedication':
     'Section=combat,feature,skill ' +
@@ -7253,6 +7333,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Master Wizard Spellcasting':
     'Section=magic ' +
     'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell"',
+*/
 
   // General Feats
   'Adopted Ancestry (%ancestry)':
@@ -7714,7 +7795,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disguise Magic':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7722,7 +7802,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Entangling Flora':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7730,7 +7809,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Interplanar Teleport':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7738,7 +7816,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Passage':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -7746,7 +7823,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Oaken Resilience':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7754,7 +7830,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Revealing Light':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7762,7 +7837,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unhampered Passage':
     'Level=1 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7771,7 +7845,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Abyssal Plague':
     'Level=5 ' +
     'Trait=Chaotic,Disease,Evil,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7779,7 +7852,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Acid Arrow':
     'Level=2 ' +
     'Trait=Acid,Attack,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7787,7 +7859,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Acid Splash':
     'Level=1 ' +
     'Trait=Acid,Attack,Cantrip,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7795,7 +7866,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Aerial Form':
     'Level=4 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7803,7 +7873,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Air Bubble':
     'Level=1 ' +
     'Trait=Air,Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -7811,14 +7880,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Air Walk':
     'Level=4 ' +
     'Trait=Air,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Touched can walk up to a 45-degree angle on air for 5 min"',
   'Alarm':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -7826,7 +7893,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Alter Reality':
     'Level=10 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -7834,7 +7900,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Anathematic Reprisal':
     'Level=4 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -7842,7 +7907,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Animal Form':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7850,7 +7914,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Animal Messenger':
     'Level=2 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -7858,7 +7921,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Animal Vision':
     'Level=3 ' +
     'Trait=Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -7866,7 +7928,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ant Haul':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7874,7 +7935,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Antimagic Field':
     'Level=8 ' +
     'Trait=Rare,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -7882,7 +7942,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Augury':
     'Level=2 ' +
     'Trait=Divination,Prediction ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -7890,7 +7949,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Avatar':
     'Level=10 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -7898,7 +7956,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Baleful Polymorph':
     'Level=6 ' +
     'Trait=Incapacitation,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7906,7 +7963,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Bane':
     'Level=1 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7914,7 +7970,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Banishment':
     'Level=5 ' +
     'Trait=Abjuration,Incapacitation ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7922,7 +7977,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Barkskin':
     'Level=2 ' +
     'Trait=Abjuration,Plant ' +
-    'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7930,7 +7984,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Bind Soul':
     'Level=9 ' +
     'Trait=Uncommon,Evil,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7938,7 +7991,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Bind Undead':
     'Level=3 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7946,7 +7998,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Black Tentacles':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -7954,7 +8005,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Blade Barrier':
     'Level=6 ' +
     'Trait=Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -7962,7 +8012,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Bless':
     'Level=1 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7970,7 +8019,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Blindness':
     'Level=3 ' +
     'Trait=Incapacitation,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -7978,7 +8026,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Blink':
     'Level=4 ' +
     'Trait=Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -7986,14 +8033,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Blur':
     'Level=2 ' +
     'Trait=Illusion,Veil ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Touched becomes concealed for 1 min"',
   'Breath Of Life':
     'Level=5 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -8001,7 +8046,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Burning Hands':
     'Level=1 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8009,7 +8053,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Calm Emotions':
     'Level=2 ' +
     'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8017,14 +8060,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Cataclysm':
     'Level=10 ' +
     'Trait=Acid,Air,Cold,Earth,Electricity,Evocation,Fire,Water ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
   'Chain Lightning':
     'Level=6 ' +
     'Trait=Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8032,7 +8073,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Charm':
     'Level=1 ' +
     'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8040,7 +8080,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Chill Touch':
     'Level=1 ' +
     'Trait=Cantrip,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8048,7 +8087,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Chilling Darkness':
     'Level=3 ' +
     'Trait=Attack,Cold,Darkness,Evocation,Evil ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8056,7 +8094,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Chromatic Wall':
     'Level=5 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -8064,7 +8101,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Circle Of Protection':
     'Level=3 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -8072,7 +8108,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Clairaudience':
     'Level=3 ' +
     'Trait=Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -8080,7 +8115,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Clairvoyance':
     'Level=4 ' +
     'Trait=Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -8088,7 +8122,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cloak Of Colors':
     'Level=5 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8096,7 +8129,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cloudkill':
     'Level=5 ' +
     'Trait=Death,Necromancy,Poison ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -8104,7 +8136,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Collective Transposition':
     'Level=6 ' +
     'Trait=Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8112,7 +8143,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Color Spray':
     'Level=1 ' +
     'Trait=Illusion,Incapacitation,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8120,7 +8150,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Command':
     'Level=1 ' +
     'Trait=Auditory,Enchantment,Linguistic,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8128,7 +8157,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Comprehend Language':
     'Level=2 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8136,7 +8164,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cone Of Cold':
     'Level=5 ' +
     'Trait=Cold,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8144,7 +8171,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Confusion':
     'Level=4 ' +
     'Trait=Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8152,7 +8178,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Contingency':
     'Level=7 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8160,21 +8185,18 @@ Pathfinder2ERemaster.SPELLS = {
   'Continual Flame':
     'Level=2 ' +
     'Trait=Evocation,Light ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
     'Description="Touched object emits a heatless flame until dismissed"',
   'Control Water':
     'Level=5 ' +
     'Trait=Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="R500\' Raises or lowers water by 10\' and slows water creatures in a 50\'x50\' area"',
   'Create Food':
     'Level=2 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 hr" ' +
     'Description=' +
@@ -8182,14 +8204,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Create Water':
     'Level=1 ' +
     'Trait=Conjuration,Water ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description="Creates 2 gallons of water that last for 1 day"',
   'Creation':
     'Level=4 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -8197,7 +8217,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Crisis Of Faith':
     'Level=3 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8205,7 +8224,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Crusade':
     'Level=9 ' +
     'Trait=Uncommon,Enchantment,Linguistic,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8213,7 +8231,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Crushing Despair':
     'Level=5 ' +
     'Trait=Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8221,7 +8238,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dancing Lights':
     'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8229,7 +8245,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Darkness':
     'Level=2 ' +
     'Trait=Darkness,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -8237,7 +8252,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Darkvision':
     'Level=2 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8245,7 +8259,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Daze':
     'Level=1 ' +
     'Trait=Cantrip,Enchantment,Mental,Nonlethal ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8253,7 +8266,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Deafness':
     'Level=2 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8261,7 +8273,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Death Knell':
     'Level=2 ' +
     'Trait=Death,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8269,7 +8280,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Death Ward':
     'Level=5 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8277,7 +8287,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Detect Alignment':
     'Level=1 ' +
     'Trait=Uncommon,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8285,7 +8294,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Detect Magic':
     'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8293,7 +8301,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Detect Poison':
     'Level=1 ' +
     'Trait=Uncommon,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8301,7 +8308,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Detect Scrying':
     'Level=4 ' +
     'Trait=Uncommon,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8309,14 +8315,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Dimension Door':
     'Level=4 ' +
     'Trait=Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Teleports self to a visible location within 120\' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
   'Dimensional Anchor':
     'Level=4 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8324,7 +8328,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dimensional Lock':
     'Level=7 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8332,7 +8335,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dinosaur Form':
     'Level=4 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8340,21 +8342,18 @@ Pathfinder2ERemaster.SPELLS = {
   'Disappearance':
     'Level=8 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Touched becomes undetectable by any sense for 10 min"',
   'Discern Lies':
     'Level=4 ' +
     'Trait=Uncommon,Divination,Mental,Revelation ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="Self gains +4 Perception vs. lies for 10 min"',
   'Discern Location':
     'Level=8 ' +
     'Trait=Uncommon,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8362,7 +8361,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disintegrate':
     'Level=6 ' +
     'Trait=Attack,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
@@ -8370,7 +8368,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disjunction':
     'Level=9 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8378,7 +8375,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dispel Magic':
     'Level=2 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8386,7 +8382,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disrupt Undead':
     'Level=1 ' +
     'Trait=Cantrip,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8394,7 +8389,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disrupting Weapons':
     'Level=1 ' +
     'Trait=Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8402,7 +8396,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Aura':
     'Level=8 ' +
     'Trait=Abjuration,Aura ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8410,7 +8403,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Decree':
     'Level=7 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8418,7 +8410,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Inspiration':
     'Level=8 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8426,7 +8417,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Lance':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8434,7 +8424,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Vessel':
     'Level=7 ' +
     'Trait=Morph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8442,7 +8431,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Divine Wrath':
     'Level=4 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8450,7 +8438,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dominate':
     'Level=6 ' +
     'Trait=Uncommon,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8458,7 +8445,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dragon Form':
     'Level=6 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8466,7 +8452,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dream Council':
     'Level=8 ' +
     'Trait=Illusion,Mental,Sleep ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8474,7 +8459,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dream Message':
     'Level=3 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8482,7 +8466,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dreaming Potential':
     'Level=5 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8490,7 +8473,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Drop Dead':
     'Level=5 ' +
     'Trait=Uncommon,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -8498,7 +8480,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Duplicate Foe':
     'Level=7 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -8506,7 +8487,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Earthbind':
     'Level=3 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8514,7 +8494,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Earthquake':
     'Level=8 ' +
     'Trait=Earth,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8522,7 +8501,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Eclipse Burst':
     'Level=7 ' +
     'Trait=Cold,Darkness,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8530,7 +8508,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Electric Arc':
     'Level=1 ' +
     'Trait=Cantrip,Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8538,7 +8515,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Form':
     'Level=5 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8546,7 +8522,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Endure Elements':
     'Level=2 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8554,7 +8529,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Energy Aegis':
     'Level=7 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -8562,7 +8536,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Enhance Victuals':
     'Level=2 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -8570,7 +8543,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Enlarge':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8578,7 +8550,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Entangle':
     'Level=2 ' +
     'Trait=Plant,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8586,7 +8557,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Enthrall':
     'Level=3 ' +
     'Trait=Auditory,Emotion,Enchantment ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8594,7 +8564,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ethereal Jaunt':
     'Level=7 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8602,7 +8571,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fabricated Truth':
     'Level=10 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -8610,7 +8578,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Faerie Fire':
     'Level=2 ' +
     'Trait=Evocation,Light ' +
-    'School=Evocation ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8618,7 +8585,6 @@ Pathfinder2ERemaster.SPELLS = {
   'False Life':
     'Level=2 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8626,7 +8592,6 @@ Pathfinder2ERemaster.SPELLS = {
   'False Vision':
     'Level=5 ' +
     'Trait=Uncommon,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8634,7 +8599,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fear':
     'Level=1 ' +
     'Trait=Emotion,Enchantment,Fear,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8642,7 +8606,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Feather Fall':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -8650,7 +8613,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Feeblemind':
     'Level=6 ' +
     'Trait=Curse,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8658,7 +8620,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Feet To Fins':
     'Level=3 ' +
     'Trait=Morph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8666,7 +8627,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Field Of Life':
     'Level=6 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8674,7 +8634,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fiery Body':
     'Level=7 ' +
     'Trait=Fire,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8682,14 +8641,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Finger Of Death':
     'Level=7 ' +
     'Trait=Death,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R30\' Target suffers 70 HP negative, dying at 0 HP (<b>heightened +1</b> inflicts +10 HP)"',
   'Fire Seeds':
     'Level=6 ' +
     'Trait=Evocation,Fire,Plant ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8697,7 +8654,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fire Shield':
     'Level=4 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8705,7 +8661,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fireball':
     'Level=3 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8713,7 +8668,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Flame Strike':
     'Level=5 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8721,7 +8675,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Flaming Sphere':
     'Level=2 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8729,14 +8682,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Fleet Step':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Self gains +30\' Speed for 1 min"',
   'Flesh To Stone':
     'Level=6 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8744,7 +8695,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Floating Disk':
     'Level=1 ' +
     'Trait=Conjuration,Force ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8752,7 +8702,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fly':
     'Level=4 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8760,7 +8709,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Forbidding Ward':
     'Level=1 ' +
     'Trait=Abjuration,Cantrip ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8768,7 +8716,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Foresight':
     'Level=9 ' +
     'Trait=Divination,Mental,Prediction ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8776,7 +8723,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Freedom Of Movement':
     'Level=4 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8784,7 +8730,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Gaseous Form':
     'Level=4 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8792,7 +8737,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Gate':
     'Level=10 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8800,7 +8744,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Gentle Repose':
     'Level=2 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8808,7 +8751,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ghost Sound':
     'Level=1 ' +
     'Trait=Auditory,Cantrip,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8816,7 +8758,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ghostly Weapon':
     'Level=3 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8824,7 +8765,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ghoulish Cravings':
     'Level=2 ' +
     'Trait=Disease,Evil,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8832,7 +8772,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Glibness':
     'Level=4 ' +
     'Trait=Uncommon,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8840,7 +8779,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Glitterdust':
     'Level=2 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8848,14 +8786,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Globe Of Invulnerability':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="10\' burst attempts to counteract outside spells at the spell level - 1 for 10 min"',
   'Glyph Of Warding':
     'Level=3 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8863,7 +8799,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Goblin Pox':
     'Level=1 ' +
     'Trait=Disease,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8871,7 +8806,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Grease':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8879,7 +8813,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Grim Tendrils':
     'Level=1 ' +
     'Trait=Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8887,7 +8820,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Guidance':
     'Level=1 ' +
     'Trait=Cantrip,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8895,7 +8827,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Gust Of Wind':
     'Level=1 ' +
     'Trait=Air,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8903,7 +8834,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hallucination':
     'Level=5 ' +
     'Trait=Illusion,Incapacitation,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8911,7 +8841,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hallucinatory Terrain':
     'Level=4 ' +
     'Trait=Uncommon,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -8919,7 +8848,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Harm':
     'Level=1 ' +
     'Trait=Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -8927,7 +8855,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Haste':
     'Level=3 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8935,7 +8862,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Heal':
     'Level=1 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=0 ' +
     'Description=' +
@@ -8943,7 +8869,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Heroism':
     'Level=3 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8951,7 +8876,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hideous Laughter':
     'Level=2 ' +
     'Trait=Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -8959,7 +8883,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Holy Cascade':
     'Level=4 ' +
     'Trait=Evocation,Good,Positive,Water ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -8967,7 +8890,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Horrid Wilting':
     'Level=8 ' +
     'Trait=Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8975,7 +8897,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Humanoid Form':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8983,7 +8904,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hydraulic Push':
     'Level=1 ' +
     'Trait=Attack,Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8991,7 +8911,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hydraulic Torrent':
     'Level=4 ' +
     'Trait=Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -8999,14 +8918,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Hypercognition':
     'Level=3 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="Allows self to use 6 Recall Knowledge actions immediately"',
   'Hypnotic Pattern':
     'Level=3 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9014,7 +8931,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Illusory Creature':
     'Level=2 ' +
     'Trait=Auditory,Illusion,Olfactory,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9022,7 +8938,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Illusory Disguise':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9030,7 +8945,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Illusory Object':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9038,7 +8952,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Illusory Scene':
     'Level=5 ' +
     'Trait=Auditory,Illusion,Olfactory,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9046,7 +8959,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Implosion':
     'Level=9 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9054,7 +8966,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Insect Form':
     'Level=3 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9062,7 +8973,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Invisibility':
     'Level=2 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9070,7 +8980,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Invisibility Sphere':
     'Level=3 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9078,7 +8987,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Item Facade':
     'Level=1 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9086,7 +8994,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Jump':
     'Level=1 ' +
     'Trait=Move,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -9094,7 +9001,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Knock':
     'Level=2 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9102,7 +9008,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Know Direction':
     'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9110,7 +9015,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Levitate':
     'Level=3 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9118,7 +9022,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Light':
     'Level=1 ' +
     'Trait=Cantrip,Evocation,Light ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9126,7 +9029,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Lightning Bolt':
     'Level=3 ' +
     'Trait=Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9134,7 +9036,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Locate':
     'Level=3 ' +
     'Trait=Uncommon,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9142,7 +9043,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Lock':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9150,7 +9050,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Longstrider':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9158,7 +9057,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mage Armor':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9166,7 +9064,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mage Hand':
     'Level=1 ' +
     'Trait=Cantrip,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9174,7 +9071,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Aura':
     'Level=1 ' +
     'Trait=Uncommon,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9182,7 +9078,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Fang':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9190,7 +9085,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Missile':
     'Level=1 ' +
     'Trait=Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -9198,7 +9092,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Mouth':
     'Level=2 ' +
     'Trait=Auditory,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9206,14 +9099,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Weapon':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="Touched weapon gains +1 attack and 2 damage dice for 1 min"',
   'Magnificent Mansion':
     'Level=7 ' +
     'Trait=Uncommon,Conjuration,Extradimensional ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9221,7 +9112,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Mariner's Curse":
     'Level=5 ' +
     'Trait=Curse,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9229,7 +9119,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mask Of Terror':
     'Level=7 ' +
     'Trait=Emotion,Fear,Illusion,Mental,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9237,7 +9126,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Massacre':
     'Level=9 ' +
     'Trait=Death,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9245,7 +9133,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Maze':
     'Level=8 ' +
     'Trait=Conjuration,Extradimensional,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9253,7 +9140,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Meld Into Stone':
     'Level=3 ' +
     'Trait=Earth,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9261,7 +9147,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mending':
     'Level=1 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9269,7 +9154,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Message':
     'Level=1 ' +
     'Trait=Auditory,Cantrip,Illusion,Linguistic,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -9277,7 +9161,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Meteor Swarm':
     'Level=9 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9285,7 +9168,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mind Blank':
     'Level=8 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9293,7 +9175,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mind Probe':
     'Level=5 ' +
     'Trait=Uncommon,Divination,Linguistic,Mental ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9301,7 +9182,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mind Reading':
     'Level=3 ' +
     'Trait=Uncommon,Detection,Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9309,7 +9189,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mindlink':
     'Level=1 ' +
     'Trait=Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9317,7 +9196,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Miracle':
     'Level=10 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -9325,7 +9203,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mirror Image':
     'Level=2 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9333,7 +9210,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Misdirection':
     'Level=2 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9341,7 +9217,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mislead':
     'Level=6 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9349,7 +9224,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Modify Memory':
     'Level=4 ' +
     'Trait=Uncommon,Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9357,7 +9231,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Moment Of Renewal':
     'Level=8 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9365,7 +9238,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Monstrosity Form':
     'Level=8 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9373,7 +9245,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Moon Frenzy':
     'Level=5 ' +
     'Trait=Morph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9381,7 +9252,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Nature Incarnate':
     'Level=10 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9389,7 +9259,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Nature's Enmity":
     'Level=9 ' +
     'Trait=Enchantment ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9397,7 +9266,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Negate Aroma':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9405,7 +9273,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Neutralize Poison':
     'Level=3 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9413,7 +9280,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Nightmare':
     'Level=4 ' +
     'Trait=Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9421,7 +9287,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Nondetection':
     'Level=3 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9429,14 +9294,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Obscuring Mist':
     'Level=2 ' +
     'Trait=Conjuration,Water ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description="R120\' 20\' burst conceals creatures for 1 min"',
   "Outcast's Curse":
     'Level=4 ' +
     'Trait=Curse,Enchantment,Mental,Misfortune ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9444,7 +9307,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Overwhelming Presence':
     'Level=9 ' +
     'Trait=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9452,7 +9314,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Paralyze':
     'Level=3 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9460,7 +9321,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Paranoia':
     'Level=2 ' +
     'Trait=Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9468,7 +9328,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Pass Without Trace':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9476,7 +9335,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Passwall':
     'Level=5 ' +
     'Trait=Uncommon,Conjuration,Earth ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9484,7 +9342,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Pest Form':
     'Level=1 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9492,7 +9349,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Phantasmal Calamity':
     'Level=6 ' +
     'Trait=Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9500,7 +9356,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Phantasmal Killer':
     'Level=4 ' +
     'Trait=Death,Emotion,Fear,Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9508,7 +9363,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Phantom Pain':
     'Level=1 ' +
     'Trait=Illusion,Mental,Nonlethal ' +
-    'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9516,7 +9370,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Phantom Steed':
     'Level=2 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9524,7 +9377,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Plane Shift':
     'Level=7 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9532,7 +9384,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Plant Form':
     'Level=5 ' +
     'Trait=Plant,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9540,7 +9391,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Polar Ray':
     'Level=8 ' +
     'Trait=Attack,Cold,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9548,7 +9398,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Possession':
     'Level=7 ' +
     'Trait=Uncommon,Incapacitation,Mental,Necromancy,Possession ' +
-    'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9556,7 +9405,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Power Word Blind':
     'Level=7 ' +
     'Trait=Uncommon,Auditory,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -9564,7 +9412,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Power Word Kill':
     'Level=9 ' +
     'Trait=Uncommon,Auditory,Death,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -9572,7 +9419,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Power Word Stun':
     'Level=8 ' +
     'Trait=Uncommon,Auditory,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -9580,7 +9426,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Prestidigitation':
     'Level=1 ' +
     'Trait=Cantrip,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9588,7 +9433,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Primal Herd':
     'Level=10 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9596,7 +9440,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Primal Phenomenon':
     'Level=10 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -9604,7 +9447,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Prismatic Sphere':
     'Level=9 ' +
     'Trait=Abjuration,Light ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9612,7 +9454,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Prismatic Spray':
     'Level=7 ' +
     'Trait=Evocation,Light ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9620,7 +9461,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Prismatic Wall':
     'Level=8 ' +
     'Trait=Abjuration,Light ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -9628,7 +9468,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Private Sanctum':
     'Level=4 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9636,7 +9475,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Produce Flame':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9644,7 +9482,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Project Image':
     'Level=7 ' +
     'Trait=Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9652,7 +9489,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Protection':
     'Level=1 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9660,7 +9496,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Prying Eye':
     'Level=5 ' +
     'Trait=Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9668,7 +9503,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Punishing Winds':
     'Level=8 ' +
     'Trait=Air,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -9676,14 +9510,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Purify Food And Drink':
     'Level=1 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Removes contaminates from 1 cubic foot of food or water"',
   'Purple Worm Sting':
     'Level=6 ' +
     'Trait=Necromancy,Poison ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9691,14 +9523,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Raise Dead':
     'Level=6 ' +
     'Trait=Uncommon,Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
     'Description="R10\' Restores a willing soul up to level 13 to its corpse, dead for at most 3 days, giving it 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened 7th</b> raises the maximum level to 15; <b>8th</b> level 17; <b>9th</b> level 19; <b>10th</b> level 21)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'Trait=Attack,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9706,7 +9536,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ray Of Frost':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Cold,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9714,7 +9543,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Read Aura':
     'Level=1 ' +
     'Trait=Cantrip,Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9722,7 +9550,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Read Omens':
     'Level=4 ' +
     'Trait=Uncommon,Divination,Prediction ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9730,7 +9557,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Regenerate':
     'Level=7 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9738,7 +9564,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Remake':
     'Level=10 ' +
     'Trait=Uncommon,Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hr" ' +
     'Description=' +
@@ -9746,7 +9571,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Remove Curse':
     'Level=4 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9754,14 +9578,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Remove Disease':
     'Level=3 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
     'Description="Makes a counteract attempt vs. 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
     'Trait=Enchantment ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9769,7 +9591,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Remove Paralysis':
     'Level=2 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9777,7 +9598,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Repulsion':
     'Level=6 ' +
     'Trait=Abjuration,Aura,Mental ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9785,7 +9605,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Resilient Sphere':
     'Level=4 ' +
     'Trait=Abjuration,Force ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9793,7 +9612,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Resist Energy':
     'Level=2 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9801,7 +9619,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Resplendent Mansion':
     'Level=9 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9809,7 +9626,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Restoration':
     'Level=2 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9817,7 +9633,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Restore Senses':
     'Level=2 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9825,7 +9640,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Retrocognition':
     'Level=7 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9833,7 +9647,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Reverse Gravity':
     'Level=7 ' +
     'Trait=Uncommon,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -9841,7 +9654,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Revival':
     'Level=10 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9849,7 +9661,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Righteous Might':
     'Level=6 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -9857,7 +9668,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Rope Trick':
     'Level=4 ' +
     'Trait=Uncommon,Conjuration,Extradimensional ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9865,7 +9675,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sanctified Ground':
     'Level=3 ' +
     'Trait=Abjuration,Consecration ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9873,7 +9682,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sanctuary':
     'Level=1 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9881,7 +9689,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Scintillating Pattern':
     'Level=8 ' +
     'Trait=Illusion,Incapacitation,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9889,7 +9696,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Scrying':
     'Level=6 ' +
     'Trait=Uncommon,Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -9897,14 +9703,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Searing Light':
     'Level=3 ' +
     'Trait=Attack,Evocation,Fire,Good,Light ' +
-    'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
   'Secret Page':
     'Level=3 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9912,7 +9716,6 @@ Pathfinder2ERemaster.SPELLS = {
   'See Invisibility':
     'Level=2 ' +
     'Trait=Divination,Revelation ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9920,7 +9723,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sending':
     'Level=5 ' +
     'Trait=Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -9928,7 +9730,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shadow Blast':
     'Level=5 ' +
     'Trait=Evocation,Shadow ' +
-    'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -9936,7 +9737,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shadow Siphon':
     'Level=5 ' +
     'Trait=Illusion,Shadow ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -9944,7 +9744,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shadow Walk':
     'Level=5 ' +
     'Trait=Uncommon,Conjuration,Shadow,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -9952,21 +9751,18 @@ Pathfinder2ERemaster.SPELLS = {
   'Shape Stone':
     'Level=4 ' +
     'Trait=Earth,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 10\'x10\'x10\' stone"',
   'Shape Wood':
     'Level=2 ' +
     'Trait=Plant,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 20 cubic feet of wood"',
   'Shapechange':
     'Level=9 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9974,7 +9770,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shatter':
     'Level=2 ' +
     'Trait=Evocation,Sonic ' +
-    'School=Evocation ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -9982,7 +9777,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shield':
     'Level=1 ' +
     'Trait=Abjuration,Cantrip,Force ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -9990,7 +9784,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shield Other':
     'Level=2 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -9998,7 +9791,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shillelagh':
     'Level=1 ' +
     'Trait=Plant,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10006,7 +9798,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shocking Grasp':
     'Level=1 ' +
     'Trait=Attack,Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10014,7 +9805,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shrink':
     'Level=2 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10022,7 +9812,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shrink Item':
     'Level=3 ' +
     'Trait=Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -10030,7 +9819,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sigil':
     'Level=1 ' +
     'Trait=Cantrip,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10038,7 +9826,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Silence':
     'Level=2 ' +
     'Trait=Illusion ' +
-    'School=Illusion ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10046,7 +9833,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sleep':
     'Level=1 ' +
     'Trait=Enchantment,Incapacitation,Mental,Sleep ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10054,7 +9840,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Slow':
     'Level=3 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10062,7 +9847,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Solid Fog':
     'Level=4 ' +
     'Trait=Conjuration,Water ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10070,7 +9854,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Soothe':
     'Level=1 ' +
     'Trait=Emotion,Enchantment,Healing,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10078,7 +9861,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sound Burst':
     'Level=2 ' +
     'Trait=Evocation,Sonic ' +
-    'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10086,21 +9868,18 @@ Pathfinder2ERemaster.SPELLS = {
   'Speak With Animals':
     'Level=2 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Allows self to communicate with animals for 10 min"',
   'Speak With Plants':
     'Level=4 ' +
     'Trait=Divination,Plant ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Allows self to communicate with plants and fungi for 10 min"',
   'Spectral Hand':
     'Level=2 ' +
     'Trait=Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10108,7 +9887,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spell Immunity':
     'Level=4 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10116,7 +9894,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spell Turning':
     'Level=7 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
@@ -10124,7 +9901,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spellwrack':
     'Level=6 ' +
     'Trait=Abjuration,Curse,Force ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10132,7 +9908,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spider Climb':
     'Level=2 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10140,7 +9915,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spider Sting':
     'Level=1 ' +
     'Trait=Necromancy,Poison ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10148,7 +9922,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spirit Blast':
     'Level=6 ' +
     'Trait=Force,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10156,7 +9929,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spirit Link':
     'Level=1 ' +
     'Trait=Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10164,7 +9936,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spirit Song':
     'Level=8 ' +
     'Trait=Force,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10172,7 +9943,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spiritual Epidemic':
     'Level=8 ' +
     'Trait=Curse,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10180,7 +9950,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spiritual Guardian':
     'Level=5 ' +
     'Trait=Abjuration,Force ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10188,7 +9957,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Spiritual Weapon':
     'Level=2 ' +
     'Trait=Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10196,14 +9964,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Stabilize':
     'Level=1 ' +
     'Trait=Cantrip,Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R30\' Removes dying condition from target"',
   'Status':
     'Level=2 ' +
     'Trait=Detection,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10211,7 +9977,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Stinking Cloud':
     'Level=3 ' +
     'Trait=Conjuration,Poison ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10219,14 +9984,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Stone Tell':
     'Level=6 ' +
     'Trait=Uncommon,Evocation,Earth ' +
-    'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Allows self to converse with stone for 10 min"',
   'Stone To Flesh':
     'Level=6 ' +
     'Trait=Earth,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10234,7 +9997,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Stoneskin':
     'Level=4 ' +
     'Trait=Abjuration,Earth ' +
-    'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10242,7 +10004,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Storm Of Vengeance':
     'Level=9 ' +
     'Trait=Air,Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10250,7 +10011,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Subconscious Suggestion':
     'Level=5 ' +
     'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10258,7 +10018,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Suggestion':
     'Level=4 ' +
     'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10266,7 +10025,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Animal':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10274,7 +10032,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Celestial':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -10282,7 +10039,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Construct':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
@@ -10290,7 +10046,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Dragon':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
@@ -10298,7 +10053,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Elemental':
     'Level=2 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10306,7 +10060,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Entity':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10314,7 +10067,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Fey':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10322,7 +10074,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Fiend':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -10330,7 +10081,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Giant':
     'Level=5 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10338,7 +10088,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Summon Plant Or Fungus':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10346,7 +10095,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sunburst':
     'Level=7 ' +
     'Trait=Evocation,Fire,Light,Positive ' +
-    'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10354,7 +10102,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Synaptic Pulse':
     'Level=5 ' +
     'Trait=Enchantment,Incapacitation ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10362,7 +10109,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Synesthesia':
     'Level=5 ' +
     'Trait=Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10370,7 +10116,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Talking Corpse':
     'Level=4 ' +
     'Trait=Uncommon,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -10378,7 +10123,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tanglefoot':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Conjuration,Plant ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10386,7 +10130,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tangling Creepers':
     'Level=6 ' +
     'Trait=Conjuration,Plant ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10394,7 +10137,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Telekinetic Haul':
     'Level=5 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10402,14 +10144,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Telekinetic Maneuver':
     'Level=2 ' +
     'Trait=Attack,Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="R60\' Spell attack attempts to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10417,7 +10157,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Telepathic Bond':
     'Level=5 ' +
     'Trait=Uncommon,Divination,Mental ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10425,7 +10164,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Telepathic Demand':
     'Level=9 ' +
     'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10433,7 +10171,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Telepathy':
     'Level=4 ' +
     'Trait=Divination,Linguistic,Mental ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10441,7 +10178,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Teleport':
     'Level=6 ' +
     'Trait=Uncommon,Conjuration,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -10449,7 +10185,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Time Stop':
     'Level=10 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10457,7 +10192,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tongues':
     'Level=5 ' +
     'Trait=Uncommon,Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10465,7 +10199,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Touch Of Idiocy':
     'Level=2 ' +
     'Trait=Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10473,14 +10206,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Tree Shape':
     'Level=2 ' +
     'Trait=Plant,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Self becomes a Large tree with Armor Class 20 for 8 hr"',
   'Tree Stride':
     'Level=5 ' +
     'Trait=Uncommon,Conjuration,Plant,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10488,7 +10219,6 @@ Pathfinder2ERemaster.SPELLS = {
   'True Seeing':
     'Level=6 ' +
     'Trait=Divination,Revelation ' +
-    'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10496,7 +10226,6 @@ Pathfinder2ERemaster.SPELLS = {
   'True Strike':
     'Level=1 ' +
     'Trait=Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10504,7 +10233,6 @@ Pathfinder2ERemaster.SPELLS = {
   'True Target':
     'Level=7 ' +
     'Trait=Divination,Fortune,Prediction ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10512,7 +10240,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Uncontrollable Dance':
     'Level=8 ' +
     'Trait=Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10520,7 +10247,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Undetectable Alignment':
     'Level=2 ' +
     'Trait=Uncommon,Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10528,7 +10254,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unfathomable Song':
     'Level=9 ' +
     'Trait=Auditory,Emotion,Enchantment,Fear,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10536,7 +10261,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unfettered Pack':
     'Level=7 ' +
     'Trait=Abjuration ' +
-    'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10544,7 +10268,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unrelenting Observation':
     'Level=8 ' +
     'Trait=Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10552,7 +10275,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unseen Servant':
     'Level=1 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10560,7 +10282,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vampiric Exsanguination':
     'Level=6 ' +
     'Trait=Death,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10568,7 +10289,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vampiric Touch':
     'Level=3 ' +
     'Trait=Death,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10576,7 +10296,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Veil':
     'Level=4 ' +
     'Trait=Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10584,7 +10303,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ventriloquism':
     'Level=1 ' +
     'Trait=Auditory,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10592,7 +10310,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vibrant Pattern':
     'Level=6 ' +
     'Trait=Illusion,Incapacitation,Visual ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10600,7 +10317,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Visions Of Danger':
     'Level=7 ' +
     'Trait=Auditory,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10608,7 +10324,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vital Beacon':
     'Level=4 ' +
     'Trait=Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10616,7 +10331,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Volcanic Eruption':
     'Level=7 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10624,7 +10338,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wail Of The Banshee':
     'Level=9 ' +
     'Trait=Auditory,Death,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10632,7 +10345,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Fire':
     'Level=4 ' +
     'Trait=Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10640,7 +10352,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Force':
     'Level=6 ' +
     'Trait=Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
     'Description=' +
@@ -10648,7 +10359,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Ice':
     'Level=5 ' +
     'Trait=Cold,Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10656,7 +10366,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Stone':
     'Level=5 ' +
     'Trait=Conjuration,Earth ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10664,7 +10373,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Thorns':
     'Level=3 ' +
     'Trait=Conjuration,Plant ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10672,7 +10380,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Wind':
     'Level=3 ' +
     'Trait=Air,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10680,7 +10387,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Wanderer's Guide":
     'Level=3 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10688,7 +10394,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Warp Mind':
     'Level=7 ' +
     'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10696,7 +10401,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Water Breathing':
     'Level=2 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -10704,7 +10408,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Water Walk':
     'Level=2 ' +
     'Trait=Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10712,7 +10415,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Weapon Of Judgment':
     'Level=9 ' +
     'Trait=Evocation,Force ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10720,7 +10422,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Weapon Storm':
     'Level=4 ' +
     'Trait=Evocation ' +
-    'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -10728,7 +10429,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Web':
     'Level=2 ' +
     'Trait=Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
@@ -10736,7 +10436,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Weird':
     'Level=9 ' +
     'Trait=Death,Emotion,Fear,Illusion,Mental ' +
-    'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10744,7 +10443,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wind Walk':
     'Level=8 ' +
     'Trait=Air,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast="10 min" ' +
     'Description=' +
@@ -10752,7 +10450,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wish':
     'Level=10 ' +
     'Trait=Divination ' +
-    'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
     'Description=' +
@@ -10760,7 +10457,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Zealous Conviction':
     'Level=6 ' +
     'Trait=Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10768,7 +10464,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Zone Of Truth':
     'Level=3 ' +
     'Trait=Uncommon,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10776,7 +10471,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Allegro':
     'Level=7 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10784,7 +10478,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Counter Performance':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Composition,Enchantment,Fortune,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -10792,14 +10485,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Dirge Of Doom':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="30\' emanation inflicts frightened 1 on foes for 1 rd"',
   'Fatal Aria':
     'Level=10 ' +
     'Trait=Focus,Uncommon,Bard,Composition,Death,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10807,7 +10498,6 @@ Pathfinder2ERemaster.SPELLS = {
   'House Of Imaginary Walls':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10815,7 +10505,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Inspire Competence':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10823,7 +10512,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Inspire Courage':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10831,7 +10519,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Inspire Defense':
     'Level=2 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -10839,7 +10526,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Inspire Heroics':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
@@ -10847,7 +10533,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Lingering Composition':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
@@ -10855,7 +10540,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Loremaster's Etude":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Bard,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
@@ -10863,7 +10547,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Soothing Ballad':
     'Level=7 ' +
     'Trait=Focus,Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -10871,14 +10554,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Triple Time':
     'Level=2 ' +
     'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="60\' emanation gives allies +10\' Speed for 1 rd"',
   "Champion's Sacrifice":
     'Level=6 ' +
     'Trait=Focus,Uncommon,Abjuration,Champion ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -10886,7 +10567,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Hero's Defiance":
     'Level=10 ' +
     'Trait=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Free ' +
     'Description=' +
@@ -10894,7 +10574,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Lay On Hands':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10902,7 +10581,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Litany Against Sloth':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10910,7 +10588,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Litany Against Wrath':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10918,7 +10595,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Litany Of Righteousness':
     'Level=7 ' +
     'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10926,7 +10602,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Agile Feet':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10934,7 +10609,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Appearance Of Wealth':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion ' +
-    'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10942,7 +10616,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Artistic Flourish':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10950,7 +10623,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Athletic Rush':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10958,7 +10630,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Bit Of Luck':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10966,7 +10637,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Blind Ambition':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10974,7 +10644,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Captivating Adoration':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental,Visual ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -10982,7 +10651,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Charming Touch':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10990,7 +10658,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cloak Of Shadow':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Darkness,Evocation,Shadow ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -10998,7 +10665,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Commanding Lash':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11006,7 +10672,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Competitive Edge':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11014,7 +10679,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cry Of Destruction':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation,Sonic ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11022,7 +10686,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Darkened Eyes':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Darkness,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11030,7 +10693,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dazzling Flash':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation,Light,Visual ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11038,7 +10700,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Death's Call":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11046,7 +10707,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Delusional Pride':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11054,7 +10714,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Destructive Aura':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Aura,Cleric,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11062,7 +10721,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Disperse Into Air':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Air,Cleric,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11070,7 +10728,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Downpour':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11078,7 +10735,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Dreamer's Call":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11086,7 +10742,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Enduring Might':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11094,7 +10749,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Eradicate Undeath':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11102,7 +10756,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Face In The Crowd':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11110,7 +10763,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fire Ray':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Cleric,Evocation,Fire ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11118,7 +10770,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Flame Barrier':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11126,7 +10777,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Forced Quiet':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11134,7 +10784,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Glimpse The Truth':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Revelation ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11142,7 +10791,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Healer's Blessing":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11150,7 +10798,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hurtling Stone':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Cleric,Earth,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11158,7 +10805,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Know The Enemy':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11166,7 +10812,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Localized Quake':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Earth,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11174,7 +10819,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Lucky Break':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11182,7 +10826,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Magic's Vessel":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11190,7 +10833,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Malignant Sustenance':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11198,7 +10840,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Moonbeam':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Cleric,Evocation,Fire,Light ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11206,7 +10847,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Mystic Beacon':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11214,7 +10854,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Nature's Bounty":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Conjuration,Plant,Positive ' +
-    'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11222,7 +10861,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Overstuff':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11230,7 +10868,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Perfected Form':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11238,7 +10875,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Perfected Mind':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11246,7 +10882,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Positive Luminance':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Light,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11254,7 +10889,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Precious Metals':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11262,7 +10896,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Protector's Sacrifice":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11270,7 +10903,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Protector's Sphere":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Aura,Cleric ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11278,7 +10910,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Pulse Of The City':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Scrying ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -11286,7 +10917,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Pushing Gust':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Air,Cleric,Conjuration ' +
-    'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11294,7 +10924,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Read Fate':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Prediction ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -11302,7 +10931,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Rebuke Death':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11310,7 +10938,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Retributive Pain':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric,Mental,Nonlethal ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11318,7 +10945,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Safeguard Secret':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric,Mental ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
@@ -11326,7 +10952,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Savor The Sting':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental,Nonlethal ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11334,7 +10959,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Scholarly Recollection':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11342,7 +10966,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shared Nightmare':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11350,7 +10973,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Soothing Words':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11358,7 +10980,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Splash Of Art':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11366,7 +10987,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sudden Shift':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric,Illusion ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11374,7 +10994,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Sweet Dream':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Auditory,Cleric,Enchantment,Linguistic,Mental,Sleep ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
@@ -11382,7 +11001,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Take Its Course':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11390,7 +11008,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tempt Fate':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11398,7 +11015,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tidal Surge':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation,Water ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11406,7 +11022,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Touch Of Obedience':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11414,7 +11029,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Touch Of The Moon':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Light ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11422,7 +11036,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Touch Of Undeath':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Necromancy,Negative ' +
-    'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11430,7 +11043,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Traveler's Transit":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11438,7 +11050,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Trickster's Twin":
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
-    'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11446,7 +11057,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unimpeded Stride':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11454,7 +11064,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unity':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
-    'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11462,7 +11071,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Veil Of Confidence':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11470,7 +11078,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vibrant Thorns':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Morph,Plant,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11478,7 +11085,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Waking Nightmare':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Fear,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
@@ -11486,7 +11092,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Weapon Surge':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11494,7 +11099,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Word Of Freedom':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11502,7 +11106,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Word Of Truth':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Cleric,Divination ' +
-    'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
@@ -11510,7 +11113,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Zeal For Battle':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Fortune,Mental ' +
-    'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11518,7 +11120,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Goodberry':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Healing,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11526,7 +11127,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Heal Animal':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11534,7 +11134,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Impaling Briars':
     'Level=8 ' +
     'Trait=Focus,Uncommon,Conjuration,Druid,Plant ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11542,7 +11141,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Primal Summons':
     'Level=6 ' +
     'Trait=Focus,Uncommon,Conjuration,Druid ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=Free ' +
     'Description=' +
@@ -11550,7 +11148,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Storm Lord':
     'Level=9 ' +
     'Trait=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11558,7 +11155,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Stormwind Flight':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Air,Druid,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11566,7 +11162,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tempest Surge':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11574,7 +11169,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wild Morph':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Morph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11582,7 +11176,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wild Shape':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11590,21 +11183,18 @@ Pathfinder2ERemaster.SPELLS = {
   'Abundant Step':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="Teleports self %{speed>?15}\' within line of sight"',
   'Empty Body':
     'Level=9 ' +
     'Trait=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
-    'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description="Moves self to the Ethereal Plane for 1 min"',
   'Ki Blast':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evocation,Force,Monk ' +
-    'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11612,7 +11202,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ki Rush':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Monk,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11620,7 +11209,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ki Strike':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Monk,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11628,7 +11216,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Quivering Palm':
     'Level=8 ' +
     'Trait=Focus,Uncommon,Incapacitation,Monk,Necromancy ' +
-    'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
@@ -11636,7 +11223,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wholeness Of Body':
     'Level=2 ' +
     'Trait=Focus,Uncommon,Healing,Monk,Necromancy,Positive ' +
-    'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11644,7 +11230,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wild Winds Stance':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Air,Evocation,Monk,Stance ' +
-    'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11652,7 +11237,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Wind Jump':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Air,Monk,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
@@ -11660,7 +11244,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Aberrant Whispers':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11668,7 +11251,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Abyssal Wrath':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11676,7 +11258,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Ancestral Memories':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Divination,Sorcerer ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11684,7 +11265,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Angelic Halo':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Aura,Good,Sorcerer ' +
-    'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11692,7 +11272,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Angelic Wings':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evocation,Light,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11700,7 +11279,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Arcane Countermeasure':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Abjuration,Sorcerer ' +
-    'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11708,7 +11286,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Celestial Brand':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11716,7 +11293,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Diabolic Edict':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Enchantment,Sorcerer ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11724,7 +11300,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dragon Breath':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11732,7 +11307,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dragon Claws':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11740,7 +11314,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dragon Wings':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11748,7 +11321,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Drain Life':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11756,7 +11328,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Blast':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11764,7 +11335,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Motion':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11772,7 +11342,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Toss':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11780,7 +11349,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Embrace The Pit':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11788,7 +11356,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Extend Spell':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Divination,Metamagic,Sorcerer ' +
-    'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11796,7 +11363,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Faerie Dust':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Enchantment,Mental,Sorcerer ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11804,7 +11370,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Fey Disappearance':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Enchantment,Sorcerer ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11812,14 +11377,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Fey Glamour':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Illusion,Sorcerer ' +
-    'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="R30\' 30\' burst disguises 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Morph,Necromancy,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11827,7 +11390,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Grasping Grave':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Necromancy,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11835,7 +11397,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hellfire Plume':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Evil,Evocation,Fire,Sorcerer ' +
-    'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11843,7 +11404,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Horrific Visage':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Emotion,Fear,Illusion,Mental,Sorcerer,Visual ' +
-    'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11851,7 +11411,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Jealous Hex':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11859,7 +11418,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Swamp Of Sloth':
     'Level=3 ' +
     'Trait=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
-    'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11867,7 +11425,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Tentacular Limbs':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11875,7 +11432,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Undeath's Blessing":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
-    'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11883,7 +11439,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Unusual Anatomy':
     'Level=5 ' +
     'Trait=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
-    'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -11891,7 +11446,6 @@ Pathfinder2ERemaster.SPELLS = {
   "You're Mine":
     'Level=5 ' +
     'Trait=Focus,Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
-    'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
@@ -11899,14 +11453,12 @@ Pathfinder2ERemaster.SPELLS = {
   'Augment Summoning':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Conjuration,Wizard ' +
-    'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description="R30\' Summoned target gains +1 on all checks for 1 min"',
   'Call Of The Grave':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Arcane,Attack,Necromancy,Wizard ' +
-    'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
@@ -11914,7 +11466,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Charming Words':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Auditory,Enchantment,Incapacitation,Linguistic,Mental,Wizard ' +
-    'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11922,7 +11473,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dimensional Steps':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Conjuration,Teleportation,Wizard ' +
-    'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11930,7 +11480,6 @@ Pathfinder2ERemaster.SPELLS = {
   "Diviner's Sight":
     'Level=1 ' +
     'Trait=Focus,Uncommon,Concentrate,Divination,Fortune,Wizard ' +
-    'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11938,7 +11487,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Dread Aura':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Aura,Enchantment,Emotion,Fear,Mental,Wizard ' +
-    'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
@@ -11946,7 +11494,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Elemental Tempest':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Evocation,Metamagic,Wizard ' +
-    'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11954,7 +11501,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Energy Absorption':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Abjuration,Wizard ' +
-    'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11962,7 +11508,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Force Bolt':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Evocation,Force,Wizard ' +
-    'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11970,7 +11515,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Hand Of The Apprentice':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Attack,Evocation,Wizard ' +
-    'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -11978,7 +11522,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Invisibility Cloak':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Illusion,Wizard ' +
-    'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
@@ -11986,7 +11529,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Life Siphon':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Healing,Necromancy,Wizard ' +
-    'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
@@ -11994,7 +11536,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Physical Boost':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Transmutation,Wizard ' +
-    'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -12002,7 +11543,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Protective Ward':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Abjuration,Aura,Wizard ' +
-    'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -12010,7 +11550,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Shifting Form':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Morph,Transmutation,Wizard ' +
-    'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -12018,7 +11557,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Vigilant Eye':
     'Level=4 ' +
     'Trait=Focus,Uncommon,Divination,Wizard ' +
-    'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
@@ -12026,7 +11564,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Warped Terrain':
     'Level=1 ' +
     'Trait=Focus,Uncommon,Illusion,Visual,Wizard ' +
-    'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description="R60\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) illusion inflicts difficult terrain for 1 min (<b>heightened 4th</b> affects air instead of surface)"'
@@ -12330,16 +11867,14 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Spell') {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
-    let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
     let traits = QuilvynUtils.getAttrValueArray(attrs, 'Trait');
     let isCantrip = traits.includes('Cantrip');
     let isFocus = traits.includes('Focus');
     trads.forEach(t => {
       let spellName =
-        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + level + ' ' + (isFocus ? 'Foc ' : '') + school.substring(0, 3) + ')';
+        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + level + (isFocus ? ' Foc' : '') + ')';
       Pathfinder2ERemaster.spellRules(rules, spellName,
-        school,
         level,
         t,
         QuilvynUtils.getAttrValue(attrs, 'Cast'),
@@ -12611,18 +12146,17 @@ Pathfinder2ERemaster.skillRules = function(rules, name, ability, subcategory) {
 };
 
 /*
- * Defines in #rules# the rules associated with spell #name#, which is from
- * magic school #school#. #tradition# and #level# are used to compute any
- * saving throw value required by the spell. #cast# gives the casting actions
- * or time required to cast the spell, #traits# lists any traits the spell has,
- * and #description# is a verbose description of the spell's effects.
+ * Defines in #rules# the rules associated with spell #name#. #tradition# and
+ * #level# are used to compute any saving throw value required by the spell.
+ * #cast# gives the casting actions or time required to cast the spell,
+ * #traits# lists any traits the spell has, and #description# is a verbose
+ * description of the spell's effects.
  */
 Pathfinder2ERemaster.spellRules = function(
-  rules, name, school, level, tradition, cast, traits, description
+  rules, name, level, tradition, cast, traits, description
 ) {
-  // TODO Schools
   Pathfinder2E.spellRules(
-    rules, name, school, level, tradition, cast, traits, description
+    rules, name, null, level, tradition, cast, traits, description
   );
 };
 
