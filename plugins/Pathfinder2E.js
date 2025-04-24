@@ -12992,7 +12992,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let isFocus = traits.includes('Focus');
     trads.forEach(t => {
       let spellName =
-        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + level + ' ' + (isFocus ? 'Foc ' : '') + school.substring(0, 3) + ')';
+        name + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + level + (isFocus ? ' Foc' : '') + (school ? ' ' + school.substring(0, 3) : '') + ')';
       Pathfinder2E.spellRules(rules, spellName,
         school,
         level,
@@ -15253,7 +15253,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             let isCantrip = spellTraits.includes('Cantrip');
             let isFocus = spellTraits.includes('Focus');
             let spellName =
-              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + spellLevel + ' ' + (isFocus ? 'Foc ' : '') + spellSchool.substring(0, 3) + ')';
+              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + spellLevel + (isFocus ? ' Foc' : '') + (spellSchool ? ' ' + spellSchool.substring(0, 3) : '') + ')';
             rules.defineRule('spells.' + spellName, note, '=', '1');
             Pathfinder2E.spellRules(rules, spellName,
               spellSchool,
@@ -15486,7 +15486,7 @@ Pathfinder2E.spellRules = function(
     (rules.getChoices('levels') || {}).Wizard || Pathfinder2E.CLASSES.Wizard;
   let schools =
     wizard.match(/[\w\s]*:Arcane School/g).map(x => x.replace(':Arcane School', ''));
-  if(!school || !(schools.includes(school))) {
+  if(school && !(schools.includes(school))) {
     console.log('Bad school "' + school + '" for spell ' + name);
     return;
   }
