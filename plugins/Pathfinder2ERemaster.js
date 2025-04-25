@@ -93,18 +93,32 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
   Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => x != 'alignment');
 
 Pathfinder2ERemaster.ANCESTRIES = {
-  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf.replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
-  'Elf':Pathfinder2E.ANCESTRIES.Elf.replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Ancient Elf:Heritage",'),
-  'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey').replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
-  'Goblin':Pathfinder2E.ANCESTRIES.Goblin.replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
-  'Halfling':Pathfinder2E.ANCESTRIES.Halfling.replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Jinxed Halfling:Heritage",'),
-  'Human':Pathfinder2E.ANCESTRIES.Human.replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '"1:Versatile Heritage",').replaceAll(/Heritage Human/g, 'Human'),
+  'Dwarf':
+    Pathfinder2E.ANCESTRIES.Dwarf
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Elf':
+    Pathfinder2E.ANCESTRIES.Elf
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Ancient Elf:Heritage",'),
+  'Gnome':
+    Pathfinder2E.ANCESTRIES.Gnome
+    .replace('Sylvan', 'Fey').replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Goblin':
+    Pathfinder2E.ANCESTRIES.Goblin
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Halfling':
+    Pathfinder2E.ANCESTRIES.Halfling
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Jinxed Halfling:Heritage",'),
+  'Human':
+    Pathfinder2E.ANCESTRIES.Human
+    .replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '"1:Versatile Heritage",')
+    .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Intelligence)",' +
-      '1:Small,"1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage","Plant Nourishment" ' +
+      '"1:Small","1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage",' +
+      '"1:Plant Nourishment" ' +
     'Selectables=' +
       '"1:Versatile Heritage:Heritage",' +
       '"1:Cactus Leshy:Heritage",' +
@@ -122,7 +136,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'HitPoints=10 ' +
     'Features=' +
       '"1:Ability Boost (Choose 2 from any)",' +
-      '1:Darkvision,"1:Ancestry Feats","1:Orc Heritage" ' +
+      '"1:Darkvision","1:Ancestry Feats","1:Orc Heritage" ' +
     'Selectables=' +
       '"1:Versatile Heritage:Heritage",' +
       '"1:Badlands Orc:Heritage",' +
@@ -134,7 +148,6 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Winter Orc:Heritage" ' +
     'Languages=Common,Orcish ' +
     'Trait=Orc,Humanoid'
-  // TODO Versatile heritige
 };
 Pathfinder2ERemaster.ARMORS = {
   // TODO Str is now expressed as a modifier instead of a score
@@ -204,7 +217,8 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Teacher':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
-      '"1:Skill Trained (Choose 1 from Performance, Society; Academia Lore)","1:Experienced Professional"',
+      '"1:Skill Trained (Choose 1 from Performance, Society; Academia Lore)",' +
+      '"1:Experienced Professional"',
   'Tinker':Pathfinder2E.BACKGROUNDS.Tinker,
   'Warrior':Pathfinder2E.BACKGROUNDS.Warrior
 };
@@ -316,15 +330,15 @@ Pathfinder2ERemaster.CLASSES = {
     'Features=' +
       '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
       '"1:Perception Expert",' +
-      '"1:Save Trained (Fortitude; Reflex)","1:Save Expert (Will)",' +
+      '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Bard Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Bard)","1:Class Trained (Bard)",' +
-      '"1:Bard Spellcasting","1:Composition Spells",1:Muses,' +
-      '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
-      '"3:Reflex Expertise","3:Signature Spells","3:Skill Increases",' +
-      '"7:Expert Spellcaster","9:Fortitude Expertise","9:Performer\'s Heart",' +
+      '"1:Bard Spellcasting","1:Composition Spells",1:Muses,"2:Bard Feats",' +
+      '"2:Skill Feats","3:General Feats","3:Reflex Expertise",' +
+      '"3:Signature Spells","3:Skill Increases","7:Expert Spellcaster",' +
+      '"9:Fortitude Expertise","9:Performer\'s Heart",' +
       '"11:Bard Weapon Expertise","11:Perception Mastery",' +
       '"13:Light Armor Expertise","13:Weapon Specialization",' +
       '"15:Master Spellcaster","17:Greater Performer\'s Heart",' +
@@ -455,10 +469,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Shield Block","1:Voice Of Nature",1:Wildsong,"2:Druid Feats",' +
       '"2:Skill Feats","3:Perception Expertise","3:General Feats",' +
       '"3:Fortitude Expertise","3:Skill Increases","5:Reflex Expertise",' +
-      '"7:Expert Spellcaster","11:Weapon Expertise",' +
-      '"11:Wild Willpower","13:Medium Armor Expertise",' +
-      '"13:Weapon Specialization","15:Master Spellcaster",' +
-      '"19:Legendary Spellcaster","19:Primal Hierophant" ' +
+      '"7:Expert Spellcaster","11:Weapon Expertise","11:Wild Willpower",' +
+      '"13:Medium Armor Expertise","13:Weapon Specialization",' +
+      '"15:Master Spellcaster","19:Legendary Spellcaster",' +
+      '"19:Primal Hierophant" ' +
     'Selectables=' +
       '1:Animal:Order,' +
       '1:Leaf:Order,' +
@@ -605,8 +619,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Rogue\'s Racket","1:Sneak Attack","1:Surprise Attack",' +
       '"1:Rogue Feats","1:Skill Feats","2:Skill Increases",' +
       '"3:Deny Advantage","3:General Feats","5:Weapon Tricks",' +
-      '"7:Evasive Reflexes",' +
-      '"7:Perception Mastery","7:Weapon Specialization",' +
+      '"7:Evasive Reflexes","7:Perception Mastery","7:Weapon Specialization",' +
       '"9:Debilitating Strike","9:Rogue Resilience","11:Rogue Expertise",' +
       '"13:Greater Rogue Reflexes","13:Perception Legend",' +
       '"13:Light Armor Expertise","13:Master Tricks",' +
@@ -767,30 +780,46 @@ Pathfinder2ERemaster.CLASSES = {
 Pathfinder2ERemaster.DEITIES = {
   // TODO Divine Attribute is new; Aignment and FollowerAlignments eliminated
   'None':'',
-  'Abadar':Pathfinder2E.DEITIES.Abadar.replace('Magnificent Mansion', 'Planar Palace'),
+  'Abadar':
+    Pathfinder2E.DEITIES.Abadar.replace('Magnificent Mansion', 'Planar Palace'),
   'Asmodeus':Pathfinder2E.DEITIES.Asmodeus,
   'Calistra':Pathfinder2E.DEITIES.Calistra,
-  'Cayden Cailean':Pathfinder2E.DEITIES['Cayden Cailean'].replace('Touch Of Idiocy', 'Stupefy'),
-  'Desna':Pathfinder2E.DEITIES.Desna.replace('3:Dream Message', '4:Translocate'),
-  'Erastil':Pathfinder2E.DEITIES.Erastil.replace('Tree Stride', "Nature's Pathway"),
+  'Cayden Cailean':
+    Pathfinder2E.DEITIES['Cayden Cailean']
+    .replace('Touch Of Idiocy', 'Stupefy'),
+  'Desna':
+    Pathfinder2E.DEITIES.Desna.replace('3:Dream Message', '4:Translocate'),
+  'Erastil':
+    Pathfinder2E.DEITIES.Erastil.replace('Tree Stride', "Nature's Pathway"),
   'Gorum':Pathfinder2E.DEITIES.Gorum,
   'Gozreh':Pathfinder2E.DEITIES.Gozreh,
   'Iomedae':Pathfinder2E.DEITIES.Iomedae.replace('See Invisibility', 'Enlarge'),
-  'Irori':Pathfinder2E.DEITIES.Irori.replace('4:Stoneskin', '4:Mountain Resilience'),
-  'Lamashtu':Pathfinder2E.DEITIES.Lamashtu.replace('Magic Fang', 'Spider Sting'),
+  'Irori':
+    Pathfinder2E.DEITIES.Irori.replace('4:Stoneskin', '4:Mountain Resilience'),
+  'Lamashtu':
+    Pathfinder2E.DEITIES.Lamashtu.replace('Magic Fang', 'Spider Sting'),
   'Nethys':Pathfinder2E.DEITIES.Nethys + ' ' +
     'Spells=' +
       '"1:Force Barrage","2:Embed Message","3:Levitate","4:Flicker",' +
       '"5:Telekinetic Haul","6:Wall Of Force","7:Warp Mind","8:Quadary",' +
       '"9:Detonate Magic"',
-  'Norgorber':Pathfinder2E.DEITIES.Norgorber.replace('Phantasmal Killer', 'Vision Of Death'),
-  'Pharasma':Pathfinder2E.DEITIES.Pharasma.replace('Phantasmal Killer', 'Vision Of Death'),
-  'Rovagug':Pathfinder2E.DEITIES.Rovagug.replace('Burning Hands', 'Breath Fire'),
-  'Sarenrae':Pathfinder2E.DEITIES.Sarenrae.replace('Burning Hands', 'Breath Fire'),
-  'Shelyn':Pathfinder2E.DEITIES.Shelyn.replace('Color Spray', 'Dizzying Colors'),
+  'Norgorber':
+    Pathfinder2E.DEITIES.Norgorber
+    .replace('Phantasmal Killer', 'Vision Of Death'),
+  'Pharasma':
+    Pathfinder2E.DEITIES.Pharasma
+    .replace('Phantasmal Killer', 'Vision Of Death'),
+  'Rovagug':
+    Pathfinder2E.DEITIES.Rovagug.replace('Burning Hands', 'Breath Fire'),
+  'Sarenrae':
+    Pathfinder2E.DEITIES.Sarenrae.replace('Burning Hands', 'Breath Fire'),
+  'Shelyn':
+    Pathfinder2E.DEITIES.Shelyn.replace('Color Spray', 'Dizzying Colors'),
   'Torag':Pathfinder2E.DEITIES.Torag,
-  'Urgathoa':Pathfinder2E.DEITIES.Urgathoa.replace('False Life', 'False Vitality'),
-  'Zon-Kuthon':Pathfinder2E.DEITIES['Zon-Kuthon'].replace('Shadow Walk', 'Umbral Journey')
+  'Urgathoa':
+    Pathfinder2E.DEITIES.Urgathoa.replace('False Life', 'False Vitality'),
+  'Zon-Kuthon':
+    Pathfinder2E.DEITIES['Zon-Kuthon'].replace('Shadow Walk', 'Umbral Journey')
 };
 Pathfinder2ERemaster.FEATS = {
 
@@ -1184,10 +1213,13 @@ Pathfinder2ERemaster.FEATS = {
   'Lingering Composition':Pathfinder2E.FEATS['Lingering Composition'],
   'Martial Performance':'Trait=Class,Bard Require="features.Warrior"',
   'Reach Spell':
-    Pathfinder2E.FEATS['Reach Spell'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Reach Spell']
+    .replace('Metamagic', 'Spellshape')
+    .replace('Trait=', 'Trait=Witch,'),
   'Versatile Performance':Pathfinder2E.FEATS['Versatile Performance'],
   'Well-Versed':'Trait=Class,Bard"',
-  'Cantrip Expansion':Pathfinder2E.FEATS['Cantrip Expansion'].replace('Trait=', 'Trait=Witch,'),
+  'Cantrip Expansion':
+    Pathfinder2E.FEATS['Cantrip Expansion'].replace('Trait=', 'Trait=Witch,'),
   'Directed Audience':'Trait=Class,Bard Require="level >= 2"',
   'Emotional Push':'Trait=Class,Bard,Concentrate Require="level >= 2"',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
@@ -1198,10 +1230,11 @@ Pathfinder2ERemaster.FEATS = {
   'Multifarious Muse (Polymath)':
     Pathfinder2E.FEATS['Multifarious Muse (Polymath)'],
   'Multifarious Muse (Warrior)':
-    Pathfinder2E.FEATS['Multifarious Muse (Polymath)'].replace('Polymath', 'Warrior'),
+    Pathfinder2E.FEATS['Multifarious Muse (Polymath)']
+    .replace('Polymath', 'Warrior'),
   'Song Of Strength':
     'Trait=Class,Bard Require="level >= 2","features.Warrior"',
-  'Uplifting Overature':Pathfinder2E.FEATS['Inspire Competence'], // Rename
+  'Uplifting Overature':Pathfinder2E.FEATS['Inspire Competence'],
   'Combat Reading':'Trait=Class,Bard,Secret Require="level >= 4"',
   'Courageous Advance':
     'Trait=Class,Bard,Auditory,Concentrate,Spellshape ' +
@@ -1210,7 +1243,8 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Bard,Concentrate,Spellshape ' +
     'Require="level >= 4","features.Maestro"',
   'Melodious Spell':
-    Pathfinder2E.FEATS['Melodious Spell'].replace('Manipulate,Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Melodious Spell']
+    .replace('Manipulate,Metamagic', 'Spellshape'),
   'Rallying Anthem':Pathfinder2E.FEATS['Inspire Defense'],
   'Ritual Researcer':
     'Trait=Class,Bard,Uncommon ' +
@@ -1233,7 +1267,7 @@ Pathfinder2ERemaster.FEATS = {
   'Call And Response':
     'Trait=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
   'Eclectic Skill':Pathfinder2E.FEATS['Eclectic Skill'],
-  'Fortissimo Composition':Pathfinder2E.FEATS['Inspire Heroics'], // Rename
+  'Fortissimo Composition':Pathfinder2E.FEATS['Inspire Heroics'],
   'Know-It-All':Pathfinder2E.FEATS['Know-It-All'],
   'Reflexive Courage':
     'Trait=Class,Bard,Auditory,Concentrate ' +
@@ -1246,10 +1280,13 @@ Pathfinder2ERemaster.FEATS = {
   'House Of Imaginary Walls':Pathfinder2E.FEATS['House Of Imaginary Walls'],
   'Ode To Ouroboros':'Trait=Class,Bard Require="level >= 10"',
   'Quickened Casting':
-    Pathfinder2E.FEATS['Quickened Casting'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Quickened Casting']
+    .replace('Metamagic', 'Spellshape')
+    .replace('Trait=', 'Trait=Witch,'),
   'Symphony Of The Unfettered Heart':'Trait=Class,Bard Require="level >= 10"',
   'Unusual Composition':
-    Pathfinder2E.FEATS['Unusual Composition'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Unusual Composition']
+    .replace('Metamagic', 'Spellshape'),
   'Eclectic Polymath':Pathfinder2E.FEATS['Eclectic Polymath'],
   "Enigma's Knowledge":
     'Trait=Class,Bard Require="level >= 12","features.Assured Knowledge"',
@@ -1272,7 +1309,8 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Courageous Advance",' +
       '"features.Courageous Assault"',
   'Effortless Concentration':
-    Pathfinder2E.FEATS['Effortless Concentration'].replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Effortless Concentration']
+    .replace('Trait=', 'Trait=Witch,'),
   'Resounding Finale':
     'Trait=Class,Bard,Concentrate Require="level >= 16","features.Maestro"',
   'Studious Capacity':Pathfinder2E.FEATS['Studious Capacity'],
@@ -1690,7 +1728,8 @@ Pathfinder2ERemaster.FEATS = {
 
   'Deadly Simplicity':Pathfinder2E.FEATS['Deadly Simplicity'],
   'Divine Castigation':
-    Pathfinder2E.FEATS['Holy Castigation'] + ' Require="features.Holy || features.Unholy"', // Rename
+    Pathfinder2E.FEATS['Holy Castigation'] + ' ' +
+    'Require="features.Holy || features.Unholy"',
   'Domain Initiate (Air)':Pathfinder2E.FEATS['Domain Initiate (Air)'],
   'Domain Initiate (Ambition)':Pathfinder2E.FEATS['Domain Initiate (Ambition)'],
   'Domain Initiate (Cities)':Pathfinder2E.FEATS['Domain Initiate (Cities)'],
@@ -1744,14 +1783,16 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Deadly Simplicity'].replace('Positive', 'Vitality'),
   'Emblazon Armament':Pathfinder2E.FEATS['Emblazon Armament'],
   'Panic The Dead':
-    Pathfinder2E.FEATS['Turn Undead'].replace('Trait=', 'Trait=Emotion,Fear,Mental,'),
+    Pathfinder2E.FEATS['Turn Undead']
+    .replace('Trait=', 'Trait=Emotion,Fear,Mental,'),
   'Rapid Response':'Trait=Class,Cleric Require="level >= 2"',
   'Sap Life':Pathfinder2E.FEATS['Sap Life'],
   'Versatile Font':Pathfinder2E.FEATS['Versatile Font'],
   "Warpriest's Armor":
     'Trait=Class,Cleric Require="level >= 2","features.Warpriest"',
   'Channel Smite':
-    Pathfinder2E.FEATS['Channel Smite'].replace(',Necromancy', '') + ' Require="level >= 4"',
+    Pathfinder2E.FEATS['Channel Smite']
+    .replace(',Necromancy', '') + ' Require="level >= 4"',
   'Directed Channel':Pathfinder2E.FEATS['Directed Channel'],
   'Divine Infusion':
     Pathfinder2E.FEATS['Necrotic Infusion'].replace('Metamagic', 'Spellshape'),
@@ -1761,7 +1802,8 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Cleric,Consecration,Divine,Exploration ' +
     'Require="level >= 4","features.Harmful Font || feature.Healing Font"',
   'Cast Down':
-    Pathfinder2E.FEATS['Cast Down'].replace('Metamagic', 'Spellshape') + ' Require="level >= 6"',
+    Pathfinder2E.FEATS['Cast Down']
+    .replace('Metamagic', 'Spellshape') + ' Require="level >= 6"',
   'Divine Rebuttal':'Trait=Class,Cleric,Divine Require="level >= 6"',
   'Divine Weapon':Pathfinder2E.FEATS['Divine Weapon'],
   'Magic Hands':
@@ -1817,14 +1859,18 @@ Pathfinder2ERemaster.FEATS = {
   'Martyr':'Trait=Class,Cleric,Spellshape Require="level >= 8"',
   'Restorative Channel':Pathfinder2E.FEATS['Channeled Succor'],
   'Sanctify Armament':
-    Pathfinder2E.FEATS['Align Armament (Chaotic)'].replace(',Evocation', '') + ' Require="level >= 8","features.Holy || features.Unholy"',
+    Pathfinder2E.FEATS['Align Armament (Chaotic)']
+    .replace(',Evocation', '') + ' ' +
+    'Require="level >= 8","features.Holy || features.Unholy"',
   'Surging Focus':'Trait=Class,Cleric Require="level >= 8"',
   'Void Siphon':'Trait=Class,Cleric Require="level >= 8"',
   'Zealous Rush':'Trait=Class,Cleric Require="level >= 8"',
   'Castigating Weapon':
     Pathfinder2E.FEATS['Castigating Weapon'].replace('Holy', 'Divine'),
   'Heroic Recovery':
-    Pathfinder2E.FEATS['Heroic Recovery'].replace('Metamagic', 'Spellshape') + ' Require="level >= 10","features.Healing Font"',
+    Pathfinder2E.FEATS['Heroic Recovery']
+    .replace('Metamagic', 'Spellshape') + ' ' +
+    'Require="level >= 10","features.Healing Font"',
   'Replenishment Of War':Pathfinder2E.FEATS['Replenishment Of War'],
   'Shared Avoidance':
     'Trait=Class,Cleric ' +
@@ -1832,7 +1878,9 @@ Pathfinder2ERemaster.FEATS = {
   'Shield Of Faith':
     'Trait=Class,Cleric Require="level >= 10","features.Domain Initiate"',
   'Defensive Recovery':
-    Pathfinder2E.FEATS['Defensive Recovery'].replace('Metamagic', 'Spellshape') + ' Require="leve >= 12"',
+    Pathfinder2E.FEATS['Defensive Recovery']
+    .replace('Metamagic', 'Spellshape') + ' ' +
+    'Require="leve >= 12"',
   'Domain Focus':Pathfinder2E.FEATS['Domain Focus'],
   'Emblazon Antimagic':Pathfinder2E.FEATS['Emblazon Antimagic'],
   'Foctunate Relief':'Trait=Class,Cleric,Fortune Require="level >= 12"',
@@ -1847,13 +1895,16 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 14","features.Versatile Font"',
   'Fast Channel':Pathfinder2E.FEATS['Fast Channel'],
   'Lasting Armament':
-    Pathfinder2E.FEATS['Extend Armament Alignment'].replace('Align', 'Sanctify'),
+    Pathfinder2E.FEATS['Extend Armament Alignment']
+    .replace('Align', 'Sanctify'),
   'Premonition Of Clarity':'Trait=Class,Cleric,Fortune Require="level >= 14"',
   'Swift Banishment':Pathfinder2E.FEATS['Swift Banishment'],
   'Eternal Bane':
-    Pathfinder2E.FEATS['Eternal Bane'] + ' Require="level >= 16","features.Unholy"',
+    Pathfinder2E.FEATS['Eternal Bane'] + ' ' +
+    'Require="level >= 16","features.Unholy"',
   'Eternal Blessing':
-    Pathfinder2E.FEATS['Eternal Blessing'] + ' Require="level >= 16","features.Holy"',
+    Pathfinder2E.FEATS['Eternal Blessing'] + ' ' +
+    'Require="level >= 16","features.Holy"',
   'Rebounding Smite':
     'Trait=Class,Cleric Require="level >= 16","features.Channel Smite"',
   'Remediate':'Trait=Class,Cleric,Concentrate,Spellshape Require="level >= 16"',
@@ -1881,7 +1932,9 @@ Pathfinder2ERemaster.FEATS = {
   'Verdant Weapon':'Trait=Class,Druid,Exploration',
   // Reach Spell as above
   'Widen Spell':
-    Pathfinder2E.FEATS['Widen Spell'].replace('Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Widen Spell']
+    .replace('Metamagic', 'Spellshape')
+    .replace('Trait=', 'Trait=Witch,'),
   'Untamed Form':Pathfinder2E.FEATS['Wild Shape'].replaceAll('Wild', 'Untamed'),
   'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
   'Enhanced Familiar':
@@ -1890,14 +1943,18 @@ Pathfinder2ERemaster.FEATS = {
   'Order Explorer (Leaf)':Pathfinder2E.FEATS['Order Explorer (Leaf)'],
   'Order Explorer (Storm)':Pathfinder2E.FEATS['Order Explorer (Storm)'],
   'Order Explorer (Untamed)':
-    Pathfinder2E.FEATS['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
+    Pathfinder2E.FEATS['Order Explorer (Wild)']
+    .replace('Wild', 'Untamed'),
   // Poison Resistance as above
   'Anthropomorphic Shape':
-    Pathfinder2E.FEATS['Thousand Faces'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Thousand Faces']
+    .replace('Wild Shape', 'Untamed Form'),
   'Elemental Summons':'Trait=Class,Druid Require="level >= 4"',
   'Forest Passage':Pathfinder2E.FEATS['Woodland Stride'],
   'Form Control':
-    Pathfinder2E.FEATS['Form Control'].replace('Metamagic', 'Spellshape') + ' Require="level >= 4","features.Untamed Form"',
+    Pathfinder2E.FEATS['Form Control']
+    .replace('Metamagic', 'Spellshape') + ' ' +
+    'Require="level >= 4","features.Untamed Form"',
   'Leshy Familiar Secrets':
     'Trait=Class,Druid ' +
     'Require=' +
@@ -1920,7 +1977,8 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 6",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Insect Shape':
-    Pathfinder2E.FEATS['Insect Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Insect Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Instinctive Support':
     'Trait=Class,Druid ' +
     'Require=' +
@@ -1934,7 +1992,8 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 8",' +
       '"rank.Intimidation >= 1"',
   'Ferocious Shape':
-    Pathfinder2E.FEATS['Ferocious Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Ferocious Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Fey Caller':Pathfinder2E.FEATS['Fey Caller'],
   'Floral Restoration':
     'Trait=Class,Druid,Healing,Vitality ' +
@@ -1944,14 +2003,18 @@ Pathfinder2ERemaster.FEATS = {
   'Incredible Companion':Pathfinder2E.FEATS['Incredible Companion'],
   'Raise Menhir':'Trait=Class,Druid Require="level >= 8"',
   'Soaring Shape':
-    Pathfinder2E.FEATS['Soaring Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Soaring Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Wind Caller':Pathfinder2E.FEATS['Wind Caller'],
   'Elemental Shape':
-    Pathfinder2E.FEATS['Elemental Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Elemental Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Healing Transformation':
-    Pathfinder2E.FEATS['Healing Transformation'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Healing Transformation']
+    .replace('Metamagic', 'Spellshape'),
   'Overwhelming Energy':
-    Pathfinder2E.FEATS['Overwhelming Energy'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Overwhelming Energy']
+    .replace('Metamagic', 'Spellshape'),
   'Plant Shape':
     Pathfinder2E.FEATS['Plant Shape'].replace('Wild Shape', 'Untamed Form'),
   'Primal Howl':
@@ -1997,7 +2060,8 @@ Pathfinder2ERemaster.FEATS = {
   // Effortless Concentration as above
   'Impaling Briars':Pathfinder2E.FEATS['Impaling Briars'],
   'Monstrosity Shape':
-    Pathfinder2E.FEATS['Monstrosity Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Monstrosity Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Uplifting Winds':
     'Trait=Class,Druid ' +
     'Require=' +
@@ -2009,15 +2073,18 @@ Pathfinder2ERemaster.FEATS = {
   'Primal Aegis':'Trait=Class,Druid Require="level >= 18"',
   "Hierophant's Power":Pathfinder2E.FEATS["Hierophant's Power"],
   'Ley Line Conduit':
-    Pathfinder2E.FEATS['Leyline Conduit'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Leyline Conduit']
+    .replace('Metamagic', 'Spellshape'),
   'True Shapeshifter':
-    Pathfinder2E.FEATS['True Shapeshifter'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['True Shapeshifter']
+    .replace('Wild Shape', 'Untamed Form'),
 
   'Combat Assessment':'Trait=Class,Fighter',
   'Double Slice':Pathfinder2E.FEATS['Double Slice'],
   'Exacting Strike':Pathfinder2E.FEATS['Exacting Strike'],
   'Point Blank Stance':
-    Pathfinder2E.FEATS['Point-Blank Shot'].replace(',Open', ''),
+    Pathfinder2E.FEATS['Point-Blank Shot']
+    .replace(',Open', ''),
   'Reactive Shield':Pathfinder2E.FEATS['Reactive Shield'],
   'Snagging Strike':Pathfinder2E.FEATS['Snagging Strike'],
   // Sudden Charge as above
@@ -2049,7 +2116,8 @@ Pathfinder2ERemaster.FEATS = {
   'Dazing Blow':'Trait=Class,Fighter,Press Require="level >= 6"',
   'Disarming Stance':Pathfinder2E.FEATS['Disarming Stance'],
   'Furious Focus':
-    Pathfinder2E.FEATS['Furious Focus'].replace('Power Attack', 'Vicious Swing'),
+    Pathfinder2E.FEATS['Furious Focus']
+    .replace('Power Attack', 'Vicious Swing'),
   "Guardian's Deflection":Pathfinder2E.FEATS["Guardian's Deflection"],
   'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
@@ -2083,7 +2151,8 @@ Pathfinder2ERemaster.FEATS = {
   'Flinging Charge':'Trait=Class,Fighter,Flourish Require="level >= 10"',
   'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
   'Overpowering Charge':
-    Pathfinder2E.FEATS['Improved Knockdown'].replace('Knockdown','Barreling Charge'),
+    Pathfinder2E.FEATS['Improved Knockdown']
+    .replace('Knockdown','Barreling Charge'),
   'Tactical Reflexes':Pathfinder2E.FEATS['Combat Reflexes'],
   'Twin Riposte':Pathfinder2E.FEATS['Twin Riposte'],
   'Brutal Finish':Pathfinder2E.FEATS['Brutal Finish'],
@@ -2093,10 +2162,12 @@ Pathfinder2ERemaster.FEATS = {
   'Improved Dueling Riposte':Pathfinder2E.FEATS['Improved Dueling Riposte'],
   'Incredible Ricochet':Pathfinder2E.FEATS['Incredible Ricochet'],
   'Lunging Stance':
-    Pathfinder2E.FEATS['Lunging Stance'].replace('Attack Of Opportunity', 'Reactive Strike'),
+    Pathfinder2E.FEATS['Lunging Stance']
+    .replace('Attack Of Opportunity', 'Reactive Strike'),
   "Paragon's Guard":Pathfinder2E.FEATS["Paragon's Guard"],
   'Desperate Finisher':
-    Pathfinder2E.FEATS['Desperate Finisher'].replace('Trait=', 'Trait=Press,'),
+    Pathfinder2E.FEATS['Desperate Finisher']
+    .replace('Trait=', 'Trait=Press,'),
   'Determination':Pathfinder2E.FEATS.Determination,
   'Guiding Finish':Pathfinder2E.FEATS['Guiding Finish'],
   'Guiding Riposte':Pathfinder2E.FEATS['Guiding Riposte'],
@@ -2109,11 +2180,13 @@ Pathfinder2ERemaster.FEATS = {
   'Master Of Many Styles':
     'Trait=Class,Fighter Require="level >= 16","features.Opening Stance"',
   'Multishot Stance':
-    Pathfinder2E.FEATS['Multishot Stance'].replace('Triple', 'Double'),
+    Pathfinder2E.FEATS['Multishot Stance']
+    .replace('Triple', 'Double'),
   'Overwhelming Blow':'Trait=Class,Fighter Require="level >= 16"',
   'Twinned Defense':Pathfinder2E.FEATS['Twinned Defense'],
   'Impossible Volley':
-    Pathfinder2E.FEATS['Impossible Volley'].replace(',Open', ''),
+    Pathfinder2E.FEATS['Impossible Volley']
+    .replace(',Open', ''),
   'Savage Critical':Pathfinder2E.FEATS['Savage Critical'],
   'Smash From The Air':
     'Trait=Class,Fighter Require="level >= 18","features.Cut From The Air"',
@@ -2250,7 +2323,8 @@ Pathfinder2ERemaster.FEATS = {
   'Peerless Warden':
     'Trait=Class,Ranger Require="level >= 10","features.Initiate Warden"',
   'Penetrating Shot':
-    Pathfinder2E.FEATS['Penetrating Shot'].replace(',Open', ''),
+    Pathfinder2E.FEATS['Penetrating Shot']
+    .replace(',Open', ''),
   // Twin Riposte as above
   "Warden's Step":Pathfinder2E.FEATS["Warden's Step"],
   'Distracting Shot':Pathfinder2E.FEATS['Distracting Shot'],
@@ -2270,18 +2344,21 @@ Pathfinder2ERemaster.FEATS = {
   // Specialized Companion as above
   "Warden's Reload":'Trait=Class,Ranger Require="level >= 16"',
   'Impossible Flurry':
-    Pathfinder2E.FEATS['Impossible Flurry'].replace(',Open', ''),
+    Pathfinder2E.FEATS['Impossible Flurry']
+    .replace(',Open', ''),
   // Impossible Volley as above
   'Manifold Edge':Pathfinder2E.FEATS['Manifold Edge'],
   'Masterful Companion':Pathfinder2E.FEATS['Masterful Companion'],
   'Perfect Shot':Pathfinder2E.FEATS['Perfect Shot'],
   'Shadow Hunter':Pathfinder2E.FEATS['Shadow Hunter'],
   'Legendary Shot':
-    Pathfinder2E.FEATS['Legendary Shot'].replace(',"features.Masterful Hunter"', ''),
+    Pathfinder2E.FEATS['Legendary Shot']
+    .replace(',"features.Masterful Hunter"', ''),
   'To The Ends Of The Earth':Pathfinder2E.FEATS['To The Ends Of The Earth'],
   'Triple Threat':Pathfinder2E.FEATS['Triple Threat'],
   'Ultimate Skirmisher':
-    Pathfinder2E.FEATS['Ultimate Skirmisher'].replace('Wild Stride', 'Unimpeded Journey'),
+    Pathfinder2E.FEATS['Ultimate Skirmisher']
+    .replace('Wild Stride', 'Unimpeded Journey'),
 
   'Nimble Dodge':Pathfinder2E.FEATS['Nimble Dodge'],
   'Overextending Feint':'Trait=Class,Rogue Require="rank.Deception >= 1"',
@@ -2380,7 +2457,8 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Rogue Require="level >= 18","features.Predictive Purchase"',
   'Powerful Sneak':Pathfinder2E.FEATS['Powerful Sneak'],
   "Trickster's Ace":
-    Pathfinder2E.FEATS["Trickster's Ace"].replace('Trait=', 'Trait=Investigator,'),
+    Pathfinder2E.FEATS["Trickster's Ace"]
+    .replace('Trait=', 'Trait=Investigator,'),
   'Hidden Paragon':Pathfinder2E.FEATS['Hidden Paragon'],
   'Impossible Striker':Pathfinder2E.FEATS['Impossible Striker'],
   'Reactive Distraction':Pathfinder2E.FEATS['Reactive Distraction'],
@@ -2427,7 +2505,8 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 14","knowsDispelMagicSpell"',
   */
   'Reflect Spell':
-    Pathfinder2E.FEATS['Reflect Spell'].replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Reflect Spell']
+    .replace('Trait=', 'Trait=Witch,'),
   /*
   // Effortless Concentration as above
   'Greater Mental Evolution':
@@ -2459,7 +2538,9 @@ Pathfinder2ERemaster.FEATS = {
   'Basic Lesson':'Trait=Class,Witch Require="level >= 2"',
   // Cantrip Expansion as above
   'Conceal Spell':
-    Pathfinder2E.FEATS['Conceal Spell'].replace('Manipulate,Metamagic', 'Spellshape').replace('Trait=', 'Trait=Witch,'),
+    Pathfinder2E.FEATS['Conceal Spell']
+    .replace('Manipulate,Metamagic', 'Spellshape')
+    .replace('Trait=', 'Trait=Witch,'),
   // Enhanced Familiar as above
   "Familiar's Language":'Trait=Class,Witch Require="level >= 2"',
   'Rites Of Convocation':'Trait=Class,Witch Require="level >= 4"',
@@ -2523,10 +2604,10 @@ Pathfinder2ERemaster.FEATS = {
   'Irresistable Magic':Pathfinder2E.FEATS['Spell Penetration'],
   'Split Slot':'Trait=Class,Wizard Require="level >= 6"',
   // Steady Spellcasting as above
-
   'Advanced School Spell':Pathfinder2E.FEATS['Advanced School Spell'],
   'Bond Conservation':
-    Pathfinder2E.FEATS['Bond Conservation'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Bond Conservation']
+    .replace('Metamagic', 'Spellshape'),
   'Form Retention':'Trait=Class,Wizard Require="level >= 8"',
   'Knowledge Is Power':'Trait=Class,Wizard Require="level >= 8"',
   // Overwhelming Energy as above
@@ -2877,35 +2958,75 @@ Pathfinder2ERemaster.FEATS = {
       '"rank.Arcana >= 4"',
 */
 
-  // General
-  'Adopted Ancestry (%ancestry)':'Trait=General',
-  'Armor Proficiency':'Trait=General',
+  // General and Skill
+  'Additional Lore (%lore)':
+    Pathfinder2E.FEATS['Additional Lore (%lore)'] + ' Require=""',
+  'Adopted Ancestry (%ancestry)':
+    Pathfinder2E.FEATS['Adopted Ancestry (%ancestry)'],
+  'Advanced First Aid':
+    'Trait=General,Healing,Manipulate,Skill Require="level >= 7"',
+  'Alchemical Crafting':Pathfinder2E.FEATS['Alchemical Crafting'],
+  'Ancestral Paragon':Pathfinder2E.FEATS['Ancestral Paragon'],
+  'Arcane Sense':Pathfinder2E.FEATS['Arcane Sense'],
+  'Armor Proficiency':Pathfinder2E.FEATS['Armor Proficiency'],
+  'Assurance (%skill)':Pathfinder2E.FEATS['Assurance (%skill)'],
+  'Automatic Knowledge (%skill)':
+    Pathfinder2E.FEATS['Automatic Knowledge (%skill)'],
+  'Bargain Hunter':Pathfinder2E.FEATS['Bargain Hunter'],
+  'Battle Cry':Pathfinder2E.FEATS['Battle Cry'],
+  'Battle Medicine':Pathfinder2E.FEATS['Battle Medicine'],
+  'Bizarre Magic':Pathfinder2E.FEATS['Bizarre Magic'],
+  'Bonded Animal':Pathfinder2E.FEATS['Bonded Animal'],
+  'Break Curse':
+    'Trait=Concentrate,Exploration,General,Healing,Skill ' +
+    'Require="level >= 7","rank.Occultism >= 3 || rank.Religion >= 3"',
   'Breath Control':'Trait=General',
-  'Canny Acumen (Fortitude)':'Trait=General',
-  'Canny Acumen (Perception)':'Trait=General',
-  'Canny Acumen (Reflex)':'Trait=General',
-  'Canny Acumen (Will)':'Trait=General',
-  'Diehard':'Trait=General',
-  'Fast Recovery':'Trait=General Require="constitution >= 14"',
-  'Feather Step':'Trait=General Require="dexterity >= 14"',
-  'Fleet':'Trait=General',
-  'Incredible Initiative':'Trait=General',
+  'Canny Acumen (Fortitude)':Pathfinder2E.FEATS['Canny Acumen (Fortitude)'],
+  'Canny Acumen (Perception)':Pathfinder2E.FEATS['Canny Acumen (Perception)'],
+  'Canny Acumen (Reflex)':Pathfinder2E.FEATS['Canny Acumen (Reflex)'],
+  'Canny Acumen (Will)':Pathfinder2E.FEATS['Canny Acumen (Will)'],
+  'Cat Fall':Pathfinder2E.FEATS['Cat Fall'],
+  'Charming Liar':Pathfinder2E.FEATS['Charming Liar'],
+  'Cloud Jump':Pathfinder2E.FEATS['Cloud Jump'],
+  'Combat Climber':Pathfinder2E.FEATS['Combat Climber'],
+  'Communal Crafting':
+    'Trait=General,Skill Require="level >= 2","rank.Crafting >= 2"',
+  'Confabulator':Pathfinder2E.FEATS.Confabulator,
+  'Continual Recovery':Pathfinder2E.FEATS['Continual Recovery'],
+  'Courtly Graces':Pathfinder2E.FEATS['Courtly Graces'],
+  'Craft Anything':Pathfinder2E.FEATS['Craft Anything'],
+  'Diehard':Pathfinder2E.FEATS.Diehard,
+  'Divine Guidance':Pathfinder2E.FEATS['Divine Guidance'],
+  'Dubious Knowledge':Pathfinder2E.FEATS['Dubious Knowledge'],
+  'Expeditious Search':Pathfinder2E.FEATS['Expeditious Search'],
+  'Experienced Professional':Pathfinder2E.FEATS['Experienced Professional'],
+  'Experienced Smuggler':Pathfinder2E.FEATS['Experienced Smuggler'],
+  'Experienced Tracker':Pathfinder2E.FEATS['Experienced Tracker'],
+  'Fascinating Performance':Pathfinder2E.FEATS['Fascinating Performance'],
+  'Fast Recovery':Pathfinder2E.FEATS['Fast Recovery'],
+  'Feather Step':Pathfinder2E.FEATS['Feather Step'],
+  'Fleet':Pathfinder2E.FEATS.Fleet,
+  'Foil Senses':Pathfinder2E.FEATS['Foil Senses'],
+  'Forager':Pathfinder2E.FEATS.Forager,
+  'Glad-Hand':Pathfinder2E.FEATS['Glad-Hand'],
+  'Group Coercion':Pathfinder2E.FEATS['Group Coercion'],
+  'Group Impression':Pathfinder2E.FEATS['Group Impression'],
+  'Hefty Hauler':Pathfinder2E.FEATS['Hefty Hauler'],
+  'Hobnobber':Pathfinder2E.FEATS.Hobnobber,
+  'Impeccable Crafting':Pathfinder2E.FEATS['Impeccable Crafting'],
+  'Impressive Performance':Pathfinder2E.FEATS['Impressive Performance'],
+  'Incredible Initiative':Pathfinder2E.FEATS['Incredible Initiative'],
+  'Incredible Investiture':Pathfinder2E.FEATS['Incredible Investiture'],
+
   'Ride':'Trait=General',
   'Shield Block':'Trait=General',
   'Toughness':'Trait=General',
   'Weapon Proficiency (Martial Weapons)':'Trait=General',
   'Weapon Proficiency (Simple Weapons)':'Trait=General',
   'Weapon Proficiency (%advancedWeapon)':'Trait=General',
-  'Ancestral Paragon':'Trait=General Require="level >= 3"',
   'Untrained Improvisation':'Trait=General Require="level >= 3"',
-  'Expeditious Search':
-    'Trait=General Require="level >= 7","rank.Perception >= 2"',
-  'Incredible Investiture':
-    'Trait=General Require="level >= 11","charisma >= 16"',
 
   // Skill
-  'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
-  'Dubious Knowledge':'Trait=General,Skill',
   'Quick Identification':
     'Trait=General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
@@ -2916,12 +3037,6 @@ Pathfinder2ERemaster.FEATS = {
   'Trick Magic Item':
     'Trait=Manipulate,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Automatic Knowledge (%skill)':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"rank.%skill >= 2",' +
-      '"features.Assurance (%skill)"',
   'Magical Shorthand':
     'Trait=General,Skill ' +
     'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
@@ -2932,17 +3047,13 @@ Pathfinder2ERemaster.FEATS = {
       '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
       '"features.Recognize Spell"',
 
-  'Cat Fall':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
   'Quick Squeeze':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
   'Steady Balance':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
   'Nimble Crawl':
     'Trait=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
   'Kip Up':'Trait=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
-  'Arcane Sense':'Trait=General,Skill Require="rank.Arcana >= 1"',
   'Unified Theory':
     'Trait=General,Skill Require="level >= 15","rank.Arcana >= 4"',
-  'Combat Climber':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Hefty Hauler':'Trait=General,Skill Require="rank.Athletics >= 1"',
   'Quick Jump':'Trait=General,Skill Require="rank.Athletics >= 1"',
   'Titan Wrestler':'Trait=General,Skill Require="rank.Athletics >= 1"',
   'Underwater Marauder':'Trait=General,Skill Require="rank.Athletics >= 1"',
@@ -2956,43 +3067,23 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Wall Jump':
     'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Cloud Jump':
-    'Trait=General,Skill Require="level >= 15","rank.Athletics >= 4"',
-  'Alchemical Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
   'Quick Repair':'Trait=General,Skill Require="rank.Crafting >= 1"',
   'Snare Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
   'Specialty Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
   'Magical Crafting':
     'Trait=General,Skill Require="level >= 2","rank.Crafting >= 2"',
-  'Impeccable Crafting':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 7",' +
-      '"rank.Crafting >= 3",' +
-      '"features.Specialty Crafting"',
   'Inventor':
     'Trait=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
-  'Craft Anything':
-    'Trait=General,Skill Require="level >= 15","rank.Crafting >= 4"',
-  'Charming Liar':'Trait=General,Skill Require="rank.Deception >= 1"',
   'Lengthy Diversion':'Trait=General,Skill Require="rank.Deception >= 1"',
   'Lie To Me':'Trait=General,Skill Require="rank.Deception >= 1"',
-  'Confabulator':
-    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Quick Disguise':
     'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Slippery Secrets':
     'Trait=General,Skill Require="level >= 7","rank.Deception >= 3"',
-  'Bargain Hunter':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
-  'Group Impression':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
-  'Hobnobber':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
-  'Glad-Hand':
-    'Trait=General,Skill Require="level >= 2","rank.Diplomacy >= 2"',
   'Shameless Request':
     'Trait=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
   'Legendary Negotiation':
     'Trait=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
-  'Group Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Glare':'Trait=General,Skill Require="rank.Intimidation >= 1"',
   'Quick Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
@@ -3000,23 +3091,15 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 2","strength >= 16","rank.Intimidation >= 2"',
   'Lasting Coercion':
     'Trait=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
-  'Battle Cry':
-    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Terrified Retreat':
     'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Scare To Death':
     'Trait=Emotion,Fear,Incapacitation,General,Skill ' +
     'Require="level >= 15","rank.Intimidation >= 4"',
-  'Additional Lore (%lore)':'Trait=General,Skill Require="rank.Lore >= 1"',
-  'Experienced Professional':'Trait=General,Skill Require="rank.Lore >= 1"',
   'Unmistakable Lore':
     'Trait=General,Skill Require="level >= 2","rank.Lore >= 2"',
   'Legendary Professional':
     'Trait=General,Skill Require="level >= 15","rank.Lore >= 4"',
-  'Battle Medicine':
-    'Trait=Healing,Manipulate,General,Skill Require="rank.Medicine >= 1"',
-  'Continual Recovery':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Robust Recovery':
     'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Ward Medic':
@@ -3026,15 +3109,7 @@ Pathfinder2ERemaster.FEATS = {
   'Natural Medicine':'Trait=General,Skill Require="rank.Nature >= 1"',
   'Train Animal':
     'Trait=Downtime,Manipulate,General,Skill Require="rank.Nature >= 1"',
-  'Bonded Animal':
-    'Trait=Downtime,General,Skill Require="level >= 2","rank.Nature >= 2"',
   'Oddity Identification':'Trait=General,Skill Require="rank.Occultism >= 1"',
-  'Bizarre Magic':
-    'Trait=General,Skill Require="level >= 7","rank.Occultism >= 3"',
-  'Fascinating Performance':
-    'Trait=General,Skill Require="rank.Performance >= 1"',
-  'Impressive Performance':
-    'Trait=General,Skill Require="rank.Performance >= 1"',
   'Virtuosic Performer':'Trait=General,Skill Require="rank.Performance >= 1"',
   'Legendary Performer':
     'Trait=General,Skill ' +
@@ -3043,9 +3118,6 @@ Pathfinder2ERemaster.FEATS = {
       '"rank.Performance >= 4",' +
       '"features.Virtuosic Performer"',
   'Student Of The Canon':'Trait=General,Skill Require="rank.Religion >= 1"',
-  'Divine Guidance':
-    'Trait=General,Skill Require="level >= 15","rank.Religion >= 4"',
-  'Courtly Graces':'Trait=General,Skill Require="rank.Society >= 1"',
   'Multilingual':'Trait=General,Skill Require="rank.Society >= 1"',
   'Read Lips':'Trait=General,Skill Require="rank.Society >= 1"',
   'Sign Language':'Trait=General,Skill Require="rank.Society >= 1"',
@@ -3064,15 +3136,12 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 15",' +
       '"rank.Society >= 4",' +
       '"features.Multilingual"',
-  'Experienced Smuggler':'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Rubble)':'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Snow)':'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Underbrush)':
     'Trait=General,Skill Require="rank.Stealth >= 1"',
   'Quiet Allies':
     'Trait=General,Skill Require="level >= 2","rank.Stealth >= 2"',
-  'Foil Senses':
-    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Swift Sneak':
     'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Legendary Sneak':
@@ -3081,8 +3150,6 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 15",' +
       '"rank.Stealth >= 4",' +
       '"features.Swift Sneak"',
-  'Experienced Tracker':'Trait=General,Skill Require="rank.Survival >= 1"',
-  'Forager':'Trait=General,Skill Require="rank.Survival >= 1"',
   'Survey Wildlife':'Trait=General,Skill Require="rank.Survival >= 1"',
   'Terrain Expertise (%terrain)':
     'Trait=General,Skill Require="rank.Survival >= 1"',
@@ -3133,7 +3200,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
   'Darkvision':Pathfinder2E.FEATURES['Darkvision'],
   'Death Warden Dwarf':
-    Pathfinder2E.FEATURES['Death Warden Dwarf'].replace('necromancy', 'void and undead'),
+    Pathfinder2E.FEATURES['Death Warden Dwarf']
+    .replace('necromancy', 'void and undead'),
   'Deep Orc':
     'Section=feature ' +
     'Note="Has the Combat Climber and Terrain Expertise (Underground) features"',
@@ -3236,7 +3304,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Treats environmental cold as 1 step less extreme",' +
       '"Skill Trained (Survival)"',
-    
   'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   // Ancestry feats
@@ -3256,7 +3323,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Weapon Familiarity (Dwarf Weapons; Battle Axe; Pick; Warhammer)",' +
       '"Has access to uncommon dwarf weapons%{level>=5?\'/Critical hits with a dwarf weapon, battle axe, pick, or warhammer inflict its critical specialization effect\':\'\'}"',
   'Rock Runner':
-    Pathfinder2E.FEATURES['Rock Runner'].replace('flat-footed', 'off-guard'),
+    Pathfinder2E.FEATURES['Rock Runner']
+    .replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
   "Stonemason's Eye":
     'Section=skill ' +
@@ -3380,7 +3448,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Illusory double forces a successful DC 10 flat check on an attacking foe once per hour; failure negates the attack"',
   'Homeward Bound':
-    'Section=magic Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
+    'Section=magic ' +
+    'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
   'Burn It!':Pathfinder2E.FEATURES['Burn It!'],
   'City Scavenger':Pathfinder2E.FEATURES['City Scavenger'],
@@ -3436,16 +3505,20 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Nature)",' +
       '"+1 Command An Animal with traditional halfling mounts"',
   'Sure Feet':
-    Pathfinder2E.FEATURES['Sure Feet'].replace('flat-footed', 'off-guard'),
+    Pathfinder2E.FEATURES['Sure Feet']
+    .replace('flat-footed', 'off-guard'),
   'Titan Slinger':Pathfinder2E.FEATURES['Titan Slinger'],
   'Unfettered Halfling':
-    Pathfinder2E.FEATURES['Halfling Luck'].replace(/.Foe Grab.*/, ''),
+    Pathfinder2E.FEATURES['Halfling Luck']
+    .replace(/.Foe Grab.*/, ''),
   'Watchful Halfling':
-    Pathfinder2E.FEATURES['Watchful Halfling'].replace('-2 ', ''),
+    Pathfinder2E.FEATURES['Watchful Halfling']
+    .replace('-2 ', ''),
   'Cultural Adaptability (%ancestry)':
     Pathfinder2E.FEATURES['Cultural Adaptability (%ancestry)'],
   'Step Lively':
-    'Section=combat Note="Follows a foe move that leaves it adjacent with a Step to a different adjacent space"',
+    'Section=combat ' +
+    'Note="Follows a foe move that leaves it adjacent with a Step to a different adjacent space"',
   'Dance Underfoot':
     'Section=combat ' +
     'Note="Can end a Tumble Through or Step Lively action in the same space as a Large or larger foe"',
@@ -3655,10 +3728,10 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Class Features and Feats
 
-  'Ability Boosts':'Section=ability Note="Ability Boost (Choose %V from any)"',
-  'General Feats':'Section=feature Note="%V selections"',
-  'Skill Feats':'Section=feature Note="%V selections"',
-  'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
+  'Ability Boosts':Pathfinder2E.FEATURES['Ability Boosts'],
+  'General Feats':Pathfinder2E.FEATURES['General Feats'],
+  'Skill Feats':Pathfinder2E.FEATURES['Skill Feats'],
+  'Skill Increases':Pathfinder2E.FEATURES['Skill Increases'],
 
   /*
   // Alchemist
@@ -4154,108 +4227,104 @@ Pathfinder2ERemaster.FEATURES = {
   */
 
   // Bard
+  'Bard Feats':Pathfinder2E.FEATURES['Bard Feats'],
+  'Bard Skills':Pathfinder2E.FEATURES['Bard Skills'],
+  'Bard Spellcasting':Pathfinder2E.FEATURES['Occult Spellcasting'],
   'Bard Weapon Expertise':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
-      '"Critical hits with a simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, or whip inflict its critical specialization effect when a composition spell is active"',
-  'Bard Feats':'Section=feature Note="%V selections"',
-  'Bard Skills':
-    'Section=skill ' +
-    'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
+      '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"Critical hits with a simple weapon, martial weapon, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
   'Composition Spells':
-    'Section=magic ' +
-    'Note="Knows the Counter Performance and Inspire Courage occult spells/Has a focus pool and 1 Focus Point"',
-  'Enigma':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Has the Bardic Lore feature",' +
-      '"Knows the True Strike occult spell"',
-  'Expert Spellcaster':'Section=magic Note="Spell Expert (%V)"',
-  'Fortitude Expertise':'Section=save Note="Save Expert (Fortitude)"',
-  "Greater Performer's Heart":
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Legendary (Will)",' +
-      '"Successes on Will saves are critical successes, critical failures are normal failures, and suffers half damage on failed Will saves"',
-  'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
-  'Light Armor Expertise':
-    'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
-  // Reflex Expertise as above
-  'Maestro':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Has the Lingering Composition feature",' +
-      '"Knows the Soothe occult spell"',
-  'Magnum Opus':'Section=magic Note="Knows 2 10th-level occult spells"',
-  'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
-  'Muses':'Section=feature Note="1 selection"',
-  'Occult Spellcasting':
-    'Section=magic Note="Can learn spells from the occult tradition"',
-  "Performer's Heart":
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Will)",' +
-      '"Successes on Will saves are critical successes"',
+    Pathfinder2E.FEATURES['Composition Spells']
+    .replace('and Inspire Courage occult spells', 'occult spell'),
+  'Enigma':Pathfinder2E.FEATURES.Enigma.replace('True Strike', 'Sure Strike'),
+  'Expert Spellcaster':Pathfinder2E.FEATURES['Expert Spellcaster'],
+  'Fortitude Expertise':Pathfinder2E.FEATURES['Great Fortitude'],
+  "Greater Performer's Heart":Pathfinder2E.FEATURES['Greater Resolve'],
+  'Legendary Spellcaster':Pathfinder2E.FEATURES['Legendary Spellcaster'],
+  'Light Armor Expertise':Pathfinder2E.FEATURES['Light Armor Expertise'],
+  'Magnum Opus':Pathfinder2E.FEATURES['Magnum Opus'],
+  'Master Spellcaster':Pathfinder2E.FEATURES['Master Spellcaster'],
+  'Maestro':Pathfinder2E.FEATURES.Maestro,
+  'Muses':Pathfinder2E.FEATURES.Muses,
+  "Performer's Heart":Pathfinder2E.FEATURES.Resolve,
+  'Perception Mastery':Pathfinder2E.FEATURES['Vigilant Senses'],
   'Polymath':
+    Pathfinder2E.FEATURES.Polymath
+    .replace('Unseen Servant', 'Phantasmal Minion'),
+  // Reflex Expertise as above
+  'Signature Spells':Pathfinder2E.FEATURES['Signature Spells'],
+  'Warrior':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Versatile Performance feature",' +
-      '"Knows the Unseen Servant occult spell"',
-  'Signature Spells':
-    'Section=magic ' +
-    'Note="Can heighten 1 chosen spell of each level without learning a heightened version"',
-  'Perception Mastery':'Section=skill Note="Perception Master"',
+      '"Has the Martial Performance feature",' +
+      '"Knows the Fear occult spell"',
   // Weapon Specialization as above
 
-  'Bardic Lore':
-    'Section=skill ' +
-    'Note="Can use Bardic Lore to attempt to Recall Knowledge on any topic"',
+  'Bardic Lore':Pathfinder2E.FEATURES['Bardic Lore'],
+  'Hymn Of Healing':
+    'Section=magic Note="Knows the Hymn Of Healing occult focus spell"',
   'Lingering Composition':
+    Pathfinder2E.FEATURES['Lingering Composition']
+    .replace('/+1 Focus Points', ''),
+  'Martial Performance':
     'Section=magic ' +
-    'Note="Knows the Lingering Composition occult spell/+1 Focus Points"',
-  'Reach Spell':
-    'Action=1 Section=magic Note="Extends subsequent spell range by 30\'"',
-  'Versatile Performance':
-    'Section=skill ' +
-    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
-  'Cantrip Expansion':
+    'Note="Successful Strike while <i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i> is active extends the spell by 1 rd"',
+  'Reach Spell':Pathfinder2E.FEATURES['Reach Spell'],
+  'Versatile Performance':Pathfinder2E.FEATURES['Versatile Performance'],
+  'Well-Versed':'Section=save Note="+1 vs. auditory, illusion, linguistic, sonic, and visual spells"',
+  'Cantrip Expansion':Pathfinder2E.FEATURES['Cantrip Expansion'],
+  'Directed Audience':
     'Section=magic ' +
-    'Note="Can prepare two additional cantrips each day or add two additional cantrips to repertoire"',
-  'Esoteric Polymath':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Can prepare 1 spell from spellbook each day, treating it as an additional signature spell if it is in repertoire",' +
-      '"Can use Occultism to add spells to spellbook"',
-  'Inspire Competence':
-    'Section=magic Note="Knows the Inspire Competence occult cantrip"',
+    'Note="Can redirect the emanation of a composition spell into a cone up to 10\' or twice the area"',
+  'Emotional Push':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Makes a foe who fails a save vs. emotion off-guard aginst next self attack before the end of turn"',
+  'Esoteric Polymath':Pathfinder2E.FEATURES['Esoteric Polymath'],
   "Loremaster's Etude":
-    'Section=magic ' +
-    'Note="Knows the Loremaster\'s Etude occult spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES["Loremaster's Etude"]
+    .replace('/+1 Focus Points', ''),
   'Multifarious Muse (Enigma)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Enigma feature/+1 Class Feat",' +
-      '"Can select enigma muse feats"',
+    Pathfinder2E.FEATURES['Multifarious Muse (Enigma)'],
   'Multifarious Muse (Maestro)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Maestro feature/+1 Class Feat",' +
-      '"Can select maestro muse feats"',
+    Pathfinder2E.FEATURES['Multifarious Muse (Maestro)'],
   'Multifarious Muse (Polymath)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Polymath feature/+1 Class Feat",' +
-      '"Can select polymath muse feats"',
-  'Inspire Defense':
-    'Section=magic Note="Knows the Inspire Defense occult cantrip"',
+    Pathfinder2E.FEATURES['Multifarious Muse (Polymath)'],
+  'Multifarious Muse (Warrior)':
+    Pathfinder2E.FEATURES['Multifarious Muse (Polymath)']
+    .replace('Polymath', 'Warrior').replace('polymath', 'warrior'),
+  'Song Of Strength':
+    Pathfinder2E.FEATURES['Inspire Defense']
+    .replace('Inspire Defense', 'Song Of Strength'),
+  'Uplifting Overature':
+    Pathfinder2E.FEATURES['Inspire Competence']
+    .replace('Inspire Competence', 'Uplifting Overature'),
+  'Combat Reading':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Successful Occultism vs. the higher of target\'s Deception or Stealth DC reveals a target weakness, poorest save, or highest resistance; critical success gives two of these, and critical failure gives false information"',
+  'Courageous Advance':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent <i>Courageous Anthem</i> casting allows one ally to take a Stride Reaction"',
+  'In Tune':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="R60\' Subequent composition spell emanation centers on a willing ally"',
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="A successful Performance vs. Perception hides subsequent spellcasting from observers"',
-  'Triple Time':'Section=magic Note="Knows the Triple Time occult cantrip"',
-  'Versatile Signature':
-    'Section=magic Note="Can replace 1 signature spell each day"',
+    'Note="Give a subsequent spell the subtle trait"',
+  'Rallying Anthem':
+    'Section=magic ' +
+    'Note="Knows the Rallying Anthem occult focus cantrip"',
+  'Ritual Researcher':
+    'Section=magic Note="+2 on checks made as part of casting a ritual"',
+  'Triple Time':Pathfinder2E.FEATURES['Triple Time'],
+  'Versatile Signature':Pathfinder2E.FEATURES['Versatile Signature'],
+  /*-----*/
   'Dirge Of Doom':'Section=magic Note="Knows the Dirge Of Doom occult cantrip"',
   'Harmonize':
     'Action=1 ' +
@@ -7827,6 +7896,13 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
+  'Phantasmal Minion':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Revealing Light':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -7834,7 +7910,28 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
+  'Song Of Strength':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Sure Strike':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Unhampered Passage':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Uplifting Overature':
     'Level=1 ' +
     'Trait=Evocation ' +
     'Traditions=Primal ' +
