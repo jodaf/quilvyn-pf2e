@@ -221,9 +221,9 @@ Pathfinder2E.ANCESTRIES = {
     'Trait=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
-  'None':'Category=Unarmored Price=0 AC=0 Check=0 Str=0 Speed=0 Bulk=0',
+  'None':'Category=Unarmored Price=0 AC=0 Check=0 Speed=0 Bulk=0',
   "Explorer's Clothing":
-    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Str=0 Speed=0 Bulk=L ' +
+    'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Speed=0 Bulk=L ' +
     'Group=Cloth Trait=Comfort',
   'Padded':
     'Category=Light Price=0.2 AC=1 Dex=3 Check=0 Str=10 Speed=0 Bulk=L ' +
@@ -2076,7 +2076,7 @@ Pathfinder2E.FEATS = {
   // Poison Resistance as above
   'Form Control':
     'Trait=Class,Druid,Manipulate,Metamagic ' +
-    'Require="level >= 4","strength >= 14","features.Wild Shape"',
+    'Require="level >= 4","strengthModifier >= 2","features.Wild Shape"',
   'Mature Animal Companion':
     'Trait=Class,Druid,Ranger ' +
     'Require=' +
@@ -2176,7 +2176,7 @@ Pathfinder2E.FEATS = {
     'Trait=Class,Druid Require="level >= 18","features.Wind Caller"',
   'Perfect Form Control':
     'Trait=Class,Druid ' +
-    'Require="level >= 18","features.Form Control","strength >= 18"',
+    'Require="level >= 18","features.Form Control","strengthModifier >= 4"',
   'Primal Wellspring':
     'Trait=Class,Druid Require="level >= 18","features.Primal Focus"',
   "Hierophant's Power":'Trait=Class,Druid Require="level >= 20"',
@@ -2733,7 +2733,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Alchemist ' +
     'Require=' +
       '"level >= 2",' +
-      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Alchemist == 0"',
   'Basic Concoction':
     'Trait=Archetype,Alchemist ' +
@@ -2755,8 +2755,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Barbarian ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"constitution >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"constitutionModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Barbarian == 0"',
   'Barbarian Resiliency':
     'Trait=Archetype,Barbarian ' +
@@ -2783,7 +2783,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Bard ' +
     'Require=' +
       '"level >= 2",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Bard == 0"',
   'Basic Bard Spellcasting':
     'Trait=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
@@ -2816,8 +2816,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Champion ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Champion == 0"',
   'Basic Devotion':
     'Trait=Archetype,Champion ' +
@@ -2846,7 +2846,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Cleric ' +
     'Require=' +
       '"level >= 2",' +
-      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
     'Trait=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
@@ -2874,7 +2874,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Druid ' +
     'Require=' +
       '"level >= 2",' +
-      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
     'Trait=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
@@ -2904,8 +2904,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfElf",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
+      '"strengthModifier >= 2 || multitalentedHalfElf",' +
+      '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
     'Trait=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
@@ -2926,8 +2926,8 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
       '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfElf",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
+      '"strengthModifier >= 2 || multitalentedHalfElf",' +
+      '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Monk == 0"',
   'Basic Kata':
     'Trait=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
@@ -2949,7 +2949,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Ranger ' +
     'Require=' +
       '"level >= 2",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
+      '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
     'Trait=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
@@ -2967,7 +2967,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Rogue ' +
     'Require=' +
       '"level >= 2",' +
-      '"dexterity >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Rogue == 0"',
   'Basic Trickery':
     'Trait=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
@@ -2988,7 +2988,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Sorcerer ' +
     'Require=' +
       '"level >= 2",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
     'Trait=Archetype,Sorcerer ' +
@@ -3022,7 +3022,7 @@ Pathfinder2E.FEATS = {
     'Trait=Archetype,Dedication,Multiclass,Wizard ' +
     'Require=' +
       '"level >= 2",' +
-      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
+      '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Wizard == 0"',
   'Arcane School Spell':
     'Trait=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
@@ -3057,8 +3057,8 @@ Pathfinder2E.FEATS = {
   'Canny Acumen (Reflex)':'Trait=General',
   'Canny Acumen (Will)':'Trait=General',
   'Diehard':'Trait=General',
-  'Fast Recovery':'Trait=General Require="constitution >= 14"',
-  'Feather Step':'Trait=General Require="dexterity >= 14"',
+  'Fast Recovery':'Trait=General Require="constitutionModifier >= 2"',
+  'Feather Step':'Trait=General Require="dexterityModifier >= 2"',
   'Fleet':'Trait=General',
   'Incredible Initiative':'Trait=General',
   'Ride':'Trait=General',
@@ -3072,7 +3072,7 @@ Pathfinder2E.FEATS = {
   'Expeditious Search':
     'Trait=General Require="level >= 7","rank.Perception >= 2"',
   'Incredible Investiture':
-    'Trait=General Require="level >= 11","charisma >= 16"',
+    'Trait=General Require="level >= 11","charismaModifier >= 3"',
 
   // Skill
   'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
@@ -3083,7 +3083,8 @@ Pathfinder2E.FEATS = {
   'Recognize Spell':
     'Trait=Secret,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Skill Training (%skill)':'Trait=General,Skill Require="intelligence >= 12"',
+  'Skill Training (%skill)':
+    'Trait=General,Skill Require="intelligenceModifier >= 1"',
   'Trick Magic Item':
     'Trait=Manipulate,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
@@ -3168,7 +3169,7 @@ Pathfinder2E.FEATS = {
   'Quick Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
     'Trait=General,Skill ' +
-    'Require="level >= 2","strength >= 16","rank.Intimidation >= 2"',
+    'Require="level >= 2","strengthModifier >= 3","rank.Intimidation >= 2"',
   'Lasting Coercion':
     'Trait=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
   'Battle Cry':
@@ -7434,7 +7435,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
-    'Section=skill Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
+    'Section=skill ' +
+    'Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
   'Battle Cry':
     'Section=combat ' +
     'Note="Can use Demoralize as a free action on a foe during initiative%{rank.Intimidation>=4?\' or as a Reaction on a critical hit\':\'\'}"',
@@ -7453,7 +7455,7 @@ Pathfinder2E.FEATURES = {
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
   'Charming Liar':
     'Section=skill ' +
-    'Note="Critical successes on a Lie improve a target\'s attitude by 1 step once per conversation"',
+    'Note="Critical success on a Lie improves a target\'s attitude by 1 step once per conversation"',
   'Cloud Jump':
     'Section=skill ' +
     'Note="Triples the distance of long jumps, increases high jump distance to normal long jump distance, and adds %{speed}\' to jump distances for every additional action spent"',
@@ -7514,7 +7516,7 @@ Pathfinder2E.FEATURES = {
   'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
-    'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
+    'Note="+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
   'Inventor':
     'Section=skill Note="Can use Crafting to create unknown common formulas"',
   'Kip Up':
@@ -13320,9 +13322,9 @@ Pathfinder2E.ancestryFeatureRules = function(
  * to category #category#, costs #price# gold pieces, adds #ac# to the
  * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
  * imposes #checkPenalty# on specific skills, slows the character by
- * #speedPenalty#, requires a strength of at least #minStr# to use without
- * penalties, adds #bulk# to the character's burden, belongs to group #group#,
- * and has the list of traits #traits#.
+ * #speedPenalty#, requires a strength (strengthModifier if < 5) of at least
+ * #minStr# to use without penalties, adds #bulk# to the character's burden,
+ * belongs to group #group#, and has the list of traits #traits#.
  */
 Pathfinder2E.armorRules = function(
   rules, name, category, price, ac, maxDex, checkPenalty, speedPenalty, minStr,
@@ -13360,10 +13362,15 @@ Pathfinder2E.armorRules = function(
     console.log('Bad speed penalty "' + speedPenalty + '" for armor ' + name);
     return;
   }
-  if(typeof minStr != 'number') {
+  if(minStr && typeof minStr != 'number') {
     console.log('Bad min str "' + minStr + '" for armor ' + name);
     return;
   }
+  if(minStr == null)
+    minStr = 0;
+  else if(minStr < 5)
+    // convert strengthModifier value to strength value
+    minStr = 10 + strength * 2;
   if(bulk == 'L')
     bulk = 0.1;
   if(typeof bulk != 'number') {
