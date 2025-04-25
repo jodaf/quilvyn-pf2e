@@ -3017,158 +3017,103 @@ Pathfinder2ERemaster.FEATS = {
   'Impressive Performance':Pathfinder2E.FEATS['Impressive Performance'],
   'Incredible Initiative':Pathfinder2E.FEATS['Incredible Initiative'],
   'Incredible Investiture':Pathfinder2E.FEATS['Incredible Investiture'],
-
-  'Ride':'Trait=General',
-  'Shield Block':'Trait=General',
-  'Toughness':'Trait=General',
-  'Weapon Proficiency (Martial Weapons)':'Trait=General',
-  'Weapon Proficiency (Simple Weapons)':'Trait=General',
-  'Weapon Proficiency (%advancedWeapon)':'Trait=General',
-  'Untrained Improvisation':'Trait=General Require="level >= 3"',
-
-  // Skill
-  'Quick Identification':
-    'Trait=General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Recognize Spell':
-    'Trait=Secret,General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Skill Training (%skill)':'Trait=General,Skill Require="intelligence >= 12"',
-  'Trick Magic Item':
-    'Trait=Manipulate,General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
-  'Magical Shorthand':
-    'Trait=General,Skill ' +
-    'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
-  'Quick Recognition':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 7",' +
-      '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
-      '"features.Recognize Spell"',
-
-  'Quick Squeeze':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
-  'Steady Balance':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
-  'Nimble Crawl':
-    'Trait=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
-  'Kip Up':'Trait=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
-  'Unified Theory':
-    'Trait=General,Skill Require="level >= 15","rank.Arcana >= 4"',
-  'Quick Jump':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Titan Wrestler':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Underwater Marauder':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Powerful Leap':
-    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
-  'Rapid Mantel':
-    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
-  'Quick Climb':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Quick Swim':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Wall Jump':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-  'Quick Repair':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Snare Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Specialty Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Magical Crafting':
-    'Trait=General,Skill Require="level >= 2","rank.Crafting >= 2"',
+  'Intimidating Glare':Pathfinder2E.FEATS['Intimidating Glare'],
+  'Intimidating Prowess':Pathfinder2E.FEATS['Intimidating Prowess'],
   'Inventor':
-    'Trait=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
-  'Lengthy Diversion':'Trait=General,Skill Require="rank.Deception >= 1"',
-  'Lie To Me':'Trait=General,Skill Require="rank.Deception >= 1"',
-  'Quick Disguise':
-    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
-  'Slippery Secrets':
-    'Trait=General,Skill Require="level >= 7","rank.Deception >= 3"',
-  'Shameless Request':
-    'Trait=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
-  'Legendary Negotiation':
-    'Trait=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
-  'Intimidating Glare':'Trait=General,Skill Require="rank.Intimidation >= 1"',
-  'Quick Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
-  'Intimidating Prowess':
-    'Trait=General,Skill ' +
-    'Require="level >= 2","strength >= 16","rank.Intimidation >= 2"',
-  'Lasting Coercion':
-    'Trait=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
-  'Terrified Retreat':
-    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
-  'Scare To Death':
-    'Trait=Emotion,Fear,Incapacitation,General,Skill ' +
-    'Require="level >= 15","rank.Intimidation >= 4"',
-  'Unmistakable Lore':
-    'Trait=General,Skill Require="level >= 2","rank.Lore >= 2"',
-  'Legendary Professional':
-    'Trait=General,Skill Require="level >= 15","rank.Lore >= 4"',
-  'Robust Recovery':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
-  'Ward Medic':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
-  'Legendary Medic':
-    'Trait=General,Skill Require="level >= 15","rank.Medicine >= 4"',
-  'Natural Medicine':'Trait=General,Skill Require="rank.Nature >= 1"',
-  'Train Animal':
-    'Trait=Downtime,Manipulate,General,Skill Require="rank.Nature >= 1"',
-  'Oddity Identification':'Trait=General,Skill Require="rank.Occultism >= 1"',
-  'Virtuosic Performer':'Trait=General,Skill Require="rank.Performance >= 1"',
-  'Legendary Performer':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Performance >= 4",' +
-      '"features.Virtuosic Performer"',
-  'Student Of The Canon':'Trait=General,Skill Require="rank.Religion >= 1"',
-  'Multilingual':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Read Lips':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Sign Language':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Streetwise':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Connections':
-    'Trait=Uncommon,General,Skill ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"rank.Society >= 2",' +
-      '"features.Courtly Graces"',
-  'Legendary Codebreaker':
-    'Trait=General,Skill Require="level >= 15","rank.Society >= 4"',
-  'Legendary Linguist':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Society >= 4",' +
-      '"features.Multilingual"',
-  'Terrain Stalker (Rubble)':'Trait=General,Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Snow)':'Trait=General,Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Underbrush)':
-    'Trait=General,Skill Require="rank.Stealth >= 1"',
-  'Quiet Allies':
-    'Trait=General,Skill Require="level >= 2","rank.Stealth >= 2"',
-  'Swift Sneak':
-    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
-  'Legendary Sneak':
-    'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Stealth >= 4",' +
-      '"features.Swift Sneak"',
-  'Survey Wildlife':'Trait=General,Skill Require="rank.Survival >= 1"',
-  'Terrain Expertise (%terrain)':
-    'Trait=General,Skill Require="rank.Survival >= 1"',
-  'Planar Survival':
+    Pathfinder2E.FEATS.Inventor + ' Require="level >= 2","rank.Crafting >= 2"',
+  'Kip Up':Pathfinder2E.FEATS['Kip Up'],
+  'Lasting Coercion':Pathfinder2E.FEATS['Lasting Coercion'],
+  'Legendary Codebreaker':Pathfinder2E.FEATS['Legendary Codebreaker'],
+  'Legendary Linguist':Pathfinder2E.FEATS['Legendary Linguist'],
+  'Legendary Medic':Pathfinder2E.FEATS['Legendary Medic'],
+  'Legendary Negotiation':Pathfinder2E.FEATS['Legendary Negotiation'],
+  'Legendary Performer':Pathfinder2E.FEATS['Legendary Performer'],
+  'Legendary Professional':Pathfinder2E.FEATS['Legendary Professional'],
+  'Legendary Sneak':Pathfinder2E.FEATS['Legendary Sneak'],
+  'Legendary Survivalist':Pathfinder2E.FEATS['Legendary Survivalist'],
+  'Legendary Thief':Pathfinder2E.FEATS['Legendary Thief'],
+  'Lengthy Diversion':Pathfinder2E.FEATS['Lengthy Diversion'],
+  'Leverage Connections':
+    Pathfinder2E.FEATS.Connections
+    .replace('Graces', 'Graces || features.Streetwise'),
+  'Lie To Me':Pathfinder2E.FEATS['Lie To Me'],
+  'Magical Crafting':Pathfinder2E.FEATS['Magical Crafting'],
+  'Magical Shorthand':Pathfinder2E.FEATS['Magical Shorthand'],
+  'Monster Crafting':
     'Trait=General,Skill Require="level >= 7","rank.Survival >= 3"',
-  'Legendary Survivalist':
-    'Trait=General,Skill Require="level >= 15","rank.Survival >= 4"',
-  'Pickpocket':'Trait=General,Skill Require="rank.Thievery >= 1"',
-  'Subtle Theft':'Trait=General,Skill Require="rank.Thievery >= 1"',
-  'Wary Disarmament':
-    'Trait=General,Skill Require="level >= 2","rank.Thievery >= 2"',
-  'Quick Unlock':
-    'Trait=General,Skill Require="level >= 7","rank.Thievery >= 3"',
-  'Legendary Thief':
+  'Multilingual':Pathfinder2E.FEATS.Multilingual,
+  'Natural Medicine':Pathfinder2E.FEATS['Natural Medicine'],
+  'Nimble Crawl':Pathfinder2E.FEATS['Nimble Crawl'],
+  'No Cause For Alarm':
+    'Trait=General,Skill,Auditory,Concentrate,Emotion,Linguistic,Mental ' +
+    'Require="rank.Diplomacy >= 1"',
+  'Oddity Identification':Pathfinder2E.FEATS['Oddity Identification'],
+  'Pet':'Trait=General',
+  'Pickpocket':Pathfinder2E.FEATS.Pickpocket,
+  'Planar Survival':Pathfinder2E.FEATS['Planar Survival'],
+  'Powerful Leap':Pathfinder2E.FEATS['Powerful Leap'],
+  'Prescient Consumable':
+    'Trait=General Require="level >= 7","features.Prescient Planner"',
+  'Prescient Planner':'Trait=General Require="level >= 3"',
+  'Quick Climb':Pathfinder2E.FEATS['Quick Climb'],
+  'Quick Coercion':Pathfinder2E.FEATS['Quick Coercion'],
+  'Quick Disguise':Pathfinder2E.FEATS['Quick Disguise'],
+  'Quick Identification':Pathfinder2E.FEATS['Quick Identification'],
+  'Quick Jump':Pathfinder2E.FEATS['Quick Jump'],
+  'Quick Recognition':Pathfinder2E.FEATS['Quick Recognition'],
+  'Quick Repair':Pathfinder2E.FEATS['Quick Repair'],
+  'Quick Squeeze':Pathfinder2E.FEATS['Quick Squeeze'],
+  'Quick Swim':Pathfinder2E.FEATS['Quick Swim'],
+  'Quick Unlock':Pathfinder2E.FEATS['Quick Unlock'],
+  'Quiet Allies':Pathfinder2E.FEATS['Quiet Allies'],
+  'Rapid Mantel':Pathfinder2E.FEATS['Rapid Mantel'],
+  'Read Lips':Pathfinder2E.FEATS['Read Lips'],
+  'Recognize Spell':Pathfinder2E.FEATS['Recognize Spell'],
+  'Ride':Pathfinder2E.FEATS.Ride,
+  'Robust Recovery':Pathfinder2E.FEATS['Robust Recovery'],
+  'Scare To Death':Pathfinder2E.FEATS['Scare To Death'],
+  'Schooled In Secrets':'Trait=General,Skill Require="rank.Occultism >= 1"',
+  'Seasoned':
     'Trait=General,Skill ' +
-    'Require=' +
-      '"level >= 15",' +
-      '"rank.Thievery >= 4",' +
-      '"features.Pickpocket"'
+    'Require="rank.Alcohol Lore >= 1 || rank.Cooking Lore >= 1 || rank.Crafting >= 1"',
+  'Shameless Request':Pathfinder2E.FEATS['Shameless Request'],
+  'Shield Block':Pathfinder2E.FEATS['Shield Block'],
+  'Sign Language':Pathfinder2E.FEATS['Sign Language'],
+  'Skill Training (%skill)':Pathfinder2E.FEATS['Skill Training (%skill)'],
+  'Slippery Secrets':Pathfinder2E.FEATS['Slippery Secrets'],
+  'Snare Crafting':Pathfinder2E.FEATS['Snare Crafting'],
+  'Specialty Crafting':Pathfinder2E.FEATS['Specialty Crafting'],
+  'Steady Balance':Pathfinder2E.FEATS['Steady Balance'],
+  'Streetwise':Pathfinder2E.FEATS.Streetwise,
+  'Student Of The Canon':Pathfinder2E.FEATS['Student Of The Canon'],
+  'Subtle Theft':Pathfinder2E.FEATS['Subtle Theft'],
+  'Survey Wildlife':Pathfinder2E.FEATS['Survey Wildlife'],
+  'Swift Sneak':Pathfinder2E.FEATS['Swift Sneak'],
+  'Terrain Expertise (%terrain)':
+    Pathfinder2E.FEATS['Terrain Expertise (%terrain)'],
+  'Terrain Stalker (Rubble)':Pathfinder2E.FEATS['Terrain Stalker (Rubble)'],
+  'Terrain Stalker (Snow)':Pathfinder2E.FEATS['Terrain Stalker (Snow)'],
+  'Terrain Stalker (Underbrush)':
+    Pathfinder2E.FEATS['Terrain Stalker (Underbrush)'],
+  'Terrified Retreat':Pathfinder2E.FEATS['Terrified Retreat'],
+  'Titan Wrestler':Pathfinder2E.FEATS['Titan Wrestler'],
+  'Toughness':Pathfinder2E.FEATS.Toughness,
+  'Train Animal':Pathfinder2E.FEATS['Train Animal'],
+  'Trick Magic Item':Pathfinder2E.FEATS['Trick Magic Item'],
+  'Underwater Marauder':Pathfinder2E.FEATS['Underwater Marauder'],
+  'Unified Theory':Pathfinder2E.FEATS['Unified Theory'],
+  'Unmistakable Lore':Pathfinder2E.FEATS['Unmistakable Lore'],
+  'Untrained Improvisation':Pathfinder2E.FEATS['Untrained Improvisation'],
+  'Unusual Treatment':
+    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+  'Virtuosic Performer':Pathfinder2E.FEATS['Virtuosic Performer'],
+  'Wall Jump':Pathfinder2E.FEATS['Wall Jump'],
+  'Ward Medic':Pathfinder2E.FEATS['Ward Medic'],
+  'Wary Disarmament':Pathfinder2E.FEATS['Wary Disarmament'],
+  'Weapon Proficiency (Martial Weapons)':
+    Pathfinder2E.FEATS['Weapon Proficiency (Martial Weapons)'],
+  'Weapon Proficiency (%advancedWeapon)':
+    Pathfinder2E.FEATS['Weapon Proficiency (%advancedWeapon)']
 
 };
 Pathfinder2ERemaster.FEATURES = {
@@ -7404,24 +7349,40 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell"',
 */
 
-  // General Feats
+  // General and Skill Feats
+  'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
   'Adopted Ancestry (%ancestry)':
-    'Section=feature Note="May take %ancestry ancestry feats"',
-  'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
-  'Armor Proficiency':'Section=combat Note="Defense Trained (%V Armor)"',
-  'Breath Control':
-    'Section=ability,save ' +
-    'Note=' +
-      '"Can hold breath for %{(5+constitutionModifier)*25} rd without suffocating",' +
-      '"+1 vs. inhaled threats, and successes vs. inhaled threats are critical successes"',
-  'Canny Acumen (Fortitude)':'Section=save Note="Save %V (Fortitude)"',
-  'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
-  'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
-  'Canny Acumen (Will)':'Section=save Note="Save %V (Will)"',
-  'Diehard':'Section=combat Note="Remains alive until dying 5"',
-  'Expeditious Search':
-    'Section=skill ' +
-    'Note="Can Search at %{rank.Perception>=4?4:2}x normal Speed"',
+    Pathfinder2E.FEATURES['Adopted Ancestry (%ancestry)'],
+  'Alchemical Crafting':Pathfinder2E.FEATURES['Alchemical Crafting'],
+  'Ancestral Paragon':Pathfinder2E.FEATURES['Ancestral Paragon'],
+  'Arcane Sense':Pathfinder2E.FEATURES['Arcane Sense'],
+  'Armor Proficiency':Pathfinder2E.FEATURES['Armor Proficiency'],
+  'Assurance (%skill)':Pathfinder2E.FEATURES['Assurance (%skill)'],
+  'Automatic Knowledge (%skill)':
+    Pathfinder2E.FEATURES['Automatic Knowledge (%skill)'],
+  'Bargain Hunter':Pathfinder2E.FEATURES['Bargain Hunter'],
+  'Battle Cry':Pathfinder2E.FEATURES['Battle Cry'],
+  'Battle Medicine':Pathfinder2E.FEATURES['Battle Medicine'],
+  'Bizarre Magic':Pathfinder2E.FEATURES['Bizarre Magic'],
+  'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
+  'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
+  'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
+  'Canny Acumen (Perception)':
+    Pathfinder2E.FEATURES['Canny Acumen (Perception)'],
+  'Canny Acumen (Reflex)':Pathfinder2E.FEATURES['Canny Acumen (Reflex)'],
+  'Canny Acumen (Will)':Pathfinder2E.FEATURES['Canny Acumen (Will)'],
+  'Charming Liar':Pathfinder2E.FEATURES['Charming Liar'],
+  'Cloud Jump':Pathfinder2E.FEATURES['Cloud Jump'],
+  'Combat Climber':Pathfinder2E.FEATURES['Combat Climber'],
+  'Confabulator':Pathfinder2E.FEATURES.Confabulator,
+  'Continual Recovery':Pathfinder2E.FEATURES['Continual Recovery'],
+  'Courtly Graces':Pathfinder2E.FEATURES['Courtly Graces'],
+  'Craft Anything':Pathfinder2E.FEATURES['Craft Anything'],
+  'Diehard':Pathfinder2E.FEATURES.Diehard,
+  'Divine Guidance':Pathfinder2E.FEATURES['Divine Guidance'],
+  'Dubious Knowledge':Pathfinder2E.FEATURES['Dubious Knowledge'],
+  'Expeditious Search':Pathfinder2E.FEATURES['Expeditious Search'],
+
   'Fast Recovery':
     'Section=save ' +
     'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
@@ -7452,15 +7413,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Attack Trained (%advancedWeapon)"',
 
   // General Skill Feats
-  'Assurance (%skill)':
-    'Section=skill ' +
-    'Note="Can take an automatic %{10+$\'proficiencyBonus.%skill\'} on %skill checks"',
-  'Automatic Knowledge (%skill)':
-    'Section=skill ' +
-    'Note="Can use Assurance (%skill) to Recall Knowledge as a free action once per rd"',
-  'Dubious Knowledge':
-    'Section=skill ' +
-    'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
   'Magical Shorthand':
     'Section=skill ' +
     'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure/Can learn new spells at a discounted cost"',
@@ -7481,60 +7433,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful check on the related skill temporarily activates a magic item"',
 
   // Specific Skill Feats
-  'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
-  'Alchemical Crafting':
-    'Section=feature,skill,skill ' +
-    'Note=' +
-      '"Has the Formula Book feature",' +
-      '"Knows the formulas for 4 common 1st-level alchemical items",' +
-      '"Can use Crafting to create alchemical items"',
-  'Arcane Sense':
-    'Section=magic ' +
-    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
-  'Bargain Hunter':
-    'Section=skill Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
-  'Battle Cry':
-    'Section=combat ' +
-    'Note="Can use Demoralize as a free action on a foe during initiative%{rank.Intimidation>=4?\' or as a Reaction on a critical hit\':\'\'}"',
-  'Battle Medicine':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="Can use Medicine to restore Hit Points once per target per day"',
-  'Bizarre Magic':
-    'Section=magic ' +
-    'Note="Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use"',
-  'Bonded Animal':
-    'Section=skill ' +
-    'Note="Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
-  'Charming Liar':
-    'Section=skill ' +
-    'Note="Critical successes on a Lie improve a target\'s attitude by 1 step once per conversation"',
-  'Cloud Jump':
-    'Section=skill ' +
-    'Note="Triples the distance of long jumps, increases high jump distance to normal long jump distance, and adds %{speed}\' to jump distances for every additional action spent"',
-  'Combat Climber':
-    'Section=skill ' +
-    'Note="Can Climb with one hand occupied, can fight while Climbing, and does not suffer flat-footed while Climbing"',
-  'Confabulator':
-    'Section=skill ' +
-    'Note="Reduces the bonus given to targets of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
   'Connections':
     'Section=skill ' +
     'Note="Can use Society to gain a meeting with an important figure or to exchange favors"',
-  'Continual Recovery':
-    'Section=skill Note="Can repeat Treat Wounds on a patient after 10 min"',
-  'Courtly Graces':
-    'Section=skill ' +
-    'Note="Can use Society to impersonate a noble or to Make an Impression on one"',
-  'Craft Anything':
-    'Section=skill ' +
-    'Note="Can craft items without meeting secondary requirements"',
-  'Divine Guidance':
-    'Section=skill ' +
-    'Note="Can use 10 min Decipher Writing on a religious text and a successful Religion check to gain a hint about a current problem"',
   'Experienced Professional':
     'Section=skill ' +
     'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income"',
