@@ -3000,7 +3000,8 @@ Pathfinder2ERemaster.FEATS = {
   'Dubious Knowledge':Pathfinder2E.FEATS['Dubious Knowledge'],
   'Expeditious Search':Pathfinder2E.FEATS['Expeditious Search'],
   'Experienced Professional':Pathfinder2E.FEATS['Experienced Professional'],
-  'Experienced Smuggler':Pathfinder2E.FEATS['Experienced Smuggler'],
+  'Experienced Smuggler':
+    Pathfinder2E.FEATS['Experienced Smuggler'].replace(/\/[^"]*/, ''),
   'Experienced Tracker':Pathfinder2E.FEATS['Experienced Tracker'],
   'Fascinating Performance':Pathfinder2E.FEATS['Fascinating Performance'],
   'Fast Recovery':Pathfinder2E.FEATS['Fast Recovery'],
@@ -3009,10 +3010,15 @@ Pathfinder2ERemaster.FEATS = {
   'Foil Senses':Pathfinder2E.FEATS['Foil Senses'],
   'Forager':Pathfinder2E.FEATS.Forager,
   'Glad-Hand':Pathfinder2E.FEATS['Glad-Hand'],
-  'Group Coercion':Pathfinder2E.FEATS['Group Coercion'],
-  'Group Impression':Pathfinder2E.FEATS['Group Impression'],
+  'Group Coercion': // Target counts changed
+    'Section=skill ' +
+    'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
+  'Group Impression': // Target counts changed
+    'Section=skill ' +
+    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
   'Hefty Hauler':Pathfinder2E.FEATS['Hefty Hauler'],
-  'Hobnobber':Pathfinder2E.FEATS.Hobnobber,
+  'Hobnobber':
+    Pathfinder2E.FEATS.Hobnobber.replace('when taking normal time ', ''),
   'Impeccable Crafting':Pathfinder2E.FEATS['Impeccable Crafting'],
   'Impressive Performance':Pathfinder2E.FEATS['Impressive Performance'],
   'Incredible Initiative':Pathfinder2E.FEATS['Incredible Initiative'],
@@ -3024,6 +3030,7 @@ Pathfinder2ERemaster.FEATS = {
   'Kip Up':Pathfinder2E.FEATS['Kip Up'],
   'Lasting Coercion':Pathfinder2E.FEATS['Lasting Coercion'],
   'Legendary Codebreaker':Pathfinder2E.FEATS['Legendary Codebreaker'],
+
   'Legendary Linguist':Pathfinder2E.FEATS['Legendary Linguist'],
   'Legendary Medic':Pathfinder2E.FEATS['Legendary Medic'],
   'Legendary Negotiation':Pathfinder2E.FEATS['Legendary Negotiation'],
@@ -7353,6 +7360,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
   'Adopted Ancestry (%ancestry)':
     Pathfinder2E.FEATURES['Adopted Ancestry (%ancestry)'],
+  'Advanced First Aid':
+    'Section=skill ' +
+    'Note="Can use Administer First Aid to reduce a frightened or sickened condition by 2, or remove it entirely with a critical success"',
   'Alchemical Crafting':Pathfinder2E.FEATURES['Alchemical Crafting'],
   'Ancestral Paragon':Pathfinder2E.FEATURES['Ancestral Paragon'],
   'Arcane Sense':Pathfinder2E.FEATURES['Arcane Sense'],
@@ -7365,15 +7375,22 @@ Pathfinder2ERemaster.FEATURES = {
   'Battle Medicine':Pathfinder2E.FEATURES['Battle Medicine'],
   'Bizarre Magic':Pathfinder2E.FEATURES['Bizarre Magic'],
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
+  'Break Curse:
+    'Section=skill ' +
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min':\'8 hr\'} of prepartion, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
     Pathfinder2E.FEATURES['Canny Acumen (Perception)'],
   'Canny Acumen (Reflex)':Pathfinder2E.FEATURES['Canny Acumen (Reflex)'],
   'Canny Acumen (Will)':Pathfinder2E.FEATURES['Canny Acumen (Will)'],
+  'Cat Fall':Pathfinder2E.FEATURES['Cat Fall'],
   'Charming Liar':Pathfinder2E.FEATURES['Charming Liar'],
   'Cloud Jump':Pathfinder2E.FEATURES['Cloud Jump'],
   'Combat Climber':Pathfinder2E.FEATURES['Combat Climber'],
+  'Communal Crafting':
+    'Section=skill ' +
+    'Note="Can reduce the cost of crafting items by giving or receiving assistance"',
   'Confabulator':Pathfinder2E.FEATURES.Confabulator,
   'Continual Recovery':Pathfinder2E.FEATURES['Continual Recovery'],
   'Courtly Graces':Pathfinder2E.FEATURES['Courtly Graces'],

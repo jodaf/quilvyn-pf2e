@@ -7433,7 +7433,7 @@ Pathfinder2E.FEATURES = {
       '"Can use Crafting to create alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
-    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
+    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} rank at will"',
   'Bargain Hunter':
     'Section=skill ' +
     'Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
@@ -7443,13 +7443,13 @@ Pathfinder2E.FEATURES = {
   'Battle Medicine':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Can use Medicine to restore Hit Points once per target per day"',
+    'Note="Uses Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
     'Note="Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use"',
   'Bonded Animal':
     'Section=skill ' +
-    'Note="Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
+    'Note="Can use 1 week of interaction and a successful Nature check to make an animal permanently helpful"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
@@ -7490,7 +7490,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Can Track without hourly Survival checks\':\'\'}"',
   'Fascinating Performance':
     'Section=skill ' +
-    'Note="Can fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
+    'Note="Can fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'a target\'} for 1 rd with a successful Performance vs. Will"',
   'Foil Senses':
     'Section=skill ' +
     'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak"',
