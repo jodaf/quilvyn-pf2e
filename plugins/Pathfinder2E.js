@@ -213,8 +213,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Ability Boost (Choose 2 from any)",' +
       '"1:Ancestry Feats","1:Human Heritage" ' +
     'Selectables=' +
-      '1:Half-Elf:Heritage,' +
-      '1:Half-Orc:Heritage,' +
+      '"1:Half-Elf:Heritage",' +
+      '"1:Half-Orc:Heritage",' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
     'Languages=Common,any ' +
@@ -14265,7 +14265,7 @@ Pathfinder2E.deityRules = function(
     console.log('Empty deity name');
     return;
   }
-  if(name != 'None' && !(alignment+'').match(/^(N|[LNC]G|[LNC]E|[LC]N)$/i)) {
+  if(alignment && !alignment.match(/^(N|[LNC]G|[LNC]E|[LC]N)$/i)) {
     console.log('Bad alignment "' + alignment + '" for deity ' + name);
     return;
   }
@@ -16049,6 +16049,8 @@ Pathfinder2E.createViewers = function(rules, viewers) {
  * item to #rules#.
  */
 Pathfinder2E.choiceEditorElements = function(rules, type) {
+  let isLegacy = rules.plugin == Pathfinder2E;
+  let abilityLabel = isLegacy ? 'Ability' : 'Attribute';
   let result = [];
   let oneToTwenty = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
@@ -16073,7 +16075,8 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     let armorCategories = ['Unarmored', 'Light', 'Medium', 'Heavy'];
     let armorGroups =
       ['Unarmored', 'Cloth', 'Leather', 'Chain', 'Composite', 'Plate'];
-    let tenToEighteen = [10, 11, 12, 13, 14, 15, 16, 17, 18];
+    let strChoices =
+      isLegacy ? [10, 11, 12, 13, 14, 15, 16, 17, 18] : [0, 1, 2, 3, 4];
     result.push(
       ['Category', 'Category', 'select-one', armorCategories],
       ['Price', 'Price (GP)', 'text', [4]],
@@ -16081,7 +16084,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Dex', 'Max Dex', 'select-one', zeroToTen],
       ['Check', 'Check Penalty', 'select-one', [0, -1, -2, -3, -4, -5]],
       ['Speed', 'Speed Penalty', 'select-one', [0, -5, -10, -15, -20]],
-      ['Str', 'Min Str', 'select-one', tenToEighteen],
+      ['Str', 'Min Str', 'select-one', strChoices],
       ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
       ['Group', 'Group', 'select-one', armorGroups],
       ['Trait', 'Trait', 'text', [20]]
@@ -16100,7 +16103,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   else if(type == 'Class') {
     result.push(
-      ['Ability', 'Ability', 'text', [20]],
+      [abilityLabel, abilityLabel, 'text', [20]],
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
       ['Features', 'Features', 'text', [40]],
       ['Selectables', 'Selectable Features', 'text', [40]],
@@ -16153,7 +16156,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     );
   else if(type == 'Skill')
     result.push(
-      ['Ability', 'Ability', 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
+      [abilityLabel, abilityLabel, 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
       ['Subcategory', 'Subcategory', 'text', [30]]
     );
   else if(type == 'Spell') {
@@ -16396,11 +16399,11 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     // Grab text of all Ability Boost features and notes
     let boostTexts = [];
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^\w+Features.Ability\s+Boost\s+\((.*)\)$/)))
-        boostTexts.push(matchInfo[1]);
+      if((matchInfo = attr.match(/^\w+Features.(Ability|Attribute)\s+Boost\s+\((.*)\)$/)))
+        boostTexts.push(matchInfo[2]);
       else if(allNotes[attr] &&
-              (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) != null)
-        boostTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
+              (matchInfo=allNotes[attr].match(/(Ability|Attribute)\s+Boost\s+\((.*?)\)/)) != null)
+        boostTexts.push(matchInfo[2].replaceAll('%V', attrs[attr]));
     }
     // Sort in order of most restrictive to least restrictive
     boostTexts = boostTexts.sort((a, b) =>
@@ -16463,7 +16466,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     for(let d in deities) {
       let allowed =
         QuilvynUtils.getAttrValueArray(deities[d], 'FollowerAlignments');
-      if(allowed.includes(alignment))
+      if(!allowed || allowed.includes(alignment))
         choices.push(d);
     }
     if(choices.length > 0)
