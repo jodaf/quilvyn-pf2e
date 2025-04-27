@@ -70,7 +70,7 @@ function Pathfinder2ERemaster(edition) {
       choices[c] = Pathfinder2ERemaster[c];
   });
 
-  Pathfinder2ERemaster.abilityRules(rules, Pathfinder2E.ABILITIES);
+  Pathfinder2ERemaster.attributeRules(rules, Pathfinder2E.ABILITIES);
   Pathfinder2ERemaster.combatRules
     (rules, choices.ARMORS, choices.SHIELDS, choices.WEAPONS);
   Pathfinder2ERemaster.magicRules(rules, choices.SPELLS);
@@ -3695,7 +3695,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Class Features and Feats
 
-  'Attribute Boosts':Pathfinder2E.FEATURES['Ability Boosts'],
+  'Attribute Boosts':
+    Pathfinder2E.FEATURES['Ability Boosts'].replace('Ability', 'Attribute'),
   'General Feats':Pathfinder2E.FEATURES['General Feats'],
   'Skill Feats':Pathfinder2E.FEATURES['Skill Feats'],
   'Skill Increases':Pathfinder2E.FEATURES['Skill Increases'],
@@ -11641,7 +11642,7 @@ Pathfinder2ERemaster.WEAPONS = {
 };
 
 /* Defines the rules related to character abilities. */
-Pathfinder2ERemaster.abilityRules = function(rules, abilities) {
+Pathfinder2ERemaster.attributeRules = function(rules, abilities) {
   // TODO
   rules.defineRule
     ('abilityGeneration', '', '=', '"All 10s; standard ancestry boosts"');
@@ -11650,7 +11651,18 @@ Pathfinder2ERemaster.abilityRules = function(rules, abilities) {
   for(let a in abilities) {
     delete rules.choices.notes[a];
     rules.defineChoice('notes', a + ':%1');
+    rules.defineRule
+      ('base' + a.charAt(0).toUpperCase() + a.substring(1), '', '=', '10');
   }
+  rules.defineRule('abilityNotes.abilityBoosts', '', '?', 'null');
+  rules.defineRule('abilityNotes.attributeBoosts',
+    'level', '=', '4 + Math.floor(source / 5) * 4'
+  );
+  QuilvynRules.validAllocationRules
+    (rules, 'attributeBoost', 'choiceCount.Attribute', 'abilityBoostsAllocated');
+  rules.defineRule('validationNotes.abilityBoostAllocation',
+    'abilityBoostsAllocated', '?', 'null'
+  );
 };
 
 /* Defines the rules related to combat. */
