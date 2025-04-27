@@ -3463,7 +3463,7 @@ Pathfinder2E.FEATURES = {
   'Elf Step':'Action=1 Section=combat Note="Steps twice in 1 action"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Gains expert level in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
+    'Note="Gains expert rank in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
@@ -7433,7 +7433,7 @@ Pathfinder2E.FEATURES = {
       '"Can use Crafting to create alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
-    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} rank at will"',
+    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
     'Section=skill ' +
     'Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
@@ -7539,10 +7539,10 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Performance increases audience by 2 levels"',
+    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Increases the audience level when Earning Income using Performance"',
   'Legendary Professional':
     'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Lore increases job level"',
+    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Increases the job level when Earning Income using Lore"',
   'Legendary Sneak':
     'Section=skill ' +
     'Note="Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring"',
@@ -7551,7 +7551,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can survive indefinitely without food and water and endure incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
-    'Note="Can use Steal with a -5 penalty to take actively wielded and highly noticeable items"',
+    'Note="Can use Steal with a -5 penalty when hidden to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
     'Note="Can remain hidden after a Create a Diversion attempt critically succeeds"',
@@ -7574,14 +7574,17 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/Can use 2 actions to Steal with a -5 penalty from an alert creature\':\'\'}"',
   'Planar Survival':
-    'Section=skill Note="Can use Survival to Subsist on different planes"',
+    'Section=skill ' +
+    'Note="Can use Survival to Subsist on different planes and to prevent damage from planar conditions"',
   'Powerful Leap':
     'Section=skill Note="Can make 5\' vertical and +5\' horizontal jumps"',
   'Quick Climb':
     'Section=skill ' +
     'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
   'Quick Coercion':'Section=skill Note="Can Coerce in 1 rd"',
-  'Quick Disguise':'Section=skill Note="Can create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
+  'Quick Disguise':
+    'Section=skill ' +
+    'Note="Can create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
   'Quick Jump':
     'Section=skill ' +
     'Note="Can use High Jump and Long Jump as 1 action without an initial Stride"',
@@ -7602,7 +7605,8 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can stand immediately after a successful Grab an Edge and use Athletics to Grab an Edge"',
   'Read Lips':
-    'Section=skill Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
+    'Section=skill ' +
+    'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
   'Robust Recovery':
     'Section=skill ' +
     'Note="Success on Treat a Disease or a Poison gives a +4 bonus, and patient successes are critical successes"',
@@ -7633,10 +7637,12 @@ Pathfinder2E.FEATURES = {
   'Student Of The Canon':
     'Section=skill ' +
     'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
-  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
+  'Subtle Theft':
+    'Section=skill ' +
+    'Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
-    'Note="Can use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
+    'Note="Can use Survival%{rank.Survival<3?\' with a -2 penalty\':\'\'} to Recall Knowledge about local creatures after 10 min of study"',
   'Swift Sneak':'Section=skill Note="Can Sneak at full Speed"',
   'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
   'Terrain Stalker (Rubble)':
@@ -7656,7 +7662,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Train Animal':
     'Section=feature ' +
-    'Note="Can use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
+    'Note="Can use days of training and a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
     'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing weapons in water"',
@@ -7665,19 +7671,19 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
-    'Note="Critical failures on any trained Lore are normal failures and critical successes provide additional information"',
+    'Note="Critical failures on any trained Lore are normal failures and critical successes on a Lore with master rank provide additional information"',
   'Virtuosic Performer':
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="Can follow a jump that ends next to a wall with another 1-action jump once per turn"',
+    'Note="Can follow a jump that ends next to a wall with another 1-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
   'Ward Medic':
     'Section=skill ' +
     'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
   'Wary Disarmament':
     'Section=skill ' +
-    'Note="+2 Armor Class vs. a trap triggered while disarming it"',
+    'Note="+2 Armor Class and saves vs. a trap triggered while disarming it"',
 
 };
 Pathfinder2E.GOODIES = {
@@ -12627,7 +12633,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Trait']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
-    (classes, ['HitPoints', 'Ability', 'Features', 'Selectables', 'SpellSlots']);
+    (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
   QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
 
   rules.defineRule('heritage', 'ancestry', '=', null);
@@ -12756,7 +12762,7 @@ Pathfinder2E.talentRules = function(
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
   QuilvynUtils.checkAttrTable(languages, []);
-  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Subcategory']);
+  QuilvynUtils.checkAttrTable(skills, ['Ability', 'Attribute', 'Subcategory']);
 
   for(let g in goodies)
     rules.choiceRules(rules, 'Goody', g, goodies[g]);
@@ -13322,7 +13328,7 @@ Pathfinder2E.ancestryFeatureRules = function(
  * to category #category#, costs #price# gold pieces, adds #ac# to the
  * character's armor class, allows a maximum dex bonus to ac of #maxDex#,
  * imposes #checkPenalty# on specific skills, slows the character by
- * #speedPenalty#, requires a strength (strengthModifier if < 5) of at least
+ * #speedPenalty#, requires a strength (or strengthModifier if < 6) of at least
  * #minStr# to use without penalties, adds #bulk# to the character's burden,
  * belongs to group #group#, and has the list of traits #traits#.
  */
@@ -13368,9 +13374,9 @@ Pathfinder2E.armorRules = function(
   }
   if(minStr == null)
     minStr = 0;
-  else if(minStr < 5)
+  else if(minStr < 6)
     // convert strengthModifier value to strength value
-    minStr = 10 + strength * 2;
+    minStr = 10 + minStr * 2;
   if(bulk == 'L')
     bulk = 0.1;
   if(typeof bulk != 'number') {
@@ -14882,7 +14888,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('speed', 'abilityNotes.monkMoves.1', '+', null);
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
-      'rank.Society', '=', null,
+      'rank.Society', '=', 'source<2 ? 2 : source',
       'feats.Multilingual', '*', null
     );
   } else if(name == 'Multitalented') {
@@ -15208,7 +15214,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           matchInfo[1] == 'Trained' ? 1 : matchInfo[1] == 'Expert' ? 2 : matchInfo[1] == 'Master' ? 3 : 4;
         rules.defineRule('trainingLevel.Perception', note, '^=', rank);
       }
-      matchInfo = n.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
+      matchInfo = n.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
       if(matchInfo) {
         let flaw = matchInfo[2].match(/flaw/i);
         let choices = '';
@@ -15781,7 +15787,7 @@ Pathfinder2E.featureListRules = function(
         ('trainingLevel.Perception', setName + '.' + feature, '^=', rank);
     }
     matchInfo =
-      feature.match(/(Ability|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
+      feature.match(/(Ability|Attribute|Skill)\s(Boost|Flaw|Increase)\s*\(([^\)]*)\)$/i);
     if(matchInfo) {
       let flaw = matchInfo[2].match(/flaw/i);
       let choices = '';
