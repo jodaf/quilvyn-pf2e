@@ -57,7 +57,8 @@ function Pathfinder2ERemaster(edition) {
     'ancestry:Ancestry,select-one,ancestrys',
     'background:Background,select-one,backgrounds',
     'class:Class,select-one,levels',
-    'level:Level,text,3'
+    'level:Level,text,3',
+    'abilityGeneration:Attribute Generation,select-one,abilgens'
   );
 
   let choices = {};
@@ -90,27 +91,21 @@ function Pathfinder2ERemaster(edition) {
 Pathfinder2ERemaster.VERSION = '2.4.1.0';
 
 Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
-  Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => x != 'alignment');
+  Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => !(x.match(/alignment|abilities|strength|constitution|dexterity|intelligence|wisdom|charisma/)));
 
 Pathfinder2ERemaster.ANCESTRIES = {
-  'Dwarf':
-    Pathfinder2E.ANCESTRIES.Dwarf
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf,
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Ancient Elf:Heritage",'),
-  'Gnome':
-    Pathfinder2E.ANCESTRIES.Gnome
-    .replace('Sylvan', 'Fey').replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
-  'Goblin':
-    Pathfinder2E.ANCESTRIES.Goblin
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
+  'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey'),
+  'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage","1:Jinxed Halfling:Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
-    .replace('1:Half-Elf:Heritage,1:Half-Orc:Heritage,', '"1:Versatile Heritage",')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', '')
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
@@ -120,7 +115,6 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Small","1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage",' +
       '"1:Plant Nourishment" ' +
     'Selectables=' +
-      '"1:Versatile Heritage:Heritage",' +
       '"1:Cactus Leshy:Heritage",' +
       '"1:Fruit Leshy:Heritage",' +
       '"1:Fungus Leshy:Heritage",' +
@@ -138,7 +132,6 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Attribute Boost (Choose 2 from any)",' +
       '"1:Darkvision","1:Ancestry Feats","1:Orc Heritage" ' +
     'Selectables=' +
-      '"1:Versatile Heritage:Heritage",' +
       '"1:Badlands Orc:Heritage",' +
       '"1:Battle-Ready Orc:Heritage",' +
       '"1:Deep Orc:Heritage",' +
@@ -151,7 +144,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
 };
 for(let a in Pathfinder2ERemaster.ANCESTRIES)
   Pathfinder2ERemaster.ANCESTRIES[a] =
-    Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute');
+    Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute')
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage",');
 Pathfinder2ERemaster.ARMORS = {
   'None':Pathfinder2E.ARMORS.None,
   "Explorer's Clothing":Pathfinder2E.ARMORS["Explorer's Clothing"],
@@ -216,7 +210,7 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Prisoner':Pathfinder2E.BACKGROUNDS.Prisoner,
   'Raised By Belief':
     'Features=' +
-      // TODO deity's ability
+      // TODO deity's attribute
       '"1:Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       // TODO deity's skills; Assurance (deity skill)
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
@@ -797,7 +791,7 @@ Pathfinder2ERemaster.CLASSES = {
       'A10:1@19'
 };
 Pathfinder2ERemaster.DEITIES = {
-  // TODO Divine Attribute is new; Aignment and FollowerAlignments eliminated
+  // TODO Divine Attribute is new; Alignment and FollowerAlignments eliminated
   'None':'',
   'Abadar':
     Pathfinder2E.DEITIES.Abadar.replace('Magnificent Mansion', 'Planar Palace'),
@@ -820,7 +814,7 @@ Pathfinder2ERemaster.DEITIES = {
   'Nethys':Pathfinder2E.DEITIES.Nethys + ' ' +
     'Spells=' +
       '"1:Force Barrage","2:Embed Message","3:Levitate","4:Flicker",' +
-      '"5:Telekinetic Haul","6:Wall Of Force","7:Warp Mind","8:Quadary",' +
+      '"5:Telekinetic Haul","6:Wall Of Force","7:Warp Mind","8:Quandary",' +
       '"9:Detonate Magic"',
   'Norgorber':
     Pathfinder2E.DEITIES.Norgorber
@@ -841,8 +835,6 @@ Pathfinder2ERemaster.DEITIES = {
     Pathfinder2E.DEITIES['Zon-Kuthon'].replace('Shadow Walk', 'Umbral Journey')
 };
 Pathfinder2ERemaster.FEATS = {
-
-  // TODO
 
   // Ancestries
   'Dwarven Doughtiness':'Trait=Ancestry,Dwarf',
@@ -1019,9 +1011,12 @@ Pathfinder2ERemaster.FEATS = {
   'Undying Ferocity':
     'Trait=Ancestry,Orc Require="level >= 9","features.Orc Ferocity"',
   'Incredible Ferocity':Pathfinder2E.FEATS['Incredible Ferocity'],
-  // TODO requires "animal companion, Pet, or Bonded Animal"
   'Ferocious Beasts':
-    'Trait=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
+    'Trait=Ancestry,Orc ' +
+    'Require=' +
+      '"level >= 13",' +
+      '"features.Orc Ferocity",' +
+      '"features.Animal Companion || features.Pet || features.Bonded Animal"',
   'Spell Devourer':
     'Trait=Ancestry,Orc Require="level >= 13","features.Orc Superstition"',
   'Rampaging Ferocity':
@@ -1038,7 +1033,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait="Ancestry,Changeling" Require="level >= 9","rank.Occultism >= 2"',
   'Hag Magic':'Trait="Ancestry,Changeling" Require="level >= 13"',
 
-  'Bestial Minifestation':'Trait="Ancestry,Nephilim"',
+  'Bestial Manifestation':'Trait="Ancestry,Nephilim"',
   'Halo':'Trait="Ancestry,Nephilim"',
   'Nephilim Eyes':'Trait="Ancestry,Nephilim"',
   'Nephilim Lore':'Trait="Ancestry,Nephilim"',
@@ -1265,7 +1260,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Melodious Spell']
     .replace('Manipulate,Metamagic', 'Spellshape'),
   'Rallying Anthem':Pathfinder2E.FEATS['Inspire Defense'],
-  'Ritual Researcer':
+  'Ritual Researcher':
     'Trait=Class,Bard,Uncommon ' +
     'Require="level >= 4","features.Enigma","rank.Occultism >= 2"',
   'Triple Time':Pathfinder2E.FEATS['Triple Time'],
@@ -1899,10 +1894,10 @@ Pathfinder2ERemaster.FEATS = {
   'Defensive Recovery':
     Pathfinder2E.FEATS['Defensive Recovery']
     .replace('Metamagic', 'Spellshape') + ' ' +
-    'Require="leve >= 12"',
+    'Require="level >= 12"',
   'Domain Focus':Pathfinder2E.FEATS['Domain Focus'],
   'Emblazon Antimagic':Pathfinder2E.FEATS['Emblazon Antimagic'],
-  'Foctunate Relief':'Trait=Class,Cleric,Fortune Require="level >= 12"',
+  'Fortunate Relief':'Trait=Class,Cleric,Fortune Require="level >= 12"',
   'Sapping Symbol':
     'Trait=Class,Cleric Require="level >= 12","features.Raise Symbol"',
   'Shared Replenishment':Pathfinder2E.FEATS['Shared Replenishment'],
@@ -2070,7 +2065,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Druid ' +
     'Require=' +
       '"level >= 14",' +
-      '"features.Untaimed Form",' +
+      '"features.Untamed Form",' +
       '"features.Dragon Shape || features.Elemental Shape || features.Plant Shape || features.Soaring Shape"',
   'Sow Spell':'Trait=Class,Druid,Concentrate,Spellshape Require="level >= 14"',
   'Specialized Companion':Pathfinder2E.FEATS['Specialized Companion'],
@@ -2087,7 +2082,6 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 16",' +
       '"features.Storm || features.Order Explorer (Storm)"',
   'Invoke Disaster':Pathfinder2E.FEATS['Invoke Disaster'],
-  // TODO Change from Strength to modifier
   'Perfect Form Control':Pathfinder2E.FEATS['Perfect Form Control'],
   'Primal Aegis':'Trait=Class,Druid Require="level >= 18"',
   "Hierophant's Power":Pathfinder2E.FEATS["Hierophant's Power"],
@@ -2407,7 +2401,6 @@ Pathfinder2ERemaster.FEATS = {
   'The Harder They Fall':'Trait=Class,Rogue Require="level >= 4"',
   'Twin Distraction':
     'Trait=Class,Rogue Require="level >= 4","features.Twin Feint"',
-  // TODO Check on Sneak Attack requirement
   'Analyze Weakness':
     'Trait=Class,Rogue Require="level >= 6","features.Sneak Attack"',
   'Anticipate Ambush':
@@ -2565,7 +2558,7 @@ Pathfinder2ERemaster.FEATS = {
   'Rites Of Convocation':'Trait=Class,Witch Require="level >= 4"',
   'Sympathetic Strike':
     'Trait=Class,Witch Require="level >= 4","features.Witch\'s Armaments"',
-  'Cermonial Knife':'Trait=Class,Witch Require="level >= 6"',
+  'Ceremonial Knife':'Trait=Class,Witch Require="level >= 6"',
   'Greater Lesson':'Trait=Class,Witch Require="level >= 6"',
   // Steady Spellcasting as above
   "Witch's Charge":'Trait=Class,Witch,Detection Require="level >= 6"',
@@ -2620,7 +2613,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Wizard Require="level >= 6","rank.Deception >= 2"',
   'Explosive Arrival':
     'Trait=Class,Wizard,Concentrate,Manipulate,Spellshape Require="level >= 6"',
-  'Irresistable Magic':Pathfinder2E.FEATS['Spell Penetration'],
+  'Irresistible Magic':Pathfinder2E.FEATS['Spell Penetration'],
   'Split Slot':'Trait=Class,Wizard Require="level >= 6"',
   // Steady Spellcasting as above
   'Advanced School Spell':Pathfinder2E.FEATS['Advanced School Spell'],
@@ -3138,8 +3131,6 @@ Pathfinder2ERemaster.FEATS = {
 };
 Pathfinder2ERemaster.FEATURES = {
 
-  // TODO
-
   // Ancestry
   'Ancestry Feats':'Section=feature Note="%V selections"',
   'Versatile Heritage':'Section=feature Note="1 selection"',
@@ -3234,7 +3225,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"+2 Hit Points",' +
       '"+2 vs. attempts to Reposition, Shove, or Trip",' +
       '"Can go 2 weeks without sunlight before starving"',
-  'Seaweek Leshy':
+  'Seaweed Leshy':
     'Section=ability,ability ' +
     'Note=' +
       '"-5 Speed",' +
@@ -3394,7 +3385,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     // TODO Will DC
-    'Note="Places an illusion of normal cloting over armor"',
+    'Note="Places an illusion of normal clothing over armor"',
   'Cautious Curiosity':
     'Section=magic ' +
     // TODO arcane or occult
@@ -3439,7 +3430,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Vandal':
     'Section=combat,skill ' +
     'Note=' +
-      '"Strikes agains unattended objects and traps ignore 5 Hardness",' +
+      '"Strikes against unattended objects and traps ignore 5 Hardness",' +
       '"Skill Trained (Thievery)"',
   'Cave Climber':Pathfinder2E.FEATURES['Cave Climber'],
   'Cling':
@@ -3448,7 +3439,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Moves with target after a successful Strike with a hand free until a successful DC %{skillModifier.Acrobatics} Escape"',
   'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
-  'Recless Abandon':
+  'Reckless Abandon':
     'Action=Free ' +
     'Section=save ' +
     'Note="Critical failures on saves are normal failures and result in minimum damage until end of turn once per day"',
@@ -3456,7 +3447,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
   'Folksy Patter':
     'Section=skill ' +
-    'Note="Can transmit a 3-word hidden message to a target who succeeeds on a DC 20 Perception check; DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
+    'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
   'Halfling Lore':Pathfinder2E.FEATURES['Halfling Lore'],
   'Halfling Luck':Pathfinder2E.FEATURES['Halfling Luck'],
   // Changed
@@ -4250,7 +4241,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Emotional Push':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a foe who fails a save vs. emotion off-guard aginst next self attack before the end of turn"',
+    'Note="Makes a foe who fails a save vs. emotion off-guard against next self attack before the end of turn"',
   'Esoteric Polymath':Pathfinder2E.FEATURES['Esoteric Polymath'],
   "Loremaster's Etude":
     Pathfinder2E.FEATURES["Loremaster's Etude"]
@@ -4281,7 +4272,7 @@ Pathfinder2ERemaster.FEATURES = {
   'In Tune':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R60\' Subequent composition spell emanation centers on a willing ally"',
+    'Note="R60\' Subsequent composition spell emanation centers on a willing ally"',
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
@@ -7394,7 +7385,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
   'Break Curse':
     'Section=skill ' +
-    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of prepartion, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
@@ -7474,7 +7465,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Nimble Crawl':Pathfinder2E.FEATURES['Nimble Crawl'],
   'No Cause For Alarm':
     'Section=skill ' +
-    'Note="Successful Diplomacy reduces fightened levels by 1 in a 10\' emanation, or by 2 on a critical success"',
+    'Note="Successful Diplomacy reduces frightened levels by 1 in a 10\' emanation, or by 2 on a critical success"',
   'Oddity Identification':
     Pathfinder2E.FEATURES['Oddity Identification']
     .replace('mental', 'fortune, mental'),
@@ -7551,7 +7542,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+%{level-(level<5?2:level<7?1:0)} on untrained skill checks"',
   'Unusual Treatment':
     'Section=skill ' +
-    'Note="Successful DC 20 check to Treat Wounds reduces one of clumsy, enfeebled, or stupified%{rank.Medicine>=3?\', or successful DC 30 reduces drained,\':\'\'} by %{rank.Medicine<3?1:2} once per patient per day"',
+    'Note="Successful DC 20 check to Treat Wounds reduces one of clumsy, enfeebled, or stupefied%{rank.Medicine>=3?\', or successful DC 30 reduces drained,\':\'\'} by %{rank.Medicine<3?1:2} once per patient per day"',
   'Virtuosic Performer':Pathfinder2E.FEATURES['Virtuosic Performer'],
   'Wall Jump':Pathfinder2E.FEATURES['Wall Jump'],
   'Ward Medic':Pathfinder2E.FEATURES['Ward Medic'],
@@ -11562,8 +11553,7 @@ Pathfinder2ERemaster.WEAPONS = {
   'Sap':Pathfinder2E.WEAPONS.Sap,
   'Scimitar':Pathfinder2E.WEAPONS.Scimitar,
   'Scythe':Pathfinder2E.WEAPONS.Scythe,
-  // TODO
-  'Shield':Pathfinder2E.WEAPONS.Shield,
+  'Shield Bash':Pathfinder2E.WEAPONS.Shield,
   'Shield Boss':Pathfinder2E.WEAPONS['Shield Boss'],
   'Shield Spikes':Pathfinder2E.WEAPONS['Shield Spikes'],
   'Shortsword':Pathfinder2E.WEAPONS.Shortsword,
@@ -11606,25 +11596,10 @@ Pathfinder2ERemaster.WEAPONS = {
   'Javelin':Pathfinder2E.WEAPONS.Javelin,
   'Sling':Pathfinder2E.WEAPONS.Sling,
 
-  // TODO
   'Lesser Acid Flask':
-    'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    Pathfinder2E.WEAPONS['Lesser Acid Flask'] + ' Trait=Acid,Bomb,Splash',
   "Lesser Alchemist's Fire":
-    'Category=Martial Price=0 Damage="1d8 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
-  'Lesser Bottled Lightning':
-    'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
-  'Lesser Frost Vial':
-    'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
-  'Lesser Tanglefoot Bag':
-    'Category=Martial Price=0 Damage="0" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown Range=20',
-  'Lesser Thunderstone':
-    'Category=Martial Price=0 Damage="1d4 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    Pathfinder2E.WEAPONS["Lesser Alchemist's Fire"] + ' Trait=Fire,Bomb,Splash',
   'Arbalest':
     'Category=Martial Price=12 Damage="1d10 P" Bulk=2 Hands=2 Group=Crossbow ' +
     'Trait=Backstabber,"Reload 1" Range=110',
@@ -11643,11 +11618,11 @@ Pathfinder2ERemaster.WEAPONS = {
 
 /* Defines the rules related to character abilities. */
 Pathfinder2ERemaster.attributeRules = function(rules, abilities) {
-  // TODO
-  rules.defineRule
-    ('abilityGeneration', '', '=', '"All 10s; standard ancestry boosts"');
-  rules.defineRule('alignment', '', '=', '"Neutral"');
   Pathfinder2E.abilityRules(rules, abilities);
+  delete rules.choices.abilgens;
+  rules.defineChoice('abilgens',
+    'Standard ancestry boosts', 'Two free ancestry boosts'
+  );
   for(let a in abilities) {
     delete rules.choices.notes[a];
     rules.defineChoice('notes', a + ':%1');
@@ -11989,7 +11964,7 @@ Pathfinder2ERemaster.deityRules = function(
   rules, name, font, domains, weapon, skill, spells
 ) {
   Pathfinder2E.deityRules(
-    rules, name, 'N', ['N'], font, domains, weapon, skill, spells
+    rules, name, null, [], font, domains, weapon, skill, spells
   );
 };
 
@@ -12120,7 +12095,7 @@ Pathfinder2ERemaster.weaponRules = function(
     rules, name, category, price, damage, bulk, hands, group, traits, range
   );
   rules.defineRule('proficiencyLevelBonus.' + name,
-    'combatNotes.martialExperience', '=', '0',
+    'combatNotes.martialExperience', '=', '0'
   );
 };
 
