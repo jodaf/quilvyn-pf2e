@@ -115,8 +115,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
-      '"1:Ability Flaw (Intelligence)",' +
+      '"1:Attribute Boost (Constitution; Wisdom; Choose 1 from any)",' +
+      '"1:Attribute Flaw (Intelligence)",' +
       '"1:Small","1:Low-Light Vision","1:Ancestry Feats","1:Leshy Heritage",' +
       '"1:Plant Nourishment" ' +
     'Selectables=' +
@@ -135,7 +135,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
   'Orc':
     'HitPoints=10 ' +
     'Features=' +
-      '"1:Ability Boost (Choose 2 from any)",' +
+      '"1:Attribute Boost (Choose 2 from any)",' +
       '"1:Darkvision","1:Ancestry Feats","1:Orc Heritage" ' +
     'Selectables=' +
       '"1:Versatile Heritage:Heritage",' +
@@ -149,8 +149,10 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Languages=Common,Orcish ' +
     'Trait=Orc,Humanoid'
 };
+for(let a in Pathfinder2ERemaster.ANCESTRIES)
+  Pathfinder2ERemaster.ANCESTRIES[a] =
+    Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute');
 Pathfinder2ERemaster.ARMORS = {
-  // TODO Str is now expressed as a modifier instead of a score
   'None':Pathfinder2E.ARMORS.None,
   "Explorer's Clothing":Pathfinder2E.ARMORS["Explorer's Clothing"],
   'Padded':Pathfinder2E.ARMORS.Padded,
@@ -165,6 +167,14 @@ Pathfinder2ERemaster.ARMORS = {
   'Half Plate':Pathfinder2E.ARMORS['Half Plate'],
   'Full Plate':Pathfinder2E.ARMORS['Full Plate']
 };
+for(let a in Pathfinder2ERemaster.ARMORS) {
+  let m = Pathfinder2ERemaster.ARMORS[a].match(/Str=(\d+)/);
+  if(m) {
+    let strMod = Math.floor((+m[1] - 10) / 2);
+    Pathfinder2ERemaster.ARMORS[a] =
+      Pathfinder2ERemaster.ARMORS[a].replace(/Str=\d+/, 'Str=' + strMod);
+  }
+}
 Pathfinder2ERemaster.BACKGROUNDS = {
   'Acolyte':Pathfinder2E.BACKGROUNDS.Acolyte,
   'Acrobat':Pathfinder2E.BACKGROUNDS.Acrobat,
@@ -177,12 +187,12 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Charlatan':Pathfinder2E.BACKGROUNDS.Charlatan,
   'Cook':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
+      '"1:Attribute Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Cooking Lore)",1:Seasoned',
   'Criminal':Pathfinder2E.BACKGROUNDS.Criminal,
   'Cultist':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any)",' +
+      '"1:Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any)",' +
       // TODO deity or cult lore
       '"1:Skill Trained (Occultism, Choose 1 from any Deity Lore)","1:Schooled In Secrets"',
   'Detective':Pathfinder2E.BACKGROUNDS.Detective,
@@ -207,7 +217,7 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Raised By Belief':
     'Features=' +
       // TODO deity's ability
-      '"1:Ability Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
+      '"1:Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
       // TODO deity's skills; Assurance (deity skill)
       '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
   'Sailor':Pathfinder2E.BACKGROUNDS.Sailor,
@@ -216,12 +226,15 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Street Urchin':Pathfinder2E.BACKGROUNDS['Street Urchin'],
   'Teacher':
     'Features=' +
-      '"1:Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
+      '"1:Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Performance, Society; Academia Lore)",' +
       '"1:Experienced Professional"',
   'Tinker':Pathfinder2E.BACKGROUNDS.Tinker,
   'Warrior':Pathfinder2E.BACKGROUNDS.Warrior
 };
+for(let b in Pathfinder2ERemaster.BACKGROUNDS)
+  Pathfinder2ERemaster.BACKGROUNDS[b] =
+    Pathfinder2ERemaster.BACKGROUNDS[b].replaceAll('Ability', 'Attribute');
 Pathfinder2ERemaster.CLASSES = {
   /*
   'Alchemist':
@@ -315,20 +328,20 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Dragon Instinct (Silver):Instinct"',
   */
   'Bard':
-      // TODO 1:Ability Boosts => 1:Attribute Boosts
-      // 1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks) =>
-      // 1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
-      // TODO 1:Spell Trained (Occult) => 1:Spell Trained (Bard)?
-      // 1:Occult Spellcasting => 1:Bard Spellcasting
-      // "" => 1:Warrior:Muse
-      // 3:Lightning Reflexes => 3:Reflex Expertise
-      // 9:Great Fortitude => 9:Fortitude Expertise
-      // 9:Resolve => 9:Performer's Heart
-      // 11: Vigilant Senses => 11:Perception Mastery
-      // 17:Greater Resolve => 17:Greater Performer's Heart
-    'Ability=charisma HitPoints=8 ' +
+    // Ability => Attribute
+    // 1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks) =>
+    // 1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
+    // TODO 1:Spell Trained (Occult) => 1:Spell Trained (Bard)?
+    // 1:Occult Spellcasting => 1:Bard Spellcasting
+    // "" => 1:Warrior:Muse
+    // 3:Lightning Reflexes => 3:Reflex Expertise
+    // 9:Great Fortitude => 9:Fortitude Expertise
+    // 9:Resolve => 9:Performer's Heart
+    // 11: Vigilant Senses => 11:Perception Mastery
+    // 17:Greater Resolve => 17:Greater Performer's Heart
+    'Attribute=charisma HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Bard Skills",' +
@@ -406,6 +419,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
 */
   'Cleric':
+    // Ability => Attribute
     // TODO 1:Spell Trained (Divine) => Spell Trained (Cleric)?
     // "" => 1:Class Trained (Cleric)
     // 1:Divine Spellcasting => Cleric Spellcasting
@@ -413,9 +427,9 @@ Pathfinder2ERemaster.CLASSES = {
     // 5:Alertness => 5:Perception Expertise
     // 9:Resolve => 9:Resolute Faith
     // 11:Lightning Reflexes => 11:Reflex Expertise
-    'Ability=wisdom HitPoints=8 ' +
+    'Attribute=wisdom HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Wisdom)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Wisdom)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Cleric Skills",' +
@@ -445,6 +459,7 @@ Pathfinder2ERemaster.CLASSES = {
       'D9:2@17;3@18,' +
       'D10:1@19',
   'Druid':
+    // Ability => Attribute
     // TODO 1:Spell Trained (Primal) => 1:Spell Trained (Druid)?
     // "" => Class Trained (Druid)
     // 1:Primal Spellcasting => 1:Druid Spellcasting
@@ -456,9 +471,9 @@ Pathfinder2ERemaster.CLASSES = {
     // 5:Lightning Reflexes => 5:Reflex Expertise
     // 11:Druid Weapon Expertise => 11:Weapon Expertise
     // 11:Resolve => 11:Wild Willpower
-    'Ability=wisdom HitPoints=8 ' +
+    'Attribute=wisdom HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Wisdom)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Wisdom)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
       '"1:Druid Skills",' +
@@ -491,15 +506,16 @@ Pathfinder2ERemaster.CLASSES = {
       'P9:2@17;3@18,' +
       'P10:1@19',
   'Fighter':
+    // Ability => Attribute
     // 1:Attack Of Opportunity => 1:Reactive Strike
     // 9:Juggernaut => 9:Battle Hardened
     // 15:Evasion => 15:Tempered Reflexes
-    'Ability=strength,dexterity HitPoints=10 ' +
+    'Attribute=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Fighter Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
+      '"1:Fighter Key Attribute",' +
+      '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
+      '"features.Strength ? 1:Attribute Boost (Strength)",' +
+      '"1:Attribute Boosts",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Fighter Skills",' +
@@ -514,8 +530,8 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Tempered Reflexes","15:Greater Weapon Specialization",' +
       '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability"',
+      '"1:Dexterity:Key Attribute",' +
+      '"1:Strength:Key Attribute"',
 /*
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
@@ -552,6 +568,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
 */
   'Ranger':
+    // Ability => Attribute
     // 3:Iron Will => 3:Will Expertise
     // 5:Trackless Step => 5:Trackless Journey
     // 7:Evasion => 7:Natural Reflexes
@@ -562,12 +579,12 @@ Pathfinder2ERemaster.CLASSES = {
     // 15:Improved Evasion => 15:Greater Natural Reflexes
     // 15:Incredible Senses => 15:Perception Legend
     // 19:Second Skin => 19:Medium Armor Mastery
-    'Ability=strength,dexterity HitPoints=10 ' +
+    'Attribute=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Ranger Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
+      '"1:Ranger Key Attribute",' +
+      '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
+      '"features.Strength ? 1:Attribute Boost (Strength)",' +
+      '"1:Attribute Boosts",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Fortitude; Reflex)","Save Trained (Will)",' +
       '"1:Ranger Skills",' +
@@ -584,13 +601,14 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Greater Natural Reflexes","15:Perception Legend",' +
       '"17:Masterful Hunter","19:Medium Armor Mastery","19:Swift Prey" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability",' +
+      '"1:Dexterity:Key Attribute",' +
+      '"1:Strength:Key Attribute",' +
       '"1:Flurry:Hunter\'s Edge",' +
       '"1:Precision:Hunter\'s Edge",' +
       '"1:Outwit:Hunter\'s Edge"',
   'Rogue':
-     // 1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks) => Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
+    // Ability => Attribute
+    // 1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks) => Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
     // "" => 1:Mastermind:Racket
     // "" => features.Mastermind ? 1:Intelligence:Key Ability
     // 7:Evasion => 7:Evasive Reflexes
@@ -599,17 +617,17 @@ Pathfinder2ERemaster.CLASSES = {
     // 13:Improved Evasion => 13:Greater Rogue Reflexes
     // 13:Incredible Senses => 13:Perception Legend
     // 17:Slippery Mind => 17:Agile Mind
-    'Ability=strength,constitution,dexterity,intelligence,wisdom,charisma ' +
+    'Attribute=strength,constitution,dexterity,intelligence,wisdom,charisma ' +
     'HitPoints=8 ' +
     'Features=' +
-      '"1:Rogue Key Ability",' +
-      '"1:Ability Boosts",' +
-      '"features.Charisma ? 1:Ability Boost (Charisma)",' +
-      '"features.Constitution ? 1:Ability Boost (Constitution)",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Intelligence ? 1:Ability Boost (Intelligence)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"features.Wisdom ? 1:Ability Boost (Wisdom)",' +
+      '"1:Rogue Key Attribute",' +
+      '"1:Attribute Boosts",' +
+      '"features.Charisma ? 1:Attribute Boost (Charisma)",' +
+      '"features.Constitution ? 1:Attribute Boost (Constitution)",' +
+      '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
+      '"features.Intelligence ? 1:Attribute Boost (Intelligence)",' +
+      '"features.Strength ? 1:Attribute Boost (Strength)",' +
+      '"features.Wisdom ? 1:Attribute Boost (Wisdom)",' +
       '"1:Perception Expert",' +
       '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
       '"1:Rogue Skills",' +
@@ -626,10 +644,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Double Debilitation","15:Greater Weapon Specialization",' +
       '"17:Agile Mind","19:Light Armor Mastery","19:Master Strike" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"features.Mastermind ? 1:Intelligence:Key Ability",' +
-      '"features.Ruffian ? 1:Strength:Key Ability",' +
-      '"features.Scoundrel ? 1:Charisma:Key Ability",' +
+      '"1:Dexterity:Key Attribute",' +
+      '"features.Mastermind ? 1:Intelligence:Key Attribute",' +
+      '"features.Ruffian ? 1:Strength:Key Attribute",' +
+      '"features.Scoundrel ? 1:Charisma:Key Attribute",' +
       '"1:Mastermind:Racket",' +
       '"1:Ruffian:Racket",' +
       '"1:Scoundrel:Racket",' +
@@ -689,9 +707,9 @@ Pathfinder2ERemaster.CLASSES = {
       '10:1@19',
 */
   'Witch':
-    'Ability=intelligence HitPoints=6 ' +
+    'Attribute=intelligence HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Intelligence)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Witch Skills",' +
@@ -726,6 +744,7 @@ Pathfinder2ERemaster.CLASSES = {
       '9:3@17;4@18,' +
       '10:1@19',
   'Wizard':
+    // Ability => Attribute
     // 1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks) => 1:Attack Trained (Simple Weapons; Unarmed Attacks)
     // TODO 1:Spell Trained (Arcane) => 1:Spell Trained (Wizard)?
     // "" => 1:Class Trained (Wizard)
@@ -735,9 +754,9 @@ Pathfinder2ERemaster.CLASSES = {
     // schools have been replaced
     // 11:Wizard Weapon Expertise => 11:Weapon Expertise
     // 17:Resolve => 17:Prodigious Will
-    'Ability=intelligence HitPoints=6 ' +
+    'Attribute=intelligence HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Intelligence)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Wizard Skills",' +
@@ -3010,15 +3029,10 @@ Pathfinder2ERemaster.FEATS = {
   'Foil Senses':Pathfinder2E.FEATS['Foil Senses'],
   'Forager':Pathfinder2E.FEATS.Forager,
   'Glad-Hand':Pathfinder2E.FEATS['Glad-Hand'],
-  'Group Coercion': // Target counts changed
-    'Section=skill ' +
-    'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
-  'Group Impression': // Target counts changed
-    'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
+  'Group Coercion':Pathfinder2E.FEATS['Group Coercion'],
+  'Group Impression':Pathfinder2E.FEATS['Group Impression'],
   'Hefty Hauler':Pathfinder2E.FEATS['Hefty Hauler'],
-  'Hobnobber':
-    Pathfinder2E.FEATS.Hobnobber.replace('when taking normal time ', ''),
+  'Hobnobber':Pathfinder2E.FEATS.Hobnobber,
   'Impeccable Crafting':Pathfinder2E.FEATS['Impeccable Crafting'],
   'Impressive Performance':Pathfinder2E.FEATS['Impressive Performance'],
   'Incredible Initiative':Pathfinder2E.FEATS['Incredible Initiative'],
@@ -3030,7 +3044,6 @@ Pathfinder2ERemaster.FEATS = {
   'Kip Up':Pathfinder2E.FEATS['Kip Up'],
   'Lasting Coercion':Pathfinder2E.FEATS['Lasting Coercion'],
   'Legendary Codebreaker':Pathfinder2E.FEATS['Legendary Codebreaker'],
-
   'Legendary Linguist':Pathfinder2E.FEATS['Legendary Linguist'],
   'Legendary Medic':Pathfinder2E.FEATS['Legendary Medic'],
   'Legendary Negotiation':Pathfinder2E.FEATS['Legendary Negotiation'],
@@ -3040,7 +3053,7 @@ Pathfinder2ERemaster.FEATS = {
   'Legendary Survivalist':Pathfinder2E.FEATS['Legendary Survivalist'],
   'Legendary Thief':Pathfinder2E.FEATS['Legendary Thief'],
   'Lengthy Diversion':Pathfinder2E.FEATS['Lengthy Diversion'],
-  'Leverage Connections':
+  'Leverage Connections': // TODO Player Core 2
     Pathfinder2E.FEATS.Connections
     .replace('Graces', 'Graces || features.Streetwise'),
   'Lie To Me':Pathfinder2E.FEATS['Lie To Me'],
@@ -3403,7 +3416,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
-  'Burn It!':Pathfinder2E.FEATURES['Burn It!'],
+  'Burn It!':
+    Pathfinder2E.FEATURES['Burn It!'].replace('spell level', 'spell rank'),
   'City Scavenger':Pathfinder2E.FEATURES['City Scavenger'],
   'Goblin Lore':Pathfinder2E.FEATURES['Goblin Lore'],
   'Goblin Scuttle':Pathfinder2E.FEATURES['Goblin Scuttle'],
@@ -3494,7 +3508,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Natural Ambition':Pathfinder2E.FEATURES['Natural Ambition'],
   'Natural Skill':Pathfinder2E.FEATURES['Natural Skill'],
   'Unconventional Weaponry':Pathfinder2E.FEATURES['Unconventional Weaponry'],
-  'Adaptive Adept':Pathfinder2E.FEATURES['Adaptive Adept'],
+  'Adaptive Adept':
+    Pathfinder2E.FEATURES['Adaptive Adept'].replace('level', 'rank'),
   'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
   'Sense Allies':
     'Section=skill ' +
@@ -3680,7 +3695,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Class Features and Feats
 
-  'Ability Boosts':Pathfinder2E.FEATURES['Ability Boosts'],
+  'Attribute Boosts':Pathfinder2E.FEATURES['Ability Boosts'],
   'General Feats':Pathfinder2E.FEATURES['General Feats'],
   'Skill Feats':Pathfinder2E.FEATURES['Skill Feats'],
   'Skill Increases':Pathfinder2E.FEATURES['Skill Increases'],
@@ -4206,7 +4221,8 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES.Polymath
     .replace('Unseen Servant', 'Phantasmal Minion'),
   // Reflex Expertise as above
-  'Signature Spells':Pathfinder2E.FEATURES['Signature Spells'],
+  'Signature Spells':
+    Pathfinder2E.FEATURES['Signature Spells'].replace('level', 'rank'),
   'Warrior':
     'Section=feature,magic ' +
     'Note=' +
@@ -5421,7 +5437,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
-  'Fighter Key Ability':'Section=feature Note="1 selection"',
+  'Fighter Key Attribute':'Section=feature Note="1 selection"',
   'Fighter Skills':
     'Section=skill ' +
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
@@ -6033,7 +6049,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Foes suffer flat-footed vs. self in natural and snare-imposed difficult terrain"',
   'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
   'Ranger Feats':'Section=feature Note="%V selections"',
-  'Ranger Key Ability':'Section=feature Note="1 selection"',
+  'Ranger Key Attribute':'Section=feature Note="1 selection"',
   'Ranger Skills':
     'Section=skill Note="Skill Trained (Nature; Survival; Choose %V from any)"',
   'Ranger Weapon Expertise':
@@ -6281,7 +6297,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
   'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
   'Rogue Feats':'Section=feature Note="%V selections"',
-  'Rogue Key Ability':'Section=feature Note="1 selection"',
+  'Rogue Key Attribute':'Section=feature Note="1 selection"',
   'Rogue Skills':
     'Section=skill Note="Skill Trained (Stealth; Choose %V from any)"',
   "Rogue's Racket":'Section=feature Note="1 selection"',
@@ -7365,7 +7381,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Administer First Aid to reduce a frightened or sickened condition by 2, or remove it entirely with a critical success"',
   'Alchemical Crafting':Pathfinder2E.FEATURES['Alchemical Crafting'],
   'Ancestral Paragon':Pathfinder2E.FEATURES['Ancestral Paragon'],
-  'Arcane Sense':Pathfinder2E.FEATURES['Arcane Sense'],
+  'Arcane Sense':Pathfinder2E.FEATURES['Arcane Sense'].replace('level', 'rank'),
   'Armor Proficiency':Pathfinder2E.FEATURES['Armor Proficiency'],
   'Assurance (%skill)':Pathfinder2E.FEATURES['Assurance (%skill)'],
   'Automatic Knowledge (%skill)':
@@ -7375,9 +7391,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Battle Medicine':Pathfinder2E.FEATURES['Battle Medicine'],
   'Bizarre Magic':Pathfinder2E.FEATURES['Bizarre Magic'],
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
-  'Break Curse:
+  'Break Curse':
     'Section=skill ' +
-    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min':\'8 hr\'} of prepartion, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of prepartion, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
@@ -7399,262 +7415,152 @@ Pathfinder2ERemaster.FEATURES = {
   'Divine Guidance':Pathfinder2E.FEATURES['Divine Guidance'],
   'Dubious Knowledge':Pathfinder2E.FEATURES['Dubious Knowledge'],
   'Expeditious Search':Pathfinder2E.FEATURES['Expeditious Search'],
-
-  'Fast Recovery':
-    'Section=save ' +
-    'Note="Regains 2x Hit Points and drained severity from rest/Successful Fortitude vs. an ongoing disease or poison reduces its stage by 2, or 1 if virulent; critical success by 3, or 2 if virulent"',
-  'Feather Step':'Section=ability Note="Can Step into difficult terrain"',
-  'Fleet':'Section=ability Note="+5 Speed"',
-  'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
-  'Incredible Investiture':'Section=magic Note="Can invest 12 items"',
-  'Ride':
+  'Experienced Professional':Pathfinder2E.FEATURES['Experienced Professional'],
+  'Experienced Smuggler':
+    Pathfinder2E.FEATURES['Experienced Smuggler'].replace(/\/[^"]*/, ''),
+  'Experienced Tracker':Pathfinder2E.FEATURES['Experienced Tracker'],
+  'Fascinating Performance':Pathfinder2E.FEATURES['Fascinating Performance'],
+  'Fast Recovery':Pathfinder2E.FEATURES['Fast Recovery'],
+  'Feather Step':Pathfinder2E.FEATURES['Feather Step'],
+  'Fleet':Pathfinder2E.FEATURES.Fleet,
+  'Foil Senses':Pathfinder2E.FEATURES['Foil Senses'],
+  'Forager':Pathfinder2E.FEATURES.Forager,
+  'Glad-Hand':Pathfinder2E.FEATURES['Glad-Hand'],
+  'Group Coercion': // Target counts changed
+    'Section=skill ' +
+    'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
+  'Group Impression': // Target counts changed
+    'Section=skill ' +
+    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
+  'Hefty Hauler':Pathfinder2E.FEATURES['Hefty Hauler'],
+  'Hobnobber':
+    Pathfinder2E.FEATURES.Hobnobber.replace('when taking normal time ', ''),
+  'Impeccable Crafting':Pathfinder2E.FEATURES['Impeccable Crafting'],
+  'Impressive Performance':Pathfinder2E.FEATURES['Impressive Performance'],
+  'Incredible Initiative':Pathfinder2E.FEATURES['Incredible Initiative'],
+  'Incredible Investiture':Pathfinder2E.FEATURES['Incredible Investiture'],
+  'Intimidating Glare':Pathfinder2E.FEATURES['Intimidating Glare'],
+  'Intimidating Prowess':Pathfinder2E.FEATURES['Intimidating Prowess'],
+  'Inventor':Pathfinder2E.FEATURES.Inventor,
+  'Kip Up':Pathfinder2E.FEATURES['Kip Up'],
+  'Lasting Coercion':Pathfinder2E.FEATURES['Lasting Coercion'],
+  'Legendary Codebreaker':Pathfinder2E.FEATURES['Legendary Codebreaker'],
+  'Legendary Linguist':Pathfinder2E.FEATURES['Legendary Linguist'],
+  'Legendary Medic':Pathfinder2E.FEATURES['Legendary Medic'],
+  'Legendary Negotiation':Pathfinder2E.FEATURES['Legendary Negotiation'],
+  'Legendary Performer':
+    Pathfinder2E.FEATURES['Legendary Performer']
+    .replace(/1 step[^\/]*/, '1 step for those with ranks in Society'),
+  'Legendary Professional':
+    Pathfinder2E.FEATURES['Legendary Professional']
+    .replace(/1 step[^\/]*/, '1 step for those with ranks in Society'),
+  'Legendary Sneak':Pathfinder2E.FEATURES['Legendary Sneak'],
+  'Legendary Survivalist':Pathfinder2E.FEATURES['Legendary Survivalist'],
+  'Legendary Thief':
+    Pathfinder2E.FEATURES['Legendary Thief'].replace(' with.*penalty', ''),
+  'Lengthy Diversion':Pathfinder2E.FEATURES['Lengthy Diversion'],
+  'Leverage Connections': // TODO Player Core 2
+    Pathfinder2E.FEATURES.Connections,
+  'Lie To Me':Pathfinder2E.FEATURES['Lie To Me'],
+  'Magical Crafting':Pathfinder2E.FEATURES['Magical Crafting'],
+  'Magical Shorthand':
+    Pathfinder2E.FEATURES['Magical Shorthand']
+    .replace(/with.*spell level/, 'with 10 min of study'),
+  'Monster Crafting':
+    'Section=skill Note="Can use monster bodies with Survival to craft items"',
+  'Multilingual':Pathfinder2E.FEATURES.Multilingual,
+  'Natural Medicine':Pathfinder2E.FEATURES['Natural Medicine'],
+  'Nimble Crawl':Pathfinder2E.FEATURES['Nimble Crawl'],
+  'No Cause For Alarm':
+    'Section=skill ' +
+    'Note="Successful Diplomacy reduces fightened levels by 1 in a 10\' emanation, or by 2 on a critical success"',
+  'Oddity Identification':
+    Pathfinder2E.FEATURES['Oddity Identification']
+    .replace('mental', 'fortune, mental'),
+  'Pet':
     'Section=feature ' +
-    'Note="Automatically succeeds when using Command an Animal to move/Mount acts on self turn"',
-  'Shield Block':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage"',
-  'Toughness':
-    'Section=combat,save ' +
-    'Note=' +
-      '"+%{level} Hit Points",' +
-      '"-1 DC on recovery checks"',
+    'Note="Has a Tiny animal minion with the same level, modifiers, and AC as self, %{level*5} Hit Points, low-light vision, 25\' Speed, and creature-specific abilities"',
+  'Pickpocket':Pathfinder2E.FEATURES.Pickpocket,
+  'Planar Survival':Pathfinder2E.FEATURES['Planar Survival'],
+  'Powerful Leap':Pathfinder2E.FEATURES['Powerful Leap'],
+  'Prescient Consumable':
+    'Section=feature ' +
+    'Note="Can retrieve an undeclared consumable from backpack once per shopping trip"',
+  'Prescient Planner':
+    'Section=feature ' +
+    'Note="Can retrieve an undeclared piece of adventuring gear from backpack once per shopping trip"',
+  'Quick Climb':Pathfinder2E.FEATURES['Quick Climb'],
+  'Quick Coercion':Pathfinder2E.FEATURES['Quick Coercion'],
+  // Times have changed
+  'Quick Disguise':
+    'Section=skill ' +
+    'Note="Can create a disguise %{rank.Deception>=4?\'using 1 action\':rank.Deception==3?\'as a 3-action activity\':\'in 1 min\'}"',
+  'Quick Identification':Pathfinder2E.FEATURES['Quick Identification'],
+  'Quick Jump':Pathfinder2E.FEATURES['Quick Jump'],
+  'Quick Recognition':Pathfinder2E.FEATURES['Quick Recognition'],
+  'Quick Repair':Pathfinder2E.FEATURES['Quick Repair'],
+  'Quick Squeeze':Pathfinder2E.FEATURES['Quick Squeeze'],
+  'Quick Swim':Pathfinder2E.FEATURES['Quick Swim'],
+  'Quick Unlock':Pathfinder2E.FEATURES['Quick Unlock'],
+  'Quiet Allies':Pathfinder2E.FEATURES['Quiet Allies'],
+  'Rapid Mantel':Pathfinder2E.FEATURES['Rapid Mantel'],
+  'Read Lips':
+    Pathfinder2E.FEATURES['Read Lips'].replace('flat-footed', 'off-guard'),
+  'Recognize Spell':Pathfinder2E.FEATURES['Recognize Spell'],
+  'Ride':Pathfinder2E.FEATURES.Ride,
+  'Robust Recovery':Pathfinder2E.FEATURES['Robust Recovery'],
+  'Scare To Death':Pathfinder2E.FEATURES['Scare To Death'],
+  'Schooled In Secrets':
+    'Section=skill ' +
+    'Note="Can use Occultism to Gather Information about secret societies and to Impersonate a member"',
+  'Seasoned':
+    'Section=skill ' +
+    'Note="+%{$\'rank.Alcohol Lore\' >= 3 || $\'rank.Cooking Lore\' >= 3 || rank.Crafting >= 3?2:1} to Craft food and drink"',
+  'Shameless Request':Pathfinder2E.FEATURES['Shameless Request'],
+  'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
+  'Sign Language':Pathfinder2E.FEATURES['Sign Language'],
+  'Skill Training (%skill)':Pathfinder2E.FEATURES['Skill Training (%skill)'],
+  'Slippery Secrets':Pathfinder2E.FEATURES['Slippery Secrets'],
+  'Specialty Crafting':Pathfinder2E.FEATURES['Specialty Crafting'],
+  'Steady Balance':
+    Pathfinder2E.FEATURES['Steady Balance']
+    .replace('flat-footed', 'off-balance'),
+  'Streetwise':Pathfinder2E.FEATURES.Streetwise,
+  'Student Of The Canon':Pathfinder2E.FEATURES['Student Of The Canon'],
+  'Subtle Theft':Pathfinder2E.FEATURES['Subtle Theft'],
+  'Survey Wildlife':Pathfinder2E.FEATURES['Survey Wildlife'],
+  'Swift Sneak':Pathfinder2E.FEATURES['Swift Sneak'],
+  'Terrain Expertise (%terrain)':
+    Pathfinder2E.FEATURES['Terrain Expertise (%terrain)'],
+  'Terrain Stalker (Rubble)':Pathfinder2E.FEATURES['Terrain Stalker (Rubble)'],
+  'Terrain Stalker (Snow)':Pathfinder2E.FEATURES['Terrain Stalker (Snow)'],
+  'Terrain Stalker (Underbrush)':
+    Pathfinder2E.FEATURES['Terrain Stalker (Underbrush)'],
+  'Terrified Retreat':Pathfinder2E.FEATURES['Terrified Retreat'],
+  'Titan Wrestler':Pathfinder2E.FEATURES['Titan Wrestler'],
+  'Toughness':Pathfinder2E.FEATURES.Toughness,
+  'Train Animal':Pathfinder2E.FEATURES['Train Animal'],
+  'Trick Magic Item':Pathfinder2E.FEATURES['Trick Magic Item'],
+  'Underwater Marauder':Pathfinder2E.FEATURES['Underwater Marauder'],
+  'Unified Theory':Pathfinder2E.FEATURES['Unified Theory'],
+  'Unmistakable Lore':Pathfinder2E.FEATURES['Unmistakable Lore'],
+  // Computation has changed
   'Untrained Improvisation':
     'Section=skill ' +
-    'Note="+%{level<7 ? level // 2 : level} on untrained skill checks"',
+    'Note="+%{level-(level<5?2:level<7?1:0)} on untrained skill checks"',
+  'Unusual Treatment':
+    'Section=skill ' +
+    'Note="Successful DC 20 check to Treat Wounds reduces one of clumsy, enfeebled, or stupified%{rank.Medicine>=3?\', or successful DC 30 reduces drained,\':\'\'} by %{rank.Medicine<3?1:2} once per patient per day"',
+  'Virtuosic Performer':Pathfinder2E.FEATURES['Virtuosic Performer'],
+  'Wall Jump':Pathfinder2E.FEATURES['Wall Jump'],
+  'Ward Medic':Pathfinder2E.FEATURES['Ward Medic'],
+  'Wary Disarmament':Pathfinder2E.FEATURES['Wary Disarmament'],
+  // Rank computation has changed
   'Weapon Proficiency (Martial Weapons)':
-    'Section=combat Note="Attack Trained (Martial Weapons)"',
-  'Weapon Proficiency (Simple Weapons)':
-    'Section=combat Note="Attack Trained (Simple Weapons)"',
+    'Section=combat Note="Attack %V (Martial Weapons)"',
+  // Rank computation has changed
   'Weapon Proficiency (%advancedWeapon)':
-    'Section=combat Note="Attack Trained (%advancedWeapon)"',
-
-  // General Skill Feats
-  'Magical Shorthand':
-    'Section=skill ' +
-    'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure/Can learn new spells at a discounted cost"',
-  'Quick Identification':
-    'Section=skill ' +
-    'Note="Can Identify Magic in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'1 min\'}"',
-  'Quick Recognition':
-    'Section=skill ' +
-    'Note="Can use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
-  'Recognize Spell':
-    'Action=Reaction ' +
-    'Section=skill ' +
-    'Note="Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to level 2, 4, 6, or 10"',
-  'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
-  'Trick Magic Item':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="Successful check on the related skill temporarily activates a magic item"',
-
-  // Specific Skill Feats
-  'Cat Fall':
-    'Section=ability ' +
-    'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
-  'Connections':
-    'Section=skill ' +
-    'Note="Can use Society to gain a meeting with an important figure or to exchange favors"',
-  'Experienced Professional':
-    'Section=skill ' +
-    'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income"',
-  'Experienced Smuggler':
-    'Section=skill ' +
-    'Note="Automatically %{rank.Stealth>=4?\'succeed\':rank.Steak>=3\' gets at least 15\':\' gets at least 10\'} on Stealth rolls to conceal a small item/Earning Income using Underworld Lore gives increased earnings"',
-  'Experienced Tracker':
-    'Section=skill ' +
-    'Note="Can Track at full Speed%{rank.Survival<3?\', suffering a -5 Survival penalty\':\'\'}%{rank.Survival>=4?\'/Can Track without hourly Survival checks\':\'\'}"',
-  'Fascinating Performance':
-    'Section=skill ' +
-    'Note="Can fascinate %{rank.Performance>=4?\'targets\':rank.Performance==3?\'10 targets\':rank.Performance==2?\'4 targets\':\'target\'} for 1 rd with a successful Performance vs. Will"',
-  'Foil Senses':
-    'Section=skill ' +
-    'Note="Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak"',
-  'Forager':
-    'Section=skill ' +
-    'Note="Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others, or twice that number with a critical success"',
-  'Glad-Hand':
-    'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and to retry after 1 min"',
-  'Group Coercion':
-    'Section=skill ' +
-    'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
-  'Group Impression':
-    'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
-  'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
-  'Hobnobber':'Section=skill Note="Can Gather Information in half normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
-  'Impeccable Crafting':
-    'Section=skill ' +
-    'Note="Successes on Specialty Crafting are critical successes"',
-  'Impressive Performance':
-    'Section=skill Note="Can use Performance to Make an Impression"',
-  'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
-  'Intimidating Prowess':
-    'Section=skill ' +
-    'Note="+%{strength>=20&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
-  'Inventor':
-    'Section=skill Note="Can use Crafting to create unknown common formulas"',
-  'Kip Up':
-    'Action=Free Section=combat Note="Stands up without triggering Reactions"',
-  'Lasting Coercion':
-    'Section=skill ' +
-    'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
-  'Legendary Codebreaker':
-    'Section=skill ' +
-    'Note="Can use Society to Decipher Writing at full Speed, and successes at normal Speed are critical successes"',
-  'Legendary Linguist':
-    'Section=skill ' +
-    'Note="Can establish basic communication with any creature that uses language"',
-  'Legendary Medic':
-    'Section=skill ' +
-    'Note="Can use a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day"',
-  'Legendary Negotiation':
-    'Action=3 ' +
-    'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
-  'Legendary Performer':
-    'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Performance increases audience by 2 levels"',
-  'Legendary Professional':
-    'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Earn Income using Lore increases job level"',
-  'Legendary Sneak':
-    'Section=skill ' +
-    'Note="Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring"',
-  'Legendary Survivalist':
-    'Section=skill ' +
-    'Note="Can survive indefinitely without food and water and endure incredible temperatures without damage"',
-  'Legendary Thief':
-    'Section=skill ' +
-    'Note="Can use Steal with a -5 penalty to take actively wielded and highly noticeable items"',
-  'Lengthy Diversion':
-    'Section=skill ' +
-    'Note="Can remain hidden after a Create a Diversion attempt critically succeeds"',
-  'Lie To Me':
-    'Section=skill Note="Can use Deception to detect lies in a conversation"',
-  'Magical Crafting':
-    'Section=skill ' +
-    'Note="Can craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower"',
-  'Multilingual':'Section=skill Note="+%V Language Count"',
-  'Natural Medicine':
-    'Section=skill ' +
-    'Note="Can use Nature to Treat Wounds; gives a +2 bonus in wilderness"',
-  'Nimble Crawl':
-    'Section=ability ' +
-    'Note="Can Crawl at %{rank.Acrobatics>=3?\'full\':\'half\'} Speed%{rank.Acrobatics>=4?\'/Does not suffer flat-footed from being prone\':\'\'}"',
-  'Oddity Identification':
-    'Section=skill ' +
-    'Note="+2 Occultism to Identify Magic with a mental, possession, prediction, or scrying trait"',
-  'Pickpocket':
-    'Section=skill ' +
-    'Note="Can Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/Can use 2 actions to Steal with a -5 penalty from an alert creature\':\'\'}"',
-  'Planar Survival':
-    'Section=skill Note="Can use Survival to Subsist on different planes"',
-  'Powerful Leap':
-    'Section=skill Note="Can make 5\' vertical and +5\' horizontal jumps"',
-  'Quick Climb':
-    'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Coercion':'Section=skill Note="Can Coerce in 1 rd"',
-  'Quick Disguise':'Section=skill Note="Can create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
-  'Quick Jump':
-    'Section=skill ' +
-    'Note="Can use High Jump and Long Jump as 1 action without an initial Stride"',
-  'Quick Repair':
-    'Section=skill ' +
-    'Note="Can Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
-  'Quick Squeeze':
-    'Section=skill ' +
-    'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
-  'Quick Swim':
-    'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Unlock':'Section=skill Note="Can Pick a Lock in 1 action"',
-  'Quiet Allies':
-    'Section=skill ' +
-    'Note="Rolls a single Stealth check to Avoid Notice when leading a group"',
-  'Rapid Mantel':
-    'Section=skill ' +
-    'Note="Can stand immediately after a successful Grab an Edge and use Athletics to Grab an Edge"',
-  'Read Lips':
-    'Section=skill Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
-  'Robust Recovery':
-    'Section=skill ' +
-    'Note="Success on Treat a Disease or a Poison gives a +4 bonus, and patient successes are critical successes"',
-  'Scare To Death':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical failure inflicts death); failure inflicts frightened 1"',
-  'Shameless Request':
-    'Section=skill ' +
-    'Note="Reduces the DC for an outrageous request by 2 and changes critical failures into normal failures"',
-  'Sign Language':
-    'Section=skill Note="Knows the sign equivalents of understood languages"',
-  'Slippery Secrets':
-    'Section=skill ' +
-    'Note="Successful Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
-  'Snare Crafting':
-    'Section=skill ' +
-    'Note="Can use Crafting to create snares and knows the formulas for 4 common snares"',
-  'Specialty Crafting':
-    'Section=skill ' +
-    'Note="+%{rank.Crafting>=3?2:1} Crafting on selected type of item"',
-  'Steady Balance':
-    'Section=skill ' +
-    'Note="Balance successes are critical successes/Never flat-footed during Balance/Can use Acrobatics to Grab an Edge"',
-  'Streetwise':
-    'Section=skill ' +
-    'Note="Can use Society to Gather Information and to Recall Knowledge in familiar settlements"',
-  'Student Of The Canon':
-    'Section=skill ' +
-    'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
-  'Subtle Theft':'Section=skill Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
-  'Survey Wildlife':
-    'Section=skill ' +
-    'Note="Can use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study"',
-  'Swift Sneak':'Section=skill Note="Can Sneak at full Speed"',
-  'Terrain Expertise (%terrain)':'Section=skill Note="+1 Survival in %terrain"',
-  'Terrain Stalker (Rubble)':
-    'Section=skill ' +
-    'Note="Sneaking 5\' in rubble at least 10\' from foes requires no Stealth check"',
-  'Terrain Stalker (Snow)':
-    'Section=skill ' +
-    'Note="Sneaking 5\' in snow at least 10\' from foes requires no Stealth check"',
-  'Terrain Stalker (Underbrush)':
-    'Section=skill ' +
-    'Note="Sneaking 5\' in underbrush at least 10\' from foes requires no Stealth check"',
-  'Terrified Retreat':
-    'Section=skill ' +
-    'Note="Critical success on Demoralize causes a lower-level target to flee for 1 rd"',
-  'Titan Wrestler':
-    'Section=skill ' +
-    'Note="Can use Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
-  'Train Animal':
-    'Section=feature ' +
-    'Note="Can use 7 days\' training and a successful Nature check to teach an animal to perform a trick"',
-  'Underwater Marauder':
-    'Section=combat ' +
-    'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing weapons in water"',
-  'Unified Theory':
-    'Section=skill ' +
-    'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
-  'Unmistakable Lore':
-    'Section=skill ' +
-    'Note="Critical failures on any trained Lore are normal failures and critical successes provide additional information"',
-  'Virtuosic Performer':
-    'Section=skill ' +
-    'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
-  'Wall Jump':
-    'Section=skill ' +
-    'Note="Can follow a jump that ends next to a wall with another 1-action jump once per turn"',
-  'Ward Medic':
-    'Section=skill ' +
-    'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
-  'Wary Disarmament':
-    'Section=skill ' +
-    'Note="+2 Armor Class vs. a trap triggered while disarming it"',
+    'Section=combat Note="Attack %V (%advancedWeapon)"',
 
 };
 Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
@@ -7711,8 +7617,8 @@ Pathfinder2ERemaster.SKILLS = {
   'Elven Lore':Pathfinder2E.SKILLS['Elven Lore'],
   'Goblin Lore':Pathfinder2E.SKILLS['Goblin Lore'],
   'Halfling Lore':Pathfinder2E.SKILLS['Halfling Lore'],
-  'Leshy Lore':'Ability=Intelligence Subcategory="Creature Lore"',
-  'Orc Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Leshy Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Orc Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
   // terrain lore skills from background chapter pg 84ff
   'Cave Lore':Pathfinder2E.SKILLS['Cave Lore'],
   'Cavern Lore':Pathfinder2E.SKILLS['Cavern Lore'],
@@ -7721,17 +7627,17 @@ Pathfinder2ERemaster.SKILLS = {
   'Plains Lore':Pathfinder2E.SKILLS['Plains Lore'],
   'Swamp Lore':Pathfinder2E.SKILLS['Swamp Lore'],
   'Underground Lore':Pathfinder2E.SKILLS['Underground Lore'],
-  'Military Lore':'Ability=Intelligence', // pg 240
+  'Military Lore':'Attribute=Intelligence', // pg 240
   // Adventuring Lore, Magic Lore, Planar Lore pg 241 examples of excluded Lore
   // Common lore subcategories pg 240
   'Academia Lore':Pathfinder2E.SKILLS['Academia Lore'],
   'Accounting Lore':Pathfinder2E.SKILLS['Accounting Lore'],
   'Architecture Lore':Pathfinder2E.SKILLS['Architecture Lore'],
   'Art Lore':Pathfinder2E.SKILLS['Art Lore'],
-  'Astronomy Lore':'Ability=Intelligence',
-  'Carpentry Lore':'Ability=Intelligence',
+  'Astronomy Lore':'Attribute=Intelligence',
+  'Carpentry Lore':'Attribute=Intelligence',
   'Circus Lore':Pathfinder2E.SKILLS['Circus Lore'],
-  'Driving Lore':'Ability=Intelligence',
+  'Driving Lore':'Attribute=Intelligence',
   'Engineering Lore':Pathfinder2E.SKILLS['Engineering Lore'],
   'Farming Lore':Pathfinder2E.SKILLS['Farming Lore'],
   'Fishing Lore':Pathfinder2E.SKILLS['Fishing Lore'],
@@ -7749,14 +7655,14 @@ Pathfinder2ERemaster.SKILLS = {
   'Abadar Lore':Pathfinder2E.SKILLS['Abadar Lore'],
   'Iomedae Lore':Pathfinder2E.SKILLS['Iomedae Lore'],
   'Demon Lore':Pathfinder2E.SKILLS['Demon Lore'],
-  'Giant Lore':'Ability=Intelligence Subcategory="Creature Lore"',
+  'Giant Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
   'Vampire Lore':Pathfinder2E.SKILLS['Vampire Lore'],
   'Astral Plane Lore':Pathfinder2E.SKILLS['Astral Plane Lore'],
   'Heaven Lore':Pathfinder2E.SKILLS['Heaven Lore'],
-  'Outer Rifts Lore':'Ability=Intelligence Subcategory="Planar Lore"',
-  'Hellknights Lore':'Ability=Intelligence Subcategory="Organization Lore"',
+  'Outer Rifts Lore':'Attribute=Intelligence Subcategory="Planar Lore"',
+  'Hellknights Lore':'Attribute=Intelligence Subcategory="Organization Lore"',
   'Pathfinder Society Lore':
-    'Ability=Intelligence Subcategory="Organization Lore"',
+    'Attribute=Intelligence Subcategory="Organization Lore"',
   'Absalom Lore':Pathfinder2E.SKILLS['Absalom Lore'],
   'Magnimar Lore':Pathfinder2E.SKILLS['Magnimar Lore'],
   'Mountain Lore':Pathfinder2E.SKILLS['Mountain Lore'],
@@ -7770,7 +7676,7 @@ Pathfinder2ERemaster.SKILLS = {
   'Midwifery Lore':Pathfinder2E.SKILLS['Midwifery Lore'],
   'Milling Lore':Pathfinder2E.SKILLS['Milling Lore'],
   'Mining Lore':Pathfinder2E.SKILLS['Mining Lore'],
-  'Piloting Lore':'Ability=Intelligence',
+  'Piloting Lore':'Attribute=Intelligence',
   'Sailing Lore':Pathfinder2E.SKILLS['Sailing Lore'],
   'Scouting Lore':Pathfinder2E.SKILLS['Scouting Lore'],
   'Scribing Lore':Pathfinder2E.SKILLS['Scribing Lore'],
@@ -7780,6 +7686,9 @@ Pathfinder2ERemaster.SKILLS = {
   'Underworld Lore':Pathfinder2E.SKILLS['Underworld Lore'],
   'Warfare Lore':Pathfinder2E.SKILLS['Warfare Lore']
 };
+for(let s in Pathfinder2ERemaster.SKILLS)
+  Pathfinder2ERemaster.SKILLS[s] =
+    Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
   'Disguise Magic':
@@ -11822,7 +11731,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Class') {
     Pathfinder2ERemaster.classRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Ability'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Attribute'),
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
@@ -11880,7 +11789,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Skill')
     Pathfinder2ERemaster.skillRules(rules, name,
-      QuilvynUtils.getAttrValue(attrs, 'Ability'),
+      QuilvynUtils.getAttrValue(attrs, 'Attribute'),
       QuilvynUtils.getAttrValue(attrs, 'Subcategory')
     );
   else if(type == 'Spell') {
@@ -12088,6 +11997,8 @@ Pathfinder2ERemaster.featRules = function(
  * derived directly from the attributes passed to featRules.
  */
 Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
+  let prefix =
+    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
   if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
@@ -12102,6 +12013,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('trainingLevel.Advanced Weapons',
       'combatNotes.martialExperience.1', '^', null
+    );
+  } else if(name.startsWith('Weapon Proficiency')) {
+    rules.defineRule('combatNotes.' + prefix,
+      'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
   }
 };
@@ -12253,7 +12168,7 @@ Pathfinder2ERemaster.choiceEditorElements = function(rules, type) {
     );
   else if(type == 'Class') {
     result.push(
-      ['Ability', 'Ability', 'text', [20]],
+      ['Attribute', 'Attribute', 'text', [20]],
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
       ['Features', 'Features', 'text', [40]],
       ['Selectables', 'Selectable Features', 'text', [40]],
@@ -12306,7 +12221,7 @@ Pathfinder2ERemaster.choiceEditorElements = function(rules, type) {
     );
   else if(type == 'Skill')
     result.push(
-      ['Ability', 'Ability', 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
+      ['Attribute', 'Attribute', 'select-one', Object.keys(Pathfinder2E.ABILITIES).map(x => x.charAt(0).toUpperCase() + x.substring(1))],
       ['Subcategory', 'Subcategory', 'text', [30]]
     );
   else if(type == 'Spell') {
@@ -12357,46 +12272,15 @@ Pathfinder2ERemaster.choiceEditorElements = function(rules, type) {
 
 /* Returns the elements in a basic 5E character editor. */
 Pathfinder2ERemaster.initialEditorElements = function() {
-  let abilityChoices = [
-    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
-  ];
-  let editorElements = [
-    ['name', 'Name', 'text', [20]],
-    ['ancestry', 'Ancestry', 'select-one', 'ancestrys'],
-    ['background', 'Background', 'select-one', 'backgrounds'],
-    ['class', 'Class', 'select-one', 'levels'],
-    ['experience', 'Experience', 'text', [8]],
-    ['imageUrl', 'Image URL', 'text', [20]],
-    ['baseStrength', 'Str/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.strength', '', 'text', [3]],
-    ['baseDexterity', 'Dex/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.dexterity', '', 'text', [3]],
-    ['baseConstitution', 'Con/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.constitution', '', 'text', [3]],
-    ['baseIntelligence', 'Int/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.intelligence', '', 'text', [3]],
-    ['baseWisdom', 'Wis/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.wisdom', '', 'text', [3]],
-    ['baseCharisma', 'Cha/Boosts', 'select-one', abilityChoices],
-    ['abilityBoosts.charisma', '', 'text', [3]],
-    ['player', 'Player', 'text', [20]],
-    ['gender', 'Gender', 'text', [10]],
-    ['deity', 'Deity', 'select-one', 'deitys'],
-    ['origin', 'Origin', 'text', [20]],
-    ['ancestryFeats', 'Ancestry Feats', 'setbag', 'ancestryFeats'],
-    ['classFeats', 'Class Feats', 'setbag', 'classFeats'],
-    ['generalFeats', 'General Feats', 'setbag', 'generalFeats'],
-    ['selectableFeatures', 'Selectable Features', 'set', 'selectableFeatures'],
-    ['skillIncreases', 'Skills', 'setbag', 'skills'],
-    ['languages', 'Languages', 'set', 'languages'],
-    ['armor', 'Armor', 'select-one', 'armors'],
-    ['shield', 'Shield', 'select-one', 'shields'],
-    ['weapons', 'Weapons', 'setbag', 'weapons'],
-    ['spells', 'Spells', 'fset', 'spells'],
-    ['notes', 'Notes', 'textarea', [40,10]],
-    ['hiddenNotes', 'Hidden Notes', 'textarea', [40,10]]
-  ];
-  return editorElements;
+  let result =
+    Pathfinder2E.initialEditorElements()
+    .filter(x => !(x[0].startsWith('base')));
+  result.forEach(item => {
+    let m = item[0].match(/^abilityBoosts.(.)(.*)$/);
+    if(m)
+      item[1] = m[1].toUpperCase() + m[2] + ' Boosts';
+  });
+  return result;
 };
 
 /* Returns a random name for a character of ancestry #ancestry#. */
@@ -12544,13 +12428,13 @@ Pathfinder2ERemaster.randomizeOneAttribute = function(attributes, attribute) {
     for(attr in Pathfinder2E.ABILITIES)
       boostsAllocated[attr] = attributes['abilityBoosts.' + attr] || 0;
     let allNotes = this.getChoices('notes');
-    // Grab text of all Ability Boost features and notes
+    // Grab text of all Attribute Boost features and notes
     let boostTexts = [];
     for(attr in attrs) {
-      if((matchInfo = attr.match(/^\w+Features.Ability\s+Boost\s+\((.*)\)$/)))
+      if((matchInfo = attr.match(/^\w+Features.Attribute\s+Boost\s+\((.*)\)$/)))
         boostTexts.push(matchInfo[1]);
       else if(allNotes[attr] &&
-              (matchInfo=allNotes[attr].match(/Ability\s+Boost\s+\((.*?)\)/)) != null)
+              (matchInfo=allNotes[attr].match(/Attribute\s+Boost\s+\((.*?)\)/)) != null)
         boostTexts.push(matchInfo[1].replaceAll('%V', attrs[attr]));
     }
     // Sort in order of most restrictive to least restrictive
