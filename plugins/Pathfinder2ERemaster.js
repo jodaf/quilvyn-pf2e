@@ -4233,7 +4233,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful Strike while <i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i> is active extends the spell by 1 rd"',
   'Reach Spell':Pathfinder2E.FEATURES['Reach Spell'],
   'Versatile Performance':Pathfinder2E.FEATURES['Versatile Performance'],
-  'Well-Versed':'Section=save Note="+1 vs. auditory, illusion, linguistic, sonic, and visual spells"',
+  'Well-Versed':
+    'Section=save ' +
+    'Note="+1 vs. auditory, illusion, linguistic, sonic, and visual spells"',
   'Cantrip Expansion':Pathfinder2E.FEATURES['Cantrip Expansion'],
   'Directed Audience':
     'Section=magic ' +
@@ -4284,40 +4286,59 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="+2 on checks made as part of casting a ritual"',
   'Triple Time':Pathfinder2E.FEATURES['Triple Time'],
   'Versatile Signature':Pathfinder2E.FEATURES['Versatile Signature'],
-  /*-----*/
-  'Dirge Of Doom':'Section=magic Note="Knows the Dirge Of Doom occult cantrip"',
-  'Harmonize':
-    'Action=1 ' +
+  'Dirge Of Doom':Pathfinder2E.FEATURES['Dirge Of Doom'],
+  'Educate Allies':
     'Section=magic ' +
-    'Note="Can have 2 composition spells active simultaneously"',
-  'Steady Spellcasting':
+    'Note="Allies affected by a composition spell gain +1, and self gains +2, vs. auditory, illusion, linguistic, sonic, and visual spells for 1 rd"',
+  'Harmonize':Pathfinder2E.FEATURES.Harmonize,
+  'Song Of Marching':
+    'Section=magic Note="Knows the Song Of Marching occult cantrip"',
+  'Steady Spellcasting':Pathfinder2E.FEATURES['Steady Spellcasting'],
+  'Accompany':
+    'Section=skill ' +
+    'Note="Successful Performance and sacrifice of a Focus Point or spell slot allows an ally to cast a spell without expending a point or slot"',
+  'Call And Response':
     'Section=magic ' +
-    'Note="Successful DC 15 flat check negates spellcasting disruption"',
-  'Eclectic Skill':
-    'Section=skill,skill ' +
-    'Note=' +
-      '"+%{level} untrained skills",' +
-      '"Can attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
-  'Inspire Heroics':
+    'Note="Allows allies to use an action to extend for 1 rd a subsequent composition cantrip that affects them"',
+  'Eclectic Skill':Pathfinder2E.FEATURES['Eclectic Skill'],
+  'Fortissimo Composition':
     'Section=magic ' +
-    'Note="Knows the Inspire Heroics occult spell/+1 Focus Points"',
+    'Note="Knows the Fortissimo Composition occult spell"',
   'Know-It-All':
     'Section=skill ' +
     'Note="Successful Recall Knowledge checks give additional information"',
-  'House Of Imaginary Walls':
-    'Section=magic Note="Knows the House Of Imaginary Walls occult cantrip"',
-  'Quickened Casting':
-    'Action=Free ' +
+  'Reflexive Courage':Pathfinder2E.FEATURES['Attack Of Opportunity'],
+  'Soulsight':
+    'Section=skill ' +
+    'Note="R60\' Has imprecise spiritsense that can detect the presence of spirits"',
+  'Annotate Composition':
     'Section=magic ' +
-    'Note="Reduces the time required to cast a spell of level %1 or lower by 1 action once per day"',
+    'Note="Can spend 10 minutes and a Focus Point to write a composition spell that can be activated by anyone until next daily prep"',
+  'Courageous Assault':
+    'Section=magic ' +
+    'Note="Target of subsequent <i>Courageous Anthem</i> can immediately use a Reaction to Strike"',
+  'House Of Imaginary Walls':Pathfinder2E.FEATURES['House Of Imaginary Walls'],
+  'Ode To Ouroboros':
+    'Section=magic Note="Knows the Ode To Ouroboros occult spell"',
+  'Quickened Casting':Pathfinder2E.FEATURES['Quickened Casting'],
+  'Symphony Of The Unfettered Heart':
+    'Section=magic ' +
+    'Note="Knows the Symphony Of The Unfettered Heart occult spell"',
   'Unusual Composition':
-    'Action=1 ' +
+    Pathfinder2E.FEATURES['Unusual Composition'] + ' ' +
+    'Note="Allows a subsequent visual or auditory spell to affect any sense"',
+  'Eclectic Polymath':Pathfinder2E.FEATURES['Eclectic Polymath'],
+  "Enigma's Knowledge":
+    'Section=skill Note="Can use Automatic Knowledge with any skill"',
+  'Inspirational Focus':
+    Pathfinder2E.FEATURES['Inspirational Focus'].replace('2', 'all'),
+  'Reverberate':
+    'Section=save ' +
+    'Note="Successful Performance reflects %{level*2} HP sonic back to its source, or %{level*4} on a critical success"',
+  'Shared Assault':
     'Section=magic ' +
-    'Note="Replaces the somatic components of a composition spell with verbal components or vice versa"',
-  'Eclectic Polymath':
-    'Section=magic ' +
-    'Note="Can retain a chosen Esoteric Polymath spell in repertoire by removing a spell of the same level"',
-  'Inspirational Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+   'Note="A critical hit by an ally affected by by Courageous Assault allows another <i>Courageous Anthem</i> target to immediately use a Reaction to Strike"',
+  /*-----*/
   'Allegro':'Section=magic Note="Knows the Allegro occult cantrip"',
   'Soothing Ballad':
     'Section=magic ' +
@@ -7683,6 +7704,34 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Symphony Of The Unfettered Heart':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Ode To Ouroboros':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Fortissimo Composition':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Song Of Marching':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Disguise Magic':
     'Level=1 ' +
     'Trait=Evocation ' +
