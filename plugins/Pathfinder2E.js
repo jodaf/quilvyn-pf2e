@@ -13197,13 +13197,13 @@ Pathfinder2E.ancestryRules = function(
     features = features.filter(x => !x.includes('Ability Boost'));
     if(boostFeature.includes('(Choose 2 from any')) {
       features.push(
-        'abilityGeneration =~ "10" ? ' + boostFeature,
+        'abilityGeneration !~ "4d6" ? ' + boostFeature,
         'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('2 from', '1 from')
       );
     } else {
       features.push(
-        'abilityGeneration =~ "10.*standard" ? ' + boostFeature,
-        'abilityGeneration =~ "10.*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 2 from any)'),
+        'abilityGeneration =~ "^[^6]*standard" ? ' + boostFeature,
+        'abilityGeneration =~ "^[^6]*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 2 from any)'),
         'abilityGeneration =~ "4d6.*standard" ? ' + boostFeature.replace('; Choose 1 from any', ''),
         'abilityGeneration =~ "4d6.*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 1 from any)')
       );
@@ -13465,7 +13465,7 @@ Pathfinder2E.backgroundRules = function(rules, name, features, selectables) {
   let boostFeature = features.filter(x => x.includes('Ability Boost'))[0];
   if(boostFeature) {
     features = features.filter(x => !x.includes('Ability Boost'));
-    features.push('abilityGeneration =~ "10" ? ' + boostFeature);
+    features.push('abilityGeneration !~ "4d6" ? ' + boostFeature);
     if(boostFeature.includes('(Choose 2 from any'))
       features.push(
         'abilityGeneration =~ "4d6" ? ' + boostFeature.replace('2 from', '1 from')
@@ -15939,7 +15939,8 @@ Pathfinder2E.createViewers = function(rules, viewers) {
       );
       if(name != 'Collected Notes') {
         viewer.addElements(
-          {name: 'Ability Notes', within: 'Attributes', separator: noteSep}
+          {name: 'Ability Notes', within: 'Attributes', separator: noteSep,
+           format: '<b>' + (rules.plugin==Pathfinder2E ? 'Ability' : 'Attribute') + ' Notes</b>:%V'}
         );
       }
       viewer.addElements(
