@@ -4338,33 +4338,48 @@ Pathfinder2ERemaster.FEATURES = {
   'Shared Assault':
     'Section=magic ' +
    'Note="A critical hit by an ally affected by by Courageous Assault allows another <i>Courageous Anthem</i> target to immediately use a Reaction to Strike"',
-  /*-----*/
-  'Allegro':'Section=magic Note="Knows the Allegro occult cantrip"',
+  'Allegro':Pathfinder2E.FEATURES.Allegro,
+  'Earworm':
+    'Section=magic ' +
+    'Note="10 min process primes allies to be affected by a composition cantrip with a successful Performance check"',
   'Soothing Ballad':
+    Pathfinder2E.FEATURES['Soothing Ballad'].replace('/+1 Focus Points', ''),
+  'Triumphant Inspiration':
+    'Action=Free ' +
     'Section=magic ' +
-    'Note="Knows the Soothing Ballad occult spell/+1 Focus Points"',
-  'True Hypercognition':
+    'Note="Follows a critical melee hit with a single-action composition cantrip"',
+  'True Hypercognition':Pathfinder2E.FEATURES['True Hypercognition'],
+  'Vigorous Anthem':
     'Action=1 ' +
-    'Section=skill ' +
-    'Note="Can Recall Knowledge up to 5 times in 1 action"',
-  'Effortless Concentration':
-    'Action=Free Section=magic Note="Extends the duration of 1 spell"',
-  'Studious Capacity':
     'Section=magic ' +
-    'Note="Can cast 1 additional spell of level %1 or lower each day"',
-  'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
-  'Eternal Composition':
+    'Note="Subsequent <i>Courageous Anthem</i> gives allies %{3+charismaModifier} temporary Hit Points for 1 min"',
+  'Courageous Onslaught':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can use an additional action each rd to cast a composition cantrip"',
-  'Impossible Polymath':
+    'Note="Subsequent <i>Courageous Anthem</i> allows 1 ally a Reaction to Stride and make a melee Strike"',
+  'Effortless Concentration':Pathfinder2E.FEATURES['Effortless Concentration'],
+  'Resounding Finale':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Can add arcane, divine, and primal spells to spellbook if trained in the corresponding skill"',
+    'Note="Ending a composition spell gives affected allies resistance to triggering sonic damage equal to twice the spell\'s rank"',
+  'Studious Capacity':Pathfinder2E.FEATURES['Studious Capacity'],
+  'All In My Head':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Changes damage from a non-death Strike or spell to non-lethal mental damage"',
+  'Deep Lore':Pathfinder2E.FEATURES['Deep Lore'],
+  'Discordant Voice':
+    'Section=magic ' +
+    'Note="Weapon Strikes and unarmed attack by allies affected by <i>Courageous Anthem</i> inflict +1d6 HP sonic"',
+  'Eternal Composition':Pathfinder2E.FEATURES['Eternal Composition'],
+  'Impossible Polymath':Pathfinder2E.FEATURES['Impossible Polymath'],
   'Fatal Aria':
-    'Section=magic Note="Knows the Fatal Aria occult spell/+1 Focus Points"',
-  'Perfect Encore':'Section=magic Note="+1 10th level spell slot"',
-  'Symphony Of The Muse':
-    'Section=magic ' +
-    'Note="Can have any number of composition spells active simultaneously"',
+    Pathfinder2E.FEATURES['Fatal Aria'].replace('/+1 Focus Points', ''),
+  'Perfect Encore':Pathfinder2E.FEATURES['Perfect Encore'],
+  'Pied Piping':'Section=magic Note="Knows the Pied Piping occult spell"',
+  'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
+  'Ultimate Polymath':'Section=magic Note="All spells are signature spells"',
+  /*-----*/
 
   /*
   // Champion
@@ -7704,6 +7719,13 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Pied Piping':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Symphony Of The Unfettered Heart':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -12310,11 +12332,12 @@ Pathfinder2ERemaster.choiceEditorElements = function(rules, type) {
 Pathfinder2ERemaster.initialEditorElements = function() {
   let result =
     Pathfinder2E.initialEditorElements()
-    .filter(x => !(x[0].startsWith('base')));
+    .filter(x => !(x[0].startsWith('base')) && x != 'alignment');
   result.forEach(item => {
     let m = item[0].match(/^abilityBoosts.(.)(.*)$/);
     if(m)
       item[1] = m[1].toUpperCase() + m[2] + ' Boosts';
+    item[1] = item[1].replace('Ability', 'Attribute');
   });
   return result;
 };
