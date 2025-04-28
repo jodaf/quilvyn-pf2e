@@ -13192,9 +13192,10 @@ Pathfinder2E.ancestryRules = function(
       rules.defineRule('languages.' + l, ancestryLevel, '=', '1');
   });
 
-  let boostFeature = features.filter(x => x.includes('Ability Boost'))[0];
+  let boostFeature =
+    features.filter(x => x.match(/(Ability|Attribute) Boost/))[0];
   if(boostFeature) {
-    features = features.filter(x => !x.includes('Ability Boost'));
+    features = features.filter(x => !(x.match(/(Ability|Attribute) Boost/)));
     if(boostFeature.includes('(Choose 2 from any')) {
       features.push(
         'abilityGeneration !~ "4d6" ? ' + boostFeature,
@@ -13202,7 +13203,7 @@ Pathfinder2E.ancestryRules = function(
       );
     } else {
       features.push(
-        'abilityGeneration =~ "^[^6]*standard" ? ' + boostFeature,
+        'abilityGeneration =~ "^[^6]*[Ss]tandard" ? ' + boostFeature,
         'abilityGeneration =~ "^[^6]*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 2 from any)'),
         'abilityGeneration =~ "4d6.*standard" ? ' + boostFeature.replace('; Choose 1 from any', ''),
         'abilityGeneration =~ "4d6.*free" ? ' + boostFeature.replace(/\(.*\)/, '(Choose 1 from any)')
