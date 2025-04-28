@@ -17,7 +17,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
 
 /*jshint esversion: 6 */
 /* jshint forin: false */
-/* globals Expr, ObjectViewer, Quilvyn, QuilvynRules, QuilvynUtils */
+/* globals Pathfinder2E, Quilvyn, QuilvynRules, QuilvynUtils */
 "use strict";
 
 /*
@@ -1938,7 +1938,7 @@ Pathfinder2ERemaster.FEATS = {
   'Spellshape Channel':Pathfinder2E.FEATS['Metamagic Channel'],
 
   'Animal Companion':Pathfinder2E.FEATS['Animal Companion'],
-  'Animal Empathy':'Trait=Class,Druid',
+  'Animal Empathy':Pathfinder2E.FEATS['Wild Empathy'],
   'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
   // Note: Feat 1 Plant Empathy links to legacy Feat 6 Druid Empathy in Nethys
   'Plant Empathy':'Trait=Class,Druid',
@@ -2134,7 +2134,7 @@ Pathfinder2ERemaster.FEATS = {
   "Guardian's Deflection":Pathfinder2E.FEATS["Guardian's Deflection"],
   'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
-  'Ricochet Stance':'Trait=Class,Fighter,Stance Require="level >= 6"',
+  'Ricochet Stance':'Trait=Class,Fighter,Rogue,Stance Require="level >= 6"',
   'Shatter Defenses':Pathfinder2E.FEATS['Shatter Defenses'],
   'Shield Warden':
     'Trait=Class,Fighter Require="level >=6","features.Shield Block"',
@@ -2304,7 +2304,6 @@ Pathfinder2ERemaster.FEATS = {
   'Initiate Warden':'Trait=Class,Ranger',
   'Monster Hunter':Pathfinder2E.FEATS['Monster Hunter'],
   'Twin Takedown':Pathfinder2E.FEATS['Twin Takedown'],
-  'Animal Empathy':Pathfinder2E.FEATS['Wild Empathy'],
   'Favored Terrain (%terrain)':Pathfinder2E.FEATS['Favored Terrain (%terrain)'],
   "Hunter's Aim":Pathfinder2E.FEATS["Hunter's Aim"],
   'Monster Warden':Pathfinder2E.FEATS['Monster Warden'],
@@ -2423,7 +2422,7 @@ Pathfinder2ERemaster.FEATS = {
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
   'Predictive Purchase':'Trait=Class,Rogue Require="level >= 8"',
-  'Ricochet Stance':'Trait=Class,Rogue,Stance Require="level >= 8"',
+  // Ricochet Stance as above
   'Sidestep':Pathfinder2E.FEATS.Sidestep,
   'Sly Striker':Pathfinder2E.FEATS['Sly Striker'],
   'Swipe Souvenir':'Trait=Class,Rogue Require="level >= 8"',
@@ -3154,7 +3153,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
   'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
-  'Darkvision':Pathfinder2E.FEATURES['Darkvision'],
+  'Darkvision':Pathfinder2E.FEATURES.Darkvision,
   'Death Warden Dwarf':
     Pathfinder2E.FEATURES['Death Warden Dwarf']
     .replace('necromancy', 'void and undead'),
@@ -3782,9 +3781,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"1 selection",' +
       '"Can use 1 batch of infused reagents to create 3 signature items"',
-  'Weapon Specialization':
-    'Section=combat ' +
-    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapon proficiency"',
+*/
+  'Weapon Specialization':Pathfinder2E.FEATURES['Weapon Specialization'],
+/*
 
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
@@ -4379,7 +4378,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Pied Piping':'Section=magic Note="Knows the Pied Piping occult spell"',
   'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
   'Ultimate Polymath':'Section=magic Note="All spells are signature spells"',
-  /*-----*/
 
   /*
   // Champion
@@ -4837,310 +4835,223 @@ Pathfinder2ERemaster.FEATURES = {
   */
 
   // Cleric
-  // Perception Expertise as above
-  'Advanced Domain (Air)':
-    'Section=magic ' +
-    'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
-  'Advanced Domain (Ambition)':
-    'Section=magic ' +
-    'Note="Knows the Competitive Edge divine spell/+1 Focus Points"',
-  'Advanced Domain (Cities)':
-    'Section=magic ' +
-    'Note="Knows the Pulse Of The City divine spell/+1 Focus Points"',
-  'Advanced Domain (Confidence)':
-    'Section=magic ' +
-    'Note="Knows the Delusional Pride divine spell/+1 Focus Points"',
-  'Advanced Domain (Creation)':
-    'Section=magic ' +
-    'Note="Knows the Artistic Flourish divine spell/+1 Focus Points"',
-  'Advanced Domain (Darkness)':
-    'Section=magic ' +
-    'Note="Knows the Darkened Eyes divine spell/+1 Focus Points"',
-  'Advanced Domain (Death)':
-    'Section=magic ' +
-    'Note="Knows the Eradicate Undeath divine spell/+1 Focus Points"',
-  'Advanced Domain (Destruction)':
-    'Section=magic ' +
-    'Note="Knows the Destructive Aura divine spell/+1 Focus Points"',
-  'Advanced Domain (Dreams)':
-    'Section=magic ' +
-    'Note="Knows the Dreamer\'s Call divine spell/+1 Focus Points"',
-  'Advanced Domain (Earth)':
-    'Section=magic ' +
-    'Note="Knows the Localized Quake divine spell/+1 Focus Points"',
-  'Advanced Domain (Family)':
-    'Section=magic ' +
-    'Note="Knows the Unity divine spell/+1 Focus Points"',
-  'Advanced Domain (Fate)':
-    'Section=magic ' +
-    'Note="Knows the Tempt Fate divine spell/+1 Focus Points"',
-  'Advanced Domain (Fire)':
-    'Section=magic ' +
-    'Note="Knows the Flame Barrier divine spell/+1 Focus Points"',
-  'Advanced Domain (Freedom)':
-    'Section=magic ' +
-    'Note="Knows the Word Of Freedom divine spell/+1 Focus Points"',
-  'Advanced Domain (Healing)':
-    'Section=magic ' +
-    'Note="Knows the Rebuke Death divine spell/+1 Focus Points"',
-  'Advanced Domain (Indulgence)':
-    'Section=magic ' +
-    'Note="Knows the Take Its Course divine spell/+1 Focus Points"',
-  'Advanced Domain (Knowledge)':
-    'Section=magic ' +
-    'Note="Knows the Know The Enemy divine spell/+1 Focus Points"',
-  'Advanced Domain (Luck)':
-    'Section=magic ' +
-    'Note="Knows the Lucky Break divine spell/+1 Focus Points"',
-  'Advanced Domain (Magic)':
-    'Section=magic ' +
-    'Note="Knows the Mystic Beacon divine spell/+1 Focus Points"',
-  'Advanced Domain (Might)':
-    'Section=magic ' +
-    'Note="Knows the Enduring Might divine spell/+1 Focus Points"',
-  'Advanced Domain (Moon)':
-    'Section=magic ' +
-    'Note="Knows the Touch Of The Moon divine spell/+1 Focus Points"',
-  'Advanced Domain (Nature)':
-    'Section=magic ' +
-    'Note="Knows the Nature\'s Bounty divine spell/+1 Focus Points"',
-  'Advanced Domain (Nightmares)':
-    'Section=magic ' +
-    'Note="Knows the Shared Nightmare divine spell/+1 Focus Points"',
-  'Advanced Domain (Pain)':
-    'Section=magic ' +
-    'Note="Knows the Retributive Pain divine spell/+1 Focus Points"',
-  'Advanced Domain (Passion)':
-    'Section=magic ' +
-    'Note="Knows the Captivating Adoration divine spell/+1 Focus Points"',
-  'Advanced Domain (Perfection)':
-    'Section=magic ' +
-    'Note="Knows the Perfected Form divine spell/+1 Focus Points"',
-  'Advanced Domain (Protection)':
-    'Section=magic ' +
-    'Note="Knows the Protector\'s Sphere divine spell/+1 Focus Points"',
-  'Advanced Domain (Secrecy)':
-    'Section=magic ' +
-    'Note="Knows the Safeguard Secret divine spell/+1 Focus Points"',
-  'Advanced Domain (Sun)':
-    'Section=magic ' +
-    'Note="Knows the Positive Luminance divine spell/+1 Focus Points"',
-  'Advanced Domain (Travel)':
-    'Section=magic ' +
-    'Note="Knows the Traveler\'s Transit divine spell/+1 Focus Points"',
-  'Advanced Domain (Trickery)':
-    'Section=magic ' +
-    'Note="Knows the Trickster\'s Twin divine spell/+1 Focus Points"',
-  'Advanced Domain (Truth)':
-    'Section=magic ' +
-    'Note="Knows the Glimpse The Truth divine spell/+1 Focus Points"',
-  'Advanced Domain (Tyranny)':
-    'Section=magic ' +
-    'Note="Knows the Commanding Lash divine spell/+1 Focus Points"',
-  'Advanced Domain (Undeath)':
-    'Section=magic ' +
-    'Note="Knows the Malignant Sustenance divine spell/+1 Focus Points"',
-  'Advanced Domain (Water)':
-    'Section=magic ' +
-    'Note="Knows the Downpour divine spell/+1 Focus Points"',
-  'Advanced Domain (Wealth)':
-    'Section=magic ' +
-    'Note="Knows the Precious Metals divine spell/+1 Focus Points"',
-  'Advanced Domain (Zeal)':
-    'Section=magic ' +
-    'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
-  'Anathema':
-    'Section=feature ' +
-    'Note="May not perform acts or cast spells prohibited by %V"',
-  'Cleric Feats':'Section=feature Note="%V selections"',
-  'Cleric Skills':
-    'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
-  'Cloistered Cleric':
-    'Section=combat,combat,feature,magic,save ' +
-    'Note=' +
-      '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
-      '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
-      '"+1 Class Feat (Domain Initiate feat)",' +
-      '"Spell %V (Divine)",' +
-      '"Save Expert (Fortitude)"',
-  'Deity':
-    'Section=combat,magic,skill ' +
-    'Note=' +
-      '"Attack Trained (%V)",' +
-      '"Has access to %V spells",' +
-      '"Skill Trained (%V)"',
-  'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
-  'Divine Font':'Section=feature Note="1 selection"',
-  'Divine Spellcasting':
-    'Section=magic Note="Can learn spells from the divine tradition"',
-  'Doctrine':'Section=feature Note="1 selection"',
-  'Domain Initiate (Air)':
-    'Section=magic ' +
-    'Note="Knows the Pushing Gust divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Ambition)':
-    'Section=magic ' +
-    'Note="Knows the Blind Ambition divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Cities)':
-    'Section=magic ' +
-    'Note="Knows the Face In The Crowd divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Confidence)':
-    'Section=magic ' +
-    'Note="Knows the Veil Of Confidence divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Creation)':
-    'Section=magic ' +
-    'Note="Knows the Splash Of Art divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Darkness)':
-    'Section=magic ' +
-    'Note="Knows the Cloak Of Shadow divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Death)':
-    'Section=magic ' +
-    'Note="Knows the Death\'s Call divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Destruction)':
-    'Section=magic ' +
-    'Note="Knows the Cry Of Destruction divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Dreams)':
-    'Section=magic ' +
-    'Note="Knows the Sweet Dream divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Earth)':
-    'Section=magic ' +
-    'Note="Knows the Hurtling Stone divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Family)':
-    'Section=magic ' +
-    'Note="Knows the Soothing Words divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Fate)':
-    'Section=magic ' +
-    'Note="Knows the Read Fate divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Fire)':
-    'Section=magic ' +
-    'Note="Knows the Fire Ray divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Freedom)':
-    'Section=magic ' +
-    'Note="Knows the Unimpeded Stride divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Healing)':
-    'Section=magic ' +
-    'Note="Knows the Healer\'s Blessing divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Indulgence)':
-    'Section=magic ' +
-    'Note="Knows the Overstuff divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Luck)':
-    'Section=magic ' +
-    'Note="Knows the Bit Of Luck divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Magic)':
-    'Section=magic ' +
-    'Note="Knows the Magic\'s Vessel divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Might)':
-    'Section=magic ' +
-    'Note="Knows the Athletic Rush divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Moon)':
-    'Section=magic ' +
-    'Note="Knows the Moonbeam divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Nature)':
-    'Section=magic ' +
-    'Note="Knows the Vibrant Thorns divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Nightmares)':
-    'Section=magic ' +
-    'Note="Knows the Waking Nightmare divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Pain)':
-    'Section=magic ' +
-    'Note="Knows the Savor The Sting divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Passion)':
-    'Section=magic ' +
-    'Note="Knows the Charming Touch divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Perfection)':
-    'Section=magic ' +
-    'Note="Knows the Perfected Mind divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Protection)':
-    'Section=magic ' +
-    'Note="Knows the Protector\'s Sacrifice divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Secrecy)':
-    'Section=magic ' +
-    'Note="Knows the Forced Quiet divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Sun)':
-    'Section=magic ' +
-    'Note="Knows the Dazzling Flash divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Travel)':
-    'Section=magic ' +
-    'Note="Knows the Agile Feet divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Trickery)':
-    'Section=magic ' +
-    'Note="Knows the Sudden Shift divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Truth)':
-    'Section=magic ' +
-    'Note="Knows the Word Of Truth divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Tyranny)':
-    'Section=magic ' +
-    'Note="Knows the Touch Of Obedience divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Undeath)':
-    'Section=magic ' +
-    'Note="Knows the Touch Of Undeath divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Water)':
-    'Section=magic ' +
-    'Note="Knows the Tidal Surge divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Wealth)':
-    'Section=magic ' +
-    'Note="Knows the Appearance Of Wealth divine spell/Has a focus pool and 1 Focus Point"',
-  'Domain Initiate (Zeal)':
-    'Section=magic ' +
-    'Note="Knows the Weapon Surge divine spell/Has a focus pool and 1 Focus Point"',
+  'Anathema':Pathfinder2E.FEATURES.Anathema,
+  'Cleric Feats':Pathfinder2E.FEATURES['Cleric Feats'],
+  'Cleric Spellcasting':Pathfinder2E.FEATURES['Divine Spellcasting'],
+  'Cloistered Cleric':Pathfinder2E.FEATURES['Cloistered Cleric'],
+  'Deity':Pathfinder2E.FEATURES.Deity,
+  'Divine Defense':Pathfinder2E.FEATURES['Divine Defense'],
+  'Divine Font':Pathfinder2E.FEATURES['Divine Font'],
+  'Doctrine':Pathfinder2E.FEATURES.Doctrine,
   'Harmful Font':
-    'Section=magic ' +
-    'Note="Can cast <i>Harm</i> at level %V an additional %{charismaModifier+1} times per day"',
+    Pathfinder2E.FEATURES['Harmful Font']
+    .replace(/{.*}/, '{level<5?4:level<15?5:6}'),
   'Healing Font':
-    'Section=magic ' +
-    'Note="Can cast <i>Heal</i> at level %V an additional %{charismaModifier+1} times per day"',
+    Pathfinder2E.FEATURES['Healing Font']
+    .replace(/{.*}/, '{level<5?4:level<15?5:6}'),
+  'Miraculous Spell':Pathfinder2E.FEATURES['Miraculous Spell'],
+  // Perception Expertise as above
   // Reflex Expertise as above
-  'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
+  // TODO Figure which programatically
   'Resolute Faith':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
-  'Warpriest':
-    'Section=combat,combat,feature,feature,magic,save,save ' +
-    'Note=' +
-      '"Defense %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'/Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
-      '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
-      '"Has the Shield Block feature",' +
-      '"Has the Deadly Simplicity feature",' +
-      '"Spell %V (Divine)",' +
-      '"Save %V (Fortitude)",' +
-      '"Successes on Fortitude saves are critical successes"',
+  'Sanctification':'Section=feature Note="Has the Holy or Unholy trait"',
+  'Warpriest':Pathfinder2E.FEATURES.Warpriest
+    .replace('Simple Weapons', 'Simple Weapons; Martial Weapons')
+    .replace('",', '%{level>=19?\'/Attack Master (%1)\':\'\'}",'),
   // Weapon Specialization as above
 
-  'Deadly Simplicity':
-    'Section=combat Note="%{deityWeapon} inflicts +1 damage die step"',
-  'Harming Hands':'Section=magic Note="Increases <i>Harm</i> die type to d10"',
-  'Healing Hands':'Section=magic Note="Increases <i>Heal</i> die type to d10"',
-  'Holy Castigation':
-    'Section=magic Note="Can use <i>Heal</i> to damage fiends"',
+
+  'Deadly Simplicity':Pathfinder2E.FEATURES['Deadly Simplicity'],
+  // Changed working
+  'Divine Castigation':
+    'Section=magic ' +
+    'Note="Can add holy or unholy train to <i>Harm</i> and <i>Heal</i> spells"',
+  'Domain Initiate (Air)':Pathfinder2E.FEATURES['Domain Initiate (Air)'],
+  'Domain Initiate (Ambition)':
+    Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
+    .replace('Blind', 'Ignite'),
+  'Domain Initiate (Cities)':Pathfinder2E.FEATURES['Domain Initiate (Cities)'],
+  'Domain Initiate (Confidence)':
+    Pathfinder2E.FEATURES['Domain Initiate (Confidence)'],
+  'Domain Initiate (Creation)':
+    Pathfinder2E.FEATURES['Domain Initiate (Creation)']
+    .replace('Splash Of Art', 'Creative Splash'),
+  'Domain Initiate (Darkness)':
+    Pathfinder2E.FEATURES['Domain Initiate (Darkness)'],
+  'Domain Initiate (Death)':Pathfinder2E.FEATURES['Domain Initiate (Death)'],
+  'Domain Initiate (Destruction)':
+    Pathfinder2E.FEATURES['Domain Initiate (Destruction)'],
+  'Domain Initiate (Dreams)':Pathfinder2E.FEATURES['Domain Initiate (Dreams)'],
+  'Domain Initiate (Earth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Earth)'],
+  'Domain Initiate (Family)':Pathfinder2E.FEATURES['Domain Initiate (Family)'],
+  'Domain Initiate (Fate)':Pathfinder2E.FEATURES['Domain Initiate (Fate)'],
+  'Domain Initiate (Fire)':Pathfinder2E.FEATURES['Domain Initiate (Fire)'],
+  'Domain Initiate (Freedom)':
+    Pathfinder2E.FEATURES['Domain Initiate (Freedom)'],
+  'Domain Initiate (Healing)':
+    Pathfinder2E.FEATURES['Domain Initiate (Healing)'],
+  'Domain Initiate (Indulgence)':Pathfinder2E.FEATURES['Domain Initiate (Indulgence)'],
+  'Domain Initiate (Luck)':Pathfinder2E.FEATURES['Domain Initiate (Luck)'],
+  'Domain Initiate (Magic)':Pathfinder2E.FEATURES['Domain Initiate (Magic)'],
+  'Domain Initiate (Might)':Pathfinder2E.FEATURES['Domain Initiate (Might)'],
+  'Domain Initiate (Moon)':Pathfinder2E.FEATURES['Domain Initiate (Moon)'],
+  'Domain Initiate (Nature)':Pathfinder2E.FEATURES['Domain Initiate (Nature)'],
+  'Domain Initiate (Nightmares)':
+    Pathfinder2E.FEATURES['Domain Initiate (Nightmares)'],
+  'Domain Initiate (Pain)':Pathfinder2E.FEATURES['Domain Initiate (Pain)'],
+  'Domain Initiate (Passion)':
+    Pathfinder2E.FEATURES['Domain Initiate (Passion)'],
+  'Domain Initiate (Perfection)':
+    Pathfinder2E.FEATURES['Domain Initiate (Perfection)'],
+  'Domain Initiate (Protection)':
+    Pathfinder2E.FEATURES['Domain Initiate (Protection)'],
+  'Domain Initiate (Secrecy)':
+    Pathfinder2E.FEATURES['Domain Initiate (Secrecy)']
+    .replace('Forced', 'Whispering'),
+  'Domain Initiate (Sun)':Pathfinder2E.FEATURES['Domain Initiate (Sun)'],
+  'Domain Initiate (Travel)':Pathfinder2E.FEATURES['Domain Initiate (Travel)'],
+  'Domain Initiate (Trickery)':
+    Pathfinder2E.FEATURES['Domain Initiate (Trickery)'],
+  'Domain Initiate (Truth)':Pathfinder2E.FEATURES['Domain Initiate (Truth)'],
+  'Domain Initiate (Tyranny)':
+    Pathfinder2E.FEATURES['Domain Initiate (Tyranny)'],
+  'Domain Initiate (Undeath)':
+    Pathfinder2E.FEATURES['Domain Initiate (Undeath)'],
+  'Domain Initiate (Water)':Pathfinder2E.FEATURES['Domain Initiate (Water)'],
+  'Domain Initiate (Wealth)':Pathfinder2E.FEATURES['Domain Initiate (Wealth)'],
+  'Domain Initiate (Zeal)':Pathfinder2E.FEATURES['Domain Initiate (Zeal)'],
+  'Harming Hands':Pathfinder2E.FEATURES['Harming Hands'],
+  'Healing Hands':Pathfinder2E.FEATURES['Healing Hands'],
+  'Premonition Of Avoidance':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Gives +2 on save vs. triggering hazard"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
+    Pathfinder2E.FEATURES['Deadly Simplicity'].replace('self', 'another'),
+  'Emblazon Armament':Pathfinder2E.FEATURES['Emblazon Armament'],
+  // Changed Effects from Turn Undead
+  'Panic The Dead':
     'Section=magic ' +
-    'Note="Casting <i>Heal</i> on another creature restores Hit Points to self equal to the spell level"',
-  'Emblazon Armament':
+    'Note="<i>Heal</i> also inflicts frightened 1 on undead (save negates); critical failure also inflicts fleeing for 1 rd"',
+  'Rapid Response':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="+10 Speed to Stride toward an ally reduced to 0 Hit Points"',
+  'Sap Life':Pathfinder2E.FEATURES['Sap Life'],
+  'Versatile Font':Pathfinder2E.FEATURES['Versatile Font'],
+  "Warpriest's Armor":
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Defense %V (Heavy Armor)",' +
+      '"Treats armor of 2 Bulk or higher as 1 Bulk lighter"',
+  'Channel Smite':Pathfinder2E.FEATURES['Channel Smite'],
+  'Directed Channel':Pathfinder2E.FEATURES['Directed Channel'],
+  'Divine Infusion':
     'Section=magic ' +
-    'Note="10 min process gives a shield +1 Hardness or a weapon +1 HP damage"',
-  'Sap Life':
-    'Section=magic ' +
-    'Note="Casting <i>Harm</i> on another creature restores Hit Points to self equal to the spell level"',
-  'Turn Undead':
-    'Section=magic ' +
-    'Note="Critical failure by undead up to level %{level} damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
-  'Versatile Font':
-    'Section=magic ' +
-    'Note="Can use a font for either <i>Harm</i> or <i>Heal</i>"',
-  'Channel Smite':
+    'Note="Target of <i>Harm</i> or <i>Heal</i> inflicts +1d6 HP (+2d6 HP or +3d6 HP if cast at 5th or 8th rank) for 1 turn"',
+  'Raise Symbol':
+    'Action=1 ' +
+    'Section=save ' +
+    'Note="Gives +2 saves, and successes vs. vitality and void are critical successes, for 1 rd"',
+  'Restorative Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Adds the damage from <i>Heal</i> or <i>Harm</i> to a melee Strike"',
+    'Note="Successful Strike (+1 with %{deityWeaponLowered} after healing self restores save number of Hit Points to another willing creature"',
+  'Sacred Ground':
+    'Section=magic ' +
+    'Note="1 min prayer creates a 30 min burst that restores %{level} HP to creatures who remain in the area for 10 min"',
+  'Cast Down':Pathfinder2E.FEATURES['Cast Down'],
+  'Divine Rebuttal':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Successful Strike with %{deityWeaponLowered} give allies +2 vs. triggering magic effect"',
+  // Changed effects
+  'Divine Weapon':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP spirit, or +2d4 HP vs. opposed holy or unholy creatures, for the remainder of the turn once per turn"',
+  'Magic Hands':
+    'Section=skill ' +
+    'Note="Successful Medicine to Treat Wounds restores d10s +%{level} HP"',
+  'Selective Energy':
+    Pathfinder2E.FEATURES['Selective Energy']
+    .replace(/%{.*}/, 5),
+  // Steady Spellcasting as above
+
+  'Advanced Domain (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
+  'Advanced Domain (Ambition)':
+    Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
+  'Advanced Domain (Cities)':
+    Pathfinder2E.FEATURES['Advanced Domain (Cities)']
+    .replace('The City', 'Civilization'),
+  'Advanced Domain (Confidence)':
+    Pathfinder2E.FEATURES['Advanced Domain (Confidence)'],
+  'Advanced Domain (Creation)':
+    Pathfinder2E.FEATURES['Advanced Domain (Creation)'],
+  'Advanced Domain (Darkness)':
+    Pathfinder2E.FEATURES['Advanced Domain (Darkness)']
+    .replace('Eyes', 'Sight'),
+  'Advanced Domain (Death)':Pathfinder2E.FEATURES['Advanced Domain (Death)'],
+  'Advanced Domain (Destruction)':
+    Pathfinder2E.FEATURES['Advanced Domain (Destruction)'],
+  'Advanced Domain (Dreams)':Pathfinder2E.FEATURES['Advanced Domain (Dreams)'],
+  'Advanced Domain (Earth)':Pathfinder2E.FEATURES['Advanced Domain (Earth)'],
+  'Advanced Domain (Family)':Pathfinder2E.FEATURES['Advanced Domain (Family)'],
+  'Advanced Domain (Fate)':Pathfinder2E.FEATURES['Advanced Domain (Fate)'],
+  'Advanced Domain (Fire)':Pathfinder2E.FEATURES['Advanced Domain (Fire)'],
+  'Advanced Domain (Freedom)':
+    Pathfinder2E.FEATURES['Advanced Domain (Freedom)'],
+  'Advanced Domain (Healing)':
+    Pathfinder2E.FEATURES['Advanced Domain (Healing)'],
+  'Advanced Domain (Indulgence)':
+    Pathfinder2E.FEATURES['Advanced Domain (Indulgence)'],
+  'Advanced Domain (Knowledge)':
+    Pathfinder2E.FEATURES['Advanced Domain (Knowledge)'],
+  'Advanced Domain (Luck)':Pathfinder2E.FEATURES['Advanced Domain (Luck)'],
+  'Advanced Domain (Magic)':Pathfinder2E.FEATURES['Advanced Domain (Magic)'],
+  'Advanced Domain (Might)':Pathfinder2E.FEATURES['Advanced Domain (Might)'],
+  'Advanced Domain (Moon)':Pathfinder2E.FEATURES['Advanced Domain (Moon)'],
+  'Advanced Domain (Nature)':Pathfinder2E.FEATURES['Advanced Domain (Nature)'],
+  'Advanced Domain (Nightmares)':
+    Pathfinder2E.FEATURES['Advanced Domain (Nightmares)'],
+  'Advanced Domain (Pain)':Pathfinder2E.FEATURES['Advanced Domain (Pain)'],
+  'Advanced Domain (Passion)':
+    Pathfinder2E.FEATURES['Advanced Domain (Passion)'],
+  'Advanced Domain (Perfection)':
+    Pathfinder2E.FEATURES['Advanced Domain (Perfection)']
+    .replace('Form', 'Body'),
+  'Advanced Domain (Protection)':
+    Pathfinder2E.FEATURES['Advanced Domain (Protection)'],
+  'Advanced Domain (Secrecy)':
+    Pathfinder2E.FEATURES['Advanced Domain (Secrecy)'],
+  'Advanced Domain (Sun)':
+    Pathfinder2E.FEATURES['Advanced Domain (Sun)']
+    .replace('Positive', 'Vital'),
+  'Advanced Domain (Travel)':Pathfinder2E.FEATURES['Advanced Domain (Travel)'],
+  'Advanced Domain (Trickery)':
+    Pathfinder2E.FEATURES['Advanced Domain (Trickery)'],
+  'Advanced Domain (Truth)':Pathfinder2E.FEATURES['Advanced Domain (Truth)'],
+  'Advanced Domain (Tyranny)':
+    Pathfinder2E.FEATURES['Advanced Domain (Tyranny)'],
+  'Advanced Domain (Undeath)':
+    Pathfinder2E.FEATURES['Advanced Domain (Undeath)'],
+  'Advanced Domain (Water)':Pathfinder2E.FEATURES['Advanced Domain (Water)'],
+  'Advanced Domain (Wealth)':Pathfinder2E.FEATURES['Advanced Domain (Wealth)'],
+  'Advanced Domain (Zeal)':Pathfinder2E.FEATURES['Advanced Domain (Zeal)'],
+
+  /*-----*/
+
   'Command Undead':
     'Action=1 ' +
     'Section=magic ' +
     'Note="<i>Harm</i> controls target undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
-  'Directed Channel':
-    'Section=magic ' +
-    'Note="Can direct the effects of an area <i>Harm</i> or <i>Heal</i> into a 60\' cone"',
   'Improved Communal Healing':
     'Section=magic ' +
     'Note="Can give the additional Hit Points from Communal Healing to another within range of the spell"',
@@ -5148,18 +5059,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd"',
-  'Cast Down':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min"',
-  'Divine Weapon':
-    'Action=Free ' +
-    'Section=magic ' +
-    'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of the turn once per turn"',
-  'Selective Energy':
-    'Section=magic ' +
-    'Note="Can choose %{charismaModifier>?1} creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i>"',
-  // Steady Spellcasting as above
   'Align Armament (Chaotic)':
     'Action=1 ' +
     'Section=combat ' +
@@ -7719,6 +7618,55 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Pulse Of Civilization':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Darkened Sight':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Perfected Body':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Vital Luminance':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Whispering Quiet':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Creative Splash':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Ignite Ambition':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Pied Piping':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -12716,7 +12664,7 @@ Pathfinder2ERemaster.randomizeOneAttribute = function(attributes, attribute) {
       text.split(/\s*;\s*/).forEach(improvement => {
         let m = improvement.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
         if(!m) {
-          ; // Improve specific skill; nothing to allocate
+          // Improve specific skill; nothing to allocate
         } else {
           howMany = +m[1];
           if(m[2].match(/^any$/i))
