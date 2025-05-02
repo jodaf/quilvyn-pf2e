@@ -5534,7 +5534,7 @@ Pathfinder2E.FEATURES = {
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an adjacent ally +2 Armor Class when wielding a one-handed weapon with the other hand free"',
+    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free"',
   'Reflexive Shield':
     'Section=save ' +
     'Note="Raised shield adds shield bonus to Reflex saves"',
@@ -12634,7 +12634,7 @@ Pathfinder2E.identityRules = function(
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
-  QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon']);
+  QuilvynUtils.checkAttrTable(deities, ['Alignment', 'FollowerAlignments', 'Domain', 'Font', 'Skill', 'Spells', 'Weapon', 'AreasOfConcern', 'DivineAttribute', 'DivineSanctification']);
 
   rules.defineRule('heritage', 'ancestry', '=', null);
 
@@ -13795,6 +13795,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)'
     );
+    rules.defineRule('combatNotes.deityAndCause', 'deityWeapon', '=', null);
     ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
       rules.defineRule('combatNotes.' + f,
         'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
@@ -13809,12 +13810,19 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       '', '=', '"Simple Weapons"',
       classLevel, '=', '"Simple Weapons; Martial Weapons"'
     );
+    rules.defineRule('combatNotes.divineAlly(Shield).1',
+      'combatNotes.divineAlly(Shield)', '=', '1.5',
+      'combatNotes.shieldParagon', '^', '2'
+    );
     rules.defineRule('featureNotes.divineAlly',
       '', '=', '1',
       'featureNotes.secondAlly', '+', '1'
     );
     rules.defineRule('featureNotes.liberator',
       "featureNotes.champion'sReaction", '=', 'null' // italics
+    );
+    rules.defineRule('magicNotes.deityAndCause',
+      'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
     );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
       'featureNotes.deityAndCause', '=', '1'
@@ -13830,12 +13838,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('shieldHitPoints', 'combatNotes.divineAlly(Shield).1', '*', null);
-    rules.defineRule('combatNotes.divineAlly(Shield).1',
-      'combatNotes.divineAlly(Shield)', '=', '1.5',
-      'combatNotes.shieldParagon', '^', '2'
-    );
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
     rules.defineRule('spellModifier.Champion',
       classLevel, '?', null,
       'charismaModifier', '=', null
@@ -13868,7 +13873,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)'
     );
     rules.defineRule('combatNotes.deity', 'deityWeapon', '=', null);
-    rules.defineRule('combatNotes.deityAndCause', 'deityWeapon', '=', null);
     rules.defineRule('combatNotes.warpriest',
       '', '=', '"Trained"',
       'features.Divine Defense', '=', '"Expert"'
@@ -13885,9 +13889,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
     rules.defineRule('magicNotes.deity',
-      'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
-    );
-    rules.defineRule('magicNotes.deityAndCause',
       'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
     );
     rules.defineRule
@@ -13918,7 +13919,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
-    rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
       rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
