@@ -3794,9 +3794,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Can draw and Strike with a bomb in 1 action"',
+*/
   'Poison Resistance':
     'Section=save ' +
     'Note="Has poison resistance %{level//2} and +1 saves vs. poison"',
+/*
   'Revivifying Mutagen':
     'Action=1 ' +
     'Section=combat ' +
@@ -4225,8 +4227,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Hymn Of Healing':
     'Section=magic Note="Knows the Hymn Of Healing occult focus spell"',
   'Lingering Composition':
-    Pathfinder2E.FEATURES['Lingering Composition']
-    .replace('/+1 Focus Points', ''),
+    Pathfinder2E.FEATURES['Lingering Composition'],
   'Martial Performance':
     'Section=magic ' +
     'Note="Successful Strike while <i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i> is active extends the spell by 1 rd"',
@@ -4245,8 +4246,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Makes a foe who fails a save vs. emotion off-guard against next self attack before the end of turn"',
   'Esoteric Polymath':Pathfinder2E.FEATURES['Esoteric Polymath'],
   "Loremaster's Etude":
-    Pathfinder2E.FEATURES["Loremaster's Etude"]
-    .replace('/+1 Focus Points', ''),
+    Pathfinder2E.FEATURES["Loremaster's Etude"],
   'Multifarious Muse (Enigma)':
     Pathfinder2E.FEATURES['Multifarious Muse (Enigma)'],
   'Multifarious Muse (Maestro)':
@@ -4341,8 +4341,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Earworm':
     'Section=magic ' +
     'Note="10 min process primes allies to be affected by a composition cantrip with a successful Performance check"',
-  'Soothing Ballad':
-    Pathfinder2E.FEATURES['Soothing Ballad'].replace('/+1 Focus Points', ''),
+  'Soothing Ballad':Pathfinder2E.FEATURES['Soothing Ballad'],
   'Triumphant Inspiration':
     'Action=Free ' +
     'Section=magic ' +
@@ -4372,8 +4371,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Weapon Strikes and unarmed attack by allies affected by <i>Courageous Anthem</i> inflict +1d6 HP sonic"',
   'Eternal Composition':Pathfinder2E.FEATURES['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATURES['Impossible Polymath'],
-  'Fatal Aria':
-    Pathfinder2E.FEATURES['Fatal Aria'].replace('/+1 Focus Points', ''),
+  'Fatal Aria':Pathfinder2E.FEATURES['Fatal Aria'],
   'Perfect Encore':Pathfinder2E.FEATURES['Perfect Encore'],
   'Pied Piping':'Section=magic Note="Knows the Pied Piping occult spell"',
   'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
@@ -4672,7 +4670,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
-  // Shield Block as below
+*/
+  'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
+/*
   'The Tenets Of Good':
     'Section=feature ' +
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
@@ -4866,7 +4866,7 @@ Pathfinder2ERemaster.FEATURES = {
 
 
   'Deadly Simplicity':Pathfinder2E.FEATURES['Deadly Simplicity'],
-  // Changed working
+  // Changed effects
   'Divine Castigation':
     'Section=magic ' +
     'Note="Can add holy or unholy train to <i>Harm</i> and <i>Heal</i> spells"',
@@ -4895,7 +4895,8 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Domain Initiate (Freedom)'],
   'Domain Initiate (Healing)':
     Pathfinder2E.FEATURES['Domain Initiate (Healing)'],
-  'Domain Initiate (Indulgence)':Pathfinder2E.FEATURES['Domain Initiate (Indulgence)'],
+  'Domain Initiate (Indulgence)':
+    Pathfinder2E.FEATURES['Domain Initiate (Indulgence)'],
   'Domain Initiate (Luck)':Pathfinder2E.FEATURES['Domain Initiate (Luck)'],
   'Domain Initiate (Magic)':Pathfinder2E.FEATURES['Domain Initiate (Magic)'],
   'Domain Initiate (Might)':Pathfinder2E.FEATURES['Domain Initiate (Might)'],
@@ -4936,7 +4937,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Communal Healing':
     Pathfinder2E.FEATURES['Deadly Simplicity'].replace('self', 'another'),
   'Emblazon Armament':Pathfinder2E.FEATURES['Emblazon Armament'],
-  // Changed Effects from Turn Undead
+  // Changed effects from Turn Undead
   'Panic The Dead':
     'Section=magic ' +
     'Note="<i>Heal</i> also inflicts frightened 1 on undead (save negates); critical failure also inflicts fleeing for 1 rd"',
@@ -4953,6 +4954,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Treats armor of 2 Bulk or higher as 1 Bulk lighter"',
   'Channel Smite':Pathfinder2E.FEATURES['Channel Smite'],
   'Directed Channel':Pathfinder2E.FEATURES['Directed Channel'],
+  // Changed effects from Necrotic Infusion
   'Divine Infusion':
     'Section=magic ' +
     'Note="Target of <i>Harm</i> or <i>Heal</i> inflicts +1d6 HP (+2d6 HP or +3d6 HP if cast at 5th or 8th rank) for 1 turn"',
@@ -4984,7 +4986,6 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Selective Energy']
     .replace(/%{.*}/, 5),
   // Steady Spellcasting as above
-
   'Advanced Domain (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
   'Advanced Domain (Ambition)':
     Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
@@ -5045,304 +5046,286 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Domain (Water)':Pathfinder2E.FEATURES['Advanced Domain (Water)'],
   'Advanced Domain (Wealth)':Pathfinder2E.FEATURES['Advanced Domain (Wealth)'],
   'Advanced Domain (Zeal)':Pathfinder2E.FEATURES['Advanced Domain (Zeal)'],
-
-  /*-----*/
-
-  'Command Undead':
+  'Cremate Undead':Pathfinder2E.FEATURES['Cremate Undead'],
+  'Emblazon Energy':Pathfinder2E.FEATURES['Emblazon Energy'],
+  'Martyr':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<i>Harm</i> controls target undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
-  'Improved Communal Healing':
+    'Note="Subsequent healing spell transfers an additional 1d8 HP from self to target"',
+  // Changed spell list from Channel Succor
+  'Restorative Channel':
     'Section=magic ' +
-    'Note="Can give the additional Hit Points from Communal Healing to another within range of the spell"',
-  'Necrotic Infusion':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd"',
-  'Align Armament (Chaotic)':
+    'Note="Can cast <i>Cleanse Affliction</i>, <i>Clear Mind</i>, <i>Sound Body</i>, or <i>Sure Footing</i> in place of a prepared <i>Heal</i>"',
+  // Changed effects from Align Armament
+  'Sanctify Armament':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP chaotic for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
-  'Align Armament (Evil)':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP evil for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
-  'Align Armament (Good)':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP good for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
-  'Align Armament (Lawful)':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP lawful for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
-  'Channeled Succor':
-    'Section=magic ' +
-    'Note="Can cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i>"',
-  'Cremate Undead':
-    'Section=magic ' +
-    'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
-  'Emblazon Energy':
-    'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type (plus resistance %{level//2} with a matching domain spell), or to cause a weapon to inflict +1d4 HP energy type damage (or +1d6 HP with a matching domain spell)"',
-  'Castigating Weapon':
-    'Section=magic ' +
-    'Note="Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd"',
-  'Heroic Recovery':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
-  'Improved Command Undead':
-    'Section=magic ' +
-    'Note="Command Undead gives control of target for 1 rd, 10 min, or 24 hr on save success, failure, or critical failure"',
-  'Replenishment Of War':
-    'Section=combat ' +
-    'Note="Successful Strikes with a %{deityWeaponLowered} give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, for 1 rd"',
-  'Defensive Recovery':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +2 Armor Class and saves for 1 rd"',
-  'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Emblazon Antimagic':
-    'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using 1/2 the wielder\'s level"',
-  'Shared Replenishment':
-    'Section=combat ' +
-    'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
-  "Deity's Protection":
-    'Section=magic ' +
-    'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
-  'Extend Armament Alignment':
-    'Section=combat Note="Has increased Align Armament effects"',
-  'Fast Channel':
-    'Section=magic ' +
-    'Note="Can use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i>"',
-  'Swift Banishment':
-    'Action=Reaction ' +
-    'Section=magic ' +
-    'Note="Immediately casts <i>Banishment</i> after a critical hit on an extraplanar foe"',
-  'Eternal Bane':
-    'Section=magic ' +
-    'Note="R15\' Aura gives continuous level %{level//2} <i>Bane</i> effects"',
-  'Eternal Blessing':
-    'Section=magic ' +
-    'Note="R15\' Aura gives continuous level %{level//2} <i>Bless</i> effects"',
-  'Resurrectionist':
-    'Section=magic ' +
-    'Note="Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min or until the target is knocked unconscious"',
-  'Domain Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
-  'Echoing Channel':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature"',
-  'Improved Swift Banishment':
-    'Section=magic ' +
-    'Note="Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
-  "Avatar's Audience":
-    'Section=magic ' +
-    'Note="Can speak for %{deity}, conduct the <i>Commune</i> ritual to contact %{deity} without cost, and use <i>Plane Shift</i> to travel to %{deity}\'s realm once per day"',
-  'Maker Of Miracles':'Section=magic Note="+1 10th level spell slot"',
-  'Metamagic Channel':
+    'Note="Touched weapon gains holy or unholy trait, inflicting +2d6 HP spirt for 1 to opposed creatures"',
+  'Surging Focus':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
+    'Note="Seeing an ally reduced to 0 HP restores 1 Focus Point to self once per day"',
+  'Void Siphon':
+    'Section=magic ' +
+    'Note="Critical failure vs. self <i>Harm</i> inflicts drained 1"',
+  'Zealous Rush':
+    'Section=magic ' +
+    'Note="Can Stride 10\' while casting a 1-action spell on self, or %{speed}\' for a longer spell"',
+  // Changed effects
+  'Castigating Weapon':
+    'Section=magic ' +
+    'Note="Inflicting damage using <i>Harm</i> or <i>Heal</i> with Divine Castigation gives weapons and unarmed Strikes the holy or unholy trait and additional spirit damage equal to the spell level until the end of turn"',
+  'Heroic Recovery':
+    Pathfinder2E.FEATURES['Heroic Recovery']
+    .replace('1 rd', '1 rd and allows the target to stand from prone immediately without triggering Reactions'),
+  'Replenishment Of War':Pathfinder2E.FEATURES['Replenishment Of War'],
+  'Shared Avoidance':
+    'Section=save ' +
+    'Note="Premonition Of Avoidance gives allies within 20\' +2 vs. the triggering hazard"',
+  'Shield Of Faith':
+    'Section=magic Note="Casting a domain spell gives +1 AC for 1 rd"',
+  'Defensive Recovery':Pathfinder2E.FEATURES['Defensive Recovery'],
+  'Domain Focus':Pathfinder2E.FEATURES['Domain Focus'],
+  'Emblazon Antimagic':Pathfinder2E.FEATURES['Emblazon Antimagic'],
+  'Fortunate Relief':
+    'Section=magic ' +
+    'Note="Counteract attempts from healing spells gain the better of two rolls"',
+  'Sapping Symbol':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Raised symbol and a successful Religion check when taking melee damage inflicts enfeebled 1 on the attcker, or enfeebled 2 on a critical success, until the attacker moves away"',
+  'Shared Replenishment':Pathfinder2E.FEATURES['Shared Replenishment'],
+  'Channeling Block':
+    'Section=magic ' +
+    'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell level to the shield\'s Harndess"',
+  "Deity's Protection":Pathfinder2E.FEATURES["Deity's Protection"],
+  'Ebb And Flow':
+    'Section=magic ' +
+    'Note="Casting <i>Harm</i> or <i>Heal</i> harms one target and heals another"',
+  'Fast Channel':Pathfinder2E.FEATURES['Fast Channel'],
+  'Lasting Armament':Pathfinder2E.FEATURES['Extend Armament Alignment'],
+  'Premonition Of Clarity':
+    'Section=save ' +
+    'Note="Rerolls a failed mental save with a +2 bonus once per hour"',
+  'Swift Banishment':Pathfinder2E.FEATURES['Swift Banishment'],
+  'Eternal Bane':Pathfinder2E.FEATURES['Eternal Bane'],
+  'Eternal Blessing':Pathfinder2E.FEATURES['Eternal Blessing'],
+  'Rebounding Smite':
+    'Action=Reaction ' +
+    'Section=magic ' +
+    'Note="Missed Strike using Channel Smite allows retargeting the <i>Harm</i> or <i>Heal</i>"',
+  'Remediate':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="3-action <i>Harm</i> or <i>Heal</i> attempts to counteract a divine effect"',
+  'Resurrectionist':Pathfinder2E.FEATURES.Resurrectionist,
+  'Divine Apex':
+    'Section=magic ' +
+    'Note="Can give a worn magic item the apex trait and increase its divine attribute value by 1 once per daily preparations"',
+  'Echoing Channel':Pathfinder2E.FEATURES['Echoing Channel'],
+  'Improved Swift Banishment':
+    Pathfinder2E.FEATURES['Improved Swift Banishment'],
+  'Inviolable':
+    'Section=combat ' +
+    'Note="Successful attacks on self inflict 3d6 HP spirit, hoy, or unholy on attacker"',
+  'Miraculous Possibility':
+    'Section=magic ' +
+    'Note="Can leave a spell slot free during daily prep to later cast any spell 2 levels lower"',
+  'Shared Clarity':
+    'Section=save ' +
+    'Note="Premonition Of Clarity gives allies within 15\' a +2 reroll vs. the triggering mental effect"',
+  "Avatar's Audience":Pathfinder2E.FEATURES["Avatar's Audience"],
+  "Avatar's Protection":
+    'Action=Reaction ' +
+    'Section=magic ' +
+    'Note="Changes a foe critial hit no self to a normal hit and casts <i>Avatar</i>"',
+  'Maker Of Miracles':Pathfinder2E.FEATURES['Maker Of Miracles'],
+  'Spellshape Channel':
+    Pathfinder2E.FEATURES['Metamagic Channel']
+    .replace('metamagic', 'spellshape'),
 
   // Druid
-  // Perception Expertise as above
-  'Animal':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Animal Companion feature",' +
-      '"Knows the Heal Animal primal spell/Has a focus pool and 1 Focus Point",' +
-      '"Skill Trained (Athletics)"',
-  'Druid Feats':'Section=feature Note="%V selections"',
-  'Druid Skills':
-    'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
-  'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
-  'Druidic Order':'Section=feature Note="1 selection"',
-  'Druid Weapon Expertise':
-    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
+
+  // Anathema as above
+  'Animal':Pathfinder2E.FEATURES.Animal,
+  'Druid Feats':Pathfinder2E.FEATURES['Druid Feats'],
+  'Druid Skills':Pathfinder2E.FEATURES['Druid Skills'],
+  'Druid Spellcasting':Pathfinder2E.FEATURES['Primal Spellcasting'],
+  'Druidic Order':Pathfinder2E.FEATURES['Druidic Order'],
   // Expert Spellcaster as above
   // Fortitude Expertise as above
   'Leaf':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Leshy Familiar feature",' +
-      '"Knows the Goodberry primal spell/Has a focus pool and 2 Focus Points",' +
-      '"Skill Trained (Diplomacy)"',
+    Pathfinder2E.FEATURES.Leaf
+    .replace('Goodberry', 'Cornucopia')
+    .replace('2', '1'),
   // Legendary Spellcaster as above
-  // Reflex Expertise as above
   // Master Spellcaster as above
   // Medium Armor Expertise as above
-  'Primal Hierophant':'Section=magic Note="Has 1 10th-level spell slot"',
-  'Primal Spellcasting':
-    'Section=magic Note="Can learn spells from the primal tradition"',
-  // Resolve as above
-  // Shield Block as below
-  'Storm':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Storm Born feature",' +
-      '"Knows the Tempest Surge primal spell/Has a focus pool and 2 Focus Points",' +
-      '"Skill Trained (Acrobatics)"',
+  // Perception Expertise as above
+  'Primal Hierophant':Pathfinder2E.FEATURES['Primal Hierophant'],
+  // Reflex Expertise as above
+  'Storm':Pathfinder2E.FEATURES.Storm,
+  'Untamed':
+    Pathfinder2E.FEATURES['Wild']
+    .replace('Wild Shape', 'Untamed Form')
+    .replace('Wild Morph', 'Untamed Shift'),
+  // Shield Block as above
+  'Voice Of Nature':
+    'Section=feature Note="+1 Class Feat (Animal Empathy or Plant Empathy)"',
+  // Weapon Expertise as above
   // Weapon Specialization as above
-  'Wild':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Wild Shape feature",' +
-      '"Knows the Wild Morph primal spell/Has a focus pool and 1 Focus Point",' +
-      '"Skill Trained (Intimidation)"',
-  'Wild Empathy':
-    'Section=skill ' +
-    'Note="Can use Diplomacy with animals to Make An Impression and to make simple Requests"',
+  'Wild Willpower':Pathfinder2E.FEATURES.Resolve,
+  'Wildsong':Pathfinder2E.FEATURES['Druidic Language'],
 
-  'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
-  'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
-  // Reach Spell as above
-  'Storm Born':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Suffers no ranged spell penalties from weather",' +
-      '"Suffers no Perception penalties from weather"',
-  'Widen Spell':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Increases the effect of a subsequent 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
-  'Wild Shape':'Section=magic Note="Knows the Wild Shape primal spell"',
-  'Call Of The Wild':
-    'Section=magic ' +
-    'Note="Can spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
-  'Enhanced Familiar':
-    'Section=feature Note="Can select 4 familiar or master abilities each day"',
-  'Order Explorer (Animal)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"Can select Animal order feats"',
-  'Order Explorer (Leaf)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"Can select Leaf order feats"',
-  'Order Explorer (Storm)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"Can select Storm order feats"',
-  'Order Explorer (Wild)':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"+1 Class Feat",' +
-      '"Can select Wild order feats"',
-  // Poison Resistance as above
-  'Form Control':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts for 1 hr"',
-  'Mature Animal Companion':
+  'Animal Companion':Pathfinder2E.FEATURES['Animal Companion'],
+/* TODO Check to see if this is identical
     'Section=feature ' +
-    'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
+    'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
+*/
+  'Animal Empathy':Pathfinder2E.FEATURES['Wild Empathy'],
+  'Leshy Familiar':Pathfinder2E.FEATURES['Leshy Familiar'],
+  'Plant Empathy':Pathfinder2E.FEATURES['Green Empathy'],
+  // Reach Spell as above
+  'Storm Born':Pathfinder2E.FEATURES['Storm Born'],
+  'Verdant Weapon':
+    'Section=magic ' +
+    'Note="10 min process prepares a seed to grow into a weapon with 1 action"',
+  'Widen Spell':Pathfinder2E.FEATURES['Widen Spell'],
+  'Untamed Form':
+    Pathfinder2E.FEATURES['Wild Shape'].replace('Wild Shape', 'Untamed Form'),
+  'Call Of The Wild':
+    Pathfinder2E.FEATURES['Call Of The Wild'].replace('level', 'rank'),
+  'Enhanced Familiar':Pathfinder2E.FEATURES['Enhanced Familiar'],
+  'Order Explorer (Animal)':Pathfinder2E.FEATURES['Order Explorer (Animal)'],
+  'Order Explorer (Leaf)':Pathfinder2E.FEATURES['Order Explorer (Leaf)'],
+  'Order Explorer (Storm)':Pathfinder2E.FEATURES['Order Explorer (Storm)'],
+  'Order Explorer (Untamed)':
+    Pathfinder2E.FEATURES['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
+  // Poison Resistance as above
+  'Anthropomorphic Shape':
+     Pathfinder2E.FEATURES['Thousand Faces']
+     .replace('Wild Shape', 'Untamed Form'),
   'Thousand Faces':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
-  'Woodland Stride':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by plants or fungi"',
-  'Green Empathy':
-    'Section=skill ' +
-    'Note="Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
-  'Insect Shape':
+  'Elemental Summons':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
-  'Order Magic (Animal)':
-    'Section=magic Note="Knows the Heal Animal primal spell"',
+    'Note="10 min process in nature replaces a prepared spell slot with <i>Summon Elemental</i>"',
+  'Forest Passage':Pathfinder2E.FEATURES['Woodland Stride'],
+  'Form Control':Pathfinder2E.FEATURES['Form Control'],
+  'Leshy Familiar Secrets':
+    'Section=feature ' +
+    'Note="Familiar gains Grasping Tendrils, Purify Air, or Verdant Burst feature each day"',
+  'Mature Animal Companion':Pathfinder2E.FEATURES['Mature Animal Companion'],
+  'Order Magic (Animal)':Pathfinder2E.FEATURES['Order Magic (Animal)'],
   'Order Magic (Leaf)':
-    'Section=magic Note="Knows the Goodberry primal spell"',
-  'Order Magic (Storm)':
-    'Section=magic Note="Knows the Tempest Surge primal spell"',
-  'Order Magic (Wild)':
-    'Section=magic Note="Knows the Wild Morph primal spell"',
-  // Steady Spellcasting as above
-  'Storm Retribution':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (Reflex negates; critical failure pushes 10\')"',
-  'Ferocious Shape':
+    Pathfinder2E.FEATURES['Order Magic (Leaf)']
+    .replace('Goodberry', 'Cornucopia'),
+  'Order Magic (Storm)':Pathfinder2E.FEATURES['Order Magic (Storm)'],
+  'Order Magic (Untamed)':
+    Pathfinder2E.FEATURES['Order Magic (Wild)']
+    .replace('Wild Shape', 'Untamed Shift'),
+  'Snowdrift Spell':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 on Athletics checks"',
+    'Note="Subseuent air, water, or cold spell creates difficult terrain underneath 1 affected creature for 1 rd"',
+  'Current Spell':
+    'Section=magic ' +
+    'Note="Subsequent air or water spell gives self +1 Armor Class (+2 vs. ranged attacks) and +1 saves vs. air and water for 1 rd"',
+  'Grown Of Oak':
+    'Section=magic ' +
+    'Note="Can cast <i>Oaken Resilience</i> up to level %V at will on self and leshy familiar within 30\'"',
+  'Insect Shape':Pathfinder2E.FEATURES['Insect Shape'],
+  'Instinctive Support':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Casting a non-cantrip spell on companion allows it to Support and take its actions"',
+  // Steady Spellcasting as above
+  'Storm Retribution':Pathfinder2E.FEATURES['Storm Retribution'],
+  'Deimatic Display':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Makes a Demoralize attempt against animals, fungii, and plants in a 15\' cone"',
+  'Ferocious Shape':
+    Pathfinder2E.FEATURES['Ferocious Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  // Changed spell list
   'Fey Caller':
     'Section=magic ' +
-    'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
-  'Incredible Companion':
-    'Section=feature ' +
-    'Note="Animal Companion has choice of nimble or savage characteristics"',
-  'Soaring Shape':
-    'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 on Acrobatics checks"',
-  'Wind Caller':
-    'Section=magic ' +
-    'Note="Knows the Stormwind Flight primal spell/+1 Focus Points"',
-  'Elemental Shape':
-    'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Medium elemental with resistance 5 to fire"',
-  'Healing Transformation':
+    'Note="Knows the Illusory Disguise, Illusory Object, and Illusory Scene primal spells"',
+  'Foral Restoration':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent polymorph spell restores 1d6 Hit Points per spell level"',
-  'Overwhelming Energy':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent spell ignores resistance %{level} to energy"',
-  'Plant Shape':
-    'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large plant with resistance 5 to poison"',
-  'Side By Side':
-    'Section=combat ' +
-    'Note="Self and companion automatically flank a foe adjacent to both"',
-  'Dragon Shape':
-    'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to choice of acid, cold, electricity, fire, or poison"',
-  'Green Tongue':
-    'Section=magic ' +
-    'Note="Self and any leshy familiar have continuous <i>Speak With Plants</i> effects"',
-  'Primal Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Primal Summons':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Knows the Primal Summons primal spell",' +
-      '"Summoned creatures gain choice of air, earth, fire, or water elemental power"',
-  'Specialized Companion':
-    'Section=feature Note="Animal Companion has choice of specialization"',
-  'Timeless Nature':
-    'Section=feature,save ' +
-    'Note=' +
-      '"Does not age",' +
-      '"+2 saves vs. disease and primal magic"',
-  'Verdant Metamorphosis':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Has plant, not humanoid, trait",' +
-      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
-  // Effortless Concentration as above
-  'Impaling Briars':
-    'Section=magic ' +
-    'Note="Knows the Impaling Briars primal spell/+1 Focus Points"',
-  'Monstrosity Shape':
-    'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Soaring Shape\'?\'phoenix, purple worm,\':\'purple worm\'} or sea serpent"',
-  'Invoke Disaster':
-    'Section=magic Note="Knows the Storm Lord primal spell/+1 Focus Points"',
-  'Perfect Form Control':
-    'Section=magic Note="Can use Form Control to retain shape permanently"',
-  'Primal Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
-  "Hierophant's Power":'Section=magic Note="+1 10th level spell slot"',
-  'Leyline Conduit':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent casting of an instantaneous spell of 5th level or lower does not expend a spell slot once per min"',
-  'True Shapeshifter':
+    'Note="Draws on 15\' sq of plant life to regain %{(level+1)//2>?4}d8 HP and 1 Focus Point once per day"',
+  'Incredible Companion':Pathfinder2E.FEATURES['Incredible Companion'],
+  'Raise Menhir':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Changes shape during <i>Wild Shape</i>; can change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
+    'Note="R30\' 15\' radius gives creatures +2 saves vs. choice of arcane, divine, or accult effects while sustained up to 1 min"',
+  'Soaring Shape':
+    Pathfinder2E.FEATURES['Soaring Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  'Wind Caller':Pathfinder2E.FEATURES['Wind Caller'],
+  'Elemental Shape':
+    Pathfinder2E.FEATURES['Elemental Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  'Healing Transformation':
+    Pathfinder2E.FEATURES['Healing Transformation']
+    .replace('level', 'rank'),
+  'Overwhelming Energy':Pathfinder2E.FEATURES['Overwhelming Energy'],
+  'Plant Shape':
+    Pathfinder2E.FEATURES['Plant Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  'Primal Howl':
+    'Section=feature ' +
+    'Note="Companion can use 2 actions to inflict 1d6 HP sonic per 2 levels and frightened 1 in a 30\' cone once per hour (<b>save basic Fortitude</b> also negates frightened; critical failure inflicts frightened 2)"',
+  'Pristine Weapon':
+    'Section=combat ' +
+    'Note="Verdant weapon counts as cold iron and silver, inflicting 1d6 HP persistent bleed to creatures with weakness to either"',
+  'Side By Side':Pathfinder2E.FEATURES['Side By Side'],
+  'Thunderclap Spell':
+    'Section=magic ' +
+    'Note="Subsequent instantaneous electricity spell also inflicts deafened for 1 rd (<b>save Reflex</b> negates; critical failure also knocks prone)"',
+  'Dragon Shape':
+    Pathfinder2E.FEATURES['Dragon Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  'Garland Spell':
+    'Section=magic ' +
+    'Note="TODO"',
+  'Primal Focus':Pathfinder2E.FEATURES['Primal Focus'].replace('2', 'all'),
+  'Primal Summons':Pathfinder2E.FEATURES['Primal Summons'],
+  'Wandering Oasis':
+    'Section=save ' +
+    'Note="Self and allies within 60\' are protected from %{rank.Survival>=4?\'extreme\':\'severe\'} environmental heat and cold"',
+  'Reactive Transformation':
+    'Section=magic ' +
+    'Note="TODO"',
+  'Sow Seed':
+    'Section=magic ' +
+    'Note="TODO"',
+  'Specialized Companion':Pathfinder2E.FEATURES['Specialized Companion'],
+  'Timeless Nature':Pathfinder2E.FEATURES['Timeless Nature'],
+  'Verdant Metamorphosis':
+    Pathfinder2E.FEATURES['Verdant Metamorphosis']
+    .replace('Tree Shape', 'One With Plants'),
+  // Effortless Concentration as above
+  'Impaling Briars':Pathfinder2E.FEATURES['Impaling Briars'],
+  'Monstrosity Shape':
+    Pathfinder2E.FEATURES['Monstrosity Shape']
+    .replace('Wild Shape', 'Untamed Form'),
+  'Uplifting Winds':
+    'Section=magic ' +
+    'Note="Casting an air or electricity spell while flying gives +10\' fly Speed and an immediate %{speed//2}\' Fly action"',
+  'Invoke Disaster':Pathfinder2E.FEATURES['Invoke Disaster'],
+  'Perfect Form Control':Pathfinder2E.FEATURES['Perfect Form Control'],
+  'Primal Aegis':
+    'Section=save ' +
+    'Note="Self and allies within 30\' have resistance %{wisdomModifier} to acid, cold, fire, vitality, and void damage"',
+  "Hierophant's Power":Pathfinder2E.FEATURES["Hierophant's Power"],
+  'Ley Line Conduit':Pathfinder2E.FEATURES['Leyline Conduit'],
+  'True Shapeshifter':Pathfinder2E.FEATURES['True Shapeshifter'],
+
+
+  /*-----*/
 
   // Fighter
   // Armor Expertise as above
@@ -5376,7 +5359,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Can select a fighter feat of up to 14th level to use each day"',
   // Juggernaut as above
-  // Shield Block as below
+  // Shield Block as above
   'Versatile Legend':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)"',
@@ -7444,7 +7427,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="+%{$\'rank.Alcohol Lore\' >= 3 || $\'rank.Cooking Lore\' >= 3 || rank.Crafting >= 3?2:1} to Craft food and drink"',
   'Shameless Request':Pathfinder2E.FEATURES['Shameless Request'],
-  'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
+  // Shield Block as above
   'Sign Language':Pathfinder2E.FEATURES['Sign Language'],
   'Skill Training (%skill)':Pathfinder2E.FEATURES['Skill Training (%skill)'],
   'Slippery Secrets':Pathfinder2E.FEATURES['Slippery Secrets'],
@@ -7618,6 +7601,27 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Untamed Form':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Cornucopia':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Untamed Shift':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Pulse Of Civilization':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -11684,6 +11688,9 @@ Pathfinder2ERemaster.magicRules = function(rules, spells) {
 Pathfinder2ERemaster.talentRules = function(
   rules, feats, features, goodies, languages, skills
 ) {
+  for(let f in features)
+    if(features[f] == null)
+      console.log(f);
   Pathfinder2E.talentRules(rules, feats, features, goodies, languages, skills);
 };
 
@@ -12006,7 +12013,18 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
-  if(name == 'Martial Experience') {
+  if(name == 'Grown Of Oak') {
+    rules.defineRule('magicNotes.grownOfOak',
+      '', '=', '1',
+      'spellSlots.P4', '^', '2',
+      'spellSlots.P5', '^', '3',
+      'spellSlots.P6', '^', '4',
+      'spellSlots.P7', '^', '5',
+      'spellSlots.P8', '^', '6',
+      'spellSlots.P9', '^', '7',
+      'spellSlots.P10', '^', '8'
+    );
+  } else if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
       'features.Martial Experience', '?', null,
       'level', '=', 'source>=11 ? 1 : null'
