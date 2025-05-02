@@ -176,13 +176,17 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Artisan':Pathfinder2E.BACKGROUNDS.Artisan,
   'Artist':Pathfinder2E.BACKGROUNDS.Artist,
   'Barkeep':Pathfinder2E.BACKGROUNDS.Barkeep,
+  'Bandit':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
+      '"1:Skill Trained (Intimidation; Choose 1 from any Terrain Lore)","1:Group Coercion"',
   'Barrister':Pathfinder2E.BACKGROUNDS.Barrister,
   'Bounty Hunter':Pathfinder2E.BACKGROUNDS['Bounty Hunter'],
   'Charlatan':Pathfinder2E.BACKGROUNDS.Charlatan,
   'Cook':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
-      '"1:Skill Trained (Survival; Cooking Lore)",1:Seasoned',
+      '"1:Skill Trained (Survival; Cooking Lore)","1:Seasoned"',
   'Criminal':Pathfinder2E.BACKGROUNDS.Criminal,
   'Cultist':
     'Features=' +
@@ -210,10 +214,7 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Prisoner':Pathfinder2E.BACKGROUNDS.Prisoner,
   'Raised By Belief':
     'Features=' +
-      // TODO deity's attribute
-      '"1:Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any)",' +
-      // TODO deity's skills; Assurance (deity skill)
-      '"1:Skill Trained (Athletics; Sailing Lore)","1:Underwater Marauder"',
+      '"1:Belief Attributes","1:Belief Skills"',
   'Sailor':Pathfinder2E.BACKGROUNDS.Sailor,
   'Scholar':Pathfinder2E.BACKGROUNDS.Scholar,
   'Scout':Pathfinder2E.BACKGROUNDS.Scout,
@@ -791,48 +792,125 @@ Pathfinder2ERemaster.CLASSES = {
       'A10:1@19'
 };
 Pathfinder2ERemaster.DEITIES = {
-  // TODO Divine Attribute is new; Alignment and FollowerAlignments eliminated
+  // TODO Areas Of Concern, Divine Attribute and Divine Sanctification are new;
+  // Alignment and FollowerAlignments eliminated
   'None':'',
   'Abadar':
-    Pathfinder2E.DEITIES.Abadar.replace('Magnificent Mansion', 'Planar Palace'),
-  'Asmodeus':Pathfinder2E.DEITIES.Asmodeus,
-  'Calistra':Pathfinder2E.DEITIES.Calistra,
+    Pathfinder2E.DEITIES.Abadar
+    .replace('Magnificent Mansion', 'Planar Palace') + ' ' +
+    'AreasOfConcern=Cities,Law,Merchants,Wealth ' +
+    'DivineAttribute=Constitution,Intelligence ' +
+    'DivineSanctification=Either',
+  'Asmodeus':
+    Pathfinder2E.DEITIES.Asmodeus + ' ' +
+    'AreasOfConcern=Contracts,Oppression,Pride,Tyranny ' +
+    'DivineAttribute=Charisma,Constitution,Dexterity,Intelligence,Strength,Wisdom ' +
+    'DivineSanctification=Unholy',
+  'Calistra':
+    Pathfinder2E.DEITIES.Calistra + ' ' +
+    'AreasOfConcern=Lust,Revenge,Trickery ' +
+    'DivineAttribute=Charisma,Dexterity ' +
+    'DivineSanctification=Either',
   'Cayden Cailean':
     Pathfinder2E.DEITIES['Cayden Cailean']
-    .replace('Touch Of Idiocy', 'Stupefy'),
+    .replace('Touch Of Idiocy', 'Stupefy') + ' ' +
+    'AreasOfConcern=Ale,Bravery,Freedom,Wine ' +
+    'DivineAttribute=Charisma,Constitution ' +
+    'DivineSanctification=Holy',
   'Desna':
-    Pathfinder2E.DEITIES.Desna.replace('3:Dream Message', '4:Translocate'),
+    Pathfinder2E.DEITIES.Desna
+    .replace('3:Dream Message', '4:Translocate') + ' ' +
+    'AreasOfConcern=Dreams,Luck,Stars,Travelers ' +
+    'DivineAttribute=Charisma,Dexterity ' +
+    'DivineSanctification=Holy',
   'Erastil':
-    Pathfinder2E.DEITIES.Erastil.replace('Tree Stride', "Nature's Pathway"),
-  'Gorum':Pathfinder2E.DEITIES.Gorum,
-  'Gozreh':Pathfinder2E.DEITIES.Gozreh,
-  'Iomedae':Pathfinder2E.DEITIES.Iomedae.replace('See Invisibility', 'Enlarge'),
+    Pathfinder2E.DEITIES.Erastil
+    .replace('Tree Stride', "Nature's Pathway") + ' ' +
+    'AreasOfConcern=Family,Farming,Hunting,Trade ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=Holy',
+  'Gorum':Pathfinder2E.DEITIES.Gorum + ' ' +
+    'AreasOfConcern=Battle,Strength,Weapons ' +
+    'DivineAttribute=Constitution,Strength ' +
+    'DivineSanctification=Either',
+  'Gozreh':Pathfinder2E.DEITIES.Gozreh + ' ' +
+    'AreasOfConcern=Nature,"The Sea",Weather ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=None',
+  'Iomedae':
+    Pathfinder2E.DEITIES.Iomedae
+    .replace('See Invisibility', 'Enlarge') + ' ' +
+    'AreasOfConcern=Honor,Justice,Rulership,Valor ' +
+    'DivineAttribute=Constitution,Strength ' +
+    'DivineSanctification=Holy',
   'Irori':
-    Pathfinder2E.DEITIES.Irori.replace('4:Stoneskin', '4:Mountain Resilience'),
+    Pathfinder2E.DEITIES.Irori
+    .replace('4:Stoneskin', '4:Mountain Resilience') + ' ' +
+    'AreasOfConcern=History,Knowledge,Self-Perfection ' +
+    'DivineAttribute=Intelligence,Wisdom ' +
+    'DivineSanctification=Either',
   'Lamashtu':
-    Pathfinder2E.DEITIES.Lamashtu.replace('Magic Fang', 'Spider Sting'),
-  'Nethys':Pathfinder2E.DEITIES.Nethys + ' ' +
+    Pathfinder2E.DEITIES.Lamashtu
+    .replace('Magic Fang', 'Spider Sting') + ' ' +
+    'AreasOfConcern=Aberrance,Monsters,Nightmares ' +
+    'DivineAttribute=Constitution,Strength ' +
+    'DivineSanctification=Unholy',
+  'Nethys':
+    Pathfinder2E.DEITIES.Nethys + ' ' +
     'Spells=' +
       '"1:Force Barrage","2:Embed Message","3:Levitate","4:Flicker",' +
       '"5:Telekinetic Haul","6:Wall Of Force","7:Warp Mind","8:Quandary",' +
-      '"9:Detonate Magic"',
+      '"9:Detonate Magic" ' +
+    'AreasOfConcern=Magic ' +
+    'DivineAttribute=Intelligence,Wisdom ' +
+    'DivineSanctification=Either',
   'Norgorber':
     Pathfinder2E.DEITIES.Norgorber
-    .replace('Phantasmal Killer', 'Vision Of Death'),
+    .replace('Phantasmal Killer', 'Vision Of Death') + ' ' +
+    'AreasOfConcern=Greed,Murder,Poison,Secrets ' +
+    'DivineAttribute=Dexterity,Intelligence ' +
+    'DivineSanctification=Unholy',
   'Pharasma':
     Pathfinder2E.DEITIES.Pharasma
-    .replace('Phantasmal Killer', 'Vision Of Death'),
+    .replace('Phantasmal Killer', 'Vision Of Death') + ' ' +
+    'AreasOfConcern=Birth,Death,Fate,Prophecy,Time ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=None',
   'Rovagug':
-    Pathfinder2E.DEITIES.Rovagug.replace('Burning Hands', 'Breath Fire'),
+    Pathfinder2E.DEITIES.Rovagug
+    .replace('Burning Hands', 'Breath Fire') + ' ' +
+    'AreasOfConcern=Destruction,Disaster,Wrath ' +
+    'DivineAttribute=Constitution,Strength ' +
+    'DivineSanctification=Unholy',
   'Sarenrae':
-    Pathfinder2E.DEITIES.Sarenrae.replace('Burning Hands', 'Breath Fire'),
+    Pathfinder2E.DEITIES.Sarenrae
+    .replace('Burning Hands', 'Breath Fire') + ' ' +
+    'AreasOfConcern=Healing,"Honest Redemption","The Sun" ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=Holy',
   'Shelyn':
-    Pathfinder2E.DEITIES.Shelyn.replace('Color Spray', 'Dizzying Colors'),
-  'Torag':Pathfinder2E.DEITIES.Torag,
+    Pathfinder2E.DEITIES.Shelyn
+    .replace('Color Spray', 'Dizzying Colors') + ' ' +
+    'AreasOfConcern=Art,Beauty,Love,Music ' +
+    'DivineAttribute=Charisma,Wisdom ' +
+    'DivineSanctification=Holy',
+  'Torag':
+    Pathfinder2E.DEITIES.Torag + ' ' +
+    'AreasOfConcern=Forge,Protection,Strategy ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=Hoy',
   'Urgathoa':
-    Pathfinder2E.DEITIES.Urgathoa.replace('False Life', 'False Vitality'),
+    Pathfinder2E.DEITIES.Urgathoa
+    .replace('False Life', 'False Vitality') + ' ' +
+    'AreasOfConcern=Disease,Gluttony,Undeath ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=Unholy',
   'Zon-Kuthon':
-    Pathfinder2E.DEITIES['Zon-Kuthon'].replace('Shadow Walk', 'Umbral Journey')
+    Pathfinder2E.DEITIES['Zon-Kuthon']
+    .replace('Shadow Walk', 'Umbral Journey') + ' ' +
+    'AreasOfConcern=Darkness,Envy,Loss,Pain ' +
+    'DivineAttribute=Constitution,Wisdom ' +
+    'DivineSanctification=Unholy'
 };
 Pathfinder2ERemaster.FEATS = {
 
@@ -3680,6 +3758,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Charm arcane innate spell; may cast it once per day"',
 
   // Backgrounds
+  'Belief Attributes':
+    'Section=ability ' +
+    'Note="Attribute Boost (Choose 1 from %V; Choose 1 from any)"',
+  'Belief Skills':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Assurance (%V) feature",' +
+      '"Skill Trained (%V; %1)"',
   'Martial Focus':'Section=feature Note="1 selection"',
   'Scholarly Tradition':'Section=feature Note="1 selection"',
 
@@ -4852,6 +4938,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Cleric
   'Anathema':Pathfinder2E.FEATURES.Anathema,
   'Cleric Feats':Pathfinder2E.FEATURES['Cleric Feats'],
+  'Cleric Skills':Pathfinder2E.FEATURES['Cleric Skills'],
   'Cleric Spellcasting':Pathfinder2E.FEATURES['Divine Spellcasting'],
   'Cloistered Cleric':Pathfinder2E.FEATURES['Cloistered Cleric'],
   'Deity':Pathfinder2E.FEATURES.Deity,
@@ -11712,7 +11799,10 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Domain'),
       QuilvynUtils.getAttrValue(attrs, 'Weapon'),
       QuilvynUtils.getAttrValue(attrs, 'Skill'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Spells')
+      QuilvynUtils.getAttrValueArray(attrs, 'Spells'),
+      QuilvynUtils.getAttrValueArray(attrs, 'AreasOfConcern'),
+      QuilvynUtils.getAttrValueArray(attrs, 'DivineAttribute'),
+      QuilvynUtils.getAttrValue(attrs, 'DivineSanctification')
     );
   else if(type == 'Feat') {
     Pathfinder2ERemaster.featRules(rules, name,
@@ -11822,6 +11912,12 @@ Pathfinder2ERemaster.ancestryRules = function(
  */
 Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
   Pathfinder2E.ancestryRulesExtra(rules, name);
+  if(name == 'Human') {
+    rules.defineRule('skillNotes.skilledHeritageHuman', 'level', '?', 'null');
+    rules.defineRule('skillNotes.skilledHuman',
+      'level', '=', 'source<5 ? "Trained" : "Expert"'
+    );
+  }
 };
 
 /*
@@ -11873,6 +11969,15 @@ Pathfinder2ERemaster.backgroundRules = function(
  */
 Pathfinder2ERemaster.backgroundRulesExtra = function(rules, name) {
   Pathfinder2E.backgroundRulesExtra(rules, name);
+  if(name == 'Raised By Belief') {
+    rules.defineRule('abilityNotes.beliefAttributes',
+      'deityAttributes', '=', 'source.replaceAll(\'/\', \', \')'
+    );
+    rules.defineRule('featureNotes.beliefSkills', 'deitySkill', '=', null);
+    rules.defineRule('skillNotes.beliefSkills', 'deitySkill', '=', null);
+    rules.defineRule
+      ('skillNotes.beliefSkills.1', 'deity', '=', 'source + " Lore"');
+  }
 };
 
 /*
@@ -11909,6 +12014,11 @@ Pathfinder2ERemaster.classRules = function(
  */
 Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   Pathfinder2E.classRulesExtra(rules, name);
+  if(name == 'Fighter') {
+    rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
+      'featureNotes.fighterKeyAttribute', '=', '1'
+    );
+  }
 };
 
 /*
@@ -11934,10 +12044,43 @@ Pathfinder2ERemaster.classFeatureRules = function(
  * divine skill, and #spells# lists associated cleric spells.
  */
 Pathfinder2ERemaster.deityRules = function(
-  rules, name, font, domains, weapon, skill, spells
+  rules, name, font, domains, weapon, skill, spells, areas, attributes,
+  sanctification
 ) {
   Pathfinder2E.deityRules(
     rules, name, null, [], font, domains, weapon, skill, spells
+  );
+  if(rules.deityStats.areas == null) {
+    rules.deityStats.areas = {},
+    rules.deityStats.attributes = {},
+    rules.deityStats.sanctification = {}
+  }
+  rules.deityStats.areas[name] = areas.join('/');
+  rules.deityStats.attributes[name] = attributes.join('/');
+  rules.deityStats.sanctification[name] = sanctification;
+  rules.defineRule('deityAreas',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.areas) + '[source]'
+  );
+  rules.defineRule('deityAttributes',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.attributes) + '[source]'
+  );
+  rules.defineRule('deitySanctification',
+    'deity', '=', QuilvynUtils.dictLit(rules.deityStats.sanctification) + '[source]'
+  );
+  rules.defineRule('features.Assurance (' + skill + ')',
+    'featureNotes.beliefSkills', '=', 'source=="' + skill + '" ? 1 : null'
+  );
+  rules.defineRule('trainingLevel.' + skill,
+    'skillNotes.beliefSkills', '^=', 'source=="' + skill + '" ? 1 : null'
+  );
+  rules.defineRule('trainingCount.' + skill,
+    'skillNotes.beliefSkills', '+=', 'source=="' + skill + '" ? 1 : null'
+  );
+  rules.defineRule('trainingLevel.' + name + ' Lore',
+    'skillNotes.beliefSkills.1', '^=', 'source=="' + name + ' Lore" ? 1 : null'
+  );
+  rules.defineRule('trainingCount.' + name + ' Lore',
+    'skillNotes.beliefSkills.1', '+=', 'source=="' + name + ' Lore" ? 1 : null'
   );
 };
 
@@ -11960,7 +12103,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
-  if(name == 'Grown Of Oak') {
+  if(name == 'Gnome Obsession') {
+    rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
+  } else if(name == 'Grown Of Oak') {
     rules.defineRule('magicNotes.grownOfOak',
       '', '=', '1',
       'spellSlots.P4', '^', '2',
