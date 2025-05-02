@@ -5137,7 +5137,7 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type (plus resistance %{level//2} with a matching domain spell), or to cause a weapon to inflict +1d4 HP energy type damage (or +1d6 HP with a matching domain spell)"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, plus resistance %{level//2} with a matching domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP with a matching domain spell"',
   'Castigating Weapon':
     'Section=magic ' +
     'Note="Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd"',
@@ -5154,11 +5154,11 @@ Pathfinder2E.FEATURES = {
   'Defensive Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +2 Armor Class and saves for 1 rd"',
+    'Note="Subsequent healing cast on a single target also gives +2 Armor Class and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using 1/2 the wielder\'s level"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using half the wielder\'s level"',
   'Shared Replenishment':
     'Section=combat ' +
     'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
@@ -5319,7 +5319,7 @@ Pathfinder2E.FEATURES = {
   'Storm Retribution':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (Reflex negates; critical failure pushes 10\')"',
+    'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (<b>save</b> Reflex negates; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 on Athletics checks"',
