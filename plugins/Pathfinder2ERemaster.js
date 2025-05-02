@@ -2113,15 +2113,15 @@ Pathfinder2ERemaster.FEATS = {
   'Lunge':Pathfinder2E.FEATS.Lunge,
   'Rebounding Toss':'Trait=Class,Fighter,Flourish Require="level >= 2"',
   'Sleek Reposition':'Trait=Class,Fighter,Press Require="level >= 2"',
-  'Barreling Charge':Pathfinder2E.FEATS.Knockdown,
+  'Barreling Charge':
+    'Trait=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
   'Double Shot':Pathfinder2E.FEATS['Double Shot'],
   'Dual-Handed Assault':Pathfinder2E.FEATS['Dual-Handed Assault'],
   'Parting Shot':'Trait=Class,Fighter Require="level >= 4"',
   'Powerful Shove':Pathfinder2E.FEATS['Powerful Shove'],
   'Quick Reversal':Pathfinder2E.FEATS['Quick Reversal'],
   'Shielded Stride':Pathfinder2E.FEATS['Shielded Stride'],
-  'Slam Down':
-    'Trait=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
+  'Slam Down':Pathfinder2E.FEATS.Knockdown,
   // Swipe as above
   'Twin Parry':Pathfinder2E.FEATS['Twin Parry'],
   'Advanced Weapon Training':Pathfinder2E.FEATS['Advanced Weapon Training'],
@@ -2155,7 +2155,8 @@ Pathfinder2ERemaster.FEATS = {
   'Agile Grace':Pathfinder2E.FEATS['Agile Grace'],
   'Certain Strike':Pathfinder2E.FEATS['Certain Strike'],
   'Crashing Slam':
-    'Trait=Class,Fighter Require="level >= 10","features.Slam Down"',
+    Pathfinder2E.FEATS['Improved Knockdown']
+    .replace('Knockdown', 'Slam Down'),
   'Cut From The Air':'Trait=Class,Fighter Require="level >= 10"',
   'Debilitating Shot':Pathfinder2E.FEATS['Debilitating Shot'],
   'Disarming Twist':Pathfinder2E.FEATS['Disarming Twist'],
@@ -2164,8 +2165,7 @@ Pathfinder2ERemaster.FEATS = {
   'Flinging Charge':'Trait=Class,Fighter,Flourish Require="level >= 10"',
   'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
   'Overpowering Charge':
-    Pathfinder2E.FEATS['Improved Knockdown']
-    .replace('Knockdown','Barreling Charge'),
+    'Trait=Class,Fighte Require="level >= 10","features.Barreling Charge"',
   'Tactical Reflexes':Pathfinder2E.FEATS['Combat Reflexes'],
   'Twin Riposte':Pathfinder2E.FEATS['Twin Riposte'],
   'Brutal Finish':Pathfinder2E.FEATS['Brutal Finish'],
@@ -3963,8 +3963,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Save Legendary (Fortitude)",' +
       '"Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save"',
+*/
   'Greater Weapon Specialization':
     'Section=combat Note="Has increased Weapon Specialization effects"',
+/*
   'Heightened Senses':'Section=skill Note="Perception Master"',
   'Indomitable Will':
     'Section=save,save ' +
@@ -4029,10 +4031,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Raging Thrower':
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
+*/
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a melee Strike after a double Stride"',
+/*
   'Acute Scent':'Section=skill Note="Has 30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
@@ -4053,10 +4057,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Raging Athlete':
     'Section=skill ' +
     'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
+*/
   'Swipe':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Melee Strike attacks 2 adjacent foes"',
+/*
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4066,10 +4072,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Defense Expert (Unarmored Defense)",' +
       '"+%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} Armor Class in no armor during rage"',
-  'Attack Of Opportunity':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
+  */
+  'Reactive Strike':Pathfinder2E.FEATURES['Attack Of Opportunity'],
+  /*
   'Brutal Bully':
     'Section=combat ' +
     'Note="A successful Disarm, Grapple, Shove, or Trip during rage inflicts %{strengthModifier} HP bludgeoning"',
@@ -4100,10 +4105,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="R30\' Gives an ally the effects of Rage once per rage"',
+*/
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a melee Strike while Leaping, High Jumping, or Long Jumping up to %{speed*2}\'"',
+/*
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
@@ -4184,7 +4191,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Invokes <i>Earthquake</i> effects once per 10 min"',
-  */
+*/
 
   // Bard
   'Bard Feats':Pathfinder2E.FEATURES['Bard Feats'],
@@ -4491,11 +4498,13 @@ Pathfinder2ERemaster.FEATURES = {
   "Advanced Deity's Domain (Zeal)":
     'Section=magic ' +
     'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
+  */
   'Armor Expertise':
     'Section=combat,combat ' +
     'Note=' +
       '"Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"Benefits from the specialization effects of medium and heavy armor"',
+  /*
   'Armor Mastery':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
@@ -4670,14 +4679,16 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
-*/
+  */
   'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
-/*
+  /*
   'The Tenets Of Good':
     'Section=feature ' +
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
+  */
   'Weapon Expertise':
     'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
+  /*
   'Weapon Mastery':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
@@ -4730,8 +4741,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Litany Against Wrath divine spell/+1 Focus Points"',
   'Loyal Warhorse':
     'Section=feature Note="Mount is mature and will never attack self"',
+*/
   'Shield Warden':
     'Section=combat Note="Can use Shield Block to protect an adjacent ally"',
+/*
   'Smite Evil':
     'Action=1 ' +
     'Section=combat ' +
@@ -4742,9 +4755,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Heal Mount':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points +10 Hit Points per heightened level"',
+*/
   'Quick Shield Block':
     'Section=combat ' +
     'Note="Can use an additional Reaction for a Shield Block once per turn"',
+/*
   'Second Ally':'Section=feature Note="+1 selection"',
   'Sense Evil':
     'Section=feature ' +
@@ -4832,7 +4847,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+50% shield Hit Points",' +
       '"Shield is always raised and is automatically remade after 1 day if destroyed"',
-  */
+*/
 
   // Cleric
   'Anathema':Pathfinder2E.FEATURES.Anathema,
@@ -5290,18 +5305,20 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wild Shape', 'Untamed Form'),
   'Garland Spell':
     'Section=magic ' +
-    'Note="TODO"',
+    'Note="Subsequent fungus or plant spell grows plants in a 10\' burst that inflict difficult terrain and %{level//4-1}d6 HP piercing or poison for 1 min"',
   'Primal Focus':Pathfinder2E.FEATURES['Primal Focus'].replace('2', 'all'),
   'Primal Summons':Pathfinder2E.FEATURES['Primal Summons'],
   'Wandering Oasis':
     'Section=save ' +
     'Note="Self and allies within 60\' are protected from %{rank.Survival>=4?\'extreme\':\'severe\'} environmental heat and cold"',
   'Reactive Transformation':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="TODO"',
+    'Note="Invokes Aerial Form, Dragon Form, Elemental Form, or Plant form in response to falling, energy damage, fire damage, or poison damage"',
   'Sow Seed':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="TODO"',
+    'Note="Prepares a subsequent 1- or 2-action spell to take effect in an adjacent square when a creature enters or is adjacent to it within 10 min"',
   'Specialized Companion':Pathfinder2E.FEATURES['Specialized Companion'],
   'Timeless Nature':Pathfinder2E.FEATURES['Timeless Nature'],
   'Verdant Metamorphosis':
@@ -5324,226 +5341,156 @@ Pathfinder2ERemaster.FEATURES = {
   'Ley Line Conduit':Pathfinder2E.FEATURES['Leyline Conduit'],
   'True Shapeshifter':Pathfinder2E.FEATURES['True Shapeshifter'],
 
-
-  /*-----*/
-
   // Fighter
   // Armor Expertise as above
   // Armor Mastery as above
-  // Attack Of Opportunity as above
-  'Battlefield Surveyor':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"+2 Perception for initiative",' +
-      '"Perception Master"',
-  'Bravery':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Expert (Will)",' +
-      '"Successes on Will saves vs. fear are critical successes, and the severity of frightened conditions are reduced by 1"',
-  'Combat Flexibility':
-    'Section=combat ' +
-    'Note="Can select a fighter feat of up to 8th level to use each day"',
-  // Evasion as above
-  'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
-  'Fighter Feats':'Section=feature Note="%V selections"',
-  'Fighter Key Attribute':'Section=feature Note="1 selection"',
-  'Fighter Skills':
-    'Section=skill ' +
-    'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
-  'Fighter Weapon Mastery':
-    'Section=combat ' +
-    'Note="Attack Master with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Expert with advanced weapons of the same group/Critical hits with a master proficiency weapon inflict its critical specialization effect"',
+  'Battle Hardened':Pathfinder2E.FEATURES.Juggernaut,
+  'Battlefield Surveyor':Pathfinder2E.FEATURES['Battlefield Surveyor'],
+  'Bravery':Pathfinder2E.FEATURES.Bravery,
+  'Combat Flexibility':Pathfinder2E.FEATURES['Combat Flexibility'],
+  'Fighter Expertise':Pathfinder2E.FEATURES['Fighter Expertise'],
+  'Fighter Feats':Pathfinder2E.FEATURES['Fighter Feats'],
+  'Fighter Key Attribute':Pathfinder2E.FEATURES['Fighter Key Ability'],
+  'Fighter Skills':Pathfinder2E.FEATURES['Fighter Skills'],
+  'Fighter Weapon Mastery':Pathfinder2E.FEATURES['Fighter Weapon Mastery'],
   // Greater Weapon Specialization as above
-  'Improved Flexibility':
-    'Section=combat ' +
-    'Note="Can select a fighter feat of up to 14th level to use each day"',
-  // Juggernaut as above
+  'Improved Flexibility':Pathfinder2E.FEATURES['Improved Flexibility'],
+  // Reactive Strike as above
   // Shield Block as above
-  'Versatile Legend':
-    'Section=combat ' +
-    'Note="Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)"',
-  'Weapon Legend':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)",' +
-      '"Attack Legendary with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Master with advanced weapons of the same group"',
-
+  'Tempered Reflexes':Pathfinder2E.FEATURES.Evasion,
+  'Versatile Legend':Pathfinder2E.FEATURES['Versatile Legend'],
+  'Weapon Legend':Pathfinder2E.FEATURES['Weapon Legend'],
   // Weapon Specialization as above
-  'Double Slice':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Makes simultaneous Strikes with two melee weapons at the current multiple attack penalty"',
-  'Exacting Strike':
+
+  'Combat Assessment':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike does not count toward multiple attack penalty on failure"',
-  'Point-Blank Shot':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon"',
-  'Power Attack':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra dice damage and counts as two Strikes for multiple attack penalty"',
-  'Reactive Shield':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Performs Raise A Shield to absorb damage from a melee Strike"',
+    'Note="Melee Strike allows an immediate Recall Knowledge about the target; a critical hit gives a +2 bonus"',
+  'Double Slice':Pathfinder2E.FEATURES['Double Slice'],
+  'Exacting Strike':Pathfinder2E.FEATURES['Exacting Strike'],
+  'Point Blank Stance':Pathfinder2E.FEATURES['Point-Blank Shot'],
+  'Reactive Shield':Pathfinder2E.FEATURES['Reactive Shield'],
   'Snagging Strike':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Successful melee Strike with the other hand free inflicts flat-footed for 1 rd"',
+    Pathfinder2E.FEATURES['Snagging Strike']
+    .replace('flat-footed', 'off-guard'),
   // Sudden Charge as above
+  'Vicious Swing':Pathfinder2E.FEATURES['Power Attack'],
   'Aggressive Block':
-    'Action=Free ' +
+    Pathfinder2E.FEATURES['Aggressive Block']
+    .replace('flat-footed', 'off-guard') + ' Action=Reaction',
+  'Assisting Shot':Pathfinder2E.FEATURES['Assisting Shot'],
+  'Blade Break':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Shield Block moves foe 5\' or inflicts flat-footed (foe\'s choice)"',
-  'Assisting Shot':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Successful ranged Strike gives the next ally attack on the target within 1 rd +1 attack, or +2 with a critical success"',
+    'Note="Negates the triggering forced move of less than 20\', or reduces a longer forced move to 5\'"',
   'Brutish Shove':
+    Pathfinder2E.FEATURES['Brutish Shove']
+    .replace('flat-footed', 'off-guard'),
+  'Combat Grab':Pathfinder2E.FEATURES['Combat Grab'],
+  'Dueling Parry':Pathfinder2E.FEATURES['Dueling Parry'],
+  'Intimidating Strike':Pathfinder2E.FEATURES['Intimidating Strike'],
+  'Lightning Swap':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Two-handed melee Strike inflicts flat-footed until the end of turn; success also allows an automatic Shove"',
-  'Combat Grab':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Successful melee Strike with the other hand free inflicts grabbed for 1 rd or until the target Escapes"',
-  'Dueling Parry':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Gives +2 Armor Class for 1 rd when wielding a one-handed melee weapon with the other hand free"',
-  'Intimidating Strike':
+    'Note="Stows held objects and draws two weapons or a shield and a weapon"',
+  'Lunge':Pathfinder2E.FEATURES.Lunge,
+  'Rebounding Toss':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts frightened 1, or frightened 2 with a critical hit"',
-  'Lunge':'Action=1 Section=combat Note="Melee Strike has a +5\' range"',
-  'Double Shot':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Makes two ranged Strikes against different foes at the current multiple attack penalty -2"',
-  'Dual-Handed Assault':
+    'Note="Thrown weapon makes a second Strike against a second target within 10\' of the first"',
+  'Sleek Reposition':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with a 1-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the 2-handed trait or by one die step otherwise"',
-  'Knockdown':
+    'Note="Melee Strike with a finesse or polearm weapon automatically Repositions target, or inflicts off-guard until the end of turn on failure"',
+  'Barreling Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Follows a successful melee Strike with an Athletics check to Trip"',
-  'Powerful Shove':
+    'Note="Successful Athletics vs. Fortitude allows moving through foes\' spaces to make a melee Strike"',
+  'Double Shot':Pathfinder2E.FEATURES['Double Shot'],
+  'Dual-Handed Assault':Pathfinder2E.FEATURES['Dual-Handed Assault'],
+  'Parting Shot':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Can use Aggressive Block and Brutish Shove on foes up to two sizes larger, inflicting %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
-  'Quick Reversal':
-    'Action=1 ' +
-    'Section=combat Note="Makes melee Strikes on two foes flanking self"',
-  'Shielded Stride':
-    'Section=combat ' +
-    'Note="Can Stride at half Speed with shield raised without triggering Reactions"',
+    'Note="Steps away from foe, making it off-guard for a ranged Strike"',
+  'Powerful Shove':Pathfinder2E.FEATURES['Powerful Shove'],
+  'Quick Reversal':Pathfinder2E.FEATURES['Quick Reversal'],
+  'Shielded Stride':Pathfinder2E.FEATURES['Shielded Stride'],
+  'Slam Down':Pathfinder2E.FEATURES.Knockdown,
   // Swipe as above
-  'Twin Parry':
+  'Twin Parry':Pathfinder2E.FEATURES['Twin Parry'],
+  'Advanced Weapon Training':Pathfinder2E.FEATURES['Advanced Weapon Training'],
+  'Advantageous Assault':Pathfinder2E.FEATURES['Advantageous Assault'],
+  'Dazing Blow':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Parrying with one melee weapon in each hand gives +1 Armor Class for 1 rd, or +2 Armor Class if either weapon has the parry trait"',
-  'Advanced Weapon Training':
-    'Section=combat ' +
-    'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
-  'Advantageous Assault':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded two-handed, even on failure"',
-  'Disarming Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance gives +1 to Disarm and +2 vs. Disarm and allows Disarming foes two sizes larger when wielding a one-handed weapon with the other hand free"',
+    'Note="Melee Strike against a grabbed foe inflicts bludgeoning damage and stunned 2 (<b>save Fortitude</b> inflicts stunned 1; critical success negates stunning; critical failure inflicts stunned 3)"',
+  'Disarming Stance':Pathfinder2E.FEATURES['Disarming Stance'],
   'Furious Focus':
+    Pathfinder2E.FEATURES['Furious Focus']
+    .replace('Power Attack', 'Vicious Swing'),
+  "Guardian's Deflection":Pathfinder2E.FEATURES["Guardian's Deflection"],
+  'Reflexive Shield':Pathfinder2E.FEATURES['Reflexive Shield'],
+  'Revealing Stab':Pathfinder2E.FEATURES['Revealing Stab'],
+  'Ricochet Stance':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="A two-handed Power Attack counts as a single attack for multiple attack penalty"',
-  "Guardian's Deflection":
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Gives an adjacent ally +2 Armor Class when wielding a one-handed weapon with the other hand free"',
-  'Reflexive Shield':
-    'Section=save ' +
-    'Note="Raised shield adds shield bonus to Reflex saves"',
-  'Revealing Stab':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Leaves a piercing weapon embedded in a corporeal concealed or hidden foe to reveal it to others"',
+    'Note="Stance causes thrown weapons to return up to their listed range increment after a ranged Strike"',
   'Shatter Defenses':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="A successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts"',
+    Pathfinder2E.FEATURES['Shatter Defenses']
+    .replace('flat-footed', 'off-guard'),
   // Shield Warden as above
-  'Triple Shot':
+  'Triple Shot':Pathfinder2E.FEATURES['Triple Shot'],
+  'Blind-Fight':Pathfinder2E.FEATURES['Blind-Fight'],
+  'Disorienting Opening':
     'Section=combat ' +
-    'Note="Uses Double Shot against a single target, or uses three actions to make three ranged Strikes at the current multiple attack penalty -4"',
-  'Blind-Fight':
-    'Section=combat ' +
-    'Note="Can attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Does not suffer flat-footed vs. hidden foes/Treats adjacent undetected creatures up to level %{level} as hidden instead"',
-  'Dueling Riposte':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="While using Dueling Parry, makes a Strike or Disarm attempt on a foe who critically fails an attack on self"',
-  'Felling Strike':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Successful Strike vs. a flying foe causes it to fall 120\', and a critical success grounds it for 1 rd"',
-  'Incredible Aim':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Ranged Strike gains +2 attack and ignores concealment"',
+    'Note="Successful Reactive Strike inflicts off-guard for 1 rd"',
+  'Dueling Riposte':Pathfinder2E.FEATURES['Dueling Riposte'],
+  'Felling Strike':Pathfinder2E.FEATURES['Felling Strike'],
+  'Incredible Aim':Pathfinder2E.FEATURES['Incredible Aim'],
   'Mobile Shot Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance negates Reactions from ranged Strikes and allows using Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
+    Pathfinder2E.FEATURES['Mobile Shot Stance']
+    .replace('Attack Of Opportunity', 'Reactive Strike'),
   'Positioning Assault':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Successful Strike with a 2-handed melee weapon moves a foe 5\' to within reach"',
+    Pathfinder2E.FEATURES['Positioning Assault']
+    .replace(' to within reach', ''),
   // Quick Shield Block as above
+  'Resounding Bravery':
+    'Section=save ' +
+    'Note="Will saves give +1 saves and %{level//2} tempoary Hit Points, or +2 saves and %{level} temporary on a critical success, for 1 min"',
   // Sudden Leap as above
-  'Agile Grace':
+  'Agile Grace':Pathfinder2E.FEATURES['Agile Grace'],
+  'Certain Strike':Pathfinder2E.FEATURES['Certain Strike'],
+  'Crashing Slam':
+    Pathfinder2E.FEATURES['Improved Knockdown']
+    .replace('Knockdown', 'Slam Down'),
+  'Cut From The Air':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Reduces multiple attack penalties with agile weapons to -3 and -6"',
-  'Certain Strike':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Melee Strike inflicts normal non-dice damage on failure"',
-  'Combat Reflexes':
-    'Section=combat ' +
-    'Note="Gives an additional Reaction to make an Attack Of Opportunity once per turn"',
-  'Debilitating Shot':
+    'Note="Gives +4 AC vs. the triggering ranged attack"',
+  'Debilitating Shot':Pathfinder2E.FEATURES['Debilitating Shot'],
+  'Disarming Twist':
+    Pathfinder2E.FEATURES['Disarming Twist']
+    .replace('flat-footed', 'off-guard'),
+  'Disruptive Stance':
+    Pathfinder2E.FEATURES['Disruptive Stance']
+    .replace('Attack Of Opportunity', 'Reactive Strike'),
+  'Fearsome Brute':Pathfinder2E.FEATURES['Fearsome Brute'],
+  'Flinging Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful ranged Strike also inflicts slowed 1 for 1 rd"',
-  'Disarming Twist':
-    'Action=1 ' +
+    'Note="Hit with a thrown Strike during a double Stride inflicts off-guard against next attack in the same turn"',
+  'Mirror Shield':Pathfinder2E.FEATURES['Mirror Shield'],
+  'Overpowering Charge':
     'Section=combat ' +
-    'Note="Strike with a one-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of turn"',
-  'Disruptive Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance allows using Attack Of Opportunity in response to a concentrate action; a successful Strike disrupts"',
-  'Fearsome Brute':
-    'Section=combat ' +
-    'Note="Strikes against frightened foes inflict additional damage equal to %{rank.Intimidation>=2?3:2}x the frightened value"',
-  'Improved Knockdown':
-    'Section=combat ' +
-    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
-  'Mirror Shield':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Raised shield reflects a spell back upon the caster with a ranged Strike or spell attack"',
-  'Twin Riposte':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self"',
-  'Brutal Finish':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Ends turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
+    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{stengthModifier*2} HP and off-guard for 1 rd on a critical hit"',
+  'Tactical Reflexes':
+    Pathfinder2E.FEATURES['Combat Reflexes']
+    .replace('Attack Of Opportunity', 'Reactive Strike'),
+  'Twin Riposte':Pathfinder2E.FEATURES['Twin Riposte'],
+  'Brutal Finish':Pathfinder2E.FEATURES['Brutal Finish'],
+
+  /*-----*/
+
   'Dueling Dance':
     'Action=1 ' +
     'Section=combat ' +
