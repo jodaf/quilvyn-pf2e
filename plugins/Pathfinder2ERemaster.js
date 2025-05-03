@@ -3287,6 +3287,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"R30\' +2 Seek to find hidden creatures"',
   'Leshy Heritage':'Section=feature Note="1 selection"',
   'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
+  'Orc Heritage':'Section=feature Note="1 selection"',
   'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
   'Rainfall Orc':
     'Section=save,skill ' +
