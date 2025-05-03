@@ -5674,7 +5674,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stance allows Double Slice with an agile weapon to count as one attack"',
   'Improved Reflexive Shield':
     'Section=combat ' +
-    'Note="Can use Shield Block on a Reflex save to protect both self and adjacent allies"',
+    'Note="Using Shield Block on a Reflex save protects both self and adjacent allies"',
   'Multishot Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -6035,7 +6035,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"Critical hits with a simple weapon, martial weapon, or unarmed attack inflict its critical specialization effect"',
+      '"Critical hits with a simple weapon, martial weapon, or unarmed attack vs. hunted prey inflict its critical specialization effect"',
   'Second Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -6070,7 +6070,7 @@ Pathfinder2E.FEATURES = {
     'Note="Makes a melee Strike with each hand against hunted prey once per rd"',
   'Favored Terrain (Aquatic)':
     'Section=ability ' +
-    'Note="Moves normally through underwater difficult terrain/Has a %{speed}\' swim Speed"',
+    'Note="Moves normally through underwater difficult terrain%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' swim Speed\\":\'\'}"',
   'Favored Terrain (Arctic)':
     'Section=ability,feature ' +
     'Note=' +
@@ -6079,28 +6079,28 @@ Pathfinder2E.FEATURES = {
   'Favored Terrain (Desert)':
     'Section=ability,feature ' +
     'Note=' +
-      '"Moves normally over difficult terrain caused by sand without a need to Balance",' +
+      '"Moves normally over difficult terrain caused by sand%{$\'features.Wild Stride\'?\' without a need to Balance\':\'\'}",' +
       '"Can survive on one-tenth normal food and water"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by forest/Has a %{speed}\' climb Speed"',
+    'Note="Moves normally over difficult terrain caused by forest%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   'Favored Terrain (Mountain)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by mountains/Has a %{speed}\' climb Speed"',
+    'Note="Moves normally over difficult terrain caused by mountains%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   'Favored Terrain (Plains)':
     'Section=ability,ability ' +
     'Note=' +
-      '"+10 Speed",' +
-      '"Moves normally over difficult terrain in plains"',
+      '"Moves normally over difficult terrain in plains",' +
+      '"+%V Speed"',
   'Favored Terrain (Sky)':
     'Section=ability ' +
-    'Note="Moves normally through difficult terrain in the sky/Has a %{speed}\' fly Speed"',
+    'Note="Moves normally through difficult terrain in the sky%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' fly Speed\\":\'\'}"',
   'Favored Terrain (Swamp)':
     'Section=ability ' +
-    'Note="Moves normally over greater difficult terrain caused by bogs"',
+    'Note="Moves normally over%{$\'features.Wild Stride\'?\' greater\':\'\'} difficult terrain caused by bogs"',
   'Favored Terrain (Underground)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain underground/Has a %{speed}\' climb Speed"',
+    'Note="Moves normally over difficult terrain underground%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   "Hunter's Aim":
     'Action=2 ' +
     'Section=combat ' +
@@ -14788,6 +14788,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if(name.startsWith('Favored Terrain')) {
     rules.defineRule('features.Favored Terrain', 'features.' + name, '=', '1');
+    if(name.match(/Arctic|Desert/))
+      rules.defineRule
+        ('featureNotes.' + prefix, 'features.Wild Stride', '?', null);
+    else if(name.includes('Plains'))
+      rules.defineRule
+        ('abilityNotes.' + prefix + '-1', 'features.Wild Stride', '=', '10');
   } else if(name == 'Fighter Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -15941,7 +15947,7 @@ Pathfinder2E.createViewers = function(rules, viewers) {
       if(name != 'Collected Notes') {
         viewer.addElements(
           {name: 'Ability Notes', within: 'Attributes', separator: noteSep,
-           format: '<b>' + (rules.plugin==Pathfinder2E ? 'Ability' : 'Attribute') + ' Notes</b>:%V'}
+           format: '<b>' + (rules.plugin==Pathfinder2E ? 'Ability' : 'Attribute') + ' Notes</b>: %V'}
         );
       }
       viewer.addElements(
