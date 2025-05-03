@@ -3805,11 +3805,13 @@ Pathfinder2ERemaster.FEATURES = {
       '"Knows the formulas for 2 common 1st-level healing elixirs",' +
       '"Can use Crafting in place of Medicine"',
   'Double Brew':'Section=skill Note="Has increased Quick Alchemy effects"',
+*/
   'Evasion':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
+/*
   'Field Discovery':
     'Section=combat ' +
     'Note="Can use 1 batch of infused reagents create 3 items from research field"',
@@ -3828,17 +3830,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can create %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents each day"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
-  'Juggernaut':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Fortitude)",' +
-      '"Successes on Fortitude saves are critical successes"',
-  'Medium Armor Expertise':
-    'Section=combat ' +
-    'Note="Defense Expert (Light Armor; Medium Armor; Unarmored Defense)"',
-  'Medium Armor Mastery':
-    'Section=combat ' +
-    'Note="Defense Master (Light Armor; Medium Armor; Unarmored Defense)"',
+*/
+  'Juggernaut':Pathfinder2E.FEATURES.Juggernaut,
+  'Medium Armor Expertise':Pathfinder2E.FEATURES['Medium Armor Expertise'],
+  'Medium Armor Mastery':Pathfinder2E.FEATURES['Medium Armor Mastery'],
+/*
   'Mutagenic Flashback':
     'Action=Free ' +
     'Section=combat ' +
@@ -4052,7 +4048,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save"',
 */
   'Greater Weapon Specialization':
-    'Section=combat Note="Has increased Weapon Specialization effects"',
+    Pathfinder2E.FEATURES['Greater Weapon Specialization'],
 /*
   'Heightened Senses':'Section=skill Note="Perception Master"',
   'Indomitable Will':
@@ -4245,10 +4241,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="While using Come And Get Me, responds to a successful foe attack with an immediate Strike"',
+*/
   'Whirlwind Strike':
     'Action=3 ' +
     'Section=combat ' +
     'Note="Makes individual Strikes at the current multiple attack penalty against all foes within reach"',
+/*
   'Collateral Thrash':
     'Section=combat ' +
     'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>, DC %{classDifficultyClass.Barbarian})"',
@@ -4775,10 +4773,8 @@ Pathfinder2ERemaster.FEATURES = {
   */
   'Weapon Expertise':
     'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
+  'Weapon Mastery':Pathfinder2E.FEATURES['Weapon Mastery'],
   /*
-  'Weapon Mastery':
-    'Section=combat ' +
-    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   // Weapon Specialization as above
 
   'Ranged Reprisal':
@@ -5285,7 +5281,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
 */
-  'Animal Empathy':Pathfinder2E.FEATURES['Wild Empathy'],
+  'Animal Empathy':
+    Pathfinder2E.FEATURES['Wild Empathy']
+    .replace('Class,', 'Class,Druid'),
   'Leshy Familiar':Pathfinder2E.FEATURES['Leshy Familiar'],
   'Plant Empathy':Pathfinder2E.FEATURES['Green Empathy'],
   // Reach Spell as above
@@ -5576,90 +5574,52 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Attack Of Opportunity', 'Reactive Strike'),
   'Twin Riposte':Pathfinder2E.FEATURES['Twin Riposte'],
   'Brutal Finish':Pathfinder2E.FEATURES['Brutal Finish'],
-
-  /*-----*/
-
-  'Dueling Dance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance gives continuous benefits of Dueling Parry"',
+  'Dashing Strike':Pathfinder2E.FEATURES['Spring Attack'],
+  'Dueling Dance':Pathfinder2E.FEATURES['Dueling Dance'],
   'Flinging Shove':
-    'Section=combat ' +
-    'Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed, and Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
-  'Improved Dueling Riposte':
-    'Section=combat ' +
-    'Note="Gives an additional Reaction to make a Dueling Riposte once per turn"',
-  'Incredible Ricochet':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Follows a ranged Strike with another against the same foe that ignores concealment and cover"',
+    Pathfinder2E.FEATURES['Flinging Shove']
+    .replace('flat-footed', 'off-guard'),
+  'Improved Dueling Riposte':Pathfinder2E.FEATURES['Improved Dueling Riposte'],
+  'Incredible Ricochet':Pathfinder2E.FEATURES['Incredible Ricochet'],
   'Lunging Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance gives +5\' reach on Attacks Of Opportunity"',
-  "Paragon's Guard":
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance gives continuous benefits of Raise A Shield"',
-  'Spring Attack':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike on a foe after Striding away from another"',
-  'Desperate Finisher':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Can use a press action after taking the last action in a turn, losing any further Reactions until next turn"',
-  'Determination':
-    'Action=1 ' +
-    'Section=save ' +
-    'Note="Ends a nonpermanent spell (requires a successful counteract attempt) or a condition affecting self once per day"',
+    Pathfinder2E.FEATURES['Lunging Stance']
+    .replace('Attacks Of Opportunity', 'Reactive Strikes'),
+  "Paragon's Guard":Pathfinder2E.FEATURES["Paragon's Guard"],
+  'Desperate Finisher':Pathfinder2E.FEATURES['Desperate Finisher'],
+  'Determination':Pathfinder2E.FEATURES.Determination,
   'Guiding Finish':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
+    Pathfinder2E.FEATURES['Guiding Finish']
+    .replace(' to a spot within reach', ''),
   'Guiding Riposte':
-    'Section=combat ' +
-    'Note="A successful Dueling Riposte Strike moves a foe 10\' to a spot within reach"',
-  'Improved Twin Riposte':
-    'Section=combat ' +
-    'Note="Gives an additional Reaction to make a Twin Riposte once per turn"',
-  'Stance Savant':
+    Pathfinder2E.FEATURES['Guiding Riposte']
+    .replace(' to a spot within reach', ''),
+  'Improved Twin Riposte':Pathfinder2E.FEATURES['Improved Twin Riposte'],
+  'Opening Stance':Pathfinder2E.FEATURES['Stance Savant'],
+  'Two-Weapon Flurry':Pathfinder2E.FEATURES['Two-Weapon Flurry'],
+  // Whirlwind Strike as above
+  'Graceful Poise':Pathfinder2E.FEATURES['Graceful Poise'],
+  'Improved Reflexive Shield':
+    Pathfinder2E.FEATURES['Improved Reflexive Shield'],
+  'Master Of Many Styles':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Enters a stance during initiative"',
-  'Two-Weapon Flurry':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Strikes simultaneously with one weapon in each hand"',
-  // Whirlwind Strike as above
-  'Graceful Poise':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance allows Double Slice with an agile weapon to count as one attack"',
-  'Improved Reflexive Shield':
-    'Section=combat ' +
-    'Note="Can use Shield Block on a Reflex save to protect both self and adjacent allies"',
-  'Multishot Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance reduces Double Shot and Triple Shot penalties to -1 and -2"',
-  'Twinned Defense':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Stance gives continuous benefits of Twin Parry"',
-  'Impossible Volley':
+    'Note="Enters a stance at the beginning of a turn"',
+  'Multishot Stance':Pathfinder2E.FEATURES['Multishot Stance'],
+  'Overwhelming Blow':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Ranged Strike with a -2 penalty attacks all foes in a 10\' radius"',
-  'Savage Critical':
+    'Note="Melee Strike hit automatically counts critical, and a natural critical gains deadly d12, leaving self stunned 1 and off-guard for 1 rd"',
+  'Twinned Defense':Pathfinder2E.FEATURES['Twinned Defense'],
+  'Impossible Volley':Pathfinder2E.FEATURES['Impossible Volley'],
+  'Savage Critical':Pathfinder2E.FEATURES['Savage Critical'],
+  'Smash From The Air':
     'Section=combat ' +
-    'Note="Successful attack rolls of 19 with a legendary weapon are critical successes"',
-  'Boundless Reprisals':
-     'Section=combat ' +
-     'Note="Gives an additional Reaction to use a fighter feat or class feature once per foe turn"',
-  'Weapon Supremacy':
+    'Note="Can use Cut From The Air against ranged spell attacks"',
+  'Boundless Reprisals':Pathfinder2E.FEATURES['Boundless Reprisals'],
+  'Ultimate Flexibility':
     'Section=combat ' +
-    'Note="Permanently quickened; may use additional actions only to Strike"',
+    'Note="Can select a fighter feat of up to 18th level to use each day and use 1 hr training to change flexibility feats"',
+  'Weapon Supremacy':Pathfinder2E.FEATURES['Weapon Supremacy'],
 
   /*
   // Monk
@@ -5952,121 +5912,84 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Forces a foe reroll on a hit or gives a reroll on a failed save"',
   */
 
-  // Ranger
-  // Evasion as above
-  // Greater Weapon Specialization as above
-  'Hunt Prey':
-    'Action=1 ' +
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Suffers no distance penalty for ranged Strikes in the 2nd range increment vs. a designated creature until next daily prep",' +
-      '"Gives +2 Perception to Seek and +2 Survival to Track a designated creature until next daily prep"',
-  "Hunter's Edge":'Section=feature Note="1 selection"',
-  'Flurry':
-    'Section=combat ' +
-    'Note="Reduces multiple attack penalties vs. hunted prey to -3 and -6, or -2 and -4 with an agile weapon"',
-  'Outwit':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"+1 Armor Class vs. hunted prey",' +
-      '"+2 Deception, Intimidation, Stealth, and Recall Knowledge checks with hunted prey"',
-  'Precision':
-    'Section=combat ' +
-    'Note="First hit on hunted prey each rd inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage"',
-  'Improved Evasion':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Legendary (Reflex)",' +
-      '"Critical failures on Reflex saves are normal failures, and suffers half normal damage from failed Reflex saves"',
-  'Incredible Senses':'Section=skill Note="Perception Legendary"',
-  // Iron Will as above
-  // Juggernaut as above
-  'Masterful Hunter':
-    'Section=combat,combat,skill ' +
-    'Note=' +
-      '"Class Master (Ranger)",' +
-      '"Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency%{features.Flurry?\'/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon\':\'\'}%{features.Outwit?\'/+2 Armor Class vs. a hunt prey target with master armor proficiency\':\'\'}%{features.Precision?(level>=19?\'/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision damage\':\'/2nd hit on hunted prey inflicts +1d8 HP precision damage\'):\'\'}",' +
-      '"With master proficiency, gains +4 Perception to Seek hunted prey%{features.Outwit?\',\':\' and\'} +4 Survival to Track hunted prey%{features.Outwit?\', and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey\':\'\'}"',
 
+  // Ranger
+  'Flurry':Pathfinder2E.FEATURES.Flurry,
+  'Greater Natural Reflexes':Pathfinder2E.FEATURES['Improved Evasion'],
+  // Greater Weapon Specialization as above
+  'Hunt Prey':Pathfinder2E.FEATURES['Hunt Prey'],
+  "Hunter's Edge":Pathfinder2E.FEATURES["Hunter's Edge"],
+  'Martial Weapon Mastery':Pathfinder2E.FEATURES['Weapon Mastery'],
+  'Masterful Hunter':Pathfinder2E.FEATURES['Masterful Hunter'],
   // Medium Armor Expertise as above
+  // Medium Armor Mastery as above
+  'Natural Reflexes':Pathfinder2E.FEATURES.Evasion,
   "Nature's Edge":
-    'Section=combat ' +
-    'Note="Foes suffer flat-footed vs. self in natural and snare-imposed difficult terrain"',
-  'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
-  'Ranger Feats':'Section=feature Note="%V selections"',
-  'Ranger Key Attribute':'Section=feature Note="1 selection"',
-  'Ranger Skills':
-    'Section=skill Note="Skill Trained (Nature; Survival; Choose %V from any)"',
-  'Ranger Weapon Expertise':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"Critical hits with a simple weapon, martial weapon, or unarmed attack inflict its critical specialization effect"',
-  'Second Skin':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Defense Master (Light Armor; Medium Armor; Unarmored Defense)",' +
-      '"Can rest normally in light or medium armor"',
-  'Swift Prey':
-    'Section=combat ' +
-    'Note="Can use Hunt Prey as a free action at the beginning of a turn"',
-  'Trackless Step':
-    'Section=skill ' +
-    'Note="Has continuous benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
-  // Perception Mastery as above
-  'Wild Stride':
-    'Section=ability Note="Moves normally over non-magical difficult terrain"',
-  // Weapon Mastery as above
+    Pathfinder2E.FEATURES["Nature's Edge"]
+    .replace(' natural and snare-imposed', ''),
+  'Outwit':Pathfinder2E.FEATURES.Outwit,
+  'Perception Legend':Pathfinder2E.FEATURES['Incredible Senses'],
+  'Perception Mastery':Pathfinder2E.FEATURES['Vigilant Senses'],
+  'Precision':Pathfinder2E.FEATURES.Precision,
+  'Ranger Expertise':Pathfinder2E.FEATURES['Ranger Expertise'],
+  'Ranger Feats':Pathfinder2E.FEATURES['Ranger Feats'],
+  'Ranger Key Attribute':Pathfinder2E.FEATURES['Ranger Key Ability'],
+  'Ranger Skills':Pathfinder2E.FEATURES['Ranger Skills'],
+  'Ranger Weapon Expertise':Pathfinder2E.FEATURES['Ranger Weapon Expertise'],
+  'Swift Prey':Pathfinder2E.FEATURES['Swift Prey'],
+  'Trackless Journey':Pathfinder2E.FEATURES['Trackless Step'],
+  'Unimpeded Journey':Pathfinder2E.FEATURES['Wild Stride'],
   // Weapon Specialization as above
+  "Warden's Endurance":Pathfinder2E.FEATURES.Juggernaut,
+  'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
 
   // Animal Companion as above
+  // Changed effects
   'Crossbow Ace':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Crossbow inflicts +2 HP damage on hunted prey or immediately after reloading; a simple crossbow also increases its damage die by 1 step"',
+    'Note="Uses Create A Diversion or Take Cover, then Interact to reload a crossbow"',
   'Hunted Shot':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Makes two ranged Strikes against hunted prey once per rd"',
-  'Monster Hunter':
-    'Section=combat ' +
-    'Note="Can use Recall Knowledge as part of Hunt Prey; critical success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies for 1 rd once per target per day"',
+    Pathfinder2E.FEATURES['Hunted Shot']
+    .replace(' once per rd', ''),
+  'Initiate Warden':
+    'Section=magic ' +
+    'Note="Knows choice of warden spell/Has a focus pool with at least 1 Focus Point"',
+  'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike with each hand against hunted prey once per rd"',
+    Pathfinder2E.FEATURES['Twin Takedown']
+    .replace(' once per rd', ''),
+  // Animal Empathy as above
   'Favored Terrain (Aquatic)':
-    'Section=ability ' +
-    'Note="Moves normally through underwater difficult terrain/Has a %{speed}\' swim Speed"',
+    Pathfinder2E.FEATURES['Favored Terrain (Aquatic)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Arctic)':
-    'Section=ability,feature ' +
-    'Note=' +
-      '"Moves normally over difficult terrain caused by ice and snow without a need to Balance",' +
-      '"Can survive on one-tenth normal food and water"',
+    Pathfinder2E.FEATURES['Favored Terrain (Arctic)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Desert)':
-    'Section=ability,feature ' +
-    'Note=' +
-      '"Moves normally over difficult terrain caused by sand without a need to Balance",' +
-      '"Can survive on one-tenth normal food and water"',
+    Pathfinder2E.FEATURES['Favored Terrain (Desert)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Forest)':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by forest/Has a %{speed}\' climb Speed"',
+    Pathfinder2E.FEATURES['Favored Terrain (Forest)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Mountain)':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by mountains/Has a %{speed}\' climb Speed"',
+    Pathfinder2E.FEATURES['Favored Terrain (Mountain)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Plains)':
-    'Section=ability,ability ' +
-    'Note=' +
-      '"+10 Speed",' +
-      '"Moves normally over difficult terrain in plains"',
+    Pathfinder2E.FEATURES['Favored Terrain (Plains)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Sky)':
-    'Section=ability ' +
-    'Note="Moves normally through difficult terrain in the sky/Has a %{speed}\' fly Speed"',
+    Pathfinder2E.FEATURES['Favored Terrain (Sky)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Swamp)':
-    'Section=ability ' +
-    'Note="Moves normally over greater difficult terrain caused by bogs"',
+    Pathfinder2E.FEATURES['Favored Terrain (Swamp)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
   'Favored Terrain (Underground)':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain underground/Has a %{speed}\' climb Speed"',
+    Pathfinder2E.FEATURES['Favored Terrain (Underground)']
+    .replace('Wild Stride', 'Unimpeded Journey'),
+
+  /*-----*/
+
   "Hunter's Aim":
     'Action=2 ' +
     'Section=combat ' +
