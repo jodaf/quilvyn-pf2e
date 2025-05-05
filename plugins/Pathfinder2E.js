@@ -6150,9 +6150,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Ranged Strike with a -2 penalty vs. hunted prey inflicts +%{level<11?4:level<15?6:8} HP damage"',
   'Hazard Finder':
-    'Section=combat,skill ' +
+    'Section=combat,save,skill ' +
     'Note=' +
       '"+1 Armor Class vs. traps",' +
+      '"+1 vs. trap effects",' +
       '"+1 Perception to find traps/Automatically attempts Search to find traps"',
   'Powerful Snares':
     'Section=skill ' +
@@ -6270,7 +6271,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe forces a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
