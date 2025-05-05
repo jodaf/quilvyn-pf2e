@@ -4029,9 +4029,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"Critical hits with a melee weapon or unarmed attack inflict its critical specialization effect during rage"',
+*/
   'Deny Advantage':
     'Section=combat ' +
     'Note="Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
+/*
   'Devastator':
     'Section=combat,combat ' +
     'Note=' +
@@ -5987,222 +5989,131 @@ Pathfinder2ERemaster.FEATURES = {
   'Favored Terrain (Underground)':
     Pathfinder2E.FEATURES['Favored Terrain (Underground)']
     .replace('Wild Stride', 'Unimpeded Journey'),
-
-  /*-----*/
-
-  "Hunter's Aim":
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="+2 ranged Strike ignores concealment of hunted prey"',
-  'Monster Warden':
-    'Section=combat ' +
-    'Note="Successful use of Monster Hunter also gives self and allies +%{1+(combatNotes.legendaryMonsterHunter||0)} Armor Class on next attack and +%{1+(combatNotes.legendaryMonsterHunter||0)} on next save vs. hunted prey"',
-  'Quick Draw':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Draws a weapon and Strikes"',
-  // Wild Empathy as above
-  "Companion's Cry":
-    'Section=combat ' +
-    'Note="Can use 2 actions for Command an Animal to give companion an additional action"',
-  'Disrupt Prey':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action"',
-  'Far Shot':'Section=combat Note="Doubles ranged weapon increments"',
-  'Favored Enemy':
-    'Section=combat ' +
-    'Note="Can use Hunt Prey with chosen creature type as a free action during initiative"',
-  'Running Reload':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Reloads during a Stride, Step, or Sneak"',
-  "Scout's Warning":
-    'Action=Free Section=combat Note="Gives allies +1 initiative"',
-  'Snare Specialist':
-    'Section=skill ' +
-    'Note="Knows the formulas for %{rank.Crafting*3-3} snares; may prepare %{rank.Crafting*2*(skillNotes.ubiquitousSnares?2:1)} each day without using resources"',
+  "Hunter's Aim":Pathfinder2E.FEATURES["Hunter's Aim"],
+  'Monster Warden':Pathfinder2E.FEATURES['Monster Warden'],
+  'Quick Draw':Pathfinder2E.FEATURES['Quick Draw'],
+  'Advanced Warden':
+    'Section=magic ' +
+    'Note="Knows choice of advanced warden spell/+1 Focus Points"',
+  "Companion's Cry":Pathfinder2E.FEATURES["Companion's Cry"],
+  'Disrupt Prey':Pathfinder2E.FEATURES['Disrupt Prey'],
+  'Far Shot':Pathfinder2E.FEATURES['Far Shot'],
+  'Favored Prey':Pathfinder2E.FEATURES['Favored Enemy'],
+  'Running Reload':Pathfinder2E.FEATURES['Running Reload'],
+  "Scout's Warning":Pathfinder2E.FEATURES["Scout's Warning"],
   // Twin Parry as above
+  'Additional Recollection':
+    'Section=skill ' +
+    'Note="Successful Recall Knowledge on hunted prey gives a Recall Knowledge check on another creature"',
+  'Masterful Warden':
+    'Section=magic Note="Knows choice of warden spell/+1 Focus Points"',
   // Mature Animal Companion as above
-  'Quick Snares':'Section=skill Note="Can prepare snares with 3 actions"',
-  'Skirmish Strike':
-    'Action=1 Section=combat Note="Steps before or after a Strike"',
-  'Snap Shot':
-    'Section=combat ' +
-    'Note="Can use a ranged weapon during a Reaction to Strike an adjacent creature"',
-  'Swift Tracker':
-    'Section=skill ' +
-    'Note="Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Can perform other exploration activities while tracking\':\'\'}"',
+  'Skirmish Strike':Pathfinder2E.FEATURES['Skirmish Strike'],
+  'Snap Shot':Pathfinder2E.FEATURES['Snap Shot'],
+  'Swift Tracker':Pathfinder2E.FEATURES['Swift Tracker'],
   // Blind-Fight as above
-  'Deadly Aim':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Ranged Strike with a -2 penalty vs. hunted prey inflicts +%{level<11?4:level<15?6:8} HP damage"',
-  'Hazard Finder':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"+1 Armor Class vs. traps",' +
-      '"+1 Perception to find traps/Automatically attempts Search to find traps"',
-  'Powerful Snares':
-    'Section=skill ' +
-    'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
-  'Terrain Master':
-    'Section=ability ' +
-    'Note="Can train for 1 hr to make current terrain favored until spending a day away from it"',
-  "Warden's Boon":
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Shares Hunt Prey and Hunter\'s Edge benefits with an ally for 1 rd"',
-  'Camouflage':
-    'Section=skill ' +
-    'Note="Can use Hide and Sneak in natural terrain without cover"',
+  'Deadly Aim':Pathfinder2E.FEATURES['Deadly Aim'],
+  'Hazard Finder':Pathfinder2E.FEATURES['Hazard Finder'],
+  'Terrain Master':Pathfinder2E.FEATURES['Terrain Master'],
+  "Warden's Boon":Pathfinder2E.FEATURES["Warden's Boon"],
+  'Camouflage':Pathfinder2E.FEATURES.Camouflage,
   // Incredible Companion as above
-  'Master Monster Hunter':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Monster Hunter effects take effect on a normal success",' +
-      '"Can use Nature to Recall Knowledge to identify any creature"',
-  'Penetrating Shot':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Strike affects both a target and a creature giving it lesser cover"',
+  'Master Monster Hunter':Pathfinder2E.FEATURES['Master Monster Hunter'],
+  'Peerless Warden':
+    'Section=magic ' +
+    'Note="Knows choice of peerless warden spell/+1 Focus Points"',
+  'Penetrating Shot':Pathfinder2E.FEATURES['Penetrating Shot'],
   // Twin Riposte as above
-  "Warden's Step":
-    'Section=skill ' +
-    'Note="Can include allies in an Avoid Notice action in natural terrain"',
+  "Warden's Step":Pathfinder2E.FEATURES["Warden's Step"],
   'Distracting Shot':
-    'Section=combat ' +
-    'Note="Critical or double hit on hunted prey inflicts flat-footed for 1 rd"',
-  'Double Prey':'Section=combat Note="Can use Hunt Prey on two targets"',
-  'Lightning Snares':'Section=skill Note="Can craft a trap with 1 action"',
-  'Second Sting':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Failed Strike against hunted prey with a weapon in one hand inflicts the non-dice damage of the weapon in the other"',
+    Pathfinder2E.FEATURES['Distracting Shot']
+    .replace('flat-footed', 'off-guard'),
+  'Double Prey':Pathfinder2E.FEATURES['Double Prey'],
+  'Second Sting':Pathfinder2E.FEATURES['Second Sting'],
   // Side By Side as above
-  'Sense The Unseen':
-    'Action=Reaction ' +
-    'Section=skill ' +
-    'Note="Makes undetected foes hidden after a failed Seek"',
-  'Shared Prey':
-    'Section=combat ' +
-    'Note="Can share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
-  'Stealthy Companion':
-    'Section=skill ' +
-    'Note="Companion gains benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank"',
-  'Targeting Shot':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Ranged attack vs. hunted prey ignores cover and concealment"',
-  "Warden's Guidance":
-    'Section=skill ' +
-    'Note="While observing hunted prey, ally failures and critical failures to Seek prey are successes"',
+  "Warden's Focus":'Section=magic Note="Refocus restores all focus points"',
+  'Sense The Unseen':Pathfinder2E.FEATURES['Sense The Unseen'],
+  'Shared Prey':Pathfinder2E.FEATURES['Shared Prey'],
+  'Stealthy Companion':Pathfinder2E.FEATURES['Stealthy Companion'],
+  "Warden's Guidance":Pathfinder2E.FEATURES["Warden's Guidance"],
   'Greater Distracting Shot':
-    'Section=combat ' +
-    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of the next turn on a critical success or double hit"',
+    Pathfinder2E.FEATURES['Greater Distracting Shot']
+    .replace('flat-footed', 'off-guard'),
   // Improved Twin Riposte as above
-  'Legendary Monster Hunter':
-    'Section=combat Note="Has increased Monster Hunter effects"',
+  'Legendary Monster Hunter':Pathfinder2E.FEATURES['Legendary Monster Hunter'],
   // Specialized Companion as above
-  'Ubiquitous Snares':
-    'Section=skill Note="Has increased Snare Specialist effects"',
-  'Impossible Flurry':
-    'Action=3 ' +
-    'Section=combat ' +
-    'Note="While wielding 2 weapons, makes 3 melee Strikes at the maximum multiple attack penalty"',
-  // Impossible Volley as above
-  'Manifold Edge':
-    'Section=combat ' +
-    'Note="Can use a different Hunter\'s Edge benefit with Hunt Prey"',
-  'Masterful Companion':
-    'Section=combat ' +
-    'Note="Gives companion Masterful Hunter effects vs. hunted prey"',
-  'Perfect Shot':
-    'Action=3 ' +
-    'Section=combat ' +
-    'Note="Ranged Strike on hunted prey inflicts maximum damage on success and ends turn"',
-  'Shadow Hunter':
-    'Section=skill ' +
-    'Note="Has continuous concealment from foes other than hunted prey in natural surroundings"',
-  'Legendary Shot':
-    'Section=combat ' +
-    'Note="Ignores five range increments when attacking hunted prey with a master proficiency weapon"',
-  'To The Ends Of The Earth':
-    'Section=skill Note="Can follow hunted prey across any distance"',
-  'Triple Threat':
-    'Section=combat ' +
-    'Note="Can use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
-  'Ultimate Skirmisher':
-    'Section=ability,save ' +
-    'Note=' +
-      '"Moves normally over difficult, greater difficult, and hazardous terrain",' +
-      '"Never triggers movement-triggered traps"',
-
-  // Rogue
-  'Debilitating Strike':
+  "Warden's Rload":
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts choice of -10 Speed or enfeebled 1 until the end of the next turn"',
+    'Note="Casting a warden spell allows reloading a crossbow"',
+  'Impossible Flurry':Pathfinder2E.FEATURES['Impossible Flurry'],
+  // Impossible Volley as above
+  'Manifold Edge':Pathfinder2E.FEATURES['Manifold Edge'],
+  'Masterful Companion':Pathfinder2E.FEATURES['Masterful Companion'],
+  'Perfect Shot':Pathfinder2E.FEATURES['Perfect Shot'],
+  'Shadow Hunter':Pathfinder2E.FEATURES['Shadow Hunter'],
+  'Legendary Shot':Pathfinder2E.FEATURES['Legendary Shot'],
+  'To The Ends Of The Earth':Pathfinder2E.FEATURES['To The Ends Of The Earth'],
+  'Triple Threat':Pathfinder2E.FEATURES['Triple Threat'],
+  'Ultimate Skirmisher':Pathfinder2E.FEATURES['Ultimate Skirmisher'],
+
+  // Rogue
+  'Agile Mind':Pathfinder2E.FEATURES['Slippery Mind'],
+  'Debilitating Strike':
+    Pathfinder2E.FEATURES['Debilitating Strike']
+    .replace('a flat-footed', 'an off-guard'),
   // Deny Advantage as above
-  'Double Debilitation':
-    'Section=combat ' +
-    'Note="Debilitating Strike inflicts choice of two debilitations"',
-  // Evasion as above
-  // Fortitude Expertise as above
+  'Double Debilitation':Pathfinder2E.FEATURES['Double Debilitation'],
+  'Evasive Reflexes':Pathfinder2E.FEATURES.Evasion,
+  'Greater Rogue Reflexes':Pathfinder2E.FEATURES['Improved Evasion'],
   // Greater Weapon Specialization as above
-  // Improved Evasion as above
-  // Incredible Senses as above
   // Light Armor Expertise as above
-  'Light Armor Mastery':
-    'Section=combat Note="Defense Master (Light Armor; Unarmored Defense)"',
-  'Master Strike':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Class Master (Rogue)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe forces a Fortitude save once per target per day; critical failure inflicts choice of paralyzed for 4 rd, unconscious for 2 hr, or killed; failure inflicts paralyzed for 4 rd; success inflicts enfeebled 2 for 1 rd"',
+  'Light Armor Mastery':Pathfinder2E.FEATURES['Light Armor Mastery'],
+  'Master Strike':Pathfinder2E.FEATURES['Master Strike'],
+  // Changed effects
   'Master Tricks':
     'Section=combat ' +
-    'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
-  'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
-  'Rogue Feats':'Section=feature Note="%V selections"',
-  'Rogue Key Attribute':'Section=feature Note="1 selection"',
-  'Rogue Skills':
-    'Section=skill Note="Skill Trained (Stealth; Choose %V from any)"',
-  "Rogue's Racket":'Section=feature Note="1 selection"',
+    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+  'Mastermind':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Society; Choose 1 from Arcana, Nature, Occultism, Religion)",' +
+      '"Successful Recall Knowledge to identify a creature makes it off-guard against self attacks for 1 rd, or for 1 min on a critical success"',
+  // Perception Mastery as above
+  // Perception Legend as above
+  'Rogue Expertise':Pathfinder2E.FEATURES['Rogue Expertise'],
+  'Rogue Feats':Pathfinder2E.FEATURES['Rogue Feats'],
+  'Rogue Key Attribute':Pathfinder2E.FEATURES['Rogue Key Ability'],
+  'Rogue Resilience':Pathfinder2E.FEATURES['Great Fortitude'],
+  'Rogue Skills':Pathfinder2E.FEATURES['Rogue Skills'],
+  "Rogue's Racket":Pathfinder2E.FEATURES["Rogue's Racket"],
+  // Changed effects
   'Ruffian':
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Defense %V (Medium Armor)",' +
-      '"Can use any simple weapon to sneak attack/Critical hits with a d8 or lighter simple weapon on a flat-footed foe inflict its critical specialization effect",' +
+      '"Can use any weapon, other than simple or martial weapons that deal greater than d8 or d6 damage, to sneak attack/Critical hits with these weapons on an off-guard foe inflict their critical specialization effect",' +
       '"Skill Trained (Intimidation)"',
+  // Changed effects
   'Scoundrel':
     'Section=combat,skill ' +
     'Note=' +
-      '"Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn",' +
+      '"Successful Feint inflicts off-guard on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn/Successful Feint with an agile or finesse weapon gives a free Step",' +
       '"Skill Trained (Deception; Diplomacy)"',
-  'Slippery Mind':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Will)",' +
-      '"Successes on Will saves are critical successes"',
-  'Sneak Attack':
-    'Section=combat ' +
-    'Note="Successful strike using an agile, finesse, or ranged weapon vs. a flat-footed foe inflicts +%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP precision damage"',
+  'Sneak Attack':Pathfinder2E.FEATURES['Sneak Attack'],
   'Surprise Attack':
-    'Section=combat ' +
-    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed on creatures that haven\'t acted"',
-  'Thief':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"+%V damage with finesse melee weapons",' +
-      '"Skill Trained (Thievery)"',
-  // Perception Mastery as above
+    Pathfinder2E.FEATURES['Surprise Attack']
+    .replace('flat-footed', 'off-guard'),
+  'Thief':Pathfinder2E.FEATURES.Thief,
+  // Weapon Specialization as above
+  // Changed effects
   'Weapon Tricks':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Expert (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)",' +
-      '"Critical hits with an unarmed attack, rogue weapon, or a simple agile or finesse weapon vs. a flat-footed foe inflict its critical specialization effect"',
-  // Weapon Specialization as above
+      '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"Critical hits with an unarmed attack or an agile or finesse weapon vs. an off-guard foe inflict its critical specialization effect"',
+
+  /*-----*/
 
   'Nimble Dodge':
     'Action=Reaction ' +
