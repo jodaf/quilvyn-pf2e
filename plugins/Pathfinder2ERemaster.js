@@ -6112,114 +6112,131 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"Critical hits with an unarmed attack or an agile or finesse weapon vs. an off-guard foe inflict its critical specialization effect"',
+  'Nimble Dodge':Pathfinder2E.FEATURES['Nimble Dodge'],
+  'Overextending Feint':
+    'Section=combat ' +
+    'Note="Successful Feint inflicts -2 on target\'s next attack on self, or on all attacks against self for 1 rd with a critical success"',
+  'Plant Evidence':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Successful Thievery vs. Perception allows planting a light item on target%{features.Ruffian?\'; can also be done as a free action as part of a Shove\':\'\'}"',
+  'Trap Finder':Pathfinder2E.FEATURES['Trap Finder'],
+  'Tumble Behind':
+    'Section=combat ' +
+    'Note="Successful Tumble Through inflicts off-guard against next self attack before the end of the turn"',
+  'Twin Feint':Pathfinder2E.FEATURES['Twin Feint'],
+  "You're Next":Pathfinder2E.FEATURES["You're Next"],
+  'Brutal Beating':Pathfinder2E.FEATURES['Brutal Beating'],
+  'Clever Gambit':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Follows a critical hit on an identified creature with a Step or Stride that does not provoke a target Reaction"',
+  'Distracting Feint':
+    Pathfinder2E.FEATURES['Distracting Feint']
+    .replace('flat-footed', 'off-guard'),
+  'Mobility':Pathfinder2E.FEATURES.Mobility,
+  // Quick Draw as above
+  'Strong Arm':'Section=combat Note="+10 thrown weapon range"',
+  'Unbalancing Blow':
+    Pathfinder2E.FEATURES['Brutal Finish']
+    .replace('flat-footed', 'off-guard'),
+  'Underhanded Assault':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike after a successful -2 Stealth vs. a foe that is adjacent to an ally"',
+  'Dread Striker':
+    Pathfinder2E.FEATURES['Dread Striker']
+    .replace('flat-footed', 'off-guard'),
+  'Head Stomp':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Success unarmed melee Strike against a prone foe inflicts stupefied 1 and off-guard, or stupefied 2 on a critical hit, until the end of the next turn"',
+  'Mug':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful sneak attack against an adjacent foe allows a Steal attempt"',
+  'Poison Weapon':
+    Pathfinder2E.FEATURES['Poison Weapon']
+    .replace(/that lasts[^"]*/, 'to a weapon'),
+  'Predictable!':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Successful Sense Motive vs. Deception gives +1 AC and next save vs. target for 1 rd, or +2 on a critical success or -1 on a critical failure"',
+  'Reactive Pursuit':Pathfinder2E.FEATURES['Reactive Pursuit'],
+  'Sabotage':Pathfinder2E.FEATURES.Sabotage,
+  "Scoundrel's Suprise":
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Removing disguise inflicts off-guard against next attack on unaware foes until the end of the turn"',
+  // Scout's Warning as above
+  'The Harder They Fall':
+    'Section=combat ' +
+    'Note="Successful Trip inflicts 1d6 HP bludgeoning, plus sneak attack damage on a critical success"',
+  'Twin Distraction':
+    'Section=combat ' +
+    'Note="Successful Twin Feint attacks with both weapons inflict stupefied 1 until the end of next turn (<b>save Will</b> negates)"',
+  'Analyze Weakness':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Next sneak attack on the identified target inflicts +%{level<11?2:level<17?3:4}d6 HP precision"',
+  'Anticipate Ambush':
+    'Section=combat ' +
+    'Note="Moving at half Speed during travel allows using Perception for initiative and inflicts -2 on foes using Stealth for initiative"',
+  'Far Throw':
+    'Section=combat ' +
+    'Note="Reduces the penalty for each additional range increment on thrown weapons to -1"',
+  // Changed effect
+  'Gang Up':
+    'Section=combat ' +
+    'Note="Self and allies flank any foe within reach of both"',
+  'Light Step':Pathfinder2E.FEATURES['Light Step'],
+  'Shove Down':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Can follow a Shove with a Trip even when the foe is not in reach"',
+  // Skirmish Strike as above
+  'Sly Disarm':
+    'Section=combat ' +
+    'Note="Can use Thievery to Disarm; success inflicts off-guard against next self attack before the end of the turn"',
+  'Twist The Knife':Pathfinder2E.FEATURES['Twist The Knife'],
+  'Watch Your Back':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Intimidation vs. Will gives target +2 Perception and =2 Will saves vs. self for 1 min"',
+  // Blind-Fight as above
+  'Bullseye':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Net Strike with a thrown weapon before the end of the turn gains +1 attack, ignores target concealment, and reduces target cover"',
+  'Delay Trap':
+    Pathfinder2E.FEATURES['Delay Trap']
+    .replace('+5 DC ', '').replace('flat-footed', 'off-guard'),
+  'Improved Poison Weapon':Pathfinder2E.FEATURES['Improved Poison Weapon'],
+  'Inspired Strategem':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Previously-briefed ally can use the better of two attack or skill rolls once per day"',
+  'Nimble Roll':Pathfinder2E.FEATURES['Nimble Roll'],
+  'Opportune Backstab':Pathfinder2E.FEATURES['Opportune Backstab'],
+  'Predictive Purchase':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Precient Planner and Precient Consumable features",' +
+      '"Can use Prescient Planner with 2 actions"',
+  // Ricochet Stance as above
+  'Sidestep':Pathfinder2E.FEATURES.Sidestep,
+  'Sly Striker':Pathfinder2E.FEATURES['Sly Striker'],
+  'Swipe Souvenir':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful Escape allows a Steal attempt"',
+  'Tactical Entry':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Strides without provoking Reactions after rolling Stealth for initiative"',
 
   /*-----*/
 
-  'Nimble Dodge':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Gives +2 Armor Class against an attack when unencumbered"',
-  'Trap Finder':
-    'Section=combat,save,skill ' +
-    'Note=' +
-      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery",' +
-      '"+%{rank.Thievery>=3?2:1} vs. traps",' +
-      '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps"',
-  'Twin Feint':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Strikes with a weapon each hand, inflicting flat-footed on the second"',
-  "You're Next":
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="After downing one foe, makes a +2 Intimidation check to Demoralize another"',
-  'Brutal Beating':
-    'Section=combat Note="Critical successes on Strikes inflict frightened 1"',
-  'Distracting Feint':
-    'Section=combat ' +
-    'Note="Successful Feints inflict -2 Perception and Reflex saves while target remains flat-footed"',
-  'Minor Magic (Arcane)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Arcane)",' +
-      '"Knows 2 arcane cantrips"',
-  'Minor Magic (Divine)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows 2 divine cantrips"',
-  'Minor Magic (Occult)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Occult)",' +
-      '"Knows 2 occult cantrips"',
-  'Minor Magic (Primal)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Primal)",' +
-      '"Knows 2 primal cantrips"',
-  'Mobility':
-    'Section=combat ' +
-    'Note="Can Stride at half Speed without triggering Reactions"',
-  // Quick Draw as above
-  'Unbalancing Blow':
-    'Section=combat ' +
-    'Note="Critical hits inflict flat-footed vs. self attacks until the end of the next turn"',
-  'Battle Assessment':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Successful Perception vs. Deception or Stealth DC determines target\'s strengths and weaknesses"',
-  'Dread Striker':
-    'Section=combat Note="Frightened foes are flat-footed vs. self attacks"',
-  'Magical Trickster':
-    'Section=magic ' +
-    'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
-  'Poison Weapon':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can prepare %{level} poisons each day that inflict 1d4 HP damage/Can apply poison that lasts for 1 turn to piercing and slashing weapons"',
-  'Reactive Pursuit':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Moves to remain adjacent to a retreating foe"',
-  'Sabotage':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="Successful Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item with moving parts possessed by a creature within reach"',
-  // Scout's Warning as above
-  'Gang Up':
-    'Section=combat ' +
-    'Note="Foes within reach of an ally are flat-footed vs. self attacks"',
-  'Light Step':
-    'Section=ability ' +
-    'Note="Can Stride or Step normally over difficult terrain"',
-  // Skirmish Strike as above
-  'Twist The Knife':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Inflicts %{(level+7)//6} HP persistent bleed damage after a successful sneak attack on a flat-footed foe"',
-  // Blind-Fight as above
-  'Delay Trap':
-    'Action=Reaction ' +
-    'Section=skill ' +
-    'Note="Successful +5 DC Thievery check delays or disables trap activation"',
-  'Improved Poison Weapon':
-    'Section=combat ' +
-    'Note="Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison"',
-  'Nimble Roll':
-    'Section=save ' +
-    'Note="Can use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
-  'Opportune Backstab':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Strikes a foe immediately after an ally hits it"',
-  'Sidestep':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Redirects a failed Strike on self to an adjacent creature"',
-  'Sly Striker':
-    'Section=combat ' +
-    'Note="Successful Strikes with a sneak attack weapon inflict %{combatNotes.impossibleStriker?\'full sneak attack\':level>=14?\'+2d6 HP precision\':\'+1d6 HP precision\'} damage"',
   'Precise Debilitations':
     'Section=combat ' +
     'Note="Can use Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
@@ -12061,6 +12078,8 @@ Pathfinder2ERemaster.weaponRules = function(
   rules.defineRule('proficiencyLevelBonus.' + name,
     'combatNotes.martialExperience', '=', '0'
   );
+  if(range)
+    rules.defineRule('range.' + name, 'combatNotes.strongArm', '+', '10');
 };
 
 /*
