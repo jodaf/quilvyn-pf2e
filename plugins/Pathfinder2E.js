@@ -6323,7 +6323,7 @@ Pathfinder2E.FEATURES = {
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Search to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery",' +
+      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Searches to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery",' +
       '"+%{rank.Thievery>=3?2:1} vs. traps",' +
       '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps"',
   'Twin Feint':
@@ -6331,9 +6331,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Strikes with a weapon each hand, inflicting flat-footed on the second"',
   "You're Next":
-    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="After downing one foe, makes a +2 Intimidation check to Demoralize another"',
+    'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing one foe, makes a +2 Intimidation check to Demoralize another"',
   'Brutal Beating':
     'Section=combat Note="Critical successes on Strikes inflict frightened 1"',
   'Distracting Feint':
@@ -6377,8 +6376,10 @@ Pathfinder2E.FEATURES = {
     'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
   'Poison Weapon':
     'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can prepare %{level} poisons each day that inflict 1d4 HP damage/Can apply poison that lasts for 1 turn to piercing and slashing weapons"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Applies a poison that lasts for 1 turn to a piercing or slashing weapon",' +
+      '"Can prepare %{level} poisons each day that inflict 1d4 HP damage"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6403,7 +6404,7 @@ Pathfinder2E.FEATURES = {
   'Delay Trap':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Successful +5 DC Thievery check delays or disables trap activation"',
+    'Note="Successful +5 DC Thievery check delays or disables trap activation; critical failure inflicts flat-footed for 1 rd"',
   'Improved Poison Weapon':
     'Section=combat ' +
     'Note="Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison"',
