@@ -711,8 +711,8 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Witch)","1:Class Trained (Witch)",' +
-      '"1:Witch Spellcasting","1:Familiar","1:Hex Spells","2:Skill Feats",' +
-      '"2:Witch Feats","3:General Feats","3:Skill Increases",' +
+      '"1:Witch Spellcasting","1:Familiar","1:Hex Spells","1:Patron",' +
+      '"2:Skill Feats","2:Witch Feats","3:General Feats","3:Skill Increases",' +
       '"5:Magical Fortitude","7:Expert Spellcaster","9:Reflex Expertise",' +
       '"11:Perception Expertise","11:Weapon Expertise","13:Defensive Robes",' +
       '"13:Weapon Specialization","15:Master Spellcaster",' +
@@ -3844,7 +3844,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Mutagenic Flashback feature",' +
       '"Knows the formulas for 2 common 1st-level mutagens"',
+*/
   'Perception Expertise':'Section=skill Note="Perception Expert"',
+/*
   'Perpetual Infusions':
     'Section=skill ' +
     'Note="Can create 2 alchemical items of up to level %V from research field without using infused reagents"',
@@ -4060,7 +4062,9 @@ Pathfinder2ERemaster.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Instinct':'Section=feature Note="1 selection"',
   // Juggernaut as above
+*/
   'Reflex Expertise':'Section=save Note="Save Expert (Reflex)"',
+/*
   // Medium Armor Expertise as above
   'Mighty Rage':
     'Section=combat,combat ' +
@@ -6234,90 +6238,69 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=combat ' +
     'Note="Strides without provoking Reactions after rolling Stealth for initiative"',
-
-  /*-----*/
-
+  'Methodical Debilitations':
+    'Section=combat ' +
+    'Note="Can use Debilitating Strike to prevent flanking or to negate AC bonus from shields, lesser cover, and standard cover"',
+  'Nimble Strike':
+    'Section=combat ' +
+    'Note="Can make a Strike during Nimble Dodge that suffers no multiple attack penalty"',
   'Precise Debilitations':
+    Pathfinder2E.FEATURES['Precise Debilitations']
+    .replace('flat-footed', 'off-guard'),
+  'Sneak Adept':Pathfinder2E.FEATURES['Sneak Savant'],
+  'Tactical Debilitations':Pathfinder2E.FEATURES['Tactical Debilitations'],
+  'Vicious Debilitations':Pathfinder2E.FEATURES['Vicious Debilitations'],
+  'Bloody Debilitations':
     'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
-  'Sneak Savant':
-    'Section=skill Note="Normal failures on Sneak actions are successes"',
-  'Tactical Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to prevent Reactions or flanking"',
-  'Vicious Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
-  'Critical Debilitation':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike on a critical hit to force a foe Fortitude save; critical failure paralyzes until the end of the next turn; failure or success inflicts slowed 2 or 1 until the end of the next turn"',
-  'Fantastic Leap':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Strikes after Long Jump or a High Jump that uses Long Jump distance"',
-  'Felling Shot':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Successful Strike vs. a flat-footed airborne foe forces a Reflex save; failure inflicts a 120\' fall; critical failure also inflicts grounded until the end of the next turn"',
-  'Reactive Interference':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Prevents a foe Reaction; a higher-level foe requires a successful attack roll"',
-  'Spring From The Shadows':
+    'Note="Can use Debilitating Strike to inflict 3d6 HP persistent bleed"',
+  'Critical Debilitation':Pathfinder2E.FEATURES['Critical Debilitation'],
+  'Fantastic Leap':Pathfinder2E.FEATURES['Fantastic Leap'],
+  'Felling Shot':Pathfinder2E.FEATURES['Felling Shot'],
+  'Preparation':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes an unaware foe after a Stride, remaining undetected afterward"',
-  'Defensive Roll':
-    'Action=Free ' +
+    'Note="Gives 1 additional rogue reaction that can be used before the next turn"',
+  'Reactive Interference':Pathfinder2E.FEATURES['Reactive Interference'],
+  'Ricochet Feint':
     'Section=combat ' +
-    'Note="Reduces by half the damage from an attack that would reduce self to 0 HP once per 10 min"',
+    'Note="While in Ricochet Stance, can use Feint against a creature within the first range increment of a wielded thrown weapon"',
+  'Spring From The Shadows':Pathfinder2E.FEATURES['Spring From The Shadows'],
+  'Defensive Roll':Pathfinder2E.FEATURES['Defensive Roll'],
   'Instant Opening':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="R30\' Inflicts flat-footed vs. self on the target until the end of the next turn"',
+    Pathfinder2E.FEATURES['Instant Opening']
+    .replace('flat-footed', 'off-guard'),
   'Leave An Opening':
-    'Section=combat ' +
-    'Note="Critical hit on a flat-footed foe allows a chosen ally to make an Attack Of Opportunity"',
+    Pathfinder2E.FEATURES['Leave An Opening']
+    .replace('flat-footed', 'off-guard')
+    .replace('an Attack Of Opportunity', 'a Reactive Strike'),
   // Sense The Unseen as above
-  'Blank Slate':
-    'Section=save ' +
-    'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
-  'Cloud Step':
-    'Section=ability ' +
-    'Note="Can Stride over insubstantial surfaces and traps"',
-  'Cognitive Loophole':
+  'Stay Down!':
     'Action=Reaction ' +
-    'Section=save ' +
-    'Note="Suppresses a mental effect until the end of the next turn"',
-  'Dispelling Slice':
-    'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful sneak attack allows a level %{(level+1)//2}, +%{classDifficultyClass.Rogue-10} counteract attempt to dispel a magical effect"',
-  'Perfect Distraction':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Creates a decoy that gives <i>Mislead</i> effects once per 10 min"',
-  'Implausible Infiltration':
-    'Action=2 ' +
-    'Section=ability ' +
-    'Note="Can move through up to 10\' of wood, plaster, or stone"',
+    'Note="Successful Athletics vs. Fortitude negates foe Stand action; critical success prevents Standing for 1 rd"',
+  'Blank Slate':Pathfinder2E.FEATURES['Blank Slate'],
+  'Cloud Step':Pathfinder2E.FEATURES['Cloud Step'],
+  'Cognitive Loophole':Pathfinder2E.FEATURES['Cognitive Loophole'],
+  'Dispelling Slice':Pathfinder2E.FEATURES['Dispelling Slice'],
+  'Perfect Distraction':Pathfinder2E.FEATURES['Perfect Distraction'],
+  'Reconstruct The Scene':
+    'Section=skill ' +
+    'Note="1 min survey gives impressions of events that occurred within the prior day"',
+  'Swift Elusion':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Successful Acrobatics vs. Reflex of a foe moving to an adjacent spot allows Striding or moving the foe to a different adjacent spot"',
+  'Implausible Infiltration':Pathfinder2E.FEATURES['Implausible Infiltration'],
+  'Implausible Purchase':
+    'Section=feature ' +
+    'Note="Can use Prescient Planner at will with a single action, and can use it to retrieve a level %{level-6} consumable"',
+  // Changed effects
   'Powerful Sneak':
     'Section=combat ' +
-    'Note="Can change sneak attack damage to match weapon damage type"',
-  "Trickster's Ace":
-    'Action=Reaction ' +
-    'Section=magic ' +
-    'Note="Previously-specified trigger invokes a prepared spell of up to level 4 on self"',
-  'Hidden Paragon':
-    'Action=Reaction ' +
-    'Section=magic ' +
-    'Note="Can become invisible for 1 min when hidden from foes once per hr"',
-  'Impossible Striker':
-    'Section=combat Note="Has increased Sly Striker effects"',
-  'Reactive Distraction':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Redirects an effect or attack from self to Perfect Distraction decoy"',
+    'Note="Sneak attack ignores precision immunity and resistance, and damage dice on a designated target after a Sneak have a minimum roll of 3"',
+  'Hidden Paragon':Pathfinder2E.FEATURES['Hidden Paragon'],
+  'Impossible Striker':Pathfinder2E.FEATURES['Impossible Striker'],
+  'Reactive Distraction':Pathfinder2E.FEATURES['Reactive Distraction'],
 
   /*
   // Sorcerer
@@ -6328,11 +6311,15 @@ Pathfinder2ERemaster.FEATURES = {
       '"1 selection",' +
       '"Has a focus pool and 1 Focus Point"',
   'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
+*/
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
+/*
   // Expert Spellcaster as above
   // Legendary Spellcaster as above
   // Reflex Expertise as above
+*/
   'Magical Fortitude':'Section=save Note="Save Expert (Fortitude)"',
+/*
   // Master Spellcaster as above
   // Resolve as above
   // Signature Spells as above
@@ -6483,7 +6470,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level"',
+*/
   'Familiar':'Section=feature Note="May have a familiar"',
+/*
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -6652,53 +6641,129 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use a 1-action metamagic effect as a free action"',
   */
 
-  // Wizard
-  // Perception Expertise as above
-  'Arcane Bond':'Section=feature Note="Has the Drain Bonded Item feature"',
-  'Arcane School':'Section=feature Note="1 selection"',
-  'Arcane Spellcasting':
-    'Section=magic Note="Can learn spells from the arcane tradition"',
-  'Arcane Thesis':'Section=feature Note="1 selection"',
-  "Archwizard's Spellcraft":'Section=magic Note="Has 1 10th-level spell slot"',
+  // Witch
+  // TODO: Patron familiar gift
   // Defensive Robes as above
-  'Drain Bonded Item':
-    'Action=Free ' +
-    'Section=magic ' +
-    'Note="Can cast an expended spell using power stored in a possession once per day"',
   // Expert Spellcaster as above
-  'Improved Familiar Attunement':
-    'Section=feature,feature ' +
+  "Faith's Flamekeeper":
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"Has the Familiar feature",' +
-      '"Familiar is the focus of Arcane Bond and has %{level//6+1} additional %{level>5?\'abilities\':\'ability\'}"',
+      '"Spell Trained (Divine)",' +
+      // TODO familiar knows Command
+      '"Knows the Stoke The Heart divine cantrip",' +
+      '"Skill Trained (Religion)"',
+  // Familiar as above
+  'Hex Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
   // Legendary Spellcaster as above
-  // Reflex Expertise as above
   // Magical Fortitude as above
   // Master Spellcaster as above
-  'Metamagical Experimentation':
-    'Section=feature,magic ' +
+  'Patron':'Section=feature Note="1 selection"',
+  "Patron's Gift":'Section=magic Note="Has 1 10th-level spell slot"',
+  // Perception Expertise as above
+  // Reflex Expertise as above
+  'Silence In Snow':
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"+1 Class Feat (metamagic wizard)",' +
-      '"Can choose 1 metamagic feat of up to level %{level//2} to use each day"',
-  // Resolve as above
-  'Spell Blending':
-    'Section=magic ' +
-    'Note="Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips"',
-  'Spell Substitution':
-    'Section=magic ' +
-    'Note="Can use a 10-minute process to replace 1 prepared spell with a different spell"',
-  'Universalist':
-    'Section=feature,magic ' +
+      '"Spell Trained (Primal)",' +
+      // TODO familiar knows Gust Of Wind
+      '"Knows the Clinging Ice primal cantrip",' +
+      '"Skill Trained (Nature)"',
+  'Spinner Of Threads':
+    'Section=magic,magic,skill ' +
     'Note=' +
-      '"+1 Class Feat",' +
-      '"Can use Drain Bonded Item once per spell level each day/Knows 1 additional 1st-level spell"',
+      '"Spell Trained (Occult)",' +
+      // TODO familiar knows Gust Of Wind
+      '"Knows the Nudge Fate occult cantrip",' +
+      '"Skill Trained (Occultism)"',
+  'Starless Shadow':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)",' +
+      // TODO familiar knows Fear
+      '"Knows the Shroud Of Night occult cantrip",' +
+      '"Skill Trained (Occultism)"',
+  'The Inscribed One':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Arcane)",' +
+      // TODO familiar knows Runic Weapon
+      '"Knows the Discern Secrets arcane spell",' +
+      '"Skill Trained (Arcana)"',
+  'The Resentment':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Occult)",' +
+      // TODO familiar knows Enfeeble
+      '"Knows the Evil Eye occult cantrip",' +
+      '"Skill Trained (Occultism)"',
+  // Weapon Expertise as above
   // Weapon Specialization as above
-  'Wizard Feats':'Section=feature Note="%V selections"',
+  'Wilding Steward':
+    'Section=magic,magic,skill ' +
+    'Note=' +
+      '"Spell Trained (Primal)",' +
+      // TODO familiar knows Summon Animal or Summon Plant Or Fungus
+      '"Knows the Wilding Word primal cantrip",' +
+      '"Skill Trained (Nature)"',
+  'Will Of The Pupil':Pathfinder2E.FEATURES.Resolve,
+  'Witch Feats':'Section=feature Note="%V selections"',
+  'Witch Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
+  'Witch Spellcasting':
+    'Section=magic Note="Can learn spells from the %V tradition"',
+
+  // Wizard
+  'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
+  'Arcane School':Pathfinder2E.FEATURES['Arcane School'],
+  'Arcane Thesis':Pathfinder2E.FEATURES['Arcane Thesis'],
+  "Archwizard's Spellcraft":Pathfinder2E.FEATURES["Archwizard's Spellcraft"],
+  'Ars Grammatica':
+    'Section=feature ' +
+    'Note="TODO"',
+  'Battle Magic':
+    'Section=feature ' +
+    'Note="TODO"',
+  'Boundary':
+    'Section=feature ' +
+    'Note="TODO"',
+  'Civic Wizardry':
+    'Section=feature ' +
+    'Note="TODO"',
+  // Defensive Robes as above
+  'Drain Bonded Item':Pathfinder2E.FEATURES['Drain Bonded Item'],
+  'Experimental Spellshaping':
+    Pathfinder2E.FEATURES['Metamagical Experimentation']
+    .replaceAll('metamagic', 'spellshape'),
+  // Expert Spellcaster as above
+  'Improved Familiar Attunement':
+    Pathfinder2E.FEATURES['Improved Familiar Attunement'],
+  // Legendary Spellcaster as above
+  // Magical Fortitude as above
+  // Master Spellcaster as above
+  'Mentalism':
+    'Section=feature ' +
+    'Note="TODO"',
+  // Perception Expertise as above
+  'Prodigious Will':Pathfinder2E.FEATURES.Resolve,
+  'Protean Form':
+    'Section=feature ' +
+    'Note="TODO"',
+  // Reflex Expertise as above
+  'Spell Blending':Pathfinder2E.FEATURES['Spell Blending'],
+  'Spell Substitution':Pathfinder2E.FEATURES['Spell Substitution'],
+  'Staff Nexus':
+    'Section=magic ' +
+    'Note="Can cast spells from staff, using charges from %{level<8?\'1 spell\':level<16?\'2 spells\':\'3 spells\'} expended during daily prep"',
+  'Unified Magical Theory':
+    'Section=feature ' +
+    'Note="TODO"',
+  // Weapon Expertise as above
+  // Weapon Specialization as above
+  'Wizard Feats':Pathfinder2E.FEATURES['Wizard Feats'],
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
-  'Wizard Weapon Expertise':
-    'Section=feature ' +
-    'Note="Attack Expert (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)"',
+  'Wizard Spellcasting':Pathfinder2E.FEATURES['Arcane Spellcasting'],
+
+  /*-----*/
 
   'Abjuration':
     'Section=magic,magic ' +
@@ -7487,6 +7552,55 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Stoke The Heart':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Clinging Ice':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Nudge Fate':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Shroud Of Night':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Discern Secrets':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Evil Eye':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Wilding Word':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Untamed Form':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -11870,6 +11984,23 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
       'featureNotes.fighterKeyAttribute', '=', '1'
     );
+  } else if(name == 'Witch') {
+    rules.defineRule('patronTraditionsLowered',
+      'patronTraditions', '=', 'source.toLowerCase()'
+    );
+    rules.defineRule
+      ('magicNotes.expertSpellcaster', 'patronTraditions', '=', null);
+    rules.defineRule
+      ('magicNotes.legendarySpellcaster', 'patronTraditions', '=', null);
+    rules.defineRule
+      ('magicNotes.masterSpellcaster', 'patronTraditions', '=', null);
+    rules.defineRule
+      ('magicNotes.witchSpellcasting', 'patronTraditionsLowered', '=', null);
+    rules.defineRule('selectableFeatureCount.Witch (Patron)',
+      'featureNotes.patron', '=', '1'
+    );
+    rules.defineRule
+      ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source * 3');
   }
 };
 
@@ -11999,6 +12130,20 @@ Pathfinder2ERemaster.featureRules = function(
   rules, name, sections, notes, action
 ) {
   Pathfinder2E.featureRules(rules, name, sections, notes, action);
+  let matchInfo;
+  notes.forEach(n => {
+    matchInfo = n.match(/Spell Trained \((.*)\)/);
+    if(matchInfo && ((rules.getChoices('levels') || {}).Witch || '').includes(name + ':Patron')) {
+      let trad = matchInfo[1];
+      rules.defineRule('witch' + trad + 'Level',
+        'patronTraditions', '?', 'source && source.includes("' + trad + '")',
+        'levels.Witch', '=', null
+      );
+      rules.defineRule('patronTraditions',
+        'features.' + name, '=', '!dict.patronTraditions ? "' + trad + '" : !dict.patronTraditions.includes("' + trad + '") ? dict.patronTraditions + "; ' + trad + '" : dict.patronTraditions'
+      );
+    }
+  });
 };
 
 /*
