@@ -3342,7 +3342,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Ancestry feats
   'Dwarven Doughtiness':
-    'Section=save Note="Reduces frightened condition by 2 at the end of turn"',
+    'Section=save ' +
+    'Note="Reduces frightened condition by 2 at the end of each turn"',
   // Changed
   'Dwarven Lore':
     'Section=feature,skill ' +
@@ -3356,13 +3357,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Weapon Familiarity (Dwarf Weapons; Battle Axe; Pick; Warhammer)",' +
       '"Has access to uncommon dwarf weapons%{level>=5?\'/Critical hits with a dwarf weapon, battle axe, pick, or warhammer inflict its critical specialization effect\':\'\'}"',
+  'Mountain Strategy':
+    'Section=combat ' +
+    'Note="Inflicts additional damage equal to the number of damage dice to giant, goblin, hryngar, and orc foes"',
   'Rock Runner':
     Pathfinder2E.FEATURES['Rock Runner']
     .replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
-  "Stonemason's Eye":
-    'Section=skill ' +
-    'Note="Skill Trained (Crafting)/+2 Perception (unusual stonework)/Automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\' +2\':\'\'} check to notice unusual stonework"',
+  "Stonemason's Eye":Pathfinder2E.FEATURES.Stonecunning,
   'Unburdened Iron':Pathfinder2E.FEATURES['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATURES['Boulder Roll'],
   'Defy The Darkness':
@@ -3372,23 +3374,23 @@ Pathfinder2ERemaster.FEATURES = {
       '"Cannot use darkness magic"',
   'Dwarven Reinforcement':
     'Section=skill ' +
-    'Note="Can use 1 hr work to give an item +%{levels.Crafting>=4?3:levels.Crafting>=3?2:1} Hardness for 24 hr"',
-  'Dwarven Weapon Cunning':
-    'Section=combat ' +
-    'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
+    'Note="Can use 1 hr work to give an item +%{rank.Crafting<3?1:rank.Crafting<4?2:3} Hardness for 24 hr"',
   'Echoes In Stone':
+    'Action=1 ' +
     'Section=feature ' +
-    'Note="Has 20\' imprecise tremorsense when standing on earth or stone"',
+    'Note="Gives 20\' imprecise tremorsense for 1 turn when standing on earth or stone"',
   "Mountain's Stoutness":Pathfinder2E.FEATURES["Mountain's Stoutness"],
   'Stone Bones':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Successful DC 17 flat check turns a critical physical hit into a normal hit"',
-  'Stonewalker':Pathfinder2E.FEATURES.Stonewalker,
+  'Stonewalker':
+    Pathfinder2E.FEATURES.Stonewalker
+    .replace('Stonecunning', "Stonemason's Eye"),
   'March The Mines':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strides or Burrows 15\' twice, taking along an adjacent willing ally"',
+    'Note="Strides or Burrows 15\' twice; can take along an adjacent willing ally"',
   'Telluric Power':
     'Section=magic ' +
     'Note="Inflicts additional damage equal to the number of weapon damage dice to a foe standing on the same earth or stone surface"',
@@ -3398,7 +3400,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Stonewall':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Self becomes petrified until the end of turn, negating damage from the triggering effect or failed Fortitude save that would not affect stone"',
+    'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone"',
 
   'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
   'Elven Lore':Pathfinder2E.FEATURES['Elven Lore'],
@@ -6462,11 +6464,12 @@ Pathfinder2ERemaster.FEATURES = {
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
       '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level",' +
       '"Skill Trained (Intimidation; Religion)"',
-
+*/
   'Counterspell':
     'Action=Reaction ' +
     'Section=magic ' +
     'Note="Expends a spell slot to attempt to counteract a spell with the same spell"',
+/*
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level"',
@@ -6762,65 +6765,29 @@ Pathfinder2ERemaster.FEATURES = {
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Spellcasting':Pathfinder2E.FEATURES['Arcane Spellcasting'],
+  // Counterspell as above
+  // Familiar as above
+  // Reach Spell as above
+  'Spellbook Prodigy':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"Critical failures to Learn A Spell are normal failures",' +
+      '"Has the Magical Shorthand feature"',
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  'Conceal Spell':Pathfinder2E.FEATURES['Conceal Spell'],
+  'Energy Ablation':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Casting a spell that inflicts energy damage gives self resistence to a chosen energy type equal to the spell rank"',
+  // Enhanced Familiar as above
+  'Nonlethal Spell':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Changed the damage caused by a subsequent spell to non-lethal"',
 
   /*-----*/
 
-  'Abjuration':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Ward arcane spell",' +
-      '"Knows 1 additional 1st-level abjuration spell"',
-  'Conjuration':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Augment Summoning arcane spell",' +
-      '"Knows 1 additional 1st-level conjuration spell"',
-  'Divination':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Diviner\'s Sight arcane spell",' +
-      '"Knows 1 additional 1st-level divination spell"',
-  'Enchantment':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Words arcane spell",' +
-      '"Knows 1 additional 1st-level enchantment spell"',
-  'Evocation':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell",' +
-      '"Knows 1 additional 1st-level evocation spell"',
-  'Illusion':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Warped Terrain arcane spell",' +
-      '"Knows 1 additional 1st-level illusion spell"',
-  'Necromancy':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Call Of The Grave arcane spell",' +
-      '"Knows 1 additional 1st-level necromancy spell"',
-  'Transmutation':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Physical Boost arcane spell",' +
-      '"Knows 1 additional 1st-level transmutation spell"',
-
-  // Counterspell as above
-  'Eschew Materials':
-    'Section=magic ' +
-    'Note="Can replace spell material components with sigils drawn in the air"',
-  // Familiar as above
-  'Hand Of The Apprentice':
-    'Section=magic ' +
-    'Note="Knows the Hand Of The Apprentice arcane spell/Has a focus pool and 1 Focus Point"',
-  // Reach Spell as above
-  // Widen Spell as above
-  // Cantrip Expansion as above
-  'Conceal Spell':
-    'Section=skill ' +
-    'Note="Can hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
-  // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
     'Section=magic ' +
