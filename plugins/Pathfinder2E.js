@@ -3288,7 +3288,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Call On Ancient Blood':
     'Action=Reaction ' +
-    'Section=save Note="Gives +1 vs. magic until the end of turn"',
+    'Section=save Note="Gives +1 vs. magic until the end of the turn"',
   'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
   'Chameleon Gnome':
     'Section=feature,skill ' +
@@ -6435,7 +6435,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
-    'Note="Can use Debilitating Strike on a critical hit to force a foe Fortitude save; critical failure paralyzes until the end of the next turn; failure or success inflicts slowed 2 or 1 until the end of the next turn"',
+    'Note="Can use Debilitating Strike on a critical hit to inflict slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1 ; critical success negates; critical failure inflicts paralyzed)"',
   'Fantastic Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -6443,15 +6443,13 @@ Pathfinder2E.FEATURES = {
   'Felling Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike vs. a flat-footed airborne foe forces a Reflex save; failure inflicts a 120\' fall; critical failure also inflicts grounded until the end of the next turn"',
+    'Note="Successful Strike vs. a flat-footed airborne foe inflcits a 120\' fall (<b>save Reflex</b> negates; critical failure also inflicts grounded until the end of the next turn)"',
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Prevents a foe Reaction; a higher-level foe requires a successful attack roll"',
   'Spring From The Shadows':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Strikes an unaware foe after a Stride, remaining undetected afterward"',
+    'Action=1 Section=combat Note="Strikes a foe after an undetected Stride"',
   'Defensive Roll':
     'Action=Free ' +
     'Section=combat ' +
@@ -6469,7 +6467,7 @@ Pathfinder2E.FEATURES = {
     'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
   'Cloud Step':
     'Section=ability ' +
-    'Note="Can Stride over insubstantial surfaces and traps"',
+    'Note="Can Stride over insubstantial surfaces and weight-triggered traps"',
   'Cognitive Loophole':
     'Action=Reaction ' +
     'Section=save ' +
@@ -6496,7 +6494,7 @@ Pathfinder2E.FEATURES = {
   'Hidden Paragon':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Can become invisible for 1 min when hidden from foes once per hr"',
+    'Note="Becomes invisible for 1 min when hidden from foes once per hr"',
   'Impossible Striker':
     'Section=combat Note="Has increased Sly Striker effects"',
   'Reactive Distraction':
@@ -6869,7 +6867,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips"',
   'Spell Substitution':
     'Section=magic ' +
-    'Note="Can use a 10-minute process to replace 1 prepared spell with a different spell"',
+    'Note="Can use a 10-min process to replace 1 prepared spell with a different spell"',
   'Universalist':
     'Section=feature,magic ' +
     'Note=' +
@@ -6936,6 +6934,7 @@ Pathfinder2E.FEATURES = {
   // Widen Spell as above
   // Cantrip Expansion as above
   'Conceal Spell':
+    'Action=1 ' +
     'Section=skill ' +
     'Note="Can hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
   // Enhanced Familiar as above
@@ -14098,8 +14097,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('magicNotes.legendarySpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
-    rules.defineRule
-      ('magicNotes.sorcererSpellcasting', 'bloodlineTraditions', '=', 'source.toLowerCase()');
+    rules.defineRule('magicNotes.sorcererSpellcasting',
+      'bloodlineTraditionsLowered', '=', null
+    );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
@@ -15000,9 +15000,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         ('magicNotes.' + noteName + '-2', 'levels.Sorcerer', '?', null);
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
-  } else if(name == 'Stonewalker') {
-    rules.defineRule
-      ('skillNotes.stonewalker', 'features.Stonecunning', '?', null);
   } else if(name == 'Studious Capacity') {
     rules.defineRule
       ('magicNotes.studiousCapacity.1', 'features.Studious Capacity', '=', '0');
