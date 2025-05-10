@@ -1066,7 +1066,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Ancestry,Leshy Require="level >= 9",features.Seedpod',
   'Call Of The Green Man':'Trait=Ancestry,Leshy Require="level >= 13"',
   'Cloak Of Poison':'Trait=Ancestry,Leshy Require="level >= 13"',
-  'Flourish And Run':'Trait=Ancestry,Leshy Require="level >= 17"',
+  'Flourish And Ruin':'Trait=Ancestry,Leshy Require="level >= 17"',
   'Regrowth':'Trait=Ancestry,Leshy Require="level >= 17"',
 
   'Beast Trainer':'Trait=Ancestry,Orc',
@@ -3299,11 +3299,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
   'Root Leshy':
-    'Section=combat,combat,feature ' +
+    'Section=combat,combat,feature,save ' +
     'Note=' +
       '"+2 Hit Points",' +
       '"+2 vs. attempts to Reposition, Shove, or Trip",' +
-      '"Can go 2 weeks without sunlight before starving"',
+      '"Can go 2 weeks without sunlight before starving",' +
+      '"+2 vs. spells and effects that move and knock prone"',
   'Seaweed Leshy':
     'Section=ability,ability ' +
     'Note=' +
@@ -3607,8 +3608,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Group Aid':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="After Aiding an ally, can Aid another on the same skill"',
-  'Handy Traveler':
+    'Note="After Aiding an ally, Aids another on the same skill"',
+  'Hardy Traveler':
     'Section=ability,ability ' +
     'Note=' +
       '"+1 Encumbered Bulk/+1 Maximum Bulk",' +
@@ -3617,11 +3618,16 @@ Pathfinder2ERemaster.FEATURES = {
   'Multitalented':Pathfinder2E.FEATURES.Multitalented,
   'Advanced General Training':
     'Section=feature Note="+1 General Feat (7th level)"',
+  'Bounce Back':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Wounded condition does not increase when losing the dying condition once per day"',
   'Stubborn Persistence':
     'Section=save Note="Can avoid fatigue with a successful DC 17 flat check"',
   'Heroic Presence':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can generate the effects of a 6th-level Zealous Conviction once per day"',
+    'Note="R30\' Generates the effects of a 6th-level Zealous Conviction on 10 willing creatures once per day"',
 
   'Grasping Reach':
     'Section=combat ' +
@@ -3637,7 +3643,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Additional Lore (Leshy Lore) feature",' +
       '"Skill Trained (Nature; Stealth)"',
   'Leshy Superstition':
-    'Action=Reaction Section=save Note="+1 on triggering save"',
+    'Action=Reaction Section=save Note="+1 on the triggering save"',
   'Seedpod':
     'Section=combat ' +
     'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed on a critical success"',
@@ -3652,7 +3658,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Anchor':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +2 vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends"',
+    'Note="Gives +%{$\'features.Root Leshy\'?4:2} vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends"',
   'Leshy Glide':
     'Action=1 ' +
     'Section=ability ' +
@@ -3670,7 +3676,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save Note="+1 vs. spells and magical effects"',
   'Solar Rejuvenation':
     'Section=combat ' +
-    'Note="Regains %{constitutionModifier+level//2} HP from 10 min rest in a suitable environment"',
+    'Note="Regains %{constitutionModifier*(level//2)} HP from 10 min rest in a suitable environment"',
   'Thorned Seedpod':
     'Section=combat ' +
     'Note="Critical hits with seedpods inflict 1d4 HP persistent piercing"',
@@ -3681,7 +3687,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=2 ' +
     'Section=combat ' +
     'Note="Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min"',
-  'Flourish And Run':
+  'Flourish And Ruin':
     'Section=magic ' +
     'Note="Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at rank 6 once per day"',
   'Regrowth':
@@ -3691,6 +3697,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Beast Trainer':
     'Section=feature,skill ' +
     'Note=' +
+      // TODO problems randomizing
       '"+1 General Feat (Pet or Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
@@ -3738,7 +3745,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Defy Death':
     'Section=save ' +
     'Note="-1 DC on dying recovery checks/Suffers no debilitation after being returned to life"',
-  'Scar-Thick Skin':'Section=save Note="=5 DC to end persistent bleed damage"',
+  'Scar-Thick Skin':'Section=save Note="-5 DC to end persistent bleed damage"',
   'Pervasive Superstition':Pathfinder2E.FEATURES['Pervasive Superstition'],
   'Undying Ferocity':
     'Section=combat Note="Using Orc Ferocity gives %{level} temporary HP"',
@@ -3752,7 +3759,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Rampaging Ferocity':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if Strike reduces foe to 0 HP"',
+    'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -3998,7 +4005,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=combat ' +
-    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 Hit Point and wounded 1 to a creature dead for up to 2 rd"',
+    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd"',
   'Perfect Debilitation':
     'Section=combat ' +
     'Note="Debilitating Bombs require a critical success to avoid effects"',
@@ -4863,7 +4870,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points +10 Hit Points per heightened level"',
+    'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
 */
   'Quick Shield Block':
     'Section=combat ' +
@@ -11868,6 +11875,12 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.skilledHuman',
       'level', '=', 'source<5 ? "Trained" : "Expert"'
     );
+  } else if(name == 'Leshy') {
+    Pathfinder2E.weaponRules(
+      rules, 'Spines', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Spines', 'combatNotes.cactusLeshy', '=', '1');
   }
 };
 
@@ -12101,6 +12114,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('trainingLevel.Advanced Weapons',
       'combatNotes.martialExperience.1', '^', null
     );
+  } else if(name == 'Tusks') {
+    Pathfinder2E.weaponRules(
+      rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
   } else if(name.startsWith('Weapon Proficiency')) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'

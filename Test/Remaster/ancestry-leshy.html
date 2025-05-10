@@ -11,7 +11,7 @@ var attributes = {
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":1, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Leshy", "ancestryFeats.Anchoring Roots":1, 
   "ancestryFeats.Bark And Tendril":1, "ancestryFeats.Call Of The Green Man":1, "ancestryFeats.Cloak Of Poison":1, 
-  "ancestryFeats.Flourish And Run":1, "ancestryFeats.Grasping Reach":1, "ancestryFeats.Harmlessly Cute":1, 
+  "ancestryFeats.Flourish And Ruin":1, "ancestryFeats.Grasping Reach":1, "ancestryFeats.Harmlessly Cute":1, 
   "ancestryFeats.Leshy Glide":1, "ancestryFeats.Leshy Lore":1, "ancestryFeats.Leshy Superstition":1, 
   "ancestryFeats.Lucky Keepsake":1, "ancestryFeats.Regrowth":1, "ancestryFeats.Ritual Reversion":1, 
   "ancestryFeats.Seedpod":1, "ancestryFeats.Shadow Of The Wilds":1, "ancestryFeats.Solar Rejuvenation":1, 
@@ -94,7 +94,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Anchoring Roots; Bark And Tendril; Call Of The Green Man; Cloak Of Poison; Exacting Strike; Flourish And Run; Grasping Reach; Harmlessly Cute; Leshy Glide; Leshy Lore; Leshy Superstition; Lucky Keepsake; Regrowth; Ritual Reversion; Seedpod; Shadow Of The Wilds; Solar Rejuvenation; Speak With Kindred; Thorned Seedpod; Undaunted</td>
+        <td><b>Feats</b>: Anchoring Roots; Bark And Tendril; Call Of The Green Man; Cloak Of Poison; Exacting Strike; Flourish And Ruin; Grasping Reach; Harmlessly Cute; Leshy Glide; Leshy Lore; Leshy Superstition; Lucky Keepsake; Regrowth; Ritual Reversion; Seedpod; Shadow Of The Wilds; Solar Rejuvenation; Speak With Kindred; Thorned Seedpod; Undaunted</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Leshy Features</b>: Ancestry Feats; Attribute Boost (Constitution; Wisdom; Choose 1 from any); Attribute Flaw (Intelligence); Cactus Leshy; Fruit Leshy; Fungus Leshy; Gourd Leshy; Leaf Leshy; Leshy Heritage; Lotus Leshy; Low-Light Vision; Plant Nourishment; Root Leshy; Seaweed Leshy; Small; Vine Leshy</td>
@@ -218,12 +218,14 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Breastplate</td>
         <td><b>Shield</b>: Tower (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Light Pick (+6 1d4+1 P [Crit d8]; strength; expert); Longspear (+6 1d8+1 P; strength; expert); Shield Boss (+6 1d6+1 B; strength; expert)</td>
+        <td><b>Weapons</b>: Light Pick (+6 1d4+1 P [Crit d8]; strength; expert); Longspear (+6 1d8+1 P; strength; expert); Shield Boss (+6 1d6+1 B; strength; expert); Spines (+8 1d6+1 P; dexterity; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
+        <td><i>Cactus Leshy: Spines unarmed attack inflicts 1d6 HP piercing</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +1</i></td>
@@ -234,9 +236,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
-        <td>Anchor: <b>(1)</b> Gives +2 vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends</td>
-      </tr><tr style="text-align:center">
-        <td>Cactus Leshy: Spines unarmed attack inflicts 1d6 HP piercing</td>
+        <td>Anchor: <b>(1)</b> Gives +4 vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends</td>
       </tr><tr style="text-align:center">
         <td>Cloak Of Poison: <b>(2)</b> Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min</td>
       </tr><tr style="text-align:center">
@@ -252,7 +252,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Solar Rejuvenation: Regains 2 HP from 10 min rest in a suitable environment</td>
+        <td>Solar Rejuvenation: Regains 0 HP from 10 min rest in a suitable environment</td>
       </tr><tr style="text-align:center">
         <td>Thorned Seedpod: Critical hits with seedpods inflict 1d4 HP persistent piercing</td>
       </tr></table>
@@ -268,9 +268,11 @@ var attributes = {
       <tr style="text-align:center">
         <td>Leaf Leshy: Takes no damage from falling</td>
       </tr><tr style="text-align:center">
-        <td>Leshy Superstition: <b>(R)</b> +1 on triggering save</td>
+        <td>Leshy Superstition: <b>(R)</b> +1 on the triggering save</td>
       </tr><tr style="text-align:center">
         <td>Lucky Keepsake: +1 vs. spells and magical effects</td>
+      </tr><tr style="text-align:center">
+        <td>Root Leshy: +2 vs. spells and effects that move and knock prone</td>
       </tr><tr style="text-align:center">
         <td>Undaunted: +1 vs. emotion effects, and successes are critical successes</td>
       </tr></table>
@@ -315,7 +317,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Call Of The Green Man: Knows the Plant Form primal innate spell; can cast it at rank 5 once per day</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Flourish And Run: Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at rank 6 once per day</i></td>
+      <td><i>Flourish And Ruin: Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at rank 6 once per day</i></td>
     </tr><tr style="text-align:center">
       <td><i>Regrowth: Knows the Regenerate primal innate spell; can cast it at rank 7 once per day</i></td>
     </tr><tr style="text-align:center">
@@ -343,7 +345,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Cloak Of Poison Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
-        <td>Flourish And Run Feat: Requires level (currently 1) >= 17</td>
+        <td>Flourish And Ruin Feat: Requires level (currently 1) >= 17</td>
       </tr><tr style="text-align:center">
         <td>Leshy Glide Feat: Requires level (currently 1) >= 5 and leaf leshy feature (currently 1) or cat fall feature</td>
       </tr><tr style="text-align:center">
