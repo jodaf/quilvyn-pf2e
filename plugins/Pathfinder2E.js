@@ -3293,7 +3293,7 @@ Pathfinder2E.FEATURES = {
   'Chameleon Gnome':
     'Section=feature,skill ' +
     'Note=' +
-      '"May use a 1 hr process to change skin and hair colors",' +
+      '"Can use a 1 hr process to change skin and hair colors",' +
       '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Gains +2 Stealth until surroundings change"',
   'Charhide Goblin':
     'Section=save ' +
@@ -3467,7 +3467,7 @@ Pathfinder2E.FEATURES = {
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Can replace Ancestral Longevity and Expert Longevity skills once per day"',
+    'Note="Replaces the Ancestral Longevity and Expert Longevity skills once per day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
@@ -3478,7 +3478,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. fey",' +
-      '"+2 Perception (fey)/May make an immediate -5 Diplomacy check to Make an Impression with fey and retry a failure after 1 min conversation"',
+      '"+2 Perception (fey)/May make an immediate -5 Diplomacy check to Make An Impression on fey and retry a failure after 1 min conversation"',
   'First World Magic':
     'Section=magic ' +
     'Note="Can cast a chosen primal cantrip as an innate spell at will"',
@@ -3495,7 +3495,7 @@ Pathfinder2E.FEATURES = {
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
-      '"+1 Will (illusions)/R10\' Automatically attempts checks to disbelieve illusions",' +
+      '"+1 Will vs. illusions/R10\' Automatically attempts checks to disbelieve illusions",' +
       '"+1 Perception (illusions)"',
   'Animal Elocutionist':
     'Section=magic,skill ' +
@@ -3530,10 +3530,10 @@ Pathfinder2E.FEATURES = {
   'Goblin Scuttle':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can take a Step when an ally moves to an adjacent position"',
+    'Note="Takes a Step%{$\'features.Skittering Scuttle\'?\' or a \'+(speed//2)+\\"\' Stride\\":\'\'} when an ally moves to an adjacent position"',
   'Goblin Song':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="R%{skillNotes.loudSinger?60:30}\' Successful Performance vs. Will DC of %{(rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8)+(skillNotes.loudSinger?1:0)} target%{rank.Performance<2&&!skillNotes.loudSinger?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
@@ -3547,14 +3547,13 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Ride feature",' +
-      '"+1 Nature (Command an Animal with a goblin dog or wolf mount)"',
+      '"+1 Nature (Command An Animal with a goblin dog or wolf mount)"',
   'Very Sneaky':'Section=skill Note="+5\' Sneak/Can Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
     'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
   'Cave Climber':'Section=ability Note="Has a 10\' climb Speed"',
-  'Skittering Scuttle':
-    'Section=combat Note="Can use Goblin Scuttle to Stride %{speed//2}\'"',
+  'Skittering Scuttle':'Section=combat Note="Increased Goblin Scuttle effects"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
@@ -14956,6 +14955,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
     );
+  } else if(name == 'Skittering Scuttle') {
+    rules.defineRule('combatNotes.goblinScuttle',
+      'combatNotes.skitteringScuttle', '=', 'null' // italics
+    );
   } else if(name == 'Sorcerer Dedication') {
     rules.defineRule
       ('magicNotes.sorcererDedication', 'bloodlineTraditions', '=', null);
@@ -15171,7 +15174,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         } else if(section == 'skill' &&
                   adjusted != 'Language Count' &&
                   adjusted.match(/^[A-Z][a-z]*(\s[A-Z][a-z]*)*(\s\([A-Z][a-z]*(\s[A-Z][a-z]*)*\))?$/)) {
-          adjusted = 'skillModifier.' + adjusted;
+          adjusted = 'skillModifiers.' + adjusted;
         } else if(adjusted.match(/^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/)) {
           adjusted = adjusted.charAt(0).toLowerCase() + adjusted.substring(1).replaceAll(' ', '');
         } else {
