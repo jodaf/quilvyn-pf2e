@@ -3512,7 +3512,7 @@ Pathfinder2E.FEATURES = {
      'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each once per day"',
   'Vivacious Conduit':
     'Section=combat ' +
-    'Note="10 min rest restores %{constitutionModifier*(level/2)//1} Hit Points"',
+    'Note="10 min rest restores %{constitutionModifier*(level/2)//1} HP"',
   'Gnome Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Glaive; Kukri; Gnome Weapons)"',
@@ -3553,7 +3553,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
   'Cave Climber':'Section=ability Note="Has a 10\' climb Speed"',
-  'Skittering Scuttle':'Section=combat Note="Increased Goblin Scuttle effects"',
+  'Skittering Scuttle':
+    'Section=combat Note="Has increased Goblin Scuttle effects"',
   'Goblin Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
@@ -3652,9 +3653,10 @@ Pathfinder2E.FEATURES = {
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Retains 1 Hit Point when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
+    'Note="Retains 1 Hit Point, increasing wounded condition by 1, when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
-  'Orc Superstition':'Action=Reaction Section=save Note="+1 vs. magic"',
+  'Orc Superstition':
+    'Action=Reaction Section=save Note="+1 vs. the triggering magic effect"',
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3884,7 +3886,7 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=combat ' +
-    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 Hit Point and wounded 1 to a creature dead for up to 2 rd"',
+    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd"',
   'Perfect Debilitation':
     'Section=combat ' +
     'Note="Debilitating Bombs require a critical success to avoid effects"',
@@ -4700,7 +4702,7 @@ Pathfinder2E.FEATURES = {
     'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract blinded, deafened, sickened, or slowed"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points +10 Hit Points per heightened level"',
+    'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="Can use an additional Reaction for a Shield Block once per turn"',
@@ -5069,13 +5071,13 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Communal Healing':
     'Section=magic ' +
-    'Note="Casting <i>Heal</i> on another creature restores Hit Points to self equal to the spell level"',
+    'Note="Casting <i>Heal</i> on another creature restores HP to self equal to the spell level"',
   'Emblazon Armament':
     'Section=magic ' +
     'Note="10 min process gives a shield +1 Hardness or a weapon +1 HP damage"',
   'Sap Life':
     'Section=magic ' +
-    'Note="Casting <i>Harm</i> on another creature restores Hit Points to self equal to the spell level"',
+    'Note="Casting <i>Harm</i> on another creature restores HP to self equal to the spell level"',
   'Turn Undead':
     'Section=magic ' +
     'Note="Critical failure by undead up to level %{level} damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
@@ -5340,7 +5342,7 @@ Pathfinder2E.FEATURES = {
   'Healing Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent polymorph spell restores 1d6 Hit Points per spell level"',
+    'Note="Subsequent polymorph spell restores 1d6 HP per spell level"',
   'Overwhelming Energy':
     'Action=1 ' +
     'Section=magic ' +
@@ -5374,7 +5376,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has plant, not humanoid, trait",' +
-      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
+      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half HP with 10 min in sunlight, and restores all HP and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
