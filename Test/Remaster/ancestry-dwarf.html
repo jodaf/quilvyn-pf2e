@@ -12,18 +12,19 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Dwarf", "ancestryFeats.Boulder Roll":1, 
   "ancestryFeats.Defy The Darkness":1, "ancestryFeats.Dwarven Doughtiness":1, "ancestryFeats.Dwarven Lore":1, 
   "ancestryFeats.Dwarven Reinforcement":1, "ancestryFeats.Dwarven Weapon Familiarity":1, 
-  "ancestryFeats.March The Mines":1, "ancestryFeats.Mountain Strategy":1, "ancestryFeats.Mountain's Stoutness":1, 
-  "ancestryFeats.Rock Runner":1, "ancestryFeats.Stone Bones":1, "ancestryFeats.Stonegate":1, 
-  "ancestryFeats.Stonemason's Eye":1, "ancestryFeats.Stonewalker":1, "ancestryFeats.Stonewall":1, 
-  "ancestryFeats.Telluric Power":1, "ancestryFeats.Unburdened Iron":1, "armor":"Breastplate", 
-  "background":"Acolyte", "class":"Fighter", "classFeats.Exacting Strike":1, "deity":"Gozreh", 
-  "experience":482, "gender":"Male", "languages.Sakvroth":1, "name":"Ancestry-Dwarf", 
-  "selectableFeatures.Dwarf - Ancient-Blooded Dwarf":1, "selectableFeatures.Dwarf - Death Warden Dwarf":1, 
-  "selectableFeatures.Dwarf - Forge Dwarf":1, "selectableFeatures.Dwarf - Rock Dwarf":1, 
-  "selectableFeatures.Dwarf - Strong-Blooded Dwarf":1, "selectableFeatures.Fighter - Dexterity":1, "shield":"Tower", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Cavern Lore":1, "skillIncreases.Society":1, "skillIncreases.Underground Lore":1, 
-  "weapons.Light Pick":1, "weapons.Longspear":1, "weapons.Shield Boss":1
+  "ancestryFeats.Echoes In Stone":1, "ancestryFeats.March The Mines":1, "ancestryFeats.Mountain Strategy":1, 
+  "ancestryFeats.Mountain's Stoutness":1, "ancestryFeats.Rock Runner":1, "ancestryFeats.Stone Bones":1, 
+  "ancestryFeats.Stonegate":1, "ancestryFeats.Stonemason's Eye":1, "ancestryFeats.Stonewalker":1, 
+  "ancestryFeats.Stonewall":1, "ancestryFeats.Telluric Power":1, "ancestryFeats.Unburdened Iron":1, 
+  "armor":"Breastplate", "background":"Acolyte", "class":"Fighter", "classFeats.Exacting Strike":1, 
+  "deity":"Gozreh", "experience":482, "gender":"Male", "languages.Sakvroth":1, 
+  "name":"Ancestry-Dwarf", "selectableFeatures.Dwarf - Ancient-Blooded Dwarf":1, 
+  "selectableFeatures.Dwarf - Death Warden Dwarf":1, "selectableFeatures.Dwarf - Forge Dwarf":1, 
+  "selectableFeatures.Dwarf - Rock Dwarf":1, "selectableFeatures.Dwarf - Strong-Blooded Dwarf":1, 
+  "selectableFeatures.Fighter - Dexterity":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Cavern Lore":1, 
+  "skillIncreases.Society":1, "skillIncreases.Underground Lore":1, "weapons.Light Pick":1, 
+  "weapons.Longspear":1, "weapons.Shield Boss":1
 };
   </script>
 </head>
@@ -91,7 +92,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Boulder Roll; Defy The Darkness; Dwarven Doughtiness; Dwarven Lore; Dwarven Reinforcement; Dwarven Weapon Familiarity; Exacting Strike; March The Mines; Mountain Strategy; Mountain's Stoutness; Rock Runner; Stone Bones; Stonegate; Stonemason's Eye; Stonewalker; Stonewall; Telluric Power; Unburdened Iron</td>
+        <td><b>Feats</b>: Boulder Roll; Defy The Darkness; Dwarven Doughtiness; Dwarven Lore; Dwarven Reinforcement; Dwarven Weapon Familiarity; Echoes In Stone; Exacting Strike; March The Mines; Mountain Strategy; Mountain's Stoutness; Rock Runner; Stone Bones; Stonegate; Stonemason's Eye; Stonewalker; Stonewall; Telluric Power; Unburdened Iron</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Dwarf Features</b>: Ancestry Feats; Ancient-Blooded Dwarf; Attribute Boost (Constitution; Wisdom; Choose 1 from any); Attribute Flaw (Charisma); Clan Dagger; Darkvision; Death Warden Dwarf; Dwarf Heritage; Forge Dwarf; Rock Dwarf; Slow; Strong-Blooded Dwarf</td>
@@ -115,6 +116,8 @@ var attributes = {
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
         <td>Defy The Darkness: Can use Darkvision in magical darkness</td>
+      </tr><tr style="text-align:center">
+        <td>Echoes In Stone: <b>(1)</b> Gives 20' imprecise tremorsense for 1 turn when standing on earth or stone</td>
       </tr></table>
 </td>
     </tr></table>
@@ -165,19 +168,19 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Armor Skill Penalty: -2 strength and dexterity skills</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Duplicated Training: Skill Trained (Choose 1 from any)</i></td>
-    </tr><tr style="text-align:center">
       <td><i>Dwarven Lore: Skill Trained (Crafting; Religion)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +1 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Stonemason's Eye: Skill Trained (Crafting)/+2 Perception (unusual stonework)/Automatically attempts a check to notice unusual stonework</i></td>
-    </tr><tr style="text-align:center">
       <td>Dwarven Reinforcement: Can use 1 hr work to give an item +1 Hardness for 24 hr</td>
     </tr><tr style="text-align:center">
       <td>Rock Runner: Does not suffer off-guard when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes</td>
+    </tr><tr style="text-align:center">
+      <td>Stonemason's Eye: +2 Perception (unusual stonework)/Automatically attempts a -2 check to notice unusual stonework</td>
+    </tr><tr style="text-align:center">
+      <td>Stonewalker: Can find unusual stonework that requires legendary Perception</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr></table>
@@ -225,7 +228,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Exacting Strike: <b>(1)</b> Strike does not count toward multiple attack penalty on failure</td>
       </tr><tr style="text-align:center">
-        <td>March The Mines: <b>(2)</b> Strides or Burrows 15' twice, taking along an adjacent willing ally</td>
+        <td>March The Mines: <b>(2)</b> Strides or Burrows 15' twice; can take along an adjacent willing ally</td>
+      </tr><tr style="text-align:center">
+        <td>Mountain Strategy: Inflicts additional damage equal to the number of damage dice to giant, goblin, hryngar, and orc foes</td>
       </tr><tr style="text-align:center">
         <td>Mountain's Stoutness: -1 dying recovery DC</td>
       </tr><tr style="text-align:center">
@@ -247,15 +252,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Call On Ancient Blood: <b>(R)</b> Gives +1 vs. magic until the end of turn</td>
+        <td>Call On Ancient Blood: <b>(R)</b> Gives +1 vs. magic until the end of the turn</td>
       </tr><tr style="text-align:center">
         <td>Death Warden Dwarf: Successful saves vs. void and undead effects are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Dwarven Doughtiness: Reduces frightened condition by 2 at the end of turn</td>
+        <td>Dwarven Doughtiness: Reduces frightened condition by 2 at the end of each turn</td>
       </tr><tr style="text-align:center">
         <td>Forge Dwarf: Has fire resistance 1 and treats environmental heat as 1 step less extreme</td>
       </tr><tr style="text-align:center">
-        <td>Stonewall: <b>(R)</b> Self becomes petrified until the end of turn, negating damage from the triggering effect or failed Fortitude save that would not affect stone</td>
+        <td>Stonewall: <b>(R)</b> Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone</td>
       </tr><tr style="text-align:center">
         <td>Strong-Blooded Dwarf: Has poison resistance 1 and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) with a critical success</td>
       </tr></table>
@@ -306,7 +311,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Ancestry Feats Allocation: 1 available vs. 17 allocated</td>
+        <td>Ancestry Feats Allocation: 1 available vs. 18 allocated</td>
       </tr><tr style="text-align:center">
         <td>Boulder Roll Feat: Requires level (currently 1) >= 5 and rock runner feature (currently 1)</td>
       </tr><tr style="text-align:center">
@@ -316,9 +321,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dwarven Reinforcement Feat: Requires level (currently 1) >= 5 and crafting rank (currently 1) >= 2</td>
       </tr><tr style="text-align:center">
+        <td>Echoes In Stone Feat: Requires level (currently 1) >= 9</td>
+      </tr><tr style="text-align:center">
         <td>March The Mines Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
         <td>Mountain's Stoutness Feat: Requires level (currently 1) >= 9</td>
+      </tr><tr style="text-align:center">
+        <td>Skill Increase Allocation: 5 available vs. 6 allocated</td>
       </tr><tr style="text-align:center">
         <td>Stone Bones Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">

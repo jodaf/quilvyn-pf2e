@@ -967,7 +967,8 @@ Pathfinder2ERemaster.FEATS = {
   'Project Persona':'Trait=Ancestry,Gnome Require="level >= 5"',
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
-  'Cautious Curiosity':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'Cautious Curiosity (Arcane)':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'Cautious Curiosity (Occult)':'Trait=Ancestry,Gnome Require="level >= 9"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Trait=Ancestry,Gnome Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
@@ -1001,7 +1002,7 @@ Pathfinder2ERemaster.FEATS = {
   'Halfling Luck':Pathfinder2E.FEATS['Halfling Luck'],
   'Halfling Weapon Familiarity':
     Pathfinder2E.FEATS['Halfling Weapon Familiarity'],
-  'Prarie Rider':'Trait=Ancestry,Halfling',
+  'Prairie Rider':'Trait=Ancestry,Halfling',
   'Sure Feet':Pathfinder2E.FEATS['Sure Feet'],
   'Titan Slinger':Pathfinder2E.FEATS['Titan Slinger'],
   'Unfettered Halfling':Pathfinder2E.FEATS['Unfettered Halfling'],
@@ -3403,7 +3404,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone"',
 
   'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
-  'Elven Lore':Pathfinder2E.FEATURES['Elven Lore'],
+  // Changed
+  'Elven Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Elven Lore) feature",' +
+      '"Skill Trained (Arcana; Nature)"',
   // Changed
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
@@ -3428,7 +3434,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Otherworldly Acumen':
     'Section=magic ' +
     'Note="Can cast a chosen 2nd-rank spell as an innate spell once per day and use a day of downtime to change the spell chosen"',
-  'Tree Climber':'Section=ability Note="Has a 20\' climb Speed"',
+  'Tree Climber':'Section=ability Note="Has a 10\' climb Speed"',
   'Avenge Ally':
     'Action=1 ' +
     'Section=combat ' +
@@ -3442,14 +3448,14 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed from Burrow Elocutionist
   'Animal Elocutionist':
     'Section=skill ' +
-    'Note="Can speak with animals and gains +1 to Make An Impression with them"',
+    'Note="Can speak with animals and gains +1 to Make An Impression on them"',
   'Fey Fellowship':Pathfinder2E.FEATURES['Fey Fellowship'],
   'First World Magic':Pathfinder2E.FEATURES['First World Magic'],
   // Changed
   'Gnome Obsession':
     'Section=feature ' +
     // TODO trouble randomizing?
-    'Note="+1 Skill Feat (Additional Lore)/+1 Skill Feat (Assurance)"',
+    'Note="+2 Skill Feat (Additional Lore; Assurance)"',
   // Changed
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
@@ -3466,9 +3472,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     // TODO Will DC
     'Note="Places an illusion of normal clothing over armor"',
-  'Cautious Curiosity':
+  'Cautious Curiosity (Arcane)':
     'Section=magic ' +
-    // TODO arcane or occult
+    'Note="Knows the Disguise Magic and Silence arcane innate spells; can cast each at 2nd-rank on self once per day"',
+  'Cautious Curiosity (Occult)':
+    'Section=magic ' +
     'Note="Knows the Disguise Magic and Silence occult innate spells; can cast each at 2nd-rank on self once per day"',
   // Changed
   'First World Adept':
@@ -3490,7 +3498,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Burn It!':
     Pathfinder2E.FEATURES['Burn It!'].replace('spell level', 'spell rank'),
   'City Scavenger':Pathfinder2E.FEATURES['City Scavenger'],
-  'Goblin Lore':Pathfinder2E.FEATURES['Goblin Lore'],
+  // Changed
+  'Goblin Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Goblin Lore) feature",' +
+      '"Skill Trained (Nature; Stealth)"',
   'Goblin Scuttle':Pathfinder2E.FEATURES['Goblin Scuttle'],
   'Goblin Song':Pathfinder2E.FEATURES['Goblin Song'],
   // Changed
@@ -3506,7 +3519,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Successful Strike inflicts -10\' Speed for 1 rd, or -15\' Speed on a critical success"',
-  'Loud Singer':'Section=skill Note="Has increased Goblin Song effects"',
+  'Loud Singer':'Section=combat Note="Has increased Goblin Song effects"',
   'Vandal':
     'Section=combat,skill ' +
     'Note=' +
@@ -3516,19 +3529,24 @@ Pathfinder2ERemaster.FEATURES = {
   'Cling':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Moves with target after a successful Strike with a hand free until a successful DC %{skillModifier.Acrobatics} Escape"',
+    'Note="After a successful Strike with a hand free, moves with the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
   'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
   'Reckless Abandon':
     'Action=Free ' +
     'Section=save ' +
-    'Note="Critical failures on saves are normal failures and result in minimum damage until end of turn once per day"',
+    'Note="Critical failures and failures on saves due to hazardous actions are successes and result in minimum damage until the end of the turn once per day"',
 
   'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
   'Folksy Patter':
     'Section=skill ' +
     'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
-  'Halfling Lore':Pathfinder2E.FEATURES['Halfling Lore'],
+  // Changed
+  'Halfling Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Halfling Lore) feature",' +
+      '"Skill Trained (Acrobatics; Stealth)"',
   'Halfling Luck':Pathfinder2E.FEATURES['Halfling Luck'],
   // Changed
   'Halfling Weapon Familiarity':
@@ -3546,8 +3564,8 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('flat-footed', 'off-guard'),
   'Titan Slinger':Pathfinder2E.FEATURES['Titan Slinger'],
   'Unfettered Halfling':
-    Pathfinder2E.FEATURES['Halfling Luck']
-    .replace(/.Foe Grab.*/, ''),
+    Pathfinder2E.FEATURES['Unfettered Halfling']
+    .replace(/.Foe Grab[^"]*/, ''),
   'Watchful Halfling':
     Pathfinder2E.FEATURES['Watchful Halfling']
     .replace('-2 ', ''),
@@ -12066,6 +12084,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'spellSlots.P9', '^', '7',
       'spellSlots.P10', '^', '8'
     );
+  } else if(name == 'Loud Singer') {
+    rules.defineRule
+      ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
   } else if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
       'features.Martial Experience', '?', null,
