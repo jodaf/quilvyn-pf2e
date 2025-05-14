@@ -145,7 +145,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
 for(let a in Pathfinder2ERemaster.ANCESTRIES)
   Pathfinder2ERemaster.ANCESTRIES[a] =
     Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage",');
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",');
 Pathfinder2ERemaster.ARMORS = {
   'None':Pathfinder2E.ARMORS.None,
   "Explorer's Clothing":Pathfinder2E.ARMORS["Explorer's Clothing"],
@@ -1111,6 +1111,8 @@ Pathfinder2ERemaster.FEATS = {
   'Occult Resistance':
     'Trait="Ancestry,Changeling" Require="level >= 9","rank.Occultism >= 2"',
   'Hag Magic':'Trait="Ancestry,Changeling" Require="level >= 13"',
+
+  // Lineage as above
 
   'Bestial Manifestation':'Trait="Ancestry,Nephilim"',
   'Halo':'Trait="Ancestry,Nephilim"',
@@ -2624,8 +2626,14 @@ Pathfinder2ERemaster.FEATS = {
   'Cauldron':'Trait=Class,Witch',
   // Counterspell as above
   // Widen Spell as above
-  "Witch's Armaments":'Trait=Class,Witch',
-  'Basic Lesson':'Trait=Class,Witch Require="level >= 2"',
+  "Witch's Armaments (Eldritch Nails)":'Trait=Class,Witch',
+  "Witch's Armaments (Iron Teeth)":'Trait=Class,Witch',
+  "Witch's Armaments (Living Hair)":'Trait=Class,Witch',
+  'Basic Lesson (Dreams)':'Trait=Class,Witch Require="level >= 2"',
+  'Basic Lesson (Elements)':'Trait=Class,Witch Require="level >= 2"',
+  'Basic Lesson (Life)':'Trait=Class,Witch Require="level >= 2"',
+  'Basic Lesson (Protection)':'Trait=Class,Witch Require="level >= 2"',
+  'Basic Lesson (Vengeance)':'Trait=Class,Witch Require="level >= 2"',
   // Cantrip Expansion as above
   'Conceal Spell':
     Pathfinder2E.FEATS['Conceal Spell']
@@ -2637,7 +2645,9 @@ Pathfinder2ERemaster.FEATS = {
   'Sympathetic Strike':
     'Trait=Class,Witch Require="level >= 4","features.Witch\'s Armaments"',
   'Ceremonial Knife':'Trait=Class,Witch Require="level >= 6"',
-  'Greater Lesson':'Trait=Class,Witch Require="level >= 6"',
+  'Greater Lesson (Mischief)':'Trait=Class,Witch Require="level >= 6"',
+  'Greater Lesson (Shadow)':'Trait=Class,Witch Require="level >= 6"',
+  'Greater Lesson (Snow)':'Trait=Class,Witch Require="level >= 6"',
   // Steady Spellcasting as above
   "Witch's Charge":'Trait=Class,Witch,Detection Require="level >= 6"',
   'Incredible Familiar':
@@ -2649,7 +2659,8 @@ Pathfinder2ERemaster.FEATS = {
   'Stitched Familiar':'Trait=Class,Witch Require="level >= 8"',
   "Witch's Bottle":'Trait=Class,Witch Require="level >= 8","features.Cauldron"',
   'Double Double':'Trait=Class,Witch Require="level >= 10","features.Cauldron"',
-  'Major Lesson':'Trait=Class,Witch Require="level >= 10"',
+  'Major Lesson (Death)':'Trait=Class,Witch Require="level >= 10"',
+  'Major Lesson (Renewal)':'Trait=Class,Witch Require="level >= 10"',
   // Quickened Casting as above
   "Witch's Communion":
     'Trait=Class,Witch Require="level >= 10","features.Witch\'s Charge"',
@@ -3761,22 +3772,90 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
-  'Monstrous Peacemaker':
-    'Section=skill ' +
-    'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
-  'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
-  'Orc Weapon Carnage':
-    'Section=combat ' +
-    'Note="Critical hits with a falchion, greataxe, or orc weapon inflict its critical specialization effect"',
-  'Victorious Vigor':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
-  'Orc Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack %V (Falchion; Greataxe; Orc Weapons)"',
+  'Changeling':'Section=feature Note="Has the Lineage feature"',
+  'Lineage':'Section=feature Note="1 selection"',
+  'Nephalim':'Section=feature Note="Has the Lineage feature"',
 
+  'Brine May':
+    'Section=feature Note="TODO"',
+  'Callow May':
+    'Section=feature Note="TODO"',
+  'Dream May':
+    'Section=feature Note="TODO"',
+  'Slag May':
+    'Section=feature Note="TODO"',
 
+  'Changeling Lore':
+    'Section=feature Note="TODO"',
+  'Hag Claws':
+    'Section=feature Note="TODO"',
+  "Hag's Sight":
+    'Section=feature Note="TODO"',
+  'Called':
+    'Section=feature Note="TODO"',
+  'Mist Child':
+    'Section=feature Note="TODO"',
+  'Accursed Claws':
+    'Section=feature Note="TODO"',
+  'Occult Resistance':
+    'Section=feature Note="TODO"',
+  'Hag Magic':
+    'Section=feature Note="TODO"',
+
+  'Angelkin':
+    'Section=feature Note="TODO"',
+  'Grimspawn':
+    'Section=feature Note="TODO"',
+  'Hellspawn':
+    'Section=feature Note="TODO"',
+  'Lawbringer':
+    'Section=feature Note="TODO"',
+  'Musetouched':
+    'Section=feature Note="TODO"',
+  'Pitborn':
+    'Section=feature Note="TODO"',
+
+  'Bestial Manifestation':
+    'Section=feature Note="TODO"',
+  'Halo':
+    'Section=feature Note="TODO"',
+  'Nephilim Eyes':
+    'Section=feature Note="TODO"',
+  'Nephilim Lore':
+    'Section=feature Note="TODO"',
+  'Nimble Hooves':
+    'Section=feature Note="TODO"',
+  'Blessed Blood':
+    'Section=feature Note="TODO"',
+  'Extraplanar Supplication':
+    'Section=feature Note="TODO"',
+  'Nephilim Resistance':
+    'Section=feature Note="TODO"',
+  'Scion Of Many Planes':
+    'Section=feature Note="TODO"',
+  'Skillful Tail':
+    'Section=feature Note="TODO"',
+  'Celestial Magic':
+    'Section=feature Note="TODO"',
+  'Divine Countermeasures':
+    'Section=feature Note="TODO"',
+  'Divine Wings':
+    'Section=feature Note="TODO"',
+  'Fiendish Magic':
+    'Section=feature Note="TODO"',
+  'Celestial Mercy':
+    'Section=feature Note="TODO"',
+  'Slip Sideways':
+    'Section=feature Note="TODO"',
+  'Summon Nephilim Kin':
+    'Section=feature Note="TODO"',
+  'Divine Declaration':
+    'Section=feature Note="TODO"',
+  'Eternal Wings':
+    'Section=feature Note="TODO"',
+
+  'Earned Glory':
+    'Section=feature Note="TODO"',
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
     'Section=skill ' +
@@ -3784,6 +3863,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Supernatural Charm':
     'Section=magic ' +
     'Note="Knows the Charm arcane innate spell; may cast it once per day"',
+
+  'Monstrous Peacemaker':
+    'Section=skill ' +
+    'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
+  'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
 
   // Backgrounds
   'Belief Attributes':
@@ -6670,7 +6754,6 @@ Pathfinder2ERemaster.FEATURES = {
   */
 
   // Witch
-  // TODO: Patron familiar gift
   // Defensive Robes as above
   // Expert Spellcaster as above
   "Faith's Flamekeeper":
@@ -6738,6 +6821,125 @@ Pathfinder2ERemaster.FEATURES = {
   'Witch Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Witch Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
+  // TODO: Patron familiar gift
+
+  'Cackle':'Section=magic Note="Knows the Cackle hex"',
+  'Cauldron':
+    'Section=skill ' +
+    'Note="Knows the formulas for %{level//2+1?>4} common oils or potions and can use Craft to create %{(rank.Arcane||rank.Divine||rank.Occult||rank.Primal||0<3?1:rank.Arcane||rank.Divine||rank.Occult||rank.Primal<4?2:3)*($\'features.Double, Double\'?2:1)} oils or potions during daily prep"',
+  // Counterspell as above
+  // Reach Spell as above
+  // Widen Spell as above
+  "Witch's Armaments (Eldritch Nails)":
+    'Section=combat Note="Nails inflict 1d6 HP slashing"',
+  "Witch's Armaments (Iron Teeth)":
+    'Section=combat Note="Teeth inflict 1d8 HP piercing"',
+  "Witch's Armaments (Living Hair)":
+    'Section=combat Note="Hair inflicts 1d4 bludgeoning"',
+  'Basic Lesson (Dreams)':
+    'Section=magic ' +
+    'Note="Knows the Veil Of Dreams hex, and familiar knows the Sleep spell"',
+  'Basic Lesson (Elements)':
+    'Section=magic ' +
+    'Note="Knows the Elemental Betrayal hex, and familiar knows the choice of the Breath Fire, Gust Of Wind, Hydraulic Push, or Pummeling Rubble spells"',
+  'Basic Lesson (Life)':
+    'Section=magic ' +
+    'Note="Knows the Life Boost hex, and familiar knows the Spirit Link spell"',
+  'Basic Lesson (Protection)':
+    'Section=magic ' +
+    'Note="Knows the Blood Ward hex, and familiar knows the Mystic Armor spell"',
+  'Basic Lesson (Vengeance)':
+    'Section=magic ' +
+    'Note="Knows the Needle Of Vengeance hex, and familiar knows the Phantom Pain spell"',
+  // Cantrip Expansion as above
+  // Changed effects
+  'Conceal Spell':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Casts a subsequent spell without an incantation or obvious manifestations"',
+  // Enhanced Familiar as above
+  "Familiar's Language":
+    'Section=skill ' +
+    'Note="Can speak with animals in the same family as familiar"',
+  'Rites Of Convocation':
+    'Section=magic ' +
+    'Note="Can use a 10-min process to replace a prepared spell with a summoning spell"',
+  'Sympathetic Strike':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Subsequent hit with a Witch\'s Armament weapon inflicts -1 saves vs. self hexes for 1 rd, or -2 on a critical hit"',
+  'Ceremonial Knife':
+    'Section=feature ' +
+    'Note="Can prepare a knife to contain a spell of up to rank %{level//2-2>?1} during daily prep"',
+  'Greater Lesson (Mischief)':
+    'Section=magic ' +
+    'Note="Knows the Deceiver\'s Cloak hex, and familiar knows the Mad Monkeys spell"',
+  'Greater Lesson (Shadow)':
+    'Section=magic ' +
+    'Note="Knows the Malicious Shadow hex, and familiar knows the Chilling Darkness spell"',
+  'Greater Lesson (Snow)':
+    'Section=magic ' +
+    'Note="Knows the Personal Blizzard hex, and familiar knows the Wall Of Wind spell"',
+  // Steady Spellcasting as above
+  "Witch's Charge":
+    'Section=magic ' +
+    'Note="Knows the direction, distance, and state of %{$\\"features.Witch\'s Communion\\"?\'2 willing targets\':\'a willing target\'} designated during daily prep, and can cast R30\' touch spells on that target"',
+  'Incredible Familiar':
+    'Section=feature Note="Can select 6 familiar or master abilities each day"',
+  'Murksight':
+    'Section=combat ' +
+    'Note="Suffers no ranged attack or Perception penalties from non-magical precipitation, and requires no flat check to attack a target conceled by it"',
+  'Spirit Familiar':
+    'Section=combat ' +
+    'Note="Familiar can use two actions to leave its body, fly 20\' to a foe, inflict %{(level-1)//2*2}d6 HP spirit (<b>save basic Will</b>), fly 30\' to an ally, and restore HP equal to half the damage dealt once per 10 min"',
+  'Stitched Familiar':
+    'Section=combat ' +
+    'Note="Familiar can use two actions for a R30\' attack that inflicts %{(level-1)//2*2}d6 HP slashing and immobilized for 1 rd (<b>save basic Reflex</b> also negates immobilized) once per 10 min"',
+  "Witch's Bottle":
+    'Section=magic ' +
+    'Note="Can spend 10 min and 1 Focus Point to create a potion that inflicts a hex on the imbiber"',
+  'Double Double':
+    'Section=skill Note="Has increased Cauldron effects"',
+  'Major Lesson (Death)':
+    'Section=magic ' +
+    'Note="Knows the Curse Of Death hex, and familiar knows the Raise Dead spell"',
+  'Major Lesson (Renewal)':
+    'Section=magic ' +
+    'Note="Knows the Restorative Moment hex, and familiar knows the Field Of Life spell"',
+  // Quickened Casting as above
+  "Witch's Communion":
+    'Section=magic Note="Has increased Witch\'s Charge effects"',
+  'Coven Spell':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Gives the triggering ally spell a damage bonus equal to its rank or a spellshape effect"',
+  'Hex Focus':'Section=magic Note="Refocus restores all focus points"',
+  "Witch's Broom":
+    'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10\' Speed, during daily prep"',
+  // Reflect Spell as above
+  'Rites of Transfiguration':
+    'Section=magic ' +
+    'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphasis</i>"',
+  "Patron's Presence":
+    'Section=combat Note="Familiar can use 2 actions to create a 15\' emanation that inflicts stupefied 2 on foes (<b>save Will</b> negates; critical failure inflicts supefied 3) while sustained for up to 1 min once per hour"',
+  // Effortless Concentration as above
+  'Siphon Power':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Can cast a spell from familiar once per day"',
+  'Split Hex':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent targeted hex, cast at 2 ranks lower, affects a second target"',
+  "Patron's Claim":
+    'Section=combat ' +
+    'Note="Familiar can spend 2 actions for a R30\' attack that inflicts 10d10 HP spirit and drained 2 (<b>save basic Fortitude</b> also negates drained; critical failure inflicts drained 4) and restores 1 Focus Point to self once per hour"',
+  'Hex Master':
+    'Section=magic ' +
+    'Note="Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes"',
+  "Patron's Truth":'Section=magic Note="+1 10th rank spell slot"',
+  "Witch's Hut":
+    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with %{armorClass} AC, +%{perceptionModifier} Perception, 60\' Speed 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
 
   // Wizard
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
@@ -11502,28 +11704,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description="R60\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) illusion inflicts difficult terrain for 1 min (<b>heightened 4th</b> affects air instead of surface)"'
 };
-Pathfinder2ERemaster.VERSATILE_HERITAGES = {
-  'Changeling':
-    'Features=' +
-      '"1:Lineage" ' +
-    'Selectables=' +
-      '"1:Brine May:Lineage",' +
-      '"1:Callow May:Lineage",' +
-      '"1:Dream May:Lineage",' +
-      '"1:Slag May:Lineage"',
-  'Nephilim':
-    'Features=' +
-      '"1:Lineage" ' +
-    'Selectables=' +
-      '"1:Angelkin:Lineage",' +
-      '"1:Grimspawn:Lineage",' +
-      '"1:Hellspawn:Lineage",' +
-      '"1:Lawbringer:Lineage",' +
-      '"1:Musetouched:Lineage",' +
-      '"1:Pitborn:Lineage"',
-  'Aiuvarin':'',
-  'Dromaars':''
-};
 Pathfinder2ERemaster.WEAPONS = {
 
   'Fist':Pathfinder2E.WEAPONS.Fist,
@@ -11666,6 +11846,8 @@ Pathfinder2ERemaster.identityRules = function(
 ) {
   Pathfinder2E.identityRules
     (rules, {}, ancestries, backgrounds, classes, deities);
+  rules.defineRule
+    ('selectableFeatureCount.Lineage', 'featureNotes.lineage', '=', '1');
   rules.defineRule('selectableFeatureCount.Versatile Heritage',
     'featureNotes.versatileHeritage', '=', '1'
   );
@@ -11999,6 +12181,8 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source * 3');
+    rules.defineRule
+      ('spellSlots.P10', "magicNotes.patron'sGift", '=', 'null'); // italics
   }
 };
 
@@ -12084,7 +12268,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
-  if(name == 'Gnome Obsession') {
+  if(name == 'Double, Double') {
+    rules.defineRule(
+      'skillNotes.cauldron', 'skillNodes.double,Double', '=', 'null' // italics
+    );
+  } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
   } else if(name == 'Grown Of Oak') {
     rules.defineRule('magicNotes.grownOfOak',
@@ -12114,6 +12302,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('trainingLevel.Advanced Weapons',
       'combatNotes.martialExperience.1', '^', null
     );
+  } else if(name == "Patron's Truth") {
+    rules.defineRule('spellSlots.A10', "magicNotes.patron'sTruth", '+', '1');
+    rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');
+    rules.defineRule('spellSlots.O10', "magicNotes.patron'sTruth", '+', '1');
+    rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
   } else if(name == 'Tusks') {
     Pathfinder2E.weaponRules(
       rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
@@ -12123,6 +12316,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name.startsWith('Weapon Proficiency')) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
+    );
+  } else if(name == "Witch's Communion") {
+    rules.defineRule("magicNotes.witch'sCharge",
+      "magicNotes.witch'sCommunition", '=', 'null' // italics
     );
   }
 };
