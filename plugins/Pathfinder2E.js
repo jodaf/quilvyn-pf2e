@@ -6936,8 +6936,8 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Conceal Spell':
     'Action=1 ' +
-    'Section=skill ' +
-    'Note="Can hide spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
+    'Section=magic ' +
+    'Note="Hides spellcasting from observers with a successful Stealth vs. Perception, plus a successful Deception vs. Perception for verbal spells"',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
