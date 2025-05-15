@@ -440,7 +440,9 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Healing Font:Divine Font",' +
       '"1:Harmful Font:Divine Font",' +
       '"1:Cloistered Cleric:Doctrine",' +
-      '"1:Warpriest:Doctrine" ' +
+      '"1:Warpriest:Doctrine",' +
+      '"1:Holy:Sanctification",' +
+      '"1:Unholy:Sanctification" ' +
     'SpellSlots=' +
       'DC1:5@1,' +
       'D1:2@1;3@2,' +
@@ -898,7 +900,7 @@ Pathfinder2ERemaster.DEITIES = {
     Pathfinder2E.DEITIES.Torag + ' ' +
     'AreasOfConcern=Forge,Protection,Strategy ' +
     'DivineAttribute=Constitution,Wisdom ' +
-    'DivineSanctification=Hoy',
+    'DivineSanctification=Holy',
   'Urgathoa':
     Pathfinder2E.DEITIES.Urgathoa
     .replace('False Life', 'False Vitality') + ' ' +
@@ -1329,7 +1331,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Polymath', 'Warrior'),
   'Song Of Strength':
     'Trait=Class,Bard Require="level >= 2","features.Warrior"',
-  'Uplifting Overature':Pathfinder2E.FEATS['Inspire Competence'],
+  'Uplifting Overture':Pathfinder2E.FEATS['Inspire Competence'],
   'Combat Reading':'Trait=Class,Bard,Secret Require="level >= 4"',
   'Courageous Advance':
     'Trait=Class,Bard,Auditory,Concentrate,Spellshape ' +
@@ -1412,7 +1414,8 @@ Pathfinder2ERemaster.FEATS = {
   'All In My Head':'Trait=Class,Bard,Illusion,Mental Require="level >= 18"',
   'Deep Lore':Pathfinder2E.FEATS['Deep Lore'],
   'Discordant Voice':
-    'Trait=Class,Bard,Sonic Require="level >= 18","features.Courageous Anthem"',
+    'Trait=Class,Bard,Sonic ' +
+    'Require="level >= 18","spells.Courageous Anthem (0C1)"',
   'Eternal Composition':Pathfinder2E.FEATS['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATS['Impossible Polymath'],
   'Fatal Aria':Pathfinder2E.FEATS['Fatal Aria'],
@@ -1824,7 +1827,7 @@ Pathfinder2ERemaster.FEATS = {
   'Deadly Simplicity':Pathfinder2E.FEATS['Deadly Simplicity'],
   'Divine Castigation':
     Pathfinder2E.FEATS['Holy Castigation'] + ' ' +
-    'Require="features.Holy || features.Unholy"',
+    'Require="traits.Holy || traits.Unholy"',
   'Domain Initiate (Air)':Pathfinder2E.FEATS['Domain Initiate (Air)'],
   'Domain Initiate (Ambition)':Pathfinder2E.FEATS['Domain Initiate (Ambition)'],
   'Domain Initiate (Cities)':Pathfinder2E.FEATS['Domain Initiate (Cities)'],
@@ -1890,7 +1893,9 @@ Pathfinder2ERemaster.FEATS = {
     .replace(',Necromancy', '') + ' Require="level >= 4"',
   'Directed Channel':Pathfinder2E.FEATS['Directed Channel'],
   'Divine Infusion':
-    Pathfinder2E.FEATS['Necrotic Infusion'].replace('Metamagic', 'Spellshape'),
+    Pathfinder2E.FEATS['Necrotic Infusion']
+    .replace('Metamagic', 'Spellshape') + ' ' +
+    'Require="level >= 4"',
   'Raise Symbol':'Trait=Class,Cleric Require="level >= 4"',
   'Restorative Strike':'Trait=Class,Cleric Require="level >= 4"',
   'Sacred Ground':
@@ -1956,7 +1961,7 @@ Pathfinder2ERemaster.FEATS = {
   'Sanctify Armament':
     Pathfinder2E.FEATS['Align Armament (Chaotic)']
     .replace(',Evocation', '') + ' ' +
-    'Require="level >= 8","features.Holy || features.Unholy"',
+    'Require="level >= 8","traits.Holy || traits.Unholy"',
   'Surging Focus':'Trait=Class,Cleric Require="level >= 8"',
   'Void Siphon':'Trait=Class,Cleric Require="level >= 8"',
   'Zealous Rush':'Trait=Class,Cleric Require="level >= 8"',
@@ -1996,10 +2001,10 @@ Pathfinder2ERemaster.FEATS = {
   'Swift Banishment':Pathfinder2E.FEATS['Swift Banishment'],
   'Eternal Bane':
     Pathfinder2E.FEATS['Eternal Bane'] + ' ' +
-    'Require="level >= 16","features.Unholy"',
+    'Require="level >= 16","traits.Unholy"',
   'Eternal Blessing':
     Pathfinder2E.FEATS['Eternal Blessing'] + ' ' +
-    'Require="level >= 16","features.Holy"',
+    'Require="level >= 16","traits.Holy"',
   'Rebounding Smite':
     'Trait=Class,Cleric Require="level >= 16","features.Channel Smite"',
   'Remediate':'Trait=Class,Cleric,Concentrate,Spellshape Require="level >= 16"',
@@ -2246,7 +2251,7 @@ Pathfinder2ERemaster.FEATS = {
   'Flinging Charge':'Trait=Class,Fighter,Flourish Require="level >= 10"',
   'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
   'Overpowering Charge':
-    'Trait=Class,Fighte Require="level >= 10","features.Barreling Charge"',
+    'Trait=Class,Fighter Require="level >= 10","features.Barreling Charge"',
   'Tactical Reflexes':Pathfinder2E.FEATS['Combat Reflexes'],
   'Twin Riposte':Pathfinder2E.FEATS['Twin Riposte'],
   'Brutal Finish':Pathfinder2E.FEATS['Brutal Finish'],
@@ -3065,7 +3070,8 @@ Pathfinder2ERemaster.FEATS = {
   'Adopted Ancestry (%ancestry)':
     Pathfinder2E.FEATS['Adopted Ancestry (%ancestry)'],
   'Advanced First Aid':
-    'Trait=General,Healing,Manipulate,Skill Require="level >= 7"',
+    'Trait=General,Healing,Manipulate,Skill ' +
+    'Require="level >= 7","rank.Medicine >= 3"',
   'Alchemical Crafting':Pathfinder2E.FEATS['Alchemical Crafting'],
   'Ancestral Paragon':Pathfinder2E.FEATS['Ancestral Paragon'],
   'Arcane Sense':Pathfinder2E.FEATS['Arcane Sense'],
@@ -3774,7 +3780,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Changeling':'Section=feature Note="Has the Lineage feature"',
   'Lineage':'Section=feature Note="1 selection"',
-  'Nephalim':'Section=feature Note="Has the Lineage feature"',
+  'Nephilim':'Section=feature Note="Has the Lineage feature"',
 
   'Brine May':
     'Section=feature Note="TODO"',
@@ -4406,7 +4412,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Critical hits with a simple weapon, martial weapon, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
   'Composition Spells':
     Pathfinder2E.FEATURES['Composition Spells']
-    .replace('and Inspire Courage occult spells', 'occult spell'),
+    .replace('Inspire Courage', 'Courageous Anthem'),
   'Enigma':Pathfinder2E.FEATURES.Enigma.replace('True Strike', 'Sure Strike'),
   'Expert Spellcaster':Pathfinder2E.FEATURES['Expert Spellcaster'],
   'Fortitude Expertise':Pathfinder2E.FEATURES['Great Fortitude'],
@@ -4468,9 +4474,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Song Of Strength':
     Pathfinder2E.FEATURES['Inspire Defense']
     .replace('Inspire Defense', 'Song Of Strength'),
-  'Uplifting Overature':
+  'Uplifting Overture':
     Pathfinder2E.FEATURES['Inspire Competence']
-    .replace('Inspire Competence', 'Uplifting Overature'),
+    .replace('Inspire Competence', 'Uplifting Overture'),
   'Combat Reading':
     'Action=1 ' +
     'Section=skill ' +
@@ -5074,7 +5080,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
-  'Sanctification':'Section=feature Note="Has the Holy or Unholy trait"',
+  'Sanctification':
+    'Section=feature ' +
+    'Note="%{deitySanctification==\'Either\'?\'1 selection\':deitySanctification==\'Holy\'?\'Has the Holy trait\':\'Has the Unholy trait\'}"',
   'Warpriest':Pathfinder2E.FEATURES.Warpriest
     .replace('Simple Weapons', 'Simple Weapons; Martial Weapons')
     .replace('",', '%{level>=19?\'/Attack Master (%1)\':\'\'}",'),
@@ -5276,7 +5284,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Sanctify Armament':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon gains holy or unholy trait, inflicting +2d6 HP spirt for 1 to opposed creatures"',
+    'Note="Touched weapon gains holy or unholy trait, inflicting +2d6 HP spirit for 1 to opposed creatures"',
   'Surging Focus':
     'Action=Free ' +
     'Section=magic ' +
@@ -5309,11 +5317,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Sapping Symbol':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Raised symbol and a successful Religion check when taking melee damage inflicts enfeebled 1 on the attcker, or enfeebled 2 on a critical success, until the attacker moves away"',
+    'Note="Raised symbol and a successful Religion check when taking melee damage inflicts enfeebled 1 on the attacker, or enfeebled 2 on a critical success, until the attacker moves away"',
   'Shared Replenishment':Pathfinder2E.FEATURES['Shared Replenishment'],
   'Channeling Block':
     'Section=magic ' +
-    'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell level to the shield\'s Harndess"',
+    'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell level to the shield\'s Hardness"',
   "Deity's Protection":Pathfinder2E.FEATURES["Deity's Protection"],
   'Ebb And Flow':
     'Section=magic ' +
@@ -5343,7 +5351,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Improved Swift Banishment'],
   'Inviolable':
     'Section=combat ' +
-    'Note="Successful attacks on self inflict 3d6 HP spirit, hoy, or unholy on attacker"',
+    'Note="Successful attacks on self inflict 3d6 HP spirit, holy, or unholy on attacker"',
   'Miraculous Possibility':
     'Section=magic ' +
     'Note="Can leave a spell slot free during daily prep to later cast any spell 2 levels lower"',
@@ -5354,7 +5362,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Avatar's Protection":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Changes a foe critial hit no self to a normal hit and casts <i>Avatar</i>"',
+    'Note="Changes a foe critical hit no self to a normal hit and casts <i>Avatar</i>"',
   'Maker Of Miracles':Pathfinder2E.FEATURES['Maker Of Miracles'],
   'Spellshape Channel':
     Pathfinder2E.FEATURES['Metamagic Channel']
@@ -5445,7 +5453,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wild Shape', 'Untamed Shift'),
   'Snowdrift Spell':
     'Section=magic ' +
-    'Note="Subseuent air, water, or cold spell creates difficult terrain underneath 1 affected creature for 1 rd"',
+    'Note="Subsequent air, water, or cold spell creates difficult terrain underneath 1 affected creature for 1 rd"',
   'Current Spell':
     'Section=magic ' +
     'Note="Subsequent air or water spell gives self +1 Armor Class (+2 vs. ranged attacks) and +1 saves vs. air and water for 1 rd"',
@@ -5470,7 +5478,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Fey Caller':
     'Section=magic ' +
     'Note="Knows the Illusory Disguise, Illusory Object, and Illusory Scene primal spells"',
-  'Foral Restoration':
+  'Floral Restoration':
     'Action=1 ' +
     'Section=magic ' +
     'Note="Draws on 15\' sq of plant life to regain %{(level+1)//2>?4}d8 HP and 1 Focus Point once per day"',
@@ -5478,7 +5486,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Raise Menhir':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="R30\' 15\' radius gives creatures +2 saves vs. choice of arcane, divine, or accult effects while sustained up to 1 min"',
+    'Note="R30\' 15\' radius gives creatures +2 saves vs. choice of arcane, divine, or occult effects while sustained up to 1 min"',
   'Soaring Shape':
     Pathfinder2E.FEATURES['Soaring Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -5659,7 +5667,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Quick Shield Block as above
   'Resounding Bravery':
     'Section=save ' +
-    'Note="Will saves give +1 saves and %{level//2} tempoary Hit Points, or +2 saves and %{level} temporary on a critical success, for 1 min"',
+    'Note="Will saves give +1 saves and %{level//2} temporary Hit Points, or +2 saves and %{level} temporary on a critical success, for 1 min"',
   // Sudden Leap as above
   'Agile Grace':Pathfinder2E.FEATURES['Agile Grace'],
   'Certain Strike':Pathfinder2E.FEATURES['Certain Strike'],
@@ -5685,7 +5693,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Mirror Shield':Pathfinder2E.FEATURES['Mirror Shield'],
   'Overpowering Charge':
     'Section=combat ' +
-    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{stengthModifier*2} HP and off-guard for 1 rd on a critical hit"',
+    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{strengthModifier*2} HP and off-guard for 1 rd on a critical hit"',
   'Tactical Reflexes':
     Pathfinder2E.FEATURES['Combat Reflexes']
     .replace('Attack Of Opportunity', 'Reactive Strike'),
@@ -6157,7 +6165,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':Pathfinder2E.FEATURES['Legendary Monster Hunter'],
   // Specialized Companion as above
-  "Warden's Rload":
+  "Warden's Reload":
     'Action=Free ' +
     'Section=combat ' +
     'Note="Casting a warden spell allows reloading a crossbow"',
@@ -6279,7 +6287,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful Sense Motive vs. Deception gives +1 AC and next save vs. target for 1 rd, or +2 on a critical success or -1 on a critical failure"',
   'Reactive Pursuit':Pathfinder2E.FEATURES['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATURES.Sabotage,
-  "Scoundrel's Suprise":
+  "Scoundrel's Surprise":
     'Action=1 ' +
     'Section=combat ' +
     'Note="Removing disguise inflicts off-guard against next attack on unaware foes until the end of the turn"',
@@ -6327,7 +6335,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Delay Trap']
     .replace('+5 DC ', '').replace('flat-footed', 'off-guard'),
   'Improved Poison Weapon':Pathfinder2E.FEATURES['Improved Poison Weapon'],
-  'Inspired Strategem':
+  'Inspired Stratagem':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Previously-briefed ally can use the better of two attack or skill rolls once per day"',
@@ -6336,7 +6344,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Predictive Purchase':
     'Section=feature,feature ' +
     'Note=' +
-      '"Has the Precient Planner and Precient Consumable features",' +
+      '"Has the Prescient Planner and Prescient Consumable features",' +
       '"Can use Prescient Planner with 2 actions"',
   // Ricochet Stance as above
   'Sidestep':Pathfinder2E.FEATURES.Sidestep,
@@ -6888,7 +6896,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Can select 6 familiar or master abilities each day"',
   'Murksight':
     'Section=combat ' +
-    'Note="Suffers no ranged attack or Perception penalties from non-magical precipitation, and requires no flat check to attack a target conceled by it"',
+    'Note="Suffers no ranged attack or Perception penalties from non-magical precipitation, and requires no flat check to attack a target concealed by it"',
   'Spirit Familiar':
     'Section=combat ' +
     'Note="Familiar can use two actions to leave its body, fly 20\' to a foe, inflict %{(level-1)//2*2}d6 HP spirit (<b>save basic Will</b>), fly 30\' to an ally, and restore HP equal to half the damage dealt once per 10 min"',
@@ -6921,7 +6929,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphasis</i>"',
   "Patron's Presence":
-    'Section=combat Note="Familiar can use 2 actions to create a 15\' emanation that inflicts stupefied 2 on foes (<b>save Will</b> negates; critical failure inflicts supefied 3) while sustained for up to 1 min once per hour"',
+    'Section=combat Note="Familiar can use 2 actions to create a 15\' emanation that inflicts stupefied 2 on foes (<b>save Will</b> negates; critical failure inflicts stupefied 3) while sustained for up to 1 min once per hour"',
   // Effortless Concentration as above
   'Siphon Power':
     'Action=Free ' +
@@ -7006,7 +7014,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Energy Ablation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casting a spell that inflicts energy damage gives self resistence to a chosen energy type equal to the spell rank"',
+    'Note="Casting a spell that inflicts energy damage gives self resistance to a chosen energy type equal to the spell rank"',
   // Enhanced Familiar as above
   'Nonlethal Spell':
     'Action=1 ' +
@@ -7746,6 +7754,13 @@ for(let s in Pathfinder2ERemaster.SKILLS)
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
   // TODO
+  'Courageous Anthem':
+    'Level=1 ' +
+    'Trait=Cantrip,Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Stoke The Heart':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -7970,7 +7985,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Uplifting Overature':
+  'Uplifting Overture':
     'Level=1 ' +
     'Trait=Evocation ' +
     'Traditions=Primal ' +
@@ -12160,7 +12175,20 @@ Pathfinder2ERemaster.classRules = function(
  */
 Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   Pathfinder2E.classRulesExtra(rules, name);
-  if(name == 'Fighter') {
+  if(name == 'Cleric') {
+    rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
+      'deitySanctification', '?', 'source=="Either"',
+      'featureNotes.sanctification', '=', '1'
+    );
+    rules.defineRule('traits.Holy',
+      'deitySanctification', '=', 'source=="Holy" ? 1 : null',
+      'features.Holy', '=', '1'
+    );
+    rules.defineRule('traits.Unholy',
+      'deitySanctification', '=', 'source=="Unholy" ? 1 : null',
+      'features.Unholy', '=', '1'
+    );
+  } else if(name == 'Fighter') {
     rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
       'featureNotes.fighterKeyAttribute', '=', '1'
     );
@@ -12319,7 +12347,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == "Witch's Communion") {
     rules.defineRule("magicNotes.witch'sCharge",
-      "magicNotes.witch'sCommunition", '=', 'null' // italics
+      "magicNotes.witch'sCommunion", '=', 'null' // italics
     );
   }
 };
