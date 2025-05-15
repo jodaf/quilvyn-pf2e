@@ -1163,7 +1163,9 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Alchemist Require="rank.Crafting >= 1"',
   'Far Lobber':'Trait=Class,Alchemist',
   'Quick Bomber':'Trait=Class,Alchemist',
-  'Poison Resistance':'Trait=Class,Alchemist,Druid Require="level >= 2"',
+*/
+  'Poison Resistance':Pathfinder2E.FEATS['Poison Resistance'],
+/*
   'Revivifying Mutagen':'Trait=Class,Alchemist Require="level >= 2"',
   'Smoke Bomb':'Trait=Class,Alchemist,Additive1 Require="level >= 2"',
   'Calculated Splash':'Trait=Class,Alchemist Require="level >= 4"',
@@ -1212,7 +1214,9 @@ Pathfinder2ERemaster.FEATS = {
   'Moment Of Clarity':'Trait=Class,Barbarian,Concentrate,Rage',
   'Raging Intimidation':'Trait=Class,Barbarian',
   'Raging Thrower':'Trait=Class,Barbarian',
-  'Sudden Charge':'Trait=Class,Barbarian,Fighter,Flourish,Open',
+*/
+  'Sudden Charge':Pathfinder2E.FEATS['Sudden Charge'],
+/*
   'Acute Scent':
     'Trait=Class,Barbarian ' +
     'Require="level >= 2","features.Acute Vision||features.Darkvision"',
@@ -1223,7 +1227,9 @@ Pathfinder2ERemaster.FEATS = {
   'Fast Movement':'Trait=Class,Barbarian Require="level >= 4"',
   'Raging Athlete':
     'Trait=Class,Barbarian Require="level >= 4","rank.Athletics >= 2"',
-  'Swipe':'Trait=Class,Barbarian,Fighter,Flourish Require="level >= 4"',
+*/
+  'Swipe':Pathfinder2E.FEATS.Swipe,
+/*
   'Wounded Rage':'Trait=Class,Barbarian Require="level >= 4"',
   'Animal Skin':
     'Trait=Class,Barbarian,Morph,Primal,Transmutation ' +
@@ -1284,8 +1290,9 @@ Pathfinder2ERemaster.FEATS = {
   'Vengeful Strike':
     'Trait=Class,Barbarian,Rage ' +
     'Require="level >= 14","features.Vengeful Strike"',
-  'Whirlwind Strike':
-    'Trait=Class,Barbarian,Fighter,Flourish,Open Require="level >= 14"',
+*/
+  'Whirlwind Strike':Pathfinder2E.FEATS['Whirlwind Strike'],
+/*
   'Collateral Thrash':
     'Trait=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
   'Dragon Transformation':
@@ -1415,7 +1422,7 @@ Pathfinder2ERemaster.FEATS = {
   'Deep Lore':Pathfinder2E.FEATS['Deep Lore'],
   'Discordant Voice':
     'Trait=Class,Bard,Sonic ' +
-    'Require="level >= 18","spells.Courageous Anthem (0C1)"',
+    'Require="level >= 18","spells.Courageous Anthem (OC1 Foc)"',
   'Eternal Composition':Pathfinder2E.FEATS['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATS['Impossible Polymath'],
   'Fatal Aria':Pathfinder2E.FEATS['Fatal Aria'],
@@ -2085,7 +2092,9 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 6",' +
       '"features.Animal Companion"',
   // Steady Spellcasting as above
-  'Storm Retribution':Pathfinder2E.FEATS['Storm Retribution'],
+  'Storm Retribution':
+    Pathfinder2E.FEATS['Storm Retribution']
+    .replace(' Evo', ''),
   'Deimatic Display':
     'Trait=Class,Druid ' +
     'Require=' +
@@ -2138,7 +2147,7 @@ Pathfinder2ERemaster.FEATS = {
     'Trait=Class,Druid,Manipulate,Spellshape ' +
     'Require=' +
       '"level >= 12",' +
-      '"features.Plant || features.Order Explorer (Plant)"',
+      '"features.Leaf || features.Order Explorer (Leaf)"',
   // Note: also subsumes legacy Feat 18 Primal Wellspring
   'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
   'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
@@ -2431,7 +2440,7 @@ Pathfinder2ERemaster.FEATS = {
   // Side By Side as above
   // TODO Requirements?
   "Warden's Focus":
-    'Trait=Class,Ranger Require="level >= 12","features.Warden Spells"',
+    'Trait=Class,Ranger Require="level >= 12","features.Initiate Warden"',
   'Sense The Unseen':Pathfinder2E.FEATS['Sense The Unseen'],
   'Shared Prey':Pathfinder2E.FEATS['Shared Prey'],
   'Stealthy Companion':Pathfinder2E.FEATS['Stealthy Companion'],
@@ -2564,7 +2573,9 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS.Counterspell.replace('Trait=', 'Trait=Witch,'),
 /*
   'Dangerous Sorcery':'Trait=Class,Sorcerer',
-  'Familiar':'Trait=Class,Sorcerer,Wizard',
+*/
+  'Familiar':Pathfinder2E.FEATS.Familiar,
+/*
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -2595,8 +2606,9 @@ Pathfinder2ERemaster.FEATS = {
   // Quickened Casting as above
   'Bloodline Focus':
     'Trait=Class,Sorcerer Require="level >= 12","features.Bloodline"',
-  'Magic Sense':
-    'Trait=Class,Sorcerer,Wizard,Detection,Divination Require="level >= 12"',
+*/
+  'Magic Sense':Pathfinder2E.FEATS['Magic Sense'],
+/*
   'Interweave Dispel':
     'Trait=Class,Sorcerer,Metamagic ' +
     'Require="level >= 14","knowsDispelMagicSpell"',
@@ -2663,7 +2675,8 @@ Pathfinder2ERemaster.FEATS = {
   // TODO Requires "arcane or primal patron"
   'Stitched Familiar':'Trait=Class,Witch Require="level >= 8"',
   "Witch's Bottle":'Trait=Class,Witch Require="level >= 8","features.Cauldron"',
-  'Double Double':'Trait=Class,Witch Require="level >= 10","features.Cauldron"',
+  'Double, Double':
+    'Trait=Class,Witch Require="level >= 10","features.Cauldron"',
   'Major Lesson (Death)':'Trait=Class,Witch Require="level >= 10"',
   'Major Lesson (Renewal)':'Trait=Class,Witch Require="level >= 10"',
   // Quickened Casting as above
@@ -4238,10 +4251,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
 */
-  'Sudden Charge':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike after a double Stride"',
+  'Sudden Charge':Pathfinder2E.FEATURES['Sudden Charge'],
 /*
   'Acute Scent':'Section=skill Note="Has 30\' imprecise scent during rage"',
   'Furious Finish':
@@ -4264,10 +4274,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
 */
-  'Swipe':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Melee Strike attacks 2 adjacent foes"',
+  'Swipe':Pathfinder2E.FEATURES.Swipe,
 /*
   'Wounded Rage':
     'Action=Reaction ' +
@@ -4365,10 +4372,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="While using Come And Get Me, responds to a successful foe attack with an immediate Strike"',
 */
-  'Whirlwind Strike':
-    'Action=3 ' +
-    'Section=combat ' +
-    'Note="Makes individual Strikes at the current multiple attack penalty against all foes within reach"',
+  'Whirlwind Strike':Pathfinder2E.FEATURES['Whirlwind Strike'],
 /*
   'Collateral Thrash':
     'Section=combat ' +
@@ -6906,7 +6910,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Witch's Bottle":
     'Section=magic ' +
     'Note="Can spend 10 min and 1 Focus Point to create a potion that inflicts a hex on the imbiber"',
-  'Double Double':
+  'Double, Double':
     'Section=skill Note="Has increased Cauldron effects"',
   'Major Lesson (Death)':
     'Section=magic ' +
@@ -7690,6 +7694,10 @@ Pathfinder2ERemaster.SKILLS = {
   'Plains Lore':Pathfinder2E.SKILLS['Plains Lore'],
   'Swamp Lore':Pathfinder2E.SKILLS['Swamp Lore'],
   'Underground Lore':Pathfinder2E.SKILLS['Underground Lore'],
+  // terrain lore skills from Ranger favored terrain feat pg 158
+  'Aquatic Lore':Pathfinder2E.SKILLS['Aquatic Lore'],
+  'Arctic Lore':Pathfinder2E.SKILLS['Arctic Lore'],
+  'Sky Lore':Pathfinder2E.SKILLS['Sky Lore'],
   'Military Lore':'Attribute=Intelligence', // pg 240
   // Adventuring Lore, Magic Lore, Planar Lore pg 241 examples of excluded Lore
   // Common lore subcategories pg 240
@@ -7755,12 +7763,9 @@ for(let s in Pathfinder2ERemaster.SKILLS)
 Pathfinder2ERemaster.SPELLS = {
   // TODO
   'Courageous Anthem':
-    'Level=1 ' +
-    'Trait=Cantrip,Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
+    Pathfinder2E.SPELLS['Inspire Courage']
+    .replace('School=Enchantment', '')
+    .replace('Enchantment', 'Concentrate'),
   'Stoke The Heart':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -12345,6 +12350,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
+  } else if(name.match(/^Witch's Armaments/)) {
+    rules.defineRule
+      ("features.Witch's Armaments", 'features.' + name, '=', '1');
   } else if(name == "Witch's Communion") {
     rules.defineRule("magicNotes.witch'sCharge",
       "magicNotes.witch'sCommunion", '=', 'null' // italics
