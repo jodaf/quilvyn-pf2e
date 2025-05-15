@@ -1089,9 +1089,7 @@ Pathfinder2E.FEATS = {
     'Trait=Ancestry,Halfling ' +
     'Require="level >= 13","features.Halfling Weapon Familiarity"',
 
-  'Adapted Cantrip':
-    'Trait=Ancestry,Human ' +
-    'Require="features.Arcane Spellcasting || features.Divine Spellcasting || features.Occult Spellcasting || features.Primal Spellcasting || features.Sorcerer Spellcasting"',
+  'Adapted Cantrip':'Trait=Ancestry,Human Require="features.Spellcasting"',
   'Cooperative Nature':'Trait=Ancestry,Human',
   'General Training':'Trait=Ancestry,Human',
   'Haughty Obstinacy':'Trait=Ancestry,Human',
@@ -15257,7 +15255,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('features.' + f, note, '=', '1');
         });
       }
-      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(innate\s)?(cantrip|spell)s?($|;)/);
+      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(innate\s)?(cantrip|hex|spell)s?($|;)/);
       if(matchInfo) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
@@ -15333,6 +15331,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]
         );
       }
+      if(n.match(/^Can learn spells from the .* tradition$/))
+        rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
     });
   }
 };
