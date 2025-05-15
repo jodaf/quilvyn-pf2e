@@ -6444,7 +6444,7 @@ Pathfinder2E.FEATURES = {
   'Felling Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike vs. a flat-footed airborne foe inflcits a 120\' fall (<b>save Reflex</b> negates; critical failure also inflicts grounded until the end of the next turn)"',
+    'Note="Successful Strike vs. a flat-footed airborne foe inflicts a 120\' fall (<b>save Reflex</b> negates; critical failure also inflicts grounded until the end of the next turn)"',
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -13226,6 +13226,9 @@ Pathfinder2E.ancestryRules = function(
     if(sType == 'Heritage')
       rules.defineRule
         ('heritage', prefix + 'Features.' + s, '=', '"' + s + '"');
+  });
+  traits.forEach(t => {
+    rules.defineRule('traits.' + t, ancestryLevel, '=', '1');
   });
 
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
