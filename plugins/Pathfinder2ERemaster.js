@@ -35,7 +35,7 @@ function Pathfinder2ERemaster(edition) {
   rules.plugin = Pathfinder2ERemaster;
   Pathfinder2ERemaster.rules = rules;
 
-  rules.defineChoice('choices', Pathfinder2E.CHOICES);
+  rules.defineChoice('choices', Pathfinder2E.CHOICES, 'Heritage');
   rules.choiceEditorElements = Pathfinder2E.choiceEditorElements;
   rules.choiceRules = Pathfinder2ERemaster.choiceRules;
   rules.removeChoice = Pathfinder2E.removeChoice;
@@ -77,7 +77,7 @@ function Pathfinder2ERemaster(edition) {
   Pathfinder2ERemaster.magicRules(rules, choices.SPELLS);
   Pathfinder2ERemaster.identityRules(
     rules, choices.ANCESTRIES, choices.BACKGROUNDS, choices.CLASSES,
-    choices.DEITIES
+    choices.DEITIES, Pathfinder2ERemaster.HERITAGES
   );
   Pathfinder2ERemaster.talentRules(
     rules, choices.FEATS, choices.FEATURES, choices.GOODIES, choices.LANGUAGES,
@@ -98,15 +98,16 @@ Pathfinder2ERemaster.ANCESTRIES = {
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
     .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
-  'Gnome':Pathfinder2E.ANCESTRIES.Gnome.replace('Sylvan', 'Fey'),
+  'Gnome':Pathfinder2E.ANCESTRIES.Gnome
+  .replace('Sylvan', 'Fey'),
   'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
     .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
-    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', '')
-    .replaceAll(/Heritage Human/g, 'Human'),
+    .replaceAll(/Heritage Human/g, 'Human')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', ''),
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
@@ -142,10 +143,6 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Languages=Common,Orcish ' +
     'Trait=Orc,Humanoid'
 };
-for(let a in Pathfinder2ERemaster.ANCESTRIES)
-  Pathfinder2ERemaster.ANCESTRIES[a] =
-    Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",');
 Pathfinder2ERemaster.ARMORS = {
   'None':Pathfinder2E.ARMORS.None,
   "Explorer's Clothing":Pathfinder2E.ARMORS["Explorer's Clothing"],
@@ -191,7 +188,6 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Cultist':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any)",' +
-      // TODO deity or cult lore
       '"1:Skill Trained (Occultism, Choose 1 from any Deity Lore)","1:Schooled In Secrets"',
   'Detective':Pathfinder2E.BACKGROUNDS.Detective,
   'Emissary':Pathfinder2E.BACKGROUNDS.Emissary,
@@ -794,8 +790,6 @@ Pathfinder2ERemaster.CLASSES = {
       'A10:1@19'
 };
 Pathfinder2ERemaster.DEITIES = {
-  // TODO Areas Of Concern, Divine Attribute and Divine Sanctification are new;
-  // Alignment and FollowerAlignments eliminated
   'None':'',
   'Abadar':
     Pathfinder2E.DEITIES.Abadar
@@ -1103,6 +1097,10 @@ Pathfinder2ERemaster.FEATS = {
   'Rampaging Ferocity':
     'Trait=Ancestry,Orc Require="level >= 17","features.Orc Ferocity"',
 
+  'Brine May':'Trait=Ancestry,Changeling,Lineage',
+  'Callow May':'Trait=Ancestry,Changeling,Lineage',
+  'Dream May':'Trait=Ancestry,Changeling,Lineage',
+  'Slag May':'Trait=Ancestry,Changeling,Lineage',
   'Changeling Lore':'Trait="Ancestry,Changeling"',
   'Hag Claws':'Trait="Ancestry,Changeling"',
   "Hag's Sight":'Trait="Ancestry,Changeling"',
@@ -1114,8 +1112,10 @@ Pathfinder2ERemaster.FEATS = {
     'Trait="Ancestry,Changeling" Require="level >= 9","rank.Occultism >= 2"',
   'Hag Magic':'Trait="Ancestry,Changeling" Require="level >= 13"',
 
-  // Lineage as above
-
+  'Angelkin':'Trait=Ancestry,Nephilim,Lineage',
+  'Grimspawn':'Trait=Ancestry,Nephilim,Lineage',
+  'Hellspawn':'Trait=Ancestry,Nephilim,Lineage',
+  'Pitborn':'Trait=Ancestry,Nephilim,Lineage',
   'Bestial Manifestation':'Trait="Ancestry,Nephilim"',
   'Halo':'Trait="Ancestry,Nephilim"',
   'Nephilim Eyes':'Trait="Ancestry,Nephilim"',
@@ -1126,8 +1126,8 @@ Pathfinder2ERemaster.FEATS = {
   'Nephilim Resistance':'Trait="Ancestry,Nephilim" Require="level >= 5"',
   'Scion Of Many Planes':'Trait="Ancestry,Nephilim" Require="level >= 5"',
   'Skillful Tail':'Trait="Ancestry,Nephilim" Require="level >= 5"',
-  // TODO Requires celestial lineage
-  'Celestial Magic':'Trait="Ancestry,Nephilim" Require="level >= 9"',
+  'Celestial Magic':
+    'Trait="Ancestry,Nephilim" Require="level >= 9","features.Celestial"',
   'Divine Countermeasures':'Trait="Ancestry,Nephilim" Require="level >= 9"',
   'Divine Wings':'Trait="Ancestry,Nephilim" Require="level >= 9"',
   'Fiendish Magic':
@@ -1135,11 +1135,10 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"level >= 9",' +
       '"features.Grimspawn || features.Pitborn || features.Hellspawn"',
-  // TODO Requires celestial lineage
-  'Celestial Mercy':'Trait="Ancestry,Nephilim" Require="level >= 13"',
-  // TODO Requires fiendish lineage
-  'Slip Sideways':'Trait="Ancestry,Nephilim" Require="level >= 13"',
-  // TODO Requires nephilim lineage
+  'Celestial Mercy':
+    'Trait="Ancestry,Nephilim" Require="level >= 13","features.Celestial"',
+  'Slip Sideways':
+    'Trait="Ancestry,Nephilim" Require="level >= 13","features.Fiendish"',
   'Summon Nephilim Kin':'Trait="Ancestry,Nephilim" Require="level >= 13"',
   'Divine Declaration':'Trait="Ancestry,Nephilim" Require="level >= 17"',
   'Eternal Wings':
@@ -3241,7 +3240,6 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Ancestry
   'Ancestry Feats':'Section=feature Note="%V selections"',
-  'Versatile Heritage':'Section=feature Note="1 selection"',
 
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
@@ -3791,19 +3789,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
-  'Changeling':'Section=feature Note="Has the Lineage feature"',
-  'Lineage':'Section=feature Note="1 selection"',
-  'Nephilim':'Section=feature Note="Has the Lineage feature"',
+  'Changeling':'Section=feature Note="May take Changeling feats"',
+  'Nephilim':'Section=feature Note="May take Nephilim feats"',
 
   'Brine May':
-    'Section=feature Note="TODO"',
+    'Section=skill ' +
+    'Note="Successful Swim checks are critical successes, and failure does cause sinking"',
   'Callow May':
-    'Section=feature Note="TODO"',
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Rolling Deception for initiative causes foes that haven\'t acted to be off-guard",' +
+      '"Has the Charming Liar feature"',
   'Dream May':
-    'Section=feature Note="TODO"',
-  'Slag May':
-    'Section=feature Note="TODO"',
-
+    'Section=save ' +
+    'Note="+2 vs. sleep and dream effects/Sleep restores double normal HP and reduces drained and doomed conditions by 2"',
+  'Slag May':'Section=combat Note="Cold-iron claws inflict 1d6 HP slashing"',
   'Changeling Lore':
     'Section=feature Note="TODO"',
   'Hag Claws':
@@ -3833,7 +3833,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="TODO"',
   'Pitborn':
     'Section=feature Note="TODO"',
-
   'Bestial Manifestation':
     'Section=feature Note="TODO"',
   'Halo':
@@ -7631,6 +7630,12 @@ Pathfinder2ERemaster.FEATURES = {
 
 };
 Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
+Pathfinder2ERemaster.HERITAGES = {
+  'Changeling':'Trait=Uncommon',
+  'Nephilim':'Trait=Uncommon',
+  'Aiuvarin':'Trait=Non-Elf',
+  'Dromaar':'Trait=Non-Orc'
+};
 Pathfinder2ERemaster.LANGUAGES = {
   'Common':'',
   'Draconic':'',
@@ -7761,6 +7766,36 @@ for(let s in Pathfinder2ERemaster.SKILLS)
   Pathfinder2ERemaster.SKILLS[s] =
     Pathfinder2ERemaster.SKILLS[s].replace('Ability', 'Attribute');
 Pathfinder2ERemaster.SPELLS = {
+  'Acid Grip':
+    Pathfinder2E.SPELLS['Acid Arrow']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Manipulate') + ' ' +
+    'Description=' +
+      '"R120\' Inflicts 2d8 HP acid, 1d6 HP persistent acid, and -10\' Speed for 1 min (<b>save Reflex</b> inflicts half initial HP only and moves the target 5\'; critical success negates; critical failure inflicts double initial HP and moves the target 20\') (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
+  'Aerial Form':
+    Pathfinder2E.SPELLS['Aerial Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Manipulate,Concentrate'),
+  'Air Bubble':
+    Pathfinder2E.SPELLS['Air Bubble']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate'),
+  'Alarm':
+    Pathfinder2E.SPELLS.Alarm
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Animal Form':
+    Pathfinder2E.SPELLS['Animal Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Animal Messenger':
+    Pathfinder2E.SPELLS['Animal Messenger']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Ant Haul':
+    Pathfinder2E.SPELLS['Ant Haul']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
@@ -11862,15 +11897,14 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
 
 /* Defines rules related to basic character identity. */
 Pathfinder2ERemaster.identityRules = function(
-  rules, ancestries, backgrounds, classes, deities
+  rules, ancestries, backgrounds, classes, deities, heritages
 ) {
+  QuilvynUtils.checkAttrTable(heritages, ['Trait']);
   Pathfinder2E.identityRules
     (rules, {}, ancestries, backgrounds, classes, deities);
-  rules.defineRule
-    ('selectableFeatureCount.Lineage', 'featureNotes.lineage', '=', '1');
-  rules.defineRule('selectableFeatureCount.Versatile Heritage',
-    'featureNotes.versatileHeritage', '=', '1'
-  );
+  for(let h in heritages)
+    rules.choiceRules(rules, 'Heritage', h, heritages[h]);
+  rules.defineRule('featCount.Ancestry', 'featureNotes.lineage', '+=', '1');
 };
 
 /* Defines rules related to magic use. */
@@ -11985,6 +12019,10 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Attribute'),
       QuilvynUtils.getAttrValueArray(attrs, 'Section'),
       QuilvynUtils.getAttrValueArray(attrs, 'Note')
+    );
+  else if(type == 'Heritage')
+    Pathfinder2ERemaster.heritageRules(rules, name,
+      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
     );
   else if(type == 'Language')
     Pathfinder2ERemaster.languageRules(rules, name);
@@ -12340,6 +12378,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.O10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
+  } else if(name == 'Slag May') {
+    Pathfinder2E.weaponRules(
+      rules, 'Claws', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
+      ['Grapple', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Claws', 'combatNotes.slagMay', '=', '1');
   } else if(name == 'Tusks') {
     Pathfinder2E.weaponRules(
       rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
@@ -12403,6 +12447,26 @@ Pathfinder2ERemaster.goodyRules = function(
 ) {
   Pathfinder2E.goodyRules
     (rules, name, pattern, effect, value, attributes, sections, notes);
+};
+
+Pathfinder2ERemaster.heritageRules = function(rules, name, traits) {
+  for(let a in rules.getChoices('ancestrys')) {
+    if(traits.includes('Non-' + a))
+      continue;
+    let heritage = name + ' ' + a;
+    let prefix = a.charAt(0).toLowerCase() + a.substring(1).replaceAll(' ', '');
+    Pathfinder2E.featureListRules
+      (rules, ['1:' + heritage + ':Heritage'], a, prefix + 'Level', true);
+    rules.defineRule
+      (prefix + 'HeritageCount', prefix + 'Features.' + heritage, '+=', '1');
+    rules.defineRule
+      ('heritage', prefix + 'Features.' + heritage, '=', '"' + heritage + '"');
+    rules.defineRule('features.' + name, 'features.' + heritage, '=', '1');
+    let selectables = rules.getChoices('selectableFeatures');
+    if(a + ' - ' + heritage in selectables)
+      selectables[a + ' - ' + heritage] +=
+        ' Trait=' + traits.map(x => '"' + x + '"').join(',');
+  }
 };
 
 /* Defines in #rules# the rules associated with language #name#. */
