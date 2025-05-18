@@ -45,7 +45,7 @@ var attributes = {
   "languages.Aklo":1, "languages.Halfling":1, "languages.Petran":1, "languages.Pyric":1, 
   "languages.Sakvroth":1, "name":"Class-Druid 20", "selectableFeatures.Druid - Animal":1, 
   "selectableFeatures.Druid - Leaf":1, "selectableFeatures.Druid - Storm":1, 
-  "selectableFeatures.Druid - Untamed":1, "selectableFeatures.Human - Versatile Heritage":1, "shield":"None", 
+  "selectableFeatures.Druid - Untamed":1, "selectableFeatures.Human - Versatile Human":1, "shield":"None", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, "skillIncreases.Desert Lore":1, 
   "skillIncreases.Forest Lore":1, "skillIncreases.Fortune-Telling Lore":1, "skillIncreases.Guild Lore":1, 
   "skillIncreases.Magnimar Lore":1, "skillIncreases.Medicine":1, "skillIncreases.Mountain Lore":1, 
@@ -58,7 +58,7 @@ var attributes = {
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Class-Druid 20</b> -- <b>Female</b> <b>Versatile Heritage</b> <b>Druid: 20</b></td>
+  <td style="border:1px solid black"><b>Class-Druid 20</b> -- <b>Female</b> <b>Versatile Human</b> <b>Druid: 20</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -106,8 +106,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 5; Class: 15; General: 5; Skill: 10</td>
-        <td><b>Selectable Feature Count</b>: Druid (Order); Human (Heritage); Versatile Heritage</td>
+        <td><b>Feat Count</b>: Ancestry: 5; Class: 15; General: 6; Skill: 10</td>
+        <td><b>Selectable Feature Count</b>: Druid (Order); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -116,7 +116,7 @@ var attributes = {
         <td><b>Feats</b>: Adapted Cantrip; Additional Lore (Farming Lore); Additional Lore (Games Lore); Animal Companion; Animal Empathy; Anthropomorphic Shape; Call Of The Wild; Current Spell; Dragon Shape; Dubious Knowledge; Effortless Concentration; Elemental Shape; Elemental Summons; Enhanced Familiar; Experienced Tracker; Ferocious Shape; Fey Caller; Floral Restoration; Forest Passage; Form Control; Garland Spell; Grown Of Oak; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Incredible Improvisation; Insect Shape; Instinctive Support; Invoke Disaster; Legendary Professional; Leshy Familiar Secrets; Leshy Familiar; Ley Line Conduit; Mature Animal Companion; Monstrosity Shape; Natural Medicine; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Untamed); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Untamed); Overwhelming Energy; Perfect Form Control; Plant Empathy; Plant Shape; Poison Resistance; Primal Aegis; Primal Focus; Primal Howl; Primal Summons; Pristine Weapon; Quick Squeeze; Raise Menhir; Reach Spell; Reactive Transformation; Side By Side; Skill Training (Games Lore); Skill Training (Orc Lore); Snowdrift Spell; Soaring Shape; Sow Spell; Specialized Companion; Steady Balance; Steady Spellcasting; Storm Born; Storm Retribution; Stubborn Persistence; Survey Wildlife; Terrain Expertise (Desert); Terrain Expertise (Forest); Thunderclap Spell; Timeless Nature; Toughness; Train Animal; True Shapeshifter; Unconventional Weaponry (Scimitar); Untamed Form; Uplifting Winds; Verdant Metamorphosis; Verdant Weapon; Wandering Oasis; Widen Spell; Wind Caller</td>
         <td><b>Druid Features</b>: Anathema; Animal; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Wisdom); Attribute Boosts; Class Trained (Druid); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Druid Feats; Druid Skills; Druid Spellcasting; Druidic Order; Expert Spellcaster; Fortitude Expertise; General Feats; Leaf; Legendary Spellcaster; Master Spellcaster; Medium Armor Expertise; Perception Expertise; Perception Trained; Primal Hierophant; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Druid); Storm; Untamed; Voice Of Nature; Weapon Expertise; Weapon Specialization; Wild Willpower; Wildsong</td>
         <td><b>Scout Features</b>: Attribute Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any); Forager; Skill Trained (Survival; Choose 1 from any Terrain Lore)</td>
-        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Heritage</td>
+        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -150,7 +150,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Untamed: Has the Untamed Form feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Heritage: 1 selection</i></td>
+        <td><i>Versatile Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Voice Of Nature: +1 Class Feat (Animal Empathy or Plant Empathy)</i></td>
       </tr><tr style="text-align:center">
@@ -557,6 +557,8 @@ var attributes = {
         <td>Class Feats Allocation: 15 available vs. 68 allocated</td>
       </tr><tr style="text-align:center">
         <td>Druid Order Allocation: 1 available vs. 4 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 16 available vs. 15 allocated</td>
       </tr><tr style="text-align:center">
         <td>Order Explorer (Animal) Feat: Requires level (currently 20) >= 2 and animal feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">

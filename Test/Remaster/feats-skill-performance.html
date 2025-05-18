@@ -16,7 +16,7 @@ var attributes = {
   "generalFeats.Legendary Performer":1, "generalFeats.Virtuosic Performer":1, "languages.Dwarven":1, 
   "languages.Elven":1, "languages.Gnomish":1, "languages.Sakvroth":1, 
   "name":"Feats-Skill-Performance", "selectableFeatures.Bard - Enigma":1, 
-  "selectableFeatures.Human - Versatile Heritage":1, "shield":"Steel", "skillIncreases.Arcana":1, "skillIncreases.Art Lore":1, 
+  "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", "skillIncreases.Arcana":1, "skillIncreases.Art Lore":1, 
   "skillIncreases.Farming Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Mining Lore":1, 
   "skillIncreases.Pathfinder Society Lore":1, "skillIncreases.Swamp Lore":1, "skillIncreases.Vampire Lore":1, 
   "weapons.Hand Crossbow":1, "weapons.Hatchet":1, "weapons.Scimitar":1
@@ -26,7 +26,7 @@ var attributes = {
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Feats-Skill-Performance</b> -- <b>Female</b> <b>Versatile Heritage</b> <b>Bard: 3</b></td>
+  <td style="border:1px solid black"><b>Feats-Skill-Performance</b> -- <b>Female</b> <b>Versatile Human</b> <b>Bard: 3</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -68,8 +68,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry; Class; General; Skill</td>
-        <td><b>Selectable Feature Count</b>: Bard (Muse); Human (Heritage); Versatile Heritage</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 2; Skill: 1</td>
+        <td><b>Selectable Feature Count</b>: Bard (Muse); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -78,7 +78,7 @@ var attributes = {
         <td><b>Feats</b>: Directed Audience; Fascinating Performance; Impressive Performance; Legendary Performer; Unconventional Weaponry (Blowgun); Virtuosic Performer</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma; General Feats; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Bard)</td>
         <td><b>Criminal Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Experienced Smuggler; Skill Trained (Stealth; Underworld Lore)</td>
-        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Heritage</td>
+        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -98,7 +98,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Heritage: 1 selection</i></td>
+        <td><i>Versatile Human: +1 General Feat</i></td>
       </tr></table>
 </td>
     </tr></table>
@@ -262,7 +262,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 2 available vs. 4 allocated</td>
+        <td>General And Skill Feat Allocation: 3 available vs. 4 allocated</td>
       </tr><tr style="text-align:center">
         <td>Legendary Performer Feat: Requires level (currently 3) >= 15, performance rank (currently 1) >= 4 and virtuosic performer feature (currently 1)</td>
       </tr></table>

@@ -16,7 +16,7 @@ var attributes = {
   "generalFeats.Legendary Negotiation":1, "generalFeats.No Cause For Alarm":1, "generalFeats.Shameless Request":1, 
   "languages.Dwarven":1, "languages.Goblin":1, "languages.Sakvroth":1, 
   "name":"Feats-Skill-Diplomacy", "selectableFeatures.Bard - Warrior":1, 
-  "selectableFeatures.Human - Versatile Heritage":1, "shield":"Buckler", "skillIncreases.Alcohol Lore":1, 
+  "selectableFeatures.Human - Versatile Human":1, "shield":"Buckler", "skillIncreases.Alcohol Lore":1, 
   "skillIncreases.Astronomy Lore":1, "skillIncreases.Circus Lore":1, "skillIncreases.Diplomacy":1, 
   "skillIncreases.Library Lore":1, "skillIncreases.Sailing Lore":1, "skillIncreases.Tea Lore":1, 
   "weapons.Heavy Crossbow":1, "weapons.Lance":1, "weapons.Spiked Gauntlet":1
@@ -26,7 +26,7 @@ var attributes = {
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Feats-Skill-Diplomacy</b> -- <b>Female</b> <b>Versatile Heritage</b> <b>Bard: 3</b></td>
+  <td style="border:1px solid black"><b>Feats-Skill-Diplomacy</b> -- <b>Female</b> <b>Versatile Human</b> <b>Bard: 3</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -68,8 +68,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry; Class; General; Skill</td>
-        <td><b>Selectable Feature Count</b>: Bard (Muse); Human (Heritage); Versatile Heritage</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 2; Skill: 1</td>
+        <td><b>Selectable Feature Count</b>: Bard (Muse); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -78,7 +78,7 @@ var attributes = {
         <td><b>Feats</b>: Bargain Hunter; Directed Audience; Glad-Hand; Group Impression; Hobnobber; Legendary Negotiation; No Cause For Alarm; Shameless Request; Unconventional Weaponry (Trident)</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); General Feats; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Bard); Warrior</td>
         <td><b>Barrister Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Group Impression; Skill Trained (Diplomacy; Legal Lore)</td>
-        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Heritage</td>
+        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -96,7 +96,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Heritage: 1 selection</i></td>
+        <td><i>Versatile Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Warrior: Has the Martial Performance feature</i></td>
       </tr></table>
@@ -262,7 +262,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 2 available vs. 7 allocated</td>
+        <td>General And Skill Feat Allocation: 3 available vs. 7 allocated</td>
       </tr><tr style="text-align:center">
         <td>Legendary Negotiation Feat: Requires level (currently 3) >= 15 and diplomacy rank (currently 2) >= 4</td>
       </tr><tr style="text-align:center">

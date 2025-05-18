@@ -47,7 +47,7 @@ var attributes = {
   "name":"Class-Cleric 20", "selectableFeatures.Cleric - Cloistered Cleric":1, 
   "selectableFeatures.Cleric - Harmful Font":1, "selectableFeatures.Cleric - Healing Font":1, 
   "selectableFeatures.Cleric - Holy":1, "selectableFeatures.Cleric - Unholy":1, 
-  "selectableFeatures.Cleric - Warpriest":1, "selectableFeatures.Human - Versatile Heritage":1, "shield":"Wooden", 
+  "selectableFeatures.Cleric - Warpriest":1, "selectableFeatures.Human - Versatile Human":1, "shield":"Wooden", 
   "skillIncreases.Accounting Lore":2, "skillIncreases.Athletics":1, "skillIncreases.Butchering Lore":1, 
   "skillIncreases.Cooking Lore":1, "skillIncreases.Farming Lore":1, "skillIncreases.Genealogy Lore":2, 
   "skillIncreases.Heaven Lore":1, "skillIncreases.Hellknights Lore":1, "skillIncreases.Mercantile Lore":1, 
@@ -59,7 +59,7 @@ var attributes = {
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Class-Cleric 20</b> -- <b>Male</b> <b>Versatile Heritage</b> <b>Cleric: 20</b></td>
+  <td style="border:1px solid black"><b>Class-Cleric 20</b> -- <b>Male</b> <b>Versatile Human</b> <b>Cleric: 20</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -109,8 +109,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 5; Class: 11; General: 6; Skill: 10</td>
-        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Cleric (Doctrine); Cleric (Sanctification); Human (Heritage); Versatile Heritage</td>
+        <td><b>Feat Count</b>: Ancestry: 5; Class: 11; General: 7; Skill: 10</td>
+        <td><b>Selectable Feature Count</b>: Cleric (Divine Font); Cleric (Doctrine); Cleric (Sanctification); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -119,7 +119,7 @@ var attributes = {
         <td><b>Feats</b>: Adapted Cantrip; Additional Lore (Cavern Lore); Additional Lore (Engineering Lore); Adopted Ancestry (Goblin); Advanced Domain (Earth); Advanced General Training; Avatar's Audience; Avatar's Protection; Canny Acumen (Fortitude); Cantrip Expansion; Cast Down; Castigating Weapon; Channel Smite; Channeling Block; Clever Improviser; Communal Healing; Cremate Undead; Deadly Simplicity; Defensive Recovery; Deity's Protection; Directed Channel; Divine Apex; Divine Castigation; Divine Infusion; Divine Rebuttal; Divine Weapon; Domain Focus; Domain Initiate (Earth); Ebb An Flow; Echoing Channel; Emblazon Antimagic; Emblazon Armament; Emblazon Energy; Eternal Bane; Eternal Blessing; Experienced Professional; Experienced Tracker; Fast Channel; Forager; Fortunate Relief; Hardy Traveler; Harming Hands; Healing Hands; Heroic Recovery; Improved Swift Banishment; Inviolable; Lasting Armament; Legendary Professional; Magic Hands; Maker Of Miracles; Martyr; Miraculous Possibility; Panic The Dead; Premonition Of Avoidance; Premonition Of Clarity; Raise Symbol; Rapid Response; Reach Spell; Rebounding Smite; Remediate; Replenishment Of War; Restorative Channel; Restorative Strike; Resurrectionist; Ride; Sacred Ground; Sanctify Armament; Sap Life; Sapping Symbol; Selective Energy; Shared Avoidance; Shared Clarity; Shared Replenishment; Shield Of Faith; Skill Training (Baking Lore); Skill Training (Deception); Skill Training (Desert Lore); Spellshape Channel; Steady Spellcasting; Student Of The Canon; Surging Focus; Survey Wildlife; Swift Banishment; Terrain Expertise (Forest); Unconventional Weaponry (Shortbow); Unmistakable Lore; Versatile Font; Void Siphon; Warpriest's Armor; Zealous Rush</td>
         <td><b>Cleric Features</b>: Anathema; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Wisdom); Attribute Boosts; Class Trained (Cleric); Cleric Feats; Cleric Skills; Cleric Spellcasting; Cloistered Cleric; Defense Trained (Unarmored Defense); Deity; Divine Defense; Divine Font; Doctrine; General Feats; Harmful Font; Healing Font; Holy; Miraculous Spell; Perception Expertise; Perception Trained; Reflex Expertise; Resolute Faith; Sanctification; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Cleric); Unholy; Warpriest; Weapon Specialization</td>
         <td><b>Acrobat Features</b>: Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any); Skill Trained (Acrobatics; Circus Lore); Steady Balance</td>
-        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Heritage</td>
+        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -147,7 +147,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Heritage: 1 selection</i></td>
+        <td><i>Versatile Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Warpriest: Has the Deadly Simplicity feature</i></td>
       </tr><tr style="text-align:center">
@@ -538,6 +538,8 @@ var attributes = {
         <td>Cleric Doctrine Allocation: 1 available vs. 2 allocated</td>
       </tr><tr style="text-align:center">
         <td>Cleric Sanctification Allocation: 1 available vs. 2 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 17 available vs. 16 allocated</td>
       </tr></table>
 </td>
     </tr></table>

@@ -94,20 +94,29 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
   Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => !(x.match(/alignment|abilities|strength|constitution|dexterity|intelligence|wisdom|charisma/)));
 
 Pathfinder2ERemaster.ANCESTRIES = {
-  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf,
+  'Dwarf':
+    Pathfinder2E.ANCESTRIES.Dwarf
+    .replaceAll('Ability', 'Attribute'),
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
+    .replaceAll('Ability', 'Attribute')
     .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
-  'Gnome':Pathfinder2E.ANCESTRIES.Gnome
-  .replace('Sylvan', 'Fey'),
-  'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
+  'Gnome':
+    Pathfinder2E.ANCESTRIES.Gnome
+    .replaceAll('Ability', 'Attribute')
+    .replace('Sylvan', 'Fey'),
+  'Goblin':
+    Pathfinder2E.ANCESTRIES.Goblin
+    .replaceAll('Ability', 'Attribute'),
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
+    .replaceAll('Ability', 'Attribute')
     .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
-    .replaceAll(/Heritage Human/g, 'Human')
-    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', ''),
+    .replaceAll('Ability', 'Attribute')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', '')
+    .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
     'Features=' +
@@ -1116,7 +1125,10 @@ Pathfinder2ERemaster.FEATS = {
   'Grimspawn':'Trait=Ancestry,Nephilim,Lineage',
   'Hellspawn':'Trait=Ancestry,Nephilim,Lineage',
   'Pitborn':'Trait=Ancestry,Nephilim,Lineage',
-  'Bestial Manifestation':'Trait="Ancestry,Nephilim"',
+  'Bestial Manifestation (Claw)':'Trait="Ancestry,Nephilim"',
+  'Bestial Manifestation (Hoof)':'Trait="Ancestry,Nephilim"',
+  'Bestial Manifestation (Jaws)':'Trait="Ancestry,Nephilim"',
+  'Bestial Manifestation (Tail)':'Trait="Ancestry,Nephilim"',
   'Halo':'Trait="Ancestry,Nephilim"',
   'Nephilim Eyes':'Trait="Ancestry,Nephilim"',
   'Nephilim Lore':'Trait="Ancestry,Nephilim"',
@@ -3426,7 +3438,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Inflicts additional damage equal to the number of weapon damage dice to a foe standing on the same earth or stone surface"',
   'Stonegate':
     'Section=magic ' +
-    'Note="Knows the Magic Passage divine innate spell; may cast it once per day to open passages through earth or stone"',
+    'Note="Knows the Magic Passage divine innate spell; can cast it once per day to open passages through earth or stone"',
   'Stonewall':
     'Action=Reaction ' +
     'Section=save ' +
@@ -3510,7 +3522,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Invisibility and Revealing Light primal innate spells; may cast each once per day"',
+     'Note="Knows the Invisibility and Revealing Light primal innate spells; can cast each once per day"',
   'Life Leap':
     'Action=1 ' +
     'Section=magic ' +
@@ -3789,8 +3801,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
-  'Changeling':'Section=feature Note="May take Changeling feats"',
-  'Nephilim':'Section=feature Note="May take Nephilim feats"',
+  'Changeling':'Section=feature Note="May take Changeling ancestry feats"',
+  'Nephilim':'Section=feature Note="May take Nephilim ancestry feats"',
+  'Aiuvarin':'Section=feature Note="May take Elf ancestry feats"',
+  'Dromaar':'Section=feature Note="May take Orc ancestry feats"',
 
   'Brine May':
     'Section=skill ' +
@@ -3805,87 +3819,120 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+2 vs. sleep and dream effects/Sleep restores double normal HP and reduces drained and doomed conditions by 2"',
   'Slag May':'Section=combat Note="Cold-iron claws inflict 1d6 HP slashing"',
   'Changeling Lore':
-    'Section=feature Note="TODO"',
-  'Hag Claws':
-    'Section=feature Note="TODO"',
-  "Hag's Sight":
-    'Section=feature Note="TODO"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Hag Lore) feature",' +
+      '"Skill Trained (Deception; Occultism)"',
+  'Hag Claws':'Section=combat Note="Claws inflict 1d4 HP slashing"',
+  "Hag's Sight":'Section=feature Note="Has the Darkvision feature"',
   'Called':
-    'Section=feature Note="TODO"',
+    'Section=save ' +
+    'Note="+1 vs. mental effects, and successes vs. control are critical successes"',
   'Mist Child':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="Increases the flat check DC to target self when concealed or hidden to 6 or 12"',
   'Accursed Claws':
-    'Section=feature Note="TODO"',
-  'Occult Resistance':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="Critical hits with claws also inflict 1d4 HP persistent mental"',
+  'Occult Resistance':'Section=save Note="+1 vs. occult effects"',
   'Hag Magic':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Can cast a chosen spell up to 4th rank as an occult innate spell once per day"',
 
   'Angelkin':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Multilingual feature",' +
+      '"Skill Trained (Society)/Knows the Empyrean language"',
   'Grimspawn':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="Has the Diehard feature"',
   'Hellspawn':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Lie To Me feature",' +
+      '"Skill Trained (Deception; Legal Lore)"',
   'Lawbringer':
-    'Section=feature Note="TODO"',
+    'Section=save ' +
+    'Note="+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
   'Musetouched':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="+1 on Escape attempts, critical Escape failures are normal failure, and successes to Escape are critical successes"',
   'Pitborn':
-    'Section=feature Note="TODO"',
-  'Bestial Manifestation':
-    'Section=feature Note="TODO"',
+    'Section=skill ' +
+    // TODO randomizeOneAttribute won't process this extra feat properly
+    'Note="Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
+  'Bestial Manifestation (Claw)':
+    'Section=combat Note="Claws inflict 1d4 HP slashing"',
+  'Bestial Manifestation (Hoof)':
+    'Section=combat Note="Hoof inflicts 1d6 HP bludgeoning"',
+  'Bestial Manifestation (Jaws)':
+    'Section=combat Note="Jaws inflict 1d6 HP piercing"',
+  'Bestial Manifestation (Tail)':
+    'Section=combat Note="Tail inflicts 1d4 HP bludgeoning"',
   'Halo':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="Can evoke a halo that lights a 20\' radius"',
   'Nephilim Eyes':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="Has the Darkvision feature"',
   'Nephilim Lore':
-    'Section=feature Note="TODO"',
-  'Nimble Hooves':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Choose 1 from any Planar Lore)",' +
+      '"Skill Trained (Choose 1 from Diplomacy, Intimidation; Religion)"',
+  'Nimble Hooves':'Section=ability Note="+5 Speed"',
   'Blessed Blood':
-    'Section=feature Note="TODO"',
-  'Extraplanar Supplication':
-    'Section=feature Note="TODO"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Blood inflicts 1d6 HP spirit on an attacker that inflicts unarmed slashing or piercing damage",' +
+      '"+4 Craft to create <i>holy water</i> using own blood"',
+  'Extraplanar Supplication (Bane)':
+    'Section=magic ' +
+    'Note="Knows the Bane divine innate spell; can cast it once per day at 1st rank"',
+  'Extraplanar Supplication (Bless)':
+    'Section=magic ' +
+    'Note="Knows the Bless divine innate spell; can cast it once per day at 1st rank"',
   'Nephilim Resistance':
-    'Section=feature Note="TODO"',
+    'Section=save Note="Has resistance 5 to choice of energy"',
   'Scion Of Many Planes':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="+1 Ancestry Feat (Nephilim lineage)"',
   'Skillful Tail':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="Can use tail for simple Interact actions"',
   'Celestial Magic':
-    'Section=feature Note="TODO"',
-  'Divine Countermeasures':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows choice of two 2nd-rank divine innate spells; can cast each once per day"',
+  'Divine Countermeasures':'Section=save Note="+1 vs. divine effects"',
   'Divine Wings':
-    'Section=feature Note="TODO"',
+    'Action=2 ' +
+    'Section=ability ' +
+    'Note="Brings forth wings that give %{speed}\' fly Speed for 10 min"',
   'Fiendish Magic':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows choice of two 2nd-rank divine innate spells; can cast each once per day"',
   'Celestial Mercy':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows the Cleanse Affliction divine innate spell; can cast it twice per day at 4th rank"',
   'Slip Sideways':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows the Translocate divine innate spell; can cast it twice per day at 5th rank"',
   'Summon Nephilim Kin':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Can cast a summoning spell to call divine allies as a 5th-rank divine innate spell once per day"',
   'Divine Declaration':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows the Divine Decree divine innate spell; can cast it once per day at 7th rank"',
   'Eternal Wings':
-    'Section=feature Note="TODO"',
+    'Section=ability Note="Wings give continuous %{speed}\' fly Speed"',
 
   'Earned Glory':
-    'Section=feature Note="TODO"',
-  'Elf Atavism':'Section=feature Note="Has an elven heritage"',
-  'Inspire Imitation':
-    'Section=skill ' +
-    'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
-  'Supernatural Charm':
-    'Section=magic ' +
-    'Note="Knows the Charm arcane innate spell; may cast it once per day"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Impressive Performance feature",' +
+      '"SKill Trained (Performance)"',
+  'Elf Atavism':Pathfinder2E.FEATURES['Elf Atavism'],
+  'Inspire Imitation':Pathfinder2E.FEATURES['Inspire Imitation'],
+  'Supernatural Charm':Pathfinder2E.FEATURES['Supernatural Charm'],
 
-  'Monstrous Peacemaker':
-    'Section=skill ' +
-    'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
-  'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
+  'Monstrous Peacemaker':Pathfinder2E.FEATURES['Monstrous Peacemaker'],
+  'Orc Sight':Pathfinder2E.FEATURES['Orc Sight'],
 
   // Backgrounds
   'Belief Attributes':
@@ -6837,7 +6884,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cackle':'Section=magic Note="Knows the Cackle hex"',
   'Cauldron':
     'Section=skill ' +
-    'Note="Knows the formulas for %{level//2+1?>4} common oils or potions and can use Craft to create %{(rank.Arcane||rank.Divine||rank.Occult||rank.Primal||0<3?1:rank.Arcane||rank.Divine||rank.Occult||rank.Primal<4?2:3)*($\'features.Double, Double\'?2:1)} oils or potions during daily prep"',
+    'Note="Knows the formulas for %{level//2+1>?4} common oils or potions and can use Craft to create %{(rank.Arcane||rank.Divine||rank.Occult||rank.Primal||0<3?1:rank.Arcane||rank.Divine||rank.Occult||rank.Primal<4?2:3)*($\'features.Double, Double\'?2:1)} oils or potions during daily prep"',
   // Counterspell as above
   // Reach Spell as above
   // Widen Spell as above
@@ -7459,7 +7506,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
   'Break Curse':
     'Section=skill ' +
-    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1}//2}-level counteract check against a curse"',
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1)//2}-level counteract check against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
@@ -7691,6 +7738,7 @@ Pathfinder2ERemaster.SKILLS = {
   'Halfling Lore':Pathfinder2E.SKILLS['Halfling Lore'],
   'Leshy Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
   'Orc Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Hag Lore':'Attribute=Intelligence Subcategory="Creature Lore"', // pg 77
   // terrain lore skills from background chapter pg 84ff
   'Cave Lore':Pathfinder2E.SKILLS['Cave Lore'],
   'Cavern Lore':Pathfinder2E.SKILLS['Cavern Lore'],
@@ -7796,11 +7844,104 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Ant Haul']
     .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Aqueous Orb':
+    'Level=3 ' +
+    'Trait=Concentrate,Manipulate,Water ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' 10\' sphere extinguishes normal fires, attempts to counteract magical fires, and engulfs Large or smaller creatures until they succeed on an Escape or DC 10 Swim check (<b>save Reflex</b> negates; critical failure disallows Swim) while sustained for up to 1 min"',
+  'Arctic Rift':
+    Pathfinder2E.SPELLS['Polar Ray']
+    .replace(/School=\w*/, '')
+    .replace('Attack,', '')
+    .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R120\' Inflicts 12d8 HP cold and slowed 1 for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +2d8 HP and gives ice +5 HP)"',
+  'Augury':
+    Pathfinder2E.SPELLS.Augury
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Avatar':
+    Pathfinder2E.SPELLS.Avatar
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Bane':
+    Pathfinder2E.SPELLS.Bane
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replaceAll('5', '10'),
+  'Banishment':
+    Pathfinder2E.SPELLS.Banishment
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Bind Undead':
+    Pathfinder2E.SPELLS['Bind Undead']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Blazing Bolt':
+    'Level=2 ' +
+    'Trait=Attack,Concentrate,Fire,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R60\' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heighted +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
+  'Bless':
+    Pathfinder2E.SPELLS.Bless
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('5', '15')
+    .replace('by 5', 'by 10'),
+  'Blessed Boundary':
+    Pathfinder2E.SPELLS['Blade Barrier']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate,Sanctified') + ' ' +
+    'Description=' +
+      '"R120\' 60\' burst inflicts 7d8 HP force and a 10\' push for 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts doubles HP and push distance) (<b>heightened +1</b> inflicts +1d8 HP)"',
+  'Blindness':
+    Pathfinder2E.SPELLS.Blindness
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Blood Vendetta':
+    'Level=2 ' +
+    'Trait=Curse ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R30\' Spell attack inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)"',
+  'Blur':
+    Pathfinder2E.SPELLS.Blur
+    .replace(/School=\w*/, '')
+    .replace('Veil', 'Concentrate,Manipulate,Visual'),
+  'Breath Of Life':
+    Pathfinder2E.SPELLS['Breath Of Life']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Concentrate,Vitality') + ' ' +
+    'Description=' +
+      '"R60\' Prevents the triggering target\'s death, restoring 5d8 HP (<b>heighted +2</b> restores +1d8 HP)"',
+  'Breathe Fire':
+    Pathfinder2E.SPELLS['Burning Hands']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
+  'Cleanse Affliction':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Translocate':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Stoke The Heart':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -12339,7 +12480,38 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
-  if(name == 'Double, Double') {
+  if(name == 'Angelkin') {
+    rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
+  } else if(name == 'Bestial Manifistation (Claw)') {
+    // TODO different traits
+    Pathfinder2E.weaponRules(
+      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
+    );
+    rules.defineRule
+      ('weapons.Claws', 'combatNotes.bestialManifestation(Claw)', '=', '1');
+  } else if(name == 'Bestial Manifistation (Hoof)') {
+    Pathfinder2E.weaponRules(
+      rules, 'Hoof', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Hoof', 'combatNotes.bestialManifestation(Hoof)', '=', '1');
+  } else if(name == 'Bestial Manifistation (Jaws)') {
+    Pathfinder2E.weaponRules(
+      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Jaws', 'combatNotes.bestialManifestation(Jaws)', '=', '1');
+  } else if(name == 'Bestial Manifistation (Tail)') {
+    Pathfinder2E.weaponRules(
+      rules, 'Tail', 'Unarmed', 0, '1d4 B', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
+  } else if(name == 'Double, Double') {
     rules.defineRule(
       'skillNotes.cauldron', 'skillNodes.double,Double', '=', 'null' // italics
     );
@@ -12356,6 +12528,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'spellSlots.P9', '^', '7',
       'spellSlots.P10', '^', '8'
     );
+  } else if(name == 'Hag Claws') {
+    Pathfinder2E.weaponRules(
+      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
+      ['Grapple', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
   } else if(name == 'Loud Singer') {
     rules.defineRule
       ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
@@ -12380,10 +12558,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
   } else if(name == 'Slag May') {
     Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
+      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
       ['Grapple', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.slagMay', '=', '1');
+    rules.defineRule
+      ('weaponDieSidesBonus.Claws', 'combatNotes.slagMay', '^=', '2');
   } else if(name == 'Tusks') {
     Pathfinder2E.weaponRules(
       rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',

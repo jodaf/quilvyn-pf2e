@@ -14,7 +14,7 @@ var attributes = {
   "classFeats.Basic Lesson (Vengeance)":1, "deity":"Gozreh", "experience":2495, "gender":"Female", 
   "generalFeats.Divine Guidance":1, "generalFeats.Student Of The Canon":1, "languages.Aklo":1, 
   "languages.Kholo":1, "languages.Sakvroth":1, "name":"Feats-Skill-Religion", 
-  "selectableFeatures.Human - Versatile Heritage":1, "selectableFeatures.Witch - Starless Shadow":1, "shield":"None", 
+  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Witch - Starless Shadow":1, "shield":"None", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Games Lore":1, 
   "skillIncreases.Guild Lore":1, "skillIncreases.Religion":2, "skillIncreases.Survival":1, 
   "weapons.Javelin":1, "weapons.Spiked Gauntlet":1, "weapons.Staff":1
@@ -24,7 +24,7 @@ var attributes = {
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Feats-Skill-Religion</b> -- <b>Female</b> <b>Versatile Heritage</b> <b>Witch: 3</b></td>
+  <td style="border:1px solid black"><b>Feats-Skill-Religion</b> -- <b>Female</b> <b>Versatile Human</b> <b>Witch: 3</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -66,8 +66,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry; Class; General; Skill</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage); Versatile Heritage; Witch (Patron)</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 1; General: 2; Skill: 1</td>
+        <td><b>Selectable Feature Count</b>: Human (Heritage); Witch (Patron)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -76,7 +76,7 @@ var attributes = {
         <td><b>Feats</b>: Basic Lesson (Vengeance); Divine Guidance; Student Of The Canon; Unconventional Weaponry (Battle Axe)</td>
         <td><b>Witch Features</b>: Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Witch); Defense Trained (Unarmored Defense); Familiar; General Feats; Hex Spells; Patron; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Trained (Witch); Starless Shadow; Witch Feats; Witch Skills; Witch Spellcasting</td>
         <td><b>Barrister Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Group Impression; Skill Trained (Diplomacy; Legal Lore)</td>
-        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Heritage</td>
+        <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -92,7 +92,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Heritage: 1 selection</i></td>
+        <td><i>Versatile Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Witch Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -240,7 +240,13 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Divine Guidance Feat: Requires level (currently 3) >= 15 and religion rank (currently 2) >= 4</td>
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>Divine Guidance Feat: Requires level (currently 3) >= 15 and religion rank (currently 2) >= 4</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 3 available vs. 2 allocated</td>
+      </tr></table>
+</td>
     </tr></table>
 </td>
   </tr></table>
