@@ -3426,7 +3426,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Meld Into Stone divine innate spell; may cast it once per day",' +
+      '"Knows the Meld Into Stone divine innate spell; can cast it once per day",' +
       '"Can find unusual stonework that requires legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3507,7 +3507,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Faerie Fire and Invisibility primal spells; may cast each once per day"',
+     'Note="Knows the Faerie Fire and Invisibility primal spells; can cast each once per day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} HP"',
@@ -3643,7 +3643,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
-    'Note="Knows the Charm arcane innate spell; may cast it once per day"',
+    'Note="Knows the Charm arcane innate spell; can cast it once per day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
@@ -7433,7 +7433,7 @@ Pathfinder2E.FEATURES = {
       '"Can use Crafting to create alchemical items"',
   'Arcane Sense':
     'Section=magic ' +
-    'Note="Knows the Detect Magic arcane innate spell; may cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
+    'Note="Knows the Detect Magic arcane innate spell; can cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
   'Bargain Hunter':
     'Section=skill ' +
     'Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
@@ -8027,7 +8027,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes a Huge creature with 30 temporary HP, Armor Class %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
+      '"Self becomes a Huge creature with darkvision, 30 temporary HP, Armor Class %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
   'Baleful Polymorph':
     'Level=6 ' +
     'Trait=Incapacitation,Polymorph,Transmutation ' +
@@ -15331,6 +15331,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]
         );
       }
+      matchInfo = n.match(/^Can take (.*) ancestry feats$/);
+      if(matchInfo) {
+        // TODO What about a character that has both, e.g., Changeling and
+        // Adopted Ancestry?
+        rules.defineRule
+          ('addedAncestry', 'features.' + name, '=', '"' + matchInfo[1] + '"');
+      }
       if(n.match(/^Can learn spells from the .* tradition$/))
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
     });
@@ -15566,7 +15573,9 @@ Pathfinder2E.spellRules.traits = [
   'Transmutation', 'Uncommon', 'Veil', 'Visual', 'Water',
   // Focus
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
-  'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate'
+  'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
+  // Renewed
+  'Manipulate', 'Sanctified'
 ];
 
 /*
@@ -16506,7 +16515,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     for(attr in allChoices) {
       let traits =
         QuilvynUtils.getAttrValueArray
-          (allChoices[attr], allChoices[attr].includes('Trait') ? 'Trait' : 'Type');
+          (allChoices[attr], allChoices[attr].includes('Type') ? 'Type' : 'Trait');
       if(attrs[attribute + '.' + attr] != null) {
         traits.forEach(t => {
           if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
@@ -16514,7 +16523,8 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
             toAllocateByTrait[t]--;
           }
         });
-      } else if(attrs['features.' + attr] == null) {
+      } else if(attrs['features.' + attr] == null &&
+                !allChoices[attr].includes('Uncommon')) {
         availableChoices[attr] = traits;
       }
     }
@@ -16525,6 +16535,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       for(let a in availableChoices) {
         let trait = attr == 'Ancestry' ? attributes.ancestry : attr == 'Class' ? attributes['class'] : attr;
         if(availableChoices[a].includes(trait))
+          availableChoicesWithTrait[a] = '';
+        else if(attr == 'Ancestry' &&
+                attributes.addedAncestry &&
+                availableChoices[a].includes(attributes.addedAncestry))
           availableChoicesWithTrait[a] = '';
       }
       howMany = toAllocateByTrait[attr];
