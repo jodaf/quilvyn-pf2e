@@ -11,14 +11,15 @@ var attributes = {
   "abilityBoosts.intelligence":2, "abilityBoosts.strength":1, "abilityBoosts.wisdom":2, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Light Pick)":1, 
   "armor":"None", "background":"Charlatan", "class":"Bard", 
-  "classFeats.Multifarious Muse (Maestro)":1, "classFeats.Uplifting Overature":1, "deity":"Nethys", "experience":2845, 
-  "gender":"Male", "generalFeats.Bizarre Magic":1, "generalFeats.Oddity Identification":1, 
-  "generalFeats.Schooled In Secrets":1, "languages.Draconic":1, "languages.Orcish":1, "languages.Shadowtongue":1, 
-  "name":"Feats-Skill-Occultism", "selectableFeatures.Bard - Enigma":1, 
-  "selectableFeatures.Human - Skilled Human":1, "shield":"Steel", "skillIncreases.Arcana":1, "skillIncreases.Circus Lore":1, 
-  "skillIncreases.Crafting":1, "skillIncreases.Desert Lore":1, "skillIncreases.Engineering Lore":1, 
-  "skillIncreases.Nature":1, "skillIncreases.Religion":1, "skillIncreases.Society":1, "weapons.Dagger":1, 
-  "weapons.Heavy Crossbow":1, "weapons.Ranseur":1
+  "classFeats.Multifarious Muse (Maestro)":1, "classFeats.Uplifting Overature":1, "classFeats.Uplifting Overture":1, 
+  "deity":"Nethys", "experience":2845, "gender":"Male", "generalFeats.Bizarre Magic":1, 
+  "generalFeats.Oddity Identification":1, "generalFeats.Schooled In Secrets":1, "languages.Draconic":1, 
+  "languages.Orcish":1, "languages.Shadowtongue":1, "name":"Feats-Skill-Occultism", 
+  "selectableFeatures.Bard - Enigma":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Steel", 
+  "skillIncreases.Arcana":1, "skillIncreases.Circus Lore":1, "skillIncreases.Crafting":1, 
+  "skillIncreases.Desert Lore":1, "skillIncreases.Engineering Lore":1, "skillIncreases.Nature":1, 
+  "skillIncreases.Religion":1, "skillIncreases.Society":1, "weapons.Dagger":1, "weapons.Heavy Crossbow":1, 
+  "weapons.Ranseur":1
 };
   </script>
 </head>
@@ -74,7 +75,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Bizarre Magic; Multifarious Muse (Maestro); Oddity Identification; Schooled In Secrets; Unconventional Weaponry (Light Pick)</td>
+        <td><b>Feats</b>: Bizarre Magic; Multifarious Muse (Maestro); Oddity Identification; Schooled In Secrets; Unconventional Weaponry (Light Pick); Uplifting Overture</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma; General Feats; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Bard)</td>
         <td><b>Charlatan Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Charming Liar; Skill Trained (Deception; Underworld Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -238,6 +239,8 @@ var attributes = {
       <td>Soothe (O1): <b>(2)</b> R30' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)</td>
     </tr><tr style="text-align:left">
       <td>Sure Strike (O1): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Uplifting Overture (O1): <b>(2)</b> TODO</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -250,6 +253,8 @@ var attributes = {
       <td><i>Lingering Composition: Knows the Lingering Composition occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Maestro: Knows the Soothe occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Uplifting Overture: Knows the Uplifting Overture occult cantrip</i></td>
     </tr><tr style="text-align:center">
       <td>Bard Spellcasting: Can learn spells from the occult tradition</td>
     </tr><tr style="text-align:center">
@@ -268,8 +273,6 @@ var attributes = {
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Bizarre Magic Feat: Requires level (currently 3) >= 7 and occultism rank (currently 1) >= 3</td>
-      </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 2 available vs. 1 allocated</td>
       </tr><tr style="text-align:center">
         <td>General And Skill Feat Allocation: 2 available vs. 3 allocated</td>
       </tr></table>

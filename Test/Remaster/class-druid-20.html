@@ -36,8 +36,9 @@ var attributes = {
   "classFeats.Timeless Nature":1, "classFeats.True Shapeshifter":1, "classFeats.Untamed Form":1, 
   "classFeats.Uplifting Winds":1, "classFeats.Verdant Metamorphosis":1, "classFeats.Verdant Weapon":1, 
   "classFeats.Wandering Oasis":1, "classFeats.Widen Spell":1, "classFeats.Wind Caller":1, "deity":"Gozreh", 
-  "experience":19472, "gender":"Female", "generalFeats.Additional Lore (Farming Lore)":1, 
-  "generalFeats.Additional Lore (Games Lore)":1, "generalFeats.Dubious Knowledge":1, "generalFeats.Experienced Tracker":1, 
+  "experience":19472, "gender":"Female", "generalFeats.Additional Lore (Baking Lore)":1, 
+  "generalFeats.Additional Lore (Farming Lore)":1, "generalFeats.Additional Lore (Games Lore)":1, 
+  "generalFeats.Dubious Knowledge":1, "generalFeats.Experienced Tracker":1, 
   "generalFeats.Legendary Professional":1, "generalFeats.Natural Medicine":1, "generalFeats.Quick Squeeze":1, 
   "generalFeats.Skill Training (Games Lore)":1, "generalFeats.Skill Training (Orc Lore)":1, "generalFeats.Steady Balance":1, 
   "generalFeats.Survey Wildlife":1, "generalFeats.Terrain Expertise (Desert)":1, 
@@ -113,7 +114,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adapted Cantrip; Additional Lore (Farming Lore); Additional Lore (Games Lore); Animal Companion; Animal Empathy; Anthropomorphic Shape; Call Of The Wild; Current Spell; Dragon Shape; Dubious Knowledge; Effortless Concentration; Elemental Shape; Elemental Summons; Enhanced Familiar; Experienced Tracker; Ferocious Shape; Fey Caller; Floral Restoration; Forest Passage; Form Control; Garland Spell; Grown Of Oak; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Incredible Improvisation; Insect Shape; Instinctive Support; Invoke Disaster; Legendary Professional; Leshy Familiar Secrets; Leshy Familiar; Ley Line Conduit; Mature Animal Companion; Monstrosity Shape; Natural Medicine; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Untamed); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Untamed); Overwhelming Energy; Perfect Form Control; Plant Empathy; Plant Shape; Poison Resistance; Primal Aegis; Primal Focus; Primal Howl; Primal Summons; Pristine Weapon; Quick Squeeze; Raise Menhir; Reach Spell; Reactive Transformation; Side By Side; Skill Training (Games Lore); Skill Training (Orc Lore); Snowdrift Spell; Soaring Shape; Sow Spell; Specialized Companion; Steady Balance; Steady Spellcasting; Storm Born; Storm Retribution; Stubborn Persistence; Survey Wildlife; Terrain Expertise (Desert); Terrain Expertise (Forest); Thunderclap Spell; Timeless Nature; Toughness; Train Animal; True Shapeshifter; Unconventional Weaponry (Scimitar); Untamed Form; Uplifting Winds; Verdant Metamorphosis; Verdant Weapon; Wandering Oasis; Widen Spell; Wind Caller</td>
+        <td><b>Feats</b>: Adapted Cantrip; Additional Lore (Baking Lore); Additional Lore (Farming Lore); Additional Lore (Games Lore); Animal Companion; Animal Empathy; Anthropomorphic Shape; Call Of The Wild; Current Spell; Dragon Shape; Dubious Knowledge; Effortless Concentration; Elemental Shape; Elemental Summons; Enhanced Familiar; Experienced Tracker; Ferocious Shape; Fey Caller; Floral Restoration; Forest Passage; Form Control; Garland Spell; Grown Of Oak; Haughty Obstinacy; Healing Transformation; Hierophant's Power; Impaling Briars; Incredible Companion; Incredible Improvisation; Insect Shape; Instinctive Support; Invoke Disaster; Legendary Professional; Leshy Familiar Secrets; Leshy Familiar; Ley Line Conduit; Mature Animal Companion; Monstrosity Shape; Natural Medicine; Order Explorer (Animal); Order Explorer (Leaf); Order Explorer (Storm); Order Explorer (Untamed); Order Magic (Animal); Order Magic (Leaf); Order Magic (Storm); Order Magic (Untamed); Overwhelming Energy; Perfect Form Control; Plant Empathy; Plant Shape; Poison Resistance; Primal Aegis; Primal Focus; Primal Howl; Primal Summons; Pristine Weapon; Quick Squeeze; Raise Menhir; Reach Spell; Reactive Transformation; Side By Side; Skill Training (Games Lore); Skill Training (Orc Lore); Snowdrift Spell; Soaring Shape; Sow Spell; Specialized Companion; Steady Balance; Steady Spellcasting; Storm Born; Storm Retribution; Stubborn Persistence; Survey Wildlife; Terrain Expertise (Desert); Terrain Expertise (Forest); Thunderclap Spell; Timeless Nature; Toughness; Train Animal; True Shapeshifter; Unconventional Weaponry (Scimitar); Untamed Form; Uplifting Winds; Verdant Metamorphosis; Verdant Weapon; Wandering Oasis; Widen Spell; Wind Caller</td>
         <td><b>Druid Features</b>: Anathema; Animal; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Wisdom); Attribute Boosts; Class Trained (Druid); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Druid Feats; Druid Skills; Druid Spellcasting; Druidic Order; Expert Spellcaster; Fortitude Expertise; General Feats; Leaf; Legendary Spellcaster; Master Spellcaster; Medium Armor Expertise; Perception Expertise; Perception Trained; Primal Hierophant; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Druid); Storm; Untamed; Voice Of Nature; Weapon Expertise; Weapon Specialization; Wild Willpower; Wildsong</td>
         <td><b>Scout Features</b>: Attribute Boost (Choose 1 from Dexterity, Wisdom; Choose 1 from any); Forager; Skill Trained (Survival; Choose 1 from any Terrain Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -199,43 +200,47 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +28 (dexterity; expert)</td>
       <td>Games Lore: +32 (intelligence; legendary)</td>
-      <td>Plains Lore: +26 (intelligence; trained)</td>
+      <td>Religion: +5 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +4 (intelligence; untrained)</td>
       <td>Guild Lore: +26 (intelligence; trained)</td>
-      <td>Religion: +5 (wisdom; untrained)</td>
+      <td>Sailing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +28 (strength; expert)</td>
       <td>Intimidation: +25 (charisma; trained)</td>
-      <td>Sailing Lore: +26 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; untrained)</td>
-      <td>Magnimar Lore: +26 (intelligence; trained)</td>
       <td>Society: +4 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +3 (charisma; untrained)</td>
-      <td>Medicine: +27 (wisdom; trained)</td>
+      <td>Baking Lore: +32 (intelligence; legendary)</td>
+      <td>Magnimar Lore: +26 (intelligence; trained)</td>
       <td>Stabling Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Desert Lore: +26 (intelligence; trained)</td>
-      <td>Mountain Lore: +26 (intelligence; trained)</td>
+      <td>Crafting: +4 (intelligence; untrained)</td>
+      <td>Medicine: +27 (wisdom; trained)</td>
       <td>Stealth: +26 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +25 (charisma; trained)</td>
-      <td>Nature: +27 (wisdom; trained)</td>
+      <td>Deception: +3 (charisma; untrained)</td>
+      <td>Mountain Lore: +26 (intelligence; trained)</td>
       <td>Survival: +31 (wisdom; master)</td>
     </tr><tr style="text-align:left">
-      <td>Farming Lore: +32 (intelligence; legendary)</td>
-      <td>Occultism: +4 (intelligence; untrained)</td>
+      <td>Desert Lore: +26 (intelligence; trained)</td>
+      <td>Nature: +27 (wisdom; trained)</td>
       <td>Theater Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Forest Lore: +26 (intelligence; trained)</td>
-      <td>Orc Lore: +26 (intelligence; trained)</td>
+      <td>Diplomacy: +25 (charisma; trained)</td>
+      <td>Occultism: +4 (intelligence; untrained)</td>
       <td>Thievery: +4 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Fortune-Telling Lore: +26 (intelligence; trained)</td>
-      <td>Performance: +3 (charisma; untrained)</td>
+      <td>Farming Lore: +32 (intelligence; legendary)</td>
+      <td>Orc Lore: +26 (intelligence; trained)</td>
       <td>Warfare Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Forest Lore: +26 (intelligence; trained)</td>
+      <td>Performance: +3 (charisma; untrained)</td>
+      <td></td>
+    </tr><tr style="text-align:left">
+      <td>Fortune-Telling Lore: +26 (intelligence; trained)</td>
+      <td>Plains Lore: +26 (intelligence; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -243,6 +248,8 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Additional Lore (Baking Lore): Skill Legendary (Baking Lore)</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Additional Lore (Farming Lore): Skill Legendary (Farming Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Additional Lore (Games Lore): Skill Legendary (Games Lore)</i></td>
@@ -557,8 +564,6 @@ var attributes = {
         <td>Class Feats Allocation: 15 available vs. 68 allocated</td>
       </tr><tr style="text-align:center">
         <td>Druid Order Allocation: 1 available vs. 4 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 16 available vs. 15 allocated</td>
       </tr><tr style="text-align:center">
         <td>Order Explorer (Animal) Feat: Requires level (currently 20) >= 2 and animal feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">

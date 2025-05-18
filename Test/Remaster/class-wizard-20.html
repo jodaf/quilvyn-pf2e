@@ -40,9 +40,12 @@ var attributes = {
   "selectableFeatures.Wizard - Battle Magic":1, "selectableFeatures.Wizard - Boundary":1, 
   "selectableFeatures.Wizard - Civic Wizardry":1, "selectableFeatures.Wizard - Experimental Spellshaping":1, 
   "selectableFeatures.Wizard - Improved Familiar Attunement":1, "selectableFeatures.Wizard - Mentalism":1, 
-  "selectableFeatures.Wizard - Protean Form":1, "selectableFeatures.Wizard - Spell Blending":1, 
-  "selectableFeatures.Wizard - Spell Substitution":1, "selectableFeatures.Wizard - Staff Nexus":1, 
-  "selectableFeatures.Wizard - Unified Magical Theory":1, "shield":"None", "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":2, 
+  "selectableFeatures.Wizard - Protean Form":1, "selectableFeatures.Wizard - School Of Ars Grammatica":1, 
+  "selectableFeatures.Wizard - School Of Battle Magic":1, "selectableFeatures.Wizard - School Of Civic Wizardry":1, 
+  "selectableFeatures.Wizard - School Of Mentalism":1, "selectableFeatures.Wizard - School Of Protean Form":1, 
+  "selectableFeatures.Wizard - School Of The Boundary":1, "selectableFeatures.Wizard - School Of Unified Magical Theory":1, 
+  "selectableFeatures.Wizard - Spell Blending":1, "selectableFeatures.Wizard - Spell Substitution":1, 
+  "selectableFeatures.Wizard - Staff Nexus":1, "shield":"None", "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":2, 
   "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, 
   "skillIncreases.Deception":2, "skillIncreases.Hunting Lore":1, "skillIncreases.Occultism":1, 
   "skillIncreases.Plains Lore":1, "skillIncreases.Scouting Lore":1, "skillIncreases.Sky Lore":1, 
@@ -104,7 +107,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 5; Class: 12; General: 6; Skill: 10</td>
+        <td><b>Feat Count</b>: Ancestry: 5; Class: 13; General: 6; Skill: 10</td>
         <td><b>Selectable Feature Count</b>: Human (Heritage); Wizard (Arcane School); Wizard (Thesis)</td>
       </tr></table>
 </td>
@@ -112,7 +115,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Farming Lore); Additional Lore (Stabling Lore); Advanced School Spell; Arcane Sense; Archwizard's Might; Assurance (Farming Lore); Bespell Strikes; Bond Conservation; Bonded Focus; Call Wizardly Tools; Cantrip Expansion; Clever Counterspell; Clever Improviser; Conceal Spell; Convincing Illusion; Counterspell; Effortless Concentration; Energy Ablation; Enhanced Familiar; Explosive Arrival; Familiar; Forager; Forcible Energy; Form Retention; Hardy Traveler; Infinite Possibilities; Irresistible Magic; Keen Magical Detection; Knowledge Is Power; Legendary Professional; Linked Focus; Magic Sense; Natural Ambition; Nonlethal Spell; Overwhelming Energy; Pet; Quick Recognition; Quickened Casting; Reach Spell; Recognize Spell; Reflect Spell; Reprepare Spell; Scintillating Spell; Scroll Adept; Second Thoughts; Secondary Detonation Array; Skill Training (Legal Lore); Skill Training (Survival); Spell Combination; Spell Mastery; Spell Protection Array; Spell Tinker; Spellbook Prodigy; Spellshape Mastery; Split Slot; Steady Spellcasting; Stubborn Persistence; Superior Bond; Survey Wildlife; Terrain Expertise (Arctic); Terrain Expertise (Swamp); Toughness; Unconventional Weaponry (Shield Spikes); Unmistakable Lore; Widen Spell</td>
-        <td><b>Wizard Features</b>: Arcane Bond; Arcane School; Arcane Thesis; Archwizard's Spellcraft; Ars Grammatica; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Battle Magic; Boundary; Civic Wizardry; Class Trained (Wizard); Defense Trained (Unarmored Defense); Defensive Robes; Experimental Spellshaping; Expert Spellcaster; General Feats; Improved Familiar Attunement; Legendary Spellcaster; Magical Fortitude; Master Spellcaster; Mentalism; Perception Expertise; Perception Trained; Prodigious Will; Protean Form; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Spell Blending; Spell Substitution; Spell Trained (Wizard); Staff Nexus; Unified Magical Theory; Weapon Expertise; Weapon Specialization; Wizard Feats; Wizard Skills; Wizard Spellcasting</td>
+        <td><b>Wizard Features</b>: Arcane Bond; Arcane School; Arcane Thesis; Archwizard's Spellcraft; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Wizard); Defense Trained (Unarmored Defense); Defensive Robes; Experimental Spellshaping; Expert Spellcaster; General Feats; Improved Familiar Attunement; Legendary Spellcaster; Magical Fortitude; Master Spellcaster; Perception Expertise; Perception Trained; Prodigious Will; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); School Of Ars Grammatica; School Of Battle Magic; School Of Civic Wizardry; School Of Mentalism; School Of Protean Form; School Of The Boundary; School Of Unified Magical Theory; Skill Feats; Skill Increases; Spell Blending; Spell Substitution; Spell Trained (Wizard); Staff Nexus; Weapon Expertise; Weapon Specialization; Wizard Feats; Wizard Skills; Wizard Spellcasting</td>
         <td><b>Miner Features</b>: Attribute Boost (Choose 1 from Strength, Wisdom; Choose 1 from any); Skill Trained (Survival; Mining Lore); Terrain Expertise (Underground)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -140,19 +143,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Natural Ambition: +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
+        <td><i>School Of Unified Magical Theory: +1 Class Feat</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Wizard Feats: 10 selections</i></td>
-      </tr><tr style="text-align:center">
-        <td>Ars Grammatica: TODO</td>
-      </tr><tr style="text-align:center">
-        <td>Battle Magic: TODO</td>
-      </tr><tr style="text-align:center">
-        <td>Boundary: TODO</td>
-      </tr><tr style="text-align:center">
-        <td>Civic Wizardry: TODO</td>
       </tr><tr style="text-align:center">
         <td>Enhanced Familiar: Can select 4 familiar or master abilities each day</td>
       </tr><tr style="text-align:center">
@@ -160,13 +157,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Improved Familiar Attunement: Familiar is the focus of Arcane Bond and has 4 additional abilities</td>
       </tr><tr style="text-align:center">
-        <td>Mentalism: TODO</td>
-      </tr><tr style="text-align:center">
         <td>Pet: Has a Tiny animal minion with the same level, modifiers, and AC as self, 100 Hit Points, low-light vision, 25' Speed, and creature-specific abilities</td>
-      </tr><tr style="text-align:center">
-        <td>Protean Form: TODO</td>
-      </tr><tr style="text-align:center">
-        <td>Unified Magical Theory: TODO</td>
       </tr></table>
 </td>
     </tr></table>
@@ -342,6 +333,7 @@ var attributes = {
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: A10: 2; A1: 3; A2: 3; A3: 3; A4: 3; A5: 3; A6: 3; A7: 3; A8: 3; A9: 3; AC1: 5</td>
+        <td><b>Focus Points</b>: 3</td>
         <td><b>Attack</b>: Arcane Innate: +26 (charisma; trained)</td>
         <td><b>Spell DC</b>: Arcane Innate: 36 (charisma; trained)</td>
       </tr></table>
@@ -349,7 +341,25 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Spells</b>: Detect Magic (AC1): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the school of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Charming Push (A1): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Detect Magic (AC1): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the school of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
+    </tr><tr style="text-align:left">
+      <td>Earthworks (A1): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Force Bolt (A1 Foc): <b>(1)</b> R30' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)</td>
+    </tr><tr style="text-align:left">
+      <td>Fortify Summoning (A1): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Hand Of The Apprentice (A1 Foc): <b>(1)</b> R500' Makes a remote attack with a melee weapon, inflicting +1 damage; a critical hit inflicts the critical specialization effect</td>
+    </tr><tr style="text-align:left">
+      <td>Protective Wards (A1): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Scramble Body (A1): <b>(2)</b> TODO</td>
+    </tr></table>
+</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
@@ -358,6 +368,20 @@ var attributes = {
       <td><i>Archwizard's Might: +1 10th level spell slot</i></td>
     </tr><tr style="text-align:center">
       <td><i>Archwizard's Spellcraft: Has 1 10th-level spell slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Ars Grammatica: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Battle Magic: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Civic Wizardry: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Mentalism: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Protean Form: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of The Boundary: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>School Of Unified Magical Theory: Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td>Bond Conservation: <b>(1)</b> Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn</td>
     </tr><tr style="text-align:center">
@@ -399,6 +423,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reprepare Spell: Can spend 10 min to prepare a previously-cast spell or another spell of the same level</td>
     </tr><tr style="text-align:center">
+      <td>School Of Unified Magical Theory: Can use Drain Bonded Item once per spell rank each day</td>
+    </tr><tr style="text-align:center">
       <td>Spell Blending: Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
       <td>Spell Combination: Can prepare a spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower</td>
@@ -429,7 +455,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 12 available vs. 44 allocated</td>
+        <td>Class Feats Allocation: 13 available vs. 44 allocated</td>
       </tr><tr style="text-align:center">
         <td>Wizard Arcane School Allocation: 1 available vs. 7 allocated</td>
       </tr><tr style="text-align:center">

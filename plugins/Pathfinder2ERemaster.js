@@ -773,13 +773,13 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Master Spellcaster","17:Prodigious Will",' +
       '"19:Archwizard\'s Spellcraft","19:Legendary Spellcaster" ' +
     'Selectables=' +
-      '"1:Ars Grammatica:Arcane School",' +
-      '"1:Battle Magic:Arcane School",' +
-      '"1:Boundary:Arcane School",' +
-      '"1:Civic Wizardry:Arcane School",' +
-      '"1:Mentalism:Arcane School",' +
-      '"1:Protean Form:Arcane School",' +
-      '"1:Unified Magical Theory:Arcane School",' +
+      '"1:School Of Ars Grammatica:Arcane School",' +
+      '"1:School Of Battle Magic:Arcane School",' +
+      '"1:School Of The Boundary:Arcane School",' +
+      '"1:School Of Civic Wizardry:Arcane School",' +
+      '"1:School Of Mentalism:Arcane School",' +
+      '"1:School Of Protean Form:Arcane School",' +
+      '"1:School Of Unified Magical Theory:Arcane School",' +
       '"1:Experimental Spellshaping:Thesis",' +
       '"1:Improved Familiar Attunement:Thesis",' +
       '"1:Spell Blending:Thesis",' +
@@ -2449,7 +2449,6 @@ Pathfinder2ERemaster.FEATS = {
   'Double Prey':Pathfinder2E.FEATS['Double Prey'],
   'Second Sting':Pathfinder2E.FEATS['Second Sting'],
   // Side By Side as above
-  // TODO Requirements?
   "Warden's Focus":
     'Trait=Class,Ranger Require="level >= 12","features.Initiate Warden"',
   'Sense The Unseen':Pathfinder2E.FEATS['Sense The Unseen'],
@@ -2681,10 +2680,16 @@ Pathfinder2ERemaster.FEATS = {
   'Incredible Familiar':
     'Trait=Class,Witch Require="level >= 8","features.Enhanced Familiar"',
   'Murksight':'Trait=Class,Witch Require="level >= 8"',
-  // TODO Requires "divine or occult patron"
-  'Spirit Familiar':'Trait=Class,Witch Require="level >= 8"',
-  // TODO Requires "arcane or primal patron"
-  'Stitched Familiar':'Trait=Class,Witch Require="level >= 8"',
+  'Spirit Familiar':
+    'Trait=Class,Witch ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"patronTraditions =~ \'Divine|Occult\'"',
+  'Stitched Familiar':
+    'Trait=Class,Witch ' +
+    'Require="' +
+      'level >= 8",' +
+      '"patronTraditions =~ \'Arcane|Primal\'"',
   "Witch's Bottle":'Trait=Class,Witch Require="level >= 8","features.Cauldron"',
   'Double, Double':
     'Trait=Class,Witch Require="level >= 10","features.Cauldron"',
@@ -3703,9 +3708,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=ability ' +
     'Note="Can glide downward, moving 5\' down and up to 25\' forward each rd"',
-  // TODO check One With Plants spell
   'Ritual Reversion':
-    'Action=2 Section=magic Note="Transforms self into a normal plant"',
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="Transforms self into a normal plant with AC 20 for 8 hours"',
   'Speak With Kindred':
     'Section=skill ' +
     'Note="Can speak with plants and fungi/+2 Diplomacy with plants or fungi of the same kind as self"',
@@ -5124,7 +5130,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Miraculous Spell':Pathfinder2E.FEATURES['Miraculous Spell'],
   // Perception Expertise as above
   // Reflex Expertise as above
-  // TODO Figure which programatically
   'Resolute Faith':
     'Section=save,save ' +
     'Note=' +
@@ -5452,10 +5457,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Wildsong':Pathfinder2E.FEATURES['Druidic Language'],
 
   'Animal Companion':Pathfinder2E.FEATURES['Animal Companion'],
-/* TODO Check to see if this is identical
-    'Section=feature ' +
-    'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
-*/
   'Animal Empathy':
     Pathfinder2E.FEATURES['Wild Empathy']
     .replace('Class,', 'Class,Druid'),
@@ -7004,18 +7005,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Arcane School':Pathfinder2E.FEATURES['Arcane School'],
   'Arcane Thesis':Pathfinder2E.FEATURES['Arcane Thesis'],
   "Archwizard's Spellcraft":Pathfinder2E.FEATURES["Archwizard's Spellcraft"],
-  'Ars Grammatica':
-    'Section=feature ' +
-    'Note="TODO"',
-  'Battle Magic':
-    'Section=feature ' +
-    'Note="TODO"',
-  'Boundary':
-    'Section=feature ' +
-    'Note="TODO"',
-  'Civic Wizardry':
-    'Section=feature ' +
-    'Note="TODO"',
+  // TODO Do anything with curriculum spells? Leaning no.
   // Defensive Robes as above
   'Drain Bonded Item':Pathfinder2E.FEATURES['Drain Bonded Item'],
   'Experimental Spellshaping':
@@ -7027,23 +7017,38 @@ Pathfinder2ERemaster.FEATURES = {
   // Legendary Spellcaster as above
   // Magical Fortitude as above
   // Master Spellcaster as above
-  'Mentalism':
-    'Section=feature ' +
-    'Note="TODO"',
   // Perception Expertise as above
   'Prodigious Will':Pathfinder2E.FEATURES.Resolve,
-  'Protean Form':
-    'Section=feature ' +
-    'Note="TODO"',
   // Reflex Expertise as above
+  'School Of Ars Grammatica':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell"',
+  'School Of Battle Magic':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell"',
+  'School Of The Boundary':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell"',
+  'School Of Civic Wizardry':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell"',
+  'School Of Mentalism':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell"',
+  'School Of Protean Form':
+    'Section=magic ' +
+    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell"',
+  'School Of Unified Magical Theory':
+    'Section=feature,magic,magic ' +
+    'Note=' +
+      '"+1 Class Feat",' +
+      '"Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell",' +
+      '"Can use Drain Bonded Item once per spell rank each day"',
   'Spell Blending':Pathfinder2E.FEATURES['Spell Blending'],
   'Spell Substitution':Pathfinder2E.FEATURES['Spell Substitution'],
   'Staff Nexus':
     'Section=magic ' +
     'Note="Can cast spells from staff, using charges from %{level<8?\'1 spell\':level<16?\'2 spells\':\'3 spells\'} expended during daily prep"',
-  'Unified Magical Theory':
-    'Section=feature ' +
-    'Note="TODO"',
   // Weapon Expertise as above
   // Weapon Specialization as above
   'Wizard Feats':Pathfinder2E.FEATURES['Wizard Feats'],
@@ -7928,6 +7933,41 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
+  'Protective Wards':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Fortify Summoning':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Earthworks':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Charming Push':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Scramble Body':
+    'Level=1 ' +
+    'Trait=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Cleanse Affliction':
     'Level=1 ' +
     'Trait=Evocation ' +
@@ -12531,7 +12571,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Hag Claws') {
     Pathfinder2E.weaponRules(
       rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Grapple', 'Unarmed'], null
+      ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
   } else if(name == 'Loud Singer') {
