@@ -8049,6 +8049,108 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Deafness
     .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Dessicate':
+    Pathfinder2E.SPELLS['Horrid Wilting']
+    .replace(/School=\w*/, '')
+    .replace('negative', 'void') + ' ' +
+    'Trait=Concentrate,Manipulate,Void',
+  'Detect Magic':
+    Pathfinder2E.SPELLS['Detect Magic']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('school', 'rank'),
+  'Detect Poison':
+    Pathfinder2E.SPELLS['Detect Poison']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Detect Scrying':
+    Pathfinder2E.SPELLS['Detect Scrying']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Detonate Magic':
+    Pathfinder2E.SPELLS.Disjunction
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force (<b>save basic Reflex</b>)"',
+  'Dinosaur Form':
+    Pathfinder2E.SPELLS['Dinosaur Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Disappearance':
+    Pathfinder2E.SPELLS.Disappearance
+    .replace(/School=\w*/, '')
+    .replace('Illusion', 'Illusion,Manipulate,Subtle'),
+  'Disguise Magic':
+    Pathfinder2E.SPELLS['Magic Aura']
+    .replace(/School=\w*/, '')
+    .replace('Uncommon', 'Concentrate,Manipulate')
+    .replace('3rd', '2nd'),
+  'Disintegrate':
+    Pathfinder2E.SPELLS.Disintegrate
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Illusion,Manipulate,Subtle'),
+  'Dispel Magic':
+    Pathfinder2E.SPELLS['Dispel Magic']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Dispelling Globe':
+    Pathfinder2E.SPELLS['Globe Of Invulnerability']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Divine Decree':
+    Pathfinder2E.SPELLS['Divine Decree']
+    .replace(/School=\w*/, '') + ' ' +
+    'Trait=Concentrate,Manipulate,Sanctified,Spirit ' +
+    'Description=' +
+      '"R40\' 40\' emanation inflicts 7d10 HP spirit and enfeebled 2 for 1 min on foes (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, banishment, and, for creatures of level 10 and lower, paralysis for 1 min (<b>save Will</b> negates; critical failure inflicts death) (<b>heightened +1</b> inflicts +1d10 HP and increases the level of creatures that suffer paralysis by 2)"',
+  'Divine Immolation':
+    Pathfinder2E.SPELLS['Flame Strike']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate,Sanctified,Spirit') + ' ' +
+    'Description=' +
+      '"R120\' 20\' burst inflicts 6d6 HP fire or spirit and 2d6 HP persistent fire or spirit (<b>save Reflex</b> inflicts half initial HP only; critical success negates; critical failure inflicts double HP initial and persistent) (<b>heightened +1</b> inflicts +1d6 HP initial and persistent)"',
+  'Divine Inspiration':
+    Pathfinder2E.SPELLS['Divine Inspiration']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Divine Lance':
+    Pathfinder2E.SPELLS['Divine Lance']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate,Sanctified,Spirit')
+    .replace(/1d4+%\{.*\}/, '2d4'),
+  'Divine Wrath':
+    Pathfinder2E.SPELLS['Divine Wrath']
+    .replace(/School=\w*/, '') + ' ' +
+    'Trait=Concentrate,Manipulate,Sanctified,Spirit' + ' ' +
+    'Description=' +
+      '"R120\' 20\' burst inflicts 4d10 HP spirit and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
+  'Dizzying Colors':
+    Pathfinder2E.SPELLS['Color Spray']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+  'Dominate':
+    Pathfinder2E.SPELLS.Dominate
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('Traditions=', 'Traditions=Divine,'),
+  'Dragon Form':
+    Pathfinder2E.SPELLS['Dragon Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal'
+    .replace('+14', '+4d6'),
+  'Dream Message':
+    Pathfinder2E.SPELLS['Dream Message']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Dreaming Potential':
+    Pathfinder2E.SPELLS['Dreaming Potential']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Duplicate Foe':
+    Pathfinder2E.SPELLS['Duplicate Foe']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
     
   // TODO
   'Courageous Anthem':
