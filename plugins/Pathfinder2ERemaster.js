@@ -1110,56 +1110,56 @@ Pathfinder2ERemaster.FEATS = {
   'Callow May':'Trait=Ancestry,Changeling,Lineage',
   'Dream May':'Trait=Ancestry,Changeling,Lineage',
   'Slag May':'Trait=Ancestry,Changeling,Lineage',
-  'Changeling Lore':'Trait="Ancestry,Changeling"',
-  'Hag Claws':'Trait="Ancestry,Changeling"',
-  "Hag's Sight":'Trait="Ancestry,Changeling"',
-  'Called':'Trait="Ancestry,Changeling" Require="level >= 5"',
-  'Mist Child':'Trait="Ancestry,Changeling" Require="level >= 5"',
+  'Changeling Lore':'Trait=Ancestry,Changeling',
+  'Hag Claws':'Trait=Ancestry,Changeling',
+  "Hag's Sight":'Trait=Ancestry,Changeling',
+  'Called':'Trait=Ancestry,Changeling Require="level >= 5"',
+  'Mist Child':'Trait=Ancestry,Changeling Require="level >= 5"',
   'Accursed Claws':
-    'Trait="Ancestry,Changeling" Require="level >= 9",weapons.Claws',
+    'Trait=Ancestry,Changeling Require="level >= 9",weapons.Claws',
   'Occult Resistance':
-    'Trait="Ancestry,Changeling" Require="level >= 9","rank.Occultism >= 2"',
-  'Hag Magic':'Trait="Ancestry,Changeling" Require="level >= 13"',
+    'Trait=Ancestry,Changeling Require="level >= 9","rank.Occultism >= 2"',
+  'Hag Magic':'Trait=Ancestry,Changeling Require="level >= 13"',
 
   'Angelkin':'Trait=Ancestry,Nephilim,Lineage',
   'Grimspawn':'Trait=Ancestry,Nephilim,Lineage',
   'Hellspawn':'Trait=Ancestry,Nephilim,Lineage',
   'Pitborn':'Trait=Ancestry,Nephilim,Lineage',
-  'Bestial Manifestation (Claw)':'Trait="Ancestry,Nephilim"',
-  'Bestial Manifestation (Hoof)':'Trait="Ancestry,Nephilim"',
-  'Bestial Manifestation (Jaws)':'Trait="Ancestry,Nephilim"',
-  'Bestial Manifestation (Tail)':'Trait="Ancestry,Nephilim"',
-  'Halo':'Trait="Ancestry,Nephilim"',
-  'Nephilim Eyes':'Trait="Ancestry,Nephilim"',
-  'Nephilim Lore':'Trait="Ancestry,Nephilim"',
-  'Nimble Hooves':'Trait="Ancestry,Nephilim"',
-  'Blessed Blood':'Trait="Ancestry,Nephilim" Require="level >= 5"',
-  'Extraplanar Supplication':'Trait="Ancestry,Nephilim" Require="level >= 5"',
-  'Nephilim Resistance':'Trait="Ancestry,Nephilim" Require="level >= 5"',
-  'Scion Of Many Planes':'Trait="Ancestry,Nephilim" Require="level >= 5"',
-  'Skillful Tail':'Trait="Ancestry,Nephilim" Require="level >= 5"',
+  'Bestial Manifestation (Claw)':'Trait=Ancestry,Nephilim',
+  'Bestial Manifestation (Hoof)':'Trait=Ancestry,Nephilim',
+  'Bestial Manifestation (Jaws)':'Trait=Ancestry,Nephilim',
+  'Bestial Manifestation (Tail)':'Trait=Ancestry,Nephilim',
+  'Halo':'Trait=Ancestry,Nephilim',
+  'Nephilim Eyes':'Trait=Ancestry,Nephilim',
+  'Nephilim Lore':'Trait=Ancestry,Nephilim',
+  'Nimble Hooves':'Trait=Ancestry,Nephilim',
+  'Blessed Blood':'Trait=Ancestry,Nephilim Require="level >= 5"',
+  'Extraplanar Supplication':'Trait=Ancestry,Nephilim Require="level >= 5"',
+  'Nephilim Resistance':'Trait=Ancestry,Nephilim Require="level >= 5"',
+  'Scion Of Many Planes':'Trait=Ancestry,Nephilim Require="level >= 5"',
+  'Skillful Tail':'Trait=Ancestry,Nephilim Require="level >= 5"',
   'Celestial Magic':
-    'Trait="Ancestry,Nephilim" Require="level >= 9","features.Celestial"',
-  'Divine Countermeasures':'Trait="Ancestry,Nephilim" Require="level >= 9"',
-  'Divine Wings':'Trait="Ancestry,Nephilim" Require="level >= 9"',
+    'Trait=Ancestry,Nephilim Require="level >= 9","features.Celestial"',
+  'Divine Countermeasures':'Trait=Ancestry,Nephilim Require="level >= 9"',
+  'Divine Wings':'Trait=Ancestry,Nephilim Require="level >= 9"',
   'Fiendish Magic':
-    'Trait="Ancestry,Nephilim" ' +
+    'Trait=Ancestry,Nephilim ' +
     'Require=' +
       '"level >= 9",' +
       '"features.Grimspawn || features.Pitborn || features.Hellspawn"',
   'Celestial Mercy':
-    'Trait="Ancestry,Nephilim" Require="level >= 13","features.Celestial"',
+    'Trait=Ancestry,Nephilim Require="level >= 13","features.Celestial"',
   'Slip Sideways':
-    'Trait="Ancestry,Nephilim" Require="level >= 13","features.Fiendish"',
-  'Summon Nephilim Kin':'Trait="Ancestry,Nephilim" Require="level >= 13"',
-  'Divine Declaration':'Trait="Ancestry,Nephilim" Require="level >= 17"',
+    'Trait=Ancestry,Nephilim Require="level >= 13","features.Fiendish"',
+  'Summon Nephilim Kin':'Trait=Ancestry,Nephilim Require="level >= 13"',
+  'Divine Declaration':'Trait=Ancestry,Nephilim Require="level >= 17"',
   'Eternal Wings':
-    'Trait="Ancestry,Nephilim" Require="level >= 17","features.Divine Wings"',
+    'Trait=Ancestry,Nephilim Require="level >= 17","features.Divine Wings"',
 
-  'Earned Glory':'Trait="Ancestry,Aiuvarin"',
+  'Earned Glory':'Trait=Ancestry,Aiuvarin',
   'Elf Atavism':
      Pathfinder2E.FEATS['Inspire Imitation'].replace('Half-Elf', 'Aiuvarin'),
-  'Inspire Imitation':'Trait="Ancestry,Aiuvarin" Require="level >= 5"',
+  'Inspire Imitation':'Trait=Ancestry,Aiuvarin Require="level >= 5"',
   'Supernatural Charm':
      Pathfinder2E.FEATS['Supernatural Charm'].replace('Half-Elf', 'Aiuvarin'),
 
