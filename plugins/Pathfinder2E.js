@@ -146,7 +146,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Rock Dwarf:Heritage",' +
       '"1:Strong-Blooded Dwarf:Heritage" ' +
     'Languages=Common,Dwarven ' +
-    'Trait=Dwarf,Humanoid',
+    'Traits=Dwarf,Humanoid',
   'Elf':
     'HitPoints=6 ' +
     'Features=' +
@@ -161,7 +161,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Whisper Elf:Heritage",' +
       '"1:Woodland Elf:Heritage" ' +
     'Languages=Common,Elven ' +
-    'Trait=Elf,Humanoid',
+    'Traits=Elf,Humanoid',
   'Gnome':
     'HitPoints=8 ' +
     'Features=' +
@@ -178,7 +178,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Divine Wellspring:Wellspring",' +
       '"1:Occult Wellspring:Wellspring" ' +
     'Languages=Common,Gnomish,Sylvan ' +
-    'Trait=Gnome,Humanoid',
+    'Traits=Gnome,Humanoid',
   'Goblin':
     'HitPoints=6 ' +
     'Features=' +
@@ -192,7 +192,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Snow Goblin:Heritage",' +
       '"1:Unbreakable Goblin:Heritage" ' +
     'Languages=Common,Goblin ' +
-    'Trait=Goblin,Humanoid',
+    'Traits=Goblin,Humanoid',
   'Halfling':
     'HitPoints=6 ' +
     'Features=' +
@@ -206,7 +206,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Twilight Halfling:Heritage",' +
       '"1:Wildwood Halfling:Heritage" ' +
     'Languages=Common,Halfling ' +
-    'Trait=Humanoid,Halfling',
+    'Traits=Humanoid,Halfling',
   'Human':
     'HitPoints=8 ' +
     'Features=' +
@@ -218,16 +218,16 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
     'Languages=Common,any ' +
-    'Trait=Humanoid,Human'
+    'Traits=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
   'None':'Category=Unarmored Price=0 AC=0 Check=0 Speed=0 Bulk=0',
   "Explorer's Clothing":
     'Category=Unarmored Price=0.1 AC=0 Dex=5 Check=0 Speed=0 Bulk=L ' +
-    'Group=Cloth Trait=Comfort',
+    'Group=Cloth Traits=Comfort',
   'Padded':
     'Category=Light Price=0.2 AC=1 Dex=3 Check=0 Str=10 Speed=0 Bulk=L ' +
-    'Group=Cloth Trait=Comfort',
+    'Group=Cloth Traits=Comfort',
   'Leather':
     'Category=Light Price=2 AC=1 Dex=4 Check=-1 Str=10 Speed=0 Bulk=1 ' +
     'Group=Leather',
@@ -236,7 +236,7 @@ Pathfinder2E.ARMORS = {
     'Group=Leather',
   'Chain Shirt':
     'Category=Light Price=5 AC=2 Dex=3 Check=-1 Str=12 Speed=0 Bulk=1 ' +
-    'Group=Chain Trait=Flexible,Noisy',
+    'Group=Chain Traits=Flexible,Noisy',
   'Hide':
     'Category=Medium Price=2 AC=3 Dex=2 Check=-2 Speed=-5 Str=14 Bulk=2 ' +
     'Group=Leather',
@@ -245,7 +245,7 @@ Pathfinder2E.ARMORS = {
     'Group=Composite',
   'Chain Mail':
     'Category=Medium Price=6 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 ' +
-    'Group=Chain Trait=Flexible,Noisy',
+    'Group=Chain Traits=Flexible,Noisy',
   'Breastplate':
     'Category=Medium Price=8 AC=4 Dex=1 Check=-2 Speed=-5 Str=16 Bulk=2 ' +
     'Group=Plate',
@@ -257,7 +257,7 @@ Pathfinder2E.ARMORS = {
     'Group=Plate',
   'Full Plate':
     'Category=Heavy Price=30 AC=6 Dex=0 Check=-3 Speed=-10 Str=18 Bulk=4 ' +
-    'Group=Plate Trait=Bulwark'
+    'Group=Plate Traits=Bulwark'
 };
 Pathfinder2E.BACKGROUNDS = {
   'Acolyte':
@@ -985,1419 +985,1419 @@ Pathfinder2E.DEITIES = {
 Pathfinder2E.FEATS = {
 
   // Ancestries
-  'Dwarven Lore':'Trait=Ancestry,Dwarf',
-  'Dwarven Weapon Familiarity':'Trait=Ancestry,Dwarf',
-  'Rock Runner':'Trait=Ancestry,Dwarf',
-  'Stonecunning':'Trait=Ancestry,Dwarf',
-  'Unburdened Iron':'Trait=Ancestry,Dwarf',
-  'Vengeful Hatred':'Trait=Ancestry,Dwarf',
+  'Dwarven Lore':'Traits=Ancestry,Dwarf',
+  'Dwarven Weapon Familiarity':'Traits=Ancestry,Dwarf',
+  'Rock Runner':'Traits=Ancestry,Dwarf',
+  'Stonecunning':'Traits=Ancestry,Dwarf',
+  'Unburdened Iron':'Traits=Ancestry,Dwarf',
+  'Vengeful Hatred':'Traits=Ancestry,Dwarf',
   'Boulder Roll':
-    'Trait=Ancestry,Dwarf Require="level >= 5","features.Rock Runner"',
+    'Traits=Ancestry,Dwarf Require="level >= 5","features.Rock Runner"',
   'Dwarven Weapon Cunning':
-    'Trait=Ancestry,Dwarf ' +
+    'Traits=Ancestry,Dwarf ' +
     'Require="level >= 5","features.Dwarven Weapon Familiarity"',
-  "Mountain's Stoutness":'Trait=Ancestry,Dwarf Require="level >= 9"',
-  'Stonewalker':'Trait=Ancestry,Dwarf Require="level >= 9"',
+  "Mountain's Stoutness":'Traits=Ancestry,Dwarf Require="level >= 9"',
+  'Stonewalker':'Traits=Ancestry,Dwarf Require="level >= 9"',
   'Dwarven Weapon Expertise':
-    'Trait=Ancestry,Dwarf ' +
+    'Traits=Ancestry,Dwarf ' +
     'Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
-  'Ancestral Longevity':'Trait=Ancestry,Elf',
-  'Elven Lore':'Trait=Ancestry,Elf',
-  'Elven Weapon Familiarity':'Trait=Ancestry,Elf',
-  'Forlorn':'Trait=Ancestry,Elf',
-  'Nimble Elf':'Trait=Ancestry,Elf',
-  'Otherworldly Magic':'Trait=Ancestry,Elf',
-  'Unwavering Mien':'Trait=Ancestry,Elf',
-  'Ageless Patience':'Trait=Ancestry,Elf Require="level >= 5"',
+  'Ancestral Longevity':'Traits=Ancestry,Elf',
+  'Elven Lore':'Traits=Ancestry,Elf',
+  'Elven Weapon Familiarity':'Traits=Ancestry,Elf',
+  'Forlorn':'Traits=Ancestry,Elf',
+  'Nimble Elf':'Traits=Ancestry,Elf',
+  'Otherworldly Magic':'Traits=Ancestry,Elf',
+  'Unwavering Mien':'Traits=Ancestry,Elf',
+  'Ageless Patience':'Traits=Ancestry,Elf Require="level >= 5"',
   'Elven Weapon Elegance':
-    'Trait=Ancestry,Elf ' +
+    'Traits=Ancestry,Elf ' +
     'Require="level >= 5","features.Elven Weapon Familiarity"',
-  'Elf Step':'Trait=Ancestry,Elf Require="level >= 9"',
+  'Elf Step':'Traits=Ancestry,Elf Require="level >= 9"',
   'Expert Longevity':
-    'Trait=Ancestry,Elf Require="level >= 9","features.Ancestral Longevity"',
+    'Traits=Ancestry,Elf Require="level >= 9","features.Ancestral Longevity"',
   'Universal Longevity':
-    'Trait=Ancestry,Elf Require="level >= 13","features.Expert Longevity"',
+    'Traits=Ancestry,Elf Require="level >= 13","features.Expert Longevity"',
   'Elven Weapon Expertise':
-    'Trait=Ancestry,Elf ' +
+    'Traits=Ancestry,Elf ' +
     'Require="level >= 13","features.Elven Weapon Familiarity"',
 
-  'Animal Accomplice':'Trait=Ancestry,Gnome',
-  'Burrow Elocutionist':'Trait=Ancestry,Gnome',
-  'Fey Fellowship':'Trait=Ancestry,Gnome',
-  'First World Magic':'Trait=Ancestry,Gnome',
-  'Gnome Obsession':'Trait=Ancestry,Gnome',
-  'Gnome Weapon Familiarity':'Trait=Ancestry,Gnome',
-  'Illusion Sense':'Trait=Ancestry,Gnome',
+  'Animal Accomplice':'Traits=Ancestry,Gnome',
+  'Burrow Elocutionist':'Traits=Ancestry,Gnome',
+  'Fey Fellowship':'Traits=Ancestry,Gnome',
+  'First World Magic':'Traits=Ancestry,Gnome',
+  'Gnome Obsession':'Traits=Ancestry,Gnome',
+  'Gnome Weapon Familiarity':'Traits=Ancestry,Gnome',
+  'Illusion Sense':'Traits=Ancestry,Gnome',
   'Animal Elocutionist':
-    'Trait=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
+    'Traits=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
   // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
   'Energized Font':
-    'Trait=Ancestry,Gnome Require="level >= 5","focusPoints"',
+    'Traits=Ancestry,Gnome Require="level >= 5","focusPoints"',
   'Gnome Weapon Innovator':
-    'Trait=Ancestry,Gnome ' +
+    'Traits=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
   'First World Adept':
-    'Trait=Ancestry,Gnome ' +
+    'Traits=Ancestry,Gnome ' +
     'Require="level >= 9","rank.Primal Innate >= 1"',
-  'Vivacious Conduit':'Trait=Ancestry,Gnome Require="level >= 9"',
+  'Vivacious Conduit':'Traits=Ancestry,Gnome Require="level >= 9"',
   'Gnome Weapon Expertise':
-    'Trait=Ancestry,Gnome ' +
+    'Traits=Ancestry,Gnome ' +
     'Require="level >= 13","features.Gnome Weapon Familiarity"',
 
-  'Burn It!':'Trait=Ancestry,Goblin',
-  'City Scavenger':'Trait=Ancestry,Goblin',
-  'Goblin Lore':'Trait=Ancestry,Goblin',
-  'Goblin Scuttle':'Trait=Ancestry,Goblin',
-  'Goblin Song':'Trait=Ancestry,Goblin',
-  'Goblin Weapon Familiarity':'Trait=Ancestry,Goblin',
-  'Junk Tinker':'Trait=Ancestry,Goblin',
-  'Rough Rider':'Trait=Ancestry,Goblin',
-  'Very Sneaky':'Trait=Ancestry,Goblin',
+  'Burn It!':'Traits=Ancestry,Goblin',
+  'City Scavenger':'Traits=Ancestry,Goblin',
+  'Goblin Lore':'Traits=Ancestry,Goblin',
+  'Goblin Scuttle':'Traits=Ancestry,Goblin',
+  'Goblin Song':'Traits=Ancestry,Goblin',
+  'Goblin Weapon Familiarity':'Traits=Ancestry,Goblin',
+  'Junk Tinker':'Traits=Ancestry,Goblin',
+  'Rough Rider':'Traits=Ancestry,Goblin',
+  'Very Sneaky':'Traits=Ancestry,Goblin',
   'Goblin Weapon Frenzy':
-    'Trait=Ancestry,Goblin ' +
+    'Traits=Ancestry,Goblin ' +
     'Require="level >= 5","features.Goblin Weapon Familiarity"',
-  'Cave Climber':'Trait=Ancestry,Goblin Require="level >= 9"',
+  'Cave Climber':'Traits=Ancestry,Goblin Require="level >= 9"',
   'Skittering Scuttle':
-    'Trait=Ancestry,Goblin Require="level >= 9","features.Goblin Scuttle"',
+    'Traits=Ancestry,Goblin Require="level >= 9","features.Goblin Scuttle"',
   'Goblin Weapon Expertise':
-    'Trait=Ancestry,Goblin ' +
+    'Traits=Ancestry,Goblin ' +
     'Require="level >= 13","features.Goblin Weapon Familiarity"',
   'Very, Very Sneaky':
-    'Trait=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
+    'Traits=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
 
-  'Distracting Shadows':'Trait=Ancestry,Halfling',
-  'Halfling Lore':'Trait=Ancestry,Halfling',
-  'Halfling Luck':'Trait=Ancestry,Halfling,Fortune',
-  'Halfling Weapon Familiarity':'Trait=Ancestry,Halfling',
-  'Sure Feet':'Trait=Ancestry,Halfling',
-  'Titan Slinger':'Trait=Ancestry,Halfling',
-  'Unfettered Halfling':'Trait=Ancestry,Halfling',
-  'Watchful Halfling':'Trait=Ancestry,Halfling',
+  'Distracting Shadows':'Traits=Ancestry,Halfling',
+  'Halfling Lore':'Traits=Ancestry,Halfling',
+  'Halfling Luck':'Traits=Ancestry,Halfling,Fortune',
+  'Halfling Weapon Familiarity':'Traits=Ancestry,Halfling',
+  'Sure Feet':'Traits=Ancestry,Halfling',
+  'Titan Slinger':'Traits=Ancestry,Halfling',
+  'Unfettered Halfling':'Traits=Ancestry,Halfling',
+  'Watchful Halfling':'Traits=Ancestry,Halfling',
   'Cultural Adaptability (%ancestry)':
-    'Trait=Ancestry,Halfling Require="level >= 5"',
+    'Traits=Ancestry,Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
-    'Trait=Ancestry,Halfling ' +
+    'Traits=Ancestry,Halfling ' +
     'Require="level >= 5","features.Halfling Weapon Familiarity"',
   'Guiding Luck':
-    'Trait=Ancestry,Halfling Require="level >= 9","features.Halfling Luck"',
-  'Irrepressible':'Trait=Ancestry,Halfling Require="level >= 9"',
+    'Traits=Ancestry,Halfling Require="level >= 9","features.Halfling Luck"',
+  'Irrepressible':'Traits=Ancestry,Halfling Require="level >= 9"',
   'Ceaseless Shadows':
-    'Trait=Ancestry,Halfling ' +
+    'Traits=Ancestry,Halfling ' +
     'Require="level >= 13","features.Distracting Shadows"',
   'Halfling Weapon Expertise':
-    'Trait=Ancestry,Halfling ' +
+    'Traits=Ancestry,Halfling ' +
     'Require="level >= 13","features.Halfling Weapon Familiarity"',
 
-  'Adapted Cantrip':'Trait=Ancestry,Human Require="features.Spellcasting"',
-  'Cooperative Nature':'Trait=Ancestry,Human',
-  'General Training':'Trait=Ancestry,Human',
-  'Haughty Obstinacy':'Trait=Ancestry,Human',
-  'Natural Ambition':'Trait=Ancestry,Human',
-  'Natural Skill':'Trait=Ancestry,Human',
-  'Unconventional Weaponry (%weapon)':'Trait=Ancestry,Human',
+  'Adapted Cantrip':'Traits=Ancestry,Human Require="features.Spellcasting"',
+  'Cooperative Nature':'Traits=Ancestry,Human',
+  'General Training':'Traits=Ancestry,Human',
+  'Haughty Obstinacy':'Traits=Ancestry,Human',
+  'Natural Ambition':'Traits=Ancestry,Human',
+  'Natural Skill':'Traits=Ancestry,Human',
+  'Unconventional Weaponry (%weapon)':'Traits=Ancestry,Human',
   'Adaptive Adept':
-    'Trait=Ancestry,Human ' +
+    'Traits=Ancestry,Human ' +
     'Require=' +
       '"level >= 5",' +
       '"features.Adapted Cantrip",' +
       '"spellSlots.A3 || spellSlots.D3 || spellSlots.O3 || spellSlots.P3"',
-  'Clever Improviser':'Trait=Ancestry,Human Require="level >= 5"',
+  'Clever Improviser':'Traits=Ancestry,Human Require="level >= 5"',
   'Cooperative Soul':
-    'Trait=Ancestry,Human Require="level >= 9","features.Cooperative Nature"',
+    'Traits=Ancestry,Human Require="level >= 9","features.Cooperative Nature"',
   'Incredible Improvisation':
-    'Trait=Ancestry,Human Require="level >= 9","features.Clever Improviser"',
-  'Multitalented':'Trait=Ancestry,Human Require="level >= 9"',
+    'Traits=Ancestry,Human Require="level >= 9","features.Clever Improviser"',
+  'Multitalented':'Traits=Ancestry,Human Require="level >= 9"',
   'Unconventional Expertise':
-    'Trait=Ancestry,Human ' +
+    'Traits=Ancestry,Human ' +
     'Require=' +
       '"level >= 13",' +
       '"features.Unconventional Weaponry"',
-  'Elf Atavism':'Trait=Ancestry,Half-Elf',
-  'Inspire Imitation':'Trait=Ancestry,Half-Elf Require="level >= 5"',
-  'Supernatural Charm':'Trait=Ancestry,Half-Elf Require="level >= 5"',
-  'Monstrous Peacemaker':'Trait=Ancestry,Half-Orc',
-  'Orc Ferocity':'Trait=Ancestry,Orc',
-  'Orc Sight':'Trait=Ancestry,Half-Orc Require="features.Low-Light Vision"',
-  'Orc Superstition':'Trait=Ancestry,Orc,Concentrate',
-  'Orc Weapon Familiarity':'Trait=Ancestry,Orc',
+  'Elf Atavism':'Traits=Ancestry,Half-Elf',
+  'Inspire Imitation':'Traits=Ancestry,Half-Elf Require="level >= 5"',
+  'Supernatural Charm':'Traits=Ancestry,Half-Elf Require="level >= 5"',
+  'Monstrous Peacemaker':'Traits=Ancestry,Half-Orc',
+  'Orc Ferocity':'Traits=Ancestry,Orc',
+  'Orc Sight':'Traits=Ancestry,Half-Orc Require="features.Low-Light Vision"',
+  'Orc Superstition':'Traits=Ancestry,Orc,Concentrate',
+  'Orc Weapon Familiarity':'Traits=Ancestry,Orc',
   'Orc Weapon Carnage':
-    'Trait=Ancestry,Orc Require="level >= 5","features.Orc Weapon Familiarity"',
-  'Victorious Vigor':'Trait=Ancestry,Orc Require="level >= 5"',
+    'Traits=Ancestry,Orc Require="level >= 5","features.Orc Weapon Familiarity"',
+  'Victorious Vigor':'Traits=Ancestry,Orc Require="level >= 5"',
   'Pervasive Superstition':
-    'Trait=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
+    'Traits=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
   'Incredible Ferocity':
-    'Trait=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
+    'Traits=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
   'Orc Weapon Expertise':
-    'Trait=Ancestry,Half-Orc ' +
+    'Traits=Ancestry,Half-Orc ' +
     'Require="level >= 13","features.Orc Weapon Familiarity"',
 
   // Class
-  'Alchemical Familiar':'Trait=Class,Alchemist',
+  'Alchemical Familiar':'Traits=Class,Alchemist',
   'Alchemical Savant':
-    'Trait=Class,Alchemist Require="rank.Crafting >= 1"',
-  'Far Lobber':'Trait=Class,Alchemist',
-  'Quick Bomber':'Trait=Class,Alchemist',
-  'Poison Resistance':'Trait=Class,Alchemist,Druid Require="level >= 2"',
-  'Revivifying Mutagen':'Trait=Class,Alchemist Require="level >= 2"',
-  'Smoke Bomb':'Trait=Class,Alchemist,Additive1 Require="level >= 2"',
-  'Calculated Splash':'Trait=Class,Alchemist Require="level >= 4"',
-  'Efficient Alchemy':'Trait=Class,Alchemist Require="level >= 4"',
-  'Enduring Alchemy':'Trait=Class,Alchemist Require="level >= 4"',
-  'Combine Elixirs':'Trait=Class,Alchemist,Additive2 Require="level >= 6"',
-  'Debilitating Bomb':'Trait=Class,Alchemist,Additive2 Require="level >= 6"',
-  'Directional Bombs':'Trait=Class,Alchemist Require="level >= 6"',
-  'Feral Mutagen':'Trait=Class,Alchemist Require="level >= 8"',
-  'Sticky Bomb':'Trait=Class,Alchemist,Additive2 Require="level >= 8"',
-  'Elastic Mutagen':'Trait=Class,Alchemist Require="level >= 10"',
+    'Traits=Class,Alchemist Require="rank.Crafting >= 1"',
+  'Far Lobber':'Traits=Class,Alchemist',
+  'Quick Bomber':'Traits=Class,Alchemist',
+  'Poison Resistance':'Traits=Class,Alchemist,Druid Require="level >= 2"',
+  'Revivifying Mutagen':'Traits=Class,Alchemist Require="level >= 2"',
+  'Smoke Bomb':'Traits=Class,Alchemist,Additive1 Require="level >= 2"',
+  'Calculated Splash':'Traits=Class,Alchemist Require="level >= 4"',
+  'Efficient Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
+  'Enduring Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
+  'Combine Elixirs':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
+  'Debilitating Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
+  'Directional Bombs':'Traits=Class,Alchemist Require="level >= 6"',
+  'Feral Mutagen':'Traits=Class,Alchemist Require="level >= 8"',
+  'Sticky Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 8"',
+  'Elastic Mutagen':'Traits=Class,Alchemist Require="level >= 10"',
   'Expanded Splash':
-    'Trait=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
+    'Traits=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
   'Greater Debilitating Bomb':
-    'Trait=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
-  'Merciful Elixir':'Trait=Class,Alchemist,Additive2 Require="level >= 10"',
+    'Traits=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
+  'Merciful Elixir':'Traits=Class,Alchemist,Additive2 Require="level >= 10"',
   'Potent Poisoner':
-    'Trait=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
-  'Extend Elixir':'Trait=Class,Alchemist Require="level >= 12"',
-  'Invincible Mutagen':'Trait=Class,Alchemist Require="level >= 12"',
+    'Traits=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
+  'Extend Elixir':'Traits=Class,Alchemist Require="level >= 12"',
+  'Invincible Mutagen':'Traits=Class,Alchemist Require="level >= 12"',
   'Uncanny Bombs':
-    'Trait=Class,Alchemist Require="level >= 12","features.Far Lobber"',
-  'Glib Mutagen':'Trait=Class,Alchemist Require="level >= 14"',
+    'Traits=Class,Alchemist Require="level >= 12","features.Far Lobber"',
+  'Glib Mutagen':'Traits=Class,Alchemist Require="level >= 14"',
   'Greater Merciful Elixir':
-    'Trait=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
+    'Traits=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
   'True Debilitating Bomb':
-    'Trait=Class,Alchemist ' +
+    'Traits=Class,Alchemist ' +
     'Require="level >= 14","features.Greater Debilitating Bomb"',
   'Eternal Elixir':
-    'Trait=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Exploitive Bomb':'Trait=Class,Alchemist,Additive2 Require="level >= 16"',
-  'Genius Mutagen':'Trait=Class,Alchemist Require="level >= 16"',
+    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Exploitive Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 16"',
+  'Genius Mutagen':'Traits=Class,Alchemist Require="level >= 16"',
   'Persistent Mutagen':
-    'Trait=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Improbable Elixirs':'Trait=Class,Alchemist Require="level >= 18"',
-  'Mindblank Mutagen':'Trait=Class,Alchemist Require="level >= 18"',
-  'Miracle Worker':'Trait=Class,Alchemist Require="level >= 18"',
-  'Perfect Debilitation':'Trait=Class,Alchemist Require="level >= 18"',
-  "Craft Philosopher's Stone":'Trait=Class,Alchemist Require="level >= 20"',
+    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Improbable Elixirs':'Traits=Class,Alchemist Require="level >= 18"',
+  'Mindblank Mutagen':'Traits=Class,Alchemist Require="level >= 18"',
+  'Miracle Worker':'Traits=Class,Alchemist Require="level >= 18"',
+  'Perfect Debilitation':'Traits=Class,Alchemist Require="level >= 18"',
+  "Craft Philosopher's Stone":'Traits=Class,Alchemist Require="level >= 20"',
   'Mega Bomb':
-    'Trait=Class,Alchemist,Additive3 ' +
+    'Traits=Class,Alchemist,Additive3 ' +
     'Require="level >= 20","features.Expanded Splash"',
-  'Perfect Mutagen':'Trait=Class,Alchemist Require="level >= 20"',
+  'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
 
-  'Acute Vision':'Trait=Class,Barbarian',
-  'Moment Of Clarity':'Trait=Class,Barbarian,Concentrate,Rage',
-  'Raging Intimidation':'Trait=Class,Barbarian',
-  'Raging Thrower':'Trait=Class,Barbarian',
-  'Sudden Charge':'Trait=Class,Barbarian,Fighter,Flourish,Open',
+  'Acute Vision':'Traits=Class,Barbarian',
+  'Moment Of Clarity':'Traits=Class,Barbarian,Concentrate,Rage',
+  'Raging Intimidation':'Traits=Class,Barbarian',
+  'Raging Thrower':'Traits=Class,Barbarian',
+  'Sudden Charge':'Traits=Class,Barbarian,Fighter,Flourish,Open',
   'Acute Scent':
-    'Trait=Class,Barbarian ' +
+    'Traits=Class,Barbarian ' +
     'Require="level >= 2","features.Acute Vision||features.Darkvision"',
-  'Furious Finish':'Trait=Class,Barbarian,Rage Require="level >= 2"',
-  'No Escape':'Trait=Class,Barbarian,Rage Require="level >= 2"',
-  'Second Wind':'Trait=Class,Barbarian Require="level >= 2"',
-  'Shake It Off':'Trait=Class,Barbarian,Concentrate,Rage Require="level >= 2"',
-  'Fast Movement':'Trait=Class,Barbarian Require="level >= 4"',
+  'Furious Finish':'Traits=Class,Barbarian,Rage Require="level >= 2"',
+  'No Escape':'Traits=Class,Barbarian,Rage Require="level >= 2"',
+  'Second Wind':'Traits=Class,Barbarian Require="level >= 2"',
+  'Shake It Off':'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 2"',
+  'Fast Movement':'Traits=Class,Barbarian Require="level >= 4"',
   'Raging Athlete':
-    'Trait=Class,Barbarian Require="level >= 4","rank.Athletics >= 2"',
-  'Swipe':'Trait=Class,Barbarian,Fighter,Flourish Require="level >= 4"',
-  'Wounded Rage':'Trait=Class,Barbarian Require="level >= 4"',
+    'Traits=Class,Barbarian Require="level >= 4","rank.Athletics >= 2"',
+  'Swipe':'Traits=Class,Barbarian,Fighter,Flourish Require="level >= 4"',
+  'Wounded Rage':'Traits=Class,Barbarian Require="level >= 4"',
   'Animal Skin':
-    'Trait=Class,Barbarian,Morph,Primal,Transmutation ' +
+    'Traits=Class,Barbarian,Morph,Primal,Transmutation ' +
     'Require="level >= 6","features.Animal Instinct"',
-  'Attack Of Opportunity':'Trait=Class,Barbarian,Champion Require="level >= 6"',
+  'Attack Of Opportunity':'Traits=Class,Barbarian,Champion Require="level >= 6"',
   'Brutal Bully':
-    'Trait=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
-  'Cleave':'Trait=Class,Barbarian,Rage Require="level >= 6"',
+    'Traits=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
+  'Cleave':'Traits=Class,Barbarian,Rage Require="level >= 6"',
   "Dragon's Rage Breath":
-    'Trait=Class,Barbarian,Arcane,Concentrate,Evocation,Rage ' +
+    'Traits=Class,Barbarian,Arcane,Concentrate,Evocation,Rage ' +
     'Require="level >= 6","features.Dragon Instinct"',
   "Giant's Stature":
-    'Trait=Class,Barbarian,Polymorph,Primal,Rage,Transmutation ' +
+    'Traits=Class,Barbarian,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 6","features.Giant Instinct"',
   "Spirits' Interference":
-    'Trait=Class,Barbarian,Divine,Necromancy,Rage ' +
+    'Traits=Class,Barbarian,Divine,Necromancy,Rage ' +
     'Require="level >= 6","features.Spirit Instinct"',
   'Animal Rage':
-    'Trait=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
+    'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
-    'Trait=Class,Barbarian Require="level >= 8","rank.Athletics >=3 "',
-  'Renewed Vigor':'Trait=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
+    'Traits=Class,Barbarian Require="level >= 8","rank.Athletics >=3 "',
+  'Renewed Vigor':'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
   'Share Rage':
-    'Trait=Class,Barbarian,Auditory,Rage,Visual Require="level >= 8"',
-  'Sudden Leap':'Trait=Class,Barbarian,Fighter Require="level >= 8"',
-  'Thrash':'Trait=Class,Barbarian,Rage Require="level >= 8"',
+    'Traits=Class,Barbarian,Auditory,Rage,Visual Require="level >= 8"',
+  'Sudden Leap':'Traits=Class,Barbarian,Fighter Require="level >= 8"',
+  'Thrash':'Traits=Class,Barbarian,Rage Require="level >= 8"',
   'Come And Get Me':
-    'Trait=Class,Barbarian,Concentrate,Rage Require="level >= 10"',
-  'Furious Sprint':'Trait=Class,Barbarian,Rage Require="level >= 10"',
+    'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 10"',
+  'Furious Sprint':'Traits=Class,Barbarian,Rage Require="level >= 10"',
   'Great Cleave':
-    'Trait=Class,Barbarian,Rage Require="level >= 10",features.Cleave',
-  'Knockback':'Trait=Class,Barbarian,Rage Require="level >= 10"',
+    'Traits=Class,Barbarian,Rage Require="level >= 10",features.Cleave',
+  'Knockback':'Traits=Class,Barbarian,Rage Require="level >= 10"',
   'Terrifying Howl':
-    'Trait=Class,Barbarian,Auditory,Rage ' +
+    'Traits=Class,Barbarian,Auditory,Rage ' +
     'Require="level >= 10","features.Intimidating Glare"',
   "Dragon's Rage Wings":
-    'Trait=Class,Barbarian,Morph,Primal,Rage,Transmutation ' +
+    'Traits=Class,Barbarian,Morph,Primal,Rage,Transmutation ' +
     'Require="level >= 12","features.Dragon Instinct"',
-  'Furious Grab':'Trait=Class,Barbarian,Rage Require="level >= 12"',
+  'Furious Grab':'Traits=Class,Barbarian,Rage Require="level >= 12"',
   "Predator's Pounce":
-    'Trait=Class,Barbarian,Flourish,Open,Rage ' +
+    'Traits=Class,Barbarian,Flourish,Open,Rage ' +
     'Require="level >= 12","features.Animal Instinct"',
   "Spirit's Wrath":
-    'Trait=Class,Barbarian,Attack,Concentrate,Rage ' +
+    'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Spirit Instinct"',
   "Titan's Stature":
-    'Trait=Class,Barbarian,Polymorph,Transmutation ' +
+    'Traits=Class,Barbarian,Polymorph,Transmutation ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Giant Instinct",' +
       '"features.Giant\'s Stature"',
   'Awesome Blow':
-    'Trait=Class,Barbarian,Rage Require="level >= 14","features.Knockback"',
+    'Traits=Class,Barbarian,Rage Require="level >= 14","features.Knockback"',
   "Giant's Lunge":
-    'Trait=Class,Barbarian,Rage ' +
+    'Traits=Class,Barbarian,Rage ' +
     'Require="level >= 14","features.Giant Instinct"',
   'Vengeful Strike':
-    'Trait=Class,Barbarian,Rage ' +
+    'Traits=Class,Barbarian,Rage ' +
     'Require="level >= 14","features.Vengeful Strike"',
   'Whirlwind Strike':
-    'Trait=Class,Barbarian,Fighter,Flourish,Open Require="level >= 14"',
+    'Traits=Class,Barbarian,Fighter,Flourish,Open Require="level >= 14"',
   'Collateral Thrash':
-    'Trait=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
+    'Traits=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
   'Dragon Transformation':
-    'Trait=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
+    'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Dragon Instinct",' +
      '"features.Dragon\'s Rage Wings"',
-  'Reckless Abandon':'Trait=Class,Barbarian,Rage Require="level >= 16"',
-  'Brutal Critical':'Trait=Class,Barbarian Require="level >= 18"',
+  'Reckless Abandon':'Traits=Class,Barbarian,Rage Require="level >= 16"',
+  'Brutal Critical':'Traits=Class,Barbarian Require="level >= 18"',
   'Perfect Clarity':
-    'Trait=Class,Barbarian,Concentrate,Fortune,Rage Require="level >= 18"',
-  'Vicious Evisceration':'Trait=Class,Barbarian,Rage Require="level >= 18"',
+    'Traits=Class,Barbarian,Concentrate,Fortune,Rage Require="level >= 18"',
+  'Vicious Evisceration':'Traits=Class,Barbarian,Rage Require="level >= 18"',
   'Contagious Rage':
-    'Trait=Class,Barbarian,Auditory,Rage,Visual ' +
+    'Traits=Class,Barbarian,Auditory,Rage,Visual ' +
     'Require="level >= 20","features.Share Rage"',
-  'Quaking Stomp':'Trait=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
+  'Quaking Stomp':'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
 
-  'Bardic Lore':'Trait=Class,Bard Require="features.Enigma"',
-  'Lingering Composition':'Trait=Class,Bard Require="features.Maestro"',
+  'Bardic Lore':'Traits=Class,Bard Require="features.Enigma"',
+  'Lingering Composition':'Traits=Class,Bard Require="features.Maestro"',
   'Reach Spell':
-    'Trait=Class,Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
-  'Versatile Performance':'Trait=Class,Bard Require="features.Polymath"',
+    'Traits=Class,Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
+  'Versatile Performance':'Traits=Class,Bard Require="features.Polymath"',
   'Cantrip Expansion':
-    'Trait=Class,Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
+    'Traits=Class,Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
   'Esoteric Polymath':
-    'Trait=Class,Bard Require="level >= 2","features.Polymath"',
+    'Traits=Class,Bard Require="level >= 2","features.Polymath"',
   'Inspire Competence':
-    'Trait=Class,Bard Require="level >= 2","features.Maestro"',
+    'Traits=Class,Bard Require="level >= 2","features.Maestro"',
   "Loremaster's Etude":
-    'Trait=Class,Bard,Fortune Require="level >= 2","features.Enigma"',
+    'Traits=Class,Bard,Fortune Require="level >= 2","features.Enigma"',
   'Multifarious Muse (Enigma)':
-    'Trait=Class,Bard Require="level >= 2","bardFeatures.Enigma == 0"',
+    'Traits=Class,Bard Require="level >= 2","bardFeatures.Enigma == 0"',
   'Multifarious Muse (Maestro)':
-    'Trait=Class,Bard Require="level >= 2","bardFeatures.Maestro == 0"',
+    'Traits=Class,Bard Require="level >= 2","bardFeatures.Maestro == 0"',
   'Multifarious Muse (Polymath)':
-    'Trait=Class,Bard Require="level >= 2","bardFeatures.Polymath == 0"',
+    'Traits=Class,Bard Require="level >= 2","bardFeatures.Polymath == 0"',
   'Inspire Defense':
-    'Trait=Class,Bard Require="level >= 4","features.Maestro"',
+    'Traits=Class,Bard Require="level >= 4","features.Maestro"',
   'Melodious Spell':
-    'Trait=Class,Bard,Concentrate,Manipulate,Metamagic Require="level >= 4"',
-  'Triple Time':'Trait=Class,Bard Require="level >= 4"',
+    'Traits=Class,Bard,Concentrate,Manipulate,Metamagic Require="level >= 4"',
+  'Triple Time':'Traits=Class,Bard Require="level >= 4"',
   'Versatile Signature':
-    'Trait=Class,Bard Require="level >= 4","features.Polymath"',
-  'Dirge Of Doom':'Trait=Class,Bard Require="level >= 6"',
+    'Traits=Class,Bard Require="level >= 4","features.Polymath"',
+  'Dirge Of Doom':'Traits=Class,Bard Require="level >= 6"',
   'Harmonize':
-    'Trait=Class,Bard,Concentrate,Manipulate,Metamagic ' +
+    'Traits=Class,Bard,Concentrate,Manipulate,Metamagic ' +
     'Require="level >= 6","features.Maestro"',
   'Steady Spellcasting':
-    'Trait=Class,Bard,Cleric,Druid,Sorcerer,Wizard Require="level >= 6"',
+    'Traits=Class,Bard,Cleric,Druid,Sorcerer,Wizard Require="level >= 6"',
   'Eclectic Skill':
-    'Trait=Class,Bard ' +
+    'Traits=Class,Bard ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Polymath",' +
       '"rank.Occultism >= 3"',
   'Inspire Heroics':
-    'Trait=Class,Bard Require="level >= 8","features.Maestro"',
+    'Traits=Class,Bard Require="level >= 8","features.Maestro"',
   'Know-It-All':
-    'Trait=Class,Bard Require="level >= 8","features.Enigma"',
-  'House Of Imaginary Walls':'Trait=Class,Bard Require="level >= 10"',
+    'Traits=Class,Bard Require="level >= 8","features.Enigma"',
+  'House Of Imaginary Walls':'Traits=Class,Bard Require="level >= 10"',
   'Quickened Casting':
-    'Trait=Class,Bard,Sorcerer,Wizard,Concentrate,Metamagic ' +
+    'Traits=Class,Bard,Sorcerer,Wizard,Concentrate,Metamagic ' +
     'Require="level >= 10"',
   'Unusual Composition':
-    'Trait=Class,Bard,Concentrate,Manipulate,Metamagic ' +
+    'Traits=Class,Bard,Concentrate,Manipulate,Metamagic ' +
     'Require="level >= 10","features.Polymath"',
   'Eclectic Polymath':
-    'Trait=Class,Bard Require="level >= 12","features.Esoteric Polymath"',
-  'Inspirational Focus':'Trait=Class,Bard Require="level >= 12"',
-  'Allegro':'Trait=Class,Bard Require="level >= 14"',
-  'Soothing Ballad':'Trait=Class,Bard Require="level >= 14"',
+    'Traits=Class,Bard Require="level >= 12","features.Esoteric Polymath"',
+  'Inspirational Focus':'Traits=Class,Bard Require="level >= 12"',
+  'Allegro':'Traits=Class,Bard Require="level >= 14"',
+  'Soothing Ballad':'Traits=Class,Bard Require="level >= 14"',
   'True Hypercognition':
-    'Trait=Class,Bard Require="level >= 14","features.Enigma"',
+    'Traits=Class,Bard Require="level >= 14","features.Enigma"',
   'Effortless Concentration':
-    'Trait=Class,Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
+    'Traits=Class,Bard,Druid,Sorcerer,Wizard Require="level >= 16"',
   'Studious Capacity':
-    'Trait=Class,Bard ' +
+    'Traits=Class,Bard ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Enigma",' +
       '"rank.Occultism >= 4"',
   'Deep Lore':
-    'Trait=Class,Bard ' +
+    'Traits=Class,Bard ' +
     'Require="level >= 18","features.Enigma","rank.Occultism >= 4"',
   'Eternal Composition':
-    'Trait=Class,Bard Require="level >= 18","features.Maestro"',
+    'Traits=Class,Bard Require="level >= 18","features.Maestro"',
   'Impossible Polymath':
-    'Trait=Class,Bard ' +
+    'Traits=Class,Bard ' +
     'Require=' +
       '"level >= 18",' +
       '"rank.Arcana >= 1 || rank.Nature >= 1 || rank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
-  'Fatal Aria':'Trait=Class,Bard Require="level >= 20"',
+  'Fatal Aria':'Traits=Class,Bard Require="level >= 20"',
   'Perfect Encore':
-    'Trait=Class,Bard Require="level >= 20","features.Magnum Opus"',
+    'Traits=Class,Bard Require="level >= 20","features.Magnum Opus"',
   'Symphony Of The Muse':
-    'Trait=Class,Bard Require="level >= 20","features.Harmonize"',
+    'Traits=Class,Bard Require="level >= 20","features.Harmonize"',
 
   "Deity's Domain (Air)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Air\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Air\'"',
   "Deity's Domain (Ambition)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Ambition\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Ambition\'"',
   "Deity's Domain (Cities)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Cities\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Cities\'"',
   "Deity's Domain (Confidence)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Confidence\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Confidence\'"',
   "Deity's Domain (Creation)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Creation\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Creation\'"',
   "Deity's Domain (Darkness)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Darkness\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Darkness\'"',
   "Deity's Domain (Death)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Death\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Death\'"',
   "Deity's Domain (Destruction)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Destruction\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Destruction\'"',
   "Deity's Domain (Dreams)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Dreams\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Dreams\'"',
   "Deity's Domain (Earth)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Earth\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Earth\'"',
   "Deity's Domain (Family)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Family\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Family\'"',
   "Deity's Domain (Fate)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Fate\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Fate\'"',
   "Deity's Domain (Fire)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Fire\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Fire\'"',
   "Deity's Domain (Freedom)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Freedom\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Freedom\'"',
   "Deity's Domain (Healing)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Healing\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Healing\'"',
   "Deity's Domain (Indulgence)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Indulgence\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Indulgence\'"',
   "Deity's Domain (Knowledge)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Knowledge\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Knowledge\'"',
   "Deity's Domain (Luck)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Luck\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Luck\'"',
   "Deity's Domain (Magic)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Magic\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Magic\'"',
   "Deity's Domain (Might)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Might\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Might\'"',
   "Deity's Domain (Moon)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Moon\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Moon\'"',
   "Deity's Domain (Nature)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Nature\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Nature\'"',
   "Deity's Domain (Nightmares)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Nightmares\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Nightmares\'"',
   "Deity's Domain (Pain)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Pain\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Pain\'"',
   "Deity's Domain (Passion)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Passion\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Passion\'"',
   "Deity's Domain (Perfection)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Perfection\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Perfection\'"',
   "Deity's Domain (Protection)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Protection\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Protection\'"',
   "Deity's Domain (Secrecy)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Secrecy\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Secrecy\'"',
   "Deity's Domain (Sun)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Sun\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Sun\'"',
   "Deity's Domain (Travel)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Travel\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Travel\'"',
   "Deity's Domain (Trickery)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Trickery\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Trickery\'"',
   "Deity's Domain (Truth)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Truth\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Truth\'"',
   "Deity's Domain (Tyranny)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Tyranny\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Tyranny\'"',
   "Deity's Domain (Undeath)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Undeath\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Undeath\'"',
   "Deity's Domain (Water)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Water\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Water\'"',
   "Deity's Domain (Wealth)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Wealth\'"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Wealth\'"',
   "Deity's Domain (Zeal)":
-    'Trait=Class,Champion Require="deityDomains =~ \'Zeal\'"',
-  'Ranged Reprisal':'Trait=Class,Champion Require="features.Paladin"',
-  'Unimpeded Step':'Trait=Class,Champion Require="features.Liberator"',
-  'Weight Of Guilt':'Trait=Class,Champion Require="features.Redeemer"',
-  'Divine Grace':'Trait=Class,Champion Require="level >= 2"',
+    'Traits=Class,Champion Require="deityDomains =~ \'Zeal\'"',
+  'Ranged Reprisal':'Traits=Class,Champion Require="features.Paladin"',
+  'Unimpeded Step':'Traits=Class,Champion Require="features.Liberator"',
+  'Weight Of Guilt':'Traits=Class,Champion Require="features.Redeemer"',
+  'Divine Grace':'Traits=Class,Champion Require="level >= 2"',
   'Dragonslayer Oath':
-    'Trait=Class,Champion,Oath ' +
+    'Traits=Class,Champion,Oath ' +
     'Require="level >= 2","features.The Tenets Of Good"',
   'Fiendsbane Oath':
-    'Trait=Class,Champion,Oath ' +
+    'Traits=Class,Champion,Oath ' +
     'Require="level >= 2","features.The Tenets Of Good"',
   'Shining Oath':
-    'Trait=Class,Champion,Oath ' +
+    'Traits=Class,Champion,Oath ' +
     'Require="level >= 2","features.The Tenets Of Good"',
   'Vengeful Oath':
-    'Trait=Class,Champion,Oath ' +
+    'Traits=Class,Champion,Oath ' +
     'Require="level >= 2","features.Paladin"',
   'Aura Of Courage':
-    'Trait=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Divine Health':
-    'Trait=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Mercy':
-    'Trait=Class,Champion,Concentrate,Metamagic ' +
+    'Traits=Class,Champion,Concentrate,Metamagic ' +
     'Require="level >= 4","spells.Lay On Hands (D1 Foc Nec)"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 6","features.Devotion Spells","features.The Tenets Of Good"',
   'Loyal Warhorse':
-    'Trait=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
+    'Traits=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
   'Shield Warden':
-    'Trait=Class,Champion,Fighter ' +
+    'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Divine Ally (Shield && features.The Tenets Of Good || features.Shield Block"',
   'Smite Evil':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Divine Ally (Blade)",' +
       '"features.The Tenets Of Good"',
   "Advanced Deity's Domain (Air)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Air)"',
   "Advanced Deity's Domain (Ambition)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Ambition)"',
   "Advanced Deity's Domain (Cities)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Cities)"',
   "Advanced Deity's Domain (Confidence)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Confidence)"',
   "Advanced Deity's Domain (Creation)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Creation)"',
   "Advanced Deity's Domain (Darkness)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Darkness)"',
   "Advanced Deity's Domain (Death)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Death)"',
   "Advanced Deity's Domain (Destruction)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Destruction)"',
   "Advanced Deity's Domain (Dreams)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Dreams)"',
   "Advanced Deity's Domain (Earth)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Earth)"',
   "Advanced Deity's Domain (Family)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Family)"',
   "Advanced Deity's Domain (Fate)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Fate)"',
   "Advanced Deity's Domain (Fire)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Fire)"',
   "Advanced Deity's Domain (Freedom)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Freedom)"',
   "Advanced Deity's Domain (Healing)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Healing)"',
   "Advanced Deity's Domain (Indulgence)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Indulgence)"',
   "Advanced Deity's Domain (Knowledge)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Knowledge)"',
   "Advanced Deity's Domain (Luck)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Luck)"',
   "Advanced Deity's Domain (Magic)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Magic)"',
   "Advanced Deity's Domain (Might)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Might)"',
   "Advanced Deity's Domain (Moon)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Moon)"',
   "Advanced Deity's Domain (Nature)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Nature)"',
   "Advanced Deity's Domain (Nightmares)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Nightmares)"',
   "Advanced Deity's Domain (Pain)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Pain)"',
   "Advanced Deity's Domain (Passion)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Passion)"',
   "Advanced Deity's Domain (Perfection)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Perfection)"',
   "Advanced Deity's Domain (Protection)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Protection)"',
   "Advanced Deity's Domain (Secrecy)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Secrecy)"',
   "Advanced Deity's Domain (Sun)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Sun)"',
   "Advanced Deity's Domain (Travel)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Travel)"',
   "Advanced Deity's Domain (Trickery)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Trickery)"',
   "Advanced Deity's Domain (Truth)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Truth)"',
   "Advanced Deity's Domain (Tyranny)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Tyranny)"',
   "Advanced Deity's Domain (Undeath)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Undeath)"',
   "Advanced Deity's Domain (Water)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Water)"',
   "Advanced Deity's Domain (Wealth)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Wealth)"',
   "Advanced Deity's Domain (Zeal)":
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Zeal)"',
-  'Greater Mercy':'Trait=Class,Champion Require="level >= 8","features.Mercy"',
+  'Greater Mercy':'Traits=Class,Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Divine Ally (Steed)",' +
       '"spells.Lay On Hands (D1 Foc Nec)"',
   'Quick Shield Block':
-    'Trait=Class,Champion,Fighter ' +
+    'Traits=Class,Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
   'Second Ally':
-    'Trait=Class,Champion Require="level >= 8","features.Divine Ally"',
+    'Traits=Class,Champion Require="level >= 8","features.Divine Ally"',
   'Sense Evil':
-    'Trait=Class,Champion Require="level >= 8","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 8","features.The Tenets Of Good"',
   'Devoted Focus':
-    'Trait=Class,Champion Require="level >= 10","features.Devotion Spells"',
+    'Traits=Class,Champion Require="level >= 10","features.Devotion Spells"',
   'Imposing Destrier':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Divine Ally (Steed)",' +
       '"features.Loyal Warhorse"',
   'Litany Against Sloth':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Devotion Spells",' +
       '"features.The Tenets Of Good"',
   'Radiant Blade Spirit':
-    'Trait=Class,Champion Require="level >= 10","features.Divine Ally (Blade)"',
+    'Traits=Class,Champion Require="level >= 10","features.Divine Ally (Blade)"',
   'Shield Of Reckoning':
-    'Trait=Class,Champion,Flourish ' +
+    'Traits=Class,Champion,Flourish ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Champion\'s Reaction",' +
       '"features.Shield Warden"',
   'Affliction Mercy':
-    'Trait=Class,Champion Require="level >= 12","features.Mercy"',
+    'Traits=Class,Champion Require="level >= 12","features.Mercy"',
   'Aura Of Faith':
-    'Trait=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   'Blade Of Justice':
-    'Trait=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
-    'Trait=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
-  'Divine Wall':'Trait=Class,Champion Require="level >= 12"',
+    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
+  'Divine Wall':'Traits=Class,Champion Require="level >= 12"',
   'Lasting Doubt':
-    'Trait=Class,Champion Require="level >= 12","features.Redeemer"',
+    'Traits=Class,Champion Require="level >= 12","features.Redeemer"',
   'Liberating Stride':
-    'Trait=Class,Champion Require="level >= 12","features.Liberator"',
+    'Traits=Class,Champion Require="level >= 12","features.Liberator"',
   'Anchoring Aura':
-    'Trait=Class,Champion Require="level >= 14","features.Fiendsbane Oath"',
+    'Traits=Class,Champion Require="level >= 14","features.Fiendsbane Oath"',
   'Aura Of Life':
-    'Trait=Class,Champion Require="level >= 14","features.Shining Oath"',
+    'Traits=Class,Champion Require="level >= 14","features.Shining Oath"',
   'Aura Of Righteousness':
-    'Trait=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
   // NOTE: Exalt requirement redundant? All Champions get it at level 11
   'Aura Of Vengeance':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require="level >= 14","features.Vengeful Oath"',
-  'Divine Reflexes':'Trait=Class,Champion Require="level >= 14"',
+  'Divine Reflexes':'Traits=Class,Champion Require="level >= 14"',
   'Litany Of Righteousness':
-    'Trait=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
   'Wyrmbane Aura':
-    'Trait=Class,Champion Require="level >= 14","features.Dragonslayer Oath"',
+    'Traits=Class,Champion Require="level >= 14","features.Dragonslayer Oath"',
   'Auspicious Mount':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Divine Ally (Steed)",' +
       '"features.Imposing Destrier"',
   'Instrument Of Zeal':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Divine Ally (Blade)",' +
       '"features.The Tenets Of Good"',
   'Shield Of Grace':
-    'Trait=Class,Champion Require="level >= 16","features.Shield Warden"',
+    'Traits=Class,Champion Require="level >= 16","features.Shield Warden"',
   'Celestial Form':
-    'Trait=Class,Champion Require="level >= 18","features.The Tenets Of Good"',
+    'Traits=Class,Champion Require="level >= 18","features.The Tenets Of Good"',
   'Ultimate Mercy':
-    'Trait=Class,Champion Require="level >= 18","features.Mercy"',
+    'Traits=Class,Champion Require="level >= 18","features.Mercy"',
   'Celestial Mount':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 20",' +
       '"features.Divine Ally (Steed)",' +
       '"features.The Tenets Of Good"',
   'Radiant Blade Master':
-    'Trait=Class,Champion ' +
+    'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 20",' +
       '"features.Divine Ally (Blade)",' +
       '"features.Radiant Blade Spirit"',
   'Shield Paragon':
-    'Trait=Class,Champion Require="level >= 20","features.Divine Ally (Shield)"',
+    'Traits=Class,Champion Require="level >= 20","features.Divine Ally (Shield)"',
 
   'Deadly Simplicity':
-    'Trait=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
+    'Traits=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
   'Domain Initiate (Air)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Air\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Air\'"',
   'Domain Initiate (Ambition)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Ambition\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Ambition\'"',
   'Domain Initiate (Cities)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Cities\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Cities\'"',
   'Domain Initiate (Confidence)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Confidence\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Confidence\'"',
   'Domain Initiate (Creation)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Creation\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Creation\'"',
   'Domain Initiate (Darkness)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Darkness\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Darkness\'"',
   'Domain Initiate (Death)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Death\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Death\'"',
   'Domain Initiate (Destruction)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Destruction\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Destruction\'"',
   'Domain Initiate (Dreams)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Dreams\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Dreams\'"',
   'Domain Initiate (Earth)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Earth\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Earth\'"',
   'Domain Initiate (Family)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Family\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Family\'"',
   'Domain Initiate (Fate)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Fate\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Fate\'"',
   'Domain Initiate (Fire)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Fire\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Fire\'"',
   'Domain Initiate (Freedom)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Freedom\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Freedom\'"',
   'Domain Initiate (Healing)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Healing\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Healing\'"',
   'Domain Initiate (Indulgence)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Indulgence\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Indulgence\'"',
   'Domain Initiate (Knowledge)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Knowledge\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Knowledge\'"',
   'Domain Initiate (Luck)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Luck\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Luck\'"',
   'Domain Initiate (Magic)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Magic\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Magic\'"',
   'Domain Initiate (Might)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Might\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Might\'"',
   'Domain Initiate (Moon)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Moon\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Moon\'"',
   'Domain Initiate (Nature)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Nature\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Nature\'"',
   'Domain Initiate (Nightmares)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Nightmares\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Nightmares\'"',
   'Domain Initiate (Pain)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Pain\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Pain\'"',
   'Domain Initiate (Passion)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Passion\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Passion\'"',
   'Domain Initiate (Perfection)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Perfection\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Perfection\'"',
   'Domain Initiate (Protection)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Protection\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Protection\'"',
   'Domain Initiate (Secrecy)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Secrecy\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Secrecy\'"',
   'Domain Initiate (Sun)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Sun\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Sun\'"',
   'Domain Initiate (Travel)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Travel\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Travel\'"',
   'Domain Initiate (Trickery)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Trickery\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Trickery\'"',
   'Domain Initiate (Truth)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Truth\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Truth\'"',
   'Domain Initiate (Tyranny)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Tyranny\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Tyranny\'"',
   'Domain Initiate (Undeath)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Undeath\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Undeath\'"',
   'Domain Initiate (Water)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Water\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Water\'"',
   'Domain Initiate (Wealth)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Wealth\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Wealth\'"',
   'Domain Initiate (Zeal)':
-    'Trait=Class,Cleric Require="deityDomains =~ \'Zeal\'"',
-  'Harming Hands':'Trait=Class,Cleric Require="features.Harmful Font"',
-  'Healing Hands':'Trait=Class,Cleric Require="features.Healing Font"',
-  'Holy Castigation':'Trait=Class,Cleric Require="alignment =~ \'Good\'"',
+    'Traits=Class,Cleric Require="deityDomains =~ \'Zeal\'"',
+  'Harming Hands':'Traits=Class,Cleric Require="features.Harmful Font"',
+  'Healing Hands':'Traits=Class,Cleric Require="features.Healing Font"',
+  'Holy Castigation':'Traits=Class,Cleric Require="alignment =~ \'Good\'"',
   // Reach Spell as above
   // Cantrip Expansion as above
-  'Communal Healing':'Trait=Class,Cleric,Healing,Positive Require="level >= 2"',
-  'Emblazon Armament':'Trait=Class,Cleric,Exploration Require="level >= 2"',
-  'Sap Life':'Trait=Class,Cleric,Healing Require="level >= 2"',
-  'Turn Undead':'Trait=Class,Cleric Require="level >= 2"',
+  'Communal Healing':'Traits=Class,Cleric,Healing,Positive Require="level >= 2"',
+  'Emblazon Armament':'Traits=Class,Cleric,Exploration Require="level >= 2"',
+  'Sap Life':'Traits=Class,Cleric,Healing Require="level >= 2"',
+  'Turn Undead':'Traits=Class,Cleric Require="level >= 2"',
   'Versatile Font':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require=' +
       '"level >= 2",' +
       '"deityFont == \'Either\'",' +
       '"features.Harmful Font || features.Healing Font"',
   'Channel Smite':
-    'Trait=Class,Cleric,Divine,Necromancy ' +
+    'Traits=Class,Cleric,Divine,Necromancy ' +
     'Require="level >= 4","features.Harmful Font || features.Healing Font"',
   'Command Undead':
-    'Trait=Class,Cleric,Concentrate,Metamagic ' +
+    'Traits=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 4","features.Harmful Font","alignment =~ \'Evil\'"',
-  'Directed Channel':'Trait=Class,Cleric Require="level >= 4"',
+  'Directed Channel':'Traits=Class,Cleric Require="level >= 4"',
   'Improved Communal Healing':
-    'Trait=Class,Cleric Require="level >= 4","features.Communal Healing"',
+    'Traits=Class,Cleric Require="level >= 4","features.Communal Healing"',
   'Necrotic Infusion':
-    'Trait=Class,Cleric,Concentrate,Metamagic ' +
+    'Traits=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 4","features.Harmful Font","alignment =~ \'Evil\'"',
   'Cast Down':
-    'Trait=Class,Cleric,Concentrate,Metamagic ' +
+    'Traits=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 6","features.Harmful Font || features.Healing Font"',
-  'Divine Weapon':'Trait=Class,Cleric Require="level >= 6"',
-  'Selective Energy':'Trait=Class,Cleric Require="level >= 6"',
+  'Divine Weapon':'Traits=Class,Cleric Require="level >= 6"',
+  'Selective Energy':'Traits=Class,Cleric Require="level >= 6"',
   // Steady Spellcasting as above
   'Advanced Domain (Air)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Air)"',
   'Advanced Domain (Ambition)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Ambition)"',
   'Advanced Domain (Cities)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Cities)"',
   'Advanced Domain (Confidence)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Confidence)"',
   'Advanced Domain (Creation)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Creation)"',
   'Advanced Domain (Darkness)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Darkness)"',
   'Advanced Domain (Death)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Death)"',
   'Advanced Domain (Destruction)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Destruction)"',
   'Advanced Domain (Dreams)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Dreams)"',
   'Advanced Domain (Earth)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Earth)"',
   'Advanced Domain (Family)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Family)"',
   'Advanced Domain (Fate)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Fate)"',
   'Advanced Domain (Fire)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Fire)"',
   'Advanced Domain (Freedom)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Freedom)"',
   'Advanced Domain (Healing)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Healing)"',
   'Advanced Domain (Indulgence)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Indulgence)"',
   'Advanced Domain (Knowledge)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Knowledge)"',
   'Advanced Domain (Luck)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Luck)"',
   'Advanced Domain (Magic)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Magic)"',
   'Advanced Domain (Might)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Might)"',
   'Advanced Domain (Moon)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Moon)"',
   'Advanced Domain (Nature)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Nature)"',
   'Advanced Domain (Nightmares)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Nightmares)"',
   'Advanced Domain (Pain)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Pain)"',
   'Advanced Domain (Passion)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Passion)"',
   'Advanced Domain (Perfection)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Perfection)"',
   'Advanced Domain (Protection)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Protection)"',
   'Advanced Domain (Secrecy)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Secrecy)"',
   'Advanced Domain (Sun)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Sun)"',
   'Advanced Domain (Travel)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Travel)"',
   'Advanced Domain (Trickery)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Trickery)"',
   'Advanced Domain (Truth)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Truth)"',
   'Advanced Domain (Tyranny)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Tyranny)"',
   'Advanced Domain (Undeath)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Undeath)"',
   'Advanced Domain (Water)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Water)"',
   'Advanced Domain (Wealth)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Wealth)"',
   'Advanced Domain (Zeal)':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 8","features.Domain Initiate (Zeal)"',
   'Align Armament (Chaotic)':
-    'Trait=Class,Cleric,Divine,Evocation ' +
+    'Traits=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'C\'"',
   'Align Armament (Evil)':
-    'Trait=Class,Cleric,Divine,Evocation ' +
+    'Traits=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'E\'"',
   'Align Armament (Good)':
-    'Trait=Class,Cleric,Divine,Evocation ' +
+    'Traits=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'G\'"',
   'Align Armament (Lawful)':
-    'Trait=Class,Cleric,Divine,Evocation ' +
+    'Traits=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'L\'"',
   'Channeled Succor':
-    'Trait=Class,Cleric Require="level >= 8","features.Healing Font"',
-  'Cremate Undead':'Trait=Class,Cleric Require="level >= 8"',
+    'Traits=Class,Cleric Require="level >= 8","features.Healing Font"',
+  'Cremate Undead':'Traits=Class,Cleric Require="level >= 8"',
   'Emblazon Energy':
-    'Trait=Class,Cleric Require="level >= 8","features.Emblazon Armament"',
+    'Traits=Class,Cleric Require="level >= 8","features.Emblazon Armament"',
   'Castigating Weapon':
-    'Trait=Class,Cleric Require="level >= 10","features.Holy Castigation"',
+    'Traits=Class,Cleric Require="level >= 10","features.Holy Castigation"',
   'Heroic Recovery':
-    'Trait=Class,Cleric,Concentrate,Metamagic ' +
+    'Traits=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 10","features.Healing Font","alignment =~ \'Good\'"',
   'Improved Command Undead':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Harmful Font",' +
       '"features.Command Undead",' +
       '"alignment =~ \'Evil\'"',
   'Replenishment Of War':
-    'Trait=Class,Cleric Require="level >= 10","deityWeaponRank >= 2"',
+    'Traits=Class,Cleric Require="level >= 10","deityWeaponRank >= 2"',
   'Defensive Recovery':
-    'Trait=Class,Cleric,Concentrate,Metamagic ' +
+    'Traits=Class,Cleric,Concentrate,Metamagic ' +
     'Require="level >= 12","features.Harmful Font || features.Healing Font"',
   'Domain Focus':
-    'Trait=Class,Cleric Require="level >= 12","features.Domain Initiate"',
+    'Traits=Class,Cleric Require="level >= 12","features.Domain Initiate"',
   'Emblazon Antimagic':
-    'Trait=Class,Cleric Require="level >= 12","features.Emblazon Armament"',
+    'Traits=Class,Cleric Require="level >= 12","features.Emblazon Armament"',
   'Shared Replenishment':
-    'Trait=Class,Cleric Require="level >= 12","features.Replenishment Of War"',
+    'Traits=Class,Cleric Require="level >= 12","features.Replenishment Of War"',
   "Deity's Protection":
-    'Trait=Class,Cleric Require="level >= 14","features.Advanced Domain"',
+    'Traits=Class,Cleric Require="level >= 14","features.Advanced Domain"',
   'Extend Armament Alignment':
-    'Trait=Class,Cleric Require="level >= 14","features.Align Armament"',
+    'Traits=Class,Cleric Require="level >= 14","features.Align Armament"',
   'Fast Channel':
-    'Trait=Class,Cleric ' +
+    'Traits=Class,Cleric ' +
     'Require="level >= 14","features.Harmful Font || features.Healing Font"',
-  'Swift Banishment':'Trait=Class,Cleric Require="level >= 14"',
+  'Swift Banishment':'Traits=Class,Cleric Require="level >= 14"',
   'Eternal Bane':
-    'Trait=Class,Cleric Require="level >= 16","alignment =~ \'Evil\'"',
+    'Traits=Class,Cleric Require="level >= 16","alignment =~ \'Evil\'"',
   'Eternal Blessing':
-    'Trait=Class,Cleric Require="level >= 16","alignment =~ \'Good\'"',
-  'Resurrectionist':'Trait=Class,Cleric Require="level >= 16"',
+    'Traits=Class,Cleric Require="level >= 16","alignment =~ \'Good\'"',
+  'Resurrectionist':'Traits=Class,Cleric Require="level >= 16"',
   'Domain Wellspring':
-    'Trait=Class,Cleric Require="level >= 18","features.Domain Focus"',
+    'Traits=Class,Cleric Require="level >= 18","features.Domain Focus"',
   'Echoing Channel':
-    'Trait=Class,Cleric,Concentrate,Metamagic Require="level >= 18"',
+    'Traits=Class,Cleric,Concentrate,Metamagic Require="level >= 18"',
   'Improved Swift Banishment':
-    'Trait=Class,Cleric Require="level >= 18","features.Swift Banishment"',
-  "Avatar's Audience":'Trait=Class,Cleric Require="level >= 20"',
+    'Traits=Class,Cleric Require="level >= 18","features.Swift Banishment"',
+  "Avatar's Audience":'Traits=Class,Cleric Require="level >= 20"',
   'Maker Of Miracles':
-    'Trait=Class,Cleric Require="level >= 20","features.Miraculous Spell"',
-  'Metamagic Channel':'Trait=Class,Cleric,Concentrate Require="level >= 20"',
+    'Traits=Class,Cleric Require="level >= 20","features.Miraculous Spell"',
+  'Metamagic Channel':'Traits=Class,Cleric,Concentrate Require="level >= 20"',
 
   'Animal Companion':
-    'Trait=Class,Druid,Ranger ' +
+    'Traits=Class,Druid,Ranger ' +
     'Require="features.Animal || features.Order Explorer (Animal) || levels.Ranger"',
   'Leshy Familiar':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="features.Leaf || features.Order Explorer (Leaf)"',
   // Reach Spell as above
   'Storm Born':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="features.Storm || features.Order Explorer (Storm)"',
-  'Widen Spell':'Trait=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic',
+  'Widen Spell':'Traits=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic',
   'Wild Shape':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="features.Wild || features.Order Explorer (Wild)"',
-  'Call Of The Wild':'Trait=Class,Druid Require="level >= 2"',
+  'Call Of The Wild':'Traits=Class,Druid Require="level >= 2"',
   'Enhanced Familiar':
-    'Trait=Class,Druid,Sorcerer,Wizard ' +
+    'Traits=Class,Druid,Sorcerer,Wizard ' +
     'Require="level >= 2","features.Familiar || features.Leshy Familiar"',
   'Order Explorer (Animal)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 2","features.Animal == 0"',
   'Order Explorer (Leaf)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 2","features.Leaf == 0"',
   'Order Explorer (Storm)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 2","features.Storm == 0"',
   'Order Explorer (Wild)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 2","features.Wild == 0"',
   // Poison Resistance as above
   'Form Control':
-    'Trait=Class,Druid,Manipulate,Metamagic ' +
+    'Traits=Class,Druid,Manipulate,Metamagic ' +
     'Require="level >= 4","strengthModifier >= 2","features.Wild Shape"',
   'Mature Animal Companion':
-    'Trait=Class,Druid,Ranger ' +
+    'Traits=Class,Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 4 || levels.Ranger >= 6",' +
       '"features.Animal Companion"',
   'Order Magic (Animal)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 4","features.Order Explorer (Animal)"',
   'Order Magic (Leaf)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 4","features.Order Explorer (Leaf)"',
   'Order Magic (Storm)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 4","features.Order Explorer (Storm)"',
   'Order Magic (Wild)':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 4","features.Order Explorer (Wild)"',
   'Thousand Faces':
-    'Trait=Class,Druid Require="level >= 4","features.Wild Shape"',
+    'Traits=Class,Druid Require="level >= 4","features.Wild Shape"',
   'Woodland Stride':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 4",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Green Empathy':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Insect Shape':
-    'Trait=Class,Druid Require="level >= 6","features.Wild Shape"',
+    'Traits=Class,Druid Require="level >= 6","features.Wild Shape"',
   // Steady Spellcasting as above
   'Storm Retribution':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Storm || features.Order Explorer (Storm)",' +
       '"spells.Tempest Surge (P1 Foc Evo)"',
   'Ferocious Shape':
-    'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
-  'Fey Caller':'Trait=Class,Druid Require="level >= 8"',
+    'Traits=Class,Druid Require="level >= 8","features.Wild Shape"',
+  'Fey Caller':'Traits=Class,Druid Require="level >= 8"',
   'Incredible Companion':
-    'Trait=Class,Druid,Ranger ' +
+    'Traits=Class,Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 8 || levels.Ranger >= 10",' +
       '"features.Mature Animal Companion"',
   'Soaring Shape':
-    'Trait=Class,Druid Require="level >= 8","features.Wild Shape"',
+    'Traits=Class,Druid Require="level >= 8","features.Wild Shape"',
   'Wind Caller':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Storm || features.Order Explorer (Storm)"',
   'Elemental Shape':
-    'Trait=Class,Druid Require="level >= 10","features.Wild Shape"',
-  'Healing Transformation':'Trait=Class,Druid,Metamagic Require="level >= 10"',
+    'Traits=Class,Druid Require="level >= 10","features.Wild Shape"',
+  'Healing Transformation':'Traits=Class,Druid,Metamagic Require="level >= 10"',
   'Overwhelming Energy':
-    'Trait=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic ' +
+    'Traits=Class,Druid,Sorcerer,Wizard,Manipulate,Metamagic ' +
     'Require="level >= 10"',
   'Plant Shape':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Leaf || features.Order Explorer (Leaf) || features.Wild Shape"',
   'Side By Side':
-    'Trait=Class,Druid,Ranger ' +
+    'Traits=Class,Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 10 || levels.Ranger >= 12",' +
       '"features.Animal Companion"',
   'Dragon Shape':
-    'Trait=Class,Druid Require="level >= 12","features.Soaring Shape"',
+    'Traits=Class,Druid Require="level >= 12","features.Soaring Shape"',
   'Green Tongue':
-    'Trait=Class,Druid Require="level >= 12","features.Green Empathy"',
-  'Primal Focus':'Trait=Class,Druid Require="level >= 12"',
+    'Traits=Class,Druid Require="level >= 12","features.Green Empathy"',
+  'Primal Focus':'Traits=Class,Druid Require="level >= 12"',
   'Primal Summons':
-    'Trait=Class,Druid Require="level >= 12","features.Call Of The Wild"',
+    'Traits=Class,Druid Require="level >= 12","features.Call Of The Wild"',
   'Specialized Companion':
-    'Trait=Class,Druid,Ranger ' +
+    'Traits=Class,Druid,Ranger ' +
     'Require=' +
       '"levels.Druid >= 14 || levels.Ranger >= 16",' +
       '"features.Incredible Companion"',
-  'Timeless Nature':'Trait=Class,Druid Require="level >= 14"',
+  'Timeless Nature':'Traits=Class,Druid Require="level >= 14"',
   'Verdant Metamorphosis':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 14",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   // Effortless Concentration as above
   'Impaling Briars':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Monstrosity Shape':
-    'Trait=Class,Druid Require="level >= 16","features.Wild Shape"',
+    'Traits=Class,Druid Require="level >= 16","features.Wild Shape"',
   'Invoke Disaster':
-    'Trait=Class,Druid Require="level >= 18","features.Wind Caller"',
+    'Traits=Class,Druid Require="level >= 18","features.Wind Caller"',
   'Perfect Form Control':
-    'Trait=Class,Druid ' +
+    'Traits=Class,Druid ' +
     'Require="level >= 18","features.Form Control","strengthModifier >= 4"',
   'Primal Wellspring':
-    'Trait=Class,Druid Require="level >= 18","features.Primal Focus"',
-  "Hierophant's Power":'Trait=Class,Druid Require="level >= 20"',
+    'Traits=Class,Druid Require="level >= 18","features.Primal Focus"',
+  "Hierophant's Power":'Traits=Class,Druid Require="level >= 20"',
   'Leyline Conduit':
-    'Trait=Class,Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
+    'Traits=Class,Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
   'True Shapeshifter':
-    'Trait=Class,Druid,Concentrate ' +
+    'Traits=Class,Druid,Concentrate ' +
     'Require="level >= 20","features.Dragon Shape","features.Wild Shape"',
 
-  'Double Slice':'Trait=Class,Fighter',
-  'Exacting Strike':'Trait=Class,Fighter,Press',
-  'Point-Blank Shot':'Trait=Class,Fighter,Open,Stance',
-  'Power Attack':'Trait=Class,Fighter,Flourish',
-  'Reactive Shield':'Trait=Class,Fighter',
-  'Snagging Strike':'Trait=Class,Fighter',
+  'Double Slice':'Traits=Class,Fighter',
+  'Exacting Strike':'Traits=Class,Fighter,Press',
+  'Point-Blank Shot':'Traits=Class,Fighter,Open,Stance',
+  'Power Attack':'Traits=Class,Fighter,Flourish',
+  'Reactive Shield':'Traits=Class,Fighter',
+  'Snagging Strike':'Traits=Class,Fighter',
   // Sudden Charge as above
-  'Aggressive Block':'Trait=Class,Fighter Require="level >= 2"',
-  'Assisting Shot':'Trait=Class,Fighter,Press Require="level >= 2"',
-  'Brutish Shove':'Trait=Class,Fighter,Press Require="level >= 2"',
-  'Combat Grab':'Trait=Class,Fighter,Press Require="level >= 2"',
-  'Dueling Parry':'Trait=Class,Fighter Require="level >= 2"',
+  'Aggressive Block':'Traits=Class,Fighter Require="level >= 2"',
+  'Assisting Shot':'Traits=Class,Fighter,Press Require="level >= 2"',
+  'Brutish Shove':'Traits=Class,Fighter,Press Require="level >= 2"',
+  'Combat Grab':'Traits=Class,Fighter,Press Require="level >= 2"',
+  'Dueling Parry':'Traits=Class,Fighter Require="level >= 2"',
   'Intimidating Strike':
-    'Trait=Class,Fighter,Emotion,Fear,Mental Require="level >= 2"',
-  'Lunge':'Trait=Class,Fighter Require="level >= 2"',
-  'Double Shot':'Trait=Class,Fighter,Flourish Require="level >= 4"',
-  'Dual-Handed Assault':'Trait=Class,Fighter,Flourish Require="level >= 4"',
+    'Traits=Class,Fighter,Emotion,Fear,Mental Require="level >= 2"',
+  'Lunge':'Traits=Class,Fighter Require="level >= 2"',
+  'Double Shot':'Traits=Class,Fighter,Flourish Require="level >= 4"',
+  'Dual-Handed Assault':'Traits=Class,Fighter,Flourish Require="level >= 4"',
   'Knockdown':
-    'Trait=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
+    'Traits=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
   'Powerful Shove':
-    'Trait=Class,Fighter ' +
+    'Traits=Class,Fighter ' +
     'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
-  'Quick Reversal':'Trait=Class,Fighter,Flourish,Press Require="level >= 4"',
-  'Shielded Stride':'Trait=Class,Fighter Require="level >= 4"',
+  'Quick Reversal':'Traits=Class,Fighter,Flourish,Press Require="level >= 4"',
+  'Shielded Stride':'Traits=Class,Fighter Require="level >= 4"',
   // Swipe as above
-  'Twin Parry':'Trait=Class,Fighter,Ranger Require="level >= 4"',
-  'Advanced Weapon Training':'Trait=Class,Fighter Require="level >= 6"',
-  'Advantageous Assault':'Trait=Class,Fighter,Press Require="level >= 6"',
+  'Twin Parry':'Traits=Class,Fighter,Ranger Require="level >= 4"',
+  'Advanced Weapon Training':'Traits=Class,Fighter Require="level >= 6"',
+  'Advantageous Assault':'Traits=Class,Fighter,Press Require="level >= 6"',
   'Disarming Stance':
-    'Trait=Class,Fighter,Stance Require="level >= 6","rank.Athletics >= 1"',
+    'Traits=Class,Fighter,Stance Require="level >= 6","rank.Athletics >= 1"',
   'Furious Focus':
-    'Trait=Class,Fighter Require="level >= 6","features.Power Attack"',
-  "Guardian's Deflection":'Trait=Class,Fighter Require="level >= 6"',
-  'Reflexive Shield':'Trait=Class,Fighter Require="level >= 6"',
-  'Revealing Stab':'Trait=Class,Fighter Require="level >= 6"',
-  'Shatter Defenses':'Trait=Class,Fighter,Press Require="level >= 6"',
+    'Traits=Class,Fighter Require="level >= 6","features.Power Attack"',
+  "Guardian's Deflection":'Traits=Class,Fighter Require="level >= 6"',
+  'Reflexive Shield':'Traits=Class,Fighter Require="level >= 6"',
+  'Revealing Stab':'Traits=Class,Fighter Require="level >= 6"',
+  'Shatter Defenses':'Traits=Class,Fighter,Press Require="level >= 6"',
   'Triple Shot':
-    'Trait=Class,Fighter Require="level >= 6","features.Double Shot"',
+    'Traits=Class,Fighter Require="level >= 6","features.Double Shot"',
   'Blind-Fight':
-    'Trait=Class,Fighter,Ranger,Rogue ' +
+    'Traits=Class,Fighter,Ranger,Rogue ' +
     'Require="level >= 8","rank.Perception >= 3"',
   'Dueling Riposte':
-    'Trait=Class,Fighter Require="level >= 8","features.Dueling Parry"',
-  'Felling Strike':'Trait=Class,Fighter Require="level >= 8"',
-  'Incredible Aim':'Trait=Class,Fighter,Concentrate Require="level >= 8"',
-  'Mobile Shot Stance':'Trait=Class,Fighter,Stance Require="level >= 8"',
-  'Positioning Assault':'Trait=Class,Fighter,Flourish Require="level >= 8"',
-  'Agile Grace':'Trait=Class,Fighter Require="level >= 10"',
-  'Certain Strike':'Trait=Class,Fighter,Press Require="level >= 10"',
-  'Combat Reflexes':'Trait=Class,Fighter Require="level >= 10"',
-  'Debilitating Shot':'Trait=Class,Fighter,Flourish Require="level >= 10"',
+    'Traits=Class,Fighter Require="level >= 8","features.Dueling Parry"',
+  'Felling Strike':'Traits=Class,Fighter Require="level >= 8"',
+  'Incredible Aim':'Traits=Class,Fighter,Concentrate Require="level >= 8"',
+  'Mobile Shot Stance':'Traits=Class,Fighter,Stance Require="level >= 8"',
+  'Positioning Assault':'Traits=Class,Fighter,Flourish Require="level >= 8"',
+  'Agile Grace':'Traits=Class,Fighter Require="level >= 10"',
+  'Certain Strike':'Traits=Class,Fighter,Press Require="level >= 10"',
+  'Combat Reflexes':'Traits=Class,Fighter Require="level >= 10"',
+  'Debilitating Shot':'Traits=Class,Fighter,Flourish Require="level >= 10"',
   'Disarming Twist':
-    'Trait=Class,Fighter,Press Require="level >= 10","rank.Athletics >= 1"',
-  'Disruptive Stance':'Trait=Class,Fighter,Stance Require="level >= 10"',
-  'Fearsome Brute':'Trait=Class,Fighter Require="level >= 10"',
+    'Traits=Class,Fighter,Press Require="level >= 10","rank.Athletics >= 1"',
+  'Disruptive Stance':'Traits=Class,Fighter,Stance Require="level >= 10"',
+  'Fearsome Brute':'Traits=Class,Fighter Require="level >= 10"',
   'Improved Knockdown':
-    'Trait=Class,Fighter Require="level >= 10","features.Knockdown"',
-  'Mirror Shield':'Trait=Class,Fighter Require="level >= 10"',
+    'Traits=Class,Fighter Require="level >= 10","features.Knockdown"',
+  'Mirror Shield':'Traits=Class,Fighter Require="level >= 10"',
   'Twin Riposte':
-    'Trait=Class,Fighter,Ranger Require="level >= 10","features.Twin Parry"',
-  'Brutal Finish':'Trait=Class,Fighter,Press Require="level >= 12"',
+    'Traits=Class,Fighter,Ranger Require="level >= 10","features.Twin Parry"',
+  'Brutal Finish':'Traits=Class,Fighter,Press Require="level >= 12"',
   'Dueling Dance':
-    'Trait=Class,Fighter,Stance Require="level >= 12","features.Dueling Parry"',
+    'Traits=Class,Fighter,Stance Require="level >= 12","features.Dueling Parry"',
   'Flinging Shove':
-    'Trait=Class,Fighter ' +
+    'Traits=Class,Fighter ' +
     'Require="level >= 12","features.Aggressive Block||features.Brutish Shove"',
   'Improved Dueling Riposte':
-    'Trait=Class,Fighter Require="level >= 12","features.Dueling Riposte"',
+    'Traits=Class,Fighter Require="level >= 12","features.Dueling Riposte"',
   'Incredible Ricochet':
-    'Trait=Class,Fighter,Concentrate,Press ' +
+    'Traits=Class,Fighter,Concentrate,Press ' +
     'Require="level >= 12","features.Incredible Aim"',
   'Lunging Stance':
-    'Trait=Class,Fighter,Stance ' +
+    'Traits=Class,Fighter,Stance ' +
     'Require="level >= 12","features.Attack Of Opportunity","features.Lunge"',
-  "Paragon's Guard":'Trait=Class,Fighter,Stance Require="level >= 12"',
-  'Spring Attack':'Trait=Class,Fighter,Press Require="level >= 12"',
-  'Desperate Finisher':'Trait=Class,Fighter Require="level >= 14"',
-  'Determination':'Trait=Class,Fighter,Concentrate Require="level >= 14"',
-  'Guiding Finish':'Trait=Class,Fighter,Press Require="level >= 14"',
+  "Paragon's Guard":'Traits=Class,Fighter,Stance Require="level >= 12"',
+  'Spring Attack':'Traits=Class,Fighter,Press Require="level >= 12"',
+  'Desperate Finisher':'Traits=Class,Fighter Require="level >= 14"',
+  'Determination':'Traits=Class,Fighter,Concentrate Require="level >= 14"',
+  'Guiding Finish':'Traits=Class,Fighter,Press Require="level >= 14"',
   'Guiding Riposte':
-    'Trait=Class,Fighter Require="level >= 14","features.Dueling Riposte"',
+    'Traits=Class,Fighter Require="level >= 14","features.Dueling Riposte"',
   'Improved Twin Riposte':
-    'Trait=Class,Fighter,Ranger ' +
+    'Traits=Class,Fighter,Ranger ' +
     'Require=' +
       '"levels.Fighter >= 14 || levels.Ranger >= 16",' +
       '"features.Twin Riposte"',
   'Stance Savant':
-    'Trait=Class,Fighter,Monk ' +
+    'Traits=Class,Fighter,Monk ' +
     'Require="levels.Fighter >= 14 || levels.Monk >= 12"',
   'Two-Weapon Flurry':
-    'Trait=Class,Fighter,Flourish,Press Require="level >= 14"',
+    'Traits=Class,Fighter,Flourish,Press Require="level >= 14"',
   // Whirlwind Strike as above
   'Graceful Poise':
-    'Trait=Class,Fighter,Stance Require="level >= 16","features.Double Slice"',
+    'Traits=Class,Fighter,Stance Require="level >= 16","features.Double Slice"',
   'Improved Reflexive Shield':
-    'Trait=Class,Fighter Require="level >= 16","features.Reflexive Shield"',
+    'Traits=Class,Fighter Require="level >= 16","features.Reflexive Shield"',
   'Multishot Stance':
-    'Trait=Class,Fighter,Stance Require="level >= 16","features.Triple Shot"',
+    'Traits=Class,Fighter,Stance Require="level >= 16","features.Triple Shot"',
   'Twinned Defense':
-    'Trait=Class,Fighter,Stance Require="level >= 16","features.Twin Parry"',
+    'Traits=Class,Fighter,Stance Require="level >= 16","features.Twin Parry"',
   'Impossible Volley':
-    'Trait=Class,Fighter,Ranger,Flourish,Open Require="level >= 18"',
-  'Savage Critical':'Trait=Class,Fighter Require="level >= 18"',
-  'Boundless Reprisals':'Trait=Class,Fighter Require="level >= 20"',
-  'Weapon Supremacy':'Trait=Class,Fighter Require="level >= 20"',
+    'Traits=Class,Fighter,Ranger,Flourish,Open Require="level >= 18"',
+  'Savage Critical':'Traits=Class,Fighter Require="level >= 18"',
+  'Boundless Reprisals':'Traits=Class,Fighter Require="level >= 20"',
+  'Weapon Supremacy':'Traits=Class,Fighter Require="level >= 20"',
 
-  'Crane Stance':'Trait=Class,Monk,Stance',
-  'Dragon Stance':'Trait=Class,Monk,Stance',
-  'Ki Rush':'Trait=Class,Monk',
-  'Ki Strike':'Trait=Class,Monk',
-  'Monastic Weaponry':'Trait=Class,Monk',
-  'Mountain Stance':'Trait=Class,Monk,Stance',
-  'Tiger Stance':'Trait=Class,Monk,Stance',
-  'Wolf Stance':'Trait=Class,Monk,Stance',
-  'Brawling Focus':'Trait=Class,Monk Require="level >= 2"',
-  'Crushing Grab':'Trait=Class,Monk Require="level >= 2"',
-  'Dancing Leaf':'Trait=Class,Monk Require="level >= 2"',
-  'Elemental Fist':'Trait=Class,Monk Require="level >= 2","features.Ki Strike"',
+  'Crane Stance':'Traits=Class,Monk,Stance',
+  'Dragon Stance':'Traits=Class,Monk,Stance',
+  'Ki Rush':'Traits=Class,Monk',
+  'Ki Strike':'Traits=Class,Monk',
+  'Monastic Weaponry':'Traits=Class,Monk',
+  'Mountain Stance':'Traits=Class,Monk,Stance',
+  'Tiger Stance':'Traits=Class,Monk,Stance',
+  'Wolf Stance':'Traits=Class,Monk,Stance',
+  'Brawling Focus':'Traits=Class,Monk Require="level >= 2"',
+  'Crushing Grab':'Traits=Class,Monk Require="level >= 2"',
+  'Dancing Leaf':'Traits=Class,Monk Require="level >= 2"',
+  'Elemental Fist':'Traits=Class,Monk Require="level >= 2","features.Ki Strike"',
   'Stunning Fist':
-    'Trait=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
-  'Deflect Arrow':'Trait=Class,Monk Require="level >= 4"',
+    'Traits=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
+  'Deflect Arrow':'Traits=Class,Monk Require="level >= 4"',
   'Flurry Of Maneuvers':
-    'Trait=Class,Monk Require="level >= 4","rank.Athletics >= 2"',
-  'Flying Kick':'Trait=Class,Monk Require="level >= 4"',
-  'Guarded Movement':'Trait=Class,Monk Require="level >= 4"',
-  'Stand Still':'Trait=Class,Monk Require="level >= 4"',
+    'Traits=Class,Monk Require="level >= 4","rank.Athletics >= 2"',
+  'Flying Kick':'Traits=Class,Monk Require="level >= 4"',
+  'Guarded Movement':'Traits=Class,Monk Require="level >= 4"',
+  'Stand Still':'Traits=Class,Monk Require="level >= 4"',
   'Wholeness Of Body':
-    'Trait=Class,Monk Require="level >= 4","features.Ki Spells"',
+    'Traits=Class,Monk Require="level >= 4","features.Ki Spells"',
   'Abundant Step':
-    'Trait=Class,Monk ' +
+    'Traits=Class,Monk ' +
     'Require="level >= 6","features.Incredible Movement","features.Ki Spells"',
   'Crane Flutter':
-    'Trait=Class,Monk Require="level >= 6","features.Crane Stance"',
+    'Traits=Class,Monk Require="level >= 6","features.Crane Stance"',
   'Dragon Roar':
-    'Trait=Class,Monk,Auditory,Emotion,Fear,Mental ' +
+    'Traits=Class,Monk,Auditory,Emotion,Fear,Mental ' +
     'Require="level >= 6","features.Dragon Stance"',
   'Ki Blast':
-    'Trait=Class,Monk Require="level >= 6","features.Ki Spells"',
+    'Traits=Class,Monk Require="level >= 6","features.Ki Spells"',
   'Mountain Stronghold':
-    'Trait=Class,Monk Require="level >= 6","features.Mountain Stance"',
+    'Traits=Class,Monk Require="level >= 6","features.Mountain Stance"',
   'Tiger Slash':
-    'Trait=Class,Monk Require="level >= 6","features.Tiger Stance"',
-  'Water Step':'Trait=Class,Monk Require="level >= 6"',
-  'Whirling Throw':'Trait=Class,Monk Require="level >= 6"',
+    'Traits=Class,Monk Require="level >= 6","features.Tiger Stance"',
+  'Water Step':'Traits=Class,Monk Require="level >= 6"',
+  'Whirling Throw':'Traits=Class,Monk Require="level >= 6"',
   'Wolf Drag':
-    'Trait=Class,Monk Require="level >= 6","features.Wolf Stance"',
+    'Traits=Class,Monk Require="level >= 6","features.Wolf Stance"',
   'Arrow Snatching':
-    'Trait=Class,Monk Require="level >= 8","features.Deflect Arrow"',
-  'Ironblood Stance':'Trait=Class,Monk,Stance Require="level >= 8"',
+    'Traits=Class,Monk Require="level >= 8","features.Deflect Arrow"',
+  'Ironblood Stance':'Traits=Class,Monk,Stance Require="level >= 8"',
   'Mixed Maneuver':
-    'Trait=Class,Monk Require="level >= 8","rank.Athletics >= 3"',
-  'Tangled Forest Stance':'Trait=Class,Monk,Stance Require="level >= 8"',
-  'Wall Run':'Trait=Class,Monk Require="level >= 8"',
+    'Traits=Class,Monk Require="level >= 8","rank.Athletics >= 3"',
+  'Tangled Forest Stance':'Traits=Class,Monk,Stance Require="level >= 8"',
+  'Wall Run':'Traits=Class,Monk Require="level >= 8"',
   'Wild Winds Initiate':
-    'Trait=Class,Monk Require="level >= 8","features.Ki Spells"',
-  'Knockback Strike':'Trait=Class,Monk,Concentrate Require="level >= 10"',
-  'Sleeper Hold':'Trait=Class,Monk,Incapacitation Require="level >= 10"',
+    'Traits=Class,Monk Require="level >= 8","features.Ki Spells"',
+  'Knockback Strike':'Traits=Class,Monk,Concentrate Require="level >= 10"',
+  'Sleeper Hold':'Traits=Class,Monk,Incapacitation Require="level >= 10"',
   'Wind Jump':
-    'Trait=Class,Monk Require="level >= 10","features.Ki Spells"',
-  'Winding Flow':'Trait=Class,Monk Require="level >= 10"',
-  'Diamond Soul':'Trait=Class,Monk Require="level >= 12"',
-  'Disrupt Ki':'Trait=Class,Monk,Negative Require="level >= 12"',
+    'Traits=Class,Monk Require="level >= 10","features.Ki Spells"',
+  'Winding Flow':'Traits=Class,Monk Require="level >= 10"',
+  'Diamond Soul':'Traits=Class,Monk Require="level >= 12"',
+  'Disrupt Ki':'Traits=Class,Monk,Negative Require="level >= 12"',
   'Improved Knockback':
-    'Trait=Class,Monk Require="level >= 12","rank.Athletics >= 3"',
+    'Traits=Class,Monk Require="level >= 12","rank.Athletics >= 3"',
   'Meditative Focus':
-    'Trait=Class,Monk Require="level >= 12","features.Ki Spells"',
+    'Traits=Class,Monk Require="level >= 12","features.Ki Spells"',
   // Stance Savant as above
   'Ironblood Surge':
-    'Trait=Class,Monk Require="level >= 14","features.Ironblood Stance"',
+    'Traits=Class,Monk Require="level >= 14","features.Ironblood Stance"',
   'Mountain Quake':
-    'Trait=Class,Monk Require="level >= 14","features.Mountain Stronghold"',
+    'Traits=Class,Monk Require="level >= 14","features.Mountain Stronghold"',
   'Tangled Forest Rake':
-    'Trait=Class,Monk Require="level >= 14","features.Tangled Forest Stance"',
-  'Timeless Body':'Trait=Class,Monk Require="level >= 14"',
-  'Tongue Of Sun And Moon':'Trait=Class,Monk Require="level >= 14"',
+    'Traits=Class,Monk Require="level >= 14","features.Tangled Forest Stance"',
+  'Timeless Body':'Traits=Class,Monk Require="level >= 14"',
+  'Tongue Of Sun And Moon':'Traits=Class,Monk Require="level >= 14"',
   'Wild Winds Gust':
-    'Trait=Class,Monk,Air,Concentrate,Evocation,Manipulate ' +
+    'Traits=Class,Monk,Air,Concentrate,Evocation,Manipulate ' +
     'Require="level >= 14","features.Wild Winds Initiate"',
   'Enlightened Presence':
-    'Trait=Class,Monk,Aura,Emotion,Mental Require="level >= 16"',
+    'Traits=Class,Monk,Aura,Emotion,Mental Require="level >= 16"',
   'Master Of Many Styles':
-    'Trait=Class,Monk Require="level >= 16","features.Stance Savant"',
-  'Quivering Palm':'Trait=Class,Monk Require="level>=16","features.Ki Spells"',
-  'Shattering Strike':'Trait=Class,Monk Require="level >= 16"',
-  'Diamond Fists':'Trait=Class,Monk Require="level >= 18"',
+    'Traits=Class,Monk Require="level >= 16","features.Stance Savant"',
+  'Quivering Palm':'Traits=Class,Monk Require="level>=16","features.Ki Spells"',
+  'Shattering Strike':'Traits=Class,Monk Require="level >= 16"',
+  'Diamond Fists':'Traits=Class,Monk Require="level >= 18"',
   'Empty Body':
-    'Trait=Class,Monk Require="level >= 18","features.Ki Spells"',
+    'Traits=Class,Monk Require="level >= 18","features.Ki Spells"',
   'Meditative Wellspring':
-    'Trait=Class,Monk Require="level >= 18","features.Meditative Focus"',
-  'Swift River':'Trait=Class,Monk Require="level >= 18"',
-  'Enduring Quickness':'Trait=Class,Monk Require="level >= 20"',
-  'Fuse Stance':'Trait=Class,Monk Require="level >= 20","sumStanceFeats >=2 "',
-  'Impossible Technique':'Trait=Class,Monk,Fortune Require="level >= 20"',
+    'Traits=Class,Monk Require="level >= 18","features.Meditative Focus"',
+  'Swift River':'Traits=Class,Monk Require="level >= 18"',
+  'Enduring Quickness':'Traits=Class,Monk Require="level >= 20"',
+  'Fuse Stance':'Traits=Class,Monk Require="level >= 20","sumStanceFeats >=2 "',
+  'Impossible Technique':'Traits=Class,Monk,Fortune Require="level >= 20"',
 
   // Animal Companion as above
-  'Crossbow Ace':'Trait=Class,Ranger',
-  'Hunted Shot':'Trait=Class,Ranger,Flourish',
-  'Monster Hunter':'Trait=Class,Ranger',
-  'Twin Takedown':'Trait=Class,Ranger,Flourish',
-  'Favored Terrain (%terrain)':'Trait=Class,Ranger Require="level >= 2"',
-  "Hunter's Aim":'Trait=Class,Ranger,Concentrate Require="level >= 2"',
+  'Crossbow Ace':'Traits=Class,Ranger',
+  'Hunted Shot':'Traits=Class,Ranger,Flourish',
+  'Monster Hunter':'Traits=Class,Ranger',
+  'Twin Takedown':'Traits=Class,Ranger,Flourish',
+  'Favored Terrain (%terrain)':'Traits=Class,Ranger Require="level >= 2"',
+  "Hunter's Aim":'Traits=Class,Ranger,Concentrate Require="level >= 2"',
   'Monster Warden':
-    'Trait=Class,Ranger Require="level >= 2","features.Monster Hunter"',
-  'Quick Draw':'Trait=Class,Ranger,Rogue Require="level >= 2"',
-  'Wild Empathy':'Trait=Class,Ranger Require="level >= 2"',
+    'Traits=Class,Ranger Require="level >= 2","features.Monster Hunter"',
+  'Quick Draw':'Traits=Class,Ranger,Rogue Require="level >= 2"',
+  'Wild Empathy':'Traits=Class,Ranger Require="level >= 2"',
   "Companion's Cry":
-    'Trait=Class,Ranger Require="level >= 4","features.Animal Companion"',
-  'Disrupt Prey':'Trait=Class,Ranger Require="level >= 4"',
-  'Far Shot':'Trait=Class,Ranger Require="level >= 4"',
-  'Favored Enemy':'Trait=Class,Ranger Require="level >= 4"',
-  'Running Reload':'Trait=Class,Ranger Require="level >= 4"',
-  "Scout's Warning":'Trait=Class,Ranger,Rogue Require="level >= 4"',
+    'Traits=Class,Ranger Require="level >= 4","features.Animal Companion"',
+  'Disrupt Prey':'Traits=Class,Ranger Require="level >= 4"',
+  'Far Shot':'Traits=Class,Ranger Require="level >= 4"',
+  'Favored Enemy':'Traits=Class,Ranger Require="level >= 4"',
+  'Running Reload':'Traits=Class,Ranger Require="level >= 4"',
+  "Scout's Warning":'Traits=Class,Ranger,Rogue Require="level >= 4"',
   'Snare Specialist':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 4",' +
       '"rank.Crafting >= 2",' +
@@ -2405,297 +2405,297 @@ Pathfinder2E.FEATS = {
   // Twin Parry as above
   // Mature Animal Companion as above
   'Quick Snares':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 6",' +
       '"rank.Crafting >= 2",' +
       '"features.Snare Specialist"',
-  'Skirmish Strike':'Trait=Class,Ranger,Rogue,Flourish Require="level >= 6"',
-  'Snap Shot':'Trait=Class,Ranger Require="level >= 6"',
+  'Skirmish Strike':'Traits=Class,Ranger,Rogue,Flourish Require="level >= 6"',
+  'Snap Shot':'Traits=Class,Ranger Require="level >= 6"',
   'Swift Tracker':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 6",' +
       '"rank.Survival >= 2",' +
       '"features.Experienced Tracker"',
   // Blind-Fight as above
   'Deadly Aim':
-    'Trait=Class,Ranger,Open ' +
+    'Traits=Class,Ranger,Open ' +
     'Require="level >= 8","features.Weapon Specialization"',
-  'Hazard Finder':'Trait=Class,Ranger Require="level >= 8"',
+  'Hazard Finder':'Traits=Class,Ranger Require="level >= 8"',
   'Powerful Snares':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 8",' +
       '"rank.Crafting >= 3",' +
       '"features.Snare Specialist"',
   'Terrain Master':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 8",' +
       '"rank.Survival >= 3",' +
       '"features.Favored Terrain"',
-  "Warden's Boon":'Trait=Class,Ranger Require="level >= 8"',
+  "Warden's Boon":'Traits=Class,Ranger Require="level >= 8"',
   'Camouflage':
-    'Trait=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
+    'Traits=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
   // Incredible Companion as above
   'Master Monster Hunter':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 10",' +
       '"rank.Nature >= 3",' +
       '"features.Monster Hunter"',
-  'Penetrating Shot':'Trait=Class,Ranger,Open Require="level >= 10"',
+  'Penetrating Shot':'Traits=Class,Ranger,Open Require="level >= 10"',
   // Twin Riposte as above
   "Warden's Step":
-    'Trait=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
-  'Distracting Shot':'Trait=Class,Ranger Require="level >= 12"',
-  'Double Prey':'Trait=Class,Ranger Require="level >= 12"',
+    'Traits=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
+  'Distracting Shot':'Traits=Class,Ranger Require="level >= 12"',
+  'Double Prey':'Traits=Class,Ranger Require="level >= 12"',
   'Lightning Snares':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 12",' +
       '"rank.Crafting >= 3",' +
       '"features.Quick Snares",' +
       '"features.Snare Specialist"',
-  'Second Sting':'Trait=Class,Ranger,Press Require="level >= 12"',
+  'Second Sting':'Traits=Class,Ranger,Press Require="level >= 12"',
   // Side By Side as above
-  'Sense The Unseen':'Trait=Class,Ranger,Rogue Require="level >= 14"',
+  'Sense The Unseen':'Traits=Class,Ranger,Rogue Require="level >= 14"',
   'Shared Prey':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require="level >= 14","features.Double Prey","features.Warden\'s Boon"',
   'Stealthy Companion':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require="level >= 14","features.Animal Companion","features.Camouflage"',
   'Targeting Shot':
-    'Trait=Class,Ranger,Concentrate,Press ' +
+    'Traits=Class,Ranger,Concentrate,Press ' +
     'Require="level >= 14","features.Hunter\'s Aim"',
-  "Warden's Guidance":'Trait=Class,Ranger Require="level >= 14"',
+  "Warden's Guidance":'Traits=Class,Ranger Require="level >= 14"',
   'Greater Distracting Shot':
-    'Trait=Class,Ranger Require="level >= 16","features.Distracting Shot"',
+    'Traits=Class,Ranger Require="level >= 16","features.Distracting Shot"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 16",' +
       '"rank.Nature >= 4",' +
       '"features.Master Monster Hunter"',
   // Specialized Companion as above
   'Ubiquitous Snares':
-    'Trait=Class,Ranger Require="level >= 16","features.Snare Specialist"',
-  'Impossible Flurry':'Trait=Class,Ranger,Flourish,Open Require="level >= 18"',
+    'Traits=Class,Ranger Require="level >= 16","features.Snare Specialist"',
+  'Impossible Flurry':'Traits=Class,Ranger,Flourish,Open Require="level >= 18"',
   // Impossible Volley as above
   'Manifold Edge':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Hunter\'s Edge",' +
       '"features.Masterful Hunter"',
   'Masterful Companion':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Masterful Hunter",' +
       '"features.Animal Companion"',
-  'Perfect Shot':'Trait=Class,Ranger,Flourish Require="level >= 18"',
+  'Perfect Shot':'Traits=Class,Ranger,Flourish Require="level >= 18"',
   'Shadow Hunter':
-    'Trait=Class,Ranger Require="level >= 18","features.Camouflage"',
+    'Traits=Class,Ranger Require="level >= 18","features.Camouflage"',
   'Legendary Shot':
-    'Trait=Class,Ranger ' +
+    'Traits=Class,Ranger ' +
     'Require=' +
       '"level >= 20",' +
       '"features.Masterful Hunter",' +
       '"rank.Perception >= 4",' +
       '"features.Far Shot"',
   'To The Ends Of The Earth':
-    'Trait=Class,Ranger Require="level >= 20","rank.Survival >= 4"',
+    'Traits=Class,Ranger Require="level >= 20","rank.Survival >= 4"',
   'Triple Threat':
-    'Trait=Class,Ranger Require="level >= 20","features.Shared Prey"',
+    'Traits=Class,Ranger Require="level >= 20","features.Shared Prey"',
   'Ultimate Skirmisher':
-    'Trait=Class,Ranger Require="level >= 20","features.Wild Stride"',
+    'Traits=Class,Ranger Require="level >= 20","features.Wild Stride"',
 
-  'Nimble Dodge':'Trait=Class,Rogue',
-  'Trap Finder':'Trait=Class,Rogue',
-  'Twin Feint':'Trait=Class,Rogue',
+  'Nimble Dodge':'Traits=Class,Rogue',
+  'Trap Finder':'Traits=Class,Rogue',
+  'Twin Feint':'Traits=Class,Rogue',
   "You're Next":
-    'Trait=Class,Rogue,Emotion,Fear,Mental Require="rank.Intimidation >= 1"',
+    'Traits=Class,Rogue,Emotion,Fear,Mental Require="rank.Intimidation >= 1"',
   'Brutal Beating':
-    'Trait=Class,Rogue Require="level >= 2","features.Ruffian"',
+    'Traits=Class,Rogue Require="level >= 2","features.Ruffian"',
   'Distracting Feint':
-    'Trait=Class,Rogue Require="level >= 2","features.Scoundrel"',
-  'Minor Magic (Arcane)':'Trait=Class,Rogue Require="level >= 2"',
-  'Minor Magic (Divine)':'Trait=Class,Rogue Require="level >= 2"',
-  'Minor Magic (Occult)':'Trait=Class,Rogue Require="level >= 2"',
-  'Minor Magic (Primal)':'Trait=Class,Rogue Require="level >= 2"',
-  'Mobility':'Trait=Class,Rogue Require="level >= 2"',
+    'Traits=Class,Rogue Require="level >= 2","features.Scoundrel"',
+  'Minor Magic (Arcane)':'Traits=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Divine)':'Traits=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Occult)':'Traits=Class,Rogue Require="level >= 2"',
+  'Minor Magic (Primal)':'Traits=Class,Rogue Require="level >= 2"',
+  'Mobility':'Traits=Class,Rogue Require="level >= 2"',
   // Quick Draw as above
   'Unbalancing Blow':
-    'Trait=Class,Rogue Require="level >= 2","features.Thief"',
-  'Battle Assessment':'Trait=Class,Rogue,Secret Require="level >= 4"',
-  'Dread Striker':'Trait=Class,Rogue Require="level >= 4"',
-  'Magical Trickster':'Trait=Class,Rogue Require="level >= 4"',
-  'Poison Weapon':'Trait=Class,Rogue,Manipulate Require="level >= 4"',
-  'Reactive Pursuit':'Trait=Class,Rogue Require="level >= 4"',
-  'Sabotage':'Trait=Class,Rogue,Incapacitation Require="level >= 4"',
+    'Traits=Class,Rogue Require="level >= 2","features.Thief"',
+  'Battle Assessment':'Traits=Class,Rogue,Secret Require="level >= 4"',
+  'Dread Striker':'Traits=Class,Rogue Require="level >= 4"',
+  'Magical Trickster':'Traits=Class,Rogue Require="level >= 4"',
+  'Poison Weapon':'Traits=Class,Rogue,Manipulate Require="level >= 4"',
+  'Reactive Pursuit':'Traits=Class,Rogue Require="level >= 4"',
+  'Sabotage':'Traits=Class,Rogue,Incapacitation Require="level >= 4"',
   // Scout's Warning as above
-  'Gang Up':'Trait=Class,Rogue Require="level >= 6"',
-  'Light Step':'Trait=Class,Rogue Require="level >= 6"',
+  'Gang Up':'Traits=Class,Rogue Require="level >= 6"',
+  'Light Step':'Traits=Class,Rogue Require="level >= 6"',
   // Skirmish Strike as above
-  'Twist The Knife':'Trait=Class,Rogue Require="level >= 6"',
+  'Twist The Knife':'Traits=Class,Rogue Require="level >= 6"',
   // Blind-Fight as above
-  'Delay Trap':'Trait=Class,Rogue Require="level >= 8"',
+  'Delay Trap':'Traits=Class,Rogue Require="level >= 8"',
   'Improved Poison Weapon':
-    'Trait=Class,Rogue Require="level >= 8","features.Poison Weapon"',
+    'Traits=Class,Rogue Require="level >= 8","features.Poison Weapon"',
   'Nimble Roll':
-    'Trait=Class,Rogue Require="level >= 8","features.Nimble Dodge"',
-  'Opportune Backstab':'Trait=Class,Rogue Require="level >= 8"',
-  'Sidestep':'Trait=Class,Rogue Require="level >= 8"',
+    'Traits=Class,Rogue Require="level >= 8","features.Nimble Dodge"',
+  'Opportune Backstab':'Traits=Class,Rogue Require="level >= 8"',
+  'Sidestep':'Traits=Class,Rogue Require="level >= 8"',
   'Sly Striker':
-    'Trait=Class,Rogue Require="level >= 8","features.Sneak Attack"',
+    'Traits=Class,Rogue Require="level >= 8","features.Sneak Attack"',
   'Precise Debilitations':
-    'Trait=Class,Rogue ' +
+    'Traits=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Thief",' +
       '"features.Debilitating Strike"',
   'Sneak Savant':
-    'Trait=Class,Rogue Require="level >= 10","rank.Stealth >= 3"',
+    'Traits=Class,Rogue Require="level >= 10","rank.Stealth >= 3"',
   'Tactical Debilitations':
-    'Trait=Class,Rogue ' +
+    'Traits=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Scoundrel",' +
       '"features.Debilitating Strike"',
   'Vicious Debilitations':
-    'Trait=Class,Rogue ' +
+    'Traits=Class,Rogue ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Ruffian",' +
       '"features.Debilitating Strike"',
   'Critical Debilitation':
-    'Trait=Class,Rogue,Incapacitation ' +
+    'Traits=Class,Rogue,Incapacitation ' +
     'Require="level >= 12","features.Debilitating Strike"',
-  'Fantastic Leap':'Trait=Class,Rogue Require="level >= 12"',
-  'Felling Shot':'Trait=Class,Rogue Require="level >= 12"',
-  'Reactive Interference':'Trait=Class,Rogue Require="level >= 12"',
-  'Spring From The Shadows':'Trait=Class,Rogue,Flourish Require="level >= 12"',
-  'Defensive Roll':'Trait=Class,Rogue Require="level >= 14"',
-  'Instant Opening':'Trait=Class,Rogue,Concentrate Require="level >= 14"',
-  'Leave An Opening':'Trait=Class,Rogue Require="level >= 14"',
+  'Fantastic Leap':'Traits=Class,Rogue Require="level >= 12"',
+  'Felling Shot':'Traits=Class,Rogue Require="level >= 12"',
+  'Reactive Interference':'Traits=Class,Rogue Require="level >= 12"',
+  'Spring From The Shadows':'Traits=Class,Rogue,Flourish Require="level >= 12"',
+  'Defensive Roll':'Traits=Class,Rogue Require="level >= 14"',
+  'Instant Opening':'Traits=Class,Rogue,Concentrate Require="level >= 14"',
+  'Leave An Opening':'Traits=Class,Rogue Require="level >= 14"',
   // Sense The Unseen as above
   'Blank Slate':
-    'Trait=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
+    'Traits=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
   'Cloud Step':
-    'Trait=Class,Rogue Require="level >= 16","rank.Acrobatics >= 4"',
-  'Cognitive Loophole':'Trait=Class,Rogue Require="level >= 16"',
-  'Dispelling Slice':'Trait=Class,Rogue Require="level >= 16"',
+    'Traits=Class,Rogue Require="level >= 16","rank.Acrobatics >= 4"',
+  'Cognitive Loophole':'Traits=Class,Rogue Require="level >= 16"',
+  'Dispelling Slice':'Traits=Class,Rogue Require="level >= 16"',
   'Perfect Distraction':
-    'Trait=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
+    'Traits=Class,Rogue Require="level >= 16","rank.Deception >= 4"',
   'Implausible Infiltration':
-    'Trait=Class,Rogue,Magical,Move ' +
+    'Traits=Class,Rogue,Magical,Move ' +
     'Require=' +
       '"level >= 18",' +
       '"rank.Acrobatics >= 4",' +
       '"features.Quick Squeeze"',
-  'Powerful Sneak':'Trait=Class,Rogue Require="level >= 18"',
-  "Trickster's Ace":'Trait=Class,Rogue,Concentrate Require="level >= 18"',
+  'Powerful Sneak':'Traits=Class,Rogue Require="level >= 18"',
+  "Trickster's Ace":'Traits=Class,Rogue,Concentrate Require="level >= 18"',
   'Hidden Paragon':
-    'Trait=Class,Rogue Require="level >= 20","rank.Stealth >= 4"',
+    'Traits=Class,Rogue Require="level >= 20","rank.Stealth >= 4"',
   'Impossible Striker':
-    'Trait=Class,Rogue Require="level >= 20","features.Sly Striker"',
+    'Traits=Class,Rogue Require="level >= 20","features.Sly Striker"',
   'Reactive Distraction':
-    'Trait=Class,Rogue,Concentrate,Manipulate ' +
+    'Traits=Class,Rogue,Concentrate,Manipulate ' +
     'Require=' +
       '"level >= 20",' +
       '"rank.Deception >= 4",' +
       '"features.Perfect Distraction"',
 
-  'Counterspell':'Trait=Class,Sorcerer,Wizard,Abjuration',
-  'Dangerous Sorcery':'Trait=Class,Sorcerer',
-  'Familiar':'Trait=Class,Sorcerer,Wizard',
+  'Counterspell':'Traits=Class,Sorcerer,Wizard,Abjuration',
+  'Dangerous Sorcery':'Traits=Class,Sorcerer',
+  'Familiar':'Traits=Class,Sorcerer,Wizard',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
   // Enhanced Familiar as above
   'Arcane Evolution':
-    'Trait=Class,Sorcerer,Arcane ' +
+    'Traits=Class,Sorcerer,Arcane ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Arcane\'"',
-  'Bespell Weapon':'Trait=Class,Sorcerer,Wizard Require="level >= 4"',
+  'Bespell Weapon':'Traits=Class,Sorcerer,Wizard Require="level >= 4"',
   'Divine Evolution':
-    'Trait=Class,Sorcerer,Divine ' +
+    'Traits=Class,Sorcerer,Divine ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Divine\'"',
   'Occult Evolution':
-    'Trait=Class,Sorcerer,Occult ' +
+    'Traits=Class,Sorcerer,Occult ' +
      'Require="level >= 4","bloodlineTraditions =~ \'Occult\'"',
   'Primal Evolution':
-    'Trait=Class,Sorcerer,Primal ' +
+    'Traits=Class,Sorcerer,Primal ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Primal\'"',
   'Advanced Bloodline':
-    'Trait=Class,Sorcerer Require="level >= 6","features.Bloodline"',
+    'Traits=Class,Sorcerer Require="level >= 6","features.Bloodline"',
   // Steady Spellcasting as above
-  'Bloodline Resistance':'Trait=Class,Sorcerer Require="level >= 8"',
-  'Crossblooded Evolution':'Trait=Class,Sorcerer Require="level >= 8"',
+  'Bloodline Resistance':'Traits=Class,Sorcerer Require="level >= 8"',
+  'Crossblooded Evolution':'Traits=Class,Sorcerer Require="level >= 8"',
   'Greater Bloodline':
-    'Trait=Class,Sorcerer Require="level >= 10","features.Bloodline"',
+    'Traits=Class,Sorcerer Require="level >= 10","features.Bloodline"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':
-    'Trait=Class,Sorcerer Require="level >= 12","features.Bloodline"',
+    'Traits=Class,Sorcerer Require="level >= 12","features.Bloodline"',
   'Magic Sense':
-    'Trait=Class,Sorcerer,Wizard,Detection,Divination Require="level >= 12"',
+    'Traits=Class,Sorcerer,Wizard,Detection,Divination Require="level >= 12"',
   'Interweave Dispel':
-    'Trait=Class,Sorcerer,Metamagic ' +
+    'Traits=Class,Sorcerer,Metamagic ' +
     'Require="level >= 14","knowsDispelMagicSpell"',
   'Reflect Spell':
-    'Trait=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
+    'Traits=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
-    'Trait=Class,Sorcerer ' +
+    'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Arcane Evolution || features.Occult Evolution"',
   'Greater Vital Evolution':
-    'Trait=Class,Sorcerer ' +
+    'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Divine Evolution || features.Primal Evolution"',
   'Bloodline Wellspring':
-    'Trait=Class,Sorcerer Require="level >= 18","features.Bloodline Focus"',
+    'Traits=Class,Sorcerer Require="level >= 18","features.Bloodline Focus"',
   'Greater Crossblooded Evolution':
-    'Trait=Class,Sorcerer ' +
+    'Traits=Class,Sorcerer ' +
     'Require="level >= 18","features.Crossblooded Evolution"',
-  'Bloodline Conduit':'Trait=Class,Sorcerer,Metamagic Require="level >= 20"',
+  'Bloodline Conduit':'Traits=Class,Sorcerer,Metamagic Require="level >= 20"',
   'Bloodline Perfection':
-    'Trait=Class,Sorcerer Require="level >= 20","features.Bloodline Paragon"',
-  'Metamagic Mastery':'Trait=Class,Sorcerer,Wizard Require="level >= 20"',
+    'Traits=Class,Sorcerer Require="level >= 20","features.Bloodline Paragon"',
+  'Metamagic Mastery':'Traits=Class,Sorcerer,Wizard Require="level >= 20"',
 
   // Wizard
   // Counterspell as above
-  'Eschew Materials':'Trait=Class,Wizard',
+  'Eschew Materials':'Traits=Class,Wizard',
   // Familiar as above
-  'Hand Of The Apprentice':'Trait=Class,Wizard Require="features.Universalist"',
+  'Hand Of The Apprentice':'Traits=Class,Wizard Require="features.Universalist"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
   'Conceal Spell':
-    'Trait=Class,Wizard,Concentrate,Manipulate,Metamagic Require="level >= 2"',
+    'Traits=Class,Wizard,Concentrate,Manipulate,Metamagic Require="level >= 2"',
   // Enhanced Familiar as above
   // Bespell Weapon as above
   'Linked Focus':
-    'Trait=Class,Wizard ' +
+    'Traits=Class,Wizard ' +
     'Require="level >= 4","features.Arcane Bond","features.Arcane School"',
   'Silent Spell':
-    'Trait=Class,Wizard,Concentrate,Metamagic ' +
+    'Traits=Class,Wizard,Concentrate,Metamagic ' +
     'Require="level >= 4","features.Conceal Spell"',
-  'Spell Penetration':'Trait=Class,Wizard Require="level >= 6"',
+  'Spell Penetration':'Traits=Class,Wizard Require="level >= 6"',
   // Steady Spellcasting as above
   'Advanced School Spell':
-    'Trait=Class,Wizard Require="level >= 8","features.Arcane School"',
+    'Traits=Class,Wizard Require="level >= 8","features.Arcane School"',
   'Bond Conservation':
-    'Trait=Class,Wizard,Manipulate,Metamagic ' +
+    'Traits=Class,Wizard,Manipulate,Metamagic ' +
     'Require="level >= 8","features.Arcane Bond"',
   'Universal Versatility':
-    'Trait=Class,Wizard ' +
+    'Traits=Class,Wizard ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Universalist",' +
@@ -2703,571 +2703,571 @@ Pathfinder2E.FEATS = {
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Savant':
-    'Trait=Class,Wizard Require="level >= 10","rank.Crafting >= 2"',
+    'Traits=Class,Wizard Require="level >= 10","rank.Crafting >= 2"',
   'Clever Counterspell':
-    'Trait=Class,Wizard ' +
+    'Traits=Class,Wizard ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Counterspell",' +
       '"features.Quick Recognition"',
   // Magic Sense as above
   'Bonded Focus':
-    'Trait=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+    'Traits=Class,Wizard Require="level >= 14","features.Arcane Bond"',
   // Reflect Spell as above
   'Superior Bond':
-    'Trait=Class,Wizard Require="level >= 14","features.Arcane Bond"',
+    'Traits=Class,Wizard Require="level >= 14","features.Arcane Bond"',
   // Effortless Concentration as above
-  'Spell Tinker':'Trait=Class,Wizard,Concentrate Require="level >= 16"',
-  'Infinite Possibilities':'Trait=Class,Wizard Require="level >= 18"',
-  'Reprepare Spell':'Trait=Class,Wizard Require="level >= 18"',
+  'Spell Tinker':'Traits=Class,Wizard,Concentrate Require="level >= 16"',
+  'Infinite Possibilities':'Traits=Class,Wizard Require="level >= 18"',
+  'Reprepare Spell':'Traits=Class,Wizard Require="level >= 18"',
   "Archwizard's Might":
-    'Trait=Class,Wizard ' +
+    'Traits=Class,Wizard ' +
     'Require="level >= 20","features.Archwizard\'s Spellcraft"',
   // Metamagic Mastery as above
-  'Spell Combination':'Trait=Class,Wizard Require="level >= 20"',
+  'Spell Combination':'Traits=Class,Wizard Require="level >= 20"',
 
   // Archetype
   'Alchemist Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Alchemist ' +
+    'Traits=Archetype,Dedication,Multiclass,Alchemist ' +
     'Require=' +
       '"level >= 2",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Alchemist == 0"',
   'Basic Concoction':
-    'Trait=Archetype,Alchemist ' +
+    'Traits=Archetype,Alchemist ' +
     'Require="level >= 4","features.Alchemist Dedication"',
   'Quick Alchemy':
-    'Trait=Archetype,Alchemist ' +
+    'Traits=Archetype,Alchemist ' +
     'Require="level >= 4","features.Alchemist Dedication"',
   'Advanced Concoction':
-    'Trait=Archetype,Alchemist ' +
+    'Traits=Archetype,Alchemist ' +
     'Require="level >= 6","features.Basic Concoction"',
   'Expert Alchemy':
-    'Trait=Archetype,Alchemist ' +
+    'Traits=Archetype,Alchemist ' +
     'Require="level >= 6","features.Alchemist Dedication","rank.Crafting >= 2"',
   'Master Alchemy':
-    'Trait=Archetype,Alchemist ' +
+    'Traits=Archetype,Alchemist ' +
     'Require="level >= 12","features.Expert Alchemy","rank.Crafting >= 3"',
 
   'Barbarian Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Barbarian ' +
+    'Traits=Archetype,Dedication,Multiclass,Barbarian ' +
     'Require=' +
       '"level >= 2",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"constitutionModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Barbarian == 0"',
   'Barbarian Resiliency':
-    'Trait=Archetype,Barbarian ' +
+    'Traits=Archetype,Barbarian ' +
     'Require=' +
       '"level >= 4",' +
       '"features.Barbarian Dedication",' +
       '"classHitPoints <= 10"',
   'Basic Fury':
-    'Trait=Archetype,Barbarian ' +
+    'Traits=Archetype,Barbarian ' +
     'Require="level >= 4","features.Barbarian Dedication"',
   'Advanced Fury':
-    'Trait=Archetype,Barbarian Require="level >= 6","features.Basic Fury"',
+    'Traits=Archetype,Barbarian Require="level >= 6","features.Basic Fury"',
   'Instinct Ability':
-    'Trait=Archetype,Barbarian ' +
+    'Traits=Archetype,Barbarian ' +
     'Require="level >= 6","features.Barbarian Dedication"',
   "Juggernaut's Fortitude":
-    'Trait=Archetype,Barbarian ' +
+    'Traits=Archetype,Barbarian ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Barbarian Dedication",' +
       '"rank.Fortitude >= 2"',
 
   'Bard Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Bard ' +
+    'Traits=Archetype,Dedication,Multiclass,Bard ' +
     'Require=' +
       '"level >= 2",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Bard == 0"',
   'Basic Bard Spellcasting':
-    'Trait=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
+    'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
-    'Trait=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
+    'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Advanced Muse's Whispers":
-    'Trait=Archetype,Bard ' +
+    'Traits=Archetype,Bard ' +
     'Require="level >= 4","features.Basic Muse\'s Whispers"',
   'Counter Perform':
-    'Trait=Archetype,Bard Require="level >= 6","features.Bard Dedication"',
+    'Traits=Archetype,Bard Require="level >= 6","features.Bard Dedication"',
   'Inspirational Performance':
-    'Trait=Archetype,Bard Require="level >= 8","features.Bard Dedication"',
+    'Traits=Archetype,Bard Require="level >= 8","features.Bard Dedication"',
   'Occult Breadth':
-    'Trait=Archetype,Bard ' +
+    'Traits=Archetype,Bard ' +
     'Require="level >= 8","features.Basic Bard Spellcasting"',
   'Expert Bard Spellcasting':
-    'Trait=Archetype,Bard ' +
+    'Traits=Archetype,Bard ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Bard Spellcasting",' +
       '"rank.Occultism >= 3"',
   'Master Bard Spellcasting':
-    'Trait=Archetype,Bard ' +
+    'Traits=Archetype,Bard ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Bard Spellcasting",' +
       '"rank.Occultism >= 4"',
 
   'Champion Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Champion ' +
+    'Traits=Archetype,Dedication,Multiclass,Champion ' +
     'Require=' +
       '"level >= 2",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Champion == 0"',
   'Basic Devotion':
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require="level >= 4","features.Champion Dedication"',
   'Champion Resiliency':
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require="level >= 4","features.Champion Dedication","classHitPoints <= 8"',
   'Healing Touch':
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require="level >= 4","features.Champion Dedication"',
   'Advanced Devotion':
-    'Trait=Archetype,Champion Require="level >= 6","features.Basic Devotion"',
+    'Traits=Archetype,Champion Require="level >= 6","features.Basic Devotion"',
   "Champion's Reaction":
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require="level >= 6","features.Champion Dedication"',
   'Divine Ally':
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require="level >= 6","features.Champion Dedication"',
   'Diverse Armor Expert':
-    'Trait=Archetype,Champion ' +
+    'Traits=Archetype,Champion ' +
     'Require=' +
       '"level >= 14",' +
       '"rank.Unarmored Defense >= 2 || rank.Light Armor >= 2 || rank.Medium Armor >= 2 || rank.Heavy Armor >= 2"',
 
   'Cleric Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Cleric ' +
+    'Traits=Archetype,Dedication,Multiclass,Cleric ' +
     'Require=' +
       '"level >= 2",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
-    'Trait=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
+    'Traits=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
   'Basic Dogma':
-    'Trait=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
+    'Traits=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
   'Advanced Dogma':
-    'Trait=Archetype,Cleric Require="level >= 6","features.Basic Dogma"',
+    'Traits=Archetype,Cleric Require="level >= 6","features.Basic Dogma"',
   'Divine Breadth':
-    'Trait=Archetype,Cleric ' +
+    'Traits=Archetype,Cleric ' +
     'Require="level >= 8","features.Basic Cleric Spellcasting"',
   'Expert Cleric Spellcasting':
-    'Trait=Archetype,Cleric ' +
+    'Traits=Archetype,Cleric ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Cleric Spellcasting",' +
       '"rank.Religion >= 3"',
   'Master Cleric Spellcasting':
-    'Trait=Archetype,Cleric ' +
+    'Traits=Archetype,Cleric ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Cleric Spellcasting",' +
       '"rank.Religion >= 4"',
 
   'Druid Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Druid ' +
+    'Traits=Archetype,Dedication,Multiclass,Druid ' +
     'Require=' +
       '"level >= 2",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
-    'Trait=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Basic Wilding':
-    'Trait=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Order Spell':
-    'Trait=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
   'Advanced Wilding':
-    'Trait=Archetype,Druid Require="level >= 6","features.Basic Wilding"',
+    'Traits=Archetype,Druid Require="level >= 6","features.Basic Wilding"',
   'Primal Breadth':
-    'Trait=Archetype,Druid ' +
+    'Traits=Archetype,Druid ' +
     'Require="level >= 8","features.Basic Druid Spellcasting"',
   'Expert Druid Spellcasting':
-    'Trait=Archetype,Druid ' +
+    'Traits=Archetype,Druid ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Druid Spellcasting",' +
       '"rank.Nature >= 3"',
   'Master Druid Spellcasting':
-    'Trait=Archetype,Druid ' +
+    'Traits=Archetype,Druid ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Druid Spellcasting",' +
       '"rank.Nature >= 4"',
 
   'Fighter Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Fighter ' +
+    'Traits=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
       '"level >= 2",' +
       '"strengthModifier >= 2 || multitalentedHalfElf",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
-    'Trait=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
+    'Traits=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
   'Fighter Resiliency':
-    'Trait=Archetype,Fighter ' +
+    'Traits=Archetype,Fighter ' +
     'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
   'Opportunist':
-    'Trait=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
+    'Traits=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
   'Advanced Maneuver':
-    'Trait=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
+    'Traits=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
   'Diverse Weapon Expert':
-    'Trait=Archetype,Fighter ' +
+    'Traits=Archetype,Fighter ' +
     'Require=' +
       '"level >= 12",' +
       '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
 
   'Monk Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Monk ' +
+    'Traits=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
       '"level >= 2",' +
       '"strengthModifier >= 2 || multitalentedHalfElf",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Monk == 0"',
   'Basic Kata':
-    'Trait=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
+    'Traits=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
   'Monk Resiliency':
-    'Trait=Archetype,Monk ' +
+    'Traits=Archetype,Monk ' +
     'Require="level >= 4","feats.Monk Dedication","classHitPoints <= 8"',
-  'Advanced Kata':'Trait=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
-  'Monk Moves':'Trait=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
+  'Advanced Kata':'Traits=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
+  'Monk Moves':'Traits=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
   "Monk's Flurry":
-    'Trait=Archetype,Monk Require="level >= 10","feats.Monk Dedication"',
+    'Traits=Archetype,Monk Require="level >= 10","feats.Monk Dedication"',
   "Perfection's Path (Fortitude)":
-    'Trait=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
+    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
   "Perfection's Path (Reflex)":
-    'Trait=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
+    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
   "Perfection's Path (Will)":
-    'Trait=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
+    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
 
   'Ranger Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Ranger ' +
+    'Traits=Archetype,Dedication,Multiclass,Ranger ' +
     'Require=' +
       '"level >= 2",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
-    'Trait=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
+    'Traits=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
   'Ranger Resiliency':
-    'Trait=Archetype,Ranger ' +
+    'Traits=Archetype,Ranger ' +
     'Require="level >= 4","features.Ranger Dedication","classHitPoints <= 8"',
   "Advanced Hunter's Trick":
-    'Trait=Archetype,Ranger ' +
+    'Traits=Archetype,Ranger ' +
     'Require="level >= 6","features.Basic Hunter\'s Trick"',
   'Master Spotter':
-    'Trait=Archetype,Ranger ' +
+    'Traits=Archetype,Ranger ' +
     'Require="level >= 12","features.Ranger Dedication","rank.Perception >= 3"',
 
   'Rogue Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Rogue ' +
+    'Traits=Archetype,Dedication,Multiclass,Rogue ' +
     'Require=' +
       '"level >= 2",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Rogue == 0"',
   'Basic Trickery':
-    'Trait=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
+    'Traits=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Sneak Attacker':
-    'Trait=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
+    'Traits=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
   'Advanced Trickery':
-    'Trait=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
+    'Traits=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
   'Skill Mastery':
-    'Trait=Archetype,Rogue ' +
+    'Traits=Archetype,Rogue ' +
     'Require="level >= 8","features.Rogue Dedication","maxSkillRank>=2"',
   'Uncanny Dodge':
-    'Trait=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
+    'Traits=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
   'Evasiveness':
-    'Trait=Archetype,Rogue ' +
+    'Traits=Archetype,Rogue ' +
     'Require="level >= 12","features.Rogue Dedication","rank.Reflex >= 2"',
 
   'Sorcerer Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Sorcerer ' +
+    'Traits=Archetype,Dedication,Multiclass,Sorcerer ' +
     'Require=' +
       '"level >= 2",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require="level >= 4","features.Sorcerer Dedication"',
   'Basic Blood Potency':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require="level >= 4","features.Sorcerer Dedication"',
   'Basic Bloodline Spell':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require="level >= 4","features.Sorcerer Dedication"',
   'Advanced Blood Potency':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require="level >= 6","features.Basic Blood Potency"',
   'Bloodline Breadth':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require="level >= 8","features.Basic Sorcerer Spellcasting"',
   'Expert Sorcerer Spellcasting':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Sorcerer Spellcasting",' +
       '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3"',
   'Master Sorcerer Spellcasting':
-    'Trait=Archetype,Sorcerer ' +
+    'Traits=Archetype,Sorcerer ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Master Sorcerer Spellcasting",' +
       '"rank.Arcana >= 4 || rank.Nature >= 4 || rank.Occultism >= 4 || rank.Religion >= 4"',
 
   'Wizard Dedication':
-    'Trait=Archetype,Dedication,Multiclass,Wizard ' +
+    'Traits=Archetype,Dedication,Multiclass,Wizard ' +
     'Require=' +
       '"level >= 2",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Wizard == 0"',
   'Arcane School Spell':
-    'Trait=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Basic Arcana':
-    'Trait=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Basic Wizard Spellcasting':
-    'Trait=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
   'Advanced Arcana':
-    'Trait=Archetype,Wizard Require="level >= 6","features.Basic Arcana"',
+    'Traits=Archetype,Wizard Require="level >= 6","features.Basic Arcana"',
   'Arcane Breadth':
-    'Trait=Archetype,Wizard ' +
+    'Traits=Archetype,Wizard ' +
     'Require="level >= 8","features.Basic Wizard Spellcasting"',
   'Expert Wizard Spellcasting':
-    'Trait=Archetype,Wizard ' +
+    'Traits=Archetype,Wizard ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Wizard Spellcasting",' +
       '"rank.Arcana >= 3"',
   'Master Wizard Spellcasting':
-    'Trait=Archetype,Wizard ' +
+    'Traits=Archetype,Wizard ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Basic Wizard Spellcasting",' +
       '"rank.Arcana >= 4"',
 
   // General
-  'Adopted Ancestry (%ancestry)':'Trait=General',
-  'Armor Proficiency':'Trait=General',
-  'Breath Control':'Trait=General',
-  'Canny Acumen (Fortitude)':'Trait=General',
-  'Canny Acumen (Perception)':'Trait=General',
-  'Canny Acumen (Reflex)':'Trait=General',
-  'Canny Acumen (Will)':'Trait=General',
-  'Diehard':'Trait=General',
-  'Fast Recovery':'Trait=General Require="constitutionModifier >= 2"',
-  'Feather Step':'Trait=General Require="dexterityModifier >= 2"',
-  'Fleet':'Trait=General',
-  'Incredible Initiative':'Trait=General',
-  'Ride':'Trait=General',
-  'Shield Block':'Trait=General',
-  'Toughness':'Trait=General',
-  'Weapon Proficiency (Martial Weapons)':'Trait=General',
-  'Weapon Proficiency (Simple Weapons)':'Trait=General',
-  'Weapon Proficiency (%advancedWeapon)':'Trait=General',
-  'Ancestral Paragon':'Trait=General Require="level >= 3"',
-  'Untrained Improvisation':'Trait=General Require="level >= 3"',
+  'Adopted Ancestry (%ancestry)':'Traits=General',
+  'Armor Proficiency':'Traits=General',
+  'Breath Control':'Traits=General',
+  'Canny Acumen (Fortitude)':'Traits=General',
+  'Canny Acumen (Perception)':'Traits=General',
+  'Canny Acumen (Reflex)':'Traits=General',
+  'Canny Acumen (Will)':'Traits=General',
+  'Diehard':'Traits=General',
+  'Fast Recovery':'Traits=General Require="constitutionModifier >= 2"',
+  'Feather Step':'Traits=General Require="dexterityModifier >= 2"',
+  'Fleet':'Traits=General',
+  'Incredible Initiative':'Traits=General',
+  'Ride':'Traits=General',
+  'Shield Block':'Traits=General',
+  'Toughness':'Traits=General',
+  'Weapon Proficiency (Martial Weapons)':'Traits=General',
+  'Weapon Proficiency (Simple Weapons)':'Traits=General',
+  'Weapon Proficiency (%advancedWeapon)':'Traits=General',
+  'Ancestral Paragon':'Traits=General Require="level >= 3"',
+  'Untrained Improvisation':'Traits=General Require="level >= 3"',
   'Expeditious Search':
-    'Trait=General Require="level >= 7","rank.Perception >= 2"',
+    'Traits=General Require="level >= 7","rank.Perception >= 2"',
   'Incredible Investiture':
-    'Trait=General Require="level >= 11","charismaModifier >= 3"',
+    'Traits=General Require="level >= 11","charismaModifier >= 3"',
 
   // Skill
-  'Assurance (%skill)':'Trait=Fortune,General,Skill Require="rank.%skill >= 1"',
-  'Dubious Knowledge':'Trait=General,Skill',
+  'Assurance (%skill)':'Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
+  'Dubious Knowledge':'Traits=General,Skill',
   'Quick Identification':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Recognize Spell':
-    'Trait=Secret,General,Skill ' +
+    'Traits=Secret,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Skill Training (%skill)':
-    'Trait=General,Skill Require="intelligenceModifier >= 1"',
+    'Traits=General,Skill Require="intelligenceModifier >= 1"',
   'Trick Magic Item':
-    'Trait=Manipulate,General,Skill ' +
+    'Traits=Manipulate,General,Skill ' +
     'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
   'Automatic Knowledge (%skill)':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 2",' +
       '"rank.%skill >= 2",' +
       '"features.Assurance (%skill)"',
   'Magical Shorthand':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
   'Quick Recognition':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 7",' +
       '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
       '"features.Recognize Spell"',
 
-  'Cat Fall':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
-  'Quick Squeeze':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
-  'Steady Balance':'Trait=General,Skill Require="rank.Acrobatics >= 1"',
+  'Cat Fall':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Quick Squeeze':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Steady Balance':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
   'Nimble Crawl':
-    'Trait=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
-  'Kip Up':'Trait=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
-  'Arcane Sense':'Trait=General,Skill Require="rank.Arcana >= 1"',
+    'Traits=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
+  'Kip Up':'Traits=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
+  'Arcane Sense':'Traits=General,Skill Require="rank.Arcana >= 1"',
   'Unified Theory':
-    'Trait=General,Skill Require="level >= 15","rank.Arcana >= 4"',
-  'Combat Climber':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Hefty Hauler':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Quick Jump':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Titan Wrestler':'Trait=General,Skill Require="rank.Athletics >= 1"',
-  'Underwater Marauder':'Trait=General,Skill Require="rank.Athletics >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Arcana >= 4"',
+  'Combat Climber':'Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Hefty Hauler':'Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Quick Jump':'Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Titan Wrestler':'Traits=General,Skill Require="rank.Athletics >= 1"',
+  'Underwater Marauder':'Traits=General,Skill Require="rank.Athletics >= 1"',
   'Powerful Leap':
-    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
   'Rapid Mantel':
-    'Trait=General,Skill Require="level >= 2","rank.Athletics >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
   'Quick Climb':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Quick Swim':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Wall Jump':
-    'Trait=General,Skill Require="level >= 7","rank.Athletics >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
   'Cloud Jump':
-    'Trait=General,Skill Require="level >= 15","rank.Athletics >= 4"',
-  'Alchemical Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Quick Repair':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Snare Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
-  'Specialty Crafting':'Trait=General,Skill Require="rank.Crafting >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Athletics >= 4"',
+  'Alchemical Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Quick Repair':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Snare Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Specialty Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
   'Magical Crafting':
-    'Trait=General,Skill Require="level >= 2","rank.Crafting >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Crafting >= 2"',
   'Impeccable Crafting':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 7",' +
       '"rank.Crafting >= 3",' +
       '"features.Specialty Crafting"',
   'Inventor':
-    'Trait=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
+    'Traits=Downtime,General,Skill Require="level >= 7","rank.Crafting >= 3"',
   'Craft Anything':
-    'Trait=General,Skill Require="level >= 15","rank.Crafting >= 4"',
-  'Charming Liar':'Trait=General,Skill Require="rank.Deception >= 1"',
-  'Lengthy Diversion':'Trait=General,Skill Require="rank.Deception >= 1"',
-  'Lie To Me':'Trait=General,Skill Require="rank.Deception >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Crafting >= 4"',
+  'Charming Liar':'Traits=General,Skill Require="rank.Deception >= 1"',
+  'Lengthy Diversion':'Traits=General,Skill Require="rank.Deception >= 1"',
+  'Lie To Me':'Traits=General,Skill Require="rank.Deception >= 1"',
   'Confabulator':
-    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Quick Disguise':
-    'Trait=General,Skill Require="level >= 2","rank.Deception >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
   'Slippery Secrets':
-    'Trait=General,Skill Require="level >= 7","rank.Deception >= 3"',
-  'Bargain Hunter':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
-  'Group Impression':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
-  'Hobnobber':'Trait=General,Skill Require="rank.Diplomacy >= 1"',
+    'Traits=General,Skill Require="level >= 7","rank.Deception >= 3"',
+  'Bargain Hunter':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
+  'Group Impression':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
+  'Hobnobber':'Traits=General,Skill Require="rank.Diplomacy >= 1"',
   'Glad-Hand':
-    'Trait=General,Skill Require="level >= 2","rank.Diplomacy >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Diplomacy >= 2"',
   'Shameless Request':
-    'Trait=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
   'Legendary Negotiation':
-    'Trait=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
-  'Group Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
-  'Intimidating Glare':'Trait=General,Skill Require="rank.Intimidation >= 1"',
-  'Quick Coercion':'Trait=General,Skill Require="rank.Intimidation >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Diplomacy >= 4"',
+  'Group Coercion':'Traits=General,Skill Require="rank.Intimidation >= 1"',
+  'Intimidating Glare':'Traits=General,Skill Require="rank.Intimidation >= 1"',
+  'Quick Coercion':'Traits=General,Skill Require="rank.Intimidation >= 1"',
   'Intimidating Prowess':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require="level >= 2","strengthModifier >= 3","rank.Intimidation >= 2"',
   'Lasting Coercion':
-    'Trait=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
   'Battle Cry':
-    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Terrified Retreat':
-    'Trait=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Intimidation >= 3"',
   'Scare To Death':
-    'Trait=Emotion,Fear,Incapacitation,General,Skill ' +
+    'Traits=Emotion,Fear,Incapacitation,General,Skill ' +
     'Require="level >= 15","rank.Intimidation >= 4"',
-  'Additional Lore (%lore)':'Trait=General,Skill Require="rank.Lore >= 1"',
-  'Experienced Professional':'Trait=General,Skill Require="rank.Lore >= 1"',
+  'Additional Lore (%lore)':'Traits=General,Skill Require="rank.Lore >= 1"',
+  'Experienced Professional':'Traits=General,Skill Require="rank.Lore >= 1"',
   'Unmistakable Lore':
-    'Trait=General,Skill Require="level >= 2","rank.Lore >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Lore >= 2"',
   'Legendary Professional':
-    'Trait=General,Skill Require="level >= 15","rank.Lore >= 4"',
+    'Traits=General,Skill Require="level >= 15","rank.Lore >= 4"',
   'Battle Medicine':
-    'Trait=Healing,Manipulate,General,Skill Require="rank.Medicine >= 1"',
+    'Traits=Healing,Manipulate,General,Skill Require="rank.Medicine >= 1"',
   'Continual Recovery':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Robust Recovery':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Ward Medic':
-    'Trait=General,Skill Require="level >= 2","rank.Medicine >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Medicine >= 2"',
   'Legendary Medic':
-    'Trait=General,Skill Require="level >= 15","rank.Medicine >= 4"',
-  'Natural Medicine':'Trait=General,Skill Require="rank.Nature >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Medicine >= 4"',
+  'Natural Medicine':'Traits=General,Skill Require="rank.Nature >= 1"',
   'Train Animal':
-    'Trait=Downtime,Manipulate,General,Skill Require="rank.Nature >= 1"',
+    'Traits=Downtime,Manipulate,General,Skill Require="rank.Nature >= 1"',
   'Bonded Animal':
-    'Trait=Downtime,General,Skill Require="level >= 2","rank.Nature >= 2"',
-  'Oddity Identification':'Trait=General,Skill Require="rank.Occultism >= 1"',
+    'Traits=Downtime,General,Skill Require="level >= 2","rank.Nature >= 2"',
+  'Oddity Identification':'Traits=General,Skill Require="rank.Occultism >= 1"',
   'Bizarre Magic':
-    'Trait=General,Skill Require="level >= 7","rank.Occultism >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Occultism >= 3"',
   'Fascinating Performance':
-    'Trait=General,Skill Require="rank.Performance >= 1"',
+    'Traits=General,Skill Require="rank.Performance >= 1"',
   'Impressive Performance':
-    'Trait=General,Skill Require="rank.Performance >= 1"',
-  'Virtuosic Performer':'Trait=General,Skill Require="rank.Performance >= 1"',
+    'Traits=General,Skill Require="rank.Performance >= 1"',
+  'Virtuosic Performer':'Traits=General,Skill Require="rank.Performance >= 1"',
   'Legendary Performer':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Performance >= 4",' +
       '"features.Virtuosic Performer"',
-  'Student Of The Canon':'Trait=General,Skill Require="rank.Religion >= 1"',
+  'Student Of The Canon':'Traits=General,Skill Require="rank.Religion >= 1"',
   'Divine Guidance':
-    'Trait=General,Skill Require="level >= 15","rank.Religion >= 4"',
-  'Courtly Graces':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Multilingual':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Read Lips':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Sign Language':'Trait=General,Skill Require="rank.Society >= 1"',
-  'Streetwise':'Trait=General,Skill Require="rank.Society >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Religion >= 4"',
+  'Courtly Graces':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Multilingual':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Read Lips':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Sign Language':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Streetwise':'Traits=General,Skill Require="rank.Society >= 1"',
   'Connections':
-    'Trait=Uncommon,General,Skill ' +
+    'Traits=Uncommon,General,Skill ' +
     'Require=' +
       '"level >= 2",' +
       '"rank.Society >= 2",' +
       '"features.Courtly Graces"',
   'Legendary Codebreaker':
-    'Trait=General,Skill Require="level >= 15","rank.Society >= 4"',
+    'Traits=General,Skill Require="level >= 15","rank.Society >= 4"',
   'Legendary Linguist':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Society >= 4",' +
       '"features.Multilingual"',
-  'Experienced Smuggler':'Trait=General,Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Rubble)':'Trait=General,Skill Require="rank.Stealth >= 1"',
-  'Terrain Stalker (Snow)':'Trait=General,Skill Require="rank.Stealth >= 1"',
+  'Experienced Smuggler':'Traits=General,Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Rubble)':'Traits=General,Skill Require="rank.Stealth >= 1"',
+  'Terrain Stalker (Snow)':'Traits=General,Skill Require="rank.Stealth >= 1"',
   'Terrain Stalker (Underbrush)':
-    'Trait=General,Skill Require="rank.Stealth >= 1"',
+    'Traits=General,Skill Require="rank.Stealth >= 1"',
   'Quiet Allies':
-    'Trait=General,Skill Require="level >= 2","rank.Stealth >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Stealth >= 2"',
   'Foil Senses':
-    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Swift Sneak':
-    'Trait=General,Skill Require="level >= 7","rank.Stealth >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Stealth >= 3"',
   'Legendary Sneak':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Stealth >= 4",' +
       '"features.Swift Sneak"',
-  'Experienced Tracker':'Trait=General,Skill Require="rank.Survival >= 1"',
-  'Forager':'Trait=General,Skill Require="rank.Survival >= 1"',
-  'Survey Wildlife':'Trait=General,Skill Require="rank.Survival >= 1"',
+  'Experienced Tracker':'Traits=General,Skill Require="rank.Survival >= 1"',
+  'Forager':'Traits=General,Skill Require="rank.Survival >= 1"',
+  'Survey Wildlife':'Traits=General,Skill Require="rank.Survival >= 1"',
   'Terrain Expertise (%terrain)':
-    'Trait=General,Skill Require="rank.Survival >= 1"',
+    'Traits=General,Skill Require="rank.Survival >= 1"',
   'Planar Survival':
-    'Trait=General,Skill Require="level >= 7","rank.Survival >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Survival >= 3"',
   'Legendary Survivalist':
-    'Trait=General,Skill Require="level >= 15","rank.Survival >= 4"',
-  'Pickpocket':'Trait=General,Skill Require="rank.Thievery >= 1"',
-  'Subtle Theft':'Trait=General,Skill Require="rank.Thievery >= 1"',
+    'Traits=General,Skill Require="level >= 15","rank.Survival >= 4"',
+  'Pickpocket':'Traits=General,Skill Require="rank.Thievery >= 1"',
+  'Subtle Theft':'Traits=General,Skill Require="rank.Thievery >= 1"',
   'Wary Disarmament':
-    'Trait=General,Skill Require="level >= 2","rank.Thievery >= 2"',
+    'Traits=General,Skill Require="level >= 2","rank.Thievery >= 2"',
   'Quick Unlock':
-    'Trait=General,Skill Require="level >= 7","rank.Thievery >= 3"',
+    'Traits=General,Skill Require="level >= 7","rank.Thievery >= 3"',
   'Legendary Thief':
-    'Trait=General,Skill ' +
+    'Traits=General,Skill ' +
     'Require=' +
       '"level >= 15",' +
       '"rank.Thievery >= 4",' +
@@ -7903,7 +7903,7 @@ Pathfinder2E.SKILLS = {
 Pathfinder2E.SPELLS = {
   'Abyssal Plague':
     'Level=5 ' +
-    'Trait=Chaotic,Disease,Evil,Necromancy ' +
+    'Traits=Chaotic,Disease,Evil,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -7911,7 +7911,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers stage 1 Abyssal plague, which inflicts unrecoverable drained 1 until cured; subsequent failures after 1 day will inflict drained 2 at stage 2 (<b>save Fortitude</b> inflicts 2 HP evil per spell level and -2 saves vs. Abyssal plague for 1 day; critical success negates; critical failure inflicts stage 2)"',
   'Acid Arrow':
     'Level=2 ' +
-    'Trait=Acid,Attack,Evocation ' +
+    'Traits=Acid,Attack,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -7919,7 +7919,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 3d8 HP acid, or double HP on a critical success, plus 1d6 HP persistent acid (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Acid Splash':
     'Level=1 ' +
-    'Trait=Acid,Attack,Cantrip,Evocation ' +
+    'Traits=Acid,Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -7927,7 +7927,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts 1d6 HP acid, plus 1 HP persistent acid on a critical success, and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+%{spellModifier.%tradition} HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+%{spellModifier.%tradition} HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+%{spellModifier.%tradition} HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+%{spellModifier.%tradition} HP initial, 5 HP persistent, and 4 HP splash)"',
   'Aerial Form':
     'Level=4 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -7935,7 +7935,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, Armor Class %{level+18}, +16 attack, +5 damage, low-light vision, flight, +16 Acrobatics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10\' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Acrobatics; <b>6th</b> becomes a Huge creature with +15\' Speed, 10\' reach, 15 temporary HP, Armor Class %{level+21}, +21 attack, +4 damage with double damage dice, +23 Acrobatics)"',
   'Air Bubble':
     'Level=1 ' +
-    'Trait=Air,Conjuration ' +
+    'Traits=Air,Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
@@ -7943,14 +7943,14 @@ Pathfinder2E.SPELLS = {
       '"R60\' Allows target to breathe normally in any environment for 1 min"',
   'Air Walk':
     'Level=4 ' +
-    'Trait=Air,Transmutation ' +
+    'Traits=Air,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Touched can walk up to a 45-degree angle on air for 5 min"',
   'Alarm':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -7958,7 +7958,7 @@ Pathfinder2E.SPELLS = {
       '"20\' burst triggers a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr (<b>heightened 3rd</b> allows specifying characteristics of triggering creatures)"',
   'Alter Reality':
     'Level=10 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -7966,7 +7966,7 @@ Pathfinder2E.SPELLS = {
       '"Acts as <i>Wish</i> to reverse effects or produces effects similar to a known occult spell of up to 9th level or a common spell of up to 7th level"',
   'Anathematic Reprisal':
     'Level=4 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -7974,7 +7974,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target who committed the triggering anathema act suffers 4d6 HP mental and stupefied 1 for 1 rd (<b>save basic Will</b>; success negates stupefied) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Animal Form':
     'Level=2 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -7982,7 +7982,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Medium animal with 5 temporary HP, Armor Class %{level+16}, +9 attack, +1 damage, low-light vision, 30\' imprecise scent, +9 Athletics modifier, and creature-specific features for 1 min (<b>heightened 3rd</b> gives 10 temporary HP, Armor Class %{level+17}, +14 attack, +5 damage, +14 Athletics; <b>4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, Armor Class %{level+18}, +16 attack, +9 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, Armor Class %{level+18}, +18 attack, +7 damage with double damage dice, +20 Athletics)"',
   'Animal Messenger':
     'Level=2 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
@@ -7990,7 +7990,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Target Tiny animal carries a small object or note to a specified destination for up to 24 hr"',
   'Animal Vision':
     'Level=3 ' +
-    'Trait=Divination,Mental ' +
+    'Traits=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
@@ -7998,7 +7998,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Allows self to share the target animal\'s senses (<b>save Will</b> negates) for 1 hr"',
   'Ant Haul':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8006,7 +8006,7 @@ Pathfinder2E.SPELLS = {
       '"Touched can carry +3 Bulk without encumbrance and +6 Bulk maximum for 8 hr"',
   'Antimagic Field':
     'Level=8 ' +
-    'Trait=Rare,Abjuration ' +
+    'Traits=Rare,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
@@ -8014,7 +8014,7 @@ Pathfinder2E.SPELLS = {
       '"10\' emanation disables spells and magic items while sustained for up to 1 min"',
   'Augury':
     'Level=2 ' +
-    'Trait=Divination,Prediction ' +
+    'Traits=Divination,Prediction ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -8022,7 +8022,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad"',
   'Avatar':
     'Level=10 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8030,7 +8030,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Huge creature with darkvision, 30 temporary HP, Armor Class %{level+25}, +33 attack, +35 Athletics, and deity-specific features for 1 min"',
   'Baleful Polymorph':
     'Level=6 ' +
-    'Trait=Incapacitation,Polymorph,Transmutation ' +
+    'Traits=Incapacitation,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8038,7 +8038,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transforms the target\'s form into a harmless animal for 1 min, allowing a new save to revert each rd (<b>save Will</b> inflicts minor physical changes and sickened 1; critical success negates; critical failure transforms permanently and also affects the target\'s mind)"',
   'Bane':
     'Level=1 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8046,7 +8046,7 @@ Pathfinder2E.SPELLS = {
       '"5\' emanation inflicts -1 attack on foes for 1 min (<b>save Will</b> negates); a concentrate action each rd increases the radius by 5\'"',
   'Banishment':
     'Level=5 ' +
-    'Trait=Abjuration,Incapacitation ' +
+    'Traits=Abjuration,Incapacitation ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8054,7 +8054,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Returns the target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents the target\'s return for 1 week) (<b>heightened 9th</b> affects 10 targets)"',
   'Barkskin':
     'Level=2 ' +
-    'Trait=Abjuration,Plant ' +
+    'Traits=Abjuration,Plant ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -8062,7 +8062,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> gives +2 resistances and +3 weakness)"',
   'Bind Soul':
     'Level=9 ' +
-    'Trait=Uncommon,Evil,Necromancy ' +
+    'Traits=Uncommon,Evil,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8070,7 +8070,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Traps the soul of a corpse dead for less than 1 min in a gem until counteracted or the gem is destroyed"',
   'Bind Undead':
     'Level=3 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8078,7 +8078,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day"',
   'Black Tentacles':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -8086,7 +8086,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Successful spell attacks vs. Fortitude DC in a 20\' burst inflict 3d6 HP bludgeoning and grabbed for 1 min, plus 1d6 HP bludgeoning each rd on grabbed creatures; escaping requires success vs. a DC %{spellDifficultyClass.%tradition} on an unarmed attack or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition}"',
   'Blade Barrier':
     'Level=6 ' +
-    'Trait=Evocation,Force ' +
+    'Traits=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -8094,7 +8094,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\'x120\'x2\\" wall inflicts 7d8 HP force for 1 min (<b>save basic Reflex</b>; critical failure prevents passage) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Bless':
     'Level=1 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8102,7 +8102,7 @@ Pathfinder2E.SPELLS = {
       '"5\' radius gives allies +1 attack for 1 min; a concentrate action each rd increases the radius by 5\'"',
   'Blindness':
     'Level=3 ' +
-    'Trait=Incapacitation,Necromancy ' +
+    'Traits=Incapacitation,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8110,7 +8110,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)"',
   'Blink':
     'Level=4 ' +
-    'Trait=Conjuration,Teleportation ' +
+    'Traits=Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8118,14 +8118,14 @@ Pathfinder2E.SPELLS = {
       '"Self gains resistance 5 to non-force damage and can use Sustain to randomly teleport 10\' for 1 min (<b>heightened +2</b> gives +3 resistance)"',
   'Blur':
     'Level=2 ' +
-    'Trait=Illusion,Veil ' +
+    'Traits=Illusion,Veil ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Touched becomes concealed for 1 min"',
   'Breath Of Life':
     'Level=5 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -8133,7 +8133,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Prevents the triggering target\'s death, restoring 4d8+%{spellModifier.%tradition} HP"',
   'Burning Hands':
     'Level=1 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8141,7 +8141,7 @@ Pathfinder2E.SPELLS = {
       '"15\' cone inflicts 2d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Calm Emotions':
     'Level=2 ' +
-    'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
+    'Traits=Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8149,7 +8149,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst calms creatures and prevents them from taking hostile actions while sustained for up to 1 min; a hostile action ends the spell for the target (<b>save Will</b> inflicts -1 attack; critical success negates; critical failure allows the effects to continue after a hostile action)"',
   'Cataclysm':
     'Level=10 ' +
-    'Trait=Acid,Air,Cold,Earth,Electricity,Evocation,Fire,Water ' +
+    'Traits=Acid,Air,Cold,Earth,Electricity,Evocation,Fire,Water ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8157,7 +8157,7 @@ Pathfinder2E.SPELLS = {
       '"R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
   'Chain Lightning':
     'Level=6 ' +
-    'Trait=Electricity,Evocation ' +
+    'Traits=Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8165,7 +8165,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Inflicts 8d12 HP electricity on a chain of targets, jumping up to 30\' between each (<b>save basic Reflex</b>; critical success ends the chain) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Charm':
     'Level=1 ' +
-    'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
+    'Traits=Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -8173,7 +8173,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target becomes friendly, or helpful if already friendly, and cannot use hostile actions against self for 1 hr (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful) (<b>heightened 4th</b> effects last until next daily prep; <b>heightened 8th</b> effects last until next daily prep and affect 10 targets)"',
   'Chill Touch':
     'Level=1 ' +
-    'Trait=Cantrip,Necromancy,Negative ' +
+    'Traits=Cantrip,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8181,7 +8181,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 1d4+%{spellModifier.%tradition} HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on an undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)"',
   'Chilling Darkness':
     'Level=3 ' +
-    'Trait=Attack,Cold,Darkness,Evocation,Evil ' +
+    'Traits=Attack,Cold,Darkness,Evocation,Evil ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8189,7 +8189,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 5d6 HP cold, plus 5d6 HP evil on celestials, (double HP on a critical success) and makes a counteract attempt vs. magical light (<b>heightened +1</b> inflicts +2d6 HP cold and evil)"',
   'Chromatic Wall':
     'Level=5 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -8197,7 +8197,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 60\'x30\' wall shines 20\' light and inflicts randomly-chosen effects on passing objects and creatures for 10 min: (1) destroys ammunition and inflicts 20 HP fire on creatures (<b>save basic Reflex</b>; <i>Cone Of Cold</i> counteracts); (2) destroys thrown weapons and inflicts 25 HP acid on creatures (<b>save basic Reflex</b>; <i>Gust Of Wind</i> counteracts); (3) negates energy effects and inflicts 30 HP electricity on creatures (<b>save basic Reflex</b>; <i>Disintegrate</i> counteracts); (4) blocks gasses and inflicts 10 HP poison and enfeebled 1 for 1 min on creatures (<b>save basic Fortitude</b> also negates enfeebled; <i>Passwall</i> counteracts) (<b>heightened 7th</b> effects last for 1 hr, inflicts +10 HP, and adds more effects possibilities: (5) negates petrification, sonic, and visual effects and inflicts <i>Flesh To Stone</i> on creatures (<i>Magic Missile</i> counteracts); (6) negates divination and mental effects and inflicts <i>Warp Mind</i> on creatures (<i>Searing Light</i> counteracts); (7) negates targeted spells and inflicts slowed 1 for 1 min on creatures (<b>save Will</b> negates; critical failure teleports to another plane; <i>Dispel Magic</i> counteracts); (8) effects as another option, but with -2 saves)"',
   'Circle Of Protection':
     'Level=3 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=3 ' +
@@ -8205,7 +8205,7 @@ Pathfinder2E.SPELLS = {
       '"10\' emanation around touched gives +1 Armor Class and saves vs. creatures of a specified alignment, and +3 vs. summoned creatures and on effects that control touched, for 1 min (<b>heightened 4th</b> effects last for 1 hr)"',
   'Clairaudience':
     'Level=3 ' +
-    'Trait=Divination,Scrying ' +
+    'Traits=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -8213,7 +8213,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an invisible sensor that allows self to listen from the target location for 10 min"',
   'Clairvoyance':
     'Level=4 ' +
-    'Trait=Divination,Scrying ' +
+    'Traits=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -8221,7 +8221,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an invisible sensor that allows self to see from the target location for 10 min"',
   'Cloak Of Colors':
     'Level=5 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8229,7 +8229,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creatures adjacent to the target suffer dazzled, and successful attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)"',
   'Cloudkill':
     'Level=5 ' +
-    'Trait=Death,Necromancy,Poison ' +
+    'Traits=Death,Necromancy,Poison ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -8237,7 +8237,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a cloud in a 20\' burst that inflicts 6d8 HP poison and moves away 10\' each rd for 1 min (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Collective Transposition':
     'Level=6 ' +
-    'Trait=Conjuration,Teleportation ' +
+    'Traits=Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8245,7 +8245,7 @@ Pathfinder2E.SPELLS = {
       '"Teleports 2 targets within a 30\' radius (<b>save Will</b> negates; critical success allows the target to control the teleport) (<b>heightened +1</b> affects +1 target)"',
   'Color Spray':
     'Level=1 ' +
-    'Trait=Illusion,Incapacitation,Visual ' +
+    'Traits=Illusion,Incapacitation,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8253,7 +8253,7 @@ Pathfinder2E.SPELLS = {
       '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)"',
   'Command':
     'Level=1 ' +
-    'Trait=Auditory,Enchantment,Linguistic,Mental ' +
+    'Traits=Auditory,Enchantment,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8261,7 +8261,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 action (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
   'Comprehend Language':
     'Level=2 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8269,7 +8269,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target understands a chosen heard language for 1 hr (<b>heightened 3rd</b> the target can also speak the language; <b>4th</b> affects 10 targets)"',
   'Cone Of Cold':
     'Level=5 ' +
-    'Trait=Cold,Evocation ' +
+    'Traits=Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8277,7 +8277,7 @@ Pathfinder2E.SPELLS = {
       '"60\' cone inflicts 12d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Confusion':
     'Level=4 ' +
-    'Trait=Emotion,Enchantment,Mental ' +
+    'Traits=Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8285,7 +8285,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts confused for 1 min or until a successful save (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows no further save attempts) (<b>heightened 8th</b> affects 10 targets)"',
   'Contingency':
     'Level=7 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
@@ -8293,14 +8293,14 @@ Pathfinder2E.SPELLS = {
       '"Prepares a spell of up to 3 actions and 4th level to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
   'Continual Flame':
     'Level=2 ' +
-    'Trait=Evocation,Light ' +
+    'Traits=Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
     'Description="Touched object emits a heatless flame until dismissed"',
   'Control Water':
     'Level=5 ' +
-    'Trait=Evocation,Water ' +
+    'Traits=Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8308,7 +8308,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Raises or lowers water by 10\' and slows water creatures in a 50\'x50\' area"',
   'Create Food':
     'Level=2 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 hr" ' +
@@ -8316,14 +8316,14 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates food for 6 Medium creatures that lasts for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)"',
   'Create Water':
     'Level=1 ' +
-    'Trait=Conjuration,Water ' +
+    'Traits=Conjuration,Water ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
     'Description="Creates 2 gallons of water that last for 1 day"',
   'Creation':
     'Level=4 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast="1 min" ' +
@@ -8331,7 +8331,7 @@ Pathfinder2E.SPELLS = {
       '"R0\' Creates an object of up to 5 cubic feet made of vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)"',
   'Crisis Of Faith':
     'Level=3 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8339,7 +8339,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 6d6 HP mental, or 6d8 HP mental and stupefied 1 for 1 rd on divine casters (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, stupefied 1 for 1 rd, and no divine casting for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP, or +2d8 HP on divine casters)"',
   'Crusade':
     'Level=9 ' +
-    'Trait=Uncommon,Enchantment,Linguistic,Mental ' +
+    'Traits=Uncommon,Enchantment,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8347,7 +8347,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' 4 targets dedicate their actions to a specified cause for 10 min; the spell ends if an ally attacks a target or for a level 14+ target reduced to half HP (<b>save Will</b> for level 15+ each rd ends the spell) (<b>heightened 10th</b> the spell ends only for a level 16+ target reduced to half HP or a level 17+ target who saves)"',
   'Crushing Despair':
     'Level=5 ' +
-    'Trait=Emotion,Enchantment,Mental ' +
+    'Traits=Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8355,7 +8355,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=1 ' +
-    'Trait=Cantrip,Evocation,Light ' +
+    'Traits=Cantrip,Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -8363,7 +8363,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates 4 floating torch lights in a 10\' radius that can be moved 60\' each rd while sustained"',
   'Darkness':
     'Level=2 ' +
-    'Trait=Darkness,Evocation ' +
+    'Traits=Darkness,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=3 ' +
@@ -8371,7 +8371,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst suppresses natural light and magical light of equal or lesser level for 1 min (<b>heightened 4th</b> conceals targets within the darkness from creatures with darkvision)"',
   'Darkvision':
     'Level=2 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8379,7 +8379,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to see in darkness for 1 hr (<b>heightened 3rd</b> affects a touched target; <b>5th</b> effects last until next daily prep)"',
   'Daze':
     'Level=1 ' +
-    'Trait=Cantrip,Enchantment,Mental,Nonlethal ' +
+    'Traits=Cantrip,Enchantment,Mental,Nonlethal ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8387,7 +8387,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Inflicts %{spellModifier.%tradition} HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Deafness':
     'Level=2 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8395,7 +8395,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts deafness for 10 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts permanent deafness)"',
   'Death Knell':
     'Level=2 ' +
-    'Trait=Death,Necromancy ' +
+    'Traits=Death,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8403,7 +8403,7 @@ Pathfinder2E.SPELLS = {
       '"Kills a touched target with 0 HP and gives self 10 temporary HP and +1 attack and damage for 10 min (<b>save Will</b> increases the target\'s dying value by 1; critical success negates)"',
   'Death Ward':
     'Level=5 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8411,7 +8411,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +4 saves vs. death and negative effects, negative resistance 10, and suppressed doomed effects for 10 min"',
   'Detect Alignment':
     'Level=1 ' +
-    'Trait=Uncommon,Detection,Divination ' +
+    'Traits=Uncommon,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8419,7 +8419,7 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation reveals auras of a specified alignment (<b>heightened 2nd</b> reveals each aura\'s location and strength)"',
   'Detect Magic':
     'Level=1 ' +
-    'Trait=Cantrip,Detection,Divination ' +
+    'Traits=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8427,7 +8427,7 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the school of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)"',
   'Detect Poison':
     'Level=1 ' +
-    'Trait=Uncommon,Detection,Divination ' +
+    'Traits=Uncommon,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -8435,7 +8435,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Reveals whether the target creature or object is venomous or poisoned (<b>heightened 2nd</b> reveals the number and types of poison)"',
   'Detect Scrying':
     'Level=4 ' +
-    'Trait=Uncommon,Detection,Divination ' +
+    'Traits=Uncommon,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8443,14 +8443,14 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation reveals scrying effects, along with the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)"',
   'Dimension Door':
     'Level=4 ' +
-    'Trait=Conjuration,Teleportation ' +
+    'Traits=Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Teleports self to a visible location within 120\' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
   'Dimensional Anchor':
     'Level=4 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8458,7 +8458,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Attempts to counteract any effect that would move the target to a different plane for 10 min (<b>save Will</b> effects last for 1 min; critical success negates; critical failure effects last for 1 hr)"',
   'Dimensional Lock':
     'Level=7 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8466,7 +8466,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 60\' burst attempts to counteract any teleportation or planar travel until next daily prep"',
   'Dinosaur Form':
     'Level=4 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -8474,21 +8474,21 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Large dinosaur with 15 temporary HP, Armor Class %{level+18}, +16 attack, +9 damage, low-light vision, 30\' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15\' or 20\' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20\' or 25\' reach, Armor Class %{level+21}, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)"',
   'Disappearance':
     'Level=8 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="Touched becomes undetectable by any sense for 10 min"',
   'Discern Lies':
     'Level=4 ' +
-    'Trait=Uncommon,Divination,Mental,Revelation ' +
+    'Traits=Uncommon,Divination,Mental,Revelation ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="Self gains +4 Perception vs. lies for 10 min"',
   'Discern Location':
     'Level=8 ' +
-    'Trait=Uncommon,Detection,Divination ' +
+    'Traits=Uncommon,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
@@ -8496,7 +8496,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals the exact location of a specified familiar creature or object for 10 min"',
   'Disintegrate':
     'Level=6 ' +
-    'Trait=Attack,Evocation ' +
+    'Traits=Attack,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -8504,7 +8504,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 12d10 HP, reducing the target to dust at 0 HP, or destroys a non-artifact 10\' cube object (<b>save basic Fortitude</b>; critical hit worsens save by 1 degree) (<b>heightened +1</b> inflicts +2d10 HP)"',
   'Disjunction':
     'Level=9 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8512,7 +8512,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Makes a counteract check to deactivate a non-artifact magic item; critical success destroys it"',
   'Dispel Magic':
     'Level=2 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8520,7 +8520,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Makes a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min"',
   'Disrupt Undead':
     'Level=1 ' +
-    'Trait=Cantrip,Necromancy,Positive ' +
+    'Traits=Cantrip,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -8528,7 +8528,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 1d6+%{spellModifier.%tradition} HP positive on an undead target (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Disrupting Weapons':
     'Level=1 ' +
-    'Trait=Necromancy,Positive ' +
+    'Traits=Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8536,7 +8536,7 @@ Pathfinder2E.SPELLS = {
       '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> three weapons inflict +3d4 HP)"',
   'Divine Aura':
     'Level=8 ' +
-    'Trait=Abjuration,Aura ' +
+    'Traits=Abjuration,Aura ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8544,7 +8544,7 @@ Pathfinder2E.SPELLS = {
       '"10\' emanation gives allies +1 Armor Class and saves, +2 vs. creatures opposed to a specified alignment, and +4 vs. opposed alignment control, and blinds melee attackers of opposed alignment (<b>save Will</b> negates), while sustained for up to 1 min; the first Sustain each rd increases the emanation radius by 10\'"',
   'Divine Decree':
     'Level=7 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8552,7 +8552,7 @@ Pathfinder2E.SPELLS = {
       '"R40\' 40\' emanation inflicts 7d10 HP specified alignment damage; creatures of opposed alignment also suffer enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, banishment, and, for creatures of level 10 and lower, paralysis for 1 min (<b>save Will</b> negates; critical failure inflicts death); matching alignment negates; neutral alignment improves save by 1 degree) (<b>heightened +1</b> inflicts +1d10 HP and increases the level of creatures that suffer paralysis by 2)"',
   'Divine Inspiration':
     'Level=8 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8560,7 +8560,7 @@ Pathfinder2E.SPELLS = {
       '"Willing touched recovers 1 6th-level or lower spell or slot and regains Focus Points"',
   'Divine Lance':
     'Level=1 ' +
-    'Trait=Attack,Cantrip,Evocation ' +
+    'Traits=Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8568,7 +8568,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP of chosen alignment, or double HP on a critical success (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Divine Vessel':
     'Level=7 ' +
-    'Trait=Morph,Transmutation ' +
+    'Traits=Morph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8576,7 +8576,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes Large and gains 40 temporary HP, %{speed}\' fly Speed, +1 vs. spells, darkvision, and fist, bite, or claw attacks that inflict 2d8 HP, 2d10 HP, or 2d10 HP, inflicts +1 HP of chosen alignment, and suffers weakness 10 to the opposite alignment for 1 min (<b>heightened 9th</b> gives 60 temporary HP and weakness 15, lasting 10 min)"',
   'Divine Wrath':
     'Level=4 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8584,7 +8584,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst inflicts 4d10 HP of chosen alignment and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1; matching alignment negates; neutral alignment improves save by 1 degree) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Dominate':
     'Level=6 ' +
-    'Trait=Uncommon,Enchantment,Incapacitation,Mental ' +
+    'Traits=Uncommon,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8592,7 +8592,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self controls the actions of the target until next daily prep; a successful save at end of each turn ends the spell (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure allows further saves only upon repugnant orders) (<b>heightened 10th</b> effects are permanent)"',
   'Dragon Form':
     'Level=6 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8600,7 +8600,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Large dragon with 40\' Speed, 100\' fly Speed, 10 temporary HP, Armor Class %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120\' fly speed, +5\' reach, 15 temporary HP, Armor Class %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
-    'Trait=Illusion,Mental,Sleep ' +
+    'Traits=Illusion,Mental,Sleep ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -8608,7 +8608,7 @@ Pathfinder2E.SPELLS = {
       '"Allows 12 known targets to communicate through a shared dream for 1 hr"',
   'Dream Message':
     'Level=3 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
@@ -8616,7 +8616,7 @@ Pathfinder2E.SPELLS = {
       '"Self sends 1 min of speech to a familiar creature, received the next time they sleep (<b>heightened 4th</b> sends speech to 10 familiar creatures)"',
   'Dreaming Potential':
     'Level=5 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast="10 min" ' +
@@ -8624,7 +8624,7 @@ Pathfinder2E.SPELLS = {
       '"Touched receives a day of downtime retraining during 8 hr sleep"',
   'Drop Dead':
     'Level=5 ' +
-    'Trait=Uncommon,Illusion,Visual ' +
+    'Traits=Uncommon,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine ' +
     'Cast=Reaction ' +
@@ -8632,7 +8632,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Upon receiving the triggering wound, the target becomes invisible and is replaced by an illusionary corpse while sustained for up to 1 min; a hostile act by the target ends the spell (<b>heightened 7th</b> a hostile act does not end the spell)"',
   'Duplicate Foe':
     'Level=7 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -8640,7 +8640,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates a minion copy of a target up to level 15 with 70 HP and no special abilities while sustained for up to 1 min or until reduced to 0 HP; the copy loses 4d6 HP after each turn (<b>save Fortitude</b> the copy inflicts half HP and lasts 2 rd; critical success negates) (<b>heightened +1</b> increases the target level that can be copied by 2 and the copy HP by 10)"',
   'Earthbind':
     'Level=3 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8648,7 +8648,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Brings a flying target to the ground and prevents flight and levitation for 1 rd (<b>save Fortitude</b> grounds target but does not prevent flight; critical success negates; critical failure effects last for 1 min)"',
   'Earthquake':
     'Level=8 ' +
-    'Trait=Earth,Evocation ' +
+    'Traits=Earth,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8656,7 +8656,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 60\' burst inflicts difficult terrain, -2 attacks, Armor Class, and skill checks, a 40\' fall (<b>save Reflex</b> negates), and structure collapse that inflicts 11d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP and knocked prone; critical success inflicts half HP only; critical failure causes the fall save to fail) (<b>heightened 10th</b> increases range to a half mile and effect area to a quarter-mile burst)"',
   'Eclipse Burst':
     'Level=7 ' +
-    'Trait=Cold,Darkness,Necromancy,Negative ' +
+    'Traits=Cold,Darkness,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
@@ -8664,7 +8664,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 60\' burst attempts to counteract magical light and inflicts 8d10 HP cold, plus 8d4 HP negative to living creatures (<b>save basic Reflex</b>; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP cold and +1d4 HP negative)"',
   'Electric Arc':
     'Level=1 ' +
-    'Trait=Cantrip,Electricity,Evocation ' +
+    'Traits=Cantrip,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8672,7 +8672,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 1d4+%{spellModifier.%tradition} electricity on 1 or 2 targets (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Form':
     'Level=5 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8680,7 +8680,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Medium elemental with 10 temporary HP, Armor Class %{level+19}, +18 attack, +9 damage, darkvision, +20 Acrobatics (air or fire) or Athletics (earth or water) modifier, and creature-specific features for 1 min (<b>heightened 6th</b> becomes a Large creature with 10\' reach, 15 temporary HP, Armor Class %{level+22}, +23 attack, +13 damage, +23 Acrobatics or Athletics; <b>7th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, Armor Class %{level+22}, +25 attack, +11 damage and double damage dice, and +25 Acrobatics or Athletics)"',
   'Endure Elements':
     'Level=2 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="10 min" ' +
@@ -8688,7 +8688,7 @@ Pathfinder2E.SPELLS = {
       '"Protects touched from severe cold or heat until next daily prep (<b>heightened 3rd</b> protects from both cold and heat; <b>5th</b> protects from extreme cold and heat</b>)"',
   'Energy Aegis':
     'Level=7 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
@@ -8696,7 +8696,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage for 1 min (<b>heightened 9th</b> gives resistance 10)"',
   'Enhance Victuals':
     'Level=2 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
@@ -8704,7 +8704,7 @@ Pathfinder2E.SPELLS = {
       '"Improves the quality of touched 1 gallon of water or 5 pounds of food for 1 hr and attempts to counteract any poison (<b>heightened +1</b> affects +1 gallon or +5 pounds</b>"',
   'Enlarge':
     'Level=2 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8712,7 +8712,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target becomes Large, gaining 10\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining 15\' reach and +4 melee damage; <b>8th</b> affects 10 creatures)"',
   'Entangle':
     'Level=2 ' +
-    'Trait=Plant,Transmutation ' +
+    'Traits=Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -8720,7 +8720,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst inflicts difficult terrain and -10\' Speed for 1 min (<b>save Reflex</b> inflicts difficult terrain only; critical failure inflicts immobilized for 1 rd)"',
   'Enthrall':
     'Level=3 ' +
-    'Trait=Auditory,Emotion,Enchantment ' +
+    'Traits=Auditory,Emotion,Enchantment ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8728,7 +8728,7 @@ Pathfinder2E.SPELLS = {
       '"Fascinates creatures within 120\' while sustained, with additional saves for disagreement (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure allows no further saves)"',
   'Ethereal Jaunt':
     'Level=7 ' +
-    'Trait=Uncommon,Conjuration,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8736,7 +8736,7 @@ Pathfinder2E.SPELLS = {
       '"Moves self from the Material Plane to the Ethereal Plane while sustained for up to 1 min (<b>heightened 9th</b> R30\' affects 5 additional willing creatures, and effects last for 10 min)"',
   'Fabricated Truth':
     'Level=10 ' +
-    'Trait=Enchantment,Incapacitation,Mental ' +
+    'Traits=Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -8744,7 +8744,7 @@ Pathfinder2E.SPELLS = {
       '"R100\' 5 targets believe a specified statement for 1 week (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure effects are permanent)"',
   'Faerie Fire':
     'Level=2 ' +
-    'Trait=Evocation,Light ' +
+    'Traits=Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8752,7 +8752,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst makes concealed creatures visible and invisible creatures concealed for 5 min"',
   'False Life':
     'Level=2 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8760,7 +8760,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains %{6+spellModifier.%tradition} temporary HP for 8 hr (<b>heightened +1</b> gives +3 HP)"',
   'False Vision':
     'Level=5 ' +
-    'Trait=Uncommon,Illusion ' +
+    'Traits=Uncommon,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -8768,7 +8768,7 @@ Pathfinder2E.SPELLS = {
       '"Controls the image shown by scrying within a 100\' burst until next daily prep"',
   'Fear':
     'Level=1 ' +
-    'Trait=Emotion,Enchantment,Fear,Mental ' +
+    'Traits=Emotion,Enchantment,Fear,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8776,7 +8776,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3 and fleeing for 1 rd) (<b>heightened 3rd</b> affects 5 targets)"',
   'Feather Fall':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=Reaction ' +
@@ -8784,7 +8784,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Falling target slows to 60\' per rd and suffers no falling damage for 1 min or until landing"',
   'Feeblemind':
     'Level=6 ' +
-    'Trait=Curse,Enchantment,Incapacitation,Mental ' +
+    'Traits=Curse,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8792,7 +8792,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts stupefied 4 until the curse is removed (<b>save Will</b> inflicts stupefied 2 for 1 rd; critical success negates; critical failure inflicts permanent animal intelligence and -5 Charisma, Intelligence, and Wisdom modifiers and changes a PC into an NPC)"',
   'Feet To Fins':
     'Level=3 ' +
-    'Trait=Morph,Transmutation ' +
+    'Traits=Morph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8800,7 +8800,7 @@ Pathfinder2E.SPELLS = {
       '"Willing touched can swim at full Speed but slows to 5\' on land for 10 min (<b>heightened 6th</b> effects last until next daily prep)"',
   'Field Of Life':
     'Level=6 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -8808,7 +8808,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 20\' burst restores 1d8 HP per rd to living and inflicts 1d8 HP positive per rd to undead while sustained for up to 1 min (<b>heightened 8th</b> restores and inflicts 1d10 HP; <b>9th</b> restores and inflicts 1d12 HP)"',
   'Fiery Body':
     'Level=7 ' +
-    'Trait=Fire,Polymorph,Transmutation ' +
+    'Traits=Fire,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8816,14 +8816,14 @@ Pathfinder2E.SPELLS = {
       '"Self gains fire immunity and resistance 10 to precision damage, suffers weakness 5 to cold and water, inflicts 3d6 HP fire on non-reach melee attackers, gains +1d4 HP fire on unarmed attacks and an additional die of damage on fire spells, can cast <i>Produce Flame</i> using 1 action as an innate spell, gains a 40\' fly Speed, and does not need to breathe for 1 min (<b>heightened 9th</b> inflicts 4d6 HP fire on non-reach melee attackers, inflicts +2d4 HP fire on unarmed attacks, and increases fly Speed to 60\')"',
   'Finger Of Death':
     'Level=7 ' +
-    'Trait=Death,Necromancy ' +
+    'Traits=Death,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R30\' Target suffers 70 HP negative, dying at 0 HP (<b>heightened +1</b> inflicts +10 HP)"',
   'Fire Seeds':
     'Level=6 ' +
-    'Trait=Evocation,Fire,Plant ' +
+    'Traits=Evocation,Fire,Plant ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -8831,7 +8831,7 @@ Pathfinder2E.SPELLS = {
       '"Creates 4 acorns that can be thrown 30\', inflicting 4d6 HP fire in a 5\' burst and continuing to inflict 2d6 HP fire for 1 min (<b>save basic Reflex</b>) (<b>heightened 8th</b> inflicts 5d6 HP initial and 3d6 HP for 1 min; <b>9th</b> inflicts 6d6 HP initial and 3d6 HP for 1 min)"',
   'Fire Shield':
     'Level=4 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8839,7 +8839,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains cold resistance 5, and melee attackers suffer 2d6 HP fire, for 1 min (<b>heightened +2</b> gives cold resistance +5 and inflicts +1d6 HP)"',
   'Fireball':
     'Level=3 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8847,7 +8847,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 20\' burst inflicts 6d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Flame Strike':
     'Level=5 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -8855,7 +8855,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' radius inflicts 8d6 HP fire, ignoring half of any resistance (<b>save basic Reflex</b>; fire immunity improves save by 1 degree) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Flaming Sphere':
     'Level=2 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8863,14 +8863,14 @@ Pathfinder2E.SPELLS = {
       '"R30\' Movable flame inflicts 3d6 HP fire in a 15\' sq while sustained for up to 1 min (<b>save basic Reflex</b>; success negates) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Fleet Step':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Self gains +30\' Speed for 1 min"',
   'Flesh To Stone':
     'Level=6 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8878,7 +8878,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts initial slowed 1; subsequent failed or successful saves each rd increase or decrease the degree slowed until the target is no longer slowed or becomes immobile and permanently turned to stone (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates; critical failure inflicts initial slowed 2)"',
   'Floating Disk':
     'Level=1 ' +
-    'Trait=Conjuration,Force ' +
+    'Traits=Conjuration,Force ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8886,7 +8886,7 @@ Pathfinder2E.SPELLS = {
       '"Creates an invisible 2\' radius disk that follows self and holds 5 Bulk for 8 hr"',
   'Fly':
     'Level=4 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -8894,7 +8894,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains a fly Speed of the greater of its Speed or 20\' for 5 min (<b>heightened 7th</b> effects last for 1 hr)"',
   'Forbidding Ward':
     'Level=1 ' +
-    'Trait=Abjuration,Cantrip ' +
+    'Traits=Abjuration,Cantrip ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8902,7 +8902,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target gains +1 Armor Class and saves vs. a specified foe while sustained for up to 1 min (<b>heightened 6th</b> gives +2 Armor Class and saves)"',
   'Foresight':
     'Level=9 ' +
-    'Trait=Divination,Mental,Prediction ' +
+    'Traits=Divination,Mental,Prediction ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8910,7 +8910,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a Reaction to give the target the better of two rolls or its foe the worse of two rolls, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
@@ -8918,7 +8918,7 @@ Pathfinder2E.SPELLS = {
       '"Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min"',
   'Gaseous Form':
     'Level=4 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -8926,7 +8926,7 @@ Pathfinder2E.SPELLS = {
       '"Touched becomes vapor with resistance 8 to physical damage, immunity to precision damage, proficiency modifier for unarmored defense, and 10\' fly Speed  for 5 min or until the target or self ends the spell"',
   'Gate':
     'Level=10 ' +
-    'Trait=Uncommon,Conjuration,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8934,7 +8934,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Opens a 40\' radius gate to another plane while sustained for up to 1 min"',
   'Gentle Repose':
     'Level=2 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -8942,7 +8942,7 @@ Pathfinder2E.SPELLS = {
       '"Touched corpse does not decay and cannot be made undead until next daily prep (<b>heightened 5th</b> effects are permanent)"',
   'Ghost Sound':
     'Level=1 ' +
-    'Trait=Auditory,Cantrip,Illusion ' +
+    'Traits=Auditory,Cantrip,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8950,7 +8950,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates sound equivalent to four humans shouting while sustained (<b>heightened 3rd</b> R60\'; <b>5th</b> R120\')"',
   'Ghostly Weapon':
     'Level=3 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -8958,7 +8958,7 @@ Pathfinder2E.SPELLS = {
       '"Touched weapon becomes translucent and can affect incorporeal creatures for 5 min"',
   'Ghoulish Cravings':
     'Level=2 ' +
-    'Trait=Disease,Evil,Necromancy ' +
+    'Traits=Disease,Evil,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -8966,7 +8966,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers stage 2 ghoul fever, which inflicts 3d8 HP negative and half normal healing; subsequent daily save failures will inflict an additional 3d8 HP at stage 3, 3d8 HP and no healing at stage 4 and stage 5, and death and transformation into a ghoul at stage 6 (<b>save Fortitude</b> inflicts stage 1 with no initial ill effects; critical success negates; critical failure inflicts stage 3)"',
   'Glibness':
     'Level=4 ' +
-    'Trait=Uncommon,Enchantment,Mental ' +
+    'Traits=Uncommon,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -8974,7 +8974,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +%{rank.Deception?4:(4+level)} Deception to lie and against Perception to discern truth for 10 min"',
   'Glitterdust':
     'Level=2 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -8982,7 +8982,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst inflicts dazzled and negates invisibility for 1 min (<b>save Reflex</b> negates invisibility only for 2 rd; critical success negates; critical failure blinds for 1 rd and dazzles and negates invisibility for 10 min)"',
   'Globe Of Invulnerability':
     'Level=4 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -8990,7 +8990,7 @@ Pathfinder2E.SPELLS = {
       '"10\' burst attempts to counteract outside spells at the spell level - 1 for 10 min"',
   'Glyph Of Warding':
     'Level=3 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -8998,7 +8998,7 @@ Pathfinder2E.SPELLS = {
       '"Specified trigger on a target container or 10\'x10\' area triggers a chosen spell of lower level"',
   'Goblin Pox':
     'Level=1 ' +
-    'Trait=Disease,Necromancy ' +
+    'Traits=Disease,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9006,7 +9006,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers stage 1 goblin pox, which inflicts sickened 1 for 1 rd; subsequent failures after 1 rd will inflict sickened 1 and slowed 1 for 1 rd at stage 2, and incurably sickened 1 for 1 dy at stage 3 (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts stage 2; goblins and goblin dogs are immune)"',
   'Grease':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9014,7 +9014,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes the holder to drop the target object)"',
   'Grim Tendrils':
     'Level=1 ' +
-    'Trait=Necromancy,Negative ' +
+    'Traits=Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9022,7 +9022,7 @@ Pathfinder2E.SPELLS = {
       '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +2d4 HP initial and +1 HP persistent)"',
   'Guidance':
     'Level=1 ' +
-    'Trait=Cantrip,Divination ' +
+    'Traits=Cantrip,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9030,7 +9030,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr"',
   'Gust Of Wind':
     'Level=1 ' +
-    'Trait=Air,Evocation ' +
+    'Traits=Air,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9038,7 +9038,7 @@ Pathfinder2E.SPELLS = {
       '"60\' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against the wind but does not knock prone; critical success negates; critical failure pushes 30\', knocks prone, and inflicts 2d6 HP bludgeoning)"',
   'Hallucination':
     'Level=5 ' +
-    'Trait=Illusion,Incapacitation,Mental ' +
+    'Traits=Illusion,Incapacitation,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9046,7 +9046,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Changes target\'s perception of an object or group for 1 hr (<b>save Will</b> target knows that it\'s hallucinating; critical success negates; critical failure inflicts -4 saves to disbelieve) (<b>heightened 6th</b> affects 10 targets or effects last until next daily prep; <b>8th</b> affects any number of targets or effects are permanent)"',
   'Hallucinatory Terrain':
     'Level=4 ' +
-    'Trait=Uncommon,Illusion ' +
+    'Traits=Uncommon,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9054,7 +9054,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 50\' burst illusion changes the look, sound, feel, and smell of the terrain until next daily prep (<b>heightened 5th</b> the illusion can mask or incorporate structures)"',
   'Harm':
     'Level=1 ' +
-    'Trait=Necromancy,Negative ' +
+    'Traits=Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -9062,7 +9062,7 @@ Pathfinder2E.SPELLS = {
       '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) suffers 1d%{harmSpellDie} HP negative (<b>save basic Fortitude</b>); undead instead regain 1d%{harmSpellDie} HP, or 1d%{harmSpellDie}+8 HP with 2 actions (<b>heightened +1</b> restores or inflicts +1d%{harmSpellDie} HP; undead regain +8 HP with 2 actions)"',
   'Haste':
     'Level=3 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -9070,7 +9070,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)"',
   'Heal':
     'Level=1 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=0 ' +
@@ -9078,7 +9078,7 @@ Pathfinder2E.SPELLS = {
       '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) regains 1d%{healSpellDie} HP, or 1d%{healSpellDie}+8 HP with 2 actions; undead instead suffer 1d%{healSpellDie} HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP; restores +8 HP with 2 actions)"',
   'Heroism':
     'Level=3 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9086,7 +9086,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> gives +2 bonus; <b>8th</b> gives +3 bonus)"',
   'Hideous Laughter':
     'Level=2 ' +
-    'Trait=Emotion,Enchantment,Mental ' +
+    'Traits=Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9094,7 +9094,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts slowed 1 and loss of Reactions while sustained (<b>save Will</b> inflicts loss of Reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of Reactions)"',
   'Holy Cascade':
     'Level=4 ' +
-    'Trait=Evocation,Good,Positive,Water ' +
+    'Traits=Evocation,Good,Positive,Water ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -9102,7 +9102,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP positive to undead and 6d6 HP good to fiends (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP positive and good)"',
   'Horrid Wilting':
     'Level=8 ' +
-    'Trait=Necromancy,Negative ' +
+    'Traits=Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9110,7 +9110,7 @@ Pathfinder2E.SPELLS = {
       '"Targets in a 500\' radius suffer 10d10 HP negative (<b>save basic Fortitude</b>; plant and water creatures worsen save by 1 degree) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Humanoid Form':
     'Level=2 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -9118,7 +9118,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)"',
   'Hydraulic Push':
     'Level=1 ' +
-    'Trait=Attack,Evocation,Water ' +
+    'Traits=Attack,Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9126,7 +9126,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Spell attack inflicts 3d6 HP bludgeoning and a 5\' push (double HP and distance with a critical success) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
-    'Trait=Evocation,Water ' +
+    'Traits=Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9134,14 +9134,14 @@ Pathfinder2E.SPELLS = {
       '"60\' line inflicts 8d6 HP bludgeoning and a 5\' push (<b>save basic Fortitude</b>; success negates push; critical failure doubles push distance)"',
   'Hypercognition':
     'Level=3 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="Allows self to use 6 Recall Knowledge actions immediately"',
   'Hypnotic Pattern':
     'Level=3 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9149,7 +9149,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts loss of Reactions)"',
   'Illusory Creature':
     'Level=2 ' +
-    'Trait=Auditory,Illusion,Olfactory,Visual ' +
+    'Traits=Auditory,Illusion,Olfactory,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9157,7 +9157,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9165,7 +9165,7 @@ Pathfinder2E.SPELLS = {
       '"Makes self appear different and gives +%{4+(rank.Deception?0:level)} Deception to avoid uncovering the disguise for 1 hr (<b>heightened 2nd</b> also disguises voice and scent; <b>3rd</b> allows copying a specific individual)"',
   'Illusory Object':
     'Level=1 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9173,7 +9173,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an image of a stationary object in a 20\' burst for 10 min (<b>heightened 2nd</b> effects include sounds and smells and last for 1 hr; <b>5th</b> effects are permanent)"',
   'Illusory Scene':
     'Level=5 ' +
-    'Trait=Auditory,Illusion,Olfactory,Visual ' +
+    'Traits=Auditory,Illusion,Olfactory,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9181,7 +9181,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates in a 30\' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)"',
   'Implosion':
     'Level=9 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9189,7 +9189,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 75 HP on 1 target each rd while sustained for up to 1 min; a target cannot be affected twice by a single casting (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +10 HP)"',
   'Insect Form':
     'Level=3 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9197,7 +9197,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Medium critter with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9205,7 +9205,7 @@ Pathfinder2E.SPELLS = {
       '"Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)"',
   'Invisibility Sphere':
     'Level=3 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9213,7 +9213,7 @@ Pathfinder2E.SPELLS = {
       '"10\' emanation makes creatures within invisible for 10 min or until any affected performs a hostile act (<b>heightened 5th</b> effects last for 1 hr)"',
   'Item Facade':
     'Level=1 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9221,7 +9221,7 @@ Pathfinder2E.SPELLS = {
       '"Makes the target object up to a 10\' cube appear decrepit or perfect for 1 hr (<b>heightened 2nd</b> effects last for 24 hr; <b>3rd</b> effects are permanent)"',
   'Jump':
     'Level=1 ' +
-    'Trait=Move,Transmutation ' +
+    'Traits=Move,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
@@ -9229,7 +9229,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to jump 30\' immediately (<b>heightened 3rd</b> affects touched, and effects last for 1 min)"',
   'Knock':
     'Level=2 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9237,7 +9237,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Gives +4 Athletics or Thievery on attempts to open the target object for 1 min; untrained attempts by self gain an additional +%{level}"',
   'Know Direction':
     'Level=1 ' +
-    'Trait=Cantrip,Detection,Divination ' +
+    'Traits=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9245,7 +9245,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals which direction is north (<b>heightened 7th</b> reveals direction to a familiar location)"',
   'Levitate':
     'Level=3 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9253,7 +9253,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to use concentrate actions to move the touched object or willing creature up or down 10\' for 5 min"',
   'Light':
     'Level=1 ' +
-    'Trait=Cantrip,Evocation,Light ' +
+    'Traits=Cantrip,Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9261,7 +9261,7 @@ Pathfinder2E.SPELLS = {
       '"Touched object lights a 20\' radius until next daily prep (<b>heightened 4th</b> lights a 60\' radius)"',
   'Lightning Bolt':
     'Level=3 ' +
-    'Trait=Electricity,Evocation ' +
+    'Traits=Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9269,7 +9269,7 @@ Pathfinder2E.SPELLS = {
       '"120\' line inflicts 4d12 HP electricity (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Locate':
     'Level=3 ' +
-    'Trait=Uncommon,Detection,Divination ' +
+    'Traits=Uncommon,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
@@ -9277,7 +9277,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Reveals the direction to a named object or the nearest object of a named type while sustained; effects are blocked by lead and running water (<b>heightened 5th</b> reveals the direction to a creature or ancestry)"',
   'Lock':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9285,7 +9285,7 @@ Pathfinder2E.SPELLS = {
       '"Touched latch or lock opens only for self until next daily prep; a successful DC %{spellDifficultyClass.%tradition} Athletics or Thievery check (or lock DC + 4 if higher) ends the spell (<b>heightened 2nd</b> effects are permanent)"',
   'Longstrider':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9293,7 +9293,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +10\' Speed for 1 hr (<b>heightened 2nd</b> effects last for 8 hr)"',
   'Mage Armor':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9301,7 +9301,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +1 Armor Class with a +5 maximum Dexterity modifier until next daily prep (<b>heightened 4th</b> also gives +1 saves; <b>6th</b> gives +2 Armor Class; <b>8th</b> gives +2 saves; <b>10th</b> gives +3 Armor Class and saves)"',
   'Mage Hand':
     'Level=1 ' +
-    'Trait=Cantrip,Evocation ' +
+    'Traits=Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9309,7 +9309,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Moves a light object 20\' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> R60\'; <b>7th</b> moves a Bulk 2 object)"',
   'Magic Aura':
     'Level=1 ' +
-    'Trait=Uncommon,Illusion ' +
+    'Traits=Uncommon,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9317,7 +9317,7 @@ Pathfinder2E.SPELLS = {
       '"Alters the magical aura of the target object, making it appear as non-magical, as a common magical item of up to twice the spell level, or as under the effects of a spell of up to the spell level, until next daily prep (<b>heightened 3rd</b> can affect a creature or all of its possessions)"',
   'Magic Fang':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9325,7 +9325,7 @@ Pathfinder2E.SPELLS = {
       '"Touched creature\'s unarmed attack gains +1 attack and 2 damage dice for 1 min"',
   'Magic Missile':
     'Level=1 ' +
-    'Trait=Evocation,Force ' +
+    'Traits=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
@@ -9333,7 +9333,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 1 missile (2 or 3 actions gives 2 or 3 missiles) inflicts 1d4+1 HP force (<b>heightened +2</b> gives 1 additional missile per action)"',
   'Magic Mouth':
     'Level=2 ' +
-    'Trait=Auditory,Illusion,Visual ' +
+    'Traits=Auditory,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9341,14 +9341,14 @@ Pathfinder2E.SPELLS = {
       '"The image of a mouth appears on the touched creature or object and speaks a specified message up to 25 words the next time a specified trigger occurs within 30\'"',
   'Magic Weapon':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description="Touched weapon gains +1 attack and 2 damage dice for 1 min"',
   'Magnificent Mansion':
     'Level=7 ' +
-    'Trait=Uncommon,Conjuration,Extradimensional ' +
+    'Traits=Uncommon,Conjuration,Extradimensional ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9356,7 +9356,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an entrance to a 40\'x40\'x40\' demiplane that can only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people"',
   "Mariner's Curse":
     'Level=5 ' +
-    'Trait=Curse,Necromancy ' +
+    'Traits=Curse,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -9364,7 +9364,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers incurable sickened 1, plus slowed 1 on open water, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)"',
   'Mask Of Terror':
     'Level=7 ' +
-    'Trait=Emotion,Fear,Illusion,Mental,Visual ' +
+    'Traits=Emotion,Fear,Illusion,Mental,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -9372,7 +9372,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)"',
   'Massacre':
     'Level=9 ' +
-    'Trait=Death,Necromancy,Negative ' +
+    'Traits=Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
@@ -9380,7 +9380,7 @@ Pathfinder2E.SPELLS = {
       '"60\' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within the line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (<b>save Fortitude</b> 10d6 HP) on creatures up to level 19)"',
   'Maze':
     'Level=8 ' +
-    'Trait=Conjuration,Extradimensional,Teleportation ' +
+    'Traits=Conjuration,Extradimensional,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9388,7 +9388,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC %{spellDifficultyClass.%tradition} Survival or Perception checks"',
   'Meld Into Stone':
     'Level=3 ' +
-    'Trait=Earth,Transmutation ' +
+    'Traits=Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9396,7 +9396,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to enter a touched stone, retaining the ability to hear outside sounds, for 10 min"',
   'Mending':
     'Level=1 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9404,7 +9404,7 @@ Pathfinder2E.SPELLS = {
       '"Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)"',
   'Message':
     'Level=1 ' +
-    'Trait=Auditory,Cantrip,Illusion,Linguistic,Mental ' +
+    'Traits=Auditory,Cantrip,Illusion,Linguistic,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
@@ -9412,7 +9412,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
   'Meteor Swarm':
     'Level=9 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9420,7 +9420,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 4 meteors each inflict 6d10 HP bludgeoning in a 10\' burst and 14d6 HP fire in a 40\' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10 HP bludgeoning and +2d6 HP fire)"',
   'Mind Blank':
     'Level=8 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9428,7 +9428,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target gains +4 saves vs. mental effects and automatic counteract attempts at the spell level + 1 vs. detection, revelation, and scrying until next daily prep"',
   'Mind Probe':
     'Level=5 ' +
-    'Trait=Uncommon,Divination,Linguistic,Mental ' +
+    'Traits=Uncommon,Divination,Linguistic,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9436,7 +9436,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self gains answers from the target, requiring a DC %{spellDifficultyClass.%tradition} Deception check to refuse to answer each, with critical success giving a believable false answer (<b>save Will</b> negates; critical failure inflicts -4 Deception)"',
   'Mind Reading':
     'Level=3 ' +
-    'Trait=Uncommon,Detection,Divination,Mental ' +
+    'Traits=Uncommon,Detection,Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9444,7 +9444,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Reveals the surface thoughts of the target and whether its intelligence is higher, lower, or equal (<b>save Will</b> reveals relative intelligence only; critical success allows the target to read self\'s surface thoughts instead; critical failure allows sustaining for up to 1 min with no further save attempts)"',
   'Mindlink':
     'Level=1 ' +
-    'Trait=Divination,Mental ' +
+    'Traits=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9452,7 +9452,7 @@ Pathfinder2E.SPELLS = {
       '"Telepathically transmits 10 min of information from self to touched"',
   'Miracle':
     'Level=10 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -9460,7 +9460,7 @@ Pathfinder2E.SPELLS = {
       '"Acts as <i>Wish</i> to reverse effects or produces effects similar to a known divine spell of up to 9th level or a common spell of up to 7th level"',
   'Mirror Image':
     'Level=2 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9468,7 +9468,7 @@ Pathfinder2E.SPELLS = {
       '"Creates three duplicates that have an equal chance of misdirecting attacks on self for 1 min; any hit on a duplicate destroys it, and a critical success also hits self with a normal success"',
   'Misdirection':
     'Level=2 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9476,7 +9476,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Changes the magical aura of one target to mimic a second target until next daily prep"',
   'Mislead':
     'Level=6 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9484,7 +9484,7 @@ Pathfinder2E.SPELLS = {
       '"Turns self invisible and creates an illusory duplicate while sustained for up to 1 min; a successful Deception vs. Perception can make it appear that a self action originated with the duplicate"',
   'Modify Memory':
     'Level=4 ' +
-    'Trait=Uncommon,Divination,Mental ' +
+    'Traits=Uncommon,Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9492,7 +9492,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Changes 1 rd of the target\'s memory each rd while sustained for up to 5 min (<b>save Will</b> negates; critical success allows the target to notice the attempt) (<b>heightened 6th</b> erases all memory of a specified topic from a willing target)"',
   'Moment Of Renewal':
     'Level=8 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9500,7 +9500,7 @@ Pathfinder2E.SPELLS = {
       '"6 touched instantly gain the effects of 24 hr of rest once per target per day"',
   'Monstrosity Form':
     'Level=8 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9508,7 +9508,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, Armor Class %{level+20}, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> gives 25 temporary HP, Armor Class %{level+22}, +31 attack, an additional damage die, +33 Athletics)"',
   'Moon Frenzy':
     'Level=5 ' +
-    'Trait=Morph,Transmutation ' +
+    'Traits=Morph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9516,7 +9516,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs and claws that inflict 2d6 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> gives 10 temporary HP, inflict 3d6 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> gives 20 temporary HP, inflict 4d6 HP piercing and 4d6 HP slashing, weakness 20 to silver)"',
   'Nature Incarnate':
     'Level=10 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9524,7 +9524,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Medium green man or Gargantuan kaiju with 30 temporary HP, Armor Class %{level+25}, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min"',
   "Nature's Enmity":
     'Level=9 ' +
-    'Trait=Enchantment ' +
+    'Traits=Enchantment ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9532,7 +9532,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5 targets in a 500\' burst suffer -10\' Speed, attacks from animals that inflict 2d10 HP slashing and flat-footed for 1 rd (DC 8 flat negates; <b>save basic Reflex</b>), a required DC 5 flat check to cast primal spells, and hostility from bonded animals, fungi, and plants for 10 min"',
   'Negate Aroma':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9540,7 +9540,7 @@ Pathfinder2E.SPELLS = {
       '"Negates the scent of a willing touched creature for 1 hr (<b>heightened 5th</b> R30\' affects 10 targets)"',
   'Neutralize Poison':
     'Level=3 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9548,7 +9548,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract check against 1 poison affecting touched"',
   'Nightmare':
     'Level=4 ' +
-    'Trait=Illusion,Mental ' +
+    'Traits=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9556,7 +9556,7 @@ Pathfinder2E.SPELLS = {
       '"Causes a familiar target to have nightmares and awaken fatigued (<b>save Will</b> inflicts nightmares only; critical success negates; critical failure also inflicts drained 2 until no longer fatigued)"',
   'Nondetection':
     'Level=3 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9564,14 +9564,14 @@ Pathfinder2E.SPELLS = {
       '"Touched gains automatic counteract attempts vs. magical divinations for 8 hr"',
   'Obscuring Mist':
     'Level=2 ' +
-    'Trait=Conjuration,Water ' +
+    'Traits=Conjuration,Water ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description="R120\' 20\' burst conceals creatures for 1 min"',
   "Outcast's Curse":
     'Level=4 ' +
-    'Trait=Curse,Enchantment,Mental,Misfortune ' +
+    'Traits=Curse,Enchantment,Mental,Misfortune ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9579,7 +9579,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
-    'Trait=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
+    'Traits=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9587,7 +9587,7 @@ Pathfinder2E.SPELLS = {
       '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)"',
   'Paralyze':
     'Level=3 ' +
-    'Trait=Enchantment,Incapacitation,Mental ' +
+    'Traits=Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9595,7 +9595,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts paralyzed for 1 rd (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts paralyzed for 4 rd; subsequent successful saves shorten the effects by 1 rd, and a critical success ends them) (<b>heightened 7th</b> affects 10 targets)"',
   'Paranoia':
     'Level=2 ' +
-    'Trait=Illusion,Mental ' +
+    'Traits=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9603,7 +9603,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others as enemies) (<b>heightened 6th</b> effects 5 targets)"',
   'Pass Without Trace':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9611,7 +9611,7 @@ Pathfinder2E.SPELLS = {
       '"Increases the DC to Track self by 4 or to %{spellDifficultyClass.%tradition}, whichever is higher, for 1 hr (<b>heightened 2nd</b> effects last for 8 hr; <b>4th</b> effects last for 8 hr and affect a 20\' radius and 10 creatures)"',
   'Passwall':
     'Level=5 ' +
-    'Trait=Uncommon,Conjuration,Earth ' +
+    'Traits=Uncommon,Conjuration,Earth ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9619,7 +9619,7 @@ Pathfinder2E.SPELLS = {
       '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> the tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
   'Pest Form':
     'Level=1 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9627,7 +9627,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, 30\' imprecise scent, +10 Athletics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
-    'Trait=Illusion,Mental ' +
+    'Traits=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9635,7 +9635,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
-    'Trait=Death,Emotion,Fear,Illusion,Mental ' +
+    'Traits=Death,Emotion,Fear,Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9643,7 +9643,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP, or +3d6 HP on a critical failure)"',
   'Phantom Pain':
     'Level=1 ' +
-    'Trait=Illusion,Mental,Nonlethal ' +
+    'Traits=Illusion,Mental,Nonlethal ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9651,7 +9651,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 2d4 HP mental, 1d4 HP persistent mental, and sickened 1 for 1 min or until no longer sickened (<b>save Will</b> inflicts initial HP only; critical success negates; critical failure inflicts sickened 2) (<b>heightened +1</b> inflicts +2d4 HP initial and +1d4 HP persistent)"',
   'Phantom Steed':
     'Level=2 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9659,7 +9659,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Conjures a magical mount (Armor Class 20, HP 10, 40\' Speed) that can be ridden only by a designated creature for 8 hr (<b>heightened 4th</b> mount has 60\' Speed and can move normally over water and natural difficult terrain; <b>5th</b> mount can also <i>Air Walk</i> for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
   'Plane Shift':
     'Level=7 ' +
-    'Trait=Uncommon,Conjuration,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="10 min" ' +
@@ -9667,7 +9667,7 @@ Pathfinder2E.SPELLS = {
       '"Transports self and 8 willing targets to an imprecise location on a different plane"',
   'Plant Form':
     'Level=5 ' +
-    'Trait=Plant,Polymorph,Transmutation ' +
+    'Traits=Plant,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9675,7 +9675,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes a Large plant with 12 temporary HP, Armor Class %{level+19}, +17 attack, +11 damage, low-light vision, resistance 10 to poison, +19 Athletics modifier, and plant-specific attacks for 1 min (<b>heightened 6th</b> becomes a Huge plant with +5\' reach, 24 temporary HP, Armor Class %{level+22}, +21 attack, +16 damage, +22 Athletics)"',
   'Polar Ray':
     'Level=8 ' +
-    'Trait=Attack,Cold,Evocation ' +
+    'Traits=Attack,Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9683,7 +9683,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 10d8 HP cold, or double HP on a critical success, and drained 2 (<b>heightened +1</b> inflicts +2d8 HP)"',
   'Possession':
     'Level=7 ' +
-    'Trait=Uncommon,Incapacitation,Mental,Necromancy,Possession ' +
+    'Traits=Uncommon,Incapacitation,Mental,Necromancy,Possession ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -9691,7 +9691,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self inhabits and controls the target\'s body for 1 min (<b>save Will</b> self inhabits but cannot control; critical success negates; critical failure gives control without further saves); a success on subsequent Will saves each turn negates control for 1 rd, and a critical success ends the spell (<b>heightened 9th</b> effects last for 10 min, and self body merges into possessed body)"',
   'Power Word Blind':
     'Level=7 ' +
-    'Trait=Uncommon,Auditory,Enchantment,Mental ' +
+    'Traits=Uncommon,Auditory,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9699,7 +9699,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Permanently blinds a target up to level 11, blinds a level 12 or 13 target for 1d4 min, or dazzles a level 14+ target for 1 min (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Kill':
     'Level=9 ' +
-    'Trait=Uncommon,Auditory,Death,Enchantment,Mental ' +
+    'Traits=Uncommon,Auditory,Death,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9707,7 +9707,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Kills a target up to level 14 or 50 HP, inflicts 0 HP and dying 1 on a level 15 target, or inflicts 50 HP on a level 16+ target (<b>heightened +1</b> increases outcome levels by 2)"',
   'Power Word Stun':
     'Level=8 ' +
-    'Trait=Uncommon,Auditory,Enchantment,Mental ' +
+    'Traits=Uncommon,Auditory,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -9715,7 +9715,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts stunned for 1d6 rd on a target up to level 13, stunned for 1 rd on a level 14 or 15 target, or stunned 1 on a level 16+ target (<b>heightened +1</b> increases outcome levels by 2)"',
   'Prestidigitation':
     'Level=1 ' +
-    'Trait=Cantrip,Evocation ' +
+    'Traits=Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9723,7 +9723,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' Performs cooking, lifting, making a minor object, or tidying while sustained"',
   'Primal Herd':
     'Level=10 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -9731,7 +9731,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class level + 22, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, low-light vision, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -9739,7 +9739,7 @@ Pathfinder2E.SPELLS = {
       '"Acts as <i>Wish</i> to reverse effects or produces effects similar to a known primal spell of up to 9th level or a common spell of up to 7th level"',
   'Prismatic Sphere':
     'Level=9 ' +
-    'Trait=Abjuration,Light ' +
+    'Traits=Abjuration,Light ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9747,7 +9747,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' 20\' bright light in a 10\' burst inflicts blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min) and these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Prismatic Spray':
     'Level=7 ' +
-    'Trait=Evocation,Light ' +
+    'Traits=Evocation,Light ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9755,7 +9755,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone randomly inflicts one of these effects on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) two of the preceding effects"',
   'Prismatic Wall':
     'Level=8 ' +
-    'Trait=Abjuration,Light ' +
+    'Traits=Abjuration,Light ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -9763,7 +9763,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' bright light emitted by a 60\'x30\' wall inflicts blindness for 1 rd (<b>save Will</b> inflicts dazzled for 1 rd; critical failure inflicts blindness for 1 min) and these effects on creatures passing through for 1 hr: 20 HP fire (<b>save basic Reflex</b>); 25 HP acid (<b>save basic Reflex</b>); 30 HP electricity (<b>save basic Reflex</b>); 10 HP poison and enfeebled 1 for 1 min (<b>save basic Fortitude</b> also negates enfeebled); <i>Flesh To Stone</i> effects (<b>save Fortitude</b> inflicts slowed 1 for 1 rd; critical success negates); <i>Warp Mind</i> effects (<b>save Will</b> inflicts confused for 1 action; critical success negates); slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects)"',
   'Private Sanctum':
     'Level=4 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -9771,7 +9771,7 @@ Pathfinder2E.SPELLS = {
       '"100\' burst around touched location blocks sensory information, scrying, and mind-reading until next daily prep"',
   'Produce Flame':
     'Level=1 ' +
-    'Trait=Attack,Cantrip,Evocation,Fire ' +
+    'Traits=Attack,Cantrip,Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9779,7 +9779,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP fire, or double HP plus 1d4 HP persistent fire on a critical success (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Project Image':
     'Level=7 ' +
-    'Trait=Illusion,Mental ' +
+    'Traits=Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9787,7 +9787,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an illusory copy of self, with the same Armor Class and saves, that can be used as a source of spells while sustained for up to 1 min or until damaged (<b>heightened +2</b> extends maximum sustain to 10 min)"',
   'Protection':
     'Level=1 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -9795,7 +9795,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +1 Armor Class and saves vs. creatures of a specified alignment, and +3 vs. summoned creatures and control effects, for 1 min"',
   'Prying Eye':
     'Level=5 ' +
-    'Trait=Divination,Scrying ' +
+    'Traits=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="1 min" ' +
@@ -9803,7 +9803,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an invisible sensor that allows self to see from the target location and that can be moved 30\' each rd while sustained"',
   'Punishing Winds':
     'Level=8 ' +
-    'Trait=Air,Evocation ' +
+    'Traits=Air,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -9811,14 +9811,14 @@ Pathfinder2E.SPELLS = {
       '"R100\' 30\' radius lowers flying creatures by 40\', creates greater difficult terrain for flying creatures and difficult terrain for others, and requires a successful flying Acrobatics or grounded Athletics vs. DC %{spellDifficultyClass.%tradition} to exit while sustained for up to 1 min"',
   'Purify Food And Drink':
     'Level=1 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Removes contaminates from 1 cubic foot of food or water"',
   'Purple Worm Sting':
     'Level=6 ' +
-    'Trait=Necromancy,Poison ' +
+    'Traits=Necromancy,Poison ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9826,14 +9826,14 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers 3d6 HP piercing and stage 1 purple worm venom, which inflicts 3d6 HP poison and enfeebled 2; subsequent failures after 1 rd will inflict 4d6 HP and 6d6 HP at stage 2 and stage 3 (<b>save Fortitude</b> inflicts 3d6 HP piercing and 3d6 HP poison only; critical success inflicts 3d6 HP piercing only; critical failure inflicts stage 2 immediately)"',
   'Raise Dead':
     'Level=6 ' +
-    'Trait=Uncommon,Healing,Necromancy ' +
+    'Traits=Uncommon,Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
     'Description="R10\' Restores a willing soul up to level 13 to its corpse, dead for at most 3 days, giving it 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened 7th</b> raises the maximum level to 15; <b>8th</b> level 17; <b>9th</b> level 19; <b>10th</b> level 21)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
-    'Trait=Attack,Necromancy ' +
+    'Traits=Attack,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9841,7 +9841,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1; critical success negates; critical failure inflicts enfeebled 3; critical success on attack worsens save by 1 degree)"',
   'Ray Of Frost':
     'Level=1 ' +
-    'Trait=Attack,Cantrip,Cold,Evocation ' +
+    'Traits=Attack,Cantrip,Cold,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -9849,7 +9849,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts 1d4+%{spellModifier.%tradition} HP cold (critical success inflicts double HP and -10 Speed for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Read Aura':
     'Level=1 ' +
-    'Trait=Cantrip,Detection,Divination ' +
+    'Traits=Cantrip,Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 min" ' +
@@ -9857,7 +9857,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Reveals whether an object is magical and the related school of magic (<b>heightened 3rd</b> affects 10 targets; <b>6th</b> affects unlimited targets)"',
   'Read Omens':
     'Level=4 ' +
-    'Trait=Uncommon,Divination,Prediction ' +
+    'Traits=Uncommon,Divination,Prediction ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -9865,7 +9865,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals a clue or advice about a proposed activity up to 1 week in the future"',
   'Regenerate':
     'Level=7 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9873,7 +9873,7 @@ Pathfinder2E.SPELLS = {
       '"Touched target regains 15 HP and regrows a damaged organ each rd for 1 min; suffering new acid or fire damage negates the effects for 1 rd (<b>heightened 9th</b> restores 20 HP each rd)"',
   'Remake':
     'Level=10 ' +
-    'Trait=Uncommon,Conjuration ' +
+    'Traits=Uncommon,Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast="1 hr" ' +
@@ -9881,7 +9881,7 @@ Pathfinder2E.SPELLS = {
       '"R5\' Fully re-creates a known object up to 5\'x5\'x5\' from a remnant"',
   'Remove Curse':
     'Level=4 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -9889,14 +9889,14 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. 1 curse affecting touched"',
   'Remove Disease':
     'Level=3 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="10 min" ' +
     'Description="Makes a counteract attempt vs. 1 disease affecting touched"',
   'Remove Fear':
     'Level=2 ' +
-    'Trait=Enchantment ' +
+    'Traits=Enchantment ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9904,7 +9904,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Remove Paralysis':
     'Level=2 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9912,7 +9912,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
-    'Trait=Abjuration,Aura,Mental ' +
+    'Traits=Abjuration,Aura,Mental ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -9920,7 +9920,7 @@ Pathfinder2E.SPELLS = {
       '"Emanation up to 40\' prevents creatures from approaching for 1 min (<b>save Will</b> inflicts difficult terrain; critical success negates)"',
   'Resilient Sphere':
     'Level=4 ' +
-    'Trait=Abjuration,Force ' +
+    'Traits=Abjuration,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -9928,7 +9928,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9936,7 +9936,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 5 vs. a specified energy type for 10 min (<b>heightened 4th</b> gives resistance 10 to 2 targets; <b>7th</b> gives resistance 15 to 5 targets)"',
   'Resplendent Mansion':
     'Level=9 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -9944,7 +9944,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates a 300\'x300\' mansion, with entrances protected by <i>Alarm</i> effects and containing provisions for up to 150 people, until next daily prep"',
   'Restoration':
     'Level=2 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
@@ -9952,7 +9952,7 @@ Pathfinder2E.SPELLS = {
       '"Gives a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition by 1)"',
   'Restore Senses':
     'Level=2 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -9960,7 +9960,7 @@ Pathfinder2E.SPELLS = {
       '"Makes a counteract attempt vs. a magical blindness or deafness effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Retrocognition':
     'Level=7 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast="1 min" ' +
@@ -9968,7 +9968,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals impressions of 1 day of past events at the current location per 1 min of concentration; traumatic events require a Will save to maintain the spell (<b>heightened 8th</b> gives impressions of 1 year per min; <b>9th</b> gives impressions of 1 century per min)"',
   'Reverse Gravity':
     'Level=7 ' +
-    'Trait=Uncommon,Evocation ' +
+    'Traits=Uncommon,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -9976,7 +9976,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Objects in a 20\'x40\' cylinder fall upward for 1 min"',
   'Revival':
     'Level=10 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -9984,7 +9984,7 @@ Pathfinder2E.SPELLS = {
       '"30\' radius restores 10d8+40 HP to living targets and raises dead targets with the same number of temporary HP while sustained for up to 1 min"',
   'Righteous Might':
     'Level=6 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -9992,7 +9992,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains Armor Class %{level+20}, 10 temporary HP, 40\' Speed, resistance 3 to physical damage, darkvision, +21 attack and +8 damage (+6 if ranged) with a %{deityWeaponLowered}, and +23 Athletics for 1 min (<b>heightened 8th</b> gives a Large form with 10\' reach, Armor Class %{21+level}, 15 temporary HP, resistance 4 to physical damage, +28 attack and +15 damage (+12 if ranged) with a %{deityWeaponLowered}, and +29 Athletics)"',
   'Rope Trick':
     'Level=4 ' +
-    'Trait=Uncommon,Conjuration,Extradimensional ' +
+    'Traits=Uncommon,Conjuration,Extradimensional ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -10000,7 +10000,7 @@ Pathfinder2E.SPELLS = {
       '"Touched rope leads to an extradimensional space that can hold 8 Medium creatures for 8 hr"',
   'Sanctified Ground':
     'Level=3 ' +
-    'Trait=Abjuration,Consecration ' +
+    'Traits=Abjuration,Consecration ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
@@ -10008,7 +10008,7 @@ Pathfinder2E.SPELLS = {
       '"30\' burst gives +1 Armor Class, attack, damage, and saves vs. aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10016,7 +10016,7 @@ Pathfinder2E.SPELLS = {
       '"Prevents creatures from attacking touched for 1 min (<b>save Will</b> each rd negates for 1 rd; critical success ends the spell; critical failure allows no further save attempts)"',
   'Scintillating Pattern':
     'Level=8 ' +
-    'Trait=Illusion,Incapacitation,Visual ' +
+    'Traits=Illusion,Incapacitation,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10024,7 +10024,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst inflicts confused for 1d4 rd and dazzled in a 40\' radius while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts stunned for 1d4 rd, then confused for the remaining duration)"',
   'Scrying':
     'Level=6 ' +
-    'Trait=Uncommon,Divination,Scrying ' +
+    'Traits=Uncommon,Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -10032,14 +10032,14 @@ Pathfinder2E.SPELLS = {
       '"Creates an invisible sensor that allows self to see the target creature while sustained for up to 10 min (<b>save Will</b> negates; critical success allows the target to glimpse self; critical failure allows the sensor to follow the target; scrying an unfamiliar target lowers the save DC by 2, and scrying an unknown target lowers it by 10)"',
   'Searing Light':
     'Level=3 ' +
-    'Trait=Attack,Evocation,Fire,Good,Light ' +
+    'Traits=Attack,Evocation,Fire,Good,Light ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
   'Secret Page':
     'Level=3 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -10047,7 +10047,7 @@ Pathfinder2E.SPELLS = {
       '"Makes the text on a touched page appear as different text unless a specified password is spoken"',
   'See Invisibility':
     'Level=2 ' +
-    'Trait=Divination,Revelation ' +
+    'Traits=Divination,Revelation ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10055,7 +10055,7 @@ Pathfinder2E.SPELLS = {
       '"Self treats invisible creatures and objects as concealed for 10 min (<b>heightened 5th</b> effects last for 8 hr)"',
   'Sending':
     'Level=5 ' +
-    'Trait=Divination,Mental ' +
+    'Traits=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
@@ -10063,7 +10063,7 @@ Pathfinder2E.SPELLS = {
       '"Self exchanges a pair of 25-word messages with a known creature"',
   'Shadow Blast':
     'Level=5 ' +
-    'Trait=Evocation,Shadow ' +
+    'Traits=Evocation,Shadow ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10071,7 +10071,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone, R120\' 15\' burst, or 50\' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Shadow Siphon':
     'Level=5 ' +
-    'Trait=Illusion,Shadow ' +
+    'Traits=Illusion,Shadow ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=Reaction ' +
@@ -10079,7 +10079,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Makes a counteract attempt on a damaging trigger spell at +2 the spell level, reducing the damage by half if successful"',
   'Shadow Walk':
     'Level=5 ' +
-    'Trait=Uncommon,Conjuration,Shadow,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Shadow,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -10087,21 +10087,21 @@ Pathfinder2E.SPELLS = {
       '"Allows self and 9 willing touched to travel through the Shadow Plane at 20x Speed for 8 hr"',
   'Shape Stone':
     'Level=4 ' +
-    'Trait=Earth,Transmutation ' +
+    'Traits=Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 10\'x10\'x10\' stone"',
   'Shape Wood':
     'Level=2 ' +
-    'Trait=Plant,Transmutation ' +
+    'Traits=Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Reshapes touched 20 cubic feet of wood"',
   'Shapechange':
     'Level=9 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10109,7 +10109,7 @@ Pathfinder2E.SPELLS = {
       '"Replicates any known polymorph spell of up to 8th level for 1 min"',
   'Shatter':
     'Level=2 ' +
-    'Trait=Evocation,Sonic ' +
+    'Traits=Evocation,Sonic ' +
     'School=Evocation ' +
     'Traditions=Occult,Primal ' +
     'Cast=2 ' +
@@ -10117,7 +10117,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 2d10 HP sonic on an unattended object, ignoring Hardness up to 4 (<b>heightened +1</b> inflicts +1d10 HP and ignores +2 Hardness)"',
   'Shield':
     'Level=1 ' +
-    'Trait=Abjuration,Cantrip,Force ' +
+    'Traits=Abjuration,Cantrip,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
@@ -10125,7 +10125,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +1 Armor Class for 1 rd; may end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)"',
   'Shield Other':
     'Level=2 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -10133,7 +10133,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transfers half of damage suffered by target to self for 10 min or until either is reduced to 0 HP"',
   'Shillelagh':
     'Level=1 ' +
-    'Trait=Plant,Transmutation ' +
+    'Traits=Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -10141,7 +10141,7 @@ Pathfinder2E.SPELLS = {
       '"Touched staff gains +1 attack and 2 damage dice (3 damage dice vs. aberrations, extraplanar creatures, and undead) for 1 min"',
   'Shocking Grasp':
     'Level=1 ' +
-    'Trait=Attack,Electricity,Evocation ' +
+    'Traits=Attack,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10149,7 +10149,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 2d12 HP electricity; touching an armored target gives +1 attack and also inflicts 1d4 HP persistent electricity (<b>heightened +1</b> inflicts +1d12 HP initial and +1 HP persistent)"',
   'Shrink':
     'Level=2 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10157,7 +10157,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target becomes Tiny for 5 min (<b>heightened 6th</b> affects 10 creatures)"',
   'Shrink Item':
     'Level=3 ' +
-    'Trait=Polymorph,Transmutation ' +
+    'Traits=Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
@@ -10165,7 +10165,7 @@ Pathfinder2E.SPELLS = {
       '"Transforms a touched non-magical object of up to 80 Bulk and 20 cubic feet into the size of a coin with negligible Bulk until next daily prep"',
   'Sigil':
     'Level=1 ' +
-    'Trait=Cantrip,Transmutation ' +
+    'Traits=Cantrip,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10173,7 +10173,7 @@ Pathfinder2E.SPELLS = {
       '"Inscribes a 1\\" sq magical mark on a touched object or creature; the mark can be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks a creature for 1 month; <b>5th</b> marks a creature for 1 year; <b>7th</b> marks a creature permanently)"',
   'Silence':
     'Level=2 ' +
-    'Trait=Illusion ' +
+    'Traits=Illusion ' +
     'School=Illusion ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10181,7 +10181,7 @@ Pathfinder2E.SPELLS = {
       '"Willing touched makes no sound for 1 min (<b>heightened 4th</b> affects a 10\' radius around touched)"',
   'Sleep':
     'Level=1 ' +
-    'Trait=Enchantment,Incapacitation,Mental,Sleep ' +
+    'Traits=Enchantment,Incapacitation,Mental,Sleep ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10189,7 +10189,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5\' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure; targets release held objects and do not wake from a successful Perception check)"',
   'Slow':
     'Level=3 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult,Primal ' +
     'Cast=2 ' +
@@ -10197,7 +10197,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts slowed 1 for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 2) (<b>heightened 6th</b> affects 10 targets)"',
   'Solid Fog':
     'Level=4 ' +
-    'Trait=Conjuration,Water ' +
+    'Traits=Conjuration,Water ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10205,7 +10205,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst conceals creatures and inflicts difficult terrain for 1 min"',
   'Soothe':
     'Level=1 ' +
-    'Trait=Emotion,Enchantment,Healing,Mental ' +
+    'Traits=Emotion,Enchantment,Healing,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10213,7 +10213,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)"',
   'Sound Burst':
     'Level=2 ' +
-    'Trait=Evocation,Sonic ' +
+    'Traits=Evocation,Sonic ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10221,21 +10221,21 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10\' burst inflicts 2d10 HP sonic and deafened for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, deafened for 1 min, and stunned 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Speak With Animals':
     'Level=2 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Allows self to communicate with animals for 10 min"',
   'Speak With Plants':
     'Level=4 ' +
-    'Trait=Divination,Plant ' +
+    'Traits=Divination,Plant ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Allows self to communicate with plants and fungi for 10 min"',
   'Spectral Hand':
     'Level=2 ' +
-    'Trait=Necromancy ' +
+    'Traits=Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10243,7 +10243,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a crawling, spectral hand that delivers touch spells for 1 min; damage to the hand ends the spell and inflicts 1d6 HP to self"',
   'Spell Immunity':
     'Level=4 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10251,7 +10251,7 @@ Pathfinder2E.SPELLS = {
       '"Gives touched an automatic counteract attempt vs. a specified spell until next daily prep"',
   'Spell Turning':
     'Level=7 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -10259,7 +10259,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to use a Reaction that redirects a spell to its caster via a successful counterspell once within 1 hr"',
   'Spellwrack':
     'Level=6 ' +
-    'Trait=Abjuration,Curse,Force ' +
+    'Traits=Abjuration,Curse,Force ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10267,7 +10267,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Until the curse is removed, each time the target is affected by a spell with a duration, it suffers 2d12 HP persistent force and the duration of every spell affecting it is reduced by 1 rd (<b>save Will</b> effects last for 1 min; critical success negates; critical failure inflicts 4d12 HP)"',
   'Spider Climb':
     'Level=2 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10275,7 +10275,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains a climb Speed equal to its Speed for 10 min (<b>heightened 5th</b> effects last for 1 hr)"',
   'Spider Sting':
     'Level=1 ' +
-    'Trait=Necromancy,Poison ' +
+    'Traits=Necromancy,Poison ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10283,7 +10283,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers 1d4 HP piercing and stage 1 spider venom, which inflicts 1d4 HP poison and enfeebled 1; subsequent failures after 1 rd will inflict an additional 1d4 HP poison and enfeebled 2 at stage 2 (<b>save Fortitude</b> inflicts 1d4 HP piercing and 1d4 HP poison only; critical success negates; critical failure inflicts stage 2 immediately)"',
   'Spirit Blast':
     'Level=6 ' +
-    'Trait=Force,Necromancy ' +
+    'Traits=Force,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10291,7 +10291,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target\'s spirit suffers 16d6 HP force (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spirit Link':
     'Level=1 ' +
-    'Trait=Healing,Necromancy ' +
+    'Traits=Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10299,7 +10299,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transfers 2 HP of damage each rd from a willing target to self for 10 min (<b>heightened +1</b> transfers +2 HP)"',
   'Spirit Song':
     'Level=8 ' +
-    'Trait=Force,Necromancy ' +
+    'Traits=Force,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10307,7 +10307,7 @@ Pathfinder2E.SPELLS = {
       '"60\' cone inflicts 18d6 HP force on spirits, including any hidden in solid barriers (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Spiritual Epidemic':
     'Level=8 ' +
-    'Trait=Curse,Necromancy ' +
+    'Traits=Curse,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10315,7 +10315,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts enfeebled 2 and stupefied 2 for 1 min and enfeebled 1 and stupefied 1 permanently; also affects creatures who later cast divine or occult spells on the target (<b>save Will</b> inflicts enfeebled 2 and stupefied 2 for 1 rd only; critical success negates; critical failure inflicts enfeebled 3 and stupefied 3 for 1 min and enfeebled 2 and stupefied 2 permanently)"',
   'Spiritual Guardian':
     'Level=5 ' +
-    'Trait=Abjuration,Force ' +
+    'Traits=Abjuration,Force ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -10323,7 +10323,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Summoned guardian with 50 HP may attack or defend each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
-    'Trait=Evocation,Force ' +
+    'Traits=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10331,14 +10331,14 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spectral weapon makes a +%{spellAttackModifier.%tradition} attack that inflicts 1d8 HP force or weapon damage type each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP)"',
   'Stabilize':
     'Level=1 ' +
-    'Trait=Cantrip,Healing,Necromancy,Positive ' +
+    'Traits=Cantrip,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="R30\' Removes dying condition from target"',
   'Status':
     'Level=2 ' +
-    'Trait=Detection,Divination ' +
+    'Traits=Detection,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10346,7 +10346,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals willing touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
   'Stinking Cloud':
     'Level=3 ' +
-    'Trait=Conjuration,Poison ' +
+    'Traits=Conjuration,Poison ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10354,14 +10354,14 @@ Pathfinder2E.SPELLS = {
       '"R120\' 20\' burst conceals creatures and inflicts sickened 1 and slowed 1 for 1 min (<b>save Fortitude</b> inflicts sickened 1 only; critical success negates; critical failure inflicts sickened 2 and slowed 1)"',
   'Stone Tell':
     'Level=6 ' +
-    'Trait=Uncommon,Evocation,Earth ' +
+    'Traits=Uncommon,Evocation,Earth ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description="Allows self to converse with stone for 10 min"',
   'Stone To Flesh':
     'Level=6 ' +
-    'Trait=Earth,Transmutation ' +
+    'Traits=Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -10369,7 +10369,7 @@ Pathfinder2E.SPELLS = {
       '"Restores touched petrified creature or transforms a human-sized stone object into flesh"',
   'Stoneskin':
     'Level=4 ' +
-    'Trait=Abjuration,Earth ' +
+    'Traits=Abjuration,Earth ' +
     'School=Abjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10377,7 +10377,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces the duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
   'Storm Of Vengeance':
     'Level=9 ' +
-    'Trait=Air,Electricity,Evocation ' +
+    'Traits=Air,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10385,7 +10385,7 @@ Pathfinder2E.SPELLS = {
       '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
-    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
+    'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10393,7 +10393,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Specified trigger prompts the target to follow a reasonable, 1 min suggestion until next daily prep (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)"',
   'Suggestion':
     'Level=4 ' +
-    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
+    'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10401,7 +10401,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target follows a reasonable suggestion for 1 min (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure effects last for 1 hr) (<b>heightened 8th</b> targets 10 creatures)"',
   'Summon Animal':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10409,7 +10409,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 animal appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Celestial':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -10417,7 +10417,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 celestial appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Construct':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10425,7 +10425,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 construct appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Dragon':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10433,7 +10433,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 dragon appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Elemental':
     'Level=2 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10441,7 +10441,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Entity':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -10449,7 +10449,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 aberration appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Fey':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Occult,Primal ' +
     'Cast=3 ' +
@@ -10457,7 +10457,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 fey appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Fiend':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -10465,7 +10465,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 fiend appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"', 
   'Summon Giant':
     'Level=5 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10473,7 +10473,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level 5 giant appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
   'Summon Plant Or Fungus':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10481,7 +10481,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' A level -1 plant or fungus appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Sunburst':
     'Level=7 ' +
-    'Trait=Evocation,Fire,Light,Positive ' +
+    'Traits=Evocation,Fire,Light,Positive ' +
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
@@ -10489,7 +10489,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 60\' burst inflicts 8d10 HP fire, plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)"',
   'Synaptic Pulse':
     'Level=5 ' +
-    'Trait=Enchantment,Incapacitation ' +
+    'Traits=Enchantment,Incapacitation ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10497,7 +10497,7 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation inflicts stunned 2 (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure inflicts stunned for 1 rd)"',
   'Synesthesia':
     'Level=5 ' +
-    'Trait=Divination,Mental ' +
+    'Traits=Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10505,7 +10505,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts a DC 5 flat check for concentration, clumsy 3, -10 Speed, and concealment of all objects and creatures for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts stunned 2) (<b>heightened 9th</b> affects 5 targets)"',
   'Talking Corpse':
     'Level=4 ' +
-    'Trait=Uncommon,Necromancy ' +
+    'Traits=Uncommon,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
@@ -10513,7 +10513,7 @@ Pathfinder2E.SPELLS = {
       '"Touched corpse truthfully answers 3 questions within 10 min (<b>save Will</b> allows lying or refusing to answer; critical success prevents self from resting for 24 hr; critical failure inflicts -2 on Deception checks when giving misleading answers)"',
   'Tanglefoot':
     'Level=1 ' +
-    'Trait=Attack,Cantrip,Conjuration,Plant ' +
+    'Traits=Attack,Cantrip,Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10521,7 +10521,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts -10\' Speed for 1 rd, or immobilized 1 for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
-    'Trait=Conjuration,Plant ' +
+    'Traits=Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10529,7 +10529,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd (a successful Escape negates) each rd for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10537,14 +10537,14 @@ Pathfinder2E.SPELLS = {
       '"R120\' Moves an 80 Bulk, 20\' cubic object 20\' each rd while sustained for up to 1 min"',
   'Telekinetic Maneuver':
     'Level=2 ' +
-    'Trait=Attack,Evocation,Force ' +
+    'Traits=Attack,Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description="R60\' Spell attack attempts to Disarm, Shove, or Trip"',
   'Telekinetic Projectile':
     'Level=1 ' +
-    'Trait=Attack,Cantrip,Evocation ' +
+    'Traits=Attack,Cantrip,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10552,7 +10552,7 @@ Pathfinder2E.SPELLS = {
       '"Spell attack hurls a loose object that inflicts 1d6+%{spellModifier.%tradition} HP of the appropriate damage type, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Telepathic Bond':
     'Level=5 ' +
-    'Trait=Uncommon,Divination,Mental ' +
+    'Traits=Uncommon,Divination,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
@@ -10560,7 +10560,7 @@ Pathfinder2E.SPELLS = {
       '"Self and 4 willing touched can communicate telepathically for 8 hr"',
   'Telepathic Demand':
     'Level=9 ' +
-    'Trait=Enchantment,Incapacitation,Linguistic,Mental ' +
+    'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=3 ' +
@@ -10568,7 +10568,7 @@ Pathfinder2E.SPELLS = {
       '"Self exchanges a pair of 25-word messages with an existing telepathic target, sending a <i>Suggestion</i> as part of the message (<b>save Will</b> gives immunity for 1 day; critical success gives immunity for 1 month)"',
   'Telepathy':
     'Level=4 ' +
-    'Trait=Divination,Linguistic,Mental ' +
+    'Traits=Divination,Linguistic,Mental ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10576,7 +10576,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to communicate telepathically with any creature in a 30\' radius for 10 min (<b>heightened 6th</b> allows communication with creatures without a shared language)"',
   'Teleport':
     'Level=6 ' +
-    'Trait=Uncommon,Conjuration,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
@@ -10584,7 +10584,7 @@ Pathfinder2E.SPELLS = {
       '"Transports self and 4 willing touched creatures or objects up to 100 miles to a point near a specified known location (<b>heightened 7th</b> transports 1000 miles; <b>8th</b> transports anywhere on the same planet; <b>9th</b> transports to any planet in the same system; <b>10th</b> transports to any planet in the same galaxy)"',
   'Time Stop':
     'Level=10 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10592,7 +10592,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to perform 3 rd of actions that don\'t affect others until the spell ends"',
   'Tongues':
     'Level=5 ' +
-    'Trait=Uncommon,Divination ' +
+    'Traits=Uncommon,Divination ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10600,7 +10600,7 @@ Pathfinder2E.SPELLS = {
       '"Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)"',
   'Touch Of Idiocy':
     'Level=2 ' +
-    'Trait=Enchantment,Mental ' +
+    'Traits=Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10608,14 +10608,14 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
   'Tree Shape':
     'Level=2 ' +
-    'Trait=Plant,Polymorph,Transmutation ' +
+    'Traits=Plant,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="Self becomes a Large tree with Armor Class 20 for 8 hr"',
   'Tree Stride':
     'Level=5 ' +
-    'Trait=Uncommon,Conjuration,Plant,Teleportation ' +
+    'Traits=Uncommon,Conjuration,Plant,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast="1 min" ' +
@@ -10623,7 +10623,7 @@ Pathfinder2E.SPELLS = {
       '"Transports self from an adjacent tree to another of the same species within 5 miles (<b>heightened 6th</b> transports 50 miles; <b>8th</b> transports 500 miles; <b>9th</b> transports anywhere on the planet)"',
   'True Seeing':
     'Level=6 ' +
-    'Trait=Divination,Revelation ' +
+    'Traits=Divination,Revelation ' +
     'School=Divination ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10631,7 +10631,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Makes counteract checks to allow self to see through illusions and transmutations for 10 min"',
   'True Strike':
     'Level=1 ' +
-    'Trait=Divination,Fortune ' +
+    'Traits=Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
@@ -10639,7 +10639,7 @@ Pathfinder2E.SPELLS = {
       '"Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn"',
   'True Target':
     'Level=7 ' +
-    'Trait=Divination,Fortune,Prediction ' +
+    'Traits=Divination,Fortune,Prediction ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
@@ -10647,7 +10647,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls"',
   'Uncontrollable Dance':
     'Level=8 ' +
-    'Trait=Enchantment,Incapacitation,Mental ' +
+    'Traits=Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10655,7 +10655,7 @@ Pathfinder2E.SPELLS = {
       '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
-    'Trait=Uncommon,Abjuration ' +
+    'Traits=Uncommon,Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
@@ -10663,7 +10663,7 @@ Pathfinder2E.SPELLS = {
       '"Touched appears neutral to alignment detection until next daily prep"',
   'Unfathomable Song':
     'Level=9 ' +
-    'Trait=Auditory,Emotion,Enchantment,Fear,Incapacitation,Mental ' +
+    'Traits=Auditory,Emotion,Enchantment,Fear,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -10671,7 +10671,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Randomly inflicts frightened 2, confused for 1 rd, stupefied 4 for 1 rd, or blinded for 1 rd on 5 targets while sustained for up to 1 min (<b>save Will</b> negates for 1 rd; critical success negates; critical failure replaces frightened 2 with stunned for 1 rd and stupefied 1)"',
   'Unfettered Pack':
     'Level=7 ' +
-    'Trait=Abjuration ' +
+    'Traits=Abjuration ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -10679,7 +10679,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10 targets ignore environmental difficult terrain and circumstance Speed penalties for 1 hr (<b>heightened 9th</b> targets ignore environmental greater difficult terrain)"',
   'Unrelenting Observation':
     'Level=8 ' +
-    'Trait=Divination,Scrying ' +
+    'Traits=Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10687,7 +10687,7 @@ Pathfinder2E.SPELLS = {
       '"R100\' 5 targets in a 20\' burst can see a 6th target for 1 hr; lead and running water block the vision (<b>save Will</b> effects last for 1 min; critical success negates)"',
   'Unseen Servant':
     'Level=1 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10695,7 +10695,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Invisible servant with 4 Hit Points and a 30\' fly Speed obeys commands to move and manipulate objects while sustained or until reduced to 0 HP"',
   'Vampiric Exsanguination':
     'Level=6 ' +
-    'Trait=Death,Necromancy,Negative ' +
+    'Traits=Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10703,7 +10703,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone inflicts 12d6 HP negative, giving self temporary HP for 1 min equal to half that suffered by the most-affected target (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Vampiric Touch':
     'Level=3 ' +
-    'Trait=Death,Necromancy,Negative ' +
+    'Traits=Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
@@ -10711,7 +10711,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 6d6 HP negative, giving self temporary HP for 1 min equal to half the inflicted damage (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Veil':
     'Level=4 ' +
-    'Trait=Illusion,Visual ' +
+    'Traits=Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10719,7 +10719,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Makes 10 creatures appear as different, similar creatures for 1 hr (<b>heightened 5th</b> also disguises voices and scents; <b>7th</b> targets can appear to be familiar individuals)"',
   'Ventriloquism':
     'Level=1 ' +
-    'Trait=Auditory,Illusion ' +
+    'Traits=Auditory,Illusion ' +
     'School=Illusion ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
@@ -10727,7 +10727,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to project their voice up to 60\' for 10 min (<b>heightened 2nd</b> effects last for 1 hr, allow changing voice quality, and require an active Perception to attempt to disbelieve)"',
   'Vibrant Pattern':
     'Level=6 ' +
-    'Trait=Illusion,Incapacitation,Visual ' +
+    'Traits=Illusion,Incapacitation,Visual ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10735,7 +10735,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 10\' burst dazzles and blinds creatures while sustained for up to 1 min; a successful save each rd after leaving the area removes the blindness (<b>save Will</b> inflicts dazzled only; critical failure blinds for 1 min with no further saves)"',
   'Visions Of Danger':
     'Level=7 ' +
-    'Trait=Auditory,Illusion,Visual ' +
+    'Traits=Auditory,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=3 ' +
@@ -10743,7 +10743,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' 30\' burst inflicts 8d8 HP mental for 1 min (<b>save basic Will</b>; critical success allows an attempt to disbelieve that negates the effects) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Vital Beacon':
     'Level=4 ' +
-    'Trait=Healing,Necromancy,Positive ' +
+    'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast="1 min" ' +
@@ -10751,7 +10751,7 @@ Pathfinder2E.SPELLS = {
       '"Touch heals once each rd: 4d10 HP, 4d8 HP, 4d6 HP, then 4d4 HP, until expended or next daily prep (<b>heightened +1</b> each touch restores +1 die)"',
   'Volcanic Eruption':
     'Level=7 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -10759,7 +10759,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, -10\' Speed, and clumsy 1, plus a 20\' descent and difficult terrain on flying creatures (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
-    'Trait=Auditory,Death,Necromancy,Negative ' +
+    'Traits=Auditory,Death,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10767,7 +10767,7 @@ Pathfinder2E.SPELLS = {
       '"40\' emanation inflicts 8d10 HP negative and drained 1d4 (<b>save Fortitude</b> inflicts HP only; critical success negates; critical failure inflicts double HP and drained 4)"',
   'Wall Of Fire':
     'Level=4 ' +
-    'Trait=Evocation,Fire ' +
+    'Traits=Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10775,7 +10775,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5\'x60\'x10\' line or 10\' radius ring inflicts 4d6 HP fire for 1 min (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Wall Of Force':
     'Level=6 ' +
-    'Trait=Evocation,Force ' +
+    'Traits=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Arcane,Occult ' +
     'Cast=3 ' +
@@ -10783,7 +10783,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Creates an invisible 50\'x20\' wall with Armor Class 10, Harness 30, and 60 HP that blocks physical effects and corporeal, incorporeal, and ethereal creatures for 1 min (<b>heightened +2</b> gives +20 HP)"',
   'Wall Of Ice':
     'Level=5 ' +
-    'Trait=Cold,Evocation,Water ' +
+    'Traits=Cold,Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10791,7 +10791,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a 60\'x10\'x1\' wall or a 10\' radius hemisphere of opaque ice with Armor Class 10, Hardness 10, weakness to fire 15, and 40 HP per 10\' section for 1 min; rubble from destruction inflicts 2d6 HP cold and difficult terrain (<b>heightened +2</b> each section gains +10 HP, and rubble inflicts +1d6 HP)"',
   'Wall Of Stone':
     'Level=5 ' +
-    'Trait=Conjuration,Earth ' +
+    'Traits=Conjuration,Earth ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10799,7 +10799,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a permanent 120\'x20\'x1\\" stone wall with Armor Class 10, Hardness 14, and 50 HP per 10\' section; rubble from destruction inflicts difficult terrain (<b>heightened +2</b> each section gains +15 HP)"',
   'Wall Of Thorns':
     'Level=3 ' +
-    'Trait=Conjuration,Plant ' +
+    'Traits=Conjuration,Plant ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=3 ' +
@@ -10807,7 +10807,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Creates a 60\'x10\'x5\' bramble wall with Armor Class 10, Hardness 10, and 20 HP per 10\' section that inflicts difficult terrain and 3d4 HP piercing for 1 min (<b>heightened +1</b> inflicts +1d4 HP, and each section gains +5 HP)"',
   'Wall Of Wind':
     'Level=3 ' +
-    'Trait=Air,Evocation ' +
+    'Traits=Air,Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10815,7 +10815,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Creates a 60\'x30\'x5\' wind wall that blocks small ammunition, inflicts -2 attack on larger ammunition, inflicts difficult terrain, and blocks flying creatures for 1 min (<b>save Fortitude</b> (flying creature) allows passage as difficult terrain; critical success negates; critical failure inflicts a 10\' push)"',
   "Wanderer's Guide":
     'Level=3 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult ' +
     'Cast="1 min" ' +
@@ -10823,7 +10823,7 @@ Pathfinder2E.SPELLS = {
       '"Reveals a route to a specified destination and reduces the movement penalty from difficult terrain while following it by half until next daily prep"',
   'Warp Mind':
     'Level=7 ' +
-    'Trait=Emotion,Enchantment,Incapacitation,Mental ' +
+    'Traits=Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10831,7 +10831,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts confused for 1 min (<b>save Will</b> inflicts confused for 1 action; critical success negates; critical failure inflicts permanent confusion)"',
   'Water Breathing':
     'Level=2 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast="1 min" ' +
@@ -10839,7 +10839,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5 targets can breathe water for 1 hr (<b>heightened 3rd</b> effects last for 8 hr; <b>4th</b> effects last until next daily prep)"',
   'Water Walk':
     'Level=2 ' +
-    'Trait=Transmutation ' +
+    'Traits=Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
@@ -10847,7 +10847,7 @@ Pathfinder2E.SPELLS = {
       '"Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30\' affects 10 creatures, and effects last for 1 hr)"',
   'Weapon Of Judgment':
     'Level=9 ' +
-    'Trait=Evocation,Force ' +
+    'Traits=Evocation,Force ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -10855,7 +10855,7 @@ Pathfinder2E.SPELLS = {
       '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
-    'Trait=Evocation ' +
+    'Traits=Evocation ' +
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
@@ -10863,7 +10863,7 @@ Pathfinder2E.SPELLS = {
       '"Weapon swing inflicts 4 dice of damage to every creature in a 30\' cone or 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
   'Web':
     'Level=2 ' +
-    'Trait=Conjuration ' +
+    'Traits=Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
@@ -10871,7 +10871,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving)"',
   'Weird':
     'Level=9 ' +
-    'Trait=Death,Emotion,Fear,Illusion,Mental ' +
+    'Traits=Death,Emotion,Fear,Illusion,Mental ' +
     'School=Illusion ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
@@ -10879,7 +10879,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Inflicts 16d6 HP mental and frightened 2 on all targets within range (<b>save Will</b> inflicts half HP and frightened 1; critical success negates; critical failure inflicts death on a failed subsequent Fortitude save or double HP, frightened 2 and fleeing on success; critical success negates fleeing)"',
   'Wind Walk':
     'Level=8 ' +
-    'Trait=Air,Transmutation ' +
+    'Traits=Air,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast="10 min" ' +
@@ -10887,7 +10887,7 @@ Pathfinder2E.SPELLS = {
       '"Self and 5 touched become clouds that can move 20 MPH for 8 hr; attacking or spellcasting ends the spell"',
   'Wish':
     'Level=10 ' +
-    'Trait=Divination ' +
+    'Traits=Divination ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=3 ' +
@@ -10895,7 +10895,7 @@ Pathfinder2E.SPELLS = {
       '"Reverses effects that require <i>Wish</i> or produces effects similar to a known arcane spell of up to 9th level or a common spell of up to 7th level"',
   'Zealous Conviction':
     'Level=6 ' +
-    'Trait=Emotion,Enchantment,Mental ' +
+    'Traits=Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10903,7 +10903,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)"',
   'Zone Of Truth':
     'Level=3 ' +
-    'Trait=Uncommon,Enchantment,Mental ' +
+    'Traits=Uncommon,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
@@ -10911,7 +10911,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 20\' burst prevents lies and inflicts -2 Deception for 10 min (<b>save Will</b> inflicts -2 Deception only; critical success negates; critical failure inflicts -4 Deception)"',
   'Allegro':
     'Level=7 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10919,7 +10919,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target may take an additional Strike, Stride, or Step for 1 rd"',
   'Counter Performance':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Bard,Composition,Enchantment,Fortune,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Enchantment,Fortune,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Reaction ' +
@@ -10927,14 +10927,14 @@ Pathfinder2E.SPELLS = {
       '"Allies in a 60\' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect"',
   'Dirge Of Doom':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="30\' emanation inflicts frightened 1 on foes for 1 rd"',
   'Fatal Aria':
     'Level=10 ' +
-    'Trait=Focus,Uncommon,Bard,Composition,Death,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Death,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10942,7 +10942,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Kills a target up to level 16 or 50 HP, inflicts 0 HP and dying 1 on a level 17 target, or inflicts 50 HP on a level 18+ target"',
   'House Of Imaginary Walls':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10950,7 +10950,7 @@ Pathfinder2E.SPELLS = {
       '"Creates an invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10958,7 +10958,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Allows self to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
   'Inspire Courage':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10966,7 +10966,7 @@ Pathfinder2E.SPELLS = {
       '"60\' emanation gives allies +1 attack, damage, and saves vs. fear for 1 rd"',
   'Inspire Defense':
     'Level=2 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -10974,7 +10974,7 @@ Pathfinder2E.SPELLS = {
       '"60\' emanation gives allies +1 Armor Class and saves, plus resistance of half the spell level to physical damage, for 1 rd"',
   'Inspire Heroics':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
+    'Traits=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10982,7 +10982,7 @@ Pathfinder2E.SPELLS = {
       '"A successful Performance check increases the effects of a subsequent <i>Inspire Courage</i> or <i>Inspire Defense</i> to +2, or +3 on a critical success; failure does not expend a Focus Point"',
   'Lingering Composition':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
+    'Traits=Focus,Uncommon,Bard,Enchantment,Metamagic ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10990,7 +10990,7 @@ Pathfinder2E.SPELLS = {
       '"A successful Performance check increases the duration of a subsequent cantrip composition to 3 rd, or 4 rd on a critical success; failure does not expend a Focus Point"',
   "Loremaster's Etude":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Bard,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Bard,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Occult ' +
     'Cast=Free ' +
@@ -10998,7 +10998,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target may take the better of two rolls on the triggering Recall Knowledge check"',
   'Soothing Ballad':
     'Level=7 ' +
-    'Trait=Focus,Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -11006,14 +11006,14 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self and 9 allies gain a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)"',
   'Triple Time':
     'Level=2 ' +
-    'Trait=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="60\' emanation gives allies +10\' Speed for 1 rd"',
   "Champion's Sacrifice":
     'Level=6 ' +
-    'Trait=Focus,Uncommon,Abjuration,Champion ' +
+    'Traits=Focus,Uncommon,Abjuration,Champion ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11021,7 +11021,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Redirects the damage of the triggering Strike or failed save from an ally to self"',
   "Hero's Defiance":
     'Level=10 ' +
-    'Trait=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Free ' +
@@ -11029,7 +11029,7 @@ Pathfinder2E.SPELLS = {
       '"Self recovers 10d4+20 HP before suffering damage that would reduce HP to 0 once per Refocus"',
   'Lay On Hands':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Champion,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11037,7 +11037,7 @@ Pathfinder2E.SPELLS = {
       '"Touched regains 6 HP and gains +2 Armor Class for 1 rd; touched undead instead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)"',
   'Litany Against Sloth':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
+    'Traits=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11045,7 +11045,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Evil target suffers Reaction prevention and slowed 1 for 1 rd (<b>save Will</b> Reaction prevention only; critical success negates; critical failure inflicts slowed 2; slothful creatures worsen save by 1 degree)"',
   'Litany Against Wrath':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
+    'Traits=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11053,7 +11053,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Evil target suffers 3d6 HP good whenever it damages a good creature for 1 rd (<b>save Will</b> inflicts damage once; critical success negates; critical failure also inflicts enfeebled 2; wrathful creatures worsen save by 1 degree)"',
   'Litany Of Righteousness':
     'Level=7 ' +
-    'Trait=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
+    'Traits=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11061,7 +11061,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Evil target suffers weakness 7 to good for 1 rd (<b>heightened +1</b> inflicts weakness +1)"',
   'Agile Feet':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11069,7 +11069,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +5\' Speed and can move normally in difficult terrain for the remainder of the turn"',
   'Appearance Of Wealth':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Illusion ' +
+    'Traits=Focus,Uncommon,Cleric,Illusion ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11077,7 +11077,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5\' burst fascinates creatures attracted to wealth in a 20\' radius while sustained for up to 1 min (<b>save Will</b> effects last for 1 rd; critical success negates)"',
   'Artistic Flourish':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11085,7 +11085,7 @@ Pathfinder2E.SPELLS = {
       '"R15\' Target weapon gains +%{(rank.Crafting||0)-1<?1>?0} attack, or target skill tool gains +%{(rank.Crafting||0)-1<?1>?0} checks, for 10 min (<b>heightened 7th</b> gives +%{(rank.Crafting||0)-1<?2>?0} bonus; <b>10th</b> gives +%{(rank.Crafting||0)-1<?3>?0} bonus)"',
   'Athletic Rush':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11093,7 +11093,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +10\' Speed and +2 Athletics for 1 rd and may immediately Stride, Leap, Climb, or Swim"',
   'Bit Of Luck':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11101,7 +11101,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target may use the better of two rolls on a save within 1 min once per target per day"',
   'Blind Ambition':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11109,7 +11109,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Target suffers -2 to resist attempts to Coerce it to advance its ambitions for 10 min (<b>save Will</b> inflicts -1 resistance; critical success negates; critical failure causes single-minded focus on its ambitions)"',
   'Captivating Adoration':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental,Visual ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental,Visual ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11117,7 +11117,7 @@ Pathfinder2E.SPELLS = {
       '"Fascinates targets in a 15\' emanation for 1 min (<b>save Will</b> effects last for 1 action; critical success negates; critical failure also improves attitude by 1 step) (<b>heightened +1</b> increases the radius by 15\')"',
   'Charming Touch':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11125,7 +11125,7 @@ Pathfinder2E.SPELLS = {
       '"Touched becomes friendly, or helpful if already friendly, and cannot use hostile actions for 10 min (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure makes the target helpful)"',
   'Cloak Of Shadow':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Darkness,Evocation,Shadow ' +
+    'Traits=Focus,Uncommon,Cleric,Darkness,Evocation,Shadow ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11133,7 +11133,7 @@ Pathfinder2E.SPELLS = {
       '"20\' emanation around willing touched reduces bright light to dim and conceals touched for 1 min; target may shed the cloak, and the spell ends if another picks it up"',
   'Commanding Lash':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11141,7 +11141,7 @@ Pathfinder2E.SPELLS = {
       '"R100\' Target harmed by self\'s most recent action obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure target uses all actions on its next turn to obey)"',
   'Competitive Edge':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11149,7 +11149,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +1 attack and skill checks, increasing to +3 immediately after a foe within 20\' critically succeeds on the same, while sustained for up to 1 min (<b>heightened 7th</b> increases bonuses to +2 and +4)"',
   'Cry Of Destruction':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation,Sonic ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation,Sonic ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11157,7 +11157,7 @@ Pathfinder2E.SPELLS = {
       '"15\' cone inflicts 1d8 HP sonic, or 1d12 HP sonic if self has already damaged a foe this turn (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d8 HP or +1d12 HP)"',
   'Darkened Eyes':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Darkness,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Darkness,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11165,7 +11165,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Suppresses the target\'s darkvision or low-light vision for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure also blinds until a successful save at the end of a turn)"',
   'Dazzling Flash':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation,Light,Visual ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation,Light,Visual ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11173,7 +11173,7 @@ Pathfinder2E.SPELLS = {
       '"15\' cone inflicts blinded for 1 rd (Interact action ends the effect) and dazzled for 1 min (<b>save Fortitude</b> inflicts dazzled for 1 rd; critical success negates; critical failure inflicts dazzled for 1 hr) (<b>heightened 3rd</b> extends effects to a 30\' cone)"',
   "Death's Call":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11181,7 +11181,7 @@ Pathfinder2E.SPELLS = {
       '"R20\' Gives self temporary HP for 1 min equal to %{spellModifier.%tradition} + the level of a living creature that dies, or double that for an undead creature that is destroyed"',
   'Delusional Pride':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11189,7 +11189,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts -1 attacks and skill checks on a target that fails an attack or skill check by the end of its turn, or -2 if it fails twice, for 10 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects last for 24 hr)"',
   'Destructive Aura':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Aura,Cleric,Evocation ' +
+    'Traits=Focus,Uncommon,Aura,Cleric,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11197,7 +11197,7 @@ Pathfinder2E.SPELLS = {
       '"15\' emanation inflicts -2 resistances (<b>heightened +2</b> inflicts an additional -2 resistances)"',
   'Disperse Into Air':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Air,Cleric,Polymorph,Transmutation ' +
+    'Traits=Focus,Uncommon,Air,Cleric,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11205,7 +11205,7 @@ Pathfinder2E.SPELLS = {
       '"After taking the triggering damage, self becomes air with no actions and immunity to attacks until the end of the turn, then reforms anywhere within 15\'"',
   'Downpour':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation,Water ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11213,7 +11213,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 30\' burst extinguishes non-magical flames, gives concealment and fire resistance 10, and damages creatures with a water weakness for 1 min (<b>heightened +1</b> gives +2 fire resistance)"',
   "Dreamer's Call":
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11221,7 +11221,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target obeys a suggestion and suffers flat-footed and fascinated until the end of its next turn (<b>save Will</b> inflicts flat-footed and fascinated only; critical success negates; critical failure prevents the target from taking other actions)"',
   'Enduring Might':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11229,7 +11229,7 @@ Pathfinder2E.SPELLS = {
       '"Gives self resistance %{8+strengthModifier} to the triggering damage (<b>heightened +1</b> gives +2 resistance)"',
   'Eradicate Undeath':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11237,7 +11237,7 @@ Pathfinder2E.SPELLS = {
       '"30\' cone inflicts 4d12 HP positive to undead (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d12 HP)"',
   'Face In The Crowd':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
+    'Traits=Focus,Uncommon,Cleric,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11245,7 +11245,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +2 Deception and Stealth to blend into a crowd and ignores difficult terrain from crowds for 1 min (<b>heightened 3rd</b> R10\' affects 10 creatures)"',
   'Fire Ray':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Attack,Cleric,Evocation,Fire ' +
+    'Traits=Focus,Uncommon,Attack,Cleric,Evocation,Fire ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11253,7 +11253,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Spell attack inflicts 2d6 HP fire; critical success inflicts double HP and 1d4 HP persistent fire (<b>heightened +1</b> inflicts +2d6 HP initial and +1d4 HP persistent)"',
   'Flame Barrier':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11261,7 +11261,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Target gains fire resistance 15 against the triggering fire damage (<b>heightened +2</b> gives +5 resistance)"',
   'Forced Quiet':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11269,7 +11269,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target can speak only at a whisper, requiring others over 10\' away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure effects last for 10 min)"',
   'Glimpse The Truth':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Revelation ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Revelation ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11277,7 +11277,7 @@ Pathfinder2E.SPELLS = {
       '"Successful counteract attempts in a 30\' emanation allow self to see through illusions for 1 rd (<b>heightened 7th</b> allows others to see through illusions)"',
   "Healer's Blessing":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11285,7 +11285,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Healing spells affecting the target restore +2 HP for 1 min (<b>heightened +1</b> restores +1 HP)"',
   'Hurtling Stone':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Attack,Cleric,Earth,Evocation ' +
+    'Traits=Focus,Uncommon,Attack,Cleric,Earth,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11293,7 +11293,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Spell attack inflicts 1d6+%{strengthModifier} HP bludgeoning, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Know The Enemy':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11301,7 +11301,7 @@ Pathfinder2E.SPELLS = {
       '"Allows a Recall Knowledge check, using the better of two rolls, during initiative or immediately after inflicting damage to remember a target\'s abilities"',
   'Localized Quake':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Earth,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Earth,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11309,7 +11309,7 @@ Pathfinder2E.SPELLS = {
       '"Choice of a 15\' emanation or 15\' cone inflicts 4d6 HP bludgeoning and knocked prone (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Lucky Break':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11317,7 +11317,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to reroll a triggering failed save once per 10 min"',
   "Magic's Vessel":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11325,7 +11325,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +1 saves; subsequent casting sustains the spell up to 1 min and gives the target resistance to spell damage equal to the cast spell\'s level"',
   'Malignant Sustenance':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy,Negative ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11333,7 +11333,7 @@ Pathfinder2E.SPELLS = {
       '"Touched undead gains fast healing 7 for 1 min (<b>heightened +1</b> gives fast healing +2)"',
   'Moonbeam':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Attack,Cleric,Evocation,Fire,Light ' +
+    'Traits=Focus,Uncommon,Attack,Cleric,Evocation,Fire,Light ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11341,7 +11341,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Spell attack inflicts dazzled for 1 rd and 1d6 HP fire that counts as silver, or dazzled for 1 min and double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Mystic Beacon':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11349,7 +11349,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Gives heightened +1 effects to the next damage or healing spell cast by the target within 1 rd"',
   "Nature's Bounty":
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Conjuration,Plant,Positive ' +
+    'Traits=Focus,Uncommon,Cleric,Conjuration,Plant,Positive ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11357,7 +11357,7 @@ Pathfinder2E.SPELLS = {
       '"Creates a fruit or vegetable that counts as a meal and restores 3d10+12 HP if eaten within 1 min (<b>heightened +1</b> restores +6 HP)"',
   'Overstuff':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11365,7 +11365,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> target may use an action to end the sickened condition; critical success negates; critical failure inflicts sickened 2)"',
   'Perfected Form':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11373,7 +11373,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to reroll the triggering failed save vs. a morph, petrification, or polymorph effect"',
   'Perfected Mind':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11381,7 +11381,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self an additional Will save vs. a mental effect once per effect"',
   'Positive Luminance':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Light,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Cleric,Light,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11389,7 +11389,7 @@ Pathfinder2E.SPELLS = {
       '"10\' light emanation inflicts 2 HP positive on successful undead attackers for 1 min; self may increase the radius by 10\' and the damage by 2 HP each rd and may end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
   'Precious Metals':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11397,7 +11397,7 @@ Pathfinder2E.SPELLS = {
       '"Transforms touched metal item into cold iron, copper, gold, iron, silver, or steel for 1 min (<b>heightened 8th</b> can transform into adamantine or mithral)"',
   "Protector's Sacrifice":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11405,7 +11405,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Transfers 3 HP damage of the triggering attack from target to self (<b>heightened +1</b> transfers +3 HP)"',
   "Protector's Sphere":
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Aura,Cleric ' +
+    'Traits=Focus,Uncommon,Abjuration,Aura,Cleric ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11413,7 +11413,7 @@ Pathfinder2E.SPELLS = {
       '"15\' emanation gives resistance 3 to all damage to self and allies while sustained for up to 1 min (<b>heightened +1</b> gives +1 resistance)"',
   'Pulse Of The City':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Scrying ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Scrying ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -11421,7 +11421,7 @@ Pathfinder2E.SPELLS = {
       '"R25 miles; reveals information about the nearest settlement (<b>heightened 5th</b> increases range to 100 miles)"',
   'Pushing Gust':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Air,Cleric,Conjuration ' +
+    'Traits=Focus,Uncommon,Air,Cleric,Conjuration ' +
     'School=Conjuration ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11429,7 +11429,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Pushes target away 10\' (<b>save Fortitude</b> pushes 5\'; critical success negates; critical failure pushes 10\' and knocks prone)"',
   'Read Fate':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Prediction ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Prediction ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
@@ -11437,7 +11437,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' Successful DC 6 flat check gives a one-word clue to the target\'s short-term fate"',
   'Rebuke Death':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Healing,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Cleric,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11445,7 +11445,7 @@ Pathfinder2E.SPELLS = {
       '"1 target in a 20\' emanation (2 or 3 actions affect 2 or 3 targets) regains 3d6 HP and recovers from the dying condition without increasing its wounded condition (<b>heightened +1</b> restores +1d6 HP)"',
   'Retributive Pain':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric,Mental,Nonlethal ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric,Mental,Nonlethal ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11453,7 +11453,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts half the triggering damage to self on the attacker as mental HP"',
   'Safeguard Secret':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric,Mental ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric,Mental ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast="1 min" ' +
@@ -11461,7 +11461,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' Self and allies gain +4 skill checks to conceal a specified piece of knowledge for 1 hr"',
   'Savor The Sting':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Mental,Nonlethal ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Mental,Nonlethal ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11469,7 +11469,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 1d4 HP mental and 1d4 HP persistent mental and gives self +1 attack and skill checks vs. the target while persistent damage continues (<b>save Will</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
   'Scholarly Recollection':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11477,7 +11477,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to use the best of two rolls on the triggering Seek or Recall Knowledge check"',
   'Shared Nightmare':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11485,7 +11485,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts confused for 1 action each rd for 1 min (<b>save Will</b> inflicts confused on self for 1 action next turn; critical success inflicts confused on self for 1 rd; critical failure inflicts confused for 1 min)"',
   'Soothing Words':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11493,7 +11493,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Gives the target +1 Will and +2 vs. emotion effects for 1 rd and attempts to counteract an existing emotion effect (<b>heightened 5th</b> gives +2 Will and +3 vs. emotion effects)"',
   'Splash Of Art':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
+    'Traits=Focus,Uncommon,Cleric,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11501,7 +11501,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5\' burst randomly inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric,Illusion ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric,Illusion ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11509,7 +11509,7 @@ Pathfinder2E.SPELLS = {
       '"Self Steps and becomes concealed until the end of the next turn after the triggering foe melee attack miss"',
   'Sweet Dream':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Auditory,Cleric,Enchantment,Linguistic,Mental,Sleep ' +
+    'Traits=Focus,Uncommon,Auditory,Cleric,Enchantment,Linguistic,Mental,Sleep ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=3 ' +
@@ -11517,7 +11517,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target who sleeps for 1 min gains +1 intelligence-based skill checks, +1 charisma-based skill checks, or +5\' Speed for 9 min"',
   'Take Its Course':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11525,7 +11525,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains an immediate save with a +2 or -2 modifier vs. an affliction, or an immediate DC 5 or 20 flat check against persistent poison damage (<b>save Will</b> negates) (<b>heightened 7th</b> affects multiple afflictions and poisons affecting the target)"',
   'Tempt Fate':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination,Fortune ' +
+    'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11533,7 +11533,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Gives the target +1 on the triggering save and turns a normal success into a critical success or a normal failure into a critical failure (<b>heightened 8th</b> gives +2 on the save)"',
   'Tidal Surge':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation,Water ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation,Water ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11541,7 +11541,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' Moves the target 5\' over ground or 10\' in water (<b>save Fortitude</b> negates; critical failure doubles distance)"',
   'Touch Of Obedience':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11549,7 +11549,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts stupefied 1 until the end of the next turn (<b>save Will</b> inflicts stupefied 1 until the end of the current turn; critical success negates; critical failure inflicts stupefied 1 for 1 min)"',
   'Touch Of The Moon':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Light ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Light ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11557,7 +11557,7 @@ Pathfinder2E.SPELLS = {
       '"Target emits dim light in a 20\' radius and cycles through benefits each rd for 1 min: no benefit; +1 attack and +4 damage; +1 attack, +4 damage, +1 Armor Class, and +1 saves; +1 Armor Class and +1 saves"',
   'Touch Of Undeath':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Necromancy,Negative ' +
+    'Traits=Focus,Uncommon,Cleric,Necromancy,Negative ' +
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11565,7 +11565,7 @@ Pathfinder2E.SPELLS = {
       '"Touch inflicts 1d6 HP negative and half healing for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical success inflicts double HP and half healing for 1 min) (<b>heightened +1</b> inflicts +1d6 HP)"',
   "Traveler's Transit":
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11573,7 +11573,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains a %{speed}\' climb Speed or a %{speed}\' swim Speed for 1 min (<b>heightened 5th</b> allows choosing a %{speed}\' fly Speed)"',
   "Trickster's Twin":
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Illusion,Visual ' +
+    'Traits=Focus,Uncommon,Cleric,Illusion,Visual ' +
     'School=Illusion ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11581,7 +11581,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target believes that self is in a location up to 100\' distant for 1 min or until succeeding at a Will save in response to interacting with the illusion or to the illusion performing a nonsensical or hostile action (<b>save Will</b> no subsequent Will save is necessary; critical success negates; critical failure requires critical success on a Will save to end the spell)"',
   'Unimpeded Stride':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11589,7 +11589,7 @@ Pathfinder2E.SPELLS = {
       '"Frees self from magical holds of a level less than or equal to the spell level and allows a Stride that ignores difficult terrain and Speed penalties"',
   'Unity':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
+    'Traits=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
     'School=Abjuration ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11597,7 +11597,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Allows allies to use self\'s saving throw vs. the triggering spell or ability"',
   'Veil Of Confidence':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11605,7 +11605,7 @@ Pathfinder2E.SPELLS = {
       '"Reduces any frightened condition on self by 1 for 1 min; critical failure on a subsequent save ends the spell and increases the frightened condition by 1"',
   'Vibrant Thorns':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Morph,Plant,Transmutation ' +
+    'Traits=Focus,Uncommon,Cleric,Morph,Plant,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11613,7 +11613,7 @@ Pathfinder2E.SPELLS = {
       '"Unarmed and adjacent melee attacks on self inflict 1 HP piercing on the attacker for 1 min; casting a positive spell increases the damage to 1d6 HP for 1 turn (<b>heightened +1</b> inflicts +1 HP, or +1d6 HP after casting a positive spell)"',
   'Waking Nightmare':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Fear,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Fear,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
@@ -11621,7 +11621,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts frightened 2 (<b>save Will</b> inflicts frightened 1; critical success negates; critical failure inflicts frightened 3; failure while sleeping also inflicts fleeing for 1 rd)"',
   'Weapon Surge':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Evocation ' +
+    'Traits=Focus,Uncommon,Cleric,Evocation ' +
     'School=Evocation ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11629,7 +11629,7 @@ Pathfinder2E.SPELLS = {
       '"Held weapon gains +1 attack and an additional die of damage on the next attack before the start of the next turn"',
   'Word Of Freedom':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Enchantment,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Enchantment,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11637,7 +11637,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Suppresses a confused, frightened, grabbed, paralyzed, or restrained condition affecting the target for 1 rd"',
   'Word Of Truth':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Cleric,Divination ' +
+    'Traits=Focus,Uncommon,Cleric,Divination ' +
     'School=Divination ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
@@ -11645,7 +11645,7 @@ Pathfinder2E.SPELLS = {
       '"Causes a glowing symbol of %{deity} to appear when self speaks true statements of up to 25 words while sustained for up to 1 min"',
   'Zeal For Battle':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Cleric,Emotion,Enchantment,Fortune,Mental ' +
+    'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Fortune,Mental ' +
     'School=Enchantment ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
@@ -11653,7 +11653,7 @@ Pathfinder2E.SPELLS = {
       '"R10\' Allows self and an ally to each use the higher of their initiative rolls"',
   'Goodberry':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Druid,Healing,Necromancy ' +
+    'Traits=Focus,Uncommon,Druid,Healing,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11661,7 +11661,7 @@ Pathfinder2E.SPELLS = {
       '"Eating the touched berry within 10 min restores 1d6+4 HP; six berries also count as a full meal (<b>heightened +1</b> affects +1 berry)"',
   'Heal Animal':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11669,7 +11669,7 @@ Pathfinder2E.SPELLS = {
       '"Touched animal (2 actions gives R30\') regains 1d8 HP, or 1d8+8 HP with 2 actions (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)"',
   'Impaling Briars':
     'Level=8 ' +
-    'Trait=Focus,Uncommon,Conjuration,Druid,Plant ' +
+    'Traits=Focus,Uncommon,Conjuration,Druid,Plant ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11677,7 +11677,7 @@ Pathfinder2E.SPELLS = {
       '"100\' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10\' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min"',
   'Primal Summons':
     'Level=6 ' +
-    'Trait=Focus,Uncommon,Conjuration,Druid ' +
+    'Traits=Focus,Uncommon,Conjuration,Druid ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=Free ' +
@@ -11685,7 +11685,7 @@ Pathfinder2E.SPELLS = {
       '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60\' fly Speed; a 20\' burrow speed, -10\' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60\' swim Speed, a Shove after a melee attack, and resistance 5 to fire"',
   'Storm Lord':
     'Level=9 ' +
-    'Trait=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
+    'Traits=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11693,7 +11693,7 @@ Pathfinder2E.SPELLS = {
       '"100\' emanation produces a bolt of lighting that inflicts 10d6 HP electricity and deafened for 1 rd (<b>save basic Reflex</b>) each rd while sustained for up to 1 min, plus a choice of weather: calm; foggy (conceals); rainy (inflicts -2 Acrobatics and Perception); or windy (inflicts -4 ranged attacks and difficult terrain for flying)"',
   'Stormwind Flight':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Air,Druid,Transmutation ' +
+    'Traits=Focus,Uncommon,Air,Druid,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11701,7 +11701,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains %{speed}\' fly Speed for 1 min (<b>heightened 6th</b> negates difficult terrain effects when flying against the wind)"',
   'Tempest Surge':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
+    'Traits=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11709,7 +11709,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 HP persistent electricity (<b>save basic Reflex</b> inflicts initial HP only)"',
   'Wild Morph':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Druid,Morph,Transmutation ' +
+    'Traits=Focus,Uncommon,Druid,Morph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11717,7 +11717,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
+    'Traits=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11725,21 +11725,21 @@ Pathfinder2E.SPELLS = {
       '"Transforms self into a <i>Pest Form</i> creature for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an <i>Animal Form</i> creature)"',
   'Abundant Step':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
+    'Traits=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description="Teleports self %{speed>?15}\' within line of sight"',
   'Empty Body':
     'Level=9 ' +
-    'Trait=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
+    'Traits=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
     'School=Conjuration ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description="Moves self to the Ethereal Plane for 1 min"',
   'Ki Blast':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Evocation,Force,Monk ' +
+    'Traits=Focus,Uncommon,Evocation,Force,Monk ' +
     'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11747,7 +11747,7 @@ Pathfinder2E.SPELLS = {
       '"15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions inflicts 3d6 HP in a 30\' cone or 4d6 HP in a 60\' cone) (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP for 1 action or +2d6 HP for 2 or 3)"',
   'Ki Rush':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Monk,Transmutation ' +
+    'Traits=Focus,Uncommon,Monk,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11755,7 +11755,7 @@ Pathfinder2E.SPELLS = {
       '"Allows self to move twice and become concealed until the next turn"',
   'Ki Strike':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Monk,Transmutation ' +
+    'Traits=Focus,Uncommon,Monk,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11763,7 +11763,7 @@ Pathfinder2E.SPELLS = {
       '"An unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, lawful, negative, or positive (<b>heightened +4</b> inflicts +1d6 HP)"',
   'Quivering Palm':
     'Level=8 ' +
-    'Trait=Focus,Uncommon,Incapacitation,Monk,Necromancy ' +
+    'Traits=Focus,Uncommon,Incapacitation,Monk,Necromancy ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
@@ -11771,7 +11771,7 @@ Pathfinder2E.SPELLS = {
       '"A successful Strike allows self to inflict stunned 3 and 80 HP on the target at any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP and ends the spell; critical success ends the spell; critical failure kills the target) (<b>heightened +1</b> inflicts +10 HP, or +5 HP on a successful save)"',
   'Wholeness Of Body':
     'Level=2 ' +
-    'Trait=Focus,Uncommon,Healing,Monk,Necromancy,Positive ' +
+    'Traits=Focus,Uncommon,Healing,Monk,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11779,7 +11779,7 @@ Pathfinder2E.SPELLS = {
       '"Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)"',
   'Wild Winds Stance':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Air,Evocation,Monk,Stance ' +
+    'Traits=Focus,Uncommon,Air,Evocation,Monk,Stance ' +
     'School=Evocation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11787,7 +11787,7 @@ Pathfinder2E.SPELLS = {
       '"Stance gives +2 Armor Class vs. ranged attacks and R30\' unarmed strikes that ignore concealment and cover and inflict 1d6 HP bludgeoning"',
   'Wind Jump':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Air,Monk,Transmutation ' +
+    'Traits=Focus,Uncommon,Air,Monk,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Occult ' +
     'Cast=1 ' +
@@ -11795,7 +11795,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains a %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
   'Aberrant Whispers':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
+    'Traits=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11803,7 +11803,7 @@ Pathfinder2E.SPELLS = {
       '"5\' emanation (2 or 3 actions give a 10\' or 15\' emanation) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases the radius by 5\')"',
   'Abyssal Wrath':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11811,7 +11811,7 @@ Pathfinder2E.SPELLS = {
       '"60\' cone inflicts 4d6 HP each of a random pair of damage types: bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP each)"',
   'Ancestral Memories':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Divination,Sorcerer ' +
+    'Traits=Focus,Uncommon,Divination,Sorcerer ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11819,7 +11819,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes trained in a non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> becomes expert in the skill)"',
   'Angelic Halo':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Aura,Good,Sorcerer ' +
+    'Traits=Focus,Uncommon,Abjuration,Aura,Good,Sorcerer ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11827,7 +11827,7 @@ Pathfinder2E.SPELLS = {
       '"15\' emanation increases the HP restored by <i>Heal</i> by double the <i>Heal</i> spell\'s level for 1 min"',
   'Angelic Wings':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Evocation,Light,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evocation,Light,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11835,7 +11835,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains a %{speed}\' fly Speed and shines a 30\' radius bright light for 3 rd (<b>heightened 5th</b> effects last for 1 min)"',
   'Arcane Countermeasure':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Abjuration,Sorcerer ' +
+    'Traits=Focus,Uncommon,Abjuration,Sorcerer ' +
     'School=Abjuration ' +
     'Traditions=Primal ' +
     'Cast=Reaction ' +
@@ -11843,7 +11843,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' Reduces the triggering spell\'s heightened level by 1 and gives the spell\'s targets +2 saves, skill checks, Armor Class, and DC against it"',
   'Celestial Brand':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
+    'Traits=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11851,7 +11851,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Self and allies gain +1 attacks and skill checks vs. the evil target, and attacks by good creatures inflict +1d4 HP good, for 1 rd (<b>heightened +2</b> good creature attacks inflict +1 HP)"',
   'Diabolic Edict':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Enchantment,Sorcerer ' +
+    'Traits=Focus,Uncommon,Enchantment,Sorcerer ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11859,7 +11859,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Willing target performs a stated task, gaining +1 attack and skill checks, for 1 rd; refusal inflicts -1 attack and skill checks for 1 rd"',
   'Dragon Breath':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11867,7 +11867,7 @@ Pathfinder2E.SPELLS = {
       '"%{draconicColor<\'Green\'?\\"60\' line\\":\\"30\' cone\\"} inflicts 5d6 HP %{draconicEnergy||\'fire\'} (<b>save basic %{draconicColor==\'Green\'?\'Fortitude\':\'Reflex\'}</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
+    'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11875,7 +11875,7 @@ Pathfinder2E.SPELLS = {
       '"Claws inflict 1d6 HP slashing and 1d6 HP %{draconicEnergy||\'fire\'}, and self gains resistance 5 to %{draconicEnergy||\'fire\'}, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
+    'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11883,7 +11883,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains a %{Speed>?60}\' fly Speed for 1 min (<b>heightened 8th</b> effects last for 10 min)"',
   'Drain Life':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
+    'Traits=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11891,7 +11891,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target suffers 3d4 HP negative, and self gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11899,7 +11899,7 @@ Pathfinder2E.SPELLS = {
       '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Evocation,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11907,7 +11907,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?speed+\\"\' swim Speed and water breathing\\":(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
+    'Traits=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11915,7 +11915,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts 1d8 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
+    'Traits=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11923,7 +11923,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
   'Extend Spell':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Divination,Metamagic,Sorcerer ' +
+    'Traits=Focus,Uncommon,Divination,Metamagic,Sorcerer ' +
     'School=Divination ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11931,7 +11931,7 @@ Pathfinder2E.SPELLS = {
       '"Increases the duration of a subsequent targeted spell of less than maximum spell level from 1 min to 10 min"',
   'Faerie Dust':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Enchantment,Mental,Sorcerer ' +
+    'Traits=Focus,Uncommon,Enchantment,Mental,Sorcerer ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11939,7 +11939,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts loss of Reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure also inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases the radius by 5\')"',
   'Fey Disappearance':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Enchantment,Sorcerer ' +
+    'Traits=Focus,Uncommon,Enchantment,Sorcerer ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11947,14 +11947,14 @@ Pathfinder2E.SPELLS = {
       '"Self becomes invisible and moves normally over natural difficult terrain until the end of the next turn; performing a hostile action ends the spell (<b>heightened 5th</b> a hostile action does not end the spell)"',
   'Fey Glamour':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Illusion,Sorcerer ' +
+    'Traits=Focus,Uncommon,Illusion,Sorcerer ' +
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description="R30\' 30\' burst disguises 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Morph,Necromancy,Sorcerer ' +
+    'Traits=Focus,Uncommon,Morph,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11962,7 +11962,7 @@ Pathfinder2E.SPELLS = {
       '"Bite inflicts 1d8 HP piercing, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
   'Grasping Grave':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Necromancy,Sorcerer ' +
+    'Traits=Focus,Uncommon,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11970,7 +11970,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' 20\' radius inflicts 6d6 HP slashing and -10\' Speed for 1 rd for 10 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilized for 1 rd) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hellfire Plume':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Evil,Evocation,Fire,Sorcerer ' +
+    'Traits=Focus,Uncommon,Evil,Evocation,Fire,Sorcerer ' +
     'School=Evocation ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11978,7 +11978,7 @@ Pathfinder2E.SPELLS = {
       '"R60\' 10\' radius inflicts 4d6 HP fire and 4d6 HP evil (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP fire and evil)"',
   'Horrific Visage':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Emotion,Fear,Illusion,Mental,Sorcerer,Visual ' +
+    'Traits=Focus,Uncommon,Emotion,Fear,Illusion,Mental,Sorcerer,Visual ' +
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -11986,7 +11986,7 @@ Pathfinder2E.SPELLS = {
       '"30\' radius inflicts frightened 1 (<b>save Will</b> negates; critical failure inflicts frightened 2) (<b>heightened 5th</b> inflicts frightened 1, 2, or 3 and fleeing for 1 rd on save success, failure, or critical failure)"',
   'Jealous Hex':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
+    'Traits=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -11994,7 +11994,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on the target\'s highest ability modifier, until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
   'Swamp Of Sloth':
     'Level=3 ' +
-    'Trait=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
+    'Traits=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
     'School=Conjuration ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -12002,7 +12002,7 @@ Pathfinder2E.SPELLS = {
       '"R120\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases radius by 5\' and inflicts +1d6 HP)"',
   'Tentacular Limbs':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
+    'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -12010,7 +12010,7 @@ Pathfinder2E.SPELLS = {
       '"Extends reach for touch spells and unarmed Strikes to 10\' for 1 min; adding an action to touch spells extends reach to 20\' (<b>heightened +2</b> adding an action gives +10\' touch spell reach)"',
   "Undeath's Blessing":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
+    'Traits=Focus,Uncommon,Necromancy,Negative,Sorcerer ' +
     'School=Necromancy ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -12018,7 +12018,7 @@ Pathfinder2E.SPELLS = {
       '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
   'Unusual Anatomy':
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
+    'Traits=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
     'Traditions=Primal ' +
     'Cast=1 ' +
@@ -12026,7 +12026,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on successful non-reach melee attackers for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP)"',
   "You're Mine":
     'Level=5 ' +
-    'Trait=Focus,Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
+    'Traits=Focus,Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
     'School=Enchantment ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
@@ -12034,14 +12034,14 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure gives control for 1 rd) (<b>heightened 7th</b> gives control for 1 rd; critical failure gives control for 1 min or until the target succeeds on a save at the end of each turn)"',
   'Augment Summoning':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Conjuration,Wizard ' +
+    'Traits=Focus,Uncommon,Conjuration,Wizard ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description="R30\' Summoned target gains +1 on all checks for 1 min"',
   'Call Of The Grave':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Arcane,Attack,Necromancy,Wizard ' +
+    'Traits=Focus,Uncommon,Arcane,Attack,Necromancy,Wizard ' +
     'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -12049,7 +12049,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Spell attack inflicts sickened 1, or sickened 2 and slowed 1 until no longer sickened on a critical success"',
   'Charming Words':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Auditory,Enchantment,Incapacitation,Linguistic,Mental,Wizard ' +
+    'Traits=Focus,Uncommon,Auditory,Enchantment,Incapacitation,Linguistic,Mental,Wizard ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12057,7 +12057,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Prevents the target from taking hostile actions against self for 1 rd (<b>save Will</b> target suffers -1 attack and damage vs. self; critical success negates; critical failure inflicts stunned 1)"',
   'Dimensional Steps':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Conjuration,Teleportation,Wizard ' +
+    'Traits=Focus,Uncommon,Conjuration,Teleportation,Wizard ' +
     'School=Conjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12065,7 +12065,7 @@ Pathfinder2E.SPELLS = {
       '"Teleports self to a visible location within 20\' (<b>heightened +1</b> gives +5\' teleport distance)"',
   "Diviner's Sight":
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Concentrate,Divination,Fortune,Wizard ' +
+    'Traits=Focus,Uncommon,Concentrate,Divination,Fortune,Wizard ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12073,7 +12073,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Target may substitute self\'s d20 roll for a saving throw or skill check within 1 rd"',
   'Dread Aura':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Aura,Enchantment,Emotion,Fear,Mental,Wizard ' +
+    'Traits=Focus,Uncommon,Aura,Enchantment,Emotion,Fear,Mental,Wizard ' +
     'School=Enchantment ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -12081,7 +12081,7 @@ Pathfinder2E.SPELLS = {
       '"30\' emanation inflicts frightened 1 on foes while sustained for up to 1 min"',
   'Elemental Tempest':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Evocation,Metamagic,Wizard ' +
+    'Traits=Focus,Uncommon,Evocation,Metamagic,Wizard ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12089,7 +12089,7 @@ Pathfinder2E.SPELLS = {
       '"Subsequent casting of an acid, cold, electricity, or fire spell inflicts 1d6 HP per spell level of the same damage type on foes in a 10\' emanation"',
   'Energy Absorption':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Abjuration,Wizard ' +
+    'Traits=Focus,Uncommon,Abjuration,Wizard ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
@@ -12097,7 +12097,7 @@ Pathfinder2E.SPELLS = {
       '"Gives self resistance 15 to damage from the triggering acid, cold, electricity, or fire effect (<b>heightened +1</b> gives +5 resistance)"',
   'Force Bolt':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Evocation,Force,Wizard ' +
+    'Traits=Focus,Uncommon,Evocation,Force,Wizard ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12105,7 +12105,7 @@ Pathfinder2E.SPELLS = {
       '"R30\' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)"',
   'Hand Of The Apprentice':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Attack,Evocation,Wizard ' +
+    'Traits=Focus,Uncommon,Attack,Evocation,Wizard ' +
     'School=Evocation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12113,7 +12113,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Makes a remote attack with a melee weapon%{spellModifier.%tradition>strengthModifier?\', inflicting +\'+(spellModifier.%tradition-strengthModifier)+\' damage\':spellModifier.%tradition<strengthModifier?\', inflicting \'+(spellModifier.%tradition-strengthModifier)+\' damage\':\'\'}; a critical hit inflicts the critical specialization effect"',
   'Invisibility Cloak':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Illusion,Wizard ' +
+    'Traits=Focus,Uncommon,Illusion,Wizard ' +
     'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=2 ' +
@@ -12121,7 +12121,7 @@ Pathfinder2E.SPELLS = {
       '"Self becomes invisible for 1 min; using a hostile action ends the spell (<b>heightened 6th</b> effects last 10 min; <b>8th</b> effects last 1 hr)"',
   'Life Siphon':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Healing,Necromancy,Wizard ' +
+    'Traits=Focus,Uncommon,Healing,Necromancy,Wizard ' +
     'School=Necromancy ' +
     'Traditions=Arcane ' +
     'Cast=Reaction ' +
@@ -12129,7 +12129,7 @@ Pathfinder2E.SPELLS = {
       '"Casting a necromancy spell restores 1d8 HP per spell level to self"',
   'Physical Boost':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Transmutation,Wizard ' +
+    'Traits=Focus,Uncommon,Transmutation,Wizard ' +
     'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12137,7 +12137,7 @@ Pathfinder2E.SPELLS = {
       '"Touched gains +2 on the next Acrobatics check, Athletics check, Fortitude save, or Reflex save within the next rd"',
   'Protective Ward':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Abjuration,Aura,Wizard ' +
+    'Traits=Focus,Uncommon,Abjuration,Aura,Wizard ' +
     'School=Abjuration ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12145,7 +12145,7 @@ Pathfinder2E.SPELLS = {
       '"5\' emanation gives +1 Armor Class to self and allies while sustained for up to 1 min; each Sustain increases the radius by 5\'"',
   'Shifting Form':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Morph,Transmutation,Wizard ' +
+    'Traits=Focus,Uncommon,Morph,Transmutation,Wizard ' +
     'School=Transmutation ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12153,7 +12153,7 @@ Pathfinder2E.SPELLS = {
       '"Self gains +20\' Speed, a %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing for 1 min"',
   'Vigilant Eye':
     'Level=4 ' +
-    'Trait=Focus,Uncommon,Divination,Wizard ' +
+    'Traits=Focus,Uncommon,Divination,Wizard ' +
     'School=Divination ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12161,7 +12161,7 @@ Pathfinder2E.SPELLS = {
       '"R500\' Creates an invisible sensor that allows self to see from the target location for 1 hr; spending a Focus Point extends the duration to 2 hr"',
   'Warped Terrain':
     'Level=1 ' +
-    'Trait=Focus,Uncommon,Illusion,Visual,Wizard ' +
+    'Traits=Focus,Uncommon,Illusion,Visual,Wizard ' +
     'School=Illusion ' +
     'Traditions=Arcane ' +
     'Cast=1 ' +
@@ -12171,124 +12171,124 @@ Pathfinder2E.WEAPONS = {
 
   'Fist':
     'Category=Unarmed Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Brawling ' +
-    'Trait=Agile,Finesse,Nonlethal,Unarmed',
+    'Traits=Agile,Finesse,Nonlethal,Unarmed',
 
   'Club':
     'Category=Simple Price=0 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
-    'Trait=Thrown Range=10',
+    'Traits=Thrown Range=10',
   'Dagger':
     'Category=Simple Price=0.2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Finesse,Thrown,"Versatile S" Range=10',
+    'Traits=Agile,Finesse,Thrown,"Versatile S" Range=10',
   'Gauntlet':
     'Category=Simple Price=0.2 Damage="1d4 B" Bulk=L Hands=1 Group=Brawling ' +
-    'Trait=Agile,Free-hand',
+    'Traits=Agile,Free-hand',
   'Light Mace':
     'Category=Simple Price=0.4 Damage="1d4 B" Bulk=L Hands=1 Group=Club ' +
-    'Trait=Agile,Finesse,Shove',
+    'Traits=Agile,Finesse,Shove',
   'Longspear':
     'Category=Simple Price=0.5 Damage="1d8 P" Bulk=2 Hands=2 Group=Spear ' +
-    'Trait=Reach',
+    'Traits=Reach',
   'Mace':
     'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
-    'Trait=Shove',
+    'Traits=Shove',
   'Morningstar':
     'Category=Simple Price=1 Damage="1d6 B" Bulk=1 Hands=1 Group=Club ' +
-    'Trait="Versatile P"',
+    'Traits="Versatile P"',
   'Sickle':
     'Category=Simple Price=0.2 Damage="1d4 S" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Finesse,Trip',
+    'Traits=Agile,Finesse,Trip',
   'Spear':
     'Category=Simple Price=0.1 Damage="1d6 P" Bulk=1 Hands=1 Group=Spear ' +
-    'Trait=Thrown Range=20',
+    'Traits=Thrown Range=20',
   'Spiked Gauntlet':
     'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Brawling ' +
-    'Trait=Agile,Free-hand',
+    'Traits=Agile,Free-hand',
   'Staff':
     'Category=Simple Price=0 Damage="1d4 B" Bulk=1 Hands=1 Group=Club ' +
-    'Trait="Two-hand d8"',
+    'Traits="Two-hand d8"',
 
   'Clan Dagger':
     'Category=Simple Price=2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
+    'Traits=Agile,Dwarf,Parry,Uncommon,"Versatile B"',
   'Katar':
     'Category=Simple Price=0.3 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,"Deadly d6",Monk,Uncommon',
+    'Traits=Agile,"Deadly d6",Monk,Uncommon',
 
   'Bastard Sword':
     'Category=Martial Price=4 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait="Two-hand d12"',
+    'Traits="Two-hand d12"',
   'Battle Axe':
     'Category=Martial Price=1 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
-    'Trait="Sweep"',
+    'Traits="Sweep"',
   'Bo Staff':
     'Category=Martial Price=0.2 Damage="1d8 B" Bulk=2 Hands=2 Group=Club ' +
-    'Trait=Monk,Parry,Reach,Trip',
+    'Traits=Monk,Parry,Reach,Trip',
   'Falchion':
     'Category=Martial Price=3 Damage="1d10 S" Bulk=2 Hands=2 Group=Sword ' +
-    'Trait=Forceful,Sweep',
+    'Traits=Forceful,Sweep',
   'Flail':
     'Category=Martial Price=0.8 Damage="1d6 B" Bulk=1 Hands=1 Group=Flail ' +
-    'Trait=Disarm,Sweep,Trip',
+    'Traits=Disarm,Sweep,Trip',
   'Glaive':
     'Category=Martial Price=1 Damage="1d8 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait="Deadly d8",Forceful,Reach',
+    'Traits="Deadly d8",Forceful,Reach',
   'Greataxe':
     'Category=Martial Price=2 Damage="1d12 S" Bulk=2 Hands=2 Group=Axe ' +
-    'Trait=Sweep',
+    'Traits=Sweep',
   'Greatclub':
     'Category=Martial Price=1 Damage="1d10 B" Bulk=2 Hands=2 Group=Club ' +
-    'Trait=Backswing,Shove',
+    'Traits=Backswing,Shove',
   'Greatpick':
     'Category=Martial Price=1 Damage="1d10 P" Bulk=2 Hands=2 Group=Pick ' +
-    'Trait="Fatal d12"',
+    'Traits="Fatal d12"',
   'Greatsword':
     'Category=Martial Price=2 Damage="1d12 S" Bulk=2 Hands=2 Group=Sword ' +
-    'Trait="Versatile P"',
+    'Traits="Versatile P"',
   'Guisarme':
     'Category=Martial Price=2 Damage="1d10 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait=Reach,Trip',
+    'Traits=Reach,Trip',
   'Halberd':
     'Category=Martial Price=2 Damage="1d10 P" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait=Reach,"Versatile S"',
+    'Traits=Reach,"Versatile S"',
   'Hatchet':
     'Category=Martial Price=0.4 Damage="1d6 S" Bulk=L Hands=1 Group=Axe ' +
-    'Trait=Agile,Sweep,Thrown Range=10',
+    'Traits=Agile,Sweep,Thrown Range=10',
   'Lance':
     'Category=Martial Price=1 Damage="1d8 P" Bulk=2 Hands=2 Group=Spear ' +
-    'Trait="Deadly d8","Jousting d6",Reach',
+    'Traits="Deadly d8","Jousting d6",Reach',
   'Light Hammer':
     'Category=Martial Price=0.3 Damage="1d6 B" Bulk=L Hands=1 Group=Hammer ' +
-    'Trait=Agile,Thrown Range=20',
+    'Traits=Agile,Thrown Range=20',
   'Light Pick':
     'Category=Martial Price=0.4 Damage="1d4 P" Bulk=L Hands=1 Group=Pick ' +
-    'Trait=Agile,"Fatal d8"',
+    'Traits=Agile,"Fatal d8"',
   'Longsword':
     'Category=Martial Price=1 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait="Versatile P"',
+    'Traits="Versatile P"',
   'Main-gauche':
     'Category=Martial Price=0.5 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Disarm,Finesse,Parry,"Versatile S"',
+    'Traits=Agile,Disarm,Finesse,Parry,"Versatile S"',
   'Maul':
     'Category=Martial Price=3 Damage="1d12 B" Bulk=2 Hands=2 Group=Hammer ' +
-    'Trait=Shove',
+    'Traits=Shove',
   'Pick':
     'Category=Martial Price=0.7 Damage="1d6 P" Bulk=1 Hands=1 Group=Pick ' +
-    'Trait="Fatal d10"',
+    'Traits="Fatal d10"',
   'Ranseur':
     'Category=Martial Price=2 Damage="1d10 P" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait=Disarm,Reach',
+    'Traits=Disarm,Reach',
   'Rapier':
     'Category=Martial Price=2 Damage="1d6 P" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait="Deadly d8",Disarm,Finesse',
+    'Traits="Deadly d8",Disarm,Finesse',
   'Sap':
     'Category=Martial Price=0.1 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
-    'Trait=Agile,Nonlethal',
+    'Traits=Agile,Nonlethal',
   'Scimitar':
     'Category=Martial Price=1 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait=Forceful,Sweep',
+    'Traits=Forceful,Sweep',
   'Scythe':
     'Category=Martial Price=2 Damage="1d10 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait="Deadly d10",Trip',
+    'Traits="Deadly d10",Trip',
   'Shield':
     'Category=Martial Price=0 Damage="1d4 B" Bulk=0 Hands=1 Group=Shield',
   'Shield Boss':
@@ -12297,136 +12297,136 @@ Pathfinder2E.WEAPONS = {
     'Category=Martial Price=0.5 Damage="1d6 P" Bulk=0 Hands=1 Group=Shield',
   'Shortsword':
     'Category=Martial Price=0.9 Damage="1d6 P" Bulk=L Hands=1 Group=Sword ' +
-    'Trait=Agile,Finesse,"Versatile S"',
+    'Traits=Agile,Finesse,"Versatile S"',
   'Starknife':
     'Category=Martial Price=2 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
+    'Traits=Agile,"Deadly d6",Finesse,Thrown,"Versatile S" Range=20',
   'Trident':
     'Category=Martial Price=1 Damage="1d8 P" Bulk=1 Hands=1 Group=Spear ' +
-    'Trait=Thrown Range=20',
+    'Traits=Thrown Range=20',
   'War Flail':
     'Category=Martial Price=2 Damage="1d10 B" Bulk=2 Hands=2 Group=Flail ' +
-    'Trait=Disarm,Sweep,Trip',
+    'Traits=Disarm,Sweep,Trip',
   'Warhammer':
     'Category=Martial Price=1 Damage="1d8 B" Bulk=1 Hands=1 Group=Hammer ' +
-    'Trait=Shove',
+    'Traits=Shove',
   'Whip':
     'Category=Martial Price=0.1 Damage="1d4 S" Bulk=1 Hands=1 Group=Flail ' +
-    'Trait=Disarm,Finesse,Nonlethal,Trip',
+    'Traits=Disarm,Finesse,Nonlethal,Trip',
 
   'Dogslicer':
     'Category=Martial Price=0.1 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
-    'Trait=Agile,Backstabber,Finesse,Goblin,Uncommon',
+    'Traits=Agile,Backstabber,Finesse,Goblin,Uncommon',
   'Elven Curve Blade':
     'Category=Martial Price=4 Damage="1d8 S" Bulk=2 Hands=2 Group=Sword ' +
-    'Trait=Elf,Finesse,Forceful,Uncommon',
+    'Traits=Elf,Finesse,Forceful,Uncommon',
   "Filcher's Fork":
     'Category=Martial Price=1 Damage="1d4 P" Bulk=L Hands=1 Group=Spear ' +
-    'Trait=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon ' +
+    'Traits=Agile,Backstabber,"Deadly d6",Finesse,Halfling,Thrown,Uncommon ' +
     'Range=20',
   'Gnome Hooked Hammer':
     'Category=Martial Price=2 Damage="1d6 B" Bulk=1 Hands=1 Group=Hammer ' +
-    'Trait=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
+    'Traits=Gnome,Trip,"Two-hand d10",Uncommon,"Versatile P"',
   'Horsechopper':
     'Category=Martial Price=0.9 Damage="1d8 S" Bulk=2 Hands=2 Group=Polearm ' +
-    'Trait=Goblin,Reach,Trip,Uncommon,"Versatile P"',
+    'Traits=Goblin,Reach,Trip,Uncommon,"Versatile P"',
   'Kama':
     'Category=Martial Price=1 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Monk,Trip,Uncommon',
+    'Traits=Agile,Monk,Trip,Uncommon',
   'Katana':
     'Category=Martial Price=2 Damage="1d6 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait="Deadly d8","Two-hand d10",Uncommon,"Versatile P"',
+    'Traits="Deadly d8","Two-hand d10",Uncommon,"Versatile P"',
   'Kukri':
     'Category=Martial Price=0.6 Damage="1d6 S" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Finesse,Trip,Uncommon',
+    'Traits=Agile,Finesse,Trip,Uncommon',
   'Nunchaku':
     'Category=Martial Price=0.2 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
-    'Trait=Backswing,Disarm,Finesse,Monk,Uncommon',
+    'Traits=Backswing,Disarm,Finesse,Monk,Uncommon',
   'Orc Knuckle Dragger':
     'Category=Martial Price=0.7 Damage="1d6 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Disarm,Orc,Uncommon',
+    'Traits=Agile,Disarm,Orc,Uncommon',
   'Sai':
     'Category=Martial Price=0.6 Damage="1d4 P" Bulk=L Hands=1 Group=Knife ' +
-    'Trait=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
+    'Traits=Agile,Disarm,Finesse,Monk,Uncommon,"Versatile B"',
   'Spiked Chain':
     'Category=Martial Price=3 Damage="1d8 S" Bulk=1 Hands=2 Group=Flail ' +
-    'Trait=Disarm,Finesse,Trip,Uncommon',
+    'Traits=Disarm,Finesse,Trip,Uncommon',
   'Temple Sword':
     'Category=Martial Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
-    'Trait=Monk,Trip,Uncommon',
+    'Traits=Monk,Trip,Uncommon',
 
   'Dwarven Waraxe':
     'Category=Advanced Price=3 Damage="1d8 S" Bulk=2 Hands=1 Group=Axe ' +
-    'Trait=Dwarf,Sweep,"Two-hand d12",Uncommon',
+    'Traits=Dwarf,Sweep,"Two-hand d12",Uncommon',
   'Gnome Flickmace':
     'Category=Advanced Price=3 Damage="1d6 B" Bulk=1 Hands=1 Group=Flail ' +
-    'Trait=Gnome,Reach,Sweep,Uncommon',
+    'Traits=Gnome,Reach,Sweep,Uncommon',
   'Orc Necksplitter':
     'Category=Advanced Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Axe ' +
-    'Trait=Forceful,Orc,Sweep,Uncommon',
+    'Traits=Forceful,Orc,Sweep,Uncommon',
   'Sawtooth Saber':
     'Category=Advanced Price=5 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
-    'Trait=Agile,Finesse,Twin,Uncommon',
+    'Traits=Agile,Finesse,Twin,Uncommon',
 
   'Blowgun':
     'Category=Simple Price=0.1 Damage="1 P" Bulk=L Hands=1 Group=Dart ' +
-    'Trait=Agile,Nonlethal,"Reload 1" Range=20',
+    'Traits=Agile,Nonlethal,"Reload 1" Range=20',
   'Crossbow':
     'Category=Simple Price=3 Damage="1d8 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Trait="Reload 1", Range=120',
+    'Traits="Reload 1", Range=120',
   'Dart':
     'Category=Simple Price=0.01 Damage="1d4 P" Bulk=L Hands=1 Group=Dart ' +
-    'Trait=Agile,Thrown Range=20',
+    'Traits=Agile,Thrown Range=20',
   'Hand Crossbow':
     'Category=Simple Price=3 Damage="1d6 P" Bulk=L Hands=1 Group=Bow ' +
-    'Trait="Reload 1", Range=60',
+    'Traits="Reload 1", Range=60',
   'Heavy Crossbow':
     'Category=Simple Price=4 Damage="1d10 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Trait="Reload 2", Range=120',
+    'Traits="Reload 2", Range=120',
   'Javelin':
     'Category=Simple Price=0.1 Damage="1d6 P" Bulk=L Hands=1 Group=Dart ' +
-    'Trait=Thrown Range=30',
+    'Traits=Thrown Range=30',
   'Sling':
     'Category=Simple Price=0 Damage="1d6 B" Bulk=L Hands=1 Group=Sling ' +
-    'Trait=Propulsive,"Reload 1" Range=50',
+    'Traits=Propulsive,"Reload 1" Range=50',
 
   'Lesser Acid Flask':
     'Category=Martial Price=0 Damage="1 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    'Traits=Thrown,Splash Range=20',
   "Lesser Alchemist's Fire":
     'Category=Martial Price=0 Damage="1d8 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    'Traits=Thrown,Splash Range=20',
   'Lesser Bottled Lightning':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    'Traits=Thrown,Splash Range=20',
   'Lesser Frost Vial':
     'Category=Martial Price=0 Damage="1d6 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    'Traits=Thrown,Splash Range=20',
   'Lesser Tanglefoot Bag':
     'Category=Martial Price=0 Damage="0" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown Range=20',
+    'Traits=Thrown Range=20',
   'Lesser Thunderstone':
     'Category=Martial Price=0 Damage="1d4 E" Bulk=L Hands=1 Group=Bomb ' +
-    'Trait=Thrown,Splash Range=20',
+    'Traits=Thrown,Splash Range=20',
   'Composite Longbow':
     'Category=Martial Price=20 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Trait="Deadly d10",Propulsive,"Volley 30\'" Range=100',
+    'Traits="Deadly d10",Propulsive,"Volley 30\'" Range=100',
   'Composite Shortbow':
     'Category=Martial Price=14 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Trait="Deadly d10",Propulsive Range=60',
+    'Traits="Deadly d10",Propulsive Range=60',
   'Longbow':
     'Category=Martial Price=6 Damage="1d8 P" Bulk=2 Hands=2 Group=Bow ' +
-    'Trait="Deadly d10","Volley 30\'" Range=100',
+    'Traits="Deadly d10","Volley 30\'" Range=100',
   'Shortbow':
     'Category=Martial Price=3 Damage="1d6 P" Bulk=1 Hands=2 Group=Bow ' +
-    'Trait="Deadly d10" Range=60',
+    'Traits="Deadly d10" Range=60',
 
   'Halfling Sling Staff':
     'Category=Martial Price=5 Damage="1d10 B" Bulk=1 Hands=2 Group=Sling ' +
-    'Trait=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
+    'Traits=Halfling,Propulsive,Uncommon,"Reload 1" Range=80',
   'Shuriken':
     'Category=Martial Price=0.01 Damage="1d4 P" Bulk=0 Hands=1 Group=Dart ' +
-    'Trait=Agile,Monk,Thrown,Uncommon Range=20'
+    'Traits=Agile,Monk,Thrown,Uncommon Range=20'
 
 };
 
@@ -12485,13 +12485,13 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
 
   QuilvynUtils.checkAttrTable(armors, [
     'Category', 'Price', 'AC', 'Dex', 'Check', 'Speed', 'Str', 'Bulk',
-    'Group', 'Trait'
+    'Group', 'Traits'
   ]);
   QuilvynUtils.checkAttrTable(shields, [
     'Price', 'AC', 'Speed', 'Bulk', 'Hardness', 'HP'
   ]);
   QuilvynUtils.checkAttrTable(weapons, [
-    'Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Trait', 'Range'
+    'Category', 'Price', 'Damage', 'Bulk', 'Hands', 'Group', 'Traits', 'Range'
   ]);
 
   for(let a in armors)
@@ -12633,7 +12633,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Trait']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
@@ -12692,7 +12692,7 @@ Pathfinder2E.identityRules = function(
 Pathfinder2E.magicRules = function(rules, spells) {
 
   QuilvynUtils.checkAttrTable
-    (spells, ['School', 'Level', 'Traditions', 'Cast', 'Description', 'Trait']);
+    (spells, ['School', 'Level', 'Traditions', 'Cast', 'Description', 'Traits']);
 
   for(let s in spells)
     rules.choiceRules(rules, 'Spell', s, spells[s]);
@@ -12760,7 +12760,7 @@ Pathfinder2E.talentRules = function(
 
   let matchInfo;
 
-  QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Trait']);
+  QuilvynUtils.checkAttrTable(feats, ['Require', 'Imply', 'Traits']);
   QuilvynUtils.checkAttrTable(features, ['Section', 'Note', 'Action']);
   QuilvynUtils.checkAttrTable
     (goodies, ['Pattern', 'Effect', 'Value', 'Attribute', 'Section', 'Note']);
@@ -12893,7 +12893,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
     Pathfinder2E.ancestryRulesExtra(rules, name);
   } else if(type == 'Ancestry Feature')
@@ -12914,7 +12914,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Str'),
       QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Group'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
   else if(type == 'Background') {
     Pathfinder2E.backgroundRules(rules, name,
@@ -12960,7 +12960,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     Pathfinder2E.featRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Require'),
       QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait')
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
     Pathfinder2E.featRulesExtra(rules, name);
   } else if(type == 'Feature')
@@ -12998,7 +12998,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
     let level = QuilvynUtils.getAttrValue(attrs, 'Level');
     let school = QuilvynUtils.getAttrValue(attrs, 'School');
     let trads = QuilvynUtils.getAttrValueArray(attrs, 'Traditions');
-    let traits = QuilvynUtils.getAttrValueArray(attrs, 'Trait');
+    let traits = QuilvynUtils.getAttrValueArray(attrs, 'Traits');
     let isCantrip = traits.includes('Cantrip');
     let isFocus = traits.includes('Focus');
     trads.forEach(t => {
@@ -13009,7 +13009,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
         level,
         t,
         QuilvynUtils.getAttrValue(attrs, 'Cast'),
-        QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+        QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
         QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
       if(!isFocus)
@@ -13023,7 +13023,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Hands'),
       QuilvynUtils.getAttrValue(attrs, 'Group'),
-      QuilvynUtils.getAttrValueArray(attrs, 'Trait'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
       QuilvynUtils.getAttrValue(attrs, 'Range')
     );
   else {
@@ -15275,7 +15275,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             let spellLevel = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
             let spellSchool = QuilvynUtils.getAttrValue(spellAttrs, 'School');
             let spellTraits =
-              QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait');
+              QuilvynUtils.getAttrValueArray(spellAttrs, 'Traits');
             let spellTrad =
               matchInfo[2].charAt(0).toUpperCase() + matchInfo[2].substring(1);
             let isCantrip = spellTraits.includes('Cantrip');
@@ -15288,7 +15288,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
               spellLevel,
               spellTrad,
               QuilvynUtils.getAttrValue(spellAttrs, 'Cast'),
-              QuilvynUtils.getAttrValueArray(spellAttrs, 'Trait'),
+              QuilvynUtils.getAttrValueArray(spellAttrs, 'Traits'),
               QuilvynUtils.getAttrValue(spellAttrs, 'Description').replaceAll('%tradition', spellTrad)
             );
           }
@@ -16088,7 +16088,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]],
       ['Languages', 'Languages', 'text', [30]],
-      ['Trait', 'Trait', 'text', [30]]
+      ['Traits', 'Traits', 'text', [30]]
     );
   else if(type == 'Ancestry Feature')
     result.push(
@@ -16113,7 +16113,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Str', 'Min Str', 'select-one', strChoices],
       ['Bulk', 'Bulk', 'select-one', ['L', 1, 2, 3, 4, 5]],
       ['Group', 'Group', 'select-one', armorGroups],
-      ['Trait', 'Trait', 'text', [20]]
+      ['Traits', 'Traits', 'text', [20]]
     );
   } else if(type == 'Background')
     result.push(
@@ -16159,7 +16159,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
     result.push(
       ['Require', 'Prerequisites', 'text', [40]],
       ['Imply', 'Implies', 'text', [40]],
-      ['Trait', 'Trait', 'text', [20]]
+      ['Traits', 'Traits', 'text', [20]]
     );
   else if(type == 'Feature') {
     result.push(
@@ -16196,7 +16196,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Level', 'Level', 'select-one', zeroToNine],
       ['Tradition', 'Tradition', 'text', [15]],
       ['Cast', 'Cast', 'text', [15]],
-      ['Trait', 'Trait', 'text', [25]],
+      ['Traits', 'Traits', 'text', [25]],
       ['Description', 'Description', 'text', [60]]
     );
   } else if(type == 'Weapon') {
@@ -16224,7 +16224,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
       ['Bulk', 'Bulk', 'select-one', [0, 'L', 1, 2, 3, 4, 5]],
       ['Hands', 'Hands', 'select-one', [1, 2]],
       ['Group', 'Group', 'select-one', weaponGroups],
-      ['Trait', 'Trait', 'text', [40]],
+      ['Traits', 'Traits', 'text', [40]],
       ['Range', 'Range in Feet', 'select-one', zeroToOneFifty]
     );
   }
@@ -16518,7 +16518,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
     for(attr in allChoices) {
       let traits =
         QuilvynUtils.getAttrValueArray
-          (allChoices[attr], allChoices[attr].includes('Type') ? 'Type' : 'Trait');
+          (allChoices[attr], allChoices[attr].includes('Type') ? 'Type' : 'Traits');
       if(attrs[attribute + '.' + attr] != null) {
         traits.forEach(t => {
           if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
