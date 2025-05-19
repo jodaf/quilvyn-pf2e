@@ -8153,7 +8153,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
+    'Description=' +
+      '"R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
   'Chain Lightning':
     'Level=6 ' +
     'Trait=Electricity,Evocation ' +
@@ -8257,7 +8258,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 rd (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
+      '"R30\' Target obeys a command to approach, run away, drop a held object, drop prone, or stand in place for 1 action (<b>save Will</b> negates; critical failure causes the target to use all actions on its next turn to obey) (<b>heightened 5th</b> affects 10 targets)"',
   'Comprehend Language':
     'Level=2 ' +
     'Trait=Divination ' +
@@ -8303,7 +8304,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
-    'Description="R500\' Raises or lowers water by 10\' and slows water creatures in a 50\'x50\' area"',
+    'Description=' +
+      '"R500\' Raises or lowers water by 10\' and slows water creatures in a 50\'x50\' area"',
   'Create Food':
     'Level=2 ' +
     'Trait=Conjuration ' +
@@ -15575,7 +15577,7 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Manipulate', 'Sanctified'
+  'Manipulate', 'Sanctified', 'Wood'
 ];
 
 /*
