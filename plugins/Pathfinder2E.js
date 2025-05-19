@@ -8557,7 +8557,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Willing touched recovers 1 6th-level or lower spell or slot or regains Focus Points"',
+      '"Willing touched recovers 1 6th-level or lower spell or slot and regains Focus Points"',
   'Divine Lance':
     'Level=1 ' +
     'Trait=Attack,Cantrip,Evocation ' +
@@ -8986,7 +8986,8 @@ Pathfinder2E.SPELLS = {
     'School=Abjuration ' +
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
-    'Description="10\' burst attempts to counteract outside spells at the spell level - 1 for 10 min"',
+    'Description=' +
+      '"10\' burst attempts to counteract outside spells at the spell level - 1 for 10 min"',
   'Glyph Of Warding':
     'Level=3 ' +
     'Trait=Abjuration ' +
@@ -15577,7 +15578,7 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Manipulate', 'Sanctified', 'Wood'
+  'Manipulate', 'Sanctified', 'Spirit', 'Void', 'Wood'
 ];
 
 /*
