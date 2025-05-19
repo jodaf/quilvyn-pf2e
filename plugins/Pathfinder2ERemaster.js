@@ -7928,6 +7928,128 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Burning Hands']
     .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
+  'Calm':
+    Pathfinder2E.SPELLS['Calm Emotions']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Canticle Of Everlasting Grief':
+    'Level=8 ' +
+    'Trait=Auditory,Concentrate,Curse,Emotion,Fear,Manipulate,Mental ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' Inflcits 10d6 HP mental, frightened 3, a curse that negates of circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflcits double HP, frightened 4, and permanent curse that also affects allies within 15\'"',
+  'Cataclysm':
+    Pathfinder2E.SPELLS.Cataclysm
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Caustic Blast':
+    Pathfinder2E.SPELLS['Acid Splash']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace(',Attack', ''),
+  'Chain Lightning':
+    Pathfinder2E.SPELLS['Chain Lightning']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Charm':
+    Pathfinder2E.SPELLS.Charm
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
+  'Chilling Darkness':
+    Pathfinder2E.SPELLS['Chilling Darkness']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Evil', 'Unholy')
+    .replaceAll('evil', 'spirt')
+    .replace('celestials', 'holy creatures'),
+  'Clairaudience':
+    Pathfinder2E.SPELLS.Clairaudience
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Clairvoyance':
+    Pathfinder2E.SPELLS.Clairvoyance
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Cleanse Affliction': // ref Neutralize Poision, Remove Curse, Remove Disease
+    'Level=2 ' +
+    'Trait=Concentrate,Healing,Manipulate ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Reduces the stage of a curse, disease, or poison affecting touched by 1 (<b>heightened 3rd</b> attempts to counteract a disease or poison; <b>4th</b> attempts to counteract a curse, disease, or poision)"',
+  'Cleanse Cuisine':
+    Pathfinder2E.SPELLS['Purify Food And Drink']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R10\' Enhances or removes contaminants from 1 cubic foot of food and drink (<b>heightened +2</b> affects +1 cubic foot)"',
+  'Clear Mind':
+    Pathfinder2E.SPELLS['Remove Fear']
+    .replace(/School=\w*/, '') + ' ' +
+    'Trait=Concentrate,Healing,Manipulate,Mental ' +
+    'Description=' +
+      '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched (<b>heightened 4th</b> can counteract confused, controlled, or slows; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
+  'Command':
+    Pathfinder2E.SPELLS.Command
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Confusion':
+    Pathfinder2E.SPELLS.Confusion
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Contingency':
+    Pathfinder2E.SPELLS.Contingency
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Control Water':
+    Pathfinder2E.SPELLS['Control Water']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('creatures', 'creatures (<b>save Fortitude</b> negates)'),
+  'Cozy Cabin':
+    'Level=3 ' +
+    'Trait=Concentrate,Manipulate,Wood ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description=' +
+      '"R30\' Creates a 20\'x20\'x10\' comfortable wooden cabin for 12 hr or until self exits"',
+  'Create Food':
+    Pathfinder2E.SPELLS['Create Food']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Create Water':
+    Pathfinder2E.SPELLS['Create Water']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Creation':
+    Pathfinder2E.SPELLS.Creation
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate')
+    .replace('vegetable', 'earth or vegetable'),
+  'Crisis Of Faith':
+    Pathfinder2E.SPELLS['Crisis Of Faith']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Cursed Metamorphosis':
+    Pathfinder2E.SPELLS['Baleful Polymorph']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Curse')
+    .replace('Traditions=', 'Traditions=Occult,'),
+  'Darkvision':
+    Pathfinder2E.SPELLS.Darkvision
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Daze':
+    Pathfinder2E.SPELLS.Daze
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace(/%\{.*\}/, '1d6'),
+  'Deafness':
+    Pathfinder2E.SPELLS.Deafness
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+    
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
