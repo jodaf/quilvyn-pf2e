@@ -14417,6 +14417,10 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
     console.log('Bad traits list "' + traits + '" for feat ' + name);
     return;
   }
+  traits.forEach(t => {
+    if(!(Pathfinder2E.featRules.traits.includes(t)))
+      console.log('Bad trait "' + t + '" for feat ' + name);
+  });
 
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
@@ -14441,6 +14445,26 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
   });
 
 };
+Pathfinder2E.featRules.traits = [
+  'Abjuration', 'Additive1', 'Additive2', 'Additive3', 'Air', 'Alchemist',
+  'Ancestry', 'Arcane', 'Archetype', 'Attack', 'Auditory', 'Aura', 'Barbarian',
+  'Bard', 'Champion', 'Class', 'Cleric', 'Concentrate', 'Dedication',
+  'Detection', 'Divination', 'Divine', 'Downtime', 'Druid', 'Dwarf', 'Elf',
+  'Emotion', 'Evocation', 'Exploration', 'Fear', 'Fighter', 'Flourish',
+  'Fortune', 'General', 'Gnome', 'Goblin', 'Half-Elf', 'Half-Orc', 'Halfling',
+  'Healing', 'Human', 'Incapacitation', 'Magical', 'Manipulate', 'Mental',
+  'Metamagic', 'Monk', 'Morph', 'Move', 'Multiclass', 'Necromancy', 'Negative',
+  'Oath', 'Occult', 'Open', 'Orc', 'Polymorph', 'Positive', 'Press', 'Primal',
+  'Rage', 'Ranger', 'Rogue', 'Secret', 'Skill', 'Sorcerer', 'Stance',
+  'Transmutation', 'Uncommon', 'Visual', 'Wizard',
+  // Core 2
+  'Leshy', 'Changeling', 'Lineage', 'Nephilim', 'Aiuvarin', 'Dromaar',
+  'Catfolk', 'Disease', 'Misfortune', 'Hobgoblin', 'Vitality', 'Kholo',
+  'Kobold', 'Lizardfolk', 'Ratfolk', 'Tengu', 'Tripkee', 'Dhampir',
+  'Dragonblood', 'Duskwalker' , 'Witch', 'Spellshape', 'Concentration',
+  'Linguistic', 'Illusion', 'Sonic', 'Prediction', 'Cold', 'Investigator',
+  'Teleportation', 'Light', 'Consecration'
+];
 
 /*
  * Defines in #rules# the rules associated with feat #name# that cannot be
@@ -15578,7 +15602,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Manipulate', 'Sanctified', 'Spirit', 'Void', 'Wood'
+  'Manipulate', 'Sanctified', 'Spirit', 'Subtle', 'Unholy', 'Vitality', 'Void',
+  'Wood'
 ];
 
 /*
