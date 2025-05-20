@@ -452,34 +452,47 @@ for(let b in Pathfinder2ERemaster.BACKGROUNDS)
   Pathfinder2ERemaster.BACKGROUNDS[b] =
     Pathfinder2ERemaster.BACKGROUNDS[b].replaceAll('Ability', 'Attribute');
 Pathfinder2ERemaster.CLASSES = {
-  /*
   'Alchemist':
+    // Ability => Attribute
+    // 1:Infused Reagents => 1:Versatile Vials
+    // 1:Mutagenic Flashback => null
+    // 7:Iron Will => 7:Will Expertise
+    // 7:Perpetual Infusions => null
+    // 9:Alertness => 9:Perception Expertise
+    // 11:Juggernaut => 11:Chemical Hardiness
+    // 11:Perpetual Potency => 11:Advanced Vials
+    // 15:Alchemical Alacrity => 15:Alchemical Weapon Mastery
+    // 15:Evasion => 15:Explosion Dodger
+    // 17:Perpetual Perfection => 17:Abundant Vials
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Intelligence)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
       '"1:Alchemist Skills",' +
       '"1:Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Alchemist)",' +
-      '1:Alchemy,"1:Infused Reagents","1:Advanced Alchemy","1:Quick Alchemy",' +
-      '"1:Formula Book","1:Research Field","1:Mutagenic Flashback",' +
-      '"1:Alchemist Feats","2:Skill Feats","3:General Feats",' +
-      '"3:Skill Increases","5:Field Discovery","5:Powerful Alchemy",' +
-      '"7:Alchemical Weapon Expertise","7:Iron Will","7:Perpetual Infusions",' +
-      '"9:Alchemical Expertise","9:Perception Expertise","9:Double Brew",' +
-      '11:Juggernaut,"11:Perpetual Potency",' +
+      '"1:Alchemy","1:Formula Book","1:Advanced Alchemy","1:Versatile Vials",' +
+      '"1:Quick Alchemy","1:Research Field","1:Alchemist Feats",' +
+      '"2:Skill Feats","3:General Feats","3:Skill Increases",' +
+      '"5:Field Discovery","5:Powerful Alchemy",' +
+      '"7:Alchemical Weapon Expertise","7:Will Expertise",' +
+      '"9:Alchemical Expertise","9:Double Brew","9:Perception Expertise",' +
+      '"11:Advance Vials","11:Chemical Hardiness",' +
       '"features.Bomber ? 13:Greater Field Discovery (Bomber)",' +
       '"features.Chirurgeon ? 13:Greater Field Discovery (Chirurgeon)",' +
       '"features.Mutagenist ? 13:Greater Field Discovery (Mutagenist)",' +
       '"13:Medium Armor Expertise","13:Weapon Specialization",' +
-      '"15:Alchemical Alacrity",15:Evasion,"17:Alchemical Mastery",' +
-      '"17:Perpetual Perfection","19:Medium Armor Mastery" ' +
+      '"15:Alchemical Weapon Mastery","15:Explosion Dodger",' +
+      '"17:Abundant Vials","17:Alchemical Mastery",' +
+      '"19:Medium Armor Mastery" ' +
     'Selectables=' +
       '"1:Bomber:Research Field",' +
       '"1:Chirurgeon:Research Field",' +
-      '"1:Mutagenist:Research Field"',
+      '"1:Mutagenist:Research Field",' +
+      '"1:Toxicologist:Research Field"',
+/*
   'Barbarian':
     'Ability=strength HitPoints=12 ' +
     'Features=' +
@@ -542,7 +555,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Dragon Instinct (Copper):Instinct",' +
       '"1:Dragon Instinct (Gold):Instinct",' +
       '"1:Dragon Instinct (Silver):Instinct"',
-  */
+*/
   'Bard':
     // Ability => Attribute
     // 1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks) =>
@@ -1477,7 +1490,6 @@ Pathfinder2ERemaster.FEATS = {
   'Legendary Laugh':
     'Traits=Ancestry,Kholo Require="level >= 17","features.Laughing Kholo"',
 
-
   'Cringe':'Traits=Ancestry,Kobold,Emotion,Mental,Visual',
   "Dragon's Presence":
     'Traits=Ancestry,Kobold Require="features.Drgonscaled Kobold"',
@@ -1696,14 +1708,12 @@ Pathfinder2ERemaster.FEATS = {
   "Boneyard's Call":'Traits=Ancestry,Duskwalker,Uncommon Require="level >= 17"',
 
   // Class
-/*
-  'Alchemical Familiar':'Traits=Class,Alchemist',
-  'Alchemical Savant':
-    'Traits=Class,Alchemist Require="rank.Crafting >= 1"',
-  'Far Lobber':'Traits=Class,Alchemist',
-  'Quick Bomber':'Traits=Class,Alchemist',
-*/
-  'Poison Resistance':Pathfinder2E.FEATS['Poison Resistance'],
+  'Alchemical Familiar':Pathfinder2E.FEATS['Alchemical Familiar'],
+  'Alchemical Assessment':Pathfinder2E.FEATS['Alchemical Savant'],
+  'Blowgun Poisoner':'Traits=Class,Alchemist',
+  'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
+  'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
+  'Soothing Vials':'Traits=Class,Alchemist Require="features.Chirurgeon"',
 /*
   'Revivifying Mutagen':'Traits=Class,Alchemist Require="level >= 2"',
   'Smoke Bomb':'Traits=Class,Alchemist,Additive1 Require="level >= 2"',
@@ -2591,7 +2601,7 @@ Pathfinder2ERemaster.FEATS = {
   'Order Explorer (Untamed)':
     Pathfinder2E.FEATS['Order Explorer (Wild)']
     .replace('Wild', 'Untamed'),
-  // Poison Resistance as above
+  'Poison Resistance':Pathfinder2E.FEATS['Poison Resistance'],
   'Anthropomorphic Shape':
     Pathfinder2E.FEATS['Thousand Faces']
     .replace('Wild Shape', 'Untamed Form'),
@@ -3778,7 +3788,130 @@ Pathfinder2ERemaster.FEATS = {
   'Weapon Proficiency (Martial Weapons)':
     Pathfinder2E.FEATS['Weapon Proficiency (Martial Weapons)'],
   'Weapon Proficiency (%advancedWeapon)':
-    Pathfinder2E.FEATS['Weapon Proficiency (%advancedWeapon)']
+    Pathfinder2E.FEATS['Weapon Proficiency (%advancedWeapon)'],
+
+  // Core 2
+  'A Home In Every Port':
+    'Traits=General,Downtime Require="level >= 11","charismaModifier >= 3"',
+  'Acrobatic Perfomer':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Aerobatics Mastery':
+    'Traits=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
+  'Armor Assist':
+    'Traits=General,Skill ' +
+    'Require="rank.Athletics >= 1 || rank.Warfare Lore >= 1"',
+  'Armored Stealth':
+    'Traits=General,Skill Require="level >= 2","rank.Stealth >= 2"',
+  'Assured Identification':
+    'Traits=General,Skill ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
+  'Backup Disguise':
+    'Traits=General,Skill Require="level >= 2","rank.Deception >= 2"',
+  'Battle Planner':
+    'Traits=General,Skill Require="level >= 2","rank.Warfare Lore >= 2"',
+  'Biographical Eye':
+    'Traits=General,Skill,Secret Require="level >= 7","rank.Society >= 3"',
+  'Bon Mot':
+    'Traits=General,Skill,Auditory,Concentrate,Emotion,Linguistic,Mental ' +
+    'Require="rank.Diplomacy >= 1"',
+  'Carvan Leader':
+    'Traits=General Require="level >= 11","features.Pick Up The Pace"',
+  'Concealing Legerdemain':'Traits=General,Skill Require="rank.Thievery >= 1"',
+  'Consult The Spirits':
+    'Traits=General,Skill,Secret ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"rank.Nature >= 3 || rank.Occult >= 3 || rank.Religion >= 3"',
+  "Crafter's Appraisal":'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Deceptive Worship':'Traits=General,Skill Require="rank.Occultism >= 1"',
+  'Dirty Trick':
+    'Traits=General,Skill,Attack,Manipulate Require="rank.Thievery >= 1"',
+  'Discreet Inquiry':
+    'Traits=General,Skill ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Deception >= 2 || rank.Diplomancy >= 2"',
+  'Distracting Performance':
+    'Traits=General,Skill Require="level >= 2","rank.Performance >= 2"',
+  'Disturbing Knowledge':
+    'Traits=General,Skill,Emotion,Fear,Mental ' +
+    'Require="level >= 7","rank.Occultism >= 3"',
+  'Doublespeak':
+    'Traits=General,Skill Require="level >= 7","rank.Deception >= 3"',
+  'Environmental Guide':
+    'Traits=General,Skill Require="level >= 7","rank.Survival >= 3"',
+  'Evangelize':
+    'Traits=General,Skill Require="level >= 7","rank.Diplomacy >= 3"',
+  'Exhort The Faithful':
+    'Traits=General,Skill Require="level >= 2","rank.Religion >= 2"',
+  'Express Rider':'Traits=General,Skill,Exploration Require="rank.Nature >= 1"',
+  'Eye For Numbers':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Eyes Of The City':
+    'Traits=General,Skill ' +
+    'Require="level >= 2","rank.Diplomacy >= 1 || rank.Society >= 1"',
+  'Forensic Acumen':'Traits=General,Skill Require="rank.Medicine >= 1"',
+  'Glean Contents':'Traits=General,Skill Require="rank.Society >= 1"',
+  'Improvise Tool':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Improvised Repair':'Traits=General Require="level >= 3"',
+  'Incredible Scout':
+    'Traits=General,Exploration Require="level >= 11","rank.Perception >= 3"',
+  'Influence Nature':
+    'Traits=General,Skill,Downtime Require="level >= 7","rank.Nature >= 3"',
+  'Inoculation':'Traits=General,Skill,Healing Require="rank.Medicine >= 1"',
+  'Keen Follower':'Traits=General Require="level >= 3"',
+  'Lead Climber':
+    'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
+  'Legendary Guide':
+    'Traits=General,Skill Require="level >= 15","rank.Survival >= 4"',
+  'Leverage Connections':
+    'Traits=General,Skill,Uncommon ' +
+    'Require="level >= 2","rank.Society >= 2","features.Courtly Graces || features.Streetwise"',
+  'Numb To Death':'Traits=General Require="level >= 7","features.Diehard"',
+  'Pick Up The Pace':
+    'Traits=General Require="level >= 3","constitutionModifier >= 2"',
+  "Pilgrim's Token":'Traits=General,Skill Require="rank.Religion >= 1"',
+  'Rapid Affixture':
+    'Traits=General,Skill Require="level >= 7","rank.Crafting >= 3"',
+  'Risky Surgery':'Traits=General,Skill Require="rank.Medicine >= 1"',
+  'Robust Health':'Traits=General Require="level >= 3"',
+  'Rolling Landing':
+    'Traits=General,Skill Require="level >= 2","features.Cat Fall"',
+  'Root Magic':'Traits=General,Skill Require="rank.Occultism >= 1"',
+  'Sanctify Water':
+    'Traits=General,Skill ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Religion >= 2",' +
+      '"deitySanctification != \'None\'"',
+  'Shadow Mark':'Traits=General,Skill Require="level >= 2","rank.Stealth >= 2"',
+  'Signature Crafting':
+    'Traits=General,Skill,Uncommon ' +
+    'Require="level >= 7","rank.Crafting >= 3","features.Magical Crafting"',
+  'Slippery Prey':
+    'Traits=General,Skill ' +
+    'Require="level >= 2","rank.Acrobatics >= 1 || rank.Athletics >= 1"',
+  'Snare Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Sow Rumor':
+    'Traits=General,Skill,Uncommon,Secret ' +
+    'Require="level >= 2","rank.Deception >= 2"',
+  'Supertaster':'Traits=General Require="level >= 7","rank.Perception >= 3"',
+  'Terrifying Resistance':
+    'Traits=General,Skill Require="level >= 2","rank.Intimidation >= 2"',
+  'Thorough Search':
+    'Traits=General Require="level >= 3","rank.Perception >= 2"',
+  'True Perception':
+    'Traits=General,Revelation Require="level >= 19","rank.Perception >= 4"',
+  'Tumbling Teamwork':
+    'Traits=General,Skill Require="level >= 2","rank.Acrobatics >= 2"',
+  'Tumbling Theft':
+    'Traits=General,Skill ' +
+    'Require="level >= 7","rank.Acrobatics >= 2","rank.Thievery >= 2"',
+  'Underground Network':
+    'Traits=General,Skill,Uncommon ' +
+    'Require="level >= 2","rank.Society >= 2","features.Streetwise"',
+  'Water Sprint':
+    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"'
 
 };
 Pathfinder2ERemaster.FEATURES = {
@@ -4488,111 +4621,59 @@ Pathfinder2ERemaster.FEATURES = {
   'Skill Feats':Pathfinder2E.FEATURES['Skill Feats'],
   'Skill Increases':Pathfinder2E.FEATURES['Skill Increases'],
 
-  /*
   // Alchemist
-  'Advanced Alchemy':
-    'Section=skill ' +
-    'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check"',
-  'Alchemical Alacrity':
-    'Section=skill Note="Has increased Quick Alchemy effects"',
-  'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
-  'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
+  'Abundant Vials':Pathfinder2E.FEATURES['Perpetual Perfection'],
+  'Advanced Alchemy':Pathfinder2E.FEATURES['Advanced Alchemy'],
+  'Advanced Vials':Pathfinder2E.FEATURES['Perpetual Potency'],
+  'Alchemical Expertise':Pathfinder2E.FEATURES['Alchemical Expertise'],
+  'Alchemical Mastery':Pathfinder2E.FEATURES['Alchemical Mastery'],
   'Alchemical Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
-  'Alchemist Feats':'Section=feature Note="%V selections"',
-  'Alchemist Skills':
-    'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
-  'Alchemy':'Section=feature Note="Has the Alchemical Crafting feature"',
-  'Bomber':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Can direct a bomb splash onto a single target",' +
-      '"Knows the formulas for 2 common 1st-level bombs"',
-  'Chirurgeon':
-    'Section=skill,skill ' +
-    'Note=' +
-      '"Knows the formulas for 2 common 1st-level healing elixirs",' +
-      '"Can use Crafting in place of Medicine"',
-  'Double Brew':'Section=skill Note="Has increased Quick Alchemy effects"',
-*/
-  'Evasion':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Reflex)",' +
-      '"Successes on Reflex saves are critical successes"',
-/*
-  'Field Discovery':
-    'Section=combat ' +
-    'Note="Can use 1 batch of infused reagents create 3 items from research field"',
-  'Formula Book':
-    'Section=skill ' +
-    'Note="Has a book that contains at least %V alchemical formulas"',
+    Pathfinder2E.FEATURES['Alchemical Weapon Expertise'],
+  'Alchemical Weapon Mastery':
+    'Section=combat Note="Attack Master (Simple Weapons; Alchemical Bombs)"',
+  'Alchemist Feats':Pathfinder2E.FEATURES['Alchemist Feats'],
+  'Alchemist Skills':Pathfinder2E.FEATURES['Alchemist Skills'],
+  'Alchemy':Pathfinder2E.FEATURES.Alchemy,
+  'Bomber':Pathfinder2E.FEATURES.Bomber,
+  'Chemical Hardiness':Pathfinder2E.FEATURES.Juggernaut,
+  'Chirurgeon':Pathfinder2E.FEATURES.Chirurgeon,
+  'Double Brew':Pathfinder2E.FEATURES['Double Brew'],
+  'Explosion Dodger':Pathfinder2E.FEATURES.Evasion,
+  'Field Discovery':Pathfinder2E.FEATURES['Field Discovery'],
+  'Formula Book':Pathfinder2E.FEATURES['Formula Book'],
   'Greater Field Discovery (Bomber)':
-    'Section=combat ' +
-    'Note="Can increase bomb splash radius to %{$\'features.Expanded Splash\'?15:10}\'"',
+    Pathfinder2E.FEATURES['Greater Field Discovery (Bomber)'],
   'Greater Field Discovery (Chirurgeon)':
-    'Section=combat ' +
-    'Note="Created elixirs restore the maximum number of Hit Points"',
+    Pathfinder2E.FEATURES['Greater Field Discovery (Chirurgeon)'],
   'Greater Field Discovery (Mutagenist)':
-    'Section=combat Note="Can use 2 polymorphic mutagens simultaneously"',
-  'Infused Reagents':
-    'Section=skill ' +
-    'Note="Can create %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents each day"',
-  'Iron Will':'Section=save Note="Save Expert (Will)"',
-*/
-  'Juggernaut':Pathfinder2E.FEATURES.Juggernaut,
+    Pathfinder2E.FEATURES['Greater Field Discovery (Mutagenist)'],
+  'Greater Field Discovery (Toxicologist)':
+    'Section=feature ' +
+    'Note="TODO"',
   'Medium Armor Expertise':Pathfinder2E.FEATURES['Medium Armor Expertise'],
   'Medium Armor Mastery':Pathfinder2E.FEATURES['Medium Armor Mastery'],
-/*
-  'Mutagenic Flashback':
-    'Action=Free ' +
-    'Section=combat ' +
-    'Note="Regains the effects of a mutagen consumed earlier in the day for 1 min once per day"',
-  'Mutagenist':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Mutagenic Flashback feature",' +
-      '"Knows the formulas for 2 common 1st-level mutagens"',
-*/
-  'Perception Expertise':'Section=skill Note="Perception Expert"',
-/*
-  'Perpetual Infusions':
-    'Section=skill ' +
-    'Note="Can create 2 alchemical items of up to level %V from research field without using infused reagents"',
-  'Perpetual Perfection':
-    'Section=skill Note="Has increased Perpetual Infusions effects"',
-  'Perpetual Potency':
-    'Section=skill Note="Has increased Perpetual Infusions effects"',
-  'Powerful Alchemy':
-    'Section=combat ' +
-    'Note="Increases DC for items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
-  'Quick Alchemy':
-    'Action=1 ' +
-    'Section=skill ' +
-    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that last for 1 turn"',
-  'Research Field':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"1 selection",' +
-      '"Can use 1 batch of infused reagents to create 3 signature items"',
-*/
+  'Mutagenist':Pathfinder2E.FEATURES.Mutagenist,
+  'Perception Expertise':Pathfinder2E.FEATURES.Alertness,
+  'Powerful Alchemy':Pathfinder2E.FEATURES['Powerful Alchemy'],
+  'Toxicologist':
+    'Section=feature ' +
+    'Note="TODO"',
+  'Quick Alchemy':Pathfinder2E.FEATURES['Quick Alchemy'],
+  'Research Field':Pathfinder2E.FEATURES['Research Field'],
+  'Versatile Vials':Pathfinder2E.FEATURES['Infused Reagents'],
   'Weapon Specialization':Pathfinder2E.FEATURES['Weapon Specialization'],
-/*
+  'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
 
-  'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
-  'Alchemical Savant':
-    'Section=skill ' +
-    'Note="Can use Crafting to Identify Alchemy in 1 action/+2 to Identify known formulas, and critical failures are normal failures"',
-  'Far Lobber':'Section=combat Note="Thrown bombs have a 30\' range"',
-  'Quick Bomber':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can draw and Strike with a bomb in 1 action"',
-*/
-  'Poison Resistance':
-    'Section=save ' +
-    'Note="Has poison resistance %{level//2} and +1 saves vs. poison"',
+  'Alchemical Familiar':Pathfinder2E.FEATURES['Alchemical Familiar'],
+  'Alchemical Assessment':Pathfinder2E.FEATURES['Alchemical Savant'],
+  'Blowgun Poisoner':
+    'Section=feature ' +
+    'Note="TODO"',
+  'Far Lobber':Pathfinder2E.FEATURES['Far Lobber'],
+  'Quick Bomber':Pathfinder2E.FEATURES['Quick Bomber'],
+  'Soothing Vials':
+    'Section=feature ' +
+    'Note="TODO"',
 /*
   'Revivifying Mutagen':
     'Action=1 ' +
@@ -6006,7 +6087,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Order Explorer (Storm)':Pathfinder2E.FEATURES['Order Explorer (Storm)'],
   'Order Explorer (Untamed)':
     Pathfinder2E.FEATURES['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
-  // Poison Resistance as above
+  'Poison Resistance':Pathfinder2E.FEATURES['Poison Resistance'],
   'Anthropomorphic Shape':
      Pathfinder2E.FEATURES['Thousand Faces']
      .replace('Wild Shape', 'Untamed Form'),
@@ -6645,7 +6726,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Unimpeded Journey':Pathfinder2E.FEATURES['Wild Stride'],
   // Weapon Specialization as above
   "Warden's Endurance":Pathfinder2E.FEATURES.Juggernaut,
-  'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
+  // Will Expertise as above
 
   // Animal Companion as above
   // Changed effects
@@ -10197,7 +10278,9 @@ Pathfinder2ERemaster.classRules = function(
  */
 Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   Pathfinder2E.classRulesExtra(rules, name);
-  if(name == 'Cleric') {
+  if(name == 'Alchemist') {
+    rules.defineRule('skillNotes.perpetualInfusions', '', '=', 'null');
+  } else if(name == 'Cleric') {
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
       'deitySanctification', '?', 'source=="Either"',
       'featureNotes.sanctification', '=', '1'
