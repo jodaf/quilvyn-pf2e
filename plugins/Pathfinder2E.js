@@ -3694,8 +3694,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
   'Alchemical Weapon Expertise':
-    'Section=combat ' +
-    'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
+    'Section=combat Note="Attack Expert (Simple Weapons; Alchemical Bombs)"',
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
@@ -14458,12 +14457,12 @@ Pathfinder2E.featRules.traits = [
   'Rage', 'Ranger', 'Rogue', 'Secret', 'Skill', 'Sorcerer', 'Stance',
   'Transmutation', 'Uncommon', 'Visual', 'Wizard',
   // Core 2
-  'Leshy', 'Changeling', 'Lineage', 'Nephilim', 'Aiuvarin', 'Dromaar',
-  'Catfolk', 'Disease', 'Misfortune', 'Hobgoblin', 'Vitality', 'Kholo',
-  'Kobold', 'Lizardfolk', 'Ratfolk', 'Tengu', 'Tripkee', 'Dhampir',
-  'Dragonblood', 'Duskwalker' , 'Witch', 'Spellshape', 'Concentration',
-  'Linguistic', 'Illusion', 'Sonic', 'Prediction', 'Cold', 'Investigator',
-  'Teleportation', 'Light', 'Consecration'
+  'Aiuvarin', 'Catfolk', 'Changeling', 'Cold', 'Concentration', 'Consecration',
+  'Dhampir', 'Disease', 'Dragonblood', 'Dromaar', 'Duskwalker', 'Hobgoblin',
+  'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light', 'Lineage',
+  'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Prediction', 'Ratfolk',
+  'Revelation', 'Sonic', 'Spellshape', 'Teleportation', 'Tengu', 'Tripkee',
+  'Vitality', 'Witch'
 ];
 
 /*
