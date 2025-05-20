@@ -9787,8 +9787,62 @@ Pathfinder2ERemaster.WEAPONS = {
   'Shortbow':Pathfinder2E.WEAPONS.Shortbow,
 
   'Halfling Sling Staff':Pathfinder2E.WEAPONS['Halfling Sling Staff'],
-  'Shuriken':Pathfinder2E.WEAPONS.Shuriken
+  'Shuriken':Pathfinder2E.WEAPONS.Shuriken,
 
+   // Core2
+  'Adze':
+    'Category=Martial Price=1 Damage="1d10 S" Bulk=2 Hands=2 Group=Axe ' +
+    'Traits=Forceful,Sweep,Tripkee',
+  'Cruuk':
+    'Category=Martial Price=0.4 Damage="1d6 B" Bulk=L Hands=1 Group=Club ' +
+    'Traits=Shove,Thrown,Tripkee Range=30',
+  'Hand Adze':
+    'Category=Martial Price=0.5 Damage="1d4 S" Bulk=L Hands=1 Group=Axe ' +
+    'Traits=Agile,Finesse,Sweep,Thrown,Tripkee Range=10',
+
+  'Breaching Pike':
+    'Category=Martial Price=8 Damage="1d6 P" Bulk=1 Hands=1 Group=Spear ' +
+    'Traits=Uncommon,Hobgoblin,Razing,Reach',
+  'Claw Blade':
+    'Category=Martial Price=2 Damage="1d4 S" Bulk=L Hands=1 Group=Knife ' +
+    'Traits=Uncommon,Agile,Catfolk,"Deadly d8",Disarm,Finesse,"Versatile P"',
+  'Fangwire':
+    'Category=Martial Price=4 Damage="1d4 S" Bulk=L Hands=1 Group=Brawling ' +
+    'Traits=Uncommon,Agile,Backstabber,"Deadly d8",Finesse,Grapple,Kobold',
+  'Khopesh':
+    'Category=Martial Price=2 Damage="1d8 S" Bulk=1 Hands=1 Group=Sword ' +
+    'Traits=Uncommon,Trip',
+  'Mambele':
+    'Category=Martial Price=0.6 Damage="1d6 S" Bulk=1 Hands=1 Group=Axe ' +
+    'Traits=Uncommon,"Deadly d8",Disarm,Thrown Range=20',
+  'Tengu Gale Blade':
+    'Category=Martial Price=4 Damage="1d6 S" Bulk=L Hands=1 Group=Sword ' +
+    'Traits=Uncommon,Agile,Disarm,Finesse,Tengu',
+
+  'Capturing Spetum':
+    'Category=Advanced Price=9 Damage="1d10 P" Bulk=2 Hands=2 Group=Polearm ' +
+    'Traits=Uncommon,Hampering,Hobgoblin,Reach,Trip',
+  'Flying Talon':
+    'Category=Advanced Price=6 Damage="1d4 P" Bulk=1 Hands=1 Group=Flail ' +
+    'Traits=Uncommon,Agile,Finesse,Kobold,"Ranged Trip",Tethered,Thrown,Trip ' +
+    'Range=10',
+  'Spirit Thresher':
+    'Category=Advanced Price=2 Damage="1d12 B" Bulk=2 Hands=2 Group=Flail ' +
+    'Traits=Uncommon,Kholo,Sweep,"Versatile S"',
+  // TODO modular damage
+  'Tricky Pick':
+    'Category=Advanced Price=10 Damage="1d6 B" Bulk=1 Hands=1 Group=Pick ' +
+    'Traits=Uncommon,Backstabber,"Fatal d10",Kobold,Modular',
+  'Whip Claw':
+    'Category=Advanced Price=5 Damage="1d6 S" Bulk=1 Hands=2 Group=Flail ' +
+    'Traits=Uncommon,Catfolk,Finesse,Hampering,Reach',
+
+  'Thunder Sling':
+    'Category=Martial Price=5 Damage="1d6 P" Bulk=L Hands=1 Group=Sling ' +
+    'Traits=Uncommon,Agile,Propulsive,Tengu Range=50',
+  'Daikyu':
+    'Category=Advanced Price=8 Damage="1d8 P" Bulk=2 Hands=1 Group=Bow ' +
+    'Traits=Uncommon,Forceful,Propulsive Range=80'
 };
 
 /* Defines the rules related to character abilities. */
