@@ -1851,9 +1851,7 @@ Pathfinder2ERemaster.FEATS = {
   'Vengeful Strike':
     'Traits=Class,Barbarian,Rage ' +
     'Require="level >= 14","features.Vengeful Strike"',
-*/
-  'Whirlwind Strike':Pathfinder2E.FEATS['Whirlwind Strike'],
-/*
+  // Whirlwind Strike as above
   'Collateral Thrash':
     'Traits=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
   'Dragon Transformation':
@@ -3722,9 +3720,6 @@ Pathfinder2ERemaster.FEATS = {
   'Legendary Survivalist':Pathfinder2E.FEATS['Legendary Survivalist'],
   'Legendary Thief':Pathfinder2E.FEATS['Legendary Thief'],
   'Lengthy Diversion':Pathfinder2E.FEATS['Lengthy Diversion'],
-  'Leverage Connections': // TODO Player Core 2
-    Pathfinder2E.FEATS.Connections
-    .replace('Graces', 'Graces || features.Streetwise'),
   'Lie To Me':Pathfinder2E.FEATS['Lie To Me'],
   'Magical Crafting':Pathfinder2E.FEATS['Magical Crafting'],
   'Magical Shorthand':Pathfinder2E.FEATS['Magical Shorthand'],
@@ -3770,7 +3765,6 @@ Pathfinder2ERemaster.FEATS = {
   'Sign Language':Pathfinder2E.FEATS['Sign Language'],
   'Skill Training (%skill)':Pathfinder2E.FEATS['Skill Training (%skill)'],
   'Slippery Secrets':Pathfinder2E.FEATS['Slippery Secrets'],
-  'Snare Crafting':Pathfinder2E.FEATS['Snare Crafting'],
   'Specialty Crafting':Pathfinder2E.FEATS['Specialty Crafting'],
   'Steady Balance':Pathfinder2E.FEATS['Steady Balance'],
   'Streetwise':Pathfinder2E.FEATS.Streetwise,
@@ -3879,8 +3873,8 @@ Pathfinder2ERemaster.FEATS = {
   'Legendary Guide':
     'Traits=General,Skill Require="level >= 15","rank.Survival >= 4"',
   'Leverage Connections':
-    'Traits=General,Skill,Uncommon ' +
-    'Require="level >= 2","rank.Society >= 2","features.Courtly Graces || features.Streetwise"',
+    Pathfinder2E.FEATS.Connections
+    .replace('Graces', 'Graces || features.Streetwise'),
   'Numb To Death':'Traits=General Require="level >= 7","features.Diehard"',
   'Pick Up The Pace':
     'Traits=General Require="level >= 3","constitutionModifier >= 2"',
@@ -3905,7 +3899,7 @@ Pathfinder2ERemaster.FEATS = {
   'Slippery Prey':
     'Traits=General,Skill ' +
     'Require="level >= 2","rank.Acrobatics >= 1 || rank.Athletics >= 1"',
-  'Snare Crafting':'Traits=General,Skill Require="rank.Crafting >= 1"',
+  'Snare Crafting':Pathfinder2E.FEATS['Snare Crafting'],
   'Sow Rumor':
     'Traits=General,Skill,Uncommon,Secret ' +
     'Require="level >= 2","rank.Deception >= 2"',
@@ -7085,7 +7079,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Perception Mastery as above
   'Quick-Tempered':
     'Action=Free Section=combat Note="Enters rage during initiative"',
-  'Rage':Pathfinder2E.FEATURES['Rage'],
+  'Rage':Pathfinder2E.FEATURES.Rage,
   'Raging Resistance (Animal)':
     Pathfinder2E.FEATURES['Raging Resistance (Animal)'],
   'Raging Resistance (Dragon)':
@@ -7556,7 +7550,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
   */
   // Weapon Expertise as above
-  'Weapon Mastery':Pathfinder2E.FEATURES['Weapon Mastery'],
+  // Weapon Mastery
   /*
   // Weapon Specialization as above
 
@@ -9795,13 +9789,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Fear':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Soothe':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -9824,13 +9811,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Tangling Creepers':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Field Of Life':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -10058,13 +10038,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Entangling Flora':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
