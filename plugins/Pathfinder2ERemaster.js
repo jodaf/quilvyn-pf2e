@@ -8992,7 +8992,131 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Duplicate Foe':
     Pathfinder2E.SPELLS['Duplicate Foe']
+    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Earthbind':
+    Pathfinder2E.SPELLS.Earthbind
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Earth,Manipulate'),
+  'Earthquake':
+    Pathfinder2E.SPELLS.Earthquake
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Eclipse Burst':
+    Pathfinder2E.SPELLS['Eclipse Burst']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('Negative', 'Void')
+    .replaceAll('negative', 'void'),
+  'Electric Arc':
+    Pathfinder2E.SPELLS['Electric Arc']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace(/1d4+%\{.*\}/, '2d4'),
+  'Elemental Form':
+    Pathfinder2E.SPELLS['Elemental Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('air or fire', 'air, fire, or metal')
+    .replace('earth or water', 'earth, water, or wood'),
+  'Embed Message':
+    Pathfinder2E.SPELLS['Magic Mouth']
+    .replace(/School=\w*/, '')
+    .replace('Auditory', 'Concentrate,Manipulate')
+    .replace(',Visual', '') + ' ' +
+    'Description=' +
+      '"Illusory text and a disembodied voice convey a specified message of up to 25 words the next time a specified trigger occurs within 30\' (<b>heightened 4th</b> can include additional sensory effects; <b>6th</b> message can repeat multiple times)"',
+  'Energy Aegis':
+    Pathfinder2E.SPELLS['Energy Aegis']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('for 1 day', 'until next daily prep')
+    .replace('negative, positive', 'vitality, void'),
+  'Enfeeble':
+    Pathfinder2E.SPELLS['Ray Of Enfeeblement']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R30\' Inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1 for 1 rd; critical success negates; critical failure inflicts enfeebled 3 for 1 min)"',
+  'Enlarge':
+    Pathfinder2E.SPELLS.Enlarge
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Entangling Flora':
+    Pathfinder2E.SPELLS.Entangle
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Wood')
+    .replace('Primal', 'Arcane,Primal'),
+  'Enthrall':
+    Pathfinder2E.SPELLS.Enthrall
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Environmental Endurance':
+    Pathfinder2E.SPELLS['Endure Elements']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Everlight':
+    Pathfinder2E.SPELLS['Continual Flame']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
+    'Description="Touched gemstone emits 20\' bright light until dismissed"',
+  'Execute':
+    Pathfinder2E.SPELLS['Finger Of Death']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate,Void')
+    .replace('negative', 'void'),
+  'Fabricated Truth':
+    Pathfinder2E.SPELLS['Fabricated Truth']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Falling Stars':
+    Pathfinder2E.SPELLS['Meteor Swarm']
+    .replace(/School=\w*/, '')
+    .replace('Evocation,Fire', 'Concentrate,Manipulate')
+    .replaceAll('fire', 'chosen energy'),
+  'False Vision':
+    Pathfinder2E.SPELLS['False Vision']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'False Vitality':
+    Pathfinder2E.SPELLS['False Life']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace(/%\{.*\}/, '10'),
+  'Fear':
+    Pathfinder2E.SPELLS.Fear
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Feet To Fins':
+    Pathfinder2E.SPELLS['Feet To Fins']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Field Of Life':
+    Pathfinder2E.SPELLS['Field Of Life']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate')
+    .replaceAll('positive', 'vitality'),
+  'Fiery Body':
+    Pathfinder2E.SPELLS['Fiery Body']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('Produce Flame', 'Ignite'),
+  'Figment':
+    Pathfinder2E.SPELLS['Ghost Sound']
+    .replace(/School=\w*/, '')
+    .replace('Auditory', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R30\' Creates a simply illusory sound or vision while sustained"',
+  'Fire Shield':
+    Pathfinder2E.SPELLS['Fire Shield']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"Hovering shield with Hardness 10 and 40 HP gives self cold resistance 5 and immunity to severe environmental gold and inflicts 2d6 HP fire on melee attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
+  'Fireball':
+    Pathfinder2E.SPELLS.Fireball
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
     
   // TODO
   'Courageous Anthem':
@@ -9007,13 +9131,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Ventriloquism':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Figment':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
