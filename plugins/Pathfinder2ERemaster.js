@@ -499,51 +499,7 @@ Pathfinder2ERemaster.CLASSES = {
       'O8:2@15;3@16,' +
       'O9:2@17;3@18,' +
       'O10:1@19',
-/*
-  'Champion':
-    'Ability=strength,dexterity HitPoints=10 ' +
-    'Features=' +
-      '"1:Champion Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
-      '"1:Perception Trained",' +
-      '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
-      '"1:Champion Skills",' +
-      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      '"1:Class Trained (Champion)",' +
-      '"1:Spell Trained (Divine)",' +
-      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
-      '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
-      '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
-      '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
-      '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
-      '"9:Champion Expertise",' +
-      '"features.Liberator ? 9:Divine Smite (Liberator)",' +
-      '"features.Paladin ? 9:Divine Smite (Paladin)",' +
-      '"features.Redeemer ? 9:Divine Smite (Redeemer)",' +
-      '9:Juggernaut,"9:Reflex Expertise","11:Perception Expertise","11:Divine Will",' +
-      '"features.Liberator ? 11:Exalt (Liberator)",' +
-      '"features.Paladin ? 11:Exalt (Paladin)",' +
-      '"features.Redeemer ? 11:Exalt (Redeemer)",' +
-      '"13:Armor Mastery","13:Weapon Mastery",' +
-      '"15:Greater Weapon Specialization","17:Champion Mastery",' +
-      '"17:Legendary Armor","19:Hero\'s Defiance" ' +
-    'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability",' +
-      '"1:The Tenets Of Good:Champion\'s Code",' +
-      '"1:Divine Ally (Blade):Divine Ally",' +
-      '"1:Divine Ally (Shield):Divine Ally",' +
-      '"1:Divine Ally (Steed):Divine Ally",' +
-      '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
-      '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
-      '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
-*/
+
   'Cleric':
     // Ability => Attribute
     // TODO 1:Spell Trained (Divine) => Spell Trained (Cleric)?
@@ -586,6 +542,7 @@ Pathfinder2ERemaster.CLASSES = {
       'D8:2@15;3@16,' +
       'D9:2@17;3@18,' +
       'D10:1@19',
+
   'Druid':
     // Ability => Attribute
     // TODO 1:Spell Trained (Primal) => 1:Spell Trained (Druid)?
@@ -633,6 +590,7 @@ Pathfinder2ERemaster.CLASSES = {
       'P8:2@15;3@16,' +
       'P9:2@17;3@18,' +
       'P10:1@19',
+
   'Fighter':
     // Ability => Attribute
     // 1:Attack Of Opportunity => 1:Reactive Strike
@@ -660,41 +618,7 @@ Pathfinder2ERemaster.CLASSES = {
     'Selectables=' +
       '"1:Dexterity:Key Attribute",' +
       '"1:Strength:Key Attribute"',
-/*
-  'Monk':
-    'Ability=strength,dexterity HitPoints=10 ' +
-    'Features=' +
-      '"1:Monk Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
-      '"1:Perception Trained",' +
-      '"1:Save Expert (Fortitude; Reflex; Will)",' +
-      '"1:Monk Skills",' +
-      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Defense Expert (Unarmored Defense)",' +
-      '"1:Class Trained (Monk)",' +
-      '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
-      '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
-      '"3:Mystic Strikes","3:Skill Increases","5:Perception Expertise",' +
-      '"5:Expert Strikes","7:Path To Perfection","7:Weapon Specialization",' +
-      '"9:Metal Strikes","9:Monk Expertise","11:Second Path To Perfection",' +
-      '"13:Graceful Mastery","13:Master Strikes",' +
-      '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
-      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
-      '"features.Ki Spells ? 1:Ki Tradition" ' +
-    'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability",' +
-      '"1:Ki Tradition (Divine):Ki Tradition",' +
-      '"1:Ki Tradition (Occult):Ki Tradition",' +
-      '"7:Path To Perfection (Fortitude):Perfection",' +
-      '"7:Path To Perfection (Reflex):Perfection",' +
-      '"7:Path To Perfection (Will):Perfection",' +
-      '"features.Path To Perfection (Fortitude) ? 7:Third Path To Perfection (Fortitude):Third Perfection",' +
-      '"features.Path To Perfection (Reflex) ? 7:Third Path To Perfection (Reflex):Third Perfection",' +
-      '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
-*/
+
   'Ranger':
     // Ability => Attribute
     // 3:Iron Will => 3:Will Expertise
@@ -734,6 +658,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Flurry:Hunter\'s Edge",' +
       '"1:Precision:Hunter\'s Edge",' +
       '"1:Outwit:Hunter\'s Edge"',
+
   'Rogue':
     // Ability => Attribute
     // 1:Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks) => Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
@@ -780,60 +705,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Ruffian:Racket",' +
       '"1:Scoundrel:Racket",' +
       '"1:Thief:Racket"',
-/*
-  'Sorcerer':
-    'Ability=charisma HitPoints=6 ' +
-    'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
-      '"1:Perception Trained",' +
-      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
-      '"1:Sorcerer Skills",' +
-      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
-      '"1:Defense Trained (Unarmored Defense)",' +
-      '1:Bloodline,"1:Sorcerer Spellcasting","2:Skill Feats",' +
-      '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
-      '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
-      '"9:Reflex Expertise","11:Perception Expertise","11:Weapon Expertise",' +
-      '"13:Defensive Robes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
-      '"19:Legendary Spellcaster" ' +
-    'Selectables=' +
-      '1:Aberrant:Bloodline,' +
-      '1:Angelic:Bloodline,' +
-      '1:Demonic:Bloodline,' +
-      '1:Diabolic:Bloodline,' +
-      '"1:Draconic (Brass):Bloodline",' +
-      '"1:Draconic (Bronze):Bloodline",' +
-      '"1:Draconic (Copper):Bloodline",' +
-      '"1:Draconic (Gold):Bloodline",' +
-      '"1:Draconic (Silver):Bloodline",' +
-      '"1:Draconic (Black):Bloodline",' +
-      '"1:Draconic (Blue):Bloodline",' +
-      '"1:Draconic (Green):Bloodline",' +
-      '"1:Draconic (Red):Bloodline",' +
-      '"1:Draconic (White):Bloodline",' +
-      '"1:Elemental (Air):Bloodline",' +
-      '"1:Elemental (Earth):Bloodline",' +
-      '"1:Elemental (Fire):Bloodline",' +
-      '"1:Elemental (Water):Bloodline",' +
-      '1:Fey:Bloodline,' +
-      '1:Hag:Bloodline,' +
-      '1:Imperial:Bloodline,' +
-      '1:Undead:Bloodline ' +
-    // SpellSlots tradition depends on bloodline--see classRules
-    'SpellSlots=' +
-      '0:5@1,' +
-      '1:3@1;4@2,' +
-      '2:3@3;4@4,' +
-      '3:3@5;4@6,' +
-      '4:3@7;4@8,' +
-      '5:3@9;4@10,' +
-      '6:3@11;4@12,' +
-      '7:3@13;4@14,' +
-      '8:3@15;4@16,' +
-      '9:3@17;4@18,' +
-      '10:1@19',
-*/
+
   'Witch':
     'Attribute=intelligence HitPoints=6 ' +
     'Features=' +
@@ -871,6 +743,7 @@ Pathfinder2ERemaster.CLASSES = {
       '8:3@15;4@16,' +
       '9:3@17;4@18,' +
       '10:1@19',
+
   'Wizard':
     // Ability => Attribute
     // 1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks) => 1:Attack Trained (Simple Weapons; Unarmed Attacks)
@@ -925,6 +798,7 @@ Pathfinder2ERemaster.CLASSES = {
       'A10:1@19',
 
   // Core 2
+
   'Alchemist':
     // Ability => Attribute
     // 1:Infused Reagents => 1:Versatile Vials
@@ -1035,6 +909,143 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Dragon Instinct (Gold):Instinct",' +
       '"1:Dragon Instinct (Silver):Instinct",' +
       '"1:Supertition Instinct:Instinct"'
+
+/*
+  'Champion':
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Champion Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
+      '"1:Champion Skills",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"1:Class Trained (Champion)",' +
+      '"1:Spell Trained (Divine)",' +
+      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Champion\'s Reaction",' +
+      '"features.Liberator ? 1:Liberating Step",' +
+      '"features.Paladin ? 1:Retributive Strike",' +
+      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
+      '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
+      '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
+      '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
+      '"9:Champion Expertise",' +
+      '"features.Liberator ? 9:Divine Smite (Liberator)",' +
+      '"features.Paladin ? 9:Divine Smite (Paladin)",' +
+      '"features.Redeemer ? 9:Divine Smite (Redeemer)",' +
+      '9:Juggernaut,"9:Reflex Expertise","11:Perception Expertise","11:Divine Will",' +
+      '"features.Liberator ? 11:Exalt (Liberator)",' +
+      '"features.Paladin ? 11:Exalt (Paladin)",' +
+      '"features.Redeemer ? 11:Exalt (Redeemer)",' +
+      '"13:Armor Mastery","13:Weapon Mastery",' +
+      '"15:Greater Weapon Specialization","17:Champion Mastery",' +
+      '"17:Legendary Armor","19:Hero\'s Defiance" ' +
+    'Selectables=' +
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability",' +
+      '"1:The Tenets Of Good:Champion\'s Code",' +
+      '"1:Divine Ally (Blade):Divine Ally",' +
+      '"1:Divine Ally (Shield):Divine Ally",' +
+      '"1:Divine Ally (Steed):Divine Ally",' +
+      '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
+      '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
+      '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
+*/
+
+/*
+  'Monk':
+    'Ability=strength,dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Monk Key Ability",' +
+      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
+      '"features.Strength ? 1:Ability Boost (Strength)",' +
+      '"1:Ability Boosts",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Fortitude; Reflex; Will)",' +
+      '"1:Monk Skills",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Expert (Unarmored Defense)",' +
+      '"1:Class Trained (Monk)",' +
+      '"1:Flurry Of Blows","1:Powerful Fist","1:Monk Feats",' +
+      '"2:Skill Feats","3:General Feats","3:Incredible Movement",' +
+      '"3:Mystic Strikes","3:Skill Increases","5:Perception Expertise",' +
+      '"5:Expert Strikes","7:Path To Perfection","7:Weapon Specialization",' +
+      '"9:Metal Strikes","9:Monk Expertise","11:Second Path To Perfection",' +
+      '"13:Graceful Mastery","13:Master Strikes",' +
+      '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
+      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
+      '"features.Ki Spells ? 1:Ki Tradition" ' +
+    'Selectables=' +
+      '"1:Dexterity:Key Ability",' +
+      '"1:Strength:Key Ability",' +
+      '"1:Ki Tradition (Divine):Ki Tradition",' +
+      '"1:Ki Tradition (Occult):Ki Tradition",' +
+      '"7:Path To Perfection (Fortitude):Perfection",' +
+      '"7:Path To Perfection (Reflex):Perfection",' +
+      '"7:Path To Perfection (Will):Perfection",' +
+      '"features.Path To Perfection (Fortitude) ? 7:Third Path To Perfection (Fortitude):Third Perfection",' +
+      '"features.Path To Perfection (Reflex) ? 7:Third Path To Perfection (Reflex):Third Perfection",' +
+      '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
+*/
+
+/*
+  'Sorcerer':
+    'Ability=charisma HitPoints=6 ' +
+    'Features=' +
+      '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
+      '"1:Sorcerer Skills",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
+      '1:Bloodline,"1:Sorcerer Spellcasting","2:Skill Feats",' +
+      '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
+      '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
+      '"9:Reflex Expertise","11:Perception Expertise","11:Weapon Expertise",' +
+      '"13:Defensive Robes","13:Weapon Specialization",' +
+      '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
+      '"19:Legendary Spellcaster" ' +
+    'Selectables=' +
+      '1:Aberrant:Bloodline,' +
+      '1:Angelic:Bloodline,' +
+      '1:Demonic:Bloodline,' +
+      '1:Diabolic:Bloodline,' +
+      '"1:Draconic (Brass):Bloodline",' +
+      '"1:Draconic (Bronze):Bloodline",' +
+      '"1:Draconic (Copper):Bloodline",' +
+      '"1:Draconic (Gold):Bloodline",' +
+      '"1:Draconic (Silver):Bloodline",' +
+      '"1:Draconic (Black):Bloodline",' +
+      '"1:Draconic (Blue):Bloodline",' +
+      '"1:Draconic (Green):Bloodline",' +
+      '"1:Draconic (Red):Bloodline",' +
+      '"1:Draconic (White):Bloodline",' +
+      '"1:Elemental (Air):Bloodline",' +
+      '"1:Elemental (Earth):Bloodline",' +
+      '"1:Elemental (Fire):Bloodline",' +
+      '"1:Elemental (Water):Bloodline",' +
+      '1:Fey:Bloodline,' +
+      '1:Hag:Bloodline,' +
+      '1:Imperial:Bloodline,' +
+      '1:Undead:Bloodline ' +
+    // SpellSlots tradition depends on bloodline--see classRules
+    'SpellSlots=' +
+      '0:5@1,' +
+      '1:3@1;4@2,' +
+      '2:3@3;4@4,' +
+      '3:3@5;4@6,' +
+      '4:3@7;4@8,' +
+      '5:3@9;4@10,' +
+      '6:3@11;4@12,' +
+      '7:3@13;4@14,' +
+      '8:3@15;4@16,' +
+      '9:3@17;4@18,' +
+      '10:1@19',
+*/
 
 };
 Pathfinder2ERemaster.DEITIES = {
@@ -9202,19 +9213,166 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Gust Of Wind']
     .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
+  'Hallucination':
+    Pathfinder2E.SPELLS.Hallucination
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Manipulate,Subtle,'),
+  'Harm':
+    Pathfinder2E.SPELLS.Harm
+    .replace(/School=\w*/, '') + ' ' +
+    'Traits=Manipulate,Void'
+    .replaceAll('negative', 'void'),
+  'Haste':
+    Pathfinder2E.SPELLS.Haste
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Heal':
+    Pathfinder2E.SPELLS.Heal
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Manipulate,Vitality'),
+  'Heroism':
+    Pathfinder2E.SPELLS.Heroism
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Hidden Mind':
+    Pathfinder2E.SPELLS['Mind Blank']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Holy Light':
+    Pathfinder2E.SPELLS['Searing Light']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Good', 'Holy')
+    .replaceAll('good', 'spirit')
+    .replace('fiends and undead', 'unholy creatures'),
+  'Glibness':
+    Pathfinder2E.SPELLS.Glibness
+    .replace(/School=\w*/, '')
+    .replace('Uncommon,Enchantment', 'Concentrate,Manipulate'),
+  'Howling Blizzard':
+    Pathfinder2E.SPELLS['Cone Of Cold']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate,Air') + ' ' +
+    'Description=' +
+      '"60\' cone (3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Humanoid Form':
+    Pathfinder2E.SPELLS['Humanoid Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Hydraulic Push':
+    Pathfinder2E.SPELLS['Hydraulic Push']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Hydraulic Torrent':
+    Pathfinder2E.SPELLS['Hydraulic Torrent']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Hypercognition':
+    Pathfinder2E.SPELLS.Hypercognition
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate'),
+  'Hypnotize':
+    Pathfinder2E.SPELLS['Hypnotic Pattern']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Manipulate,Subtle,'),
+  'Ignition':
+    Pathfinder2E.SPELLS['Produce Flame']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace(/1d4\+%\{.*\} HP/, '2d4 HP (2d6 HP if a melee attack)'),
+  'Ill Omen':
+    'Level=1 ' +
+    'Traits=Concentrate,Curse,Manipulate,Misfortune ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Target suffers worse of two rolls on next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
+  'Illusory Creature':
+    Pathfinder2E.SPELLS['Illusory Creature']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,')
+    .replace(/1d4\+%\{.*\}/, '3d4'),
+  'Illusory Disguise':
+    Pathfinder2E.SPELLS['Illusory Disguise']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,') + ' ' +
+    'Description=' +
+      '"R30\' Makes the target appear different and gives +4 Deception, plus the target level if untrained, to avoid uncovering the disguise for 1 hr (<b>heightened 3rd</b> allows copying a specific individual; <b>4th</b> affects 10 targets; <b>7th</b> affects 10 targets and allows copying specific individuals)"',
+  'Illusory Object':
+    Pathfinder2E.SPELLS['Illusory Object']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+  'Illusory Scene':
+    Pathfinder2E.SPELLS['Illusory Scene']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+  'Impaling Spike':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate,Metal ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Inflicts 8d6 HP piercing from cold iron and immobilized (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and off-guard) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Implosion':
+    Pathfinder2E.SPELLS.Implosion
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Indestructibility':
+    'Level=10 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="Gives self immunity to harm for 1 rd"',
+  'Infuse Vitality':
+    Pathfinder2E.SPELLS['Disrupting Weapons']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality') + ' ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"Touched weapon (2 or 3 actions affect 2 or 3 actions) inflicts +1d4 HP vitality%{traits.Holy?\' and holy\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
+  'Insect Form':
+    Pathfinder2E.SPELLS['Insect Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Primal',
+  'Interplanar Teleport':
+    Pathfinder2E.SPELLS['Plane Shift']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Invisibility':
+    Pathfinder2E.SPELLS.Invisibility
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Manipulate,Subtle'),
+  'Invoke Spirits':
+    'Level=5 ' +
+    'Traits=Concentrate,Emotion,Fear,Manipulate,Mental,Void ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' 10\' burst, movable 30\' per rd, inflicts 2d4 HP mental and 2d4 HP void while sustained for up to 1 min (<b>save Will</b> negates; critical failure also inflicts frightened 2, plus fleeing in the first rd) (<b>heightened +2</b> inflicts +1d4 HP mental and void)"',
+  'Item Facade':
+    Pathfinder2E.SPELLS['Item Facade']
+    .replace(/School=\w*/, '')
+    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+  'Jump':
+    Pathfinder2E.SPELLS.Jump
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Manipulate'),
+  'Knock':
+    Pathfinder2E.SPELLS.Knock
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Know The Way':
+    Pathfinder2E.SPELLS['Know Direction']
+    .replace('Divination', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"Reveals which direction is north (<b>heightened 3rd</b> reveals direction to a location visited in the past week; <b>7th</b> reveals direction to a familiar location)"',
     
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
-  'Impaling Spike':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Ventriloquism':
     'Level=1 ' +
     'Traits=Evocation ' +
