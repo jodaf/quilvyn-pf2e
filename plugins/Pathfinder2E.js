@@ -9073,7 +9073,7 @@ Pathfinder2E.SPELLS = {
     'Traits=Healing,Necromancy,Positive ' +
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
-    'Cast=0 ' +
+    'Cast=1 ' +
     'Description=' +
       '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) regains 1d%{healSpellDie} HP, or 1d%{healSpellDie}+8 HP with 2 actions; undead instead suffer 1d%{healSpellDie} HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP; restores +8 HP with 2 actions)"',
   'Heroism':
@@ -9123,7 +9123,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 3d6 HP bludgeoning and a 5\' push (double HP and distance with a critical success) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' Spell attack inflicts 3d6 HP bludgeoning and a 5\' push, or 6d6 HP bludgeoning and a 10\' push with a critical success (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
     'Traits=Evocation,Water ' +
@@ -9194,7 +9194,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes a Medium critter with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
+      '"Self becomes a Medium bug with 10 temporary HP, Armor Class %{level+18}, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10\' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15\' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)"',
   'Invisibility':
     'Level=2 ' +
     'Traits=Illusion ' +
@@ -10036,7 +10036,8 @@ Pathfinder2E.SPELLS = {
     'School=Evocation ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
+    'Description=' +
+      '"R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
   'Secret Page':
     'Level=3 ' +
     'Traits=Illusion,Visual ' +
@@ -15602,8 +15603,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Manipulate', 'Sanctified', 'Spirit', 'Subtle', 'Unholy', 'Vitality', 'Void',
-  'Wood'
+  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spirit', 'Subtle', 'Unholy',
+  'Vitality', 'Void', 'Wood'
 ];
 
 /*
