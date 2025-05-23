@@ -9025,7 +9025,7 @@ Pathfinder2E.SPELLS = {
     'Traits=Cantrip,Divination ' +
     'School=Divination ' +
     'Traditions=Divine,Occult,Primal ' +
-    'Cast=2 ' +
+    'Cast=1 ' +
     'Description=' +
       '"R30\' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr"',
   'Gust Of Wind':
