@@ -9111,6 +9111,97 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Fireball
     .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
+  'Fleet Step':
+    Pathfinder2E.SPELLS['Fleet Step']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Flicker':
+    Pathfinder2E.SPELLS.Blink
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Floating Flame':
+    Pathfinder2E.SPELLS['Flaming Sphere']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('; success negates', ''),
+  'Fly':
+    Pathfinder2E.SPELLS.Fly
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Occult,Primal',
+  'Forbidding Ward':
+    Pathfinder2E.SPELLS['Forbidding Ward']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Force Barrage':
+    Pathfinder2E.SPELLS['Magic Missile']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replaceAll('missile', 'shard'),
+  'Foresight':
+    Pathfinder2E.SPELLS.Foresight
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('flat-footed', 'off-guard'),
+  'Freeze Time':
+    Pathfinder2E.SPELLS['Time Stop']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Frostbite':
+    Pathfinder2E.SPELLS['Ray Of Frost']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate') +
+    'Description=' +
+      '"R60\' Inflicts 2d4 HP cold (<b>save basic Fortitude</b>; critical failure also inflicts weakness 1 to bludgeoning for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP and weakness +1 to bludgeoning)"',
+  'Gate':
+    Pathfinder2E.SPELLS.Gate
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Gecko Grip':
+    Pathfinder2E.SPELLS['Spider Climb']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Feather Fall':
+    Pathfinder2E.SPELLS['Feather Fall']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Air,Concentrate'),
+  'Ghostly Carrier':
+    Pathfinder2E.SPELLS['Spectral Hand']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace(/ends the spell[^"]*/, 'ends the spell'),
+  'Ghostly Weapon':
+    Pathfinder2E.SPELLS['Ghostly Weapon']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Goblin Pox':
+    Pathfinder2E.SPELLS['Goblin Pox']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Gouging Claw':
+    'Level=1 ' +
+    'Traits=Attack,Cantrip,Concentrate,Manipulate,Morph ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Melee spell attack inflicts 2d6 HP choice of slashing or piercing, plus 2 HP persitent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
+  'Grease':
+    Pathfinder2E.SPELLS.Grease
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Grim Tendrils':
+    Pathfinder2E.SPELLS['Grim Tendrils']
+    .replace(/School=\w*/, '') + ' ' +
+    'Traits=Concentrate,Manipulate,Void'
+    .replaceAll('negative', 'void'),
+  'Guidance':
+    Pathfinder2E.SPELLS.Guidance
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate'),
+  'Gust Of Wind':
+    Pathfinder2E.SPELLS['Gust Of Wind']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
     
   // TODO
   'Courageous Anthem':
