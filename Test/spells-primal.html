@@ -398,7 +398,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Banishment (P5 Abj): <b>(2)</b> R30' Returns the target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents the target's return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Barkskin (P2 Abj): <b>(2)</b> Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min (<b>heightened +2</b> gives +2 resistances and +3 weakness)</td>
+      <td>Barkskin (P2 Abj): <b>(2)</b> Touched gains resistance 2 to bludgeoning and piercing and weakness 3 to fire for 10 min or until dismissed by target (<b>heightened +2</b> gives +2 resistances and +3 weakness)</td>
     </tr><tr style="text-align:left">
       <td>Blindness (P3 Nec): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
@@ -544,7 +544,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Grease (P1 Con): <b>(2)</b> R30' 4 5' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes the holder to drop the target object)</td>
     </tr><tr style="text-align:left">
-      <td>Guidance (PC1 Div): <b>(2)</b> R30' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr</td>
+      <td>Guidance (PC1 Div): <b>(1)</b> R30' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr</td>
     </tr><tr style="text-align:left">
       <td>Gust Of Wind (P1 Evo): <b>(2)</b> 60' line extinguishes small, non-magical fires, disperses fog, moves light objects, and knocks prone creatures up to Large for 1 rd (<b>save Fortitude</b> prevents moving against the wind but does not knock prone; critical success negates; critical failure pushes 30', knocks prone, and inflicts 2d6 HP bludgeoning)</td>
     </tr><tr style="text-align:left">
@@ -552,7 +552,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Haste (P3 Tra): <b>(2)</b> R30' Target gains an extra Strike or Stride action each rd for 1 min (<b>heightened 7th</b> affects 6 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Heal (P1 Nec):  Touched (2 or 3 actions gives R30' or a 30' emanation) regains 1d8 HP, or 1d8+8 HP with 2 actions; undead instead suffer 1d8 HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d8 HP; restores +8 HP with 2 actions)</td>
+      <td>Heal (P1 Nec): <b>(1)</b> Touched (2 or 3 actions gives R30' or a 30' emanation) regains 1d8 HP, or 1d8+8 HP with 2 actions; undead instead suffer 1d8 HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d8 HP; restores +8 HP with 2 actions)</td>
     </tr><tr style="text-align:left">
       <td>Heal Animal (P1 Foc Nec): <b>(1)</b> Touched animal (2 actions gives R30') regains 1d8 HP, or 1d8+8 HP with 2 actions (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)</td>
     </tr><tr style="text-align:left">
@@ -564,7 +564,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Humanoid Form (P2 Tra): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
     </tr><tr style="text-align:left">
-      <td>Hydraulic Push (P1 Evo): <b>(2)</b> R60' Spell attack inflicts 3d6 HP bludgeoning and a 5' push (double HP and distance with a critical success) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Hydraulic Push (P1 Evo): <b>(2)</b> R60' Spell attack inflicts 3d6 HP bludgeoning and a 5' push, or 6d6 HP bludgeoning and a 10' push with a critical success (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Hydraulic Torrent (P4 Evo): <b>(2)</b> 60' line inflicts 8d6 HP bludgeoning and a 5' push (<b>save basic Fortitude</b>; success negates push; critical failure doubles push distance)</td>
     </tr><tr style="text-align:left">
@@ -578,7 +578,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Implosion (P9 Evo): <b>(2)</b> R30' Inflicts 75 HP on 1 target each rd while sustained for up to 1 min; a target cannot be affected twice by a single casting (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +10 HP)</td>
     </tr><tr style="text-align:left">
-      <td>Insect Form (P3 Tra): <b>(2)</b> Self becomes a Medium critter with 10 temporary HP, Armor Class 30, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)</td>
+      <td>Insect Form (P3 Tra): <b>(2)</b> Self becomes a Medium bug with 10 temporary HP, Armor Class 30, +13 attack, +2 damage, low-light vision, +13 Athletics modifier, and creature-specific features for 1 min (<b>heightened 4th</b> becomes a Large creature with 10' reach, 15 temporary HP, +16 attack, +6 damage, +16 Athletics; <b>5th</b> becomes a Huge creature with 15' reach, 20 temporary HP, +18 attack, +2 damage and double damage dice, +20 Athletics)</td>
     </tr><tr style="text-align:left">
       <td>Jealous Hex (P1 Foc Nec): <b>(1)</b> R30' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on the target's highest ability modifier, until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)</td>
     </tr><tr style="text-align:left">
@@ -602,7 +602,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Meld Into Stone (P3 Tra): <b>(2)</b> Allows self to enter a touched stone, retaining the ability to hear outside sounds, for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Mending (P1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)</td>
+      <td>Mending (P1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a touched light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)</td>
     </tr><tr style="text-align:left">
       <td>Meteor Swarm (P9 Evo): <b>(2)</b> R500' 4 meteors each inflict 6d10 HP bludgeoning in a 10' burst and 14d6 HP fire in a 40' burst (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d10 HP bludgeoning and +2d6 HP fire)</td>
     </tr><tr style="text-align:left">
@@ -610,7 +610,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Monstrosity Form (P8 Tra): <b>(2)</b> Self becomes a Huge phoenix, purple worm, or sea serpent with 20 temporary HP, Armor Class 32, +28 attack, darkvision, +30 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 9th</b> gives 25 temporary HP, Armor Class 34, +31 attack, an additional damage die, +33 Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Moon Frenzy (P5 Tra): <b>(2)</b> R30' 5 willing targets gain 5 temporary HP, +10' Speed, fangs and claws that inflict 2d6 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver, for 1 min (<b>heightened 6th</b> gives 10 temporary HP, inflict 3d6 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> gives 20 temporary HP, inflict 4d6 HP piercing and 4d6 HP slashing, weakness 20 to silver)</td>
+      <td>Moon Frenzy (P5 Tra): <b>(2)</b> R30' 5 willing targets gain 5 temporary HP, +10' Speed, fangs and claws that inflict 2d8 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver and prohibition of non-rage, non-Seek concentration actions, for 1 min (<b>heightened 6th</b> gives 10 temporary HP, inflict 3d8 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> gives 20 temporary HP, inflict 4d8 HP piercing and 4d6 HP slashing, weakness 20 to silver)</td>
     </tr><tr style="text-align:left">
       <td>Nature Incarnate (P10 Tra): <b>(2)</b> Self becomes a Medium green man or Gargantuan kaiju with 30 temporary HP, Armor Class 37, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min</td>
     </tr><tr style="text-align:left">
