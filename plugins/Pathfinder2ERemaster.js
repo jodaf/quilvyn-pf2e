@@ -196,7 +196,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Cave Kholo:Heritage",' +
       '"1:Dog Kholo:Heritage",' +
       '"1:Great Kholo:Heritage",' +
-      '"1:Sweatbreath Kholo:Heritage",' +
+      '"1:Sweetbreath Kholo:Heritage",' +
       '"1:Winter Kholo:Heritage",' +
       '"1:Witch Kholo:Heritage" ' +
     'Languages=Common,Kholo ' +
@@ -215,7 +215,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Spellhorn Kobold:Heritage",' +
       '"1:Strongjaw Kobold:Heritage",' +
       '"1:Tunnelflood Kobold:Heritage",' +
-      '"1:Ventomtail Kobold:Heritage" ' +
+      '"1:Venomtail Kobold:Heritage" ' +
     'Languages=Common,Sakvroth ' +
     'Traits=Humanoid,Kobold',
   'Lizardfolk':
@@ -444,7 +444,7 @@ Pathfinder2ERemaster.BACKGROUNDS = {
   'Ward':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Constitution, Charisma; Choose 1 from any)",' +
-      '"1:Skill Trained (Performance; Geneology Lore)",' +
+      '"1:Skill Trained (Performance; Genealogy Lore)",' +
       '"1:Fascinating Performance"'
   // TODO Rare backgrounds, pg 51
 };
@@ -908,7 +908,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Dragon Instinct (Copper):Instinct",' +
       '"1:Dragon Instinct (Gold):Instinct",' +
       '"1:Dragon Instinct (Silver):Instinct",' +
-      '"1:Supertition Instinct:Instinct"'
+      '"1:Superstition Instinct:Instinct"'
 
 /*
   'Champion':
@@ -1517,7 +1517,7 @@ Pathfinder2ERemaster.FEATS = {
 
   'Cringe':'Traits=Ancestry,Kobold,Emotion,Mental,Visual',
   "Dragon's Presence":
-    'Traits=Ancestry,Kobold Require="features.Drgonscaled Kobold"',
+    'Traits=Ancestry,Kobold Require="features.Dragonscaled Kobold"',
   'Kobold Lore':'Traits=Ancestry,Kobold',
   'Kobold Weapon Familiarity':'Traits=Ancestry,Kobold',
   'Scamper':'Traits=Ancestry,Kobold',
@@ -1550,7 +1550,9 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Ancestry,Kobold,Healing,Visual Require="level >= 17"',
 
   'Bone Magic':'Traits=Ancestry,Lizardfolk',
-  'Iruxi Armaments':'Traits=Ancestry,Lizardfolk',
+  'Iruxi Armaments (Claws)':'Traits=Ancestry,Lizardfolk',
+  'Iruxi Armaments (Fangs)':'Traits=Ancestry,Lizardfolk',
+  'Iruxi Armaments (Tail)':'Traits=Ancestry,Lizardfolk',
   'Lizardfolk Lore':'Traits=Ancestry,Lizardfolk',
   // TODO Requires a swim Speed
   'Marsh Runner':'Traits=Ancestry,Lizardfolk',
@@ -3812,7 +3814,7 @@ Pathfinder2ERemaster.FEATS = {
   // Core 2
   'A Home In Every Port':
     'Traits=General,Downtime Require="level >= 11","charismaModifier >= 3"',
-  'Acrobatic Perfomer':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
+  'Acrobatic Performer':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
   'Aerobatics Mastery':
     'Traits=General,Skill Require="level >= 7","rank.Acrobatics >= 3"',
   'Armor Assist':
@@ -3834,7 +3836,7 @@ Pathfinder2ERemaster.FEATS = {
   'Bon Mot':
     'Traits=General,Skill,Auditory,Concentrate,Emotion,Linguistic,Mental ' +
     'Require="rank.Diplomacy >= 1"',
-  'Carvan Leader':
+  'Caravan Leader':
     'Traits=General Require="level >= 11","features.Pick Up The Pace"',
   'Concealing Legerdemain':'Traits=General,Skill Require="rank.Thievery >= 1"',
   'Consult The Spirits':
@@ -3850,7 +3852,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=General,Skill ' +
     'Require=' +
       '"level >= 2",' +
-      '"rank.Deception >= 2 || rank.Diplomancy >= 2"',
+      '"rank.Deception >= 2 || rank.Diplomacy >= 2"',
   'Distracting Performance':
     'Traits=General,Skill Require="level >= 2","rank.Performance >= 2"',
   'Disturbing Knowledge':
@@ -3939,135 +3941,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
-  'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
-  'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
-  'Badlands Orc':
-    'Section=ability,save ' +
-    'Note=' +
-      '"Can Hustle twice the normal duration while exploring",' +
-      '"Treats environmental heat as 1 step less extreme"',
-  'Battle-Ready Orc':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Intimidating Glare feature",' +
-      '"Skill Trained (Intimidation)"',
-  'Cactus Leshy':
-    'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
-  'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
-  'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
-  'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
   'Darkvision':Pathfinder2E.FEATURES.Darkvision,
   'Death Warden Dwarf':
     Pathfinder2E.FEATURES['Death Warden Dwarf']
     .replace('necromancy', 'void and undead'),
-  'Deep Orc':
-    'Section=feature ' +
-    'Note="Has the Combat Climber and Terrain Expertise (Underground) features"',
-  'Dwarf Heritage':'Section=feature Note="1 selection"',
-  'Elf Heritage':'Section=feature Note="1 selection"',
-  'Fast':'Section=ability Note="+5 Speed"',
-  'Fey-Touched Gnome':Pathfinder2E.FEATURES['Fey-Touched Gnome'],
+  'Dwarf Heritage':Pathfinder2E.FEATURES['Dwarf Heritage'],
   'Forge Dwarf':Pathfinder2E.FEATURES['Forge Dwarf'],
-  'Fruit Leshy':
-    'Section=magic ' +
-    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hour after removal"',
-  'Fungus Leshy':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Darkvision feature",' +
-      '"Has the fungus trait, not the plant trait"',
-  'Gnome Heritage':'Section=feature Note="1 selection"',
-  'Goblin Heritage':'Section=feature Note="1 selection"',
-  'Gourd Leshy':
-    'Section=feature Note="Can store 1 Bulk of objects within head"',
-  'Grave Orc':
-    'Section=save ' +
-    'Note="Has resistance %{level//2>?1} to void damage/+1 vs. death and void effects"',
-  'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
-  'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Halfling Heritage':'Section=feature Note="1 selection"',
-  'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
-  'Hold-Scarred Orc':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"+2 Hit Points",' +
-      '"Has the Diehard feature"',
-  'Human Heritage':'Section=feature Note="1 selection"',
-  'Irongut Goblin':Pathfinder2E.FEATURES['Irongut Goblin'],
-  'Jinx':
-    'Action=2 ' +
-    'Section=magic ' +
-    'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)"',
-  'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
-  'Leaf Leshy':'Section=save Note="Takes no damage from falling"',
-  'Lotus Leshy':
-    'Section=ability ' +
-    'Note="Can walk at %{speed//2}\' Speed across still liquids and Balance to move across flowing water"',
-  'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
-  'Keen Eyes':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
-      '"R30\' +2 Seek to find hidden creatures"',
-  'Leshy Heritage':'Section=feature Note="1 selection"',
-  'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
-  'Orc Heritage':'Section=feature Note="1 selection"',
-  'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
-  'Rainfall Orc':
-    'Section=save,skill ' +
-    'Note=' +
-      '"+1 vs. disease",' +
-      '"+2 Athletics to Climb or Swim"',
-  'Razortooth Goblin':Pathfinder2E.FEATURES['Razortooth Goblin'],
   'Rock Dwarf':
     Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
-  'Root Leshy':
-    'Section=combat,combat,feature,save ' +
-    'Note=' +
-      '"+2 Hit Points",' +
-      '"+2 vs. attempts to Reposition, Shove, or Trip",' +
-      '"Can go 2 weeks without sunlight before starving",' +
-      '"+2 vs. spells and effects that move and knock prone"',
-  'Seaweed Leshy':
-    'Section=ability,ability ' +
-    'Note=' +
-      '"-5 Speed",' +
-      '"Has a 20\' swim Speed and can breathe water"',
-  'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
-  'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
-  'Skilled Human':Pathfinder2E.FEATURES['Skilled Heritage Human'],
-  'Slow':'Section=ability Note="-5 Speed"',
-  'Snow Goblin':Pathfinder2E.FEATURES['Snow Goblin'],
+  'Slow':Pathfinder2E.FEATURES.Slow,
   'Strong-Blooded Dwarf':Pathfinder2E.FEATURES['Strong-Blooded Dwarf'],
-  'Twilight Halfling':Pathfinder2E.FEATURES['Twilight Halfling'],
-  'Umbral Gnome':Pathfinder2E.FEATURES['Umbral Gnome'],
-  'Unbreakable Goblin':Pathfinder2E.FEATURES['Unbreakable Goblin'],
-  'Versatile Human':Pathfinder2E.FEATURES['Versatile Heritage Human'],
-  'Vine Leshy':
-    'Section=skill ' +
-    'Note="Can Climb with both hands occupied, and successes to Climb are critical successes"',
-  'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
-  'Wellspring Gnome (Arcane)':
-    Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
-  'Wellspring Gnome (Divine)':
-    Pathfinder2E.FEATURES['Wellspring Gnome (Divine)'],
-  'Wellspring Gnome (Occult)':
-    Pathfinder2E.FEATURES['Wellspring Gnome (Occult)'],
-  // Changed
-  'Whisper Elf':
-    'Section=skill ' +
-    'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
-  'Wildwood Halfling':Pathfinder2E.FEATURES['Wildwood Halfling'],
-  'Winter Orc':
-    'Section=save,skill ' +
-    'Note=' +
-      '"Treats environmental cold as 1 step less extreme",' +
-      '"Skill Trained (Survival)"',
-  'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
-  // Ancestry feats
   'Dwarven Doughtiness':
     'Section=save ' +
     'Note="Reduces frightened condition by 2 at the end of each turn"',
@@ -4113,7 +3998,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful DC 17 flat check turns a critical physical hit into a normal hit"',
   'Stonewalker':
     Pathfinder2E.FEATURES.Stonewalker
-    .replace('Stonecunning', "Stonemason's Eye"),
+    .replace('Stonecunning', "Stonemason's Eye")
+    .replace('Meld Into Stone', 'One With Stone'),
   'March The Mines':
     'Action=2 ' +
     'Section=combat ' +
@@ -4128,6 +4014,19 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=save ' +
     'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone"',
+
+  'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
+  'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
+  'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
+  'Elf Heritage':Pathfinder2E.FEATURES['Elf Heritage'],
+  'Fast':Pathfinder2E.FEATURES.Fast,
+  'Low-Light Vision':Pathfinder2E.FEATURES['Low-Light Vision'],
+  'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
+  // Changed
+  'Whisper Elf':
+    'Section=skill ' +
+    'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
+  'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
   // Changed
@@ -4169,6 +4068,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Magic Rider':
     'Section=magic ' +
     'Note="Can teleport another person when affected by a multiple-target teleportation spell, and always arrives within 1 mile of the desired location"',
+
+  'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
+  'Fey-Touched Gnome':Pathfinder2E.FEATURES['Fey-Touched Gnome'],
+  'Gnome Heritage':Pathfinder2E.FEATURES['Gnome Heritage'],
+  // Low-Light Vision as above
+  'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
+  'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
+  'Wellspring Gnome (Arcane)':
+    Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
+  'Wellspring Gnome (Divine)':
+    Pathfinder2E.FEATURES['Wellspring Gnome (Divine)'],
+  'Wellspring Gnome (Occult)':
+    Pathfinder2E.FEATURES['Wellspring Gnome (Occult)'],
 
   'Animal Accomplice':Pathfinder2E.FEATURES['Animal Accomplice'],
   // Changed from Burrow Elocutionist
@@ -4221,6 +4133,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
+  'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
+  // Darkvision as above
+  'Goblin Heritage':Pathfinder2E.FEATURES['Goblin Heritage'],
+  'Irongut Goblin':Pathfinder2E.FEATURES['Irongut Goblin'],
+  'Razortooth Goblin':Pathfinder2E.FEATURES['Razortooth Goblin'],
+  'Snow Goblin':Pathfinder2E.FEATURES['Snow Goblin'],
+  'Unbreakable Goblin':Pathfinder2E.FEATURES['Unbreakable Goblin'],
+
   'Burn It!':
     Pathfinder2E.FEATURES['Burn It!'].replace('spell level', 'spell rank'),
   'City Scavenger':Pathfinder2E.FEATURES['City Scavenger'],
@@ -4262,6 +4182,19 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=save ' +
     'Note="Critical failures and failures on saves due to hazardous actions are successes and result in minimum damage until the end of the turn once per day"',
+
+  'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
+  'Halfling Heritage':Pathfinder2E.FEATURES['Halfling Heritage'],
+  'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
+  'Jinx':
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)"',
+  'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
+  'Keen Eyes':Pathfinder2E.FEATURES['Keen Eyes'],
+  'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
+  'Twilight Halfling':Pathfinder2E.FEATURES['Twilight Halfling'],
+  'Wildwood Halfling':Pathfinder2E.FEATURES['Wildwood Halfling'],
 
   'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
   'Folksy Patter':
@@ -4316,6 +4249,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can follow a successful Hide or Sneak with 1 min invisibility; a hostile act ends"',
 
+  'Human Heritage':Pathfinder2E.FEATURES['Human Heritage'],
+  'Skilled Human':Pathfinder2E.FEATURES['Skilled Heritage Human'],
+  'Versatile Human':Pathfinder2E.FEATURES['Versatile Heritage Human'],
+
   'Adapted Cantrip':Pathfinder2E.FEATURES['Adapted Cantrip'],
   'Cooperative Nature':Pathfinder2E.FEATURES['Cooperative Nature'],
   'General Training':Pathfinder2E.FEATURES['General Training'],
@@ -4353,6 +4290,40 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="R30\' Generates the effects of a 6th-level Zealous Conviction on 10 willing creatures once per day"',
+
+  'Cactus Leshy':
+    'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
+  'Fruit Leshy':
+    'Section=magic ' +
+    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hour after removal"',
+  'Fungus Leshy':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Darkvision feature",' +
+      '"Has the fungus trait, not the plant trait"',
+  'Gourd Leshy':
+    'Section=feature Note="Can store 1 Bulk of objects within head"',
+  'Leaf Leshy':'Section=save Note="Takes no damage from falling"',
+  'Leshy Heritage':'Section=feature Note="1 selection"',
+  'Lotus Leshy':
+    'Section=ability ' +
+    'Note="Can walk at %{speed//2}\' Speed across still liquids and Balance to move across flowing water"',
+  'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
+  'Root Leshy':
+    'Section=combat,combat,feature,save ' +
+    'Note=' +
+      '"+2 Hit Points",' +
+      '"+2 vs. attempts to Reposition, Shove, or Trip",' +
+      '"Can go 2 weeks without sunlight before starving",' +
+      '"+2 vs. spells and effects that move and knock prone"',
+  'Seaweed Leshy':
+    'Section=ability,ability ' +
+    'Note=' +
+      '"-5 Speed",' +
+      '"Has a 20\' swim Speed and can breathe water"',
+  'Vine Leshy':
+    'Section=skill ' +
+    'Note="Can Climb with both hands occupied, and successes to Climb are critical successes"',
 
   'Grasping Reach':
     'Section=combat ' +
@@ -4419,6 +4390,40 @@ Pathfinder2ERemaster.FEATURES = {
   'Regrowth':
     'Section=magic ' +
     'Note="Knows the Regenerate primal innate spell; can cast it at rank 7 once per day"',
+
+  'Badlands Orc':
+    'Section=ability,save ' +
+    'Note=' +
+      '"Can Hustle twice the normal duration while exploring",' +
+      '"Treats environmental heat as 1 step less extreme"',
+  'Battle-Ready Orc':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Intimidating Glare feature",' +
+      '"Skill Trained (Intimidation)"',
+  // Darkvision as above
+  'Deep Orc':
+    'Section=feature ' +
+    'Note="Has the Combat Climber and Terrain Expertise (Underground) features"',
+  'Grave Orc':
+    'Section=save ' +
+    'Note="Has resistance %{level//2>?1} to void damage/+1 vs. death and void effects"',
+  'Hold-Scarred Orc':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"+2 Hit Points",' +
+      '"Has the Diehard feature"',
+  'Orc Heritage':'Section=feature Note="1 selection"',
+  'Rainfall Orc':
+    'Section=save,skill ' +
+    'Note=' +
+      '"+1 vs. disease",' +
+      '"+2 Athletics to Climb or Swim"',
+  'Winter Orc':
+    'Section=save,skill ' +
+    'Note=' +
+      '"Treats environmental cold as 1 step less extreme",' +
+      '"Skill Trained (Survival)"',
 
   'Beast Trainer':
     'Section=feature,skill ' +
@@ -4504,6 +4509,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="+2 vs. sleep and dream effects/Sleep restores double normal HP and reduces drained and doomed conditions by 2"',
   'Slag May':'Section=combat Note="Cold-iron claws inflict 1d6 HP slashing"',
+
   'Changeling Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -4547,6 +4553,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     // TODO randomizeOneAttribute won't process this extra feat properly
     'Note="Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
+
   'Bestial Manifestation (Claw)':
     'Section=combat Note="Claws inflict 1d4 HP slashing"',
   'Bestial Manifestation (Hoof)':
@@ -4612,7 +4619,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Impressive Performance feature",' +
-      '"SKill Trained (Performance)"',
+      '"Skill Trained (Performance)"',
   'Elf Atavism':Pathfinder2E.FEATURES['Elf Atavism'],
   'Inspire Imitation':Pathfinder2E.FEATURES['Inspire Imitation'],
   'Supernatural Charm':Pathfinder2E.FEATURES['Supernatural Charm'],
@@ -4629,11 +4636,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Jungle Catfolk':
     'Section=ability ' +
     'Note="Moves normally through undergrowth difficult terrain, and through greater difficult terrain as difficult terrain"',
+  'Land On Your Feet':
+    'Section=save Note="Takes half damage from falls and does not land prone"',
   'Liminal Catfolk':
     'Section=magic,skill ' +
     'Note=' +
       '"Knows the Detect Magic occult innate cantrip; can cast it at will",' +
       '"+1 Occultism to Recall Knowledge about extraplanar creatures"',
+  // Low-Light Vision as above
   'Nine Lives Catfolk':
     'Section=feature,save ' +
     'Note=' +
@@ -4723,8 +4733,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Successful DC 17 flat check upon dying instead inflicts 0 HP and dying 3"',
 
+  // Darkvision as above
+  'Elfbane Hobgoblin':'Section=feature Note="Has the Resist Elf Magic feature"',
   'Hobgoblin Heritage':'Section=feature Note="1 selection"',
-  'Elfbane Hobgogin':
+  'Resist Elf Magic':
+    'Action=Reaction ' +
     'Section=save ' +
     'Note="+1 vs. triggering magical effect, or +2 vs. an arcane effect"',
   'Runtboss Hobgoblins':
@@ -4737,7 +4750,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Not off-guard during Climb",' +
       '"Has the Ride feature"',
-  'Smokeworker Goblin':
+  'Smokeworker Hobgoblin':
     'Section=save,skill ' +
     'Note=' +
       '"Can automatically target smoke-concealed creatures",' +
@@ -4825,6 +4838,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Small feature",' +
       '"Skill Trained (Deception)",' +
       '"+1 Deception to claim innocence and against Sense Motive to notice innocence lies"',
+  'Bite':'Section=combat Note="Jaws inflict 1d6 HP P"',
   'Cave Kholo':'Section=feature Note="Has the Darkvision feature"',
   'Dog Kholo':'Section=ability Note="30\' Speed on all fours"',
   'Great Kholo':
@@ -4832,11 +4846,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+2 Hit Points",' +
       '"+1 Athletics to Reposition, Shove, or Trip"',
-  'Sweatbreath Kholo':
+  'Kholo Heritage':'Section=feature Note="1 selection"',
+  // Low-light vision as above
+  'Sweetbreath Kholo':
      'Section=skill,skill ' +
      'Note=' +
        '"Skill Trained (Diplomacy)",' +
-       '"+1 checks to Make An Impression when breath can be smelled"',
+       '"+%{skillNotes.breathLikeHoney?2:1} checks to Make An Impression when breath can be smelled"',
   'Winter Kholo':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
@@ -4845,13 +4861,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Knows the Figment occult innate cantrip; can cast it at will",' +
       '"+1 to Make An Impression or Impersonate using voice"',
-  'Bite':'Section=combat Note="Jaws inflict 1d6 HP P"',
-  // Low-Light Vision as above
 
   'Ask The Bones':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Attempts a Recall Knowlege once per day; gains +1 if possessed bones are from a creature with knowledge of topic"',
+    'Note="Attempts a Recall Knowledge once per day; gains +1 if possessed bones are from a creature with knowledge of topic"',
   'Crunch':
     'Section=combat Note="Jaws inflict 1d8 HP and have the grapple trait"',
   'Hyena Familiar':'Section=feature Note="Has the Familiar feature"',
@@ -4886,16 +4900,18 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
   'Left-Hand Blood':
     'Action=1 ' +
-    'Section=feature ' +
-    'Note="TODO"',
+    'Section=combat ' +
+    'Note="Suffers 1 HP slashing to enhance a weapon to inflict 1d4 HP persistent poison on next hit before the end of the next turn"',
   'Right-Hand Blood':
-    'Section=feature ' +
-    'Note="TODO"',
+    'Section=skill ' +
+    'Note="Can suffer 1 HP slashing to gain +1 on Administer First Aid or 2d8 HP slashing to gain +1 on Treat Disease or Treat Wounds"',
   'Ambush Hunter':
     'Section=skill Note="Can perform Scout and Avoid Notice simultaneously"',
   'Breath Like Honey':
-    'Section=feature ' +
-    'Note="TODO"',
+    'Section=magic,skill ' +
+    'Note=' +
+      '"Knows the Enthrall occult innate spell; can cast it once a day with a range of 30\'",' +
+      '"Has increased Sweetbreath Kholo effects"',
   "Grandmother's Wisdom":
     'Section=magic ' +
     'Note="Knows the Augury occult innate spell; can cast it twice a day at 2nd rank"',
@@ -4917,6 +4933,208 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Can Demoralize within 60\'",' +
       '"Successful Demoralize inflicts 3d6 HP mental, or 6d8 HP on a critical success"',
+
+  'Cavernstalker Kobold':
+    'Section=skill ' +
+    'Note="Can Climb at %{speed//2}\' on a success, or %{speed}\' on a critical success/Successes on Acrobatics to Squeeze are critical successes"',
+  // Darkvision as above
+  'Dragonscaled Kobold':
+    'Section=combat,save ' +
+    'Note=' +
+      '"+4 Hit Points",' +
+      '"+1 vs. dragon breath, sleep, and paralysis"',
+  'Elementheart Kobold':
+    'Section=save ' +
+    'Note="+1 vs. choice of cold, electricity, fire, sonic, acid, or poison"',
+  'Kobold Heritage':'Section=feature Note="1 selection"',
+  'Spellhorn Kobold':
+    'Section=magic ' +
+    'Note="Can cast a chosen cantrip as an arcane innate spell at will"',
+  'Strongjaw Kobold':'Section=combat Note="Jaws inflict 1d6 HP piercing"',
+  'Tunnelflood Kobold':'Section=ability Note="Has a 15\' swim Speed"',
+  'Venomtail Kobold':
+    'Section=combat Note="Can enhance a piercing or slashing weapon to inflict %{level} HP persistent poison on next hit before the end of the next turn once per day"',
+
+  'Cringe':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Lowers the damage of a foe\'s critical hit by %{level+2} once per foe per day"',
+  "Dragon's Presence":
+    'Section=save,skill ' +
+    'Note=' +
+      '"Successes vs. fear are critical successes, and failures vs. fear are critical failures",' +
+      '"+1 Intimidation to Demoralize a foe of equal or lesser level"',
+  'Kobold Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Kobold Lore) feature",' +
+      '"Skill Trained (Stealth; Thievery)"',
+  'Kobold Weapon Familiarity':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Kobold Weapons; Greatpick; Light Pick; Pick)",' +
+      '"Has access to uncommon kobold weapons%{level>=5?\'/Critical hits with a kobold weapon, greatpick, light pick, or pick inflict its critical specialization effect\':\'\'}"',
+  'Scamper':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strides up to %{speed+5}\' feet away from a foe, gaining +2 Armor Class against triggered reactions"',
+  'Snare Setter':
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Snare Crafting feature",' +
+      '"Skill Trained (Crafting)",' +
+      '"Has access to uncommon kobold snares"',
+  "Ally's Shelter":
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Uses an adjacent ally\'s modifier for the triggering save once per day"',
+  'Grovel':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes a Feint vs. Will against a foe within 30\' to reduce its threat perception"',
+  'Snare Genius':
+    'Section=skill ' +
+    'Note="Can Craft snares in 3 actions instead of 1 min and prepare %{rank.Crafting<3?3:rank.Crafting<4?4:5} snares for quick deployment during daily prep/Snares inflict off-guard for 1 rd on critical failure"',
+  'Winglets':
+    'Section=skill ' +
+    'Note="Gains +5\' horizontal Leap and 10\' Long Jump distances and can High Jump and Long Jump without a Stride"',
+  'Between The Scales':
+    'Section=combat ' +
+    'Note="Agile and finesse melee weapons and unarmed attacks vs. an off-guard creature have the backstabber trait"',
+  'Briar Battler':
+    'Section=combat ' +
+    'Note="Can Take Cover in any environmental difficult terrain"',
+  'Close Quarters':
+    'Section=combat ' +
+    'Note="Can end movement in the same square as a Small or smaller ally"',
+  'Evolved Spellhorn':
+    'Section=magic ' +
+    'Note="Can cast a chosen 1st-rank and a chosen 2nd-rank arcane spell as arcane innate spells once each per day"',
+  'Fleeing Shriek':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="10\' emanation inflicts %{(level-3)//2}d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that failed to save, once per hour"',
+  'Winglet Flight':'Section=ability Note="Can Fly 20\' once per rd"',
+  'Resplendent Spellhorn':
+    'Section=magic ' +
+    'Note="Can cast a chosen 3rd-rank and a chosen 4th-rank arcane spell as arcane innate spells once each per day"',
+  'Tumbling Diversion':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Tumble Through a foe\'s space allows subsequent +1 Create A Diversion attempt, or +2 on a critical success to make self hidden to that foe"',
+  'Vicious Snares':
+    'Section=skill Note="Snakes inflict +%{rank.Crafting<4?1:2}d6 precision"',
+  "Benefactor's Majesty":
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gives self %{level} temporary Hit Points for 1 min and a flat check to remove persistent damage, and requires foes to make a DC 11 flat check to attack self for 1 rd"',
+
+  'Aquatic Adaptation':'Section=feature Note="Has the Breath Control feature"',
+  'Claws':'Section=combat Note="Claws inflict 1d4 HP slashing"',
+  'Cliffscale Lizardfolk':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Combat Climber feature",' +
+      '"Can use bare feet to Climb, and successes on Athletics to Climb are critical successes"',
+  'Cloudleaper Lizardfolk':
+    'Section=save Note="Can use limbs to negate falling damage"',
+  'Frilled Lizardfolk':
+    'Section=feature Note="Has the Threatening Approach feature"',
+  'Lizardfolk Heritage':'Section=feature Note="1 selection"',
+  'Sandstrider Lizardfolk':
+    'Section=save ' +
+    'Note="Has fire resistance %{level//2>?1}, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water"',
+  'Threatening Approach':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Stride adjacent to foe followed by a successful Demoralize inflicts frightened 2"',
+  'Unseen Lizardfolk':
+    'Section=skill ' +
+    'Note="+2 Stealth in environments of similar color as self"',
+  'Wetlander Lizardfolk':'Section=ability Note="Has a 15\' swim Speed"',
+  'Woodstalker Lizardfolk':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Terrain Stalker (Underbrush) feature",' +
+      '"Can always Take Cover in forest or jungle"',
+
+  'Bone Magic':
+    'Section=magic ' +
+    'Note="Can cast a chosen occult or primal cantrip as an innate spell at will"',
+  'Iruxi Armaments (Claws)':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Claws inflict 1d6 HP slashing or piercing",' +
+      '"Critical hits with claws inflict its critical specialization effect"',
+  'Iruxi Armaments (Fangs)':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Fangs inflict 1d8 HP piercing",' +
+      '"Critical hits with fangs inflict its critical specialization effect"',
+  'Iruxi Armaments (Tail)':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Tail inflicts 1d6 HP bludgeoning",' +
+      '"Critical hits with tail inflict its critical specialization effect"',
+  'Lizardfolk Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      // TODO randomizing
+      '"+1 Skill Feat (Astrology Lore or Lizardfolk Lore)",' +
+      '"Skill Trained (Survival; Choose 1 from Nature, Occultism)"',
+  'Marsh Runner':
+    'Section=combat,skill ' +
+   'Note=' +
+     '"Can Step in difficult terrain caused by flooding, swamps, and quicksand",' +
+     '"Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes are critical successes"',
+  'Parthenogenic Hatchling':
+    'Section=save ' +
+    'Note="+1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hours and from starvation every 2 days"',
+  'Reptile Speaker':'Section=skill Note="Can converse with reptiles"',
+  'Envenom Fangs':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Enhances fangs to inflict +1d6 HP persistent poison on next hit before the end of the next turn"',
+  'Flexible Tail':
+    'Section=feature Note="Can use tail to perform simple Interact actions"',
+  "Gecko's Grip":
+    'Section=ability,feature,skill ' +
+    'Note=' +
+      '"Has a 15\' climb Speed",' +
+      '"Has the Combat Climber feat",' +
+      '"Successes on Athletics to climb are critical successes"',
+  'Shed Tail':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from grabbing foe; regrowth takes 1 day and inflicts -2 Balance"',
+  'Swift Simmer':
+    'Section=ability ' +
+    'Note="Has a %{abilityNotes.wetlanderLizardfolk?25:15}\' swim Speed"',
+  'Dangle':
+    'Section=feature Note="Can use limbs freely while hanging from tail"',
+  'Hone Claws':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Enhances claws to inflict +1d6 HP bleed damage on next hit"',
+  'Terrain Advantage':
+    'Section=combat ' +
+    'Note="Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard to self"',
+  'Bone Investiture':
+    'Section=magic ' +
+    // TODO or occult
+    'Note="Knows the Dinosaur Form primal innate spell; can cast it at 5th rank once per day"',
+  'Iruxi Spirit Strike':
+    'Section=combat ' +
+    'Note="Lizardfolk ancestry attacks have the <i>ghost touch</i> property"',
+  'Primal Rampage':
+    'Section=magic ' +
+    'Note="Knows the Unfettered Movement and Mountain Resilience primal innate spells; can each once per day or use 3 actions to cast both simultaneously"',
+  'Fossil Rider':
+    'Section=magic ' +
+    'Note="Knows the Mask Of Terror primal innate spell; can cast it once per day"',
+  'Scion Transformation':
+    'Section=feature ' +
+    'Note="Can use a 24-hour hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
 
   // Backgrounds
   'Belief Attributes':
@@ -8660,7 +8878,21 @@ Pathfinder2ERemaster.SKILLS = {
   'Tanning Lore':Pathfinder2E.SKILLS['Tanning Lore'],
   'Theater Lore':Pathfinder2E.SKILLS['Theater Lore'],
   'Underworld Lore':Pathfinder2E.SKILLS['Underworld Lore'],
-  'Warfare Lore':Pathfinder2E.SKILLS['Warfare Lore']
+  'Warfare Lore':Pathfinder2E.SKILLS['Warfare Lore'],
+  // Core 2 lores from ancestries (pg 7ff)
+  'Cat Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Dragon Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Duskwalker Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Hobgoblin Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Kholo Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Kobold Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Ratfolk Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Lizardfolk Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Tengu Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  'Tripkee Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
+  // Core 2 lores from backgrounds (pg 50ff)
+  'Astrology Lore':'Attribute=Intelligence',
+  'Surgery Lore':'Attribute=Intelligence'
 };
 for(let s in Pathfinder2ERemaster.SKILLS)
   Pathfinder2ERemaster.SKILLS[s] =
@@ -8737,7 +8969,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heighted +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
+      '"R60\' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
   'Bless':
     Pathfinder2E.SPELLS.Bless
     .replace(/School=\w*/, '')
@@ -8770,7 +9002,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Vitality') + ' ' +
     'Description=' +
-      '"R60\' Prevents the triggering target\'s death, restoring 5d8 HP (<b>heighted +2</b> restores +1d8 HP)"',
+      '"R60\' Prevents the triggering target\'s death, restoring 5d8 HP (<b>heightened +2</b> restores +1d8 HP)"',
   'Breathe Fire':
     Pathfinder2E.SPELLS['Burning Hands']
     .replace(/School=\w*/, '')
@@ -8785,7 +9017,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflcits 10d6 HP mental, frightened 3, a curse that negates of circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflcits double HP, frightened 4, and permanent curse that also affects allies within 15\'"',
+      '"R120\' Inflicts 10d6 HP mental, frightened 3, a curse that negates of circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and permanent curse that also affects allies within 15\'"',
   'Cataclysm':
     Pathfinder2E.SPELLS.Cataclysm
     .replace(/School=\w*/, '')
@@ -8808,7 +9040,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Evil', 'Unholy')
-    .replaceAll('evil', 'spirt')
+    .replaceAll('evil', 'spirit')
     .replace('celestials', 'holy creatures'),
   'Clairaudience':
     Pathfinder2E.SPELLS.Clairaudience
@@ -8818,13 +9050,13 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Clairvoyance
     .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
-  'Cleanse Affliction': // ref Neutralize Poision, Remove Curse, Remove Disease
+  'Cleanse Affliction': // ref Neutralize Poison, Remove Curse, Remove Disease
     'Level=2 ' +
     'Traits=Concentrate,Healing,Manipulate ' +
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Reduces the stage of a curse, disease, or poison affecting touched by 1 (<b>heightened 3rd</b> attempts to counteract a disease or poison; <b>4th</b> attempts to counteract a curse, disease, or poision)"',
+      '"Reduces the stage of a curse, disease, or poison affecting touched by 1 (<b>heightened 3rd</b> attempts to counteract a disease or poison; <b>4th</b> attempts to counteract a curse, disease, or poison)"',
   'Cleanse Cuisine':
     Pathfinder2E.SPELLS['Purify Food And Drink']
     .replace(/School=\w*/, '')
@@ -8896,7 +9128,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Deafness
     .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
-  'Dessicate':
+  'Desiccate':
     Pathfinder2E.SPELLS['Horrid Wilting']
     .replace(/School=\w*/, '')
     .replace('negative', 'void') + ' ' +
@@ -9117,7 +9349,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"Hovering shield with Hardness 10 and 40 HP gives self cold resistance 5 and immunity to severe environmental gold and inflicts 2d6 HP fire on melee attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
+      '"Hovering shield with Hardness 10 and 40 HP gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on melee attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
   'Fireball':
     Pathfinder2E.SPELLS.Fireball
     .replace(/School=\w*/, '')
@@ -9195,7 +9427,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Melee spell attack inflicts 2d6 HP choice of slashing or piercing, plus 2 HP persitent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
+      '"Melee spell attack inflicts 2d6 HP choice of slashing or piercing, plus 2 HP persistent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
   'Grease':
     Pathfinder2E.SPELLS.Grease
     .replace(/School=\w*/, '')
@@ -9527,7 +9759,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Wood')
     .replace('8 hr', '8 hr or merges into plant matter for 10 min'),
-  'Meld Into Stone':
+  'One With Stone':
     Pathfinder2E.SPELLS['Meld Into Stone']
     .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Polymorph') + ' ' +
@@ -10893,12 +11125,24 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
       rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Unarmed'], null
     );
     rules.defineRule('weapons.Jaws', 'combatNotes.bite', '=', '1');
+  } else if(name == 'Kobold') {
+    Pathfinder2E.weaponRules(
+      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Unarmed', 'Finesse'], null
+    );
+    rules.defineRule('weapons.Jaws', 'combatNotes.strongjawKobold', '=', '1');
   } else if(name == 'Leshy') {
     Pathfinder2E.weaponRules(
       rules, 'Spines', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
       ['Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Spines', 'combatNotes.cactusLeshy', '=', '1');
+  } else if(name == 'Lizardfolk') {
+    Pathfinder2E.weaponRules(
+      rules, 'Claws', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
+      ['Unarmed', 'Agile', 'Finesse'], null
+    );
+    rules.defineRule('weapons.Claws', 'combatNotes.claws', '=', '1');
   }
 };
 
@@ -11151,12 +11395,23 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
+  } else if(name == 'Breath Like Honey') {
+    rules.defineRule('skillNotes.sweetbreathKholo',
+      'skillNotes.breathLikeHoney', '=', 'null' // italics
+    );
   } else if(name == 'Crunch') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
   } else if(name == 'Double, Double') {
     rules.defineRule(
       'skillNotes.cauldron', 'skillNodes.double,Double', '=', 'null' // italics
+    );
+  } else if(name == "Gecko's Grip") {
+    rules.defineRule("abilityNotes.gecko'sGrip",
+      'features.Cliffscale Lizardfolk', '?', 'source'
+    );
+    rules.defineRule("featureNotes.gecko'sGrip",
+      'features.Cliffscale Lizardfolk', '?', '!source'
     );
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
@@ -11177,6 +11432,27 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
+  } else if(name.startsWith('Iruxi Armaments')) {
+    if(name == 'Iruxi Armaments (Claws)') {
+      rules.defineRule('weaponDieSidesBonus.Claws',
+        'combatNotes.iruxiArmaments(Claws)', '^=', '2'
+      );
+    } else if(name == 'Iruxi Armaments (Fangs)') {
+      Pathfinder2E.weaponRules(
+        rules, 'Fangs', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling', ['Unarmed'],
+        null
+      );
+      rules.defineRule
+        ('weapons.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '=', '1');
+    } else if(name == 'Iruxi Armaments (Tail)') {
+      Pathfinder2E.weaponRules(
+        rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+        ['Unarmed', 'Sweep'], null
+      );
+      rules.defineRule
+        ('weapons.Tail', 'combatNotes.iruxiArmaments(Tail)', '=', '1');
+    }
+    rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
   } else if(name == 'Loud Singer') {
     rules.defineRule
       ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
