@@ -9367,7 +9367,181 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Divination', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"Reveals which direction is north (<b>heightened 3rd</b> reveals direction to a location visited in the past week; <b>7th</b> reveals direction to a familiar location)"',
-    
+  'Laughing Fit':
+    Pathfinder2E.SPELLS['Hideous Laughter']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Levitate':
+    Pathfinder2E.SPELLS.Levitate
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Light':
+    Pathfinder2E.SPELLS.Light
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Touched object', "R120' Orb"),
+  'Lightning Bolt':
+    Pathfinder2E.SPELLS['Lightning Bolt']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Liminal Doorway':
+    Pathfinder2E.SPELLS['Rope Trick']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"Drawn doorway leads to an 20\' cubic extradimensional space for 8 hr or until erased"',
+  'Locate':
+    Pathfinder2E.SPELLS.Locate
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Lock':
+    Pathfinder2E.SPELLS.Lock
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Mad Monkeys':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Spiritual monkeys in a 5\' burst obey self order to Steal, screech to deafen for 1 rd (<b>save Fortitude</b> negates; critical failure deafens for 1 min), or interfere with manipulate actions for 1 rd (<b>save Reflex</b> negates; critical failure extends until the spell ends; a successful DC 5 flat check allows a specific manipulate action) while sustained for up to 1 min"',
+  'Magic Passage':
+    Pathfinder2E.SPELLS.Passwall
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  "Mariner's Curse":
+    Pathfinder2E.SPELLS["Mariner's Curse"]
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Marvelous Mount':
+    Pathfinder2E.SPELLS['Phantom Steed']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Description=' +
+      '"R30\' Conjures a magical mount (Armor Class %{armorClass}, HP 10, 40\' Speed) that can be ridden only by a designated creature for 8 hr (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
+  'Mask Of Terror':
+    Pathfinder2E.SPELLS['Mask Of Terror']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Massacre':
+    Pathfinder2E.SPELLS.Massacre
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void')
+    .replaceAll('negative', 'void'),
+  'Mending':
+    Pathfinder2E.SPELLS.Mending
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
+  'Message':
+    Pathfinder2E.SPELLS.Message
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Subtle,'),
+  'Metamorphosis':
+    Pathfinder2E.SPELLS.Shapechange
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
+  'Migration':
+    Pathfinder2E.SPELLS['Wind Walk']
+    .replace(/School=\w*/, '') + ' ' +
+    'Traits=Concentrate,Manipulate,Polymorph'
+    .replace('clouds', 'animals')
+    .replace('MPH', 'MPH, have immunity to extreme cold and heat, and can transform into a Tiny or Small animal'),
+  'Mind Probe':
+    Pathfinder2E.SPELLS['Mind Probe']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Mind Reading':
+    Pathfinder2E.SPELLS['Mind Reading']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Mindlink':
+    Pathfinder2E.SPELLS.Mindlink
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('Traditions=', 'Traditions=Arcane,'),
+  'Mirage':
+    Pathfinder2E.SPELLS['Hallucinatory Terrain']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Mislead':
+    Pathfinder2E.SPELLS.Mislead
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Mist':
+    Pathfinder2E.SPELLS['Obscuring Mist']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Moment Of Renewal':
+    Pathfinder2E.SPELLS['Moment Of Renewal']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Monstrosity Form':
+    Pathfinder2E.SPELLS['Monstrosity Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('purple', 'cave'),
+  'Moon Frenzy':
+    Pathfinder2E.SPELLS['Moon Frenzy']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Stoneskin':
+    Pathfinder2E.SPELLS.Stoneskin
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Mystic Armor':
+    Pathfinder2E.SPELLS['Mage Armor']
+    .replace(/School=\w*/, '') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal',
+  'Nature Incarnate':
+    Pathfinder2E.SPELLS['Nature Incarnate']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  "Nature's Pathway":
+    Pathfinder2E.SPELLS['Tree Stride']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate,Mental')
+    .replace(' of the same species', ''),
+  'Never Mind':
+    Pathfinder2E.SPELLS.Feeblemind
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Nightmare':
+    Pathfinder2E.SPELLS.Nightmare
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Noise Blast':
+    Pathfinder2E.SPELLS['Sound Burst']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Traditions=', 'Traditions=Arcane,'),
+  'Oaken Resilience':
+    Pathfinder2E.SPELLS.Barkskin
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate,Wood')
+    .replace('Traditions=', 'Traditions=Arcane,'),
+  'One With Plants':
+    Pathfinder2E.SPELLS['Tree Shape']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Wood')
+    .replace('8 hr', '8 hr or merges into plant matter for 10 min'),
+  'Meld Into Stone':
+    Pathfinder2E.SPELLS['Meld Into Stone']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Polymorph') + ' ' +
+    'Description=' +
+      '"Self becomes a block of stone with Armor Class 23 for 8 hr or merges into stone for 10 min"',
+  "Outcast's Curse":
+    Pathfinder2E.SPELLS["Outcast's Curse"]
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Overwhelming Presence':
+    Pathfinder2E.SPELLS['Overwhelming Presence']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
@@ -9472,27 +9646,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Stormwind Flight':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Illusory Scene':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Illusory Object':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Illusory Disguise':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -10073,21 +10226,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Invisibility':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Silence':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Meld Into Stone':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -10287,27 +10426,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Interplanar Teleport':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Magic Passage':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Oaken Resilience':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
