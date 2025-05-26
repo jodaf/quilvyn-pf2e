@@ -96,26 +96,29 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
 Pathfinder2ERemaster.ANCESTRIES = {
   'Dwarf':
     Pathfinder2E.ANCESTRIES.Dwarf
-    .replaceAll('Ability', 'Attribute'),
+    .replaceAll('Ability', 'Attribute')
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
     .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage","1:Ancient Elf:Heritage",'),
   'Gnome':
     Pathfinder2E.ANCESTRIES.Gnome
     .replaceAll('Ability', 'Attribute')
-    .replace('Sylvan', 'Fey'),
+    .replace('Sylvan', 'Fey')
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
   'Goblin':
     Pathfinder2E.ANCESTRIES.Goblin
-    .replaceAll('Ability', 'Attribute'),
+    .replaceAll('Ability', 'Attribute')
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
     .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage","1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
     .replaceAll('Ability', 'Attribute')
-    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', '')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage"', '"1:Versatile Heritage:Heritage"')
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
@@ -133,7 +136,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Lotus Leshy:Heritage",' +
       '"1:Root Leshy:Heritage",' +
       '"1:Seaweed Leshy:Heritage",' +
-      '"1:Vine Leshy:Heritage" ' +
+      '"1:Vine Leshy:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Fey ' +
     'Traits=Leshy,Plant',
   'Orc':
@@ -148,7 +152,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Grave Orc:Heritage",' +
       '"1:Hold-Scarred Orc:Heritage",' +
       '"1:Rainfall Orc:Heritage",' +
-      '"1:Winter Orc:Heritage" ' +
+      '"1:Winter Orc:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Orcish ' +
     'Traits=Orc,Humanoid',
   // Core 2
@@ -166,7 +171,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Liminal Catfolk:Heritage",' +
       '"1:Nine Lives Catfolk:Heritage",' +
       '"1:Sharp-Eared Catfolk:Heritage",' +
-      '"1:Winter Catfolk:Heritage" ' +
+      '"1:Winter Catfolk:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Amurrun,Common ' +
     'Traits=Catfolk,Humanoid',
   'Hobgoblin':
@@ -181,7 +187,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Shortshanks Hobgoblin:Heritage",' +
       '"1:Smokeworker Hobgoblin:Heritage",' +
       '"1:Warmarch Hobgoblin:Heritage",' +
-      '"1:Warrenbred Hobgoblin:Heritage" ' +
+      '"1:Warrenbred Hobgoblin:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Goblin ' +
     'Traits=Hobgoblin,Humanoid',
   'Kholo':
@@ -198,7 +205,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Great Kholo:Heritage",' +
       '"1:Sweetbreath Kholo:Heritage",' +
       '"1:Winter Kholo:Heritage",' +
-      '"1:Witch Kholo:Heritage" ' +
+      '"1:Witch Kholo:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Kholo ' +
     'Traits=Kholo,Humanoid',
   'Kobold':
@@ -215,7 +223,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Spellhorn Kobold:Heritage",' +
       '"1:Strongjaw Kobold:Heritage",' +
       '"1:Tunnelflood Kobold:Heritage",' +
-      '"1:Venomtail Kobold:Heritage" ' +
+      '"1:Venomtail Kobold:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Sakvroth ' +
     'Traits=Humanoid,Kobold',
   'Lizardfolk':
@@ -232,7 +241,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Sandstrider Lizardfolk:Heritage",' +
       '"1:Unseen Lizardfolk:Heritage",' +
       '"1:Wetlander Lizardfolk:Heritage",' +
-      '"1:Woodstalker Lizardfolk:Heritage" ' +
+      '"1:Woodstalker Lizardfolk:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Iruxi ' +
     'Traits=Humanoid,Lizardfolk',
   'Ratfolk':
@@ -250,7 +260,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Sewer Rat:Heritage",' +
       '"1:Shadow Rat:Heritage",' +
       '"1:Snow Rat:Heritage",' +
-      '"1:Tunnel Rat:Heritage" ' +
+      '"1:Tunnel Rat:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Ysoki ' +
     'Traits=Humanoid,Ratfolk',
   'Tengu':
@@ -266,7 +277,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Skyborn Tengu:Heritage",' +
       '"1:Stormtossed Tengu:Heritage",' +
       '"1:Taloned Tengu:Heritage",' +
-      '"1:Wavediver Tengu:Heritage" ' +
+      '"1:Wavediver Tengu:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Tengu ' +
     'Traits=Humanoid,Tengu',
   'Tripkee':
@@ -282,7 +294,8 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Snaptongue Tripkee:Heritage",' +
       '"1:Stickytoe Tripkee:Heritage",' +
       '"1:Thickskin Tripkee:Heritage",' +
-      '"1:Windweb Tripkee:Heritage" ' +
+      '"1:Windweb Tripkee:Heritage",' +
+      '"1:Versatile Heritage:Heritage" ' +
     'Languages=Common,Tripkee ' +
     'Traits=Humanoid,Tripkee'
 };
@@ -4365,7 +4378,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Transforms self into a normal plant with AC 20 for 8 hours"',
   'Speak With Kindred':
     'Section=skill ' +
-    'Note="Can speak with plants and fungi/+2 Diplomacy with plants or fungi of the same kind as self"',
+    'Note="Can speak with plants and fungi and gains +2 Diplomacy with plants or fungi of the same kind as self"',
   'Bark And Tendril':
     'Section=magic ' +
     'Note="Knows the Entangling Flora and Oaken Resilience primal innate spells; can cast each at rank 2 once per day"',
@@ -4492,6 +4505,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
+  'Versatile Heritage':'Section=feature Note="1 selection"',
   'Changeling':'Section=feature Note="May take Changeling ancestry feats"',
   'Nephilim':'Section=feature Note="May take Nephilim ancestry feats"',
   'Aiuvarin':'Section=feature Note="May take Elf ancestry feats"',
@@ -5107,7 +5121,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from grabbing foe; regrowth takes 1 day and inflicts -2 Balance"',
-  'Swift Simmer':
+  'Swift Swimmer':
     'Section=ability ' +
     'Note="Has a %{abilityNotes.wetlanderLizardfolk?25:15}\' swim Speed"',
   'Dangle':
@@ -5135,6 +5149,269 @@ Pathfinder2ERemaster.FEATURES = {
   'Scion Transformation':
     'Section=feature ' +
     'Note="Can use a 24-hour hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
+
+  // Low-Light Vision as above
+  'Sharp Teeth':'Section=combat Note="Jaws inflict 1d4 HP piercing"',
+  'Deep Rat':'Section=feature Note="Has the Darkvision feature"',
+  'Desert Rat':
+    'Section=ability,save ' +
+    'Note=' +
+      '"30\' Speed on all fours",' +
+      '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water"',
+  'Longsnout Rat':
+    'Section=skill ' +
+    'Note="Has 30\' imprecise scent/+2 Perception to Seek using scent"',
+  'Ratfolk Heritage':'Section=feature Note="1 selection"',
+  'Sewer Rat':
+     'Section=save ' +
+     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
+  'Shadow Rat':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Intimidation)",' +
+      '"Can use Intimidation to Coerce animals/Suffers no Demoralize penalty for lacking a shared language/Suffers 1 step worse on initial animal attitudes"',
+  'Snow Rat':
+    'Section=save ' +
+    'Note="Has cold resistance %{level//2>?1}, and treats environmental cold as 1 step less extreme"',
+  'Tunnel Rat':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Quick Squeeze feature",' +
+      '"Can move normally through snug spaces"',
+
+  'Cheek Pouches':
+    'Section=feature Note="Can store %{featureNotes.bigMouth?\'1 Bulk of items\':\'4 items of light Bulk\'} in cheeks"',
+  'Pack Rat':'Section=feature Note="Can store 50% extra in containers"',
+  'Rat Familiar':'Section=feature Note="Has the Familiar feature"',
+  'Ratfolk Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Ratfolk Lore) feature",' +
+      '"Skill Trained (Acrobatics; Stealth)"',
+  'Ratspeak':'Section=feature Note="Can speak with rodents"',
+  'Tinkering Fingers':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Crafting)",' +
+      '"Suffers no penalty when Repairing an item without a toolkit, and gains +1 with a toolkit"',
+  'Vicious Incisors':'Section=combat Note="Jaws include 1d6 HP piercing"',
+  'Warren Navigator':
+    'Section=save,skill,skill ' +
+    'Note=' +
+      '"Improves saves vs. <i>Quandry</i> by 1 degree",' +
+      '"Skill Trained (Survival)",' +
+      '"Improves Sense Direction test by 1 degree, and suffers no penalty from having no compass"',
+  'Cornered Fury':
+    'Section=combat ' +
+    'Note="Critical hit by a larger foe leaves it off-guard to self for 1 rd"',
+  'Lab Rat':
+     'Section=save ' +
+     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
+  'Quick Stow':
+    'Action=Free Section=combat Note="Stows an item in cheek pouches"',
+  'Rat Magic':
+    'Section=magic ' +
+    'Note="Knows the Animal Messenger primal innate spell; can cast it once per day"',
+  'Ratfolk Roll':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Rolls %{speed*4}\' down an incline; after the 1st rd, suffers slowed 2 and suffers and inflcits 4d6 HP bludgeoning if stopped by an obstacle"',
+  'Big Mouth':'Section=feature Note="Has increased Cheek Pouches effects"',
+  'Overcrowd':
+    'Section=combat ' +
+    'Note="Can end movement in the same square as %{features.Shinstabber?\'an\':\'a Small or smaller\'} ally"',
+  'Rat Form':'Action=1 Section=magic Note="Becomes a Tiny rat"',
+  'Uncanny Cheeks':
+    'Section=feature ' +
+    'Note="Has the Precient Consumable and Prescient Planner features"',
+  'Shinstabber':'Section=combat Note="Has increased Overcrowd effects"',
+  'Skittering Sneak':'Section=skill Note="Can Sneak at full Speed"',
+  'Warren Digger':'Section=ability Note="Has a 15\' burrow Speed"',
+  'Call The Swarm':
+    'Action=3 ' +
+    'Section=magic ' +
+    'Note="R120\' Rats swarming a 30\' burst inflict 6d8 HP piercing and difficult terrain to foes"',
+  'Greater Than The Sum':
+    'Section=magic ' +
+    'Note="Knows the Enlarge primal innate spell; can cast it at 6th rank once per day"',
+
+  // Low-Light Vision as above
+  'Sharp Beak':'Section=combat Note="Beak inflicts 1d6 HP piercing"',
+  'Dogtooth Tengu':'Section=combat Note="Beak has deadly d8 trait"',
+  'Jinxed Tengu':
+    'Section=save ' +
+    'Note="Successful saves vs. curses are critical successes, and a successful DC 17 flat check reduces a doomed condition by 1"',
+  'Mountainkeeper Tengu':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Knows the Vitality Lash primal innate cantrip; can cast it at will",' +
+      '"Can cast tengu-acquired spells as divine or primal spells"',
+  'Skyborn Tengu':'Section=save Note="Takes no damage from falls"',
+  'Stormtossed Tengu':
+    'Section=combat,save ' +
+    'Note=' +
+      '"Ignores target concealment from rain or fog",' +
+      '"Has resistance %{level//2>?1} to electricity"',
+  'Taloned Tengu':'Section=combat Note="Talons inflict 1d4 HP slashing"',
+  'Tengu Heritage':'Section=feature Note="1 selection"',
+  'Wavediver Tengu':'Section=ability Note="Has a 15\' swim Speed"',
+
+  "Mariner's Fire":
+    'Section=magic ' +
+    'Note="Knows the Ignition primal innate cantrip; can cast it at will"',
+  'One-Toed Hop':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes a vertical Leap without triggering reactions"',
+  "Scavenger's Search":
+    'Section=skill Note="+2 Seek to locate objects within 30\'"',
+  'Squawk!':
+    'Action=Reaction ' +
+    'Section=skill ' +
+    'Note="Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure once per target per day"',
+  "Storm's Lash":
+    'Section=magic ' +
+    'Note="Knows the Electric Arc primal innate cantrip; can cast it at will"',
+  'Tengu Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Tengu Lore) feature",' +
+      '"Skill Trained (Society; Survival)"',
+  'Tengu Weapon Familiarity':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Tengu Weapons; Katana; Khakkara; Temple Sword; Wakizashi)",' +
+      '"Can gain familiarity with a possessed sword during daily prep/Has access to uncommon tengu weapons%{level>=5?\'/Critical hits with a tengu weapon, katana, khakkara, temple sword, or wakizashi inflict its critical specialization effect\':\'\'}"',
+  'Uncanny Agility':
+    'Section=ability,feature ' +
+    'Note=' +
+      '"Can Step into difficult terrain caused by uneven ground",' +
+      '"Has the Stead Balance feature"',
+  'Eat Fortune':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="R60\' Counteracts a fortune or misfortune effects once per %{combatNotes.jinxGlutton?\'hour\':\'day\'}"',
+  'Long-Nosed Form':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Becomes a human with tengu-like features"',
+  'Magpie Snatch':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Picks up an object while Striding twice"',
+  'Soaring Flight':
+    'Action=1 Section=combat Note="Flies 20\' once per rd"',
+  'Tengu Feather Fan':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Knows the Gust Of Wind primal spell",' +
+      '"Can cast a spell using a feather fan %V time per day"',
+  'Soaring Form':'Section=ability Note="Has a 20\' fly Speed"',
+  "Wind God's Fan":
+    'Section=magic ' +
+    'Note="Knows the Wall Of Wind primal spell; can cast it using feather fan at 3rd rank/+1 feather fan use per day"',
+  "Harbinger's Claw":
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="R60\' Inflicts the worse of two rolls on the triggering attack or skill check"',
+  'Jinx Glutton':'Section=combat Note="Has increased Eat Fortune effects"',
+  "Thunder God's Fan":
+    'Section=magic ' +
+    'Note="Knows the Lightning Bolt primal spell; can cast it using feather fan at 5th rank/+1 feather fan use per day"',
+  'Great Tengu Form':
+    'Section=magic ' +
+    'Note="Gains the benefits of 5 min <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form"',
+  'Trickster Tengu':
+    'Section=magic ' +
+    'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast one of the once per day at 7th rank"',
+
+  // Low-Light Vision as above
+  'Natural Climber':'Section=skill Note="+2 Athletics to Climb"',
+  'Tripkee Heritage':'Section=feature Note="1 selection"',
+  'Poisonhide Tripkee':
+    'Section=combat ' +
+    'Note="Can use a reaction once per hour to exude a poison that inflicts %{(level+1)//2}d4 HP poison (<b>save basic Fortitude</b>)"',
+  'Riverside Tripkee':'Section=ability Note="Has a 15\' swim Speed"',
+  'Snaptongue Tripkee':
+    'Section=feature ' +
+    'Note="Can use tongue to deliver touch spells and to perform simple Interact actions"',
+  'Stickytoe Tripkee':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"+2 Fortitude and Reflex DC vs. Disarm, Shove, Reposition, and Trip attempts",' +
+      '"Successes on Athletics to Climb foliage are critical successes"',
+  'Thickskin Tripkee':
+    'Section=combat,save ' +
+    'Note=' +
+      '"+2 Hit Points",' +
+      '"+1 vs. disease and poison"',
+  'Windweb Tripkee':'Section=save Note="Takes no damage from falls"',
+
+  'Croak Talker':
+    'Section=skill Note="Can converse with frogs and similar creatures"',
+  "Hunter's Defense":
+    'Action=Reaction ' +
+    'Section=feature ' +
+    'Note="Can use Nature instead of Armor Class vs. a natural creature once per hour"',
+  'Jungle Strider':
+    'Section=ability,skill ' +
+    'Note=' +
+      '"Moves normally through difficult terrain in forests and jungles",' +
+      '"Does not suffer off-guard when Balancing on narrow surfaces or unevan ground made of plants, and successes to do so are critical successes"',
+  'Nocturnal Tripkee':'Section=feature Note="Has the Darkvision feature"',
+  'Terrifying Croak':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="R30\' Successful Demoralize using Intimidation prevents reducing frightened below 1 for 1 rd"',
+  'Tripkee Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Additional Lore (Tripkee Lore) feature",' +
+      '"Skill Trained (Nature; Stealth)"',
+  'Tripkee Weapon Familiarity':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Tripkee Weapons; Blowgun; Dart; Hatchet; Scythe; Shortbow)",' +
+      '"Has access to uncommon tripkee weapons%{level>=5?\'/Critical hits with a tripkee weapon, blowgun, dart, hatchet, scythe, or shortbow inflict its critical specialization effect\':\'\'}"',
+  'Fantastic Leaps':
+    'Section=skill Note="+5\' vertical and +10\' horizontal Leap distance"',
+  'Long Tongue':'Section=feature Note="+5\' reach when using tongue"',
+  'Prodigious Climber':
+    'Section=ability ' +
+    'Note="Has a %{abilityNotes.stickytoeTripkee?20:10}\' climb Speed"',
+  'Tenacious Net':
+    'Section=skill ' +
+    'Note="Nets require a successful DC 18 to Escape and inflict off-guard for 1 rd afterward"',
+  'Tripkee Glide':
+    'Action=1 ' +
+    'Section=ability ' +
+    'Note="Can glide 5\' down and 25\' forward each rd"',
+  'Vomit Stomach':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Reduces sickened condition 2 and gives a +2 save vs. recently-ingested positions, leaving self off-guard for 1 rd"',
+  'Absorb Toxin':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Successful counteract check neutralizes an area disease or poison, requiring a -2 save to avoid effect"',
+  'Moisture Bath':
+    'Action=1 ' +
+    'Section=save ' +
+    'Note="Successful DC 10 flat check gives recovery from ongoing persistent file and cold and fire and cold resistance %{level//2} once per day"',
+  'Ricocheting Leap':
+    'Section=skill ' +
+    'Note="Can using Wall Jump to carom off creatures that are larger than self"',
+  'Tongue Tether':
+    'Section=combat ' +
+    'Note="Can use tongue to Disarm, Grab An Edge, Reposition, and Trip"',
+  'Envenomed Edge':
+    'Section=combat ' +
+    'Note="Critical hits that deal slashing or piercing damage inflict +1d4 persistent HP poison"',
+  'Hop Up':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Stands after bring unconscious without triggering reactions"',
+  'Unbound Leaper':'Section=skill Note="Can Leap 30\' in any directions"',
 
   // Backgrounds
   'Belief Attributes':
@@ -9779,6 +10056,34 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
+  'Vitality Lash':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Wall Of Wind':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Unfettered Movement':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Mountain Resilience':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Ventriloquism':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -10904,6 +11209,11 @@ Pathfinder2ERemaster.identityRules = function(
   for(let h in heritages)
     rules.choiceRules(rules, 'Heritage', h, heritages[h]);
   rules.defineRule('featCount.Ancestry', 'featureNotes.lineage', '+=', '1');
+  rules.defineRule('selectableFeatureCount.Versatile Heritage',
+    'features.Versatile Heritage', '=', '1'
+  );
+  QuilvynRules.validAllocationRules
+    (rules, 'versatileHeritage', 'choiceCount.Versatile Heritage', 'versatileHeritagesAllocated');
 };
 
 /* Defines rules related to magic use. */
@@ -11143,6 +11453,23 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
       ['Unarmed', 'Agile', 'Finesse'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.claws', '=', '1');
+  } else if(name == 'Ratfolk') {
+    Pathfinder2E.weaponRules(
+      rules, 'Jaws', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
+      ['Unarmed', 'Agile', 'Finesse'], null
+    );
+    rules.defineRule('weapons.Jaws', 'combatNotes.sharpTeeth', '=', '1');
+  } else if(name == 'Tengu') {
+    Pathfinder2E.weaponRules(
+      rules, 'Beak', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+      ['Finesse', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Beak', 'combatNotes.sharpBeak', '=', '1');
+    Pathfinder2E.weaponRules(
+      rules, 'Talons', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
+    );
+    rules.defineRule('weapons.Talons', 'combatNotes.talonedTengu', '=', '1');
   }
 };
 
@@ -11395,6 +11722,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
+  } else if(name == 'Big Mouth') {
+    rules.defineRule('featureNotes.cheekPouches',
+      'featureNotes.bigMouth', '=', 'null' // italics
+    );
   } else if(name == 'Breath Like Honey') {
     rules.defineRule('skillNotes.sweetbreathKholo',
       'skillNotes.breathLikeHoney', '=', 'null' // italics
@@ -11404,7 +11735,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
   } else if(name == 'Double, Double') {
     rules.defineRule(
-      'skillNotes.cauldron', 'skillNodes.double,Double', '=', 'null' // italics
+      'skillNotes.cauldron', 'skillNotes.double,Double', '=', 'null' // italics
     );
   } else if(name == "Gecko's Grip") {
     rules.defineRule("abilityNotes.gecko'sGrip",
@@ -11453,6 +11784,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         ('weapons.Tail', 'combatNotes.iruxiArmaments(Tail)', '=', '1');
     }
     rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
+  } else if(name == 'Jinx Glutton') {
+    rules.defineRule(
+      'combatNotes.eatFortune', 'combatNotes.jinxGlutton', '=', 'null'// italics
+    );
   } else if(name == 'Loud Singer') {
     rules.defineRule
       ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
@@ -11485,6 +11820,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Unarmed'], null
     );
     rules.defineRule('weapons.Jaws', 'combatNotes.saberTeeth', '=', '1');
+  } else if(name == 'Shinstabber') {
+    rules.defineRule('combatNotes.overcrowd',
+      'combatNotes.shinstabber', '=', 'null' // italics
+    );
   } else if(name == 'Slag May') {
     Pathfinder2E.weaponRules(
       rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
@@ -11493,12 +11832,21 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('weapons.Claws', 'combatNotes.slagMay', '=', '1');
     rules.defineRule
       ('weaponDieSidesBonus.Claws', 'combatNotes.slagMay', '^=', '2');
+  } else if(name == 'Tengu Feather Fan') {
+    rules.defineRule('magicNotes.tenguFeatherFan',
+      'features.Tengu Feather Fan', '=', '1',
+      "magicNotes.windGod'sFan", '+', '1',
+      "magicNotes.thunderGod'sFan", '+', '1'
+    );
   } else if(name == 'Tusks') {
     Pathfinder2E.weaponRules(
       rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
       ['Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
+  } else if(name == 'Vicious Incisors') {
+    rules.defineRule
+      ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '2');
   } else if(name.startsWith('Weapon Proficiency')) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
@@ -11558,24 +11906,16 @@ Pathfinder2ERemaster.goodyRules = function(
     (rules, name, pattern, effect, value, attributes, sections, notes);
 };
 
+/*
+ * TODO
+ */
 Pathfinder2ERemaster.heritageRules = function(rules, name, traits) {
-  for(let a in rules.getChoices('ancestrys')) {
-    if(traits.includes('Non-' + a))
-      continue;
-    let heritage = name + ' ' + a;
-    let prefix = a.charAt(0).toLowerCase() + a.substring(1).replaceAll(' ', '');
-    Pathfinder2E.featureListRules
-      (rules, ['1:' + heritage + ':Heritage'], a, prefix + 'Level', true);
-    rules.defineRule
-      (prefix + 'HeritageCount', prefix + 'Features.' + heritage, '+=', '1');
-    rules.defineRule
-      ('heritage', prefix + 'Features.' + heritage, '=', '"' + heritage + '"');
-    rules.defineRule('features.' + name, 'features.' + heritage, '=', '1');
-    let selectables = rules.getChoices('selectableFeatures');
-    if(a + ' - ' + heritage in selectables)
-      selectables[a + ' - ' + heritage] +=
-        ' Traits=' + traits.map(x => '"' + x + '"').join(',');
-  }
+  Pathfinder2E.featureListRules
+    (rules, ['1:' + name + ':Versatile Heritage'], 'Versatile Heritage',
+     'heritageLevel', true);
+  rules.defineRule('heritageLevel', 'features.' + name, '=', '1');
+  rules.defineRule
+    ('heritage', 'features.' + name, '=', '"' + name + ' " + dict.ancestry');
 };
 
 /* Defines in #rules# the rules associated with language #name#. */
