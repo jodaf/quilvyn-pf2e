@@ -9353,7 +9353,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Creates an entrance to a 40\'x40\'x40\' demiplane that can only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people"',
+      '"R30\' Creates an entrance to a 40\'x40\'x30\' demiplane that can be entered only by those specified, is staffed by servants, and contains provisions for up to 150 people"',
   "Mariner's Curse":
     'Level=5 ' +
     'Traits=Curse,Necromancy ' +
@@ -9385,7 +9385,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC %{spellDifficultyClass.%tradition} Survival or Perception checks"',
+      '"R30\' Transports the target to an extradimensional maze while sustained or until it gains two solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes"',
   'Meld Into Stone':
     'Level=3 ' +
     'Traits=Earth,Transmutation ' +
@@ -9830,7 +9830,8 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine ' +
     'Cast="10 min" ' +
-    'Description="R10\' Restores a willing soul up to level 13 to its corpse, dead for at most 3 days, giving it 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened 7th</b> raises the maximum level to 15; <b>8th</b> level 17; <b>9th</b> level 19; <b>10th</b> level 21)"',
+    'Description=' +
+      '"R10\' Restores a willing soul up to level 13 to its corpse, dead for at most 3 days, giving it 1 HP, clumsy 2, drained 2, and enfeebled 2 for 1 week (<b>heightened 7th</b> raises the maximum level to 15; <b>8th</b> level 17; <b>9th</b> level 19; <b>10th</b> level 21)"',
   'Ray Of Enfeeblement':
     'Level=1 ' +
     'Traits=Attack,Necromancy ' +
