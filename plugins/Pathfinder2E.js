@@ -8492,7 +8492,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Reveals the exact location of a specified familiar creature or object for 10 min"',
+      '"Reveals the exact location of a specified familiar creature or object"',
   'Disintegrate':
     'Level=6 ' +
     'Traits=Attack,Evocation ' +
@@ -9624,7 +9624,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes a Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, 30\' imprecise scent, +10 Athletics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20\' fly Speed)"',
+      '"Self becomes a Tiny animal with Armor Class %{level+15}, 20\' Speed, low-light vision, 30\' imprecise scent, +10 Acrobatics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20\' fly Speed)"',
   'Phantasmal Calamity':
     'Level=6 ' +
     'Traits=Illusion,Mental ' +
@@ -9632,7 +9632,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R500\' 30\' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped (<b>save Reflex</b> negates) until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Phantasmal Killer':
     'Level=4 ' +
     'Traits=Death,Emotion,Fear,Illusion,Mental ' +
