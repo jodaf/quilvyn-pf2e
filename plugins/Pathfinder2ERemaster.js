@@ -10307,13 +10307,354 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Discern Location']
     .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
+  'Planar Palace':
+    Pathfinder2E.SPELLS['Magnificent Mansion']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Planar Seal':
+    Pathfinder2E.SPELLS['Dimensional Lock']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Planar Tether':
+    Pathfinder2E.SPELLS['Dimensional Anchor']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Plant Form':
+    Pathfinder2E.SPELLS['Plant Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Wood'),
+  'Possession':
+    Pathfinder2E.SPELLS.Possession
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Prestidigitation':
+    Pathfinder2E.SPELLS.Prestidigitation
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Project Image':
+    Pathfinder2E.SPELLS['Project Image']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Protection':
+    Pathfinder2E.SPELLS.Protection
+    .replace(/School=\w*/, '') + ' ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Description=' +
+      '"Touched gains +1 Armor Class and saves for 1 min (<b>heightened 3rd</b> effects allies in a 10\' emanation around target)"',
+  'Pummeling Rubble':
+    'Level=1 ' +
+    'Traits=Concentrate,Earth,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"15\' cone inflicts 2d4 HP bludgeon and a 5\' push (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +2d4 HP)"',
+  'Punishing Winds':
+    Pathfinder2E.SPELLS['Punishing Winds']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Quandry':
+    Pathfinder2E.SPELLS.Maze
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate')
+    .replace('maze', 'puzzle room')
+    .replace('Survial or', 'Thievery, Occultism, or'),
+  'Raise Dead':
+    Pathfinder2E.SPELLS['Raise Dead']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Read Aura':
+    Pathfinder2E.SPELLS['Read Aura']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('the related school of magic', 'gives +2 to Identify Magic on it'),
+  'Read Omens':
+    Pathfinder2E.SPELLS['Read Omens']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Regenerate':
+    Pathfinder2E.SPELLS.Regenerate
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
+  'Remake':
+    Pathfinder2E.SPELLS.Remake
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Repulsion':
+    Pathfinder2E.SPELLS.Repulsion
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Resist Energy':
+    Pathfinder2E.SPELLS['Resist Energy']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Retrocognition':
+    Pathfinder2E.SPELLS.Retrocognition
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Occult',
+  'Revealing Light':
+    Pathfinder2E.SPELLS['Faerie Fire']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Description=' +
+      '"R120\' 10\' burst dazzles makes concealed creatures visible and invisible creatures concealed for 1 min (<b>save Reflex</b> effects last 2 rd; critical success negates; critical failure effects last 10 min)"',
+  'Revival':
+    Pathfinder2E.SPELLS.Revival
+    .replace(/School=\w*/, '')
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
+  'Rewrite Memory':
+    Pathfinder2E.SPELLS['Modify Memory']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Ring Of Truth':
+    // Note: assume casting time remains the same
+    Pathfinder2E.SPELLS['Zone Of Truth']
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate,Detection')
+    .replace(/; critical failure[^)]/, ''),
+  'Runic Body':
+    Pathfinder2E.SPELLS['Magic Fang']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('for 1 min', 'for 1 min (<b>heightened 6th</b> gives +2 attack; <b>9th</b> gives +3 attack') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal',
+  'Runic Weapon':
+    Pathfinder2E.SPELLS['Magic Weapon']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('for 1 min', 'for 1 min (<b>heightened 6th</b> gives +2 attack; <b>9th</b> gives +3 attack') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal',
+  'Safe Passage':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Divine,Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends area to 120\'; <b>8th</b> gives resistance 15 and extends area to 500\'"',
+  'Sanctuary':
+    Pathfinder2E.SPELLS.Sanctuary
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Scouting Eye':
+    Pathfinder2E.SPELLS['Prying Eye']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Scrying':
+    Pathfinder2E.SPELLS.Scrying
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'See The Unseen':
+    Pathfinder2E.SPELLS['See Invisibility']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Seize Soul':
+    Pathfinder2E.SPELLS['Bind Soul']
+    .replace(/School=\w*/, '')
+    .replace('Evil,Necromancy', 'Unholy,Concentrate,Manipulate'),
+  'Sending':
+    Pathfinder2E.SPELLS.Sending
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Shadow Blast':
+    Pathfinder2E.SPELLS['Shadow Blast']
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('5d8', '6d8'),
+  'Shape Stone':
+    Pathfinder2E.SPELLS['Shape Stone']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Shape Wood':
+    Pathfinder2E.SPELLS['Shape Wood']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate,Wood') + ' ' +
+    'Traditions=Arcane,Primal',
+  'Share Life':
+    Pathfinder2E.SPELLS['Shield Other']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Shatter':
+    Pathfinder2E.SPELLS.Shatter
+    .replace(/School=\w*/, '')
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Shield':
+    Pathfinder2E.SPELLS.Shield
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate')
+    .replace(/\(.*\)/, '(<b>heightened +2</b> gives Hardness +5)'),
+  'Shrink':
+    Pathfinder2E.SPELLS.Shrink
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
 
   // TODO
+  'Commanding Lash':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
+  'Dimensional Steps':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Downpour':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Dread Aura':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Elemental Tempest':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Energy Absorption':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Force Bolt':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Hand Of The Apprentice':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Heal Animal':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Impaling Briars':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Invisibility Cloak':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Life Siphon':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Malignant Sustenance':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Mountain Resilience':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Precious Metals':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Primal Summons':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Shifting Form':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Storm Lord':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Stormwind Flight':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Tempest Surge':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Unfettered Movement':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Vampiric Exsanguination':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Ventriloquism':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Vigilant Eye':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -10334,125 +10675,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Unfettered Movement':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Mountain Resilience':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Ventriloquism':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Shifting Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Life Siphon':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Invisibility Cloak':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Elemental Tempest':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Dread Aura':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Vigilant Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Dimensional Steps':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Energy Absorption':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Hand Of The Apprentice':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Force Bolt':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Storm Lord':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Impaling Briars':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Primal Summons':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Stormwind Flight':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Wild Morph':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -10460,49 +10682,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Tempest Surge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Heal Animal':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Zeal For Battle':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Precious Metals':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Downpour':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Malignant Sustenance':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Commanding Lash':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
