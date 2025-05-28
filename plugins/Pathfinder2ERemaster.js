@@ -5563,9 +5563,13 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the duskwalker trait and may take duskwalker ancestry feats",' +
       '"Cannot become undead"',
   'Change Death':
-    'Section=feature Note="TODO"',
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Rerolls a fatally failed recovery check or save once per day"',
   'Deliberate Death':
-    'Section=feature Note="TODO"',
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike against a foe that inflicts the dying condition on self"',
   'Duskwalker Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5577,23 +5581,32 @@ Pathfinder2ERemaster.FEATURES = {
       '"Weapon Familiarity (Bo Staff; Longbow; Composite Longbow; Scythe; Staff)",' +
       '"%{level>=5?\'Critical hits with a bo staff, longbow, composite longbow, scythe, or staff inflict its critical specialization effect\':\'\'}"',
   'Ghost Hunter':
-    'Section=feature Note="TODO"',
-  'Gravesight':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="Strikes on incorporeal creatures are magical, and magical weapons gain the <i>ghost touch</i> property"',
+  'Gravesight':'Section=feature Note="Has the Darkvision feature"',
   'Lifesense':
-    'Section=feature Note="TODO"',
+    'Section=skill ' +
+    'Note="R10\' Can imprecisely sense the life force of living and undead creatures"',
   'Spirit Soother':
-    'Section=feature Note="TODO"',
+    'Section=skill ' +
+    'Note="Automatically attempts a check to notice haunts, and gains +1 to disable haunts"',
   'Ward Against Corruption':
-    'Section=feature Note="TODO"',
+    'Section=save ' +
+    'Note="+1 vs. death effects, disease, and undead or sahkils, and +2 vs. undead and sahkil death effects and disease"',
   'Duskwalker Magic':
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast earch once per day at 2nd rank"',
   'Quietus Strikes':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="Attacks are magical and inflict +1 HP void or vitality, or +2 with a <i>+3 potency</i> rune"',
   'Resist Ruin':
-    'Section=feature Note="TODO"',
+    'Section=magic,save ' +
+    'Note=' +
+      '"Knows the False Vitality divine innate spell; can cast it once per day at 5th rank",' +
+      '"Has resistance 5 to void"',
   "Boneyard's Call":
-    'Section=feature Note="TODO"',
+    'Section=magic ' +
+    'Note="Knows the Interplanar Teleport divine innate spell; can cast it twice per week to travel to and from the Boneyard"',
 
   // Backgrounds
 
@@ -10241,19 +10254,65 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Overwhelming Presence']
     .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Paralyze':
+    Pathfinder2E.SPELLS.Paralyze
+    .replace(/School=\w*/, '')
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Paranoia':
+    Pathfinder2E.SPELLS.Paranoia
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Peaceful Bubble':
+    Pathfinder2E.SPELLS['Private Sanctum']
+    .replace(/School=\w*/, '')
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('until next daily prep', 'for 24 hours; sleeping within for 8 hours reduces doomed conditions by 2'),
+  'Peaceful Rest':
+    Pathfinder2E.SPELLS['Gentle Repose']
+    .replace(/School=\w*/, '')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Pest Form':
+    Pathfinder2E.SPELLS['Pest Form']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Pest Cache':
+    'Level=1 ' +
+    'Traits=Extradimensional,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description="Moves companion into a pocket dimension for up to 8 hours"',
+  'Petrify':
+    Pathfinder2E.SPELLS['Flesh To Stone']
+    .replace(/School=\w*/, '')
+    .replace('Transmutation', 'Concentrate,Earth,Manipulate'),
+  'Phantasmagoria':
+    Pathfinder2E.SPELLS.Weird
+    .replace(/School=\w*/, '')
+    .replace('Emotion,Fear', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R120\' Inflicts 16d6 HP mental and confused for 1 rd on all targets within range (<b>save Will</b> inflicts half HP loss of reactions for 1 rd; critical success negates; critical failure inflicts double HP and confused for 1 min)"',
+  'Phantasmal Calamity':
+    Pathfinder2E.SPELLS['Phantasmal Calamity']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Phantasmal Minion':
+    Pathfinder2E.SPELLS['Unseen Servant']
+    .replace(/School=\w*/, '')
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Phantom Pain':
+    Pathfinder2E.SPELLS['Phantom Pain']
+    .replace(/School=\w*/, '')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Pinpoint':
+    Pathfinder2E.SPELLS['Discern Location']
+    .replace(/School=\w*/, '')
+    .replace('Divination', 'Concentrate,Manipulate'),
 
   // TODO
   'Courageous Anthem':
     Pathfinder2E.SPELLS['Inspire Courage']
     .replace('School=Enchantment', '')
     .replace('Enchantment', 'Concentrate'),
-  'Pest Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Vampiric Exsanguination':
     'Level=1 ' +
     'Traits=Evocation ' +
