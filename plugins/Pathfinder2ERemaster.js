@@ -55,7 +55,7 @@ function Pathfinder2ERemaster(edition) {
   );
   rules.defineChoice('preset',
     'ancestry:Ancestry,select-one,ancestrys',
-    'selectableFeatures:Heritage,set,ancestryHeritages',
+    'selectableFeatures:Heritage,set,selectableHeritages',
     'background:Background,select-one,backgrounds',
     'class:Class,select-one,levels',
     'level:Level,text,3',
@@ -97,29 +97,26 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
 Pathfinder2ERemaster.ANCESTRIES = {
   'Dwarf':
     Pathfinder2E.ANCESTRIES.Dwarf
-    .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
+    .replaceAll('Ability', 'Attribute'),
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
     .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage","1:Ancient Elf:Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
   'Gnome':
     Pathfinder2E.ANCESTRIES.Gnome
     .replaceAll('Ability', 'Attribute')
-    .replace('Sylvan', 'Fey')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
+    .replace('Sylvan', 'Fey'),
   'Goblin':
     Pathfinder2E.ANCESTRIES.Goblin
-    .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage",'),
+    .replaceAll('Ability', 'Attribute'),
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
     .replaceAll('Ability', 'Attribute')
-    .replace('Selectables=', 'Selectables="1:Versatile Heritage:Heritage","1:Jinxed Halfling:Heritage",'),
+    .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
     .replaceAll('Ability', 'Attribute')
-    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage"', '"1:Versatile Heritage:Heritage"')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage,"', '')
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
@@ -137,8 +134,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Lotus Leshy:Heritage",' +
       '"1:Root Leshy:Heritage",' +
       '"1:Seaweed Leshy:Heritage",' +
-      '"1:Vine Leshy:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Vine Leshy:Heritage" ' +
     'Languages=Common,Fey ' +
     'Traits=Leshy,Plant',
   'Orc':
@@ -153,8 +149,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Grave Orc:Heritage",' +
       '"1:Hold-Scarred Orc:Heritage",' +
       '"1:Rainfall Orc:Heritage",' +
-      '"1:Winter Orc:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Winter Orc:Heritage" ' +
     'Languages=Common,Orcish ' +
     'Traits=Orc,Humanoid',
   // Core 2
@@ -172,8 +167,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Liminal Catfolk:Heritage",' +
       '"1:Nine Lives Catfolk:Heritage",' +
       '"1:Sharp-Eared Catfolk:Heritage",' +
-      '"1:Winter Catfolk:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Winter Catfolk:Heritage" ' +
     'Languages=Amurrun,Common ' +
     'Traits=Catfolk,Humanoid',
   'Hobgoblin':
@@ -188,8 +182,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Shortshanks Hobgoblin:Heritage",' +
       '"1:Smokeworker Hobgoblin:Heritage",' +
       '"1:Warmarch Hobgoblin:Heritage",' +
-      '"1:Warrenbred Hobgoblin:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Warrenbred Hobgoblin:Heritage" ' +
     'Languages=Common,Goblin ' +
     'Traits=Hobgoblin,Humanoid',
   'Kholo':
@@ -206,8 +199,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Great Kholo:Heritage",' +
       '"1:Sweetbreath Kholo:Heritage",' +
       '"1:Winter Kholo:Heritage",' +
-      '"1:Witch Kholo:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Witch Kholo:Heritage" ' +
     'Languages=Common,Kholo ' +
     'Traits=Kholo,Humanoid',
   'Kobold':
@@ -224,8 +216,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Spellhorn Kobold:Heritage",' +
       '"1:Strongjaw Kobold:Heritage",' +
       '"1:Tunnelflood Kobold:Heritage",' +
-      '"1:Venomtail Kobold:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Venomtail Kobold:Heritage" ' +
     'Languages=Common,Sakvroth ' +
     'Traits=Humanoid,Kobold',
   'Lizardfolk':
@@ -242,8 +233,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Sandstrider Lizardfolk:Heritage",' +
       '"1:Unseen Lizardfolk:Heritage",' +
       '"1:Wetlander Lizardfolk:Heritage",' +
-      '"1:Woodstalker Lizardfolk:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Woodstalker Lizardfolk:Heritage" ' +
     'Languages=Common,Iruxi ' +
     'Traits=Humanoid,Lizardfolk',
   'Ratfolk':
@@ -261,8 +251,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Sewer Rat:Heritage",' +
       '"1:Shadow Rat:Heritage",' +
       '"1:Snow Rat:Heritage",' +
-      '"1:Tunnel Rat:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Tunnel Rat:Heritage" ' +
     'Languages=Common,Ysoki ' +
     'Traits=Humanoid,Ratfolk',
   'Tengu':
@@ -278,8 +267,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Skyborn Tengu:Heritage",' +
       '"1:Stormtossed Tengu:Heritage",' +
       '"1:Taloned Tengu:Heritage",' +
-      '"1:Wavediver Tengu:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Wavediver Tengu:Heritage" ' +
     'Languages=Common,Tengu ' +
     'Traits=Humanoid,Tengu',
   'Tripkee':
@@ -295,8 +283,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
       '"1:Snaptongue Tripkee:Heritage",' +
       '"1:Stickytoe Tripkee:Heritage",' +
       '"1:Thickskin Tripkee:Heritage",' +
-      '"1:Windweb Tripkee:Heritage",' +
-      '"1:Versatile Heritage:Heritage" ' +
+      '"1:Windweb Tripkee:Heritage" ' +
     'Languages=Common,Tripkee ' +
     'Traits=Humanoid,Tripkee'
 };
@@ -9223,7 +9210,17 @@ Pathfinder2ERemaster.HERITAGES = {
   'Dromaar':'Traits=Non-Orc',
   // Core 2
   'Dhampir':'Traits=Uncommon',
-  'Dragonblood':'Traits=Uncommon',
+  'Dragonblood':
+    'Traits=Uncommon ' +
+    'Selectables=' +
+      '"1:Adamantine Exemplar:Draconic Exemplar",' +
+      '"1:Conspirator Exemplar:Draconic Exemplar",' +
+      '"1:Diabolic Exemplar:Draconic Exemplar",' +
+      '"1:Empyreal Exemplar:Draconic Exemplar",' +
+      '"1:Fortune Exemplar:Draconic Exemplar",' +
+      '"1:Horned Exemplar:Draconic Exemplar",' +
+      '"1:Mirage Exemplar:Draconic Exemplar",' +
+      '"1:Omen Exemplar:Draconic Exemplar"',
   'Duskwalker':'Traits=Uncommon'
 };
 Pathfinder2ERemaster.LANGUAGES = {
@@ -10344,6 +10341,77 @@ Pathfinder2ERemaster.SPELLS = {
   'Subconscious Suggestion':
     Pathfinder2E.SPELLS['Subconscious Suggestion']
     .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
+  'Suggestion':
+    Pathfinder2E.SPELLS.Suggestion
+    .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
+  'Summon Animal':
+    Pathfinder2E.SPELLS['Summon Animal']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Celestial':
+    Pathfinder2E.SPELLS['Summon Celestial']
+    .replace('Conjuration', 'Concentrate,Holy,Manipulate,Summon'),
+  'Summon Construct':
+    Pathfinder2E.SPELLS['Summon Construct']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Dragon':
+    Pathfinder2E.SPELLS['Summon Dragon']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal',
+  'Summon Elemental':
+    Pathfinder2E.SPELLS['Summon Elemental']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Entity':
+    Pathfinder2E.SPELLS['Summon Entity']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Fey':
+    Pathfinder2E.SPELLS['Summon Fey']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Fiend':
+    Pathfinder2E.SPELLS['Summon Fiend']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon,Unholy'),
+  'Summon Giant':
+    Pathfinder2E.SPELLS['Summon Giant']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Instrument':
+    'Level=1 ' +
+    'Traits=Cantrip,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"Creates a handheld musical instrument that self can play for 1 hr (<b>Heightened 5th</b> creates a virtuoso instrument"',
+  'Summon Monitor':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate,Summon ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R30\' A level 5 monitor appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)"',
+  'Summon Plant Or Fungus':
+    Pathfinder2E.SPELLS['Summon Plant Or Fungus']
+    .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
+  'Summon Undead':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Summon ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R30\' A level -1 undead appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
+  'Sunburst':
+    Pathfinder2E.SPELLS.Sunburst
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Positive', 'Vitality')
+    .replaceAll('positive', 'vitality'),
+  'Sure Footing':
+    Pathfinder2E.SPELLS['Remove Paralysis']
+    .replace('Necromancy', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"Makes a counteract attempt vs. a clumsy, grabbed, or paralysis effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect for 1 rd (<b>heightened 4th</b> attempts to counteract immobilized or restrained; <b>6th</b> attempts to counteract petrified; <b>8th</b> attempts to counteract stunned)"',
+  'Sure Strike':
+    Pathfinder2E.SPELLS['True Strike']
+    .replace('Divination', 'Concentrate'),
+  'Synaptic Pulse':
+    Pathfinder2E.SPELLS['Synaptic Pulse']
+    .replace('Enchantment', 'Concentrate,Manipulate,Metal'),
 
   // TODO
   'Commanding Lash':
@@ -11246,13 +11314,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Sure Strike':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Unhampered Passage':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11466,19 +11527,11 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
 Pathfinder2ERemaster.identityRules = function(
   rules, ancestries, backgrounds, classes, deities, heritages
 ) {
-  QuilvynUtils.checkAttrTable(heritages, ['Traits']);
+  QuilvynUtils.checkAttrTable(heritages, ['Traits', 'Selectables']);
   Pathfinder2E.identityRules
     (rules, {}, ancestries, backgrounds, classes, deities);
   for(let h in heritages)
     rules.choiceRules(rules, 'Heritage', h, heritages[h]);
-  rules.defineRule
-    ('choiceCount.Versatile Heritage', 'features.Versatile Heritage', '=', '1');
-  rules.defineRule('featCount.Ancestry', 'featureNotes.lineage', '+=', '1');
-  rules.defineRule('selectableFeatureCount.Versatile Heritage',
-    'features.Versatile Heritage', '=', '1'
-  );
-  QuilvynRules.validAllocationRules
-    (rules, 'versatileHeritage', 'choiceCount.Versatile Heritage', 'versatileHeritagesAllocated');
 };
 
 /* Defines rules related to magic use. */
@@ -11596,7 +11649,8 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
     );
   else if(type == 'Heritage') {
     Pathfinder2ERemaster.heritageRules(rules, name,
-      QuilvynUtils.getAttrValueArray(attrs, 'Traits')
+      QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
     Pathfinder2ERemaster.heritageRulesExtra(rules, name);
   } else if(type == 'Language')
@@ -11675,12 +11729,15 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
 Pathfinder2ERemaster.ancestryRules = function(
   rules, name, hitPoints, features, selectables, languages, traits
 ) {
+  let prefix = name.charAt(0) + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.ancestryRules
     (rules, name, hitPoints, features, selectables, languages, traits);
   selectables = rules.getChoices('selectableFeatures');
   for(let s in selectables) {
-    if(selectables[s].includes('Heritage'))
-      rules.addChoice('ancestryHeritages', s, selectables[s]);
+    if(s.includes(name) && selectables[s].includes('Heritage'))
+      rules.addChoice('selectableHeritages', s, selectables[s]);
+    else if(s.includes('Versatile Heritage'))
+      rules.defineRule(prefix + 'HeritageCount', 'features.' + s, '+=', '1');
   }
 };
 
@@ -12246,24 +12303,46 @@ Pathfinder2ERemaster.goodyRules = function(
 };
 
 /*
- * TODO
+ * Defines in #rules# the rules associated with versatile heritage #name#,
+ * which has the list of traits #traits#.
  */
-Pathfinder2ERemaster.heritageRules = function(rules, name, traits) {
+Pathfinder2ERemaster.heritageRules = function(
+  rules, name, traits, selectables
+) {
+
+  let prefix =
+    name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
+  let heritageLevel = prefix + 'Level';
+
   Pathfinder2E.featureListRules
-    (rules, ['1:' + name + ':Versatile Heritage'], 'Versatile Heritage',
-     'heritageLevel', true);
-  let selectables = rules.getChoices('selectableFeatures');
-  for(let s in selectables) {
-    if(selectables[s].includes('Heritage'))
-      rules.addChoice('ancestryHeritages', s, selectables[s]);
-  }
-  rules.defineRule('heritageLevel', 'features.' + name, '=', '1');
+    (rules, ['1:' + name + ':Heritage'], 'Versatile Heritage', heritageLevel,
+     true);
+  Pathfinder2E.featureListRules(rules, selectables, name, heritageLevel, true);
+  rules.defineRule(heritageLevel,
+    'features.' + name, '?', null,
+    'level', '=', null
+  );
+
+  selectables = rules.getChoices('selectableFeatures');
+  let s = QuilvynUtils.getKeys(selectables, 'Versatile Heritage.*' + name)[0];
+  rules.addChoice('selectableHeritages', s, selectables[s]);
   rules.defineRule
     ('heritage', 'features.' + name, '=', '"' + name + ' " + dict.ancestry');
-  rules.defineRule
-    ('versatileHeritagesAllocated', 'features.' + name, '+=', '1');
+  for(let a in rules.getChoices('ancestrys')) {
+    let prefix = a.charAt(0).toLowerCase() + a.substring(1).replaceAll(' ', '');
+    rules.defineRule(prefix + 'HeritageCount',
+      'features.' + name, '+=', 'dict.ancestry=="' + a + '" ? 1 : null'
+    );
+    selectables[s] =
+      selectables[s].replace('Type=', 'Type="' + a + ' (Heritage)",');
+  }
+
 };
 
+/*
+ * Defines in #rules# the rules associated with versatile heritage #name# that
+ * cannot be derived directly from the attributes passed to heritageRules.
+ */
 Pathfinder2ERemaster.heritageRulesExtra = function(rules, name) {
   if(name == 'Dragonblood') {
     rules.defineRule('dragonbloodLevel',
