@@ -9910,7 +9910,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
+      '"Makes a counteract attempt vs. a paralysis effect affecting touched (<b>heightened 6th</b> R30\' affects 10 targets)"',
   'Repulsion':
     'Level=6 ' +
     'Traits=Abjuration,Aura,Mental ' +
@@ -10440,7 +10440,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' A level -1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
+      '"R30\' A level 1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)"',
   'Summon Entity':
     'Level=5 ' +
     'Traits=Conjuration ' +
@@ -10488,7 +10488,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 60\' burst inflicts 8d10 HP fire, plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)"',
+      '"R500\' 60\' burst attempts to counteract magical darkness and inflicts 8d10 HP fire, plus 8d10 HP positive to undead (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure also inflicts permanent blindness) (<b>heightened +1</b> inflicts +1d10 HP fire and positive)"',
   'Synaptic Pulse':
     'Level=5 ' +
     'Traits=Enchantment,Incapacitation ' +
