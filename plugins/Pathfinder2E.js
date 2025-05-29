@@ -10188,7 +10188,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5\' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure; targets release held objects and do not wake from a successful Perception check)"',
+      '"R30\' 5\' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure, followed by normal sleep; targets release held objects and do not wake from a successful Perception check)"',
   'Slow':
     'Level=3 ' +
     'Traits=Transmutation ' +
@@ -10212,7 +10212,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)"',
+      '"R30\' Target regains 1d10+4 Hit Points and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 Hit Points)"',
   'Sound Burst':
     'Level=2 ' +
     'Traits=Evocation,Sonic ' +
@@ -10607,7 +10607,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
+      '"Touch inflicts stupefied 2 for 1 min (<b>save Will</b> negates; critical failure inflicts stupefied 4)"',
   'Tree Shape':
     'Level=2 ' +
     'Traits=Plant,Polymorph,Transmutation ' +
@@ -15604,8 +15604,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spirit', 'Subtle', 'Unholy',
-  'Vitality', 'Void', 'Wood'
+  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spirit', 'Subtle', 'Summon',
+  'Unholy', 'Vitality', 'Void', 'Wood'
 ];
 
 /*
