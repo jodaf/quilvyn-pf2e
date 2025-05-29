@@ -4142,7 +4142,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Instinctive Obfuscation':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Illusory double forces a successful DC 10 flat check on an attacking foe once per hour; failure negates the attack"',
+    'Note="Illusory double forces a successful DC 10 flat check on an attacking foe once per hr; failure negates the attack"',
   'Homeward Bound':
     'Section=magic ' +
     'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
@@ -4309,7 +4309,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Fruit Leshy':
     'Section=magic ' +
-    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hour after removal"',
+    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hr after removal"',
   'Fungus Leshy':
     'Section=feature,feature ' +
     'Note=' +
@@ -4376,7 +4376,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Ritual Reversion':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Transforms self into a normal plant with AC 20 for 8 hours"',
+    'Note="Transforms self into a normal plant with AC 20 for 8 hr"',
   'Speak With Kindred':
     'Section=skill ' +
     'Note="Can speak with plants and fungi and gains +2 Diplomacy with plants or fungi of the same kind as self"',
@@ -4691,11 +4691,11 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Cat Nap':
     'Section=combat ' +
-    'Note="10 min sleep gives %{level} temporary Hit Points once per hour"',
+    'Note="10 min sleep gives %{level} temporary Hit Points once per hr"',
   "Cat's Luck":
     'Action=Free ' +
     'Section=save ' +
-    'Note="Rerolls a failed Reflex save once per %{combatNotes.reliableLuck?\'hour\':\'day\'}"',
+    'Note="Rerolls a failed Reflex save once per %{combatNotes.reliableLuck?\'hr\':\'day\'}"',
   'Catfolk Dance':
     'Action=1 ' +
     'Section=combat ' +
@@ -4862,7 +4862,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Rallying Cry':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="30\' emanation gives alies %{level} temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min"',
+    'Note="30\' emanation gives allies %{level} temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min"',
 
   'Ant Kholo':
     'Section=combat,feature,skill,skill ' +
@@ -5046,7 +5046,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Fleeing Shriek':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="10\' emanation inflicts %{(level-3)//2}d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that failed to save, once per hour"',
+    'Note="10\' emanation inflicts %{(level-3)//2}d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that failed to save, once per hr"',
   'Winglet Flight':'Section=ability Note="Can Fly 20\' once per rd"',
   'Resplendent Spellhorn':
     'Section=magic ' +
@@ -5122,7 +5122,7 @@ Pathfinder2ERemaster.FEATURES = {
      '"Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes are critical successes"',
   'Parthenogenic Hatchling':
     'Section=save ' +
-    'Note="+1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hours and from starvation every 2 days"',
+    'Note="+1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hr and from starvation every 2 days"',
   'Reptile Speaker':'Section=skill Note="Can converse with reptiles"',
   'Envenom Fangs':
     'Action=1 ' +
@@ -5167,7 +5167,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Mask Of Terror primal innate spell; can cast it once per day"',
   'Scion Transformation':
     'Section=feature ' +
-    'Note="Can use a 24-hour hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
+    'Note="Can use a 24-hr hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
 
   // Low-Light Vision as above
   'Sharp Teeth':'Section=combat Note="Jaws inflict 1d4 HP piercing"',
@@ -5217,7 +5217,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Warren Navigator':
     'Section=save,skill,skill ' +
     'Note=' +
-      '"Improves saves vs. <i>Quandry</i> by 1 degree",' +
+      '"Improves saves vs. <i>Quandary</i> by 1 degree",' +
       '"Skill Trained (Survival)",' +
       '"Improves Sense Direction test by 1 degree, and suffers no penalty from having no compass"',
   'Cornered Fury':
@@ -5234,7 +5234,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Ratfolk Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Rolls %{speed*4}\' down an incline; after the 1st rd, suffers slowed 2 and suffers and inflcits 4d6 HP bludgeoning if stopped by an obstacle"',
+    'Note="Rolls %{speed*4}\' down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle"',
   'Big Mouth':'Section=feature Note="Has increased Cheek Pouches effects"',
   'Overcrowd':
     'Section=combat ' +
@@ -5242,7 +5242,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Rat Form':'Action=1 Section=magic Note="Becomes a Tiny rat"',
   'Uncanny Cheeks':
     'Section=feature ' +
-    'Note="Has the Precient Consumable and Prescient Planner features"',
+    'Note="Has the Prescient Consumable and Prescient Planner features"',
   'Shinstabber':'Section=combat Note="Has increased Overcrowd effects"',
   'Skittering Sneak':'Section=skill Note="Can Sneak at full Speed"',
   'Warren Digger':'Section=ability Note="Has a 15\' burrow Speed"',
@@ -5309,7 +5309,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Eat Fortune':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R60\' Counteracts a fortune or misfortune effects once per %{combatNotes.jinxGlutton?\'hour\':\'day\'}"',
+    'Note="R60\' Counteracts a fortune or misfortune effects once per %{combatNotes.jinxGlutton?\'hr\':\'day\'}"',
   'Long-Nosed Form':
     'Action=1 ' +
     'Section=magic ' +
@@ -5348,7 +5348,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Tripkee Heritage':'Section=feature Note="1 selection"',
   'Poisonhide Tripkee':
     'Section=combat ' +
-    'Note="Can use a reaction once per hour to exude a poison that inflicts %{(level+1)//2}d4 HP poison (<b>save basic Fortitude</b>)"',
+    'Note="Can use a reaction once per hr to exude a poison that inflicts %{(level+1)//2}d4 HP poison (<b>save basic Fortitude</b>)"',
   'Riverside Tripkee':'Section=ability Note="Has a 15\' swim Speed"',
   'Snaptongue Tripkee':
     'Section=feature ' +
@@ -5370,12 +5370,12 @@ Pathfinder2ERemaster.FEATURES = {
   "Hunter's Defense":
     'Action=Reaction ' +
     'Section=feature ' +
-    'Note="Can use Nature instead of Armor Class vs. a natural creature once per hour"',
+    'Note="Can use Nature instead of Armor Class vs. a natural creature once per hr"',
   'Jungle Strider':
     'Section=ability,skill ' +
     'Note=' +
       '"Moves normally through difficult terrain in forests and jungles",' +
-      '"Does not suffer off-guard when Balancing on narrow surfaces or unevan ground made of plants, and successes to do so are critical successes"',
+      '"Does not suffer off-guard when Balancing on narrow surfaces or uneven ground made of plants, and successes to do so are critical successes"',
   'Nocturnal Tripkee':'Section=feature Note="Has the Darkvision feature"',
   'Terrifying Croak':
     'Action=1 ' +
@@ -5473,7 +5473,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Animal Form and Mist divine innate spells; can cast each (Animal Form wolf only) once per day at 2nd rank"',
   'Form Of The Bat':
     'Section=magic ' +
-    'Note="Knows the Pest Form divine innate spell; can cast it (bat only) once per hour"',
+    'Note="Knows the Pest Form divine innate spell; can cast it (bat only) once per hr"',
   'Symphony Of Blood':
     'Section=magic ' +
     'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it once per day"',
@@ -5539,7 +5539,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Wing Buffet':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Athletics vs. Fortitude inflicts %{level} HP bludgeoning and a 5\' push, %{level*2} HP and 10\' on a critical success, or %{level//2} HP only on a failure; critical failure inflcits prone on self"',
+    'Note="Successful Athletics vs. Fortitude inflicts %{level} HP bludgeoning and a 5\' push, %{level*2} HP and 10\' on a critical success, or %{level//2} HP only on a failure; critical failure inflicts prone on self"',
   'Draconic Veil':
     // TODO tradition may vary
     'Section=magic ' +
@@ -5575,7 +5575,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Additional Lore (Boneyard Lore) feature",' +
       '"Skill Trained (Medicine; Religion)"',
-  'Duskwaker Weapon Familiarity':
+  'Duskwalker Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Familiarity (Bo Staff; Longbow; Composite Longbow; Scythe; Staff)",' +
@@ -6093,7 +6093,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Lasting Armament':Pathfinder2E.FEATURES['Extend Armament Alignment'],
   'Premonition Of Clarity':
     'Section=save ' +
-    'Note="Rerolls a failed mental save with a +2 bonus once per hour"',
+    'Note="Rerolls a failed mental save with a +2 bonus once per hr"',
   'Swift Banishment':Pathfinder2E.FEATURES['Swift Banishment'],
   'Eternal Bane':Pathfinder2E.FEATURES['Eternal Bane'],
   'Eternal Blessing':Pathfinder2E.FEATURES['Eternal Blessing'],
@@ -6262,7 +6262,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wild Shape', 'Untamed Form'),
   'Primal Howl':
     'Section=feature ' +
-    'Note="Companion can use 2 actions to inflict 1d6 HP sonic per 2 levels and frightened 1 in a 30\' cone once per hour (<b>save basic Fortitude</b> also negates frightened; critical failure inflicts frightened 2)"',
+    'Note="Companion can use 2 actions to inflict 1d6 HP sonic per 2 levels and frightened 1 in a 30\' cone once per hr (<b>save basic Fortitude</b> also negates frightened; critical failure inflicts frightened 2)"',
   'Pristine Weapon':
     'Section=combat ' +
     'Note="Verdant weapon counts as cold iron and silver, inflicting 1d6 HP persistent bleed to creatures with weakness to either"',
@@ -7072,9 +7072,9 @@ Pathfinder2ERemaster.FEATURES = {
   // Reflect Spell as above
   'Rites of Transfiguration':
     'Section=magic ' +
-    'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphasis</i>"',
+    'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphosis</i>"',
   "Patron's Presence":
-    'Section=combat Note="Familiar can use 2 actions to create a 15\' emanation that inflicts stupefied 2 on foes (<b>save Will</b> negates; critical failure inflicts stupefied 3) while sustained for up to 1 min once per hour"',
+    'Section=combat Note="Familiar can use 2 actions to create a 15\' emanation that inflicts stupefied 2 on foes (<b>save Will</b> negates; critical failure inflicts stupefied 3) while sustained for up to 1 min once per hr"',
   // Effortless Concentration as above
   'Siphon Power':
     'Action=Free ' +
@@ -7086,7 +7086,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent targeted hex, cast at 2 ranks lower, affects a second target"',
   "Patron's Claim":
     'Section=combat ' +
-    'Note="Familiar can spend 2 actions for a R30\' attack that inflicts 10d10 HP spirit and drained 2 (<b>save basic Fortitude</b> also negates drained; critical failure inflicts drained 4) and restores 1 Focus Point to self once per hour"',
+    'Note="Familiar can spend 2 actions for a R30\' attack that inflicts 10d10 HP spirit and drained 2 (<b>save basic Fortitude</b> also negates drained; critical failure inflicts drained 4) and restores 1 Focus Point to self once per hr"',
   'Hex Master':
     'Section=magic ' +
     'Note="Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes"',
@@ -9374,34 +9374,27 @@ for(let s in Pathfinder2ERemaster.SKILLS)
 Pathfinder2ERemaster.SPELLS = {
   'Acid Grip':
     Pathfinder2E.SPELLS['Acid Arrow']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Manipulate') + ' ' +
     // Duration deleted by errata
     'Description=' +
       '"R120\' Inflicts 2d8 HP acid, 1d6 HP persistent acid, and -10\' Speed (<b>save Reflex</b> inflicts half initial HP only and moves the target 5\'; critical success negates; critical failure inflicts double initial HP and moves the target 20\') (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Aerial Form':
     Pathfinder2E.SPELLS['Aerial Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Manipulate,Concentrate'),
   'Air Bubble':
     Pathfinder2E.SPELLS['Air Bubble']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate'),
   'Alarm':
     Pathfinder2E.SPELLS.Alarm
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Animal Form':
     Pathfinder2E.SPELLS['Animal Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Animal Messenger':
     Pathfinder2E.SPELLS['Animal Messenger']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Ant Haul':
     Pathfinder2E.SPELLS['Ant Haul']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Aqueous Orb':
     'Level=3 ' +
@@ -9412,32 +9405,26 @@ Pathfinder2ERemaster.SPELLS = {
       '"R60\' 10\' sphere extinguishes normal fires, attempts to counteract magical fires, and engulfs Large or smaller creatures until they succeed on an Escape or DC 10 Swim check (<b>save Reflex</b> negates; critical failure disallows Swim) while sustained for up to 1 min"',
   'Arctic Rift':
     Pathfinder2E.SPELLS['Polar Ray']
-    .replace(/School=\w*/, '')
     .replace('Attack,', '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"R120\' Inflicts 12d8 HP cold and slowed 1 for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +2d8 HP and gives ice +5 HP)"',
   'Augury':
     Pathfinder2E.SPELLS.Augury
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Avatar':
     Pathfinder2E.SPELLS.Avatar
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Bane':
     Pathfinder2E.SPELLS.Bane
-    .replace(/School=\w*/, '')
     // Aura trait added by errata
     .replace('Enchantment', 'Concentrate,Manipulate,Aura')
     .replaceAll('5', '10'),
   'Banishment':
     Pathfinder2E.SPELLS.Banishment
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Bind Undead':
     Pathfinder2E.SPELLS['Bind Undead']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Blazing Bolt':
     'Level=2 ' +
@@ -9448,20 +9435,17 @@ Pathfinder2ERemaster.SPELLS = {
       '"R60\' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
   'Bless':
     Pathfinder2E.SPELLS.Bless
-    .replace(/School=\w*/, '')
     // Aura trait added by errata
     .replace('Enchantment', 'Concentrate,Manipulate,Aura')
     .replace('5', '15')
     .replace('by 5', 'by 10'),
   'Blessed Boundary':
     Pathfinder2E.SPELLS['Blade Barrier']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate,Sanctified') + ' ' +
     'Description=' +
       '"R120\' 60\' burst inflicts 7d8 HP force and a 10\' push for 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts doubles HP and push distance) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Blindness':
     Pathfinder2E.SPELLS.Blindness
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Blood Vendetta':
     'Level=2 ' +
@@ -9472,21 +9456,17 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Spell attack inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)"',
   'Blur':
     Pathfinder2E.SPELLS.Blur
-    .replace(/School=\w*/, '')
     .replace('Veil', 'Concentrate,Manipulate,Visual'),
   'Breath Of Life':
     Pathfinder2E.SPELLS['Breath Of Life']
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Vitality') + ' ' +
     'Description=' +
       '"R60\' Prevents the triggering target\'s death, restoring 5d8 HP (<b>heightened +2</b> restores +1d8 HP)"',
   'Breathe Fire':
     Pathfinder2E.SPELLS['Burning Hands']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Calm':
     Pathfinder2E.SPELLS['Calm Emotions']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Canticle Of Everlasting Grief':
     'Level=8 ' +
@@ -9497,35 +9477,28 @@ Pathfinder2ERemaster.SPELLS = {
       '"R120\' Inflicts 10d6 HP mental, frightened 3, a curse that negates of circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and permanent curse that also affects allies within 15\'"',
   'Cataclysm':
     Pathfinder2E.SPELLS.Cataclysm
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Caustic Blast':
     Pathfinder2E.SPELLS['Acid Splash']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace(',Attack', ''),
   'Chain Lightning':
     Pathfinder2E.SPELLS['Chain Lightning']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Charm':
     Pathfinder2E.SPELLS.Charm
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
   'Chilling Darkness':
     Pathfinder2E.SPELLS['Chilling Darkness']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Evil', 'Unholy')
     .replaceAll('evil', 'spirit')
     .replace('celestials', 'holy creatures'),
   'Clairaudience':
     Pathfinder2E.SPELLS.Clairaudience
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Clairvoyance':
     Pathfinder2E.SPELLS.Clairvoyance
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Cleanse Affliction': // ref Neutralize Poison, Remove Curse, Remove Disease
     'Level=2 ' +
@@ -9536,31 +9509,25 @@ Pathfinder2ERemaster.SPELLS = {
       '"Reduces the stage of a curse, disease, or poison affecting touched by 1 (<b>heightened 3rd</b> attempts to counteract a disease or poison; <b>4th</b> attempts to counteract a curse, disease, or poison)"',
   'Cleanse Cuisine':
     Pathfinder2E.SPELLS['Purify Food And Drink']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"R10\' Enhances or removes contaminants from 1 cubic foot of food and drink (<b>heightened +2</b> affects +1 cubic foot)"',
   'Clear Mind':
-    Pathfinder2E.SPELLS['Remove Fear']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Remove Fear'] + ' ' +
     'Traits=Concentrate,Healing,Manipulate,Mental ' +
     'Description=' +
       '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched (<b>heightened 4th</b> can counteract confused, controlled, or slows; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
   'Command':
     Pathfinder2E.SPELLS.Command
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Confusion':
     Pathfinder2E.SPELLS.Confusion
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Contingency':
     Pathfinder2E.SPELLS.Contingency
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Control Water':
     Pathfinder2E.SPELLS['Control Water']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     // Duration from errata
     .replace('creatures', 'creatures for 1 hr (<b>save Fortitude</b> negates)'),
@@ -9573,334 +9540,264 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Creates a 20\'x20\'x10\' comfortable wooden cabin for 12 hr or until self exits"',
   'Create Food':
     Pathfinder2E.SPELLS['Create Food']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Create Water':
     Pathfinder2E.SPELLS['Create Water']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Creation':
     Pathfinder2E.SPELLS.Creation
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate')
     .replace('vegetable', 'earth or vegetable'),
   'Crisis Of Faith':
     Pathfinder2E.SPELLS['Crisis Of Faith']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Cursed Metamorphosis':
     Pathfinder2E.SPELLS['Baleful Polymorph']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Curse')
     .replace('Traditions=', 'Traditions=Occult,'),
   'Darkvision':
     Pathfinder2E.SPELLS.Darkvision
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Daze':
     Pathfinder2E.SPELLS.Daze
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate')
     .replace(/%\{.*\}/, '1d6'),
   'Deafness':
     Pathfinder2E.SPELLS.Deafness
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Desiccate':
     Pathfinder2E.SPELLS['Horrid Wilting']
-    .replace(/School=\w*/, '')
     .replace('negative', 'void') + ' ' +
     'Traits=Concentrate,Manipulate,Void',
   'Detect Magic':
     Pathfinder2E.SPELLS['Detect Magic']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate')
     .replace('school', 'rank'),
   'Detect Poison':
     Pathfinder2E.SPELLS['Detect Poison']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Detect Scrying':
     Pathfinder2E.SPELLS['Detect Scrying']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Detonate Magic':
     Pathfinder2E.SPELLS.Disjunction
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force (<b>save basic Reflex</b>)"',
   'Dinosaur Form':
     Pathfinder2E.SPELLS['Dinosaur Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Disappearance':
     Pathfinder2E.SPELLS.Disappearance
-    .replace(/School=\w*/, '')
     .replace('Illusion', 'Illusion,Manipulate,Subtle'),
   'Disguise Magic':
     Pathfinder2E.SPELLS['Magic Aura']
-    .replace(/School=\w*/, '')
     .replace('Uncommon', 'Concentrate,Manipulate')
     .replace('3rd', '2nd'),
   'Disintegrate':
     Pathfinder2E.SPELLS.Disintegrate
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Illusion,Manipulate,Subtle'),
   'Dispel Magic':
     Pathfinder2E.SPELLS['Dispel Magic']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Dispelling Globe':
     Pathfinder2E.SPELLS['Globe Of Invulnerability']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Divine Decree':
-    Pathfinder2E.SPELLS['Divine Decree']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Divine Decree'] + ' ' +
     'Traits=Concentrate,Manipulate,Sanctified,Spirit ' +
     'Description=' +
       '"R40\' 40\' emanation inflicts 7d10 HP spirit and enfeebled 2 for 1 min on foes (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, banishment, and, for creatures of level 10 and lower, paralysis for 1 min (<b>save Will</b> negates; critical failure inflicts death) (<b>heightened +1</b> inflicts +1d10 HP and increases the level of creatures that suffer paralysis by 2)"',
   'Divine Immolation':
     Pathfinder2E.SPELLS['Flame Strike']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate,Sanctified,Spirit') + ' ' +
     'Description=' +
       '"R120\' 20\' burst inflicts 6d6 HP fire or spirit and 2d6 HP persistent fire or spirit (<b>save Reflex</b> inflicts half initial HP only; critical success negates; critical failure inflicts double HP initial and persistent) (<b>heightened +1</b> inflicts +1d6 HP initial and persistent)"',
   'Divine Inspiration':
     Pathfinder2E.SPELLS['Divine Inspiration']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Divine Lance':
     Pathfinder2E.SPELLS['Divine Lance']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate,Sanctified,Spirit')
     .replace(/1d4+%\{.*\}/, '2d4'),
   'Divine Wrath':
-    Pathfinder2E.SPELLS['Divine Wrath']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Divine Wrath'] + ' ' +
     'Traits=Concentrate,Manipulate,Sanctified,Spirit' + ' ' +
     'Description=' +
       '"R120\' 20\' burst inflicts 4d10 HP spirit and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Dizzying Colors':
     Pathfinder2E.SPELLS['Color Spray']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Dominate':
     Pathfinder2E.SPELLS.Dominate
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate')
     .replace('Traditions=', 'Traditions=Divine,'),
   'Dragon Form':
     Pathfinder2E.SPELLS['Dragon Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal'
     .replace('+14', '+4d6'),
   'Dream Message':
     Pathfinder2E.SPELLS['Dream Message']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Dreaming Potential':
     Pathfinder2E.SPELLS['Dreaming Potential']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Duplicate Foe':
     Pathfinder2E.SPELLS['Duplicate Foe']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Earthbind':
     Pathfinder2E.SPELLS.Earthbind
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Earth,Manipulate'),
   'Earthquake':
     Pathfinder2E.SPELLS.Earthquake
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Eclipse Burst':
     Pathfinder2E.SPELLS['Eclipse Burst']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate')
     .replace('Negative', 'Void')
     .replaceAll('negative', 'void'),
   'Electric Arc':
     Pathfinder2E.SPELLS['Electric Arc']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace(/1d4+%\{.*\}/, '2d4'),
   'Elemental Form':
     Pathfinder2E.SPELLS['Elemental Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('air or fire', 'air, fire, or metal')
     .replace('earth or water', 'earth, water, or wood'),
   'Embed Message':
     Pathfinder2E.SPELLS['Magic Mouth']
-    .replace(/School=\w*/, '')
     .replace('Auditory', 'Concentrate,Manipulate')
     .replace(',Visual', '') + ' ' +
     'Description=' +
       '"Illusory text and a disembodied voice convey a specified message of up to 25 words the next time a specified trigger occurs within 30\' (<b>heightened 4th</b> can include additional sensory effects; <b>6th</b> message can repeat multiple times)"',
   'Energy Aegis':
     Pathfinder2E.SPELLS['Energy Aegis']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate')
     .replace('for 1 day', 'until next daily prep')
     .replace('negative, positive', 'vitality, void'),
   'Enfeeble':
-    Pathfinder2E.SPELLS['Ray Of Enfeeblement']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Ray Of Enfeeblement'] + ' ' +
     // Attack trait removed by errata
     'Traits=Concentrate,Manipulate ' +
     'Description=' +
       '"R30\' Inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1 for 1 rd; critical success negates; critical failure inflicts enfeebled 3 for 1 min)"',
   'Enlarge':
     Pathfinder2E.SPELLS.Enlarge
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Entangling Flora':
     Pathfinder2E.SPELLS.Entangle
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Wood')
     .replace('Primal', 'Arcane,Primal'),
   'Enthrall':
     Pathfinder2E.SPELLS.Enthrall
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Environmental Endurance':
     Pathfinder2E.SPELLS['Endure Elements']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Everlight':
     Pathfinder2E.SPELLS['Continual Flame']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description="Touched gemstone emits 20\' bright light until dismissed"',
   'Execute':
     Pathfinder2E.SPELLS['Finger Of Death']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate,Void')
     .replace('negative', 'void'),
   'Fabricated Truth':
     Pathfinder2E.SPELLS['Fabricated Truth']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Falling Stars':
     Pathfinder2E.SPELLS['Meteor Swarm']
-    .replace(/School=\w*/, '')
     .replace('Evocation,Fire', 'Concentrate,Manipulate')
     .replaceAll('fire', 'chosen energy'),
   'False Vision':
     Pathfinder2E.SPELLS['False Vision']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'False Vitality':
     Pathfinder2E.SPELLS['False Life']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate')
     .replace(/%\{.*\}/, '10'),
   'Fear':
     Pathfinder2E.SPELLS.Fear
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Feet To Fins':
     Pathfinder2E.SPELLS['Feet To Fins']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Field Of Life':
     Pathfinder2E.SPELLS['Field Of Life']
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Manipulate')
     .replaceAll('positive', 'vitality'),
   'Fiery Body':
     Pathfinder2E.SPELLS['Fiery Body']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('Produce Flame', 'Ignite'),
   'Figment':
     Pathfinder2E.SPELLS['Ghost Sound']
-    .replace(/School=\w*/, '')
     // Subtle trait added by errata
     .replace('Auditory', 'Concentrate,Manipulate,Subtle') + ' ' +
     'Description=' +
       '"R30\' Creates a simply illusory sound or vision while sustained"',
   'Fire Shield':
     Pathfinder2E.SPELLS['Fire Shield']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"Hovering shield with Hardness 10 and 40 HP gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on melee attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
   'Fireball':
     Pathfinder2E.SPELLS.Fireball
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Fleet Step':
     Pathfinder2E.SPELLS['Fleet Step']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Flicker':
     Pathfinder2E.SPELLS.Blink
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Floating Flame':
     Pathfinder2E.SPELLS['Flaming Sphere']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('; success negates', ''),
   'Fly':
     Pathfinder2E.SPELLS.Fly
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Occult,Primal',
   'Forbidding Ward':
     Pathfinder2E.SPELLS['Forbidding Ward']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Force Barrage':
     Pathfinder2E.SPELLS['Magic Missile']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replaceAll('missile', 'shard'),
   'Foresight':
     Pathfinder2E.SPELLS.Foresight
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate')
     .replace('flat-footed', 'off-guard'),
   'Freeze Time':
     Pathfinder2E.SPELLS['Time Stop']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Frostbite':
-    Pathfinder2E.SPELLS['Ray Of Frost']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Ray Of Frost'] + ' ' +
     // Attack trait removed by errata
     'Traits=Cantrip,Cold,Concentrate,Manipulate ' +
     'Description=' +
       '"R60\' Inflicts 2d4 HP cold (<b>save basic Fortitude</b>; critical failure also inflicts weakness 1 to bludgeoning for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP and weakness +1 to bludgeoning)"',
   'Gate':
     Pathfinder2E.SPELLS.Gate
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Gecko Grip':
     Pathfinder2E.SPELLS['Spider Climb']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Feather Fall':
     Pathfinder2E.SPELLS['Feather Fall']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Air,Concentrate'),
   'Ghostly Carrier':
     Pathfinder2E.SPELLS['Spectral Hand']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate')
     .replace(/ends the spell[^"]*/, 'ends the spell'),
   'Ghostly Weapon':
     Pathfinder2E.SPELLS['Ghostly Weapon']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Goblin Pox':
     Pathfinder2E.SPELLS['Goblin Pox']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Gouging Claw':
     'Level=1 ' +
@@ -9911,86 +9808,67 @@ Pathfinder2ERemaster.SPELLS = {
       '"Melee spell attack inflicts 2d6 HP choice of slashing or piercing, plus 2 HP persistent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
   'Grease':
     Pathfinder2E.SPELLS.Grease
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Grim Tendrils':
-    Pathfinder2E.SPELLS['Grim Tendrils']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Grim Tendrils'] + ' ' +
     'Traits=Concentrate,Manipulate,Void'
     .replaceAll('negative', 'void'),
   'Guidance':
     Pathfinder2E.SPELLS.Guidance
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate'),
   'Gust Of Wind':
     Pathfinder2E.SPELLS['Gust Of Wind']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Hallucination':
     Pathfinder2E.SPELLS.Hallucination
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Manipulate,Subtle,'),
   'Harm':
-    Pathfinder2E.SPELLS.Harm
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS.Harm + ' ' +
     'Traits=Manipulate,Void'
     .replaceAll('negative', 'void'),
   'Haste':
     Pathfinder2E.SPELLS.Haste
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Heal':
     Pathfinder2E.SPELLS.Heal
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Manipulate,Vitality'),
   'Heroism':
     Pathfinder2E.SPELLS.Heroism
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Hidden Mind':
     Pathfinder2E.SPELLS['Mind Blank']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Holy Light':
     Pathfinder2E.SPELLS['Searing Light']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Good', 'Holy')
     .replaceAll('good', 'spirit')
     .replace('fiends and undead', 'unholy creatures'),
   'Glibness':
     Pathfinder2E.SPELLS.Glibness
-    .replace(/School=\w*/, '')
     .replace('Uncommon,Enchantment', 'Concentrate,Manipulate'),
   'Howling Blizzard':
     Pathfinder2E.SPELLS['Cone Of Cold']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate,Air') + ' ' +
     'Description=' +
       '"60\' cone (3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Humanoid Form':
     Pathfinder2E.SPELLS['Humanoid Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Hydraulic Push':
     Pathfinder2E.SPELLS['Hydraulic Push']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Hydraulic Torrent':
     Pathfinder2E.SPELLS['Hydraulic Torrent']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Hypercognition':
     Pathfinder2E.SPELLS.Hypercognition
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate'),
   'Hypnotize':
     Pathfinder2E.SPELLS['Hypnotic Pattern']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Manipulate,Subtle,'),
   'Ignition':
     Pathfinder2E.SPELLS['Produce Flame']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace(/1d4\+%\{.*\} HP/, '2d4 HP (2d6 HP if a melee attack)'),
   'Ill Omen':
@@ -10002,22 +9880,18 @@ Pathfinder2ERemaster.SPELLS = {
       '"Target suffers worse of two rolls on next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
   'Illusory Creature':
     Pathfinder2E.SPELLS['Illusory Creature']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Concentrate,Manipulate,')
     .replace(/1d4\+%\{.*\}/, '3d4'),
   'Illusory Disguise':
     Pathfinder2E.SPELLS['Illusory Disguise']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Concentrate,Manipulate,') + ' ' +
     'Description=' +
       '"R30\' Makes the target appear different and gives +4 Deception, plus the target level if untrained, to avoid uncovering the disguise for 1 hr (<b>heightened 3rd</b> allows copying a specific individual; <b>4th</b> affects 10 targets; <b>7th</b> affects 10 targets and allows copying specific individuals)"',
   'Illusory Object':
     Pathfinder2E.SPELLS['Illusory Object']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
   'Illusory Scene':
     Pathfinder2E.SPELLS['Illusory Scene']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
   'Impaling Spike':
     'Level=5 ' +
@@ -10028,7 +9902,6 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Inflicts 8d6 HP piercing from cold iron and immobilized (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and off-guard) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Implosion':
     Pathfinder2E.SPELLS.Implosion
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Indestructibility':
     'Level=10 ' +
@@ -10038,23 +9911,19 @@ Pathfinder2ERemaster.SPELLS = {
     'Description="Gives self immunity to harm for 1 rd"',
   'Infuse Vitality':
     Pathfinder2E.SPELLS['Disrupting Weapons']
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality') + ' ' +
     'Cast=1 ' +
     'Description=' +
       '"Touched weapon (2 or 3 actions affect 2 or 3 actions) inflicts +1d4 HP vitality%{traits.Holy?\' and holy\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
   'Insect Form':
     Pathfinder2E.SPELLS['Insect Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Primal',
   'Interplanar Teleport':
     Pathfinder2E.SPELLS['Plane Shift']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Invisibility':
     Pathfinder2E.SPELLS.Invisibility
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Manipulate,Subtle'),
   'Invoke Spirits':
     'Level=5 ' +
@@ -10065,15 +9934,12 @@ Pathfinder2ERemaster.SPELLS = {
       '"R120\' 10\' burst, movable 30\' per rd, inflicts 2d4 HP mental and 2d4 HP void while sustained for up to 1 min (<b>save Will</b> negates; critical failure also inflicts frightened 2, plus fleeing in the first rd) (<b>heightened +2</b> inflicts +1d4 HP mental and void)"',
   'Item Facade':
     Pathfinder2E.SPELLS['Item Facade']
-    .replace(/School=\w*/, '')
     .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
   'Jump':
     Pathfinder2E.SPELLS.Jump
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Manipulate'),
   'Knock':
     Pathfinder2E.SPELLS.Knock
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Know The Way':
     Pathfinder2E.SPELLS['Know Direction']
@@ -10082,34 +9948,27 @@ Pathfinder2ERemaster.SPELLS = {
       '"Reveals which direction is north (<b>heightened 3rd</b> reveals direction to a location visited in the past week; <b>7th</b> reveals direction to a familiar location)"',
   'Laughing Fit':
     Pathfinder2E.SPELLS['Hideous Laughter']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Levitate':
     Pathfinder2E.SPELLS.Levitate
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Light':
     Pathfinder2E.SPELLS.Light
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Touched object', "R120' Orb"),
   'Lightning Bolt':
     Pathfinder2E.SPELLS['Lightning Bolt']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Liminal Doorway':
     Pathfinder2E.SPELLS['Rope Trick']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"Drawn doorway leads to an 20\' cubic extradimensional space for 8 hr or until erased"',
   'Locate':
     Pathfinder2E.SPELLS.Locate
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Lock':
     Pathfinder2E.SPELLS.Lock
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Mad Monkeys':
     'Level=3 ' +
@@ -10120,224 +9979,175 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Spiritual monkeys in a 5\' burst obey self order to Steal, screech to deafen for 1 rd (<b>save Fortitude</b> negates; critical failure deafens for 1 min), or interfere with manipulate actions for 1 rd (<b>save Reflex</b> negates; critical failure extends until the spell ends; a successful DC 5 flat check allows a specific manipulate action) while sustained for up to 1 min"',
   'Magic Passage':
     Pathfinder2E.SPELLS.Passwall
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   "Mariner's Curse":
     Pathfinder2E.SPELLS["Mariner's Curse"]
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Marvelous Mount':
     Pathfinder2E.SPELLS['Phantom Steed']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Description=' +
       '"R30\' Conjures a magical mount (Armor Class %{armorClass}, HP 10, 40\' Speed) that can be ridden only by a designated creature for 8 hr (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
   'Mask Of Terror':
     Pathfinder2E.SPELLS['Mask Of Terror']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Massacre':
     Pathfinder2E.SPELLS.Massacre
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void')
     .replaceAll('negative', 'void'),
   'Mending':
     Pathfinder2E.SPELLS.Mending
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('level', 'rank'),
   'Message':
     Pathfinder2E.SPELLS.Message
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Subtle,'),
   'Metamorphosis':
     Pathfinder2E.SPELLS.Shapechange
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('level', 'rank'),
   'Migration':
-    Pathfinder2E.SPELLS['Wind Walk']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Wind Walk'] + ' ' +
     'Traits=Concentrate,Manipulate,Polymorph'
     .replace('clouds', 'animals')
     .replace('MPH', 'MPH, have immunity to extreme cold and heat, and can transform into a Tiny or Small animal'),
   'Mind Probe':
     Pathfinder2E.SPELLS['Mind Probe']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Mind Reading':
     Pathfinder2E.SPELLS['Mind Reading']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Mindlink':
     Pathfinder2E.SPELLS.Mindlink
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate')
     .replace('Traditions=', 'Traditions=Arcane,'),
   'Mirage':
     Pathfinder2E.SPELLS['Hallucinatory Terrain']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Mislead':
     Pathfinder2E.SPELLS.Mislead
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Mist':
     Pathfinder2E.SPELLS['Obscuring Mist']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Moment Of Renewal':
     Pathfinder2E.SPELLS['Moment Of Renewal']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Monstrosity Form':
     Pathfinder2E.SPELLS['Monstrosity Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('purple', 'cave'),
   'Moon Frenzy':
     Pathfinder2E.SPELLS['Moon Frenzy']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Stoneskin':
     Pathfinder2E.SPELLS.Stoneskin
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Mystic Armor':
-    Pathfinder2E.SPELLS['Mage Armor']
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS['Mage Armor'] + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal',
   'Nature Incarnate':
     Pathfinder2E.SPELLS['Nature Incarnate']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   "Nature's Pathway":
     Pathfinder2E.SPELLS['Tree Stride']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate,Mental')
     .replace(' of the same species', ''),
   'Never Mind':
     Pathfinder2E.SPELLS.Feeblemind
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Nightmare':
     Pathfinder2E.SPELLS.Nightmare
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Noise Blast':
     Pathfinder2E.SPELLS['Sound Burst']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Traditions=', 'Traditions=Arcane,'),
   'Oaken Resilience':
     Pathfinder2E.SPELLS.Barkskin
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate,Wood')
     .replace('Traditions=', 'Traditions=Arcane,'),
   'One With Plants':
     Pathfinder2E.SPELLS['Tree Shape']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Wood')
     .replace('8 hr', '8 hr or merges into plant matter for 10 min'),
   'One With Stone':
     Pathfinder2E.SPELLS['Meld Into Stone']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Polymorph') + ' ' +
     'Description=' +
       '"Self becomes a block of stone with Armor Class 23 for 8 hr or merges into stone for 10 min"',
   "Outcast's Curse":
     Pathfinder2E.SPELLS["Outcast's Curse"]
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Overwhelming Presence':
     Pathfinder2E.SPELLS['Overwhelming Presence']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Paralyze':
     Pathfinder2E.SPELLS.Paralyze
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Paranoia':
     Pathfinder2E.SPELLS.Paranoia
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Peaceful Bubble':
     Pathfinder2E.SPELLS['Private Sanctum']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate')
-    .replace('until next daily prep', 'for 24 hours; sleeping within for 8 hours reduces doomed conditions by 2'),
+    .replace('until next daily prep', 'for 24 hr; sleeping within for 8 hr reduces doomed conditions by 2'),
   'Peaceful Rest':
     Pathfinder2E.SPELLS['Gentle Repose']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Pest Form':
     Pathfinder2E.SPELLS['Pest Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Pest Cache':
     'Level=1 ' +
     'Traits=Extradimensional,Manipulate ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
-    'Description="Moves companion into a pocket dimension for up to 8 hours"',
+    'Description="Moves companion into a pocket dimension for up to 8 hr"',
   'Petrify':
     Pathfinder2E.SPELLS['Flesh To Stone']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Earth,Manipulate'),
   'Phantasmagoria':
     Pathfinder2E.SPELLS.Weird
-    .replace(/School=\w*/, '')
     .replace('Emotion,Fear', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
       '"R120\' Inflicts 16d6 HP mental and confused for 1 rd on all targets within range (<b>save Will</b> inflicts half HP loss of reactions for 1 rd; critical success negates; critical failure inflicts double HP and confused for 1 min)"',
   'Phantasmal Calamity':
     Pathfinder2E.SPELLS['Phantasmal Calamity']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Phantasmal Minion':
     Pathfinder2E.SPELLS['Unseen Servant']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate,Summon'),
   'Phantom Pain':
     Pathfinder2E.SPELLS['Phantom Pain']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Pinpoint':
     Pathfinder2E.SPELLS['Discern Location']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Planar Palace':
     Pathfinder2E.SPELLS['Magnificent Mansion']
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Planar Seal':
     Pathfinder2E.SPELLS['Dimensional Lock']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Planar Tether':
     Pathfinder2E.SPELLS['Dimensional Anchor']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Plant Form':
     Pathfinder2E.SPELLS['Plant Form']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Wood'),
   'Possession':
     Pathfinder2E.SPELLS.Possession
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Prestidigitation':
     Pathfinder2E.SPELLS.Prestidigitation
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Project Image':
     Pathfinder2E.SPELLS['Project Image']
-    .replace(/School=\w*/, '')
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Protection':
-    Pathfinder2E.SPELLS.Protection
-    .replace(/School=\w*/, '') + ' ' +
+    Pathfinder2E.SPELLS.Protection + ' ' +
     'Traits=Concentrate,Manipulate ' +
     'Description=' +
       '"Touched gains +1 Armor Class and saves for 1 min (<b>heightened 3rd</b> effects allies in a 10\' emanation around target)"',
@@ -10350,78 +10160,62 @@ Pathfinder2ERemaster.SPELLS = {
       '"15\' cone inflicts 2d4 HP bludgeon and a 5\' push (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +2d4 HP)"',
   'Punishing Winds':
     Pathfinder2E.SPELLS['Punishing Winds']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
-  'Quandry':
+  'Quandary':
     Pathfinder2E.SPELLS.Maze
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate')
     .replace('maze', 'puzzle room')
-    .replace('Survial or', 'Thievery, Occultism, or'),
+    .replace('Survival or', 'Thievery, Occultism, or'),
   'Raise Dead':
     Pathfinder2E.SPELLS['Raise Dead']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Read Aura':
     Pathfinder2E.SPELLS['Read Aura']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate')
     .replace('the related school of magic', 'gives +2 to Identify Magic on it'),
   'Read Omens':
     Pathfinder2E.SPELLS['Read Omens']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Regenerate':
     Pathfinder2E.SPELLS.Regenerate
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
   'Remake':
     Pathfinder2E.SPELLS.Remake
-    .replace(/School=\w*/, '')
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Repulsion':
     Pathfinder2E.SPELLS.Repulsion
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Resist Energy':
     Pathfinder2E.SPELLS['Resist Energy']
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Retrocognition':
     Pathfinder2E.SPELLS.Retrocognition
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Occult',
   'Revealing Light':
     Pathfinder2E.SPELLS['Faerie Fire']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Description=' +
       '"R120\' 10\' burst dazzles makes concealed creatures visible and invisible creatures concealed for 1 min (<b>save Reflex</b> effects last 2 rd; critical success negates; critical failure effects last 10 min)"',
   'Revival':
     Pathfinder2E.SPELLS.Revival
-    .replace(/School=\w*/, '')
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
   'Rewrite Memory':
     Pathfinder2E.SPELLS['Modify Memory']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Ring Of Truth':
     // Note: assume casting time remains the same
     Pathfinder2E.SPELLS['Zone Of Truth']
-    .replace(/School=\w*/, '')
     .replace('Enchantment', 'Concentrate,Manipulate,Detection')
     .replace(/; critical failure[^)]/, ''),
   'Runic Body':
     Pathfinder2E.SPELLS['Magic Fang']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('for 1 min', 'for 1 min (<b>heightened 6th</b> gives +2 attack; <b>9th</b> gives +3 attack') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal',
   'Runic Weapon':
     Pathfinder2E.SPELLS['Magic Weapon']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate')
     .replace('for 1 min', 'for 1 min (<b>heightened 6th</b> gives +2 attack; <b>9th</b> gives +3 attack') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal',
@@ -10434,59 +10228,122 @@ Pathfinder2ERemaster.SPELLS = {
       '"10\'x10\'x60\' area gives +2 Armor Class, +2 saves, and resistance 5 to damage from the terrain and environment while sustained for up to 1 min (<b>heightened 5th</b> gives resistance 10 and extends area to 120\'; <b>8th</b> gives resistance 15 and extends area to 500\'"',
   'Sanctuary':
     Pathfinder2E.SPELLS.Sanctuary
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Scouting Eye':
     Pathfinder2E.SPELLS['Prying Eye']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Scrying':
     Pathfinder2E.SPELLS.Scrying
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'See The Unseen':
     Pathfinder2E.SPELLS['See Invisibility']
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Seize Soul':
     Pathfinder2E.SPELLS['Bind Soul']
-    .replace(/School=\w*/, '')
     .replace('Evil,Necromancy', 'Unholy,Concentrate,Manipulate'),
   'Sending':
     Pathfinder2E.SPELLS.Sending
-    .replace(/School=\w*/, '')
     .replace('Divination', 'Concentrate,Manipulate'),
   'Shadow Blast':
     Pathfinder2E.SPELLS['Shadow Blast']
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('5d8', '6d8'),
   'Shape Stone':
     Pathfinder2E.SPELLS['Shape Stone']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Shape Wood':
     Pathfinder2E.SPELLS['Shape Wood']
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate,Wood') + ' ' +
     'Traditions=Arcane,Primal',
   'Share Life':
     Pathfinder2E.SPELLS['Shield Other']
-    .replace(/School=\w*/, '')
     .replace('Necromancy', 'Concentrate,Manipulate'),
   'Shatter':
     Pathfinder2E.SPELLS.Shatter
-    .replace(/School=\w*/, '')
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Shield':
     Pathfinder2E.SPELLS.Shield
-    .replace(/School=\w*/, '')
     .replace('Abjuration', 'Concentrate')
     .replace(/\(.*\)/, '(<b>heightened +2</b> gives Hardness +5)'),
   'Shrink':
     Pathfinder2E.SPELLS.Shrink
-    .replace(/School=\w*/, '')
     .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Sigil':
+    Pathfinder2E.SPELLS.Sigil
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Silence':
+    Pathfinder2E.SPELLS.Silence
+    .replace('Traits=', 'Traits=Subtle,Manipulate,'),
+  'Sleep':
+    Pathfinder2E.SPELLS.Sleep
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Slither':
+    Pathfinder2E.SPELLS['Black Tentacles']
+    .replace('Conjuration', 'Concentrate,Manipulate,Shadow') + ' ' +
+    'Description=' +
+      '"R120\' 20\' bursts inflict 3d6 HP piercing, 1d6 HP persistent poison, and grabbed for 1 min; requires a successful success on a DC %{spellDifficultyClass.%tradition} Escape or inflicting 12 HP vs. Armor Class %{spellDifficultyClass.%tradition} to escape (<b>save Reflex</b> negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +1d6 HP persistent poison and requires +6 HP damage to escape)"',
+  'Slow':
+    Pathfinder2E.SPELLS.Slow
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Soothe':
+    Pathfinder2E.SPELLS.Soothe
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Sound Body':
+    Pathfinder2E.SPELLS['Restore Senses']
+    .replace('Necromancy', 'Concentrate,Manipulate,Vitality') + ' ' +
+    'Description=' +
+      '"Makes a counteract attempt vs. a magical blinded, dazzled, deafness, enfeebled, or sickened effect affecting touched; failure that would succeed against an effect 2 ranks lower suppresses the effect for 1 rd (<b>heightened 4th</b> attempts to counteract drained; <b>8th</b> attempts to counteract stunned)"',
+  'Speak With Animals':
+    Pathfinder2E.SPELLS['Speak With Animals']
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('10 min', '1 hr'),
+  'Speak With Plants':
+    Pathfinder2E.SPELLS['Speak With Plants']
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('10 min', '1 hr (<b>heightened 4th</b> effects last 8 hr') + ' ' +
+    'Level=3',
+  'Speak With Stones':
+    Pathfinder2E.SPELLS['Stone Tell']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('10 min', '1 hr (<b>heightened 6th</b> effects last 8 hr') + ' ' +
+    'Level=5',
+  'Spellwrack':
+    Pathfinder2E.SPELLS.Spellwrack
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Spider Sting':
+    Pathfinder2E.SPELLS['Spider Sting']
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Spirit Blast':
+    Pathfinder2E.SPELLS['Spirit Blast']
+    .replace('Force,Necromancy', 'Concentrate,Manipulate,Spirit')
+    .replace('force', 'spirit'),
+  'Spirit Link':
+    Pathfinder2E.SPELLS['Spirit Link']
+    .replace('Necromancy', 'Concentrate,Manipulate,Spirit'),
+  'Spiritual Armament':
+    Pathfinder2E.SPELLS['Spiritual Weapon']
+    .replace('Evocation,Force', 'Concentrate,Manipulate,Sanctified,Spirit')
+    .replace(/\+%\{.*\}/, 'spell')
+    .replace('1d8 HP force', '2d8 HP spirit'),
+  'Spiritual Guardian':
+    Pathfinder2E.SPELLS['Spiritual Guardian']
+    .replace('Abjuration,Force', 'Concentrate,Manipulate,Sanctified,Spirit')
+    .replace(/\+%\{.*\} /, '')
+    .replace('2d8 HP force', '3d8 HP spirit'),
+  'Stabilize':
+    Pathfinder2E.SPELLS.Stabilize
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
+  'Status':
+    Pathfinder2E.SPELLS.Status
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Stupefy':
+    Pathfinder2E.SPELLS['Touch Of Idiocy']
+    .replace('Enchantment', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R30\' Inflicts stupefied 2 for 1 min (<b>save Will</b> inflicts stupefied 1 for 1 rd; critical success negates; critical failure inflicts stupefied 3)"',
+  'Subconscious Suggestion':
+    Pathfinder2E.SPELLS['Subconscious Suggestion']
+    .replace('Enchantment', 'Concentrate,Manipulate,Subtle'),
 
   // TODO
   'Commanding Lash':
@@ -11172,13 +11029,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Soothe':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Counter Performance':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11186,28 +11036,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Regenerate':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Tangling Creepers':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Plant Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Silence':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11410,20 +11239,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Phantasmal Minion':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Revealing Light':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Song Of Strength':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11453,6 +11268,9 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"'
 };
+for(let s in Pathfinder2ERemaster.SPELLS)
+  Pathfinder2ERemaster.SPELLS[s] =
+    Pathfinder2ERemaster.SPELLS[s].replace(/School=\w*/, '');
 Pathfinder2ERemaster.WEAPONS = {
 
   'Fist':Pathfinder2E.WEAPONS.Fist,
@@ -12466,7 +12284,7 @@ Pathfinder2ERemaster.heritageRulesExtra = function(rules, name) {
        '1:Horned Exemplar:Draconic Exemplar',
        '1:Mirage Exemplar:Draconic Exemplar',
        '1:Omen Exemplar:Draconic Exemplar'
-       ], 'Draconic Examplar', 'dragonbloodLevel', true);
+       ], 'Draconic Exemplar', 'dragonbloodLevel', true);
   }
 };
 
