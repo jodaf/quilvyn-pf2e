@@ -8446,7 +8446,8 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
-    'Description="Teleports self to a visible location within 120\' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
+    'Description=' +
+      '"Teleports self to a visible location within 120\' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)"',
   'Dimensional Anchor':
     'Level=4 ' +
     'Traits=Abjuration ' +
@@ -10520,7 +10521,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts -10\' Speed for 1 rd, or immobilized 1 for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
+      '"R30\' Spell attack inflicts -10\' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)"',
   'Tangling Creepers':
     'Level=6 ' +
     'Traits=Conjuration,Plant ' +
@@ -10528,7 +10529,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R500\' 40\' burst inflicts -10\' Speed and immobilizes 1 target for 1 rd (a successful Escape negates) each rd for 10 min"',
+      '"R500\' 40\' burst inflicts -10\' Speed, and a successful unarmed attack immobilizes 1 target for 1 rd (a successful Escape negates), each rd for 10 min"',
   'Telekinetic Haul':
     'Level=5 ' +
     'Traits=Evocation ' +
@@ -10646,7 +10647,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies\' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls"',
+      '"R60\' Allies\' attacks within 1 rd on a designated creature use the better of two attack rolls and ignore circumstance penalties and concealed and hidden conditions"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'Traits=Enchantment,Incapacitation,Mental ' +
@@ -16683,7 +16684,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
       text.split(/\s*;\s*/).forEach(improvement => {
         let m = improvement.match(/Choose\s+(\d+)\s+from\s+([\w,\s]*)/i);
         if(!m) {
-          ; // Improve specific skill; nothing to allocate
+          // Improve specific skill; nothing to allocate
         } else {
           howMany = +m[1];
           if(m[2].match(/^any$/i))
