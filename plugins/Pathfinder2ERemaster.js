@@ -10412,6 +10412,87 @@ Pathfinder2ERemaster.SPELLS = {
   'Synaptic Pulse':
     Pathfinder2E.SPELLS['Synaptic Pulse']
     .replace('Enchantment', 'Concentrate,Manipulate,Metal'),
+  'Tailwind':
+    Pathfinder2E.SPELLS.Longstrider
+    .replace('Transmutation', 'Concentrate,Manipulate,Air'),
+  'Talking Corpse':
+    Pathfinder2E.SPELLS['Talking Corpse']
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Tangle Vine':
+    Pathfinder2E.SPELLS.Tanglefoot
+    .replace('Conjuration', 'Concentrate,Manipulate,Wood'),
+  'Tangling Creepers':
+    Pathfinder2E.SPELLS['Tangling Creepers']
+    .replace('Conjuration', 'Concentrate,Manipulate,Wood') + ' ' +
+    'Traditions=Arcane,Primal',
+  'Telekinetic Hand':
+    Pathfinder2E.SPELLS['Mage Hand']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Telekinetic Haul':
+    Pathfinder2E.SPELLS['Telekinetic Haul']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Telekinetic Maneuver':
+    Pathfinder2E.SPELLS['Telekinetic Maneuver']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Telekinetic Projectile':
+    Pathfinder2E.SPELLS['Telekinetic Projectile']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace(/1d6+%\{.*\}/, '2d6'),
+  'Telepathy':
+    Pathfinder2E.SPELLS.Telepathy
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Teleport':
+    Pathfinder2E.SPELLS.Teleport
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Thunderstrike':
+    Pathfinder2E.SPELLS['Shocking Grasp']
+    .replace('Electricity,Evocation', 'Concentrate,Manipulate,Sonic') + ' ' +
+    'Description=' +
+      '"R120\' Inflicts 1d12 HP electricity and 1d4 HP sonic (<b>save basic Reflex</b>; targets in metal armor suffer -1 save and clumsy 1 for 1 rd (<b>heightened +1</b> inflicts +1d12 HP electricity and +1d4 HP sonic)"',
+  'Toxic Cloud':
+    Pathfinder2E.SPELLS.Cloudkill
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Translate':
+    Pathfinder2E.SPELLS['Comprehend Language']
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Translocate':
+    Pathfinder2E.SPELLS['Dimension Door']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Tree Of Seasons':
+    Pathfinder2E.SPELLS['Fire Seeds']
+    .replace('Evocation,Fire', 'Concentrate,Manipulate,Wood') + ' ' +
+    'Description=' +
+      '"Creates 4 seedpods that can be thrown 30\', inflicting 6d6 HP electricity, fire, poison, or cold in a 5\' burst within 1 min (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP)"',
+  'True Target':
+    Pathfinder2E.SPELLS['True Target']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Truesight':
+    Pathfinder2E.SPELLS['True Seeing']
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Truespeech':
+    Pathfinder2E.SPELLS.Tongues
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Umbral Journey':
+    Pathfinder2E.SPELLS['Shadow Walk']
+    .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"Allows self and 10 willing touched to travel through the Netherworld at 72x Speed for 8 hr"',
+  'Uncontrollable Dance':
+    Pathfinder2E.SPELLS['Uncontrollable Dance']
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('flat-footed', 'off-guard'),
+  'Unfathomable Song':
+    Pathfinder2E.SPELLS['Unfathomable Song']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Unfettered Movement':
+    Pathfinder2E.SPELLS['Freedom Of Movement']
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Unfettered Pack':
+    Pathfinder2E.SPELLS['Unfettered Pack']
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Unrelenting Observation':
+    Pathfinder2E.SPELLS['Unrelenting Observation']
+    .replace('Divination', 'Concentrate,Manipulate'),
 
   // TODO
   'Commanding Lash':
@@ -10552,13 +10633,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Tempest Surge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Unfettered Movement':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11104,13 +11178,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Tangling Creepers':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Protective Wards':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11140,13 +11207,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Scramble Body':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Translocate':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
