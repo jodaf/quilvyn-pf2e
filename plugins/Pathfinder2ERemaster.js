@@ -10493,6 +10493,72 @@ Pathfinder2ERemaster.SPELLS = {
   'Unrelenting Observation':
     Pathfinder2E.SPELLS['Unrelenting Observation']
     .replace('Divination', 'Concentrate,Manipulate'),
+  'Vampiric Exsanguination':
+    Pathfinder2E.SPELLS['Vampiric Exsanguination']
+    .replace('Necromancy', 'Concentrate,Manipulate,Void')
+    .replaceAll('negative', 'void'),
+  'Vampiric Feast':
+    Pathfinder2E.SPELLS['Vampiric Touch']
+    .replace('Necromancy', 'Concentrate,Manipulate,Void')
+    .replaceAll('negative', 'void'),
+  'Vanishing Tracks':
+    Pathfinder2E.SPELLS['Pass Without Trace']
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Gaseous Form':
+    Pathfinder2E.SPELLS['Gaseous Form']
+    .replace('Transmutation', 'Concentrate,Manipulate,Air'),
+  'Nondetection':
+    Pathfinder2E.SPELLS.Nondetection
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Ventriloquism':
+    Pathfinder2E.SPELLS.Ventriloquism
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Vibrant Pattern':
+    Pathfinder2E.SPELLS['Vibrant Pattern']
+    .replace('Traits=', 'Traits=Manipulate,Subtle,'),
+  'Vision Of Death':
+    Pathfinder2E.SPELLS['Phantasmal Killer']
+    .replace('Illusion', 'Concentrate,Manipulate') + ' ' +
+    'Description=' +
+      '"R120\' Inflicts 8d6 HP mental, frightened 2, and death if taken to 0 HP (<b>save Will</b> inflicts half HP, frightened 1, and death at 0 HP; critical success negates; critical failure double HP, frightened 4, death at 0 HP, and fleeing until no longer frightened) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Vital Beacon':
+    Pathfinder2E.SPELLS['Vital Beacon']
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
+  'Vitality Lash':
+    Pathfinder2E.SPELLS['Disrupt Undead']
+    .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality')
+    .replace(/1d6+%\{.*\}/, '2d6'),
+  'Void Warp':
+    Pathfinder2E.SPELLS['Chill Touch']
+    .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void') + ' ' +
+    'Description=' +
+      '"Touch inflicts 2d4 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP)"',
+  'Volcanic Eruption':
+    Pathfinder2E.SPELLS['Volcanic Eruption']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Wails Of The Damned':
+    Pathfinder2E.SPELLS['Wail Of The Banshee']
+    .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void')
+    .replaceAll('negative', 'void'),
+  'Wall Of Fire':
+    Pathfinder2E.SPELLS['Wall Of Fire']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Wall Of Force':
+    Pathfinder2E.SPELLS['Wall Of Force']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Wall Of Ice':
+    Pathfinder2E.SPELLS['Wall Of Ice']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Wall Of Stone':
+    Pathfinder2E.SPELLS['Wall Of Stone']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Wall Of Thorns':
+    Pathfinder2E.SPELLS['Wall Of Thorns']
+    .replace('Conjuration', 'Concentrate,Manipulate,Wood') + ' ' +
+    'Traditions=Arcane,Primal',
+  'Wall Of Wind':
+    Pathfinder2E.SPELLS['Wall Of Wind']
+    .replace('Evocation', 'Concentrate,Manipulate'),
 
   // TODO
   'Commanding Lash':
@@ -11789,15 +11855,20 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
 Pathfinder2ERemaster.ancestryRules = function(
   rules, name, hitPoints, features, selectables, languages, traits
 ) {
-  let prefix = name.charAt(0) + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.ancestryRules
     (rules, name, hitPoints, features, selectables, languages, traits);
+  let prefix = name.charAt(0) + name.substring(1).replaceAll(' ', '');
   selectables = rules.getChoices('selectableFeatures');
+  // This duplicates code in heritageRules; replicating it here ensures that
+  // versatile heritages work with homebrew heritages
   for(let s in selectables) {
-    if(s.includes(name) && selectables[s].includes('Heritage'))
-      rules.addChoice('selectableHeritages', s, selectables[s]);
-    else if(s.includes('Versatile Heritage'))
-      rules.defineRule(prefix + 'HeritageCount', 'features.' + s, '+=', '1');
+    if(s.includes('Versatile Heritage') && !selectables[s].includes(name)) {
+      rules.defineRule(prefix + 'HeritageCount',
+        'features.' + s, '+=', 'dict.ancestry=="' + name + '" ? 1 : null'
+      );
+      selectables[s] =
+        selectables[s].replace('Type=', 'Type="' + name + ' (Heritage)",');
+    }
   }
 };
 
@@ -12389,12 +12460,15 @@ Pathfinder2ERemaster.heritageRules = function(
   rules.defineRule
     ('heritage', 'features.' + name, '=', '"' + name + ' " + dict.ancestry');
   for(let a in rules.getChoices('ancestrys')) {
-    let prefix = a.charAt(0).toLowerCase() + a.substring(1).replaceAll(' ', '');
-    rules.defineRule(prefix + 'HeritageCount',
-      'features.' + name, '+=', 'dict.ancestry=="' + a + '" ? 1 : null'
-    );
-    selectables[s] =
-      selectables[s].replace('Type=', 'Type="' + a + ' (Heritage)",');
+    if(!selectables[s].includes(a)) {
+      let prefix =
+        a.charAt(0).toLowerCase() + a.substring(1).replaceAll(' ', '');
+      rules.defineRule(prefix + 'HeritageCount',
+        'features.' + name, '+=', 'dict.ancestry=="' + a + '" ? 1 : null'
+      );
+      selectables[s] =
+        selectables[s].replace('Type=', 'Type="' + a + ' (Heritage)",');
+    }
   }
 
 };
