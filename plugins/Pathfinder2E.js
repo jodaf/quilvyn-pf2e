@@ -55,6 +55,7 @@ function Pathfinder2E() {
   );
   rules.defineChoice('preset',
     'ancestry:Ancestry,select-one,ancestrys',
+    'selectableFeatures:Heritage,set,selectableHeritages',
     'background:Background,select-one,backgrounds',
     'class:Class,select-one,levels',
     'level:Level,text,3',
@@ -1468,7 +1469,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Divine Ally (Shield && features.The Tenets Of Good || features.Shield Block"',
+      '"features.Divine Ally (Shield) && features.The Tenets Of Good || features.Shield Block"',
   'Smite Evil':
     'Traits=Class,Champion ' +
     'Require=' +
@@ -10759,7 +10760,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, -10\' Speed, and clumsy 1, plus a 20\' descent and difficult terrain on flying creatures (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
+      '"R120\' 5\'x80\' cylinder inflicts 14d6 HP fire, a 20\' descent and difficult terrain on flying creatures, and -10\' Speed and clumsy 1 until a successful escape (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP), and 3d6 HP fire to creatures within 5\' (<b>heightened +1</b> inflicts +2d6 HP and +1d6 HP within 5\')"',
   'Wail Of The Banshee':
     'Level=9 ' +
     'Traits=Auditory,Death,Necromancy,Negative ' +
@@ -13237,6 +13238,12 @@ Pathfinder2E.ancestryRules = function(
 
   rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
   rules.defineChoice('extras', prefix + 'Features');
+
+  selectables = rules.getChoices('selectableFeatures');
+  for(let s in selectables) {
+    if(s.includes(name) && selectables[s].includes('Heritage'))
+      rules.addChoice('selectableHeritages', s, selectables[s]);
+  }
 
 };
 
