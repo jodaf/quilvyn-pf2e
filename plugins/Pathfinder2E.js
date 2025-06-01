@@ -4012,11 +4012,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can use concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
-    'Section=feature,feature,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
-      '"Has the Intimidating Glare feature",' +
-      '"Has the Scare To Death feature",' +
-      '"Can use Demoralize during rage"',
+      '"Has the Intimidating Glare and Scare To Death features",' +
+      '"Can use Demoralize and Scare To Death during rage"',
   'Raging Thrower':
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
@@ -8352,7 +8351,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
+      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=1 ' +
     'Traits=Cantrip,Evocation,Light ' +
@@ -10386,7 +10385,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+      '"R800\' 360\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP acid (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), difficult terrain and concealment, or deafened for 10 min (<b>save Fortitude</b> negates) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
   'Subconscious Suggestion':
     'Level=5 ' +
     'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
@@ -10864,7 +10863,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Weapon swing inflicts 4 dice of damage to every creature in a 30\' cone or 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
+      '"Weapon swing inflicts 4 dice of damage to every creature in a 30\' cone or a 10\' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)"',
   'Web':
     'Level=2 ' +
     'Traits=Conjuration ' +
