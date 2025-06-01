@@ -7767,7 +7767,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Mighty Rage':Pathfinder2E.FEATURES['Mighty Rage'],
   // Perception Mastery as above
   'Quick-Tempered':
-    'Action=Free Section=combat Note="Enters rage during initiative"',
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Enters rage during initiative when unencumbered and in medium or lighter armor"',
   'Rage':Pathfinder2E.FEATURES.Rage,
   'Raging Resistance (Animal)':
     Pathfinder2E.FEATURES['Raging Resistance (Animal)'],
@@ -7826,48 +7828,62 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Reduces flat check to attack a concealed or hidden target to 3 or 9"',
   // Swipe as above
   'Wounded Rage':Pathfinder2E.FEATURES['Wounded Rage'],
-/*
-  'Animal Skin':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Defense Expert (Unarmored Defense)",' +
-      '"+%{($\'features.Greater Juggernaut\'?3:2)-(dexterityModifier-3>?0)} Armor Class in no armor during rage"',
-  // Reactive Strike as above
+  'Animal Skin':Pathfinder2E.FEATURES['Animal Skin'],
   'Brutal Bully':
-    'Section=combat ' +
-    'Note="A successful Disarm, Grapple, Shove, or Trip during rage inflicts %{strengthModifier} HP bludgeoning"',
-  'Cleave':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious"',
+    Pathfinder2E.FEATURES['Brutal Bully']
+    .replace('Shove', 'Reposition, Shove'),
+  'Cleave':Pathfinder2E.FEATURES.Cleave,
   "Dragon's Rage Breath":
+    Pathfinder2E.FEATURES["Dragon's Rage Breath"] + ' ' +
+    'Note="Breath inflicts %{level}d6 damage in a 30\' cone once per 10 min (<b>save basic Reflex</b>)"',
+  "Giant's Stature":Pathfinder2E.FEATURES["Giant's Stature"],
+  'Inner Strength':
+    'Action=1 Section=save Note="Reduces enfeebled condition by 1"',
+  'Mage Hunter':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Breath inflicts %{level}d6 damage in a 30\' cone or 60\' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)"',
-  "Giant's Stature":
+    'Note="Successful Stride on a spell caster inflcits stupefied 1 for 1 rd, or stupefied 2 on a critical hit"',
+  'Nocturnal Senses':
+    'Section=feature ' +
+    'Note="Low-Light Vision becomes Darkvision while raging and imprecise scent range increases to 60\'"',
+  // Reactive Strike as above
+  'Scouring Rage':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Upon entering rage, 20\' emanation inflicts %{level} HP modified rage damage type on foes (<b>save basic Fortitude</b>)"',
+  "Spirits' Interference":Pathfinder2E.FEATURES["Spirits' Interference"],
+  'Animalistic Brutality':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Increases size to Large, giving +5\' reach and clumsy 1, until rage ends"',
-  "Spirits' Interference":
+    'Note="Unarmed attack gains backswing, forceful, parry, or razing trait until rage ends"',
+  'Disarming Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends"',
-  'Animal Rage':
-    'Action=1 Section=magic Note="Transforms self into spirit animal"',
-  'Furious Bully':'Section=combat Note="+2 Athletics for attacks during rage"',
+    'Note="Successful melee Strike allows an Athletics check to Disarm"',
+  'Follow-Up Assault':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Follows a melee Strike miss with another with the backswing and forceful traits"',
+  'Friendly Toss':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Throws an adjacent ally to a space within 30\', where it can use a Reaction for a melee Strike against a foe"',
+  'Furious Bully':Pathfinder2E.FEATURES['Furious Bully'],
+  'Instinctive Strike':
+    'Section=combat ' +
+    'Note="Melee Strikes against scent-detected foes ignore concealed and hidden"',
+  'Invulnerable Rager':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Defense %V (Heavy Armor)",' +
+      '"May use Quick-Tempered action in heavy armor"',
   'Renewed Vigor':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Gives %{level//2+constitutionModifier} temporary Hit Points"',
-  'Share Rage':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="R30\' Gives an ally the effects of Rage once per rage"',
+    Pathfinder2E.FEATURES['Renewed Vigor']
+    .replace('Hit Points', 'Hit Points, or %{level+constitutionModifier} after attacking'),
+  'Share Rage':Pathfinder2E.FEATURES['Share Rage'],
   // Sudden Leap as above
-  'Thrash':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>)"',
+  'Thrash':Pathfinder2E.FEATURES.Thrash,
+/*
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
@@ -12276,6 +12292,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
+  } else if(name == 'Invulnerable Rager') {
+    rules.defineRule('combatNotes.Invulnerable Rager',
+      'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'
+    )
   } else if(name.startsWith('Iruxi Armaments')) {
     if(name == 'Iruxi Armaments (Claws)') {
       rules.defineRule('weaponDieSidesBonus.Claws',
