@@ -7786,48 +7786,47 @@ Pathfinder2ERemaster.FEATURES = {
   // Reflex Expertise as above
   // Weapon Specialization as above
 
-/*
-  'Acute Vision':
-    'Section=feature Note="Has the Darkvision feature during rage"',
-  'Moment Of Clarity':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can use concentration actions for the remainder of the turn during rage"',
-  'Raging Intimidation':
-    'Section=feature,feature,skill ' +
+  'Acute Vision':Pathfinder2E.FEATURES['Acute Vision'],
+  'Adrenaline Rush':
+    'Section=ability,skill ' +
     'Note=' +
-      '"Has the Intimidating Glare feature",' +
-      '"Has the Scare To Death feature",' +
-      '"Can use Demoralize during rage"',
-  'Raging Thrower':
-    'Section=combat ' +
-    'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
+      '"+2 encumberance and maxiumum Bulk during rage",' +
+      '"+1 Athletics to lift, Escape, and Force Open during rage"',
+  'Draconic Arrogance':'Section=save Note="+2 vs. emotion effects during rage"',
+  'Moment Of Clarity':Pathfinder2E.FEATURES['Moment Of Clarity'],
+  'Raging Intimidation':Pathfinder2E.FEATURES['Raging Intimidation'],
+  'Raging Thrower':Pathfinder2E.FEATURES['Raging Thrower'],
   // Sudden Charge as above
-  'Acute Scent':'Section=skill Note="Has 30\' imprecise scent during rage"',
-  'Furious Finish':
-    'Action=1 ' +
+  'Acute Scent':Pathfinder2E.FEATURES['Acute Scent'],
+  'Bashing Charge':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike inflicts additional damage equal to the number of rounds remaining in rage, ending rage and causing fatigue until 10 min rest"',
-  'No Escape':
+    'Note="+1 to Force Open an obstacle during a double Stride"',
+  'Furious Finish':Pathfinder2E.FEATURES['Furious Finish'],
+  // Intimidating Strike as above
+  'No Escape':Pathfinder2E.FEATURES['No Escape'],
+  'Second Wind':Pathfinder2E.FEATURES['Second Wind'],
+  'Shake It Off':Pathfinder2E.FEATURES['Shake It Off'],
+  // Barreling Charge as above
+  'Oversized Throw':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Uses an item from surroundings to make a R20\' ranged strike that deals %{combatNotes.greaterWeaponSpecialization?3:combatNotes.weaponSpecialization?2:1}d10 HP bludgeoning"',
+  'Raging Athlete':Pathfinder2E.FEATURES['Raging Athlete'],
+  'Scars Of Steel':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Stride keeps pace with a retreating foe"',
-  'Second Wind':
-    'Section=combat ' +
-    'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest"',
-  'Shake It Off':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage"',
-  'Fast Movement':'Section=combat Note="+10 Speed during rage"',
-  'Raging Athlete':
+    'Note="Gives restistance %{constitutionModifier+level//2} to the damage from the triggering critical hit once per day"',
+  'Spiritual Guides':
+    'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
+    'Note="Rerolls a normal failure on a Perception or skill check once per day"',
+  'Supernatural Senses':
+    'Section=skill ' +
+    'Note="Reduces flat check to attack a concealed or hidden target to 3 or 9"',
   // Swipe as above
-  'Wounded Rage':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Begins rage upon taking damage"',
+  'Wounded Rage':Pathfinder2E.FEATURES['Wounded Rage'],
+/*
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -10559,6 +10558,29 @@ Pathfinder2ERemaster.SPELLS = {
   'Wall Of Wind':
     Pathfinder2E.SPELLS['Wall Of Wind']
     .replace('Evocation', 'Concentrate,Manipulate'),
+  'Warp Mind':
+    Pathfinder2E.SPELLS['Warp Mind']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Water Breathing':
+    Pathfinder2E.SPELLS['Water Breathing']
+    .replace('Transmutation', 'Concentrate,Manipulate,Water'),
+  'Water Walk':
+    Pathfinder2E.SPELLS['Water Walk']
+    .replace('Transmutation', 'Concentrate,Manipulate,Water'),
+  'Wave Of Despair':
+    Pathfinder2E.SPELLS['Crushing Despair']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Weapon Storm':
+    Pathfinder2E.SPELLS['Weapon Storm']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Wrathful Storm':
+    Pathfinder2E.SPELLS['Storm Of Vengeance']
+    .replace('Evocation', 'Concentrate,Manipulate,Cold') + ' ' +
+    'Description=' +
+      '"R800\' 400\' burst inflicts -4 ranged attacks, greater difficult terrain for flying, and a choice each rd of 4d8 HP cold (<b>no save</b>), 4d10 HP bludgeoning (<b>save basic Fortitude</b>), 7d6 HP electricity on 10 targets (<b>save basic Reflex</b>), or thrown 40\' (<b>no save</b>) while sustained for up to 1 min (<b>heightened 10th</b> R2200\' 1000\' burst)"',
+  'Zealous Conviction':
+    Pathfinder2E.SPELLS['Zealous Conviction']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
 
   // TODO
   'Commanding Lash':
@@ -10705,35 +10727,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Vampiric Exsanguination':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Ventriloquism':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Vigilant Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Vitality Lash':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Wall Of Wind':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
