@@ -1222,7 +1222,8 @@ Pathfinder2E.FEATS = {
     'Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
     'Traits=Class,Barbarian Require="level >= 8","rank.Athletics >=3 "',
-  'Renewed Vigor':'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
+  'Renewed Vigor':
+    'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
   'Share Rage':
     'Traits=Class,Barbarian,Auditory,Rage,Visual Require="level >= 8"',
   'Sudden Leap':'Traits=Class,Barbarian,Fighter Require="level >= 8"',
@@ -1253,13 +1254,15 @@ Pathfinder2E.FEATS = {
       '"features.Giant Instinct",' +
       '"features.Giant\'s Stature"',
   'Awesome Blow':
-    'Traits=Class,Barbarian,Rage Require="level >= 14","features.Knockback"',
+    'Traits=Class,Barbarian,Concentrate,Rage ' +
+    'Require="level >= 14","features.Knockback"',
   "Giant's Lunge":
-    'Traits=Class,Barbarian,Rage ' +
+    // Note Instinct trait is apparently a typo
+    'Traits=Class,Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Giant Instinct"',
   'Vengeful Strike':
     'Traits=Class,Barbarian,Rage ' +
-    'Require="level >= 14","features.Vengeful Strike"',
+    'Require="level >= 14","features.Come And Get Me"',
   'Whirlwind Strike':
     'Traits=Class,Barbarian,Fighter,Flourish,Open Require="level >= 14"',
   'Collateral Thrash':
@@ -1278,7 +1281,8 @@ Pathfinder2E.FEATS = {
   'Contagious Rage':
     'Traits=Class,Barbarian,Auditory,Rage,Visual ' +
     'Require="level >= 20","features.Share Rage"',
-  'Quaking Stomp':'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
+  'Quaking Stomp':
+    'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
 
   'Bardic Lore':'Traits=Class,Bard Require="features.Enigma"',
   'Lingering Composition':'Traits=Class,Bard Require="features.Maestro"',
@@ -4147,7 +4151,7 @@ Pathfinder2E.FEATURES = {
     'Note="Makes individual Strikes at the current multiple attack penalty against all foes within reach"',
   'Collateral Thrash':
     'Section=combat ' +
-    'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>, DC %{classDifficultyClass.Barbarian})"',
+    'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>)"',
   'Dragon Transformation':
     'Action=1 ' +
     'Section=magic ' +
