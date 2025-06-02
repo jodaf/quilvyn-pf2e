@@ -1123,7 +1123,8 @@ Pathfinder2E.FEATS = {
   'Orc Superstition':'Traits=Ancestry,Orc,Concentrate',
   'Orc Weapon Familiarity':'Traits=Ancestry,Orc',
   'Orc Weapon Carnage':
-    'Traits=Ancestry,Orc Require="level >= 5","features.Orc Weapon Familiarity"',
+    'Traits=Ancestry,Orc ' +
+    'Require="level >= 5","features.Orc Weapon Familiarity"',
   'Victorious Vigor':'Traits=Ancestry,Orc Require="level >= 5"',
   'Pervasive Superstition':
     'Traits=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
@@ -1141,21 +1142,22 @@ Pathfinder2E.FEATS = {
   'Quick Bomber':'Traits=Class,Alchemist',
   'Poison Resistance':'Traits=Class,Alchemist,Druid Require="level >= 2"',
   'Revivifying Mutagen':'Traits=Class,Alchemist Require="level >= 2"',
-  'Smoke Bomb':'Traits=Class,Alchemist,Additive1 Require="level >= 2"',
+  'Smoke Bomb':'Traits=Class,Alchemist,"Additive 1" Require="level >= 2"',
   'Calculated Splash':'Traits=Class,Alchemist Require="level >= 4"',
   'Efficient Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
   'Enduring Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
-  'Combine Elixirs':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
-  'Debilitating Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
+  'Combine Elixirs':'Traits=Class,Alchemist,"Additive 2" Require="level >= 6"',
+  'Debilitating Bomb':
+    'Traits=Class,Alchemist,"Additive 2" Require="level >= 6"',
   'Directional Bombs':'Traits=Class,Alchemist Require="level >= 6"',
   'Feral Mutagen':'Traits=Class,Alchemist Require="level >= 8"',
-  'Sticky Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 8"',
+  'Sticky Bomb':'Traits=Class,Alchemist,"Additive 2" Require="level >= 8"',
   'Elastic Mutagen':'Traits=Class,Alchemist Require="level >= 10"',
   'Expanded Splash':
     'Traits=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
   'Greater Debilitating Bomb':
     'Traits=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
-  'Merciful Elixir':'Traits=Class,Alchemist,Additive2 Require="level >= 10"',
+  'Merciful Elixir':'Traits=Class,Alchemist,"Additive 2" Require="level >= 10"',
   'Potent Poisoner':
     'Traits=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
   'Extend Elixir':'Traits=Class,Alchemist Require="level >= 12"',
@@ -1170,7 +1172,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 14","features.Greater Debilitating Bomb"',
   'Eternal Elixir':
     'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Exploitive Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 16"',
+  'Exploitive Bomb':'Traits=Class,Alchemist,"Additive 2" Require="level >= 16"',
   'Genius Mutagen':'Traits=Class,Alchemist Require="level >= 16"',
   'Persistent Mutagen':
     'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
@@ -1180,7 +1182,7 @@ Pathfinder2E.FEATS = {
   'Perfect Debilitation':'Traits=Class,Alchemist Require="level >= 18"',
   "Craft Philosopher's Stone":'Traits=Class,Alchemist Require="level >= 20"',
   'Mega Bomb':
-    'Traits=Class,Alchemist,Additive3 ' +
+    'Traits=Class,Alchemist,"Additive 3" ' +
     'Require="level >= 20","features.Expanded Splash"',
   'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
 
@@ -1204,7 +1206,8 @@ Pathfinder2E.FEATS = {
   'Animal Skin':
     'Traits=Class,Barbarian,Morph,Primal,Transmutation ' +
     'Require="level >= 6","features.Animal Instinct"',
-  'Attack Of Opportunity':'Traits=Class,Barbarian,Champion Require="level >= 6"',
+  'Attack Of Opportunity':
+    'Traits=Class,Barbarian,Champion Require="level >= 6"',
   'Brutal Bully':
     'Traits=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
   'Cleave':'Traits=Class,Barbarian,Rage Require="level >= 6"',
@@ -1473,7 +1476,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Divine Ally (Shield) && features.The Tenets Of Good || features.Shield Block"',
+      '"features.Divine Ally (Shield) && ' +
+       'features.The Tenets Of Good || features.Shield Block"',
   'Smite Evil':
     'Traits=Class,Champion ' +
     'Require=' +
@@ -1694,7 +1698,8 @@ Pathfinder2E.FEATS = {
       '"features.Devotion Spells",' +
       '"features.The Tenets Of Good"',
   'Radiant Blade Spirit':
-    'Traits=Class,Champion Require="level >= 10","features.Divine Ally (Blade)"',
+    'Traits=Class,Champion ' +
+    'Require="level >= 10","features.Divine Ally (Blade)"',
   'Shield Of Reckoning':
     'Traits=Class,Champion,Flourish ' +
     'Require=' +
@@ -1760,7 +1765,8 @@ Pathfinder2E.FEATS = {
       '"features.Divine Ally (Blade)",' +
       '"features.Radiant Blade Spirit"',
   'Shield Paragon':
-    'Traits=Class,Champion Require="level >= 20","features.Divine Ally (Shield)"',
+    'Traits=Class,Champion ' +
+    'Require="level >= 20","features.Divine Ally (Shield)"',
 
   'Deadly Simplicity':
     'Traits=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
@@ -1843,7 +1849,8 @@ Pathfinder2E.FEATS = {
   'Holy Castigation':'Traits=Class,Cleric Require="alignment =~ \'Good\'"',
   // Reach Spell as above
   // Cantrip Expansion as above
-  'Communal Healing':'Traits=Class,Cleric,Healing,Positive Require="level >= 2"',
+  'Communal Healing':
+    'Traits=Class,Cleric,Healing,Positive Require="level >= 2"',
   'Emblazon Armament':'Traits=Class,Cleric,Exploration Require="level >= 2"',
   'Sap Life':'Traits=Class,Cleric,Healing Require="level >= 2"',
   'Turn Undead':'Traits=Class,Cleric Require="level >= 2"',
@@ -2048,7 +2055,10 @@ Pathfinder2E.FEATS = {
 
   'Animal Companion':
     'Traits=Class,Druid,Ranger ' +
-    'Require="features.Animal || features.Order Explorer (Animal) || levels.Ranger"',
+    'Require=' +
+      '"features.Animal || ' +
+       'features.Order Explorer (Animal) || ' +
+       'levels.Ranger"',
   'Leshy Familiar':
     'Traits=Class,Druid ' +
     'Require="features.Leaf || features.Order Explorer (Leaf)"',
@@ -2143,7 +2153,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Druid ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Leaf || features.Order Explorer (Leaf) || features.Wild Shape"',
+      '"features.Leaf || ' +
+       'features.Order Explorer (Leaf) || ' +
+       'features.Wild Shape"',
   'Side By Side':
     'Traits=Class,Druid,Ranger ' +
     'Require=' +
@@ -2251,7 +2263,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Fighter,Ranger Require="level >= 10","features.Twin Parry"',
   'Brutal Finish':'Traits=Class,Fighter,Press Require="level >= 12"',
   'Dueling Dance':
-    'Traits=Class,Fighter,Stance Require="level >= 12","features.Dueling Parry"',
+    'Traits=Class,Fighter,Stance ' +
+    'Require="level >= 12","features.Dueling Parry"',
   'Flinging Shove':
     'Traits=Class,Fighter ' +
     'Require="level >= 12","features.Aggressive Block||features.Brutish Shove"',
@@ -2306,7 +2319,8 @@ Pathfinder2E.FEATS = {
   'Brawling Focus':'Traits=Class,Monk Require="level >= 2"',
   'Crushing Grab':'Traits=Class,Monk Require="level >= 2"',
   'Dancing Leaf':'Traits=Class,Monk Require="level >= 2"',
-  'Elemental Fist':'Traits=Class,Monk Require="level >= 2","features.Ki Strike"',
+  'Elemental Fist':
+    'Traits=Class,Monk Require="level >= 2","features.Ki Strike"',
   'Stunning Fist':
     'Traits=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
   'Deflect Arrow':'Traits=Class,Monk Require="level >= 4"',
@@ -2652,7 +2666,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Sorcerer,Metamagic ' +
     'Require="level >= 14","knowsDispelMagicSpell"',
   'Reflect Spell':
-    'Traits=Class,Sorcerer,Wizard Require="level >= 14","features.Counterspell"',
+    'Traits=Class,Sorcerer,Wizard ' +
+    'Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
     'Traits=Class,Sorcerer ' +
@@ -2678,7 +2693,8 @@ Pathfinder2E.FEATS = {
   // Counterspell as above
   'Eschew Materials':'Traits=Class,Wizard',
   // Familiar as above
-  'Hand Of The Apprentice':'Traits=Class,Wizard Require="features.Universalist"',
+  'Hand Of The Apprentice':
+    'Traits=Class,Wizard Require="features.Universalist"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -2843,7 +2859,10 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Champion ' +
     'Require=' +
       '"level >= 14",' +
-      '"rank.Unarmored Defense >= 2 || rank.Light Armor >= 2 || rank.Medium Armor >= 2 || rank.Heavy Armor >= 2"',
+      '"rank.Unarmored Defense >= 2 || ' +
+       'rank.Light Armor >= 2 || ' +
+       'rank.Medium Armor >= 2 || ' +
+       'rank.Heavy Armor >= 2"',
 
   'Cleric Dedication':
     'Traits=Archetype,Dedication,Multiclass,Cleric ' +
@@ -2911,12 +2930,14 @@ Pathfinder2E.FEATS = {
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
-    'Traits=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
+    'Traits=Archetype,Fighter ' +
+    'Require="level >= 4","features.Fighter Dedication"',
   'Fighter Resiliency':
     'Traits=Archetype,Fighter ' +
     'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
   'Opportunist':
-    'Traits=Archetype,Fighter Require="level >= 4","features.Fighter Dedication"',
+    'Traits=Archetype,Fighter ' +
+    'Require="level >= 4","features.Fighter Dedication"',
   'Advanced Maneuver':
     'Traits=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
   'Diverse Weapon Expert':
@@ -2937,8 +2958,10 @@ Pathfinder2E.FEATS = {
   'Monk Resiliency':
     'Traits=Archetype,Monk ' +
     'Require="level >= 4","feats.Monk Dedication","classHitPoints <= 8"',
-  'Advanced Kata':'Traits=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
-  'Monk Moves':'Traits=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
+  'Advanced Kata':
+    'Traits=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
+  'Monk Moves':
+    'Traits=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
   "Monk's Flurry":
     'Traits=Archetype,Monk Require="level >= 10","feats.Monk Dedication"',
   "Perfection's Path (Fortitude)":
@@ -3013,13 +3036,19 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Sorcerer Spellcasting",' +
-      '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3"',
+      '"rank.Arcana >= 3 || ' +
+       'rank.Nature >= 3 || ' +
+       'rank.Occultism >= 3 || ' +
+       'rank.Religion >= 3"',
   'Master Sorcerer Spellcasting':
     'Traits=Archetype,Sorcerer ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Master Sorcerer Spellcasting",' +
-      '"rank.Arcana >= 4 || rank.Nature >= 4 || rank.Occultism >= 4 || rank.Religion >= 4"',
+      '"rank.Arcana >= 4 || ' +
+       'rank.Nature >= 4 || ' +
+       'rank.Occultism >= 4 || ' +
+       'rank.Religion >= 4"',
 
   'Wizard Dedication':
     'Traits=Archetype,Dedication,Multiclass,Wizard ' +
@@ -3078,19 +3107,32 @@ Pathfinder2E.FEATS = {
     'Traits=General Require="level >= 11","charismaModifier >= 3"',
 
   // Skill
-  'Assurance (%skill)':'Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
+  'Assurance (%skill)':
+    'Traits=Fortune,General,Skill Require="rank.%skill >= 1"',
   'Dubious Knowledge':'Traits=General,Skill',
   'Quick Identification':
     'Traits=General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
+    'Require=' +
+      '"rank.Arcana >= 1 || ' +
+       'rank.Nature >= 1 || ' +
+       'rank.Occultism >= 1 || ' +
+       'rank.Religion >= 1"',
   'Recognize Spell':
     'Traits=Secret,General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
+    'Require=' +
+       '"rank.Arcana >= 1 || ' +
+        'rank.Nature >= 1 || ' +
+        'rank.Occultism >= 1 || ' +
+        'rank.Religion >= 1"',
   'Skill Training (%skill)':
     'Traits=General,Skill Require="intelligenceModifier >= 1"',
   'Trick Magic Item':
     'Traits=Manipulate,General,Skill ' +
-    'Require="rank.Arcana >= 1 || rank.Nature >= 1 || rank.Occultism >= 1 || rank.Religion >= 1"',
+    'Require=' +
+      '"rank.Arcana >= 1 || ' +
+       'rank.Nature >= 1 || ' +
+       'rank.Occultism >= 1 || ' +
+       'rank.Religion >= 1"',
   'Automatic Knowledge (%skill)':
     'Traits=General,Skill ' +
     'Require=' +
@@ -3099,12 +3141,20 @@ Pathfinder2E.FEATS = {
       '"features.Assurance (%skill)"',
   'Magical Shorthand':
     'Traits=General,Skill ' +
-    'Require="level >= 2","rank.Arcana >= 2 || rank.Nature >= 2 || rank.Occultism >= 2 || rank.Religion >= 2"',
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Arcana >= 2 || ' +
+       'rank.Nature >= 2 || ' +
+       'rank.Occultism >= 2 || ' +
+       'rank.Religion >= 2"',
   'Quick Recognition':
     'Traits=General,Skill ' +
     'Require=' +
       '"level >= 7",' +
-      '"rank.Arcana >= 3 || rank.Nature >= 3 || rank.Occultism >= 3 || rank.Religion >= 3",' +
+      '"rank.Arcana >= 3 || ' +
+       'rank.Nature >= 3 || ' +
+       'rank.Occultism >= 3 || ' +
+       'rank.Religion >= 3",' +
       '"features.Recognize Spell"',
 
   'Cat Fall':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
@@ -7899,7 +7949,7 @@ Pathfinder2E.SKILLS = {
   'Underworld Lore':'Ability=Intelligence',
   'Warfare Lore':'Ability=Intelligence',
   'Folktale Lore':'Ability=Intelligence', // pg 503
-  'Aberration Lore':'Ability=Intelligence Subcategory="Creature Lore"', // pg 504
+  'Aberration Lore':'Ability=Intelligence Subcategory="Creature Lore"',// pg 504
   'Troll Lore':'Ability=Intelligence Subcategory="Creature Lore"', // pg 505
   'Taldan History Lore':'Ability=Intelligence' // pg 506
 };
@@ -14459,7 +14509,7 @@ Pathfinder2E.featRules = function(rules, name, requires, implies, traits) {
 
 };
 Pathfinder2E.featRules.traits = [
-  'Abjuration', 'Additive1', 'Additive2', 'Additive3', 'Air', 'Alchemist',
+  'Abjuration', 'Additive 1', 'Additive 2', 'Additive 3', 'Air', 'Alchemist',
   'Ancestry', 'Arcane', 'Archetype', 'Attack', 'Auditory', 'Aura', 'Barbarian',
   'Bard', 'Champion', 'Class', 'Cleric', 'Concentrate', 'Dedication',
   'Detection', 'Divination', 'Divine', 'Downtime', 'Druid', 'Dwarf', 'Elf',
@@ -14471,12 +14521,12 @@ Pathfinder2E.featRules.traits = [
   'Rage', 'Ranger', 'Rogue', 'Secret', 'Skill', 'Sorcerer', 'Stance',
   'Transmutation', 'Uncommon', 'Visual', 'Wizard',
   // Core 2
-  'Aiuvarin', 'Catfolk', 'Changeling', 'Cold', 'Concentration', 'Consecration',
-  'Dhampir', 'Disease', 'Dragonblood', 'Dromaar', 'Duskwalker', 'Hobgoblin',
-  'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light', 'Lineage',
-  'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Prediction', 'Ratfolk',
-  'Revelation', 'Sonic', 'Spellshape', 'Teleportation', 'Tengu', 'Tripkee',
-  'Vitality', 'Witch'
+  'Additive', 'Aiuvarin', 'Catfolk', 'Changeling', 'Cold', 'Concentration',
+  'Consecration', 'Dhampir', 'Disease', 'Dragonblood', 'Dromaar', 'Duskwalker',
+  'Hobgoblin', 'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light',
+  'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Prediction',
+  'Ratfolk', 'Revelation', 'Sonic', 'Spellshape', 'Teleportation', 'Tengu',
+  'Tripkee', 'Vitality', 'Witch'
 ];
 
 /*

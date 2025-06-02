@@ -448,7 +448,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Creation (A4 Con): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)</td>
     </tr><tr style="text-align:left">
-      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
+      <td>Crushing Despair (A5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
       <td>Dancing Lights (AC1 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that can be moved 60' each rd while sustained</td>
     </tr><tr style="text-align:left">
@@ -476,7 +476,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Discern Lies (A4 Div): <b>(2)</b> Self gains +4 Perception vs. lies for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Discern Location (A8 Div): <b>(10 min)</b> Reveals the exact location of a specified familiar creature or object for 10 min</td>
+      <td>Discern Location (A8 Div): <b>(10 min)</b> Reveals the exact location of a specified familiar creature or object</td>
     </tr><tr style="text-align:left">
       <td>Disintegrate (A6 Evo): <b>(2)</b> R120' Spell attack inflicts 12d10 HP, reducing the target to dust at 0 HP, or destroys a non-artifact 10' cube object (<b>save basic Fortitude</b>; critical hit worsens save by 1 degree) (<b>heightened +1</b> inflicts +2d10 HP)</td>
     </tr><tr style="text-align:left">
@@ -646,7 +646,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Magic Weapon (A1 Tra): <b>(2)</b> Touched weapon gains +1 attack and 2 damage dice for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Magnificent Mansion (A7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x40' demiplane that can only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
+      <td>Magnificent Mansion (A7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x30' demiplane that can be entered only by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
     </tr><tr style="text-align:left">
       <td>Mariner's Curse (A5 Nec): <b>(2)</b> Touched suffers incurable sickened 1, plus slowed 1 on open water, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)</td>
     </tr><tr style="text-align:left">
@@ -654,7 +654,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Massacre (A9 Nec): <b>(2)</b> 60' line inflicts 100 HP negative on creatures up to level 17 and kills those reduced to 0 HP; if none die, it inflicts an additional 30 negative on all within the line, including self (<b>save Fortitude</b> inflicts 9d6 HP; critical success negates; critical failure kills) (<b>heightened 10th</b> inflicts 115 HP (<b>save Fortitude</b> 10d6 HP) on creatures up to level 19)</td>
     </tr><tr style="text-align:left">
-      <td>Maze (A8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC 29 Survival or Perception checks</td>
+      <td>Maze (A8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until it gains two solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes</td>
     </tr><tr style="text-align:left">
       <td>Meld Into Stone (A3 Tra): <b>(2)</b> Allows self to enter a touched stone, retaining the ability to hear outside sounds, for 10 min</td>
     </tr><tr style="text-align:left">
@@ -692,9 +692,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Passwall (A5 Con): <b>(2)</b> Creates a 5'x10'x10' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> the tunnel extends 20', appears as normal wall, and can be entered only using a password or trigger)</td>
     </tr><tr style="text-align:left">
-      <td>Pest Form (A1 Tra): <b>(2)</b> Self becomes a Tiny animal with Armor Class 27, 20' Speed, low-light vision, 30' imprecise scent, +10 Athletics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20' fly Speed)</td>
+      <td>Pest Form (A1 Tra): <b>(2)</b> Self becomes a Tiny animal with Armor Class 27, 20' Speed, low-light vision, 30' imprecise scent, +10 Acrobatics and Stealth modifiers, -4 Athletics modifier, and weakness 5 to physical damage for 10 min (<b>heightened 4th</b> becomes a creature with a 20' fly Speed)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Calamity (A6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Phantasmal Calamity (A6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped (<b>save Reflex</b> negates) until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Phantasmal Killer (A4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP, or +3d6 HP on a critical failure)</td>
     </tr><tr style="text-align:left">
@@ -782,7 +782,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Sigil (AC1 Tra): <b>(2)</b> Inscribes a 1" sq magical mark on a touched object or creature; the mark can be scrubbed off and fades from a creature after 1 week (<b>heightened 3rd</b> marks a creature for 1 month; <b>5th</b> marks a creature for 1 year; <b>7th</b> marks a creature permanently)</td>
     </tr><tr style="text-align:left">
-      <td>Sleep (A1 Enc): <b>(2)</b> R30' 5' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure; targets release held objects and do not wake from a successful Perception check)</td>
+      <td>Sleep (A1 Enc): <b>(2)</b> R30' 5' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure, followed by normal sleep; targets release held objects and do not wake from a successful Perception check)</td>
     </tr><tr style="text-align:left">
       <td>Slow (A3 Tra): <b>(2)</b> R30' Inflicts slowed 1 for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 2) (<b>heightened 6th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
@@ -814,9 +814,9 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Summon Dragon (A5 Con): <b>(3)</b> R30' A level 5 dragon appears and fights for self while sustained for up to 1 min (<b>heightened +1</b> summons a +2 level creature)</td>
     </tr><tr style="text-align:left">
-      <td>Summon Elemental (A2 Con): <b>(3)</b> R30' A level -1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 2nd</b> summons a level 1 creature; <b>3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)</td>
+      <td>Summon Elemental (A2 Con): <b>(3)</b> R30' A level 1 elemental appears and fights for self while sustained for up to 1 min (<b>heightened 3rd</b> summons a level 2 creature; <b>4th</b> summons a level 3 creature; <b>5th</b> summons a level 5 creature; <b>6th</b> summons a level 7 creature; <b>7th</b> summons a level 9 creature; <b>8th</b> summons a level 11 creature; <b>9th</b> summons a level 13 creature; <b>10th</b> summons a level 15 creature)</td>
     </tr><tr style="text-align:left">
-      <td>Tanglefoot (AC1 Con): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, or immobilized 1 for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
+      <td>Tanglefoot (AC1 Con): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
     </tr><tr style="text-align:left">
       <td>Telekinetic Haul (A5 Evo): <b>(2)</b> R120' Moves an 80 Bulk, 20' cubic object 20' each rd while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
@@ -836,13 +836,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Tongues (A5 Div): <b>(2)</b> Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Touch Of Idiocy (A2 Enc): <b>(2)</b> Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)</td>
+      <td>Touch Of Idiocy (A2 Enc): <b>(2)</b> Touch inflicts stupefied 2 for 1 min (<b>save Will</b> negates; critical failure inflicts stupefied 4)</td>
     </tr><tr style="text-align:left">
       <td>True Seeing (A6 Div): <b>(2)</b> R60' Makes counteract checks to allow self to see through illusions and transmutations for 10 min</td>
     </tr><tr style="text-align:left">
       <td>True Strike (A1 Div): <b>(1)</b> Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn</td>
     </tr><tr style="text-align:left">
-      <td>True Target (A7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls</td>
+      <td>True Target (A7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature use the better of two attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
     </tr><tr style="text-align:left">
       <td>Uncontrollable Dance (A8 Enc): <b>(2)</b> Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
     </tr><tr style="text-align:left">
@@ -880,7 +880,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Water Walk (A2 Tra): <b>(2)</b> Touched can walk on liquids for 10 min (<b>heightened 4th</b> R30' affects 10 creatures, and effects last for 1 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Weapon Storm (A4 Evo): <b>(2)</b> Weapon swing inflicts 4 dice of damage to every creature in a 30' cone or 10' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)</td>
+      <td>Weapon Storm (A4 Evo): <b>(2)</b> Weapon swing inflicts 4 dice of damage to every creature in a 30' cone or a 10' emanation (<b>save Reflex</b> inflicts half HP; critical success negates; critical failure inflicts double HP and critical specialization effect) (<b>heightened +1</b> inflicts +1 damage die)</td>
     </tr><tr style="text-align:left">
       <td>Web (A2 Con): <b>(3)</b> R30' 10' burst inflicts difficult terrain and -10' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving)</td>
     </tr><tr style="text-align:left">

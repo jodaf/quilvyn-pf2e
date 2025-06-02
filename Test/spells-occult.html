@@ -439,7 +439,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Counter Performance (O1 Foc Enc): <b>(R)</b> Allies in a 60' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect</td>
     </tr><tr style="text-align:left">
-      <td>Crushing Despair (O5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 turn; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
+      <td>Crushing Despair (O5 Enc): <b>(2)</b> 30' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60' cone)</td>
     </tr><tr style="text-align:left">
       <td>Dancing Lights (OC1 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that can be moved 60' each rd while sustained</td>
     </tr><tr style="text-align:left">
@@ -473,7 +473,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Discern Lies (O4 Div): <b>(2)</b> Self gains +4 Perception vs. lies for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Discern Location (O8 Div): <b>(10 min)</b> Reveals the exact location of a specified familiar creature or object for 10 min</td>
+      <td>Discern Location (O8 Div): <b>(10 min)</b> Reveals the exact location of a specified familiar creature or object</td>
     </tr><tr style="text-align:left">
       <td>Dispel Magic (O2 Abj): <b>(2)</b> R120' Makes a counteract check to remove 1 spell effect from the target or to make a magic item inert for 10 min</td>
     </tr><tr style="text-align:left">
@@ -613,13 +613,13 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Magic Weapon (O1 Tra): <b>(2)</b> Touched weapon gains +1 attack and 2 damage dice for 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Magnificent Mansion (O7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x40' demiplane that can only be entered by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
+      <td>Magnificent Mansion (O7 Con): <b>(1 min)</b> R30' Creates an entrance to a 40'x40'x30' demiplane that can be entered only by those specified, is staffed by servants, and contains provisions for up to 150 people</td>
     </tr><tr style="text-align:left">
       <td>Mariner's Curse (O5 Nec): <b>(2)</b> Touched suffers incurable sickened 1, plus slowed 1 on open water, until the curse is removed (<b>save Will</b> inflicts curable sickened 1; critical success negates; critical success inflicts incurable sickened 2)</td>
     </tr><tr style="text-align:left">
       <td>Mask Of Terror (O7 Ill): <b>(2)</b> R30' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Maze (O8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until it has a critical success or 2 successive normal successes on DC 30 Survival or Perception checks</td>
+      <td>Maze (O8 Con): <b>(2)</b> R30' Transports the target to an extradimensional maze while sustained or until it gains two solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes</td>
     </tr><tr style="text-align:left">
       <td>Mending (O1 Tra): <b>(10 min)</b> Restores 5 HP per spell level to a touched light, non-magical object (<b>heightened 2nd</b> can affect a 1 Bulk object; <b>3rd</b> can affect a 2 Bulk or magical 1 Bulk object)</td>
     </tr><tr style="text-align:left">
@@ -653,7 +653,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Paranoia (O2 Ill): <b>(2)</b> R30' Target becomes unfriendly to all others for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure causes target to treat all others as enemies) (<b>heightened 6th</b> effects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Phantasmal Calamity (O6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
+      <td>Phantasmal Calamity (O6 Ill): <b>(2)</b> R500' 30' burst inflicts 11d6 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1 and trapped (<b>save Reflex</b> negates) until a subsequent Will save each rd succeeds) (<b>heightened +1</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Phantasmal Killer (O4 Ill): <b>(2)</b> R120' Inflicts 8d6 HP mental and frightened 2 (<b>save Will</b> inflicts 4d6 HP mental and frightened 1; critical success negates; critical failure inflicts death on a failed Fortitude save or 12d6 HP mental, fleeing for 1 rd, and frightened 1 on success) (<b>heightened +1</b> inflicts +2d6 HP, or +3d6 HP on a critical failure)</td>
     </tr><tr style="text-align:left">
@@ -695,7 +695,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Remove Fear (O2 Enc): <b>(2)</b> Makes a counteract attempt vs. 1 fear effect affecting touched (<b>heightened 6th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Remove Paralysis (O2 Nec): <b>(2)</b> Makes a counteract attempt vs. 1 paralysis effect affecting touched (<b>heightened 6th</b> R30' affects 10 targets)</td>
+      <td>Remove Paralysis (O2 Nec): <b>(2)</b> Makes a counteract attempt vs. a paralysis effect affecting touched (<b>heightened 6th</b> R30' affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Repulsion (O6 Abj): <b>(2)</b> Emanation up to 40' prevents creatures from approaching for 1 min (<b>save Will</b> inflicts difficult terrain; critical success negates)</td>
     </tr><tr style="text-align:left">
@@ -741,11 +741,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Silence (O2 Ill): <b>(2)</b> Willing touched makes no sound for 1 min (<b>heightened 4th</b> affects a 10' radius around touched)</td>
     </tr><tr style="text-align:left">
-      <td>Sleep (O1 Enc): <b>(2)</b> R30' 5' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure; targets release held objects and do not wake from a successful Perception check)</td>
+      <td>Sleep (O1 Enc): <b>(2)</b> R30' 5' burst inflicts unconsciousness for 1 min or until a successful Perception check (<b>save Will</b> inflicts -1 Perception for 1 rd; critical success negates; critical failure inflicts unconsciousness for 1 hr or until a successful Perception check) (<b>heightened 4th</b> inflicts unconsciousness for 1 rd, or 1 min on a critical failure, followed by normal sleep; targets release held objects and do not wake from a successful Perception check)</td>
     </tr><tr style="text-align:left">
       <td>Slow (O3 Tra): <b>(2)</b> R30' Inflicts slowed 1 for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 2) (<b>heightened 6th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Soothe (O1 Enc): <b>(2)</b> R30' Target regains 1d10+4 HP and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 HP)</td>
+      <td>Soothe (O1 Enc): <b>(2)</b> R30' Target regains 1d10+4 Hit Points and gains +2 saves vs. mental effects for 1 min (<b>heightened +1</b> restores +1d10+4 Hit Points)</td>
     </tr><tr style="text-align:left">
       <td>Soothing Ballad (O7 Foc Enc): <b>(2)</b> R30' Self and 9 allies gain a counteract attempt on all fear effects, a counteract attempt on all paralysis effects, or 7d8 HP restored (<b>heightened +1</b> restores +1d8 HP)</td>
     </tr><tr style="text-align:left">
@@ -801,7 +801,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Tongues (O5 Div): <b>(2)</b> Target understands and speaks all languages for 1 hr (<b>heightened 7th</b> effects last for 8 hr)</td>
     </tr><tr style="text-align:left">
-      <td>Touch Of Idiocy (O2 Enc): <b>(2)</b> Touch inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts stupefied 4)</td>
+      <td>Touch Of Idiocy (O2 Enc): <b>(2)</b> Touch inflicts stupefied 2 for 1 min (<b>save Will</b> negates; critical failure inflicts stupefied 4)</td>
     </tr><tr style="text-align:left">
       <td>Triple Time (OC2 Foc Enc): <b>(1)</b> 60' emanation gives allies +10' Speed for 1 rd</td>
     </tr><tr style="text-align:left">
@@ -809,7 +809,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>True Strike (O1 Div): <b>(1)</b> Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn</td>
     </tr><tr style="text-align:left">
-      <td>True Target (O7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature ignore concealed and hidden conditions and use the better of two attack rolls</td>
+      <td>True Target (O7 Div): <b>(1)</b> R60' Allies' attacks within 1 rd on a designated creature use the better of two attack rolls and ignore circumstance penalties and concealed and hidden conditions</td>
     </tr><tr style="text-align:left">
       <td>Uncontrollable Dance (O8 Enc): <b>(2)</b> Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)</td>
     </tr><tr style="text-align:left">
