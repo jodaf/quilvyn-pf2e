@@ -1737,154 +1737,6 @@ Pathfinder2ERemaster.FEATS = {
 
   // Class
 
-  'Alchemical Familiar':Pathfinder2E.FEATS['Alchemical Familiar'],
-  'Alchemical Assessment':Pathfinder2E.FEATS['Alchemical Savant'],
-  'Blowgun Poisoner':'Traits=Class,Alchemist',
-  'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
-  'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
-  'Soothing Vials':'Traits=Class,Alchemist Require="features.Chirurgeon"',
-
-/*
-  'Revivifying Mutagen':'Traits=Class,Alchemist Require="level >= 2"',
-  'Smoke Bomb':'Traits=Class,Alchemist,Additive1 Require="level >= 2"',
-  'Calculated Splash':'Traits=Class,Alchemist Require="level >= 4"',
-  'Efficient Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
-  'Enduring Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
-  'Combine Elixirs':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
-  'Debilitating Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
-  'Directional Bombs':'Traits=Class,Alchemist Require="level >= 6"',
-  'Feral Mutagen':'Traits=Class,Alchemist Require="level >= 8"',
-  'Sticky Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 8"',
-  'Elastic Mutagen':'Traits=Class,Alchemist Require="level >= 10"',
-  'Expanded Splash':
-    'Traits=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
-  'Greater Debilitating Bomb':
-    'Traits=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
-  'Merciful Elixir':'Traits=Class,Alchemist,Additive2 Require="level >= 10"',
-  'Potent Poisoner':
-    'Traits=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
-  'Extend Elixir':'Traits=Class,Alchemist Require="level >= 12"',
-  'Invincible Mutagen':'Traits=Class,Alchemist Require="level >= 12"',
-  'Uncanny Bombs':
-    'Traits=Class,Alchemist Require="level >= 12","features.Far Lobber"',
-  'Glib Mutagen':'Traits=Class,Alchemist Require="level >= 14"',
-  'Greater Merciful Elixir':
-    'Traits=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
-  'True Debilitating Bomb':
-    'Traits=Class,Alchemist ' +
-    'Require="level >= 14","features.Greater Debilitating Bomb"',
-  'Eternal Elixir':
-    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Exploitive Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 16"',
-  'Genius Mutagen':'Traits=Class,Alchemist Require="level >= 16"',
-  'Persistent Mutagen':
-    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
-  'Improbable Elixirs':'Traits=Class,Alchemist Require="level >= 18"',
-  'Mindblank Mutagen':'Traits=Class,Alchemist Require="level >= 18"',
-  'Miracle Worker':'Traits=Class,Alchemist Require="level >= 18"',
-  'Perfect Debilitation':'Traits=Class,Alchemist Require="level >= 18"',
-  "Craft Philosopher's Stone":'Traits=Class,Alchemist Require="level >= 20"',
-  'Mega Bomb':
-    'Traits=Class,Alchemist,Additive3 ' +
-    'Require="level >= 20","features.Expanded Splash"',
-  'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
-
-  'Acute Vision':'Traits=Class,Barbarian',
-  'Moment Of Clarity':'Traits=Class,Barbarian,Concentrate,Rage',
-  'Raging Intimidation':'Traits=Class,Barbarian',
-  'Raging Thrower':'Traits=Class,Barbarian',
-  // Sudden Charge as above
-  'Acute Scent':
-    'Traits=Class,Barbarian ' +
-    'Require="level >= 2","features.Acute Vision||features.Darkvision"',
-  'Furious Finish':'Traits=Class,Barbarian,Rage Require="level >= 2"',
-  'No Escape':'Traits=Class,Barbarian,Rage Require="level >= 2"',
-  'Second Wind':'Traits=Class,Barbarian Require="level >= 2"',
-  'Shake It Off':'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 2"',
-  'Fast Movement':'Traits=Class,Barbarian Require="level >= 4"',
-  'Raging Athlete':
-    'Traits=Class,Barbarian Require="level >= 4","rank.Athletics >= 2"',
-  // Swipe as above
-  'Wounded Rage':'Traits=Class,Barbarian Require="level >= 4"',
-  'Animal Skin':
-    'Traits=Class,Barbarian,Morph,Primal,Transmutation ' +
-    'Require="level >= 6","features.Animal Instinct"',
-  'Attack Of Opportunity':'Traits=Class,Barbarian,Champion Require="level >= 6"',
-  'Brutal Bully':
-    'Traits=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
-  'Cleave':'Traits=Class,Barbarian,Rage Require="level >= 6"',
-  "Dragon's Rage Breath":
-    'Traits=Class,Barbarian,Arcane,Concentrate,Evocation,Rage ' +
-    'Require="level >= 6","features.Dragon Instinct"',
-  "Giant's Stature":
-    'Traits=Class,Barbarian,Polymorph,Primal,Rage,Transmutation ' +
-    'Require="level >= 6","features.Giant Instinct"',
-  "Spirits' Interference":
-    'Traits=Class,Barbarian,Divine,Necromancy,Rage ' +
-    'Require="level >= 6","features.Spirit Instinct"',
-  'Animal Rage':
-    'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
-    'Require="level >= 8","features.Animal Instinct"',
-  'Furious Bully':
-    'Traits=Class,Barbarian Require="level >= 8","rank.Athletics >=3 "',
-  'Renewed Vigor':'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
-  'Share Rage':
-    'Traits=Class,Barbarian,Auditory,Rage,Visual Require="level >= 8"',
-  'Sudden Leap':'Traits=Class,Barbarian,Fighter Require="level >= 8"',
-  'Thrash':'Traits=Class,Barbarian,Rage Require="level >= 8"',
-  'Come And Get Me':
-    'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 10"',
-  'Furious Sprint':'Traits=Class,Barbarian,Rage Require="level >= 10"',
-  'Great Cleave':
-    'Traits=Class,Barbarian,Rage Require="level >= 10",features.Cleave',
-  'Knockback':'Traits=Class,Barbarian,Rage Require="level >= 10"',
-  'Terrifying Howl':
-    'Traits=Class,Barbarian,Auditory,Rage ' +
-    'Require="level >= 10","features.Intimidating Glare"',
-  "Dragon's Rage Wings":
-    'Traits=Class,Barbarian,Morph,Primal,Rage,Transmutation ' +
-    'Require="level >= 12","features.Dragon Instinct"',
-  'Furious Grab':'Traits=Class,Barbarian,Rage Require="level >= 12"',
-  "Predator's Pounce":
-    'Traits=Class,Barbarian,Flourish,Open,Rage ' +
-    'Require="level >= 12","features.Animal Instinct"',
-  "Spirit's Wrath":
-    'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
-    'Require="level >= 12","features.Spirit Instinct"',
-  "Titan's Stature":
-    'Traits=Class,Barbarian,Polymorph,Transmutation ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Giant Instinct",' +
-      '"features.Giant\'s Stature"',
-  'Awesome Blow':
-    'Traits=Class,Barbarian,Rage Require="level >= 14","features.Knockback"',
-  "Giant's Lunge":
-    'Traits=Class,Barbarian,Rage ' +
-    'Require="level >= 14","features.Giant Instinct"',
-  'Vengeful Strike':
-    'Traits=Class,Barbarian,Rage ' +
-    'Require="level >= 14","features.Vengeful Strike"',
-  // Whirlwind Strike as above
-  'Collateral Thrash':
-    'Traits=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
-  'Dragon Transformation':
-    'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Dragon Instinct",' +
-     '"features.Dragon\'s Rage Wings"',
-  'Reckless Abandon':'Traits=Class,Barbarian,Rage Require="level >= 16"',
-  'Brutal Critical':'Traits=Class,Barbarian Require="level >= 18"',
-  'Perfect Clarity':
-    'Traits=Class,Barbarian,Concentrate,Fortune,Rage Require="level >= 18"',
-  'Vicious Evisceration':'Traits=Class,Barbarian,Rage Require="level >= 18"',
-  'Contagious Rage':
-    'Traits=Class,Barbarian,Auditory,Rage,Visual ' +
-    'Require="level >= 20","features.Share Rage"',
-  'Quaking Stomp':'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
-*/
-
   'Bardic Lore':Pathfinder2E.FEATS['Bardic Lore'],
   'Hymn Of Healing':'Traits=Class,Bard',
   'Lingering Composition':Pathfinder2E.FEATS['Lingering Composition'],
@@ -3334,6 +3186,206 @@ Pathfinder2ERemaster.FEATS = {
   'Spell Combination':Pathfinder2E.FEATS['Spell Combination'],
   'Spell Mastery':'Traits=Class,Wizard Require="level >= 20"',
   // Spellshape Mastery as above
+
+  // Player Core 2
+
+  // Alchemist
+  'Alchemical Familiar':Pathfinder2E.FEATS['Alchemical Familiar'],
+  'Alchemical Assessment':Pathfinder2E.FEATS['Alchemical Savant'],
+  'Blowgun Poisoner':'Traits=Class,Alchemist',
+  'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
+  'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
+  'Soothing Vials':'Traits=Class,Alchemist Require="features.Chirurgeon"',
+
+/*
+  'Revivifying Mutagen':'Traits=Class,Alchemist Require="level >= 2"',
+  'Smoke Bomb':'Traits=Class,Alchemist,Additive1 Require="level >= 2"',
+  'Calculated Splash':'Traits=Class,Alchemist Require="level >= 4"',
+  'Efficient Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
+  'Enduring Alchemy':'Traits=Class,Alchemist Require="level >= 4"',
+  'Combine Elixirs':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
+  'Debilitating Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 6"',
+  'Directional Bombs':'Traits=Class,Alchemist Require="level >= 6"',
+  'Feral Mutagen':'Traits=Class,Alchemist Require="level >= 8"',
+  'Sticky Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 8"',
+  'Elastic Mutagen':'Traits=Class,Alchemist Require="level >= 10"',
+  'Expanded Splash':
+    'Traits=Class,Alchemist Require="level >= 10","features.Calculated Splash"',
+  'Greater Debilitating Bomb':
+    'Traits=Class,Alchemist Require="level >= 10","features.Debilitating Bomb"',
+  'Merciful Elixir':'Traits=Class,Alchemist,Additive2 Require="level >= 10"',
+  'Potent Poisoner':
+    'Traits=Class,Alchemist Require="level >= 10","features.Powerful Alchemy"',
+  'Extend Elixir':'Traits=Class,Alchemist Require="level >= 12"',
+  'Invincible Mutagen':'Traits=Class,Alchemist Require="level >= 12"',
+  'Uncanny Bombs':
+    'Traits=Class,Alchemist Require="level >= 12","features.Far Lobber"',
+  'Glib Mutagen':'Traits=Class,Alchemist Require="level >= 14"',
+  'Greater Merciful Elixir':
+    'Traits=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
+  'True Debilitating Bomb':
+    'Traits=Class,Alchemist ' +
+    'Require="level >= 14","features.Greater Debilitating Bomb"',
+  'Eternal Elixir':
+    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Exploitive Bomb':'Traits=Class,Alchemist,Additive2 Require="level >= 16"',
+  'Genius Mutagen':'Traits=Class,Alchemist Require="level >= 16"',
+  'Persistent Mutagen':
+    'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
+  'Improbable Elixirs':'Traits=Class,Alchemist Require="level >= 18"',
+  'Mindblank Mutagen':'Traits=Class,Alchemist Require="level >= 18"',
+  'Miracle Worker':'Traits=Class,Alchemist Require="level >= 18"',
+  'Perfect Debilitation':'Traits=Class,Alchemist Require="level >= 18"',
+  "Craft Philosopher's Stone":'Traits=Class,Alchemist Require="level >= 20"',
+  'Mega Bomb':
+    'Traits=Class,Alchemist,Additive3 ' +
+    'Require="level >= 20","features.Expanded Splash"',
+  'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
+*/
+
+  // Barbarian
+  'Acute Vision':Pathfinder2E.FEATS['Acute Vision'],
+  'Adrenaline Rush':'Traits=Class,Barbarian,Rage',
+  'Draconic Arrogance':'Traits=Class,Barbarian,Rage',
+  'Moment Of Clarity':Pathfinder2E.FEATS['Moment Of Clarity'],
+  'Raging Intimidation':Pathfinder2E.FEATS['Raging Intimidation'],
+  'Raging Thrower':Pathfinder2E.FEATS['Raging Thrower'],
+  // Sudden Charge as above
+  'Acute Scent':
+    Pathfinder2E.FEATS['Acute Scent'] + ' ' +
+    'Require="level >= 2"',
+  'Bashing Charge':
+    'Traits=Class,Barbarian,Rage Require="level >= 2","rank.Athletics >= 1"',
+  'Furious Finish':Pathfinder2E.FEATS['Furious Finish'],
+  'Intimidating Strike':
+    'Traits=Class,Barbarian,Emotion,Fear,Mental Require="level >= 2"',
+  'No Escape':Pathfinder2E.FEATS['No Escape'],
+  'Second Wind':Pathfinder2E.FEATS['Second Wind'],
+  'Shake It Off':Pathfinder2E.FEATS['Shake It Off'],
+  'Barreling Charge':
+    'Traits=Class,Barbarian,Flourish ' +
+    'Require="level >= 4","rank.Athletics >= 1"',
+  'Oversized Throw':'Traits=Class,Barbarian,Rage Require="level >= 4"',
+  'Raging Athlete':Pathfinder2E.FEATS['Raging Athlete'],
+  'Scars Of Steel':
+    'Traits=Class,Barbarian,Rage Require="level >= 4","features.Fury Instinct"',
+  'Spiritual Guides':
+    'Traits=Class,Barbarian,Fortune ' +
+    'Require="level >= 4","features.Spirit Instinct"',
+  'Supernatural Senses':
+    // TODO features.Scent isn't a thing
+    'Traits=Class,Barbarian,Rage ' +
+    'Require="level >= 4","features.Acute Scent || features.Scent"',
+  // Swipe as above
+  'Wounded Rage':Pathfinder2E.FEATS['Wounded Rage'],
+  'Animal Skin':
+    Pathfinder2E.FEATS['Animal Skin']
+    .replace(',Transmutation', ''),
+  'Brutal Bully':Pathfinder2E.FEATS['Brutal Bully'],
+  'Cleave':Pathfinder2E.FEATS.Cleave,
+  "Dragon's Rage Breath":
+    Pathfinder2E.FEATS["Dragon's Rage Breath"]
+    .replaceAll(/,(Arcane|Evocation)/g, ''),
+  "Giant's Stature":
+    Pathfinder2E.FEATS["Giant's Stature"]
+    .replace(',Transmutation', ''),
+  'Inner Strength':
+    'Traits=Class,Barbarian,Concentrate,Rage ' +
+    'Require="level >= 6","features.Spirit Instinct"',
+  'Mage Hunter':
+    'Traits=Class,Barbarian,Rage ' +
+    'Require="level >= 6","features.Superstition Instinct"',
+  'Nocturnal Senses':
+    'Traits=Class,Barbarian,Rage ' +
+    'Require="level >= 6","features.Low-Light Vision || features.Scent"',
+  'Reactive Strike':Pathfinder2E.FEATS['Attack Of Opportunity'],
+  'Scouring Rage':
+    // TODO requires "an instinct that allows you to change your Rage damage type"
+    'Traits=Class,Barbarian Require="level >= 6"',
+  "Spirits' Interference":
+    Pathfinder2E.FEATS["Spirits' Interference"]
+    .replace(',Necromancy', ''),
+  'Animalistic Brutality':
+    'Traits=Class,Barbarian,Concentrate,Morph,Primal,Rage ' +
+    'Require="level >= 8","features.Animal Instinct"',
+  'Disarming Assault':
+    'Traits=Class,Barbarian,Flourish,Rage ' +
+    'Require="level >= 8","rank.Athletics >= 1"',
+  'Follow-Up Assault':'Traits=Class,Barbarian,Rage Require="level >= 8"',
+  'Friendly Toss':'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 8"',
+  'Furious Bully':Pathfinder2E.FEATS['Furious Bully'],
+  'Instinctive Strike':
+    'Traits=Class,Barbarian ' +
+    'Require="level >= 8","features.Acute Scent || features.Scent"',
+  'Invulnerable Rager':'Traits=Class,Barbarian Require="level >= 8"',
+  'Renewed Vigor':Pathfinder2E.FEATS['Renewed Vigor'],
+  'Share Rage':Pathfinder2E.FEATS['Share Rage'],
+  // Sudden Leap as above
+  'Thrash':Pathfinder2E.FEATS.Thrash,
+  'Come And Get Me':Pathfinder2E.FEATS['Come And Get Me'],
+  'Furious Sprint':Pathfinder2E.FEATS['Furious Sprint'],
+  'Great Cleave':Pathfinder2E.FEATS['Great Cleave'],
+  'Impressive Landing':'Traits=Class,Barbarian Require="level >= 10"',
+  'Knockback':Pathfinder2E.FEATS.Knockback,
+  'Overpowering Charge':
+    'Traits=Class,Barbarian Require="level >= 10","features.Barreling Charge"',
+  'Resounding Blow':'Traits=Class,Barbarian,Rage Require="level >= 10"',
+  'Silencing Strike':
+    'Traits=Class,Barbarian,Incapacitation,Rage Require="level >= 10"',
+  'Tangle Of Battle':'Traits=Class,Barbarian,Rage Require="level >= 10"',
+  'Terrifying Howl':
+    Pathfinder2E.FEATS['Terrifying Howl'] + ' ' +
+    'Require="level >= 10"',
+  "Dragon's Rage Wings":
+    Pathfinder2E.FEATS["Dragon's Rage Wings"]
+    .replaceAll(/,(Primal|Transmutation)/g, ''),
+  'Embrace The Pain':'Traits=Class,Barbarian,Rage Require="level >= 12"',
+  'Furious Grab':Pathfinder2E.FEATS['Furious Grab'],
+  "Predator's Pounce":
+    Pathfinder2E.FEATS["Predator's Pounce"]
+    .replace(',Open', ''),
+  "Spirit's Wrath":Pathfinder2E.FEATS["Spirit's Wrath"],
+  'Sunder Spell':
+    'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
+    'Require="level >= 12","features.Superstition Instinct"',
+  "Titan's Stature":
+    Pathfinder2E.FEATS["Titan's Stature"]
+    .replaceAll(/,(Polymorph|Transmutation)/g, '') + ' ' +
+    'Require="level >= 12","features.Giant\'s Stature"',
+  'Unbalancing Sweep':
+    'Traits=Class,Barbarian,Flourish ' +
+    'Require="level >= 12"',
+  'Awesome Blow':Pathfinder2E.FEATS['Awesome Blow'],
+  "Giant's Lunge":
+    Pathfinder2E.FEATS["Giant's Lunge"]
+    .replace(',Instinct', ''),
+  'Impaling Thrust':'Traits=Class,Barbarian,Rage Require="level >= 14"',
+  'Sunder Enchantment':
+    'Traits=Class,Barbarian Require="level >= 14","features.Sunder Spell"',
+  'Vengeful Strike':Pathfinder2E.FEATS['Vengeful Strike'],
+  // Whirlwind Strike as above
+  'Collateral Thrash':Pathfinder2E.FEATS['Collateral Thrash'],
+  'Desperate Wrath':Pathfinder2E.FEATS['Reckless Abandon'],
+  'Dragon Transformation':
+    Pathfinder2E.FEATS['Dragon Transformation']
+    .replace(',Transmutation', '') + ' ' +
+    'Require="level >= 16","features.Dragon\'s Rage Wings"',
+  'Furious Vengeance':
+    'Traits=Class,Barbarian,Rage ' +
+    'Require="level >= 16","features.Fury Instinct"',
+  'Penetrating Projectile':
+    'Traits=Class,Barbarian,Flourish,Rage Require="level >= 16"',
+  'Shattering Blows':'Traits=Class,Barbarian,Rage Require="level >= 16"',
+  'Brutal Critical':Pathfinder2E.FEATS['Brutal Critical'],
+  'Perfect Clarity':Pathfinder2E.FEATS['Perfect Clarity'],
+  'Vicious Evisceration':Pathfinder2E.FEATS['Vicious Evisceration'],
+  'Whirlwind Toss':
+    'Traits=Class,Barbarian,Rage ' +
+    'Require="level >= 18","features.Collateral Thrash"',
+  'Annihilating Swing':'Traits=Class,Barbarian Require="level >= 20"',
+  'Contagious Rage':Pathfinder2E.FEATS['Contagious Rage'],
+  'Quaking Stomp':Pathfinder2E.FEATS['Quaking Stomp'],
+  'Unstoppable Juggernaut':'Traits=Class,Barbarian Require="level >= 20"',
 
 /*
   // Archetype
@@ -7883,81 +7935,93 @@ Pathfinder2ERemaster.FEATURES = {
   'Share Rage':Pathfinder2E.FEATURES['Share Rage'],
   // Sudden Leap as above
   'Thrash':Pathfinder2E.FEATURES.Thrash,
-/*
   'Come And Get Me':
-    'Action=1 ' +
+    Pathfinder2E.FEATURES['Come And Get Me']
+    .replaceAll('flat-footed', 'off-guard'),
+  'Furious Sprint':Pathfinder2E.FEATURES['Furious Sprint'],
+  'Great Cleave':Pathfinder2E.FEATURES['Great Cleave'],
+  'Impressive Landing':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Reduces fall damage by 10\' and inflcits 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
+  'Knockback':Pathfinder2E.FEATURES.Knockback,
+  'Overpowering Charge':
     'Section=combat ' +
-    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed for 1 rd, and a successful Strike on a foe gives %{constitutionModifier} temporary Hit Points (critical success %{constitutionModifier*2})"',
-  'Furious Sprint':
+    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{strengthModifier*2} HP and off=guard on a critical success"',
+  'Resounding Blow':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
-  'Great Cleave':
-    'Section=combat ' +
-    'Note="Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate"',
-  'Knockback':
-    'Action=1 Section=combat Note="Shoves a foe 5\' after a successful Strike"',
-  'Terrifying Howl':
+    'Note="Successful melee Strike inflicts deafened for 1 rd, or for 1 min with a critical hit"',
+  'Silencing Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Intimidate Demoralizes all foes in a 30\' radius"',
-  "Dragon's Rage Wings":
-    'Action=1 Section=combat Note="Gives %{speed}\' fly Speed during rage"',
-  'Furious Grab':
-    'Action=1 Section=combat Note="Grapples a foe after a successful Strike"',
-  "Predator's Pounce":
-    'Action=1 ' +
+    'Note="Successful melee Strike inflicts stunned 1, requiring a successful DC flat check to use linguisting actions (<b>save Fortitude</b> negates; critical success inflicts stunned 3)"',
+  'Tangle Of Battle':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Strikes after moving up to %{speed}\' in light or no armor"',
-  "Spirit's Wrath":
-    'Action=1 ' +
+    'Note="Makes a Grapple attempt immediately after a critical hit"',
+  'Terrifying Howl':Pathfinder2E.FEATURES['Terrifying Howl'],
+  "Dragon's Rage Wings":Pathfinder2E.FEATURES["Dragon's Rage Wings"],
+  'Embrace The Pain':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
-  "Titan's Stature":
+    'Note="Successful Athletics check inflects Grapple or Disarm after a foe melee hit"',
+  'Furious Grab':Pathfinder2E.FEATURES['Furious Grab'],
+  "Predator's Pounce":Pathfinder2E.FEATURES["Predator's Pounce"],
+  "Spirit's Wrath":Pathfinder2E.FEATURES["Spirit's Wrath"],
+  'Sunder Spell':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
-  'Awesome Blow':
+    'Note="Successful Strike on a creature, object, or spell manifestation allows an attempt to counteract a spell or magical effect"',
+  "Titan's Stature":Pathfinder2E.FEATURES["Titan's Stature"],
+  'Unbalancing Sweep':
+    'Action=3 ' +
     'Section=combat ' +
-    'Note="A success or critical success on an Athletics vs. Fortitude after using Knockback inflicts success or critical success effects of Shove and Trip"',
-  "Giant's Lunge":
-    'Action=1 ' +
+    'Note="Makes a Shove or Trip against three foes within reach"',
+  'Awesome Blow':Pathfinder2E.FEATURES['Awesome Blow'],
+  "Giant's Lunge":Pathfinder2E.FEATURES["Giant's Lunge"],
+  'Impaling Thrust':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Extends reach of melee weapons and unarmed attacks to 10\' until rage ends"',
+    'Note="Successful Strike with a piercing melee weapon inflicts grabbed, then persistent bleed damage equal to the weapon\'s damage dice"',
+  'Sunder Enchantment':
+    'Section=combat ' +
+    'Note="Can use Sunder Spell to counteract an unattended magic item or one possessed by the target to make it mundane for 10 min"',
   'Vengeful Strike':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="While using Come And Get Me, responds to a successful foe attack with an immediate Strike"',
+    Pathfinder2E.FEATURES['Vengeful Strike']
+    .replace(/"$/, '; using in response to a critical hit is a free action"'),
   // Whirlwind Strike as above
-  'Collateral Thrash':
-    'Section=combat ' +
-    'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>, DC %{classDifficultyClass.Barbarian})"',
+  'Collateral Thrash':Pathfinder2E.FEATURES['Collateral Thrash'],
+  'Desperate Wrath':Pathfinder2E.FEATURES['Reckless Abandon'],
   'Dragon Transformation':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'} during rage"',
-  'Reckless Abandon (Barbarian)':
-    'Action=Free ' +
-    'Section=feature ' +
-    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
-  'Brutal Critical':
-    'Section=combat ' +
-    'Note="Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage"',
-  'Perfect Clarity':
+    Pathfinder2E.FEATURES['Dragon Transformation']
+    .replace('level', 'rank'),
+  'Furious Vengeance':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Ends rage to gain a +2 reroll on a failed attack or Will save"',
-  'Vicious Evisceration':
+    'Note="Makes a melee Strike against a foe that inflicts a critical hit"',
+  'Penetrating Projectile':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike also inflicts drained 1, or drained 2 on a critical success"',
-  'Contagious Rage':
+    'Note="Makes a ranged or thrown piercing weapon Strike on each creature in a 30\' line"',
+  'Shattering Blows':
+    'Section=combat Note="Strikes ignore %{features.Devastator?10:5} Hardness"',
+  'Brutal Critical':Pathfinder2E.FEATURES['Brutal Critical'],
+  'Perfect Clarity':Pathfinder2E.FEATURES['Perfect Clarity'],
+  'Vicious Evisceration':Pathfinder2E.FEATURES['Vicious Evisceration'],
+  'Whirlwind Toss':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Can use Share Rage unlimited times, also sharing instinct and specialization abilities"',
-  'Quaking Stomp':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Invokes <i>Earthquake</i> effects once per 10 min"',
-*/
+    'Note="Collateral Thrash affects all adjacent foes"',
+  'Annihilating Swing':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Melee Strike ignores target resistances, destroys non-magical objects with Hardness up to 20, and destroys magical objects with Hardness up to 20 with a successful counteract check"',
+  'Contagious Rage':Pathfinder2E.FEATURES['Contagious Rage'],
+  'Quaking Stomp':Pathfinder2E.FEATURES['Quaking Stomp'],
+  'Unstoppable Juggernaut':
+    'Section=save ' +
+    'Note="Has resistance %{constitutionModifier+3} to all damage, resistance %{constitutionModifier+8} during rage, and can retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
 
   /*
   // Champion
@@ -9878,7 +9942,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Divination', 'Concentrate'),
   'Hypnotize':
     Pathfinder2E.SPELLS['Hypnotic Pattern']
-    .replace('Trait=', 'Trait=Manipulate,Subtle,'),
+    .replace('Traits=', 'Traits=Manipulate,Subtle,'),
   'Ignition':
     Pathfinder2E.SPELLS['Produce Flame']
     .replace('Evocation', 'Concentrate,Manipulate')
@@ -9892,19 +9956,19 @@ Pathfinder2ERemaster.SPELLS = {
       '"Target suffers worse of two rolls on next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
   'Illusory Creature':
     Pathfinder2E.SPELLS['Illusory Creature']
-    .replace('Trait=', 'Trait=Concentrate,Manipulate,')
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,')
     .replace(/1d4\+%\{.*\}/, '3d4'),
   'Illusory Disguise':
     Pathfinder2E.SPELLS['Illusory Disguise']
-    .replace('Trait=', 'Trait=Concentrate,Manipulate,') + ' ' +
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,') + ' ' +
     'Description=' +
       '"R30\' Makes the target appear different and gives +4 Deception, plus the target level if untrained, to avoid uncovering the disguise for 1 hr (<b>heightened 3rd</b> allows copying a specific individual; <b>4th</b> affects 10 targets; <b>7th</b> affects 10 targets and allows copying specific individuals)"',
   'Illusory Object':
     Pathfinder2E.SPELLS['Illusory Object']
-    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Illusory Scene':
     Pathfinder2E.SPELLS['Illusory Scene']
-    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Impaling Spike':
     'Level=5 ' +
     'Traits=Concentrate,Manipulate,Metal ' +
@@ -9936,7 +10000,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Invisibility':
     Pathfinder2E.SPELLS.Invisibility
-    .replace('Trait=', 'Trait=Manipulate,Subtle'),
+    .replace('Traits=', 'Traits=Manipulate,Subtle,'),
   'Invoke Spirits':
     'Level=5 ' +
     'Traits=Concentrate,Emotion,Fear,Manipulate,Mental,Void ' +
@@ -9946,7 +10010,7 @@ Pathfinder2ERemaster.SPELLS = {
       '"R120\' 10\' burst, movable 30\' per rd, inflicts 2d4 HP mental and 2d4 HP void while sustained for up to 1 min (<b>save Will</b> negates; critical failure also inflicts frightened 2, plus fleeing in the first rd) (<b>heightened +2</b> inflicts +1d4 HP mental and void)"',
   'Item Facade':
     Pathfinder2E.SPELLS['Item Facade']
-    .replace('Trait=', 'Trait=Concentrate,Manipulate,'),
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Jump':
     Pathfinder2E.SPELLS.Jump
     .replace('Transmutation', 'Manipulate'),
@@ -11679,6 +11743,9 @@ Pathfinder2ERemaster.magicRules = function(rules, spells) {
 Pathfinder2ERemaster.talentRules = function(
   rules, feats, features, goodies, languages, skills
 ) {
+  for(let f in feats)
+    if(feats[f] == null)
+      console.log(f);
   for(let f in features)
     if(features[f] == null)
       console.log(f);
