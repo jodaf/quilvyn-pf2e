@@ -7701,7 +7701,9 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Alchemist
   'Abundant Vials':Pathfinder2E.FEATURES['Perpetual Perfection'],
-  'Advanced Alchemy':Pathfinder2E.FEATURES['Advanced Alchemy'],
+  'Advanced Alchemy':
+    Pathfinder2E.FEATURES['Advanced Alchemy']
+    .replace('use a batch of infused reagents to create 2', 'create %{4+intelligenceModifier}'),
   'Advanced Vials':Pathfinder2E.FEATURES['Perpetual Potency'],
   'Alchemical Expertise':Pathfinder2E.FEATURES['Alchemical Expertise'],
   'Alchemical Mastery':Pathfinder2E.FEATURES['Alchemical Mastery'],
@@ -7736,40 +7738,67 @@ Pathfinder2ERemaster.FEATURES = {
   'Toxicologist':
     'Section=feature ' +
     'Note="TODO"',
-  'Quick Alchemy':Pathfinder2E.FEATURES['Quick Alchemy'],
+  'Quick Alchemy':
+    Pathfinder2E.FEATURES['Quick Alchemy']
+    .replace('batches of infused reagents', 'versatile vials'),
   'Research Field':Pathfinder2E.FEATURES['Research Field'],
-  'Versatile Vials':Pathfinder2E.FEATURES['Infused Reagents'],
+  'Versatile Vials':
+    Pathfinder2E.FEATURES['Infused Reagents']
+    .replace('level', '2+(skillNotes.efficientAlchemy?4:0)')
+    .replace('batches of infused reagents', 'versatile vials'),
   // Weapon Specialization as above
   'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
 
   'Alchemical Familiar':Pathfinder2E.FEATURES['Alchemical Familiar'],
-  'Alchemical Assessment':Pathfinder2E.FEATURES['Alchemical Savant'],
+  'Alchemical Assessment':
+    Pathfinder2E.FEATURES['Alchemical Savant']
+    .replace(/\/[^"]*/, ''),
   'Blowgun Poisoner':
-    'Section=feature ' +
-    'Note="TODO"',
+    'Section=combat ' +
+    'Note="Critical success with a poisoned blowgun Strike inflicts 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden or undetected"',
   'Far Lobber':Pathfinder2E.FEATURES['Far Lobber'],
-  'Quick Bomber':Pathfinder2E.FEATURES['Quick Bomber'],
+  'Quick Bomber':
+    Pathfinder2E.FEATURES['Quick Bomber']
+    .replace('Draws', 'Draws or uses Quick Alchemy to create'),
   'Soothing Vials':
-    'Section=feature ' +
-    'Note="TODO"',
-/*
-  'Revivifying Mutagen':
+    'Section=skill ' +
+    'Note="Versatile vial that restores Hit Points allows an immediate +1 Will saving throw to end 1 mental effect"',
+  'Clotting Elixirs':
+    'Section=skill ' +
+    'Note="Healing elixirs allow a DC 10 flat check to remove any persistent bleed damage"',
+  'Improvise Admixture':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Crafting check using an alchemist\'s toolkit provides 1, 2, or 3 versatile vials on a failure, success, or critical success once per day"',
+  'Pernicious Poison':
+    'Section=combat ' +
+    'Note="Specially-prepared poison inflicts HP equal to its level if the target saves"',
+  'Revivifying Mutagen':Pathfinder2E.FEATURES['Revivifying Mutagen'],
+  'Smoke Bomb':
+    Pathfinder2E.FEATURES['Smoke Bomb']
+    .replace(/of up to level.*that/, 'that') + ' ' +
+    'Action=',
+  // Changed effects
+  'Efficient Alchemy':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Increased Advanced Alchemy effects",' +
+      '"Can produce twice the usual number of alchemical items during downtime"',
+  'Enduring Alchemy':Pathfinder2E.FEATURES['Enduring Alchemy'],
+  'Healing Bomb':
+    'Section=combat ' +
+    'Note="Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir\'s dice to adjacent creatures; failure restores Hit Points equal to the elixir\'s dice to the target only"',
+  'Invogorating Elixir':
+    'Section=skill ' +
+    'Note="Prepared elixir can be imbibed by sickened creatures and attempts to counteract imbiber\'s choice of clumsy, enfeebled, sickened, or stupefied"',
+  'Regurgitage Mutagen':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends mutagen effects to restore 1d6 Hit Points per 2 levels of the mutagen"',
-  'Smoke Bomb':
-    'Action=Free ' +
-    'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min"',
-  'Calculated Splash':
-    'Section=combat ' +
-    'Note="Can throw a bomb to inflict %{intelligenceModifier} HP splash damage"',
-  'Efficient Alchemy':
+    'Note="R30\' Ends a mutagen to inflict %{level//2}d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)"',
+  'Tenacious Toxins':
     'Section=skill ' +
-    'Note="Can produce twice the usual number of alchemical items during downtime"',
-  'Enduring Alchemy':
-    'Section=skill ' +
-    'Note="Quick Alchemy products last until the end of the next turn"',
+    'Note="Increases duration of poisons by their stage 1 interval"',
+/*
   'Combine Elixirs':
     'Action=Free ' +
     'Section=skill ' +
@@ -12396,6 +12425,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Horned Exemplar', '=', '"poison"',
       'features.Mirage Exemplar', '=', '"mental"',
       'features.Omen Exemplar', '=', '"mental"'
+    );
+  } else if(name == 'Efficient Alchemy') {
+    rules.defineRule('skillNotes.advancedAlchemy',
+      'skillNotes.efficientAlchemy', '=', 'null' // italics
     );
   } else if(name == 'Fangs') {
     Pathfinder2E.weaponRules(
