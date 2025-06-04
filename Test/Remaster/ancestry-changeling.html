@@ -16,16 +16,16 @@ var attributes = {
   "armor":"Leather", "background":"Herbalist", "class":"Fighter", "classFeats.Double Slice":1, 
   "deity":"Gozreh", "experience":265, "gender":"Male", "languages.Empyrean":1, 
   "name":"Ancestry-Changeling", "selectableFeatures.Fighter - Strength":1, 
-  "selectableFeatures.Human - Changeling Human":1, "shield":"Steel", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Mercantile Lore":1, "skillIncreases.Orc Lore":1, "skillIncreases.Sky Lore":1, 
-  "weapons.Hatchet":1, "weapons.Shortsword":1, "weapons.Starknife":1
+  "selectableFeatures.Human - Versatile Heritage":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Steel", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Orc Lore":1, 
+  "skillIncreases.Sky Lore":1, "weapons.Hatchet":1, "weapons.Shortsword":1, "weapons.Starknife":1
 };
   </script>
 </head>
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Ancestry-Changeling</b> -- <b>Male</b> <b>Human</b> <b>Fighter</b></td>
+  <td style="border:1px solid black"><b>Ancestry-Changeling</b> -- <b>Male</b> <b>Changeling Human</b> <b>Fighter</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -89,6 +89,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Changeling Lore: Has the Additional Lore (Hag Lore) feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Changeling: Has the Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Key Attribute: 1 selection</i></td>
@@ -97,7 +99,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
+        <td>Changeling: Has the changeling trait and may take changeling ancestry feats</td>
+      </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
+      </tr><tr style="text-align:center">
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -150,7 +156,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 3 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Brine May: Successful Swim checks are critical successes, and failure does cause sinking</td>
+      <td>Brine May: Successful Swim checks are critical successes, and failure does not inflict sinking</td>
     </tr><tr style="text-align:center">
       <td>Charming Liar: Critical success on a Lie improves a target's attitude by 1 step once per conversation</td>
     </tr><tr style="text-align:center">
@@ -176,7 +182,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Leather</td>
         <td><b>Shield</b>: Steel (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Claws (+9 1d6+2 S/P; strength; expert); Hatchet (+7 1d6+2 S R10'; strength; expert); Shortsword (+7 1d6+2 P/S; strength; expert); Starknife (+7 1d4+2 P/S [Crit +d6] R20'; strength; expert)</td>
+        <td><b>Weapons</b>: Claws (+9 1d6+2 S; strength; expert); Hatchet (+7 1d6+2 S R10'; strength; expert); Shortsword (+7 1d6+2 P/S; strength; expert); Starknife (+7 1d4+2 P/S [Crit +d6] R20'; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -258,8 +264,6 @@ var attributes = {
         <td>Called Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
         <td>Hag Magic Feat: Requires level (currently 1) >= 13</td>
-      </tr><tr style="text-align:center">
-        <td>Human Heritage Allocation: 1 available vs. 0 allocated</td>
       </tr><tr style="text-align:center">
         <td>Mist Child Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">

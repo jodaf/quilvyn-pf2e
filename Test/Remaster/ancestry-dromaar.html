@@ -13,16 +13,17 @@ var attributes = {
   "armor":"Hide", "background":"Criminal", "class":"Fighter", "classFeats.Exacting Strike":1, 
   "deity":"Gozreh", "experience":57, "gender":"Male", "languages.Empyrean":1, 
   "languages.Sakvroth":1, "name":"Ancestry-Dromaar", "selectableFeatures.Fighter - Dexterity":1, 
-  "selectableFeatures.Human - Dromaar Human":1, "shield":"None", "skillIncreases.Abadar Lore":1, 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, "skillIncreases.Circus Lore":1, 
-  "skillIncreases.Iomedae Lore":1, "weapons.Morningstar":1, "weapons.Spear":1, "weapons.Starknife":1
+  "selectableFeatures.Human - Versatile Heritage":1, "selectableFeatures.Versatile Heritage - Dromaar":1, "shield":"None", 
+  "skillIncreases.Abadar Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, 
+  "skillIncreases.Circus Lore":1, "skillIncreases.Iomedae Lore":1, "weapons.Morningstar":1, "weapons.Spear":1, 
+  "weapons.Starknife":1
 };
   </script>
 </head>
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Ancestry-Dromaar</b> -- <b>Male</b> <b>Human</b> <b>Fighter</b></td>
+  <td style="border:1px solid black"><b>Ancestry-Dromaar</b> -- <b>Male</b> <b>Dromaar Human</b> <b>Fighter</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -82,6 +83,8 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Ancestry Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Dromaar: Has the Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Key Attribute: 1 selection</i></td>
@@ -91,6 +94,10 @@ var attributes = {
         <td><i>Orc Sight: Has the Darkvision feature</i></td>
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
+      </tr><tr style="text-align:center">
+        <td>Dromaar: Has the orc and dromaar traits and may take orc and dromaar ancestry feats</td>
+      </tr><tr style="text-align:center">
+        <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
     </tr></table>
@@ -201,15 +208,7 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
-      <tr style="text-align:center">
-        <td>Ancestry Feats Allocation: 1 available vs. 2 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Human Heritage Allocation: 1 available vs. 0 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Orc Sight Feat: Requires low-light vision feature</td>
-      </tr></table>
-</td>
+      <td><b>Validation Errors</b>: Ancestry Feats Allocation: 1 available vs. 2 allocated</td>
     </tr></table>
 </td>
   </tr></table>

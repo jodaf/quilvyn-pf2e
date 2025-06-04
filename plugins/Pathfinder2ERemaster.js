@@ -2606,7 +2606,7 @@ Pathfinder2ERemaster.FEATS = {
   'Reflect Spell':
     Pathfinder2E.FEATS['Reflect Spell']
     .replace('Traits=', 'Traits=Witch,'),
-  'Rites of Transfiguration':'Traits=Class,Witch Require="level >= 14"',
+  'Rites Of Transfiguration':'Traits=Class,Witch Require="level >= 14"',
   "Patron's Presence":'Traits=Class,Witch Require="level >= 14"',
   // Effortless Concentration as above
   'Siphon Power':'Traits=Class,Witch Require="level >= 16"',
@@ -2685,6 +2685,10 @@ Pathfinder2ERemaster.FEATS = {
   'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
   'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
   'Soothing Vials':'Traits=Class,Alchemist Require="features.Chirurgeon"',
+  'Clotting Elixirs':'Traits=Class,Alchemist Require="level >= 2"',
+  'Improvise Admixture':
+    'Traits=Class,Alchemist,Concentrate,Manipulate Require="level >= 2"',
+  'Pernicious Poison':'Traits=Class,Alchemist Require="level >= 2"',
   'Revivifying Mutagen':
     Pathfinder2E.FEATS['Revivifying Mutagen']
     .replace('Traits=', 'Traits=Concentrate,'),
@@ -2708,7 +2712,10 @@ Pathfinder2ERemaster.FEATS = {
   'Fortified Elixirs':'Traits=Class,Alchemist Require="level >= 6"',
   'Sticky Poison':'Traits=Class,Alchemist Require="level >= 6"',
   'Alter Admixture':'Traits=Class,Alchemist,Exploration Require="level >= 8"',
-  'Improved Invigorating Elixir':'Traits=Class,Alchemist Require="level >= 8"',
+  'Improved Invigorating Elixir (Mental)':
+    'Traits=Class,Alchemist Require="level >= 8"',
+  'Improved Invigorating Elixir (Physical)':
+    'Traits=Class,Alchemist Require="level >= 8"',
   'Mutant Physique':'Traits=Class,Alchemist Require="level >= 8"',
   'Pinpoint Poisoner':'Traits=Class,Alchemist Require="level >= 8"',
   'Sticky Bomb':
@@ -2724,7 +2731,7 @@ Pathfinder2ERemaster.FEATS = {
   'Extend Elixir':Pathfinder2E.FEATS['Extend Elixir'],
   'Supreme Invigorating Elixir':
     'Traits=Class,Alchemist ' +
-    'Require="level >= 12","feature.Invigorating Elixir"',
+    'Require="level >= 12","features.Invigorating Elixir"',
   'Uncanny Bombs':Pathfinder2E.FEATS['Uncanny Bombs'],
   'Double Poison':'Traits=Class,Alchemist Require="level >= 14"',
   'Mutant Innervation':'Traits=Class,Alchemist Require="level >= 14"',
@@ -7183,7 +7190,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Witch's Broom":
     'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10\' Speed, during daily prep"',
   // Reflect Spell as above
-  'Rites of Transfiguration':
+  'Rites Of Transfiguration':
     'Section=magic ' +
     'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphosis</i>"',
   "Patron's Presence":
@@ -7703,7 +7710,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Abundant Vials':Pathfinder2E.FEATURES['Perpetual Perfection'],
   'Advanced Alchemy':
     Pathfinder2E.FEATURES['Advanced Alchemy']
-    .replace('use a batch of infused reagents to create 2', 'create %{4+intelligenceModifier}'),
+    .replace('use a batch of infused reagents to create 2', 'create %{intelligenceModifier+(!skillNotes.efficientAlchemy?4:!skillNotes.advancedEfficientAlchemy?6:level>=16?10:8)}'),
   'Advanced Vials':Pathfinder2E.FEATURES['Perpetual Potency'],
   'Alchemical Expertise':Pathfinder2E.FEATURES['Alchemical Expertise'],
   'Alchemical Mastery':Pathfinder2E.FEATURES['Alchemical Mastery'],
@@ -7782,13 +7789,13 @@ Pathfinder2ERemaster.FEATURES = {
   'Efficient Alchemy':
     'Section=skill,skill ' +
     'Note=' +
-      '"Increased Advanced Alchemy effects",' +
+      '"Has increased Advanced Alchemy effects",' +
       '"Can produce twice the usual number of alchemical items during downtime"',
   'Enduring Alchemy':Pathfinder2E.FEATURES['Enduring Alchemy'],
   'Healing Bomb':
     'Section=combat ' +
     'Note="Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir\'s dice to adjacent creatures; failure restores Hit Points equal to the elixir\'s dice to the target only"',
-  'Invogorating Elixir':
+  'Invigorating Elixir':
     'Section=skill ' +
     'Note="Prepared elixir can be imbibed by sickened creatures and attempts to counteract imbiber\'s choice of clumsy, enfeebled, sickened, or stupefied"',
   'Regurgitage Mutagen':
@@ -7798,98 +7805,79 @@ Pathfinder2ERemaster.FEATURES = {
   'Tenacious Toxins':
     'Section=skill ' +
     'Note="Increases duration of poisons by their stage 1 interval"',
-/*
   'Combine Elixirs':
-    'Action=Free ' +
-    'Section=skill ' +
-    'Note="Uses 2 additional batches of reagents to create a single elixir that has the effects of 2 elixirs of up to level %{level-2}"',
+    Pathfinder2E.FEATURES['Combine Elixirs'] + ' ' +
+    'Action= ' +
+    'Note="Uses the ingredients of 2 elixirs to create a single elixir that has the effects of both"',
   'Debilitating Bomb':
-    'Action=Free ' +
+    Pathfinder2E.FEATURES['Debilitating Bomb']
+    .replace('of up to level.*that', 'that') + ' ' +
+    'Action=',
+  'Directional Bombs':Pathfinder2E.FEATURES['Directional Bombs'],
+  'Fortified Elixirs':
+    'Section=skill ' +
+    'Note="Consumer of an infused antidote or antiplague can end its effects to gain a reroll on a failed Fortitude save vs. poison or disease"',
+  'Sticky Poison':
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-2} that also inflicts dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 turn"',
-  'Directional Bombs':
+    'Note="Poisoned weapon remains poisoned for 1 rd after a Strike on a successful DC 17 flat check, or DC 5 if the Strike had no effect"',
+  'Alter Admixture':
+    'Section=skill ' +
+    'Note="Can use a 10 min process to change the type of an alchemical bomb, elixir, or poison"',
+  'Improved Invigorating Elixir (Mental)':
+    'Section=skill ' +
+    'Note="Can make invigorating elixirs that counteract confused, controlled, fleeing, frightened, paralyzed, or slowed"',
+  'Improved Invigorating Elixir (Physical)':
+    'Section=skill ' +
+    'Note="Can make invigorating elixirs that counteract blinded, deafened, drained, paralyzed, or slowed"',
+  'Mutant Physique':
+    'Section=skill ' +
+    'Note="Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait; juggernaut mutagens give %{level//2} physical damage resistance, and quicksilver mutagens give 10\' Steps and Squeezing as one size smaller"',
+  'Pinpoint Poisoner':
     'Section=combat ' +
-    'Note="Can restrict bomb splash effects to a 15\' cone in direction thrown"',
-  'Feral Mutagen':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the Armor Class penalty to -2 to increase claws and jaws damage by 1 die step",' +
-      '"Consuming a bestial mutagen adds the item bonus to Intimidation"',
+    'Note="Off-guard targets suffer -2 initial saves vs. self poisoned weapons and inhaled poisons"',
   'Sticky Bomb':
-    'Action=Free ' +
-    'Section=combat ' +
-    'Note="Once per rd, creates a bomb of up to level %{level-2} that inflicts persistent damage equal to its splash damage"',
-  'Elastic Mutagen':
-    'Section=skill ' +
-    'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as a creature 1 size smaller"',
-  'Expanded Splash':
-    'Section=combat ' +
-    'Note="Can throw bombs to inflict +%{intelligenceModifier} HP splash damage in a 10\' radius"',
+    Pathfinder2E.FEATURES['Sticky Bomb'] + ' ' +
+    'Action= ' +
+    'Note="Can create bombs that inflict persistent damage equal to their splash damage"',
+  'Advanced Efficient Alchemy':
+    'Section=skill Note="Has increased Advance Alchemy effects"',
+  'Expanded Splash':Pathfinder2E.FEATURES['Expanded Splash'],
   'Greater Debilitating Bomb':
+    Pathfinder2E.FEATURES['Greater Debilitating Bomb'],
+  'Unstable Concoction':
+    'Section=skill ' +
+    'Note="Can increase the die size of the initial effects of a alchemical consumable by 1 step; the consumer suffers acid damage equal to the items level (DC 10 flat check negates)"',
+  'Extend Elixir':Pathfinder2E.FEATURES['Extend Elixir'],
+  'Supreme Invigorating Exlixir':
+    'Section=skill ' +
+    'Note="Invigorating elixirs counteract as level %{level+2} and can counteract petrified, stunned, or any disease"',
+  'Uncanny Bombs':Pathfinder2E.FEATURES['Uncanny Bombs'],
+  'Double Poison':
     'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 rd"',
-  'Merciful Elixir':
-    'Action=Free ' +
+    'Note="Can apply 2 poisons of up to level %{level-2} to a weapon simultaneously"',
+  'Mutant Innervation':
     'Section=skill ' +
-    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
-  'Potent Poisoner':
-    'Section=skill ' +
-    'Note="+4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
-  'Extend Elixir':
-    'Section=skill ' +
-    'Note="Doubles the duration of elixirs that last at least 1 min"',
-  'Invincible Mutagen':
-    'Section=combat ' +
-    'Note="Consuming a juggernaut elixir gives resistance %{intelligenceModifier>?0} to all physical damage"',
-  'Uncanny Bombs':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Thrown bombs have a 60\' range",' +
-      '"Thrown bombs reduce target cover Armor Class bonus by 1 and succeed automatically on the flat check to target a concealed creature"',
-  'Glib Mutagen':
-    'Section=skill ' +
-    'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and linguistic barriers"',
-  'Greater Merciful Elixir':
-    'Section=skill ' +
-    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a blinded, deafened, sickened, or slowed condition"',
+    'Note="Cogntive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Peformance and translate speech into listeners\' languages"',
   'True Debilitating Bomb':
-    'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) or a lesser condition that requires a critical success to negate"',
-  'Eternal Elixir':
-    'Section=skill ' +
-    'Note="Can indefinitely extend the duration of an elixir of up to level %{level//2} that lasts at least 1 min"',
+    Pathfinder2E.FEATURES['True Debilitating Bomb']
+    .replace(/or a lesser[^"]*/, ''),
+  'Eternal Elixir':Pathfinder2E.FEATURES['Eternal Elixir'],
   'Exploitive Bomb':
-    'Action=Free ' +
-    'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-2} that negates resistance %{level}"',
-  'Genius Mutagen':
-    'Section=skill ' +
-    'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
-  'Persistent Mutagen':
-    'Section=skill ' +
-    'Note="Extends the duration of a mutagen until the next day once per day"',
-  'Improbable Elixirs':
-    'Section=skill ' +
-    'Note="Can create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
-  'Mindblank Mutagen':
+    Pathfinder2E.FEATURES['Exploitive Bomb']
+    .replace(/ of up to level.*that/, 'that') + ' ' +
+    'Action=',
+  'Persistent Mutagen':Pathfinder2E.FEATURES['Persistent Mutagen'],
+  'Improbable Elixirs':Pathfinder2E.FEATURES['Improbable Elixirs'],
+  'Miracle Worker':Pathfinder2E.FEATURES['Miracle Worker'],
+  'Perfect Debilitation':Pathfinder2E.FEATURES['Perfect Debilitation'],
+  'Alchemical Revivification':
     'Section=save ' +
-    'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
-  'Miracle Worker':
-    'Section=combat ' +
-    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd"',
-  'Perfect Debilitation':
-    'Section=combat ' +
-    'Note="Debilitating Bombs require a critical success to avoid effects"',
+    'Note="If killed while under the effects of an elixir, returns to life next turn with the effects of a major bestial, juggernaut, or quicksilver mutagen"',
   "Craft Philosopher's Stone":
-    'Section=skill ' +
-    'Note="Knows the formula for creating a philosopher\'s stone"',
+    Pathfinder2E.FEATURES["Craft Philosopher's Stone"],
   'Mega Bomb':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can throw a bomb of up to level %{advancedAlchemyLevel-2} that affects all creatures in a 30\' radius (<b>save basic Reflex</b> DC %{classDifficultyClass.Alchemist})"',
-  'Perfect Mutagen':
-    'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
-*/
+    Pathfinder2E.FEATURES['Mega Bomb'] + ' ' +
+    'Action=2',
 
   // Barbarian
   // Armor Mastery as above
@@ -12330,7 +12318,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   Pathfinder2E.featRulesExtra(rules, name);
-  if(name == 'Angelkin') {
+  if(name == 'Advanced Efficient Alchemy') {
+    rules.defineRule('skillNotes.advancedAlchemy',
+      'skillNotes.advancedEfficientAlchemy', '=', 'null' // italics
+    );
+  } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
   } else if(name == 'Bestial Manifestation (Claw)') {
     // TODO different traits
@@ -12467,7 +12459,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
   } else if(name == 'Invulnerable Rager') {
-    rules.defineRule('combatNotes.Invulnerable Rager',
+    rules.defineRule('combatNotes.invulnerableRager',
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'
     )
   } else if(name.startsWith('Iruxi Armaments')) {

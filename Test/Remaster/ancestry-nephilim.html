@@ -22,17 +22,18 @@ var attributes = {
   "background":"Barrister", "class":"Fighter", "classFeats.Sudden Charge":1, "deity":"Pharasma", 
   "experience":141, "gender":"Female", "languages.Aklo":1, "languages.Draconic":1, 
   "languages.Halfling":1, "languages.Pyric":1, "name":"Ancestry-Nephilim", 
-  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Nephilim Human":1, "shield":"Buckler", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Astral Plane Lore":1, 
-  "skillIncreases.Baking Lore":1, "skillIncreases.Circus Lore":1, "skillIncreases.Intimidation":1, 
-  "skillIncreases.Sky Lore":1, "weapons.Battle Axe":1, "weapons.Greatpick":1, "weapons.Spear":1
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Versatile Heritage":1, 
+  "selectableFeatures.Versatile Heritage - Nephilim":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Arcana":1, "skillIncreases.Astral Plane Lore":1, "skillIncreases.Baking Lore":1, 
+  "skillIncreases.Circus Lore":1, "skillIncreases.Intimidation":1, "skillIncreases.Sky Lore":1, 
+  "weapons.Battle Axe":1, "weapons.Greatpick":1, "weapons.Spear":1
 };
   </script>
 </head>
 <body>
 <table id="_top" style="border:1px solid black; width:100%">
 <tr style="text-align:center">
-  <td style="border:1px solid black"><b>Ancestry-Nephilim</b> -- <b>Female</b> <b>Human</b> <b>Fighter</b></td>
+  <td style="border:1px solid black"><b>Ancestry-Nephilim</b> -- <b>Female</b> <b>Nephilim Human</b> <b>Fighter</b></td>
 </tr><tr style="text-align:center">
   <td style="border:1px solid black">  <table id="Attributes" style="width:100%">
   <tr style="text-align:center">
@@ -118,13 +119,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Nephilim Eyes: Has the Darkvision feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Nephilim: Has the Low-Light Vision feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Scion Of Many Planes: +1 Ancestry Feat (Nephilim lineage)</i></td>
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
         <td>Halo: Can evoke a halo that lights a 20' radius</td>
       </tr><tr style="text-align:center">
+        <td>Low-Light Vision: Has normal vision in dim light</td>
+      </tr><tr style="text-align:center">
         <td>Nephilim Lore: Has the Additional Lore (Choose 1 from any Planar Lore)</td>
+      </tr><tr style="text-align:center">
+        <td>Nephilim: Has the nephilim trait and may take nephilim ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Skillful Tail: Can use tail for simple Interact actions</td>
       </tr></table>
@@ -215,7 +222,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Chain Mail</td>
         <td><b>Shield</b>: Buckler (+1 AC when raised; hardness 3; HP 6)</td>
-        <td><b>Weapons</b>: Battle Axe (+7 1d8+2 S; strength; expert); Claws (+9 1d4+2 S/P; strength; expert); Greatpick (+7 1d10+2 P [Crit d12]; strength; expert); Hoof (+7 1d6+2 B; strength; expert); Jaws (+9 1d6+2 P; strength; expert); Spear (+7 1d6+2 P R20'; strength; expert); Tail (+9 1d6+2 B; strength; expert)</td>
+        <td><b>Weapons</b>: Battle Axe (+7 1d8+2 S; strength; expert); Claws (+9 1d4+2 S; strength; expert); Greatpick (+7 1d10+2 P [Crit d12]; strength; expert); Hoof (+7 1d6+2 B; strength; expert); Jaws (+9 1d6+2 P; strength; expert); Spear (+7 1d6+2 P R20'; strength; expert); Tail (+9 1d6+2 B; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -284,7 +291,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Divine Decree (D7): <b>(2)</b> R40' 40' emanation inflicts 7d10 HP spirit and enfeebled 2 for 1 min on foes (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP, banishment, and, for creatures of level 10 and lower, paralysis for 1 min (<b>save Will</b> negates; critical failure inflicts death) (<b>heightened +1</b> inflicts +1d10 HP and increases the level of creatures that suffer paralysis by 2)</td>
     </tr><tr style="text-align:left">
-      <td>Translocate (D1): <b>(2)</b> TODO</td>
+      <td>Translocate (D4): <b>(2)</b> Teleports self to a visible location within 120' (<b>heightened 5th</b> allows teleporting to a familiar location within 1 mile)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -331,8 +338,6 @@ var attributes = {
         <td>Extraplanar Supplication Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
         <td>Fiendish Magic Feat: Requires level (currently 1) >= 9 and grimspawn feature (currently 1), pitborn feature (currently 1) or hellspawn feature (currently 1)</td>
-      </tr><tr style="text-align:center">
-        <td>Human Heritage Allocation: 1 available vs. 0 allocated</td>
       </tr><tr style="text-align:center">
         <td>Nephilim Resistance Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
