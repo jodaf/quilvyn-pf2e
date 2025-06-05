@@ -10711,6 +10711,155 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Zealous Conviction']
     .replace('Enchantment', 'Concentrate,Manipulate'),
 
+  'Allegro':
+    Pathfinder2E.SPELLS.Allegro
+    .replace('Enchantment', 'Concentrate'),
+  'Counter Performance':
+    Pathfinder2E.SPELLS['Counter Performance']
+    .replace('Enchantment', 'Concentrate'),
+  'Courageous Anthem':
+    Pathfinder2E.SPELLS['Inspire Courage']
+    .replace('Enchantment', 'Concentrate'),
+  'Dirge Of Doom':
+    Pathfinder2E.SPELLS['Dirge Of Doom']
+    .replace('Enchantment', 'Concentrate'),
+  'Fatal Aria':
+    Pathfinder2E.SPELLS['Fatal Aria']
+    .replace('Enchantment', 'Concentrate'),
+  'Fortissimo Composition':
+    Pathfinder2E.SPELLS['Inspire Heroics']
+    .replace('Enchantment', 'Concentrate')
+    .replace('Metamagic', 'Spellshape')
+    .replace('<i>Inspire Courage</i> or <i>Inspire Defense', '<i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i>'),
+  'House Of Imaginary Walls':
+    Pathfinder2E.SPELLS['House Of Imaginary Walls']
+    .replace('Traits=', 'Traits=Manipulate,'),
+  'Hymn Of Healing':
+    'Level=1 ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Concentrate,Healing,Vitality ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Gives the target fast healing 2 and 2 temporary Hit Points each rd while sustained up to 4 rd (<b>heightened +1</b> gives +2 fast healing and temporary Hit Points)"',
+  'Lingering Composition':
+    Pathfinder2E.SPELLS['Lingering Composition']
+    .replace('Enchantment', 'Concentrate')
+    .replace('Metamagic', 'Spellshape'),
+  "Loremaster's Etude":
+    Pathfinder2E.SPELLS["Loremaster's Etude"]
+    .replace('Divination', 'Manipulate'),
+  'Ode To Ouroboros':
+    'Level=5 ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Concentrate ' +
+    'Traditions=Occult ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R60\' Negates an increase in target\'s dying condition that would cause death"',
+  'Pied Piping':
+    'Level=10 ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Concentrate,Incapacitation,Mental,Sonic ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"5\' emanation fascinates creature and causes them to approach while sustained for up to 1 min; a hostile action ends the effect (<b>save Will</i> inflicts fascination only; critical success negates; critical failure inflicts complete control)"',
+  'Rallying Anthem':
+    Pathfinder2E.SPELLS['Inspire Defense']
+    .replace('Enchantment', 'Concentrate')
+    .replace('level', 'rank'),
+  'Song Of Marching':
+    'Level=3 ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Mental ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"60\' emanation allows self and allies to Hustle and self to use Performance for initiate while sustained for up to 1 hr (<b>heightened 6th</b> effects last 2 hr; <b>9th</b> effect last 4 hr)"',
+  'Song of Strength':
+    'Level=1 ' +
+    'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Emotion,Mental ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"60\' emanation give allies +1 Atheletics and DCs vs. Athletics skill actions for 1 rd"',
+  'Soothing Ballad':
+    Pathfinder2E.SPELLS['Soothing Ballad']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Symphony Of The Unfettered Heart':
+    'Level=5 ' +
+    'Traits=Focus,Uncommon,Bard,Composition,Concentrate ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Uses Performance to counteract one of grabbed, immobilized, paralyzed, restrained, slowed, or stunned affecting target (<b>heightened 9th</b> affects 4 targets)"',
+  'Triple Time':
+    Pathfinder2E.SPELLS['Triple Time']
+    .replace('Enchantment', 'Manipulate'),
+  'Uplifting Overature':
+    Pathfinder2E.SPELLS['Inspire Competence']
+    .replace('Enchantment', 'Concentrate'),
+  'Pushing Gust':
+    Pathfinder2E.SPELLS['Pushing Gust']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Disperse Into Air':
+    Pathfinder2E.SPELLS['Disperse Into Air']
+    .replace('Transmutation', 'Manipulate'),
+  'Ignite Ambition':
+    Pathfinder2E.SPELLS['Blind Ambition']
+    .replace('Enchantment', 'Concentrate,Subtle') + ' ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R60\' Target suffers -4 to resist the triggering attempt to convince it to advance its ambitions (<b>save Will</b> inflicts -2 resistance; critical success negates; critical failure inflicts automatic compliance)"',
+  'Competitive Edge':
+    Pathfinder2E.SPELLS['Competitive Edge']
+    .replace('Enchantment', 'Concentrate'),
+  'Face In The Crowd':
+    Pathfinder2E.SPELLS['Face In The Crowd']
+    .replace('Illusion', 'Manipulate'),
+  'Pulse Of Civilization':
+    Pathfinder2E.SPELLS['Pulse Of The City']
+    .replace('Divination', 'Concentrate,Manipulate') + ' ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R25 miles; reveals information about settlements and gives +2 to Recall Knowledge and Gather Information about them for 8 hr (<b>heightened 5th</b> increases the range to 100 miles; <b>7th</b> increases the range to 500 miles and the bonus to +3)"',
+  'Veil Of Confidence':
+    Pathfinder2E.SPELLS['Veil Of Confidence']
+    .replace('Enchantment', 'Concentrate')
+    .replace('increases', 'decreases'),
+  'Delusional Pride':
+    Pathfinder2E.SPELLS['Delusional Pride']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Creative Splash':
+    Pathfinder2E.SPELLS['Splash Of Art']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Artistic Flourish':
+    Pathfinder2E.SPELLS['Artistic Flourish']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Cloak Of Shadow':
+    Pathfinder2E.SPELLS['Cloak Of Shadow']
+    .replace('Evocation', 'Manipulate,Aura'),
+  'Darkened Sight':
+    Pathfinder2E.SPELLS['Darkened Eyes']
+    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
+    'Description="R60\' Target gains greater darkvision for 1 min"',
+  "Death's Call":
+    Pathfinder2E.SPELLS["Death's Call"]
+    .replace('Necromancy', 'Concentrate'),
+  'Eradicate Undeath':
+    Pathfinder2E.SPELLS['Eradicate Undeath']
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('Positive', 'Vitality'),
+  'Cry Of Destruction':
+    Pathfinder2E.SPELLS['Cry Of Destruction']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Destructive Aura':
+    Pathfinder2E.SPELLS['Destructive Aura']
+    .replace('Evocation', 'Concentrate,Manipulate,Aura'),
+  'Sweet Dream':
+    Pathfinder2E.SPELLS['Sweet Dream']
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('for 9 min', 'for 59 min (<b>heightened 4th<b> gives +2 skill checks; <b>7th</b> gives +3 skill checks') + ' ' +
+    'Cast=2',
+  "Dreamer's Call":
+    Pathfinder2E.SPELLS["Dreamer's Call"]
+    .replace('Enchantment', 'Concentrate,Manipulate,Illusion')
+    .replaceAll('flat-footed and ', ''),
+
   // TODO
   'Commanding Lash':
     'Level=1 ' +
@@ -10719,10 +10868,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Courageous Anthem':
-    Pathfinder2E.SPELLS['Inspire Courage']
-    .replace('School=Enchantment', '')
-    .replace('Enchantment', 'Concentrate'),
   'Dimensional Steps':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11304,76 +11449,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Pushing Gust':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Fatal Aria':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Soothing Ballad':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Allegro':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'House Of Imaginary Walls':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Dirge Of Doom':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Triple Time':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Loremaster's Etude":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Lingering Composition':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Counter Performance':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Protective Wards':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11528,35 +11603,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Pied Piping':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Symphony Of The Unfettered Heart':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Ode To Ouroboros':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Fortissimo Composition':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Song Of Marching':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
