@@ -909,53 +909,69 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Dragon Instinct (Copper):Instinct",' +
       '"1:Dragon Instinct (Gold):Instinct",' +
       '"1:Dragon Instinct (Silver):Instinct",' +
-      '"1:Superstition Instinct:Instinct"'
+      '"1:Superstition Instinct:Instinct"',
 
-/*
   'Champion':
+    // Ability => Attribute
+    // TODO 1:Spell Trained (Divine) => 1:Spell Trained (Champion)?
+    // 1:Champion's Code => 1:Sanctification
+    // 1:Champion's Rection => null
+    // null => 1:Champion's Aura
+    // 3:Divine Ally => 3:Blessing Of The Devoted
+    // 9:Divine Smite => 9:Relentless Reaction
+    // 9:Juggernaut => 9:Sacred Body
+    // 11:Exalt => 11:Exalted Reaction
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Champion Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
+      '"1:Champion Key Attribute",' +
+      '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
+      '"features.Strength ? 1:Attribute Boost (Strength)",' +
+      '"1:Attribute Boosts",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Will)","1:Save Trained (Reflex)",' +
       '"1:Champion Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
-      '"1:Spell Trained (Divine)",' +
-      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
-      '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
-      '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
-      '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
-      '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
-      '"9:Champion Expertise",' +
-      '"features.Liberator ? 9:Divine Smite (Liberator)",' +
-      '"features.Paladin ? 9:Divine Smite (Paladin)",' +
-      '"features.Redeemer ? 9:Divine Smite (Redeemer)",' +
-      '9:Juggernaut,"9:Reflex Expertise","11:Perception Expertise","11:Divine Will",' +
-      '"features.Liberator ? 11:Exalt (Liberator)",' +
-      '"features.Paladin ? 11:Exalt (Paladin)",' +
-      '"features.Redeemer ? 11:Exalt (Redeemer)",' +
+      '"1:Spell Trained (Champion)",' +
+      '"1:Deity","1:Sanctification","1:Deific Weapon","1:Champion\'s Aura",' +
+      '"1:Cause","1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
+      '"2:Skill Feats","3:Blessing Of The Devoted","3:General Feats",' +
+      '"3:Skill Increases","5:Weapon Expertise","7:Armor Expertise",' +
+      '"7:Weapon Specialization","9:Champion Expertise","9:Reflex Expertise",' +
+      '"features.Desecration ? 9:Relentless Reaction (Desecration)",' +
+      '"features.Grandeur ? 9:Relentless Reaction (Grandeur)",' +
+      '"features.Iniquity ? 9:Relentless Reaction (Iniquity)",' +
+      '"features.Justice ? 9:Relentless Reaction (Justice)",' +
+      '"features.Liberation ? 9:Relentless Reaction (Liberation)",' +
+      '"features.Obediance ? 9:Relentless Reaction (Obediance)",' +
+      '"features.Redemption ? 9:Relentless Reaction (Redemption)",' +
+      '"9:Sacred Body","11:Divine Will","11:Perception Expertise",' +
+      '"features.Desecration ? 11:Exalted Reaction (Desecration)",' +
+      '"features.Grandeur ? 11:Exalted Reaction (Grandeur)",' +
+      '"features.Iniquity ? 11:Exalted Reaction (Iniquity)",' +
+      '"features.Justice ? 11:Exalted Reaction (Justice)",' +
+      '"features.Liberation ? 11:Exalted Reaction (Liberation)",' +
+      '"features.Obediance ? 11:Exalted Reaction (Obediance)",' +
+      '"features.Redemption ? 11:Exalted Reaction (Redemption)",' +
       '"13:Armor Mastery","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
       '"17:Legendary Armor","19:Hero\'s Defiance" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability",' +
-      '"1:The Tenets Of Good:Champion\'s Code",' +
-      '"1:Divine Ally (Blade):Divine Ally",' +
-      '"1:Divine Ally (Shield):Divine Ally",' +
-      '"1:Divine Ally (Steed):Divine Ally",' +
-      '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
-      '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
-      '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
-*/
+      '"1:Dexterity:Key Attribute",' +
+      '"1:Strength:Key Attribute",' +
+      '"1:Holy:Sanctification",' +
+      '"1:Unholy:Sanctification",' +
+      '"1:Blessed Armament:Blessing Of The Devoted",' +
+      '"1:Blessed Shield:Blessing Of The Devoted",' +
+      '"1:Blessed Swiftness:Blessing Of The Devoted",' +
+      '"features.Unholy ? 1:Desecration:Cause",' +
+      '"features.Holy ? 1:Grandeur:Cause",' +
+      '"features.Unholy ? 1:Iniquity:Cause",' +
+      '"1:Justice:Cause",' +
+      '"1:Liberation:Cause",' +
+      '"1:Obedience:Cause",' +
+      '"features.Holy ? 1:Redemption:Cause"',
 
 /*
   'Monk':
@@ -2267,13 +2283,16 @@ Pathfinder2ERemaster.FEATS = {
   'Brutish Shove':Pathfinder2E.FEATS['Brutish Shove'],
   'Combat Grab':Pathfinder2E.FEATS['Combat Grab'],
   'Dueling Parry':Pathfinder2E.FEATS['Dueling Parry'],
-  'Intimidating Strike':Pathfinder2E.FEATS['Intimidating Strike'],
+  'Intimidating Strike':
+    Pathfinder2E.FEATS['Intimidating Strike']
+    .replace('Class', 'Class,Barbarian'),
   'Lightning Swap':'Traits=Class,Fighter,Flourish Require="level >= 2"',
   'Lunge':Pathfinder2E.FEATS.Lunge,
   'Rebounding Toss':'Traits=Class,Fighter,Flourish Require="level >= 2"',
   'Sleek Reposition':'Traits=Class,Fighter,Press Require="level >= 2"',
   'Barreling Charge':
-    'Traits=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
+    'Traits=Class,Barbarian,Fighter,Flourish ' +
+    'Require="level >= 4","rank.Athletics >= 1"',
   'Double Shot':Pathfinder2E.FEATS['Double Shot'],
   'Dual-Handed Assault':Pathfinder2E.FEATS['Dual-Handed Assault'],
   'Parting Shot':'Traits=Class,Fighter Require="level >= 4"',
@@ -2296,7 +2315,7 @@ Pathfinder2ERemaster.FEATS = {
   'Ricochet Stance':'Traits=Class,Fighter,Rogue,Stance Require="level >= 6"',
   'Shatter Defenses':Pathfinder2E.FEATS['Shatter Defenses'],
   'Shield Warden':
-    'Traits=Class,Fighter Require="level >=6","features.Shield Block"',
+    'Traits=Class,Champion,Fighter Require="level >=6","features.Shield Block"',
   'Triple Shot':Pathfinder2E.FEATS['Triple Shot'],
   'Blind-Fight':Pathfinder2E.FEATS['Blind-Fight'],
   'Disorienting Opening':
@@ -2307,7 +2326,8 @@ Pathfinder2ERemaster.FEATS = {
   'Mobile Shot Stance':Pathfinder2E.FEATS['Mobile Shot Stance'],
   'Positioning Assault':Pathfinder2E.FEATS['Positioning Assault'],
   'Quick Shield Block':
-    'Traits=Class,Fighter Require="level >= 8","features.Shield Block"',
+    'Traits=Class,Champion,Fighter ' +
+    'Require="level >= 8","features.Shield Block"',
   'Resounding Bravery':
     'Traits=Class,Fighter Require="level >= 8","features.Bravery"',
   'Sudden Leap':'Traits=Class,Fighter Require="level >= 8"',
@@ -2324,7 +2344,8 @@ Pathfinder2ERemaster.FEATS = {
   'Flinging Charge':'Traits=Class,Fighter,Flourish Require="level >= 10"',
   'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
   'Overpowering Charge':
-    'Traits=Class,Fighter Require="level >= 10","features.Barreling Charge"',
+    'Traits=Class,Barbarian,Fighter ' +
+    'Require="level >= 10","features.Barreling Charge"',
   'Tactical Reflexes':Pathfinder2E.FEATS['Combat Reflexes'],
   'Twin Riposte':Pathfinder2E.FEATS['Twin Riposte'],
   'Brutal Finish':Pathfinder2E.FEATS['Brutal Finish'],
@@ -2765,14 +2786,11 @@ Pathfinder2ERemaster.FEATS = {
   'Bashing Charge':
     'Traits=Class,Barbarian,Rage Require="level >= 2","rank.Athletics >= 1"',
   'Furious Finish':Pathfinder2E.FEATS['Furious Finish'],
-  'Intimidating Strike':
-    'Traits=Class,Barbarian,Emotion,Fear,Mental Require="level >= 2"',
+  // Intimidating Strike as above
   'No Escape':Pathfinder2E.FEATS['No Escape'],
   'Second Wind':Pathfinder2E.FEATS['Second Wind'],
   'Shake It Off':Pathfinder2E.FEATS['Shake It Off'],
-  'Barreling Charge':
-    'Traits=Class,Barbarian,Flourish ' +
-    'Require="level >= 4","rank.Athletics >= 1"',
+  // Barreling Charge as above
   'Oversized Throw':'Traits=Class,Barbarian,Rage Require="level >= 4"',
   'Raging Athlete':Pathfinder2E.FEATS['Raging Athlete'],
   'Scars Of Steel':
@@ -2835,8 +2853,7 @@ Pathfinder2ERemaster.FEATS = {
   'Great Cleave':Pathfinder2E.FEATS['Great Cleave'],
   'Impressive Landing':'Traits=Class,Barbarian Require="level >= 10"',
   'Knockback':Pathfinder2E.FEATS.Knockback,
-  'Overpowering Charge':
-    'Traits=Class,Barbarian Require="level >= 10","features.Barreling Charge"',
+  // Overpowering Charge as above
   'Resounding Blow':'Traits=Class,Barbarian,Rage Require="level >= 10"',
   'Silencing Strike':
     'Traits=Class,Barbarian,Incapacitation,Rage Require="level >= 10"',
@@ -2895,8 +2912,9 @@ Pathfinder2ERemaster.FEATS = {
   'Quaking Stomp':Pathfinder2E.FEATS['Quaking Stomp'],
   'Unstoppable Juggernaut':'Traits=Class,Barbarian Require="level >= 20"',
 
-/*
   // Champion
+  'Brilliant Flash':'Traits=Class,Champion Require="features.Grandeur"',
+  'Defensive Advance':'Traits=Class,Champion,Flourish',
   "Deity's Domain (Air)":
     'Traits=Class,Champion Require="deityDomains =~ \'Air\'"',
   "Deity's Domain (Ambition)":
@@ -2971,47 +2989,47 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Champion Require="deityDomains =~ \'Wealth\'"',
   "Deity's Domain (Zeal)":
     'Traits=Class,Champion Require="deityDomains =~ \'Zeal\'"',
-  'Ranged Reprisal':'Traits=Class,Champion Require="features.Paladin"',
-  'Unimpeded Step':'Traits=Class,Champion Require="features.Liberator"',
-  'Weight Of Guilt':'Traits=Class,Champion Require="features.Redeemer"',
-  'Divine Grace':'Traits=Class,Champion Require="level >= 2"',
-  'Dragonslayer Oath':
-    'Traits=Class,Champion,Oath ' +
-    'Require="level >= 2","features.The Tenets Of Good"',
-  'Fiendsbane Oath':
-    'Traits=Class,Champion,Oath ' +
-    'Require="level >= 2","features.The Tenets Of Good"',
-  'Shining Oath':
-    'Traits=Class,Champion,Oath ' +
-    'Require="level >= 2","features.The Tenets Of Good"',
-  'Vengeful Oath':
-    'Traits=Class,Champion,Oath ' +
-    'Require="level >= 2","features.Paladin"',
+  'Desperate Prayer':'Traits=Class,Champion',
+  'Faithful Steed':'Traits=Class,Champion',
+  'Iron Repercussions':'Traits=Class,Champion',
+  'Nimble Reprisal':
+    Pathfinder2E.FEATS['Ranged Reprisal']
+    .replace('Paladin', 'Justice'),
+  'Ongoing Selfishness':'Traits=Class,Champion Require="features.Desecration"',
+  'Unimpeded Step':
+    Pathfinder2E.FEATS['Unimpeded Step']
+    .replace('Liberator', 'Liberation'),
+  'Vicious Vengeance':'Traits=Class,Champion Require="features.Iniquity"',
+  'Weight Of Guilt':
+    Pathfinder2E.FEATS['Weight Of Guilt']
+    .replace('Redeemer', 'Redemption'),
+  'Divine Grace':Pathfinder2E.FEATS['Divine Grace'],
+  'Divine Health':Pathfinder2E.FEATS['Divine Health'] + ' ' +
+    'Require="level >= 2"',
   'Aura Of Courage':
-    'Traits=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
-  'Divine Health':
-    'Traits=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
-  'Mercy':
-    'Traits=Class,Champion,Concentrate,Metamagic ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Foc Nec)"',
-  // Attack Of Opportunity as above
-  'Litany Against Wrath':
+    Pathfinder2E.FEATS['Aura Of Courage'] + ' ' +
+    'Require="level >= 4","features.Champion\'s Aura","features.Holy"',
+  'Aura Of Despair':
+    'Traits=Class,Champion,Uncommon ' +
+    'Require="level >= 4","features.Champion\'s Aura","features.Unholy"',
+  'Cruelty':
     'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 6","features.Devotion Spells","features.The Tenets Of Good"',
+    'Require="level >= 4","spells.Touch Of The Void (D1 Foc Nec)"',
+  'Mercy':Pathfinder2E.FEATS.Mercy,
+  'Security':
+    'Traits=Class,Champion ' +
+    'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc Nec)"',
+  'Expand Aura':
+    'Traits=Class,Champion,Concentrate ' +
+    'Require="level >= 6","features.Champion\'s Aura"',
   'Loyal Warhorse':
-    'Traits=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
-  'Shield Warden':
-    'Traits=Class,Champion,Fighter ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Divine Ally (Shield) && features.The Tenets Of Good || features.Shield Block"',
-  'Smite Evil':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Divine Ally (Blade)",' +
-      '"features.The Tenets Of Good"',
+    Pathfinder2E.FEATS['Loyal Warhorse']
+    .replace('Divine Ally (Steed)', 'Faithful Steed'),
+  // Reactive Strike as above
+  // Shield Warden as above
+  'Smite':
+    Pathfinder2E.FEATS['Smite Evil'] + ' ' +
+    'Require="level >= 6"',
   "Advanced Deity's Domain (Air)":
     'Traits=Class,Champion ' +
     'Require=' +
@@ -3197,105 +3215,82 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"level >= 8",' +
       '"features.Deity\'s Domain (Zeal)"',
-  'Greater Mercy':'Traits=Class,Champion Require="level >= 8","features.Mercy"',
+  'Greater Cruelty':
+    'Traits=Class,Champion Require="level >= 8","features.Cruelty"',
+  'Greater Mercy':Pathfinder2E.FEATS['Greater Mercy'],
+  'Greater Security':
+    'Traits=Class,Champion Require="level >= 8","features.Security"',
   'Heal Mount':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Divine Ally (Steed)",' +
-      '"spells.Lay On Hands (D1 Foc Nec)"',
-  'Quick Shield Block':
-    'Traits=Class,Champion,Fighter ' +
-    'Require="level >= 8","features.Shield Block"',
-  'Second Ally':
-    'Traits=Class,Champion Require="level >= 8","features.Divine Ally"',
-  'Sense Evil':
-    'Traits=Class,Champion Require="level >= 8","features.The Tenets Of Good"',
-  'Devoted Focus':
-    'Traits=Class,Champion Require="level >= 10","features.Devotion Spells"',
+    Pathfinder2E.FEATS['Heal Mount']
+    .replace('Divine Ally (Steed)', 'Faithful Steed'),
+  // Quick Shield Block as above
+  'Second Blessing':
+    Pathfinder2E.FEATS['Second Ally']
+    .replace('Divine Ally', 'Blessing Of The Faithful'),
   'Imposing Destrier':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Divine Ally (Steed)",' +
-      '"features.Loyal Warhorse"',
-  'Litany Against Sloth':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Devotion Spells",' +
-      '"features.The Tenets Of Good"',
-  'Radiant Blade Spirit':
-    'Traits=Class,Champion ' +
-    'Require="level >= 10","features.Divine Ally (Blade)"',
+    Pathfinder2E.FEATS['Imposing Destrier']
+    .replace('",features.Divine Ally (Steed)"', ''),
+  'Radiant Armament':
+    Pathfinder2E.FEATS['Radiant Blade Spirit']
+    .replace('Divine Ally (Blade)', 'Blessed Armament'),
   'Shield Of Reckoning':
-    'Traits=Class,Champion,Flourish ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Champion\'s Reaction",' +
-      '"features.Shield Warden"',
-  'Affliction Mercy':
-    'Traits=Class,Champion Require="level >= 12","features.Mercy"',
+    Pathfinder2E.FEATS['Shield Of Reckoning']
+    .replace(',Flourish', '')
+    .replace('Require=', 'Require="features.Blessed Shield",'),
+  'Spectral Advance':
+    'Traits=Class,Champion,Concentrate,Divine,Teleportation ' +
+    'Require="level >= 10","features.Blessed Swiftness"',
+  'Affliction Mercy':Pathfinder2E.FEATS['Affliction Mercy'],
   'Aura Of Faith':
-    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
-  'Blade Of Justice':
-    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
+    Pathfinder2E.FEATS['Aura Of Faith']
+    .replace('The Tenets Of Good', 'Holy || features.Unholy'),
+  'Blessed Counterstrike':
+    // TODO require "champion's reaction that grants an ally resistance"
+    'Traits=Class,Champion,Flourish Require="level >= 12"',
   "Champion's Sacrifice":
-    'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
-  'Divine Wall':'Traits=Class,Champion Require="level >= 12"',
-  'Lasting Doubt':
-    'Traits=Class,Champion Require="level >= 12","features.Redeemer"',
-  'Liberating Stride':
-    'Traits=Class,Champion Require="level >= 12","features.Liberator"',
-  'Anchoring Aura':
-    'Traits=Class,Champion Require="level >= 14","features.Fiendsbane Oath"',
+    Pathfinder2E.FEATS["Champion's Sacrifice"]
+    .replace('features.The Tenets Of Good', '!features.Unholy'),
+  'Devoted Focus':
+    Pathfinder2E.FEATS['Devoted Focus']
+    .replace('10', '12'),
+  'Divine Wall':Pathfinder2E.FEATS['Divine Wall'],
+  'Gruesome Strike':'Traits=Class,Champion Require="level >= 12"',
+  'Aura Of Determination':
+    'Traits=Class,Champion Require="level >= 14","features.Champion\'s Aura"',
   'Aura Of Life':
-    'Traits=Class,Champion Require="level >= 14","features.Shining Oath"',
+    Pathfinder2E.FEATS['Aura Of Life']
+    .replace('Shining Oath', "Champion's Aura"),
   'Aura Of Righteousness':
-    'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
-  // NOTE: Exalt requirement redundant? All Champions get it at level 11
-  'Aura Of Vengeance':
-    'Traits=Class,Champion ' +
-    'Require="level >= 14","features.Vengeful Oath"',
-  'Divine Reflexes':'Traits=Class,Champion Require="level >= 14"',
-  'Litany Of Righteousness':
-    'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
-  'Wyrmbane Aura':
-    'Traits=Class,Champion Require="level >= 14","features.Dragonslayer Oath"',
+    Pathfinder2E.FEATS['Aura Of Righteousness']
+    .replace('The Tenets Of Good', 'Champion\'s Aura","features.Holy'),
+  'Divine Reflexes':Pathfinder2E.FEATS['Divine Reflexes'],
   'Auspicious Mount':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Divine Ally (Steed)",' +
-      '"features.Imposing Destrier"',
+    Pathfinder2E.FEATS['Auspicious Mount']
+    .replace(',"features.Divine Ally (Steed)"', ''),
+  'Instrument Of Slaughter':
+    // TODO require "champion's reaction that grants extra damage"
+    'Traits=Class,Champion Require="level >= 16"',
   'Instrument Of Zeal':
+    Pathfinder2E.FEATS['Instrument Of Zeal'] + ' ' +
+    // TODO require "champion's reaction that grants an ally resistance"
+    'Require="level >= 16","features.Blessed Counterstrike || features.Retributive Strike"',
+  'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
+  'Rejuvenating Touch':
     'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Divine Ally (Blade)",' +
-      '"features.The Tenets Of Good"',
-  'Shield Of Grace':
-    'Traits=Class,Champion Require="level >= 16","features.Shield Warden"',
-  'Celestial Form':
-    'Traits=Class,Champion Require="level >= 18","features.The Tenets Of Good"',
-  'Ultimate Mercy':
-    'Traits=Class,Champion Require="level >= 18","features.Mercy"',
-  'Celestial Mount':
+    'Require="level >= 18","spells.Lay On Hands (D1 Foc Nec)"',
+  'Swift Retribution':
     'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"features.Divine Ally (Steed)",' +
-      '"features.The Tenets Of Good"',
-  'Radiant Blade Master':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 20",' +
-      '"features.Divine Ally (Blade)",' +
-      '"features.Radiant Blade Spirit"',
+    'Require="level >= 18","features.Champion\'s Reaction"',
+  'Ultimate Mercy':Pathfinder2E.FEATS['Ultimate Mercy'],
+  'Armament Paragon':
+    Pathfinder2E.FEATS['Radiant Blade Master'] + ' ' +
+    'Require="level >= 20","features.Blessed Armament"',
+  'Sacred Defender':'Traits=Class,Champion Require="level >= 20"',
   'Shield Paragon':
-    'Traits=Class,Champion ' +
-    'Require="level >= 20","features.Divine Ally (Shield)"',
-*/
+    Pathfinder2E.FEATS['Shield Paragon']
+    .replace('Divine Ally (Shield)', 'Blessed Shield'),
+  'Swift Paragon':
+    'Traits=Class,Champion Require="level >= 20","features.Blessed Swiftness"',
 
 /*
   // Monk
@@ -7212,7 +7207,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes"',
   "Patron's Truth":'Section=magic Note="+1 10th rank spell slot"',
   "Witch's Hut":
-    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with %{armorClass} AC, +%{perceptionModifier} Perception, 60\' Speed 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
+    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with %{armorClass} AC, +%{perception} Perception, 60\' Speed 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
 
   // Wizard
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
@@ -8036,9 +8031,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Reduces fall damage by 10\' and inflcits 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
   'Knockback':Pathfinder2E.FEATURES.Knockback,
-  'Overpowering Charge':
-    'Section=combat ' +
-    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{strengthModifier*2} HP and off=guard on a critical success"',
+  // Overpowering Charge as above
   'Resounding Blow':
     'Action=2 ' +
     'Section=combat ' +
@@ -8114,9 +8107,86 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Has resistance %{constitutionModifier+3} to all damage, resistance %{constitutionModifier+8} during rage, and can retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
 
-  /*
   // Champion
+  // Anathema as above
+  // Armor Expertise as above
+  // Armor Mastery as above
+  'Blessed Armament':
+    'Section=feature Note="TODO"',
+  'Blessed Shield':
+    'Section=feature Note="TODO"',
+  'Blessed Swiftness':
+    'Section=feature Note="TODO"',
+  'Blessing Of The Devoted':
+    'Section=feature ' +
+    'Note="%V selection%{featureNotes.blessingOfTheDevoted==1?\'\':\'s\'}"',
+  'Cause':Pathfinder2E.FEATURES.Cause,
+  'Champion Expertise':Pathfinder2E.FEATURES['Champion Expertise'],
+  'Champion Feats':Pathfinder2E.FEATURES['Champion Feats'],
+  'Champion Key Ability':Pathfinder2E.FEATURES['Champion Key Ability'],
+  'Champion Mastery':Pathfinder2E.FEATURES['Champion Mastery'],
+  'Champion Skills':Pathfinder2E.FEATURES['Champion Skills'],
+  "Champion's Aura":
+    'Section=feature Note="TODO"',
+  'Deific Weapon':Pathfinder2E.FEATURES['Deific Weapon'],
+  // Deity as above
+  'Desecration':
+    'Section=feature Note=TODO"',
+  'Devotion Spells':Pathfinder2E.FEATURES['Devotion Spells'],
+  'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
+  'Exalted Reaction (Desecration)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Grandeur)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Iniquity)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Justice)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Liberation)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Obediance)':
+    'Section=feature Note="TODO"',
+  'Exalted Reaction (Redemption)':
+    'Section=feature Note="TODO"',
+  'Grandeur':
+    'Section=feature Note=TODO"',
+  // Greater Weapon Specialization as above
+  "Hero's Defiance":Pathfinder2E.FEATURES["Hero's Defiance"],
+  'Iniquity':
+    'Section=feature Note=TODO"',
+  'Justice':
+    'Section=feature Note=TODO"',
+  'Legendary Armor':Pathfinder2E.FEATURES['Legendary Armor'],
+  'Liberation':
+    'Section=feature Note=TODO"',
+  'Obedience':
+    'Section=feature Note=TODO"',
   // Perception Expertise as above
+  // Reflex Expertise as above
+  'Redemption':
+    'Section=feature Note=TODO"',
+  'Relentless Reaction (Desecration)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Grandeur)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Iniquity)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Justice)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Liberation)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Obediance)':
+    'Section=feature Note="TODO"',
+  'Relentless Reaction (Redemption)':
+    'Section=feature Note="TODO"',
+  'Sacred Body':Pathfinder2E.FEATURES.Juggernaut,
+  // Sanctification as above
+  // Shield Block as above
+  // Weapon Expertise as above
+  // Weapon Mastery as above
+  // Weapon Specialization as above
+
+  /*
   "Advanced Deity's Domain (Air)":
     'Section=magic ' +
     'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
@@ -8228,38 +8298,6 @@ Pathfinder2ERemaster.FEATURES = {
   "Advanced Deity's Domain (Zeal)":
     'Section=magic ' +
     'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
-  // Armor Expertise as above
-  // Armor Mastery as above
-  'Champion Expertise':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Class Expert (Champion)",' +
-      '"Spell Expert (Divine)"',
-  'Champion Feats':'Section=feature Note="%V selections"',
-  'Champion Key Ability':'Section=feature Note="1 selection"',
-  'Champion Mastery':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Class Master (Champion)",' +
-      '"Spell Master (Divine)"',
-  'Champion Skills':
-    'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
-  "Champion's Code":'Section=feature Note="1 selection"',
-  "Champion's Reaction":
-    'Section=feature ' +
-    'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
-  'Deific Weapon':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"%{deityWeapon} inflicts +1 damage die step",' +
-      '"Has access to deity weapon (%{deityWeaponLowered})"',
-  'Deity And Cause':
-    'Section=combat,feature,magic,skill ' +
-    'Note=' +
-      '"Attack Trained (%V)",' +
-      '"1 selection/Has the Anathema feature",' +
-      '"Has access to %V spells",' +
-      '"Skill Trained (%V)"',
   "Deity's Domain (Air)":
     'Section=magic Note="Knows the Pushing Gust divine spell"',
   "Deity's Domain (Ambition)":
@@ -8332,86 +8370,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
   "Deity's Domain (Zeal)":
     'Section=magic Note="Knows the Weapon Surge divine spell"',
-  'Devotion Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
-  'Divine Ally':
-    'Section=feature ' +
-    'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
-  'Divine Ally (Blade)':
-    'Section=combat ' +
-    'Note="Can apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
-  'Divine Ally (Shield)':
-    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
-  'Divine Ally (Steed)':
-    'Section=feature Note="Has a young animal companion for a mount"',
-  'Divine Smite (Liberator)':
-    'Section=combat ' +
-    'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
-  'Divine Smite (Paladin)':
-    'Section=combat ' +
-    'Note="Retributive Strike inflicts %{charismaModifier} HP persistent good damage"',
-  'Divine Smite (Redeemer)':
-    'Section=combat ' +
-    'Note="Glimpse Of Redemption inflicts %{charismaModifier} HP persistent good damage on a target who responds with damage"',
-  'Divine Will':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Will)",' +
-      '"Successes on Will saves are critical successes"',
-  'Exalt (Liberator)':
-    'Section=combat ' +
-    'Note="R15\' Liberating Step allows all allies to Step if target ally does not attempt to break free"',
-  'Exalt (Paladin)':
-    'Section=combat ' +
-    'Note="R15\' Retributive Strike allows allies to use a Reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against target"',
-  'Exalt (Redeemer)':
-    'Section=combat ' +
-    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to damage"',
-  'Glimpse Of Redemption':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Negates damage to a struck ally or gives the ally damage resistance %{2+level} and inflicts enfeebled 2 on the triggering foe for 1 rd (foe\'s choice)"',
-  // Greater Weapon Specialization as above
-  "Hero's Defiance":
-    'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
-  // Juggernaut as above
-  'Legendary Armor':
-    'Section=combat ' +
-    'Note="Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-  'Liberating Step':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Gives an ally damage resistance %{2+level}, an Escape action or save from a restraint as a free action, and a Step as a free action"',
-  'Liberator':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must always respect others\' freedom and oppose tyranny",' +
-      '"Knows the Lay On Hands divine spell"',
-  // Reflex Expertise as above
-  'Paladin':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must always act with honor and respect lawful authority",' +
-      '"Knows the Lay On Hands divine spell"',
-  'Redeemer':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must always show compassion for others and attempt to redeem the wicked",' +
-      '"Knows the Lay On Hands divine spell"',
-  'Retributive Strike':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
-  */
-  // Shield Block as above
-  /*
-  'The Tenets Of Good':
-    'Section=feature ' +
-    'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
-  */
-  // Weapon Expertise as above
-  // Weapon Mastery
-  /*
-  // Weapon Specialization as above
 
   'Ranged Reprisal':
     'Section=combat ' +
@@ -9827,7 +9785,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Electric Arc':
     Pathfinder2E.SPELLS['Electric Arc']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace(/1d4+%\{.*\}/, '2d4'),
+    .replace(/1d4.*%\{.*\}/, '2d4'),
   'Elemental Form':
     Pathfinder2E.SPELLS['Elemental Form']
     .replace('Transmutation', 'Concentrate,Manipulate')
@@ -10697,7 +10655,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Vitality Lash':
     Pathfinder2E.SPELLS['Disrupt Undead']
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality')
-    .replace(/1d6+%\{.*\}/, '2d6'),
+    .replace(/1d6.*%\{.*\}/, '2d6'),
   'Void Warp':
     Pathfinder2E.SPELLS['Chill Touch']
     .replace('Necromancy,Negative', 'Concentrate,Manipulate,Void') + ' ' +
@@ -10815,6 +10773,13 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Heal Animal':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  "Hero's Defiance":
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -12194,9 +12159,17 @@ Pathfinder2ERemaster.classRules = function(
  */
 Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   Pathfinder2E.classRulesExtra(rules, name);
+  let classLevel = 'levels.' + name;
   if(name == 'Alchemist') {
     // Suppress legacy note
     rules.defineRule('skillNotes.perpetualInfusions', '', '=', 'null');
+  } else if(name == 'Champion') {
+    rules.defineRule('featureNotes.blessingOfTheDevoted',
+      '', '=', '1',
+      'featureNotes.secondBlessing', '+', '1'
+    );
+    // Suppress legacy feature
+    rules.defineRule('featureNotes.divineAlly', classLevel, '?', null);
   } else if(name == 'Cleric') {
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
       'deitySanctification', '?', 'source=="Either"',
@@ -12461,7 +12434,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Invulnerable Rager') {
     rules.defineRule('combatNotes.invulnerableRager',
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'
-    )
+    );
   } else if(name.startsWith('Iruxi Armaments')) {
     if(name == 'Iruxi Armaments (Claws)') {
       rules.defineRule('weaponDieSidesBonus.Claws',
