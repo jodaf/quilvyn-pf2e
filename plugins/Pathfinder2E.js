@@ -472,8 +472,6 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
       '"1:Class Trained (Barbarian)",' +
       '"1:Rage","1:Instinct","1:Barbarian Feats",' +
-      '"features.Animal Instinct || features.Dragon Instinct || ' +
-       'features.Giant Instinct || features.Spirit Instinct ? 1:Anathema",' +
       '"features.Animal Instinct (Ape) ? 1:Bestial Rage (Ape)",' +
       '"features.Animal Instinct (Bear) ? 1:Bestial Rage (Bear)",' +
       '"features.Animal Instinct (Bull) ? 1:Bestial Rage (Bull)",' +
@@ -571,7 +569,7 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Deity","1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
       '"features.Liberator ? 1:Liberating Step",' +
       '"features.Paladin ? 1:Retributive Strike",' +
@@ -610,8 +608,8 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Anathema","1:Deity","1:Divine Spellcasting","1:Divine Font",' +
-      '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"1:Deity","1:Divine Spellcasting","1:Divine Font","1:Doctrine",' +
+      '"2:Cleric Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
@@ -1033,8 +1031,7 @@ Pathfinder2E.FEATS = {
   'Animal Elocutionist':
     'Traits=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
   // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
-  'Energized Font':
-    'Traits=Ancestry,Gnome Require="level >= 5","focusPoints"',
+  'Energized Font':'Traits=Ancestry,Gnome Require="level >= 5","focusPoints"',
   'Gnome Weapon Innovator':
     'Traits=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
@@ -1075,6 +1072,7 @@ Pathfinder2E.FEATS = {
   'Titan Slinger':'Traits=Ancestry,Halfling',
   'Unfettered Halfling':'Traits=Ancestry,Halfling',
   'Watchful Halfling':'Traits=Ancestry,Halfling',
+  // TODO Remove Halfling from the list
   'Cultural Adaptability (%ancestry)':
     'Traits=Ancestry,Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
@@ -1136,8 +1134,7 @@ Pathfinder2E.FEATS = {
 
   // Class
   'Alchemical Familiar':'Traits=Class,Alchemist',
-  'Alchemical Savant':
-    'Traits=Class,Alchemist Require="rank.Crafting >= 1"',
+  'Alchemical Savant':'Traits=Class,Alchemist Require="rank.Crafting >= 1"',
   'Far Lobber':'Traits=Class,Alchemist',
   'Quick Bomber':'Traits=Class,Alchemist',
   'Poison Resistance':'Traits=Class,Alchemist,Druid Require="level >= 2"',
@@ -1306,8 +1303,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Bard Require="level >= 2","bardFeatures.Maestro == 0"',
   'Multifarious Muse (Polymath)':
     'Traits=Class,Bard Require="level >= 2","bardFeatures.Polymath == 0"',
-  'Inspire Defense':
-    'Traits=Class,Bard Require="level >= 4","features.Maestro"',
+  'Inspire Defense':'Traits=Class,Bard Require="level >= 4","features.Maestro"',
   'Melodious Spell':
     'Traits=Class,Bard,Concentrate,Manipulate,Metamagic Require="level >= 4"',
   'Triple Time':'Traits=Class,Bard Require="level >= 4"',
@@ -1325,10 +1321,8 @@ Pathfinder2E.FEATS = {
       '"level >= 8",' +
       '"features.Polymath",' +
       '"rank.Occultism >= 3"',
-  'Inspire Heroics':
-    'Traits=Class,Bard Require="level >= 8","features.Maestro"',
-  'Know-It-All':
-    'Traits=Class,Bard Require="level >= 8","features.Enigma"',
+  'Inspire Heroics':'Traits=Class,Bard Require="level >= 8","features.Maestro"',
+  'Know-It-All':'Traits=Class,Bard Require="level >= 8","features.Enigma"',
   'House Of Imaginary Walls':'Traits=Class,Bard Require="level >= 10"',
   'Quickened Casting':
     'Traits=Class,Bard,Sorcerer,Wizard,Concentrate,Metamagic ' +
@@ -1456,8 +1450,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion,Oath ' +
     'Require="level >= 2","features.The Tenets Of Good"',
   'Vengeful Oath':
-    'Traits=Class,Champion,Oath ' +
-    'Require="level >= 2","features.Paladin"',
+    'Traits=Class,Champion,Oath Require="level >= 2","features.Paladin"',
   'Aura Of Courage':
     'Traits=Class,Champion Require="level >= 4","features.The Tenets Of Good"',
   'Divine Health':
@@ -1469,7 +1462,9 @@ Pathfinder2E.FEATS = {
   'Litany Against Wrath':
     'Traits=Class,Champion ' +
     'Require=' +
-      '"level >= 6","features.Devotion Spells","features.The Tenets Of Good"',
+      '"level >= 6",' +
+      '"features.Devotion Spells",' +
+      '"features.The Tenets Of Good"',
   'Loyal Warhorse':
     'Traits=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
   'Shield Warden':
@@ -1714,7 +1709,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
-  'Divine Wall':'Traits=Class,Champion Require="level >= 12"',
+  'Divine Wall':
+    'Traits=Class,Champion Require="level >= 12","shield != \'None\'"',
   'Lasting Doubt':
     'Traits=Class,Champion Require="level >= 12","features.Redeemer"',
   'Liberating Stride':
@@ -1727,8 +1723,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
   // NOTE: Exalt requirement redundant? All Champions get it at level 11
   'Aura Of Vengeance':
-    'Traits=Class,Champion ' +
-    'Require="level >= 14","features.Vengeful Oath"',
+    'Traits=Class,Champion Require="level >= 14","features.Vengeful Oath"',
   'Divine Reflexes':'Traits=Class,Champion Require="level >= 14"',
   'Litany Of Righteousness':
     'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
@@ -2241,7 +2236,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Fighter Require="level >= 6","features.Double Shot"',
   'Blind-Fight':
     'Traits=Class,Fighter,Ranger,Rogue ' +
-    'Require="level >= 8","rank.Perception >= 3"',
+    'Require=' +
+      '"level >= 8",' +
+      '"rank.Perception >= 3"',
   'Dueling Riposte':
     'Traits=Class,Fighter Require="level >= 8","features.Dueling Parry"',
   'Felling Strike':'Traits=Class,Fighter Require="level >= 8"',
@@ -2338,17 +2335,17 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk Require="level >= 6","features.Crane Stance"',
   'Dragon Roar':
     'Traits=Class,Monk,Auditory,Emotion,Fear,Mental ' +
-    'Require="level >= 6","features.Dragon Stance"',
-  'Ki Blast':
-    'Traits=Class,Monk Require="level >= 6","features.Ki Spells"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Dragon Stance"',
+  'Ki Blast':'Traits=Class,Monk Require="level >= 6","features.Ki Spells"',
   'Mountain Stronghold':
     'Traits=Class,Monk Require="level >= 6","features.Mountain Stance"',
   'Tiger Slash':
     'Traits=Class,Monk Require="level >= 6","features.Tiger Stance"',
   'Water Step':'Traits=Class,Monk Require="level >= 6"',
   'Whirling Throw':'Traits=Class,Monk Require="level >= 6"',
-  'Wolf Drag':
-    'Traits=Class,Monk Require="level >= 6","features.Wolf Stance"',
+  'Wolf Drag':'Traits=Class,Monk Require="level >= 6","features.Wolf Stance"',
   'Arrow Snatching':
     'Traits=Class,Monk Require="level >= 8","features.Deflect Arrow"',
   'Ironblood Stance':'Traits=Class,Monk,Stance Require="level >= 8"',
@@ -2360,8 +2357,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk Require="level >= 8","features.Ki Spells"',
   'Knockback Strike':'Traits=Class,Monk,Concentrate Require="level >= 10"',
   'Sleeper Hold':'Traits=Class,Monk,Incapacitation Require="level >= 10"',
-  'Wind Jump':
-    'Traits=Class,Monk Require="level >= 10","features.Ki Spells"',
+  'Wind Jump':'Traits=Class,Monk Require="level >= 10","features.Ki Spells"',
   'Winding Flow':'Traits=Class,Monk Require="level >= 10"',
   'Diamond Soul':'Traits=Class,Monk Require="level >= 12"',
   'Disrupt Ki':'Traits=Class,Monk,Negative Require="level >= 12"',
@@ -2455,8 +2451,7 @@ Pathfinder2E.FEATS = {
       '"rank.Survival >= 3",' +
       '"features.Favored Terrain"',
   "Warden's Boon":'Traits=Class,Ranger Require="level >= 8"',
-  'Camouflage':
-    'Traits=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
+  'Camouflage':'Traits=Class,Ranger Require="level >= 10","rank.Stealth >= 3"',
   // Incredible Companion as above
   'Master Monster Hunter':
     'Traits=Class,Ranger ' +
@@ -2538,8 +2533,7 @@ Pathfinder2E.FEATS = {
   'Twin Feint':'Traits=Class,Rogue',
   "You're Next":
     'Traits=Class,Rogue,Emotion,Fear,Mental Require="rank.Intimidation >= 1"',
-  'Brutal Beating':
-    'Traits=Class,Rogue Require="level >= 2","features.Ruffian"',
+  'Brutal Beating':'Traits=Class,Rogue Require="level >= 2","features.Ruffian"',
   'Distracting Feint':
     'Traits=Class,Rogue Require="level >= 2","features.Scoundrel"',
   'Minor Magic (Arcane)':'Traits=Class,Rogue Require="level >= 2"',
@@ -2756,19 +2750,31 @@ Pathfinder2E.FEATS = {
       '"levels.Alchemist == 0"',
   'Basic Concoction':
     'Traits=Archetype,Alchemist ' +
-    'Require="level >= 4","features.Alchemist Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Alchemist Dedication"',
   'Quick Alchemy':
     'Traits=Archetype,Alchemist ' +
-    'Require="level >= 4","features.Alchemist Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Alchemist Dedication"',
   'Advanced Concoction':
     'Traits=Archetype,Alchemist ' +
-    'Require="level >= 6","features.Basic Concoction"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Basic Concoction"',
   'Expert Alchemy':
     'Traits=Archetype,Alchemist ' +
-    'Require="level >= 6","features.Alchemist Dedication","rank.Crafting >= 2"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Alchemist Dedication",' +
+      '"rank.Crafting >= 2"',
   'Master Alchemy':
     'Traits=Archetype,Alchemist ' +
-    'Require="level >= 12","features.Expert Alchemy","rank.Crafting >= 3"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Expert Alchemy",' +
+      '"rank.Crafting >= 3"',
 
   'Barbarian Dedication':
     'Traits=Archetype,Dedication,Multiclass,Barbarian ' +
@@ -2785,12 +2791,16 @@ Pathfinder2E.FEATS = {
       '"classHitPoints <= 10"',
   'Basic Fury':
     'Traits=Archetype,Barbarian ' +
-    'Require="level >= 4","features.Barbarian Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Barbarian Dedication"',
   'Advanced Fury':
     'Traits=Archetype,Barbarian Require="level >= 6","features.Basic Fury"',
   'Instinct Ability':
     'Traits=Archetype,Barbarian ' +
-    'Require="level >= 6","features.Barbarian Dedication"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Barbarian Dedication"',
   "Juggernaut's Fortitude":
     'Traits=Archetype,Barbarian ' +
     'Require=' +
@@ -2810,14 +2820,18 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Advanced Muse's Whispers":
     'Traits=Archetype,Bard ' +
-    'Require="level >= 4","features.Basic Muse\'s Whispers"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Basic Muse\'s Whispers"',
   'Counter Perform':
     'Traits=Archetype,Bard Require="level >= 6","features.Bard Dedication"',
   'Inspirational Performance':
     'Traits=Archetype,Bard Require="level >= 8","features.Bard Dedication"',
   'Occult Breadth':
     'Traits=Archetype,Bard ' +
-    'Require="level >= 8","features.Basic Bard Spellcasting"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Basic Bard Spellcasting"',
   'Expert Bard Spellcasting':
     'Traits=Archetype,Bard ' +
     'Require=' +
@@ -2840,21 +2854,32 @@ Pathfinder2E.FEATS = {
       '"levels.Champion == 0"',
   'Basic Devotion':
     'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Champion Dedication"',
   'Champion Resiliency':
     'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication","classHitPoints <= 8"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Champion Dedication",' +
+      '"classHitPoints <= 8"',
   'Healing Touch':
     'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Champion Dedication"',
   'Advanced Devotion':
     'Traits=Archetype,Champion Require="level >= 6","features.Basic Devotion"',
   "Champion's Reaction":
     'Traits=Archetype,Champion ' +
-    'Require="level >= 6","features.Champion Dedication"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Champion Dedication"',
   'Divine Ally':
     'Traits=Archetype,Champion ' +
-    'Require="level >= 6","features.Champion Dedication"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Champion Dedication"',
   'Diverse Armor Expert':
     'Traits=Archetype,Champion ' +
     'Require=' +
@@ -2878,7 +2903,9 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Cleric Require="level >= 6","features.Basic Dogma"',
   'Divine Breadth':
     'Traits=Archetype,Cleric ' +
-    'Require="level >= 8","features.Basic Cleric Spellcasting"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Basic Cleric Spellcasting"',
   'Expert Cleric Spellcasting':
     'Traits=Archetype,Cleric ' +
     'Require=' +
@@ -2908,7 +2935,9 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Druid Require="level >= 6","features.Basic Wilding"',
   'Primal Breadth':
     'Traits=Archetype,Druid ' +
-    'Require="level >= 8","features.Basic Druid Spellcasting"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Basic Druid Spellcasting"',
   'Expert Druid Spellcasting':
     'Traits=Archetype,Druid ' +
     'Require=' +
@@ -2931,13 +2960,20 @@ Pathfinder2E.FEATS = {
       '"levels.Fighter == 0"',
   'Basic Maneuver':
     'Traits=Archetype,Fighter ' +
-    'Require="level >= 4","features.Fighter Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Fighter Dedication"',
   'Fighter Resiliency':
     'Traits=Archetype,Fighter ' +
-    'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Fighter Dedication",' +
+      '"classHitPoints <= 8"',
   'Opportunist':
     'Traits=Archetype,Fighter ' +
-    'Require="level >= 4","features.Fighter Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Fighter Dedication"',
   'Advanced Maneuver':
     'Traits=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
   'Diverse Weapon Expert':
@@ -2957,7 +2993,10 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
   'Monk Resiliency':
     'Traits=Archetype,Monk ' +
-    'Require="level >= 4","feats.Monk Dedication","classHitPoints <= 8"',
+    'Require=' +
+      '"level >= 4",' +
+      '"feats.Monk Dedication",' +
+      '"classHitPoints <= 8"',
   'Advanced Kata':
     'Traits=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
   'Monk Moves':
@@ -2981,13 +3020,21 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
   'Ranger Resiliency':
     'Traits=Archetype,Ranger ' +
-    'Require="level >= 4","features.Ranger Dedication","classHitPoints <= 8"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Ranger Dedication",' +
+      '"classHitPoints <= 8"',
   "Advanced Hunter's Trick":
     'Traits=Archetype,Ranger ' +
-    'Require="level >= 6","features.Basic Hunter\'s Trick"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Basic Hunter\'s Trick"',
   'Master Spotter':
     'Traits=Archetype,Ranger ' +
-    'Require="level >= 12","features.Ranger Dedication","rank.Perception >= 3"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Ranger Dedication",' +
+      '"rank.Perception >= 3"',
 
   'Rogue Dedication':
     'Traits=Archetype,Dedication,Multiclass,Rogue ' +
@@ -3003,12 +3050,18 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
   'Skill Mastery':
     'Traits=Archetype,Rogue ' +
-    'Require="level >= 8","features.Rogue Dedication","maxSkillRank>=2"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Rogue Dedication",' +
+      '"maxSkillRank>=2"',
   'Uncanny Dodge':
     'Traits=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
   'Evasiveness':
     'Traits=Archetype,Rogue ' +
-    'Require="level >= 12","features.Rogue Dedication","rank.Reflex >= 2"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Rogue Dedication",' +
+      '"rank.Reflex >= 2"',
 
   'Sorcerer Dedication':
     'Traits=Archetype,Dedication,Multiclass,Sorcerer ' +
@@ -3018,19 +3071,29 @@ Pathfinder2E.FEATS = {
       '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
     'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Sorcerer Dedication"',
   'Basic Blood Potency':
     'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Sorcerer Dedication"',
   'Basic Bloodline Spell':
     'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Sorcerer Dedication"',
   'Advanced Blood Potency':
     'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 6","features.Basic Blood Potency"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Basic Blood Potency"',
   'Bloodline Breadth':
     'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 8","features.Basic Sorcerer Spellcasting"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Basic Sorcerer Spellcasting"',
   'Expert Sorcerer Spellcasting':
     'Traits=Archetype,Sorcerer ' +
     'Require=' +
@@ -3066,7 +3129,9 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype,Wizard Require="level >= 6","features.Basic Arcana"',
   'Arcane Breadth':
     'Traits=Archetype,Wizard ' +
-    'Require="level >= 8","features.Basic Wizard Spellcasting"',
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Basic Wizard Spellcasting"',
   'Expert Wizard Spellcasting':
     'Traits=Archetype,Wizard ' +
     'Require=' +
@@ -3743,7 +3808,7 @@ Pathfinder2E.FEATURES = {
   // Alchemist
   'Advanced Alchemy':
     'Section=skill ' +
-    'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check"',
+    'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check during daily prep"',
   'Alchemical Alacrity':
     'Section=skill Note="Has increased Quick Alchemy effects"',
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
@@ -3838,9 +3903,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Crafting to Identify Alchemy in 1 action/+2 to Identify known formulas, and critical failures are normal failures"',
   'Far Lobber':'Section=combat Note="Thrown bombs have a 30\' range"',
   'Quick Bomber':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Can draw and Strike with a bomb in 1 action"',
+    'Action=1 Section=combat Note="Draws a bomb and Strikes with it"',
   'Poison Resistance':
     'Section=save ' +
     'Note="Has poison resistance %{level//2} and +1 saves vs. poison"',
@@ -3948,7 +4011,7 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Can throw a bomb of up to level %{advancedAlchemyLevel-2} that affects all creatures in a 30\' radius (<b>save basic Reflex</b> DC %{classDifficultyClass.Alchemist})"',
+    'Note="Thrown bomb of up to level %{advancedAlchemyLevel-2} affects all creatures in a 30\' radius (<b>save basic Reflex</b> DC %{classDifficultyClass.Alchemist})"',
   'Perfect Mutagen':
     'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
 
@@ -4016,7 +4079,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Save Master (Will)",' +
       '"Successes on Will saves are critical successes"',
-  'Instinct':'Section=feature Note="1 selection"',
+  'Instinct':'Section=feature Note="1 selection/Has the Anathema feature"',
   // Juggernaut as above
   'Lightning Reflexes':'Section=save Note="Save Expert (Reflex)"',
   // Medium Armor Expertise as above
@@ -4513,6 +4576,7 @@ Pathfinder2E.FEATURES = {
   'Armor Mastery':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+  'Cause':'Section=feature Note="1 selection"',
   'Champion Expertise':
     'Section=combat,magic ' +
     'Note=' +
@@ -4536,13 +4600,6 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"%{deityWeapon} inflicts +1 damage die step",' +
       '"Has access to deity weapon (%{deityWeaponLowered})"',
-  'Deity And Cause':
-    'Section=combat,feature,magic,skill ' +
-    'Note=' +
-      '"Attack Trained (%V)",' +
-      '"1 selection/Has the Anathema feature",' +
-      '"Has access to %V spells",' +
-      '"Skill Trained (%V)"',
   "Deity's Domain (Air)":
     'Section=magic Note="Knows the Pushing Gust divine spell"',
   "Deity's Domain (Ambition)":
@@ -4973,9 +5030,10 @@ Pathfinder2E.FEATURES = {
       '"Spell %V (Divine)",' +
       '"Save Expert (Fortitude)"',
   'Deity':
-    'Section=combat,magic,skill ' +
+    'Section=combat,feature,magic,skill ' +
     'Note=' +
       '"Attack Trained (%V)",' +
+      '"Has the Anathema feature",' +
       '"Has access to %V spells",' +
       '"Skill Trained (%V)"',
   'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
@@ -7085,7 +7143,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Barbarian)",' +
-      '"Has the Anathema, Instinct, and Rage features",' +
+      '"Has the Instinct and Rage features",' +
       '"Skill Trained (Athletics)"',
   'Barbarian Resiliency':'Section=combat Note="+%V Hit Points"',
   'Basic Fury':
@@ -7128,7 +7186,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Defense Trained (Light Armor; Medium Armor; Heavy Armor)/Class Trained (Champion)",' +
-      '"Has the Anathema, Cause, and Deity features",' +
+      '"Has the Champion Key Ability, Deity, and Cause features",' +
       '"Skill Trained (Religion)"',
   'Basic Devotion':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level champion)"',
@@ -7148,7 +7206,7 @@ Pathfinder2E.FEATURES = {
   'Cleric Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Anathema and Deity features",' +
+      '"Has the Deity feature",' +
       '"Spell Trained (Divine)/Can prepare 2 divine cantrips each day",' +
       '"Skill Trained (Religion)"',
   'Basic Cleric Spellcasting':
@@ -13864,7 +13922,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.deificWeapon',
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)'
     );
-    rules.defineRule('combatNotes.deityAndCause', 'deityWeapon', '=', null);
     ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
       rules.defineRule('combatNotes.' + f,
         'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
@@ -13890,11 +13947,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('featureNotes.liberator',
       "featureNotes.champion'sReaction", '=', 'null' // italics
     );
-    rules.defineRule('magicNotes.deityAndCause',
-      'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
-    );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
-      'featureNotes.deityAndCause', '=', '1'
+      'featureNotes.cause', '=', '1'
     );
     rules.defineRule("selectableFeatureCount.Champion (Champion's Code)",
       "featureNotes.champion'sCode", '=', '1'
@@ -13909,7 +13963,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('shieldHitPoints', 'combatNotes.divineAlly(Shield).1', '*', null);
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
-    rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
     rules.defineRule('spellModifier.Champion',
       classLevel, '?', null,
       'charismaModifier', '=', null
@@ -14437,7 +14490,6 @@ Pathfinder2E.deityRules = function(
     rules.defineRule('trainingLevel.' + weapon,
       'combatNotes.cloisteredCleric', '^', 'source=="' + weapon + '" ? 2 : null',
       'combatNotes.deity', '^=', 'source=="' + weapon + '" ? 1 : null',
-      'combatNotes.deityAndCause', '^=', 'source=="' + weapon + '" ? 1 : null',
       'combatNotes.warpriest.1', '^', 'source=="' + weapon + '" ? 2 : null'
     );
     rules.defineRule('weaponDieSidesBonus.' + weapon,
@@ -14447,8 +14499,7 @@ Pathfinder2E.deityRules = function(
     );
   }
   rules.defineRule('trainingLevel.' + skill,
-    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
-    'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
+    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
   );
 
   domains.forEach(d => {
@@ -14732,18 +14783,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
       rules.defineRule('magicNotes.' + noteName, 'levels.Champion', '?', null);
     });
-    rules.defineRule('combatNotes.deityAndCause',
-      'championFeatures.Deity And Cause', '?', null
-    );
-    rules.defineRule('magicNotes.deityAndCause',
-      'championFeatures.Deity And Cause', '?', null
-    );
-    rules.defineRule('features.Champion Key Ability',
-      'features.Champion Dedication', '=', '1'
-    );
-    rules.defineRule('features.Deity And Cause',
-      'features.Champion Dedication', '=', '1'
-    );
   } else if(name == "Champion's Reaction") {
     // Extend test rules to allow characters with the Champion's Reaction
     // archetype feature to acquire Champion Reactions.
@@ -14780,8 +14819,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.DC1', 'magicNotes.clericDedication', '+=', '2');
     // Suppress the deity notes that don't come with Cleric Dedication
-    rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
-    rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
+    rules.defineRule('isChampionOrCleric',
+      'levels.Champion', '=', '1',
+      'levels.Cleric', '=', '1'
+    );
+    rules.defineRule('combatNotes.deity', 'isChampionOrCleric', '?', null);
+    rules.defineRule('magicNotes.deity', 'isChampionOrCleric', '?', null);
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
