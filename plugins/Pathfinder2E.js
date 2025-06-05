@@ -11062,7 +11062,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Creates an invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
+      '"Creates an adjacent invisible, illusionary, 10\'x10\' wall with Armor Class 10, double the spell level Hardness, and quadruple the spell level HP, for 1 rd"',
   'Inspire Competence':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
@@ -11070,7 +11070,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allows self to use Performance to Aid an ally skill check, with normal failure counting as a success, for 1 rd"',
+      '"R60\' Allows self to use Performance to Aid an ally skill check, with normal failure counting as a %{rank.Performance>=4?\'critical \':\'\'}success, for 1 rd"',
   'Inspire Courage':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Mental ' +
@@ -11197,7 +11197,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R15\' Target weapon gains +%{(rank.Crafting||0)-1<?1>?0} attack, or target skill tool gains +%{(rank.Crafting||0)-1<?1>?0} checks, for 10 min (<b>heightened 7th</b> gives +%{(rank.Crafting||0)-1<?2>?0} bonus; <b>10th</b> gives +%{(rank.Crafting||0)-1<?3>?0} bonus)"',
+      '"R15\' Target weapon or skill tool becomes impressive and gains +%{rank.Crafting>1?1:0} attack or checks for 10 min (<b>heightened 7th</b> gives +%{(rank.Crafting||0)-1<?2>?0} bonus; <b>10th</b> gives +%{(rank.Crafting||0)-1<?3>?0} bonus)"',
   'Athletic Rush':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Transmutation ' +
@@ -11533,7 +11533,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R25 miles; reveals information about the nearest settlement (<b>heightened 5th</b> increases range to 100 miles)"',
+      '"R25 miles; reveals information about the nearest settlement (<b>heightened 5th</b> increases the range to 100 miles)"',
   'Pushing Gust':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Air,Cleric,Conjuration ' +
@@ -15708,8 +15708,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spirit', 'Subtle', 'Summon',
-  'Unholy', 'Vitality', 'Void', 'Wood'
+  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spellshape', 'Spirit',
+  'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void', 'Wood'
 ];
 
 /*
