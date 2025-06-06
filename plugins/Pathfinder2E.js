@@ -11189,7 +11189,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5\' burst fascinates creatures attracted to wealth in a 20\' radius while sustained for up to 1 min (<b>save Will</b> effects last for 1 rd; critical success negates)"',
+      '"R30\' 5\' burst fascinates creatures attracted to wealth in a 20\' radius while sustained for up to 1 min (<b>save Will</b> effects last for 1 action; critical success negates)"',
   'Artistic Flourish':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Transmutation ' +
@@ -11285,7 +11285,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts blinded for 1 rd (Interact action ends the effect) and dazzled for 1 min (<b>save Fortitude</b> inflicts dazzled for 1 rd; critical success negates; critical failure inflicts dazzled for 1 hr) (<b>heightened 3rd</b> extends effects to a 30\' cone)"',
+      '"15\' cone inflicts blinded for 1 rd (Interact action ends the effect) and dazzled for 1 min (<b>save Fortitude</b> inflicts dazzled only for 1 rd; critical success negates; critical failure extends dazzled to 1 hr) (<b>heightened 3rd</b> extends effects to a 30\' cone)"',
   "Death's Call":
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Necromancy ' +
@@ -11397,7 +11397,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Healing spells affecting the target restore +2 HP for 1 min (<b>heightened +1</b> restores +1 HP)"',
+      '"R30\' Healing spells affecting the target restore +2 HP for 1 min (<b>heightened +1</b> restores +2 HP)"',
   'Hurtling Stone':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Attack,Cleric,Earth,Evocation ' +
@@ -11589,7 +11589,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows self to use the best of two rolls on the triggering Seek or Recall Knowledge check"',
+      '"Allows self to use the better of two rolls on the triggering Seek or Recall Knowledge check"',
   'Shared Nightmare':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -11773,7 +11773,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Eating the touched berry within 10 min restores 1d6+4 HP; six berries also count as a full meal (<b>heightened +1</b> affects +1 berry)"',
+      '"Eating the touched piece of produce within 10 min restores 1d6+4 HP; six pieces also count as a full meal (<b>heightened +1</b> affects +1 piece)"',
   'Heal Animal':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
@@ -11821,7 +11821,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 HP persistent electricity (<b>save basic Reflex</b> inflicts initial HP only)"',
+      '"R30\' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 HP persistent electricity (<b>save basic Reflex</b> inflicts initial HP only) (<b>heightened +1</b> inflicts +1d12 HP initial and +1 HP persistent)"',
   'Wild Morph':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Morph,Transmutation ' +
@@ -15708,7 +15708,7 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Holy', 'Manipulate', 'Metal', 'Sanctified', 'Spellshape', 'Spirit',
+  'Holy', 'Manipulate', 'Metal', 'Ranger', 'Sanctified', 'Spellshape', 'Spirit',
   'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void', 'Wood'
 ];
 
