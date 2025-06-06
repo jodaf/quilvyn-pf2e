@@ -10859,8 +10859,111 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS["Dreamer's Call"]
     .replace('Enchantment', 'Concentrate,Manipulate,Illusion')
     .replaceAll('flat-footed and ', ''),
+  'Hurtling Stone':
+    Pathfinder2E.SPELLS['Hurtling Stone']
+    .replace('Evocation', 'Manipulate')
+    .replace(/1d6.*HP/, '2d6 HP'),
+  'Localized Quake':
+    Pathfinder2E.SPELLS['Localized Quake']
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace(/\(<b>save[^\)]*./, '(<b>save basic Reflex</b> also negates knocked prone)'),
+  'Soothing Words':
+    Pathfinder2E.SPELLS['Soothing Words']
+    .replace('Enchantment', 'Concentrate')
+    .replace('Mental', 'Manipulate')
+    .replace('1 rd', '1 min'),
+  'Unity':
+    Pathfinder2E.SPELLS.Unity
+    .replace('Abjuration', 'Concentrate'),
+  'Read Fate':
+    Pathfinder2E.SPELLS['Read Fate']
+    .replace('Divination', 'Concentrate,Manipulate') + ' ' +
+    'Cast=2',
+  'Tempt Fate':
+    Pathfinder2E.SPELLS['Tempt Fate']
+    .replace('Divination', 'Manipulate'),
+  'Fire Ray':
+    Pathfinder2E.SPELLS['Fire Ray']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replaceAll('1d4 HP persistent fire', "1d6 HP to others in the target\'s square"),
+  'Flame Barrier':
+    Pathfinder2E.SPELLS['Flame Barrier']
+    .replace('Abjuration', 'Concentrate'),
+  'Unimpeded Stride':
+    Pathfinder2E.SPELLS['Unimpeded Stride']
+    .replace('Transmutation', 'Manipulate'),
+  'Word Of Freedom':
+    Pathfinder2E.SPELLS['Word Of Freedom']
+    .replace('Enchantment', 'Concentrate'),
+  "Healer's Blessing":
+    Pathfinder2E.SPELLS["Healer's Blessing"]
+    .replace('Necromancy', 'Concentrate'),
+  'Rebuke Death':
+    Pathfinder2E.SPELLS['Rebuke Death']
+    .replace('Necromancy', 'Manipulate'),
+  'Overstuff':
+    Pathfinder2E.SPELLS.Overstuff
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Take Its Course':
+    Pathfinder2E.SPELLS['Take Its Course']
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+  'Scholarly Recollection':
+    Pathfinder2E.SPELLS['Scholarly Recollection']
+    .replace('Divination', 'Concentrate'),
+  'Know The Enemy':
+    Pathfinder2E.SPELLS['Know The Enemy']
+    .replace('Divination', 'Manipulate'),
+  'Bit Of Luck':
+    Pathfinder2E.SPELLS['Bit Of Luck']
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Lucky Break':
+    Pathfinder2E.SPELLS['Lucky Break']
+    .replace('Divination', 'Concentrate'),
+  "Magic's Vessel":
+    Pathfinder2E.SPELLS["Magic's Vessel"]
+    .replace('Enchantment', 'Manipulate')
+    .replace('level', 'rank'),
+  'Mystic Beacon':
+    Pathfinder2E.SPELLS['Mystic Beacon']
+    .replace('Evocation', 'Manipulate'),
+  'Athletic Rush':
+    Pathfinder2E.SPELLS['Athletic Rush']
+    .replace('Transmutation', 'Manipulate'),
+  'Enduring Might':
+    Pathfinder2E.SPELLS['Enduring Might']
+    .replace('Abjuration', 'Manipulate'),
+  'Moonbeam':
+    Pathfinder2E.SPELLS.Moonbeam
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('1d6', '2d6'),
+  'Touch Of The Moon':
+    Pathfinder2E.SPELLS['Touch Of The Moon']
+    .replace('Enchantment', 'Manipulate'),
+  'Vibrant Thorns':
+    Pathfinder2E.SPELLS['Vibrant Thorns']
+    .replace('Transmutation', 'Manipulate,Wood')
+    .replaceAll('positive', 'vitality'),
+  "Nature's Bounty":
+    Pathfinder2E.SPELLS["Nature's Bounty"]
+    .replace('Conjuration', 'Manipulate')
+    .replace('Positive', 'Vitality'),
+  'Waking Nightmare':
+    Pathfinder2E.SPELLS['Waking Nightmare']
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('frightened 2', 'frightened 2 and +1 HP mental from successful Strikes')
+    .replace('fleeing', 'paralyzed'),
+  'Shared Nightmare':
+    Pathfinder2E.SPELLS['Shared Nightmare']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
 
   // TODO
+  'Touch Of Obedience':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
   'Commanding Lash':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11078,147 +11181,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Shared Nightmare':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Nature's Bounty":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Touch Of The Moon':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Enduring Might':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Mystic Beacon':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Lucky Break':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Know The Enemy':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Take Its Course':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Rebuke Death':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Word Of Freedom':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Flame Barrier':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Tempt Fate':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Unity':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Localized Quake':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Dreamer's Call":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Destructive Aura':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Eradicate Undeath':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Artistic Flourish':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Delusional Pride':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Competitive Edge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Disperse Into Air':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11247,13 +11210,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Touch Of Undeath':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Touch Of Obedience':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11316,118 +11272,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Waking Nightmare':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Vibrant Thorns':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Moonbeam':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Athletic Rush':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Magic's Vessel":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Bit Of Luck':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Overstuff':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Healer's Blessing":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Unimpeded Stride':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Fire Ray':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Read Fate':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Soothing Words':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Hurtling Stone':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Sweet Dream':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Cry Of Destruction':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Death's Call":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Cloak Of Shadow':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11436,13 +11280,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Veil Of Confidence':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Face In The Crowd':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
