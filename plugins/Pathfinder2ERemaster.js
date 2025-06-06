@@ -4370,7 +4370,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Irrepressible':Pathfinder2E.FEATURES.Irrepressible,
   'Unhampered Passage':
     'Section=magic ' +
-    'Note="Knows the Unhampered Passage primal spell; can cast it on self once per day"',
+    'Note="Knows the Unfettered Movement primal spell; can cast it on self once per day"',
   'Ceaseless Shadows':Pathfinder2E.FEATURES['Ceaseless Shadows'],
   'Toppling Dance':
     'Section=combat ' +
@@ -10164,7 +10164,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Moon Frenzy':
     Pathfinder2E.SPELLS['Moon Frenzy']
     .replace('Transmutation', 'Concentrate,Manipulate'),
-  'Stoneskin':
+  'Mountain Resilience':
     Pathfinder2E.SPELLS.Stoneskin
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Mystic Armor':
@@ -10770,7 +10770,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description=' +
       '"60\' emanation allows self and allies to Hustle and self to use Performance for initiate while sustained for up to 1 hr (<b>heightened 6th</b> effects last 2 hr; <b>9th</b> effect last 4 hr)"',
-  'Song of Strength':
+  'Song Of Strength':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Emotion,Mental ' +
     'Cast=1 ' +
@@ -11414,70 +11414,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-
-  'Dimensional Steps':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Dread Aura':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Elemental Tempest':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   "Hero's Defiance":
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"TODO"',
-  'Life Siphon':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Mountain Resilience':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Vigilant Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Song Of Strength':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Unhampered Passage':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
       '"TODO"'
+
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
   Pathfinder2ERemaster.SPELLS[s] =
