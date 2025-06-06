@@ -7300,30 +7300,27 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Reduces any target status bonus to saves vs. self spells by 1"',
   // Steady Spellcasting as above
-  'Advanced School Spell (Abjuration)':
+  'Advanced School Spell (School Of Ars Grammatica)':
     'Section=magic ' +
-    'Note="Knows the Energy Absorption arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Conjuration)':
+    'Note="Knows the Rune Of Observation arcane focus spell"',
+  'Advanced School Spell (School Of Battle Magic)':
     'Section=magic ' +
-    'Note="Knows the Dimensional Steps arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Divination)':
+    'Note="Knows the Energy Absorption arcane focus spell"',
+  'Advanced School Spell (School Of The Boundary)':
     'Section=magic ' +
-    'Note="Knows the Vigilant Eye arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Enchantment)':
+    'Note="Knows the Spiral Of Horrors arcane focus spell"',
+  'Advanced School Spell (School Of Civic Wizardry)':
     'Section=magic ' +
-    'Note="Knows the Dread Aura arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Evocation)':
+    'Note="Knows the Community Restoration arcane focus spell"',
+  'Advanced School Spell (School Of Mentalism)':
     'Section=magic ' +
-    'Note="Knows the Elemental Tempest arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Illusion)':
+    'Note="Knows the Invisibility Cloak arcane focus spell"',
+  'Advanced School Spell (School Of Protean Form)':
     'Section=magic ' +
-    'Note="Knows the Invisibility Cloak arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Necromancy)':
+    'Note="Knows the Shifting Form arcane focus spell"',
+  'Advanced School Spell (School Of Unified Magical Theory)':
     'Section=magic ' +
-    'Note="Knows the Life Siphon arcane spell/+1 Focus Points"',
-  'Advanced School Spell (Transmutation)':
-    'Section=magic ' +
-    'Note="Knows the Shifting Form arcane spell/+1 Focus Points"',
+    'Note="Knows the Interdisciplinary Incantation arcane focus spell"',
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
@@ -11175,7 +11172,249 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"Teleports self and adjacent animal companion 90\', or 180\' in favored terrain"',
 
+  'Blood Ward':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Target gains +1 Armor Class and saves vs. choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives +2 bonus"',
+  'Cackle':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Curse,Death,Hex,Manipulate,Void ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="Sustains an active spell"',
+  'Curse Of Death':
+    'Level=5 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Curse,Death,Hex,Manipulate,Void ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Target suffers a curse at stage 1, which inflicts 4d6 HP void and fatigued while sustained for up to 1 min; subsequent failures after 1 rd inflict 8d6 HP void at stage 2, 12d6 HP void at stage 3, and death at stage 4 (<b>save Fortitude</b> inflicts stage 1 with no further saves; critical success negates; critical failure inflicts stage 2) (<b>heightened +1 inflicts +1d6 HP void)"',
+  "Deceiver's Cloak":
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS['Illusory Disguise'], 'Description')
+      .replace('for 1 hr', 'while sustained up to 1 hr')
+      .replace(' (heightened 2nd</b>', ';')
+      .replace('; <b>3rd</b>', ' and')
+      .replace(/\)$/, ' (<b>heightened 6th</b> allows copying any creature of the same size</b>)"'),
+  'Elemental Betrayal':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts weakness 2 to choice of element while sustained for up to 1 min (<b>heightened +2</b> inflicts weakness +1)"',
+  'Life Boost':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Healing,Hex,Manipulate,Vitality ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Gives fast healing 2 for 4 rd (<b>heightened +1</b> gives fast healing +2)"',
+  'Malicious Shadow':
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Hex,Manipulate,Shadow ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Successful attacks by the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
+  'Needle Of Vengeance':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Hex,Manipulate,Mental ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Target suffers 2 HP mental <b>save basic Will</b>) whenever it attacks the named creature while sustained for up to 1 min (<b>heightened +1</b> inflicts +2 HP)"',
+  "Patron's Puppet":
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=Free ' +
+    'Description="Allows Commanding of familiar at the beginning of a turn"',
+  'Personal Blizzard':
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Witch,Cold,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Target suffers 1d6 HP cold and 1d6 HP persistent cold while sustained for up to 1 min (<b>save Fortitude</b> inflicts initial cold only; critical success negates; critical failure inflicts 2d6 HP cold and 2d6 HP persistent cold) (<b>heightened +1</> inflicts +1 HP initial and persistent, or +2 on a critical save failure)"',
+  'Phase Familiar':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R60\' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)"',
+  'Restorative Moment':
+    'Level=5 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Decreases doomed and drained values by 1 and allows an additional save vs. afflictions once per target per day"',
+  'Veil Of Dreams':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Hex,Manipulate,Mental ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts -1 Perception, attacks, and Will saves, -2 vs. sleep, and a DC 5 flat check to use a concentrate action while sustained for up to 1 min (<b>save Will</b> negates flat check; critical success negates)"',
+  'Clinging Ice':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Cold,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts 1d4 HP cold and -5\' Speed while sustained for up to 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10\' Speed) (<b>heightened +1</b> inflicts +1d4 HP)"',
+  'Discern Secrets':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Give +1 on attempts to Recall Knowledge, Seek, or Sense Motive as free actions while sustained for up to 1 min (<b>heightened 5th</b> affects 2 targets)"',
+  'Evil Eye':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Curse,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts sickened 1 that cannot be cured while sustained for up to 1 min (<b>save Will</b> negates; critical failure inflicts sickened 2)"',
+  'Nudge Fate':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Concentrate,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Gives +1 to make a failed attack, skill check, or save into a success within 1 min"',
+  'Shroud Of Night':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Hex,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts dim vision and concealment of other creatures while sustained for up to 1 min (<b>save Will</b> negates)"',
+  'Stoke The Heart':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Emotion,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Gives +2 damage while sustained for up to 1 min (<b>heightened +2</b> gives +1 damage)"',
+  'Wilding Word':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Hex ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Target suffers -2 attack and sickened 1 when attacking self while sustained for up to 1 min (<b>save Will</b> negates sickened; critical success negates; critical failure inflicts sickened 2)"',
+
   // TODO
+  'Protective Wards':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Rune Of Observation':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Force Bolt':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Energy Absorption':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Fortify Summoning':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Spiral Of Horrors':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Earthworks':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Community Restoration':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Charming Push':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Invisibility Cloak':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Scramble Body':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Shifting Form':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Hand Of The Apprentice':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+  'Interdisciplinary Incantation':
+    'Level=1 ' +
+    'Traits=Evocation ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"TODO"',
+
   'Dimensional Steps':
     'Level=1 ' +
     'Traits=Evocation ' +
@@ -11197,35 +11436,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Energy Absorption':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Force Bolt':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Hand Of The Apprentice':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   "Hero's Defiance":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Invisibility Cloak':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11246,98 +11457,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Shifting Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Vigilant Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Protective Wards':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Fortify Summoning':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Earthworks':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Charming Push':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Scramble Body':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Stoke The Heart':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Clinging Ice':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Nudge Fate':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Shroud Of Night':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Discern Secrets':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Evil Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Wilding Word':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11352,13 +11472,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Unhampered Passage':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Uplifting Overture':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Primal ' +
