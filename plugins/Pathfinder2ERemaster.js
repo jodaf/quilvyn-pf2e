@@ -915,7 +915,7 @@ Pathfinder2ERemaster.CLASSES = {
     // Ability => Attribute
     // TODO 1:Spell Trained (Divine) => 1:Spell Trained (Champion)?
     // 1:Champion's Code => 1:Sanctification
-    // 1:Champion's Rection => null
+    // 1:Champion's Reaction => null
     // null => 1:Champion's Aura
     // 3:Divine Ally => 3:Blessing Of The Devoted
     // 9:Divine Smite => 9:Relentless Reaction
@@ -944,7 +944,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Iniquity ? 9:Relentless Reaction (Iniquity)",' +
       '"features.Justice ? 9:Relentless Reaction (Justice)",' +
       '"features.Liberation ? 9:Relentless Reaction (Liberation)",' +
-      '"features.Obediance ? 9:Relentless Reaction (Obediance)",' +
+      '"features.Obedience ? 9:Relentless Reaction (Obedience)",' +
       '"features.Redemption ? 9:Relentless Reaction (Redemption)",' +
       '"9:Sacred Body","11:Divine Will","11:Perception Expertise",' +
       '"features.Desecration ? 11:Exalted Reaction (Desecration)",' +
@@ -952,7 +952,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Iniquity ? 11:Exalted Reaction (Iniquity)",' +
       '"features.Justice ? 11:Exalted Reaction (Justice)",' +
       '"features.Liberation ? 11:Exalted Reaction (Liberation)",' +
-      '"features.Obediance ? 11:Exalted Reaction (Obediance)",' +
+      '"features.Obedience ? 11:Exalted Reaction (Obedience)",' +
       '"features.Redemption ? 11:Exalted Reaction (Redemption)",' +
       '"13:Armor Mastery","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
@@ -2148,7 +2148,8 @@ Pathfinder2ERemaster.FEATS = {
   'Order Magic (Leaf)':Pathfinder2E.FEATS['Order Magic (Leaf)'],
   'Order Magic (Storm)':Pathfinder2E.FEATS['Order Magic (Storm)'],
   'Order Magic (Untamed)':
-    Pathfinder2E.FEATS['Order Magic (Wild)'].replace('Wild', 'Untamed'),
+    Pathfinder2E.FEATS['Order Magic (Wild)']
+    .replace('Wild', 'Untamed'),
   'Snowdrift Spell':
     'Traits=Class,Druid,Cold,Manipulate,Spellshape ' +
     'Require="level >= 4","features.Storm"',
@@ -6324,7 +6325,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Order Magic (Storm)':Pathfinder2E.FEATURES['Order Magic (Storm)'],
   'Order Magic (Untamed)':
     Pathfinder2E.FEATURES['Order Magic (Wild)']
-    .replace('Wild Shape', 'Untamed Shift'),
+    .replace('Wild Morph', 'Untamed Shift'),
   'Snowdrift Spell':
     'Section=magic ' +
     'Note="Subsequent air, water, or cold spell creates difficult terrain underneath 1 affected creature for 1 rd"',
@@ -7843,7 +7844,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can increase the die size of the initial effects of a alchemical consumable by 1 step; the consumer suffers acid damage equal to the items level (DC 10 flat check negates)"',
   'Extend Elixir':Pathfinder2E.FEATURES['Extend Elixir'],
-  'Supreme Invigorating Exlixir':
+  'Supreme Invigorating Elixir':
     'Section=skill ' +
     'Note="Invigorating elixirs counteract as level %{level+2} and can counteract petrified, stunned, or any disease"',
   'Uncanny Bombs':Pathfinder2E.FEATURES['Uncanny Bombs'],
@@ -7852,7 +7853,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can apply 2 poisons of up to level %{level-2} to a weapon simultaneously"',
   'Mutant Innervation':
     'Section=skill ' +
-    'Note="Cogntive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Peformance and translate speech into listeners\' languages"',
+    'Note="Cogintive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners\' languages"',
   'True Debilitating Bomb':
     Pathfinder2E.FEATURES['True Debilitating Bomb']
     .replace(/or a lesser[^"]*/, ''),
@@ -7930,7 +7931,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Adrenaline Rush':
     'Section=ability,skill ' +
     'Note=' +
-      '"+2 encumberance and maxiumum Bulk during rage",' +
+      '"+2 encumberance and maximum Bulk during rage",' +
       '"+1 Athletics to lift, Escape, and Force Open during rage"',
   'Draconic Arrogance':'Section=save Note="+2 vs. emotion effects during rage"',
   'Moment Of Clarity':Pathfinder2E.FEATURES['Moment Of Clarity'],
@@ -7956,7 +7957,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Scars Of Steel':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives restistance %{constitutionModifier+level//2} to the damage from the triggering critical hit once per day"',
+    'Note="Gives resistance %{constitutionModifier+level//2} to the damage from the triggering critical hit once per day"',
   'Spiritual Guides':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -7980,7 +7981,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Mage Hunter':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Stride on a spell caster inflcits stupefied 1 for 1 rd, or stupefied 2 on a critical hit"',
+    'Note="Successful Stride on a spell caster inflicts stupefied 1 for 1 rd, or stupefied 2 on a critical hit"',
   'Nocturnal Senses':
     'Section=feature ' +
     'Note="Low-Light Vision becomes Darkvision while raging and imprecise scent range increases to 60\'"',
@@ -8029,7 +8030,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Impressive Landing':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Reduces fall damage by 10\' and inflcits 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
+    'Note="Reduces fall damage by 10\' and inflicts 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
   'Knockback':Pathfinder2E.FEATURES.Knockback,
   // Overpowering Charge as above
   'Resounding Blow':
@@ -8039,7 +8040,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Silencing Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts stunned 1, requiring a successful DC flat check to use linguisting actions (<b>save Fortitude</b> negates; critical success inflicts stunned 3)"',
+    'Note="Successful melee Strike inflicts stunned 1, requiring a successful DC flat check to use linguistic actions (<b>save Fortitude</b> negates; critical success inflicts stunned 3)"',
   'Tangle Of Battle':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -8144,7 +8145,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="TODO"',
   'Exalted Reaction (Liberation)':
     'Section=feature Note="TODO"',
-  'Exalted Reaction (Obediance)':
+  'Exalted Reaction (Obedience)':
     'Section=feature Note="TODO"',
   'Exalted Reaction (Redemption)':
     'Section=feature Note="TODO"',
@@ -8175,7 +8176,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="TODO"',
   'Relentless Reaction (Liberation)':
     'Section=feature Note="TODO"',
-  'Relentless Reaction (Obediance)':
+  'Relentless Reaction (Obedience)':
     'Section=feature Note="TODO"',
   'Relentless Reaction (Redemption)':
     'Section=feature Note="TODO"',
@@ -10777,7 +10778,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Emotion,Mental ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' emanation give allies +1 Atheletics and DCs vs. Athletics skill actions for 1 rd"',
+      '"60\' emanation give allies +1 Athletics and DCs vs. Athletics skill actions for 1 rd"',
   'Soothing Ballad':
     Pathfinder2E.SPELLS['Soothing Ballad']
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -10790,7 +10791,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Triple Time':
     Pathfinder2E.SPELLS['Triple Time']
     .replace('Enchantment', 'Manipulate'),
-  'Uplifting Overature':
+  'Uplifting Overture':
     Pathfinder2E.SPELLS['Inspire Competence']
     .replace('Enchantment', 'Concentrate'),
   'Pushing Gust':
@@ -10955,30 +10956,227 @@ Pathfinder2ERemaster.SPELLS = {
   'Shared Nightmare':
     Pathfinder2E.SPELLS['Shared Nightmare']
     .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Savor The Sting':
+    Pathfinder2E.SPELLS['Savor The Sting']
+    .replace('Enchantment', 'Manipulate'),
+  'Retributive Pain':
+    Pathfinder2E.SPELLS['Retributive Pain']
+    .replace('Abjuration', 'Manipulate'),
+  'Charming Touch':
+    Pathfinder2E.SPELLS['Retributive Pain']
+    .replace('Enchantment', 'Manipulate'),
+  'Captivating Adoration':
+    Pathfinder2E.SPELLS['Retributive Pain']
+    .replace('Enchantment', 'Concentrate,Manipulate,Aura'),
+  'Perfected Mind':
+    Pathfinder2E.SPELLS['Perfected Mind']
+    .replace('Abjuration', 'Concentrate'),
+  'Perfected Body':
+    Pathfinder2E.SPELLS['Perfected Form'] + ' ' +
+    'Traits=Focus,Uncommon,Cleric,Concentrate' + ' ' +
+    'Description="Improves the triggering save result vs. a physical effect from critical failure to failure or from failure to success"',
+  "Protector's Sacrifice":
+    Pathfinder2E.SPELLS["Protector's Sacrifice"]
+    .replace('Abjuration', 'Manipulate'),
+  "Protector's Sphere":
+    Pathfinder2E.SPELLS["Protector's Sphere"]
+    .replace('Abjuration', 'Concentrate,Manipulate,Aura'),
+  'Whispering Quiet':
+    Pathfinder2E.SPELLS['Forced Quiet']
+    .replace('Abjuration', 'Manipulate,Sonic') + ' ' +
+    'Description=' +
+      '"R60\' 15\' burst mutes speech, requiring others over 5\' away to succeed on a DC %{spellDifficultyClass.%tradition} Perception to hear, for 1 min"',
+  'Safeguard Secret':
+    Pathfinder2E.SPELLS['Safeguard Secret']
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('R10', 'R30') + ' ' +
+    'Cast=2',
+  'Dazzling Flash':
+    Pathfinder2E.SPELLS['Dazzling Flash']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Vital Luminance':
+    Pathfinder2E.SPELLS['Positive Luminance']
+    .replace('Necromancy', 'Concentrate,Manipulate,Aura')
+    .replace('Positive', 'Vitality') + ' ' +
+    'Description=' +
+      '"30\' light emanation inflicts 2 HP vitality on successful undead attackers, increasing by 2 HP each rd for 1 min; self may end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
+  'Agile Feet':
+    Pathfinder2E.SPELLS['Agile Feet']
+    .replace('Transmutation', 'Manipulate'),
+  "Traveler's Transit":
+    Pathfinder2E.SPELLS["Traveler's Transit"]
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Sudden Shift':
+    Pathfinder2E.SPELLS['Sudden Shift'] + ' ' +
+    'Traits=Focus,Uncommon,Cleric,Manipulate',
+  "Trickster's Twin":
+    Pathfinder2E.SPELLS["Trickster's Twin"]
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Word Of Truth':
+    Pathfinder2E.SPELLS['Word Of Truth']
+    .replace('Divination', 'Concentrate')
+    .replace('Causes', 'Gives +2 Diplomacy and causes'),
+  'Glimpse The Truth':
+    Pathfinder2E.SPELLS['Glimpse The Truth']
+    .replace('Divination', 'Manipulate,Aura'),
+  'Touch Of Obedience':
+    Pathfinder2E.SPELLS['Touch Of Obedience']
+    .replace('Enchantment', 'Manipulate') + ' ' +
+    'Description=' +
+      '"Touch inflicts stupefied 2 until the end of the next turn (<b>save Will</b> inflicts stupefied 1 until the end of the next turn; critical success negates; critical failure inflicts stupefied 2 for 1 min and prone)"',
+  'Commanding Lash':
+    Pathfinder2E.SPELLS['Commanding Lash']
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('Incapacitation', 'Linguistic')
+    .replace('negates', '(-2 if frightened, stupefied, or suffering persistent damage) negates'),
+  'Touch Of Undeath':
+    Pathfinder2E.SPELLS['Touch Of Undeath']
+    .replace('Necromancy', 'Manipulate')
+    .replace('Negative', 'Void')
+    .replace('negative', 'void'),
+  'Malignant Sustenance':
+    Pathfinder2E.SPELLS['Malignant Sustenance']
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('Negative', 'Void'),
+  'Tidal Surge':
+    Pathfinder2E.SPELLS['Tidal Surge']
+    .replace('Evocation', 'Manipulate') + ' ' +
+    'Description=' +
+      '"R60\' Moves the target 10\' over ground or 20\' in water (<b>save Fortitude</b> negates)"',
+  'Downpour':
+    Pathfinder2E.SPELLS.Downpour
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Appearance Of Wealth':
+    Pathfinder2E.SPELLS['Appearance Of Wealth']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Precious Metals':
+    Pathfinder2E.SPELLS['Precious Metals']
+    .replace('Transmutation', 'Concentrate,Metal')
+    .replace('<b>', '<b>heightened +1</b> gives +2 Hardness; <b>'),
+  'Weapon Surge':
+    Pathfinder2E.SPELLS['Weapon Surge']
+    .replace('Evocation', 'Manipulate,Sanctified') + ' ' +
+    'Description=' +
+      '"Held weapon gains +1 attack and +1d6 HP spirit on the next attack before the start of the next turn (<b>heightened 5th</b> gives +1d6 HP; <b>9th</b> gives +1d6 HP)"',
+  'Zeal For Battle':
+    Pathfinder2E.SPELLS['Zeal For Battle']
+    .replace('Enchantment', 'Concentrate'),
+
+  'Primal Summons':
+    Pathfinder2E.SPELLS['Primal Summons']
+    .replace('Conjuration', 'Concentrate')
+    .replace('fire"', 'fire; +1d6 HP electricity damage and resistance 5 to electricity; a 30\' climb Speed and resistance 2 to bludgeoning and piercing"'),
+  'Heal Animal':
+    Pathfinder2E.SPELLS['Heal Animal']
+    .replace('Necromancy', 'Manipulate'),
+  'Cornucopia':
+    Pathfinder2E.SPELLS.Goodberry
+    .replace('Necromancy', 'Concentrate,Manipulate,Plant,Vitality'),
+  'Impaling Briars':
+    Pathfinder2E.SPELLS['Impaling Briars']
+    .replace('Conjuration', 'Concentrate,Manipulate,Wood') + ' ' +
+    'Cast=3',
+  'Storm Lord':
+    Pathfinder2E.SPELLS['Storm Lord']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Stormwind Flight':
+    Pathfinder2E.SPELLS['Stormwind Flight']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Tempest Surge':
+    Pathfinder2E.SPELLS['Tempest Surge']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Untamed Form':
+    Pathfinder2E.SPELLS['Wild Shape']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Untamed Shift':
+    Pathfinder2E.SPELLS['Wild Morph']
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replaceAll(/ \(requires[^\)]*./g, ''),
+
+  'Gravity Weapon':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Ranger ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"First Strike each rd gains a damage bonus equal to twice the number of damage dice"',
+  'Heal Companion':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Ranger,Healing,Vitality ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"Touch restores 1d10 HP to companion, or 2 actions gives R30\' and restores 1d10+8 HP (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)"',
+  'Magic Hide':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Ranger,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description="R30\' Gives companion +1 Armor Class for 1 min"',
+  'Animal Feature':
+    'Level=2 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Morph ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"Self gains low-light vision, claws that inflict 1d6 HP slashing, or jaws that inflict 1d8 HP piercing for 1 min (<b>heightened 4th</b> allows choosing %{speed}\' swim or fly Speed or darkvision)"',
+  'Enlarge Companion':
+    'Level=2 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Polymorph ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Enlarge, 'Description')
+      .replace('Willing target', 'Companion')
+      .replace('5 min', '1 min')
+      .replace(/; <b>8th[^\)]*/, '') + '"',
+  "Hunter's Luck":
+    'Level=2 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Fortune ' +
+    'Traditions=Primal ' +
+    'Cast=Free ' +
+    'Description=' +
+      '"Gives the better of two rolls on a Recall Knowledge check about a creature"',
+  'Soothing Mist':
+    'Level=2 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Healing,Vitality ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Restores 2d8 HP and removes one source of persistent damage to a living creature, or inflicts 2d8 HP vitality and 2 HP persistent vitality to an undead target"',
+  'Ephemeral Tracking':
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Allows DC 30+ checks to track through air and water for 1 hr"',
+  "Ranger's Bramble":
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Plant ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Entangle, 'Description')
+      .replace("120' 20", "100' 5")
+      .replace('for 1 rd', 'for 1 rd and 2d4 HP persistent bleed) (<b>heightened +1</b> inflicts +1d4 persistent bleed') + '"',
+  "Hunter's Vision":
+    'Level=5 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate ' +
+    'Traditions=Primal ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Self and led companions ignore penalties from lighting, concealed, and invisible status on target for 10 min"',
+  'Terrain Transposition':
+    'Level=5 ' +
+    'Traits=Uncommon,Focus,Ranger,Concentrate,Manipulate,Teleportation ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Teleports self and adjacent animal companion 90\', or 180\' in favored terrain"',
 
   // TODO
-  'Touch Of Obedience':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Commanding Lash':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Dimensional Steps':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Downpour':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11020,21 +11218,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Heal Animal':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   "Hero's Defiance":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Impaling Briars':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11055,28 +11239,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Malignant Sustenance':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Mountain Resilience':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Precious Metals':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Primal Summons':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11090,196 +11253,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"TODO"',
-  'Storm Lord':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Stormwind Flight':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Tempest Surge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
   'Vigilant Eye':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Wild Morph':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Zeal For Battle':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Glimpse The Truth':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Trickster's Twin":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Traveler's Transit":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Safeguard Secret':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Protector's Sphere":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Captivating Adoration':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Retributive Pain':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Eradicate Undeath':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Weapon Surge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Appearance Of Wealth':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Tidal Surge':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Touch Of Undeath':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Word Of Truth':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Sudden Shift':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Agile Feet':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Dazzling Flash':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  "Protector's Sacrifice":
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Perfected Mind':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Charming Touch':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Savor The Sting':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Cloak Of Shadow':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Veil Of Confidence':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
@@ -11364,83 +11338,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"TODO"',
   'Wilding Word':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Untamed Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Cornucopia':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Untamed Shift':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Pulse Of Civilization':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Darkened Sight':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Perfected Body':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Vital Luminance':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Whispering Quiet':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Creative Splash':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Ignite Ambition':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
-  'Symphony Of The Unfettered Heart':
     'Level=1 ' +
     'Traits=Evocation ' +
     'Traditions=Occult ' +
