@@ -11315,109 +11315,116 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"R30\' Target suffers -2 attack and sickened 1 when attacking self while sustained for up to 1 min (<b>save Will</b> negates sickened; critical success negates; critical failure inflicts sickened 2)"',
 
-  // TODO
   'Protective Wards':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Aura,Manipulate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"5\' emanation gives allies +1 Armor Class while sustained for up to 1 min; each sustain increases the radius by 5\' up to 30\'"',
+  // TODO
   'Rune Of Observation':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Clairvoyance, 'Description')
+      .replace('10 min', '1 hr') + '; spending Focus Points extends the spell for 1 hr each"',
   'Force Bolt':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Force,Manipulate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"R30\' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)"',
   'Energy Absorption':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard ' +
+    'Traditions=Arcane ' +
+    'Cast=Reaction ' +
     'Description=' +
-      '"TODO"',
+      '"Gives resistance 15 to the triggering acid, cold, electricity, or fire damage (<b>heightened +1</b> gives resistance +5)"',
   'Fortify Summoning':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"R30\' Summoned creature gains +1 checks, Armor Class, and DCs for 1 min"',
   'Spiral Of Horrors':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Aura,Concentrate,Emotion,Fear,Manipulate,Mental ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"TODO"',
+      '"30\' emanation inficts irreducable frightened 1 while sustained for up to 1 min"',
   'Earthworks':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate,Earth,Manipulate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"60\' 5\' burst (2 or 3 actions gives a 10\' or 15\' burst) inflicts difficult terrain for 1 min (<b>heightened 4th</b> inflicts difficult terrain for flying creatures)"',
   'Community Restoration':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate,Healing ' +
+    'Traditions=Arcane ' +
+    'Cast=Reaction ' +
     'Description=' +
-      '"TODO"',
+      '"Casting a spell on an ally gives self 2 temporary Hit Points per spell rank, plus an equal number to distribute among affected allies, for 1 min"',
   'Charming Push':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate,Incapacitation,Mental ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"Prevents target from using hostile actions vs. self for 1 rd (<b>save Will</b> inflicts -1 attack and damage vs. self; critical success negates; critical failure also inflicts stunned 1)"',
   'Invisibility Cloak':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Illusion,Manipulate ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
-    'Description=' +
-      '"TODO"',
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS.Invisibility, 'Description')
+      .replace('Touched', 'Self')
+      .replace('10 min', '1 min')
+      .replace(/\([^\)]*./, '(<b>heightened 6th</b> effects last for 10 min</b>; <b>8th</b> effect last for 1 hr)"'),
   'Scramble Body':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate,Manipulate ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"TODO"',
+      '"R30\' Inflicts sickened 1 (<b>save Fortitude</b> negates; critical failure inflicts sickened 2 and slowed 1 while sickened)"',
   'Shifting Form':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate,Morph ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"Gives self choice of +20\' Speed, %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min"',
   'Hand Of The Apprentice':
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Wizard,Attack,Manipulate ' +
+    'Traditions=Arcane ' +
+    'Cast=1 ' +
     'Description=' +
-      '"TODO"',
+      '"Successful spell attack while throwing a melee weapon inflicts its base damage + %{spellModifier.%tradition}, or double HP and the weapon\'s critical specialization effect on a critical success; the weapon returns afterwards"',
   'Interdisciplinary Incantation':
-    'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
-    'Cast=2 ' +
+    'Level=4 ' +
+    'Traits=Uncommon,Focus,Wizard,Concentrate ' +
+    'Traditions=Arcane ' +
+    'Cast=Reaction ' +
     'Description=' +
-      '"TODO"',
+      '"R30\' Allows imitating the triggering spell cast until the end of the next turn once per 24 hr"',
+
+  // Core 2
+
   "Hero's Defiance":
     'Level=1 ' +
-    'Traits=Evocation ' +
-    'Traditions=Occult ' +
+    'Traits=Uncommon,Focus,Wizard ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
       '"TODO"'
