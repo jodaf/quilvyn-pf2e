@@ -95,27 +95,19 @@ Pathfinder2ERemaster.RANDOMIZABLE_ATTRIBUTES =
   Pathfinder2E.RANDOMIZABLE_ATTRIBUTES.filter(x => !(x.match(/alignment|abilities|strength|constitution|dexterity|intelligence|wisdom|charisma/)));
 
 Pathfinder2ERemaster.ANCESTRIES = {
-  'Dwarf':
-    Pathfinder2E.ANCESTRIES.Dwarf
-    .replaceAll('Ability', 'Attribute'),
+  'Dwarf':Pathfinder2E.ANCESTRIES.Dwarf,
   'Elf':
     Pathfinder2E.ANCESTRIES.Elf
-    .replaceAll('Ability', 'Attribute')
     .replace('Selectables=', 'Selectables="1:Ancient Elf:Heritage",'),
   'Gnome':
     Pathfinder2E.ANCESTRIES.Gnome
-    .replaceAll('Ability', 'Attribute')
     .replace('Sylvan', 'Fey'),
-  'Goblin':
-    Pathfinder2E.ANCESTRIES.Goblin
-    .replaceAll('Ability', 'Attribute'),
+  'Goblin':Pathfinder2E.ANCESTRIES.Goblin,
   'Halfling':
     Pathfinder2E.ANCESTRIES.Halfling
-    .replaceAll('Ability', 'Attribute')
     .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
-    .replaceAll('Ability', 'Attribute')
     .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage,"', '')
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
@@ -287,21 +279,11 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Languages=Common,Tripkee ' +
     'Traits=Humanoid,Tripkee'
 };
-Pathfinder2ERemaster.ARMORS = {
-  'None':Pathfinder2E.ARMORS.None,
-  "Explorer's Clothing":Pathfinder2E.ARMORS["Explorer's Clothing"],
-  'Padded':Pathfinder2E.ARMORS.Padded,
-  'Leather':Pathfinder2E.ARMORS.Leather,
-  'Studded Leather':Pathfinder2E.ARMORS['Studded Leather'],
-  'Chain Shirt':Pathfinder2E.ARMORS['Chain Shirt'],
-  'Hide':Pathfinder2E.ARMORS.Hide,
-  'Scale Mail':Pathfinder2E.ARMORS['Scale Mail'],
-  'Chain Mail':Pathfinder2E.ARMORS['Chain Mail'],
-  'Breastplate':Pathfinder2E.ARMORS.Breastplate,
-  'Splint Mail':Pathfinder2E.ARMORS['Splint Mail'],
-  'Half Plate':Pathfinder2E.ARMORS['Half Plate'],
-  'Full Plate':Pathfinder2E.ARMORS['Full Plate']
-};
+for(let a in Pathfinder2ERemaster.ANCESTRIES)
+  Pathfinder2ERemaster.ANCESTRIES[a] =
+    Pathfinder2ERemaster.ANCESTRIES[a].replaceAll('Ability', 'Attribute');
+Pathfinder2ERemaster.ARMORS = Object.assign({}, Pathfinder2E.ARMORS);
+// Convert minimum strength from scores to modifiers
 for(let a in Pathfinder2ERemaster.ARMORS) {
   let m = Pathfinder2ERemaster.ARMORS[a].match(/Str=(\d+)/);
   if(m) {
@@ -310,62 +292,28 @@ for(let a in Pathfinder2ERemaster.ARMORS) {
       Pathfinder2ERemaster.ARMORS[a].replace(/Str=\d+/, 'Str=' + strMod);
   }
 }
-Pathfinder2ERemaster.BACKGROUNDS = {
-  'Acolyte':Pathfinder2E.BACKGROUNDS.Acolyte,
-  'Acrobat':Pathfinder2E.BACKGROUNDS.Acrobat,
-  'Animal Whisperer':Pathfinder2E.BACKGROUNDS['Animal Whisperer'],
-  'Artisan':Pathfinder2E.BACKGROUNDS.Artisan,
-  'Artist':Pathfinder2E.BACKGROUNDS.Artist,
-  'Barkeep':Pathfinder2E.BACKGROUNDS.Barkeep,
+Pathfinder2ERemaster.BACKGROUNDS =
+  Object.assign({}, Pathfinder2E.BACKGROUNDS, {
   'Bandit':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any)",' +
       '"1:Skill Trained (Intimidation; Choose 1 from any Terrain Lore)","1:Group Coercion"',
-  'Barrister':Pathfinder2E.BACKGROUNDS.Barrister,
-  'Bounty Hunter':Pathfinder2E.BACKGROUNDS['Bounty Hunter'],
-  'Charlatan':Pathfinder2E.BACKGROUNDS.Charlatan,
   'Cook':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any)",' +
       '"1:Skill Trained (Survival; Cooking Lore)","1:Seasoned"',
-  'Criminal':Pathfinder2E.BACKGROUNDS.Criminal,
   'Cultist':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any)",' +
       '"1:Skill Trained (Occultism, Choose 1 from any Deity Lore)","1:Schooled In Secrets"',
-  'Detective':Pathfinder2E.BACKGROUNDS.Detective,
-  'Emissary':Pathfinder2E.BACKGROUNDS.Emissary,
-  'Entertainer':Pathfinder2E.BACKGROUNDS.Entertainer,
-  'Farmhand':Pathfinder2E.BACKGROUNDS.Farmhand,
-  'Field Medic':Pathfinder2E.BACKGROUNDS['Field Medic'],
-  'Fortune Teller':Pathfinder2E.BACKGROUNDS['Fortune Teller'],
-  'Gambler':Pathfinder2E.BACKGROUNDS.Gambler,
-  'Gladiator':Pathfinder2E.BACKGROUNDS.Gladiator,
-  'Guard':Pathfinder2E.BACKGROUNDS.Guard,
-  'Herbalist':Pathfinder2E.BACKGROUNDS.Herbalist,
-  'Hermit':Pathfinder2E.BACKGROUNDS.Hermit,
-  'Hunter':Pathfinder2E.BACKGROUNDS.Hunter,
-  'Laborer':Pathfinder2E.BACKGROUNDS.Laborer,
-  'Martial Disciple':Pathfinder2E.BACKGROUNDS['Martial Disciple'],
-  'Merchant':Pathfinder2E.BACKGROUNDS.Merchant,
-  'Miner':Pathfinder2E.BACKGROUNDS.Miner,
-  'Noble':Pathfinder2E.BACKGROUNDS.Noble,
-  'Nomad':Pathfinder2E.BACKGROUNDS.Nomad,
-  'Prisoner':Pathfinder2E.BACKGROUNDS.Prisoner,
   'Raised By Belief':
     'Features=' +
       '"1:Belief Attributes","1:Belief Skills"',
-  'Sailor':Pathfinder2E.BACKGROUNDS.Sailor,
-  'Scholar':Pathfinder2E.BACKGROUNDS.Scholar,
-  'Scout':Pathfinder2E.BACKGROUNDS.Scout,
-  'Street Urchin':Pathfinder2E.BACKGROUNDS['Street Urchin'],
   'Teacher':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Choose 1 from Performance, Society; Academia Lore)",' +
       '"1:Experienced Professional"',
-  'Tinker':Pathfinder2E.BACKGROUNDS.Tinker,
-  'Warrior':Pathfinder2E.BACKGROUNDS.Warrior,
   // Core 2
   'Astrologer':
     'Features=' +
@@ -448,7 +396,7 @@ Pathfinder2ERemaster.BACKGROUNDS = {
       '"1:Skill Trained (Performance; Genealogy Lore)",' +
       '"1:Fascinating Performance"'
   // TODO Rare backgrounds, pg 51
-};
+});
 for(let b in Pathfinder2ERemaster.BACKGROUNDS)
   Pathfinder2ERemaster.BACKGROUNDS[b] =
     Pathfinder2ERemaster.BACKGROUNDS[b].replaceAll('Ability', 'Attribute');
@@ -4070,6 +4018,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Ancestry
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
+  // Dwarf
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
   'Call On Ancient Blood':Pathfinder2E.FEATURES['Call On Ancient Blood'],
   'Darkvision':Pathfinder2E.FEATURES.Darkvision,
@@ -4145,6 +4094,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone"',
 
+  // Elf
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
@@ -4199,6 +4149,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can teleport another person when affected by a multiple-target teleportation spell, and always arrives within 1 mile of the desired location"',
 
+  // Gnome
   'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
   'Fey-Touched Gnome':Pathfinder2E.FEATURES['Fey-Touched Gnome'],
   'Gnome Heritage':Pathfinder2E.FEATURES['Gnome Heritage'],
@@ -4263,6 +4214,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
 
+  // Goblin
   'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
   // Darkvision as above
   'Goblin Heritage':Pathfinder2E.FEATURES['Goblin Heritage'],
@@ -4313,6 +4265,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Critical failures and failures on saves due to hazardous actions are successes and result in minimum damage until the end of the turn once per day"',
 
+  // Halfling
   'Gutsy Halfling':Pathfinder2E.FEATURES['Gutsy Halfling'],
   'Halfling Heritage':Pathfinder2E.FEATURES['Halfling Heritage'],
   'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
@@ -4379,6 +4332,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can follow a successful Hide or Sneak with 1 min invisibility; a hostile act ends"',
 
+  // Human
   'Human Heritage':Pathfinder2E.FEATURES['Human Heritage'],
   'Skilled Human':Pathfinder2E.FEATURES['Skilled Heritage Human'],
   'Versatile Human':Pathfinder2E.FEATURES['Versatile Heritage Human'],
@@ -4421,6 +4375,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="R30\' Generates the effects of a 6th-level Zealous Conviction on 10 willing creatures once per day"',
 
+  // Leshy
   'Cactus Leshy':
     'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Fruit Leshy':
@@ -4521,6 +4476,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Regenerate primal innate spell; can cast it at rank 7 once per day"',
 
+  // Orc
   'Badlands Orc':
     'Section=ability,save ' +
     'Note=' +
@@ -4622,8 +4578,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
 
-  'Versatile Heritage':'Section=feature Note="1 selection"',
-
+  // Changeling
   'Changeling':
     'Section=feature,feature ' +
     'Note=' +
@@ -4664,6 +4619,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can cast a chosen spell up to 4th rank as an occult innate spell once per day"',
 
+  // Nephilim
   'Angelkin':
     'Section=feature,skill ' +
     'Note=' +
@@ -4754,6 +4710,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Eternal Wings':
     'Section=ability Note="Wings give continuous %{speed}\' fly Speed"',
 
+  // Aiuvarin
   'Aiuvarin':
     'Section=feature,feature ' +
     'Note=' +
@@ -4768,6 +4725,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Inspire Imitation':Pathfinder2E.FEATURES['Inspire Imitation'],
   'Supernatural Charm':Pathfinder2E.FEATURES['Supernatural Charm'],
 
+  // Dromaar
   'Dromaar':
     'Section=feature,feature ' +
     'Note=' +
@@ -4778,6 +4736,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Core 2
 
+  // Catfolk
   'Catfolk Heritage':'Section=feature Note="1 selection"',
   'Clawed Catfolk':'Section=combat Note="Claws inflict 1d6 HP slashing"',
   'Hunting Catfolk':
@@ -4882,6 +4841,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Successful DC 17 flat check upon dying instead inflicts 0 HP and dying 3"',
 
+  // Hobgoblin
   // Darkvision as above
   'Elfbane Hobgoblin':'Section=feature Note="Has the Resist Elf Magic feature"',
   'Hobgoblin Heritage':'Section=feature Note="1 selection"',
@@ -4980,6 +4940,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="30\' emanation gives allies %{level} temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min"',
 
+  // Kholo
   'Ant Kholo':
     'Section=combat,feature,skill,skill ' +
     'Note=' +
@@ -5104,6 +5065,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Venomtail Kobold':
     'Section=combat Note="Can enhance a piercing or slashing weapon to inflict %{level} HP persistent poison on next hit before the end of the next turn once per day"',
 
+  // Kobold
   'Cringe':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5178,6 +5140,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Gives self %{level} temporary Hit Points for 1 min and a flat check to remove persistent damage, and requires foes to make a DC 11 flat check to attack self for 1 rd"',
 
+  // Lizardfolk
   'Aquatic Adaptation':'Section=feature Note="Has the Breath Control feature"',
   'Claws':'Section=combat Note="Claws inflict 1d4 HP slashing"',
   'Cliffscale Lizardfolk':
@@ -5285,6 +5248,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Can use a 24-hr hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
 
+  // Ratfolk
   // Low-Light Vision as above
   'Sharp Teeth':'Section=combat Note="Jaws inflict 1d4 HP piercing"',
   'Deep Rat':'Section=feature Note="Has the Darkvision feature"',
@@ -5370,6 +5334,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Enlarge primal innate spell; can cast it at 6th rank once per day"',
 
+  // Tengu
   // Low-Light Vision as above
   'Sharp Beak':'Section=combat Note="Beak inflicts 1d6 HP piercing"',
   'Dogtooth Tengu':'Section=combat Note="Beak has deadly d8 trait"',
@@ -5459,6 +5424,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast one of the once per day at 7th rank"',
 
+  // Tripkee
   // Low-Light Vision as above
   'Natural Climber':'Section=skill Note="+2 Athletics to Climb"',
   'Tripkee Heritage':'Section=feature Note="1 selection"',
@@ -5547,6 +5513,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Stands after bring unconscious without triggering reactions"',
   'Unbound Leaper':'Section=skill Note="Can Leap 30\' in any directions"',
 
+  // Dhampir
   'Dhampir':
     'Section=feature,feature ' +
     'Note=' +
@@ -5594,6 +5561,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it once per day"',
 
+  // Dragonblood
   'Dragonblood':
     'Section=feature,feature,save ' +
     'Note=' +
@@ -5672,6 +5640,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Breath Of The Dragon inflicts difficult terrain for 1 min, and targets that critically fail their saves suffer +2d6 HP persistent damage"',
 
+  // Duskwalker
   'Duskwalker':
     'Section=feature,feature,save ' +
     'Note=' +
@@ -9974,7 +9943,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Cone Of Cold']
     .replace('Evocation', 'Concentrate,Manipulate,Air') + ' ' +
     'Description=' +
-      '"60\' cone (3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"60\' cone (using 3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Humanoid Form':
     Pathfinder2E.SPELLS['Humanoid Form']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -10037,7 +10006,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality') + ' ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched weapon (2 or 3 actions affect 2 or 3 actions) inflicts +1d4 HP vitality%{traits.Holy?\' and holy\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
+      '"Touched weapon (using 2 or 3 actions affects 2 or 3 weapons) inflicts +1d4 HP vitality%{traits.Holy?\' and holy\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
   'Insect Form':
     Pathfinder2E.SPELLS['Insect Form']
     .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
@@ -11103,7 +11072,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touch restores 1d10 HP to companion, or 2 actions gives R30\' and restores 1d10+8 HP (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)"',
+      '"Touch restores 1d10 HP to companion, or using 2 actions gives R30\' and restores 1d10+8 HP (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)"',
   'Magic Hide':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Ranger,Manipulate ' +
@@ -11365,7 +11334,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"60\' 5\' burst (2 or 3 actions gives a 10\' or 15\' burst) inflicts difficult terrain for 1 min (<b>heightened 4th</b> inflicts difficult terrain for flying creatures)"',
+      '"60\' 5\' burst (using 2 or 3 actions gives a 10\' or 15\' burst) inflicts difficult terrain for 1 min (<b>heightened 4th</b> inflicts difficult terrain for flying creatures)"',
   'Community Restoration':
     'Level=4 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate,Healing ' +
@@ -11421,13 +11390,128 @@ Pathfinder2ERemaster.SPELLS = {
 
   // Core 2
 
-  "Hero's Defiance":
-    'Level=1 ' +
-    'Traits=Uncommon,Focus,Wizard ' +
-    'Traditions=Arcane ' +
+  'Animal Vision':
+    Pathfinder2E.SPELLS['Animal Vision']
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Animated Assault':
+    'Level=2 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"TODO"'
+      '"R120\' Loose objects in a 10\' burst inflict 2d10 HP bludgeoning initially and 1d10 HP bludgeoning on subsequent rd while sustained for up to 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> inflicts +2d10 HP initially and +1d10 HP when sustained)"',
+  'Anointed Ground':
+    Pathfinder2E.SPELLS['Sanctified Ground']
+    .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Bestial Curse':
+    'Level=4 ' +
+    'Traits=Concentrate,Curse,Manipulate,Polymorph ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched suffers clumsy 1, requires a successful DC 5 flat check for manipulate actions, and gains a claw, hoof, horn, or jaws Strike for 1 hr (<b>save Fortitude</b> only inflicts clumsy 1 for 1 rd; critical success negates; critical failure effects are permanent)"',
+  'Blanket Of Stars':
+    'Level=6 ' +
+    'Traits=Concentrate,Illusion,Manipulate ' +
+    'Traditions=Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Gives self +2 Stealth to Hide and Sneak and invisibility or concealment when still or moving beneath a starry sky, and inflicts dazzled for 1 rd on adjacent creatures (<b>save Will negates; critical failure also inflicts confused</b) for 10 min"',
+  'Blinding Fury':
+    'Level=6 ' +
+    'Traits=Concentrate,Curse,Emotion,Incapacitation,Mental ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R60\' Makes self hidden from the triggering attacker for 1 rd after every damaging attack for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects are permanent and also affect the target\'s perception of other creatures)"',
+  'Blister':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' Allows self to create 2 15\' cones from target that each inflict 7d6 HP acid (<b>save basic Fortitude</b>) anytime within 1 min (<b>save Fortitude</b> allows 1 cone; critical success negates; critical failure allows 4 cones)"',
+  'Blistering Invective':
+    'Level=1 ' +
+    'Traits=Auditory,Cantrip,Concentrate,Illusion,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Allows self voice to be heard up to 500\' away, giving +1 Coerce and auditory Perform in large venues (<b>heightened 5th</b> extends voice to 1200\'; <b>7th</b> extends voice to 1 mile)"',
+  'Carryall':
+    Pathfinder2E.SPELLS['Floating Disk']
+    .replace('Conjuration', 'Concentrate,Manipulate')
+    .replace(/"$/, ' (<b>heightened 4th</b> allows carrying passengers and 10 Bulk"'),
+  'Chameleon Coat':
+    'Level=5 ' +
+    'Traits=Concentrate,Illusion,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R15\' 8 targets gain +3 Stealth and Hide for 10 min; shedding gear or clothes ends the spell for that target (<b>heightened 6th</b> makes critical failures on Sneak vs. creatures within 30\' into normal failures; <b>8th</b> gives +4 Stealth and Hide)"',
+  'Charitable Urge':
+    'Level=2 ' +
+    'Traits=Concentrate,Incapacitation,Manipulate,Mental ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Compels the target to give a possession to the nearest creature (<b>save Will</b> inflicts stunned 1; critical success negates; critical failure effects last for 4 rd or until a successful save)"',
+  'Chilling Spray':
+    'Level=1 ' +
+    'Traits=Cold,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"15\' code inflicts 2d4 HP cold and -5\' Speed for 2 rd (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and -10\' Speed)"',
+  'Chroma Leach':
+    'Level=4 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched suffers enfeebled 2 for 1 min and drained 1 and must succeed on a Will save to move for 1 rd (<b>save Fortitude</b> only inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts enfeebled 2 permanently and drained 2)"',
+  'Cloak Of Colors':
+    Pathfinder2E.SPELLS['Cloak Of Colors']
+    .replace('Illusion', 'Concentrate,Manipulate'),
+
+  // TODO
+
+  // Champion
+  'Lay On Hands':
+    Pathfinder2E.SPELLS['Lay On Hands']
+    .replace('Necromancy', 'Manipulate')
+    .replace('Positive', 'Vitality'),
+  'Touch Of The Void':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Champion,Manipulate,Void ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="' +
+      QuilvynUtils.getAttrValue(Pathfinder2E.SPELLS['Lay On Hands'], 'Description')
+      .replace('Touched', 'Touched undead')
+      .replace('touched undead', 'touched living') + '"',
+  'Shields Of The Spirit':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Champion,Concentrate,Sanctified,Spirit ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"While shield is raised, self aura gives allies +1 Armor Class and inflicts 1d4 HP spirit on attacking foes for 1 rd (<b>heightened +2</b> inflicts +1d4 HP)"',
+  "Champion's Sacrifice":
+    Pathfinder2E.SPELLS["Champion's Sacrifice"]
+    .replace('Abjuration', 'Manipulate'),
+  "Hero's Defiance":
+    Pathfinder2E.SPELLS["Hero's Defiance"]
+    .replace('Necromancy', 'Concentrate')
+    .replace('Positive', 'Vitality')
+    .replace('10d4', '6d8'),
+  'Spectral Advance':
+    'Level=5 ' +
+    'Traits=Uncommon,Focus,Champion,Concentrate,Polymorph,Spirit ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"Allows self to Stride (using 2 actions gives 2 Strides) without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"'
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
