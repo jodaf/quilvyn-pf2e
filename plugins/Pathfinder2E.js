@@ -8337,7 +8337,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creatures adjacent to the target suffer dazzled, and successful attackers suffer blinded for 1 rd, for 1 min (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd)"',
+      '"R30\' Creatures adjacent to the target suffer dazzled, and successful attackers suffer blinded for 1 rd (<b>save Will</b> negates; critical failure inflicts stunned for 1 rd), for 1 min"',
   'Cloudkill':
     'Level=5 ' +
     'Traits=Death,Necromancy,Poison ' +
@@ -9315,7 +9315,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched becomes invisible for 10 min or until it uses a hostile action (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)"',
+      '"Touched becomes invisible for 10 min; using a hostile action ends (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)"',
   'Invisibility Sphere':
     'Level=3 ' +
     'Traits=Illusion ' +
@@ -10119,7 +10119,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"30\' burst gives +1 Armor Class, attack, damage, and saves vs. aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
+      '"30\' burst gives +1 Armor Class, attacks, damage, and saves vs. aberrations, celestials, dragons, fiends, monitors, or undead until next daily prep"',
   'Sanctuary':
     'Level=1 ' +
     'Traits=Abjuration ' +
@@ -15708,8 +15708,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Holy', 'Manipulate', 'Metal', 'Ranger', 'Sanctified', 'Spellshape', 'Spirit',
-  'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void', 'Wood'
+  'Hex', 'Holy', 'Manipulate', 'Metal', 'Ranger', 'Sanctified', 'Spellshape',
+  'Spirit', 'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void', 'Witch', 'Wood'
 ];
 
 /*
