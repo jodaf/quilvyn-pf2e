@@ -2940,7 +2940,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Champion Require="deityDomains =~ \'Zeal\'"',
   'Desperate Prayer':'Traits=Class,Champion',
   'Faithful Steed':'Traits=Class,Champion',
-  'Iron Repercussions':'Traits=Class,Champion',
+  'Iron Repercussions':'Traits=Class,Champion Require="features.Obedience"',
   'Nimble Reprisal':
     Pathfinder2E.FEATS['Ranged Reprisal']
     .replace('Paladin', 'Justice'),
@@ -2964,7 +2964,9 @@ Pathfinder2ERemaster.FEATS = {
   'Cruelty':
     'Traits=Class,Champion ' +
     'Require="level >= 4","spells.Touch Of The Void (D1 Foc Nec)"',
-  'Mercy':Pathfinder2E.FEATS.Mercy,
+  'Mercy (Body)':Pathfinder2E.FEATS.Mercy,
+  'Mercy (Grace)':Pathfinder2E.FEATS.Mercy,
+  'Mercy (Mind)':Pathfinder2E.FEATS.Mercy,
   'Security':
     'Traits=Class,Champion ' +
     'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc Nec)"',
@@ -6516,9 +6518,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Positioning Assault':
     Pathfinder2E.FEATURES['Positioning Assault']
     .replace(' to within reach', ''),
-  'Quick Shield Block':
-    'Section=combat ' +
-    'Note="Can use an additional Reaction for a Shield Block once per turn"',
+  'Quick Shield Block':Pathfinder2E.FEATURES['Quick Shield Block'],
   'Resounding Bravery':
     'Section=save ' +
     'Note="Will saves give +1 saves and %{level//2} temporary Hit Points, or +2 saves and %{level} temporary on a critical success, for 1 min"',
@@ -8085,8 +8085,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Blessed Swiftness':
     'Section=feature Note="TODO"',
   'Blessing Of The Devoted':
-    'Section=feature ' +
-    'Note="%V selection%{featureNotes.blessingOfTheDevoted==1?\'\':\'s\'}"',
+    Pathfinder2E.FEATURES['Divine Ally']
+    .replace('divineAlly', 'blessingOfThe Devoted'),
   'Cause':Pathfinder2E.FEATURES.Cause,
   'Champion Expertise':Pathfinder2E.FEATURES['Champion Expertise'],
   'Champion Feats':Pathfinder2E.FEATURES['Champion Feats'],
@@ -8153,269 +8153,241 @@ Pathfinder2ERemaster.FEATURES = {
   // Weapon Mastery as above
   // Weapon Specialization as above
 
-  /*
-  "Advanced Deity's Domain (Air)":
-    'Section=magic ' +
-    'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Ambition)":
-    'Section=magic ' +
-    'Note="Knows the Competitive Edge divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Cities)":
-    'Section=magic ' +
-    'Note="Knows the Pulse Of The City divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Confidence)":
-    'Section=magic ' +
-    'Note="Knows the Delusional Pride divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Creation)":
-    'Section=magic ' +
-    'Note="Knows the Artistic Flourish divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Darkness)":
-    'Section=magic ' +
-    'Note="Knows the Darkened Eyes divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Death)":
-    'Section=magic ' +
-    'Note="Knows the Eradicate Undeath divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Destruction)":
-    'Section=magic ' +
-    'Note="Knows the Destructive Aura divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Dreams)":
-    'Section=magic ' +
-    'Note="Knows the Dreamer\'s Call divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Earth)":
-    'Section=magic ' +
-    'Note="Knows the Localized Quake divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Family)":
-    'Section=magic ' +
-    'Note="Knows the Unity divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Fate)":
-    'Section=magic ' +
-    'Note="Knows the Tempt Fate divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Fire)":
-    'Section=magic ' +
-    'Note="Knows the Flame Barrier divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Freedom)":
-    'Section=magic ' +
-    'Note="Knows the Word Of Freedom divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Healing)":
-    'Section=magic ' +
-    'Note="Knows the Rebuke Death divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Indulgence)":
-    'Section=magic ' +
-    'Note="Knows the Take Its Course divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Knowledge)":
-    'Section=magic ' +
-    'Note="Knows the Know The Enemy divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Luck)":
-    'Section=magic ' +
-    'Note="Knows the Lucky Break divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Magic)":
-    'Section=magic ' +
-    'Note="Knows the Mystic Beacon divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Might)":
-    'Section=magic ' +
-    'Note="Knows the Enduring Might divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Moon)":
-    'Section=magic ' +
-    'Note="Knows the Touch Of The Moon divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Nature)":
-    'Section=magic ' +
-    'Note="Knows the Nature\'s Bounty divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Nightmares)":
-    'Section=magic ' +
-    'Note="Knows the Shared Nightmare divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Pain)":
-    'Section=magic ' +
-    'Note="Knows the Retributive Pain divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Passion)":
-    'Section=magic ' +
-    'Note="Knows the Captivating Adoration divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Perfection)":
-    'Section=magic ' +
-    'Note="Knows the Perfected Form divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Protection)":
-    'Section=magic ' +
-    'Note="Knows the Protector\'s Sphere divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Secrecy)":
-    'Section=magic ' +
-    'Note="Knows the Safeguard Secret divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Sun)":
-    'Section=magic ' +
-    'Note="Knows the Positive Luminance divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Travel)":
-    'Section=magic ' +
-    'Note="Knows the Traveler\'s Transit divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Trickery)":
-    'Section=magic ' +
-    'Note="Knows the Trickster\'s Twin divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Truth)":
-    'Section=magic ' +
-    'Note="Knows the Glimpse The Truth divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Tyranny)":
-    'Section=magic ' +
-    'Note="Knows the Commanding Lash divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Undeath)":
-    'Section=magic ' +
-    'Note="Knows the Malignant Sustenance divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Water)":
-    'Section=magic ' +
-    'Note="Knows the Downpour divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Wealth)":
-    'Section=magic ' +
-    'Note="Knows the Precious Metals divine spell/+1 Focus Points"',
-  "Advanced Deity's Domain (Zeal)":
-    'Section=magic ' +
-    'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
+  'Brilliant Flash':
+    'Section=combat Note="Flash Of Grandeur inflicts off-guard for 1 rd"',
+  'Defensive Advance':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Uses Raise A Shield, Strides, and then makes a melee Strike"',
   "Deity's Domain (Air)":
-    'Section=magic Note="Knows the Pushing Gust divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Air)"],
   "Deity's Domain (Ambition)":
-    'Section=magic Note="Knows the Blind Ambition divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Ambition)"]
+    .replace('Blind', 'Ignite'),
   "Deity's Domain (Cities)":
-    'Section=magic Note="Knows the Face In The Crowd divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Cities)"],
   "Deity's Domain (Confidence)":
-    'Section=magic Note="Knows the Veil Of Confidence divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Confidence)"],
   "Deity's Domain (Creation)":
-    'Section=magic Note="Knows the Splash Of Art divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Confidence)"]
+    .replace('Splash Of Art', 'Creative Splash'),
   "Deity's Domain (Darkness)":
-    'Section=magic Note="Knows the Cloak Of Shadow divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Darkness)"],
   "Deity's Domain (Death)":
-    'Section=magic Note="Knows the Death\'s Call divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Death)"],
   "Deity's Domain (Destruction)":
-    'Section=magic Note="Knows the Cry Of Destruction divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Destruction)"],
   "Deity's Domain (Dreams)":
-    'Section=magic Note="Knows the Sweet Dream divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Dreams)"],
   "Deity's Domain (Earth)":
-    'Section=magic Note="Knows the Hurtling Stone divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Earth)"],
   "Deity's Domain (Family)":
-    'Section=magic Note="Knows the Soothing Words divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Family)"],
   "Deity's Domain (Fate)":
-    'Section=magic Note="Knows the Read Fate divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Fate)"],
   "Deity's Domain (Fire)":
-    'Section=magic Note="Knows the Fire Ray divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Fire)"],
   "Deity's Domain (Freedom)":
-    'Section=magic Note="Knows the Unimpeded Stride divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Freedom)"],
   "Deity's Domain (Healing)":
-    'Section=magic Note="Knows the Healer\'s Blessing divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Healing)"],
   "Deity's Domain (Indulgence)":
-    'Section=magic Note="Knows the Overstuff divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Indulgence)"],
   "Deity's Domain (Luck)":
-    'Section=magic Note="Knows the Bit Of Luck divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Luck)"],
   "Deity's Domain (Magic)":
-    'Section=magic Note="Knows the Magic\'s Vessel divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Magic)"],
   "Deity's Domain (Might)":
-    'Section=magic Note="Knows the Athletic Rush divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Might)"],
   "Deity's Domain (Moon)":
-    'Section=magic Note="Knows the Moonbeam divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Moon)"],
   "Deity's Domain (Nature)":
-    'Section=magic Note="Knows the Vibrant Thorns divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Nature)"],
   "Deity's Domain (Nightmares)":
-    'Section=magic Note="Knows the Waking Nightmare divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Nightmares)"],
   "Deity's Domain (Pain)":
-    'Section=magic Note="Knows the Savor The Sting divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Pain)"],
   "Deity's Domain (Passion)":
-    'Section=magic Note="Knows the Charming Touch divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Passion)"],
   "Deity's Domain (Perfection)":
-    'Section=magic Note="Knows the Perfected Mind divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Perfection)"],
   "Deity's Domain (Protection)":
-    'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Protection)"],
   "Deity's Domain (Secrecy)":
-    'Section=magic Note="Knows the Forced Quiet divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Secrecy)"]
+    .replace('Forced', 'Whispering'),
   "Deity's Domain (Sun)":
-    'Section=magic Note="Knows the Dazzling Flash divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Sun)"],
   "Deity's Domain (Travel)":
-    'Section=magic Note="Knows the Agile Feet divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Travel)"],
   "Deity's Domain (Trickery)":
-    'Section=magic Note="Knows the Sudden Shift divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Trickery)"],
   "Deity's Domain (Truth)":
-    'Section=magic Note="Knows the Word Of Truth divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Truth)"],
   "Deity's Domain (Tyranny)":
-    'Section=magic Note="Knows the Touch Of Obedience divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Tyranny)"],
   "Deity's Domain (Undeath)":
-    'Section=magic Note="Knows the Touch Of Undeath divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Undeath)"],
   "Deity's Domain (Water)":
-    'Section=magic Note="Knows the Tidal Surge divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Water)"],
   "Deity's Domain (Wealth)":
-    'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
+    Pathfinder2E.FEATURES["Deity's Domain (Wealth)"],
   "Deity's Domain (Zeal)":
-    'Section=magic Note="Knows the Weapon Surge divine spell"',
-
-  'Ranged Reprisal':
+    Pathfinder2E.FEATURES["Deity's Domain (Zeal)"],
+  'Desperate Prayer':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Gains 1 Focus Spell to cast a devoction spell by the end of the turn"',
+  'Faithful Steed':
+    'Section=feature Note="Has a young animal companion as a mount"',
+  'Iron Repercussions':
+    'Section=magic ' +
+    'Note="Iron Command can inflict persistent mental damage"',
+  'Nimble Reprisal':Pathfinder2E.FEATURES['Ranged Reprisal'],
+  'Ongoing Selfishness':
     'Section=combat ' +
-    'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
-  'Unimpeded Step':
+    'Note="Selfish Shield gives half resistance to all damage from the triggering foe until the end of the turn"',
+  // TODO: extends to everyone who Steps if self has exalted reaction
+  'Unimpeded Step':Pathfinder2E.FEATURES['Unimpeded Step'],
+  'Vicious Vengeance':
     'Section=combat ' +
-    'Note="Liberating Step target may Step normally in any terrain"',
-  'Weight Of Guilt':
+    'Note="Destructive Vengeance inflicts additional damage on foe equal to the number of damage dice"',
+  'Weight Of Guilt':Pathfinder2E.FEATURES['Weight Of Guilt'],
+  'Divine Grace':Pathfinder2E.FEATURES['Divine Grace'],
+  'Divine Health':Pathfinder2E.FEATURES['Divine Health'] + ' ' +
+    'Note="+2 vs. diseases and poisons and on flat checks to recover from persistent poison, and suceesses vs. disease or poison are critical successes; allies within aura gain a +1 bonus"',
+  'Aura Of Courage':Pathfinder2E.FEATURES['Aura Of Courage']
+    .replace("15'", 'aura'),
+  'Aura Of Despair':
     'Section=combat ' +
-    'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
-  'Divine Grace':
-    'Action=Reaction Section=combat Note="Gives +2 save vs. a spell"',
-  'Dragonslayer Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. an evil dragon",' +
-      '"Must attempt to slay evil dragons whenever possible"',
-  'Fiendsbane Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. a fiend",' +
-      '"Must attempt to banish or slay fiends whenever possible"',
-  'Shining Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. undead",' +
-      '"Must attempt to put undead to rest whenever possible"',
-  'Vengeful Oath':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
-      '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
-  'Aura Of Courage':
-    'Section=save ' +
-    'Note="Reduces initial value of frightened condition by 1; reduction of frightened condition also reduces fright of allies within 15\'"',
-  'Divine Health':
-    'Section=save ' +
-    'Note="+1 vs. disease, and successes vs. disease are critical successes"',
-  'Mercy':
+    'Note="Foes within aura suffer -1 save vs. fear and cannot remove frightened condition"',
+  'Cruelty':
+    'Section=magic ' +
+    'Note="Using 2 actions to cast <i>Touch Of The Void</i> also inflicts enfeebled 1 for 1 min on a failed save, or enfeebled 2 on a critical failure"',
+  'Mercy (Body)':
+    'Section=magic ' +
+    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'stunned, \')+\'drained, slowed, \':\'\'}blinded, dazzled, deafened, enfeebled, or sickened"',
+  'Mercy (Grace)':
+    'Section=magic ' +
+    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<12\'\':level<16?\'petrified, \':\'petrified, stunned, \')+\'immobilized, restrained, slowed, \':\'\'}clumsy, grabbed, or paralyzed"',
+  'Mercy (Grace)':
+    'Section=magic ' +
+    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'doomed, stunned, \')+\'confused, controlled,slowed, \':\'\'}fleeing, frightened, or stupefied"',
+  'Security':
+    'Section=magic ' +
+    'Note="Using 2 actions to cast <i>Shields Of The Spirit</i> gives 1 ally the benefits of the spell for 1 min"',
+  'Expand Aura':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract fear or paralysis"',
-  // Attack Of Opportunity as above
-  'Litany Against Wrath':
-    'Section=magic ' +
-    'Note="Knows the Litany Against Wrath divine spell/+1 Focus Points"',
-  'Loyal Warhorse':
-    'Section=feature Note="Mount is mature and will never attack self"',
+    'Note="Extends Champion\'s Aura to 30\' %{level<10?\'for 1 rd\':level<16?\'for 1 min\':\'until Dismissed\'}"',
+  'Loyal Warhorse':Pathfinder2E.FEATURES['Loyal Warhorse'],
+  // Reactive Strike as above
   // Shield Warden as above
-  'Smite Evil':
-    'Action=1 ' +
+  'Smite Evil':Pathfinder2E.FEATURES['Smite Evil'] + ' ' +
+    'Note="Strikes against a designated foe gain +3 damage, or +4 with master proficiency (+4 or +6 vs. an opposing holy/unholy foe) for 1 rd; hostile actions by the foe extend the effect each rd"',
+  "Advanced Deity's Domain (Air)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"],
+  "Advanced Deity's Domain (Ambition)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"],
+  "Advanced Deity's Domain (Cities)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"]
+    .replace('The City', 'Civilization'),
+  "Advanced Deity's Domain (Confidence)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Confidence)"],
+  "Advanced Deity's Domain (Creation)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Creation)"],
+  "Advanced Deity's Domain (Darkness)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Creation)"]
+    .replace('Eyes', 'Sight'),
+  "Advanced Deity's Domain (Death)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Death)"],
+  "Advanced Deity's Domain (Destruction)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Destruction)"],
+  "Advanced Deity's Domain (Dreams)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Dreams)"],
+  "Advanced Deity's Domain (Earth)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Earth)"],
+  "Advanced Deity's Domain (Family)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Family)"],
+  "Advanced Deity's Domain (Fate)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Fate)"],
+  "Advanced Deity's Domain (Fire)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Fire)"],
+  "Advanced Deity's Domain (Freedom)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Freedom)"],
+  "Advanced Deity's Domain (Healing)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Healing)"],
+  "Advanced Deity's Domain (Indulgence)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Indulgence)"],
+  "Advanced Deity's Domain (Knowledge)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Knowledge)"],
+  "Advanced Deity's Domain (Luck)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Luck)"],
+  "Advanced Deity's Domain (Magic)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Magic)"],
+  "Advanced Deity's Domain (Might)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Might)"],
+  "Advanced Deity's Domain (Moon)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Moon)"],
+  "Advanced Deity's Domain (Nature)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Nature)"],
+  "Advanced Deity's Domain (Nightmares)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Nightmares)"],
+  "Advanced Deity's Domain (Pain)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Pain)"],
+  "Advanced Deity's Domain (Passion)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Passion)"],
+  "Advanced Deity's Domain (Perfection)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Perfection)"]
+    .replace('Form', 'Body'),
+  "Advanced Deity's Domain (Protection)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Protection)"],
+  "Advanced Deity's Domain (Secrecy)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Secrecy)"],
+  "Advanced Deity's Domain (Sun)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Sun)"]
+    .replace('Positive', 'Vital'),
+  "Advanced Deity's Domain (Travel)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Travel)"],
+  "Advanced Deity's Domain (Trickery)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Trickery)"],
+  "Advanced Deity's Domain (Truth)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Truth)"],
+  "Advanced Deity's Domain (Tyranny)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Tyranny)"],
+  "Advanced Deity's Domain (Undeath)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Undeath)"],
+  "Advanced Deity's Domain (Water)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Water)"],
+  "Advanced Deity's Domain (Wealth)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Wealth)"],
+  "Advanced Deity's Domain (Zeal)":
+    Pathfinder2E.FEATURES["Advanced Deity's Domain (Zeal)"],
+  'Greater Cruelty':
+    'Section=magic ' +
+    'Note="Can use Cruelty to make the target clumsy or stupefied instead"',
+  'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
+  'Greater Security':
     'Section=combat ' +
-    'Note="Blade ally inflicts +4 HP good, or +6 HP with master proficiency, vs. a chosen target for 1 rd, extended as long as the target attacks an ally"',
-  'Greater Mercy':
-    'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract blinded, deafened, sickened, or slowed"',
-  'Heal Mount':
-    'Section=magic ' +
-    'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
+    'Note="Can give an ally full shield AC bonus and use Shield Block to benefit them"',
+  'Heal Mount':Pathfinder2E.FEATURES['Heal Mount'],
   // Quick Shield Block as above
-  'Second Ally':'Section=feature Note="+1 selection"',
-  'Sense Evil':
-    'Section=feature ' +
-    'Note="Can detect the presence of powerful evil auras (Deception vs. Perception negates)"',
+  'Second Blessing':Pathfinder2E.FEATURES['Second Ally'],
+  'Imposing Destrier':Pathfinder2E.FEATURES['Imposing Destrier'],
+  'Radiant Armament':
+    'Section=combat ' +
+    'Note="Can choose <i>astral</i>, <i>brilliant</i>, <i>holy</i>, or <i>unholy</i> rune for Blessed Armament, and can use a 10-min activity to change the rune"',
+  'Shield Of Reckoning':Pathfinder2E.FEATURES['Shield Of Reckoning'],
+  'Spectral Advance':
+    'Section=magic ' +
+    'Note="Knows the Spectral Advance divine focus spell/+1 Focus Points"',
+
+  /*
   'Devoted Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Imposing Destrier':
-    'Section=feature ' +
-    'Note="Mount is a nimble or savage animal companion and may Stride or Strike without a command"',
   'Litany Against Sloth':
     'Section=magic ' +
     'Note=' +
       '"Knows the Litany Against Sloth divine spell/+1 Focus Points"',
-  'Radiant Blade Spirit':
-    'Section=combat ' +
-    'Note="Can choose <i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
-  'Shield Of Reckoning':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Uses Shield Block on an ally and Champion\'s Reaction on the attacking foe"',
   'Affliction Mercy':
     'Section=magic ' +
     'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract a curse, disease, or poison"',
@@ -12343,6 +12315,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
+  } else if(name == 'Greater Mercy') {
+    rules.defineRule('magicNotes.mercy(Body)',
+      'magicNotes.greaterMercy', '=', 'null' // italics
+    );
   } else if(name == 'Grown Of Oak') {
     rules.defineRule('magicNotes.grownOfOak',
       '', '=', '1',
