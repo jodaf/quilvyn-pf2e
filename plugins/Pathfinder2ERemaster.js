@@ -8079,14 +8079,18 @@ Pathfinder2ERemaster.FEATURES = {
   // Armor Expertise as above
   // Armor Mastery as above
   'Blessed Armament':
-    'Section=feature Note="TODO"',
+    Pathfinder2E.FEATURES['Divine Ally (Blade)']
+    .replace('<i>disrupting</i>', '<i>fearsome</i>, <i>vitalizing</i>'),
   'Blessed Shield':
-    'Section=feature Note="TODO"',
+    'Section=combat Note="+%V Shield Hardness/+%1 Shield Hit Points"',
   'Blessed Swiftness':
-    'Section=feature Note="TODO"',
+    'Section=ability,combat ' +
+    'Note=' +
+      '"+5 Speed",' +
+      '"Ally moving within aura gains +2 defense vs. reactions"',
   'Blessing Of The Devoted':
     Pathfinder2E.FEATURES['Divine Ally']
-    .replace('divineAlly', 'blessingOfThe Devoted'),
+    .replace('divineAlly', 'blessingOfTheDevoted'),
   'Cause':Pathfinder2E.FEATURES.Cause,
   'Champion Expertise':Pathfinder2E.FEATURES['Champion Expertise'],
   'Champion Feats':Pathfinder2E.FEATURES['Champion Feats'],
@@ -8094,15 +8098,20 @@ Pathfinder2ERemaster.FEATURES = {
   'Champion Mastery':Pathfinder2E.FEATURES['Champion Mastery'],
   'Champion Skills':Pathfinder2E.FEATURES['Champion Skills'],
   "Champion's Aura":
-    'Section=feature Note="TODO"',
+    'Section=feature ' +
+    'Note="15\' aura can be detected by followers of %{deity} and can be supressed or resumed with 1 action"',
   'Deific Weapon':Pathfinder2E.FEATURES['Deific Weapon'],
   // Deity as above
   'Desecration':
-    'Section=feature Note=TODO"',
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Selfish Shield feature",' +
+      '"Must subvert all that is pure and holy"',
   'Devotion Spells':Pathfinder2E.FEATURES['Devotion Spells'],
   'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
   'Exalted Reaction (Desecration)':
-    'Section=feature Note="TODO"',
+    'Section=combat ' +
+    'Note="Champion\'s Reaction inflicts -1 on foe attacks on self from within aura"',
   'Exalted Reaction (Grandeur)':
     'Section=feature Note="TODO"',
   'Exalted Reaction (Iniquity)':
@@ -8131,9 +8140,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Perception Expertise as above
   // Reflex Expertise as above
   'Redemption':
-    'Section=feature Note=TODO"',
-  'Relentless Reaction (Desecration)':
     'Section=feature Note="TODO"',
+  'Relentless Reaction (Desecration)':
+    'Section=combat ' +
+    'Note="Has increased Selfish Shield effects"',
   'Relentless Reaction (Grandeur)':
     'Section=feature Note="TODO"',
   'Relentless Reaction (Iniquity)':
@@ -8148,6 +8158,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="TODO"',
   'Sacred Body':Pathfinder2E.FEATURES.Juggernaut,
   // Sanctification as above
+  'Selfish Shield':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Gives resistance %{level//2+($\'combatNotes.relentlessReaction(Desecration)\'&&charismaModifier>2?charismaModifier:2)} to triggering damage, and Strikes against the triggering foe inflict +%{level<9?1:level<16?2:3} HP spirit for 1 rd"',
   // Shield Block as above
   // Weapon Expertise as above
   // Weapon Mastery as above
@@ -8284,7 +8298,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Reactive Strike as above
   // Shield Warden as above
   'Smite Evil':Pathfinder2E.FEATURES['Smite Evil'] + ' ' +
-    'Note="Strikes against a designated foe gain +3 damage, or +4 with master proficiency (+4 or +6 vs. an opposing holy/unholy foe) for 1 rd; hostile actions by the foe extend the effect each rd"',
+    'Note="Strikes against a designated foe gain +3 damage, or +4 with master proficiency (+4 or +6 vs. an opposing holy or unholy foe) for 1 rd; hostile actions by the foe extend the effect each rd"',
   "Advanced Deity's Domain (Air)":
     Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"],
   "Advanced Deity's Domain (Ambition)":
@@ -8381,82 +8395,63 @@ Pathfinder2ERemaster.FEATURES = {
   'Spectral Advance':
     'Section=magic ' +
     'Note="Knows the Spectral Advance divine focus spell/+1 Focus Points"',
-
-  /*
-  'Devoted Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Litany Against Sloth':
-    'Section=magic ' +
-    'Note=' +
-      '"Knows the Litany Against Sloth divine spell/+1 Focus Points"',
-  'Affliction Mercy':
-    'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract a curse, disease, or poison"',
+  'Affliction Mercy':Pathfinder2E.FEATURES['Affliction Mercy'],
   'Aura Of Faith':
+    Pathfinder2E.FEATURES['Aura Of Faith'] + ' ' +
+    'Note="Strikes by allies within aura gain the holy or unholy trait"',
+  'Blessed Counterstrike':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="R15\' All self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
-  'Blade Of Justice':
-    'Action=2 ' +
+    'Note="Strike after Champion\'s Reaction gains 1 extra damage die and inflicts weakness %{level//2} to Strikes by self and allies for 1 rd"',
+  "Champion's Sacrifice":Pathfinder2E.FEATURES["Champion's Sacrifice"],
+  'Devoted Focus':
+    Pathfinder2E.FEATURES['Devoted Focus']
+    .replace('2', 'all'),
+  'Divine Wall':Pathfinder2E.FEATURES['Divine Wall'],
+  'Gruesome Strike':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Adds 2 extra damage dice to a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
-  "Champion's Sacrifice":
-    'Section=magic ' +
-    'Note="Knows the Champion\'s Sacrifice divine spell/+1 Focus Points"',
-  'Divine Wall':
-    'Section=combat Note="Adjacent spaces are difficult terrain for foes"',
-  'Lasting Doubt':
-    'Section=combat ' +
-    'Note="Extends the effects of Glimpse Of Redemption at half intensity for 1 min"',
-  'Liberating Stride':
-    'Section=combat ' +
-    'Note="Target of Liberating Step may Stride half their Speed"',
-  'Anchoring Aura':
-    'Section=magic Note="R15\' Aura attempts to counteract teleportation spells cast by fiends"',
+    'Note="Champion\'s Reaction Strike inflicts double extra damage and drained 1 (<b>save Fortitude</b> negates drained)"',
+  'Aura Of Determination':
+    'Section=save Note="Aura gives +1 vs. mental, morph, and polymorph"',
   'Aura Of Life':
-    'Section=save ' +
-    'Note="R15\' Gives resistance 5 to negative energy and +1 saves vs. necromancy"',
+    Pathfinder2E.FEATURES['Aura Of Life']
+    .replace("R15' Gives", 'Aura gives')
+    .replaceAll(/negative|necromancy/g, 'void'),
   'Aura Of Righteousness':
-    'Section=save Note="R15\' Gives resistance 5 to evil"',
-  'Aura Of Vengeance':
-    'Section=combat ' +
-    'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
-  'Divine Reflexes':
-    'Section=combat ' +
-    'Note="Can use an additional Reaction for Champion\'s Reaction once per turn"',
-  'Litany Of Righteousness':
-    'Section=magic ' +
-    'Note="Knows the Litany Of Righteousness divine spell/+1 Focus Points"',
-  'Wyrmbane Aura':
-    'Section=save ' +
-    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison, or resistance %{level//2} if damage comes from dragon breath"',
+    Pathfinder2E.FEATURES['Aura Of Righteousness']
+    .replace("R15' Gives", 'Aura gives')
+    .replace('evil', 'unholy and attempts counteract to counteract teleportation affecting unholy creatures'),
+  'Divine Reflexes':Pathfinder2E.FEATURES['Divine Reflexes'],
   'Auspicious Mount':
-    'Section=feature ' +
-    'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
+    Pathfinder2E.FEATURES['Auspicious Mount'] + ' ' +
+    'Note="Mount is a specialized animal companion with celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, Skill Expert (Religion), ability to speak the language of %{deity}\'s servitors, flight, +%{level<18?20:level<20?25:30} Hit Points, and, as appropriate, holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait"',
+  'Instrument Of Slaughter':
+    'Section=combat ' +
+    'Note="Champion\'s Reaction that inflicts extra damage also inflicts persistent bleed damage equal to two damage dice"',
   'Instrument Of Zeal':
-    'Section=combat ' +
-    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts an additional damage die and slowed 1 for 1 rd"',
-  'Shield Of Grace':
-    'Section=combat ' +
-    'Note="May suffer half of excess damage when using Shield Block to protect an ally"',
-  'Celestial Form':
-    'Section=ability,feature ' +
-    'Note=' +
-      '"Has a %{speed}\' fly speed",' +
-      '"Has the Darkvision feature"',
-  'Ultimate Mercy':
+    Pathfinder2E.FEATURES['Instrument Of Zeal']
+    .replace('Blade Of Justice', 'Blessed Counterstrike'),
+  'Shield Of Grace':Pathfinder2E.FEATURES['Shield Of Grace'],
+  'Rejuvenating Touch':
     'Section=magic ' +
-    'Note="Can use <i>Lay On Hands</i> to restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd"',
-  'Celestial Mount':
-    'Section=feature ' +
-    'Note="Mount has Darkvision, +40 Hit Points, and weakness 10 to evil damage and can fly at full Speed"',
-  'Radiant Blade Master':
+    'Note="<i>Lay On Hands</i> gives 10 temporary Hit Points, lasting 1 rd, each rd for 10 rd"',
+  'Swift Retribution':
     'Section=combat ' +
-    'Note="Can choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
+    'Note="Using Champion\'s Reaction makes self quickened for 1 rd"',
+  'Ultimate Mercy':Pathfinder2E.FEATURES['Ultimate Mercy'],
+  'Radiant Blade Master':
+    Pathfinder2E.FEATURES['Radiant Blade Master'] + ' ' +
+    'Note="Can choose %{combatNotes.radiantArmament?\'<i>greater astral</i>, <i>greater brilliant</b>, \':\'\'}<i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, or <i>greater vitalizing</i> rune for brilliant armament, and can use 1 action to change the rune"',
+  'Sacred Defender':
+    'Section=save ' +
+    'Note="Has resistance 5 to bludgeoning, piercing, and slashing, and resistance 10 to these vs. holy or unholy creatures as appropriate/Natural 20 by foe does not improve success degree"',
   'Shield Paragon':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"+50% shield Hit Points",' +
-      '"Shield is always raised and is automatically remade after 1 day if destroyed"',
-*/
+    'Section=combat ' +
+    'Note="Shield is always raised and is automatically remade after 1 day if destroyed"',
+  'Swift Paragon':
+    'Section=combat ' +
+    'Note="Has an additional action each rd to Step or Stride, and aura allows allies to move without triggering reactions"',
 
 /*
   // Monk
@@ -12065,10 +12060,20 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     // Suppress legacy note
     rules.defineRule('skillNotes.perpetualInfusions', '', '=', 'null');
   } else if(name == 'Champion') {
+    rules.defineRule('combatNotes.blessedShield',
+      'classLevel', '=', 'source<13 ? 3 : source<20 ? 5 : 7'
+    );
+    rules.defineRule('combatNotes.blessedShield.1',
+      'features.Blessed Shield', '?', null,
+      'classLevel', '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
+    );
     rules.defineRule('featureNotes.blessingOfTheDevoted',
       '', '=', '1',
       'featureNotes.secondBlessing', '+', '1'
     );
+    rules.defineRule('shieldHardness', 'combatNotes.blessedShield', '+', null);
+    rules.defineRule
+      ('shieldHitPoints', 'combatNotes.blessedShield.1', '+', null);
     // Suppress legacy feature
     rules.defineRule('featureNotes.divineAlly', classLevel, '?', null);
   } else if(name == 'Cleric') {
