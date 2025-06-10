@@ -407,9 +407,9 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Cornucopia (P1): <b>(2)</b> TODO</td>
+      <td>Cornucopia (P1 Foc): <b>(2)</b> Eating the touched piece of produce within 10 min restores 1d6+4 HP; six pieces also count as a full meal (<b>heightened +1</b> affects +1 piece)</td>
     </tr><tr style="text-align:left">
-      <td>Heal Animal (P1): <b>(2)</b> TODO</td>
+      <td>Heal Animal (P1 Foc): <b>(1)</b> Touched animal (2 actions gives R30') regains 1d8 HP, or 1d8+8 HP with 2 actions (<b>heightened +1</b> restores +1d8 HP or +1d8+8 HP)</td>
     </tr><tr style="text-align:left">
       <td>Illusory Disguise (P1): <b>(2)</b> R30' Makes the target appear different and gives +4 Deception, plus the target level if untrained, to avoid uncovering the disguise for 1 hr (<b>heightened 3rd</b> allows copying a specific individual; <b>4th</b> affects 10 targets; <b>7th</b> affects 10 targets and allows copying specific individuals)</td>
     </tr><tr style="text-align:left">
@@ -417,19 +417,19 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Illusory Scene (P5): <b>(10 min)</b> R500' Creates in a 30' burst a moving illusion with up to 10 creatures or objects, sounds, and smells for 1 hr (<b>heightened 6th</b> creatures in the scene can speak; <b>8th</b> effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Impaling Briars (P1): <b>(2)</b> TODO</td>
+      <td>Impaling Briars (P8 Foc): <b>(3)</b> 100' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Primal Summons (P1): <b>(2)</b> TODO</td>
+      <td>Primal Summons (P6 Foc): <b>(F)</b> Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60' fly Speed; a 20' burrow speed, -10' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60' swim Speed, a Shove after a melee attack, and resistance 5 to fire; +1d6 HP electricity damage and resistance 5 to electricity; a 30' climb Speed and resistance 2 to bludgeoning and piercing</td>
     </tr><tr style="text-align:left">
-      <td>Storm Lord (P1): <b>(2)</b> TODO</td>
+      <td>Storm Lord (P9 Foc): <b>(2)</b> 100' emanation produces a bolt of lighting that inflicts 10d6 HP electricity and deafened for 1 rd (<b>save basic Reflex</b>) each rd while sustained for up to 1 min, plus a choice of weather: calm; foggy (conceals); rainy (inflicts -2 Acrobatics and Perception); or windy (inflicts -4 ranged attacks and difficult terrain for flying)</td>
     </tr><tr style="text-align:left">
-      <td>Stormwind Flight (P1): <b>(2)</b> TODO</td>
+      <td>Stormwind Flight (P4 Foc): <b>(2)</b> Self gains 25' fly Speed for 1 min (<b>heightened 6th</b> negates difficult terrain effects when flying against the wind)</td>
     </tr><tr style="text-align:left">
-      <td>Tempest Surge (P1): <b>(2)</b> TODO</td>
+      <td>Tempest Surge (P1 Foc): <b>(2)</b> R30' Inflicts 1d12 HP electricity, clumsy 2 for 1 rd, and 1 HP persistent electricity (<b>save basic Reflex</b> inflicts initial HP only) (<b>heightened +1</b> inflicts +1d12 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
-      <td>Untamed Form (P1): <b>(2)</b> TODO</td>
+      <td>Untamed Form (P1 Foc): <b>(2)</b> Transforms self into a <i>Pest Form</i> creature for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an <i>Animal Form</i> creature)</td>
     </tr><tr style="text-align:left">
-      <td>Wild Morph (P1): <b>(2)</b> TODO</td>
+      <td>Untamed Shift (P1 Foc): <b>(1)</b> Self gains claws that inflict 1d6 HP slashing, jaws that inflict 1d8 HP piercing, resistance 5 to critical hits and precision damage, 10' reach, or a 30' fly Speed for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -453,7 +453,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Order Magic (Storm): Knows the Tempest Surge primal spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Order Magic (Untamed): Knows the Wild Morph primal spell</i></td>
+      <td><i>Order Magic (Untamed): Knows the Untamed Shift primal spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Primal Hierophant: Has 1 10th-level spell slot</i></td>
     </tr><tr style="text-align:center">
@@ -568,8 +568,6 @@ var attributes = {
         <td>Order Explorer (Storm) Feat: Requires level (currently 20) >= 2 and storm feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">
         <td>Order Explorer (Untamed) Feat: Requires level (currently 20) >= 2 and untamed feature (currently 1) == 0</td>
-      </tr><tr style="text-align:center">
-        <td>Storm Retribution Feat: Requires level (currently 20) >= 6, storm feature (currently 1) or order explorer (storm) feature (currently 1) and tempest surge (p1 foc) spell</td>
       </tr></table>
 </td>
     </tr></table>
