@@ -921,14 +921,15 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Obedience:Cause",' +
       '"features.Holy ? 1:Redemption:Cause"',
 
-/*
   'Monk':
+    // Ability => Attribute
+    // Ki Tradition => null
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
-      '"1:Monk Key Ability",' +
-      '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
-      '"features.Strength ? 1:Ability Boost (Strength)",' +
-      '"1:Ability Boosts",' +
+      '"1:Monk Key Attribute",' +
+      '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
+      '"features.Strength ? 1:Attribute Boost (Strength)",' +
+      '"1:Attribute Boosts",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex; Will)",' +
       '"1:Monk Skills",' +
@@ -942,20 +943,16 @@ Pathfinder2ERemaster.CLASSES = {
       '"9:Metal Strikes","9:Monk Expertise","11:Second Path To Perfection",' +
       '"13:Graceful Mastery","13:Master Strikes",' +
       '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
-      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
-      '"features.Ki Spells ? 1:Ki Tradition" ' +
+      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form" ' +
     'Selectables=' +
       '"1:Dexterity:Key Ability",' +
       '"1:Strength:Key Ability",' +
-      '"1:Ki Tradition (Divine):Ki Tradition",' +
-      '"1:Ki Tradition (Occult):Ki Tradition",' +
       '"7:Path To Perfection (Fortitude):Perfection",' +
       '"7:Path To Perfection (Reflex):Perfection",' +
       '"7:Path To Perfection (Will):Perfection",' +
       '"features.Path To Perfection (Fortitude) ? 7:Third Path To Perfection (Fortitude):Third Perfection",' +
       '"features.Path To Perfection (Reflex) ? 7:Third Path To Perfection (Reflex):Third Perfection",' +
       '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
-*/
 
 /*
   'Sorcerer':
@@ -3243,63 +3240,82 @@ Pathfinder2ERemaster.FEATS = {
   'Swift Paragon':
     'Traits=Class,Champion Require="level >= 20","features.Blessed Swiftness"',
 
-/*
   // Monk
-  'Crane Stance':'Traits=Class,Monk,Stance',
-  'Dragon Stance':'Traits=Class,Monk,Stance',
-  'Ki Rush':'Traits=Class,Monk',
-  'Ki Strike':'Traits=Class,Monk',
-  'Monastic Weaponry':'Traits=Class,Monk',
-  'Mountain Stance':'Traits=Class,Monk,Stance',
-  'Tiger Stance':'Traits=Class,Monk,Stance',
-  'Wolf Stance':'Traits=Class,Monk,Stance',
-  'Brawling Focus':'Traits=Class,Monk Require="level >= 2"',
-  'Crushing Grab':'Traits=Class,Monk Require="level >= 2"',
-  'Dancing Leaf':'Traits=Class,Monk Require="level >= 2"',
+  'Crane Stance':Pathfinder2E.FEATS['Crane Stance'],
+  'Dragon Stance':Pathfinder2E.FEATS['Dragon Stance'],
+  'Monastic Archer Stance':'Traits=Class,Monk,Stance',
+  'Monastic Weaponry':Pathfinder2E.FEATS['Monastic Weaponry'],
+  'Mountain Stance':Pathfinder2E.FEATS['Mountain Stance'],
+  'Qi Spells':'Traits=Class,Monk',
+  'Stumbling Stance':'Traits=Class,Monk,Stance',
+  'Tiger Stance':Pathfinder2E.FEATS['Tiger Stance'],
+  'Wolf Stance':Pathfinder2E.FEATS['Wolf Stance'],
+  'Crushing Grab':Pathfinder2E.FEATS['Crushing Grab'],
+  'Dancing Leaf':Pathfinder2E.FEATS['Dancing Leaf'],
   'Elemental Fist':
-    'Traits=Class,Monk Require="level >= 2","features.Ki Strike"',
-  'Stunning Fist':
-    'Traits=Class,Monk Require="level >= 2","features.Flurry Of Blows"',
-  'Deflect Arrow':'Traits=Class,Monk Require="level >= 4"',
-  'Flurry Of Maneuvers':
-    'Traits=Class,Monk Require="level >= 4","rank.Athletics >= 2"',
-  'Flying Kick':'Traits=Class,Monk Require="level >= 4"',
-  'Guarded Movement':'Traits=Class,Monk Require="level >= 4"',
-  'Stand Still':'Traits=Class,Monk Require="level >= 4"',
-  'Wholeness Of Body':
-    'Traits=Class,Monk Require="level >= 4","features.Ki Spells"',
-  'Abundant Step':
+    Pathfinder2E.FEATS['Crane Stance']
+    .replace('Ki Strike', 'Inner Upheaval'),
+  'Shooting Stars Stance':
+    'Traits=Class,Monk,Stance ' +
+    'Require="level >= 2","features.Monastic Weaponry"',
+  'Stunning Blows':Pathfinder2E.FEATS['Stunning Fist'],
+  'Cobra Stance':'Traits=Class,Monk,Stance Require="level >= 4"',
+  'Deflect Projectile':Pathfinder2E.FEATS['Deflect Arrow'],
+  'Flurry Of Maneuvers':Pathfinder2E.FEATS['Flurry Of Maneuvers'],
+  'Flying Kick':Pathfinder2E.FEATS['Flying Kick'],
+  'Guarded Movement':Pathfinder2E.FEATS['Guarded Movement'],
+  'Harmonize Self':
+    Pathfinder2E.FEATS['Wholeness Of Body']
+    .replace('Ki Spells', 'Qi Spells'),
+  'Stand Still':Pathfinder2E.FEATS['Stand Still'],
+  'Advanced Monastic Weaponry':
+    'Traits=Class,Monk Require="level >= 6","features.Monastic Weaponry"',
+  'Advanced Qi Spells':
+    'Traits=Class,Monk Require="level >= 6","features.Qi Spells"',
+  'Align Qi':'Traits=Class,Monk Require="level >= 6","features.Qi Spells"',
+  'Crane Flutter':Pathfinder2E.FEATS['Crane Flutter'],
+  'Dragon Roar':Pathfinder2E.FEATS['Dragon Roar'],
+  'Mountain Stronghold':Pathfinder2E.FEATS['Mountain Stronghold'],
+  'One-Inch Punch':
+    'Traits=Class,Monk Require="level >= 6","features.Expert Strikes"',
+  'Return Fire':
     'Traits=Class,Monk ' +
-    'Require="level >= 6","features.Incredible Movement","features.Ki Spells"',
-  'Crane Flutter':
-    'Traits=Class,Monk Require="level >= 6","features.Crane Stance"',
-  'Dragon Roar':
-    'Traits=Class,Monk,Auditory,Emotion,Fear,Mental ' +
-    'Require="level >= 6","features.Dragon Stance"',
-  'Ki Blast':
-    'Traits=Class,Monk Require="level >= 6","features.Ki Spells"',
-  'Mountain Stronghold':
-    'Traits=Class,Monk Require="level >= 6","features.Mountain Stance"',
-  'Tiger Slash':
-    'Traits=Class,Monk Require="level >= 6","features.Tiger Stance"',
-  'Water Step':'Traits=Class,Monk Require="level >= 6"',
-  'Whirling Throw':'Traits=Class,Monk Require="level >= 6"',
-  'Wolf Drag':
-    'Traits=Class,Monk Require="level >= 6","features.Wolf Stance"',
-  'Arrow Snatching':
-    'Traits=Class,Monk Require="level >= 8","features.Deflect Arrow"',
-  'Ironblood Stance':'Traits=Class,Monk,Stance Require="level >= 8"',
-  'Mixed Maneuver':
-    'Traits=Class,Monk Require="level >= 8","rank.Athletics >= 3"',
-  'Tangled Forest Stance':'Traits=Class,Monk,Stance Require="level >= 8"',
-  'Wall Run':'Traits=Class,Monk Require="level >= 8"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Deflect Projectile",' +
+      '"features.Monastic Archer Stance"',
+  'Stumbling Feint':
+    'Traits=Class,Monk ' +
+    'Require="level >= 6","rank.Deception >= 2","features.Stumbling Stance"',
+  'Tiger Slash':Pathfinder2E.FEATS['Tiger Stance'],
+  'Water Step':Pathfinder2E.FEATS['Water Step'],
+  'Whirling Throw':Pathfinder2E.FEATS['Whirling Throw'],
+  'Wolf Drag':Pathfinder2E.FEATS['Wolf Stance'],
+  'Clinging Shadows Initiate':
+    'Traits=Class,Monk Require="level >= 8","features.Qi Spells"',
+  'Ironblood Stance':Pathfinder2E.FEATS['Ironblood Stance'],
+  'Mixed Maneuver':Pathfinder2E.FEATS['Mixed Maneuver'],
+  'Pinning Fire':'Traits=Class,Monk Require="level >= 8"',
+  'Protectile Snatching':
+    Pathfinder2E.FEATS['Arrow Snatching']
+   .replace('Deflect Arrow', 'Deflect Projectile'),
+  'Tangled Forest Stance':Pathfinder2E.FEATS['Tangled Forest Stance'],
+  'Wall Run':Pathfinder2E.FEATS['Wall Run'],
   'Wild Winds Initiate':
-    'Traits=Class,Monk Require="level >= 8","features.Ki Spells"',
-  'Knockback Strike':'Traits=Class,Monk,Concentrate Require="level >= 10"',
-  'Sleeper Hold':'Traits=Class,Monk,Incapacitation Require="level >= 10"',
+    Pathfinder2E.FEATS['Wild Winds Initiate']
+    .replace('Ki Spells', 'Qi Spells'),
+  'Cobra Envenom':
+    'Traits=Class,Monk,Poison ' +
+    'Require="level >= 10","features.Cobra Stance","rank.Unarmed Attacks >= 2"',
+  'Knockback Strike':Pathfinder2E.FEATS['Knockback Strike'],
+  // TODO require "at least one stance feat"
+  'Prevailing Position':'Traits=Class,Monk Require="level >= 10"',
+  'Sleeper Hold':Pathfinder2E.FEATS['Sleeper Hold'],
   'Wind Jump':
-    'Traits=Class,Monk Require="level >= 10","features.Ki Spells"',
-  'Winding Flow':'Traits=Class,Monk Require="level >= 10"',
+    Pathfinder2E.FEATS['Wind Jump']
+    .replace('Ki Spells', 'Qi Spells'),
+  'Winding Flow':Pathfinder2E.FEATS['Winding Flow'],
+/*
   'Diamond Soul':'Traits=Class,Monk Require="level >= 12"',
   'Disrupt Ki':'Traits=Class,Monk,Negative Require="level >= 12"',
   'Improved Knockback':
@@ -11503,8 +11519,6 @@ Pathfinder2ERemaster.SPELLS = {
   'Cloak Of Colors':
     Pathfinder2E.SPELLS['Cloak Of Colors']
     .replace('Illusion', 'Concentrate,Manipulate'),
-
-  // TODO
 
   // Champion
   'Lay On Hands':
