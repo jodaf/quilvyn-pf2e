@@ -921,9 +921,36 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Obedience:Cause",' +
       '"features.Holy ? 1:Redemption:Cause"',
 
+  'Investigator':
+    'Ability=intelligence HitPoints=8 ' +
+    'Features=' +
+      '"1:Attribute Boost (Intelligence)",' +
+      '"1:Attribute Boosts",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Reflex; Will)","1:Save Trained (Fortitude)",' +
+      '"1:Investigator Skills",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
+      '"1:Class Trained (Investigator)",' +
+      '"1:On The Case","1:Clue In","1:Devise A Stratagem","1:Methodology",' +
+      '"1:Investigator Feats","1:Strategic Strike","2:Skill Feats",' +
+      '"2:Skill Increases","3:General Feats","3:Keen Recollection",' +
+      '"3:Skillful Lessons","5:Weapon Expertise","7:Vigilant Senses",' +
+      '"7:Weapon Specialization","9:Fortitude Expertise",' +
+      '"9:Investigator Expertise","11:Deductive Improvisation",' +
+      '"11:Dogged Will","13:Incredible Senses","13:Light Armor Expertise",' +
+      '"13:Weapon Mastery","15:Greater Weapon Specialization",' +
+      '"15:Savvy Reflexes","17:Greater Dogged Will","19:Light Armor Mastery",' +
+      '"19:Master Detective" ' +
+    'Selectables=' +
+      '"1:Alchemical Sciences:Methodology",' +
+      '"1:Empiricism:Methodology",' +
+      '"1:Forensic Medicine:Methodology",' +
+      '"1:Interrogation:Methodology"',
+
   'Monk':
     // Ability => Attribute
-    // Ki Tradition => null
+    // Ki Tradition => Qi Tradition
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
       '"1:Monk Key Attribute",' +
@@ -943,10 +970,13 @@ Pathfinder2ERemaster.CLASSES = {
       '"9:Metal Strikes","9:Monk Expertise","11:Second Path To Perfection",' +
       '"13:Graceful Mastery","13:Master Strikes",' +
       '"15:Greater Weapon Specialization","15:Third Path To Perfection",' +
-      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form" ' +
+      '"17:Adamantine Strikes","17:Graceful Legend","19:Perfected Form",' +
+      '"features.Qi Spells ? 1:Qi Tradition" ' +
     'Selectables=' +
-      '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability",' +
+      '"1:Dexterity:Key Attribute",' +
+      '"1:Strength:Key Attribute",' +
+      '"1:Qi Tradition (Divine):Qi Tradition",' +
+      '"1:Qi Tradition (Occult):Qi Tradition",' +
       '"7:Path To Perfection (Fortitude):Perfection",' +
       '"7:Path To Perfection (Reflex):Perfection",' +
       '"7:Path To Perfection (Will):Perfection",' +
@@ -2311,7 +2341,7 @@ Pathfinder2ERemaster.FEATS = {
   'Guiding Finish':Pathfinder2E.FEATS['Guiding Finish'],
   'Guiding Riposte':Pathfinder2E.FEATS['Guiding Riposte'],
   'Improved Twin Riposte':Pathfinder2E.FEATS['Improved Twin Riposte'],
-  'Opening Stance':Pathfinder2E.FEATS['Stance Savant'],
+  'Opening Stance':'Traits=Class,Fighter Require="level >= 14"',
   'Two-Weapon Flurry':Pathfinder2E.FEATS['Two-Weapon Flurry'],
   'Whirlwind Strike':Pathfinder2E.FEATS['Whirlwind Strike'],
   'Graceful Poise':Pathfinder2E.FEATS['Graceful Poise'],
@@ -3240,6 +3270,89 @@ Pathfinder2ERemaster.FEATS = {
   'Swift Paragon':
     'Traits=Class,Champion Require="level >= 20","features.Blessed Swiftness"',
 
+  // Investigator
+  'Eliminate Red Herrings':'Traits=Class,Investigator',
+  'Flexible Studies':'Traits=Class,Investigator',
+  'Known Weaknesses':'Traits=Class,Investigator',
+  'Takedown Expert':'Traits=Class,Investigator',
+  "That's Odd":'Traits=Class,Investigator',
+  'Trap Finder':'Traits=Class,Investigator',
+  'Underworld Investigator':'Traits=Class,Investigator',
+  'Athletic Strategist':
+    'Traits=Class,Investigator Require="level >= 2","rank.Athletics >= 1"',
+  'Certain Strategem':'Traits=Class,Investigator Require="level >= 2"',
+  'Exploit Blunder':'Traits=Class,Investigator Require="level >= 2"',
+  'Person Of Interest':'Traits=Class,Investigator Require="level >= 2"',
+  'Shared Stratagem':'Traits=Class,Investigator Require="level >= 2"',
+  'Solid Lead':'Traits=Class,Investigator Require="level >= 2"',
+  'Alchemical Discoveries':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 4","features.Alchemical Sciences"',
+  "Detective's Readiness":'Traits=Class,Investigator Require="level >= 4"',
+  'Lie Detector':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 4","features.Empiricism || features.Interrogation"',
+  'Ongoing Investigation':'Traits=Class,Investigator Require="level >= 4"',
+  "Scalpel's Point":
+    'Traits=Class,Investigator ' +
+    'Require="level >= 4","features.Forensic Medicine"',
+  'Strategic Assessment':'Traits=Class,Investigator Require="level >= 4"',
+  'Connect The Dots':
+    'Traits=Class,Investigator,Auditory,Concentrate,Linguistic ' +
+    'Require="level >= 6"',
+  'Predictive Purchase':'Traits=Class,Investigator Require="level >= 6"',
+  'Thorough Research':'Traits=Class,Investigator Require="level >= 6"',
+  'Blind-Fight':
+    'Traits=Class,Investigator Require="level >= 8","rank.Perception >= 3"',
+  'Clue Them All In':'Traits=Class,Investigator Require="level >= 8"',
+  'Defensive Strategem':'Traits=Class,Investigator Require="level >= 8"',
+  'Whodunnit?':'Traits=Class,Investigator,Uncommon Require="level >= 8"',
+  'Just One More Thing':
+    'Traits=Class,Investigator,Fortune Require="level >= 10"',
+  'Ongoing Strategy':
+    'Traits=Class,Investigator,Fortune ' +
+    'Require="level >= 10","features.Strategic Strike"',
+  'Suspect Of Opportunity':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 10","features.Person Of Interest"',
+  "Empiricist's Eye":
+    'Traits=Class,Investigator Require="level >= 12","features.Empiricism"',
+  'Foresee Danger':
+    'Traits=Class,Investigator,Concentrate Require="level >= 12"',
+  'Just As Planned':
+    'Traits=Class,Investigator,Fortune Require="level >= 12"',
+  "Make 'em Sweat":
+    'Traits=Class,Investigator Require="level >= 12","features.Interrogation"',
+  'Reason Rapidly':'Traits=Class,Investigator Require="level >= 12"',
+  'Share Tincture':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 12","features.Alchemical Sciences"',
+  'Surgical Shock':
+    'Traits=Class,Investigator,Attack ' +
+    'Require="level >= 12","features.Forensic Medicine"',
+  'Plot The Future':
+    'Traits=Class,Investigator,Uncommon,Concentrate,Prediction ' +
+    'Require="level >= 14"',
+  'Sense The Unseen':'Traits=Class,Investigator Require="level >= 14"',
+  'Strategic Bypass':'Traits=Class,Investigator Require="level >= 14"',
+  'Didactic Strike':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 16","features.Shared Strategem"',
+  'Implausible Purchase':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 16","features.Predictive Purchase"',
+  'Reconstruct The Scene':
+    'Traits=Class,Investigator,Concentrate Require="level >= 16"',
+  'Lead Investigator':
+    'Traits=Class,Investigator,Exploration ' +
+    'Require="level >= 18","features.Clue Them All In"',
+  "Trickster's Ace":
+    'Traits=Class,Investigator,Concentrate Require="level >= 18"',
+  "Everyone's A Suspect":'Traits=Class,Investigator Require="level >= 20"',
+  'Just The Facts':
+    'Traits=Class,Investigator ' +
+    'Require="level >= 20","features.Thorough Research"',
+
   // Monk
   'Crane Stance':Pathfinder2E.FEATS['Crane Stance'],
   'Dragon Stance':Pathfinder2E.FEATS['Dragon Stance'],
@@ -3253,8 +3366,8 @@ Pathfinder2ERemaster.FEATS = {
   'Crushing Grab':Pathfinder2E.FEATS['Crushing Grab'],
   'Dancing Leaf':Pathfinder2E.FEATS['Dancing Leaf'],
   'Elemental Fist':
-    Pathfinder2E.FEATS['Crane Stance']
-    .replace('Ki Strike', 'Inner Upheaval'),
+    Pathfinder2E.FEATS['Elemental Fist']
+    .replace('features.Ki Strike', 'spells.Inner Upheaval'),
   'Shooting Stars Stance':
     'Traits=Class,Monk,Stance ' +
     'Require="level >= 2","features.Monastic Weaponry"',
@@ -3308,48 +3421,74 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Monk,Poison ' +
     'Require="level >= 10","features.Cobra Stance","rank.Unarmed Attacks >= 2"',
   'Knockback Strike':Pathfinder2E.FEATS['Knockback Strike'],
-  // TODO require "at least one stance feat"
-  'Prevailing Position':'Traits=Class,Monk Require="level >= 10"',
+  'Prevailing Position':
+    'Traits=Class,Monk Require="level >= 10","sumStanceFeats >= 1"',
   'Sleeper Hold':Pathfinder2E.FEATS['Sleeper Hold'],
   'Wind Jump':
     Pathfinder2E.FEATS['Wind Jump']
     .replace('Ki Spells', 'Qi Spells'),
   'Winding Flow':Pathfinder2E.FEATS['Winding Flow'],
-/*
-  'Diamond Soul':'Traits=Class,Monk Require="level >= 12"',
-  'Disrupt Ki':'Traits=Class,Monk,Negative Require="level >= 12"',
+  'Disrupt Qi':
+    Pathfinder2E.FEATS['Disrupt Ki']
+    .replace('Negative', 'Void'),
+  'Dodging Roll':
+    'Traits=Class,Monk Require="level >= 12","rank.Acrobatics >= 3"',
+  'Focused Shot':
+    'Traits=Class,Monk,Concentrate ' +
+    'Require="level >= 12","features.Monastic Archer Stance"',
   'Improved Knockback':
-    'Traits=Class,Monk Require="level >= 12","rank.Athletics >= 3"',
+    Pathfinder2E.FEATS['Improved Knockback'] + ' ' +
+    'Require="level >= 12","features.Knockback Strike"',
   'Meditative Focus':
-    'Traits=Class,Monk Require="level >= 12","features.Ki Spells"',
-  // Stance Savant as above
-  'Ironblood Surge':
-    'Traits=Class,Monk Require="level >= 14","features.Ironblood Stance"',
-  'Mountain Quake':
-    'Traits=Class,Monk Require="level >= 14","features.Mountain Stronghold"',
-  'Tangled Forest Rake':
-    'Traits=Class,Monk Require="level >= 14","features.Tangled Forest Stance"',
-  'Timeless Body':'Traits=Class,Monk Require="level >= 14"',
-  'Tongue Of Sun And Moon':'Traits=Class,Monk Require="level >= 14"',
+    Pathfinder2E.FEATS['Meditative Focus']
+    .replace('Ki Spells', 'Qi Spells'),
+  'Overwhelming Breath':
+    'Traits=Class,Monk,Concentrate,Spellshape ' +
+    'Require="level >= 12","features.Qi Spells"',
+  'Reflexive Stance':'Traits=Class,Monk Require="level >= 12"',
+  'Form Lock':'Traits=Class,Monk,Attack Require="level >= 14"',
+  'Ironblood Surge':Pathfinder2E.FEATS['Ironblood Surge'],
+  'Mountain Quake':Pathfinder2E.FEATS['Mountain Quake'],
+  'Peerless Form':Pathfinder2E.FEATS['Timeless Body'],
+  "Shadow's Web":
+    'Traits=Class,Monk ' +
+    'Require="level >= 14","features.Clinging Shadows Initiate"',
+  'Tangled Forest Rake':Pathfinder2E.FEATS['Tangled Forest Rake'],
+  'Whirling Blade Stance':
+    'Traits=Class,Monk,Stance ' +
+    'Require="level >= 14","features.Monastic Weaponry"',
   'Wild Winds Gust':
-    'Traits=Class,Monk,Air,Concentrate,Evocation,Manipulate ' +
-    'Require="level >= 14","features.Wild Winds Initiate"',
-  'Enlightened Presence':
-    'Traits=Class,Monk,Aura,Emotion,Mental Require="level >= 16"',
+    Pathfinder2E.FEATS['Wild Winds Gust']
+    .replace(',Evocation', ''),
+  'Fuse Stance':
+    Pathfinder2E.FEATS['Fuse Stance']
+    .replace('20', '16'),
   'Master Of Many Styles':
-    'Traits=Class,Monk Require="level >= 16","features.Stance Savant"',
-  'Quivering Palm':'Traits=Class,Monk Require="level>=16","features.Ki Spells"',
-  'Shattering Strike':'Traits=Class,Monk Require="level >= 16"',
-  'Diamond Fists':'Traits=Class,Monk Require="level >= 18"',
-  'Empty Body':
-    'Traits=Class,Monk Require="level >= 18","features.Ki Spells"',
-  'Meditative Wellspring':
-    'Traits=Class,Monk Require="level >= 18","features.Meditative Focus"',
-  'Swift River':'Traits=Class,Monk Require="level >= 18"',
-  'Enduring Quickness':'Traits=Class,Monk Require="level >= 20"',
-  'Fuse Stance':'Traits=Class,Monk Require="level >= 20","sumStanceFeats >=2 "',
-  'Impossible Technique':'Traits=Class,Monk,Fortune Require="level >= 20"',
-*/
+    Pathfinder2E.FEATS['Master Of Many Styles']
+    .replace('Stance Savant', 'Reflexive Stance'),
+  'Master Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
+  'One-Millimeter Punch':'Traits=Class,Monk Require="features.One-Inch Punch"',
+  'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
+  'Diamond Fists':Pathfinder2E.FEATS['Diamond Fists'],
+  'Grandmaster Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
+  'Qi Center':
+    'Traits=Class,Monk ' +
+    'Require="features.Qi Spells","features.Master Of Many Styles"',
+  'Swift River':Pathfinder2E.FEATS['Swift River'],
+  'Triangle Shot':
+    'Traits=Class,Monk,Concentrate,Fortune ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"features.Monastic Archer Stance",' +
+      '"features.Stunning Blows"',
+  'Enduring Quickness':Pathfinder2E.FEATS['Enduring Quickness'],
+  'Godbreaker':
+    'Traits=Class,Monk ' +
+    'Require="level >= 20","features.Crushing Grab","features.Whirling Throw"',
+  'Immortal Techniques':
+    'Traits=Class,Monk Require="level >= 20","features.Master Of Many Styles"',
+  'Impossible Technique':Pathfinder2E.FEATS['Impossible Technique'],
+  'Lightning Qi':'Traits=Class,Monk Require="level >= 20","features.Qi Spells"',
 
 /*
   // Sorcerer
@@ -8530,195 +8669,129 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Has an additional action each rd to Step or Stride, and aura allows allies to move without triggering reactions"',
 
-/*
   // Monk
-  'Adamantine Strikes':
-    'Section=combat Note="Unarmed attacks count as adamantine weapons"',
-  // Perception Expertise as above
-  'Expert Strikes':
-    'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
-  'Flurry Of Blows':
-    'Action=1 Section=combat Note="Makes 2 unarmed Strikes once per turn"',
-  'Graceful Legend':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Defense Legendary (Unarmored Defense)/Class Master (Monk)",' +
-      '"Spell Master (%V)"',
-  'Graceful Mastery':'Section=combat Note="Defense Master (Unarmored Defense)"',
+  'Adamantine Strikes':Pathfinder2E.FEATURES['Adamantine Strikes'],
+  'Expert Strikes':Pathfinder2E.FEATURES['Expert Strikes'],
+  'Flurry Of Blows':Pathfinder2E.FEATURES['Flurry Of Blows'],
+  'Graceful Legend':Pathfinder2E.FEATURES['Graceful Legend'],
+  'Graceful Mastery':Pathfinder2E.FEATURES['Graceful Mastery'],
   // Greater Weapon Specialization as above
-  'Incredible Movement':'Section=ability Note="+%V Speed in no armor"',
-  'Ki Tradition':'Section=feature Note="1 selection"',
-  'Ki Tradition (Divine)':
+  'Incredible Movement':Pathfinder2E.FEATURES['Incredible Movement'],
+  'Master Strikes':Pathfinder2E.FEATURES['Master Strikes'],
+  'Metal Strikes':Pathfinder2E.FEATURES['Metal Strikes'],
+  'Monk Expertise':Pathfinder2E.FEATURES['Monk Expertise'],
+  'Monk Feats':Pathfinder2E.FEATURES['Monk Feats'],
+  'Monk Key Attribute':Pathfinder2E.FEATURES['Monk Key Ability'],
+  'Monk Skills':Pathfinder2E.FEATURES['Monk Skills'],
+  'Mystic Strikes':Pathfinder2E.FEATURES['Mystic Strikes'],
+  'Path To Perfection':Pathfinder2E.FEATURES['Path To Perfection'],
+  'Path To Perfection (Fortitude)':
+    Pathfinder2E.FEATURES['Path To Perfection (Fortitude)'],
+  'Path To Perfection (Reflex)':
+    Pathfinder2E.FEATURES['Path To Perfection (Reflex)'],
+  'Path To Perfection (Will)':
+    Pathfinder2E.FEATURES['Path To Perfection (Will)'],
+  // Perception Expertise as above
+  'Perfected Form':Pathfinder2E.FEATURES['Perfected Form'],
+  'Powerful Fist':Pathfinder2E.FEATURES['Powerful Fist'],
+  'Qi Tradition':'Section=feature Note="1 selection"',
+  'Qi Tradition (Divine)':
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Divine)",' +
       '"Can learn spells from the divine tradition"',
-  'Ki Tradition (Occult)':
+  'Qi Tradition (Occult)':
     'Section=magic,magic ' +
     'Note=' +
       '"Spell Trained (Occult)",' +
       '"Can learn spells from the occult tradition"',
-  'Master Strikes':
-    'Section=combat Note="Attack Master (Simple Weapons; Unarmed Attacks)"',
-  'Metal Strikes':
-    'Section=combat ' +
-    'Note="Unarmed attacks count as cold iron and silver weapons"',
-  'Monk Expertise':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Class Expert (Monk)",' +
-      '"Spell Expert (%V)"',
-  'Monk Feats':'Section=feature Note="%V selections"',
-  'Monk Key Ability':'Section=feature Note="1 selection"',
-  'Monk Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
-  'Mystic Strikes':
-    'Section=combat Note="Unarmed attacks count as magic weapons"',
-  'Path To Perfection':'Section=feature Note="%V selections"',
-  'Path To Perfection (Fortitude)':
-     'Section=save,save ' +
-     'Note=' +
-       '"Save Master (Fortitude)",' +
-       '"Successes on Fortitude saves are critical successes"',
-  'Path To Perfection (Reflex)':
-     'Section=save,save ' +
-     'Note=' +
-       '"Save Master (Reflex)",' +
-       '"Successes on Reflex saves are critical successes"',
-  'Path To Perfection (Will)':
-     'Section=save,save ' +
-     'Note=' +
-       '"Save Master (Will)",' +
-       '"Successes on Will saves are critical successes"',
-  'Perfected Form':
-    'Section=combat ' +
-    'Note="Rolls of less than 10 on first Strike each turn are treated as 10s"',
-  'Powerful Fist':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Fists inflict 1d6 HP damage",' +
-      '"Suffers no attack penalty for inflicting lethal damage with unarmed attacks"',
-  'Second Path To Perfection':'Section=feature Note="+1 selection"',
-  'Third Path To Perfection':'Section=feature Note="1 selection"',
+  'Second Path To Perfection':
+    Pathfinder2E.FEATURES['Second Path To Perfection'],
+  'Third Path To Perfection':Pathfinder2E.FEATURES['Third Path To Perfection'],
   'Third Path To Perfection (Fortitude)':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Legendary (Fortitude)",' +
-      '"Critical failures on Fortitude saves are normal failures, and failed Fortitude saves inflict half damage"',
+    Pathfinder2E.FEATURES['Third Path To Perfection (Fortitude)'],
   'Third Path To Perfection (Reflex)':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Legendary (Reflex)",' +
-      '"Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
+    Pathfinder2E.FEATURES['Third Path To Perfection (Reflex)'],
   'Third Path To Perfection (Will)':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Legendary (Will)",' +
-      '"Critical failures on Will saves are normal failures, and failed Will saves inflict half damage"',
+    Pathfinder2E.FEATURES['Third Path To Perfection (Will)'],
   // Weapon Specialization as above
 
-  'Crane Stance':
+  'Crane Stance':Pathfinder2E.FEATURES['Crane Stance'],
+  'Monastic Weaponry':Pathfinder2E.FEATURES['Monastic Weaponry'],
+  'Dragon Stance':Pathfinder2E.FEATURES['Dragon Stance'],
+  'Monastic Archer Stance':
     'Action=1 ' +
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6 HP bludgeoning hand Strikes",' +
-      '"Unarmored stance gives -5 jump DC and +2\' and +5\' vertical and horizontal Leaps"',
-  'Dragon Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain"',
-  'Ki Rush':
-    'Section=magic ' +
-    'Note="Knows the Ki Rush occult spell/Has a focus pool and 1 Focus Point"',
-  'Ki Strike':
-    'Section=magic ' +
-    'Note="Knows the Ki Strike occult spell/Has a focus pool and 1 Focus Point"',
-  'Monastic Weaponry':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack %V (Monk Weapons)",' +
-      '"Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes"',
+      '"Attack %V (Longbow; Shortbow; Monk Bows)",' +
+      '"Stance allows only bow Strikes; may use Flurry Of Blows and other unarmed monk features with bows at half their range increment"',
   'Mountain Stance':
+    Pathfinder2E.FEATURES['Mountain Stance']
+    .replace('Shove', 'Reposition, Shove'),
+  'Qi Spells':
+    'Section=magic ' +
+    'Note="Knows choice of 1st-rank monk qi spell/Has a focus pool with 1 Focus Point"',
+  'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes"',
-  'Tiger Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Unarmored stance allows 10\' Steps and hand Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on a critical success"',
-  'Wolf Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Unarmored stance allows 1d8 HP piercing hand Strikes that have the trip trait when flanking"',
-  'Brawling Focus':
-    'Section=combat ' +
-    'Note="Critical hits with a brawling%{combatNotes.monasticWeaponry?\' or trained monk\':\'\'} weapon inflict its critical specialization effect"',
-  'Crushing Grab':
-    'Section=combat ' +
-    'Note="Can inflict %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
-  'Dancing Leaf':
-    'Section=ability,skill ' +
-    'Note=' +
-      '"Takes no falling damage when adjacent to a wall",' +
-      '"+5\' Jump and Leap distance"',
+    'Note="Stance gives +1 Deception to Feint, restricts Strikes to 1d8 HP bludgeoning hand attacks, and inflicts off-guard against successful melee attackers until the end of the next turn"',
+  'Tiger Stance':Pathfinder2E.FEATURES['Tiger Stance'],
+  'Wolf Stance':Pathfinder2E.FEATURES['Wolf Stance'],
+  'Crushing Grab':Pathfinder2E.FEATURES['Crushing Grab'],
+  'Dancing Leaf':Pathfinder2E.FEATURES['Dancing Leaf'],
   'Elemental Fist':
-    'Section=magic ' +
-    'Note="Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
-  'Stunning Fist':
+    Pathfinder2E.FEATURES['Elemental Fist']
+    .replace('Ki Strike', 'Inner Upheaval')
+    .replace('electricity', 'slashing, electricity'),
+  'Shooting Stars Stance':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Can inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
-  'Deflect Arrow':
-    'Action=Reaction ' +
-    'Section=combat Note="Gives +4 Armor Class vs. a physical ranged attack"',
+    'Note="Stance allows using unarmed monk features with shuriken"',
+  'Stunning Blows':Pathfinder2E.FEATURES['Stunning Fist'],
+  'Cobra Stance':
+    'Action=1 ' +
+    'Section=combat,save ' +
+    'Note=' +
+      '"Stance allows only hand Strikes that inflict 1d4 HP piercing, or 1d10 HP on a critical hit",' +
+      '"Stance give +1 Fortitude and Fortitude DC and poison resistance %{level//2}"',
+  'Deflect Projectile':Pathfinder2E.FEATURES['Deflect Arrow'],
   'Flurry Of Maneuvers':
-    'Section=combat ' +
-    'Note="Can use Flurry Of Blows to Grapple, Shove, or Trip"',
-  'Flying Kick':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Makes a Strike on a foe at the end of a Leap or Jump"',
-  'Guarded Movement':
-    'Section=combat Note="+4 Armor Class vs. movement Reactions"',
-  'Stand Still':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Makes a melee Strike on an adjacent moving foe"',
-  'Wholeness Of Body':
+    Pathfinder2E.FEATURES['Flurry Of Maneuvers']
+    .replace('Shove', 'Reposition, Shove'),
+  'Flying Kick':Pathfinder2E.FEATURES['Flying Kick'],
+  'Guarded Movement':Pathfinder2E.FEATURES['Guarded Movement'],
+  'Harmonize Self':
+    Pathfinder2E.FEATURES['Wholeness Of Body']
+    .replace('Wholeness Of Body', 'Harmonize Self'),
+  'Stand Still':Pathfinder2E.FEATURES['Stand Still'],
+  'Advanced Monastic Weaponry':
+    // TODO implement
+    'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
+  'Qi Spells':
     'Section=magic ' +
-    'Note="Knows the Wholeness Of Body occult spell/+1 Focus Points"',
-  'Abundant Step':
-    'Section=magic Note="Knows the Abundant Step occult spell/+1 Focus Points"',
-  'Crane Flutter':
+    'Note="Knows choice of 3rd-rank monk qi spell/+1 Focus Points"',
+  'Align Qi':
     'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="While in Crane Stance, gives +3 Armor Class vs. a melee Strike, and a foe miss allows an immediate -2 Strike"',
-  'Dragon Roar':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="R15\' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (DC %{skillModifiers.Intimidation} Will negates; critical failure inflicts frightened 2); first successful Strike in the next rd on a frightened foe inflicts +4 HP"',
-  'Ki Blast':
-    'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
-  'Mountain Stronghold':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="While in Mountain Stance, gives +2 Armor Class for 1 rd"',
-  'Tiger Slash':
+    'Section=magic ' +
+    'Note="Casting a monk spell restores %{level+wisdomModifier} Hit Points once per hr"',
+  'Crane Flutter':Pathfinder2E.FEATURES['Crane Flutter'],
+  'Dragon Roar':Pathfinder2E.FEATURES['Dragon Roar'],
+  'Mountain Stronghold':Pathfinder2E.FEATURES['Mountain Stronghold'],
+  'One-Inch Punch':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Tiger Stance, claw attack inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
-  'Water Step':
-    'Section=ability ' +
-    'Note="Can Stride across liquids; must end on a solid surface"',
-  'Whirling Throw':
-    'Action=1 ' +
+    'Note="Successful unarmed strike inflicts %{level<10?1:level<18?2:3} additional damage %{level<10?\'die\':\'dice\'}; 3 actions gives %{level<10?2:level<18?4:6} additional dice"',
+  'Return Fire':Pathfinder2E.FEATURES['Arrow Snatching'],
+  'Stumbling Feint':
     'Section=combat ' +
-    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC, modified for size differences, allows throwing it %{10+5*strengthModifier}\', inflicting %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning"',
-  'Wolf Drag':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="While in Wolf Stance, wolf jaw attack inflicts 1d12 HP piercing and knocked prone"',
-  'Arrow Snatching':
-    'Section=combat ' +
-    'Note="After a successful Deflect Arrow, can immediately use the projectile to make a ranged Strike"',
+    'Note="Stumbling Stance allows using a free Feint before Flurry Of Blows; success inflicts off-guard from both attacks"',
+  'Tiger Slash':Pathfinder2E.FEATURES['Tiger Slash'],
+  'Water Step':Pathfinder2E.FEATURES['Water Step'],
+  'Whirling Throw':Pathfinder2E.FEATURES['Whirling Throw'],
+  'Wolf Drag':Pathfinder2E.FEATURES['Wolf Drag'],
+
+/*
+
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -11555,7 +11628,13 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Allows self to Stride (using 2 actions gives 2 Strides) without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"'
+      '"Allows self to Stride (using 2 actions gives 2 Strides) without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"',
+
+  // Monk
+  'Harmonize Self':
+    Pathfinder2E.SPELLS['Wholeness Of Body']
+    .replace('Necromancy', 'Concentrate')
+    .replace('Positive', 'Vitality')
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -12186,6 +12265,21 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
       'featureNotes.fighterKeyAttribute', '=', '1'
     );
+  } else if(name == 'Ranger') {
+    rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
+      'featureNotes.rangerKeyAttribute', '=', '1'
+    );
+  } else if(name == 'Monk') {
+    rules.defineRule('selectableFeatureCount.Monk (Key Attribute)',
+      'featureNotes.monkKeyAttribute', '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Monk (Qi Tradition)',
+      'featureNotes.qiTradition', '=', null
+    );
+  } else if(name == 'Rogue') {
+    rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
+      'featureNotes.rogueKeyAttribute', '=', '1'
+    );
   } else if(name == 'Witch') {
     rules.defineRule('patronTraditionsLowered',
       'patronTraditions', '=', 'source.toLowerCase()'
@@ -12719,6 +12813,9 @@ Pathfinder2ERemaster.weaponRules = function(
   );
   if(range)
     rules.defineRule('range.' + name, 'combatNotes.strongArm', '+', '10');
+  if(traits.includes('Monk') && group == 'Bow')
+    rules.defineRule
+     ('trainingLevel.' + name, 'trainingLevel.Monk Bows', '^=', null);
 };
 
 /* Returns the elements in a basic 5E character editor. */
