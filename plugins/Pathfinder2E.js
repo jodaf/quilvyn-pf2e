@@ -4724,7 +4724,7 @@ Pathfinder2E.FEATURES = {
   'Liberator':
     'Section=feature,magic ' +
     'Note=' +
-      '"Must always respect others\' freedom and oppose tyranny",' +
+      '"Must respect others\' freedom and oppose tyranny",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
@@ -5991,7 +5991,7 @@ Pathfinder2E.FEATURES = {
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, wolf jaw attack inflicts 1d12 HP piercing and knocked prone"',
+    'Note="While in Wolf Stance, hand attack gains the fatal d12 trait and knocks prone"',
   'Arrow Snatching':
     'Section=combat ' +
     'Note="After a successful Deflect Arrow, can immediately use the projectile to make a ranged Strike"',
@@ -14575,9 +14575,9 @@ Pathfinder2E.featRules.traits = [
   'Additive', 'Aiuvarin', 'Catfolk', 'Changeling', 'Cold', 'Concentration',
   'Consecration', 'Dhampir', 'Disease', 'Dragonblood', 'Dromaar', 'Duskwalker',
   'Hobgoblin', 'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light',
-  'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Prediction',
-  'Ratfolk', 'Revelation', 'Sonic', 'Spellshape', 'Teleportation', 'Tengu',
-  'Tripkee', 'Vitality', 'Witch'
+  'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Poison',
+  'Prediction', 'Ratfolk', 'Revelation', 'Sonic', 'Spellshape',
+  'Teleportation', 'Tengu', 'Tripkee', 'Vitality', 'Void', 'Witch'
 ];
 
 /*
