@@ -15,11 +15,11 @@ var attributes = {
   "generalFeats.Pickpocket":1, "generalFeats.Quick Unlock":1, "generalFeats.Subtle Theft":1, 
   "generalFeats.Wary Disarmament":1, "languages.Petran":1, "languages.Thalassic":1, 
   "name":"Feats-Skill-Thievery", "selectableFeatures.Human - Versatile Human":1, 
-  "selectableFeatures.Rogue - Mastermind":1, "shield":"Steel", "skillIncreases.Absalom Lore":1, 
-  "skillIncreases.Architecture Lore":1, "skillIncreases.Deception":1, "skillIncreases.Hellknights Lore":1, 
-  "skillIncreases.Mining Lore":1, "skillIncreases.Occultism":1, "skillIncreases.River Lore":1, 
-  "skillIncreases.Stabling Lore":1, "skillIncreases.Tanning Lore":1, "skillIncreases.Thievery":2, 
-  "weapons.Gauntlet":1, "weapons.Greatpick":1, "weapons.Shield Bash":1
+  "selectableFeatures.Rogue - Dexterity":1, "selectableFeatures.Rogue - Mastermind":1, "shield":"Steel", 
+  "skillIncreases.Absalom Lore":1, "skillIncreases.Architecture Lore":1, "skillIncreases.Deception":1, 
+  "skillIncreases.Hellknights Lore":1, "skillIncreases.Mining Lore":1, "skillIncreases.Occultism":1, 
+  "skillIncreases.River Lore":1, "skillIncreases.Stabling Lore":1, "skillIncreases.Tanning Lore":1, 
+  "skillIncreases.Thievery":2, "weapons.Gauntlet":1, "weapons.Greatpick":1, "weapons.Shield Bash":1
 };
   </script>
 </head>
@@ -33,7 +33,7 @@ var attributes = {
     <td>    <table id="Abilities" style="width:100%">
     <tr style="text-align:center">
       <td><b>Strength</b>: +1</td>
-      <td><b>Dexterity</b>: +1</td>
+      <td><b>Dexterity</b>: +2</td>
       <td><b>Constitution</b>: +2</td>
       <td><b>Intelligence</b>: +1</td>
       <td><b>Wisdom</b>: +2</td>
@@ -69,14 +69,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 2; General: 2; Skill: 3</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage); Rogue (Racket)</td>
+        <td><b>Selectable Feature Count</b>: Human (Heritage); Rogue (Key Attribute); Rogue (Racket)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Haughty Obstinacy; Legendary Thief; Mobility; Pickpocket; Quick Unlock; Strong Arm; Subtle Theft; Wary Disarmament</td>
-        <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; General Feats; Mastermind; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
+        <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Mastermind; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Tinker Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Skill Trained (Crafting; Engineering Lore); Specialty Crafting</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -92,13 +92,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 2 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Rogue Key Attribute: 1 selection</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Rogue's Racket: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 3 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
-      </tr><tr style="text-align:center">
-        <td>Rogue Key Attribute: 1 selection</td>
       </tr></table>
 </td>
     </tr></table>
@@ -115,7 +115,7 @@ var attributes = {
       <td>Engineering Lore: +6 (intelligence; trained)</td>
       <td>Religion: +2 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Acrobatics: +1 (dexterity; untrained)</td>
+      <td>Acrobatics: +2 (dexterity; untrained)</td>
       <td>Hellknights Lore: +6 (intelligence; trained)</td>
       <td>River Lore: +6 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
@@ -129,7 +129,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Athletics: +1 (strength; untrained)</td>
       <td>Mining Lore: +6 (intelligence; trained)</td>
-      <td>Stealth: +6 (dexterity; trained)</td>
+      <td>Stealth: +7 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +6 (intelligence; trained)</td>
       <td>Nature: +2 (wisdom; untrained)</td>
@@ -141,7 +141,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Diplomacy: +1 (charisma; untrained)</td>
       <td>Performance: +1 (charisma; untrained)</td>
-      <td>Thievery: +8 (dexterity; expert)</td>
+      <td>Thievery: +9 (dexterity; expert)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -182,8 +182,8 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 38</td>
-        <td><b>Armor Class</b>: 17 (dexterity (3 max); trained)</td>
-        <td><b>Class DC</b>: Rogue: 5 (%1; %2)</td>
+        <td><b>Armor Class</b>: 18 (dexterity (3 max); trained)</td>
+        <td><b>Class DC</b>: Rogue: 17 (dexterity; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -199,9 +199,9 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +6</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Armor Class Adjustment: +1</i></td>
+        <td><i>Dexterity Armor Class Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Attack Adjustment: +1</i></td>
+        <td><i>Dexterity Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
@@ -221,7 +221,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +7 (constitution; trained); Reflex: +8 (dexterity; expert); Will: +9 (wisdom; expert)</td>
+      <td><b>Save</b>: Fortitude: +7 (constitution; trained); Reflex: +9 (dexterity; expert); Will: +9 (wisdom; expert)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>: Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation (Coerce) fails are critical fails</td>
     </tr></table>

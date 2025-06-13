@@ -15,11 +15,12 @@ var attributes = {
   "generalFeats.Charming Liar":1, "generalFeats.Confabulator":1, "generalFeats.Lengthy Diversion":1, 
   "generalFeats.Lie To Me":1, "generalFeats.Quick Disguise":1, "generalFeats.Slippery Secrets":1, 
   "languages.Elven":1, "languages.Jotun":1, "name":"Feats-Skill-Deception", 
-  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Thief":1, "shield":"None", 
-  "skillIncreases.Absalom Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, 
-  "skillIncreases.Architecture Lore":1, "skillIncreases.Art Lore":1, "skillIncreases.Crafting":1, 
-  "skillIncreases.Deception":2, "skillIncreases.Engineering Lore":1, "skillIncreases.Military Lore":1, 
-  "skillIncreases.Sailing Lore":1, "weapons.Hand Crossbow":1, "weapons.Scythe":1, "weapons.Staff":1
+  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
+  "selectableFeatures.Rogue - Thief":1, "shield":"None", "skillIncreases.Absalom Lore":1, 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Architecture Lore":1, 
+  "skillIncreases.Art Lore":1, "skillIncreases.Crafting":1, "skillIncreases.Deception":2, 
+  "skillIncreases.Engineering Lore":1, "skillIncreases.Military Lore":1, "skillIncreases.Sailing Lore":1, 
+  "weapons.Hand Crossbow":1, "weapons.Scythe":1, "weapons.Staff":1
 };
   </script>
 </head>
@@ -33,7 +34,7 @@ var attributes = {
     <td>    <table id="Abilities" style="width:100%">
     <tr style="text-align:center">
       <td><b>Strength</b>: +1</td>
-      <td><b>Dexterity</b>: +1</td>
+      <td><b>Dexterity</b>: +2</td>
       <td><b>Constitution</b>: +1</td>
       <td><b>Intelligence</b>: +1</td>
       <td><b>Wisdom</b>: +2</td>
@@ -69,14 +70,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 1; Class: 2; General: 2; Skill: 3</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage); Rogue (Racket)</td>
+        <td><b>Selectable Feature Count</b>: Human (Heritage); Rogue (Key Attribute); Rogue (Racket)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Charming Liar; Confabulator; Lengthy Diversion; Lie To Me; Nimble Dodge; Quick Disguise; Slippery Secrets; Unbalancing Blow; Unconventional Weaponry (Rapier)</td>
-        <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack; Thief</td>
+        <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack; Thief</td>
         <td><b>Noble Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Courtly Graces; Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -92,13 +93,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 2 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Rogue Key Attribute: 1 selection</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Rogue's Racket: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 3 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
-      </tr><tr style="text-align:center">
-        <td>Rogue Key Attribute: 1 selection</td>
       </tr></table>
 </td>
     </tr></table>
@@ -115,7 +116,7 @@ var attributes = {
       <td>Deception: +9 (charisma; expert)</td>
       <td>Performance: +2 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Acrobatics: +6 (dexterity; trained)</td>
+      <td>Acrobatics: +7 (dexterity; trained)</td>
       <td>Diplomacy: +2 (charisma; untrained)</td>
       <td>Religion: +2 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
@@ -129,7 +130,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Architecture Lore: +6 (intelligence; trained)</td>
       <td>Medicine: +2 (wisdom; untrained)</td>
-      <td>Stealth: +6 (dexterity; trained)</td>
+      <td>Stealth: +7 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
       <td>Art Lore: +6 (intelligence; trained)</td>
       <td>Military Lore: +6 (intelligence; trained)</td>
@@ -137,7 +138,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Athletics: +1 (strength; untrained)</td>
       <td>Nature: +2 (wisdom; untrained)</td>
-      <td>Thievery: +6 (dexterity; trained)</td>
+      <td>Thievery: +7 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +6 (intelligence; trained)</td>
       <td>Occultism: +1 (intelligence; untrained)</td>
@@ -182,8 +183,8 @@ var attributes = {
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 35</td>
-        <td><b>Armor Class</b>: 16 (dexterity; trained)</td>
-        <td><b>Class DC</b>: Rogue: 5 (%1; %2)</td>
+        <td><b>Armor Class</b>: 17 (dexterity; trained)</td>
+        <td><b>Class DC</b>: Rogue: 17 (dexterity; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -191,7 +192,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: None</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Hand Crossbow (+6 1d6 P R60'; dexterity; trained); Scythe (+6 1d10+1 S [Crit +d10]; strength; trained); Staff (+6 1d4+1 B [2h d8]; strength; trained)</td>
+        <td><b>Weapons</b>: Hand Crossbow (+7 1d6 P R60'; dexterity; trained); Scythe (+6 1d10+1 S [Crit +d10]; strength; trained); Staff (+6 1d4+1 B [2h d8]; strength; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -199,11 +200,13 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Armor Class Adjustment: +1</i></td>
+        <td><i>Dexterity Armor Class Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Attack Adjustment: +1</i></td>
+        <td><i>Dexterity Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +1</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Thief: +1 damage with finesse melee weapons</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry: Treats Rapier as one category simpler</i></td>
       </tr><tr style="text-align:center">
@@ -223,7 +226,7 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +6 (constitution; trained); Reflex: +8 (dexterity; expert); Will: +9 (wisdom; expert)</td>
+      <td><b>Save</b>: Fortitude: +6 (constitution; trained); Reflex: +9 (dexterity; expert); Will: +9 (wisdom; expert)</td>
     </tr></table>
 </td>
   </tr></table>

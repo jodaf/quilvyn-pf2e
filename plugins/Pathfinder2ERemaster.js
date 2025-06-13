@@ -2293,7 +2293,9 @@ Pathfinder2ERemaster.FEATS = {
   'Shield Warden':
     'Traits=Class,Champion,Fighter Require="level >=6","features.Shield Block"',
   'Triple Shot':Pathfinder2E.FEATS['Triple Shot'],
-  'Blind-Fight':Pathfinder2E.FEATS['Blind-Fight'],
+  'Blind-Fight':
+    Pathfinder2E.FEATS['Blind-Fight']
+    .replace('Class', 'Class,Investigator'),
   'Disorienting Opening':
     'Traits=Class,Fighter Require="level >= 8","features.Reactive Strike"',
   'Dueling Riposte':Pathfinder2E.FEATS['Dueling Riposte'],
@@ -2347,7 +2349,8 @@ Pathfinder2ERemaster.FEATS = {
   'Graceful Poise':Pathfinder2E.FEATS['Graceful Poise'],
   'Improved Reflexive Shield':Pathfinder2E.FEATS['Improved Reflexive Shield'],
   'Master Of Many Styles':
-    'Traits=Class,Fighter Require="level >= 16","features.Opening Stance"',
+    'Traits=Class,Fighter,Monk ' +
+    'Require="level >= 16","features.Opening Stance || features.Stance Savant"',
   'Multishot Stance':
     Pathfinder2E.FEATS['Multishot Stance']
     .replace('Triple', 'Double'),
@@ -2413,7 +2416,9 @@ Pathfinder2ERemaster.FEATS = {
   // Side By Side as above
   "Warden's Focus":
     'Traits=Class,Ranger Require="level >= 12","features.Initiate Warden"',
-  'Sense The Unseen':Pathfinder2E.FEATS['Sense The Unseen'],
+  'Sense The Unseen':
+    Pathfinder2E.FEATS['Sense The Unseen']
+    .replace('Class', 'Class,Investigator'),
   'Shared Prey':Pathfinder2E.FEATS['Shared Prey'],
   'Stealthy Companion':Pathfinder2E.FEATS['Stealthy Companion'],
   "Warden's Guidance":Pathfinder2E.FEATS["Warden's Guidance"],
@@ -2443,7 +2448,9 @@ Pathfinder2ERemaster.FEATS = {
   'Nimble Dodge':Pathfinder2E.FEATS['Nimble Dodge'],
   'Overextending Feint':'Traits=Class,Rogue Require="rank.Deception >= 1"',
   'Plant Evidence':'Traits=Class,Rogue Require="features.Pickpocket"',
-  'Trap Finder':Pathfinder2E.FEATS['Trap Finder'],
+  'Trap Finder':
+    Pathfinder2E.FEATS['Trap Finder']
+    .replace('Class', 'Class,Investigator'),
   'Tumble Behind':'Traits=Class,Rogue',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
   "You're Next":Pathfinder2E.FEATS["You're Next"],
@@ -2490,7 +2497,7 @@ Pathfinder2ERemaster.FEATS = {
   'Inspired Stratagem':'Traits=Class,Rogue Require="level >= 8"',
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
-  'Predictive Purchase':'Traits=Class,Rogue Require="level >= 8"',
+  'Predictive Purchase':'Traits=Class,Rogue,Investigator Require="level >= 8"',
   // Ricochet Stance as above
   'Sidestep':Pathfinder2E.FEATS.Sidestep,
   'Sly Striker':Pathfinder2E.FEATS['Sly Striker'],
@@ -2531,12 +2538,13 @@ Pathfinder2ERemaster.FEATS = {
   'Dispelling Slice':Pathfinder2E.FEATS['Dispelling Slice'],
   'Perfect Distraction':Pathfinder2E.FEATS['Perfect Distraction'],
   'Reconstruct The Scene':
-    'Traits=Class,Rogue,Concentrate Require="level >= 16"',
+    'Traits=Class,Rogue,Investigator,Concentrate Require="level >= 16"',
   'Swift Elusion':
     'Traits=Class,Rogue Require="level >= 16","rank.Acrobatics >= 4"',
   'Implausible Infiltration':Pathfinder2E.FEATS['Implausible Infiltration'],
   'Implausible Purchase':
-    'Traits=Class,Rogue Require="level >= 18","features.Predictive Purchase"',
+    'Traits=Class,Rogue,Investigator ' +
+    'Require="level >= 18","features.Predictive Purchase"',
   'Powerful Sneak':Pathfinder2E.FEATS['Powerful Sneak'],
   "Trickster's Ace":
     Pathfinder2E.FEATS["Trickster's Ace"]
@@ -3276,7 +3284,7 @@ Pathfinder2ERemaster.FEATS = {
   'Known Weaknesses':'Traits=Class,Investigator',
   'Takedown Expert':'Traits=Class,Investigator',
   "That's Odd":'Traits=Class,Investigator',
-  'Trap Finder':'Traits=Class,Investigator',
+  // Trap Finder as above
   'Underworld Investigator':'Traits=Class,Investigator',
   'Athletic Strategist':
     'Traits=Class,Investigator Require="level >= 2","rank.Athletics >= 1"',
@@ -3300,10 +3308,9 @@ Pathfinder2ERemaster.FEATS = {
   'Connect The Dots':
     'Traits=Class,Investigator,Auditory,Concentrate,Linguistic ' +
     'Require="level >= 6"',
-  'Predictive Purchase':'Traits=Class,Investigator Require="level >= 6"',
+  // Predictive Purchase as above
   'Thorough Research':'Traits=Class,Investigator Require="level >= 6"',
-  'Blind-Fight':
-    'Traits=Class,Investigator Require="level >= 8","rank.Perception >= 3"',
+  // Blind-Fight as above
   'Clue Them All In':'Traits=Class,Investigator Require="level >= 8"',
   'Defensive Strategem':'Traits=Class,Investigator Require="level >= 8"',
   'Whodunnit?':'Traits=Class,Investigator,Uncommon Require="level >= 8"',
@@ -3333,21 +3340,17 @@ Pathfinder2ERemaster.FEATS = {
   'Plot The Future':
     'Traits=Class,Investigator,Uncommon,Concentrate,Prediction ' +
     'Require="level >= 14"',
-  'Sense The Unseen':'Traits=Class,Investigator Require="level >= 14"',
+  // Sense The Unseen as above
   'Strategic Bypass':'Traits=Class,Investigator Require="level >= 14"',
   'Didactic Strike':
     'Traits=Class,Investigator ' +
     'Require="level >= 16","features.Shared Strategem"',
-  'Implausible Purchase':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 16","features.Predictive Purchase"',
-  'Reconstruct The Scene':
-    'Traits=Class,Investigator,Concentrate Require="level >= 16"',
+  // Implausible Purchase as above
+  // Reconstruct The Scene as above
   'Lead Investigator':
     'Traits=Class,Investigator,Exploration ' +
     'Require="level >= 18","features.Clue Them All In"',
-  "Trickster's Ace":
-    'Traits=Class,Investigator,Concentrate Require="level >= 18"',
+  // Trickster's Ace as above
   "Everyone's A Suspect":'Traits=Class,Investigator Require="level >= 20"',
   'Just The Facts':
     'Traits=Class,Investigator ' +
@@ -3463,9 +3466,7 @@ Pathfinder2ERemaster.FEATS = {
   'Fuse Stance':
     Pathfinder2E.FEATS['Fuse Stance']
     .replace('20', '16'),
-  'Master Of Many Styles':
-    Pathfinder2E.FEATS['Master Of Many Styles']
-    .replace('Stance Savant', 'Reflexive Stance'),
+  // Master Of Many Styles
   'Master Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
   'One-Millimeter Punch':'Traits=Class,Monk Require="features.One-Inch Punch"',
   'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
@@ -8499,7 +8500,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'stunned, \')+\'drained, slowed, \':\'\'}blinded, dazzled, deafened, enfeebled, or sickened"',
   'Mercy (Grace)':
     'Section=magic ' +
-    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<12\'\':level<16?\'petrified, \':\'petrified, stunned, \')+\'immobilized, restrained, slowed, \':\'\'}clumsy, grabbed, or paralyzed"',
+    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<12?\'\':level<16?\'petrified, \':\'petrified, stunned, \')+\'immobilized, restrained, slowed, \':\'\'}clumsy, grabbed, or paralyzed"',
   'Mercy (Mind)':
     'Section=magic ' +
     'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'doomed, stunned, \')+\'confused, controlled,slowed, \':\'\'}fleeing, frightened, or stupefied"',
@@ -8669,6 +8670,55 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Has an additional action each rd to Step or Stride, and aura allows allies to move without triggering reactions"',
 
+  // Investigator
+  'Alchemical Sciences':
+    'Section=feature Note="TODO"',
+  'Clue In':
+    'Section=feature Note="TODO"',
+  'Deductive Improvisation':
+    'Section=feature Note="TODO"',
+  'Devise A Stratagen':
+    'Section=feature Note="TODO"',
+  'Dogged Will':
+    'Section=feature Note="TODO"',
+  'Empiricism':
+    'Section=feature Note="TODO"',
+  'Forensic Medicine':
+    'Section=feature Note="TODO"',
+  'Incredible Senses':
+    'Section=feature Note="TODO"',
+  'Interrogation':
+    'Section=feature Note="TODO"',
+  // Fortitude Expertise as above
+  'Greater Dogged Will':
+    'Section=feature Note="TODO"',
+  // Greater Weapon Specialization as above
+  'Investigator Expertise':
+    'Section=feature Note="TODO"',
+  'Investigator Feats':'Section=feature Note="%V selections"',
+  'Investigator Skills':
+    'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
+  'Keen Recollection':
+    'Section=feature Note="TODO"',
+  // Light Armor Expertise as above
+  // Light Armor Mastery as above
+  'Master Detective':
+    'Section=feature Note="TODO"',
+  'Methodology':'Section=feature Note="1 selection"',
+  'On The Case':
+    'Section=feature Note="TODO"',
+  'Savvy Reflexes':
+    'Section=feature Note="TODO"',
+  'Skillful Lessons':
+    'Section=feature Note="TODO"',
+  'Strategic Strikes':
+    'Section=feature Note="TODO"',
+  'Vigilant Senses':
+    'Section=feature Note="TODO"',
+  // Weapon Expertise as above
+  // Weapon Mastery as above
+  // Weapon Specialization as above
+
   // Monk
   'Adamantine Strikes':Pathfinder2E.FEATURES['Adamantine Strikes'],
   'Expert Strikes':Pathfinder2E.FEATURES['Expert Strikes'],
@@ -8753,7 +8803,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,save ' +
     'Note=' +
       '"Stance allows only hand Strikes that inflict 1d4 HP piercing, or 1d10 HP on a critical hit",' +
-      '"Stance give +1 Fortitude and Fortitude DC and poison resistance %{level//2}"',
+      '"Stance gives +%{combatNotes.cobraEnvenom?2:1} Fortitude and Fortitude DC and poison resistance %{level//2}"',
   'Deflect Projectile':Pathfinder2E.FEATURES['Deflect Arrow'],
   'Flurry Of Maneuvers':
     Pathfinder2E.FEATURES['Flurry Of Maneuvers']
@@ -8767,7 +8817,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Monastic Weaponry':
     // TODO implement
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
-  'Qi Spells':
+  'Advanced Qi Spells':
     'Section=magic ' +
     'Note="Knows choice of 3rd-rank monk qi spell/+1 Focus Points"',
   'Align Qi':
@@ -8789,110 +8839,121 @@ Pathfinder2ERemaster.FEATURES = {
   'Water Step':Pathfinder2E.FEATURES['Water Step'],
   'Whirling Throw':Pathfinder2E.FEATURES['Whirling Throw'],
   'Wolf Drag':Pathfinder2E.FEATURES['Wolf Drag'],
-
-/*
-
-  'Ironblood Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Unarmored stance allows unarmed sweep Strikes that inflict 1d8 HP bludgeoning and gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage"',
-  'Mixed Maneuver':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Uses 2 choices of Grapple, Shove, and Trip at the current multiple attack penalty"',
-  'Tangled Forest Stance':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
-  'Wall Run':
-    'Action=1 Section=ability Note="Strides on vertical surfaces"',
-  'Wild Winds Initiate':
+  'Clinging Shadows Initiate':
     'Section=magic ' +
-    'Note="Knows the Wild Winds Stance occult spell/+1 Focus Points"',
-  'Knockback Strike':
-    'Action=2 ' +
+    'Note="Knows the Clinging Shadows Stance occult focus spell/+1 Focus Points"',
+  'Ironblood Stance':Pathfinder2E.FEATURES['Ironblood Stance'],
+  'Mixed Maneuver':
+    Pathfinder2E.FEATURES['Mixed Maneuver']
+    .replace('Shove', 'Reposition, Shove'),
+  'Pinning Fire':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="A successful unarmed Strike also allows an Athletics check to Shove"',
-  'Sleeper Hold':
-    'Action=1 ' +
+    'Note="Two successful ranged Flurry Of Blows Strikes inflict immobilized (<b>save Reflex</b> negates; successful DC 10 Athletics by target or adjacent creature ends)"',
+  'Projectile Snatching':
     'Section=combat ' +
-    'Note="Successful grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success"',
-  'Wind Jump':
-    'Section=magic Note="Knows the Wind Jump occult spell/+1 Focus Points"',
-  'Winding Flow':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Uses 2 choices of Stand, Step, and Stride"',
-  'Diamond Soul':'Section=save Note="+1 vs. magic"',
-  'Disrupt Ki':
-    'Action=2 ' +
-    'Section=combat ' +
-    'Note="Unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
-  'Improved Knockback':
-    'Section=combat ' +
-    'Note="Successful Shove moves +5\' (critical success +10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
-  'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  // Stance Savant as above
-  'Ironblood Surge':
+    'Note="Deflect Projectile allows an immediate Strike against the attacker"',
+  'Tangled Forest Stance':Pathfinder2E.FEATURES['Tangled Forest Stance'],
+  'Wall Run':Pathfinder2E.FEATURES['Wall Run'],
+  'Wild Winds Initiate':Pathfinder2E.FEATURES['Wild Winds Initiate'],
+  'Cobra Envenom':
     'Action=1 ' +
     'Section=combat,combat ' +
     'Note=' +
-      '"Has increased Ironblood Stance effects",' +
-      '"While in Ironblood Stance, gains +1 Armor Class for 1 rd"',
-  'Mountain Quake':
+      '"Has increased Cobra Stance features",' +
+      '"Strike from Cobra Stance gains +5\' reach and +1d4 HP persitent poison"',
+  'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
+  'Prevailing Position':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Leaving current stance gives +4 save or Armor Class vs. triggering damage"',
+  'Sleeper Hold':Pathfinder2E.FEATURES['Sleeper Hold'],
+  'Wind Jump':Pathfinder2E.FEATURES['Wind Jump'],
+  'Winding Flow':Pathfinder2E.FEATURES['Winding Flow'],
+  'Disrupt Qi':
+    Pathfinder2E.FEATURES['Disrupt Ki']
+    .replace('negative', 'void'),
+  'Dodging Roll':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Steps when in area affected by area damage, gaining resistance %{level} to all damage, or %{level+dexterityModifier} if the Step exits the affected area"',
+  'Focused Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (<b>save basic Fortitude</b>) once per 1d4 rd"',
-  'Tangled Forest Rake':
+    'Note="Ranged Strike within first range increment ignores cover and concealment"',
+  'Improved Knockback':
+    Pathfinder2E.FEATURES['Improved Knockback']
+    .replace(/inflicts.HP bludgeoning/, "1d6 HP bludgeoning per 5'"),
+  'Meditative Focus':
+    Pathfinder2E.FEATURES['Meditative Focus']
+    .replace('2', 'all'),
+  'Overwhelming Breath':
     'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent monk spell with no duration ignore resistance %{level} to physical damage"',
+  'Reflexive Stance':
+    'Action=Free ' +
     'Section=combat ' +
-    'Note="While in Tangled Forest Stance, a successful lashing Strike moves the target 5\' into a space within reach"',
-  'Timeless Body':
+    'Note="Enters a stance during initiative"',
+  'Form Lock':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Successful Athletics check counteracts a polymorph effect effecting target once per target per day"',
+  'Ironblood Surge':Pathfinder2E.FEATURES['Ironblood Surge'],
+  'Mountain Quake':Pathfinder2E.FEATURES['Mountain Quake'],
+  'Peerless Form':
     'Section=feature,save ' +
     'Note=' +
       '"Does not age",' +
-      '"+2 vs. poisons and diseases and has Resistance %{level//2} to poison"',
-  'Tongue Of Sun And Moon':
-    'Section=skill Note="Can speak and understand all spoken languages"',
-  'Wild Winds Gust':
-    'Action=2 ' +
+      '"+2 Fortitude/+2 Will"',
+  "Shadow's Web":
     'Section=magic ' +
-    'Note="Makes a Wild Winds Stance Strike against all creatures in a 30\' cone or 60\' line at the current multiple attack penalty"',
-  'Enlightened Presence':
-    'Section=save ' +
-    'Note="R15\' Gives self and allies +2 Will vs. mental effects"',
-  'Master Of Many Styles':
-    'Action=Free ' +
-    'Section=combat Note="Enters a stance at the beginning of a turn"',
-  'Quivering Palm':
-    'Section=magic ' +
-    'Note="Knows the Quivering Palm occult spell/+1 Focus Points"',
-  'Shattering Strike':
-    'Action=2 ' +
+    'Note="Knows the Shadow\'s Web occult spell/+1 Focus Points"',
+  'Tangled Forest Rake':
+    Pathfinder2E.FEATURES['Tangled Forest Rake']
+   .replace("5'", "10'"),
+  'Whirling Blade Stance':
+    'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmed Strike bypasses target resistances and ignores half of target\'s Hardness"',
+    'Note="Stance allows making Strikes by throwing monk finesse melee weapons 10\'"',
+  'Wild Winds Gust':Pathfinder2E.FEATURES['Wild Winds Gust'],
+  'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
+  // Master Of Many Styles as above
+  'Master Qi Spells':
+    'Section=magic ' +
+    'Note="Knows choice of 8th-rank monk qi spell/+1 Focus Points"',
+  'One-Millimeter Punch':
+    'Section=combat ' +
+    'Note="One-Inch Punch inflicts 10\' Push (<b>save Fortitude</b> inflicts 5\' Push; critical success negates; critical failure inflicts 10\' Push per action"',
+  'Shattering Strike':Pathfinder2E.FEATURES['Shattering Strike'],
   'Diamond Fists':
-    'Section=combat ' +
-    'Note="Unarmed Strikes gain the forceful trait or increase damage by 1 die step"',
-  'Empty Body':
-    'Section=magic Note="Knows the Empty Body occult spell/+1 Focus Points"',
-  'Meditative Wellspring':
-    'Section=magic Note="Refocus restores 3 Focus Points"',
-  'Swift River':
+    Pathfinder2E.FEATURES['Diamond Fists']
+    .replace('forceful trait', 'forceful and deadly d10 traits'),
+  'Grandmaster Qi Spells':
+    'Section=magic ' +
+    'Note="Knows choice of 9th-rank monk qi spell/+1 Focus Points"',
+  'Qi Center':
     'Action=Free ' +
+    'Section=magic ' +
+    'Note="Casts a single-action qi stance spell without spending a Focus Point"',
+  'Swift River':Pathfinder2E.FEATURES['Swift River'],
+  'Triangle Shot':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Ends one Speed status penalty or condition at the end of a turn"',
-  'Enduring Quickness':
+    'Note="Make 3 bow Strikes against a single target with a -2 penalty"',
+  'Enduring Quickness':Pathfinder2E.FEATURES['Enduring Quickness'],
+  'Godbreaker':
+    'Action=3 ' +
     'Section=combat ' +
-    'Note="Gives an additional action each rd to Stride, Leap, or Jump"',
-  'Fuse Stance':
+    'Note="Successful Strikes after throwing a grappeled foe upward 20\' allows repeating 2 times"',
+  'Immortal Techniques':
     'Section=combat ' +
-    'Note="Has merged two known stances into a unique new stance that grants the effects of both"',
-  'Impossible Technique':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Forces a foe reroll on a hit or gives a reroll on a failed save"',
-*/
+    'Note="Using a monk stance action gives 20 temporary Hit Points for 1 rd"',
+  'Impossible Technique':Pathfinder2E.FEATURES['Impossible Technique'],
+  'Lightning Qi':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
   /*
   // Sorcerer
@@ -11631,10 +11692,47 @@ Pathfinder2ERemaster.SPELLS = {
       '"Allows self to Stride (using 2 actions gives 2 Strides) without triggering reactions, ignoring greater difficult terrain, and with resistance %{level} to all damage while moving"',
 
   // Monk
+  'Inner Upheaval':
+    Pathfinder2E.SPELLS['Ki Strike']
+    .replace('Transmutation', 'Concentrate')
+    .replace('lawful, negative, or positive', 'spirit, vitality, or void'),
+  'Qi Rush':
+    Pathfinder2E.SPELLS['Ki Rush']
+    .replace('Transmutation', 'Concentrate'),
+  'Qi Blast':
+    Pathfinder2E.SPELLS['Ki Blast']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Shrink The Span':
+    Pathfinder2E.SPELLS['Abundant Step']
+    .replace('Conjuration', 'Manipulate') + ' ' +
+    'Level=3',
+  "Medusa's Wrath":
+    'Level=8 ' +
+    'Traits=Uncommon,Focus,Monk,Concentrate,Manipulate '  +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent successful or failed Fortitude reduce or increase the slowed condition by 1, or by 2 on a critical faiure"',
+  'Touch Of Death':
+    Pathfinder2E.SPELLS['Quivering Palm']
+    .replace('Necromancy', 'Concentrate,Manipulate'),
   'Harmonize Self':
     Pathfinder2E.SPELLS['Wholeness Of Body']
     .replace('Necromancy', 'Concentrate')
-    .replace('Positive', 'Vitality')
+    .replace('Positive', 'Vitality'),
+  "Shadow's Web":
+    'Level=7 ' +
+    'Traits=Uncommon,Focus,Monk,Concentrate,Manipulate ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"30\' emanation inflicts 14d4 HP void and enfeebled 2 for 1 rd (<b>save Fortitude</b> inflicts half HP and enfeebled 1 for 1 rd; critical success negates; critical failure inflicts double HP, stunned 1, enfeebled 2 for 1 rd, and immobilized for 1 rd)"',
+  'Wild Winds Stance':
+    Pathfinder2E.SPELLS['Wild Winds Stance']
+    .replace('Evocation', 'Manipulate'),
+  'Wind Jump':
+    Pathfinder2E.SPELLS['Wind Jump']
+    .replace('Transmutation', 'Concentrate')
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -12264,6 +12362,13 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   } else if(name == 'Fighter') {
     rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
       'featureNotes.fighterKeyAttribute', '=', '1'
+    );
+  } else if(name == 'Investigator') {
+    rules.defineRule('selectableFeatureCounts.Investigator (Methodology)',
+      'featureNotes.methodology', '=', '1'
+    );
+    rules.defineRule('skillNotes.investigatorSkills',
+      'intelligenceModifier', '=', '4 + source'
     );
   } else if(name == 'Ranger') {
     rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
