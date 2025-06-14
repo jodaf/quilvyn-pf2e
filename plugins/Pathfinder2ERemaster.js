@@ -880,8 +880,8 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Champion Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Champion)",' +
+      '"1:Class Trained (Champion)",' +
       '"1:Deity","1:Sanctification","1:Deific Weapon","1:Champion\'s Aura",' +
       '"1:Cause","1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Blessing Of The Devoted","3:General Feats",' +
@@ -984,6 +984,47 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Path To Perfection (Reflex) ? 7:Third Path To Perfection (Reflex):Third Perfection",' +
       '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
 
+  'Oracle':
+    'Ability=charisma HitPoints=8 ' +
+    'Features=' +
+      '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
+      '"1:Perception Trained",' +
+      '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
+      '"1:Oracle Skills",' +
+      '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
+      '"1:Class Trained (Oracle)",' +
+      '"1:Oracle Spellcasting","1:Mystery","1:Revelation Spells",' +
+      '"1:Oracular Curse","2:Oracle Feats","2:Skill Feats","3:General Feats",' +
+      '"3:Signature Spells","3:Skill Increases","7:Expert Spellcaster",' +
+      '"7:Mysterious Resolve","11:Divine Access","11:Major Curse",' +
+      '"11:Oracular Senses","11:Weapon Expertise","13:Light Armor Expertise",' +
+      '"13:Premonition\'s Reflexes","13:Weapon Specialization",' +
+      '"15:Master Spellcaster","17:Extreme Curse",' +
+      '"17:Greater Mysterious Resolve","19:Legendary Spellcaster",' +
+      '"19:Oracular Clarity" ' +
+    'Selectables=' +
+      '"1:Ancestors:Mystery",' +
+      '"1:Battle:Mystery",' +
+      '"1:Bones:Mystery",' +
+      '"1:Cosmos:Mystery",' +
+      '"1:Flames:Mystery",' +
+      '"1:Life:Mystery",' +
+      '"1:Lore:Mystery",' +
+      '"1:Tempest:Mystery" ' +
+    'SpellSlots=' +
+      'DC1:5@1,' +
+      'D1:3@1;4@2,' +
+      'D2:3@3;4@4,' +
+      'D3:3@5;4@6,' +
+      'D4:3@7;4@8,' +
+      'D5:3@9;4@10,' +
+      'D6:3@11;4@12,' +
+      'D7:3@13;4@14,' +
+      'D8:3@15;4@16,' +
+      'D9:3@17;4@18,' +
+      'D10:1@19',
+
   'Sorcerer':
     // Ability => Attribute
     // null => 1:Class Trained (Sorcerer)
@@ -999,6 +1040,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Sorcerer Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
+      '"1:Class Trained (Sorcerer)",' +
       '1:Bloodline,"1:Sorcerer Spellcasting","1:Sorcerous Potency",' +
       '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
       '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
@@ -1037,7 +1079,36 @@ Pathfinder2ERemaster.CLASSES = {
       '7:3@13;4@14,' +
       '8:3@15;4@16,' +
       '9:3@17;4@18,' +
-      '10:1@19'
+      '10:1@19',
+
+  'Swashbuckler':
+    'Ability=dexterity HitPoints=10 ' +
+    'Features=' +
+      '"1:Attribute Boosts","1:Attribute Boost (Dexterity)",' +
+      '"1:Perception Expert",' +
+      '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
+      '"1:Swashbuckler Skills",' +
+      '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
+      '"1:Defense Trained (Unarmored Defense)",' +
+      '"1:Class Trained (Swashbuckler)",' +
+      '"1:Panache","1:Precise Strike","1:Stylish Combatant",' +
+      '"1:Swashbuckler\'s Style","1:Confident Finisher",' +
+      '"1:Swashbuckler Feats","3:Fortitude Expertise","3:General Feats",' +
+      '"3:Opporune Riposte","3:Skill Increases","3:Stylish Tricks",' +
+      '"3:Vivacious Speed","5:Weapon Expertise","7:Confident Evasion",' +
+      '"7:Weapon Specialization","9:Exemplary Finisher",' +
+      '"9:Swashbuckler Expertise","11:Continuous Flair",' +
+      '"11:Perception Mastery","13:Assured Evasion",' +
+      '"13:Light Armor Expertise","13:Weapon Mastery",' +
+      '"15:Greater Weapon Specialization","15:Keen Flair",' +
+      '"17:Reinforced Ego","19:Eternal Confidence","19:Light Armor Mastery" ' +
+    'Selectables=' +
+      '"1:Battledancer:Style",' +
+      '"1:Braggart:Style",' +
+      '"1:Fencer:Style",' +
+      '"1:Gymnast:Style",' +
+      '"1:Rascal:Style",' +
+      '"1:Wit:Style"',
 
 };
 Pathfinder2ERemaster.DEITIES = {
