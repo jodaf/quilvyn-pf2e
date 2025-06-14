@@ -984,42 +984,43 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Path To Perfection (Reflex) ? 7:Third Path To Perfection (Reflex):Third Perfection",' +
       '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
 
-/*
   'Sorcerer':
+    // Ability => Attribute
+    // null => 1:Class Trained (Sorcerer)
+    // null => 1:Sorcerous Potency
+    // 17:Resolve => 17:Majestic Will
+    // added Elemental (Metal) and Elemental (Wood) bloodlines
+    // Draconic Bloodline changed to different examplars
     'Ability=charisma HitPoints=6 ' +
     'Features=' +
-      '"1:Ability Boosts","1:Ability Boost (Charisma)",' +
+      '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","Save Trained (Fortitude; Reflex)",' +
       '"1:Sorcerer Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
-      '1:Bloodline,"1:Sorcerer Spellcasting","2:Skill Feats",' +
-      '"2:Sorcerer Feats","3:General Feats","3:Signature Spells",' +
-      '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
-      '"9:Reflex Expertise","11:Perception Expertise","11:Weapon Expertise",' +
-      '"13:Defensive Robes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster",17:Resolve,"19:Bloodline Paragon",' +
+      '1:Bloodline,"1:Sorcerer Spellcasting","1:Sorcerous Potency",' +
+      '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
+      '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
+      '"7:Expert Spellcaster","9:Reflex Expertise","11:Perception Expertise",' +
+      '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
+      '"15:Master Spellcaster","17:Majestic Will","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
       '1:Aberrant:Bloodline,' +
       '1:Angelic:Bloodline,' +
       '1:Demonic:Bloodline,' +
       '1:Diabolic:Bloodline,' +
-      '"1:Draconic (Brass):Bloodline",' +
-      '"1:Draconic (Bronze):Bloodline",' +
-      '"1:Draconic (Copper):Bloodline",' +
-      '"1:Draconic (Gold):Bloodline",' +
-      '"1:Draconic (Silver):Bloodline",' +
-      '"1:Draconic (Black):Bloodline",' +
-      '"1:Draconic (Blue):Bloodline",' +
-      '"1:Draconic (Green):Bloodline",' +
-      '"1:Draconic (Red):Bloodline",' +
-      '"1:Draconic (White):Bloodline",' +
+      '"1:Draconic (Arcane):Bloodline",' +
+      '"1:Draconic (Divine):Bloodline",' +
+      '"1:Draconic (Occult):Bloodline",' +
+      '"1:Draconic (Primal):Bloodline",' +
       '"1:Elemental (Air):Bloodline",' +
       '"1:Elemental (Earth):Bloodline",' +
       '"1:Elemental (Fire):Bloodline",' +
+      '"1:Elemental (Metal):Bloodline",' +
       '"1:Elemental (Water):Bloodline",' +
+      '"1:Elemental (Wood):Bloodline",' +
       '1:Fey:Bloodline,' +
       '1:Hag:Bloodline,' +
       '1:Imperial:Bloodline,' +
@@ -1036,8 +1037,7 @@ Pathfinder2ERemaster.CLASSES = {
       '7:3@13;4@14,' +
       '8:3@15;4@16,' +
       '9:3@17;4@18,' +
-      '10:1@19',
-*/
+      '10:1@19'
 
 };
 Pathfinder2ERemaster.DEITIES = {
@@ -3491,65 +3491,77 @@ Pathfinder2ERemaster.FEATS = {
   'Impossible Technique':Pathfinder2E.FEATS['Impossible Technique'],
   'Lightning Qi':'Traits=Class,Monk Require="level >= 20","features.Qi Spells"',
 
-/*
   // Sorcerer
-  // Counterspell as above
-  'Dangerous Sorcery':'Traits=Class,Sorcerer',
+  'Blood Rising':'Traits=Class,Sorcerer',
   // Familiar as above
   // Reach Spell as above
+  'Tap Into Blood':'Traits=Class,Sorcerer,Concentrate',
   // Widen Spell as above
+  'Anoint Ally':'Traits=Class,Sorcerer,Manipulate Require="level >= 2"',
+  'Bleed Out':'Traits=Class,Sorcerer,Attack Require="level >= 2"',
   // Cantrip Expansion as above
   // Enhanced Familiar as above
-  'Arcane Evolution':
-    'Traits=Class,Sorcerer,Arcane ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Arcane\'"',
+  'Propelling Sorcery':'Traits=Class,Sorcerer Require="level >= 2"',
+  'Arcane Evolution':Pathfinder2E.FEATS['Arcane Evolution'],
   // Bespell Strikes as above
-  'Divine Evolution':
-    'Traits=Class,Sorcerer,Divine ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Divine\'"',
-  'Occult Evolution':
-    'Traits=Class,Sorcerer,Occult ' +
-     'Require="level >= 4","bloodlineTraditions =~ \'Occult\'"',
-  'Primal Evolution':
-    'Traits=Class,Sorcerer,Primal ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Primal\'"',
-  'Advanced Bloodline':
-    'Traits=Class,Sorcerer Require="level >= 6","features.Bloodline"',
+  'Divine Evolution':Pathfinder2E.FEATS['Divine Evolution'],
+  'Occult Evolution':Pathfinder2E.FEATS['Occult Evolution'],
+  'Primal Evolution':Pathfinder2E.FEATS['Primal Evolution'],
+  'Split Shot':'Traits=Class,Sorcerer,Spellshape Require="level >= 4"',
+  'Advanced Bloodline':Pathfinder2E.FEATS['Advanced Bloodline'],
+  'Diverting Vortex':'Traits=Class,Sorcerer Require="level >= 6"',
+  'Energy Ward':'Traits=Class,Sorcerer Require="level >= 6"',
+  'Safeguard Spell':
+    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 6"',
+  'Spell Relay':'Traits=Class,Sorcerer,Concentrate Require="level >= 6"',
   // Steady Spellcasting as above
-  'Bloodline Resistance':'Traits=Class,Sorcerer Require="level >= 8"',
-  'Crossblooded Evolution':'Traits=Class,Sorcerer Require="level >= 8"',
-  'Greater Bloodline':
-    'Traits=Class,Sorcerer Require="level >= 10","features.Bloodline"',
+  'Bloodline Resistance':Pathfinder2E.FEATS['Bloodline Resistance'],
+  'Crossblooded Evolution':Pathfinder2E.FEATS['Crossblooded Evolution'],
+  'Explosion Of Power':'Traits=Class,Sorcerer Require="level >= 8"',
+  'Energy Fusion':
+    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 10"',
+  'Greater Bloodline':Pathfinder2E.FEATS['Greater Bloodline'],
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Bloodline Focus':
-    'Traits=Class,Sorcerer Require="level >= 12","features.Bloodline"',
+  'Signature Spell Expansion':'Traits=Class,Sorcerer Require="level >= 10"',
+  'Blood Sovereignty':'Traits=Class,Sorcerer Require="level >= 12"',
+  'Bloodline Focus':Pathfinder2E.FEATS['Bloodline Focus'],
+  'Greater Physical Evolution':
+    'Traits=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Arcane Evolution || features.Primal Evolution"',
+  'Greater Spiritual Evolution':
+    'Traits=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Divine Evolution || features.Occult Evolution"',
   // Magic Sense as above
+  'Terraforming Trickery':
+    'Traits=Class,Sorcerer,Concentrate,Earth Require="level >= 12"',
+  'Blood Ascendancy':
+    'Traits=Class,Sorcerer Require="level >= 12","features.Blood Rising"',
   'Interweave Dispel':
-    'Traits=Class,Sorcerer,Metamagic ' +
-    'Require="level >= 14","knowsDispelMagicSpell"',
-  // Reflect Spell as above
+    Pathfinder2E.FEATS['Interweave Dispel']
+    .replace('Metamagic', 'Spellshape'),
+  'Reflect Harm':'Traits=Class,Sorcerer Require="level >= 14"',
+  'Spell Shroud':
+    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 14"',
   // Effortless Concentration as above
-  'Greater Mental Evolution':
-    'Traits=Class,Sorcerer ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Arcane Evolution || features.Occult Evolution"',
-  'Greater Vital Evolution':
-    'Traits=Class,Sorcerer ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Divine Evolution || features.Primal Evolution"',
-  'Bloodline Wellspring':
-    'Traits=Class,Sorcerer Require="level >= 18","features.Bloodline Focus"',
+  'Greater Mental Evolution':Pathfinder2E.FEATS['Greater Mental Evolution'],
+  'Greater Vital Evolution':Pathfinder2E.FEATS['Greater Vital Evolution'],
+  'Scintillating Spell':
+    'Traits=Class,Sorcerer,Concentrate,Light,Spellshape Require="level >= 16"',
+  'Echoing Spell':
+    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 18"',
   'Greater Crossblooded Evolution':
-    'Traits=Class,Sorcerer ' +
-    'Require="level >= 18","features.Crossblooded Evolution"',
-  'Bloodline Conduit':'Traits=Class,Sorcerer,Metamagic Require="level >= 20"',
-  'Bloodline Perfection':
-    'Traits=Class,Sorcerer Require="level >= 20","features.Bloodline Paragon"',
+    Pathfinder2E.FEATS['Greater Crossblooded Evolution'],
+  'Bloodline Conduit':
+    Pathfinder2E.FEATS['Bloodline Conduit']
+    .replace('Metamagic', 'Spellshape'),
+  'Bloodline Mutation':'Traits=Class,Sorcerer Require="level >= 20"',
+  'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
-*/
 
 /*
   // Archetype
@@ -8672,49 +8684,96 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Investigator
   'Alchemical Sciences':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Alchemical Crafting and Quick Tincture features",' +
+      '"Skill Trained (Crafting)",' +
+      '"Knows the formulas for %{level+1} common alchemical elixirs or tools and can create %{intelligenceModifier>?0} versatile vial%{intelligenceModifier==1?\'\':\'s\'} during daily prep"',
   'Clue In':
-    'Section=feature Note="TODO"',
+    'Action=Reaction ' +
+    'Section=skill ' +
+    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} Perception on a check that will help to answer the Persue A Lead question"',
   'Deductive Improvisation':
-    'Section=feature Note="TODO"',
+    'Section=skill ' +
+    'Note="Can attempt checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
   'Devise A Stratagen':
-    'Section=feature Note="TODO"',
-  'Dogged Will':
-    'Section=feature Note="TODO"',
+    'Action=1 ' +
+    'Section=combat,skill ' +
+    'Note=' +
+      '"First Strike using a agile or finesse weapon against the target uses intelligence modifier instead of strength or dexterity",' +
+      '"Gives +1 on the next intelligence-, wisdom-, or charisma-based Perception check involving the target before the start of the next turn"',
+  'Dogged Will':'Section=save Note="Save Master (Will)"',
   'Empiricism':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the That\'s Odd and Expedition Inspection features",' +
+      // TODO randomizing problem
+      '"Skill Trained (Choose 1 from any intelligence)"',
+  'Expeditious Inspection':
+    'Action=Free ' +
+    'Section=skill ' +
+    'Note="Uses Recall Knowledge, Seek, or Sense Motive once per 10 min"',
   'Forensic Medicine':
-    'Section=feature Note="TODO"',
-  'Incredible Senses':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Forensic Acumen and Battle Medicine features",' +
+      '"Skill Trained (Medicine)",' +
+      '"Battle Medicine restores +%{level} Hit Points and can be used on the same target once per hr"',
+  'Incredible Senses':'Section=skill Note="Perception Legendary"',
   'Interrogation':
-    'Section=feature Note="TODO"',
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the No Cause For Alarm and Pointed Question features",' +
+      '"Skill Trained (Diplomacy)",' +
+      '"Can use Persue A Lead and Make An Impression simultaneously"',
   // Fortitude Expertise as above
   'Greater Dogged Will':
-    'Section=feature Note="TODO"',
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Will)",' +
+      '"Succcesses on Will saves are critical successes, and critical failures are failures and inflict half damage"',
   // Greater Weapon Specialization as above
   'Investigator Expertise':
-    'Section=feature Note="TODO"',
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Class Expert (Investigator)",' +
+      '"Increased Persue A Lead effects"',
   'Investigator Feats':'Section=feature Note="%V selections"',
   'Investigator Skills':
     'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
   'Keen Recollection':
-    'Section=feature Note="TODO"',
+    'Section=skill Note="+%{level} on untrained Recall Knowledge checks"',
   // Light Armor Expertise as above
   // Light Armor Mastery as above
   'Master Detective':
-    'Section=feature Note="TODO"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Class Master (Investigator)",' +
+      '"Automatically senses the presence of a clue that pertains to current investigation when entering a new location"',
   'Methodology':'Section=feature Note="1 selection"',
   'On The Case':
-    'Section=feature Note="TODO"',
+    'Section=feature Note="Has the Clue In and Persue A Lead features"',
+  'Persue A Lead':
+    'Section=skill ' +
+    'Note="1 min reflection gives +%{skillNotes.investigatorExpertise?2:1} Perception when attempting to answer a formulated question"',
+  'Pointed Question':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Successful Diplomacy vs. Will gives +2 Perception to detect Lie and inflicts off-guard vs. Devise A Stratagem until the end of the turn; critical success gives +4 Perception; critical failure worsens the target\'s attitude by 1 step"',
+  'Quick Tincture':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Can use a versatile vial to create a alchemical elixir or tool that last until the end of the turn"',
   'Savvy Reflexes':
-    'Section=feature Note="TODO"',
-  'Skillful Lessons':
-    'Section=feature Note="TODO"',
-  'Strategic Strikes':
-    'Section=feature Note="TODO"',
-  'Vigilant Senses':
-    'Section=feature Note="TODO"',
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Reflex)",' +
+      '"Successes on Reflex saves are critical successes"',
+  'Skillful Lessons':'Section=feature Note="+%{(level-1)//2} Skill Feats"',
+  'Strategic Strike':
+    'Section=combat ' +
+    'Note="Successful Strikes using Devising A Stratagem inflict +1d6 HP precision"',
+  'Vigilant Senses':'Section=skill Note="Perception Master"',
   // Weapon Expertise as above
   // Weapon Mastery as above
   // Weapon Specialization as above
@@ -8955,162 +9014,94 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
-  /*
   // Sorcerer
-  // Perception Expertise as above
-  'Bloodline':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"1 selection",' +
-      '"Has a focus pool and 1 Focus Point"',
-  'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
+  'Aberrant':
+    Pathfinder2E.FEATURES.Aberrant
+    .replace('self or target +2', 'self +2 or target -1'),
+  'Angelic':Pathfinder2E.FEATURES.Angelic,
+  'Bloodline':Pathfinder2E.FEATURES.Bloodline,
+  'Bloodline Paragon':Pathfinder2E.FEATURES['Bloodline Paragon'],
   // Defensive Robes as above
+  'Demonic':
+    Pathfinder2E.FEATURES.Demonic
+    .replace('+1', '+2'),
+  'Diabolic':
+    Pathfinder2E.FEATURES.Diabolic
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Draconic (Arcane)':
+    Pathfinder2E.FEATURES['Draconic (Brass)']
+    .replace('Dragon Claws', 'Flurry Of Claws'),
+  'Draconic (Divine)':
+    Pathfinder2E.FEATURES['Draconic (Brass)']
+    .replace('Dragon Claws', 'Flurry Of Claws')
+    .replace('Arcane', 'Divine')
+    .replace('arcane', 'divine')
+    .replace('Arcana', 'Religion'),
+  'Draconic (Occult)':
+    Pathfinder2E.FEATURES['Draconic (Brass)']
+    .replace('Dragon Claws', 'Flurry Of Claws')
+    .replace('Arcane', 'Occult')
+    .replace('arcane', 'occult')
+    .replace('Arcana', 'Occultism'),
+  'Draconic (Primal)':
+    Pathfinder2E.FEATURES['Draconic (Brass)']
+    .replace('Dragon Claws', 'Flurry Of Claws')
+    .replace('Arcane', 'Primal')
+    .replace('arcane', 'primal')
+    .replace('Arcana', 'Nature'),
+  'Elemental (Air)':
+    Pathfinder2E.FEATURES['Elemental (Air)']
+    .replace('+1', '+2')
+    .replace('blugeoning', 'slashing'),
+  'Elemental (Earth)':
+    Pathfinder2E.FEATURES['Elemental (Earth)']
+    .replace('+1', '+2'),
+  'Elemental (Fire)':
+    Pathfinder2E.FEATURES['Elemental (Fire)']
+    .replace('+1', '+2'),
+  'Elemental (Metal)':
+    Pathfinder2E.FEATURES['Elemental (Air)']
+    .replace('+1', '+2')
+    .replace('blugeoning', 'piercing'),
+  'Elemental (Water)':
+    Pathfinder2E.FEATURES['Elemental (Water)']
+    .replace('+1', '+2'),
+  'Elemental (Wood)':
+    Pathfinder2E.FEATURES['Elemental (Earth)']
+    .replace('+1', '+2'),
+  'Fey':
+    Pathfinder2E.FEATURES['Fey']
+    .replace('self or target', 'self +2 Performance or'),
+  'Hag':
+    Pathfinder2E.FEATURES['Hag']
+    .replace('2 HP mental', '4 HP mental')
+    .replace('for 1 rd', 'for 1 rd; if no attacks succeed, gives self temporary Hit Points equal to the spell rank for 1 rd'),
+  'Imperial':
+    Pathfinder2E.FEATURES['Imperial']
+    .replace('self or target', 'self +1 Armor Class or'),
+  'Undead':
+    Pathfinder2E.FEATURES['Undead']
+    .replace('negative', 'void')
+    .replaceAll('level', 'rank'),
   // Expert Spellcaster as above
-  // Legendary Spellcaster as above
-  // Reflex Expertise as above
   // Magical Fortitude as above
+  // Legendary Spellcaster as above
+  'Majestic Will':Pathfinder2E.FEATURES.Resolve,
   // Master Spellcaster as above
-  // Resolve as above
+  // Perception Expertise as above
+  // Reflex Expertise as above
   // Signature Spells as above
-  'Sorcerer Feats':'Section=feature Note="%V selections"',
-  'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
-  'Sorcerer Spellcasting':
-    'Section=magic Note="Can learn spells from the %V tradition"',
+  'Sorcerer Feats':Pathfinder2E.FEATURES['Sorcerer Feats'],
+  'Sorcerer Skills':Pathfinder2E.FEATURES['Sorcerer Skills'],
+  'Sorcerer Spellcasting':Pathfinder2E.FEATURES['Sorcerer Spellcasting'],
+  'Sorcerous Potency':
+    'Section=magic ' +
+    'Note="Initial damage or healing from spell slots inflicts or restores additional Hit Points equal to the spell\'s rank"',
   // Weapon Expertise as above
   // Weapon Specialization as above
 
-  'Aberrant':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Occult)/Knows the Tentacular Limbs occult spell",' +
-      '"Casting a bloodline spell gives self or target +2 Will saves for 1 rd",' +
-      '"Skill Trained (Intimidation; Occultism)"',
-  'Angelic':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Divine)/Knows the Angelic Halo divine spell",' +
-      '"Casting a bloodline spell gives self or target +1 saves for 1 rd",' +
-      '"Skill Trained (Diplomacy; Religion)"',
-  'Demonic':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on the target for 1 rd",' +
-      '"Skill Trained (Intimidation; Religion)"',
-  'Diabolic':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
-      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level",' +
-      '"Skill Trained (Deception; Religion)"',
-  'Draconic (Brass)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Bronze)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Copper)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Gold)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Silver)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Black)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Blue)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Green)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (Red)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Draconic (White)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 Armor Class for 1 rd",' +
-      '"Skill Trained (Arcana; Intimidation)"',
-  'Elemental (Air)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
-      '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Earth)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
-      '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Fire)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
-      '"Skill Trained (Intimidation; Nature)"',
-  'Elemental (Water)':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
-      '"Skill Trained (Intimidation; Nature)"',
-  'Fey':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Knows the Faerie Dust primal spell",' +
-      '"Casting a bloodline spell gives self or target concealment for 1 rd",' +
-      '"Skill Trained (Deception; Nature)"',
-  'Hag':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
-      '"Casting a bloodline spell inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker for 1 rd",' +
-      '"Skill Trained (Deception; Occultism)"',
-  'Imperial':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell",' +
-      '"Casting a bloodline spell gives self or target +1 skill checks for 1 rd",' +
-      '"Skill Trained (Arcana; Society)"',
-  'Undead':
-    'Section=magic,magic,skill ' +
-    'Note=' +
-      '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
-      '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level",' +
-      '"Skill Trained (Intimidation; Religion)"',
+  /*
   // Counterspell as above
   'Dangerous Sorcery':
     'Section=magic ' +
@@ -11471,7 +11462,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=1 ' +
     'Description=' +
       '"5\' emanation gives allies +1 Armor Class while sustained for up to 1 min; each sustain increases the radius by 5\' up to 30\'"',
-  // TODO
   'Rune Of Observation':
     'Level=4 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate ' +
@@ -11732,7 +11722,50 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Evocation', 'Manipulate'),
   'Wind Jump':
     Pathfinder2E.SPELLS['Wind Jump']
-    .replace('Transmutation', 'Concentrate')
+    .replace('Transmutation', 'Concentrate'),
+
+  // Sorcerer
+  'Tentacular Limbs':
+    Pathfinder2E.SPELLS['Tentacular Limbs']
+    .replace('Transmutation', 'Manipulate'),
+  'Angelic Halo':
+    Pathfinder2E.SPELLS['Angelic Halo']
+    .replace('Abjuration', 'Concentrate')
+    .replace('Good', 'Holy'),
+  "Glutton's Jaws":
+    Pathfinder2E.SPELLS["Glutton's Jaws"] + ' ' +
+    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
+    'Description=' +
+      '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary HP for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary HP</b>)"',
+  'Diabolic Edict':
+    Pathfinder2E.SPELLS['Diabolic Edict']
+    .replace('Enchantment', 'Concentrate'),
+  'Flurry Of Claws':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Successfuil spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
+  'Elemental Toss':
+    Pathfinder2E.SPELLS['Elemental Toss']
+    .replace('Evocation', 'Manipulate'),
+  'Faerie Dust':
+    Pathfinder2E.SPELLS['Faerie Dust']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Jealous Hex':
+    Pathfinder2E.SPELLS['Jealous Hex']
+    .replace('Necromancy', 'Concentrate'),
+  'Ancestral Memories':
+    Pathfinder2E.SPELLS['Ancestral Memories']
+    .replace('Divination', 'Concentrate') + ' ' +
+    'Description=' +
+      '"R60\' Self gains +1 on the next spell attack or target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
+  "Undeath's Blessing":
+    Pathfinder2E.SPELLS["Undeath's Blessing"]
+    .replace('Necromancy', 'Manipulate')
+    .replace('Negative', 'Void')
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -12384,6 +12417,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   } else if(name == 'Rogue') {
     rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
       'featureNotes.rogueKeyAttribute', '=', '1'
+    );
+  } else if(name == 'Sorcerer') {
+    rules.defineRule('bloodlineDamage',
+      'features.Elemental (Air)', '=', '"slashing"',
+      'features.Elemental (Metal)', '=', '"piercing"',
+      'features.Elemental (Wood)', '=', '"bludgeoning"'
     );
   } else if(name == 'Witch') {
     rules.defineRule('patronTraditionsLowered',
