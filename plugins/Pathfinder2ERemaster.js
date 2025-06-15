@@ -9172,179 +9172,201 @@ Pathfinder2ERemaster.FEATURES = {
   // Weapon Expertise as above
   // Weapon Specialization as above
 
-  /*
-  // Counterspell as above
-  'Dangerous Sorcery':
-    'Section=magic ' +
-    'Note="Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level"',
+  'Blood Rising':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Casting of a %{bloodlineTraditionsLowered} spell targeting self invokes Blood Magic effect that targets self or caster"',
   // Familiar as above
   // Reach Spell as above
+  'Tap Into Blood (Arcane)':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Uses Arcana in place of the associated skill for a Recall Knowedge check"',
+  'Tap Into Blood (Divine)':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Steps or Repositions a target using Religion for the check"',
+  'Tap Into Blood (Occult)':
+    'Action=1 Section=combat Note="Takes a 10\' Step"',
+  'Tap Into Blood (Primal)':
+    'Action=1 Section=combat Note="Uses Nature for a Demoralize check"',
   // Widen Spell as above
+  'Anoint Ally':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Allows transferring blood magic effects to a specified ally for 1 min"',
+  'Bleed Out':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="R60\' Successful ranged spell attack inflicts persistent bleed damagge equal to the rank of a just-cast spell"',
   // Cantrip Expansion as above
   // Enhanced Familiar as above
-  'Arcane Evolution':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Can learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire",' +
-      '"Skill Trained (Choose 1 from any)"',
-  'Bespell Weapon':
+  'Propelling Sorcery':
+    'Section=magic ' +
+    'Note="Blood magic effect allows Stepping as a free action or moving a target 5\'"',
+  'Arcane Evolution':Pathfinder2E.FEATURES['Arcane Evolution'],
+  'Bespell Strikes':
+    Pathfinder2E.FEATURES['Bespell Weapon']
+    .replace('depends on the spell school', 'is force or the same type as the spell inflicted'),
+  'Divine Evolution':Pathfinder2E.FEATURES['Divine Evolution'],
+  'Occult Evolution':Pathfinder2E.FEATURES['Occult Evolution'],
+  'Primal Evolution':Pathfinder2E.FEATURES['Primal Evolution'],
+  'Split Shot':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Adds a second target, inflicting half damage, to a targeted attack spell"',
+  'Advanced Bloodline (Aberrant)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Aberrant)'],
+  'Advanced Bloodline (Angelic)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Angelic)'],
+  'Advanced Bloodline (Demonic)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Demonic)'],
+  'Advanced Bloodline (Diabolic)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Diabolic)'],
+  'Advanced Bloodline (Draconic (Arcane))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+  'Advanced Bloodline (Draconic (Divine))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+  'Advanced Bloodline (Draconic (Occult))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+  'Advanced Bloodline (Draconic (Primal))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Draconic (Black))'],
+  'Advanced Bloodline (Elemental (Air))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Air))'],
+  'Advanced Bloodline (Elemental (Earth))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Earth))'],
+  'Advanced Bloodline (Elemental (Fire))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Fire))'],
+  'Advanced Bloodline (Elemental (Metal))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Earth))'],
+  'Advanced Bloodline (Elemental (Water))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Water))'],
+  'Advanced Bloodline (Elemental (Wood))':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Elemental (Water))'],
+  'Advanced Bloodline (Fey)':Pathfinder2E.FEATURES['Advanced Bloodline (Fey)'],
+  'Advanced Bloodline (Hag)':Pathfinder2E.FEATURES['Advanced Bloodline (Hag)'],
+  'Advanced Bloodline (Imperial)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Imperial)']
+    .replace('Extend Spell', 'Extend Blood Magic'),
+  'Advanced Bloodline (Undead)':
+    Pathfinder2E.FEATURES['Advanced Bloodline (Undead)'],
+  'Diverting Vortex':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Casting a non-cantrip spell gives +1 Armor Class vs. ranged weapons until the end of the turn"',
+  'Energy Ward':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school"',
-  'Divine Evolution':
-    'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
-  'Occult Evolution':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Can add 1 unknown mental occult spell to repertoire each day until next daily prep",' +
-      '"Skill Trained (Choose 1 from any)"',
-  'Primal Evolution':
+    'Note="Casting a non-cantrip spell gives resistance equal to the spell rank to a choice of energy for 1 rd"',
+  'Safeguard Spell':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="+1 P%V slot for <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i>"',
-  'Advanced Bloodline (Aberrant)':
+    'Note="Negate the effects on self of a subsequent self area spell"',
+  'Spell Relay':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Knows the Aberrant Whispers occult spell/+1 Focus Points"',
-  'Advanced Bloodline (Angelic)':
-    'Section=magic Note="Knows the Angelic Wings divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Demonic)':
-    'Section=magic ' +
-    'Note="Knows the Swamp Of Sloth divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Diabolic)':
-    'Section=magic ' +
-    'Note="Knows the Embrace The Pit divine spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Black))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Blue))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Brass))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Bronze))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Copper))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Gold))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Green))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Red))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (Silver))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Draconic (White))':
-    'Section=magic Note="Knows the Dragon Breath arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Air))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Earth))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Fire))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Elemental (Water))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Motion primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Fey)':
-    'Section=magic ' +
-    'Note="Knows the Fey Disappearance primal spell/+1 Focus Points"',
-  'Advanced Bloodline (Hag)':
-    'Section=magic ' +
-    'Note="Knows the Horrific Visage occult spell/+1 Focus Points"',
-  'Advanced Bloodline (Imperial)':
-    'Section=magic Note="Knows the Extend Spell arcane spell/+1 Focus Points"',
-  'Advanced Bloodline (Undead)':
-    'Section=magic Note="Knows the Drain Life divine spell/+1 Focus Points"',
+    'Note="Allows the triggering ally spell to be cast from self location"',
   // Steady Spellcasting as above
-  'Bloodline Resistance':
-    'Section=save Note="+1 vs. spells and magical effects"',
-  'Crossblooded Evolution':
+  'Bloodline Resistance':Pathfinder2E.FEATURES['Bloodline Resistance'],
+  'Crossblood Evolution':
     'Section=magic ' +
-    'Note="Can have 1 spell from a different tradition in repertoire"',
+    'Note="Can use the blood magic effect from another bloodline"',
+  'Explosion Of Power':
+    'Section=magic ' +
+    'Note="Blood magic effect in a 5\' emanation inflicts 1d6 HP %{bloodlineTraditions=~\'Arcane\'?\'force\':bloodlineTraditions=~\'Divine\'?\'spirit\':bloodlineTraditions=~\'Occult\'?\'mental\':\'fire\' per rank of just-cast spell (<b>save basic Reflex</b>)"',
+  'Energy Fusion':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Expends a spell slot to add the damage of one spell to another"',
   'Greater Bloodline (Aberrant)':
-    'Section=magic ' +
-    'Note="Knows the Unusual Anatomy occult spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Aberrant)'],
   'Greater Bloodline (Angelic)':
-    'Section=magic ' +
-    'Note="Knows the Celestial Brand divine spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Angelic)'],
   'Greater Bloodline (Demonic)':
-    'Section=magic Note="Knows the Abyssal Wrath divine spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Demonic)']
+    .replace('Abyssal', 'Cnthonian'),
   'Greater Bloodline (Diabolic)':
-    'Section=magic ' +
-    'Note="Knows the Hellfire Plume divine spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Black))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Blue))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Brass))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Bronze))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Copper))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Gold))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Green))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Red))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (Silver))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
-  'Greater Bloodline (Draconic (White))':
-    'Section=magic Note="Knows the Dragon Wings arcane spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Diabolic)'],
+  'Greater Bloodline (Draconic (Arcane))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+  'Greater Bloodline (Draconic (Divine))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+  'Greater Bloodline (Draconic (Occult))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
+  'Greater Bloodline (Draconic (Primal))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Draconic (Black))'],
   'Greater Bloodline (Elemental (Air))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Air))'],
   'Greater Bloodline (Elemental (Earth))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
   'Greater Bloodline (Elemental (Fire))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Fire))'],
+  'Greater Bloodline (Elemental (Metal))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
   'Greater Bloodline (Elemental (Water))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Blast primal spell/+1 Focus Points"',
-  'Greater Bloodline (Fey)':
-    'Section=magic Note="Knows the Fey Glamour primal spell/+1 Focus Points"',
-  'Greater Bloodline (Hag)':
-    'Section=magic Note="Knows the You\'re Mine occult spell/+1 Focus Points"',
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Water))'],
+  'Greater Bloodline (Elemental (Wood))':
+    Pathfinder2E.FEATURES['Greater Bloodline (Elemental (Earth))'],
+  'Greater Bloodline (Fey)':Pathfinder2E.FEATURES['Greater Bloodline (Fey)'],
+  'Greater Bloodline (Hag)':Pathfinder2E.FEATURES['Greater Bloodline (Hag)'],
   'Greater Bloodline (Imperial)':
-    'Section=magic ' +
-    'Note="Knows the Arcane Countermeasure arcane spell/+1 Focus Points"',
+     Pathfinder2E.FEATURES['Greater Bloodline (Imperial)'],
   'Greater Bloodline (Undead)':
-    'Section=magic ' +
-    'Note="Knows the Grasping Grave divine spell/+1 Focus Points"',
+     Pathfinder2E.FEATURES['Greater Bloodline (Undead)'],
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Bloodline Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
-  'Magic Sense':
+  'Signature Spell Expansion':
     'Section=magic ' +
-    'Note="Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek"',
-  'Interweave Dispel':
+    'Note="Has 2 additional signature spells of up to 3rd rank"',
+  'Blood Sovereignty':
+    'Section=magic ' +
+    'Note="When casting a spell, can suffer Hit Point loss equal to twice the spell rank to use 2 blood magic effects"',
+  'Bloodline Focus':
+    Pathfinder2E.FEATURES['Bloodline Focus']
+    .replace('2', 'all'),
+  'Greater Physical Evolution':
+    'Section=magic ' +
+    'Note="Can expend a spell slot to cast a battle polymorph spell on self once per day"',
+  'Greater Spiritual Evolution':
+    'Section=magic ' +
+    'Note="Spells have the <i>ghost touch</i> property"',
+  'Magic Sense':Pathfinder2E.FEATURES['Magic Sense'],
+  'Terraforming Trickery':
+    'Section=magic ' +
+    'Note="Can use a blood magic effect to create or remove difficult terrain from adjacent squares"',
+  'Blood Ascendancy':
+    'Section=magic ' +
+    'Note="Can use Blood Rising to benefit from 2 blood magic effects"',
+  'Interweave Dispel':Pathfinder2E.FEATURES['Interweave Dispel'],
+  'Reflect Harm':
+    'Section=magic ' +
+    'Note="Blood magic effect allows a spell attack to duplicate the damage from a spell attack cast on self onto caster for 1 rd"',
+  'Spell Shroud':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
-  'Reflect Spell':
-    'Section=magic ' +
-    'Note="Can cause a successful Counterspell to inflict the spell effects on the caster"',
+    'Note="Subsequent spell cast creates a 15\' emanation that conceals creatures for 1 rd"',
   // Effortless Concentration as above
-  'Greater Mental Evolution':
-    'Section=magic Note="Adds 1 spell of each level to repertoire"',
-  'Greater Vital Evolution':
-    'Section=feature ' +
-    'Note="Can cast two additional spells of different levels after spell slots in each level are exhausted once per day"',
-  'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
-  'Greater Crossblooded Evolution':
-    'Section=magic ' +
-    'Note="Can have 3 spells of different levels from different traditions in repertoire"',
-  'Bloodline Conduit':
+  'Greater Mental Evolution':Pathfinder2E.FEATURES['Greater Mental Evolution'],
+  'Greater Vital Evolution':Pathfinder2E.FEATURES['Greater Vital Evolution'],
+  'Scintillating Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes an instantaneous spell of 5th level or lower without expending a spell slot"',
-  'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
-  'Metamagic Mastery':
+    'Note="Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure"',
+  'Echoing Spell':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can use a 1-action metamagic effect as a free action"',
-  */
+    'Note="Casts an instanaeous spell twice using 1 spell slot"',
+  'Greater Crossblooded Evolution':
+    Pathfinder2E.FEATURES['Greater Crossblooded Evolution']
+    .replace('different traditions', 'second bloodline'),
+  'Bloodline Conduit':Pathfinder2E.FEATURES['Bloodline Conduit'],
+  'Bloodline Mutation':
+    'Section=feature ' +
+    'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistances as appropriate from bloodline"',
+  'Bloodline Perfection':Pathfinder2E.FEATURES['Bloodline Perfection'],
+  'Spellshape Mastery':
+    Pathfinder2E.FEATURES['Metamagic Mastery']
+    .replace('metamagic', 'spellshape'),
 
   // General and Skill Feats
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
