@@ -47,12 +47,13 @@ var attributes = {
   "selectableFeatures.Champion - Liberation":1, "selectableFeatures.Champion - Obedience":1, 
   "selectableFeatures.Champion - Redemption":1, "selectableFeatures.Champion - Strength":1, 
   "selectableFeatures.Champion - Unholy":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", 
-  "skillIncreases.Alcohol Lore":2, "skillIncreases.Aquatic Lore":1, "skillIncreases.Astronomy Lore":1, 
-  "skillIncreases.Boneyard Lore":1, "skillIncreases.Crafting":2, "skillIncreases.Diplomacy":1, 
-  "skillIncreases.Dwarven Lore":1, "skillIncreases.Elven Lore":1, "skillIncreases.Fortune-Telling Lore":1, 
-  "skillIncreases.Library Lore":1, "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Midwifery Lore":1, 
-  "skillIncreases.Milling Lore":1, "skillIncreases.Nature":1, "weapons.Battle Axe":1, "weapons.Gauntlet":1, 
-  "weapons.Ranseur":1
+  "skillIncreases.Academia Lore":1, "skillIncreases.Alcohol Lore":2, "skillIncreases.Aquatic Lore":1, 
+  "skillIncreases.Arctic Lore":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Boneyard Lore":1, 
+  "skillIncreases.Crafting":2, "skillIncreases.Diplomacy":1, "skillIncreases.Dwarven Lore":1, 
+  "skillIncreases.Elven Lore":1, "skillIncreases.Fortune-Telling Lore":1, "skillIncreases.Library Lore":1, 
+  "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Midwifery Lore":1, "skillIncreases.Milling Lore":1, 
+  "skillIncreases.Nature":1, "spells.Lay On Hands (D1 Foc)":1, "spells.Shields Of The Spirit (D1 Foc)":1, 
+  "spells.Touch Of The Void (D1 Foc)":1, "weapons.Battle Axe":1, "weapons.Gauntlet":1, "weapons.Ranseur":1
 };
   </script>
 </head>
@@ -200,19 +201,27 @@ var attributes = {
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
+      <td>Academia Lore: +26 (intelligence; trained)</td>
+      <td>Deception: +26 (charisma; trained)</td>
+      <td>Midwifery Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
       <td>Acrobatics: +4 (dexterity; untrained)</td>
+      <td>Diplomacy: +26 (charisma; trained)</td>
+      <td>Milling Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Alcohol Lore: +28 (intelligence; expert)</td>
       <td>Driving Lore: +32 (intelligence; legendary)</td>
       <td>Nature: +25 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Alcohol Lore: +28 (intelligence; expert)</td>
+      <td>Aquatic Lore: +26 (intelligence; trained)</td>
       <td>Dwarven Lore: +26 (intelligence; trained)</td>
       <td>Occultism: +4 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Aquatic Lore: +26 (intelligence; trained)</td>
+      <td>Arcana: +26 (intelligence; trained)</td>
       <td>Elven Lore: +28 (intelligence; expert)</td>
       <td>Performance: +4 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Arcana: +26 (intelligence; trained)</td>
+      <td>Arctic Lore: +26 (intelligence; trained)</td>
       <td>Fortune-Telling Lore: +26 (intelligence; trained)</td>
       <td>Religion: +27 (wisdom; expert)</td>
     </tr><tr style="text-align:left">
@@ -235,14 +244,6 @@ var attributes = {
       <td>Crafting: +28 (intelligence; expert)</td>
       <td>Medicine: +3 (wisdom; untrained)</td>
       <td>Vampire Lore: +32 (intelligence; legendary)</td>
-    </tr><tr style="text-align:left">
-      <td>Deception: +26 (charisma; trained)</td>
-      <td>Midwifery Lore: +26 (intelligence; trained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Diplomacy: +26 (charisma; trained)</td>
-      <td>Milling Lore: +26 (intelligence; trained)</td>
-      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -525,6 +526,12 @@ var attributes = {
       <td>Hero's Defiance (D10 Foc): <b>(F)</b> Self recovers 6d8+20 HP before suffering damage that would reduce HP to 0 once per Refocus</td>
     </tr><tr style="text-align:left">
       <td>Know The Enemy (D4 Foc): <b>(R)</b> Allows a Recall Knowledge check, using the better of two rolls, during initiative or immediately after inflicting damage to remember a target's abilities</td>
+    </tr><tr style="text-align:left">
+      <td>Lay On Hands (D1 Foc): <b>(1)</b> Touched regains 6 HP and gains +2 Armor Class for 1 rd; touched undead instead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)</td>
+    </tr><tr style="text-align:left">
+      <td>Shields Of The Spirit (D1 Foc): <b>(1)</b> While shield is raised, self aura gives allies +1 Armor Class and inflicts 1d4 HP spirit on attacking foes for 1 rd (<b>heightened +2</b> inflicts +1d4 HP)</td>
+    </tr><tr style="text-align:left">
+      <td>Touch Of The Void (D1 Foc): <b>(1)</b> Touched undead regains 6 HP and gains +2 Armor Class for 1 rd; touched living instead suffers 1d6 HP and -2 Armor Class for 1 rd (<b>save basic Fortitude</b> also negates -2 Armor Class) (<b>heightened +1</b> restores +6 HP or inflicts +1d6 HP)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -597,22 +604,6 @@ var attributes = {
         <td>Champion's Sacrifice Feat: Requires level (currently 20) >= 12 and unholy feature (currently 1) == 0</td>
       </tr><tr style="text-align:center">
         <td>Class Feats Allocation: 12 available vs. 57 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Cruelty Feat: Requires level (currently 20) >= 4 and touch of the void (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Heal Mount Feat: Requires level (currently 20) >= 8, faithful steed feature (currently 1) and lay on hands (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Mercy (Body) Feat: Requires level (currently 20) >= 4 and lay on hands (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Mercy (Grace) Feat: Requires level (currently 20) >= 4 and lay on hands (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Mercy (Mind) Feat: Requires level (currently 20) >= 4 and lay on hands (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Rejuvenating Touch Feat: Requires level (currently 20) >= 18 and lay on hands (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Security Feat: Requires level (currently 20) >= 4 and shields of the spirit (d1 foc nec) spell</td>
-      </tr><tr style="text-align:center">
-        <td>Skill Increase Allocation: 18 available vs. 16 allocated</td>
       </tr></table>
 </td>
     </tr></table>

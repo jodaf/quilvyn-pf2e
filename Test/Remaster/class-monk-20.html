@@ -52,9 +52,11 @@ var attributes = {
   "selectableFeatures.Monk - Qi Tradition (Divine)":1, "selectableFeatures.Monk - Qi Tradition (Occult)":1, 
   "selectableFeatures.Monk - Third Path To Perfection (Fortitude)":1, "selectableFeatures.Monk - Third Path To Perfection (Reflex)":1, 
   "selectableFeatures.Monk - Third Path To Perfection (Will)":1, "shield":"None", "skillIncreases.Academia Lore":1, 
-  "skillIncreases.Acrobatics":3, "skillIncreases.Athletics":3, "skillIncreases.Deception":2, 
-  "skillIncreases.Nature":1, "skillIncreases.Scribing Lore":1, "weapons.Javelin":1, 
-  "weapons.Morningstar":1, "weapons.Staff":1
+  "skillIncreases.Acrobatics":3, "skillIncreases.Astrology Lore":1, "skillIncreases.Athletics":3, 
+  "skillIncreases.Cat Lore":1, "skillIncreases.Deception":2, "skillIncreases.Hobgoblin Lore":1, 
+  "skillIncreases.Nature":1, "skillIncreases.Occultism":1, "skillIncreases.Sailing Lore":1, 
+  "skillIncreases.Scribing Lore":1, "skillIncreases.Swamp Lore":1, "skillIncreases.Thievery":1, 
+  "spells.Inner Upheaval (O1 Foc)":1, "weapons.Javelin":1, "weapons.Morningstar":1, "weapons.Staff":1
 };
   </script>
 </head>
@@ -172,34 +174,42 @@ var attributes = {
     <tr style="text-align:left">
       <td>Academia Lore: +25 (intelligence; trained)</td>
       <td>Farming Lore: +25 (intelligence; trained)</td>
-      <td>Performance: +3 (charisma; untrained)</td>
+      <td>Religion: +4 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Acrobatics: +31 (dexterity; master)</td>
       <td>Hellknights Lore: +25 (intelligence; trained)</td>
-      <td>Religion: +4 (wisdom; untrained)</td>
+      <td>Sailing Lore: +25 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +3 (intelligence; untrained)</td>
       <td>Herbalism Lore: +25 (intelligence; trained)</td>
       <td>Scribing Lore: +25 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Art Lore: +31 (intelligence; legendary)</td>
-      <td>Intimidation: +3 (charisma; untrained)</td>
+      <td>Hobgoblin Lore: +25 (intelligence; trained)</td>
       <td>Society: +3 (intelligence; untrained)</td>
+    </tr><tr style="text-align:left">
+      <td>Astrology Lore: +25 (intelligence; trained)</td>
+      <td>Intimidation: +3 (charisma; untrained)</td>
+      <td>Stealth: +5 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +30 (strength; master)</td>
       <td>Medicine: +4 (wisdom; untrained)</td>
-      <td>Stealth: +5 (dexterity; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Crafting: +3 (intelligence; untrained)</td>
-      <td>Mountain Lore: +31 (intelligence; legendary)</td>
       <td>Survival: +4 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +27 (charisma; expert)</td>
+      <td>Cat Lore: +25 (intelligence; trained)</td>
+      <td>Mountain Lore: +31 (intelligence; legendary)</td>
+      <td>Swamp Lore: +25 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Crafting: +3 (intelligence; untrained)</td>
       <td>Nature: +28 (wisdom; expert)</td>
-      <td>Thievery: +5 (dexterity; untrained)</td>
+      <td>Thievery: +27 (dexterity; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Deception: +27 (charisma; expert)</td>
+      <td>Occultism: +25 (intelligence; trained)</td>
+      <td></td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +3 (charisma; untrained)</td>
-      <td>Occultism: +3 (intelligence; untrained)</td>
+      <td>Performance: +3 (charisma; untrained)</td>
       <td></td>
     </tr></table>
 </td>
@@ -501,6 +511,8 @@ var attributes = {
     <tr style="text-align:left">
       <td>Harmonize Self (O2 Foc): <b>(1)</b> Self regains 8 HP or attempts to counteract 1 poison or disease (<b>heightened +1</b> restores +8 HP)</td>
     </tr><tr style="text-align:left">
+      <td>Inner Upheaval (O1 Foc): <b>(1)</b> An unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, spirit, vitality, or void (<b>heightened +4</b> inflicts +1d6 HP)</td>
+    </tr><tr style="text-align:left">
       <td>Shadow's Web (O7 Foc): <b>(2)</b> 30' emanation inflicts 14d4 HP void and enfeebled 2 for 1 rd (<b>save Fortitude</b> inflicts half HP and enfeebled 1 for 1 rd; critical success negates; critical failure inflicts double HP, stunned 1, enfeebled 2 for 1 rd, and immobilized for 1 rd)</td>
     </tr><tr style="text-align:left">
       <td>Wild Winds Stance (O4 Foc): <b>(1)</b> Stance gives +2 Armor Class vs. ranged attacks and R30' unarmed strikes that ignore concealment and cover and inflict 1d6 HP bludgeoning</td>
@@ -511,6 +523,8 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Advanced Qi Spells: Knows choice of 3rd-rank monk qi spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Clinging Shadows Initiate: Knows the Clinging Shadows Stance occult focus spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Grandmaster Qi Spells: Knows choice of 9th-rank monk qi spell/+1 Focus Points</i></td>
@@ -518,8 +532,6 @@ var attributes = {
       <td><i>Harmonize Self: Knows the Harmonize Self occult spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Master Qi Spells: Knows choice of 8th-rank monk qi spell/+1 Focus Points</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Qi Spells: Knows choice of 3rd-rank monk qi spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Qi Tradition (Divine): Spell Trained (Divine)</i></td>
     </tr><tr style="text-align:center">
@@ -543,6 +555,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Qi Center: <b>(F)</b> Casts a single-action qi stance spell without spending a Focus Point</td>
     </tr><tr style="text-align:center">
+      <td>Qi Spells: Knows choice of 1st-rank monk qi spell/Has a focus pool with 1 Focus Point</td>
+    </tr><tr style="text-align:center">
       <td>Qi Tradition (Divine): Can learn spells from the divine tradition</td>
     </tr><tr style="text-align:center">
       <td>Qi Tradition (Occult): Can learn spells from the occult tradition</td>
@@ -561,17 +575,11 @@ var attributes = {
       <tr style="text-align:center">
         <td>Class Feats Allocation: 11 available vs. 78 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Elemental Fist Feat: Requires level (currently 20) >= 2 and inner upheaval spell</td>
-      </tr><tr style="text-align:center">
-        <td>Master Of Many Styles Feat: Requires level (currently 20) >= 16 and opening stance feature or stance savant feature</td>
-      </tr><tr style="text-align:center">
         <td>Monk Perfection Allocation: 2 available vs. 3 allocated</td>
       </tr><tr style="text-align:center">
         <td>Monk Qi Tradition Allocation: 1 available vs. 2 allocated</td>
       </tr><tr style="text-align:center">
         <td>Monk Third Perfection Allocation: 1 available vs. 3 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Skill Increase Allocation: 18 available vs. 11 allocated</td>
       </tr></table>
 </td>
     </tr></table>

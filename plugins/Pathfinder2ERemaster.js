@@ -1094,7 +1094,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Panache","1:Precise Strike","1:Stylish Combatant",' +
       '"1:Swashbuckler\'s Style","1:Confident Finisher",' +
       '"1:Swashbuckler Feats","3:Fortitude Expertise","3:General Feats",' +
-      '"3:Opporune Riposte","3:Skill Increases","3:Stylish Tricks",' +
+      '"3:Opportune Riposte","3:Skill Increases","3:Stylish Tricks",' +
       '"3:Vivacious Speed","5:Weapon Expertise","7:Confident Evasion",' +
       '"7:Weapon Specialization","9:Exemplary Finisher",' +
       '"9:Swashbuckler Expertise","11:Continuous Flair",' +
@@ -1835,11 +1835,12 @@ Pathfinder2ERemaster.FEATS = {
   'Reach Spell':
     Pathfinder2E.FEATS['Reach Spell']
     .replace('Metamagic', 'Spellshape')
-    .replace('Traits=', 'Traits=Witch,'),
+    .replace('Traits=', 'Traits=Oracle,Witch,'),
   'Versatile Performance':Pathfinder2E.FEATS['Versatile Performance'],
   'Well-Versed':'Traits=Class,Bard',
   'Cantrip Expansion':
-    Pathfinder2E.FEATS['Cantrip Expansion'].replace('Traits=', 'Traits=Witch,'),
+    Pathfinder2E.FEATS['Cantrip Expansion']
+    .replace('Traits=', 'Traits=Oracle,Witch,'),
   'Directed Audience':'Traits=Class,Bard Require="level >= 2"',
   'Emotional Push':'Traits=Class,Bard,Concentrate Require="level >= 2"',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
@@ -1883,7 +1884,7 @@ Pathfinder2ERemaster.FEATS = {
   'Song Of Marching':'Traits=Class,Bard Require="level >= 6"',
   'Steady Spellcasting':
     Pathfinder2E.FEATS['Steady Spellcasting']
-    .replace('Traits=', 'Traits=Witch,'),
+    .replace('Traits=', 'Traits=Witch,Oracle,'),
   'Accompany':'Traits=Class,Bard,Concentrate,Manipulate Require="level >= 8"',
   'Call And Response':
     'Traits=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
@@ -1903,7 +1904,7 @@ Pathfinder2ERemaster.FEATS = {
   'Quickened Casting':
     Pathfinder2E.FEATS['Quickened Casting']
     .replace('Metamagic', 'Spellshape')
-    .replace('Traits=', 'Traits=Witch,'),
+    .replace('Traits=', 'Traits=Witch,Oracle,'),
   'Symphony Of The Unfettered Heart':'Traits=Class,Bard Require="level >= 10"',
   'Unusual Composition':
     Pathfinder2E.FEATS['Unusual Composition']
@@ -2163,7 +2164,7 @@ Pathfinder2ERemaster.FEATS = {
   'Widen Spell':
     Pathfinder2E.FEATS['Widen Spell']
     .replace('Metamagic', 'Spellshape')
-    .replace('Traits=', 'Traits=Witch,'),
+    .replace('Traits=', 'Traits=Oracle,Witch,'),
   'Untamed Form':Pathfinder2E.FEATS['Wild Shape'].replaceAll('Wild', 'Untamed'),
   'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
   'Enhanced Familiar':
@@ -2421,7 +2422,9 @@ Pathfinder2ERemaster.FEATS = {
   'Improved Reflexive Shield':Pathfinder2E.FEATS['Improved Reflexive Shield'],
   'Master Of Many Styles':
     'Traits=Class,Fighter,Monk ' +
-    'Require="level >= 16","features.Opening Stance || features.Stance Savant"',
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Opening Stance || features.Reflexive Stance"',
   'Multishot Stance':
     Pathfinder2E.FEATS['Multishot Stance']
     .replace('Triple', 'Double'),
@@ -2522,9 +2525,11 @@ Pathfinder2ERemaster.FEATS = {
   'Trap Finder':
     Pathfinder2E.FEATS['Trap Finder']
     .replace('Class', 'Class,Investigator'),
-  'Tumble Behind':'Traits=Class,Rogue',
+  'Tumble Behind':'Traits=Class,Rogue,Swashbuckler',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
-  "You're Next":Pathfinder2E.FEATS["You're Next"],
+  "You're Next":
+    Pathfinder2E.FEATS["You're Next"]
+    .replace('Traits=', 'Traits=Swashbuckler,'),
   'Brutal Beating':Pathfinder2E.FEATS['Brutal Beating'],
   'Clever Gambit':
     'Traits=Class,Rogue Require="level >=2","features.Mastermind"',
@@ -2705,7 +2710,9 @@ Pathfinder2ERemaster.FEATS = {
   // Enhanced Familiar as above
   'Nonlethal Spell':
     'Traits=Class,Wizard,Manipulate,Spellshape Require="level >= 2"',
-  'Bespell Strikes':Pathfinder2E.FEATS['Bespell Weapon'],
+  'Bespell Strikes':
+    Pathfinder2E.FEATS['Bespell Weapon']
+    .replace('Traits=', 'Traits=Oracle,'),
   'Call Wizardly Tools':
     'Traits=Class,Wizard,Concentrate,Teleportation ' +
     'Require="level >= 4","features.Arcane Bond"',
@@ -2733,7 +2740,9 @@ Pathfinder2ERemaster.FEATS = {
   'Forcible Energy':
     'Traits=Class,Wizard,Manipulate,Spellshape Require="level >= 12"',
   'Keen Magical Detection':'Traits=Class,Wizard,Fortune Require="level >= 12"',
-  'Magic Sense':Pathfinder2E.FEATS['Magic Sense'],
+  'Magic Sense':
+    Pathfinder2E.FEATS['Magic Sense']
+    .replace('Traits=', 'Traits=Oracle,'),
   'Bonded Focus':Pathfinder2E.FEATS['Bonded Focus'],
   // Reflect Spell as above
   'Secondary Detonation Array':
@@ -2741,7 +2750,8 @@ Pathfinder2ERemaster.FEATS = {
   'Superior Bond':Pathfinder2E.FEATS['Superior Bond'],
   // Effortless Concentration as above
   'Scintillating Spell':
-    'Traits=Class,Wizard,Concentrate,Light,Spellshape Require="level >= 16"',
+    'Traits=Class,Wizard,Sorcerer,Concentrate,Light,Spellshape ' +
+    'Require="level >= 16"',
   'Spell Tinker':Pathfinder2E.FEATS['Spell Tinker'],
   'Infinite Possibilities':Pathfinder2E.FEATS['Infinite Possibilities'],
   'Reprepare Spell':Pathfinder2E.FEATS['Reprepare Spell'],
@@ -3069,13 +3079,19 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 4","features.Champion\'s Aura","features.Unholy"',
   'Cruelty':
     'Traits=Class,Champion ' +
-    'Require="level >= 4","spells.Touch Of The Void (D1 Foc Nec)"',
-  'Mercy (Body)':Pathfinder2E.FEATS.Mercy,
-  'Mercy (Grace)':Pathfinder2E.FEATS.Mercy,
-  'Mercy (Mind)':Pathfinder2E.FEATS.Mercy,
+    'Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
+  'Mercy (Body)':
+    Pathfinder2E.FEATS.Mercy
+    .replace(' Nec', ''),
+  'Mercy (Grace)':
+    Pathfinder2E.FEATS.Mercy
+    .replace(' Nec', ''),
+  'Mercy (Mind)':
+    Pathfinder2E.FEATS.Mercy
+    .replace(' Nec', ''),
   'Security':
     'Traits=Class,Champion ' +
-    'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc Nec)"',
+    'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc)"',
   'Expand Aura':
     'Traits=Class,Champion,Concentrate ' +
     'Require="level >= 6","features.Champion\'s Aura"',
@@ -3279,7 +3295,8 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Champion Require="level >= 8","features.Security"',
   'Heal Mount':
     Pathfinder2E.FEATS['Heal Mount']
-    .replace('Divine Ally (Steed)', 'Faithful Steed'),
+    .replace('Divine Ally (Steed)', 'Faithful Steed')
+    .replace(' Nec', ''),
   // Quick Shield Block as above
   'Second Blessing':
     Pathfinder2E.FEATS['Second Ally']
@@ -3334,7 +3351,7 @@ Pathfinder2ERemaster.FEATS = {
   'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
   'Rejuvenating Touch':
     'Traits=Class,Champion ' +
-    'Require="level >= 18","spells.Lay On Hands (D1 Foc Nec)"',
+    'Require="level >= 18","spells.Lay On Hands (D1 Foc)"',
   'Swift Retribution':
     'Traits=Class,Champion ' +
     'Require="level >= 18","features.Champion\'s Reaction"',
@@ -3441,7 +3458,7 @@ Pathfinder2ERemaster.FEATS = {
   'Dancing Leaf':Pathfinder2E.FEATS['Dancing Leaf'],
   'Elemental Fist':
     Pathfinder2E.FEATS['Elemental Fist']
-    .replace('features.Ki Strike', 'spells.Inner Upheaval'),
+    .replace('features.Ki Strike', 'spells.Inner Upheaval (O1 Foc)'),
   'Shooting Stars Stance':
     'Traits=Class,Monk,Stance ' +
     'Require="level >= 2","features.Monastic Weaponry"',
@@ -3537,7 +3554,7 @@ Pathfinder2ERemaster.FEATS = {
   'Fuse Stance':
     Pathfinder2E.FEATS['Fuse Stance']
     .replace('20', '16'),
-  // Master Of Many Styles
+  // Master Of Many Styles as above
   'Master Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
   'One-Millimeter Punch':'Traits=Class,Monk Require="features.One-Inch Punch"',
   'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
@@ -3561,6 +3578,98 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Monk Require="level >= 20","features.Master Of Many Styles"',
   'Impossible Technique':Pathfinder2E.FEATS['Impossible Technique'],
   'Lightning Qi':'Traits=Class,Monk Require="level >= 20","features.Qi Spells"',
+
+  // Oracle
+  'Foretell Harm':'Traits=Class,Oracle,Cursebound,Divine',
+  'Glean Lore':'Traits=Class,Oracle,Divine,Secret',
+  'Nudge The Scales':'Traits=Class,Oracle,Cursebound,Divine,Healing,Spirit',
+  'Oracular Warning':
+    'Traits=Class,Oracle,Auditory,Cursebound,Divine,Emotion,Mental',
+  // Reach Spell as above
+  'Whispers Of Weakness':'Traits=Class,Oracle,Cursebound,Divine',
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  'Divine Aegis':'Traits=Class,Oracle,Divine Require="level >= 2"',
+  'Domain Acumen':'Traits=Class,Oracle Require="level >= 2"',
+  'Meddling Futures':
+    'Traits=Class,Oracle,Cursebound,Divine Require="level >= 2"',
+  // Bespell Strikes as above
+  'Knowledge Of Shapes':
+    'Traits=Class,Oracle,Cursebound,Spellshape ' +
+    'Require="level >= 4","features.Reach Spell || features.Widen Spell"',
+  'Thousand Visions':
+    'Traits=Class,Oracle,Cursebound,Prediction Require="level >= 4"',
+  'Advanced Revelation':
+    // TODO requires "initial revelation spell"
+    'Traits=Class,Oracle Require="level >= 6"',
+  'Gifted Power':'Traits=Class,Oracle Require="level >= 6"',
+  'Spiritual Sense':'Traits=Class,Oracle,Divine Require="level >= 6"',
+  // Steady Spellcasting as above
+  'Debilitating Dichotomy':
+    'Traits=Class,Oracle,Concentrate,Cursebound,Divine,Mental ' +
+    'Require="level >= 8"',
+  'Read Disaster':
+    'Traits=Class,Oracle,Exploration,Prediction Require="level >= 8"',
+  'Surging Might':
+    'Traits=Class,Oracle,Manipulate,Spellshape Require="level >= 8"',
+  'Water Walker':'Traits=Class,Oracle Require="level >= 8"',
+  // Quickened Casting as above
+  'Roll The Bones Of Fate':
+    'Traits=Class,Oracle,Cursebound,Divine,Prediction ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Bones || features.Lore"',
+  'The Dead Walk':
+    'Traits=Class,Oracle,Cursebound,Divine ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Ancestors || features.Battle"',
+  'Trial By Skyfire':
+    'Traits=Class,Oracle,Cursebound,Divine,Fire ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Cosmos || features.Flames"',
+  'Waters Of Creation':
+    'Traits=Class,Oracle,Cursebound,Divine,Healing,Vitality,Water ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Life || features.Tempest"',
+  'Domain Fluency':
+    'Traits=Class,Oracle ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Domain Acumen"',
+  'Epiphany At The Crossroads':
+    'Traits=Class,Oracle,Divine Require="level >= 12"',
+  'Greater Revelation':
+    // TODO require "initial revelation spell"
+    'Traits=Class,Oracle Require="level >= 12"',
+  // Magic Sense as above
+  'Forestall Curse':'Traits=Class,Oracle,Concentrate Require="level >= 14"',
+  'Lighter Than Air':
+    'Traits=Class,Oracle,Divine ' +
+    'Require=' +
+      '"level >= 14",' +
+      '"features.Water Walker"',
+  'Mysterious Repertoire':'Traits=Class,Oracle Require="level >= 14"',
+  "Revelation's Focus":'Traits=Class,Oracle Require="level >= 14"',
+  'Conduit Of Void and Vitality':
+    'Traits=Class,Oracle,Cursebound,Divine ' +
+    // TODO require "any oracle mystery"
+    'Require="level >= 16"',
+  'Diverse Mystery':
+    'Traits=Class,Oracle Require="level >= 16","features.Advanced Revelation"',
+  'Portentous Spell':
+    'Traits=Class,Oracle,Manipulate,Mental,Spellshape,Visual ' +
+    'Require="level >= 16"',
+  'Blaze Of Revelation':'Traits=Class,Oracle Require="level >= 18"',
+  'Divine Effusion':'Traits=Class,Oracle Require="level >= 18"',
+  'Mystery Conduit':
+    'Traits=Class,Oracle,Cursebound,Spellshape Require="level >= 20"',
+  'Oracular Providence':
+    'Traits=Class,Oracle Require="level >= 20","features.Oracular Clarity"',
+  'Paradoxical Mystery':
+    'Traits=Class,Oracle Require="level >= 20","features.Greater Revelation"',
 
   // Sorcerer
   'Blood Rising':'Traits=Class,Sorcerer',
@@ -3621,8 +3730,7 @@ Pathfinder2ERemaster.FEATS = {
   // Effortless Concentration as above
   'Greater Mental Evolution':Pathfinder2E.FEATS['Greater Mental Evolution'],
   'Greater Vital Evolution':Pathfinder2E.FEATS['Greater Vital Evolution'],
-  'Scintillating Spell':
-    'Traits=Class,Sorcerer,Concentrate,Light,Spellshape Require="level >= 16"',
+  // Scintillating Spell as above
   'Echoing Spell':
     'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 18"',
   'Greater Crossblooded Evolution':
@@ -3633,6 +3741,111 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Mutation':'Traits=Class,Sorcerer Require="level >= 20"',
   'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
+
+  // Swashbuckler
+  'Disarming Flair':'Traits=Class,Swashbuckler',
+  'Elegant Buckler':'Traits=Class,Swashbuckler',
+  'Extravagant Parry':'Traits=Class,Swashbuckler',
+  'Flashy Dodge':'Traits=Class,Swashbuckler',
+  'Flying Blade':'Traits=Class,Swashbuckler Require="features.Precise Strike"',
+  'Focused Fascination':
+    'Traits=Class,Swashbuckler Require="features.Fascinating Performance"',
+  'Goading Feint':'Traits=Class,Swashbuckler Require="rank.Deception >= 1"',
+  'One For All':
+    'Traits=Class,Swashbuckler,Auditory,Concentrate,Emotion,Linguistic,Mental '+
+    'Require="rank.Diplomacy >= 1"',
+  'Plummeting Roll':'Traits=Class,Swashbuckler Require="rank.Acrobatics >= 1"',
+  // You're Next as above
+  'After You':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'Antagonize':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'Brandishing Draw':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'Charmed Life':
+    'Traits=Class,Swashbuckler Require="level >= 2","charismaModifier >= 2"',
+  'Enjoy The Show':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'Finishing Follow-Through':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'Retreating Finisher':
+    'Traits=Class,Swashbuckler,Finisher Require="level >= 2"',
+  // Tumble Behind as above
+  'Unbalancing Finisher':
+    'Traits=Class,Swashbuckler,Finisher Require="level >= 2"',
+  'Dastardly Dash':
+    'Traits=Class,Swashbuckler,Flourish Require="level >= 4"',
+  'Even The Odds':'Traits=Class,Swashbuckler Require="level >= 4"',
+  'Flamboyant Athlete':
+    'Traits=Class,Swashbuckler Require="level >= 4","rank.Athletics >= 4"',
+  "Guardian's Reflection":'Traits=Class,Swashbuckler Require="level >= 4"',
+  'Impaling Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 4"',
+  'Leading Dance':
+    'Traits=Class,Swashbuckler,Bravado,Move ' +
+    'Require="level >= 4","rank.Performance >= 1"',
+  'Swaggering Initiative':'Traits=Class,Swashbuckler Require="level >= 4"',
+  'Twirling Throw':
+    'Traits=Class,Swashbuckler,Finisher ' +
+    'Require="level >= 4","features.Flying Blade"',
+  'Agile Maneuvers':
+    'Traits=Class,Swashbuckler Require="level >= 6","rank.Athletics >= 2"',
+  'Combination Finisher':'Traits=Class,Swashbuckler Require="level >= 6"',
+  'Precise Finisher':
+    'Traits=Class,Swashbuckler ' +
+    'Require="level >= 6","rank.Athletics >= 2","features.Confident Finisher"',
+  // Reactive Strike as above
+  'Vexing Tumble':'Traits=Class,Swashbuckler,Bravado Require="level >= 6"',
+  'Bleeding Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
+  'Distracting Toss':
+    'Traits=Class,Swashbuckler,Bravado,Flourish Require="level >= 8"',
+  'Dual Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
+  'Flashy Roll':
+    'Traits=Class,Swashbuckler Require="level >= 8","features.Flashy Dodge"',
+  'Stunning Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
+  'Vivacious Bravado':'Traits=Class,Swashbuckler Require="level >= 8"',
+  'Buckler Dance':'Traits=Class,Swashbuckler,Stance Require="level >= 10"',
+  'Derring-Do':'Traits=Class,Swashbuckler,Fortune Require="level >= 10"',
+  'Reflexive Riposte':
+    'Traits=Class,Swashbuckler ' +
+    'Require="level >= 10","features.Opportune Riposte"',
+  'Stumbling Finisher':
+    'Traits=Class,Swashbuckler,Finisher Require="level >= 10"',
+  'Switcheroo':'Traits=Class,Swashbuckler Require="level >= 10"',
+  'Targeting Finisher':
+    'Traits=Class,Swashbuckler,Finisher Require="level >= 10"',
+  'Cheat Death':'Traits=Class,Swashbuckler Require="level >= 12"',
+  'Get Used To Disappointment':
+    'Traits=Class,Swashbuckler,Bravado ' +
+    'Require="level >= 12","rank.Intimidation >= 2"',
+  'Mobile Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 12"',
+  'The Bigger They Are':
+    'Traits=Class,Swashbuckler,Bravado Require="level >= 12"',
+  'Flamboyant Leap':
+    'Traits=Class,Swashbuckler ' +
+    'Require=' +
+      '"level >= 14",' +
+      '"rank.Athletics >= 3",' +
+      '"features.Flamboyant Athlete"',
+  'Impossible Riposte':
+    'Traits=Class,Swashbuckler ' +
+    'Require="level >= 14","features.Opportune Riposte"',
+  'Perfect Finisher':
+    'Traits=Class,Swashbuckler,Finisher,Fortune Require="level >= 14"',
+  'Deadly Grace':'Traits=Class,Swashbuckler Require="level >= 16"',
+  'Felicitous Riposte':
+    'Traits=Class,Swashbuckler,Fortune Require="level >= 16"',
+  'Revitalizing Finisher':
+    'Traits=Class,Swashbuckler,Finisher Require="level >= 16"',
+  'Incredible Luck':
+    'Traits=Class,Swashbuckler,Fortune ' +
+    'Require="level >= 18","features.Charmed Life"',
+  'Lethal Finisher':
+    'Traits=Class,Swashbuckler,Death,Finisher ' +
+    // TODO require "precise strike 6d6"
+    'Require="level >= 18"',
+  'Parry And Riposte':
+    'Traits=Class,Swashbuckler ' +
+    'Require="level >= 18","features.Opportune Riposte"',
+  'Illimitable Finisher':
+    'Traits=Class,Swashbuckler,Finisher,Fortune Require="level >= 20"',
+  'Inexhaustible Countermoves':
+    'Traits=Class,Swashbuckler Require="level >= 20"',
+  'Panache Paragon':'Traits=Class,Swashbuckler Require="level >= 20"',
 
 /*
   // Archetype
@@ -9085,6 +9298,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
+  // Monk
+  'Mystery':'Section=feature Note="1 selection"',
+
   // Sorcerer
   'Aberrant':
     Pathfinder2E.FEATURES.Aberrant
@@ -9142,17 +9358,17 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Elemental (Earth)']
     .replace('+1', '+2'),
   'Fey':
-    Pathfinder2E.FEATURES['Fey']
+    Pathfinder2E.FEATURES.Fey
     .replace('self or target', 'self +2 Performance or'),
   'Hag':
-    Pathfinder2E.FEATURES['Hag']
+    Pathfinder2E.FEATURES.Hag
     .replace('2 HP mental', '4 HP mental')
     .replace('for 1 rd', 'for 1 rd; if no attacks succeed, gives self temporary Hit Points equal to the spell rank for 1 rd'),
   'Imperial':
-    Pathfinder2E.FEATURES['Imperial']
+    Pathfinder2E.FEATURES.Imperial
     .replace('self or target', 'self +1 Armor Class or'),
   'Undead':
-    Pathfinder2E.FEATURES['Undead']
+    Pathfinder2E.FEATURES.Undead
     .replace('negative', 'void')
     .replaceAll('level', 'rank'),
   // Expert Spellcaster as above
@@ -9350,8 +9566,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Greater Vital Evolution':Pathfinder2E.FEATURES['Greater Vital Evolution'],
   'Scintillating Spell':
     'Action=1 ' +
-    'Section=magic ' +
-    'Note="Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure"',
+    'Section=magic ' + 'Note="Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure"',
   'Echoing Spell':
     'Action=1 ' +
     'Section=magic ' +
@@ -9367,6 +9582,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Spellshape Mastery':
     Pathfinder2E.FEATURES['Metamagic Mastery']
     .replace('metamagic', 'spellshape'),
+
+  // Swashbuckler
+  'Battledancer':
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Fascinating Performance feature",' +
+      '"Skill Trained (Performance",' +
+      '"Perform actions have the bravado trait"',
+  "Swashbuckler's Style":'Section=feature Note="1 selection"',
 
   // General and Skill Feats
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
@@ -11821,19 +12045,51 @@ Pathfinder2ERemaster.SPELLS = {
   'Tentacular Limbs':
     Pathfinder2E.SPELLS['Tentacular Limbs']
     .replace('Transmutation', 'Manipulate'),
+  'Aberrant Whispers':
+    Pathfinder2E.SPELLS['Aberrant Whispers']
+    .replace('Enchantment', 'Concentrate'),
+  'Unusual Anatomy':
+    Pathfinder2E.SPELLS['Aberrant Whispers']
+    .replace('Transmutation', 'Manipulate'),
   'Angelic Halo':
     Pathfinder2E.SPELLS['Angelic Halo']
     .replace('Abjuration', 'Concentrate')
     .replace('Good', 'Holy'),
+  'Angelic Wings':
+    Pathfinder2E.SPELLS['Angelic Wings']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Celestial Brand':
+    Pathfinder2E.SPELLS['Celestial Brand']
+    .replace('Necromancy', 'Manipulate')
+    .replace('evil', 'unholy')
+    .replace('HP good', 'HP spirit')
+    .replaceAll('good', 'holy'),
   "Glutton's Jaws":
     Pathfinder2E.SPELLS["Glutton's Jaws"] + ' ' +
     'Cast=2 ' +
     'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
     'Description=' +
       '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary HP for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary HP</b>)"',
+  'Swamp Of Sloth':
+    Pathfinder2E.SPELLS['Swamp Of Sloth']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Cnthonian Wrath':
+    Pathfinder2E.SPELLS['Abyssal Wrath']
+    .replace('Evocation', 'Concentrate,Manipulate'),
   'Diabolic Edict':
     Pathfinder2E.SPELLS['Diabolic Edict']
     .replace('Enchantment', 'Concentrate'),
+  'Embrace The Pit':
+    Pathfinder2E.SPELLS['Embrace The Pit']
+    .replace('Transmutation', 'Concentrate')
+    .replace(',Evil', '')
+    .replaceAll('evil, fire,', 'fire')
+    .replaceAll(/, and weakness \S+ to good,?/g, ''),
+  'Hellfire Plume':
+    Pathfinder2E.SPELLS['Hellfire Plume']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Evil', 'Spirit')
+    .replaceAll('evil', 'spirit'),
   'Flurry Of Claws':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
@@ -11841,24 +12097,67 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"R30\' Successfuil spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
+  'Dragon Breath':
+    Pathfinder2E.SPELLS['Dragon Breath']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replaceAll(/draconicColor[^:]*:/g, ''),
+  'Dragon Wings':
+    Pathfinder2E.SPELLS['Dragon Wings']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
   'Elemental Toss':
     Pathfinder2E.SPELLS['Elemental Toss']
     .replace('Evocation', 'Manipulate'),
+  'Elemental Motion':
+    Pathfinder2E.SPELLS['Elemental Motion']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('(Earth)', "(Earth)'||$$'features.Elemental (Metal)")
+    .replace('{', "{$$'features.Elemental (Wood)'?(speed+\\\"' climb Speed\\\"):"),
+  'Elemental Blast':
+    Pathfinder2E.SPELLS['Elemental Blast']
+    .replace('Evocation', 'Concentrate,Manipulate'),
   'Faerie Dust':
     Pathfinder2E.SPELLS['Faerie Dust']
     .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Fey Disappearance':
+    Pathfinder2E.SPELLS['Fey Disappearance']
+    .replace('Enchantment', 'Manipulate'),
+  'Fey Glamour':
+    Pathfinder2E.SPELLS['Fey Glamour']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Jealous Hex':
     Pathfinder2E.SPELLS['Jealous Hex']
     .replace('Necromancy', 'Concentrate'),
+  'Horrific Visage':
+    Pathfinder2E.SPELLS['Jealous Hex']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  "You're Mine":
+    Pathfinder2E.SPELLS["You're Mine"]
+    .replace('Enhantment','Concentrate,Manipulate'),
   'Ancestral Memories':
     Pathfinder2E.SPELLS['Ancestral Memories']
     .replace('Divination', 'Concentrate') + ' ' +
     'Description=' +
       '"R60\' Self gains +1 on the next spell attack or target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
+  'Extend Blood Magic':
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"Extends the blood magic effect from a subequent spell by 1 rd"',
+  'Arcane Countermeasure':
+    Pathfinder2E.SPELLS['Arcane Countermeasure']
+    .replace('Abjuration', 'Manipulate'),
   "Undeath's Blessing":
     Pathfinder2E.SPELLS["Undeath's Blessing"]
     .replace('Necromancy', 'Manipulate')
-    .replace('Negative', 'Void')
+    .replace('Negative', 'Void'),
+  'Drain Life':
+    Pathfinder2E.SPELLS['Drain Life']
+    .replace('Necromancy', 'Manipulate')
+    .replace('Negative', 'Void'),
+  'Grasping Grave':
+    Pathfinder2E.SPELLS['Grasping Grave']
+    .replace('Necromancy', 'Concentrate,Manipulate')
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -12507,6 +12806,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('selectableFeatureCount.Monk (Qi Tradition)',
       'featureNotes.qiTradition', '=', null
     );
+  } else if(name == 'Oracle') {
+    rules.defineRule('selectableFeatureCount.Oracle (Mystery)',
+      'featureNotes.mystery', '=', null
+    );
   } else if(name == 'Rogue') {
     rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
       'featureNotes.rogueKeyAttribute', '=', '1'
@@ -12516,6 +12819,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Elemental (Air)', '=', '"slashing"',
       'features.Elemental (Metal)', '=', '"piercing"',
       'features.Elemental (Wood)', '=', '"bludgeoning"'
+    );
+  } else if(name == 'Swashbuckler') {
+    rules.defineRule('selectableFeatureCount.Swashbuckler (Style)',
+      "featureNotes.swashbuckler'sStyle", '=', '1'
     );
   } else if(name == 'Witch') {
     rules.defineRule('patronTraditionsLowered',
@@ -12765,6 +13072,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
+  } else if(name == 'Interweave Dispel') {
+    rules.defineRule('knowsDispelMagicSpell',
+      'spells.Dispel Magic (A2)', '=', '1',
+      'spells.Dispel Magic (D2)', '=', '1',
+      'spells.Dispel Magic (O2)', '=', '1',
+      'spells.Dispel Magic (P2)', '=', '1'
+    );
   } else if(name == 'Invulnerable Rager') {
     rules.defineRule('combatNotes.invulnerableRager',
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'

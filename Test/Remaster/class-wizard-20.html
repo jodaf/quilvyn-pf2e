@@ -336,8 +336,8 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: A10: 2; A1: 3; A2: 3; A3: 3; A4: 3; A5: 3; A6: 3; A7: 3; A8: 3; A9: 3; AC1: 5</td>
         <td><b>Focus Points</b>: 3</td>
-        <td><b>Attack</b>: Arcane Innate: +26 (charisma; trained)</td>
-        <td><b>Spell DC</b>: Arcane Innate: 36 (charisma; trained)</td>
+        <td><b>Attack</b>: Arcane Innate: +32 (charisma; legendary); Arcane: +33 (intelligence; legendary)</td>
+        <td><b>Spell DC</b>: Arcane Innate: 42 (charisma; legendary); Arcane: 43 (intelligence; legendary)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -371,6 +371,12 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Archwizard's Spellcraft: Has 1 10th-level spell slot</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Expert Spellcaster: Spell Expert (Arcane)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Legendary Spellcaster: Spell Legendary (Arcane)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Master Spellcaster: Spell Master (Arcane)</i></td>
+    </tr><tr style="text-align:center">
       <td><i>School Of Ars Grammatica: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>School Of Battle Magic: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell</i></td>
@@ -384,6 +390,8 @@ var attributes = {
       <td><i>School Of The Boundary: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>School Of Unified Magical Theory: Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell</i></td>
+    </tr><tr style="text-align:center">
+      <td>Bespell Strikes: <b>(F)</b> After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; the damage type is force or the same type as the spell inflicted</td>
     </tr><tr style="text-align:center">
       <td>Bond Conservation: <b>(1)</b> Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn</td>
     </tr><tr style="text-align:center">
@@ -405,15 +413,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Experimental Spellshaping: Can choose 1 spellshape feat of up to level 10 to use each day</td>
     </tr><tr style="text-align:center">
-      <td>Expert Spellcaster: Spell Expert (Arcane)</td>
-    </tr><tr style="text-align:center">
       <td>Infinite Possibilities: Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower</td>
-    </tr><tr style="text-align:center">
-      <td>Legendary Spellcaster: Spell Legendary (Arcane)</td>
     </tr><tr style="text-align:center">
       <td>Linked Focus: Draining a bonded item to cast a spell restores 1 Focus Point</td>
     </tr><tr style="text-align:center">
-      <td>Master Spellcaster: Spell Master (Arcane)</td>
+      <td>Magic Sense: Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek</td>
     </tr><tr style="text-align:center">
       <td>Nonlethal Spell: <b>(1)</b> Changed the damage caused by a subsequent spell to non-lethal</td>
     </tr><tr style="text-align:center">
@@ -427,6 +431,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>School Of Unified Magical Theory: Can use Drain Bonded Item once per spell rank each day</td>
     </tr><tr style="text-align:center">
+      <td>Scintillating Spell: <b>(1)</b> Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure</td>
+    </tr><tr style="text-align:center">
       <td>Spell Blending: Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
       <td>Spell Combination: Can prepare a spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower</td>
@@ -436,6 +442,8 @@ var attributes = {
       <td>Spell Tinker: <b>(2)</b> Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
     </tr><tr style="text-align:center">
       <td>Spellbook Prodigy: Critical failures to Learn A Spell are normal failures</td>
+    </tr><tr style="text-align:center">
+      <td>Spellshape Mastery: Can use 1-action spellshape effects as free actions</td>
     </tr><tr style="text-align:center">
       <td>Staff Nexus: Can cast spells from staff, using charges from 3 spells expended during daily prep</td>
     </tr><tr style="text-align:center">
