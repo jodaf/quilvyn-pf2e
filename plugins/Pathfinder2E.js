@@ -6723,25 +6723,25 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Earth)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Fire)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP fire per spell level",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Water)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning or fire per spell level",' +
+      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Fey':
     'Section=magic,magic,skill ' +
@@ -6788,7 +6788,7 @@ Pathfinder2E.FEATURES = {
   'Bespell Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; damage type depends on the spell school"',
+    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of turn; the damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
@@ -6940,8 +6940,7 @@ Pathfinder2E.FEATURES = {
     'Note="Invokes an instantaneous spell of 5th level or lower without expending a spell slot"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
-    'Section=magic ' +
-    'Note="Can use a 1-action metamagic effect as a free action"',
+    'Section=magic Note="Can use 1-action metamagic effects as free actions"',
 
   // Wizard
   // Alertness as above
@@ -11979,7 +11978,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"%{draconicColor<\'Green\'?\\"60\' line\\":\\"30\' cone\\"} inflicts 5d6 HP %{draconicEnergy||\'fire\'} (<b>save basic %{draconicColor==\'Green\'?\'Fortitude\':\'Reflex\'}</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"%{draconicColor<\'Green\'?\\"60\' line\\":\\"30\' cone\\"} inflicts 5d6 HP %{bloodlineDamage||\'fire\'} (<b>save basic %{draconicColor==\'Green\'?\'Fortitude\':\'Reflex\'}</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Dragon Claws':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -11987,7 +11986,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Claws inflict 1d6 HP slashing and 1d6 HP %{draconicEnergy||\'fire\'}, and self gains resistance 5 to %{draconicEnergy||\'fire\'}, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
+      '"Claws inflict 1d6 HP slashing and 1d6 HP %{bloodlineDamage||\'fire\'}, and self gains resistance 5 to %{bloodlineDamage||\'fire\'}, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
   'Dragon Wings':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
@@ -12003,7 +12002,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target suffers 3d4 HP negative, and self gains equal temporary HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
+      '"R30\' Target suffers 3d4 HP negative, and self gains equal temporary HP for 1 min (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Elemental Blast':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
@@ -12011,7 +12010,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{elementalDamage} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
@@ -12019,7 +12018,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?speed+\\"\' swim Speed and water breathing\\":(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
+      '"Self gains a %{$\'features.Elemental (Earth)\'?\\"10\' burrow Speed\\":$\'features.Elemental (Water)\'?(speed+\\"\' swim Speed and water breathing\\"):(speed+\\"\' fly Speed\\")} for 1 min (<b>heightened 6th</b> gives +10\' Speed; <b>9th</b> gives +20\' Speed)"',
   'Elemental Toss':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Attack,Evocation,Sorcerer ' +
@@ -12027,7 +12026,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d8 HP %{$\'features.Elemental (Fire)\'?\'fire\':\'bludgeoning\'}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R30\' Spell attack inflicts 1d8 HP %{elementalDamage}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
@@ -12035,7 +12034,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good for 1 min (<b>heightened +2</b> gives +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
+      '"Self gains resistance 5 to evil, fire, and poison, resistance 1 to non-silver physical damage, and weakness 5 to good, for 1 min (<b>heightened +2</b> gives +5 resistance to evil, fire, and poison, +2 resistance to non-silver physical damage, and +5 weakness to good)"',
   'Extend Spell':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Divination,Metamagic,Sorcerer ' +
@@ -12066,7 +12065,7 @@ Pathfinder2E.SPELLS = {
     'School=Illusion ' +
     'Traditions=Primal ' +
     'Cast=2 ' +
-    'Description="R30\' 30\' burst disguises 10 targets for 10 min"',
+    'Description="R30\' 30\' burst disguises an area or 10 targets for 10 min"',
   "Glutton's Jaws":
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Necromancy,Sorcerer ' +
@@ -12130,7 +12129,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 HP (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 HP)"',
+      '"Touched responds to <i>Heal</i> and <i>Harm</i> as an undead for 1 min, and <i>Harm</i> restores +2 Hit Points (<b>save Will</b> <i>Heal</i> and <i>Harm</i> have half effect for 1 rd; critical success negates) (<b>heightened +1</b> <i>Harm</i> restores +2 Hit Points)"',
   'Unusual Anatomy':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
@@ -14194,8 +14193,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
   } else if(name == 'Sorcerer') {
+    rules.defineRule('bloodlineTraditions',
+      classLevel, '=', 'Pathfinder2E.bloodlineTraditions = ""'
+    );
     rules.defineRule('bloodlineTraditionsLowered',
       'bloodlineTraditions', '=', 'source.toLowerCase()'
+    );
+    rules.defineRule('bloodlineDamage',
+      'draconicColor', '=', '{Black:"acid", Blue:"electricity", Bronze:"electricity", Copper:"acid", Green:"poison", Silver:"cold", White:"cold"}[source] || "fire"',
+      'features.Elemental (Air)', '=', '"bludgeoning"',
+      'features.Elemental (Earth)', '=', '"bludgeoning"',
+      'features.Elemental (Fire)', '=', '"fire"',
+      'features.Elemental (Water)', '=', '"bludgeoning"'
     );
     rules.defineRule('draconicColor',
       'features.Draconic (Black)', '=', '"Black"',
@@ -14208,9 +14217,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Draconic (Red)', '=', '"Red"',
       'features.Draconic (Silver)', '=', '"Silver"',
       'features.Draconic (White)', '=', '"White"'
-    );
-    rules.defineRule('draconicEnergy',
-      'draconicColor', '=', '{Black:"acid", Blue:"electricity", Bronze:"electricity", Copper:"acid", Green:"poison", Silver:"cold", White:"cold"}[source] || "fire"'
     );
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
@@ -14572,12 +14578,14 @@ Pathfinder2E.featRules.traits = [
   'Rage', 'Ranger', 'Rogue', 'Secret', 'Skill', 'Sorcerer', 'Stance',
   'Transmutation', 'Uncommon', 'Visual', 'Wizard',
   // Core 2
-  'Additive', 'Aiuvarin', 'Catfolk', 'Changeling', 'Cold', 'Concentration',
-  'Consecration', 'Dhampir', 'Disease', 'Dragonblood', 'Dromaar', 'Duskwalker',
+  'Additive', 'Aiuvarin', 'Bravado', 'Catfolk', 'Changeling', 'Cold',
+  'Concentration', 'Consecration', 'Cursebound', 'Death', 'Dhampir', 'Disease',
+  'Dragonblood', 'Dromaar', 'Duskwalker', 'Earth', 'Finisher', 'Fire',
   'Hobgoblin', 'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light',
-  'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Poison',
-  'Prediction', 'Ratfolk', 'Revelation', 'Sonic', 'Spellshape',
-  'Teleportation', 'Tengu', 'Tripkee', 'Vitality', 'Void', 'Witch'
+  'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Oracle',
+  'Poison', 'Prediction', 'Ratfolk', 'Revelation', 'Sonic', 'Spellshape',
+  'Spirit', 'Swashbuckler', 'Teleportation', 'Tengu', 'Tripkee', 'Vitality',
+  'Void', 'Water', 'Witch'
 ];
 
 /*
@@ -15441,7 +15449,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           'levels.Sorcerer', '=', null
         );
         rules.defineRule('bloodlineTraditions',
-          'features.' + name, '=', '!dict.bloodlineTraditions ? "' + trad + '" : !dict.bloodlineTraditions.includes("' + trad + '") ? dict.bloodlineTraditions + "; ' + trad + '" : dict.bloodlineTraditions'
+          'features.' + name, '=', 'Pathfinder2E.bloodlineTraditions = !Pathfinder2E.bloodlineTraditions ? "' + trad + '" : !Pathfinder2E.bloodlineTraditions.includes("' + trad + '") ? Pathfinder2E.bloodlineTraditions + "; ' + trad + '" : Pathfinder2E.bloodlineTraditions'
         );
         rules.defineRule('features.Advanced Bloodline (' + name + ')',
           'features.Advanced Bloodline', '?', null,
