@@ -31,7 +31,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  */
 function Pathfinder2E() {
 
-  let rules = new QuilvynRules('Pathfinder 2E', Pathfinder2E.VERSION);
+  let rules = new QuilvynRules('Pathfinder 2E (Legacy)', Pathfinder2E.VERSION);
   rules.plugin = Pathfinder2E;
   Pathfinder2E.rules = rules;
 
@@ -3399,121 +3399,36 @@ Pathfinder2E.FEATURES = {
   // Ancestry
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
+  // Dwarf
   'Ancient-Blooded Dwarf':
     'Section=feature Note="Has the Call On Ancient Blood feature"',
-  'Arctic Elf':
-    'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Call On Ancient Blood':
     'Action=Reaction ' +
-    'Section=save Note="Gives +1 vs. magic until the end of the turn"',
-  'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
-  'Chameleon Gnome':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Can use a 1 hr process to change skin and hair colors",' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Gains +2 Stealth until surroundings change"',
-  'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
+    'Note="Gives +1 vs. magic until the end of the turn"',
   'Darkvision':
     'Section=feature Note="Has normal b/w vision in darkness and dim light"',
   'Death Warden Dwarf':
     'Section=save ' +
     'Note="Successful saves vs. necromancy effects are critical successes"',
   'Dwarf Heritage':'Section=feature Note="1 selection"',
-  'Elf Heritage':'Section=feature Note="1 selection"',
-  'Fast':'Section=ability Note="+5 Speed"',
-  'Fey-Touched Gnome':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Has the Fey trait",' +
-      '"Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
   'Forge Dwarf':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1} and treats environmental heat as 1 step less extreme"',
-  'Gnome Heritage':'Section=feature Note="1 selection"',
-  'Goblin Heritage':'Section=feature Note="1 selection"',
-  'Gutsy Halfling':
-    'Section=save Note="Successful saves vs. emotion are critical successes"',
-  'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Halfling Heritage':'Section=feature Note="1 selection"',
-  'Hillock Halfling':
-    'Section=combat ' +
-    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
-  'Human Heritage':'Section=feature Note="1 selection"',
-  'Irongut Goblin':
-    'Section=feature,save ' +
-    'Note=' +
-      '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs. afflictions and sickened from ingestion, and successes on saves are critical successes"',
-  'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
-  'Keen Eyes':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
-      '"R30\' +2 Seek to find hidden creatures"',
-  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
-  'Razortooth Goblin':
-    'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
   'Rock Dwarf':
     'Section=combat ' +
-    'Note="+2 DC vs. Shove, Trip, and magical knock prone/Reduces any forced move distance of 10\' or more by half"',
-  'Seer Elf':
-    'Section=magic,skill ' +
-    'Note=' +
-      '"Knows the Detect Magic arcane innate cantrip",' +
-      '"+1 to Identify Magic and Decipher Writing of a magical nature"',
-  'Sensate Gnome':
-    'Section=skill ' +
-    'Note="Has 30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
-  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
-  'Slow':'Section=ability Note="-5 Speed"',
-  'Snow Goblin':
-    'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
+    'Note="+2 DC vs. Shove, Trip, and magical knock prone, and reduces any forced move distance of 10\' or more by half"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note=' +
       '"Has poison resistance %{level//2>?1} and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) with a critical success"',
-  'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
-  'Unbreakable Goblin':
-    'Section=combat,save ' +
-    'Note=' +
-      '"+4 Hit Points",' +
-      '"Reduces falling damage by half the distance"',
-  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
-  'Wellspring Gnome':'Section=feature Note="1 selection"',
-  'Wellspring Gnome (Arcane)':
-    'Section=magic ' +
-    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
-  'Wellspring Gnome (Divine)':
-    'Section=magic ' +
-    'Note="Can cast a chosen divine cantrip as an innate spell at will"',
-  'Wellspring Gnome (Occult)':
-    'Section=magic ' +
-    'Note="Can cast a chosen occult cantrip as an innate spell at will"',
-  'Whisper Elf':
-    'Section=skill ' +
-    'Note="Can Seek in a 60\' cone using hearing and gains +2 within 30\'"',
-  'Wildwood Halfling':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by foliage"',
-  'Woodland Elf':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Can always Take Cover within forest terrain",' +
-      '"Can Climb foliage at %{speed//2}\', or %{speed}\' on a critical success"',
 
-  // Ancestry feats
   'Dwarven Lore':
     'Section=skill Note="Skill Trained (Crafting; Religion; Dwarven Lore)"',
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Battle Axe; Pick; Warhammer)/Treats dwarf weapons as one category simpler",' +
+      '"Attack Trained (Battle Axe; Pick; Warhammer)/Weapon Familiarity (Dwarf Weapons)",' +
       '"Has access to uncommon dwarf weapons"',
   'Rock Runner':
     'Section=ability,skill ' +
@@ -3522,7 +3437,7 @@ Pathfinder2E.FEATURES = {
       '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes"',
   'Stonecunning':
     'Section=skill ' +
-    'Note="+2 Perception (unusual stonework)/Automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\'\':\' -2\'} check to notice unusual stonework"',
+    'Note="+2 Perception to detect unusual stonework, and automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\'\':\' -2\'} check to notice it"',
   'Unburdened Iron':
     'Section=ability,ability ' +
     'Note=' +
@@ -3530,7 +3445,7 @@ Pathfinder2E.FEATURES = {
       '"Reduces non-armor Speed penalties by 5\'"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="Inflicts +1 HP per die vs. ancestral foes and for 1 min vs. any foe that inflicts a critical success on an attack"',
+    'Note="Inflicts +1 HP per damage die vs. a choice of drow, duregar, giants, or orcs and for 1 min vs. any foe that inflicts a critical success on an attack"',
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
@@ -3552,19 +3467,41 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack %V (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
+
+  // Elf
+  'Arctic Elf':
+    'Section=save ' +
+    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
+  'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
+  'Elf Heritage':'Section=feature Note="1 selection"',
+  'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
+  'Seer Elf':
+    'Section=magic,skill ' +
+    'Note=' +
+      '"Knows the Detect Magic arcane innate cantrip",' +
+      '"+1 to Identify Magic and Decipher Writing of a magical nature"',
+  'Whisper Elf':
+    'Section=skill ' +
+    'Note="Can use hearing to Seek in a 60\' cone and gains +2 within 30\' to locate creatures"',
+  'Woodland Elf':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Can always Take Cover within forest terrain",' +
+      '"Can Climb foliage at %{speed//2}\', or %{speed}\' on a critical success"',
+
   'Ancestral Longevity':
     'Section=skill ' +
-    'Note="Gains Trained proficiency in choice of skill during daily prep"',
+    'Note="Gains Trained proficiency in a choice of skill during daily prep"',
   'Elven Lore':
     'Section=skill Note="Skill Trained (Arcana; Nature; Elven Lore)"',
   'Elven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)/Treats elf weapons as one category simpler",' +
+      '"Attack Trained (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow)/Weapon Familiarity (Elf Weapons)",' +
       '"Has access to uncommon elf weapons"',
   'Forlorn':
     'Section=save ' +
-    'Note="+1 vs. emotion effects, and successes are critical successes"',
+    'Note="+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
     'Section=magic ' +
@@ -3574,14 +3511,14 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May spend double the time normally required on a check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
+    'Note="May spend double the time normally required on a Perception or skill check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
-  'Elf Step':'Action=1 Section=combat Note="Steps twice in 1 action"',
+  'Elf Step':'Action=1 Section=combat Note="Steps twice"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Gains expert rank in a chosen trained skill during daily prep and may replace an existing skill increase with the one chosen upon expiration"',
+    'Note="Gains expert rank in a chosen trained skill during daily prep and may replace an existing skill increase with one chosen for Ancestral Longevity or Expert Longevity upon expiration"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
@@ -3590,13 +3527,43 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
 
+  // Gnome
+  'Chameleon Gnome':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Can use a 1-hr process to change skin and hair colors",' +
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Gains +2 Stealth until surroundings change"',
+  'Fey-Touched Gnome':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Fey trait",' +
+      '"Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
+  'Gnome Heritage':'Section=feature Note="1 selection"',
+  // Low-Light Vision as above
+  'Sensate Gnome':
+    'Section=skill ' +
+    'Note="Has R30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
+  'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
+  'Wellspring Gnome':'Section=feature Note="1 selection"',
+  // TODO change innate spells from primal to chosen wellspring
+  'Wellspring Gnome (Arcane)':
+    'Section=magic ' +
+    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
+  'Wellspring Gnome (Divine)':
+    'Section=magic ' +
+    'Note="Can cast a chosen divine cantrip as an innate spell at will"',
+  'Wellspring Gnome (Occult)':
+    'Section=magic ' +
+    'Note="Can cast a chosen occult cantrip as an innate spell at will"',
+
   'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
   'Burrow Elocutionist':'Section=skill Note="Can speak with burrowing animals"',
+  'Familiar':'Section=feature Note="Has a Tiny animal minion"',
   'Fey Fellowship':
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. fey",' +
-      '"+2 Perception (fey)/May make an immediate -5 Diplomacy check to Make An Impression on fey and retry a failure after 1 min conversation"',
+      '"+2 Perception (fey)/May make an immediate%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression on fey and retry a failure after 1 min conversation"',
   'First World Magic':
     'Section=magic ' +
     'Note="Can cast a chosen primal cantrip as an innate spell at will"',
@@ -3608,12 +3575,12 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Glaive; Kukri)/Treats gnome weapons as one category simpler",' +
+      '"Attack Trained (Glaive; Kukri)/Weapon Familiarity (Gnome Weapons)",' +
       '"Has access to uncommon gnome weapons"',
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
-      '"+1 Will vs. illusions/R10\' Automatically attempts checks to disbelieve illusions",' +
+      '"+1 Will vs. illusions/R10\' Automatically attempts to disbelieve illusions",' +
       '"+1 Perception (illusions)"',
   'Animal Elocutionist':
     'Section=magic,skill ' +
@@ -3634,6 +3601,50 @@ Pathfinder2E.FEATURES = {
   'Gnome Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Glaive; Kukri; Gnome Weapons)"',
+
+  // Goblin
+  'Charhide Goblin':
+    'Section=save ' +
+    'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
+  'Fast':'Section=ability Note="+5 Speed"',
+  'Goblin Heritage':'Section=feature Note="1 selection"',
+  'Gutsy Halfling':
+    'Section=save Note="Successful saves vs. emotion are critical successes"',
+  'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Halfling Heritage':'Section=feature Note="1 selection"',
+  'Hillock Halfling':
+    'Section=combat ' +
+    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
+  'Human Heritage':'Section=feature Note="1 selection"',
+  'Irongut Goblin':
+    'Section=feature,save ' +
+    'Note=' +
+      '"May safely eat spoiled food and when sickened",' +
+      '"+2 vs. afflictions and sickened from ingestion, and successes on saves are critical successes"',
+  'Keen Eyes':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
+      '"R30\' +2 Seek to find hidden creatures"',
+  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
+  'Razortooth Goblin':
+    'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
+  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
+  'Slow':'Section=ability Note="-5 Speed"',
+  'Snow Goblin':
+    'Section=save ' +
+    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
+  'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Unbreakable Goblin':
+    'Section=combat,save ' +
+    'Note=' +
+      '"+4 Hit Points",' +
+      '"Reduces falling damage by half the distance"',
+  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
+  'Wildwood Halfling':
+    'Section=ability ' +
+    'Note="Moves normally over difficult terrain caused by foliage"',
 
   'Burn It!':
     'Section=combat,magic ' +
@@ -3656,7 +3667,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Dogslicer; Horsechopper)/Treats goblin weapons as one category simpler",' +
+      '"Attack Trained (Dogslicer; Horsechopper)/Weapon Familiarity (Goblin Weapons)",' +
       '"Has access to uncommon goblin weapons"',
   'Junk Tinker':
     'Section=skill ' +
@@ -3690,7 +3701,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)/Treats halfling weapons as one category simpler",' +
+      '"Attack Trained (Sling; Halfling Sling Staff; Shortsword)/Weapon Familiarity (Halfling Weapons)",' +
       '"Has access to uncommon halfling weapons"',
   'Sure Feet':
     'Section=skill ' +
@@ -3778,7 +3789,7 @@ Pathfinder2E.FEATURES = {
   'Orc Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Attack Trained (Falchion; Greataxe)/Treats orc weapons as one category simpler",' +
+      '"Attack Trained (Falchion; Greataxe)/Weapon Familiarity (Orc Weapons)",' +
       '"Has access to uncommon orc weapons"',
   'Orc Weapon Carnage':
     'Section=combat ' +
@@ -4105,7 +4116,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has resistance %{3+constitutionModifier} to physical weapon damage during rage"',
   'Raging Resistance (Giant)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to bludgeoning and choice of cold, electricity, or fire during rage"',
+    'Note="Has resistance %{3+constitutionModifier} to bludgeoning and a choice of cold, electricity, or fire during rage"',
   'Raging Resistance (Spirit)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to negative and undead during rage"',
@@ -4678,7 +4689,7 @@ Pathfinder2E.FEATURES = {
     'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
   'Divine Ally (Blade)':
     'Section=combat ' +
-    'Note="Can apply choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
+    'Note="Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
   'Divine Ally (Shield)':
     'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
   'Divine Ally (Steed)':
@@ -5438,7 +5449,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
   'Incredible Companion':
     'Section=feature ' +
-    'Note="Animal Companion has choice of nimble or savage characteristics"',
+    'Note="Animal Companion has a choice of nimble or savage characteristics"',
   'Soaring Shape':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 on Acrobatics checks"',
@@ -5464,7 +5475,7 @@ Pathfinder2E.FEATURES = {
     'Note="Self and companion automatically flank a foe adjacent to both"',
   'Dragon Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to choice of acid, cold, electricity, fire, or poison"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to a choice of acid, cold, electricity, fire, or poison"',
   'Green Tongue':
     'Section=magic ' +
     'Note="Self and any leshy familiar have continuous <i>Speak With Plants</i> effects"',
@@ -5473,9 +5484,9 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic ' +
     'Note=' +
       '"Knows the Primal Summons primal spell",' +
-      '"Summoned creatures gain choice of air, earth, fire, or water elemental power"',
+      '"Summoned creatures gain a choice of air, earth, fire, or water elemental power"',
   'Specialized Companion':
-    'Section=feature Note="Animal Companion has choice of specialization"',
+    'Section=feature Note="Animal Companion has a choice of specialization"',
   'Timeless Nature':
     'Section=feature,save ' +
     'Note=' +
@@ -6364,11 +6375,11 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts choice of -10 Speed or enfeebled 1 until the end of the next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts a choice of -10 Speed or enfeebled 1 until the end of the next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat ' +
-    'Note="Debilitating Strike inflicts choice of two debilitations"',
+    'Note="Debilitating Strike inflicts 2 choices of debilitations"',
   // Evasion as above
   // Great Fortitude as above
   // Greater Weapon Specialization as above
@@ -6381,7 +6392,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts a choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -6542,7 +6553,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Debilitating Strike to prevent Reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict weakness 5 to choice of damage type or clumsy 1"',
+    'Note="Can use Debilitating Strike to inflict weakness 5 to a choice of damage type or clumsy 1"',
   'Critical Debilitation':
     'Section=combat ' +
     'Note="Can use Debilitating Strike on a critical hit to inflict slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1 ; critical success negates; critical failure inflicts paralyzed)"',
@@ -6775,7 +6786,6 @@ Pathfinder2E.FEATURES = {
   'Dangerous Sorcery':
     'Section=magic ' +
     'Note="Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level"',
-  'Familiar':'Section=feature Note="May have a familiar"',
   // Reach Spell as above
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -10182,7 +10192,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone, R120\' 15\' burst, or 50\' line inflicts 5d8 HP of choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"30\' cone, R120\' 15\' burst, or 50\' line inflicts 5d8 HP of a choice of damage type (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Shadow Siphon':
     'Level=5 ' +
     'Traits=Illusion,Shadow ' +
@@ -12010,7 +12020,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{elementalDamage} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"Choice of 30\' cone, 60\' line, or R30\' 10\' burst inflicts 8d6 HP %{bloodlineDamage} (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Elemental Motion':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
@@ -12026,7 +12036,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d8 HP %{elementalDamage}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R30\' Spell attack inflicts 1d8 HP %{bloodlineDamage}, or double HP on a critical success (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Embrace The Pit':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evil,Morph,Sorcerer,Transmutation ' +
@@ -15387,6 +15397,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             note, '+=', choices.replace('+', '')
           );
       }
+      matchInfo = n.match(/Weapon\s(Expertise|Familiarity)\s*\(([^\)]*)\)/i);
+      if(matchInfo) {
+        matchInfo[2].split(/;\s*/).forEach(element => {
+          element = element.replace(' Weapons', '');
+          rules.defineRule('weapon' + matchInfo[1], note, '=', '1');
+        });
+      }
       matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
       if(matchInfo) {
         let features = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
@@ -15787,7 +15804,10 @@ Pathfinder2E.weaponRules = function(
   let lowerCategory =
     category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
   damage = matchInfo[1];
-  group = group != 'Bomb' ? group + 's' : 'Alchemical Bombs';
+  group =
+    group == 'Bomb' ? 'Alchemical Bombs' :
+    group == 'Knife' ? 'Knives' :
+    (group + 's');
   let damageType = matchInfo[4];
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
@@ -15814,24 +15834,19 @@ Pathfinder2E.weaponRules = function(
     'combatNotes.unconventionalWeaponry', '^=', 'source=="' + name + '" ? dict["rank.' + lowerCategory + '"] : null',
     'combatNotes.unconventionalExpertise', '^=', 'source=="' + name + '" ? dict.maxWeaponTraining : null'
   );
-  let allFeats = rules.getChoices('feats') || {};
+  rules.defineRule('weaponRank.' + name,
+    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]'
+  );
+  rules.defineRule('weaponRank.' + name,
+    'weaponExpertise.' + group, '^=', 'dict["rank.maxWeaponTraining"]'
+  );
   traits.forEach(t => {
-    let feat = t.replace(/f$/, 'ven') + ' Weapon Familiarity';
-    if((feat in Pathfinder2E.FEATS || feat in allFeats) &&
-       category.match(/^(Advanced|Martial) Weapons$/)) {
-      let note =
-        'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
-      rules.defineRule('weaponRank.' + name,
-        note, '^=', 'dict["rank.' + lowerCategory + '"]'
-      );
-    }
-    feat = t.replace(/f$/, 'ven') + ' Weapon Expertise';
-    if(feat in Pathfinder2E.FEATS || feat in allFeats) {
-      let note =
-        'combatNotes.' + feat.charAt(0).toLowerCase() + feat.substring(1).replaceAll(' ', '');
-      rules.defineRule
-        ('weaponRank.' + name, note, '^=', 'dict["rank.maxWeaponTraining"]');
-    }
+    rules.defineRule('weaponRank.' + name,
+      'weaponFamiliarity.' + t, '^=', 'dict["rank.' + lowerCategory + '"]'
+    );
+    rules.defineRule('weaponRank.' + name,
+      'weaponExpertise.' + t, '^=', 'dict["rank.maxWeaponTraining"]'
+    );
   });
   rules.defineRule('proficiencyLevelBonus.' + name,
     weaponName, '?', null,
