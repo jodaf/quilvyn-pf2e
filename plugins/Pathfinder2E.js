@@ -218,7 +218,7 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Half-Orc:Heritage",' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
-    'Languages=Common,any ' +
+    'Languages=Common ' +
     'Traits=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
@@ -3418,6 +3418,7 @@ Pathfinder2E.FEATURES = {
   'Rock Dwarf':
     'Section=combat ' +
     'Note="+2 DC vs. Shove, Trip, and magical knock prone, and reduces any forced move distance of 10\' or more by half"',
+  'Slow':'Section=ability Note="-5 Speed"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note=' +
@@ -3467,13 +3468,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack %V (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
 
-
   // Elf
   'Arctic Elf':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
   'Elf Heritage':'Section=feature Note="1 selection"',
+  'Fast':'Section=ability Note="+5 Speed"',
   'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Seer Elf':
     'Section=magic,skill ' +
@@ -3536,7 +3537,7 @@ Pathfinder2E.FEATURES = {
   'Fey-Touched Gnome':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Fey trait",' +
+      '"Has the fey trait",' +
       '"Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
   'Gnome Heritage':'Section=feature Note="1 selection"',
   // Low-Light Vision as above
@@ -3603,48 +3604,26 @@ Pathfinder2E.FEATURES = {
     'Note="Attack %V (Glaive; Kukri; Gnome Weapons)"',
 
   // Goblin
+  // Darkvision as above
   'Charhide Goblin':
     'Section=save ' +
     'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
-  'Fast':'Section=ability Note="+5 Speed"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
-  'Gutsy Halfling':
-    'Section=save Note="Successful saves vs. emotion are critical successes"',
-  'Half-Elf':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Half-Orc':'Section=feature Note="Has the Low-Light Vision feature"',
-  'Halfling Heritage':'Section=feature Note="1 selection"',
-  'Hillock Halfling':
-    'Section=combat ' +
-    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
-  'Human Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs. afflictions and sickened from ingestion, and successes on saves are critical successes"',
-  'Keen Eyes':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Reduces the DC to target a concealed foe to 3 and a hidden foe to 9",' +
-      '"R30\' +2 Seek to find hidden creatures"',
-  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
+      '"+2 vs. conditions inflicted by ingestion, and successes on saves vs. ingestion conditions are critical successes"',
   'Razortooth Goblin':
     'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
-  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
-  'Slow':'Section=ability Note="-5 Speed"',
   'Snow Goblin':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
-  'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
   'Unbreakable Goblin':
     'Section=combat,save ' +
     'Note=' +
       '"+4 Hit Points",' +
       '"Reduces falling damage by half the distance"',
-  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
-  'Wildwood Halfling':
-    'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by foliage"',
 
   'Burn It!':
     'Section=combat,magic ' +
@@ -3671,13 +3650,13 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon goblin weapons"',
   'Junk Tinker':
     'Section=skill ' +
-    'Note="Can use Crafting on junk to create shoddy level 0 items; suffers no penalty when using these"',
+    'Note="Can use Crafting on junk to create shoddy level 0 items and suffers no penalty when using them"',
   'Rough Rider':
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Ride feature",' +
-      '"+1 Nature (Command An Animal with a goblin dog or wolf mount)"',
-  'Very Sneaky':'Section=skill Note="+5\' Sneak/Can Sneak between cover"',
+      '"+1 Nature to Command An Animal with a goblin dog or wolf mount"',
+  'Very Sneaky':'Section=skill Note="+5\' Sneak and can Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
     'Note="Critical hits with a goblin weapon inflict its critical specialization effect"',
@@ -3690,6 +3669,24 @@ Pathfinder2E.FEATURES = {
   'Very, Very Sneaky':
     'Section=combat Note="Can Sneak at full Speed and without cover"',
 
+  // Halfling
+  'Gutsy Halfling':
+    'Section=save Note="Successful saves vs. emotion are critical successes"',
+  'Halfling Heritage':'Section=feature Note="1 selection"',
+  'Hillock Halfling':
+    'Section=combat ' +
+    'Note="Regains +%{level} Hit Points from treatment and overnight rest"',
+  'Keen Eyes':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Reduces the DC to target a concealed or hidden foe to 3 or 9",' +
+      '"R30\' +2 Seek to find hidden creatures"',
+  'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
+  'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
+  'Wildwood Halfling':
+    'Section=ability ' +
+    'Note="Moves normally over difficult terrain caused by foliage"',
+
   'Distracting Shadows':
     'Section=skill Note="Can use larger creatures as cover for Hide and Sneak"',
   'Halfling Lore':
@@ -3697,7 +3694,7 @@ Pathfinder2E.FEATURES = {
   'Halfling Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="May reroll a failed skill check or save once per day"',
+    'Note="Rerolls a failed skill check or save once per day"',
   'Halfling Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3716,7 +3713,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"Can use Aid to help another overcome enchantment or possession",' +
-      '"+2 Perception (sense enchantment or possession)/Automatically attempts a -2 check to notice enchantment or possession"',
+      '"+2 Perception to sense enchantment or possession, and automatically attempts a -2 check to notice these"',
   'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
     'Note="+1 Ancestry Feat/Has the Adopted Ancestry (%ancestry) feature"',
@@ -3726,17 +3723,32 @@ Pathfinder2E.FEATURES = {
   'Guiding Luck':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="May reroll a failed Perception check or attack roll once per day"',
+    'Note="Rerolls a failed Perception check or attack roll once per day"',
   'Irrepressible':
     'Section=save ' +
     'Note=' +
       '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
-    'Note="Can use Hide and Sneak without cover/Using creatures gives one degree better cover"',
+    'Note="Can use Hide and Sneak without cover and gains one degree better cover from larger creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Sling; Halfling Sling Staff; Shortsword; Halfling Weapons)"',
+
+  // Human
+  'Half-Elf':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Low-Light Vision feature",' +
+      '"Has the elf trait and may take elf and half-elf feats"',
+  'Half-Orc':
+    'Section=feature,feature ' +
+    'Note=' +
+      '"Has the Low-Light Vision feature",' +
+      '"Has the orc trait and may take orc and half-orc feats"',
+  'Human Heritage':'Section=feature Note="1 selection"',
+  'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
+  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a second tradition"',
@@ -3745,11 +3757,11 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
-    'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation (Coerce) fails are critical fails"',
+    'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails"',
   'Natural Ambition':'Section=feature Note="+1 Class Feat"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
-  'Unconventional Weaponry':
-    'Section=combat Note="Treats %V as one category simpler"',
+  'Unconventional Weaponry (%weapon)':
+    'Section=combat Note="Weapon Familiarity (%weapon)"',
   'Adaptive Adept':
     'Section=magic ' +
     'Note="Knows a cantrip or level 1 spell from a second tradition"',
@@ -3766,7 +3778,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Gives +4 on an untrained skill check once per day"',
   'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
-  'Unconventional Expertise':'Section=combat Note="Attack %V (%1)"',
+  'Unconventional Expertise (%weapon)':
+    'Section=combat Note="Attack %V (%weapon)"',
 
   'Elf Atavism':'Section=feature Note="Has an elven heritage"',
   'Inspire Imitation':
@@ -3797,7 +3810,7 @@ Pathfinder2E.FEATURES = {
   'Victorious Vigor':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gains %{constitutionModifier} temporary Hit Points for 1 rd when foe drops"',
+    'Note="Reducing a foe to 0 Hit Points gives self %{constitutionModifier} temporary Hit Point%{constitutionModifier>1?\'s\':\'\'} until the end of the next turn"',
   'Pervasive Superstition':'Section=save Note="+1 vs. magic"',
   'Incredible Ferocity':
     'Section=combat Note="Has increased Orc Ferocity effects"',
@@ -13942,7 +13955,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'combatNotes.auraOfVengeance', '=', 'null' // italics
     );
     rules.defineRule('combatNotes.weaponExpertise',
-      '', '=', '"Simple Weapons"',
       classLevel, '=', '"Simple Weapons; Martial Weapons"'
     );
     rules.defineRule('combatNotes.divineAlly(Shield).1',
@@ -14228,6 +14240,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Draconic (Silver)', '=', '"Silver"',
       'features.Draconic (White)', '=', '"White"'
     );
+    rules.defineRule
+      ('combatNotes.weaponExpertise', classLevel, '=', '"Simple Weapons"');
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
@@ -14884,18 +14898,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       rules.defineRule('featureNotes.' + noteName, 'levels.Druid', '?', null);
       rules.defineRule('magicNotes.' + noteName, 'levels.Druid', '?', null);
     });
-  } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/) || name == 'Unconventional Expertise') {
+  } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/)) {
     let note =
       'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
     rules.defineRule(note,
       'maxWeaponTraining', '=', 'source<2 ? null : source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
     );
-    if(name == 'Unconventional Expertise') {
-      rules.defineRule(note + '.1',
-        note, '?', null,
-        'combatNotes.unconventionalWeaponry', '=', null
-      );
-    }
   } else if(name == 'Elf Atavism') {
     rules.defineRule('selectableFeatureCount.Elf (Heritage)',
       'featureNotes.elfAtavism', '=', '1'
@@ -15183,11 +15191,16 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if((matchInfo = name.match(/^Unconventional Weaponry \((.*)\)$/)) != null) {
     let weapon = matchInfo[1];
+    rules.defineRule('features.Unconventional Expertise (' + weapon + ')',
+      'features.Unconventional Expertise', '?', null,
+      'features.' + name, '=', '1'
+    );
+    rules.defineRule('combatNotes.unconventionalExpertise(' + weapon.replaceAll(' ', '') + ')',
+      'features.Unconventional Expertise (' + weapon + ')', '?', null,
+      'maxWeaponTraining', '=', 'source<2 ? null : source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
+    );
     rules.defineRule
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
-    rules.defineRule('combatNotes.unconventionalWeaponry',
-      'features.' + name, '=', '"' + weapon + '"'
-    );
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.wizardDedication', '?', null,
@@ -15400,7 +15413,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       matchInfo = n.match(/Weapon\s(Expertise|Familiarity)\s*\(([^\)]*)\)/i);
       if(matchInfo) {
         matchInfo[2].split(/;\s*/).forEach(element => {
-          element = element.replace(' Weapons', '');
           rules.defineRule('weapon' + matchInfo[1], note, '=', '1');
         });
       }
@@ -15831,20 +15843,14 @@ Pathfinder2E.weaponRules = function(
     'rank.' + category, '=', null,
     'rank.' + group, '^=', null,
     'rank.' + name, '^=', null,
-    'combatNotes.unconventionalWeaponry', '^=', 'source=="' + name + '" ? dict["rank.' + lowerCategory + '"] : null',
-    'combatNotes.unconventionalExpertise', '^=', 'source=="' + name + '" ? dict.maxWeaponTraining : null'
-  );
-  rules.defineRule('weaponRank.' + name,
-    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]'
-  );
-  rules.defineRule('weaponRank.' + name,
+    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
     'weaponExpertise.' + group, '^=', 'dict["rank.maxWeaponTraining"]'
   );
   traits.forEach(t => {
+    t += ' Weapons';
     rules.defineRule('weaponRank.' + name,
-      'weaponFamiliarity.' + t, '^=', 'dict["rank.' + lowerCategory + '"]'
-    );
-    rules.defineRule('weaponRank.' + name,
+      'trainingLevel.' + t, '^=', null,
+      'weaponFamiliarity.' + t, '^=', 'dict["rank.' + lowerCategory + '"]',
       'weaponExpertise.' + t, '^=', 'dict["rank.maxWeaponTraining"]'
     );
   });
