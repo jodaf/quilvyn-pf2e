@@ -23,14 +23,15 @@ var attributes = {
   "baseCharisma":10, "baseConstitution":10, "baseDexterity":10, "baseIntelligence":10, 
   "baseStrength":10, "baseWisdom":10, "class":"Fighter", "classFeats.Bard Dedication":1, 
   "classFeats.Double Slice":1, "classFeats.Snagging Strike":1, "deity":"Shelyn", "experience":0, 
-  "gender":"Female", "generalFeats.Ride":1, "generalFeats.Toughness":1, "languages.Goblin":1, 
-  "languages.Halfling":1, "name":"Ancestry-Human", "selectableFeatures.Bard - Enigma":1, 
+  "gender":"Female", "generalFeats.Ride":1, "generalFeats.Toughness":1, "languages.Halfling":1, 
+  "name":"Ancestry-Human", "selectableFeatures.Bard - Enigma":1, 
   "selectableFeatures.Elf - Woodland Elf":1, "selectableFeatures.Fighter - Dexterity":1, 
   "selectableFeatures.Human - Half-Elf":1, "selectableFeatures.Human - Half-Orc":1, 
   "selectableFeatures.Human - Skilled Heritage Human":1, "selectableFeatures.Human - Versatile Heritage Human":1, "shield":"None", 
   "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Dwarven Lore":1, 
   "skillIncreases.Games Lore":1, "skillIncreases.Goblin Lore":1, "skillIncreases.Milling Lore":1, 
-  "skillIncreases.Scouting Lore":1, "skillIncreases.Theater Lore":1, "weapons.Sawtooth Saber":1
+  "skillIncreases.Scouting Lore":1, "skillIncreases.Theater Lore":1, "weapons.Dwarven Waraxe":1, 
+  "weapons.Sawtooth Saber":1
 };
   </script>
 </head>
@@ -128,6 +129,10 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
+        <td>Half-Elf: Has the elf trait and may take elf and half-elf feats</td>
+      </tr><tr style="text-align:center">
+        <td>Half-Orc: Has the orc trait and may take orc and half-orc feats</td>
+      </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
         <td>Ride: Automatically succeeds when using Command an Animal to move/Mount acts on self turn</td>
@@ -177,7 +182,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Goblin; Halfling</td>
+    <td><b>Languages</b>: Common; Halfling</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -227,7 +232,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: None</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Sawtooth Saber (+7 1d6+2 S; strength; expert)</td>
+        <td><b>Weapons</b>: Dwarven Waraxe (+5 1d8+2 S [2h d12]; strength; trained); Sawtooth Saber (+7 1d6+2 S; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -251,9 +256,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Toughness: +1 Hit Points</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Expertise: Attack Expert (Sawtooth Saber)</i></td>
+        <td><i>Unconventional Expertise (Sawtooth Saber): Attack Expert (Sawtooth Saber)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Weaponry: Treats Sawtooth Saber as one category simpler</i></td>
+        <td><i>Unconventional Weaponry (Sawtooth Saber): Weapon Familiarity (Sawtooth Saber)</i></td>
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
@@ -271,7 +276,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Snagging Strike: <b>(1)</b> Successful melee Strike with the other hand free inflicts flat-footed for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Victorious Vigor: <b>(R)</b> Gains 1 temporary Hit Points for 1 rd when foe drops</td>
+        <td>Victorious Vigor: <b>(R)</b> Reducing a foe to 0 Hit Points gives self 1 temporary Hit Point until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Woodland Elf: Can always Take Cover within forest terrain</td>
       </tr></table>
@@ -285,7 +290,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation (Coerce) fails are critical fails</td>
+        <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr><tr style="text-align:center">
         <td>Orc Superstition: <b>(R)</b> +1 vs. the triggering magic effect</td>
       </tr><tr style="text-align:center">
