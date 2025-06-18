@@ -20,20 +20,20 @@ var attributes = {
   "generalFeats.Assurance (Arcana)":1, "generalFeats.Cat Fall":1, "generalFeats.Experienced Professional":1, 
   "generalFeats.Hefty Hauler":1, "generalFeats.Skill Training (Athletics)":1, 
   "generalFeats.Skill Training (Midwifery Lore)":1, "generalFeats.Titan Wrestler":1, 
-  "generalFeats.Weapon Proficiency (Sawtooth Saber)":1, "languages.Elven":1, "languages.Gnomish":1, "languages.Undercommon":1, 
-  "name":"Spells-Divine", "selectableFeatures.Cleric - Harmful Font":1, 
-  "selectableFeatures.Cleric - Warpriest":1, "selectableFeatures.Human - Half-Elf":1, "shield":"Steel", 
-  "skillIncreases.Arcana":1, "skillIncreases.Crafting":3, "skillIncreases.Games Lore":1, 
-  "skillIncreases.Gnome Lore":1, "skillIncreases.Guild Lore":1, "skillIncreases.Heaven Lore":1, 
-  "skillIncreases.Library Lore":1, "skillIncreases.Society":1, "skillIncreases.Survival":1, 
-  "spells.Abyssal Plague (D5 Nec)":1, "spells.Agile Feet (D1 Foc Tra)":1, "spells.Air Bubble (D1 Con)":1, 
-  "spells.Air Walk (D4 Tra)":1, "spells.Alarm (D1 Abj)":1, "spells.Anathematic Reprisal (D4 Enc)":1, 
-  "spells.Antimagic Field (D8 Abj)":1, "spells.Appearance Of Wealth (D1 Foc Ill)":1, 
-  "spells.Artistic Flourish (D4 Foc Tra)":1, "spells.Athletic Rush (D1 Foc Tra)":1, "spells.Augury (D2 Div)":1, 
-  "spells.Avatar (D10 Tra)":1, "spells.Bane (D1 Enc)":1, "spells.Banishment (D5 Abj)":1, 
-  "spells.Bind Soul (D9 Nec)":1, "spells.Bind Undead (D3 Nec)":1, "spells.Bit Of Luck (D1 Foc Div)":1, 
-  "spells.Blade Barrier (D6 Evo)":1, "spells.Bless (D1 Enc)":1, "spells.Blind Ambition (D1 Foc Enc)":1, 
-  "spells.Blindness (D3 Nec)":1, "spells.Breath Of Life (D5 Nec)":1, "spells.Calm Emotions (D2 Enc)":1, 
+  "generalFeats.Weapon Proficiency (Sawtooth Saber)":1, "languages.Elven":1, "languages.Gnomish":1, "name":"Spells-Divine", 
+  "selectableFeatures.Cleric - Harmful Font":1, "selectableFeatures.Cleric - Warpriest":1, 
+  "selectableFeatures.Human - Half-Elf":1, "shield":"Steel", "skillIncreases.Arcana":1, "skillIncreases.Crafting":3, 
+  "skillIncreases.Games Lore":1, "skillIncreases.Gnome Lore":1, "skillIncreases.Guild Lore":1, 
+  "skillIncreases.Heaven Lore":1, "skillIncreases.Library Lore":1, "skillIncreases.Society":1, 
+  "skillIncreases.Survival":1, "spells.Abyssal Plague (D5 Nec)":1, "spells.Agile Feet (D1 Foc Tra)":1, 
+  "spells.Air Bubble (D1 Con)":1, "spells.Air Walk (D4 Tra)":1, "spells.Alarm (D1 Abj)":1, 
+  "spells.Anathematic Reprisal (D4 Enc)":1, "spells.Antimagic Field (D8 Abj)":1, 
+  "spells.Appearance Of Wealth (D1 Foc Ill)":1, "spells.Artistic Flourish (D4 Foc Tra)":1, 
+  "spells.Athletic Rush (D1 Foc Tra)":1, "spells.Augury (D2 Div)":1, "spells.Avatar (D10 Tra)":1, 
+  "spells.Bane (D1 Enc)":1, "spells.Banishment (D5 Abj)":1, "spells.Bind Soul (D9 Nec)":1, 
+  "spells.Bind Undead (D3 Nec)":1, "spells.Bit Of Luck (D1 Foc Div)":1, "spells.Blade Barrier (D6 Evo)":1, 
+  "spells.Bless (D1 Enc)":1, "spells.Blind Ambition (D1 Foc Enc)":1, "spells.Blindness (D3 Nec)":1, 
+  "spells.Breath Of Life (D5 Nec)":1, "spells.Calm Emotions (D2 Enc)":1, 
   "spells.Captivating Adoration (D4 Foc Enc)":1, "spells.Champion's Sacrifice (D6 Foc Abj)":1, 
   "spells.Charming Touch (D1 Foc Enc)":1, "spells.Chill Touch (DC1 Nec)":1, "spells.Chilling Darkness (D3 Evo)":1, 
   "spells.Circle Of Protection (D3 Abj)":1, "spells.Cloak Of Shadow (D1 Foc Evo)":1, "spells.Command (D1 Enc)":1, 
@@ -211,6 +211,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or cast spells prohibited by Nethys</td>
       </tr><tr style="text-align:center">
+        <td>Half-Elf: Has the elf trait and may take elf and half-elf feats</td>
+      </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
 </td>
@@ -258,7 +260,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Elven; Gnomish; Undercommon</td>
+    <td><b>Languages</b>: Common; Elven; Gnomish</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -329,7 +331,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Unconventional Weaponry: Treats Halberd as one category simpler</i></td>
+        <td><i>Unconventional Weaponry (Halberd): Weapon Familiarity (Halberd)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Warpriest: Defense Trained (Light Armor; Medium Armor)/Attack Trained (Martial Weapons)/Attack Expert (Staff; Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
