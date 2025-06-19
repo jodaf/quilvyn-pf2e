@@ -1202,7 +1202,7 @@ Pathfinder2E.FEATS = {
   'Sudden Charge':'Traits=Class,Barbarian,Fighter,Flourish,Open',
   'Acute Scent':
     'Traits=Class,Barbarian ' +
-    'Require="level >= 2","features.Acute Vision||features.Darkvision"',
+    'Require="level >= 2","features.Acute Vision || features.Darkvision"',
   'Furious Finish':'Traits=Class,Barbarian,Rage Require="level >= 2"',
   'No Escape':'Traits=Class,Barbarian,Rage Require="level >= 2"',
   'Second Wind':'Traits=Class,Barbarian Require="level >= 2"',
@@ -1222,15 +1222,19 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
   'Cleave':'Traits=Class,Barbarian,Rage Require="level >= 6"',
   "Dragon's Rage Breath":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Arcane,Concentrate,Evocation,Rage ' +
     'Require="level >= 6","features.Dragon Instinct"',
   "Giant's Stature":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 6","features.Giant Instinct"',
   "Spirits' Interference":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Divine,Necromancy,Rage ' +
     'Require="level >= 6","features.Spirit Instinct"',
   'Animal Rage':
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
@@ -1245,22 +1249,26 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 10"',
   'Furious Sprint':'Traits=Class,Barbarian,Rage Require="level >= 10"',
   'Great Cleave':
-    'Traits=Class,Barbarian,Rage Require="level >= 10",features.Cleave',
+    'Traits=Class,Barbarian,Rage Require="level >= 10","features.Cleave"',
   'Knockback':'Traits=Class,Barbarian,Rage Require="level >= 10"',
   'Terrifying Howl':
     'Traits=Class,Barbarian,Auditory,Rage ' +
     'Require="level >= 10","features.Intimidating Glare"',
   "Dragon's Rage Wings":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Morph,Primal,Rage,Transmutation ' +
     'Require="level >= 12","features.Dragon Instinct"',
   'Furious Grab':'Traits=Class,Barbarian,Rage Require="level >= 12"',
   "Predator's Pounce":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Flourish,Open,Rage ' +
     'Require="level >= 12","features.Animal Instinct"',
   "Spirit's Wrath":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Spirit Instinct"',
   "Titan's Stature":
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Polymorph,Transmutation ' +
     'Require=' +
       '"level >= 12",' +
@@ -1270,7 +1278,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Knockback"',
   "Giant's Lunge":
-    // Note Instinct trait is apparently a typo
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Giant Instinct"',
   'Vengeful Strike':
@@ -1281,6 +1289,7 @@ Pathfinder2E.FEATS = {
   'Collateral Thrash':
     'Traits=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
   'Dragon Transformation':
+    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require=' +
       '"level >= 16",' +
@@ -4080,9 +4089,10 @@ Pathfinder2E.FEATURES = {
     'Note="Can use horns to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing during rage"',
   'Bestial Rage (Cat)':
     'Section=combat ' +
-    'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?8:6} HP slashing during rage"',
+    'Note="Can use jaws and claws to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing and 1d%{combatNotes.greaterWeaponSpecialization?\'8+12\':combatNotes.specializationAbility?\'8+5\':\'6+2\'} HP slashing during rage"',
   'Bestial Rage (Deer)':
     'Section=combat ' +
+    // Errata changes damage to 1d10
     'Note="Can use antlers to inflict 1d%{combatNotes.greaterWeaponSpecialization?\'12+12\':combatNotes.specializationAbility?\'12+5\':\'10+2\'} HP piercing%{combatNotes.specializationAbility?\\" with a 10\' reach\\":\'\'} during rage"',
   'Bestial Rage (Frog)':
     'Section=combat ' +
@@ -4112,12 +4122,16 @@ Pathfinder2E.FEATURES = {
   'Draconic Rage':
     'Section=combat ' +
     'Note="Can inflict +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +%{combatNotes.rage} HP weapon damage during rage"',
-  'Fury Instinct':'Section=feature Note="+1 Class Feat"',
+  'Fury Instinct':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Increases added rage damage to %V",' +
+      '"+1 Class Feat"',
   'Greater Juggernaut':
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Fortitude)",' +
-      '"Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save"',
+      '"Critical failures on Fortitude saves are normal failures, and failed Fortitude saves inflict half damage"',
   'Greater Weapon Specialization':
     'Section=combat Note="Has increased Weapon Specialization effects"',
   'Heightened Senses':'Section=skill Note="Perception Master"',
@@ -4134,13 +4148,12 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Barbarian)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a rage action when starting to rage"',
-  'Quick Rage':
-    'Section=combat Note="Can rage again 1 turn after ending rage"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a 1-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action"',
+  'Quick Rage':'Section=combat Note="Has increased Rage effects"',
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage (agile weapon +%{combatNotes.rage//2} HP) and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 min between rages"',
+    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage, or +%{combatNotes.rage//2} HP with an agile weapon, and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 %{combatNotes.quickRage?\'turn\':\'min\'} between rages"',
   'Raging Resistance (Animal)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
@@ -4174,7 +4187,7 @@ Pathfinder2E.FEATURES = {
   'Moment Of Clarity':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Can use concentration actions for the remainder of the turn during rage"',
+    'Note="Allows using concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
     'Section=feature,skill ' +
     'Note=' +
@@ -4187,7 +4200,7 @@ Pathfinder2E.FEATURES = {
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a melee Strike after a double Stride"',
-  'Acute Scent':'Section=skill Note="Has 30\' imprecise scent during rage"',
+  'Acute Scent':'Section=skill Note="Has R30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
     'Section=combat ' +
@@ -4195,7 +4208,7 @@ Pathfinder2E.FEATURES = {
   'No Escape':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Stride keeps pace with a retreating foe"',
+    'Note="Stride keeps pace with a retreating foe during rage"',
   'Second Wind':
     'Section=combat ' +
     'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest"',
@@ -4203,9 +4216,10 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage"',
-  'Fast Movement':'Section=combat Note="+10 Speed during rage"',
+  'Fast Movement':'Section=combat Note="Gains +10 Speed during rage"',
   'Raging Athlete':
     'Section=skill ' +
+    // Errata changes the jump distance
     'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
   'Swipe':
     'Action=2 ' +
@@ -4214,7 +4228,7 @@ Pathfinder2E.FEATURES = {
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Begins rage upon taking damage"',
+    'Note="Enters rage upon taking damage"',
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -4226,11 +4240,11 @@ Pathfinder2E.FEATURES = {
     'Note="Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving"',
   'Brutal Bully':
     'Section=combat ' +
-    'Note="A successful Disarm, Grapple, Shove, or Trip during rage inflicts %{strengthModifier} HP bludgeoning"',
+    'Note="A successful Disarm, Grapple, Shove, or Trip inflicts %{strengthModifier} HP bludgeoning during rage"',
   'Cleave':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious"',
+    'Note="Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious during rage"',
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
@@ -4244,12 +4258,14 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends"',
   'Animal Rage':
-    'Action=1 Section=magic Note="Transforms self into spirit animal"',
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Transforms self into instinct animal during rage for 1 min or until dismissed"',
   'Furious Bully':'Section=combat Note="+2 Athletics for attacks during rage"',
   'Renewed Vigor':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives %{level//2+constitutionModifier} temporary Hit Points"',
+    'Note="Gains %{level//2+constitutionModifier} temporary Hit Points during rage"',
   'Share Rage':
     'Action=1 ' +
     'Section=combat ' +
@@ -4261,43 +4277,47 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>)"',
+    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe during rage (<b>save basic Fortitude</b>)"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed for 1 rd, and a successful Strike on a foe gives %{constitutionModifier} temporary Hit Points (critical success %{constitutionModifier*2})"',
+    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on a foe gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success"',
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action"',
+    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action, during rage"',
   'Great Cleave':
     'Section=combat ' +
     'Note="Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate"',
   'Knockback':
-    'Action=1 Section=combat Note="Shoves a foe 5\' after a successful Strike"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Shoves a foe 5\' after a successful Strike during rage"',
   'Terrifying Howl':
     'Action=1 ' +
     'Section=combat ' +
     // Errata corrects "each creature" to "each enemy"
-    'Note="A successful Intimidate Demoralizes all foes in a 30\' radius"',
+    'Note="A successful Intimidate Demoralizes all foes in a 30\' radius during rage"',
   "Dragon's Rage Wings":
-    'Action=1 Section=combat Note="Gives %{speed}\' fly Speed during rage"',
+    'Action=1 Section=combat Note="Gains a %{speed}\' fly Speed during rage"',
   'Furious Grab':
-    'Action=1 Section=combat Note="Grapples a foe after a successful Strike"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Grapples a foe after a successful Strike during rage"',
   "Predator's Pounce":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes after moving up to %{speed}\' in light or no armor"',
+    'Note="Strikes after a Stride in light or no armor during rage"',
   "Spirit's Wrath":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
+    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike during rage that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
     'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
   'Awesome Blow':
     'Section=combat ' +
-    'Note="A success or critical success on an Athletics vs. Fortitude after using Knockback inflicts success or critical success effects of Shove and Trip"',
+    'Note="Success or critical success on an Athletics vs. Fortitude check after using Knockback inflicts success or critical success effects of Shove and Trip"',
   "Giant's Lunge":
     'Action=1 ' +
     'Section=combat ' +
@@ -4320,7 +4340,7 @@ Pathfinder2E.FEATURES = {
   'Reckless Abandon':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
+    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until rage ends when reduced to %{hitPoints//2} or fewer Hit Points"',
   'Brutal Critical':
     'Section=combat ' +
     // Errata limits effects to melee hits
@@ -4332,14 +4352,14 @@ Pathfinder2E.FEATURES = {
   'Vicious Evisceration':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike also inflicts drained 1, or drained 2 on a critical success"',
+    'Note="Strike also inflicts drained 1, or drained 2 on a critical success during rage"',
   'Contagious Rage':
     'Section=combat ' +
     'Note="Can use Share Rage unlimited times, also sharing instinct and specialization abilities"',
   'Quaking Stomp':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes <i>Earthquake</i> effects once per 10 min"',
+    'Note="Invokes <i>Earthquake</i> effects once per 10 min during rage"',
 
   // Bard
   'Bard Weapon Expertise':
@@ -4365,7 +4385,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Successes on Will saves are critical successes, critical failures are normal failures, and suffers half damage on failed Will saves"',
+      '"Successes on Will saves are critical successes, critical failures are normal failures, and failed Will saves inflict half damage"',
   'Legendary Spellcaster':'Section=magic Note="Spell Legendary (%V)"',
   'Light Armor Expertise':
     'Section=combat Note="Defense Expert (Light Armor; Unarmored Defense)"',
@@ -13931,10 +13951,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Dragon Instinct (Copper)', '=', '"acid"',
       'features.Dragon Instinct (Silver)', '=', '"cold"'
     );
+    rules.defineRule('combatNotes.furyInstinct',
+      'combatNotes.specializationAbility', '=', 'null', // italics
+      'features.Weapon Specialization', '=', '6',
+      'features.Greater Weapon Specialization', '=', '12'
+    );
     rules.defineRule('combatNotes.rage',
       '', '=', '2',
-      'features.Fury Instinct', '=', '6',
-      'combatNotes.specializationAbility', '=', '12'
+      'combatNotes.furyInstinct', '^', null,
+      'combatNotes.quickRage', '=', 'null' // italics
     );
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =

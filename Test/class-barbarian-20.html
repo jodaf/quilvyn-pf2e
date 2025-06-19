@@ -155,7 +155,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
-        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to 164 or fewer Hit Points during rage</td>
+        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks until rage ends when reduced to 164 or fewer Hit Points</td>
       </tr></table>
 </td>
     </tr></table>
@@ -234,7 +234,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Warfare Lore): Skill Trained (Warfare Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td>Acute Scent: Has 30' imprecise scent during rage</td>
+      <td>Acute Scent: Has R30' imprecise scent during rage</td>
     </tr><tr style="text-align:center">
       <td>Assurance (Athletics): Can take an automatic 38 on Athletics checks</td>
     </tr><tr style="text-align:center">
@@ -302,11 +302,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Fury Instinct: Increases added rage damage to 12</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Mighty Rage: Class Expert (Barbarian)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Quick Rage: Has increased Rage effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Specialization Ability: Has increased instinct ability rage effects</i></td>
       </tr><tr style="text-align:center">
@@ -320,7 +324,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Awesome Blow: A success or critical success on an Athletics vs. Fortitude after using Knockback inflicts success or critical success effects of Shove and Trip</td>
+        <td>Awesome Blow: Success or critical success on an Athletics vs. Fortitude check after using Knockback inflicts success or critical success effects of Shove and Trip</td>
       </tr><tr style="text-align:center">
         <td>Bestial Rage (Ape): Can use fists to inflict 1d12+12 HP bludgeoning during rage</td>
       </tr><tr style="text-align:center">
@@ -340,17 +344,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Bestial Rage (Wolf): Can use jaws to inflict 1d12+12 HP piercing during rage</td>
       </tr><tr style="text-align:center">
-        <td>Brutal Bully: A successful Disarm, Grapple, Shove, or Trip during rage inflicts 4 HP bludgeoning</td>
+        <td>Brutal Bully: A successful Disarm, Grapple, Shove, or Trip inflicts 4 HP bludgeoning during rage</td>
       </tr><tr style="text-align:center">
         <td>Brutal Critical: Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage</td>
       </tr><tr style="text-align:center">
         <td>Brutality: Critical hits with a melee weapon or unarmed attack inflict its critical specialization effect during rage</td>
       </tr><tr style="text-align:center">
-        <td>Cleave: <b>(R)</b> Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious</td>
+        <td>Cleave: <b>(R)</b> Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious during rage</td>
       </tr><tr style="text-align:center">
         <td>Collateral Thrash: Thrash affects another adjacent foe (<b>save basic Reflex</b>)</td>
       </tr><tr style="text-align:center">
-        <td>Come And Get Me: <b>(1)</b> Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed for 1 rd, and a successful Strike on a foe gives 4 temporary Hit Points (critical success 8)</td>
+        <td>Come And Get Me: <b>(1)</b> Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on a foe gives self 4 temporary Hit Points, or 8 temporary Hit Points on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Contagious Rage: Can use Share Rage unlimited times, also sharing instinct and specialization abilities</td>
       </tr><tr style="text-align:center">
@@ -362,17 +366,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Breath: <b>(2)</b> Breath inflicts 20d6 damage in a 30' cone or 60' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)</td>
       </tr><tr style="text-align:center">
-        <td>Dragon's Rage Wings: <b>(1)</b> Gives 25' fly Speed during rage</td>
+        <td>Dragon's Rage Wings: <b>(1)</b> Gains a 25' fly Speed during rage</td>
       </tr><tr style="text-align:center">
-        <td>Fast Movement: +10 Speed during rage</td>
+        <td>Fast Movement: Gains +10 Speed during rage</td>
       </tr><tr style="text-align:center">
         <td>Furious Bully: +2 Athletics for attacks during rage</td>
       </tr><tr style="text-align:center">
         <td>Furious Finish: <b>(1)</b> Strike inflicts additional damage equal to the number of rounds remaining in rage, ending rage and causing fatigue until 10 min rest</td>
       </tr><tr style="text-align:center">
-        <td>Furious Grab: <b>(1)</b> Grapples a foe after a successful Strike</td>
+        <td>Furious Grab: <b>(1)</b> Grapples a foe after a successful Strike during rage</td>
       </tr><tr style="text-align:center">
-        <td>Furious Sprint: <b>(2)</b> Strides 125' in a straight line, or 200' by using an additional action</td>
+        <td>Furious Sprint: <b>(2)</b> Strides 125' in a straight line, or 200' by using an additional action, during rage</td>
       </tr><tr style="text-align:center">
         <td>Giant's Lunge: <b>(1)</b> Extends reach of melee weapons and unarmed attacks to 10' until rage ends</td>
       </tr><tr style="text-align:center">
@@ -380,25 +384,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Great Cleave: Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate</td>
       </tr><tr style="text-align:center">
-        <td>Knockback: <b>(1)</b> Shoves a foe 5' after a successful Strike</td>
+        <td>Knockback: <b>(1)</b> Shoves a foe 5' after a successful Strike during rage</td>
       </tr><tr style="text-align:center">
-        <td>Mighty Rage: <b>(F)</b> Immediately uses a rage action when starting to rage</td>
+        <td>Mighty Rage: <b>(F)</b> Immediately uses a 1-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action</td>
       </tr><tr style="text-align:center">
-        <td>Moment Of Clarity: <b>(1)</b> Can use concentration actions for the remainder of the turn during rage</td>
+        <td>Moment Of Clarity: <b>(1)</b> Allows using concentration actions for the remainder of the turn during rage</td>
       </tr><tr style="text-align:center">
-        <td>No Escape: <b>(R)</b> Stride keeps pace with a retreating foe</td>
+        <td>No Escape: <b>(R)</b> Stride keeps pace with a retreating foe during rage</td>
       </tr><tr style="text-align:center">
         <td>Perfect Clarity: <b>(R)</b> Ends rage to gain a +2 reroll on a failed attack or Will save</td>
       </tr><tr style="text-align:center">
-        <td>Predator's Pounce: <b>(1)</b> Strikes after moving up to 25' in light or no armor</td>
+        <td>Predator's Pounce: <b>(1)</b> Strikes after a Stride in light or no armor during rage</td>
       </tr><tr style="text-align:center">
-        <td>Quick Rage: Can rage again 1 turn after ending rage</td>
-      </tr><tr style="text-align:center">
-        <td>Rage: <b>(1)</b> Gains 24 temporary Hit Points and +12 HP melee damage (agile weapon +6 HP) and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 min between rages</td>
+        <td>Rage: <b>(1)</b> Gains 24 temporary Hit Points and +12 HP melee damage, or +6 HP with an agile weapon, and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 turn between rages</td>
       </tr><tr style="text-align:center">
         <td>Raging Thrower: +12 HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage</td>
       </tr><tr style="text-align:center">
-        <td>Renewed Vigor: <b>(1)</b> Gives 14 temporary Hit Points</td>
+        <td>Renewed Vigor: <b>(1)</b> Gains 14 temporary Hit Points during rage</td>
       </tr><tr style="text-align:center">
         <td>Second Wind: Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest</td>
       </tr><tr style="text-align:center">
@@ -408,7 +410,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Spirit Rage: May inflict +13 HP positive or negative damage, along with <i>ghost touch</i>, instead of +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
-        <td>Spirit's Wrath: <b>(1)</b> Makes a R120' +32 spirit Strike that inflicts 4d8+4 HP negative or positive damage; a critical hit also inflicts frightened 1</td>
+        <td>Spirit's Wrath: <b>(1)</b> Makes a R120' +32 spirit Strike during rage that inflicts 4d8+4 HP negative or positive damage; a critical hit also inflicts frightened 1</td>
       </tr><tr style="text-align:center">
         <td>Spirits'Interference: <b>(1)</b> Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends</td>
       </tr><tr style="text-align:center">
@@ -418,9 +420,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Swipe: <b>(2)</b> Melee Strike attacks 2 adjacent foes</td>
       </tr><tr style="text-align:center">
-        <td>Terrifying Howl: <b>(1)</b> A successful Intimidate Demoralizes all foes in a 30' radius</td>
+        <td>Terrifying Howl: <b>(1)</b> A successful Intimidate Demoralizes all foes in a 30' radius during rage</td>
       </tr><tr style="text-align:center">
-        <td>Thrash: <b>(1)</b> Inflicts 16 HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>)</td>
+        <td>Thrash: <b>(1)</b> Inflicts 16 HP bludgeoning plus specialization damage on a grabbed foe during rage (<b>save basic Fortitude</b>)</td>
       </tr><tr style="text-align:center">
         <td>Titan Mauler: Can use weapons made for a larger creature, suffering clumsy 1 and gaining +18 HP weapon damage, instead of gaining +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
@@ -428,13 +430,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Vengeful Strike: <b>(R)</b> While using Come And Get Me, responds to a successful foe attack with an immediate Strike</td>
       </tr><tr style="text-align:center">
-        <td>Vicious Evisceration: <b>(2)</b> Strike also inflicts drained 1, or drained 2 on a critical success</td>
+        <td>Vicious Evisceration: <b>(2)</b> Strike also inflicts drained 1, or drained 2 on a critical success during rage</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, and +8 HP damage with expert, master, and legendary weapons</td>
       </tr><tr style="text-align:center">
         <td>Whirlwind Strike: <b>(3)</b> Makes individual Strikes at the current multiple attack penalty against all foes within reach</td>
       </tr><tr style="text-align:center">
-        <td>Wounded Rage: <b>(R)</b> Begins rage upon taking damage</td>
+        <td>Wounded Rage: <b>(R)</b> Enters rage upon taking damage</td>
       </tr></table>
 </td>
     </tr></table>
@@ -456,7 +458,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Breath Control: +1 vs. inhaled threats, and successes vs. inhaled threats are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Greater Juggernaut: Critical failures on Fortitude saves are normal failures and suffers half damage on a failed Fortitude save</td>
+        <td>Greater Juggernaut: Critical failures on Fortitude saves are normal failures, and failed Fortitude saves inflict half damage</td>
       </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr><tr style="text-align:center">
@@ -484,11 +486,11 @@ var attributes = {
   <tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Animal Rage: <b>(1)</b> Transforms self into spirit animal</td>
+      <td>Animal Rage: <b>(1)</b> Transforms self into instinct animal during rage for 1 min or until dismissed</td>
     </tr><tr style="text-align:center">
       <td>Dragon Transformation: <b>(1)</b> Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>, with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage  during rage</td>
     </tr><tr style="text-align:center">
-      <td>Quaking Stomp: <b>(1)</b> Invokes <i>Earthquake</i> effects once per 10 min</td>
+      <td>Quaking Stomp: <b>(1)</b> Invokes <i>Earthquake</i> effects once per 10 min during rage</td>
     </tr></table>
 </td>
   </tr></table>
