@@ -218,7 +218,8 @@ Pathfinder2E.ANCESTRIES = {
       '"1:Half-Orc:Heritage",' +
       '"1:Skilled Heritage Human:Heritage",' +
       '"1:Versatile Heritage Human:Heritage" ' +
-    'Languages=Common ' +
+    // Errata gives humans an additional language
+    'Languages=Common,any ' +
     'Traits=Humanoid,Human'
 };
 Pathfinder2E.ARMORS = {
@@ -323,6 +324,7 @@ Pathfinder2E.BACKGROUNDS = {
   'Field Medic':
     'Features=' +
       '"1:Ability Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
+      // Errata corrects Battle Medic to Battle Medicine
       '"1:Skill Trained (Medicine; Warfare Lore)","1:Battle Medicine"',
   'Fortune Teller':
     'Features=' +
@@ -437,6 +439,8 @@ Pathfinder2E.CLASSES = {
   'Alchemist':
     'Ability=intelligence HitPoints=8 ' +
     'Features=' +
+      // Errata extended to Medium Armor Trained/Expertise/Mastery and changed
+      // Perpetual Potency/Perfection from moderate/greater to 3rd/11th level
       '"1:Ability Boosts","1:Ability Boost (Intelligence)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Fortitude; Reflex)","1:Save Trained (Will)",' +
@@ -632,6 +636,7 @@ Pathfinder2E.CLASSES = {
   'Druid':
     'Ability=wisdom HitPoints=8 ' +
     'Features=' +
+      // Errata removes Class Trained
       '"1:Ability Boosts","1:Ability Boost (Wisdom)",' +
       '"1:Perception Trained",' +
       '"1:Save Expert (Will)","1:Save Trained (Fortitude; Reflex)",' +
@@ -652,6 +657,7 @@ Pathfinder2E.CLASSES = {
       '"1:Storm:Order",' +
       '"1:Wild:Order" ' +
     'SpellSlots=' +
+      // Errata corrects cantrip count
       'PC1:5@1,' +
       'P1:2@1;3@2,' +
       'P2:2@3;3@4,' +
@@ -722,6 +728,7 @@ Pathfinder2E.CLASSES = {
   'Ranger':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
+      // Errata changes Weapon Expertise to Ranger Weapon Expertise
       '"1:Ranger Key Ability",' +
       '"features.Dexterity ? 1:Ability Boost (Dexterity)",' +
       '"features.Strength ? 1:Ability Boost (Strength)",' +
@@ -1199,6 +1206,7 @@ Pathfinder2E.FEATS = {
   'Raging Athlete':
     'Traits=Class,Barbarian Require="level >= 4","rank.Athletics >= 2"',
   'Swipe':'Traits=Class,Barbarian,Fighter,Flourish Require="level >= 4"',
+  // Errata removes Rage trait
   'Wounded Rage':'Traits=Class,Barbarian Require="level >= 4"',
   'Animal Skin':
     'Traits=Class,Barbarian,Morph,Primal,Transmutation ' +
@@ -1478,6 +1486,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 6",' +
       '"features.Divine Ally (Blade)",' +
+      // Errata adds The Tenets Of Good
       '"features.The Tenets Of Good"',
   "Advanced Deity's Domain (Air)":
     'Traits=Class,Champion ' +
@@ -1706,6 +1715,7 @@ Pathfinder2E.FEATS = {
   'Aura Of Faith':
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   'Blade Of Justice':
+    // Errata changes Paladin requirement to The Tenets Of Good
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
@@ -1764,6 +1774,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 20","features.Divine Ally (Shield)"',
 
   'Deadly Simplicity':
+    // Errata allows Unarmed
     'Traits=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
   'Domain Initiate (Air)':
     'Traits=Class,Cleric Require="deityDomains =~ \'Air\'"',
@@ -2187,8 +2198,10 @@ Pathfinder2E.FEATS = {
   'Perfect Form Control':
     'Traits=Class,Druid ' +
     'Require="level >= 18","features.Form Control","strengthModifier >= 4"',
+  // Errata corrects Wild Focus to Primal Focus
   'Primal Wellspring':
     'Traits=Class,Druid Require="level >= 18","features.Primal Focus"',
+  // Errata removes legendary Nature requirement
   "Hierophant's Power":'Traits=Class,Druid Require="level >= 20"',
   'Leyline Conduit':
     'Traits=Class,Druid,Concentrate,Manipulate,Metamagic Require="level >= 20"',
@@ -2724,6 +2737,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 12",' +
       '"features.Counterspell",' +
+      // Errata corrects Quick Recognize to Quick Recognition
       '"features.Quick Recognition"',
   // Magic Sense as above
   'Bonded Focus':
@@ -3458,7 +3472,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"+%{level} Hit Points",' +
-      '"-%{1+(features.Toughness?3:0)} dying recovery DC"',
+      '"-%{features.Toughness?4:1} dying recovery DC"',
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
@@ -3577,7 +3591,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Trained (Glaive; Kukri)/Weapon Familiarity (Gnome Weapons)",' +
-      '"Has access to uncommon gnome weapons"',
+      // Errata added kukris
+      '"Has access to kukris and uncommon gnome weapons"',
   'Illusion Sense':
     'Section=save,skill ' +
     'Note=' +
@@ -3838,7 +3853,8 @@ Pathfinder2E.FEATURES = {
   'Alchemical Expertise':'Section=combat Note="Class Expert (Alchemist)"',
   'Alchemical Mastery':'Section=combat Note="Class Master (Alchemist)"',
   'Alchemical Weapon Expertise':
-    'Section=combat Note="Attack Expert (Simple Weapons; Alchemical Bombs)"',
+    'Section=combat ' +
+    'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
   'Alchemist Feats':'Section=feature Note="%V selections"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
@@ -3894,6 +3910,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Regains the effects of a mutagen consumed earlier in the day for 1 min once per day"',
   'Mutagenist':
+    // Errata changes second paragraph to Mutagenic Flashback
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Mutagenic Flashback feature",' +
@@ -3919,7 +3936,7 @@ Pathfinder2E.FEATURES = {
       '"Can use 1 batch of infused reagents to create 3 signature items"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapon proficiency"',
+    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapons"',
 
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
@@ -3980,6 +3997,7 @@ Pathfinder2E.FEATURES = {
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
+    // Errata adds the counteract modifier
     'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
@@ -4255,6 +4273,7 @@ Pathfinder2E.FEATURES = {
   'Terrifying Howl':
     'Action=1 ' +
     'Section=combat ' +
+    // Errata corrects "each creature" to "each enemy"
     'Note="A successful Intimidate Demoralizes all foes in a 30\' radius"',
   "Dragon's Rage Wings":
     'Action=1 Section=combat Note="Gives %{speed}\' fly Speed during rage"',
@@ -4299,6 +4318,7 @@ Pathfinder2E.FEATURES = {
     'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until the end of rage when reduced to %{hitPoints//2} or fewer Hit Points during rage"',
   'Brutal Critical':
     'Section=combat ' +
+    // Errata limits effects to melee hits
     'Note="Critical melee hits inflict an additional damage die and 2 damage dice persistent bleed damage"',
   'Perfect Clarity':
     'Action=Reaction ' +
@@ -4430,7 +4450,7 @@ Pathfinder2E.FEATURES = {
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
-      '"+%{level} untrained skills",' +
+      '"+%{level} on untrained skills",' +
       '"Can attempt any skill requiring trained%{rank.Occultism>=4?\' or expert\':\'\'} proficiency"',
   'Inspire Heroics':
     'Section=magic ' +
@@ -4902,6 +4922,7 @@ Pathfinder2E.FEATURES = {
     'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
   'Instrument Of Zeal':
     'Section=combat ' +
+    // Errata changes Smite Evil to Blade Of Justice
     'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts an additional damage die and slowed 1 for 1 rd"',
   'Shield Of Grace':
     'Section=combat ' +
@@ -5292,7 +5313,8 @@ Pathfinder2E.FEATURES = {
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a counteract attempt vs. a spell using half the wielder\'s level"',
+    // Errata corrects the counteract level
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
   'Shared Replenishment':
     'Section=combat ' +
     'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
@@ -5607,6 +5629,7 @@ Pathfinder2E.FEATURES = {
   'Assisting Shot':
     'Action=1 ' +
     'Section=combat ' +
+    // Errata changes description
     'Note="Successful ranged Strike gives the next ally attack on the target within 1 rd +1 attack, or +2 with a critical success"',
   'Brutish Shove':
     'Action=1 ' +
@@ -6788,6 +6811,7 @@ Pathfinder2E.FEATURES = {
   'Undead':
     'Section=magic,magic,skill ' +
     'Note=' +
+      // Errata changes Touch Of Undeath to Undeath's Blessing
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
       '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level",' +
       '"Skill Trained (Intimidation; Religion)"',
@@ -7420,6 +7444,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Ancestral Memories arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Bloodline Spell (Undead)':
     'Section=magic ' +
+    // Errata changes Touch Of Undeath to Undeath's Blessing
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':
     'Section=feature Note="+1 Class Feat (sorcerer up to level %{level//2})"',
@@ -11635,6 +11660,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
+      // Errata corrects sluggish to clumsy
       '"R30\' 5\' burst randomly inflicts one of dazzled for 1 rd, enfeebled 1 for 1 rd, frightened 1, or clumsy 1 for 1 rd (<b>save Will</b> negates; critical failure inflicts dazzled for 1 min, enfeebled 2 for 1 rd, frightened 2, or clumsy 2 for 1 rd)"',
   'Sudden Shift':
     'Level=1 ' +
@@ -13942,6 +13968,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
+      // TODO only d4 unarmed attack qualifies
       'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)'
     );
     ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
