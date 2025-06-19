@@ -1155,6 +1155,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Alchemist,"Additive 2" Require="level >= 6"',
   'Directional Bombs':'Traits=Class,Alchemist Require="level >= 6"',
   'Feral Mutagen':'Traits=Class,Alchemist Require="level >= 8"',
+  // Errata makes Powerful Alchemy a 5th-level class feature
   'Sticky Bomb':'Traits=Class,Alchemist,"Additive 2" Require="level >= 8"',
   'Elastic Mutagen':'Traits=Class,Alchemist Require="level >= 10"',
   'Expanded Splash':
@@ -1173,7 +1174,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Alchemist Require="level >= 14","features.Merciful Elixir"',
   'True Debilitating Bomb':
     'Traits=Class,Alchemist ' +
-    'Require="level >= 14","features.Greater Debilitating Bomb"',
+    'Require=' +
+      '"level >= 14",' +
+      '"features.Greater Debilitating Bomb"',
   'Eternal Elixir':
     'Traits=Class,Alchemist Require="level >= 16","features.Extend Elixir"',
   'Exploitive Bomb':'Traits=Class,Alchemist,"Additive 2" Require="level >= 16"',
@@ -1187,7 +1190,9 @@ Pathfinder2E.FEATS = {
   "Craft Philosopher's Stone":'Traits=Class,Alchemist Require="level >= 20"',
   'Mega Bomb':
     'Traits=Class,Alchemist,"Additive 3" ' +
-    'Require="level >= 20","features.Expanded Splash"',
+    'Require=' +
+      '"level >= 20",' +
+      '"features.Expanded Splash"',
   'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
 
   'Acute Vision':'Traits=Class,Barbarian',
@@ -3924,7 +3929,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Has increased Perpetual Infusions effects"',
   'Powerful Alchemy':
     'Section=combat ' +
-    'Note="Increases DC for items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
+    'Note="Increases the DC for items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
   'Quick Alchemy':
     'Action=1 ' +
     'Section=skill ' +
@@ -3941,7 +3946,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
     'Section=skill ' +
-    'Note="Can use Crafting to Identify Alchemy in 1 action/+2 to Identify known formulas, and critical failures are normal failures"',
+    'Note="Can use Crafting to Identify Alchemy on a held item in 1 action; for known formulas, gains +2 on the check and critical failures are normal failures"',
   'Far Lobber':'Section=combat Note="Thrown bombs have a 30\' range"',
   'Quick Bomber':
     'Action=1 Section=combat Note="Draws a bomb and Strikes with it"',
@@ -3951,11 +3956,11 @@ Pathfinder2E.FEATURES = {
   'Revivifying Mutagen':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends mutagen effects to restore 1d6 Hit Points per 2 levels of the mutagen"',
+    'Note="Ends the effects of a mutagen to regain 1d6 Hit Points per 2 levels of the mutagen"',
   'Smoke Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min"',
+    'Note="Creates a bomb of up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min once per rd"',
   'Calculated Splash':
     'Section=combat ' +
     'Note="Can throw a bomb to inflict %{intelligenceModifier} HP splash damage"',
@@ -3968,23 +3973,23 @@ Pathfinder2E.FEATURES = {
   'Combine Elixirs':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Uses 2 additional batches of reagents to create a single elixir that has the effects of 2 elixirs of up to level %{level-2}"',
+    'Note="Uses 2 additional batches of reagents to create a single elixir that has the effects of 2 elixirs of up to level %{advancedAlchemyLevel-2} once per rd"',
   'Debilitating Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-2} that also inflicts dazzled, deafened, flat-footed, or -5 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 turn"',
+    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that also inflicts dazzled, deafened, flat-footed, or -5 Speed for 1 rd (<b>save Fortitude</b> negates) once per rd"',
   'Directional Bombs':
     'Section=combat ' +
-    'Note="Can restrict bomb splash effects to a 15\' cone in direction thrown"',
+    'Note="Can restrict bomb splash effects to a 15\' cone in the direction thrown"',
   'Feral Mutagen':
     'Section=combat,skill ' +
     'Note=' +
       '"Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the Armor Class penalty to -2 to increase claws and jaws damage by 1 die step",' +
-      '"Consuming a bestial mutagen adds the item bonus to Intimidation"',
+      '"Consuming a bestial mutagen adds the item bonus to Intimidation checks"',
   'Sticky Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Once per rd, creates a bomb of up to level %{level-2} that inflicts persistent damage equal to its splash damage"',
+    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that inflicts persistent damage equal to its splash damage once per rd"',
   'Elastic Mutagen':
     'Section=skill ' +
     'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as a creature 1 size smaller"',
@@ -3993,15 +3998,15 @@ Pathfinder2E.FEATURES = {
     'Note="Can throw bombs to inflict +%{intelligenceModifier} HP splash damage in a 10\' radius"',
   'Greater Debilitating Bomb':
     'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that also inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) for 1 rd"',
+    'Note="Can use Debilitating Bomb to create bombs that inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed"',
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
     // Errata adds the counteract modifier
-    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
+    'Note="Creates an elixir of life of up to level %{advancedAlchemyLevel-2} that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
   'Potent Poisoner':
     'Section=skill ' +
-    'Note="+4 crafted poison DCs (+%{classDifficultyClass.Alchemist} max)"',
+    'Note="+4 crafted poison DCs, up to DC %{classDifficultyClass.Alchemist}"',
   'Extend Elixir':
     'Section=skill ' +
     'Note="Doubles the duration of elixirs that last at least 1 min"',
@@ -4018,23 +4023,23 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and linguistic barriers"',
   'Greater Merciful Elixir':
     'Section=skill ' +
-    'Note="Creates an elixir of life that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a blinded, deafened, sickened, or slowed condition"',
+    'Note="Can use Merciful Elixir to attempt to counteract a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
     'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that also inflict enfeebled 2, stupefied 2, or -15 Speed (DC %{classDifficultyClass.Alchemist} Fortitude negates) or a lesser condition that requires a critical success to negate"',
+    'Note="Can use Debilitating Bomb to create bombs that inflict enfeebled 2, stupefied 2, or -15 Speed or a lesser condition that requires a critical success to negate"',
   'Eternal Elixir':
     'Section=skill ' +
     'Note="Can indefinitely extend the duration of an elixir of up to level %{level//2} that lasts at least 1 min"',
   'Exploitive Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-2} that negates resistance %{level}"',
+    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that negates resistance %{level} once per rd"',
   'Genius Mutagen':
     'Section=skill ' +
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
   'Persistent Mutagen':
     'Section=skill ' +
-    'Note="Extends the duration of a mutagen until the next day once per day"',
+    'Note="Extends the duration of a mutagen until next daily prep once per day"',
   'Improbable Elixirs':
     'Section=skill ' +
     'Note="Can create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
@@ -4043,7 +4048,7 @@ Pathfinder2E.FEATURES = {
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
     'Section=combat ' +
-    'Note="Once every 10 min, can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd"',
+    'Note="Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min"',
   'Perfect Debilitation':
     'Section=combat ' +
     'Note="Debilitating Bombs require a critical success to avoid effects"',
@@ -4053,7 +4058,7 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Thrown bomb of up to level %{advancedAlchemyLevel-2} affects all creatures in a 30\' radius (<b>save basic Reflex</b> DC %{classDifficultyClass.Alchemist})"',
+    'Note="Thrown bomb of up to level %{advancedAlchemyLevel-3} affects all creatures in a 30\' radius (<b>save basic Reflex</b>)"',
   'Perfect Mutagen':
     'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
 
@@ -14267,8 +14272,10 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Draconic (Silver)', '=', '"Silver"',
       'features.Draconic (White)', '=', '"White"'
     );
+    // NOTE: using '' instead of classLevel allows Simple Weapons to be the
+    // default for, e.g., homebrew classes
     rules.defineRule
-      ('combatNotes.weaponExpertise', classLevel, '=', '"Simple Weapons"');
+      ('combatNotes.weaponExpertise', '', '=', '"Simple Weapons"');
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
