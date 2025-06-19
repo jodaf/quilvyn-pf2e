@@ -108,7 +108,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     .replace('Selectables=', 'Selectables="1:Jinxed Halfling:Heritage",'),
   'Human':
     Pathfinder2E.ANCESTRIES.Human
-    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage,"', '')
+    .replace('"1:Half-Elf:Heritage","1:Half-Orc:Heritage",', '')
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
@@ -4800,7 +4800,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Haughty Obstinacy':Pathfinder2E.FEATURES['Haughty Obstinacy'],
   'Natural Ambition':Pathfinder2E.FEATURES['Natural Ambition'],
   'Natural Skill':Pathfinder2E.FEATURES['Natural Skill'],
-  'Unconventional Weaponry':Pathfinder2E.FEATURES['Unconventional Weaponry'],
+  'Unconventional Weaponry (%weapon)':
+    Pathfinder2E.FEATURES['Unconventional Weaponry (%weapon)'],
   'Adaptive Adept':
     Pathfinder2E.FEATURES['Adaptive Adept'].replace('level', 'rank'),
   'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
