@@ -1310,7 +1310,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
 
   'Bardic Lore':'Traits=Class,Bard Require="features.Enigma"',
-  'Lingering Composition':'Traits=Class,Bard Require="features.Maestro"',
+  'Lingering Composition':
+    'Traits=Class,Bard Require="features.Maestro","features.Focus Pool"',
   'Reach Spell':
     'Traits=Class,Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
   'Versatile Performance':'Traits=Class,Bard Require="features.Polymath"',
@@ -1321,7 +1322,8 @@ Pathfinder2E.FEATS = {
   'Inspire Competence':
     'Traits=Class,Bard Require="level >= 2","features.Maestro"',
   "Loremaster's Etude":
-    'Traits=Class,Bard,Fortune Require="level >= 2","features.Enigma"',
+    'Traits=Class,Bard,Fortune ' +
+    'Require="level >= 2","features.Enigma","features.Focus Pool"',
   'Multifarious Muse (Enigma)':
     'Traits=Class,Bard Require="level >= 2","bardFeatures.Enigma == 0"',
   'Multifarious Muse (Maestro)':
@@ -1346,7 +1348,9 @@ Pathfinder2E.FEATS = {
       '"level >= 8",' +
       '"features.Polymath",' +
       '"rank.Occultism >= 3"',
-  'Inspire Heroics':'Traits=Class,Bard Require="level >= 8","features.Maestro"',
+  'Inspire Heroics':
+    'Traits=Class,Bard ' +
+    'Require="level >= 8","features.Maestro","features.Focus Pool"',
   'Know-It-All':'Traits=Class,Bard Require="level >= 8","features.Enigma"',
   'House Of Imaginary Walls':'Traits=Class,Bard Require="level >= 10"',
   'Quickened Casting':
@@ -1359,7 +1363,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Bard Require="level >= 12","features.Esoteric Polymath"',
   'Inspirational Focus':'Traits=Class,Bard Require="level >= 12"',
   'Allegro':'Traits=Class,Bard Require="level >= 14"',
-  'Soothing Ballad':'Traits=Class,Bard Require="level >= 14"',
+  'Soothing Ballad':
+    'Traits=Class,Bard Require="level >= 14","features.Focus Pool"',
   'True Hypercognition':
     'Traits=Class,Bard Require="level >= 14","features.Enigma"',
   'Effortless Concentration':
@@ -1381,7 +1386,7 @@ Pathfinder2E.FEATS = {
       '"level >= 18",' +
       '"rank.Arcana >= 1 || rank.Nature >= 1 || rank.Religion >= 1",' +
       '"features.Esoteric Polymath"',
-  'Fatal Aria':'Traits=Class,Bard Require="level >= 20"',
+  'Fatal Aria':'Traits=Class,Bard Require="level >= 20","features.Focus Pool"',
   'Perfect Encore':
     'Traits=Class,Bard Require="level >= 20","features.Magnum Opus"',
   'Symphony Of The Muse':
@@ -4443,7 +4448,7 @@ Pathfinder2E.FEATURES = {
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
-      '"Can prepare 1 spell from spellbook each day, treating it as an additional signature spell if it is in repertoire",' +
+      '"Can prepare 1 spell from spellbook during daily prep, treating it as an additional signature spell if it is in repertoire",' +
       '"Can use Occultism to add spells to spellbook"',
   'Inspire Competence':
     'Section=magic Note="Knows the Inspire Competence occult cantrip"',
@@ -4470,7 +4475,7 @@ Pathfinder2E.FEATURES = {
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="A successful Performance vs. Perception hides subsequent spellcasting from observers"',
+    'Note="Successful Performance vs. Perception hides subsequent spellcasting from observers"',
   'Triple Time':'Section=magic Note="Knows the Triple Time occult cantrip"',
   'Versatile Signature':
     'Section=magic Note="Can replace 1 signature spell each day"',
@@ -4514,9 +4519,9 @@ Pathfinder2E.FEATURES = {
   'True Hypercognition':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Can Recall Knowledge up to 5 times in 1 action"',
+    'Note="Uses up to 5 Recall Knowledge actions"',
   'Effortless Concentration':
-    'Action=Free Section=magic Note="Extends the duration of 1 spell"',
+    'Action=Free Section=magic Note="Sustains an active spell"',
   'Studious Capacity':
     'Section=magic ' +
     'Note="Can cast 1 additional spell of level %1 or lower each day"',
