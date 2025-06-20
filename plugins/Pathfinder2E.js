@@ -452,6 +452,7 @@ Pathfinder2E.CLASSES = {
       '"1:Quick Alchemy","1:Formula Book","1:Research Field",' +
       '"1:Mutagenic Flashback","1:Alchemist Feats","2:Skill Feats",' +
       '"3:General Feats","3:Skill Increases","5:Field Discovery",' +
+      // Errata adds 5:Powerful Alchemy
       '"5:Powerful Alchemy","7:Alchemical Weapon Expertise","7:Iron Will",' +
       '"7:Perpetual Infusions","9:Alchemical Expertise","9:Alertness",' +
       '"9:Double Brew","11:Juggernaut","11:Perpetual Potency",' +
@@ -596,9 +597,9 @@ Pathfinder2E.CLASSES = {
       '"1:Dexterity:Key Ability",' +
       '"1:Strength:Key Ability",' +
       '"1:The Tenets Of Good:Champion\'s Code",' +
-      '"1:Divine Ally (Blade):Divine Ally",' +
-      '"1:Divine Ally (Shield):Divine Ally",' +
-      '"1:Divine Ally (Steed):Divine Ally",' +
+      '"1:Blade Ally:Divine Ally",' +
+      '"1:Shield Ally:Divine Ally",' +
+      '"1:Steed Ally:Divine Ally",' +
       '"alignment == \'Lawful Good\' ? 1:Paladin:Cause",' +
       '"alignment == \'Neutral Good\' ? 1:Redeemer:Cause",' +
       '"alignment == \'Chaotic Good\' ? 1:Liberator:Cause"',
@@ -801,6 +802,7 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Magical Fortitude","7:Expert Spellcaster",' +
       '"9:Lightning Reflexes","11:Alertness","11:Weapon Expertise",' +
       '"13:Defensive Robes","13:Weapon Specialization",' +
+      // Errata adds 17:Resolve
       '"15:Master Spellcaster","17:Resolve","19:Bloodline Paragon",' +
       '"19:Legendary Spellcaster" ' +
     'Selectables=' +
@@ -850,6 +852,7 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Arcane)",' +
       '"1:Arcane Spellcasting","1:Arcane School","1:Arcane Bond",' +
+      // Errata corrects 1:Wizard Feats to 2:Wizard Feats
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Lightning Reflexes","7:Expert Spellcaster",' +
       '"9:Magical Fortitude","11:Alertness","11:Wizard Weapon Expertise",' +
@@ -1488,18 +1491,18 @@ Pathfinder2E.FEATS = {
       '"features.Devotion Spells",' +
       '"features.The Tenets Of Good"',
   'Loyal Warhorse':
-    'Traits=Class,Champion Require="level >= 6","features.Divine Ally (Steed)"',
+    'Traits=Class,Champion Require="level >= 6","features.Steed Ally"',
   'Shield Warden':
     'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Divine Ally (Shield) && ' +
+      '"features.Shield Ally && ' +
        'features.The Tenets Of Good || features.Shield Block"',
   'Smite Evil':
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Divine Ally (Blade)",' +
+      '"features.Blade Ally",' +
       // Errata adds The Tenets Of Good
       '"features.The Tenets Of Good"',
   "Advanced Deity's Domain (Air)":
@@ -1692,7 +1695,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 8",' +
-      '"features.Divine Ally (Steed)",' +
+      '"features.Steed Ally",' +
       '"spells.Lay On Hands (D1 Foc Nec)"',
   'Quick Shield Block':
     'Traits=Class,Champion,Fighter ' +
@@ -1707,7 +1710,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 10",' +
-      '"features.Divine Ally (Steed)",' +
+      '"features.Steed Ally",' +
       '"features.Loyal Warhorse"',
   'Litany Against Sloth':
     'Traits=Class,Champion ' +
@@ -1717,7 +1720,7 @@ Pathfinder2E.FEATS = {
       '"features.The Tenets Of Good"',
   'Radiant Blade Spirit':
     'Traits=Class,Champion ' +
-    'Require="level >= 10","features.Divine Ally (Blade)"',
+    'Require="level >= 10","features.Blade Ally"',
   'Shield Of Reckoning':
     'Traits=Class,Champion,Flourish ' +
     'Require=' +
@@ -1757,13 +1760,13 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 16",' +
-      '"features.Divine Ally (Steed)",' +
+      '"features.Steed Ally",' +
       '"features.Imposing Destrier"',
   'Instrument Of Zeal':
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 16",' +
-      '"features.Divine Ally (Blade)",' +
+      '"features.Blade Ally",' +
       '"features.The Tenets Of Good"',
   'Shield Of Grace':
     'Traits=Class,Champion Require="level >= 16","features.Shield Warden"',
@@ -1775,17 +1778,17 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 20",' +
-      '"features.Divine Ally (Steed)",' +
+      '"features.Steed Ally",' +
       '"features.The Tenets Of Good"',
   'Radiant Blade Master':
     'Traits=Class,Champion ' +
     'Require=' +
       '"level >= 20",' +
-      '"features.Divine Ally (Blade)",' +
+      '"features.Blade Ally",' +
       '"features.Radiant Blade Spirit"',
   'Shield Paragon':
     'Traits=Class,Champion ' +
-    'Require="level >= 20","features.Divine Ally (Shield)"',
+    'Require="level >= 20","features.Shield Ally"',
 
   'Deadly Simplicity':
     // Errata allows Unarmed
@@ -2383,6 +2386,7 @@ Pathfinder2E.FEATS = {
   'Wild Winds Initiate':
     'Traits=Class,Monk Require="level >= 8","features.Ki Spells"',
   'Knockback Strike':'Traits=Class,Monk,Concentrate Require="level >= 10"',
+  // Errata removes the Attack trait
   'Sleeper Hold':'Traits=Class,Monk,Incapacitation Require="level >= 10"',
   'Wind Jump':'Traits=Class,Monk Require="level >= 10","features.Ki Spells"',
   'Winding Flow':'Traits=Class,Monk Require="level >= 10"',
@@ -2473,6 +2477,7 @@ Pathfinder2E.FEATS = {
       '"features.Snare Specialist"',
   'Terrain Master':
     'Traits=Class,Ranger ' +
+    // Errata removes Wild Stride
     'Require=' +
       '"level >= 8",' +
       '"rank.Survival >= 3",' +
@@ -2494,6 +2499,7 @@ Pathfinder2E.FEATS = {
   'Double Prey':'Traits=Class,Ranger Require="level >= 12"',
   'Lightning Snares':
     'Traits=Class,Ranger ' +
+    // Errata adds Quick Snares
     'Require=' +
       '"level >= 12",' +
       '"rank.Crafting >= 3",' +
@@ -2507,6 +2513,7 @@ Pathfinder2E.FEATS = {
     'Require="level >= 14","features.Double Prey","features.Warden\'s Boon"',
   'Stealthy Companion':
     'Traits=Class,Ranger ' +
+    // Errata adds Animal Companion
     'Require="level >= 14","features.Animal Companion","features.Camouflage"',
   'Targeting Shot':
     'Traits=Class,Ranger,Concentrate,Press ' +
@@ -2691,11 +2698,13 @@ Pathfinder2E.FEATS = {
     'Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
   'Greater Mental Evolution':
+    // Errata removes Arcane
     'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Arcane Evolution || features.Occult Evolution"',
   'Greater Vital Evolution':
+    // Errata removes Divine
     'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
@@ -4364,9 +4373,10 @@ Pathfinder2E.FEATURES = {
   // Bard
   'Bard Weapon Expertise':
     'Section=combat,combat ' +
+    // Errata adds Unarmed Attacks
     'Note=' +
-      '"Attack Expert (Simple Weapons; Unarmed Attacks; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip)",' +
-      '"Critical hits with a simple weapon, unarmed attack, longsword, rapier, sap, shortbow, shortsword, or whip inflict its critical specialization effect when a composition spell is active"',
+      '"Attack Expert (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
+      '"Critical hits with a simple weapon, longsword, rapier, sap, shortbow, shortsword, whip, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
   'Bard Feats':'Section=feature Note="%V selections"',
   'Bard Skills':
     'Section=skill ' +
@@ -4645,6 +4655,9 @@ Pathfinder2E.FEATURES = {
   'Armor Mastery':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+  'Blade Ally':
+    'Section=combat ' +
+    'Note="Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
   'Cause':'Section=feature Note="1 selection"',
   'Champion Expertise':
     'Section=combat,magic ' +
@@ -4745,13 +4758,6 @@ Pathfinder2E.FEATURES = {
   'Divine Ally':
     'Section=feature ' +
     'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
-  'Divine Ally (Blade)':
-    'Section=combat ' +
-    'Note="Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
-  'Divine Ally (Shield)':
-    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
-  'Divine Ally (Steed)':
-    'Section=feature Note="Has a young animal companion for a mount"',
   'Divine Smite (Liberator)':
     'Section=combat ' +
     'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
@@ -4811,6 +4817,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
   // Shield Block as below
+  'Steed Ally':
+    'Section=feature Note="Has a young animal companion for a mount"',
   'The Tenets Of Good':
     'Section=feature ' +
     'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
@@ -4824,6 +4832,8 @@ Pathfinder2E.FEATURES = {
   'Ranged Reprisal':
     'Section=combat ' +
     'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
+  'Shield Ally':
+    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
   'Unimpeded Step':
     'Section=combat ' +
     'Note="Liberating Step target may Step normally in any terrain"',
@@ -5830,7 +5840,8 @@ Pathfinder2E.FEATURES = {
   'Determination':
     'Action=1 ' +
     'Section=save ' +
-    'Note="Ends a nonpermanent spell (requires a successful counteract attempt) or a condition affecting self once per day"',
+    // Errata corrects counteract level
+    'Note="Ends a nonpermanent condition or allows a +%{(level+1)//2} counteract attempt to end a nonpermanent spell affecting self once per day"',
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
@@ -6299,6 +6310,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can use 2 actions for Command an Animal to give companion an additional action"',
   'Disrupt Prey':
+    // Errata corrects action
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action"',
@@ -6646,6 +6658,7 @@ Pathfinder2E.FEATURES = {
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
+    // Errata chages the counteract level
     'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
   'Cloud Step':
     'Section=ability ' +
@@ -14014,8 +14027,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.weaponExpertise',
       classLevel, '=', '"Simple Weapons; Martial Weapons"'
     );
-    rules.defineRule('combatNotes.divineAlly(Shield).1',
-      'combatNotes.divineAlly(Shield)', '=', '1.5',
+    rules.defineRule('combatNotes.shieldAlly.1',
+      'combatNotes.shieldAlly', '=', '1.5',
       'combatNotes.shieldParagon', '^', '2'
     );
     rules.defineRule('featureNotes.divineAlly',
@@ -14038,7 +14051,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.championKeyAbility', '=', '1'
     );
     rules.defineRule
-      ('shieldHitPoints', 'combatNotes.divineAlly(Shield).1', '*', null);
+      ('shieldHitPoints', 'combatNotes.shieldAlly.1', '*', null);
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('spellModifier.Champion',
