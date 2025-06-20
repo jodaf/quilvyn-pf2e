@@ -119,7 +119,7 @@ var attributes = {
         <td><b>Feats</b>: Advanced Concoction; Advanced Devotion; Advanced Dogma; Advanced Fury; Advanced Muse's Whispers; Advanced Wilding; Alchemist Dedication; Assurance (Nature); Assurance (River Lore); Barbarian Dedication; Barbarian Resiliency; Bard Dedication; Basic Bard Spellcasting; Basic Cleric Spellcasting; Basic Concoction; Basic Devotion; Basic Dogma; Basic Druid Spellcasting; Basic Fury; Basic Muse's Whispers; Basic Wilding; Canny Acumen (Fortitude); Champion Dedication; Champion Resiliency; Champion's Reaction; Cleric Dedication; Clever Improviser; Cognitive Loophole; Counter Perform; Defensive Roll; Diverse Armor Expert; Divine Ally; Divine Breadth; Dread Striker; Druid Dedication; Enduring Alchemy; Experienced Smuggler; Expert Alchemy; Expert Bard Spellcasting; Expert Cleric Spellcasting; Expert Druid Spellcasting; Far Lobber; General Training; Haughty Obstinacy; Healing Touch; Impressive Performance; Incredible Initiative; Inspirational Performance; Instinct Ability; Juggernaut's Fortitude; Magical Trickster; Master Alchemy; Master Bard Spellcasting; Master Cleric Spellcasting; Master Druid Spellcasting; Mercy; Mobility; Natural Ambition; Natural Skill; Occult Breadth; Order Spell; Powerful Sneak; Primal Breadth; Quick Alchemy; Quick Draw; Raging Intimidation; Reactive Interference; Ride; Skill Training (Accounting Lore); Skill Training (Astral Plane Lore); Skill Training (Cave Lore); Skill Training (Circus Lore); Skill Training (Engineering Lore); Skill Training (Gnome Lore); Skill Training (Mining Lore); Skill Training (Occultism); Skill Training (Plains Lore); Skill Training (River Lore); Skill Training (Sailing Lore); Skill Training (Society); Skill Training (Survival); Skill Training (Theater Lore); Tactical Debilitations; Toughness; Twist The Knife; Weapon Proficiency (Martial Weapons); Weight Of Guilt</td>
         <td><b>Rogue Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks); Class Trained (Rogue); Debilitating Strike; Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; Double Debilitation; Evasion; General Feats; Great Fortitude; Greater Weapon Specialization; Improved Evasion; Incredible Senses; Light Armor Expertise; Master Tricks; Perception Expert; Rogue Expertise; Rogue Feats; Rogue Key Ability; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Scoundrel; Skill Feats; Skill Increases; Slippery Mind; Sneak Attack; Surprise Attack; Vigilant Senses; Weapon Specialization; Weapon Tricks</td>
         <td><b>Druid Features</b>: Leaf</td>
-        <td><b>Champion Features</b>: Blade Ally; Dexterity; Glimpse Of Redemption; Redeemer</td>
+        <td><b>Champion Features</b>: Blade Ally; Dexterity; Redeemer</td>
         <td><b>Bard Features</b>: Enigma</td>
         <td><b>Barbarian Features</b>: Animal Instinct (Ape); Bestial Rage (Ape)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
@@ -163,9 +163,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Basic Wilding: +1 Class Feat (1st- or 2nd-level druid)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cause: 1 selection</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Champion Dedication: Has the Champion Key Ability, Deity, and Cause features</i></td>
+        <td><i>Champion Dedication: Has the Champion Key Ability and Deity And Cause features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Champion Key Ability: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -174,6 +172,8 @@ var attributes = {
         <td><i>Cleric Dedication: Has the Deity feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has the Untrained Improvisation feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Deity And Cause: Has the Anathema feature/1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deity: Has the Anathema feature</i></td>
       </tr><tr style="text-align:center">
@@ -204,6 +204,8 @@ var attributes = {
         <td><i>Natural Ambition: +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Raging Intimidation: Has the Intimidating Glare and Scare To Death features</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Redeemer: Has the Glimpse Of Redemption feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
@@ -448,7 +450,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Bestial Rage (Ape): Can use fists to inflict 1d12+12 HP bludgeoning during rage</td>
       </tr><tr style="text-align:center">
-        <td>Blade Ally: Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect</td>
+        <td>Blade Ally: Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a chosen weapon during daily prep, and critical hits inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Debilitating Strike: <b>(F)</b> Successful Strike against a flat-footed foe also inflicts a choice of -10 Speed or enfeebled 1 until the end of the next turn</td>
       </tr><tr style="text-align:center">
@@ -460,9 +462,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dread Striker: Frightened foes are flat-footed vs. self attacks</td>
       </tr><tr style="text-align:center">
-        <td>Glimpse Of Redemption: <b>(R)</b> R15' Negates damage to a struck ally or gives the ally damage resistance 20 and inflicts enfeebled 2 on the triggering foe for 1 rd (foe's choice)</td>
+        <td>Glimpse Of Redemption: <b>(R)</b> R15' Forces a foe who has damaged an ally to choose between negating the damage or giving the ally resistance 20 to all damage and suffering enfeebled 2 until the end of its next turn</td>
       </tr><tr style="text-align:center">
-        <td>Mobility: Can Stride at half Speed without triggering Reactions</td>
+        <td>Mobility: Can Stride at half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
         <td>Powerful Sneak: Can change sneak attack damage to match weapon damage type</td>
       </tr><tr style="text-align:center">
@@ -470,7 +472,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Rage: <b>(1)</b> Gains 22 temporary Hit Points and +2 HP melee damage, or +1 HP with an agile weapon, and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 min between rages</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Interference: <b>(R)</b> Prevents a foe Reaction; a higher-level foe requires a successful attack roll</td>
+        <td>Reactive Interference: <b>(R)</b> Prevents a foe reaction; a higher-level foe requires a successful attack roll</td>
       </tr><tr style="text-align:center">
         <td>Scoundrel: Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn</td>
       </tr><tr style="text-align:center">
@@ -478,7 +480,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Surprise Attack: Rolling Deception or Stealth for initiative inflicts flat-footed on creatures that haven't acted</td>
       </tr><tr style="text-align:center">
-        <td>Tactical Debilitations: Can use Debilitating Strike to prevent Reactions or flanking</td>
+        <td>Tactical Debilitations: Can use Debilitating Strike to prevent reactions or flanking</td>
       </tr><tr style="text-align:center">
         <td>Twist The Knife: <b>(1)</b> Inflicts 4 HP persistent bleed damage after a successful sneak attack on a flat-footed foe</td>
       </tr><tr style="text-align:center">

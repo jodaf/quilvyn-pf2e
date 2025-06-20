@@ -574,11 +574,8 @@ Pathfinder2E.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Spell Trained (Divine)",' +
-      '"1:Deity","1:Cause","1:Champion\'s Code","1:Deific Weapon",' +
+      '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
-      '"features.Liberator ? 1:Liberating Step",' +
-      '"features.Paladin ? 1:Retributive Strike",' +
-      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -1501,8 +1498,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      '"features.Shield Ally && ' +
-       'features.The Tenets Of Good || features.Shield Block"',
+      // Shield Ally and Tenets Of Good for Champion, Shield Block for Fighter
+      '"features.Shield Ally && features.The Tenets Of Good || ' +
+       'features.Shield Block"',
   'Smite Evil':
     'Traits=Class,Champion ' +
     'Require=' +
@@ -1697,11 +1695,8 @@ Pathfinder2E.FEATS = {
       '"features.Deity\'s Domain (Zeal)"',
   'Greater Mercy':'Traits=Class,Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Steed Ally",' +
-      '"spells.Lay On Hands (D1 Foc Nec)"',
+    'Traits=Class,Champion Require="level >= 8","features.Steed Ally"',
+  // Errata renames Quick Block to Quick Shield Block and adds a prereq
   'Quick Shield Block':
     'Traits=Class,Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
@@ -1731,6 +1726,8 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 10",' +
       '"features.Champion\'s Reaction",' +
+      '"features.Shield Ally",' +
+      '"features.The Tenets Of Good",' +
       '"features.Shield Warden"',
   'Affliction Mercy':
     'Traits=Class,Champion Require="level >= 12","features.Mercy"',
@@ -1753,8 +1750,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion Require="level >= 14","features.Shining Oath"',
   'Aura Of Righteousness':
     'Traits=Class,Champion Require="level >= 14","features.The Tenets Of Good"',
-  // NOTE: Exalt requirement redundant? All Champions get it at level 11
   'Aura Of Vengeance':
+    // Note: ignoring the Exalt requirement; we have it split by cause, and
+    // all champions acquire it at level 11
     'Traits=Class,Champion Require="level >= 14","features.Vengeful Oath"',
   'Divine Reflexes':'Traits=Class,Champion Require="level >= 14"',
   'Litany Of Righteousness':
@@ -4662,8 +4660,7 @@ Pathfinder2E.FEATURES = {
     'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
   'Blade Ally':
     'Section=combat ' +
-    'Note="Can apply a choice of <i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a weapon chosen each day, and critical hits inflict its critical specialization effect"',
-  'Cause':'Section=feature Note="1 selection"',
+    'Note="Can apply a choice of %{combatNotes.radiantBladeMaster?\'<i>dancing</i>, <i>greater disrupting</i>, <i>keen</i>, \':\'\'}%{combatNotes.radiantBladeSpirit?\'<i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a chosen weapon during daily prep, and critical hits inflict its critical specialization effect"',
   'Champion Expertise':
     'Section=combat,magic ' +
     'Note=' +
@@ -4682,6 +4679,8 @@ Pathfinder2E.FEATURES = {
   "Champion's Reaction":
     'Section=feature ' +
     'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
+  'Deity And Cause':
+    'Section=feature Note="Has the Anathema feature/1 selection"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -4779,17 +4778,17 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Exalt (Liberator)':
     'Section=combat ' +
-    'Note="R15\' Liberating Step allows all allies to Step if target ally does not attempt to break free"',
+    'Note="R15\' Liberating Step allows all allies to Step if the target ally does not attempt to break free"',
   'Exalt (Paladin)':
     'Section=combat ' +
-    'Note="R15\' Retributive Strike allows allies to use a Reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against target"',
+    'Note="R15\' Retributive Strike allows allies to use a reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against the target"',
   'Exalt (Redeemer)':
     'Section=combat ' +
-    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to damage"',
+    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to all damage"',
   'Glimpse Of Redemption':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Negates damage to a struck ally or gives the ally damage resistance %{2+level} and inflicts enfeebled 2 on the triggering foe for 1 rd (foe\'s choice)"',
+    'Note="R15\' Forces a foe who has damaged an ally to choose between negating the damage or giving the ally resistance %{2+level} to all damage and suffering enfeebled 2 until the end of its next turn"',
   // Greater Weapon Specialization as above
   "Hero's Defiance":
     'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
@@ -4800,27 +4799,30 @@ Pathfinder2E.FEATURES = {
   'Liberating Step':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Gives an ally damage resistance %{2+level}, an Escape action or save from a restraint as a free action, and a Step as a free action"',
+    'Note="R15\' Gives an ally resistance %{2+level} to any triggering damage and free actions to Escape or to save from a restraint and to Step"',
   'Liberator':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Liberating Step feature",' +
       '"Must respect others\' freedom and oppose tyranny",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Retributive Strike feature",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the Lay On Hands divine spell"',
   'Redeemer':
-    'Section=feature,magic ' +
+    'Section=feature,feature,magic ' +
     'Note=' +
+      '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R15\' Gives an ally damaged by an attack damage resistance %{level+2} and allows a melee Strike against the attacking foe if within reach"',
+    'Note="R15\' Gives an ally damaged by an attack resistance %{level+2} to all damage and allows self to make a melee Strike against the attacking foe if within reach"',
   // Shield Block as below
   'Steed Ally':
     'Section=feature Note="Has a young animal companion for a mount"',
@@ -4846,7 +4848,9 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
   'Divine Grace':
-    'Action=Reaction Section=combat Note="Gives +2 save vs. a spell"',
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Gives +2 vs. the triggering spell"',
   'Dragonslayer Oath':
     'Section=combat,feature ' +
     'Note=' +
@@ -4869,14 +4873,14 @@ Pathfinder2E.FEATURES = {
       '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
   'Aura Of Courage':
     'Section=save ' +
-    'Note="Reduces initial value of frightened condition by 1; reduction of frightened condition also reduces fright of allies within 15\'"',
+    'Note="Reduces the initial value of any frightened condition by 1, and reduction of a frightened condition at the end of a turn also reduces the fright of allies within 15\'"',
   'Divine Health':
     'Section=save ' +
     'Note="+1 vs. disease, and successes vs. disease are critical successes"',
   'Mercy':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract fear or paralysis"',
+    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.afflictionMercy?\'a curse, disease, poison, \':\'\'}%{magicNotes.greaterMercy?\'blinded, deafened, sickened, slowed, \':\'\'}fear or paralysis"',
   // Attack Of Opportunity as above
   'Litany Against Wrath':
     'Section=magic ' +
@@ -4889,15 +4893,13 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Blade ally inflicts +4 HP good, or +6 HP with master proficiency, vs. a chosen target for 1 rd, extended as long as the target attacks an ally"',
-  'Greater Mercy':
-    'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract blinded, deafened, sickened, or slowed"',
+  'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Heal Mount':
     'Section=magic ' +
     'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
-    'Note="Can use an additional Reaction for a Shield Block once per turn"',
+    'Note="Can use an additional reaction for a Shield Block once per turn"',
   'Second Ally':'Section=feature Note="+1 selection"',
   'Sense Evil':
     'Section=feature ' +
@@ -4911,22 +4913,19 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Knows the Litany Against Sloth divine spell/+1 Focus Points"',
   'Radiant Blade Spirit':
-    'Section=combat ' +
-    'Note="Can choose <i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, or <i>unholy</i> property for Blade Ally"',
+    'Section=combat Note="Has increased Blade Ally effects"',
   'Shield Of Reckoning':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Uses Shield Block on an ally and Champion\'s Reaction on the attacking foe"',
-  'Affliction Mercy':
-    'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract a curse, disease, or poison"',
+  'Affliction Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Aura Of Faith':
     'Section=combat ' +
     'Note="R15\' All self Strikes and the first Strike of each ally each rd inflict +1 HP good damage vs. evil creatures"',
   'Blade Of Justice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Adds 2 extra damage dice to a Strike vs. an evil foe and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
+    'Note="Adds 2 extra damage dice to a Strike vs. an evil foe seen harming an innocent or ally and allows converting all damage to good%{features.Paladin ? \', as well as inflicting Retributive Strike effects\' : \'\'}"',
   "Champion's Sacrifice":
     'Section=magic ' +
     'Note="Knows the Champion\'s Sacrifice divine spell/+1 Focus Points"',
@@ -4950,27 +4949,27 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces allies\' penalty on Strikes in response to Retributive Strike to -2"',
   'Divine Reflexes':
     'Section=combat ' +
-    'Note="Can use an additional Reaction for Champion\'s Reaction once per turn"',
+    'Note="Can use an additional reaction for Champion\'s Reaction once per turn"',
   'Litany Of Righteousness':
     'Section=magic ' +
     'Note="Knows the Litany Of Righteousness divine spell/+1 Focus Points"',
   'Wyrmbane Aura':
     'Section=save ' +
-    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison, or resistance %{level//2} if damage comes from dragon breath"',
+    'Note="R15\' Gives self and allies resistance %{charismaModifier} to acid, cold, electricity, fire, and poison, or resistance %{level//2} if the damage comes from dragon breath"',
   'Auspicious Mount':
     'Section=feature ' +
-    'Note="Mount is a specialized animal companion with %{deity}\'s mark, Skill Expert (Religion), speech, +2 Intelligence, and +1 Wisdom"',
+    'Note="Mount is a specialized animal companion with %{deity}\'s mark, expert proficiency in Religion, speech, +2 Intelligence, and +1 Wisdom"',
   'Instrument Of Zeal':
     'Section=combat ' +
     // Errata changes Smite Evil to Blade Of Justice
     'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts an additional damage die and slowed 1 for 1 rd"',
   'Shield Of Grace':
     'Section=combat ' +
-    'Note="May suffer half of excess damage when using Shield Block to protect an ally"',
+    'Note="May redirect half of the excess damage to self when using Shield Block to protect an ally"',
   'Celestial Form':
     'Section=ability,feature ' +
     'Note=' +
-      '"Has a %{speed}\' fly speed",' +
+      '"Has a %{speed}\' fly Speed",' +
       '"Has the Darkvision feature"',
   'Ultimate Mercy':
     'Section=magic ' +
@@ -4979,8 +4978,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Mount has Darkvision, +40 Hit Points, and weakness 10 to evil damage and can fly at full Speed"',
   'Radiant Blade Master':
-    'Section=combat ' +
-    'Note="Can choose <i>dancing</i>, <i>greater disrupting</i>, or <i>keen</i> property for Blade Ally"',
+    'Section=combat Note="Has increased Blade Ally effects"',
   'Shield Paragon':
     'Section=combat,combat ' +
     'Note=' +
@@ -5708,7 +5706,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Makes melee Strikes on two foes flanking self"',
   'Shielded Stride':
     'Section=combat ' +
-    'Note="Can Stride at half Speed with shield raised without triggering Reactions"',
+    'Note="Can Stride at half Speed with shield raised without triggering reactions"',
   // Swipe as above
   'Twin Parry':
     'Action=1 ' +
@@ -5765,7 +5763,7 @@ Pathfinder2E.FEATURES = {
   'Mobile Shot Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance negates Reactions from ranged Strikes and allows using Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
+    'Note="Stance negates reactions from ranged Strikes and allows using Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
   'Positioning Assault':
     'Action=2 ' +
     'Section=combat ' +
@@ -5781,7 +5779,7 @@ Pathfinder2E.FEATURES = {
     'Note="Melee Strike inflicts normal non-dice damage on failure"',
   'Combat Reflexes':
     'Section=combat ' +
-    'Note="Gives an additional Reaction to make an Attack Of Opportunity once per turn"',
+    'Note="Gives an additional reaction to make an Attack Of Opportunity once per turn"',
   'Debilitating Shot':
     'Action=2 ' +
     'Section=combat ' +
@@ -5821,7 +5819,7 @@ Pathfinder2E.FEATURES = {
     'Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed, and Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
   'Improved Dueling Riposte':
     'Section=combat ' +
-    'Note="Gives an additional Reaction to make a Dueling Riposte once per turn"',
+    'Note="Gives an additional reaction to make a Dueling Riposte once per turn"',
   'Incredible Ricochet':
     'Action=1 ' +
     'Section=combat ' +
@@ -5841,7 +5839,7 @@ Pathfinder2E.FEATURES = {
   'Desperate Finisher':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can use a press action after taking the last action in a turn, losing any further Reactions until next turn"',
+    'Note="Can use a press action after taking the last action in a turn, losing any further reactions until next turn"',
   'Determination':
     'Action=1 ' +
     'Section=save ' +
@@ -5856,7 +5854,7 @@ Pathfinder2E.FEATURES = {
     'Note="A successful Dueling Riposte Strike moves a foe 10\' to a spot within reach"',
   'Improved Twin Riposte':
     'Section=combat ' +
-    'Note="Gives an additional Reaction to make a Twin Riposte once per turn"',
+    'Note="Gives an additional reaction to make a Twin Riposte once per turn"',
   'Stance Savant':
     'Action=Free ' +
     'Section=combat ' +
@@ -5890,7 +5888,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful attack rolls of 19 with a legendary weapon are critical successes"',
   'Boundless Reprisals':
      'Section=combat ' +
-     'Note="Gives an additional Reaction to use a fighter feat or class feature once per foe turn"',
+     'Note="Gives an additional reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
     'Note="Permanently quickened; may use additional actions only to Strike"',
@@ -6041,7 +6039,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Makes a Strike on a foe at the end of a Leap or Jump"',
   'Guarded Movement':
-    'Section=combat Note="+4 Armor Class vs. movement Reactions"',
+    'Section=combat Note="+4 Armor Class vs. movement reactions"',
   'Stand Still':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6339,7 +6337,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 Section=combat Note="Steps before or after a Strike"',
   'Snap Shot':
     'Section=combat ' +
-    'Note="Can use a ranged weapon during a Reaction to Strike an adjacent creature"',
+    'Note="Can use a ranged weapon during a reaction to Strike an adjacent creature"',
   'Swift Tracker':
     'Section=skill ' +
     'Note="Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Can perform other exploration activities while tracking\':\'\'}"',
@@ -6559,7 +6557,7 @@ Pathfinder2E.FEATURES = {
       '"Knows 2 primal cantrips"',
   'Mobility':
     'Section=combat ' +
-    'Note="Can Stride at half Speed without triggering Reactions"',
+    'Note="Can Stride at half Speed without triggering reactions"',
   // Quick Draw as above
   'Unbalancing Blow':
     'Section=combat ' +
@@ -6628,7 +6626,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
     'Section=combat ' +
-    'Note="Can use Debilitating Strike to prevent Reactions or flanking"',
+    'Note="Can use Debilitating Strike to prevent reactions or flanking"',
   'Vicious Debilitations':
     'Section=combat ' +
     'Note="Can use Debilitating Strike to inflict weakness 5 to a choice of damage type or clumsy 1"',
@@ -6646,7 +6644,7 @@ Pathfinder2E.FEATURES = {
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Prevents a foe Reaction; a higher-level foe requires a successful attack roll"',
+    'Note="Prevents a foe reaction; a higher-level foe requires a successful attack roll"',
   'Spring From The Shadows':
     'Action=1 Section=combat Note="Strikes a foe after an undetected Stride"',
   'Defensive Roll':
@@ -7275,7 +7273,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Defense Trained (Light Armor; Medium Armor; Heavy Armor)/Class Trained (Champion)",' +
-      '"Has the Champion Key Ability, Deity, and Cause features",' +
+      '"Has the Champion Key Ability and Deity And Cause features",' +
       '"Skill Trained (Religion)"',
   'Basic Devotion':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level champion)"',
@@ -7640,7 +7638,7 @@ Pathfinder2E.FEATURES = {
     'Note="+2 initial gold/Can use Diplomacy to purchase items at a discount"',
   'Battle Cry':
     'Section=combat ' +
-    'Note="Can use Demoralize as a free action on a foe during initiative%{rank.Intimidation>=4?\' or as a Reaction on a critical hit\':\'\'}"',
+    'Note="Can use Demoralize as a free action on a foe during initiative%{rank.Intimidation>=4?\' or as a reaction on a critical hit\':\'\'}"',
   'Battle Medicine':
     'Action=1 ' +
     'Section=skill ' +
@@ -7721,7 +7719,7 @@ Pathfinder2E.FEATURES = {
   'Inventor':
     'Section=skill Note="Can use Crafting to create unknown common formulas"',
   'Kip Up':
-    'Action=Free Section=combat Note="Stands up without triggering Reactions"',
+    'Action=Free Section=combat Note="Stands up without triggering reactions"',
   'Lasting Coercion':
     'Section=skill ' +
     'Note="Successful Coerce lasts up to a %{rank.Intimidation>=4?\'month\':\'week\'}"',
@@ -8491,7 +8489,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Prepares a spell of up to 3 actions and 4th level to activate as a Reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
+      '"Prepares a spell of up to 3 actions and 4th level to activate as a reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)"',
   'Continual Flame':
     'Level=2 ' +
     'Traits=Evocation,Light ' +
@@ -8553,7 +8551,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone prevents Reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
+      '"30\' cone prevents reactions, and failure on a second save inflicts slowed 1, for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure inflicts slowed 1 for 1 min with no second save) (<b>heightened 7th</b> affects a 60\' cone)"',
   'Dancing Lights':
     'Level=1 ' +
     'Traits=Cantrip,Evocation,Light ' +
@@ -8799,7 +8797,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Self becomes a Large dragon with 40\' Speed, 100\' fly Speed, 10 temporary HP, Armor Class %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120\' fly speed, +5\' reach, 15 temporary HP, Armor Class %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
+      '"Self becomes a Large dragon with 40\' Speed, 100\' fly Speed, 10 temporary HP, Armor Class %{level+18}, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60\' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120\' fly Speed, +5\' reach, 15 temporary HP, Armor Class %{level+21}, +28 attack, +12 damage (breath weapon +14), +28 Athletics)"',
   'Dream Council':
     'Level=8 ' +
     'Traits=Illusion,Mental,Sleep ' +
@@ -9110,7 +9108,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a Reaction to give the target the better of two rolls or its foe the worse of two rolls, for 1 hr"',
+      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a reaction to give the target the better of two rolls or its foe the worse of two rolls, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'Traits=Abjuration ' +
@@ -9294,7 +9292,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts slowed 1 and loss of Reactions while sustained (<b>save Will</b> inflicts loss of Reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of Reactions)"',
+      '"R30\' Inflicts slowed 1 and loss of reactions while sustained (<b>save Will</b> inflicts loss of reactions only; critical success negates; critical failure inflicts prone for 1 rd, then slowed 1 and loss of reactions)"',
   'Holy Cascade':
     'Level=4 ' +
     'Traits=Evocation,Good,Positive,Water ' +
@@ -9349,7 +9347,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts loss of Reactions)"',
+      '"R120\' 10\' burst inflicts dazzled and fascinated while sustained for up to 1 min (<b>save Will</b> inflicts dazzled only; critical failure inflicts loss of reactions)"',
   'Illusory Creature':
     'Level=2 ' +
     'Traits=Auditory,Illusion,Olfactory,Visual ' +
@@ -10461,7 +10459,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self to use a Reaction that redirects a spell to its caster via a successful counterspell once within 1 hr"',
+      '"Allows self to use a reaction that redirects a spell to its caster via a successful counterspell once within 1 hr"',
   'Spellwrack':
     'Level=6 ' +
     'Traits=Abjuration,Curse,Force ' +
@@ -10857,7 +10855,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers flat-footed and no Reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
+      '"Touched suffers flat-footed and no reactions for 1 min and spends 2 actions each turn dancing (<b>save Will</b> effects last for 3 rd and the target spends 1 action each turn dancing; critical success negates; critical failure effects last for 1 min and the target spends all actions each turn dancing)"',
   'Undetectable Alignment':
     'Level=2 ' +
     'Traits=Uncommon,Abjuration ' +
@@ -11247,7 +11245,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Evil target suffers Reaction prevention and slowed 1 for 1 rd (<b>save Will</b> Reaction prevention only; critical success negates; critical failure inflicts slowed 2; slothful creatures worsen save by 1 degree)"',
+      '"R30\' Evil target suffers reaction prevention and slowed 1 for 1 rd (<b>save Will</b> reaction prevention only; critical success negates; critical failure inflicts slowed 2; slothful creatures worsen save by 1 degree)"',
   'Litany Against Wrath':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Champion,Evocation,Good,Litany ' +
@@ -11888,7 +11886,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=Free ' +
     'Description=' +
-      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60\' fly Speed; a 20\' burrow speed, -10\' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60\' swim Speed, a Shove after a melee attack, and resistance 5 to fire"',
+      '"Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60\' fly Speed; a 20\' burrow Speed, -10\' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60\' swim Speed, a Shove after a melee attack, and resistance 5 to fire"',
   'Storm Lord':
     'Level=9 ' +
     'Traits=Focus,Uncommon,Air,Druid,Electricity,Evocation ' +
@@ -11998,7 +11996,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains a %{speed}\' fly speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
+      '"Self gains a %{speed}\' fly Speed, ending each turn on the ground, for 1 min (<b>heightened 6th</b> allows attempting a DC 30 Acrobatics check to avoid falling at the end of a turn)"',
   'Aberrant Whispers':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
@@ -12142,7 +12140,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts loss of Reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure also inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases the radius by 5\')"',
+      '"R30\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts loss of reactions and -2 Perception and Will for 1 rd (<b>save Will</b> negates; critical failure also inflicts -1 Perception and Will for 1 min) (<b>heightened +3</b> increases the radius by 5\')"',
   'Fey Disappearance':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Enchantment,Sorcerer ' +
@@ -14023,7 +14021,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       rules.defineRule('combatNotes.' + f,
         'features.Glimpse Of Redemption', '=', '"Glimpse Of Redemption grants %{level+7} damage resistance"',
         'features.Liberating Step', '=', '"Liberating Step grants +4 checks and a 2nd Step"',
-        'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage (+6 HP with master proficiency)"'
+        'features.Retributive Strike', '=', '"Retributive Strike inflicts +4 HP damage, or +6 HP with master proficiency,"'
       );
     });
     rules.defineRule('combatNotes.exalt(Paladin)',
@@ -14044,7 +14042,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       "featureNotes.champion'sReaction", '=', 'null' // italics
     );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
-      'featureNotes.cause', '=', '1'
+      'featureNotes.deityAndCause', '=', '1'
     );
     rules.defineRule("selectableFeatureCount.Champion (Champion's Code)",
       "featureNotes.champion'sCode", '=', '1'
@@ -14722,6 +14720,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'features.' + s, '=', '1'
       );
     });
+  } else if(name == 'Affliction Mercy') {
+    rules.defineRule('magicNotes.mercy',
+       'magicNotes.afflictionMercy', '=', 'null' // italics
+    );
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
@@ -15052,6 +15054,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
+  } else if(name == 'Greater Mercy') {
+    rules.defineRule
+      ('magicNotes.mercy', 'magicNotes.greaterMercy', '=', 'null'); // italics
   } else if(name == 'Harming Hands') {
     rules.defineRule('harmSpellDie', 'magicNotes.harmingHands', '^', '10');
   } else if(name == 'Healing Hands') {
@@ -15172,6 +15177,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'spellSlots.P' + l, '^', l - 2
       );
     });
+  } else if(name.match(/^Radiant Blade (Master|Spirit)$/)) {
+    rules.defineRule('combatNotes.bladeAlly',
+      'combatNotes.' + prefix, '=', 'null' // italics
+    );
   } else if(name == 'Ranger Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -17216,7 +17225,7 @@ Pathfinder2E.ruleNotes = function() {
     '  </li><li>\n' +
     '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
-    '  taken as a free action or Reaction.\n' +
+    '  taken as a free action or reaction.\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
