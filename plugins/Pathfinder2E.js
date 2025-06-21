@@ -5402,13 +5402,17 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Animal Companion feature",' +
-      '"Knows the Heal Animal primal spell/Has a focus pool and 1 Focus Point",' +
+      '"Knows the Heal Animal primal spell",' +
       '"Skill Trained (Athletics)"',
   'Druid Feats':'Section=feature Note="%V selections"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
-  'Druidic Order':'Section=feature Note="1 selection"',
+  'Druidic Order':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a focus pool and 1 Focus Point"',
   'Druid Weapon Expertise':
     'Section=combat Note="Attack Expert (Simple Weapons; Unarmed Attacks)"',
   // Expert Spellcaster as above
@@ -5416,8 +5420,8 @@ Pathfinder2E.FEATURES = {
   'Leaf':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Leshy Familiar feature",' +
-      '"Knows the Goodberry primal spell/Has a focus pool and 2 Focus Points",' +
+      '"Has the Leshy Familiar feature/+1 Focus Points",' +
+      '"Knows the Goodberry primal spell",' +
       '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -5432,20 +5436,21 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Storm Born feature",' +
-      '"Knows the Tempest Surge primal spell/Has a focus pool and 2 Focus Points",' +
+      '"Knows the Tempest Surge primal spell/+1 Focus Points",' +
       '"Skill Trained (Acrobatics)"',
   // Weapon Specialization as above
   'Wild':
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Wild Shape feature",' +
-      '"Knows the Wild Morph primal spell/Has a focus pool and 1 Focus Point",' +
+      '"Knows the Wild Morph primal spell",' +
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
     'Note="Can use Diplomacy with animals to Make An Impression and to make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
+  // Errata adds fungus
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
   // Reach Spell as above
   'Storm Born':
@@ -5496,9 +5501,11 @@ Pathfinder2E.FEATURES = {
     'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
   'Woodland Stride':
     'Section=ability ' +
+    // Errata adds fungi
     'Note="Moves normally over difficult terrain caused by plants or fungi"',
   'Green Empathy':
     'Section=skill ' +
+    // Errata adds fungi
     'Note="Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
   'Insect Shape':
     'Section=magic ' +
@@ -5518,7 +5525,7 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (<b>save</b> Reflex negates; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 on Athletics checks"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 Athletics"',
   'Fey Caller':
     'Section=magic ' +
     'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
@@ -5527,7 +5534,7 @@ Pathfinder2E.FEATURES = {
     'Note="Animal Companion has a choice of nimble or savage characteristics"',
   'Soaring Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 on Acrobatics checks"',
+    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 Acrobatics"',
   'Wind Caller':
     'Section=magic ' +
     'Note="Knows the Stormwind Flight primal spell/+1 Focus Points"',
@@ -5566,7 +5573,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,save ' +
     'Note=' +
       '"Does not age",' +
-      '"+2 saves vs. disease and primal magic"',
+      '"+2 vs. disease and primal magic"',
   'Verdant Metamorphosis':
     'Section=feature,magic ' +
     'Note=' +
