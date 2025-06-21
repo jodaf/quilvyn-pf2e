@@ -5107,6 +5107,7 @@ Pathfinder2E.FEATURES = {
   'Cloistered Cleric':
     'Section=combat,combat,feature,magic,save ' +
     'Note=' +
+      // Errata adds Attack Expert (Simple Weapons; Unarmed Attacks)
       '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"+1 Class Feat (Domain Initiate feat)",' +
@@ -5244,6 +5245,7 @@ Pathfinder2E.FEATURES = {
   'Warpriest':
     'Section=combat,combat,feature,feature,magic,save,save ' +
     'Note=' +
+      // Errata adds Attack Expert (Simple Weapons; Unarmed Attacks)
       '"Defense %V (Light Armor; Medium Armor)%{level>=3?\'/Attack Trained (Martial Weapons)\':\'\'}%{level>=7?\'/Attack Expert (%1; Simple Weapons; Unarmed Attacks)\':\'\'}",' +
       '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
       '"Has the Shield Block feature",' +
@@ -5283,7 +5285,7 @@ Pathfinder2E.FEATURES = {
   'Command Undead':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<i>Harm</i> controls target undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
+    'Note="<i>Harm</i> inflicts minion status on target undead up to level %{level-3} for 1 min (Will negates; critical failure extends to 1 hr)"',
   'Directed Channel':
     'Section=magic ' +
     'Note="Can direct the effects of an area <i>Harm</i> or <i>Heal</i> into a 60\' cone"',
@@ -5293,7 +5295,7 @@ Pathfinder2E.FEATURES = {
   'Necrotic Infusion':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd"',
+    'Note="Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 HP negative (5th level spell +2d6 HP; 8th level +3d6 HP) with melee Strike until the end of its next turn"',
   'Cast Down':
     'Action=1 ' +
     'Section=magic ' +
@@ -5330,20 +5332,20 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, plus resistance %{level//2} with a matching domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP with a matching domain spell"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance %{level//2} if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell"',
   'Castigating Weapon':
     'Section=magic ' +
-    'Note="Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd"',
+    'Note="Damaging a fiend with <i>Heal</i> causes self weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level until the end of the next turn"',
   'Heroic Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd"',
+    'Note="Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage until the end of its next turn"',
   'Improved Command Undead':
     'Section=magic ' +
     'Note="Command Undead gives control of target for 1 rd, 10 min, or 24 hr on save success, failure, or critical failure"',
   'Replenishment Of War':
     'Section=combat ' +
-    'Note="Successful Strikes with a %{deityWeaponLowered} give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, for 1 rd"',
+    'Note="Successful Strikes with a %{deityWeaponLowered} give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, until the start of the next turn"',
   'Defensive Recovery':
     'Action=1 ' +
     'Section=magic ' +
@@ -5352,13 +5354,13 @@ Pathfinder2E.FEATURES = {
   'Emblazon Antimagic':
     'Section=magic ' +
     // Errata corrects the counteract level
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
+    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
   'Shared Replenishment':
     'Section=combat ' +
     'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
   "Deity's Protection":
     'Section=magic ' +
-    'Note="Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd"',
+    'Note="Casting a domain spell gives self resistance equal to the spell level to all damage until the start of the next turn"',
   'Extend Armament Alignment':
     'Section=combat Note="Has increased Align Armament effects"',
   'Fast Channel':

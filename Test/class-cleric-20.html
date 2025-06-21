@@ -310,7 +310,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: <b>(F)</b> Gives +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Replenishment Of War: Successful Strikes with a crossbow give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, for 1 rd</td>
+        <td>Replenishment Of War: Successful Strikes with a crossbow give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Shared Replenishment: Can give the temporary Hit Points from Replenishment Of War to any ally within 10'</td>
       </tr><tr style="text-align:center">
@@ -407,11 +407,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cast Down: <b>(1)</b> Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Castigating Weapon: Damaging a fiend with <i>Heal</i> causes weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level for 1 rd</td>
+      <td>Castigating Weapon: Damaging a fiend with <i>Heal</i> causes self weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level until the end of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Channeled Succor: Can cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i></td>
     </tr><tr style="text-align:center">
-      <td>Command Undead: <b>(1)</b> <i>Harm</i> controls target undead up to level 17 for 1 min (Will negates; critical failure extends to 1 hr)</td>
+      <td>Command Undead: <b>(1)</b> <i>Harm</i> inflicts minion status on target undead up to level 17 for 1 min (Will negates; critical failure extends to 1 hr)</td>
     </tr><tr style="text-align:center">
       <td>Communal Healing: Casting <i>Heal</i> on another creature restores HP to self equal to the spell level</td>
     </tr><tr style="text-align:center">
@@ -419,7 +419,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Defensive Recovery: <b>(1)</b> Subsequent healing cast on a single target also gives +2 Armor Class and saves for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Deity's Protection: Casting a domain spell gives self resistance equal to the spell level to all damage for 1 rd</td>
+      <td>Deity's Protection: Casting a domain spell gives self resistance equal to the spell level to all damage until the start of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Deity: Has access to <i>Illusory Object</i>, <i>Creation</i>, and <i>Magnificent Mansion</i> spells</td>
     </tr><tr style="text-align:center">
@@ -435,11 +435,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Echoing Channel: <b>(1)</b> Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Antimagic: Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause a critical hit with a weapon to allow a +10 counteract attempt vs. a spell</td>
+      <td>Emblazon Antimagic: Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +10 counteract attempt vs. a spell</td>
     </tr><tr style="text-align:center">
       <td>Emblazon Armament: 10 min process gives a shield +1 Hardness or a weapon +1 HP damage</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Energy: Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, plus resistance 10 with a matching domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP with a matching domain spell</td>
+      <td>Emblazon Energy: Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance 10 if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell</td>
     </tr><tr style="text-align:center">
       <td>Eternal Bane: R15' Aura gives continuous level 10 <i>Bane</i> effects</td>
     </tr><tr style="text-align:center">
@@ -451,7 +451,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Healing Font: Can cast <i>Heal</i> at level 10 an additional 5 times per day</td>
     </tr><tr style="text-align:center">
-      <td>Heroic Recovery: <b>(1)</b> Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage for 1 rd</td>
+      <td>Heroic Recovery: <b>(1)</b> Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage until the end of its next turn</td>
     </tr><tr style="text-align:center">
       <td>Holy Castigation: Can use <i>Heal</i> to damage fiends</td>
     </tr><tr style="text-align:center">
@@ -463,7 +463,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Metamagic Channel: <b>(F)</b> Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
-      <td>Necrotic Infusion: <b>(1)</b> Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 negative HP (5th level spell +2d6 HP; 8th level +3d6 HP) with first melee Strike in the next rd</td>
+      <td>Necrotic Infusion: <b>(1)</b> Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 HP negative (5th level spell +2d6 HP; 8th level +3d6 HP) with melee Strike until the end of its next turn</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends subsequent spell range by 30'</td>
     </tr><tr style="text-align:center">
