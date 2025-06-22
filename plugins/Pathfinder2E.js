@@ -2252,6 +2252,7 @@ Pathfinder2E.FEATS = {
   'Snagging Strike':'Traits=Class,Fighter',
   // Sudden Charge as above
   'Aggressive Block':'Traits=Class,Fighter Require="level >= 2"',
+  // Errata adds Press trait
   'Assisting Shot':'Traits=Class,Fighter,Press Require="level >= 2"',
   'Brutish Shove':'Traits=Class,Fighter,Press Require="level >= 2"',
   'Combat Grab':'Traits=Class,Fighter,Press Require="level >= 2"',
@@ -2265,7 +2266,9 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Fighter,Flourish Require="level >= 4","rank.Athletics >= 1"',
   'Powerful Shove':
     'Traits=Class,Fighter ' +
-    'Require="level >= 4","features.Aggressive Block||features.Brutish Shove"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Aggressive Block || features.Brutish Shove"',
   'Quick Reversal':'Traits=Class,Fighter,Flourish,Press Require="level >= 4"',
   'Shielded Stride':'Traits=Class,Fighter Require="level >= 4"',
   // Swipe as above
@@ -2280,6 +2283,7 @@ Pathfinder2E.FEATS = {
   'Reflexive Shield':'Traits=Class,Fighter Require="level >= 6"',
   'Revealing Stab':'Traits=Class,Fighter Require="level >= 6"',
   'Shatter Defenses':'Traits=Class,Fighter,Press Require="level >= 6"',
+  // Shield Warden as above
   'Triple Shot':
     'Traits=Class,Fighter Require="level >= 6","features.Double Shot"',
   'Blind-Fight':
@@ -2293,6 +2297,8 @@ Pathfinder2E.FEATS = {
   'Incredible Aim':'Traits=Class,Fighter,Concentrate Require="level >= 8"',
   'Mobile Shot Stance':'Traits=Class,Fighter,Stance Require="level >= 8"',
   'Positioning Assault':'Traits=Class,Fighter,Flourish Require="level >= 8"',
+  // Quick Shield Block as above; errata drops the Reactive Shield prereq
+  // Sudden Leap as above
   'Agile Grace':'Traits=Class,Fighter Require="level >= 10"',
   'Certain Strike':'Traits=Class,Fighter,Press Require="level >= 10"',
   'Combat Reflexes':'Traits=Class,Fighter Require="level >= 10"',
@@ -2304,15 +2310,18 @@ Pathfinder2E.FEATS = {
   'Improved Knockdown':
     'Traits=Class,Fighter Require="level >= 10","features.Knockdown"',
   'Mirror Shield':'Traits=Class,Fighter Require="level >= 10"',
-  'Twin Riposte':
-    'Traits=Class,Fighter,Ranger Require="level >= 10","features.Twin Parry"',
+  'Twin Riposte':'Traits=Class,Fighter,Ranger Require="level >= 10"',
   'Brutal Finish':'Traits=Class,Fighter,Press Require="level >= 12"',
   'Dueling Dance':
     'Traits=Class,Fighter,Stance ' +
-    'Require="level >= 12","features.Dueling Parry"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Dueling Parry"',
   'Flinging Shove':
     'Traits=Class,Fighter ' +
-    'Require="level >= 12","features.Aggressive Block||features.Brutish Shove"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Aggressive Block || features.Brutish Shove"',
   'Improved Dueling Riposte':
     'Traits=Class,Fighter Require="level >= 12","features.Dueling Riposte"',
   'Incredible Ricochet':
@@ -2320,7 +2329,10 @@ Pathfinder2E.FEATS = {
     'Require="level >= 12","features.Incredible Aim"',
   'Lunging Stance':
     'Traits=Class,Fighter,Stance ' +
-    'Require="level >= 12","features.Attack Of Opportunity","features.Lunge"',
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Attack Of Opportunity",' +
+      '"features.Lunge"',
   "Paragon's Guard":'Traits=Class,Fighter,Stance Require="level >= 12"',
   'Spring Attack':'Traits=Class,Fighter,Press Require="level >= 12"',
   'Desperate Finisher':'Traits=Class,Fighter Require="level >= 14"',
@@ -3684,7 +3696,7 @@ Pathfinder2E.FEATURES = {
   'Burn It!':
     'Section=combat,magic ' +
     'Note=' +
-      '"Persistent fire damage from an attack inflicts +1 HP, and alchemical fire items inflict additional damage equal to one quarter the item level",' +
+      '"Persistent fire damage from an attack inflicts +1 HP, and alchemical fire items inflict additional damage equal to 1/4 the item level",' +
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
@@ -3786,7 +3798,7 @@ Pathfinder2E.FEATURES = {
       '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
-    'Note="Can use Hide and Sneak without cover and gains one degree better cover from larger creatures"',
+    'Note="Can use Hide and Sneak without cover and gains 1 degree better cover from larger creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Sling; Halfling Sling Staff; Shortsword; Halfling Weapons)"',
@@ -4457,7 +4469,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
   'Cantrip Expansion':
     'Section=magic ' +
-    'Note="Can prepare two additional cantrips each day or add two additional cantrips to repertoire"',
+    'Note="Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire"',
   'Esoteric Polymath':
     'Section=magic,skill ' +
     'Note=' +
@@ -5749,24 +5761,24 @@ Pathfinder2E.FEATURES = {
   'Weapon Legend (Swords)':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Swords; Martial Swords)/Attack Master (Advanced Swords)"',
-
   // Weapon Specialization as above
+
   'Double Slice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes simultaneous Strikes with two melee weapons at the current multiple attack penalty"',
+    'Note="Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty"',
   'Exacting Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike does not count toward multiple attack penalty on failure"',
+    'Note="Strike does not count toward the multiple attack penalty on failure"',
   'Point-Blank Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 attack at close range with a ranged non-volley weapon"',
+    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage at close range with a ranged non-volley weapon"',
   'Power Attack':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra dice damage and counts as two Strikes for multiple attack penalty"',
+    'Note="Melee Strike inflicts %{level<10?1:level<18?2:3} extra damage %{level<10?\'die\':\'dice\'} and counts as 2 Strikes for the multiple attack penalty"',
   'Reactive Shield':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5774,7 +5786,7 @@ Pathfinder2E.FEATURES = {
   'Snagging Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with the other hand free inflicts flat-footed for 1 rd"',
+    'Note="Successful melee Strike with the other hand free inflicts flat-footed until the start of the next turn"',
   // Sudden Charge as above
   'Aggressive Block':
     'Action=Free ' +
@@ -5784,19 +5796,19 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     // Errata changes description
-    'Note="Successful ranged Strike gives the next ally attack on the target within 1 rd +1 attack, or +2 with a critical success"',
+    'Note="Successful ranged Strike gives the next ally attack on the target until the start of the next turn +1 attack, or +2 with a critical success"',
   'Brutish Shove':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Two-handed melee Strike inflicts flat-footed until the end of turn; success also allows an automatic Shove"',
+    'Note="Two-handed melee Strike inflicts flat-footed until the end of the turn; success also allows an automatic Shove"',
   'Combat Grab':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with the other hand free inflicts grabbed for 1 rd or until the target Escapes"',
+    'Note="Successful melee Strike with the other hand free inflicts grabbed until the end of the next turn or until the target Escapes"',
   'Dueling Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +2 Armor Class for 1 rd when wielding a one-handed melee weapon with the other hand free"',
+    'Note="Gives +2 Armor Class until the start of the next turn when wielding a 1-handed melee weapon with the other hand free"',
   'Intimidating Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5805,21 +5817,22 @@ Pathfinder2E.FEATURES = {
   'Double Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes two ranged Strikes against different foes at the current multiple attack penalty -2"',
+    'Note="Makes 2 ranged Strikes against different foes at the current multiple attack penalty -2"',
   'Dual-Handed Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with a 1-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the 2-handed trait or by one die step otherwise"',
+    'Note="Successful melee Strike with a 1-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the 2-handed trait or by 1 die step otherwise"',
   'Knockdown':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Follows a successful melee Strike with an Athletics check to Trip"',
   'Powerful Shove':
     'Section=combat ' +
-    'Note="Can use Aggressive Block and Brutish Shove on foes up to two sizes larger, inflicting %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
+    'Note="Can use Aggressive Block and Brutish Shove on foes up to 2 sizes larger, inflicting %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
   'Quick Reversal':
     'Action=1 ' +
-    'Section=combat Note="Makes melee Strikes on two foes flanking self"',
+    'Section=combat ' +
+    'Note="Makes melee Strikes on 2 foes flanking self"',
   'Shielded Stride':
     'Section=combat ' +
     'Note="Can Stride at half Speed with shield raised without triggering reactions"',
@@ -5827,32 +5840,32 @@ Pathfinder2E.FEATURES = {
   'Twin Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Parrying with one melee weapon in each hand gives +1 Armor Class for 1 rd, or +2 Armor Class if either weapon has the parry trait"',
+    'Note="Parrying with a melee weapon in each hand gives +1 Armor Class until the start of the next turn, or +2 Armor Class if either weapon has the parry trait"',
+  // TODO implement?
   'Advanced Weapon Training':
     'Section=combat ' +
-    'Note="Has proficiency with advanced weapons in chosen group equal to martial weapons"',
+    'Note="Has proficiency with advanced weapons in a chosen group equal to martial weapons"',
   'Advantageous Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded two-handed, even on failure"',
+    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded 2-handed, even on failure"',
   'Disarming Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +1 to Disarm and +2 vs. Disarm and allows Disarming foes two sizes larger when wielding a one-handed weapon with the other hand free"',
+    'Note="Stance gives +1 to Disarm and +2 vs. Disarm, and allows Disarming foes 2 sizes larger, when wielding a 1-handed weapon with the other hand free"',
   'Furious Focus':
     'Section=combat ' +
-    'Note="A two-handed Power Attack counts as a single attack for multiple attack penalty"',
+    'Note="A 2-handed Power Attack counts as a single attack for the multiple attack penalty"',
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free"',
+    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a 1-handed weapon with the other hand free"',
   'Reflexive Shield':
-    'Section=save ' +
-    'Note="Raised shield adds shield bonus to Reflex saves"',
+    'Section=save Note="Raised shield adds its bonus to Reflex saves"',
   'Revealing Stab':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Leaves a piercing weapon embedded in a corporeal concealed or hidden foe to reveal it to others"',
+    'Note="Successful strike vs. a concealed target, or with a DC 5 flat check vs. a hidden target, leaves an embedded piercing weapon that reveals the target to others"',
   'Shatter Defenses':
     'Action=1 ' +
     'Section=combat ' +
@@ -5860,7 +5873,7 @@ Pathfinder2E.FEATURES = {
   // Shield Warden as above
   'Triple Shot':
     'Section=combat ' +
-    'Note="Uses Double Shot against a single target, or uses three actions to make three ranged Strikes at the current multiple attack penalty -4"',
+    'Note="Uses Double Shot against 1 target, or uses 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4"',
   'Blind-Fight':
     'Section=combat ' +
     'Note="Can attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Does not suffer flat-footed vs. hidden foes/Treats adjacent undetected creatures up to level %{level} as hidden instead"',
@@ -5871,7 +5884,7 @@ Pathfinder2E.FEATURES = {
   'Felling Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike vs. a flying foe causes it to fall 120\', and a critical success grounds it for 1 rd"',
+    'Note="Successful Strike vs. a flying foe causes it to fall 120\', and a critical success grounds it until the end of the next turn"',
   'Incredible Aim':
     'Action=2 ' +
     'Section=combat ' +
@@ -5899,11 +5912,11 @@ Pathfinder2E.FEATURES = {
   'Debilitating Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful ranged Strike also inflicts slowed 1 for 1 rd"',
+    'Note="Successful ranged Strike also inflicts slowed 1 until the end of the target\'s next turn"',
   'Disarming Twist':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike with a one-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of turn"',
+    'Note="Strike with a 1-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of the turn"',
   'Disruptive Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5913,7 +5926,7 @@ Pathfinder2E.FEATURES = {
     'Note="Strikes against frightened foes inflict additional damage equal to %{rank.Intimidation>=2?3:2}x the frightened value"',
   'Improved Knockdown':
     'Section=combat ' +
-    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
+    'Note="Knockdown automatically inflicts a critical Trip, and using a 2-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
   'Mirror Shield':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5925,20 +5938,21 @@ Pathfinder2E.FEATURES = {
   'Brutal Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
+    'Note="Ends turn with a 2-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
   'Dueling Dance':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Stance gives continuous benefits of Dueling Parry"',
   'Flinging Shove':
     'Section=combat ' +
-    'Note="Aggressive Block moves foe 10\' (critical success 20\') or inflicts flat-footed, and Brutish Shove moves foe 10\' (failure 5\', critical success 20\')"',
+    'Note="Aggressive Block moves the target 10\' (or 20\' on a critical success) or inflicts flat-footed, and Brutish Shove moves the target 10\' (or 5\' on failure or 20\' on critical success)"',
   'Improved Dueling Riposte':
     'Section=combat ' +
     'Note="Gives an additional reaction to make a Dueling Riposte once per turn"',
   'Incredible Ricochet':
     'Action=1 ' +
     'Section=combat ' +
+    // Errata clarifies the need for a prior ranged Strike
     'Note="Follows a ranged Strike with another against the same foe that ignores concealment and cover"',
   'Lunging Stance':
     'Action=1 ' +
@@ -5955,7 +5969,7 @@ Pathfinder2E.FEATURES = {
   'Desperate Finisher':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can use a press action after taking the last action in a turn, losing any further reactions until next turn"',
+    'Note="Can use a press action after taking the last action in a turn, losing any further reactions until the start of the next turn"',
   'Determination':
     'Action=1 ' +
     'Section=save ' +
@@ -5964,10 +5978,10 @@ Pathfinder2E.FEATURES = {
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
+    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a 1-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
-    'Note="A successful Dueling Riposte Strike moves a foe 10\' to a spot within reach"',
+    'Note="A successful Dueling Riposte Strike moves the target 10\' to a spot within reach"',
   'Improved Twin Riposte':
     'Section=combat ' +
     'Note="Gives an additional reaction to make a Twin Riposte once per turn"',
@@ -5978,12 +5992,12 @@ Pathfinder2E.FEATURES = {
   'Two-Weapon Flurry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes simultaneously with one weapon in each hand"',
+    'Note="Strikes simultaneously with 1 weapon in each hand"',
   // Whirlwind Strike as above
   'Graceful Poise':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows Double Slice with an agile weapon to count as one attack"',
+    'Note="Stance allows Double Slice with an agile weapon to count as 1 attack"',
   'Improved Reflexive Shield':
     'Section=combat ' +
     'Note="Using Shield Block on a Reflex save protects both self and adjacent allies"',
@@ -6004,6 +6018,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful attack rolls of 19 with a legendary weapon are critical successes"',
   'Boundless Reprisals':
      'Section=combat ' +
+     // Errata specified fighter feat or feature
      'Note="Gives an additional reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
@@ -6286,13 +6301,13 @@ Pathfinder2E.FEATURES = {
   'Swift River':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Ends one Speed status penalty or condition at the end of a turn"',
+    'Note="Ends a Speed status penalty or condition at the end of a turn"',
   'Enduring Quickness':
     'Section=combat ' +
     'Note="Gives an additional action each rd to Stride, Leap, or Jump"',
   'Fuse Stance':
     'Section=combat ' +
-    'Note="Has merged two known stances into a unique new stance that grants the effects of both"',
+    'Note="Has merged 2 known stances into a unique new stance that grants the effects of both"',
   'Impossible Technique':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6372,7 +6387,7 @@ Pathfinder2E.FEATURES = {
   'Hunted Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes two ranged Strikes against hunted prey once per rd"',
+    'Note="Makes 2 ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
     'Note="Can use Recall Knowledge as part of Hunt Prey; critical success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies for 1 rd once per target per day"',
@@ -6387,12 +6402,12 @@ Pathfinder2E.FEATURES = {
     'Section=ability,feature ' +
     'Note=' +
       '"Moves normally over difficult terrain caused by ice and snow without a need to Balance",' +
-      '"Can survive on one-tenth normal food and water"',
+      '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Desert)':
     'Section=ability,feature ' +
     'Note=' +
       '"Moves normally over difficult terrain caused by sand%{$\'features.Wild Stride\'?\' without a need to Balance\':\'\'}",' +
-      '"Can survive on one-tenth normal food and water"',
+      '"Can survive on 1/10 normal food and water"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
     'Note="Moves normally over difficult terrain caused by forest%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
@@ -6498,12 +6513,12 @@ Pathfinder2E.FEATURES = {
   'Distracting Shot':
     'Section=combat ' +
     'Note="Critical or double hit on hunted prey inflicts flat-footed for 1 rd"',
-  'Double Prey':'Section=combat Note="Can use Hunt Prey on two targets"',
+  'Double Prey':'Section=combat Note="Can use Hunt Prey on 2 targets"',
   'Lightning Snares':'Section=skill Note="Can craft a trap with 1 action"',
   'Second Sting':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Failed Strike against hunted prey with a weapon in one hand inflicts the non-dice damage of the weapon in the other"',
+    'Note="Failed Strike against hunted prey with a weapon in a hand inflicts the non-dice damage of the weapon in the other"',
   // Side By Side as above
   'Sense The Unseen':
     'Action=Reaction ' +
@@ -6556,7 +6571,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can follow hunted prey across any distance"',
   'Triple Threat':
     'Section=combat ' +
-    'Note="Can use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
+    'Note="Can use Hunt Prey with 3 targets, share 2-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
   'Ultimate Skirmisher':
     'Section=ability,save ' +
     'Note=' +
@@ -6645,7 +6660,7 @@ Pathfinder2E.FEATURES = {
     'Note="Strikes with a weapon each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Section=combat ' +
-    'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing one foe, makes a +2 Intimidation check to Demoralize another"',
+    'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing a foe, makes a +2 Intimidation check to Demoralize another"',
   'Brutal Beating':
     'Section=combat Note="Critical successes on Strikes inflict frightened 1"',
   'Distracting Feint':
@@ -7133,7 +7148,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
     'Section=feature ' +
-    'Note="Can cast two additional spells of different levels after spell slots in each level are exhausted once per day"',
+    'Note="Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
     'Section=magic ' +
@@ -7177,7 +7192,7 @@ Pathfinder2E.FEATURES = {
   // Resolve as above
   'Spell Blending':
     'Section=magic ' +
-    'Note="Can use 2 spell slots from a level to prepare a spell up to two levels higher or use a spell slot to prepare 2 cantrips"',
+    'Note="Can use 2 spell slots from a level to prepare a spell up to 2 levels higher or use a spell slot to prepare 2 cantrips"',
   'Spell Substitution':
     'Section=magic ' +
     'Note="Can use a 10-min process to replace 1 prepared spell with a different spell"',
@@ -7325,7 +7340,7 @@ Pathfinder2E.FEATURES = {
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
-    'Note="Can prepare a spell slot of each level above 2nd to cast a combination of two spells of 2 levels lower"',
+    'Note="Can prepare a spell slot of each level above 2nd to cast a combination of 2 spells of 2 levels lower"',
 
   // Archetype
   'Alchemist Dedication':
@@ -7776,7 +7791,7 @@ Pathfinder2E.FEATURES = {
     'Note="Triples the distance of long jumps, increases high jump distance to normal long jump distance, and adds %{speed}\' to jump distances for every additional action spent"',
   'Combat Climber':
     'Section=skill ' +
-    'Note="Can Climb with one hand occupied, can fight while Climbing, and does not suffer flat-footed while Climbing"',
+    'Note="Can Climb with a hand occupied, can fight while Climbing, and does not suffer flat-footed while Climbing"',
   'Confabulator':
     'Section=skill ' +
     'Note="Reduces the bonus given to targets of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
@@ -9224,7 +9239,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a reaction to give the target the better of two rolls or its foe the worse of two rolls, for 1 hr"',
+      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a reaction to give the target the better of 2 rolls or its foe the worse of 2 rolls, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'Traits=Abjuration ' +
@@ -9471,7 +9486,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing two actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
+      '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing 2 actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'Traits=Illusion,Visual ' +
@@ -9702,7 +9717,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transports the target to an extradimensional maze while sustained or until it gains two solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes"',
+      '"R30\' Transports the target to an extradimensional maze while sustained or until it gains 2 solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes"',
   'Meld Into Stone':
     'Level=3 ' +
     'Traits=Earth,Transmutation ' +
@@ -9893,7 +9908,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers one step worse initial attitudes and the worse of two Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes two steps worse)"',
+      '"Touched suffers one step worse initial attitudes and the worse of 2 Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes 2 steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'Traits=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
@@ -10069,7 +10084,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone randomly inflicts one of these effects on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) two of the preceding effects"',
+      '"30\' cone randomly inflicts one of these effects on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) 2 of the preceding effects"',
   'Prismatic Wall':
     'Level=8 ' +
     'Traits=Abjuration,Light ' +
@@ -10267,7 +10282,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Gives a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to two of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition by 1)"',
+      '"Gives a 2-step reduction to a clumsy, enfeebled, or stupefied condition, a 1-step reduction to 2 of these conditions, or a 1-stage reduction to a toxin affecting touched (<b>heightened 4th</b> allows reducing a drained condition, lessening a toxin by 2 stages, or reducing a non-permanent doomed condition by 1; <b>6th</b> allows reducing a permanent doomed condition by 1)"',
   'Restore Senses':
     'Level=2 ' +
     'Traits=Healing,Necromancy ' +
@@ -10955,7 +10970,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self uses the better of two attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn"',
+      '"Self uses the better of 2 attack rolls, ignores concealed and hidden conditions, and ignores circumstance penalties on the next Strike in the same turn"',
   'True Target':
     'Level=7 ' +
     'Traits=Divination,Fortune,Prediction ' +
@@ -10963,7 +10978,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Allies\' attacks within 1 rd on a designated creature use the better of two attack rolls and ignore circumstance penalties and concealed and hidden conditions"',
+      '"R60\' Allies\' attacks within 1 rd on a designated creature use the better of 2 attack rolls and ignore circumstance penalties and concealed and hidden conditions"',
   'Uncontrollable Dance':
     'Level=8 ' +
     'Traits=Enchantment,Incapacitation,Mental ' +
@@ -11314,7 +11329,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"R30\' Target may take the better of two rolls on the triggering Recall Knowledge check"',
+      '"R30\' Target may take the better of 2 rolls on the triggering Recall Knowledge check"',
   'Soothing Ballad':
     'Level=7 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
@@ -11417,7 +11432,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Willing target may use the better of two rolls on a save within 1 min once per target per day"',
+      '"R30\' Willing target may use the better of 2 rolls on a save within 1 min once per target per day"',
   'Blind Ambition':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -11617,7 +11632,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows a Recall Knowledge check, using the better of two rolls, during initiative or immediately after inflicting damage to remember a target\'s abilities"',
+      '"Allows a Recall Knowledge check, using the better of 2 rolls, during initiative or immediately after inflicting damage to remember a target\'s abilities"',
   'Localized Quake':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Earth,Transmutation ' +
@@ -11793,7 +11808,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allows self to use the better of two rolls on the triggering Seek or Recall Knowledge check"',
+      '"Allows self to use the better of 2 rolls on the triggering Seek or Recall Knowledge check"',
   'Shared Nightmare':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Incapacitation,Mental ' +
@@ -12034,7 +12049,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose two effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
@@ -12754,8 +12769,8 @@ Pathfinder2E.WEAPONS = {
 Pathfinder2E.abilityRules = function(rules, abilities) {
 
   rules.defineChoice('abilgens',
-    'All 10s; standard ancestry boosts', 'All 10s; two free ancestry boosts',
-    'Each 4d6, standard ancestry boosts', 'Each 4d6, one free ancestry boost'
+    'All 10s; standard ancestry boosts', 'All 10s; 2 free ancestry boosts',
+    'Each 4d6, standard ancestry boosts', 'Each 4d6, 1 free ancestry boost'
   );
   rules.defineChoice('notes',
     'validationNotes.maximumInitialAbility:' +
