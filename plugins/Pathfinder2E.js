@@ -689,7 +689,22 @@ Pathfinder2E.CLASSES = {
       '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
     'Selectables=' +
       '"1:Dexterity:Key Ability",' +
-      '"1:Strength:Key Ability"',
+      '"1:Strength:Key Ability",' +
+      '"1:Axes:Weapon Group",' +
+      '"1:Bombs:Weapon Group",' +
+      '"1:Brawlings:Weapon Group",' +
+      '"1:Clubs:Weapon Group",' +
+      '"1:Crossbows:Weapon Group",' +
+      '"1:Darts:Weapon Group",' +
+      '"1:Flails:Weapon Group",' +
+      '"1:Hammers:Weapon Group",' +
+      '"1:Knives:Weapon Group",' +
+      '"1:Picks:Weapon Group",' +
+      '"1:Polearms:Weapon Group",' +
+      '"1:Slings:Weapon Group",' +
+      '"1:Shields:Weapon Group",' +
+      '"1:Spears:Weapon Group",' +
+      '"1:Swords:Weapon Group"',
   'Monk':
     'Ability=strength,dexterity HitPoints=10 ' +
     'Features=' +
@@ -3962,7 +3977,7 @@ Pathfinder2E.FEATURES = {
       '"Can use 1 batch of infused reagents to create 3 signature items"',
   'Weapon Specialization':
     'Section=combat ' +
-    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, and +%{combatNotes.weaponSpecialization*2} HP damage with expert, master, and legendary weapons"',
+    'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, or +%{combatNotes.weaponSpecialization*2} HP damage when using a weapon with expert, master, or legendary proficiency"',
 
   'Alchemical Familiar':'Section=feature Note="Has the Familiar feature"',
   'Alchemical Savant':
@@ -5614,10 +5629,10 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Expert (Will)",' +
-      '"Successes on Will saves vs. fear are critical successes, and the severity of frightened conditions are reduced by 1"',
+      '"Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1"',
   'Combat Flexibility':
     'Section=combat ' +
-    'Note="Can select a fighter feat of up to 8th level to use each day"',
+    'Note="Gains a chosen fighter feat of up to 8th level during daily prep"',
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
@@ -5626,22 +5641,114 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Skill Trained (Choose 1 from Acrobatics, Athletics; Choose %V from any)"',
   'Fighter Weapon Mastery':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Critical hits with a master proficiency weapon inflict its critical specialization effect",' +
+      '"1 selection"',
+  'Fighter Weapon Mastery (Axes)':
     'Section=combat ' +
-    'Note="Attack Master with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Expert with advanced weapons of the same group/Critical hits with a master proficiency weapon inflict its critical specialization effect"',
+    'Note="Attack Master (Simple Axes; Martial Axes)/Attack Expert (Advanced Axes)"',
+  'Fighter Weapon Mastery (Bombs)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Bombs; Martial Bombs)/Attack Expert (Advanced Bomb Weapons)"',
+  'Fighter Weapon Mastery (Brawlings)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Brawling Weapons; Martial Brawling Weapons)/Attack Expert (Advanced Brawling Weapons)"',
+  'Fighter Weapon Mastery (Clubs)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Clubs; Martial Clubs)/Attack Expert (Advanced Clubs)"',
+  'Fighter Weapon Mastery (Crossbows)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Crossbows; Martial Crossbows)/Attack Expert (Advanced Crossbows)"',
+  'Fighter Weapon Mastery (Darts)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Darts; Martial Darts)/Attack Expert (Advanced Darts)"',
+  'Fighter Weapon Mastery (Flails)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Flails; Martial Flails)/Attack Expert (Advanced Flails)"',
+  'Fighter Weapon Mastery (Hammers)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Hammers; Martial Hammers)/Attack Expert (Advanced Hammers)"',
+  'Fighter Weapon Mastery (Knives)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Knives; Martial Knives)/Attack Expert (Advanced Knives)"',
+  'Fighter Weapon Mastery (Picks)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Picks; Martial Picks)/Attack Expert (Advanced Picks)"',
+  'Fighter Weapon Mastery (Polearms)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Polearms; Martial Polearms)/Attack Expert (Advanced Polearms)"',
+  'Fighter Weapon Mastery (Slings)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Slings; Martial Slings)/Attack Expert (Advanced Slings)"',
+  'Fighter Weapon Mastery (Shields)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Shields; Martial Shields)/Attack Expert (Advanced Shields)"',
+  'Fighter Weapon Mastery (Spears)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Spears; Martial Spears)/Attack Expert (Advanced Spears)"',
+  'Fighter Weapon Mastery (Swords)':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Swords; Martial Swords)/Attack Expert (Advanced Swords)"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
     'Section=combat ' +
-    'Note="Can select a fighter feat of up to 14th level to use each day"',
+    'Note="Gains a chosen fighter feat of up to 14th level to during daily prep"',
   // Juggernaut as above
   // Shield Block as below
   'Versatile Legend':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)"',
   'Weapon Legend':
-    'Section=combat,combat ' +
+    'Section=feature,combat ' +
     'Note=' +
-      '"Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)",' +
-      '"Attack Legendary with simple weapons, martial weapons, and unarmed attacks of chosen group and Attack Master with advanced weapons of the same group"',
+      '"1 selection",' +
+      '"Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)"',
+  'Weapon Legend (Axes)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Axes; Martial Axes)/Attack Master (Advanced Axes)"',
+  'Weapon Legend (Bombs)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Bombs; Martial Bombs)/Attack Master (Advanced Bombs)"',
+  'Weapon Legend (Brawlings)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Brawlings; Martial Brawlings)/Attack Master (Advanced Brawlings)"',
+  'Weapon Legend (Clubs)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Clubs; Martial Clubs)/Attack Master (Advanced Clubs)"',
+  'Weapon Legend (Crossbows)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Crossbows; Martial Crossbows)/Attack Master (Advanced Crossbows)"',
+  'Weapon Legend (Darts)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Darts; Martial Darts)/Attack Master (Advanced Darts)"',
+  'Weapon Legend (Flails)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Flails; Martial Flails)/Attack Master (Advanced Flails)"',
+  'Weapon Legend (Hammers)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Hammers; Martial Hammers)/Attack Master (Advanced Hammers)"',
+  'Weapon Legend (Knives)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Knives; Martial Knives)/Attack Master (Advanced Knives)"',
+  'Weapon Legend (Picks)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Picks; Martial Picks)/Attack Master (Advanced Picks)"',
+  'Weapon Legend (Polearms)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Polearms; Martial Polearms)/Attack Master (Advanced Polearms)"',
+  'Weapon Legend (Slings)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Slings; Martial Slings)/Attack Master (Advanced Slings)"',
+  'Weapon Legend (Shields)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Shields; Martial Shields)/Attack Master (Advanced Shields)"',
+  'Weapon Legend (Spears)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Spears; Martial Spears)/Attack Master (Advanced Spears)"',
+  'Weapon Legend (Swords)':
+    'Section=combat ' +
+    'Note="Attack Legendary (Simple Swords; Martial Swords)/Attack Master (Advanced Swords)"',
 
   // Weapon Specialization as above
   'Double Slice':
@@ -14177,8 +14284,24 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
   } else if(name == 'Fighter') {
+    ['Axes', 'Bombs', 'Brawlings', 'Clubs', 'Crossbows', 'Darts', 'Flails',
+     'Hammers', 'Knives', 'Picks', 'Polearms', 'Slings', 'Shields', 'Spears',
+     'Swords'].forEach(g => {
+      rules.defineRule('combatNotes.fighterWeaponMastery(' + g + ')',
+        'features.Fighter Weapon Mastery', '?', null,
+        'features.' + g, '=', '1'
+      );
+      rules.defineRule('combatNotes.weaponLegend(' + g + ')',
+        'features.Weapon Legend', '?', null,
+        'features.' + g, '=', '1'
+      );
+    });
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Fighter (Weapon Group)',
+      'featureNotes.fighterWeaponMastery', '=', '1',
+      'featureNotes.weaponLegend', '=', '1'
     );
     rules.defineRule
       ('skillNotes.fighterSkills', 'intelligenceModifier', '=', '3 + source');
@@ -15907,14 +16030,12 @@ Pathfinder2E.weaponRules = function(
     traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
+  group = group == 'Knife' ? 'Knives' : (group + 's');
+  let categoryAndGroup = category + ' ' + group;
   category = category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
   let lowerCategory =
     category == 'Advanced Weapons' ? 'Martial Weapons' : 'Simple Weapons';
   damage = matchInfo[1];
-  group =
-    group == 'Bomb' ? 'Alchemical Bombs' :
-    group == 'Knife' ? 'Knives' :
-    (group + 's');
   let damageType = matchInfo[4];
   traits.forEach(t => {
     if(t.match(/^Versatile [BPS]$/))
@@ -15925,22 +16046,31 @@ Pathfinder2E.weaponRules = function(
   let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%7'" : '') + '; %5; %6)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
+  rules.defineRule('rank.' + categoryAndGroup,
+    'trainingLevel.' + categoryAndGroup, '=', null
+  );
   rules.defineRule('rank.' + category, 'trainingLevel.' + category, '=', null);
-  rules.defineRule('rank.' + group, 'trainingLevel.' + group, '=', null);
   rules.defineRule('rank.' + name, 'trainingLevel.' + name, '=', null);
   rules.defineRule('maxWeaponTraining',
     'trainingLevel.' + category, '^=', null,
-    'trainingLevel.' + group, '^=', null,
+    'trainingLevel.' + categoryAndGroup, '^=', null,
     'trainingLevel.' + name, '^=', null
   );
   rules.defineRule('weaponRank.' + name,
     weaponName, '?', null,
     'rank.' + category, '=', null,
-    'rank.' + group, '^=', null,
+    'rank.' + categoryAndGroup, '^=', null,
     'rank.' + name, '^=', null,
     'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
     'weaponExpertise.' + group, '^=', 'dict["rank.maxWeaponTraining"]'
   );
+  if(group == 'Bombs') {
+    rules.defineRule
+      ('maxWeaponTraining', 'trainingLevel.Alchemical Bombs', '^=', null);
+    rules.defineRule
+      ('rank.Alchemical Bombs', 'trainingLevel.Alchemical Bombs', '=', null);
+    rules.defineRule('weaponRank.' + name, 'rank.Alchemical Bombs', '^=', null);
+  }
   traits.forEach(t => {
     t += ' Weapons';
     rules.defineRule('weaponRank.' + name,
