@@ -2390,7 +2390,10 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk Require="level >= 4","features.Ki Spells"',
   'Abundant Step':
     'Traits=Class,Monk ' +
-    'Require="level >= 6","features.Incredible Movement","features.Ki Spells"',
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Incredible Movement",' +
+      '"features.Ki Spells"',
   'Crane Flutter':
     'Traits=Class,Monk Require="level >= 6","features.Crane Stance"',
   'Dragon Roar':
@@ -2438,6 +2441,7 @@ Pathfinder2E.FEATS = {
   'Wild Winds Gust':
     'Traits=Class,Monk,Air,Concentrate,Evocation,Manipulate ' +
     'Require="level >= 14","features.Wild Winds Initiate"',
+  // Errata adds Aura trait
   'Enlightened Presence':
     'Traits=Class,Monk,Aura,Emotion,Mental Require="level >= 16"',
   'Master Of Many Styles':
@@ -2451,7 +2455,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk Require="level >= 18","features.Meditative Focus"',
   'Swift River':'Traits=Class,Monk Require="level >= 18"',
   'Enduring Quickness':'Traits=Class,Monk Require="level >= 20"',
-  'Fuse Stance':'Traits=Class,Monk Require="level >= 20","sumStanceFeats >=2 "',
+  'Fuse Stance':
+    'Traits=Class,Monk Require="level >= 20","sumStanceFeats >= 2 "',
   'Impossible Technique':'Traits=Class,Monk,Fortune Require="level >= 20"',
 
   // Animal Companion as above
@@ -5808,7 +5813,7 @@ Pathfinder2E.FEATURES = {
   'Dueling Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +2 Armor Class until the start of the next turn when wielding a 1-handed melee weapon with the other hand free"',
+    'Note="Gives +2 Armor Class until the start of the next turn when wielding a one-handed melee weapon with the other hand free"',
   'Intimidating Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5821,7 +5826,7 @@ Pathfinder2E.FEATURES = {
   'Dual-Handed Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike with a 1-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the 2-handed trait or by 1 die step otherwise"',
+    'Note="Successful melee Strike with a one-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the two-handed trait or by 1 die step otherwise"',
   'Knockdown':
     'Action=2 ' +
     'Section=combat ' +
@@ -5848,18 +5853,18 @@ Pathfinder2E.FEATURES = {
   'Advantageous Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded 2-handed, even on failure"',
+    'Note="Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded two-handed, even on failure"',
   'Disarming Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +1 to Disarm and +2 vs. Disarm, and allows Disarming foes 2 sizes larger, when wielding a 1-handed weapon with the other hand free"',
+    'Note="Stance gives +1 to Disarm and +2 vs. Disarm, and allows Disarming foes 2 sizes larger, when wielding a one-handed weapon with the other hand free"',
   'Furious Focus':
     'Section=combat ' +
-    'Note="A 2-handed Power Attack counts as a single attack for the multiple attack penalty"',
+    'Note="A two-handed Power Attack counts as a single attack for the multiple attack penalty"',
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a 1-handed weapon with the other hand free"',
+    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free"',
   'Reflexive Shield':
     'Section=save Note="Raised shield adds its bonus to Reflex saves"',
   'Revealing Stab':
@@ -5896,7 +5901,7 @@ Pathfinder2E.FEATURES = {
   'Positioning Assault':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike with a 2-handed melee weapon moves a foe 5\' to within reach"',
+    'Note="Successful Strike with a two-handed melee weapon moves a foe 5\' to within reach"',
   // Quick Shield Block as above
   // Sudden Leap as above
   'Agile Grace':
@@ -5916,7 +5921,7 @@ Pathfinder2E.FEATURES = {
   'Disarming Twist':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike with a 1-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of the turn"',
+    'Note="Strike with a one-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of the turn"',
   'Disruptive Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5926,7 +5931,7 @@ Pathfinder2E.FEATURES = {
     'Note="Strikes against frightened foes inflict additional damage equal to %{rank.Intimidation>=2?3:2}x the frightened value"',
   'Improved Knockdown':
     'Section=combat ' +
-    'Note="Knockdown automatically inflicts a critical Trip, and using a 2-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
+    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
   'Mirror Shield':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5938,7 +5943,7 @@ Pathfinder2E.FEATURES = {
   'Brutal Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends turn with a 2-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
+    'Note="Ends turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
   'Dueling Dance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5978,7 +5983,7 @@ Pathfinder2E.FEATURES = {
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a 1-handed weapon with a hand free"',
+    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
     'Note="A successful Dueling Riposte Strike moves the target 10\' to a spot within reach"',
@@ -6022,7 +6027,7 @@ Pathfinder2E.FEATURES = {
      'Note="Gives an additional reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
-    'Note="Permanently quickened; may use additional actions only to Strike"',
+    'Note="Permanently quickened; may use additional action only to Strike"',
 
   // Monk
   'Adamantine Strikes':
@@ -6084,7 +6089,7 @@ Pathfinder2E.FEATURES = {
        '"Successes on Will saves are critical successes"',
   'Perfected Form':
     'Section=combat ' +
-    'Note="Rolls of less than 10 on first Strike each turn are treated as 10s"',
+    'Note="Rolls of less than 10 on the first Strike each turn are treated as 10s"',
   'Powerful Fist':
     'Section=combat,combat ' +
     'Note=' +
@@ -6128,6 +6133,8 @@ Pathfinder2E.FEATURES = {
   'Monastic Weaponry':
     'Section=combat,combat ' +
     'Note=' +
+      // Note: actually applies only to simple and martial monk weapons, but
+      // all monk weapons in the core book fall into these categories
       '"Attack %V (Monk Weapons)",' +
       '"Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes"',
   'Mountain Stance':
@@ -6149,7 +6156,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can inflict %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
   'Dancing Leaf':
-    'Section=ability,skill ' +
+    'Section=save,skill ' +
     'Note=' +
       '"Takes no falling damage when adjacent to a wall",' +
       '"+5\' Jump and Leap distance"',
@@ -6158,7 +6165,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
   'Stunning Fist':
     'Section=combat ' +
-    'Note="Can inflict stunned 1 with a successful Flurry Of Blows (DC %{classDifficultyClass.Monk} Fortitude negates; critical failure inflicts stunned 3)"',
+    'Note="Can inflict stunned 1 with a successful Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
     'Section=combat Note="Gives +4 Armor Class vs. a physical ranged attack"',
@@ -6168,7 +6175,7 @@ Pathfinder2E.FEATURES = {
   'Flying Kick':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes a Strike on a foe at the end of a Leap or Jump"',
+    'Note="Makes a Strike at the end of a Leap or Jump"',
   'Guarded Movement':
     'Section=combat Note="+4 Armor Class vs. movement reactions"',
   'Stand Still':
@@ -6183,24 +6190,24 @@ Pathfinder2E.FEATURES = {
   'Crane Flutter':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="While in Crane Stance, gives +3 Armor Class vs. a melee Strike, and a foe miss allows an immediate -2 Strike"',
+    'Note="Crane Stance gives +3 Armor Class vs. the triggering melee Strike, and a miss allows an immediate -2 Strike"',
   'Dragon Roar':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R15\' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (DC %{skillModifiers.Intimidation} Will negates; critical failure inflicts frightened 2); first successful Strike in the next rd on a frightened foe inflicts +4 HP"',
+    'Note="R15\' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (<b>save Will</b> vs. Intimidation negates; critical failure inflicts frightened 2); the first successful Strike before the end of the next turn on a frightened foe inflicts +4 HP"',
   'Ki Blast':
     'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
   'Mountain Stronghold':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="While in Mountain Stance, gives +2 Armor Class for 1 rd"',
+    'Note="While in Mountain Stance, gives +2 Armor Class until the beginning of the next turn"',
   'Tiger Slash':
     'Action=2 ' +
     'Section=combat ' +
     'Note="While in Tiger Stance, claw attack inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
   'Water Step':
     'Section=ability ' +
-    'Note="Can Stride across liquids; must end on a solid surface"',
+    'Note="Can Stride across liquids, but must end on a solid surface to avoid sinking"',
   'Whirling Throw':
     'Action=1 ' +
     'Section=combat ' +
@@ -6208,10 +6215,10 @@ Pathfinder2E.FEATURES = {
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, hand attack gains the fatal d12 trait and knocks prone"',
+    'Note="While in Wolf Stance, piercing hand attack gains the fatal d12 trait and knocks prone"',
   'Arrow Snatching':
     'Section=combat ' +
-    'Note="After a successful Deflect Arrow, can immediately use the projectile to make a ranged Strike"',
+    'Note="Successful Deflect Arrow allows an immediate ranged Strike using the deflected projectile"',
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -6223,7 +6230,7 @@ Pathfinder2E.FEATURES = {
   'Tangled Forest Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (DC %{classDifficultyClass.Monk} Reflex, Acrobatics, or Athletics negates)"',
+    'Note="Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates)"',
   'Wall Run':
     'Action=1 Section=ability Note="Strides on vertical surfaces"',
   'Wild Winds Initiate':
@@ -6247,22 +6254,21 @@ Pathfinder2E.FEATURES = {
   'Disrupt Ki':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1"',
+    'Note="Unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 while the persistent damage continues"',
   'Improved Knockback':
     'Section=combat ' +
     'Note="Successful Shove moves +5\' (critical success +10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
-    'Action=1 ' +
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Ironblood Stance effects",' +
-      '"While in Ironblood Stance, gains +1 Armor Class for 1 rd"',
+      '"' + Pathfinder2E.ACTION_MARKS[1] + ' While in Ironblood Stance, gains +1 Armor Class until the start of the next turn"',
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and fall prone (<b>save basic Fortitude</b>) once per 1d4 rd"',
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and knocked prone (<b>save basic Fortitude</b>) once per 1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
@@ -6304,7 +6310,7 @@ Pathfinder2E.FEATURES = {
     'Note="Ends a Speed status penalty or condition at the end of a turn"',
   'Enduring Quickness':
     'Section=combat ' +
-    'Note="Gives an additional action each rd to Stride, Leap, or Jump"',
+    'Note="Permanently quickened; may use additional action to Stride, Leap, or Jump"',
   'Fuse Stance':
     'Section=combat ' +
     'Note="Has merged 2 known stances into a unique new stance that grants the effects of both"',
@@ -6566,7 +6572,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has continuous concealment from foes other than hunted prey in natural surroundings"',
   'Legendary Shot':
     'Section=combat ' +
-    'Note="Ignores five range increments when attacking hunted prey with a master proficiency weapon"',
+    'Note="Ignores 5 range increments when attacking hunted prey with a master proficiency weapon"',
   'To The Ends Of The Earth':
     'Section=skill Note="Can follow hunted prey across any distance"',
   'Triple Threat':
@@ -8484,7 +8490,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning three times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
+      '"R1000\' 60\' burst inflicts 3d10 HP each acid, bludgeoning 3 times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)"',
   'Chain Lightning':
     'Level=6 ' +
     'Traits=Electricity,Evocation ' +
@@ -8864,7 +8870,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> three weapons inflict +3d4 HP)"',
+      '"Two touched weapons inflict +1d4 HP positive vs. undead for 1 min (<b>heightened 3rd</b> weapons inflict +2d4 HP; <b>5th</b> 3 weapons inflict +3d4 HP)"',
   'Divine Aura':
     'Level=8 ' +
     'Traits=Abjuration,Aura ' +
@@ -9279,7 +9285,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates sound equivalent to four humans shouting while sustained (<b>heightened 3rd</b> R60\'; <b>5th</b> R120\')"',
+      '"R30\' Creates sound equivalent to 4 humans shouting while sustained (<b>heightened 3rd</b> R60\'; <b>5th</b> R120\')"',
   'Ghostly Weapon':
     'Level=3 ' +
     'Traits=Transmutation ' +
@@ -9486,7 +9492,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing 2 actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be one size larger)"',
+      '"R500\' Creates an image of a Large or smaller creature with Armor Class %{spellDifficultyClass.%tradition}, +%{spellAttackModifier.%tradition} attack, 1d4+%{spellModifier.%tradition} HP nonlethal mental damage, and +%{spellDifficultyClass.%tradition-10} saves while sustained or until damaged; each Sustain allows directing 2 actions (<b>heightened +1</b> creature inflicts +1d4 HP and can be 1 size larger)"',
   'Illusory Disguise':
     'Level=1 ' +
     'Traits=Illusion,Visual ' +
@@ -9717,7 +9723,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Transports the target to an extradimensional maze while sustained or until it gains 2 solution steps; success on a Survival or Perception check gives one step, critical success gives 2 steps, and critical failure negates any previous successes"',
+      '"R30\' Transports the target to an extradimensional maze while sustained or until it gains 2 solution steps; success on a Survival or Perception check gives 1 step, critical success gives 2 steps, and critical failure negates any previous successes"',
   'Meld Into Stone':
     'Level=3 ' +
     'Traits=Earth,Transmutation ' +
@@ -9797,7 +9803,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates three duplicates that have an equal chance of misdirecting attacks on self for 1 min; any hit on a duplicate destroys it, and a critical success also hits self with a normal success"',
+      '"Creates 3 duplicates that have an equal chance of misdirecting attacks on self for 1 min; any hit on a duplicate destroys it, and a critical success also hits self with a normal success"',
   'Misdirection':
     'Level=2 ' +
     'Traits=Illusion ' +
@@ -9805,7 +9811,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"R30\' Changes the magical aura of one target to mimic a second target until next daily prep"',
+      '"R30\' Changes the magical aura of a target to mimic another until next daily prep"',
   'Mislead':
     'Level=6 ' +
     'Traits=Illusion ' +
@@ -9908,7 +9914,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched suffers one step worse initial attitudes and the worse of 2 Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes 2 steps worse)"',
+      '"Touched suffers 1 step worse initial attitudes and the worse of 2 Deception, Diplomacy, Intimidation, and Performance rolls until the curse is removed (<b>save Will</b> effects last for 10 min; critical success negates; critical failure inflicts initial attitudes 2 steps worse)"',
   'Overwhelming Presence':
     'Level=9 ' +
     'Traits=Auditory,Enchantment,Incapacitation,Mental,Visual ' +
@@ -9916,7 +9922,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for six turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)"',
+      '"40\' burst inflicts fascinated and forces creatures to pay tribute once per turn for 6 turns (<b>save Will</b> affected must pay tribute only twice; critical success negates; critical failure causes affected to use all actions each turn to pay tribute)"',
   'Paralyze':
     'Level=3 ' +
     'Traits=Enchantment,Incapacitation,Mental ' +
@@ -10084,7 +10090,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' cone randomly inflicts one of these effects on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) 2 of the preceding effects"',
+      '"30\' cone randomly inflicts an effect on each creature affected: (1) 50 HP fire (<b>save Reflex</b> negates); (2) 60 HP acid (<b>save Reflex</b> negates); (3) 70 HP electricity (<b>save Reflex</b> negates); (4) 30 HP poison and enfeebled 1 for 1 min (<b>save Fortitude</b> negates); (5) <i>Flesh To Stone</i> effects (<b>save Fortitude</b> negates); (6) <i>Warp Mind</i> effects (<b>save Will</b> negates); (7) slowed 1 for 1 min (<b>save Will</b> negates; critical failure inflicts <i>Plane Shift</i> effects); (8) 2 of the preceding effects"',
   'Prismatic Wall':
     'Level=8 ' +
     'Traits=Abjuration,Light ' +
@@ -11993,7 +11999,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Eating the touched piece of produce within 10 min restores 1d6+4 HP; six pieces also count as a full meal (<b>heightened +1</b> affects +1 piece)"',
+      '"Eating the touched piece of produce within 10 min restores 1d6+4 HP; 6 pieces also count as a full meal (<b>heightened +1</b> affects +1 piece)"',
   'Heal Animal':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Healing,Necromancy,Positive ' +
@@ -12049,7 +12055,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose three effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose 3 effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
