@@ -6346,7 +6346,7 @@ Pathfinder2E.FEATURES = {
       '"+2 Deception, Intimidation, Stealth, and Recall Knowledge checks with hunted prey"',
   'Precision':
     'Section=combat ' +
-    'Note="First hit on hunted prey each rd inflicts +%{level<11?1:level<19?2:3}d8 HP precision damage"',
+    'Note="First hit on hunted prey each rd inflicts +%{level<11?1:level<19?2:3}d8 HP precision"',
   'Improved Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -6359,7 +6359,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Class Master (Ranger)",' +
-      '"Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency%{features.Flurry?\'/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon\':\'\'}%{features.Outwit?\'/+2 Armor Class vs. a hunt prey target with master armor proficiency\':\'\'}%{features.Precision?(level>=19?\'/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision damage\':\'/2nd hit on hunted prey inflicts +1d8 HP precision damage\'):\'\'}",' +
+      '"Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency%{features.Flurry?\'/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon\':\'\'}%{features.Outwit?\'/+2 Armor Class vs. a hunt prey target with master armor proficiency\':\'\'}%{features.Precision?(level>=19?\'/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision\':\'/2nd hit on hunted prey inflicts +1d8 HP precision\'):\'\'}",' +
       '"With master proficiency, gains +4 Perception to Seek hunted prey%{features.Outwit?\',\':\' and\'} +4 Survival to Track hunted prey%{features.Outwit?\', and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey\':\'\'}"',
 
   // Medium Armor Expertise as above
@@ -6600,11 +6600,10 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts a choice of -10 Speed or enfeebled 1 until the end of the next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts %{combatNotes.doubleDebilitation?\'2 choices\':\'a choice\'} of %{combatNotes.preciseDebilitations?\'+2d6 HP precision, flat-footed, \':\'\'}%{combatNotes.viciousDebilitations?\'weakness 5 to a choice of damage type, clumsy 1, \':\'\'}%{combatNotes.tacticalDebilitations?\'prevention of reactions, prevention of flanking, \':\'\'}%{combatNotes.criticalDebilitation?\'slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1; critical success negates; critical failure inflicts paralyzed), \':\'\'}-10 Speed or enfeebled 1 until the end of the next turn"',
   // Deny Advantage as above
   'Double Debilitation':
-    'Section=combat ' +
-    'Note="Debilitating Strike inflicts 2 choices of debilitations"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   // Evasion as above
   // Great Fortitude as above
   // Greater Weapon Specialization as above
@@ -6617,7 +6616,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts a choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 until the end of the next turn; critical success negates; critical failure inflicts a choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)"',
   'Master Tricks':
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
@@ -6645,10 +6644,10 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sneak Attack':
     'Section=combat ' +
-    'Note="Successful strike using an agile, finesse, or ranged weapon vs. a flat-footed foe inflicts +%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP precision damage"',
+    'Note="Successful strike using an agile, finesse, or projectile weapon vs. a flat-footed foe inflicts +%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP precision damage"',
   'Surprise Attack':
     'Section=combat ' +
-    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed on creatures that haven\'t acted"',
+    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed to self on creatures that haven\'t acted"',
   'Thief':
     'Section=combat,skill ' +
     'Note=' +
@@ -6675,7 +6674,7 @@ Pathfinder2E.FEATURES = {
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strikes with a melee weapon in each hand, inflicting flat-footed on the second"',
+    'Note="Strikes with a melee weapon in each hand, inflicting flat-footed vs. the second"',
   "You're Next":
     'Section=combat ' +
     'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing a foe, makes a +2 Intimidation check to Demoralize another"',
@@ -6721,11 +6720,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
   'Poison Weapon':
-    'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Applies a poison that lasts for 1 turn to a piercing or slashing weapon",' +
-      '"Can prepare %{level} poisons each day that inflict 1d4 HP damage"',
+      '"' + Pathfinder2E.ACTION_MARKS[1] + ' Applies a poison that lasts until the end of the next turn to a piercing or slashing weapon",' +
+      '"Can prepare %{level} poisons each day that inflict 1d4 HP poison"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6733,7 +6731,7 @@ Pathfinder2E.FEATURES = {
   'Sabotage':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage (critical success %{skillModifiers.Thievery*4} HP) to an item with moving parts possessed by a creature within reach"',
+    'Note="Successful Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage, or %{skillModifiers.Thievery*4} HP on a critical success, to an item with moving parts possessed by a creature within reach"',
   // Scout's Warning as above
   'Gang Up':
     'Section=combat ' +
@@ -6753,7 +6751,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful +5 DC Thievery check delays or disables trap activation; critical failure inflicts flat-footed for 1 rd"',
   'Improved Poison Weapon':
     'Section=combat ' +
-    'Note="Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison"',
+    'Note="Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison"',
   'Nimble Roll':
     'Section=save ' +
     'Note="Can use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
@@ -6769,19 +6767,15 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Successful Strikes with a sneak attack weapon inflict %{combatNotes.impossibleStriker?\'full sneak attack\':level>=14?\'+2d6 HP precision\':\'+1d6 HP precision\'} damage"',
   'Precise Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict +2d6 HP precision damage or flat-footed"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Sneak Savant':
     'Section=skill Note="Normal failures on Sneak actions are successes"',
   'Tactical Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to prevent reactions or flanking"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Vicious Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict weakness 5 to a choice of damage type or clumsy 1"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Critical Debilitation':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike on a critical hit to inflict slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1 ; critical success negates; critical failure inflicts paralyzed)"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Fantastic Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -6793,7 +6787,7 @@ Pathfinder2E.FEATURES = {
   'Reactive Interference':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Prevents a foe reaction; a higher-level foe requires a successful attack roll"',
+    'Note="Prevents an adjacent foe reaction; a higher-level foe requires a successful attack roll"',
   'Spring From The Shadows':
     'Action=1 Section=combat Note="Strikes a foe after an undetected Stride"',
   'Defensive Roll':
@@ -14428,6 +14422,13 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.rangerSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Rogue') {
+    rules.defineRule('combatNotes.debilitatingStrike',
+      'combatNotes.criticalDebilitation', '=', 'null', // italics
+      'combatNotes.doubleDebilitation', '=', 'null', // italics
+      'combatNotes.preciseDebilitations', '=', 'null', // italics
+      'combatNotes.tacticalDebilitations', '=', 'null', // italics
+      'combatNotes.viciousDebilitations', '=', 'null' // italics
+    );
     rules.defineRule('combatNotes.ruffian',
       '', '=', '"Trained"',
       'rank.Light Armor', '=', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
