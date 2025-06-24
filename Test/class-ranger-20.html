@@ -112,7 +112,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Favored Terrain (Plains): Moves normally over difficult terrain in plains</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Sky): Moves normally through difficult terrain in the sky/Has a 40' fly Speed</td>
+      <td>Favored Terrain (Sky): Moves normally through difficult terrain in the sky/+10 fly Speed</td>
     </tr><tr style="text-align:center">
       <td>Favored Terrain (Swamp): Moves normally over greater difficult terrain caused by bogs</td>
     </tr><tr style="text-align:center">
@@ -169,10 +169,6 @@ var attributes = {
         <td>Adopted Ancestry (Halfling): May take Halfling ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Animal Companion: Has a young animal companion that gains Hunt Prey and Flurry, Precision, and Outwit effects</td>
-      </tr><tr style="text-align:center">
-        <td>Favored Terrain (Arctic): Can survive on 1/10 normal food and water</td>
-      </tr><tr style="text-align:center">
-        <td>Favored Terrain (Desert): Can survive on 1/10 normal food and water</td>
       </tr><tr style="text-align:center">
         <td>Incredible Companion: Animal Companion has a choice of nimble or savage characteristics</td>
       </tr><tr style="text-align:center">
@@ -269,11 +265,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Experienced Tracker: Can Track at full Speed/Can Track without hourly Survival checks</td>
     </tr><tr style="text-align:center">
-      <td>Hazard Finder: +1 Perception to find traps/Automatically attempts Search to find traps</td>
+      <td>Hazard Finder: +1 Perception to find traps and hazards/Automatically attempts Search to find hazards</td>
     </tr><tr style="text-align:center">
       <td>Hunt Prey: <b>(1)</b> Gives +2 Perception to Seek and +2 Survival to Track a designated creature until next daily prep</td>
     </tr><tr style="text-align:center">
-      <td>Lightning Snares: Can craft a trap with 1 action</td>
+      <td>Lightning Snares: Can Craft a trap with 1 action</td>
     </tr><tr style="text-align:center">
       <td>Master Monster Hunter: Can use Nature to Recall Knowledge to identify any creature</td>
     </tr><tr style="text-align:center">
@@ -293,7 +289,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Snare Specialist: Knows the formulas for 6 snares; may prepare 12 each day without using resources</td>
     </tr><tr style="text-align:center">
-      <td>Stealthy Companion: Companion gains benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank</td>
+      <td>Stealthy Companion: Companion gains the benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
@@ -347,7 +343,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Legendary Monster Hunter: Has increased Monster Hunter effects</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Masterful Companion: Gives companion Masterful Hunter effects vs. hunted prey</i></td>
+        <td><i>Master Monster Hunter: Has increased Monster Hunter effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Masterful Hunter: Class Master (Ranger)</i></td>
       </tr><tr style="text-align:center">
@@ -371,21 +367,21 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Companion's Cry: Can use 2 actions for Command an Animal to give companion an additional action</td>
       </tr><tr style="text-align:center">
-        <td>Crossbow Ace: Crossbow inflicts +2 HP damage on hunted prey or immediately after reloading; a simple crossbow also increases its damage die by 1 step</td>
+        <td>Crossbow Ace: Crossbow inflicts +2 HP damage after using Hunt Prey or reloading, and a simple crossbow also increases its damage die by 1 step, until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Deadly Aim: <b>(1)</b> Ranged Strike with a -2 penalty vs. hunted prey inflicts +8 HP damage</td>
       </tr><tr style="text-align:center">
         <td>Disrupt Prey: <b>(R)</b> Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action</td>
       </tr><tr style="text-align:center">
-        <td>Distracting Shot: Critical or double hit on hunted prey inflicts flat-footed for 1 rd</td>
+        <td>Distracting Shot: Critical or double hit on hunted prey inflicts flat-footed until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Double Prey: Can use Hunt Prey on 2 targets</td>
       </tr><tr style="text-align:center">
-        <td>Favored Enemy: Can use Hunt Prey with chosen creature type as a free action during initiative</td>
+        <td>Favored Enemy: Can use Hunt Prey with a chosen creature type as a free action during initiative</td>
       </tr><tr style="text-align:center">
         <td>Flurry: Reduces multiple attack penalties vs. hunted prey to -3 and -6, or -2 and -4 with an agile weapon</td>
       </tr><tr style="text-align:center">
-        <td>Greater Distracting Shot: Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of the next turn on a critical success or double hit</td>
+        <td>Greater Distracting Shot: Ranged hit on hunted prey inflicts flat-footed until the start of the next turn, or until the end of the next turn on a critical success or double hit</td>
       </tr><tr style="text-align:center">
         <td>Hazard Finder: +1 Armor Class vs. traps</td>
       </tr><tr style="text-align:center">
@@ -395,7 +391,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Hunter's Aim: <b>(2)</b> +2 ranged Strike ignores concealment of hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Impossible Flurry: <b>(3)</b> While wielding 2 weapons, makes 3 melee Strikes at the maximum multiple attack penalty</td>
+        <td>Impossible Flurry: <b>(3)</b> While wielding 2 melee weapons, makes 3 melee Strikes with each at the maximum multiple attack penalty</td>
       </tr><tr style="text-align:center">
         <td>Impossible Volley: <b>(3)</b> Ranged Strike with a -2 penalty attacks all foes in a 10' radius</td>
       </tr><tr style="text-align:center">
@@ -405,15 +401,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Manifold Edge: Can use a different Hunter's Edge benefit with Hunt Prey</td>
       </tr><tr style="text-align:center">
-        <td>Master Monster Hunter: Monster Hunter effects take effect on a normal success</td>
+        <td>Masterful Companion: Gives companion Masterful Hunter effects vs. hunted prey</td>
       </tr><tr style="text-align:center">
         <td>Masterful Hunter: Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon/+2 Armor Class vs. a hunt prey target with master armor proficiency/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision damage</td>
       </tr><tr style="text-align:center">
-        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; critical success gives +2 attack to self and allies for 1 rd once per target per day</td>
+        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; success gives +2 attack to self and allies on next attack once per target per day</td>
       </tr><tr style="text-align:center">
         <td>Monster Warden: Successful use of Monster Hunter also gives self and allies +2 Armor Class on next attack and +2 on next save vs. hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Nature's Edge: Foes suffer flat-footed vs. self in natural and snare-imposed difficult terrain</td>
+        <td>Nature's Edge: Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain</td>
       </tr><tr style="text-align:center">
         <td>Outwit: +1 Armor Class vs. hunted prey</td>
       </tr><tr style="text-align:center">
@@ -447,17 +443,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Swift Prey: Can use Hunt Prey as a free action at the beginning of a turn</td>
       </tr><tr style="text-align:center">
+        <td>Swift Tracker: Can Stride toward hunted prey as a free action when using Survival for initiative</td>
+      </tr><tr style="text-align:center">
         <td>Targeting Shot: <b>(1)</b> Ranged attack vs. hunted prey ignores cover and concealment</td>
       </tr><tr style="text-align:center">
-        <td>Triple Threat: Can use Hunt Prey with 3 targets, share 2-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies</td>
+        <td>Triple Threat: Can use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies</td>
       </tr><tr style="text-align:center">
         <td>Twin Parry: <b>(1)</b> Parrying with a melee weapon in each hand gives +1 Armor Class until the start of the next turn, or +2 Armor Class if either weapon has the parry trait</td>
       </tr><tr style="text-align:center">
         <td>Twin Riposte: <b>(R)</b> Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self</td>
       </tr><tr style="text-align:center">
-        <td>Twin Takedown: <b>(1)</b> Makes a melee Strike with each hand against hunted prey once per rd</td>
+        <td>Twin Takedown: <b>(1)</b> Strikes with a melee weapon in each hand against hunted prey once per rd</td>
       </tr><tr style="text-align:center">
-        <td>Warden's Boon: <b>(1)</b> Shares Hunt Prey and Hunter's Edge benefits with an ally for 1 rd</td>
+        <td>Warden's Boon: <b>(1)</b> Shares Hunt Prey and Hunter's Edge benefits with an ally until the end of its next turn</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -481,11 +479,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Evasion: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
+        <td>Favored Terrain (Arctic): Can survive on 1/10 normal food and water/Unaffected by extreme cold</td>
+      </tr><tr style="text-align:center">
+        <td>Favored Terrain (Desert): Can survive on 1/10 normal food and water/Unaffected by extreme heat</td>
+      </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr><tr style="text-align:center">
         <td>Hazard Finder: +1 vs. trap effects</td>
       </tr><tr style="text-align:center">
-        <td>Improved Evasion: Critical failures on Reflex saves are normal failures, and suffers half normal damage from failed Reflex saves</td>
+        <td>Improved Evasion: Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
       </tr><tr style="text-align:center">
         <td>Juggernaut: Successes on Fortitude saves are critical successes</td>
       </tr><tr style="text-align:center">

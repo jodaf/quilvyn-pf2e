@@ -2545,18 +2545,24 @@ Pathfinder2E.FEATS = {
   'Sense The Unseen':'Traits=Class,Ranger,Rogue Require="level >= 14"',
   'Shared Prey':
     'Traits=Class,Ranger ' +
-    'Require="level >= 14","features.Double Prey","features.Warden\'s Boon"',
+    'Require=' +
+      '"level >= 14",' +
+      '"features.Double Prey",' +
+      '"features.Warden\'s Boon"',
   'Stealthy Companion':
     'Traits=Class,Ranger ' +
     // Errata adds Animal Companion
-    'Require="level >= 14","features.Animal Companion","features.Camouflage"',
+    'Require=' +
+      '"level >= 14",' +
+      '"features.Animal Companion",' +
+      '"features.Camouflage"',
   'Targeting Shot':
     'Traits=Class,Ranger,Concentrate,Press ' +
     'Require="level >= 14","features.Hunter\'s Aim"',
   "Warden's Guidance":'Traits=Class,Ranger Require="level >= 14"',
   'Greater Distracting Shot':
     'Traits=Class,Ranger Require="level >= 16","features.Distracting Shot"',
-  // Improved Twin Riposte as above
+  // Improved Twin Riposte as above; Nethys adds Twin Riposte requirement
   'Legendary Monster Hunter':
     'Traits=Class,Ranger ' +
     'Require=' +
@@ -5997,7 +6003,7 @@ Pathfinder2E.FEATURES = {
   'Two-Weapon Flurry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes simultaneously with 1 weapon in each hand"',
+    'Note="Strikes with a weapon in each hand"',
   // Whirlwind Strike as above
   'Graceful Poise':
     'Action=1 ' +
@@ -6124,6 +6130,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain"',
+  // TODO ff tradition may be divine, rather than occult
   'Ki Rush':
     'Section=magic ' +
     'Note="Knows the Ki Rush occult spell/Has a focus pool and 1 Focus Point"',
@@ -6344,7 +6351,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Reflex)",' +
-      '"Critical failures on Reflex saves are normal failures, and suffers half normal damage from failed Reflex saves"',
+      '"Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
   'Incredible Senses':'Section=skill Note="Perception Legendary"',
   // Iron Will as above
   // Juggernaut as above
@@ -6358,7 +6365,7 @@ Pathfinder2E.FEATURES = {
   // Medium Armor Expertise as above
   "Nature's Edge":
     'Section=combat ' +
-    'Note="Foes suffer flat-footed vs. self in natural and snare-imposed difficult terrain"',
+    'Note="Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain"',
   'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
   'Ranger Feats':'Section=feature Note="%V selections"',
   'Ranger Key Ability':'Section=feature Note="1 selection"',
@@ -6389,31 +6396,31 @@ Pathfinder2E.FEATURES = {
   // Animal Companion as above
   'Crossbow Ace':
     'Section=combat ' +
-    'Note="Crossbow inflicts +2 HP damage on hunted prey or immediately after reloading; a simple crossbow also increases its damage die by 1 step"',
+    'Note="Crossbow inflicts +2 HP damage after using Hunt Prey or reloading, and a simple crossbow also increases its damage die by 1 step, until the end of the next turn"',
   'Hunted Shot':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Makes 2 ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="Can use Recall Knowledge as part of Hunt Prey; critical success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies for 1 rd once per target per day"',
+    'Note="Can use Recall Knowledge as part of Hunt Prey; %{combatNotes.masterMonsterHunter?\'\':\'critical \'}success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies on next attack once per target per day"',
   'Twin Takedown':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike with each hand against hunted prey once per rd"',
+    'Note="Strikes with a melee weapon in each hand against hunted prey once per rd"',
   'Favored Terrain (Aquatic)':
     'Section=ability ' +
     'Note="Moves normally through underwater difficult terrain%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' swim Speed\\":\'\'}"',
   'Favored Terrain (Arctic)':
-    'Section=ability,feature ' +
+    'Section=ability,save ' +
     'Note=' +
       '"Moves normally over difficult terrain caused by ice and snow without a need to Balance",' +
-      '"Can survive on 1/10 normal food and water"',
+      '"Can survive on 1/10 normal food and water/Unaffected by extreme cold"',
   'Favored Terrain (Desert)':
-    'Section=ability,feature ' +
+    'Section=ability,save ' +
     'Note=' +
       '"Moves normally over difficult terrain caused by sand%{$\'features.Wild Stride\'?\' without a need to Balance\':\'\'}",' +
-      '"Can survive on 1/10 normal food and water"',
+      '"Can survive on 1/10 normal food and water/Unaffected by extreme heat"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
     'Note="Moves normally over difficult terrain caused by forest%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
@@ -6427,7 +6434,7 @@ Pathfinder2E.FEATURES = {
       '"+%V Speed"',
   'Favored Terrain (Sky)':
     'Section=ability ' +
-    'Note="Moves normally through difficult terrain in the sky%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' fly Speed\\":\'\'}"',
+    'Note="Moves normally through difficult terrain in the sky%{$\'features.Wild Stride\'?\'/+10 fly Speed\':\'\'}"',
   'Favored Terrain (Swamp)':
     'Section=ability ' +
     'Note="Moves normally over%{$\'features.Wild Stride\'?\' greater\':\'\'} difficult terrain caused by bogs"',
@@ -6457,7 +6464,7 @@ Pathfinder2E.FEATURES = {
   'Far Shot':'Section=combat Note="Doubles ranged weapon increments"',
   'Favored Enemy':
     'Section=combat ' +
-    'Note="Can use Hunt Prey with chosen creature type as a free action during initiative"',
+    'Note="Can use Hunt Prey with a chosen creature type as a free action during initiative"',
   'Running Reload':
     'Action=1 ' +
     'Section=combat ' +
@@ -6476,8 +6483,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can use a ranged weapon during a reaction to Strike an adjacent creature"',
   'Swift Tracker':
-    'Section=skill ' +
-    'Note="Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Can perform other exploration activities while tracking\':\'\'}"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Can Stride toward hunted prey as a free action when using Survival for initiative",' +
+      '"Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Can perform other exploration activities while tracking\':\'\'}"',
+
   // Blind-Fight as above
   'Deadly Aim':
     'Action=1 ' +
@@ -6488,7 +6498,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"+1 Armor Class vs. traps",' +
       '"+1 vs. trap effects",' +
-      '"+1 Perception to find traps/Automatically attempts Search to find traps"',
+      '"+1 Perception to find traps and hazards/Automatically attempts Search to find hazards"',
   'Powerful Snares':
     'Section=skill ' +
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
@@ -6498,7 +6508,8 @@ Pathfinder2E.FEATURES = {
   "Warden's Boon":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Shares Hunt Prey and Hunter\'s Edge benefits with an ally for 1 rd"',
+    'Note="Shares Hunt Prey and Hunter\'s Edge benefits with an ally until the end of its next turn"',
+  // Errata clarifies effects
   'Camouflage':
     'Section=skill ' +
     'Note="Can use Hide and Sneak in natural terrain without cover"',
@@ -6506,7 +6517,7 @@ Pathfinder2E.FEATURES = {
   'Master Monster Hunter':
     'Section=combat,skill ' +
     'Note=' +
-      '"Monster Hunter effects take effect on a normal success",' +
+      '"Has increased Monster Hunter effects",' +
       '"Can use Nature to Recall Knowledge to identify any creature"',
   'Penetrating Shot':
     'Action=2 ' +
@@ -6515,12 +6526,13 @@ Pathfinder2E.FEATURES = {
   // Twin Riposte as above
   "Warden's Step":
     'Section=skill ' +
+    // Nethys changes Sneak to Avoid Notice
     'Note="Can include allies in an Avoid Notice action in natural terrain"',
   'Distracting Shot':
     'Section=combat ' +
-    'Note="Critical or double hit on hunted prey inflicts flat-footed for 1 rd"',
+    'Note="Critical or double hit on hunted prey inflicts flat-footed until the start of the next turn"',
   'Double Prey':'Section=combat Note="Can use Hunt Prey on 2 targets"',
-  'Lightning Snares':'Section=skill Note="Can craft a trap with 1 action"',
+  'Lightning Snares':'Section=skill Note="Can Craft a trap with 1 action"',
   'Second Sting':
     'Action=1 ' +
     'Section=combat ' +
@@ -6535,7 +6547,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
   'Stealthy Companion':
     'Section=skill ' +
-    'Note="Companion gains benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank"',
+    'Note="Companion gains the benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank"',
   'Targeting Shot':
     'Action=1 ' +
     'Section=combat ' +
@@ -6545,7 +6557,7 @@ Pathfinder2E.FEATURES = {
     'Note="While observing hunted prey, ally failures and critical failures to Seek prey are successes"',
   'Greater Distracting Shot':
     'Section=combat ' +
-    'Note="Ranged hit on hunted prey inflicts flat-footed for 1 rd, or until the end of the next turn on a critical success or double hit"',
+    'Note="Ranged hit on hunted prey inflicts flat-footed until the start of the next turn, or until the end of the next turn on a critical success or double hit"',
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':
     'Section=combat Note="Has increased Monster Hunter effects"',
@@ -6555,7 +6567,7 @@ Pathfinder2E.FEATURES = {
   'Impossible Flurry':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="While wielding 2 weapons, makes 3 melee Strikes at the maximum multiple attack penalty"',
+    'Note="While wielding 2 melee weapons, makes 3 melee Strikes with each at the maximum multiple attack penalty"',
   // Impossible Volley as above
   'Manifold Edge':
     'Section=combat ' +
@@ -6577,7 +6589,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can follow hunted prey across any distance"',
   'Triple Threat':
     'Section=combat ' +
-    'Note="Can use Hunt Prey with 3 targets, share 2-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
+    'Note="Can use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies"',
   'Ultimate Skirmisher':
     'Section=ability,save ' +
     'Note=' +
@@ -6663,7 +6675,7 @@ Pathfinder2E.FEATURES = {
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strikes with a weapon each hand, inflicting flat-footed on the second"',
+    'Note="Strikes with a melee weapon in each hand, inflicting flat-footed on the second"',
   "You're Next":
     'Section=combat ' +
     'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing a foe, makes a +2 Intimidation check to Demoralize another"',
@@ -14408,6 +14420,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.rangerKeyAbility', '=', '1'
     );
     rules.defineRule
+      ('saveNotes.favoredTerrain(Arctic)', 'features.Wild Stride', '?', null);
+    rules.defineRule
+      ('saveNotes.favoredTerrain(Desert)', 'features.Wild Stride', '?', null);
+    rules.defineRule
+      ('saveNotes.favoredTerrain(Plains)-1', 'features.Wild Stride', '?', null);
+    rules.defineRule
       ('skillNotes.rangerSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Rogue') {
     rules.defineRule('combatNotes.ruffian',
@@ -15256,9 +15274,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.masterAlchemy', 'level', '=', 'source - 5');
-  } else if(name == 'Masterful Companion') {
-    rules.defineRule('featureNotes.animalCompanion',
-      'combatNotes.masterfulCompanion', '=', 'null' // italics
+  } else if(name == 'Master Monster Hunter') {
+    rules.defineRule('combatNotes.monsterHunter',
+      'combatNotes.masterMonsterHunter', '=', 'null' // italics
     );
   } else if((matchInfo = name.match(/^Minor Magic \((.*)\)$/)) != null) {
     let trad = matchInfo[1];
