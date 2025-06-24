@@ -271,11 +271,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Intimidating Glare: Can use a glare to Demoralize</td>
     </tr><tr style="text-align:center">
-      <td>Poison Weapon: <b>(1)</b> Can prepare 20 poisons each day that inflict 1d4 HP damage</td>
+      <td>Poison Weapon: Can prepare 20 poisons each day that inflict 1d4 HP poison</td>
     </tr><tr style="text-align:center">
       <td>Quick Squeeze: Can Squeeze at full Speed</td>
     </tr><tr style="text-align:center">
-      <td>Sabotage: <b>(1)</b> Successful Thievery vs. Reflex inflicts 62 HP damage (critical success 124 HP) to an item with moving parts possessed by a creature within reach</td>
+      <td>Sabotage: <b>(1)</b> Successful Thievery vs. Reflex inflicts 62 HP damage, or 124 HP on a critical success, to an item with moving parts possessed by a creature within reach</td>
     </tr><tr style="text-align:center">
       <td>Sense The Unseen: <b>(R)</b> Makes undetected foes hidden after a failed Seek</td>
     </tr><tr style="text-align:center">
@@ -315,9 +315,13 @@ var attributes = {
       <tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Critical Debilitation: Has increased Debilitating Strike effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Attack Adjustment: +5</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Double Debilitation: Has increased Debilitating Strike effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
@@ -331,17 +335,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Master Tricks: Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Precise Debilitations: Has increased Debilitating Strike effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Rogue Expertise: Class Expert (Rogue)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Ruffian: Defense Master (Medium Armor)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Tactical Debilitations: Has increased Debilitating Strike effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Thief: +1 damage with finesse melee weapons</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Expertise (Bastard Sword): Attack Master (Bastard Sword)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Bastard Sword): Weapon Familiarity (Bastard Sword)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Vicious Debilitations: Has increased Debilitating Strike effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Martial Weapons): Attack Trained (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
@@ -355,19 +365,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Brutal Beating: Critical successes on Strikes inflict frightened 1</td>
       </tr><tr style="text-align:center">
-        <td>Critical Debilitation: Can use Debilitating Strike on a critical hit to inflict slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1 ; critical success negates; critical failure inflicts paralyzed)</td>
+        <td>Debilitating Strike: <b>(F)</b> Successful Strike against a flat-footed foe also inflicts 2 choices of +2d6 HP precision, flat-footed, weakness 5 to a choice of damage type, clumsy 1, prevention of reactions, prevention of flanking, slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1; critical success negates; critical failure inflicts paralyzed), -10 Speed or enfeebled 1 until the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Strike: <b>(F)</b> Successful Strike against a flat-footed foe also inflicts a choice of -10 Speed or enfeebled 1 until the end of the next turn</td>
-      </tr><tr style="text-align:center">
-        <td>Defensive Roll: <b>(F)</b> Reduces by half the damage from an attack that would reduce self to 0 HP once per 10 min</td>
+        <td>Defensive Roll: <b>(F)</b> Negates half the damage from an attack that would reduce self to 0 HP once per 10 min</td>
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
         <td>Dispelling Slice: <b>(2)</b> Successful sneak attack allows a level 10, +31 counteract attempt to dispel a magical effect</td>
       </tr><tr style="text-align:center">
         <td>Distracting Feint: Successful Feints inflict -2 Perception and Reflex saves while target remains flat-footed</td>
-      </tr><tr style="text-align:center">
-        <td>Double Debilitation: Debilitating Strike inflicts 2 choices of debilitations</td>
       </tr><tr style="text-align:center">
         <td>Dread Striker: Frightened foes are flat-footed vs. self attacks</td>
       </tr><tr style="text-align:center">
@@ -379,13 +385,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Gang Up: Foes within reach of an ally are flat-footed vs. self attacks</td>
       </tr><tr style="text-align:center">
-        <td>Improved Poison Weapon: Poisoned weapons inflict +2d4 HP damage, and a critical miss does not waste poison</td>
+        <td>Improved Poison Weapon: Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison</td>
       </tr><tr style="text-align:center">
-        <td>Instant Opening: <b>(1)</b> R30' Inflicts flat-footed vs. self on the target until the end of the next turn</td>
+        <td>Instant Opening: <b>(1)</b> R30' Inflicts flat-footed vs. self attacks until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Leave An Opening: Critical hit on a flat-footed foe allows a chosen ally to make an Attack Of Opportunity</td>
       </tr><tr style="text-align:center">
-        <td>Master Strike: <b>(F)</b> Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 for 1 rd; critical success negates; critical failure inflicts a choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)</td>
+        <td>Master Strike: <b>(F)</b> Successful Strike on a flat-footed foe inflicts paralyzed for 4 rd once per target per day; (<b>save Fortitude</b> inflicts enfeebled 2 until the end of the next turn; critical success negates; critical failure inflicts a choice of paralyzed for 4 rd, unconscious for 2 hr, or killed)</td>
       </tr><tr style="text-align:center">
         <td>Mobility: Can Stride at half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
@@ -393,17 +399,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Opportune Backstab: <b>(R)</b> Strikes a foe immediately after an ally hits it</td>
       </tr><tr style="text-align:center">
-        <td>Poison Weapon: <b>(1)</b> <b>(1)</b> Applies a poison that lasts for 1 turn to a piercing or slashing weapon</td>
+        <td>Poison Weapon: <b>(1)</b> Applies a poison that lasts until the end of the next turn to a piercing or slashing weapon</td>
       </tr><tr style="text-align:center">
         <td>Powerful Sneak: Can change sneak attack damage to match weapon damage type</td>
-      </tr><tr style="text-align:center">
-        <td>Precise Debilitations: Can use Debilitating Strike to inflict +2d6 HP precision damage or flat-footed</td>
       </tr><tr style="text-align:center">
         <td>Quick Draw: <b>(1)</b> Draws a weapon and Strikes</td>
       </tr><tr style="text-align:center">
         <td>Reactive Distraction: <b>(R)</b> Redirects an effect or attack from self to Perfect Distraction decoy</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Interference: <b>(R)</b> Prevents a foe reaction; a higher-level foe requires a successful attack roll</td>
+        <td>Reactive Interference: <b>(R)</b> Prevents an adjacent foe reaction; a higher-level foe requires a successful attack roll</td>
       </tr><tr style="text-align:center">
         <td>Reactive Pursuit: <b>(R)</b> Moves to remain adjacent to a retreating foe</td>
       </tr><tr style="text-align:center">
@@ -419,23 +423,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Sly Striker: Successful Strikes with a sneak attack weapon inflict full sneak attack damage</td>
       </tr><tr style="text-align:center">
-        <td>Sneak Attack: Successful strike using an agile, finesse, or ranged weapon vs. a flat-footed foe inflicts +4d6 HP precision damage</td>
+        <td>Sneak Attack: Successful strike using an agile, finesse, or projectile weapon vs. a flat-footed foe inflicts +4d6 HP precision damage</td>
       </tr><tr style="text-align:center">
         <td>Spring From The Shadows: <b>(1)</b> Strikes a foe after an undetected Stride</td>
       </tr><tr style="text-align:center">
-        <td>Surprise Attack: Rolling Deception or Stealth for initiative inflicts flat-footed on creatures that haven't acted</td>
-      </tr><tr style="text-align:center">
-        <td>Tactical Debilitations: Can use Debilitating Strike to prevent reactions or flanking</td>
+        <td>Surprise Attack: Rolling Deception or Stealth for initiative inflicts flat-footed to self on creatures that haven't acted</td>
       </tr><tr style="text-align:center">
         <td>Trap Finder: Gives +2 Perception and automatic Searches to find traps and allows disabling traps that require legendary proficiency in Thievery</td>
       </tr><tr style="text-align:center">
-        <td>Twin Feint: <b>(2)</b> Strikes with a melee weapon in each hand, inflicting flat-footed on the second</td>
+        <td>Twin Feint: <b>(2)</b> Strikes with a melee weapon in each hand, inflicting flat-footed vs. the second</td>
       </tr><tr style="text-align:center">
         <td>Twist The Knife: <b>(1)</b> Inflicts 4 HP persistent bleed damage after a successful sneak attack on a flat-footed foe</td>
       </tr><tr style="text-align:center">
         <td>Unbalancing Blow: Critical hits inflict flat-footed vs. self attacks until the end of the next turn</td>
-      </tr><tr style="text-align:center">
-        <td>Vicious Debilitations: Can use Debilitating Strike to inflict weakness 5 to a choice of damage type or clumsy 1</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr><tr style="text-align:center">

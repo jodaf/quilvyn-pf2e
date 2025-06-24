@@ -6793,11 +6793,11 @@ Pathfinder2E.FEATURES = {
   'Defensive Roll':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Reduces by half the damage from an attack that would reduce self to 0 HP once per 10 min"',
+    'Note="Negates half the damage from an attack that would reduce self to 0 HP once per 10 min"',
   'Instant Opening':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Inflicts flat-footed vs. self on the target until the end of the next turn"',
+    'Note="R30\' Inflicts flat-footed vs. self attacks until the end of the next turn"',
   'Leave An Opening':
     'Section=combat ' +
     'Note="Critical hit on a flat-footed foe allows a chosen ally to make an Attack Of Opportunity"',
