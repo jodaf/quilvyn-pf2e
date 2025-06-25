@@ -2698,7 +2698,8 @@ Pathfinder2E.FEATS = {
       '"rank.Deception >= 4",' +
       '"features.Perfect Distraction"',
 
-  'Counterspell':'Traits=Class,Sorcerer,Wizard,Abjuration',
+  // Nethys adds Arcane
+  'Counterspell':'Traits=Class,Sorcerer,Wizard,Abjuration,Arcane',
   'Dangerous Sorcery':'Traits=Class,Sorcerer',
   'Familiar':'Traits=Class,Sorcerer,Wizard',
   // Reach Spell as above
@@ -2730,7 +2731,9 @@ Pathfinder2E.FEATS = {
   'Bloodline Focus':
     'Traits=Class,Sorcerer Require="level >= 12","features.Bloodline"',
   'Magic Sense':
-    'Traits=Class,Sorcerer,Wizard,Detection,Divination Require="level >= 12"',
+    // Note: for sorcerers, Arcane is replaced by the bloodline tradition
+    'Traits=Class,Sorcerer,Wizard,Arcane,Detection,Divination ' +
+    'Require="level >= 12"',
   'Interweave Dispel':
     'Traits=Class,Sorcerer,Metamagic ' +
     'Require="level >= 14","knowsDispelMagicSpell"',
@@ -7200,7 +7203,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"+1 Class Feat (metamagic wizard)",' +
-      '"Can choose 1 metamagic feat of up to level %{level//2} to use each day"',
+      '"Can choose 1 metamagic feat of up to level %{level//2} to use each day during daily prep"',
   // Resolve as above
   'Spell Blending':
     'Section=magic ' +
@@ -7281,11 +7284,11 @@ Pathfinder2E.FEATURES = {
   // Bespell Weapon as above
   'Linked Focus':
     'Section=magic ' +
-    'Note="Draining a bonded item to cast a spell restores 1 Focus Point"',
+    'Note="Draining a bonded item to cast a spell from specialist school restores 1 Focus Point"',
   'Silent Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes a spell without its verbal components"',
+    'Note="Subsequent spell casting requires no verbal components"',
   'Spell Penetration':
     'Section=magic ' +
     'Note="Reduces any target status bonus to saves vs. self spells by 1"',
@@ -7327,7 +7330,7 @@ Pathfinder2E.FEATURES = {
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
+    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V during daily prep"',
   'Clever Counterspell':
     'Section=magic ' +
     'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
@@ -7347,7 +7350,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower"',
   'Reprepare Spell':
     'Section=magic ' +
-    'Note="Can spend 10 min to prepare a previously-cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
+    'Note="Can spend 10 min to prepare a previously-cast instantaneous spell of up to 4th level%{$\'features.Spell Substitution\'?\' or another instantaneous spell of the same level\':\'\'}"',
   "Archwizard's Might":'Section=magic Note="+1 10th level spell slot"',
   // Metamagic Mastery as above
   'Spell Combination':
