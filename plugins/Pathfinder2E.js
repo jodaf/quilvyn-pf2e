@@ -576,6 +576,9 @@ Pathfinder2E.CLASSES = {
       '"1:Spell Trained (Divine)",' +
       '"1:Deity And Cause","1:Champion\'s Code","1:Deific Weapon",' +
       '"1:Champion\'s Reaction",' +
+      '"features.Liberator ? 1:Liberating Step",' +
+      '"features.Paladin ? 1:Retributive Strike",' +
+      '"features.Redeemer ? 1:Glimpse Of Redemption",' +
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
@@ -4721,7 +4724,10 @@ Pathfinder2E.FEATURES = {
     'Section=feature ' +
     'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
   'Deity And Cause':
-    'Section=feature Note="Has the Anathema feature/1 selection"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Anathema feature/1 selection",' +
+      '"Skill Trained (%V)"',
   'Deific Weapon':
     'Section=combat,combat ' +
     'Note=' +
@@ -4842,22 +4848,19 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="R15\' Gives an ally resistance %{2+level} to any triggering damage and free actions to Escape or to save from a restraint and to Step"',
   'Liberator':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Liberating Step feature",' +
       '"Must respect others\' freedom and oppose tyranny",' +
       '"Knows the Lay On Hands divine spell"',
   // Lightning Reflexes as above
   'Paladin':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Retributive Strike feature",' +
       '"Must always act with honor and respect lawful authority",' +
       '"Knows the Lay On Hands divine spell"',
   'Redeemer':
-    'Section=feature,feature,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked",' +
       '"Knows the Lay On Hands divine spell"',
   'Retributive Strike':
@@ -14203,6 +14206,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('shieldHitPoints', 'combatNotes.shieldAlly.1', '*', null);
     rules.defineRule
       ('skillNotes.championSkills', 'intelligenceModifier', '=', '2 + source');
+    rules.defineRule('skillNotes.deityAndCause', 'deitySkill', '=', null);
     rules.defineRule('spellModifier.Champion',
       classLevel, '?', null,
       'charismaModifier', '=', null
@@ -14779,7 +14783,8 @@ Pathfinder2E.deityRules = function(
     );
   }
   rules.defineRule('trainingLevel.' + skill,
-    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null'
+    'skillNotes.deity', '^=', 'source=="' + skill + '" ? 1 : null',
+    'skillNotes.deityAndCause', '^=', 'source=="' + skill + '" ? 1 : null'
   );
 
   domains.forEach(d => {
@@ -15152,6 +15157,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       rules.defineRule('featureNotes.' + noteName, 'levels.Druid', '?', null);
       rules.defineRule('magicNotes.' + noteName, 'levels.Druid', '?', null);
     });
+    rules.defineRule('magicNotes.druidicOrder', 'levels.Druid', '?', null);
   } else if(name.match(/(Dwarven|Elven|Gnome|Goblin|Halfling|Orc) Weapon Expertise/)) {
     let note =
       'combatNotes.' + name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');

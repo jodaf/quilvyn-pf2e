@@ -55,10 +55,10 @@ var attributes = {
   "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Athletics":1, 
   "skillIncreases.Cavern Lore":1, "skillIncreases.Crafting":3, "skillIncreases.Deception":1, 
   "skillIncreases.Diplomacy":1, "skillIncreases.Fortune-Telling Lore":1, "skillIncreases.Goblin Lore":1, 
-  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, "skillIncreases.Nature":4, 
-  "skillIncreases.Occultism":3, "skillIncreases.Performance":1, "skillIncreases.Religion":4, 
+  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, "skillIncreases.Nature":3, 
+  "skillIncreases.Occultism":3, "skillIncreases.Performance":1, "skillIncreases.Religion":3, 
   "skillIncreases.River Lore":1, "skillIncreases.Society":1, "skillIncreases.Tanning Lore":1, 
-  "skillIncreases.Underworld Lore":1, "skillIncreases.Vampire Lore":1, "skillIncreases.Warfare Lore":1, 
+  "skillIncreases.Underworld Lore":1, "skillIncreases.Vampire Lore":2, "skillIncreases.Warfare Lore":2, 
   "weapons.Dagger":1, "weapons.Javelin":1, "weapons.Rapier":1
 };
   </script>
@@ -119,7 +119,7 @@ var attributes = {
         <td><b>Feats</b>: Advanced Concoction; Advanced Devotion; Advanced Dogma; Advanced Fury; Advanced Muse's Whispers; Advanced Wilding; Alchemist Dedication; Assurance (Nature); Assurance (River Lore); Barbarian Dedication; Barbarian Resiliency; Bard Dedication; Basic Bard Spellcasting; Basic Cleric Spellcasting; Basic Concoction; Basic Devotion; Basic Dogma; Basic Druid Spellcasting; Basic Fury; Basic Muse's Whispers; Basic Wilding; Canny Acumen (Fortitude); Champion Dedication; Champion Resiliency; Champion's Reaction; Cleric Dedication; Clever Improviser; Cognitive Loophole; Counter Perform; Defensive Roll; Diverse Armor Expert; Divine Ally; Divine Breadth; Dread Striker; Druid Dedication; Enduring Alchemy; Experienced Smuggler; Expert Alchemy; Expert Bard Spellcasting; Expert Cleric Spellcasting; Expert Druid Spellcasting; Far Lobber; General Training; Haughty Obstinacy; Healing Touch; Impressive Performance; Incredible Initiative; Inspirational Performance; Instinct Ability; Juggernaut's Fortitude; Magical Trickster; Master Alchemy; Master Bard Spellcasting; Master Cleric Spellcasting; Master Druid Spellcasting; Mercy; Mobility; Natural Ambition; Natural Skill; Occult Breadth; Order Spell; Powerful Sneak; Primal Breadth; Quick Alchemy; Quick Draw; Raging Intimidation; Reactive Interference; Ride; Skill Training (Accounting Lore); Skill Training (Astral Plane Lore); Skill Training (Cave Lore); Skill Training (Circus Lore); Skill Training (Engineering Lore); Skill Training (Gnome Lore); Skill Training (Mining Lore); Skill Training (Occultism); Skill Training (Plains Lore); Skill Training (River Lore); Skill Training (Sailing Lore); Skill Training (Society); Skill Training (Survival); Skill Training (Theater Lore); Tactical Debilitations; Toughness; Twist The Knife; Weapon Proficiency (Martial Weapons); Weight Of Guilt</td>
         <td><b>Rogue Features</b>: Ability Boost (Dexterity); Ability Boosts; Attack Trained (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks); Class Trained (Rogue); Debilitating Strike; Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; Double Debilitation; Evasion; General Feats; Great Fortitude; Greater Weapon Specialization; Improved Evasion; Incredible Senses; Light Armor Expertise; Master Tricks; Perception Expert; Rogue Expertise; Rogue Feats; Rogue Key Ability; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Scoundrel; Skill Feats; Skill Increases; Slippery Mind; Sneak Attack; Surprise Attack; Vigilant Senses; Weapon Specialization; Weapon Tricks</td>
         <td><b>Druid Features</b>: Leaf</td>
-        <td><b>Champion Features</b>: Blade Ally; Dexterity; Redeemer</td>
+        <td><b>Champion Features</b>: Blade Ally; Dexterity; Glimpse Of Redemption; Redeemer</td>
         <td><b>Bard Features</b>: Enigma</td>
         <td><b>Barbarian Features</b>: Animal Instinct (Ape); Bestial Rage (Ape)</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
@@ -205,8 +205,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Raging Intimidation: Has the Intimidating Glare and Scare To Death features</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Redeemer: Has the Glimpse Of Redemption feature</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Rogue Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Rogue Key Ability: 1 selection</i></td>
@@ -265,7 +263,7 @@ var attributes = {
       <td>Tanning Lore: +23 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Cavern Lore: +23 (intelligence; trained)</td>
-      <td>Nature: +32 (wisdom; %1)</td>
+      <td>Nature: +30 (wisdom; legendary)</td>
       <td>Theater Lore: +23 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Circus Lore: +23 (intelligence; trained)</td>
@@ -278,11 +276,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Deception: +24 (charisma; expert)</td>
       <td>Plains Lore: +23 (intelligence; trained)</td>
-      <td>Vampire Lore: +23 (intelligence; trained)</td>
+      <td>Vampire Lore: +25 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +24 (charisma; expert)</td>
-      <td>Religion: +32 (wisdom; %1)</td>
-      <td>Warfare Lore: +23 (intelligence; trained)</td>
+      <td>Religion: +30 (wisdom; legendary)</td>
+      <td>Warfare Lore: +25 (intelligence; expert)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -301,6 +299,8 @@ var attributes = {
       <td><i>Champion Dedication: Skill Trained (Religion)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Cleric Dedication: Skill Trained (Religion)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Deity And Cause: Skill Trained (Performance)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Deity: Skill Trained (Performance)</i></td>
     </tr><tr style="text-align:center">
@@ -358,7 +358,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Alchemical Crafting: Can use Crafting to create alchemical items</td>
     </tr><tr style="text-align:center">
-      <td>Assurance (Nature): Can take an automatic 38 on Nature checks</td>
+      <td>Assurance (Nature): Can take an automatic 36 on Nature checks</td>
     </tr><tr style="text-align:center">
       <td>Assurance (River Lore): Can take an automatic 32 on River Lore checks</td>
     </tr><tr style="text-align:center">
@@ -574,8 +574,6 @@ var attributes = {
       <td><i>Divine Breadth: +1 divine spell slot of each level up to 5</i></td>
     </tr><tr style="text-align:center">
       <td><i>Druid Dedication: Spell Trained (Primal)/Can prepare 2 primal cantrips each day</i></td>
-    </tr><tr style="text-align:center">
-      <td><i>Druidic Order: Has a focus pool and 1 Focus Point</i></td>
     </tr><tr style="text-align:center">
       <td><i>Expert Bard Spellcasting: Spell Expert (Occult)/Knows 1 4th-level, 1 5th-level, and 1 6th-level occult spell</i></td>
     </tr><tr style="text-align:center">
