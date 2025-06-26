@@ -454,7 +454,6 @@ Pathfinder2ERemaster.CLASSES = {
     // TODO 1:Spell Trained (Divine) => Spell Trained (Cleric)?
     // "" => 1:Class Trained (Cleric)
     // 1:Divine Spellcasting => Cleric Spellcasting
-    // "" => 1:Sanctification
     // 5:Alertness => 5:Perception Expertise
     // 9:Resolve => 9:Resolute Faith
     // 11:Lightning Reflexes => 11:Reflex Expertise
@@ -468,10 +467,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Cleric)","Class Trained (Cleric)",' +
       '"1:Anathema","1:Cleric Spellcasting","1:Deity","1:Divine Font",' +
-      '"1:Doctrine","1:Sanctification","2:Cleric Feats","2:Skill Feats",' +
-      '"3:General Feats","3:Skill Increases","5:Perception Expertise",' +
-      '"9:Resolute Faith","11:Reflex Expertise","13:Divine Defense",' +
-      '"13:Weapon Specialization","19:Miraculous Spell" ' +
+      '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"3:Skill Increases","5:Perception Expertise","9:Resolute Faith",' +
+      '"11:Reflex Expertise","13:Divine Defense","13:Weapon Specialization",' +
+      '"19:Miraculous Spell" ' +
     'Selectables=' +
       '"1:Healing Font:Divine Font",' +
       '"1:Harmful Font:Divine Font",' +
@@ -862,8 +861,9 @@ Pathfinder2ERemaster.CLASSES = {
   'Champion':
     // Ability => Attribute
     // TODO 1:Spell Trained (Divine) => 1:Spell Trained (Champion)?
-    // 1:Champion's Code => 1:Sanctification
+    // 1:Champion's Code => null
     // 1:Champion's Reaction => null
+    // 1:Deity And Cause => 1:Deity,1:Cause
     // null => 1:Champion's Aura
     // 3:Divine Ally => 3:Blessing Of The Devoted
     // 9:Divine Smite => 9:Relentless Reaction
@@ -882,8 +882,9 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Champion)",' +
       '"1:Class Trained (Champion)",' +
-      '"1:Deity","1:Sanctification","1:Deific Weapon","1:Champion\'s Aura",' +
+      '"1:Deity","1:Deific Weapon","1:Champion\'s Aura",' +
       '"1:Cause","1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
+      '"Has the Anathema feature/1 selection",' +
       '"2:Skill Feats","3:Blessing Of The Devoted","3:General Feats",' +
       '"3:Skill Increases","5:Weapon Expertise","7:Armor Expertise",' +
       '"7:Weapon Specialization","9:Champion Expertise","9:Reflex Expertise",' +
@@ -3097,7 +3098,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 6","features.Champion\'s Aura"',
   'Loyal Warhorse':
     Pathfinder2E.FEATS['Loyal Warhorse']
-    .replace('Divine Ally (Steed)', 'Faithful Steed'),
+    .replace('Steed Ally', 'Faithful Steed'),
   // Reactive Strike as above
   // Shield Warden as above
   'Smite':
@@ -3295,7 +3296,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Class,Champion Require="level >= 8","features.Security"',
   'Heal Mount':
     Pathfinder2E.FEATS['Heal Mount']
-    .replace('Divine Ally (Steed)', 'Faithful Steed')
+    .replace('Steed Ally', 'Faithful Steed')
     .replace(' Nec', ''),
   // Quick Shield Block as above
   'Second Blessing':
@@ -3303,10 +3304,10 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Divine Ally', 'Blessing Of The Devoted'),
   'Imposing Destrier':
     Pathfinder2E.FEATS['Imposing Destrier']
-    .replace(',"features.Divine Ally (Steed)"', ''),
+    .replace(',"features.Steed Ally"', ''),
   'Radiant Armament':
     Pathfinder2E.FEATS['Radiant Blade Spirit']
-    .replace('Divine Ally (Blade)', 'Blessed Armament'),
+    .replace('Blade Ally', 'Blessed Armament'),
   'Shield Of Reckoning':
     Pathfinder2E.FEATS['Shield Of Reckoning']
     .replace(',Flourish', '')
@@ -3340,7 +3341,7 @@ Pathfinder2ERemaster.FEATS = {
   'Divine Reflexes':Pathfinder2E.FEATS['Divine Reflexes'],
   'Auspicious Mount':
     Pathfinder2E.FEATS['Auspicious Mount']
-    .replace(',"features.Divine Ally (Steed)"', ''),
+    .replace(',"features.Steed Ally"', ''),
   'Instrument Of Slaughter':
     // TODO require "champion's reaction that grants extra damage"
     'Traits=Class,Champion Require="level >= 16"',
@@ -3362,7 +3363,7 @@ Pathfinder2ERemaster.FEATS = {
   'Sacred Defender':'Traits=Class,Champion Require="level >= 20"',
   'Shield Paragon':
     Pathfinder2E.FEATS['Shield Paragon']
-    .replace('Divine Ally (Shield)', 'Blessed Shield'),
+    .replace('Shield Ally', 'Blessed Shield'),
   'Swift Paragon':
     'Traits=Class,Champion Require="level >= 20","features.Blessed Swiftness"',
 
@@ -6369,7 +6370,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Cleric Skills':Pathfinder2E.FEATURES['Cleric Skills'],
   'Cleric Spellcasting':Pathfinder2E.FEATURES['Divine Spellcasting'],
   'Cloistered Cleric':Pathfinder2E.FEATURES['Cloistered Cleric'],
-  'Deity':Pathfinder2E.FEATURES.Deity,
+  'Deity':
+    Pathfinder2E.FEATURES.Deity
+    .replace('Anathema feature', 'Anathema and Sanctification features'),
   'Divine Defense':Pathfinder2E.FEATURES['Divine Defense'],
   'Divine Font':Pathfinder2E.FEATURES['Divine Font'],
   'Doctrine':Pathfinder2E.FEATURES.Doctrine,
@@ -8535,7 +8538,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Armor Expertise as above
   // Armor Mastery as above
   'Blessed Armament':
-    Pathfinder2E.FEATURES['Divine Ally (Blade)']
+    Pathfinder2E.FEATURES['Blade Ally']
     .replace('<i>disrupting</i>', '<i>fearsome</i>, <i>vitalizing</i>'),
   'Blessed Shield':
     'Section=combat Note="+%V Shield Hardness/+%1 Shield Hit Points"',
@@ -8547,7 +8550,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Blessing Of The Devoted':
     Pathfinder2E.FEATURES['Divine Ally']
     .replace('divineAlly', 'blessingOfTheDevoted'),
-  'Cause':Pathfinder2E.FEATURES.Cause,
+  'Cause':'Section=feature Note="1 selection"',
   'Champion Expertise':Pathfinder2E.FEATURES['Champion Expertise'],
   'Champion Feats':Pathfinder2E.FEATURES['Champion Feats'],
   'Champion Key Attribute':Pathfinder2E.FEATURES['Champion Key Ability'],
