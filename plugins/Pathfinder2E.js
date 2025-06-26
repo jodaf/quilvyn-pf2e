@@ -15390,6 +15390,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'combatNotes.skitteringScuttle', '=', 'null' // italics
     );
   } else if(name == 'Sorcerer Dedication') {
+    rules.defineRule('bloodlineTraditions',
+      'feats.' + name, '=', 'Pathfinder2E.bloodlineTraditions = ""'
+    );
     rules.defineRule
       ('magicNotes.sorcererDedication', 'bloodlineTraditions', '=', null);
     rules.defineRule('magicNotes.sorcererDedication.1',
@@ -15678,10 +15681,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             note, '+=', choices.replace('+', '')
           );
       }
-      matchInfo = n.match(/Weapon\s(Expertise|Familiarity)\s*\(([^\)]*)\)/i);
+      matchInfo = n.match(/Weapon\sFamiliarity\s*\(([^\)]*)\)/i);
       if(matchInfo) {
-        matchInfo[2].split(/;\s*/).forEach(element => {
-          rules.defineRule('weapon' + matchInfo[1], note, '=', '1');
+        matchInfo[1].split(/;\s*/).forEach(element => {
+          rules.defineRule('weaponFamiliarity.' + element, note, '=', '1');
         });
       }
       matchInfo = n.match(/^Has\s+the\s+(.*)\s+features?$/);
@@ -16111,8 +16114,7 @@ Pathfinder2E.weaponRules = function(
     'rank.' + category, '=', null,
     'rank.' + categoryAndGroup, '^=', null,
     'rank.' + name, '^=', null,
-    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
-    'weaponExpertise.' + group, '^=', 'dict["rank.maxWeaponTraining"]'
+    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]'
   );
   if(group == 'Bombs') {
     rules.defineRule
@@ -16125,8 +16127,7 @@ Pathfinder2E.weaponRules = function(
     t += ' Weapons';
     rules.defineRule('weaponRank.' + name,
       'trainingLevel.' + t, '^=', null,
-      'weaponFamiliarity.' + t, '^=', 'dict["rank.' + lowerCategory + '"]',
-      'weaponExpertise.' + t, '^=', 'dict["rank.maxWeaponTraining"]'
+      'weaponFamiliarity.' + t, '^=', 'dict["rank.' + lowerCategory + '"]'
     );
   });
   rules.defineRule('proficiencyLevelBonus.' + name,
