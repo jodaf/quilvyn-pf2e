@@ -1031,7 +1031,7 @@ Pathfinder2ERemaster.CLASSES = {
     // null => 1:Sorcerous Potency
     // 17:Resolve => 17:Majestic Will
     // added Elemental (Metal) and Elemental (Wood) bloodlines
-    // Draconic Bloodline changed to different examplars
+    // Draconic Bloodline changed to different exemplars
     'Ability=charisma HitPoints=6 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
@@ -3376,7 +3376,7 @@ Pathfinder2ERemaster.FEATS = {
   'Underworld Investigator':'Traits=Class,Investigator',
   'Athletic Strategist':
     'Traits=Class,Investigator Require="level >= 2","rank.Athletics >= 1"',
-  'Certain Strategem':'Traits=Class,Investigator Require="level >= 2"',
+  'Certain Stratagem':'Traits=Class,Investigator Require="level >= 2"',
   'Exploit Blunder':'Traits=Class,Investigator Require="level >= 2"',
   'Person Of Interest':'Traits=Class,Investigator Require="level >= 2"',
   'Shared Stratagem':'Traits=Class,Investigator Require="level >= 2"',
@@ -3400,7 +3400,7 @@ Pathfinder2ERemaster.FEATS = {
   'Thorough Research':'Traits=Class,Investigator Require="level >= 6"',
   // Blind-Fight as above
   'Clue Them All In':'Traits=Class,Investigator Require="level >= 8"',
-  'Defensive Strategem':'Traits=Class,Investigator Require="level >= 8"',
+  'Defensive Stratagem':'Traits=Class,Investigator Require="level >= 8"',
   'Whodunnit?':'Traits=Class,Investigator,Uncommon Require="level >= 8"',
   'Just One More Thing':
     'Traits=Class,Investigator,Fortune Require="level >= 10"',
@@ -3432,7 +3432,7 @@ Pathfinder2ERemaster.FEATS = {
   'Strategic Bypass':'Traits=Class,Investigator Require="level >= 14"',
   'Didactic Strike':
     'Traits=Class,Investigator ' +
-    'Require="level >= 16","features.Shared Strategem"',
+    'Require="level >= 16","features.Shared Stratagem"',
   // Implausible Purchase as above
   // Reconstruct The Scene as above
   'Lead Investigator':
@@ -3500,7 +3500,7 @@ Pathfinder2ERemaster.FEATS = {
   'Ironblood Stance':Pathfinder2E.FEATS['Ironblood Stance'],
   'Mixed Maneuver':Pathfinder2E.FEATS['Mixed Maneuver'],
   'Pinning Fire':'Traits=Class,Monk Require="level >= 8"',
-  'Protectile Snatching':
+  'Projectile Snatching':
     Pathfinder2E.FEATS['Arrow Snatching']
    .replace('Deflect Arrow', 'Deflect Projectile'),
   'Tangled Forest Stance':Pathfinder2E.FEATS['Tangled Forest Stance'],
@@ -8216,7 +8216,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Invigorating Elixir':
     'Section=skill ' +
     'Note="Prepared elixir can be imbibed by sickened creatures and attempts to counteract imbiber\'s choice of clumsy, enfeebled, sickened, or stupefied"',
-  'Regurgitage Mutagen':
+  'Regurgitate Mutagen':
     'Action=1 ' +
     'Section=combat ' +
     'Note="R30\' Ends a mutagen to inflict %{level//2}d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)"',
@@ -8353,7 +8353,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Adrenaline Rush':
     'Section=ability,skill ' +
     'Note=' +
-      '"+2 encumberance and maximum Bulk during rage",' +
+      '"+2 encumbrance and maximum Bulk during rage",' +
       '"+1 Athletics to lift, Escape, and Force Open during rage"',
   'Draconic Arrogance':'Section=save Note="+2 vs. emotion effects during rage"',
   'Moment Of Clarity':Pathfinder2E.FEATURES['Moment Of Clarity'],
@@ -8783,7 +8783,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Weight Of Guilt':Pathfinder2E.FEATURES['Weight Of Guilt'],
   'Divine Grace':Pathfinder2E.FEATURES['Divine Grace'],
   'Divine Health':Pathfinder2E.FEATURES['Divine Health'] + ' ' +
-    'Note="+2 vs. diseases and poisons and on flat checks to recover from persistent poison, and sucesses vs. disease or poison are critical successes; allies within aura gain a +1 bonus"',
+    'Note="+2 vs. diseases and poisons and on flat checks to recover from persistent poison, and successes vs. disease or poison are critical successes; allies within aura gain a +1 bonus"',
   'Aura Of Courage':Pathfinder2E.FEATURES['Aura Of Courage']
     .replace("15'", 'aura'),
   'Aura Of Despair':
@@ -8981,7 +8981,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Deductive Improvisation':
     'Section=skill ' +
     'Note="Can attempt checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
-  'Devise A Stratagen':
+  'Devise A Stratagem':
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
@@ -9016,7 +9016,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Succcesses on Will saves are critical successes, and critical failures are failures and inflict half damage"',
+      '"Successes on Will saves are critical successes, and critical failures are failures and inflict half damage"',
   // Greater Weapon Specialization as above
   'Investigator Expertise':
     'Section=combat,feature ' +
@@ -9205,7 +9205,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Cobra Stance features",' +
-      '"Strike from Cobra Stance gains +5\' reach and +1d4 HP persitent poison"',
+      '"Strike from Cobra Stance gains +5\' reach and +1d4 HP persistent poison"',
   'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
   'Prevailing Position':
     'Action=Reaction ' +
@@ -9289,7 +9289,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Godbreaker':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Successful Strikes after throwing a grappeled foe upward 20\' allows repeating 2 times"',
+    'Note="Successful Strikes after throwing a grappled foe upward 20\' allows repeating 2 times"',
   'Immortal Techniques':
     'Section=combat ' +
     'Note="Using a monk stance action gives 20 temporary Hit Points for 1 rd"',
@@ -9398,7 +9398,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Tap Into Blood (Arcane)':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Uses Arcana in place of the associated skill for a Recall Knowedge check"',
+    'Note="Uses Arcana in place of the associated skill for a Recall Knowledge check"',
   'Tap Into Blood (Divine)':
     'Action=1 ' +
     'Section=combat ' +
@@ -9415,7 +9415,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Bleed Out':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R60\' Successful ranged spell attack inflicts persistent bleed damagge equal to the rank of a just-cast spell"',
+    'Note="R60\' Successful ranged spell attack inflicts persistent bleed damage equal to the rank of a just-cast spell"',
   // Cantrip Expansion as above
   // Enhanced Familiar as above
   'Propelling Sorcery':
@@ -9571,7 +9571,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Echoing Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casts an instanaeous spell twice using 1 spell slot"',
+    'Note="Casts an instantaneous spell twice using 1 spell slot"',
   'Greater Crossblooded Evolution':
     Pathfinder2E.FEATURES['Greater Crossblooded Evolution']
     .replace('different traditions', 'second bloodline'),
@@ -11815,7 +11815,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' emanation inflicts irreducable frightened 1 while sustained for up to 1 min"',
+      '"30\' emanation inflicts irreducible frightened 1 while sustained for up to 1 min"',
   'Earthworks':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Concentrate,Earth,Manipulate ' +
@@ -12020,7 +12020,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent successful or failed Fortitude reduce or increase the slowed condition by 1, or by 2 on a critical faiure"',
+      '"Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent successful or failed Fortitude reduce or increase the slowed condition by 1, or by 2 on a critical failure"',
   'Touch Of Death':
     Pathfinder2E.SPELLS['Quivering Palm']
     .replace('Necromancy', 'Concentrate,Manipulate'),
@@ -12097,7 +12097,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Successfuil spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
+      '"R30\' Successful spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
   'Dragon Breath':
     Pathfinder2E.SPELLS['Dragon Breath']
     .replace('Evocation', 'Concentrate,Manipulate')
@@ -12133,7 +12133,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   "You're Mine":
     Pathfinder2E.SPELLS["You're Mine"]
-    .replace('Enhantment','Concentrate,Manipulate'),
+    .replace('Enchantment','Concentrate,Manipulate'),
   'Ancestral Memories':
     Pathfinder2E.SPELLS['Ancestral Memories']
     .replace('Divination', 'Concentrate') + ' ' +
@@ -12144,7 +12144,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
     'Cast=1 ' +
     'Description=' +
-      '"Extends the blood magic effect from a subequent spell by 1 rd"',
+      '"Extends the blood magic effect from a subsequent spell by 1 rd"',
   'Arcane Countermeasure':
     Pathfinder2E.SPELLS['Arcane Countermeasure']
     .replace('Abjuration', 'Manipulate'),
