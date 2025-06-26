@@ -3603,7 +3603,7 @@ Pathfinder2E.FEATURES = {
   'Elf Step':'Action=1 Section=combat Note="Steps twice"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Gains expert rank in a chosen trained skill during daily prep and may replace an existing skill increase with one chosen for Ancestral Longevity or Expert Longevity upon expiration"',
+    'Note="Gains expert proficiency in a chosen trained skill during daily prep and may replace an existing skill increase with one chosen for Ancestral Longevity or Expert Longevity upon expiration"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
@@ -3672,7 +3672,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"Can speak with all animals",' +
-      '"+1 to Make an Impression on animals"',
+      '"+1 to Make An Impression on animals"',
   'Energized Font':
     'Action=1 Section=magic Note="Regains 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
@@ -4204,7 +4204,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Barbarian)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a 1-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a single-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action"',
   'Quick Rage':'Section=combat Note="Has increased Rage effects"',
   'Rage':
     'Action=1 ' +
@@ -4483,7 +4483,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 Section=magic Note="Extends subsequent spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
-    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
+    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make An Impression, Demoralize, or to satisfy prerequisites"',
   'Cantrip Expansion':
     'Section=magic ' +
     'Note="Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire"',
@@ -5427,7 +5427,7 @@ Pathfinder2E.FEATURES = {
   'Echoing Channel':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature"',
+    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes single-action effects on an adjacent creature"',
   'Improved Swift Banishment':
     'Section=magic ' +
     'Note="Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
@@ -5438,7 +5438,7 @@ Pathfinder2E.FEATURES = {
   'Metamagic Channel':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
+    'Note="Applies a single-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
 
   // Druid
   // Alertness as above
@@ -7651,6 +7651,7 @@ Pathfinder2E.FEATURES = {
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
     'Note=' +
+      // Errata adds Arcane School, but gaining no features from it
       '"Has the Arcane School feature",' +
       '"Spell Trained (Arcane)/Can prepare 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
@@ -7719,7 +7720,7 @@ Pathfinder2E.FEATURES = {
   'Feather Step':'Section=ability Note="Can Step into difficult terrain"',
   'Fleet':'Section=ability Note="+5 Speed"',
   'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
-  'Incredible Investiture':'Section=magic Note="Can invest 12 items"',
+  'Incredible Investiture':'Section=magic Note="Can invest 12 magic items"',
   'Ride':
     'Section=feature ' +
     'Note="Automatically succeeds when using Command an Animal to move/Mount acts on self turn"',
@@ -7760,7 +7761,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can Identify Magic in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'1 min\'}"',
   'Quick Recognition':
     'Section=skill ' +
-    'Note="Can use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
+    'Note="Can use a skill with master proficiency to Recognize A Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -7769,7 +7770,7 @@ Pathfinder2E.FEATURES = {
   'Trick Magic Item':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful check on the related skill temporarily activates a magic item"',
+    'Note="Successful check on the related skill activates a magic item until the end of the turn"',
 
   // Specific Skill Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
@@ -7797,7 +7798,7 @@ Pathfinder2E.FEATURES = {
     'Note="Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use"',
   'Bonded Animal':
     'Section=skill ' +
-    'Note="Can use 1 week of interaction and a successful Nature check to make an animal permanently helpful"',
+    'Note="Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
   'Cat Fall':
     'Section=ability ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
@@ -7809,7 +7810,7 @@ Pathfinder2E.FEATURES = {
     'Note="Triples the distance of long jumps, increases high jump distance to normal long jump distance, and adds %{speed}\' to jump distances for every additional action spent"',
   'Combat Climber':
     'Section=skill ' +
-    'Note="Can Climb with a hand occupied, can fight while Climbing, and does not suffer flat-footed while Climbing"',
+    'Note="Can Climb with a hand occupied, can fight while Climbing, and Climbing does not inflict flat-footed"',
   'Confabulator':
     'Section=skill ' +
     'Note="Reduces the bonus given to targets of Deception for previous attempts to %{rank.Deception>=4?\'0\':rank.Deception==3?\'+1\':\'+2\'}"',
@@ -7820,7 +7821,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can repeat Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
     'Section=skill ' +
-    'Note="Can use Society to impersonate a noble or to Make an Impression on one"',
+    'Note="Can use Society to impersonate a noble or to Make An Impression on one"',
   'Craft Anything':
     'Section=skill ' +
     'Note="Can craft items without meeting secondary requirements"',
@@ -7847,20 +7848,20 @@ Pathfinder2E.FEATURES = {
     'Note="Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others, or twice that number with a critical success"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to Make an Impression immediately upon meeting and to retry after 1 min"',
+    'Note="Can use Diplomacy with a -5 penalty to Make An Impression immediately upon meeting and to retry after 1 min"',
   'Group Coercion':
     'Section=skill ' +
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
+    'Note="Can use Diplomacy to Make An Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
   'Hobnobber':'Section=skill Note="Can Gather Information in half normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
-    'Section=skill Note="Can use Performance to Make an Impression"',
+    'Section=skill Note="Can use Performance to Make An Impression"',
   'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
@@ -7884,13 +7885,13 @@ Pathfinder2E.FEATURES = {
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
+    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make An Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Increases the audience level when Earning Income using Performance"',
+    'Note="Improves NPCs\' attitude by 1 step when they succeed on a DC 10 Society check to Recall Knowledge/Increases the audience level when Earning Income using Performance"',
   'Legendary Professional':
     'Section=skill ' +
-    'Note="Improves NPCs\' attitude by 1 step with a successful DC 10 Society check to Recall Knowledge/Increases the job level when Earning Income using Lore"',
+    'Note="Improves NPCs\' attitude by 1 step when they succeed on a DC 10 Society check to Recall Knowledge/Increases the job level when Earning Income using Lore"',
   'Legendary Sneak':
     'Section=skill ' +
     'Note="Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring"',
@@ -7902,12 +7903,12 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Steal with a -5 penalty when hidden to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
-    'Note="Can remain hidden after a Create a Diversion attempt critically succeeds"',
+    'Note="Can remain hidden after a Create A Diversion attempt critically succeeds"',
   'Lie To Me':
     'Section=skill Note="Can use Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
-    'Note="Can craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower"',
+    'Note="Can Craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
     'Section=skill ' +
@@ -7929,7 +7930,7 @@ Pathfinder2E.FEATURES = {
   'Quick Climb':
     'Section=skill ' +
     'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Coercion':'Section=skill Note="Can Coerce in 1 rd"',
+  'Quick Coercion':'Section=skill Note="Can Coerce with 1 rd of conversation"',
   'Quick Disguise':
     'Section=skill ' +
     'Note="Can create a disguise %{rank.Deception>=4?\'as a 3-action activity\':rank.Deception==3?\'in 1 min\':\'in 5 min\'}"',
@@ -7941,11 +7942,11 @@ Pathfinder2E.FEATURES = {
     'Note="Can Repair an item in %{rank.Crafting>=4?\'1 action\':rank.Crafting==3?\'3 actions\':\'1 min\'}"',
   'Quick Squeeze':
     'Section=skill ' +
-    'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\'/rd, or 10\'/rd on a critical success\\"}"',
+    'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\' per rd, or 10\' per rd on a critical success\\"}"',
   'Quick Swim':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', critical success by 10\'\\"}"',
-  'Quick Unlock':'Section=skill Note="Can Pick a Lock in 1 action"',
+    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', or by 10\' on a critical success\\"}"',
+  'Quick Unlock':'Section=skill Note="Can Pick A Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
     'Note="Rolls a single Stealth check to Avoid Notice when leading a group"',
@@ -7957,11 +7958,11 @@ Pathfinder2E.FEATURES = {
     'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
   'Robust Recovery':
     'Section=skill ' +
-    'Note="Success on Treat a Disease or a Poison gives a +4 bonus, and patient successes are critical successes"',
+    'Note="Success on Treat Disease or Treat Poison gives a +4 bonus, and patient successes are critical successes"',
   'Scare To Death':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical failure inflicts death); failure inflicts frightened 1"',
+    'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical success negates; critical failure inflicts death); failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
     'Note="Reduces the DC for an outrageous request by 2 and changes critical failures into normal failures"',
@@ -7978,7 +7979,7 @@ Pathfinder2E.FEATURES = {
     'Note="+%{rank.Crafting>=3?2:1} Crafting on selected type of item"',
   'Steady Balance':
     'Section=skill ' +
-    'Note="Balance successes are critical successes/Never flat-footed during Balance/Can use Acrobatics to Grab an Edge"',
+    'Note="Balance successes are critical successes/Balance does not inflict flat-footed/Can use Acrobatics to Grab an Edge"',
   'Streetwise':
     'Section=skill ' +
     'Note="Can use Society to Gather Information and to Recall Knowledge in familiar settlements"',
@@ -7987,7 +7988,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
   'Subtle Theft':
     'Section=skill ' +
-    'Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
+    'Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm An Object or Steal after a successful Create A Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
     'Note="Can use Survival%{rank.Survival<3?\' with a -2 penalty\':\'\'} to Recall Knowledge about local creatures after 10 min of study"',
@@ -8013,19 +8014,19 @@ Pathfinder2E.FEATURES = {
     'Note="Can use days of training and a successful Nature check to teach an animal to perform a trick"',
   'Underwater Marauder':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing weapons in water"',
+    'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing melee weapons in water"',
   'Unified Theory':
     'Section=skill ' +
     'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
-    'Note="Critical failures on any trained Lore are normal failures and critical successes on a Lore with master rank provide additional information"',
+    'Note="Critical failures to Recall Knowledge with on any trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information"',
   'Virtuosic Performer':
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="Can follow a jump that ends next to a wall with another 1-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
+    'Note="Can follow a jump that ends next to a wall with another single-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
   'Ward Medic':
     'Section=skill ' +
     'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
