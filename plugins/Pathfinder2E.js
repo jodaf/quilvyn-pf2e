@@ -15111,12 +15111,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.DC1', 'magicNotes.clericDedication', '+=', '2');
     // Suppress the deity notes that don't come with Cleric Dedication
-    rules.defineRule('isChampionOrCleric',
-      'levels.Champion', '=', '1',
-      'levels.Cleric', '=', '1'
-    );
-    rules.defineRule('combatNotes.deity', 'isChampionOrCleric', '?', null);
-    rules.defineRule('magicNotes.deity', 'isChampionOrCleric', '?', null);
+    rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
+    rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
