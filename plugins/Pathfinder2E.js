@@ -4732,7 +4732,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"%{deityWeapon} inflicts +1 damage die step",' +
-      '"Has access to deity weapon (%{deityWeaponLowered})"',
+      '"Has access to %{deityWeaponLowered}"',
   "Deity's Domain (Air)":
     'Section=magic Note="Knows the Pushing Gust divine spell"',
   "Deity's Domain (Ambition)":
@@ -14164,8 +14164,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('spellSlots.O10', 'magicNotes.perfectEncore', '+', '1');
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.deificWeapon',
-      // TODO only d4 unarmed attack qualifies
-      'deityWeaponCategory', '?', 'source && source.match(/Simple|Unarmed/)'
+      'deityWeaponDamage', '?', 'source',
+      'deityWeaponCategory', '?', 'source && (source=="Simple" || (source=="Unarmed" && dict.deityWeaponDamage.includes("d4")))'
     );
     ['dragonslayerOath', 'fiendsbaneOath', 'shiningOath'].forEach(f => {
       rules.defineRule('combatNotes.' + f,
@@ -14725,6 +14725,7 @@ Pathfinder2E.deityRules = function(
       domains:{},
       weapon:{},
       weaponCategory:{},
+      weaponDamage:{},
       skill:{},
       spells:{}
     };
@@ -14737,6 +14738,8 @@ Pathfinder2E.deityRules = function(
   rules.deityStats.weapon[name] = weapon;
   rules.deityStats.weaponCategory[name] =
     QuilvynUtils.getAttrValue(rules.getChoices('weapons')[weapon] || '', "Category");
+  rules.deityStats.weaponDamage[name] =
+    QuilvynUtils.getAttrValue(rules.getChoices('weapons')[weapon] || '', "Damage");
   rules.deityStats.skill[name] = skill;
   rules.deityStats.spells[name] = spells.join('/');
 
@@ -14767,6 +14770,9 @@ Pathfinder2E.deityRules = function(
       ('deityWeaponLowered', 'deityWeapon', '=', 'source.toLowerCase()');
     rules.defineRule('deityWeaponCategory',
       'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponCategory) + '[source]'
+    );
+    rules.defineRule('deityWeaponDamage',
+      'deity', '=', QuilvynUtils.dictLit(rules.deityStats.weaponDamage) + '[source]'
     );
     rules.defineRule('deityWeaponRank',
       'deityWeapon', '=', 'null', // recomputation trigger
