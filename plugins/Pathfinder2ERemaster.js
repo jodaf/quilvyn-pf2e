@@ -3900,12 +3900,12 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Barbarian Dedication",' +
       '"rank.Fortitude >= 2"',
 
+  */
   'Bard Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Bard ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Bard == 0"',
+    Pathfinder2E.FEATS['Bard Dedication']
+    .replace(/level\s*>=\s*2/, 'level >= 2 || features.Ancient Elf')
+    .replace(/charisma\s*>=\s*14/, 'charismaModifier >= 2'),
+  /*
   'Basic Bard Spellcasting':
     'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
@@ -4486,7 +4486,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Dwarf Heritage':Pathfinder2E.FEATURES['Dwarf Heritage'],
   'Forge Dwarf':Pathfinder2E.FEATURES['Forge Dwarf'],
   'Rock Dwarf':
-    Pathfinder2E.FEATURES['Rock Dwarf'].replace('Shove', 'Reposition, Shove'),
+    Pathfinder2E.FEATURES['Rock Dwarf']
+    .replace('Shove', 'Reposition, Shove')
+    .replace('knock prone', 'move or knock prone'),
   'Slow':Pathfinder2E.FEATURES.Slow,
   'Strong-Blooded Dwarf':Pathfinder2E.FEATURES['Strong-Blooded Dwarf'],
 
@@ -4508,12 +4510,16 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has access to uncommon dwarf weapons%{level>=5?\'/Critical hits with a dwarf weapon, battle axe, pick, or warhammer inflict its critical specialization effect\':\'\'}"',
   'Mountain Strategy':
     'Section=combat ' +
-    'Note="Inflicts additional damage equal to the number of damage dice to giant, goblin, hryngar, and orc foes"',
+    'Note="Inflicts additional damage equal to the number of damage dice vs. giant, goblin, hryngar, and orc foes, as well as for 1 min vs. any foe who critically hits self"',
   'Rock Runner':
     Pathfinder2E.FEATURES['Rock Runner']
     .replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
-  "Stonemason's Eye":Pathfinder2E.FEATURES.Stonecunning,
+  "Stonemason's Eye":
+    Pathfinder2E.FEATURES.Stonecunning
+    .replace('Section=', 'Section=skill,')
+    .replace('Note=', 'Note="Skill Trained (Crafting)",')
+    .replace(' -2', ''),
   'Unburdened Iron':Pathfinder2E.FEATURES['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATURES['Boulder Roll'],
   'Defy The Darkness':
@@ -4527,7 +4533,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Echoes In Stone':
     'Action=1 ' +
     'Section=feature ' +
-    'Note="Gives 20\' imprecise tremorsense for 1 turn when standing on earth or stone"',
+    'Note="Gives 20\' imprecise tremorsense until the start of the next turn when standing on earth or stone"',
   "Mountain's Stoutness":Pathfinder2E.FEATURES["Mountain's Stoutness"],
   'Stone Bones':
     'Action=Reaction ' +
@@ -4543,14 +4549,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strides or Burrows 15\' twice; can take along an adjacent willing ally"',
   'Telluric Power':
     'Section=magic ' +
-    'Note="Inflicts additional damage equal to the number of weapon damage dice to a foe standing on the same earth or stone surface"',
+    'Note="Melee Strikes vs. a foe standing on the same earth or stone surface inflict additional damage equal to the number of weapon damage dice"',
   'Stonegate':
     'Section=magic ' +
-    'Note="Knows the Magic Passage divine innate spell; can cast it once per day to open passages through earth or stone"',
+    'Note="Knows the Magic Passage divine innate spell; can cast it once per day at 7th rank to open passages through earth or stone"',
   'Stonewall':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone"',
+    'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone, once per day"',
 
   // Elf
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
@@ -4563,7 +4569,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed
   'Whisper Elf':
     'Section=skill ' +
-    'Note="+2 Seek within 30\' and reduces flat check DC to find concealed or hidden targets to 3 or 9"',
+    'Note="+2 Seek within 30\' and reduces the flat check DC to find concealed or hidden targets to 3 or 9"',
   'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
@@ -4588,7 +4594,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. control effects, and successes are critical successes",' +
-      '"+2 Perception to detect controlled creatures"',
+      '"+2 Sense Motive to detect controlled creatures"',
   'Martial Experience':
     'Section=combat ' +
     'Note="%{level>=11?\'Skill Trained (Simple Weapons; Martial Weapons; Advanced Weapons)\':\'+\'+level+\' attack with untrained weapons\'}"',
@@ -4605,7 +4611,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Universal Longevity':Pathfinder2E.FEATURES['Universal Longevity'],
   'Magic Rider':
     'Section=magic ' +
-    'Note="Can teleport another person when affected by a multiple-target teleportation spell, and always arrives within 1 mile of the desired location"',
+    'Note="Can bring another person when affected by a multiple-target teleportation spell, and always arrives within 1 mile of the desired location"',
 
   // Gnome
   'Chameleon Gnome':Pathfinder2E.FEATURES['Chameleon Gnome'],
@@ -4613,6 +4619,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Gnome Heritage':Pathfinder2E.FEATURES['Gnome Heritage'],
   // Low-Light Vision as above
   'Sensate Gnome':Pathfinder2E.FEATURES['Sensate Gnome'],
+  'Umbral Gnome':Pathfinder2E.FEATURES['Umbral Gnome'],
   'Wellspring Gnome':Pathfinder2E.FEATURES['Wellspring Gnome'],
   'Wellspring Gnome (Arcane)':
     Pathfinder2E.FEATURES['Wellspring Gnome (Arcane)'],
@@ -4630,9 +4637,11 @@ Pathfinder2ERemaster.FEATURES = {
   'First World Magic':Pathfinder2E.FEATURES['First World Magic'],
   // Changed
   'Gnome Obsession':
-    'Section=feature ' +
+    'Section=feature,skill ' +
     // TODO trouble randomizing?
-    'Note="+2 Skill Feat (Additional Lore; Assurance)"',
+    'Note=' +
+      '"+2 Skill Feat (Additional Lore; Assurance)",' +
+      '"Can use 1 day of downtime to change chosen Gnome Obsession skill"',
   // Changed
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
@@ -4642,23 +4651,23 @@ Pathfinder2ERemaster.FEATURES = {
   'Illusion Sense':Pathfinder2E.FEATURES['Illusion Sense'],
   'Razzle-Dazzle':
     'Section=magic ' +
-    'Note="Inflicted blinded or dazzled conditions last 1 additional rd"',
+    'Note="Extends an inflicted blinded or dazzled condition by 1 rd once per hr"',
   'Energized Font':Pathfinder2E.FEATURES['Energized Font'],
   'Project Persona':
     'Action=1 ' +
     'Section=magic ' +
     // TODO Will DC
-    'Note="Places an illusion of normal clothing over armor"',
+    'Note="Places an illusion of normal clothing over self armor"',
   'Cautious Curiosity (Arcane)':
     'Section=magic ' +
-    'Note="Knows the Disguise Magic and Silence arcane innate spells; can cast each at 2nd-rank on self once per day"',
+    'Note="Knows the Disguise Magic and Silence arcane innate spells; can cast each on self at 2nd rank once per day"',
   'Cautious Curiosity (Occult)':
     'Section=magic ' +
-    'Note="Knows the Disguise Magic and Silence occult innate spells; can cast each at 2nd-rank on self once per day"',
+    'Note="Knows the Disguise Magic and Silence occult innate spells; can cast each on self at 2nd rank once per day"',
   // Changed
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Invisibility and Revealing Light primal innate spells; can cast each once per day"',
+     'Note="Knows the Invisibility and Revealing Light primal innate spells; can cast each at 2nd rank once per day"',
   'Life Leap':
     'Action=1 ' +
     'Section=magic ' +
@@ -4667,7 +4676,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Instinctive Obfuscation':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Illusory double forces a successful DC 10 flat check on an attacking foe once per hr; failure negates the attack"',
+    'Note="Illusory double forces a DC 10 flat check on an attacking foe once per hr; failure negates the attack and destroys the double"',
   'Homeward Bound':
     'Section=magic ' +
     'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
@@ -4696,7 +4705,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
-      '"Weapon Familiarity (Goblin Weapons)/Treats goblin weapons as one category simpler",' +
+      '"Weapon Familiarity (Goblin Weapons)",' +
       '"Has access to uncommon goblin weapons%{level>=5?\'/Critical hits with a goblin weapon inflict its critical specialization effect\':\'\'}"',
   'Junk Tinker':Pathfinder2E.FEATURES['Junk Tinker'],
   'Rough Rider':Pathfinder2E.FEATURES['Rough Rider'],
@@ -4715,7 +4724,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cling':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="After a successful Strike with a hand free, moves with the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
+    'Note="After a successful Strike with a hand free, latches onto the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
   'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
   'Reckless Abandon':
@@ -4740,7 +4749,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
   'Folksy Patter':
     'Section=skill ' +
-    'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
+    'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; the DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
   // Changed
   'Halfling Lore':
     'Section=feature,skill ' +
@@ -4785,10 +4794,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Ceaseless Shadows':Pathfinder2E.FEATURES['Ceaseless Shadows'],
   'Toppling Dance':
     'Section=combat ' +
-    'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/May share space with a Large or larger prone creature"',
+    'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/May share a space with a Large or larger prone creature"',
   'Shadow Self':
     'Section=skill ' +
-    'Note="Can follow a successful Hide or Sneak with 1 min invisibility; a hostile act ends"',
+    'Note="Can follow a successful Hide or Sneak with 1 min of invisibility; a hostile act ends"',
 
   // Human
   'Human Heritage':Pathfinder2E.FEATURES['Human Heritage'],
@@ -12596,6 +12605,9 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
+  } else if(name == 'Gnome') {
+    // Make sure there's a featCount.Skill to increment
+    rules.defineRule('featCount.Skill', 'features.Gnome Obsession', '^=', '0');
   } else if(name == 'Human') {
     rules.defineRule('skillNotes.skilledHeritageHuman', 'level', '?', 'null');
     rules.defineRule('skillNotes.skilledHuman',
