@@ -3534,7 +3534,7 @@ Pathfinder2E.FEATURES = {
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Step into a foe\'s square forces a 5\' move (Fortitude vs. Athletics critical success negates; normal success negates but inflicts %{level+strengthModifier} HP bludgeoning)"',
+    'Note="Step into a foe\'s square forces a 5\' move (<b>save Fortitude</b> vs. Athletics negates move but inflicts %{level+strengthModifier} HP bludgeoning; critical success negates without damage)"',
   'Dwarven Weapon Cunning':
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
@@ -3547,7 +3547,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"Knows the Meld Into Stone divine innate spell; can cast it once per day",' +
-      '"Can find unusual stonework that requires legendary Perception"',
+      '"Can find unusual stonework and stonework traps that require legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Battle Axe; Pick; Warhammer; Dwarf Weapons)"',
@@ -3607,7 +3607,7 @@ Pathfinder2E.FEATURES = {
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Replaces the Ancestral Longevity and Expert Longevity skills once per day"',
+    'Note="Replaces the Ancestral Longevity %{$\'features.Expert Longevity\'?\'and Expert Longevity skills\':\'skill\'} once per day"',
   'Elven Weapon Expertise':
     'Section=combat ' +
     'Note="Attack %V (Longbow; Composite Longbow; Longsword; Rapier; Shortbow; Composite Shortbow; Elf Weapons)"',
@@ -3648,7 +3648,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. fey",' +
-      '"+2 Perception (fey)/May make an immediate%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression on fey and retry a failure after 1 min conversation"',
+      '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation"',
   'First World Magic':
     'Section=magic ' +
     'Note="Can cast a chosen primal cantrip as an innate spell at will"',
@@ -3698,9 +3698,9 @@ Pathfinder2E.FEATURES = {
     'Section=feature,save ' +
     'Note=' +
       '"May safely eat spoiled food and when sickened",' +
-      '"+2 vs. conditions inflicted by ingestion, and successes on saves vs. ingestion conditions are critical successes"',
+      '"+2 vs. conditions inflicted by ingestion, and successes on Fortitude saves vs. ingestion conditions are critical successes"',
   'Razortooth Goblin':
-    'Section=combat Note="Jaw attack inflicts 1d6 HP piercing"',
+    'Section=combat Note="Jaws attack inflicts 1d6 HP piercing"',
   'Snow Goblin':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
@@ -3717,7 +3717,7 @@ Pathfinder2E.FEATURES = {
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/May attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival checks to Earn Income from using Subsist in a settlement"',
+    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/Can attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival checks to Earn Income from using Subsist in a settlement"',
   'Goblin Lore':
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
@@ -3727,7 +3727,7 @@ Pathfinder2E.FEATURES = {
   'Goblin Song':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R%{skillNotes.loudSinger?60:30}\' Successful Performance vs. Will DC of %{(rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8)+(skillNotes.loudSinger?1:0)} target%{rank.Performance<2&&!skillNotes.loudSinger?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
+    'Note="R%{combatNotes.loudSinger?60:30}\' Successful Performance vs. the Will DC of %{(rank.Performance<2?1:rank.Performance<3?2:rank.Performance<4?4:8)+(combatNotes.loudSinger?1:0)} target%{rank.Performance<2&&!combatNotes.loudSinger?\'\':\'s\'} inflicts -1 Perception and Will for 1 rd, or for 1 min on a critical success"',
   'Goblin Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -3752,7 +3752,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack %V (Dogslicer; Horsechopper; Goblin Weapons)"',
   'Very, Very Sneaky':
-    'Section=combat Note="Can Sneak at full Speed and without cover"',
+    'Section=skill ' +
+    'Note="Can Sneak at full Speed and Hide or Sneak without cover"',
 
   // Halfling
   'Gutsy Halfling':
@@ -3790,7 +3791,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer flat-footed during Balance or Climb"',
   'Titan Slinger':
     'Section=combat ' +
-    'Note="Slings inflict +1 damage die step vs. Large and larger foes"',
+    'Note="Slings inflict +1 damage die step vs. Large and larger targets"',
   'Unfettered Halfling':
     'Section=combat ' +
     'Note="Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
@@ -3798,10 +3799,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"Can use Aid to help another overcome enchantment or possession",' +
-      '"+2 Perception to sense enchantment or possession, and automatically attempts a -2 check to notice these"',
+      '"+2 Sense Motive to notice enchantment or possession, and automatically attempts a -2 check to notice these"',
   'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
-    'Note="+1 Ancestry Feat/Has the Adopted Ancestry (%ancestry) feature"',
+    'Note="+1 Ancestry Feat (%ancestry ancestry feat)/Has the Adopted Ancestry (%ancestry) feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
@@ -7848,7 +7849,7 @@ Pathfinder2E.FEATURES = {
     'Note="Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others, or twice that number with a critical success"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to Make An Impression immediately upon meeting and to retry after 1 min"',
+    'Note="Can make a -5 Diplomacy check to Make An Impression upon meeting and retry a failure after 1 min of conversation"',
   'Group Coercion':
     'Section=skill ' +
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
