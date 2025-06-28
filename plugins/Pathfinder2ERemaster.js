@@ -1248,14 +1248,16 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Ancestry,Dwarf Require="level >= 5","features.Darkvision"',
   'Dwarven Reinforcement':
     'Traits=Ancestry,Dwarf Require="level >= 5","rank.Crafting >= 2"',
-  'Echoes In Stone':'Traits=Ancestry,Dwarf Require="level >= 9"',
+  'Echoes In Stone':'Traits=Ancestry,Dwarf,Concentrate Require="level >= 9"',
   "Mountain's Stoutness":Pathfinder2E.FEATS["Mountain's Stoutness"],
   'Stone Bones':'Traits=Ancestry,Dwarf Require="level >= 9"',
   'Stonewalker':Pathfinder2E.FEATS.Stonewalker,
   'March The Mines':'Traits=Ancestry,Dwarf Require="level >= 13"',
   'Telluric Power':'Traits=Ancestry,Dwarf Require="level >= 13"',
-  'Stonegate':'Traits=Ancestry,Dwarf Require="level >= 17"',
-  'Stonewall':'Traits=Ancestry,Dwarf Require="level >= 17"',
+  'Stonegate':
+    'Traits=Ancestry,Dwarf,Uncommon ' +
+    'Require="level >= 17","features.Stonewalker"',
+  'Stonewall':'Traits=Ancestry,Dwarf,Earth,Polymorph Require="level >= 17"',
 
   // Elf
   'Ancestral Longevity':Pathfinder2E.FEATS['Ancestral Longevity'],
@@ -1273,8 +1275,10 @@ Pathfinder2ERemaster.FEATS = {
   // TODO requires "at least one innate spell gained from an elf ancestry feat"
   'Otherworldly Acumen':'Traits=Ancestry,Elf Require="level >= 9"',
   'Tree Climber':'Traits=Ancestry,Elf Require="level >= 9"',
-  'Avenge Ally':'Traits=Ancestry,Elf Require="level >= 13"',
-  'Universal Longevity':Pathfinder2E.FEATS['Universal Longevity'],
+  'Avenge Ally':'Traits=Ancestry,Elf,Fortune Require="level >= 13"',
+  'Universal Longevity':
+    Pathfinder2E.FEATS['Universal Longevity']
+    .replace('Expert Longevity', 'Ancestral Longevity'),
   'Magic Rider':'Traits=Ancestry,Elf Require="level >= 17"',
 
   // Gnome
@@ -1287,18 +1291,22 @@ Pathfinder2ERemaster.FEATS = {
   'Illusion Sense':Pathfinder2E.FEATS['Illusion Sense'],
   'Razzle-Dazzle':'Traits=Ancestry,Gnome',
   'Energized Font':Pathfinder2E.FEATS['Energized Font'],
-  'Project Persona':'Traits=Ancestry,Gnome Require="level >= 5"',
+  'Project Persona':
+    'Traits=Ancestry,Gnome,Concentrate,Illusion,Primal,Visual ' +
+    'Require="level >= 5"',
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
   'Cautious Curiosity (Arcane)':'Traits=Ancestry,Gnome Require="level >= 9"',
   'Cautious Curiosity (Occult)':'Traits=Ancestry,Gnome Require="level >= 9"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
-  'Life Leap':'Traits=Ancestry,Gnome Require="level >= 9"',
+  'Life Leap':'Traits=Ancestry,Gnome,Move,Teleportation Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
-  'Instinctive Obfuscation':'Traits=Ancestry,Gnome Require="level >= 13"',
-  'Homeward Bound':'Traits=Ancestry,Gnome Require="level >= 17"',
+  'Instinctive Obfuscation':
+    'Traits=Ancestry,Gnome,Illusion,Visual ' +
+    'Require="level >= 13"',
+  'Homeward Bound':'Traits=Ancestry,Gnome,Uncommon Require="level >= 17"',
 
   // Goblin
   'Burn It!':Pathfinder2E.FEATS['Burn It!'],
@@ -1318,7 +1326,7 @@ Pathfinder2ERemaster.FEATS = {
   'Cling':'Traits=Ancestry,Goblin Require="level >= 9"',
   'Skittering Scuttle':Pathfinder2E.FEATS['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATS['Very, Very Sneaky'],
-  'Reckless Abandon':'Traits=Ancestry,Goblin Require="level >= 17"',
+  'Reckless Abandon':'Traits=Ancestry,Goblin,Fortune Require="level >= 17"',
 
   // Halfling
   'Distracting Shadows':Pathfinder2E.FEATS['Distracting Shadows'],
@@ -1369,7 +1377,8 @@ Pathfinder2ERemaster.FEATS = {
   'Advanced General Training':'Traits=Ancestry,Human Require="level >= 13"',
   'Bounce Back':'Traits=Ancestry,Human Require="level >= 13"',
   'Stubborn Persistence':'Traits=Ancestry,Human Require="level >= 13"',
-  'Heroic Presence':'Traits=Ancestry,Human Require="level >= 17"',
+  'Heroic Presence':
+    'Traits=Ancestry,Human,Emotion,Mental Require="level >= 17"',
 
   // Leshy
   'Grasping Reach':'Traits=Ancestry,Leshy',
@@ -1383,7 +1392,8 @@ Pathfinder2ERemaster.FEATS = {
   'Leshy Glide':
     'Traits=Ancestry,Leshy ' +
     'Require="level >= 5","features.Leaf Leshy || features.Cat Fall"',
-  'Ritual Reversion':'Traits=Ancestry,Leshy Require="level >= 5"',
+  'Ritual Reversion':
+    'Traits=Ancestry,Leshy,Polymorph,Primal Require="level >= 5"',
   'Speak With Kindred':'Traits=Ancestry,Leshy Require="level >= 5"',
   'Bark And Tendril':'Traits=Ancestry,Leshy Require="level >= 9"',
   'Lucky Keepsake':
@@ -1392,7 +1402,7 @@ Pathfinder2ERemaster.FEATS = {
   'Thorned Seedpod':
     'Traits=Ancestry,Leshy Require="level >= 9",features.Seedpod',
   'Call Of The Green Man':'Traits=Ancestry,Leshy Require="level >= 13"',
-  'Cloak Of Poison':'Traits=Ancestry,Leshy Require="level >= 13"',
+  'Cloak Of Poison':'Traits=Ancestry,Leshy,Poison Require="level >= 13"',
   'Flourish And Ruin':'Traits=Ancestry,Leshy Require="level >= 17"',
   'Regrowth':'Traits=Ancestry,Leshy Require="level >= 17"',
 
