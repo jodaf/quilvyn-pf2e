@@ -3901,10 +3901,7 @@ Pathfinder2ERemaster.FEATS = {
       '"rank.Fortitude >= 2"',
 
   */
-  'Bard Dedication':
-    Pathfinder2E.FEATS['Bard Dedication']
-    .replace(/level\s*>=\s*2/, 'level >= 2 || features.Ancient Elf')
-    .replace(/charisma\s*>=\s*14/, 'charismaModifier >= 2'),
+  'Bard Dedication':Pathfinder2E.FEATS['Bard Dedication'],
   /*
   'Basic Bard Spellcasting':
     'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
@@ -4831,24 +4828,24 @@ Pathfinder2ERemaster.FEATURES = {
   'Incredible Improvisation':Pathfinder2E.FEATURES['Incredible Improvisation'],
   'Multitalented':Pathfinder2E.FEATURES.Multitalented,
   'Advanced General Training':
-    'Section=feature Note="+1 General Feat (7th level)"',
+    'Section=feature Note="+1 General Feat (up to 7th level)"',
   'Bounce Back':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Wounded condition does not increase when losing the dying condition once per day"',
+    'Note="Recovery from dying does not increase the wounded condition once per day"',
   'Stubborn Persistence':
-    'Section=save Note="Can avoid fatigue with a successful DC 17 flat check"',
+    'Section=save Note="Successful DC 17 flat check negates becoming fatigued"',
   'Heroic Presence':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R30\' Generates the effects of a 6th-level Zealous Conviction on 10 willing creatures once per day"',
+    'Note="R30\' Generates the effects of a 6th-rank <i>Zealous Conviction</i> on 10 willing creatures once per day"',
 
   // Leshy
   'Cactus Leshy':
     'Section=combat Note="Spines unarmed attack inflicts 1d6 HP piercing"',
   'Fruit Leshy':
     'Section=magic ' +
-    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 HP if eaten within an hr after removal"',
+    'Note="Produces a fruit each day that restores %{1+(level-1)//2}d8 Hit Points if eaten within an hr after removal"',
   'Fungus Leshy':
     'Section=feature,feature ' +
     'Note=' +
@@ -4868,7 +4865,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"+2 Hit Points",' +
       '"+2 vs. attempts to Reposition, Shove, or Trip",' +
       '"Can go 2 weeks without sunlight before starving",' +
-      '"+2 vs. spells and effects that move and knock prone"',
+      '"+2 vs. spells and effects that move or knock prone"',
   'Seaweed Leshy':
     'Section=ability,ability ' +
     'Note=' +
@@ -4885,7 +4882,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Shameless Request feature",' +
-      '"+1 Initiative when using Deception"',
+      '"+1 initiative when using Deception"',
   'Leshy Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -4895,7 +4892,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction Section=save Note="+1 on the triggering save"',
   'Seedpod':
     'Section=combat ' +
-    'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed on a critical success"',
+    'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed until the start of the next turn on a critical success"',
   'Shadow Of The Wilds':
     'Section=skill ' +
     'Note="Has continuous Covering Tracks effects outside of urban environments"',
@@ -4906,12 +4903,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Has the Anchor and Steady Balance features"',
   'Anchor':
     'Action=1 ' +
-    'Section=combat ' +
-    'Note="Gives +%{$\'features.Root Leshy\'?4:2} vs. Reposition, Shove, and Trip attempts and reduces the distance on a successful attempt by half; taking a move action ends"',
+    'Section=save ' +
+    'Note="Gives +%{$\'features.Root Leshy\'?4:2} vs. Reposition, Shove, Trip, magical move, and magical knock prone and reduces the distance on a successful attempt by half; taking a move action ends"',
   'Leshy Glide':
     'Action=1 ' +
     'Section=ability ' +
-    'Note="Can glide downward, moving 5\' down and up to 25\' forward each rd"',
+    'Note="Glides downward, moving 5\' down and up to 25\' forward each rd"',
   'Ritual Reversion':
     'Action=2 ' +
     'Section=magic ' +
@@ -4986,7 +4983,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"+1 General Feat (Pet or Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
-    'Section=combat Note="Fists can inflict lethal damage and can shove"',
+    'Section=combat Note="Fists inflict lethal damage and can shove"',
   'Orc Ferocity':Pathfinder2E.FEATURES['Orc Ferocity'],
   'Orc Lore':
     'Section=feature,skill ' +
@@ -5026,7 +5023,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successes on Athletics to Climb or Swim are critical successes"',
   'Bloody Blows':
     'Section=combat ' +
-    'Note="Lethal unarmed attacks inflict 1d4 HP persistent bleed damage"',
+    'Note="Lethal unarmed attacks inflict 1d4 HP persistent bleed"',
   'Defy Death':
     'Section=save ' +
     'Note="-1 DC on dying recovery checks/Suffers no debilitation after being returned to life"',
@@ -5040,11 +5037,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Partnered animals have the Orc Ferocity %{$\'features.Undying Ferocity\'?\'and Undying Ferocity features\':\'feature\'}"',
   'Spell Devourer':
     'Section=save ' +
-    'Note="Successful saves vs. magic give temporary HP equal do double the spell rank or equal to the effect level"',
+    'Note="Successful saves vs. magic give temporary HP equal to the effect level or double the spell rank"',
   'Rampaging Ferocity':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Using Orc Ferocity gives a Strike against the attacking foe and gives another use of Orc Ferocity if the Strike reduces the foe to 0 HP"',
+    'Note="Using Orc Ferocity gives a Strike against the attacking foe that allows another use of Orc Ferocity if it reduces the foe to 0 HP"',
 
   // Changeling
   'Changeling':
@@ -12605,6 +12602,9 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
+  } else if(name == 'Elf') {
+    rules.defineRule
+      ('multiclassLevelRequirementsWaived', 'features.Ancient Elf', '=', '1');
   } else if(name == 'Gnome') {
     // Make sure there's a featCount.Skill to increment
     rules.defineRule('featCount.Skill', 'features.Gnome Obsession', '^=', '0');
