@@ -2829,7 +2829,7 @@ Pathfinder2E.FEATS = {
   'Alchemist Dedication':
     'Traits=Archetype,Dedication,Multiclass,Alchemist ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Alchemist == 0"',
   'Basic Concoction':
@@ -2863,7 +2863,7 @@ Pathfinder2E.FEATS = {
   'Barbarian Dedication':
     'Traits=Archetype,Dedication,Multiclass,Barbarian ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"constitutionModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Barbarian == 0"',
@@ -2895,7 +2895,7 @@ Pathfinder2E.FEATS = {
   'Bard Dedication':
     'Traits=Archetype,Dedication,Multiclass,Bard ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Bard == 0"',
   'Basic Bard Spellcasting':
@@ -2932,7 +2932,7 @@ Pathfinder2E.FEATS = {
   'Champion Dedication':
     'Traits=Archetype,Dedication,Multiclass,Champion ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Champion == 0"',
@@ -2976,7 +2976,7 @@ Pathfinder2E.FEATS = {
   'Cleric Dedication':
     'Traits=Archetype,Dedication,Multiclass,Cleric ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Cleric == 0"',
   'Basic Cleric Spellcasting':
@@ -3006,7 +3006,7 @@ Pathfinder2E.FEATS = {
   'Druid Dedication':
     'Traits=Archetype,Dedication,Multiclass,Druid ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"wisdomModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
@@ -3038,7 +3038,7 @@ Pathfinder2E.FEATS = {
   'Fighter Dedication':
     'Traits=Archetype,Dedication,Multiclass,Fighter ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multitalentedHalfElf",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
@@ -3069,7 +3069,7 @@ Pathfinder2E.FEATS = {
   'Monk Dedication':
     'Traits=Archetype,Dedication,Multiclass,Monk ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"strengthModifier >= 2 || multitalentedHalfElf",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Monk == 0"',
@@ -3097,7 +3097,7 @@ Pathfinder2E.FEATS = {
   'Ranger Dedication':
     'Traits=Archetype,Dedication,Multiclass,Ranger ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"dexterityModifier >= 2 || multitalentedHalfElf",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
@@ -3123,7 +3123,7 @@ Pathfinder2E.FEATS = {
   'Rogue Dedication':
     'Traits=Archetype,Dedication,Multiclass,Rogue ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Rogue == 0"',
   'Basic Trickery':
@@ -3150,7 +3150,7 @@ Pathfinder2E.FEATS = {
   'Sorcerer Dedication':
     'Traits=Archetype,Dedication,Multiclass,Sorcerer ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Sorcerer == 0"',
   'Basic Sorcerer Spellcasting':
@@ -3200,7 +3200,7 @@ Pathfinder2E.FEATS = {
   'Wizard Dedication':
     'Traits=Archetype,Dedication,Multiclass,Wizard ' +
     'Require=' +
-      '"level >= 2",' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
       '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
       '"levels.Wizard == 0"',
   'Arcane School Spell':
@@ -16117,7 +16117,8 @@ Pathfinder2E.weaponRules = function(
     'rank.' + category, '=', null,
     'rank.' + categoryAndGroup, '^=', null,
     'rank.' + name, '^=', null,
-    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]'
+    'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
+    'weaponFamiliarity.' + name, '^=', 'dict["rank.' + lowerCategory + '"]'
   );
   if(group == 'Bombs') {
     rules.defineRule
