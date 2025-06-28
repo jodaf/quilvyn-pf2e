@@ -1459,6 +1459,8 @@ Pathfinder2ERemaster.FEATS = {
   'Angelkin':'Traits=Ancestry,Nephilim,Lineage',
   'Grimspawn':'Traits=Ancestry,Nephilim,Lineage',
   'Hellspawn':'Traits=Ancestry,Nephilim,Lineage',
+  'Lawbringer':'Traits=Ancestry,Nephilim,Lineage',
+  'Musetouched':'Traits=Ancestry,Nephilim,Lineage',
   'Pitborn':'Traits=Ancestry,Nephilim,Lineage',
   'Bestial Manifestation (Claw)':'Traits=Ancestry,Nephilim',
   'Bestial Manifestation (Hoof)':'Traits=Ancestry,Nephilim',
@@ -1469,7 +1471,10 @@ Pathfinder2ERemaster.FEATS = {
   'Nephilim Lore':'Traits=Ancestry,Nephilim',
   'Nimble Hooves':'Traits=Ancestry,Nephilim',
   'Blessed Blood':'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Extraplanar Supplication':'Traits=Ancestry,Nephilim Require="level >= 5"',
+  'Extraplanar Supplication (Bane)':
+    'Traits=Ancestry,Nephilim Require="level >= 5"',
+  'Extraplanar Supplication (Bless)':
+    'Traits=Ancestry,Nephilim Require="level >= 5"',
   'Nephilim Resistance':'Traits=Ancestry,Nephilim Require="level >= 5"',
   'Scion Of Many Planes':'Traits=Ancestry,Nephilim Require="level >= 5"',
   'Skillful Tail':'Traits=Ancestry,Nephilim Require="level >= 5"',
@@ -1494,10 +1499,12 @@ Pathfinder2ERemaster.FEATS = {
   // Aiuvarin
   'Earned Glory':'Traits=Ancestry,Aiuvarin',
   'Elf Atavism':
-     Pathfinder2E.FEATS['Inspire Imitation'].replace('Half-Elf', 'Aiuvarin'),
-  'Inspire Imitation':'Traits=Ancestry,Aiuvarin Require="level >= 5"',
+     Pathfinder2E.FEATS['Elf Atavism']
+     .replace('Half-Elf', 'Aiuvarin'),
+  'Inspire Imitation':Pathfinder2E.FEATS['Inspire Imitation'],
   'Supernatural Charm':
-     Pathfinder2E.FEATS['Supernatural Charm'].replace('Half-Elf', 'Aiuvarin'),
+     Pathfinder2E.FEATS['Supernatural Charm']
+     .replace('Half-Elf', 'Aiuvarin'),
 
   // Dromaar
   'Monstrous Peacemaker':
@@ -4549,7 +4556,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Stonewalker':
     Pathfinder2E.FEATURES.Stonewalker
     .replace('Stonecunning', "Stonemason's Eye")
-    .replace('Meld Into Stone', 'One With Stone'),
+    .replace('Meld Into Stone', 'One With Stone')
+    .replace('level', 'rank'),
   'March The Mines':
     'Action=2 ' +
     'Section=combat ' +
@@ -4928,7 +4936,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can speak with plants and fungi and gains +2 Diplomacy with plants or fungi of the same kind as self"',
   'Bark And Tendril':
     'Section=magic ' +
-    'Note="Knows the Entangling Flora and Oaken Resilience primal innate spells; can cast each at rank 2 once per day"',
+    'Note="Knows the Entangling Flora and Oaken Resilience primal innate spells; can cast each at 2nd rank once per day"',
   'Lucky Keepsake':
     'Section=save Note="+1 vs. spells and magical effects"',
   'Solar Rejuvenation':
@@ -4939,17 +4947,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Critical hits with seedpods inflict 1d4 HP persistent piercing"',
   'Call Of The Green Man':
     'Section=magic ' +
-    'Note="Knows the Plant Form primal innate spell; can cast it at rank %{level>=17?6:5} once per day"',
+    'Note="Knows the Plant Form primal innate spell; can cast it at %{level>=17?6:5}th rank once per day"',
   'Cloak Of Poison':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min"',
   'Flourish And Ruin':
     'Section=magic ' +
-    'Note="Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at rank 6 once per day"',
+    'Note="Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at 6th rank once per day"',
   'Regrowth':
     'Section=magic ' +
-    'Note="Knows the Regenerate primal innate spell; can cast it at rank 7 once per day"',
+    'Note="Knows the Regenerate primal innate spell; can cast it at 7th rank once per day"',
 
   // Orc
   'Badlands Orc':
@@ -5066,11 +5074,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Callow May':
     'Section=combat,feature ' +
     'Note=' +
-      '"Rolling Deception for initiative causes foes that haven\'t acted to be off-guard",' +
+      '"Rolling Deception for initiative makes foes that haven\'t acted off-guard vs. self",' +
       '"Has the Charming Liar feature"',
   'Dream May':
     'Section=save ' +
-    'Note="+2 vs. sleep and dream effects/Sleep restores double normal HP and reduces drained and doomed conditions by 2"',
+    'Note="+2 vs. sleep and dream effects/Sleep restores %{constitutionModifier*level} Hit Points and reduces drained and doomed conditions by 2"',
   'Slag May':'Section=combat Note="Cold-iron claws inflict 1d6 HP slashing"',
 
   'Changeling Lore':
@@ -5082,7 +5090,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Hag's Sight":'Section=feature Note="Has the Darkvision feature"',
   'Called':
     'Section=save ' +
-    'Note="+1 vs. mental effects, and successes vs. control are critical successes"',
+    'Note="+1 vs. mental effects, and successes vs. mental control are critical successes"',
   'Mist Child':
     'Section=combat ' +
     'Note="Increases the flat check DC to target self when concealed or hidden to 6 or 12"',
@@ -5092,31 +5100,37 @@ Pathfinder2ERemaster.FEATURES = {
   'Occult Resistance':'Section=save Note="+1 vs. occult effects"',
   'Hag Magic':
     'Section=magic ' +
-    'Note="Can cast a chosen spell up to 4th rank as an occult innate spell once per day"',
+    'Note="Can cast a chosen spell up to 4th rank as an occult innate spell at 4th rank once per day"',
 
   // Nephilim
   'Angelkin':
     'Section=feature,skill ' +
     'Note=' +
-      '"Has the Multilingual feature",' +
+      '"Has the Multilingual and Celestial features",' +
       '"Skill Trained (Society)/Knows the Empyrean language"',
   'Grimspawn':
-    'Section=feature Note="Has the Diehard feature"',
+    'Section=feature Note="Has the Diehard and Fiendish features"',
   'Hellspawn':
     'Section=feature,skill ' +
     'Note=' +
-      '"Has the Lie To Me feature",' +
+      '"Has the Lie To Me and Fiendish features",' +
       '"Skill Trained (Deception; Legal Lore)"',
   'Lawbringer':
-    'Section=save ' +
-    'Note="+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
+    'Section=feature,save ' +
+    'Note=' +
+      '"Has the Celestial feature",' +
+      '"+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
   'Musetouched':
-    'Section=combat ' +
-    'Note="+1 on Escape attempts, critical Escape failures are normal failure, and successes to Escape are critical successes"',
+    'Section=combat,feature ' +
+    'Note=' +
+      '"+1 on Escape attempts, critical failures to Escape are normal failures, and successes to Escape are critical successes",' +
+      '"Has the Celestial feature"',
   'Pitborn':
-    'Section=skill ' +
-    // TODO randomizeOneAttribute won't process this extra feat properly
-    'Note="Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Fiendish feature",' +
+      // TODO randomizeOneAttribute won't process this extra feat properly
+      '"Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
 
   'Nephilim':
     'Section=feature,feature ' +
@@ -5133,57 +5147,57 @@ Pathfinder2ERemaster.FEATURES = {
   'Bestial Manifestation (Tail)':
     'Section=combat Note="Tail inflicts 1d4 HP bludgeoning"',
   'Halo':
-    'Section=feature Note="Can evoke a halo that lights a 20\' radius"',
+    'Section=magic ' +
+    'Note="Knows the Light divine cantrip; can evoke and supress it at will"',
   'Nephilim Eyes':
     'Section=feature Note="Has the Darkvision feature"',
   'Nephilim Lore':
     'Section=feature,skill ' +
     'Note=' +
-      '"Has the Additional Lore (Choose 1 from any Planar Lore)",' +
+      '"+1 Skill Feat (Additional Lore for a related plane)",' +
       '"Skill Trained (Choose 1 from Diplomacy, Intimidation; Religion)"',
   'Nimble Hooves':'Section=ability Note="+5 Speed"',
   'Blessed Blood':
     'Section=combat,skill ' +
     'Note=' +
-      '"Blood inflicts 1d6 HP spirit on an attacker that inflicts unarmed slashing or piercing damage",' +
-      '"+4 Craft to create <i>holy water</i> using own blood"',
+      '"Blood inflicts 1d6 HP spirit on a fiend, undead, or creature with holy weakness that inflicts unarmed slashing or piercing damage",' +
+      '"+4 Crafting to create <i>holy water</i> using own blood"',
   'Extraplanar Supplication (Bane)':
     'Section=magic ' +
-    'Note="Knows the Bane divine innate spell; can cast it once per day at 1st rank"',
+    'Note="Knows the Bane divine innate spell; can cast it at 1st rank once per day"',
   'Extraplanar Supplication (Bless)':
     'Section=magic ' +
-    'Note="Knows the Bless divine innate spell; can cast it once per day at 1st rank"',
+    'Note="Knows the Bless divine innate spell; can cast it at 1st rank once per day"',
   'Nephilim Resistance':
-    'Section=save Note="Has resistance 5 to choice of energy"',
+    'Section=save Note="Has resistance 5 to a choice of energy"',
   'Scion Of Many Planes':
     'Section=feature Note="+1 Ancestry Feat (Nephilim lineage)"',
   'Skillful Tail':
     'Section=feature Note="Can use tail for simple Interact actions"',
   'Celestial Magic':
     'Section=magic ' +
-    'Note="Knows choice of two 2nd-rank divine innate spells; can cast each once per day"',
+    'Note="Knows two divine innate spells; can cast each at 2nd rank once per day"',
   'Divine Countermeasures':'Section=save Note="+1 vs. divine effects"',
   'Divine Wings':
     'Action=2 ' +
     'Section=ability ' +
-    'Note="Brings forth wings that give %{speed}\' fly Speed for 10 min"',
+    'Note="Brings forth wings that give a %{speed}\' fly Speed for 10 min"',
   'Fiendish Magic':
     'Section=magic ' +
-    'Note="Knows choice of two 2nd-rank divine innate spells; can cast each once per day"',
+    'Note="Knows two divine innate spells; can cast each at 2nd rank once per day"',
   'Celestial Mercy':
     'Section=magic ' +
-    'Note="Knows the Cleanse Affliction divine innate spell; can cast it twice per day at 4th rank"',
+    'Note="Knows the Cleanse Affliction divine innate spell; can cast it at 4th rank twice per day"',
   'Slip Sideways':
     'Section=magic ' +
-    'Note="Knows the Translocate divine innate spell; can cast it twice per day at 5th rank"',
+    'Note="Knows the Translocate divine innate spell; can cast it at 5th rank twice per day"',
   'Summon Nephilim Kin':
     'Section=magic ' +
-    'Note="Can cast a summoning spell to call divine allies as a 5th-rank divine innate spell once per day"',
+    'Note="Can cast a summoning divine innate spell at 5th rank to once per day call divine allies"',
   'Divine Declaration':
     'Section=magic ' +
-    'Note="Knows the Divine Decree divine innate spell; can cast it once per day at 7th rank"',
-  'Eternal Wings':
-    'Section=ability Note="Wings give continuous %{speed}\' fly Speed"',
+    'Note="Knows the Divine Decree divine innate spell; can cast it at 7th rank once per day"',
+  'Eternal Wings':'Section=ability Note="Has a %{speed}\' fly Speed"',
 
   // Aiuvarin
   'Aiuvarin':
@@ -5192,13 +5206,16 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Low-Light Vision feature",' +
       '"Has the elf and aiuvarin traits and may take elf and aiuvarin ancestry feats"',
   'Earned Glory':
-    'Section=feature,skill ' +
+    'Section=feature,skill,skill ' +
     'Note=' +
       '"Has the Impressive Performance feature",' +
-      '"Skill Trained (Performance)"',
+      '"Skill Trained (Performance)",' +
+      '"Critical failures on Performance to Make An Impression on an elf are normal failures"',
   'Elf Atavism':Pathfinder2E.FEATURES['Elf Atavism'],
   'Inspire Imitation':Pathfinder2E.FEATURES['Inspire Imitation'],
-  'Supernatural Charm':Pathfinder2E.FEATURES['Supernatural Charm'],
+  'Supernatural Charm':
+    Pathfinder2E.FEATURES['Supernatural Charm']
+    .replace('level', 'rank'),
 
   // Dromaar
   'Dromaar':
@@ -5473,7 +5490,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Consuming a piece of a foe\'s fresh corpse gives temporary Hit Points equal to the foe\'s level for 1 min"',
   'Distant Cackle':
     'Section=magic ' +
-    'Note="Knows the Ventriloquism occult innate spell; can cast it once per day at rank 1"',
+    'Note="Knows the Ventriloquism occult innate spell; can cast it at 1st rank once per day"',
   'Pack Stalker':
     'Section=combat,feature ' +
     'Note=' +
@@ -5495,11 +5512,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Breath Like Honey':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Enthrall occult innate spell; can cast it once a day with a range of 30\'",' +
+      '"Knows the Enthrall occult innate spell; can cast it at 3rd rank once a day with a range of 30\'",' +
       '"Has increased Sweetbreath Kholo effects"',
   "Grandmother's Wisdom":
     'Section=magic ' +
-    'Note="Knows the Augury occult innate spell; can cast it twice a day at 2nd rank"',
+    'Note="Knows the Augury occult innate spell; can cast it at 2nd rank twice a day"',
   'Laughing Kholo':'Section=feature Note="Has the Battle Cry feature"',
   "Ancestor's Rage":
     'Section=magic ' +
@@ -5512,7 +5529,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="TODO"',
   'Impaling Bone':
     'Section=magic ' +
-    'Note="Knows the Impaling Spike occult innate spell; can cast it once per day at 7th rank to affect corporeal or incorporeal targets"',
+    'Note="Knows the Impaling Spike occult innate spell; can cast it at 7th rank once per day to affect corporeal or incorporeal targets"',
   'Legendary Laugh':
     'Section=feature,skill ' +
     'Note=' +
@@ -5530,7 +5547,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"+1 vs. dragon breath, sleep, and paralysis"',
   'Elementheart Kobold':
     'Section=save ' +
-    'Note="+1 vs. choice of cold, electricity, fire, sonic, acid, or poison"',
+    'Note="+1 vs. a choice of cold, electricity, fire, sonic, acid, or poison"',
   'Kobold Heritage':'Section=feature Note="1 selection"',
   'Spellhorn Kobold':
     'Section=magic ' +
@@ -5715,7 +5732,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Lizardfolk ancestry attacks have the <i>ghost touch</i> property"',
   'Primal Rampage':
     'Section=magic ' +
-    'Note="Knows the Unfettered Movement and Mountain Resilience primal innate spells; can each once per day or use 3 actions to cast both simultaneously"',
+    'Note="Knows the Unfettered Movement and Mountain Resilience primal innate spells; can each at 4th rank once per day or use 3 actions to cast both simultaneously"',
   'Fossil Rider':
     'Section=magic ' +
     'Note="Knows the Mask Of Terror primal innate spell; can cast it once per day"',
@@ -5897,7 +5914,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gains the benefits of 5 min <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form"',
   'Trickster Tengu':
     'Section=magic ' +
-    'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast one of the once per day at 7th rank"',
+    'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast one of them at 7th rank once per day"',
 
   // Tripkee
   // Low-Light Vision as above
@@ -6028,13 +6045,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Fangs inflict +1d4 HP persistent bleed on a critical hit"',
   'Night Magic':
     'Section=magic ' +
-    'Note="Knows the Animal Form and Mist divine innate spells; can cast each (Animal Form wolf only) once per day at 2nd rank"',
+    'Note="Knows the Animal Form and Mist divine innate spells; can cast each (Animal Form wolf only) at 2nd rank once per day"',
   'Form Of The Bat':
     'Section=magic ' +
-    'Note="Knows the Pest Form divine innate spell; can cast it (bat only) once per hr"',
+    'Note="Knows the Pest Form divine innate spell; can cast it (bat only) at 4th rank once per hr"',
   'Symphony Of Blood':
     'Section=magic ' +
-    'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it once per day"',
+    'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it at 7th rank once per day"',
 
   // Dragonblood
   'Dragonblood':
@@ -6110,7 +6127,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Form Of The Dragon':
     'Section=magic ' +
     // TODO tradition varies
-    'Note="Knows the Dragon Form primal innate spell; can cast it once per day at 8th rank"',
+    'Note="Knows the Dragon Form primal innate spell; can cast it at 8th rank once per day"',
   'Lingering Breath':
     'Section=combat ' +
     'Note="Breath Of The Dragon inflicts difficult terrain for 1 min, and targets that critically fail their saves suffer +2d6 HP persistent damage"',
@@ -6155,14 +6172,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+1 vs. death effects, disease, and undead or sahkils, and +2 vs. undead and sahkil death effects and disease"',
   'Duskwalker Magic':
     'Section=magic ' +
-    'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast earch once per day at 2nd rank"',
+    'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast earch at 2nd rank once per day"',
   'Quietus Strikes':
     'Section=combat ' +
     'Note="Attacks are magical and inflict +1 HP void or vitality, or +2 with a <i>+3 potency</i> rune"',
   'Resist Ruin':
     'Section=magic,save ' +
     'Note=' +
-      '"Knows the False Vitality divine innate spell; can cast it once per day at 5th rank",' +
+      '"Knows the False Vitality divine innate spell; can cast it at 5th rank once per day",' +
       '"Has resistance 5 to void"',
   "Boneyard's Call":
     'Section=magic ' +
@@ -6807,7 +6824,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Raise Menhir':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="R30\' 15\' radius gives creatures +2 saves vs. choice of arcane, divine, or occult effects while sustained up to 1 min"',
+    'Note="R30\' 15\' radius gives creatures +2 saves vs. a choice of arcane, divine, or occult effects while sustained up to 1 min"',
   'Soaring Shape':
     Pathfinder2E.FEATURES['Soaring Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -7119,7 +7136,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(' once per rd', ''),
   'Initiate Warden':
     'Section=magic ' +
-    'Note="Knows choice of warden spell/Has a focus pool with at least 1 Focus Point"',
+    'Note="Knows a choice of warden spell/Has a focus pool with at least 1 Focus Point"',
   'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
     Pathfinder2E.FEATURES['Twin Takedown']
@@ -7157,7 +7174,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Quick Draw':Pathfinder2E.FEATURES['Quick Draw'],
   'Advanced Warden':
     'Section=magic ' +
-    'Note="Knows choice of advanced warden spell/+1 Focus Points"',
+    'Note="Knows a choice of advanced warden spell/+1 Focus Points"',
   "Companion's Cry":Pathfinder2E.FEATURES["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATURES['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATURES['Far Shot'],
@@ -7169,7 +7186,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Successful Recall Knowledge on hunted prey gives a Recall Knowledge check on another creature"',
   'Masterful Warden':
-    'Section=magic Note="Knows choice of warden spell/+1 Focus Points"',
+    'Section=magic Note="Knows a choice of warden spell/+1 Focus Points"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATURES['Skirmish Strike'],
   'Snap Shot':Pathfinder2E.FEATURES['Snap Shot'],
@@ -7184,7 +7201,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Master Monster Hunter':Pathfinder2E.FEATURES['Master Monster Hunter'],
   'Peerless Warden':
     'Section=magic ' +
-    'Note="Knows choice of peerless warden spell/+1 Focus Points"',
+    'Note="Knows a choice of peerless warden spell/+1 Focus Points"',
   'Penetrating Shot':Pathfinder2E.FEATURES['Penetrating Shot'],
   // Twin Riposte as above
   "Warden's Step":Pathfinder2E.FEATURES["Warden's Step"],
@@ -7554,7 +7571,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Veil Of Dreams hex, and familiar knows the Sleep spell"',
   'Basic Lesson (Elements)':
     'Section=magic ' +
-    'Note="Knows the Elemental Betrayal hex, and familiar knows the choice of the Breath Fire, Gust Of Wind, Hydraulic Push, or Pummeling Rubble spells"',
+    'Note="Knows the Elemental Betrayal hex, and familiar knows a choice of the Breath Fire, Gust Of Wind, Hydraulic Push, or Pummeling Rubble spells"',
   'Basic Lesson (Life)':
     'Section=magic ' +
     'Note="Knows the Life Boost hex, and familiar knows the Spirit Link spell"',
@@ -9143,7 +9160,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Shove', 'Reposition, Shove'),
   'Qi Spells':
     'Section=magic ' +
-    'Note="Knows choice of 1st-rank monk qi spell/Has a focus pool with 1 Focus Point"',
+    'Note="Knows a choice of 1st-rank monk qi spell/Has a focus pool with 1 Focus Point"',
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -9182,7 +9199,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
   'Advanced Qi Spells':
     'Section=magic ' +
-    'Note="Knows choice of 3rd-rank monk qi spell/+1 Focus Points"',
+    'Note="Knows a choice of 3rd-rank monk qi spell/+1 Focus Points"',
   'Align Qi':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -9284,7 +9301,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Master Of Many Styles as above
   'Master Qi Spells':
     'Section=magic ' +
-    'Note="Knows choice of 8th-rank monk qi spell/+1 Focus Points"',
+    'Note="Knows a choice of 8th-rank monk qi spell/+1 Focus Points"',
   'One-Millimeter Punch':
     'Section=combat ' +
     'Note="One-Inch Punch inflicts 10\' Push (<b>save Fortitude</b> inflicts 5\' Push; critical success negates; critical failure inflicts 10\' Push per action"',
@@ -9294,7 +9311,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('forceful trait', 'forceful and deadly d10 traits'),
   'Grandmaster Qi Spells':
     'Section=magic ' +
-    'Note="Knows choice of 9th-rank monk qi spell/+1 Focus Points"',
+    'Note="Knows a choice of 9th-rank monk qi spell/+1 Focus Points"',
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
@@ -9671,7 +9688,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
   'Group Impression': // Target counts changed
     'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
+    'Note="Can use Diplomacy to Make An Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
   'Hefty Hauler':Pathfinder2E.FEATURES['Hefty Hauler'],
   'Hobnobber':
     Pathfinder2E.FEATURES.Hobnobber.replace('when taking normal time ', ''),
@@ -10405,7 +10422,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Melee spell attack inflicts 2d6 HP choice of slashing or piercing, plus 2 HP persistent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
+      '"Melee spell attack inflicts 2d6 HP slashing or piercing, plus 2 HP persistent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
   'Grease':
     Pathfinder2E.SPELLS.Grease
     .replace('Conjuration', 'Concentrate,Manipulate'),
@@ -11655,7 +11672,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +1 Armor Class and saves vs. choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives +2 bonus"',
+      '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives +2 bonus"',
   'Cackle':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Concentrate,Curse,Death,Hex,Manipulate,Void ' +
@@ -11686,7 +11703,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Inflicts weakness 2 to choice of element while sustained for up to 1 min (<b>heightened +2</b> inflicts weakness +1)"',
+      '"R30\' Inflicts weakness 2 to a choice of element while sustained for up to 1 min (<b>heightened +2</b> inflicts weakness +1)"',
   'Life Boost':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Healing,Hex,Manipulate,Vitality ' +
@@ -11700,7 +11717,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Successful attacks by the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
+      '"Successful attacks by the target\'s shadow inflict 1d10+%{spellModifier.%tradition} HP of a choice of damage type on target each rd while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d10 HP)"',
   'Needle Of Vengeance':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Hex,Manipulate,Mental ' +
@@ -11879,7 +11896,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"Gives self choice of +20\' Speed, %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min"',
+      '"Gives self a choice of +20\' Speed, %{speed//2}\' climb or swim Speed, darkvision, 60\' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min"',
   'Hand Of The Apprentice':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Attack,Manipulate ' +
