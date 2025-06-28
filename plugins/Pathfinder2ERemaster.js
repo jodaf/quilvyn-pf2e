@@ -1467,7 +1467,8 @@ Pathfinder2ERemaster.FEATS = {
   'Bestial Manifestation (Jaws)':'Traits=Ancestry,Nephilim',
   'Bestial Manifestation (Tail)':'Traits=Ancestry,Nephilim',
   'Halo':'Traits=Ancestry,Nephilim',
-  'Nephilim Eyes':'Traits=Ancestry,Nephilim',
+  'Nephilim Eyes':
+    'Traits=Ancestry,Nephilim Require="features.Low-Light Vision"',
   'Nephilim Lore':'Traits=Ancestry,Nephilim',
   'Nimble Hooves':'Traits=Ancestry,Nephilim',
   'Blessed Blood':'Traits=Ancestry,Nephilim Require="level >= 5"',
@@ -1481,7 +1482,7 @@ Pathfinder2ERemaster.FEATS = {
   'Celestial Magic':
     'Traits=Ancestry,Nephilim Require="level >= 9","features.Celestial"',
   'Divine Countermeasures':'Traits=Ancestry,Nephilim Require="level >= 9"',
-  'Divine Wings':'Traits=Ancestry,Nephilim Require="level >= 9"',
+  'Divine Wings':'Traits=Ancestry,Nephilim,Divine,Morph Require="level >= 9"',
   'Fiendish Magic':
     'Traits=Ancestry,Nephilim ' +
     'Require=' +
@@ -1491,7 +1492,8 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Ancestry,Nephilim Require="level >= 13","features.Celestial"',
   'Slip Sideways':
     'Traits=Ancestry,Nephilim Require="level >= 13","features.Fiendish"',
-  'Summon Nephilim Kin':'Traits=Ancestry,Nephilim Require="level >= 13"',
+  'Summon Nephilim Kin':
+    'Traits=Ancestry,Nephilim Require="level >= 13","sumLineageFeats > 0"',
   'Divine Declaration':'Traits=Ancestry,Nephilim Require="level >= 17"',
   'Eternal Wings':
     'Traits=Ancestry,Nephilim Require="level >= 17","features.Divine Wings"',
@@ -1501,15 +1503,19 @@ Pathfinder2ERemaster.FEATS = {
   'Elf Atavism':
      Pathfinder2E.FEATS['Elf Atavism']
      .replace('Half-Elf', 'Aiuvarin'),
-  'Inspire Imitation':Pathfinder2E.FEATS['Inspire Imitation'],
+  'Inspire Imitation':
+     Pathfinder2E.FEATS['Inspire Imitation']
+     .replace('Half-Elf', 'Aiuvarin'),
   'Supernatural Charm':
      Pathfinder2E.FEATS['Supernatural Charm']
      .replace('Half-Elf', 'Aiuvarin'),
 
   // Dromaar
   'Monstrous Peacemaker':
-     Pathfinder2E.FEATS['Monstrous Peacemaker'].replace('Half-Orc', 'Dromaar'),
-  'Orc Sight':Pathfinder2E.FEATS['Orc Sight'].replace('Half-Orc', 'Dromaar'),
+     Pathfinder2E.FEATS['Monstrous Peacemaker']
+     .replace('Half-Orc', 'Dromaar'),
+  'Orc Sight':Pathfinder2E.FEATS['Orc Sight']
+     .replace('Half-Orc', 'Dromaar'),
 
   // Core 2
 
