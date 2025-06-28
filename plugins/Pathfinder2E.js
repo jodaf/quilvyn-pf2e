@@ -1009,6 +1009,8 @@ Pathfinder2E.DEITIES = {
 Pathfinder2E.FEATS = {
 
   // Ancestries
+
+  // Dwarf
   'Dwarven Lore':'Traits=Ancestry,Dwarf',
   'Dwarven Weapon Familiarity':'Traits=Ancestry,Dwarf',
   'Rock Runner':'Traits=Ancestry,Dwarf',
@@ -1026,6 +1028,7 @@ Pathfinder2E.FEATS = {
     'Traits=Ancestry,Dwarf ' +
     'Require="level >= 13","features.Dwarven Weapon Familiarity"',
 
+  // Elf
   'Ancestral Longevity':'Traits=Ancestry,Elf',
   'Elven Lore':'Traits=Ancestry,Elf',
   'Elven Weapon Familiarity':'Traits=Ancestry,Elf',
@@ -1046,6 +1049,7 @@ Pathfinder2E.FEATS = {
     'Traits=Ancestry,Elf ' +
     'Require="level >= 13","features.Elven Weapon Familiarity"',
 
+  // Gnome
   'Animal Accomplice':'Traits=Ancestry,Gnome',
   'Burrow Elocutionist':'Traits=Ancestry,Gnome',
   'Fey Fellowship':'Traits=Ancestry,Gnome',
@@ -1068,6 +1072,7 @@ Pathfinder2E.FEATS = {
     'Traits=Ancestry,Gnome ' +
     'Require="level >= 13","features.Gnome Weapon Familiarity"',
 
+  // Goblin
   'Burn It!':'Traits=Ancestry,Goblin',
   'City Scavenger':'Traits=Ancestry,Goblin',
   'Goblin Lore':'Traits=Ancestry,Goblin',
@@ -1089,6 +1094,7 @@ Pathfinder2E.FEATS = {
   'Very, Very Sneaky':
     'Traits=Ancestry,Goblin Require="level >= 13","features.Very Sneaky"',
 
+  // Halfling
   'Distracting Shadows':'Traits=Ancestry,Halfling',
   'Halfling Lore':'Traits=Ancestry,Halfling',
   'Halfling Luck':'Traits=Ancestry,Halfling,Fortune',
@@ -1113,6 +1119,7 @@ Pathfinder2E.FEATS = {
     'Traits=Ancestry,Halfling ' +
     'Require="level >= 13","features.Halfling Weapon Familiarity"',
 
+  // Human
   'Adapted Cantrip':'Traits=Ancestry,Human Require="features.Spellcasting"',
   'Cooperative Nature':'Traits=Ancestry,Human',
   'General Training':'Traits=Ancestry,Human',
@@ -3546,7 +3553,7 @@ Pathfinder2E.FEATURES = {
   'Stonewalker':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Meld Into Stone divine innate spell; can cast it once per day",' +
+      '"Knows the Meld Into Stone divine innate spell; can cast it at 3rd level once per day",' +
       '"Can find unusual stonework and stonework traps that require legendary Perception"',
   'Dwarven Weapon Expertise':
     'Section=combat ' +
@@ -3648,7 +3655,7 @@ Pathfinder2E.FEATURES = {
     'Section=save,skill ' +
     'Note=' +
       '"+2 vs. fey",' +
-      '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation"',
+      '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make an Impression upon meeting fey and retry a failure after 1 min of conversation"',
   'First World Magic':
     'Section=magic ' +
     'Note="Can cast a chosen primal cantrip as an innate spell at will"',
@@ -3672,7 +3679,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"Can speak with all animals",' +
-      '"+1 to Make An Impression on animals"',
+      '"+1 to Make an Impression on animals"',
   'Energized Font':
     'Action=1 Section=magic Note="Regains 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
@@ -3740,7 +3747,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Ride feature",' +
-      '"+1 Nature to Command An Animal with a goblin dog or wolf mount"',
+      '"+1 Nature to Command an Animal with a goblin dog or wolf mount"',
   'Very Sneaky':'Section=skill Note="+5\' Sneak and can Sneak between cover"',
   'Goblin Weapon Frenzy':
     'Section=combat ' +
@@ -3873,11 +3880,11 @@ Pathfinder2E.FEATURES = {
     'Note="Can immediately Aid an ally on a skill check after a critical success on the same skill"',
   'Supernatural Charm':
     'Section=magic ' +
-    'Note="Knows the Charm arcane innate spell; can cast it once per day"',
+    'Note="Knows the Charm arcane innate spell; can cast it at 1st level once per day"',
 
   'Monstrous Peacemaker':
     'Section=skill ' +
-    'Note="+1 Diplomacy and Perception (Sense Motive) with creatures marginalized by human society"',
+    'Note="+1 Diplomacy and Sense Motive with non-humanoids and creatures marginalized by human society"',
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -4484,7 +4491,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 Section=magic Note="Extends subsequent spell range by 30\'"',
   'Versatile Performance':
     'Section=skill ' +
-    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make An Impression, Demoralize, or to satisfy prerequisites"',
+    'Note="Can use Performance in place of Deception, Diplomacy, or Intimidation to Impersonate, Make an Impression, Demoralize, or to satisfy prerequisites"',
   'Cantrip Expansion':
     'Section=magic ' +
     'Note="Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire"',
@@ -5492,7 +5499,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Intimidation)"',
   'Wild Empathy':
     'Section=skill ' +
-    'Note="Can use Diplomacy with animals to Make An Impression and to make simple Requests"',
+    'Note="Can use Diplomacy with animals to Make an Impression and to make simple Requests"',
 
   'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
   // Errata adds fungus
@@ -5551,7 +5558,7 @@ Pathfinder2E.FEATURES = {
   'Green Empathy':
     'Section=skill ' +
     // Errata adds fungi
-    'Note="Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
+    'Note="Can use Diplomacy with plants and fungi to Make an Impression and to make simple Requests with a +2 bonus"',
   'Insect Shape':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
@@ -5800,7 +5807,7 @@ Pathfinder2E.FEATURES = {
   'Reactive Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Performs Raise A Shield to absorb damage from a melee Strike"',
+    'Note="Performs Raise a Shield to absorb damage from a melee Strike"',
   'Snagging Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -5979,7 +5986,7 @@ Pathfinder2E.FEATURES = {
   "Paragon's Guard":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives continuous benefits of Raise A Shield"',
+    'Note="Stance gives continuous benefits of Raise a Shield"',
   'Spring Attack':
     'Action=1 ' +
     'Section=combat ' +
@@ -7762,7 +7769,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can Identify Magic in %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Arcana>=4?\'1 action\':rank.Arcana==3||rank.Nature==3||rank.Occultism==3||rank.Religion==3?\'3 actions\':\'1 min\'}"',
   'Quick Recognition':
     'Section=skill ' +
-    'Note="Can use a skill with master proficiency to Recognize A Spell as a free action once per rd"',
+    'Note="Can use a skill with master proficiency to Recognize a Spell as a free action once per rd"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -7822,7 +7829,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can repeat Treat Wounds on a patient after 10 min"',
   'Courtly Graces':
     'Section=skill ' +
-    'Note="Can use Society to impersonate a noble or to Make An Impression on one"',
+    'Note="Can use Society to impersonate a noble or to Make an Impression on one"',
   'Craft Anything':
     'Section=skill ' +
     'Note="Can craft items without meeting secondary requirements"',
@@ -7849,20 +7856,20 @@ Pathfinder2E.FEATURES = {
     'Note="Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and %{rank.Survival>=4?32:rank.Survival==3?16:rank.Survival==2?8:4} others, or twice that number with a critical success"',
   'Glad-Hand':
     'Section=skill ' +
-    'Note="Can make a -5 Diplomacy check to Make An Impression upon meeting and retry a failure after 1 min of conversation"',
+    'Note="Can make a -5 Diplomacy check to Make an Impression upon meeting and retry a failure after 1 min of conversation"',
   'Group Coercion':
     'Section=skill ' +
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?25:rank.Intimidation==3?10:rank.Intimidation==2?4:2} targets"',
   'Group Impression':
     'Section=skill ' +
-    'Note="Can use Diplomacy to Make An Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
+    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
   'Hobnobber':'Section=skill Note="Can Gather Information in half normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
-    'Section=skill Note="Can use Performance to Make An Impression"',
+    'Section=skill Note="Can use Performance to Make an Impression"',
   'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
     'Section=skill ' +
@@ -7886,7 +7893,7 @@ Pathfinder2E.FEATURES = {
   'Legendary Negotiation':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make An Impression followed by a successful Request"',
+    'Note="Can use Diplomacy with a -5 penalty to convince a foe to negotiate; requires a successful Make an Impression followed by a successful Request"',
   'Legendary Performer':
     'Section=skill ' +
     'Note="Improves NPCs\' attitude by 1 step when they succeed on a DC 10 Society check to Recall Knowledge/Increases the audience level when Earning Income using Performance"',
@@ -7904,7 +7911,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Steal with a -5 penalty when hidden to take actively wielded and highly noticeable items"',
   'Lengthy Diversion':
     'Section=skill ' +
-    'Note="Can remain hidden after a Create A Diversion attempt critically succeeds"',
+    'Note="Can remain hidden after a Create a Diversion attempt critically succeeds"',
   'Lie To Me':
     'Section=skill Note="Can use Deception to detect lies in a conversation"',
   'Magical Crafting':
@@ -7947,7 +7954,7 @@ Pathfinder2E.FEATURES = {
   'Quick Swim':
     'Section=skill ' +
     'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', or by 10\' on a critical success\\"}"',
-  'Quick Unlock':'Section=skill Note="Can Pick A Lock in 1 action"',
+  'Quick Unlock':'Section=skill Note="Can Pick a Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
     'Note="Rolls a single Stealth check to Avoid Notice when leading a group"',
@@ -7989,7 +7996,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes"',
   'Subtle Theft':
     'Section=skill ' +
-    'Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm An Object or Steal after a successful Create A Diversion"',
+    'Note="Successful Steal inflicts -2 Perception on observers to detect/Remains undetected when using Palm an Object or Steal after a successful Create a Diversion"',
   'Survey Wildlife':
     'Section=skill ' +
     'Note="Can use Survival%{rank.Survival<3?\' with a -2 penalty\':\'\'} to Recall Knowledge about local creatures after 10 min of study"',
