@@ -9,7 +9,7 @@ var attributes = {
   "_path":"ztest/pf2er/ancestry/hobgoblin", 
   "abilityBoosts.charisma":2, "abilityBoosts.constitution":2, "abilityBoosts.dexterity":2, 
   "abilityBoosts.intelligence":1, "abilityGeneration":"Standard ancestry boosts", "ancestry":"Hobgoblin", 
-  "ancestryFeats.Agonizing Rebuke":1, "ancestryFeats.Alchemical Scholar":1, 
+  "ancestryFeats.Agonizing Rebuke":1, "ancestryFeats.Alchemical Scholar":1, "ancestryFeats.Can't Fall Here":1, 
   "ancestryFeats.Cantorian Reinforcement":1, "ancestryFeats.Cantorian Rejuvenation":1, 
   "ancestryFeats.Cantorian Restoration":1, "ancestryFeats.Expert Drill Sergeant":1, "ancestryFeats.Fell Rider":1, 
   "ancestryFeats.Hobgoblin Lore":1, "ancestryFeats.Hobgoblin Weapon Familiarity":1, 
@@ -24,7 +24,7 @@ var attributes = {
   "selectableFeatures.Hobgoblin - Shortshanks Hobgoblin":1, "selectableFeatures.Hobgoblin - Smokeworker Hobgoblin":1, 
   "selectableFeatures.Hobgoblin - Warmarch Hobgoblin":1, "selectableFeatures.Hobgoblin - Warrenbred Hobgoblin":1, "shield":"None", 
   "skillIncreases.Academia Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Diplomacy":1, 
-  "skillIncreases.Hellknights Lore":1, "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Tanning Lore":1, 
+  "skillIncreases.Hellknights Lore":1, "skillIncreases.Intimidation":1, "skillIncreases.Lizardfolk Lore":1, 
   "weapons.Capturing Spetum":1, "weapons.Heavy Crossbow":1, "weapons.Scimitar":1
 };
   </script>
@@ -70,7 +70,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Shortshanks Hobgoblin: Not off-guard during Climb</td>
+      <td>Shortshanks Hobgoblin: Climbing does not inflict off-guard</td>
     </tr><tr style="text-align:center">
       <td>War Conditioning (Climb): Has a 20' climb Speed</td>
     </tr><tr style="text-align:center">
@@ -93,7 +93,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Agonizing Rebuke; Alchemical Scholar; Cantorian Reinforcement; Cantorian Rejuvenation; Cantorian Restoration; Exacting Strike; Expert Drill Sergeant; Fell Rider; Hobgoblin Lore; Hobgoblin Weapon Familiarity; Leech-Clip; Pride In Arms; Rallying Cry; Recognize Ambush; Remorseless Lash; Runtsage; Sneaky; Squad Tactics; Stone Face; Vigorous Health; War Conditioning (Climb); War Conditioning (Swim)</td>
+        <td><b>Feats</b>: Agonizing Rebuke; Alchemical Scholar; Can't Fall Here; Cantorian Reinforcement; Cantorian Rejuvenation; Cantorian Restoration; Exacting Strike; Expert Drill Sergeant; Fell Rider; Hobgoblin Lore; Hobgoblin Weapon Familiarity; Leech-Clip; Pride In Arms; Rallying Cry; Recognize Ambush; Remorseless Lash; Runtsage; Sneaky; Squad Tactics; Stone Face; Vigorous Health; War Conditioning (Climb); War Conditioning (Swim)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Prisoner Features</b>: Attribute Boost (Choose 1 from Constitution, Strength; Choose 1 from any); Experienced Smuggler; Skill Trained (Stealth; Underworld Lore)</td>
         <td><b>Hobgoblin Features</b>: Attribute Boost (Constitution; Intelligence; Choose 1 from any); Attribute Flaw (Wisdom); Darkvision; Elfbane Hobgoblin; Hobgoblin Heritage; Runtboss Hobgoblin; Shortshanks Hobgoblin; Smokeworker Hobgoblin; Warmarch Hobgoblin; Warrenbred Hobgoblin</td>
@@ -116,7 +116,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Hobgoblin Lore: Has the Additional Lore (Hobgoblin Lore) feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Runtsage: Has the Adopted Ancestry (Goblin) feature</i></td>
+        <td><i>Runtboss Hobgoblin: Has the Group Coercion feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Runtsage: Has the Adopted Ancestry (Goblin) feature/+1 Ancestry Feat (Goblin feat)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Shortshanks Hobgoblin: Has the Ride feature</i></td>
       </tr><tr style="text-align:center">
@@ -142,36 +144,32 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Academia Lore: +5 (intelligence; trained)</td>
-      <td>Hobgoblin Lore: +5 (intelligence; trained)</td>
-      <td>Society: +2 (intelligence; untrained)</td>
+      <td>Hellknights Lore: +5 (intelligence; trained)</td>
+      <td>Performance: +2 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Acrobatics: +3 (dexterity; trained)</td>
-      <td>Intimidation: +2 (charisma; untrained)</td>
-      <td>Stealth: +3 (dexterity; trained)</td>
+      <td>Hobgoblin Lore: +5 (intelligence; trained)</td>
+      <td>Religion: -1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +5 (intelligence; trained)</td>
-      <td>Lizardfolk Lore: +5 (intelligence; trained)</td>
-      <td>Survival: -1 (wisdom; untrained)</td>
+      <td>Intimidation: +5 (charisma; trained)</td>
+      <td>Society: +2 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +0 (strength; trained)</td>
-      <td>Medicine: -1 (wisdom; untrained)</td>
-      <td>Tanning Lore: +5 (intelligence; trained)</td>
+      <td>Lizardfolk Lore: +5 (intelligence; trained)</td>
+      <td>Stealth: +3 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +5 (intelligence; trained)</td>
+      <td>Medicine: -1 (wisdom; untrained)</td>
+      <td>Survival: -1 (wisdom; untrained)</td>
+    </tr><tr style="text-align:left">
+      <td>Deception: +2 (charisma; untrained)</td>
       <td>Nature: -1 (wisdom; untrained)</td>
       <td>Thievery: +0 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +2 (charisma; untrained)</td>
+      <td>Diplomacy: +5 (charisma; trained)</td>
       <td>Occultism: +2 (intelligence; untrained)</td>
       <td>Underworld Lore: +5 (intelligence; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Diplomacy: +5 (charisma; trained)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Hellknights Lore: +5 (intelligence; trained)</td>
-      <td>Religion: -1 (wisdom; untrained)</td>
-      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -193,23 +191,27 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
     </tr><tr style="text-align:center">
-      <td>Agonizing Rebuke: Successful Demoralize inflicts 1d4 mental each rd for 1 min or until moving 30' away</td>
+      <td>Agonizing Rebuke: Successful Demoralize inflicts 1d4 mental each rd for 1 min or until the target is more than 30' away or no longer frightened</td>
     </tr><tr style="text-align:center">
       <td>Alchemical Crafting: Can use Crafting to create alchemical items</td>
     </tr><tr style="text-align:center">
       <td>Experienced Smuggler: Automatically  gets at least 10 on Stealth rolls to conceal a small item</td>
     </tr><tr style="text-align:center">
-      <td>Expert Drill Sergeant: Following An Expert while exploring gives allies a +2, +3, or +4 bonus on skills with trained, expert, or master proficiency</td>
+      <td>Expert Drill Sergeant: Following an Expert while exploring gives allies a +3 or +4 bonus on skills with expert or master proficiency</td>
     </tr><tr style="text-align:center">
       <td>Formula Book: Has a book that contains at least 4 alchemical formulas</td>
+    </tr><tr style="text-align:center">
+      <td>Group Coercion: Can use Intimidation to Coerce 5 targets</td>
+    </tr><tr style="text-align:center">
+      <td>Runtboss Hobgoblin: Successes on Coercion checks vs. goblins are critical successes and critical failure are normal failures</td>
     </tr><tr style="text-align:center">
       <td>Smokeworker Hobgoblin: Has fire resistance 1</td>
     </tr><tr style="text-align:center">
       <td>Sneaky: +5 Sneak speed, and can Sneak between cover</td>
     </tr><tr style="text-align:center">
-      <td>Warmarch Hobgoblin: Normal failures to Subsist in wilderness allow eating/Can Hustle twice as long as normal when exploring</td>
+      <td>Warmarch Hobgoblin: Normal failures to Subsist in wilderness locate enough poor fare to stay fed/Can Hustle twice as long as normal when exploring</td>
     </tr><tr style="text-align:center">
-      <td>Warrenbred Hobgoblin: Successes on Acrobatics to Squeeze are critical successes/Reduces flat check to attack a concealed or hidden target to 3 or 9</td>
+      <td>Warrenbred Hobgoblin: Successes on Acrobatics to Squeeze are critical successes</td>
     </tr></table>
 </td>
   </tr></table>
@@ -245,6 +247,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Hobgoblin Weapon Familiarity: Weapon Familiarity (Hobgoblin Weapons; Composite Longbow; Composite Shortbow; Glaive; Longbow; Longsword; Shortbow)</i></td>
       </tr><tr style="text-align:center">
+        <td>Can't Fall Here: <b>(R)</b> Adjacent willing ally reduced to 0 Hit Point retains 1 Hit Point, suffers a wounded level, and gains 1 temporary Hit Points and for 1 min once per day</td>
+      </tr><tr style="text-align:center">
         <td>Cantorian Rejuvenation: <b>(2)</b> Recovers 4d6 HP and gains 10 temporary HP for 1 min once per day</td>
       </tr><tr style="text-align:center">
         <td>Cantorian Restoration: <b>(R)</b> R60' Restores 6d6+3 Hit Points to a dying creature once per day</td>
@@ -253,21 +257,25 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Hobgoblin Weapon Familiarity: Has access to uncommon hobgoblin weapons</td>
       </tr><tr style="text-align:center">
-        <td>Leech-Clip: Hits with flails inflict -10' Speed, or -15' Speed on a critical hit, for 1 rd</td>
+        <td>Leech-Clip: <b>(2)</b> Hits with a flail inflict -10' Speed, or -15' Speed on a critical hit, for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Pride In Arms: <b>(R)</b> Gives 30 temporary HP for 1 rd to an ally that brings a foe to 0 HP</td>
+        <td>Pride In Arms: <b>(R)</b> Gives an ally who brings a foe to 0 HP temporary HP equal to their Constitution modifier until the end of their next turn</td>
       </tr><tr style="text-align:center">
-        <td>Rallying Cry: <b>(2)</b> 30' emanation gives allies 1 temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min</td>
+        <td>Rallying Cry: <b>(2)</b> 30' emanation gives allies 1 temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min once per day</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Recognize Ambush: <b>(F)</b> Draws a weapon during initiative</td>
       </tr><tr style="text-align:center">
-        <td>Remorseless Lash: Melee hits inflict no reduction of frightened condition for 1 rd</td>
+        <td>Remorseless Lash: Melee hits inflict no reduction of a frightened condition until the beginning of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Squad Tactics: Adjacent foes within reach of two allies are off-guard to self</td>
+        <td>Smokeworker Hobgoblin: Targeting smoke-concealed creatures requires no flat check</td>
+      </tr><tr style="text-align:center">
+        <td>Squad Tactics: Adjacent foes within reach of 2 allies are off-guard to self</td>
+      </tr><tr style="text-align:center">
+        <td>Warrenbred Hobgoblin: Reduces the DC to target a concealed or hidden foe to 3 or 9</td>
       </tr></table>
 </td>
     </tr></table>
@@ -281,11 +289,9 @@ var attributes = {
       <tr style="text-align:center">
         <td>Cantorian Reinforcement: Successes vs. disease or poison are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Resist Elf Magic: <b>(R)</b> +1 vs. triggering magical effect, or +2 vs. an arcane effect</td>
+        <td>Resist Elf Magic: <b>(R)</b> +1 vs. the triggering magical effect, or +2 vs. an arcane effect</td>
       </tr><tr style="text-align:center">
-        <td>Smokeworker Hobgoblin: Can automatically target smoke-concealed creatures</td>
-      </tr><tr style="text-align:center">
-        <td>Stone Face: +1 vs. fear; +2 Will DC vs. Intimidation</td>
+        <td>Stone Face: +1 vs. fear and +2 Will DC vs. Intimidation</td>
       </tr><tr style="text-align:center">
         <td>Vigorous Health: Successful DC 17 flat check negates gaining the drained condition</td>
       </tr></table>
@@ -303,7 +309,9 @@ var attributes = {
       <tr style="text-align:center">
         <td>Agonizing Rebuke Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
-        <td>Ancestry Feats Allocation: 0 available vs. 21 allocated</td>
+        <td>Ancestry Feats Allocation: 0 available vs. 22 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Can't Fall Here Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
         <td>Cantorian Rejuvenation Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">
@@ -311,7 +319,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Expert Drill Sergeant Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
-        <td>Fell Rider Feat: Requires level (currently 1) >= 9</td>
+        <td>Fell Rider Feat: Requires level (currently 1) >= 9 and animal companion feature</td>
       </tr><tr style="text-align:center">
         <td>Hobgoblin Heritage Allocation: 1 available vs. 6 allocated</td>
       </tr><tr style="text-align:center">
