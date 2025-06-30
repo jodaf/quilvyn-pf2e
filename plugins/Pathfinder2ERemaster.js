@@ -5428,7 +5428,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gives an ally who brings a foe to 0 HP temporary HP equal to their Constitution modifier until the end of their next turn"',
   'Squad Tactics':
     'Section=combat ' +
-    'Note="Adjacent foes within reach of 2 allies are off-guard to self"',
+    'Note="Adjacent foes within reach of 2 allies are off-guard vs. self"',
   "Can't Fall Here":
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5662,18 +5662,21 @@ Pathfinder2ERemaster.FEATURES = {
   'Cloudleaper Lizardfolk':
     'Section=save Note="Can use limbs to negate falling damage"',
   'Frilled Lizardfolk':
-    'Section=feature Note="Has the Threatening Approach feature"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Threatening Approach feature",' +
+      '"Can use visual threats to Demoralize"',
   'Lizardfolk Heritage':'Section=feature Note="1 selection"',
   'Sandstrider Lizardfolk':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water"',
+    'Note="Has fire resistance %{level//2>?1}, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x the normal duration without food and water"',
   'Threatening Approach':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Stride adjacent to foe followed by a successful Demoralize inflicts frightened 2"',
+    'Note="Stride to a spot adjacent to a foe followed by a successful Demoralize inflicts frightened 2"',
   'Unseen Lizardfolk':
-    'Section=skill ' +
-    'Note="+2 Stealth in environments of similar color as self"',
+    Pathfinder2E.FEATURES['Chameleon Gnome']
+    .replace('and hair colors', 'color'),
   'Wetlander Lizardfolk':'Section=ability Note="Has a 15\' swim Speed"',
   'Woodstalker Lizardfolk':
     'Section=feature,skill ' +
@@ -5703,7 +5706,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       // TODO randomizing
-      '"+1 Skill Feat (Astrology Lore or Lizardfolk Lore)",' +
+      '"+1 Skill Feat (Addition Lore for Astrology Lore or Lizardfolk Lore)",' +
       '"Skill Trained (Survival; Choose 1 from Nature, Occultism)"',
   'Marsh Runner':
     'Section=combat,skill ' +
@@ -5717,19 +5720,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Envenom Fangs':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Enhances fangs to inflict +1d6 HP persistent poison on next hit before the end of the next turn"',
+    'Note="Enhances fangs to inflict +1d6 HP persistent poison on the next hit before the end of the next turn once per hr"',
   'Flexible Tail':
     'Section=feature Note="Can use tail to perform simple Interact actions"',
   "Gecko's Grip":
     'Section=ability,feature,skill ' +
     'Note=' +
       '"Has a 15\' climb Speed",' +
-      '"Has the Combat Climber feat",' +
+      '"Has the Combat Climber feature",' +
       '"Successes on Athletics to climb are critical successes"',
   'Shed Tail':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from grabbing foe; regrowth takes 1 day and inflicts -2 Balance"',
+    'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing foe; regrowth takes 1 day and inflicts -2 Balance"',
   'Swift Swimmer':
     'Section=ability ' +
     'Note="Has a %{abilityNotes.wetlanderLizardfolk?25:15}\' swim Speed"',
@@ -5738,10 +5741,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Hone Claws':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Enhances claws to inflict +1d6 HP bleed damage on next hit"',
+    'Note="Enhances claws to inflict +1d6 HP bleed damage on the next hit"',
   'Terrain Advantage':
     'Section=combat ' +
-    'Note="Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard to self"',
+    'Note="Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard vs. self"',
   'Bone Investiture':
     'Section=magic ' +
     // TODO or occult
@@ -5757,7 +5760,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Mask Of Terror primal innate spell; can cast it once per day"',
   'Scion Transformation':
     'Section=feature ' +
-    'Note="Can use a 24-hr hibernation to gain effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
+    'Note="Can use a 24-hr hibernation to gain the effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
 
   // Ratfolk
   // Low-Light Vision as above
@@ -5766,20 +5769,20 @@ Pathfinder2ERemaster.FEATURES = {
   'Desert Rat':
     'Section=ability,save ' +
     'Note=' +
-      '"30\' Speed on all fours",' +
-      '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water"',
+      '"Has 30\' Speed on all fours",' +
+      '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal duration without food and water"',
   'Longsnout Rat':
     'Section=skill ' +
     'Note="Has 30\' imprecise scent/+2 Perception to Seek using scent"',
   'Ratfolk Heritage':'Section=feature Note="1 selection"',
   'Sewer Rat':
      'Section=save ' +
-     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
+     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes/Immune to putrid plague"',
   'Shadow Rat':
     'Section=skill,skill ' +
     'Note=' +
       '"Skill Trained (Intimidation)",' +
-      '"Can use Intimidation to Coerce animals/Suffers no Demoralize penalty for lacking a shared language/Suffers 1 step worse on initial animal attitudes"',
+      '"Can use Intimidation to Coerce animals, suffers no Demoralize penalty for lacking a shared language with an animal, and suffers 1 step worse on initial animal attitudes"',
   'Snow Rat':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1}, and treats environmental cold as 1 step less extreme"',
@@ -5791,7 +5794,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Cheek Pouches':
     'Section=feature Note="Can store %{featureNotes.bigMouth?\'1 Bulk of items\':\'4 items of light Bulk\'} in cheeks"',
-  'Pack Rat':'Section=feature Note="Can store 50% extra in containers"',
+  'Pack Rat':'Section=feature Note="Can store 50% extra Bulk in containers"',
   'Rat Familiar':'Section=feature Note="Has the Familiar feature"',
   'Ratfolk Lore':
     'Section=feature,skill ' +
@@ -5804,7 +5807,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Skill Trained (Crafting)",' +
       '"Suffers no penalty when Repairing an item without a toolkit, and gains +1 with a toolkit"',
-  'Vicious Incisors':'Section=combat Note="Jaws include 1d6 HP piercing"',
+  'Vicious Incisors':'Section=combat Note="Jaws inflict 1d6 HP piercing"',
   'Warren Navigator':
     'Section=save,skill,skill ' +
     'Note=' +
@@ -5813,19 +5816,21 @@ Pathfinder2ERemaster.FEATURES = {
       '"Improves Sense Direction test by 1 degree, and suffers no penalty from having no compass"',
   'Cornered Fury':
     'Section=combat ' +
-    'Note="Critical hit by a larger foe leaves it off-guard to self for 1 rd"',
+    'Note="Critical hit by a larger foe leaves it off-guard vs. self for 1 rd"',
   'Lab Rat':
      'Section=save ' +
      'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
   'Quick Stow':
-    'Action=Free Section=combat Note="Stows an item in cheek pouches"',
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Stows an item in cheek pouches once per rd"',
   'Rat Magic':
     'Section=magic ' +
     'Note="Knows the Animal Messenger primal innate spell; can cast it once per day"',
   'Ratfolk Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Rolls %{speed*4}\' down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle"',
+    'Note="Rolls %{speed*4}\' per rd down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle"',
   'Big Mouth':'Section=feature Note="Has increased Cheek Pouches effects"',
   'Overcrowd':
     'Section=combat ' +
@@ -5840,7 +5845,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Call The Swarm':
     'Action=3 ' +
     'Section=magic ' +
-    'Note="R120\' Rats swarming a 30\' burst inflict 6d8 HP piercing and difficult terrain to foes"',
+    'Note="R120\' Rats swarming a 30\' burst inflict on foes difficult terrain, 6d8 HP piercing initially, and 3d6 HP piercing per rd for 1 min once per day"',
   'Greater Than The Sum':
     'Section=magic ' +
     'Note="Knows the Enlarge primal innate spell; can cast it at 6th rank once per day"',
@@ -9879,13 +9884,15 @@ Pathfinder2ERemaster.LANGUAGES = {
   'Cnthonian':'',
   'Diabolic':'',
   'Empyrean':'',
+  'Iruxi':'',
   'Kholo':'',
   'Necril':'',
   'Petran':'',
   'Pyric':'',
   'Shadowtongue':'',
   'Sussuran':'',
-  'Thalassic':''
+  'Thalassic':'',
+  'Ysoki':''
 };
 Pathfinder2ERemaster.SHIELDS = {
   'None':Pathfinder2E.SHIELDS.None,
@@ -10514,7 +10521,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Target suffers worse of 2 rolls on next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
+      '"Target suffers worse of 2 rolls on the next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
   'Illusory Creature':
     Pathfinder2E.SPELLS['Illusory Creature']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,')
