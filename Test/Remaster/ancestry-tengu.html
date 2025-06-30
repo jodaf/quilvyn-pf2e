@@ -17,14 +17,14 @@ var attributes = {
   "ancestryFeats.Tengu Weapon Familiarity":1, "ancestryFeats.Thunder God's Fan":1, "ancestryFeats.Trickster Tengu":1, 
   "ancestryFeats.Uncanny Agility":1, "ancestryFeats.Wind God's Fan":1, "armor":"Splint Mail", 
   "background":"Gambler", "class":"Fighter", "classFeats.Point Blank Stance":1, "deity":"Gozreh", 
-  "experience":186, "gender":"Male", "languages.Petran":1, "languages.Thalassic":1, 
-  "name":"Ancestry-Tengu", "selectableFeatures.Fighter - Dexterity":1, 
-  "selectableFeatures.Tengu - Dogtooth Tengu":1, "selectableFeatures.Tengu - Jinxed Tengu":1, 
-  "selectableFeatures.Tengu - Mountainkeeper Tengu":1, "selectableFeatures.Tengu - Skyborn Tengu":1, 
-  "selectableFeatures.Tengu - Stormtossed Tengu":1, "selectableFeatures.Tengu - Taloned Tengu":1, 
-  "selectableFeatures.Tengu - Wavediver Tengu":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Arctic Lore":1, "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Kobold Lore":1, 
-  "skillIncreases.Stealth":1, "weapons.Cruuk":1, "weapons.Scythe":1, "weapons.Warhammer":1
+  "experience":186, "gender":"Male", "languages.Thalassic":1, "name":"Ancestry-Tengu", 
+  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Tengu - Dogtooth Tengu":1, 
+  "selectableFeatures.Tengu - Jinxed Tengu":1, "selectableFeatures.Tengu - Mountainkeeper Tengu":1, 
+  "selectableFeatures.Tengu - Skyborn Tengu":1, "selectableFeatures.Tengu - Stormtossed Tengu":1, 
+  "selectableFeatures.Tengu - Taloned Tengu":1, "selectableFeatures.Tengu - Wavediver Tengu":1, "shield":"Buckler", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Arctic Lore":1, "skillIncreases.Hobgoblin Lore":1, 
+  "skillIncreases.Kobold Lore":1, "skillIncreases.Stealth":1, "weapons.Cruuk":1, "weapons.Scythe":1, 
+  "weapons.Warhammer":1
 };
   </script>
 </head>
@@ -69,6 +69,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
+      <td>Soaring Flight: <b>(1)</b> Flies 20' once per rd</td>
+    </tr><tr style="text-align:center">
       <td>Soaring Form: Has a 20' fly Speed</td>
     </tr><tr style="text-align:center">
       <td>Uncanny Agility: Can Step into difficult terrain caused by uneven ground</td>
@@ -105,11 +107,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Fighter Key Attribute: 1 selection</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Tengu Feather Fan: Has the Wave Fan feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Tengu Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Tengu Lore: Has the Additional Lore (Tengu Lore) feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Uncanny Agility: Has the Stead Balance feature</i></td>
+        <td><i>Uncanny Agility: Has the Steady Balance feature</i></td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
@@ -154,7 +158,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Petran; Tengu; Thalassic</td>
+    <td><b>Languages</b>: Common; Tengu; Thalassic</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -174,7 +178,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Scavenger's Search: +2 Seek to locate objects within 30'</td>
     </tr><tr style="text-align:center">
-      <td>Squawk!: <b>(R)</b> Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure once per target per day</td>
+      <td>Squawk!: <b>(R)</b> Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure; cannot be used again on the target or observers for 1 day</td>
+    </tr><tr style="text-align:center">
+      <td>Steady Balance: Balance successes are critical successes/Balance does not inflict off-balance/Can use Acrobatics to Grab An Edge</td>
     </tr></table>
 </td>
   </tr></table>
@@ -212,17 +218,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Sharp Beak: Beak inflicts 1d6 HP piercing</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Taloned Tengu: Talons inflict 1d4 HP slashing</i></td>
+        <td><i>Taloned Tengu: Talons inflict 1d4 HP slashing or piercing</i></td>
       </tr><tr style="text-align:center">
         <td><i>Tengu Weapon Familiarity: Weapon Familiarity (Tengu Weapons; Katana; Khakkara; Temple Sword; Wakizashi)</i></td>
       </tr><tr style="text-align:center">
-        <td>Dogtooth Tengu: Beak has deadly d8 trait</td>
+        <td>Dogtooth Tengu: Beak has the deadly d8 trait</td>
       </tr><tr style="text-align:center">
-        <td>Eat Fortune: <b>(R)</b> R60' Counteracts a fortune or misfortune effects once per hr</td>
+        <td>Eat Fortune: <b>(R)</b> R60' Counteracts a fortune or misfortune effect once per hr</td>
       </tr><tr style="text-align:center">
-        <td>Harbinger's Claw: <b>(R)</b> R60' Inflicts the worse of 2 rolls on the triggering attack or skill check</td>
+        <td>Harbinger's Claw: <b>(R)</b> R60' Inflicts the worse of 2 rolls on the triggering attack or skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Magpie Snatch: <b>(2)</b> Picks up an object while Striding twice</td>
+        <td>Magpie Snatch: <b>(2)</b> Picks up an unattended object while Striding twice</td>
       </tr><tr style="text-align:center">
         <td>One-Toed Hop: <b>(1)</b> Makes a vertical Leap without triggering reactions</td>
       </tr><tr style="text-align:center">
@@ -232,11 +238,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Soaring Flight: <b>(1)</b> Flies 20' once per rd</td>
-      </tr><tr style="text-align:center">
         <td>Stormtossed Tengu: Ignores target concealment from rain or fog</td>
       </tr><tr style="text-align:center">
-        <td>Tengu Weapon Familiarity: Can gain familiarity with a possessed sword during daily prep/Has access to uncommon tengu weapons</td>
+        <td>Tengu Weapon Familiarity: Can gain familiarity with a sword during daily prep/Has access to uncommon tengu weapons</td>
       </tr></table>
 </td>
     </tr></table>
@@ -248,9 +252,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Jinxed Tengu: Successful saves vs. curses are critical successes, and a successful DC 17 flat check reduces a doomed condition by 1</td>
+        <td>Jinxed Tengu: Successful saves vs. curses are critical successes, and a successful DC 17 flat check on gaining a doomed condition reduces its severity by 1</td>
       </tr><tr style="text-align:center">
-        <td>Skyborn Tengu: Takes no damage from falls</td>
+        <td>Skyborn Tengu: Takes no damage from falling</td>
       </tr><tr style="text-align:center">
         <td>Stormtossed Tengu: Has resistance 1 to electricity</td>
       </tr></table>
@@ -301,19 +305,21 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Storm's Lash: Knows the Electric Arc primal innate cantrip; can cast it at will</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Tengu Feather Fan: Knows the Gust Of Wind primal spell</i></td>
+      <td><i>Tengu Feather Fan: Knows the Gust Of Wind primal spell; can cast it at 1st rank using the feather fan</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Thunder God's Fan: Knows the Lightning Bolt primal spell; can cast it using feather fan at 5th rank/+1 feather fan use per day</i></td>
+      <td><i>Thunder God's Fan: Knows the Lightning Bolt primal spell; can cast it at 5th rank using the feather fan/+1 feather fan use per day</i></td>
     </tr><tr style="text-align:center">
       <td><i>Trickster Tengu: Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast 1 of them at 7th rank once per day</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Wind God's Fan: Knows the Wall Of Wind primal spell; can cast it using feather fan at 3rd rank/+1 feather fan use per day</i></td>
+      <td><i>Wind God's Fan: Knows the Wall Of Wind primal spell; can cast it at 3rd rank using the feather fan/+1 feather fan use per day</i></td>
     </tr><tr style="text-align:center">
-      <td>Great Tengu Form: Gains the benefits of 5 min <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form</td>
+      <td>Great Tengu Form: Gains the effects of 5th-rank <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form for 5 min once per day</td>
     </tr><tr style="text-align:center">
       <td>Long-Nosed Form: <b>(1)</b> Becomes a human with tengu-like features</td>
     </tr><tr style="text-align:center">
       <td>Mountainkeeper Tengu: Can cast tengu-acquired spells as divine or primal spells</td>
+    </tr><tr style="text-align:center">
+      <td>Wave Fan: <b>(1)</b> Can cast a spell using the feather fan 3 times per day</td>
     </tr></table>
 </td>
   </tr></table>

@@ -14,18 +14,18 @@ var attributes = {
   "ancestryFeats.Lab Rat":1, "ancestryFeats.Overcrowd":1, "ancestryFeats.Pack Rat":1, 
   "ancestryFeats.Quick Stow":1, "ancestryFeats.Rat Familiar":1, "ancestryFeats.Rat Form":1, 
   "ancestryFeats.Rat Magic":1, "ancestryFeats.Ratfolk Lore":1, "ancestryFeats.Ratfolk Roll":1, 
-  "ancestryFeats.Ratspeak":1, "ancestryFeats.Shinstabber":1, "ancestryFeats.Skittering Scuttle":1, 
+  "ancestryFeats.Ratspeak":1, "ancestryFeats.Shinstabber":1, "ancestryFeats.Skittering Sneak":1, 
   "ancestryFeats.Tinkering Fingers":1, "ancestryFeats.Uncanny Cheeks":1, "ancestryFeats.Vicious Incisors":1, 
   "ancestryFeats.Warren Digger":1, "ancestryFeats.Warren Navigator":1, "armor":"Leather", 
   "background":"Tinker", "class":"Fighter", "classFeats.Combat Assessment":1, "deity":"Nethys", 
-  "experience":902, "gender":"Male", "languages.Jotun":1, "languages.Sussuran":1, 
-  "name":"Ancestry-Ratfolk", "selectableFeatures.Fighter - Dexterity":1, 
-  "selectableFeatures.Ratfolk - Deep Rat":1, "selectableFeatures.Ratfolk - Desert Rat":1, 
-  "selectableFeatures.Ratfolk - Longsnout Rat":1, "selectableFeatures.Ratfolk - Sewer Rat":1, 
-  "selectableFeatures.Ratfolk - Shadow Rat":1, "selectableFeatures.Ratfolk - Snow Rat":1, 
-  "selectableFeatures.Ratfolk - Tunnel Rat":1, "shield":"Buckler", "skillIncreases.Absalom Lore":1, 
-  "skillIncreases.Athletics":1, "skillIncreases.Milling Lore":1, "skillIncreases.Society":1, 
-  "skillIncreases.Swamp Lore":1, "weapons.Crossbow":1, "weapons.Hatchet":1, "weapons.Sickle":1
+  "experience":902, "gender":"Male", "languages.Sussuran":1, "name":"Ancestry-Ratfolk", 
+  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Ratfolk - Deep Rat":1, 
+  "selectableFeatures.Ratfolk - Desert Rat":1, "selectableFeatures.Ratfolk - Longsnout Rat":1, 
+  "selectableFeatures.Ratfolk - Sewer Rat":1, "selectableFeatures.Ratfolk - Shadow Rat":1, 
+  "selectableFeatures.Ratfolk - Snow Rat":1, "selectableFeatures.Ratfolk - Tunnel Rat":1, "shield":"Buckler", 
+  "skillIncreases.Absalom Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Milling Lore":1, 
+  "skillIncreases.Society":1, "skillIncreases.Swamp Lore":1, "weapons.Crossbow":1, "weapons.Hatchet":1, 
+  "weapons.Sickle":1
 };
   </script>
 </head>
@@ -68,7 +68,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Desert Rat: 30' Speed on all fours</td>
+      <td>Desert Rat: Has 30' Speed on all fours</td>
     </tr><tr style="text-align:center">
       <td>Warren Digger: Has a 15' burrow Speed</td>
     </tr></table>
@@ -89,7 +89,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Big Mouth; Call The Swarm; Cheek Pouches; Combat Assessment; Cornered Fury; Greater Than The Sum; Lab Rat; Overcrowd; Pack Rat; Quick Stow; Rat Familiar; Rat Form; Rat Magic; Ratfolk Lore; Ratfolk Roll; Ratspeak; Shinstabber; Skittering Scuttle; Tinkering Fingers; Uncanny Cheeks; Vicious Incisors; Warren Digger; Warren Navigator</td>
+        <td><b>Feats</b>: Big Mouth; Call The Swarm; Cheek Pouches; Combat Assessment; Cornered Fury; Greater Than The Sum; Lab Rat; Overcrowd; Pack Rat; Quick Stow; Rat Familiar; Rat Form; Rat Magic; Ratfolk Lore; Ratfolk Roll; Ratspeak; Shinstabber; Skittering Sneak; Tinkering Fingers; Uncanny Cheeks; Vicious Incisors; Warren Digger; Warren Navigator</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Tinker Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Skill Trained (Crafting; Engineering Lore); Specialty Crafting</td>
         <td><b>Ratfolk Features</b>: Attribute Boost (Dexterity; Intelligence; Choose 1 from any); Attribute Flaw (Strength); Deep Rat; Desert Rat; Longsnout Rat; Low-Light Vision; Ratfolk Heritage; Sewer Rat; Shadow Rat; Sharp Teeth; Small; Snow Rat; Tunnel Rat</td>
@@ -124,7 +124,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
-        <td>Pack Rat: Can store 50% extra in containers</td>
+        <td>Pack Rat: Can store 50% extra Bulk in containers</td>
       </tr><tr style="text-align:center">
         <td>Prescient Consumable: Can retrieve an undeclared consumable from backpack once per shopping trip</td>
       </tr><tr style="text-align:center">
@@ -173,7 +173,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Jotun; Sussuran; Ysoki</td>
+    <td><b>Languages</b>: Common; Sussuran; Ysoki</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -197,7 +197,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Squeeze: Can Squeeze 5' per rd, or 10' per rd on a critical success</td>
     </tr><tr style="text-align:center">
-      <td>Shadow Rat: Can use Intimidation to Coerce animals/Suffers no Demoralize penalty for lacking a shared language/Suffers 1 step worse on initial animal attitudes</td>
+      <td>Shadow Rat: Can use Intimidation to Coerce animals, suffers no Demoralize penalty for lacking a shared language with an animal, and suffers 1 step worse on initial animal attitudes</td>
+    </tr><tr style="text-align:center">
+      <td>Skittering Sneak: Can Sneak at full Speed</td>
     </tr><tr style="text-align:center">
       <td>Specialty Crafting: +1 Crafting on selected type of item</td>
     </tr><tr style="text-align:center">
@@ -243,19 +245,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Shinstabber: Has increased Overcrowd effects</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Skittering Scuttle: Has increased Goblin Scuttle effects</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Vicious Incisors: Jaws include 1d6 HP piercing</i></td>
+        <td><i>Vicious Incisors: Jaws inflict 1d6 HP piercing</i></td>
       </tr><tr style="text-align:center">
         <td>Combat Assessment: <b>(1)</b> Melee Strike allows an immediate Recall Knowledge about the target; a critical hit gives a +2 bonus</td>
       </tr><tr style="text-align:center">
-        <td>Cornered Fury: Critical hit by a larger foe leaves it off-guard to self for 1 rd</td>
+        <td>Cornered Fury: Critical hit by a larger foe leaves it off-guard vs. self for 1 rd</td>
       </tr><tr style="text-align:center">
         <td>Overcrowd: Can end movement in the same square as an ally</td>
       </tr><tr style="text-align:center">
-        <td>Quick Stow: <b>(F)</b> Stows an item in cheek pouches</td>
+        <td>Quick Stow: <b>(F)</b> Stows an item in cheek pouches once per rd</td>
       </tr><tr style="text-align:center">
-        <td>Ratfolk Roll: <b>(2)</b> Rolls 100' down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle</td>
+        <td>Ratfolk Roll: <b>(2)</b> Rolls 100' per rd down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
@@ -271,11 +271,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Desert Rat: Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water</td>
+        <td>Desert Rat: Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal duration without food and water</td>
       </tr><tr style="text-align:center">
         <td>Lab Rat: +1 vs. disease and poison, and successes vs. disease and poison are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Sewer Rat: +1 vs. disease and poison, and successes vs. disease and poison are critical successes</td>
+        <td>Sewer Rat: +1 vs. disease and poison, and successes vs. disease and poison are critical successes/Immune to putrid plague</td>
       </tr><tr style="text-align:center">
         <td>Snow Rat: Has cold resistance 1, and treats environmental cold as 1 step less extreme</td>
       </tr><tr style="text-align:center">
@@ -314,7 +314,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Rat Magic: Knows the Animal Messenger primal innate spell; can cast it once per day</i></td>
     </tr><tr style="text-align:center">
-      <td>Call The Swarm: <b>(3)</b> R120' Rats swarming a 30' burst inflict 6d8 HP piercing and difficult terrain to foes</td>
+      <td>Call The Swarm: <b>(3)</b> R120' Rats swarming a 30' burst inflict on foes difficult terrain, 6d8 HP piercing initially, and 3d6 HP piercing per rd for 1 min once per day</td>
     </tr><tr style="text-align:center">
       <td>Rat Form: <b>(1)</b> Becomes a Tiny rat</td>
     </tr></table>
@@ -354,7 +354,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shinstabber Feat: Requires level (currently 1) >= 13 and overcrowd feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Skittering Scuttle Feat: Requires level (currently 1) >= 9 and goblin scuttle feature</td>
+        <td>Skittering Sneak Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
         <td>Uncanny Cheeks Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">

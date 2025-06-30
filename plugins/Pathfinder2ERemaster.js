@@ -266,6 +266,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Features=' +
       '"1:Attribute Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Strength)",' +
+      '"1:Small",' +
       '"1:Low-Light Vision",' +
       '"1:Natural Climber","1:Tripkee Heritage" ' +
     'Selectables=' +
@@ -1663,15 +1664,18 @@ Pathfinder2ERemaster.FEATS = {
   'Parthenogenic Hatchling':'Traits=Ancestry,Lizardfolk',
   'Reptile Speaker':'Traits=Ancestry,Lizardfolk',
   'Envenom Fangs':
-    'Traits=Ancestry,Lizardfolk Require="level >= 5","Iruxi Armaments (Fangs)"',
+    'Traits=Ancestry,Lizardfolk ' +
+    'Require="level >= 5","features.Iruxi Armaments (Fangs)"',
   'Flexible Tail':'Traits=Ancestry,Lizardfolk Require="level >= 5"',
   "Gecko's Grip":'Traits=Ancestry,Lizardfolk Require="level >= 5"',
   'Shed Tail':
-    'Traits=Ancestry,Lizardfolk Require="level >= 5","Iruxi Armaments (Tail)"',
+    'Traits=Ancestry,Lizardfolk ' +
+    'Require="level >= 5","features.Iruxi Armaments (Tail)"',
   'Swift Swimmer':'Traits=Ancestry,Lizardfolk Require="level >= 5"',
   'Dangle':'Traits=Ancestry,Lizardfolk Require="level >= 9"',
   'Hone Claws':
-    'Traits=Ancestry,Lizardfolk Require="level >= 9","Iruxi Armaments (Claws)"',
+    'Traits=Ancestry,Lizardfolk ' +
+    'Require="level >= 9","features.Iruxi Armaments (Claws)"',
   'Terrain Advantage':'Traits=Ancestry,Lizardfolk Require="level >= 9"',
   'Bone Investiture':
     'Traits=Ancestry,Lizardfolk Require="level >= 13","features.Bone Magic"',
@@ -1758,7 +1762,8 @@ Pathfinder2ERemaster.FEATS = {
   'Tripkee Glide':
     'Traits=Ancestry,Tripkee Require="level >= 5","features.Windweb Tripkee"',
   'Vomit Stomach':'Traits=Ancestry,Tripkee Require="level >= 5"',
-  'Absorb Toxin':'Traits=Ancestry,Tripkee Require="level >= 9"',
+  // TODO require "not immune to diseases or poisons"
+  'Absorb Toxin':'Traits=Ancestry,Tripkee,Manipulate Require="level >= 9"',
   'Moisture Bath':'Traits=Ancestry,Tripkee,Manipulate Require="level >= 9"',
   'Ricocheting Leap':
     'Traits=Ancestry,Tripkee Require="level >= 9","features.Wall Jump"',
@@ -5241,7 +5246,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability ' +
     'Note="Moves normally through undergrowth difficult terrain, and through undergrowth greater difficult terrain as difficult terrain"',
   'Land On Your Feet':
-    'Section=save Note="Takes half damage from falls and does not land prone"',
+    'Section=save ' +
+    'Note="Takes half damage from falling and does not land prone"',
   'Liminal Catfolk':
     'Section=magic,skill ' +
     'Note=' +
@@ -5853,22 +5859,24 @@ Pathfinder2ERemaster.FEATURES = {
   // Tengu
   // Low-Light Vision as above
   'Sharp Beak':'Section=combat Note="Beak inflicts 1d6 HP piercing"',
-  'Dogtooth Tengu':'Section=combat Note="Beak has deadly d8 trait"',
+  // TODO implement?
+  'Dogtooth Tengu':'Section=combat Note="Beak has the deadly d8 trait"',
   'Jinxed Tengu':
     'Section=save ' +
-    'Note="Successful saves vs. curses are critical successes, and a successful DC 17 flat check reduces a doomed condition by 1"',
+    'Note="Successful saves vs. curses are critical successes, and a successful DC 17 flat check on gaining a doomed condition reduces its severity by 1"',
   'Mountainkeeper Tengu':
     'Section=magic,magic ' +
     'Note=' +
       '"Knows the Vitality Lash primal innate cantrip; can cast it at will",' +
       '"Can cast tengu-acquired spells as divine or primal spells"',
-  'Skyborn Tengu':'Section=save Note="Takes no damage from falls"',
+  'Skyborn Tengu':'Section=save Note="Takes no damage from falling"',
   'Stormtossed Tengu':
     'Section=combat,save ' +
     'Note=' +
       '"Ignores target concealment from rain or fog",' +
       '"Has resistance %{level//2>?1} to electricity"',
-  'Taloned Tengu':'Section=combat Note="Talons inflict 1d4 HP slashing"',
+  'Taloned Tengu':
+    'Section=combat Note="Talons inflict 1d4 HP slashing or piercing"',
   'Tengu Heritage':'Section=feature Note="1 selection"',
   'Wavediver Tengu':'Section=ability Note="Has a 15\' swim Speed"',
 
@@ -5884,7 +5892,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Squawk!':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure once per target per day"',
+    'Note="Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure; cannot be used again on the target or observers for 1 day"',
   "Storm's Lash":
     'Section=magic ' +
     'Note="Knows the Electric Arc primal innate cantrip; can cast it at will"',
@@ -5897,16 +5905,16 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Familiarity (Tengu Weapons; Katana; Khakkara; Temple Sword; Wakizashi)",' +
-      '"Can gain familiarity with a possessed sword during daily prep/Has access to uncommon tengu weapons%{level>=5?\'/Critical hits with a tengu weapon, katana, khakkara, temple sword, or wakizashi inflict its critical specialization effect\':\'\'}"',
+      '"Can gain familiarity with a sword during daily prep/Has access to uncommon tengu weapons%{level>=5?\'/Critical hits with a tengu weapon, katana, khakkara, temple sword, or wakizashi inflict its critical specialization effect\':\'\'}"',
   'Uncanny Agility':
     'Section=ability,feature ' +
     'Note=' +
       '"Can Step into difficult terrain caused by uneven ground",' +
-      '"Has the Stead Balance feature"',
+      '"Has the Steady Balance feature"',
   'Eat Fortune':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R60\' Counteracts a fortune or misfortune effects once per %{combatNotes.jinxGlutton?\'hr\':\'day\'}"',
+    'Note="R60\' Counteracts a fortune or misfortune effect once per %{combatNotes.jinxGlutton?\'hr\':\'day\'}"',
   'Long-Nosed Form':
     'Action=1 ' +
     'Section=magic ' +
@@ -5914,28 +5922,32 @@ Pathfinder2ERemaster.FEATURES = {
   'Magpie Snatch':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Picks up an object while Striding twice"',
-  'Soaring Flight':'Action=1 Section=combat Note="Flies 20\' once per rd"',
+    'Note="Picks up an unattended object while Striding twice"',
+  'Soaring Flight':'Action=1 Section=ability Note="Flies 20\' once per rd"',
   'Tengu Feather Fan':
-    'Section=magic,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Knows the Gust Of Wind primal spell",' +
-      '"Can cast a spell using a feather fan %V time per day"',
+      '"Has the Wave Fan feature",' +
+      '"Knows the Gust Of Wind primal spell; can cast it at 1st rank using the feather fan"',
+  'Wave Fan':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Can cast a spell using the feather fan %V time%{magicNotes.waveFan>1?\'s\':\'\'} per day"',
   'Soaring Form':'Section=ability Note="Has a 20\' fly Speed"',
   "Wind God's Fan":
     'Section=magic ' +
-    'Note="Knows the Wall Of Wind primal spell; can cast it using feather fan at 3rd rank/+1 feather fan use per day"',
+    'Note="Knows the Wall Of Wind primal spell; can cast it at 3rd rank using the feather fan/+1 feather fan use per day"',
   "Harbinger's Claw":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R60\' Inflicts the worse of 2 rolls on the triggering attack or skill check"',
+    'Note="R60\' Inflicts the worse of 2 rolls on the triggering attack or skill check once per day"',
   'Jinx Glutton':'Section=combat Note="Has increased Eat Fortune effects"',
   "Thunder God's Fan":
     'Section=magic ' +
-    'Note="Knows the Lightning Bolt primal spell; can cast it using feather fan at 5th rank/+1 feather fan use per day"',
+    'Note="Knows the Lightning Bolt primal spell; can cast it at 5th rank using the feather fan/+1 feather fan use per day"',
   'Great Tengu Form':
     'Section=magic ' +
-    'Note="Gains the benefits of 5 min <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form"',
+    'Note="Gains the effects of 5th-rank <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form for 5 min once per day"',
   'Trickster Tengu':
     'Section=magic ' +
     'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast 1 of them at 7th rank once per day"',
@@ -5944,9 +5956,11 @@ Pathfinder2ERemaster.FEATURES = {
   // Low-Light Vision as above
   'Natural Climber':'Section=skill Note="+2 Athletics to Climb"',
   'Tripkee Heritage':'Section=feature Note="1 selection"',
-  'Poisonhide Tripkee':
+  'Poisonhide Tripkee':'Section=feature Note="Has the Toxic Skin feature"',
+  'Toxic Skin':
+    'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can use a reaction once per hr to exude a poison that inflicts %{(level+1)//2}d4 HP poison (<b>save basic Fortitude</b>)"',
+    'Note="Inflicts %{(level+1)//2}d4 HP poison on triggering touch (<b>save basic Fortitude</b>) once per hr"',
   'Riverside Tripkee':'Section=ability Note="Has a 15\' swim Speed"',
   'Snaptongue Tripkee':
     'Section=feature ' +
@@ -5961,14 +5975,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+2 Hit Points",' +
       '"+1 vs. disease and poison"',
-  'Windweb Tripkee':'Section=save Note="Takes no damage from falls"',
+  'Windweb Tripkee':'Section=save Note="Takes no damage from falling"',
 
   'Croak Talker':
     'Section=skill Note="Can converse with frogs and similar creatures"',
   "Hunter's Defense":
     'Action=Reaction ' +
     'Section=feature ' +
-    'Note="Can use Nature instead of Armor Class vs. a natural creature once per hr"',
+    'Note="Can use Nature DC instead of Armor Class vs. a nature creature once per hr"',
   'Jungle Strider':
     'Section=ability,skill ' +
     'Note=' +
@@ -5978,7 +5992,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Terrifying Croak':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="R30\' Successful Demoralize using Intimidation prevents reducing frightened below 1 for 1 rd"',
+    'Note="Attempts to Demoralize a creature within 30\' with no penalty for lacking a shared language; success prevents reducing their frightened condition below 1 for 1 rd"',
   'Tripkee Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5991,43 +6005,43 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has access to uncommon tripkee weapons%{level>=5?\'/Critical hits with a tripkee weapon, blowgun, dart, hatchet, scythe, or shortbow inflict its critical specialization effect\':\'\'}"',
   'Fantastic Leaps':
     'Section=skill Note="+5\' vertical and +10\' horizontal Leap distance"',
-  'Long Tongue':'Section=feature Note="+5\' reach when using tongue"',
+  'Long Tongue':'Section=feature Note="+5\' reach using tongue"',
   'Prodigious Climber':
     'Section=ability ' +
-    'Note="Has a %{abilityNotes.stickytoeTripkee?20:10}\' climb Speed"',
+    'Note="Has a %{skillNotes.stickytoeTripkee?20:10}\' climb Speed"',
   'Tenacious Net':
     'Section=skill ' +
-    'Note="Nets require a successful DC 18 to Escape and inflict off-guard for 1 rd afterward"',
+    'Note="Nets require a successful DC 18 to Escape, and a successful Escape leaves the target off-guard until the start of their next turn"',
   'Tripkee Glide':
     'Action=1 ' +
     'Section=ability ' +
-    'Note="Can glide 5\' down and 25\' forward each rd"',
+    'Note="Can glide 5\' down and up to 25\' forward each rd"',
   'Vomit Stomach':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Reduces sickened condition 2 and gives a +2 save vs. recently-ingested positions, leaving self off-guard for 1 rd"',
+    'Note="Reduces a sickened condition by 2 and gives a +2 save vs. recently-ingested poisons, leaving self off-guard for 1 rd, once per day"',
   'Absorb Toxin':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Successful counteract check neutralizes an area disease or poison, requiring a -2 save to avoid effect"',
+    'Note="Successful counteract check ends the effects on others of an area disease or poison affect; requires a successful -2 save to avoid the effects on self"',
   'Moisture Bath':
     'Action=1 ' +
     'Section=save ' +
-    'Note="Successful DC 10 flat check gives recovery from ongoing persistent file and cold and fire and cold resistance %{level//2} once per day"',
+    'Note="Successful DC 10 flat check ends persistent fire and cold damage and gives and fire and cold resistance %{level//2} for 1 min once per day"',
   'Ricocheting Leap':
     'Section=skill ' +
-    'Note="Can using Wall Jump to carom off creatures that are larger than self"',
+    'Note="Can use Wall Jump to carom off creatures that are larger than self and to Shove or Trip a creature once per turn"',
   'Tongue Tether':
     'Section=combat ' +
     'Note="Can use tongue to Disarm, Grab An Edge, Reposition, and Trip"',
   'Envenomed Edge':
     'Section=combat ' +
-    'Note="Critical hits that deal slashing or piercing damage inflict +1d4 persistent HP poison"',
+    'Note="Critical hits that deal slashing or piercing damage inflict +1d4 HP persistent poison"',
   'Hop Up':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Stands after bring unconscious without triggering reactions"',
-  'Unbound Leaper':'Section=skill Note="Can Leap 30\' in any directions"',
+    'Note="Stands without triggering reactions when regaining consciousness"',
+  'Unbound Leaper':'Section=skill Note="Can Leap 30\' in any direction"',
 
   // Dhampir
   'Dhampir':
@@ -8512,7 +8526,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Impressive Landing':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Reduces fall damage by 10\' and inflicts 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
+    'Note="Reduces falling damage by 10\' and inflicts 5 HP bludgeoning and difficult terrain in a 5\' emanation"',
   'Knockback':Pathfinder2E.FEATURES.Knockback,
   // Overpowering Charge as above
   'Resounding Blow':
@@ -9868,7 +9882,7 @@ Pathfinder2ERemaster.HERITAGES = {
   'Duskwalker':'Traits=Uncommon'
 };
 Pathfinder2ERemaster.LANGUAGES = {
-  'Amurrun':'',
+  // Common (pg 89)
   'Common':'',
   'Draconic':'',
   'Dwarven':'',
@@ -9880,11 +9894,11 @@ Pathfinder2ERemaster.LANGUAGES = {
   'Jotun':'',
   'Orcish':'',
   'Sakvroth':'',
+  // Uncommon (pg 89)
   'Aklo':'',
   'Cnthonian':'',
   'Diabolic':'',
   'Empyrean':'',
-  'Iruxi':'',
   'Kholo':'',
   'Necril':'',
   'Petran':'',
@@ -9892,6 +9906,21 @@ Pathfinder2ERemaster.LANGUAGES = {
   'Shadowtongue':'',
   'Sussuran':'',
   'Thalassic':'',
+  // Regional (pg 34)
+  'Hallit':'',
+  'Kelish':'',
+  'Mwangi':'',
+  'Osiriani':'',
+  'Shoanti':'',
+  'Skald':'',
+  'Tien':'',
+  'Varisian':'',
+  'Vudrani':'',
+  // Core 2
+  'Amurrun':'',
+  'Iruxi':'',
+  'Tengu':'',
+  'Tripkee':'',
   'Ysoki':''
 };
 Pathfinder2ERemaster.SHIELDS = {
@@ -13241,8 +13270,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('weaponDieSidesBonus.Claws', 'combatNotes.slagMay', '^=', '2');
   } else if(name == 'Tengu Feather Fan') {
-    rules.defineRule('magicNotes.tenguFeatherFan',
-      'features.Tengu Feather Fan', '=', '1',
+    rules.defineRule('magicNotes.waveFan',
+      'magicNotes.tenguFeatherFan', '=', '1',
       "magicNotes.windGod'sFan", '+', '1',
       "magicNotes.thunderGod'sFan", '+', '1'
     );

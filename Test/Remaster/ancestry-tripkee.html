@@ -10,15 +10,15 @@ var attributes = {
   "abilityBoosts.charisma":2, "abilityBoosts.constitution":1, "abilityBoosts.intelligence":1, 
   "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, "abilityGeneration":"Standard ancestry boosts", 
   "ancestry":"Tripkee", "ancestryFeats.Absorb Toxin":1, "ancestryFeats.Croak Talker":1, 
-  "ancestryFeats.Envenom Fangs":1, "ancestryFeats.Fantastic Leaps":1, "ancestryFeats.Hop Up":1, 
+  "ancestryFeats.Envenomed Edge":1, "ancestryFeats.Fantastic Leaps":1, "ancestryFeats.Hop Up":1, 
   "ancestryFeats.Hunter's Defense":1, "ancestryFeats.Jungle Strider":1, "ancestryFeats.Long Tongue":1, 
   "ancestryFeats.Moisture Bath":1, "ancestryFeats.Nocturnal Tripkee":1, "ancestryFeats.Prodigious Climber":1, 
   "ancestryFeats.Ricocheting Leap":1, "ancestryFeats.Tenacious Net":1, "ancestryFeats.Terrifying Croak":1, 
   "ancestryFeats.Tongue Tether":1, "ancestryFeats.Tripkee Glide":1, "ancestryFeats.Tripkee Lore":1, 
   "ancestryFeats.Tripkee Weapon Familiarity":1, "ancestryFeats.Unbound Leaper":1, "ancestryFeats.Vomit Stomach":1, 
   "armor":"Splint Mail", "background":"Criminal", "class":"Fighter", "classFeats.Double Slice":1, 
-  "deity":"Nethys", "experience":774, "gender":"Male", "languages.Draconic":1, 
-  "languages.Sussuran":1, "name":"Ancestry-Tripkee", "selectableFeatures.Fighter - Strength":1, 
+  "deity":"Nethys", "experience":774, "gender":"Male", "languages.Sussuran":1, 
+  "name":"Ancestry-Tripkee", "selectableFeatures.Fighter - Strength":1, 
   "selectableFeatures.Tripkee - Poisonhide Tripkee":1, "selectableFeatures.Tripkee - Riverside Tripkee":1, 
   "selectableFeatures.Tripkee - Snaptongue Tripkee":1, "selectableFeatures.Tripkee - Stickytoe Tripkee":1, 
   "selectableFeatures.Tripkee - Thickskin Tripkee":1, "selectableFeatures.Tripkee - Windweb Tripkee":1, "shield":"Wooden", 
@@ -58,7 +58,7 @@ var attributes = {
       <td><b>Experience</b>: 774/1000</td>
       <td><b>Level</b>: 1</td>
       <td><b>Speed</b>: 15</td>
-      <td><b>Size</b>: Medium</td>
+      <td><b>Size</b>: Small</td>
       <td><b>Encumbered/Maximum Bulk:</b> 7/12</td>
     </tr></table>
 </td>
@@ -71,11 +71,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Jungle Strider: Moves normally through difficult terrain in forests and jungles</td>
     </tr><tr style="text-align:center">
-      <td>Prodigious Climber: Has a 10' climb Speed</td>
+      <td>Prodigious Climber: Has a 20' climb Speed</td>
     </tr><tr style="text-align:center">
       <td>Riverside Tripkee: Has a 15' swim Speed</td>
     </tr><tr style="text-align:center">
-      <td>Tripkee Glide: <b>(1)</b> Can glide 5' down and 25' forward each rd</td>
+      <td>Tripkee Glide: <b>(1)</b> Can glide 5' down and up to 25' forward each rd</td>
     </tr></table>
 </td>
   </tr></table>
@@ -94,10 +94,10 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Absorb Toxin; Croak Talker; Double Slice; Envenom Fangs; Fantastic Leaps; Hop Up; Hunter's Defense; Jungle Strider; Long Tongue; Moisture Bath; Nocturnal Tripkee; Prodigious Climber; Ricocheting Leap; Tenacious Net; Terrifying Croak; Tongue Tether; Tripkee Glide; Tripkee Lore; Tripkee Weapon Familiarity; Unbound Leaper; Vomit Stomach</td>
+        <td><b>Feats</b>: Absorb Toxin; Croak Talker; Double Slice; Envenomed Edge; Fantastic Leaps; Hop Up; Hunter's Defense; Jungle Strider; Long Tongue; Moisture Bath; Nocturnal Tripkee; Prodigious Climber; Ricocheting Leap; Tenacious Net; Terrifying Croak; Tongue Tether; Tripkee Glide; Tripkee Lore; Tripkee Weapon Familiarity; Unbound Leaper; Vomit Stomach</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Criminal Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Experienced Smuggler; Skill Trained (Stealth; Underworld Lore)</td>
-        <td><b>Tripkee Features</b>: Attribute Boost (Dexterity; Wisdom; Choose 1 from any); Attribute Flaw (Strength); Low-Light Vision; Natural Climber; Poisonhide Tripkee; Riverside Tripkee; Snaptongue Tripkee; Stickytoe Tripkee; Thickskin Tripkee; Tripkee Heritage; Windweb Tripkee</td>
+        <td><b>Tripkee Features</b>: Attribute Boost (Dexterity; Wisdom; Choose 1 from any); Attribute Flaw (Strength); Low-Light Vision; Natural Climber; Poisonhide Tripkee; Riverside Tripkee; Small; Snaptongue Tripkee; Stickytoe Tripkee; Thickskin Tripkee; Tripkee Heritage; Windweb Tripkee</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -109,15 +109,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Nocturnal Tripkee: Has the Darkvision feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Poisonhide Tripkee: Has the Toxic Skin feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Tripkee Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Tripkee Lore: Has the Additional Lore (Tripkee Lore) feature</i></td>
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
-        <td>Hunter's Defense: <b>(R)</b> Can use Nature instead of Armor Class vs. a natural creature once per hr</td>
+        <td>Hunter's Defense: <b>(R)</b> Can use Nature DC instead of Armor Class vs. a nature creature once per hr</td>
       </tr><tr style="text-align:center">
-        <td>Long Tongue: +5' reach when using tongue</td>
+        <td>Long Tongue: +5' reach using tongue</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
@@ -164,7 +166,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Draconic; Sussuran; Tripkee</td>
+    <td><b>Languages</b>: Common; Sussuran; Tripkee</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -190,15 +192,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Natural Climber: +2 Athletics to Climb</td>
     </tr><tr style="text-align:center">
-      <td>Ricocheting Leap: Can using Wall Jump to carom off creatures that are larger than self</td>
+      <td>Ricocheting Leap: Can use Wall Jump to carom off creatures that are larger than self and to Shove or Trip a creature once per turn</td>
     </tr><tr style="text-align:center">
       <td>Stickytoe Tripkee: Successes on Athletics to Climb foliage are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Tenacious Net: Nets require a successful DC 18 to Escape and inflict off-guard for 1 rd afterward</td>
+      <td>Tenacious Net: Nets require a successful DC 18 to Escape, and a successful Escape leaves the target off-guard until the start of their next turn</td>
     </tr><tr style="text-align:center">
-      <td>Terrifying Croak: <b>(1)</b> R30' Successful Demoralize using Intimidation prevents reducing frightened below 1 for 1 rd</td>
+      <td>Terrifying Croak: <b>(1)</b> Attempts to Demoralize a creature within 30' with no penalty for lacking a shared language; success prevents reducing their frightened condition below 1 for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Unbound Leaper: Can Leap 30' in any directions</td>
+      <td>Unbound Leaper: Can Leap 30' in any direction</td>
     </tr></table>
 </td>
   </tr></table>
@@ -240,11 +242,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Double Slice: <b>(2)</b> Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty</td>
       </tr><tr style="text-align:center">
-        <td>Envenom Fangs: <b>(1)</b> Enhances fangs to inflict +1d6 HP persistent poison on next hit before the end of the next turn</td>
+        <td>Envenomed Edge: Critical hits that deal slashing or piercing damage inflict +1d4 HP persistent poison</td>
       </tr><tr style="text-align:center">
-        <td>Hop Up: <b>(F)</b> Stands after bring unconscious without triggering reactions</td>
-      </tr><tr style="text-align:center">
-        <td>Poisonhide Tripkee: Can use a reaction once per hr to exude a poison that inflicts 1d4 HP poison (<b>save basic Fortitude</b>)</td>
+        <td>Hop Up: <b>(F)</b> Stands without triggering reactions when regaining consciousness</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
@@ -253,6 +253,8 @@ var attributes = {
         <td>Stickytoe Tripkee: +2 Fortitude and Reflex DC vs. Disarm, Shove, Reposition, and Trip attempts</td>
       </tr><tr style="text-align:center">
         <td>Tongue Tether: Can use tongue to Disarm, Grab An Edge, Reposition, and Trip</td>
+      </tr><tr style="text-align:center">
+        <td>Toxic Skin: <b>(R)</b> Inflicts 1d4 HP poison on triggering touch (<b>save basic Fortitude</b>) once per hr</td>
       </tr><tr style="text-align:center">
         <td>Tripkee Weapon Familiarity: Has access to uncommon tripkee weapons</td>
       </tr></table>
@@ -266,15 +268,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Absorb Toxin: <b>(R)</b> Successful counteract check neutralizes an area disease or poison, requiring a -2 save to avoid effect</td>
+        <td>Absorb Toxin: <b>(R)</b> Successful counteract check ends the effects on others of an area disease or poison affect; requires a successful -2 save to avoid the effects on self</td>
       </tr><tr style="text-align:center">
-        <td>Moisture Bath: <b>(1)</b> Successful DC 10 flat check gives recovery from ongoing persistent file and cold and fire and cold resistance 0 once per day</td>
+        <td>Moisture Bath: <b>(1)</b> Successful DC 10 flat check ends persistent fire and cold damage and gives and fire and cold resistance 0 for 1 min once per day</td>
       </tr><tr style="text-align:center">
         <td>Thickskin Tripkee: +1 vs. disease and poison</td>
       </tr><tr style="text-align:center">
-        <td>Vomit Stomach: <b>(R)</b> Reduces sickened condition 2 and gives a +2 save vs. recently-ingested positions, leaving self off-guard for 1 rd</td>
+        <td>Vomit Stomach: <b>(R)</b> Reduces a sickened condition by 2 and gives a +2 save vs. recently-ingested poisons, leaving self off-guard for 1 rd, once per day</td>
       </tr><tr style="text-align:center">
-        <td>Windweb Tripkee: Takes no damage from falls</td>
+        <td>Windweb Tripkee: Takes no damage from falling</td>
       </tr></table>
 </td>
     </tr></table>
@@ -292,7 +294,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Ancestry Feats Allocation: 0 available vs. 20 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Envenom Fangs Feat: Requires level (currently 1) >= 5 and Iruxi Armaments (Fangs)</td>
+        <td>Envenomed Edge Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
         <td>Fantastic Leaps Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">

@@ -18,7 +18,7 @@ var attributes = {
   "ancestryFeats.Reptile Speaker":1, "ancestryFeats.Scion Transformation":1, "ancestryFeats.Shed Tail":1, 
   "ancestryFeats.Swift Swimmer":1, "ancestryFeats.Terrain Advantage":1, "armor":"Chain Mail", 
   "background":"Driver", "class":"Fighter", "classFeats.Vicious Swing":1, "deity":"Pharasma", 
-  "experience":842, "gender":"Male", "languages.Jotun":1, "name":"Ancestry-Lizardfolk", 
+  "experience":842, "gender":"Male", "name":"Ancestry-Lizardfolk", 
   "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Lizardfolk - Cliffscale Lizardfolk":1, 
   "selectableFeatures.Lizardfolk - Cloudleaper Lizardfolk":1, "selectableFeatures.Lizardfolk - Frilled Lizardfolk":1, 
   "selectableFeatures.Lizardfolk - Sandstrider Lizardfolk":1, "selectableFeatures.Lizardfolk - Unseen Lizardfolk":1, 
@@ -116,7 +116,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Lizardfolk Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Lizardfolk Lore: +1 Skill Feat (Astrology Lore or Lizardfolk Lore)</i></td>
+        <td><i>Lizardfolk Lore: +1 Skill Feat (Addition Lore for Astrology Lore or Lizardfolk Lore)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Woodstalker Lizardfolk: Has the Terrain Stalker (Underbrush) feature</i></td>
       </tr><tr style="text-align:center">
@@ -124,7 +124,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Flexible Tail: Can use tail to perform simple Interact actions</td>
       </tr><tr style="text-align:center">
-        <td>Scion Transformation: Can use a 24-hr hibernation to gain effects of <i>Enlarge</i> and +1 Hit Points permanently</td>
+        <td>Scion Transformation: Can use a 24-hr hibernation to gain the effects of <i>Enlarge</i> and +1 Hit Points permanently</td>
+      </tr><tr style="text-align:center">
+        <td>Unseen Lizardfolk: Can use a 1-hr process to change skin color</td>
       </tr></table>
 </td>
     </tr></table>
@@ -167,7 +169,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Languages</b>: Common; Iruxi; Jotun</td>
+    <td><b>Languages</b>: Common; Iruxi</td>
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
@@ -185,6 +187,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Combat Climber: Can Climb with a hand occupied, can fight while Climbing, and Climbing does not inflict flat-footed</td>
     </tr><tr style="text-align:center">
+      <td>Frilled Lizardfolk: Can use visual threats to Demoralize</td>
+    </tr><tr style="text-align:center">
       <td>Gecko's Grip: Successes on Athletics to climb are critical successes</td>
     </tr><tr style="text-align:center">
       <td>Marsh Runner: Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes are critical successes</td>
@@ -193,7 +197,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Terrain Stalker (Underbrush): Sneaking 5' in underbrush at least 10' from foes requires no Stealth check</td>
     </tr><tr style="text-align:center">
-      <td>Unseen Lizardfolk: +2 Stealth in environments of similar color as self</td>
+      <td>Unseen Lizardfolk: <b>(1)</b> Gains +2 Stealth until surroundings change</td>
     </tr><tr style="text-align:center">
       <td>Woodstalker Lizardfolk: Can always Take Cover in forest or jungle</td>
     </tr></table>
@@ -239,9 +243,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
-        <td>Envenom Fangs: <b>(1)</b> Enhances fangs to inflict +1d6 HP persistent poison on next hit before the end of the next turn</td>
+        <td>Envenom Fangs: <b>(1)</b> Enhances fangs to inflict +1d6 HP persistent poison on the next hit before the end of the next turn once per hr</td>
       </tr><tr style="text-align:center">
-        <td>Hone Claws: <b>(1)</b> Enhances claws to inflict +1d6 HP bleed damage on next hit</td>
+        <td>Hone Claws: <b>(1)</b> Enhances claws to inflict +1d6 HP bleed damage on the next hit</td>
       </tr><tr style="text-align:center">
         <td>Iruxi Spirit Strike: Lizardfolk ancestry attacks have the <i>ghost touch</i> property</td>
       </tr><tr style="text-align:center">
@@ -249,13 +253,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Shed Tail: <b>(R)</b> Can release tail to escape being grabbed and then Stride without triggering reactions from grabbing foe; regrowth takes 1 day and inflicts -2 Balance</td>
+        <td>Shed Tail: <b>(R)</b> Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing foe; regrowth takes 1 day and inflicts -2 Balance</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Terrain Advantage: Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard to self</td>
+        <td>Terrain Advantage: Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard vs. self</td>
       </tr><tr style="text-align:center">
-        <td>Threatening Approach: <b>(2)</b> Stride adjacent to foe followed by a successful Demoralize inflicts frightened 2</td>
+        <td>Threatening Approach: <b>(2)</b> Stride to a spot adjacent to a foe followed by a successful Demoralize inflicts frightened 2</td>
       </tr><tr style="text-align:center">
         <td>Vicious Swing: <b>(2)</b> Melee Strike inflicts 1 extra damage die and counts as 2 Strikes for the multiple attack penalty</td>
       </tr></table>
@@ -275,7 +279,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Parthenogenic Hatchling: +1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hr and from starvation every 2 days</td>
       </tr><tr style="text-align:center">
-        <td>Sandstrider Lizardfolk: Has fire resistance 1, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal without food and water</td>
+        <td>Sandstrider Lizardfolk: Has fire resistance 1, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x the normal duration without food and water</td>
       </tr></table>
 </td>
     </tr></table>
@@ -334,7 +338,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dangle Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">
-        <td>Envenom Fangs Feat: Requires level (currently 1) >= 5 and Iruxi Armaments (Fangs)</td>
+        <td>Envenom Fangs Feat: Requires level (currently 1) >= 5 and iruxi armaments (fangs) feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Flexible Tail Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
@@ -342,7 +346,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Gecko's Grip Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
-        <td>Hone Claws Feat: Requires level (currently 1) >= 9 and Iruxi Armaments (Claws)</td>
+        <td>Hone Claws Feat: Requires level (currently 1) >= 9 and iruxi armaments (claws) feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Iruxi Spirit Strike Feat: Requires level (currently 1) >= 13</td>
       </tr><tr style="text-align:center">
@@ -352,7 +356,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Scion Transformation Feat: Requires level (currently 1) >= 17</td>
       </tr><tr style="text-align:center">
-        <td>Shed Tail Feat: Requires level (currently 1) >= 5 and Iruxi Armaments (Tail)</td>
+        <td>Shed Tail Feat: Requires level (currently 1) >= 5 and iruxi armaments (tail) feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Swift Swimmer Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
