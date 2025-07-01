@@ -5530,7 +5530,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Breath Like Honey':
     'Section=magic,skill ' +
     'Note=' +
-      '"Knows the Enthrall occult innate spell; can cast it at 3rd rank once a day with a range of 30\'",' +
+      '"Knows the Enthrall occult innate spell; can cast it at 3rd rank once per day with a range of 30\'",' +
       '"Has increased Sweetbreath Kholo effects"',
   "Grandmother's Wisdom":
     'Section=magic ' +
@@ -6047,19 +6047,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Dhampir':
     'Section=feature,feature ' +
     'Note=' +
-      // or Darkvision
+      // TODO or Darkvision
       '"Has the Void Healing and Low-Light Vision features",' +
       '"Has the dhampir trait and may take dhampir ancestry feats"',
   'Void Healing':
-    'Section=save Note="Vitality damage causes harm and void effects heal"',
+    'Section=save Note="Vitality effects cause harm and void effects heal"',
   'Straveika':
     'Section=skill Note="+1 Perception to Sense Motive and vs. Lies"',
   'Svetocher':
     'Section=save,skill ' +
     'Note=' +
-      '"Lowers drained penalty by 1 for Fortitude save and Hit Point reduction",' +
+      '"Treats drained condition as 1 step lower for Fortitude save and Hit Point reduction",' +
       '"Skill Trained (Diplomacy)"',
-  'Eyes Of The Night':'Section=feature Note="Has the Darkvision feature"',
+  'Eyes Of Night':'Section=feature Note="Has the Darkvision feature"',
   'Fangs':'Section=combat Note="Fangs inflict 1d6 HP piercing"',
   'Vampire Lore':
     'Section=feature,skill ' +
@@ -6068,13 +6068,13 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Religion; Society)"',
   'Voice Of The Night':
     'Section=skill ' +
-    'Note="Can converse with bats, rats, and wolves, and gains +1 on Make an Impression with them"',
+    'Note="Can converse with bats, rats, and wolves, and gains +1 to Make an Impression on them"',
   'Enthralling Allure':
     'Section=magic ' +
-    'Note="Knows the Charm divine innate spell; can cast it once a day at rank %{(level+1)//2}"',
+    'Note="Knows the Charm divine innate spell; can cast it at rank %{(level+1)//2} once per day"',
   'Necromantic Physiology':
     'Section=save ' +
-    'Note="+2 save vs. disease, and successful saves vs. disease are critical successes"',
+    'Note="+2 vs. disease, and successful saves vs. disease are critical successes"',
   'Undead Slayer':
     'Section=combat ' +
     'Note="Inflicts additional damage vs. undead equal to the number of weapon damage dice, or double this vs. vampires"',
@@ -6085,8 +6085,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Animal Form and Mist divine innate spells; can cast each (Animal Form wolf only) at 2nd rank once per day"',
   'Form Of The Bat':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Knows the Pest Form divine innate spell; can cast it (bat only) at 4th rank once per hr"',
+    'Note="Knows the Pest Form divine innate spell; can cast it (bat form only) at 4th rank once per hr"',
   'Symphony Of Blood':
     'Section=magic ' +
     'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it at 7th rank once per day"',
@@ -6120,16 +6121,17 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Nature)",' +
       '"Can use Nature to Sense Direction and Subsist in the wilds"',
   'Breath Of The Dragon':
+    'Action=2 ' +
     'Section=combat ' +
     'Note="Breath inflicts %{(level+1)//2}d%{combatNotes.formidableBreath?6:4} HP %V (<b>save basic %1</b>) in a %{combatNotes.formidableBreath?30:15}\' cone or %{combatNotes.formidableBreath?60:30}\' line once every 1d4 rd"',
   'Draconic Aspect (Claw)':
     'Section=combat Note="Claws inflict 1d4 HP slashing"',
   'Draconic Aspect (Jaws)':
-    'Section=feature Note="Jaws inflict 1d6 HP piercing"',
+    'Section=combat Note="Jaws inflict 1d6 HP piercing"',
   'Draconic Aspect (Tail)':
-    'Section=feature Note="Tail inflicts 1d6 HP bludgeoning"',
+    'Section=combat Note="Tail inflicts 1d6 HP bludgeoning"',
   'Draconic Resistance':
-    'Section=feature Note="Has resistance %{level//2>?1} to %V"',
+    'Section=save Note="Has resistance %{level//2>?1} to %V"',
   'Draconic Sight':
     // TODO or Darkvision
     'Section=feature Note="Has the Low-Light Vision feature"',
@@ -6139,21 +6141,24 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Additional Lore (Dragon Lore) feature",' +
       '"Skill Trained (Diplomacy; Intimidation)"',
   'Scaly Hide':
-    'Section=combat Note="+2 Armor Class in no armor, with a +3 dexterity cap"',
+    'Section=combat ' +
+    'Note="+%{2-(dexterityModifier-3>?0)} Armor Class in no armor"',
+  // TODO implement?
   'Deadly Aspect':
     'Section=combat Note="Draconic Aspect attack has the deadly d8 trait"',
   'Draconic Scent':'Section=skill Note="Has 30\' imprecise scent"',
-  "Dragon's Flight":'Section=ability Note="Can Fly 20\' once per rd"',
+  "Dragon's Flight":
+    'Action=1 Section=ability Note="Can Fly 20\' once per rd"',
   'Traditional Resistances':
     'Section=save ' +
-    'Note="+1 Armor Class and saves vs. %{magicNotes.arcaneDragonblood?\'arcane\':magicNotes.divineDragonblood?\'divine\':magicNotes.occultDragonblood?\'occult\':\'primal\'} magical effects/+2 vs. sleep and paralysis"',
+    'Note="+1 Armor Class and saves vs. %{magicNotes.arcaneDragonblood?\'arcane\':magicNotes.divineDragonblood?\'divine\':magicNotes.occultDragonblood?\'occult\':\'primal\'} magical effects, or +2 vs. sleep and paralysis"',
   'Formidable Breath':
     'Section=combat Note="Has increased Breath Of The Dragon effects"',
   "True Dragon's Flight":'Section=ability Note="Has a 20\' fly Speed"',
   'Wing Buffet':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Athletics vs. Fortitude inflicts %{level} HP bludgeoning and a 5\' push, %{level*2} HP and 10\' on a critical success, or %{level//2} HP only on a failure; critical failure inflicts prone on self"',
+    'Note="Successful Athletics vs. Fortitude inflicts on 2 adjacent targets %{level} HP bludgeoning and a 5\' push, %{level*2} HP and a 10\' push on a critical success, or %{level//2} HP only on a failure; critical failure inflicts prone on self"',
   'Draconic Veil':
     // TODO tradition may vary
     'Section=magic ' +
@@ -6174,17 +6179,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Duskwalker':
     'Section=feature,feature,save ' +
     'Note=' +
+      // TODO or Darkvision
       '"Has the Low-Light Vision feature",' +
       '"Has the duskwalker trait and may take duskwalker ancestry feats",' +
       '"Cannot become undead"',
-  'Change Death':
+  'Chance Death':
     'Action=Reaction ' +
     'Section=save ' +
     'Note="Rerolls a fatally failed recovery check or save once per day"',
   'Deliberate Death':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike against a foe that inflicts the dying condition on self"',
+    'Note="Makes a melee Strike against a foe that inflicts the dying condition on self once per day"',
   'Duskwalker Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -6194,17 +6200,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Familiarity (Bo Staff; Longbow; Composite Longbow; Scythe; Staff)",' +
-      '"%{level>=5?\'Critical hits with a bo staff, longbow, composite longbow, scythe, or staff inflict its critical specialization effect\':\'\'}"',
+      '"Critical hits with a bo staff, longbow, composite longbow, scythe, or staff inflict its critical specialization effect"',
   'Ghost Hunter':
     'Section=combat ' +
     'Note="Strikes on incorporeal creatures are magical, and magical weapons gain the <i>ghost touch</i> property"',
   'Gravesight':'Section=feature Note="Has the Darkvision feature"',
   'Lifesense':
     'Section=skill ' +
-    'Note="R10\' Can imprecisely sense the life force of living and undead creatures"',
+    'Note="Can imprecisely sense the life force of living and undead creatures within 10\'"',
   'Spirit Soother':
     'Section=skill ' +
-    'Note="Automatically attempts a check to notice haunts, and gains +1 to disable haunts"',
+    'Note="Automatically attempts a check to notice haunts, and gains +1 to disable them"',
   'Ward Against Corruption':
     'Section=save ' +
     'Note="+1 vs. death effects, disease, and undead or sahkils, and +2 vs. undead and sahkil death effects and disease"',
@@ -9726,7 +9732,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
   'Group Impression': // Target counts changed
     'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression with %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
+    'Note="Can use Diplomacy to Make an Impression on %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
   'Hefty Hauler':Pathfinder2E.FEATURES['Hefty Hauler'],
   'Hobnobber':
     Pathfinder2E.FEATURES.Hobnobber.replace('when taking normal time ', ''),
@@ -13105,7 +13111,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Unarmed'], null
     );
     rules.defineRule
-      ('weapons.Claws', 'combatNotes.draconicAspect(Claws)', '=', '1');
+      ('weapons.Claws', 'combatNotes.draconicAspect(Claw)', '=', '1');
   } else if(name == 'Draconic Aspect (Jaws)') {
     Pathfinder2E.weaponRules(
       rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
@@ -13256,7 +13262,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('armorClass', 'combatNotes.scalyHide.1', '+', null);
     // NOTE: apparently reduced dex cap only applies if unarmored
-    rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v', '3');
+    rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v=', '3');
   } else if(name == 'Shinstabber') {
     rules.defineRule('combatNotes.overcrowd',
       'combatNotes.shinstabber', '=', 'null' // italics
@@ -13355,14 +13361,24 @@ Pathfinder2ERemaster.heritageRules = function(
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   let heritageLevel = prefix + 'Level';
 
-  Pathfinder2E.featureListRules
-    (rules, ['1:' + name + ':Heritage'], 'Versatile Heritage', heritageLevel,
-     true);
-  Pathfinder2E.featureListRules(rules, selectables, name, heritageLevel, true);
   rules.defineRule(heritageLevel,
     'features.' + name, '?', null,
     'level', '=', null
   );
+
+  Pathfinder2E.featureListRules
+    (rules, ['1:' + name + ':Heritage'], 'Versatile Heritage', heritageLevel,
+     true);
+  Pathfinder2E.featureListRules(rules, selectables, name, heritageLevel, true);
+  selectables.forEach(selectable => {
+    let pieces = selectable.split(':');
+    let s = pieces[pieces.length > 1 && pieces[0].match(/\d+$/) ? 1 : 0];
+    let sType = s == s[pieces.length - 1] ? '' : pieces[pieces.length - 1];
+    let sCount = prefix + sType.replaceAll(' ', '') + 'Count';
+    rules.defineRule(sCount, prefix + 'Features.' + s, '+=', '1');
+    QuilvynRules.validAllocationRules
+      (rules, prefix + sType.replaceAll(' ', ''), 'selectableFeatureCount.' + name + (sType != '' ? ' (' + sType + ')' : ''), sCount);
+  });
 
   selectables = rules.getChoices('selectableFeatures');
   let s = QuilvynUtils.getKeys(selectables, 'Versatile Heritage.*' + name)[0];
@@ -13389,25 +13405,13 @@ Pathfinder2ERemaster.heritageRules = function(
  */
 Pathfinder2ERemaster.heritageRulesExtra = function(rules, name) {
   if(name == 'Dragonblood') {
-    rules.defineRule('dragonbloodLevel',
-      'features.Dragonblood', '?', null,
-      'level', '=', null
-    );
-    rules.defineRule('selectableFeatureCount.Draconic Exemplar',
+    rules.defineRule('selectableFeatureCount.Dragonblood (Draconic Exemplar)',
       'featureNotes.draconicExemplar', '=', '1'
     );
-    // TODO Probably put this in HERITAGES and change heritageRules
-    Pathfinder2E.featureListRules
-      (rules, [
-       '1:Adamantine Exemplar:Draconic Exemplar',
-       '1:Conspirator Exemplar:Draconic Exemplar',
-       '1:Diabolic Exemplar:Draconic Exemplar',
-       '1:Empyreal Exemplar:Draconic Exemplar',
-       '1:Fortune Exemplar:Draconic Exemplar',
-       '1:Horned Exemplar:Draconic Exemplar',
-       '1:Mirage Exemplar:Draconic Exemplar',
-       '1:Omen Exemplar:Draconic Exemplar'
-       ], 'Draconic Exemplar', 'dragonbloodLevel', true);
+  } else if(name == 'Duskwalker') {
+    rules.defineRule('combatNotes.duskwalkerWeaponFamiliarity-1',
+      'level', '?', 'source >= 5'
+    );
   }
 };
 
