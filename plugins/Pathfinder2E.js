@@ -1060,7 +1060,8 @@ Pathfinder2E.FEATS = {
   'Animal Elocutionist':
     'Traits=Ancestry,Gnome Require="level >= 5","features.Burrow Elocutionist"',
   // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
-  'Energized Font':'Traits=Ancestry,Gnome Require="level >= 5","focusPoints"',
+  'Energized Font':
+    'Traits=Ancestry,Gnome Require="level >= 5","features.Focus Pool"',
   'Gnome Weapon Innovator':
     'Traits=Ancestry,Gnome ' +
     'Require="level >= 5","features.Gnome Weapon Familiarity"',
@@ -1165,6 +1166,8 @@ Pathfinder2E.FEATS = {
     'Require="level >= 13","features.Orc Weapon Familiarity"',
 
   // Class
+
+  // Alchemist
   'Alchemical Familiar':'Traits=Class,Alchemist',
   'Alchemical Savant':'Traits=Class,Alchemist Require="rank.Crafting >= 1"',
   'Far Lobber':'Traits=Class,Alchemist',
@@ -1220,6 +1223,7 @@ Pathfinder2E.FEATS = {
       '"features.Expanded Splash"',
   'Perfect Mutagen':'Traits=Class,Alchemist Require="level >= 20"',
 
+  // Barbarian
   'Acute Vision':'Traits=Class,Barbarian',
   'Moment Of Clarity':'Traits=Class,Barbarian,Concentrate,Rage',
   'Raging Intimidation':'Traits=Class,Barbarian',
@@ -1238,6 +1242,7 @@ Pathfinder2E.FEATS = {
   'Swipe':'Traits=Class,Barbarian,Fighter,Flourish Require="level >= 4"',
   // Errata removes Rage trait
   'Wounded Rage':'Traits=Class,Barbarian Require="level >= 4"',
+  // Instinct trait missing from Nethys
   'Animal Skin':
     'Traits=Class,Barbarian,Morph,Primal,Transmutation ' +
     'Require="level >= 6","features.Animal Instinct"',
@@ -1246,24 +1251,24 @@ Pathfinder2E.FEATS = {
   'Brutal Bully':
     'Traits=Class,Barbarian Require="level >= 6","rank.Athletics >= 2"',
   'Cleave':'Traits=Class,Barbarian,Rage Require="level >= 6"',
+  // Instinct trait missing from Nethys
   "Dragon's Rage Breath":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Arcane,Concentrate,Evocation,Rage ' +
     'Require="level >= 6","features.Dragon Instinct"',
+  // Instinct trait missing from Nethys
   "Giant's Stature":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 6","features.Giant Instinct"',
+  // Instinct trait missing from Nethys
   "Spirits' Interference":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Divine,Necromancy,Rage ' +
     'Require="level >= 6","features.Spirit Instinct"',
+  // Instinct trait missing from Nethys
   'Animal Rage':
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require="level >= 8","features.Animal Instinct"',
   'Furious Bully':
-    'Traits=Class,Barbarian Require="level >= 8","rank.Athletics >=3 "',
+    'Traits=Class,Barbarian Require="level >= 8","rank.Athletics >= 3"',
   'Renewed Vigor':
     'Traits=Class,Barbarian,Concentrate,Rage Require="level >= 8"',
   'Share Rage':
@@ -1279,21 +1284,21 @@ Pathfinder2E.FEATS = {
   'Terrifying Howl':
     'Traits=Class,Barbarian,Auditory,Rage ' +
     'Require="level >= 10","features.Intimidating Glare"',
+  // Instinct trait missing from Nethys
   "Dragon's Rage Wings":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Morph,Primal,Rage,Transmutation ' +
     'Require="level >= 12","features.Dragon Instinct"',
   'Furious Grab':'Traits=Class,Barbarian,Rage Require="level >= 12"',
+  // Instinct trait missing from Nethys
   "Predator's Pounce":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Flourish,Open,Rage ' +
     'Require="level >= 12","features.Animal Instinct"',
+  // Instinct trait missing from Nethys
   "Spirit's Wrath":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Spirit Instinct"',
+  // Instinct trait missing from Nethys
   "Titan's Stature":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Polymorph,Transmutation ' +
     'Require=' +
       '"level >= 12",' +
@@ -1302,8 +1307,8 @@ Pathfinder2E.FEATS = {
   'Awesome Blow':
     'Traits=Class,Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Knockback"',
+  // Instinct trait missing from Nethys
   "Giant's Lunge":
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Rage ' +
     'Require="level >= 14","features.Giant Instinct"',
   'Vengeful Strike':
@@ -1313,8 +1318,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Barbarian,Fighter,Flourish,Open Require="level >= 14"',
   'Collateral Thrash':
     'Traits=Class,Barbarian,Rage Require="level >= 16","features.Thrash"',
+  // Instinct trait missing from Nethys
   'Dragon Transformation':
-    // Instinct trait missing from Nethys
     'Traits=Class,Barbarian,Concentrate,Polymorph,Primal,Rage,Transmutation ' +
     'Require=' +
       '"level >= 16",' +
@@ -1331,6 +1336,7 @@ Pathfinder2E.FEATS = {
   'Quaking Stomp':
     'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 20"',
 
+  // Bard
   'Bardic Lore':'Traits=Class,Bard Require="features.Enigma"',
   'Lingering Composition':
     'Traits=Class,Bard Require="features.Maestro","features.Focus Pool"',
@@ -1414,80 +1420,9 @@ Pathfinder2E.FEATS = {
   'Symphony Of The Muse':
     'Traits=Class,Bard Require="level >= 20","features.Harmonize"',
 
-  "Deity's Domain (Air)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Air\'"',
-  "Deity's Domain (Ambition)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Ambition\'"',
-  "Deity's Domain (Cities)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Cities\'"',
-  "Deity's Domain (Confidence)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Confidence\'"',
-  "Deity's Domain (Creation)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Creation\'"',
-  "Deity's Domain (Darkness)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Darkness\'"',
-  "Deity's Domain (Death)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Death\'"',
-  "Deity's Domain (Destruction)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Destruction\'"',
-  "Deity's Domain (Dreams)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Dreams\'"',
-  "Deity's Domain (Earth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Earth\'"',
-  "Deity's Domain (Family)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Family\'"',
-  "Deity's Domain (Fate)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Fate\'"',
-  "Deity's Domain (Fire)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Fire\'"',
-  "Deity's Domain (Freedom)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Freedom\'"',
-  "Deity's Domain (Healing)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Healing\'"',
-  "Deity's Domain (Indulgence)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Indulgence\'"',
-  "Deity's Domain (Knowledge)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Knowledge\'"',
-  "Deity's Domain (Luck)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Luck\'"',
-  "Deity's Domain (Magic)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Magic\'"',
-  "Deity's Domain (Might)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Might\'"',
-  "Deity's Domain (Moon)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Moon\'"',
-  "Deity's Domain (Nature)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Nature\'"',
-  "Deity's Domain (Nightmares)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Nightmares\'"',
-  "Deity's Domain (Pain)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Pain\'"',
-  "Deity's Domain (Passion)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Passion\'"',
-  "Deity's Domain (Perfection)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Perfection\'"',
-  "Deity's Domain (Protection)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Protection\'"',
-  "Deity's Domain (Secrecy)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Secrecy\'"',
-  "Deity's Domain (Sun)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Sun\'"',
-  "Deity's Domain (Travel)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Travel\'"',
-  "Deity's Domain (Trickery)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Trickery\'"',
-  "Deity's Domain (Truth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Truth\'"',
-  "Deity's Domain (Tyranny)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Tyranny\'"',
-  "Deity's Domain (Undeath)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Undeath\'"',
-  "Deity's Domain (Water)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Water\'"',
-  "Deity's Domain (Wealth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Wealth\'"',
-  "Deity's Domain (Zeal)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Zeal\'"',
+  // Champion
+  "Deity's Domain (%domain)":
+    'Traits=Class,Champion Require="deityDomains =~ \'%domain\'"',
   'Ranged Reprisal':'Traits=Class,Champion Require="features.Paladin"',
   'Unimpeded Step':'Traits=Class,Champion Require="features.Liberator"',
   'Weight Of Guilt':'Traits=Class,Champion Require="features.Redeemer"',
@@ -1523,6 +1458,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
+      // TODO recheck prereq
       // Shield Ally and Tenets Of Good for Champion, Shield Block for Fighter
       '"features.Shield Ally && features.The Tenets Of Good || ' +
        'features.Shield Block"',
@@ -1533,191 +1469,9 @@ Pathfinder2E.FEATS = {
       '"features.Blade Ally",' +
       // Errata adds The Tenets Of Good
       '"features.The Tenets Of Good"',
-  "Advanced Deity's Domain (Air)":
+  "Advanced Deity's Domain (%domain)":
     'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Air)"',
-  "Advanced Deity's Domain (Ambition)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Ambition)"',
-  "Advanced Deity's Domain (Cities)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Cities)"',
-  "Advanced Deity's Domain (Confidence)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Confidence)"',
-  "Advanced Deity's Domain (Creation)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Creation)"',
-  "Advanced Deity's Domain (Darkness)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Darkness)"',
-  "Advanced Deity's Domain (Death)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Death)"',
-  "Advanced Deity's Domain (Destruction)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Destruction)"',
-  "Advanced Deity's Domain (Dreams)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Dreams)"',
-  "Advanced Deity's Domain (Earth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Earth)"',
-  "Advanced Deity's Domain (Family)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Family)"',
-  "Advanced Deity's Domain (Fate)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Fate)"',
-  "Advanced Deity's Domain (Fire)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Fire)"',
-  "Advanced Deity's Domain (Freedom)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Freedom)"',
-  "Advanced Deity's Domain (Healing)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Healing)"',
-  "Advanced Deity's Domain (Indulgence)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Indulgence)"',
-  "Advanced Deity's Domain (Knowledge)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Knowledge)"',
-  "Advanced Deity's Domain (Luck)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Luck)"',
-  "Advanced Deity's Domain (Magic)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Magic)"',
-  "Advanced Deity's Domain (Might)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Might)"',
-  "Advanced Deity's Domain (Moon)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Moon)"',
-  "Advanced Deity's Domain (Nature)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Nature)"',
-  "Advanced Deity's Domain (Nightmares)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Nightmares)"',
-  "Advanced Deity's Domain (Pain)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Pain)"',
-  "Advanced Deity's Domain (Passion)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Passion)"',
-  "Advanced Deity's Domain (Perfection)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Perfection)"',
-  "Advanced Deity's Domain (Protection)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Protection)"',
-  "Advanced Deity's Domain (Secrecy)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Secrecy)"',
-  "Advanced Deity's Domain (Sun)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Sun)"',
-  "Advanced Deity's Domain (Travel)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Travel)"',
-  "Advanced Deity's Domain (Trickery)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Trickery)"',
-  "Advanced Deity's Domain (Truth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Truth)"',
-  "Advanced Deity's Domain (Tyranny)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Tyranny)"',
-  "Advanced Deity's Domain (Undeath)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Undeath)"',
-  "Advanced Deity's Domain (Water)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Water)"',
-  "Advanced Deity's Domain (Wealth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Wealth)"',
-  "Advanced Deity's Domain (Zeal)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Zeal)"',
+    'Require="level >= 8","features.Deity\'s Domain (%domain)"',
   'Greater Mercy':'Traits=Class,Champion Require="level >= 8","features.Mercy"',
   'Heal Mount':
     'Traits=Class,Champion Require="level >= 8","features.Steed Ally"',
@@ -1758,8 +1512,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion Require="level >= 12","features.Mercy"',
   'Aura Of Faith':
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
+  // Errata changes Paladin requirement to The Tenets Of Good
   'Blade Of Justice':
-    // Errata changes Paladin requirement to The Tenets Of Good
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
   "Champion's Sacrifice":
     'Traits=Class,Champion Require="level >= 12","features.The Tenets Of Good"',
@@ -4076,7 +3830,7 @@ Pathfinder2E.FEATURES = {
     'Action=Free ' +
     'Section=skill ' +
     // Errata adds the counteract modifier
-    'Note="Creates an elixir of life of up to level %{advancedAlchemyLevel-2} that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect"',
+    'Note="Creates an elixir of life of up to level %{advancedAlchemyLevel-2} that also allows a +%{classDifficultyClass.Alchemist-10} counteract attempt on a fear or paralyzing effect once per rd"',
   'Potent Poisoner':
     'Section=skill ' +
     'Note="+4 crafted poison DCs, up to DC %{classDifficultyClass.Alchemist}"',
@@ -4334,6 +4088,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="R30\' Gives an ally the effects of Rage once per rage"',
+  // Errata adds the 2-action icon
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -4423,7 +4178,7 @@ Pathfinder2E.FEATURES = {
   'Quaking Stomp':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes <i>Earthquake</i> effects once per 10 min during rage"',
+    'Note="Invokes <i>Earthquake</i> effects during rage once per 10 min"',
 
   // Bard
   'Bard Weapon Expertise':
@@ -4591,6 +4346,249 @@ Pathfinder2E.FEATURES = {
 
   // Champion
   // Alertness as above
+  'Armor Expertise':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
+      '"Benefits from the specialization effects of medium and heavy armor"',
+  'Armor Mastery':
+    'Section=combat ' +
+    'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+  'Blade Ally':
+    'Section=combat ' +
+    'Note="Can apply a choice of %{combatNotes.radiantBladeMaster?\'<i>dancing</i>, <i>greater disrupting</i>, <i>keen</i>, \':\'\'}%{combatNotes.radiantBladeSpirit?\'<i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a chosen weapon during daily prep, and critical hits inflict its critical specialization effect"',
+  'Champion Expertise':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Class Expert (Champion)",' +
+      '"Spell Expert (Divine)"',
+  'Champion Feats':'Section=feature Note="%V selections"',
+  'Champion Key Ability':'Section=feature Note="1 selection"',
+  'Champion Mastery':
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Class Master (Champion)",' +
+      '"Spell Master (Divine)"',
+  'Champion Skills':
+    'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
+  "Champion's Code":'Section=feature Note="1 selection"',
+  "Champion's Reaction":
+    'Section=feature ' +
+    'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
+  'Deity And Cause':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Anathema feature/1 selection",' +
+      '"Skill Trained (%V)"',
+  'Deific Weapon':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"%{deityWeapon} inflicts +1 damage die step",' +
+      '"Has access to %{deityWeaponLowered}"',
+  'Devotion Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
+  'Divine Ally':
+    'Section=feature ' +
+    'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
+  'Divine Smite (Liberator)':
+    'Section=combat ' +
+    'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
+  'Divine Smite (Paladin)':
+    'Section=combat ' +
+    'Note="Retributive Strike inflicts %{charismaModifier} HP persistent good damage"',
+  'Divine Smite (Redeemer)':
+    'Section=combat ' +
+    'Note="Glimpse Of Redemption inflicts %{charismaModifier} HP persistent good damage on a target who responds with damage"',
+  'Divine Will':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will saves are critical successes"',
+  'Exalt (Liberator)':
+    'Section=combat ' +
+    'Note="R15\' Liberating Step allows all allies to Step if the target ally does not attempt to break free"',
+  'Exalt (Paladin)':
+    'Section=combat ' +
+    'Note="R15\' Retributive Strike allows allies to use a reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against the target"',
+  'Exalt (Redeemer)':
+    'Section=combat ' +
+    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to all damage"',
+  'Glimpse Of Redemption':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="R15\' Forces a foe who has damaged an ally to choose between negating the damage or giving the ally resistance %{2+level} to all damage and suffering enfeebled 2 until the end of its next turn"',
+  // Greater Weapon Specialization as above
+  "Hero's Defiance":
+    'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
+  // Juggernaut as above
+  'Legendary Armor':
+    'Section=combat ' +
+    'Note="Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
+  'Liberating Step':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="R15\' Gives an ally resistance %{2+level} to any triggering damage and free actions to Escape or to save from a restraint and to Step"',
+  'Liberator':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must respect others\' freedom and oppose tyranny",' +
+      '"Knows the Lay On Hands divine spell"',
+  // Lightning Reflexes as above
+  'Paladin':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must always act with honor and respect lawful authority",' +
+      '"Knows the Lay On Hands divine spell"',
+  'Redeemer':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must always show compassion for others and attempt to redeem the wicked",' +
+      '"Knows the Lay On Hands divine spell"',
+  'Retributive Strike':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="R15\' Gives an ally damaged by an attack resistance %{level+2} to all damage and allows self to make a melee Strike against the attacking foe if within reach"',
+  'Shield Ally':
+    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
+  // Shield Block as below
+  'Steed Ally':
+    'Section=feature Note="Has a young animal companion for a mount"',
+  'The Tenets Of Good':
+    'Section=feature ' +
+    'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
+  'Weapon Expertise':
+    'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
+  'Weapon Mastery':
+    'Section=combat ' +
+    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
+  // Weapon Specialization as above
+
+  "Deity's Domain (Air)":
+    'Section=magic Note="Knows the Pushing Gust divine spell"',
+  "Deity's Domain (Ambition)":
+    'Section=magic Note="Knows the Blind Ambition divine spell"',
+  "Deity's Domain (Cities)":
+    'Section=magic Note="Knows the Face In The Crowd divine spell"',
+  "Deity's Domain (Confidence)":
+    'Section=magic Note="Knows the Veil Of Confidence divine spell"',
+  "Deity's Domain (Creation)":
+    'Section=magic Note="Knows the Splash Of Art divine spell"',
+  "Deity's Domain (Darkness)":
+    'Section=magic Note="Knows the Cloak Of Shadow divine spell"',
+  "Deity's Domain (Death)":
+    'Section=magic Note="Knows the Death\'s Call divine spell"',
+  "Deity's Domain (Destruction)":
+    'Section=magic Note="Knows the Cry Of Destruction divine spell"',
+  "Deity's Domain (Dreams)":
+    'Section=magic Note="Knows the Sweet Dream divine spell"',
+  "Deity's Domain (Earth)":
+    'Section=magic Note="Knows the Hurtling Stone divine spell"',
+  "Deity's Domain (Family)":
+    'Section=magic Note="Knows the Soothing Words divine spell"',
+  "Deity's Domain (Fate)":
+    'Section=magic Note="Knows the Read Fate divine spell"',
+  "Deity's Domain (Fire)":
+    'Section=magic Note="Knows the Fire Ray divine spell"',
+  "Deity's Domain (Freedom)":
+    'Section=magic Note="Knows the Unimpeded Stride divine spell"',
+  "Deity's Domain (Healing)":
+    'Section=magic Note="Knows the Healer\'s Blessing divine spell"',
+  "Deity's Domain (Indulgence)":
+    'Section=magic Note="Knows the Overstuff divine spell"',
+  "Deity's Domain (Luck)":
+    'Section=magic Note="Knows the Bit Of Luck divine spell"',
+  "Deity's Domain (Magic)":
+    'Section=magic Note="Knows the Magic\'s Vessel divine spell"',
+  "Deity's Domain (Might)":
+    'Section=magic Note="Knows the Athletic Rush divine spell"',
+  "Deity's Domain (Moon)":
+    'Section=magic Note="Knows the Moonbeam divine spell"',
+  "Deity's Domain (Nature)":
+    'Section=magic Note="Knows the Vibrant Thorns divine spell"',
+  "Deity's Domain (Nightmares)":
+    'Section=magic Note="Knows the Waking Nightmare divine spell"',
+  "Deity's Domain (Pain)":
+    'Section=magic Note="Knows the Savor The Sting divine spell"',
+  "Deity's Domain (Passion)":
+    'Section=magic Note="Knows the Charming Touch divine spell"',
+  "Deity's Domain (Perfection)":
+    'Section=magic Note="Knows the Perfected Mind divine spell"',
+  "Deity's Domain (Protection)":
+    'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
+  "Deity's Domain (Secrecy)":
+    'Section=magic Note="Knows the Forced Quiet divine spell"',
+  "Deity's Domain (Sun)":
+    'Section=magic Note="Knows the Dazzling Flash divine spell"',
+  "Deity's Domain (Travel)":
+    'Section=magic Note="Knows the Agile Feet divine spell"',
+  "Deity's Domain (Trickery)":
+    'Section=magic Note="Knows the Sudden Shift divine spell"',
+  "Deity's Domain (Truth)":
+    'Section=magic Note="Knows the Word Of Truth divine spell"',
+  "Deity's Domain (Tyranny)":
+    'Section=magic Note="Knows the Touch Of Obedience divine spell"',
+  "Deity's Domain (Undeath)":
+    'Section=magic Note="Knows the Touch Of Undeath divine spell"',
+  "Deity's Domain (Water)":
+    'Section=magic Note="Knows the Tidal Surge divine spell"',
+  "Deity's Domain (Wealth)":
+    'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
+  "Deity's Domain (Zeal)":
+    'Section=magic Note="Knows the Weapon Surge divine spell"',
+  'Ranged Reprisal':
+    'Section=combat ' +
+    'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
+  'Unimpeded Step':
+    'Section=combat ' +
+    'Note="Liberating Step target may Step normally in any terrain"',
+  'Weight Of Guilt':
+    'Section=combat ' +
+    'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
+  'Divine Grace':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Gives +2 vs. the triggering spell"',
+  'Dragonslayer Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used vs. an evil dragon",' +
+      '"Must attempt to slay evil dragons whenever possible"',
+  'Fiendsbane Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used vs. a fiend",' +
+      '"Must attempt to banish or slay fiends whenever possible"',
+  'Shining Oath':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"%V when used vs. undead",' +
+      '"Must attempt to put undead to rest whenever possible"',
+  'Vengeful Oath':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
+      '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
+  'Aura Of Courage':
+    'Section=save ' +
+    'Note="Reduces the initial value of any frightened condition by 1, and reduction of a frightened condition at the end of a turn also reduces the fright of allies within 15\'"',
+  'Divine Health':
+    'Section=save ' +
+    'Note="+1 vs. disease, and successes vs. disease are critical successes"',
+  'Mercy':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.afflictionMercy?\'a curse, disease, poison, \':\'\'}%{magicNotes.greaterMercy?\'blinded, deafened, sickened, slowed, \':\'\'}fear or paralysis"',
+  // Attack Of Opportunity as above
+  'Litany Against Wrath':
+    'Section=magic ' +
+    'Note="Knows the Litany Against Wrath divine spell/+1 Focus Points"',
+  'Loyal Warhorse':
+    'Section=feature Note="Mount is mature and will never attack self"',
+  'Shield Warden':
+    'Section=combat Note="Can use Shield Block to protect an adjacent ally"',
+  'Smite Evil':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Blade ally inflicts +4 HP good, or +6 HP with master proficiency, vs. a chosen target for 1 rd, extended as long as the target attacks an ally"',
   "Advanced Deity's Domain (Air)":
     'Section=magic ' +
     'Note="Knows the Disperse Into Air divine spell/+1 Focus Points"',
@@ -4702,249 +4700,6 @@ Pathfinder2E.FEATURES = {
   "Advanced Deity's Domain (Zeal)":
     'Section=magic ' +
     'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
-  'Armor Expertise':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      '"Benefits from the specialization effects of medium and heavy armor"',
-  'Armor Mastery':
-    'Section=combat ' +
-    'Note="Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-  'Blade Ally':
-    'Section=combat ' +
-    'Note="Can apply a choice of %{combatNotes.radiantBladeMaster?\'<i>dancing</i>, <i>greater disrupting</i>, <i>keen</i>, \':\'\'}%{combatNotes.radiantBladeSpirit?\'<i>flaming</i>, <i>anarchic</i>, <i>axiomatic</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>disrupting</i>, <i>ghost touch</i>, <i>returning</i>, or <i>shifting</i> to a chosen weapon during daily prep, and critical hits inflict its critical specialization effect"',
-  'Champion Expertise':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Class Expert (Champion)",' +
-      '"Spell Expert (Divine)"',
-  'Champion Feats':'Section=feature Note="%V selections"',
-  'Champion Key Ability':'Section=feature Note="1 selection"',
-  'Champion Mastery':
-    'Section=combat,magic ' +
-    'Note=' +
-      '"Class Master (Champion)",' +
-      '"Spell Master (Divine)"',
-  'Champion Skills':
-    'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
-  "Champion's Code":'Section=feature Note="1 selection"',
-  "Champion's Reaction":
-    'Section=feature ' +
-    'Note="Can use the Champion\'s Reaction for the chosen champion cause"',
-  'Deity And Cause':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Anathema feature/1 selection",' +
-      '"Skill Trained (%V)"',
-  'Deific Weapon':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"%{deityWeapon} inflicts +1 damage die step",' +
-      '"Has access to %{deityWeaponLowered}"',
-  "Deity's Domain (Air)":
-    'Section=magic Note="Knows the Pushing Gust divine spell"',
-  "Deity's Domain (Ambition)":
-    'Section=magic Note="Knows the Blind Ambition divine spell"',
-  "Deity's Domain (Cities)":
-    'Section=magic Note="Knows the Face In The Crowd divine spell"',
-  "Deity's Domain (Confidence)":
-    'Section=magic Note="Knows the Veil Of Confidence divine spell"',
-  "Deity's Domain (Creation)":
-    'Section=magic Note="Knows the Splash Of Art divine spell"',
-  "Deity's Domain (Darkness)":
-    'Section=magic Note="Knows the Cloak Of Shadow divine spell"',
-  "Deity's Domain (Death)":
-    'Section=magic Note="Knows the Death\'s Call divine spell"',
-  "Deity's Domain (Destruction)":
-    'Section=magic Note="Knows the Cry Of Destruction divine spell"',
-  "Deity's Domain (Dreams)":
-    'Section=magic Note="Knows the Sweet Dream divine spell"',
-  "Deity's Domain (Earth)":
-    'Section=magic Note="Knows the Hurtling Stone divine spell"',
-  "Deity's Domain (Family)":
-    'Section=magic Note="Knows the Soothing Words divine spell"',
-  "Deity's Domain (Fate)":
-    'Section=magic Note="Knows the Read Fate divine spell"',
-  "Deity's Domain (Fire)":
-    'Section=magic Note="Knows the Fire Ray divine spell"',
-  "Deity's Domain (Freedom)":
-    'Section=magic Note="Knows the Unimpeded Stride divine spell"',
-  "Deity's Domain (Healing)":
-    'Section=magic Note="Knows the Healer\'s Blessing divine spell"',
-  "Deity's Domain (Indulgence)":
-    'Section=magic Note="Knows the Overstuff divine spell"',
-  "Deity's Domain (Luck)":
-    'Section=magic Note="Knows the Bit Of Luck divine spell"',
-  "Deity's Domain (Magic)":
-    'Section=magic Note="Knows the Magic\'s Vessel divine spell"',
-  "Deity's Domain (Might)":
-    'Section=magic Note="Knows the Athletic Rush divine spell"',
-  "Deity's Domain (Moon)":
-    'Section=magic Note="Knows the Moonbeam divine spell"',
-  "Deity's Domain (Nature)":
-    'Section=magic Note="Knows the Vibrant Thorns divine spell"',
-  "Deity's Domain (Nightmares)":
-    'Section=magic Note="Knows the Waking Nightmare divine spell"',
-  "Deity's Domain (Pain)":
-    'Section=magic Note="Knows the Savor The Sting divine spell"',
-  "Deity's Domain (Passion)":
-    'Section=magic Note="Knows the Charming Touch divine spell"',
-  "Deity's Domain (Perfection)":
-    'Section=magic Note="Knows the Perfected Mind divine spell"',
-  "Deity's Domain (Protection)":
-    'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
-  "Deity's Domain (Secrecy)":
-    'Section=magic Note="Knows the Forced Quiet divine spell"',
-  "Deity's Domain (Sun)":
-    'Section=magic Note="Knows the Dazzling Flash divine spell"',
-  "Deity's Domain (Travel)":
-    'Section=magic Note="Knows the Agile Feet divine spell"',
-  "Deity's Domain (Trickery)":
-    'Section=magic Note="Knows the Sudden Shift divine spell"',
-  "Deity's Domain (Truth)":
-    'Section=magic Note="Knows the Word Of Truth divine spell"',
-  "Deity's Domain (Tyranny)":
-    'Section=magic Note="Knows the Touch Of Obedience divine spell"',
-  "Deity's Domain (Undeath)":
-    'Section=magic Note="Knows the Touch Of Undeath divine spell"',
-  "Deity's Domain (Water)":
-    'Section=magic Note="Knows the Tidal Surge divine spell"',
-  "Deity's Domain (Wealth)":
-    'Section=magic Note="Knows the Appearance Of Wealth divine spell"',
-  "Deity's Domain (Zeal)":
-    'Section=magic Note="Knows the Weapon Surge divine spell"',
-  'Devotion Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
-  'Divine Ally':
-    'Section=feature ' +
-    'Note="%V selection%{featureNotes.divineAlly==1?\'\':\'s\'}"',
-  'Divine Smite (Liberator)':
-    'Section=combat ' +
-    'Note="Liberating Step inflicts %{charismaModifier} HP persistent good damage on a foe who restrains an ally"',
-  'Divine Smite (Paladin)':
-    'Section=combat ' +
-    'Note="Retributive Strike inflicts %{charismaModifier} HP persistent good damage"',
-  'Divine Smite (Redeemer)':
-    'Section=combat ' +
-    'Note="Glimpse Of Redemption inflicts %{charismaModifier} HP persistent good damage on a target who responds with damage"',
-  'Divine Will':
-    'Section=save,save ' +
-    'Note=' +
-      '"Save Master (Will)",' +
-      '"Successes on Will saves are critical successes"',
-  'Exalt (Liberator)':
-    'Section=combat ' +
-    'Note="R15\' Liberating Step allows all allies to Step if the target ally does not attempt to break free"',
-  'Exalt (Paladin)':
-    'Section=combat ' +
-    'Note="R15\' Retributive Strike allows allies to use a reaction to make a %{combatNotes.auraOfVengeance?-2:-5} melee Strike against the target"',
-  'Exalt (Redeemer)':
-    'Section=combat ' +
-    'Note="R15\' Can use Glimpse Of Redemption to give allies resistance %{level} to all damage"',
-  'Glimpse Of Redemption':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Forces a foe who has damaged an ally to choose between negating the damage or giving the ally resistance %{2+level} to all damage and suffering enfeebled 2 until the end of its next turn"',
-  // Greater Weapon Specialization as above
-  "Hero's Defiance":
-    'Section=magic Note="Knows the Hero\'s Defiance divine spell"',
-  // Juggernaut as above
-  'Legendary Armor':
-    'Section=combat ' +
-    'Note="Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-  'Liberating Step':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Gives an ally resistance %{2+level} to any triggering damage and free actions to Escape or to save from a restraint and to Step"',
-  'Liberator':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must respect others\' freedom and oppose tyranny",' +
-      '"Knows the Lay On Hands divine spell"',
-  // Lightning Reflexes as above
-  'Paladin':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must always act with honor and respect lawful authority",' +
-      '"Knows the Lay On Hands divine spell"',
-  'Redeemer':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must always show compassion for others and attempt to redeem the wicked",' +
-      '"Knows the Lay On Hands divine spell"',
-  'Retributive Strike':
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="R15\' Gives an ally damaged by an attack resistance %{level+2} to all damage and allows self to make a melee Strike against the attacking foe if within reach"',
-  // Shield Block as below
-  'Steed Ally':
-    'Section=feature Note="Has a young animal companion for a mount"',
-  'The Tenets Of Good':
-    'Section=feature ' +
-    'Note="May not commit anathema or evil acts, harm innocents, or allow harm to come to innocents through inaction"',
-  'Weapon Expertise':
-    'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
-  'Weapon Mastery':
-    'Section=combat ' +
-    'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
-  // Weapon Specialization as above
-
-  'Ranged Reprisal':
-    'Section=combat ' +
-    'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
-  'Shield Ally':
-    'Section=combat Note="+2 Shield Hardness/+50% Shield Hit Points"',
-  'Unimpeded Step':
-    'Section=combat ' +
-    'Note="Liberating Step target may Step normally in any terrain"',
-  'Weight Of Guilt':
-    'Section=combat ' +
-    'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
-  'Divine Grace':
-    'Action=Reaction ' +
-    'Section=save ' +
-    'Note="Gives +2 vs. the triggering spell"',
-  'Dragonslayer Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. an evil dragon",' +
-      '"Must attempt to slay evil dragons whenever possible"',
-  'Fiendsbane Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. a fiend",' +
-      '"Must attempt to banish or slay fiends whenever possible"',
-  'Shining Oath':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"%V when used vs. undead",' +
-      '"Must attempt to put undead to rest whenever possible"',
-  'Vengeful Oath':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Must hunt down and exterminate creatures who have committed atrocities whenever possible",' +
-      '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
-  'Aura Of Courage':
-    'Section=save ' +
-    'Note="Reduces the initial value of any frightened condition by 1, and reduction of a frightened condition at the end of a turn also reduces the fright of allies within 15\'"',
-  'Divine Health':
-    'Section=save ' +
-    'Note="+1 vs. disease, and successes vs. disease are critical successes"',
-  'Mercy':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.afflictionMercy?\'a curse, disease, poison, \':\'\'}%{magicNotes.greaterMercy?\'blinded, deafened, sickened, slowed, \':\'\'}fear or paralysis"',
-  // Attack Of Opportunity as above
-  'Litany Against Wrath':
-    'Section=magic ' +
-    'Note="Knows the Litany Against Wrath divine spell/+1 Focus Points"',
-  'Loyal Warhorse':
-    'Section=feature Note="Mount is mature and will never attack self"',
-  'Shield Warden':
-    'Section=combat Note="Can use Shield Block to protect an adjacent ally"',
-  'Smite Evil':
-    'Action=1 ' +
-    'Section=combat ' +
-    'Note="Blade ally inflicts +4 HP good, or +6 HP with master proficiency, vs. a chosen target for 1 rd, extended as long as the target attacks an ally"',
   'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Heal Mount':
     'Section=magic ' +
