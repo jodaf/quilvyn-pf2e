@@ -1161,7 +1161,7 @@ Pathfinder2E.FEATS = {
   'Incredible Ferocity':
     'Traits=Ancestry,Orc Require="level >= 13","features.Orc Ferocity"',
   'Orc Weapon Expertise':
-    'Traits=Ancestry,Half-Orc ' +
+    'Traits=Ancestry,Orc ' +
     'Require="level >= 13","features.Orc Weapon Familiarity"',
 
   // Class
@@ -6661,7 +6661,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful strike using an agile, finesse, or projectile weapon vs. a flat-footed foe inflicts +%{levels.Rogue?(level+7)//6:1}d%{levels.Rogue?6:level>=6?6:4} HP precision damage"',
   'Surprise Attack':
     'Section=combat ' +
-    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed to self on creatures that haven\'t acted"',
+    'Note="Rolling Deception or Stealth for initiative inflicts flat-footed vs. self on creatures that haven\'t acted"',
   'Thief':
     'Section=combat,skill ' +
     'Note=' +
@@ -7864,7 +7864,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Diplomacy to Make An Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
-  'Hobnobber':'Section=skill Note="Can Gather Information in half normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
+  'Hobnobber':'Section=skill Note="Can Gather Information in half the normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Successes on Specialty Crafting are critical successes"',
