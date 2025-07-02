@@ -1572,83 +1572,14 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require="level >= 20","features.Shield Ally"',
 
+  // Errata allows Unarmed
   'Deadly Simplicity':
-    // Errata allows Unarmed
-    'Traits=Class,Cleric Require="deityWeaponCategory =~ \'Simple|Unarmed\'"',
-  'Domain Initiate (Air)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Air\'"',
-  'Domain Initiate (Ambition)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Ambition\'"',
-  'Domain Initiate (Cities)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Cities\'"',
-  'Domain Initiate (Confidence)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Confidence\'"',
-  'Domain Initiate (Creation)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Creation\'"',
-  'Domain Initiate (Darkness)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Darkness\'"',
-  'Domain Initiate (Death)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Death\'"',
-  'Domain Initiate (Destruction)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Destruction\'"',
-  'Domain Initiate (Dreams)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Dreams\'"',
-  'Domain Initiate (Earth)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Earth\'"',
-  'Domain Initiate (Family)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Family\'"',
-  'Domain Initiate (Fate)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Fate\'"',
-  'Domain Initiate (Fire)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Fire\'"',
-  'Domain Initiate (Freedom)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Freedom\'"',
-  'Domain Initiate (Healing)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Healing\'"',
-  'Domain Initiate (Indulgence)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Indulgence\'"',
-  'Domain Initiate (Knowledge)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Knowledge\'"',
-  'Domain Initiate (Luck)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Luck\'"',
-  'Domain Initiate (Magic)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Magic\'"',
-  'Domain Initiate (Might)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Might\'"',
-  'Domain Initiate (Moon)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Moon\'"',
-  'Domain Initiate (Nature)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Nature\'"',
-  'Domain Initiate (Nightmares)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Nightmares\'"',
-  'Domain Initiate (Pain)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Pain\'"',
-  'Domain Initiate (Passion)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Passion\'"',
-  'Domain Initiate (Perfection)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Perfection\'"',
-  'Domain Initiate (Protection)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Protection\'"',
-  'Domain Initiate (Secrecy)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Secrecy\'"',
-  'Domain Initiate (Sun)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Sun\'"',
-  'Domain Initiate (Travel)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Travel\'"',
-  'Domain Initiate (Trickery)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Trickery\'"',
-  'Domain Initiate (Truth)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Truth\'"',
-  'Domain Initiate (Tyranny)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Tyranny\'"',
-  'Domain Initiate (Undeath)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Undeath\'"',
-  'Domain Initiate (Water)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Water\'"',
-  'Domain Initiate (Wealth)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Wealth\'"',
-  'Domain Initiate (Zeal)':
-    'Traits=Class,Cleric Require="deityDomains =~ \'Zeal\'"',
+    'Traits=Class,Cleric ' +
+    'Require=' +
+      '"deityWeaponCategory =~ \'Simple|Unarmed\'",' +
+      '"deityWeaponRank >= 1"',
+  'Domain Initiate (%domain)':
+    'Traits=Class,Cleric Require="deityDomains =~ \'%domain\'"',
   'Harming Hands':'Traits=Class,Cleric Require="features.Harmful Font"',
   'Healing Hands':'Traits=Class,Cleric Require="features.Healing Font"',
   'Holy Castigation':'Traits=Class,Cleric Require="alignment =~ \'Good\'"',
@@ -1663,8 +1594,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Cleric ' +
     'Require=' +
       '"level >= 2",' +
-      '"deityFont == \'Either\'",' +
-      '"features.Harmful Font || features.Healing Font"',
+      '"features.Harmful Font || features.Healing Font",' +
+      '"deityFont == \'Either\'"',
   'Channel Smite':
     'Traits=Class,Cleric,Divine,Necromancy ' +
     'Require="level >= 4","features.Harmful Font || features.Healing Font"',
@@ -1683,117 +1614,9 @@ Pathfinder2E.FEATS = {
   'Divine Weapon':'Traits=Class,Cleric Require="level >= 6"',
   'Selective Energy':'Traits=Class,Cleric Require="level >= 6"',
   // Steady Spellcasting as above
-  'Advanced Domain (Air)':
+  'Advanced Domain (%domain)':
     'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Air)"',
-  'Advanced Domain (Ambition)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Ambition)"',
-  'Advanced Domain (Cities)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Cities)"',
-  'Advanced Domain (Confidence)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Confidence)"',
-  'Advanced Domain (Creation)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Creation)"',
-  'Advanced Domain (Darkness)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Darkness)"',
-  'Advanced Domain (Death)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Death)"',
-  'Advanced Domain (Destruction)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Destruction)"',
-  'Advanced Domain (Dreams)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Dreams)"',
-  'Advanced Domain (Earth)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Earth)"',
-  'Advanced Domain (Family)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Family)"',
-  'Advanced Domain (Fate)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Fate)"',
-  'Advanced Domain (Fire)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Fire)"',
-  'Advanced Domain (Freedom)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Freedom)"',
-  'Advanced Domain (Healing)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Healing)"',
-  'Advanced Domain (Indulgence)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Indulgence)"',
-  'Advanced Domain (Knowledge)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Knowledge)"',
-  'Advanced Domain (Luck)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Luck)"',
-  'Advanced Domain (Magic)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Magic)"',
-  'Advanced Domain (Might)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Might)"',
-  'Advanced Domain (Moon)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Moon)"',
-  'Advanced Domain (Nature)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Nature)"',
-  'Advanced Domain (Nightmares)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Nightmares)"',
-  'Advanced Domain (Pain)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Pain)"',
-  'Advanced Domain (Passion)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Passion)"',
-  'Advanced Domain (Perfection)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Perfection)"',
-  'Advanced Domain (Protection)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Protection)"',
-  'Advanced Domain (Secrecy)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Secrecy)"',
-  'Advanced Domain (Sun)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Sun)"',
-  'Advanced Domain (Travel)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Travel)"',
-  'Advanced Domain (Trickery)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Trickery)"',
-  'Advanced Domain (Truth)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Truth)"',
-  'Advanced Domain (Tyranny)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Tyranny)"',
-  'Advanced Domain (Undeath)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Undeath)"',
-  'Advanced Domain (Water)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Water)"',
-  'Advanced Domain (Wealth)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Wealth)"',
-  'Advanced Domain (Zeal)':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 8","features.Domain Initiate (Zeal)"',
+    'Require="level >= 8","features.Domain Initiate (%domain)"',
   'Align Armament (Chaotic)':
     'Traits=Class,Cleric,Divine,Evocation ' +
     'Require="level >= 8","deityAlignment =~ \'C\'"',
@@ -2008,6 +1831,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Druid,Concentrate ' +
     'Require="level >= 20","features.Dragon Shape","features.Wild Shape"',
 
+  // Fighter
   'Double Slice':'Traits=Class,Fighter',
   'Exacting Strike':'Traits=Class,Fighter,Press',
   'Point-Blank Shot':'Traits=Class,Fighter,Open,Stance',
@@ -2078,9 +1902,7 @@ Pathfinder2E.FEATS = {
   'Brutal Finish':'Traits=Class,Fighter,Press Require="level >= 12"',
   'Dueling Dance':
     'Traits=Class,Fighter,Stance ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Dueling Parry"',
+    'Require="level >= 12","features.Dueling Parry"',
   'Flinging Shove':
     'Traits=Class,Fighter ' +
     'Require=' +
@@ -2210,7 +2032,8 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk,Aura,Emotion,Mental Require="level >= 16"',
   'Master Of Many Styles':
     'Traits=Class,Monk Require="level >= 16","features.Stance Savant"',
-  'Quivering Palm':'Traits=Class,Monk Require="level>=16","features.Ki Spells"',
+  'Quivering Palm':
+    'Traits=Class,Monk Require="level >= 16","features.Ki Spells"',
   'Shattering Strike':'Traits=Class,Monk Require="level >= 16"',
   'Diamond Fists':'Traits=Class,Monk Require="level >= 18"',
   'Empty Body':
@@ -2223,6 +2046,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Monk Require="level >= 20","sumStanceFeats >= 2 "',
   'Impossible Technique':'Traits=Class,Monk,Fortune Require="level >= 20"',
 
+  // Ranger
   // Animal Companion as above
   'Crossbow Ace':'Traits=Class,Ranger',
   'Hunted Shot':'Traits=Class,Ranger,Flourish',
@@ -5118,19 +4942,19 @@ Pathfinder2E.FEATURES = {
   'Align Armament (Chaotic)':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP chaotic for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+    'Note="Touched weapon inflicts +1d6 HP chaotic for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'} once per rd"',
   'Align Armament (Evil)':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP evil for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+    'Note="Touched weapon inflicts +1d6 HP evil for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'} once per rd"',
   'Align Armament (Good)':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP good for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+    'Note="Touched weapon inflicts +1d6 HP good for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'} once per rd"',
   'Align Armament (Lawful)':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon inflicts +1d6 HP lawful for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'}"',
+    'Note="Touched weapon inflicts +1d6 HP lawful for 1 %{combatNotes.extendArmamentAlignment?\'min\':\'rd\'} once per rd"',
   'Channeled Succor':
     'Section=magic ' +
     'Note="Can cast <i>Remove Curse</i>, <i>Remove Disease</i>, <i>Remove Paralysis</i>, or <i>Restoration</i> in place of a prepared <i>Heal</i>"',
@@ -5295,7 +5119,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"+1 Class Feat",' +
       '"Can select Wild order feats"',
-  // Poison Resistance as above
+  // Poison Resistance as above; errata removes the 1 action glyph
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
@@ -6025,7 +5849,7 @@ Pathfinder2E.FEATURES = {
   'Winding Flow':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Uses 2 choices of Stand, Step, and Stride"',
+    'Note="Uses 2 choices of Stand, Step, and Stride once per rd"',
   'Diamond Soul':'Section=save Note="+1 vs. magic"',
   'Disrupt Ki':
     'Action=2 ' +
@@ -6037,6 +5861,7 @@ Pathfinder2E.FEATURES = {
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
+    // 'Action=1 ' + // inserted into second note
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Ironblood Stance effects",' +
