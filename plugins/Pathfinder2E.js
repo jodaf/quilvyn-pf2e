@@ -1572,6 +1572,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Champion ' +
     'Require="level >= 20","features.Shield Ally"',
 
+  // Cleric
   // Errata allows Unarmed
   'Deadly Simplicity':
     'Traits=Class,Cleric ' +
@@ -1681,6 +1682,7 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Cleric Require="level >= 20","features.Miraculous Spell"',
   'Metamagic Channel':'Traits=Class,Cleric,Concentrate Require="level >= 20"',
 
+  // Druid
   'Animal Companion':
     'Traits=Class,Druid,Ranger ' +
     'Require=' +
@@ -1951,6 +1953,7 @@ Pathfinder2E.FEATS = {
   'Boundless Reprisals':'Traits=Class,Fighter Require="level >= 20"',
   'Weapon Supremacy':'Traits=Class,Fighter Require="level >= 20"',
 
+  // Monk
   'Crane Stance':'Traits=Class,Monk,Stance',
   'Dragon Stance':'Traits=Class,Monk,Stance',
   'Ki Rush':'Traits=Class,Monk',
@@ -2161,7 +2164,7 @@ Pathfinder2E.FEATS = {
   'Ubiquitous Snares':
     'Traits=Class,Ranger Require="level >= 16","features.Snare Specialist"',
   'Impossible Flurry':'Traits=Class,Ranger,Flourish,Open Require="level >= 18"',
-  // Impossible Volley as above
+  // Impossible Volley as above; errata adds Flourish and Open traits
   'Manifold Edge':
     'Traits=Class,Ranger ' +
     'Require=' +
@@ -2191,6 +2194,7 @@ Pathfinder2E.FEATS = {
   'Ultimate Skirmisher':
     'Traits=Class,Ranger Require="level >= 20","features.Wild Stride"',
 
+  // Rogue
   'Nimble Dodge':'Traits=Class,Rogue',
   'Trap Finder':'Traits=Class,Rogue',
   'Twin Feint':'Traits=Class,Rogue',
@@ -2286,6 +2290,7 @@ Pathfinder2E.FEATS = {
       '"rank.Deception >= 4",' +
       '"features.Perfect Distraction"',
 
+  // Sorcerer
   // Nethys adds Arcane
   'Counterspell':'Traits=Class,Sorcerer,Wizard,Abjuration,Arcane',
   'Dangerous Sorcery':'Traits=Class,Sorcerer',
@@ -2308,16 +2313,25 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Sorcerer,Primal ' +
     'Require="level >= 4","bloodlineTraditions =~ \'Primal\'"',
   'Advanced Bloodline':
-    'Traits=Class,Sorcerer Require="level >= 6","features.Bloodline"',
+    'Traits=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
   // Steady Spellcasting as above
   'Bloodline Resistance':'Traits=Class,Sorcerer Require="level >= 8"',
   'Crossblooded Evolution':'Traits=Class,Sorcerer Require="level >= 8"',
   'Greater Bloodline':
-    'Traits=Class,Sorcerer Require="level >= 10","features.Bloodline"',
+    'Traits=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Bloodline Focus':
-    'Traits=Class,Sorcerer Require="level >= 12","features.Bloodline"',
+    'Traits=Class,Sorcerer ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Bloodline Spells || features.Basic Bloodline Spell"',
   'Magic Sense':
     // Note: for sorcerers, Arcane is replaced by the bloodline tradition
     'Traits=Class,Sorcerer,Wizard,Arcane,Detection,Divination ' +
@@ -2329,14 +2343,14 @@ Pathfinder2E.FEATS = {
     'Traits=Class,Sorcerer,Wizard ' +
     'Require="level >= 14","features.Counterspell"',
   // Effortless Concentration as above
+  // Errata removes Arcane trait
   'Greater Mental Evolution':
-    // Errata removes Arcane
     'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Arcane Evolution || features.Occult Evolution"',
+  // Errata removes Divine trait
   'Greater Vital Evolution':
-    // Errata removes Divine
     'Traits=Class,Sorcerer ' +
     'Require=' +
       '"level >= 16",' +
@@ -6050,8 +6064,8 @@ Pathfinder2E.FEATURES = {
   "Companion's Cry":
     'Section=combat ' +
     'Note="Can use 2 actions for Command An Animal to give companion an additional action"',
+  // Errata corrects to Action=Reaction
   'Disrupt Prey':
-    // Errata corrects action
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action"',
@@ -6207,6 +6221,7 @@ Pathfinder2E.FEATURES = {
   'Light Armor Mastery':
     'Section=combat Note="Defense Master (Light Armor; Unarmored Defense)"',
   'Master Strike':
+    // 'Action=Free ' + // included in second note
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Rogue)",' +
@@ -6270,6 +6285,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Strikes with a melee weapon in each hand, inflicting flat-footed vs. the second"',
   "You're Next":
+    // 'Action=Reaction ' + // included in note
     'Section=combat ' +
     'Note="%{rank.Intimidation>=4?\'' + Pathfinder2E.ACTION_MARKS.Free + '\':\'' + Pathfinder2E.ACTION_MARKS.Reaction + '\'} After downing a foe, makes a +2 Intimidation check to Demoralize another"',
   'Brutal Beating':
@@ -6314,6 +6330,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Spell attacks vs. flat-footed foes inflict sneak attack damage"',
   'Poison Weapon':
+    // 'Action=1 ' + // included in first note
     'Section=combat,skill ' +
     'Note=' +
       '"' + Pathfinder2E.ACTION_MARKS[1] + ' Applies a poison that lasts until the end of the next turn to a piercing or slashing weapon",' +
@@ -6611,7 +6628,7 @@ Pathfinder2E.FEATURES = {
   'Bespell Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of the turn; the damage type depends on the spell school"',
+    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of the turn once per turn; the damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
@@ -6875,7 +6892,7 @@ Pathfinder2E.FEATURES = {
   // Bespell Weapon as above
   'Linked Focus':
     'Section=magic ' +
-    'Note="Draining a bonded item to cast a spell from specialist school restores 1 Focus Point"',
+    'Note="Draining a bonded item to cast a spell from specialist school restores 1 Focus Point once per day"',
   'Silent Spell':
     'Action=1 ' +
     'Section=magic ' +
