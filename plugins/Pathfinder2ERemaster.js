@@ -1030,9 +1030,12 @@ Pathfinder2ERemaster.CLASSES = {
     // Ability => Attribute
     // null => 1:Class Trained (Sorcerer)
     // null => 1:Sorcerous Potency
+    // 9:Lightning Reflexes => 9:Reflex Expertise
+    // 11:Alertness => 11:Perception Expertise
     // 17:Resolve => 17:Majestic Will
     // added Elemental (Metal) and Elemental (Wood) bloodlines
     // Draconic Bloodline changed to different exemplars
+    // Added Metal and Wood to Elemental bloodlines
     'Ability=charisma HitPoints=6 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
@@ -1042,13 +1045,13 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Class Trained (Sorcerer)",' +
-      '1:Bloodline,"1:Sorcerer Spellcasting","1:Sorcerous Potency",' +
-      '"2:Skill Feats","2:Sorcerer Feats","3:General Feats",' +
-      '"3:Signature Spells","3:Skill Increases","5:Magical Fortitude",' +
-      '"7:Expert Spellcaster","9:Reflex Expertise","11:Perception Expertise",' +
-      '"11:Weapon Expertise","13:Defensive Robes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster","17:Majestic Will","19:Bloodline Paragon",' +
-      '"19:Legendary Spellcaster" ' +
+      '"1:Bloodline","1:Bloodline Spells","1:Sorcerer Spellcasting",' +
+      '"1:Sorcerous Potency","2:Skill Feats","2:Sorcerer Feats",' +
+      '"3:General Feats","3:Signature Spells","3:Skill Increases",' +
+      '"5:Magical Fortitude","7:Expert Spellcaster","9:Reflex Expertise",' +
+      '"11:Perception Expertise","11:Weapon Expertise","13:Defensive Robes",' +
+      '"13:Weapon Specialization","15:Master Spellcaster","17:Majestic Will",' +
+      '"19:Bloodline Paragon","19:Legendary Spellcaster" ' +
     'Selectables=' +
       '1:Aberrant:Bloodline,' +
       '1:Angelic:Bloodline,' +
@@ -1236,28 +1239,26 @@ Pathfinder2ERemaster.FEATS = {
   // Ancestries
 
   // Dwarf
-  'Dwarven Doughtiness':'Traits=Ancestry,Dwarf',
+  'Dwarven Doughtiness':'Traits=Dwarf',
   'Dwarven Lore':Pathfinder2E.FEATS['Dwarven Lore'],
   'Dwarven Weapon Familiarity':Pathfinder2E.FEATS['Dwarven Weapon Familiarity'],
-  'Mountain Strategy':'Traits=Ancestry,Dwarf',
+  'Mountain Strategy':'Traits=Dwarf',
   'Rock Runner':Pathfinder2E.FEATS['Rock Runner'],
   "Stonemason's Eye":Pathfinder2E.FEATS.Stonecunning,
   'Unburdened Iron':Pathfinder2E.FEATS['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATS['Boulder Roll'],
-  'Defy The Darkness':
-    'Traits=Ancestry,Dwarf Require="level >= 5","features.Darkvision"',
+  'Defy The Darkness':'Traits=Dwarf Require="level >= 5","features.Darkvision"',
   'Dwarven Reinforcement':
-    'Traits=Ancestry,Dwarf Require="level >= 5","rank.Crafting >= 2"',
-  'Echoes In Stone':'Traits=Ancestry,Dwarf,Concentrate Require="level >= 9"',
+    'Traits=Dwarf Require="level >= 5","rank.Crafting >= 2"',
+  'Echoes In Stone':'Traits=Dwarf,Concentrate Require="level >= 9"',
   "Mountain's Stoutness":Pathfinder2E.FEATS["Mountain's Stoutness"],
-  'Stone Bones':'Traits=Ancestry,Dwarf Require="level >= 9"',
+  'Stone Bones':'Traits=Dwarf Require="level >= 9"',
   'Stonewalker':Pathfinder2E.FEATS.Stonewalker,
-  'March The Mines':'Traits=Ancestry,Dwarf Require="level >= 13"',
-  'Telluric Power':'Traits=Ancestry,Dwarf Require="level >= 13"',
+  'March The Mines':'Traits=Dwarf Require="level >= 13"',
+  'Telluric Power':'Traits=Dwarf Require="level >= 13"',
   'Stonegate':
-    'Traits=Ancestry,Dwarf,Uncommon ' +
-    'Require="level >= 17","features.Stonewalker"',
-  'Stonewall':'Traits=Ancestry,Dwarf,Earth,Polymorph Require="level >= 17"',
+    'Traits=Dwarf,Uncommon Require="level >= 17","features.Stonewalker"',
+  'Stonewall':'Traits=Dwarf,Earth,Polymorph Require="level >= 17"',
 
   // Elf
   'Ancestral Longevity':Pathfinder2E.FEATS['Ancestral Longevity'],
@@ -1268,18 +1269,18 @@ Pathfinder2ERemaster.FEATS = {
   'Otherworldly Magic':Pathfinder2E.FEATS['Otherworldly Magic'],
   'Unwavering Mien':Pathfinder2E.FEATS['Unwavering Mien'],
   'Ageless Patience':Pathfinder2E.FEATS['Ageless Patience'],
-  'Ancestral Suspicion':'Traits=Ancestry,Elf Require="level >= 5"',
-  'Martial Experience':'Traits=Ancestry,Elf Require="level >= 5"',
+  'Ancestral Suspicion':'Traits=Elf Require="level >= 5"',
+  'Martial Experience':'Traits=Elf Require="level >= 5"',
   'Elf Step':Pathfinder2E.FEATS['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATS['Expert Longevity'],
   // TODO requires "at least one innate spell gained from an elf ancestry feat"
-  'Otherworldly Acumen':'Traits=Ancestry,Elf Require="level >= 9"',
-  'Tree Climber':'Traits=Ancestry,Elf Require="level >= 9"',
-  'Avenge Ally':'Traits=Ancestry,Elf,Fortune Require="level >= 13"',
+  'Otherworldly Acumen':'Traits=Elf Require="level >= 9"',
+  'Tree Climber':'Traits=Elf Require="level >= 9"',
+  'Avenge Ally':'Traits=Elf,Fortune Require="level >= 13"',
   'Universal Longevity':
     Pathfinder2E.FEATS['Universal Longevity']
     .replace('Expert Longevity', 'Ancestral Longevity'),
-  'Magic Rider':'Traits=Ancestry,Elf Require="level >= 17"',
+  'Magic Rider':'Traits=Elf Require="level >= 17"',
 
   // Gnome
   'Animal Accomplice':Pathfinder2E.FEATS['Animal Accomplice'],
@@ -1289,24 +1290,22 @@ Pathfinder2ERemaster.FEATS = {
   'Gnome Obsession':Pathfinder2E.FEATS['Gnome Obsession'],
   'Gnome Weapon Familiarity':Pathfinder2E.FEATS['Gnome Weapon Familiarity'],
   'Illusion Sense':Pathfinder2E.FEATS['Illusion Sense'],
-  'Razzle-Dazzle':'Traits=Ancestry,Gnome',
+  'Razzle-Dazzle':'Traits=Gnome',
   'Energized Font':Pathfinder2E.FEATS['Energized Font'],
   'Project Persona':
-    'Traits=Ancestry,Gnome,Concentrate,Illusion,Primal,Visual ' +
-    'Require="level >= 5"',
+    'Traits=Gnome,Concentrate,Illusion,Primal,Visual Require="level >= 5"',
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
-  'Cautious Curiosity (Arcane)':'Traits=Ancestry,Gnome Require="level >= 9"',
-  'Cautious Curiosity (Occult)':'Traits=Ancestry,Gnome Require="level >= 9"',
+  'Cautious Curiosity (Arcane)':'Traits=Gnome Require="level >= 9"',
+  'Cautious Curiosity (Occult)':'Traits=Gnome Require="level >= 9"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
-  'Life Leap':'Traits=Ancestry,Gnome,Move,Teleportation Require="level >= 9"',
+  'Life Leap':'Traits=Gnome,Move,Teleportation Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
   'Instinctive Obfuscation':
-    'Traits=Ancestry,Gnome,Illusion,Visual ' +
-    'Require="level >= 13"',
-  'Homeward Bound':'Traits=Ancestry,Gnome,Uncommon Require="level >= 17"',
+    'Traits=Gnome,Illusion,Visual Require="level >= 13"',
+  'Homeward Bound':'Traits=Gnome,Uncommon Require="level >= 17"',
 
   // Goblin
   'Burn It!':Pathfinder2E.FEATS['Burn It!'],
@@ -1318,42 +1317,39 @@ Pathfinder2ERemaster.FEATS = {
   'Junk Tinker':Pathfinder2E.FEATS['Junk Tinker'],
   'Rough Rider':Pathfinder2E.FEATS['Rough Rider'],
   'Very Sneaky':Pathfinder2E.FEATS['Very Sneaky'],
-  'Kneecap':'Traits=Ancestry,Goblin Require="level >= 5"',
-  'Loud Singer':
-    'Traits=Ancestry,Goblin Require="level >= 5","features.Goblin Song"',
-  'Vandal':'Traits=Ancestry,Goblin Require="level >= 5"',
+  'Kneecap':'Traits=Goblin Require="level >= 5"',
+  'Loud Singer':'Traits=Goblin Require="level >= 5","features.Goblin Song"',
+  'Vandal':'Traits=Goblin Require="level >= 5"',
   'Cave Climber':Pathfinder2E.FEATS['Cave Climber'],
-  'Cling':'Traits=Ancestry,Goblin Require="level >= 9"',
+  'Cling':'Traits=Goblin Require="level >= 9"',
   'Skittering Scuttle':Pathfinder2E.FEATS['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATS['Very, Very Sneaky'],
-  'Reckless Abandon':'Traits=Ancestry,Goblin,Fortune Require="level >= 17"',
+  'Reckless Abandon':'Traits=Goblin,Fortune Require="level >= 17"',
 
   // Halfling
   'Distracting Shadows':Pathfinder2E.FEATS['Distracting Shadows'],
-  'Folksy Patter':'Traits=Ancestry,Halfling',
+  'Folksy Patter':'Traits=Halfling',
   'Halfling Lore':Pathfinder2E.FEATS['Halfling Lore'],
   'Halfling Luck':Pathfinder2E.FEATS['Halfling Luck'],
   'Halfling Weapon Familiarity':
     Pathfinder2E.FEATS['Halfling Weapon Familiarity'],
-  'Prairie Rider':'Traits=Ancestry,Halfling',
+  'Prairie Rider':'Traits=Halfling',
   'Sure Feet':Pathfinder2E.FEATS['Sure Feet'],
   'Titan Slinger':Pathfinder2E.FEATS['Titan Slinger'],
   'Unfettered Halfling':Pathfinder2E.FEATS['Unfettered Halfling'],
   'Watchful Halfling':Pathfinder2E.FEATS['Watchful Halfling'],
   'Cultural Adaptability (%ancestry)':
     Pathfinder2E.FEATS['Cultural Adaptability (%ancestry)'],
-  'Step Lively':'Traits=Ancestry,Halfling Require="level >= 5"',
+  'Step Lively':'Traits=Halfling Require="level >= 5"',
   'Dance Underfoot':
-    'Traits=Ancestry,Halfling Require="level >= 9","features.Step Lively"',
+    'Traits=Halfling Require="level >= 9","features.Step Lively"',
   'Guiding Luck':Pathfinder2E.FEATS['Guiding Luck'],
   'Irrepressible':Pathfinder2E.FEATS.Irrepressible,
-  'Unhampered Passage':'Traits=Ancestry,Halfling Require="level >= 9"',
+  'Unhampered Passage':'Traits=Halfling Require="level >= 9"',
   'Ceaseless Shadows':Pathfinder2E.FEATS['Ceaseless Shadows'],
   'Toppling Dance':
-    'Traits=Ancestry,Halfling ' +
-    'Require="level >= 13","features.Dance Underfoot"',
-  'Shadow Self':
-    'Traits=Ancestry,Halfling Require="level >= 17","rank.Stealth >= 4"',
+    'Traits=Halfling Require="level >= 13","features.Dance Underfoot"',
+  'Shadow Self':'Traits=Halfling Require="level >= 17","rank.Stealth >= 4"',
 
   // Human
   'Adapted Cantrip':Pathfinder2E.FEATS['Adapted Cantrip'],
@@ -1366,140 +1362,129 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Unconventional Weaponry (%weapon)'],
   'Adaptive Adept':Pathfinder2E.FEATS['Adaptive Adept'],
   'Clever Improviser':Pathfinder2E.FEATS['Clever Improviser'],
-  'Sense Allies':'Traits=Ancestry,Human Require="level >= 5"',
+  'Sense Allies':'Traits=Human Require="level >= 5"',
   // Requirements changed
-  'Cooperative Soul':'Traits=Ancestry,Human Require="level >= 9"',
-  'Group Aid':'Traits=Ancestry,Human Require="level >= 9"',
-  'Hardy Traveler':'Traits=Ancestry,Human Require="level >= 9"',
+  'Cooperative Soul':'Traits=Human Require="level >= 9"',
+  'Group Aid':'Traits=Human Require="level >= 9"',
+  'Hardy Traveler':'Traits=Human Require="level >= 9"',
   // Requirements changed
-  'Incredible Improvisation':'Traits=Ancestry,Human Require="level >= 9"',
+  'Incredible Improvisation':'Traits=Human Require="level >= 9"',
   'Multitalented':Pathfinder2E.FEATS.Multitalented,
-  'Advanced General Training':'Traits=Ancestry,Human Require="level >= 13"',
-  'Bounce Back':'Traits=Ancestry,Human Require="level >= 13"',
-  'Stubborn Persistence':'Traits=Ancestry,Human Require="level >= 13"',
-  'Heroic Presence':
-    'Traits=Ancestry,Human,Emotion,Mental Require="level >= 17"',
+  'Advanced General Training':'Traits=Human Require="level >= 13"',
+  'Bounce Back':'Traits=Human Require="level >= 13"',
+  'Stubborn Persistence':'Traits=Human Require="level >= 13"',
+  'Heroic Presence':'Traits=Human,Emotion,Mental Require="level >= 17"',
 
   // Leshy
-  'Grasping Reach':'Traits=Ancestry,Leshy',
-  'Harmlessly Cute':'Traits=Ancestry,Leshy',
-  'Leshy Lore':'Traits=Ancestry,Leshy',
-  'Leshy Superstition':'Traits=Ancestry,Leshy',
-  'Seedpod':'Traits=Ancestry,Leshy',
-  'Shadow Of The Wilds':'Traits=Ancestry,Leshy',
-  'Undaunted':'Traits=Ancestry,Leshy',
-  'Anchoring Roots':'Traits=Ancestry,Leshy Require="level >= 5"',
+  'Grasping Reach':'Traits=Leshy',
+  'Harmlessly Cute':'Traits=Leshy',
+  'Leshy Lore':'Traits=Leshy',
+  'Leshy Superstition':'Traits=Leshy',
+  'Seedpod':'Traits=Leshy',
+  'Shadow Of The Wilds':'Traits=Leshy',
+  'Undaunted':'Traits=Leshy',
+  'Anchoring Roots':'Traits=Leshy Require="level >= 5"',
   'Leshy Glide':
-    'Traits=Ancestry,Leshy ' +
+    'Traits=Leshy ' +
     'Require="level >= 5","features.Leaf Leshy || features.Cat Fall"',
-  'Ritual Reversion':
-    'Traits=Ancestry,Leshy,Polymorph,Primal Require="level >= 5"',
-  'Speak With Kindred':'Traits=Ancestry,Leshy Require="level >= 5"',
-  'Bark And Tendril':'Traits=Ancestry,Leshy Require="level >= 9"',
+  'Ritual Reversion':'Traits=Leshy,Polymorph,Primal Require="level >= 5"',
+  'Speak With Kindred':'Traits=Leshy Require="level >= 5"',
+  'Bark And Tendril':'Traits=Leshy Require="level >= 9"',
   'Lucky Keepsake':
-    'Traits=Ancestry,Leshy Require="level >= 9","features.Leshy Superstition"',
-  'Solar Rejuvenation':'Traits=Ancestry,Leshy Require="level >= 9"',
-  'Thorned Seedpod':
-    'Traits=Ancestry,Leshy Require="level >= 9",features.Seedpod',
-  'Call Of The Green Man':'Traits=Ancestry,Leshy Require="level >= 13"',
-  'Cloak Of Poison':'Traits=Ancestry,Leshy,Poison Require="level >= 13"',
-  'Flourish And Ruin':'Traits=Ancestry,Leshy Require="level >= 17"',
-  'Regrowth':'Traits=Ancestry,Leshy Require="level >= 17"',
+    'Traits=Leshy Require="level >= 9","features.Leshy Superstition"',
+  'Solar Rejuvenation':'Traits=Leshy Require="level >= 9"',
+  'Thorned Seedpod':'Traits=Leshy Require="level >= 9",features.Seedpod',
+  'Call Of The Green Man':'Traits=Leshy Require="level >= 13"',
+  'Cloak Of Poison':'Traits=Leshy,Poison Require="level >= 13"',
+  'Flourish And Ruin':'Traits=Leshy Require="level >= 17"',
+  'Regrowth':'Traits=Leshy Require="level >= 17"',
 
   // Orc
-  'Beast Trainer':'Traits=Ancestry,Orc',
-  'Iron Fists':'Traits=Ancestry,Orc',
+  'Beast Trainer':'Traits=Orc',
+  'Iron Fists':'Traits=Orc',
   'Orc Ferocity':Pathfinder2E.FEATS['Orc Ferocity'],
-  'Orc Lore':'Traits=Ancestry,Orc',
+  'Orc Lore':'Traits=Orc',
   'Orc Superstition':Pathfinder2E.FEATS['Orc Superstition'],
-  'Hold Mark (Burning Sun)':'Traits=Ancestry,Orc',
-  "Hold Mark (Death's Head)":'Traits=Ancestry,Orc',
-  'Hold Mark (Defiled Corpse)':'Traits=Ancestry,Orc',
-  'Hold Mark (Empty Hand)':'Traits=Ancestry,Orc',
+  'Hold Mark (Burning Sun)':'Traits=Orc',
+  "Hold Mark (Death's Head)":'Traits=Orc',
+  'Hold Mark (Defiled Corpse)':'Traits=Orc',
+  'Hold Mark (Empty Hand)':'Traits=Orc',
   'Orc Weapon Familiarity':Pathfinder2E.FEATS['Orc Weapon Familiarity'],
-  'Tusks':'Traits=Ancestry,Orc',
-  'Athletic Might':'Traits=Ancestry,Orc Require="level >= 5"',
-  'Bloody Blows':'Traits=Ancestry,Orc Require="level >= 5"',
-  'Defy Death':
-    'Traits=Ancestry,Orc Require="level >= 5","features.Orc Ferocity"',
-  'Scar-Thick Skin':'Traits=Ancestry,Orc Require="level >= 5"',
+  'Tusks':'Traits=Orc',
+  'Athletic Might':'Traits=Orc Require="level >= 5"',
+  'Bloody Blows':'Traits=Orc Require="level >= 5"',
+  'Defy Death':'Traits=Orc Require="level >= 5","features.Orc Ferocity"',
+  'Scar-Thick Skin':'Traits=Orc Require="level >= 5"',
   'Pervasive Superstition':
-    'Traits=Ancestry,Orc Require="level >= 9","features.Orc Superstition"',
-  'Undying Ferocity':
-    'Traits=Ancestry,Orc Require="level >= 9","features.Orc Ferocity"',
+    'Traits=Orc Require="level >= 9","features.Orc Superstition"',
+  'Undying Ferocity':'Traits=Orc Require="level >= 9","features.Orc Ferocity"',
   'Incredible Ferocity':Pathfinder2E.FEATS['Incredible Ferocity'],
   'Ferocious Beasts':
-    'Traits=Ancestry,Orc ' +
+    'Traits=Orc ' +
     'Require=' +
       '"level >= 13",' +
       '"features.Orc Ferocity",' +
       '"features.Animal Companion || features.Pet || features.Bonded Animal"',
   'Spell Devourer':
-    'Traits=Ancestry,Orc Require="level >= 13","features.Orc Superstition"',
+    'Traits=Orc Require="level >= 13","features.Orc Superstition"',
   'Rampaging Ferocity':
-    'Traits=Ancestry,Orc Require="level >= 17","features.Orc Ferocity"',
+    'Traits=Orc Require="level >= 17","features.Orc Ferocity"',
 
   // Changeling
-  'Brine May':'Traits=Ancestry,Changeling,Lineage',
-  'Callow May':'Traits=Ancestry,Changeling,Lineage',
-  'Dream May':'Traits=Ancestry,Changeling,Lineage',
-  'Slag May':'Traits=Ancestry,Changeling,Lineage',
-  'Changeling Lore':'Traits=Ancestry,Changeling',
-  'Hag Claws':'Traits=Ancestry,Changeling',
-  "Hag's Sight":'Traits=Ancestry,Changeling',
-  'Called':'Traits=Ancestry,Changeling Require="level >= 5"',
-  'Mist Child':'Traits=Ancestry,Changeling Require="level >= 5"',
-  'Accursed Claws':
-    'Traits=Ancestry,Changeling Require="level >= 9",weapons.Claws',
+  'Brine May':'Traits=Changeling,Lineage',
+  'Callow May':'Traits=Changeling,Lineage',
+  'Dream May':'Traits=Changeling,Lineage',
+  'Slag May':'Traits=Changeling,Lineage',
+  'Changeling Lore':'Traits=Changeling',
+  'Hag Claws':'Traits=Changeling',
+  "Hag's Sight":'Traits=Changeling',
+  'Called':'Traits=Changeling Require="level >= 5"',
+  'Mist Child':'Traits=Changeling Require="level >= 5"',
+  'Accursed Claws':'Traits=Changeling Require="level >= 9",weapons.Claws',
   'Occult Resistance':
-    'Traits=Ancestry,Changeling Require="level >= 9","rank.Occultism >= 2"',
-  'Hag Magic':'Traits=Ancestry,Changeling Require="level >= 13"',
+    'Traits=Changeling Require="level >= 9","rank.Occultism >= 2"',
+  'Hag Magic':'Traits=Changeling Require="level >= 13"',
 
   // Nephilim
-  'Angelkin':'Traits=Ancestry,Nephilim,Lineage',
-  'Grimspawn':'Traits=Ancestry,Nephilim,Lineage',
-  'Hellspawn':'Traits=Ancestry,Nephilim,Lineage',
-  'Lawbringer':'Traits=Ancestry,Nephilim,Lineage',
-  'Musetouched':'Traits=Ancestry,Nephilim,Lineage',
-  'Pitborn':'Traits=Ancestry,Nephilim,Lineage',
-  'Bestial Manifestation (Claw)':'Traits=Ancestry,Nephilim',
-  'Bestial Manifestation (Hoof)':'Traits=Ancestry,Nephilim',
-  'Bestial Manifestation (Jaws)':'Traits=Ancestry,Nephilim',
-  'Bestial Manifestation (Tail)':'Traits=Ancestry,Nephilim',
-  'Halo':'Traits=Ancestry,Nephilim',
-  'Nephilim Eyes':
-    'Traits=Ancestry,Nephilim Require="features.Low-Light Vision"',
-  'Nephilim Lore':'Traits=Ancestry,Nephilim',
-  'Nimble Hooves':'Traits=Ancestry,Nephilim',
-  'Blessed Blood':'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Extraplanar Supplication (Bane)':
-    'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Extraplanar Supplication (Bless)':
-    'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Nephilim Resistance':'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Scion Of Many Planes':'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Skillful Tail':'Traits=Ancestry,Nephilim Require="level >= 5"',
-  'Celestial Magic':
-    'Traits=Ancestry,Nephilim Require="level >= 9","features.Celestial"',
-  'Divine Countermeasures':'Traits=Ancestry,Nephilim Require="level >= 9"',
-  'Divine Wings':'Traits=Ancestry,Nephilim,Divine,Morph Require="level >= 9"',
+  'Angelkin':'Traits=Nephilim,Lineage',
+  'Grimspawn':'Traits=Nephilim,Lineage',
+  'Hellspawn':'Traits=Nephilim,Lineage',
+  'Lawbringer':'Traits=Nephilim,Lineage',
+  'Musetouched':'Traits=Nephilim,Lineage',
+  'Pitborn':'Traits=Nephilim,Lineage',
+  'Bestial Manifestation (Claw)':'Traits=Nephilim',
+  'Bestial Manifestation (Hoof)':'Traits=Nephilim',
+  'Bestial Manifestation (Jaws)':'Traits=Nephilim',
+  'Bestial Manifestation (Tail)':'Traits=Nephilim',
+  'Halo':'Traits=Nephilim',
+  'Nephilim Eyes':'Traits=Nephilim Require="features.Low-Light Vision"',
+  'Nephilim Lore':'Traits=Nephilim',
+  'Nimble Hooves':'Traits=Nephilim',
+  'Blessed Blood':'Traits=Nephilim Require="level >= 5"',
+  'Extraplanar Supplication (Bane)':'Traits=Nephilim Require="level >= 5"',
+  'Extraplanar Supplication (Bless)':'Traits=Nephilim Require="level >= 5"',
+  'Nephilim Resistance':'Traits=Nephilim Require="level >= 5"',
+  'Scion Of Many Planes':'Traits=Nephilim Require="level >= 5"',
+  'Skillful Tail':'Traits=Nephilim Require="level >= 5"',
+  'Celestial Magic':'Traits=Nephilim Require="level >= 9","features.Celestial"',
+  'Divine Countermeasures':'Traits=Nephilim Require="level >= 9"',
+  'Divine Wings':'Traits=Nephilim,Divine,Morph Require="level >= 9"',
   'Fiendish Magic':
-    'Traits=Ancestry,Nephilim ' +
+    'Traits=Nephilim ' +
     'Require=' +
       '"level >= 9",' +
       '"features.Grimspawn || features.Pitborn || features.Hellspawn"',
   'Celestial Mercy':
-    'Traits=Ancestry,Nephilim Require="level >= 13","features.Celestial"',
-  'Slip Sideways':
-    'Traits=Ancestry,Nephilim Require="level >= 13","features.Fiendish"',
+    'Traits=Nephilim Require="level >= 13","features.Celestial"',
+  'Slip Sideways':'Traits=Nephilim Require="level >= 13","features.Fiendish"',
   'Summon Nephilim Kin':
-    'Traits=Ancestry,Nephilim Require="level >= 13","sumLineageFeats > 0"',
-  'Divine Declaration':'Traits=Ancestry,Nephilim Require="level >= 17"',
+    'Traits=Nephilim Require="level >= 13","sumLineageFeats > 0"',
+  'Divine Declaration':'Traits=Nephilim Require="level >= 17"',
   'Eternal Wings':
-    'Traits=Ancestry,Nephilim Require="level >= 17","features.Divine Wings"',
+    'Traits=Nephilim Require="level >= 17","features.Divine Wings"',
 
   // Aiuvarin
-  'Earned Glory':'Traits=Ancestry,Aiuvarin',
+  'Earned Glory':'Traits=Aiuvarin',
   'Elf Atavism':
      Pathfinder2E.FEATS['Elf Atavism']
      .replace('Half-Elf', 'Aiuvarin'),
@@ -1514,305 +1499,277 @@ Pathfinder2ERemaster.FEATS = {
   'Monstrous Peacemaker':
      Pathfinder2E.FEATS['Monstrous Peacemaker']
      .replace('Half-Orc', 'Dromaar'),
-  'Orc Sight':Pathfinder2E.FEATS['Orc Sight']
+  'Orc Sight':
+     Pathfinder2E.FEATS['Orc Sight']
      .replace('Half-Orc', 'Dromaar'),
 
   // Core 2
 
   // Catfolk
-  'Cat Nap':'Traits=Ancestry,Catfolk,Concentrate,Exploration',
-  "Cat's Luck":'Traits=Ancestry,Catfolk,Fortune',
-  'Catfolk Dance':'Traits=Ancestry,Catfolk',
-  'Catfolk Lore':'Traits=Ancestry,Catfolk',
-  'Catfolk Weapon Familiarity':'Traits=Ancestry,Catfolk',
-  'Saber Teeth':'Traits=Ancestry,Catfolk',
-  'Well-Met Traveler':'Traits=Ancestry,Catfolk',
-  'Climbing Claws':'Traits=Ancestry,Catfolk Require="level >= 5"',
-  'Graceful Guidance':'Traits=Ancestry,Catfolk Require="level >= 5"',
-  'Light Paws':'Traits=Ancestry,Catfolk Require="level >= 5"',
-  'Lucky Break':
-    'Traits=Ancestry,Catfolk Require="level >= 5","features.Cat\'s Luck"',
-  'Pride Hunter':'Traits=Ancestry,Catfolk Require="level >= 5"',
+  'Cat Nap':'Traits=Catfolk,Concentrate,Exploration',
+  "Cat's Luck":'Traits=Catfolk,Fortune',
+  'Catfolk Dance':'Traits=Catfolk',
+  'Catfolk Lore':'Traits=Catfolk',
+  'Catfolk Weapon Familiarity':'Traits=Catfolk',
+  'Saber Teeth':'Traits=Catfolk',
+  'Well-Met Traveler':'Traits=Catfolk',
+  'Climbing Claws':'Traits=Catfolk Require="level >= 5"',
+  'Graceful Guidance':'Traits=Catfolk Require="level >= 5"',
+  'Light Paws':'Traits=Catfolk Require="level >= 5"',
+  'Lucky Break':'Traits=Catfolk Require="level >= 5","features.Cat\'s Luck"',
+  'Pride Hunter':'Traits=Catfolk Require="level >= 5"',
   'Springing Leaper':
-    'Traits=Ancestry,Catfolk Require="level >= 5","rank.Athletics >= 2"',
-  'Well-Groomed':'Traits=Ancestry,Catfolk Require="level >= 5"',
+    'Traits=Catfolk Require="level >= 5","rank.Athletics >= 2"',
+  'Well-Groomed':'Traits=Catfolk Require="level >= 5"',
   'Aggravating Scratch':
-    'Traits=Ancestry,Catfolk,Disease Require="level >= 9","weapons.Claws"',
-  'Evade Doom':'Traits=Ancestry,Catfolk Require="level >= 9"',
+    'Traits=Catfolk,Disease Require="level >= 9","weapons.Claws"',
+  'Evade Doom':'Traits=Catfolk Require="level >= 9"',
   'Luck Of The Clowder':
-    'Traits=Ancestry,Catfolk Require="level >= 9","features.Cat\'s Luck"',
+    'Traits=Catfolk Require="level >= 9","features.Cat\'s Luck"',
   "Predator's Growl":
-    'Traits=Ancestry,Catfolk Require="level >= 9","rank.Intimidation >= 2"',
-  'Silent Step':'Traits=Ancestry,Catfolk,Flourish Require="level >= 9"',
-  'Wary Skulker':'Traits=Ancestry,Catfolk Require="level >= 9"',
-  'Black Cat Curse':
-    'Traits=Ancestry,Catfolk,Misfortune,Occult Require="level >= 13"',
+    'Traits=Catfolk Require="level >= 9","rank.Intimidation >= 2"',
+  'Silent Step':'Traits=Catfolk,Flourish Require="level >= 9"',
+  'Wary Skulker':'Traits=Catfolk Require="level >= 9"',
+  'Black Cat Curse':'Traits=Catfolk,Misfortune,Occult Require="level >= 13"',
   'Caterwaul':
-    'Traits=Ancestry,Catfolk,Auditory,Concentrate,Emotion,Mental ' +
+    'Traits=Catfolk,Auditory,Concentrate,Emotion,Mental ' +
     'Require="level >= 13"',
-  'Elude Trouble':'Traits=Ancestry,Catfolk Require="level >= 17"',
-  'Reliable Luck':
-    'Traits=Ancestry,Catfolk Require="level >= 17","features.Cat\'s Luck"',
-  'Ten Lives':
-    'Traits=Ancestry,Catfolk Require="level >= 17","features.Evade Doom"',
+  'Elude Trouble':'Traits=Catfolk Require="level >= 17"',
+  'Reliable Luck':'Traits=Catfolk Require="level >= 17","features.Cat\'s Luck"',
+  'Ten Lives':'Traits=Catfolk Require="level >= 17","features.Evade Doom"',
 
   // Hobgoblin
-  'Alchemical Scholar':'Traits=Ancestry,Hobgoblin',
-  'Cantorian Reinforcement':'Traits=Ancestry,Hobgoblin',
-  'Hobgoblin Lore':'Traits=Ancestry,Hobgoblin',
-  'Hobgoblin Weapon Familiarity':'Traits=Ancestry,Hobgoblin',
-  'Leech-Clip':'Traits=Ancestry,Hobgoblin',
-  'Remorseless Lash':'Traits=Ancestry,Hobgoblin',
-  'Sneaky':'Traits=Ancestry,Hobgoblin',
-  'Stone Face':'Traits=Ancestry,Hobgoblin',
-  'Vigorous Health':'Traits=Ancestry,Hobgoblin',
-  'Agonizing Rebuke':'Traits=Ancestry,Hobgoblin Require="level >= 5"',
-  'Expert Drill Sergeant':'Traits=Ancestry,Hobgoblin Require="level >= 5"',
-  'Recognize Ambush':'Traits=Ancestry,Hobgoblin Require="level >= 5"',
-  'Runtsage':'Traits=Ancestry,Hobgoblin Require="level >= 5"',
+  'Alchemical Scholar':'Traits=Hobgoblin',
+  'Cantorian Reinforcement':'Traits=Hobgoblin',
+  'Hobgoblin Lore':'Traits=Hobgoblin',
+  'Hobgoblin Weapon Familiarity':'Traits=Hobgoblin',
+  'Leech-Clip':'Traits=Hobgoblin',
+  'Remorseless Lash':'Traits=Hobgoblin',
+  'Sneaky':'Traits=Hobgoblin',
+  'Stone Face':'Traits=Hobgoblin',
+  'Vigorous Health':'Traits=Hobgoblin',
+  'Agonizing Rebuke':'Traits=Hobgoblin Require="level >= 5"',
+  'Expert Drill Sergeant':'Traits=Hobgoblin Require="level >= 5"',
+  'Recognize Ambush':'Traits=Hobgoblin Require="level >= 5"',
+  'Runtsage':'Traits=Hobgoblin Require="level >= 5"',
   'Cantorian Rejuvenation':
-    'Traits=Ancestry,Hobgoblin,Healing,Vitality Require="level >= 9"',
+    'Traits=Hobgoblin,Healing,Vitality Require="level >= 9"',
   'Fell Rider':
-    'Traits=Ancestry,Hobgoblin ' +
-    'Require="level >= 9","features.Animal Companion"',
+    'Traits=Hobgoblin Require="level >= 9","features.Animal Companion"',
   'Pride In Arms':
-    'Traits=Ancestry,Hobgoblin,Auditory,Emotion,Mental Require="level >= 9"',
-  'Squad Tactics':'Traits=Ancestry,Hobgoblin Require="level >= 9"',
+    'Traits=Hobgoblin,Auditory,Emotion,Mental Require="level >= 9"',
+  'Squad Tactics':'Traits=Hobgoblin Require="level >= 9"',
   "Can't Fall Here":
-    'Traits=Ancestry,Hobgoblin,Auditory,Manipulate Require="level >= 13"',
-  'War Conditioning (Climb)':'Traits=Ancestry,Hobgoblin Require="level >= 13"',
-  'War Conditioning (Swim)':'Traits=Ancestry,Hobgoblin Require="level >= 13"',
+    'Traits=Hobgoblin,Auditory,Manipulate Require="level >= 13"',
+  'War Conditioning (Climb)':'Traits=Hobgoblin Require="level >= 13"',
+  'War Conditioning (Swim)':'Traits=Hobgoblin Require="level >= 13"',
   'Cantorian Restoration':
-    'Traits=Ancestry,Hobgoblin,Healing,Vitality Require="level >= 17"',
-  'Rallying Cry':'Traits=Ancestry,Hobgoblin,Auditory Require="level >= 17"',
+    'Traits=Hobgoblin,Healing,Vitality Require="level >= 17"',
+  'Rallying Cry':'Traits=Hobgoblin,Auditory Require="level >= 17"',
 
   // Kholo
-  'Ask The Bones':'Traits=Ancestry,Kholo',
-  'Crunch':'Traits=Ancestry,Kholo',
-  'Hyena Familiar':'Traits=Ancestry,Kholo',
-  'Kholo Lore':'Traits=Ancestry,Kholo',
-  'Kholo Weapon Familiarity':'Traits=Ancestry,Kholo',
-  'Pack Hunter':'Traits=Ancestry,Kholo',
-  'Sensitive Nose':'Traits=Ancestry,Kholo',
-  'Absorb Strength':'Traits=Ancestry,Kholo,Uncommon Require="level >= 5"',
-  'Distant Cackle':
-    'Traits=Ancestry,Kholo Require="level >= 5","features.Witch Kholo"',
-  'Pack Stalker':
-    'Traits=Ancestry,Kholo Require="level >= 5","rank.Stealth >= 2"',
+  'Ask The Bones':'Traits=Kholo',
+  'Crunch':'Traits=Kholo',
+  'Hyena Familiar':'Traits=Kholo',
+  'Kholo Lore':'Traits=Kholo',
+  'Kholo Weapon Familiarity':'Traits=Kholo',
+  'Pack Hunter':'Traits=Kholo',
+  'Sensitive Nose':'Traits=Kholo',
+  'Absorb Strength':'Traits=Kholo,Uncommon Require="level >= 5"',
+  'Distant Cackle':'Traits=Kholo Require="level >= 5","features.Witch Kholo"',
+  'Pack Stalker':'Traits=Kholo Require="level >= 5","rank.Stealth >= 2"',
   'Rabid Sprint':
-    'Traits=Ancestry,Kholo,Flourish Require="level >= 5","features.Dog Kholo"',
-  'Affliction Resistance':'Traits=Ancestry,Kholo Require="level >= 5"',
-  'Left-Hand Blood':'Traits=Ancestry,Kholo Require="level >= 5"',
-  'Right-Hand Blood':'Traits=Ancestry,Kholo Require="level >= 5"',
-  'Ambush Hunter':'Traits=Ancestry,Kholo Require="level >= 9"',
+    'Traits=Kholo,Flourish Require="level >= 5","features.Dog Kholo"',
+  'Affliction Resistance':'Traits=Kholo Require="level >= 5"',
+  'Left-Hand Blood':'Traits=Kholo Require="level >= 5"',
+  'Right-Hand Blood':'Traits=Kholo Require="level >= 5"',
+  'Ambush Hunter':'Traits=Kholo Require="level >= 9"',
   'Breath Like Honey':
-    'Traits=Ancestry,Kholo Require="level >= 9","features.Sweetbreath Kholo"',
-  "Grandmother's Wisdom":'Traits=Ancestry,Kholo Require="level >= 9"',
-  'Laughing Kholo':
-    'Traits=Ancestry,Kholo Require="level >= 9","rank.Intimidation >= 3"',
-  "Ancestor's Rage":'Traits=Ancestry,Kholo Require="level >= 13"',
-  "Bonekeeper's Bane":'Traits=Ancestry,Kholo Require="level >= 13"',
-  'First To Strike, First To Fall':
-    'Traits=Ancestry,Kholo Require="level >= 17"',
-  'Impaling Bone':'Traits=Ancestry,Kholo Require="level >= 17"',
+    'Traits=Kholo Require="level >= 9","features.Sweetbreath Kholo"',
+  "Grandmother's Wisdom":'Traits=Kholo Require="level >= 9"',
+  'Laughing Kholo':'Traits=Kholo Require="level >= 9","rank.Intimidation >= 3"',
+  "Ancestor's Rage":'Traits=Kholo Require="level >= 13"',
+  "Bonekeeper's Bane":'Traits=Kholo Require="level >= 13"',
+  'First To Strike, First To Fall':'Traits=Kholo Require="level >= 17"',
+  'Impaling Bone':'Traits=Kholo Require="level >= 17"',
   'Legendary Laugh':
-    'Traits=Ancestry,Kholo Require="level >= 17","features.Laughing Kholo"',
+    'Traits=Kholo Require="level >= 17","features.Laughing Kholo"',
 
   // Kobold
-  'Cringe':'Traits=Ancestry,Kobold,Emotion,Mental,Visual',
-  "Dragon's Presence":
-    'Traits=Ancestry,Kobold Require="features.Dragonscaled Kobold"',
-  'Kobold Lore':'Traits=Ancestry,Kobold',
-  'Kobold Weapon Familiarity':'Traits=Ancestry,Kobold',
-  'Scamper':'Traits=Ancestry,Kobold',
-  'Snare Setter':'Traits=Ancestry,Kobold Require="rank.Crafting >= 1"',
-  "Ally's Shelter":'Traits=Ancestry,Kobold,Fortune Require="level >= 5"',
+  'Cringe':'Traits=Kobold,Emotion,Mental,Visual',
+  "Dragon's Presence":'Traits=Kobold Require="features.Dragonscaled Kobold"',
+  'Kobold Lore':'Traits=Kobold',
+  'Kobold Weapon Familiarity':'Traits=Kobold',
+  'Scamper':'Traits=Kobold',
+  'Snare Setter':'Traits=Kobold Require="rank.Crafting >= 1"',
+  "Ally's Shelter":'Traits=Kobold,Fortune Require="level >= 5"',
   'Grovel':
-    'Traits=Ancestry,Kobold,Auditory,Concentrate,Emotion,Mental ' +
+    'Traits=Kobold,Auditory,Concentrate,Emotion,Mental ' +
     'Require="level >= 5","rank.Deception >= 1"',
   'Snare Genius':
-    'Traits=Ancestry ' +
+    'Traits=Kobold ' +
     'Require="level >= 5","rank.Crafting >= 2","features.Snare Crafting"',
-  'Winglets':'Traits=Ancestry,Kobold Require="level >= 5"',
-  'Between The Scales':'Traits=Ancestry,Kobold Require="level >= 9"',
-  'Briar Battler':'Traits=Ancestry,Kobold Require="level >= 9"',
-  'Close Quarters':'Traits=Ancestry,Kobold Require="level >= 9"',
+  'Winglets':'Traits=Kobold Require="level >= 5"',
+  'Between The Scales':'Traits=Kobold Require="level >= 9"',
+  'Briar Battler':'Traits=Kobold Require="level >= 9"',
+  'Close Quarters':'Traits=Kobold Require="level >= 9"',
   'Evolved Spellhorn':
-    'Traits=Ancestry,Kobold Require="level >= 9","features.Spellhorn Kobold"',
-  'Fleeing Shriek':'Traits=Ancestry,Kobold,Auditory,Sonic Require="level >= 9"',
-  'Winglet Flight':
-    'Traits=Ancestry,Kobold Require="level >= 9","features.Winglets"',
+    'Traits=Kobold Require="level >= 9","features.Spellhorn Kobold"',
+  'Fleeing Shriek':'Traits=Kobold,Auditory,Sonic Require="level >= 9"',
+  'Winglet Flight':'Traits=Kobold Require="level >= 9","features.Winglets"',
   'Resplendent Spellhorn':
-    'Traits=Ancestry,Kobold Require="level >= 13","features.Evolved Spellhorn"',
+    'Traits=Kobold Require="level >= 13","features.Evolved Spellhorn"',
   'Tumbling Diversion':
-    'Traits=Ancestry,Kobold ' +
+    'Traits=Kobold ' +
     'Require="level >= 13","rank.Acrobatics >= 2","rank.Deception >= 2"',
   'Vicious Snares':
-    'Traits=Ancestry,Kobold ' +
+    'Traits=Kobold ' +
     'Require="level >= 13","rank.Crafting >= 2","features.Snare Crafting"',
-  "Benefactor's Majesty":
-    'Traits=Ancestry,Kobold,Healing,Visual Require="level >= 17"',
+  "Benefactor's Majesty":'Traits=Kobold,Healing,Visual Require="level >= 17"',
 
   // Lizardfolk
-  'Bone Magic':'Traits=Ancestry,Lizardfolk',
-  'Iruxi Armaments (Claws)':'Traits=Ancestry,Lizardfolk',
-  'Iruxi Armaments (Fangs)':'Traits=Ancestry,Lizardfolk',
-  'Iruxi Armaments (Tail)':'Traits=Ancestry,Lizardfolk',
-  'Lizardfolk Lore':'Traits=Ancestry,Lizardfolk',
+  'Bone Magic':'Traits=Lizardfolk',
+  'Iruxi Armaments (Claws)':'Traits=Lizardfolk',
+  'Iruxi Armaments (Fangs)':'Traits=Lizardfolk',
+  'Iruxi Armaments (Tail)':'Traits=Lizardfolk',
+  'Lizardfolk Lore':'Traits=Lizardfolk',
   // TODO Requires a swim Speed
-  'Marsh Runner':'Traits=Ancestry,Lizardfolk',
-  'Parthenogenic Hatchling':'Traits=Ancestry,Lizardfolk',
-  'Reptile Speaker':'Traits=Ancestry,Lizardfolk',
+  'Marsh Runner':'Traits=Lizardfolk',
+  'Parthenogenic Hatchling':'Traits=Lizardfolk',
+  'Reptile Speaker':'Traits=Lizardfolk',
   'Envenom Fangs':
-    'Traits=Ancestry,Lizardfolk ' +
+    'Traits=Lizardfolk ' +
     'Require="level >= 5","features.Iruxi Armaments (Fangs)"',
-  'Flexible Tail':'Traits=Ancestry,Lizardfolk Require="level >= 5"',
-  "Gecko's Grip":'Traits=Ancestry,Lizardfolk Require="level >= 5"',
+  'Flexible Tail':'Traits=Lizardfolk Require="level >= 5"',
+  "Gecko's Grip":'Traits=Lizardfolk Require="level >= 5"',
   'Shed Tail':
-    'Traits=Ancestry,Lizardfolk ' +
-    'Require="level >= 5","features.Iruxi Armaments (Tail)"',
-  'Swift Swimmer':'Traits=Ancestry,Lizardfolk Require="level >= 5"',
-  'Dangle':'Traits=Ancestry,Lizardfolk Require="level >= 9"',
+    'Traits=Lizardfolk Require="level >= 5","features.Iruxi Armaments (Tail)"',
+  'Swift Swimmer':'Traits=Lizardfolk Require="level >= 5"',
+  'Dangle':'Traits=Lizardfolk Require="level >= 9"',
   'Hone Claws':
-    'Traits=Ancestry,Lizardfolk ' +
-    'Require="level >= 9","features.Iruxi Armaments (Claws)"',
-  'Terrain Advantage':'Traits=Ancestry,Lizardfolk Require="level >= 9"',
+    'Traits=Lizardfolk Require="level >= 9","features.Iruxi Armaments (Claws)"',
+  'Terrain Advantage':'Traits=Lizardfolk Require="level >= 9"',
   'Bone Investiture':
-    'Traits=Ancestry,Lizardfolk Require="level >= 13","features.Bone Magic"',
-  'Iruxi Spirit Strike':'Traits=Ancestry,Lizardfolk Require="level >= 13"',
-  'Primal Rampage':'Traits=Ancestry,Lizardfolk Require="level >= 13"',
+    'Traits=Lizardfolk Require="level >= 13","features.Bone Magic"',
+  'Iruxi Spirit Strike':'Traits=Lizardfolk Require="level >= 13"',
+  'Primal Rampage':'Traits=Lizardfolk Require="level >= 13"',
   'Fossil Rider':
-    'Traits=Ancestry,Lizardfolk Require="level >= 17","features.Bone Magic"',
-  'Scion Transformation':
-    'Traits=Ancestry,Lizardfolk,Primal Require="level >= 17"',
+    'Traits=Lizardfolk Require="level >= 17","features.Bone Magic"',
+  'Scion Transformation':'Traits=Lizardfolk,Primal Require="level >= 17"',
 
   // Ratfolk
-  'Cheek Pouches':'Traits=Ancestry,Ratfolk',
-  'Pack Rat':'Traits=Ancestry,Ratfolk',
-  'Rat Familiar':'Traits=Ancestry,Ratfolk',
-  'Ratfolk Lore':'Traits=Ancestry,Ratfolk',
-  'Ratspeak':'Traits=Ancestry,Ratfolk',
-  'Tinkering Fingers':'Traits=Ancestry,Ratfolk',
-  'Vicious Incisors':'Traits=Ancestry,Ratfolk',
-  'Warren Navigator':'Traits=Ancestry,Ratfolk',
-  'Cornered Fury':'Traits=Ancestry,Ratfolk Require="level >= 5"',
-  'Lab Rat':'Traits=Ancestry,Ratfolk Require="level >= 5"',
-  'Quick Stow':
-    'Traits=Ancestry,Ratfolk Require="level >= 5","features.Cheek Pouches"',
-  'Rat Magic':'Traits=Ancestry,Ratfolk Require="level >= 5"',
-  'Ratfolk Roll':'Traits=Ancestry,Ratfolk,Move Require="level >= 5"',
-  'Big Mouth':
-    'Traits=Ancestry,Ratfolk Require="level >= 9","features.Cheek Pouches"',
-  'Overcrowd':'Traits=Ancestry,Ratfolk Require="level >= 9"',
-  'Rat Form':
-    'Traits=Ancestry,Ratfolk,Concentrate,Polymorph,Primal Require="level >= 9"',
-  'Uncanny Cheeks':'Traits=Ancestry,Ratfolk Require="level >= 9"',
-  'Shinstabber':
-    'Traits=Ancestry,Ratfolk Require="level >= 13","features.Overcrowd"',
-  'Skittering Sneak':'Traits=Ancestry,Ratfolk Require="level >= 13"',
-  'Warren Digger':'Traits=Ancestry,Ratfolk Require="level >= 13"',
-  'Call The Swarm':
-    'Traits=Ancestry,Ratfolk Require="level >= 17","features.Ratspeak"',
-  'Greater Than The Sum':'Traits=Ancestry,Ratfolk Require="level >= 17"',
+  'Cheek Pouches':'Traits=Ratfolk',
+  'Pack Rat':'Traits=Ratfolk',
+  'Rat Familiar':'Traits=Ratfolk',
+  'Ratfolk Lore':'Traits=Ratfolk',
+  'Ratspeak':'Traits=Ratfolk',
+  'Tinkering Fingers':'Traits=Ratfolk',
+  'Vicious Incisors':'Traits=Ratfolk',
+  'Warren Navigator':'Traits=Ratfolk',
+  'Cornered Fury':'Traits=Ratfolk Require="level >= 5"',
+  'Lab Rat':'Traits=Ratfolk Require="level >= 5"',
+  'Quick Stow':'Traits=Ratfolk Require="level >= 5","features.Cheek Pouches"',
+  'Rat Magic':'Traits=Ratfolk Require="level >= 5"',
+  'Ratfolk Roll':'Traits=Ratfolk,Move Require="level >= 5"',
+  'Big Mouth':'Traits=Ratfolk Require="level >= 9","features.Cheek Pouches"',
+  'Overcrowd':'Traits=Ratfolk Require="level >= 9"',
+  'Rat Form':'Traits=Ratfolk,Concentrate,Polymorph,Primal Require="level >= 9"',
+  'Uncanny Cheeks':'Traits=Ratfolk Require="level >= 9"',
+  'Shinstabber':'Traits=Ratfolk Require="level >= 13","features.Overcrowd"',
+  'Skittering Sneak':'Traits=Ratfolk Require="level >= 13"',
+  'Warren Digger':'Traits=Ratfolk Require="level >= 13"',
+  'Call The Swarm':'Traits=Ratfolk Require="level >= 17","features.Ratspeak"',
+  'Greater Than The Sum':'Traits=Ratfolk Require="level >= 17"',
 
   // Tengu
-  "Mariner's Fire":'Traits=Ancestry,Tengu',
-  'One-Toed Hop':'Traits=Ancestry,Tengu',
-  "Scavenger's Search":'Traits=Ancestry,Tengu',
-  'Squawk!':'Traits=Ancestry,Tengu',
-  "Storm's Lash":'Traits=Ancestry,Tengu',
-  'Tengu Lore':'Traits=Ancestry,Tengu',
-  'Tengu Weapon Familiarity':'Traits=Ancestry,Tengu',
-  'Uncanny Agility':'Traits=Ancestry,Tengu',
-  'Eat Fortune':'Traits=Ancestry,Tengu,Concentrate,Divine Require="level >= 5"',
+  "Mariner's Fire":'Traits=Tengu',
+  'One-Toed Hop':'Traits=Tengu',
+  "Scavenger's Search":'Traits=Tengu',
+  'Squawk!':'Traits=Tengu',
+  "Storm's Lash":'Traits=Tengu',
+  'Tengu Lore':'Traits=Tengu',
+  'Tengu Weapon Familiarity':'Traits=Tengu',
+  'Uncanny Agility':'Traits=Tengu',
+  'Eat Fortune':'Traits=Tengu,Concentrate,Divine Require="level >= 5"',
   'Long-Nosed Form':
-    'Traits=Ancestry,Tengu,Concentrate,Polymorph,Primal Require="level >= 5"',
-  'Magpie Snatch':'Traits=Ancestry,Tengu Require="level >= 5"',
-  'Soaring Flight':
-    'Traits=Ancestry,Tengu Require="level >= 5","features.Skyborn Tengu"',
-  'Tengu Feather Fan':'Traits=Ancestry,Tengu Require="level >= 5"',
-  'Soaring Form':
-    'Traits=Ancestry,Tengu Require="level >= 9","features.Soaring Flight"',
+    'Traits=Tengu,Concentrate,Polymorph,Primal Require="level >= 5"',
+  'Magpie Snatch':'Traits=Tengu Require="level >= 5"',
+  'Soaring Flight':'Traits=Tengu Require="level >= 5","features.Skyborn Tengu"',
+  'Tengu Feather Fan':'Traits=Tengu Require="level >= 5"',
+  'Soaring Form':'Traits=Tengu Require="level >= 9","features.Soaring Flight"',
   "Wind God's Fan":
-    'Traits=Ancestry,Tengu Require="level >= 9","features.Tengu Feather Fan"',
+    'Traits=Tengu Require="level >= 9","features.Tengu Feather Fan"',
   "Harbinger's Claw":
-    'Traits=Ancestry,Tengu,Auditory,Divine,Misfortune Require="level >= 13"',
-  'Jinx Glutton':
-    'Traits=Ancestry,Tengu Require="level >= 13","features.Eat Fortune"',
+    'Traits=Tengu,Auditory,Divine,Misfortune Require="level >= 13"',
+  'Jinx Glutton':'Traits=Tengu Require="level >= 13","features.Eat Fortune"',
   "Thunder God's Fan":
-    'Traits=Ancestry,Tengu Require="level >= 13","features.Tengu Feather Fan"',
+    'Traits=Tengu Require="level >= 13","features.Tengu Feather Fan"',
   'Great Tengu Form':
-    'Traits=Ancestry,Tengu Require="level >= 17","features.Long-Nosed Form"',
-  'Trickster Tengu':'Traits=Ancestry,Tengu Require="level >= 17"',
+    'Traits=Tengu Require="level >= 17","features.Long-Nosed Form"',
+  'Trickster Tengu':'Traits=Tengu Require="level >= 17"',
 
   // Tripkee
-  'Croak Talker':'Traits=Ancestry,Tripkee',
-  "Hunter's Defense":'Traits=Ancestry,Tripkee Require="rank.Nature >= 1"',
-  'Jungle Strider':'Traits=Ancestry,Tripkee',
-  'Nocturnal Tripkee':'Traits=Ancestry,Tripkee',
-  'Terrifying Croak':'Traits=Ancestry,Tripkee Require="rank.Intimidation >= 1"',
-  'Tripkee Lore':'Traits=Ancestry,Tripkee',
-  'Tripkee Weapon Familiarity':'Traits=Ancestry,Tripkee',
-  'Fantastic Leaps':'Traits=Ancestry,Tripkee Require="level >= 5"',
+  'Croak Talker':'Traits=Tripkee',
+  "Hunter's Defense":'Traits=Tripkee Require="rank.Nature >= 1"',
+  'Jungle Strider':'Traits=Tripkee',
+  'Nocturnal Tripkee':'Traits=Tripkee',
+  'Terrifying Croak':'Traits=Tripkee Require="rank.Intimidation >= 1"',
+  'Tripkee Lore':'Traits=Tripkee',
+  'Tripkee Weapon Familiarity':'Traits=Tripkee',
+  'Fantastic Leaps':'Traits=Tripkee Require="level >= 5"',
   'Long Tongue':
-    'Traits=Ancestry,Tripkee ' +
-    'Require="level >= 5","features.Snaptongue Tripkee"',
-  'Prodigious Climber':'Traits=Ancestry,Tripkee Require="level >= 5"',
-  'Tenacious Net':'Traits=Ancestry,Tripkee Require="level >= 5"',
+    'Traits=Tripkee Require="level >= 5","features.Snaptongue Tripkee"',
+  'Prodigious Climber':'Traits=Tripkee Require="level >= 5"',
+  'Tenacious Net':'Traits=Tripkee Require="level >= 5"',
   'Tripkee Glide':
-    'Traits=Ancestry,Tripkee Require="level >= 5","features.Windweb Tripkee"',
-  'Vomit Stomach':'Traits=Ancestry,Tripkee Require="level >= 5"',
+    'Traits=Tripkee Require="level >= 5","features.Windweb Tripkee"',
+  'Vomit Stomach':'Traits=Tripkee Require="level >= 5"',
   // TODO require "not immune to diseases or poisons"
-  'Absorb Toxin':'Traits=Ancestry,Tripkee,Manipulate Require="level >= 9"',
-  'Moisture Bath':'Traits=Ancestry,Tripkee,Manipulate Require="level >= 9"',
-  'Ricocheting Leap':
-    'Traits=Ancestry,Tripkee Require="level >= 9","features.Wall Jump"',
+  'Absorb Toxin':'Traits=Tripkee,Manipulate Require="level >= 9"',
+  'Moisture Bath':'Traits=Tripkee,Manipulate Require="level >= 9"',
+  'Ricocheting Leap':'Traits=Tripkee Require="level >= 9","features.Wall Jump"',
   'Tongue Tether':
-    'Traits=Ancestry,Tripkee ' +
-    'Require="level >= 9","features.Snaptongue Tripkee"',
-  'Envenomed Edge':'Traits=Ancestry,Tripkee Require="level >= 13"',
-  'Hop Up':'Traits=Ancestry,Tripkee Require="level >= 13"',
-  'Unbound Leaper':'Traits=Ancestry,Tripkee Require="level >= 17"',
+    'Traits=Tripkee Require="level >= 9","features.Snaptongue Tripkee"',
+  'Envenomed Edge':'Traits=Tripkee Require="level >= 13"',
+  'Hop Up':'Traits=Tripkee Require="level >= 13"',
+  'Unbound Leaper':'Traits=Tripkee Require="level >= 17"',
 
   // Dhampir
-  'Straveika':'Traits=Ancestry,Dhampir,Lineage',
-  'Svetocher':'Traits=Ancestry,Dhampir,Lineage',
-  'Eyes Of Night':'Traits=Ancestry,Dhampir',
-  'Fangs':'Traits=Ancestry,Dhampir',
-  'Vampire Lore':'Traits=Ancestry,Dhampir',
-  'Voice Of The Night':'Traits=Ancestry,Dhampir',
-  'Enthralling Allure':'Traits=Ancestry,Dhampir Require="level >= 5"',
-  'Necromantic Physiology':'Traits=Ancestry,Dhampir Require="level >= 5"',
-  'Undead Slayer':'Traits=Ancestry,Dhampir Require="level >= 5"',
-  'Bloodletting Fangs':
-    'Traits=Ancestry,Dhampir Require="level >= 9","features.Fangs"',
-  'Night Magic':'Traits=Ancestry,Dhampir Require="level >= 9"',
+  'Straveika':'Traits=Dhampir,Lineage',
+  'Svetocher':'Traits=Dhampir,Lineage',
+  'Eyes Of Night':'Traits=Dhampir',
+  'Fangs':'Traits=Dhampir',
+  'Vampire Lore':'Traits=Dhampir',
+  'Voice Of The Night':'Traits=Dhampir',
+  'Enthralling Allure':'Traits=Dhampir Require="level >= 5"',
+  'Necromantic Physiology':'Traits=Dhampir Require="level >= 5"',
+  'Undead Slayer':'Traits=Dhampir Require="level >= 5"',
+  'Bloodletting Fangs':'Traits=Dhampir Require="level >= 9","features.Fangs"',
+  'Night Magic':'Traits=Dhampir Require="level >= 9"',
   'Form Of The Bat':
-    'Traits=Ancestry,Dhampir,Concentrate,Divine,Polymorph ' +
-    'Require="level >= 13"',
-  'Symphony Of Blood':'Traits=Ancestry,Dhampir Require="level >= 17"',
+    'Traits=Dhampir,Concentrate,Divine,Polymorph Require="level >= 13"',
+  'Symphony Of Blood':'Traits=Dhampir Require="level >= 17"',
 
   // Dragonblood
-  'Arcane Dragonblood':'Traits=Ancestry,Dragonblood,Lineage',
-  'Divine Dragonblood':'Traits=Ancestry,Dragonblood,Lineage',
-  'Occult Dragonblood':'Traits=Ancestry,Dragonblood,Lineage',
-  'Primal Dragonblood':'Traits=Ancestry,Dragonblood,Lineage',
-  'Breath Of The Dragon':'Traits=Ancestry,Dragonblood,Magical',
-  'Draconic Aspect (Claw)':'Traits=Ancestry,Dragonblood',
-  'Draconic Aspect (Jaws)':'Traits=Ancestry,Dragonblood',
-  'Draconic Aspect (Tail)':'Traits=Ancestry,Dragonblood',
-  'Draconic Resistance':'Traits=Ancestry,Dragonblood',
+  'Arcane Dragonblood':'Traits=Dragonblood,Lineage',
+  'Divine Dragonblood':'Traits=Dragonblood,Lineage',
+  'Occult Dragonblood':'Traits=Dragonblood,Lineage',
+  'Primal Dragonblood':'Traits=Dragonblood,Lineage',
+  'Breath Of The Dragon':'Traits=Dragonblood,Magical',
+  'Draconic Aspect (Claw)':'Traits=Dragonblood',
+  'Draconic Aspect (Jaws)':'Traits=Dragonblood',
+  'Draconic Aspect (Tail)':'Traits=Dragonblood',
+  'Draconic Resistance':'Traits=Dragonblood',
   // Low-Light Vision requirement removed by errata
-  'Draconic Sight':'Traits=Ancestry,Dragonblood',
-  'Dragon Lore':'Traits=Ancestry,Dragonblood',
-  'Scaly Hide':'Traits=Ancestry,Dragonblood',
+  'Draconic Sight':'Traits=Dragonblood',
+  'Dragon Lore':'Traits=Dragonblood',
+  'Scaly Hide':'Traits=Dragonblood',
   'Deadly Aspect':
-    'Traits=Ancestry,Dragonblood ' +
-    'Require="level >= 5","features.Draconic Aspect"',
-  'Draconic Scent':'Traits=Ancestry,Dragonblood Require="level >= 5"',
-  "Dragon's Flight":'Traits=Ancestry,Dragonblood Require="level >= 5"',
+    'Traits=Dragonblood Require="level >= 5","features.Draconic Aspect"',
+  'Draconic Scent':'Traits=Dragonblood Require="level >= 5"',
+  "Dragon's Flight":'Traits=Dragonblood Require="level >= 5"',
   'Traditional Resistances':
-    'Traits=Ancestry,Dragonblood ' +
+    'Traits=Dragonblood ' +
     'Require=' +
       '"level >= 5",' +
       '"features.Arcane Dragonblood || ' +
@@ -1820,56 +1777,51 @@ Pathfinder2ERemaster.FEATS = {
        'features.Occult Dragonblood || ' +
        'features.Primal Dragonblood"',
   'Formidable Breath':
-    'Traits=Ancestry,Dragonblood ' +
-    'Require="level >= 9","features.Breath Of The Dragon"',
+    'Traits=Dragonblood Require="level >= 9","features.Breath Of The Dragon"',
   "True Dragon's Flight":
-    'Traits=Ancestry,Dragonblood ' +
-    'Require="level >= 9","features.Dragon\'s Flight"',
+    'Traits=Dragonblood Require="level >= 9","features.Dragon\'s Flight"',
   'Wing Buffet':
-    'Traits=Ancestry,Dragonblood,Attack ' +
-    'Require="level >= 9","rank.Athletics >= 2"',
-  'Draconic Veil':'Traits=Ancestry,Dragonblood Require="level >= 13"',
+    'Traits=Dragonblood,Attack Require="level >= 9","rank.Athletics >= 2"',
+  'Draconic Veil':'Traits=Dragonblood Require="level >= 13"',
   'Majestic Presence':
-    'Traits=Ancestry,Dragonblood,Emotion,Fear,Mental,Visual ' +
-    'Require="level >= 13"',
-  'Form Of The Dragon':'Traits=Ancestry,Dragonblood Require="level >= 17"',
+    'Traits=Dragonblood,Emotion,Fear,Mental,Visual Require="level >= 13"',
+  'Form Of The Dragon':'Traits=Dragonblood Require="level >= 17"',
   'Lingering Breath':
-    'Traits=Ancestry,Dragonblood ' +
-    'Require="level >= 17","features.Breath Of The Dragon"',
+    'Traits=Dragonblood Require="level >= 17","features.Breath Of The Dragon"',
 
   // Duskwalker
-  'Chance Death':'Traits=Ancestry,Duskwalker,Fortune',
-  'Deliberate Death':'Traits=Ancestry,Duskwalker',
-  'Duskwalker Lore':'Traits=Ancestry,Duskwalker',
-  'Duskwalker Weapon Familiarity':'Traits=Ancestry,Duskwalker',
-  'Ghost Hunter':'Traits=Ancestry,Duskwalker',
-  'Gravesight':'Traits=Ancestry,Duskwalker',
-  'Lifesense':'Traits=Ancestry,Duskwalker,Divine Require="level >= 5"',
-  'Spirit Soother':'Traits=Ancestry,Duskwalker Require="level >= 5"',
-  'Ward Against Corruption':'Traits=Ancestry,Duskwalker Require="level >= 5"',
-  'Duskwalker Magic':'Traits=Ancestry,Duskwalker Require="level >= 9"',
-  'Quietus Strikes':'Traits=Ancestry,Duskwalker Require="level >= 9"',
-  'Resist Ruin':'Traits=Ancestry,Duskwalker Require="level >= 13"',
-  "Boneyard's Call":'Traits=Ancestry,Duskwalker,Uncommon Require="level >= 17"',
+  'Chance Death':'Traits=Duskwalker,Fortune',
+  'Deliberate Death':'Traits=Duskwalker',
+  'Duskwalker Lore':'Traits=Duskwalker',
+  'Duskwalker Weapon Familiarity':'Traits=Duskwalker',
+  'Ghost Hunter':'Traits=Duskwalker',
+  'Gravesight':'Traits=Duskwalker',
+  'Lifesense':'Traits=Duskwalker,Divine Require="level >= 5"',
+  'Spirit Soother':'Traits=Duskwalker Require="level >= 5"',
+  'Ward Against Corruption':'Traits=Duskwalker Require="level >= 5"',
+  'Duskwalker Magic':'Traits=Duskwalker Require="level >= 9"',
+  'Quietus Strikes':'Traits=Duskwalker Require="level >= 9"',
+  'Resist Ruin':'Traits=Duskwalker Require="level >= 13"',
+  "Boneyard's Call":'Traits=Duskwalker,Uncommon Require="level >= 17"',
 
   // Class
 
   // Bard
   'Bardic Lore':Pathfinder2E.FEATS['Bardic Lore'],
-  'Hymn Of Healing':'Traits=Class,Bard',
+  'Hymn Of Healing':'Traits=Bard',
   'Lingering Composition':Pathfinder2E.FEATS['Lingering Composition'],
-  'Martial Performance':'Traits=Class,Bard Require="features.Warrior"',
+  'Martial Performance':'Traits=Bard Require="features.Warrior"',
   'Reach Spell':
     Pathfinder2E.FEATS['Reach Spell']
     .replace('Metamagic', 'Spellshape')
     .replace('Traits=', 'Traits=Oracle,Witch,'),
   'Versatile Performance':Pathfinder2E.FEATS['Versatile Performance'],
-  'Well-Versed':'Traits=Class,Bard',
+  'Well-Versed':'Traits=Bard',
   'Cantrip Expansion':
     Pathfinder2E.FEATS['Cantrip Expansion']
     .replace('Traits=', 'Traits=Oracle,Witch,'),
-  'Directed Audience':'Traits=Class,Bard Require="level >= 2"',
-  'Emotional Push':'Traits=Class,Bard,Concentrate Require="level >= 2"',
+  'Directed Audience':'Traits=Bard Require="level >= 2"',
+  'Emotional Push':'Traits=Bard,Concentrate Require="level >= 2"',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
   "Loremaster's Etude":Pathfinder2E.FEATS["Loremaster's Etude"],
   'Multifarious Muse (Enigma)':Pathfinder2E.FEATS['Multifarious Muse (Enigma)'],
@@ -1880,79 +1832,77 @@ Pathfinder2ERemaster.FEATS = {
   'Multifarious Muse (Warrior)':
     Pathfinder2E.FEATS['Multifarious Muse (Polymath)']
     .replace('Polymath', 'Warrior'),
-  'Song Of Strength':
-    'Traits=Class,Bard Require="level >= 2","features.Warrior"',
+  'Song Of Strength':'Traits=Bard Require="level >= 2","features.Warrior"',
   'Uplifting Overture':Pathfinder2E.FEATS['Inspire Competence'],
-  'Combat Reading':'Traits=Class,Bard,Secret Require="level >= 4"',
+  'Combat Reading':'Traits=Bard,Secret Require="level >= 4"',
   'Courageous Advance':
-    'Traits=Class,Bard,Auditory,Concentrate,Spellshape ' +
+    'Traits=Bard,Auditory,Concentrate,Spellshape ' +
     'Require="level >= 4","features.Warrior"',
   'In Tune':
-    'Traits=Class,Bard,Concentrate,Spellshape ' +
+    'Traits=Bard,Concentrate,Spellshape ' +
     'Require="level >= 4","features.Maestro"',
   'Melodious Spell':
     Pathfinder2E.FEATS['Melodious Spell']
     .replace('Manipulate,Metamagic', 'Spellshape'),
   'Rallying Anthem':Pathfinder2E.FEATS['Inspire Defense'],
   'Ritual Researcher':
-    'Traits=Class,Bard,Uncommon ' +
+    'Traits=Bard,Uncommon ' +
     'Require="level >= 4","features.Enigma","rank.Occultism >= 2"',
   'Triple Time':Pathfinder2E.FEATS['Triple Time'],
   'Versatile Signature':Pathfinder2E.FEATS['Versatile Signature'],
   'Assured Knowledge':
-    'Traits=Class,Bard,Fortune Require="level >= 6","features.Enigma"',
+    'Traits=Bard,Fortune Require="level >= 6","features.Enigma"',
   'Defensive Coordination':
-    'Traits=Class,Bard,Auditory,Concentration,Spellshape ' +
+    'Traits=Bard,Auditory,Concentration,Spellshape ' +
     'Require="level >= 6","features.Warrior","features.Rallying Anthem"',
   'Dirge Of Doom':Pathfinder2E.FEATS['Dirge Of Doom'],
   'Educate Allies':
-    'Traits=Class,Bard,Concentrate Require="level >= 6","features.Well-Versed"',
+    'Traits=Bard,Concentrate Require="level >= 6","features.Well-Versed"',
   'Harmonize':Pathfinder2E.FEATS.Harmonize.replace('Metamagic', 'Spellshape'),
-  'Song Of Marching':'Traits=Class,Bard Require="level >= 6"',
+  'Song Of Marching':'Traits=Bard Require="level >= 6"',
   'Steady Spellcasting':
     Pathfinder2E.FEATS['Steady Spellcasting']
     .replace('Traits=', 'Traits=Witch,Oracle,'),
-  'Accompany':'Traits=Class,Bard,Concentrate,Manipulate Require="level >= 8"',
+  'Accompany':'Traits=Bard,Concentrate,Manipulate Require="level >= 8"',
   'Call And Response':
-    'Traits=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
+    'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
   'Eclectic Skill':Pathfinder2E.FEATS['Eclectic Skill'],
   'Fortissimo Composition':Pathfinder2E.FEATS['Inspire Heroics'],
   'Know-It-All':Pathfinder2E.FEATS['Know-It-All'],
   'Reflexive Courage':
-    'Traits=Class,Bard,Auditory,Concentrate ' +
-    'Require="level >= 8","features.Warrior"',
-  'Soulsight':'Traits=Class,Bard Require="level >= 8"',
+    'Traits=Bard,Auditory,Concentrate Require="level >= 8","features.Warrior"',
+  'Soulsight':'Traits=Bard Require="level >= 8"',
   'Annotate Composition':
-    'Traits=Class,Bard,Exploration,Linguistic Require="level >= 10"',
+    'Traits=Bard,Exploration,Linguistic Require="level >= 10"',
   'Courageous Assault':
-    'Traits=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 10"',
+    'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 10"',
   'House Of Imaginary Walls':Pathfinder2E.FEATS['House Of Imaginary Walls'],
-  'Ode To Ouroboros':'Traits=Class,Bard Require="level >= 10"',
+  'Ode To Ouroboros':'Traits=Bard Require="level >= 10"',
   'Quickened Casting':
     Pathfinder2E.FEATS['Quickened Casting']
     .replace('Metamagic', 'Spellshape')
     .replace('Traits=', 'Traits=Witch,Oracle,'),
-  'Symphony Of The Unfettered Heart':'Traits=Class,Bard Require="level >= 10"',
+  'Symphony Of The Unfettered Heart':'Traits=Bard Require="level >= 10"',
   'Unusual Composition':
     Pathfinder2E.FEATS['Unusual Composition']
     .replace('Metamagic', 'Spellshape'),
   'Eclectic Polymath':Pathfinder2E.FEATS['Eclectic Polymath'],
   "Enigma's Knowledge":
-    'Traits=Class,Bard Require="level >= 12","features.Assured Knowledge"',
+    'Traits=Bard Require="level >= 12","features.Assured Knowledge"',
   'Inspirational Focus':Pathfinder2E.FEATS['Inspirational Focus'],
-  'Reverberate':'Traits=Class,Bard Require="level >= 12"',
+  'Reverberate':'Traits=Bard Require="level >= 12"',
   'Shared Assault':
-    'Traits=Class,Bard Require="level >= 12","features.Courageous Assault"',
+    'Traits=Bard Require="level >= 12","features.Courageous Assault"',
   'Allegro':Pathfinder2E.FEATS.Allegro,
-  'Earworm':'Traits=Class,Bard,Exploration Require="level >= 14"',
+  'Earworm':'Traits=Bard,Exploration Require="level >= 14"',
   'Soothing Ballad':Pathfinder2E.FEATS['Soothing Ballad'],
   'Triumphant Inspiration':
-    'Traits=Class,Bard Require="level >= 14","features.Warrior"',
+    'Traits=Bard Require="level >= 14","features.Warrior"',
   'True Hypercognition':Pathfinder2E.FEATS['True Hypercognition'],
   'Vigorous Anthem':
-    'Traits=Class,Bard,Auditory,Concentrate,Spellshape Require="level >= 14"',
+    'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 14"',
   'Courageous Onslaught':
-    'Traits=Class,Bard,Auditory,Concentrate,Spellshape ' +
+    'Traits=Bard,Auditory,Concentrate,Spellshape ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Courageous Advance",' +
@@ -1961,87 +1911,43 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Effortless Concentration']
     .replace('Traits=', 'Traits=Witch,'),
   'Resounding Finale':
-    'Traits=Class,Bard,Concentrate Require="level >= 16","features.Maestro"',
+    'Traits=Bard,Concentrate Require="level >= 16","features.Maestro"',
   'Studious Capacity':Pathfinder2E.FEATS['Studious Capacity'],
-  'All In My Head':'Traits=Class,Bard,Illusion,Mental Require="level >= 18"',
+  'All In My Head':'Traits=Bard,Illusion,Mental Require="level >= 18"',
   'Deep Lore':Pathfinder2E.FEATS['Deep Lore'],
   'Discordant Voice':
-    'Traits=Class,Bard,Sonic ' +
+    'Traits=Bard,Sonic ' +
     'Require="level >= 18","spells.Courageous Anthem (OC1 Foc)"',
   'Eternal Composition':Pathfinder2E.FEATS['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATS['Impossible Polymath'],
   'Fatal Aria':Pathfinder2E.FEATS['Fatal Aria'],
   'Perfect Encore':Pathfinder2E.FEATS['Perfect Encore'],
-  'Pied Piping':'Traits=Class,Bard Require="level >= 20"',
+  'Pied Piping':'Traits=Bard Require="level >= 20"',
   'Symphony Of The Muse':Pathfinder2E.FEATS['Symphony Of The Muse'],
-  'Ultimate Polymath':
-    'Traits=Class,Bard Require="level >= 20","features.Polymath"',
+  'Ultimate Polymath':'Traits=Bard Require="level >= 20","features.Polymath"',
 
   // Cleric
   'Deadly Simplicity':Pathfinder2E.FEATS['Deadly Simplicity'],
   'Divine Castigation':
     Pathfinder2E.FEATS['Holy Castigation'] + ' ' +
     'Require="traits.Holy || traits.Unholy"',
-  'Domain Initiate (Air)':Pathfinder2E.FEATS['Domain Initiate (Air)'],
-  'Domain Initiate (Ambition)':Pathfinder2E.FEATS['Domain Initiate (Ambition)'],
-  'Domain Initiate (Cities)':Pathfinder2E.FEATS['Domain Initiate (Cities)'],
-  'Domain Initiate (Confidence)':
-    Pathfinder2E.FEATS['Domain Initiate (Confidence)'],
-  'Domain Initiate (Creation)':Pathfinder2E.FEATS['Domain Initiate (Creation)'],
-  'Domain Initiate (Darkness)':Pathfinder2E.FEATS['Domain Initiate (Darkness)'],
-  'Domain Initiate (Death)':Pathfinder2E.FEATS['Domain Initiate (Death)'],
-  'Domain Initiate (Destruction)':
-    Pathfinder2E.FEATS['Domain Initiate (Destruction)'],
-  'Domain Initiate (Dreams)':Pathfinder2E.FEATS['Domain Initiate (Dreams)'],
-  'Domain Initiate (Earth)':Pathfinder2E.FEATS['Domain Initiate (Earth)'],
-  'Domain Initiate (Family)':Pathfinder2E.FEATS['Domain Initiate (Family)'],
-  'Domain Initiate (Fate)':Pathfinder2E.FEATS['Domain Initiate (Fate)'],
-  'Domain Initiate (Fire)':Pathfinder2E.FEATS['Domain Initiate (Fire)'],
-  'Domain Initiate (Freedom)':Pathfinder2E.FEATS['Domain Initiate (Freedom)'],
-  'Domain Initiate (Healing)':Pathfinder2E.FEATS['Domain Initiate (Healing)'],
-  'Domain Initiate (Indulgence)':
-    Pathfinder2E.FEATS['Domain Initiate (Indulgence)'],
-  'Domain Initiate (Knowledge)':
-    Pathfinder2E.FEATS['Domain Initiate (Knowledge)'],
-  'Domain Initiate (Luck)':Pathfinder2E.FEATS['Domain Initiate (Luck)'],
-  'Domain Initiate (Magic)':Pathfinder2E.FEATS['Domain Initiate (Magic)'],
-  'Domain Initiate (Might)':Pathfinder2E.FEATS['Domain Initiate (Might)'],
-  'Domain Initiate (Moon)':Pathfinder2E.FEATS['Domain Initiate (Moon)'],
-  'Domain Initiate (Nature)':Pathfinder2E.FEATS['Domain Initiate (Nature)'],
-  'Domain Initiate (Nightmares)':
-    Pathfinder2E.FEATS['Domain Initiate (Nightmares)'],
-  'Domain Initiate (Pain)':Pathfinder2E.FEATS['Domain Initiate (Pain)'],
-  'Domain Initiate (Passion)':Pathfinder2E.FEATS['Domain Initiate (Passion)'],
-  'Domain Initiate (Perfection)':
-    Pathfinder2E.FEATS['Domain Initiate (Perfection)'],
-  'Domain Initiate (Protection)':
-    Pathfinder2E.FEATS['Domain Initiate (Protection)'],
-  'Domain Initiate (Secrecy)':Pathfinder2E.FEATS['Domain Initiate (Secrecy)'],
-  'Domain Initiate (Sun)':Pathfinder2E.FEATS['Domain Initiate (Sun)'],
-  'Domain Initiate (Travel)':Pathfinder2E.FEATS['Domain Initiate (Travel)'],
-  'Domain Initiate (Trickery)':Pathfinder2E.FEATS['Domain Initiate (Trickery)'],
-  'Domain Initiate (Truth)':Pathfinder2E.FEATS['Domain Initiate (Truth)'],
-  'Domain Initiate (Tyranny)':Pathfinder2E.FEATS['Domain Initiate (Tyranny)'],
-  'Domain Initiate (Undeath)':Pathfinder2E.FEATS['Domain Initiate (Undeath)'],
-  'Domain Initiate (Water)':Pathfinder2E.FEATS['Domain Initiate (Water)'],
-  'Domain Initiate (Wealth)':Pathfinder2E.FEATS['Domain Initiate (Wealth)'],
-  'Domain Initiate (Zeal)':Pathfinder2E.FEATS['Domain Initiate (Zeal)'],
+  'Domain Initiate (%domain)':Pathfinder2E.FEATS['Domain Initiate (%domain)'],
   'Harming Hands':Pathfinder2E.FEATS['Harming Hands'],
   'Healing Hands':Pathfinder2E.FEATS['Healing Hands'],
-  'Premonition Of Avoidance':'Traits=Class,Cleric,Divine,Prediction',
+  'Premonition Of Avoidance':'Traits=Cleric,Divine,Prediction',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
-    Pathfinder2E.FEATS['Deadly Simplicity'].replace('Positive', 'Vitality'),
+    Pathfinder2E.FEATS['Deadly Simplicity']
+    .replace('Positive', 'Vitality'),
   'Emblazon Armament':Pathfinder2E.FEATS['Emblazon Armament'],
   'Panic The Dead':
     Pathfinder2E.FEATS['Turn Undead']
     .replace('Traits=', 'Traits=Emotion,Fear,Mental,'),
-  'Rapid Response':'Traits=Class,Cleric Require="level >= 2"',
+  'Rapid Response':'Traits=Cleric Require="level >= 2"',
   'Sap Life':Pathfinder2E.FEATS['Sap Life'],
   'Versatile Font':Pathfinder2E.FEATS['Versatile Font'],
-  "Warpriest's Armor":
-    'Traits=Class,Cleric Require="level >= 2","features.Warpriest"',
+  "Warpriest's Armor":'Traits=Cleric Require="level >= 2","features.Warpriest"',
   'Channel Smite':
     Pathfinder2E.FEATS['Channel Smite']
     .replace(',Necromancy', '') + ' Require="level >= 4"',
@@ -2050,108 +1956,64 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Necrotic Infusion']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 4"',
-  'Raise Symbol':'Traits=Class,Cleric Require="level >= 4"',
-  'Restorative Strike':'Traits=Class,Cleric Require="level >= 4"',
+  'Raise Symbol':'Traits=Cleric Require="level >= 4"',
+  'Restorative Strike':'Traits=Cleric Require="level >= 4"',
   'Sacred Ground':
-    'Traits=Class,Cleric,Consecration,Divine,Exploration ' +
+    'Traits=Cleric,Consecration,Divine,Exploration ' +
     'Require="level >= 4","features.Harmful Font || feature.Healing Font"',
   'Cast Down':
     Pathfinder2E.FEATS['Cast Down']
     .replace('Metamagic', 'Spellshape') + ' Require="level >= 6"',
-  'Divine Rebuttal':'Traits=Class,Cleric,Divine Require="level >= 6"',
+  'Divine Rebuttal':'Traits=Cleric,Divine Require="level >= 6"',
   'Divine Weapon':Pathfinder2E.FEATS['Divine Weapon'],
-  'Magic Hands':
-    'Traits=Class,Cleric Require="level >= 6","features.Healing Hands"',
+  'Magic Hands':'Traits=Cleric Require="level >= 6","features.Healing Hands"',
   'Selective Energy':Pathfinder2E.FEATS['Selective Energy'],
   // Steady Spellcasting as above
-  'Advanced Domain (Air)':Pathfinder2E.FEATS['Advanced Domain (Air)'],
-  'Advanced Domain (Ambition)':Pathfinder2E.FEATS['Advanced Domain (Ambition)'],
-  'Advanced Domain (Cities)':Pathfinder2E.FEATS['Advanced Domain (Cities)'],
-  'Advanced Domain (Confidence)':
-    Pathfinder2E.FEATS['Advanced Domain (Confidence)'],
-  'Advanced Domain (Creation)':Pathfinder2E.FEATS['Advanced Domain (Creation)'],
-  'Advanced Domain (Darkness)':Pathfinder2E.FEATS['Advanced Domain (Darkness)'],
-  'Advanced Domain (Death)':Pathfinder2E.FEATS['Advanced Domain (Death)'],
-  'Advanced Domain (Destruction)':
-    Pathfinder2E.FEATS['Advanced Domain (Destruction)'],
-  'Advanced Domain (Dreams)':Pathfinder2E.FEATS['Advanced Domain (Dreams)'],
-  'Advanced Domain (Earth)':Pathfinder2E.FEATS['Advanced Domain (Earth)'],
-  'Advanced Domain (Family)':Pathfinder2E.FEATS['Advanced Domain (Family)'],
-  'Advanced Domain (Fate)':Pathfinder2E.FEATS['Advanced Domain (Fate)'],
-  'Advanced Domain (Fire)':Pathfinder2E.FEATS['Advanced Domain (Fire)'],
-  'Advanced Domain (Freedom)':Pathfinder2E.FEATS['Advanced Domain (Freedom)'],
-  'Advanced Domain (Healing)':Pathfinder2E.FEATS['Advanced Domain (Healing)'],
-  'Advanced Domain (Indulgence)':
-    Pathfinder2E.FEATS['Advanced Domain (Indulgence)'],
-  'Advanced Domain (Knowledge)':
-    Pathfinder2E.FEATS['Advanced Domain (Knowledge)'],
-  'Advanced Domain (Luck)':Pathfinder2E.FEATS['Advanced Domain (Luck)'],
-  'Advanced Domain (Magic)':Pathfinder2E.FEATS['Advanced Domain (Magic)'],
-  'Advanced Domain (Might)':Pathfinder2E.FEATS['Advanced Domain (Might)'],
-  'Advanced Domain (Moon)':Pathfinder2E.FEATS['Advanced Domain (Moon)'],
-  'Advanced Domain (Nature)':Pathfinder2E.FEATS['Advanced Domain (Nature)'],
-  'Advanced Domain (Nightmares)':
-    Pathfinder2E.FEATS['Advanced Domain (Nightmares)'],
-  'Advanced Domain (Pain)':Pathfinder2E.FEATS['Advanced Domain (Pain)'],
-  'Advanced Domain (Passion)':Pathfinder2E.FEATS['Advanced Domain (Passion)'],
-  'Advanced Domain (Perfection)':
-    Pathfinder2E.FEATS['Advanced Domain (Perfection)'],
-  'Advanced Domain (Protection)':
-    Pathfinder2E.FEATS['Advanced Domain (Protection)'],
-  'Advanced Domain (Secrecy)':Pathfinder2E.FEATS['Advanced Domain (Secrecy)'],
-  'Advanced Domain (Sun)':Pathfinder2E.FEATS['Advanced Domain (Sun)'],
-  'Advanced Domain (Travel)':Pathfinder2E.FEATS['Advanced Domain (Travel)'],
-  'Advanced Domain (Trickery)':Pathfinder2E.FEATS['Advanced Domain (Trickery)'],
-  'Advanced Domain (Truth)':Pathfinder2E.FEATS['Advanced Domain (Truth)'],
-  'Advanced Domain (Tyranny)':Pathfinder2E.FEATS['Advanced Domain (Tyranny)'],
-  'Advanced Domain (Undeath)':Pathfinder2E.FEATS['Advanced Domain (Undeath)'],
-  'Advanced Domain (Water)':Pathfinder2E.FEATS['Advanced Domain (Water)'],
-  'Advanced Domain (Wealth)':Pathfinder2E.FEATS['Advanced Domain (Wealth)'],
-  'Advanced Domain (Zeal)':Pathfinder2E.FEATS['Advanced Domain (Zeal)'],
+  'Advanced Domain (%domain)':Pathfinder2E.FEATS['Advanced Domain (%domain)'],
   'Cremate Undead':Pathfinder2E.FEATS['Cremate Undead'],
   'Emblazon Energy':Pathfinder2E.FEATS['Emblazon Armament'],
-  'Martyr':'Traits=Class,Cleric,Spellshape Require="level >= 8"',
+  'Martyr':'Traits=Cleric,Spellshape Require="level >= 8"',
   'Restorative Channel':Pathfinder2E.FEATS['Channeled Succor'],
   'Sanctify Armament':
     Pathfinder2E.FEATS['Align Armament (Chaotic)']
     .replace(',Evocation', '') + ' ' +
     'Require="level >= 8","traits.Holy || traits.Unholy"',
-  'Surging Focus':'Traits=Class,Cleric Require="level >= 8"',
-  'Void Siphon':'Traits=Class,Cleric Require="level >= 8"',
-  'Zealous Rush':'Traits=Class,Cleric Require="level >= 8"',
+  'Surging Focus':'Traits=Cleric Require="level >= 8"',
+  'Void Siphon':'Traits=Cleric Require="level >= 8"',
+  'Zealous Rush':'Traits=Cleric Require="level >= 8"',
   'Castigating Weapon':
-    Pathfinder2E.FEATS['Castigating Weapon'].replace('Holy', 'Divine'),
+    Pathfinder2E.FEATS['Castigating Weapon']
+    .replace('Holy', 'Divine'),
   'Heroic Recovery':
     Pathfinder2E.FEATS['Heroic Recovery']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 10","features.Healing Font"',
   'Replenishment Of War':Pathfinder2E.FEATS['Replenishment Of War'],
   'Shared Avoidance':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 10","features.Premonition Of Avoidance"',
+    'Traits=Cleric Require="level >= 10","features.Premonition Of Avoidance"',
   'Shield Of Faith':
-    'Traits=Class,Cleric Require="level >= 10","features.Domain Initiate"',
+    'Traits=Cleric Require="level >= 10","features.Domain Initiate"',
   'Defensive Recovery':
     Pathfinder2E.FEATS['Defensive Recovery']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 12"',
   'Domain Focus':Pathfinder2E.FEATS['Domain Focus'],
   'Emblazon Antimagic':Pathfinder2E.FEATS['Emblazon Antimagic'],
-  'Fortunate Relief':'Traits=Class,Cleric,Fortune Require="level >= 12"',
+  'Fortunate Relief':'Traits=Cleric,Fortune Require="level >= 12"',
   'Sapping Symbol':
-    'Traits=Class,Cleric Require="level >= 12","features.Raise Symbol"',
+    'Traits=Cleric Require="level >= 12","features.Raise Symbol"',
   'Shared Replenishment':Pathfinder2E.FEATS['Shared Replenishment'],
   'Channeling Block':
-    'Traits=Class,Cleric Require="level >= 14","features.Shield Block"',
+    'Traits=Cleric Require="level >= 14","features.Shield Block"',
   "Deity's Protection":Pathfinder2E.FEATS["Deity's Protection"],
   'Ebb An Flow':
-    'Traits=Class,Cleric,Concentrate,Spellshape ' +
+    'Traits=Cleric,Concentrate,Spellshape ' +
     'Require="level >= 14","features.Versatile Font"',
   'Fast Channel':Pathfinder2E.FEATS['Fast Channel'],
   'Lasting Armament':
     Pathfinder2E.FEATS['Extend Armament Alignment']
     .replace('Align', 'Sanctify'),
-  'Premonition Of Clarity':'Traits=Class,Cleric,Fortune Require="level >= 14"',
+  'Premonition Of Clarity':'Traits=Cleric,Fortune Require="level >= 14"',
   'Swift Banishment':Pathfinder2E.FEATS['Swift Banishment'],
   'Eternal Bane':
     Pathfinder2E.FEATS['Eternal Bane'] + ' ' +
@@ -2160,22 +2022,20 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Eternal Blessing'] + ' ' +
     'Require="level >= 16","traits.Holy"',
   'Rebounding Smite':
-    'Traits=Class,Cleric Require="level >= 16","features.Channel Smite"',
-  'Remediate':
-    'Traits=Class,Cleric,Concentrate,Spellshape Require="level >= 16"',
+    'Traits=Cleric Require="level >= 16","features.Channel Smite"',
+  'Remediate':'Traits=Cleric,Concentrate,Spellshape Require="level >= 16"',
   'Resurrectionist':Pathfinder2E.FEATS.Resurrectionist,
-  'Divine Apex':'Traits=Class,Cleric Require="level >= 18"',
+  'Divine Apex':'Traits=Cleric Require="level >= 18"',
   'Echoing Channel':
     Pathfinder2E.FEATS['Deadly Simplicity']
     .replace('Metamagic', 'Spellshape'),
   'Improved Swift Banishment':Pathfinder2E.FEATS['Improved Swift Banishment'],
-  'Inviolable':'Traits=Class,Cleric Require="level >= 18"',
-  'Miraculous Possibility':'Traits=Class,Cleric Require="level >= 18"',
+  'Inviolable':'Traits=Cleric Require="level >= 18"',
+  'Miraculous Possibility':'Traits=Cleric Require="level >= 18"',
   'Shared Clarity':
-    'Traits=Class,Cleric ' +
-    'Require="level >= 18","features.Premonition Of Clarity"',
+    'Traits=Cleric Require="level >= 18","features.Premonition Of Clarity"',
   "Avatar's Audience":Pathfinder2E.FEATS["Avatar's Audience"],
-  "Avatar's Protection":'Traits=Class,Cleric Require="level >= 20"',
+  "Avatar's Protection":'Traits=Cleric Require="level >= 20"',
   'Maker Of Miracles':Pathfinder2E.FEATS['Maker Of Miracles'],
   'Spellshape Channel':Pathfinder2E.FEATS['Metamagic Channel'],
 
@@ -2184,9 +2044,9 @@ Pathfinder2ERemaster.FEATS = {
   'Animal Empathy':Pathfinder2E.FEATS['Wild Empathy'],
   'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
   // Note: Feat 1 Plant Empathy links to legacy Feat 6 Druid Empathy in Nethys
-  'Plant Empathy':'Traits=Class,Druid',
+  'Plant Empathy':'Traits=Druid',
   'Storm Born':Pathfinder2E.FEATS['Storm Born'],
-  'Verdant Weapon':'Traits=Class,Druid,Exploration',
+  'Verdant Weapon':'Traits=Druid,Exploration',
   // Reach Spell as above
   'Widen Spell':
     Pathfinder2E.FEATS['Widen Spell']
@@ -2206,14 +2066,14 @@ Pathfinder2ERemaster.FEATS = {
   'Anthropomorphic Shape':
     Pathfinder2E.FEATS['Thousand Faces']
     .replace('Wild Shape', 'Untamed Form'),
-  'Elemental Summons':'Traits=Class,Druid Require="level >= 4"',
+  'Elemental Summons':'Traits=Druid Require="level >= 4"',
   'Forest Passage':Pathfinder2E.FEATS['Woodland Stride'],
   'Form Control':
     Pathfinder2E.FEATS['Form Control']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 4","features.Untamed Form"',
   'Leshy Familiar Secrets':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >=4",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
@@ -2225,12 +2085,11 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Order Magic (Wild)']
     .replace('Wild', 'Untamed'),
   'Snowdrift Spell':
-    'Traits=Class,Druid,Cold,Manipulate,Spellshape ' +
+    'Traits=Druid,Cold,Manipulate,Spellshape ' +
     'Require="level >= 4","features.Storm"',
-  'Current Spell':
-    'Traits=Class,Druid,Concentrate,Spellshape Require="level >= 6"',
+  'Current Spell':'Traits=Druid,Concentrate,Spellshape Require="level >= 6"',
   'Grown Of Oak':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
@@ -2238,7 +2097,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Insect Shape']
     .replace('Wild Shape', 'Untamed Form'),
   'Instinctive Support':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Animal Companion"',
@@ -2247,7 +2106,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Storm Retribution']
     .replace(' Evo', ''),
   'Deimatic Display':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 8",' +
       '"rank.Intimidation >= 1"',
@@ -2256,12 +2115,12 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Wild Shape', 'Untamed Form'),
   'Fey Caller':Pathfinder2E.FEATS['Fey Caller'],
   'Floral Restoration':
-    'Traits=Class,Druid,Healing,Vitality ' +
+    'Traits=Druid,Healing,Vitality ' +
     'Require=' +
       '"level >= 8",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
   'Incredible Companion':Pathfinder2E.FEATS['Incredible Companion'],
-  'Raise Menhir':'Traits=Class,Druid Require="level >= 8"',
+  'Raise Menhir':'Traits=Druid Require="level >= 8"',
   'Soaring Shape':
     Pathfinder2E.FEATS['Soaring Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -2276,26 +2135,27 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Overwhelming Energy']
     .replace('Metamagic', 'Spellshape'),
   'Plant Shape':
-    Pathfinder2E.FEATS['Plant Shape'].replace('Wild Shape', 'Untamed Form'),
+    Pathfinder2E.FEATS['Plant Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Primal Howl':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Incredible Companion"',
   'Pristine Weapon':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Verdant Weapon"',
   'Side By Side':Pathfinder2E.FEATS['Side By Side'],
   'Thunderclap Spell':
-    'Traits=Class,Druid,Sonic,Spellshape ' +
+    'Traits=Druid,Sonic,Spellshape ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Storm || features.Order Explorer (Storm)"',
   'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
   'Garland Spell':
-    'Traits=Class,Druid,Manipulate,Spellshape ' +
+    'Traits=Druid,Manipulate,Spellshape ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Leaf || features.Order Explorer (Leaf)"',
@@ -2303,12 +2163,12 @@ Pathfinder2ERemaster.FEATS = {
   'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
   'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
   'Wandering Oasis':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 12",' +
       '"rank.Survival >= 3"',
   'Reactive Transformation':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 14",' +
       '"features.Untamed Form",' +
@@ -2316,7 +2176,7 @@ Pathfinder2ERemaster.FEATS = {
        'features.Elemental Shape || ' +
        'features.Plant Shape || ' +
        'features.Soaring Shape"',
-  'Sow Spell':'Traits=Class,Druid,Concentrate,Spellshape Require="level >= 14"',
+  'Sow Spell':'Traits=Druid,Concentrate,Spellshape Require="level >= 14"',
   'Specialized Companion':Pathfinder2E.FEATS['Specialized Companion'],
   'Timeless Nature':Pathfinder2E.FEATS['Timeless Nature'],
   'Verdant Metamorphosis':Pathfinder2E.FEATS['Verdant Metamorphosis'],
@@ -2326,13 +2186,13 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Monstrosity Shape']
     .replace('Wild Shape', 'Untamed Form'),
   'Uplifting Winds':
-    'Traits=Class,Druid ' +
+    'Traits=Druid ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Storm || features.Order Explorer (Storm)"',
   'Invoke Disaster':Pathfinder2E.FEATS['Invoke Disaster'],
   'Perfect Form Control':Pathfinder2E.FEATS['Perfect Form Control'],
-  'Primal Aegis':'Traits=Class,Druid Require="level >= 18"',
+  'Primal Aegis':'Traits=Druid Require="level >= 18"',
   "Hierophant's Power":Pathfinder2E.FEATS["Hierophant's Power"],
   'Ley Line Conduit':
     Pathfinder2E.FEATS['Leyline Conduit']
@@ -2342,7 +2202,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Wild Shape', 'Untamed Form'),
 
   // Fighter
-  'Combat Assessment':'Traits=Class,Fighter',
+  'Combat Assessment':'Traits=Fighter',
   'Double Slice':Pathfinder2E.FEATS['Double Slice'],
   'Exacting Strike':Pathfinder2E.FEATS['Exacting Strike'],
   'Point Blank Stance':
@@ -2354,23 +2214,23 @@ Pathfinder2ERemaster.FEATS = {
   'Vicious Swing':Pathfinder2E.FEATS['Power Attack'],
   'Aggressive Block':Pathfinder2E.FEATS['Aggressive Block'],
   'Assisting Shot':Pathfinder2E.FEATS['Assisting Shot'],
-  'Blade Brake':'Traits=Class,Fighter,Manipulate Require="level >= 2"',
+  'Blade Brake':'Traits=Fighter,Manipulate Require="level >= 2"',
   'Brutish Shove':Pathfinder2E.FEATS['Brutish Shove'],
   'Combat Grab':Pathfinder2E.FEATS['Combat Grab'],
   'Dueling Parry':Pathfinder2E.FEATS['Dueling Parry'],
   'Intimidating Strike':
     Pathfinder2E.FEATS['Intimidating Strike']
-    .replace('Class', 'Class,Barbarian'),
-  'Lightning Swap':'Traits=Class,Fighter,Flourish Require="level >= 2"',
+    .replace('Traits=', 'Traits=Barbarian,'),
+  'Lightning Swap':'Traits=Fighter,Flourish Require="level >= 2"',
   'Lunge':Pathfinder2E.FEATS.Lunge,
-  'Rebounding Toss':'Traits=Class,Fighter,Flourish Require="level >= 2"',
-  'Sleek Reposition':'Traits=Class,Fighter,Press Require="level >= 2"',
+  'Rebounding Toss':'Traits=Fighter,Flourish Require="level >= 2"',
+  'Sleek Reposition':'Traits=Fighter,Press Require="level >= 2"',
   'Barreling Charge':
-    'Traits=Class,Barbarian,Fighter,Flourish ' +
+    'Traits=Barbarian,Fighter,Flourish ' +
     'Require="level >= 4","rank.Athletics >= 1"',
   'Double Shot':Pathfinder2E.FEATS['Double Shot'],
   'Dual-Handed Assault':Pathfinder2E.FEATS['Dual-Handed Assault'],
-  'Parting Shot':'Traits=Class,Fighter Require="level >= 4"',
+  'Parting Shot':'Traits=Fighter Require="level >= 4"',
   'Powerful Shove':Pathfinder2E.FEATS['Powerful Shove'],
   'Quick Reversal':Pathfinder2E.FEATS['Quick Reversal'],
   'Shielded Stride':Pathfinder2E.FEATS['Shielded Stride'],
@@ -2379,7 +2239,7 @@ Pathfinder2ERemaster.FEATS = {
   'Twin Parry':Pathfinder2E.FEATS['Twin Parry'],
   'Advanced Weapon Training':Pathfinder2E.FEATS['Advanced Weapon Training'],
   'Advantageous Assault':Pathfinder2E.FEATS['Advantageous Assault'],
-  'Dazing Blow':'Traits=Class,Fighter,Press Require="level >= 6"',
+  'Dazing Blow':'Traits=Fighter,Press Require="level >= 6"',
   'Disarming Stance':Pathfinder2E.FEATS['Disarming Stance'],
   'Furious Focus':
     Pathfinder2E.FEATS['Furious Focus']
@@ -2387,41 +2247,40 @@ Pathfinder2ERemaster.FEATS = {
   "Guardian's Deflection":Pathfinder2E.FEATS["Guardian's Deflection"],
   'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
-  'Ricochet Stance':'Traits=Class,Fighter,Rogue,Stance Require="level >= 6"',
+  'Ricochet Stance':'Traits=Fighter,Rogue,Stance Require="level >= 6"',
   'Shatter Defenses':Pathfinder2E.FEATS['Shatter Defenses'],
   'Shield Warden':
-    'Traits=Class,Champion,Fighter Require="level >=6","features.Shield Block"',
+    'Traits=Champion,Fighter Require="level >=6","features.Shield Block"',
   'Triple Shot':Pathfinder2E.FEATS['Triple Shot'],
   'Blind-Fight':
     Pathfinder2E.FEATS['Blind-Fight']
-    .replace('Class', 'Class,Investigator'),
+    .replace('Traits=', 'Traits=Investigator,'),
   'Disorienting Opening':
-    'Traits=Class,Fighter Require="level >= 8","features.Reactive Strike"',
+    'Traits=Fighter Require="level >= 8","features.Reactive Strike"',
   'Dueling Riposte':Pathfinder2E.FEATS['Dueling Riposte'],
   'Felling Strike':Pathfinder2E.FEATS['Felling Strike'],
   'Incredible Aim':Pathfinder2E.FEATS['Incredible Aim'],
   'Mobile Shot Stance':Pathfinder2E.FEATS['Mobile Shot Stance'],
   'Positioning Assault':Pathfinder2E.FEATS['Positioning Assault'],
   'Quick Shield Block':
-    'Traits=Class,Champion,Fighter ' +
+    'Traits=Champion,Fighter ' +
     'Require="level >= 8","features.Shield Block"',
-  'Resounding Bravery':
-    'Traits=Class,Fighter Require="level >= 8","features.Bravery"',
-  'Sudden Leap':'Traits=Class,Fighter Require="level >= 8"',
+  'Resounding Bravery':'Traits=Fighter Require="level >= 8","features.Bravery"',
+  'Sudden Leap':'Traits=Fighter Require="level >= 8"',
   'Agile Grace':Pathfinder2E.FEATS['Agile Grace'],
   'Certain Strike':Pathfinder2E.FEATS['Certain Strike'],
   'Crashing Slam':
     Pathfinder2E.FEATS['Improved Knockdown']
     .replace('Knockdown', 'Slam Down'),
-  'Cut From The Air':'Traits=Class,Fighter Require="level >= 10"',
+  'Cut From The Air':'Traits=Fighter Require="level >= 10"',
   'Debilitating Shot':Pathfinder2E.FEATS['Debilitating Shot'],
   'Disarming Twist':Pathfinder2E.FEATS['Disarming Twist'],
   'Disruptive Stance':Pathfinder2E.FEATS['Disruptive Stance'],
   'Fearsome Brute':Pathfinder2E.FEATS['Fearsome Brute'],
-  'Flinging Charge':'Traits=Class,Fighter,Flourish Require="level >= 10"',
+  'Flinging Charge':'Traits=Fighter,Flourish Require="level >= 10"',
   'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
   'Overpowering Charge':
-    'Traits=Class,Barbarian,Fighter ' +
+    'Traits=Barbarian,Fighter ' +
     'Require="level >= 10","features.Barreling Charge"',
   'Tactical Reflexes':Pathfinder2E.FEATS['Combat Reflexes'],
   'Twin Riposte':Pathfinder2E.FEATS['Twin Riposte'],
@@ -2442,30 +2301,30 @@ Pathfinder2ERemaster.FEATS = {
   'Guiding Finish':Pathfinder2E.FEATS['Guiding Finish'],
   'Guiding Riposte':Pathfinder2E.FEATS['Guiding Riposte'],
   'Improved Twin Riposte':Pathfinder2E.FEATS['Improved Twin Riposte'],
-  'Opening Stance':'Traits=Class,Fighter Require="level >= 14"',
+  'Opening Stance':'Traits=Fighter Require="level >= 14"',
   'Two-Weapon Flurry':Pathfinder2E.FEATS['Two-Weapon Flurry'],
   'Whirlwind Strike':Pathfinder2E.FEATS['Whirlwind Strike'],
   'Graceful Poise':Pathfinder2E.FEATS['Graceful Poise'],
   'Improved Reflexive Shield':Pathfinder2E.FEATS['Improved Reflexive Shield'],
   'Master Of Many Styles':
-    'Traits=Class,Fighter,Monk ' +
+    'Traits=Fighter,Monk ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Opening Stance || features.Reflexive Stance"',
   'Multishot Stance':
     Pathfinder2E.FEATS['Multishot Stance']
     .replace('Triple', 'Double'),
-  'Overwhelming Blow':'Traits=Class,Fighter Require="level >= 16"',
+  'Overwhelming Blow':'Traits=Fighter Require="level >= 16"',
   'Twinned Defense':Pathfinder2E.FEATS['Twinned Defense'],
   'Impossible Volley':
     Pathfinder2E.FEATS['Impossible Volley']
     .replace(',Open', ''),
   'Savage Critical':Pathfinder2E.FEATS['Savage Critical'],
   'Smash From The Air':
-    'Traits=Class,Fighter Require="level >= 18","features.Cut From The Air"',
+    'Traits=Fighter Require="level >= 18","features.Cut From The Air"',
   'Boundless Reprisals':Pathfinder2E.FEATS['Boundless Reprisals'],
   'Ultimate Flexibility':
-    'Traits=Class,Fighter ' +
+    'Traits=Fighter ' +
     'Require="level >= 20","features.Improved Flexibility"',
   'Weapon Supremacy':Pathfinder2E.FEATS['Weapon Supremacy'],
 
@@ -2473,7 +2332,7 @@ Pathfinder2ERemaster.FEATS = {
   // Animal Companion as above
   'Crossbow Ace':Pathfinder2E.FEATS['Crossbow Ace'],
   'Hunted Shot':Pathfinder2E.FEATS['Hunted Shot'],
-  'Initiate Warden':'Traits=Class,Ranger',
+  'Initiate Warden':'Traits=Ranger',
   'Monster Hunter':Pathfinder2E.FEATS['Monster Hunter'],
   'Twin Takedown':Pathfinder2E.FEATS['Twin Takedown'],
   'Favored Terrain (%terrain)':Pathfinder2E.FEATS['Favored Terrain (%terrain)'],
@@ -2481,7 +2340,7 @@ Pathfinder2ERemaster.FEATS = {
   'Monster Warden':Pathfinder2E.FEATS['Monster Warden'],
   'Quick Draw':Pathfinder2E.FEATS['Quick Draw'],
   'Advanced Warden':
-    'Traits=Class,Ranger Require="level >= 4","features.Initiate Warden"',
+    'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
   "Companion's Cry":Pathfinder2E.FEATS["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATS['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATS['Far Shot'],
@@ -2489,9 +2348,9 @@ Pathfinder2ERemaster.FEATS = {
   'Running Reload':Pathfinder2E.FEATS['Running Reload'],
   "Scout's Warning":Pathfinder2E.FEATS["Scout's Warning"],
   // Twin Parry as above
-  'Additional Recollection':'Traits=Class,Ranger Require="level >= 6"',
+  'Additional Recollection':'Traits=Ranger Require="level >= 6"',
   'Masterful Warden':
-    'Traits=Class,Ranger Require="level >= 6","features.Initiate Warden"',
+    'Traits=Ranger Require="level >= 6","features.Initiate Warden"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATS['Skirmish Strike'],
   'Snap Shot':Pathfinder2E.FEATS['Snap Shot'],
@@ -2505,7 +2364,7 @@ Pathfinder2ERemaster.FEATS = {
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATS['Master Monster Hunter'],
   'Peerless Warden':
-    'Traits=Class,Ranger Require="level >= 10","features.Initiate Warden"',
+    'Traits=Ranger Require="level >= 10","features.Initiate Warden"',
   'Penetrating Shot':
     Pathfinder2E.FEATS['Penetrating Shot']
     .replace(',Open', ''),
@@ -2516,10 +2375,10 @@ Pathfinder2ERemaster.FEATS = {
   'Second Sting':Pathfinder2E.FEATS['Second Sting'],
   // Side By Side as above
   "Warden's Focus":
-    'Traits=Class,Ranger Require="level >= 12","features.Initiate Warden"',
+    'Traits=Ranger Require="level >= 12","features.Initiate Warden"',
   'Sense The Unseen':
     Pathfinder2E.FEATS['Sense The Unseen']
-    .replace('Class', 'Class,Investigator'),
+    .replace('Traits=', 'Traits=Investigator,'),
   'Shared Prey':Pathfinder2E.FEATS['Shared Prey'],
   'Stealthy Companion':Pathfinder2E.FEATS['Stealthy Companion'],
   "Warden's Guidance":Pathfinder2E.FEATS["Warden's Guidance"],
@@ -2527,7 +2386,7 @@ Pathfinder2ERemaster.FEATS = {
   // Improved Twin Riposte as above
   'Legendary Monster Hunter':Pathfinder2E.FEATS['Legendary Monster Hunter'],
   // Specialized Companion as above
-  "Warden's Reload":'Traits=Class,Ranger Require="level >= 16"',
+  "Warden's Reload":'Traits=Ranger Require="level >= 16"',
   'Impossible Flurry':
     Pathfinder2E.FEATS['Impossible Flurry']
     .replace(',Open', ''),
@@ -2547,106 +2406,100 @@ Pathfinder2ERemaster.FEATS = {
 
   // Rogue
   'Nimble Dodge':Pathfinder2E.FEATS['Nimble Dodge'],
-  'Overextending Feint':'Traits=Class,Rogue Require="rank.Deception >= 1"',
-  'Plant Evidence':'Traits=Class,Rogue Require="features.Pickpocket"',
+  'Overextending Feint':'Traits=Rogue Require="rank.Deception >= 1"',
+  'Plant Evidence':'Traits=Rogue Require="features.Pickpocket"',
   'Trap Finder':
     Pathfinder2E.FEATS['Trap Finder']
-    .replace('Class', 'Class,Investigator'),
-  'Tumble Behind':'Traits=Class,Rogue,Swashbuckler',
+    .replace('Traits=', 'Traits=Investigator,'),
+  'Tumble Behind':'Traits=Rogue,Swashbuckler',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
   "You're Next":
     Pathfinder2E.FEATS["You're Next"]
     .replace('Traits=', 'Traits=Swashbuckler,'),
   'Brutal Beating':Pathfinder2E.FEATS['Brutal Beating'],
-  'Clever Gambit':
-    'Traits=Class,Rogue Require="level >=2","features.Mastermind"',
+  'Clever Gambit':'Traits=Rogue Require="level >=2","features.Mastermind"',
   'Distracting Feint':Pathfinder2E.FEATS['Distracting Feint'],
   'Mobility':Pathfinder2E.FEATS.Mobility,
   // Quick Draw as above
-  'Strong Arm':'Traits=Class,Rogue',
+  'Strong Arm':'Traits=Rogue',
   'Unbalancing Blow':Pathfinder2E.FEATS['Unbalancing Blow'],
-  'Underhanded Assault':
-    'Traits=Class,Rogue Require="level >= 2","rank.Stealth >= 1"',
+  'Underhanded Assault':'Traits=Rogue Require="level >= 2","rank.Stealth >= 1"',
   'Dread Striker':Pathfinder2E.FEATS['Dread Striker'],
-  'Head Stomp':'Traits=Class,Rogue Require="level >= 4"',
-  'Mug':'Traits=Class,Rogue Require="level >= 4"',
+  'Head Stomp':'Traits=Rogue Require="level >= 4"',
+  'Mug':'Traits=Rogue Require="level >= 4"',
   'Poison Weapon':Pathfinder2E.FEATS['Poison Weapon'],
-  'Predictable!':'Traits=Class,Rogue Require="level >= 4"',
+  'Predictable!':'Traits=Rogue Require="level >= 4"',
   'Reactive Pursuit':Pathfinder2E.FEATS['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATS.Sabotage,
-  "Scoundrel's Surprise":'Traits=Class,Rogue,Manipulate Require="level >= 4"',
+  "Scoundrel's Surprise":'Traits=Rogue,Manipulate Require="level >= 4"',
   // Scout's Warning as above
-  'The Harder They Fall':'Traits=Class,Rogue Require="level >= 4"',
-  'Twin Distraction':
-    'Traits=Class,Rogue Require="level >= 4","features.Twin Feint"',
+  'The Harder They Fall':'Traits=Rogue Require="level >= 4"',
+  'Twin Distraction':'Traits=Rogue Require="level >= 4","features.Twin Feint"',
   'Analyze Weakness':
-    'Traits=Class,Rogue Require="level >= 6","features.Sneak Attack"',
+    'Traits=Rogue Require="level >= 6","features.Sneak Attack"',
   'Anticipate Ambush':
-    'Traits=Class,Rogue,Exploration Require="level >= 6","rank.Stealth >= 2"',
-  'Far Throw':'Traits=Class,Rogue Require="level >= 6"',
+    'Traits=Rogue,Exploration Require="level >= 6","rank.Stealth >= 2"',
+  'Far Throw':'Traits=Rogue Require="level >= 6"',
   'Gang Up':Pathfinder2E.FEATS['Gang Up'],
   'Light Step':Pathfinder2E.FEATS['Light Step'],
-  'Shove Down':'Traits=Class,Rogue Require="level >= 6","rank.Athletics >= 1"',
+  'Shove Down':'Traits=Rogue Require="level >= 6","rank.Athletics >= 1"',
   // Skirmish Strike as above
-  'Sly Disarm':'Traits=Class,Rogue Require="level >= 6"',
+  'Sly Disarm':'Traits=Rogue Require="level >= 6"',
   'Twist The Knife':Pathfinder2E.FEATS['Twist The Knife'],
   'Watch Your Back':
-    'Traits=Class,Rogue,Emotion,Fear,Mental ' +
+    'Traits=Rogue,Emotion,Fear,Mental ' +
     'Require="level >= 6","rank.Intimidation >= 1"',
   // Blind-Fight as above
-  'Bullseye':'Traits=Class,Rogue Require="level >= 8"',
+  'Bullseye':'Traits=Rogue Require="level >= 8"',
   'Delay Trap':Pathfinder2E.FEATS['Delay Trap'],
   'Improved Poison Weapon':Pathfinder2E.FEATS['Improved Poison Weapon'],
-  'Inspired Stratagem':'Traits=Class,Rogue Require="level >= 8"',
+  'Inspired Stratagem':'Traits=Rogue Require="level >= 8"',
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
-  'Predictive Purchase':'Traits=Class,Rogue,Investigator Require="level >= 8"',
+  'Predictive Purchase':'Traits=Rogue,Investigator Require="level >= 8"',
   // Ricochet Stance as above
   'Sidestep':Pathfinder2E.FEATS.Sidestep,
   'Sly Striker':Pathfinder2E.FEATS['Sly Striker'],
-  'Swipe Souvenir':'Traits=Class,Rogue Require="level >= 8"',
-  'Tactical Entry':
-    'Traits=Class,Rogue Require="level >= 8","rank.Stealth >= 3"',
+  'Swipe Souvenir':'Traits=Rogue Require="level >= 8"',
+  'Tactical Entry':'Traits=Rogue Require="level >= 8","rank.Stealth >= 3"',
   'Methodical Debilitations':
-    'Traits=Class,Rogue ' +
+    'Traits=Rogue ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Mastermind",' +
       '"features.Debilitating Strike"',
-  'Nimble Strike':
-    'Traits=Class,Rogue Require="level >= 10","features.Nimble Roll"',
+  'Nimble Strike':'Traits=Rogue Require="level >= 10","features.Nimble Roll"',
   'Precise Debilitations':Pathfinder2E.FEATS['Precise Debilitations'],
   'Sneak Adept':Pathfinder2E.FEATS['Sneak Savant'],
   'Tactical Debilitations':Pathfinder2E.FEATS['Tactical Debilitations'],
   'Vicious Debilitations':Pathfinder2E.FEATS['Vicious Debilitations'],
   'Bloody Debilitation':
-    'Traits=Class,Rogue ' +
+    'Traits=Rogue ' +
     'Require="level >= 12","rank.Medicine >= 1","features.Debilitating Strike"',
   'Critical Debilitation':Pathfinder2E.FEATS['Critical Debilitation'],
   'Fantastic Leap':Pathfinder2E.FEATS['Fantastic Leap'],
   'Felling Shot':Pathfinder2E.FEATS['Felling Shot'],
-  'Preparation':'Traits=Class,Rogue,Flourish Require="level >= 12"',
+  'Preparation':'Traits=Rogue,Flourish Require="level >= 12"',
   'Reactive Interference':Pathfinder2E.FEATS['Reactive Interference'],
   'Ricochet Feint':
-    'Traits=Class,Rogue Require="level >= 12","features.Ricochet Stance"',
+    'Traits=Rogue Require="level >= 12","features.Ricochet Stance"',
   'Spring From The Shadows':Pathfinder2E.FEATS['Spring From The Shadows'],
   'Defensive Roll':Pathfinder2E.FEATS['Defensive Roll'],
   'Instant Opening':Pathfinder2E.FEATS['Instant Opening'],
   'Leave An Opening':Pathfinder2E.FEATS['Leave An Opening'],
   // Sense The Unseen as above
-  'Stay Down!':'Traits=Class,Rogue Require="level >= 12","rank.Athletics >= 3"',
+  'Stay Down!':'Traits=Rogue Require="level >= 12","rank.Athletics >= 3"',
   'Blank Slate':Pathfinder2E.FEATS['Blank Slate'],
   'Cloud Step':Pathfinder2E.FEATS['Cloud Step'],
   'Cognitive Loophole':Pathfinder2E.FEATS['Cognitive Loophole'],
   'Dispelling Slice':Pathfinder2E.FEATS['Dispelling Slice'],
   'Perfect Distraction':Pathfinder2E.FEATS['Perfect Distraction'],
   'Reconstruct The Scene':
-    'Traits=Class,Rogue,Investigator,Concentrate Require="level >= 16"',
-  'Swift Elusion':
-    'Traits=Class,Rogue Require="level >= 16","rank.Acrobatics >= 4"',
+    'Traits=Rogue,Investigator,Concentrate Require="level >= 16"',
+  'Swift Elusion':'Traits=Rogue Require="level >= 16","rank.Acrobatics >= 4"',
   'Implausible Infiltration':Pathfinder2E.FEATS['Implausible Infiltration'],
   'Implausible Purchase':
-    'Traits=Class,Rogue,Investigator ' +
+    'Traits=Rogue,Investigator ' +
     'Require="level >= 18","features.Predictive Purchase"',
   'Powerful Sneak':Pathfinder2E.FEATS['Powerful Sneak'],
   "Trickster's Ace":
@@ -2657,136 +2510,129 @@ Pathfinder2ERemaster.FEATS = {
   'Reactive Distraction':Pathfinder2E.FEATS['Reactive Distraction'],
 
   // Witch
-  'Cackle':'Traits=Class,Witch',
-  'Cauldron':'Traits=Class,Witch',
+  'Cackle':'Traits=Witch',
+  'Cauldron':'Traits=Witch',
   'Counterspell':
     Pathfinder2E.FEATS.Counterspell.replace('Traits=', 'Traits=Witch,'),
   // Widen Spell as above
-  "Witch's Armaments (Eldritch Nails)":'Traits=Class,Witch',
-  "Witch's Armaments (Iron Teeth)":'Traits=Class,Witch',
-  "Witch's Armaments (Living Hair)":'Traits=Class,Witch',
-  'Basic Lesson (Dreams)':'Traits=Class,Witch Require="level >= 2"',
-  'Basic Lesson (Elements)':'Traits=Class,Witch Require="level >= 2"',
-  'Basic Lesson (Life)':'Traits=Class,Witch Require="level >= 2"',
-  'Basic Lesson (Protection)':'Traits=Class,Witch Require="level >= 2"',
-  'Basic Lesson (Vengeance)':'Traits=Class,Witch Require="level >= 2"',
+  "Witch's Armaments (Eldritch Nails)":'Traits=Witch',
+  "Witch's Armaments (Iron Teeth)":'Traits=Witch',
+  "Witch's Armaments (Living Hair)":'Traits=Witch',
+  'Basic Lesson (Dreams)':'Traits=Witch Require="level >= 2"',
+  'Basic Lesson (Elements)':'Traits=Witch Require="level >= 2"',
+  'Basic Lesson (Life)':'Traits=Witch Require="level >= 2"',
+  'Basic Lesson (Protection)':'Traits=Witch Require="level >= 2"',
+  'Basic Lesson (Vengeance)':'Traits=Witch Require="level >= 2"',
   // Cantrip Expansion as above
   'Conceal Spell':
     Pathfinder2E.FEATS['Conceal Spell']
     .replace('Manipulate,Metamagic', 'Spellshape')
     .replace('Traits=', 'Traits=Witch,'),
   // Enhanced Familiar as above
-  "Familiar's Language":'Traits=Class,Witch Require="level >= 2"',
-  'Rites Of Convocation':'Traits=Class,Witch Require="level >= 4"',
+  "Familiar's Language":'Traits=Witch Require="level >= 2"',
+  'Rites Of Convocation':'Traits=Witch Require="level >= 4"',
   'Sympathetic Strike':
-    'Traits=Class,Witch Require="level >= 4","features.Witch\'s Armaments"',
-  'Ceremonial Knife':'Traits=Class,Witch Require="level >= 6"',
-  'Greater Lesson (Mischief)':'Traits=Class,Witch Require="level >= 6"',
-  'Greater Lesson (Shadow)':'Traits=Class,Witch Require="level >= 6"',
-  'Greater Lesson (Snow)':'Traits=Class,Witch Require="level >= 6"',
+    'Traits=Witch Require="level >= 4","features.Witch\'s Armaments"',
+  'Ceremonial Knife':'Traits=Witch Require="level >= 6"',
+  'Greater Lesson (Mischief)':'Traits=Witch Require="level >= 6"',
+  'Greater Lesson (Shadow)':'Traits=Witch Require="level >= 6"',
+  'Greater Lesson (Snow)':'Traits=Witch Require="level >= 6"',
   // Steady Spellcasting as above
-  "Witch's Charge":'Traits=Class,Witch,Detection Require="level >= 6"',
+  "Witch's Charge":'Traits=Witch,Detection Require="level >= 6"',
   'Incredible Familiar':
-    'Traits=Class,Witch Require="level >= 8","features.Enhanced Familiar"',
-  'Murksight':'Traits=Class,Witch Require="level >= 8"',
+    'Traits=Witch Require="level >= 8","features.Enhanced Familiar"',
+  'Murksight':'Traits=Witch Require="level >= 8"',
   'Spirit Familiar':
-    'Traits=Class,Witch ' +
+    'Traits=Witch ' +
     'Require=' +
       '"level >= 8",' +
       '"patronTraditions =~ \'Divine|Occult\'"',
   'Stitched Familiar':
-    'Traits=Class,Witch ' +
+    'Traits=Witch ' +
     'Require="' +
       'level >= 8",' +
       '"patronTraditions =~ \'Arcane|Primal\'"',
-  "Witch's Bottle":
-    'Traits=Class,Witch Require="level >= 8","features.Cauldron"',
-  'Double, Double':
-    'Traits=Class,Witch Require="level >= 10","features.Cauldron"',
-  'Major Lesson (Death)':'Traits=Class,Witch Require="level >= 10"',
-  'Major Lesson (Renewal)':'Traits=Class,Witch Require="level >= 10"',
+  "Witch's Bottle":'Traits=Witch Require="level >= 8","features.Cauldron"',
+  'Double, Double':'Traits=Witch Require="level >= 10","features.Cauldron"',
+  'Major Lesson (Death)':'Traits=Witch Require="level >= 10"',
+  'Major Lesson (Renewal)':'Traits=Witch Require="level >= 10"',
   // Quickened Casting as above
   "Witch's Communion":
-    'Traits=Class,Witch Require="level >= 10","features.Witch\'s Charge"',
-  'Coven Spell':'Traits=Class,Witch,Spellshape Require="level >= 12"',
-  'Hex Focus':'Traits=Class,Witch Require="level >= 12"',
-  "Witch's Broom":'Traits=Class,Witch Require="level >= 12"',
+    'Traits=Witch Require="level >= 10","features.Witch\'s Charge"',
+  'Coven Spell':'Traits=Witch,Spellshape Require="level >= 12"',
+  'Hex Focus':'Traits=Witch Require="level >= 12"',
+  "Witch's Broom":'Traits=Witch Require="level >= 12"',
   'Reflect Spell':
     Pathfinder2E.FEATS['Reflect Spell']
     .replace('Traits=', 'Traits=Witch,'),
-  'Rites Of Transfiguration':'Traits=Class,Witch Require="level >= 14"',
-  "Patron's Presence":'Traits=Class,Witch Require="level >= 14"',
+  'Rites Of Transfiguration':'Traits=Witch Require="level >= 14"',
+  "Patron's Presence":'Traits=Witch Require="level >= 14"',
   // Effortless Concentration as above
-  'Siphon Power':'Traits=Class,Witch Require="level >= 16"',
-  'Split Hex':'Traits=Class,Witch,Concentrate,Spellshape Require="level >= 18"',
-  "Patron's Claim":'Traits=Class,Witch Require="level >= 18"',
-  'Hex Master':'Traits=Class,Witch Require="level >= 20"',
+  'Siphon Power':'Traits=Witch Require="level >= 16"',
+  'Split Hex':'Traits=Witch,Concentrate,Spellshape Require="level >= 18"',
+  "Patron's Claim":'Traits=Witch Require="level >= 18"',
+  'Hex Master':'Traits=Witch Require="level >= 20"',
   "Patron's Truth":
-    'Traits=Class,Witch Require="level >= 20","features.Patron\'s Gift"',
-  "Witch's Hut":'Traits=Class,Witch Require="level >= 20"',
+    'Traits=Witch Require="level >= 20","features.Patron\'s Gift"',
+  "Witch's Hut":'Traits=Witch Require="level >= 20"',
 
   // Wizard
   // Counterspell as above
   'Familiar':Pathfinder2E.FEATS.Familiar,
   // Reach Spell as above
-  'Spellbook Prodigy':'Traits=Class,Wizard Require="rank.Arcana >= 1"',
+  'Spellbook Prodigy':'Traits=Wizard Require="rank.Arcana >= 1"',
   // Widen Spell as above
   // Cantrip Expansion as above
   // Conceal Spell as above
-  'Energy Ablation':'Traits=Class,Wizard,Spellshape Require="level >= 2"',
+  'Energy Ablation':'Traits=Wizard,Spellshape Require="level >= 2"',
   // Enhanced Familiar as above
-  'Nonlethal Spell':
-    'Traits=Class,Wizard,Manipulate,Spellshape Require="level >= 2"',
+  'Nonlethal Spell':'Traits=Wizard,Manipulate,Spellshape Require="level >= 2"',
   'Bespell Strikes':
     Pathfinder2E.FEATS['Bespell Weapon']
     .replace('Traits=', 'Traits=Oracle,'),
   'Call Wizardly Tools':
-    'Traits=Class,Wizard,Concentrate,Teleportation ' +
+    'Traits=Wizard,Concentrate,Teleportation ' +
     'Require="level >= 4","features.Arcane Bond"',
   'Linked Focus':Pathfinder2E.FEATS['Linked Focus'],
   'Spell Protection Array':
-    'Traits=Class,Wizard,Arcane,Manipulate Require="level >= 4"',
+    'Traits=Wizard,Arcane,Manipulate Require="level >= 4"',
   'Convincing Illusion':
-    'Traits=Class,Wizard Require="level >= 6","rank.Deception >= 2"',
+    'Traits=Wizard Require="level >= 6","rank.Deception >= 2"',
   'Explosive Arrival':
-    'Traits=Class,Wizard,Concentrate,Manipulate,Spellshape ' +
-    'Require="level >= 6"',
+    'Traits=Wizard,Concentrate,Manipulate,Spellshape Require="level >= 6"',
   'Irresistible Magic':Pathfinder2E.FEATS['Spell Penetration'],
-  'Split Slot':'Traits=Class,Wizard Require="level >= 6"',
+  'Split Slot':'Traits=Wizard Require="level >= 6"',
   // Steady Spellcasting as above
   'Advanced School Spell':Pathfinder2E.FEATS['Advanced School Spell'],
   'Bond Conservation':
     Pathfinder2E.FEATS['Bond Conservation']
     .replace('Metamagic', 'Spellshape'),
-  'Form Retention':'Traits=Class,Wizard Require="level >= 8"',
-  'Knowledge Is Power':'Traits=Class,Wizard Require="level >= 8"',
+  'Form Retention':'Traits=Wizard Require="level >= 8"',
+  'Knowledge Is Power':'Traits=Wizard Require="level >= 8"',
   // Overwhelming Energy as above
   // Quickened Casting as above
   'Scroll Adept':Pathfinder2E.FEATS['Scroll Savant'],
   'Clever Counterspell':Pathfinder2E.FEATS['Clever Counterspell'],
-  'Forcible Energy':
-    'Traits=Class,Wizard,Manipulate,Spellshape Require="level >= 12"',
-  'Keen Magical Detection':'Traits=Class,Wizard,Fortune Require="level >= 12"',
+  'Forcible Energy':'Traits=Wizard,Manipulate,Spellshape Require="level >= 12"',
+  'Keen Magical Detection':'Traits=Wizard,Fortune Require="level >= 12"',
   'Magic Sense':
     Pathfinder2E.FEATS['Magic Sense']
     .replace('Traits=', 'Traits=Oracle,'),
   'Bonded Focus':Pathfinder2E.FEATS['Bonded Focus'],
   // Reflect Spell as above
   'Secondary Detonation Array':
-    'Traits=Class,Wizard,Manipulate,Spellshape Require="level >= 14"',
+    'Traits=Wizard,Manipulate,Spellshape Require="level >= 14"',
   'Superior Bond':Pathfinder2E.FEATS['Superior Bond'],
   // Effortless Concentration as above
   'Scintillating Spell':
-    'Traits=Class,Wizard,Sorcerer,Concentrate,Light,Spellshape ' +
-    'Require="level >= 16"',
+    'Traits=Wizard,Sorcerer,Concentrate,Light,Spellshape Require="level >= 16"',
   'Spell Tinker':Pathfinder2E.FEATS['Spell Tinker'],
   'Infinite Possibilities':Pathfinder2E.FEATS['Infinite Possibilities'],
   'Reprepare Spell':Pathfinder2E.FEATS['Reprepare Spell'],
-  'Second Thoughts':
-    'Traits=Class,Wizard,Concentrate,Mental Require="level >= 18"',
+  'Second Thoughts':'Traits=Wizard,Concentrate,Mental Require="level >= 18"',
   "Archwizard's Might":Pathfinder2E.FEATS["Archwizard's Might"],
   'Spell Combination':Pathfinder2E.FEATS['Spell Combination'],
-  'Spell Mastery':'Traits=Class,Wizard Require="level >= 20"',
+  'Spell Mastery':'Traits=Wizard Require="level >= 20"',
   'Spellshape Mastery':Pathfinder2E.FEATS['Metamagic Mastery'],
 
   // Player Core 2
@@ -2794,14 +2640,14 @@ Pathfinder2ERemaster.FEATS = {
   // Alchemist
   'Alchemical Familiar':Pathfinder2E.FEATS['Alchemical Familiar'],
   'Alchemical Assessment':Pathfinder2E.FEATS['Alchemical Savant'],
-  'Blowgun Poisoner':'Traits=Class,Alchemist',
+  'Blowgun Poisoner':'Traits=Alchemist',
   'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
   'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
-  'Soothing Vials':'Traits=Class,Alchemist Require="features.Chirurgeon"',
-  'Clotting Elixirs':'Traits=Class,Alchemist Require="level >= 2"',
+  'Soothing Vials':'Traits=Alchemist Require="features.Chirurgeon"',
+  'Clotting Elixirs':'Traits=Alchemist Require="level >= 2"',
   'Improvise Admixture':
-    'Traits=Class,Alchemist,Concentrate,Manipulate Require="level >= 2"',
-  'Pernicious Poison':'Traits=Class,Alchemist Require="level >= 2"',
+    'Traits=Alchemist,Concentrate,Manipulate Require="level >= 2"',
+  'Pernicious Poison':'Traits=Alchemist Require="level >= 2"',
   'Revivifying Mutagen':
     Pathfinder2E.FEATS['Revivifying Mutagen']
     .replace('Traits=', 'Traits=Concentrate,'),
@@ -2810,11 +2656,10 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Additive 1', 'Additive'),
   'Efficient Alchemy':Pathfinder2E.FEATS['Efficient Alchemy'],
   'Enduring Alchemy':Pathfinder2E.FEATS['Enduring Alchemy'],
-  'Healing Bomb':'Traits=Class,Alchemist,Additive Require="level >= 4"',
-  'Invigorating Elixir':'Traits=Class,Alchemist,Additive Require="level >= 4"',
-  'Regurgitate Mutagen':
-    'Traits=Class,Alchemist,Manipulate Require="level >= 4"',
-  'Tenacious Toxins':'Traits=Class,Alchemist Require="level >= 4"',
+  'Healing Bomb':'Traits=Alchemist,Additive Require="level >= 4"',
+  'Invigorating Elixir':'Traits=Alchemist,Additive Require="level >= 4"',
+  'Regurgitate Mutagen':'Traits=Alchemist,Manipulate Require="level >= 4"',
+  'Tenacious Toxins':'Traits=Alchemist Require="level >= 4"',
   'Combine Elixirs':
     Pathfinder2E.FEATS['Combine Elixirs']
     .replace('Additive 2', 'Additive'),
@@ -2822,32 +2667,31 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Debilitating Bomb']
     .replace('Additive 2', 'Additive'),
   'Directional Bombs':Pathfinder2E.FEATS['Directional Bombs'],
-  'Fortified Elixirs':'Traits=Class,Alchemist Require="level >= 6"',
-  'Sticky Poison':'Traits=Class,Alchemist Require="level >= 6"',
-  'Alter Admixture':'Traits=Class,Alchemist,Exploration Require="level >= 8"',
+  'Fortified Elixirs':'Traits=Alchemist Require="level >= 6"',
+  'Sticky Poison':'Traits=Alchemist Require="level >= 6"',
+  'Alter Admixture':'Traits=Alchemist,Exploration Require="level >= 8"',
   'Improved Invigorating Elixir (Mental)':
-    'Traits=Class,Alchemist Require="level >= 8"',
+    'Traits=Alchemist Require="level >= 8"',
   'Improved Invigorating Elixir (Physical)':
-    'Traits=Class,Alchemist Require="level >= 8"',
-  'Mutant Physique':'Traits=Class,Alchemist Require="level >= 8"',
-  'Pinpoint Poisoner':'Traits=Class,Alchemist Require="level >= 8"',
+    'Traits=Alchemist Require="level >= 8"',
+  'Mutant Physique':'Traits=Alchemist Require="level >= 8"',
+  'Pinpoint Poisoner':'Traits=Alchemist Require="level >= 8"',
   'Sticky Bomb':
     Pathfinder2E.FEATS['Sticky Bomb']
     .replace('Additive 2', 'Additive'),
   'Advanced Efficient Alchemy':
-    'Traits=Class,Alchemist Require="level >= 10","features.Efficient Alchemy"',
+    'Traits=Alchemist Require="level >= 10","features.Efficient Alchemy"',
   'Expanded Splash':
     Pathfinder2E.FEATS['Expanded Splash'] + ' ' +
     'Require="level >= 10"',
   'Greater Debilitating Bomb':Pathfinder2E.FEATS['Greater Debilitating Bomb'],
-  'Unstable Concoction':'Traits=Class,Alchemist,Additive Require="level >= 10"',
+  'Unstable Concoction':'Traits=Alchemist,Additive Require="level >= 10"',
   'Extend Elixir':Pathfinder2E.FEATS['Extend Elixir'],
   'Supreme Invigorating Elixir':
-    'Traits=Class,Alchemist ' +
-    'Require="level >= 12","features.Invigorating Elixir"',
+    'Traits=Alchemist Require="level >= 12","features.Invigorating Elixir"',
   'Uncanny Bombs':Pathfinder2E.FEATS['Uncanny Bombs'],
-  'Double Poison':'Traits=Class,Alchemist Require="level >= 14"',
-  'Mutant Innervation':'Traits=Class,Alchemist Require="level >= 14"',
+  'Double Poison':'Traits=Alchemist Require="level >= 14"',
+  'Mutant Innervation':'Traits=Alchemist Require="level >= 14"',
   'True Debilitating Bomb':Pathfinder2E.FEATS['True Debilitating Bomb'],
   'Eternal Elixir':Pathfinder2E.FEATS['Eternal Elixir'],
   'Exploitive Bomb':
@@ -2857,7 +2701,7 @@ Pathfinder2ERemaster.FEATS = {
   'Improbable Elixirs':Pathfinder2E.FEATS['Improbable Elixirs'],
   'Miracle Worker':Pathfinder2E.FEATS['Miracle Worker'],
   'Perfect Debilitation':Pathfinder2E.FEATS['Perfect Debilitation'],
-  'Alchemical Revivification':'Traits=Class,Alchemist Require="level >= 20"',
+  'Alchemical Revivification':'Traits=Alchemist Require="level >= 20"',
   "Craft Philosopher's Stone":Pathfinder2E.FEATS["Craft Philosopher's Stone"],
   'Mega Bomb':
     Pathfinder2E.FEATS['Mega Bomb']
@@ -2866,8 +2710,8 @@ Pathfinder2ERemaster.FEATS = {
 
   // Barbarian
   'Acute Vision':Pathfinder2E.FEATS['Acute Vision'],
-  'Adrenaline Rush':'Traits=Class,Barbarian,Rage',
-  'Draconic Arrogance':'Traits=Class,Barbarian,Rage',
+  'Adrenaline Rush':'Traits=Barbarian,Rage',
+  'Draconic Arrogance':'Traits=Barbarian,Rage',
   'Moment Of Clarity':Pathfinder2E.FEATS['Moment Of Clarity'],
   'Raging Intimidation':Pathfinder2E.FEATS['Raging Intimidation'],
   'Raging Thrower':Pathfinder2E.FEATS['Raging Thrower'],
@@ -2876,23 +2720,22 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Acute Scent'] + ' ' +
     'Require="level >= 2"',
   'Bashing Charge':
-    'Traits=Class,Barbarian,Rage Require="level >= 2","rank.Athletics >= 1"',
+    'Traits=Barbarian,Rage Require="level >= 2","rank.Athletics >= 1"',
   'Furious Finish':Pathfinder2E.FEATS['Furious Finish'],
   // Intimidating Strike as above
   'No Escape':Pathfinder2E.FEATS['No Escape'],
   'Second Wind':Pathfinder2E.FEATS['Second Wind'],
   'Shake It Off':Pathfinder2E.FEATS['Shake It Off'],
   // Barreling Charge as above
-  'Oversized Throw':'Traits=Class,Barbarian,Rage Require="level >= 4"',
+  'Oversized Throw':'Traits=Barbarian,Rage Require="level >= 4"',
   'Raging Athlete':Pathfinder2E.FEATS['Raging Athlete'],
   'Scars Of Steel':
-    'Traits=Class,Barbarian,Rage Require="level >= 4","features.Fury Instinct"',
+    'Traits=Barbarian,Rage Require="level >= 4","features.Fury Instinct"',
   'Spiritual Guides':
-    'Traits=Class,Barbarian,Fortune ' +
-    'Require="level >= 4","features.Spirit Instinct"',
+    'Traits=Barbarian,Fortune Require="level >= 4","features.Spirit Instinct"',
   'Supernatural Senses':
     // TODO features.Scent isn't a thing
-    'Traits=Class,Barbarian,Rage ' +
+    'Traits=Barbarian,Rage ' +
     'Require="level >= 4","features.Acute Scent || features.Scent"',
   // Swipe as above
   'Wounded Rage':Pathfinder2E.FEATS['Wounded Rage'],
@@ -2908,34 +2751,33 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS["Giant's Stature"]
     .replace(',Transmutation', ''),
   'Inner Strength':
-    'Traits=Class,Barbarian,Concentrate,Rage ' +
+    'Traits=Barbarian,Concentrate,Rage ' +
     'Require="level >= 6","features.Spirit Instinct"',
   'Mage Hunter':
-    'Traits=Class,Barbarian,Rage ' +
+    'Traits=Barbarian,Rage ' +
     'Require="level >= 6","features.Superstition Instinct"',
   'Nocturnal Senses':
-    'Traits=Class,Barbarian,Rage ' +
+    'Traits=Barbarian,Rage ' +
     'Require="level >= 6","features.Low-Light Vision || features.Scent"',
   'Reactive Strike':Pathfinder2E.FEATS['Attack Of Opportunity'],
-  'Scouring Rage':
-    // TODO requires "instinct that allows you to change your Rage damage type"
-    'Traits=Class,Barbarian Require="level >= 6"',
+  // TODO requires "instinct that allows you to change your Rage damage type"
+  'Scouring Rage':'Traits=Barbarian Require="level >= 6"',
   "Spirits' Interference":
     Pathfinder2E.FEATS["Spirits' Interference"]
     .replace(',Necromancy', ''),
   'Animalistic Brutality':
-    'Traits=Class,Barbarian,Concentrate,Morph,Primal,Rage ' +
+    'Traits=Barbarian,Concentrate,Morph,Primal,Rage ' +
     'Require="level >= 8","features.Animal Instinct"',
   'Disarming Assault':
-    'Traits=Class,Barbarian,Flourish,Rage ' +
+    'Traits=Barbarian,Flourish,Rage ' +
     'Require="level >= 8","rank.Athletics >= 1"',
-  'Follow-Up Assault':'Traits=Class,Barbarian,Rage Require="level >= 8"',
-  'Friendly Toss':'Traits=Class,Barbarian,Manipulate,Rage Require="level >= 8"',
+  'Follow-Up Assault':'Traits=Barbarian,Rage Require="level >= 8"',
+  'Friendly Toss':'Traits=Barbarian,Manipulate,Rage Require="level >= 8"',
   'Furious Bully':Pathfinder2E.FEATS['Furious Bully'],
   'Instinctive Strike':
-    'Traits=Class,Barbarian ' +
+    'Traits=Barbarian ' +
     'Require="level >= 8","features.Acute Scent || features.Scent"',
-  'Invulnerable Rager':'Traits=Class,Barbarian Require="level >= 8"',
+  'Invulnerable Rager':'Traits=Barbarian Require="level >= 8"',
   'Renewed Vigor':Pathfinder2E.FEATS['Renewed Vigor'],
   'Share Rage':Pathfinder2E.FEATS['Share Rage'],
   // Sudden Leap as above
@@ -2943,42 +2785,42 @@ Pathfinder2ERemaster.FEATS = {
   'Come And Get Me':Pathfinder2E.FEATS['Come And Get Me'],
   'Furious Sprint':Pathfinder2E.FEATS['Furious Sprint'],
   'Great Cleave':Pathfinder2E.FEATS['Great Cleave'],
-  'Impressive Landing':'Traits=Class,Barbarian Require="level >= 10"',
+  'Impressive Landing':'Traits=Barbarian Require="level >= 10"',
   'Knockback':Pathfinder2E.FEATS.Knockback,
   // Overpowering Charge as above
-  'Resounding Blow':'Traits=Class,Barbarian,Rage Require="level >= 10"',
+  'Resounding Blow':'Traits=Barbarian,Rage Require="level >= 10"',
   'Silencing Strike':
-    'Traits=Class,Barbarian,Incapacitation,Rage Require="level >= 10"',
-  'Tangle Of Battle':'Traits=Class,Barbarian,Rage Require="level >= 10"',
+    'Traits=Barbarian,Incapacitation,Rage Require="level >= 10"',
+  'Tangle Of Battle':'Traits=Barbarian,Rage Require="level >= 10"',
   'Terrifying Howl':
     Pathfinder2E.FEATS['Terrifying Howl'] + ' ' +
     'Require="level >= 10"',
   "Dragon's Rage Wings":
     Pathfinder2E.FEATS["Dragon's Rage Wings"]
     .replaceAll(/,(Primal|Transmutation)/g, ''),
-  'Embrace The Pain':'Traits=Class,Barbarian,Rage Require="level >= 12"',
+  'Embrace The Pain':'Traits=Barbarian,Rage Require="level >= 12"',
   'Furious Grab':Pathfinder2E.FEATS['Furious Grab'],
   "Predator's Pounce":
     Pathfinder2E.FEATS["Predator's Pounce"]
     .replace(',Open', ''),
   "Spirit's Wrath":Pathfinder2E.FEATS["Spirit's Wrath"],
   'Sunder Spell':
-    'Traits=Class,Barbarian,Attack,Concentrate,Rage ' +
+    'Traits=Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Superstition Instinct"',
   "Titan's Stature":
     Pathfinder2E.FEATS["Titan's Stature"]
     .replaceAll(/,(Polymorph|Transmutation)/g, '') + ' ' +
     'Require="level >= 12","features.Giant\'s Stature"',
   'Unbalancing Sweep':
-    'Traits=Class,Barbarian,Flourish ' +
+    'Traits=Barbarian,Flourish ' +
     'Require="level >= 12"',
   'Awesome Blow':Pathfinder2E.FEATS['Awesome Blow'],
   "Giant's Lunge":
     Pathfinder2E.FEATS["Giant's Lunge"]
     .replace(',Instinct', ''),
-  'Impaling Thrust':'Traits=Class,Barbarian,Rage Require="level >= 14"',
+  'Impaling Thrust':'Traits=Barbarian,Rage Require="level >= 14"',
   'Sunder Enchantment':
-    'Traits=Class,Barbarian Require="level >= 14","features.Sunder Spell"',
+    'Traits=Barbarian Require="level >= 14","features.Sunder Spell"',
   'Vengeful Strike':Pathfinder2E.FEATS['Vengeful Strike'],
   // Whirlwind Strike as above
   'Collateral Thrash':Pathfinder2E.FEATS['Collateral Thrash'],
@@ -2988,125 +2830,50 @@ Pathfinder2ERemaster.FEATS = {
     .replace(',Transmutation', '') + ' ' +
     'Require="level >= 16","features.Dragon\'s Rage Wings"',
   'Furious Vengeance':
-    'Traits=Class,Barbarian,Rage ' +
-    'Require="level >= 16","features.Fury Instinct"',
+    'Traits=Barbarian,Rage Require="level >= 16","features.Fury Instinct"',
   'Penetrating Projectile':
-    'Traits=Class,Barbarian,Flourish,Rage Require="level >= 16"',
-  'Shattering Blows':'Traits=Class,Barbarian,Rage Require="level >= 16"',
+    'Traits=Barbarian,Flourish,Rage Require="level >= 16"',
+  'Shattering Blows':'Traits=Barbarian,Rage Require="level >= 16"',
   'Brutal Critical':Pathfinder2E.FEATS['Brutal Critical'],
   'Perfect Clarity':Pathfinder2E.FEATS['Perfect Clarity'],
   'Vicious Evisceration':Pathfinder2E.FEATS['Vicious Evisceration'],
   'Whirlwind Toss':
-    'Traits=Class,Barbarian,Rage ' +
-    'Require="level >= 18","features.Collateral Thrash"',
-  'Annihilating Swing':'Traits=Class,Barbarian Require="level >= 20"',
+    'Traits=Barbarian,Rage Require="level >= 18","features.Collateral Thrash"',
+  'Annihilating Swing':'Traits=Barbarian Require="level >= 20"',
   'Contagious Rage':Pathfinder2E.FEATS['Contagious Rage'],
   'Quaking Stomp':Pathfinder2E.FEATS['Quaking Stomp'],
-  'Unstoppable Juggernaut':'Traits=Class,Barbarian Require="level >= 20"',
+  'Unstoppable Juggernaut':'Traits=Barbarian Require="level >= 20"',
 
   // Champion
-  'Brilliant Flash':'Traits=Class,Champion Require="features.Grandeur"',
-  'Defensive Advance':'Traits=Class,Champion,Flourish',
-  "Deity's Domain (Air)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Air\'"',
-  "Deity's Domain (Ambition)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Ambition\'"',
-  "Deity's Domain (Cities)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Cities\'"',
-  "Deity's Domain (Confidence)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Confidence\'"',
-  "Deity's Domain (Creation)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Creation\'"',
-  "Deity's Domain (Darkness)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Darkness\'"',
-  "Deity's Domain (Death)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Death\'"',
-  "Deity's Domain (Destruction)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Destruction\'"',
-  "Deity's Domain (Dreams)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Dreams\'"',
-  "Deity's Domain (Earth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Earth\'"',
-  "Deity's Domain (Family)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Family\'"',
-  "Deity's Domain (Fate)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Fate\'"',
-  "Deity's Domain (Fire)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Fire\'"',
-  "Deity's Domain (Freedom)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Freedom\'"',
-  "Deity's Domain (Healing)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Healing\'"',
-  "Deity's Domain (Indulgence)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Indulgence\'"',
-  "Deity's Domain (Knowledge)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Knowledge\'"',
-  "Deity's Domain (Luck)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Luck\'"',
-  "Deity's Domain (Magic)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Magic\'"',
-  "Deity's Domain (Might)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Might\'"',
-  "Deity's Domain (Moon)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Moon\'"',
-  "Deity's Domain (Nature)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Nature\'"',
-  "Deity's Domain (Nightmares)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Nightmares\'"',
-  "Deity's Domain (Pain)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Pain\'"',
-  "Deity's Domain (Passion)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Passion\'"',
-  "Deity's Domain (Perfection)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Perfection\'"',
-  "Deity's Domain (Protection)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Protection\'"',
-  "Deity's Domain (Secrecy)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Secrecy\'"',
-  "Deity's Domain (Sun)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Sun\'"',
-  "Deity's Domain (Travel)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Travel\'"',
-  "Deity's Domain (Trickery)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Trickery\'"',
-  "Deity's Domain (Truth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Truth\'"',
-  "Deity's Domain (Tyranny)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Tyranny\'"',
-  "Deity's Domain (Undeath)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Undeath\'"',
-  "Deity's Domain (Water)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Water\'"',
-  "Deity's Domain (Wealth)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Wealth\'"',
-  "Deity's Domain (Zeal)":
-    'Traits=Class,Champion Require="deityDomains =~ \'Zeal\'"',
-  'Desperate Prayer':'Traits=Class,Champion',
-  'Faithful Steed':'Traits=Class,Champion',
-  'Iron Repercussions':'Traits=Class,Champion Require="features.Obedience"',
+  'Brilliant Flash':'Traits=Champion Require="features.Grandeur"',
+  'Defensive Advance':'Traits=Champion,Flourish',
+  "Deity's Domain (%domain)":Pathfinder2E.FEATS["Deity's Domain (%domain)"],
+  'Desperate Prayer':'Traits=Champion',
+  'Faithful Steed':'Traits=Champion',
+  'Iron Repercussions':'Traits=Champion Require="features.Obedience"',
   'Nimble Reprisal':
     Pathfinder2E.FEATS['Ranged Reprisal']
     .replace('Paladin', 'Justice'),
-  'Ongoing Selfishness':'Traits=Class,Champion Require="features.Desecration"',
+  'Ongoing Selfishness':'Traits=Champion Require="features.Desecration"',
   'Unimpeded Step':
     Pathfinder2E.FEATS['Unimpeded Step']
     .replace('Liberator', 'Liberation'),
-  'Vicious Vengeance':'Traits=Class,Champion Require="features.Iniquity"',
+  'Vicious Vengeance':'Traits=Champion Require="features.Iniquity"',
   'Weight Of Guilt':
     Pathfinder2E.FEATS['Weight Of Guilt']
     .replace('Redeemer', 'Redemption'),
   'Divine Grace':Pathfinder2E.FEATS['Divine Grace'],
-  'Divine Health':Pathfinder2E.FEATS['Divine Health'] + ' ' +
+  'Divine Health':
+    Pathfinder2E.FEATS['Divine Health'] + ' ' +
     'Require="level >= 2"',
   'Aura Of Courage':
     Pathfinder2E.FEATS['Aura Of Courage'] + ' ' +
     'Require="level >= 4","features.Champion\'s Aura","features.Holy"',
   'Aura Of Despair':
-    'Traits=Class,Champion,Uncommon ' +
+    'Traits=Champion,Uncommon ' +
     'Require="level >= 4","features.Champion\'s Aura","features.Unholy"',
   'Cruelty':
-    'Traits=Class,Champion ' +
-    'Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
+    'Traits=Champion Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
   'Mercy (Body)':
     Pathfinder2E.FEATS.Mercy
     .replace(' Nec', ''),
@@ -3117,10 +2884,10 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS.Mercy
     .replace(' Nec', ''),
   'Security':
-    'Traits=Class,Champion ' +
+    'Traits=Champion ' +
     'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc)"',
   'Expand Aura':
-    'Traits=Class,Champion,Concentrate ' +
+    'Traits=Champion,Concentrate ' +
     'Require="level >= 6","features.Champion\'s Aura"',
   'Loyal Warhorse':
     Pathfinder2E.FEATS['Loyal Warhorse']
@@ -3130,196 +2897,11 @@ Pathfinder2ERemaster.FEATS = {
   'Smite':
     Pathfinder2E.FEATS['Smite Evil'] + ' ' +
     'Require="level >= 6"',
-  "Advanced Deity's Domain (Air)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Air)"',
-  "Advanced Deity's Domain (Ambition)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Ambition)"',
-  "Advanced Deity's Domain (Cities)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Cities)"',
-  "Advanced Deity's Domain (Confidence)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Confidence)"',
-  "Advanced Deity's Domain (Creation)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Creation)"',
-  "Advanced Deity's Domain (Darkness)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Darkness)"',
-  "Advanced Deity's Domain (Death)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Death)"',
-  "Advanced Deity's Domain (Destruction)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Destruction)"',
-  "Advanced Deity's Domain (Dreams)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Dreams)"',
-  "Advanced Deity's Domain (Earth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Earth)"',
-  "Advanced Deity's Domain (Family)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Family)"',
-  "Advanced Deity's Domain (Fate)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Fate)"',
-  "Advanced Deity's Domain (Fire)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Fire)"',
-  "Advanced Deity's Domain (Freedom)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Freedom)"',
-  "Advanced Deity's Domain (Healing)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Healing)"',
-  "Advanced Deity's Domain (Indulgence)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Indulgence)"',
-  "Advanced Deity's Domain (Knowledge)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Knowledge)"',
-  "Advanced Deity's Domain (Luck)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Luck)"',
-  "Advanced Deity's Domain (Magic)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Magic)"',
-  "Advanced Deity's Domain (Might)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Might)"',
-  "Advanced Deity's Domain (Moon)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Moon)"',
-  "Advanced Deity's Domain (Nature)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Nature)"',
-  "Advanced Deity's Domain (Nightmares)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Nightmares)"',
-  "Advanced Deity's Domain (Pain)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Pain)"',
-  "Advanced Deity's Domain (Passion)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Passion)"',
-  "Advanced Deity's Domain (Perfection)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Perfection)"',
-  "Advanced Deity's Domain (Protection)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Protection)"',
-  "Advanced Deity's Domain (Secrecy)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Secrecy)"',
-  "Advanced Deity's Domain (Sun)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Sun)"',
-  "Advanced Deity's Domain (Travel)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Travel)"',
-  "Advanced Deity's Domain (Trickery)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Trickery)"',
-  "Advanced Deity's Domain (Truth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Truth)"',
-  "Advanced Deity's Domain (Tyranny)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Tyranny)"',
-  "Advanced Deity's Domain (Undeath)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Undeath)"',
-  "Advanced Deity's Domain (Water)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Water)"',
-  "Advanced Deity's Domain (Wealth)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Wealth)"',
-  "Advanced Deity's Domain (Zeal)":
-    'Traits=Class,Champion ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Deity\'s Domain (Zeal)"',
-  'Greater Cruelty':
-    'Traits=Class,Champion Require="level >= 8","features.Cruelty"',
+  "Advanced Deity's Domain (%domain)":
+    Pathfinder2E.FEATS["Advanced Deity's Domain (%domain)"],
+  'Greater Cruelty':'Traits=Champion Require="level >= 8","features.Cruelty"',
   'Greater Mercy':Pathfinder2E.FEATS['Greater Mercy'],
-  'Greater Security':
-    'Traits=Class,Champion Require="level >= 8","features.Security"',
+  'Greater Security':'Traits=Champion Require="level >= 8","features.Security"',
   'Heal Mount':
     Pathfinder2E.FEATS['Heal Mount']
     .replace('Steed Ally', 'Faithful Steed')
@@ -3339,15 +2921,14 @@ Pathfinder2ERemaster.FEATS = {
     .replace(',Flourish', '')
     .replace('Require=', 'Require="features.Blessed Shield",'),
   'Spectral Advance':
-    'Traits=Class,Champion,Concentrate,Divine,Teleportation ' +
+    'Traits=Champion,Concentrate,Divine,Teleportation ' +
     'Require="level >= 10","features.Blessed Swiftness"',
   'Affliction Mercy':Pathfinder2E.FEATS['Affliction Mercy'],
   'Aura Of Faith':
     Pathfinder2E.FEATS['Aura Of Faith']
     .replace('The Tenets Of Good', 'Holy || features.Unholy'),
-  'Blessed Counterstrike':
-    // TODO require "champion's reaction that grants an ally resistance"
-    'Traits=Class,Champion,Flourish Require="level >= 12"',
+  // TODO require "champion's reaction that grants an ally resistance"
+  'Blessed Counterstrike':'Traits=Champion,Flourish Require="level >= 12"',
   "Champion's Sacrifice":
     Pathfinder2E.FEATS["Champion's Sacrifice"]
     .replace('features.The Tenets Of Good', 'features.Unholy == 0'),
@@ -3355,9 +2936,9 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Devoted Focus']
     .replace('10', '12'),
   'Divine Wall':Pathfinder2E.FEATS['Divine Wall'],
-  'Gruesome Strike':'Traits=Class,Champion Require="level >= 12"',
+  'Gruesome Strike':'Traits=Champion Require="level >= 12"',
   'Aura Of Determination':
-    'Traits=Class,Champion Require="level >= 14","features.Champion\'s Aura"',
+    'Traits=Champion Require="level >= 14","features.Champion\'s Aura"',
   'Aura Of Life':
     Pathfinder2E.FEATS['Aura Of Life']
     .replace('Shining Oath', "Champion's Aura"),
@@ -3368,117 +2949,103 @@ Pathfinder2ERemaster.FEATS = {
   'Auspicious Mount':
     Pathfinder2E.FEATS['Auspicious Mount']
     .replace(',"features.Steed Ally"', ''),
-  'Instrument Of Slaughter':
-    // TODO require "champion's reaction that grants extra damage"
-    'Traits=Class,Champion Require="level >= 16"',
+  // TODO require "champion's reaction that grants extra damage"
+  'Instrument Of Slaughter':'Traits=Champion Require="level >= 16"',
+  // TODO require "champion's reaction that grants an ally resistance"
   'Instrument Of Zeal':
     Pathfinder2E.FEATS['Instrument Of Zeal'] + ' ' +
-    // TODO require "champion's reaction that grants an ally resistance"
     'Require="level >= 16","features.Blessed Counterstrike || features.Retributive Strike"',
   'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
   'Rejuvenating Touch':
-    'Traits=Class,Champion ' +
-    'Require="level >= 18","spells.Lay On Hands (D1 Foc)"',
+    'Traits=Champion Require="level >= 18","spells.Lay On Hands (D1 Foc)"',
   'Swift Retribution':
-    'Traits=Class,Champion ' +
-    'Require="level >= 18","features.Champion\'s Reaction"',
+    'Traits=Champion Require="level >= 18","features.Champion\'s Reaction"',
   'Ultimate Mercy':Pathfinder2E.FEATS['Ultimate Mercy'],
   'Armament Paragon':
     Pathfinder2E.FEATS['Radiant Blade Master'] + ' ' +
     'Require="level >= 20","features.Blessed Armament"',
-  'Sacred Defender':'Traits=Class,Champion Require="level >= 20"',
+  'Sacred Defender':'Traits=Champion Require="level >= 20"',
   'Shield Paragon':
     Pathfinder2E.FEATS['Shield Paragon']
     .replace('Shield Ally', 'Blessed Shield'),
   'Swift Paragon':
-    'Traits=Class,Champion Require="level >= 20","features.Blessed Swiftness"',
+    'Traits=Champion Require="level >= 20","features.Blessed Swiftness"',
 
   // Investigator
-  'Eliminate Red Herrings':'Traits=Class,Investigator',
-  'Flexible Studies':'Traits=Class,Investigator',
-  'Known Weaknesses':'Traits=Class,Investigator',
-  'Takedown Expert':'Traits=Class,Investigator',
-  "That's Odd":'Traits=Class,Investigator',
+  'Eliminate Red Herrings':'Traits=Investigator',
+  'Flexible Studies':'Traits=Investigator',
+  'Known Weaknesses':'Traits=Investigator',
+  'Takedown Expert':'Traits=Investigator',
+  "That's Odd":'Traits=Investigator',
   // Trap Finder as above
-  'Underworld Investigator':'Traits=Class,Investigator',
+  'Underworld Investigator':'Traits=Investigator',
   'Athletic Strategist':
-    'Traits=Class,Investigator Require="level >= 2","rank.Athletics >= 1"',
-  'Certain Stratagem':'Traits=Class,Investigator Require="level >= 2"',
-  'Exploit Blunder':'Traits=Class,Investigator Require="level >= 2"',
-  'Person Of Interest':'Traits=Class,Investigator Require="level >= 2"',
-  'Shared Stratagem':'Traits=Class,Investigator Require="level >= 2"',
-  'Solid Lead':'Traits=Class,Investigator Require="level >= 2"',
+    'Traits=Investigator Require="level >= 2","rank.Athletics >= 1"',
+  'Certain Stratagem':'Traits=Investigator Require="level >= 2"',
+  'Exploit Blunder':'Traits=Investigator Require="level >= 2"',
+  'Person Of Interest':'Traits=Investigator Require="level >= 2"',
+  'Shared Stratagem':'Traits=Investigator Require="level >= 2"',
+  'Solid Lead':'Traits=Investigator Require="level >= 2"',
   'Alchemical Discoveries':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 4","features.Alchemical Sciences"',
-  "Detective's Readiness":'Traits=Class,Investigator Require="level >= 4"',
+    'Traits=Investigator Require="level >= 4","features.Alchemical Sciences"',
+  "Detective's Readiness":'Traits=Investigator Require="level >= 4"',
   'Lie Detector':
-    'Traits=Class,Investigator ' +
+    'Traits=Investigator ' +
     'Require="level >= 4","features.Empiricism || features.Interrogation"',
-  'Ongoing Investigation':'Traits=Class,Investigator Require="level >= 4"',
+  'Ongoing Investigation':'Traits=Investigator Require="level >= 4"',
   "Scalpel's Point":
-    'Traits=Class,Investigator ' +
-    'Require="level >= 4","features.Forensic Medicine"',
-  'Strategic Assessment':'Traits=Class,Investigator Require="level >= 4"',
+    'Traits=Investigator Require="level >= 4","features.Forensic Medicine"',
+  'Strategic Assessment':'Traits=Investigator Require="level >= 4"',
   'Connect The Dots':
-    'Traits=Class,Investigator,Auditory,Concentrate,Linguistic ' +
-    'Require="level >= 6"',
+    'Traits=Investigator,Auditory,Concentrate,Linguistic Require="level >= 6"',
   // Predictive Purchase as above
-  'Thorough Research':'Traits=Class,Investigator Require="level >= 6"',
+  'Thorough Research':'Traits=Investigator Require="level >= 6"',
   // Blind-Fight as above
-  'Clue Them All In':'Traits=Class,Investigator Require="level >= 8"',
-  'Defensive Stratagem':'Traits=Class,Investigator Require="level >= 8"',
-  'Whodunnit?':'Traits=Class,Investigator,Uncommon Require="level >= 8"',
-  'Just One More Thing':
-    'Traits=Class,Investigator,Fortune Require="level >= 10"',
+  'Clue Them All In':'Traits=Investigator Require="level >= 8"',
+  'Defensive Stratagem':'Traits=Investigator Require="level >= 8"',
+  'Whodunnit?':'Traits=Investigator,Uncommon Require="level >= 8"',
+  'Just One More Thing':'Traits=Investigator,Fortune Require="level >= 10"',
   'Ongoing Strategy':
-    'Traits=Class,Investigator,Fortune ' +
+    'Traits=Investigator,Fortune ' +
     'Require="level >= 10","features.Strategic Strike"',
   'Suspect Of Opportunity':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 10","features.Person Of Interest"',
+    'Traits=Investigator Require="level >= 10","features.Person Of Interest"',
   "Empiricist's Eye":
-    'Traits=Class,Investigator Require="level >= 12","features.Empiricism"',
-  'Foresee Danger':
-    'Traits=Class,Investigator,Concentrate Require="level >= 12"',
-  'Just As Planned':
-    'Traits=Class,Investigator,Fortune Require="level >= 12"',
+    'Traits=Investigator Require="level >= 12","features.Empiricism"',
+  'Foresee Danger':'Traits=Investigator,Concentrate Require="level >= 12"',
+  'Just As Planned':'Traits=Investigator,Fortune Require="level >= 12"',
   "Make 'em Sweat":
-    'Traits=Class,Investigator Require="level >= 12","features.Interrogation"',
-  'Reason Rapidly':'Traits=Class,Investigator Require="level >= 12"',
+    'Traits=Investigator Require="level >= 12","features.Interrogation"',
+  'Reason Rapidly':'Traits=Investigator Require="level >= 12"',
   'Share Tincture':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 12","features.Alchemical Sciences"',
+    'Traits=Investigator Require="level >= 12","features.Alchemical Sciences"',
   'Surgical Shock':
-    'Traits=Class,Investigator,Attack ' +
+    'Traits=Investigator,Attack ' +
     'Require="level >= 12","features.Forensic Medicine"',
   'Plot The Future':
-    'Traits=Class,Investigator,Uncommon,Concentrate,Prediction ' +
-    'Require="level >= 14"',
+    'Traits=Investigator,Uncommon,Concentrate,Prediction Require="level >= 14"',
   // Sense The Unseen as above
-  'Strategic Bypass':'Traits=Class,Investigator Require="level >= 14"',
+  'Strategic Bypass':'Traits=Investigator Require="level >= 14"',
   'Didactic Strike':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 16","features.Shared Stratagem"',
+    'Traits=Investigator Require="level >= 16","features.Shared Stratagem"',
   // Implausible Purchase as above
   // Reconstruct The Scene as above
   'Lead Investigator':
-    'Traits=Class,Investigator,Exploration ' +
+    'Traits=Investigator,Exploration ' +
     'Require="level >= 18","features.Clue Them All In"',
   // Trickster's Ace as above
-  "Everyone's A Suspect":'Traits=Class,Investigator Require="level >= 20"',
+  "Everyone's A Suspect":'Traits=Investigator Require="level >= 20"',
   'Just The Facts':
-    'Traits=Class,Investigator ' +
-    'Require="level >= 20","features.Thorough Research"',
+    'Traits=Investigator Require="level >= 20","features.Thorough Research"',
 
   // Monk
   'Crane Stance':Pathfinder2E.FEATS['Crane Stance'],
   'Dragon Stance':Pathfinder2E.FEATS['Dragon Stance'],
-  'Monastic Archer Stance':'Traits=Class,Monk,Stance',
+  'Monastic Archer Stance':'Traits=Monk,Stance',
   'Monastic Weaponry':Pathfinder2E.FEATS['Monastic Weaponry'],
   'Mountain Stance':Pathfinder2E.FEATS['Mountain Stance'],
-  'Qi Spells':'Traits=Class,Monk',
-  'Stumbling Stance':'Traits=Class,Monk,Stance',
+  'Qi Spells':'Traits=Monk',
+  'Stumbling Stance':'Traits=Monk,Stance',
   'Tiger Stance':Pathfinder2E.FEATS['Tiger Stance'],
   'Wolf Stance':Pathfinder2E.FEATS['Wolf Stance'],
   'Crushing Grab':Pathfinder2E.FEATS['Crushing Grab'],
@@ -3487,10 +3054,9 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Elemental Fist']
     .replace('features.Ki Strike', 'spells.Inner Upheaval (O1 Foc)'),
   'Shooting Stars Stance':
-    'Traits=Class,Monk,Stance ' +
-    'Require="level >= 2","features.Monastic Weaponry"',
+    'Traits=Monk,Stance Require="level >= 2","features.Monastic Weaponry"',
   'Stunning Blows':Pathfinder2E.FEATS['Stunning Fist'],
-  'Cobra Stance':'Traits=Class,Monk,Stance Require="level >= 4"',
+  'Cobra Stance':'Traits=Monk,Stance Require="level >= 4"',
   'Deflect Projectile':Pathfinder2E.FEATS['Deflect Arrow'],
   'Flurry Of Maneuvers':Pathfinder2E.FEATS['Flurry Of Maneuvers'],
   'Flying Kick':Pathfinder2E.FEATS['Flying Kick'],
@@ -3500,33 +3066,31 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Ki Spells', 'Qi Spells'),
   'Stand Still':Pathfinder2E.FEATS['Stand Still'],
   'Advanced Monastic Weaponry':
-    'Traits=Class,Monk Require="level >= 6","features.Monastic Weaponry"',
-  'Advanced Qi Spells':
-    'Traits=Class,Monk Require="level >= 6","features.Qi Spells"',
-  'Align Qi':'Traits=Class,Monk Require="level >= 6","features.Qi Spells"',
+    'Traits=Monk Require="level >= 6","features.Monastic Weaponry"',
+  'Advanced Qi Spells':'Traits=Monk Require="level >= 6","features.Qi Spells"',
+  'Align Qi':'Traits=Monk Require="level >= 6","features.Qi Spells"',
   'Crane Flutter':Pathfinder2E.FEATS['Crane Flutter'],
   'Dragon Roar':Pathfinder2E.FEATS['Dragon Roar'],
   'Mountain Stronghold':Pathfinder2E.FEATS['Mountain Stronghold'],
-  'One-Inch Punch':
-    'Traits=Class,Monk Require="level >= 6","features.Expert Strikes"',
+  'One-Inch Punch':'Traits=Monk Require="level >= 6","features.Expert Strikes"',
   'Return Fire':
-    'Traits=Class,Monk ' +
+    'Traits=Monk ' +
     'Require=' +
       '"level >= 6",' +
       '"features.Deflect Projectile",' +
       '"features.Monastic Archer Stance"',
   'Stumbling Feint':
-    'Traits=Class,Monk ' +
+    'Traits=Monk ' +
     'Require="level >= 6","rank.Deception >= 2","features.Stumbling Stance"',
   'Tiger Slash':Pathfinder2E.FEATS['Tiger Stance'],
   'Water Step':Pathfinder2E.FEATS['Water Step'],
   'Whirling Throw':Pathfinder2E.FEATS['Whirling Throw'],
   'Wolf Drag':Pathfinder2E.FEATS['Wolf Stance'],
   'Clinging Shadows Initiate':
-    'Traits=Class,Monk Require="level >= 8","features.Qi Spells"',
+    'Traits=Monk Require="level >= 8","features.Qi Spells"',
   'Ironblood Stance':Pathfinder2E.FEATS['Ironblood Stance'],
   'Mixed Maneuver':Pathfinder2E.FEATS['Mixed Maneuver'],
-  'Pinning Fire':'Traits=Class,Monk Require="level >= 8"',
+  'Pinning Fire':'Traits=Monk Require="level >= 8"',
   'Projectile Snatching':
     Pathfinder2E.FEATS['Arrow Snatching']
    .replace('Deflect Arrow', 'Deflect Projectile'),
@@ -3536,11 +3100,11 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Wild Winds Initiate']
     .replace('Ki Spells', 'Qi Spells'),
   'Cobra Envenom':
-    'Traits=Class,Monk,Poison ' +
+    'Traits=Monk,Poison ' +
     'Require="level >= 10","features.Cobra Stance","rank.Unarmed Attacks >= 2"',
   'Knockback Strike':Pathfinder2E.FEATS['Knockback Strike'],
   'Prevailing Position':
-    'Traits=Class,Monk Require="level >= 10","sumStanceFeats >= 1"',
+    'Traits=Monk Require="level >= 10","sumStanceFeats >= 1"',
   'Sleeper Hold':Pathfinder2E.FEATS['Sleeper Hold'],
   'Wind Jump':
     Pathfinder2E.FEATS['Wind Jump']
@@ -3549,10 +3113,9 @@ Pathfinder2ERemaster.FEATS = {
   'Disrupt Qi':
     Pathfinder2E.FEATS['Disrupt Ki']
     .replace('Negative', 'Void'),
-  'Dodging Roll':
-    'Traits=Class,Monk Require="level >= 12","rank.Acrobatics >= 3"',
+  'Dodging Roll':'Traits=Monk Require="level >= 12","rank.Acrobatics >= 3"',
   'Focused Shot':
-    'Traits=Class,Monk,Concentrate ' +
+    'Traits=Monk,Concentrate ' +
     'Require="level >= 12","features.Monastic Archer Stance"',
   'Improved Knockback':
     Pathfinder2E.FEATS['Improved Knockback'] + ' ' +
@@ -3561,20 +3124,18 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Meditative Focus']
     .replace('Ki Spells', 'Qi Spells'),
   'Overwhelming Breath':
-    'Traits=Class,Monk,Concentrate,Spellshape ' +
+    'Traits=Monk,Concentrate,Spellshape ' +
     'Require="level >= 12","features.Qi Spells"',
-  'Reflexive Stance':'Traits=Class,Monk Require="level >= 12"',
-  'Form Lock':'Traits=Class,Monk,Attack Require="level >= 14"',
+  'Reflexive Stance':'Traits=Monk Require="level >= 12"',
+  'Form Lock':'Traits=Monk,Attack Require="level >= 14"',
   'Ironblood Surge':Pathfinder2E.FEATS['Ironblood Surge'],
   'Mountain Quake':Pathfinder2E.FEATS['Mountain Quake'],
   'Peerless Form':Pathfinder2E.FEATS['Timeless Body'],
   "Shadow's Web":
-    'Traits=Class,Monk ' +
-    'Require="level >= 14","features.Clinging Shadows Initiate"',
+    'Traits=Monk Require="level >= 14","features.Clinging Shadows Initiate"',
   'Tangled Forest Rake':Pathfinder2E.FEATS['Tangled Forest Rake'],
   'Whirling Blade Stance':
-    'Traits=Class,Monk,Stance ' +
-    'Require="level >= 14","features.Monastic Weaponry"',
+    'Traits=Monk,Stance Require="level >= 14","features.Monastic Weaponry"',
   'Wild Winds Gust':
     Pathfinder2E.FEATS['Wild Winds Gust']
     .replace(',Evocation', ''),
@@ -3582,297 +3143,267 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Fuse Stance']
     .replace('20', '16'),
   // Master Of Many Styles as above
-  'Master Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
-  'One-Millimeter Punch':'Traits=Class,Monk Require="features.One-Inch Punch"',
+  'Master Qi Spells':'Traits=Monk Require="features.Qi Spells"',
+  'One-Millimeter Punch':'Traits=Monk Require="features.One-Inch Punch"',
   'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
   'Diamond Fists':Pathfinder2E.FEATS['Diamond Fists'],
-  'Grandmaster Qi Spells':'Traits=Class,Monk Require="features.Qi Spells"',
+  'Grandmaster Qi Spells':'Traits=Monk Require="features.Qi Spells"',
   'Qi Center':
-    'Traits=Class,Monk ' +
-    'Require="features.Qi Spells","features.Master Of Many Styles"',
+    'Traits=Monk Require="features.Qi Spells","features.Master Of Many Styles"',
   'Swift River':Pathfinder2E.FEATS['Swift River'],
   'Triangle Shot':
-    'Traits=Class,Monk,Concentrate,Fortune ' +
+    'Traits=Monk,Concentrate,Fortune ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Monastic Archer Stance",' +
       '"features.Stunning Blows"',
   'Enduring Quickness':Pathfinder2E.FEATS['Enduring Quickness'],
   'Godbreaker':
-    'Traits=Class,Monk ' +
+    'Traits=Monk ' +
     'Require="level >= 20","features.Crushing Grab","features.Whirling Throw"',
   'Immortal Techniques':
-    'Traits=Class,Monk Require="level >= 20","features.Master Of Many Styles"',
+    'Traits=Monk Require="level >= 20","features.Master Of Many Styles"',
   'Impossible Technique':Pathfinder2E.FEATS['Impossible Technique'],
-  'Lightning Qi':'Traits=Class,Monk Require="level >= 20","features.Qi Spells"',
+  'Lightning Qi':'Traits=Monk Require="level >= 20","features.Qi Spells"',
 
   // Oracle
-  'Foretell Harm':'Traits=Class,Oracle,Cursebound,Divine',
-  'Glean Lore':'Traits=Class,Oracle,Divine,Secret',
-  'Nudge The Scales':'Traits=Class,Oracle,Cursebound,Divine,Healing,Spirit',
-  'Oracular Warning':
-    'Traits=Class,Oracle,Auditory,Cursebound,Divine,Emotion,Mental',
+  'Foretell Harm':'Traits=Oracle,Cursebound,Divine',
+  'Glean Lore':'Traits=Oracle,Divine,Secret',
+  'Nudge The Scales':'Traits=Oracle,Cursebound,Divine,Healing,Spirit',
+  'Oracular Warning':'Traits=Oracle,Auditory,Cursebound,Divine,Emotion,Mental',
   // Reach Spell as above
-  'Whispers Of Weakness':'Traits=Class,Oracle,Cursebound,Divine',
+  'Whispers Of Weakness':'Traits=Oracle,Cursebound,Divine',
   // Widen Spell as above
   // Cantrip Expansion as above
-  'Divine Aegis':'Traits=Class,Oracle,Divine Require="level >= 2"',
-  'Domain Acumen':'Traits=Class,Oracle Require="level >= 2"',
-  'Meddling Futures':
-    'Traits=Class,Oracle,Cursebound,Divine Require="level >= 2"',
+  'Divine Aegis':'Traits=Oracle,Divine Require="level >= 2"',
+  'Domain Acumen':'Traits=Oracle Require="level >= 2"',
+  'Meddling Futures':'Traits=Oracle,Cursebound,Divine Require="level >= 2"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
-    'Traits=Class,Oracle,Cursebound,Spellshape ' +
+    'Traits=Oracle,Cursebound,Spellshape ' +
     'Require="level >= 4","features.Reach Spell || features.Widen Spell"',
-  'Thousand Visions':
-    'Traits=Class,Oracle,Cursebound,Prediction Require="level >= 4"',
-  'Advanced Revelation':
-    // TODO requires "initial revelation spell"
-    'Traits=Class,Oracle Require="level >= 6"',
-  'Gifted Power':'Traits=Class,Oracle Require="level >= 6"',
-  'Spiritual Sense':'Traits=Class,Oracle,Divine Require="level >= 6"',
+  'Thousand Visions':'Traits=Oracle,Cursebound,Prediction Require="level >= 4"',
+  // TODO requires "initial revelation spell"
+  'Advanced Revelation':'Traits=Oracle Require="level >= 6"',
+  'Gifted Power':'Traits=Oracle Require="level >= 6"',
+  'Spiritual Sense':'Traits=Oracle,Divine Require="level >= 6"',
   // Steady Spellcasting as above
   'Debilitating Dichotomy':
-    'Traits=Class,Oracle,Concentrate,Cursebound,Divine,Mental ' +
-    'Require="level >= 8"',
-  'Read Disaster':
-    'Traits=Class,Oracle,Exploration,Prediction Require="level >= 8"',
-  'Surging Might':
-    'Traits=Class,Oracle,Manipulate,Spellshape Require="level >= 8"',
-  'Water Walker':'Traits=Class,Oracle Require="level >= 8"',
+    'Traits=Oracle,Concentrate,Cursebound,Divine,Mental Require="level >= 8"',
+  'Read Disaster':'Traits=Oracle,Exploration,Prediction Require="level >= 8"',
+  'Surging Might':'Traits=Oracle,Manipulate,Spellshape Require="level >= 8"',
+  'Water Walker':'Traits=Oracle Require="level >= 8"',
   // Quickened Casting as above
   'Roll The Bones Of Fate':
-    'Traits=Class,Oracle,Cursebound,Divine,Prediction ' +
+    'Traits=Oracle,Cursebound,Divine,Prediction ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Bones || features.Lore"',
   'The Dead Walk':
-    'Traits=Class,Oracle,Cursebound,Divine ' +
+    'Traits=Oracle,Cursebound,Divine ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Ancestors || features.Battle"',
   'Trial By Skyfire':
-    'Traits=Class,Oracle,Cursebound,Divine,Fire ' +
+    'Traits=Oracle,Cursebound,Divine,Fire ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Cosmos || features.Flames"',
   'Waters Of Creation':
-    'Traits=Class,Oracle,Cursebound,Divine,Healing,Vitality,Water ' +
+    'Traits=Oracle,Cursebound,Divine,Healing,Vitality,Water ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Life || features.Tempest"',
   'Domain Fluency':
-    'Traits=Class,Oracle ' +
+    'Traits=Oracle ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Domain Acumen"',
-  'Epiphany At The Crossroads':
-    'Traits=Class,Oracle,Divine Require="level >= 12"',
-  'Greater Revelation':
-    // TODO require "initial revelation spell"
-    'Traits=Class,Oracle Require="level >= 12"',
+  'Epiphany At The Crossroads':'Traits=Oracle,Divine Require="level >= 12"',
+  // TODO require "initial revelation spell"
+  'Greater Revelation':'Traits=Oracle Require="level >= 12"',
   // Magic Sense as above
-  'Forestall Curse':'Traits=Class,Oracle,Concentrate Require="level >= 14"',
+  'Forestall Curse':'Traits=Oracle,Concentrate Require="level >= 14"',
   'Lighter Than Air':
-    'Traits=Class,Oracle,Divine ' +
+    'Traits=Oracle,Divine ' +
     'Require=' +
       '"level >= 14",' +
       '"features.Water Walker"',
-  'Mysterious Repertoire':'Traits=Class,Oracle Require="level >= 14"',
-  "Revelation's Focus":'Traits=Class,Oracle Require="level >= 14"',
+  'Mysterious Repertoire':'Traits=Oracle Require="level >= 14"',
+  "Revelation's Focus":'Traits=Oracle Require="level >= 14"',
+  // TODO require "any oracle mystery"
   'Conduit Of Void and Vitality':
-    'Traits=Class,Oracle,Cursebound,Divine ' +
-    // TODO require "any oracle mystery"
-    'Require="level >= 16"',
+    'Traits=Oracle,Cursebound,Divine Require="level >= 16"',
   'Diverse Mystery':
-    'Traits=Class,Oracle Require="level >= 16","features.Advanced Revelation"',
+    'Traits=Oracle Require="level >= 16","features.Advanced Revelation"',
   'Portentous Spell':
-    'Traits=Class,Oracle,Manipulate,Mental,Spellshape,Visual ' +
-    'Require="level >= 16"',
-  'Blaze Of Revelation':'Traits=Class,Oracle Require="level >= 18"',
-  'Divine Effusion':'Traits=Class,Oracle Require="level >= 18"',
-  'Mystery Conduit':
-    'Traits=Class,Oracle,Cursebound,Spellshape Require="level >= 20"',
+    'Traits=Oracle,Manipulate,Mental,Spellshape,Visual Require="level >= 16"',
+  'Blaze Of Revelation':'Traits=Oracle Require="level >= 18"',
+  'Divine Effusion':'Traits=Oracle Require="level >= 18"',
+  'Mystery Conduit':'Traits=Oracle,Cursebound,Spellshape Require="level >= 20"',
   'Oracular Providence':
-    'Traits=Class,Oracle Require="level >= 20","features.Oracular Clarity"',
+    'Traits=Oracle Require="level >= 20","features.Oracular Clarity"',
   'Paradoxical Mystery':
-    'Traits=Class,Oracle Require="level >= 20","features.Greater Revelation"',
+    'Traits=Oracle Require="level >= 20","features.Greater Revelation"',
 
   // Sorcerer
-  'Blood Rising':'Traits=Class,Sorcerer',
+  'Blood Rising':'Traits=Sorcerer',
   // Familiar as above
   // Reach Spell as above
-  'Tap Into Blood':'Traits=Class,Sorcerer,Concentrate',
+  'Tap Into Blood':'Traits=Sorcerer,Concentrate',
   // Widen Spell as above
-  'Anoint Ally':'Traits=Class,Sorcerer,Manipulate Require="level >= 2"',
-  'Bleed Out':'Traits=Class,Sorcerer,Attack Require="level >= 2"',
+  'Anoint Ally':'Traits=Sorcerer,Manipulate Require="level >= 2"',
+  'Bleed Out':'Traits=Sorcerer,Attack Require="level >= 2"',
   // Cantrip Expansion as above
   // Enhanced Familiar as above
-  'Propelling Sorcery':'Traits=Class,Sorcerer Require="level >= 2"',
+  'Propelling Sorcery':'Traits=Sorcerer Require="level >= 2"',
   'Arcane Evolution':Pathfinder2E.FEATS['Arcane Evolution'],
   // Bespell Strikes as above
   'Divine Evolution':Pathfinder2E.FEATS['Divine Evolution'],
   'Occult Evolution':Pathfinder2E.FEATS['Occult Evolution'],
   'Primal Evolution':Pathfinder2E.FEATS['Primal Evolution'],
-  'Split Shot':'Traits=Class,Sorcerer,Spellshape Require="level >= 4"',
+  'Split Shot':'Traits=Sorcerer,Spellshape Require="level >= 4"',
   'Advanced Bloodline':Pathfinder2E.FEATS['Advanced Bloodline'],
-  'Diverting Vortex':'Traits=Class,Sorcerer Require="level >= 6"',
-  'Energy Ward':'Traits=Class,Sorcerer Require="level >= 6"',
+  'Diverting Vortex':'Traits=Sorcerer Require="level >= 6"',
+  'Energy Ward':'Traits=Sorcerer Require="level >= 6"',
   'Safeguard Spell':
-    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 6"',
-  'Spell Relay':'Traits=Class,Sorcerer,Concentrate Require="level >= 6"',
+    'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 6"',
+  'Spell Relay':'Traits=Sorcerer,Concentrate Require="level >= 6"',
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATS['Bloodline Resistance'],
   'Crossblooded Evolution':Pathfinder2E.FEATS['Crossblooded Evolution'],
-  'Explosion Of Power':'Traits=Class,Sorcerer Require="level >= 8"',
+  'Explosion Of Power':'Traits=Sorcerer Require="level >= 8"',
   'Energy Fusion':
-    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 10"',
+    'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 10"',
   'Greater Bloodline':Pathfinder2E.FEATS['Greater Bloodline'],
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Signature Spell Expansion':'Traits=Class,Sorcerer Require="level >= 10"',
-  'Blood Sovereignty':'Traits=Class,Sorcerer Require="level >= 12"',
+  'Signature Spell Expansion':'Traits=Sorcerer Require="level >= 10"',
+  'Blood Sovereignty':'Traits=Sorcerer Require="level >= 12"',
   'Bloodline Focus':Pathfinder2E.FEATS['Bloodline Focus'],
   'Greater Physical Evolution':
-    'Traits=Class,Sorcerer ' +
+    'Traits=Sorcerer ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Arcane Evolution || features.Primal Evolution"',
   'Greater Spiritual Evolution':
-    'Traits=Class,Sorcerer ' +
+    'Traits=Sorcerer ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Divine Evolution || features.Occult Evolution"',
   // Magic Sense as above
   'Terraforming Trickery':
-    'Traits=Class,Sorcerer,Concentrate,Earth Require="level >= 12"',
+    'Traits=Sorcerer,Concentrate,Earth Require="level >= 12"',
   'Blood Ascendancy':
-    'Traits=Class,Sorcerer Require="level >= 12","features.Blood Rising"',
+    'Traits=Sorcerer Require="level >= 12","features.Blood Rising"',
   'Interweave Dispel':
     Pathfinder2E.FEATS['Interweave Dispel']
     .replace('Metamagic', 'Spellshape'),
-  'Reflect Harm':'Traits=Class,Sorcerer Require="level >= 14"',
-  'Spell Shroud':
-    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 14"',
+  'Reflect Harm':'Traits=Sorcerer Require="level >= 14"',
+  'Spell Shroud':'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 14"',
   // Effortless Concentration as above
   'Greater Mental Evolution':Pathfinder2E.FEATS['Greater Mental Evolution'],
   'Greater Vital Evolution':Pathfinder2E.FEATS['Greater Vital Evolution'],
   // Scintillating Spell as above
   'Echoing Spell':
-    'Traits=Class,Sorcerer,Concentrate,Spellshape Require="level >= 18"',
+    'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 18"',
   'Greater Crossblooded Evolution':
     Pathfinder2E.FEATS['Greater Crossblooded Evolution'],
   'Bloodline Conduit':
     Pathfinder2E.FEATS['Bloodline Conduit']
     .replace('Metamagic', 'Spellshape'),
-  'Bloodline Mutation':'Traits=Class,Sorcerer Require="level >= 20"',
+  'Bloodline Mutation':'Traits=Sorcerer Require="level >= 20"',
   'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
 
   // Swashbuckler
-  'Disarming Flair':'Traits=Class,Swashbuckler',
-  'Elegant Buckler':'Traits=Class,Swashbuckler',
-  'Extravagant Parry':'Traits=Class,Swashbuckler',
-  'Flashy Dodge':'Traits=Class,Swashbuckler',
-  'Flying Blade':'Traits=Class,Swashbuckler Require="features.Precise Strike"',
+  'Disarming Flair':'Traits=Swashbuckler',
+  'Elegant Buckler':'Traits=Swashbuckler',
+  'Extravagant Parry':'Traits=Swashbuckler',
+  'Flashy Dodge':'Traits=Swashbuckler',
+  'Flying Blade':'Traits=Swashbuckler Require="features.Precise Strike"',
   'Focused Fascination':
-    'Traits=Class,Swashbuckler Require="features.Fascinating Performance"',
-  'Goading Feint':'Traits=Class,Swashbuckler Require="rank.Deception >= 1"',
+    'Traits=Swashbuckler Require="features.Fascinating Performance"',
+  'Goading Feint':'Traits=Swashbuckler Require="rank.Deception >= 1"',
   'One For All':
-    'Traits=Class,Swashbuckler,Auditory,Concentrate,Emotion,Linguistic,Mental '+
+    'Traits=Swashbuckler,Auditory,Concentrate,Emotion,Linguistic,Mental '+
     'Require="rank.Diplomacy >= 1"',
-  'Plummeting Roll':'Traits=Class,Swashbuckler Require="rank.Acrobatics >= 1"',
+  'Plummeting Roll':'Traits=Swashbuckler Require="rank.Acrobatics >= 1"',
   // You're Next as above
-  'After You':'Traits=Class,Swashbuckler Require="level >= 2"',
-  'Antagonize':'Traits=Class,Swashbuckler Require="level >= 2"',
-  'Brandishing Draw':'Traits=Class,Swashbuckler Require="level >= 2"',
+  'After You':'Traits=Swashbuckler Require="level >= 2"',
+  'Antagonize':'Traits=Swashbuckler Require="level >= 2"',
+  'Brandishing Draw':'Traits=Swashbuckler Require="level >= 2"',
   'Charmed Life':
-    'Traits=Class,Swashbuckler Require="level >= 2","charismaModifier >= 2"',
-  'Enjoy The Show':'Traits=Class,Swashbuckler Require="level >= 2"',
-  'Finishing Follow-Through':'Traits=Class,Swashbuckler Require="level >= 2"',
-  'Retreating Finisher':
-    'Traits=Class,Swashbuckler,Finisher Require="level >= 2"',
+    'Traits=Swashbuckler Require="level >= 2","charismaModifier >= 2"',
+  'Enjoy The Show':'Traits=Swashbuckler Require="level >= 2"',
+  'Finishing Follow-Through':'Traits=Swashbuckler Require="level >= 2"',
+  'Retreating Finisher':'Traits=Swashbuckler,Finisher Require="level >= 2"',
   // Tumble Behind as above
-  'Unbalancing Finisher':
-    'Traits=Class,Swashbuckler,Finisher Require="level >= 2"',
-  'Dastardly Dash':
-    'Traits=Class,Swashbuckler,Flourish Require="level >= 4"',
-  'Even The Odds':'Traits=Class,Swashbuckler Require="level >= 4"',
+  'Unbalancing Finisher':'Traits=Swashbuckler,Finisher Require="level >= 2"',
+  'Dastardly Dash':'Traits=Swashbuckler,Flourish Require="level >= 4"',
+  'Even The Odds':'Traits=Swashbuckler Require="level >= 4"',
   'Flamboyant Athlete':
-    'Traits=Class,Swashbuckler Require="level >= 4","rank.Athletics >= 4"',
-  "Guardian's Reflection":'Traits=Class,Swashbuckler Require="level >= 4"',
-  'Impaling Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 4"',
+    'Traits=Swashbuckler Require="level >= 4","rank.Athletics >= 4"',
+  "Guardian's Reflection":'Traits=Swashbuckler Require="level >= 4"',
+  'Impaling Finisher':'Traits=Swashbuckler,Finisher Require="level >= 4"',
   'Leading Dance':
-    'Traits=Class,Swashbuckler,Bravado,Move ' +
+    'Traits=Swashbuckler,Bravado,Move ' +
     'Require="level >= 4","rank.Performance >= 1"',
-  'Swaggering Initiative':'Traits=Class,Swashbuckler Require="level >= 4"',
+  'Swaggering Initiative':'Traits=Swashbuckler Require="level >= 4"',
   'Twirling Throw':
-    'Traits=Class,Swashbuckler,Finisher ' +
-    'Require="level >= 4","features.Flying Blade"',
+    'Traits=Swashbuckler,Finisher Require="level >= 4","features.Flying Blade"',
   'Agile Maneuvers':
-    'Traits=Class,Swashbuckler Require="level >= 6","rank.Athletics >= 2"',
-  'Combination Finisher':'Traits=Class,Swashbuckler Require="level >= 6"',
+    'Traits=Swashbuckler Require="level >= 6","rank.Athletics >= 2"',
+  'Combination Finisher':'Traits=Swashbuckler Require="level >= 6"',
   'Precise Finisher':
-    'Traits=Class,Swashbuckler ' +
+    'Traits=Swashbuckler ' +
     'Require="level >= 6","rank.Athletics >= 2","features.Confident Finisher"',
   // Reactive Strike as above
-  'Vexing Tumble':'Traits=Class,Swashbuckler,Bravado Require="level >= 6"',
-  'Bleeding Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
+  'Vexing Tumble':'Traits=Swashbuckler,Bravado Require="level >= 6"',
+  'Bleeding Finisher':'Traits=Swashbuckler,Finisher Require="level >= 8"',
   'Distracting Toss':
-    'Traits=Class,Swashbuckler,Bravado,Flourish Require="level >= 8"',
-  'Dual Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
+    'Traits=Swashbuckler,Bravado,Flourish Require="level >= 8"',
+  'Dual Finisher':'Traits=Swashbuckler,Finisher Require="level >= 8"',
   'Flashy Roll':
-    'Traits=Class,Swashbuckler Require="level >= 8","features.Flashy Dodge"',
-  'Stunning Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 8"',
-  'Vivacious Bravado':'Traits=Class,Swashbuckler Require="level >= 8"',
-  'Buckler Dance':'Traits=Class,Swashbuckler,Stance Require="level >= 10"',
-  'Derring-Do':'Traits=Class,Swashbuckler,Fortune Require="level >= 10"',
+    'Traits=Swashbuckler Require="level >= 8","features.Flashy Dodge"',
+  'Stunning Finisher':'Traits=Swashbuckler,Finisher Require="level >= 8"',
+  'Vivacious Bravado':'Traits=Swashbuckler Require="level >= 8"',
+  'Buckler Dance':'Traits=Swashbuckler,Stance Require="level >= 10"',
+  'Derring-Do':'Traits=Swashbuckler,Fortune Require="level >= 10"',
   'Reflexive Riposte':
-    'Traits=Class,Swashbuckler ' +
-    'Require="level >= 10","features.Opportune Riposte"',
-  'Stumbling Finisher':
-    'Traits=Class,Swashbuckler,Finisher Require="level >= 10"',
-  'Switcheroo':'Traits=Class,Swashbuckler Require="level >= 10"',
-  'Targeting Finisher':
-    'Traits=Class,Swashbuckler,Finisher Require="level >= 10"',
-  'Cheat Death':'Traits=Class,Swashbuckler Require="level >= 12"',
+    'Traits=Swashbuckler Require="level >= 10","features.Opportune Riposte"',
+  'Stumbling Finisher':'Traits=Swashbuckler,Finisher Require="level >= 10"',
+  'Switcheroo':'Traits=Swashbuckler Require="level >= 10"',
+  'Targeting Finisher':'Traits=Swashbuckler,Finisher Require="level >= 10"',
+  'Cheat Death':'Traits=Swashbuckler Require="level >= 12"',
   'Get Used To Disappointment':
-    'Traits=Class,Swashbuckler,Bravado ' +
+    'Traits=Swashbuckler,Bravado ' +
     'Require="level >= 12","rank.Intimidation >= 2"',
-  'Mobile Finisher':'Traits=Class,Swashbuckler,Finisher Require="level >= 12"',
-  'The Bigger They Are':
-    'Traits=Class,Swashbuckler,Bravado Require="level >= 12"',
+  'Mobile Finisher':'Traits=Swashbuckler,Finisher Require="level >= 12"',
+  'The Bigger They Are':'Traits=Swashbuckler,Bravado Require="level >= 12"',
   'Flamboyant Leap':
-    'Traits=Class,Swashbuckler ' +
+    'Traits=Swashbuckler ' +
     'Require=' +
       '"level >= 14",' +
       '"rank.Athletics >= 3",' +
       '"features.Flamboyant Athlete"',
   'Impossible Riposte':
-    'Traits=Class,Swashbuckler ' +
-    'Require="level >= 14","features.Opportune Riposte"',
+    'Traits=Swashbuckler Require="level >= 14","features.Opportune Riposte"',
   'Perfect Finisher':
-    'Traits=Class,Swashbuckler,Finisher,Fortune Require="level >= 14"',
-  'Deadly Grace':'Traits=Class,Swashbuckler Require="level >= 16"',
-  'Felicitous Riposte':
-    'Traits=Class,Swashbuckler,Fortune Require="level >= 16"',
-  'Revitalizing Finisher':
-    'Traits=Class,Swashbuckler,Finisher Require="level >= 16"',
+    'Traits=Swashbuckler,Finisher,Fortune Require="level >= 14"',
+  'Deadly Grace':'Traits=Swashbuckler Require="level >= 16"',
+  'Felicitous Riposte':'Traits=Swashbuckler,Fortune Require="level >= 16"',
+  'Revitalizing Finisher':'Traits=Swashbuckler,Finisher Require="level >= 16"',
   'Incredible Luck':
-    'Traits=Class,Swashbuckler,Fortune ' +
-    'Require="level >= 18","features.Charmed Life"',
-  'Lethal Finisher':
-    'Traits=Class,Swashbuckler,Death,Finisher ' +
-    // TODO require "precise strike 6d6"
-    'Require="level >= 18"',
+    'Traits=Swashbuckler,Fortune Require="level >= 18","features.Charmed Life"',
+  // TODO require "precise strike 6d6"
+  'Lethal Finisher':'Traits=Swashbuckler,Death,Finisher Require="level >= 18"',
   'Parry And Riposte':
-    'Traits=Class,Swashbuckler ' +
-    'Require="level >= 18","features.Opportune Riposte"',
+    'Traits=Swashbuckler Require="level >= 18","features.Opportune Riposte"',
   'Illimitable Finisher':
-    'Traits=Class,Swashbuckler,Finisher,Fortune Require="level >= 20"',
-  'Inexhaustible Countermoves':
-    'Traits=Class,Swashbuckler Require="level >= 20"',
-  'Panache Paragon':'Traits=Class,Swashbuckler Require="level >= 20"',
+    'Traits=Swashbuckler,Finisher,Fortune Require="level >= 20"',
+  'Inexhaustible Countermoves':'Traits=Swashbuckler Require="level >= 20"',
+  'Panache Paragon':'Traits=Swashbuckler Require="level >= 20"',
 
 /*
   // Archetype
@@ -9379,7 +8910,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
-  // Monk
+  // Oracle
   'Mystery':'Section=feature Note="1 selection"',
 
   // Sorcerer
@@ -9389,6 +8920,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Angelic':Pathfinder2E.FEATURES.Angelic,
   'Bloodline':Pathfinder2E.FEATURES.Bloodline,
   'Bloodline Paragon':Pathfinder2E.FEATURES['Bloodline Paragon'],
+  'Bloodline Spells':Pathfinder2E.FEATURES['Bloodline Spells'],
   // Defensive Robes as above
   'Demonic':
     Pathfinder2E.FEATURES.Demonic
@@ -12642,10 +12174,22 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
   if(type != 'spells')
     rules.addChoice(type, name, attrs);
   if(type == 'feats') {
-    type = attrs.includes('Ancestry') ? 'ancestryFeats' :
-           attrs.match(/Class|Archetype/) ? 'classFeats' : 'generalFeats';
+    type = 'generalFeats';
+    QuilvynUtils.getAttrValueArray(attrs, 'Traits').forEach(a => {
+      if(a == 'Archetype')
+        type = 'classFeats';
+      else if(a == 'Orc' ||
+              a in (rules.getChoices('heritages') ||{}) ||
+              a in (rules.getChoices('ancestrys') || {}))
+        type = 'ancestryFeats';
+      else if(a in (rules.getChoices('levels') || {}))
+        type = 'classFeats';
+    });
     rules.addChoice(type, name, attrs);
     rules.defineRule('feats.' + name, type + '.' + name, '=', null);
+    rules.defineRule('sum' + type.charAt(0).toUpperCase() + type.substring(1),
+      'feats.' + name, '+=', '1'
+    );
   }
   if(type == 'weapons' && attrs.includes('Advanced'))
     rules.addChoice('advancedWeapons', name, attrs);
