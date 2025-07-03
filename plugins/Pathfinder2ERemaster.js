@@ -9425,13 +9425,122 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('metamagic', 'spellshape'),
 
   // Swashbuckler
+  'Assured Evasion':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Reflex)",' +
+      '"Successes on Reflex saves are critical successes, critical Reflex failures are normal failures, and failed Reflex saves inflict half damage"',
   'Battledancer':
     'Section=feature,skill,skill ' +
     'Note=' +
       '"Has the Fascinating Performance feature",' +
-      '"Skill Trained (Performance",' +
+      '"Skill Trained (Performance)",' +
       '"Perform actions have the bravado trait"',
+  'Braggart':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Intimidation)",' +
+      '"Demoralize actions have the bravado trait"',
+  'Confident Evasion':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Reflex)",' +
+      '"Successes on Reflex saves are critical successes"',
+  'Confident Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Failed Strike inflicts half of normal precision damage"',
+  'Continuous Flair':
+    'Section=combat ' +
+    'Note="Stylish Combatant bonus applies during exploration"',
+  'Eternal Confidence':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Class Master (Swashbuckler)",' +
+      '"Finisher Strikes with appropriate weapons gain the Confident Finisher failure effect"',
+  'Exemplary Finisher (Battledancer)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher allows a Step as a free action"',
+  'Exemplary Finisher (Braggart)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher ends temporary Demoralize immunity"',
+  'Exemplary Finisher (Fencer)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher inflicts off-guard until the start of the next turn"',
+  'Exemplary Finisher (Gymnast)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher inflicts additional damage equal to double the number of damage dice"',
+  'Exemplary Finisher (Rascal)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher inflicts -10 Speed until the start of the next turn"',
+  'Exemplary Finisher (Rascal)':
+    'Section=combat ' +
+    'Note="Hitting a foe as part of a finisher inflicts -2 attacks on self until the start of the next turn"',
+  'Fencer':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Deception)",' +
+      '"Create A Distraction and Feint actions have the bravado trait"',
+  // Fortitude Expertise as above
+  // Greater Weapon Specialization as above
+  'Gymnast':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Grapple, Reposition, Shove, and Trip actions have the bravado trait",' +
+      '"Skill Trained (Athletics)"',
+  // Light Armor Expertise as above
+  // Light Armor Mastery as above
+  'Opportune Riposte':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Strikes or attempts to Disarm for in response to the triggering critical miss"',
+  'Panache':
+    'Section=combat ' +
+    'Note="Using bravado actions, gains panache that can be use to perform some finisher actions"',
+  // Perception Mastery as above
+  'Precise Strike':
+    'Section=combat ' +
+    'Note="Agile and finesse attack inflicts +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision for finisher Strikes"',
+  'Rascal':
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Dirty Trick feature",' +
+      '"Skill Trained (Thievery)",' +
+      '"Dirty Trick actions have the bravado trait"',
+  'Reinforced Ego':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will save are critical successes"',
+  'Stylish Combatant':
+    'Section=ability,ability,skill ' +
+    'Note=' +
+      '"+%V Speed",' +
+      '"+{5+5*((level+1)//4>?0)} Speed with panache",' +
+      '"+1 on bravado skills during combat"',
+  'Stylish Tricks':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feats (Acrobatics- or %{swashbucklerSkill}-related)",' +
+      '"+%V Skill Increase (Acrobatics or %{swashbucklerSkill})"',
+  'Swashbuckler Expertise':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Class Expert (Swashbuckler)",' +
+      '"Has increased Stylish Combatant effects"',
+  'Swashbuckler Feats':'Section=feature Note="%V selections"',
+  'Swashbuckler Skills':
+    'Section=skill Note="Skill Trained (Acrobatics; Select %V from any)"',
   "Swashbuckler's Style":'Section=feature Note="1 selection"',
+  // Weapon Expertise as above
+  // Weapon Mastery as above
+  // Weapon Specialization as above
+  'Wit':
+    'Section=feature,skill,skill ' +
+    'Note=' +
+      '"Has the Bon Mot feature",' +
+      '"Skill Trained (Diplomacy)",' +
+      '"Bon Mot actions have the bravado trait"',
 
   // General and Skill Feats
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
@@ -12712,6 +12821,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Elemental (Wood)', '=', '"bludgeoning"'
     );
   } else if(name == 'Swashbuckler') {
+    rules.defineRule('abilityNotes.stylishCombatant',
+      'classLevel', '=', 'Math.floor((level + 5) / 8) * 5'
+    );
+    rules.defineRule('skillNotes.swashbucklerSkills',
+      'intelligenceModifier', '=', 'source + 4'
+    );
     rules.defineRule('selectableFeatureCount.Swashbuckler (Style)',
       "featureNotes.swashbuckler'sStyle", '=', '1'
     );
