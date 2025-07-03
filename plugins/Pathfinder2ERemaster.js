@@ -3176,7 +3176,7 @@ Pathfinder2ERemaster.FEATS = {
   // Widen Spell as above
   // Cantrip Expansion as above
   'Divine Aegis':'Traits=Oracle,Divine Require="level >= 2"',
-  'Domain Acumen':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (%domain)':'Traits=Oracle Require="level >= 2"',
   'Meddling Futures':'Traits=Oracle,Cursebound,Divine Require="level >= 2"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
@@ -7391,7 +7391,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Reprepare Spell':
     'Section=magic ' +
     'Note="Can spend 10 min to prepare a previously-cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
-  "Archwizard's Might":'Section=magic Note="+1 10th level spell slot"',
+  "Archwizard's Might":Pathfinder2E.FEATURES["Archwizard's Might"],
   // Metamagic Mastery as above
   'Spell Combination':
     'Section=magic ' +
@@ -8911,7 +8911,235 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
   // Oracle
+  'Ancestors':'Section=magic Note="TODO"',
+  'Curse Of Ancestral Meddling':'Section=magic Note="TODO"',
+  'Curse Of The Mortal Warrior':'Section=magic Note="TODO"',
+  'Curse Of Living Death':'Section=magic Note="TODO"',
+  "Curse Of The Sky's Call":'Section=magic Note="TODO"',
+  'Curse Of Engulfing Flames':'Section=magic Note="TODO"',
+  'Curse Of Outpouring Life':'Section=magic Note="TODO"',
+  'Curse Of Torrential Knowledge':'Section=magic Note="TODO"',
+  'Curse Of Inclement Headwinds':'Section=magic Note="TODO"',
+  'Battle':'Section=magic Note="TODO"',
+  'Bones':'Section=magic Note="TODO"',
+  'Cosmos':'Section=magic Note="TODO"',
+  'Flames':'Section=magic Note="TODO"',
+  'Life':'Section=magic Note="TODO"',
+  'Lore':'Section=magic Note="TODO"',
+  'Tempest':'Section=magic Note="TODO"',
+  // Expert Spellcaster as above
+  'Divine Access':
+    'Section=magic ' +
+    'Note="Can learn 3 cleric spells from a deity with a shared domain"',
+  'Extreme Curse':'Section=magic Note="Can tolerate cursebound severity 4"',
+  'Greater Mysterious Resolve':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Legendary (Will)",' +
+      '"Successes on Will saves are critical successes, critical Will failures are normal failures, and failed Will saves inflict half damage"',
+  // Light Armor Expertise as above
+  'Major Curse':'Section=magic Note="Can tolerate cursebound severity 3"',
+  // Master Spellcaster as above
+  'Mysterious Resolve':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Success on Will saves are critical successes"',
   'Mystery':'Section=feature Note="1 selection"',
+  'Ocular Clarity':'Section=magic Note="Knows 2 10th-level divine spells"',
+  'Oracular Curse':'Section=feature Note="TODO"',
+  'Oracular Senses':'Section=skill Note="Perception Expert"',
+  'Oracle Feats':'Section=feature Note="%V selections"',
+  'Oracle Skills':
+    'Section=skill Note="Skill Trained(Religion; Choose %V from any)"',
+  'Oracle Spellcasting':
+    'Section=magic Note="Can learn spells from the divine tradition"',
+  "Premonition's Reflexes":'Section=save Note="Save Expert (Reflex)"',
+  'Revelation Spells':
+    'Section=magic Note="Has a focus pool with 1 Focus Point"',
+  // Signature Spells as above
+  // Weapon Expertise as above
+  // Weapon Specialization as above
+
+  'Foretell Harm':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per target per day once per rd"',
+  'Glean Lore':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Religion check gives accurate info or a clue about a desired topic on critical success, one true and one false bit of info on success, incorrect info on failure, and two bits of false info on critical failure"',
+  'Nudge The Scales':
+    'Action=1 ' +
+    'Section=magic,magic ' +
+    'Note=' +
+      '"R30\' Target regains %{level*2+2} Hit Points",' +
+      '"May gain void healing effects during daily prep"',
+  'Oracular Warning':
+    'Action=Free ' +
+    'Section=feature ' +
+    'Note="R20\' Gives allies +2 initiative, or +3 or +4 initiative with if cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min at the start of initiative"',
+  // Reach Spell as above
+  'Whispers Of Weakness':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="R60\' Reveals target weakness and its lowest saving throw and gives self +2 to next attack before the end of the turn once per target per day"',
+  // Widen Spell as above
+  // Cantrip Expansion as above
+  'Divine Aegis':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Gives self -1 saves vs. divine magical effects and +1 vs. non-divine until the start of the next turn"',
+  'Domain Acumen (Air)':
+    Pathfinder2E.FEATURES['Domain Initiate (Air)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Ambition)':
+    Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
+    .replace('Blind', 'Ignite')
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Cities)':
+    Pathfinder2E.FEATURES['Domain Initiate (Cities)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Confidence)':
+    Pathfinder2E.FEATURES['Domain Initiate (Confidence)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Creation)':
+    Pathfinder2E.FEATURES['Domain Initiate (Creation)']
+    .replace('Splash Of Art', 'Creative Splash')
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Darkness)':
+    Pathfinder2E.FEATURES['Domain Initiate (Darkness)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Death)':
+    Pathfinder2E.FEATURES['Domain Initiate (Death)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Destruction)':
+    Pathfinder2E.FEATURES['Domain Initiate (Destruction)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Dreams)':
+    Pathfinder2E.FEATURES['Domain Initiate (Dreams)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Earth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Earth)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Family)':
+    Pathfinder2E.FEATURES['Domain Initiate (Family)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Fate)':
+    Pathfinder2E.FEATURES['Domain Initiate (Fate)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Fire)':
+    Pathfinder2E.FEATURES['Domain Initiate (Fire)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Freedom)':
+    Pathfinder2E.FEATURES['Domain Initiate (Freedom)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Healing)':
+    Pathfinder2E.FEATURES['Domain Initiate (Healing)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Indulgence)':
+    Pathfinder2E.FEATURES['Domain Initiate (Indulgence)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Luck)':
+    Pathfinder2E.FEATURES['Domain Initiate (Luck)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Magic)':
+    Pathfinder2E.FEATURES['Domain Initiate (Magic)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Might)':
+    Pathfinder2E.FEATURES['Domain Initiate (Might)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Moon)':
+    Pathfinder2E.FEATURES['Domain Initiate (Moon)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Nature)':
+    Pathfinder2E.FEATURES['Domain Initiate (Nature)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Nightmares)':
+    Pathfinder2E.FEATURES['Domain Initiate (Nightmares)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Pain)':
+    Pathfinder2E.FEATURES['Domain Initiate (Pain)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Passion)':
+    Pathfinder2E.FEATURES['Domain Initiate (Passion)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Perfection)':
+    Pathfinder2E.FEATURES['Domain Initiate (Perfection)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Protection)':
+    Pathfinder2E.FEATURES['Domain Initiate (Protection)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Secrecy)':
+    Pathfinder2E.FEATURES['Domain Initiate (Secrecy)']
+    .replace('Forced', 'Whispering')
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Sun)':
+    Pathfinder2E.FEATURES['Domain Initiate (Sun)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Travel)':
+    Pathfinder2E.FEATURES['Domain Initiate (Travel)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Trickery)':
+    Pathfinder2E.FEATURES['Domain Initiate (Trickery)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Truth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Truth)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Tyranny)':
+    Pathfinder2E.FEATURES['Domain Initiate (Tyranny)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Undeath)':
+    Pathfinder2E.FEATURES['Domain Initiate (Undeath)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Water)':
+    Pathfinder2E.FEATURES['Domain Initiate (Water)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Wealth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Wealth)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Domain Acumen (Zeal)':
+    Pathfinder2E.FEATURES['Domain Initiate (Zeal)']
+    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+  'Meddling Futures':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Randomly gives self an additional Strike, Perception check or skill action, spell cast, or move action, with a bonus based on cursebound level"',
+  // Bespell Strikes as above
+  'Knowledge Of Shapes':'Section=feature Note="TODO"',
+  'Thousand Visions':'Section=feature Note="TODO"',
+  // TODO requires "initial revelation spell"
+  'Advanced Revelation':'Section=feature Note="TODO"',
+  'Gifted Power':'Section=feature Note="TODO"',
+  'Spiritual Sense':'Section=feature Note="TODO"',
+  // Steady Spellcasting as above
+  'Debilitating Dichotomy':'Section=feature Note="TODO"',
+  'Read Disaster':'Section=feature Note="TODO"',
+  'Surging Might':'Section=feature Note="TODO"',
+  'Water Walker':'Section=feature Note="TODO"',
+  // Quickened Casting as above
+  'Roll The Bones Of Fate':'Section=feature Note="TODO"',
+  'The Dead Walk':'Section=feature Note="TODO"',
+  'Trial By Skyfire':'Section=feature Note="TODO"',
+  'Waters Of Creation':'Section=feature Note="TODO"',
+  'Domain Fluency':'Section=feature Note="TODO"',
+  'Epiphany At The Crossroads':'Section=feature Note="TODO"',
+  // TODO require "initial revelation spell"
+  'Greater Revelation':'Section=feature Note="TODO"',
+  // Magic Sense as above
+  'Forestall Curse':'Section=feature Note="TODO"',
+  'Lighter Than Air':'Section=feature Note="TODO"',
+  'Mysterious Repertoire':'Section=feature Note="TODO"',
+  "Revelation's Focus":'Section=feature Note="TODO"',
+  // TODO require "any oracle mystery"
+  'Conduit Of Void and Vitality':'Section=feature Note="TODO"',
+  'Diverse Mystery':'Section=feature Note="TODO"',
+  'Portentous Spell':'Section=feature Note="TODO"',
+  'Blaze Of Revelation':'Section=feature Note="TODO"',
+  'Divine Effusion':'Section=feature Note="TODO"',
+  'Mystery Conduit':'Section=feature Note="TODO"',
+  'Oracular Providence':'Section=magic Note="+1 10th level spell slot"',
+  'Paradoxical Mystery':'Section=feature Note="TODO"',
 
   // Sorcerer
   'Aberrant':
@@ -12448,10 +12676,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.investigatorSkills',
       'intelligenceModifier', '=', '4 + source'
     );
-  } else if(name == 'Ranger') {
-    rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
-      'featureNotes.rangerKeyAttribute', '=', '1'
-    );
   } else if(name == 'Monk') {
     rules.defineRule('selectableFeatureCount.Monk (Key Attribute)',
       'featureNotes.monkKeyAttribute', '=', '1'
@@ -12460,8 +12684,22 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'featureNotes.qiTradition', '=', null
     );
   } else if(name == 'Oracle') {
+    rules.defineRule
+      ('magicNotes.expertSpellcaster', classLevel, '=', '"Divine"');
+    rules.defineRule
+      ('magicNotes.legendarySpellcaster', classLevel, '=', '"Divine"');
+    rules.defineRule
+      ('magicNotes.masterSpellcaster', classLevel, '=', '"Divine"');
     rules.defineRule('selectableFeatureCount.Oracle (Mystery)',
-      'featureNotes.mystery', '=', null
+      'featureNotes.mystery', '=', '1'
+    );
+    rules.defineRule
+      ('skillNotes.oracleSkills', 'intelligenceModifier', '=', '3 + source');
+    rules.defineRule
+      ('spellSlots.D10', 'magicNotes.oracularProvidence', '+', '1');
+  } else if(name == 'Ranger') {
+    rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
+      'featureNotes.rangerKeyAttribute', '=', '1'
     );
   } else if(name == 'Rogue') {
     rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
