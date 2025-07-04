@@ -4038,7 +4038,7 @@ Pathfinder2E.FEATURES = {
   'Quickened Casting':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Reduces the time required to cast a spell of level %1 or lower by 1 action once per day"',
+    'Note="Reduces the time required to cast a spell of level %{maxSpellLevel-2} or lower by 1 action once per day"',
   'Unusual Composition':
     'Action=1 ' +
     'Section=magic ' +
@@ -4059,7 +4059,7 @@ Pathfinder2E.FEATURES = {
     'Action=Free Section=magic Note="Sustains an active spell"',
   'Studious Capacity':
     'Section=magic ' +
-    'Note="Can cast 1 additional spell of level %1 or lower each day"',
+    'Note="Can cast 1 additional spell of level %{maxSpellLevel-1} or lower each day"',
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
@@ -4772,10 +4772,10 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Weapon Surge divine spell/Has a focus pool and 1 Focus Point"',
   'Harmful Font':
     'Section=magic ' +
-    'Note="Can cast <i>Harm</i> at level %V an additional %{charismaModifier+1} times per day"',
+    'Note="Can cast <i>Harm</i> at level %{maxSpellLevel} an additional %{charismaModifier+1} times per day"',
   'Healing Font':
     'Section=magic ' +
-    'Note="Can cast <i>Heal</i> at level %V an additional %{charismaModifier+1} times per day"',
+    'Note="Can cast <i>Heal</i> at level %{maxSpellLevel} an additional %{charismaModifier+1} times per day"',
   // Lightning Reflexes as above
   'Miraculous Spell':'Section=magic Note="Has 1 10th-level spell slot"',
   // Resolve as above
@@ -6830,7 +6830,7 @@ Pathfinder2E.FEATURES = {
   // Quickened Casting as above
   'Scroll Savant':
     'Section=magic ' +
-    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V during daily prep"',
+    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %{maxSpellLevel-2} during daily prep"',
   'Clever Counterspell':
     'Section=magic ' +
     'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
@@ -6839,7 +6839,7 @@ Pathfinder2E.FEATURES = {
   // Reflect Spell as above
   'Superior Bond':
     'Section=magic ' +
-    'Note="Can use Drain Bonded Item to cast another spell of up to level %V once per day"',
+    'Note="Can use Drain Bonded Item to cast another spell of up to level %{maxSpellLevel-2} once per day"',
   // Effortless Concentration as above
   'Spell Tinker':
     'Action=2 ' +
@@ -12593,6 +12593,10 @@ Pathfinder2E.magicRules = function(rules, spells) {
     rules.defineRule('spellDifficultyClass.' + t + '.1',
       'rank.' + t, '=', 'Pathfinder2E.RANK_NAMES[source]'
     );
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+      rules.defineRule
+        ('maxSpellLevel', 'spellSlots.' + t.charAt(0) + l, '^=', l);
+    });
   });
   // Define max focus points in a variable so that goodies can change it
   rules.defineRule('focusPointMaximum', 'features.Focus Pool', '=', '3');
@@ -13790,10 +13794,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.clericSkills', 'intelligenceModifier', '=', '2 + source');
     rules.defineRule('skillNotes.deity', 'deitySkill', '=', null);
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
-      rules.defineRule('magicNotes.harmfulFont', 'spellSlots.D' + l, '^=', l);
-      rules.defineRule('magicNotes.healingFont', 'spellSlots.D' + l, '^=', l);
-    });
     rules.defineRule('spellSlots.D10',
       'magicNotes.miraculousSpell', '=', 'null', // italics
       'magicNotes.makerOfMiracles', '+', '1'
@@ -14001,12 +14001,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     // default for, e.g., homebrew classes
     rules.defineRule
       ('combatNotes.weaponExpertise', '', '=', '"Simple Weapons"');
+    rules.defineRule('magicNotes.divineEvolution', 'maxSpellLevel', '=', null);
     rules.defineRule
       ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
       ('magicNotes.legendarySpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
+    rules.defineRule('magicNotes.primalEvolution', 'maxSpellLevel', '=', null);
     rules.defineRule('magicNotes.sorcererSpellcasting',
       'bloodlineTraditionsLowered', '=', null
     );
@@ -14042,13 +14044,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.O10', 'magicNotes.bloodlineParagon', '+', 'null'); // italics
     [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
-      rules.defineRule
-        ('magicNotes.divineEvolution', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('spellSlots.D' + l,
         'magicNotes.divineEvolution', '+', 'source==' + l + ' ? 1 : null'
       );
-      rules.defineRule
-        ('magicNotes.primalEvolution', 'spellSlots.P' + l, '^=', l);
       rules.defineRule('spellSlots.P' + l,
         'magicNotes.primalEvolution', '+', 'source==' + l + ' ? 1 : null'
       );
@@ -14076,12 +14074,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       "magicNotes.archwizard'sSpellcraft", '+', 'null', // italics
       "magicNotes.archwizard'sMight", '+', '1'
     );
-    [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
-      rules.defineRule
-        ('magicNotes.scrollSavant', 'spellSlots.A' + l, '^=', l - 2);
-      rules.defineRule
-        ('magicNotes.superiorBond', 'spellSlots.A' + l, '^=', l - 2);
-    });
     let schools =
       Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
       .map(x => x.replace(':Arcane School', ''))
@@ -14856,17 +14848,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'features.' + o, '=', '1'
       );
     });
-  } else if(name == 'Quickened Casting') {
-    rules.defineRule
-      ('magicNotes.quickenedCasting.1', 'features.Quickened Casting', '=', '0');
-    [3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
-      rules.defineRule('magicNotes.quickenedCasting.1',
-        'spellSlots.A' + l, '^', l - 2,
-        'spellSlots.D' + l, '^', l - 2,
-        'spellSlots.O' + l, '^', l - 2,
-        'spellSlots.P' + l, '^', l - 2
-      );
-    });
   } else if(name.match(/^Radiant Blade (Master|Spirit)$/)) {
     rules.defineRule('combatNotes.bladeAlly',
       'combatNotes.' + prefix, '=', 'null' // italics
@@ -14944,14 +14925,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         ('magicNotes.' + noteName + '-2', 'levels.Sorcerer', '?', null);
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
-  } else if(name == 'Studious Capacity') {
-    rules.defineRule
-      ('magicNotes.studiousCapacity.1', 'features.Studious Capacity', '=', '0');
-    [2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(l => {
-      rules.defineRule('magicNotes.studiousCapacity.1',
-        'spellSlots.O' + l, '^', l - 1
-      );
-    });
   } else if(name == 'Ubiquitous Snares') {
     rules.defineRule('skillNotes.snareSpecialist',
       'skillNotes.ubiquitousSnares', '=', 'null' // italics
