@@ -6833,7 +6833,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %{maxSpellLevel-2} during daily prep"',
   'Clever Counterspell':
     'Section=magic ' +
-    'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
+    'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares with it a trait other than concentrate, manipulate, or a tradition"',
   // Magic Sense as above
   'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Reflect Spell as above
@@ -6844,7 +6844,7 @@ Pathfinder2E.FEATURES = {
   'Spell Tinker':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
+    'Note="Alters a choice of an ongoing effect from a spell cast on self, reducing its remaining duration by half"',
   'Infinite Possibilities':
     'Section=magic ' +
     'Note="Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower"',
