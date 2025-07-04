@@ -9108,7 +9108,6 @@ Pathfinder2ERemaster.FEATURES = {
   // Bespell Strikes as above
   'Knowledge Of Shapes':'Section=feature Note="TODO"',
   'Thousand Visions':'Section=feature Note="TODO"',
-  // TODO requires "initial revelation spell"
   'Advanced Revelation':'Section=feature Note="TODO"',
   'Gifted Power':'Section=feature Note="TODO"',
   'Spiritual Sense':'Section=feature Note="TODO"',
@@ -9124,14 +9123,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Waters Of Creation':'Section=feature Note="TODO"',
   'Domain Fluency':'Section=feature Note="TODO"',
   'Epiphany At The Crossroads':'Section=feature Note="TODO"',
-  // TODO require "initial revelation spell"
   'Greater Revelation':'Section=feature Note="TODO"',
   // Magic Sense as above
   'Forestall Curse':'Section=feature Note="TODO"',
   'Lighter Than Air':'Section=feature Note="TODO"',
   'Mysterious Repertoire':'Section=feature Note="TODO"',
   "Revelation's Focus":'Section=feature Note="TODO"',
-  // TODO require "any oracle mystery"
   'Conduit Of Void and Vitality':'Section=feature Note="TODO"',
   'Diverse Mystery':'Section=feature Note="TODO"',
   'Portentous Spell':'Section=feature Note="TODO"',
@@ -9541,6 +9538,206 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Bon Mot feature",' +
       '"Skill Trained (Diplomacy)",' +
       '"Bon Mot actions have the bravado trait"',
+
+  'Disarming Flair':'Section=combat Note="Disarm action has the bravado trait"',
+  'Elegant Buckler':
+    'Section=combat ' +
+    'Note="Raise A Shield gives +2 Armor Class, and a foe critical miss while a shield is raised gives panache until the end of the next turn"',
+  'Extravagant Parry':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="When wielding a one-handed weapon, gives +1 Armor Class, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache util the end of the next turn"',
+  'Flashy Dodge':
+    'Action=Reaction ' +
+    'Section=feature ' +
+    'Note="Gives +2 Armor Class vs. the triggering attack; a miss gives panache"',
+  'Flying Blade':
+   'Section=combat ' +
+   'Note="Can apply precision damage bonuses to ranged Strikes within the first range increment of thrown weapons"',
+  'Focused Fascination':
+    'Section=skill ' +
+    'Note="Fascinating Performance used with a single target fascinates on a normal success"',
+  'Goading Feint':
+    'Section=combat ' +
+    'Note="Successful Feint can instead inflict -2 to next attack roll vs. self before the end of its next turn, or to all attacks vs. self on a critical success"',
+  'One For All':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Counts as preparation to Aid an ally within 30\'; the subsequent Aid can use Diplomacy and has the bravado trait"',
+  'Plummeting Roll':
+    'Action=Reaction ' +
+    'Section=feature ' +
+    'Note="Takes no damage from the triggering fall of at least 10\' and can Stride up to %{speed//2}\'"',
+  // You're Next as above
+  'After You':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Gains panache by going taking last position in initiative"',
+  'Antagonize':
+    'Section=combat ' +
+    'Note="Successful Demoralize prevents lowering frightened condition below 1 until target attacks self or moves out of sight for 1 rd"',
+  'Brandishing Draw':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Draws and Strikes with a weapon"',
+  'Charmed Life':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="+2 on the triggering save, and success gives panache until the end of the next turn"',
+  'Enjoy The Show':
+    'Section=combat ' +
+    'Note="Can use Perform to inflict -1 attacks against others than self until the end of the target\'s next turn, or -2 on a critical success; critical failure instead gives target +1 attacks against self"',
+  'Finishing Follow-Through':
+    'Section=combat ' +
+    'Note="Gains panache whenever a finisher brings the target to 0 HP"',
+  'Retreating Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strike allows a Step as a free action on failure"',
+  // Tumble Behind as above
+  'Unbalancing Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Strike inflicts off-guard until the end of the target\'s next turn"',
+  'Dastardly Dash':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strides up to %{speed//2}\'; can attempt a Trip%{$\'features.Dirty Trick\'?\'or Dirty Trick\':\'\'} during the move"',
+  'Even The Odds':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Gains panache at the beginning of the turn when flanked once per 10 min"',
+  'Flamboyant Athlete':
+    'Section=skill ' +
+    'Note="Panache gives %{speed//2}\' climb and swim Speeds, -10 jump DCs, and 5\' and %{speed>30?20:15}\' vertical and horizontal Leaps"',
+  "Guardian's Reflection":
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="When wielding a one-handed melee weapon and one hand free, gives an ally within reach +2 Armor Class against the triggering attack and gives self panache until the end of the next turn"',
+  'Impaling Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike against an adjacent foe and one behind it"',
+  'Leading Dance':
+    'Action=1 ' +
+    'Section=feature ' +
+    'Note="Successful Performance vs. Will moves self and an adjacent foe 5\' in the same direction, or 10\' on a critical success; critical failure inflicts prone on self"',
+  'Swaggering Initiative':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="+2 initiative and allows drawing a weapon; acting first in combat gives panache"',
+  'Twirling Throw':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Thrown weapon attack ignores 2nd and 3rd range increment penalties; weapon returns except on a critical failure"',
+  'Agile Maneuvers':
+    'Section=combat ' +
+    'Note="Reduces the multiple attack penalty for Disarm, Grapple, Reposition, Shove, and Trip to -4 and -8, or -3 and -6 for an agile weapon with panache"',
+  'Combination Finisher':
+    'Section=combat ' +
+    'Note="Reduces the multiple attack penalty for finisher Strikes to -4 and -8, or -3 and -6 for an agile weapon"',
+  'Precise Finisher':
+   'Section=combat ' +
+   'Note="Confident Finisher inflicts full precision damage on failure"',
+  // Reactive Strike as above
+  'Vexing Tumble':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Acrobatics vs. Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard on foes until the end of the turn, and critical failure ends move when within a foe\'s reach"',
+  'Bleeding Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Slashing or piercing attack also inflicts persistent bleed damage equal to precise finisher damage"',
+  'Distracting Toss':
+    'Action=2 ' +
+    'Section=feature ' +
+    'Note="Successful Feint vs. a target within 30\' inflicts off-guard and allows a thrown weapon Strike"',
+  'Dual Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes 2 attacks against different foes at the current multiple attack penalty"',
+  'Flashy Roll':
+    'Section=save ' +
+    'Note="Flashy Dodge can also be used with Reflex saves; critically failure on the attack or critical success on the save allows a 10\' Stride"',
+  'Stunning Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Strike inflicts stunned 1 (<b>save Fortitude</b> prevents target reactions until its next turn; critical success negates; critical failure inflicts stunned 3)"',
+  'Vivacious Bravado':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gaining panache gives %{level+charismaModifier} temporary Hit Points until the start of the next turn"',
+  'Buckler Dance':'Section=combat Note="Constantly has buckler raised"',
+  'Derring-Do':
+    'Section=combat ' +
+    'Note="With panache, can use the better of 2 rolls on stylish combatant actions"',
+  'Reflexive Riposte':
+    'Section=combat ' +
+    'Note="Can use an additional reaction for Opportune Riposte each turn"',
+  'Stumbling Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strike pushes the target 5\', or 10\' on a critical hit"',
+  'Switcheroo':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="With panache, can Reposition an adjacent foe to suffer the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache"',
+  'Targeting Finisher':
+    'Action=1 ' +
+    'Section=feature ' +
+    'Note="Successful targeted attack on a foe arm, head, or legs inflcits enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; effect extends for 1 min at half severity on a critical hit"',
+  'Cheat Death':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed in response to triggering damage that would reduce self to 0 Hit Points"',
+  'Get Used To Disappointment':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="At the beginning of a turn, attempts to Demoralize a target within 30\' who failed an attack or skill test vs. self"',
+  'Mobile Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes a Strike after a Stride"',
+  'The Bigger They Are':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Tumble Through a larger creature\'s space inflicts weakness %{level//2} against to precision damage from next self attack until the end of the next turn, or against all self self attacks on a critical success; critical failure inflicts prone on self"',
+  'Flamboyant Leap':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Attempts a one-action finisher during a Leap or Jump, then falls"',
+  'Impossible Riposte':
+    'Section=combat ' +
+    'Note="Can use Opportune Riposte against ranged attacks, with the subsequent Strike inflicting the same damage type as the attack"',
+  'Perfect Finisher':
+    'Action=1 Section=combat Note="Strike uses the better of 2 rolls"',
+  'Deadly Grace':
+    'Section=combat ' +
+    'Note="Critical hit with an agile or finesse melee weapon gains the deadly d8 trait, or inflicts double the damage dice with a deadly weapon"',
+  'Felicitous Riposte':
+    'Section=combat Note="Opportune Riposte uses the better of two rolls"',
+  'Revitalizing Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strike gives self an allies within 30\' %{level//2} temporary Hit Points; failure gives these only to self"',
+  'Incredible Luck':
+    'Section=save Note="Charmed life uses the better of two rolls"',
+  'Lethal Finisher':
+    'Section=combat ' +
+    'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inficts 18d6 HP)"',
+  'Parry And Riposte':
+    'Section=combat ' +
+    'Note="While benefitting from the parry weapon Armor Class bonus or Extravagant Parry, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn"',
+  'Illimitable Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Steps and attempts a single-action finisher Strike as a bravado action; regaining panache allows another finisher"',
+  'Inexhaustible Countermoves':
+    'Section=combat ' +
+    'Note="Gains a reaction at the start of each foe turn that can be for an Opportune Riposte%{$\'features.Reactive Strike\'?\' or Reactive Strike\':\'\'}"',
+  'Panache Paragon':
+    'Section=combat ' +
+    'Note="Permanently quickened; can use the extra action only to perform a bravado action"',
 
   // General and Skill Feats
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
