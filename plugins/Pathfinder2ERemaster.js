@@ -112,6 +112,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     .replaceAll(/Heritage Human/g, 'Human'),
   'Leshy':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Intelligence)",' +
@@ -131,6 +132,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Leshy,Plant',
   'Orc':
     'HitPoints=10 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Choose 2 from any)",' +
       '"1:Darkvision","1:Ancestry Feats","1:Orc Heritage" ' +
@@ -147,6 +149,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
   // Core 2
   'Catfolk':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Charisma; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
@@ -164,6 +167,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Catfolk,Humanoid',
   'Hobgoblin':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Constitution; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
@@ -179,6 +183,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Hobgoblin,Humanoid',
   'Kholo':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Strength; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Wisdom)",' +
@@ -195,6 +200,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Kholo,Humanoid',
   'Kobold':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Charisma; Choose 1 from any)",' +
       '"1:Attribute Flaw (Constitution)",' +
@@ -212,6 +218,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Humanoid,Kobold',
   'Lizardfolk':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Strength; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Intelligence)",' +
@@ -229,6 +236,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Humanoid,Lizardfolk',
   'Ratfolk':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Attribute Flaw (Strength)",' +
@@ -247,6 +255,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Humanoid,Ratfolk',
   'Tengu':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Choose 1 from any)",' +
       '"1:Low-Light Vision",' +
@@ -263,6 +272,7 @@ Pathfinder2ERemaster.ANCESTRIES = {
     'Traits=Humanoid,Tengu',
   'Tripkee':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Attribute Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Attribute Flaw (Strength)",' +
@@ -4043,7 +4053,6 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Rock Dwarf']
     .replace('Shove', 'Reposition, Shove')
     .replace('knock prone', 'move or knock prone'),
-  'Slow':Pathfinder2E.FEATURES.Slow,
   'Strong-Blooded Dwarf':Pathfinder2E.FEATURES['Strong-Blooded Dwarf'],
 
   'Dwarven Doughtiness':
@@ -4069,30 +4078,29 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Rock Runner']
     .replace('flat-footed', 'off-guard'),
   // Changed from Stonecunning
+  // TODO Has Specialty Crafting (Stonemasonry) if already trained in Crafting
   "Stonemason's Eye":
     Pathfinder2E.FEATURES.Stonecunning
     .replace('Section=', 'Section=skill,')
     .replace('Note=', 'Note="Skill Trained (Crafting)",')
-    .replace(' -2', ''),
+    .replace(' -2', ' +0'),
   'Unburdened Iron':Pathfinder2E.FEATURES['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATURES['Boulder Roll'],
   'Defy The Darkness':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Can use Darkvision in magical darkness",' +
-      '"Cannot use darkness magic"',
+    'Section=feature ' +
+    'Note="Can use Darkvision in magical darkness, but cannot use magic or abilities with the darkness trait"',
   'Dwarven Reinforcement':
     'Section=skill ' +
     'Note="Can use 1 hr work to give an item +%{rank.Crafting<3?1:rank.Crafting<4?2:3} Hardness for 24 hr"',
   'Echoes In Stone':
     'Action=1 ' +
     'Section=feature ' +
-    'Note="Gives 20\' imprecise tremorsense until the start of the next turn when standing on earth or stone"',
+    'Note="Gives 20\' imprecise tremorsense when standing on earth or stone until the start of the next turn"',
   "Mountain's Stoutness":Pathfinder2E.FEATURES["Mountain's Stoutness"],
   'Stone Bones':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful DC 17 flat check turns a critical physical hit into a normal hit"',
+    'Note="Successful DC 17 flat check turns a physical critical hit into a normal hit"',
   'Stonewalker':
     Pathfinder2E.FEATURES.Stonewalker
     .replace('Stonecunning', "Stonemason's Eye")
@@ -4111,14 +4119,13 @@ Pathfinder2ERemaster.FEATURES = {
   'Stonewall':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone, once per day"',
+    'Note="Petrifies self until the end of the current turn, negating the damage from the triggering effect and subsequent effects that would not affect stone, once per day"',
 
   // Elf
   'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Elf Heritage':Pathfinder2E.FEATURES['Elf Heritage'],
-  'Fast':Pathfinder2E.FEATURES.Fast,
   'Low-Light Vision':Pathfinder2E.FEATURES['Low-Light Vision'],
   'Seer Elf':Pathfinder2E.FEATURES['Seer Elf'],
   // Changed
@@ -12964,6 +12971,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
   if(type == 'Ancestry') {
     Pathfinder2ERemaster.ancestryRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
+      QuilvynUtils.getAttrValue(attrs, 'Speed'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
@@ -13139,16 +13147,16 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
 
 /*
  * Defines in #rules# the rules associated with ancestry #name#. #hitPoints#
- * gives the number of HP granted at level 1, #features# and #selectables# list
- * associated automatic and selectable features, #languages# lists languages
- * automatically known by characters with the ancestry, and #traits# lists any
- * traits associated with it.
+ * gives the number of HP granted at level 1 and #speed# the speed, #features#
+ * and #selectables# list associated automatic and selectable features,
+ * #languages# lists languages automatically known by characters with the
+ * ancestry, and #traits# lists any traits associated with it.
  */
 Pathfinder2ERemaster.ancestryRules = function(
-  rules, name, hitPoints, features, selectables, languages, traits
+  rules, name, hitPoints, speed, features, selectables, languages, traits
 ) {
   Pathfinder2E.ancestryRules
-    (rules, name, hitPoints, features, selectables, languages, traits);
+    (rules, name, hitPoints, speed, features, selectables, languages, traits);
   let prefix = name.charAt(0) + name.substring(1).replaceAll(' ', '');
   selectables = rules.getChoices('selectableFeatures');
   // This duplicates code in heritageRules; replicating it here ensures that

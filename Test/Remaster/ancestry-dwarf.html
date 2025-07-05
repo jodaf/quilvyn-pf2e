@@ -22,7 +22,7 @@ var attributes = {
   "selectableFeatures.Dwarf - Death Warden Dwarf":1, "selectableFeatures.Dwarf - Forge Dwarf":1, 
   "selectableFeatures.Dwarf - Rock Dwarf":1, "selectableFeatures.Dwarf - Strong-Blooded Dwarf":1, 
   "selectableFeatures.Fighter - Dexterity":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Cavern Lore":1, 
+  "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Crafting":1, 
   "skillIncreases.Society":1, "skillIncreases.Underground Lore":1, "weapons.Light Pick":1, 
   "weapons.Longspear":1, "weapons.Shield Boss":1
 };
@@ -67,8 +67,6 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Slow: -5 Speed</i></td>
-    </tr><tr style="text-align:center">
       <td><i>Unburdened Iron: Suffers no Speed penalty from armor</i></td>
     </tr><tr style="text-align:center">
       <td>Rock Runner: Moves normally over difficult terrain caused by stone or earth</td>
@@ -95,7 +93,7 @@ var attributes = {
         <td><b>Feats</b>: Boulder Roll; Defy The Darkness; Dwarven Doughtiness; Dwarven Lore; Dwarven Reinforcement; Dwarven Weapon Familiarity; Echoes In Stone; Exacting Strike; March The Mines; Mountain Strategy; Mountain's Stoutness; Rock Runner; Stone Bones; Stonegate; Stonemason's Eye; Stonewalker; Stonewall; Telluric Power; Unburdened Iron</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
-        <td><b>Dwarf Features</b>: Ancestry Feats; Ancient-Blooded Dwarf; Attribute Boost (Constitution; Wisdom; Choose 1 from any); Attribute Flaw (Charisma); Clan Dagger; Darkvision; Death Warden Dwarf; Dwarf Heritage; Forge Dwarf; Rock Dwarf; Slow; Strong-Blooded Dwarf</td>
+        <td><b>Dwarf Features</b>: Ancestry Feats; Ancient-Blooded Dwarf; Attribute Boost (Constitution; Wisdom; Choose 1 from any); Attribute Flaw (Charisma); Clan Dagger; Darkvision; Death Warden Dwarf; Dwarf Heritage; Forge Dwarf; Rock Dwarf; Strong-Blooded Dwarf</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -115,9 +113,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr><tr style="text-align:center">
-        <td>Defy The Darkness: Can use Darkvision in magical darkness</td>
+        <td>Defy The Darkness: Can use Darkvision in magical darkness, but cannot use magic or abilities with the darkness trait</td>
       </tr><tr style="text-align:center">
-        <td>Echoes In Stone: <b>(1)</b> Gives 20' imprecise tremorsense until the start of the next turn when standing on earth or stone</td>
+        <td>Echoes In Stone: <b>(1)</b> Gives 20' imprecise tremorsense when standing on earth or stone until the start of the next turn</td>
       </tr></table>
 </td>
     </tr></table>
@@ -131,32 +129,32 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +4 (dexterity; trained)</td>
-      <td>Diplomacy: +0 (charisma; untrained)</td>
-      <td>Religion: +5 (wisdom; trained)</td>
-    </tr><tr style="text-align:left">
-      <td>Arcana: +1 (intelligence; untrained)</td>
       <td>Dwarven Lore: +4 (intelligence; trained)</td>
       <td>Scribing Lore: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Architecture Lore: +4 (intelligence; trained)</td>
+      <td>Arcana: +1 (intelligence; untrained)</td>
       <td>Intimidation: +0 (charisma; untrained)</td>
       <td>Society: +4 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +2 (strength; trained)</td>
+      <td>Architecture Lore: +4 (intelligence; trained)</td>
       <td>Medicine: +2 (wisdom; untrained)</td>
       <td>Stealth: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Cavern Lore: +4 (intelligence; trained)</td>
+      <td>Athletics: +2 (strength; trained)</td>
       <td>Nature: +2 (wisdom; untrained)</td>
       <td>Survival: +5 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; trained)</td>
+      <td>Crafting: +6 (intelligence; expert)</td>
       <td>Occultism: +1 (intelligence; untrained)</td>
       <td>Thievery: +1 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +0 (charisma; untrained)</td>
       <td>Performance: +0 (charisma; untrained)</td>
       <td>Underground Lore: +4 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Diplomacy: +0 (charisma; untrained)</td>
+      <td>Religion: +5 (wisdom; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -184,7 +182,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Rock Runner: Does not suffer off-guard when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Stonemason's Eye: +2 Perception to detect unusual stonework, and automatically attempts a check to notice it</td>
+      <td>Stonemason's Eye: +2 Perception to detect unusual stonework, and automatically attempts a +0 check to notice it</td>
     </tr><tr style="text-align:center">
       <td>Stonewalker: Can find unusual stonework and stonework traps that require legendary Perception</td>
     </tr><tr style="text-align:center">
@@ -246,7 +244,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Stone Bones: <b>(R)</b> Successful DC 17 flat check turns a critical physical hit into a normal hit</td>
+        <td>Stone Bones: <b>(R)</b> Successful DC 17 flat check turns a physical critical hit into a normal hit</td>
       </tr></table>
 </td>
     </tr></table>
@@ -266,7 +264,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Forge Dwarf: Has fire resistance 1 and treats environmental heat as 1 step less extreme</td>
       </tr><tr style="text-align:center">
-        <td>Stonewall: <b>(R)</b> Petrifies self until the end of the turn, negating damage from the triggering effect and subsequent effects that would not affect stone, once per day</td>
+        <td>Stonewall: <b>(R)</b> Petrifies self until the end of the current turn, negating the damage from the triggering effect and subsequent effects that would not affect stone, once per day</td>
       </tr><tr style="text-align:center">
         <td>Strong-Blooded Dwarf: Has poison resistance 1 and reduces poison stage by 2 (virulent 1) with a successful save vs. poison, or by 3 (virulent 2) with a critical success</td>
       </tr></table>
@@ -303,8 +301,6 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Stonewalker: Knows the One With Stone divine innate spell; can cast it at 3rd rank once per day</i></td>
     </tr><tr style="text-align:center">
-      <td>Defy The Darkness: Cannot use darkness magic</td>
-    </tr><tr style="text-align:center">
       <td>Telluric Power: Melee Strikes vs. a foe standing on the same earth or stone surface inflict additional damage equal to the number of weapon damage dice</td>
     </tr></table>
 </td>
@@ -325,7 +321,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dwarf Heritage Allocation: 1 available vs. 5 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Dwarven Reinforcement Feat: Requires level (currently 1) >= 5 and crafting rank (currently 1) >= 2</td>
+        <td>Dwarven Reinforcement Feat: Requires level (currently 1) >= 5 and crafting rank (currently 2) >= 2</td>
       </tr><tr style="text-align:center">
         <td>Echoes In Stone Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">
