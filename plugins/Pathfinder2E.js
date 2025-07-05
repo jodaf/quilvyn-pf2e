@@ -16009,6 +16009,7 @@ Pathfinder2E.choiceEditorElements = function(rules, type) {
   if(type == 'Ancestry')
     result.push(
       ['HitPoints', 'Hit Points', 'select-one', ['4', '6', '8', '10', '12']],
+      ['Speed', 'Speed', 'text', [3]],
       ['Features', 'Features', 'text', [60]],
       ['Selectables', 'Selectables', 'text', [60]],
       ['Languages', 'Languages', 'text', [30]],
