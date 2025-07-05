@@ -135,8 +135,8 @@ Pathfinder2E.ALIGNMENTS = {
 Pathfinder2E.ANCESTRIES = {
   'Dwarf':
     'HitPoints=10 ' +
+    'Speed=20 ' +
     'Features=' +
-      '1:Slow,' +
       '"1:Ability Boost (Constitution; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Charisma)",' +
       '1:Darkvision,"1:Clan Dagger","1:Ancestry Feats","1:Dwarf Heritage" ' +
@@ -150,8 +150,8 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Dwarf,Humanoid',
   'Elf':
     'HitPoints=6 ' +
+    'Speed=30 ' +
     'Features=' +
-      '1:Fast,' +
       '"1:Ability Boost (Dexterity; Intelligence; Choose 1 from any)",' +
       '"1:Ability Flaw (Constitution)",' +
       '"1:Low-Light Vision","1:Ancestry Feats","1:Elf Heritage" ' +
@@ -165,6 +165,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Elf,Humanoid',
   'Gnome':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Constitution; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
@@ -182,6 +183,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Gnome,Humanoid',
   'Goblin':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Charisma; Dexterity; Choose 1 from any)",' +
       '"1:Ability Flaw (Wisdom)",' +
@@ -196,6 +198,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Goblin,Humanoid',
   'Halfling':
     'HitPoints=6 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Dexterity; Wisdom; Choose 1 from any)",' +
       '"1:Ability Flaw (Strength)",' +
@@ -210,6 +213,7 @@ Pathfinder2E.ANCESTRIES = {
     'Traits=Humanoid,Halfling',
   'Human':
     'HitPoints=8 ' +
+    'Speed=25 ' +
     'Features=' +
       '"1:Ability Boost (Choose 2 from any)",' +
       '"1:Ancestry Feats","1:Human Heritage" ' +
@@ -2993,7 +2997,6 @@ Pathfinder2E.FEATURES = {
   'Rock Dwarf':
     'Section=combat ' +
     'Note="+2 DC vs. Shove, Trip, and magical knock prone, and reduces any forced move distance of 10\' or more by half"',
-  'Slow':'Section=ability Note="-5 Speed"',
   'Strong-Blooded Dwarf':
     'Section=save ' +
     'Note=' +
@@ -3049,7 +3052,6 @@ Pathfinder2E.FEATURES = {
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Cavern Elf':'Section=feature Note="Has the Darkvision feature"',
   'Elf Heritage':'Section=feature Note="1 selection"',
-  'Fast':'Section=ability Note="+5 Speed"',
   'Low-Light Vision':'Section=feature Note="Has normal vision in dim light"',
   'Seer Elf':
     'Section=magic,skill ' +
@@ -12318,7 +12320,6 @@ Pathfinder2E.abilityRules = function(rules, abilities) {
   );
   rules.defineRule('encumberedBulk', 'strengthModifier', '=', '5 + source');
   rules.defineRule('maximumBulk', 'strengthModifier', '=', '10 + source');
-  rules.defineRule('speed', '', '=', '25');
   rules.defineRule
     ('validationNotes.maximumInitialAbility', 'level', '?', 'source == 1');
 
@@ -12480,7 +12481,7 @@ Pathfinder2E.identityRules = function(
 ) {
 
   QuilvynUtils.checkAttrTable(alignments, []);
-  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Traits']);
+  QuilvynUtils.checkAttrTable(ancestries, ['Features', 'Selectables', 'HitPoints', 'Languages', 'Speed', 'Traits']);
   QuilvynUtils.checkAttrTable(backgrounds, ['Features', 'Selectables']);
   QuilvynUtils.checkAttrTable
     (classes, ['HitPoints', 'Ability', 'Attribute', 'Features', 'Selectables', 'SpellSlots']);
@@ -12740,6 +12741,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Ancestry') {
     Pathfinder2E.ancestryRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'HitPoints'),
+      QuilvynUtils.getAttrValue(attrs, 'Speed'),
       QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables'),
       QuilvynUtils.getAttrValueArray(attrs, 'Languages'),
@@ -13004,13 +13006,13 @@ Pathfinder2E.alignmentRules = function(rules, name) {
 
 /*
  * Defines in #rules# the rules associated with ancestry #name#. #hitPoints#
- * gives the number of HP granted at level 1, #features# and #selectables# list
- * associated automatic and selectable features, #languages# lists languages
- * automatically known by characters with the ancestry, and #traits# lists any
- * traits associated with it.
+ * gives the number of HP granted at level 1 and #speed# the speed, #features#
+ * and #selectables# list associated automatic and selectable features,
+ * #languages# lists languages automatically known by characters with the
+ * ancestry, and #traits# lists any traits associated with it.
  */
 Pathfinder2E.ancestryRules = function(
-  rules, name, hitPoints, features, selectables, languages, traits
+  rules, name, hitPoints, speed, features, selectables, languages, traits
 ) {
 
   if(!name) {
@@ -13018,6 +13020,9 @@ Pathfinder2E.ancestryRules = function(
     return;
   }
   if(typeof hitPoints != 'number') {
+    console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
+  }
+  if(typeof speed != 'number') {
     console.log('Bad hitPoints "' + hitPoints + '" for ancestry ' + name);
   }
   if(!Array.isArray(features)) {
@@ -13056,6 +13061,7 @@ Pathfinder2E.ancestryRules = function(
     if(l != 'any')
       rules.defineRule('languages.' + l, ancestryLevel, '=', '1');
   });
+  rules.defineRule('speed', ancestryLevel, '=', speed);
 
   let boostFeature =
     features.filter(x => x.match(/(Ability|Attribute) Boost/))[0];
