@@ -13862,12 +13862,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.secondPathToPerfection', '+', '1'
     );
     rules.defineRule('magicNotes.gracefulLegend',
-      'magicNotes.kiTradition(Divine)', '=', '"Divine"',
-      'magicNotes.kiTradition(Occult)', '=', '"Occult"'
+      'features.Ki Tradition (Divine)', '=', '"Divine"',
+      'features.Ki Tradition (Occult)', '=', '"Occult"'
     );
     rules.defineRule('magicNotes.monkExpertise',
-      'magicNotes.kiTradition(Divine)', '=', '"Divine"',
-      'magicNotes.kiTradition(Occult)', '=', '"Occult"'
+      'features.Ki Tradition (Divine)', '=', '"Divine"',
+      'features.Ki Tradition (Occult)', '=', '"Occult"'
     );
     rules.defineRule('selectableFeatureCount.Monk (Ki Tradition)',
       'featureNotes.kiTradition', '=', null
@@ -13885,11 +13885,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('skillNotes.monkSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule('speed', 'abilityNotes.incredibleMovement.1', '+', null);
     rules.defineRule('spellModifierDivine.Monk',
-      'magicNotes.kiTradition(Divine)', '?', null,
+      'features.Ki Tradition (Divine)', '?', null,
       'wisdomModifier', '=', null
     );
     rules.defineRule('spellModifierOccult.Monk',
-      'magicNotes.kiTradition(Occult)', '?', null,
+      'features.Ki Tradition (Occult)', '?', null,
       'wisdomModifier', '=', null
     );
     rules.defineRule
