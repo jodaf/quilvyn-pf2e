@@ -7790,12 +7790,19 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="TODO"',
   // Medium Armor Expertise as above
   'Medium Armor Mastery':Pathfinder2E.FEATURES['Medium Armor Mastery'],
-  'Mutagenist':Pathfinder2E.FEATURES.Mutagenist,
+  // Effects have changed
+  'Mutagenist':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Using a mutagen gives %{level//2+(intelligenceModifier>?0)} temporary Hit Points for 1 min or until the mutagen expires once per min",' +
+      '"Knows the formulas for 2 common 1st-level mutagens"',
   // Perception Expertise as above
   'Powerful Alchemy':Pathfinder2E.FEATURES['Powerful Alchemy'],
   'Toxicologist':
-    'Section=feature ' +
-    'Note="TODO"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead",' +
+      '"Knows the formulas for 2 common 1st-level alchemical poisons"',
   'Quick Alchemy':
     Pathfinder2E.FEATURES['Quick Alchemy']
     .replace('batches of infused reagents', 'versatile vials'),
@@ -9128,8 +9135,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Randomly gives self an additional Strike, Perception check or skill action, spell cast, or move action, with a bonus based on cursebound level"',
   // Bespell Strikes as above
-  'Knowledge Of Shapes':'Section=feature Note="TODO"',
-  'Thousand Visions':'Section=feature Note="TODO"',
+  'Knowledge Of Shapes':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Uses Reach Spell or Widen Spell"',
+  'Thousand Visions':
+    'Action=Free ' +
+    'Section=skill ' +
+    'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check and does not suffer off-guard from hidden creatures for 1 min"',
   'Advanced Revelation':'Section=feature Note="TODO"',
   'Gifted Power':'Section=feature Note="TODO"',
   'Spiritual Sense':'Section=feature Note="TODO"',
