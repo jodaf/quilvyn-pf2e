@@ -3214,7 +3214,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"level >= 10",' +
       '"features.Life || features.Tempest"',
-  'Domain Fluency':
+  'Domain Fluency (%domain)':
     'Traits=Oracle ' +
     'Require=' +
       '"level >= 12",' +
@@ -7787,7 +7787,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Greater Field Discovery (Mutagenist)'],
   'Greater Field Discovery (Toxicologist)':
     'Section=feature ' +
-    'Note="TODO"',
+    'Note="Infused injury poison also affects the attacker\'s choice of an adjacent target"',
   // Medium Armor Expertise as above
   'Medium Armor Mastery':Pathfinder2E.FEATURES['Medium Armor Mastery'],
   // Effects have changed
@@ -8940,22 +8940,96 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min"',
 
   // Oracle
-  'Ancestors':'Section=magic Note="TODO"',
-  'Curse Of Ancestral Meddling':'Section=magic Note="TODO"',
-  'Curse Of The Mortal Warrior':'Section=magic Note="TODO"',
-  'Curse Of Living Death':'Section=magic Note="TODO"',
-  "Curse Of The Sky's Call":'Section=magic Note="TODO"',
-  'Curse Of Engulfing Flames':'Section=magic Note="TODO"',
-  'Curse Of Outpouring Life':'Section=magic Note="TODO"',
-  'Curse Of Torrential Knowledge':'Section=magic Note="TODO"',
-  'Curse Of Inclement Headwinds':'Section=magic Note="TODO"',
-  'Battle':'Section=magic Note="TODO"',
-  'Bones':'Section=magic Note="TODO"',
-  'Cosmos':'Section=magic Note="TODO"',
-  'Flames':'Section=magic Note="TODO"',
-  'Life':'Section=magic Note="TODO"',
-  'Lore':'Section=magic Note="TODO"',
-  'Tempest':'Section=magic Note="TODO"',
+  'Ancestors':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Whispers Of Weakness and Curse Of Ancestral Meddling features",' +
+      '"Knows the Ancestral Touch divine spell",' +
+      '"Skill Trained (Society)"',
+  'Battle':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Oracular Warning and Curse Of The Mortal Warrior features",' +
+      '"Knows the Weapon Trance divine spell",' +
+      '"Skill Trained (Athletics)"',
+  'Bones':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Nudge The Scales and Curse Of Living Death features",' +
+      '"Knows the Soul Siphon divine spell",' +
+      '"Skill Trained (Medicine)"',
+  'Cosmos':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Oracular Warning and Curse Of The Sky\'s Call features",' +
+      '"Knows the Spray Of Stars divine spell",' +
+      '"Skill Trained (Nature)"',
+  'Curse Of Ancestral Meddling':
+    'Section=combat ' +
+    'Note="Cursebound inflicts clumsy of the same severity"',
+  'Curse Of Engulfing Flames':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Cursebound inflicts persistent fire damage of equal severity",' +
+      '"Shows aspects of heat and flame"',
+  'Curse Of Inclement Headwinds':
+    'Section=combat,feature,save ' +
+    'Note=' +
+      '"Cursebound 2 and 4 inflicts -2 ranged attacks and -10\' Speed",' +
+      '"Shows aspects of weather",' +
+      '"Cursebound 1 and 3 inflicts weakness 2 and weakness %{5+level} to electricity"',
+  'Curse Of Living Death':
+    'Section=feature,save ' +
+    'Note=' +
+      '"Shows aspects of death and decay",' +
+      '"Cursebound 1, 2, 3, and 4 inflicts weakness 2 to vitality and void damage, -1 Fortitude saves, weakness %{5+level} to vitality and void damage, or -2 Fortitude saves"',
+  'Curse Of Outpouring Life':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Regains %{level} * cursebound severity Hit Points from magical healing",' +
+      '"Presence causes minor healing and vitality effects"',
+  'Curse Of The Mortal Warrior':
+    'Section=feature,save ' +
+    'Note=' +
+      '"Smells of steel and blood and appears more muscular than actual",' +
+      '"Cursebound 1, 2, 3, and 4 inflicts weakness 2 to spell damage, -1 saves vs. spells, weakness %{level} to spell damage, and -2 saves vs. spells"',
+  "Curse Of The Sky's Call":
+    'Section=combat,feature,save ' +
+    'Note=' +
+      '"Cursebound inflicts enfeebled of the same severity",' +
+      '"Has eyes that glow and hair and clothing that floats",' +
+      '"Suffers a penalty vs. forced movement equal to the current cursebound severity"',
+  'Curse Of Torrential Knowledge':
+    'Section=combat,feature,save,skill ' +
+    'Note=' +
+      '"Cursebound 4 prevents communication and inflicts stupefied 1",' +
+      '"Shows effects of overflowing knowledge",' +
+      '"Suffers a penalty to Will saves equal to the cursebound severity",' +
+      '"Suffers a penalty to Perception equal to the cursebound severity"',
+  'Flames':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Foretell Harm and Curse Of Engulfing Flames features",' +
+      '"Knows the Incendiary Aura divine spell",' +
+      '"Skill Trained (Acrobatics)"',
+  'Life':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Nudge The Scales and Curse Of Outpouring Life features",' +
+      '"Knows the Life Link divine spell",' +
+      '"Skill Trained (Medicine)"',
+  'Lore':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Whispers Of Weakness and Curse Of Torrential Knowledge features",' +
+      '"Knows the Brain Drain divine spell",' +
+      '"Skill Trained (Occultism; choose 1 from any Lore)"',
+  'Tempest':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Foretell Harm and Curse Of Inclement Headwinds features",' +
+      '"Knows the Tempest Touch divine spell",' +
+      '"Skill Trained (Nature)"',
   // Expert Spellcaster as above
   'Divine Access':
     'Section=magic ' +
@@ -8976,7 +9050,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Success on Will saves are critical successes"',
   'Mystery':'Section=feature Note="1 selection"',
   'Ocular Clarity':'Section=magic Note="Knows 2 10th-level divine spells"',
-  'Oracular Curse':'Section=feature Note="TODO"',
+  'Oracular Curse':'Section=feature Note="Suffers from a mystery-linked curse"',
   'Oracular Senses':'Section=skill Note="Perception Expert"',
   'Oracle Feats':'Section=feature Note="%V selections"',
   'Oracle Skills':
@@ -9143,35 +9217,185 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=skill ' +
     'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check and does not suffer off-guard from hidden creatures for 1 min"',
-  'Advanced Revelation':'Section=feature Note="TODO"',
-  'Gifted Power':'Section=feature Note="TODO"',
-  'Spiritual Sense':'Section=feature Note="TODO"',
+  'Advanced Revelation (Ancestors)':
+    'Section=magic ' +
+    'Note="Knows the Ancestral Defense divine spell/+1 Focus Points"',
+  'Advanced Revelation (Battle)':
+    'Section=magic ' +
+    'Note="Knows the Battlefield Persistence divine spell/+1 Focus Points"',
+  'Advanced Revelation (Bones)':
+    'Section=magic ' +
+    'Note="Knows the Armor Of Bones divine spell/+1 Focus Points"',
+  'Advanced Revelation (Cosmos)':
+    'Section=magic ' +
+    'Note="Knows the Interstellar Void divine spell/+1 Focus Points"',
+  'Advanced Revelation (Flames)':
+    'Section=magic ' +
+    'Note="Knows the Whirling Flames divine spell/+1 Focus Points"',
+  'Advanced Revelation (Life)':
+    'Section=magic ' +
+    'Note="Knows the Delay Affliction divine spell/+1 Focus Points"',
+  'Advanced Revelation (Lore)':
+    'Section=magic ' +
+    'Note="Knows the Access Lore divine spell/+1 Focus Points"',
+  'Advanced Revelation (Tempest)':
+    'Section=magic ' +
+    'Note="Knows the Thunderburst divine spell/+1 Focus Points"',
+  'Gifted Power':'Section=magic Note="+1 rank %V spell slot (mystery spell)"',
+  'Spiritual Sense':
+    'Section=skill ' +
+    'Note="Makes an automatic check to find haunts while exploring, and can notice spirits within 30\' that are within objects up to 5\'"',
   // Steady Spellcasting as above
-  'Debilitating Dichotomy':'Section=feature Note="TODO"',
-  'Read Disaster':'Section=feature Note="TODO"',
-  'Surging Might':'Section=feature Note="TODO"',
-  'Water Walker':'Section=feature Note="TODO"',
+  'Debilitating Dichotomy':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="R30\' Inflicts %{((level//2)-1)*3} HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure inflicts stunned 1)"',
+  'Read Disaster':
+    'Section=magic ' +
+    'Note="%{rank.Religion>=5?1:10} min contemplation reveals whether the results of a proposed action up to 30 min in the future will be generally bad"',
+  'Surging Might':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent spell ignores resistance %{level} to spirit, vitality, and void"',
+  'Water Walker':
+    'Section=magic ' +
+    'Note="Cursebound 1 allows Stride across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid"',
   // Quickened Casting as above
-  'Roll The Bones Of Fate':'Section=feature Note="TODO"',
-  'The Dead Walk':'Section=feature Note="TODO"',
-  'Trial By Skyfire':'Section=feature Note="TODO"',
-  'Waters Of Creation':'Section=feature Note="TODO"',
-  'Domain Fluency':'Section=feature Note="TODO"',
-  'Epiphany At The Crossroads':'Section=feature Note="TODO"',
-  'Greater Revelation':'Section=feature Note="TODO"',
+  'Roll The Bones Of Fate':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="R30\' Randomly: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous, or forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd once per 10 min"',
+  'The Dead Walk':
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit"',
+  'Trial By Skyfire':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 gives 4d6 HP in a 15\' emanation) each turn for 1 min"',
+  'Waters Of Creation':
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
+  'Domain Fluency (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
+  'Domain Fluency (Ambition)':
+    Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
+  'Domain Fluency (Cities)':
+    Pathfinder2E.FEATURES['Advanced Domain (Cities)']
+    .replace('The City', 'Civilization'),
+  'Domain Fluency (Confidence)':
+    Pathfinder2E.FEATURES['Advanced Domain (Confidence)'],
+  'Domain Fluency (Creation)':
+    Pathfinder2E.FEATURES['Advanced Domain (Creation)'],
+  'Domain Fluency (Darkness)':
+    Pathfinder2E.FEATURES['Advanced Domain (Darkness)']
+    .replace('Eyes', 'Sight'),
+  'Domain Fluency (Death)':Pathfinder2E.FEATURES['Advanced Domain (Death)'],
+  'Domain Fluency (Destruction)':
+    Pathfinder2E.FEATURES['Advanced Domain (Destruction)'],
+  'Domain Fluency (Dreams)':Pathfinder2E.FEATURES['Advanced Domain (Dreams)'],
+  'Domain Fluency (Earth)':Pathfinder2E.FEATURES['Advanced Domain (Earth)'],
+  'Domain Fluency (Family)':Pathfinder2E.FEATURES['Advanced Domain (Family)'],
+  'Domain Fluency (Fate)':Pathfinder2E.FEATURES['Advanced Domain (Fate)'],
+  'Domain Fluency (Fire)':Pathfinder2E.FEATURES['Advanced Domain (Fire)'],
+  'Domain Fluency (Freedom)':Pathfinder2E.FEATURES['Advanced Domain (Freedom)'],
+  'Domain Fluency (Healing)':Pathfinder2E.FEATURES['Advanced Domain (Healing)'],
+  'Domain Fluency (Indulgence)':
+    Pathfinder2E.FEATURES['Advanced Domain (Indulgence)'],
+  'Domain Fluency (Knowledge)':
+    Pathfinder2E.FEATURES['Advanced Domain (Knowledge)'],
+  'Domain Fluency (Luck)':Pathfinder2E.FEATURES['Advanced Domain (Luck)'],
+  'Domain Fluency (Magic)':Pathfinder2E.FEATURES['Advanced Domain (Magic)'],
+  'Domain Fluency (Might)':Pathfinder2E.FEATURES['Advanced Domain (Might)'],
+  'Domain Fluency (Moon)':Pathfinder2E.FEATURES['Advanced Domain (Moon)'],
+  'Domain Fluency (Nature)':Pathfinder2E.FEATURES['Advanced Domain (Nature)'],
+  'Domain Fluency (Nightmares)':
+    Pathfinder2E.FEATURES['Advanced Domain (Nightmares)'],
+  'Domain Fluency (Pain)':Pathfinder2E.FEATURES['Advanced Domain (Pain)'],
+  'Domain Fluency (Passion)':Pathfinder2E.FEATURES['Advanced Domain (Passion)'],
+  'Domain Fluency (Perfection)':
+    Pathfinder2E.FEATURES['Advanced Domain (Perfection)']
+    .replace('Form', 'Body'),
+  'Domain Fluency (Protection)':
+    Pathfinder2E.FEATURES['Advanced Domain (Protection)'],
+  'Domain Fluency (Secrecy)':Pathfinder2E.FEATURES['Advanced Domain (Secrecy)'],
+  'Domain Fluency (Sun)':
+    Pathfinder2E.FEATURES['Advanced Domain (Sun)']
+    .replace('Positive', 'Vital'),
+  'Domain Fluency (Travel)':Pathfinder2E.FEATURES['Advanced Domain (Travel)'],
+  'Domain Fluency (Trickery)':
+    Pathfinder2E.FEATURES['Advanced Domain (Trickery)'],
+  'Domain Fluency (Truth)':Pathfinder2E.FEATURES['Advanced Domain (Truth)'],
+  'Domain Fluency (Tyranny)':Pathfinder2E.FEATURES['Advanced Domain (Tyranny)'],
+  'Domain Fluency (Undeath)':Pathfinder2E.FEATURES['Advanced Domain (Undeath)'],
+  'Domain Fluency (Water)':Pathfinder2E.FEATURES['Advanced Domain (Water)'],
+  'Domain Fluency (Wealth)':Pathfinder2E.FEATURES['Advanced Domain (Wealth)'],
+  'Domain Fluency (Zeal)':Pathfinder2E.FEATURES['Advanced Domain (Zeal)'],
+  'Epiphany At The Crossroads':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} Hit Points, and can Stand once per day"',
+  'Greater Revelation (Ancestors)':
+    'Section=magic ' +
+    'Note="Knows the Ancestral Form divine spell/+1 Focus Points"',
+  'Greater Revelation (Battle)':
+    'Section=magic ' +
+    'Note="Knows the Revel In Retribution divine spell/+1 Focus Points"',
+  'Greater Revelation (Bones)':
+    'Section=magic ' +
+    'Note="Knows the Claim Undead divine spell/+1 Focus Points"',
+  'Greater Revelation (Cosmos)':
+    'Section=magic ' +
+    'Note="Knows the Moonlight Bridge divine spell/+1 Focus Points"',
+  'Greater Revelation (Flames)':
+    'Section=magic ' +
+    'Note="Knows the Flaming Fusillade divine spell/+1 Focus Points"',
+  'Greater Revelation (Life)':
+    'Section=magic ' +
+    'Note="Knows the Life-Giving Form divine spell/+1 Focus Points"',
+  'Greater Revelation (Lore)':
+    'Section=magic ' +
+    'Note="Knows the Dread Secret divine spell/+1 Focus Points"',
+  'Greater Revelation (Tempest)':
+    'Section=magic ' +
+    'Note="Knows the Tempest Form divine spell/+1 Focus Points"',
   // Magic Sense as above
-  'Forestall Curse':'Section=feature Note="TODO"',
-  'Lighter Than Air':'Section=feature Note="TODO"',
-  'Mysterious Repertoire':'Section=feature Note="TODO"',
-  "Revelation's Focus":'Section=feature Note="TODO"',
-  'Conduit Of Void and Vitality':'Section=feature Note="TODO"',
-  'Diverse Mystery':'Section=feature Note="TODO"',
-  'Portentous Spell':'Section=feature Note="TODO"',
-  'Blaze Of Revelation':'Section=feature Note="TODO"',
-  'Divine Effusion':'Section=feature Note="TODO"',
-  'Mystery Conduit':'Section=feature Note="TODO"',
+  'Forestall Curse':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Subsequent cursebound ability use does not increase cursebound severity once per day"',
+  'Lighter Than Air':
+    'Section=magic ' +
+    'Note="Cursebound gives %{speed>?20}\' fly Speed, or %{(speed>?20)+10}\' fly Speed at cursebound 3"',
+  'Mysterious Repertoire':
+    'Section=magic Note="Knows 1 spell from a different tradition"',
+  "Revelation's Focus":'Section=magic Note="Refocus restores all Focus Points"',
+  'Conduit Of Void and Vitality':
+    'Action=2 ' +
+    'Section=magic ' +
+    'Note="Casting a three-action <i>Harm</i> or <i>Heal</i> restores or inflicts addition Hit Points equal to 1d8 * the cursebound value"',
+  'Diverse Mystery':
+    'Section=magic ' +
+    'Note="Can cast an initial or advanced revelation spell from another mystery, gaining a level of cursebound and suffering the mystery\'s cursebound 1 effects"',
+  'Portentous Spell':
+    'Section=magic ' +
+    'Note=' +
+      '"Subsequent spell inflicts -2 on reaction attacks and skill tests, plus fascinated on any targets that suffer damage or fail to save"',
+  'Blaze Of Revelation':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="While at cursebound 4, can cast 1 revelation spell each rd without spending Focus Points for 1 min; afterward, must attempt a DC 40 Fortitude save, suffering drained 2 until next daily prep, drained 4 until next daily prep, or death on success, failure, or critical failure"',
+  'Divine Effusion':
+    'Section=magic ' +
+    'Note="Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day"',
+  'Mystery Conduit':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
   'Oracular Providence':'Section=magic Note="+1 10th level spell slot"',
-  'Paradoxical Mystery':'Section=feature Note="TODO"',
+  'Paradoxical Mystery':
+   'Section=magic ' +
+   'Note="Can select 1 spell from an accessible domain during daily prep to cast as a revelation spell"',
 
   // Sorcerer
   'Aberrant':
@@ -12353,7 +12577,152 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Negative', 'Void'),
   'Grasping Grave':
     Pathfinder2E.SPELLS['Grasping Grave']
-    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+
+  'Ancestral Touch':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Weapon Trance':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Soul Siphon':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Spray Of Stars':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Incendiary Aura':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Life Link':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Brain Drain':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Tempest Touch':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Ancestral Defense':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Battlefield Persistence':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Armor Of Bones':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Interstellar Void':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Whirling Flames':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Delay Affliction':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Access Lore':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Thunderburst':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Ancestral Form':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Revel In Retribution':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Claim Undead':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Moonlight Bridge':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Flaming Fusillade':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Life-Giving Form':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Dread Secret':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Tempest Form':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"'
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -13296,6 +13665,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule("featureNotes.gecko'sGrip",
       'features.Cliffscale Lizardfolk', '?', '!source'
     );
+  } else if(name == 'Gifted Power') {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+      rules.defineRule('magicNotes.giftedPower', 'spellSlots.D' + l, '^', l);
+      rules.defineRule('spellSlots.D' + l,
+        'magicNotes.giftedPower', '+', 'source==' + l + ' ? 1 : null'
+      );
+    });
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
   } else if(name == 'Greater Mercy') {
