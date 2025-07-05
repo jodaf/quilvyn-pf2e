@@ -240,6 +240,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Forager: Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and 4 others, or twice that number with a critical success</td>
     </tr><tr style="text-align:center">
+      <td>Knowledge Is Power: Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self</td>
+    </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
       <td>Magical Shorthand: Can learn new spells with 10 min of study and retry 1 week after a failure/Can learn new spells at a discounted cost</td>
@@ -397,13 +399,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Bond Conservation: <b>(1)</b> Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn</td>
     </tr><tr style="text-align:center">
-      <td>Bonded Focus: Refocus restores 2 Focus Points</td>
+      <td>Bonded Focus: Refocus restores all Focus Points</td>
+    </tr><tr style="text-align:center">
+      <td>Call Wizardly Tools: <b>(1)</b> Teleports bonded item or spellbook within 1 mile to self</td>
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Clever Counterspell: Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it</td>
+      <td>Clever Counterspell: Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares with it a trait other than concentrate, manipulate, or a tradition</td>
     </tr><tr style="text-align:center">
       <td>Conceal Spell: <b>(1)</b> Casts a subsequent spell without an incantation or obvious manifestations</td>
+    </tr><tr style="text-align:center">
+      <td>Convincing Illusion: <b>(R)</b> R30' Successful Decpetion vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure</td>
     </tr><tr style="text-align:center">
       <td>Counterspell: <b>(R)</b> Expends a spell slot to attempt to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
@@ -411,47 +417,65 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
     </tr><tr style="text-align:center">
-      <td>Energy Ablation: <b>(1)</b> Casting a spell that inflicts energy damage gives self resistance to a chosen energy type equal to the spell rank</td>
+      <td>Energy Ablation: <b>(1)</b> Casting a spell that inflicts energy damage gives self resistance to a chosen energy type equal to the spell rank until the end of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Experimental Spellshaping: Can choose 1 spellshape feat of up to level 10 to use each day during daily prep</td>
     </tr><tr style="text-align:center">
+      <td>Explosive Arrival: <b>(F)</b> Subsequent summoning inflicts 1d4 HP fire or creature-specific damage in a 10' emanation around the summoned creature</td>
+    </tr><tr style="text-align:center">
+      <td>Forcible Energy: <b>(1)</b> Subsequent spell that inflicts energy damage also inficts weakness 5 to that damage on 1 target until the end of the next turn</td>
+    </tr><tr style="text-align:center">
+      <td>Form Retention: Can prepare battle polymorph spells in a slot 2 levels higher than normal that last for 10 min</td>
+    </tr><tr style="text-align:center">
       <td>Infinite Possibilities: Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower</td>
     </tr><tr style="text-align:center">
-      <td>Linked Focus: Draining a bonded item to cast a spell restores 1 Focus Point</td>
+      <td>Irresistible Magic: Reduces any target status bonus to saves vs. self spells by 1</td>
+    </tr><tr style="text-align:center">
+      <td>Linked Focus: Draining a bonded item to cast a spell from specialist school restores 1 Focus Point once per day</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek</td>
     </tr><tr style="text-align:center">
-      <td>Nonlethal Spell: <b>(1)</b> Changed the damage caused by a subsequent spell to non-lethal</td>
+      <td>Nonlethal Spell: <b>(1)</b> Changes the damage caused by a subsequent spell to non-lethal</td>
     </tr><tr style="text-align:center">
       <td>Overwhelming Energy: <b>(1)</b> Subsequent spell ignores resistance 20 to energy</td>
     </tr><tr style="text-align:center">
-      <td>Quickened Casting: <b>(F)</b> Reduces the time required to cast a spell of level 8 or lower by 1 action once per day</td>
+      <td>Quickened Casting: <b>(F)</b> Reduces the time required to cast a spell of level 7 or lower by 1 action once per day</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends subsequent spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Reprepare Spell: Can spend 10 min to prepare a previously-cast spell or another spell of the same level</td>
+      <td>Reprepare Spell: Can spend 10 min to prepare a previously-cast instantaneous spell of up to 4th level or another instantaneous spell of the same level</td>
     </tr><tr style="text-align:center">
       <td>School Of Unified Magical Theory: Can use Drain Bonded Item once per spell rank each day</td>
     </tr><tr style="text-align:center">
       <td>Scintillating Spell: <b>(1)</b> Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure</td>
     </tr><tr style="text-align:center">
+      <td>Second Thoughts: <b>(R)</b> After a mental spell target critically succeeds on its save, recasts the spell on another target before the end of the next turn without using another spell slot</td>
+    </tr><tr style="text-align:center">
+      <td>Secondary Detonation Array: <b>(1)</b> Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force, or the spell's damage type, in a 5' burst within its area of effect at the beginning of the next turn</td>
+    </tr><tr style="text-align:center">
       <td>Spell Blending: Can use 2 spell slots from a level to prepare a spell up to 2 levels higher or use a spell slot to prepare 2 cantrips</td>
     </tr><tr style="text-align:center">
       <td>Spell Combination: Can prepare a spell slot of each level above 2nd to cast a combination of 2 spells of 2 levels lower</td>
     </tr><tr style="text-align:center">
+      <td>Spell Mastery: Can cast 4 chosen spells of different ranks once each day without preparation; can change the spell selection with 1 week of downtime</td>
+    </tr><tr style="text-align:center">
+      <td>Spell Protection Array: <b>(1)</b> R30' 5' burst gives +1 saves vs. magic while sustained for up to 1 min</td>
+    </tr><tr style="text-align:center">
       <td>Spell Substitution: Can use a 10-min process to replace 1 prepared spell with a different spell</td>
     </tr><tr style="text-align:center">
-      <td>Spell Tinker: <b>(2)</b> Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half</td>
+      <td>Spell Tinker: <b>(2)</b> Alters a choice of an ongoing effect from a spell cast on self</td>
     </tr><tr style="text-align:center">
       <td>Spellbook Prodigy: Critical failures to Learn A Spell are normal failures</td>
     </tr><tr style="text-align:center">
       <td>Spellshape Mastery: Can use single-action spellshape effects as free actions</td>
     </tr><tr style="text-align:center">
+      <td>Split Slot: Can cast either of 2 prepared spells from a slot up to rank 8</td>
+    </tr><tr style="text-align:center">
       <td>Staff Nexus: Can cast spells from staff, using charges from 3 spells expended during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Superior Bond: Can use Drain Bonded Item to cast another spell of up to level 8 once per day</td>
+      <td>Superior Bond: Can use Drain Bonded Item to cast another spell of up to level 7 once per day</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
     </tr><tr style="text-align:center">

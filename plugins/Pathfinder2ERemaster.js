@@ -759,7 +759,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 15:Alchemical Alacrity => 15:Alchemical Weapon Mastery
     // 15:Evasion => 15:Explosion Dodger
     // 17:Perpetual Perfection => 17:Abundant Vials
-    'Ability=intelligence HitPoints=8 ' +
+    'Attribute=intelligence HitPoints=8 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Intelligence)",' +
       '"1:Perception Trained",' +
@@ -798,7 +798,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 17:Quick Rage => 17:Revitalizing Rage
     // 19:Armor Of Fury => 19:Armor Mastery
     // null => 1:Superstition Instinct
-    'Ability=strength HitPoints=12 ' +
+    'Attribute=strength HitPoints=12 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Strength)",' +
       '"1:Perception Expert",' +
@@ -869,7 +869,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 9:Divine Smite => 9:Relentless Reaction
     // 9:Juggernaut => 9:Sacred Body
     // 11:Exalt => 11:Exalted Reaction
-    'Ability=strength,dexterity HitPoints=10 ' +
+    'Attribute=strength,dexterity HitPoints=10 ' +
     'Features=' +
       '"1:Champion Key Attribute",' +
       '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
@@ -923,7 +923,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Holy ? 1:Redemption:Cause"',
 
   'Investigator':
-    'Ability=intelligence HitPoints=8 ' +
+    'Attribute=intelligence HitPoints=8 ' +
     'Features=' +
       '"1:Attribute Boost (Intelligence)",' +
       '"1:Attribute Boosts",' +
@@ -952,7 +952,7 @@ Pathfinder2ERemaster.CLASSES = {
   'Monk':
     // Ability => Attribute
     // Ki Tradition => Qi Tradition
-    'Ability=strength,dexterity HitPoints=10 ' +
+    'Attribute=strength,dexterity HitPoints=10 ' +
     'Features=' +
       '"1:Monk Key Attribute",' +
       '"features.Dexterity ? 1:Attribute Boost (Dexterity)",' +
@@ -986,7 +986,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Path To Perfection (Will) ? 7:Third Path To Perfection (Will):Third Perfection"',
 
   'Oracle':
-    'Ability=charisma HitPoints=8 ' +
+    'Attribute=charisma HitPoints=8 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
       '"1:Perception Trained",' +
@@ -1036,7 +1036,7 @@ Pathfinder2ERemaster.CLASSES = {
     // added Elemental (Metal) and Elemental (Wood) bloodlines
     // Draconic Bloodline changed to different exemplars
     // Added Metal and Wood to Elemental bloodlines
-    'Ability=charisma HitPoints=6 ' +
+    'Attribute=charisma HitPoints=6 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Charisma)",' +
       '"1:Perception Trained",' +
@@ -1086,7 +1086,7 @@ Pathfinder2ERemaster.CLASSES = {
       '10:1@19',
 
   'Swashbuckler':
-    'Ability=dexterity HitPoints=10 ' +
+    'Attribute=dexterity HitPoints=10 ' +
     'Features=' +
       '"1:Attribute Boosts","1:Attribute Boost (Dexterity)",' +
       '"1:Perception Expert",' +
@@ -5986,10 +5986,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Doctrine':Pathfinder2E.FEATURES.Doctrine,
   'Harmful Font':
     Pathfinder2E.FEATURES['Harmful Font']
-    .replace(/{.*}/, '{level<5?4:level<15?5:6}'),
+    .replace(/charismaModifier\s*\+\s*1/, 'level<5?4:level<15?5:6'),
   'Healing Font':
     Pathfinder2E.FEATURES['Healing Font']
-    .replace(/{.*}/, '{level<5?4:level<15?5:6}'),
+    .replace(/charismaModifier\s*\+\s*1/, 'level<5?4:level<15?5:6'),
   'Miraculous Spell':Pathfinder2E.FEATURES['Miraculous Spell'],
   'Perception Expertise':Pathfinder2E.FEATURES.Alertness,
   // Reflex Expertise as above
@@ -7301,6 +7301,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Spellcasting':Pathfinder2E.FEATURES['Arcane Spellcasting'],
+
   // Counterspell as above
   // Familiar as above
   // Reach Spell as above
@@ -7315,87 +7316,108 @@ Pathfinder2ERemaster.FEATURES = {
   'Energy Ablation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casting a spell that inflicts energy damage gives self resistance to a chosen energy type equal to the spell rank"',
+    'Note="Casting a spell that inflicts energy damage gives self resistance to a chosen energy type equal to the spell rank until the end of the next turn"',
   // Enhanced Familiar as above
   'Nonlethal Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Changed the damage caused by a subsequent spell to non-lethal"',
-
-  /*-----*/
-
-  // Bespell Weapon as above
-  'Linked Focus':
-    'Section=magic ' +
-    'Note="Draining a bonded item to cast a spell restores 1 Focus Point"',
-  'Silent Spell':
+    'Note="Changes the damage caused by a subsequent spell to non-lethal"',
+  'Bespell Strikes':
+    Pathfinder2E.FEATURES['Bespell Weapon']
+    .replace('depends on the spell school', 'is force or the same type as the spell inflicted'),
+  'Call Wizardly Tools':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes a spell without its verbal components"',
-  'Spell Penetration':
+    'Note="Teleports bonded item or spellbook within 1 mile to self"',
+  'Linked Focus':Pathfinder2E.FEATURES['Linked Focus'],
+  'Spell Protection Array':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Reduces any target status bonus to saves vs. self spells by 1"',
+    'Note="R30\' 5\' burst gives +1 saves vs. magic while sustained for up to 1 min"',
+  'Convincing Illusion':
+    'Action=Reaction ' +
+    'Section=magic ' +
+    'Note="R30\' Successful Decpetion vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure"',
+  'Explosive Arrival':
+    'Action=Free ' +
+    'Section=magic ' +
+    'Note="Subsequent summoning inflicts 1d4 HP fire or creature-specific damage in a 10\' emanation around the summoned creature"',
+  'Irresistible Magic':Pathfinder2E.FEATURES['Spell Penetration'],
+  'Split Slot':
+    'Section=magic ' +
+    'Note="Can cast either of 2 prepared spells from a slot up to rank %{maxSpellRank-1}"',
   // Steady Spellcasting as above
   'Advanced School Spell (School Of Ars Grammatica)':
     'Section=magic ' +
-    'Note="Knows the Rune Of Observation arcane focus spell"',
+    'Note="Knows the Rune Of Observation arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of Battle Magic)':
     'Section=magic ' +
-    'Note="Knows the Energy Absorption arcane focus spell"',
+    'Note="Knows the Energy Absorption arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of The Boundary)':
     'Section=magic ' +
-    'Note="Knows the Spiral Of Horrors arcane focus spell"',
+    'Note="Knows the Spiral Of Horrors arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of Civic Wizardry)':
     'Section=magic ' +
-    'Note="Knows the Community Restoration arcane focus spell"',
+    'Note="Knows the Community Restoration arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of Mentalism)':
     'Section=magic ' +
-    'Note="Knows the Invisibility Cloak arcane focus spell"',
+    'Note="Knows the Invisibility Cloak arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of Protean Form)':
     'Section=magic ' +
-    'Note="Knows the Shifting Form arcane focus spell"',
+    'Note="Knows the Shifting Form arcane spell/+1 Focus Points"',
   'Advanced School Spell (School Of Unified Magical Theory)':
     'Section=magic ' +
-    'Note="Knows the Interdisciplinary Incantation arcane focus spell"',
-  'Bond Conservation':
-    'Action=1 ' +
+    'Note="Knows the Interdisciplinary Incantation arcane spell/+1 Focus Points"',
+  'Bond Conservation':Pathfinder2E.FEATURES['Bond Conservation'],
+  'Form Retention':
     'Section=magic ' +
-    'Note="Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn"',
-  'Universal Versatility':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Can prepare a school focus spell during daily prep and Refocus"',
+    'Note="Can prepare battle polymorph spells in a slot 2 levels higher than normal that last for 10 min"',
+  'Knowledge Is Power':
+    'Section=skill ' +
+    'Note="Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Scroll Savant':
+  'Scroll Savant':Pathfinder2E.FEATURES['Scroll Savant'],
+  'Clever Counterspell':Pathfinder2E.FEATURES['Clever Counterspell'],
+  'Forcible Energy':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can prepare %{rank.Arcane>=4?4:rank.Arcane>=3?3:2} temporary scrolls with spells up to level %V each day"',
-  'Clever Counterspell':
+    'Note="Subsequent spell that inflicts energy damage also inficts weakness 5 to that damage on 1 target until the end of the next turn"',
+  'Keen Magic Detection':
     'Section=magic ' +
-    'Note="Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares a non-tradition trait with it"',
+    'Note="Use of Detect Magic exploration activity gives the better of two initiative rolls against foes that have magic active"',
   // Magic Sense as above
-  'Bonded Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
+  'Bonded Focus':
+    Pathfinder2E.FEATURES['Bonded Focus']
+    .replace('2', 'all'),
   // Reflect Spell as above
-  'Superior Bond':
+  'Secondary Detonation Array':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can use Drain Bonded Item to cast another spell of up to level %V once per day"',
+    'Note="Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force, or the spell\'s damage type, in a 5\' burst within its area of effect at the beginning of the next turn"',
+  'Superior Bond':Pathfinder2E.FEATURES['Superior Bond'],
   // Effortless Concentration as above
+  'Scintillating Spell':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent instananeous non-darkness spell that requires a Reflex save also inflicts dazzled for 1 rd on a failed save, or blinded for 1 rd on a critical failure"',
   'Spell Tinker':
-    'Action=2 ' +
+    Pathfinder2E.FEATURES['Spell Tinker']
+    .replace(', reducing its remaining duration by half', ''),
+  'Infinite Possibilities':Pathfinder2E.FEATURES['Infinite Possibilities'],
+  'Reprepare Spell':Pathfinder2E.FEATURES['Reprepare Spell'],
+  'Second Thoughts':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Alters the ongoing effect choice of a spell cast on self, reducing its remaining duration by half"',
-  'Infinite Possibilities':
-    'Section=magic ' +
-    'Note="Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower"',
-  'Reprepare Spell':
-    'Section=magic ' +
-    'Note="Can spend 10 min to prepare a previously-cast spell%{$\'features.Spell Substitution\'?\' or another spell of the same level\':\'\'}"',
+    'Note="After a mental spell target critically succeeds on its save, recasts the spell on another target before the end of the next turn without using another spell slot"',
   "Archwizard's Might":Pathfinder2E.FEATURES["Archwizard's Might"],
-  // Metamagic Mastery as above
-  'Spell Combination':
+  'Spell Combination':Pathfinder2E.FEATURES['Spell Combination'],
+  'Spell Mastery':
     'Section=magic ' +
-    'Note="Can prepare a spell slot of each level above 2nd to cast a combination of 2 spells of 2 levels lower"',
+    'Note="Can cast 4 chosen spells of different ranks once each day without preparation; can change the spell selection with 1 week of downtime"',
+  'Spellshape Mastery':
+    Pathfinder2E.FEATURES['Metamagic Mastery']
+    .replace('metamagic', 'spellshape'),
 
 /*
   // Archetype
@@ -9259,9 +9281,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Blood magic effect allows Stepping as a free action or moving a target 5\'"',
   'Arcane Evolution':Pathfinder2E.FEATURES['Arcane Evolution'],
-  'Bespell Strikes':
-    Pathfinder2E.FEATURES['Bespell Weapon']
-    .replace('depends on the spell school', 'is force or the same type as the spell inflicted'),
+  // Bespell Strikes as above
   'Divine Evolution':Pathfinder2E.FEATURES['Divine Evolution'],
   'Occult Evolution':Pathfinder2E.FEATURES['Occult Evolution'],
   'Primal Evolution':Pathfinder2E.FEATURES['Primal Evolution'],
@@ -9417,9 +9437,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistances as appropriate from bloodline"',
   'Bloodline Perfection':Pathfinder2E.FEATURES['Bloodline Perfection'],
-  'Spellshape Mastery':
-    Pathfinder2E.FEATURES['Metamagic Mastery']
-    .replace('metamagic', 'spellshape'),
+  // Spellshape Mastery as above
 
   // Swashbuckler
   'Assured Evasion':
@@ -9513,7 +9531,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,ability,skill ' +
     'Note=' +
       '"+%V Speed",' +
-      '"+{5+5*((level+1)//4>?0)} Speed with panache",' +
+      '"+%{5+5*((level+1)//4>?0)} Speed with panache",' +
       '"+1 on bravado skills during combat"',
   'Stylish Tricks':
     'Section=feature,skill ' +
@@ -12533,6 +12551,13 @@ Pathfinder2ERemaster.identityRules = function(
 /* Defines rules related to magic use. */
 Pathfinder2ERemaster.magicRules = function(rules, spells) {
   Pathfinder2E.magicRules(rules, spells);
+  ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
+      rules.defineRule
+        ('maxSpellRank', 'spellSlots.' + t.charAt(0) + l, '^=', l);
+    });
+  });
+  rules.defineRule('maxSpellLevel', 'maxSpellRank', '=', null);
 };
 
 /* Defines rules related to character aptitudes. */
@@ -12983,6 +13008,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'intelligenceModifier', '=', '4 + source'
     );
   } else if(name == 'Monk') {
+    rules.defineRule('features.Ki Tradition (Divine)',
+      'features.Qi Tradition (Divine)', '=', '1'
+    );
+    rules.defineRule('features.Ki Tradition (Occult)',
+      'features.Qi Tradition (Occult)', '=', '1'
+    );
     rules.defineRule('selectableFeatureCount.Monk (Key Attribute)',
       'featureNotes.monkKeyAttribute', '=', '1'
     );
