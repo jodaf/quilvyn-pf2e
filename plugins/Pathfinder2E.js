@@ -6661,7 +6661,7 @@ Pathfinder2E.FEATURES = {
   'Greater Mental Evolution':
     'Section=magic Note="Adds 1 spell of each level to repertoire"',
   'Greater Vital Evolution':
-    'Section=feature ' +
+    'Section=magic ' +
     'Note="Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day"',
   'Bloodline Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   'Greater Crossblooded Evolution':
