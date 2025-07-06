@@ -1041,6 +1041,7 @@ Pathfinder2E.FEATS = {
   'Elven Weapon Elegance':
     'Traits=Elf Require="level >= 5","features.Elven Weapon Familiarity"',
   'Elf Step':'Traits=Elf Require="level >= 9"',
+  // Errata changes Expert Longevity to Ancestral Longevity
   'Expert Longevity':
     'Traits=Elf Require="level >= 9","features.Ancestral Longevity"',
   'Universal Longevity':
@@ -1124,7 +1125,7 @@ Pathfinder2E.FEATS = {
     'Require=' +
       '"level >= 5",' +
       '"features.Adapted Cantrip",' +
-      '"spellSlots.A3 || spellSlots.D3 || spellSlots.O3 || spellSlots.P3"',
+      '"maxSpellLevel >= 3"',
   'Clever Improviser':'Traits=Human Require="level >= 5"',
   'Cooperative Soul':
     'Traits=Human Require="level >= 9","features.Cooperative Nature"',
