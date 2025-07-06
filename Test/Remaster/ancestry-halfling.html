@@ -24,7 +24,8 @@ var attributes = {
   "selectableFeatures.Halfling - Nomadic Halfling":1, "selectableFeatures.Halfling - Twilight Halfling":1, 
   "selectableFeatures.Halfling - Wildwood Halfling":1, "shield":"Tower", "skillIncreases.Architecture Lore":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Cavern Lore":1, "skillIncreases.Society":1, 
-  "skillIncreases.Underground Lore":1, "weapons.Light Pick":1, "weapons.Longspear":1, "weapons.Shield Boss":1
+  "skillIncreases.Underground Lore":1, "weapons.Halfling Sling Staff":1, "weapons.Longspear":1, 
+  "weapons.Sawtooth Saber":1, "weapons.Shield Boss":1
 };
   </script>
 </head>
@@ -69,7 +70,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Wildwood Halfling: Moves normally over difficult terrain caused by foliage</td>
+      <td>Wildwood Halfling: Moves normally over difficult terrain caused by plants and fungi</td>
     </tr></table>
 </td>
   </tr></table>
@@ -184,7 +185,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Distracting Shadows: Can use larger creatures as cover for Hide and Sneak</td>
     </tr><tr style="text-align:center">
-      <td>Folksy Patter: Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; the DC is reduced by 5 each for a halfling target and one with Folksy Patter</td>
+      <td>Folksy Patter: Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; the DC is reduced by 5 each for a halfling target and one with Folksy Patter, and a successful Perception vs. Deception allows others to understand the message</td>
     </tr><tr style="text-align:center">
       <td>Keen Eyes: R30' +2 Seek to find hidden creatures</td>
     </tr><tr style="text-align:center">
@@ -196,7 +197,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Sure Feet: Successes on Acrobatics to Balance and Athletics to Climb are critical successes/Does not suffer off-guard during Balance or Climb</td>
     </tr><tr style="text-align:center">
-      <td>Watchful Halfling: +2 Sense Motive to notice enchantment or possession, and automatically attempts a check to notice these</td>
+      <td>Watchful Halfling: +2 Sense Motive to notice enchantment or possession, and automatically attempts a +0 check to notice these</td>
     </tr></table>
 </td>
   </tr></table>
@@ -218,7 +219,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Breastplate</td>
         <td><b>Shield</b>: Tower (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Light Pick (+5 1d4 P [Crit d8]; strength; expert); Longspear (+5 1d8 P; strength; expert); Shield Boss (+5 1d6 B; strength; expert)</td>
+        <td><b>Weapons</b>: Halfling Sling Staff (+9 1d10 B R80'; dexterity; expert); Longspear (+5 1d8 P; strength; expert); Sawtooth Saber (+7 1d6 S; dexterity; trained); Shield Boss (+5 1d6 B; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -242,13 +243,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Hillock Halfling: Regains +1 Hit Points from treatment and overnight rest</td>
       </tr><tr style="text-align:center">
-        <td>Keen Eyes: Reduces the DC to target a concealed or hidden foe to 3 or 9</td>
+        <td>Keen Eyes: Reduces the flat check DC to target a concealed or hidden foe to 3 or 9</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Step Lively: Follows a foe move that leaves it adjacent with a Step to a different adjacent space</td>
+        <td>Step Lively: <b>(R)</b> Follows a foe move that leaves it adjacent with a Step to a different adjacent space</td>
       </tr><tr style="text-align:center">
         <td>Titan Slinger: Slings inflict +1 damage die step vs. Large and larger targets</td>
       </tr><tr style="text-align:center">
@@ -270,7 +271,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Gutsy Halfling: Successful saves vs. emotion are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Irrepressible: Successful saves vs. emotion are critical successes, and critical failures are normal failures</td>
+        <td>Irrepressible: Successful saves vs. emotion are critical successes, and critical failures vs. emotion are normal failures</td>
       </tr></table>
 </td>
     </tr></table>
@@ -280,11 +281,22 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td>    <table id="SpellPart" style="width:100%">
+    <tr style="text-align:center">
+      <td>      <table id="SpellStats" style="width:100%">
+      <tr style="text-align:center">
+        <td><b>Attack</b>: Primal Innate: +4 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Primal Innate: 14 (charisma; trained)</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Spells</b>: Unfettered Movement (P4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Unhampered Passage: Knows the Unfettered Movement primal spell; can cast it on self once per day</i></td>
+      <td><i>Unhampered Passage: Knows the Unfettered Movement primal innate spell; can cast it on self once per day</i></td>
     </tr><tr style="text-align:center">
       <td>Jinx: <b>(2)</b> R30' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)</td>
     </tr></table>

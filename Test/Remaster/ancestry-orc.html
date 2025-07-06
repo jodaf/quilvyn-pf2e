@@ -19,7 +19,7 @@ var attributes = {
   "ancestryFeats.Rampaging Ferocity":1, "ancestryFeats.Scar-Thick Skin":1, "ancestryFeats.Spell Devourer":1, 
   "ancestryFeats.Tusks":1, "ancestryFeats.Undying Ferocity":1, "armor":"Breastplate", 
   "background":"Acolyte", "class":"Fighter", "classFeats.Exacting Strike":1, "deity":"Gozreh", 
-  "experience":482, "gender":"Male", "generalFeats.Titan Wrestler":1, "languages.Goblin":1, 
+  "experience":482, "gender":"Male", "generalFeats.Pet":1, "languages.Goblin":1, 
   "name":"Ancestry-Orc", "selectableFeatures.Fighter - Dexterity":1, 
   "selectableFeatures.Orc - Badlands Orc":1, "selectableFeatures.Orc - Battle-Ready Orc":1, 
   "selectableFeatures.Orc - Deep Orc":1, "selectableFeatures.Orc - Grave Orc":1, 
@@ -27,8 +27,8 @@ var attributes = {
   "selectableFeatures.Orc - Winter Orc":1, "shield":"Tower", "skillIncreases.Abadar Lore":1, 
   "skillIncreases.Absalom Lore":1, "skillIncreases.Architecture Lore":1, "skillIncreases.Athletics":1, 
   "skillIncreases.Cavern Lore":1, "skillIncreases.Mountain Lore":1, "skillIncreases.Theater Lore":1, 
-  "skillIncreases.Vampire Lore":1, "weapons.Light Pick":1, "weapons.Longspear":1, "weapons.Orc Necksplitter":1, 
-  "weapons.Shield Boss":1
+  "skillIncreases.Vampire Lore":1, "weapons.Longspear":1, "weapons.Orc Necksplitter":1, 
+  "weapons.Sawtooth Saber":1, "weapons.Shield Boss":1
 };
   </script>
 </head>
@@ -92,7 +92,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Athletic Might; Beast Trainer; Bloody Blows; Defy Death; Exacting Strike; Ferocious Beasts; Hold Mark (Burning Sun); Hold Mark (Death's Head); Hold Mark (Defiled Corpse); Hold Mark (Empty Hand); Incredible Ferocity; Iron Fists; Orc Ferocity; Orc Lore; Orc Superstition; Orc Weapon Familiarity; Pervasive Superstition; Rampaging Ferocity; Scar-Thick Skin; Spell Devourer; Titan Wrestler; Tusks; Undying Ferocity</td>
+        <td><b>Feats</b>: Athletic Might; Beast Trainer; Bloody Blows; Defy Death; Exacting Strike; Ferocious Beasts; Hold Mark (Burning Sun); Hold Mark (Death's Head); Hold Mark (Defiled Corpse); Hold Mark (Empty Hand); Incredible Ferocity; Iron Fists; Orc Ferocity; Orc Lore; Orc Superstition; Orc Weapon Familiarity; Pervasive Superstition; Pet; Rampaging Ferocity; Scar-Thick Skin; Spell Devourer; Tusks; Undying Ferocity</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Orc Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Badlands Orc; Battle-Ready Orc; Darkvision; Deep Orc; Grave Orc; Hold-Scarred Orc; Orc Heritage; Rainfall Orc; Winter Orc</td>
@@ -120,6 +120,8 @@ var attributes = {
         <td><i>Orc Lore: Has the Additional Lore (Orc Lore) feature</i></td>
       </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
+      </tr><tr style="text-align:center">
+        <td>Pet: Has a Tiny animal minion with the same level, modifiers, and AC as self, 5 Hit Points, low-light vision, 25' Speed, and creature-specific abilities</td>
       </tr></table>
 </td>
     </tr></table>
@@ -213,8 +215,6 @@ var attributes = {
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
       <td>Terrain Expertise (Underground): +1 Survival in Underground</td>
-    </tr><tr style="text-align:center">
-      <td>Titan Wrestler: Can use Disarm, Grapple, Shove, and Trip on creatures up to 2 sizes larger</td>
     </tr></table>
 </td>
   </tr></table>
@@ -236,7 +236,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Breastplate</td>
         <td><b>Shield</b>: Tower (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Light Pick (+7 1d4+2 P [Crit d8]; strength; expert); Longspear (+7 1d8+2 P; strength; expert); Orc Necksplitter (+7 1d8+2 S; strength; expert); Shield Boss (+7 1d6+2 B; strength; expert); Tusks (+8 1d6+2 P; dexterity; expert)</td>
+        <td><b>Weapons</b>: Longspear (+7 1d8+2 P; strength; expert); Orc Necksplitter (+7 1d8+2 S; strength; expert); Sawtooth Saber (+6 1d6+2 S; dexterity; trained); Shield Boss (+7 1d6+2 B; strength; expert); Tusks (+8 1d6+2 P; dexterity; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -266,9 +266,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Ferocious Beasts: Partnered animals have the Orc Ferocity and Undying Ferocity features</td>
       </tr><tr style="text-align:center">
-        <td>Iron Fists: Fists inflict lethal damage and can shove</td>
+        <td>Iron Fists: Fist attacks lose the nonlethal trait and gain the shove trait</td>
       </tr><tr style="text-align:center">
-        <td>Orc Ferocity: <b>(R)</b> Retains 1 Hit Point, increasing wounded condition by 1, when brought to 0 Hit Points once per hr</td>
+        <td>Orc Ferocity: <b>(R)</b> Retains 1 Hit Point and increases the wounded condition by 1 when brought to 0 Hit Points once per hr</td>
       </tr><tr style="text-align:center">
         <td>Orc Weapon Familiarity: Has access to uncommon orc weapons</td>
       </tr><tr style="text-align:center">
@@ -278,7 +278,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Undying Ferocity: Using Orc Ferocity gives 1 temporary HP</td>
+        <td>Undying Ferocity: Using Orc Ferocity gives 1 temporary Hit Point</td>
       </tr></table>
 </td>
     </tr></table>
@@ -292,7 +292,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Badlands Orc: Treats environmental heat as 1 step less extreme</td>
       </tr><tr style="text-align:center">
-        <td>Defy Death: -1 DC on dying recovery checks/Suffers no debilitation after being returned to life</td>
+        <td>Defy Death: -1 DC on dying recovery checks, and suffers no debilitation after being returned to life</td>
       </tr><tr style="text-align:center">
         <td>Grave Orc: Has resistance 1 to void damage/+1 vs. death and void effects</td>
       </tr><tr style="text-align:center">
@@ -310,9 +310,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Rainfall Orc: +1 vs. disease</td>
       </tr><tr style="text-align:center">
-        <td>Scar-Thick Skin: -5 DC to end persistent bleed damage</td>
+        <td>Scar-Thick Skin: Ends persistent bleed damage with success on a DC 10 flat check, or on a DC 5 flat check with help</td>
       </tr><tr style="text-align:center">
-        <td>Spell Devourer: Successful saves vs. magic give temporary HP equal to the effect level or double the spell rank</td>
+        <td>Spell Devourer: Successful saves vs. magic give temporary Hit Points equal to the effect level or double the spell rank until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Winter Orc: Treats environmental cold as 1 step less extreme</td>
       </tr></table>
@@ -336,7 +336,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Defy Death Feat: Requires level (currently 1) >= 5 and orc ferocity feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Ferocious Beasts Feat: Requires level (currently 1) >= 13, orc ferocity feature (currently 1) and animal companion feature, pet feature or bonded animal feature</td>
+        <td>Ferocious Beasts Feat: Requires level (currently 1) >= 13, orc ferocity feature (currently 1) and animal companion feature, pet feature (currently 1) or bonded animal feature</td>
       </tr><tr style="text-align:center">
         <td>Incredible Ferocity Feat: Requires level (currently 1) >= 13 and orc ferocity feature (currently 1)</td>
       </tr><tr style="text-align:center">
