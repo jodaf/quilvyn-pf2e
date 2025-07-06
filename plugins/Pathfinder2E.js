@@ -3016,7 +3016,7 @@ Pathfinder2E.FEATURES = {
       '"Does not suffer flat-footed when using Acrobatics to Balance on stone and earth, and successes to do so are critical successes"',
   'Stonecunning':
     'Section=skill ' +
-    'Note="+2 Perception to detect unusual stonework, and automatically attempts a%{features.Stonewalker&&rank.Perception>=4?\'\':\' -2\'} check to notice it"',
+    'Note="+2 Perception to detect unusual stonework, and automatically attempts a %{features.Stonewalker&&rank.Perception>=4?\'+2\':\'-2\'} check to notice it"',
   'Unburdened Iron':
     'Section=ability,ability ' +
     'Note=' +
@@ -3089,7 +3089,7 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May spend double the time normally required on a Perception or skill check to gain a +2 bonus and suffer a critical failure only on a roll of 10 lower than the DC"',
+    'Note="May spend double the time normally required on a Perception or skill check to gain a +2 bonus and to suffer a critical failure only on a roll of 10 lower than the DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
@@ -3185,12 +3185,12 @@ Pathfinder2E.FEATURES = {
   // Darkvision as above
   'Charhide Goblin':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1} and recovers from persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
+    'Note="Has fire resistance %{level//2>?1} and ends persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
-      '"May safely eat spoiled food and when sickened",' +
+      '"May safely eat garbage and when sickened",' +
       '"+2 vs. conditions inflicted by ingestion, and successes on Fortitude saves vs. ingestion conditions are critical successes"',
   'Razortooth Goblin':
     'Section=combat Note="Jaws attack inflicts 1d6 HP piercing"',
@@ -3258,13 +3258,13 @@ Pathfinder2E.FEATURES = {
   'Keen Eyes':
     'Section=combat,skill ' +
     'Note=' +
-      '"Reduces the DC to target a concealed or hidden foe to 3 or 9",' +
+      '"Reduces the flat check DC to target a concealed or hidden foe to 3 or 9",' +
       '"R30\' +2 Seek to find hidden creatures"',
   'Nomadic Halfling':'Section=skill Note="+%V Language Count"',
   'Twilight Halfling':'Section=feature Note="Has the Low-Light Vision feature"',
   'Wildwood Halfling':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by foliage"',
+    'Note="Moves normally over difficult terrain caused by plants and fungi"',
 
   'Distracting Shadows':
     'Section=skill Note="Can use larger creatures as cover for Hide and Sneak"',
@@ -3306,7 +3306,7 @@ Pathfinder2E.FEATURES = {
   'Irrepressible':
     'Section=save ' +
     'Note=' +
-      '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures are normal failures\':\'\'}"',
+      '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures vs. emotion are normal failures\':\'\'}"',
   'Ceaseless Shadows':
     'Section=combat ' +
     'Note="Can use Hide and Sneak without cover and gains 1 degree better cover from larger creatures"',
@@ -3351,7 +3351,7 @@ Pathfinder2E.FEATURES = {
       '"May attempt any skill untrained"',
   'Cooperative Soul':
     'Section=skill ' +
-    'Note="Failures and critical failures when using Aid with expert skills are successes"',
+    'Note="Failures and critical failures to Aid with expert skills are successes"',
   'Incredible Improvisation':
     'Action=Free ' +
     'Section=combat ' +
@@ -3374,7 +3374,7 @@ Pathfinder2E.FEATURES = {
   'Orc Ferocity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Retains 1 Hit Point, increasing wounded condition by 1, when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
+    'Note="Retains 1 Hit Point and increases the wounded condition by 1 when brought to 0 Hit Points once per %{combatNotes.incredibleFerocity?\'hr\':\'day\'}"',
   'Orc Sight':'Section=feature Note="Has the Darkvision feature"',
   'Orc Superstition':
     'Action=Reaction Section=save Note="+1 vs. the triggering magic effect"',
