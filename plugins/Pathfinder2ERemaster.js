@@ -1287,9 +1287,7 @@ Pathfinder2ERemaster.FEATS = {
   'Otherworldly Acumen':'Traits=Elf Require="level >= 9"',
   'Tree Climber':'Traits=Elf Require="level >= 9"',
   'Avenge Ally':'Traits=Elf,Fortune Require="level >= 13"',
-  'Universal Longevity':
-    Pathfinder2E.FEATS['Universal Longevity']
-    .replace('Expert Longevity', 'Ancestral Longevity'),
+  'Universal Longevity':Pathfinder2E.FEATS['Universal Longevity'],
   'Magic Rider':'Traits=Elf Require="level >= 17"',
 
   // Gnome
@@ -1403,7 +1401,7 @@ Pathfinder2ERemaster.FEATS = {
   'Lucky Keepsake':
     'Traits=Leshy Require="level >= 9","features.Leshy Superstition"',
   'Solar Rejuvenation':'Traits=Leshy Require="level >= 9"',
-  'Thorned Seedpod':'Traits=Leshy Require="level >= 9",features.Seedpod',
+  'Thorned Seedpod':'Traits=Leshy Require="level >= 9","features.Seedpod"',
   'Call Of The Green Man':'Traits=Leshy Require="level >= 13"',
   'Cloak Of Poison':'Traits=Leshy,Poison Require="level >= 13"',
   'Flourish And Ruin':'Traits=Leshy Require="level >= 17"',
@@ -1450,7 +1448,7 @@ Pathfinder2ERemaster.FEATS = {
   "Hag's Sight":'Traits=Changeling',
   'Called':'Traits=Changeling Require="level >= 5"',
   'Mist Child':'Traits=Changeling Require="level >= 5"',
-  'Accursed Claws':'Traits=Changeling Require="level >= 9",weapons.Claws',
+  'Accursed Claws':'Traits=Changeling Require="level >= 9","weapons.Claws"',
   'Occult Resistance':
     'Traits=Changeling Require="level >= 9","rank.Occultism >= 2"',
   'Hag Magic':'Traits=Changeling Require="level >= 13"',
@@ -1476,17 +1474,16 @@ Pathfinder2ERemaster.FEATS = {
   'Nephilim Resistance':'Traits=Nephilim Require="level >= 5"',
   'Scion Of Many Planes':'Traits=Nephilim Require="level >= 5"',
   'Skillful Tail':'Traits=Nephilim Require="level >= 5"',
-  'Celestial Magic':'Traits=Nephilim Require="level >= 9","features.Celestial"',
+  'Celestial Magic':
+    'Traits=Nephilim Require="level >= 9","features.Celestial Lineage"',
   'Divine Countermeasures':'Traits=Nephilim Require="level >= 9"',
   'Divine Wings':'Traits=Nephilim,Divine,Morph Require="level >= 9"',
   'Fiendish Magic':
-    'Traits=Nephilim ' +
-    'Require=' +
-      '"level >= 9",' +
-      '"features.Grimspawn || features.Pitborn || features.Hellspawn"',
+    'Traits=Nephilim Require="level >= 9","features.Fiendish Lineage"',
   'Celestial Mercy':
-    'Traits=Nephilim Require="level >= 13","features.Celestial"',
-  'Slip Sideways':'Traits=Nephilim Require="level >= 13","features.Fiendish"',
+    'Traits=Nephilim Require="level >= 13","features.Celestial Lineage"',
+  'Slip Sideways':
+    'Traits=Nephilim Require="level >= 13","features.Fiendish Lineage"',
   'Summon Nephilim Kin':
     'Traits=Nephilim Require="level >= 13","sumLineageFeats > 0"',
   'Divine Declaration':'Traits=Nephilim Require="level >= 17"',
@@ -4083,7 +4080,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES.Stonecunning
     .replace('Section=', 'Section=skill,')
     .replace('Note=', 'Note="Skill Trained (Crafting)",')
-    .replace(' -2', ' +0'),
+    .replace('-2', '+0'),
   'Unburdened Iron':Pathfinder2E.FEATURES['Unburdened Iron'],
   'Boulder Roll':Pathfinder2E.FEATURES['Boulder Roll'],
   'Defy The Darkness':
@@ -4109,7 +4106,7 @@ Pathfinder2ERemaster.FEATURES = {
   'March The Mines':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strides or Burrows 15\' twice; can take along an adjacent willing ally"',
+    'Note="Gains a 15\' Burrow Speed and Strides or Burrows twice; can take along an adjacent willing ally"',
   'Telluric Power':
     'Section=magic ' +
     'Note="Melee Strikes vs. a foe standing on the same earth or stone surface inflict additional damage equal to the number of weapon damage dice"',
@@ -4131,7 +4128,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed
   'Whisper Elf':
     'Section=skill ' +
-    'Note="+2 Seek within 30\' and reduces the DC to find a concealed or hidden target to 3 or 9"',
+    'Note="+2 Seek to locate creatures within 30\' and reduces the flat check DC to target a concealed or hidden foe to 3 or 9"',
   'Woodland Elf':Pathfinder2E.FEATURES['Woodland Elf'],
 
   'Ancestral Longevity':Pathfinder2E.FEATURES['Ancestral Longevity'],
@@ -4155,7 +4152,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Ancestral Suspicion':
     'Section=save,skill ' +
     'Note=' +
-      '"+2 vs. control effects, and successes are critical successes",' +
+      '"+2 vs. control effects, and successes vs. control effects are critical successes",' +
       '"+2 Sense Motive to detect controlled creatures"',
   'Martial Experience':
     'Section=combat ' +
@@ -4194,7 +4191,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed from Burrow Elocutionist
   'Animal Elocutionist':
     'Section=skill ' +
-    'Note="Can speak with animals and gains +1 to Make an Impression on them"',
+    'Note="Can speak with animals and gains +1 to Make An Impression on them"',
   'Fey Fellowship':Pathfinder2E.FEATURES['Fey Fellowship'],
   'First World Magic':Pathfinder2E.FEATURES['First World Magic'],
   // Changed
@@ -4202,8 +4199,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     // TODO trouble randomizing?
     'Note=' +
-      '"+2 Skill Feat (Additional Lore; Assurance)",' +
-      '"Can use 1 day of downtime to change chosen Gnome Obsession skill"',
+      '"+2 Skill Feat (Additional Lore and Assurance for chosen Lore)",' +
+      '"Can use 1 day of downtime to change the chosen Gnome Obsession skill"',
   // Changed
   'Gnome Weapon Familiarity':
     'Section=combat,combat ' +
@@ -4212,13 +4209,13 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has access to kukris and uncommon gnome weapons%{level>=5?\'/Critical hits with a gnome weapon, kukri, or glaive inflict its critical specialization effect\':\'\'}"',
   'Illusion Sense':Pathfinder2E.FEATURES['Illusion Sense'],
   'Razzle-Dazzle':
+    'Action=Free ' +
     'Section=magic ' +
     'Note="Extends an inflicted blinded or dazzled condition by 1 rd once per hr"',
   'Energized Font':Pathfinder2E.FEATURES['Energized Font'],
   'Project Persona':
     'Action=1 ' +
     'Section=magic ' +
-    // TODO Will DC
     'Note="Places an illusion of normal clothing over self armor"',
   'Cautious Curiosity (Arcane)':
     'Section=magic ' +
@@ -4238,10 +4235,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Instinctive Obfuscation':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Illusory double forces a DC 10 flat check on an attacking foe once per hr; failure negates the attack and destroys the double"',
+    'Note="Forces a DC 10 flat check on an attacking foe once per hr; failure negates the attack"',
   'Homeward Bound':
     'Section=magic ' +
-    'Note="Knows the Interplanar Teleport primal innate spell; may use it twice per week to travel to the First World"',
+    'Note="Knows the Interplanar Teleport primal innate spell; can use it twice per week to travel to and from the First World"',
 
   // Goblin
   'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
@@ -4275,18 +4272,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Kneecap':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Strike inflicts -10\' Speed for 1 rd, or -15\' Speed on a critical success"',
+    'Note="Successful melee Strike inflicts -10\' Speed for 1 rd, or -15\' Speed on a critical success"',
   'Loud Singer':'Section=combat Note="Has increased Goblin Song effects"',
   'Vandal':
     'Section=combat,skill ' +
     'Note=' +
-      '"Strikes against unattended objects and traps ignore 5 Hardness",' +
+      '"Strikes against unattended objects and traps ignore Hardness 5",' +
       '"Skill Trained (Thievery)"',
   'Cave Climber':Pathfinder2E.FEATURES['Cave Climber'],
   'Cling':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="After a successful Strike with a hand free, latches onto the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
+    'Note="After a successful Strike with a hand free, can latch onto the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
   'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
   'Reckless Abandon':
@@ -4301,7 +4298,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Jinx':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min)"',
+    'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min) once per day"',
   'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
   'Keen Eyes':Pathfinder2E.FEATURES['Keen Eyes'],
   'Nomadic Halfling':Pathfinder2E.FEATURES['Nomadic Halfling'],
@@ -4311,7 +4308,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Distracting Shadows':Pathfinder2E.FEATURES['Distracting Shadows'],
   'Folksy Patter':
     'Section=skill ' +
-    'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; the DC is reduced by 5 each for a halfling target and one with Folksy Patter"',
+    'Note="Can transmit a 3-word hidden message to a target who succeeds on a DC 20 Perception check; the DC is reduced by 5 each for a halfling target and one with Folksy Patter, and a successful Perception vs. Deception allows others to understand the message"',
   // Changed
   'Halfling Lore':
     'Section=feature,skill ' +
@@ -4339,10 +4336,11 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(/.Foe Grab[^"]*/, ''),
   'Watchful Halfling':
     Pathfinder2E.FEATURES['Watchful Halfling']
-    .replace('-2 ', ''),
+    .replace('-2', '+0'),
   'Cultural Adaptability (%ancestry)':
     Pathfinder2E.FEATURES['Cultural Adaptability (%ancestry)'],
   'Step Lively':
+    'Action=Reaction ' +
     'Section=combat ' +
     'Note="Follows a foe move that leaves it adjacent with a Step to a different adjacent space"',
   'Dance Underfoot':
@@ -4352,14 +4350,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Irrepressible':Pathfinder2E.FEATURES.Irrepressible,
   'Unhampered Passage':
     'Section=magic ' +
-    'Note="Knows the Unfettered Movement primal spell; can cast it on self once per day"',
+    'Note="Knows the Unfettered Movement primal innate spell; can cast it on self once per day"',
   'Ceaseless Shadows':Pathfinder2E.FEATURES['Ceaseless Shadows'],
   'Toppling Dance':
     'Section=combat ' +
     'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/May share a space with a Large or larger prone creature"',
   'Shadow Self':
     'Section=skill ' +
-    'Note="Can follow a successful Hide or Sneak with 1 min of invisibility; a hostile act ends"',
+    'Note="Can follow a successful Hide or Sneak with 1 min of invisibility once per hr; a hostile act ends"',
 
   // Human
   'Human Heritage':Pathfinder2E.FEATURES['Human Heritage'],
@@ -4379,7 +4377,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
   'Sense Allies':
     'Section=skill ' +
-    'Note="R60\' Willing undetected allies are hidden instead; may target hidden allies with a DC 5 flat check"',
+    'Note="R60\' Willing undetected allies are hidden instead and may be targeted with a DC 5 flat check"',
   'Cooperative Soul':Pathfinder2E.FEATURES['Cooperative Soul'],
   'Group Aid':
     'Action=Free ' +
@@ -4425,12 +4423,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can walk at %{speed//2}\' Speed across still liquids and Balance to move across flowing water"',
   'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
   'Root Leshy':
-    'Section=combat,combat,feature,save ' +
+    'Section=combat,feature,save ' +
     'Note=' +
       '"+2 Hit Points",' +
-      '"+2 vs. attempts to Reposition, Shove, or Trip",' +
       '"Can go 2 weeks without sunlight before starving",' +
-      '"+2 vs. spells and effects that move or knock prone"',
+      '"+2 vs. attempts to Reposition, Shove, or Trip and spells and effects that move or knock prone"',
   'Seaweed Leshy':
     'Section=ability,ability ' +
     'Note=' +
@@ -4442,7 +4439,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Grasping Reach':
     'Section=combat ' +
-    'Note="Can reach 10\' with two-handed weapons; doing so reduces the damage die by 1 step"',
+    'Note="Can reach 10\' with two-handed weapons that inflict at least 1d6 HP; doing so reduces the damage die by 1 step"',
   'Harmlessly Cute':
     'Section=feature,skill ' +
     'Note=' +
@@ -4454,7 +4451,9 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Additional Lore (Leshy Lore) feature",' +
       '"Skill Trained (Nature; Stealth)"',
   'Leshy Superstition':
-    'Action=Reaction Section=save Note="+1 on the triggering save"',
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="+1 on the triggering save vs. a spell or magical effect"',
   'Seedpod':
     'Section=combat ' +
     'Note="R30\' Seedpod attack inflicts 1d4 HP bludgeoning, plus -10\' Speed until the start of the next turn on a critical success"',
@@ -4463,7 +4462,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Has continuous Covering Tracks effects outside of urban environments"',
   'Undaunted':
     'Section=save ' +
-    'Note="+1 vs. emotion effects, and successes are critical successes"',
+    'Note="+1 vs. emotion effects, and successes vs. emotion are critical successes"',
   'Anchoring Roots':
     'Section=feature Note="Has the Anchor and Steady Balance features"',
   'Anchor':
@@ -4480,7 +4479,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Transforms self into a normal plant with AC 20 for 8 hr"',
   'Speak With Kindred':
     'Section=skill ' +
-    'Note="Can speak with plants and fungi and gains +2 Diplomacy with plants or fungi of the same kind as self"',
+    'Note="Can speak with plants and fungi and gains +2 Diplomacy with plants or fungi similar to self"',
   'Bark And Tendril':
     'Section=magic ' +
     'Note="Knows the Entangling Flora and Oaken Resilience primal innate spells; can cast each at 2nd rank once per day"',
@@ -4498,7 +4497,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cloak Of Poison':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min"',
+    'Note="Successful foe unarmed and non-reach melee attacks inflict 3d6 HP poison on the attacker for 1 min once per day"',
   'Flourish And Ruin':
     'Section=magic ' +
     'Note="Knows the Field Of Life and Tangling Creepers primal innate spells; can cast each at 6th rank once per day"',
@@ -4548,7 +4547,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"+1 General Feat (Pet or Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
-    'Section=combat Note="Fists inflict lethal damage and can shove"',
+    'Section=combat ' +
+    'Note="Fist attacks lose the nonlethal trait and gain the shove trait"',
   'Orc Ferocity':Pathfinder2E.FEATURES['Orc Ferocity'],
   'Orc Lore':
     'Section=feature,skill ' +
@@ -4591,18 +4591,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Lethal unarmed attacks inflict 1d4 HP persistent bleed"',
   'Defy Death':
     'Section=save ' +
-    'Note="-1 DC on dying recovery checks/Suffers no debilitation after being returned to life"',
-  'Scar-Thick Skin':'Section=save Note="-5 DC to end persistent bleed damage"',
+    'Note="-1 DC on dying recovery checks, and suffers no debilitation after being returned to life"',
+  'Scar-Thick Skin':
+    'Section=save ' +
+    'Note="Ends persistent bleed damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
   'Pervasive Superstition':Pathfinder2E.FEATURES['Pervasive Superstition'],
   'Undying Ferocity':
-    'Section=combat Note="Using Orc Ferocity gives %{level} temporary HP"',
+    'Section=combat ' +
+    'Note="Using Orc Ferocity gives %{level} temporary Hit Point%{level>1?\'s\':\'\'}"',
   'Incredible Ferocity':Pathfinder2E.FEATURES['Incredible Ferocity'],
   'Ferocious Beasts':
     'Section=combat ' +
     'Note="Partnered animals have the Orc Ferocity %{$\'features.Undying Ferocity\'?\'and Undying Ferocity features\':\'feature\'}"',
   'Spell Devourer':
     'Section=save ' +
-    'Note="Successful saves vs. magic give temporary HP equal to the effect level or double the spell rank"',
+    'Note="Successful saves vs. magic give temporary Hit Points equal to the effect level or double the spell rank until the end of the next turn"',
   'Rampaging Ferocity':
     'Action=Free ' +
     'Section=combat ' +
@@ -4626,8 +4629,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Dream May':
     'Section=save ' +
     'Note="+2 vs. sleep and dream effects/Sleep restores %{constitutionModifier*level} Hit Points and reduces drained and doomed conditions by 2"',
-  'Slag May':'Section=combat Note="Cold-iron claws inflict 1d6 HP slashing"',
-
+  'Slag May':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Claws inflict 1d6 HP slashing",' +
+      '"Claws are cold-iron weapons"',
   'Changeling Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -4650,41 +4656,44 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can cast a chosen spell up to 4th rank as an occult innate spell at 4th rank once per day"',
 
   // Nephilim
-  'Angelkin':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Multilingual and Celestial features",' +
-      '"Skill Trained (Society)/Knows the Empyrean language"',
-  'Grimspawn':
-    'Section=feature Note="Has the Diehard and Fiendish features"',
-  'Hellspawn':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Lie To Me and Fiendish features",' +
-      '"Skill Trained (Deception; Legal Lore)"',
-  'Lawbringer':
-    'Section=feature,save ' +
-    'Note=' +
-      '"Has the Celestial feature",' +
-      '"+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
-  'Musetouched':
-    'Section=combat,feature ' +
-    'Note=' +
-      '"+1 on Escape attempts, critical failures to Escape are normal failures, and successes to Escape are critical successes",' +
-      '"Has the Celestial feature"',
-  'Pitborn':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Has the Fiendish feature",' +
-      // TODO randomizeOneAttribute won't process this extra feat properly
-      '"Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
-
   'Nephilim':
     'Section=feature,feature ' +
     'Note=' +
       // or Darkvision
       '"Has the Low-Light Vision feature",' +
       '"Has the nephilim trait and may take nephilim ancestry feats"',
+  'Angelkin':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Multilingual and Celestial Lineage features",' +
+      '"Skill Trained (Society)/Knows the Empyrean language"',
+  'Grimspawn':
+    'Section=feature Note="Has the Diehard and Fiendish Lineage features"',
+  'Hellspawn':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Lie To Me and Fiendish Lineage features",' +
+      '"Skill Trained (Deception; Legal Lore)"',
+  'Lawbringer':
+    'Section=feature,save ' +
+    'Note=' +
+      '"Has the Celestial Lineage feature",' +
+      '"+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
+  'Musetouched':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"+1 on Escape attempts, critical failures to Escape are normal failures, and successes to Escape are critical successes",' +
+      '"Has the Celestial Lineage feature"',
+  'Pitborn':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Fiendish Lineage feature",' +
+      // TODO randomizeOneAttribute won't process this extra feat properly
+      '"Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
+  'Celestial Lineage':
+    'Section=feature Note="Can take feats that require celestial lineage"',
+  'Fiendish Lineage':
+    'Section=feature Note="Can take feats that require fiendish lineage"',
   'Bestial Manifestation (Claw)':
     'Section=combat Note="Claws inflict 1d4 HP slashing"',
   'Bestial Manifestation (Hoof)':
@@ -4695,7 +4704,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Tail inflicts 1d4 HP bludgeoning"',
   'Halo':
     'Section=magic ' +
-    'Note="Knows the Light divine cantrip; can evoke and supress it at will"',
+    'Note="Can use a Sustain action to evoke or supress a halo that lights a 20\' radius"',
   'Nephilim Eyes':
     'Section=feature Note="Has the Darkvision feature"',
   'Nephilim Lore':
@@ -4728,7 +4737,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Divine Wings':
     'Action=2 ' +
     'Section=ability ' +
-    'Note="Brings forth wings that give a %{speed}\' fly Speed for 10 min"',
+    'Note="Brings forth wings that give a %{speed}\' fly Speed for 10 min once per day"',
   'Fiendish Magic':
     'Section=magic ' +
     'Note="Knows 2 divine innate spells; can cast each at 2nd rank once per day"',
@@ -4740,7 +4749,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Translocate divine innate spell; can cast it at 5th rank twice per day"',
   'Summon Nephilim Kin':
     'Section=magic ' +
-    'Note="Can cast a summoning divine innate spell at 5th rank to once per day call divine allies"',
+    'Note="Can cast a summoning divine innate spell at 5th rank once per day to summon an extraplanar ally"',
   'Divine Declaration':
     'Section=magic ' +
     'Note="Knows the Divine Decree divine innate spell; can cast it at 7th rank once per day"',
@@ -4757,7 +4766,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Impressive Performance feature",' +
       '"Skill Trained (Performance)",' +
-      '"Critical failures on Performance to Make an Impression on an elf are normal failures"',
+      '"Critical failures on Performance to Make An Impression on an elf are normal failures"',
   'Elf Atavism':Pathfinder2E.FEATURES['Elf Atavism'],
   'Inspire Imitation':Pathfinder2E.FEATURES['Inspire Imitation'],
   'Supernatural Charm':
@@ -5010,7 +5019,7 @@ Pathfinder2ERemaster.FEATURES = {
      'Section=skill,skill ' +
      'Note=' +
        '"Skill Trained (Diplomacy)",' +
-       '"+%{skillNotes.breathLikeHoney?2:1} checks to Make an Impression when breath can be smelled"',
+       '"+%{skillNotes.breathLikeHoney?2:1} checks to Make An Impression when breath can be smelled"',
   'Winter Kholo':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
@@ -5606,7 +5615,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Religion; Society)"',
   'Voice Of The Night':
     'Section=skill ' +
-    'Note="Can converse with bats, rats, and wolves, and gains +1 to Make an Impression on them"',
+    'Note="Can converse with bats, rats, and wolves, and gains +1 to Make An Impression on them"',
   'Enthralling Allure':
     'Section=magic ' +
     'Note="Knows the Charm divine innate spell; can cast it at rank %{(level+1)//2} once per day"',
@@ -8657,7 +8666,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the No Cause For Alarm and Pointed Question features",' +
       '"Skill Trained (Diplomacy)",' +
-      '"Can use Persue A Lead and Make an Impression simultaneously"',
+      '"Can use Persue A Lead and Make An Impression simultaneously"',
   // Fortitude Expertise as above
   'Greater Dogged Will':
     'Section=save,save ' +
@@ -10060,7 +10069,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Intimidation to Coerce %{rank.Intimidation>=4?50:rank.Intimidation==3?25:rank.Intimidation==2?10:5} targets"',
   'Group Impression': // Target counts changed
     'Section=skill ' +
-    'Note="Can use Diplomacy to Make an Impression on %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
+    'Note="Can use Diplomacy to Make An Impression on %{rank.Diplomacy>=4?100:rank.Diplomacy==3?50:rank.Diplomacy==2?20:10} targets"',
   'Hefty Hauler':Pathfinder2E.FEATURES['Hefty Hauler'],
   'Hobnobber':
     Pathfinder2E.FEATURES.Hobnobber.replace('when taking normal time ', ''),
@@ -13681,7 +13690,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Gnome Obsession') {
-    rules.defineRule('skillNotes.gnomeObsession', 'level', '?', 'null');
+    // Override legacy rule
+    rules.defineRule('skillNotes.gnomeObsession', 'level', '=', 'null');
   } else if(name == 'Greater Mercy') {
     rules.defineRule('magicNotes.mercy(Body)',
       'magicNotes.greaterMercy', '=', 'null' // italics
