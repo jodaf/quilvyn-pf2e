@@ -1041,11 +1041,11 @@ Pathfinder2E.FEATS = {
   'Elven Weapon Elegance':
     'Traits=Elf Require="level >= 5","features.Elven Weapon Familiarity"',
   'Elf Step':'Traits=Elf Require="level >= 9"',
-  // Errata changes Expert Longevity to Ancestral Longevity
   'Expert Longevity':
     'Traits=Elf Require="level >= 9","features.Ancestral Longevity"',
+  // Errata changes Expert Longevity to Ancestral Longevity
   'Universal Longevity':
-    'Traits=Elf Require="level >= 13","features.Expert Longevity"',
+    'Traits=Elf Require="level >= 13","features.Ancestral Longevity"',
   'Elven Weapon Expertise':
     'Traits=Elf Require="level >= 13","features.Elven Weapon Familiarity"',
 
