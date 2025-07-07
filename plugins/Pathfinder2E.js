@@ -3740,10 +3740,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Allows using concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
-    'Section=feature,skill ' +
+    'Section=combat,feature ' +
     'Note=' +
-      '"Has the Intimidating Glare and Scare To Death features",' +
-      '"Can use Demoralize and Scare To Death during rage"',
+      '"Can use Demoralize and Scare To Death during rage",' +
+      '"Has the Intimidating Glare and Scare To Death features"',
   'Raging Thrower':
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
@@ -7319,10 +7319,10 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can use Performance to Make An Impression"',
   'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
   'Incredible Investiture':'Section=magic Note="Can invest 12 magic items"',
-  'Intimidating Glare':'Section=skill Note="Can use a glare to Demoralize"',
+  'Intimidating Glare':'Section=combat Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
-    'Section=skill ' +
-    'Note="+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing target"',
+    'Section=combat ' +
+    'Note="+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing the target"',
   'Inventor':
     'Section=skill Note="Can use Crafting to create unknown common formulas"',
   'Kip Up':
@@ -7482,7 +7482,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Sneaking 5\' in underbrush at least 10\' from foes requires no Stealth check"',
   'Terrified Retreat':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Critical success on Demoralize causes a lower-level target to flee for 1 rd"',
   'Titan Wrestler':
     'Section=skill ' +
