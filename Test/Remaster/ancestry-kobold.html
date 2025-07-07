@@ -23,9 +23,9 @@ var attributes = {
   "selectableFeatures.Kobold - Dragonscaled Kobold":1, "selectableFeatures.Kobold - Elementheart Kobold":1, 
   "selectableFeatures.Kobold - Spellhorn Kobold":1, "selectableFeatures.Kobold - Strongjaw Kobold":1, 
   "selectableFeatures.Kobold - Tunnelflood Kobold":1, "selectableFeatures.Kobold - Venomtail Kobold":1, "shield":"None", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Dragon Lore":1, "skillIncreases.Dwarven Lore":1, 
-  "skillIncreases.Labor Lore":1, "skillIncreases.Thievery":1, "skillIncreases.Warfare Lore":1, 
-  "weapons.Composite Shortbow":1, "weapons.Gauntlet":1, "weapons.Greatclub":1
+  "skillIncreases.Acrobatics":2, "skillIncreases.Crafting":1, "skillIncreases.Deception":2, 
+  "skillIncreases.Thievery":1, "weapons.Composite Shortbow":1, "weapons.Gauntlet":1, "weapons.Greatpick":1, 
+  "weapons.Sawtooth Saber":1
 };
   </script>
 </head>
@@ -110,6 +110,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Snare Setter: Has the Snare Crafting feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Venomtail Kobold: Has the Tail Toxin feature</i></td>
+      </tr><tr style="text-align:center">
         <td>Darkvision: Has normal b/w vision in darkness and dim light</td>
       </tr></table>
 </td>
@@ -123,33 +125,29 @@ var attributes = {
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
-      <td>Acrobatics: +3 (dexterity; trained)</td>
-      <td>Dwarven Lore: +4 (intelligence; trained)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Arcana: +1 (intelligence; untrained)</td>
+      <td>Acrobatics: +5 (dexterity; expert)</td>
       <td>Intimidation: +5 (charisma; trained)</td>
       <td>Religion: +1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: -1 (strength; untrained)</td>
+      <td>Arcana: +1 (intelligence; untrained)</td>
       <td>Kobold Lore: +4 (intelligence; trained)</td>
       <td>Society: +1 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +4 (intelligence; trained)</td>
-      <td>Labor Lore: +4 (intelligence; trained)</td>
+      <td>Athletics: -1 (strength; untrained)</td>
+      <td>Medicine: +1 (wisdom; untrained)</td>
       <td>Stealth: +3 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Deception: +2 (charisma; untrained)</td>
-      <td>Medicine: +1 (wisdom; untrained)</td>
+      <td>Crafting: +6 (intelligence; expert)</td>
+      <td>Nature: +1 (wisdom; untrained)</td>
       <td>Survival: +4 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Diplomacy: +2 (charisma; untrained)</td>
-      <td>Nature: +1 (wisdom; untrained)</td>
+      <td>Deception: +7 (charisma; expert)</td>
+      <td>Occultism: +1 (intelligence; untrained)</td>
       <td>Thievery: +5 (dexterity; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Dragon Lore: +4 (intelligence; trained)</td>
-      <td>Occultism: +1 (intelligence; untrained)</td>
-      <td>Warfare Lore: +4 (intelligence; trained)</td>
+      <td>Diplomacy: +2 (charisma; untrained)</td>
+      <td>Performance: +2 (charisma; untrained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -173,17 +171,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cavernstalker Kobold: Can Climb at 7' on a success, or 15' on a critical success/Successes on Acrobatics to Squeeze are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Dragon's Presence: +1 Intimidation to Demoralize a foe of equal or lesser level</td>
-    </tr><tr style="text-align:center">
       <td>Quick Coercion: Can Coerce with 1 rd of conversation</td>
     </tr><tr style="text-align:center">
-      <td>Snare Genius: Can Craft snares in 3 actions instead of 1 min and prepare 3 snares for quick deployment during daily prep/Snares inflict off-guard until the end of its next turn on a critical failure</td>
+      <td>Snare Genius: Can Craft snares in 3 actions instead of 1 min and prepare 3 snares for quick deployment during daily prep/Creatures who critically fail saves vs. self snares suffer off-guard until the end of their next turn</td>
     </tr><tr style="text-align:center">
       <td>Snare Setter: Has access to uncommon kobold snares</td>
     </tr><tr style="text-align:center">
       <td>Vicious Snares: Snares inflict +1d6 HP precision</td>
     </tr><tr style="text-align:center">
-      <td>Winglets: +5' horizontal Leap and +10' Long Jump distances and can High Jump and Long Jump without a Stride</td>
+      <td>Winglets: +5' horizontal Leap and +10' Long Jump distances, and can High Jump and Long Jump without a Stride</td>
     </tr></table>
 </td>
   </tr></table>
@@ -205,7 +201,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Half Plate</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Composite Shortbow (+8 1d6+1 P [Crit +d10] R60'; dexterity; expert); Gauntlet (+7 1d4+2 B; strength; expert); Greatclub (+7 1d10+2 B; strength; expert); Jaws (+10 1d6+2 P; strength; expert)</td>
+        <td><b>Weapons</b>: Composite Shortbow (+8 1d6+1 P [Crit +d10] R60'; dexterity; expert); Gauntlet (+7 1d4+2 B; strength; expert); Greatpick (+7 1d10+2 P [Crit d12]; strength; expert); Jaws (+10 1d6+2 P; strength; expert); Sawtooth Saber (+6 1d6+2 S; dexterity; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -223,7 +219,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strongjaw Kobold: Jaws inflict 1d6 HP piercing</i></td>
       </tr><tr style="text-align:center">
-        <td>Benefactor's Majesty: <b>(1)</b> Gives self 1 temporary Hit Points for 1 min and flat checks to remove persistent damage, and requires foes to make a DC 11 flat check to attack self until the start of the next turn</td>
+        <td>Benefactor's Majesty: <b>(1)</b> Gives self 1 temporary Hit Point for 1 min and flat checks to remove persistent damage, and requires foes to succeed on a DC 11 flat check to attack self until the start of the next turn, once per day</td>
       </tr><tr style="text-align:center">
         <td>Between The Scales: Agile and finesse melee weapons and unarmed attacks vs. an off-guard creature have the backstabber trait</td>
       </tr><tr style="text-align:center">
@@ -233,7 +229,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Cringe: <b>(R)</b> Lowers the damage of a foe's critical hit by 3 once per foe per day</td>
       </tr><tr style="text-align:center">
-        <td>Fleeing Shriek: <b>(2)</b> 10' emanation inflicts 1d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that failed its save, once per hr</td>
+        <td>Dragon's Presence: +1 to Demoralize a foe of equal or lesser level</td>
+      </tr><tr style="text-align:center">
+        <td>Fleeing Shriek: <b>(2)</b> 10' emanation inflicts 5d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that critically failed its save, once per hr</td>
       </tr><tr style="text-align:center">
         <td>Grovel: <b>(1)</b> Makes a Feint vs. Will against a foe within 30' to reduce its threat perception</td>
       </tr><tr style="text-align:center">
@@ -241,15 +239,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Scamper: <b>(1)</b> Strides up to 20' feet away from a foe, gaining +2 Armor Class against triggered reactions</td>
+        <td>Scamper: <b>(1)</b> Strides up to 20' feet away from an adjacent foe to a clear space, gaining +2 Armor Class against triggered reactions</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Sudden Charge: <b>(2)</b> Makes a melee Strike after a double Stride</td>
       </tr><tr style="text-align:center">
-        <td>Tumbling Diversion: <b>(1)</b> Successful Tumble Through a foe's space allows a subsequent +1 Create a Diversion attempt, or +2 on a critical success, to make self hidden to that foe</td>
+        <td>Tail Toxin: <b>(1)</b> Enhances a piercing or slashing weapon to inflict 1 HP persistent poison on the next hit before the end of the next turn once per day</td>
       </tr><tr style="text-align:center">
-        <td>Venomtail Kobold: <b>(1)</b> Enhances a piercing or slashing weapon to inflict 1 HP persistent poison on the next hit before the end of the next turn once per day</td>
+        <td>Tumbling Diversion: <b>(1)</b> Successful Tumble Through a foe's space allows a subsequent +1 Create A Diversion attempt, or +2 on a critical success, to make self hidden to that foe</td>
       </tr></table>
 </td>
     </tr></table>
@@ -290,11 +288,11 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Evolved Spellhorn: Can cast a chosen 1st-rank and a chosen 2nd-rank arcane spell as arcane innate spells once each per day</td>
+      <td>Evolved Spellhorn: Knows 1 chosen 1st-rank and 1 chosen 2nd-rank arcane innate spell; can cast each once per day</td>
     </tr><tr style="text-align:center">
-      <td>Resplendent Spellhorn: Can cast a chosen 3rd-rank and a chosen 4th-rank arcane spell as arcane innate spells once each per day</td>
+      <td>Resplendent Spellhorn: Knows 1 chosen 3rd-rank and 1 chosen 4th-rank arcane innate spell; can cast each once per day</td>
     </tr><tr style="text-align:center">
-      <td>Spellhorn Kobold: Can cast a chosen cantrip as an arcane innate spell at will</td>
+      <td>Spellhorn Kobold: Knows 1 chosen arcane innate cantrip; can cast it at will</td>
     </tr></table>
 </td>
   </tr></table>
@@ -322,17 +320,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fleeing Shriek Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">
-        <td>Grovel Feat: Requires level (currently 1) >= 5 and deception rank</td>
+        <td>Grovel Feat: Requires level (currently 1) >= 5 and deception rank (currently 2)</td>
       </tr><tr style="text-align:center">
         <td>Kobold Heritage Allocation: 1 available vs. 7 allocated</td>
       </tr><tr style="text-align:center">
         <td>Resplendent Spellhorn Feat: Requires level (currently 1) >= 13 and evolved spellhorn feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Snare Genius Feat: Requires level (currently 1) >= 5, crafting rank (currently 1) >= 2 and snare crafting feature (currently 1)</td>
+        <td>Snare Genius Feat: Requires level (currently 1) >= 5, crafting rank (currently 2) >= 2 and snare crafting feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Tumbling Diversion Feat: Requires level (currently 1) >= 13, acrobatics rank (currently 1) >= 2 and deception rank >= 2</td>
+        <td>Tumbling Diversion Feat: Requires level (currently 1) >= 13, acrobatics rank (currently 2) >= 2 and deception rank (currently 2) >= 2</td>
       </tr><tr style="text-align:center">
-        <td>Vicious Snares Feat: Requires level (currently 1) >= 13, crafting rank (currently 1) >= 2 and snare crafting feature (currently 1)</td>
+        <td>Vicious Snares Feat: Requires level (currently 1) >= 13, crafting rank (currently 2) >= 2 and snare crafting feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Winglet Flight Feat: Requires level (currently 1) >= 9 and winglets feature (currently 1)</td>
       </tr><tr style="text-align:center">

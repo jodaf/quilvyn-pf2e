@@ -19,15 +19,16 @@ var attributes = {
   "ancestryFeats.Pack Hunter":1, "ancestryFeats.Pack Stalker":1, "ancestryFeats.Rabid Sprint":1, 
   "ancestryFeats.Right-Hand Blood":1, "ancestryFeats.Sensitive Nose":1, "armor":"Hide", "background":"Hermit", 
   "class":"Fighter", "classFeats.Vicious Swing":1, "deity":"Nethys", "experience":323, 
-  "gender":"Male", "languages.Aklo":1, "languages.Gnomish":1, "name":"Ancestry-Kholo", 
-  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Kholo - Ant Kholo":1, 
-  "selectableFeatures.Kholo - Cave Kholo":1, "selectableFeatures.Kholo - Dog Kholo":1, 
-  "selectableFeatures.Kholo - Great Kholo":1, "selectableFeatures.Kholo - Sweetbreath Kholo":1, 
-  "selectableFeatures.Kholo - Winter Kholo":1, "selectableFeatures.Kholo - Witch Kholo":1, "shield":"None", 
-  "skillIncreases.Aquatic Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Deception":1, 
-  "skillIncreases.Dragon Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Nature":1, 
-  "skillIncreases.River Lore":1, "skillIncreases.Tripkee Lore":1, "weapons.Crossbow":1, 
-  "weapons.Greatpick":1, "weapons.Sling":1
+  "gender":"Male", "generalFeats.Terrain Stalker (Underbrush)":1, "languages.Aklo":1, 
+  "languages.Gnomish":1, "name":"Ancestry-Kholo", "selectableFeatures.Fighter - Strength":1, 
+  "selectableFeatures.Kholo - Ant Kholo":1, "selectableFeatures.Kholo - Cave Kholo":1, 
+  "selectableFeatures.Kholo - Dog Kholo":1, "selectableFeatures.Kholo - Great Kholo":1, 
+  "selectableFeatures.Kholo - Sweetbreath Kholo":1, "selectableFeatures.Kholo - Winter Kholo":1, 
+  "selectableFeatures.Kholo - Witch Kholo":1, "shield":"None", "skillIncreases.Aquatic Lore":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Deception":1, "skillIncreases.Dragon Lore":1, 
+  "skillIncreases.Halfling Lore":1, "skillIncreases.Nature":1, "skillIncreases.River Lore":1, 
+  "skillIncreases.Stealth":1, "weapons.Greatpick":1, "weapons.Mambele":1, "weapons.Sawtooth Saber":1, 
+  "weapons.Sling":1
 };
   </script>
 </head>
@@ -82,14 +83,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Class: 1; General: 0</td>
+        <td><b>Feat Count</b>: Class: 1; General: 0; Skill: 1</td>
         <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Kholo (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Absorb Strength; Affliction Resistance; Ambush Hunter; Ancestor's Rage; Ask The Bones; Bonekeeper's Bane; Breath Like Honey; Crunch; Distant Cackle; First To Strike, First To Fall; Grandmother's Wisdom; Hyena Familiar; Impaling Bone; Kholo Lore; Kholo Weapon Familiarity; Laughing Kholo; Left-Hand Blood; Legendary Laugh; Pack Hunter; Pack Stalker; Rabid Sprint; Right-Hand Blood; Sensitive Nose; Vicious Swing</td>
+        <td><b>Feats</b>: Absorb Strength; Affliction Resistance; Ambush Hunter; Ancestor's Rage; Ask The Bones; Bonekeeper's Bane; Breath Like Honey; Crunch; Distant Cackle; First To Strike, First To Fall; Grandmother's Wisdom; Hyena Familiar; Impaling Bone; Kholo Lore; Kholo Weapon Familiarity; Laughing Kholo; Left-Hand Blood; Legendary Laugh; Pack Hunter; Pack Stalker; Rabid Sprint; Right-Hand Blood; Sensitive Nose; Terrain Stalker (Underbrush); Vicious Swing</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Hermit Features</b>: Attribute Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any); Dubious Knowledge; Skill Trained (Choose 1 from Nature, Occultism; Choose 1 from any Terrain Lore)</td>
         <td><b>Kholo Features</b>: Ant Kholo; Attribute Boost (Strength; Intelligence; Choose 1 from any); Attribute Flaw (Wisdom); Bite; Cave Kholo; Dog Kholo; Great Kholo; Kholo Heritage; Low-Light Vision; Sweetbreath Kholo; Winter Kholo; Witch Kholo</td>
@@ -114,7 +115,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Laughing Kholo: Has the Battle Cry feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Pack Stalker: Has the Terrain Stalker feature</i></td>
+        <td><i>Pack Stalker: +1 Skill Feat (Terrain Stalker feat)</i></td>
       </tr><tr style="text-align:center">
         <td>Absorb Strength: <b>(1)</b> Consuming a piece of a foe's fresh corpse gives temporary Hit Points equal to the foe's level for 1 min once per hr</td>
       </tr><tr style="text-align:center">
@@ -123,8 +124,6 @@ var attributes = {
         <td>Familiar: Has a Tiny animal minion</td>
       </tr><tr style="text-align:center">
         <td>First To Strike,First To Fall: Successful Strike in the 1st round on a foe that hasn't acted inflicts off-guard until the end of the next turn; reducing the foe to 0 HP by the end of that turn gives self and allies within 30' an extra Step, Stride, or Strike until the end of the following turn</td>
-      </tr><tr style="text-align:center">
-        <td>Legendary Laugh: Can Demoralize targets up to 60' away</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr></table>
@@ -140,36 +139,32 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +1 (dexterity; untrained)</td>
-      <td>Halfling Lore: +5 (intelligence; trained)</td>
-      <td>River Lore: +5 (intelligence; trained)</td>
+      <td>Dragon Lore: +5 (intelligence; trained)</td>
+      <td>Performance: +2 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Aquatic Lore: +5 (intelligence; trained)</td>
-      <td>Intimidation: +2 (charisma; untrained)</td>
-      <td>Society: +2 (intelligence; untrained)</td>
+      <td>Halfling Lore: +5 (intelligence; trained)</td>
+      <td>Religion: +0 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +5 (intelligence; trained)</td>
-      <td>Kholo Lore: +5 (intelligence; trained)</td>
-      <td>Stealth: +4 (dexterity; trained)</td>
+      <td>Intimidation: +2 (charisma; untrained)</td>
+      <td>River Lore: +5 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +6 (strength; trained)</td>
-      <td>Medicine: +0 (wisdom; untrained)</td>
-      <td>Survival: +3 (wisdom; trained)</td>
+      <td>Kholo Lore: +5 (intelligence; trained)</td>
+      <td>Society: +2 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +2 (intelligence; untrained)</td>
-      <td>Nature: +3 (wisdom; trained)</td>
-      <td>Thievery: +1 (dexterity; untrained)</td>
+      <td>Medicine: +0 (wisdom; untrained)</td>
+      <td>Stealth: +6 (dexterity; expert)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +7 (charisma; expert)</td>
-      <td>Occultism: +2 (intelligence; untrained)</td>
-      <td>Tripkee Lore: +5 (intelligence; trained)</td>
+      <td>Nature: +3 (wisdom; trained)</td>
+      <td>Survival: +3 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +5 (charisma; trained)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Dragon Lore: +5 (intelligence; trained)</td>
-      <td>Religion: +0 (wisdom; untrained)</td>
-      <td></td>
+      <td>Occultism: +2 (intelligence; untrained)</td>
+      <td>Thievery: +1 (dexterity; untrained)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -193,27 +188,27 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Sweetbreath Kholo: Skill Trained (Diplomacy)</i></td>
     </tr><tr style="text-align:center">
-      <td>Ambush Hunter: Can perform Scout and Avoid Notice simultaneously</td>
+      <td>Ambush Hunter: Can Scout and Avoid Notice simultaneously</td>
     </tr><tr style="text-align:center">
       <td>Ant Kholo: +1 Deception to claim innocence and +1 Deception DC vs. Sense Motive to notice lies about innocence</td>
     </tr><tr style="text-align:center">
-      <td>Ask The Bones: <b>(F)</b> Gains +1 Recall Knowledge from possessed bones with knowledge of topic once per day</td>
+      <td>Ask The Bones: <b>(F)</b> Gains +1 to Recall Knowledge if the source of possessed bones knew the topic well once per day</td>
     </tr><tr style="text-align:center">
       <td>Dubious Knowledge: Failure on a Recall Knowledge check yields a mix of true and false information</td>
     </tr><tr style="text-align:center">
-      <td>Laughing Kholo: Suffers no penalty to Demoralize a creature without a shared language</td>
+      <td>Pack Hunter: +2 to Aid and to allies' checks to Aid self</td>
     </tr><tr style="text-align:center">
-      <td>Legendary Laugh: Successful Demoralize inflicts 3d8 HP mental, or 6d8 HP on a critical success</td>
-    </tr><tr style="text-align:center">
-      <td>Pack Hunter: +2 Aid and +2 allies' checks to Aid self</td>
+      <td>Pack Stalker: Can extend Terrain Stalker effects to 1 ally within 10'</td>
     </tr><tr style="text-align:center">
       <td>Right-Hand Blood: Can suffer 1 HP slashing to gain +1 on Administer First Aid or 2d8 HP slashing to gain +1 on Treat Disease or Treat Wounds</td>
     </tr><tr style="text-align:center">
       <td>Sensitive Nose: Has 30' imprecise scent</td>
     </tr><tr style="text-align:center">
-      <td>Sweetbreath Kholo: +2 checks to Make An Impression when breath can be smelled</td>
+      <td>Sweetbreath Kholo: +2 to Make An Impression when breath can be smelled</td>
     </tr><tr style="text-align:center">
-      <td>Witch Kholo: +1 to Create a Diversion or Impersonate using voice</td>
+      <td>Terrain Stalker (Underbrush): Sneaking 5' in underbrush at least 10' from foes requires no Stealth check</td>
+    </tr><tr style="text-align:center">
+      <td>Witch Kholo: +1 to Create A Diversion or Impersonate using voice</td>
     </tr></table>
 </td>
   </tr></table>
@@ -235,7 +230,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Hide</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Crossbow (+6 1d8 P R120'; dexterity; expert); Greatpick (+8 1d10+3 P [Crit d12]; strength; expert); Jaws (+11 1d8+3 P; strength; expert); Sling (+6 1d6+1 B R50'; dexterity; expert)</td>
+        <td><b>Weapons</b>: Greatpick (+8 1d10+3 P [Crit d12]; strength; expert); Jaws (+11 1d8+3 P; strength; expert); Mambele (+8 1d6+3 S [Crit +d8] R20'; strength; expert); Sawtooth Saber (+6 1d6+3 S; strength; trained); Sling (+6 1d6+1 B R50'; dexterity; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -267,9 +262,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Kholo Weapon Familiarity: Has access to uncommon kholo weapons</td>
       </tr><tr style="text-align:center">
+        <td>Laughing Kholo: Suffers no Demoralize penalty for lacking a shared language</td>
+      </tr><tr style="text-align:center">
         <td>Left-Hand Blood: <b>(1)</b> Suffers 1 HP slashing to enhance a weapon to inflict 1d4 HP persistent poison on the next hit before the end of the next turn once per hr</td>
       </tr><tr style="text-align:center">
-        <td>Pack Stalker: Can extend Terrain Stalker effects to 1 ally within 10'</td>
+        <td>Legendary Laugh: Can Demoralize targets up to 60' away, and success inflicts 3d8 HP mental, or 6d8 HP on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Rabid Sprint: <b>(2)</b> Strides on all fours 3 times</td>
       </tr><tr style="text-align:center">
@@ -382,7 +379,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Legendary Laugh Feat: Requires level (currently 1) >= 17 and laughing kholo feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Pack Stalker Feat: Requires level (currently 1) >= 5 and stealth rank (currently 1) >= 2</td>
+        <td>Pack Stalker Feat: Requires level (currently 1) >= 5 and stealth rank (currently 2) >= 2</td>
       </tr><tr style="text-align:center">
         <td>Rabid Sprint Feat: Requires level (currently 1) >= 5 and dog kholo feature (currently 1)</td>
       </tr><tr style="text-align:center">

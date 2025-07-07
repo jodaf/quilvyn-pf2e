@@ -4161,7 +4161,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Expert Longevity':Pathfinder2E.FEATURES['Expert Longevity'],
   'Otherworldly Acumen':
     'Section=magic ' +
-    'Note="Can cast a chosen 2nd-rank spell as an innate spell once per day and use a day of downtime to change the spell chosen"',
+    'Note="Knows 1 chosen 2nd-rank innate spell; can cast it once per day and use a day of downtime to change the spell chosen"',
   'Tree Climber':'Section=ability Note="Has a 10\' climb Speed"',
   'Avenge Ally':
     'Action=1 ' +
@@ -4653,7 +4653,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Occult Resistance':'Section=save Note="+1 vs. occult effects"',
   'Hag Magic':
     'Section=magic ' +
-    'Note="Can cast a chosen spell up to 4th rank as an occult innate spell at 4th rank once per day"',
+    'Note="Knows 1 chosen occult innate spell of up to 4th rank; can cast it at 4th rank once per day"',
 
   // Nephilim
   'Nephilim':
@@ -4749,7 +4749,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Translocate divine innate spell; can cast it at 5th rank twice per day"',
   'Summon Nephilim Kin':
     'Section=magic ' +
-    'Note="Can cast a summoning divine innate spell at 5th rank once per day to summon an extraplanar ally"',
+    'Note="Knows 1 summoning divine innate spell; can cast it at 5th rank once per day to summon an extraplanar ally"',
   'Divine Declaration':
     'Section=magic ' +
     'Note="Knows the Divine Decree divine innate spell; can cast it at 7th rank once per day"',
@@ -4866,8 +4866,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save Note="Cat\'s Luck also gives targets within 10\' a reroll"',
   "Predator's Growl":
     'Action=Reaction ' +
-    'Section=skill ' +
-    'Note="Attempts to Demoralize an uncovered creature with no penalty for lacking a shared language"',
+    'Section=combat ' +
+    'Note="Attempts to Demoralize an uncovered creature, suffering no penalty for lacking a shared language"',
   'Silent Step':'Action=1 Section=combat Note="Steps, then Hides or Sneaks"',
   'Wary Skulker':
     'Section=skill Note="Can Scout and Avoid Notice simultaneously"',
@@ -4952,7 +4952,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Successful DC 17 flat check negates gaining the drained condition"',
   'Agonizing Rebuke':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Successful Demoralize inflicts %{rank.Intimidation<3?1:rank.Intimidation<4?2:3}d4 HP mental each rd for 1 min or until the target is more than 30\' away or no longer frightened"',
   'Expert Drill Sergeant':
     'Section=skill ' +
@@ -5014,7 +5014,7 @@ Pathfinder2ERemaster.FEATURES = {
      'Section=skill,skill ' +
      'Note=' +
        '"Skill Trained (Diplomacy)",' +
-       '"+%{skillNotes.breathLikeHoney?2:1} checks to Make An Impression when breath can be smelled"',
+       '"+%{skillNotes.breathLikeHoney?2:1} to Make An Impression when breath can be smelled"',
   'Winter Kholo':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
@@ -5022,12 +5022,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic,skill ' +
     'Note=' +
       '"Knows the Figment occult innate cantrip; can cast it at will",' +
-      '"+1 to Create a Diversion or Impersonate using voice"',
+      '"+1 to Create A Diversion or Impersonate using voice"',
 
   'Ask The Bones':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Gains +1 Recall Knowledge from possessed bones with knowledge of topic once per day"',
+    'Note="Gains +1 to Recall Knowledge if the source of possessed bones knew the topic well once per day"',
   'Crunch':
     'Section=combat Note="Jaws inflict 1d8 HP and have the grapple trait"',
   'Hyena Familiar':'Section=feature Note="Has the Familiar feature"',
@@ -5042,7 +5042,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Weapon Familiarity (Kholo Weapons; Flail; Khopesh; Mambele; War Flail)",' +
       '"Has access to uncommon kholo weapons%{level>=5?\'/Critical hits with a kholo weapon, flail, khopesh, khopesh, mambele, or war flail inflict its critical specialization effect\':\'\'}"',
   'Pack Hunter':
-    'Section=skill Note="+2 Aid and +2 allies\' checks to Aid self"',
+    'Section=skill Note="+2 to Aid and to allies\' checks to Aid self"',
   'Sensitive Nose':'Section=skill Note="Has 30\' imprecise scent"',
   'Absorb Strength':
     'Action=1 ' +
@@ -5052,10 +5052,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Ventriloquism occult innate spell; can cast it at 1st rank once per day"',
   'Pack Stalker':
-    'Section=combat,feature ' +
+    'Section=feature,skill ' +
     'Note=' +
-      '"Can extend Terrain Stalker effects to %{rank.Stealth<3?\'1 ally\':rank.Stealth<4?\'2 allies\':\'3 allies\'} within 10\'",' +
-      '"Has the Terrain Stalker feature"',
+      '"+1 Skill Feat (Terrain Stalker feat)",' +
+      '"Can extend Terrain Stalker effects to %{rank.Stealth<3?\'1 ally\':rank.Stealth<4?\'2 allies\':\'3 allies\'} within 10\'"',
   'Rabid Sprint':'Action=2 Section=combat Note="Strides on all fours 3 times"',
   'Affliction Resistance':
     'Section=save ' +
@@ -5068,7 +5068,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can suffer 1 HP slashing to gain +1 on Administer First Aid or 2d8 HP slashing to gain +1 on Treat Disease or Treat Wounds"',
   'Ambush Hunter':
-    'Section=skill Note="Can perform Scout and Avoid Notice simultaneously"',
+    'Section=skill Note="Can Scout and Avoid Notice simultaneously"',
   'Breath Like Honey':
     'Section=magic,skill ' +
     'Note=' +
@@ -5078,10 +5078,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Augury occult innate spell; can cast it at 2nd rank twice a day"',
   'Laughing Kholo':
-    'Section=feature,skill ' +
+    'Section=combat,feature ' +
     'Note=' +
-      '"Has the Battle Cry feature",' +
-      '"Suffers no penalty to Demoralize a creature without a shared language"',
+      '"Suffers no Demoralize penalty for lacking a shared language",' +
+      '"Has the Battle Cry feature"',
   "Ancestor's Rage":
     'Section=magic ' +
     'Note="Knows the Animal Form occult innate spell; can cast it at 5th rank once per day to become a canine"',
@@ -5095,11 +5095,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Impaling Spike occult innate spell; can cast it at 7th rank once per day for a bone spike that affects both corporeal or incorporeal targets"',
   'Legendary Laugh':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"Can Demoralize targets up to 60\' away",' +
-      '"Successful Demoralize inflicts 3d8 HP mental, or 6d8 HP on a critical success"',
+    'Section=combat ' +
+    'Note="Can Demoralize targets up to 60\' away, and success inflicts 3d8 HP mental, or 6d8 HP on a critical success"',
 
+  // Kobold
   'Cavernstalker Kobold':
     'Section=skill ' +
     'Note="Can Climb at %{speed//2}\' on a success, or %{speed}\' on a critical success/Successes on Acrobatics to Squeeze are critical successes"',
@@ -5115,24 +5114,24 @@ Pathfinder2ERemaster.FEATURES = {
   'Kobold Heritage':'Section=feature Note="1 selection"',
   'Spellhorn Kobold':
     'Section=magic ' +
-    'Note="Can cast a chosen cantrip as an arcane innate spell at will"',
+    'Note="Knows 1 chosen arcane innate cantrip; can cast it at will"',
   'Strongjaw Kobold':'Section=combat Note="Jaws inflict 1d6 HP piercing"',
   'Tunnelflood Kobold':'Section=ability Note="Has a 15\' swim Speed"',
-  'Venomtail Kobold':
+  'Venomtail Kobold':'Section=feature Note="Has the Tail Toxin feature"',
+  'Tail Toxin':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Enhances a piercing or slashing weapon to inflict %{level} HP persistent poison on the next hit before the end of the next turn once per day"',
 
-  // Kobold
   'Cringe':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Lowers the damage of a foe\'s critical hit by %{level+2} once per foe per day"',
   "Dragon's Presence":
-    'Section=save,skill ' +
+    'Section=combat,save ' +
     'Note=' +
-      '"Successes vs. fear are critical successes, and failures vs. fear are critical failures",' +
-      '"+1 Intimidation to Demoralize a foe of equal or lesser level"',
+      '"+1 to Demoralize a foe of equal or lesser level",' +
+      '"Successes vs. fear are critical successes, and failures vs. fear are critical failures"',
   'Kobold Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5146,7 +5145,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Scamper':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strides up to %{speed+5}\' feet away from a foe, gaining +2 Armor Class against triggered reactions"',
+    'Note="Strides up to %{speed+5}\' feet away from an adjacent foe to a clear space, gaining +2 Armor Class against triggered reactions"',
   'Snare Setter':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -5163,10 +5162,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Makes a Feint vs. Will against a foe within 30\' to reduce its threat perception"',
   'Snare Genius':
     'Section=skill ' +
-    'Note="Can Craft snares in 3 actions instead of 1 min and prepare %{rank.Crafting<3?3:rank.Crafting<4?4:5} snares for quick deployment during daily prep/Snares inflict off-guard until the end of its next turn on a critical failure"',
+    'Note="Can Craft snares in 3 actions instead of 1 min and prepare %{rank.Crafting<3?3:rank.Crafting<4?4:5} snares for quick deployment during daily prep/Creatures who critically fail saves vs. self snares suffer off-guard until the end of their next turn"',
   'Winglets':
     'Section=skill ' +
-    'Note="+5\' horizontal Leap and +10\' Long Jump distances and can High Jump and Long Jump without a Stride"',
+    'Note="+5\' horizontal Leap and +10\' Long Jump distances, and can High Jump and Long Jump without a Stride"',
   'Between The Scales':
     'Section=combat ' +
     'Note="Agile and finesse melee weapons and unarmed attacks vs. an off-guard creature have the backstabber trait"',
@@ -5178,26 +5177,26 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can end movement in the same square as a Small or smaller ally"',
   'Evolved Spellhorn':
     'Section=magic ' +
-    'Note="Can cast a chosen 1st-rank and a chosen 2nd-rank arcane spell as arcane innate spells once each per day"',
+    'Note="Knows 1 chosen 1st-rank and 1 chosen 2nd-rank arcane innate spell; can cast each once per day"',
   'Fleeing Shriek':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="10\' emanation inflicts %{(level+1)//2}d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that failed its save, once per hr"',
+    'Note="10\' emanation inflicts %{(level+1)//2>?5}d6 HP sonic (<b>save basic Fortitude</b>), and a subsequent Stride triggers no reactions from any creature that critically failed its save, once per hr"',
   'Winglet Flight':'Action=1 Section=ability Note="Can Fly 20\' once per rd"',
   'Resplendent Spellhorn':
     'Section=magic ' +
-    'Note="Can cast a chosen 3rd-rank and a chosen 4th-rank arcane spell as arcane innate spells once each per day"',
+    'Note="Knows 1 chosen 3rd-rank and 1 chosen 4th-rank arcane innate spell; can cast each once per day"',
   'Tumbling Diversion':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Tumble Through a foe\'s space allows a subsequent +1 Create a Diversion attempt, or +2 on a critical success, to make self hidden to that foe"',
+    'Note="Successful Tumble Through a foe\'s space allows a subsequent +1 Create A Diversion attempt, or +2 on a critical success, to make self hidden to that foe"',
   'Vicious Snares':
     'Section=skill ' +
     'Note="Snares inflict +%{rank.Crafting<4?1:2}d6 HP precision"',
   "Benefactor's Majesty":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives self %{level} temporary Hit Points for 1 min and flat checks to remove persistent damage, and requires foes to make a DC 11 flat check to attack self until the start of the next turn"',
+    'Note="Gives self %{level} temporary Hit Point%{level>1?\'s\':\'\'} for 1 min and flat checks to remove persistent damage, and requires foes to succeed on a DC 11 flat check to attack self until the start of the next turn, once per day"',
 
   // Lizardfolk
   'Aquatic Adaptation':'Section=feature Note="Has the Breath Control feature"',
@@ -5210,10 +5209,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Cloudleaper Lizardfolk':
     'Section=save Note="Can use limbs to negate falling damage"',
   'Frilled Lizardfolk':
-    'Section=feature,skill ' +
+    'Section=combat,feature ' +
     'Note=' +
-      '"Has the Threatening Approach feature",' +
-      '"Can use visual threats to Demoralize"',
+      '"Can use visual threats to Demoralize",' +
+      '"Has the Threatening Approach feature"',
   'Lizardfolk Heritage':'Section=feature Note="1 selection"',
   'Sandstrider Lizardfolk':
     'Section=save ' +
@@ -5221,7 +5220,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Threatening Approach':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Stride to a spot adjacent to a foe followed by a successful Demoralize inflicts frightened 2"',
+    'Note="Successful Demoralize after Striding to a spot adjacent to a foe inflicts frightened 2"',
   'Unseen Lizardfolk':
     Pathfinder2E.FEATURES['Chameleon Gnome']
     .replace('and hair colors', 'color'),
@@ -5234,7 +5233,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Bone Magic':
     'Section=magic ' +
-    'Note="Can cast a chosen occult or primal cantrip as an innate spell at will"',
+    'Note="Knows 1 chosen occult or primal innate cantrip; can cast it at will"',
   'Iruxi Armaments (Claws)':
     'Section=combat,combat ' +
     'Note=' +
@@ -5321,16 +5320,17 @@ Pathfinder2ERemaster.FEATURES = {
       '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal duration without food and water"',
   'Longsnout Rat':
     'Section=skill ' +
-    'Note="Has 30\' imprecise scent/+2 Perception to Seek using scent"',
+    'Note="Has 30\' imprecise scent, and gains +2 Perception to Seek using scent"',
   'Ratfolk Heritage':'Section=feature Note="1 selection"',
   'Sewer Rat':
      'Section=save ' +
      'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes/Immune to putrid plague"',
   'Shadow Rat':
-    'Section=skill,skill ' +
+    'Section=combat,skill,skill ' +
     'Note=' +
+      '"Can use Intimidation to Coerce animals and suffers no Demoralize penalty for lacking a shared language with them",' +
       '"Skill Trained (Intimidation)",' +
-      '"Can use Intimidation to Coerce animals, suffers no Demoralize penalty for lacking a shared language with an animal, and suffers 1 step worse on initial animal attitudes"',
+      '"Suffers 1 step worse on initial animal attitudes"',
   'Snow Rat':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1}, and treats environmental cold as 1 step less extreme"',
@@ -5533,8 +5533,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Nocturnal Tripkee':'Section=feature Note="Has the Darkvision feature"',
   'Terrifying Croak':
     'Action=1 ' +
-    'Section=skill ' +
-    'Note="Attempts to Demoralize a creature within 30\' with no penalty for lacking a shared language; success prevents reducing their frightened condition below 1 for 1 rd"',
+    'Section=combat ' +
+    'Note="Attempts to Demoralize a creature within 30\', suffering no penalty for lacking a shared language; success prevents reducing their frightened condition below 1 for 1 rd"',
   'Tripkee Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5915,7 +5915,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Reflexive Courage':Pathfinder2E.FEATURES['Attack Of Opportunity'],
   'Soulsight':
     'Section=skill ' +
-    'Note="R60\' Has imprecise spiritsense that can detect the presence of spirits"',
+    'Note="Has 60\' imprecise spiritsense that can detect the presence of spirits"',
   'Annotate Composition':
     'Section=magic ' +
     'Note="Can spend 10 minutes and a Focus Point to write a composition spell that can be activated by anyone until next daily prep"',
@@ -6393,7 +6393,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Storm Retribution':Pathfinder2E.FEATURES['Storm Retribution'],
   'Deimatic Display':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Makes a Demoralize attempt against animals, fungii, and plants in a 15\' cone"',
   'Ferocious Shape':
     Pathfinder2E.FEATURES['Ferocious Shape']
@@ -6716,7 +6716,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Crossbow Ace':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Uses Create a Diversion or Take Cover, then Interact to reload a crossbow"',
+    'Note="Uses Create A Diversion or Take Cover, then Interact to reload a crossbow"',
   'Hunted Shot':
     Pathfinder2E.FEATURES['Hunted Shot']
     .replace(' once per rd', ''),
@@ -8661,7 +8661,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the No Cause For Alarm and Pointed Question features",' +
       '"Skill Trained (Diplomacy)",' +
-      '"Can use Persue A Lead and Make An Impression simultaneously"',
+      '"Can Persue A Lead and Make An Impression simultaneously"',
   // Fortitude Expertise as above
   'Greater Dogged Will':
     'Section=save,save ' +
@@ -9700,10 +9700,10 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Performance)",' +
       '"Perform actions have the bravado trait"',
   'Braggart':
-    'Section=skill,skill ' +
+    'Section=combat,skill ' +
     'Note=' +
-      '"Skill Trained (Intimidation)",' +
-      '"Demoralize actions have the bravado trait"',
+      '"Demoralize actions have the bravado trait",' +
+      '"Skill Trained (Intimidation)"',
   'Confident Evasion':
     'Section=save,save ' +
     'Note=' +
@@ -9841,7 +9841,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gains panache by going taking last position in initiative"',
   'Antagonize':
     'Section=combat ' +
-    'Note="Successful Demoralize prevents lowering frightened condition below 1 until target attacks self or moves out of sight for 1 rd"',
+    'Note="Successful Demoralize prevents lowering frightened condition below 1 until that target attacks self or moves out of sight for 1 rd"',
   'Brandishing Draw':
     'Action=1 ' +
     'Section=combat ' +
@@ -13767,6 +13767,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name.match(/^Mercy \(.*\)$/)) {
     rules.defineRule('features.Mercy', 'features.' + name, '=', '1');
+  } else if(name == 'Pack Stalker') {
+    // Make sure there's a featCount.Skill to increment
+    rules.defineRule('featCount.Skill', 'features.Pack Stalker', '^=', '0');
   } else if(name == "Patron's Truth") {
     rules.defineRule('spellSlots.A10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');

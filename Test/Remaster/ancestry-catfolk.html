@@ -24,10 +24,9 @@ var attributes = {
   "selectableFeatures.Catfolk - Hunting Catfolk":1, "selectableFeatures.Catfolk - Jungle Catfolk":1, 
   "selectableFeatures.Catfolk - Liminal Catfolk":1, "selectableFeatures.Catfolk - Nine Lives Catfolk":1, 
   "selectableFeatures.Catfolk - Sharp-Eared Catfolk":1, "selectableFeatures.Catfolk - Winter Catfolk":1, 
-  "selectableFeatures.Fighter - Strength":1, "shield":"Tower", "skillIncreases.Athletics":1, 
-  "skillIncreases.Butchering Lore":1, "skillIncreases.Games Lore":1, "skillIncreases.Genealogy Lore":1, 
-  "skillIncreases.Heaven Lore":1, "skillIncreases.Intimidation":1, "weapons.Cruuk":1, "weapons.Morningstar":1, 
-  "weapons.Sickle":1
+  "selectableFeatures.Fighter - Strength":1, "shield":"Tower", "skillIncreases.Athletics":2, 
+  "skillIncreases.Butchering Lore":1, "skillIncreases.Games Lore":1, "skillIncreases.Intimidation":2, 
+  "weapons.Cruuk":1, "weapons.Kukri":1, "weapons.Sawtooth Saber":1, "weapons.Sickle":1
 };
   </script>
 </head>
@@ -128,34 +127,30 @@ var attributes = {
     <col style="width:34%"/>
     <tr style="text-align:left">
       <td>Acrobatics: +3 (dexterity; trained)</td>
-      <td>Fortune-Telling Lore: +5 (intelligence; trained)</td>
+      <td>Diplomacy: +5 (charisma; trained)</td>
       <td>Performance: +2 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +5 (intelligence; trained)</td>
-      <td>Games Lore: +5 (intelligence; trained)</td>
+      <td>Fortune-Telling Lore: +5 (intelligence; trained)</td>
       <td>Religion: -1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +2 (strength; trained)</td>
-      <td>Genealogy Lore: +5 (intelligence; trained)</td>
+      <td>Athletics: +4 (strength; expert)</td>
+      <td>Games Lore: +5 (intelligence; trained)</td>
       <td>Society: +2 (intelligence; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Butchering Lore: +5 (intelligence; trained)</td>
-      <td>Heaven Lore: +5 (intelligence; trained)</td>
+      <td>Intimidation: +7 (charisma; expert)</td>
       <td>Stealth: +0 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Catfolk Lore: +5 (intelligence; trained)</td>
-      <td>Intimidation: +5 (charisma; trained)</td>
+      <td>Medicine: -1 (wisdom; untrained)</td>
       <td>Survival: +2 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
       <td>Crafting: +2 (intelligence; untrained)</td>
-      <td>Medicine: -1 (wisdom; untrained)</td>
+      <td>Nature: -1 (wisdom; untrained)</td>
       <td>Thievery: +0 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +2 (charisma; untrained)</td>
-      <td>Nature: -1 (wisdom; untrained)</td>
-      <td></td>
-    </tr><tr style="text-align:left">
-      <td>Diplomacy: +5 (charisma; trained)</td>
       <td>Occultism: +5 (intelligence; trained)</td>
       <td></td>
     </tr></table>
@@ -181,15 +176,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Hobnobber: Can Gather Information in half the normal time</td>
     </tr><tr style="text-align:center">
-      <td>Hunting Catfolk: Has 30' imprecise scent/+2 to Track familiar scents</td>
+      <td>Hunting Catfolk: Has 30' imprecise scent, and gains +2 to Track familiar scents</td>
     </tr><tr style="text-align:center">
       <td>Liminal Catfolk: +1 Occultism to Recall Knowledge about extraplanar creatures</td>
     </tr><tr style="text-align:center">
-      <td>Lucky Break: Can use Cat's Luck for an Acrobatics or Athletics check</td>
-    </tr><tr style="text-align:center">
       <td>Oddity Identification: +2 Occultism to Identify Magic with a fortune, mental, possession, prediction, or scrying trait</td>
-    </tr><tr style="text-align:center">
-      <td>Predator's Growl: <b>(R)</b> Attempts to Demoralize an uncovered creature with no penalty for lacking a shared language</td>
     </tr><tr style="text-align:center">
       <td>Pride Hunter: Can use lesser cover from allies to Hide</td>
     </tr><tr style="text-align:center">
@@ -219,7 +210,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Scale Mail</td>
         <td><b>Shield</b>: Tower (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Claws (+8 1d6+1 S; dexterity; expert); Cruuk (+6 1d6+1 B R30'; strength; expert); Jaws (+8 1d6+1 P; strength; expert); Morningstar (+6 1d6+1 B/P; strength; expert); Sickle (+7 1d4+1 S; dexterity; expert)</td>
+        <td><b>Weapons</b>: Claws (+8 1d6+1 S; dexterity; expert); Cruuk (+6 1d6+1 B R30'; strength; expert); Jaws (+8 1d6+1 P; strength; expert); Kukri (+7 1d6+1 S; dexterity; expert); Sawtooth Saber (+5 1d6+1 S; dexterity; trained); Sickle (+7 1d4+1 S; dexterity; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -239,11 +230,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
-        <td>Aggravating Scratch: Claws also inflict 1d4 HP persistent poison on a critical hit</td>
+        <td>Aggravating Scratch: Critical hits with claws also inflict 1d4 HP persistent poison</td>
       </tr><tr style="text-align:center">
         <td>Black Cat Curse: <b>(R)</b> R30' Forces target to reroll a successful save once per day</td>
       </tr><tr style="text-align:center">
-        <td>Cat Nap: 10 min sleep gives 1 temporary Hit Point once per hr</td>
+        <td>Cat Nap: 10 min sleep gives 1 temporary Hit Point for 1 hr once per hr</td>
       </tr><tr style="text-align:center">
         <td>Caterwaul: <b>(R)</b> Gives 1 HP and a wounded condition increase to an ally reduced to 0 HP once per day</td>
       </tr><tr style="text-align:center">
@@ -257,11 +248,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Light Paws: <b>(2)</b> Takes a Stride and a Step, ignoring difficult terrain</td>
       </tr><tr style="text-align:center">
+        <td>Predator's Growl: <b>(R)</b> Attempts to Demoralize an uncovered creature, suffering no penalty for lacking a shared language</td>
+      </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Silent Step: <b>(1)</b> Hides or Sneaks after a Step</td>
+        <td>Silent Step: <b>(1)</b> Steps, then Hides or Sneaks</td>
       </tr><tr style="text-align:center">
         <td>Ten Lives: Successful DC 17 flat check upon dying instead inflicts 0 HP and dying 3</td>
       </tr><tr style="text-align:center">
@@ -281,11 +274,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Reliable Luck: Increased Cat's Luck effects</i></td>
       </tr><tr style="text-align:center">
-        <td>Cat's Luck: <b>(F)</b> Rerolls a failed Reflex or Fortitude save once per hr</td>
+        <td>Cat's Luck: <b>(F)</b> Rerolls a failed Reflex save, Fortitude save, Acrobatics check, or Athletics check once per hr</td>
       </tr><tr style="text-align:center">
         <td>Evade Doom: Successful DC 17 flat check negates acquiring the doomed condition</td>
       </tr><tr style="text-align:center">
-        <td>Graceful Guidance: Can use an Aid Reaction to give an ally a bonus on a Reflex save</td>
+        <td>Graceful Guidance: Can Aid an ally's Reflex save</td>
       </tr><tr style="text-align:center">
         <td>Land On Your Feet: Takes half damage from falling and does not land prone</td>
       </tr><tr style="text-align:center">
@@ -305,6 +298,17 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td>    <table id="SpellPart" style="width:100%">
+    <tr style="text-align:center">
+      <td>      <table id="SpellStats" style="width:100%">
+      <tr style="text-align:center">
+        <td><b>Attack</b>: Occult Innate: +5 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Occult Innate: 15 (charisma; trained)</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Spells</b>: Detect Magic (OC1): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the rank of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>: <i>Liminal Catfolk: Knows the Detect Magic occult innate cantrip; can cast it at will</i></td>
@@ -341,7 +345,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Lucky Break Feat: Requires level (currently 1) >= 5 and cat's luck feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Predator's Growl Feat: Requires level (currently 1) >= 9 and intimidation rank (currently 1) >= 2</td>
+        <td>Predator's Growl Feat: Requires level (currently 1) >= 9 and intimidation rank (currently 2) >= 2</td>
       </tr><tr style="text-align:center">
         <td>Pride Hunter Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">
@@ -349,7 +353,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Silent Step Feat: Requires level (currently 1) >= 9</td>
       </tr><tr style="text-align:center">
-        <td>Springing Leaper Feat: Requires level (currently 1) >= 5 and athletics rank (currently 1) >= 2</td>
+        <td>Springing Leaper Feat: Requires level (currently 1) >= 5 and athletics rank (currently 2) >= 2</td>
       </tr><tr style="text-align:center">
         <td>Ten Lives Feat: Requires level (currently 1) >= 17 and evade doom feature (currently 1)</td>
       </tr><tr style="text-align:center">
