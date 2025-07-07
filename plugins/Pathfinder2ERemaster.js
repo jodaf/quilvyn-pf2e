@@ -4788,7 +4788,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Catfolk Heritage':'Section=feature Note="1 selection"',
   'Clawed Catfolk':'Section=combat Note="Claws inflict 1d6 HP slashing"',
   'Hunting Catfolk':
-    'Section=skill Note="Has 30\' imprecise scent/+2 to Track familiar scents"',
+    'Section=skill ' +
+    'Note="Has 30\' imprecise scent, and gains +2 to Track familiar scents"',
   'Jungle Catfolk':
     'Section=ability ' +
     'Note="Moves normally through undergrowth difficult terrain, and through undergrowth greater difficult terrain as difficult terrain"',
@@ -4815,11 +4816,11 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Cat Nap':
     'Section=combat ' +
-    'Note="10 min sleep gives %{level} temporary Hit Point%{level>1?\'s\':\'\'} once per hr"',
+    'Note="10 min sleep gives %{level} temporary Hit Point%{level>1?\'s\':\'\'} for 1 hr once per hr"',
   "Cat's Luck":
     'Action=Free ' +
     'Section=save ' +
-    'Note="Rerolls a failed Reflex%{saveNotes.luckyBreak?\' or Fortitude\':\'\'} save once per %{saveNotes.reliableLuck?\'hr\':\'day\'}"',
+    'Note="Rerolls a failed Reflex save%{saveNotes.luckyBreak?\', Fortitude save, Acrobatics check, or Athletics check\':\'\'} once per %{saveNotes.reliableLuck?\'hr\':\'day\'}"',
   'Catfolk Dance':
     'Action=1 ' +
     'Section=combat ' +
@@ -4841,18 +4842,12 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Hobnobber feature",' +
       '"Skill Trained (Diplomacy)"',
   'Climbing Claws':'Section=ability Note="Has a 10\' climb Speed"',
-  'Graceful Guidance':
-    'Section=save ' +
-    'Note="Can use an Aid Reaction to give an ally a bonus on a Reflex save"',
+  'Graceful Guidance':'Section=save Note="Can Aid an ally\'s Reflex save"',
   'Light Paws':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Takes a Stride and a Step, ignoring difficult terrain"',
-  'Lucky Break':
-    'Section=save,skill ' +
-    'Note=' +
-      '"Has increased Cat\'s Luck effects",' +
-      '"Can use Cat\'s Luck for an Acrobatics or Athletics check"',
+  'Lucky Break':'Section=save Note="Has increased Cat\'s Luck effects"',
   'Pride Hunter':
     'Section=skill Note="Can use lesser cover from allies to Hide"',
   'Springing Leaper':
@@ -4863,7 +4858,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+2 vs. disease, and successes vs. disease are critical successes"',
   'Aggravating Scratch':
     'Section=combat ' +
-    'Note="Claws also inflict 1d4 HP persistent poison on a critical hit"',
+    'Note="Critical hits with claws also inflict 1d4 HP persistent poison"',
   'Evade Doom':
     'Section=save ' +
     'Note="Successful DC 17 flat check negates acquiring the doomed condition"',
@@ -4873,7 +4868,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=skill ' +
     'Note="Attempts to Demoralize an uncovered creature with no penalty for lacking a shared language"',
-  'Silent Step':'Action=1 Section=combat Note="Hides or Sneaks after a Step"',
+  'Silent Step':'Action=1 Section=combat Note="Steps, then Hides or Sneaks"',
   'Wary Skulker':
     'Section=skill Note="Can Scout and Avoid Notice simultaneously"',
   'Black Cat Curse':
@@ -4905,16 +4900,16 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Group Coercion feature",' +
-      '"Successes on Coercion checks vs. goblins are critical successes and critical failure are normal failures"',
+      '"Successes on Coercion checks vs. goblins are critical successes and critical failures are normal failures"',
   'Shortshanks Hobgoblin':
-    'Section=ability,feature ' +
+    'Section=feature,skill ' +
     'Note=' +
-      '"Climbing does not inflict off-guard",' +
-      '"Has the Ride feature"',
+      '"Has the Ride feature",' +
+      '"Climbing does not inflict off-guard"',
   'Smokeworker Hobgoblin':
-    'Section=combat,skill ' +
+    'Section=combat,save ' +
     'Note=' +
-      '"Targeting smoke-concealed creatures requires no flat check",' +
+      '"Targeting a smoke-concealed creature requires no flat check",' +
       '"Has fire resistance %{level//2>?1}"',
   'Warmarch Hobgoblin':
     'Section=skill ' +
@@ -4922,14 +4917,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Warrenbred Hobgoblin':
     'Section=combat,skill ' +
     'Note=' +
-      '"Reduces the DC to target a concealed or hidden foe to 3 or 9",' +
+      '"Reduces the flat check DC to target a concealed or hidden foe to 3 or 9",' +
       '"Successes on Acrobatics to Squeeze are critical successes"',
 
   'Alchemical Scholar':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Alchemical Crafting feature",' +
-      '"Knows +%{level} alchemical formulas"',
+      '"Knows +%{level} common alchemical formulas"',
   'Cantorian Reinforcement':
     'Section=save ' +
     'Note="Successes vs. disease or poison are critical successes"',
@@ -4946,10 +4941,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Leech-Clip':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Hits with a flail inflict -10\' Speed, or -15\' Speed on a critical hit, for 1 rd"',
+    'Note="Successful Strike with a flail inflicts -10\' Speed, or -15\' Speed on a critical hit, for 1 rd"',
   'Remorseless Lash':
     'Section=combat ' +
-    'Note="Melee hits inflict no reduction of a frightened condition until the beginning of the next turn"',
+    'Note="Melee hits prevent reduction of a frightened condition until the beginning of the next turn"',
   'Sneaky':'Section=skill Note="+5 Sneak speed, and can Sneak between cover"',
   'Stone Face':
     'Section=save Note="+1 vs. fear and +2 Will DC vs. Intimidation"',
@@ -4958,7 +4953,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful DC 17 flat check negates gaining the drained condition"',
   'Agonizing Rebuke':
     'Section=skill ' +
-    'Note="Successful Demoralize inflicts %{rank.Intimidation<3?1:rank.Intimidation<4?2:3}d4 mental each rd for 1 min or until the target is more than 30\' away or no longer frightened"',
+    'Note="Successful Demoralize inflicts %{rank.Intimidation<3?1:rank.Intimidation<4?2:3}d4 HP mental each rd for 1 min or until the target is more than 30\' away or no longer frightened"',
   'Expert Drill Sergeant':
     'Section=skill ' +
     'Note="Following an Expert while exploring gives allies a +3 or +4 bonus on skills with expert or master proficiency"',
@@ -4971,7 +4966,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cantorian Rejuvenation':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Recovers %{level<15?4:6}d6 HP and gains %{level<15?10:15} temporary HP for 1 min once per day"',
+    'Note="Recovers %{level<15?4:6}d6 Hit Points and gains %{level<15?10:15} temporary Hit Points for 1 min once per day"',
   'Fell Rider':
     'Section=feature ' +
     'Note="Animal companion is trained in Intimidation and can give Aid on Demoralize attempts"',
@@ -4985,17 +4980,17 @@ Pathfinder2ERemaster.FEATURES = {
   "Can't Fall Here":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Adjacent willing ally reduced to 0 Hit Point retains 1 Hit Point, suffers a wounded level, and gains %{level} temporary Hit Points and for 1 min once per day"',
+    'Note="Adjacent willing ally reduced to 0 Hit Points retains 1 Hit Point, suffers a wounded level, and gains %{level} temporary Hit Point%{level>1?\'s\':\'\'} for 1 min once per day"',
   'War Conditioning (Climb)':'Section=ability Note="Has a 20\' climb Speed"',
   'War Conditioning (Swim)':'Section=ability Note="Has a 20\' swim Speed"',
   'Cantorian Restoration':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="R60\' Restores 6d6+%{constitutionModifier} Hit Points to a dying creature once per day"',
+    'Note="R60\' Restores 6d8+%{constitutionModifier} Hit Points to a dying creature once per day"',
   'Rallying Cry':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="30\' emanation gives allies %{level} temporary Hit Points and an additional Step, Stride, or Strike each rd for 1 min once per day"',
+    'Note="30\' emanation gives allies %{level} temporary Hit Point%{level>1?\'s\':\'\'} and an additional Step, Stride, or Strike each rd for 1 min once per day"',
 
   // Kholo
   'Ant Kholo':
@@ -8042,7 +8037,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Rerolls a normal failure on a Perception or skill check once per day"',
   'Supernatural Senses':
     'Section=skill ' +
-    'Note="Reduces the DC to target a concealed or hidden foe to 3 or 9"',
+    'Note="Reduces the flat check DC to target a concealed or hidden foe to 3 or 9"',
   // Swipe as above
   'Wounded Rage':Pathfinder2E.FEATURES['Wounded Rage'],
   'Animal Skin':Pathfinder2E.FEATURES['Animal Skin'],
