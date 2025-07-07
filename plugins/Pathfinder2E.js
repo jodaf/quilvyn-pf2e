@@ -15221,7 +15221,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         });
       }
       matchInfo = n.match(/\s(arcane|divine|occult|primal)\s/);
-      if(matchInfo && n.includes('innate spell')) {
+      if(matchInfo && n.match(/innate (cantrip|hex|spell)/)) {
         let trad =
           matchInfo[1].charAt(0).toUpperCase() + matchInfo[1].substring(1);
         rules.defineRule('rank.' + trad + ' Innate',
