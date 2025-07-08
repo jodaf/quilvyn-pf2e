@@ -90,6 +90,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Arcane Dragonblood; Breath Of The Dragon; Deadly Aspect; Divine Dragonblood; Draconic Aspect (Claw); Draconic Aspect (Jaws); Draconic Aspect (Tail); Draconic Resistance; Draconic Scent; Draconic Sight; Draconic Veil; Dragon Lore; Dragon's Flight; Form Of The Dragon; Formidable Breath; Lingering Breath; Majestic Presence; Occult Dragonblood; Primal Dragonblood; Scaly Hide; Traditional Resistances; True Dragon's Flight; Vicious Swing; Wing Buffet</td>
+        <td><b>Dragonblood Features</b>: Adamantine Exemplar; Draconic Exemplar</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Strength</td>
         <td><b>Criminal Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Experienced Smuggler; Skill Trained (Stealth; Underworld Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage</td>
@@ -107,8 +108,6 @@ var attributes = {
         <td><i>Draconic Sight: Has the Low-Light Vision feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dragon Lore: Has the Additional Lore (Dragon Lore) feature</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Dragonblood: Has the Draconic Exemplar feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -265,11 +264,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Draconic Resistance: Has resistance 1 to choice of bludgeoning, acid, cold, fire, electricity, or sonic</td>
+        <td>Draconic Resistance: Has resistance 1 to a choice of acid, cold, fire, electricity, or sonic, or resistance 1 if the source is a dragon</td>
       </tr><tr style="text-align:center">
         <td>Dragonblood: Successes on saves vs. fear are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Traditional Resistances: +1 Armor Class and saves vs. primal magical effects, or +2 vs. sleep and paralysis</td>
+        <td>Traditional Resistances: +1 Armor Class and saves vs. primal magical effects, or +2 vs. primal sleep and paralysis</td>
       </tr></table>
 </td>
     </tr></table>
@@ -283,8 +282,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Attack</b>: Arcane Innate: +4 (charisma; trained); Primal Innate: +4 (charisma; trained)</td>
-        <td><b>Spell DC</b>: Arcane Innate: 14 (charisma; trained); Primal Innate: 14 (charisma; trained)</td>
+        <td><b>Attack</b>: Arcane Innate: +4 (charisma; trained); Divine Innate: +4 (charisma; trained); Occult Innate: +4 (charisma; trained); Primal Innate: +4 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Arcane Innate: 14 (charisma; trained); Divine Innate: 14 (charisma; trained); Occult Innate: 14 (charisma; trained); Primal Innate: 14 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -294,7 +293,19 @@ var attributes = {
     <tr style="text-align:left">
       <td>Detect Magic (AC1): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the rank of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
     </tr><tr style="text-align:left">
+      <td>Dragon Form (A6): <b>(2)</b> Self becomes a Large dragon with 40' Speed, 100' fly Speed, 10 temporary HP, Armor Class 19, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120' fly Speed, +5' reach, 15 temporary HP, Armor Class 22, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
+    </tr><tr style="text-align:left">
+      <td>Dragon Form (D6): <b>(2)</b> Self becomes a Large dragon with 40' Speed, 100' fly Speed, 10 temporary HP, Armor Class 19, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120' fly Speed, +5' reach, 15 temporary HP, Armor Class 22, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
+    </tr><tr style="text-align:left">
+      <td>Dragon Form (O6): <b>(2)</b> Self becomes a Large dragon with 40' Speed, 100' fly Speed, 10 temporary HP, Armor Class 19, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120' fly Speed, +5' reach, 15 temporary HP, Armor Class 22, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
+    </tr><tr style="text-align:left">
       <td>Dragon Form (P6): <b>(2)</b> Self becomes a Large dragon with 40' Speed, 100' fly Speed, 10 temporary HP, Armor Class 19, +22 attack, +6 damage, a breath weapon, resistance 10 to the breath weapon damage type, darkvision, 60' imprecise scent, +23 Athletics modifier, and creature-specific features for 1 min (<b>heightened 8th</b> becomes a Huge creature with 120' fly Speed, +5' reach, 15 temporary HP, Armor Class 22, +28 attack, +12 damage (breath weapon +14), +28 Athletics)</td>
+    </tr><tr style="text-align:left">
+      <td>Humanoid Form (A2): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
+    </tr><tr style="text-align:left">
+      <td>Humanoid Form (D2): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
+    </tr><tr style="text-align:left">
+      <td>Humanoid Form (O2): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
     </tr><tr style="text-align:left">
       <td>Humanoid Form (P2): <b>(2)</b> Self becomes a Small or Medium humanoid and gains +4 Deception to pass as the chosen ancestry for 10 min (<b>heightened 3rd</b> gives darkvision or low-light vision if appropriate to the ancestry; <b>5th</b> becomes a Large humanoid)</td>
     </tr></table>
@@ -304,9 +315,21 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Arcane Sense: Knows the Detect Magic arcane innate spell; can cast it at 1st rank at will</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Draconic Veil: Knows the Humanoid Form primal innate spell; can cast it at 5th rank once per day, lasting 1 hr</i></td>
+      <td><i>Draconic Veil (Arcane): Knows the Humanoid Form arcane innate spell; can cast it at 5th rank once per day, lasting 1 hr</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Form Of The Dragon: Knows the Dragon Form primal innate spell; can cast it at 8th rank once per day</i></td>
+      <td><i>Draconic Veil (Divine): Knows the Humanoid Form divine innate spell; can cast it at 5th rank once per day, lasting 1 hr</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Draconic Veil (Occult): Knows the Humanoid Form occult innate spell; can cast it at 5th rank once per day, lasting 1 hr</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Draconic Veil (Primal): Knows the Humanoid Form primal innate spell; can cast it at 5th rank once per day, lasting 1 hr</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Form Of The Dragon (Arcane): Knows the Dragon Form arcane innate spell; can cast it at 8th rank once per day</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Form Of The Dragon (Divine): Knows the Dragon Form divine innate spell; can cast it at 8th rank once per day</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Form Of The Dragon (Occult): Knows the Dragon Form occult innate spell; can cast it at 8th rank once per day</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Form Of The Dragon (Primal): Knows the Dragon Form primal innate spell; can cast it at 8th rank once per day</i></td>
     </tr></table>
 </td>
   </tr></table>
@@ -320,7 +343,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Ancestry Feats Allocation: 1 available vs. 23 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Deadly Aspect Feat: Requires level (currently 1) >= 5 and draconic aspect feature</td>
+        <td>Deadly Aspect Feat: Requires level (currently 1) >= 5 and draconic aspect feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Draconic Scent Feat: Requires level (currently 1) >= 5</td>
       </tr><tr style="text-align:center">

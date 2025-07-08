@@ -1753,7 +1753,7 @@ Pathfinder2ERemaster.FEATS = {
   'Enthralling Allure':'Traits=Dhampir Require="level >= 5"',
   'Necromantic Physiology':'Traits=Dhampir Require="level >= 5"',
   'Undead Slayer':'Traits=Dhampir Require="level >= 5"',
-  'Bloodletting Fangs':'Traits=Dhampir Require="level >= 9","features.Fangs"',
+  'Bloodletting Fangs':'Traits=Dhampir Require="level >= 9","weapons.Fangs"',
   'Night Magic':'Traits=Dhampir Require="level >= 9"',
   'Form Of The Bat':
     'Traits=Dhampir,Concentrate,Divine,Polymorph Require="level >= 13"',
@@ -5609,7 +5609,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Void Healing':
     'Section=save Note="Vitality effects cause harm and void effects heal"',
   'Straveika':
-    'Section=skill Note="+1 Perception to Sense Motive and vs. Lies"',
+    'Section=skill ' +
+    'Note="+1 Perception to Sense Motive and +1 Perception DC vs. Lies"',
   'Svetocher':
     'Section=save,skill ' +
     'Note=' +
@@ -5633,7 +5634,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+2 vs. disease, and successful saves vs. disease are critical successes"',
   'Undead Slayer':
     'Section=combat ' +
-    'Note="Inflicts additional damage vs. undead equal to the number of weapon damage dice, or double this vs. vampires"',
+    'Note="Inflicts additional damage vs. undead equal to the number of weapon damage dice, or double the number of dice vs. vampires"',
   'Bloodletting Fangs':
     'Section=combat ' +
     'Note="Fangs inflict +1d4 HP persistent bleed on a critical hit"',
@@ -5650,9 +5651,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Dragonblood
   'Dragonblood':
-    'Section=feature,feature,save ' +
+    'Section=feature,save ' +
     'Note=' +
-      '"Has the Draconic Exemplar feature",' +
       '"Has the dragonblood trait and may take Dragonblood ancestry feats",' +
       '"Successes on saves vs. fear are critical successes"',
   'Draconic Exemplar':'Section=feature Note="1 selection"',
@@ -5687,7 +5687,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Draconic Aspect (Tail)':
     'Section=combat Note="Tail inflicts 1d6 HP bludgeoning"',
   'Draconic Resistance':
-    'Section=save Note="Has resistance %{level//2>?1} to %V"',
+    'Section=save Note="Has resistance %{level//2>?1} to %V, or resistance %{level} if the source is a dragon"',
   'Draconic Sight':
     // TODO or Darkvision
     'Section=feature Note="Has the Low-Light Vision feature"',
@@ -5707,7 +5707,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 Section=ability Note="Can Fly 20\' once per rd"',
   'Traditional Resistances':
     'Section=save ' +
-    'Note="+1 Armor Class and saves vs. %{magicNotes.arcaneDragonblood?\'arcane\':magicNotes.divineDragonblood?\'divine\':magicNotes.occultDragonblood?\'occult\':\'primal\'} magical effects, or +2 vs. sleep and paralysis"',
+    'Note="+1 Armor Class and saves vs. %V magical effects, or +2 vs. %V sleep and paralysis"',
   'Formidable Breath':
     'Section=combat Note="Has increased Breath Of The Dragon effects"',
   "True Dragon's Flight":'Section=ability Note="Has a 20\' fly Speed"',
@@ -5715,17 +5715,33 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=2 ' +
     'Section=combat ' +
     'Note="Successful Athletics vs. Fortitude inflicts on 2 adjacent targets %{level} HP bludgeoning and a 5\' push, %{level*2} HP and a 10\' push on a critical success, or %{level//2} HP only on a failure; critical failure inflicts prone on self"',
-  'Draconic Veil':
-    // TODO tradition may vary
+  'Draconic Veil (Arcane)':
+    'Section=magic ' +
+    'Note="Knows the Humanoid Form arcane innate spell; can cast it at 5th rank once per day, lasting 1 hr"',
+  'Draconic Veil (Divine)':
+    'Section=magic ' +
+    'Note="Knows the Humanoid Form divine innate spell; can cast it at 5th rank once per day, lasting 1 hr"',
+  'Draconic Veil (Occult)':
+    'Section=magic ' +
+    'Note="Knows the Humanoid Form occult innate spell; can cast it at 5th rank once per day, lasting 1 hr"',
+  'Draconic Veil (Primal)':
     'Section=magic ' +
     'Note="Knows the Humanoid Form primal innate spell; can cast it at 5th rank once per day, lasting 1 hr"',
   'Majestic Presence':
     'Action=1 ' +
     'Section=combat ' +
     'Note="20\' emanation inflicts frightened 2 once per creature per day (<b>save Will</b> inflicts frightened 1; critical success negates, critical failure inflicts frightened 4)"',
-  'Form Of The Dragon':
+  'Form Of The Dragon (Arcane)':
     'Section=magic ' +
-    // TODO tradition varies
+    'Note="Knows the Dragon Form arcane innate spell; can cast it at 8th rank once per day"',
+  'Form Of The Dragon (Divine)':
+    'Section=magic ' +
+    'Note="Knows the Dragon Form divine innate spell; can cast it at 8th rank once per day"',
+  'Form Of The Dragon (Occult)':
+    'Section=magic ' +
+    'Note="Knows the Dragon Form occult innate spell; can cast it at 8th rank once per day"',
+  'Form Of The Dragon (Primal)':
+    'Section=magic ' +
     'Note="Knows the Dragon Form primal innate spell; can cast it at 8th rank once per day"',
   'Lingering Breath':
     'Section=combat ' +
@@ -5766,16 +5782,16 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can imprecisely sense the life force of living and undead creatures within 10\'"',
   'Spirit Soother':
     'Section=skill ' +
-    'Note="Automatically attempts a check to notice haunts, and gains +1 to disable them"',
+    'Note="Can attempt to notice haunts without Searching, and gains +1 to disable them"',
   'Ward Against Corruption':
     'Section=save ' +
-    'Note="+1 vs. death effects, disease, and undead or sahkils, and +2 vs. undead and sahkil death effects and disease"',
+    'Note="+1 vs. death effects, disease, undead, and sahkils, and +2 vs. undead and sahkil death effects and disease"',
   'Duskwalker Magic':
     'Section=magic ' +
     'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast earch at 2nd rank once per day"',
   'Quietus Strikes':
     'Section=combat ' +
-    'Note="Attacks are magical and inflict +1 HP void or vitality, or +2 with a <i>+3 potency</i> rune"',
+    'Note="Attacks are magical and inflict +1 HP void or vitality, or +2 HP with a <i>+3 potency</i> rune"',
   'Resist Ruin':
     'Section=magic,save ' +
     'Note=' +
@@ -10222,6 +10238,8 @@ Pathfinder2ERemaster.HERITAGES = {
   'Dhampir':'Traits=Uncommon',
   'Dragonblood':
     'Traits=Uncommon ' +
+    'Features=' +
+      '"1:Draconic Exemplar" ' +
     'Selectables=' +
       '"1:Adamantine Exemplar:Draconic Exemplar",' +
       '"1:Conspirator Exemplar:Draconic Exemplar",' +
@@ -12948,7 +12966,7 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
 Pathfinder2ERemaster.identityRules = function(
   rules, ancestries, backgrounds, classes, deities, heritages
 ) {
-  QuilvynUtils.checkAttrTable(heritages, ['Traits', 'Selectables']);
+  QuilvynUtils.checkAttrTable(heritages, ['Traits', 'Features', 'Selectables']);
   Pathfinder2E.identityRules
     (rules, {}, ancestries, backgrounds, classes, deities);
   for(let h in heritages)
@@ -13082,6 +13100,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
   else if(type == 'Heritage') {
     Pathfinder2ERemaster.heritageRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
+      QuilvynUtils.getAttrValueArray(attrs, 'Features'),
       QuilvynUtils.getAttrValueArray(attrs, 'Selectables')
     );
     Pathfinder2ERemaster.heritageRulesExtra(rules, name);
@@ -13656,6 +13675,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Claws', 'combatNotes.draconicAspect(Claw)', '=', '1');
+    rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
   } else if(name == 'Draconic Aspect (Jaws)') {
     Pathfinder2E.weaponRules(
       rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
@@ -13663,6 +13683,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Jaws', 'combatNotes.draconicAspect(Jaws)', '=', '1');
+    rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
   } else if(name == 'Draconic Aspect (Tail)') {
     Pathfinder2E.weaponRules(
       rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
@@ -13670,9 +13691,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Tail', 'combatNotes.draconicAspect(Tail)', '=', '1');
+    rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
   } else if(name == 'Draconic Resistance') {
     rules.defineRule('saveNotes.draconicResistance',
-      'features.Adamantine Exemplar', '=', '"choice of bludgeoning, acid, cold, fire, electricity, or sonic"',
+      // NOTE: Nethys removes ambiguity; resistance to bludgeoning isn't allowed
+      'features.Adamantine Exemplar', '=', '"a choice of acid, cold, fire, electricity, or sonic"',
       'features.Conspirator Exemplar', '=', '"poison"',
       'features.Diabolic Exemplar', '=', '"fire"',
       'features.Empyreal Exemplar', '=', '"spirit"',
@@ -13680,6 +13703,23 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Horned Exemplar', '=', '"poison"',
       'features.Mirage Exemplar', '=', '"mental"',
       'features.Omen Exemplar', '=', '"mental"'
+    );
+  } else if(name == 'Draconic Veil') {
+    rules.defineRule('features.Draconic Veil (Arcane)',
+      'features.Draconic Veil', '?', null,
+      'features.Arcane Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Draconic Veil (Divine)',
+      'features.Draconic Veil', '?', null,
+      'features.Divine Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Draconic Veil (Occult)',
+      'features.Draconic Veil', '?', null,
+      'features.Occult Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Draconic Veil (Primal)',
+      'features.Draconic Veil', '?', null,
+      'features.Primal Dragonblood', '=', '1'
     );
   } else if(name == 'Efficient Alchemy') {
     rules.defineRule('skillNotes.advancedAlchemy',
@@ -13691,6 +13731,23 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Finesse', 'Unarmed'], null
     );
     rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
+  } else if(name == 'Form Of The Dragon') {
+    rules.defineRule('features.Form Of The Dragon (Arcane)',
+      'features.Form Of The Dragon', '?', null,
+      'features.Arcane Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Form Of The Dragon (Divine)',
+      'features.Form Of The Dragon', '?', null,
+      'features.Divine Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Form Of The Dragon (Occult)',
+      'features.Form Of The Dragon', '?', null,
+      'features.Occult Dragonblood', '=', '1'
+    );
+    rules.defineRule('features.Form Of The Dragon (Primal)',
+      'features.Form Of The Dragon', '?', null,
+      'features.Primal Dragonblood', '=', '1'
+    );
   } else if(name == 'Formidable Breath') {
     rules.defineRule('combatNotes.breathOfTheDragon',
       'combatNotes.formidableBreath', '=', 'null' // italics
@@ -13839,6 +13896,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       "magicNotes.windGod'sFan", '+', '1',
       "magicNotes.thunderGod'sFan", '+', '1'
     );
+  } else if(name == 'Traditional Resistances') {
+    rules.defineRule('saveNotes.traditionalResistances',
+      'features.Arcane Dragonblood', '=', '"arcane"',
+      'features.Divine Dragonblood', '=', '"divine"',
+      'features.Occult Dragonblood', '=', '"occult"',
+      'features.Primal Dragonblood', '=', '"primal"'
+    );
   } else if(name == 'Tusks') {
     Pathfinder2E.weaponRules(
       rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
@@ -13909,10 +13973,11 @@ Pathfinder2ERemaster.goodyRules = function(
 
 /*
  * Defines in #rules# the rules associated with versatile heritage #name#,
- * which has the list of traits #traits#.
+ * which has the list of traits #traits# and the list of fixed and selectable
+ * features #features# and #selectables#.
  */
 Pathfinder2ERemaster.heritageRules = function(
-  rules, name, traits, selectables
+  rules, name, traits, features, selectables
 ) {
 
   let prefix =
@@ -13927,6 +13992,7 @@ Pathfinder2ERemaster.heritageRules = function(
   Pathfinder2E.featureListRules
     (rules, ['1:' + name + ':Heritage'], 'Versatile Heritage', heritageLevel,
      true);
+  Pathfinder2E.featureListRules(rules, features, name, heritageLevel, false);
   Pathfinder2E.featureListRules(rules, selectables, name, heritageLevel, true);
   selectables.forEach(selectable => {
     let pieces = selectable.split(':');
@@ -13954,6 +14020,9 @@ Pathfinder2ERemaster.heritageRules = function(
         selectables[s].replace('Type=', 'Type="' + a + ' (Heritage)",');
     }
   }
+
+  rules.defineSheetElement(name + ' Features', 'Feats+', null, '; ');
+  rules.defineChoice('extras', prefix + 'Features');
 
 };
 
