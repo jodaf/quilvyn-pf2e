@@ -12513,6 +12513,7 @@ Pathfinder2E.identityRules = function(
         '.concat(source & 1 ? ["barbarian instinct"] : [])' +
         '.concat(source & 2 || source & 4 ? [dict.deity] : [])' +
         '.concat(source & 8 ? ["druidic order"] : [])' +
+        '.concat(source & 16 ? ["background"] : [])' +
         '.join(", ")' +
         '.replace(/^([^,]*), ([^,]*)$/, "$1 or $2")' +
         '.replace(/,([^,]*)$/, ", or$1")'
