@@ -363,13 +363,14 @@ Pathfinder2ERemaster.BACKGROUNDS =
   'Pilgrim':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Wisdom, Charisma; Choose 1 from any)",' +
+      // NOTE: Deity Lore, not deitySkill
       '"1:Skill Trained (Religion; Choose 1 from any Deity Lore)",' +
       '"1:Pilgrim\'s Token"',
   'Refugee':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any)",' +
       '"1:Skill Trained (Society; Choose 1 from any Settlement Lore)",' +
-      '"1:Oddity Identification"',
+      '"1:Streetwise"',
   'Root Worker':
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any)",' +
@@ -404,8 +405,45 @@ Pathfinder2ERemaster.BACKGROUNDS =
     'Features=' +
       '"1:Attribute Boost (Choose 1 from Constitution, Charisma; Choose 1 from any)",' +
       '"1:Skill Trained (Performance; Genealogy Lore)",' +
-      '"1:Fascinating Performance"'
-  // TODO Rare backgrounds, pg 51
+      '"1:Fascinating Performance"',
+  // Rare backgrounds, pg 51
+  'Amnesiac':
+    'Features=' +
+      '"1:Attribute Boost (Choose 3 from any)"',
+  'Blessed':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Charisma, Wisdom; Choose 1 from any)",' +
+      '"1:Skill Trained (Choose 1 from any Deity Lore)",' +
+      '"1:Blessed Blessing"',
+  'Cursed':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any)",' +
+      '"1:Skill Trained (Occultism; Curse Lore)",' +
+      '"1:Warding Sign"',
+  'Feral Child':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Strength, Dexterity, Constitution)",' +
+      '"1:Skill Trained (Nature; Survival)",' +
+      '"1:Low-Light Vision","1:Feral Scent","1:Forager"',
+  'Feybound':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Dexterity, Charisma; Choose 1 from any)",' +
+      '"1:Skill Trained (Fey Lore)",' +
+      '"1:Anathema","1:Fey\'s Fortune"',
+  'Haunted':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Wisdom, Charisma; Choose 1 from any)",' +
+      '"1:Skill Trained (Occultism; Choose 1 from any)",' +
+      '"1:Haunted Skill"',
+  'Returned':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Wisdom, Constitution; Choose 1 from any)",' +
+      '"1:Diehard","1:Additional Lore (Boneyard Lore)"',
+  'Royalty':
+    'Features=' +
+      '"1:Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any)",' +
+      '"1:Skill Trained (Society)",' +
+      '"1:Courtly Graces"'
 });
 for(let b in Pathfinder2ERemaster.BACKGROUNDS)
   Pathfinder2ERemaster.BACKGROUNDS[b] =
@@ -5811,8 +5849,23 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Assurance (%V) feature",' +
       '"Skill Trained (%V; %1)"',
+  'Blessed Blessing':
+    'Section=magic ' +
+    'Note="Knows the Guidance divine innate spell; can cast it at will"',
+  'Feral Scent':'Section=skill Note="Has 30\' imprecise scent"',
+  "Fey's Fortune":
+    'Action=Free ' +
+    'Section=skill ' +
+    'Note="Gains the better of two rolls on a skill check once per day"',
+  'Haunted Skill':
+    'Section=skill ' +
+    'Note="+1 on haunt-linked skill; failure inflicts frightened 2, or frightened 4 on a critical failure"',
   'Martial Focus':'Section=feature Note="1 selection"',
   'Scholarly Tradition':'Section=feature Note="1 selection"',
+  'Warding Sign':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="+2 vs. the triggering magical effect, or +3 if it is a curse, once per min"',
 
   // Class Features and Feats
 
@@ -10409,7 +10462,9 @@ Pathfinder2ERemaster.SKILLS = {
   'Tripkee Lore':'Attribute=Intelligence Subcategory="Creature Lore"',
   // Core 2 lores from backgrounds (pg 50ff)
   'Astrology Lore':'Attribute=Intelligence',
-  'Surgery Lore':'Attribute=Intelligence'
+  'Surgery Lore':'Attribute=Intelligence',
+  'Curse Lore':'Attribute=Intelligence',
+  'Fey Lore':'Attribute=Intelligence'
 };
 for(let s in Pathfinder2ERemaster.SKILLS)
   Pathfinder2ERemaster.SKILLS[s] =
@@ -13328,7 +13383,9 @@ Pathfinder2ERemaster.backgroundRules = function(
  */
 Pathfinder2ERemaster.backgroundRulesExtra = function(rules, name) {
   Pathfinder2E.backgroundRulesExtra(rules, name);
-  if(name == 'Raised By Belief') {
+  if(name == 'Feybound') {
+    rules.defineRule('featureNotes.anathema.1', 'feyboundLevel', '+', '16');
+  } else if(name == 'Raised By Belief') {
     rules.defineRule('abilityNotes.beliefAttributes',
       'deityAttributes', '=', 'source.replaceAll(\'/\', \', \')'
     );
