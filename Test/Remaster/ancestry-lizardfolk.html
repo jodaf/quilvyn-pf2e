@@ -9,7 +9,7 @@ var attributes = {
   "_path":"ztest/pf2er/ancestry/lizardfolk", 
   "abilityBoosts.charisma":2, "abilityBoosts.constitution":2, "abilityBoosts.dexterity":1, 
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":1, "abilityGeneration":"Standard ancestry boosts", 
-  "ancestry":"Lizardfolk", "ancestryFeats.Bone Investiture":1, "ancestryFeats.Bone Magic":1, 
+  "ancestry":"Lizardfolk", "ancestryFeats.Bone Investiture":1, "ancestryFeats.Bone Magic (Occult)":1, 
   "ancestryFeats.Dangle":1, "ancestryFeats.Envenom Fangs":1, "ancestryFeats.Flexible Tail":1, 
   "ancestryFeats.Fossil Rider":1, "ancestryFeats.Gecko's Grip":1, "ancestryFeats.Hone Claws":1, 
   "ancestryFeats.Iruxi Armaments (Claws)":1, "ancestryFeats.Iruxi Armaments (Fangs)":1, 
@@ -95,7 +95,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Bone Investiture; Bone Magic; Dangle; Envenom Fangs; Flexible Tail; Fossil Rider; Gecko's Grip; Hone Claws; Iruxi Armaments (Claws); Iruxi Armaments (Fangs); Iruxi Armaments (Tail); Iruxi Spirit Strike; Lizardfolk Lore; Marsh Runner; Parthenogenic Hatchling; Primal Rampage; Reptile Speaker; Scion Transformation; Shed Tail; Swift Swimmer; Terrain Advantage; Vicious Swing</td>
+        <td><b>Feats</b>: Bone Investiture; Bone Magic (Occult); Dangle; Envenom Fangs; Flexible Tail; Fossil Rider; Gecko's Grip; Hone Claws; Iruxi Armaments (Claws); Iruxi Armaments (Fangs); Iruxi Armaments (Tail); Iruxi Spirit Strike; Lizardfolk Lore; Marsh Runner; Parthenogenic Hatchling; Primal Rampage; Reptile Speaker; Scion Transformation; Shed Tail; Swift Swimmer; Terrain Advantage; Vicious Swing</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block</td>
         <td><b>Driver Features</b>: Assurance (Piloting Lore); Attribute Boost (Choose 1 from Strength, Dexterity; Choose 1 from any); Skill Trained (Acrobatics; Piloting Lore)</td>
         <td><b>Lizardfolk Features</b>: Aquatic Adaptation; Attribute Boost (Strength; Wisdom; Choose 1 from any); Attribute Flaw (Intelligence); Claws; Cliffscale Lizardfolk; Cloudleaper Lizardfolk; Frilled Lizardfolk; Lizardfolk Heritage; Sandstrider Lizardfolk; Unseen Lizardfolk; Wetlander Lizardfolk; Woodstalker Lizardfolk</td>
@@ -116,7 +116,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Lizardfolk Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Lizardfolk Lore: +1 Skill Feat (Addition Lore for Astrology Lore or Lizardfolk Lore)</i></td>
+        <td><i>Lizardfolk Lore: +1 Skill Feat (Additional Lore for Astrology Lore or Lizardfolk Lore)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Woodstalker Lizardfolk: Has the Terrain Stalker (Underbrush) feature</i></td>
       </tr><tr style="text-align:center">
@@ -183,13 +183,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Assurance (Piloting Lore): Can take an automatic 13 on Piloting Lore checks</td>
     </tr><tr style="text-align:center">
-      <td>Cliffscale Lizardfolk: Can use bare feet to Climb, and successes on Athletics to Climb are critical successes</td>
+      <td>Cliffscale Lizardfolk: Can use bare feet to Climb without using hands, and successes on Athletics to Climb are critical successes</td>
     </tr><tr style="text-align:center">
       <td>Combat Climber: Can Climb with a hand occupied, can fight while Climbing, and Climbing does not inflict flat-footed</td>
     </tr><tr style="text-align:center">
-      <td>Gecko's Grip: Successes on Athletics to climb are critical successes</td>
-    </tr><tr style="text-align:center">
-      <td>Marsh Runner: Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes are critical successes</td>
+      <td>Marsh Runner: Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes to do so are critical successes</td>
     </tr><tr style="text-align:center">
       <td>Reptile Speaker: Can converse with reptiles</td>
     </tr><tr style="text-align:center">
@@ -245,7 +243,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Frilled Lizardfolk: Can use visual threats to Demoralize</td>
       </tr><tr style="text-align:center">
-        <td>Hone Claws: <b>(1)</b> Enhances claws to inflict +1d6 HP bleed damage on the next hit</td>
+        <td>Hone Claws: <b>(1)</b> Enhances claws to inflict +1d6 HP bleed damage on the next hit once per hr</td>
       </tr><tr style="text-align:center">
         <td>Iruxi Spirit Strike: Lizardfolk ancestry attacks have the <i>ghost touch</i> property</td>
       </tr><tr style="text-align:center">
@@ -253,7 +251,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Shed Tail: <b>(R)</b> Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing foe; regrowth takes 1 day and inflicts -2 Balance</td>
+        <td>Shed Tail: <b>(R)</b> Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing creature; regrowth takes 1 day and inflicts -2 Balance</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
@@ -279,7 +277,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Parthenogenic Hatchling: +1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hr and from starvation every 2 days</td>
       </tr><tr style="text-align:center">
-        <td>Sandstrider Lizardfolk: Has fire resistance 1, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x the normal duration without food and water</td>
+        <td>Sandstrider Lizardfolk: Has fire resistance 1, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x as long as normal without food and water</td>
       </tr></table>
 </td>
     </tr></table>
@@ -293,8 +291,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Attack</b>: Occult Innate: +5 (charisma; trained); Primal Innate: +5 (charisma; trained)</td>
-        <td><b>Spell DC</b>: Occult Innate: 15 (charisma; trained); Primal Innate: 15 (charisma; trained)</td>
+        <td><b>Attack</b>: Occult Innate: +5 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Occult Innate: 15 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -302,25 +300,25 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Dinosaur Form (P4): <b>(2)</b> Self becomes a Large dinosaur with 15 temporary HP, Armor Class 19, +16 attack, +9 damage, low-light vision, 30' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15' or 20' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20' or 25' reach, Armor Class 22, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)</td>
+      <td>Dinosaur Form (O4): <b>(2)</b> Self becomes a Large dinosaur with 15 temporary HP, Armor Class 19, +16 attack, +9 damage, low-light vision, 30' imprecise scent, +18 Athletics modifier, and creature-specific attacks for 1 min (<b>heightened 5th</b> becomes a Huge creature with 15' or 20' reach, 20 temporary HP, +18 attack, +6 damage with double damage dice, +21 Athletics; <b>7th</b> becomes a Gargantuan creature with 20' or 25' reach, Armor Class 22, 25 temporary HP, +25 attack, +15 damage with double damage dice, +25 Athletics)</td>
     </tr><tr style="text-align:left">
-      <td>Mask Of Terror (P7): <b>(2)</b> R30' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)</td>
+      <td>Mask Of Terror (O7): <b>(2)</b> R30' Target inflicts frightened 2 for 1 rd on attackers for 1 min (<b>save Will</b> negates; critical failure prevents attack) (<b>heightened 8th</b> affects 5 targets)</td>
     </tr><tr style="text-align:left">
-      <td>Mountain Resilience (P4): <b>(2)</b> Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces the duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)</td>
+      <td>Mountain Resilience (O4): <b>(2)</b> Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces the duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)</td>
     </tr><tr style="text-align:left">
-      <td>Unfettered Movement (P4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
+      <td>Unfettered Movement (O4): <b>(2)</b> Relieves touched of Speed penalty effects and gives automatic success on Escape attempts vs. non-magical effects and magical effects up to the spell level for 10 min</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Bone Investiture: Knows the Dinosaur Form primal innate spell; can cast it at 5th rank once per day</i></td>
+      <td><i>Bone Investiture (Occult): Knows the Dinosaur Form occult innate spell; can cast it at 5th rank once per day</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Fossil Rider: Knows the Mask Of Terror primal innate spell; can cast it once per day</i></td>
+      <td><i>Fossil Rider (Occult): Knows the Mask Of Terror occult innate spell; can cast it once per day</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Primal Rampage: Knows the Unfettered Movement and Mountain Resilience primal innate spells; can each at 4th rank once per day or use 3 actions to cast both simultaneously</i></td>
+      <td><i>Primal Rampage (Occult): Knows the Unfettered Movement and Mountain Resilience occult innate spells; can cast each at 4th rank once per day or use 3 actions to cast both simultaneously</i></td>
     </tr><tr style="text-align:center">
-      <td>Bone Magic: Knows 1 chosen occult or primal innate cantrip; can cast it at will</td>
+      <td>Bone Magic (Occult): Knows 1 chosen occult innate cantrip; can cast it at will</td>
     </tr></table>
 </td>
   </tr></table>

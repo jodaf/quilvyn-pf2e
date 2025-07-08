@@ -1635,7 +1635,8 @@ Pathfinder2ERemaster.FEATS = {
   "Benefactor's Majesty":'Traits=Kobold,Healing,Visual Require="level >= 17"',
 
   // Lizardfolk
-  'Bone Magic':'Traits=Lizardfolk',
+  'Bone Magic (Occult)':'Traits=Lizardfolk',
+  'Bone Magic (Primal)':'Traits=Lizardfolk',
   'Iruxi Armaments (Claws)':'Traits=Lizardfolk',
   'Iruxi Armaments (Fangs)':'Traits=Lizardfolk',
   'Iruxi Armaments (Tail)':'Traits=Lizardfolk',
@@ -1709,6 +1710,7 @@ Pathfinder2ERemaster.FEATS = {
   "Harbinger's Claw":
     'Traits=Tengu,Auditory,Divine,Misfortune Require="level >= 13"',
   'Jinx Glutton':'Traits=Tengu Require="level >= 13","features.Eat Fortune"',
+  // Errata corrects level to 13
   "Thunder God's Fan":
     'Traits=Tengu Require="level >= 13","features.Tengu Feather Fan"',
   'Great Tengu Form':
@@ -1732,7 +1734,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Tripkee Require="level >= 5","features.Windweb Tripkee"',
   'Vomit Stomach':'Traits=Tripkee Require="level >= 5"',
   // TODO require "not immune to diseases or poisons"
-  'Absorb Toxin':'Traits=Tripkee,Manipulate Require="level >= 9"',
+  'Absorb Toxin':'Traits=Tripkee Require="level >= 9"',
   'Moisture Bath':'Traits=Tripkee,Manipulate Require="level >= 9"',
   'Ricocheting Leap':'Traits=Tripkee Require="level >= 9","features.Wall Jump"',
   'Tongue Tether':
@@ -5205,7 +5207,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Combat Climber feature",' +
-      '"Can use bare feet to Climb, and successes on Athletics to Climb are critical successes"',
+      '"Can use bare feet to Climb without using hands, and successes on Athletics to Climb are critical successes"',
   'Cloudleaper Lizardfolk':
     'Section=save Note="Can use limbs to negate falling damage"',
   'Frilled Lizardfolk':
@@ -5216,7 +5218,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Lizardfolk Heritage':'Section=feature Note="1 selection"',
   'Sandstrider Lizardfolk':
     'Section=save ' +
-    'Note="Has fire resistance %{level//2>?1}, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x the normal duration without food and water"',
+    'Note="Has fire resistance %{level//2>?1}, treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x as long as normal without food and water"',
   'Threatening Approach':
     'Action=2 ' +
     'Section=combat ' +
@@ -5231,9 +5233,12 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Terrain Stalker (Underbrush) feature",' +
       '"Can always Take Cover in forest or jungle"',
 
-  'Bone Magic':
+  'Bone Magic (Occult)':
     'Section=magic ' +
-    'Note="Knows 1 chosen occult or primal innate cantrip; can cast it at will"',
+    'Note="Knows 1 chosen occult innate cantrip; can cast it at will"',
+  'Bone Magic (Primal)':
+    'Section=magic ' +
+    'Note="Knows 1 chosen primal innate cantrip; can cast it at will"',
   'Iruxi Armaments (Claws)':
     'Section=combat,combat ' +
     'Note=' +
@@ -5253,13 +5258,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       // TODO randomizing
-      '"+1 Skill Feat (Addition Lore for Astrology Lore or Lizardfolk Lore)",' +
+      '"+1 Skill Feat (Additional Lore for Astrology Lore or Lizardfolk Lore)",' +
       '"Skill Trained (Survival; Choose 1 from Nature, Occultism)"',
   'Marsh Runner':
     'Section=combat,skill ' +
    'Note=' +
      '"Can Step in difficult terrain caused by flooding, swamps, and quicksand",' +
-     '"Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes are critical successes"',
+     '"Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes to do so are critical successes"',
   'Parthenogenic Hatchling':
     'Section=save ' +
     'Note="+1 vs. disease, and successes vs. disease are critical successes/Takes damage from thirst every 2 hr and from starvation every 2 days"',
@@ -5275,11 +5280,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has a 15\' climb Speed",' +
       '"Has the Combat Climber feature",' +
-      '"Successes on Athletics to climb are critical successes"',
+      '"Successes on Athletics to Climb are critical successes"',
   'Shed Tail':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing foe; regrowth takes 1 day and inflicts -2 Balance"',
+    'Note="Can release tail to escape being grabbed and then Stride without triggering reactions from the grabbing creature; regrowth takes 1 day and inflicts -2 Balance"',
   'Swift Swimmer':
     'Section=ability ' +
     'Note="Has a %{abilityNotes.wetlanderLizardfolk?25:15}\' swim Speed"',
@@ -5288,23 +5293,31 @@ Pathfinder2ERemaster.FEATURES = {
   'Hone Claws':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Enhances claws to inflict +1d6 HP bleed damage on the next hit"',
+    'Note="Enhances claws to inflict +1d6 HP bleed damage on the next hit once per hr"',
   'Terrain Advantage':
     'Section=combat ' +
     'Note="Non-lizardfolk foes in difficult terrain or in water without a swim Speed are off-guard vs. self"',
-  'Bone Investiture':
+  'Bone Investiture (Occult)':
     'Section=magic ' +
-    // TODO or occult
-    'Note="Knows the Dinosaur Form primal innate spell; can cast it at 5th rank once per day"',
+    'Note="Knows the Dinosaur Form occult innate spell; can cast it at 5th rank once per day"',
+  'Bone Investiture (Primal)':
+    'Section=magic ' +
+    'Note="Knows the Dinosaur Form occult innate spell; can cast it at 5th rank once per day"',
   'Iruxi Spirit Strike':
     'Section=combat ' +
     'Note="Lizardfolk ancestry attacks have the <i>ghost touch</i> property"',
-  'Primal Rampage':
+  'Primal Rampage (Occult)':
     'Section=magic ' +
-    'Note="Knows the Unfettered Movement and Mountain Resilience primal innate spells; can each at 4th rank once per day or use 3 actions to cast both simultaneously"',
-  'Fossil Rider':
+    'Note="Knows the Unfettered Movement and Mountain Resilience occult innate spells; can cast each at 4th rank once per day or use 3 actions to cast both simultaneously"',
+  'Primal Rampage (Primal)':
     'Section=magic ' +
-    'Note="Knows the Mask Of Terror primal innate spell; can cast it once per day"',
+    'Note="Knows the Unfettered Movement and Mountain Resilience occult innate spells; can each at 4th rank once per day or use 3 actions to cast both simultaneously"',
+  'Fossil Rider (Occult)':
+    'Section=magic ' +
+    'Note="Knows the Mask Of Terror occult innate spell; can cast it once per day"',
+  'Fossil Rider (Primal)':
+    'Section=magic ' +
+    'Note="Knows the Mask Of Terror occult innate spell; can cast it once per day"',
   'Scion Transformation':
     'Section=feature ' +
     'Note="Can use a 24-hr hibernation to gain the effects of <i>Enlarge</i> and +%{level} Hit Points permanently"',
@@ -5317,14 +5330,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,save ' +
     'Note=' +
       '"Has 30\' Speed on all fours",' +
-      '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x normal duration without food and water"',
+      '"Treats environmental heat as 1 step less extreme but environmental cold as 1 step more extreme without protection, and can last 10x as long as normal without food and water"',
   'Longsnout Rat':
     'Section=skill ' +
     'Note="Has 30\' imprecise scent, and gains +2 Perception to Seek using scent"',
   'Ratfolk Heritage':'Section=feature Note="1 selection"',
   'Sewer Rat':
      'Section=save ' +
-     'Note="+1 vs. disease and poison, and successes vs. disease and poison are critical successes/Immune to putrid plague"',
+     'Note="Immune to putrid plague, +1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
   'Shadow Rat':
     'Section=combat,skill,skill ' +
     'Note=' +
@@ -5333,12 +5346,12 @@ Pathfinder2ERemaster.FEATURES = {
       '"Suffers 1 step worse on initial animal attitudes"',
   'Snow Rat':
     'Section=save ' +
-    'Note="Has cold resistance %{level//2>?1}, and treats environmental cold as 1 step less extreme"',
+    'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Tunnel Rat':
-    'Section=feature,skill ' +
+    'Section=ability,skill ' +
     'Note=' +
-      '"Has the Quick Squeeze feature",' +
-      '"Can move normally through snug spaces"',
+      '"Moves normally through snug spaces",' +
+      '"Has the Quick Squeeze feature"',
 
   'Cheek Pouches':
     'Section=feature Note="Can store %{featureNotes.bigMouth?\'1 Bulk of items\':\'4 items of light Bulk\'} in cheeks"',
@@ -5354,14 +5367,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill Trained (Crafting)",' +
-      '"Suffers no penalty when Repairing an item without a toolkit, and gains +1 with a toolkit"',
+      '"Suffers no Crafting penalty to Repair an item without a toolkit, and gains +1 with a toolkit"',
   'Vicious Incisors':'Section=combat Note="Jaws inflict 1d6 HP piercing"',
   'Warren Navigator':
     'Section=save,skill,skill ' +
     'Note=' +
-      '"Improves saves vs. <i>Quandary</i> by 1 degree",' +
+      '"Improves save results vs. <i>Quandary</i> by 1 degree",' +
       '"Skill Trained (Survival)",' +
-      '"Improves Sense Direction test by 1 degree, and suffers no penalty from having no compass"',
+      '"Improves Sense Direction check results by 1 degree, and suffers no penalty from having no compass"',
   'Cornered Fury':
     'Section=combat ' +
     'Note="Critical hit by a larger foe leaves it off-guard vs. self for 1 rd"',
@@ -5434,7 +5447,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Squawk!':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target is a normal failure; cannot be used again on the target or observers for 1 day"',
+    'Note="Changes the triggering critical failure on Deception, Diplomacy, or Intimidation with a non-tengu target into a normal failure; cannot be used again on the target or observers for 1 day"',
   "Storm's Lash":
     'Section=magic ' +
     'Note="Knows the Electric Arc primal innate cantrip; can cast it at will"',
@@ -5489,7 +5502,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Lightning Bolt primal spell; can cast it at 5th rank using the feather fan/+1 feather fan use per day"',
   'Great Tengu Form':
     'Section=magic ' +
-    'Note="Gains the effects of 5th-rank <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form for 5 min once per day"',
+    'Note="Gains the effects of 4th-rank <i>Enlarge</i> and <i>Fly</i> while in Long-Nosed form for 5 min once per day"',
   'Trickster Tengu':
     'Section=magic ' +
     'Note="Knows the Aerial Form and Cursed Metamorphosis primal innate spells; can cast 1 of them at 7th rank once per day"',
@@ -5517,10 +5530,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+2 Hit Points",' +
       '"+1 vs. disease and poison"',
-  'Windweb Tripkee':'Section=save Note="Takes no damage from falling"',
+  'Windweb Tripkee':
+    'Section=save Note="Takes no damage from falling with a hand free"',
 
-  'Croak Talker':
-    'Section=skill Note="Can converse with frogs and similar creatures"',
+  'Croak Talker':'Section=skill Note="Can converse with amphibians"',
   "Hunter's Defense":
     'Action=Reaction ' +
     'Section=feature ' +
@@ -5534,7 +5547,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Terrifying Croak':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Attempts to Demoralize a creature within 30\', suffering no penalty for lacking a shared language; success prevents reducing their frightened condition below 1 for 1 rd"',
+    'Note="R30\' Demoralize attempt suffers no penalty for lacking a shared language; success prevents reducing the target\'s frightened condition below 1 for 1 rd"',
   'Tripkee Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5546,8 +5559,9 @@ Pathfinder2ERemaster.FEATURES = {
       '"Weapon Familiarity (Tripkee Weapons; Blowgun; Dart; Hatchet; Scythe; Shortbow)",' +
       '"Has access to uncommon tripkee weapons%{level>=5?\'/Critical hits with a tripkee weapon, blowgun, dart, hatchet, scythe, or shortbow inflict its critical specialization effect\':\'\'}"',
   'Fantastic Leaps':
-    'Section=skill Note="+5\' vertical and +10\' horizontal Leap distance"',
-  'Long Tongue':'Section=feature Note="+5\' reach using tongue"',
+    'Section=skill ' +
+    'Note="Gives +5\' vertical and +10\' horizontal Leap distance"',
+  'Long Tongue':'Section=feature Note="Gives +5\' reach using tongue"',
   'Prodigious Climber':
     'Section=ability ' +
     'Note="Has a %{skillNotes.stickytoeTripkee?20:10}\' climb Speed"',
@@ -5557,7 +5571,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Tripkee Glide':
     'Action=1 ' +
     'Section=ability ' +
-    'Note="Can glide 5\' down and up to 25\' forward each rd"',
+    'Note="Can glide 5\' down and up to 25\' forward each rd with a hand free"',
   'Vomit Stomach':
     'Action=Reaction ' +
     'Section=save ' +
@@ -5569,7 +5583,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Moisture Bath':
     'Action=1 ' +
     'Section=save ' +
-    'Note="Successful DC 10 flat check ends persistent fire and cold damage and gives and fire and cold resistance %{level//2} for 1 min once per day"',
+    'Note="Successful DC 10 flat check ends persistent fire and cold damage and gives fire and cold resistance %{level//2} for 1 min once per day"',
   'Ricocheting Leap':
     'Section=skill ' +
     'Note="Can use Wall Jump to carom off creatures that are larger than self and to Shove or Trip a creature once per turn"',
@@ -5578,7 +5592,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use tongue to Disarm, Grab An Edge, Reposition, and Trip"',
   'Envenomed Edge':
     'Section=combat ' +
-    'Note="Critical hits that deal slashing or piercing damage inflict +1d4 HP persistent poison"',
+    'Note="Critical hits that inflict slashing or piercing damage also inflict 1d4 HP persistent poison"',
   'Hop Up':
     'Action=Free ' +
     'Section=combat ' +
@@ -13595,6 +13609,17 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('featureNotes.cheekPouches',
       'featureNotes.bigMouth', '=', 'null' // italics
     );
+  } else if(name.match(/^(Bone Investiture|Fossil Rider|Primal Rampage)$/)) {
+    rules.defineRule('features.' + name + ' (Occult)',
+      'features.' + name, '?', null,
+      'features.Bone Magic (Occult)', '=', '1'
+    );
+    rules.defineRule('features.' + name + ' (Primal)',
+      'features.' + name, '?', null,
+      'features.Bone Magic (Primal)', '=', '1'
+    );
+  } else if(name.startsWith('Bone Magic')) {
+    rules.defineRule('features.Bone Magic', 'features.' + name, '=', '1');
   } else if(name == 'Breath Like Honey') {
     rules.defineRule('skillNotes.sweetbreathKholo',
       'skillNotes.breathLikeHoney', '=', 'null' // italics
@@ -13675,6 +13700,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Cliffscale Lizardfolk', '?', 'source'
     );
     rules.defineRule("featureNotes.gecko'sGrip",
+      'features.Cliffscale Lizardfolk', '?', '!source'
+    );
+    rules.defineRule("skillNotes.gecko'sGrip",
       'features.Cliffscale Lizardfolk', '?', '!source'
     );
   } else if(name == 'Gifted Power') {
