@@ -4652,12 +4652,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Using Orc Ferocity gives a Strike against the attacking foe that allows another use of Orc Ferocity if it reduces the foe to 0 HP"',
 
   // Changeling
-  'Changeling':
-    'Section=feature,feature ' +
-    'Note=' +
-      // TODO or Darkvision
-      '"Has the Low-Light Vision feature",' +
-      '"Has the changeling trait and may take changeling ancestry feats"',
+  'Changeling Heritage':
+    'Section=feature ' +
+    'Note="Has the changeling trait and may take changeling ancestry feats"',
   'Brine May':
     'Section=skill ' +
     'Note="Successful Swim checks are critical successes, and failure does not inflict sinking"',
@@ -4696,12 +4693,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows 1 chosen occult innate spell of up to 4th rank; can cast it at 4th rank once per day"',
 
   // Nephilim
-  'Nephilim':
-    'Section=feature,feature ' +
-    'Note=' +
-      // or Darkvision
-      '"Has the Low-Light Vision feature",' +
-      '"Has the nephilim trait and may take nephilim ancestry feats"',
+  'Nephilim Heritage':
+    'Section=feature ' +
+    'Note="Has the nephilim trait and may take nephilim ancestry feats"',
   'Angelkin':
     'Section=feature,skill ' +
     'Note=' +
@@ -4796,11 +4790,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Eternal Wings':'Section=ability Note="Has a %{speed}\' fly Speed"',
 
   // Aiuvarin
-  'Aiuvarin':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Low-Light Vision feature",' +
-      '"Has the elf and aiuvarin traits and may take elf and aiuvarin ancestry feats"',
+  'Aiuvarin Heritage':
+    'Section=feature ' +
+    'Note="Has the elf and aiuvarin traits and may take elf and aiuvarin ancestry feats"',
   'Earned Glory':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -4815,10 +4807,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Dromaar
   'Dromaar':
-    'Section=feature,feature ' +
-    'Note=' +
-      '"Has the Low-Light Vision feature",' +
-      '"Has the orc and dromaar traits and may take orc and dromaar ancestry feats"',
+    'Section=feature ' +
+    'Note="Has the orc and dromaar traits and may take orc and dromaar ancestry feats"',
   'Monstrous Peacemaker':Pathfinder2E.FEATURES['Monstrous Peacemaker'],
   'Orc Sight':Pathfinder2E.FEATURES['Orc Sight'],
 
@@ -5638,12 +5628,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Unbound Leaper':'Section=skill Note="Can Leap 30\' in any direction"',
 
   // Dhampir
-  'Dhampir':
-    'Section=feature,feature ' +
-    'Note=' +
-      // TODO or Darkvision
-      '"Has the Void Healing and Low-Light Vision features",' +
-      '"Has the dhampir trait and may take dhampir ancestry feats"',
+  'Dhampir Heritage':
+    'Section=feature ' +
+    'Note="Has the dhampir trait and may take dhampir ancestry feats"',
   'Void Healing':
     'Section=save Note="Vitality effects cause harm and void effects heal"',
   'Straveika':
@@ -5688,7 +5675,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Vampiric Exsanguination divine innate spell; can cast it at 7th rank once per day"',
 
   // Dragonblood
-  'Dragonblood':
+  'Dragonblood Heritage':
     'Section=feature,save ' +
     'Note=' +
       '"Has the dragonblood trait and may take Dragonblood ancestry feats",' +
@@ -5726,9 +5713,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Tail inflicts 1d6 HP bludgeoning"',
   'Draconic Resistance':
     'Section=save Note="Has resistance %{level//2>?1} to %V, or resistance %{level} if the source is a dragon"',
-  'Draconic Sight':
-    // TODO or Darkvision
-    'Section=feature Note="Has the Low-Light Vision feature"',
+  'Draconic Sight':'Section=feature Note="Has the %V feature"',
   'Dragon Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5786,11 +5771,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Breath Of The Dragon inflicts difficult terrain for 1 min, and targets that critically fail their saves suffer +2d6 HP persistent damage"',
 
   // Duskwalker
-  'Duskwalker':
-    'Section=feature,feature,save ' +
+  'Duskwalker Heritage':
+    'Section=feature,save ' +
     'Note=' +
-      // TODO or Darkvision
-      '"Has the Low-Light Vision feature",' +
       '"Has the duskwalker trait and may take duskwalker ancestry feats",' +
       '"Cannot become undead"',
   'Chance Death':
@@ -10283,16 +10266,41 @@ Pathfinder2ERemaster.FEATURES = {
 };
 Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
 Pathfinder2ERemaster.HERITAGES = {
-  'Changeling':'Traits=Uncommon',
-  'Nephilim':'Traits=Uncommon',
-  'Aiuvarin':'Traits=Non-Elf',
-  'Dromaar':'Traits=Non-Orc',
+  'Changeling':
+    'Traits=Uncommon ' +
+    'Features=' +
+      '"hasAncestralLowLightVision==0 ? 1:Low-Light Vision",' +
+      '"hasAncestralLowLightVision ? 1:Darkvision",' +
+      '"1:Changeling Heritage"',
+  'Nephilim':
+    'Traits=Uncommon ' +
+    'Features=' +
+      '"hasAncestralLowLightVision==0 ? 1:Low-Light Vision",' +
+      '"hasAncestralLowLightVision ? 1:Darkvision",' +
+      '"1:Nephilim Heritage"',
+  'Aiuvarin':
+    'Traits=Non-Elf ' +
+    'Features=' +
+      '"1:Low-Light Vision",' +
+      '"1:Aiuvarin Heritage"',
+  'Dromaar':
+    'Traits=Non-Orc ' +
+    'Features=' +
+      '"1:Low-Light Vision",' +
+      '"1:Dromaar Heritage"',
   // Core 2
-  'Dhampir':'Traits=Uncommon',
+  'Dhampir':
+    'Traits=Uncommon ' +
+    'Features=' +
+      '"1:Void Healing",' +
+      '"hasAncestralLowLightVision==0 ? 1:Low-Light Vision",' +
+      '"hasAncestralLowLightVision ? 1:Darkvision",' +
+      '"1:Dhampir Heritage"',
   'Dragonblood':
     'Traits=Uncommon ' +
     'Features=' +
-      '"1:Draconic Exemplar" ' +
+      '"1:Draconic Exemplar",' +
+      '"1:Dragonblood Heritage" ' +
     'Selectables=' +
       '"1:Adamantine Exemplar:Draconic Exemplar",' +
       '"1:Conspirator Exemplar:Draconic Exemplar",' +
@@ -10302,7 +10310,12 @@ Pathfinder2ERemaster.HERITAGES = {
       '"1:Horned Exemplar:Draconic Exemplar",' +
       '"1:Mirage Exemplar:Draconic Exemplar",' +
       '"1:Omen Exemplar:Draconic Exemplar"',
-  'Duskwalker':'Traits=Uncommon'
+  'Duskwalker':
+    'Traits=Uncommon ' +
+    'Features=' +
+      '"hasAncestralLowLightVision==0 ? 1:Low-Light Vision",' +
+      '"hasAncestralLowLightVision ? 1:Darkvision",' +
+      '"1:Duskwalker Heritage"'
 };
 Pathfinder2ERemaster.LANGUAGES = {
   // Common (pg 89)
@@ -13262,6 +13275,8 @@ Pathfinder2ERemaster.ancestryRules = function(
         selectables[s].replace('Type=', 'Type="' + name + ' (Heritage)",');
     }
   }
+  if(features.filter(x => x.match(/^(\d+:)?Low-Light Vision$/)).length > 0)
+    rules.defineRule('hasAncestralLowLightVision', prefix + 'Level', '=', '1');
 };
 
 /*
@@ -13760,6 +13775,17 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Horned Exemplar', '=', '"poison"',
       'features.Mirage Exemplar', '=', '"mental"',
       'features.Omen Exemplar', '=', '"mental"'
+    );
+  } else if(name == 'Draconic Sight') {
+    rules.defineRule('featureNotes.draconicSight',
+      '', '=', '"Low-Light Vision"',
+      'hasAncestralLowLightVision', '=', '"Darkvision"'
+    );
+    rules.defineRule('features.Darkvision',
+      'featureNotes.draconicSight', '=', 'source=="Darkvision" ? 1 : null'
+    );
+    rules.defineRule('features.Low-Light Vision',
+      'featureNotes.draconicSight', '=', 'source=="Low-Light Vision" ? 1 : null'
     );
   } else if(name == 'Draconic Veil') {
     rules.defineRule('features.Draconic Veil (Arcane)',

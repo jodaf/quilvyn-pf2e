@@ -13057,6 +13057,8 @@ Pathfinder2E.ancestryRules = function(
     'featureNotes.' + prefix + 'Heritage', '=', '1'
   );
 
+  if(features.filter(x => x.match(/^(\d+:)?Low-Light Vision$/)).length > 0)
+    rules.defineRule('hasAncestralLowLightVision', ancestryLevel, '=', '1');
   rules.defineRule('hitPoints', ancestryLevel, '+=', hitPoints);
   rules.defineRule('languageCount', ancestryLevel, '=', languages.length);
   languages.forEach(l => {
