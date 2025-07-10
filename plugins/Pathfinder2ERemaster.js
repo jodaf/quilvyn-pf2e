@@ -4102,7 +4102,6 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Additional Lore (Dwarven Lore) feature",' +
       '"Skill Trained (Crafting; Religion)"',
   // Changed
-  // TODO probably change how weapon familiarity is handed in Pathfinder2E.js
   'Dwarven Weapon Familiarity':
     'Section=combat,combat ' +
     'Note=' +
@@ -4669,8 +4668,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Slag May':
     'Section=combat,combat ' +
     'Note=' +
-      '"Claws inflict 1d6 HP slashing",' +
-      '"Claws are cold-iron weapons"',
+      '"Slag Claws inflict 1d6 HP slashing",' +
+      '"Slag Claws are cold-iron weapons"',
   'Changeling Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5059,7 +5058,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Gains +1 to Recall Knowledge if the source of possessed bones knew the topic well once per day"',
   'Crunch':
-    'Section=combat Note="Jaws inflict 1d8 HP and have the grapple trait"',
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Jaws inflict 1d8 HP",' +
+      '"Jaws have the grapple trait"',
   'Hyena Familiar':'Section=feature Note="Has the Familiar feature"',
   'Kholo Lore':
     'Section=feature,skill ' +
@@ -5442,7 +5444,6 @@ Pathfinder2ERemaster.FEATURES = {
   // Tengu
   // Low-Light Vision as above
   'Sharp Beak':'Section=combat Note="Beak inflicts 1d6 HP piercing"',
-  // TODO implement?
   'Dogtooth Tengu':'Section=combat Note="Beak has the deadly d8 trait"',
   'Jinxed Tengu':
     'Section=save ' +
@@ -7215,7 +7216,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Witch's Armaments (Eldritch Nails)":
     'Section=combat Note="Nails inflict 1d6 HP slashing"',
   "Witch's Armaments (Iron Teeth)":
-    'Section=combat Note="Teeth inflict 1d8 HP piercing"',
+    'Section=combat Note="Jaws inflict 1d8 HP piercing"',
   "Witch's Armaments (Living Hair)":
     'Section=combat Note="Hair inflicts 1d4 bludgeoning"',
   'Basic Lesson (Dreams)':
@@ -13028,6 +13029,63 @@ Pathfinder2ERemaster.attributeRules = function(rules, abilities) {
 /* Defines the rules related to combat. */
 Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
   Pathfinder2E.combatRules(rules, armors, shields, weapons);
+  // Define ancestry-specific unarmed attack weapons. Traits on some vary
+  // between ancestries; these are modified by the individual features
+  Pathfinder2E.weaponRules(
+    rules, 'Beak', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
+  Pathfinder2ERemaster.weaponRules(
+    rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
+    ['Agile', 'Finesse', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Fangs', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Hair', 'Unarmed', 0, '1d4 B', 0, 0, 'Brawling',
+    ['Agile', 'Disarm', 'Finesse', 'Trip', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Hoof', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Nails', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
+    ['Agile', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Slag Claws', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
+    ['Grapple', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Spines', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling', ['Unarmed'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Talons', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
+    ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
+  );
+  Pathfinder2E.weaponRules(
+    rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
+  // Most Jaws attacks have the Finesse trait; for those that don't, define an
+  // adjustment to remove the effects
+  rules.defineRule('jawsNonFinesseAdjustment',
+    'strengthModifier', '+', null,
+    'maxStrOrDexModifier', '+', '-source'
+  );
+  rules.defineRule('attackBonus.Jaws', 'jawsNonFinesseAdjustment', '+', null);
+  rules.defineRule
+    ('weapons.Jaws.6', 'jawsNonFinesseAdjustment', '=', '"strength"');
 };
 
 /* Defines rules related to basic character identity. */
@@ -13286,10 +13344,6 @@ Pathfinder2ERemaster.ancestryRules = function(
 Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
   Pathfinder2E.ancestryRulesExtra(rules, name);
   if(name == 'Catfolk') {
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Claws', 'combatNotes.clawedCatfolk', '=', '1');
     rules.defineRule
       ('weaponDieSidesBonus.Claws', 'combatNotes.clawedCatfolk', '^=', '2');
@@ -13305,46 +13359,26 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
       'level', '=', 'source<5 ? "Trained" : "Expert"'
     );
   } else if(name == 'Kholo') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Unarmed'], null
-    );
     rules.defineRule('weapons.Jaws', 'combatNotes.bite', '=', '1');
-  } else if(name == 'Kobold') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Unarmed', 'Finesse'], null
+    rules.defineRule('jawsNonFinesseAdjustment',
+      'combatNotes.bite', '=', '0' // enable
     );
+  } else if(name == 'Kobold') {
     rules.defineRule('weapons.Jaws', 'combatNotes.strongjawKobold', '=', '1');
   } else if(name == 'Leshy') {
-    Pathfinder2E.weaponRules(
-      rules, 'Spines', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Spines', 'combatNotes.cactusLeshy', '=', '1');
   } else if(name == 'Lizardfolk') {
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Unarmed', 'Agile', 'Finesse'], null
-    );
     rules.defineRule('weapons.Claws', 'combatNotes.claws', '=', '1');
-    rules.defineRule
-      ('weaponDieSidesBonus.Claws', 'combatNotes.claws', '^=', '2');
   } else if(name == 'Ratfolk') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
-      ['Unarmed', 'Agile', 'Finesse'], null
-    );
     rules.defineRule('weapons.Jaws', 'combatNotes.sharpTeeth', '=', '1');
+    rules.defineRule('weaponDieSidesBonus.Jaws',
+      'combatNotes.sharpTeeth', '^=', '-2' // decrease to 1d4
+    );
+    // Note: Ignore Agile trait currently not shown on character sheet
   } else if(name == 'Tengu') {
-    Pathfinder2E.weaponRules(
-      rules, 'Beak', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Beak', 'combatNotes.sharpBeak', '=', '1');
-    Pathfinder2E.weaponRules(
-      rules, 'Talons', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
-    );
+    rules.defineRule
+      ('weapons.Beak.5', 'combatNotes.dogtoothTengu', '=', '" [Crit +d8]"');
     rules.defineRule('weapons.Talons', 'combatNotes.talonedTengu', '=', '1');
   }
 };
@@ -13667,35 +13701,30 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
-  } else if(name == 'Bestial Manifestation (Claw)') {
-    // TODO different traits
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
-    );
+  } else if(name.startsWith('Bestial Manifestation')) {
     rules.defineRule
-      ('weapons.Claws', 'combatNotes.bestialManifestation(Claw)', '=', '1');
-  } else if(name == 'Bestial Manifestation (Hoof)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Hoof', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Hoof', 'combatNotes.bestialManifestation(Hoof)', '=', '1');
-  } else if(name == 'Bestial Manifestation (Jaws)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Jaws', 'combatNotes.bestialManifestation(Jaws)', '=', '1');
-  } else if(name == 'Bestial Manifestation (Tail)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Tail', 'Unarmed', 0, '1d4 B', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
+      ('features.Bestial Manifestation', 'features.' + name, '=', '1');
+    if(name.includes('Claw')) {
+      rules.defineRule
+        ('weapons.Claws', 'combatNotes.bestialManifestation(Claw)', '=', '1');
+      // Add Versatile P trait
+      rules.defineRule('weapons.Claws.4',
+        'combatNotes.bestialManifestation(Claw)', '=', '"S/P"'
+      );
+    } else if(name.includes('Hoof')) {
+      rules.defineRule
+        ('weapons.Hoof', 'combatNotes.bestialManifestation(Hoof)', '=', '1');
+    } else if(name.includes('Jaws')) {
+      rules.defineRule
+        ('weapons.Jaws', 'combatNotes.bestialManifestation(Jaws)', '=', '1');
+    } else if(name.includes('Tail')) {
+      rules.defineRule
+        ('weapons.Tail', 'combatNotes.bestialManifestation(Tail)', '=', '1');
+      rules.defineRule('weaponDieSidesBonus.Tail',
+        'combatNotes.bestialManifestation(Tail)', '^=', '-2' // decrease to 1d4
+      );
+      // TODO Implement Finesse trait
+    }
   } else if(name == 'Big Mouth') {
     rules.defineRule('featureNotes.cheekPouches',
       'featureNotes.bigMouth', '=', 'null' // italics
@@ -13736,34 +13765,28 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Crunch') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
+    // Note: Ignore Grapple trait currently not shown on character sheet
   } else if(name == 'Double, Double') {
     rules.defineRule('skillNotes.cauldron',
       'skillNotes.double,Double', '=', 'null' // italics
     );
-  } else if(name == 'Draconic Aspect (Claw)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Claws', 'combatNotes.draconicAspect(Claw)', '=', '1');
+  } else if(name.startsWith('Draconic Aspect')) {
     rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
-  } else if(name == 'Draconic Aspect (Jaws)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Forceful', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Jaws', 'combatNotes.draconicAspect(Jaws)', '=', '1');
-    rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
-  } else if(name == 'Draconic Aspect (Tail)') {
-    Pathfinder2E.weaponRules(
-      rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
-      ['Sweep', 'Trip', 'Unarmed'], null
-    );
-    rules.defineRule
-      ('weapons.Tail', 'combatNotes.draconicAspect(Tail)', '=', '1');
-    rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
+    if(name.includes('Claw')) {
+      rules.defineRule
+        ('weapons.Claws', 'combatNotes.draconicAspect(Claw)', '=', '1');
+    } else if(name.includes('Jaws')) {
+      rules.defineRule
+        ('weapons.Jaws', 'combatNotes.draconicAspect(Jaws)', '=', '1');
+      rules.defineRule('jawsNonFinesseAdjustment',
+        'combatNotes.draconicAspect(Jaws)', '=', '0' // enable
+      );
+      // Note: Ignore Forceful trait currently not shown on character sheet
+    } else if(name.includes('Tail')) {
+      rules.defineRule
+        ('weapons.Tail', 'combatNotes.draconicAspect(Tail)', '=', '1');
+      // Note: Ignore Sweep, Trip traits currently not shown on character sheet
+    }
   } else if(name == 'Draconic Resistance') {
     rules.defineRule('saveNotes.draconicResistance',
       // NOTE: Nethys removes ambiguity; resistance to bludgeoning isn't allowed
@@ -13809,11 +13832,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'skillNotes.efficientAlchemy', '=', 'null' // italics
     );
   } else if(name == 'Fangs') {
-    Pathfinder2E.weaponRules(
-      rules, 'Fangs', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
+    // Note: Ignore Grapple trait currently not shown on character sheet
   } else if(name == 'Form Of The Dragon') {
     rules.defineRule('features.Form Of The Dragon (Arcane)',
       'features.Form Of The Dragon', '?', null,
@@ -13871,10 +13891,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'spellSlots.P10', '^', '8'
     );
   } else if(name == 'Hag Claws') {
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Unarmed'], null
-    );
+    // No mods needed to base Claw attributes
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
   } else if(name == 'Interweave Dispel') {
     rules.defineRule('knowsDispelMagicSpell',
@@ -13890,22 +13907,22 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name.startsWith('Iruxi Armaments')) {
     if(name == 'Iruxi Armaments (Claws)') {
       rules.defineRule('weaponDieSidesBonus.Claws',
-        'combatNotes.iruxiArmaments(Claws)', '^=', '2'
+        'combatNotes.iruxiArmaments(Claws)', '^=', '2' // increase to 1d6
+      );
+      // Add the Versatile P trait
+      rules.defineRule('weapons.Claws.4',
+        'combatNotes.iruxiArmaments(Claws)', '=', '"S/P"'
       );
     } else if(name == 'Iruxi Armaments (Fangs)') {
-      Pathfinder2E.weaponRules(
-        rules, 'Fangs', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling', ['Unarmed'],
-        null
-      );
       rules.defineRule
         ('weapons.Fangs', 'combatNotes.iruxiArmaments(Fangs)', '=', '1');
-    } else if(name == 'Iruxi Armaments (Tail)') {
-      Pathfinder2E.weaponRules(
-        rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
-        ['Unarmed', 'Sweep'], null
+      rules.defineRule('weaponDieSidesBonus.Fangs',
+        'combatNotes.iruxiArmaments(Fangs)', '^=', '2' // increase to 1d8
       );
+    } else if(name == 'Iruxi Armaments (Tail)') {
       rules.defineRule
         ('weapons.Tail', 'combatNotes.iruxiArmaments(Tail)', '=', '1');
+      // Note: Ignore Sweep trait currently not shown on character sheet
     }
     rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
   } else if(name == 'Jinx Glutton') {
@@ -13947,12 +13964,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule
       ("saveNotes.cat'sLuck", 'saveNotes.reliableLuck', '=', 'null'); // italics
   } else if(name == 'Saber Teeth') {
-    // TODO traits differ
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Unarmed'], null
-    );
     rules.defineRule('weapons.Jaws', 'combatNotes.saberTeeth', '=', '1');
+    rules.defineRule('jawsNonFinesseAdjustment',
+      'combatNotes.saberTeeth', '=', '0' // enable
+    );
   } else if(name == 'Scaly Hide') {
     rules.defineRule('combatNotes.scalyHide.1',
       'armorCategory', '?', 'source=="Unarmored"',
@@ -13966,13 +13981,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'combatNotes.shinstabber', '=', 'null' // italics
     );
   } else if(name == 'Slag May') {
-    Pathfinder2E.weaponRules(
-      rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
-      ['Grapple', 'Unarmed'], null
-    );
-    rules.defineRule('weapons.Claws', 'combatNotes.slagMay', '=', '1');
-    rules.defineRule
-      ('weaponDieSidesBonus.Claws', 'combatNotes.slagMay', '^=', '2');
+    rules.defineRule('weapons.Slag Claws', 'combatNotes.slagMay', '=', '1');
   } else if(name == 'Tengu Feather Fan') {
     rules.defineRule('magicNotes.waveFan',
       'magicNotes.tenguFeatherFan', '=', '1',
@@ -13987,21 +13996,37 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Primal Dragonblood', '=', '"primal"'
     );
   } else if(name == 'Tusks') {
-    Pathfinder2E.weaponRules(
-      rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
   } else if(name == 'Vicious Incisors') {
     rules.defineRule
-      ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '2');
+      ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '0');
+    // Note: Ignore Backstabber trait currently not shown on character sheet
   } else if(name.startsWith('Weapon Proficiency')) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
-  } else if(name.match(/^Witch's Armaments/)) {
+  } else if(name.startsWith("Witch's Armaments")) {
     rules.defineRule
       ("features.Witch's Armaments", 'features.' + name, '=', '1');
+    if(name.includes('Nails')) {
+      rules.defineRule('weapons.Nails',
+        "combatNotes.witch'sArmaments(EldritchNails)", '=', '1'
+      );
+    } else if(name.includes('Teeth')) {
+      rules.defineRule('weapons.Jaws',
+        "combatNotes.witch'sArmaments(IronTeeth)", '=', '1'
+      );
+      rules.defineRule('weaponDieSidesBonus.Jaws',
+        "combatNotes.witch'sArmaments(IronTeeth)", '^=', '2' // increase to 1d8
+      );
+      rules.defineRule('jawsNonFinesseAdjustment',
+        "combatNotes.witch'sArmaments(IronTeeth)", '=', '0' // enable
+      );
+    } else if(name.includes('Hair')) {
+      rules.defineRule('weapons.Hair',
+        "combatNotes.witch'sArmaments(LivingHair)", '=', '1'
+      );
+    }
   } else if(name == "Witch's Communion") {
     rules.defineRule("magicNotes.witch'sCharge",
       "magicNotes.witch'sCommunion", '=', 'null' // italics

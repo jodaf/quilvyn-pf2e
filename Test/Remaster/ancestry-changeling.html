@@ -7,7 +7,7 @@
   <script>
 var attributes = {
   "_path":"ztest/pf2er/ancestry/changeling", 
-  "abilityBoosts.constitution":2, "abilityBoosts.dexterity":2, "abilityBoosts.strength":1, 
+  "abilityBoosts.constitution":1, "abilityBoosts.dexterity":3, "abilityBoosts.strength":1, 
   "abilityBoosts.wisdom":3, "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", 
   "ancestryFeats.Accursed Claws":1, "ancestryFeats.Brine May":1, "ancestryFeats.Called":1, 
   "ancestryFeats.Callow May":1, "ancestryFeats.Changeling Lore":1, "ancestryFeats.Dream May":1, 
@@ -32,8 +32,8 @@ var attributes = {
     <td>    <table id="Abilities" style="width:100%">
     <tr style="text-align:center">
       <td><b>Strength</b>: +2</td>
-      <td><b>Dexterity</b>: +2</td>
-      <td><b>Constitution</b>: +2</td>
+      <td><b>Dexterity</b>: +3</td>
+      <td><b>Constitution</b>: +1</td>
       <td><b>Intelligence</b>: +0</td>
       <td><b>Wisdom</b>: +3</td>
       <td><b>Charisma</b>: +0</td>
@@ -115,7 +115,7 @@ var attributes = {
     <col style="width:33%"/>
     <col style="width:34%"/>
     <tr style="text-align:left">
-      <td>Acrobatics: +5 (dexterity; trained)</td>
+      <td>Acrobatics: +6 (dexterity; trained)</td>
       <td>Herbalism Lore: +3 (intelligence; trained)</td>
       <td>Performance: +0 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
@@ -133,7 +133,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Deception: +3 (charisma; trained)</td>
       <td>Nature: +6 (wisdom; trained)</td>
-      <td>Stealth: +2 (dexterity; untrained)</td>
+      <td>Stealth: +3 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +0 (charisma; untrained)</td>
       <td>Occultism: +3 (intelligence; trained)</td>
@@ -141,7 +141,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hag Lore: +3 (intelligence; trained)</td>
       <td>Orc Lore: +3 (intelligence; trained)</td>
-      <td>Thievery: +2 (dexterity; untrained)</td>
+      <td>Thievery: +3 (dexterity; untrained)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -173,8 +173,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="CombatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Hit Points</b>: 20</td>
-        <td><b>Armor Class</b>: 16 (dexterity (4 max); trained)</td>
+        <td><b>Hit Points</b>: 19</td>
+        <td><b>Armor Class</b>: 17 (dexterity (4 max); trained)</td>
         <td><b>Class DC</b>: Fighter: 15 (strength; trained)</td>
       </tr></table>
 </td>
@@ -183,21 +183,21 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Leather</td>
         <td><b>Shield</b>: Steel (+2 AC when raised; hardness 5; HP 20)</td>
-        <td><b>Weapons</b>: Claws (+9 1d6+2 S; strength; expert); Hatchet (+7 1d6+2 S R10'; strength; expert); Shortsword (+7 1d6+2 P/S; strength; expert); Starknife (+7 1d4+2 P/S [Crit +d6] R20'; strength; expert)</td>
+        <td><b>Weapons</b>: Claws (+8 1d4+2 S; dexterity; expert); Hatchet (+7 1d6+2 S R10'; strength; expert); Shortsword (+8 1d6+2 P/S; dexterity; expert); Slag Claws (+7 1d6+2 S; strength; expert); Starknife (+8 1d4+2 P/S [Crit +d6] R20'; dexterity; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Constitution Hit Points Adjustment: +2</i></td>
+        <td><i>Constitution Hit Points Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Armor Class Adjustment: +2</i></td>
+        <td><i>Dexterity Armor Class Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Dexterity Attack Adjustment: +2</i></td>
+        <td><i>Dexterity Attack Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
         <td><i>Hag Claws: Claws inflict 1d4 HP slashing</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Slag May: Claws inflict 1d6 HP slashing</i></td>
+        <td><i>Slag May: Slag Claws inflict 1d6 HP slashing</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
@@ -213,7 +213,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
-        <td>Slag May: Claws are cold-iron weapons</td>
+        <td>Slag May: Slag Claws are cold-iron weapons</td>
       </tr></table>
 </td>
     </tr></table>
@@ -221,13 +221,13 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +7 (constitution; expert); Reflex: +7 (dexterity; expert); Will: +6 (wisdom; trained)</td>
+      <td><b>Save</b>: Fortitude: +6 (constitution; expert); Reflex: +8 (dexterity; expert); Will: +6 (wisdom; trained)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Called: +1 vs. mental effects, and successes vs. mental control are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Dream May: +2 vs. sleep and dream effects/Sleep restores 2 Hit Points and reduces drained and doomed conditions by 2</td>
+        <td>Dream May: +2 vs. sleep and dream effects/Sleep restores 1 Hit Points and reduces drained and doomed conditions by 2</td>
       </tr><tr style="text-align:center">
         <td>Occult Resistance: +1 vs. occult effects</td>
       </tr></table>
