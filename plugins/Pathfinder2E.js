@@ -12473,6 +12473,11 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
       'rank.' + s, '=', 'Pathfinder2E.RANK_NAMES[source]'
     );
   }
+  // Define ancestry-specific unarmed attack weapons
+  Pathfinder2E.weaponRules(
+    rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
+    ['Finesse', 'Unarmed'], null
+  );
 
 };
 
@@ -13133,10 +13138,6 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Goblin') {
-    Pathfinder2E.weaponRules(
-      rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
-      ['Finesse', 'Unarmed'], null
-    );
     rules.defineRule('weapons.Jaws', 'combatNotes.razortoothGoblin', '=', '1');
   } else if(name == 'Halfling') {
     rules.defineRule('skillNotes.nomadicHalfling',
@@ -15587,7 +15588,7 @@ Pathfinder2E.weaponRules = function(
   });
 
   let weaponName = 'weapons.' + name;
-  let format = '%V (%1 %2%3 %4' + (specialDamage.length > 0 ? ' [' + specialDamage.join('; ') + ']' : '') + (range ? " R%7'" : '') + '; %5; %6)';
+  let format = '%V (%1 %2%3 %4%5' + (range ? " R%8'" : '') + '; %6; %7)';
 
   rules.defineChoice('notes', weaponName + ':' + format);
   rules.defineRule('rank.' + categoryAndGroup,
@@ -15648,7 +15649,7 @@ Pathfinder2E.weaponRules = function(
     'weaponDamageAdjustment.' + name, '+', null
   );
   rules.defineRule('weaponDieSides.' + name,
-    weaponName, '=', damage.replace(/^\d(d)?/, ''),
+    weaponName, '=', damage.replace(/^\d(d)?/, '') || '""',
     'weaponDieSidesBonus.' + name, '+', null
   );
   if(damage == '0')
@@ -15666,7 +15667,6 @@ Pathfinder2E.weaponRules = function(
     'attackBonus.' + name, '=', 'QuilvynUtils.signed(source)'
   );
   rules.defineRule(weaponName + '.2',
-    weaponName, '=', '"' + damage + '"',
     'weaponDieSides.' + name, '=', '"' + damage.replace(/d\d+/, 'd') + '" + source'
   );
   rules.defineRule(weaponName + '.3',
@@ -15674,11 +15674,15 @@ Pathfinder2E.weaponRules = function(
   );
   rules.defineRule(weaponName + '.4', weaponName, '=', '"' + damageType + '"');
   rules.defineRule(weaponName + '.5',
-    weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
+    '', '=', specialDamage.length > 0 ? '" [' + specialDamage.join('; ') + ']"' : '""'
   );
   if(isFinesse)
-    rules.defineRule(weaponName + '.5', 'maxStrOrDexAbility', '=', null);
-  rules.defineRule(weaponName + '.6',
+    rules.defineRule(weaponName + '.6', 'maxStrOrDexAbility', '=', null);
+  else
+    rules.defineRule(weaponName + '.6',
+      weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
+    );
+  rules.defineRule(weaponName + '.7',
     weaponName, '=', '"untrained"',
     'weaponRank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
@@ -15687,7 +15691,7 @@ Pathfinder2E.weaponRules = function(
       weaponName, '=', range,
       'weaponRangeAdjustment.' + name, '+', null
     );
-    rules.defineRule(weaponName + '.7', 'range.' + name, '=', null);
+    rules.defineRule(weaponName + '.8', 'range.' + name, '=', null);
   }
 
 };
