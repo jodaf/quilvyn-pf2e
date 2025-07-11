@@ -13065,7 +13065,8 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
     ['Finesse', 'Unarmed'], null
   );
   Pathfinder2E.weaponRules(
-    rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling', ['Unarmed'], null
+    rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+    ['Sweep', 'Unarmed'], null
   );
   Pathfinder2E.weaponRules(
     rules, 'Talons', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
@@ -13075,15 +13076,12 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
     rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
-  // Most Jaws attacks have the Finesse trait; for those that don't, define an
-  // adjustment to remove the effects
-  rules.defineRule('jawsNonFinesseAdjustment',
-    'strengthModifier', '+', null,
-    'maxStrOrDexModifier', '+', '-source'
-  );
-  rules.defineRule('attackBonus.Jaws', 'jawsNonFinesseAdjustment', '+', null);
+  // Most jaws attacks have the finesse trait; the few that do not can enable
+  // the jawsNonFinesseAttack attribute to undo any finesse bonus
   rules.defineRule
-    ('weapons.Jaws.6', 'jawsNonFinesseAdjustment', '=', '"strength"');
+    ('jawsNonFinesseAttack', 'finesseAttackBonus', '+', '-source');
+  rules.defineRule('attackBonus.Jaws', 'jawsNonFinesseAttack', '+', null);
+  rules.defineRule('weapons.Jaws.6', 'jawsNonFinesseAttack', '=', '"strength"');
 };
 
 /* Defines rules related to basic character identity. */
@@ -13358,9 +13356,8 @@ Pathfinder2ERemaster.ancestryRulesExtra = function(rules, name) {
     );
   } else if(name == 'Kholo') {
     rules.defineRule('weapons.Jaws', 'combatNotes.bite', '=', '1');
-    rules.defineRule('jawsNonFinesseAdjustment',
-      'combatNotes.bite', '=', '0' // enable
-    );
+    rules.defineRule
+      ('jawsNonFinesseAttack', 'combatNotes.bite', '=', '0'); // enable
   } else if(name == 'Kobold') {
     rules.defineRule('weapons.Jaws', 'combatNotes.strongjawKobold', '=', '1');
   } else if(name == 'Leshy') {
@@ -13721,7 +13718,17 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       rules.defineRule('weaponDieSidesBonus.Tail',
         'combatNotes.bestialManifestation(Tail)', '^=', '-2' // decrease to 1d4
       );
-      // TODO Implement Finesse trait
+      // Add Finesse trait to this derivation of the Tail weapon
+      rules.defineRule('combatNotes.bestialManifestation(Tail).1',
+        'features.Bestial Manifestation (Tail)', '?', null,
+         'finesseAttackBonus', '=', null
+      );
+      rules.defineRule('attackBonus.Tail',
+        'combatNotes.bestialManifestation(Tail).1', '+', null
+      );
+      rules.defineRule('weapons.Tail.6',
+        'combatNotes.bestialManifestation(Tail).1', '=', 'source>0 ? "dexterity" : "strength"'
+      );
     }
   } else if(name == 'Big Mouth') {
     rules.defineRule('featureNotes.cheekPouches',
@@ -13793,14 +13800,14 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     } else if(name.includes('Jaws')) {
       rules.defineRule
         ('weapons.Jaws', 'combatNotes.draconicAspect(Jaws)', '=', '1');
-      rules.defineRule('jawsNonFinesseAdjustment',
+      rules.defineRule('jawsNonFinesseAttack',
         'combatNotes.draconicAspect(Jaws)', '=', '0' // enable
       );
       // Note: Ignore Forceful trait currently not shown on character sheet
     } else if(name.includes('Tail')) {
       rules.defineRule
         ('weapons.Tail', 'combatNotes.draconicAspect(Tail)', '=', '1');
-      // Note: Ignore Sweep, Trip traits currently not shown on character sheet
+      // Note: Ignore Trip trait currently not shown on character sheet
     }
   } else if(name == 'Draconic Resistance') {
     rules.defineRule('saveNotes.draconicResistance',
@@ -13986,9 +13993,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ("saveNotes.cat'sLuck", 'saveNotes.reliableLuck', '=', 'null'); // italics
   } else if(name == 'Saber Teeth') {
     rules.defineRule('weapons.Jaws', 'combatNotes.saberTeeth', '=', '1');
-    rules.defineRule('jawsNonFinesseAdjustment',
-      'combatNotes.saberTeeth', '=', '0' // enable
-    );
+    rules.defineRule
+      ('jawsNonFinesseAttack', 'combatNotes.saberTeeth', '=', '0'); // enable
   } else if(name == 'Scaly Hide') {
     rules.defineRule('combatNotes.scalyHide.1',
       'armorCategory', '?', 'source=="Unarmored"',
@@ -14040,7 +14046,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       rules.defineRule('weaponDieSidesBonus.Jaws',
         "combatNotes.witch'sArmaments(IronTeeth)", '^=', '2' // increase to 1d8
       );
-      rules.defineRule('jawsNonFinesseAdjustment',
+      rules.defineRule('jawsNonFinesseAttack',
         "combatNotes.witch'sArmaments(IronTeeth)", '=', '0' // enable
       );
     } else if(name.includes('Hair')) {

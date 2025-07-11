@@ -12406,7 +12406,8 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   // For weapons with the finesse trait
   rules.defineRule('finesseAttackBonus',
     'dexterityModifier', '=', null,
-    'strengthModifier', '+', '-source'
+    'strengthModifier', '+', '-source',
+    '', '^', '0'
   );
   rules.defineRule('proficiencyBonus.Armor',
     'rank.Armor', '=', '2 * source',
@@ -15641,9 +15642,7 @@ Pathfinder2E.weaponRules = function(
     'weaponAttackAdjustment.' + name, '+', null
   );
   if(isFinesse)
-    rules.defineRule('attackBonus.' + name,
-      'finesseAttackBonus', '+', 'source>0 ? source : null'
-    );
+    rules.defineRule('attackBonus.' + name, 'finesseAttackBonus', '+', null);
   rules.defineRule('damageBonus.' + name,
     weaponName, '=', '0',
     'weaponDamageAdjustment.' + name, '+', null
