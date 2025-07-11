@@ -4737,7 +4737,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Tail inflicts 1d4 HP bludgeoning"',
   'Halo':
     'Section=magic ' +
-    'Note="Can use a Sustain action to evoke or supress a halo that lights a 20\' radius"',
+    'Note="Can use a Sustain action to evoke or suppress a halo that lights a 20\' radius"',
   'Nephilim Eyes':
     'Section=feature Note="Has the Darkvision feature"',
   'Nephilim Lore':
@@ -6460,7 +6460,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Deimatic Display':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a Demoralize attempt against animals, fungii, and plants in a 15\' cone"',
+    'Note="Makes a Demoralize attempt against animals, fungi, and plants in a 15\' cone"',
   'Ferocious Shape':
     Pathfinder2E.FEATURES['Ferocious Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -7414,7 +7414,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Convincing Illusion':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="R30\' Successful Decpetion vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure"',
+    'Note="R30\' Successful Deception vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure"',
   'Explosive Arrival':
     'Action=Free ' +
     'Section=magic ' +
@@ -7459,7 +7459,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Forcible Energy':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent spell that inflicts energy damage also inficts weakness 5 to that damage on 1 target until the end of the next turn"',
+    'Note="Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage on 1 target until the end of the next turn"',
   'Keen Magic Detection':
     'Section=magic ' +
     'Note="Use of Detect Magic exploration activity gives the better of two initiative rolls against foes that have magic active"',
@@ -7477,7 +7477,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Scintillating Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent instananeous non-darkness spell that requires a Reflex save also inflicts dazzled for 1 rd on a failed save, or blinded for 1 rd on a critical failure"',
+    'Note="Subsequent instantaneous non-darkness spell that requires a Reflex save also inflicts dazzled for 1 rd on a failed save, or blinded for 1 rd on a critical failure"',
   'Spell Tinker':
     Pathfinder2E.FEATURES['Spell Tinker']
     .replace(', reducing its remaining duration by half', ''),
@@ -7992,7 +7992,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can apply 2 poisons of up to level %{level-2} to a weapon simultaneously"',
   'Mutant Innervation':
     'Section=skill ' +
-    'Note="Cogintive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners\' languages"',
+    'Note="Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners\' languages"',
   'True Debilitating Bomb':
     Pathfinder2E.FEATURES['True Debilitating Bomb']
     .replace(/or a lesser[^"]*/, ''),
@@ -8694,7 +8694,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Clue In':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} Perception on a check that will help to answer the Persue A Lead question"',
+    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} Perception on a check that will help to answer the Pursue A Lead question"',
   'Deductive Improvisation':
     'Section=skill ' +
     'Note="Can attempt checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
@@ -8727,7 +8727,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the No Cause For Alarm and Pointed Question features",' +
       '"Skill Trained (Diplomacy)",' +
-      '"Can Persue A Lead and Make An Impression simultaneously"',
+      '"Can Pursue A Lead and Make An Impression simultaneously"',
   // Fortitude Expertise as above
   'Greater Dogged Will':
     'Section=save,save ' +
@@ -8739,7 +8739,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,feature ' +
     'Note=' +
       '"Class Expert (Investigator)",' +
-      '"Increased Persue A Lead effects"',
+      '"Increased Pursue A Lead effects"',
   'Investigator Feats':'Section=feature Note="%V selections"',
   'Investigator Skills':
     'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
@@ -8754,8 +8754,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Automatically senses the presence of a clue that pertains to current investigation when entering a new location"',
   'Methodology':'Section=feature Note="1 selection"',
   'On The Case':
-    'Section=feature Note="Has the Clue In and Persue A Lead features"',
-  'Persue A Lead':
+    'Section=feature Note="Has the Clue In and Pursue A Lead features"',
+  'Pursue A Lead':
     'Section=skill ' +
     'Note="1 min reflection gives +%{skillNotes.investigatorExpertise?2:1} Perception when attempting to answer a formulated question"',
   'Pointed Question':
@@ -9513,7 +9513,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Elemental (Air)':
     Pathfinder2E.FEATURES['Elemental (Air)']
     .replace('+1', '+2')
-    .replace('blugeoning', 'slashing'),
+    .replace('bludgeoning', 'slashing'),
   'Elemental (Earth)':
     Pathfinder2E.FEATURES['Elemental (Earth)']
     .replace('+1', '+2'),
@@ -9523,7 +9523,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Elemental (Metal)':
     Pathfinder2E.FEATURES['Elemental (Air)']
     .replace('+1', '+2')
-    .replace('blugeoning', 'piercing'),
+    .replace('bludgeoning', 'piercing'),
   'Elemental (Water)':
     Pathfinder2E.FEATURES['Elemental (Water)']
     .replace('+1', '+2'),
@@ -10016,7 +10016,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Targeting Finisher':
     'Action=1 ' +
     'Section=feature ' +
-    'Note="Successful targeted attack on a foe arm, head, or legs inflcits enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; effect extends for 1 min at half severity on a critical hit"',
+    'Note="Successful targeted attack on a foe arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; effect extends for 1 min at half severity on a critical hit"',
   'Cheat Death':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -10055,7 +10055,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save Note="Charmed life uses the better of two rolls"',
   'Lethal Finisher':
     'Section=combat ' +
-    'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inficts 18d6 HP)"',
+    'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP)"',
   'Parry And Riposte':
     'Section=combat ' +
     'Note="While benefitting from the parry weapon Armor Class bonus or Extravagant Parry, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn"',
@@ -14241,7 +14241,7 @@ Pathfinder2ERemaster.weaponRules = function(
     rules.defineRule
      ('trainingLevel.' + name, 'trainingLevel.Monk Bows', '^=', null);
   if(traits.includes('Monk') && category == 'Advanced')
-    rules.defineRule('weaponFailiarity.' + name,
+    rules.defineRule('weaponFamiliarity.' + name,
       'weaponFamiliarity.Advanced Monk Weapons', '=', null
     );
 };

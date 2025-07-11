@@ -275,7 +275,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Explorer's Clothing</td>
         <td><b>Shield</b>: None</td>
-        <td><b>Weapons</b>: Fist (+31 1d6+4 B; dexterity; master); Javelin (+31 1d6+4 P R30'; dexterity; master); Morningstar (+30 1d6+4 B/P; strength; master); Staff (+30 1d4+4 B [2h d8]; strength; master)</td>
+        <td><b>Weapons</b>: Crane Wing (+31 1d6+4 B; dexterity; master); Dragon Tail (+30 1d10+4 B; strength; master); Falling Stone (+30 1d8+4 B; strength; master); Fist (+31 1d6+4 B; dexterity; master); Iron Sweep (+30 1d8+4 B; strength; master); Javelin (+31 1d6+4 P R30'; dexterity; master); Lashing Branch (+31 1d8+4 S; dexterity; master); Morningstar (+30 1d6+4 B/P; strength; master); Staff (+30 1d4+4 B [2h d8]; strength; master); Tiger Claw (+31 1d8+4 S; dexterity; master); Wolf Jaw (+31 1d8+4 P; dexterity; master)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -327,7 +327,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Crane Flutter: <b>(R)</b> Crane Stance gives +3 Armor Class vs. the triggering melee Strike, and a miss allows an immediate -2 Strike</td>
       </tr><tr style="text-align:center">
-        <td>Crane Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class and restricts attacks to 1d6 HP bludgeoning hand Strikes</td>
+        <td>Crane Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class and restricts Strikes to crane wing attacks</td>
       </tr><tr style="text-align:center">
         <td>Crushing Grab: Can inflict 4 HP bludgeoning, lethal or non-lethal, with a successful Grapple</td>
       </tr><tr style="text-align:center">
@@ -341,7 +341,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dragon Roar: <b>(1)</b> R15' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (<b>save Will</b> vs. Intimidation negates; critical failure inflicts frightened 2); the first successful Strike before the end of the next turn on a frightened foe inflicts +4 HP</td>
       </tr><tr style="text-align:center">
-        <td>Dragon Stance: <b>(1)</b> Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain</td>
+        <td>Dragon Stance: <b>(1)</b> Unarmored stance allows dragon tail attacks and Strides that ignore the first square of difficult terrain</td>
       </tr><tr style="text-align:center">
         <td>Enduring Quickness: Permanently quickened; may use additional action to Stride, Leap, or Jump</td>
       </tr><tr style="text-align:center">
@@ -367,7 +367,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: <b>(F)</b> Gives +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Ironblood Stance: <b>(1)</b> Unarmored stance allows unarmed sweep Strikes that inflict 1d8 HP bludgeoning and gives resistance 5 to all damage</td>
+        <td>Ironblood Stance: <b>(1)</b> Unarmored stance gives resistance 5 to all damage and allows iron sweep attacks</td>
       </tr><tr style="text-align:center">
         <td>Ironblood Surge: <b>(1)</b> While in Ironblood Stance, gains +1 Armor Class until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -385,7 +385,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Mountain Quake: <b>(1)</b> R20' Stomp inflicts 4 HP and knocked prone (<b>save basic Fortitude</b>) once per 1d4 rd</td>
       </tr><tr style="text-align:center">
-        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class, +2 vs. Reposition, Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes</td>
+        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class, +2 vs. Reposition, Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks</td>
       </tr><tr style="text-align:center">
         <td>Mountain Stronghold: <b>(1)</b> While in Mountain Stance, gives +2 Armor Class until the beginning of the next turn</td>
       </tr><tr style="text-align:center">
@@ -425,11 +425,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Tangled Forest Rake: <b>(1)</b> While in Tangled Forest Stance, a successful lashing Strike moves the target 10' into a space within reach</td>
       </tr><tr style="text-align:center">
-        <td>Tangled Forest Stance: <b>(1)</b> Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates)</td>
+        <td>Tangled Forest Stance: <b>(1)</b> Unarmored stance prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates) and allows lashing branch attacks</td>
       </tr><tr style="text-align:center">
         <td>Tiger Slash: <b>(2)</b> While in Tiger Stance, claw attack inflicts +3 damage dice and a 5' push; critical success also inflicts +4 HP persistent bleed damage</td>
       </tr><tr style="text-align:center">
-        <td>Tiger Stance: <b>(1)</b> Unarmored stance allows 10' Steps and hand Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on a critical success</td>
+        <td>Tiger Stance: <b>(1)</b> Unarmored stance allows 10' Steps and tiger claw attacks that inflict +1d4 HP persistent bleed damage on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Triangle Shot: <b>(2)</b> Make 3 bow Strikes against a single target with a -2 penalty</td>
       </tr><tr style="text-align:center">
@@ -443,7 +443,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Wolf Drag: <b>(2)</b> While in Wolf Stance, piercing hand attack gains the fatal d12 trait and knocks prone</td>
       </tr><tr style="text-align:center">
-        <td>Wolf Stance: <b>(1)</b> Unarmored stance allows 1d8 HP piercing hand Strikes that have the trip trait when flanking</td>
+        <td>Wolf Stance: <b>(1)</b> Unarmored stance allows wolf jaw attacks that have the trip trait when flanking</td>
       </tr></table>
 </td>
     </tr></table>

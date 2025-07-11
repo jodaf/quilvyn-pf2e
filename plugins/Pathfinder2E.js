@@ -699,7 +699,7 @@ Pathfinder2E.CLASSES = {
       '"1:Strength:Key Ability",' +
       '"1:Axes:Weapon Group",' +
       '"1:Bombs:Weapon Group",' +
-      '"1:Brawlings:Weapon Group",' +
+      '"1:Brawling Weapons:Weapon Group",' +
       '"1:Clubs:Weapon Group",' +
       '"1:Crossbows:Weapon Group",' +
       '"1:Darts:Weapon Group",' +
@@ -3025,7 +3025,7 @@ Pathfinder2E.FEATURES = {
       '"Reduces non-armor Speed penalties by 5\'"',
   'Vengeful Hatred':
     'Section=combat ' +
-    'Note="Inflicts +1 HP per damage die vs. a choice of drow, duregar, giants, or orcs and for 1 min vs. any foe that inflicts a critical success on an attack"',
+    'Note="Inflicts +1 HP per damage die vs. a choice of drow, dueregar, giants, or orcs and for 1 min vs. any foe that inflicts a critical success on an attack"',
   'Boulder Roll':
     'Action=2 ' +
     'Section=combat ' +
@@ -5176,9 +5176,9 @@ Pathfinder2E.FEATURES = {
   'Fighter Weapon Mastery (Bombs)':
     'Section=combat ' +
     'Note="Attack Master (Simple Bombs; Martial Bombs)/Attack Expert (Advanced Bomb Weapons)"',
-  'Fighter Weapon Mastery (Brawlings)':
+  'Fighter Weapon Mastery (Brawling Weapons)':
     'Section=combat ' +
-    'Note="Attack Master (Simple Brawling Weapons; Martial Brawling Weapons)/Attack Expert (Advanced Brawling Weapons)"',
+    'Note="Attack Master (Unarmed Brawling Weapons; Simple Brawling Weapons; Martial Brawling Weapons)/Attack Expert (Advanced Brawling Weapons)"',
   'Fighter Weapon Mastery (Clubs)':
     'Section=combat ' +
     'Note="Attack Master (Simple Clubs; Martial Clubs)/Attack Expert (Advanced Clubs)"',
@@ -5235,9 +5235,9 @@ Pathfinder2E.FEATURES = {
   'Weapon Legend (Bombs)':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Bombs; Martial Bombs)/Attack Master (Advanced Bombs)"',
-  'Weapon Legend (Brawlings)':
+  'Weapon Legend (Brawling Weapons)':
     'Section=combat ' +
-    'Note="Attack Legendary (Simple Brawlings; Martial Brawlings)/Attack Master (Advanced Brawlings)"',
+    'Note="Attack Legendary (Unarmed Brawling Weapons; Simple Brawling Weapons; Martial Brawling Weapons)/Attack Master (Advanced Brawling Weapons)"',
   'Weapon Legend (Clubs)':
     'Section=combat ' +
     'Note="Attack Legendary (Simple Clubs; Martial Clubs)/Attack Master (Advanced Clubs)"',
@@ -6310,7 +6310,7 @@ Pathfinder2E.FEATURES = {
   // Sense The Unseen as above
   'Blank Slate':
     'Section=save ' +
-    // Errata chages the counteract level
+    // Errata changes the counteract level
     'Note="Immune to detection, revelation and scrying effects of less than counteract level 10"',
   'Cloud Step':
     'Section=ability ' +
@@ -13832,14 +13832,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
   } else if(name == 'Fighter') {
-    ['Axes', 'Bombs', 'Brawlings', 'Clubs', 'Crossbows', 'Darts', 'Flails',
+    ['Axes', 'Bombs', 'Brawling Weapons', 'Clubs', 'Crossbows', 'Darts', 'Flails',
      'Hammers', 'Knives', 'Picks', 'Polearms', 'Slings', 'Shields', 'Spears',
      'Swords'].forEach(g => {
-      rules.defineRule('combatNotes.fighterWeaponMastery(' + g + ')',
+      rules.defineRule('features.Fighter Weapon Mastery (' + g + ')',
         'features.Fighter Weapon Mastery', '?', null,
         'features.' + g, '=', '1'
       );
-      rules.defineRule('combatNotes.weaponLegend(' + g + ')',
+      rules.defineRule('features.Weapon Legend (' + g + ')',
         'features.Weapon Legend', '?', null,
         'features.' + g, '=', '1'
       );
@@ -15618,7 +15618,9 @@ Pathfinder2E.weaponRules = function(
     traits.filter(x => x.match(/Deadly/)).map(x => x.replace('Deadly ', 'Crit +'))).concat(
     traits.filter(x => x.match(/Fatal/)).map(x => x.replace('Fatal', 'Crit')));
 
-  group = group == 'Knife' ? 'Knives' : (group + 's');
+  group =
+    group == 'Knife' ? 'Knives' :
+    group == 'Brawling' ? 'Brawling Weapons' :(group + 's');
   let categoryAndGroup = category + ' ' + group;
   category = category != 'Unarmed' ? category + ' Weapons' : 'Unarmed Attacks';
   let lowerCategory =
