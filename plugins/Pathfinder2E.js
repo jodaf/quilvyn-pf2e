@@ -12404,12 +12404,9 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule
     ('hitPoints', 'combatNotes.constitutionHitPointsAdjustment', '+', null);
   // For weapons with the finesse trait
-  rules.defineRule('maxStrOrDexAbility',
-    'maxStrOrDexModifier', '=', 'source==dict.strengthModifier ? "strength" : "dexterity"'
-  );
-  rules.defineRule('maxStrOrDexModifier',
-    'strengthModifier', '=', null,
-    'dexterityModifier', '^', null
+  rules.defineRule('finesseAttackBonus',
+    'dexterityModifier', '=', null,
+    'strengthModifier', '+', '-source'
   );
   rules.defineRule('proficiencyBonus.Armor',
     'rank.Armor', '=', '2 * source',
@@ -15638,12 +15635,15 @@ Pathfinder2E.weaponRules = function(
   rules.defineRule('weaponDamageAdjustment.' + name, weaponName, '=', '0');
   rules.defineRule('attackBonus.' + name,
     weaponName, '=', '0',
-    isFinesse ? 'maxStrOrDexModifier' :
     isRanged ? 'combatNotes.dexterityAttackAdjustment' :
                'combatNotes.strengthAttackAdjustment', '+', null,
     'proficiencyBonus.' + name, '+', null,
     'weaponAttackAdjustment.' + name, '+', null
   );
+  if(isFinesse)
+    rules.defineRule('attackBonus.' + name,
+      'finesseAttackBonus', '+', 'source>0 ? source : null'
+    );
   rules.defineRule('damageBonus.' + name,
     weaponName, '=', '0',
     'weaponDamageAdjustment.' + name, '+', null
@@ -15677,7 +15677,9 @@ Pathfinder2E.weaponRules = function(
     '', '=', specialDamage.length > 0 ? '" [' + specialDamage.join('; ') + ']"' : '""'
   );
   if(isFinesse)
-    rules.defineRule(weaponName + '.6', 'maxStrOrDexAbility', '=', null);
+    rules.defineRule(weaponName + '.6',
+      'finesseAttackBonus', '=', 'source>0 ? "dexterity" : "strength"'
+    );
   else
     rules.defineRule(weaponName + '.6',
       weaponName, '=', isRanged ? '"dexterity"' : '"strength"'
