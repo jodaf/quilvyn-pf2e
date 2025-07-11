@@ -5626,12 +5626,12 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"Unarmored stance gives +1 Armor Class and restricts attacks to 1d6 HP bludgeoning hand Strikes",' +
+      '"Unarmored stance gives +1 Armor Class and restricts Strikes to crane wing attacks",' +
       '"Unarmored stance gives -5 jump DC and +2\' and +5\' vertical and horizontal Leaps"',
   'Dragon Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 1d10 HP bludgeoning leg Strikes and Strides that ignore the first square of difficult terrain"',
+    'Note="Unarmored stance allows dragon tail attacks and Strides that ignore the first square of difficult terrain"',
   // TODO ff tradition may be divine, rather than occult
   'Ki Rush':
     'Section=magic ' +
@@ -5649,15 +5649,15 @@ Pathfinder2E.FEATURES = {
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts attacks to 1d8 HP bludgeoning hand Strikes"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 10\' Steps and hand Strikes that inflict 1d8 HP slashing, plus 1d4 HP persistent bleed damage on a critical success"',
+    'Note="Unarmored stance allows 10\' Steps and tiger claw attacks that inflict +1d4 HP persistent bleed damage on a critical success"',
   'Wolf Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 1d8 HP piercing hand Strikes that have the trip trait when flanking"',
+    'Note="Unarmored stance allows wolf jaw attacks that have the trip trait when flanking"',
   'Brawling Focus':
     'Section=combat ' +
     'Note="Critical hits with a brawling%{combatNotes.monasticWeaponry?\' or trained monk\':\'\'} weapon inflict its critical specialization effect"',
@@ -5731,7 +5731,7 @@ Pathfinder2E.FEATURES = {
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows unarmed sweep Strikes that inflict 1d8 HP bludgeoning and gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage"',
+    'Note="Unarmored stance gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage and allows iron sweep attacks"',
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
@@ -5739,7 +5739,7 @@ Pathfinder2E.FEATURES = {
   'Tangled Forest Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows unarmed Strikes that inflict 1d8 HP slashing and prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates)"',
+    'Note="Unarmored stance prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates) and allows lashing branch attacks"',
   'Wall Run':
     'Action=1 Section=ability Note="Strides on vertical surfaces"',
   'Wild Winds Initiate':
@@ -14626,6 +14626,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     // Suppress the deity notes that don't come with Cleric Dedication
     rules.defineRule('combatNotes.deity', 'levels.Cleric', '?', null);
     rules.defineRule('magicNotes.deity', 'levels.Cleric', '?', null);
+  } else if(name == 'Crane Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Crane Wing', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Crane Wing', 'features.Crane Stance', '=', '1');
   } else if(name == 'Divine Ally') {
     // Suppress validation errors for selected ally
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14640,6 +14646,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     });
   } else if(name.startsWith('Domain Initiate')) {
     rules.defineRule('features.Domain Initiate', 'features.' + name, '=', '1');
+  } else if(name == 'Dragon Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Dragon Tail', 'Unarmed', 0, '1d10 B', 0, 0, 'Brawling',
+      ['Backswing', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Dragon Tail', 'features.Dragon Stance', '=', '1');
   } else if(name == 'Druid Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.druidDedication', '?', null,
@@ -14781,6 +14793,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'spells.Dispel Magic (O2 Abj)', '=', '1',
       'spells.Dispel Magic (P2 Abj)', '=', '1'
     );
+  } else if(name == 'Ironblood Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Iron Sweep', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
+      ['Nonlethal', 'Parry', 'Sweep', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Iron Sweep', 'features.Ironblood Stance', '=', '1');
   } else if(name == 'Ironblood Surge') {
     rules.defineRule('combatNotes.ironbloodStance',
       'combatNotes.ironbloodSurge', '=', 'null' // italics
@@ -14829,6 +14848,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'armorCategory', '?', 'source == "Unarmored"'
     );
     rules.defineRule('speed', 'abilityNotes.monkMoves.1', '+', null);
+  } else if(name == 'Mountain Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Falling Stone', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
+      ['Forceful', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Falling Stone', 'features.Mountain Stance', '=', '1');
   } else if(name == 'Multilingual') {
     rules.defineRule('skillNotes.multilingual',
       'rank.Society', '=', 'source<2 ? 2 : source',
@@ -14934,6 +14960,19 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         ('magicNotes.' + noteName + '-2', 'levels.Sorcerer', '?', null);
     });
     rules.defineRule('magicNotes.bloodline', 'levels.Sorcerer', '?', null);
+  } else if(name == 'Tangled Forest Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Lashing Branch', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Lashing Branch', 'features.Tangled Forest Stance', '=', '1');
+  } else if(name == 'Tiger Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Tiger Claw', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling',
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Tiger Claw', 'features.Tiger Stance', '=', '1');
   } else if(name == 'Ubiquitous Snares') {
     rules.defineRule('skillNotes.snareSpecialist',
       'skillNotes.ubiquitousSnares', '=', 'null' // italics
@@ -14993,6 +15032,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         ('magicNotes.' + noteName + '-1', 'levels.Wizard', '?', null);
     });
     rules.defineRule('magicNotes.arcaneSchool', 'levels.Wizard', '?', null);
+  } else if(name == 'Wolf Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Wolf Jaw', 'Unarmed', 0, '1d8 P', 0, 0, 'Brawling',
+      ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule('weapons.Wolf Jaw', 'features.Wolf Stance', '=', '1');
   }
 
 };
