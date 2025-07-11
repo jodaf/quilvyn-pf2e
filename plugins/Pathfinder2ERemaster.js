@@ -5723,7 +5723,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Scaly Hide':
     'Section=combat ' +
     'Note="+%{2-(dexterityModifier-3>?0)} Armor Class in no armor"',
-  // TODO implement?
   'Deadly Aspect':
     'Section=combat Note="Draconic Aspect attack has the deadly d8 trait"',
   'Draconic Scent':'Section=skill Note="Has 30\' imprecise scent"',
@@ -8877,7 +8876,6 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wholeness Of Body', 'Harmonize Self'),
   'Stand Still':Pathfinder2E.FEATURES['Stand Still'],
   'Advanced Monastic Weaponry':
-    // TODO implement
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
   'Advanced Qi Spells':
     'Section=magic ' +
@@ -13766,6 +13764,23 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
     // Note: Ignore Grapple trait currently not shown on character sheet
+  } else if(name == 'Deadly Aspect') {
+    rules.defineRule('combatNotes.deadlyAspect.1',
+      'combatNotes.deadlyAspect', '?', null,
+      'features.Draconic Aspect (Claw)', '=', '" [Crit +d8]"'
+    );
+    rules.defineRule('combatNotes.deadlyAspect.2',
+      'combatNotes.deadlyAspect', '?', null,
+      'features.Draconic Aspect (Jaws)', '=', '" [Crit +d8]"'
+    );
+    rules.defineRule('combatNotes.deadlyAspect.3',
+      'combatNotes.deadlyAspect', '?', null,
+      'features.Draconic Aspect (Tail)', '=', '" [Crit +d8]"'
+    );
+    rules.defineRule
+      ('weapons.Claws.5', 'combatNotes.deadlyAspect.1', '=', null);
+    rules.defineRule('weapons.Jaws.5', 'combatNotes.deadlyAspect.2', '=', null);
+    rules.defineRule('weapons.Tail.5', 'combatNotes.deadlyAspect.3', '=', null);
   } else if(name == 'Double, Double') {
     rules.defineRule('skillNotes.cauldron',
       'skillNotes.double,Double', '=', 'null' // italics
@@ -13952,6 +13967,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name.match(/^Mercy \(.*\)$/)) {
     rules.defineRule('features.Mercy', 'features.' + name, '=', '1');
+  } else if(name == 'Monastic Archer Stance') {
+    rules.defineRule('combatNotes.monasticArcherStance',
+      '', '=', '"Trained"',
+      'features.Expert Strikes', '=', '"Expert"',
+      'features.Master Strikes', '=', '"Master"'
+    );
   } else if(name == 'Pack Stalker') {
     // Make sure there's a featCount.Skill to increment
     rules.defineRule('featCount.Skill', 'features.Pack Stalker', '^=', '0');
@@ -14213,6 +14234,10 @@ Pathfinder2ERemaster.weaponRules = function(
   if(traits.includes('Monk') && group == 'Bow')
     rules.defineRule
      ('trainingLevel.' + name, 'trainingLevel.Monk Bows', '^=', null);
+  if(traits.includes('Monk') && category == 'Advanced')
+    rules.defineRule('weaponFailiarity.' + name,
+      'weaponFamiliarity.Advanced Monk Weapons', '=', null
+    );
 };
 
 /* Returns the elements in a basic 5E character editor. */
