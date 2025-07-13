@@ -3682,7 +3682,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Barbarian)",' +
-      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a single-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action"',
+      '"' + Pathfinder2E.ACTION_MARKS.Free + ' Immediately uses a 1-action rage action when starting to rage; using 2 actions to enter rage allows using a 2-action rage action"',
   'Quick Rage':'Section=combat Note="Has increased Rage effects"',
   'Rage':
     'Action=1 ' +
@@ -4049,7 +4049,7 @@ Pathfinder2E.FEATURES = {
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
-    'Note="Can use an additional action each rd to cast a one-action composition cantrip"',
+    'Note="Can use an additional action each rd to cast a 1-action composition cantrip"',
   'Impossible Polymath':
     'Section=magic ' +
     'Note="Can add arcane, divine, and primal spells to spellbook if trained in the corresponding skill"',
@@ -4788,19 +4788,19 @@ Pathfinder2E.FEATURES = {
   // Cantrip Expansion as above
   'Communal Healing':
     'Section=magic ' +
-    'Note="Casting <i>Heal</i> on another creature restores HP to self equal to the spell level"',
+    'Note="Casting <i>Heal</i> on a single target restores HP equal to the spell level to self"',
   'Emblazon Armament':
     'Section=magic ' +
-    'Note="10 min process gives a shield +1 Hardness or a weapon +1 HP damage"',
+    'Note="10 min process gives a shield +1 Hardness or a weapon +1 HP damage for 1 year"',
   'Sap Life':
     'Section=magic ' +
-    'Note="Casting <i>Harm</i> on another creature restores HP to self equal to the spell level"',
+    'Note="Casting <i>Harm</i> on another creature restores HP equal to the spell level to self"',
   'Turn Undead':
     'Section=magic ' +
     'Note="Critical failure by undead up to level %{level} damaged by <i>Heal</i> inflicts fleeing for 1 rd"',
   'Versatile Font':
     'Section=magic ' +
-    'Note="Can use a font for either <i>Harm</i> or <i>Heal</i>"',
+    'Note="Can use the extra spell slots from Harming Font or Healing Font for either <i>Harm</i> or <i>Heal</i>"',
   'Channel Smite':
     'Action=2 ' +
     'Section=combat ' +
@@ -4822,7 +4822,7 @@ Pathfinder2E.FEATURES = {
   'Cast Down':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min"',
+    'Note="Subsequent single-target damaging <i>Harm</i> or <i>Heal</i> also inflicts knocked prone (save negates; critical failure also inflicts -10 Speed for 1 min)"',
   'Divine Weapon':
     'Action=Free ' +
     'Section=magic ' +
@@ -4855,32 +4855,32 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
     'Section=magic ' +
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance %{level//2} if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell"',
+    'Note="Can use Emblazon Armament to instead cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance %{level//2} if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell"',
   'Castigating Weapon':
     'Section=magic ' +
     'Note="Damaging a fiend with <i>Heal</i> causes self weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level until the end of the next turn"',
   'Heroic Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage until the end of its next turn"',
+    'Note="Subsequent single-target <i>Heal</i> also gives the target +5 Speed, +1 attack, and +1 HP damage until the end of its next turn"',
   'Improved Command Undead':
     'Section=magic ' +
     'Note="Command Undead gives control of target for 1 rd, 10 min, or 24 hr on save success, failure, or critical failure"',
   'Replenishment Of War':
     'Section=combat ' +
-    'Note="Successful Strikes with a %{deityWeaponLowered} give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, until the start of the next turn"',
+    'Note="Successful %{deityWeaponLowered} Strikes give self %{level//2} temporary Hit Points, or %{level} temporary Hit Points on a critical hit, until the start of the next turn"',
   'Defensive Recovery':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent healing cast on a single target also gives +2 Armor Class and saves for 1 rd"',
+    'Note="Subsequent single-target healing also gives the target +2 Armor Class and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
     'Section=magic ' +
     // Errata corrects the counteract level
-    'Note="Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
+    'Note="Can use Emblazon Armament to instead cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
   'Shared Replenishment':
     'Section=combat ' +
-    'Note="Can give the temporary Hit Points from Replenishment Of War to any ally within 10\'"',
+    'Note="Can give the temporary Hit Points from Replenishment Of War to an ally within 10\'"',
   "Deity's Protection":
     'Section=magic ' +
     'Note="Casting a domain spell gives self resistance equal to the spell level to all damage until the start of the next turn"',
@@ -4892,13 +4892,13 @@ Pathfinder2E.FEATURES = {
   'Swift Banishment':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Immediately casts <i>Banishment</i> after a critical hit on an extraplanar foe"',
+    'Note="Expends a prepared <i>Banishment</i> with the triggering critical hit on an extraplanar foe"',
   'Eternal Bane':
     'Section=magic ' +
-    'Note="R15\' Aura gives continuous level %{level//2} <i>Bane</i> effects"',
+    'Note="R15\' Aura gives continuous level %{level//2} <i>Bane</i> effects; can dismiss it for 1 min"',
   'Eternal Blessing':
     'Section=magic ' +
-    'Note="R15\' Aura gives continuous level %{level//2} <i>Bless</i> effects"',
+    'Note="R15\' Aura gives continuous level %{level//2} <i>Bless</i> effects; can dismiss it for 1 min"',
   'Resurrectionist':
     'Section=magic ' +
     'Note="Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min or until the target is knocked unconscious"',
@@ -4906,7 +4906,7 @@ Pathfinder2E.FEATURES = {
   'Echoing Channel':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes single-action effects on an adjacent creature"',
+    'Note="Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature"',
   'Improved Swift Banishment':
     'Section=magic ' +
     'Note="Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty"',
@@ -4917,7 +4917,7 @@ Pathfinder2E.FEATURES = {
   'Metamagic Channel':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Applies a single-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
+    'Note="Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i>"',
 
   // Druid
   // Alertness as above
@@ -6660,7 +6660,7 @@ Pathfinder2E.FEATURES = {
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
     'Section=magic ' +
-    'Note="Can use single-action metamagic effects as free actions"',
+    'Note="Can use 1-action metamagic effects as free actions"',
 
   // Wizard
   // Alertness as above
@@ -7499,7 +7499,7 @@ Pathfinder2E.FEATURES = {
     'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
-    'Note="Can follow a jump that ends next to a wall with another single-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
+    'Note="Can follow a jump that ends next to a wall with another 1-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
   'Ward Medic':
     'Section=skill ' +
     'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',

@@ -25,12 +25,13 @@ var attributes = {
   "classFeats.Extend Armament Alignment":1, "classFeats.Fast Channel":1, "classFeats.Harming Hands":1, 
   "classFeats.Healing Hands":1, "classFeats.Heroic Recovery":1, "classFeats.Holy Castigation":1, 
   "classFeats.Improved Command Undead":1, "classFeats.Improved Communal Healing":1, 
-  "classFeats.Improved Swift Banishment":1, "classFeats.Maker Of Miracles":1, "classFeats.Metamagic Channel":1, 
-  "classFeats.Necrotic Infusion":1, "classFeats.Reach Spell":1, "classFeats.Replenishment Of War":1, 
-  "classFeats.Resurrectionist":1, "classFeats.Sap Life":1, "classFeats.Selective Energy":1, 
-  "classFeats.Shared Replenishment":1, "classFeats.Steady Spellcasting":1, "classFeats.Swift Banishment":1, 
-  "classFeats.Turn Undead":1, "classFeats.Versatile Font":1, "deity":"Abadar", "experience":19500, 
-  "gender":"Male", "generalFeats.Armor Proficiency":1, "generalFeats.Assurance (Deception)":1, 
+  "classFeats.Improved Swift Banishment":1, "classFeats.Magic Hands":1, "classFeats.Maker Of Miracles":1, 
+  "classFeats.Metamagic Channel":1, "classFeats.Necrotic Infusion":1, "classFeats.Reach Spell":1, 
+  "classFeats.Replenishment Of War":1, "classFeats.Resurrectionist":1, "classFeats.Sap Life":1, 
+  "classFeats.Selective Energy":1, "classFeats.Shared Replenishment":1, "classFeats.Steady Spellcasting":1, 
+  "classFeats.Swift Banishment":1, "classFeats.Turn Undead":1, "classFeats.Versatile Font":1, 
+  "classFeats.Warpriest's Armor":1, "deity":"Abadar", "experience":19500, "gender":"Male", 
+  "generalFeats.Armor Proficiency":1, "generalFeats.Assurance (Deception)":1, 
   "generalFeats.Assurance (Mercantile Lore)":1, "generalFeats.Bargain Hunter":1, "generalFeats.Breath Control":1, 
   "generalFeats.Fast Recovery":1, "generalFeats.Incredible Initiative":1, 
   "generalFeats.Skill Training (Absalom Lore)":1, "generalFeats.Skill Training (Deception)":1, 
@@ -310,9 +311,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: <b>(F)</b> Gives +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Replenishment Of War: Successful Strikes with a crossbow give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, until the start of the next turn</td>
+        <td>Replenishment Of War: Successful crossbow Strikes give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Shared Replenishment: Can give the temporary Hit Points from Replenishment Of War to any ally within 10'</td>
+        <td>Shared Replenishment: Can give the temporary Hit Points from Replenishment Of War to an ally within 10'</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
@@ -405,7 +406,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Cast Down: <b>(1)</b> Subsequent <i>Harm</i> or <i>Heal</i> also inflicts knocked prone, and target critical failure also inflicts -10 Speed for 1 min</td>
+      <td>Cast Down: <b>(1)</b> Subsequent single-target damaging <i>Harm</i> or <i>Heal</i> also inflicts knocked prone (save negates; critical failure also inflicts -10 Speed for 1 min)</td>
     </tr><tr style="text-align:center">
       <td>Castigating Weapon: Damaging a fiend with <i>Heal</i> causes self weapons and unarmed Strikes to inflict bonus good damage vs. fiends equal to half the spell level until the end of the next turn</td>
     </tr><tr style="text-align:center">
@@ -413,11 +414,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Command Undead: <b>(1)</b> <i>Harm</i> inflicts minion status on target undead up to level 17 for 1 min (Will negates; critical failure extends to 1 hr)</td>
     </tr><tr style="text-align:center">
-      <td>Communal Healing: Casting <i>Heal</i> on another creature restores HP to self equal to the spell level</td>
+      <td>Communal Healing: Casting <i>Heal</i> on a single target restores HP equal to the spell level to self</td>
     </tr><tr style="text-align:center">
       <td>Cremate Undead: <i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level</td>
     </tr><tr style="text-align:center">
-      <td>Defensive Recovery: <b>(1)</b> Subsequent healing cast on a single target also gives +2 Armor Class and saves for 1 rd</td>
+      <td>Defensive Recovery: <b>(1)</b> Subsequent single-target healing also gives the target +2 Armor Class and saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Deity's Protection: Casting a domain spell gives self resistance equal to the spell level to all damage until the start of the next turn</td>
     </tr><tr style="text-align:center">
@@ -433,17 +434,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Domain Wellspring: Refocus restores 3 Focus Points</td>
     </tr><tr style="text-align:center">
-      <td>Echoing Channel: <b>(1)</b> Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes single-action effects on an adjacent creature</td>
+      <td>Echoing Channel: <b>(1)</b> Subsequent 2-action <i>Harm</i> or <i>Heal</i> cast on a single target also causes 1-action effects on an adjacent creature</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Antimagic: Can use Emblazon Armament to cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +10 counteract attempt vs. a spell</td>
+      <td>Emblazon Antimagic: Can use Emblazon Armament to instead cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +10 counteract attempt vs. a spell</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Armament: 10 min process gives a shield +1 Hardness or a weapon +1 HP damage</td>
+      <td>Emblazon Armament: 10 min process gives a shield +1 Hardness or a weapon +1 HP damage for 1 year</td>
     </tr><tr style="text-align:center">
-      <td>Emblazon Energy: Can use Emblazon Armament to cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance 10 if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell</td>
+      <td>Emblazon Energy: Can use Emblazon Armament to instead cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance 10 if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell</td>
     </tr><tr style="text-align:center">
-      <td>Eternal Bane: R15' Aura gives continuous level 10 <i>Bane</i> effects</td>
+      <td>Eternal Bane: R15' Aura gives continuous level 10 <i>Bane</i> effects; can dismiss it for 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Eternal Blessing: R15' Aura gives continuous level 10 <i>Bless</i> effects</td>
+      <td>Eternal Blessing: R15' Aura gives continuous level 10 <i>Bless</i> effects; can dismiss it for 1 min</td>
     </tr><tr style="text-align:center">
       <td>Fast Channel: Can use 2 actions to cast a 3-action <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
@@ -451,7 +452,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Healing Font: Can cast <i>Heal</i> at level 9 an additional 5 times per day</td>
     </tr><tr style="text-align:center">
-      <td>Heroic Recovery: <b>(1)</b> Subsequent <i>Heal</i> cast on a single target also gives +5 Speed, +1 attack, and +1 HP damage until the end of its next turn</td>
+      <td>Heroic Recovery: <b>(1)</b> Subsequent single-target <i>Heal</i> also gives the target +5 Speed, +1 attack, and +1 HP damage until the end of its next turn</td>
     </tr><tr style="text-align:center">
       <td>Holy Castigation: Can use <i>Heal</i> to damage fiends</td>
     </tr><tr style="text-align:center">
@@ -461,7 +462,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Improved Swift Banishment: Can sacrifice any 5th level or higher prepared spell to inflict Swift Banishment with a -2 save penalty</td>
     </tr><tr style="text-align:center">
-      <td>Metamagic Channel: <b>(F)</b> Applies a single-action metamagic action to <i>Harm</i> or <i>Heal</i></td>
+      <td>Metamagic Channel: <b>(F)</b> Applies a 1-action metamagic action to <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
       <td>Necrotic Infusion: <b>(1)</b> Subsequent <i>Harm</i> cast on an undead causes the target to inflict +1d6 HP negative (5th level spell +2d6 HP; 8th level +3d6 HP) with melee Strike until the end of its next turn</td>
     </tr><tr style="text-align:center">
@@ -469,17 +470,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Resurrectionist: Restoring Hit Points to a dying or dead target also gives fast healing 5 for 1 min or until the target is knocked unconscious</td>
     </tr><tr style="text-align:center">
-      <td>Sap Life: Casting <i>Harm</i> on another creature restores HP to self equal to the spell level</td>
+      <td>Sap Life: Casting <i>Harm</i> on another creature restores HP equal to the spell level to self</td>
     </tr><tr style="text-align:center">
       <td>Selective Energy: Can choose 4 creatures to be unaffected when casting an area <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Swift Banishment: <b>(R)</b> Immediately casts <i>Banishment</i> after a critical hit on an extraplanar foe</td>
+      <td>Swift Banishment: <b>(R)</b> Expends a prepared <i>Banishment</i> with the triggering critical hit on an extraplanar foe</td>
     </tr><tr style="text-align:center">
       <td>Turn Undead: Critical failure by undead up to level 20 damaged by <i>Heal</i> inflicts fleeing for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Versatile Font: Can use a font for either <i>Harm</i> or <i>Heal</i></td>
+      <td>Versatile Font: Can use the extra spell slots from Harming Font or Healing Font for either <i>Harm</i> or <i>Heal</i></td>
     </tr></table>
 </td>
   </tr></table>
