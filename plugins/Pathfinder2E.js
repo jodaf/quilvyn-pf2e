@@ -7490,7 +7490,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
   'Unmistakable Lore':
     'Section=skill ' +
-    'Note="Critical failures to Recall Knowledge with on any trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information"',
+    'Note="Critical failures to Recall Knowledge on a trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information"',
   'Untrained Improvisation':
     'Section=skill ' +
     'Note="+%{level<7 ? level // 2 : level} on untrained skill checks"',
@@ -13753,13 +13753,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
     );
     rules.defineRule('magicNotes.cloisteredCleric',
-      'level', '=', 'source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
+      'level', '=', 'source<7 ? "Trained" : source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
     );
     rules.defineRule('magicNotes.deity',
       'deitySpells', '=', 'source.split("/").map(x => "<i>" + x.replace(/\\d+:/, "") + "</i>").join(", ").replace(/, ([^,]*)$/, ", and $1")'
     );
-    rules.defineRule
-      ('magicNotes.warpriest', 'level', '=', 'source<19 ? "Expert" : "Master"');
+    rules.defineRule('magicNotes.warpriest',
+      'level', '=', 'source<11 ? "Trained" : source<19 ? "Expert" : "Master"'
+    );
     rules.defineRule('trainingLevel.Divine',
       'magicNotes.cloisteredCleric', '^=', 'source=="Expert" ? 2 : source=="Master" ? 3 : 4',
       'magicNotes.warpriest', '^=', 'source=="Expert" ? 2 : 3'
