@@ -512,8 +512,8 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
       '"1:Spell Trained (Divine)","Class Trained (Cleric)",' +
-      '"1:Anathema","1:Cleric Spellcasting","1:Deity","1:Divine Font",' +
-      '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
+      '"1:Cleric Spellcasting","1:Deity","1:Divine Font","1:Doctrine",' +
+      '"2:Cleric Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Perception Expertise","9:Resolute Faith",' +
       '"11:Reflex Expertise","13:Divine Defense","13:Weapon Specialization",' +
       '"19:Miraculous Spell" ' +
@@ -1993,7 +1993,7 @@ Pathfinder2ERemaster.FEATS = {
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
-    Pathfinder2E.FEATS['Deadly Simplicity']
+    Pathfinder2E.FEATS['Communal Healing']
     .replace('Positive', 'Vitality'),
   'Emblazon Armament':Pathfinder2E.FEATS['Emblazon Armament'],
   'Panic The Dead':
@@ -2005,7 +2005,8 @@ Pathfinder2ERemaster.FEATS = {
   "Warpriest's Armor":'Traits=Cleric Require="level >= 2","features.Warpriest"',
   'Channel Smite':
     Pathfinder2E.FEATS['Channel Smite']
-    .replace(',Necromancy', '') + ' Require="level >= 4"',
+    .replace(',Necromancy', '') + ' ' +
+    'Require="level >= 4"',
   'Directed Channel':Pathfinder2E.FEATS['Directed Channel'],
   'Divine Infusion':
     Pathfinder2E.FEATS['Necrotic Infusion']
@@ -2018,7 +2019,8 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 4","features.Harmful Font || feature.Healing Font"',
   'Cast Down':
     Pathfinder2E.FEATS['Cast Down']
-    .replace('Metamagic', 'Spellshape') + ' Require="level >= 6"',
+    .replace('Metamagic', 'Spellshape') + ' ' +
+    'Require="level >= 6"',
   'Divine Rebuttal':'Traits=Cleric,Divine Require="level >= 6"',
   'Divine Weapon':Pathfinder2E.FEATS['Divine Weapon'],
   'Magic Hands':'Traits=Cleric Require="level >= 6","features.Healing Hands"',
@@ -2052,16 +2054,18 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Defensive Recovery']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 12"',
-  'Domain Focus':Pathfinder2E.FEATS['Domain Focus'],
+  'Domain Focus':
+    Pathfinder2E.FEATS['Domain Focus'] + ' ' +
+    'Require="level >= 12"',
   'Emblazon Antimagic':Pathfinder2E.FEATS['Emblazon Antimagic'],
   'Fortunate Relief':'Traits=Cleric,Fortune Require="level >= 12"',
   'Sapping Symbol':
-    'Traits=Cleric Require="level >= 12","features.Raise Symbol"',
+    'Traits=Cleric,Divine Require="level >= 12","features.Raise Symbol"',
   'Shared Replenishment':Pathfinder2E.FEATS['Shared Replenishment'],
   'Channeling Block':
     'Traits=Cleric Require="level >= 14","features.Shield Block"',
   "Deity's Protection":Pathfinder2E.FEATS["Deity's Protection"],
-  'Ebb An Flow':
+  'Ebb And Flow':
     'Traits=Cleric,Concentrate,Spellshape ' +
     'Require="level >= 14","features.Versatile Font"',
   'Fast Channel':Pathfinder2E.FEATS['Fast Channel'],
@@ -5887,7 +5891,9 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(', and', ' and'),
   'Legendary Spellcaster':Pathfinder2E.FEATURES['Legendary Spellcaster'],
   'Light Armor Expertise':Pathfinder2E.FEATURES['Light Armor Expertise'],
-  'Magnum Opus':Pathfinder2E.FEATURES['Magnum Opus'],
+  'Magnum Opus':
+    Pathfinder2E.FEATURES['Magnum Opus']
+    .replace('level', 'rank'),
   'Master Spellcaster':Pathfinder2E.FEATURES['Master Spellcaster'],
   'Maestro':Pathfinder2E.FEATURES.Maestro,
   'Muses':Pathfinder2E.FEATURES.Muses,
@@ -6005,7 +6011,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Soulsight':'Section=skill Note="Has 60\' imprecise spiritsense"',
   'Annotate Composition':
     'Section=magic ' +
-    'Note="Can spend 10 minutes and a Focus Point to write a one-action composition spell that can be activated by anyone until next daily prep"',
+    'Note="Can spend 10 minutes and a Focus Point to write a 1-action composition spell that can be activated by anyone until next daily prep"',
   'Courageous Assault':
     'Action=1 ' +
     'Section=magic ' +
@@ -6013,7 +6019,9 @@ Pathfinder2ERemaster.FEATURES = {
   'House Of Imaginary Walls':Pathfinder2E.FEATURES['House Of Imaginary Walls'],
   'Ode To Ouroboros':
     'Section=magic Note="Knows the Ode To Ouroboros occult spell/+1 Focus Points"',
-  'Quickened Casting':Pathfinder2E.FEATURES['Quickened Casting'],
+  'Quickened Casting':
+    Pathfinder2E.FEATURES['Quickened Casting']
+    .replace('level', 'rank'),
   'Symphony Of The Unfettered Heart':
     'Section=magic ' +
     'Note="Knows the Symphony Of The Unfettered Heart occult spell/+1 Focus Points"',
@@ -6043,7 +6051,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Triumphant Inspiration':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Casts a single-action composition cantrip after inflicting a critical melee hit"',
+    'Note="Casts a 1-action composition cantrip after inflicting a critical melee hit"',
   'True Hypercognition':Pathfinder2E.FEATURES['True Hypercognition'],
   'Vigorous Anthem':
     'Action=1 ' +
@@ -6058,7 +6066,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=magic ' +
     'Note="Ending a composition spell gives affected allies resistance equal to twice the spell\'s rank to the triggering sonic damage"',
-  'Studious Capacity':Pathfinder2E.FEATURES['Studious Capacity'],
+  'Studious Capacity':
+    Pathfinder2E.FEATURES['Studious Capacity']
+    .replace('level', 'rank'),
   'All In My Head':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6072,7 +6082,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Eternal Composition':Pathfinder2E.FEATURES['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATURES['Impossible Polymath'],
   'Fatal Aria':Pathfinder2E.FEATURES['Fatal Aria'],
-  'Perfect Encore':Pathfinder2E.FEATURES['Perfect Encore'],
+  'Perfect Encore':
+    Pathfinder2E.FEATURES['Perfect Encore']
+    .replace('level', 'rank'),
   'Pied Piping':
     'Section=magic Note="Knows the Pied Piping occult spell/+1 Focus Points"',
   'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
@@ -6092,11 +6104,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Doctrine':Pathfinder2E.FEATURES.Doctrine,
   'Harmful Font':
     Pathfinder2E.FEATURES['Harmful Font']
+    .replace('level', 'rank')
     .replace(/charismaModifier\s*\+\s*1/, 'level<5?4:level<15?5:6'),
   'Healing Font':
     Pathfinder2E.FEATURES['Healing Font']
+    .replace('level', 'rank')
     .replace(/charismaModifier\s*\+\s*1/, 'level<5?4:level<15?5:6'),
-  'Miraculous Spell':Pathfinder2E.FEATURES['Miraculous Spell'],
+  'Miraculous Spell':
+    Pathfinder2E.FEATURES['Miraculous Spell']
+    .replace('level', 'rank'),
   'Perception Expertise':Pathfinder2E.FEATURES.Alertness,
   // Reflex Expertise as above
   'Resolute Faith':
@@ -6116,7 +6132,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed effects
   'Divine Castigation':
     'Section=magic ' +
-    'Note="Can add holy or unholy train to <i>Harm</i> and <i>Heal</i> spells"',
+    'Note="Can add the holy or unholy trait to <i>Harm</i> and <i>Heal</i> spells to inflict spirit damage"',
   'Domain Initiate (Air)':Pathfinder2E.FEATURES['Domain Initiate (Air)'],
   'Domain Initiate (Ambition)':
     Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
@@ -6178,57 +6194,64 @@ Pathfinder2ERemaster.FEATURES = {
   'Premonition Of Avoidance':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Gives +2 on save vs. triggering hazard"',
+    'Note="Gives +2 save vs. triggering hazard"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
-    Pathfinder2E.FEATURES['Deadly Simplicity'].replace('self', 'another'),
+    Pathfinder2E.FEATURES['Communal Healing']
+    .replace('level', 'rank')
+    .replace('self', 'self or another target'),
   'Emblazon Armament':Pathfinder2E.FEATURES['Emblazon Armament'],
   // Changed effects from Turn Undead
   'Panic The Dead':
     'Section=magic ' +
-    'Note="<i>Heal</i> also inflicts frightened 1 on undead (save negates); critical failure also inflicts fleeing for 1 rd"',
+    'Note="<i>Heal</i> also inflicts frightened 1 on intelligent undead (save negates; critical failure also inflicts fleeing until the start of the next turn)"',
   'Rapid Response':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="+10 Speed to Stride toward an ally reduced to 0 Hit Points"',
-  'Sap Life':Pathfinder2E.FEATURES['Sap Life'],
+    'Note="Strides with +10 Speed toward an ally reduced to 0 Hit Points"',
+  'Sap Life':
+    Pathfinder2E.FEATURES['Sap Life']
+    .replace('level', 'rank'),
   'Versatile Font':Pathfinder2E.FEATURES['Versatile Font'],
   "Warpriest's Armor":
     'Section=combat,combat ' +
     'Note=' +
       '"Defense %V (Heavy Armor)",' +
       '"Treats armor of 2 Bulk or higher as 1 Bulk lighter"',
-  'Channel Smite':Pathfinder2E.FEATURES['Channel Smite'],
+  'Channel Smite':
+    Pathfinder2E.FEATURES['Channel Smite']
+    .replace('from', 'from a 1-action'),
   'Directed Channel':Pathfinder2E.FEATURES['Directed Channel'],
   // Changed effects from Necrotic Infusion
   'Divine Infusion':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Target of <i>Harm</i> or <i>Heal</i> inflicts +1d6 HP (+2d6 HP or +3d6 HP if cast at 5th or 8th rank) for 1 turn"',
+    'Note="Target of a subsequent single-target <i>Harm</i> or <i>Heal</i> inflicts +1d6 HP (+2d6 HP or +3d6 HP if cast at 5th or 8th rank) with melee attacks until the end of its next turn"',
   'Raise Symbol':
     'Action=1 ' +
     'Section=save ' +
-    'Note="Gives +2 saves, and successes vs. vitality and void are critical successes, for 1 rd"',
+    'Note="Gives self +2 saves and changes successful saves vs. vitality and void into critical successes until the start of the next turn"',
   'Restorative Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike (+1 with %{deityWeaponLowered} after healing self restores save number of Hit Points to another willing creature"',
+    'Note="Successful melee Strike (+1 with %{deityWeaponLowered}) after healing self restores the same number of Hit Points to another willing creature"',
   'Sacred Ground':
     'Section=magic ' +
-    'Note="1 min prayer creates a 30 min burst that restores %{level} HP to creatures who remain in the area for 10 min"',
+    'Note="1 min prayer creates a 30 min burst that restores %{level} HP to creatures who remain in the area for 10 min once per 10 min"',
   'Cast Down':Pathfinder2E.FEATURES['Cast Down'],
   'Divine Rebuttal':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful Strike with %{deityWeaponLowered} give allies +2 vs. triggering magic effect"',
+    'Note="Successful %{deityWeaponLowered} Strike against an adjacent foe gives allies +2 vs. its triggering magic effect, or +3 on a critical hit"',
   // Changed effects
   'Divine Weapon':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP spirit, or +2d4 HP vs. opposed holy or unholy creatures, for the remainder of the turn once per turn"',
+    'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP spirit, or +2d4 HP vs. opposed holy or unholy creatures, until the end of the turn once per turn"',
   'Magic Hands':
     'Section=skill ' +
-    'Note="Successful Medicine to Treat Wounds restores d10s +%{level} HP"',
+    'Note="Successful Medicine to Treat Wounds restores d10s and +%{level} Hit Points"',
   'Selective Energy':
     Pathfinder2E.FEATURES['Selective Energy']
     .replace(/%{.*}/, 5),
@@ -6293,12 +6316,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Domain (Water)':Pathfinder2E.FEATURES['Advanced Domain (Water)'],
   'Advanced Domain (Wealth)':Pathfinder2E.FEATURES['Advanced Domain (Wealth)'],
   'Advanced Domain (Zeal)':Pathfinder2E.FEATURES['Advanced Domain (Zeal)'],
-  'Cremate Undead':Pathfinder2E.FEATURES['Cremate Undead'],
+  'Cremate Undead':
+    Pathfinder2E.FEATURES['Cremate Undead']
+    .replace('level', 'rank'),
   'Emblazon Energy':Pathfinder2E.FEATURES['Emblazon Energy'],
   'Martyr':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent healing spell transfers an additional 1d8 HP from self to target"',
+    'Note="Subsequent healing spell also transfers 1d8 HP per spell rank from self to target"',
   // Changed spell list from Channel Succor
   'Restorative Channel':
     'Section=magic ' +
@@ -6307,32 +6332,36 @@ Pathfinder2ERemaster.FEATURES = {
   'Sanctify Armament':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Touched weapon gains holy or unholy trait, inflicting +2d6 HP spirit for 1 to opposed creatures"',
+    'Note="Touched weapon gains the holy or unholy trait and inflicts +2d6 HP spirit on opposed creatures for 1 %{combatNotes.lastingArmament?\'hr\':\'rd\'}"',
   'Surging Focus':
     'Action=Free ' +
     'Section=magic ' +
     'Note="Seeing an ally reduced to 0 HP restores 1 Focus Point to self once per day"',
   'Void Siphon':
     'Section=magic ' +
-    'Note="Critical failure vs. self <i>Harm</i> inflicts drained 1"',
+    'Note="Critical failures vs. self <i>Harm</i> inflict drained 1"',
   'Zealous Rush':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Can Stride 10\' while casting a one-action spell on self, or %{speed}\' for a longer spell"',
+    'Note="Can Stride 10\' while casting a 1-action spell on self, or %{speed}\' while casting a spell that requires more actions"',
   // Changed effects
   'Castigating Weapon':
     'Section=magic ' +
-    'Note="Inflicting damage using <i>Harm</i> or <i>Heal</i> with Divine Castigation gives weapons and unarmed Strikes the holy or unholy trait and additional spirit damage equal to the spell level until the end of turn"',
+    'Note="Inflicting damage using <i>Harm</i> or <i>Heal</i> with Divine Castigation gives weapons and unarmed Strikes the holy or unholy trait and additional spirit damage equal to the spell rank until the end of turn"',
   'Heroic Recovery':
     Pathfinder2E.FEATURES['Heroic Recovery']
-    .replace('1 rd', '1 rd and allows the target to stand from prone immediately without triggering Reactions'),
+    .replace('turn', 'turn and allows the target to stand from prone immediately without triggering reactions'),
   'Replenishment Of War':Pathfinder2E.FEATURES['Replenishment Of War'],
   'Shared Avoidance':
     'Section=save ' +
     'Note="Premonition Of Avoidance gives allies within 20\' +2 vs. the triggering hazard"',
   'Shield Of Faith':
-    'Section=magic Note="Casting a domain spell gives +1 AC for 1 rd"',
+    'Section=magic ' +
+    'Note="Casting a domain spell gives +1 AC until the start of the next turn"',
   'Defensive Recovery':Pathfinder2E.FEATURES['Defensive Recovery'],
-  'Domain Focus':Pathfinder2E.FEATURES['Domain Focus'],
+  'Domain Focus':
+    Pathfinder2E.FEATURES['Domain Focus']
+    .replace('2', 'all'),
   'Emblazon Antimagic':Pathfinder2E.FEATURES['Emblazon Antimagic'],
   'Fortunate Relief':
     'Section=magic ' +
@@ -6344,19 +6373,29 @@ Pathfinder2ERemaster.FEATURES = {
   'Shared Replenishment':Pathfinder2E.FEATURES['Shared Replenishment'],
   'Channeling Block':
     'Section=magic ' +
-    'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell level to the shield\'s Hardness"',
-  "Deity's Protection":Pathfinder2E.FEATURES["Deity's Protection"],
+    'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell rank to the shield\'s Hardness"',
+  "Deity's Protection":
+    Pathfinder2E.FEATURES["Deity's Protection"]
+    .replace('level', 'rank'),
   'Ebb And Flow':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Casting <i>Harm</i> or <i>Heal</i> harms 1 target and heals another"',
+    'Note="Subsequent <i>Harm</i> or <i>Heal</i> harms 1 target and heals another"',
   'Fast Channel':Pathfinder2E.FEATURES['Fast Channel'],
-  'Lasting Armament':Pathfinder2E.FEATURES['Extend Armament Alignment'],
+  'Lasting Armament':
+    Pathfinder2E.FEATURES['Extend Armament Alignment']
+    .replace('Align', 'Sanctify'),
   'Premonition Of Clarity':
+    'Action=Reaction ' +
     'Section=save ' +
-    'Note="Rerolls a failed mental save with a +2 bonus once per hr"',
+    'Note="Rerolls the triggering failed mental save with a +2 bonus once per hr"',
   'Swift Banishment':Pathfinder2E.FEATURES['Swift Banishment'],
-  'Eternal Bane':Pathfinder2E.FEATURES['Eternal Bane'],
-  'Eternal Blessing':Pathfinder2E.FEATURES['Eternal Blessing'],
+  'Eternal Bane':
+    Pathfinder2E.FEATURES['Eternal Bane']
+    .replace('level', 'rank'),
+  'Eternal Blessing':
+    Pathfinder2E.FEATURES['Eternal Blessing']
+    .replace('level', 'rank'),
   'Rebounding Smite':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -6364,20 +6403,23 @@ Pathfinder2ERemaster.FEATURES = {
   'Remediate':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="3-action <i>Harm</i> or <i>Heal</i> attempts to counteract a divine effect"',
+    'Note="3-action <i>Harm</i> or <i>Heal</i> attempts to counteract a divine effect once per hr"',
   'Resurrectionist':Pathfinder2E.FEATURES.Resurrectionist,
   'Divine Apex':
     'Section=magic ' +
-    'Note="Can give a worn magic item the apex trait and increase its divine attribute value by 1 once per daily preparations"',
-  'Echoing Channel':Pathfinder2E.FEATURES['Echoing Channel'],
+    'Note="Can give a worn magic item the apex trait and increase its divine attribute value by 1 during daily prep"',
+  'Echoing Channel':
+    Pathfinder2E.FEATURES['Echoing Channel']
+    .replace('an adjacent', 'another'),
   'Improved Swift Banishment':
-    Pathfinder2E.FEATURES['Improved Swift Banishment'],
+    Pathfinder2E.FEATURES['Improved Swift Banishment']
+    .replace('level', 'rank'),
   'Inviolable':
     'Section=combat ' +
-    'Note="Successful attacks on self inflict 3d6 HP spirit, holy, or unholy on attacker"',
+    'Note="Successful attacks on self inflict 3d6 HP spirit, holy, or unholy on the attacker"',
   'Miraculous Possibility':
     'Section=magic ' +
-    'Note="Can leave a spell slot free during daily prep to later cast any spell 2 levels lower"',
+    'Note="Can leave a spell slot free during daily prep to later cast any spell 2 ranks lower"',
   'Shared Clarity':
     'Section=save ' +
     'Note="Premonition Of Clarity gives allies within 15\' a +2 reroll vs. the triggering mental effect"',
@@ -6385,8 +6427,10 @@ Pathfinder2ERemaster.FEATURES = {
   "Avatar's Protection":
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Changes a foe critical hit no self to a normal hit and casts <i>Avatar</i>"',
-  'Maker Of Miracles':Pathfinder2E.FEATURES['Maker Of Miracles'],
+    'Note="Casts a prepared <i>Avatar</i> spell and changes the triggering critical hit to self to a normal hit"',
+  'Maker Of Miracles':
+    Pathfinder2E.FEATURES['Maker Of Miracles']
+    .replace('level', 'rank'),
   'Spellshape Channel':
     Pathfinder2E.FEATURES['Metamagic Channel']
     .replace('metamagic', 'spellshape'),
@@ -9024,7 +9068,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Casts a single-action qi stance spell without spending a Focus Point"',
+    'Note="Casts a 1-action qi stance spell without spending a Focus Point"',
   'Swift River':Pathfinder2E.FEATURES['Swift River'],
   'Triangle Shot':
     'Action=2 ' +
@@ -10065,7 +10109,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Flamboyant Leap':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Attempts a one-action finisher during a Leap or Jump, then falls"',
+    'Note="Attempts a 1-action finisher during a Leap or Jump, then falls"',
   'Impossible Riposte':
     'Section=combat ' +
     'Note="Can use Opportune Riposte against ranged attacks, with the subsequent Strike inflicting the same damage type as the attack"',
@@ -10091,7 +10135,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Illimitable Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Steps and attempts a single-action finisher Strike as a bravado action; regaining panache allows another finisher"',
+    'Note="Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows another finisher"',
   'Inexhaustible Countermoves':
     'Section=combat ' +
     'Note="Gains a reaction at the start of each foe turn that can be for an Opportune Riposte%{$\'features.Reactive Strike\'?\' or Reactive Strike\':\'\'}"',
@@ -11748,7 +11792,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('<i>Inspire Courage</i> or <i>Inspire Defense', '<i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i>'),
   'House Of Imaginary Walls':
     Pathfinder2E.SPELLS['House Of Imaginary Walls']
-    .replace('Traits=', 'Traits=Manipulate,'),
+    .replace('Traits=', 'Traits=Manipulate,')
+    .replaceAll('level', 'rank'),
   'Hymn Of Healing':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Concentrate,Healing,Vitality ' +
@@ -13986,6 +14031,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule(
       'combatNotes.eatFortune', 'combatNotes.jinxGlutton', '=', 'null'// italics
     );
+  } else if(name == 'Lasting Armament') {
+    rules.defineRule('combatNotes.sanctifyArmament',
+      'combatNotes.lastingArmament', '=', 'null' // italics
+    );
   } else if(name == 'Loud Singer') {
     rules.defineRule
       ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
@@ -14063,6 +14112,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '0');
     // Note: Ignore Backstabber trait currently not shown on character sheet
+  } else if(name == "Warpriest's Armor") {
+    rules.defineRule("combatNotes.warpriest'sArmor",
+      'rank.Medium Armor', '=', 'source==1 ? "Trained" : source==2 ? "Expert" : source==3 ? "Master" : "Legendary"'
+    );
   } else if(name.startsWith('Weapon Proficiency')) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
