@@ -454,7 +454,6 @@ Pathfinder2ERemaster.CLASSES = {
     // Ability => Attribute
     // 1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks) =>
     // 1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)
-    // TODO 1:Spell Trained (Occult) => 1:Spell Trained (Bard)?
     // 1:Occult Spellcasting => 1:Bard Spellcasting
     // null => 1:Warrior:Muse
     // 3:Lightning Reflexes => 3:Reflex Expertise
@@ -470,7 +469,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Bard Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
-      '"1:Spell Trained (Bard)","1:Class Trained (Bard)",' +
+      '"1:Spell Trained (Occult)","1:Class Trained (Bard)",' +
       '"1:Bard Spellcasting","1:Composition Spells",1:Muses,"2:Bard Feats",' +
       '"2:Skill Feats","3:General Feats","3:Reflex Expertise",' +
       '"3:Signature Spells","3:Skill Increases","7:Expert Spellcaster",' +
@@ -499,7 +498,6 @@ Pathfinder2ERemaster.CLASSES = {
 
   'Cleric':
     // Ability => Attribute
-    // TODO 1:Spell Trained (Divine) => Spell Trained (Cleric)?
     // "" => 1:Class Trained (Cleric)
     // 1:Divine Spellcasting => Cleric Spellcasting
     // 5:Alertness => 5:Perception Expertise
@@ -513,7 +511,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Cleric Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
-      '"1:Spell Trained (Cleric)","Class Trained (Cleric)",' +
+      '"1:Spell Trained (Divine)","Class Trained (Cleric)",' +
       '"1:Anathema","1:Cleric Spellcasting","1:Deity","1:Divine Font",' +
       '"1:Doctrine","2:Cleric Feats","2:Skill Feats","3:General Feats",' +
       '"3:Skill Increases","5:Perception Expertise","9:Resolute Faith",' +
@@ -541,7 +539,6 @@ Pathfinder2ERemaster.CLASSES = {
 
   'Druid':
     // Ability => Attribute
-    // TODO 1:Spell Trained (Primal) => 1:Spell Trained (Druid)?
     // "" => Class Trained (Druid)
     // 1:Primal Spellcasting => 1:Druid Spellcasting
     // 1:Druidic Language => 1:Wildsong
@@ -560,7 +557,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Druid Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Unarmored Defense)",' +
-      '"1:Spell Trained (Druid)","Class Trained (Druid)",' +
+      '"1:Spell Trained (Primal)","Class Trained (Druid)",' +
       '"1:Druid Spellcasting","1:Anathema","1:Druidic Order",' +
       '"1:Shield Block","1:Voice Of Nature",1:Wildsong,"2:Druid Feats",' +
       '"2:Skill Feats","3:Perception Expertise","3:General Feats",' +
@@ -711,7 +708,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Witch Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
-      '"1:Spell Trained (Witch)","1:Class Trained (Witch)",' +
+      '"1:Class Trained (Witch)",' +
       '"1:Witch Spellcasting","1:Familiar","1:Hex Spells","1:Patron",' +
       '"2:Skill Feats","2:Witch Feats","3:General Feats","3:Skill Increases",' +
       '"5:Magical Fortitude","7:Expert Spellcaster","9:Reflex Expertise",' +
@@ -743,7 +740,6 @@ Pathfinder2ERemaster.CLASSES = {
   'Wizard':
     // Ability => Attribute
     // 1:Attack Trained (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks) => 1:Attack Trained (Simple Weapons; Unarmed Attacks)
-    // TODO 1:Spell Trained (Arcane) => 1:Spell Trained (Wizard)?
     // "" => 1:Class Trained (Wizard)
     // 1:Arcane Spellcasting => 1:Wizard Spellcasting
     // 1:Metamagical Experimentation:Thesis=>1:Experimental Spellshaping:Thesis
@@ -759,7 +755,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Wizard Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Unarmored Defense)",' +
-      '"1:Spell Trained (Wizard)","1:Class Trained (Wizard)",' +
+      '"1:Spell Trained (Arcane)","1:Class Trained (Wizard)",' +
       '"1:Wizard Spellcasting","1:Arcane School","1:Arcane Bond",' +
       '"1:Arcane Thesis","2:Skill Feats","2:Wizard Feats","3:General Feats",' +
       '"3:Skill Increases","5:Reflex Expertise","7:Expert Spellcaster",' +
@@ -908,7 +904,6 @@ Pathfinder2ERemaster.CLASSES = {
 
   'Champion':
     // Ability => Attribute
-    // TODO 1:Spell Trained (Divine) => 1:Spell Trained (Champion)?
     // 1:Champion's Code => null
     // 1:Champion's Reaction => null
     // 1:Deity And Cause => 1:Deity,1:Cause
@@ -928,7 +923,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Champion Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)",' +
-      '"1:Spell Trained (Champion)",' +
+      '"1:Spell Trained (Divine)",' +
       '"1:Class Trained (Champion)",' +
       '"1:Deity","1:Deific Weapon","1:Champion\'s Aura",' +
       '"1:Cause","1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
@@ -1160,7 +1155,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Fencer:Style",' +
       '"1:Gymnast:Style",' +
       '"1:Rascal:Style",' +
-      '"1:Wit:Style"',
+      '"1:Wit:Style"'
 
 };
 Pathfinder2ERemaster.DEITIES = {
@@ -13512,7 +13507,9 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   let classLevel = 'levels.' + name;
   if(name == 'Alchemist') {
     // Suppress legacy note
-    rules.defineRule('skillNotes.perpetualInfusions', '', '=', 'null');
+    rules.defineRule('skillNotes.perpetualInfusions',
+      'features.Perpetual Infusions', '?', null
+    );
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.blessedShield',
       'classLevel', '=', 'source<13 ? 3 : source<20 ? 5 : 7'
@@ -13542,8 +13539,11 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('shieldHardness', 'combatNotes.blessedShield', '+', null);
     rules.defineRule
       ('shieldHitPoints', 'combatNotes.blessedShield.1', '+', null);
-    // Suppress legacy feature
-    rules.defineRule('featureNotes.divineAlly', classLevel, '?', null);
+    // Suppress legacy features
+    rules.defineRule
+      ('skillNotes.deityAndCause', 'features.Deity And Cause', '?', null);
+    rules.defineRule
+      ('featureNotes.divineAlly', 'features.Divine Ally', '?', null);
   } else if(name == 'Cleric') {
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
       // TODO Might have to revisit for archetypes
