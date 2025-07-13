@@ -1323,10 +1323,8 @@ Pathfinder2E.FEATS = {
     'Traits=Bard,Cleric,Druid,Sorcerer,Wizard,Concentrate,Metamagic',
   'Versatile Performance':'Traits=Bard Require="hasPolymathMuse"',
   'Cantrip Expansion':'Traits=Bard,Cleric,Sorcerer,Wizard Require="level >= 2"',
-  'Esoteric Polymath':
-    'Traits=Bard Require="level >= 2","hasPolymathMuse"',
-  'Inspire Competence':
-    'Traits=Bard Require="level >= 2","hasMaestroMuse"',
+  'Esoteric Polymath':'Traits=Bard Require="level >= 2","hasPolymathMuse"',
+  'Inspire Competence':'Traits=Bard Require="level >= 2","hasMaestroMuse"',
   "Loremaster's Etude":
     'Traits=Bard,Fortune ' +
     'Require="level >= 2","hasEnigmaMuse","features.Focus Pool"',
@@ -4001,7 +3999,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful Performance vs. Perception hides subsequent spellcasting from observers"',
   'Triple Time':'Section=magic Note="Knows the Triple Time occult cantrip"',
   'Versatile Signature':
-    'Section=magic Note="Can replace 1 signature spell each day"',
+    'Section=magic Note="Can replace 1 signature spell during daily prep"',
   'Dirge Of Doom':'Section=magic Note="Knows the Dirge Of Doom occult cantrip"',
   'Harmonize':
     'Action=1 ' +
@@ -4051,7 +4049,7 @@ Pathfinder2E.FEATURES = {
   'Deep Lore':'Section=magic Note="Knows 1 additional spell of each level"',
   'Eternal Composition':
     'Section=magic ' +
-    'Note="Can use an additional action each rd to cast a composition cantrip"',
+    'Note="Can use an additional action each rd to cast a one-action composition cantrip"',
   'Impossible Polymath':
     'Section=magic ' +
     'Note="Can add arcane, divine, and primal spells to spellbook if trained in the corresponding skill"',

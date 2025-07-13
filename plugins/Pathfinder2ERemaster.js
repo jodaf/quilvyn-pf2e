@@ -1856,8 +1856,10 @@ Pathfinder2ERemaster.FEATS = {
   // Bard
   'Bardic Lore':Pathfinder2E.FEATS['Bardic Lore'],
   'Hymn Of Healing':'Traits=Bard',
-  'Lingering Composition':Pathfinder2E.FEATS['Lingering Composition'],
-  'Martial Performance':'Traits=Bard Require="features.Warrior"',
+  'Lingering Composition':
+    Pathfinder2E.FEATS['Lingering Composition'] + ' ' +
+    'Require="hasMaestroMuse"',
+  'Martial Performance':'Traits=Bard Require="hasWarriorMuse"',
   'Reach Spell':
     Pathfinder2E.FEATS['Reach Spell']
     .replace('Metamagic', 'Spellshape')
@@ -1870,7 +1872,9 @@ Pathfinder2ERemaster.FEATS = {
   'Directed Audience':'Traits=Bard Require="level >= 2"',
   'Emotional Push':'Traits=Bard,Concentrate Require="level >= 2"',
   'Esoteric Polymath':Pathfinder2E.FEATS['Esoteric Polymath'],
-  "Loremaster's Etude":Pathfinder2E.FEATS["Loremaster's Etude"],
+  "Loremaster's Etude":
+    Pathfinder2E.FEATS["Loremaster's Etude"] + ' ' +
+    'Require="level >= 2","hasEnigmaMuse"',
   'Multifarious Muse (Enigma)':Pathfinder2E.FEATS['Multifarious Muse (Enigma)'],
   'Multifarious Muse (Maestro)':
     Pathfinder2E.FEATS['Multifarious Muse (Maestro)'],
@@ -1879,29 +1883,31 @@ Pathfinder2ERemaster.FEATS = {
   'Multifarious Muse (Warrior)':
     Pathfinder2E.FEATS['Multifarious Muse (Polymath)']
     .replace('Polymath', 'Warrior'),
-  'Song Of Strength':'Traits=Bard Require="level >= 2","features.Warrior"',
+  'Song Of Strength':'Traits=Bard Require="level >= 2","hasWarriorMuse"',
   'Uplifting Overture':Pathfinder2E.FEATS['Inspire Competence'],
   'Combat Reading':'Traits=Bard,Secret Require="level >= 4"',
   'Courageous Advance':
     'Traits=Bard,Auditory,Concentrate,Spellshape ' +
-    'Require="level >= 4","features.Warrior"',
+    'Require="level >= 4","hasWarriorMuse"',
   'In Tune':
     'Traits=Bard,Concentrate,Spellshape ' +
     'Require="level >= 4","features.Maestro"',
   'Melodious Spell':
     Pathfinder2E.FEATS['Melodious Spell']
     .replace('Manipulate,Metamagic', 'Spellshape'),
-  'Rallying Anthem':Pathfinder2E.FEATS['Inspire Defense'],
+  'Rallying Anthem':
+    Pathfinder2E.FEATS['Inspire Defense'] + ' ' +
+    'Require="level >= 4"',
   'Ritual Researcher':
     'Traits=Bard,Uncommon ' +
-    'Require="level >= 4","features.Enigma","rank.Occultism >= 2"',
+    'Require="level >= 4","hasEnigmaMuse","rank.Occultism >= 2"',
   'Triple Time':Pathfinder2E.FEATS['Triple Time'],
   'Versatile Signature':Pathfinder2E.FEATS['Versatile Signature'],
   'Assured Knowledge':
-    'Traits=Bard,Fortune Require="level >= 6","features.Enigma"',
+    'Traits=Bard,Fortune Require="level >= 6","hasEnigmaMuse"',
   'Defensive Coordination':
     'Traits=Bard,Auditory,Concentration,Spellshape ' +
-    'Require="level >= 6","features.Warrior","features.Rallying Anthem"',
+    'Require="level >= 6","hasWarriorMuse","features.Rallying Anthem"',
   'Dirge Of Doom':Pathfinder2E.FEATS['Dirge Of Doom'],
   'Educate Allies':
     'Traits=Bard,Concentrate Require="level >= 6","features.Well-Versed"',
@@ -1914,15 +1920,18 @@ Pathfinder2ERemaster.FEATS = {
   'Call And Response':
     'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 8"',
   'Eclectic Skill':Pathfinder2E.FEATS['Eclectic Skill'],
-  'Fortissimo Composition':Pathfinder2E.FEATS['Inspire Heroics'],
+  'Fortissimo Composition':
+    Pathfinder2E.FEATS['Inspire Heroics'] + ' ' +
+    'Require="level >= 8","hasMaestroMuse"',
   'Know-It-All':Pathfinder2E.FEATS['Know-It-All'],
   'Reflexive Courage':
-    'Traits=Bard,Auditory,Concentrate Require="level >= 8","features.Warrior"',
+    'Traits=Bard,Auditory,Concentrate Require="level >= 8","hasWarriorMuse"',
   'Soulsight':'Traits=Bard Require="level >= 8"',
   'Annotate Composition':
     'Traits=Bard,Exploration,Linguistic Require="level >= 10"',
   'Courageous Assault':
-    'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 10"',
+    'Traits=Bard,Auditory,Concentrate,Spellshape ' +
+    'Require="level >= 10","hasWarriorMuse"',
   'House Of Imaginary Walls':Pathfinder2E.FEATS['House Of Imaginary Walls'],
   'Ode To Ouroboros':'Traits=Bard Require="level >= 10"',
   'Quickened Casting':
@@ -1942,9 +1951,11 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Bard Require="level >= 12","features.Courageous Assault"',
   'Allegro':Pathfinder2E.FEATS.Allegro,
   'Earworm':'Traits=Bard,Exploration Require="level >= 14"',
-  'Soothing Ballad':Pathfinder2E.FEATS['Soothing Ballad'],
+  'Soothing Ballad':
+    Pathfinder2E.FEATS['Soothing Ballad'] + ' ' +
+    'Require="level >= 14"',
   'Triumphant Inspiration':
-    'Traits=Bard Require="level >= 14","features.Warrior"',
+    'Traits=Bard Require="level >= 14","hasWarriorMuse"',
   'True Hypercognition':Pathfinder2E.FEATS['True Hypercognition'],
   'Vigorous Anthem':
     'Traits=Bard,Auditory,Concentrate,Spellshape Require="level >= 14"',
@@ -1958,7 +1969,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Effortless Concentration']
     .replace('Traits=', 'Traits=Witch,'),
   'Resounding Finale':
-    'Traits=Bard,Concentrate Require="level >= 16","features.Maestro"',
+    'Traits=Bard,Concentrate Require="level >= 16","hasMaestroMuse"',
   'Studious Capacity':Pathfinder2E.FEATS['Studious Capacity'],
   'All In My Head':'Traits=Bard,Illusion,Mental Require="level >= 18"',
   'Deep Lore':Pathfinder2E.FEATS['Deep Lore'],
@@ -1967,11 +1978,13 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 18","spells.Courageous Anthem (OC1 Foc)"',
   'Eternal Composition':Pathfinder2E.FEATS['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATS['Impossible Polymath'],
-  'Fatal Aria':Pathfinder2E.FEATS['Fatal Aria'],
+  'Fatal Aria':
+    Pathfinder2E.FEATS['Fatal Aria'] + ' ' +
+    'Require="level >= 20"',
   'Perfect Encore':Pathfinder2E.FEATS['Perfect Encore'],
   'Pied Piping':'Traits=Bard Require="level >= 20"',
   'Symphony Of The Muse':Pathfinder2E.FEATS['Symphony Of The Muse'],
-  'Ultimate Polymath':'Traits=Bard Require="level >= 20","features.Polymath"',
+  'Ultimate Polymath':'Traits=Bard Require="level >= 20","hasPolymathMuse"',
 
   // Cleric
   'Deadly Simplicity':Pathfinder2E.FEATS['Deadly Simplicity'],
@@ -5873,7 +5886,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Enigma':Pathfinder2E.FEATURES.Enigma.replace('True Strike', 'Sure Strike'),
   'Expert Spellcaster':Pathfinder2E.FEATURES['Expert Spellcaster'],
   'Fortitude Expertise':Pathfinder2E.FEATURES['Great Fortitude'],
-  "Greater Performer's Heart":Pathfinder2E.FEATURES['Greater Resolve'],
+  "Greater Performer's Heart":
+    Pathfinder2E.FEATURES['Greater Resolve']
+    .replace(/Successes.*critical failures/, 'Critical failures on Will saves')
+    .replace(', and', ' and'),
   'Legendary Spellcaster':Pathfinder2E.FEATURES['Legendary Spellcaster'],
   'Light Armor Expertise':Pathfinder2E.FEATURES['Light Armor Expertise'],
   'Magnum Opus':Pathfinder2E.FEATURES['Magnum Opus'],
@@ -5897,7 +5913,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Bardic Lore':Pathfinder2E.FEATURES['Bardic Lore'],
   'Hymn Of Healing':
-    'Section=magic Note="Knows the Hymn Of Healing occult focus spell"',
+    'Section=magic ' +
+    'Note="Knows the Hymn Of Healing occult spell/+1 Focus Points"',
   'Lingering Composition':
     Pathfinder2E.FEATURES['Lingering Composition'],
   'Martial Performance':
@@ -5907,15 +5924,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Versatile Performance':Pathfinder2E.FEATURES['Versatile Performance'],
   'Well-Versed':
     'Section=save ' +
-    'Note="+1 vs. auditory, illusion, linguistic, sonic, and visual spells"',
+    'Note="+1 vs. auditory, illusion, linguistic, sonic, and visual effects"',
   'Cantrip Expansion':Pathfinder2E.FEATURES['Cantrip Expansion'],
   'Directed Audience':
     'Section=magic ' +
-    'Note="Can redirect the emanation of a composition spell into a cone up to 10\' or twice the area"',
+    'Note="Can redirect the emanation of a composition spell into a cone up to 10\' longer and twice the area"',
   'Emotional Push':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a foe who fails a save vs. emotion off-guard against next self attack before the end of turn"',
+    'Note="Foe who fails the triggering save vs. an emotion spell suffers off-guard against the next self attack before the end of the next turn"',
   'Esoteric Polymath':Pathfinder2E.FEATURES['Esoteric Polymath'],
   "Loremaster's Etude":
     Pathfinder2E.FEATURES["Loremaster's Etude"],
@@ -5937,11 +5954,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Combat Reading':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Occultism vs. the higher of target\'s Deception or Stealth DC reveals a target weakness, poorest save, or highest resistance; critical success gives 2 of these, and critical failure gives false information"',
+    'Note="Successful Occultism vs. the higher of the target\'s Deception or Stealth DC reveals a target weakness, poorest save, or highest resistance; critical success gives 2 of these, and critical failure gives false information"',
   'Courageous Advance':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Courageous Anthem</i> casting allows 1 ally to take a Stride Reaction"',
+    'Note="Subsequent <i>Courageous Anthem</i> casting allows 1 ally to use a reaction to Stride"',
   'In Tune':
     'Action=1 ' +
     'Section=magic ' +
@@ -5949,103 +5966,120 @@ Pathfinder2ERemaster.FEATURES = {
   'Melodious Spell':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Give a subsequent spell the subtle trait"',
+    'Note="Subsequent spell cast gains the subtle trait"',
   'Rallying Anthem':
-    'Section=magic ' +
-    'Note="Knows the Rallying Anthem occult focus cantrip"',
+    'Section=magic Note="Knows the Rallying Anthem occult cantrip"',
   'Ritual Researcher':
     'Section=magic Note="+2 on checks made as part of casting a ritual"',
   'Triple Time':Pathfinder2E.FEATURES['Triple Time'],
   'Versatile Signature':Pathfinder2E.FEATURES['Versatile Signature'],
+  'Assured Knowledge':
+    'Section=skill ' +
+    'Note="Can take an automatic 10 + proficiency bonus on any Recall Knowledge check"',
+  'Defensive Coordination':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent cast of <i>Rallying Anthem</i> allows self and 1 target to Raise A Shield"',
   'Dirge Of Doom':Pathfinder2E.FEATURES['Dirge Of Doom'],
   'Educate Allies':
+    'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Allies affected by a composition spell gain +1, and self gains +2, vs. auditory, illusion, linguistic, sonic, and visual spells for 1 rd"',
+    'Note="Allies affected by a composition spell gain +1, and self gains +2, vs. auditory, illusion, linguistic, sonic, and visual effects until the beginning of the next turn"',
   'Harmonize':Pathfinder2E.FEATURES.Harmonize,
   'Song Of Marching':
     'Section=magic Note="Knows the Song Of Marching occult cantrip"',
   'Steady Spellcasting':Pathfinder2E.FEATURES['Steady Spellcasting'],
   'Accompany':
+    'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Successful Performance and sacrifice of a Focus Point or spell slot allows an ally to cast a spell without expending a point or slot"',
+    'Note="R30\' Successful Performance and sacrifice of a Focus Point or spell slot allows an ally to cast the triggering spell without expending a point or slot"',
   'Call And Response':
+    'Action=1 ' +
     'Section=magic ' +
     'Note="Allows allies to use an action to extend for 1 rd a subsequent composition cantrip that affects them"',
   'Eclectic Skill':Pathfinder2E.FEATURES['Eclectic Skill'],
   'Fortissimo Composition':
     'Section=magic ' +
-    'Note="Knows the Fortissimo Composition occult spell"',
+    'Note="Knows the Fortissimo Composition occult spell/+1 Focus Points"',
   'Know-It-All':
     'Section=skill ' +
     'Note="Successful Recall Knowledge checks give additional information"',
-  'Reflexive Courage':Pathfinder2E.FEATURES['Attack Of Opportunity'],
-  'Soulsight':
-    'Section=skill ' +
-    'Note="Has 60\' imprecise spiritsense that can detect the presence of spirits"',
+  'Reflexive Courage':
+    Pathfinder2E.FEATURES['Attack Of Opportunity']
+    .replace('uses', 'uses an auditory effect, uses'),
+  'Soulsight':'Section=skill Note="Has 60\' imprecise spiritsense"',
   'Annotate Composition':
     'Section=magic ' +
-    'Note="Can spend 10 minutes and a Focus Point to write a composition spell that can be activated by anyone until next daily prep"',
+    'Note="Can spend 10 minutes and a Focus Point to write a one-action composition spell that can be activated by anyone until next daily prep"',
   'Courageous Assault':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Target of subsequent <i>Courageous Anthem</i> can immediately use a Reaction to Strike"',
+    'Note="Allows a chosen ally affected by a subsequent <i>Courageous Anthem</i> to immediately use a reaction to make a melee Strike"',
   'House Of Imaginary Walls':Pathfinder2E.FEATURES['House Of Imaginary Walls'],
   'Ode To Ouroboros':
-    'Section=magic Note="Knows the Ode To Ouroboros occult spell"',
+    'Section=magic Note="Knows the Ode To Ouroboros occult spell/+1 Focus Points"',
   'Quickened Casting':Pathfinder2E.FEATURES['Quickened Casting'],
   'Symphony Of The Unfettered Heart':
     'Section=magic ' +
-    'Note="Knows the Symphony Of The Unfettered Heart occult spell"',
+    'Note="Knows the Symphony Of The Unfettered Heart occult spell/+1 Focus Points"',
   'Unusual Composition':
     Pathfinder2E.FEATURES['Unusual Composition'] + ' ' +
     'Note="Allows a subsequent visual or auditory spell to affect any sense"',
-  'Eclectic Polymath':Pathfinder2E.FEATURES['Eclectic Polymath'],
+  'Eclectic Polymath':
+    Pathfinder2E.FEATURES['Eclectic Polymath']
+    .replace('level', 'rank'),
   "Enigma's Knowledge":
-    'Section=skill Note="Can use Automatic Knowledge with any skill"',
+    'Section=skill ' +
+    'Note="Can Recall Knowledge using any skill as a free action once per rd"',
   'Inspirational Focus':
     Pathfinder2E.FEATURES['Inspirational Focus'].replace('2', 'all'),
   'Reverberate':
+    'Action=Reaction ' +
     'Section=save ' +
-    'Note="Successful Performance reflects %{level*2} HP sonic back to its source, or %{level*4} on a critical success"',
+    'Note="Successful Performance vs. creature Will DC, hazard Fortitude DC, or caster spell DC reflects %{level*2} HP sonic from the triggering effect back to its source, or %{level*4} on a critical success"',
   'Shared Assault':
     'Section=magic ' +
-   'Note="A critical hit by an ally affected by by Courageous Assault allows another <i>Courageous Anthem</i> target to immediately use a Reaction to Strike"',
+   'Note="A critical hit by the target of Courageous Assault allows another ally affected by <i>Courageous Anthem</i> to immediately use a reaction to make a melee Strike"',
   'Allegro':Pathfinder2E.FEATURES.Allegro,
   'Earworm':
     'Section=magic ' +
-    'Note="10 min process primes allies to be affected by a composition cantrip with a successful Performance check"',
+    'Note="10 min process prepares allies to be affected by a composition cantrip with a successful Performance check"',
   'Soothing Ballad':Pathfinder2E.FEATURES['Soothing Ballad'],
   'Triumphant Inspiration':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Follows a critical melee hit with a single-action composition cantrip"',
+    'Note="Casts a single-action composition cantrip after inflicting a critical melee hit"',
   'True Hypercognition':Pathfinder2E.FEATURES['True Hypercognition'],
   'Vigorous Anthem':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Courageous Anthem</i> gives allies %{3+charismaModifier} temporary Hit Points for 1 min"',
+    'Note="Subsequent <i>Courageous Anthem</i> gives self and allies %{3+charismaModifier} temporary Hit Points for 1 min"',
   'Courageous Onslaught':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Courageous Anthem</i> allows 1 ally a Reaction to Stride and make a melee Strike"',
+    'Note="Subsequent <i>Courageous Anthem</i> allows 1 ally to immediately use a reaction to Stride and make a melee Strike"',
   'Effortless Concentration':Pathfinder2E.FEATURES['Effortless Concentration'],
   'Resounding Finale':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Ending a composition spell gives affected allies resistance to triggering sonic damage equal to twice the spell\'s rank"',
+    'Note="Ending a composition spell gives affected allies resistance equal to twice the spell\'s rank to the triggering sonic damage"',
   'Studious Capacity':Pathfinder2E.FEATURES['Studious Capacity'],
   'All In My Head':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Changes damage from a non-death Strike or spell to non-lethal mental damage"',
-  'Deep Lore':Pathfinder2E.FEATURES['Deep Lore'],
+    'Note="Changes the triggering damage to self from a non-death Strike or spell to nonlethal mental damage"',
+  'Deep Lore':
+    Pathfinder2E.FEATURES['Deep Lore']
+    .replace('level', 'rank'),
   'Discordant Voice':
     'Section=magic ' +
-    'Note="Weapon Strikes and unarmed attack by allies affected by <i>Courageous Anthem</i> inflict +1d6 HP sonic"',
+    'Note="Strikes by allies affected by <i>Courageous Anthem</i> inflict +1d6 HP sonic"',
   'Eternal Composition':Pathfinder2E.FEATURES['Eternal Composition'],
   'Impossible Polymath':Pathfinder2E.FEATURES['Impossible Polymath'],
   'Fatal Aria':Pathfinder2E.FEATURES['Fatal Aria'],
   'Perfect Encore':Pathfinder2E.FEATURES['Perfect Encore'],
-  'Pied Piping':'Section=magic Note="Knows the Pied Piping occult spell"',
+  'Pied Piping':
+    'Section=magic Note="Knows the Pied Piping occult spell/+1 Focus Points"',
   'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
   'Ultimate Polymath':'Section=magic Note="All spells are signature spells"',
 
@@ -6288,7 +6322,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Critical failure vs. self <i>Harm</i> inflicts drained 1"',
   'Zealous Rush':
     'Section=magic ' +
-    'Note="Can Stride 10\' while casting a 1-action spell on self, or %{speed}\' for a longer spell"',
+    'Note="Can Stride 10\' while casting a one-action spell on self, or %{speed}\' for a longer spell"',
   // Changed effects
   'Castigating Weapon':
     'Section=magic ' +
@@ -10083,7 +10117,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Armor Proficiency':Pathfinder2E.FEATURES['Armor Proficiency'],
   'Assurance (%skill)':Pathfinder2E.FEATURES['Assurance (%skill)'],
   'Automatic Knowledge (%skill)':
-    Pathfinder2E.FEATURES['Automatic Knowledge (%skill)'],
+    Pathfinder2E.FEATURES['Automatic Knowledge (%skill)']
+    .replace('features.Assurance (%skill)', 'features.Assurance (%skill) || features.Assured Knowledge'),
   'Bargain Hunter':Pathfinder2E.FEATURES['Bargain Hunter'],
   'Battle Cry':Pathfinder2E.FEATURES['Battle Cry'],
   'Battle Medicine':Pathfinder2E.FEATURES['Battle Medicine'],
