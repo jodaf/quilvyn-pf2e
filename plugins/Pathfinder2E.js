@@ -1709,8 +1709,7 @@ Pathfinder2E.FEATS = {
     'Traits=Druid ' +
     'Require=' +
       '"level >= 10",' +
-      '"inLeafOrder",' +
-       '"features.Wild Shape"',
+      '"inLeafOrder || features.Wild Shape"',
   'Side By Side':
     'Traits=Druid,Ranger ' +
     'Require=' +
@@ -4943,8 +4942,8 @@ Pathfinder2E.FEATURES = {
   'Leaf':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Leshy Familiar feature/+1 Focus Points",' +
-      '"Knows the Goodberry primal spell",' +
+      '"Has the Leshy Familiar feature",' +
+      '"Knows the Goodberry primal spell/+1 Focus Points",' +
       '"Skill Trained (Diplomacy)"',
   // Legendary Spellcaster as above
   // Lightning Reflexes as above
@@ -4968,11 +4967,11 @@ Pathfinder2E.FEATURES = {
       '"Has the Wild Shape feature",' +
       '"Knows the Wild Morph primal spell",' +
       '"Skill Trained (Intimidation)"',
-  'Wild Empathy':
-    'Section=skill ' +
-    'Note="Can use Diplomacy with animals to Make An Impression and to make simple Requests"',
+  'Wild Empathy':'Section=skill Note="Can speak with animals"',
 
-  'Animal Companion':'Section=feature Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
+  'Animal Companion':
+    'Section=feature ' +
+    'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
   // Errata adds fungus
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
   // Reach Spell as above
@@ -4988,29 +4987,29 @@ Pathfinder2E.FEATURES = {
   'Wild Shape':'Section=magic Note="Knows the Wild Shape primal spell"',
   'Call Of The Wild':
     'Section=magic ' +
-    'Note="Can spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
+    'Note="Can spend 10 min in concert with nature to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level"',
   'Enhanced Familiar':
     'Section=feature Note="Can select 4 familiar or master abilities each day"',
   'Order Explorer (Animal)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Can select Animal order feats"',
+      '"Can select animal order feats"',
   'Order Explorer (Leaf)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Can select Leaf order feats"',
+      '"Can select leaf order feats"',
   'Order Explorer (Storm)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Can select Storm order feats"',
+      '"Can select storm order feats"',
   'Order Explorer (Wild)':
     'Section=feature,feature ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Can select Wild order feats"',
+      '"Can select wild order feats"',
   // Poison Resistance as above; errata removes the 1 action glyph
   'Form Control':
     'Action=1 ' +
@@ -5029,7 +5028,7 @@ Pathfinder2E.FEATURES = {
   'Green Empathy':
     'Section=skill ' +
     // Errata adds fungi
-    'Note="Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus"',
+    'Note="Can communicate with plants and fungi and gains +2 to make simple Requests"',
   'Insect Shape':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr"',
@@ -5048,7 +5047,7 @@ Pathfinder2E.FEATURES = {
     'Note="<i>Tempest Surge</i> cast in response to a foe critical melee hit pushes the foe 5\' (<b>save</b> Reflex negates; critical failure pushes 10\')"',
   'Ferocious Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 Athletics"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dinosaur, and <i>Wild Shape</i> Athletics bonus increases by 1"',
   'Fey Caller':
     'Section=magic ' +
     'Note="Knows the Illusory Disguise, Illusory Object, Illusory Scene, and Veil primal spells"',
@@ -5057,39 +5056,36 @@ Pathfinder2E.FEATURES = {
     'Note="Animal Companion has a choice of nimble or savage characteristics"',
   'Soaring Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird with +1 Acrobatics"',
+    'Note="Can use <i>Wild Shape</i> to change into a %{$\'features.Insect Shape\'?\'wasp, \':\'\'}%{$\'features.Ferocious Shape\'?\'pterosaur, \':\'\'}bat or bird, and <i>Wild Shape</i> Acrobatics bonus increases by 1"',
   'Wind Caller':
     'Section=magic ' +
     'Note="Knows the Stormwind Flight primal spell/+1 Focus Points"',
   'Elemental Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Medium elemental with resistance 5 to fire"',
+    'Note="Can use <i>Wild Shape</i> to change into a Medium elemental, and <i>Wild Shape</i> gives resistance 5 to fire"',
   'Healing Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent polymorph spell restores 1d6 HP per spell level"',
+    'Note="Subsequent non-cantrip polymorph spell restores 1d6 Hit Poins per spell level"',
   'Overwhelming Energy':
     'Action=1 ' +
     'Section=magic ' +
     'Note="Subsequent spell ignores resistance %{level} to energy"',
   'Plant Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large plant with resistance 5 to poison"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large plant, and <i>Wild Shape</i> gives resistance 5 to poison"',
   'Side By Side':
     'Section=combat ' +
     'Note="Self and companion automatically flank a foe adjacent to both"',
   'Dragon Shape':
     'Section=magic ' +
-    'Note="Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to a choice of acid, cold, electricity, fire, or poison"',
+    'Note="Can use <i>Wild Shape</i> to change into a Large dragon, and <i>Wild Shape</i> gives resistance 5 to a choice of acid, cold, electricity, fire, or poison"',
   'Green Tongue':
     'Section=magic ' +
     'Note="Self and any leshy familiar have continuous <i>Speak With Plants</i> effects"',
   'Primal Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Primal Summons':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Knows the Primal Summons primal spell",' +
-      '"Summoned creatures gain a choice of air, earth, fire, or water elemental power"',
+    'Section=magic Note="Knows the Primal Summons primal spell"',
   'Specialized Companion':
     'Section=feature Note="Animal Companion has a choice of specialization"',
   'Timeless Nature':
@@ -5101,7 +5097,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has plant, not humanoid, trait",' +
-      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half HP with 10 min in sunlight, and restores all HP and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
+      '"Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest"',
   // Effortless Concentration as above
   'Impaling Briars':
     'Section=magic ' +
@@ -5112,7 +5108,7 @@ Pathfinder2E.FEATURES = {
   'Invoke Disaster':
     'Section=magic Note="Knows the Storm Lord primal spell/+1 Focus Points"',
   'Perfect Form Control':
-    'Section=magic Note="Can use Form Control to retain shape permanently"',
+    'Section=magic Note="Can retain Form Control shape permanently"',
   'Primal Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   "Hierophant's Power":'Section=magic Note="+1 10th level spell slot"',
   'Leyline Conduit':
@@ -5120,9 +5116,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Subsequent casting of an instantaneous spell of 5th level or lower does not expend a spell slot once per min"',
   'True Shapeshifter':
-    'Action=2 ' +
-    'Section=magic ' +
-    'Note="Changes shape during <i>Wild Shape</i>; can change into a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day"',
+    'Section=magic,magic ' +
+    'Note=' +
+     '"Knows the Nature Incarnate primal spell; can use it to become a kaiju%{$\'features.Plant Shape\'?\' or green man\':\'\'} once per day",' +
+     '"' + Pathfinder2E.ACTION_MARKS['2'] + ' Changes shape during <i>Wild Shape</i>"',
 
   // Fighter
   // Armor Expertise as above

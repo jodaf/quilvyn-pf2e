@@ -136,7 +136,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Leaf: Has the Leshy Familiar feature/+1 Focus Points</i></td>
+        <td><i>Leaf: Has the Leshy Familiar feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Order Explorer (Animal): +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
@@ -168,13 +168,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Mature Animal Companion: Animal Companion is a mature companion and may Stride or Strike without a command</td>
       </tr><tr style="text-align:center">
-        <td>Order Explorer (Animal): Can select Animal order feats</td>
+        <td>Order Explorer (Animal): Can select animal order feats</td>
       </tr><tr style="text-align:center">
-        <td>Order Explorer (Leaf): Can select Leaf order feats</td>
+        <td>Order Explorer (Leaf): Can select leaf order feats</td>
       </tr><tr style="text-align:center">
-        <td>Order Explorer (Storm): Can select Storm order feats</td>
+        <td>Order Explorer (Storm): Can select storm order feats</td>
       </tr><tr style="text-align:center">
-        <td>Order Explorer (Wild): Can select Wild order feats</td>
+        <td>Order Explorer (Wild): Can select wild order feats</td>
       </tr><tr style="text-align:center">
         <td>Specialized Companion: Animal Companion has a choice of specialization</td>
       </tr><tr style="text-align:center">
@@ -285,13 +285,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
     </tr><tr style="text-align:center">
-      <td>Green Empathy: Can use Diplomacy with plants and fungi to Make An Impression and to make simple Requests with a +2 bonus</td>
+      <td>Green Empathy: Can communicate with plants and fungi and gains +2 to make simple Requests</td>
     </tr><tr style="text-align:center">
       <td>Storm Born: Suffers no Perception penalties from weather</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
     </tr><tr style="text-align:center">
-      <td>Wild Empathy: Can use Diplomacy with animals to Make An Impression and to make simple Requests</td>
+      <td>Wild Empathy: Can speak with animals</td>
     </tr></table>
 </td>
   </tr></table>
@@ -407,6 +407,8 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Impaling Briars (P8 Foc Con): <b>(2)</b> 100' emanation inflicts difficult terrain, -10 Speed (<b>save Reflex</b> negates; critical failure inflicts immobilized for 1 rd), or greater difficult terrain, plus 10d6 HP piercing and -10' Speed on a target with a successful spell attack (or immobilized with a critical success), each rd while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
+      <td>Nature Incarnate (P10 Tra): <b>(2)</b> Self becomes a Medium green man or Gargantuan kaiju with 30 temporary HP, Armor Class 45, +34 attack, darkvision, +36 Athletics modifier, and creature-specific attacks for 1 min</td>
+    </tr><tr style="text-align:left">
       <td>Primal Summons (P6 Foc Con): <b>(F)</b> Subsequent <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> gives summoned creature one of: a 60' fly Speed; a 20' burrow Speed, -10' Speed, and resistance 5 to physical damage; +1d6 HP fire damage, resistance 10 to fire, and weakness 5 to cold and water; a 60' swim Speed, a Shove after a melee attack, and resistance 5 to fire</td>
     </tr><tr style="text-align:left">
       <td>Storm Lord (P9 Foc Evo): <b>(2)</b> 100' emanation produces a bolt of lighting that inflicts 10d6 HP electricity and deafened for 1 rd (<b>save basic Reflex</b>) each rd while sustained for up to 1 min, plus a choice of weather: calm; foggy (conceals); rainy (inflicts -2 Acrobatics and Perception); or windy (inflicts -4 ranged attacks and difficult terrain for flying)</td>
@@ -439,7 +441,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Invoke Disaster: Knows the Storm Lord primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Leaf: Knows the Goodberry primal spell</i></td>
+      <td><i>Leaf: Knows the Goodberry primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
       <td><i>Legendary Spellcaster: Spell Legendary (Primal)</i></td>
     </tr><tr style="text-align:center">
@@ -459,27 +461,29 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Storm: Knows the Tempest Surge primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
+      <td><i>True Shapeshifter: Knows the Nature Incarnate primal spell; can use it to become a kaiju or green man once per day</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Wild Shape: Knows the Wild Shape primal spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Wild: Knows the Wild Morph primal spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Wind Caller: Knows the Stormwind Flight primal spell/+1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td>Call Of The Wild: Can spend 10 min to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level</td>
+      <td>Call Of The Wild: Can spend 10 min in concert with nature to replace a prepared spell with <i>Summon Animal</i> or <i>Summon Plant Or Fungus</i> of the same level</td>
     </tr><tr style="text-align:center">
-      <td>Dragon Shape: Can use <i>Wild Shape</i> to change into a Large dragon with resistance 5 to a choice of acid, cold, electricity, fire, or poison</td>
+      <td>Dragon Shape: Can use <i>Wild Shape</i> to change into a Large dragon, and <i>Wild Shape</i> gives resistance 5 to a choice of acid, cold, electricity, fire, or poison</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
     </tr><tr style="text-align:center">
-      <td>Elemental Shape: Can use <i>Wild Shape</i> to change into a Medium elemental with resistance 5 to fire</td>
+      <td>Elemental Shape: Can use <i>Wild Shape</i> to change into a Medium elemental, and <i>Wild Shape</i> gives resistance 5 to fire</td>
     </tr><tr style="text-align:center">
-      <td>Ferocious Shape: Can use <i>Wild Shape</i> to change into a Large dinosaur with +1 Athletics</td>
+      <td>Ferocious Shape: Can use <i>Wild Shape</i> to change into a Large dinosaur, and <i>Wild Shape</i> Athletics bonus increases by 1</td>
     </tr><tr style="text-align:center">
       <td>Form Control: <b>(1)</b> Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts for 1 hr</td>
     </tr><tr style="text-align:center">
       <td>Green Tongue: Self and any leshy familiar have continuous <i>Speak With Plants</i> effects</td>
     </tr><tr style="text-align:center">
-      <td>Healing Transformation: <b>(1)</b> Subsequent polymorph spell restores 1d6 HP per spell level</td>
+      <td>Healing Transformation: <b>(1)</b> Subsequent non-cantrip polymorph spell restores 1d6 Hit Poins per spell level</td>
     </tr><tr style="text-align:center">
       <td>Insect Shape: Can use <i>Wild Shape</i> to change into a Medium insect; flightless forms last 24 hr</td>
     </tr><tr style="text-align:center">
@@ -489,21 +493,19 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Overwhelming Energy: <b>(1)</b> Subsequent spell ignores resistance 20 to energy</td>
     </tr><tr style="text-align:center">
-      <td>Perfect Form Control: Can use Form Control to retain shape permanently</td>
+      <td>Perfect Form Control: Can retain Form Control shape permanently</td>
     </tr><tr style="text-align:center">
-      <td>Plant Shape: Can use <i>Wild Shape</i> to change into a Large plant with resistance 5 to poison</td>
+      <td>Plant Shape: Can use <i>Wild Shape</i> to change into a Large plant, and <i>Wild Shape</i> gives resistance 5 to poison</td>
     </tr><tr style="text-align:center">
       <td>Primal Focus: Refocus restores 2 Focus Points</td>
     </tr><tr style="text-align:center">
       <td>Primal Spellcasting: Can learn spells from the primal tradition</td>
     </tr><tr style="text-align:center">
-      <td>Primal Summons: Summoned creatures gain a choice of air, earth, fire, or water elemental power</td>
-    </tr><tr style="text-align:center">
       <td>Primal Wellspring: Refocus restores 3 Focus Points</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends subsequent spell range by 30'</td>
     </tr><tr style="text-align:center">
-      <td>Soaring Shape: Can use <i>Wild Shape</i> to change into a wasp, pterosaur, bat or bird with +1 Acrobatics</td>
+      <td>Soaring Shape: Can use <i>Wild Shape</i> to change into a wasp, pterosaur, bat or bird, and <i>Wild Shape</i> Acrobatics bonus increases by 1</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
@@ -511,9 +513,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Thousand Faces: Can use <i>Wild Shape</i> to change into a Small or Medium humanoid</td>
     </tr><tr style="text-align:center">
-      <td>True Shapeshifter: <b>(2)</b> Changes shape during <i>Wild Shape</i>; can change into a kaiju or green man once per day</td>
+      <td>True Shapeshifter: <b>(2)</b> Changes shape during <i>Wild Shape</i></td>
     </tr><tr style="text-align:center">
-      <td>Verdant Metamorphosis: Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half HP with 10 min in sunlight, and restores all HP and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest</td>
+      <td>Verdant Metamorphosis: Can use <i>Tree Shape</i> effects at will; tree form raises Armor Class to 30, restores half Hit Points with 10 min in sunlight, and restores all Hit Points and removes all non-permanent conditions and poisons and diseases up to level 19 with daily rest</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
     </tr></table>
