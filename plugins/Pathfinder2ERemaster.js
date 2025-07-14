@@ -6438,7 +6438,9 @@ Pathfinder2ERemaster.FEATURES = {
   // Master Spellcaster as above
   'Medium Armor Expertise':Pathfinder2E.FEATURES['Medium Armor Expertise'],
   // Perception Expertise as above
-  'Primal Hierophant':Pathfinder2E.FEATURES['Primal Hierophant'],
+  'Primal Hierophant':
+    Pathfinder2E.FEATURES['Primal Hierophant']
+    .replace('level', 'rank'),
   // Reflex Expertise as above
   'Storm':Pathfinder2E.FEATURES.Storm
     .replace('/+1 Focus Points', ''),
@@ -6496,7 +6498,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Forest Passage':Pathfinder2E.FEATURES['Woodland Stride'],
   'Form Control':
     Pathfinder2E.FEATURES['Form Control']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replace('Wild Shape', 'Untamed Form')
+    .replace('level', 'rank'),
   'Leshy Familiar Secrets':
     'Section=feature ' +
     'Note="Familiar gains Grasping Tendrils, Purify Air, or Verdant Burst feature each day"',
@@ -6519,7 +6522,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent air or water spell gives self +1 Armor Class (+2 vs. ranged attacks) and +1 saves vs. air and water until the start of the next turn"',
   'Grown Of Oak':
     'Section=magic ' +
-    'Note="Knows the Oaken Resilience primal spell; can cast it up to level %V at will on self and on leshy familiar within 30\'"',
+    'Note="Knows the Oaken Resilience primal spell; can cast it up to rank %V at will on self and on leshy familiar within 30\'"',
   'Insect Shape':
     Pathfinder2E.FEATURES['Insect Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -6616,7 +6619,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Primal Aegis':
     'Section=save ' +
     'Note="Self and allies within 30\' have resistance %{wisdomModifier} to acid, cold, electricity, fire, vitality, and void damage"',
-  "Hierophant's Power":Pathfinder2E.FEATURES["Hierophant's Power"],
+  "Hierophant's Power":
+    Pathfinder2E.FEATURES["Hierophant's Power"]
+    .replace('level', 'rank'),
   'Ley Line Conduit':
     Pathfinder2E.FEATURES['Leyline Conduit']
     .replace('level', 'rank'),
