@@ -2100,21 +2100,27 @@ Pathfinder2ERemaster.FEATS = {
 
   // Druid
   'Animal Companion':Pathfinder2E.FEATS['Animal Companion'],
-  'Animal Empathy':Pathfinder2E.FEATS['Wild Empathy'],
+  // Changes from Wild Empathy
+  'Animal Empathy':
+    'Traits=Druid,Ranger ' +
+    'Require="levels.Druid >= 1 || levels.Ranger >= 2"',
   'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
   // Note: Feat 1 Plant Empathy links to legacy Feat 6 Druid Empathy in Nethys
   'Plant Empathy':'Traits=Druid',
+  // Reach Spell as above
   'Storm Born':Pathfinder2E.FEATS['Storm Born'],
   'Verdant Weapon':'Traits=Druid,Exploration',
-  // Reach Spell as above
   'Widen Spell':
     Pathfinder2E.FEATS['Widen Spell']
     .replace('Metamagic', 'Spellshape')
     .replace('Traits=', 'Traits=Oracle,Witch,'),
-  'Untamed Form':Pathfinder2E.FEATS['Wild Shape'].replaceAll('Wild', 'Untamed'),
+  'Untamed Form':
+    Pathfinder2E.FEATS['Wild Shape']
+    .replaceAll('Wild', 'Untamed'),
   'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
   'Enhanced Familiar':
-    Pathfinder2E.FEATS['Enhanced Familiar'].replace('Traits=', 'Traits=Witch,'),
+    Pathfinder2E.FEATS['Enhanced Familiar']
+    .replace('Traits=', 'Traits=Witch,'),
   'Order Explorer (Animal)':Pathfinder2E.FEATS['Order Explorer (Animal)'],
   'Order Explorer (Leaf)':Pathfinder2E.FEATS['Order Explorer (Leaf)'],
   'Order Explorer (Storm)':Pathfinder2E.FEATS['Order Explorer (Storm)'],
@@ -2131,11 +2137,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Form Control']
     .replace('Metamagic', 'Spellshape') + ' ' +
     'Require="level >= 4","features.Untamed Form"',
-  'Leshy Familiar Secrets':
-    'Traits=Druid ' +
-    'Require=' +
-      '"level >=4",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
+  'Leshy Familiar Secrets':'Traits=Druid Require="level >=4","inLeafOrder"',
   'Mature Animal Companion':Pathfinder2E.FEATS['Mature Animal Companion'],
   'Order Magic (Animal)':Pathfinder2E.FEATS['Order Magic (Animal)'],
   'Order Magic (Leaf)':Pathfinder2E.FEATS['Order Magic (Leaf)'],
@@ -2145,13 +2147,9 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Wild', 'Untamed'),
   'Snowdrift Spell':
     'Traits=Druid,Cold,Manipulate,Spellshape ' +
-    'Require="level >= 4","features.Storm"',
+    'Require="level >= 4","inStormOrder"',
   'Current Spell':'Traits=Druid,Concentrate,Spellshape Require="level >= 6"',
-  'Grown Of Oak':
-    'Traits=Druid ' +
-    'Require=' +
-      '"level >= 6",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
+  'Grown Of Oak':'Traits=Druid Require="level >= 6","inLeafOrder"',
   'Insect Shape':
     Pathfinder2E.FEATS['Insect Shape']
     .replace('Wild Shape', 'Untamed Form'),
@@ -2174,10 +2172,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Wild Shape', 'Untamed Form'),
   'Fey Caller':Pathfinder2E.FEATS['Fey Caller'],
   'Floral Restoration':
-    'Traits=Druid,Healing,Vitality ' +
-    'Require=' +
-      '"level >= 8",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
+    'Traits=Druid,Healing,Vitality Require="level >= 8","inLeafOrder"',
   'Incredible Companion':Pathfinder2E.FEATS['Incredible Companion'],
   'Raise Menhir':'Traits=Druid Require="level >= 8"',
   'Soaring Shape':
@@ -2208,16 +2203,11 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Verdant Weapon"',
   'Side By Side':Pathfinder2E.FEATS['Side By Side'],
   'Thunderclap Spell':
-    'Traits=Druid,Sonic,Spellshape ' +
-    'Require=' +
-      '"level >= 10",' +
-      '"features.Storm || features.Order Explorer (Storm)"',
+    'Traits=Druid,Sonic,Spellshape Require="level >= 10","inStormOrder"',
   'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
+  // errata correct plant order to leaf order
   'Garland Spell':
-    'Traits=Druid,Manipulate,Spellshape ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Leaf || features.Order Explorer (Leaf)"',
+    'Traits=Druid,Manipulate,Spellshape Require="level >= 12","inLeafOrder"',
   // Note: also subsumes legacy Feat 18 Primal Wellspring
   'Primal Focus':Pathfinder2E.FEATS['Primal Focus'],
   'Primal Summons':Pathfinder2E.FEATS['Primal Summons'],
@@ -2244,11 +2234,7 @@ Pathfinder2ERemaster.FEATS = {
   'Monstrosity Shape':
     Pathfinder2E.FEATS['Monstrosity Shape']
     .replace('Wild Shape', 'Untamed Form'),
-  'Uplifting Winds':
-    'Traits=Druid ' +
-    'Require=' +
-      '"level >= 16",' +
-      '"features.Storm || features.Order Explorer (Storm)"',
+  'Uplifting Winds':'Traits=Druid Require="level >= 16","inStormOrder"',
   'Invoke Disaster':Pathfinder2E.FEATS['Invoke Disaster'],
   'Perfect Form Control':Pathfinder2E.FEATS['Perfect Form Control'],
   'Primal Aegis':'Traits=Druid Require="level >= 18"',
@@ -6447,16 +6433,17 @@ Pathfinder2ERemaster.FEATURES = {
   'Leaf':
     Pathfinder2E.FEATURES.Leaf
     .replace('Goodberry', 'Cornucopia')
-    .replace('2', '1'),
+    .replace('/+1 Focus Points', ''),
   // Legendary Spellcaster as above
   // Master Spellcaster as above
   'Medium Armor Expertise':Pathfinder2E.FEATURES['Medium Armor Expertise'],
   // Perception Expertise as above
   'Primal Hierophant':Pathfinder2E.FEATURES['Primal Hierophant'],
   // Reflex Expertise as above
-  'Storm':Pathfinder2E.FEATURES.Storm,
+  'Storm':Pathfinder2E.FEATURES.Storm
+    .replace('/+1 Focus Points', ''),
   'Untamed':
-    Pathfinder2E.FEATURES['Wild Shape']
+    Pathfinder2E.FEATURES['Wild']
     .replace('Wild Shape', 'Untamed Form')
     .replace('Wild Morph', 'Untamed Shift'),
   'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
@@ -6473,23 +6460,29 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Wild Empathy']
     .replace('Class,', 'Class,Druid'),
   'Leshy Familiar':Pathfinder2E.FEATURES['Leshy Familiar'],
-  'Plant Empathy':Pathfinder2E.FEATURES['Green Empathy'],
+  'Plant Empathy':
+     Pathfinder2E.FEATURES['Green Empathy']
+     .replace(/ and gains[^"]*/, ''),
   // Reach Spell as above
   'Storm Born':Pathfinder2E.FEATURES['Storm Born'],
   'Verdant Weapon':
     'Section=magic ' +
-    'Note="10 min process prepares a seed to grow into a weapon with 1 action"',
+    'Note="10 min process prepares a seed to grow into a weapon or shrink back into a seed with 1 action"',
   'Widen Spell':Pathfinder2E.FEATURES['Widen Spell'],
+  // Changed effects from Wild Shape. Animal druids don't get another focus
+  // point--it's the order druid feat--but others do
   'Untamed Form':
-    Pathfinder2E.FEATURES['Wild Shape'].replace('Wild Shape', 'Untamed Form'),
+    'Section=magic ' +
+    'Note="Knows the Untamed Form primal spell%{$\'feats.Untamed Form\'?\'/+1 Focus Points\':\'\'}"',
   'Call Of The Wild':
-    Pathfinder2E.FEATURES['Call Of The Wild'].replace('level', 'rank'),
+    Pathfinder2E.FEATURES['Call Of The Wild']
+    .replace('level', 'rank'),
   'Enhanced Familiar':Pathfinder2E.FEATURES['Enhanced Familiar'],
   'Order Explorer (Animal)':Pathfinder2E.FEATURES['Order Explorer (Animal)'],
   'Order Explorer (Leaf)':Pathfinder2E.FEATURES['Order Explorer (Leaf)'],
   'Order Explorer (Storm)':Pathfinder2E.FEATURES['Order Explorer (Storm)'],
   'Order Explorer (Untamed)':
-    Pathfinder2E.FEATURES['Order Explorer (Wild)'].replace('Wild', 'Untamed'),
+    Pathfinder2E.FEATURES['Order Explorer (Wild)'].replace('wild', 'untamed'),
   'Poison Resistance':Pathfinder2E.FEATURES['Poison Resistance'],
   'Anthropomorphic Shape':
      Pathfinder2E.FEATURES['Thousand Faces']
@@ -6499,9 +6492,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
   'Elemental Summons':
     'Section=magic ' +
-    'Note="10 min process in nature replaces a prepared spell slot with <i>Summon Elemental</i>"',
+    'Note="Can spend 10 min in concert with nature to replace a prepared spell with <i>Summon Elemental</i> of the same rank"',
   'Forest Passage':Pathfinder2E.FEATURES['Woodland Stride'],
-  'Form Control':Pathfinder2E.FEATURES['Form Control'],
+  'Form Control':
+    Pathfinder2E.FEATURES['Form Control']
+    .replace('Wild Shape', 'Untamed Form'),
   'Leshy Familiar Secrets':
     'Section=feature ' +
     'Note="Familiar gains Grasping Tendrils, Purify Air, or Verdant Burst feature each day"',
@@ -6515,15 +6510,19 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Order Magic (Wild)']
     .replace('Wild Morph', 'Untamed Shift'),
   'Snowdrift Spell':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent air, water, or cold spell creates difficult terrain underneath 1 affected creature for 1 rd"',
+    'Note="Subsequent air, water, or cold spell creates difficult terrain underneath 1 affected creature until the start of the next turn"',
   'Current Spell':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent air or water spell gives self +1 Armor Class (+2 vs. ranged attacks) and +1 saves vs. air and water for 1 rd"',
+    'Note="Subsequent air or water spell gives self +1 Armor Class (+2 vs. ranged attacks) and +1 saves vs. air and water until the start of the next turn"',
   'Grown Of Oak':
     'Section=magic ' +
-    'Note="Can cast <i>Oaken Resilience</i> up to level %V at will on self and leshy familiar within 30\'"',
-  'Insect Shape':Pathfinder2E.FEATURES['Insect Shape'],
+    'Note="Knows the Oaken Resilience primal spell; can cast it up to level %V at will on self and on leshy familiar within 30\'"',
+  'Insect Shape':
+    Pathfinder2E.FEATURES['Insect Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Instinctive Support':
     'Action=Free ' +
     'Section=magic ' +
@@ -6533,10 +6532,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Deimatic Display':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a Demoralize attempt against animals, fungi, and plants in a 15\' cone"',
+    'Note="Makes a Demoralize attempt against animals, fungi, and plants in a 15\' cone, with no penalty for lacking a shared language"',
   'Ferocious Shape':
     Pathfinder2E.FEATURES['Ferocious Shape']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replaceAll('Wild Shape', 'Untamed Form'),
   // Changed spell list
   'Fey Caller':
     'Section=magic ' +
@@ -6552,47 +6551,53 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="R30\' 15\' radius gives creatures +2 saves vs. a choice of arcane, divine, or occult effects while sustained up to 1 min"',
   'Soaring Shape':
     Pathfinder2E.FEATURES['Soaring Shape']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replaceAll('Wild Shape', 'Untamed Form'),
   'Wind Caller':Pathfinder2E.FEATURES['Wind Caller'],
   'Elemental Shape':
     Pathfinder2E.FEATURES['Elemental Shape']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replaceAll('Wild Shape', 'Untamed Form'),
   'Healing Transformation':
     Pathfinder2E.FEATURES['Healing Transformation']
     .replace('level', 'rank'),
   'Overwhelming Energy':Pathfinder2E.FEATURES['Overwhelming Energy'],
   'Plant Shape':
     Pathfinder2E.FEATURES['Plant Shape']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replaceAll('Wild Shape', 'Untamed Form'),
   'Primal Howl':
     'Section=feature ' +
     'Note="Companion can use 2 actions to inflict 1d6 HP sonic per 2 levels and frightened 1 in a 30\' cone once per hr (<b>save basic Fortitude</b> also negates frightened; critical failure inflicts frightened 2)"',
   'Pristine Weapon':
     'Section=combat ' +
-    'Note="Verdant weapon counts as cold iron and silver, inflicting 1d6 HP persistent bleed to creatures with weakness to either"',
+    'Note="Verdant weapon counts as cold iron and silver, inflicting +1d6 HP persistent bleed to creatures with weakness to either on a critical hit"',
   'Side By Side':Pathfinder2E.FEATURES['Side By Side'],
   'Thunderclap Spell':
+    'Action=1 ' +
     'Section=magic ' +
     'Note="Subsequent instantaneous electricity spell also inflicts deafened for 1 rd (<b>save Reflex</b> negates; critical failure also knocks prone)"',
   'Dragon Shape':
     Pathfinder2E.FEATURES['Dragon Shape']
-    .replace('Wild Shape', 'Untamed Form'),
+    .replaceAll('Wild Shape', 'Untamed Form'),
   'Garland Spell':
+    'Action=1 ' +
     'Section=magic ' +
     'Note="Subsequent fungus or plant spell grows plants in a 10\' burst that inflict difficult terrain and %{level//4-1}d6 HP piercing or poison for 1 min"',
   'Primal Focus':Pathfinder2E.FEATURES['Primal Focus'].replace('2', 'all'),
   'Primal Summons':Pathfinder2E.FEATURES['Primal Summons'],
+  // Legacy doesn't specify the additional FP
+  'Primal Summons':
+    'Section=magic ' +
+    'Note="Knows the Primal Summons primal spell/+1 Focus Points"',
   'Wandering Oasis':
     'Section=save ' +
     'Note="Self and allies within 60\' are protected from %{rank.Survival>=4?\'extreme\':\'severe\'} environmental heat and cold"',
   'Reactive Transformation':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Invokes Aerial Form, Dragon Form, Elemental Form, or Plant form in response to falling, energy damage, fire damage, or poison damage"',
-  'Sow Seed':
+    'Note="Casts <i>Untamed Form</i> to assume a form from <i>Aerial Form</i>, <i>Dragon Form</i>, <i>Elemental Form</i>, or <i>Plant Form</i> in response to falling, energy damage, fire damage, or poison damage"',
+  'Sow Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Prepares a subsequent 1- or 2-action spell to take effect in an adjacent square when a creature enters or is adjacent to it within 10 min"',
+    'Note="Prepares a subsequent 1- or 2-action spell to take effect in an adjacent square when a creature enters or is adjacent to it within 10 min; a successful Perception allows a creature to notice before triggering"',
   'Specialized Companion':Pathfinder2E.FEATURES['Specialized Companion'],
   'Timeless Nature':Pathfinder2E.FEATURES['Timeless Nature'],
   'Verdant Metamorphosis':
@@ -6605,15 +6610,19 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wild Shape', 'Untamed Form'),
   'Uplifting Winds':
     'Section=magic ' +
-    'Note="Casting an air or electricity spell while flying gives +10\' fly Speed and an immediate %{speed//2}\' Fly action"',
+    'Note="Casting an air or electricity spell while flying gives +10 fly Speed and an immediate %{speed//2}\' Fly action"',
   'Invoke Disaster':Pathfinder2E.FEATURES['Invoke Disaster'],
   'Perfect Form Control':Pathfinder2E.FEATURES['Perfect Form Control'],
   'Primal Aegis':
     'Section=save ' +
-    'Note="Self and allies within 30\' have resistance %{wisdomModifier} to acid, cold, fire, vitality, and void damage"',
+    'Note="Self and allies within 30\' have resistance %{wisdomModifier} to acid, cold, electricity, fire, vitality, and void damage"',
   "Hierophant's Power":Pathfinder2E.FEATURES["Hierophant's Power"],
-  'Ley Line Conduit':Pathfinder2E.FEATURES['Leyline Conduit'],
-  'True Shapeshifter':Pathfinder2E.FEATURES['True Shapeshifter'],
+  'Ley Line Conduit':
+    Pathfinder2E.FEATURES['Leyline Conduit']
+    .replace('level', 'rank'),
+  'True Shapeshifter':
+    Pathfinder2E.FEATURES['True Shapeshifter']
+    .replace('Wild Shape', 'Untamed Form'),
 
   // Fighter
   'Armor Expertise':
@@ -14108,6 +14117,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Tusks') {
     rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
+  } else if(name == 'Untamed Form') {
+    rules.defineRule('focusPoints', 'feats.Untamed Form', '+', '1');
+    rules.defineRule
+      ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
   } else if(name == 'Vicious Incisors') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '0');
