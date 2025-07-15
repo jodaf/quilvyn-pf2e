@@ -3732,7 +3732,7 @@ Pathfinder2E.FEATURES = {
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike after a double Stride"',
+    'Note="Makes a melee Strike after 2 Strides"',
   'Acute Scent':'Section=skill Note="Has R30\' imprecise scent during rage"',
   'Furious Finish':
     'Action=1 ' +
@@ -5137,7 +5137,7 @@ Pathfinder2E.FEATURES = {
       '"Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1"',
   'Combat Flexibility':
     'Section=combat ' +
-    'Note="Gains a chosen fighter feat of up to 8th level during daily prep"',
+    'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.improvedFlexibility?\' and one of up to 14th level\':\'\'} during daily prep"',
   // Evasion as above
   'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
@@ -5197,8 +5197,7 @@ Pathfinder2E.FEATURES = {
     'Note="Attack Master (Simple Swords; Martial Swords)/Attack Expert (Advanced Swords)"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
-    'Section=combat ' +
-    'Note="Gains a chosen fighter feat of up to 14th level to during daily prep"',
+    'Section=combat Note="Has increased Combat Flexibility features"',
   // Juggernaut as above
   // Shield Block as below
   'Versatile Legend':
@@ -5259,7 +5258,7 @@ Pathfinder2E.FEATURES = {
   'Double Slice':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty"',
+    'Note="Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty; a non-agile weapon on the second Strike suffers -2 attack"',
   'Exacting Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -5267,7 +5266,7 @@ Pathfinder2E.FEATURES = {
   'Point-Blank Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage at close range with a ranged non-volley weapon"',
+    'Note="Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage within the first range increment of a ranged non-volley weapon"',
   'Power Attack':
     'Action=2 ' +
     'Section=combat ' +
@@ -5275,7 +5274,7 @@ Pathfinder2E.FEATURES = {
   'Reactive Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Performs Raise A Shield to absorb damage from a melee Strike"',
+    'Note="Performs Raise A Shield to absorb damage from the triggering melee Strike"',
   'Snagging Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -5289,7 +5288,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     // Errata changes description
-    'Note="Successful ranged Strike gives the next ally attack on the target until the start of the next turn +1 attack, or +2 with a critical success"',
+    'Note="Successful ranged Strike gives the next ally attack on the target +1 attack, or +2 with a critical success, until the start of the next turn"',
   'Brutish Shove':
     'Action=1 ' +
     'Section=combat ' +
@@ -5305,8 +5304,8 @@ Pathfinder2E.FEATURES = {
   'Intimidating Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts frightened 1, or frightened 2 with a critical hit"',
-  'Lunge':'Action=1 Section=combat Note="Melee Strike has a +5\' range"',
+    'Note="Successful melee Strike inflicts frightened 1, or frightened 2 on a critical hit"',
+  'Lunge':'Action=1 Section=combat Note="Makes a melee Strike with +5\' range"',
   'Double Shot':
     'Action=2 ' +
     'Section=combat ' +
@@ -5318,26 +5317,26 @@ Pathfinder2E.FEATURES = {
   'Knockdown':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Follows a successful melee Strike with an Athletics check to Trip"',
+    'Note="Follows a successful melee Strike with an Athletics check to Trip at the same multiple attack penalty"',
   'Powerful Shove':
     'Section=combat ' +
     'Note="Can use Aggressive Block and Brutish Shove on foes up to 2 sizes larger, inflicting %{strengthModifier>?1} HP if a shoved creature hits a barrier"',
   'Quick Reversal':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes melee Strikes on 2 foes flanking self"',
+    'Note="Makes 2 melee Strikes at the current multiple attack penalty on 2 foes flanking self; the second Strike does not increase the multiple attack penalty"',
   'Shielded Stride':
     'Section=combat ' +
-    'Note="Can Stride at half Speed with shield raised without triggering reactions"',
+    'Note="Can Stride at half Speed with a shield raised without triggering reactions"',
   // Swipe as above
   'Twin Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Parrying with a melee weapon in each hand gives +1 Armor Class until the start of the next turn, or +2 Armor Class if either weapon has the parry trait"',
+    'Note="Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn"',
   // TODO implement?
   'Advanced Weapon Training':
     'Section=combat ' +
-    'Note="Has proficiency with advanced weapons in a chosen group equal to martial weapons"',
+    'Note="Has proficiency with advanced weapons equal to martial weapons in a chosen weapon group"',
   'Advantageous Assault':
     'Action=1 ' +
     'Section=combat ' +
@@ -5348,7 +5347,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stance gives +1 to Disarm and +2 vs. Disarm, and allows Disarming foes 2 sizes larger, when wielding a one-handed weapon with the other hand free"',
   'Furious Focus':
     'Section=combat ' +
-    'Note="A two-handed Power Attack counts as a single attack for the multiple attack penalty"',
+    'Note="Two-handed Power Attacks count as single attacks for the multiple attack penalty"',
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5362,11 +5361,11 @@ Pathfinder2E.FEATURES = {
   'Shatter Defenses':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts"',
+    'Note="Successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts"',
   // Shield Warden as above
   'Triple Shot':
     'Section=combat ' +
-    'Note="Uses Double Shot against 1 target, or uses 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4"',
+    'Note="Can use Double Shot against 1 target or use 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4"',
   'Blind-Fight':
     'Section=combat ' +
     'Note="Can attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Does not suffer flat-footed vs. hidden foes/Treats adjacent undetected creatures up to level %{level} as hidden instead"',
@@ -5385,7 +5384,7 @@ Pathfinder2E.FEATURES = {
   'Mobile Shot Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance negates reactions from ranged Strikes and allows using Attack Of Opportunity with a loaded ranged weapon on an adjacent creature"',
+    'Note="Stance allows making ranged Strikes without triggering reactions and using Attack Of Opportunity with a loaded ranged weapon to attack an adjacent creature"',
   'Positioning Assault':
     'Action=2 ' +
     'Section=combat ' +
@@ -5413,17 +5412,17 @@ Pathfinder2E.FEATURES = {
   'Disruptive Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows using Attack Of Opportunity in response to a concentrate action; a successful Strike disrupts"',
+    'Note="Stance allows using Attack Of Opportunity in response to a concentrate action, and a successful Strike disrupts it"',
   'Fearsome Brute':
     'Section=combat ' +
     'Note="Strikes against frightened foes inflict additional damage equal to %{rank.Intimidation>=2?3:2}x the frightened value"',
   'Improved Knockdown':
     'Section=combat ' +
-    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size"',
+    'Note="Knockdown automatically inflicts a critical Trip, and using a two-handed weapon causes the Trip to inflict damage based on the weapon damage die size"',
   'Mirror Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Raised shield reflects a spell back upon the caster with a ranged Strike or spell attack"',
+    'Note="Raised shield reflects a critically failed spell attack back upon the caster, using a ranged Strike or spell attack"',
   'Twin Riposte':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5431,17 +5430,17 @@ Pathfinder2E.FEATURES = {
   'Brutal Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ends turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
+    'Note="Ends the turn with a two-handed melee Strike that inflicts %{level>=18?\'2 additional damage dice\':\'1 additional damage die\'}, even on failure"',
   'Dueling Dance':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Stance gives continuous benefits of Dueling Parry"',
   'Flinging Shove':
     'Section=combat ' +
-    'Note="Aggressive Block moves the target 10\' (or 20\' on a critical success) or inflicts flat-footed, and Brutish Shove moves the target 10\' (or 5\' on failure or 20\' on critical success)"',
+    'Note="Successful Aggressive Block moves the target 10\', or 20\' on a critical success, or inflicts flat-footed, and Brutish Shove moves the target 5\', 10\', or 20\' on failure, success, or critical success"',
   'Improved Dueling Riposte':
     'Section=combat ' +
-    'Note="Gives an additional reaction to make a Dueling Riposte once per turn"',
+    'Note="Gives an additional reaction to make a Dueling Riposte once per turn, even when not using Dueling Parry"',
   'Incredible Ricochet':
     'Action=1 ' +
     'Section=combat ' +
@@ -5450,7 +5449,7 @@ Pathfinder2E.FEATURES = {
   'Lunging Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +5\' reach on Attacks Of Opportunity"',
+    'Note="Stance gives Attacks Of Opportunity +5\' reach"',
   "Paragon's Guard":
     'Action=1 ' +
     'Section=combat ' +
@@ -5462,7 +5461,7 @@ Pathfinder2E.FEATURES = {
   'Desperate Finisher':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Can use a press action after taking the last action in a turn, losing any further reactions until the start of the next turn"',
+    'Note="Uses a press action after taking the last action in a turn, losing any further reactions until the start of the next turn"',
   'Determination':
     'Action=1 ' +
     'Section=save ' +
@@ -5471,13 +5470,13 @@ Pathfinder2E.FEATURES = {
   'Guiding Finish':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Strike moves a foe 10\' to a spot within reach (failure moves the foe 5\') when wielding a one-handed weapon with a hand free"',
+    'Note="A successful Strike moves a foe 10\' to a spot within reach, or 5\' on failure, when wielding a one-handed weapon with a hand free"',
   'Guiding Riposte':
     'Section=combat ' +
     'Note="A successful Dueling Riposte Strike moves the target 10\' to a spot within reach"',
   'Improved Twin Riposte':
     'Section=combat ' +
-    'Note="Gives an additional reaction to make a Twin Riposte once per turn"',
+    'Note="Gives an additional reaction to make a Twin Riposte once per turn, even when not using Twin Parry"',
   'Stance Savant':
     'Action=Free ' +
     'Section=combat ' +
@@ -5515,7 +5514,7 @@ Pathfinder2E.FEATURES = {
      'Note="Gives an additional reaction to use a fighter feat or class feature once per foe turn"',
   'Weapon Supremacy':
     'Section=combat ' +
-    'Note="Permanently quickened; may use additional action only to Strike"',
+    'Note="Permanently quickened; can use the additional action only to Strike"',
 
   // Monk
   'Adamantine Strikes':
@@ -5800,7 +5799,7 @@ Pathfinder2E.FEATURES = {
     'Note="Ends a Speed status penalty or condition at the end of a turn"',
   'Enduring Quickness':
     'Section=combat ' +
-    'Note="Permanently quickened; may use additional action to Stride, Leap, or Jump"',
+    'Note="Permanently quickened; cane use the additional action to Stride, Leap, or Jump"',
   'Fuse Stance':
     'Section=combat ' +
     'Note="Has merged 2 known stances into a unique new stance that grants the effects of both"',
@@ -13813,9 +13812,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', 'magicNotes.primalHierophant', '=', 'null'); // italics
   } else if(name == 'Fighter') {
-    ['Axes', 'Bombs', 'Brawling Weapons', 'Clubs', 'Crossbows', 'Darts', 'Flails',
-     'Hammers', 'Knives', 'Picks', 'Polearms', 'Slings', 'Shields', 'Spears',
-     'Swords'].forEach(g => {
+    ['Axes', 'Bombs', 'Brawling Weapons', 'Clubs', 'Crossbows', 'Darts',
+     'Flails', 'Hammers', 'Knives', 'Picks', 'Polearms', 'Slings', 'Shields',
+     'Spears', 'Swords'].forEach(g => {
       rules.defineRule('features.Fighter Weapon Mastery (' + g + ')',
         'features.Fighter Weapon Mastery', '?', null,
         'features.' + g, '=', '1'
@@ -13825,6 +13824,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'features.' + g, '=', '1'
       );
     });
+    rules.defineRule('combatNotes.combatFlexibility',
+      'combatNotes.improvedFlexibility', '=', 'null' // italics
+    )
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
     );

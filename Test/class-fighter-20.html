@@ -291,6 +291,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Improved Flexibility: Has increased Combat Flexibility features</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Legend: Attack Legendary (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Master (Advanced Weapons)/Class Master (Fighter)</i></td>
@@ -299,7 +301,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Legend: Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)/Attack Expert (Advanced Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td>Advanced Weapon Training: Has proficiency with advanced weapons in a chosen group equal to martial weapons</td>
+        <td>Advanced Weapon Training: Has proficiency with advanced weapons equal to martial weapons in a chosen weapon group</td>
       </tr><tr style="text-align:center">
         <td>Advantageous Assault: <b>(1)</b> Strike on a grabbed, prone, or restrained foe inflicts additional damage equal to the number of damage dice, +2 HP if wielded two-handed, even on failure</td>
       </tr><tr style="text-align:center">
@@ -309,7 +311,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Armor Expertise: Benefits from the specialization effects of medium and heavy armor</td>
       </tr><tr style="text-align:center">
-        <td>Assisting Shot: <b>(1)</b> Successful ranged Strike gives the next ally attack on the target until the start of the next turn +1 attack, or +2 with a critical success</td>
+        <td>Assisting Shot: <b>(1)</b> Successful ranged Strike gives the next ally attack on the target +1 attack, or +2 with a critical success, until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
@@ -319,13 +321,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Boundless Reprisals: Gives an additional reaction to use a fighter feat or class feature once per foe turn</td>
       </tr><tr style="text-align:center">
-        <td>Brutal Finish: <b>(1)</b> Ends turn with a two-handed melee Strike that inflicts 2 additional damage dice, even on failure</td>
+        <td>Brutal Finish: <b>(1)</b> Ends the turn with a two-handed melee Strike that inflicts 2 additional damage dice, even on failure</td>
       </tr><tr style="text-align:center">
         <td>Brutish Shove: <b>(1)</b> Two-handed melee Strike inflicts flat-footed until the end of the turn; success also allows an automatic Shove</td>
       </tr><tr style="text-align:center">
         <td>Certain Strike: <b>(1)</b> Melee Strike inflicts normal non-dice damage on failure</td>
       </tr><tr style="text-align:center">
-        <td>Combat Flexibility: Gains a chosen fighter feat of up to 8th level during daily prep</td>
+        <td>Combat Flexibility: Gains a chosen fighter feat of up to 8th level and one of up to 14th level during daily prep</td>
       </tr><tr style="text-align:center">
         <td>Combat Grab: <b>(1)</b> Successful melee Strike with the other hand free inflicts grabbed until the end of the next turn or until the target Escapes</td>
       </tr><tr style="text-align:center">
@@ -333,7 +335,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Debilitating Shot: <b>(2)</b> Successful ranged Strike also inflicts slowed 1 until the end of the target's next turn</td>
       </tr><tr style="text-align:center">
-        <td>Desperate Finisher: <b>(R)</b> Can use a press action after taking the last action in a turn, losing any further reactions until the start of the next turn</td>
+        <td>Desperate Finisher: <b>(R)</b> Uses a press action after taking the last action in a turn, losing any further reactions until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Diehard: Remains alive until dying 5</td>
       </tr><tr style="text-align:center">
@@ -341,11 +343,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Disarming Twist: <b>(1)</b> Strike with a one-handed melee weapon and the other hand free inflicts Disarm on success; failure inflicts flat-footed until the end of the turn</td>
       </tr><tr style="text-align:center">
-        <td>Disruptive Stance: <b>(1)</b> Stance allows using Attack Of Opportunity in response to a concentrate action; a successful Strike disrupts</td>
+        <td>Disruptive Stance: <b>(1)</b> Stance allows using Attack Of Opportunity in response to a concentrate action, and a successful Strike disrupts it</td>
       </tr><tr style="text-align:center">
         <td>Double Shot: <b>(2)</b> Makes 2 ranged Strikes against different foes at the current multiple attack penalty -2</td>
       </tr><tr style="text-align:center">
-        <td>Double Slice: <b>(2)</b> Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty</td>
+        <td>Double Slice: <b>(2)</b> Makes simultaneous Strikes with 2 melee weapons at the current multiple attack penalty; a non-agile weapon on the second Strike suffers -2 attack</td>
       </tr><tr style="text-align:center">
         <td>Dual-Handed Assault: <b>(1)</b> Successful melee Strike with a one-handed weapon and the other hand free inflicts additional damage, equal to its number of damage dice if it has the two-handed trait or by 1 die step otherwise</td>
       </tr><tr style="text-align:center">
@@ -363,29 +365,27 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
-        <td>Flinging Shove: Aggressive Block moves the target 10' (or 20' on a critical success) or inflicts flat-footed, and Brutish Shove moves the target 10' (or 5' on failure or 20' on critical success)</td>
+        <td>Flinging Shove: Successful Aggressive Block moves the target 10', or 20' on a critical success, or inflicts flat-footed, and Brutish Shove moves the target 5', 10', or 20' on failure, success, or critical success</td>
       </tr><tr style="text-align:center">
-        <td>Furious Focus: A two-handed Power Attack counts as a single attack for the multiple attack penalty</td>
+        <td>Furious Focus: Two-handed Power Attacks count as single attacks for the multiple attack penalty</td>
       </tr><tr style="text-align:center">
         <td>Graceful Poise: <b>(1)</b> Stance allows Double Slice with an agile weapon to count as 1 attack</td>
       </tr><tr style="text-align:center">
         <td>Guardian's Deflection: <b>(R)</b> Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free</td>
       </tr><tr style="text-align:center">
-        <td>Guiding Finish: <b>(1)</b> A successful Strike moves a foe 10' to a spot within reach (failure moves the foe 5') when wielding a one-handed weapon with a hand free</td>
+        <td>Guiding Finish: <b>(1)</b> A successful Strike moves a foe 10' to a spot within reach, or 5' on failure, when wielding a one-handed weapon with a hand free</td>
       </tr><tr style="text-align:center">
         <td>Guiding Riposte: A successful Dueling Riposte Strike moves the target 10' to a spot within reach</td>
       </tr><tr style="text-align:center">
         <td>Impossible Volley: <b>(3)</b> Ranged Strike with a -2 penalty attacks all foes in a 10' radius</td>
       </tr><tr style="text-align:center">
-        <td>Improved Dueling Riposte: Gives an additional reaction to make a Dueling Riposte once per turn</td>
+        <td>Improved Dueling Riposte: Gives an additional reaction to make a Dueling Riposte once per turn, even when not using Dueling Parry</td>
       </tr><tr style="text-align:center">
-        <td>Improved Flexibility: Gains a chosen fighter feat of up to 14th level to during daily prep</td>
-      </tr><tr style="text-align:center">
-        <td>Improved Knockdown: Knockdown automatically inflicts a critical Trip, and using a two-handed weapon can cause the Trip to inflict damage based on the weapon damage die size</td>
+        <td>Improved Knockdown: Knockdown automatically inflicts a critical Trip, and using a two-handed weapon causes the Trip to inflict damage based on the weapon damage die size</td>
       </tr><tr style="text-align:center">
         <td>Improved Reflexive Shield: Using Shield Block on a Reflex save protects both self and adjacent allies</td>
       </tr><tr style="text-align:center">
-        <td>Improved Twin Riposte: Gives an additional reaction to make a Twin Riposte once per turn</td>
+        <td>Improved Twin Riposte: Gives an additional reaction to make a Twin Riposte once per turn, even when not using Twin Parry</td>
       </tr><tr style="text-align:center">
         <td>Incredible Aim: <b>(2)</b> Ranged Strike gains +2 attack and ignores concealment</td>
       </tr><tr style="text-align:center">
@@ -393,17 +393,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Incredible Ricochet: <b>(1)</b> Follows a ranged Strike with another against the same foe that ignores concealment and cover</td>
       </tr><tr style="text-align:center">
-        <td>Intimidating Strike: <b>(2)</b> Successful melee Strike inflicts frightened 1, or frightened 2 with a critical hit</td>
+        <td>Intimidating Strike: <b>(2)</b> Successful melee Strike inflicts frightened 1, or frightened 2 on a critical hit</td>
       </tr><tr style="text-align:center">
-        <td>Knockdown: <b>(2)</b> Follows a successful melee Strike with an Athletics check to Trip</td>
+        <td>Knockdown: <b>(2)</b> Follows a successful melee Strike with an Athletics check to Trip at the same multiple attack penalty</td>
       </tr><tr style="text-align:center">
-        <td>Lunge: <b>(1)</b> Melee Strike has a +5' range</td>
+        <td>Lunge: <b>(1)</b> Makes a melee Strike with +5' range</td>
       </tr><tr style="text-align:center">
-        <td>Lunging Stance: <b>(1)</b> Stance gives +5' reach on Attacks Of Opportunity</td>
+        <td>Lunging Stance: <b>(1)</b> Stance gives Attacks Of Opportunity +5' reach</td>
       </tr><tr style="text-align:center">
-        <td>Mirror Shield: <b>(R)</b> Raised shield reflects a spell back upon the caster with a ranged Strike or spell attack</td>
+        <td>Mirror Shield: <b>(R)</b> Raised shield reflects a critically failed spell attack back upon the caster, using a ranged Strike or spell attack</td>
       </tr><tr style="text-align:center">
-        <td>Mobile Shot Stance: <b>(1)</b> Stance negates reactions from ranged Strikes and allows using Attack Of Opportunity with a loaded ranged weapon on an adjacent creature</td>
+        <td>Mobile Shot Stance: <b>(1)</b> Stance allows making ranged Strikes without triggering reactions and using Attack Of Opportunity with a loaded ranged weapon to attack an adjacent creature</td>
       </tr><tr style="text-align:center">
         <td>Multishot Stance: <b>(1)</b> Stance reduces Double Shot and Triple Shot penalties to -1 and -2</td>
       </tr><tr style="text-align:center">
@@ -411,7 +411,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Paragon's Guard: <b>(1)</b> Stance gives continuous benefits of Raise A Shield</td>
       </tr><tr style="text-align:center">
-        <td>Point-Blank Shot: <b>(1)</b> Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage at close range with a ranged non-volley weapon</td>
+        <td>Point-Blank Shot: <b>(1)</b> Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage within the first range increment of a ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
         <td>Positioning Assault: <b>(2)</b> Successful Strike with a two-handed melee weapon moves a foe 5' to within reach</td>
       </tr><tr style="text-align:center">
@@ -419,23 +419,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Powerful Shove: Can use Aggressive Block and Brutish Shove on foes up to 2 sizes larger, inflicting 4 HP if a shoved creature hits a barrier</td>
       </tr><tr style="text-align:center">
-        <td>Quick Reversal: <b>(1)</b> Makes melee Strikes on 2 foes flanking self</td>
+        <td>Quick Reversal: <b>(1)</b> Makes 2 melee Strikes at the current multiple attack penalty on 2 foes flanking self; the second Strike does not increase the multiple attack penalty</td>
       </tr><tr style="text-align:center">
         <td>Quick Shield Block: Can use an additional reaction for a Shield Block once per turn</td>
       </tr><tr style="text-align:center">
-        <td>Reactive Shield: <b>(R)</b> Performs Raise A Shield to absorb damage from a melee Strike</td>
+        <td>Reactive Shield: <b>(R)</b> Performs Raise A Shield to absorb damage from the triggering melee Strike</td>
       </tr><tr style="text-align:center">
         <td>Revealing Stab: <b>(2)</b> Successful strike vs. a concealed target, or with a DC 5 flat check vs. a hidden target, leaves an embedded piercing weapon that reveals the target to others</td>
       </tr><tr style="text-align:center">
         <td>Savage Critical: Successful attack rolls of 19 with a legendary weapon are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Shatter Defenses: <b>(1)</b> A successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts</td>
+        <td>Shatter Defenses: <b>(1)</b> Successful melee Strike vs. a frightened foe inflicts flat-footed while the frightened condition lasts</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Shield Warden: Can use Shield Block to protect an adjacent ally</td>
       </tr><tr style="text-align:center">
-        <td>Shielded Stride: Can Stride at half Speed with shield raised without triggering reactions</td>
+        <td>Shielded Stride: Can Stride at half Speed with a shield raised without triggering reactions</td>
       </tr><tr style="text-align:center">
         <td>Snagging Strike: <b>(1)</b> Successful melee Strike with the other hand free inflicts flat-footed until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -443,15 +443,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Stance Savant: <b>(F)</b> Enters a stance during initiative</td>
       </tr><tr style="text-align:center">
-        <td>Sudden Charge: <b>(2)</b> Makes a melee Strike after a double Stride</td>
+        <td>Sudden Charge: <b>(2)</b> Makes a melee Strike after 2 Strides</td>
       </tr><tr style="text-align:center">
         <td>Sudden Leap: <b>(2)</b> Makes a melee Strike while Leaping, High Jumping, or Long Jumping up to 50'</td>
       </tr><tr style="text-align:center">
         <td>Swipe: <b>(2)</b> Melee Strike attacks 2 adjacent foes</td>
       </tr><tr style="text-align:center">
-        <td>Triple Shot: Uses Double Shot against 1 target, or uses 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4</td>
+        <td>Triple Shot: Can use Double Shot against 1 target or use 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4</td>
       </tr><tr style="text-align:center">
-        <td>Twin Parry: <b>(1)</b> Parrying with a melee weapon in each hand gives +1 Armor Class until the start of the next turn, or +2 Armor Class if either weapon has the parry trait</td>
+        <td>Twin Parry: <b>(1)</b> Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Twin Riposte: <b>(R)</b> Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self</td>
       </tr><tr style="text-align:center">
@@ -461,7 +461,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr><tr style="text-align:center">
-        <td>Weapon Supremacy: Permanently quickened; may use additional action only to Strike</td>
+        <td>Weapon Supremacy: Permanently quickened; can use the additional action only to Strike</td>
       </tr><tr style="text-align:center">
         <td>Whirlwind Strike: <b>(3)</b> Makes individual Strikes at the current multiple attack penalty against all foes within reach</td>
       </tr></table>
