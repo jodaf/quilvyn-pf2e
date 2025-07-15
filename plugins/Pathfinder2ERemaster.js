@@ -610,7 +610,22 @@ Pathfinder2ERemaster.CLASSES = {
       '"15:Improved Flexibility","17:Armor Mastery","19:Versatile Legend" ' +
     'Selectables=' +
       '"1:Dexterity:Key Attribute",' +
-      '"1:Strength:Key Attribute"',
+      '"1:Strength:Key Attribute",' +
+      '"1:Axes:Weapon Group",' +
+      '"1:Bombs:Weapon Group",' +
+      '"1:Brawling Weapons:Weapon Group",' +
+      '"1:Clubs:Weapon Group",' +
+      '"1:Crossbows:Weapon Group",' +
+      '"1:Darts:Weapon Group",' +
+      '"1:Flails:Weapon Group",' +
+      '"1:Hammers:Weapon Group",' +
+      '"1:Knives:Weapon Group",' +
+      '"1:Picks:Weapon Group",' +
+      '"1:Polearms:Weapon Group",' +
+      '"1:Slings:Weapon Group",' +
+      '"1:Shields:Weapon Group",' +
+      '"1:Spears:Weapon Group",' +
+      '"1:Swords:Weapon Group"',
 
   'Ranger':
     // Ability => Attribute
@@ -6641,12 +6656,45 @@ Pathfinder2ERemaster.FEATURES = {
   'Battle Hardened':Pathfinder2E.FEATURES.Juggernaut,
   'Battlefield Surveyor':Pathfinder2E.FEATURES['Battlefield Surveyor'],
   'Bravery':Pathfinder2E.FEATURES.Bravery,
-  'Combat Flexibility':Pathfinder2E.FEATURES['Combat Flexibility'],
+  'Combat Flexibility':
+    // Modified to include Ultimate Flexibility effects
+    Pathfinder2E.FEATURES['Combat Flexibility'] + ' ' +
+    'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.ultimateFlexibility?\',\':combatNotes.improvedFlexibility?\' and\':\'\'}%{combatNotes.improvedFlexibility?\' one of up to 14th level\':\'\'}%{combatNotes.ultimateFlexibility?\', and one of up to 18th level\':\'\'} during daily prep%{combatNotes.ultimateFlexibility?\'; can use 1 hr training to change selections\':\'\'}"',
   'Fighter Expertise':Pathfinder2E.FEATURES['Fighter Expertise'],
   'Fighter Feats':Pathfinder2E.FEATURES['Fighter Feats'],
   'Fighter Key Attribute':Pathfinder2E.FEATURES['Fighter Key Ability'],
   'Fighter Skills':Pathfinder2E.FEATURES['Fighter Skills'],
   'Fighter Weapon Mastery':Pathfinder2E.FEATURES['Fighter Weapon Mastery'],
+  'Fighter Weapon Mastery (Axes)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Axes)'],
+  'Fighter Weapon Mastery (Bombs)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Bombs)'],
+  'Fighter Weapon Mastery (Brawling Weapons)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Brawling Weapons)'],
+  'Fighter Weapon Mastery (Clubs)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Clubs)'],
+  'Fighter Weapon Mastery (Crossbows)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Crossbows)'],
+  'Fighter Weapon Mastery (Darts)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Darts)'],
+  'Fighter Weapon Mastery (Flails)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Flails)'],
+  'Fighter Weapon Mastery (Hammers)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Hammers)'],
+  'Fighter Weapon Mastery (Knives)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Knives)'],
+  'Fighter Weapon Mastery (Picks)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Picks)'],
+  'Fighter Weapon Mastery (Polearms)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Polearms)'],
+  'Fighter Weapon Mastery (Slings)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Slings)'],
+  'Fighter Weapon Mastery (Shields)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Shields)'],
+  'Fighter Weapon Mastery (Spears)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Spears)'],
+  'Fighter Weapon Mastery (Swords)':
+    Pathfinder2E.FEATURES['Fighter Weapon Mastery (Swords)'],
   'Greater Weapon Specialization':
     Pathfinder2E.FEATURES['Greater Weapon Specialization'],
   'Improved Flexibility':Pathfinder2E.FEATURES['Improved Flexibility'],
@@ -6655,6 +6703,36 @@ Pathfinder2ERemaster.FEATURES = {
   'Tempered Reflexes':Pathfinder2E.FEATURES.Evasion,
   'Versatile Legend':Pathfinder2E.FEATURES['Versatile Legend'],
   'Weapon Legend':Pathfinder2E.FEATURES['Weapon Legend'],
+  'Weapon Legend (Axes)':
+    Pathfinder2E.FEATURES['Weapon Legend (Axes)'],
+  'Weapon Legend (Bombs)':
+    Pathfinder2E.FEATURES['Weapon Legend (Bombs)'],
+  'Weapon Legend (Brawling Weapons)':
+    Pathfinder2E.FEATURES['Weapon Legend (Brawling Weapons)'],
+  'Weapon Legend (Clubs)':
+    Pathfinder2E.FEATURES['Weapon Legend (Clubs)'],
+  'Weapon Legend (Crossbows)':
+    Pathfinder2E.FEATURES['Weapon Legend (Crossbows)'],
+  'Weapon Legend (Darts)':
+    Pathfinder2E.FEATURES['Weapon Legend (Darts)'],
+  'Weapon Legend (Flails)':
+    Pathfinder2E.FEATURES['Weapon Legend (Flails)'],
+  'Weapon Legend (Hammers)':
+    Pathfinder2E.FEATURES['Weapon Legend (Hammers)'],
+  'Weapon Legend (Knives)':
+    Pathfinder2E.FEATURES['Weapon Legend (Knives)'],
+  'Weapon Legend (Picks)':
+    Pathfinder2E.FEATURES['Weapon Legend (Picks)'],
+  'Weapon Legend (Polearms)':
+    Pathfinder2E.FEATURES['Weapon Legend (Polearms)'],
+  'Weapon Legend (Slings)':
+    Pathfinder2E.FEATURES['Weapon Legend (Slings)'],
+  'Weapon Legend (Shields)':
+    Pathfinder2E.FEATURES['Weapon Legend (Shields)'],
+  'Weapon Legend (Spears)':
+    Pathfinder2E.FEATURES['Weapon Legend (Spears)'],
+  'Weapon Legend (Swords)':
+    Pathfinder2E.FEATURES['Weapon Legend (Swords)'],
   // Weapon Specialization as above
 
   'Combat Assessment':
@@ -6674,7 +6752,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Aggressive Block']
     .replace('flat-footed', 'off-guard') + ' Action=Reaction',
   'Assisting Shot':Pathfinder2E.FEATURES['Assisting Shot'],
-  'Blade Break':
+  'Blade Brake':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Negates the triggering forced move of less than 20\', or reduces a longer forced move to 5\'"',
@@ -6696,17 +6774,17 @@ Pathfinder2ERemaster.FEATURES = {
   'Sleek Reposition':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Melee Strike with a finesse or polearm weapon automatically Repositions target, or inflicts off-guard until the end of turn on failure"',
+    'Note="Melee Strike with a finesse or polearm weapon automatically Repositions target, or inflicts off-guard until the end of the turn on failure"',
   'Barreling Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Athletics vs. Fortitude allows moving through foes\' spaces to make a melee Strike"',
+    'Note="Successful Athletics vs. Fortitude allows Striding through foes\' spaces to make a melee Strike"',
   'Double Shot':Pathfinder2E.FEATURES['Double Shot'],
   'Dual-Handed Assault':Pathfinder2E.FEATURES['Dual-Handed Assault'],
   'Parting Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Steps away from foe, making it off-guard for a ranged Strike"',
+    'Note="Steps away from a foe and makes a ranged Strike with the target off-guard"',
   'Powerful Shove':Pathfinder2E.FEATURES['Powerful Shove'],
   'Quick Reversal':Pathfinder2E.FEATURES['Quick Reversal'],
   'Shielded Stride':Pathfinder2E.FEATURES['Shielded Stride'],
@@ -6718,7 +6796,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dazing Blow':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Melee Strike against a grabbed foe inflicts bludgeoning damage and stunned 2 (<b>save Fortitude</b> inflicts stunned 1; critical success negates stunning; critical failure inflicts stunned 3)"',
+    'Note="Successful melee Strike against a grabbed foe inflicts bludgeoning damage and stunned 2 (<b>save Fortitude</b> inflicts stunned 1; critical success negates stunning; critical failure inflicts stunned 3)"',
   'Disarming Stance':Pathfinder2E.FEATURES['Disarming Stance'],
   'Furious Focus':
     Pathfinder2E.FEATURES['Furious Focus']
@@ -6729,7 +6807,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Ricochet Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance causes thrown weapons to return up to their listed range increment after a ranged Strike"',
+    'Note="Stance causes thrown bludgeoning and slashing weapons to return up to their listed range increment after a ranged Strike"',
   'Shatter Defenses':
     Pathfinder2E.FEATURES['Shatter Defenses']
     .replace('flat-footed', 'off-guard'),
@@ -6739,7 +6817,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Blind-Fight':Pathfinder2E.FEATURES['Blind-Fight'],
   'Disorienting Opening':
     'Section=combat ' +
-    'Note="Successful Reactive Strike inflicts off-guard for 1 rd"',
+    'Note="Successful Reactive Strike inflicts off-guard until the start of the next turn"',
   'Dueling Riposte':Pathfinder2E.FEATURES['Dueling Riposte'],
   'Felling Strike':Pathfinder2E.FEATURES['Felling Strike'],
   'Incredible Aim':Pathfinder2E.FEATURES['Incredible Aim'],
@@ -6752,7 +6830,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Quick Shield Block':Pathfinder2E.FEATURES['Quick Shield Block'],
   'Resounding Bravery':
     'Section=save ' +
-    'Note="Will saves give +1 saves and %{level//2} temporary Hit Points, or +2 saves and %{level} temporary on a critical success, for 1 min"',
+    'Note="Successful Will saves give +1 saves and %{level//2} temporary Hit Points, or +2 saves and %{level} temporary Hit Points on a critical success, for 1 min"',
   'Sudden Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -6777,11 +6855,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Flinging Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Hit with a thrown Strike during a double Stride inflicts off-guard against next attack in the same turn"',
+    'Note="Successful Strike with a thrown weapon during a double Stride inflicts off-guard against next self attack before the end of the turn"',
   'Mirror Shield':Pathfinder2E.FEATURES['Mirror Shield'],
   'Overpowering Charge':
     'Section=combat ' +
-    'Note="Barreling Charge inflicts %{strengthModifier} HP bludgeoning, or %{strengthModifier*2} HP and off-guard for 1 rd on a critical hit"',
+    'Note="Successful Barreling Charge moves inflict %{strengthModifier} HP bludgeoning, or %{strengthModifier*2} HP and off-guard until the end of the next turn on a critical hit"',
   'Tactical Reflexes':
     Pathfinder2E.FEATURES['Combat Reflexes']
     .replace('Attack Of Opportunity', 'Reactive Strike'),
@@ -6821,7 +6899,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Overwhelming Blow':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Melee Strike hit automatically counts critical, and a natural critical gains deadly d12, leaving self stunned 1 and off-guard for 1 rd"',
+    'Note="Successful melee Strike counts as critical, and a natural critical gains deadly d12; counts as three attacks for the multiple attack penalty and leaves self stunned 1 and off-guard until the start of the next turn"',
   'Twinned Defense':Pathfinder2E.FEATURES['Twinned Defense'],
   'Impossible Volley':Pathfinder2E.FEATURES['Impossible Volley'],
   'Savage Critical':Pathfinder2E.FEATURES['Savage Critical'],
@@ -6830,8 +6908,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Cut From The Air against ranged spell attacks"',
   'Boundless Reprisals':Pathfinder2E.FEATURES['Boundless Reprisals'],
   'Ultimate Flexibility':
-    'Section=combat ' +
-    'Note="Can select a fighter feat of up to 18th level to use each day and use 1 hr training to change flexibility feats"',
+    'Section=combat Note="Has increased Combat Flexibility features"',
   'Weapon Supremacy':Pathfinder2E.FEATURES['Weapon Supremacy'],
 
   // Ranger
@@ -14122,6 +14199,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Tusks') {
     rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
+  } else if(name == 'Ultimate Flexibility') {
+    rules.defineRule('combatNotes.combatFlexibility',
+      'combatNotes.ultimateFlexibility', '=', 'null' // italics
+    );
   } else if(name == 'Untamed Form') {
     rules.defineRule('focusPoints', 'feats.Untamed Form', '+', '1');
     rules.defineRule
