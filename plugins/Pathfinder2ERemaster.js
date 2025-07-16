@@ -2270,7 +2270,9 @@ Pathfinder2ERemaster.FEATS = {
     .replace(',Open', ''),
   'Reactive Shield':Pathfinder2E.FEATS['Reactive Shield'],
   'Snagging Strike':Pathfinder2E.FEATS['Snagging Strike'],
-  'Sudden Charge':Pathfinder2E.FEATS['Sudden Charge'],
+  'Sudden Charge':
+    Pathfinder2E.FEATS['Sudden Charge']
+    .replace(',Open', ''),
   'Vicious Swing':Pathfinder2E.FEATS['Power Attack'],
   'Aggressive Block':Pathfinder2E.FEATS['Aggressive Block'],
   'Assisting Shot':Pathfinder2E.FEATS['Assisting Shot'],
@@ -2363,7 +2365,9 @@ Pathfinder2ERemaster.FEATS = {
   'Improved Twin Riposte':Pathfinder2E.FEATS['Improved Twin Riposte'],
   'Opening Stance':'Traits=Fighter Require="level >= 14"',
   'Two-Weapon Flurry':Pathfinder2E.FEATS['Two-Weapon Flurry'],
-  'Whirlwind Strike':Pathfinder2E.FEATS['Whirlwind Strike'],
+  'Whirlwind Strike':
+    Pathfinder2E.FEATS['Whirlwind Strike']
+    .replace(',Open', ''),
   'Graceful Poise':Pathfinder2E.FEATS['Graceful Poise'],
   'Improved Reflexive Shield':Pathfinder2E.FEATS['Improved Reflexive Shield'],
   'Master Of Many Styles':
@@ -2395,6 +2399,7 @@ Pathfinder2ERemaster.FEATS = {
   'Initiate Warden':'Traits=Ranger',
   'Monster Hunter':Pathfinder2E.FEATS['Monster Hunter'],
   'Twin Takedown':Pathfinder2E.FEATS['Twin Takedown'],
+  // Animal Empathy as above
   'Favored Terrain (%terrain)':Pathfinder2E.FEATS['Favored Terrain (%terrain)'],
   "Hunter's Aim":Pathfinder2E.FEATS["Hunter's Aim"],
   'Monster Warden':Pathfinder2E.FEATS['Monster Warden'],
@@ -2428,7 +2433,7 @@ Pathfinder2ERemaster.FEATS = {
   'Penetrating Shot':
     Pathfinder2E.FEATS['Penetrating Shot']
     .replace(',Open', ''),
-  // Twin Riposte as above
+  // Twin Riposte as above; Nethys omits Twin Parry prereq, as does Fighter
   "Warden's Step":Pathfinder2E.FEATS["Warden's Step"],
   'Distracting Shot':Pathfinder2E.FEATS['Distracting Shot'],
   'Double Prey':Pathfinder2E.FEATS['Double Prey'],
@@ -6748,9 +6753,10 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('flat-footed', 'off-guard'),
   'Sudden Charge':Pathfinder2E.FEATURES['Sudden Charge'],
   'Vicious Swing':Pathfinder2E.FEATURES['Power Attack'],
+  // errata changes action to Free
   'Aggressive Block':
     Pathfinder2E.FEATURES['Aggressive Block']
-    .replace('flat-footed', 'off-guard') + ' Action=Reaction',
+    .replace('flat-footed', 'off-guard'),
   'Assisting Shot':Pathfinder2E.FEATURES['Assisting Shot'],
   'Blade Brake':
     'Action=Reaction ' +
@@ -6918,25 +6924,34 @@ Pathfinder2ERemaster.FEATURES = {
   'Hunt Prey':Pathfinder2E.FEATURES['Hunt Prey'],
   "Hunter's Edge":Pathfinder2E.FEATURES["Hunter's Edge"],
   'Martial Weapon Mastery':Pathfinder2E.FEATURES['Weapon Mastery'],
-  'Masterful Hunter':Pathfinder2E.FEATURES['Masterful Hunter'],
+  'Masterful Hunter':
+    Pathfinder2E.FEATURES['Masterful Hunter']
+    .replace('Section=', 'Section=magic,')
+    .replace('Note=', 'Note="Spell Master (Primal)",'),
   // Medium Armor Expertise as above
   // Medium Armor Mastery as above
   'Natural Reflexes':Pathfinder2E.FEATURES.Evasion,
   "Nature's Edge":
-    Pathfinder2E.FEATURES["Nature's Edge"]
-    .replace(' natural and snare-imposed', ''),
+    // Changed effects
+    Pathfinder2E.FEATURES["Nature's Edge"] + ' ' +
+    'Note="Foes suffer off-guard vs. self from difficult terrain"',
   'Outwit':Pathfinder2E.FEATURES.Outwit,
   'Perception Legend':Pathfinder2E.FEATURES['Incredible Senses'],
   // Perception Mastery as above
   'Precision':Pathfinder2E.FEATURES.Precision,
-  'Ranger Expertise':Pathfinder2E.FEATURES['Ranger Expertise'],
+  'Ranger Expertise':
+    Pathfinder2E.FEATURES['Ranger Expertise']
+    .replace('Section=', 'Section=magic,')
+    .replace('Note=', 'Note="Spell Expert (Primal)",'),
   'Ranger Feats':Pathfinder2E.FEATURES['Ranger Feats'],
   'Ranger Key Attribute':Pathfinder2E.FEATURES['Ranger Key Ability'],
   'Ranger Skills':Pathfinder2E.FEATURES['Ranger Skills'],
   'Ranger Weapon Expertise':Pathfinder2E.FEATURES['Ranger Weapon Expertise'],
   'Swift Prey':Pathfinder2E.FEATURES['Swift Prey'],
   'Trackless Journey':Pathfinder2E.FEATURES['Trackless Step'],
-  'Unimpeded Journey':Pathfinder2E.FEATURES['Wild Stride'],
+  'Unimpeded Journey':
+    Pathfinder2E.FEATURES['Wild Stride']
+    .replaceAll('non-magical ', ''),
   // Weapon Specialization as above
   "Warden's Endurance":Pathfinder2E.FEATURES.Juggernaut,
   // Will Expertise as above
@@ -6951,8 +6966,10 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Hunted Shot']
     .replace(' once per rd', ''),
   'Initiate Warden':
-    'Section=magic ' +
-    'Note="Knows a choice of warden spell/Has a focus pool with at least 1 Focus Point"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Has a focus pool and at least %V Focus Point%{$\'features.Initiate Warden\'>1?\'s\':\'\'}/Spell Trained (Primal)",' +
+      '"Knows %V choice%{$\'features.Initiate Warden\'>1?\'s\':\'\'} of initial warden spells"',
   'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
     Pathfinder2E.FEATURES['Twin Takedown']
@@ -6989,8 +7006,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Monster Warden':Pathfinder2E.FEATURES['Monster Warden'],
   'Quick Draw':Pathfinder2E.FEATURES['Quick Draw'],
   'Advanced Warden':
-    'Section=magic ' +
-    'Note="Knows a choice of advanced warden spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+%V Focus Points",' +
+      '"Knows %V choice%{$\'features.Advanced Warden\'>1?\'s\':\'\'} of advanced warden spells"',
   "Companion's Cry":Pathfinder2E.FEATURES["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATURES['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATURES['Far Shot'],
@@ -6999,10 +7018,14 @@ Pathfinder2ERemaster.FEATURES = {
   "Scout's Warning":Pathfinder2E.FEATURES["Scout's Warning"],
   // Twin Parry as above
   'Additional Recollection':
+    'Action=Free ' +
     'Section=skill ' +
-    'Note="Successful Recall Knowledge on hunted prey gives a Recall Knowledge check on another creature"',
+    'Note="Follows a successful Recall Knowledge on hunted prey with a Recall Knowledge check on another creature"',
   'Masterful Warden':
-    'Section=magic Note="Knows a choice of warden spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+%V Focus Points",' +
+      '"Knows %V choice%{$\'features.Masterful Warden\'>1?\'s\':\'\'} of master warden spells"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATURES['Skirmish Strike'],
   'Snap Shot':Pathfinder2E.FEATURES['Snap Shot'],
@@ -7016,8 +7039,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATURES['Master Monster Hunter'],
   'Peerless Warden':
-    'Section=magic ' +
-    'Note="Knows a choice of peerless warden spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+%V Focus Points",' +
+      '"Knows %V choice%{$\'features.Peerless Warden\'>1?\'s\':\'\'} of peerless warden spells"',
   'Penetrating Shot':Pathfinder2E.FEATURES['Penetrating Shot'],
   // Twin Riposte as above
   "Warden's Step":Pathfinder2E.FEATURES["Warden's Step"],
@@ -7041,8 +7066,10 @@ Pathfinder2ERemaster.FEATURES = {
   "Warden's Reload":
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Casting a warden spell allows reloading a crossbow"',
-  'Impossible Flurry':Pathfinder2E.FEATURES['Impossible Flurry'],
+    'Note="Casting a warden spell allows reloading a crossbow once per rd"',
+  'Impossible Flurry':
+    Pathfinder2E.FEATURES['Impossible Flurry']
+    .replace('each', 'each, the first as if one attack had already been made this turn and the remainder'),
   // Impossible Volley as above
   'Manifold Edge':Pathfinder2E.FEATURES['Manifold Edge'],
   'Masterful Companion':Pathfinder2E.FEATURES['Masterful Companion'],
@@ -9004,8 +9031,10 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Mountain Stance']
     .replace('Shove', 'Reposition, Shove'),
   'Qi Spells':
-    'Section=magic ' +
-    'Note="Knows a choice of 1st-rank monk qi spell/Has a focus pool with 1 Focus Point"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Has a focus pool with 1 Focus Point",' +
+      '"Knows a choice of 1st-rank monk qi spells"',
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -9042,8 +9071,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Monastic Weaponry':
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
   'Advanced Qi Spells':
-    'Section=magic ' +
-    'Note="Knows a choice of 3rd-rank monk qi spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Points",' +
+      '"Knows a choice of 3rd-rank monk qi spells"',
   'Align Qi':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -9144,8 +9175,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
   // Master Of Many Styles as above
   'Master Qi Spells':
-    'Section=magic ' +
-    'Note="Knows a choice of 8th-rank monk qi spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Points",' +
+      '"Knows a choice of 8th-rank monk qi spells"',
   'One-Millimeter Punch':
     'Section=combat ' +
     'Note="One-Inch Punch inflicts 10\' Push (<b>save Fortitude</b> inflicts 5\' Push; critical success negates; critical failure inflicts 10\' Push per action"',
@@ -9154,8 +9187,10 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Diamond Fists']
     .replace('forceful trait', 'forceful and deadly d10 traits'),
   'Grandmaster Qi Spells':
-    'Section=magic ' +
-    'Note="Knows a choice of 9th-rank monk qi spell/+1 Focus Points"',
+    'Section=magic,magic ' +
+    'Note=' +
+      '"+1 Focus Points",' +
+      '"Knows a choice of 9th-rank monk qi spells"',
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
@@ -13734,6 +13769,13 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.D10', 'magicNotes.oracularProvidence', '+', '1');
   } else if(name == 'Ranger') {
+    // Easiest way to deal with legacy rules that depend on Wild Stride
+    rules.defineRule
+      ('features.Wild Stride', 'features.Unimpeded Journey', '=', '1');
+    rules.defineRule
+      ('magicNotes.masterfulHunter', 'magicNotes.initiateWarden', '?', null);
+    rules.defineRule
+      ('magicNotes.rangerExpertise', 'magicNotes.initiateWarden', '?', null);
     rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
       'featureNotes.rangerKeyAttribute', '=', '1'
     );
@@ -13858,13 +13900,16 @@ Pathfinder2ERemaster.featRules = function(
  * derived directly from the attributes passed to featRules.
  */
 Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
+  Pathfinder2E.featRulesExtra(rules, name);
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-  Pathfinder2E.featRulesExtra(rules, name);
   if(name == 'Advanced Efficient Alchemy') {
     rules.defineRule('skillNotes.advancedAlchemy',
       'skillNotes.advancedEfficientAlchemy', '=', 'null' // italics
     );
+  } else if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
+    rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
+    rules.defineRule('magicNotes.' + prefix + '-1', 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
   } else if(name.startsWith('Bestial Manifestation')) {
@@ -14093,6 +14138,18 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'spells.Dispel Magic (O2)', '=', '1',
       'spells.Dispel Magic (P2)', '=', '1'
     );
+  } else if(name == 'Initiate Warden') {
+    rules.defineRule
+      ('spellAbility.Primal', 'magicNotes.initiateWarden', '=', '"wisdom"');
+    rules.defineRule('spellModifier.Ranger',
+      'magicNotes.initiateWarden', '?', null,
+      'wisdomModifier', '=', null
+    );
+    rules.defineRule('spellModifier.Primal', 'spellModifier.Ranger', '=', null);
+    rules.defineRule
+      ('magicNotes.initiateWarden', 'feats.Initiate Warden', '=', null);
+    rules.defineRule
+      ('magicNotes.initiateWarden-1', 'feats.Initiate Warden', '=', null);
   } else if(name == 'Invulnerable Rager') {
     rules.defineRule('combatNotes.invulnerableRager',
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'

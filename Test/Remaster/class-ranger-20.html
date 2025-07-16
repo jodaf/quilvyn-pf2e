@@ -18,19 +18,25 @@ var attributes = {
   "classFeats.Companion's Cry":1, "classFeats.Crossbow Ace":1, "classFeats.Deadly Aim":1, 
   "classFeats.Disrupt Prey":1, "classFeats.Distracting Shot":1, "classFeats.Double Prey":1, 
   "classFeats.Double Shot":1, "classFeats.Far Shot":1, "classFeats.Favored Prey":1, 
-  "classFeats.Favored Terrain (Desert)":1, "classFeats.Greater Distracting Shot":1, "classFeats.Hazard Finder":1, 
-  "classFeats.Hunted Shot":1, "classFeats.Hunter's Aim":1, "classFeats.Impossible Flurry":1, 
-  "classFeats.Impossible Volley":1, "classFeats.Improved Twin Riposte":1, "classFeats.Incredible Companion":1, 
-  "classFeats.Initiate Warden":1, "classFeats.Legendary Monster Hunter":1, "classFeats.Legendary Shot":1, 
-  "classFeats.Manifold Edge":1, "classFeats.Master Monster Hunter":1, "classFeats.Masterful Companion":1, 
-  "classFeats.Masterful Warden":1, "classFeats.Mature Animal Companion":1, "classFeats.Monster Hunter":1, 
-  "classFeats.Monster Warden":1, "classFeats.Peerless Warden":1, "classFeats.Penetrating Shot":1, 
-  "classFeats.Perfect Shot":1, "classFeats.Quick Draw":1, "classFeats.Running Reload":1, 
-  "classFeats.Scout's Warning":1, "classFeats.Second Sting":1, "classFeats.Sense The Unseen":1, 
-  "classFeats.Shadow Hunter":1, "classFeats.Shared Prey":1, "classFeats.Side By Side":1, 
-  "classFeats.Skirmish Strike":1, "classFeats.Snap Shot":1, "classFeats.Specialized Companion":1, 
-  "classFeats.Stealthy Companion":1, "classFeats.Swift Tracker":1, "classFeats.Terrain Master":1, 
-  "classFeats.To The Ends Of The Earth":1, "classFeats.Triple Shot":1, "classFeats.Twin Parry":1, 
+  "classFeats.Favored Terrain (Aquatic)":1, "classFeats.Favored Terrain (Arctic)":1, 
+  "classFeats.Favored Terrain (Cave)":1, "classFeats.Favored Terrain (Cavern)":1, 
+  "classFeats.Favored Terrain (Desert)":1, "classFeats.Favored Terrain (Forest)":1, 
+  "classFeats.Favored Terrain (Mountain)":1, "classFeats.Favored Terrain (Plains)":1, 
+  "classFeats.Favored Terrain (River)":1, "classFeats.Favored Terrain (Sky)":1, 
+  "classFeats.Favored Terrain (Swamp)":1, "classFeats.Favored Terrain (Underground)":1, 
+  "classFeats.Greater Distracting Shot":1, "classFeats.Hazard Finder":1, "classFeats.Hunted Shot":1, 
+  "classFeats.Hunter's Aim":1, "classFeats.Impossible Flurry":1, "classFeats.Impossible Volley":1, 
+  "classFeats.Improved Twin Riposte":1, "classFeats.Incredible Companion":1, "classFeats.Initiate Warden":1, 
+  "classFeats.Legendary Monster Hunter":1, "classFeats.Legendary Shot":1, "classFeats.Manifold Edge":1, 
+  "classFeats.Master Monster Hunter":1, "classFeats.Masterful Companion":1, "classFeats.Masterful Warden":1, 
+  "classFeats.Mature Animal Companion":1, "classFeats.Monster Hunter":1, "classFeats.Monster Warden":1, 
+  "classFeats.Peerless Warden":1, "classFeats.Penetrating Shot":1, "classFeats.Perfect Shot":1, 
+  "classFeats.Quick Draw":1, "classFeats.Running Reload":1, "classFeats.Scout's Warning":1, 
+  "classFeats.Second Sting":1, "classFeats.Sense The Unseen":1, "classFeats.Shadow Hunter":1, 
+  "classFeats.Shared Prey":1, "classFeats.Side By Side":1, "classFeats.Skirmish Strike":1, 
+  "classFeats.Snap Shot":1, "classFeats.Specialized Companion":1, "classFeats.Stealthy Companion":1, 
+  "classFeats.Swift Tracker":1, "classFeats.Terrain Master":1, "classFeats.To The Ends Of The Earth":1, 
+  "classFeats.Triple Shot":1, "classFeats.Triple Threat":1, "classFeats.Twin Parry":1, 
   "classFeats.Twin Riposte":1, "classFeats.Twin Takedown":1, "classFeats.Ultimate Skirmisher":1, 
   "classFeats.Warden's Boon":1, "classFeats.Warden's Focus":1, "classFeats.Warden's Guidance":1, 
   "classFeats.Warden's Reload":1, "classFeats.Warden's Step":1, "deity":"Pharasma", "experience":19452, 
@@ -82,7 +88,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Experience</b>: 19452/20000</td>
       <td><b>Level</b>: 20</td>
-      <td><b>Speed</b>: 25</td>
+      <td><b>Speed</b>: 35</td>
       <td><b>Size</b>: Medium</td>
       <td><b>Encumbered/Maximum Bulk:</b> 11/16</td>
     </tr></table>
@@ -92,17 +98,35 @@ var attributes = {
     <tr style="text-align:center">
       <td><i>Attribute Boosts: Attribute Boost (Choose 20 from any)</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Favored Terrain (Plains): +10 Speed</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Hardy Traveler: +1 Encumbered Bulk/+1 Maximum Bulk</i></td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Desert): Moves normally over difficult terrain caused by sand without a need to Balance</td>
+      <td>Favored Terrain (Aquatic): Moves normally through underwater non-magical difficult terrain/Has a 35' swim Speed</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Arctic): Moves normally over non-magical difficult terrain caused by ice and snow without a need to Balance</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Desert): Moves normally over non-magical difficult terrain caused by sand without a need to Balance</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Forest): Moves normally over non-magical difficult terrain caused by forest/Has a 35' climb Speed</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Mountain): Moves normally over non-magical difficult terrain caused by mountains/Has a 35' climb Speed</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Plains): Moves normally over non-magical difficult terrain in plains</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Sky): Moves normally through non-magical difficult terrain in the sky/+10 fly Speed</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Swamp): Moves normally over non-magical greater difficult terrain caused by bogs</td>
+    </tr><tr style="text-align:center">
+      <td>Favored Terrain (Underground): Moves normally over non-magical difficult terrain underground/Has a 35' climb Speed</td>
     </tr><tr style="text-align:center">
       <td>Hardy Traveler: +10' Speed during overland travel</td>
     </tr><tr style="text-align:center">
-      <td>Terrain Master: Can train for 1 hr to make current terrain favored until spending a day away from it</td>
+      <td>Terrain Master: Can train for 1 hr to make current natural terrain favored until away from it for 1 day</td>
     </tr><tr style="text-align:center">
       <td>Ultimate Skirmisher: Moves normally over difficult, greater difficult, and hazardous terrain</td>
     </tr><tr style="text-align:center">
-      <td>Unimpeded Journey: Moves normally over non-magical difficult terrain</td>
+      <td>Unimpeded Journey: Moves normally over difficult terrain and treats greater difficult terrain as difficult terrain</td>
     </tr></table>
 </td>
   </tr></table>
@@ -121,7 +145,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Butchering Lore); Additional Lore (Engineering Lore); Additional Lore (Mercantile Lore); Additional Recollection; Advanced General Training; Advanced Warden; Ancestral Paragon; Animal Companion; Animal Empathy; Assurance (Cooking Lore); Blind-Fight; Camouflage; Companion's Cry; Crossbow Ace; Deadly Aim; Disrupt Prey; Distracting Shot; Double Prey; Double Shot; Experienced Tracker; Far Shot; Favored Prey; Favored Terrain (Desert); Forager; Greater Distracting Shot; Hardy Traveler; Hazard Finder; Heroic Presence; Hunted Shot; Hunter's Aim; Impossible Flurry; Impossible Volley; Improved Twin Riposte; Incredible Companion; Initiate Warden; Legendary Monster Hunter; Legendary Professional; Legendary Shot; Manifold Edge; Master Monster Hunter; Masterful Companion; Masterful Warden; Mature Animal Companion; Monster Hunter; Monster Warden; Multitalented; Natural Medicine; Peerless Warden; Penetrating Shot; Perfect Shot; Quick Draw; Running Reload; Scout's Warning; Second Sting; Sense The Unseen; Shadow Hunter; Shared Prey; Side By Side; Skill Training (Fishing Lore); Skill Training (Mountain Lore); Skirmish Strike; Snap Shot; Specialized Companion; Stealthy Companion; Survey Wildlife; Swift Tracker; Terrain Expertise (Cave); Terrain Expertise (Swamp); Terrain Master; To The Ends Of The Earth; Train Animal; Triple Shot; Twin Parry; Twin Riposte; Twin Takedown; Ultimate Skirmisher; Unconventional Weaponry (Hand Crossbow); Unconventional Weaponry (Light Hammer); Unmistakable Lore; Warden's Boon; Warden's Focus; Warden's Guidance; Warden's Reload; Warden's Step</td>
+        <td><b>Feats</b>: Additional Lore (Butchering Lore); Additional Lore (Engineering Lore); Additional Lore (Mercantile Lore); Additional Recollection; Advanced General Training; Advanced Warden; Ancestral Paragon; Animal Companion; Animal Empathy; Assurance (Cooking Lore); Blind-Fight; Camouflage; Companion's Cry; Crossbow Ace; Deadly Aim; Disrupt Prey; Distracting Shot; Double Prey; Double Shot; Experienced Tracker; Far Shot; Favored Prey; Favored Terrain (Aquatic); Favored Terrain (Arctic); Favored Terrain (Cave); Favored Terrain (Cavern); Favored Terrain (Desert); Favored Terrain (Forest); Favored Terrain (Mountain); Favored Terrain (Plains); Favored Terrain (River); Favored Terrain (Sky); Favored Terrain (Swamp); Favored Terrain (Underground); Forager; Greater Distracting Shot; Hardy Traveler; Hazard Finder; Heroic Presence; Hunted Shot; Hunter's Aim; Impossible Flurry; Impossible Volley; Improved Twin Riposte; Incredible Companion; Initiate Warden; Legendary Monster Hunter; Legendary Professional; Legendary Shot; Manifold Edge; Master Monster Hunter; Masterful Companion; Masterful Warden; Mature Animal Companion; Monster Hunter; Monster Warden; Multitalented; Natural Medicine; Peerless Warden; Penetrating Shot; Perfect Shot; Quick Draw; Running Reload; Scout's Warning; Second Sting; Sense The Unseen; Shadow Hunter; Shared Prey; Side By Side; Skill Training (Fishing Lore); Skill Training (Mountain Lore); Skirmish Strike; Snap Shot; Specialized Companion; Stealthy Companion; Survey Wildlife; Swift Tracker; Terrain Expertise (Cave); Terrain Expertise (Swamp); Terrain Master; To The Ends Of The Earth; Train Animal; Triple Shot; Triple Threat; Twin Parry; Twin Riposte; Twin Takedown; Ultimate Skirmisher; Unconventional Weaponry (Hand Crossbow); Unconventional Weaponry (Light Hammer); Unmistakable Lore; Warden's Boon; Warden's Focus; Warden's Guidance; Warden's Reload; Warden's Step</td>
         <td><b>Ranger Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Strength); Attribute Boosts; Class Trained (Ranger); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Flurry; General Feats; Greater Natural Reflexes; Greater Weapon Specialization; Hunt Prey; Hunter's Edge; Martial Weapon Mastery; Masterful Hunter; Medium Armor Expertise; Medium Armor Mastery; Natural Reflexes; Nature's Edge; Outwit; Perception Expert; Perception Legend; Perception Mastery; Precision; Ranger Expertise; Ranger Feats; Ranger Key Attribute; Ranger Skills; Ranger Weapon Expertise; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Strength; Swift Prey; Trackless Journey; Unimpeded Journey; Warden's Endurance; Weapon Specialization; Will Expertise</td>
         <td><b>Cook Features</b>: Attribute Boost (Choose 1 from Constitution, Intelligence; Choose 1 from any); Seasoned; Skill Trained (Survival; Cooking Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -233,7 +257,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skilled Human: Skill Expert (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Additional Recollection: Successful Recall Knowledge on hunted prey gives a Recall Knowledge check on another creature</td>
+      <td>Additional Recollection: <b>(F)</b> Follows a successful Recall Knowledge on hunted prey with a Recall Knowledge check on another creature</td>
     </tr><tr style="text-align:center">
       <td>Animal Empathy: Can speak with animals</td>
     </tr><tr style="text-align:center">
@@ -253,7 +277,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Master Monster Hunter: Can use Nature to Recall Knowledge to identify any creature</td>
     </tr><tr style="text-align:center">
-      <td>Masterful Hunter: With master proficiency, gains +4 Perception to Seek hunted prey, +4 Survival to Track hunted prey, and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey</td>
+      <td>Masterful Hunter: Master proficiency gives +4 Perception to Seek hunted prey, +4 Survival to Track hunted prey, and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey</td>
     </tr><tr style="text-align:center">
       <td>Natural Medicine: Can use Nature to Treat Wounds; gives a +2 bonus in wilderness</td>
     </tr><tr style="text-align:center">
@@ -351,9 +375,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Crossbow Ace: <b>(1)</b> Uses Create A Diversion or Take Cover, then Interact to reload a crossbow</td>
       </tr><tr style="text-align:center">
-        <td>Deadly Aim: <b>(1)</b> Ranged Strike with a -2 penalty vs. hunted prey inflicts +8 HP damage</td>
+        <td>Deadly Aim: <b>(1)</b> Ranged Strike with a -2 penalty vs. hunted prey inflicts +8 HP</td>
       </tr><tr style="text-align:center">
-        <td>Disrupt Prey: <b>(R)</b> Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action</td>
+        <td>Disrupt Prey: <b>(R)</b> Makes a melee Strike when hunted prey within reach uses a manipulate or move action or leaves a square while moving; critical success disrupts the action</td>
       </tr><tr style="text-align:center">
         <td>Distracting Shot: Critical or double hit on hunted prey inflicts off-guard until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -373,9 +397,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Hunted Shot: <b>(1)</b> Makes 2 ranged Strikes against hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Hunter's Aim: <b>(2)</b> +2 ranged Strike ignores concealment of hunted prey</td>
+        <td>Hunter's Aim: <b>(2)</b> +2 ranged Strike vs. hunted prey ignores concealment</td>
       </tr><tr style="text-align:center">
-        <td>Impossible Flurry: <b>(3)</b> While wielding 2 melee weapons, makes 3 melee Strikes with each at the maximum multiple attack penalty</td>
+        <td>Impossible Flurry: <b>(3)</b> While wielding 2 melee weapons, makes 3 melee Strikes with each, the first as if one attack had already been made this turn and the remainder at the maximum multiple attack penalty</td>
       </tr><tr style="text-align:center">
         <td>Impossible Volley: <b>(3)</b> Ranged Strike with a -2 penalty attacks all foes in a 10' radius</td>
       </tr><tr style="text-align:center">
@@ -387,13 +411,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Masterful Companion: Gives companion Masterful Hunter effects vs. hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Masterful Hunter: Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon/+2 Armor Class vs. a hunt prey target with master armor proficiency/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision</td>
+        <td>Masterful Hunter: Master weapon proficiency negates distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon and reduces multiple attack penalties vs. hunted prey to -2 and -4, or -1 and -2 with an agile weapon/Master armor proficiency gives +2 Armor Class vs. hunted prey/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision</td>
       </tr><tr style="text-align:center">
-        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; success gives +2 attack to self and allies on next attack once per target per day</td>
+        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; success gives +2 attack to self and allies on the next attack once per target per day</td>
       </tr><tr style="text-align:center">
-        <td>Monster Warden: Successful use of Monster Hunter also gives self and allies +2 Armor Class on next attack and +2 on next save vs. hunted prey</td>
+        <td>Monster Warden: Successful use of Monster Hunter also gives self and allies +2 Armor Class on the next attack and +2 on the next save vs. hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Nature's Edge: Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain</td>
+        <td>Nature's Edge: Foes suffer off-guard vs. self from difficult terrain</td>
       </tr><tr style="text-align:center">
         <td>Outwit: +1 Armor Class vs. hunted prey</td>
       </tr><tr style="text-align:center">
@@ -411,7 +435,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Scout's Warning: <b>(F)</b> Gives allies +1 initiative</td>
       </tr><tr style="text-align:center">
-        <td>Second Sting: <b>(1)</b> Failed Strike against hunted prey with a weapon in a hand inflicts the non-dice damage of the weapon in the other</td>
+        <td>Second Sting: <b>(1)</b> Failed Strike vs. hunted prey with a melee weapon inflicts the non-dice damage of the weapon in the other hand</td>
       </tr><tr style="text-align:center">
         <td>Shared Prey: Can share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target</td>
       </tr><tr style="text-align:center">
@@ -427,15 +451,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Triple Shot: Can use Double Shot against 1 target or use 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4</td>
       </tr><tr style="text-align:center">
+        <td>Triple Threat: Can use Hunt Prey with 3 targets, share two-target Hunt Prey effects with 1 ally, or share single-target Hunt Prey effects with 2 allies</td>
+      </tr><tr style="text-align:center">
         <td>Twin Parry: <b>(1)</b> Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Twin Riposte: <b>(R)</b> Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self</td>
       </tr><tr style="text-align:center">
-        <td>Twin Takedown: <b>(1)</b> Strikes with a melee weapon in each hand against hunted prey</td>
+        <td>Twin Takedown: <b>(1)</b> Strikes hunted prey with a melee weapon in each hand</td>
       </tr><tr style="text-align:center">
         <td>Warden's Boon: <b>(1)</b> Shares Hunt Prey and Hunter's Edge benefits with an ally until the end of its next turn</td>
       </tr><tr style="text-align:center">
-        <td>Warden's Reload: <b>(F)</b> Casting a warden spell allows reloading a crossbow</td>
+        <td>Warden's Reload: <b>(F)</b> Casting a warden spell allows reloading a crossbow once per rd</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -457,13 +483,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Will Expertise: Save Expert (Will)</i></td>
       </tr><tr style="text-align:center">
+        <td>Favored Terrain (Arctic): Can survive on 1/10 normal food and water/Unaffected by extreme cold</td>
+      </tr><tr style="text-align:center">
+        <td>Favored Terrain (Desert): Can survive on 1/10 normal food and water/Unaffected by extreme heat</td>
+      </tr><tr style="text-align:center">
         <td>Greater Natural Reflexes: Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
       </tr><tr style="text-align:center">
         <td>Hazard Finder: +1 vs. trap effects</td>
       </tr><tr style="text-align:center">
         <td>Natural Reflexes: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Ultimate Skirmisher: Never triggers movement-triggered traps</td>
+        <td>Ultimate Skirmisher: Never triggers movement-triggered traps or hazards</td>
       </tr><tr style="text-align:center">
         <td>Warden's Endurance: Successes on Fortitude saves are critical successes</td>
       </tr></table>
@@ -475,17 +505,41 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td>    <table id="SpellPart" style="width:100%">
+    <tr style="text-align:center">
+      <td>      <table id="SpellStats" style="width:100%">
+      <tr style="text-align:center">
+        <td><b>Focus Points</b>: 3</td>
+        <td><b>Attack</b>: Primal: +29 (wisdom; master)</td>
+        <td><b>Spell DC</b>: Primal: 39 (wisdom; master)</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Advanced Warden: Knows a choice of advanced warden spell/+1 Focus Points</i></td>
+      <td><i>Advanced Warden: +1 Focus Points</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Masterful Warden: Knows a choice of warden spell/+1 Focus Points</i></td>
+      <td><i>Initiate Warden: Has a focus pool and at least 1 Focus Point/Spell Trained (Primal)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Peerless Warden: Knows a choice of peerless warden spell/+1 Focus Points</i></td>
+      <td><i>Masterful Hunter: Spell Master (Primal)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Masterful Warden: +1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Peerless Warden: +1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Ranger Expertise: Spell Expert (Primal)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Advanced Warden: Knows 1 choice of advanced warden spells</td>
     </tr><tr style="text-align:center">
       <td>Heroic Presence: <b>(1)</b> R30' Generates the effects of a 6th-rank <i>Zealous Conviction</i> on 10 willing creatures once per day</td>
     </tr><tr style="text-align:center">
-      <td>Initiate Warden: Knows a choice of warden spell/Has a focus pool with at least 1 Focus Point</td>
+      <td>Initiate Warden: Knows 1 choice of initial warden spells</td>
+    </tr><tr style="text-align:center">
+      <td>Masterful Warden: Knows 1 choice of master warden spells</td>
+    </tr><tr style="text-align:center">
+      <td>Peerless Warden: Knows 1 choice of peerless warden spells</td>
     </tr><tr style="text-align:center">
       <td>Warden's Focus: Refocus restores all focus points</td>
     </tr></table>
@@ -499,7 +553,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 12 available vs. 62 allocated</td>
+        <td>Class Feats Allocation: 12 available vs. 74 allocated</td>
       </tr><tr style="text-align:center">
         <td>Ranger Hunter's Edge Allocation: 1 available vs. 3 allocated</td>
       </tr></table>
