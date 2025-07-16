@@ -100,31 +100,31 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Fleet: +5 Speed</i></td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Aquatic): Moves normally through underwater difficult terrain/Has a 40' swim Speed</td>
+      <td>Favored Terrain (Aquatic): Moves normally through underwater non-magical difficult terrain/Has a 40' swim Speed</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Arctic): Moves normally over difficult terrain caused by ice and snow without a need to Balance</td>
+      <td>Favored Terrain (Arctic): Moves normally over non-magical difficult terrain caused by ice and snow without a need to Balance</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Desert): Moves normally over difficult terrain caused by sand without a need to Balance</td>
+      <td>Favored Terrain (Desert): Moves normally over non-magical difficult terrain caused by sand without a need to Balance</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Forest): Moves normally over difficult terrain caused by forest/Has a 40' climb Speed</td>
+      <td>Favored Terrain (Forest): Moves normally over non-magical difficult terrain caused by forest/Has a 40' climb Speed</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Mountain): Moves normally over difficult terrain caused by mountains/Has a 40' climb Speed</td>
+      <td>Favored Terrain (Mountain): Moves normally over non-magical difficult terrain caused by mountains/Has a 40' climb Speed</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Plains): Moves normally over difficult terrain in plains</td>
+      <td>Favored Terrain (Plains): Moves normally over non-magical difficult terrain in plains</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Sky): Moves normally through difficult terrain in the sky/+10 fly Speed</td>
+      <td>Favored Terrain (Sky): Moves normally through non-magical difficult terrain in the sky/+10 fly Speed</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Swamp): Moves normally over greater difficult terrain caused by bogs</td>
+      <td>Favored Terrain (Swamp): Moves normally over non-magical greater difficult terrain caused by bogs</td>
     </tr><tr style="text-align:center">
-      <td>Favored Terrain (Underground): Moves normally over difficult terrain underground/Has a 40' climb Speed</td>
+      <td>Favored Terrain (Underground): Moves normally over non-magical difficult terrain underground/Has a 40' climb Speed</td>
     </tr><tr style="text-align:center">
       <td>Feather Step: Can Step into difficult terrain</td>
     </tr><tr style="text-align:center">
-      <td>Terrain Master: Can train for 1 hr to make current terrain favored until spending a day away from it</td>
+      <td>Terrain Master: Can train for 1 hr to make current natural terrain favored until away from it for 1 day</td>
     </tr><tr style="text-align:center">
       <td>Ultimate Skirmisher: Moves normally over difficult, greater difficult, and hazardous terrain</td>
     </tr><tr style="text-align:center">
-      <td>Wild Stride: Moves normally over non-magical difficult terrain</td>
+      <td>Wild Stride: Moves normally over non-magical difficult terrain and treats non-magical greater difficult terrain as difficult terrain</td>
     </tr></table>
 </td>
   </tr></table>
@@ -273,7 +273,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Master Monster Hunter: Can use Nature to Recall Knowledge to identify any creature</td>
     </tr><tr style="text-align:center">
-      <td>Masterful Hunter: With master proficiency, gains +4 Perception to Seek hunted prey, +4 Survival to Track hunted prey, and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey</td>
+      <td>Masterful Hunter: Master proficiency gives +4 Perception to Seek hunted prey, +4 Survival to Track hunted prey, and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey</td>
     </tr><tr style="text-align:center">
       <td>Outwit: +2 Deception, Intimidation, Stealth, and Recall Knowledge checks with hunted prey</td>
     </tr><tr style="text-align:center">
@@ -369,9 +369,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Crossbow Ace: Crossbow inflicts +2 HP damage after using Hunt Prey or reloading, and a simple crossbow also increases its damage die by 1 step, until the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Deadly Aim: <b>(1)</b> Ranged Strike with a -2 penalty vs. hunted prey inflicts +8 HP damage</td>
+        <td>Deadly Aim: <b>(1)</b> Ranged Strike with a -2 penalty vs. hunted prey inflicts +8 HP</td>
       </tr><tr style="text-align:center">
-        <td>Disrupt Prey: <b>(R)</b> Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action</td>
+        <td>Disrupt Prey: <b>(R)</b> Makes a melee Strike when hunted prey within reach uses a manipulate or move action or leaves a square while moving; critical success disrupts the action</td>
       </tr><tr style="text-align:center">
         <td>Distracting Shot: Critical or double hit on hunted prey inflicts flat-footed until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -389,7 +389,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Hunted Shot: <b>(1)</b> Makes 2 ranged Strikes against hunted prey once per rd</td>
       </tr><tr style="text-align:center">
-        <td>Hunter's Aim: <b>(2)</b> +2 ranged Strike ignores concealment of hunted prey</td>
+        <td>Hunter's Aim: <b>(2)</b> +2 ranged Strike vs. hunted prey ignores concealment</td>
       </tr><tr style="text-align:center">
         <td>Impossible Flurry: <b>(3)</b> While wielding 2 melee weapons, makes 3 melee Strikes with each at the maximum multiple attack penalty</td>
       </tr><tr style="text-align:center">
@@ -403,11 +403,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Masterful Companion: Gives companion Masterful Hunter effects vs. hunted prey</td>
       </tr><tr style="text-align:center">
-        <td>Masterful Hunter: Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon/+2 Armor Class vs. a hunt prey target with master armor proficiency/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision</td>
+        <td>Masterful Hunter: Master weapon proficiency negates distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon and reduces multiple attack penalties vs. hunted prey to -2 and -4, or -1 and -2 with an agile weapon/Master armor proficiency gives +2 Armor Class vs. hunted prey/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision</td>
       </tr><tr style="text-align:center">
-        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; success gives +2 attack to self and allies on next attack once per target per day</td>
+        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; success gives +2 attack to self and allies on the next attack once per target per day</td>
       </tr><tr style="text-align:center">
-        <td>Monster Warden: Successful use of Monster Hunter also gives self and allies +2 Armor Class on next attack and +2 on next save vs. hunted prey</td>
+        <td>Monster Warden: Successful use of Monster Hunter also gives self and allies +2 Armor Class on the next attack and +2 on the next save vs. hunted prey</td>
       </tr><tr style="text-align:center">
         <td>Nature's Edge: Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain</td>
       </tr><tr style="text-align:center">
@@ -429,7 +429,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Second Skin: Can rest normally in light or medium armor</td>
       </tr><tr style="text-align:center">
-        <td>Second Sting: <b>(1)</b> Failed Strike against hunted prey with a weapon in a hand inflicts the non-dice damage of the weapon in the other</td>
+        <td>Second Sting: <b>(1)</b> Failed Strike vs. hunted prey with a melee weapon inflicts the non-dice damage of the weapon in the other hand</td>
       </tr><tr style="text-align:center">
         <td>Shared Prey: Can share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target</td>
       </tr><tr style="text-align:center">
@@ -453,7 +453,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Twin Riposte: <b>(R)</b> Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self</td>
       </tr><tr style="text-align:center">
-        <td>Twin Takedown: <b>(1)</b> Strikes with a melee weapon in each hand against hunted prey once per rd</td>
+        <td>Twin Takedown: <b>(1)</b> Strikes hunted prey with a melee weapon in each hand once per rd</td>
       </tr><tr style="text-align:center">
         <td>Warden's Boon: <b>(1)</b> Shares Hunt Prey and Hunter's Edge benefits with an ally until the end of its next turn</td>
       </tr><tr style="text-align:center">
@@ -491,7 +491,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Juggernaut: Successes on Fortitude saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Ultimate Skirmisher: Never triggers movement-triggered traps</td>
+        <td>Ultimate Skirmisher: Never triggers movement-triggered traps or hazards</td>
       </tr></table>
 </td>
     </tr></table>

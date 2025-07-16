@@ -5841,8 +5841,8 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Class Master (Ranger)",' +
-      '"Suffers no distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon with master proficiency%{features.Flurry?\'/Reduces multiple attack penalties vs. hunted prey with master weapon proficiency to -2 and -4, or -1 and -2 with an agile weapon\':\'\'}%{features.Outwit?\'/+2 Armor Class vs. a hunt prey target with master armor proficiency\':\'\'}%{features.Precision?(level>=19?\'/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision\':\'/2nd hit on hunted prey inflicts +1d8 HP precision\'):\'\'}",' +
-      '"With master proficiency, gains +4 Perception to Seek hunted prey%{features.Outwit?\',\':\' and\'} +4 Survival to Track hunted prey%{features.Outwit?\', and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey\':\'\'}"',
+      '"Master weapon proficiency negates distance penalty when attacking hunted prey in the 3rd range increment of a ranged weapon%{features.Flurry?\' and reduces multiple attack penalties vs. hunted prey to -2 and -4, or -1 and -2 with an agile weapon\':\'\'}%{features.Outwit?\'/Master armor proficiency gives +2 Armor Class vs. hunted prey\':\'\'}%{features.Precision?(level>=19?\'/2nd and 3rd hits on hunted prey inflict +2d8 HP and +1d8 HP precision\':\'/2nd hit on hunted prey inflicts +1d8 HP precision\'):\'\'}",' +
+      '"Master proficiency gives +4 Perception to Seek hunted prey%{features.Outwit?\',\':\' and\'} +4 Survival to Track hunted prey%{features.Outwit?\', and +4 Deception, Intimidation, Stealth, and Recall Knowledge checks on hunted prey\':\'\'}"',
 
   // Medium Armor Expertise as above
   "Nature's Edge":
@@ -5871,7 +5871,8 @@ Pathfinder2E.FEATURES = {
     'Note="Has continuous benefits of the Cover Tracks action while moving at full Speed in natural terrain"',
   // Vigilant Senses as above
   'Wild Stride':
-    'Section=ability Note="Moves normally over non-magical difficult terrain"',
+    'Section=ability ' +
+    'Note="Moves normally over non-magical difficult terrain and treats non-magical greater difficult terrain as difficult terrain"',
   // Weapon Mastery as above
   // Weapon Specialization as above
 
@@ -5885,51 +5886,51 @@ Pathfinder2E.FEATURES = {
     'Note="Makes 2 ranged Strikes against hunted prey once per rd"',
   'Monster Hunter':
     'Section=combat ' +
-    'Note="Can use Recall Knowledge as part of Hunt Prey; %{combatNotes.masterMonsterHunter?\'\':\'critical \'}success gives +%{1+(combatNotes.legendaryMonsterHunter||0)} attack to self and allies on next attack once per target per day"',
+    'Note="Can use Recall Knowledge as part of Hunt Prey; %{combatNotes.masterMonsterHunter?\'\':\'critical \'}success gives +%{1+(combatNotes.legendaryMonsterHunter?1:0)} attack to self and allies on the next attack once per target per day"',
   'Twin Takedown':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes with a melee weapon in each hand against hunted prey once per rd"',
+    'Note="Strikes hunted prey with a melee weapon in each hand once per rd"',
   'Favored Terrain (Aquatic)':
     'Section=ability ' +
-    'Note="Moves normally through underwater difficult terrain%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' swim Speed\\":\'\'}"',
+    'Note="Moves normally through underwater non-magical difficult terrain%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' swim Speed\\":\'\'}"',
   'Favored Terrain (Arctic)':
     'Section=ability,save ' +
     'Note=' +
-      '"Moves normally over difficult terrain caused by ice and snow without a need to Balance",' +
+      '"Moves normally over non-magical difficult terrain caused by ice and snow without a need to Balance",' +
       '"Can survive on 1/10 normal food and water/Unaffected by extreme cold"',
   'Favored Terrain (Desert)':
     'Section=ability,save ' +
     'Note=' +
-      '"Moves normally over difficult terrain caused by sand%{$\'features.Wild Stride\'?\' without a need to Balance\':\'\'}",' +
+      '"Moves normally over non-magical difficult terrain caused by sand%{$\'features.Wild Stride\'?\' without a need to Balance\':\'\'}",' +
       '"Can survive on 1/10 normal food and water/Unaffected by extreme heat"',
   'Favored Terrain (Forest)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by forest%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
+    'Note="Moves normally over non-magical difficult terrain caused by forest%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   'Favored Terrain (Mountain)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain caused by mountains%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
+    'Note="Moves normally over non-magical difficult terrain caused by mountains%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   'Favored Terrain (Plains)':
     'Section=ability,ability ' +
     'Note=' +
-      '"Moves normally over difficult terrain in plains",' +
+      '"Moves normally over non-magical difficult terrain in plains",' +
       '"+%V Speed"',
   'Favored Terrain (Sky)':
     'Section=ability ' +
-    'Note="Moves normally through difficult terrain in the sky%{$\'features.Wild Stride\'?\'/+10 fly Speed\':\'\'}"',
+    'Note="Moves normally through non-magical difficult terrain in the sky%{$\'features.Wild Stride\'?\'/+10 fly Speed\':\'\'}"',
   'Favored Terrain (Swamp)':
     'Section=ability ' +
-    'Note="Moves normally over%{$\'features.Wild Stride\'?\' greater\':\'\'} difficult terrain caused by bogs"',
+    'Note="Moves normally over non-magical%{$\'features.Wild Stride\'?\' greater\':\'\'} difficult terrain caused by bogs"',
   'Favored Terrain (Underground)':
     'Section=ability ' +
-    'Note="Moves normally over difficult terrain underground%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
+    'Note="Moves normally over non-magical difficult terrain underground%{$\'features.Wild Stride\'?\'/Has a \' + speed + \\"\' climb Speed\\":\'\'}"',
   "Hunter's Aim":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="+2 ranged Strike ignores concealment of hunted prey"',
+    'Note="+2 ranged Strike vs. hunted prey ignores concealment"',
   'Monster Warden':
     'Section=combat ' +
-    'Note="Successful use of Monster Hunter also gives self and allies +%{1+(combatNotes.legendaryMonsterHunter||0)} Armor Class on next attack and +%{1+(combatNotes.legendaryMonsterHunter||0)} on next save vs. hunted prey"',
+    'Note="Successful use of Monster Hunter also gives self and allies +%{1+(combatNotes.legendaryMonsterHunter?1:0)} Armor Class on the next attack and +%{1+(combatNotes.legendaryMonsterHunter?1:0)} on the next save vs. hunted prey"',
   'Quick Draw':
     'Action=1 ' +
     'Section=combat ' +
@@ -5942,7 +5943,7 @@ Pathfinder2E.FEATURES = {
   'Disrupt Prey':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike on hunted prey within reach that uses a manipulate or move action or leaves a square while moving; success disrupts the action"',
+    'Note="Makes a melee Strike when hunted prey within reach uses a manipulate or move action or leaves a square while moving; critical success disrupts the action"',
   'Far Shot':'Section=combat Note="Doubles ranged weapon increments"',
   'Favored Enemy':
     'Section=combat ' +
@@ -5974,7 +5975,7 @@ Pathfinder2E.FEATURES = {
   'Deadly Aim':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ranged Strike with a -2 penalty vs. hunted prey inflicts +%{level<11?4:level<15?6:8} HP damage"',
+    'Note="Ranged Strike with a -2 penalty vs. hunted prey inflicts +%{level<11?4:level<15?6:8} HP"',
   'Hazard Finder':
     'Section=combat,save,skill ' +
     'Note=' +
@@ -5986,7 +5987,7 @@ Pathfinder2E.FEATURES = {
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
     'Section=ability ' +
-    'Note="Can train for 1 hr to make current terrain favored until spending a day away from it"',
+    'Note="Can train for 1 hr to make current natural terrain favored until away from it for 1 day"',
   "Warden's Boon":
     'Action=1 ' +
     'Section=combat ' +
@@ -6018,7 +6019,7 @@ Pathfinder2E.FEATURES = {
   'Second Sting':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Failed Strike against hunted prey with a weapon in a hand inflicts the non-dice damage of the weapon in the other"',
+    'Note="Failed Strike vs. hunted prey with a melee weapon inflicts the non-dice damage of the weapon in the other hand"',
   // Side By Side as above
   'Sense The Unseen':
     'Action=Reaction ' +
@@ -6076,7 +6077,7 @@ Pathfinder2E.FEATURES = {
     'Section=ability,save ' +
     'Note=' +
       '"Moves normally over difficult, greater difficult, and hazardous terrain",' +
-      '"Never triggers movement-triggered traps"',
+      '"Never triggers movement-triggered traps or hazards"',
 
   // Rogue
   'Debilitating Strike':
@@ -15295,12 +15296,12 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           'features.' + name, '=', '1'
         );
       }
-      matchInfo = n.match(/^Has a focus pool and (at least |\+)?(\d) Focus Points?/);
+      matchInfo = n.match(/^Has a focus pool and (at least |\+)?(\d|%V) Focus Points?/);
       if(matchInfo) {
         rules.defineRule('features.Focus Pool', note, '=', '1');
         rules.defineRule('focusPoints',
           'features.Focus Pool', '=', '0',
-          note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]
+          note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]=='%V' ? 'source' : matchInfo[2]
         );
       }
       matchInfo = n.match(/^Can take (.*) ancestry feats$/);
