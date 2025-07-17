@@ -2309,7 +2309,9 @@ Pathfinder2ERemaster.FEATS = {
   "Guardian's Deflection":Pathfinder2E.FEATS["Guardian's Deflection"],
   'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
-  'Ricochet Stance':'Traits=Fighter,Rogue,Stance Require="level >= 6"',
+  'Ricochet Stance':
+    'Traits=Fighter,Rogue,Stance ' +
+    'Require="levels.Fighter >= 6 || levels.Rogue >= 8"',
   'Shatter Defenses':Pathfinder2E.FEATS['Shatter Defenses'],
   'Shield Warden':
     'Traits=Champion,Fighter Require="level >=6","features.Shield Block"',
@@ -2475,7 +2477,7 @@ Pathfinder2ERemaster.FEATS = {
   'Plant Evidence':'Traits=Rogue Require="features.Pickpocket"',
   'Trap Finder':
     Pathfinder2E.FEATS['Trap Finder']
-    .replace('Traits=', 'Traits=Investigator,'),
+    .replace('Traits=', 'Traits=Visual,Investigator,'),
   'Tumble Behind':'Traits=Rogue,Swashbuckler',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
   "You're Next":
@@ -2486,7 +2488,7 @@ Pathfinder2ERemaster.FEATS = {
   'Distracting Feint':Pathfinder2E.FEATS['Distracting Feint'],
   'Mobility':Pathfinder2E.FEATS.Mobility,
   // Quick Draw as above
-  'Strong Arm':'Traits=Rogue',
+  'Strong Arm':'Traits=Rogue Require="level >= 2"',
   'Unbalancing Blow':Pathfinder2E.FEATS['Unbalancing Blow'],
   'Underhanded Assault':'Traits=Rogue Require="level >= 2","rank.Stealth >= 1"',
   'Dread Striker':Pathfinder2E.FEATS['Dread Striker'],
@@ -2500,6 +2502,7 @@ Pathfinder2ERemaster.FEATS = {
   // Scout's Warning as above
   'The Harder They Fall':'Traits=Rogue Require="level >= 4"',
   'Twin Distraction':'Traits=Rogue Require="level >= 4","features.Twin Feint"',
+  // TODO requires "sneak attack 2d6"
   'Analyze Weakness':
     'Traits=Rogue Require="level >= 6","features.Sneak Attack"',
   'Anticipate Ambush':
@@ -2553,7 +2556,7 @@ Pathfinder2ERemaster.FEATS = {
   'Instant Opening':Pathfinder2E.FEATS['Instant Opening'],
   'Leave An Opening':Pathfinder2E.FEATS['Leave An Opening'],
   // Sense The Unseen as above
-  'Stay Down!':'Traits=Rogue Require="level >= 12","rank.Athletics >= 3"',
+  'Stay Down!':'Traits=Rogue Require="level >= 14","rank.Athletics >= 3"',
   'Blank Slate':Pathfinder2E.FEATS['Blank Slate'],
   'Cloud Step':Pathfinder2E.FEATS['Cloud Step'],
   'Cognitive Loophole':Pathfinder2E.FEATS['Cognitive Loophole'],
@@ -7084,17 +7087,21 @@ Pathfinder2ERemaster.FEATURES = {
   'Agile Mind':Pathfinder2E.FEATURES['Slippery Mind'],
   'Debilitating Strike':
     Pathfinder2E.FEATURES['Debilitating Strike']
-    .replace('a flat-footed', 'an off-guard'),
+    .replace('a flat-footed', 'an off-guard')
+    .replaceAll('flat-footed', 'off-guard')
+    .replace(' from: ', " from: %{combatNotes.methodicalDebilitations?'prevent flanking; negate Armor Class bonus from shields, lesser cover, and standard cover; ':''}%{combatNotes.bloodyDebilitation?'+3d6 HP persistent bleed; ':''}"),
   'Deny Advantage':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
+    'Note="Does not suffer off-guard vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
   'Double Debilitation':Pathfinder2E.FEATURES['Double Debilitation'],
   'Evasive Reflexes':Pathfinder2E.FEATURES.Evasion,
   'Greater Rogue Reflexes':Pathfinder2E.FEATURES['Improved Evasion'],
   // Greater Weapon Specialization as above
   // Light Armor Expertise as above
   'Light Armor Mastery':Pathfinder2E.FEATURES['Light Armor Mastery'],
-  'Master Strike':Pathfinder2E.FEATURES['Master Strike'],
+  'Master Strike':
+    Pathfinder2E.FEATURES['Master Strike']
+    .replace('a flat-footed', 'an off-guard'),
   // Changed effects
   'Master Tricks':
     'Section=combat ' +
@@ -7103,7 +7110,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill Trained (Society; Choose 1 from Arcana, Nature, Occultism, Religion)",' +
-      '"Successful Recall Knowledge to identify a creature makes it off-guard against self attacks for 1 rd, or for 1 min on a critical success"',
+      '"Successful Recall Knowledge to identify a creature inflicts off-guard vs. self attacks until the start of the next turn, or for 1 min on a critical success"',
   // Perception Mastery as above
   // Perception Legend as above
   'Rogue Expertise':Pathfinder2E.FEATURES['Rogue Expertise'],
@@ -7117,15 +7124,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat,skill ' +
     'Note=' +
       '"Defense %V (Medium Armor)",' +
-      '"Can use any weapon, other than simple or martial weapons that deal greater than d8 or d6 damage, to sneak attack/Critical hits with these weapons on an off-guard foe inflict their critical specialization effect",' +
+      '"Can sneak attack using any weapon other than simple or martial weapons that deal greater than d8 or d6 damage, and critical hits with one of these weapons on an off-guard foe inflict its critical specialization effect",' +
       '"Skill Trained (Intimidation)"',
   // Changed effects
   'Scoundrel':
     'Section=combat,skill ' +
     'Note=' +
-      '"Successful Feint inflicts off-guard on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn/Successful Feint with an agile or finesse weapon gives a free Step",' +
+      '"Successful Feint inflicts off-guard vs. self attacks, or vs. all attacks on a critical success, until the end of the next turn/Can take a free Step after a successful Feint with an agile or finesse weapon",' +
       '"Skill Trained (Deception; Diplomacy)"',
-  'Sneak Attack':Pathfinder2E.FEATURES['Sneak Attack'],
+  'Sneak Attack':
+    Pathfinder2E.FEATURES['Sneak Attack']
+    .replace('flat-footed', 'off-guard'),
   'Surprise Attack':
     Pathfinder2E.FEATURES['Surprise Attack']
     .replace('flat-footed', 'off-guard'),
@@ -7136,11 +7145,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"Critical hits with an unarmed attack or an agile or finesse weapon vs. an off-guard foe inflict its critical specialization effect"',
+      '"Critical hits with an agile or finesse unarmed attack or weapon vs. an off-guard foe inflict its critical specialization effect"',
+
   'Nimble Dodge':Pathfinder2E.FEATURES['Nimble Dodge'],
   'Overextending Feint':
     'Section=combat ' +
-    'Note="Successful Feint inflicts -2 on target\'s next attack on self, or on all attacks against self for 1 rd with a critical success"',
+    'Note="Successful Feint inflicts -2 on target\'s next attack vs. self, or on all attacks vs. self with a critical success, until the end of its next rd"',
   'Plant Evidence':
     'Action=1 ' +
     'Section=skill ' +
@@ -7148,14 +7158,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Trap Finder':Pathfinder2E.FEATURES['Trap Finder'],
   'Tumble Behind':
     'Section=combat ' +
-    'Note="Successful Tumble Through inflicts off-guard against next self attack before the end of the turn"',
-  'Twin Feint':Pathfinder2E.FEATURES['Twin Feint'],
-  "You're Next":Pathfinder2E.FEATURES["You're Next"],
+    'Note="Successful Tumble Through inflicts off-guard against the next self attack until the end of the turn"',
+  'Twin Feint':
+    Pathfinder2E.FEATURES['Twin Feint']
+    .replace('flat-footed', 'off-guard'),
+  "You're Next":
+    Pathfinder2E.FEATURES["You're Next"]
+    .replace('another', "another within 60'"),
   'Brutal Beating':Pathfinder2E.FEATURES['Brutal Beating'],
   'Clever Gambit':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Follows a critical hit on an identified creature with a Step or Stride that does not provoke a target Reaction"',
+    'Note="Follows a critical hit on an identified creature with a Step or Stride that does not provoke target reactions"',
   'Distracting Feint':
     Pathfinder2E.FEATURES['Distracting Feint']
     .replace('flat-footed', 'off-guard'),
@@ -7163,7 +7177,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Quick Draw as above
   'Strong Arm':'Section=combat Note="+10 thrown weapon range"',
   'Unbalancing Blow':
-    Pathfinder2E.FEATURES['Brutal Finish']
+    Pathfinder2E.FEATURES['Unbalancing Blow']
     .replace('flat-footed', 'off-guard'),
   'Underhanded Assault':
     'Action=2 ' +
@@ -7175,35 +7189,35 @@ Pathfinder2ERemaster.FEATURES = {
   'Head Stomp':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Success unarmed melee Strike against a prone foe inflicts stupefied 1 and off-guard, or stupefied 2 on a critical hit, until the end of the next turn"',
+    'Note="Successful unarmed melee Strike vs. a prone foe inflicts stupefied 1 and off-guard, or stupefied 2 and off-guard on a critical hit, until the end of the next turn"',
   'Mug':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful sneak attack against an adjacent foe allows a Steal attempt"',
+    'Note="Successful sneak attack vs. an adjacent foe allows a Steal attempt"',
   'Poison Weapon':
     Pathfinder2E.FEATURES['Poison Weapon']
     .replace(/that lasts[^"]*/, 'to a weapon'),
   'Predictable!':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Sense Motive vs. Deception gives +1 AC and next save vs. target for 1 rd, or +2 on a critical success or -1 on a critical failure"',
+    'Note="Successful Sense Motive vs. Deception gives +1 AC and next save vs. target until the start of the next turn, or +2 on a critical success or -1 on a critical failure"',
   'Reactive Pursuit':Pathfinder2E.FEATURES['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATURES.Sabotage,
   "Scoundrel's Surprise":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Removing disguise inflicts off-guard against next attack on unaware foes until the end of the turn"',
+    'Note="Removing a disguise inflicts off-guard vs. the next self attack on unaware foes until the end of the turn"',
   // Scout's Warning as above
   'The Harder They Fall':
     'Section=combat ' +
     'Note="Successful Trip inflicts 1d6 HP bludgeoning, plus sneak attack damage on a critical success"',
   'Twin Distraction':
     'Section=combat ' +
-    'Note="Successful Twin Feint attacks with both weapons inflict stupefied 1 until the end of next turn (<b>save Will</b> negates)"',
+    'Note="Successful Twin Feint attacks with both weapons inflict stupefied 1 until the end of the next turn (<b>save Will</b> negates)"',
   'Analyze Weakness':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Next sneak attack on the identified target inflicts +%{level<11?2:level<17?3:4}d6 HP precision"',
+    'Note="Next sneak attack on an identified target inflicts +%{level<11?2:level<17?3:4}d6 HP precision"',
   'Anticipate Ambush':
     'Section=combat ' +
     'Note="Moving at half Speed during travel allows using Perception for initiative and inflicts -2 on foes using Stealth for initiative"',
@@ -7218,21 +7232,23 @@ Pathfinder2ERemaster.FEATURES = {
   'Shove Down':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Can follow a Shove with a Trip even when the foe is not in reach"',
+    'Note="Follows a Shove with a Trip; can be used even when the foe is no longer within reach"',
   // Skirmish Strike as above
   'Sly Disarm':
     'Section=combat ' +
-    'Note="Can use Thievery to Disarm; success inflicts off-guard against next self attack before the end of the turn"',
-  'Twist The Knife':Pathfinder2E.FEATURES['Twist The Knife'],
+    'Note="Can use Thievery to Disarm; success inflicts off-guard against the next self attack before the end of the turn"',
+  'Twist The Knife':
+    Pathfinder2E.FEATURES['Twist The Knife']
+    .replace('flat-footed', 'off-guard'),
   'Watch Your Back':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Intimidation vs. Will gives target +2 Perception and =2 Will saves vs. self for 1 min"',
+    'Note="R30\' Successful Intimidation vs. Will gives target +2 Perception vs. self and inflicts -2 Will saves vs. fear for 1 min"',
   // Blind-Fight as above
   'Bullseye':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Net Strike with a thrown weapon before the end of the turn gains +1 attack, ignores target concealment, and reduces target cover"',
+    'Note="Next Strike with a thrown weapon before the end of the turn gains +1 attack, ignores target concealment, and reduces target cover"',
   'Delay Trap':
     Pathfinder2E.FEATURES['Delay Trap']
     .replace('+5 DC ', '').replace('flat-footed', 'off-guard'),
@@ -7240,7 +7256,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Inspired Stratagem':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Previously-briefed ally can use the better of 2 attack or skill rolls once per day"',
+    'Note="Five previously-briefed allies can use the better of 2 attack or skill rolls once per day"',
   'Nimble Roll':Pathfinder2E.FEATURES['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATURES['Opportune Backstab'],
   'Predictive Purchase':
@@ -7258,29 +7274,27 @@ Pathfinder2ERemaster.FEATURES = {
   'Tactical Entry':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Strides without provoking Reactions after rolling Stealth for initiative"',
+    'Note="Strides without provoking reactions after rolling Stealth for initiative"',
   'Methodical Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to prevent flanking or to negate AC bonus from shields, lesser cover, and standard cover"',
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Nimble Strike':
     'Section=combat ' +
-    'Note="Can make a Strike during Nimble Dodge that suffers no multiple attack penalty"',
+    'Note="Can make a Strike during Nimble Dodge, unaffected by any multiple attack penalty"',
   'Precise Debilitations':
     Pathfinder2E.FEATURES['Precise Debilitations']
     .replace('flat-footed', 'off-guard'),
   'Sneak Adept':Pathfinder2E.FEATURES['Sneak Savant'],
   'Tactical Debilitations':Pathfinder2E.FEATURES['Tactical Debilitations'],
   'Vicious Debilitations':Pathfinder2E.FEATURES['Vicious Debilitations'],
-  'Bloody Debilitations':
-    'Section=combat ' +
-    'Note="Can use Debilitating Strike to inflict 3d6 HP persistent bleed"',
+  'Bloody Debilitation':
+    'Section=combat Note="Has increased Debilitating Strike effects"',
   'Critical Debilitation':Pathfinder2E.FEATURES['Critical Debilitation'],
   'Fantastic Leap':Pathfinder2E.FEATURES['Fantastic Leap'],
   'Felling Shot':Pathfinder2E.FEATURES['Felling Shot'],
   'Preparation':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives 1 additional rogue reaction that can be used before the next turn"',
+    'Note="Gives 1 additional rogue reaction that can be used before the start of the next turn"',
   'Reactive Interference':Pathfinder2E.FEATURES['Reactive Interference'],
   'Ricochet Feint':
     'Section=combat ' +
@@ -7298,8 +7312,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Stay Down!':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful Athletics vs. Fortitude negates foe Stand action; critical success prevents Standing for 1 rd"',
-  'Blank Slate':Pathfinder2E.FEATURES['Blank Slate'],
+    'Note="Successful Athletics vs. Fortitude negates the triggering Stand action; critical success prevents the target from Standing until its next turn"',
+  'Blank Slate':
+    Pathfinder2E.FEATURES['Blank Slate']
+    .replace('level', 'rank'),
   'Cloud Step':Pathfinder2E.FEATURES['Cloud Step'],
   'Cognitive Loophole':Pathfinder2E.FEATURES['Cognitive Loophole'],
   'Dispelling Slice':Pathfinder2E.FEATURES['Dispelling Slice'],
@@ -7314,11 +7330,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Implausible Infiltration':Pathfinder2E.FEATURES['Implausible Infiltration'],
   'Implausible Purchase':
     'Section=feature ' +
-    'Note="Can use Prescient Planner at will with a single action, and can use it to retrieve a level %{level-6} consumable"',
+    'Note="Can use Prescient Planner at will with 1 action, and can use it to retrieve a level %{level-6} consumable 5 times per day"',
   // Changed effects
   'Powerful Sneak':
     'Section=combat ' +
-    'Note="Sneak attack ignores precision immunity and resistance, and damage dice on a designated target after a Sneak have a minimum roll of 3"',
+    'Note="Sneak attack ignores precision immunity and resistance, and sneak attack damage dice on the first attack before the end of the next turn after a Sneak have a minimum roll of 3"',
   'Hidden Paragon':Pathfinder2E.FEATURES['Hidden Paragon'],
   'Impossible Striker':Pathfinder2E.FEATURES['Impossible Striker'],
   'Reactive Distraction':Pathfinder2E.FEATURES['Reactive Distraction'],
@@ -13780,6 +13796,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'featureNotes.rangerKeyAttribute', '=', '1'
     );
   } else if(name == 'Rogue') {
+    rules.defineRule('combatNotes.debilitatingStrike',
+      'combatNotes.bloodyDebilitation', '=', 'null', // italics
+      'combatNotes.methodicalDebilitations', '=', 'null' // italics
+    );
     rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
       'featureNotes.rogueKeyAttribute', '=', '1'
     );
