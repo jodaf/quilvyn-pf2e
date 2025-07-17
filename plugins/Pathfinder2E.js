@@ -6083,7 +6083,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts %{combatNotes.doubleDebilitation?\'2 choices\':\'a choice\'} of %{combatNotes.preciseDebilitations?\'+2d6 HP precision, flat-footed, \':\'\'}%{combatNotes.viciousDebilitations?\'weakness 5 to a choice of damage type, clumsy 1, \':\'\'}%{combatNotes.tacticalDebilitations?\'prevention of reactions, prevention of flanking, \':\'\'}%{combatNotes.criticalDebilitation?\'slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1; critical success negates; critical failure inflicts paralyzed), \':\'\'}-10 Speed or enfeebled 1 until the end of the next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts %{combatNotes.doubleDebilitation?\'2 choices\':\'a choice\'} from: %{combatNotes.preciseDebilitations?\'+2d6 HP precision; flat-footed; \':\'\'}%{combatNotes.viciousDebilitations?\'weakness 5 to a choice of damage type; clumsy 1; \':\'\'}%{combatNotes.tacticalDebilitations?\'prevent reactions; prevent flanking; \':\'\'}%{combatNotes.criticalDebilitation?\'slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1, critical success negates, and critical failure inflicts paralyzed); \':\'\'}-10 Speed unti the end of the next turn; enfeebled 1 until the end of the next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat Note="Has increased Debilitating Strike effects"',
@@ -6148,13 +6148,13 @@ Pathfinder2E.FEATURES = {
   'Nimble Dodge':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives +2 Armor Class against an attack when unencumbered"',
+    'Note="Gives +2 Armor Class against the triggering attack when unencumbered"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
-      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Searches to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery",' +
+      '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps",' +
       '"+%{rank.Thievery>=3?2:1} vs. traps",' +
-      '"+%{rank.Thievery>=3?2:1} Armor Class vs. traps"',
+      '"Gives +%{rank.Thievery>=3?2:1} Perception and automatic Searches to find traps and allows disabling traps that require %{rank.Thievery>=3 ? \'legendary\' : \'master\'} proficiency in Thievery"',
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
@@ -6167,7 +6167,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Critical successes on Strikes inflict frightened 1"',
   'Distracting Feint':
     'Section=combat ' +
-    'Note="Successful Feints inflict -2 Perception and Reflex saves while target remains flat-footed"',
+    'Note="Successful Feints inflict -2 Perception and Reflex saves while the target remains flat-footed"',
   'Minor Magic (Arcane)':
     'Section=magic,magic ' +
     'Note=' +
@@ -6209,7 +6209,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"' + Pathfinder2E.ACTION_MARKS[1] + ' Applies a poison that lasts until the end of the next turn to a piercing or slashing weapon",' +
-      '"Can prepare %{level} poisons each day that inflict 1d4 HP poison"',
+      '"Can prepare %{level} poisons that inflict 1d4 HP poison during daily prep"',
   'Reactive Pursuit':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6234,7 +6234,7 @@ Pathfinder2E.FEATURES = {
   'Delay Trap':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Successful +5 DC Thievery check delays or disables trap activation; critical failure inflicts flat-footed for 1 rd"',
+    'Note="Successful +5 DC Thievery check delays or disables triggering trap activation; critical failure inflicts flat-footed until the start of the next turn"',
   'Improved Poison Weapon':
     'Section=combat ' +
     'Note="Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison"',
@@ -6298,7 +6298,7 @@ Pathfinder2E.FEATURES = {
   'Cognitive Loophole':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Suppresses a mental effect until the end of the next turn"',
+    'Note="At the end of a turn, suppresses a mental effect affecting self until the end of the next turn"',
   'Dispelling Slice':
     'Action=2 ' +
     'Section=combat ' +
@@ -6327,7 +6327,7 @@ Pathfinder2E.FEATURES = {
   'Reactive Distraction':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Redirects an effect or attack from self to Perfect Distraction decoy"',
+    'Note="Uses Perfect Distraction to redirect the triggering effect or attack on self to a decoy"',
 
   // Sorcerer
   // Alertness as above
