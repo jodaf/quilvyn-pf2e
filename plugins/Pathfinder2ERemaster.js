@@ -2597,7 +2597,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Manipulate,Metamagic', 'Spellshape')
     .replace('Traits=', 'Traits=Witch,'),
   // Enhanced Familiar as above
-  "Familiar's Language":'Traits=Witch Require="level >= 2"',
+  "Familiar's Language":'Traits=Witch Require="level >= 2","features.Familiar"',
   'Rites Of Convocation':'Traits=Witch Require="level >= 4"',
   'Sympathetic Strike':
     'Traits=Witch Require="level >= 4","features.Witch\'s Armaments"',
@@ -7345,74 +7345,70 @@ Pathfinder2ERemaster.FEATURES = {
   "Faith's Flamekeeper":
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)",' +
-      // TODO familiar knows Command
-      '"Knows the Stoke The Heart divine cantrip",' +
+      '"Spell Trained (Divine)/Knows the Stoke The Heart and Command divine spells",' +
+      '"Casting or Sustaining a hex gives a target within 15\' of familiar %{2+level//2} temporary Hit Points until the start of the next turn",' +
       '"Skill Trained (Religion)"',
   'Familiar':Pathfinder2E.FEATURES.Familiar,
-  'Hex Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
+  'Hex Spells':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Has a focus pool and 1 Focus Point",' +
+      '"Knows a choice of the <i>Patron\'s Puppet</i> and <i>Phase Familiar</i> spells"',
   // Legendary Spellcaster as above
   'Magical Fortitude':'Section=save Note="Save Expert (Fortitude)"',
   // Master Spellcaster as above
   'Patron':'Section=feature Note="1 selection"',
-  "Patron's Gift":'Section=magic Note="Has 1 10th-level spell slot"',
+  "Patron's Gift":'Section=magic Note="Has 1 10th-rank spell slot"',
   // Perception Expertise as above
   // Reflex Expertise as above
   'Silence In Snow':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)",' +
-      // TODO familiar knows Gust Of Wind
-      '"Knows the Clinging Ice primal cantrip",' +
+      '"Spell Trained (Primal)/Knows the Clinging Ice and Gust Of Wind primal spells",' +
+      '"Casting or Sustaining a hex allows ice to inflict difficult terrain on a 5\' square centered on familiar until the start of the next turn",' +
       '"Skill Trained (Nature)"',
   'Spinner Of Threads':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)",' +
-      // TODO familiar knows Gust Of Wind
-      '"Knows the Nudge Fate occult cantrip",' +
+      '"Spell Trained (Occult)/Knows the Nudge Fate and Sure Strike occult spells",' +
+      '"Casting or Sustaining a hex gives a choice of +1 or -1 Armor Class to 1 target within 15\' of familiar until the start of the next turn",' +
       '"Skill Trained (Occultism)"',
   'Starless Shadow':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)",' +
-      // TODO familiar knows Fear
-      '"Knows the Shroud Of Night occult cantrip",' +
+      '"Spell Trained (Occult)/Knows the Shroud Of Night and Fear occult spells",' +
+      '"Casting or Sustaining a hex inflicts frightened 1 on a target unaware of adjacent familiar",' +
       '"Skill Trained (Occultism)"',
   'The Inscribed One':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Arcane)",' +
-      // TODO familiar knows Runic Weapon
-      '"Knows the Discern Secrets arcane spell",' +
+      '"Spell Trained (Arcane)/Knows the Discern Secrets and Runic Weapon arcane spells",' +
+      '"Casting or Sustaining a hex allows familiar to provide flanking until the start of the next turn",' +
       '"Skill Trained (Arcana)"',
   'The Resentment':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)",' +
-      // TODO familiar knows Enfeeble
-      '"Knows the Evil Eye occult cantrip",' +
+      '"Spell Trained (Occult)/Knows the Evil Eye and Enfeeble occult spells",' +
+      '"Casting or Sustaining a hex allows prolonging by 1 rd a negative condition affecting a target within 15\' of familiar",' +
       '"Skill Trained (Occultism)"',
   // Weapon Expertise as above
   // Weapon Specialization as above
   'Wilding Steward':
     'Section=magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)",' +
-      // TODO familiar knows Summon Animal or Summon Plant Or Fungus
-      '"Knows the Wilding Word primal cantrip",' +
+      '"Spell Trained (Primal)/Knows the Wilding Word primal cantrip",' +
+      '"Knows a choice of the Summon Animal and Summon Plant Or Fungus primal spells/Casting or Sustaining a hex gives familiar a choice of imprecise scent, tremorsense, and wavesense with a 60\' range until the start of the next turn, allowing it to immediately Point Out as a free action",' +
       '"Skill Trained (Nature)"',
   'Will Of The Pupil':Pathfinder2E.FEATURES.Resolve,
   'Witch Feats':'Section=feature Note="%V selections"',
   'Witch Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Witch Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
-  // TODO: Patron familiar gift
 
-  'Cackle':'Section=magic Note="Knows the Cackle hex"',
+  'Cackle':'Section=magic Note="Knows the Cackle %V spell"',
   'Cauldron':
     'Section=skill ' +
-    'Note="Knows the formulas for %{level//2+1>?4} common oils or potions and can use Craft to create %{(rank.Arcane||rank.Divine||rank.Occult||rank.Primal||0<3?1:rank.Arcane||rank.Divine||rank.Occult||rank.Primal<4?2:3)*($\'features.Double, Double\'?2:1)} oils or potions during daily prep"',
+    'Note="Knows the formulas for %{level//2+3>?4} common oils or potions and can use Craft to create %{((rank.Arcane||rank.Divine||rank.Occult||rank.Primal||0)<3?1:(rank.Arcane||rank.Divine||rank.Occult||rank.Primal)<4?2:3)*($\'features.Double, Double\'?2:1)} oils or potions during daily prep"',
   'Counterspell':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -7426,20 +7422,14 @@ Pathfinder2ERemaster.FEATURES = {
   "Witch's Armaments (Living Hair)":
     'Section=combat Note="Hair inflicts 1d4 bludgeoning"',
   'Basic Lesson (Dreams)':
-    'Section=magic ' +
-    'Note="Knows the Veil Of Dreams hex, and familiar knows the Sleep spell"',
+    'Section=magic Note="Knows the Veil Of Dreams %V hex"',
   'Basic Lesson (Elements)':
-    'Section=magic ' +
-    'Note="Knows the Elemental Betrayal hex, and familiar knows a choice of the Breath Fire, Gust Of Wind, Hydraulic Push, or Pummeling Rubble spells"',
-  'Basic Lesson (Life)':
-    'Section=magic ' +
-    'Note="Knows the Life Boost hex, and familiar knows the Spirit Link spell"',
+    'Section=magic Note="Knows the Elemental Betrayal %V hex"',
+  'Basic Lesson (Life)': 'Section=magic Note="Knows the Life Boost %V hex"',
   'Basic Lesson (Protection)':
-    'Section=magic ' +
-    'Note="Knows the Blood Ward hex, and familiar knows the Mystic Armor spell"',
+    'Section=magic Note="Knows the Blood Ward %V hex"',
   'Basic Lesson (Vengeance)':
-    'Section=magic ' +
-    'Note="Knows the Needle Of Vengeance hex, and familiar knows the Phantom Pain spell"',
+    'Section=magic Note="Knows the Needle Of Vengeance %V hex"',
   // Cantrip Expansion as above
   // Changed effects
   'Conceal Spell':
@@ -7456,56 +7446,53 @@ Pathfinder2ERemaster.FEATURES = {
   'Sympathetic Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Subsequent hit with a Witch\'s Armament weapon inflicts -1 saves vs. self hexes for 1 rd, or -2 on a critical hit"',
+    'Note="Subsequent hit with a Witch\'s Armament weapon inflicts -1 saves vs. self hexes, or -2 on a critical hit, until the start of the next turn once per rd"',
   'Ceremonial Knife':
     'Section=feature ' +
     'Note="Can prepare a knife to contain a spell of up to rank %{level//2-2>?1} during daily prep"',
   'Greater Lesson (Mischief)':
-    'Section=magic ' +
-    'Note="Knows the Deceiver\'s Cloak hex, and familiar knows the Mad Monkeys spell"',
+    'Section=magic Note="Knows the Deceiver\'s Cloak %V hex"',
   'Greater Lesson (Shadow)':
-    'Section=magic ' +
-    'Note="Knows the Malicious Shadow hex, and familiar knows the Chilling Darkness spell"',
+    'Section=magic Note="Knows the Malicious Shadow %V hex"',
   'Greater Lesson (Snow)':
-    'Section=magic ' +
-    'Note="Knows the Personal Blizzard hex, and familiar knows the Wall Of Wind spell"',
+    'Section=magic Note="Knows the Personal Blizzard %V hex"',
   // Steady Spellcasting as above
   "Witch's Charge":
     'Section=magic ' +
-    'Note="Knows the direction, distance, and state of %{$\\"features.Witch\'s Communion\\"?\'2 willing targets\':\'a willing target\'} designated during daily prep, and can cast R30\' touch spells on that target"',
+    'Note="Knows the direction, distance, and state of %{$\\"features.Witch\'s Communion\\"?intelligenceModifier+\' willing targets\':\'a willing target\'} designated during daily prep, and can cast R30\' touch spells on them"',
   'Incredible Familiar':
     'Section=feature Note="Can select 6 familiar or master abilities each day"',
   'Murksight':
     'Section=combat ' +
     'Note="Suffers no ranged attack or Perception penalties from non-magical precipitation, and requires no flat check to attack a target concealed by it"',
   'Spirit Familiar':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Familiar can use 2 actions to leave its body, fly 20\' to a foe, inflict %{(level-1)//2*2}d6 HP spirit (<b>save basic Will</b>), fly 30\' to an ally, and restore HP equal to half the damage dealt once per 10 min"',
+    'Note="Familiar leaves its body, flies 20\' to a foe, inflicts %{(level-1)//2*2}d6 HP spirit (<b>save basic Will</b>), flies 30\' to an ally, and restores HP equal to half the damage dealt once per 10 min"',
   'Stitched Familiar':
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Familiar can use 2 actions for a R30\' attack that inflicts %{(level-1)//2*2}d6 HP slashing and immobilized for 1 rd (<b>save basic Reflex</b> also negates immobilized) once per 10 min"',
+    'Note="Familiar makes a R30\' attack that inflicts %{(level-1)//2*2}d6 HP slashing and immobilized for 1 rd (<b>save basic Reflex</b> also negates immobilized) once per 10 min"',
   "Witch's Bottle":
     'Section=magic ' +
-    'Note="Can spend 10 min and 1 Focus Point to create a potion that inflicts a hex on the imbiber"',
+    'Note="Can spend 10 min and 1 Focus Point to create a potion that inflicts a hex on the imbiber, lasting until next daily prep"',
   'Double, Double':
     'Section=skill Note="Has increased Cauldron effects"',
   'Major Lesson (Death)':
-    'Section=magic ' +
-    'Note="Knows the Curse Of Death hex, and familiar knows the Raise Dead spell"',
+    'Section=magic Note="Knows the Curse Of Death %V hex"',
   'Major Lesson (Renewal)':
-    'Section=magic ' +
-    'Note="Knows the Restorative Moment hex, and familiar knows the Field Of Life spell"',
+    'Section=magic Note="Knows the Restorative Moment %V hex"',
   // Quickened Casting as above
   "Witch's Communion":
     'Section=magic Note="Has increased Witch\'s Charge effects"',
   'Coven Spell':
-    'Action=1 ' +
+    'Action=Reaction ' +
     'Section=magic ' +
     'Note="Gives the triggering ally spell a damage bonus equal to its rank or a spellshape effect"',
   'Hex Focus':'Section=magic Note="Refocus restores all focus points"',
   "Witch's Broom":
     'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10\' Speed, during daily prep"',
-  // Reflect Spell as above
+  'Reflect Spell':Pathfinder2E.FEATURES['Reflect Spell'],
   'Rites Of Transfiguration':
     'Section=magic ' +
     'Note="Can use a 10-min process to replace a prepared spell of at least 6th rank with <i>Cursed Metamorphosis</i>"',
@@ -7515,20 +7502,21 @@ Pathfinder2ERemaster.FEATURES = {
   'Siphon Power':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Can cast a spell from familiar once per day"',
+    'Note="Can cast a spell from familiar without ising a spell slot once per day"',
   'Split Hex':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent targeted hex, cast at 2 ranks lower, affects a second target"',
+    'Note="Subsequent single-target hex, reduced in rank by 2, affects a second target"',
   "Patron's Claim":
+    'Action=2 ' +
     'Section=combat ' +
-    'Note="Familiar can spend 2 actions for a R30\' attack that inflicts 10d10 HP spirit and drained 2 (<b>save basic Fortitude</b> also negates drained; critical failure inflicts drained 4) and restores 1 Focus Point to self once per hr"',
+    'Note="Familiar makes a R30\' attack that inflicts 10d10 HP spirit and drained 2 (<b>save basic Fortitude</b> also negates drained; critical failure inflicts drained 4) and restores 1 Focus Point to self once per hr"',
   'Hex Master':
     'Section=magic ' +
     'Note="Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes"',
   "Patron's Truth":'Section=magic Note="+1 10th rank spell slot"',
   "Witch's Hut":
-    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with %{armorClass} AC, +%{perception} Perception, 60\' Speed 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
+    'Section=magic Note="1-day ritual creates an animated Huge or smaller dwelling with Armor Class %{armorClass}, +%{perception} Perception, 60\' Speed, 150 HP, and Hardness 10 that can guard, hide, teleport, lock, and move"',
 
   // Wizard
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
@@ -12385,9 +12373,9 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives +2 bonus"',
   'Cackle':
     'Level=1 ' +
-    'Traits=Uncommon,Focus,Witch,Concentrate,Curse,Death,Hex,Manipulate,Void ' +
+    'Traits=Uncommon,Focus,Witch,Concentrate,Hex ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
-    'Cast=2 ' +
+    'Cast=Free ' +
     'Description="Sustains an active spell"',
   'Curse Of Death':
     'Level=5 ' +
@@ -12506,7 +12494,7 @@ Pathfinder2ERemaster.SPELLS = {
       '"R30\' Inflicts dim vision and concealment of other creatures while sustained for up to 1 min (<b>save Will</b> negates)"',
   'Stoke The Heart':
     'Level=1 ' +
-    'Traits=Uncommon,Focus,Witch,Concentrate,Emotion,Hex ' +
+    'Traits=Uncommon,Focus,Witch,Cantrip,Concentrate,Emotion,Hex ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
@@ -13835,7 +13823,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'featureNotes.patron', '=', '1'
     );
     rules.defineRule
-      ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source * 3');
+      ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source + 3');
     rules.defineRule
       ('spellSlots.P10', "magicNotes.patron'sGift", '=', 'null'); // italics
   }
@@ -13966,6 +13954,30 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         'combatNotes.bestialManifestation(Tail).1', '=', 'source>0 ? "dexterity" : "strength"'
       );
     }
+  } else if(name.match(/^(Basic|Greater|Major) Lesson/)) {
+    let hex =
+      name.includes('Dreams') ? 'Veil Of Dreams' :
+      name.includes('Elements') ? 'Elemental Betrayal' :
+      name.includes('Life') ? 'Life Boost' :
+      name.includes('Protection') ? 'Blood Ward' :
+      name.includes('Vengeance') ? 'Needle Of Vengeance' :
+      name.includes('Mischief') ? "Deceiver's Cloak" :
+      name.includes('Shadow') ? 'Malicious Shadow' :
+      name.includes('Snow') ? 'Personal Blizzard' :
+      name.includes('Death') ? 'Curse Of Death' :
+      name.includes('Renewal') ? 'Restorative Moment' :
+      null;
+    let rank = name.match('Basic') ? 1 : name.match('Greater') ? 3 : 5;
+    rules.defineRule('magicNotes.' + prefix,
+      'patronTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
+    );
+    if(hex) {
+      ['arcane', 'divine', 'occult', 'primal'].forEach(t => {
+        rules.defineRule('spells.' + hex + ' (' + t.charAt(0).toUpperCase() + rank + ' Foc)',
+          'magicNotes.' + prefix, '=', 'source=="' + t + '" ? 1 : null'
+        );
+      });
+    };
   } else if(name == 'Big Mouth') {
     rules.defineRule('featureNotes.cheekPouches',
       'featureNotes.bigMouth', '=', 'null' // italics
@@ -14003,6 +14015,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Mirage Exemplar', '=', '"Will"',
       'features.Omen Exemplar', '=', '"Will"'
     );
+  } else if(name == 'Cackle') {
+    rules.defineRule('magicNotes.cackle',
+      'patronTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
+    );
+    ['arcane', 'divine', 'occult', 'primal'].forEach(t => {
+      rules.defineRule('spells.Cackle (' + t.charAt(0).toUpperCase() + '1 Foc)',
+        'magicNotes.cackle', '=', 'source=="' + t + '" ? 1 : null'
+      );
+    });
   } else if(name == 'Crunch') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
