@@ -238,7 +238,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Forager: Failures and critical failures on Survival to Subsist are successes/Subsist successes provide for self and 4 others, or twice that number with a critical success</td>
     </tr><tr style="text-align:center">
-      <td>Knowledge Is Power: Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self</td>
+      <td>Knowledge Is Power: Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self within 1 min; sharing the knowledge with allies extends the effects to them</td>
     </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
@@ -246,7 +246,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Recognition: Can use a skill with master proficiency to Recognize Spell as a free action once per rd</td>
     </tr><tr style="text-align:center">
-      <td>Recognize Spell: <b>(R)</b> Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to level 2, 4, 6, or 10</td>
+      <td>Recognize Spell: <b>(R)</b> Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to rank 2, 4, 6, or 10</td>
     </tr><tr style="text-align:center">
       <td>Survey Wildlife: Can use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study</td>
     </tr><tr style="text-align:center">
@@ -336,7 +336,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: A10: 2; A1: 3; A2: 3; A3: 3; A4: 3; A5: 3; A6: 3; A7: 3; A8: 3; A9: 3; AC1: 5</td>
+        <td><b>Spell Slots</b>: A10: 2; A1: 9; A2: 9; A3: 9; A4: 9; A5: 9; A6: 9; A7: 9; A8: 9; A9: 9; AC1: 5</td>
         <td><b>Focus Points</b>: 3</td>
         <td><b>Attack</b>: Arcane Innate: +32 (charisma; legendary); Arcane: +33 (intelligence; legendary)</td>
         <td><b>Spell DC</b>: Arcane Innate: 42 (charisma; legendary); Arcane: 43 (intelligence; legendary)</td>
@@ -349,9 +349,13 @@ var attributes = {
     <tr style="text-align:left">
       <td>Charming Push (A1 Foc): <b>(1)</b> Prevents target from using hostile actions vs. self for 1 rd (<b>save Will</b> inflicts -1 attack and damage vs. self; critical success negates; critical failure also inflicts stunned 1)</td>
     </tr><tr style="text-align:left">
+      <td>Community Restoration (A4 Foc): <b>(R)</b> Casting a spell on an ally gives self 2 temporary Hit Points per spell rank, plus an equal number to distribute among affected allies, for 1 min</td>
+    </tr><tr style="text-align:left">
       <td>Detect Magic (AC1): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the rank of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
     </tr><tr style="text-align:left">
       <td>Earthworks (A1 Foc): <b>(1)</b> 60' 5' burst (using 2 or 3 actions gives a 10' or 15' burst) inflicts difficult terrain for 1 min (<b>heightened 4th</b> inflicts difficult terrain for flying creatures)</td>
+    </tr><tr style="text-align:left">
+      <td>Energy Absorption (A4 Foc): <b>(R)</b> Gives resistance 15 to the triggering acid, cold, electricity, or fire damage (<b>heightened +1</b> gives resistance +5)</td>
     </tr><tr style="text-align:left">
       <td>Force Bolt (A1 Foc): <b>(1)</b> R30' Inflicts 1d4+1 HP force (<b>heightened +2</b> inflicts +1d4+1 HP)</td>
     </tr><tr style="text-align:left">
@@ -359,19 +363,43 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Hand Of The Apprentice (A1 Foc): <b>(1)</b> Successful spell attack while throwing a melee weapon inflicts its base damage + 5, or double HP and the weapon's critical specialization effect on a critical success; the weapon returns afterwards</td>
     </tr><tr style="text-align:left">
+      <td>Interdisciplinary Incantation (A4 Foc): <b>(R)</b> R30' Allows imitating the triggering spell cast until the end of the next turn once per 24 hr</td>
+    </tr><tr style="text-align:left">
+      <td>Invisibility Cloak (A4 Foc): <b>(2)</b> Self becomes invisible for 1 min; using a hostile action ends (<b>heightened 6th</b> effects last for 10 min</b>; <b>8th</b> effect last for 1 hr)</td>
+    </tr><tr style="text-align:left">
       <td>Protective Wards (A1 Foc): <b>(1)</b> 5' emanation gives allies +1 Armor Class while sustained for up to 1 min; each sustain increases the radius by 5' up to 30'</td>
     </tr><tr style="text-align:left">
+      <td>Rune Of Observation (A4 Foc): <b>(1)</b> R500' Creates an invisible sensor that allows self to see from the target location for 1 hr; spending Focus Points extends the spell for 1 hr each</td>
+    </tr><tr style="text-align:left">
       <td>Scramble Body (A1 Foc): <b>(2)</b> R30' Inflicts sickened 1 (<b>save Fortitude</b> negates; critical failure inflicts sickened 2 and slowed 1 while sickened)</td>
+    </tr><tr style="text-align:left">
+      <td>Shifting Form (A4 Foc): <b>(1)</b> Gives self a choice of +20' Speed, 12' climb or swim Speed, darkvision, 60' imprecise scent, or claws that inflict 1d8 HP slashing, for 1 min</td>
+    </tr><tr style="text-align:left">
+      <td>Spiral Of Horrors (A4 Foc): <b>(2)</b> 30' emanation inflicts irreducible frightened 1 while sustained for up to 1 min</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Ars Grammatica): Knows the Rune Of Observation arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Battle Magic): Knows the Energy Absorption arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Civic Wizardry): Knows the Community Restoration arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Mentalism): Knows the Invisibility Cloak arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Protean Form): Knows the Shifting Form arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of The Boundary): Knows the Spiral Of Horrors arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced School Spell (School Of Unified Magical Theory): Knows the Interdisciplinary Incantation arcane spell/+1 Focus Points</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Arcane Sense: Knows the Detect Magic arcane innate spell; can cast it at 3rd rank at will</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Archwizard's Might: +1 10th level spell slot</i></td>
+      <td><i>Archwizard's Might: +1 10th rank spell slot</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Archwizard's Spellcraft: Has 1 10th-level spell slot</i></td>
+      <td><i>Archwizard's Spellcraft: Has 1 10th-rank spell slot</i></td>
     </tr><tr style="text-align:center">
       <td><i>Expert Spellcaster: Spell Expert (Arcane)</i></td>
     </tr><tr style="text-align:center">
@@ -379,23 +407,23 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Master Spellcaster: Spell Master (Arcane)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of Ars Grammatica: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell</i></td>
+      <td><i>School Of Ars Grammatica: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of Battle Magic: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell</i></td>
+      <td><i>School Of Battle Magic: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of Civic Wizardry: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell</i></td>
+      <td><i>School Of Civic Wizardry: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of Mentalism: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell</i></td>
+      <td><i>School Of Mentalism: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of Protean Form: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell</i></td>
+      <td><i>School Of Protean Form: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>School Of The Boundary: +1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell</i></td>
+      <td><i>School Of The Boundary: +1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>School Of Unified Magical Theory: Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td>Bespell Strikes: <b>(F)</b> After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of the turn once per turn; the damage type is force or the same type as the spell inflicted</td>
     </tr><tr style="text-align:center">
-      <td>Bond Conservation: <b>(1)</b> Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn</td>
+      <td>Bond Conservation: <b>(1)</b> Preceding Drain Bonded Item leaves enough power to cast another spell 2 ranks lower by the end of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Bonded Focus: Refocus restores all Focus Points</td>
     </tr><tr style="text-align:center">
@@ -403,11 +431,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Clever Counterspell: Can attempt a Counterspell with a -2 penalty vs. a known spell using any spell that shares with it a trait other than concentrate, manipulate, or a tradition</td>
+      <td>Clever Counterspell: Can attempt a Counterspell vs. a known spell using any spell that shares with it a trait other than concentrate, manipulate, or a tradition</td>
     </tr><tr style="text-align:center">
       <td>Conceal Spell: <b>(1)</b> Casts a subsequent spell without an incantation or obvious manifestations</td>
     </tr><tr style="text-align:center">
-      <td>Convincing Illusion: <b>(R)</b> R30' Successful Deception vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure</td>
+      <td>Convincing Illusion: <b>(R)</b> R30' Successful Deception vs. Perception changes a normal success to disbelieve a self illusion into a failure</td>
     </tr><tr style="text-align:center">
       <td>Counterspell: <b>(R)</b> Expends a spell slot to attempt to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
@@ -421,17 +449,19 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Explosive Arrival: <b>(F)</b> Subsequent summoning inflicts 1d4 HP fire or creature-specific damage in a 10' emanation around the summoned creature</td>
     </tr><tr style="text-align:center">
-      <td>Forcible Energy: <b>(1)</b> Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage on 1 target until the end of the next turn</td>
+      <td>Forcible Energy: <b>(1)</b> Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage type on 1 target until the end of the next turn</td>
     </tr><tr style="text-align:center">
-      <td>Form Retention: Can prepare battle polymorph spells in a slot 2 levels higher than normal that last for 10 min</td>
+      <td>Form Retention: Can prepare battle polymorph spells that last for 10 min by using a slot 2 ranks higher than normal</td>
     </tr><tr style="text-align:center">
-      <td>Infinite Possibilities: Can prepare a spell slot to allow the casting of any known spell of at least 2 levels lower</td>
+      <td>Infinite Possibilities: Can prepare a spell slot to allow the casting of any known spell of at least 2 ranks lower</td>
     </tr><tr style="text-align:center">
       <td>Irresistible Magic: Reduces any target status bonus to saves vs. self spells by 1</td>
     </tr><tr style="text-align:center">
-      <td>Linked Focus: Draining a bonded item to cast a spell from specialist school restores 1 Focus Point once per day</td>
+      <td>Keen Magical Detection: Use of Detect Magic exploration activity gives the better of two initiative rolls against foes that have magic active</td>
     </tr><tr style="text-align:center">
-      <td>Magic Sense: Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek</td>
+      <td>Linked Focus: Draining a bonded item to cast a school spell restores 1 Focus Point once per day</td>
+    </tr><tr style="text-align:center">
+      <td>Magic Sense: Has continuous 1st-rank <i>Detect Magic</i> effects that increase to 3rd-rank during Seek</td>
     </tr><tr style="text-align:center">
       <td>Nonlethal Spell: <b>(1)</b> Changes the damage caused by a subsequent spell to non-lethal</td>
     </tr><tr style="text-align:center">
@@ -443,19 +473,21 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Reflect Spell: Can cause a successful Counterspell to inflict the spell effects on the caster</td>
     </tr><tr style="text-align:center">
-      <td>Reprepare Spell: Can spend 10 min to prepare a previously-cast instantaneous spell of up to 4th level or another instantaneous spell of the same level</td>
+      <td>Reprepare Spell: Can spend 10 min to prepare a previously-cast instantaneous spell of up to 4th rank or another instantaneous spell of the same rank</td>
     </tr><tr style="text-align:center">
       <td>School Of Unified Magical Theory: Can use Drain Bonded Item once per spell rank each day</td>
     </tr><tr style="text-align:center">
-      <td>Scintillating Spell: <b>(1)</b> Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure</td>
+      <td>Scintillating Spell: <b>(1)</b> Targets that fail a Reflex save vs. a subsequent instantaneous non-darkness spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure</td>
     </tr><tr style="text-align:center">
-      <td>Second Thoughts: <b>(R)</b> After a mental spell target critically succeeds on its save, recasts the spell on another target before the end of the next turn without using another spell slot</td>
+      <td>Scroll Adept: Can prepare 4 temporary scrolls with spells up to level 7 during daily prep</td>
     </tr><tr style="text-align:center">
-      <td>Secondary Detonation Array: <b>(1)</b> Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force, or the spell's damage type, in a 5' burst within its area of effect at the beginning of the next turn</td>
+      <td>Second Thoughts: <b>(R)</b> Triggering critical save by the target of a single-target mental spell allows redirecting it before the end of the next turn without expending an additional spell slot</td>
     </tr><tr style="text-align:center">
-      <td>Spell Blending: Can use 2 spell slots from a level to prepare a spell up to 2 levels higher or use a spell slot to prepare 2 cantrips</td>
+      <td>Secondary Detonation Array: <b>(1)</b> Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force or the spell's damage type (<b>save basic Reflex</b>) in a 5' burst within its area of effect at the beginning of the next turn</td>
     </tr><tr style="text-align:center">
-      <td>Spell Combination: Can prepare a spell slot of each level above 2nd to cast a combination of 2 spells of 2 levels lower</td>
+      <td>Spell Blending: Can use 2 spell slots from a rank to prepare a spell up to 2 ranks higher or use a spell slot to prepare 2 cantrips</td>
+    </tr><tr style="text-align:center">
+      <td>Spell Combination: Can prepare a spell slot of each rank above 2nd to cast a combination of 2 spells of 2 ranks lower</td>
     </tr><tr style="text-align:center">
       <td>Spell Mastery: Can cast 4 chosen spells of different ranks once each day without preparation; can change the spell selection with 1 week of downtime</td>
     </tr><tr style="text-align:center">
@@ -471,13 +503,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Split Slot: Can cast either of 2 prepared spells from a slot up to rank 8</td>
     </tr><tr style="text-align:center">
-      <td>Staff Nexus: Can cast spells from staff, using charges from 3 spells expended during daily prep</td>
+      <td>Staff Nexus: Can cast a chosen cantrip and a chosen 1st-rank spell from a staff that contains charges equal to the total ranks of 3 spells expended during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Superior Bond: Can use Drain Bonded Item to cast another spell of up to level 7 once per day</td>
+      <td>Superior Bond: Can use Drain Bonded Item to cast another spell of up to rank 7 once per day</td>
     </tr><tr style="text-align:center">
-      <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area spell by 5', the effect of a 15' or shorter line or cone spell by 5', or the effect of a longer line or cone spell by 10'</td>
+      <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area instantaneous spell by 5', the effect of a 15' or shorter line or cone instantaneous spell by 5', or the effect of a longer line or cone instantaneous spell by 10'</td>
     </tr><tr style="text-align:center">
       <td>Wizard Spellcasting: Can learn spells from the arcane tradition</td>
     </tr></table>

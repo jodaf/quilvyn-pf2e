@@ -2661,6 +2661,7 @@ Pathfinder2ERemaster.FEATS = {
   'Call Wizardly Tools':
     'Traits=Wizard,Concentrate,Teleportation ' +
     'Require="level >= 4","features.Arcane Bond"',
+  // TODO requires "curriculum spells" rather than Arcane School
   'Linked Focus':Pathfinder2E.FEATS['Linked Focus'],
   'Spell Protection Array':
     'Traits=Wizard,Arcane,Manipulate Require="level >= 4"',
@@ -2679,12 +2680,15 @@ Pathfinder2ERemaster.FEATS = {
   'Knowledge Is Power':'Traits=Wizard Require="level >= 8"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Scroll Adept':Pathfinder2E.FEATS['Scroll Savant'],
+  'Scroll Adept':
+    Pathfinder2E.FEATS['Scroll Savant'] + ' ' +
+    'Require="level >= 10"',
   'Clever Counterspell':Pathfinder2E.FEATS['Clever Counterspell'],
   'Forcible Energy':'Traits=Wizard,Manipulate,Spellshape Require="level >= 12"',
   'Keen Magical Detection':'Traits=Wizard,Fortune Require="level >= 12"',
   'Magic Sense':
     Pathfinder2E.FEATS['Magic Sense']
+    .replace(',Divination', '')
     .replace('Traits=', 'Traits=Oracle,'),
   'Bonded Focus':Pathfinder2E.FEATS['Bonded Focus'],
   // Reflect Spell as above
@@ -7414,7 +7418,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Expends a spell slot to attempt to counteract a spell with the same spell"',
   // Reach Spell as above
-  // Widen Spell as above
+  // Widen Spell as above; errata corrects Concentrate to Manipulate
   "Witch's Armaments (Eldritch Nails)":
     'Section=combat Note="Nails inflict 1d6 HP slashing"',
   "Witch's Armaments (Iron Teeth)":
@@ -7522,8 +7526,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
   'Arcane School':Pathfinder2E.FEATURES['Arcane School'],
   'Arcane Thesis':Pathfinder2E.FEATURES['Arcane Thesis'],
-  "Archwizard's Spellcraft":Pathfinder2E.FEATURES["Archwizard's Spellcraft"],
-  // TODO Do anything with curriculum spells? Leaning no.
+  "Archwizard's Spellcraft":
+    Pathfinder2E.FEATURES["Archwizard's Spellcraft"]
+    .replace('level', 'rank'),
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   'Drain Bonded Item':Pathfinder2E.FEATURES['Drain Bonded Item'],
   'Experimental Spellshaping':
@@ -7540,33 +7545,35 @@ Pathfinder2ERemaster.FEATURES = {
   // Reflex Expertise as above
   'School Of Ars Grammatica':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell"',
   'School Of Battle Magic':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell"',
   'School Of The Boundary':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell"',
   'School Of Civic Wizardry':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell"',
   'School Of Mentalism':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell"',
   'School Of Protean Form':
     'Section=magic ' +
-    'Note="+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell"',
+    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell"',
   'School Of Unified Magical Theory':
     'Section=feature,magic,magic ' +
     'Note=' +
       '"+1 Class Feat",' +
       '"Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell",' +
       '"Can use Drain Bonded Item once per spell rank each day"',
-  'Spell Blending':Pathfinder2E.FEATURES['Spell Blending'],
+  'Spell Blending':
+    Pathfinder2E.FEATURES['Spell Blending']
+    .replaceAll('level', 'rank'),
   'Spell Substitution':Pathfinder2E.FEATURES['Spell Substitution'],
   'Staff Nexus':
     'Section=magic ' +
-    'Note="Can cast spells from staff, using charges from %{level<8?\'1 spell\':level<16?\'2 spells\':\'3 spells\'} expended during daily prep"',
+    'Note="Can cast a chosen cantrip and a chosen 1st-rank spell from a staff that contains charges equal to the total ranks of %{level<8?\'1 spell\':level<16?\'2 spells\':\'3 spells\'} expended during daily prep"',
   // Weapon Expertise as above
   // Weapon Specialization as above
   'Wizard Feats':Pathfinder2E.FEATURES['Wizard Feats'],
@@ -7609,7 +7616,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Convincing Illusion':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="R30\' Successful Deception vs. Perception or Will changes a normal success to disbelieve a self illusion into a failure"',
+    'Note="R30\' Successful Deception vs. Perception changes a normal success to disbelieve a self illusion into a failure"',
   'Explosive Arrival':
     'Action=Free ' +
     'Section=magic ' +
@@ -7640,22 +7647,26 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced School Spell (School Of Unified Magical Theory)':
     'Section=magic ' +
     'Note="Knows the Interdisciplinary Incantation arcane spell/+1 Focus Points"',
-  'Bond Conservation':Pathfinder2E.FEATURES['Bond Conservation'],
+  'Bond Conservation':
+    Pathfinder2E.FEATURES['Bond Conservation']
+    .replace('level', 'rank'),
   'Form Retention':
     'Section=magic ' +
-    'Note="Can prepare battle polymorph spells in a slot 2 levels higher than normal that last for 10 min"',
+    'Note="Can prepare battle polymorph spells that last for 10 min by using a slot 2 ranks higher than normal"',
   'Knowledge Is Power':
     'Section=skill ' +
-    'Note="Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self"',
+    'Note="Critical success to Recall Knowledge about a creature inflicts -1 attack and saves vs. next self attack and -1 attack or DC on next attack vs. self within 1 min; sharing the knowledge with allies extends the effects to them"',
   // Overwhelming Energy as above
   // Quickened Casting as above
-  'Scroll Savant':Pathfinder2E.FEATURES['Scroll Savant'],
-  'Clever Counterspell':Pathfinder2E.FEATURES['Clever Counterspell'],
+  'Scroll Adept':Pathfinder2E.FEATURES['Scroll Savant'],
+  'Clever Counterspell':
+    Pathfinder2E.FEATURES['Clever Counterspell']
+    .replace(' with a -2 penalty', ''),
   'Forcible Energy':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage on 1 target until the end of the next turn"',
-  'Keen Magic Detection':
+    'Note="Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage type on 1 target until the end of the next turn"',
+  'Keen Magical Detection':
     'Section=magic ' +
     'Note="Use of Detect Magic exploration activity gives the better of two initiative rolls against foes that have magic active"',
   // Magic Sense as above
@@ -7666,24 +7677,34 @@ Pathfinder2ERemaster.FEATURES = {
   'Secondary Detonation Array':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force, or the spell\'s damage type, in a 5\' burst within its area of effect at the beginning of the next turn"',
-  'Superior Bond':Pathfinder2E.FEATURES['Superior Bond'],
+    'Note="Subsequent instantaneous area damage spell inflicts an additional 1d6 HP force or the spell\'s damage type (<b>save basic Reflex</b>) in a 5\' burst within its area of effect at the beginning of the next turn"',
+  'Superior Bond':
+    Pathfinder2E.FEATURES['Superior Bond']
+    .replace('level', 'rank'),
   // Effortless Concentration as above
   'Scintillating Spell':
     'Action=1 ' +
-    'Section=magic ' +
-    'Note="Subsequent instantaneous non-darkness spell that requires a Reflex save also inflicts dazzled for 1 rd on a failed save, or blinded for 1 rd on a critical failure"',
+    'Section=magic ' + 
+    'Note="Targets that fail a Reflex save vs. a subsequent instantaneous non-darkness spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure"',
   'Spell Tinker':
     Pathfinder2E.FEATURES['Spell Tinker']
     .replace(', reducing its remaining duration by half', ''),
-  'Infinite Possibilities':Pathfinder2E.FEATURES['Infinite Possibilities'],
-  'Reprepare Spell':Pathfinder2E.FEATURES['Reprepare Spell'],
+  'Infinite Possibilities':
+    Pathfinder2E.FEATURES['Infinite Possibilities']
+    .replace('level', 'rank'),
+  'Reprepare Spell':
+    Pathfinder2E.FEATURES['Reprepare Spell']
+    .replaceAll('level', 'rank'),
   'Second Thoughts':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="After a mental spell target critically succeeds on its save, recasts the spell on another target before the end of the next turn without using another spell slot"',
-  "Archwizard's Might":Pathfinder2E.FEATURES["Archwizard's Might"],
-  'Spell Combination':Pathfinder2E.FEATURES['Spell Combination'],
+    'Note="Triggering critical save by the target of a single-target mental spell allows redirecting it before the end of the next turn without expending an additional spell slot"',
+  "Archwizard's Might":
+    Pathfinder2E.FEATURES["Archwizard's Might"]
+    .replace('level', 'rank'),
+  'Spell Combination':
+    Pathfinder2E.FEATURES['Spell Combination']
+    .replaceAll('level', 'rank'),
   'Spell Mastery':
     'Section=magic ' +
     'Note="Can cast 4 chosen spells of different ranks once each day without preparation; can change the spell selection with 1 week of downtime"',
@@ -9920,7 +9941,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Greater Spiritual Evolution':
     'Section=magic ' +
     'Note="Spells have the <i>ghost touch</i> property"',
-  'Magic Sense':Pathfinder2E.FEATURES['Magic Sense'],
+  'Magic Sense':
+    Pathfinder2E.FEATURES['Magic Sense']
+    .replaceAll('level', 'rank'),
   'Terraforming Trickery':
     'Section=magic ' +
     'Note="Can use a blood magic effect to create or remove difficult terrain from adjacent squares"',
@@ -9938,9 +9961,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Effortless Concentration as above
   'Greater Mental Evolution':Pathfinder2E.FEATURES['Greater Mental Evolution'],
   'Greater Vital Evolution':Pathfinder2E.FEATURES['Greater Vital Evolution'],
-  'Scintillating Spell':
-    'Action=1 ' +
-    'Section=magic ' + 'Note="Targets that fail a Reflex save vs. a subsequent spell also suffer dazzled for 1 rd, or blinded for 1 rd on a critical failure"',
+  // Scintillating Spell as above
   'Echoing Spell':
     'Action=1 ' +
     'Section=magic ' +
@@ -10406,7 +10427,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Rapid Mantel':Pathfinder2E.FEATURES['Rapid Mantel'],
   'Read Lips':
     Pathfinder2E.FEATURES['Read Lips'].replace('flat-footed', 'off-guard'),
-  'Recognize Spell':Pathfinder2E.FEATURES['Recognize Spell'],
+  'Recognize Spell':
+    Pathfinder2E.FEATURES['Recognize Spell']
+    .replace('level', 'rank'),
   'Ride':Pathfinder2E.FEATURES.Ride,
   'Robust Recovery':Pathfinder2E.FEATURES['Robust Recovery'],
   'Scare To Death':Pathfinder2E.FEATURES['Scare To Death'],
@@ -13826,6 +13849,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source + 3');
     rules.defineRule
       ('spellSlots.P10', "magicNotes.patron'sGift", '=', 'null'); // italics
+  } else if(name == 'Wizard') {
   }
 };
 
