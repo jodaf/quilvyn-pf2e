@@ -4983,7 +4983,7 @@ Pathfinder2E.FEATURES = {
   'Widen Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Increases the effect of a subsequent 10\' or greater radius area spell by 5\', the effect of a 15\' or shorter line or cone spell by 5\', or the effect of a longer line or cone spell by 10\'"',
+    'Note="Increases the effect of a subsequent 10\' or greater radius area instantaneous spell by 5\', the effect of a 15\' or shorter line or cone instantaneous spell by 5\', or the effect of a longer line or cone instantaneous spell by 10\'"',
   'Wild Shape':'Section=magic Note="Knows the Wild Shape primal spell"',
   'Call Of The Wild':
     'Section=magic ' +
@@ -6767,7 +6767,7 @@ Pathfinder2E.FEATURES = {
   // Bespell Weapon as above
   'Linked Focus':
     'Section=magic ' +
-    'Note="Draining a bonded item to cast a spell from specialist school restores 1 Focus Point once per day"',
+    'Note="Draining a bonded item to cast a school spell restores 1 Focus Point once per day"',
   'Silent Spell':
     'Action=1 ' +
     'Section=magic ' +
@@ -6803,7 +6803,7 @@ Pathfinder2E.FEATURES = {
   'Bond Conservation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn"',
+    'Note="Preceding Drain Bonded Item leaves enough power to cast another spell 2 levels lower by the end of the next turn"',
   'Universal Versatility':
     'Section=magic,magic ' +
     'Note=' +
@@ -14068,9 +14068,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       "magicNotes.archwizard'sMight", '+', '1'
     );
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      rules.plugin.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
       .map(x => x.replace(':Arcane School', ''))
-      .filter(x => x != 'Universalist');
+      .filter(x => !x.includes('Uni'));
     schools.forEach(s => {
       let prefix =
         s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
@@ -14380,9 +14380,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
   } else if(name == 'Advanced School Spell') {
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
-      .map(x => x.replace(':Arcane School', ''))
-      .filter(x => x != 'Universalist');
+      rules.plugin.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      .map(x => x.replace(':Arcane School', ''));
     schools.forEach(s => {
       rules.defineRule('features.Advanced School Spell (' + s + ')',
         'features.Advanced School Spell', '?', null,
