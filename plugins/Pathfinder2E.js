@@ -12586,7 +12586,10 @@ Pathfinder2E.magicRules = function(rules, spells) {
   });
   // Define max focus points in a variable so that goodies can change it
   rules.defineRule('focusPointMaximum', 'features.Focus Pool', '=', '3');
-  rules.defineRule('focusPoints', 'focusPointMaximum', 'v', null);
+  rules.defineRule('focusPoints',
+    'features.Focus Pool', '=', '0',
+    'focusPointMaximum', 'v', null
+  );
 
 };
 
@@ -15295,13 +15298,13 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           'features.' + name, '=', '1'
         );
       }
-      matchInfo = n.match(/^Has a focus pool and (at least |\+)?(\d|%V) Focus Points?/);
+      matchInfo = n.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
       if(matchInfo) {
         rules.defineRule('features.Focus Pool', note, '=', '1');
-        rules.defineRule('focusPoints',
-          'features.Focus Pool', '=', '0',
-          note, matchInfo[1] == 'at least ' ? '^' : '+', matchInfo[2]=='%V' ? 'source' : matchInfo[2]
-        );
+        if(matchInfo[1])
+          rules.defineRule('focusPoints',
+            note, matchInfo[2] == 'at least ' ? '^' : '+', matchInfo[3]=='%V' ? 'source' : matchInfo[3]
+          );
       }
       matchInfo = n.match(/^Can take (.*) ancestry feats$/);
       if(matchInfo) {
