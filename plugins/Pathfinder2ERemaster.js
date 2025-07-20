@@ -2131,7 +2131,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Traits=', 'Traits=Oracle,Witch,'),
   'Untamed Form':
     Pathfinder2E.FEATS['Wild Shape']
-    .replaceAll('Wild', 'Untamed'),
+    .replace('Wild', 'Untamed'),
   'Call Of The Wild':Pathfinder2E.FEATS['Call Of The Wild'],
   'Enhanced Familiar':
     Pathfinder2E.FEATS['Enhanced Familiar']
@@ -5894,7 +5894,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Critical hits with a simple weapon, martial weapon, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
   'Composition Spells':
     Pathfinder2E.FEATURES['Composition Spells']
-    .replace('Inspire Courage', 'Courageous Anthem'),
+    .replace('Inspire Courage', 'Courageous Anthem')
+    .replace(' and 1 Focus Point', ''),
   'Enigma':Pathfinder2E.FEATURES.Enigma.replace('True Strike', 'Sure Strike'),
   'Expert Spellcaster':Pathfinder2E.FEATURES['Expert Spellcaster'],
   'Fortitude Expertise':Pathfinder2E.FEATURES['Great Fortitude'],
@@ -5927,8 +5928,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Bardic Lore':Pathfinder2E.FEATURES['Bardic Lore'],
   'Hymn Of Healing':
-    'Section=magic ' +
-    'Note="Knows the Hymn Of Healing occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Hymn Of Healing occult spell"',
   'Lingering Composition':
     Pathfinder2E.FEATURES['Lingering Composition'],
   'Martial Performance':
@@ -6013,8 +6013,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Allows allies to use an action to extend for 1 rd a subsequent composition cantrip that affects them"',
   'Eclectic Skill':Pathfinder2E.FEATURES['Eclectic Skill'],
   'Fortissimo Composition':
-    'Section=magic ' +
-    'Note="Knows the Fortissimo Composition occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Fortissimo Composition occult spell"',
   'Know-It-All':
     'Section=skill ' +
     'Note="Successful Recall Knowledge checks give additional information"',
@@ -6031,13 +6030,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Allows a chosen ally affected by a subsequent <i>Courageous Anthem</i> to immediately use a reaction to make a melee Strike"',
   'House Of Imaginary Walls':Pathfinder2E.FEATURES['House Of Imaginary Walls'],
   'Ode To Ouroboros':
-    'Section=magic Note="Knows the Ode To Ouroboros occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Ode To Ouroboros occult spell"',
   'Quickened Casting':
     Pathfinder2E.FEATURES['Quickened Casting']
     .replace('level', 'rank'),
   'Symphony Of The Unfettered Heart':
     'Section=magic ' +
-    'Note="Knows the Symphony Of The Unfettered Heart occult spell/+1 Focus Points"',
+    'Note="Knows the Symphony Of The Unfettered Heart occult spell"',
   'Unusual Composition':
     Pathfinder2E.FEATURES['Unusual Composition'] + ' ' +
     'Note="Allows a subsequent visual or auditory spell to affect any sense"',
@@ -6098,8 +6097,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Perfect Encore':
     Pathfinder2E.FEATURES['Perfect Encore']
     .replace('level', 'rank'),
-  'Pied Piping':
-    'Section=magic Note="Knows the Pied Piping occult spell/+1 Focus Points"',
+  'Pied Piping':'Section=magic Note="Knows the Pied Piping occult spell"',
   'Symphony Of The Muse':Pathfinder2E.FEATURES['Symphony Of The Muse'],
   'Ultimate Polymath':'Section=magic Note="All spells are signature spells"',
 
@@ -6146,62 +6144,117 @@ Pathfinder2ERemaster.FEATURES = {
   'Divine Castigation':
     'Section=magic ' +
     'Note="Can add the holy or unholy trait to <i>Harm</i> and <i>Heal</i> spells to inflict spirit damage"',
-  'Domain Initiate (Air)':Pathfinder2E.FEATURES['Domain Initiate (Air)'],
+  'Domain Initiate (Air)':
+    Pathfinder2E.FEATURES['Domain Initiate (Air)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Ambition)':
     Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
+    .replace(' and 1 Focus Point', '')
     .replace('Blind', 'Ignite'),
-  'Domain Initiate (Cities)':Pathfinder2E.FEATURES['Domain Initiate (Cities)'],
+  'Domain Initiate (Cities)':
+    Pathfinder2E.FEATURES['Domain Initiate (Cities)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Confidence)':
-    Pathfinder2E.FEATURES['Domain Initiate (Confidence)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Confidence)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Creation)':
     Pathfinder2E.FEATURES['Domain Initiate (Creation)']
+    .replace(' and 1 Focus Point', '')
     .replace('Splash Of Art', 'Creative Splash'),
   'Domain Initiate (Darkness)':
-    Pathfinder2E.FEATURES['Domain Initiate (Darkness)'],
-  'Domain Initiate (Death)':Pathfinder2E.FEATURES['Domain Initiate (Death)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Darkness)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Death)':
+    Pathfinder2E.FEATURES['Domain Initiate (Death)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Destruction)':
-    Pathfinder2E.FEATURES['Domain Initiate (Destruction)'],
-  'Domain Initiate (Dreams)':Pathfinder2E.FEATURES['Domain Initiate (Dreams)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Destruction)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Dreams)':
+    Pathfinder2E.FEATURES['Domain Initiate (Dreams)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Earth)':
-    Pathfinder2E.FEATURES['Domain Initiate (Earth)'],
-  'Domain Initiate (Family)':Pathfinder2E.FEATURES['Domain Initiate (Family)'],
-  'Domain Initiate (Fate)':Pathfinder2E.FEATURES['Domain Initiate (Fate)'],
-  'Domain Initiate (Fire)':Pathfinder2E.FEATURES['Domain Initiate (Fire)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Earth)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Family)':
+    Pathfinder2E.FEATURES['Domain Initiate (Family)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Fate)':
+    Pathfinder2E.FEATURES['Domain Initiate (Fate)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Fire)':
+    Pathfinder2E.FEATURES['Domain Initiate (Fire)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Freedom)':
-    Pathfinder2E.FEATURES['Domain Initiate (Freedom)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Freedom)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Healing)':
-    Pathfinder2E.FEATURES['Domain Initiate (Healing)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Healing)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Indulgence)':
-    Pathfinder2E.FEATURES['Domain Initiate (Indulgence)'],
-  'Domain Initiate (Luck)':Pathfinder2E.FEATURES['Domain Initiate (Luck)'],
-  'Domain Initiate (Magic)':Pathfinder2E.FEATURES['Domain Initiate (Magic)'],
-  'Domain Initiate (Might)':Pathfinder2E.FEATURES['Domain Initiate (Might)'],
-  'Domain Initiate (Moon)':Pathfinder2E.FEATURES['Domain Initiate (Moon)'],
-  'Domain Initiate (Nature)':Pathfinder2E.FEATURES['Domain Initiate (Nature)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Indulgence)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Luck)':
+    Pathfinder2E.FEATURES['Domain Initiate (Luck)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Magic)':
+    Pathfinder2E.FEATURES['Domain Initiate (Magic)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Might)':
+    Pathfinder2E.FEATURES['Domain Initiate (Might)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Moon)':
+    Pathfinder2E.FEATURES['Domain Initiate (Moon)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Nature)':
+    Pathfinder2E.FEATURES['Domain Initiate (Nature)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Nightmares)':
-    Pathfinder2E.FEATURES['Domain Initiate (Nightmares)'],
-  'Domain Initiate (Pain)':Pathfinder2E.FEATURES['Domain Initiate (Pain)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Nightmares)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Pain)':
+    Pathfinder2E.FEATURES['Domain Initiate (Pain)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Passion)':
-    Pathfinder2E.FEATURES['Domain Initiate (Passion)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Passion)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Perfection)':
-    Pathfinder2E.FEATURES['Domain Initiate (Perfection)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Perfection)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Protection)':
-    Pathfinder2E.FEATURES['Domain Initiate (Protection)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Protection)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Secrecy)':
     Pathfinder2E.FEATURES['Domain Initiate (Secrecy)']
+    .replace(' and 1 Focus Point', '')
     .replace('Forced', 'Whispering'),
-  'Domain Initiate (Sun)':Pathfinder2E.FEATURES['Domain Initiate (Sun)'],
-  'Domain Initiate (Travel)':Pathfinder2E.FEATURES['Domain Initiate (Travel)'],
+  'Domain Initiate (Sun)':
+    Pathfinder2E.FEATURES['Domain Initiate (Sun)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Travel)':
+    Pathfinder2E.FEATURES['Domain Initiate (Travel)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Trickery)':
-    Pathfinder2E.FEATURES['Domain Initiate (Trickery)'],
-  'Domain Initiate (Truth)':Pathfinder2E.FEATURES['Domain Initiate (Truth)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Trickery)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Truth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Truth)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Tyranny)':
-    Pathfinder2E.FEATURES['Domain Initiate (Tyranny)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Tyranny)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Undeath)':
-    Pathfinder2E.FEATURES['Domain Initiate (Undeath)'],
-  'Domain Initiate (Water)':Pathfinder2E.FEATURES['Domain Initiate (Water)'],
-  'Domain Initiate (Wealth)':Pathfinder2E.FEATURES['Domain Initiate (Wealth)'],
-  'Domain Initiate (Zeal)':Pathfinder2E.FEATURES['Domain Initiate (Zeal)'],
+    Pathfinder2E.FEATURES['Domain Initiate (Undeath)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Water)':
+    Pathfinder2E.FEATURES['Domain Initiate (Water)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Wealth)':
+    Pathfinder2E.FEATURES['Domain Initiate (Wealth)']
+    .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Zeal)':
+    Pathfinder2E.FEATURES['Domain Initiate (Zeal)']
+    .replace(' and 1 Focus Point', ''),
   'Harming Hands':Pathfinder2E.FEATURES['Harming Hands'],
   'Healing Hands':Pathfinder2E.FEATURES['Healing Hands'],
   'Premonition Of Avoidance':
@@ -6454,13 +6507,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Druid Feats':Pathfinder2E.FEATURES['Druid Feats'],
   'Druid Skills':Pathfinder2E.FEATURES['Druid Skills'],
   'Druid Spellcasting':Pathfinder2E.FEATURES['Primal Spellcasting'],
-  'Druidic Order':Pathfinder2E.FEATURES['Druidic Order'],
+  'Druidic Order':
+    Pathfinder2E.FEATURES['Druidic Order']
+    .replace(' and 1 Focus Point', ''),
   // Expert Spellcaster as above
   // Fortitude Expertise as above
   'Leaf':
     Pathfinder2E.FEATURES.Leaf
-    .replace('Goodberry', 'Cornucopia')
-    .replace('/+1 Focus Points', ''),
+    .replace('Goodberry', 'Cornucopia'),
   // Legendary Spellcaster as above
   // Master Spellcaster as above
   'Medium Armor Expertise':Pathfinder2E.FEATURES['Medium Armor Expertise'],
@@ -6469,8 +6523,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Primal Hierophant']
     .replace('level', 'rank'),
   // Reflex Expertise as above
-  'Storm':Pathfinder2E.FEATURES.Storm
-    .replace('/+1 Focus Points', ''),
+  'Storm':Pathfinder2E.FEATURES.Storm,
   'Untamed':
     Pathfinder2E.FEATURES['Wild']
     .replace('Wild Shape', 'Untamed Form')
@@ -6498,11 +6551,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="10 min process prepares a seed to grow into a weapon or shrink back into a seed with 1 action"',
   'Widen Spell':Pathfinder2E.FEATURES['Widen Spell'],
-  // Changed effects from Wild Shape. Animal druids don't get another focus
-  // point--it's the order druid feat--but others do
   'Untamed Form':
-    'Section=magic ' +
-    'Note="Knows the Untamed Form primal spell%{$\'feats.Untamed Form\'?\'/+1 Focus Points\':\'\'}"',
+    Pathfinder2E.FEATURES['Wild Shape']
+    .replace('Wild Shape', 'Untamed Form'),
   'Call Of The Wild':
     Pathfinder2E.FEATURES['Call Of The Wild']
     .replace('level', 'rank'),
@@ -6614,9 +6665,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Primal Focus':Pathfinder2E.FEATURES['Primal Focus'].replace('2', 'all'),
   'Primal Summons':Pathfinder2E.FEATURES['Primal Summons'],
   // Legacy doesn't specify the additional FP
-  'Primal Summons':
-    'Section=magic ' +
-    'Note="Knows the Primal Summons primal spell/+1 Focus Points"',
+  'Primal Summons':'Section=magic Note="Knows the Primal Summons primal spell"',
   'Wandering Oasis':
     'Section=save ' +
     'Note="Self and allies within 60\' are protected from %{rank.Survival>=4?\'extreme\':\'severe\'} environmental heat and cold"',
@@ -6975,7 +7024,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Initiate Warden':
     'Section=magic,magic ' +
     'Note=' +
-      '"Has a focus pool and at least %V Focus Point%{$\'features.Initiate Warden\'>1?\'s\':\'\'}/Spell Trained (Primal)",' +
+      '"Has a focus pool/Spell Trained (Primal)",' +
       '"Knows %V choice%{$\'features.Initiate Warden\'>1?\'s\':\'\'} of initial warden spells"',
   'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
@@ -7013,10 +7062,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Monster Warden':Pathfinder2E.FEATURES['Monster Warden'],
   'Quick Draw':Pathfinder2E.FEATURES['Quick Draw'],
   'Advanced Warden':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+%V Focus Points",' +
-      '"Knows %V choice%{$\'features.Advanced Warden\'>1?\'s\':\'\'} of advanced warden spells"',
+    'Section=magic ' +
+    'Note="Knows %V choice%{$\'features.Advanced Warden\'>1?\'s\':\'\'} of advanced warden spells"',
   "Companion's Cry":Pathfinder2E.FEATURES["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATURES['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATURES['Far Shot'],
@@ -7029,10 +7076,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Follows a successful Recall Knowledge on hunted prey with a Recall Knowledge check on another creature"',
   'Masterful Warden':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+%V Focus Points",' +
-      '"Knows %V choice%{$\'features.Masterful Warden\'>1?\'s\':\'\'} of master warden spells"',
+    'Section=magic ' +
+    'Note="Knows %V choice%{$\'features.Masterful Warden\'>1?\'s\':\'\'} of master warden spells"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATURES['Skirmish Strike'],
   'Snap Shot':Pathfinder2E.FEATURES['Snap Shot'],
@@ -7046,10 +7091,8 @@ Pathfinder2ERemaster.FEATURES = {
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATURES['Master Monster Hunter'],
   'Peerless Warden':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+%V Focus Points",' +
-      '"Knows %V choice%{$\'features.Peerless Warden\'>1?\'s\':\'\'} of peerless warden spells"',
+    'Section=magic ' +
+    'Note="Knows %V choice%{$\'features.Peerless Warden\'>1?\'s\':\'\'} of peerless warden spells"',
   'Penetrating Shot':Pathfinder2E.FEATURES['Penetrating Shot'],
   // Twin Riposte as above
   "Warden's Step":Pathfinder2E.FEATURES["Warden's Step"],
@@ -7356,7 +7399,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Hex Spells':
     'Section=magic,magic ' +
     'Note=' +
-      '"Has a focus pool and 1 Focus Point",' +
+      '"Has a focus pool",' +
       '"Knows a choice of the <i>Patron\'s Puppet</i> and <i>Phase Familiar</i> spells"',
   // Legendary Spellcaster as above
   'Magical Fortitude':'Section=save Note="Save Expert (Fortitude)"',
@@ -7524,7 +7567,11 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Wizard
   'Arcane Bond':Pathfinder2E.FEATURES['Arcane Bond'],
-  'Arcane School':Pathfinder2E.FEATURES['Arcane School'],
+  'Arcane School':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a focus pool"',
   'Arcane Thesis':Pathfinder2E.FEATURES['Arcane Thesis'],
   "Archwizard's Spellcraft":
     Pathfinder2E.FEATURES["Archwizard's Spellcraft"]
@@ -7545,27 +7592,27 @@ Pathfinder2ERemaster.FEATURES = {
   // Reflex Expertise as above
   'School Of Ars Grammatica':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Protective Wards arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Protective Wards arcane spell"',
   'School Of Battle Magic':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Force Bolt arcane spell"',
   'School Of The Boundary':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Fortify Summoning arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Fortify Summoning arcane spell"',
   'School Of Civic Wizardry':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Earthworks arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Earthworks arcane spell"',
   'School Of Mentalism':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Charming Push arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Charming Push arcane spell"',
   'School Of Protean Form':
     'Section=magic ' +
-    'Note="+1 spell slot each rank/Has a focus pool and 1 Focus Point/Knows the Scramble Body arcane spell"',
+    'Note="+1 spell slot each rank/Knows the Scramble Body arcane spell"',
   'School Of Unified Magical Theory':
     'Section=feature,magic,magic ' +
     'Note=' +
       '"+1 Class Feat",' +
-      '"Has a focus pool and 1 Focus Point/Knows the Hand Of The Apprentice arcane spell",' +
+      '"Knows the Hand Of The Apprentice arcane spell",' +
       '"Can use Drain Bonded Item once per spell rank each day"',
   'Spell Blending':
     Pathfinder2E.FEATURES['Spell Blending']
@@ -7627,26 +7674,19 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can cast either of 2 prepared spells from a slot up to rank %{maxSpellRank-1}"',
   // Steady Spellcasting as above
   'Advanced School Spell (School Of Ars Grammatica)':
-    'Section=magic ' +
-    'Note="Knows the Rune Of Observation arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Rune Of Observation arcane spell"',
   'Advanced School Spell (School Of Battle Magic)':
-    'Section=magic ' +
-    'Note="Knows the Energy Absorption arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Energy Absorption arcane spell"',
   'Advanced School Spell (School Of The Boundary)':
-    'Section=magic ' +
-    'Note="Knows the Spiral Of Horrors arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Spiral Of Horrors arcane spell"',
   'Advanced School Spell (School Of Civic Wizardry)':
-    'Section=magic ' +
-    'Note="Knows the Community Restoration arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Community Restoration arcane spell"',
   'Advanced School Spell (School Of Mentalism)':
-    'Section=magic ' +
-    'Note="Knows the Invisibility Cloak arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Invisibility Cloak arcane spell"',
   'Advanced School Spell (School Of Protean Form)':
-    'Section=magic ' +
-    'Note="Knows the Shifting Form arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Shifting Form arcane spell"',
   'Advanced School Spell (School Of Unified Magical Theory)':
-    'Section=magic ' +
-    'Note="Knows the Interdisciplinary Incantation arcane spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Interdisciplinary Incantation arcane spell"',
   'Bond Conservation':
     Pathfinder2E.FEATURES['Bond Conservation']
     .replace('level', 'rank'),
@@ -8500,7 +8540,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Attack on self inflicts an additional %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6} and an equal amount of spirit damage on attacker, and self Strikes on attacker inflict +%{level<9?2:level<16?4:6} HP spirit until the end of the next turn"',
-  'Devotion Spells':Pathfinder2E.FEATURES['Devotion Spells'],
+  'Devotion Spells':
+    Pathfinder2E.FEATURES['Devotion Spells']
+    .replace(' and 1 Focus Point', ''),
   'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
   'Exalted Reaction (Desecration)':
     'Section=combat ' +
@@ -8840,8 +8882,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can choose <i>astral</i>, <i>brilliant</i>, <i>holy</i>, or <i>unholy</i> rune for Blessed Armament, and can use a 10-min activity to change the rune"',
   'Shield Of Reckoning':Pathfinder2E.FEATURES['Shield Of Reckoning'],
   'Spectral Advance':
-    'Section=magic ' +
-    'Note="Knows the Spectral Advance divine focus spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Spectral Advance divine spell"',
   'Affliction Mercy':Pathfinder2E.FEATURES['Affliction Mercy'],
   'Aura Of Faith':
     Pathfinder2E.FEATURES['Aura Of Faith'] + ' ' +
@@ -9058,7 +9099,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Qi Spells':
     'Section=magic,magic ' +
     'Note=' +
-      '"Has a focus pool with 1 Focus Point",' +
+      '"Has a focus pool",' +
       '"Knows a choice of 1st-rank monk qi spells"',
   'Stumbling Stance':
     'Action=1 ' +
@@ -9096,10 +9137,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Monastic Weaponry':
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
   'Advanced Qi Spells':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows a choice of 3rd-rank monk qi spells"',
+    'Section=magic Note="Knows a choice of 3rd-rank monk qi spells"',
   'Align Qi':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -9120,8 +9158,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Whirling Throw':Pathfinder2E.FEATURES['Whirling Throw'],
   'Wolf Drag':Pathfinder2E.FEATURES['Wolf Drag'],
   'Clinging Shadows Initiate':
-    'Section=magic ' +
-    'Note="Knows the Clinging Shadows Stance occult focus spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Clinging Shadows Stance occult spell"',
   'Ironblood Stance':Pathfinder2E.FEATURES['Ironblood Stance'],
   'Mixed Maneuver':
     Pathfinder2E.FEATURES['Mixed Maneuver']
@@ -9186,9 +9223,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Does not age",' +
       '"+2 Fortitude/+2 Will"',
-  "Shadow's Web":
-    'Section=magic ' +
-    'Note="Knows the Shadow\'s Web occult spell/+1 Focus Points"',
+  "Shadow's Web":'Section=magic Note="Knows the Shadow\'s Web occult spell"',
   'Tangled Forest Rake':
     Pathfinder2E.FEATURES['Tangled Forest Rake']
    .replace("5'", "10'"),
@@ -9200,10 +9235,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
   // Master Of Many Styles as above
   'Master Qi Spells':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows a choice of 8th-rank monk qi spells"',
+    'Section=magic Note="Knows a choice of 8th-rank monk qi spells"',
   'One-Millimeter Punch':
     'Section=combat ' +
     'Note="One-Inch Punch inflicts 10\' Push (<b>save Fortitude</b> inflicts 5\' Push; critical success negates; critical failure inflicts 10\' Push per action"',
@@ -9212,10 +9244,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Diamond Fists']
     .replace('forceful trait', 'forceful and deadly d10 traits'),
   'Grandmaster Qi Spells':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"+1 Focus Points",' +
-      '"Knows a choice of 9th-rank monk qi spells"',
+    'Section=magic Note="Knows a choice of 9th-rank monk qi spells"',
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
@@ -9358,8 +9387,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Oracle Spellcasting':
     'Section=magic Note="Can learn spells from the divine tradition"',
   "Premonition's Reflexes":'Section=save Note="Save Expert (Reflex)"',
-  'Revelation Spells':
-    'Section=magic Note="Has a focus pool with 1 Focus Point"',
+  'Revelation Spells':'Section=magic Note="Has a focus pool"',
   // Signature Spells as above
   // Weapon Expertise as above
   // Weapon Specialization as above
@@ -9395,115 +9423,115 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gives self -1 saves vs. divine magical effects and +1 vs. non-divine until the start of the next turn"',
   'Domain Acumen (Air)':
     Pathfinder2E.FEATURES['Domain Initiate (Air)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Ambition)':
     Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
-    .replace('Blind', 'Ignite')
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', '')
+    .replace('Blind', 'Ignite'),
   'Domain Acumen (Cities)':
     Pathfinder2E.FEATURES['Domain Initiate (Cities)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Confidence)':
     Pathfinder2E.FEATURES['Domain Initiate (Confidence)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Creation)':
     Pathfinder2E.FEATURES['Domain Initiate (Creation)']
-    .replace('Splash Of Art', 'Creative Splash')
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', '')
+    .replace('Splash Of Art', 'Creative Splash'),
   'Domain Acumen (Darkness)':
     Pathfinder2E.FEATURES['Domain Initiate (Darkness)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Death)':
     Pathfinder2E.FEATURES['Domain Initiate (Death)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Destruction)':
     Pathfinder2E.FEATURES['Domain Initiate (Destruction)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Dreams)':
     Pathfinder2E.FEATURES['Domain Initiate (Dreams)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Earth)':
     Pathfinder2E.FEATURES['Domain Initiate (Earth)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Family)':
     Pathfinder2E.FEATURES['Domain Initiate (Family)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Fate)':
     Pathfinder2E.FEATURES['Domain Initiate (Fate)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Fire)':
     Pathfinder2E.FEATURES['Domain Initiate (Fire)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Freedom)':
     Pathfinder2E.FEATURES['Domain Initiate (Freedom)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Healing)':
     Pathfinder2E.FEATURES['Domain Initiate (Healing)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Indulgence)':
     Pathfinder2E.FEATURES['Domain Initiate (Indulgence)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Luck)':
     Pathfinder2E.FEATURES['Domain Initiate (Luck)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Magic)':
     Pathfinder2E.FEATURES['Domain Initiate (Magic)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Might)':
     Pathfinder2E.FEATURES['Domain Initiate (Might)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Moon)':
     Pathfinder2E.FEATURES['Domain Initiate (Moon)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Nature)':
     Pathfinder2E.FEATURES['Domain Initiate (Nature)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Nightmares)':
     Pathfinder2E.FEATURES['Domain Initiate (Nightmares)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Pain)':
     Pathfinder2E.FEATURES['Domain Initiate (Pain)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Passion)':
     Pathfinder2E.FEATURES['Domain Initiate (Passion)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Perfection)':
     Pathfinder2E.FEATURES['Domain Initiate (Perfection)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Protection)':
     Pathfinder2E.FEATURES['Domain Initiate (Protection)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Secrecy)':
     Pathfinder2E.FEATURES['Domain Initiate (Secrecy)']
-    .replace('Forced', 'Whispering')
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', '')
+    .replace('Forced', 'Whispering'),
   'Domain Acumen (Sun)':
     Pathfinder2E.FEATURES['Domain Initiate (Sun)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Travel)':
     Pathfinder2E.FEATURES['Domain Initiate (Travel)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Trickery)':
     Pathfinder2E.FEATURES['Domain Initiate (Trickery)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Truth)':
     Pathfinder2E.FEATURES['Domain Initiate (Truth)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Tyranny)':
     Pathfinder2E.FEATURES['Domain Initiate (Tyranny)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Undeath)':
     Pathfinder2E.FEATURES['Domain Initiate (Undeath)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Water)':
     Pathfinder2E.FEATURES['Domain Initiate (Water)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Wealth)':
     Pathfinder2E.FEATURES['Domain Initiate (Wealth)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Domain Acumen (Zeal)':
     Pathfinder2E.FEATURES['Domain Initiate (Zeal)']
-    .replace('Has a focus pool and 1 Focus Point', '+1 Focus Points'),
+    .replace(' and 1 Focus Point', ''),
   'Meddling Futures':
     'Action=Free ' +
     'Section=magic ' +
@@ -9518,29 +9546,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check and does not suffer off-guard from hidden creatures for 1 min"',
   'Advanced Revelation (Ancestors)':
-    'Section=magic ' +
-    'Note="Knows the Ancestral Defense divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Ancestral Defense divine spell"',
   'Advanced Revelation (Battle)':
-    'Section=magic ' +
-    'Note="Knows the Battlefield Persistence divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Battlefield Persistence divine spell"',
   'Advanced Revelation (Bones)':
-    'Section=magic ' +
-    'Note="Knows the Armor Of Bones divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Armor Of Bones divine spell"',
   'Advanced Revelation (Cosmos)':
-    'Section=magic ' +
-    'Note="Knows the Interstellar Void divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Interstellar Void divine spell"',
   'Advanced Revelation (Flames)':
-    'Section=magic ' +
-    'Note="Knows the Whirling Flames divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Whirling Flames divine spell"',
   'Advanced Revelation (Life)':
-    'Section=magic ' +
-    'Note="Knows the Delay Affliction divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Delay Affliction divine spell"',
   'Advanced Revelation (Lore)':
-    'Section=magic ' +
-    'Note="Knows the Access Lore divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Access Lore divine spell"',
   'Advanced Revelation (Tempest)':
-    'Section=magic ' +
-    'Note="Knows the Thunderburst divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Thunderburst divine spell"',
   'Gifted Power':'Section=magic Note="+1 rank %V spell slot (mystery spell)"',
   'Spiritual Sense':
     'Section=skill ' +
@@ -9636,29 +9656,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} Hit Points, and can Stand once per day"',
   'Greater Revelation (Ancestors)':
-    'Section=magic ' +
-    'Note="Knows the Ancestral Form divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Ancestral Form divine spell"',
   'Greater Revelation (Battle)':
-    'Section=magic ' +
-    'Note="Knows the Revel In Retribution divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Revel In Retribution divine spell"',
   'Greater Revelation (Bones)':
-    'Section=magic ' +
-    'Note="Knows the Claim Undead divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Claim Undead divine spell"',
   'Greater Revelation (Cosmos)':
-    'Section=magic ' +
-    'Note="Knows the Moonlight Bridge divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Moonlight Bridge divine spell"',
   'Greater Revelation (Flames)':
-    'Section=magic ' +
-    'Note="Knows the Flaming Fusillade divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Flaming Fusillade divine spell"',
   'Greater Revelation (Life)':
-    'Section=magic ' +
-    'Note="Knows the Life-Giving Form divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Life-Giving Form divine spell"',
   'Greater Revelation (Lore)':
-    'Section=magic ' +
-    'Note="Knows the Dread Secret divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Dread Secret divine spell"',
   'Greater Revelation (Tempest)':
-    'Section=magic ' +
-    'Note="Knows the Tempest Form divine spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Tempest Form divine spell"',
   // Magic Sense as above
   'Forestall Curse':
     'Action=Free ' +
@@ -9704,7 +9716,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Angelic':Pathfinder2E.FEATURES.Angelic,
   'Bloodline':Pathfinder2E.FEATURES.Bloodline,
   'Bloodline Paragon':Pathfinder2E.FEATURES['Bloodline Paragon'],
-  'Bloodline Spells':Pathfinder2E.FEATURES['Bloodline Spells'],
+  'Bloodline Spells':
+    Pathfinder2E.FEATURES['Bloodline Spells']
+    .replace(' and 1 Focus Point', ''),
   // Defensive Robes as above
   'Demonic':
     Pathfinder2E.FEATURES.Demonic
@@ -10490,6 +10504,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Leverage Connections':Pathfinder2E.FEATURES.Connections
 
 };
+for(let f in Pathfinder2ERemaster.FEATURES)
+  Pathfinder2ERemaster.FEATURES[f] =
+    Pathfinder2ERemaster.FEATURES[f].replace('/+1 Focus Points', '');
 Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
 Pathfinder2ERemaster.HERITAGES = {
   'Changeling':
@@ -13060,7 +13077,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Concentrate,Manipulate,Water ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
+    'Description="TODO"',
+  'Clinging Shadows Stance':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Focus,Water ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
     'Description="TODO"'
+
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -13941,7 +13965,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
-    rules.defineRule('magicNotes.' + prefix + '-1', 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
   } else if(name.startsWith('Bestial Manifestation')) {
@@ -14212,8 +14235,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('spellModifier.Primal', 'spellModifier.Ranger', '=', null);
     rules.defineRule
-      ('magicNotes.initiateWarden', 'feats.Initiate Warden', '=', null);
-    rules.defineRule
       ('magicNotes.initiateWarden-1', 'feats.Initiate Warden', '=', null);
   } else if(name == 'Invulnerable Rager') {
     rules.defineRule('combatNotes.invulnerableRager',
@@ -14326,7 +14347,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'combatNotes.ultimateFlexibility', '=', 'null' // italics
     );
   } else if(name == 'Untamed Form') {
-    rules.defineRule('focusPoints', 'feats.Untamed Form', '+', '1');
     rules.defineRule
       ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
   } else if(name == 'Vicious Incisors') {
@@ -14525,6 +14545,8 @@ Pathfinder2ERemaster.spellRules = function(
   Pathfinder2E.spellRules(
     rules, name, null, level, tradition, cast, traits, description
   );
+  if(traits.includes('Focus') && !traits.includes('Cantrip'))
+    rules.defineRule('focusPoints', 'spells.' + name, '+', '1');
 };
 
 /*
