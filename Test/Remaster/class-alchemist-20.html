@@ -45,7 +45,7 @@ var attributes = {
   "skillIncreases.Military Lore":1, "skillIncreases.Milling Lore":1, "skillIncreases.Nature":2, 
   "skillIncreases.Orc Lore":1, "skillIncreases.Piloting Lore":1, "skillIncreases.Stealth":1, 
   "skillIncreases.Survival":1, "skillIncreases.Tanning Lore":1, "weapons.Gauntlet":1, 
-  "weapons.Longspear":1, "weapons.Spear":1
+  "weapons.Lesser Acid Flask":1, "weapons.Longspear":1, "weapons.Spear":1
 };
   </script>
 </head>
@@ -110,7 +110,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Hunting Lore); Additional Lore (Vampire Lore); Advanced Efficient Alchemy; Alchemical Assessment; Alchemical Familiar; Alchemical Revivification; Alter Admixture; Blowgun Poisoner; Bounce Back; Breath Control; Canny Acumen (Will); Clotting Elixirs; Combine Elixirs; Craft Philosopher's Stone; Crafter's Appraisal; Debilitating Bomb; Directional Bombs; Double Poison; Dubious Knowledge; Efficient Alchemy; Enduring Alchemy; Eternal Elixir; Expanded Splash; Experienced Professional; Exploitive Bomb; Extend Elixir; Far Lobber; Fleet; Fortified Elixirs; General Training; Greater Debilitating Bomb; Haughty Obstinacy; Healing Bomb; Improbable Elixirs; Improved Invigorating Elixir (Mental); Improved Invigorating Elixir (Physical); Improvise Admixture; Improvise Tool; Invigorating Elixir; Legendary Professional; Mega Bomb; Miracle Worker; Mutant Innervation; Mutant Physique; Perfect Debilitation; Pernicious Poison; Persistent Mutagen; Pinpoint Poisoner; Quick Bomber; Quick Repair; Regurgitate Mutagen; Revivifying Mutagen; Skill Training (Ratfolk Lore); Skill Training (Stabling Lore); Skill Training (Swamp Lore); Smoke Bomb; Snare Crafting; Soothing Vials; Sticky Bomb; Sticky Poison; Stubborn Persistence; Supreme Invigorating Elixir; Tenacious Toxins; True Debilitating Bomb; Uncanny Bombs; Unconventional Weaponry (Blowgun); Unmistakable Lore; Unstable Concoction</td>
-        <td><b>Alchemist Features</b>: Abundant Vials; Advance Vials; Advanced Alchemy; Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemical Weapon Mastery; Alchemist Feats; Alchemist Skills; Alchemy; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Bomber; Chemical Hardiness; Chirurgeon; Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Explosion Dodger; Field Discovery; Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Medium Armor Expertise; Medium Armor Mastery; Mutagenist; Perception Expertise; Perception Trained; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Toxicologist; Versatile Vials; Weapon Specialization; Will Expertise</td>
+        <td><b>Alchemist Features</b>: Abundant Vials; Advanced Alchemy; Advanced Vials (Bomber); Advanced Vials (Chirurgeon); Advanced Vials (Mutagenist); Advanced Vials (Toxicologist); Alchemical Expertise; Alchemical Mastery; Alchemical Weapon Expertise; Alchemical Weapon Mastery; Alchemist Feats; Alchemist Skills; Alchemy; Attack Trained (Simple Weapons; Alchemical Bombs; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Bomber; Chemical Hardiness; Chirurgeon; Class Trained (Alchemist); Defense Trained (Light Armor; Medium Armor; Unarmored Defense); Double Brew; Explosion Dodger; Field Discovery (Bomber); Field Discovery (Chirurgeon); Field Discovery (Mutagenist); Field Discovery (Toxicologist); Formula Book; General Feats; Greater Field Discovery (Bomber); Greater Field Discovery (Chirurgeon); Greater Field Discovery (Mutagenist); Greater Field Discovery (Toxicologist); Medium Armor Expertise; Medium Armor Mastery; Mutagenist; Perception Expertise; Perception Trained; Powerful Alchemy; Quick Alchemy; Research Field; Save Expert (Fortitude; Reflex); Save Trained (Will); Skill Feats; Skill Increases; Toxicologist; Versatile Vials; Weapon Specialization; Will Expertise</td>
         <td><b>Artisan Features</b>: Attribute Boost (Choose 1 from Intelligence, Strength; Choose 1 from any); Skill Trained (Crafting; Guild Lore); Specialty Crafting</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
       </tr></table>
@@ -209,7 +209,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Additional Lore (Vampire Lore): Skill Legendary (Vampire Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Advanced Efficient Alchemy: Has increased Advance Alchemy effects</i></td>
+      <td><i>Advanced Efficient Alchemy: Has increased Advanced Alchemy effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Alchemical Crafting: Knows the formulas for 4 common 1st-level alchemical items</i></td>
     </tr><tr style="text-align:center">
@@ -222,6 +222,10 @@ var attributes = {
       <td><i>Double Brew: Has increased Quick Alchemy effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Efficient Alchemy: Has increased Advanced Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Improved Invigorating Elixir (Mental): Has increased Invigorating Elixir effects</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Improved Invigorating Elixir (Physical): Has increased Invigorating Elixir effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +4 Language Count</i></td>
     </tr><tr style="text-align:center">
@@ -239,21 +243,31 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skilled Human: Skill Expert (Choose 1 from any)</i></td>
     </tr><tr style="text-align:center">
-      <td>Abundant Vials: Has increased Perpetual Infusions effects</td>
+      <td><i>Supreme Invigorating Elixir: Has increased Invigorating Elixir effects</i></td>
     </tr><tr style="text-align:center">
-      <td>Advanced Alchemy: Can create 14 infused alchemical items of up to level 20 without a Crafting check during daily prep</td>
+      <td><i>Toxicologist: Knows the formulas for 2 common 1st-level alchemical poisons</i></td>
     </tr><tr style="text-align:center">
-      <td>Alchemical Assessment: Can use Crafting to Identify Alchemy on a held item in 1 action; for known formulas, gains +2 on the check and critical failures are normal failures</td>
+      <td>Advanced Alchemy: Can create 14 consumable infused alchemical items of up to level 20 without a Crafting check during daily prep</td>
+    </tr><tr style="text-align:center">
+      <td>Advanced Vials (Bomber): Can make bombs with a special material trait</td>
+    </tr><tr style="text-align:center">
+      <td>Advanced Vials (Chirurgeon): Does not need to wait between multiple uses of healing field vials on a creature that has fewer than half of its maximum Hit Points</td>
+    </tr><tr style="text-align:center">
+      <td>Alchemical Assessment: Can use Crafting to Identify Alchemy on a held item in 1 action</td>
     </tr><tr style="text-align:center">
       <td>Alchemical Crafting: Can use Crafting to create alchemical items</td>
     </tr><tr style="text-align:center">
+      <td>Alchemical Expertise: Gathering reagents during exploration regains 3 vials</td>
+    </tr><tr style="text-align:center">
+      <td>Alchemy: Can automatically identify familiar alchemical items</td>
+    </tr><tr style="text-align:center">
       <td>Alter Admixture: Can use a 10 min process to change the type of an alchemical bomb, elixir, or poison</td>
     </tr><tr style="text-align:center">
-      <td>Chirurgeon: Can use Crafting in place of Medicine</td>
+      <td>Chirurgeon: Can use Crafting in place of Medicine/Can use versatile vials to restore Hit Points equal to their initial damage to a willing target within 20' once per target per 10 min</td>
     </tr><tr style="text-align:center">
       <td>Clotting Elixirs: Healing elixirs allow a DC 10 flat check to remove any persistent bleed damage</td>
     </tr><tr style="text-align:center">
-      <td>Combine Elixirs: <b>(F)</b> Uses the ingredients of 2 elixirs to create a single elixir that has the effects of both</td>
+      <td>Combine Elixirs: Uses the ingredients of 2 elixirs to create a single elixir that has the effects of both</td>
     </tr><tr style="text-align:center">
       <td>Craft Philosopher's Stone: Knows the formula for creating a philosopher's stone</td>
     </tr><tr style="text-align:center">
@@ -269,49 +283,43 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Extend Elixir: Doubles the duration of elixirs that last at least 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Formula Book: Has a book that contains at least 50 alchemical formulas</td>
+      <td>Field Discovery (Chirurgeon): Crafted healing elixirs give 4 temporary Hit Points for 1 min</td>
+    </tr><tr style="text-align:center">
+      <td>Formula Book: Has a book that contains at least 52 alchemical formulas</td>
     </tr><tr style="text-align:center">
       <td>Fortified Elixirs: Consumer of an infused antidote or antiplague can end its effects to gain a reroll on a failed Fortitude save vs. poison or disease</td>
     </tr><tr style="text-align:center">
+      <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
+    </tr><tr style="text-align:center">
       <td>Improbable Elixirs: Can create elixirs that replicate the effects of 4 potions of up to level 9</td>
-    </tr><tr style="text-align:center">
-      <td>Improved Invigorating Elixir (Mental): Can make invigorating elixirs that counteract confused, controlled, fleeing, frightened, paralyzed, or slowed</td>
-    </tr><tr style="text-align:center">
-      <td>Improved Invigorating Elixir (Physical): Can make invigorating elixirs that counteract blinded, deafened, drained, paralyzed, or slowed</td>
     </tr><tr style="text-align:center">
       <td>Improvise Admixture: <b>(1)</b> Crafting check using an alchemist's toolkit provides 1, 2, or 3 versatile vials on a failure, success, or critical success once per day</td>
     </tr><tr style="text-align:center">
-      <td>Invigorating Elixir: Prepared elixir can be imbibed by sickened creatures and attempts to counteract imbiber's choice of clumsy, enfeebled, sickened, or stupefied</td>
+      <td>Invigorating Elixir: Prepared elixirs can be imbibed by sickened creatures and attempt to counteract as level 22 the imbiber's choice of petrified, stunned, any disease, confused, controlled, fleeing, frightened, blinded, deafened, drained, paralyzed, slowed, clumsy, enfeebled, sickened, or stupefied</td>
     </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
       <td>Mutant Innervation: Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners' languages</td>
     </tr><tr style="text-align:center">
-      <td>Mutant Physique: Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait; juggernaut mutagens give 10 physical damage resistance, and quicksilver mutagens give 10' Steps and Squeezing as 1 size smaller</td>
+      <td>Mutant Physique: Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait, juggernaut mutagens give resistance 10 to physical damage, and quicksilver mutagens give 10' Steps and Squeezing as 1 size smaller</td>
     </tr><tr style="text-align:center">
-      <td>Persistent Mutagen: Extends the duration of a mutagen until next daily prep once per day</td>
+      <td>Persistent Mutagen: Can extend the duration of a mutagen until next daily prep once per day</td>
     </tr><tr style="text-align:center">
-      <td>Quick Alchemy: <b>(1)</b> Uses versatile vials to create 2 consumable alchemical items of up to level 20 that last for 1 turn</td>
+      <td>Quick Alchemy: <b>(1)</b> Creates 2 versatile vial bombs or research items that last until the end of the turn, or uses versatile vials to create 2 alchemical items of up to level 20 that last until the start of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Quick Repair: Can Repair an item in 1 min</td>
     </tr><tr style="text-align:center">
-      <td>Research Field: Can use 1 batch of infused reagents to create 3 signature items</td>
-    </tr><tr style="text-align:center">
-      <td>Soothing Vials: Versatile vial that restores Hit Points allows an immediate +1 Will saving throw to end 1 mental effect</td>
+      <td>Soothing Vials: Versatile vials that restore Hit Points allow an immediate +1 Will saving throw to end 1 mental effect</td>
     </tr><tr style="text-align:center">
       <td>Specialty Crafting: +1 Crafting on selected type of item</td>
     </tr><tr style="text-align:center">
-      <td>Supreme Invigorating Elixir: Invigorating elixirs counteract as level 22 and can counteract petrified, stunned, or any disease</td>
-    </tr><tr style="text-align:center">
-      <td>Tenacious Toxins: Increases duration of poisons by their stage 1 interval</td>
-    </tr><tr style="text-align:center">
-      <td>Toxicologist: Knows the formulas for 2 common 1st-level alchemical poisons</td>
+      <td>Tenacious Toxins: Increases the duration of poisons by their stage 1 interval</td>
     </tr><tr style="text-align:center">
       <td>Unmistakable Lore: Critical failures to Recall Knowledge on a trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information</td>
     </tr><tr style="text-align:center">
-      <td>Unstable Concoction: Can increase the die size of the initial effects of a alchemical consumable by 1 step; the consumer suffers acid damage equal to the items level (DC 10 flat check negates)</td>
+      <td>Unstable Concoction: Can increase the die size of the initial effects of a alchemical consumable by 1 step; the consumer must succeed on a DC 10 flat check or suffer acid damage equal to the item's level</td>
     </tr><tr style="text-align:center">
-      <td>Versatile Vials: Can create 10 versatile vials each day</td>
+      <td>Versatile Vials: Can create 10 versatile vials during daily prep</td>
     </tr></table>
 </td>
   </tr></table>
@@ -333,7 +341,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Breastplate</td>
         <td><b>Shield</b>: Wooden (+2 AC when raised; hardness 3; HP 12)</td>
-        <td><b>Weapons</b>: Gauntlet (+30 1d4+4 B; strength; master); Longspear (+30 1d8+4 P; strength; master); Spear (+30 1d6+4 P R20'; strength; master)</td>
+        <td><b>Weapons</b>: Gauntlet (+30 1d4+4 B; strength; master); Lesser Acid Flask (+30 1 E R60'; dexterity; master); Longspear (+30 1d8+4 P; strength; master); Spear (+30 1d6+4 P R20'; strength; master)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -345,7 +353,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Alchemical Weapon Expertise: Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Alchemical Weapon Mastery: Attack Master (Simple Weapons; Alchemical Bombs)</i></td>
+        <td><i>Alchemical Weapon Mastery: Attack Master (Simple Weapons; Alchemical Bombs; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
@@ -355,45 +363,51 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Far Lobber: Thrown bombs have a 30' range</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Greater Debilitating Bomb: Has increased Debilitating Bomb effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Mastery: Defense Master (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
+        <td><i>True Debilitating Bomb: Has increased Debilitating Bomb effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Uncanny Bombs: Thrown bombs have a 60' range</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Blowgun): Weapon Familiarity (Blowgun)</i></td>
       </tr><tr style="text-align:center">
-        <td>Blowgun Poisoner: Critical success with a poisoned blowgun Strike inflicts 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden or undetected</td>
+        <td>Abundant Vials: Permanently quickened; can use the additional action only to use Quick Alchemy</td>
       </tr><tr style="text-align:center">
-        <td>Bomber: Can direct a bomb splash onto a single target</td>
+        <td>Advanced Vials (Toxicologist): Poison vials also inflict persistent poison damage equal to their splash damage</td>
+      </tr><tr style="text-align:center">
+        <td>Blowgun Poisoner: Poisoned blowgun Strikes apply injury poisons even if the target's resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden or undetected</td>
+      </tr><tr style="text-align:center">
+        <td>Bomber: Can direct a bomb splash onto a single target/Can use versatile vials to inflict cold, electricity, or fire damage</td>
       </tr><tr style="text-align:center">
         <td>Bounce Back: <b>(F)</b> Recovery from dying does not increase the wounded condition once per day</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Bomb: <b>(F)</b> Creates a bomb of up to level 18 that also inflicts dazzled, deafened, flat-footed, or -5 Speed for 1 rd (<b>save Fortitude</b> negates) once per rd</td>
+        <td>Debilitating Bomb: Can craft bombs to also inflict clumsy 2, stupefied 2, enfeebled 1, dazzled, deafened, flat-footed, or -15 Speed (<b>save Fortitude</b> negates) until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Directional Bombs: Can restrict bomb splash effects to a 15' cone in the direction thrown</td>
+        <td>Directional Bombs: Can restrict bomb splash effects to a 20' cone in the direction thrown</td>
       </tr><tr style="text-align:center">
         <td>Double Poison: Can apply 2 poisons of up to level 18 to a weapon simultaneously</td>
       </tr><tr style="text-align:center">
         <td>Expanded Splash: Can throw bombs to inflict +4 HP splash damage in a 10' radius</td>
       </tr><tr style="text-align:center">
-        <td>Exploitive Bomb: <b>(F)</b> Creates a bombthat negates resistance 20 once per rd</td>
+        <td>Exploitive Bomb: Can create bombs of up to level 18 that negate resistance 20</td>
       </tr><tr style="text-align:center">
-        <td>Field Discovery: Can use 1 batch of infused reagents create 3 items from research field</td>
-      </tr><tr style="text-align:center">
-        <td>Greater Debilitating Bomb: Can use Debilitating Bomb to create bombs that inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed</td>
+        <td>Field Discovery (Bomber): Can throw a bomb to inflict 4 HP splash damage</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Bomber): Can increase bomb splash radius to 15'</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Chirurgeon): Created elixirs restore the maximum number of Hit Points</td>
       </tr><tr style="text-align:center">
-        <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
+        <td>Greater Field Discovery (Toxicologist): Infused injury poisons can also affect an adjacent target</td>
       </tr><tr style="text-align:center">
         <td>Healing Bomb: Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir's dice to adjacent creatures; failure restores Hit Points equal to the elixir's dice to the target only</td>
       </tr><tr style="text-align:center">
-        <td>Mega Bomb: <b>(2)</b> Thrown bomb of up to level 17 affects all creatures in a 30' radius (<b>save basic Reflex</b>)</td>
+        <td>Mega Bomb: Can create thrown bombs of up to level 17 that require 2 actions to throw and that affect all creatures in a 30' radius (<b>save basic Reflex</b>)</td>
       </tr><tr style="text-align:center">
         <td>Miracle Worker: Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min</td>
       </tr><tr style="text-align:center">
@@ -405,7 +419,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Pinpoint Poisoner: Off-guard targets suffer -2 initial saves vs. self poisoned weapons and inhaled poisons</td>
       </tr><tr style="text-align:center">
-        <td>Powerful Alchemy: Increases the DC for items created with Quick Alchemy to 40</td>
+        <td>Powerful Alchemy: Increases the DC for infused alchemical items to 40</td>
       </tr><tr style="text-align:center">
         <td>Quick Bomber: <b>(1)</b> Draws or uses Quick Alchemy to create a bomb and Strikes with it</td>
       </tr><tr style="text-align:center">
@@ -413,15 +427,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Revivifying Mutagen: <b>(1)</b> Ends the effects of a mutagen to regain 1d6 Hit Points per 2 levels of the mutagen</td>
       </tr><tr style="text-align:center">
-        <td>Smoke Bomb: <b>(F)</b> Creates a bomb that also creates smoke in a 10'-radius burst for 1 min once per rd</td>
+        <td>Smoke Bomb: Can craft bombs to also create smoke in a 10'-radius burst for 1 min</td>
       </tr><tr style="text-align:center">
-        <td>Sticky Bomb: <b>(F)</b> Can create bombs that inflict persistent damage equal to their splash damage</td>
+        <td>Sticky Bomb: Can craft bombs to inflict persistent damage equal to the splash damage</td>
       </tr><tr style="text-align:center">
-        <td>Sticky Poison: Poisoned weapon remains poisoned for 1 rd after a Strike on a successful DC 17 flat check, or DC 5 if the Strike had no effect</td>
+        <td>Sticky Poison: Poisoned weapon remains poisoned after a failed Strike with a successful DC 5 flat check, or until the end of the next turn after a successful Strike with a successful DC 17 flat check</td>
       </tr><tr style="text-align:center">
-        <td>Toxicologist: Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead</td>
-      </tr><tr style="text-align:center">
-        <td>True Debilitating Bomb: Can use Debilitating Bomb to create bombs that inflict enfeebled 2, stupefied 2, or -15 Speed </td>
+        <td>Toxicologist: Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead/Versatile vials have the poison, not acid, trait and can be used to poison a weapon until the end of the current turn</td>
       </tr><tr style="text-align:center">
         <td>Uncanny Bombs: Thrown bombs reduce target cover Armor Class bonus by 1 and succeed automatically on the flat check to target a concealed creature</td>
       </tr><tr style="text-align:center">
@@ -445,7 +457,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Will Expertise: Save Expert (Will)</i></td>
       </tr><tr style="text-align:center">
-        <td>Alchemical Revivification: If killed while under the effects of an elixir, returns to life next turn with the effects of a major bestial, juggernaut, or quicksilver mutagen</td>
+        <td>Advanced Vials (Mutagenist): Drinking a field vial gives resistance 10 to physical damage until the beginning of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Alchemical Revivification: After dying while under the effects of an elixir, returns to life at the start of the next turn with the effects of an elixir of rejuvenation, a true elixir of life, and a choice of a major bestial, juggernaut, or quicksilver mutagen, once every 1d4 hr</td>
       </tr><tr style="text-align:center">
         <td>Breath Control: +1 vs. inhaled threats, and successes vs. inhaled threats are critical successes</td>
       </tr><tr style="text-align:center">
@@ -453,7 +467,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Explosion Dodger: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
+        <td>Field Discovery (Mutagenist): Can end a mutagen effect to reroll a Fortitude save</td>
+      </tr><tr style="text-align:center">
+        <td>Field Discovery (Toxicologist): Has poison resistance 10</td>
+      </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
+      </tr><tr style="text-align:center">
+        <td>Mutagenist: Can drink a versatile vial to suppress a drawback from 1 mutagen until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Stubborn Persistence: Successful DC 17 flat check negates becoming fatigued</td>
       </tr></table>
