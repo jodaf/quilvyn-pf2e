@@ -1433,10 +1433,13 @@ Pathfinder2E.FEATS = {
     'Traits=Champion,Fighter ' +
     'Require=' +
       '"level >= 6",' +
-      // TODO recheck prereq
-      // Shield Ally and Tenets Of Good for Champion, Shield Block for Fighter
-      '"features.Shield Ally && features.The Tenets Of Good || ' +
-       'features.Shield Block"',
+      // As per core rules:
+      // '"features.Shield Ally && features.The Tenets Of Good || ' +
+      //  'levels.Fighter && features.Shield Block"',
+      // However, QuilvyRules validation doesn't support the && operator. All
+      // fighters receive Shield Block at level 1, so that's redundant, and
+      // the core rules defines only The Tenets Of Good, so we drop that.
+      '"features.Shield Ally || levels.Fighter"',
   'Smite Evil':
     'Traits=Champion ' +
     'Require=' +
@@ -3106,7 +3109,7 @@ Pathfinder2E.FEATURES = {
     'Note="Has R30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
-  // TODO change innate spells from primal to chosen wellspring
+  // TODO changes innate spell tradition from primal to chosen wellspring
   'Wellspring Gnome (Arcane)':
     'Section=magic ' +
     'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
@@ -3392,6 +3395,7 @@ Pathfinder2E.FEATURES = {
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
+  // TODO recheck Alchemist feature texts
   'Advanced Alchemy':
     'Section=skill ' +
     'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check during daily prep"',
@@ -3436,10 +3440,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Created elixirs restore the maximum number of Hit Points"',
   'Greater Field Discovery (Mutagenist)':
-    'Section=combat Note="Can use 2 polymorphic mutagens simultaneously"',
+    'Section=skill Note="Can use 2 polymorphic mutagens simultaneously"',
   'Infused Reagents':
     'Section=skill ' +
-    'Note="Can create %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents each day"',
+    'Note="Can create %{level+(levels.Alchemist?intelligenceModifier:0)} batches of infused reagents during daily prep"',
   'Iron Will':'Section=save Note="Save Expert (Will)"',
   'Juggernaut':
     'Section=save,save ' +
@@ -3471,16 +3475,12 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Has increased Perpetual Infusions effects"',
   'Powerful Alchemy':
     'Section=combat ' +
-    'Note="Increases the DC for items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
+    'Note="Increases the DC for infused alchemical items created with Quick Alchemy to %{classDifficultyClass.Alchemist}"',
   'Quick Alchemy':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that last for 1 turn"',
-  'Research Field':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"1 selection",' +
-      '"Can use 1 batch of infused reagents to create 3 signature items"',
+    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that %{skillNotes.quickAlchemy==1?\'lasts\':\'last\'} until the start of the next turn"',
+  'Research Field':'Section=feature Note="1 selection"',
   'Weapon Specialization':
     'Section=combat ' +
     'Note="Inflicts +%V, +%{combatNotes.weaponSpecialization*1.5}, or +%{combatNotes.weaponSpecialization*2} HP damage when using a weapon with expert, master, or legendary proficiency"',
@@ -3502,7 +3502,7 @@ Pathfinder2E.FEATURES = {
   'Smoke Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{level-1} that also creates smoke in a 10\'-radius burst for 1 min once per rd"',
+    'Note="Modifies a bomb of up to level %{level-1} to also create smoke in a 10\'-radius burst for 1 min once per rd"',
   'Calculated Splash':
     'Section=combat ' +
     'Note="Can throw a bomb to inflict %{intelligenceModifier} HP splash damage"',
@@ -3519,7 +3519,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that also inflicts dazzled, deafened, flat-footed, or -5 Speed for 1 rd (<b>save Fortitude</b> negates) once per rd"',
+    'Note="Modifies a bomb of up to level %{advancedAlchemyLevel-2} to also inflict %{combatNotes.trueDebilitatingBomb?\'clumsy 2, stupefied 2, enfeebled 1, \':combatNotes.greaterDebilitatingBomb?\'clumsy 1, enfeebled 1, stupefied 1, \':\'\'}dazzled, deafened, flat-footed, or -%{combatNotes.trueDebilitatingBomb?15:combatNotes.greaterDebilitatingBomb?10:5} Speed (<b>save Fortitude</b> negates) until the start of the next turn once per rd"',
   'Directional Bombs':
     'Section=combat ' +
     'Note="Can restrict bomb splash effects to a 15\' cone in the direction thrown"',
@@ -3531,7 +3531,7 @@ Pathfinder2E.FEATURES = {
   'Sticky Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that inflicts persistent damage equal to its splash damage once per rd"',
+    'Note="Modifies a bomb of up to level %{advancedAlchemyLevel-2} to inflict persistent damage equal to the splash damage once per rd"',
   'Elastic Mutagen':
     'Section=skill ' +
     'Note="Consuming a quicksilver mutagen allows 10\' Steps and moving through tight spaces as a creature 1 size smaller"',
@@ -3539,8 +3539,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can throw bombs to inflict +%{intelligenceModifier} HP splash damage in a 10\' radius"',
   'Greater Debilitating Bomb':
-    'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed"',
+    'Section=combat Note="Has increased Debilitating Bomb effects"',
   'Merciful Elixir':
     'Action=Free ' +
     'Section=skill ' +
@@ -3567,21 +3566,20 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Merciful Elixir to attempt to counteract a blinded, deafened, sickened, or slowed condition"',
   'True Debilitating Bomb':
-    'Section=combat ' +
-    'Note="Can use Debilitating Bomb to create bombs that inflict enfeebled 2, stupefied 2, or -15 Speed or a lesser condition that requires a critical success to negate"',
+    'Section=combat Note="Has increased Debilitating Bomb effects"',
   'Eternal Elixir':
     'Section=skill ' +
     'Note="Can indefinitely extend the duration of an elixir of up to level %{level//2} that lasts at least 1 min"',
   'Exploitive Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Creates a bomb of up to level %{advancedAlchemyLevel-2} that negates resistance %{level} once per rd"',
+    'Note="Modifies a bomb of up to level %{advancedAlchemyLevel-2} to negate resistance %{level} once per rd"',
   'Genius Mutagen':
     'Section=skill ' +
     'Note="Consuming a cognitive mutagen adds its bonus to Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival checks and allows R60\' telepathic communication"',
   'Persistent Mutagen':
     'Section=skill ' +
-    'Note="Extends the duration of a mutagen until next daily prep once per day"',
+    'Note="Can extend the duration of a mutagen until next daily prep once per day"',
   'Improbable Elixirs':
     'Section=skill ' +
     'Note="Can create elixirs that replicate the effects of %{intelligenceModifier>?1} potion%{intelligenceModifier>1?\'s\':\'\'} of up to level 9"',
@@ -3600,7 +3598,7 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Thrown bomb of up to level %{advancedAlchemyLevel-3} affects all creatures in a 30\' radius (<b>save basic Reflex</b>)"',
+    'Note="Modifies a thrown bomb of up to level %{advancedAlchemyLevel-3} to affect all creatures in a 30\' radius (<b>save basic Reflex</b>)"',
   'Perfect Mutagen':
     'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
 
@@ -14742,6 +14740,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
+    );
+  } else if(name.match(/^(Greater|True) Debilitating Bomb/)) {
+    rules.defineRule('combatNotes.debilitatingBomb',
+      'combatNotes.' + prefix, '=', 'null' // italics
     );
   } else if(name == 'Greater Mercy') {
     rules.defineRule

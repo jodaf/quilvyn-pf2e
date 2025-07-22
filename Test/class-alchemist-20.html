@@ -288,11 +288,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Glib Mutagen: Consuming a silvertongue mutagen negates Deception, Diplomacy, Intimidation, and Performance circumstance penalties and linguistic barriers</td>
     </tr><tr style="text-align:center">
+      <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
+    </tr><tr style="text-align:center">
       <td>Greater Merciful Elixir: Can use Merciful Elixir to attempt to counteract a blinded, deafened, sickened, or slowed condition</td>
     </tr><tr style="text-align:center">
       <td>Improbable Elixirs: Can create elixirs that replicate the effects of 4 potions of up to level 9</td>
     </tr><tr style="text-align:center">
-      <td>Infused Reagents: Can create 24 batches of infused reagents each day</td>
+      <td>Infused Reagents: Can create 24 batches of infused reagents during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Merciful Elixir: <b>(F)</b> Creates an elixir of life of up to level 18 that also allows a +30 counteract attempt on a fear or paralyzing effect once per rd</td>
     </tr><tr style="text-align:center">
@@ -300,13 +302,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Perpetual Infusions: Can create 2 alchemical items of up to level 11 from research field without using infused reagents</td>
     </tr><tr style="text-align:center">
-      <td>Persistent Mutagen: Extends the duration of a mutagen until next daily prep once per day</td>
+      <td>Persistent Mutagen: Can extend the duration of a mutagen until next daily prep once per day</td>
     </tr><tr style="text-align:center">
       <td>Potent Poisoner: +4 crafted poison DCs, up to DC 40</td>
     </tr><tr style="text-align:center">
-      <td>Quick Alchemy: <b>(1)</b> Uses batches of infused reagents to create 3 consumable alchemical items of up to level 20 that last for 1 turn</td>
-    </tr><tr style="text-align:center">
-      <td>Research Field: Can use 1 batch of infused reagents to create 3 signature items</td>
+      <td>Quick Alchemy: <b>(1)</b> Uses batches of infused reagents to create 3 consumable alchemical items of up to level 20 that last until the start of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Snare Crafting: Can use Crafting to create snares and knows the formulas for 4 common snares</td>
     </tr><tr style="text-align:center">
@@ -354,6 +354,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Far Lobber: Thrown bombs have a 30' range</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Greater Debilitating Bomb: Has increased Debilitating Bomb effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Medium Armor Expertise: Defense Expert (Light Armor; Medium Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Medium Armor Mastery: Defense Master (Light Armor; Medium Armor; Unarmored Defense)</i></td>
@@ -361,6 +363,8 @@ var attributes = {
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Toughness: +20 Hit Points</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>True Debilitating Bomb: Has increased Debilitating Bomb effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Uncanny Bombs: Thrown bombs have a 60' range</i></td>
       </tr><tr style="text-align:center">
@@ -376,29 +380,25 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Calculated Splash: Can throw a bomb to inflict 4 HP splash damage</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Bomb: <b>(F)</b> Creates a bomb of up to level 18 that also inflicts dazzled, deafened, flat-footed, or -5 Speed for 1 rd (<b>save Fortitude</b> negates) once per rd</td>
+        <td>Debilitating Bomb: <b>(F)</b> Modifies a bomb of up to level 18 to also inflict clumsy 2, stupefied 2, enfeebled 1, dazzled, deafened, flat-footed, or -15 Speed (<b>save Fortitude</b> negates) until the start of the next turn once per rd</td>
       </tr><tr style="text-align:center">
         <td>Directional Bombs: Can restrict bomb splash effects to a 15' cone in the direction thrown</td>
       </tr><tr style="text-align:center">
         <td>Expanded Splash: Can throw bombs to inflict +4 HP splash damage in a 10' radius</td>
       </tr><tr style="text-align:center">
-        <td>Exploitive Bomb: <b>(F)</b> Creates a bomb of up to level 18 that negates resistance 20 once per rd</td>
+        <td>Exploitive Bomb: <b>(F)</b> Modifies a bomb of up to level 18 to negate resistance 20 once per rd</td>
       </tr><tr style="text-align:center">
         <td>Feral Mutagen: Consuming a bestial mutagen gives claws and jaws the deadly d10 trait and allows increasing the Armor Class penalty to -2 to increase claws and jaws damage by 1 die step</td>
       </tr><tr style="text-align:center">
         <td>Field Discovery: Can use 1 batch of infused reagents create 3 items from research field</td>
       </tr><tr style="text-align:center">
-        <td>Greater Debilitating Bomb: Can use Debilitating Bomb to create bombs that inflict clumsy 1, enfeebled 1, stupefied 1, or -10 Speed</td>
-      </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Bomber): Can increase bomb splash radius to 15'</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Chirurgeon): Created elixirs restore the maximum number of Hit Points</td>
       </tr><tr style="text-align:center">
-        <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
-      </tr><tr style="text-align:center">
         <td>Invincible Mutagen: Consuming a juggernaut elixir gives resistance 4 to all physical damage</td>
       </tr><tr style="text-align:center">
-        <td>Mega Bomb: <b>(1)</b> Thrown bomb of up to level 17 affects all creatures in a 30' radius (<b>save basic Reflex</b>)</td>
+        <td>Mega Bomb: <b>(1)</b> Modifies a thrown bomb of up to level 17 to affect all creatures in a 30' radius (<b>save basic Reflex</b>)</td>
       </tr><tr style="text-align:center">
         <td>Miracle Worker: Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min</td>
       </tr><tr style="text-align:center">
@@ -406,17 +406,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Perfect Debilitation: Debilitating Bombs require a critical success to avoid effects</td>
       </tr><tr style="text-align:center">
-        <td>Powerful Alchemy: Increases the DC for items created with Quick Alchemy to 40</td>
+        <td>Powerful Alchemy: Increases the DC for infused alchemical items created with Quick Alchemy to 40</td>
       </tr><tr style="text-align:center">
         <td>Quick Bomber: <b>(1)</b> Draws a bomb and Strikes with it</td>
       </tr><tr style="text-align:center">
         <td>Revivifying Mutagen: <b>(1)</b> Ends the effects of a mutagen to regain 1d6 Hit Points per 2 levels of the mutagen</td>
       </tr><tr style="text-align:center">
-        <td>Smoke Bomb: <b>(F)</b> Creates a bomb of up to level 19 that also creates smoke in a 10'-radius burst for 1 min once per rd</td>
+        <td>Smoke Bomb: <b>(F)</b> Modifies a bomb of up to level 19 to also create smoke in a 10'-radius burst for 1 min once per rd</td>
       </tr><tr style="text-align:center">
-        <td>Sticky Bomb: <b>(F)</b> Creates a bomb of up to level 18 that inflicts persistent damage equal to its splash damage once per rd</td>
-      </tr><tr style="text-align:center">
-        <td>True Debilitating Bomb: Can use Debilitating Bomb to create bombs that inflict enfeebled 2, stupefied 2, or -15 Speed or a lesser condition that requires a critical success to negate</td>
+        <td>Sticky Bomb: <b>(F)</b> Modifies a bomb of up to level 18 to inflict persistent damage equal to the splash damage once per rd</td>
       </tr><tr style="text-align:center">
         <td>Uncanny Bombs: Thrown bombs reduce target cover Armor Class bonus by 1 and succeed automatically on the flat check to target a concealed creature</td>
       </tr><tr style="text-align:center">
