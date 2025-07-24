@@ -3479,7 +3479,7 @@ Pathfinder2E.FEATURES = {
   'Quick Alchemy':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that %{skillNotes.quickAlchemy==1?\'lasts\':\'last\'} until the start of the next turn"',
+    'Note="Uses batches of infused reagents to create %V consumable alchemical %{skillNotes.quickAlchemy==1?\'item\':\'items\'} of up to level %{advancedAlchemyLevel} that %{skillNotes.quickAlchemy==1?\'lasts\':\'last\'} until the %{skillNotes.enduringAlchemy?\'end\':\'start\'} of the next turn"',
   'Research Field':'Section=feature Note="1 selection"',
   'Weapon Specialization':
     'Section=combat ' +
@@ -3509,9 +3509,7 @@ Pathfinder2E.FEATURES = {
   'Efficient Alchemy':
     'Section=skill ' +
     'Note="Can produce twice the usual number of alchemical items during downtime"',
-  'Enduring Alchemy':
-    'Section=skill ' +
-    'Note="Quick Alchemy products last until the end of the next turn"',
+  'Enduring Alchemy':'Section=skill Note="Has increased Quick Alchemy effects"',
   'Combine Elixirs':
     'Action=Free ' +
     'Section=skill ' +
@@ -3519,7 +3517,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Bomb':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Modifies a bomb of up to level %{advancedAlchemyLevel-2} to also inflict %{combatNotes.trueDebilitatingBomb?\'clumsy 2, stupefied 2, enfeebled 1, \':combatNotes.greaterDebilitatingBomb?\'clumsy 1, enfeebled 1, stupefied 1, \':\'\'}dazzled, deafened, flat-footed, or -%{combatNotes.trueDebilitatingBomb?15:combatNotes.greaterDebilitatingBomb?10:5} Speed (<b>save Fortitude</b> negates) until the start of the next turn once per rd"',
+    'Note="Modifies a bomb of up to level %{advancedAlchemyLevel-2} to also inflict %{combatNotes.trueDebilitatingBomb?\'clumsy 1, stupefied 2, enfeebled 2, \':combatNotes.greaterDebilitatingBomb?\'clumsy 1, enfeebled 1, stupefied 1, \':\'\'}dazzled, deafened, flat-footed, or -%{combatNotes.trueDebilitatingBomb?15:combatNotes.greaterDebilitatingBomb?10:5} Speed (<b>save Fortitude</b> negates) until the start of the next turn once per rd"',
   'Directional Bombs':
     'Section=combat ' +
     'Note="Can restrict bomb splash effects to a 15\' cone in the direction thrown"',
@@ -3569,7 +3567,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Has increased Debilitating Bomb effects"',
   'Eternal Elixir':
     'Section=skill ' +
-    'Note="Can indefinitely extend the duration of an elixir of up to level %{level//2} that lasts at least 1 min"',
+    'Note="Can indefinitely extend the duration of 1 elixir of up to level %{level//2} that lasts at least 1 min"',
   'Exploitive Bomb':
     'Action=Free ' +
     'Section=combat ' +
@@ -3598,7 +3596,7 @@ Pathfinder2E.FEATURES = {
   'Mega Bomb':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Modifies a thrown bomb of up to level %{advancedAlchemyLevel-3} to affect all creatures in a 30\' radius (<b>save basic Reflex</b>)"',
+    'Note="Modifies a thrown bomb of up to level %{advancedAlchemyLevel-3} to affect all creatures in a 30\' radius within 60\' (<b>save basic Reflex</b>)"',
   'Perfect Mutagen':
     'Section=skill Note="Suffers no drawbacks from consuming mutagens"',
 
@@ -14686,6 +14684,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'featureNotes.elfAtavism', '+', '1'
       );
     });
+  } else if(name == 'Enduring Alchemy') {
+    rules.defineRule('skillNotes.quickAlchemy',
+      'skillNotes.enduringAlchemy', '=', 'null' // italics
+    );
   } else if(name == 'Expert Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
