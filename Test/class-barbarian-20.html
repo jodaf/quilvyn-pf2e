@@ -143,7 +143,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Natural Ambition: +1 Class Feat</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Raging Intimidation: Has the Intimidating Glare and Scare To Death features</i></td>
+        <td><i>Raging Intimidation: Has the Intimidating Glare feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Raging Intimidation: Has the Scare To Death feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 10 selections</i></td>
       </tr><tr style="text-align:center">
@@ -155,7 +157,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
       </tr><tr style="text-align:center">
-        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks until rage ends when reduced to 164 or fewer Hit Points</td>
+        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to 164 or fewer Hit Points</td>
       </tr></table>
 </td>
     </tr></table>
@@ -320,7 +322,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Attack Of Opportunity: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Awesome Blow: Success or critical success on an Athletics vs. Fortitude check after using Knockback inflicts success or critical success effects of Shove and Trip</td>
+        <td>Awesome Blow: Can attempt an Athletics vs. Fortitude check after using Knockback; success or critical success inflicts the success or critical success effects of Shove and Trip</td>
       </tr><tr style="text-align:center">
         <td>Bestial Rage (Ape): Can use fists to inflict 1d12+12 HP bludgeoning during rage</td>
       </tr><tr style="text-align:center">
@@ -348,15 +350,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Cleave: <b>(R)</b> Makes a melee Strike on an adjacent foe after killing a foe or knocking one unconscious during rage</td>
       </tr><tr style="text-align:center">
-        <td>Collateral Thrash: Thrash affects another adjacent foe (<b>save basic Reflex</b>)</td>
+        <td>Collateral Thrash: Thrash damages a second adjacent foe (<b>save basic Reflex</b>)</td>
       </tr><tr style="text-align:center">
-        <td>Come And Get Me: <b>(1)</b> Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on a foe gives self 4 temporary Hit Points, or 8 temporary Hit Points on a critical success</td>
+        <td>Come And Get Me: <b>(1)</b> Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self 4 temporary Hit Points, or 8 temporary Hit Points on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Contagious Rage: Can use Share Rage unlimited times, also sharing instinct and specialization abilities</td>
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
-        <td>Devastator: Successful melee Strikes ignore 10 points of physical damage resistance</td>
+        <td>Devastator: Successful melee Strikes ignore resistance 10 to physical damage</td>
       </tr><tr style="text-align:center">
         <td>Draconic Rage: Can inflict +16 HP cold damage instead of +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
@@ -372,7 +374,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Furious Grab: <b>(1)</b> Grapples a foe after a successful Strike during rage</td>
       </tr><tr style="text-align:center">
-        <td>Furious Sprint: <b>(2)</b> Strides 125' in a straight line, or 200' by using an additional action, during rage</td>
+        <td>Furious Sprint: <b>(2)</b> Strides 125' in a straight line, or 200' by using 3 actions, during rage</td>
       </tr><tr style="text-align:center">
         <td>Giant's Lunge: <b>(1)</b> Extends reach of melee weapons and unarmed attacks to 10' until rage ends</td>
       </tr><tr style="text-align:center">
@@ -410,7 +412,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Spirit Rage: May inflict +13 HP positive or negative damage, along with <i>ghost touch</i>, instead of +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
-        <td>Spirit's Wrath: <b>(1)</b> Makes a R120' +32 spirit Strike during rage that inflicts 4d8+4 HP negative or positive damage; a critical hit also inflicts frightened 1</td>
+        <td>Spirit's Wrath: <b>(1)</b> Makes a R120' +32 spirit Strike during rage that inflicts 4d8+4 HP negative or positive; a critical hit also inflicts frightened 1</td>
       </tr><tr style="text-align:center">
         <td>Spirits'Interference: <b>(1)</b> Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends</td>
       </tr><tr style="text-align:center">
@@ -420,9 +422,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Swipe: <b>(2)</b> Melee Strike attacks 2 adjacent foes</td>
       </tr><tr style="text-align:center">
-        <td>Terrifying Howl: <b>(1)</b> A successful Intimidate Demoralizes all foes in a 30' radius during rage</td>
+        <td>Terrifying Howl: <b>(1)</b> Successful Intimidate checks Demoralize each foe in a 30' radius during rage</td>
       </tr><tr style="text-align:center">
-        <td>Thrash: <b>(1)</b> Inflicts 16 HP bludgeoning plus specialization damage on a grabbed foe during rage (<b>save basic Fortitude</b>)</td>
+        <td>Thrash: <b>(1)</b> Inflicts 16 HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>) during rage</td>
       </tr><tr style="text-align:center">
         <td>Titan Mauler: Can use weapons made for a larger creature, suffering clumsy 1 and gaining +18 HP weapon damage, instead of gaining +12 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
@@ -430,13 +432,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Vengeful Strike: <b>(R)</b> While using Come And Get Me, responds to a successful foe attack with an immediate Strike</td>
       </tr><tr style="text-align:center">
-        <td>Vicious Evisceration: <b>(2)</b> Strike also inflicts drained 1, or drained 2 on a critical success during rage</td>
+        <td>Vicious Evisceration: <b>(2)</b> Strike also inflicts drained 1, or drained 2 on a critical success, during rage</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr><tr style="text-align:center">
         <td>Whirlwind Strike: <b>(3)</b> Makes individual Strikes at the current multiple attack penalty against all foes within reach</td>
       </tr><tr style="text-align:center">
-        <td>Wounded Rage: <b>(R)</b> Enters rage upon taking damage</td>
+        <td>Wounded Rage: <b>(R)</b> Enters rage upon suffering the triggering damage</td>
       </tr></table>
 </td>
     </tr></table>

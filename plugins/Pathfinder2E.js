@@ -3649,7 +3649,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Barbarian)",' +
-      '"Successful melee Strikes ignore 10 points of physical damage resistance"',
+      '"Successful melee Strikes ignore resistance 10 to physical damage"',
   'Draconic Rage':
     'Section=combat ' +
     'Note="Can inflict +%{combatNotes.greaterWeaponSpecialization?16:combatNotes.specializationAbility?8:4} HP %V damage instead of +%{combatNotes.rage} HP weapon damage during rage"',
@@ -3720,10 +3720,11 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Allows using concentration actions for the remainder of the turn during rage"',
   'Raging Intimidation':
-    'Section=combat,feature ' +
+    'Section=combat,feature,feature ' +
     'Note=' +
       '"Can use Demoralize and Scare To Death during rage",' +
-      '"Has the Intimidating Glare and Scare To Death features"',
+      '"Has the Intimidating Glare feature",' +
+      '"Has the Scare To Death feature"',
   'Raging Thrower':
     'Section=combat ' +
     'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
@@ -3759,7 +3760,7 @@ Pathfinder2E.FEATURES = {
   'Wounded Rage':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Enters rage upon taking damage"',
+    'Note="Enters rage upon suffering the triggering damage"',
   'Animal Skin':
     'Section=combat,combat ' +
     'Note=' +
@@ -3809,15 +3810,15 @@ Pathfinder2E.FEATURES = {
   'Thrash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe during rage (<b>save basic Fortitude</b>)"',
+    'Note="Inflicts %{combatNotes.rage+strengthModifier} HP bludgeoning plus specialization damage on a grabbed foe (<b>save basic Fortitude</b>) during rage"',
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on a foe gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success"',
+    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success"',
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using an additional action, during rage"',
+    'Note="Strides %{speed*5}\' in a straight line, or %{speed*8}\' by using 3 actions, during rage"',
   'Great Cleave':
     'Section=combat ' +
     'Note="Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate"',
@@ -3829,7 +3830,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     // Errata corrects "each creature" to "each enemy"
-    'Note="A successful Intimidate Demoralizes all foes in a 30\' radius during rage"',
+    'Note="Successful Intimidate checks Demoralize each foe in a 30\' radius during rage"',
   "Dragon's Rage Wings":
     'Action=1 Section=combat Note="Gains a %{speed}\' fly Speed during rage"',
   'Furious Grab':
@@ -3843,13 +3844,13 @@ Pathfinder2E.FEATURES = {
   "Spirit's Wrath":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike during rage that inflicts 4d8+%{constitutionModifier} HP negative or positive damage; a critical hit also inflicts frightened 1"',
+    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike during rage that inflicts 4d8+%{constitutionModifier} HP negative or positive; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
     'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
   'Awesome Blow':
     'Section=combat ' +
-    'Note="Success or critical success on an Athletics vs. Fortitude check after using Knockback inflicts success or critical success effects of Shove and Trip"',
+    'Note="Can attempt an Athletics vs. Fortitude check after using Knockback; success or critical success inflicts the success or critical success effects of Shove and Trip"',
   "Giant's Lunge":
     'Action=1 ' +
     'Section=combat ' +
@@ -3864,7 +3865,7 @@ Pathfinder2E.FEATURES = {
     'Note="Makes individual Strikes at the current multiple attack penalty against all foes within reach"',
   'Collateral Thrash':
     'Section=combat ' +
-    'Note="Thrash affects another adjacent foe (<b>save basic Reflex</b>)"',
+    'Note="Thrash damages a second adjacent foe (<b>save basic Reflex</b>)"',
   'Dragon Transformation':
     'Action=1 ' +
     'Section=magic ' +
@@ -3872,7 +3873,7 @@ Pathfinder2E.FEATURES = {
   'Reckless Abandon':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks until rage ends when reduced to %{hitPoints//2} or fewer Hit Points"',
+    'Note="Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to %{hitPoints//2} or fewer Hit Points"',
   'Brutal Critical':
     'Section=combat ' +
     // Errata limits effects to melee hits
@@ -3884,7 +3885,7 @@ Pathfinder2E.FEATURES = {
   'Vicious Evisceration':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike also inflicts drained 1, or drained 2 on a critical success during rage"',
+    'Note="Strike also inflicts drained 1, or drained 2 on a critical success, during rage"',
   'Contagious Rage':
     'Section=combat ' +
     'Note="Can use Share Rage unlimited times, also sharing instinct and specialization abilities"',
