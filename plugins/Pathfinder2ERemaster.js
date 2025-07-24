@@ -864,7 +864,7 @@ Pathfinder2ERemaster.CLASSES = {
     // 13:Weapon Fury => 13:Weapon Mastery
     // 17:Heightened Senses => 17:Perception Mastery
     // 17:Quick Rage => 17:Revitalizing Rage
-    // 19:Armor Of Fury => 19:Armor Mastery
+    // 19:Armor Of Fury => 19:Armor Mastery (should be Medium AM?)
     // null => 1:Superstition Instinct
     'Attribute=strength HitPoints=12 ' +
     'Features=' +
@@ -886,8 +886,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Animal Instinct (Snake) ? 1:Bestial Rage (Snake)",' +
       '"features.Animal Instinct (Wolf) ? 1:Bestial Rage (Wolf)",' +
       '"features.Dragon Instinct ? 1:Draconic Rage",' +
+      '"features.Fury Instinct ? 1:Unstoppable Frenzy",' +
       '"features.Giant Instinct ? 1:Titan Mauler",' +
       '"features.Spirit Instinct ? 1:Spirit Rage",' +
+      '"features.Superstition Instinct ? 1:Superstitious Resilience",' +
       '"2:Skill Feats","3:Furious Footfalls","3:General Feats",' +
       '"3:Skill Increases",5:Brutality,7:Juggernaut,' +
       '"7:Specialization Ability","7:Weapon Specialization",' +
@@ -897,10 +899,11 @@ Pathfinder2ERemaster.CLASSES = {
       '"features.Fury Instinct ? 9:Raging Resistance (Fury)",' +
       '"features.Giant Instinct ? 9:Raging Resistance (Giant)",' +
       '"features.Spirit Instinct ? 9:Raging Resistance (Spirit)",' +
+      '"features.Superstition Instinct ? 9:Raging Resistance (Superstition)",' +
       '"11:Mighty Rage","13:Greater Juggernaut","13:Medium Armor Expertise",' +
       '"13:Weapon Mastery","15:Greater Weapon Specialization",' +
-      '"15:Indomitable Will","17:Perception Mastery","19:Armor Mastery",' +
-      '19:Devastator ' +
+      '"15:Indomitable Will","17:Perception Mastery","17:Revitalizing Rage",' +
+      '"19:Medium Armor Mastery",19:Devastator ' +
     'Selectables=' +
       '"1:Fury Instinct:Instinct",' +
       '"1:Giant Instinct:Instinct",' +
@@ -2790,7 +2793,8 @@ Pathfinder2ERemaster.FEATS = {
   // Barbarian
   'Acute Vision':Pathfinder2E.FEATS['Acute Vision'],
   'Adrenaline Rush':'Traits=Barbarian,Rage',
-  'Draconic Arrogance':'Traits=Barbarian,Rage',
+  'Draconic Arrogance':
+    'Traits=Barbarian,Rage Require="features.Dragon Instinct"',
   'Moment Of Clarity':Pathfinder2E.FEATS['Moment Of Clarity'],
   'Raging Intimidation':Pathfinder2E.FEATS['Raging Intimidation'],
   'Raging Thrower':Pathfinder2E.FEATS['Raging Thrower'],
@@ -2799,7 +2803,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Acute Scent'] + ' ' +
     'Require="level >= 2"',
   'Bashing Charge':
-    'Traits=Barbarian,Rage Require="level >= 2","rank.Athletics >= 1"',
+    'Traits=Barbarian,Flourish Require="level >= 2","rank.Athletics >= 1"',
   'Furious Finish':Pathfinder2E.FEATS['Furious Finish'],
   // Intimidating Strike as above
   'No Escape':Pathfinder2E.FEATS['No Escape'],
@@ -2824,8 +2828,8 @@ Pathfinder2ERemaster.FEATS = {
   'Brutal Bully':Pathfinder2E.FEATS['Brutal Bully'],
   'Cleave':Pathfinder2E.FEATS.Cleave,
   "Dragon's Rage Breath":
-    Pathfinder2E.FEATS["Dragon's Rage Breath"]
-    .replaceAll(/,(Arcane|Evocation)/g, ''),
+    Pathfinder2E.FEATS["Dragon's Rage Breath"] + ' ' +
+    'Traits=Barbarian,Concentrate,Rage',
   "Giant's Stature":
     Pathfinder2E.FEATS["Giant's Stature"]
     .replace(',Transmutation', ''),
@@ -2837,6 +2841,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 6","features.Superstition Instinct"',
   'Nocturnal Senses':
     'Traits=Barbarian,Rage ' +
+    // TODO features.Scent isn't a thing
     'Require="level >= 6","features.Low-Light Vision || features.Scent"',
   'Reactive Strike':Pathfinder2E.FEATS['Attack Of Opportunity'],
   // TODO requires "instinct that allows you to change your Rage damage type"
@@ -2855,6 +2860,7 @@ Pathfinder2ERemaster.FEATS = {
   'Furious Bully':Pathfinder2E.FEATS['Furious Bully'],
   'Instinctive Strike':
     'Traits=Barbarian ' +
+    // TODO features.Scent isn't a thing
     'Require="level >= 8","features.Acute Scent || features.Scent"',
   'Invulnerable Rager':'Traits=Barbarian Require="level >= 8"',
   'Renewed Vigor':Pathfinder2E.FEATS['Renewed Vigor'],
@@ -2875,8 +2881,8 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Terrifying Howl'] + ' ' +
     'Require="level >= 10"',
   "Dragon's Rage Wings":
-    Pathfinder2E.FEATS["Dragon's Rage Wings"]
-    .replaceAll(/,(Primal|Transmutation)/g, ''),
+    Pathfinder2E.FEATS["Dragon's Rage Wings"] + ' ' +
+    'Traits=Barbarian,Morph,Rage',
   'Embrace The Pain':'Traits=Barbarian,Rage Require="level >= 12"',
   'Furious Grab':Pathfinder2E.FEATS['Furious Grab'],
   "Predator's Pounce":
@@ -2886,17 +2892,14 @@ Pathfinder2ERemaster.FEATS = {
   'Sunder Spell':
     'Traits=Barbarian,Attack,Concentrate,Rage ' +
     'Require="level >= 12","features.Superstition Instinct"',
+  // Traits and requirements changed
   "Titan's Stature":
-    Pathfinder2E.FEATS["Titan's Stature"]
-    .replaceAll(/,(Polymorph|Transmutation)/g, '') + ' ' +
-    'Require="level >= 12","features.Giant\'s Stature"',
+    'Traits=Barbarian Require="level >= 12","features.Giant\'s Stature"',
   'Unbalancing Sweep':
     'Traits=Barbarian,Flourish ' +
     'Require="level >= 12"',
   'Awesome Blow':Pathfinder2E.FEATS['Awesome Blow'],
-  "Giant's Lunge":
-    Pathfinder2E.FEATS["Giant's Lunge"]
-    .replace(',Instinct', ''),
+  "Giant's Lunge":Pathfinder2E.FEATS["Giant's Lunge"],
   'Impaling Thrust':'Traits=Barbarian,Rage Require="level >= 14"',
   'Sunder Enchantment':
     'Traits=Barbarian Require="level >= 14","features.Sunder Spell"',
@@ -2904,10 +2907,10 @@ Pathfinder2ERemaster.FEATS = {
   // Whirlwind Strike as above
   'Collateral Thrash':Pathfinder2E.FEATS['Collateral Thrash'],
   'Desperate Wrath':Pathfinder2E.FEATS['Reckless Abandon'],
+  // Changed traits and requirements
   'Dragon Transformation':
-    Pathfinder2E.FEATS['Dragon Transformation']
-    .replace(',Transmutation', '') + ' ' +
-    'Require="level >= 16","features.Dragon\'s Rage Wings"',
+    'Traits=Barbarian,Concentrate,Polymorph,Primal,Rage ' +
+    'Require="features.Dragon\'s Rage Wings"',
   'Furious Vengeance':
     'Traits=Barbarian,Rage Require="level >= 16","features.Fury Instinct"',
   'Penetrating Projectile':
@@ -8337,20 +8340,28 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+5 Speed",' +
       '"+5 Speed during rage"',
-  'Fury Instinct':Pathfinder2E.FEATURES['Fury Instinct'],
   'Greater Juggernaut':Pathfinder2E.FEATURES['Greater Juggernaut'],
   // Greater Weapon Specialization as above
   'Indomitable Will':Pathfinder2E.FEATURES['Indomitable Will'],
   'Instinct':Pathfinder2E.FEATURES.Instinct,
   'Juggernaut':Pathfinder2E.FEATURES.Juggernaut,
   // Medium Armor Expertise as above
-  'Mighty Rage':Pathfinder2E.FEATURES['Mighty Rage'],
+  // Changed effects
+  'Mighty Rage':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Class Expert (Barbarian)",' +
+      '"After using Quick-Tempered, the 1st Strike during the 1st turn inflicts +%{combatNotes.rage} HP"',
   // Perception Mastery as above
   'Quick-Tempered':
     'Action=Free ' +
     'Section=combat ' +
     'Note="Enters rage during initiative when unencumbered and in medium or lighter armor"',
-  'Rage':Pathfinder2E.FEATURES.Rage,
+  'Rage':
+   Pathfinder2E.FEATURES.Rage
+   .replace('-1 Armor Class and ', '')
+   .replace('quickRage', 'revitalizingRage')
+   .replace('rages', 'rages to again gain temporary Hit Points'),
   'Raging Resistance (Animal)':
     Pathfinder2E.FEATURES['Raging Resistance (Animal)'],
   'Raging Resistance (Dragon)':
@@ -8359,11 +8370,28 @@ Pathfinder2ERemaster.FEATURES = {
   'Raging Resistance (Giant)':
     Pathfinder2E.FEATURES['Raging Resistance (Giant)'],
   'Raging Resistance (Spirit)':
-    Pathfinder2E.FEATURES['Raging Resistance (Spirit)'],
+    Pathfinder2E.FEATURES['Raging Resistance (Spirit)']
+    .replace('negative', 'void'),
+  'Raging Resistance (Superstition)':
+    'Section=save ' +
+    'Note="Has resistance %{3+constitutionModifier} to a choice of arcane or divine spells and a choice of occult or primal spells during rage"',
   'Revitalizing Rage':Pathfinder2E.FEATURES['Quick Rage'],
   'Specialization Ability':Pathfinder2E.FEATURES['Specialization Ability'],
-  'Spirit Rage':Pathfinder2E.FEATURES['Spirit Rage'],
+  'Spirit Rage':
+    Pathfinder2E.FEATURES['Spirit Rage']
+    .replace('positive or negative', 'spirit'),
+  'Superstitious Resilience':
+    'Section=combat,combat,save ' +
+    'Note=' +
+      '"Increases added rage damage to %V",' +
+      '"Entering rage restores %{level+constitutionModifier} Hit Points once per 10 min/Inflicts +%{combatNotes.greaterWeaponSpecialization?3:1} HP vs. targets seen casting within the past hr during rage",' +
+      '"+2 vs. magic during rage/Willingly accepting magic effects during rage inflicts frightened 1 as long as the effects last"',
   'Titan Mauler':Pathfinder2E.FEATURES['Titan Mauler'],
+  'Unstoppable Frenzy':
+    'Section=combat,feature ' +
+    'Note=' +
+      '"Increases added rage damage to %V",' +
+      '"+1 Class Feat"',
   'Weapon Mastery':Pathfinder2E.FEATURES['Weapon Fury'],
   // Reflex Expertise as above
   // Weapon Specialization as above
@@ -8387,25 +8415,27 @@ Pathfinder2ERemaster.FEATURES = {
   'Furious Finish':Pathfinder2E.FEATURES['Furious Finish'],
   // Intimidating Strike as above
   'No Escape':Pathfinder2E.FEATURES['No Escape'],
-  'Second Wind':Pathfinder2E.FEATURES['Second Wind'],
+  'Second Wind':
+    Pathfinder2E.FEATURES['Second Wind']
+    .replace('rage', 'gain temporary Hit Points from raging'),
   'Shake It Off':Pathfinder2E.FEATURES['Shake It Off'],
   // Barreling Charge as above
   'Oversized Throw':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Uses an item from surroundings to make a R20\' ranged strike that deals %{combatNotes.greaterWeaponSpecialization?3:combatNotes.weaponSpecialization?2:1}d10 HP bludgeoning"',
+    'Note="Uses an item from surroundings to make a R20\' ranged strike that deals %{combatNotes.greaterWeaponSpecialization?3:combatNotes.weaponSpecialization?2:1}d10 HP bludgeoning during rage"',
   'Raging Athlete':Pathfinder2E.FEATURES['Raging Athlete'],
   'Scars Of Steel':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives resistance %{constitutionModifier+level//2} to the damage from the triggering critical hit once per day"',
+    'Note="Gives resistance %{constitutionModifier+level//2} to the damage from the triggering critical hit once per day during rage"',
   'Spiritual Guides':
     'Action=Reaction ' +
     'Section=skill ' +
     'Note="Rerolls a normal failure on a Perception or skill check once per day"',
   'Supernatural Senses':
     'Section=skill ' +
-    'Note="Reduces the flat check DC to target a concealed or hidden foe to 3 or 9"',
+    'Note="Reduces the flat check DC to target a concealed or hidden foe to 3 or 9 during rage"',
   // Swipe as above
   'Wounded Rage':Pathfinder2E.FEATURES['Wounded Rage'],
   'Animal Skin':Pathfinder2E.FEATURES['Animal Skin'],
@@ -8413,41 +8443,43 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Brutal Bully']
     .replace('Shove', 'Reposition, Shove'),
   'Cleave':Pathfinder2E.FEATURES.Cleave,
+  // Changed effects
   "Dragon's Rage Breath":
-    Pathfinder2E.FEATURES["Dragon's Rage Breath"] + ' ' +
-    'Note="Breath inflicts %{level}d6 damage in a 30\' cone once per 10 min (<b>save basic Reflex</b>)"',
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Breath inflicts %{level}d6 damage in a 30\' cone (<b>save basic Reflex</b>) once per 10 min during rage"',
   "Giant's Stature":Pathfinder2E.FEATURES["Giant's Stature"],
   'Inner Strength':
-    'Action=1 Section=save Note="Reduces enfeebled condition by 1"',
+    'Action=1 Section=save Note="Reduces enfeebled condition by 1 during rage"',
   'Mage Hunter':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike on a spell caster inflicts stupefied 1 for 1 rd, or stupefied 2 on a critical hit"',
+    'Note="Successful Strike on a known spell caster inflicts stupefied 1, or stupefied 2 on a critical hit, until the start of the next turn during rage"',
   'Nocturnal Senses':
     'Section=feature ' +
-    'Note="Low-Light Vision becomes Darkvision while raging and imprecise scent range increases to 60\'"',
+    'Note="Low-Light Vision becomes Darkvision and imprecise scent range increases to 60\' during rage"',
   // Reactive Strike as above
   'Scouring Rage':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Upon entering rage, 20\' emanation inflicts %{level} HP modified rage damage type on foes (<b>save basic Fortitude</b>)"',
+    'Note="Entering rage inflicts %{level} HP rage damage type on foes in a 20\' emanation (<b>save basic Fortitude</b>)"',
   "Spirits' Interference":Pathfinder2E.FEATURES["Spirits' Interference"],
   'Animalistic Brutality':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmed attack gains backswing, forceful, parry, or razing trait until rage ends"',
+    'Note="Unarmed attack gains a choice of the backswing, forceful, parry, razing, and sweep traits until rage ends"',
   'Disarming Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike allows an Athletics check to Disarm"',
+    'Note="Successful melee Strike allows an Athletics check to Disarm during rage"',
   'Follow-Up Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Follows a melee Strike miss with another with the backswing and forceful traits"',
+    'Note="Follows a melee Strike miss with another with the backswing and forceful traits during rage"',
   'Friendly Toss':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Throws an adjacent ally to a space within 30\', where it can use a Reaction for a melee Strike against a foe"',
+    'Note="Throws an adjacent ally to a space within 30\', where it can use a reaction to make a melee Strike against a foe, during rage"',
   'Furious Bully':Pathfinder2E.FEATURES['Furious Bully'],
   'Instinctive Strike':
     'Section=combat ' +
@@ -8456,10 +8488,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Defense %V (Heavy Armor)",' +
-      '"May use Quick-Tempered action in heavy armor"',
+      '"Can use Quick-Tempered action in heavy armor"',
   'Renewed Vigor':
     Pathfinder2E.FEATURES['Renewed Vigor']
-    .replace('Hit Points', 'Hit Points, or %{level+constitutionModifier} after attacking'),
+    .replace('Hit Points', 'Hit Points, or %{level+constitutionModifier} Hit Points after attacking,'),
   'Share Rage':Pathfinder2E.FEATURES['Share Rage'],
   // Sudden Leap as above
   'Thrash':Pathfinder2E.FEATURES.Thrash,
@@ -8477,68 +8509,73 @@ Pathfinder2ERemaster.FEATURES = {
   'Resounding Blow':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts deafened for 1 rd, or for 1 min with a critical hit"',
+    'Note="Successful melee Strike inflicts deafened until the start of the next turn, or for 1 min with a critical hit, during rage"',
   'Silencing Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts stunned 1, requiring a successful DC flat check to use linguistic actions (<b>save Fortitude</b> negates; critical success inflicts stunned 3)"',
+    'Note="Successful melee Strike inflicts stunned 1, requiring a successful DC 11 flat check to use linguistic actions (<b>save Fortitude</b> negates; critical failure inflicts stunned 3) during rage"',
   'Tangle Of Battle':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a Grapple attempt immediately after a critical hit"',
+    'Note="Makes a Grapple attempt immediately after a critical hit on the same adjacent foe during rage"',
   'Terrifying Howl':Pathfinder2E.FEATURES['Terrifying Howl'],
   "Dragon's Rage Wings":Pathfinder2E.FEATURES["Dragon's Rage Wings"],
   'Embrace The Pain':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful Athletics check inflects Grapple or Disarm after a foe melee hit"',
+    'Note="Successful Athletics check inflects Grapple or Disarm after a foe melee hit during rage"',
   'Furious Grab':Pathfinder2E.FEATURES['Furious Grab'],
   "Predator's Pounce":Pathfinder2E.FEATURES["Predator's Pounce"],
-  "Spirit's Wrath":Pathfinder2E.FEATURES["Spirit's Wrath"],
+  "Spirit's Wrath":
+    Pathfinder2E.FEATURES["Spirit's Wrath"]
+    .replace('negative or positive', 'spirit')
+    .replace('also inflicts', 'inflicts double HP and'),
   'Sunder Spell':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike on a creature, object, or spell manifestation allows an attempt to counteract a spell or magical effect"',
+    'Note="Successful melee Strike on a creature, object, or spell manifestation allows a level %{(level+1)//2} counteract attempt vs. a spell or magical effect once per target per day during rage"',
   "Titan's Stature":Pathfinder2E.FEATURES["Titan's Stature"],
   'Unbalancing Sweep':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes a Shove or Trip against 3 foes within reach"',
+    'Note="Makes a Shove or Trip attempt vs. 3 foes within reach"',
   'Awesome Blow':Pathfinder2E.FEATURES['Awesome Blow'],
   "Giant's Lunge":Pathfinder2E.FEATURES["Giant's Lunge"],
   'Impaling Thrust':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful Strike with a piercing melee weapon inflicts grabbed, then persistent bleed damage equal to the weapon\'s damage dice"',
+    'Note="Successful Strike with a piercing melee weapon during rage inflicts grabbed; ending the grab inflicts persistent bleed damage equal to the weapon\'s damage dice"',
   'Sunder Enchantment':
     'Section=combat ' +
-    'Note="Can use Sunder Spell to counteract an unattended magic item or 1 possessed by the target to make it mundane for 10 min"',
+    'Note="Can use Sunder Spell to instead attempt to counteract an unattended magic item, or one possessed by the target, making it mundane for 10 min"',
   'Vengeful Strike':
     Pathfinder2E.FEATURES['Vengeful Strike']
-    .replace(/"$/, '; using in response to a critical hit is a free action"'),
+    .replace(/"$/, '; using Vengeful Strike in response to a critical hit is a free action"'),
   // Whirlwind Strike as above
   'Collateral Thrash':Pathfinder2E.FEATURES['Collateral Thrash'],
   'Desperate Wrath':Pathfinder2E.FEATURES['Reckless Abandon'],
   'Dragon Transformation':
     Pathfinder2E.FEATURES['Dragon Transformation']
-    .replace('level', 'rank'),
+    .replace('level', 'rank')
+    .replace('during rage', 'once per 10 min during rage'),
   'Furious Vengeance':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike against a foe that inflicts a critical hit"',
+    'Note="Makes a melee Strike against a foe that inflicts a critical hit on self during rage"',
   'Penetrating Projectile':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes a ranged or thrown piercing weapon Strike on each creature in a 30\' line"',
+    'Note="Makes a ranged or thrown piercing weapon Strike on each creature in a 30\' line during rage"',
   'Shattering Blows':
-    'Section=combat Note="Strikes ignore %{features.Devastator?10:5} Hardness"',
+    'Section=combat ' +
+    'Note="Strikes ignore %{features.Devastator?10:5} Hardness during rage"',
   'Brutal Critical':Pathfinder2E.FEATURES['Brutal Critical'],
   'Perfect Clarity':Pathfinder2E.FEATURES['Perfect Clarity'],
   'Vicious Evisceration':Pathfinder2E.FEATURES['Vicious Evisceration'],
   'Whirlwind Toss':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Collateral Thrash affects all adjacent foes"',
+    'Note="Collateral Thrash damages all adjacent foes"',
   'Annihilating Swing':
     'Action=2 ' +
     'Section=combat ' +
@@ -8547,7 +8584,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Quaking Stomp':Pathfinder2E.FEATURES['Quaking Stomp'],
   'Unstoppable Juggernaut':
     'Section=save ' +
-    'Note="Has resistance %{constitutionModifier+3} to all damage, resistance %{constitutionModifier+8} during rage, and can retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
+    'Note="Has resistance %{constitutionModifier+3} to all damage, resistance %{constitutionModifier+8} during rage, and can use a reaction to retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
 
   // Champion
   // Anathema as above
@@ -13780,6 +13817,26 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.perpetualInfusions',
       'features.Perpetual Infusions', '?', null
     );
+  } else if(name == 'Barbarian') {
+    // Suppress legacy note
+    rules.defineRule('combatNotes.furyInstinct',
+      'featureNotes.furyInstinct', '?', null
+    );
+    rules.defineRule('combatNotes.rage',
+      'combatNotes.revitalizingRage', '=', 'null', // italics
+      'combatNotes.superstitiousResilience', '^', null,
+      'combatNotes.unstoppableFrenzy', '^', null
+    );
+    rules.defineRule('combatNotes.superstitiousResilience',
+      'combatNotes.specializationAbility', '=', 'null', // italics
+      'features.Weapon Specialization', '=', '7',
+      'features.Greater Weapon Specialization', '=', '13'
+    );
+    rules.defineRule('combatNotes.unstoppableFrenzy',
+      'combatNotes.specializationAbility', '=', 'null', // italics
+      'features.Weapon Specialization', '=', '7',
+      'features.Greater Weapon Specialization', '=', '13'
+    );
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.blessedShield',
       'classLevel', '=', 'source<13 ? 3 : source<20 ? 5 : 7'
@@ -14671,6 +14728,10 @@ Pathfinder2ERemaster.ruleNotes = function() {
     '  The PF2E plugin uses (1), (2), (3), (F), and (R) on the character ' +
     '  sheet to note features that require 1, 2, or 3 actions or can be ' +
     '  taken as a free action or Reaction.\n' +
+    '  </li><li>\n' +
+    '  For consistency with the features of other classes, Quilvyn gives ' +
+    '  barbarians Medium Armor Master at level 19, rather than Armor Mastery ' +
+    "  that doesn't apply to heavy armor.\n" +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
