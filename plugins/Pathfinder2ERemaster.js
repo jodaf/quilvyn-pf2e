@@ -8143,6 +8143,7 @@ Pathfinder2ERemaster.FEATURES = {
    .replace('target', 'target/Can use versatile vials to inflict cold, electricity, or fire damage'),
   'Chemical Hardiness':Pathfinder2E.FEATURES.Juggernaut,
   'Chirurgeon':
+    // Once per target per 10 min comes from the Coagulant trait
     Pathfinder2E.FEATURES.Chirurgeon
     .replace('Medicine', "Medicine/Can use versatile vials to restore Hit Points equal to their initial damage to a willing target within 20' once per target per 10 min"),
   'Double Brew':Pathfinder2E.FEATURES['Double Brew'],
@@ -8151,7 +8152,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Field Discovery (Chirurgeon)':
     'Section=skill Note="Crafted healing elixirs give %{intelligenceModifier>?0} temporary Hit Points for 1 min"',
   'Field Discovery (Mutagenist)':
-    'Section=save Note="Can end a mutagen effect to reroll a Fortitude save"',
+    'Section=save Note="Can end a the effects of a mutagen to reroll a Fortitude save"',
   'Field Discovery (Toxicologist)':
     'Section=save Note="Has poison resistance %{level//2}"',
   'Formula Book':Pathfinder2E.FEATURES['Formula Book'],
@@ -8180,7 +8181,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Toxicologist':
     'Section=combat,skill ' +
     'Note=' +
-      '"Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead/Versatile vials have the poison, not acid, trait and can be used to poison a weapon until the end of the current turn",' +
+      '"Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead/Versatile vials have the poison, not acid, trait and can be used to poison a weapon for the first successful Strike before the end of the current turn",' +
       '"Knows the formulas for 2 common 1st-level alchemical poisons"',
   'Quick Alchemy':
     Pathfinder2E.FEATURES['Quick Alchemy']
@@ -8201,7 +8202,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(/;[^"]*/, ''),
   'Blowgun Poisoner':
     'Section=combat ' +
-    'Note="Poisoned blowgun Strikes apply injury poisons even if the target\'s resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden or undetected"',
+    'Note="Poisoned blowgun Strikes apply injury poisons even if the target\'s resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden"',
   'Far Lobber':Pathfinder2E.FEATURES['Far Lobber'],
   'Quick Bomber':
     Pathfinder2E.FEATURES['Quick Bomber']
@@ -8211,11 +8212,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Versatile vials that restore Hit Points allow an immediate +1 Will saving throw to end 1 mental effect"',
   'Clotting Elixirs':
     'Section=skill ' +
-    'Note="Healing elixirs allow a DC 10 flat check to remove any persistent bleed damage"',
+    'Note="Healing elixirs allow a DC 10 flat check to remove persistent bleed damage"',
   'Improvise Admixture':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Crafting check using an alchemist\'s toolkit provides 1, 2, or 3 versatile vials on a failure, success, or critical success once per day"',
+    'Note="Crafting check using an alchemist\'s toolkit creates 1, 2, or 3 versatile vials on a failure, success, or critical success once per day"',
   'Pernicious Poison':
     'Section=combat ' +
     'Note="Specially-prepared poison inflicts HP equal to its level if the target saves"',
@@ -8229,18 +8230,18 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Has increased Advanced Alchemy effects",' +
-      '"Can produce twice the usual number of alchemical items during downtime"',
+      '"Can produce twice the usual number of alchemical consumables during downtime"',
   'Enduring Alchemy':Pathfinder2E.FEATURES['Enduring Alchemy'],
   'Healing Bomb':
     'Section=combat ' +
     'Note="Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir\'s dice to adjacent creatures; failure restores Hit Points equal to the elixir\'s dice to the target only"',
   'Invigorating Elixir':
     'Section=skill ' +
-    'Note="Prepared elixirs can be imbibed by sickened creatures and attempt to counteract%{skillNotes.supremeInvigoratingElixir?\' as level \'+(level+2):\'\'} the imbiber\'s choice of %{skillNotes.supremeInvigoratingElixir?\'petrified, stunned, any disease, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'?\'confused, controlled, fleeing, frightened, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'blinded, deafened, drained, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'||$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'paralyzed, slowed, \':\'\'}clumsy, enfeebled, sickened, or stupefied"',
+    'Note="Prepared elixirs can be imbibed by sickened creatures and attempt to counteract at level %{level//2+(skillNotes.supremeInvigoratingElixir?1:0)} the imbiber\'s choice of %{skillNotes.supremeInvigoratingElixir?\'petrified, stunned, any disease, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'?\'confused, controlled, fleeing, frightened, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'blinded, deafened, drained, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'||$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'paralyzed, slowed, \':\'\'}clumsy, enfeebled, sickened, or stupefied once per creature per 10 min"',
   'Regurgitate Mutagen':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R30\' Ends a mutagen to inflict %{level//2}d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)"',
+    'Note="R30\' Ends the effects of a mutagen to inflict %{level//2}d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)"',
   'Tenacious Toxins':
     'Section=skill ' +
     'Note="Increases the duration of poisons by their stage 1 interval"',
@@ -8252,13 +8253,15 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Debilitating Bomb']
     .replace('Action=Free', '')
     .replace(/Modifies a bomb of up to level \S*/, 'Can craft bombs')
+    .replace('flat-footed', 'off-guard')
     .replace(' once per rd', ''),
   'Directional Bombs':
     Pathfinder2E.FEATURES['Directional Bombs']
+    .replace(' in the direction thrown', '')
     .replace('15', '%{combatNotes.expandedSplash?20:15}'),
   'Fortified Elixirs':
     'Section=skill ' +
-    'Note="Consumer of an infused antidote or antiplague can end its effects to gain a reroll on a failed Fortitude save vs. poison or disease"',
+    'Note="Consumer of an infused antidote or antiplague can end its effects to reroll a failed Fortitude save vs. poison or disease"',
   'Sticky Poison':
     'Section=combat ' +
     'Note="Poisoned weapon remains poisoned after a failed Strike with a successful DC 5 flat check, or until the end of the next turn after a successful Strike with a successful DC 17 flat check"',
@@ -8271,7 +8274,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill Note="Has increased Invigorating Elixir effects"',
   'Mutant Physique':
     'Section=skill ' +
-    'Note="Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait, juggernaut mutagens give resistance %{level//2} to physical damage, and quicksilver mutagens give 10\' Steps and Squeezing as 1 size smaller"',
+    'Note="Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait; juggernaut mutagens give resistance %{level//2} to physical damage; quicksilver mutagens give 10\' Steps and Squeezing as 1 size smaller"',
   'Pinpoint Poisoner':
     'Section=combat ' +
     'Note="Off-guard targets suffer -2 initial saves vs. self poisoned weapons and inhaled poisons"',
@@ -8297,13 +8300,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can apply 2 poisons of up to level %{level-2} to a weapon simultaneously"',
   'Mutant Innervation':
     'Section=skill ' +
-    'Note="Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners\' languages"',
+    'Note="Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60\' telepathic communication; serene mutagens negate detection, revelation, and scrying effects up to rank 9; silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners\' languages"',
   'True Debilitating Bomb':Pathfinder2E.FEATURES['True Debilitating Bomb'],
   'Eternal Elixir':Pathfinder2E.FEATURES['Eternal Elixir'],
   // Effects change
   'Exploitive Bomb':
-    'Section=combat ' +
-    'Note="Can create bombs of up to level %{advancedAlchemyLevel-2} that negate resistance %{level}"',
+    'Section=combat Note="Can create bombs that negate resistance %{level}"',
   'Persistent Mutagen':Pathfinder2E.FEATURES['Persistent Mutagen'],
   'Improbable Elixirs':Pathfinder2E.FEATURES['Improbable Elixirs'],
   'Miracle Worker':Pathfinder2E.FEATURES['Miracle Worker'],

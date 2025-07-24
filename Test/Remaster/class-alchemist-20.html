@@ -223,6 +223,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Efficient Alchemy: Has increased Advanced Alchemy effects</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Enduring Alchemy: Has increased Quick Alchemy effects</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Improved Invigorating Elixir (Mental): Has increased Invigorating Elixir effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Improved Invigorating Elixir (Physical): Has increased Invigorating Elixir effects</i></td>
@@ -265,7 +267,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Chirurgeon: Can use Crafting in place of Medicine/Can use versatile vials to restore Hit Points equal to their initial damage to a willing target within 20' once per target per 10 min</td>
     </tr><tr style="text-align:center">
-      <td>Clotting Elixirs: Healing elixirs allow a DC 10 flat check to remove any persistent bleed damage</td>
+      <td>Clotting Elixirs: Healing elixirs allow a DC 10 flat check to remove persistent bleed damage</td>
     </tr><tr style="text-align:center">
       <td>Combine Elixirs: Uses the ingredients of 2 elixirs to create a single elixir that has the effects of both</td>
     </tr><tr style="text-align:center">
@@ -273,11 +275,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Dubious Knowledge: Failure on a Recall Knowledge check yields a mix of true and false information</td>
     </tr><tr style="text-align:center">
-      <td>Efficient Alchemy: Can produce twice the usual number of alchemical items during downtime</td>
+      <td>Efficient Alchemy: Can produce twice the usual number of alchemical consumables during downtime</td>
     </tr><tr style="text-align:center">
-      <td>Enduring Alchemy: Quick Alchemy products last until the end of the next turn</td>
-    </tr><tr style="text-align:center">
-      <td>Eternal Elixir: Can indefinitely extend the duration of an elixir of up to level 10 that lasts at least 1 min</td>
+      <td>Eternal Elixir: Can indefinitely extend the duration of 1 elixir of up to level 10 that lasts at least 1 min</td>
     </tr><tr style="text-align:center">
       <td>Experienced Professional: Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income</td>
     </tr><tr style="text-align:center">
@@ -287,25 +287,25 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Formula Book: Has a book that contains at least 52 alchemical formulas</td>
     </tr><tr style="text-align:center">
-      <td>Fortified Elixirs: Consumer of an infused antidote or antiplague can end its effects to gain a reroll on a failed Fortitude save vs. poison or disease</td>
+      <td>Fortified Elixirs: Consumer of an infused antidote or antiplague can end its effects to reroll a failed Fortitude save vs. poison or disease</td>
     </tr><tr style="text-align:center">
       <td>Greater Field Discovery (Mutagenist): Can use 2 polymorphic mutagens simultaneously</td>
     </tr><tr style="text-align:center">
       <td>Improbable Elixirs: Can create elixirs that replicate the effects of 4 potions of up to level 9</td>
     </tr><tr style="text-align:center">
-      <td>Improvise Admixture: <b>(1)</b> Crafting check using an alchemist's toolkit provides 1, 2, or 3 versatile vials on a failure, success, or critical success once per day</td>
+      <td>Improvise Admixture: <b>(1)</b> Crafting check using an alchemist's toolkit creates 1, 2, or 3 versatile vials on a failure, success, or critical success once per day</td>
     </tr><tr style="text-align:center">
-      <td>Invigorating Elixir: Prepared elixirs can be imbibed by sickened creatures and attempt to counteract as level 22 the imbiber's choice of petrified, stunned, any disease, confused, controlled, fleeing, frightened, blinded, deafened, drained, paralyzed, slowed, clumsy, enfeebled, sickened, or stupefied</td>
+      <td>Invigorating Elixir: Prepared elixirs can be imbibed by sickened creatures and attempt to counteract at level 11 the imbiber's choice of petrified, stunned, any disease, confused, controlled, fleeing, frightened, blinded, deafened, drained, paralyzed, slowed, clumsy, enfeebled, sickened, or stupefied once per creature per 10 min</td>
     </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
-      <td>Mutant Innervation: Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60' telepathic communication; Serene mutagens negate detection, revelation, and scrying effects up to rank 9; Silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners' languages</td>
+      <td>Mutant Innervation: Cognitive mutagens boost Deception, Diplomacy, Intimidation, Medicine, Nature, Performance, Religion, and Survival and allow R60' telepathic communication; serene mutagens negate detection, revelation, and scrying effects up to rank 9; silvertongue mutagens negate circumstance penalties to Deception, Diplomacy, Intimidation, and Performance and translate speech into listeners' languages</td>
     </tr><tr style="text-align:center">
-      <td>Mutant Physique: Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait, juggernaut mutagens give resistance 10 to physical damage, and quicksilver mutagens give 10' Steps and Squeezing as 1 size smaller</td>
+      <td>Mutant Physique: Bestial mutagens give an Intimidation bonus and increase claws and jaws damage die by 1 step and give them the deadly d10 trait; juggernaut mutagens give resistance 10 to physical damage; quicksilver mutagens give 10' Steps and Squeezing as 1 size smaller</td>
     </tr><tr style="text-align:center">
       <td>Persistent Mutagen: Can extend the duration of a mutagen until next daily prep once per day</td>
     </tr><tr style="text-align:center">
-      <td>Quick Alchemy: <b>(1)</b> Creates 2 versatile vial bombs or research items that last until the end of the turn, or uses versatile vials to create 2 alchemical items of up to level 20 that last until the start of the next turn</td>
+      <td>Quick Alchemy: <b>(1)</b> Creates 2 versatile vial bombs or research items that last until the end of the turn, or uses versatile vials to create 2 alchemical items of up to level 20 that last until the end of the next turn</td>
     </tr><tr style="text-align:center">
       <td>Quick Repair: Can Repair an item in 1 min</td>
     </tr><tr style="text-align:center">
@@ -381,21 +381,21 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Advanced Vials (Toxicologist): Poison vials also inflict persistent poison damage equal to their splash damage</td>
       </tr><tr style="text-align:center">
-        <td>Blowgun Poisoner: Poisoned blowgun Strikes apply injury poisons even if the target's resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden or undetected</td>
+        <td>Blowgun Poisoner: Poisoned blowgun Strikes apply injury poisons even if the target's resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden</td>
       </tr><tr style="text-align:center">
         <td>Bomber: Can direct a bomb splash onto a single target/Can use versatile vials to inflict cold, electricity, or fire damage</td>
       </tr><tr style="text-align:center">
         <td>Bounce Back: <b>(F)</b> Recovery from dying does not increase the wounded condition once per day</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Bomb: Can craft bombs to also inflict clumsy 2, stupefied 2, enfeebled 1, dazzled, deafened, flat-footed, or -15 Speed (<b>save Fortitude</b> negates) until the start of the next turn</td>
+        <td>Debilitating Bomb: Can craft bombs to also inflict clumsy 1, stupefied 2, enfeebled 2, dazzled, deafened, off-guard, or -15 Speed (<b>save Fortitude</b> negates) until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Directional Bombs: Can restrict bomb splash effects to a 20' cone in the direction thrown</td>
+        <td>Directional Bombs: Can restrict bomb splash effects to a 20' cone</td>
       </tr><tr style="text-align:center">
         <td>Double Poison: Can apply 2 poisons of up to level 18 to a weapon simultaneously</td>
       </tr><tr style="text-align:center">
         <td>Expanded Splash: Can throw bombs to inflict +4 HP splash damage in a 10' radius</td>
       </tr><tr style="text-align:center">
-        <td>Exploitive Bomb: Can create bombs of up to level 18 that negate resistance 20</td>
+        <td>Exploitive Bomb: Can create bombs that negate resistance 20</td>
       </tr><tr style="text-align:center">
         <td>Field Discovery (Bomber): Can throw a bomb to inflict 4 HP splash damage</td>
       </tr><tr style="text-align:center">
@@ -407,7 +407,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Healing Bomb: Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir's dice to adjacent creatures; failure restores Hit Points equal to the elixir's dice to the target only</td>
       </tr><tr style="text-align:center">
-        <td>Mega Bomb: Can create thrown bombs of up to level 17 that require 2 actions to throw and that affect all creatures in a 30' radius (<b>save basic Reflex</b>)</td>
+        <td>Mega Bomb: Can create thrown bombs of up to level 17 that require 2 actions to throw and that affect all creatures in a 30' radius within 60' (<b>save basic Reflex</b>)</td>
       </tr><tr style="text-align:center">
         <td>Miracle Worker: Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min</td>
       </tr><tr style="text-align:center">
@@ -423,7 +423,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Quick Bomber: <b>(1)</b> Draws or uses Quick Alchemy to create a bomb and Strikes with it</td>
       </tr><tr style="text-align:center">
-        <td>Regurgitate Mutagen: <b>(1)</b> R30' Ends a mutagen to inflict 10d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)</td>
+        <td>Regurgitate Mutagen: <b>(1)</b> R30' Ends the effects of a mutagen to inflict 10d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)</td>
       </tr><tr style="text-align:center">
         <td>Revivifying Mutagen: <b>(1)</b> Ends the effects of a mutagen to regain 1d6 Hit Points per 2 levels of the mutagen</td>
       </tr><tr style="text-align:center">
@@ -433,7 +433,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Sticky Poison: Poisoned weapon remains poisoned after a failed Strike with a successful DC 5 flat check, or until the end of the next turn after a successful Strike with a successful DC 17 flat check</td>
       </tr><tr style="text-align:center">
-        <td>Toxicologist: Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead/Versatile vials have the poison, not acid, trait and can be used to poison a weapon until the end of the current turn</td>
+        <td>Toxicologist: Can apply a poison to a weapon as a single action, and creatures immune to poison take acid damage instead/Versatile vials have the poison, not acid, trait and can be used to poison a weapon for the first successful Strike before the end of the current turn</td>
       </tr><tr style="text-align:center">
         <td>Uncanny Bombs: Thrown bombs reduce target cover Armor Class bonus by 1 and succeed automatically on the flat check to target a concealed creature</td>
       </tr><tr style="text-align:center">
@@ -467,7 +467,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Explosion Dodger: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Field Discovery (Mutagenist): Can end a mutagen effect to reroll a Fortitude save</td>
+        <td>Field Discovery (Mutagenist): Can end a the effects of a mutagen to reroll a Fortitude save</td>
       </tr><tr style="text-align:center">
         <td>Field Discovery (Toxicologist): Has poison resistance 10</td>
       </tr><tr style="text-align:center">
