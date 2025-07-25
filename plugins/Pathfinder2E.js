@@ -3682,7 +3682,7 @@ Pathfinder2E.FEATURES = {
   'Rage':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage, or +%{combatNotes.rage//2} HP with an agile weapon, and suffers -1 Armor Class and no concentration actions for 1 min; requires 1 %{combatNotes.quickRage?\'turn\':\'min\'} between rages"',
+    'Note="Gains %{level+constitutionModifier} temporary Hit Points and +%V HP melee damage, or +%{combatNotes.rage//2} HP with an agile weapon, and suffers -1 Armor Class and loss of concentration actions for 1 min; requires 1 %{combatNotes.quickRage?\'turn\':\'min\'} between rages"',
   'Raging Resistance (Animal)':
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to piercing and slashing during rage"',
@@ -3725,7 +3725,7 @@ Pathfinder2E.FEATURES = {
       '"Has the Scare To Death feature"',
   'Raging Thrower':
     'Section=combat ' +
-    'Note="+%{combatNotes.rage} HP thrown weapon damage, and Brutal Critical and Devastator effects apply to thrown weapons during rage"',
+    'Note="Thrown weapons inflict +%{combatNotes.rage} HP and can apply Brutal Critical and Devastator effects during rage"',
   'Sudden Charge':
     'Action=2 ' +
     'Section=combat ' +
@@ -3778,7 +3778,7 @@ Pathfinder2E.FEATURES = {
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Breath inflicts %{level}d6 damage in a 30\' cone or 60\' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)"',
+    'Note="Breath inflicts %{level}d6 HP %{combatNotes.draconicRage} in a 30\' cone or 60\' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)"',
   "Giant's Stature":
     'Action=1 ' +
     'Section=combat ' +
@@ -3786,7 +3786,7 @@ Pathfinder2E.FEATURES = {
   "Spirits' Interference":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Imposes a DC 5 flat check requirement on foe ranged Strikes until rage ends"',
+    'Note="Imposes a DC 5 flat check on foe ranged Strikes vs. self until rage ends"',
   'Animal Rage':
     'Action=1 ' +
     'Section=magic ' +
@@ -3812,7 +3812,7 @@ Pathfinder2E.FEATURES = {
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success"',
+    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success, until the rage ends"',
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
@@ -3828,7 +3828,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     // Errata corrects "each creature" to "each enemy"
-    'Note="Successful Intimidate checks Demoralize each foe in a 30\' radius during rage"',
+    'Note="Successful Intimidate checks Demoralize each foe in a 30\' radius once per target per min during rage"',
   "Dragon's Rage Wings":
     'Action=1 Section=combat Note="Gains a %{speed}\' fly Speed during rage"',
   'Furious Grab':
@@ -3842,7 +3842,7 @@ Pathfinder2E.FEATURES = {
   "Spirit's Wrath":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike during rage that inflicts 4d8+%{constitutionModifier} HP negative or positive; a critical hit also inflicts frightened 1"',
+    'Note="R120\' +%{$\'trainingLevel.Martial Weapons\'*2+level+strengthModifier+2} spirit Strike during rage inflicts 4d8+%{constitutionModifier} HP negative or positive; a critical hit also inflicts frightened 1"',
   "Titan's Stature":
     'Section=combat ' +
     'Note="Giant\'s Stature can increase size to Huge, giving +10\' reach and clumsy 1, until rage ends"',
@@ -3883,7 +3883,7 @@ Pathfinder2E.FEATURES = {
   'Vicious Evisceration':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strike also inflicts drained 1, or drained 2 on a critical success, during rage"',
+    'Note="Successful Strike also inflicts drained 1, or drained 2 on a critical success, during rage"',
   'Contagious Rage':
     'Section=combat ' +
     'Note="Can use Share Rage unlimited times, also sharing instinct and specialization abilities"',
@@ -4619,7 +4619,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Zeal For Battle divine spell/+1 Focus Points"',
   'Anathema':
     'Section=feature ' +
-    'Note="May not perform acts or cast spells prohibited by %V"',
+    'Note="May not perform acts or use spells prohibited by %V"',
   'Cleric Feats':'Section=feature Note="%V selections"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
