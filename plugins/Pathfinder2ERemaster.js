@@ -917,16 +917,14 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Animal Instinct (Shark):Instinct",' +
       '"1:Animal Instinct (Snake):Instinct",' +
       '"1:Animal Instinct (Wolf):Instinct",' +
-      '"1:Dragon Instinct (Black):Instinct",' +
-      '"1:Dragon Instinct (Blue):Instinct",' +
-      '"1:Dragon Instinct (Green):Instinct",' +
-      '"1:Dragon Instinct (Red):Instinct",' +
-      '"1:Dragon Instinct (White):Instinct",' +
-      '"1:Dragon Instinct (Brass):Instinct",' +
-      '"1:Dragon Instinct (Bronze):Instinct",' +
-      '"1:Dragon Instinct (Copper):Instinct",' +
-      '"1:Dragon Instinct (Gold):Instinct",' +
-      '"1:Dragon Instinct (Silver):Instinct",' +
+      '"1:Dragon Instinct (Adamantine):Instinct",' +
+      '"1:Dragon Instinct (Conspirator):Instinct",' +
+      '"1:Dragon Instinct (Diabolic):Instinct",' +
+      '"1:Dragon Instinct (Empyreal):Instinct",' +
+      '"1:Dragon Instinct (Fortune):Instinct",' +
+      '"1:Dragon Instinct (Horned):Instinct",' +
+      '"1:Dragon Instinct (Mirage):Instinct",' +
+      '"1:Dragon Instinct (Omen):Instinct",' +
       '"1:Superstition Instinct:Instinct"',
 
   'Champion':
@@ -8237,7 +8235,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful ranged Strike with an elixir of life gives its effects to the target and restores Hit Points equal to the elixir\'s dice to adjacent creatures; failure restores Hit Points equal to the elixir\'s dice to the target only"',
   'Invigorating Elixir':
     'Section=skill ' +
-    'Note="Prepared elixirs can be imbibed by sickened creatures and attempt to counteract at level %{level//2+(skillNotes.supremeInvigoratingElixir?1:0)} the imbiber\'s choice of %{skillNotes.supremeInvigoratingElixir?\'petrified, stunned, any disease, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'?\'confused, controlled, fleeing, frightened, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'blinded, deafened, drained, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'||$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'paralyzed, slowed, \':\'\'}clumsy, enfeebled, sickened, or stupefied once per creature per 10 min"',
+    'Note="Prepared elixirs can be imbibed by sickened creatures and attempt to counteract at rank %{level//2+(skillNotes.supremeInvigoratingElixir?1:0)} the imbiber\'s choice of %{skillNotes.supremeInvigoratingElixir?\'petrified, stunned, any disease, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'?\'confused, controlled, fleeing, frightened, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'blinded, deafened, drained, \':\'\'}%{$\'skillNotes.improvedInvigoratingElixir(Mental)\'||$\'skillNotes.improvedInvigoratingElixir(Physical)\'?\'paralyzed, slowed, \':\'\'}clumsy, enfeebled, sickened, or stupefied once per creature per 10 min"',
   'Regurgitate Mutagen':
     'Action=1 ' +
     'Section=combat ' +
@@ -8325,15 +8323,33 @@ Pathfinder2ERemaster.FEATURES = {
   // Armor Mastery as above
   'Barbarian Feats':Pathfinder2E.FEATURES['Barbarian Feats'],
   'Barbarian Skills':Pathfinder2E.FEATURES['Barbarian Skills'],
-  'Bestial Rage (Ape)':Pathfinder2E.FEATURES['Bestial Rage (Ape)'],
-  'Bestial Rage (Bear)':Pathfinder2E.FEATURES['Bestial Rage (Bear)'],
-  'Bestial Rage (Bull)':Pathfinder2E.FEATURES['Bestial Rage (Bull)'],
-  'Bestial Rage (Cat)':Pathfinder2E.FEATURES['Bestial Rage (Cat)'],
-  'Bestial Rage (Deer)':Pathfinder2E.FEATURES['Bestial Rage (Deer)'],
-  'Bestial Rage (Frog)':Pathfinder2E.FEATURES['Bestial Rage (Frog)'],
-  'Bestial Rage (Shark)':Pathfinder2E.FEATURES['Bestial Rage (Shark)'],
-  'Bestial Rage (Snake)':Pathfinder2E.FEATURES['Bestial Rage (Snake)'],
-  'Bestial Rage (Wolf)':Pathfinder2E.FEATURES['Bestial Rage (Wolf)'],
+  'Bestial Rage (Ape)':
+    Pathfinder2E.FEATURES['Bestial Rage (Ape)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Bear)':
+    Pathfinder2E.FEATURES['Bestial Rage (Bear)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Bull)':
+    Pathfinder2E.FEATURES['Bestial Rage (Bull)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Cat)':
+    Pathfinder2E.FEATURES['Bestial Rage (Cat)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Deer)':
+    Pathfinder2E.FEATURES['Bestial Rage (Deer)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Frog)':
+    Pathfinder2E.FEATURES['Bestial Rage (Frog)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Shark)':
+    Pathfinder2E.FEATURES['Bestial Rage (Shark)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Snake)':
+    Pathfinder2E.FEATURES['Bestial Rage (Snake)']
+    .replace('use', 'attack only using'),
+  'Bestial Rage (Wolf)':
+    Pathfinder2E.FEATURES['Bestial Rage (Wolf)']
+    .replace('use', 'attack only using'),
   'Brutality':Pathfinder2E.FEATURES.Brutality,
   'Devastator':Pathfinder2E.FEATURES.Devastator,
   'Draconic Rage':Pathfinder2E.FEATURES['Draconic Rage'],
@@ -8353,7 +8369,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Barbarian)",' +
-      '"After using Quick-Tempered, the 1st Strike during the 1st turn inflicts +%{combatNotes.rage} HP"',
+      '"First Strike during the first turn after using Quick-Tempered inflicts +%{combatNotes.rage} HP"',
   // Perception Mastery as above
   'Quick-Tempered':
     'Action=Free ' +
@@ -8365,18 +8381,24 @@ Pathfinder2ERemaster.FEATURES = {
    .replace('quickRage', 'revitalizingRage')
    .replace('rages', 'rages to again gain temporary Hit Points'),
   'Raging Resistance (Animal)':
-    Pathfinder2E.FEATURES['Raging Resistance (Animal)'],
+    Pathfinder2E.FEATURES['Raging Resistance (Animal)']
+    .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
   'Raging Resistance (Dragon)':
-    Pathfinder2E.FEATURES['Raging Resistance (Dragon)'],
-  'Raging Resistance (Fury)':Pathfinder2E.FEATURES['Raging Resistance (Fury)'],
+    Pathfinder2E.FEATURES['Raging Resistance (Dragon)']
+    .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
+  'Raging Resistance (Fury)':
+    Pathfinder2E.FEATURES['Raging Resistance (Fury)']
+    .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
   'Raging Resistance (Giant)':
-    Pathfinder2E.FEATURES['Raging Resistance (Giant)'],
+    Pathfinder2E.FEATURES['Raging Resistance (Giant)']
+    .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)'),
   'Raging Resistance (Spirit)':
     Pathfinder2E.FEATURES['Raging Resistance (Spirit)']
+    .replace('3+constitutionModifier', 'saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)')
     .replace('negative', 'void'),
   'Raging Resistance (Superstition)':
     'Section=save ' +
-    'Note="Has resistance %{3+constitutionModifier} to a choice of arcane or divine spells and a choice of occult or primal spells during rage"',
+    'Note="Has resistance %{saveNotes.unstoppableJuggernaut?12:(3+constitutionModifier)} to a choice of arcane or divine spells and a choice of occult or primal spells during rage"',
   'Revitalizing Rage':Pathfinder2E.FEATURES['Quick Rage'],
   'Specialization Ability':Pathfinder2E.FEATURES['Specialization Ability'],
   'Spirit Rage':
@@ -8449,7 +8471,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Dragon's Rage Breath":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Breath inflicts %{level}d6 damage in a 30\' cone (<b>save basic Reflex</b>) once per 10 min during rage"',
+    'Note="Breath inflicts %{level}d6 HP %{combatNotes.draconicRage} damage in a 30\' cone (<b>save basic Reflex</b>) once per 10 min during rage"',
   "Giant's Stature":Pathfinder2E.FEATURES["Giant's Stature"],
   'Inner Strength':
     'Action=1 Section=save Note="Reduces enfeebled condition by 1 during rage"',
@@ -8477,7 +8499,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Follow-Up Assault':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Follows a melee Strike miss with another with the backswing and forceful traits during rage"',
+    'Note="Follows a missed melee Strike with another Strike that has the backswing and forceful traits during rage"',
   'Friendly Toss':
     'Action=2 ' +
     'Section=combat ' +
@@ -8493,7 +8515,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Can use Quick-Tempered action in heavy armor"',
   'Renewed Vigor':
     Pathfinder2E.FEATURES['Renewed Vigor']
-    .replace('Hit Points', 'Hit Points, or %{level+constitutionModifier} Hit Points after attacking,'),
+    .replace('Hit Points during rage', 'Hit Points, or %{level+constitutionModifier} Hit Points after attacking, until the rage ends'),
   'Share Rage':Pathfinder2E.FEATURES['Share Rage'],
   // Sudden Leap as above
   'Thrash':Pathfinder2E.FEATURES.Thrash,
@@ -8511,7 +8533,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Resounding Blow':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike inflicts deafened until the start of the next turn, or for 1 min with a critical hit, during rage"',
+    'Note="Successful melee Strike also inflicts deafened until the start of the next turn, or for 1 min with a critical hit, during rage"',
   'Silencing Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -8519,7 +8541,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Tangle Of Battle':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a Grapple attempt immediately after a critical hit on the same adjacent foe during rage"',
+    'Note="Makes a Grapple attempt immediately after a critical hit on an adjacent foe during rage"',
   'Terrifying Howl':Pathfinder2E.FEATURES['Terrifying Howl'],
   "Dragon's Rage Wings":Pathfinder2E.FEATURES["Dragon's Rage Wings"],
   'Embrace The Pain':
@@ -8535,7 +8557,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Sunder Spell':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike on a creature, object, or spell manifestation allows a level %{(level+1)//2} counteract attempt vs. a spell or magical effect once per target per day during rage"',
+    'Note="Successful melee Strike on a creature, object, or spell manifestation allows a rank %{(level+1)//2} counteract attempt vs. a spell or magical effect once per target per day during rage"',
   "Titan's Stature":Pathfinder2E.FEATURES["Titan's Stature"],
   'Unbalancing Sweep':
     'Action=3 ' +
@@ -8577,16 +8599,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Whirlwind Toss':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Collateral Thrash damages all adjacent foes"',
+    'Note="Collateral Thrash damages all adjacent foes and allows throwing the grabbed foe 10\'"',
   'Annihilating Swing':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Melee Strike ignores target resistances, destroys non-magical objects with Hardness up to 20, and destroys magical objects with Hardness up to 20 with a successful counteract check"',
+    'Note="Melee Strike ignores target resistances, destroys non-magical objects with Hardness up to 20, and destroys magical objects with Hardness up to 20 with a successful rank 10 counteract check"',
   'Contagious Rage':Pathfinder2E.FEATURES['Contagious Rage'],
   'Quaking Stomp':Pathfinder2E.FEATURES['Quaking Stomp'],
   'Unstoppable Juggernaut':
-    'Section=save ' +
-    'Note="Has resistance %{constitutionModifier+3} to all damage, resistance %{constitutionModifier+8} during rage, and can use a reaction to retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
+    'Section=save,save ' +
+    'Note=' +
+      '"Has increased Raging Resistance effects",' +
+      '"Has resistance %{constitutionModifier+3} to all damage and can use a reaction to retain 1 Hit Point and suffer wounded 2 when reduced to 0 Hit Points during rage"',
 
   // Champion
   // Anathema as above
@@ -10415,7 +10439,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
   'Break Curse':
     'Section=skill ' +
-    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1)//2}-level counteract check against a curse"',
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1)//2}-rank counteract check against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
@@ -13820,6 +13844,15 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Perpetual Infusions', '?', null
     );
   } else if(name == 'Barbarian') {
+    rules.defineRule('combatNotes.draconicRage',
+      '', '=', '"mental"',
+      'features.Dragon Instinct (Adamantine)', '=', '"blugeoning"',
+      'features.Dragon Instinct (Conspirator)', '=', '"poison"',
+      'features.Dragon Instinct (Diabolic)', '=', '"fire"',
+      'features.Dragon Instinct (Empyreal)', '=', '"spirit"',
+      'features.Dragon Instinct (Fortune)', '=', '"force"',
+      'features.Dragon Instinct (Horned)', '=', '"poison"'
+    );
     // Suppress legacy note
     rules.defineRule('combatNotes.furyInstinct',
       'featureNotes.furyInstinct', '?', null
@@ -14457,6 +14490,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.combatFlexibility',
       'combatNotes.ultimateFlexibility', '=', 'null' // italics
     );
+  } else if(name == 'Unstoppable Juggernaut') {
+    rules.defineRule
+      ('italics', 'saveNotes.unstoppableJuggernaut', '=', 'null');
   } else if(name == 'Untamed Form') {
     rules.defineRule
       ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
