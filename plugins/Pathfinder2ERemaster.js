@@ -956,24 +956,10 @@ Pathfinder2ERemaster.CLASSES = {
       '"2:Skill Feats","3:Blessing Of The Devoted","3:General Feats",' +
       '"3:Skill Increases","5:Weapon Expertise","7:Armor Expertise",' +
       '"7:Weapon Specialization","9:Champion Expertise","9:Reflex Expertise",' +
-      '"features.Desecration ? 9:Relentless Reaction (Desecration)",' +
-      '"features.Grandeur ? 9:Relentless Reaction (Grandeur)",' +
-      '"features.Iniquity ? 9:Relentless Reaction (Iniquity)",' +
-      '"features.Justice ? 9:Relentless Reaction (Justice)",' +
-      '"features.Liberation ? 9:Relentless Reaction (Liberation)",' +
-      '"features.Obedience ? 9:Relentless Reaction (Obedience)",' +
-      '"features.Redemption ? 9:Relentless Reaction (Redemption)",' +
-      '"9:Sacred Body","11:Divine Will","11:Perception Expertise",' +
-      '"features.Desecration ? 11:Exalted Reaction (Desecration)",' +
-      '"features.Grandeur ? 11:Exalted Reaction (Grandeur)",' +
-      '"features.Iniquity ? 11:Exalted Reaction (Iniquity)",' +
-      '"features.Justice ? 11:Exalted Reaction (Justice)",' +
-      '"features.Liberation ? 11:Exalted Reaction (Liberation)",' +
-      '"features.Obedience ? 11:Exalted Reaction (Obedience)",' +
-      '"features.Redemption ? 11:Exalted Reaction (Redemption)",' +
-      '"13:Armor Mastery","13:Weapon Mastery",' +
-      '"15:Greater Weapon Specialization","17:Champion Mastery",' +
-      '"17:Legendary Armor","19:Hero\'s Defiance" ' +
+      '"9:Relentless Reaction","9:Sacred Body","11:Divine Will",' +
+      '"11:Perception Expertise","11:Exalted Reaction","13:Armor Mastery",' +
+      '"13:Weapon Mastery","15:Greater Weapon Specialization",' +
+      '"17:Champion Mastery","17:Legendary Armor","19:Hero\'s Defiance" ' +
     'Selectables=' +
       '"1:Dexterity:Key Attribute",' +
       '"1:Strength:Key Attribute",' +
@@ -2934,15 +2920,17 @@ Pathfinder2ERemaster.FEATS = {
   'Nimble Reprisal':
     Pathfinder2E.FEATS['Ranged Reprisal']
     .replace('Paladin', 'Justice'),
-  'Ongoing Selfishness':'Traits=Champion Require="features.Desecration"',
+  'Ongoing Selfishness':
+    'Traits=Champion,Uncommon Require="features.Desecration"',
   'Unimpeded Step':
     Pathfinder2E.FEATS['Unimpeded Step']
     .replace('Liberator', 'Liberation'),
-  'Vicious Vengeance':'Traits=Champion Require="features.Iniquity"',
+  'Vicious Vengeance':'Traits=Champion,Uncommon Require="features.Iniquity"',
   'Weight Of Guilt':
     Pathfinder2E.FEATS['Weight Of Guilt']
     .replace('Redeemer', 'Redemption'),
   'Divine Grace':Pathfinder2E.FEATS['Divine Grace'],
+  // NOTE: level and requirements changed
   'Divine Health':
     Pathfinder2E.FEATS['Divine Health'] + ' ' +
     'Require="level >= 2"',
@@ -2954,15 +2942,16 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 4","features.Champion\'s Aura","features.Unholy"',
   'Cruelty':
     'Traits=Champion Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
+  // Traits and requirements changed
   'Mercy (Body)':
-    Pathfinder2E.FEATS.Mercy
-    .replace(' Nec', ''),
+    'Traits=Champion ' +
+    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
   'Mercy (Grace)':
-    Pathfinder2E.FEATS.Mercy
-    .replace(' Nec', ''),
+    'Traits=Champion ' +
+    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
   'Mercy (Mind)':
-    Pathfinder2E.FEATS.Mercy
-    .replace(' Nec', ''),
+    'Traits=Champion ' +
+    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
   'Security':
     'Traits=Champion ' +
     'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc)"',
@@ -2974,9 +2963,8 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Steed Ally', 'Faithful Steed'),
   // Reactive Strike as above
   // Shield Warden as above
-  'Smite':
-    Pathfinder2E.FEATS['Smite Evil'] + ' ' +
-    'Require="level >= 6"',
+  // Traits and requirements changed
+  'Smite':'Traits=Champion,Concentrate Require="level >= 6"',
   "Advanced Deity's Domain (%domain)":
     Pathfinder2E.FEATS["Advanced Deity's Domain (%domain)"],
   'Greater Cruelty':'Traits=Champion Require="level >= 8","features.Cruelty"',
@@ -2984,8 +2972,7 @@ Pathfinder2ERemaster.FEATS = {
   'Greater Security':'Traits=Champion Require="level >= 8","features.Security"',
   'Heal Mount':
     Pathfinder2E.FEATS['Heal Mount']
-    .replace('Steed Ally', 'Faithful Steed')
-    .replace(' Nec', ''),
+    .replace('Steed Ally', 'Faithful Steed'),
   // Quick Shield Block as above
   'Second Blessing':
     Pathfinder2E.FEATS['Second Ally']
@@ -2996,10 +2983,14 @@ Pathfinder2ERemaster.FEATS = {
   'Radiant Armament':
     Pathfinder2E.FEATS['Radiant Blade Spirit']
     .replace('Blade Ally', 'Blessed Armament'),
+  // Changed traits and requirements
   'Shield Of Reckoning':
-    Pathfinder2E.FEATS['Shield Of Reckoning']
-    .replace(',Flourish', '')
-    .replace('Require=', 'Require="features.Blessed Shield",'),
+    'Traits=Champion ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Blessed Shield",' +
+      '"features.Champion\'s Reaction",' +
+      '"features.Shield Warden"',
   'Spectral Advance':
     'Traits=Champion,Concentrate,Divine,Teleportation ' +
     'Require="level >= 10","features.Blessed Swiftness"',
@@ -3016,6 +3007,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Devoted Focus']
     .replace('10', '12'),
   'Divine Wall':Pathfinder2E.FEATS['Divine Wall'],
+  // TODO require "champion's reaction that grants extra damage"
   'Gruesome Strike':'Traits=Champion Require="level >= 12"',
   'Aura Of Determination':
     'Traits=Champion Require="level >= 14","features.Champion\'s Aura"',
@@ -6202,6 +6194,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Domain Initiate (Indulgence)':
     Pathfinder2E.FEATURES['Domain Initiate (Indulgence)']
     .replace(' and 1 Focus Point', ''),
+  'Domain Initiate (Knowledge)':
+    Pathfinder2E.FEATURES['Domain Initiate (Knowledge)']
+    .replace(' and 1 Focus Point', ''),
   'Domain Initiate (Luck)':
     Pathfinder2E.FEATURES['Domain Initiate (Luck)']
     .replace(' and 1 Focus Point', ''),
@@ -8616,9 +8611,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Anathema as above
   // Armor Expertise as above
   // Armor Mastery as above
+  // Changed description
   'Blessed Armament':
-    Pathfinder2E.FEATURES['Blade Ally']
-    .replace('<i>disrupting</i>', '<i>fearsome</i>, <i>vitalizing</i>'),
+    'Section=combat ' +
+    'Note="Can apply a choice of %{combatNotes.radiantArmament?\'<i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep%{combatNotes.radiantArmament?\' and use a 10-min activity to chance the choice\':\'\'}, and critical hits inflict its critical specialization effect"',
   'Blessed Shield':
     'Section=combat Note="+%V Shield Hardness/+%1 Shield Hit Points"',
   'Blessed Swiftness':
@@ -8648,44 +8644,21 @@ Pathfinder2ERemaster.FEATURES = {
   'Destructive Vengeance':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Attack on self inflicts an additional %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6} and an equal amount of spirit damage on attacker, and self Strikes on attacker inflict +%{level<9?2:level<16?4:6} HP spirit until the end of the next turn"',
+    'Note="Triggering attack from within aura inflicts an additional %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP on self and an equal amount of spirit damage%{combatNotes.relentlessReaction?\', plus \'+charismaModifier+\' HP persistent spirit,\':\'\'} on the attacker, and self Strikes on attacker inflict +%{level<9?2:level<16?4:6} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura suffer half the damage dealt to the triggering foe\':\'\'}"',
   'Devotion Spells':
     Pathfinder2E.FEATURES['Devotion Spells']
     .replace(' and 1 Focus Point', ''),
   'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
-  'Exalted Reaction (Desecration)':
-    'Section=combat ' +
-    'Note="Selfish Shield inflicts -1 on foe attacks on self from within aura"',
-  'Exalted Reaction (Grandeur)':
-    'Section=combat ' +
-    'Note="Flash Of Grandeur inflicts <i>Revealing Light</i> on all foes within aura"',
-  'Exalted Reaction (Iniquity)':
-    'Section=combat ' +
-    'Note="Destructive Vengeance also inflicts half its damage on other foes within aura"',
-  'Exalted Reaction (Justice)':
-    Pathfinder2E.FEATURES['Exalt (Paladin)']
-    .replace("R15' ", '')
-    .replace('allies', 'allies within aura'),
-  'Exalted Reaction (Liberation)':
-    Pathfinder2E.FEATURES['Exalt (Liberator)']
-    .replace("R15' ", '')
-    .replace('all allies', 'self and all allies within aura')
-    .replace(/ if[^"]*/, ''),
-  'Exalted Reaction (Obedience)':
-    'Section=combat ' +
-    'Note="Iron Command also inflicts %{level<12?3:level<16?4:level<19?5:6} HP mental on other foes within aura who refuse to kneel"',
-  'Exalted Reaction (Redemption)':
-    Pathfinder2E.FEATURES['Exalt (Redeemer)']
-    .replace("R15' ", '')
-    .replace('all allies', 'self and all allies within aura'),
+  'Exalted Reaction':'Section=combat Note="Has increased %V effects"',
   'Flash Of Grandeur':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an ally within aura resistance %{level+2} to triggering damage and inflicts <i>Revealing Light</i> on attacker for 1 rd"',
+    'Note="Gives an ally within aura resistance %{level+2} to the triggering damage from within aura%{combatNotes.relentlessReaction?\', inflicts \'+charismaModifier+\' HP persistent spirit on attacker,\':\'\'} and inflicts <i>Revealing Light</i> on %{combatNotes.exaltedReaction?\'all foes within aura\':\'attacker\'} for 1 rd"',
+  // Changed description
   'Glimpse Of Redemption':
-    Pathfinder2E.FEATURES['Glimpse Of Redemption']
-    .replace("R15' ", '')
-    .replace('ally', 'ally within aura'),
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Forces a foe within aura who has damaged an ally within aura to choose between negating the damage or giving the ally resistance %{2+level} to it%{combatNotes.exaltedReaction?\', or self and allies within aura resistance \'+level+\',\':\'\'} and suffering enfeebled 2 until the end of its next turn%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}"',
   'Grandeur':
     'Section=feature,feature ' +
     'Note=' +
@@ -8701,17 +8674,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Iron Command':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Triggering foe suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn"',
+    'Note="Triggering foe suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura must also kneel or suffer \'+(level<5?1:level<9?2:evel<12?3:level<16?4:level<19?5:6)+\' HP mental\':\'\'}"',
   'Justice':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Retributive Strike feature",' +
       '"Must follow the law and respect legitimate authorities"',
   'Legendary Armor':Pathfinder2E.FEATURES['Legendary Armor'],
+  // Changed description
   'Liberating Step':
-    Pathfinder2E.FEATURES['Liberating Step']
-    .replace("R15' ", '')
-    .replace('ally', 'ally within aura'),
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Gives an ally within aura resistance %{2+level} to any triggering damage from within aura and free actions to Escape or to save from a restraint and to Step%{combatNotes.relentlessReaction?\'; restraining foe suffers \'+charismaModifier+\' HP persistent spirit\':\'\'}%{combatNotes.relentlessReaction?\', and self and allies also gain a free Step\':\'\'}"',
   'Liberation':
     'Section=feature,feature ' +
     'Note=' +
@@ -8729,37 +8703,18 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Glimpse Of Redemption feature",' +
       '"Must always show compassion for others and attempt to redeem the wicked"',
-  'Relentless Reaction (Desecration)':
-    'Section=combat ' +
-    'Note="Has increased Selfish Shield effects"',
-  'Relentless Reaction (Grandeur)':
-    'Section=combat ' +
-    'Note="Flash Of Grandeur also inflicts %{charismaModifier} HP spirit on attacker, unrecoverable while affected by <i>Revealing Light</i>"',
-  'Relentless Reaction (Iniquity)':
-    'Section=combat ' +
-    'Note="Destructive Vengeance also inflicts %{charismaModifier} HP persistent spirit"',
-  'Relentless Reaction (Justice)':
-    'Section=combat ' +
-    'Note="Retributive Strike also inflicts %{charismaModifier} HP persistent spirit"',
-  'Relentless Reaction (Liberation)':
-    'Section=combat ' +
-    'Note="Liberating Step also inflicts %{charismaModifier} HP persistent spirit on triggering foe who was restraining ally"',
-  'Relentless Reaction (Obedience)':
-    'Section=combat ' +
-    'Note="Iron Command also inflicts %{charismaModifier} HP persistent spirit on a foe who refuses to kneel"',
-  'Relentless Reaction (Redemption)':
-    'Section=combat ' +
-    'Note="Glimpse Of Redemption also inflicts %{charismaModifier} HP spirit on an attacker who refuses to repent"',
+  'Relentless Reaction':'Section=combat Note="Has increased %V effects"',
+  // Changed description
   'Retributive Strike':
-    Pathfinder2E.FEATURES['Retributive Strike']
-    .replace("R15' ", '')
-    .replace('ally', 'ally within aura'),
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Gives an ally within aura resistance %{level+2} to the triggering damage from within aura%{combatNotes.relentlessReaction?\',\':\' and\'} allows self to make a melee Strike against the attacking foe if within reach%{combatNotes.exaltedReaction?\',\':combatNotes.relentlessReaction?\', and\':\'\'}%{combatNotes.relentlessReaction?\' inflicts \'+charismaModifier+\' HP persistent spirit on attacker\':\'\'}%{combatNotes.exaltedReaction?\', and allows allies within aura to use a reaction to make a -5 Strike on the attacker\':\'\'}"',
   'Sacred Body':Pathfinder2E.FEATURES.Juggernaut,
   // Sanctification as above
   'Selfish Shield':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives resistance %{level//2+($\'combatNotes.relentlessReaction(Desecration)\'&&charismaModifier>2?charismaModifier:2)} to triggering damage, and Strikes against the triggering foe inflict +%{level<9?1:level<16?2:3} HP spirit for 1 rd"',
+    'Note="Gives resistance %{level//2+(combatNotes.relentlessReaction&&charismaModifier>2?charismaModifier:2)} to the triggering damage from within aura%{combatNotes.exaltedReaction?\',\':\' and\'} gives self Strikes against the triggering foe +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\', and inflicts -1 attacks vs. self on foes within aura until the start of the next turn\':\'\'}"',
   // Shield Block as above
   // Weapon Expertise as above
   // Weapon Mastery as above
@@ -8805,6 +8760,8 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES["Deity's Domain (Healing)"],
   "Deity's Domain (Indulgence)":
     Pathfinder2E.FEATURES["Deity's Domain (Indulgence)"],
+  "Deity's Domain (Knowledge)":
+    Pathfinder2E.FEATURES["Deity's Domain (Knowledge)"],
   "Deity's Domain (Luck)":
     Pathfinder2E.FEATURES["Deity's Domain (Luck)"],
   "Deity's Domain (Magic)":
@@ -8849,7 +8806,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Desperate Prayer':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Gains 1 Focus Spell to cast a devotion spell by the end of the turn"',
+    'Note="Gains 1 Focus Spell to cast a devotion spell by the end of the turn once per day"',
   'Faithful Steed':
     'Section=feature Note="Has a young animal companion as a mount"',
   'Iron Repercussions':
@@ -8859,32 +8816,35 @@ Pathfinder2ERemaster.FEATURES = {
   'Ongoing Selfishness':
     'Section=combat ' +
     'Note="Selfish Shield gives half resistance to all damage from the triggering foe until the end of the turn"',
-  // TODO: extends to everyone who Steps if self has exalted reaction
-  'Unimpeded Step':Pathfinder2E.FEATURES['Unimpeded Step'],
+  'Unimpeded Step':
+    'Section=combat ' +
+    'Note="Liberating Step allows Stepping normally in any terrain"',
   'Vicious Vengeance':
     'Section=combat ' +
-    'Note="Destructive Vengeance inflicts additional damage on foe equal to the number of damage dice"',
+    'Note="Destructive Vengeance inflicts additional initial damage on the foe equal to the number of damage dice"',
   'Weight Of Guilt':Pathfinder2E.FEATURES['Weight Of Guilt'],
   'Divine Grace':Pathfinder2E.FEATURES['Divine Grace'],
   'Divine Health':Pathfinder2E.FEATURES['Divine Health'] + ' ' +
     'Note="+2 vs. diseases and poisons and on flat checks to recover from persistent poison, and successes vs. disease or poison are critical successes; allies within aura gain a +1 bonus"',
-  'Aura Of Courage':Pathfinder2E.FEATURES['Aura Of Courage']
-    .replace("15'", 'aura'),
+  // Change of description
+  'Aura Of Courage':
+    'Section=save ' +
+    'Note="Reduces the initial value of any frightened condition by 1, and the end of a turn reduces the fright of allies within aura by 1"',
   'Aura Of Despair':
     'Section=combat ' +
     'Note="Foes within aura suffer -1 save vs. fear and cannot remove frightened condition"',
   'Cruelty':
     'Section=magic ' +
-    'Note="Using 2 actions to cast <i>Touch Of The Void</i> also inflicts enfeebled 1 for 1 min on a failed save, or enfeebled 2 on a critical failure"',
+    'Note="2-action <i>Touch Of The Void</i> also inflicts%{magicNotes.greaterCruelty?\' clumsy, stupefied, or\':\'\'} enfeebled 1 for 1 min on a failed save, or%{magicNotes.greaterCruelty?\' clumsy, stupefied, or\':\'\'} enfeebled 2 on a critical failure"',
   'Mercy (Body)':
     'Section=magic ' +
-    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'stunned, \')+\'drained, slowed, \':\'\'}blinded, dazzled, deafened, enfeebled, or sickened"',
+    'Note="2-action <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'stunned, \')+\'drained, slowed, \':\'\'}blinded, dazzled, deafened, enfeebled, or sickened"',
   'Mercy (Grace)':
     'Section=magic ' +
-    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<12?\'\':level<16?\'petrified, \':\'petrified, stunned, \')+\'immobilized, restrained, slowed, \':\'\'}clumsy, grabbed, or paralyzed"',
+    'Note="2-action <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<12?\'\':level<16?\'petrified, \':\'petrified, stunned, \')+\'immobilized, restrained, slowed, \':\'\'}clumsy, grabbed, or paralyzed"',
   'Mercy (Mind)':
     'Section=magic ' +
-    'Note="Using 2 actions to cast <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'doomed, stunned, \')+\'confused, controlled,slowed, \':\'\'}fleeing, frightened, or stupefied"',
+    'Note="2-actions <i>Lay On Hands</i> can also attempt to counteract %{magicNotes.greaterMercy?(level<16?\'\':\'doomed, stunned, \')+\'confused, controlled, slowed, \':\'\'}fleeing, frightened, or stupefied"',
   'Security':
     'Section=magic ' +
     'Note="Using 2 actions to cast <i>Shields Of The Spirit</i> gives 1 ally the benefits of the spell for 1 min"',
@@ -8895,8 +8855,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Loyal Warhorse':Pathfinder2E.FEATURES['Loyal Warhorse'],
   // Reactive Strike as above
   // Shield Warden as above
-  'Smite Evil':Pathfinder2E.FEATURES['Smite Evil'] + ' ' +
-    'Note="Strikes against a designated foe gain +3 damage, or +4 with master proficiency (+4 or +6 vs. an opposing holy or unholy foe) for 1 rd; hostile actions by the foe extend the effect each rd"',
+  'Smite':Pathfinder2E.FEATURES['Smite Evil'] + ' ' +
+    'Note="Strikes against a designated foe gain +3 damage, or +4 with a master proficiency weapon (+4 or +6 vs. an opposing holy or unholy foe), until the start of the next turn; hostile actions by the foe extend the effect each rd"',
   "Advanced Deity's Domain (Air)":
     Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"],
   "Advanced Deity's Domain (Ambition)":
@@ -8975,31 +8935,35 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES["Advanced Deity's Domain (Wealth)"],
   "Advanced Deity's Domain (Zeal)":
     Pathfinder2E.FEATURES["Advanced Deity's Domain (Zeal)"],
-  'Greater Cruelty':
-    'Section=magic ' +
-    'Note="Can use Cruelty to make the target clumsy or stupefied instead"',
+  'Greater Cruelty':'Section=magic Note="Has increased Cruelty effects"',
   'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Greater Security':
-    'Section=combat ' +
-    'Note="Can give an ally full shield AC bonus and use Shield Block to benefit them"',
-  'Heal Mount':Pathfinder2E.FEATURES['Heal Mount'],
+    'Section=magic ' +
+    'Note="<i>Shields Of The Spirit</i> gives the target +%{shieldACBonus} Armor Class and allows self to use Shield Block to benefit them"',
+  'Heal Mount':
+    Pathfinder2E.FEATURES['Heal Mount']
+    .replace('level', 'rank'),
   // Quick Shield Block as above
   'Second Blessing':Pathfinder2E.FEATURES['Second Ally'],
   'Imposing Destrier':Pathfinder2E.FEATURES['Imposing Destrier'],
   'Radiant Armament':
-    'Section=combat ' +
-    'Note="Can choose <i>astral</i>, <i>brilliant</i>, <i>holy</i>, or <i>unholy</i> rune for Blessed Armament, and can use a 10-min activity to change the rune"',
-  'Shield Of Reckoning':Pathfinder2E.FEATURES['Shield Of Reckoning'],
+    'Section=combat Note="Has increased Blessed Armament effects"',
+  'Shield Of Reckoning':
+    Pathfinder2E.FEATURES['Shield Of Reckoning']
+    .replace('foe', 'foe once per rd'),
   'Spectral Advance':
     'Section=magic Note="Knows the Spectral Advance divine spell"',
-  'Affliction Mercy':Pathfinder2E.FEATURES['Affliction Mercy'],
+  // Changed description
+  'Affliction Mercy':
+    'Section=magic ' +
+    'Note="2-actions <i>Lay On Hands</i> can also attempt to counteract an affliction such as a curse, disease, or poison"',
   'Aura Of Faith':
     Pathfinder2E.FEATURES['Aura Of Faith'] + ' ' +
     'Note="Strikes by allies within aura gain the holy or unholy trait"',
   'Blessed Counterstrike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike after Champion\'s Reaction gains 1 extra damage die and inflicts weakness %{level//2} to Strikes by self and allies for 1 rd"',
+    'Note="Successful Strike after a Champion\'s Reaction inflicts +1 damage die and weakness %{level//2} to Strikes by self and allies until the start of the next turn"',
   "Champion's Sacrifice":Pathfinder2E.FEATURES["Champion's Sacrifice"],
   'Devoted Focus':
     Pathfinder2E.FEATURES['Devoted Focus']
@@ -9008,24 +8972,26 @@ Pathfinder2ERemaster.FEATURES = {
   'Gruesome Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Champion\'s Reaction Strike inflicts double extra damage and drained 1 (<b>save Fortitude</b> negates drained)"',
+    'Note="Champion\'s Reaction Strike inflicts double extra damage and drained 1 (<b>save Fortitude</b> negates drained) once per target per day"',
   'Aura Of Determination':
-    'Section=save Note="Aura gives +1 vs. mental, morph, and polymorph"',
+    'Section=save ' +
+    'Note="Aura gives self and allies +1 vs. mental, morph, and polymorph"',
+  // Changed description
   'Aura Of Life':
-    Pathfinder2E.FEATURES['Aura Of Life']
-    .replace("R15' Gives", 'Aura gives')
-    .replaceAll(/negative|necromancy/g, 'void'),
+    'Section=save ' +
+    'Note="Aura gives self and allies resistance 5 to void and +1 vs. void"',
   'Aura Of Righteousness':
     Pathfinder2E.FEATURES['Aura Of Righteousness']
-    .replace("R15' Gives", 'Aura gives')
-    .replace('evil', 'unholy and attempts counteract to counteract teleportation affecting unholy creatures'),
+    .replace("R15' Gives", 'Aura gives self and allies')
+    .replace('evil', 'unholy and attempts to counteract teleportation affecting unholy creatures'),
   'Divine Reflexes':Pathfinder2E.FEATURES['Divine Reflexes'],
+  // Changed description
   'Auspicious Mount':
-    Pathfinder2E.FEATURES['Auspicious Mount'] + ' ' +
-    'Note="Mount is a specialized animal companion with celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, Skill Expert (Religion), ability to speak the language of %{deity}\'s servitors, flight, +%{level<18?20:level<20?25:30} Hit Points, and, as appropriate, holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait"',
+    'Section=feature ' +
+    'Note="Mount is a specialized animal companion with celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, expert proficiency in Religion, ability to speak the language of %{deity}\'s servitors, flight, +%{level<18?20:level<20?25:30} Hit Points, and, as appropriate, the holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait"',
   'Instrument Of Slaughter':
     'Section=combat ' +
-    'Note="Champion\'s Reaction that inflicts extra damage also inflicts persistent bleed damage equal to 2 damage dice"',
+    'Note="Critical hit on a Champion\'s Reaction that inflicts extra damage also inflicts persistent bleed damage equal to 2 damage dice"',
   'Instrument Of Zeal':
     Pathfinder2E.FEATURES['Instrument Of Zeal']
     .replace('Blade Of Justice', 'Blessed Counterstrike'),
@@ -9035,17 +9001,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="<i>Lay On Hands</i> gives 10 temporary Hit Points, lasting 1 rd, each rd for 10 rd"',
   'Swift Retribution':
     'Section=combat ' +
-    'Note="Using Champion\'s Reaction makes self quickened for 1 rd"',
-  'Ultimate Mercy':Pathfinder2E.FEATURES['Ultimate Mercy'],
-  'Radiant Blade Master':
+    'Note="Champion\'s Reaction gives self an additional Stride toward or Strike on the triggering foe during the next turn"',
+  'Ultimate Mercy':
+    Pathfinder2E.FEATURES['Ultimate Mercy']
+    .replace('Mercy', '2-action <i>Lay On Hands</i>'),
+  'Armament Paragon':
     Pathfinder2E.FEATURES['Radiant Blade Master'] + ' ' +
-    'Note="Can choose %{combatNotes.radiantArmament?\'<i>greater astral</i>, <i>greater brilliant</b>, \':\'\'}<i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, or <i>greater vitalizing</i> rune for brilliant armament, and can use 1 action to change the rune"',
+    'Note="Can choose %{combatNotes.radiantArmament?\'<i>greater astral</i>, <i>greater brilliant</i>, \':\'\'}<i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, or <i>greater vitalizing</i> for Blessed Armament, and can change the property in 1 action"',
   'Sacred Defender':
     'Section=save ' +
-    'Note="Has resistance 5 to bludgeoning, piercing, and slashing, and resistance 10 to these vs. holy or unholy creatures as appropriate/Natural 20 by foe does not improve success degree"',
-  'Shield Paragon':
-    'Section=combat ' +
-    'Note="Shield is always raised and is automatically remade after 1 day if destroyed"',
+    'Note="Has resistance 5 to bludgeoning, piercing, and slashing, or resistance 10 to these vs. holy or unholy creatures as appropriate, and a natural 20 on a foe Strike does not improve the success degree"',
+  'Shield Paragon':Pathfinder2E.FEATURES['Shield Paragon'],
   'Swift Paragon':
     'Section=combat ' +
     'Note="Has an additional action each rd to Step or Stride, and aura allows allies to move without triggering reactions"',
@@ -10367,7 +10333,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cheat Death':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed in response to triggering damage that would reduce self to 0 Hit Points"',
+    'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed in response to the triggering damage that would reduce self to 0 Hit Points"',
   'Get Used To Disappointment':
     'Action=Free ' +
     'Section=combat ' +
@@ -13874,11 +13840,24 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.blessedShield',
-      'classLevel', '=', 'source<13 ? 3 : source<20 ? 5 : 7'
+      classLevel, '=', 'source<13 ? 3 : source<20 ? 5 : 7'
     );
     rules.defineRule('combatNotes.blessedShield.1',
       'features.Blessed Shield', '?', null,
-      'classLevel', '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
+      classLevel, '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
+    );
+    rules.defineRule('combatNotes.exaltedReaction',
+      'combatNotes.relentlessReaction', '=', null
+    );
+    // TODO generalize to handle homebrew?
+    rules.defineRule('combatNotes.relentlessReaction',
+      'featureNotes.desecration', '=', '"Selfish Shield"',
+      'featureNotes.grandeur', '=', '"Flash Of Grandeur"',
+      'featureNotes.iniquity', '=', '"Destructive Vengeance"',
+      'featureNotes.justice', '=', '"Retributive Strike"',
+      'featureNotes.liberation', '=', '"Liberating Step"',
+      'featureNotes.obedience', '=', '"Iron Command"',
+      'featureNotes.redemption', '=', '"Glimpse Of Redemption"'
     );
     rules.defineRule('featureNotes.blessingOfTheDevoted',
       '', '=', '1',
@@ -13887,8 +13866,16 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     // TODO Might have to revisit for archetypes
     rules.defineRule
       ("features.Champion's Reaction", 'features.Cause', '=', '1');
+    rules.defineRule('italics',
+      'combatNotes.exaltedReaction', '=', 'null',
+      'combatNotes.radiantArmament', '=', 'null',
+      'combatNotes.relentlessReaction', '=', 'null'
+    );
     rules.defineRule('selectableFeatureCount.Champion (Blessing Of The Devoted)',
       'featureNotes.blessingOfTheDevoted', '=', null
+    );
+    rules.defineRule('selectableFeatureCount.Champion (Cause)',
+      'featureNotes.cause', '=', '2'
     );
     rules.defineRule('selectableFeatureCount.Champion (Key Attribute)',
       'featureNotes.championKeyAttribute', '=', '1'
