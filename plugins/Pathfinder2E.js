@@ -4206,6 +4206,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Knows the Healer\'s Blessing divine spell"',
   "Deity's Domain (Indulgence)":
     'Section=magic Note="Knows the Overstuff divine spell"',
+  "Deity's Domain (Knowledge)":
+    'Section=magic Note="Knows the Scholarly Recollection divine spell"',
   "Deity's Domain (Luck)":
     'Section=magic Note="Knows the Bit Of Luck divine spell"',
   "Deity's Domain (Magic)":
@@ -4481,10 +4483,10 @@ Pathfinder2E.FEATURES = {
   'Instrument Of Zeal':
     'Section=combat ' +
     // Errata changes Smite Evil to Blade Of Justice
-    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts an additional damage die and slowed 1 for 1 rd"',
+    'Note="Critical hit with Blade Of Justice or Retributive Strike inflicts +1 damage die and slowed 1 on the target\'s next turn"',
   'Shield Of Grace':
     'Section=combat ' +
-    'Note="May redirect half of the excess damage to self when using Shield Block to protect an ally"',
+    'Note="Can redirect half of the excess damage to self when using Shield Block to protect an ally"',
   'Celestial Form':
     'Section=ability,feature ' +
     'Note=' +
@@ -4492,17 +4494,15 @@ Pathfinder2E.FEATURES = {
       '"Has the Darkvision feature"',
   'Ultimate Mercy':
     'Section=magic ' +
-    'Note="Can use <i>Lay On Hands</i> to restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd"',
+    'Note="Mercy can restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd"',
   'Celestial Mount':
     'Section=feature ' +
     'Note="Mount has Darkvision, +40 Hit Points, and weakness 10 to evil damage and can fly at full Speed"',
   'Radiant Blade Master':
     'Section=combat Note="Has increased Blade Ally effects"',
   'Shield Paragon':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"+50% shield Hit Points",' +
-      '"Shield is always raised and is automatically remade after 1 day if destroyed"',
+    'Section=combat ' +
+    'Note="Shield is always raised and is automatically remade after 1 day if destroyed"',
 
   // Cleric
   // Alertness as above
@@ -4692,6 +4692,9 @@ Pathfinder2E.FEATURES = {
   'Domain Initiate (Indulgence)':
     'Section=magic ' +
     'Note="Knows the Overstuff divine spell/Has a focus pool and 1 Focus Point"',
+  'Domain Initiate (Knowledge)':
+    'Section=magic ' +
+    'Note="Knows the Scholarly Recollection divine spell/Has a focus pool and 1 Focus Point"',
   'Domain Initiate (Luck)':
     'Section=magic ' +
     'Note="Knows the Bit Of Luck divine spell/Has a focus pool and 1 Focus Point"',
@@ -13679,7 +13682,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('combatNotes.shieldAlly.1',
       'combatNotes.shieldAlly', '=', '1.5',
-      'combatNotes.shieldParagon', '^', '2'
+      'features.Shield Paragon', '^', '2'
     );
     rules.defineRule('featureNotes.divineAlly',
       '', '=', '1',
@@ -14388,10 +14391,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'features.' + s, '=', '1'
       );
     });
-  } else if(name == 'Affliction Mercy') {
-    rules.defineRule('magicNotes.mercy',
-       'magicNotes.afflictionMercy', '=', 'null' // italics
-    );
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
