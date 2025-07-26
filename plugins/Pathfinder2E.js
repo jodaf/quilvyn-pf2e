@@ -13618,14 +13618,12 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'features.Dragon Instinct (Silver)', '=', '"cold"'
     );
     rules.defineRule('combatNotes.furyInstinct',
-      'combatNotes.specializationAbility', '=', 'null', // italics
       'features.Weapon Specialization', '=', '6',
       'features.Greater Weapon Specialization', '=', '12'
     );
     rules.defineRule('combatNotes.rage',
       '', '=', '2',
-      'combatNotes.furyInstinct', '^', null,
-      'combatNotes.quickRage', '=', 'null' // italics
+      'combatNotes.furyInstinct', '^', null
     );
     let allSelectables = rules.getChoices('selectableFeatures');
     let instincts =
@@ -13828,9 +13826,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
         'features.' + g, '=', '1'
       );
     });
-    rules.defineRule('combatNotes.combatFlexibility',
-      'combatNotes.improvedFlexibility', '=', 'null' // italics
-    )
     rules.defineRule('selectableFeatureCount.Fighter (Key Ability)',
       'featureNotes.fighterKeyAbility', '=', '1'
     );
@@ -13912,9 +13907,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('weaponDieSides.Fist', 'combatNotes.powerfulFist', '^', '6');
   } else if(name == 'Ranger') {
-    rules.defineRule('combatNotes.monsterHunter',
-      'combatNotes.legendaryMonsterHunter', '+', 'null' // italics
-    );
     rules.defineRule("selectableFeatureCount.Ranger (Hunter's Edge)",
       "featureNotes.hunter'sEdge", '=', '1'
     );
@@ -13930,19 +13922,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('skillNotes.rangerSkills', 'intelligenceModifier', '=', '4 + source');
   } else if(name == 'Rogue') {
-    rules.defineRule('combatNotes.debilitatingStrike',
-      'combatNotes.criticalDebilitation', '=', 'null', // italics
-      'combatNotes.doubleDebilitation', '=', 'null', // italics
-      'combatNotes.preciseDebilitations', '=', 'null', // italics
-      'combatNotes.tacticalDebilitations', '=', 'null', // italics
-      'combatNotes.viciousDebilitations', '=', 'null' // italics
-    );
     rules.defineRule('combatNotes.ruffian',
       '', '=', '"Trained"',
       'rank.Light Armor', '=', 'source>=3 ? "Master" : source==2 ? "Expert" : null'
-    );
-    rules.defineRule('combatNotes.slyStriker',
-      'combatNotes.impossibleStriker', '+', 'null' // italics
     );
     rules.defineRule('combatNotes.thief',
       'dexterityModifier', '=', null,
@@ -14683,19 +14665,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'featureNotes.elfAtavism', '+', '1'
       );
     });
-  } else if(name == 'Enduring Alchemy') {
-    rules.defineRule('skillNotes.quickAlchemy',
-      'skillNotes.enduringAlchemy', '=', 'null' // italics
-    );
   } else if(name == 'Expert Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.expertAlchemy', 'level', '=', 'source>=10 ? 5 : 3');
   } else if(name == 'Extend Armament Alignment') {
-    rules.defineRule('combatNotes.alignArmament(Chaotic)',
-      'combatNotes.extendArmamentAlignment', '=', 'null' // italics
-    );
     rules.defineRule('features.Align Armament',
       'features.Align Armament (Chaotic)', '=', '1',
       'features.Align Armament (Evil)', '=', '1',
@@ -14790,10 +14765,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Iron Sweep', 'features.Ironblood Stance', '=', '1');
-  } else if(name == 'Ironblood Surge') {
-    rules.defineRule('combatNotes.ironbloodStance',
-      'combatNotes.ironbloodSurge', '=', 'null' // italics
-    );
   } else if(name == 'Ki Rush') {
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
   } else if(name == 'Ki Strike') {
@@ -14803,10 +14774,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ('advancedAlchemyLevel', 'featureNotes.masterAlchemy', '^', null);
     rules.defineRule
       ('featureNotes.masterAlchemy', 'level', '=', 'source - 5');
-  } else if(name == 'Master Monster Hunter') {
-    rules.defineRule('combatNotes.monsterHunter',
-      'combatNotes.masterMonsterHunter', '=', 'null' // italics
-    );
   } else if((matchInfo = name.match(/^Minor Magic \((.*)\)$/)) != null) {
     let trad = matchInfo[1];
     let note = 'magicNotes.minorMagic(' + trad + ')';
@@ -14863,10 +14830,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'features.Multitalented', '?', null,
       'features.Half-Elf', '=', '1'
     );
-  } else if(name == 'Orc Ferocity') {
-    rules.defineRule('combatNotes.orcFerocity',
-      'combatNotes.incredibleFerocity', '=', 'null' // italics
-    );
   } else if(name.match(/^Order Explorer/)) {
     let order = name.replace('Order Explorer (', '').replace(')', '');
     rules.defineRule('features.Order Explorer', 'features.' + name, '=', '1');
@@ -14911,10 +14874,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
-    );
-  } else if(name == 'Skittering Scuttle') {
-    rules.defineRule('combatNotes.goblinScuttle',
-      'combatNotes.skitteringScuttle', '=', 'null' // italics
     );
   } else if(name == 'Sorcerer Dedication') {
     rules.defineRule('bloodlineTraditions',
@@ -14976,10 +14935,6 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
     );
     rules.defineRule('weapons.Tiger Claw', 'features.Tiger Stance', '=', '1');
-  } else if(name == 'Ubiquitous Snares') {
-    rules.defineRule('skillNotes.snareSpecialist',
-      'skillNotes.ubiquitousSnares', '=', 'null' // italics
-    );
   } else if(name == 'Unburdened Iron') {
     rules.defineRule('abilityNotes.armorSpeedPenalty',
       'abilityNotes.unburdenedIron', '^', '0'
@@ -15319,6 +15274,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       }
       if(n.match(/^Can learn spells from the .* tradition$/))
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
+      if(n.match(/^Has increased .* effects$/))
+        rules.defineRule('italics', note, '=', 'null');
     });
   }
 };
