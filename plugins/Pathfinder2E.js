@@ -5197,7 +5197,7 @@ Pathfinder2E.FEATURES = {
     'Note="Attack Master (Simple Swords; Martial Swords)/Attack Expert (Advanced Swords)"',
   // Greater Weapon Specialization as above
   'Improved Flexibility':
-    'Section=combat Note="Has increased Combat Flexibility features"',
+    'Section=combat Note="Has increased Combat Flexibility effects"',
   // Juggernaut as above
   // Shield Block as below
   'Versatile Legend':

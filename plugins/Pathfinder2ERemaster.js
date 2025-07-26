@@ -6973,7 +6973,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Cut From The Air against ranged spell attacks"',
   'Boundless Reprisals':Pathfinder2E.FEATURES['Boundless Reprisals'],
   'Ultimate Flexibility':
-    'Section=combat Note="Has increased Combat Flexibility features"',
+    'Section=combat Note="Has increased Combat Flexibility effects"',
   'Weapon Supremacy':Pathfinder2E.FEATURES['Weapon Supremacy'],
 
   // Ranger
@@ -7526,8 +7526,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Witch's Bottle":
     'Section=magic ' +
     'Note="Can spend 10 min and 1 Focus Point to create a potion that inflicts a hex on the imbiber, lasting until next daily prep"',
-  'Double, Double':
-    'Section=skill Note="Has increased Cauldron effects"',
+  'Double, Double':'Section=skill Note="Has increased Cauldron effects"',
   'Major Lesson (Death)':
     'Section=magic Note="Knows the Curse Of Death %V hex"',
   'Major Lesson (Renewal)':
@@ -9252,7 +9251,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat,combat ' +
     'Note=' +
-      '"Has increased Cobra Stance features",' +
+      '"Has increased Cobra Stance effects",' +
       '"Strike from Cobra Stance gains +5\' reach and +1d4 HP persistent poison"',
   'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
   'Prevailing Position':
@@ -13866,11 +13865,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     // TODO Might have to revisit for archetypes
     rules.defineRule
       ("features.Champion's Reaction", 'features.Cause', '=', '1');
-    rules.defineRule('italics',
-      'combatNotes.exaltedReaction', '=', 'null',
-      'combatNotes.radiantArmament', '=', 'null',
-      'combatNotes.relentlessReaction', '=', 'null'
-    );
     rules.defineRule('selectableFeatureCount.Champion (Blessing Of The Devoted)',
       'featureNotes.blessingOfTheDevoted', '=', null
     );
@@ -13958,10 +13952,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'featureNotes.rangerKeyAttribute', '=', '1'
     );
   } else if(name == 'Rogue') {
-    rules.defineRule('combatNotes.debilitatingStrike',
-      'combatNotes.bloodyDebilitation', '=', 'null', // italics
-      'combatNotes.methodicalDebilitations', '=', 'null' // italics
-    );
     rules.defineRule('selectableFeatureCount.Rogue (Key Attribute)',
       'featureNotes.rogueKeyAttribute', '=', '1'
     );
@@ -14086,11 +14076,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   Pathfinder2E.featRulesExtra(rules, name);
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-  if(name == 'Advanced Efficient Alchemy') {
-    rules.defineRule('skillNotes.advancedAlchemy',
-      'skillNotes.advancedEfficientAlchemy', '=', 'null' // italics
-    );
-  } else if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
+  if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
@@ -14152,10 +14138,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         );
       });
     };
-  } else if(name == 'Big Mouth') {
-    rules.defineRule('featureNotes.cheekPouches',
-      'featureNotes.bigMouth', '=', 'null' // italics
-    );
   } else if(name.match(/^(Bone Investiture|Fossil Rider|Primal Rampage)$/)) {
     rules.defineRule('features.' + name + ' (Occult)',
       'features.' + name, '?', null,
@@ -14167,10 +14149,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name.startsWith('Bone Magic')) {
     rules.defineRule('features.Bone Magic', 'features.' + name, '=', '1');
-  } else if(name == 'Breath Like Honey') {
-    rules.defineRule('skillNotes.sweetbreathKholo',
-      'skillNotes.breathLikeHoney', '=', 'null' // italics
-    );
   } else if(name == 'Breath Of The Dragon') {
     rules.defineRule('combatNotes.breathOfTheDragon',
       'features.Adamantine Exemplar', '=', '"bludgeoning"',
@@ -14219,10 +14197,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ('weapons.Claws.5', 'combatNotes.deadlyAspect.1', '=', null);
     rules.defineRule('weapons.Jaws.5', 'combatNotes.deadlyAspect.2', '=', null);
     rules.defineRule('weapons.Tail.5', 'combatNotes.deadlyAspect.3', '=', null);
-  } else if(name == 'Double, Double') {
-    rules.defineRule('skillNotes.cauldron',
-      'skillNotes.double,Double', '=', 'null' // italics
-    );
   } else if(name.startsWith('Draconic Aspect')) {
     rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
     if(name.includes('Claw')) {
@@ -14280,10 +14254,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Draconic Veil', '?', null,
       'features.Primal Dragonblood', '=', '1'
     );
-  } else if(name == 'Efficient Alchemy') {
-    rules.defineRule('skillNotes.advancedAlchemy',
-      'skillNotes.efficientAlchemy', '=', 'null' // italics
-    );
   } else if(name == 'Fangs') {
     rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
     // Note: Ignore Grapple trait currently not shown on character sheet
@@ -14303,10 +14273,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('features.Form Of The Dragon (Primal)',
       'features.Form Of The Dragon', '?', null,
       'features.Primal Dragonblood', '=', '1'
-    );
-  } else if(name == 'Formidable Breath') {
-    rules.defineRule('combatNotes.breathOfTheDragon',
-      'combatNotes.formidableBreath', '=', 'null' // italics
     );
   } else if(name == "Gecko's Grip") {
     rules.defineRule("abilityNotes.gecko'sGrip",
@@ -14328,10 +14294,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Gnome Obsession') {
     // Override legacy rule
     rules.defineRule('skillNotes.gnomeObsession', 'level', '=', 'null');
-  } else if(name == 'Greater Mercy') {
-    rules.defineRule('magicNotes.mercy(Body)',
-      'magicNotes.greaterMercy', '=', 'null' // italics
-    );
   } else if(name == 'Grown Of Oak') {
     rules.defineRule('magicNotes.grownOfOak',
       '', '=', '1',
@@ -14392,20 +14354,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       // Note: Ignore Sweep trait currently not shown on character sheet
     }
     rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
-  } else if(name == 'Jinx Glutton') {
-    rules.defineRule(
-      'combatNotes.eatFortune', 'combatNotes.jinxGlutton', '=', 'null'// italics
-    );
   } else if(name == 'Lasting Armament') {
     rules.defineRule('combatNotes.sanctifyArmament',
       'combatNotes.lastingArmament', '=', 'null' // italics
-    );
-  } else if(name == 'Loud Singer') {
-    rules.defineRule
-      ('combatNotes.goblinSong', 'combatNotes.loudSinger', '=', 'null');
-  } else if(name == 'Lucky Break') {
-    rules.defineRule(
-      "saveNotes.cat'sLuck", 'saveNotes.luckyBreak', '=', 'null' // italics
     );
   } else if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
@@ -14452,10 +14403,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('armorClass', 'combatNotes.scalyHide.1', '+', null);
     // NOTE: apparently reduced dex cap only applies if unarmored
     rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v=', '3');
-  } else if(name == 'Shinstabber') {
-    rules.defineRule('combatNotes.overcrowd',
-      'combatNotes.shinstabber', '=', 'null' // italics
-    );
   } else if(name == 'Slag May') {
     rules.defineRule('weapons.Slag Claws', 'combatNotes.slagMay', '=', '1');
   } else if(name == 'Tengu Feather Fan') {
@@ -14473,13 +14420,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Tusks') {
     rules.defineRule('weapons.Tusks', 'combatNotes.tusks', '=', '1');
-  } else if(name == 'Ultimate Flexibility') {
-    rules.defineRule('combatNotes.combatFlexibility',
-      'combatNotes.ultimateFlexibility', '=', 'null' // italics
-    );
-  } else if(name == 'Unstoppable Juggernaut') {
-    rules.defineRule
-      ('italics', 'saveNotes.unstoppableJuggernaut', '=', 'null');
   } else if(name == 'Untamed Form') {
     rules.defineRule
       ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
@@ -14517,10 +14457,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         "combatNotes.witch'sArmaments(LivingHair)", '=', '1'
       );
     }
-  } else if(name == "Witch's Communion") {
-    rules.defineRule("magicNotes.witch'sCharge",
-      "magicNotes.witch'sCommunion", '=', 'null' // italics
-    );
   }
 };
 
