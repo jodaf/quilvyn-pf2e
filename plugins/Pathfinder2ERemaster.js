@@ -9113,7 +9113,12 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Monk
   'Adamantine Strikes':Pathfinder2E.FEATURES['Adamantine Strikes'],
-  'Expert Strikes':Pathfinder2E.FEATURES['Expert Strikes'],
+  // Effects changed
+  'Expert Strikes':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Attack Expert (Simple Weapons; Unarmed Attacks)",' +
+      '"Critical hits with a brawling weapon inflict its critical specialization effect"',
   'Flurry Of Blows':Pathfinder2E.FEATURES['Flurry Of Blows'],
   'Graceful Legend':Pathfinder2E.FEATURES['Graceful Legend'],
   'Graceful Mastery':Pathfinder2E.FEATURES['Graceful Mastery'],
@@ -9166,7 +9171,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack %V (Longbow; Shortbow; Monk Bows)",' +
-      '"Stance allows only bow Strikes; may use Flurry Of Blows and other unarmed monk features with bows at half their range increment"',
+      '"Unarmored stance allows only bow Strikes; may use Flurry Of Blows and other unarmed monk features with bows at half their range increment"',
   'Mountain Stance':
     Pathfinder2E.FEATURES['Mountain Stance']
     .replace('Shove', 'Reposition, Shove'),
@@ -9178,7 +9183,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +1 Deception to Feint, restricts Strikes to 1d8 HP bludgeoning hand attacks, and inflicts off-guard against successful melee attackers until the end of the next turn"',
+    'Note="Stance gives +1 Deception to Feint, restricts Strikes to stumbling swing attacks, and inflicts off-guard against successful melee attackers until the end of the next turn"',
   'Tiger Stance':Pathfinder2E.FEATURES['Tiger Stance'],
   'Wolf Stance':Pathfinder2E.FEATURES['Wolf Stance'],
   'Crushing Grab':Pathfinder2E.FEATURES['Crushing Grab'],
@@ -9196,8 +9201,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat,save ' +
     'Note=' +
-      '"Stance allows only hand Strikes that inflict 1d4 HP piercing, or 1d10 HP on a critical hit",' +
-      '"Stance gives +%{combatNotes.cobraEnvenom?2:1} Fortitude and Fortitude DC and poison resistance %{level//2}"',
+      '"Stance allows only cobra fang attacks",' +
+      '"Stance gives +%{combatNotes.cobraEnvenom?2:1} Fortitude and Fortitude DC and resistance %{level//2} to poison"',
   'Deflect Projectile':Pathfinder2E.FEATURES['Deflect Arrow'],
   'Flurry Of Maneuvers':
     Pathfinder2E.FEATURES['Flurry Of Maneuvers']
@@ -9222,8 +9227,10 @@ Pathfinder2ERemaster.FEATURES = {
   'One-Inch Punch':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful unarmed strike inflicts %{level<10?1:level<18?2:3} additional damage %{level<10?\'die\':\'dice\'}; 3 actions gives %{level<10?2:level<18?4:6} additional dice"',
-  'Return Fire':Pathfinder2E.FEATURES['Arrow Snatching'],
+    'Note="Successful unarmed strike inflicts +%{level<10?1:level<18?2:3} damage %{level<10?\'die\':\'dice\'}, or +%{level<10?2:level<18?4:6} dice with 3 actions"',
+  'Return Fire':
+    Pathfinder2E.FEATURES['Arrow Snatching']
+    .replace('Arrow', 'Projectile'),
   'Stumbling Feint':
     'Section=combat ' +
     'Note="Stumbling Stance allows using a free Feint before Flurry Of Blows; success inflicts off-guard from both attacks"',
@@ -9240,24 +9247,24 @@ Pathfinder2ERemaster.FEATURES = {
   'Pinning Fire':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Two successful ranged Flurry Of Blows Strikes inflict immobilized (<b>save Reflex</b> negates; successful DC 10 Athletics by target or adjacent creature ends)"',
+    'Note="Two successful ranged Flurry Of Blows Strikes inflict immobilized (<b>save Reflex</b> negates; successful DC 10 Athletics by the target or an adjacent creature ends)"',
   'Projectile Snatching':
     'Section=combat ' +
-    'Note="Deflect Projectile allows an immediate Strike against the attacker"',
+    'Note="Successful Deflect Projectile allows using the projectile for an immediate ranged Strike against the attacker"',
   'Tangled Forest Stance':Pathfinder2E.FEATURES['Tangled Forest Stance'],
   'Wall Run':Pathfinder2E.FEATURES['Wall Run'],
   'Wild Winds Initiate':Pathfinder2E.FEATURES['Wild Winds Initiate'],
   'Cobra Envenom':
-    'Action=1 ' +
+    // 'Action=1 ' + // inserted into second note
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Cobra Stance effects",' +
-      '"Strike from Cobra Stance gains +5\' reach and +1d4 HP persistent poison"',
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Strike from Cobra Stance gains +5\' reach and inflicts +1d4 HP persistent poison"',
   'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
   'Prevailing Position':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Leaving current stance gives +4 save or Armor Class vs. triggering damage"',
+    'Note="Leaving the current stance gives +4 save or Armor Class vs. the triggering damage"',
   'Sleeper Hold':Pathfinder2E.FEATURES['Sleeper Hold'],
   'Wind Jump':Pathfinder2E.FEATURES['Wind Jump'],
   'Winding Flow':Pathfinder2E.FEATURES['Winding Flow'],
@@ -13152,13 +13159,60 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
-  'Clinging Shadows Stance':
+  'Inner Upheaval':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Focus,Water ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, spirit, vitality, or void (<b>heightened +4</b> inflicts +1d6 HP)"',
+  'Qi Rush':
+    'Level=1 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Allows self to take two Steps or Strides, giving concealment until the start of the next turn"',
+  'Qi Blast':
+    'Level=3 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Force,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions gives a 30\' or 60\' cone that inflicts 2d6 HP or 4d6 HP) (<b>save Fortitude</b> inflicts half HP and negates push; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP, +2d6 HP, or +3d6 HP with 1, 2, or 3 actions)"',
+  'Shrink The Span':
+    'Level=3 ' +
+    'Traits=Monk,Uncommon,Focus,Manipulate,Teleportation ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Teleports to a visible location within %{speed}\'"',
+  "Medusa's Wrath":
+    'Level=8 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"'
-
+    'Description="Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent Fortitude saves at the end of each of the target\'s turns increase or decrease the value by 1, or by 2 on a critical failure, until the target is permanently petrified or no longer slowed"',
+  'Touch Of Death':
+    'Level=8 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="Successful unarmed Strike allows self to inflict stunned 3 and 80 HP any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP; critical success negates; critical failure inflicts death) (<b>heightened +1</b> inflcits +5 or +10 HP on save success or failure)"',
+  'Embrace Nothingness':
+    'Level=9 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="Self gains resistance %{level} to physical damage, half speed in any direction, concealment when moving and invisibility when still, and the ability toe move through up to 2\' of solid material for 1 min"',
+  'Qi Form':
+    'Level=9 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Polymorph ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be exteneded to 30\', nonletal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
+  'Clinging Shadows Stance':
+    'Level=4 ' +
+    'Traits=Monk,Uncommon,Focus,Manipulate,Shadow,Stance ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Stance gives +2 Grapple checks and DC to Escape and allows shadow grasp Strikes that inflict 1d4 HP void"'
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -14176,6 +14230,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         'magicNotes.cackle', '=', 'source=="' + t + '" ? 1 : null'
       );
     });
+  } else if(name == 'Cobra Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
+      ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venonous'], null
+    );
+    rules.defineRule('weapons.Cobra Fang', 'features.Cobra Stance', '=', '1');
   } else if(name == 'Crunch') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
@@ -14411,6 +14471,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       "magicNotes.windGod'sFan", '+', '1',
       "magicNotes.thunderGod'sFan", '+', '1'
     );
+  } else if(name == 'Stumbling Stance') {
+    Pathfinder2E.weaponRules(
+      rules, 'Stumbling Swing', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
+      ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null
+    );
+    rules.defineRule
+      ('weapons.Stumbling Swing', 'features.Stumbling Stance', '=', '1');
   } else if(name == 'Traditional Resistances') {
     rules.defineRule('saveNotes.traditionalResistances',
       'features.Arcane Dragonblood', '=', '"arcane"',

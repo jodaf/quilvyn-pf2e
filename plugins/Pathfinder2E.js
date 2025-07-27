@@ -5628,11 +5628,11 @@ Pathfinder2E.FEATURES = {
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class, +2 vs. Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class%{dexterityModifier>(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>0?\' (+4-\'+(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0))+\' due to a reduced Dex cap)\':\'\'}, +2 vs. Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance allows 10\' Steps and tiger claw attacks that inflict +1d4 HP persistent bleed damage on a critical success"',
+    'Note="Unarmored stance allows 10\' Steps and tiger claw attacks"',
   'Wolf Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5642,7 +5642,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a brawling%{combatNotes.monasticWeaponry?\' or trained monk\':\'\'} weapon inflict its critical specialization effect"',
   'Crushing Grab':
     'Section=combat ' +
-    'Note="Can inflict %{strengthModifier} HP bludgeoning, lethal or non-lethal, with a successful Grapple"',
+    'Note="Can inflict %{strengthModifier} HP bludgeoning, lethal or nonlethal, with a successful Grapple"',
   'Dancing Leaf':
     'Section=save,skill ' +
     'Note=' +
@@ -5653,7 +5653,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
   'Stunning Fist':
     'Section=combat ' +
-    'Note="Can inflict stunned 1 with a successful Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)"',
+    'Note="Can inflict stunned 1 with 1 success on 2 Strikes from a Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
     'Section=combat Note="Gives +4 Armor Class vs. a physical ranged attack"',
@@ -5678,7 +5678,7 @@ Pathfinder2E.FEATURES = {
   'Crane Flutter':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Crane Stance gives +3 Armor Class vs. the triggering melee Strike, and a miss allows an immediate -2 Strike"',
+    'Note="Crane Stance gives +3 Armor Class vs. the triggering melee Strike, and a miss allows an immediate -2 crane wing Strike"',
   'Dragon Roar':
     'Action=1 ' +
     'Section=combat ' +
@@ -5692,18 +5692,18 @@ Pathfinder2E.FEATURES = {
   'Tiger Slash':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Tiger Stance, claw attack inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
+    'Note="While in Tiger Stance, tiger claw attack inflicts +%{level>14?3:2} damage dice and a 5\' push; critical success also inflicts +%{strengthModifier} HP persistent bleed damage"',
   'Water Step':
     'Section=ability ' +
     'Note="Can Stride across liquids, but must end on a solid surface to avoid sinking"',
   'Whirling Throw':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC, modified for size differences, allows throwing it %{10+5*strengthModifier}\', inflicting %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning"',
+    'Note="A successful Athletics vs. a grabbed or restrained foe\'s Fortitude DC allows throwing it %{10+5*strengthModifier}\', inflicting %{(10+5*strengthModifier)//10}d6+%{strengthModifier} HP bludgeoning, plus knocked prone on a critical success"',
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, piercing hand attack gains the fatal d12 trait and knocks prone"',
+    'Note="While in Wolf Stance, wolf jaw attack gains the fatal d11 trait and knocks prone"',
   'Arrow Snatching':
     'Section=combat ' +
     'Note="Successful Deflect Arrow allows an immediate ranged Strike using the deflected projectile"',
@@ -5714,7 +5714,7 @@ Pathfinder2E.FEATURES = {
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Uses 2 choices of Grapple, Shove, and Trip at the current multiple attack penalty"',
+    'Note="Attempts 2 choices of Grapple, Shove, and Trip at the current multiple attack penalty"',
   'Tangled Forest Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5727,11 +5727,11 @@ Pathfinder2E.FEATURES = {
   'Knockback Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="A successful unarmed Strike also allows an Athletics check to Shove"',
+    'Note="A successful unarmed Strike allows a subsequent Athletics check to Shove"',
   'Sleeper Hold':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful grapple also inflicts clumsy 1 for 1 turn, or unconscious for 1 min with a critical success"',
+    'Note="Successful grapple also inflicts clumsy 1 until the end of the target\'s next turn, or unconscious for 1 min with a critical success"',
   'Wind Jump':
     'Section=magic Note="Knows the Wind Jump occult spell/+1 Focus Points"',
   'Winding Flow':
@@ -14932,7 +14932,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Tiger Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Tiger Claw', 'Unarmed', 0, '1d8 S', 0, 0, 'Brawling',
-      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed'], null
+      ['Agile', 'Finesse', 'Nonlethal', 'Unarmed', 'Deadly 1d4 persistent bleed'], null
     );
     rules.defineRule('weapons.Tiger Claw', 'features.Tiger Stance', '=', '1');
   } else if(name == 'Unburdened Iron') {
