@@ -3117,7 +3117,7 @@ Pathfinder2ERemaster.FEATS = {
   'Monastic Weaponry':Pathfinder2E.FEATS['Monastic Weaponry'],
   'Mountain Stance':Pathfinder2E.FEATS['Mountain Stance'],
   'Qi Spells':'Traits=Monk',
-  'Stumbling Stance':'Traits=Monk,Stance',
+  'Stumbling Stance':'Traits=Monk,Stance Require="rank.Deception >= 1"',
   'Tiger Stance':Pathfinder2E.FEATS['Tiger Stance'],
   'Wolf Stance':Pathfinder2E.FEATS['Wolf Stance'],
   'Crushing Grab':Pathfinder2E.FEATS['Crushing Grab'],
@@ -3156,8 +3156,10 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 6","rank.Deception >= 2","features.Stumbling Stance"',
   'Tiger Slash':Pathfinder2E.FEATS['Tiger Stance'],
   'Water Step':Pathfinder2E.FEATS['Water Step'],
-  'Whirling Throw':Pathfinder2E.FEATS['Whirling Throw'],
-  'Wolf Drag':Pathfinder2E.FEATS['Wolf Stance'],
+  'Whirling Throw':
+    Pathfinder2E.FEATS['Whirling Throw']
+    .replace('Traits=', 'Traits=Attack,'),
+  'Wolf Drag':Pathfinder2E.FEATS['Wolf Drag'],
   'Clinging Shadows Initiate':
     'Traits=Monk Require="level >= 8","features.Qi Spells"',
   'Ironblood Stance':Pathfinder2E.FEATS['Ironblood Stance'],
@@ -3189,9 +3191,9 @@ Pathfinder2ERemaster.FEATS = {
   'Focused Shot':
     'Traits=Monk,Concentrate ' +
     'Require="level >= 12","features.Monastic Archer Stance"',
+  // Changed requirements
   'Improved Knockback':
-    Pathfinder2E.FEATS['Improved Knockback'] + ' ' +
-    'Require="level >= 12","features.Knockback Strike"',
+    'Traits=Monk Require="level >= 12","features.Knockback Strike"',
   'Meditative Focus':
     Pathfinder2E.FEATS['Meditative Focus']
     .replace('Ki Spells', 'Qi Spells'),
@@ -3215,13 +3217,19 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Fuse Stance']
     .replace('20', '16'),
   // Master Of Many Styles as above
-  'Master Qi Spells':'Traits=Monk Require="features.Qi Spells"',
-  'One-Millimeter Punch':'Traits=Monk Require="features.One-Inch Punch"',
+  'Master Qi Spells':'Traits=Monk Require="level >= 16","features.Qi Spells"',
+  'One-Millimeter Punch':
+    'Traits=Monk Require="level >= 16","features.One-Inch Punch"',
   'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
   'Diamond Fists':Pathfinder2E.FEATS['Diamond Fists'],
-  'Grandmaster Qi Spells':'Traits=Monk Require="features.Qi Spells"',
+  'Grandmaster Qi Spells':
+    'Traits=Monk Require="level >= 18","features.Qi Spells"',
   'Qi Center':
-    'Traits=Monk Require="features.Qi Spells","features.Master Of Many Styles"',
+    'Traits=Monk ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"features.Qi Spells",' +
+      '"features.Master Of Many Styles"',
   'Swift River':Pathfinder2E.FEATS['Swift River'],
   'Triangle Shot':
     'Traits=Monk,Concentrate,Fortune ' +
@@ -9259,7 +9267,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Cobra Stance effects",' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Strike from Cobra Stance gains +5\' reach and inflicts +1d4 HP persistent poison"',
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Strike from Cobra Stance gains +5\' reach and inflicts +1d4 HP persistent poison once per min"',
   'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
   'Prevailing Position':
     'Action=Reaction ' +
@@ -9274,21 +9282,21 @@ Pathfinder2ERemaster.FEATURES = {
   'Dodging Roll':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Steps when in area affected by area damage, gaining resistance %{level} to all damage, or %{level+dexterityModifier} if the Step exits the affected area"',
+    'Note="Step when in an area affected by area damage gives resistance %{level} to the triggering damage, or resistance %{level+dexterityModifier} if the Step exits the area"',
   'Focused Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Ranged Strike within first range increment ignores cover and concealment"',
+    'Note="Ranged weapon Strike within its first range increment ignores cover and concealment"',
   'Improved Knockback':
     Pathfinder2E.FEATURES['Improved Knockback']
-    .replace(/inflicts.HP bludgeoning/, "1d6 HP bludgeoning per 5'"),
+    .replace(/\S* HP bludgeoning/, "1d6 HP bludgeoning per 5' of prevented movement"),
   'Meditative Focus':
     Pathfinder2E.FEATURES['Meditative Focus']
     .replace('2', 'all'),
   'Overwhelming Breath':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent monk spell with no duration ignore resistance %{level} to physical damage"',
+    'Note="Subsequent instantaneous monk spell ignores resistance %{level} to physical damage"',
   'Reflexive Stance':
     'Action=Free ' +
     'Section=combat ' +
@@ -9296,7 +9304,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Form Lock':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Athletics check counteracts a polymorph effect effecting target once per target per day"',
+    'Note="Successful Athletics check counteracts a polymorph effect affecting a restrained target once per target per day"',
   'Ironblood Surge':Pathfinder2E.FEATURES['Ironblood Surge'],
   'Mountain Quake':Pathfinder2E.FEATURES['Mountain Quake'],
   'Peerless Form':
@@ -9311,7 +9319,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Whirling Blade Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows making Strikes by throwing monk finesse melee weapons 10\'"',
+    'Note="Stance allows throwing finesse monk melee weapons 10\' to make multiple ranged Strikes, after which they return to hand"',
   'Wild Winds Gust':Pathfinder2E.FEATURES['Wild Winds Gust'],
   'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
   // Master Of Many Styles as above
@@ -9319,7 +9327,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows a choice of 8th-rank monk qi spells"',
   'One-Millimeter Punch':
     'Section=combat ' +
-    'Note="One-Inch Punch inflicts 10\' Push (<b>save Fortitude</b> inflicts 5\' Push; critical success negates; critical failure inflicts 10\' Push per action"',
+    'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a Push of 10\' per action"',
   'Shattering Strike':Pathfinder2E.FEATURES['Shattering Strike'],
   'Diamond Fists':
     Pathfinder2E.FEATURES['Diamond Fists']
@@ -9329,20 +9337,20 @@ Pathfinder2ERemaster.FEATURES = {
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Casts a 1-action qi stance spell without spending a Focus Point"',
+    'Note="Casts a 1-action stance qi spell without spending a Focus Point once per min"',
   'Swift River':Pathfinder2E.FEATURES['Swift River'],
   'Triangle Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Make 3 bow Strikes against a single target with a -2 penalty"',
+    'Note="While in Monastic Archer Stance, 3 bow Strikes with a -2 penalty against a single target apply Stunning Blows effects and inflict +3d6 HP persistent bleed if all 3 hit"',
   'Enduring Quickness':Pathfinder2E.FEATURES['Enduring Quickness'],
   'Godbreaker':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Successful Strikes after throwing a grappled foe upward 20\' allows repeating 2 times"',
+    'Note="Successful unarmed Strike after throwing a grappled foe upward 20\' also inflicts falling damage and allows repeating twice; 3 hits inflicts additional unarmed Strike damage, retains grapple, and negates falling damage to self"',
   'Immortal Techniques':
     'Section=combat ' +
-    'Note="Using a monk stance action gives 20 temporary Hit Points for 1 rd"',
+    'Note="Using a monk stance action gives 20 temporary Hit Points until the start of the next turn"',
   'Impossible Technique':Pathfinder2E.FEATURES['Impossible Technique'],
   'Lightning Qi':
     'Action=Free ' +
@@ -13159,12 +13167,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
-  'Inner Upheaval':
-    'Level=1 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus ' +
-    'Traditions=Divine ' +
-    'Cast=1 ' +
-    'Description="Unarmed Strike or Flurry Of Blows gains +1 attack and +1d6 HP force, spirit, vitality, or void (<b>heightened +4</b> inflicts +1d6 HP)"',
   'Qi Rush':
     'Level=1 ' +
     'Traits=Monk,Uncommon,Concentrate,Focus ' +
