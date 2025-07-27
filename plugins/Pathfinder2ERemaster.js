@@ -3116,7 +3116,8 @@ Pathfinder2ERemaster.FEATS = {
   'Monastic Archer Stance':'Traits=Monk,Stance',
   'Monastic Weaponry':Pathfinder2E.FEATS['Monastic Weaponry'],
   'Mountain Stance':Pathfinder2E.FEATS['Mountain Stance'],
-  'Qi Spells':'Traits=Monk',
+  'Qi Spells (Inner Upheaval)':'Traits=Monk',
+  'Qi Spells (Qi Rush)':'Traits=Monk',
   'Stumbling Stance':'Traits=Monk,Stance Require="rank.Deception >= 1"',
   'Tiger Stance':Pathfinder2E.FEATS['Tiger Stance'],
   'Wolf Stance':Pathfinder2E.FEATS['Wolf Stance'],
@@ -3139,7 +3140,10 @@ Pathfinder2ERemaster.FEATS = {
   'Stand Still':Pathfinder2E.FEATS['Stand Still'],
   'Advanced Monastic Weaponry':
     'Traits=Monk Require="level >= 6","features.Monastic Weaponry"',
-  'Advanced Qi Spells':'Traits=Monk Require="level >= 6","features.Qi Spells"',
+  'Advanced Qi Spells (Qi Blast)':
+    'Traits=Monk Require="level >= 6","features.Qi Spells"',
+  'Advanced Qi Spells (Shrink The Span)':
+    'Traits=Monk Require="level >= 6","features.Qi Spells"',
   'Align Qi':'Traits=Monk Require="level >= 6","features.Qi Spells"',
   'Crane Flutter':Pathfinder2E.FEATS['Crane Flutter'],
   'Dragon Roar':Pathfinder2E.FEATS['Dragon Roar'],
@@ -3217,12 +3221,17 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Fuse Stance']
     .replace('20', '16'),
   // Master Of Many Styles as above
-  'Master Qi Spells':'Traits=Monk Require="level >= 16","features.Qi Spells"',
+  "Master Qi Spells (Medusa's Wrath)":
+    'Traits=Monk Require="level >= 16","features.Qi Spells"',
+  'Master Qi Spells (Touch Of Death)':
+    'Traits=Monk Require="level >= 16","features.Qi Spells"',
   'One-Millimeter Punch':
     'Traits=Monk Require="level >= 16","features.One-Inch Punch"',
   'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
   'Diamond Fists':Pathfinder2E.FEATS['Diamond Fists'],
-  'Grandmaster Qi Spells':
+  'Grandmaster Qi Spells (Embrace Nothingness)':
+    'Traits=Monk Require="level >= 18","features.Qi Spells"',
+  'Grandmaster Qi Spells (Qi Form)':
     'Traits=Monk Require="level >= 18","features.Qi Spells"',
   'Qi Center':
     'Traits=Monk ' +
@@ -9183,11 +9192,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Mountain Stance':
     Pathfinder2E.FEATURES['Mountain Stance']
     .replace('Shove', 'Reposition, Shove'),
-  'Qi Spells':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Has a focus pool",' +
-      '"Knows a choice of 1st-rank monk qi spells"',
+  'Qi Spells (Inner Upheaval)':
+    'Section=magic ' +
+    'Note="Has a focus pool/Knows the Inner Upheaval occult spell"',
+  'Qi Spells (Qi Rush)':
+    'Section=magic Note="Has a focus pool/Knows the Qi Rush occult spell"',
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -9223,8 +9232,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Stand Still':Pathfinder2E.FEATURES['Stand Still'],
   'Advanced Monastic Weaponry':
     'Section=combat Note="Weapon Familiarity (Advanced Monk Weapons)"',
-  'Advanced Qi Spells':
-    'Section=magic Note="Knows a choice of 3rd-rank monk qi spells"',
+  'Advanced Qi Spells (Qi Blast)':
+    'Section=magic Note="Knows the Qi Blast occult spell"',
+  'Advanced Qi Spells (Shrink The Span)':
+    'Section=magic Note="Knows the Shrink The Span occult spell"',
   'Align Qi':
     'Action=Reaction ' +
     'Section=magic ' +
@@ -9323,8 +9334,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Wild Winds Gust':Pathfinder2E.FEATURES['Wild Winds Gust'],
   'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
   // Master Of Many Styles as above
-  'Master Qi Spells':
-    'Section=magic Note="Knows a choice of 8th-rank monk qi spells"',
+  "Master Qi Spells (Medusa's Wrath)":
+    'Section=magic Note="Knows the Medusa\'s Wrath occult spell"',
+  'Master Qi Spells (Touch Of Death)':
+    'Section=magic Note="Knows the Touch Of Death occult spell"',
   'One-Millimeter Punch':
     'Section=combat ' +
     'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a Push of 10\' per action"',
@@ -9332,8 +9345,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Diamond Fists':
     Pathfinder2E.FEATURES['Diamond Fists']
     .replace('forceful trait', 'forceful and deadly d10 traits'),
-  'Grandmaster Qi Spells':
-    'Section=magic Note="Knows a choice of 9th-rank monk qi spells"',
+  'Grandmaster Qi Spells (Embrace Nothingness)':
+    'Section=magic Note="Knows the Embrace Nothingness occult spell"',
+  'Grandmaster Qi Spells (Qi Form)':
+    'Section=magic Note="Knows the Qi Form occult spell"',
   'Qi Center':
     'Action=Free ' +
     'Section=magic ' +
@@ -14450,6 +14465,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.O10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
+  } else if(name.startsWith('Qi Spells')) {
+    rules.defineRule('features.Qi Spells', 'features.' + name, '=', '1');
   } else if(name == 'Reliable Luck') {
     rules.defineRule
       ("saveNotes.cat'sLuck", 'saveNotes.reliableLuck', '=', 'null'); // italics
