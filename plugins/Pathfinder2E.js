@@ -5703,7 +5703,7 @@ Pathfinder2E.FEATURES = {
   'Wolf Drag':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="While in Wolf Stance, wolf jaw attack gains the fatal d11 trait and knocks prone"',
+    'Note="While in Wolf Stance, wolf jaw attack gains the fatal d12 trait and knocks prone"',
   'Arrow Snatching':
     'Section=combat ' +
     'Note="Successful Deflect Arrow allows an immediate ranged Strike using the deflected projectile"',
@@ -5719,8 +5719,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Unarmored stance prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates) and allows lashing branch attacks"',
-  'Wall Run':
-    'Action=1 Section=ability Note="Strides on vertical surfaces"',
+  'Wall Run':'Action=1 Section=ability Note="Strides on vertical surfaces"',
   'Wild Winds Initiate':
     'Section=magic ' +
     'Note="Knows the Wild Winds Stance occult spell/+1 Focus Points"',
@@ -5742,10 +5741,10 @@ Pathfinder2E.FEATURES = {
   'Disrupt Ki':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 while the persistent damage continues"',
+    'Note="Successful unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 while the persistent damage continues"',
   'Improved Knockback':
     'Section=combat ' +
-    'Note="Successful Shove moves +5\' (critical success +10\') and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
+    'Note="Successful Shove moves the target +5\', or +10\' on a critical success, and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
@@ -5761,7 +5760,7 @@ Pathfinder2E.FEATURES = {
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="While in Tangled Forest Stance, a successful lashing Strike moves the target 5\' into a space within reach"',
+    'Note="While in Tangled Forest Stance, a successful lashing branch Strike moves the target 5\' into a space within reach"',
   'Timeless Body':
     'Section=feature,save ' +
     'Note=' +
@@ -5772,7 +5771,7 @@ Pathfinder2E.FEATURES = {
   'Wild Winds Gust':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Makes a Wild Winds Stance Strike against all creatures in a 30\' cone or 60\' line at the current multiple attack penalty"',
+    'Note="Makes a wind crash Strike against all creatures in a 30\' cone or 60\' line at the current multiple attack penalty"',
   'Enlightened Presence':
     'Section=save ' +
     'Note="R15\' Gives self and allies +2 Will vs. mental effects"',
@@ -5785,7 +5784,7 @@ Pathfinder2E.FEATURES = {
   'Shattering Strike':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Unarmed Strike bypasses target resistances and ignores half of target\'s Hardness"',
+    'Note="Unarmed Strike bypasses target resistances and ignores half of the target\'s Hardness"',
   'Diamond Fists':
     'Section=combat ' +
     'Note="Unarmed Strikes gain the forceful trait or increase damage by 1 die step"',
@@ -5799,14 +5798,14 @@ Pathfinder2E.FEATURES = {
     'Note="Ends a Speed status penalty or condition at the end of a turn"',
   'Enduring Quickness':
     'Section=combat ' +
-    'Note="Permanently quickened; cane use the additional action to Stride, Leap, or Jump"',
+    'Note="Permanently quickened; can use the additional action to Stride, Leap, or Jump"',
   'Fuse Stance':
     'Section=combat ' +
     'Note="Has merged 2 known stances into a unique new stance that grants the effects of both"',
   'Impossible Technique':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Forces a foe reroll on a hit or gives a reroll on a failed save"',
+    'Note="Forces a foe reroll on a hit or gives self a reroll on a failed save"',
 
   // Ranger
   // Evasion as above
@@ -11614,7 +11613,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Stance gives +2 Armor Class vs. ranged attacks and R30\' unarmed strikes that ignore concealment and cover and inflict 1d6 HP bludgeoning"',
+      '"Stance gives +2 Armor Class vs. ranged attacks and allows wind crash attacks"',
   'Wind Jump':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Air,Monk,Transmutation ' +
@@ -14959,6 +14958,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
+  } else if(name == 'Wild Winds Initiate') {
+    Pathfinder2E.weaponRules(
+      rules, 'Wind Crash', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
+      ['Agile', 'Nonlethal', 'Propulsive', 'Unarmed'], 30
+    );
+    rules.defineRule
+      ('weapons.Wind Crash', 'features.Wild Winds Initiate', '=', '1');
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.wizardDedication', '?', null,
@@ -15569,8 +15575,8 @@ Pathfinder2E.weaponRules = function(
   }
 
   let isFinesse = traits.includes('Finesse');
-  let isRanged = group.match(/Bomb|Bow|Crossbow|Dart|Sling/);
   let isPropulsive = traits.includes('Propulsive');
+  let isRanged = group.match(/Bomb|Bow|Crossbow|Dart|Sling/);
   let isSplash = traits.includes('Splash');
   let isThrown = traits.includes('Thrown');
   let specialDamage =
@@ -15660,12 +15666,12 @@ Pathfinder2E.weaponRules = function(
   );
   if(damage == '0')
     ; // empty
-  else if(!isRanged || (isThrown && !isSplash))
-    rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   else if(isPropulsive)
     rules.defineRule('damageBonus.' + name,
       'strengthModifier', '+', 'source<0 ? source : Math.floor(source / 2)'
     );
+  else if(!isRanged || (isThrown && !isSplash))
+    rules.defineRule('damageBonus.' + name, 'strengthModifier', '+', null);
   if(isFinesse)
     rules.defineRule('damageBonus.' + name, 'combatNotes.thief', '+', null);
 
