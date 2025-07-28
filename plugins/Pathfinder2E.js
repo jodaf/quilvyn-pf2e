@@ -4256,7 +4256,7 @@ Pathfinder2E.FEATURES = {
     'Note="Liberating Step target may Step normally in any terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
-    'Note="Can make a Glimpse Of Redemption target stupefied instead of enfeebled"',
+    'Note="Glimpse Of Redemption can inflict stupefied instead of enfeebled"',
   'Divine Grace':
     'Action=Reaction ' +
     'Section=save ' +
