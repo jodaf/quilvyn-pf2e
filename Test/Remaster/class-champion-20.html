@@ -117,7 +117,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Driving Lore); Additional Lore (Vampire Lore); Adopted Ancestry (Elf); Advanced Deity's Domain (Knowledge); Affliction Mercy; Arcane Sense; Armament Paragon; Aura Of Courage; Aura Of Despair; Aura Of Determination; Aura Of Faith; Aura Of Life; Aura Of Righteousness; Auspicious Mount; Blessed Counterstrike; Bounce Back; Brilliant Flash; Champion's Sacrifice; Cruelty; Defensive Advance; Deity's Domain (Knowledge); Desperate Prayer; Devoted Focus; Divine Grace; Divine Health; Divine Reflexes; Divine Wall; Dubious Knowledge; Expand Aura; Experienced Professional; Faithful Steed; Greater Cruelty; Greater Mercy; Greater Security; Gruesome Strike; Heal Mount; Imposing Destrier; Instrument Of Slaughter; Instrument Of Zeal; Iron Repercussions; Legendary Professional; Lengthy Diversion; Loyal Warhorse; Mercy (Body); Mercy (Grace); Mercy (Mind); Multitalented; Nimble Reprisal; Ongoing Selfishness; Pick Up The Pace; Pilgrim's Token; Quick Shield Block; Radiant Armament; Reactive Strike; Rejuvenating Touch; Sacred Defender; Second Blessing; Security; Sense Allies; Shield Of Grace; Shield Of Reckoning; Shield Paragon; Shield Warden; Skill Training (Astral Plane Lore); Skill Training (Elven Lore); Smite; Spectral Advance; Stubborn Persistence; Student Of The Canon; Swift Paragon; Swift Retribution; Ultimate Mercy; Unconventional Weaponry (Battle Axe); Unimpeded Step; Unmistakable Lore; Vicious Vengeance; Weapon Proficiency (Whip Claw); Weight Of Guilt</td>
-        <td><b>Champion Features</b>: Armor Expertise; Armor Mastery; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Strength); Attribute Boosts; Blessed Armament; Blessed Shield; Blessed Swiftness; Blessing Of The Devoted; Cause; Champion Expertise; Champion Feats; Champion Key Attribute; Champion Mastery; Champion Skills; Champion's Aura; Class Trained (Champion); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Deific Weapon; Deity; Desecration; Devotion Spells; Divine Will; Exalted Reaction; General Feats; Grandeur; Greater Weapon Specialization; Has the Anathema feature/1 selection; Hero's Defiance; Holy; Iniquity; Justice; Legendary Armor; Liberation; Obedience; Perception Expertise; Perception Trained; Redemption; Reflex Expertise; Relentless Reaction; Sacred Body; Save Expert (Fortitude; Will); Save Trained (Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Divine); Strength; Unholy; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
+        <td><b>Champion Features</b>: Armor Expertise; Armor Mastery; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Strength); Attribute Boosts; Blessed Armament; Blessed Shield; Blessed Swiftness; Blessing Of The Devoted; Cause; Champion Expertise; Champion Feats; Champion Key Attribute; Champion Mastery; Champion Skills; Champion's Aura; Class Trained (Champion); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Deific Weapon; Deity; Desecration; Devotion Spells; Divine Will; Exalted Reaction; General Feats; Grandeur; Greater Weapon Specialization; Hero's Defiance; Holy; Iniquity; Justice; Legendary Armor; Liberation; Obedience; Perception Expertise; Perception Trained; Redemption; Reflex Expertise; Relentless Reaction; Sacred Body; Save Expert (Fortitude; Will); Save Trained (Reflex); Shield Block; Skill Feats; Skill Increases; Spell Trained (Divine); Strength; Unholy; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
         <td><b>Gambler Features</b>: Attribute Boost (Choose 1 from Charisma, Dexterity; Choose 1 from any); Lie To Me; Skill Trained (Deception; Games Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
       </tr></table>
@@ -312,6 +312,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Combat Notes</b>:       <table id="CombatNotes" style="width:100%">
       <tr style="text-align:center">
+        <td><i>Armament Paragon: Has increased Blessed Armament effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Armor Expertise: Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Armor Mastery: Defense Master (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)</i></td>
@@ -325,8 +327,6 @@ var attributes = {
         <td><i>Constitution Hit Points Adjustment: +80</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deific Weapon: Staff inflicts +1 damage die step</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Deity: Attack Trained (Staff)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Dexterity Armor Class Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
@@ -354,19 +354,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Whip Claw): Attack Expert (Whip Claw)</i></td>
       </tr><tr style="text-align:center">
-        <td>Armament Paragon: Can choose <i>greater astral</i>, <i>greater brilliant</i>, <i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, or <i>greater vitalizing</i> for Blessed Armament, and can change the property in 1 action</td>
-      </tr><tr style="text-align:center">
         <td>Armor Expertise: Benefits from the specialization effects of medium and heavy armor</td>
       </tr><tr style="text-align:center">
-        <td>Aura Of Despair: Foes within aura suffer -1 save vs. fear and cannot remove frightened condition</td>
+        <td>Aura Of Despair: Foes within aura suffer -1 saves vs. fear and cannot remove the frightened condition</td>
       </tr><tr style="text-align:center">
-        <td>Aura Of Faith: Strikes by allies within aura gain the holy or unholy trait</td>
+        <td>Aura Of Faith: Strikes by allies within aura gain the unholy trait</td>
       </tr><tr style="text-align:center">
-        <td>Blessed Armament: Can apply a choice of <i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, <i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep and use a 10-min activity to chance the choice, and critical hits inflict its critical specialization effect</td>
+        <td>Blessed Armament: Can apply a choice of <i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, <i>greater vitalizing</i>, <i>greater astral</i>, <i>greater brilliant</i>, <i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, <i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep and use a 1-action activity to chance the choice, and critical hits inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Blessed Counterstrike: <b>(1)</b> Successful Strike after a Champion's Reaction inflicts +1 damage die and weakness 10 to Strikes by self and allies until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Blessed Swiftness: Ally moving within aura gains +2 defense vs. reactions</td>
+        <td>Blessed Swiftness: Ally moving within aura gains +2 defense vs. movement reactions</td>
       </tr><tr style="text-align:center">
         <td>Bounce Back: <b>(F)</b> Recovery from dying does not increase the wounded condition once per day</td>
       </tr><tr style="text-align:center">
@@ -382,13 +380,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Divine Wall: Adjacent spaces are difficult terrain for foes</td>
       </tr><tr style="text-align:center">
-        <td>Dragonslayer Oath: Retributive Strike inflicts +4 HP damage, or +6 HP with master proficiency,</td>
-      </tr><tr style="text-align:center">
-        <td>Fiendsbane Oath: Retributive Strike inflicts +4 HP damage, or +6 HP with master proficiency,</td>
-      </tr><tr style="text-align:center">
         <td>Flash Of Grandeur: <b>(R)</b> Gives an ally within aura resistance 22 to the triggering damage from within aura, inflicts 4 HP persistent spirit on attacker, and inflicts <i>Revealing Light</i> on all foes within aura for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Glimpse Of Redemption: <b>(R)</b> Forces a foe within aura who has damaged an ally within aura to choose between negating the damage or giving the ally resistance 22 to it, or self and allies within aura resistance 20, and suffering enfeebled 2 until the end of its next turn and 4 HP persistent spirit</td>
+        <td>Glimpse Of Redemption: <b>(R)</b> Forces a foe within aura who has damaged an ally within aura to choose between negating the damage or giving the ally resistance 22 to it and suffering enfeebled 2 until the end of its next turn and 4 HP persistent spirit; self may share resistance 20 with every ally within aura instead of only the damaged ally</td>
       </tr><tr style="text-align:center">
         <td>Gruesome Strike: <b>(1)</b> Champion's Reaction Strike inflicts double extra damage and drained 1 (<b>save Fortitude</b> negates drained) once per target per day</td>
       </tr><tr style="text-align:center">
@@ -396,19 +390,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Instrument Of Zeal: Critical hit with Blessed Counterstrike or Retributive Strike inflicts +1 damage die and slowed 1 on the target's next turn</td>
       </tr><tr style="text-align:center">
-        <td>Iron Command: <b>(R)</b> Triggering foe suffers its choice of kneeling or 6d6 HP mental and 4 HP persistent spirit, and self Strikes vs. that foe inflict +3 HP spirit until the end of the next turn; other foes within aura must also kneel or suffer 6 HP mental</td>
+        <td>Iron Command: <b>(R)</b> Foe that inflicted the triggering damage suffers its choice of kneeling or 6d6 HP mental and 4 HP persistent spirit, and self Strikes vs. that foe inflict +3 HP spirit until the end of the next turn; other foes within aura must also kneel or suffer 6 HP mental</td>
       </tr><tr style="text-align:center">
         <td>Liberating Step: <b>(R)</b> Gives an ally within aura resistance 22 to any triggering damage from within aura and free actions to Escape or to save from a restraint and to Step; restraining foe suffers 4 HP persistent spirit, and self and allies also gain a free Step</td>
       </tr><tr style="text-align:center">
         <td>Nimble Reprisal: Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike</td>
       </tr><tr style="text-align:center">
-        <td>Ongoing Selfishness: Selfish Shield gives half resistance to all damage from the triggering foe until the end of the turn</td>
+        <td>Ongoing Selfishness: Selfish Shield gives resistance 7 to all damage from the triggering foe until the end of the turn</td>
       </tr><tr style="text-align:center">
         <td>Quick Shield Block: Can use an additional reaction for a Shield Block once per turn</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
-        <td>Retributive Strike: <b>(R)</b> Gives an ally within aura resistance 22 to the triggering damage from within aura, allows self to make a melee Strike against the attacking foe if within reach, inflicts 4 HP persistent spirit on attacker, and allows allies within aura to use a reaction to make a -5 Strike on the attacker</td>
+        <td>Retributive Strike: <b>(R)</b> Gives an ally within aura resistance 22 to the triggering damage from within aura, allows self to make a melee Strike against the attacker if within reach, inflicting 4 HP persistent spirit if the Strike hits, and allows allies within aura and within reach of the attacker to use a reaction to make a -5 melee Strike on the attacker</td>
       </tr><tr style="text-align:center">
         <td>Selfish Shield: <b>(R)</b> Gives resistance 14 to the triggering damage from within aura, gives self Strikes against the triggering foe +3 HP spirit until the end of the next turn, and inflicts -1 attacks vs. self on foes within aura until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -422,9 +416,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Warden: Can use Shield Block to protect an adjacent ally</td>
       </tr><tr style="text-align:center">
-        <td>Shining Oath: Retributive Strike inflicts +4 HP damage, or +6 HP with master proficiency,</td>
-      </tr><tr style="text-align:center">
-        <td>Smite: <b>(1)</b> Strikes against a designated foe gain +3 damage, or +4 with a master proficiency weapon (+4 or +6 vs. an opposing holy or unholy foe), until the start of the next turn; hostile actions by the foe extend the effect each rd</td>
+        <td>Smite: <b>(1)</b> Strikes against a designated foe gain +3 damage, or +4 with a master proficiency weapon (+4 or +6 vs. an unholy foe), until the start of the next turn; hostile actions by the foe extend the effect each rd</td>
       </tr><tr style="text-align:center">
         <td>Swift Paragon: Has an additional action each rd to Step or Stride, and aura allows allies to move without triggering reactions</td>
       </tr><tr style="text-align:center">
@@ -432,11 +424,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Unimpeded Step: Liberating Step allows Stepping normally in any terrain</td>
       </tr><tr style="text-align:center">
-        <td>Vicious Vengeance: Destructive Vengeance inflicts additional initial damage on the foe equal to the number of damage dice</td>
+        <td>Vicious Vengeance: Destructive Vengeance inflicts +6 HP initial damage on the foe</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr><tr style="text-align:center">
-        <td>Weight Of Guilt: Can make a Glimpse Of Redemption target stupefied instead of enfeebled</td>
+        <td>Weight Of Guilt: Glimpse Of Redemption can inflict stupefied instead of enfeebled</td>
       </tr></table>
 </td>
     </tr></table>
@@ -464,13 +456,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Divine Grace: <b>(R)</b> Gives +2 vs. the triggering spell</td>
       </tr><tr style="text-align:center">
-        <td>Divine Health: +2 vs. diseases and poisons and on flat checks to recover from persistent poison, and successes vs. disease or poison are critical successes; allies within aura gain a +1 bonus</td>
+        <td>Divine Health: +2 vs. diseases and poisons and on flat checks to recover from persistent poison, critical failures vs. disease or poison are normal failures, and successes vs. disease or poison are critical successes; allies within aura gain +1 vs. disease and poison</td>
       </tr><tr style="text-align:center">
         <td>Divine Will: Successes on Will saves are critical successes</td>
       </tr><tr style="text-align:center">
         <td>Sacred Body: Successes on Fortitude saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Sacred Defender: Has resistance 5 to bludgeoning, piercing, and slashing, or resistance 10 to these vs. holy or unholy creatures as appropriate, and a natural 20 on a foe Strike does not improve the success degree</td>
+        <td>Sacred Defender: Has resistance 5 to bludgeoning, piercing, and slashing, or resistance 10 vs. unholy creatures, and a natural 20 on a foe Strike does not improve the success degree</td>
       </tr><tr style="text-align:center">
         <td>Stubborn Persistence: Successful DC 17 flat check negates becoming fatigued</td>
       </tr></table>
@@ -540,11 +532,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Spectral Advance: Knows the Spectral Advance divine spell</i></td>
     </tr><tr style="text-align:center">
-      <td>Affliction Mercy: 2-actions <i>Lay On Hands</i> can also attempt to counteract an affliction such as a curse, disease, or poison</td>
+      <td>Affliction Mercy: 2-action <i>Lay On Hands</i> can attempt to counteract an affliction such as a curse, disease, or poison</td>
     </tr><tr style="text-align:center">
       <td>Cruelty: 2-action <i>Touch Of The Void</i> also inflicts clumsy, stupefied, or enfeebled 1 for 1 min on a failed save, or clumsy, stupefied, or enfeebled 2 on a critical failure</td>
-    </tr><tr style="text-align:center">
-      <td>Deity: Has access to <i>Force Barrage</i>, <i>Embed Message</i>, <i>Levitate</i>, <i>Flicker</i>, <i>Telekinetic Haul</i>, <i>Wall Of Force</i>, <i>Warp Mind</i>, <i>Quandary</i>, and <i>Detonate Magic</i> spells</td>
     </tr><tr style="text-align:center">
       <td>Desperate Prayer: <b>(F)</b> Gains 1 Focus Spell to cast a devotion spell by the end of the turn once per day</td>
     </tr><tr style="text-align:center">
@@ -552,7 +542,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Expand Aura: <b>(1)</b> Extends Champion's Aura to 30' until Dismissed</td>
     </tr><tr style="text-align:center">
-      <td>Greater Security: <i>Shields Of The Spirit</i> gives the target +2 Armor Class and allows self to use Shield Block to benefit them</td>
+      <td>Greater Security: Security gives the target +2 Armor Class and allows self to use Shield Block to benefit them</td>
     </tr><tr style="text-align:center">
       <td>Heal Mount: <i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened rank</td>
     </tr><tr style="text-align:center">
@@ -562,11 +552,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Mercy (Grace): 2-action <i>Lay On Hands</i> can also attempt to counteract petrified, stunned, immobilized, restrained, slowed, clumsy, grabbed, or paralyzed</td>
     </tr><tr style="text-align:center">
-      <td>Mercy (Mind): 2-actions <i>Lay On Hands</i> can also attempt to counteract doomed, stunned, confused, controlled, slowed, fleeing, frightened, or stupefied</td>
+      <td>Mercy (Mind): 2-action <i>Lay On Hands</i> can also attempt to counteract doomed, stunned, confused, controlled, slowed, fleeing, frightened, or stupefied</td>
     </tr><tr style="text-align:center">
       <td>Rejuvenating Touch: <i>Lay On Hands</i> gives 10 temporary Hit Points, lasting 1 rd, each rd for 10 rd</td>
     </tr><tr style="text-align:center">
-      <td>Security: Using 2 actions to cast <i>Shields Of The Spirit</i> gives 1 ally the benefits of the spell for 1 min</td>
+      <td>Security: 2-action <i>Shields Of The Spirit</i> gives 1 ally the benefits of the spell for 1 min</td>
     </tr><tr style="text-align:center">
       <td>Ultimate Mercy: 2-action <i>Lay On Hands</i> can restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd</td>
     </tr></table>
