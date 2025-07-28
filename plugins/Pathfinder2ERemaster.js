@@ -6546,7 +6546,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Reflex Expertise as above
   'Storm':Pathfinder2E.FEATURES.Storm,
   'Untamed':
-    Pathfinder2E.FEATURES['Wild']
+    Pathfinder2E.FEATURES.Wild
     .replace('Wild Shape', 'Untamed Form')
     .replace('Wild Morph', 'Untamed Shift'),
   'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
@@ -6685,8 +6685,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent fungus or plant spell grows plants in a 10\' burst that inflict difficult terrain and %{level//4-1}d6 HP piercing or poison for 1 min"',
   'Primal Focus':Pathfinder2E.FEATURES['Primal Focus'].replace('2', 'all'),
   'Primal Summons':Pathfinder2E.FEATURES['Primal Summons'],
-  // Legacy doesn't specify the additional FP
-  'Primal Summons':'Section=magic Note="Knows the Primal Summons primal spell"',
   'Wandering Oasis':
     'Section=save ' +
     'Note="Self and allies within 60\' are protected from %{rank.Survival>=4?\'extreme\':\'severe\'} environmental heat and cold"',
@@ -8128,7 +8126,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Vials (Toxicologist)':
     'Section=combat ' +
     'Note="Poison vials also inflict persistent poison damage equal to their splash damage"',
-  'Alchemical Expertise':Pathfinder2E.FEATURES['Alchemical Expertise'],
   // Changed effects
   'Alchemical Expertise':
     'Section=combat,skill ' +
@@ -10149,7 +10146,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Exemplary Finisher (Rascal)':
     'Section=combat ' +
     'Note="Hitting a foe as part of a finisher inflicts -10 Speed until the start of the next turn"',
-  'Exemplary Finisher (Rascal)':
+  'Exemplary Finisher (Wit)':
     'Section=combat ' +
     'Note="Hitting a foe as part of a finisher inflicts -2 attacks on self until the start of the next turn"',
   'Fencer':
@@ -13188,36 +13185,6 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
-  'Qi Rush':
-    'Level=1 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus ' +
-    'Traditions=Divine ' +
-    'Cast=1 ' +
-    'Description="Allows self to take two Steps or Strides, giving concealment until the start of the next turn"',
-  'Qi Blast':
-    'Level=3 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus,Force,Manipulate ' +
-    'Traditions=Divine ' +
-    'Cast=1 ' +
-    'Description="15\' cone inflicts 2d6 HP force and a 5\' push (2 or 3 actions gives a 30\' or 60\' cone that inflicts 2d6 HP or 4d6 HP) (<b>save Fortitude</b> inflicts half HP and negates push; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP, +2d6 HP, or +3d6 HP with 1, 2, or 3 actions)"',
-  'Shrink The Span':
-    'Level=3 ' +
-    'Traits=Monk,Uncommon,Focus,Manipulate,Teleportation ' +
-    'Traditions=Divine ' +
-    'Cast=1 ' +
-    'Description="Teleports to a visible location within %{speed}\'"',
-  "Medusa's Wrath":
-    'Level=8 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="Unarmed Strike inflicts slowed 1, or slowed 2 on a critical success; subsequent Fortitude saves at the end of each of the target\'s turns increase or decrease the value by 1, or by 2 on a critical failure, until the target is permanently petrified or no longer slowed"',
-  'Touch Of Death':
-    'Level=8 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="Successful unarmed Strike allows self to inflict stunned 3 and 80 HP any time within 1 month (<b>save Fortitude</b> inflicts stunned 1 and 40 HP; critical success negates; critical failure inflicts death) (<b>heightened +1</b> inflcits +5 or +10 HP on save success or failure)"',
   'Embrace Nothingness':
     'Level=9 ' +
     'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
@@ -14223,7 +14190,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
           'magicNotes.' + prefix, '=', 'source=="' + t + '" ? 1 : null'
         );
       });
-    };
+    }
   } else if(name.match(/^(Bone Investiture|Fossil Rider|Primal Rampage)$/)) {
     rules.defineRule('features.' + name + ' (Occult)',
       'features.' + name, '?', null,
