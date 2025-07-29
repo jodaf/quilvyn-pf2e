@@ -299,8 +299,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Ironblood Surge: Has increased Ironblood Stance effects</i></td>
-      </tr><tr style="text-align:center">
         <td><i>Master Strikes: Attack Master (Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Monastic Archer Stance: <b>(1)</b> Attack Master (Longbow; Shortbow; Monk Bows)</i></td>
@@ -335,7 +333,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Diamond Fists: Unarmed Strikes gain the forceful and deadly d10 traits or increase damage by 1 die step</td>
       </tr><tr style="text-align:center">
-        <td>Disrupt Qi: <b>(2)</b> Successful unarmed Strike also inflicts 3d6 HP persistent void damage and enfeebled 1 while the persistent damage continues</td>
+        <td>Disrupt Qi: <b>(2)</b> Successful unarmed Strike also inflicts 3d6 HP persistent void and enfeebled 1 while the persistent damage continues</td>
       </tr><tr style="text-align:center">
         <td>Dodging Roll: <b>(R)</b> Step when in an area affected by area damage gives resistance 20 to the triggering damage, or resistance 25 if the Step exits the area</td>
       </tr><tr style="text-align:center">
@@ -345,7 +343,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Enduring Quickness: Permanently quickened; can use the additional action to Stride, Leap, or Jump</td>
       </tr><tr style="text-align:center">
-        <td>Expert Strikes: Critical hits with a brawling weapon inflict its critical specialization effect</td>
+        <td>Expert Strikes: Critical hits with a brawling unarmed attack inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Flurry Of Blows: <b>(1)</b> Makes 2 unarmed Strikes once per turn</td>
       </tr><tr style="text-align:center">
@@ -357,11 +355,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fuse Stance: Has merged 2 known stances into a unique new stance that grants the effects of both</td>
       </tr><tr style="text-align:center">
-        <td>Godbreaker: <b>(3)</b> Successful unarmed Strike after throwing a grappled foe upward 20' also inflicts falling damage and allows repeating twice; 3 hits inflicts additional unarmed Strike damage, retains grapple, and negates falling damage to self</td>
+        <td>Godbreaker: <b>(3)</b> Successful unarmed Strike after throwing a grappled foe upward 20' also inflicts falling damage and allows repeating twice; hitting with all 3 Strikes inflicts additional unarmed Strike damage, retains grapple, and negates falling damage to self</td>
       </tr><tr style="text-align:center">
         <td>Guarded Movement: +4 Armor Class vs. movement reactions</td>
       </tr><tr style="text-align:center">
-        <td>Immortal Techniques: Using a monk stance action gives 20 temporary Hit Points until the start of the next turn</td>
+        <td>Immortal Techniques: First use of a monk stance action each rd gives 20 temporary Hit Points until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Impossible Technique: <b>(R)</b> Forces a foe reroll on a hit or gives self a reroll on a failed save</td>
       </tr><tr style="text-align:center">
@@ -381,13 +379,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Mixed Maneuver: <b>(2)</b> Attempts 2 choices of Grapple, Reposition, Shove, and Trip at the current multiple attack penalty</td>
       </tr><tr style="text-align:center">
-        <td>Monastic Archer Stance: <b>(1)</b> Unarmored stance allows only bow Strikes; may use Flurry Of Blows and other unarmed monk features with bows at half their range increment</td>
+        <td>Monastic Archer Stance: <b>(1)</b> Unarmored stance allows only bow Strikes; can use Flurry Of Blows and other unarmed monk features with bows at half their range increment</td>
       </tr><tr style="text-align:center">
-        <td>Monastic Weaponry: Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes</td>
+        <td>Monastic Weaponry: Has access to uncommon monk weapons/Can use monk melee weapons with unarmed attack features</td>
       </tr><tr style="text-align:center">
-        <td>Mountain Quake: <b>(1)</b> R20' Stomp inflicts 4 HP and knocked prone (<b>save basic Fortitude</b>) once per 1d4 rd</td>
+        <td>Mountain Quake: <b>(1)</b> R20' Stomp inflicts 4 HP and knocked prone (<b>save basic Fortitude</b> also negates knocked prone) once per 1d4 rd</td>
       </tr><tr style="text-align:center">
-        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class (+4-3 due to a reduced Dex cap), +2 vs. Reposition, Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks</td>
+        <td>Mountain Stance: <b>(1)</b> Unarmored stance gives +1 Armor Class (+4 - 3 due to a reduced Dex cap), +2 vs. Reposition, Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks</td>
       </tr><tr style="text-align:center">
         <td>Mountain Stronghold: <b>(1)</b> While in Mountain Stance, gives +2 Armor Class until the beginning of the next turn</td>
       </tr><tr style="text-align:center">
@@ -395,7 +393,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>One-Inch Punch: <b>(2)</b> Successful unarmed strike inflicts +3 damage dice, or +6 dice with 3 actions</td>
       </tr><tr style="text-align:center">
-        <td>One-Millimeter Punch: One-Inch Punch inflicts a 10' Push (<b>save Fortitude</b> inflicts a 5' Push; critical success negates; critical failure inflicts a Push of 10' per action</td>
+        <td>One-Millimeter Punch: One-Inch Punch inflicts a 10' Push (<b>save Fortitude</b> inflicts a 5' Push; critical success negates; critical failure inflicts a 20' Push, or a 30' Push with 3 actions</td>
       </tr><tr style="text-align:center">
         <td>Perfected Form: Rolls of less than 10 on the first Strike each turn are treated as 10s</td>
       </tr><tr style="text-align:center">
@@ -405,15 +403,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Prevailing Position: <b>(R)</b> Leaving the current stance gives +4 save or Armor Class vs. the triggering damage</td>
       </tr><tr style="text-align:center">
-        <td>Projectile Snatching: Successful Deflect Projectile allows using the projectile for an immediate ranged Strike against the attacker</td>
+        <td>Projectile Snatching: Successful Deflect Projectile allows an immediate ranged Strike using the deflected projectile</td>
       </tr><tr style="text-align:center">
         <td>Reflexive Stance: <b>(F)</b> Enters a stance during initiative</td>
       </tr><tr style="text-align:center">
-        <td>Return Fire: Successful Deflect Projectile allows an immediate ranged Strike using the deflected projectile</td>
+        <td>Return Fire: Successful Deflect Projectile allows an immediate ranged Strike using the deflected arrow</td>
       </tr><tr style="text-align:center">
         <td>Shattering Strike: <b>(2)</b> Unarmed Strike bypasses target resistances and ignores half of the target's Hardness</td>
       </tr><tr style="text-align:center">
-        <td>Shooting Stars Stance: <b>(1)</b> Stance allows using unarmed monk features with shuriken</td>
+        <td>Shooting Stars Stance: <b>(1)</b> Stance allows using shuriken with unarmed attack features</td>
       </tr><tr style="text-align:center">
         <td>Sleeper Hold: <b>(1)</b> Successful grapple also inflicts clumsy 1 until the end of the target's next turn, or unconscious for 1 min with a critical success</td>
       </tr><tr style="text-align:center">
@@ -421,9 +419,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Stumbling Feint: Stumbling Stance allows using a free Feint before Flurry Of Blows; success inflicts off-guard from both attacks</td>
       </tr><tr style="text-align:center">
-        <td>Stumbling Stance: <b>(1)</b> Stance gives +1 Deception to Feint, restricts Strikes to stumbling swing attacks, and inflicts off-guard against successful melee attackers until the end of the next turn</td>
+        <td>Stumbling Stance: <b>(1)</b> Stance gives +1 Deception to Feint, restricts Strikes to stumbling swing attacks, and inflicts off-guard on successful melee attackers against the next stumbling swing attack before the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Stunning Blows: Can inflict stunned 1 with 1 success on 2 Strikes from a Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)</td>
+        <td>Stunning Blows: Can inflict stunned 1 with at least 1 success on 2 Strikes from Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)</td>
       </tr><tr style="text-align:center">
         <td>Swift River: <b>(F)</b> Ends a Speed status penalty or condition at the end of a turn</td>
       </tr><tr style="text-align:center">
@@ -439,7 +437,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +4, +6, or +8 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr><tr style="text-align:center">
-        <td>Whirling Blade Stance: <b>(1)</b> Stance allows throwing finesse monk melee weapons 10' to make multiple ranged Strikes, after which they return to hand</td>
+        <td>Whirling Blade Stance: <b>(1)</b> Stance allows throwing finesse monk melee weapons 10' to make multiple ranged Strikes, after which they return</td>
       </tr><tr style="text-align:center">
         <td>Whirling Throw: <b>(1)</b> A successful Athletics vs. a grabbed or restrained foe's Fortitude DC allows throwing it 30', inflicting 3d6+4 HP bludgeoning, plus knocked prone on a critical success</td>
       </tr><tr style="text-align:center">
@@ -475,7 +473,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Third Path To Perfection (Will): Save Legendary (Will)</i></td>
       </tr><tr style="text-align:center">
-        <td>Cobra Stance: <b>(1)</b> Stance gives +2 Fortitude and Fortitude DC and resistance 10 to poison</td>
+        <td>Cobra Stance: <b>(1)</b> Stance gives resistance 10 to poison and +2 Fortitude saves and Fortitude DC</td>
       </tr><tr style="text-align:center">
         <td>Dancing Leaf: Takes no falling damage when adjacent to a wall</td>
       </tr><tr style="text-align:center">
@@ -581,7 +579,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Align Qi: <b>(R)</b> Casting a monk spell restores 24 Hit Points once per hr</td>
     </tr><tr style="text-align:center">
-      <td>Elemental Fist: Can inflict slashing, electricity, bludgeoning, fire, or cold damage with <i>Inner Upheaval</i></td>
+      <td>Elemental Fist: Can inflict electricity, bludgeoning, fire, slashing, or cold damage with <i>Inner Upheaval</i></td>
     </tr><tr style="text-align:center">
       <td>Lightning Qi: <b>(F)</b> Reduces the number of actions required to cast a subsequent qi spell by 1 once per 10 min</td>
     </tr><tr style="text-align:center">

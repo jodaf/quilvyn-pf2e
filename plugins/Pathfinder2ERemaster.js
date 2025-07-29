@@ -9138,7 +9138,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack Expert (Simple Weapons; Unarmed Attacks)",' +
-      '"Critical hits with a brawling weapon inflict its critical specialization effect"',
+      '"Critical hits with a brawling unarmed attack inflict its critical specialization effect"',
   'Flurry Of Blows':Pathfinder2E.FEATURES['Flurry Of Blows'],
   'Graceful Legend':Pathfinder2E.FEATURES['Graceful Legend'],
   'Graceful Mastery':Pathfinder2E.FEATURES['Graceful Mastery'],
@@ -9191,7 +9191,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Attack %V (Longbow; Shortbow; Monk Bows)",' +
-      '"Unarmored stance allows only bow Strikes; may use Flurry Of Blows and other unarmed monk features with bows at half their range increment"',
+      '"Unarmored stance allows only bow Strikes; can use Flurry Of Blows and other unarmed monk features with bows at half their range increment"',
   'Mountain Stance':
     Pathfinder2E.FEATURES['Mountain Stance']
     .replace('Shove', 'Reposition, Shove'),
@@ -9203,7 +9203,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance gives +1 Deception to Feint, restricts Strikes to stumbling swing attacks, and inflicts off-guard against successful melee attackers until the end of the next turn"',
+    'Note="Stance gives +1 Deception to Feint, restricts Strikes to stumbling swing attacks, and inflicts off-guard on successful melee attackers against the next stumbling swing attack before the end of the next turn"',
   'Tiger Stance':Pathfinder2E.FEATURES['Tiger Stance'],
   'Wolf Stance':Pathfinder2E.FEATURES['Wolf Stance'],
   'Crushing Grab':Pathfinder2E.FEATURES['Crushing Grab'],
@@ -9211,18 +9211,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Elemental Fist':
     Pathfinder2E.FEATURES['Elemental Fist']
     .replace('Ki Strike', 'Inner Upheaval')
-    .replace('electricity', 'slashing, electricity'),
+    .replace('fire', 'fire, slashing'),
   'Shooting Stars Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows using unarmed monk features with shuriken"',
+    'Note="Stance allows using shuriken with unarmed attack features"',
   'Stunning Blows':Pathfinder2E.FEATURES['Stunning Fist'],
   'Cobra Stance':
     'Action=1 ' +
     'Section=combat,save ' +
     'Note=' +
       '"Stance allows only cobra fang attacks",' +
-      '"Stance gives +%{combatNotes.cobraEnvenom?2:1} Fortitude and Fortitude DC and resistance %{level//2} to poison"',
+      '"Stance gives resistance %{level//2} to poison and +%{combatNotes.cobraEnvenom?2:1} Fortitude saves and Fortitude DC"',
   'Deflect Projectile':Pathfinder2E.FEATURES['Deflect Arrow'],
   'Flurry Of Maneuvers':
     Pathfinder2E.FEATURES['Flurry Of Maneuvers']
@@ -9252,7 +9252,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful unarmed strike inflicts +%{level<10?1:level<18?2:3} damage %{level<10?\'die\':\'dice\'}, or +%{level<10?2:level<18?4:6} dice with 3 actions"',
   'Return Fire':
     Pathfinder2E.FEATURES['Arrow Snatching']
-    .replace('Arrow', 'Projectile'),
+    .replace('Arrow', 'Projectile')
+    .replace('projectile', 'arrow'),
   'Stumbling Feint':
     'Section=combat ' +
     'Note="Stumbling Stance allows using a free Feint before Flurry Of Blows; success inflicts off-guard from both attacks"',
@@ -9271,8 +9272,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Two successful ranged Flurry Of Blows Strikes inflict immobilized (<b>save Reflex</b> negates; successful DC 10 Athletics by the target or an adjacent creature ends)"',
   'Projectile Snatching':
-    'Section=combat ' +
-    'Note="Successful Deflect Projectile allows using the projectile for an immediate ranged Strike against the attacker"',
+    Pathfinder2E.FEATURES['Arrow Snatching']
+    .replace('Arrow', 'Projectile'),
   'Tangled Forest Stance':Pathfinder2E.FEATURES['Tangled Forest Stance'],
   'Wall Run':Pathfinder2E.FEATURES['Wall Run'],
   'Wild Winds Initiate':Pathfinder2E.FEATURES['Wild Winds Initiate'],
@@ -9333,7 +9334,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Whirling Blade Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Stance allows throwing finesse monk melee weapons 10\' to make multiple ranged Strikes, after which they return to hand"',
+    'Note="Stance allows throwing finesse monk melee weapons 10\' to make multiple ranged Strikes, after which they return"',
   'Wild Winds Gust':Pathfinder2E.FEATURES['Wild Winds Gust'],
   'Fuse Stance':Pathfinder2E.FEATURES['Fuse Stance'],
   // Master Of Many Styles as above
@@ -9343,7 +9344,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Touch Of Death occult spell"',
   'One-Millimeter Punch':
     'Section=combat ' +
-    'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a Push of 10\' per action"',
+    'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a 20\' Push, or a 30\' Push with 3 actions"',
   'Shattering Strike':Pathfinder2E.FEATURES['Shattering Strike'],
   'Diamond Fists':
     Pathfinder2E.FEATURES['Diamond Fists']
@@ -9365,10 +9366,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Godbreaker':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Successful unarmed Strike after throwing a grappled foe upward 20\' also inflicts falling damage and allows repeating twice; 3 hits inflicts additional unarmed Strike damage, retains grapple, and negates falling damage to self"',
+    'Note="Successful unarmed Strike after throwing a grappled foe upward 20\' also inflicts falling damage and allows repeating twice; hitting with all 3 Strikes inflicts additional unarmed Strike damage, retains grapple, and negates falling damage to self"',
   'Immortal Techniques':
     'Section=combat ' +
-    'Note="Using a monk stance action gives 20 temporary Hit Points until the start of the next turn"',
+    'Note="First use of a monk stance action each rd gives 20 temporary Hit Points until the start of the next turn"',
   'Impossible Technique':Pathfinder2E.FEATURES['Impossible Technique'],
   'Lightning Qi':
     'Action=Free ' +
