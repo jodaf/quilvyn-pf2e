@@ -1126,7 +1126,7 @@ Pathfinder2ERemaster.CLASSES = {
       '1:Undead:Bloodline ' +
     // SpellSlots tradition depends on bloodline--see classRules
     'SpellSlots=' +
-      '0:5@1,' +
+      'C1:5@1,' +
       '1:3@1;4@2,' +
       '2:3@3;4@4,' +
       '3:3@5;4@6,' +
@@ -3350,7 +3350,7 @@ Pathfinder2ERemaster.FEATS = {
   'Divine Evolution':Pathfinder2E.FEATS['Divine Evolution'],
   'Occult Evolution':Pathfinder2E.FEATS['Occult Evolution'],
   'Primal Evolution':Pathfinder2E.FEATS['Primal Evolution'],
-  'Split Shot':'Traits=Sorcerer,Spellshape Require="level >= 4"',
+  'Split Shot':'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 4"',
   'Advanced Bloodline':Pathfinder2E.FEATS['Advanced Bloodline'],
   'Diverting Vortex':'Traits=Sorcerer Require="level >= 6"',
   'Energy Ward':'Traits=Sorcerer Require="level >= 6"',
@@ -3383,7 +3383,7 @@ Pathfinder2ERemaster.FEATS = {
   'Terraforming Trickery':
     'Traits=Sorcerer,Concentrate,Earth Require="level >= 12"',
   'Blood Ascendancy':
-    'Traits=Sorcerer Require="level >= 12","features.Blood Rising"',
+    'Traits=Sorcerer Require="level >= 14","features.Blood Rising"',
   'Interweave Dispel':
     Pathfinder2E.FEATS['Interweave Dispel']
     .replace('Metamagic', 'Spellshape'),
@@ -3400,6 +3400,7 @@ Pathfinder2ERemaster.FEATS = {
   'Bloodline Conduit':
     Pathfinder2E.FEATS['Bloodline Conduit']
     .replace('Metamagic', 'Spellshape'),
+  // TODO require "a bloodline based on a specific type of creature"
   'Bloodline Mutation':'Traits=Sorcerer Require="level >= 20"',
   'Bloodline Perfection':Pathfinder2E.FEATS['Bloodline Perfection'],
   // Spellshape Mastery as above
@@ -9820,13 +9821,16 @@ Pathfinder2ERemaster.FEATURES = {
   // Sorcerer
   'Aberrant':
     Pathfinder2E.FEATURES.Aberrant
-    .replace('self or target +2', 'self +2 or target -1'),
+    .replace('self or a target +2', 'self +2 or a target -1'),
   'Angelic':Pathfinder2E.FEATURES.Angelic,
   'Bloodline':Pathfinder2E.FEATURES.Bloodline,
-  'Bloodline Paragon':Pathfinder2E.FEATURES['Bloodline Paragon'],
+  'Bloodline Paragon':
+    Pathfinder2E.FEATURES['Bloodline Paragon']
+    .replace('level', 'rank'),
   'Bloodline Spells':
     Pathfinder2E.FEATURES['Bloodline Spells']
-    .replace(' and 1 Focus Point', ''),
+    .replace(' and 1 Focus Point', '')
+    .replace('granted', 'sorcerous gift'),
   // Defensive Robes as above
   'Demonic':
     Pathfinder2E.FEATURES.Demonic
@@ -9859,36 +9863,44 @@ Pathfinder2ERemaster.FEATURES = {
   'Elemental (Air)':
     Pathfinder2E.FEATURES['Elemental (Air)']
     .replace('+1', '+2')
-    .replace('bludgeoning', 'slashing'),
+    .replace('bludgeoning', 'slashing')
+    .replace('level', 'rank'),
   'Elemental (Earth)':
     Pathfinder2E.FEATURES['Elemental (Earth)']
-    .replace('+1', '+2'),
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
   'Elemental (Fire)':
     Pathfinder2E.FEATURES['Elemental (Fire)']
-    .replace('+1', '+2'),
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
   'Elemental (Metal)':
     Pathfinder2E.FEATURES['Elemental (Air)']
     .replace('+1', '+2')
-    .replace('bludgeoning', 'piercing'),
+    .replace('bludgeoning', 'piercing')
+    .replace('level', 'rank'),
   'Elemental (Water)':
     Pathfinder2E.FEATURES['Elemental (Water)']
-    .replace('+1', '+2'),
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
   'Elemental (Wood)':
     Pathfinder2E.FEATURES['Elemental (Earth)']
-    .replace('+1', '+2'),
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
   'Fey':
     Pathfinder2E.FEATURES.Fey
-    .replace('self or target', 'self +2 Performance or'),
+    .replace('self or a target', 'self +2 Performance or'),
   'Hag':
     Pathfinder2E.FEATURES.Hag
-    .replace('2 HP mental', '4 HP mental')
-    .replace('for 1 rd', 'for 1 rd; if no attacks succeed, gives self temporary Hit Points equal to the spell rank for 1 rd'),
+    .replace('2 HP', '4 HP')
+    .replace('level', 'rank')
+    .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the next turn'),
   'Imperial':
     Pathfinder2E.FEATURES.Imperial
-    .replace('self or target', 'self +1 Armor Class or'),
+    .replace('self or a target', 'self +1 Armor Class or'),
   'Undead':
     Pathfinder2E.FEATURES.Undead
     .replace('negative', 'void')
+    .replace('for 1 rd', 'until the start of the next turn')
     .replaceAll('level', 'rank'),
   // Expert Spellcaster as above
   // Magical Fortitude as above
@@ -9910,26 +9922,26 @@ Pathfinder2ERemaster.FEATURES = {
   'Blood Rising':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Casting of a %{bloodlineTraditionsLowered} spell targeting self invokes Blood Magic effect that targets self or caster"',
+    'Note="Casting of a%{bloodlineTraditions=~\'^[AO]\'?\'n\':\'\'} %{bloodlineTraditionsLowered} spell targeting self invokes a blood magic effect that targets self or the caster"',
   // Familiar as above
   // Reach Spell as above
   'Tap Into Blood (Arcane)':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Uses Arcana in place of the associated skill for a Recall Knowledge check"',
+    'Note="Uses Arcana in place of the associated skill for a Recall Knowledge check while benefiting from blood magic"',
   'Tap Into Blood (Divine)':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Steps or Repositions a target using Religion for the check"',
+    'Note="Steps or Repositions a target using Religion for the check while benefiting from blood magic"',
   'Tap Into Blood (Occult)':
-    'Action=1 Section=combat Note="Takes a 10\' Step"',
+    'Action=1 Section=combat Note="Takes a 10\' Step while benefiting from blood magic"',
   'Tap Into Blood (Primal)':
-    'Action=1 Section=combat Note="Uses Nature for a Demoralize check"',
+    'Action=1 Section=combat Note="Uses Nature for a Demoralize check while benefiting from blood magic"',
   // Widen Spell as above
   'Anoint Ally':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows transferring blood magic effects to a specified ally for 1 min"',
+    'Note="Transfers blood magic effects to a specified ally for 1 min"',
   'Bleed Out':
     'Action=1 ' +
     'Section=magic ' +
@@ -9947,7 +9959,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Split Shot':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Adds a second target, inflicting half damage, to a targeted attack spell"',
+    'Note="Adds a second target, inflicting half initial damage, to a targeted instantaneous attack spell"',
   'Advanced Bloodline (Aberrant)':
     Pathfinder2E.FEATURES['Advanced Bloodline (Aberrant)'],
   'Advanced Bloodline (Angelic)':
@@ -9986,11 +9998,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Diverting Vortex':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casting a non-cantrip spell gives +1 Armor Class vs. ranged weapons until the end of the turn"',
+    'Note="Immediately after casting a non-cantrip spell, gains +1 Armor Class vs. ranged weapons until the start of the next turn"',
   'Energy Ward':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Casting a non-cantrip spell gives resistance equal to the spell rank to a choice of energy for 1 rd"',
+    'Note="Immediately after casting a non-cantrip energy damage spell, gains resistance equal to 4 + the spell rank to a choice of energy until the start of the next turn once per turn"',
   'Safeguard Spell':
     'Action=1 ' +
     'Section=magic ' +
@@ -9998,26 +10010,28 @@ Pathfinder2ERemaster.FEATURES = {
   'Spell Relay':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Allows the triggering ally spell to be cast from self location"',
+    'Note="Allows the triggering ally spell to originate from self location"',
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATURES['Bloodline Resistance'],
-  'Crossblood Evolution':
+  // Changed effects
+  // TODO expand to list each bloodline?
+  'Crossblooded Evolution':
     'Section=magic ' +
-    'Note="Can use the blood magic effect from another bloodline"',
+    'Note="Can use the blood magic effect from another chosen bloodline"',
   'Explosion Of Power':
     'Section=magic ' +
-    'Note="Blood magic effect in a 5\' emanation inflicts 1d6 HP %{bloodlineTraditions=~\'Arcane\'?\'force\':bloodlineTraditions=~\'Divine\'?\'spirit\':bloodlineTraditions=~\'Occult\'?\'mental\':\'fire\' per rank of just-cast spell (<b>save basic Reflex</b>)"',
+    'Note="Blood magic effect inflicts 1d6 HP %{bloodlineTraditions=~\'Arcane\'?\'force\':bloodlineTraditions=~\'Divine\'?\'spirit\':bloodlineTraditions=~\'Occult\'?\'mental\':\'fire\'} per spell rank (<b>save basic Reflex</b>) in a 5\' emanation"',
   'Energy Fusion':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Expends a spell slot to add the damage of 1 spell to another"',
+    'Note="Expends 2 spell slots to increase a subsequent spell\'s energy damage by another spell\'s rank; the total damage is split evenly between the energy types inflicted by the 2 spells"',
   'Greater Bloodline (Aberrant)':
     Pathfinder2E.FEATURES['Greater Bloodline (Aberrant)'],
   'Greater Bloodline (Angelic)':
     Pathfinder2E.FEATURES['Greater Bloodline (Angelic)'],
   'Greater Bloodline (Demonic)':
     Pathfinder2E.FEATURES['Greater Bloodline (Demonic)']
-    .replace('Abyssal', 'Cnthonian'),
+    .replace('Abyssal', 'Chthonian'),
   'Greater Bloodline (Diabolic)':
     Pathfinder2E.FEATURES['Greater Bloodline (Diabolic)'],
   'Greater Bloodline (Draconic (Arcane))':
@@ -10053,13 +10067,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Has 2 additional signature spells of up to 3rd rank"',
   'Blood Sovereignty':
     'Section=magic ' +
-    'Note="When casting a spell, can suffer Hit Point loss equal to twice the spell rank to use 2 blood magic effects"',
+    'Note="When casting a bloodline or sorcerous gift spell, can suffer Hit Point loss equal to twice the spell rank to gain 2 blood magic effects"',
   'Bloodline Focus':
     Pathfinder2E.FEATURES['Bloodline Focus']
     .replace('2', 'all'),
   'Greater Physical Evolution':
     'Section=magic ' +
-    'Note="Can expend a spell slot to cast a battle polymorph spell on self once per day"',
+    'Note="Can expend a spell slot to cast a battle polymorph spell on self as a signature spell once per day"',
   'Greater Spiritual Evolution':
     'Section=magic ' +
     'Note="Spells have the <i>ghost touch</i> property"',
@@ -10067,35 +10081,44 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Magic Sense']
     .replaceAll('level', 'rank'),
   'Terraforming Trickery':
+    'Action=1 ' +
     'Section=magic ' +
-    'Note="Can use a blood magic effect to create or remove difficult terrain from adjacent squares"',
+    'Note="Blood magic effect creates or removes difficult terrain in adjacent squares"',
   'Blood Ascendancy':
-    'Section=magic ' +
-    'Note="Can use Blood Rising to benefit from 2 blood magic effects"',
+    'Section=magic Note="Blood Rising can invoke 2 blood magic effects"',
   'Interweave Dispel':Pathfinder2E.FEATURES['Interweave Dispel'],
   'Reflect Harm':
     'Section=magic ' +
-    'Note="Blood magic effect allows a spell attack to duplicate the damage from a spell attack cast on self onto caster for 1 rd"',
+    'Note="Blood magic effect allows responding with a spell attack to a damaging spell cast on self before the start of the next turn; success inflicts equal damage on the caster, or twice the damage with a critical hit"',
   'Spell Shroud':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent spell cast creates a 15\' emanation that conceals creatures for 1 rd"',
+    'Note="Subsequent spell cast on self creates a 15\' emanation that conceals creatures until the start of the next turn"',
   // Effortless Concentration as above
-  'Greater Mental Evolution':Pathfinder2E.FEATURES['Greater Mental Evolution'],
-  'Greater Vital Evolution':Pathfinder2E.FEATURES['Greater Vital Evolution'],
+  'Greater Mental Evolution':
+    Pathfinder2E.FEATURES['Greater Mental Evolution']
+    .replace('level', 'rank'),
+  'Greater Vital Evolution':
+    Pathfinder2E.FEATURES['Greater Vital Evolution']
+    .replaceAll('level', 'rank'),
   // Scintillating Spell as above
   'Echoing Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casts an instantaneous spell twice using 1 spell slot"',
+    'Note="Casts a subsequent instantaneous spell of up to 4th rank a second time before the end of the next turn without using another spell slot"',
+  // Changed effects
   'Greater Crossblooded Evolution':
-    Pathfinder2E.FEATURES['Greater Crossblooded Evolution']
-    .replace('different traditions', 'second bloodline'),
-  'Bloodline Conduit':Pathfinder2E.FEATURES['Bloodline Conduit'],
+    'Section=magic ' +
+    'Note="Spell repertoire includes 3 sorcerous gift spell from a secondary bloodline, heightened to maximum rank"',
+  'Bloodline Conduit':
+    Pathfinder2E.FEATURES['Bloodline Conduit']
+    .replace('level', 'rank'),
   'Bloodline Mutation':
     'Section=feature ' +
     'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistances as appropriate from bloodline"',
-  'Bloodline Perfection':Pathfinder2E.FEATURES['Bloodline Perfection'],
+  'Bloodline Perfection':
+    Pathfinder2E.FEATURES['Bloodline Perfection']
+    .replace('level', 'rank'),
   // Spellshape Mastery as above
 
   // Swashbuckler
@@ -10683,7 +10706,7 @@ Pathfinder2ERemaster.LANGUAGES = {
   'Sakvroth':'',
   // Uncommon (pg 89)
   'Aklo':'',
-  'Cnthonian':'',
+  'Chthonian':'',
   'Diabolic':'',
   'Empyrean':'',
   'Kholo':'',
@@ -12937,7 +12960,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Angelic Halo':
     Pathfinder2E.SPELLS['Angelic Halo']
     .replace('Abjuration', 'Concentrate')
-    .replace('Good', 'Holy'),
+    .replace('Good', 'Holy')
+    .replace('level', 'rank'),
   'Angelic Wings':
     Pathfinder2E.SPELLS['Angelic Wings']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -12956,7 +12980,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Swamp Of Sloth':
     Pathfinder2E.SPELLS['Swamp Of Sloth']
     .replace('Conjuration', 'Concentrate,Manipulate'),
-  'Cnthonian Wrath':
+  'Chthonian Wrath':
     Pathfinder2E.SPELLS['Abyssal Wrath']
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Diabolic Edict':
@@ -13029,7 +13053,8 @@ Pathfinder2ERemaster.SPELLS = {
       '"Extends the blood magic effect from a subsequent spell by 1 rd"',
   'Arcane Countermeasure':
     Pathfinder2E.SPELLS['Arcane Countermeasure']
-    .replace('Abjuration', 'Manipulate'),
+    .replace('Abjuration', 'Manipulate')
+    .replace('level', 'rank'),
   "Undeath's Blessing":
     Pathfinder2E.SPELLS["Undeath's Blessing"]
     .replace('Necromancy', 'Manipulate')
@@ -14480,6 +14505,13 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Stumbling Swing', 'features.Stumbling Stance', '=', '1');
+  } else if(name == 'Tap Into Blood') {
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('features.Tap Into Blood (' + t + ')',
+        'features.Tap Into Blood', '?', null,
+        'bloodlineTraditions', '=', 'source.match(/' + t + '/) ? 1 : null'
+      );
+    });
   } else if(name == 'Traditional Resistances') {
     rules.defineRule('saveNotes.traditionalResistances',
       'features.Arcane Dragonblood', '=', '"arcane"',
