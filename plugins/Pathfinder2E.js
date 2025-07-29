@@ -5624,11 +5624,11 @@ Pathfinder2E.FEATURES = {
       // Note: actually applies only to simple and martial monk weapons, but
       // all monk weapons in the core book fall into these categories
       '"Attack %V (Monk Weapons)",' +
-      '"Has access to uncommon monk weapons/Can use monk weapons in unarmed Strikes"',
+      '"Has access to uncommon monk weapons/Can use monk melee weapons with unarmed attack features"',
   'Mountain Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class%{dexterityModifier>(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>0?\' (+4-\'+(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0))+\' due to a reduced Dex cap)\':\'\'}, +2 vs. Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks"',
+    'Note="Unarmored stance gives +%{4-(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>?0)} Armor Class%{dexterityModifier>(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0)>0?\' (+4 - \'+(dexterityModifier-(combatNotes.mountainQuake?2:combatNotes.mountainStronghold?1:0))+\' due to a reduced Dex cap)\':\'\'}, +2 vs. Shove and Trip, and -5 Speed and restricts Strikes to falling stone attacks"',
   'Tiger Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -5653,7 +5653,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can inflict electricity, bludgeoning, fire, or cold damage with <i>Ki Strike</i>"',
   'Stunning Fist':
     'Section=combat ' +
-    'Note="Can inflict stunned 1 with 1 success on 2 Strikes from a Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)"',
+    'Note="Can inflict stunned 1 with at least 1 success on 2 Strikes from Flurry Of Blows (<b>save Fortitude</b> negates; critical failure inflicts stunned 3)"',
   'Deflect Arrow':
     'Action=Reaction ' +
     'Section=combat Note="Gives +4 Armor Class vs. a physical ranged attack"',
@@ -5710,7 +5710,7 @@ Pathfinder2E.FEATURES = {
   'Ironblood Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Unarmored stance gives resistance %{level//4>?(combatNotes.ironbloodSurge?strengthModifier:0)} to all damage and allows iron sweep attacks"',
+    'Note="Unarmored stance gives resistance %{level//4} to all damage and allows iron sweep attacks"',
   'Mixed Maneuver':
     'Action=2 ' +
     'Section=combat ' +
@@ -5741,22 +5741,20 @@ Pathfinder2E.FEATURES = {
   'Disrupt Ki':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative damage and enfeebled 1 while the persistent damage continues"',
+    'Note="Successful unarmed Strike also inflicts %{level<18?2:3}d6 HP persistent negative and enfeebled 1 while the persistent damage continues"',
   'Improved Knockback':
     'Section=combat ' +
     'Note="Successful Shove moves the target +5\', or +10\' on a critical success, and allows following; pushing into an obstacle inflicts %{strengthModifier+(rank.Athletics>3?8:6)} HP bludgeoning"',
   'Meditative Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   // Stance Savant as above
   'Ironblood Surge':
-    // 'Action=1 ' + // inserted into second note
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Has increased Ironblood Stance effects",' +
-      '"' + Pathfinder2E.ACTION_MARKS[1] + ' While in Ironblood Stance, gains +1 Armor Class until the start of the next turn"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="While in Ironblood Stance, gains +1 Armor Class%{strengthModifier>(level//4)?\' and increases damage resistance to \'+strengthModifier:\'\'} until the start of the next turn"',
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and knocked prone (<b>save basic Fortitude</b>) once per 1d4 rd"',
+    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and knocked prone (<b>save basic Fortitude</b> also negates knocked prone) once per 1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
