@@ -6330,7 +6330,11 @@ Pathfinder2E.FEATURES = {
   // Alertness as above
   'Bloodline':'Section=feature Note="1 selection"',
   'Bloodline Paragon':'Section=magic Note="Has 1 10th-level spell slot"',
-  'Bloodline Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
+  'Bloodline Spells':
+    'Section=magic,magic ' +
+    'Note=' +
+      '"Has a focus pool and 1 Focus Point",' +
+      '"Casting a bloodline or granted spell invokes a blood magic effect"',
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   // Expert Spellcaster as above
   // Legendary Spellcaster as above
@@ -6351,134 +6355,134 @@ Pathfinder2E.FEATURES = {
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Tentacular Limbs occult spell",' +
-      '"Casting a bloodline spell gives self or a target +2 Will saves for 1 rd",' +
+      '"Blood magic effect gives self or a target +2 Will saves for 1 rd",' +
       '"Skill Trained (Intimidation; Occultism)"',
   'Angelic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Angelic Halo divine spell",' +
-      '"Casting a bloodline spell gives self or a target +1 saves for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 saves for 1 rd",' +
       '"Skill Trained (Diplomacy; Religion)"',
   'Demonic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Glutton\'s Jaws divine spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd",' +
+      '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd",' +
       '"Skill Trained (Intimidation; Religion)"',
   'Diabolic':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Divine)/Knows the Diabolic Edict divine spell",' +
-      '"Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target",' +
+      '"Blood magic effect gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target",' +
       '"Skill Trained (Deception; Religion)"',
   'Draconic (Brass)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Bronze)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Copper)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Gold)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Silver)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Black)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Blue)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Green)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (Red)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Draconic (White)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Dragon Claws arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 Armor Class for 1 rd",' +
       '"Skill Trained (Arcana; Intimidation)"',
   'Elemental (Air)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
+      '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Earth)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
+      '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Fire)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP fire per spell level on a target",' +
+      '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP fire per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Elemental (Water)':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Elemental Toss primal spell",' +
-      '"Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
+      '"Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target",' +
       '"Skill Trained (Intimidation; Nature)"',
   'Fey':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Primal)/Knows the Faerie Dust primal spell",' +
-      '"Casting a bloodline spell gives self or a target concealment for 1 rd",' +
+      '"Blood magic effect gives self or a target concealment for 1 rd",' +
       '"Skill Trained (Deception; Nature)"',
   'Hag':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Occult)/Knows the Jealous Hex occult spell",' +
-      '"Casting a bloodline spell inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn",' +
+      '"Blood magic effect inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn",' +
       '"Skill Trained (Deception; Occultism)"',
   'Imperial':
     'Section=magic,magic,skill ' +
     'Note=' +
       '"Spell Trained (Arcane)/Knows the Ancestral Memories arcane spell",' +
-      '"Casting a bloodline spell gives self or a target +1 skill checks for 1 rd",' +
+      '"Blood magic effect gives self or a target +1 skill checks for 1 rd",' +
       '"Skill Trained (Arcana; Society)"',
   'Undead':
     'Section=magic,magic,skill ' +
     'Note=' +
       // Errata changes Touch Of Undeath to Undeath's Blessing
       '"Spell Trained (Divine)/Knows the Undeath\'s Blessing divine spell",' +
-      '"Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on a target",' +
+      '"Blood magic effect gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on a target",' +
       '"Skill Trained (Intimidation; Religion)"',
 
   'Counterspell':
@@ -6506,7 +6510,7 @@ Pathfinder2E.FEATURES = {
   'Occult Evolution':
     'Section=magic,skill ' +
     'Note=' +
-      '"Can add 1 unknown mental occult spell to repertoire each day until next daily prep",' +
+      '"Can spend 1 min to add an unknown mental occult spell to repertoire until next daily prep once per day",' +
       '"Skill Trained (Choose 1 from any)"',
   'Primal Evolution':
     'Section=magic ' +
@@ -6633,7 +6637,7 @@ Pathfinder2E.FEATURES = {
   'Interweave Dispel':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell"',
+    'Note="Expends a spell slot to add <i>Dispel Magic</i> effects to a successful subsequent single-target spell"',
   'Reflect Spell':
     'Section=magic ' +
     'Note="Can cause a successful Counterspell to inflict the spell effects on the caster"',
@@ -6650,7 +6654,7 @@ Pathfinder2E.FEATURES = {
   'Bloodline Conduit':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Invokes an instantaneous spell of 5th level or lower without expending a spell slot once per min"',
+    'Note="Subsequent casting of an instantaneous spell of up to 5th level does not expend a spell slot once per min"',
   'Bloodline Perfection':'Section=magic Note="+1 10th level spell slot"',
   'Metamagic Mastery':
     'Section=magic ' +
@@ -13492,7 +13496,7 @@ Pathfinder2E.classRules = function(
       );
       rules.defineRule
         ('spellModifier.' + spellType, 'spellModifier.' + name, '=', null);
-    } else if('0123456789'.includes(firstChar)) {
+    } else if('C0123456789'.includes(firstChar)) {
       // Sorcerer slots depend on bloodline. Generate rules here based on a
       // tradition-specific level that is set by featureRules.
       ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {

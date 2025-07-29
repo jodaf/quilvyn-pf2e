@@ -515,19 +515,21 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Undead: Spell Trained (Divine)/Knows the Undeath's Blessing divine spell</i></td>
     </tr><tr style="text-align:center">
-      <td>Aberrant: Casting a bloodline spell gives self or a target +2 Will saves for 1 rd</td>
+      <td>Aberrant: Blood magic effect gives self or a target +2 Will saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Adapted Cantrip: Knows a cantrip from a second tradition</td>
     </tr><tr style="text-align:center">
-      <td>Angelic: Casting a bloodline spell gives self or a target +1 saves for 1 rd</td>
+      <td>Angelic: Blood magic effect gives self or a target +1 saves for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Arcane Evolution: Can learn 1 additional spell from spellbook each day, treating it as a signature spell if it is in repertoire</td>
     </tr><tr style="text-align:center">
       <td>Bespell Weapon: <b>(F)</b> After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of the turn once per turn; the damage type depends on the spell school</td>
     </tr><tr style="text-align:center">
-      <td>Bloodline Conduit: <b>(1)</b> Invokes an instantaneous spell of 5th level or lower without expending a spell slot once per min</td>
+      <td>Bloodline Conduit: <b>(1)</b> Subsequent casting of an instantaneous spell of up to 5th level does not expend a spell slot once per min</td>
     </tr><tr style="text-align:center">
       <td>Bloodline Focus: Refocus restores 2 Focus Points</td>
+    </tr><tr style="text-align:center">
+      <td>Bloodline Spells: Casting a bloodline or granted spell invokes a blood magic effect</td>
     </tr><tr style="text-align:center">
       <td>Bloodline Wellspring: Refocus restores 3 Focus Points</td>
     </tr><tr style="text-align:center">
@@ -539,17 +541,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Dangerous Sorcery: Using a spell slot to cast an instantaneous harmful spell inflicts additional damage equal to its level</td>
     </tr><tr style="text-align:center">
-      <td>Demonic: Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd</td>
+      <td>Demonic: Blood magic effect gives self +1 Intimidation for 1 rd or inflicts -1 Armor Class on a target for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Diabolic: Casting a bloodline spell gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target</td>
+      <td>Diabolic: Blood magic effect gives self +1 Deception for 1 rd or inflicts 1 HP fire per spell level on a target</td>
     </tr><tr style="text-align:center">
-      <td>Draconic (Black): Casting a bloodline spell gives self or a target +1 Armor Class for 1 rd</td>
+      <td>Draconic (Black): Blood magic effect gives self or a target +1 Armor Class for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
     </tr><tr style="text-align:center">
-      <td>Elemental (Water): Casting a bloodline spell gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target</td>
+      <td>Elemental (Water): Blood magic effect gives self +1 Intimidation for 1 rd or inflicts 1 HP bludgeoning per spell level on a target</td>
     </tr><tr style="text-align:center">
-      <td>Fey: Casting a bloodline spell gives self or a target concealment for 1 rd</td>
+      <td>Fey: Blood magic effect gives self or a target concealment for 1 rd</td>
     </tr><tr style="text-align:center">
       <td>Greater Crossblooded Evolution: Can have 3 spells of different levels from different traditions in repertoire</td>
     </tr><tr style="text-align:center">
@@ -557,17 +559,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Greater Vital Evolution: Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day</td>
     </tr><tr style="text-align:center">
-      <td>Hag: Casting a bloodline spell inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn</td>
+      <td>Hag: Blood magic effect inflicts 2 HP mental per spell level (<b>save basic Will</b>) on the first successful attacker before the end of the next turn</td>
     </tr><tr style="text-align:center">
-      <td>Imperial: Casting a bloodline spell gives self or a target +1 skill checks for 1 rd</td>
+      <td>Imperial: Blood magic effect gives self or a target +1 skill checks for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Interweave Dispel: <b>(1)</b> Expends a spell slot to add <i>Dispel Magic</i> effects to a successful single-target spell</td>
+      <td>Interweave Dispel: <b>(1)</b> Expends a spell slot to add <i>Dispel Magic</i> effects to a successful subsequent single-target spell</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous 1st-level <i>Detect Magic</i> effects that increase to 3rd-level during Seek</td>
     </tr><tr style="text-align:center">
       <td>Metamagic Mastery: Can use 1-action metamagic effects as free actions</td>
     </tr><tr style="text-align:center">
-      <td>Occult Evolution: Can add 1 unknown mental occult spell to repertoire each day until next daily prep</td>
+      <td>Occult Evolution: Can spend 1 min to add an unknown mental occult spell to repertoire until next daily prep once per day</td>
     </tr><tr style="text-align:center">
       <td>Overwhelming Energy: <b>(1)</b> Subsequent spell ignores resistance 20 to energy</td>
     </tr><tr style="text-align:center">
@@ -583,7 +585,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Steady Spellcasting: Successful DC 15 flat check negates spellcasting disruption</td>
     </tr><tr style="text-align:center">
-      <td>Undead: Casting a bloodline spell gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on a target</td>
+      <td>Undead: Blood magic effect gives self 1 temporary HP per spell level for 1 rd or inflicts 1 HP negative per spell level on a target</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area instantaneous spell by 5', the effect of a 15' or shorter line or cone instantaneous spell by 5', or the effect of a longer line or cone instantaneous spell by 10'</td>
     </tr></table>
