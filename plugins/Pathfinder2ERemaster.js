@@ -2472,7 +2472,7 @@ Pathfinder2ERemaster.FEATS = {
   'Plant Evidence':'Traits=Rogue Require="features.Pickpocket"',
   'Trap Finder':
     Pathfinder2E.FEATS['Trap Finder']
-    .replace('Traits=', 'Traits=Visual,Investigator,'),
+    .replace('Traits=', 'Traits=Investigator,'),
   'Tumble Behind':'Traits=Rogue,Swashbuckler',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
   "You're Next":
@@ -2519,7 +2519,9 @@ Pathfinder2ERemaster.FEATS = {
   'Inspired Stratagem':'Traits=Rogue Require="level >= 8"',
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
-  'Predictive Purchase':'Traits=Rogue,Investigator Require="level >= 8"',
+  'Predictive Purchase':
+    'Traits=Rogue,Investigator ' +
+    'Require="levels.Rogue >= 8 || levels.Investigator >= 6"',
   // Ricochet Stance as above
   'Sidestep':Pathfinder2E.FEATS.Sidestep,
   'Sly Striker':Pathfinder2E.FEATS['Sly Striker'],
@@ -2563,11 +2565,10 @@ Pathfinder2ERemaster.FEATS = {
   'Implausible Infiltration':Pathfinder2E.FEATS['Implausible Infiltration'],
   'Implausible Purchase':
     'Traits=Rogue,Investigator ' +
-    'Require="level >= 18","features.Predictive Purchase"',
+    'Require=' +
+      '"levels.Rogue >= 18 || levels.Investigator >= 16",' +
+      '"features.Predictive Purchase"',
   'Powerful Sneak':Pathfinder2E.FEATS['Powerful Sneak'],
-  "Trickster's Ace":
-    Pathfinder2E.FEATS["Trickster's Ace"]
-    .replace('Traits=', 'Traits=Investigator,'),
   'Hidden Paragon':Pathfinder2E.FEATS['Hidden Paragon'],
   'Impossible Striker':Pathfinder2E.FEATS['Impossible Striker'],
   'Reactive Distraction':Pathfinder2E.FEATS['Reactive Distraction'],
@@ -3062,7 +3063,9 @@ Pathfinder2ERemaster.FEATS = {
   "Detective's Readiness":'Traits=Investigator Require="level >= 4"',
   'Lie Detector':
     'Traits=Investigator ' +
-    'Require="level >= 4","features.Empiricism || features.Interrogation"',
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Empiricism || features.Interrogation"',
   'Ongoing Investigation':'Traits=Investigator Require="level >= 4"',
   "Scalpel's Point":
     'Traits=Investigator Require="level >= 4","features.Forensic Medicine"',
@@ -3077,15 +3080,14 @@ Pathfinder2ERemaster.FEATS = {
   'Whodunnit?':'Traits=Investigator,Uncommon Require="level >= 8"',
   'Just One More Thing':'Traits=Investigator,Fortune Require="level >= 10"',
   'Ongoing Strategy':
-    'Traits=Investigator,Fortune ' +
-    'Require="level >= 10","features.Strategic Strike"',
+    'Traits=Investigator Require="level >= 10","features.Strategic Strike"',
   'Suspect Of Opportunity':
     'Traits=Investigator Require="level >= 10","features.Person Of Interest"',
   "Empiricist's Eye":
     'Traits=Investigator Require="level >= 12","features.Empiricism"',
   'Foresee Danger':'Traits=Investigator,Concentrate Require="level >= 12"',
   'Just As Planned':'Traits=Investigator,Fortune Require="level >= 12"',
-  "Make 'em Sweat":
+  "Make 'Em Sweat":
     'Traits=Investigator Require="level >= 12","features.Interrogation"',
   'Reason Rapidly':'Traits=Investigator Require="level >= 12"',
   'Share Tincture':
@@ -3104,7 +3106,9 @@ Pathfinder2ERemaster.FEATS = {
   'Lead Investigator':
     'Traits=Investigator,Exploration ' +
     'Require="level >= 18","features.Clue Them All In"',
-  // Trickster's Ace as above
+  "Trickster's Ace":
+    Pathfinder2E.FEATS["Trickster's Ace"]
+    .replace('Rogue', 'Investigator'),
   "Everyone's A Suspect":'Traits=Investigator Require="level >= 20"',
   'Just The Facts':
     'Traits=Investigator Require="level >= 20","features.Thorough Research"',
@@ -8197,10 +8201,10 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('batches of infused reagents', 'versatile vials')
     .replace(' consumable', ''),
   'Research Field':Pathfinder2E.FEATURES['Research Field'],
+  // Changed calculations from Infused Reagents
   'Versatile Vials':
-    Pathfinder2E.FEATURES['Infused Reagents']
-    .replace('level', '2+(skillNotes.efficientAlchemy?4:0)')
-    .replace('batches of infused reagents', 'versatile vials'),
+    'Section=skill ' +
+    'Note="Can create %{(levels.Alchemist?2+intelligenceModifier:4)+(skillNotes.efficientAlchemy?4:0)+(skillNotes.alchemicalDiscoveries?rank.Crafting-1:0)} versatile vials during daily prep"',
   // Weapon Specialization as above
   'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
 
@@ -9040,29 +9044,33 @@ Pathfinder2ERemaster.FEATURES = {
   'Alchemical Sciences':
     'Section=feature,skill,skill ' +
     'Note=' +
-      '"Has the Alchemical Crafting and Quick Tincture features",' +
+      '"Has the Alchemical Crafting, Quick Tincture, and Versatile Vials features",' +
       '"Skill Trained (Crafting)",' +
-      '"Knows the formulas for %{level+1} common alchemical elixirs or tools and can create %{intelligenceModifier>?0} versatile vial%{intelligenceModifier==1?\'\':\'s\'} during daily prep"',
+      '"Knows the formulas for %{level+5+(skillNotes.alchemicalDiscoveries?level-4:0)} common alchemical elixirs or tools"',
   'Clue In':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} Perception on a check that will help to answer the Pursue A Lead question"',
+    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} on a Perception or skill check that will help to answer the active investigation question once per 10 min"',
   'Deductive Improvisation':
     'Section=skill ' +
-    'Note="Can attempt checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
+    'Note="Can attempt skill checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
   'Devise A Stratagem':
     'Action=1 ' +
     'Section=combat,skill ' +
     'Note=' +
-      '"First Strike using a agile or finesse weapon against the target uses intelligence modifier instead of strength or dexterity",' +
-      '"Gives +1 on the next intelligence-, wisdom-, or charisma-based Perception check involving the target before the start of the next turn"',
-  'Dogged Will':'Section=save Note="Save Master (Will)"',
+      '"First Strike vs. a chosen creature before the start of the next turn uses a pre-rolled value for the attack once per rd; it can substitute intelligence for strength or dexterity if using a sap or an agile, finesse, or non-thrown ranged weapon",' +
+      '"Prevents Striking a chosen creature, but gives +1 on the next intelligence-, wisdom-, or charisma-based Perception check involving it, before the start of the next turn once per rd"',
+  'Dogged Will':
+    'Section=save,save ' +
+    'Note=' +
+      '"Save Master (Will)",' +
+      '"Successes on Will saves are critical successes"',
   'Empiricism':
     'Section=feature,skill ' +
     'Note=' +
-      '"Has the That\'s Odd and Expedition Inspection features",' +
+      '"Has the That\'s Odd and Expeditious Inspection features",' +
       // TODO randomizing problem
-      '"Skill Trained (Choose 1 from any intelligence)"',
+      '"Skill Trained (Choose 1 from any Intelligence)"',
   'Expeditious Inspection':
     'Action=Free ' +
     'Section=skill ' +
@@ -9085,13 +9093,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Successes on Will saves are critical successes, and critical failures are failures and inflict half damage"',
+      '"Successes on Will saves are critical successes, critical Will failures are normal failures, and failed Will saves inflict half damage"',
   // Greater Weapon Specialization as above
   'Investigator Expertise':
     'Section=combat,feature ' +
     'Note=' +
       '"Class Expert (Investigator)",' +
-      '"Increased Pursue A Lead effects"',
+      '"Has increased Pursue A Lead effects"',
   'Investigator Feats':'Section=feature Note="%V selections"',
   'Investigator Skills':
     'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
@@ -9103,34 +9111,167 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"Class Master (Investigator)",' +
-      '"Automatically senses the presence of a clue that pertains to current investigation when entering a new location"',
+      '"Automatically senses the presence of a clue that pertains to an active investigation when entering a new location"',
   'Methodology':'Section=feature Note="1 selection"',
   'On The Case':
     'Section=feature Note="Has the Clue In and Pursue A Lead features"',
   'Pursue A Lead':
     'Section=skill ' +
-    'Note="1 min reflection gives +%{skillNotes.investigatorExpertise?2:1} Perception when attempting to answer a formulated question"',
+    'Note="Can use 1 min examining a detail to detect a deeper mystery; success opening an investigation and gives +%V on later Perception and skill checks when attempting to answer a central question about it"',
   'Pointed Question':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Diplomacy vs. Will gives +2 Perception to detect Lie and inflicts off-guard vs. Devise A Stratagem until the end of the turn; critical success gives +4 Perception; critical failure worsens the target\'s attitude by 1 step"',
+    'Note="Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. a Devise A Stratagem Strike until the end of the turn; critical success gives +4 Perception; critical failure worsens the target\'s attitude by 1 step"',
   'Quick Tincture':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Can use a versatile vial to create a alchemical elixir or tool that last until the end of the turn"',
+    'Note="Uses a versatile vial to create a alchemical elixir or tool of up to level %{level} that lasts until the end of the turn"',
   'Savvy Reflexes':
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
-  'Skillful Lessons':'Section=feature Note="+%{(level-1)//2} Skill Feats"',
+  'Skillful Lessons':'Section=feature Note="+%V Skill Feat"',
   'Strategic Strike':
     'Section=combat ' +
-    'Note="Successful Strikes using Devising A Stratagem inflict +1d6 HP precision"',
+    'Note="Successful Devising A Stratagem Strikes inflict +%{(level+3)//4}d6 HP precision"',
   'Vigilant Senses':'Section=skill Note="Perception Master"',
   // Weapon Expertise as above
   // Weapon Mastery as above
   // Weapon Specialization as above
+
+  'Eliminate Red Herrings':
+    'Section=skill ' +
+    'Note="Critical failures to Recall Knowledge about an active investigation are normal failures"',
+  'Flexible Studies':
+    'Section=skill Note="Can become trained in 1 skill during daily prep"',
+  'Known Weaknesses':
+    'Section=combat ' +
+    'Note="Critical success on a Recall Knowledge as part of Devise A Strategem gives allies and self +1 on first attack on target before the start of the next turn"',
+  'Takedown Expert':
+    'Section=combat ' +
+    'Note="Clubs gain Devise A Strategem attack bonus/Suffers no penalty for making a Strike nonlethal"',
+  "That's Odd":
+    'Section=skill ' +
+    'Note="Automatically notices one unusual detail when first entering a location and can immediately use Pursue A Lead with it"',
+  // Trap Finder as above
+  'Underworld Investigator':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Trained (Underworld Lore)",' +
+      '"+%{skillNotes.investigatorExpertise?2:1} Thievery to investigate a case"',
+  'Athletic Strategist':
+    'Section=combat ' +
+    'Note="Can use Devise A Strategem with Disarm, Grapple, Reposition, Shove, and Trip, and can use Intelligence for the check"',
+  'Certain Stratagem':
+    'Section=combat ' +
+    'Note="Failed Devise A Strategem Strike that uses Intelligence inflicts %%{(level+3)//4}d6 / 2 HP"',
+  'Exploit Blunder':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Takes a Step after the triggering miss by a Devise A Strategem target from the prior turn"',
+  'Person Of Interest':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Can Devise A Strategem against a chosen creature unrelated to active investigations for 1 min once per 10 min"',
+  'Shared Stratagem':
+    'Section=combat ' +
+    'Note="Successful Devise A Stratagem Strike makes the target off-guard to the next attack by a chosen ally before the start of the next turn"',
+  'Solid Lead':
+    'Section=skill ' +
+    'Note="Can use 1 action to later switch back to following a chosen lead"',
+  'Alchemical Discoveries':
+    'Section=skill ' +
+    'Note="Has increased Alchemical Sciences and Versatile Vials effects"',
+  "Detective's Readiness":
+    'Section=save ' +
+    'Note="+2 saves vs. creatures and effets related to an open investigation, and Clue In gives this bonus to allies"',
+  'Lie Detector':
+    'Section=skill ' +
+    'Note="+1 Pecreption to Sense Motive and DCs vs. attempts to Lie, or +%{skillNotes.pursueALead+1} when Pursuing A Lead; success gives +1 to the next Deception, Diplomacy, Intimidation, or Performance vs. the target within 1 min"',
+  'Ongoing Investigation':
+    'Section=skill ' +
+    'Note="Can Investigate at full Speed and use another exploration activity while Investigating"',
+  "Scalpel's Point":
+    'Section=combat ' +
+    'Note="Critical hits on Strategem attacks with piercing or slashing damage inflict +1d6 HP persistent bleed"',
+  'Strategic Assessment':
+    'Section=combat ' +
+    'Note="First successful Stratagem attack gives info on the target\'s weaknesses, resistances, saves, or immunties"',
+  'Connect The Dots':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful Perception vs. a foe\'s Deception or Will gives a chosen ally +%{skillNotes.pursueALead} on its next attack on the target before the start of the next turn; critical success gives the ally +%{skillNotes.pursueALead} on all attacks before for the start of the next turn; critical failure inflicts stupefied 1 on self until the end of the next turn"',
+  // Predictive Purchase as above
+  'Thorough Research':
+    'Section=skill ' +
+    'Note="Success on a Recall Knowledge check gives additional information"',
+  // Blind-Fight as above
+  'Clue Them All In':
+    'Section=skill Note="Clue In applies to all allies for 1 rd"',
+  'Defensive Stratagem':
+    'Section=save ' +
+    'Note="Can use Devise A Stratagem to gain +1 vs. all effects caused by a chosen creature, but preventing Striking it, before the start of the next turn"',
+  'Whodunnit?':
+    'Section=skill ' +
+    'Note="Successful Pursue A Lead allows receiving answers to 2 questions about the mystery once per day"',
+  'Just One More Thing':
+    // In description 'Action=1 ' +
+    'Section=skill ' +
+    'Note="Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding %{skillNotes.pursueALead} if the check is connected to an ative investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action; the others require the maximum of 1 rd or half the time spent on the failed action"',
+  'Ongoing Strategy':
+    'Section=combat ' +
+    'Note="Non-Devise A Strategy Strike using a qualifying weapon inflcits +{(level+3)//4} HP precision"',
+  'Suspect Of Opportunity':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Uses Person Of Interest against an attacking creature unrelated to any active investigation"',
+  "Empiricist's Eye":
+    'Section=combat ' +
+    'Note="Can use non-auditory Point Out, the target is off-guard to allies until the start of the next turn%{$\'features.Blind-Fight\'?\', and allies can use Blind-Fight effects against it\':\'\'}"',
+  'Foresee Danger':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Triggering foe attack targets Perception DC instead of Armor Class"',
+  'Just As Planned':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Devise A Strategem uses the higher of 2 d20 rolls once per hr"',
+  "Make 'Em Sweat":
+    'Section=skill ' +
+    'Note="Successful Pointed Question inflicts frightened 1, or frightened 2 on a critical success"',
+  'Reason Rapidly':
+    'Action=1 Section=skill Note="Uses up to 5 Recall Knowledge actions"',
+  'Share Tincture':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Uses Quick Tincture to create an item lasting until the start of the next turn and can pass it to another creature"',
+  'Surgical Shock':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Medicine vs. Fortitude inflects a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions"',
+  'Plot The Future':
+    'Section=skill ' +
+    'Note="10 min reflection gives a general idea of the liklihood of an event up to 1 week in the future and a suggestion of how to change the liklihood"',
+  // Sense The Unseen as above
+  'Strategic Bypass':
+    'Section=combat ' +
+    'Note="Successful Strategem Strike ignores resistance %{intelligenceModifier}"',
+  'Didactic Strike':
+    'Section=combat ' +
+    'Note="Can use Shared Strategem with 10 allies; their Strikes on the target inflict +2d6 HP precision"',
+  // Implausible Purchase as above
+  // Reconstruct The Scene as above
+  'Lead Investigator':
+    'Section=skill ' +
+    'Note="1 min briefing gives 4 allies Pursue A Lead bonuses to investigation checks for 1 day"',
+  "Trickster's Ace":Pathfinder2E.FEATURES["Trickster's Ace"],
+  "Everyone's A Suspect":
+    'Section=skill ' +
+    'Note="1 min interaction gives an automatic Pursue A Lead; may have an unlimited number of these"',
+  'Just The Facts':
+    'Section=skill ' +
+    'Note="Can make an additional Recall Knowledge each round, knows the result of Recall Knowledge checks, gains +1 level of success on Recall Knowledge checks, and recognizes inaccurate knowledge from self or ally Recall Knowledge checks"',
 
   // Monk
   'Adamantine Strikes':Pathfinder2E.FEATURES['Adamantine Strikes'],
@@ -13986,9 +14127,21 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'featureNotes.fighterKeyAttribute', '=', '1'
     );
   } else if(name == 'Investigator') {
-    rules.defineRule('selectableFeatureCounts.Investigator (Methodology)',
+    rules.defineRule('combatNotes.weaponExpertise',
+      classLevel, '=', 'source>=5 ? "Simple Weapons; Martial Weapons" : null'
+    );
+    rules.defineRule('featureNotes.skillfulLessons',
+      classLevel, '=', 'Math.floor((source - 1) / 2)'
+    );
+    rules.defineRule('selectableFeatureCount.Investigator (Methodology)',
       'featureNotes.methodology', '=', '1'
     );
+    rules.defineRule('skillNotes.pursueALead',
+      '', '=', '1',
+      'skillNotes.investigatorExpertise', '+', '1'
+    );
+    rules.defineRule
+      ('skillNotes.skillIncreases', classLevel, '=', 'source - 1');
     rules.defineRule('skillNotes.investigatorSkills',
       'intelligenceModifier', '=', '4 + source'
     );
