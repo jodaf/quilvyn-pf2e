@@ -3363,7 +3363,37 @@ Pathfinder2ERemaster.FEATS = {
   'Spell Relay':'Traits=Sorcerer,Concentrate Require="level >= 6"',
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATS['Bloodline Resistance'],
-  'Crossblooded Evolution':Pathfinder2E.FEATS['Crossblooded Evolution'],
+  // Changed configuration
+  'Crossblooded Evolution (Aberrant)':
+    'Traits=Sorcerer Require="level >= 8","features.Aberrant == 0"',
+  'Crossblooded Evolution (Angelic)':
+    'Traits=Sorcerer Require="level >= 8","features.Angelic == 0"',
+  'Crossblooded Evolution (Demonic)':
+    'Traits=Sorcerer Require="level >= 8","features.Demonic == 0"',
+  'Crossblooded Evolution (Diabolic)':
+    'Traits=Sorcerer Require="level >= 8","features.Diabolic == 0"',
+  'Crossblooded Evolution (Draconic)':
+    'Traits=Sorcerer Require="level >= 8","features.Draconic == 0"',
+  'Crossblooded Evolution (Elemental (Air))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Elemental (Earth))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Elemental (Fire))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Elemental (Metal))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Elemental (Water))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Elemental (Wood))':
+    'Traits=Sorcerer Require="level >= 8","features.Elemental == 0"',
+  'Crossblooded Evolution (Fey)':
+    'Traits=Sorcerer Require="level >= 8","features.Fey == 0"',
+  'Crossblooded Evolution (Hag)':
+    'Traits=Sorcerer Require="level >= 8","features.Hag == 0"',
+  'Crossblooded Evolution (Imperial)':
+    'Traits=Sorcerer Require="level >= 8","features.Imperial == 0"',
+  'Crossblooded Evolution (Undead)':
+    'Traits=Sorcerer Require="level >= 8","features.Undead == 0"',
   'Explosion Of Power':'Traits=Sorcerer Require="level >= 8"',
   'Energy Fusion':
     'Traits=Sorcerer,Concentrate,Spellshape Require="level >= 10"',
@@ -10034,7 +10064,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES.Hag
     .replace('2 HP', '4 HP')
     .replace('level', 'rank')
-    .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the next turn'),
+    .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the following turn'),
   'Imperial':
     Pathfinder2E.FEATURES.Imperial
     .replace('self or a target', 'self +1 Armor Class or'),
@@ -10062,8 +10092,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Blood Rising':
     'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="Casting of a%{bloodlineTraditions=~\'^[AO]\'?\'n\':\'\'} %{bloodlineTraditionsLowered} spell targeting self invokes a blood magic effect that targets self or the caster"',
+    'Section=magic ' +
+    'Note="Triggering casting by another of a%{bloodlineTraditions=~\'^[AO]\'?\'n\':\'\'} %{bloodlineTraditionsLowered} spell targeting self invokes a blood magic effect that targets self or the caster"',
   // Familiar as above
   // Reach Spell as above
   'Tap Into Blood (Arcane)':
@@ -10082,11 +10112,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Anoint Ally':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Transfers blood magic effects to a specified ally for 1 min"',
+    'Note="Allows transfering blood magic effects to a chosen ally for 1 min"',
   'Bleed Out':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R60\' Successful ranged spell attack inflicts persistent bleed damage equal to the rank of a just-cast spell"',
+    'Note="Immediately after gaining a blood magic effect, a successful R60\' ranged spell attack also inflicts persistent bleed damage equal to the rank of the prior spell"',
   // Cantrip Expansion as above
   // Enhanced Familiar as above
   'Propelling Sorcery':
@@ -10100,7 +10130,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Split Shot':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Adds a second target, inflicting half initial damage, to a targeted instantaneous attack spell"',
+    'Note="Adds a second target, inflicting half the initial damage, to a single-target instantaneous attack spell"',
   'Advanced Bloodline (Aberrant)':
     Pathfinder2E.FEATURES['Advanced Bloodline (Aberrant)'],
   'Advanced Bloodline (Angelic)':
@@ -10145,20 +10175,85 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Immediately after casting a non-cantrip energy damage spell, gains resistance equal to 4 + the spell rank to a choice of energy until the start of the next turn once per turn"',
   'Safeguard Spell':
-    'Action=1 ' +
-    'Section=magic ' +
-    'Note="Negate the effects on self of a subsequent self area spell"',
+    'Action=1 Section=magic Note="Subsequent area spell does not affect self"',
   'Spell Relay':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Allows the triggering ally spell to originate from self location"',
+    'Note="Allows an ally to cast the triggering spell with self as the origin"',
   // Steady Spellcasting as above
   'Bloodline Resistance':Pathfinder2E.FEATURES['Bloodline Resistance'],
   // Changed effects
-  // TODO expand to list each bloodline?
-  'Crossblooded Evolution':
+  'Crossblooded Evolution (Aberrant)':
     'Section=magic ' +
-    'Note="Can use the blood magic effect from another chosen bloodline"',
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Aberrant'], 'Note')[1] + '"')
+    .replace('self or a target +2', 'self +2 or a target -1'),
+  'Crossblooded Evolution (Angelic)':
+    'Section=magic ' +
+    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Angelic'], 'Note')[1] + '"',
+  'Crossblooded Evolution (Demonic)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Demonic'], 'Note')[1] + '"')
+    .replace('+1', '+2'),
+  'Crossblooded Evolution (Diabolic)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Diabolic'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Draconic)':
+    'Section=magic ' +
+    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Draconic (Brass)'], 'Note')[1] + '"',
+  'Crossblooded Evolution (Elemental (Air))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Air)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('bludgeoning', 'slashing')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Elemental (Earth))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Earth)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Elemental (Fire))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Fire)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Elemental (Metal))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Air)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('bludgeoning', 'piercing')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Elemental (Water))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Water)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Elemental (Wood))':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Elemental (Earth)'], 'Note')[1] + '"')
+    .replace('+1', '+2')
+    .replace('level', 'rank'),
+  'Crossblooded Evolution (Fey)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Fey'], 'Note')[1] + '"')
+    .replace('self or a target', 'self +2 Performance or'),
+  'Crossblooded Evolution (Hag)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Hag'], 'Note')[1] + '"')
+    .replace('2 HP', '4 HP')
+    .replace('level', 'rank')
+    .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the following turn'),
+  'Crossblooded Evolution (Imperial)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Imperial'], 'Note')[1] + '"')
+    .replace('self or a target', 'self +1 Armor Class or'),
+  'Crossblooded Evolution (Undead)':
+    'Section=magic ' +
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Undead'], 'Note')[1] + '"')
+    .replace('negative', 'void')
+    .replace('for 1 rd', 'until the start of the next turn')
+    .replaceAll('level', 'rank'),
   'Explosion Of Power':
     'Section=magic ' +
     'Note="Blood magic effect inflicts 1d6 HP %{bloodlineTraditions=~\'Arcane\'?\'force\':bloodlineTraditions=~\'Divine\'?\'spirit\':bloodlineTraditions=~\'Occult\'?\'mental\':\'fire\'} per spell rank (<b>save basic Reflex</b>) in a 5\' emanation"',
@@ -10214,7 +10309,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('2', 'all'),
   'Greater Physical Evolution':
     'Section=magic ' +
-    'Note="Can expend a spell slot to cast a battle polymorph spell on self as a signature spell once per day"',
+    'Note="Can expend a spell slot to cast a common polymorph battle form spell as a signature spell once per day"',
   'Greater Spiritual Evolution':
     'Section=magic ' +
     'Note="Spells have the <i>ghost touch</i> property"',
@@ -10230,7 +10325,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Interweave Dispel':Pathfinder2E.FEATURES['Interweave Dispel'],
   'Reflect Harm':
     'Section=magic ' +
-    'Note="Blood magic effect allows responding with a spell attack to a damaging spell cast on self before the start of the next turn; success inflicts equal damage on the caster, or twice the damage with a critical hit"',
+    'Note="Blood magic effect allows responding with a spell attack to the first spell damage suffered by self before the start of the next turn; success inflicts equal damage on the caster, or twice the damage with a critical hit"',
   'Spell Shroud':
     'Action=1 ' +
     'Section=magic ' +
@@ -10250,13 +10345,13 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed effects
   'Greater Crossblooded Evolution':
     'Section=magic ' +
-    'Note="Spell repertoire includes 3 sorcerous gift spell from a secondary bloodline, heightened to maximum rank"',
+    'Note="Adds 3 sorcerous gift spells from a secondary bloodline, heightened to maximum rank, to spell repertoire"',
   'Bloodline Conduit':
     Pathfinder2E.FEATURES['Bloodline Conduit']
     .replace('level', 'rank'),
   'Bloodline Mutation':
     'Section=feature ' +
-    'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistances as appropriate from bloodline"',
+    'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistance 20 to an energy type as appropriate for bloodline"',
   'Bloodline Perfection':
     Pathfinder2E.FEATURES['Bloodline Perfection']
     .replace('level', 'rank'),
@@ -14414,6 +14509,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venonous'], null
     );
     rules.defineRule('weapons.Cobra Fang', 'features.Cobra Stance', '=', '1');
+  } else if(name.startsWith('Crossblooded Evolution')) {
+    rules.defineRule
+      ('features.Crossblooded Evolution', 'features.' + name, '=', '1');
   } else if(name == 'Crunch') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.crunch', '^=', '2');
