@@ -4003,7 +4003,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can have 2 composition spells active simultaneously"',
   'Steady Spellcasting':
     'Section=magic ' +
-    'Note="Successful DC 15 flat check negates spellcasting disruption"',
+    'Note="Can negate spellcasting disruption with successful DC 15 flat check"',
   'Eclectic Skill':
     'Section=skill,skill ' +
     'Note=' +
@@ -6346,7 +6346,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic Note="Can learn spells from the %V tradition"',
+    'Section=magic Note="Can learn spells from the %{bloodlineTraditionsLowered} tradition"',
   // Nethys changes Simple Weapon Expertise to Weapon Expertise
   // Weapon Expertise as above
   // Weapon Specialization as above
@@ -13988,9 +13988,6 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
     rules.defineRule('magicNotes.primalEvolution', 'maxSpellLevel', '=', null);
-    rules.defineRule('magicNotes.sorcererSpellcasting',
-      'bloodlineTraditionsLowered', '=', null
-    );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
