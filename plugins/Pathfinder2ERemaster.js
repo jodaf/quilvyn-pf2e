@@ -10195,18 +10195,18 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed effects
   'Crossblooded Evolution (Aberrant)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Aberrant'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Aberrant, 'Note')[1] + '"')
     .replace('self or a target +2', 'self +2 or a target -1'),
   'Crossblooded Evolution (Angelic)':
     'Section=magic ' +
-    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Angelic'], 'Note')[1] + '"',
+    'Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Angelic, 'Note')[1] + '"',
   'Crossblooded Evolution (Demonic)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Demonic'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Demonic, 'Note')[1] + '"')
     .replace('+1', '+2'),
   'Crossblooded Evolution (Diabolic)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Diabolic'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Diabolic, 'Note')[1] + '"')
     .replace('+1', '+2')
     .replace('level', 'rank'),
   'Crossblooded Evolution (Draconic)':
@@ -10246,21 +10246,21 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Crossblooded Evolution (Fey)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Fey'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Fey, 'Note')[1] + '"')
     .replace('self or a target', 'self +2 Performance or'),
   'Crossblooded Evolution (Hag)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Hag'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Hag, 'Note')[1] + '"')
     .replace('2 HP', '4 HP')
     .replace('level', 'rank')
     .replace('next turn', 'next turn; if no attacks succeed, gives self temporary Hit Points equal to the spell rank until the beginning of the following turn'),
   'Crossblooded Evolution (Imperial)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Imperial'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Imperial, 'Note')[1] + '"')
     .replace('self or a target', 'self +1 Armor Class or'),
   'Crossblooded Evolution (Undead)':
     'Section=magic ' +
-    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES['Undead'], 'Note')[1] + '"')
+    ('Note="' + QuilvynUtils.getAttrValueArray(Pathfinder2E.FEATURES.Undead, 'Note')[1] + '"')
     .replace('negative', 'void')
     .replace('for 1 rd', 'until the start of the next turn')
     .replaceAll('level', 'rank'),
