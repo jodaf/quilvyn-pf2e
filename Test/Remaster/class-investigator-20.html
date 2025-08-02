@@ -46,14 +46,14 @@ var attributes = {
   "selectableFeatures.Investigator - Interrogation":1, "shield":"Wooden", "skillIncreases.Accounting Lore":1, 
   "skillIncreases.Art Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, 
   "skillIncreases.Butchering Lore":2, "skillIncreases.Carpentry Lore":2, "skillIncreases.Cave Lore":1, 
-  "skillIncreases.Circus Lore":1, "skillIncreases.Duskwalker Lore":1, "skillIncreases.Guild Lore":1, 
-  "skillIncreases.Herbalism Lore":1, "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Legal Lore":1, 
-  "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Magnimar Lore":1, "skillIncreases.Medicine":1, 
-  "skillIncreases.Mercantile Lore":1, "skillIncreases.Orc Lore":1, "skillIncreases.Outer Rifts Lore":1, 
-  "skillIncreases.Plains Lore":1, "skillIncreases.Ratfolk Lore":2, "skillIncreases.Scribing Lore":1, 
-  "skillIncreases.Society":1, "skillIncreases.Stabling Lore":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Surgery Lore":1, "skillIncreases.Tea Lore":1, "skillIncreases.Warfare Lore":1, 
-  "weapons.Fist":1, "weapons.Hatchet":1, "weapons.Longspear":1
+  "skillIncreases.Circus Lore":1, "skillIncreases.Crafting":2, "skillIncreases.Duskwalker Lore":1, 
+  "skillIncreases.Guild Lore":1, "skillIncreases.Herbalism Lore":1, "skillIncreases.Hobgoblin Lore":1, 
+  "skillIncreases.Legal Lore":1, "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Magnimar Lore":1, 
+  "skillIncreases.Medicine":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Orc Lore":1, 
+  "skillIncreases.Outer Rifts Lore":1, "skillIncreases.Plains Lore":1, "skillIncreases.Ratfolk Lore":2, 
+  "skillIncreases.Society":1, "skillIncreases.Stealth":1, "skillIncreases.Surgery Lore":1, 
+  "skillIncreases.Tea Lore":1, "skillIncreases.Warfare Lore":1, "weapons.Fist":1, "weapons.Hatchet":1, 
+  "weapons.Longspear":1
 };
   </script>
 </head>
@@ -126,6 +126,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has the Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Devise A Stratagem: Has the Attack Stratagem and Skill Stratagem features</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Empiricism: Has the That's Odd and Expeditious Inspection features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Forensic Medicine: Has the Forensic Acumen and Battle Medicine features</i></td>
@@ -135,8 +137,6 @@ var attributes = {
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Interrogation: Has the No Cause For Alarm and Pointed Question features</i></td>
-      </tr><tr style="text-align:center">
-        <td><i>Investigator Expertise: Has increased Pursue A Lead effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Investigator Feats: 11 selections</i></td>
       </tr><tr style="text-align:center">
@@ -152,7 +152,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skillful Lessons: +9 Skill Feat</i></td>
       </tr><tr style="text-align:center">
+        <td>Devise A Stratagem: Can use  Defensive Stratagem, Attack Stratagem or Skill Stratagem once per rd</td>
+      </tr><tr style="text-align:center">
         <td>Implausible Purchase: Can use Prescient Planner at will with 1 action, and can use it to retrieve a level 14 consumable 5 times per day</td>
+      </tr><tr style="text-align:center">
+        <td>Person Of Interest: <b>(1)</b> Can use Devise A Stratagem for 1 min on a chosen creature unrelated to active investigations once per 10 min</td>
       </tr><tr style="text-align:center">
         <td>Predictive Purchase: Can use Prescient Planner with 2 actions</td>
       </tr><tr style="text-align:center">
@@ -193,7 +197,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Astrology Lore: +32 (intelligence; legendary)</td>
       <td>Intimidation: +24 (charisma; untrained)</td>
-      <td>Scribing Lore: +28 (intelligence; expert)</td>
+      <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Athletics: +25 (strength; trained)</td>
       <td>Legal Lore: +26 (intelligence; trained)</td>
@@ -201,35 +205,35 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Baking Lore: +26 (intelligence; trained)</td>
       <td>Lizardfolk Lore: +26 (intelligence; trained)</td>
-      <td>Stabling Lore: +26 (intelligence; trained)</td>
+      <td>Stealth: +26 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
       <td>Butchering Lore: +28 (intelligence; expert)</td>
       <td>Magnimar Lore: +26 (intelligence; trained)</td>
-      <td>Stealth: +26 (dexterity; trained)</td>
+      <td>Surgery Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Carpentry Lore: +28 (intelligence; expert)</td>
       <td>Medicine: +28 (wisdom; expert)</td>
-      <td>Surgery Lore: +26 (intelligence; trained)</td>
+      <td>Survival: +24 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Catfolk Lore: +26 (intelligence; trained)</td>
       <td>Mercantile Lore: +26 (intelligence; trained)</td>
-      <td>Survival: +24 (wisdom; untrained)</td>
+      <td>Tea Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Cave Lore: +26 (intelligence; trained)</td>
       <td>Mining Lore: +32 (intelligence; legendary)</td>
-      <td>Tea Lore: +26 (intelligence; trained)</td>
+      <td>Thievery: +24 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Circus Lore: +26 (intelligence; trained)</td>
       <td>Nature: +24 (wisdom; untrained)</td>
-      <td>Thievery: +24 (dexterity; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Crafting: +26 (intelligence; trained)</td>
-      <td>Occultism: +24 (intelligence; untrained)</td>
       <td>Underworld Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Crafting: +30 (intelligence; master)</td>
+      <td>Occultism: +24 (intelligence; untrained)</td>
+      <td>Warfare Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +24 (charisma; untrained)</td>
       <td>Orc Lore: +26 (intelligence; trained)</td>
-      <td>Warfare Lore: +26 (intelligence; trained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -261,6 +265,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Interrogation: Skill Trained (Diplomacy)</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Investigator Expertise: Has increased Pursue A Lead effects</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Investigator Skills: Skill Trained (Society; Choose 8 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 19 from any)</i></td>
@@ -291,7 +297,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May attempt any skill untrained</td>
     </tr><tr style="text-align:center">
-      <td>Clue In: <b>(R)</b> Gives another creature +1 on a Perception or skill check that will help to answer the active investigation question once per 10 min</td>
+      <td>Clue In: <b>(R)</b> Gives another creature +1 on the triggering Perception or skill check that will help to answer an active investigation question once per 10 min</td>
     </tr><tr style="text-align:center">
       <td>Clue Them All In: Clue In applies to all allies for 1 rd</td>
     </tr><tr style="text-align:center">
@@ -299,19 +305,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Deductive Improvisation: Can attempt skill checks that require trained, expert, or master proficiency when untrained, trained, or expert</td>
     </tr><tr style="text-align:center">
-      <td>Devise A Stratagem: <b>(1)</b> Prevents Striking a chosen creature, but gives +1 on the next intelligence-, wisdom-, or charisma-based Perception check involving it, before the start of the next turn once per rd</td>
-    </tr><tr style="text-align:center">
       <td>Dubious Knowledge: Failure on a Recall Knowledge check yields a mix of true and false information</td>
     </tr><tr style="text-align:center">
       <td>Eliminate Red Herrings: Critical failures to Recall Knowledge about an active investigation are normal failures</td>
     </tr><tr style="text-align:center">
-      <td>Everyone's A Suspect: 1 min interaction gives an automatic Pursue A Lead; may have an unlimited number of these</td>
+      <td>Everyone's A Suspect: 1 min interaction gives an automatic Pursue A Lead with the target; can have an unlimited number of these</td>
     </tr><tr style="text-align:center">
       <td>Expeditious Inspection: <b>(F)</b> Uses Recall Knowledge, Seek, or Sense Motive once per 10 min</td>
     </tr><tr style="text-align:center">
       <td>Experienced Professional: Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income</td>
     </tr><tr style="text-align:center">
-      <td>Flexible Studies: Can become trained in 1 skill during daily prep</td>
+      <td>Flexible Studies: Can become temporarily trained in 1 skill during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Forensic Medicine: Battle Medicine restores +20 Hit Points and can be used on the same target once per hr</td>
     </tr><tr style="text-align:center">
@@ -319,17 +323,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Interrogation: Can Pursue A Lead and Make An Impression simultaneously</td>
     </tr><tr style="text-align:center">
-      <td>Just One More Thing: Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding 1 if the check is connected to an ative investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action; the others require the maximum of 1 rd or half the time spent on the failed action</td>
+      <td>Just One More Thing: Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding 2 if the check is connected to an active investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action, and the others require the maximum of 1 rd or half the time spent on the failed action</td>
     </tr><tr style="text-align:center">
       <td>Just The Facts: Can make an additional Recall Knowledge each round, knows the result of Recall Knowledge checks, gains +1 level of success on Recall Knowledge checks, and recognizes inaccurate knowledge from self or ally Recall Knowledge checks</td>
     </tr><tr style="text-align:center">
       <td>Keen Recollection: +20 on untrained Recall Knowledge checks</td>
     </tr><tr style="text-align:center">
-      <td>Lead Investigator: 1 min briefing gives 4 allies Pursue A Lead bonuses to investigation checks for 1 day</td>
+      <td>Lead Investigator: 1 min briefing gives 4 allies Pursue A Lead bonuses to investigation checks for 1 day or until the Lead is dropped</td>
     </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
-      <td>Lie Detector: +1 Pecreption to Sense Motive and DCs vs. attempts to Lie, or +2 when Pursuing A Lead; success gives +1 to the next Deception, Diplomacy, Intimidation, or Performance vs. the target within 1 min</td>
+      <td>Lie Detector: +1 Perception to Sense Motive and DCs vs. attempts to Lie, or +3 when Pursuing A Lead; success gives +1 to the next Deception, Diplomacy, Intimidation, or Performance vs. the target within 1 min</td>
     </tr><tr style="text-align:center">
       <td>Make'Em Sweat: Successful Pointed Question inflicts frightened 1, or frightened 2 on a critical success</td>
     </tr><tr style="text-align:center">
@@ -339,13 +343,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Ongoing Investigation: Can Investigate at full Speed and use another exploration activity while Investigating</td>
     </tr><tr style="text-align:center">
-      <td>Person Of Interest: <b>(1)</b> Can Devise A Strategem against a chosen creature unrelated to active investigations for 1 min once per 10 min</td>
+      <td>Plot The Future: 10 min reflection gives a general idea of the likelihood of an event up to 1 week in the future and a suggestion of how to make it more or less likely</td>
     </tr><tr style="text-align:center">
-      <td>Plot The Future: 10 min reflection gives a general idea of the liklihood of an event up to 1 week in the future and a suggestion of how to change the liklihood</td>
+      <td>Pointed Question: <b>(1)</b> Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. Attack Stratagem until the end of the turn; critical success gives +4 Perception; critical failure worsens the target's attitude by 1 step</td>
     </tr><tr style="text-align:center">
-      <td>Pointed Question: <b>(1)</b> Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. a Devise A Stratagem Strike until the end of the turn; critical success gives +4 Perception; critical failure worsens the target's attitude by 1 step</td>
-    </tr><tr style="text-align:center">
-      <td>Pursue A Lead: Can use 1 min examining a detail to detect a deeper mystery; success opening an investigation and gives +1 on later Perception and skill checks when attempting to answer a central question about it</td>
+      <td>Pursue A Lead: Can use 1 min examining a detail to detect a deeper mystery; success allows opening an investigation and gives +2 on later Perception and skill checks when attempting to answer a central question about it</td>
     </tr><tr style="text-align:center">
       <td>Quick Jump: Can use High Jump and Long Jump as 1 action without an initial Stride</td>
     </tr><tr style="text-align:center">
@@ -361,7 +363,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Share Tincture: <b>(1)</b> Uses Quick Tincture to create an item lasting until the start of the next turn and can pass it to another creature</td>
     </tr><tr style="text-align:center">
-      <td>Solid Lead: Can use 1 action to later switch back to following a chosen lead</td>
+      <td>Skill Stratagem: <b>(1)</b> Refrains from attacking a chosen creature to gain +1 on the next intelligence-, wisdom-, or charisma-based skill or Perception check involving it before the start of the next turn</td>
+    </tr><tr style="text-align:center">
+      <td>Solid Lead: Can use 1 action to later switch back to following a chosen dropped lead</td>
     </tr><tr style="text-align:center">
       <td>Streetwise: Can use Society to Gather Information and to Recall Knowledge in familiar settlements</td>
     </tr><tr style="text-align:center">
@@ -373,13 +377,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Trap Finder: Gives +1 Perception and automatic Searches to find traps and allows disabling traps that require master proficiency in Thievery</td>
     </tr><tr style="text-align:center">
-      <td>Underworld Investigator: +1 Thievery to investigate a case</td>
+      <td>Underworld Investigator: +2 Thievery to investigate a case</td>
     </tr><tr style="text-align:center">
       <td>Unmistakable Lore: Critical failures to Recall Knowledge on a trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information</td>
     </tr><tr style="text-align:center">
       <td>Unusual Treatment: Successful DC 20 check to Treat Wounds reduces a choice of clumsy, enfeebled, or stupefied by 1 once per patient per day</td>
     </tr><tr style="text-align:center">
-      <td>Versatile Vials: Can create 4 versatile vials during daily prep</td>
+      <td>Versatile Vials: Can create 6 versatile vials during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Whodunnit?: Successful Pursue A Lead allows receiving answers to 2 questions about the mystery once per day</td>
     </tr></table>
@@ -437,47 +441,47 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Martial Weapons): Attack Expert (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td>Athletic Strategist: Can use Devise A Strategem with Disarm, Grapple, Reposition, Shove, and Trip, and can use Intelligence for the check</td>
+        <td>Athletic Strategist: Can use Devise A Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check</td>
+      </tr><tr style="text-align:center">
+        <td>Attack Stratagem: <b>(1)</b> Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn; can substitute intelligence for strength or dexterity on the attack if using a sap or an agile, finesse, or ranged weapon</td>
       </tr><tr style="text-align:center">
         <td>Blind-Fight: Can attack concealed foes without a prior check and hidden creatures with a DC 5 flat check/Does not suffer flat-footed vs. hidden foes/Treats adjacent undetected creatures up to level 20 as hidden instead</td>
       </tr><tr style="text-align:center">
-        <td>Certain Stratagem: Failed Devise A Strategem Strike that uses Intelligence inflicts %5d6 / 2 HP</td>
+        <td>Certain Stratagem: Failed Attack Stratagem that uses Intelligence inflicts 5d6 / 2 HP</td>
       </tr><tr style="text-align:center">
-        <td>Connect The Dots: <b>(2)</b> Successful Perception vs. a foe's Deception or Will gives a chosen ally +1 on its next attack on the target before the start of the next turn; critical success gives the ally +1 on all attacks before for the start of the next turn; critical failure inflicts stupefied 1 on self until the end of the next turn</td>
+        <td>Connect The Dots: <b>(2)</b> Successful Perception vs. a foe's Deception or Will gives a chosen ally +2 on its next attack on the target before the start of the next turn; critical success gives the ally +2 on all attacks before for the start of the next turn; critical failure inflicts stupefied 1 on self until the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Devise A Stratagem: <b>(1)</b> First Strike vs. a chosen creature before the start of the next turn uses a pre-rolled value for the attack once per rd; it can substitute intelligence for strength or dexterity if using a sap or an agile, finesse, or non-thrown ranged weapon</td>
-      </tr><tr style="text-align:center">
-        <td>Didactic Strike: Can use Shared Strategem with 10 allies; their Strikes on the target inflict +2d6 HP precision</td>
+        <td>Didactic Strike: Can use Shared Stratagem with 10 allies; each ally's first Strike on the target inflicts +2d6 HP precision</td>
       </tr><tr style="text-align:center">
         <td>Empiricist's Eye: Can use non-auditory Point Out, the target is off-guard to allies until the start of the next turn, and allies can use Blind-Fight effects against it</td>
       </tr><tr style="text-align:center">
-        <td>Exploit Blunder: <b>(R)</b> Takes a Step after the triggering miss by a Devise A Strategem target from the prior turn</td>
+        <td>Exploit Blunder: <b>(R)</b> Takes a Step after the triggering miss by the prior turn's Devise A Stratagem target</td>
       </tr><tr style="text-align:center">
         <td>Foresee Danger: <b>(R)</b> Triggering foe attack targets Perception DC instead of Armor Class</td>
       </tr><tr style="text-align:center">
         <td>Incredible Improvisation: <b>(F)</b> Gives +4 on an untrained skill check once per day</td>
       </tr><tr style="text-align:center">
-        <td>Just As Planned: <b>(F)</b> Devise A Strategem uses the higher of 2 d20 rolls once per hr</td>
+        <td>Just As Planned: <b>(F)</b> Devise A Stratagem uses the higher of 2 d20 rolls once per hr</td>
       </tr><tr style="text-align:center">
-        <td>Known Weaknesses: Critical success on a Recall Knowledge as part of Devise A Strategem gives allies and self +1 on first attack on target before the start of the next turn</td>
+        <td>Known Weaknesses: Critical success on a Recall Knowledge as part of Devise A Stratagem gives self and each ally +1 on their first attack on the target before the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Ongoing Strategy: Non-Devise A Strategy Strike using a qualifying weapon inflcits +{(level+3)//4} HP precision</td>
+        <td>Ongoing Strategy: Successful non-Stratagem attacks that use an Attack Stratagem weapon inflict +5 HP precision</td>
       </tr><tr style="text-align:center">
-        <td>Scalpel's Point: Critical hits on Strategem attacks with piercing or slashing damage inflict +1d6 HP persistent bleed</td>
+        <td>Scalpel's Point: Critical hits on Attack Stratagems that inflict piercing or slashing damage also inflict 1d6 HP persistent bleed</td>
       </tr><tr style="text-align:center">
-        <td>Shared Stratagem: Successful Devise A Stratagem Strike makes the target off-guard to the next attack by a chosen ally before the start of the next turn</td>
+        <td>Shared Stratagem: Successful Attack Stratagem makes the target off-guard to the next attack by a chosen ally until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Strategic Assessment: First successful Stratagem attack gives info on the target's weaknesses, resistances, saves, or immunties</td>
+        <td>Strategic Assessment: Successful Attack Stratagems give info on the target's weaknesses, resistances, saves, or immunities</td>
       </tr><tr style="text-align:center">
-        <td>Strategic Bypass: Successful Strategem Strike ignores resistance 4</td>
+        <td>Strategic Bypass: Successful Attack Stratagem ignores resistance 4</td>
       </tr><tr style="text-align:center">
-        <td>Strategic Strike: Successful Devising A Stratagem Strikes inflict +5d6 HP precision</td>
+        <td>Strategic Strike: Successful Attack Stratagems that use intelligence inflict +5d6 HP precision</td>
       </tr><tr style="text-align:center">
-        <td>Surgical Shock: <b>(1)</b> Successful Medicine vs. Fortitude inflects a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions</td>
+        <td>Surgical Shock: <b>(1)</b> Successful Medicine vs. Fortitude inflicts a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions</td>
       </tr><tr style="text-align:center">
         <td>Suspect Of Opportunity: <b>(R)</b> Uses Person Of Interest against an attacking creature unrelated to any active investigation</td>
       </tr><tr style="text-align:center">
-        <td>Takedown Expert: Clubs gain Devise A Strategem attack bonus/Suffers no penalty for making a Strike nonlethal</td>
+        <td>Takedown Expert: Clubs gain Devise A Stratagem attack bonus/Suffers no penalty for making a Strike nonlethal</td>
       </tr><tr style="text-align:center">
         <td>Trap Finder: +1 Armor Class vs. traps</td>
       </tr><tr style="text-align:center">
@@ -501,13 +505,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Savvy Reflexes: Save Master (Reflex)</i></td>
       </tr><tr style="text-align:center">
-        <td>Defensive Stratagem: Can use Devise A Stratagem to gain +1 vs. all effects caused by a chosen creature, but preventing Striking it, before the start of the next turn</td>
+        <td>Defensive Stratagem: <b>(1)</b> Refrains from attacking a target while gaining +1 vs. all effects caused by it until the start of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Detective's Readiness: +2 saves vs. creatures and effets related to an open investigation, and Clue In gives this bonus to allies</td>
+        <td>Detective's Readiness: +2 saves vs. creatures and effects related to an open investigation, and Clue In gives this bonus to allies</td>
       </tr><tr style="text-align:center">
         <td>Dogged Will: Successes on Will saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Greater Dogged Will: Successes on Will saves are critical successes, critical Will failures are normal failures, and failed Will saves inflict half damage</td>
+        <td>Greater Dogged Will: Successes on Will saves are critical successes, critical failures on Will saves are normal failures, and failed Will saves inflict half damage</td>
       </tr><tr style="text-align:center">
         <td>Savvy Reflexes: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">

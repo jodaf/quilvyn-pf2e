@@ -7602,7 +7602,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Siphon Power':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Can cast a spell from familiar without ising a spell slot once per day"',
+    'Note="Can cast a spell from familiar without using a spell slot once per day"',
   'Split Hex':
     'Action=1 ' +
     'Section=magic ' +
@@ -8591,7 +8591,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Embrace The Pain':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful Athletics check inflects Grapple or Disarm after a foe melee hit during rage"',
+    'Note="Successful Athletics check inflicts Grapple or Disarm after a foe melee hit during rage"',
   'Furious Grab':Pathfinder2E.FEATURES['Furious Grab'],
   "Predator's Pounce":Pathfinder2E.FEATURES["Predator's Pounce"],
   "Spirit's Wrath":
@@ -9080,16 +9080,23 @@ Pathfinder2ERemaster.FEATURES = {
   'Clue In':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} on a Perception or skill check that will help to answer the active investigation question once per 10 min"',
+    'Note="Gives another creature +%{skillNotes.investigationExpertise?2:1} on the triggering Perception or skill check that will help to answer an active investigation question once per 10 min"',
   'Deductive Improvisation':
     'Section=skill ' +
     'Note="Can attempt skill checks that require trained, expert, or master proficiency when untrained, trained, or expert"',
   'Devise A Stratagem':
-    'Action=1 ' +
-    'Section=combat,skill ' +
+    'Section=feature,feature ' +
     'Note=' +
-      '"First Strike vs. a chosen creature before the start of the next turn uses a pre-rolled value for the attack once per rd; it can substitute intelligence for strength or dexterity if using a sap or an agile, finesse, or non-thrown ranged weapon",' +
-      '"Prevents Striking a chosen creature, but gives +1 on the next intelligence-, wisdom-, or charisma-based Perception check involving it, before the start of the next turn once per rd"',
+      '"Has the Attack Stratagem and Skill Stratagem features",' +
+      '"Can use%{features.Defensive Stratagem?\' Defensive Stratagem,\':\'\'} Attack Stratagem or Skill Stratagem once per rd"',
+  'Attack Stratagem':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn; can substitute intelligence for strength or dexterity on the attack if using a sap or an agile, finesse, or ranged weapon"',
+  'Skill Stratagem':
+    'Action=1 ' +
+    'Section=skill ' +
+    'Note="Refrains from attacking a chosen creature to gain +1 on the next intelligence-, wisdom-, or charisma-based skill or Perception check involving it before the start of the next turn"',
   'Dogged Will':
     'Section=save,save ' +
     'Note=' +
@@ -9123,10 +9130,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Successes on Will saves are critical successes, critical Will failures are normal failures, and failed Will saves inflict half damage"',
+      '"Successes on Will saves are critical successes, critical failures on Will saves are normal failures, and failed Will saves inflict half damage"',
   // Greater Weapon Specialization as above
   'Investigator Expertise':
-    'Section=combat,feature ' +
+    'Section=combat,skill ' +
     'Note=' +
       '"Class Expert (Investigator)",' +
       '"Has increased Pursue A Lead effects"',
@@ -9145,13 +9152,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Methodology':'Section=feature Note="1 selection"',
   'On The Case':
     'Section=feature Note="Has the Clue In and Pursue A Lead features"',
+  // TODO 2 active investigations maximum?
   'Pursue A Lead':
     'Section=skill ' +
-    'Note="Can use 1 min examining a detail to detect a deeper mystery; success opening an investigation and gives +%V on later Perception and skill checks when attempting to answer a central question about it"',
+    'Note="Can use 1 min examining a detail to detect a deeper mystery; success allows opening an investigation and gives +%V on later Perception and skill checks when attempting to answer a central question about it"',
   'Pointed Question':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. a Devise A Stratagem Strike until the end of the turn; critical success gives +4 Perception; critical failure worsens the target\'s attitude by 1 step"',
+    'Note="Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. Attack Stratagem until the end of the turn; critical success gives +4 Perception; critical failure worsens the target\'s attitude by 1 step"',
   'Quick Tincture':
     'Action=1 ' +
     'Section=skill ' +
@@ -9164,7 +9172,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Skillful Lessons':'Section=feature Note="+%V Skill Feat"',
   'Strategic Strike':
     'Section=combat ' +
-    'Note="Successful Devising A Stratagem Strikes inflict +%{(level+3)//4}d6 HP precision"',
+    'Note="Successful Attack Stratagems that use intelligence inflict +%{(level+3)//4}d6 HP precision"',
   'Vigilant Senses':'Section=skill Note="Perception Master"',
   // Weapon Expertise as above
   // Weapon Mastery as above
@@ -9174,13 +9182,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Critical failures to Recall Knowledge about an active investigation are normal failures"',
   'Flexible Studies':
-    'Section=skill Note="Can become trained in 1 skill during daily prep"',
+    'Section=skill ' +
+    'Note="Can become temporarily trained in 1 skill during daily prep"',
   'Known Weaknesses':
     'Section=combat ' +
-    'Note="Critical success on a Recall Knowledge as part of Devise A Strategem gives allies and self +1 on first attack on target before the start of the next turn"',
+    'Note="Critical success on a Recall Knowledge as part of Devise A Stratagem gives self and each ally +1 on their first attack on the target before the start of the next turn"',
   'Takedown Expert':
     'Section=combat ' +
-    'Note="Clubs gain Devise A Strategem attack bonus/Suffers no penalty for making a Strike nonlethal"',
+    'Note="Clubs gain Devise A Stratagem attack bonus/Suffers no penalty for making a Strike nonlethal"',
   "That's Odd":
     'Section=skill ' +
     'Note="Automatically notices one unusual detail when first entering a location and can immediately use Pursue A Lead with it"',
@@ -9189,45 +9198,45 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill Trained (Underworld Lore)",' +
-      '"+%{skillNotes.investigatorExpertise?2:1} Thievery to investigate a case"',
+      '"+%{skillNotes.pursueALead} Thievery to investigate a case"',
   'Athletic Strategist':
     'Section=combat ' +
-    'Note="Can use Devise A Strategem with Disarm, Grapple, Reposition, Shove, and Trip, and can use Intelligence for the check"',
+    'Note="Can use Devise A Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check"',
   'Certain Stratagem':
     'Section=combat ' +
-    'Note="Failed Devise A Strategem Strike that uses Intelligence inflicts %%{(level+3)//4}d6 / 2 HP"',
+    'Note="Failed Attack Stratagem that uses Intelligence inflicts %{(level+3)//4}d6 / 2 HP"',
   'Exploit Blunder':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Takes a Step after the triggering miss by a Devise A Strategem target from the prior turn"',
+    'Note="Takes a Step after the triggering miss by the prior turn\'s Devise A Stratagem target"',
   'Person Of Interest':
     'Action=1 ' +
-    'Section=skill ' +
-    'Note="Can Devise A Strategem against a chosen creature unrelated to active investigations for 1 min once per 10 min"',
+    'Section=feature ' +
+    'Note="Can use Devise A Stratagem for 1 min on a chosen creature unrelated to active investigations once per 10 min"',
   'Shared Stratagem':
     'Section=combat ' +
-    'Note="Successful Devise A Stratagem Strike makes the target off-guard to the next attack by a chosen ally before the start of the next turn"',
+    'Note="Successful Attack Stratagem makes the target off-guard to the next attack by a chosen ally until the start of the next turn"',
   'Solid Lead':
     'Section=skill ' +
-    'Note="Can use 1 action to later switch back to following a chosen lead"',
+    'Note="Can use 1 action to later switch back to following a chosen dropped lead"',
   'Alchemical Discoveries':
     'Section=skill ' +
     'Note="Has increased Alchemical Sciences and Versatile Vials effects"',
   "Detective's Readiness":
     'Section=save ' +
-    'Note="+2 saves vs. creatures and effets related to an open investigation, and Clue In gives this bonus to allies"',
+    'Note="+2 saves vs. creatures and effects related to an open investigation, and Clue In gives this bonus to allies"',
   'Lie Detector':
     'Section=skill ' +
-    'Note="+1 Pecreption to Sense Motive and DCs vs. attempts to Lie, or +%{skillNotes.pursueALead+1} when Pursuing A Lead; success gives +1 to the next Deception, Diplomacy, Intimidation, or Performance vs. the target within 1 min"',
+    'Note="+1 Perception to Sense Motive and DCs vs. attempts to Lie, or +%{skillNotes.pursueALead+1} when Pursuing A Lead; success gives +1 to the next Deception, Diplomacy, Intimidation, or Performance vs. the target within 1 min"',
   'Ongoing Investigation':
     'Section=skill ' +
     'Note="Can Investigate at full Speed and use another exploration activity while Investigating"',
   "Scalpel's Point":
     'Section=combat ' +
-    'Note="Critical hits on Strategem attacks with piercing or slashing damage inflict +1d6 HP persistent bleed"',
+    'Note="Critical hits on Attack Stratagems that inflict piercing or slashing damage also inflict 1d6 HP persistent bleed"',
   'Strategic Assessment':
     'Section=combat ' +
-    'Note="First successful Stratagem attack gives info on the target\'s weaknesses, resistances, saves, or immunties"',
+    'Note="Successful Attack Stratagems give info on the target\'s weaknesses, resistances, saves, or immunities"',
   'Connect The Dots':
     'Action=2 ' +
     'Section=combat ' +
@@ -9240,25 +9249,26 @@ Pathfinder2ERemaster.FEATURES = {
   'Clue Them All In':
     'Section=skill Note="Clue In applies to all allies for 1 rd"',
   'Defensive Stratagem':
+    'Action=1 ' +
     'Section=save ' +
-    'Note="Can use Devise A Stratagem to gain +1 vs. all effects caused by a chosen creature, but preventing Striking it, before the start of the next turn"',
+    'Note="Refrains from attacking a target while gaining +1 vs. all effects caused by it until the start of the next turn"',
   'Whodunnit?':
     'Section=skill ' +
     'Note="Successful Pursue A Lead allows receiving answers to 2 questions about the mystery once per day"',
   'Just One More Thing':
     // In description 'Action=1 ' +
     'Section=skill ' +
-    'Note="Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding %{skillNotes.pursueALead} if the check is connected to an ative investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action; the others require the maximum of 1 rd or half the time spent on the failed action"',
+    'Note="Rerolls a normal failure on a Demoralize, Feint, Request, Lie, Gather Information, Make An Impression, or Coerce check, adding %{skillNotes.pursueALead} if the check is connected to an active investigation, once per target per day; rerolling Demoralize, Feint, and Request requires 1 action, and the others require the maximum of 1 rd or half the time spent on the failed action"',
   'Ongoing Strategy':
     'Section=combat ' +
-    'Note="Non-Devise A Strategy Strike using a qualifying weapon inflcits +{(level+3)//4} HP precision"',
+    'Note="Successful non-Stratagem attacks that use an Attack Stratagem weapon inflict +%{(level+3)//4} HP precision"',
   'Suspect Of Opportunity':
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Uses Person Of Interest against an attacking creature unrelated to any active investigation"',
   "Empiricist's Eye":
     'Section=combat ' +
-    'Note="Can use non-auditory Point Out, the target is off-guard to allies until the start of the next turn%{$\'features.Blind-Fight\'?\', and allies can use Blind-Fight effects against it\':\'\'}"',
+    'Note="Can use non-auditory Point Out%{$\'features.Blind-Fight\'?\',\':\' and\'} the target is off-guard to allies until the start of the next turn%{$\'features.Blind-Fight\'?\', and allies can use Blind-Fight effects against it\':\'\'}"',
   'Foresee Danger':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -9266,7 +9276,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Just As Planned':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Devise A Strategem uses the higher of 2 d20 rolls once per hr"',
+    'Note="Devise A Stratagem uses the higher of 2 d20 rolls once per hr"',
   "Make 'Em Sweat":
     'Section=skill ' +
     'Note="Successful Pointed Question inflicts frightened 1, or frightened 2 on a critical success"',
@@ -9279,26 +9289,26 @@ Pathfinder2ERemaster.FEATURES = {
   'Surgical Shock':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Medicine vs. Fortitude inflects a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions"',
+    'Note="Successful Medicine vs. Fortitude inflicts a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions"',
   'Plot The Future':
     'Section=skill ' +
-    'Note="10 min reflection gives a general idea of the liklihood of an event up to 1 week in the future and a suggestion of how to change the liklihood"',
+    'Note="10 min reflection gives a general idea of the likelihood of an event up to 1 week in the future and a suggestion of how to make it more or less likely"',
   // Sense The Unseen as above
   'Strategic Bypass':
     'Section=combat ' +
-    'Note="Successful Strategem Strike ignores resistance %{intelligenceModifier}"',
+    'Note="Successful Attack Stratagem ignores resistance %{intelligenceModifier}"',
   'Didactic Strike':
     'Section=combat ' +
-    'Note="Can use Shared Strategem with 10 allies; their Strikes on the target inflict +2d6 HP precision"',
+    'Note="Can use Shared Stratagem with 10 allies; each ally\'s first Strike on the target inflicts +2d6 HP precision"',
   // Implausible Purchase as above
   // Reconstruct The Scene as above
   'Lead Investigator':
     'Section=skill ' +
-    'Note="1 min briefing gives 4 allies Pursue A Lead bonuses to investigation checks for 1 day"',
+    'Note="1 min briefing gives 4 allies Pursue A Lead bonuses to investigation checks for 1 day or until the Lead is dropped"',
   "Trickster's Ace":Pathfinder2E.FEATURES["Trickster's Ace"],
   "Everyone's A Suspect":
     'Section=skill ' +
-    'Note="1 min interaction gives an automatic Pursue A Lead; may have an unlimited number of these"',
+    'Note="1 min interaction gives an automatic Pursue A Lead with the target; can have an unlimited number of these"',
   'Just The Facts':
     'Section=skill ' +
     'Note="Can make an additional Recall Knowledge each round, knows the result of Recall Knowledge checks, gains +1 level of success on Recall Knowledge checks, and recognizes inaccurate knowledge from self or ally Recall Knowledge checks"',
@@ -9648,7 +9658,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
-      '"Successes on Will saves are critical successes, critical Will failures are normal failures, and failed Will saves inflict half damage"',
+      '"Successes on Will saves are critical successes, critical failures on Will saves are normal failures, and failed Will saves inflict half damage"',
   // Light Armor Expertise as above
   'Major Curse':'Section=magic Note="Can tolerate cursebound severity 3"',
   // Master Spellcaster as above
@@ -10112,7 +10122,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Anoint Ally':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows transfering blood magic effects to a chosen ally for 1 min"',
+    'Note="Allows transferring blood magic effects to a chosen ally for 1 min"',
   'Bleed Out':
     'Action=1 ' +
     'Section=magic ' +
@@ -10362,7 +10372,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Reflex)",' +
-      '"Successes on Reflex saves are critical successes, critical Reflex failures are normal failures, and failed Reflex saves inflict half damage"',
+      '"Successes on Reflex saves are critical successes, critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
   'Battledancer':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -13458,7 +13468,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Monk,Uncommon,Concentrate,Focus,Polymorph ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be exteneded to 30\', nonletal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
+    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be extended to 30\', nonlethal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
   'Clinging Shadows Stance':
     'Level=4 ' +
     'Traits=Monk,Uncommon,Focus,Manipulate,Shadow,Stance ' +
@@ -14117,7 +14127,7 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
   } else if(name == 'Barbarian') {
     rules.defineRule('combatNotes.draconicRage',
       '', '=', '"mental"',
-      'features.Dragon Instinct (Adamantine)', '=', '"blugeoning"',
+      'features.Dragon Instinct (Adamantine)', '=', '"bludgeoning"',
       'features.Dragon Instinct (Conspirator)', '=', '"poison"',
       'features.Dragon Instinct (Diabolic)', '=', '"fire"',
       'features.Dragon Instinct (Empyreal)', '=', '"spirit"',
@@ -14506,7 +14516,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Cobra Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
-      ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venonous'], null
+      ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venomous'], null
     );
     rules.defineRule('weapons.Cobra Fang', 'features.Cobra Stance', '=', '1');
   } else if(name.startsWith('Crossblooded Evolution')) {
