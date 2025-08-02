@@ -1436,7 +1436,7 @@ Pathfinder2E.FEATS = {
       // As per core rules:
       // '"features.Shield Ally && features.The Tenets Of Good || ' +
       //  'levels.Fighter && features.Shield Block"',
-      // However, QuilvyRules validation doesn't support the && operator. All
+      // However, QuilvynRules validation doesn't support the && operator. All
       // fighters receive Shield Block at level 1, so that's redundant, and
       // the core rules defines only The Tenets Of Good, so we drop that.
       '"features.Shield Ally || levels.Fighter"',
@@ -5066,7 +5066,7 @@ Pathfinder2E.FEATURES = {
   'Healing Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent non-cantrip polymorph spell restores 1d6 Hit Poins per spell level"',
+    'Note="Subsequent non-cantrip polymorph spell restores 1d6 Hit Points per spell level"',
   'Overwhelming Energy':
     'Action=1 ' +
     'Section=magic ' +
