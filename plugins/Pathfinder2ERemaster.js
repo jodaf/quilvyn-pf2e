@@ -1047,14 +1047,15 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Oracle Skills",' +
       '"1:Attack Trained (Simple Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
+      '"1:Spell Trained (Divine)",' +
       '"1:Class Trained (Oracle)",' +
       '"1:Oracle Spellcasting","1:Mystery","1:Revelation Spells",' +
       '"1:Oracular Curse","2:Oracle Feats","2:Skill Feats","3:General Feats",' +
       '"3:Signature Spells","3:Skill Increases","7:Expert Spellcaster",' +
-      '"7:Mysterious Resolve","11:Divine Access","11:Major Curse",' +
-      '"11:Oracular Senses","11:Weapon Expertise","13:Light Armor Expertise",' +
-      '"13:Premonition\'s Reflexes","13:Weapon Specialization",' +
-      '"15:Master Spellcaster","17:Extreme Curse",' +
+      '"7:Mysterious Resolve","9:Magical Fortitude","11:Divine Access",' +
+      '"11:Major Curse","11:Oracular Senses","11:Weapon Expertise",' +
+      '"13:Light Armor Expertise","13:Premonition\'s Reflexes",' +
+      '"13:Weapon Specialization","15:Master Spellcaster","17:Extreme Curse",' +
       '"17:Greater Mysterious Resolve","19:Legendary Spellcaster",' +
       '"19:Oracular Clarity" ' +
     'Selectables=' +
@@ -3528,339 +3529,571 @@ Pathfinder2ERemaster.FEATS = {
   'Inexhaustible Countermoves':'Traits=Swashbuckler Require="level >= 20"',
   'Panache Paragon':'Traits=Swashbuckler Require="level >= 20"',
 
-/*
   // Archetype
-  'Alchemist Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Alchemist ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Alchemist == 0"',
-  'Basic Concoction':
-    'Traits=Archetype,Alchemist ' +
-    'Require="level >= 4","features.Alchemist Dedication"',
-  'Quick Alchemy':
-    'Traits=Archetype,Alchemist ' +
-    'Require="level >= 4","features.Alchemist Dedication"',
-  'Advanced Concoction':
-    'Traits=Archetype,Alchemist ' +
-    'Require="level >= 6","features.Basic Concoction"',
-  'Expert Alchemy':
-    'Traits=Archetype,Alchemist ' +
-    'Require="level >= 6","features.Alchemist Dedication","rank.Crafting >= 2"',
-  'Master Alchemy':
-    'Traits=Archetype,Alchemist ' +
-    'Require="level >= 12","features.Expert Alchemy","rank.Crafting >= 3"',
+  // TODO Why adding Bard, etc., to traits?
 
-  'Barbarian Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Barbarian ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"constitution >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Barbarian == 0"',
-  'Barbarian Resiliency':
-    'Traits=Archetype,Barbarian ' +
-    'Require=' +
-      '"level >= 4",' +
-      '"features.Barbarian Dedication",' +
-      '"classHitPoints <= 10"',
-  'Basic Fury':
-    'Traits=Archetype,Barbarian ' +
-    'Require="level >= 4","features.Barbarian Dedication"',
-  'Advanced Fury':
-    'Traits=Archetype,Barbarian Require="level >= 6","features.Basic Fury"',
-  'Instinct Ability':
-    'Traits=Archetype,Barbarian ' +
-    'Require="level >= 6","features.Barbarian Dedication"',
-  "Juggernaut's Fortitude":
-    'Traits=Archetype,Barbarian ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Barbarian Dedication",' +
-      '"rank.Fortitude >= 2"',
-
-  */
   'Bard Dedication':Pathfinder2E.FEATS['Bard Dedication'],
-  /*
+/*
   'Basic Bard Spellcasting':
-    'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
   "Basic Muse's Whispers":
-    'Traits=Archetype,Bard Require="level >= 4","features.Bard Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
   "Advanced Muse's Whispers":
-    'Traits=Archetype,Bard ' +
+    'Traits=Archetype ' +
     'Require="level >= 4","features.Basic Muse\'s Whispers"',
   'Counter Perform':
-    'Traits=Archetype,Bard Require="level >= 6","features.Bard Dedication"',
+    'Traits=Archetype Require="level >= 6","features.Bard Dedication"',
   'Inspirational Performance':
-    'Traits=Archetype,Bard Require="level >= 8","features.Bard Dedication"',
+    'Traits=Archetype Require="level >= 8","features.Bard Dedication"',
   'Occult Breadth':
-    'Traits=Archetype,Bard ' +
+    'Traits=Archetype ' +
     'Require="level >= 8","features.Basic Bard Spellcasting"',
   'Expert Bard Spellcasting':
-    'Traits=Archetype,Bard ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Bard Spellcasting",' +
       '"rank.Occultism >= 3"',
   'Master Bard Spellcasting':
-    'Traits=Archetype,Bard ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Bard Spellcasting",' +
       '"rank.Occultism >= 4"',
-
-  'Champion Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Champion ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"strength >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Champion == 0"',
-  'Basic Devotion':
-    'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication"',
-  'Champion Resiliency':
-    'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication","classHitPoints <= 8"',
-  'Healing Touch':
-    'Traits=Archetype,Champion ' +
-    'Require="level >= 4","features.Champion Dedication"',
-  'Advanced Devotion':
-    'Traits=Archetype,Champion Require="level >= 6","features.Basic Devotion"',
-  "Champion's Reaction":
-    'Traits=Archetype,Champion ' +
-    'Require="level >= 6","features.Champion Dedication"',
-  'Divine Ally':
-    'Traits=Archetype,Champion ' +
-    'Require="level >= 6","features.Champion Dedication"',
-  'Diverse Armor Expert':
-    'Traits=Archetype,Champion ' +
-    'Require=' +
-      '"level >= 14",' +
-      '"rank.Unarmored Defense >= 2 || ' +
-       'rank.Light Armor >= 2 || ' +
-       'rank.Medium Armor >= 2 || ' +
-       'rank.Heavy Armor >= 2"',
-
 */
+
   'Cleric Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Cleric ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Cleric == 0"',
 /*
   'Basic Cleric Spellcasting':
-    'Traits=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
   'Basic Dogma':
-    'Traits=Archetype,Cleric Require="level >= 4","features.Cleric Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
   'Advanced Dogma':
-    'Traits=Archetype,Cleric Require="level >= 6","features.Basic Dogma"',
+    'Traits=Archetype Require="level >= 6","features.Basic Dogma"',
   'Divine Breadth':
-    'Traits=Archetype,Cleric ' +
+    'Traits=Archetype ' +
     'Require="level >= 8","features.Basic Cleric Spellcasting"',
   'Expert Cleric Spellcasting':
-    'Traits=Archetype,Cleric ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Cleric Spellcasting",' +
       '"rank.Religion >= 3"',
   'Master Cleric Spellcasting':
-    'Traits=Archetype,Cleric ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Cleric Spellcasting",' +
       '"rank.Religion >= 4"',
 
   'Druid Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Druid ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Druid == 0"',
   'Basic Druid Spellcasting':
-    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
   'Basic Wilding':
-    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
   'Order Spell':
-    'Traits=Archetype,Druid Require="level >= 4","features.Druid Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
   'Advanced Wilding':
-    'Traits=Archetype,Druid Require="level >= 6","features.Basic Wilding"',
+    'Traits=Archetype Require="level >= 6","features.Basic Wilding"',
   'Primal Breadth':
-    'Traits=Archetype,Druid ' +
+    'Traits=Archetype ' +
     'Require="level >= 8","features.Basic Druid Spellcasting"',
   'Expert Druid Spellcasting':
-    'Traits=Archetype,Druid ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Druid Spellcasting",' +
       '"rank.Nature >= 3"',
   'Master Druid Spellcasting':
-    'Traits=Archetype,Druid ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Expert Druid Spellcasting",' +
       '"rank.Nature >= 4"',
 
   'Fighter Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Fighter ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"strength >= 14 || multitalentedHalfElf",' +
       '"dexterity >= 14 || multitalentedHalfElf",' +
       '"levels.Fighter == 0"',
   'Basic Maneuver':
-    'Traits=Archetype,Fighter ' +
+    'Traits=Archetype ' +
     'Require="level >= 4","features.Fighter Dedication"',
   'Fighter Resiliency':
-    'Traits=Archetype,Fighter ' +
+    'Traits=Archetype ' +
     'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
   'Opportunist':
-    'Traits=Archetype,Fighter ' +
+    'Traits=Archetype ' +
     'Require="level >= 4","features.Fighter Dedication"',
   'Advanced Maneuver':
-    'Traits=Archetype,Fighter Require="level >= 6","features.Basic Maneuver"',
+    'Traits=Archetype Require="level >= 6","features.Basic Maneuver"',
   'Diverse Weapon Expert':
-    'Traits=Archetype,Fighter ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
       '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
 
-  'Monk Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Monk ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfElf",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
-      '"levels.Monk == 0"',
-  'Basic Kata':
-    'Traits=Archetype,Monk Require="level >= 4","feats.Monk Dedication"',
-  'Monk Resiliency':
-    'Traits=Archetype,Monk ' +
-    'Require="level >= 4","feats.Monk Dedication","classHitPoints <= 8"',
-  'Advanced Kata':
-    'Traits=Archetype,Monk Require="level >= 6","feats.Basic Kata"',
-  'Monk Moves':
-    'Traits=Archetype,Monk Require="level >= 8","feats.Monk Dedication"',
-  "Monk's Flurry":
-    'Traits=Archetype,Monk Require="level >= 10","feats.Monk Dedication"',
-  "Perfection's Path (Fortitude)":
-    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
-  "Perfection's Path (Reflex)":
-    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
-  "Perfection's Path (Will)":
-    'Traits=Archetype,Monk Require="level >= 12","rank.Fortitude >= 3"',
-
   'Ranger Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Ranger ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"dexterity >= 14 || multitalentedHalfElf",' +
       '"levels.Ranger == 0"',
   "Basic Hunter's Trick":
-    'Traits=Archetype,Ranger Require="level >= 4","features.Ranger Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Ranger Dedication"',
   'Ranger Resiliency':
-    'Traits=Archetype,Ranger ' +
+    'Traits=Archetype ' +
     'Require="level >= 4","features.Ranger Dedication","classHitPoints <= 8"',
   "Advanced Hunter's Trick":
-    'Traits=Archetype,Ranger ' +
+    'Traits=Archetype ' +
     'Require="level >= 6","features.Basic Hunter\'s Trick"',
   'Master Spotter':
-    'Traits=Archetype,Ranger ' +
+    'Traits=Archetype ' +
     'Require="level >= 12","features.Ranger Dedication","rank.Perception >= 3"',
 
   'Rogue Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Rogue ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"dexterity >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Rogue == 0"',
   'Basic Trickery':
-    'Traits=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
   'Sneak Attacker':
-    'Traits=Archetype,Rogue Require="level >= 4","features.Rogue Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
   'Advanced Trickery':
-    'Traits=Archetype,Rogue Require="level >= 6","features.Basic Trickery"',
+    'Traits=Archetype Require="level >= 6","features.Basic Trickery"',
   'Skill Mastery':
-    'Traits=Archetype,Rogue ' +
+    'Traits=Archetype ' +
     'Require="level >= 8","features.Rogue Dedication","maxSkillRank>=2"',
   'Uncanny Dodge':
-    'Traits=Archetype,Rogue Require="level >= 10","features.Rogue Dedication"',
+    'Traits=Archetype Require="level >= 10","features.Rogue Dedication"',
   'Evasiveness':
-    'Traits=Archetype,Rogue ' +
+    'Traits=Archetype ' +
     'Require="level >= 12","features.Rogue Dedication","rank.Reflex >= 2"',
 
-  'Sorcerer Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Sorcerer ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"charisma >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Sorcerer == 0"',
-  'Basic Sorcerer Spellcasting':
-    'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
-  'Basic Blood Potency':
-    'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
-  'Basic Bloodline Spell':
-    'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 4","features.Sorcerer Dedication"',
-  'Advanced Blood Potency':
-    'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 6","features.Basic Blood Potency"',
-  'Bloodline Breadth':
-    'Traits=Archetype,Sorcerer ' +
-    'Require="level >= 8","features.Basic Sorcerer Spellcasting"',
-  'Expert Sorcerer Spellcasting':
-    'Traits=Archetype,Sorcerer ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Sorcerer Spellcasting",' +
-      '"rank.Arcana >= 3 || ' +
-       'rank.Nature >= 3 || ' +
-       'rank.Occultism >= 3 || ' +
-       'rank.Religion >= 3"',
-  'Master Sorcerer Spellcasting':
-    'Traits=Archetype,Sorcerer ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Master Sorcerer Spellcasting",' +
-      '"rank.Arcana >= 4 || ' +
-       'rank.Nature >= 4 || ' +
-       'rank.Occultism >= 4 || ' +
-       'rank.Religion >= 4"',
-
   'Wizard Dedication':
-    'Traits=Archetype,Dedication,Multiclass,Wizard ' +
+    'Traits=Archetype,Dedication,Multiclass ' +
     'Require=' +
       '"level >= 2",' +
       '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
       '"levels.Wizard == 0"',
   'Arcane School Spell':
-    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
   'Basic Arcana':
-    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
   'Basic Wizard Spellcasting':
-    'Traits=Archetype,Wizard Require="level >= 4","features.Wizard Dedication"',
+    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
   'Advanced Arcana':
-    'Traits=Archetype,Wizard Require="level >= 6","features.Basic Arcana"',
+    'Traits=Archetype Require="level >= 6","features.Basic Arcana"',
   'Arcane Breadth':
-    'Traits=Archetype,Wizard ' +
+    'Traits=Archetype ' +
     'Require="level >= 8","features.Basic Wizard Spellcasting"',
   'Expert Wizard Spellcasting':
-    'Traits=Archetype,Wizard ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
       '"features.Basic Wizard Spellcasting",' +
       '"rank.Arcana >= 3"',
   'Master Wizard Spellcasting':
-    'Traits=Archetype,Wizard ' +
+    'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
       '"features.Basic Wizard Spellcasting",' +
       '"rank.Arcana >= 4"',
 */
+
+  // Core 2
+  'Alchemist Dedication':Pathfinder2E.FEATS['Alchemist Dedication'],
+  'Advanced Alchemy':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Alchemist Dedication"',
+  'Basic Concoction':Pathfinder2E.FEATS['Basic Concoction'],
+  'Advanced Concoction':Pathfinder2E.FEATS['Advanced Concoction'],
+  'Volumous Vials':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Alchemist Dedication",' +
+      '"rank.Crafting >= 2"',
+  'Alchemical Power':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Alchemist Dedication",' +
+      '"rank.Crafting >= 3"',
+
+  'Barbarian Dedication':Pathfinder2E.FEATS['Barbarian Dedication'],
+  'Barbarian Resiliency':Pathfinder2E.FEATS['Barbarian Resiliency'],
+  'Basic Fury':Pathfinder2E.FEATS['Basic Fury'],
+  'Advanced Fury':Pathfinder2E.FEATS['Advanced Fury'],
+  'Instinct Ability':Pathfinder2E.FEATS['Instinct Ability'],
+  "Juggernaut's Fortitude":Pathfinder2E.FEATS["Juggernaut's Fortitude"],
+
+  'Champion Dedication':Pathfinder2E.FEATS['Champion Dedication'],
+  'Basic Devotion':Pathfinder2E.FEATS['Basic Devotion'],
+  'Champion Resiliency':Pathfinder2E.FEATS['Champion Resiliency'],
+  'Devout Magic':Pathfinder2E.FEATS['Healing Touch'],
+  'Advanced Devotion':Pathfinder2E.FEATS['Advanced Devotion'],
+  "Champion's Reaction":Pathfinder2E.FEATS["Champion's Reaction"],
+  'Devout Blessing':Pathfinder2E.FEATS['Divine Ally'],
+
+  'Investigator Dedication':
+    'Traits=Archetype,Dedication,Multiclass ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Investigator == 0"',
+  'Basic Deduction':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Investigator Dedication"',
+  "Investigator's Strategem":
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Investigator Dedication"',
+  'Advanced Deduction':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Basic Deduction"',
+  'Keen Recollectxion':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Investigator Dedication"',
+  'Skill Mastery':
+    Pathfinder2E.FEATS['Skill Mastery']
+    .replaceAll('Rogue', 'Investigator'),
+  'Master Spotter':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Investigator Dedication",' +
+      '"rank.Perception >= 2"',
+
+  'Monk Dedication':Pathfinder2E.FEATS['Monk Dedication'],
+  'Basic Kata':Pathfinder2E.FEATS['Basic Kata'],
+  'Monk Resiliency':Pathfinder2E.FEATS['Monk Resiliency'],
+  'Advanced Kata':Pathfinder2E.FEATS['Advanced Kata'],
+  'Monk Moves':Pathfinder2E.FEATS['Monk Moves'],
+  "Monk's Flurry":Pathfinder2E.FEATS["Monk's Flurry"],
+  "Perfection's Path (Fortitude)":
+    Pathfinder2E.FEATS["Perfection's Path (Fortitude)"],
+  "Perfection's Path (Reflex)":Pathfinder2E.FEATS["Perfection's Path (Reflex)"],
+  "Perfection's Path (Will)":Pathfinder2E.FEATS["Perfection's Path (Will)"],
+
+  'Oracle Dedication':
+    'Traits=Archetype,Dedication,Multiclass ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Oracle == 0"',
+  'Basic Mysteries':
+    'Traits=Archetype Require="level >= 4","features.Oracle Dedication"',
+  'Basic Oracle Spellcasting':
+    'Traits=Archetype Require="level >= 4","features.Oracle Dedication"',
+  'First Revelation':
+    'Traits=Archetype Require="level >= 4","features.Oracle Dedication"',
+  'Advanced Mysteries':
+    'Traits=Archetype Require="level >= 6","features.Basic Mysteries"',
+  'Mysterious Breadth':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Basic Oracle Spellcasting"',
+  'Expert Oracle Spellcasting':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Basic Oracle Spellcasting",' +
+      '"rank.Religion >= 3"',
+  'Master Oracle Spellcasting':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 18",' +
+      '"features.Expert Oracle Spellcasting",' +
+      '"rank.Religion >= 4"',
+
+  'Sorcerer Dedication':Pathfinder2E.FEATS['Sorcerer Dedication'],
+  'Basic Sorcerer Spellcasting':
+    Pathfinder2E.FEATS['Basic Sorcerer Spellcasting'],
+  'Basic Blood Potency':Pathfinder2E.FEATS['Basic Blood Potency'],
+  'Basic Bloodline Spell':Pathfinder2E.FEATS['Basic Bloodline Spell'],
+  'Bloodline Breadth':Pathfinder2E.FEATS['Bloodline Breadth'],
+  'Expert Sorcerer Spellcasting':
+    Pathfinder2E.FEATS['Expert Sorcerer Spellcasting'],
+  'Master Sorcerer Spellcasting':
+    Pathfinder2E.FEATS['Master Sorcerer Spellcasting'],
+
+  'Swashbuckler Dedication':
+    'Traits=Archetype,Dedication,Multiclass ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"charismaModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"dexterityModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Swashbuckler == 0"',
+  'Basic Flair':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Swashbuckler Dedication"',
+  'Finishing Precision':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Swashbuckler Dedication"',
+  'Advanced Flair':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Basic Flair"',
+  "Swashbuckler's Riposte":
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Swashbuckler Dedication"',
+  "Swashbuckler's Speed":
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Swashbuckler Dedication"',
+  'Evasiveness':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Swashbuckler Dedication",' +
+      '"rank.Reflex >= 2"',
+
+  'Acrobat Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","rank.Acrobatics >= 1"',
+  'Contortionist':
+    'Traits=Archetype Require="level >= 4","features.Acrobat Dedication"',
+  'Dodge Away':
+    'Traits=Archetype Require="level >= 6","features.Acrobat Dedication"',
+  'Graceful Leaper':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"features.Acrobat Dedication",' +
+      '"rank.Acrobatics >= 3"',
+  'Tumbling Strike':
+    'Traits=Archetype,Flourish,Move ' +
+    'Require="level >= 8","features.Acrobat Dedication"',
+  'Tumbling Opportunist':
+    'Traits=Archetype,Attack ' +
+    'Require="level >= 10","features.Acrobat Dedication"',
+
+  'Archaeologist Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Society >= 1",' +
+      '"rank.Thievery >= 1"',
+  'Magical Scholastics':
+    'Traits=Archetype Require="level >= 4","features.Archaeologist Dedication"',
+  'Settlement Scholastics':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 4","features.Archaeologist Dedication"',
+  'Scholastic Identification':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Archaeologist Dedication",' +
+      '"rank.Society >= 3"',
+  "Archaeologist's Luck":
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 8","features.Archaeologist Dedication"',
+  'Greater Magical Scholastics':
+    'Traits=Archetype Require="level >= 10","features.Magical Scholastics"',
+
+  'Archer Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  'Quick Shot':
+    'Traits=Archetype Require="level >= 4","features.Archer Dedication"',
+  'Crossbow Terror':
+    'Traits=Archetype Require="level >= 6","features.Archer Dedication"',
+  "Archer's Aim":
+    'Traits=Archetype,Concentrate ' +
+    'Require="level >= 8","features.Archer Dedication"',
+  'Unobstructed Shot':
+    'Traits=Archetype,Flourish ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Archer Dedication",' +
+      '"rank.Athletics >= 2"',
+
+  'Assassin':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Deception >= 1","rank.Stealth >= 1"',
+  'Expert Backstabber':
+    'Traits=Archetype Require="level >= 4","features.Assassin Dedication"',
+  'Surprise Attack':
+    'Traits=Archetype Require="level >= 4","features.Assassin Dedication"',
+  'Angel Of Death':
+    'Traits=Archetype Require="level >= 10","features.Assassin Dedication"',
+  'Assassinate':
+    'Traits=Archetype Require="level >= 12","features.Assassin Dedication"',
+
+  'Bastion Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  'Disarming Block':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Bastion Dedication",' +
+      '"rank.Athletics >= 1"',
+  'Nimble Shield Hand':
+    'Traits=Archetype Require="level >= 6","features.Bastion Dedication"',
+  'Destructive Block':
+    'Traits=Archetype Require="level >= 10","features.Bastion Dedication"',
+  'Shield Salvation':
+    'Traits=Archetype Require="level >= 10","features.Bastion Dedication"',
+
+  'Beastmaster Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","rank.Nature >= 1"',
+  'Additional Companion':
+    'Traits=Archetype Require="level >= 4","features.Beastmaster Dedication"',
+  'Mature Beastmaster Companion':
+    'Traits=Archetype Require="level >= 4","features.Beastmaster Dedication"',
+  "Beastmaster's Trance":
+    'Traits=Archetype Require="level >= 6","features.Beastmaster Dedication"',
+  'Swift Guardian':
+    'Traits=Archetype,Concentrate ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Beastmaster Dedication",' +
+      '"features.Call Companion"',
+  'Incredible Beastmaster Companion':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Mature Beastmaster Companion"',
+  'Beastmaster Bond':
+    'Traits=Archetype,Mental,Primal ' +
+    'Require="level >= 10","features.Beastmaster Dedication"',
+  "Beastmaster's Call":
+    'Traits=Archetype,Auditory,Concentrate,Primal ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Beastmaster Dedication",' +
+      '"features.Call Companion"',
+  'Specialized Beastmaster Companion':
+    'Traits=Archetype ' +
+    'Require="level >= 14","features.Incredible Beastmaster Companion"',
+  // TODO requires multiple companions
+  'Lead The Pack':
+    'Traits=Archetype,Uncommon ' +
+    'Require="level >= 16","features.Beastmaster Companion"',
+
+  'Blessed One Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  'Blessed Sacrifice':
+    'Traits=Archetype Require="level >= 4","features.Blessed One Dedication"',
+  'Blessed Spell':
+    'Traits=Archetype,Concentrate,Spellshape ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Blessed One Dedication",' +
+      '"maxSpellLevel >= 1",' +
+      '"features.Mercy"',
+  'Blessed Denial':
+    'Traits=Archetype Require="level >= 12","features.Blessed One Dedication"',
+
+  'Bounty Hunter Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","rank.Survival >= 1"',
+  'Posse':
+    'Traits=Archetype,Exploration ' +
+    'Require="level >= 4","features.Bounty Hunter Dedication"',
+  'Tools Of The Trade':
+    'Traits=Archetype Require="level >= 4","features.Bounty Hunter Dedication"',
+  'Keep Pace':
+    'Traits=Archetype Require="level >= 6","features.Bounty Hunter Dedication"',
+  'Opportunistic Grapple':
+    'Traits=Archetype Require="level >= 8","features.Bounty Hunter Dedication"',
+
+  'Cavalier Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Nature >= 1 || rank.Society >= 1"',
+  "Cavalier's Banner":
+    'Traits=Archetype,Uncommon,Aura,Emotion,Mental,Visual ' +
+    'Require="level >= 4","features.Cavalier Dedication"',
+  "Cavalier's Charge":
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 4","features.Cavalier Dedication"',
+  'Impressive Mount':
+    'Traits=Archetype Require="level >= 4","features.Cavalier Dedication"',
+  'Quick Mount':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Cavalier Dedication",' +
+      '"rank.Nature >= 2"',
+  'Defend Mount':
+    'Traits=Archetype Require="level >= 6","features.Cavalier Dedication"',
+  'Mounted Shield':
+    'Traits=Archetype Require="level >= 6","features.Cavalier Dedication"',
+  'Incredible Mount':
+    'Traits=Archetype Require="level >= 8","features.Impressive Mount"',
+  'Trampling Charge':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 10","features.Cavalier Dedication"',
+  'Unseat':
+    'Traits=Archetype Require="level >= 10","features.Cavalier Dedication"',
+  'Specialized Mount':
+    'Traits=Archetype Require="level >= 14","features.Incredible Mount"',
+  'Legendary Rider':
+    'Traits=Archetype Require="level >= 20","features.Cavalier Dedication"',
+
+  'Celebrity Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  'Never Tire':
+    'Traits=Archetype Require="level >= 4","features.Celebrity Dedication"',
+  'Mesmerizing Gaze':
+    'Traits=Archetype,Concentrate,Emotion,Mental,Visual ' +
+    'Require="level >= 6","features.Celebrity Dedication"',
+  'Command Attention':
+    'Traits=Archetype,Auditory,Aura,Concentrate,Emotion,Mental,Visual ' +
+    'Require="level >= 10","features.Celebrity Dedication"',
+
+  'Dandy Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","rank.Diplomacy >= 1"',
+  'Distracting Flattery':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 4","features.Dandy Dedication","rank.Deception >= 2"',
+  'Gossip Lore':
+    'Traits=Archetype Require="level >= 4","features.Dandy Dedication"',
+  'Fabricated Connections':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 7","features.Dandy Dedication","rank.Deception >= 3"',
+  'Party Crasher':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 7","features.Dandy Dedication","rank.Society >= 3"',
+
+  'Dual-Weapon Warrior Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2"',
+  'Dual Thrower':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Dual-Weapon Warrior Dedication"',
+  'Dual-Weapon Relaod':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Dual-Weapon Warrior Dedication"',
+  'Flensing Slice':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Dual-Weapon Warrior Dedication"',
+  'Dual-Weapon Blitz':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Dual-Weapon Warrior Dedication"',
+  'Dual Onslaught':
+    'Traits=Archetype ' +
+    'Require="level >= 14","features.Dual-Weapon Warrior Dedication"',
+
+  'Duelist Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Light Armor >= 1",' +
+      '"rank.Simple Weapons >= 1"',
+  "Duelist's Challenge":
+    'Traits=Archetype Require="level >= 4","features.Duelist Dedication"',
+  'Selfless Parry':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Duelist Dedication",' +
+      '"features.Dueling Parry"',
+  'Student Of The Dueling Arts':
+    'Traits=Archetype Require="level >= 12","features.Duelist Dedication"',
 
   // General and Skill
   'Additional Lore (%lore)':
@@ -9585,7 +9818,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Nature)"',
   'Curse Of Ancestral Meddling':
     'Section=combat ' +
-    'Note="Cursebound inflicts clumsy of the same severity"',
+    'Note="Cursebound inflicts clumsy of equal severity"',
   'Curse Of Engulfing Flames':
     'Section=combat,feature ' +
     'Note=' +
@@ -9594,28 +9827,28 @@ Pathfinder2ERemaster.FEATURES = {
   'Curse Of Inclement Headwinds':
     'Section=combat,feature,save ' +
     'Note=' +
-      '"Cursebound 2 and 4 inflicts -2 ranged attacks and -10\' Speed",' +
+      '"Cursebound 2 and 4 inflict -2 ranged attacks and -10\' Speed",' +
       '"Shows aspects of weather",' +
-      '"Cursebound 1 and 3 inflicts weakness 2 and weakness %{5+level} to electricity"',
+      '"Cursebound 1 and 3 inflict weakness 2 and weakness %{5+level} to electricity"',
   'Curse Of Living Death':
     'Section=feature,save ' +
     'Note=' +
       '"Shows aspects of death and decay",' +
-      '"Cursebound 1, 2, 3, and 4 inflicts weakness 2 to vitality and void damage, -1 Fortitude saves, weakness %{5+level} to vitality and void damage, or -2 Fortitude saves"',
+      '"Cursebound 1, 2, 3, and 4 inflict weakness 2 to vitality and void damage, -1 Fortitude saves, weakness %{5+level} to vitality and void damage, and -2 Fortitude saves"',
   'Curse Of Outpouring Life':
     'Section=combat,feature ' +
     'Note=' +
-      '"Regains %{level} * cursebound severity Hit Points from magical healing",' +
+      '"Regains %{level} * cursebound severity fewer Hit Points from magical healing",' +
       '"Presence causes minor healing and vitality effects"',
   'Curse Of The Mortal Warrior':
     'Section=feature,save ' +
     'Note=' +
       '"Smells of steel and blood and appears more muscular than actual",' +
-      '"Cursebound 1, 2, 3, and 4 inflicts weakness 2 to spell damage, -1 saves vs. spells, weakness %{level} to spell damage, and -2 saves vs. spells"',
+      '"Cursebound 1, 2, 3, and 4 inflict weakness 2 to spell damage, -1 saves vs. spells, weakness %{level} to spell damage, and -2 saves vs. spells"',
   "Curse Of The Sky's Call":
     'Section=combat,feature,save ' +
     'Note=' +
-      '"Cursebound inflicts enfeebled of the same severity",' +
+      '"Cursebound inflicts enfeebled of equal severity",' +
       '"Has eyes that glow and hair and clothing that floats",' +
       '"Suffers a penalty vs. forced movement equal to the current cursebound severity"',
   'Curse Of Torrential Knowledge':
@@ -9623,8 +9856,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Cursebound 4 prevents communication and inflicts stupefied 1",' +
       '"Shows effects of overflowing knowledge",' +
-      '"Suffers a penalty to Will saves equal to the cursebound severity",' +
-      '"Suffers a penalty to Perception equal to the cursebound severity"',
+      '"Cursebound inflicts a penalty to Will saves of equal severity",' +
+      '"Cursebound inflicts a penalty to Perception of equal severity"',
   'Flames':
     'Section=feature,magic,skill ' +
     'Note=' +
@@ -9643,6 +9876,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Whispers Of Weakness and Curse Of Torrential Knowledge features",' +
       '"Knows the Brain Drain divine spell",' +
       '"Skill Trained (Occultism; choose 1 from any Lore)"',
+  'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
   'Tempest':
     'Section=feature,magic,skill ' +
     'Note=' +
@@ -9666,14 +9900,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Master (Will)",' +
-      '"Success on Will saves are critical successes"',
+      '"Successes on Will saves are critical successes"',
   'Mystery':'Section=feature Note="1 selection"',
   'Ocular Clarity':'Section=magic Note="Knows 2 10th-level divine spells"',
   'Oracular Curse':'Section=feature Note="Suffers from a mystery-linked curse"',
   'Oracular Senses':'Section=skill Note="Perception Expert"',
   'Oracle Feats':'Section=feature Note="%V selections"',
   'Oracle Skills':
-    'Section=skill Note="Skill Trained(Religion; Choose %V from any)"',
+    'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Oracle Spellcasting':
     'Section=magic Note="Can learn spells from the divine tradition"',
   "Premonition's Reflexes":'Section=save Note="Save Expert (Reflex)"',
@@ -9689,143 +9923,143 @@ Pathfinder2ERemaster.FEATURES = {
   'Glean Lore':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Religion check gives accurate info or a clue about a desired topic on critical success, one true and one false bit of info on success, incorrect info on failure, and two bits of false info on critical failure"',
+    'Note="Successful Religion check gives one true and one false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives one or two pieces of incorrect info or misleading clues"',
   'Nudge The Scales':
-    'Action=1 ' +
+    // in note 'Action=1 ' +
     'Section=magic,magic ' +
     'Note=' +
-      '"R30\' Target regains %{level*2+2} Hit Points",' +
-      '"May gain void healing effects during daily prep"',
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' R30\' Target regains %{level*2+2} Hit Points",' +
+      '"Can choose during daily prep to be healed by vitality healing or void healing"',
   'Oracular Warning':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="R20\' Gives allies +2 initiative, or +3 or +4 initiative with if cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min at the start of initiative"',
+    'Note="R20\' Gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min at the start of initiative"',
   // Reach Spell as above
   'Whispers Of Weakness':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R60\' Reveals target weakness and its lowest saving throw and gives self +2 to next attack before the end of the turn once per target per day"',
+    'Note="R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
   // Widen Spell as above
   // Cantrip Expansion as above
   'Divine Aegis':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Gives self -1 saves vs. divine magical effects and +1 vs. non-divine until the start of the next turn"',
+    'Note="Gives self +1 vs. non-divine magical effects and -1 vs. divine effects until the start of the next turn"',
   'Domain Acumen (Air)':
     Pathfinder2E.FEATURES['Domain Initiate (Air)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Ambition)':
     Pathfinder2E.FEATURES['Domain Initiate (Ambition)']
-    .replace(' and 1 Focus Point', '')
+    .replace(/\/[^"]*/, '')
     .replace('Blind', 'Ignite'),
   'Domain Acumen (Cities)':
     Pathfinder2E.FEATURES['Domain Initiate (Cities)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Confidence)':
     Pathfinder2E.FEATURES['Domain Initiate (Confidence)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Creation)':
     Pathfinder2E.FEATURES['Domain Initiate (Creation)']
-    .replace(' and 1 Focus Point', '')
+    .replace(/\/[^"]*/, '')
     .replace('Splash Of Art', 'Creative Splash'),
   'Domain Acumen (Darkness)':
     Pathfinder2E.FEATURES['Domain Initiate (Darkness)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Death)':
     Pathfinder2E.FEATURES['Domain Initiate (Death)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Destruction)':
     Pathfinder2E.FEATURES['Domain Initiate (Destruction)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Dreams)':
     Pathfinder2E.FEATURES['Domain Initiate (Dreams)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Earth)':
     Pathfinder2E.FEATURES['Domain Initiate (Earth)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Family)':
     Pathfinder2E.FEATURES['Domain Initiate (Family)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Fate)':
     Pathfinder2E.FEATURES['Domain Initiate (Fate)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Fire)':
     Pathfinder2E.FEATURES['Domain Initiate (Fire)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Freedom)':
     Pathfinder2E.FEATURES['Domain Initiate (Freedom)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Healing)':
     Pathfinder2E.FEATURES['Domain Initiate (Healing)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Indulgence)':
     Pathfinder2E.FEATURES['Domain Initiate (Indulgence)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Luck)':
     Pathfinder2E.FEATURES['Domain Initiate (Luck)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Magic)':
     Pathfinder2E.FEATURES['Domain Initiate (Magic)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Might)':
     Pathfinder2E.FEATURES['Domain Initiate (Might)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Moon)':
     Pathfinder2E.FEATURES['Domain Initiate (Moon)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Nature)':
     Pathfinder2E.FEATURES['Domain Initiate (Nature)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Nightmares)':
     Pathfinder2E.FEATURES['Domain Initiate (Nightmares)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Pain)':
     Pathfinder2E.FEATURES['Domain Initiate (Pain)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Passion)':
     Pathfinder2E.FEATURES['Domain Initiate (Passion)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Perfection)':
     Pathfinder2E.FEATURES['Domain Initiate (Perfection)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Protection)':
     Pathfinder2E.FEATURES['Domain Initiate (Protection)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Secrecy)':
     Pathfinder2E.FEATURES['Domain Initiate (Secrecy)']
-    .replace(' and 1 Focus Point', '')
+    .replace(/\/[^"]*/, '')
     .replace('Forced', 'Whispering'),
   'Domain Acumen (Sun)':
     Pathfinder2E.FEATURES['Domain Initiate (Sun)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Travel)':
     Pathfinder2E.FEATURES['Domain Initiate (Travel)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Trickery)':
     Pathfinder2E.FEATURES['Domain Initiate (Trickery)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Truth)':
     Pathfinder2E.FEATURES['Domain Initiate (Truth)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Tyranny)':
     Pathfinder2E.FEATURES['Domain Initiate (Tyranny)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Undeath)':
     Pathfinder2E.FEATURES['Domain Initiate (Undeath)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Water)':
     Pathfinder2E.FEATURES['Domain Initiate (Water)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Wealth)':
     Pathfinder2E.FEATURES['Domain Initiate (Wealth)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Domain Acumen (Zeal)':
     Pathfinder2E.FEATURES['Domain Initiate (Zeal)']
-    .replace(' and 1 Focus Point', ''),
+    .replace(/\/[^"]*/, ''),
   'Meddling Futures':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Randomly gives self an additional Strike, Perception check or skill action, spell cast, or move action, with a bonus based on cursebound level"',
+    'Note="Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
     'Action=Free ' +
@@ -9834,7 +10068,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Thousand Visions':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check and does not suffer off-guard from hidden creatures for 1 min"',
+    'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
   'Advanced Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Defense divine spell"',
   'Advanced Revelation (Battle)':
@@ -9851,18 +10085,19 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Access Lore divine spell"',
   'Advanced Revelation (Tempest)':
     'Section=magic Note="Knows the Thunderburst divine spell"',
-  'Gifted Power':'Section=magic Note="+1 rank %V spell slot (mystery spell)"',
+  'Gifted Power':
+    'Section=magic Note="+1 rank %V spell slot for a mystery granted spell"',
   'Spiritual Sense':
     'Section=skill ' +
-    'Note="Makes an automatic check to find haunts while exploring, and can notice spirits within 30\' that are within objects up to 5\'"',
+    'Note="Makes an automatic check to find spirit creatures while exploring, and can notice spirits within 30\' that are up to 5\' deep within objects"',
   // Steady Spellcasting as above
   'Debilitating Dichotomy':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="R30\' Inflicts %{((level//2)-1)*3} HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure inflicts stunned 1)"',
+    'Note="R30\' Inflicts %{((level//2)-1)*3}d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)"',
   'Read Disaster':
     'Section=magic ' +
-    'Note="%{rank.Religion>=5?1:10} min contemplation reveals whether the results of a proposed action up to 30 min in the future will be generally bad"',
+    'Note="%{rank.Religion>=4?1:10} min contemplation reveals whether the results of a proposed action up to 30 min in the future will be generally bad"',
   'Surging Might':
     'Action=1 ' +
     'Section=magic ' +
@@ -9874,7 +10109,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Roll The Bones Of Fate':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R30\' Randomly: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous, or forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd once per 10 min"',
+    'Note="R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
   'The Dead Walk':
     'Action=2 ' +
     'Section=magic ' +
@@ -9882,7 +10117,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Trial By Skyfire':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 gives 4d6 HP in a 15\' emanation) each turn for 1 min"',
+    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain supresses the effects for 1 rd"',
   'Waters Of Creation':
     'Action=2 ' +
     'Section=magic ' +
@@ -13315,145 +13550,145 @@ Pathfinder2ERemaster.SPELLS = {
 
   'Ancestral Touch':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Emotion,Fear,Focus,Manipulate,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Ancestral Defense':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Focus,Fortune,Manipulate,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="TODO"',
+  'Ancestral Form':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Weapon Trance':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
-    'Cast=2 ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Battlefield Persistence':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="TODO"',
+  'Revel In Retribution':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=6 ' +
     'Description="TODO"',
   'Soul Siphon':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Focus,Manipulate,Void ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Armor Of Bones':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Claim Undead':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Spray Of Stars':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Interstellar Void':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Cold,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Moonlight Bridge':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Incendiary Aura':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Whirling Flames':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Fire,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Flaming Fusillade':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Life Link':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Focus,Healing,Manipulate,Vitality ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Delay Affliction':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Manipulate,Vitality ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Life-Giving Form':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Light,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Brain Drain':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Access Lore':
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Dread Secret':
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Emotion,Fear,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Tempest Touch':
     'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Traits=Oracle,Uncommon,Cold,Focus,Manipulate,Water ' +
     'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Ancestral Defense':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Battlefield Persistence':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Armor Of Bones':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Interstellar Void':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Whirling Flames':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Delay Affliction':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Access Lore':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
+    'Cast=1 ' +
     'Description="TODO"',
   'Thunderburst':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Ancestral Form':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Revel In Retribution':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Claim Undead':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Moonlight Bridge':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Flaming Fusillade':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Life-Giving Form':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
-    'Traditions=Divine ' +
-    'Cast=2 ' +
-    'Description="TODO"',
-  'Dread Secret':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Level=3 ' +
+    'Traits=Oracle,Uncommon,Air,Concentrate,Focus,Manipulate,Sonic ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
   'Tempest Form':
-    'Level=1 ' +
-    'Traits=Concentrate,Manipulate,Water ' +
+    'Level=6 ' +
+    'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Polymorph ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
@@ -14275,8 +14510,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('skillNotes.oracleSkills', 'intelligenceModifier', '=', '3 + source');
-    rules.defineRule
-      ('spellSlots.D10', 'magicNotes.oracularProvidence', '+', '1');
+    rules.defineRule('spellSlots.D10',
+      'magicNotes.oracularClarity', '=', 'null', // italics
+      'magicNotes.oracularProvidence', '+', '1'
+    );
   } else if(name == 'Ranger') {
     // Easiest way to deal with legacy rules that depend on Wild Stride
     rules.defineRule
@@ -14327,7 +14564,6 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source + 3');
     rules.defineRule
       ('spellSlots.P10', "magicNotes.patron'sGift", '=', 'null'); // italics
-  } else if(name == 'Wizard') {
   }
 };
 
@@ -14415,6 +14651,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
+  } else if(name == 'Advanced Revelation') {
+    // TODO Homebrew mysteries
+    ['Ancestors', 'Battle', 'Bones', 'Cosmos', 'Flames', 'Life', 'Lore',
+     'Tempest'].forEach(m => {
+      rules.defineRule('features.Advanced Revelation (' + m + ')',
+        'features.Advanced Revelation', '?', null,
+        'features.' + m, '=', '1'
+      );
+    });
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
   } else if(name.startsWith('Bestial Manifestation')) {
@@ -14632,7 +14877,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Gifted Power') {
     [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(l => {
-      rules.defineRule('magicNotes.giftedPower', 'spellSlots.D' + l, '^', l);
+      rules.defineRule('magicNotes.giftedPower', 'spellSlots.D' + l, '^=', l);
       rules.defineRule('spellSlots.D' + l,
         'magicNotes.giftedPower', '+', 'source==' + l + ' ? 1 : null'
       );

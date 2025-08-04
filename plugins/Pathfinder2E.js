@@ -2673,7 +2673,7 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
-      '"features.Master Sorcerer Spellcasting",' +
+      '"features.Expert Sorcerer Spellcasting",' +
       '"rank.Arcana >= 4 || ' +
        'rank.Nature >= 4 || ' +
        'rank.Occultism >= 4 || ' +
@@ -14493,7 +14493,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       level=='Basic' ? {'1':0, '2':6, '3':8} :
       level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
-      (QuilvynUtils.getAttrValue(Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
     if(c == 'Sorcerer') {
@@ -15516,8 +15516,9 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Hex', 'Holy', 'Manipulate', 'Metal', 'Ranger', 'Sanctified', 'Spellshape',
-  'Spirit', 'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void', 'Witch', 'Wood'
+  'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle', 'Ranger', 'Sanctified',
+  'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void',
+  'Witch', 'Wood'
 ];
 
 /*
