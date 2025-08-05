@@ -13,9 +13,10 @@ var attributes = {
   "ancestryFeats.Cooperative Soul":1, "ancestryFeats.Group Aid":1, "ancestryFeats.Haughty Obstinacy":1, 
   "ancestryFeats.Unconventional Weaponry (Bastard Sword)":1, "armor":"Explorer's Clothing", "background":"Astrologer", "class":"Oracle", 
   "classFeats.Advanced Revelation":1, "classFeats.Bespell Strikes":1, "classFeats.Blaze Of Revelation":1, 
-  "classFeats.Cantrip Expansion":1, "classFeats.Conduit Of Void and Vitality":1, 
+  "classFeats.Cantrip Expansion":1, "classFeats.Conduit Of Void And Vitality":1, 
   "classFeats.Debilitating Dichotomy":1, "classFeats.Diverse Mystery":1, "classFeats.Divine Aegis":1, 
-  "classFeats.Divine Effusion":1, "classFeats.Domain Acumen":1, "classFeats.Domain Fluency":1, 
+  "classFeats.Divine Effusion":1, "classFeats.Domain Acumen":1, "classFeats.Domain Acumen (Darkness)":1, 
+  "classFeats.Domain Fluency":1, "classFeats.Domain Fluency (Darkness)":1, 
   "classFeats.Epiphany At The Crossroads":1, "classFeats.Forestall Curse":1, "classFeats.Foretell Harm":1, 
   "classFeats.Gifted Power":1, "classFeats.Glean Lore":1, "classFeats.Greater Revelation":1, 
   "classFeats.Knowledge Of Shapes":1, "classFeats.Lighter Than Air":1, "classFeats.Magic Sense":1, 
@@ -39,11 +40,14 @@ var attributes = {
   "selectableFeatures.Oracle - Ancestors":1, "selectableFeatures.Oracle - Battle":1, 
   "selectableFeatures.Oracle - Bones":1, "selectableFeatures.Oracle - Cosmos":1, 
   "selectableFeatures.Oracle - Flames":1, "selectableFeatures.Oracle - Life":1, "selectableFeatures.Oracle - Lore":1, 
-  "selectableFeatures.Oracle - Tempest":1, "shield":"Steel", "skillIncreases.Astrology Lore":1, 
-  "skillIncreases.Baking Lore":1, "skillIncreases.Dwarven Lore":1, "skillIncreases.Gladitorial Lore":1, 
-  "skillIncreases.Kholo Lore":1, "skillIncreases.Lizardfolk Lore":1, "skillIncreases.Occultism":1, 
-  "skillIncreases.Pathfinder Society Lore":1, "skillIncreases.Sailing Lore":1, "skillIncreases.Scouting Lore":1, 
-  "skillIncreases.Scribing Lore":1, "weapons.Club":1, "weapons.Crossbow":1, "weapons.Gauntlet":1
+  "selectableFeatures.Oracle - Tempest":1, "shield":"Steel", "skillIncreases.Arctic Lore":1, 
+  "skillIncreases.Astrology Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Baking Lore":1, 
+  "skillIncreases.Cooking Lore":1, "skillIncreases.Demon Lore":1, "skillIncreases.Dwarven Lore":1, 
+  "skillIncreases.Engineering Lore":1, "skillIncreases.Gladitorial Lore":1, "skillIncreases.Goblin Lore":1, 
+  "skillIncreases.Hellknights Lore":1, "skillIncreases.Kholo Lore":1, "skillIncreases.Lizardfolk Lore":2, 
+  "skillIncreases.Occultism":1, "skillIncreases.Pathfinder Society Lore":1, "skillIncreases.Sailing Lore":1, 
+  "skillIncreases.Scouting Lore":1, "skillIncreases.Scribing Lore":1, "skillIncreases.Sky Lore":1, 
+  "weapons.Club":1, "weapons.Crossbow":1, "weapons.Gauntlet":1
 };
   </script>
 </head>
@@ -82,7 +86,13 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Attribute Notes</b>: <i>Attribute Boosts: Attribute Boost (Choose 20 from any)</i></td>
+    <td><b>Attribute Notes</b>:     <table id="AbilityNotes" style="width:100%">
+    <tr style="text-align:center">
+      <td><i>Attribute Boosts: Attribute Boost (Choose 20 from any)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Curse Of Inclement Headwinds: Cursebound 4 inflicts -10' Speed</td>
+    </tr></table>
+</td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -99,8 +109,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: A Home In Every Port; Additional Lore (Butchering Lore); Additional Lore (Demon Lore); Adopted Ancestry (Tripkee); Advanced Revelation; Bespell Strikes; Blaze Of Revelation; Cantrip Expansion; Clever Improviser; Conduit Of Void and Vitality; Cooperative Soul; Debilitating Dichotomy; Deceptive Worship; Diverse Mystery; Divine Aegis; Divine Effusion; Dubious Knowledge; Epiphany At The Crossroads; Experienced Professional; Forestall Curse; Foretell Harm; Gifted Power; Glean Lore; Greater Revelation; Group Aid; Haughty Obstinacy; Knowledge Of Shapes; Legendary Professional; Lighter Than Air; Magic Sense; Meddling Futures; Mysterious Repertoire; Mystery Conduit; Nudge The Scales; Oracular Providence; Oracular Warning; Paradoxical Mystery; Pet; Portentous Spell; Quickened Casting; Reach Spell; Read Disaster; Revelation's Focus; Roll The Bones Of Fate; Root Magic; Schooled In Secrets; Skill Training (Heaven Lore); Skill Training (Midwifery Lore); Skill Training (Thievery); Spiritual Sense; Steady Spellcasting; Surging Might; The Dead Walk; Thousand Visions; Trial By Skyfire; Unconventional Weaponry (Bastard Sword); Unmistakable Lore; Water Walker; Waters Of Creation; Whispers Of Weakness; Widen Spell</td>
-        <td><b>Oracle Features</b>: Ancestors; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Battle; Bones; Class Trained (Oracle); Cosmos; Defense Trained (Light Armor; Unarmored Defense); Divine Access; Expert Spellcaster; Extreme Curse; Flames; General Feats; Greater Mysterious Resolve; Legendary Spellcaster; Life; Light Armor Expertise; Lore; Major Curse; Master Spellcaster; Mysterious Resolve; Mystery; Oracle Feats; Oracle Skills; Oracle Spellcasting; Oracular Clarity; Oracular Curse; Oracular Senses; Perception Trained; Premonition's Reflexes; Revelation Spells; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Tempest; Weapon Expertise; Weapon Specialization</td>
+        <td><b>Feats</b>: A Home In Every Port; Additional Lore (Butchering Lore); Additional Lore (Demon Lore); Adopted Ancestry (Tripkee); Advanced Revelation; Bespell Strikes; Blaze Of Revelation; Cantrip Expansion; Clever Improviser; Conduit Of Void And Vitality; Cooperative Soul; Debilitating Dichotomy; Deceptive Worship; Diverse Mystery; Divine Aegis; Divine Effusion; Domain Acumen (Darkness); Domain Fluency (Darkness); Dubious Knowledge; Epiphany At The Crossroads; Experienced Professional; Forestall Curse; Foretell Harm; Gifted Power; Glean Lore; Greater Revelation; Group Aid; Haughty Obstinacy; Knowledge Of Shapes; Legendary Professional; Lighter Than Air; Magic Sense; Meddling Futures; Mysterious Repertoire; Mystery Conduit; Nudge The Scales; Oracular Providence; Oracular Warning; Paradoxical Mystery; Pet; Portentous Spell; Quickened Casting; Reach Spell; Read Disaster; Revelation's Focus; Roll The Bones Of Fate; Root Magic; Schooled In Secrets; Skill Training (Heaven Lore); Skill Training (Midwifery Lore); Skill Training (Thievery); Spiritual Sense; Steady Spellcasting; Surging Might; The Dead Walk; Thousand Visions; Trial By Skyfire; Unconventional Weaponry (Bastard Sword); Unmistakable Lore; Water Walker; Waters Of Creation; Whispers Of Weakness; Widen Spell</td>
+        <td><b>Oracle Features</b>: Ancestors; Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Battle; Bones; Class Trained (Oracle); Cosmos; Defense Trained (Light Armor; Unarmored Defense); Divine Access; Expert Spellcaster; Extreme Curse; Flames; General Feats; Greater Mysterious Resolve; Legendary Spellcaster; Life; Light Armor Expertise; Lore; Magical Fortitude; Major Curse; Master Spellcaster; Mysterious Resolve; Mystery; Oracle Feats; Oracle Skills; Oracle Spellcasting; Oracular Clarity; Oracular Curse; Oracular Senses; Perception Trained; Premonition's Reflexes; Revelation Spells; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Divine); Tempest; Weapon Expertise; Weapon Specialization</td>
         <td><b>Astrologer Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Oddity Identification; Skill Trained (Occultism; Astrology Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
       </tr></table>
@@ -156,7 +166,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Oracular Curse: Suffers from a mystery-linked curse</td>
       </tr><tr style="text-align:center">
-        <td>Oracular Warning: <b>(F)</b> R20' Gives allies +2 initiative, or +3 or +4 initiative with if cursebound 2 or 3, and 10 temporary Hit Points for 1 min at the start of initiative</td>
+        <td>Oracular Warning: <b>(F)</b> R20' Gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and 10 temporary Hit Points for 1 min at the start of initiative</td>
       </tr><tr style="text-align:center">
         <td>Pet: Has a Tiny animal minion with the same level, modifiers, and AC as self, 100 Hit Points, low-light vision, 25' Speed, and creature-specific abilities</td>
       </tr></table>
@@ -173,42 +183,50 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +27 (dexterity; trained)</td>
       <td>Dwarven Lore: +26 (intelligence; trained)</td>
-      <td>Pathfinder Society Lore: +26 (intelligence; trained)</td>
+      <td>Occultism: +28 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +24 (intelligence; untrained)</td>
+      <td>Engineering Lore: +26 (intelligence; trained)</td>
+      <td>Pathfinder Society Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
+      <td>Arctic Lore: +26 (intelligence; trained)</td>
       <td>Gladitorial Lore: +26 (intelligence; trained)</td>
       <td>Performance: +24 (charisma; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Astrology Lore: +28 (intelligence; expert)</td>
-      <td>Heaven Lore: +26 (intelligence; trained)</td>
+      <td>Goblin Lore: +26 (intelligence; trained)</td>
       <td>Religion: +26 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +26 (strength; trained)</td>
-      <td>Intimidation: +24 (charisma; untrained)</td>
+      <td>Athletics: +28 (strength; expert)</td>
+      <td>Heaven Lore: +26 (intelligence; trained)</td>
       <td>Sailing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Baking Lore: +26 (intelligence; trained)</td>
-      <td>Kholo Lore: +26 (intelligence; trained)</td>
+      <td>Hellknights Lore: +26 (intelligence; trained)</td>
       <td>Scouting Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Butchering Lore: +32 (intelligence; legendary)</td>
-      <td>Lizardfolk Lore: +26 (intelligence; trained)</td>
+      <td>Intimidation: +24 (charisma; untrained)</td>
       <td>Scribing Lore: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
+      <td>Cooking Lore: +26 (intelligence; trained)</td>
+      <td>Kholo Lore: +26 (intelligence; trained)</td>
+      <td>Sky Lore: +26 (intelligence; trained)</td>
+    </tr><tr style="text-align:left">
       <td>Crafting: +24 (intelligence; untrained)</td>
-      <td>Medicine: +26 (wisdom; trained)</td>
+      <td>Lizardfolk Lore: +28 (intelligence; expert)</td>
       <td>Society: +26 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Deception: +24 (charisma; untrained)</td>
-      <td>Midwifery Lore: +26 (intelligence; trained)</td>
+      <td>Medicine: +26 (wisdom; trained)</td>
       <td>Stealth: +25 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Demon Lore: +32 (intelligence; legendary)</td>
-      <td>Nature: +26 (wisdom; trained)</td>
+      <td>Demon Lore: +34 (intelligence; %1)</td>
+      <td>Midwifery Lore: +26 (intelligence; trained)</td>
       <td>Survival: +24 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Diplomacy: +24 (charisma; untrained)</td>
-      <td>Occultism: +28 (intelligence; expert)</td>
+      <td>Nature: +26 (wisdom; trained)</td>
       <td>Thievery: +27 (dexterity; trained)</td>
     </tr></table>
 </td>
@@ -239,7 +257,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Lore: Skill Trained (Occultism; choose 1 from any Lore)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Oracle Skills: Skill Trained(Religion; Choose 7 from any)</i></td>
+      <td><i>Oracle Skills: Skill Trained (Religion; Choose 7 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Oracular Senses: Perception Expert</i></td>
     </tr><tr style="text-align:center">
@@ -261,13 +279,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cooperative Soul: Failures and critical failures to Aid with expert skills are successes</td>
     </tr><tr style="text-align:center">
-      <td>Curse Of Torrential Knowledge: Suffers a penalty to Perception equal to the cursebound severity</td>
+      <td>Curse Of Torrential Knowledge: Cursebound inflicts a penalty to Perception of equal severity</td>
     </tr><tr style="text-align:center">
       <td>Dubious Knowledge: Failure on a Recall Knowledge check yields a mix of true and false information</td>
     </tr><tr style="text-align:center">
       <td>Experienced Professional: Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income</td>
     </tr><tr style="text-align:center">
-      <td>Glean Lore: <b>(1)</b> Religion check gives accurate info or a clue about a desired topic on critical success, one true and one false bit of info on success, incorrect info on failure, and two bits of false info on critical failure</td>
+      <td>Glean Lore: <b>(1)</b> Successful Religion check gives one true and one false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives one or two pieces of incorrect info or misleading clues</td>
     </tr><tr style="text-align:center">
       <td>Group Aid: <b>(F)</b> After Aiding an ally, Aids another on the same skill</td>
     </tr><tr style="text-align:center">
@@ -277,9 +295,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Schooled In Secrets: Can use Occultism to Gather Information about secret societies and to Impersonate a member</td>
     </tr><tr style="text-align:center">
-      <td>Spiritual Sense: Makes an automatic check to find haunts while exploring, and can notice spirits within 30' that are within objects up to 5'</td>
+      <td>Spiritual Sense: Makes an automatic check to find spirit creatures while exploring, and can notice spirits within 30' that are up to 5' deep within objects</td>
     </tr><tr style="text-align:center">
-      <td>Thousand Visions: <b>(F)</b> R30' Can target concealed or hidden creatures with no flat check or a DC 5 flat check and does not suffer off-guard from hidden creatures for 1 min</td>
+      <td>Thousand Visions: <b>(F)</b> R30' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30' become imprecise, for 1 min</td>
     </tr><tr style="text-align:center">
       <td>Unmistakable Lore: Critical failures to Recall Knowledge on a trained Lore are normal failures and critical successes on a Lore with master proficiency provide additional information</td>
     </tr></table>
@@ -323,19 +341,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Expertise: Attack Expert (Simple Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Ancestral Meddling: Cursebound inflicts clumsy of the same severity</td>
+        <td>Curse Of Ancestral Meddling: Cursebound inflicts clumsy of equal severity</td>
       </tr><tr style="text-align:center">
         <td>Curse Of Engulfing Flames: Cursebound inflicts persistent fire damage of equal severity</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Inclement Headwinds: Cursebound 2 and 4 inflicts -2 ranged attacks and -10' Speed</td>
+        <td>Curse Of Inclement Headwinds: Cursebound 2 inflicts -2 ranged attacks</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Outpouring Life: Regains 20 * cursebound severity Hit Points from magical healing</td>
+        <td>Curse Of Outpouring Life: Regains 20 * cursebound severity fewer Hit Points from magical healing</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of The Sky's Call: Cursebound inflicts enfeebled of the same severity</td>
+        <td>Curse Of The Sky's Call: Cursebound inflicts enfeebled of equal severity</td>
       </tr><tr style="text-align:center">
         <td>Curse Of Torrential Knowledge: Cursebound 4 prevents communication and inflicts stupefied 1</td>
       </tr><tr style="text-align:center">
-        <td>Debilitating Dichotomy: <b>(2)</b> R30' Inflicts 27 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure inflicts stunned 1)</td>
+        <td>Debilitating Dichotomy: <b>(2)</b> R30' Inflicts 27d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)</td>
       </tr><tr style="text-align:center">
         <td>Forestall Curse: <b>(F)</b> Subsequent cursebound ability use does not increase cursebound severity once per day</td>
       </tr><tr style="text-align:center">
@@ -347,33 +365,35 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td>    <table id="SavePart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Save</b>: Fortitude: +25 (constitution; trained); Reflex: +29 (dexterity; expert); Will: +32 (wisdom; legendary)</td>
+      <td><b>Save</b>: Fortitude: +27 (constitution; expert); Reflex: +29 (dexterity; expert); Will: +32 (wisdom; legendary)</td>
     </tr><tr style="text-align:center">
       <td><b>Save Notes</b>:       <table id="SaveNotes" style="width:100%">
       <tr style="text-align:center">
         <td><i>Greater Mysterious Resolve: Save Legendary (Will)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Magical Fortitude: Save Expert (Fortitude)</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Mysterious Resolve: Save Master (Will)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Premonition's Reflexes: Save Expert (Reflex)</i></td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Inclement Headwinds: Cursebound 1 and 3 inflicts weakness 2 and weakness 25 to electricity</td>
+        <td>Curse Of Inclement Headwinds: Cursebound 1 and 3 inflict weakness 2 and weakness 25 to electricity</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Living Death: Cursebound 1, 2, 3, and 4 inflicts weakness 2 to vitality and void damage, -1 Fortitude saves, weakness 25 to vitality and void damage, or -2 Fortitude saves</td>
+        <td>Curse Of Living Death: Cursebound 1, 2, 3, and 4 inflict weakness 2 to vitality and void damage, -1 Fortitude saves, weakness 25 to vitality and void damage, and -2 Fortitude saves</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of The Mortal Warrior: Cursebound 1, 2, 3, and 4 inflicts weakness 2 to spell damage, -1 saves vs. spells, weakness 20 to spell damage, and -2 saves vs. spells</td>
+        <td>Curse Of The Mortal Warrior: Cursebound 1, 2, 3, and 4 inflict weakness 2 to spell damage, -1 saves vs. spells, weakness 20 to spell damage, and -2 saves vs. spells</td>
       </tr><tr style="text-align:center">
         <td>Curse Of The Sky's Call: Suffers a penalty vs. forced movement equal to the current cursebound severity</td>
       </tr><tr style="text-align:center">
-        <td>Curse Of Torrential Knowledge: Suffers a penalty to Will saves equal to the cursebound severity</td>
+        <td>Curse Of Torrential Knowledge: Cursebound inflicts a penalty to Will saves of equal severity</td>
       </tr><tr style="text-align:center">
-        <td>Divine Aegis: <b>(R)</b> Gives self -1 saves vs. divine magical effects and +1 vs. non-divine until the start of the next turn</td>
+        <td>Divine Aegis: <b>(R)</b> Gives self +1 vs. non-divine magical effects and -1 vs. divine effects until the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Greater Mysterious Resolve: Successes on Will saves are critical successes, critical failures on Will saves are normal failures, and failed Will saves inflict half damage</td>
       </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr><tr style="text-align:center">
-        <td>Mysterious Resolve: Success on Will saves are critical successes</td>
+        <td>Mysterious Resolve: Successes on Will saves are critical successes</td>
       </tr></table>
 </td>
     </tr></table>
@@ -387,8 +407,8 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: D10: 2; D1: 4; D2: 4; D3: 4; D4: 4; D5: 4; D6: 4; D7: 4; D8: 4; D9: 4; DC1: 5</td>
-        <td><b>Focus Points</b>: 0</td>
+        <td><b>Spell Slots</b>: D10: 2; D1: 4; D2: 4; D3: 4; D4: 4; D5: 4; D6: 4; D7: 4; D8: 4; D9: 5; DC1: 5</td>
+        <td><b>Focus Points</b>: 3</td>
         <td><b>Attack</b>: Divine: +32 (charisma; legendary)</td>
         <td><b>Spell DC</b>: Divine: 42 (charisma; legendary)</td>
       </tr></table>
@@ -398,26 +418,78 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Ancestral Touch (D1): <b>(2)</b> TODO</td>
+      <td>Access Lore (D3 Foc): <b>(1)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Brain Drain (D1): <b>(2)</b> TODO</td>
+      <td>Ancestral Defense (D3 Foc): <b>(R)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Incendiary Aura (D1): <b>(2)</b> TODO</td>
+      <td>Ancestral Form (D6 Foc): <b>(2)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Life Link (D1): <b>(2)</b> TODO</td>
+      <td>Ancestral Touch (D1 Foc): <b>(1)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Soul Siphon (D1): <b>(2)</b> TODO</td>
+      <td>Armor Of Bones (D3 Foc): <b>(1)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Spray Of Stars (D1): <b>(2)</b> TODO</td>
+      <td>Battlefield Persistence (D3 Foc): <b>(R)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Tempest Touch (D1): <b>(2)</b> TODO</td>
+      <td>Brain Drain (D1 Foc): <b>(2)</b> TODO</td>
     </tr><tr style="text-align:left">
-      <td>Weapon Trance (D1): <b>(2)</b> TODO</td>
+      <td>Claim Undead (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Cloak Of Shadow (D1 Foc): <b>(1)</b> 20' emanation around willing touched reduces bright light to dim and conceals touched for 1 min; target may shed the cloak, and the spell ends if another picks it up</td>
+    </tr><tr style="text-align:left">
+      <td>Darkened Sight (D4 Foc): <b>(2)</b> R60' Target gains greater darkvision for 1 min</td>
+    </tr><tr style="text-align:left">
+      <td>Delay Affliction (D3 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Dread Secret (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Flaming Fusillade (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Incendiary Aura (D1 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Interstellar Void (D3 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Life Link (D1 Foc): <b>(1)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Life-Giving Form (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Moonlight Bridge (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Revel In Retribution (D6 Foc): <b>(6)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Soul Siphon (D1 Foc): <b>(1)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Spray Of Stars (D1 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Tempest Form (D6 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Tempest Touch (D1 Foc): <b>(1)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Thunderburst (D3 Foc): <b>(2)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Weapon Trance (D1 Foc): <b>(1)</b> TODO</td>
+    </tr><tr style="text-align:left">
+      <td>Whirling Flames (D3 Foc): <b>(2)</b> TODO</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Advanced Revelation (Ancestors): Knows the Ancestral Defense divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Battle): Knows the Battlefield Persistence divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Bones): Knows the Armor Of Bones divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Cosmos): Knows the Interstellar Void divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Flames): Knows the Whirling Flames divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Life): Knows the Delay Affliction divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Lore): Knows the Access Lore divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Advanced Revelation (Tempest): Knows the Thunderburst divine spell</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Ancestors: Knows the Ancestral Touch divine spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Battle: Knows the Weapon Trance divine spell</i></td>
@@ -426,9 +498,31 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Cosmos: Knows the Spray Of Stars divine spell</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Domain Acumen (Darkness): Knows the Cloak Of Shadow divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Domain Fluency (Darkness): Knows the Darkened Sight divine spell</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Expert Spellcaster: Spell Expert (Divine)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Flames: Knows the Incendiary Aura divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Gifted Power: +1 rank 9 spell slot for a mystery granted spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Ancestors): Knows the Ancestral Form divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Battle): Knows the Revel In Retribution divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Bones): Knows the Claim Undead divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Cosmos): Knows the Moonlight Bridge divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Flames): Knows the Flaming Fusillade divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Life): Knows the Life-Giving Form divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Lore): Knows the Dread Secret divine spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Greater Revelation (Tempest): Knows the Tempest Form divine spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Legendary Spellcaster: Spell Legendary (Divine)</i></td>
     </tr><tr style="text-align:center">
@@ -438,7 +532,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Master Spellcaster: Spell Master (Divine)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Oracular Providence: +1 10th level spell slot</i></td>
+      <td><i>Oracular Clarity: Has 1 10th-rank spell slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Oracular Providence: +1 10th rank spell slot</i></td>
     </tr><tr style="text-align:center">
       <td><i>Revelation Spells: Has a focus pool</i></td>
     </tr><tr style="text-align:center">
@@ -450,13 +546,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
-      <td>Conduit Of Voidand Vitality: <b>(2)</b> Casting a three-action <i>Harm</i> or <i>Heal</i> restores or inflicts addition Hit Points equal to 1d8 * the cursebound value</td>
+      <td>Conduit Of Void And Vitality: <b>(2)</b> Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity</td>
     </tr><tr style="text-align:center">
-      <td>Diverse Mystery: Can cast an initial or advanced revelation spell from another mystery, gaining a level of cursebound and suffering the mystery's cursebound 1 effects</td>
+      <td>Diverse Mystery: Can cast an initial or advanced revelation spell from another mystery, increasing cursebound severity and suffering the mystery's cursebound 1 effects</td>
     </tr><tr style="text-align:center">
       <td>Divine Access: Can learn 3 cleric spells from a deity with a shared domain</td>
     </tr><tr style="text-align:center">
-      <td>Divine Effusion: Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day</td>
+      <td>Divine Effusion: Can cast 2 additional spells of different ranks after spell slots in each rank are exhausted once per day</td>
     </tr><tr style="text-align:center">
       <td>Epiphany At The Crossroads: <b>(F)</b> While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains 40 Hit Points, and can Stand once per day</td>
     </tr><tr style="text-align:center">
@@ -466,27 +562,27 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Knowledge Of Shapes: <b>(F)</b> Uses Reach Spell or Widen Spell</td>
     </tr><tr style="text-align:center">
-      <td>Lighter Than Air: Cursebound gives 25' fly Speed, or 35' fly Speed at cursebound 3</td>
+      <td>Lighter Than Air: Cursebound gives 25' fly Speed, or 35' fly Speed with cursebound 3</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous 1st-rank <i>Detect Magic</i> effects that increase to 3rd-rank during Seek</td>
     </tr><tr style="text-align:center">
       <td>Major Curse: Can tolerate cursebound severity 3</td>
     </tr><tr style="text-align:center">
-      <td>Meddling Futures: <b>(F)</b> Randomly gives self an additional Strike, Perception check or skill action, spell cast, or move action, with a bonus based on cursebound level</td>
+      <td>Meddling Futures: <b>(F)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20' Speed, and using a different action requires a successful DC 6 flat check</td>
     </tr><tr style="text-align:center">
       <td>Mysterious Repertoire: Knows 1 spell from a different tradition</td>
     </tr><tr style="text-align:center">
       <td>Mystery Conduit: <b>(F)</b> Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot</td>
     </tr><tr style="text-align:center">
-      <td>Nudge The Scales: <b>(1)</b> May gain void healing effects during daily prep</td>
-    </tr><tr style="text-align:center">
       <td>Nudge The Scales: <b>(1)</b> R30' Target regains 42 Hit Points</td>
+    </tr><tr style="text-align:center">
+      <td>Nudge The Scales: Can choose during daily prep to be healed by vitality healing or void healing</td>
     </tr><tr style="text-align:center">
       <td>Oracle Spellcasting: Can learn spells from the divine tradition</td>
     </tr><tr style="text-align:center">
       <td>Paradoxical Mystery: Can select 1 spell from an accessible domain during daily prep to cast as a revelation spell</td>
     </tr><tr style="text-align:center">
-      <td>Portentous Spell: Subsequent spell inflicts -2 on reaction attacks and skill tests, plus fascinated on any targets that suffer damage or fail to save</td>
+      <td>Portentous Spell: <b>(1)</b> Subsequent spell inflicts -2 on reaction attacks and skill tests, plus fascinated until the start of the next turn on any targets that suffer damage or fail to save</td>
     </tr><tr style="text-align:center">
       <td>Quickened Casting: <b>(F)</b> Reduces the time required to cast a spell of rank 7 or lower by 1 action once per day</td>
     </tr><tr style="text-align:center">
@@ -496,7 +592,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Revelation's Focus: Refocus restores all Focus Points</td>
     </tr><tr style="text-align:center">
-      <td>Roll The Bones Of Fate: <b>(1)</b> R30' Randomly: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous, or forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd once per 10 min</td>
+      <td>Roll The Bones Of Fate: <b>(1)</b> R30' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd</td>
     </tr><tr style="text-align:center">
       <td>Signature Spells: Can heighten 1 chosen spell of each rank without learning a heightened version</td>
     </tr><tr style="text-align:center">
@@ -506,13 +602,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>The Dead Walk: <b>(2)</b> R30' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit</td>
     </tr><tr style="text-align:center">
-      <td>Trial By Skyfire: <b>(1)</b> 10' emanation inflicts 2d6 HP fire (cursebound 3 gives 4d6 HP in a 15' emanation) each turn for 1 min</td>
+      <td>Trial By Skyfire: <b>(1)</b> 10' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain supresses the effects for 1 rd</td>
     </tr><tr style="text-align:center">
-      <td>Water Walker: Cursebound 1 allows Stride across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid</td>
+      <td>Water Walker: Cursebound 1 allows Striding across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid</td>
     </tr><tr style="text-align:center">
       <td>Waters Of Creation: <b>(2)</b> 15' emanation restores 10d6 Hit Points (cursebound 3 restores 10d8 Hit Points)</td>
     </tr><tr style="text-align:center">
-      <td>Whispers Of Weakness: <b>(1)</b> R60' Reveals target weakness and its lowest saving throw and gives self +2 to next attack before the end of the turn once per target per day</td>
+      <td>Whispers Of Weakness: <b>(1)</b> R60' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day</td>
     </tr><tr style="text-align:center">
       <td>Widen Spell: <b>(1)</b> Increases the effect of a subsequent 10' or greater radius area instantaneous spell by 5', the effect of a 15' or shorter line or cone instantaneous spell by 5', or the effect of a longer line or cone instantaneous spell by 10'</td>
     </tr></table>
@@ -526,11 +622,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 10 available vs. 41 allocated</td>
+        <td>Class Feats Allocation: 10 available vs. 43 allocated</td>
       </tr><tr style="text-align:center">
         <td>Oracle Mystery Allocation: 1 available vs. 8 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Skill Increase Allocation: 20 available vs. 11 allocated</td>
       </tr></table>
 </td>
     </tr></table>

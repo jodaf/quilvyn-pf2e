@@ -2683,6 +2683,7 @@ Pathfinder2ERemaster.FEATS = {
   'Clever Counterspell':Pathfinder2E.FEATS['Clever Counterspell'],
   'Forcible Energy':'Traits=Wizard,Manipulate,Spellshape Require="level >= 12"',
   'Keen Magical Detection':'Traits=Wizard,Fortune Require="level >= 12"',
+  // Note: oracle replaces Arcane trait with Divine
   'Magic Sense':
     Pathfinder2E.FEATS['Magic Sense']
     .replace(',Divination', '')
@@ -3319,13 +3320,11 @@ Pathfinder2ERemaster.FEATS = {
   'Forestall Curse':'Traits=Oracle,Concentrate Require="level >= 14"',
   'Lighter Than Air':
     'Traits=Oracle,Divine ' +
-    'Require=' +
-      '"level >= 14",' +
-      '"features.Water Walker"',
+    'Require="level >= 14","features.Water Walker"',
   'Mysterious Repertoire':'Traits=Oracle Require="level >= 14"',
   "Revelation's Focus":'Traits=Oracle Require="level >= 14"',
   // TODO require "any oracle mystery"
-  'Conduit Of Void and Vitality':
+  'Conduit Of Void And Vitality':
     'Traits=Oracle,Cursebound,Divine Require="level >= 16"',
   'Diverse Mystery':
     'Traits=Oracle Require="level >= 16","features.Advanced Revelation"',
@@ -7248,7 +7247,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Overwhelming Blow':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Successful melee Strike counts as critical, and a natural critical gains deadly d12; counts as three attacks for the multiple attack penalty and leaves self stunned 1 and off-guard until the start of the next turn"',
+    'Note="Successful melee Strike counts as critical, and a natural critical gains deadly d12; counts as 3 attacks for the multiple attack penalty and leaves self stunned 1 and off-guard until the start of the next turn"',
   'Twinned Defense':Pathfinder2E.FEATURES['Twinned Defense'],
   'Impossible Volley':Pathfinder2E.FEATURES['Impossible Volley'],
   'Savage Critical':Pathfinder2E.FEATURES['Savage Critical'],
@@ -8237,12 +8236,14 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Expert (Choose 1 from any)/Skill Master (Choose 1 from any)"',
   'Uncanny Dodge':'Section=feature Note="Has the Deny Advantage feature"',
   'Evasiveness':'Section=save Note="Save Master (Reflex)"',
+*/
 
   'Sorcerer Dedication':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Bloodline feature",' +
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
+/*
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
@@ -9825,9 +9826,10 @@ Pathfinder2ERemaster.FEATURES = {
       '"Cursebound inflicts persistent fire damage of equal severity",' +
       '"Shows aspects of heat and flame"',
   'Curse Of Inclement Headwinds':
-    'Section=combat,feature,save ' +
+    'Section=ability,combat,feature,save ' +
     'Note=' +
-      '"Cursebound 2 and 4 inflict -2 ranged attacks and -10\' Speed",' +
+      '"Cursebound 4 inflicts -10\' Speed",' +
+      '"Cursebound 2 inflicts -2 ranged attacks",' +
       '"Shows aspects of weather",' +
       '"Cursebound 1 and 3 inflict weakness 2 and weakness %{5+level} to electricity"',
   'Curse Of Living Death':
@@ -9916,6 +9918,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Weapon Expertise as above
   // Weapon Specialization as above
 
+  // TODO Mark cursebound actions?
   'Foretell Harm':
     'Action=Free ' +
     'Section=magic ' +
@@ -10104,7 +10107,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent spell ignores resistance %{level} to spirit, vitality, and void"',
   'Water Walker':
     'Section=magic ' +
-    'Note="Cursebound 1 allows Stride across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid"',
+    'Note="Cursebound 1 allows Striding across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid"',
   // Quickened Casting as above
   'Roll The Bones Of Fate':
     'Action=1 ' +
@@ -10203,33 +10206,34 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent cursebound ability use does not increase cursebound severity once per day"',
   'Lighter Than Air':
     'Section=magic ' +
-    'Note="Cursebound gives %{speed>?20}\' fly Speed, or %{(speed>?20)+10}\' fly Speed at cursebound 3"',
+    'Note="Cursebound gives %{speed>?20}\' fly Speed, or %{(speed>?20)+10}\' fly Speed with cursebound 3"',
   'Mysterious Repertoire':
     'Section=magic Note="Knows 1 spell from a different tradition"',
   "Revelation's Focus":'Section=magic Note="Refocus restores all Focus Points"',
-  'Conduit Of Void and Vitality':
+  'Conduit Of Void And Vitality':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Casting a three-action <i>Harm</i> or <i>Heal</i> restores or inflicts addition Hit Points equal to 1d8 * the cursebound value"',
+    'Note="Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity"',
   'Diverse Mystery':
     'Section=magic ' +
-    'Note="Can cast an initial or advanced revelation spell from another mystery, gaining a level of cursebound and suffering the mystery\'s cursebound 1 effects"',
+    'Note="Can cast an initial or advanced revelation spell from another mystery, increasing cursebound severity and suffering the mystery\'s cursebound 1 effects"',
   'Portentous Spell':
+    'Action=1 ' +
     'Section=magic ' +
     'Note=' +
-      '"Subsequent spell inflicts -2 on reaction attacks and skill tests, plus fascinated on any targets that suffer damage or fail to save"',
+      '"Subsequent spell inflicts -2 on reaction attacks and skill tests, plus fascinated until the start of the next turn on any targets that suffer damage or fail to save"',
   'Blaze Of Revelation':
     'Action=Free ' +
     'Section=magic ' +
     'Note="While at cursebound 4, can cast 1 revelation spell each rd without spending Focus Points for 1 min; afterward, must attempt a DC 40 Fortitude save, suffering drained 2 until next daily prep, drained 4 until next daily prep, or death on success, failure, or critical failure"',
   'Divine Effusion':
-    'Section=magic ' +
-    'Note="Can cast 2 additional spells of different levels after spell slots in each level are exhausted once per day"',
+    Pathfinder2E.FEATURES['Greater Vital Evolution']
+    .replaceAll('level', 'rank'),
   'Mystery Conduit':
     'Action=Free ' +
     'Section=magic ' +
     'Note="Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
-  'Oracular Providence':'Section=magic Note="+1 10th level spell slot"',
+  'Oracular Providence':'Section=magic Note="+1 10th rank spell slot"',
   'Paradoxical Mystery':
    'Section=magic ' +
    'Note="Can select 1 spell from an accessible domain during daily prep to cast as a revelation spell"',
@@ -14651,12 +14655,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
-  } else if(name == 'Advanced Revelation') {
+  } else if(name.match(/^(Advanced|Greater) Revelation$/)) {
     // TODO Homebrew mysteries
     ['Ancestors', 'Battle', 'Bones', 'Cosmos', 'Flames', 'Life', 'Lore',
      'Tempest'].forEach(m => {
-      rules.defineRule('features.Advanced Revelation (' + m + ')',
-        'features.Advanced Revelation', '?', null,
+      rules.defineRule('features.' + name + ' (' + m + ')',
+        'features.' + name, '?', null,
         'features.' + m, '=', '1'
       );
     });
@@ -14788,6 +14792,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ('weapons.Claws.5', 'combatNotes.deadlyAspect.1', '=', null);
     rules.defineRule('weapons.Jaws.5', 'combatNotes.deadlyAspect.2', '=', null);
     rules.defineRule('weapons.Tail.5', 'combatNotes.deadlyAspect.3', '=', null);
+  } else if(name.startsWith('Domain Acumen')) {
+    rules.defineRule('features.Domain Acumen', 'features.' + name, '=', '1');
   } else if(name.startsWith('Draconic Aspect')) {
     rules.defineRule('features.Draconic Aspect', 'features.' + name, '=', '1');
     if(name.includes('Claw')) {
