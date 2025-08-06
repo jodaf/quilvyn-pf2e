@@ -1147,16 +1147,16 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Save Expert (Reflex; Will)","Save Trained (Fortitude)",' +
       '"1:Swashbuckler Skills",' +
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
-      '"1:Defense Trained (Unarmored Defense)",' +
+      '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Swashbuckler)",' +
       '"1:Panache","1:Precise Strike","1:Stylish Combatant",' +
       '"1:Swashbuckler\'s Style","1:Confident Finisher",' +
-      '"1:Swashbuckler Feats","3:Fortitude Expertise","3:General Feats",' +
-      '"3:Opportune Riposte","3:Skill Increases","3:Stylish Tricks",' +
-      '"3:Vivacious Speed","5:Weapon Expertise","7:Confident Evasion",' +
-      '"7:Weapon Specialization","9:Exemplary Finisher",' +
-      '"9:Swashbuckler Expertise","11:Continuous Flair",' +
-      '"11:Perception Mastery","13:Assured Evasion",' +
+      '"1:Swashbuckler Feats","2:Skill Feats","3:Fortitude Expertise",' +
+      '"3:General Feats","3:Opportune Riposte","3:Skill Increases",' +
+      '"3:Stylish Tricks","3:Vivacious Speed","5:Weapon Expertise",' +
+      '"7:Confident Evasion","7:Weapon Specialization",' +
+      '"9:Exemplary Finisher","9:Swashbuckler Expertise",' +
+      '"11:Continuous Flair","11:Perception Mastery","13:Assured Evasion",' +
       '"13:Light Armor Expertise","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","15:Keen Flair",' +
       '"17:Reinforced Ego","19:Eternal Confidence","19:Light Armor Mastery" ' +
@@ -3532,187 +3532,88 @@ Pathfinder2ERemaster.FEATS = {
   // TODO Why adding Bard, etc., to traits?
 
   'Bard Dedication':Pathfinder2E.FEATS['Bard Dedication'],
-/*
-  'Basic Bard Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
-  "Basic Muse's Whispers":
-    'Traits=Archetype Require="level >= 4","features.Bard Dedication"',
-  "Advanced Muse's Whispers":
-    'Traits=Archetype ' +
-    'Require="level >= 4","features.Basic Muse\'s Whispers"',
-  'Counter Perform':
-    'Traits=Archetype Require="level >= 6","features.Bard Dedication"',
-  'Inspirational Performance':
-    'Traits=Archetype Require="level >= 8","features.Bard Dedication"',
-  'Occult Breadth':
-    'Traits=Archetype ' +
-    'Require="level >= 8","features.Basic Bard Spellcasting"',
-  'Expert Bard Spellcasting':
+  'Basic Bard Spellcasting':Pathfinder2E.FEATS['Basic Bard Spellcasting'],
+  "Basic Muse's Whispers":Pathfinder2E.FEATS["Basic Muse's Whispers"],
+  "Advanced Muse's Whispers":Pathfinder2E.FEATS["Advanced Muse's Whispers"],
+  'Counter Perform':Pathfinder2E.FEATS['Counter Perform'],
+  'Anthemic Performance':Pathfinder2E.FEATS['Inspirational Performance'],
+  'Occult Breadth':Pathfinder2E.FEATS['Occult Breadth'],
+  'Expert Bard Spellcasting':Pathfinder2E.FEATS['Expert Bard Spellcasting'],
+  'Master Bard Spellcasting':Pathfinder2E.FEATS['Master Bard Spellcasting'],
+
+  'Cleric Dedication':Pathfinder2E.FEATS['Cleric Dedication'],
+  'Basic Cleric Spellcasting':Pathfinder2E.FEATS['Basic Cleric Spellcasting'],
+  'Basic Dogma':Pathfinder2E.FEATS['Basic Dogma'],
+  'Advanced Dogma':Pathfinder2E.FEATS['Advanced Dogma'],
+  'Divine Breadth':Pathfinder2E.FEATS['Divine Breadth'],
+  'Expert Cleric Spellcasting':Pathfinder2E.FEATS['Expert Cleric Spellcasting'],
+  'Master Cleric Spellcasting':Pathfinder2E.FEATS['Master Cleric Spellcasting'],
+
+  'Druid Dedication':Pathfinder2E.FEATS['Druid Dedication'],
+  'Basic Druid Spellcasting':Pathfinder2E.FEATS['Basic Druid Spellcasting'],
+  'Basic Wilding':Pathfinder2E.FEATS['Basic Wilding'],
+  'Order Spell':Pathfinder2E.FEATS['Order Spell'],
+  'Advanced Wilding':Pathfinder2E.FEATS['Basic Wilding'],
+  'Primal Breadth':Pathfinder2E.FEATS['Primal Breadth'],
+  'Expert Druid Spellcasting':Pathfinder2E.FEATS['Expert Druid Spellcasting'],
+  'Master Druid Spellcasting':Pathfinder2E.FEATS['Master Druid Spellcasting'],
+
+  'Fighter Dedication':Pathfinder2E.FEATS['Fighter Dedication'],
+  'Basic Maneuver':Pathfinder2E.FEATS['Basic Maneuver'],
+  'Fighter Resiliency':Pathfinder2E.FEATS['Fighter Resiliency'],
+  'Reactive Striker':Pathfinder2E.FEATS.Opportunist,
+  'Advanced Maneuver':Pathfinder2E.FEATS['Advanced Maneuver'],
+  'Diverse Weapon Expert':Pathfinder2E.FEATS['Diverse Weapon Expert'],
+
+  'Ranger Dedication':Pathfinder2E.FEATS['Ranger Dedication'],
+  "Basic Hunter's Trick":Pathfinder2E.FEATS["Basic Hunter's Trick"],
+  'Ranger Resiliency':Pathfinder2E.FEATS['Ranger Resiliency'],
+  "Advanced Hunter's Trick":Pathfinder2E.FEATS["Advanced Hunter's Trick"],
+  'Master Spotter':Pathfinder2E.FEATS['Master Spotter'],
+
+  'Rogue Dedication':Pathfinder2E.FEATS['Rogue Dedication'],
+  'Basic Trickery':Pathfinder2E.FEATS['Basic Trickery'],
+  'Sneak Attacker':Pathfinder2E.FEATS['Sneak Attacker'],
+  'Advanced Trickery':Pathfinder2E.FEATS['Advanced Trickery'],
+  'Skill Mastery':Pathfinder2E.FEATS['Skill Mastery'],
+  'Uncanny Dodge':Pathfinder2E.FEATS['Uncanny Dodge'],
+  'Evasiveness':Pathfinder2E.FEATS.Evasiveness,
+
+  'Witch Dedication':
+    'Traits=Archetype,Dedication,Multiclass ' +
+    'Require=' +
+      '"level >= 2 || multiclassLevelRequirementsWaived",' +
+      '"intelligenceModifier >= 2 || multiclassAbilityRequirementsWaived",' +
+      '"levels.Witch == 0"',
+  'Basic Witch Spellcasting':
+    'Traits=Archetype Require="level >= 4","features.Witch Dedication"',
+  'Basic Witchcraft':
+    'Traits=Archetype Require="level >= 4","features.Witch Dedication"',
+  'Advanced Witchcraft':
+    'Traits=Archetype Require="level >= 6","features.Basic Witchcraft"',
+  "Patron's Breadth":
+    'Traits=Archetype Require="level >= 8","features.Basic Witch Spellcasting"',
+  // TODO master in patron skill
+  'Expert Witch Spellcasting':
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
-      '"features.Basic Bard Spellcasting",' +
-      '"rank.Occultism >= 3"',
-  'Master Bard Spellcasting':
+      '"features.Basic Witch Spellcasting"',
+  // TODO legendary in patron skill
+  'Master Witch Spellcasting':
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
-      '"features.Expert Bard Spellcasting",' +
-      '"rank.Occultism >= 4"',
-*/
+      '"features.Expert Witch Spellcasting"',
 
-  'Cleric Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Cleric == 0"',
-/*
-  'Basic Cleric Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
-  'Basic Dogma':
-    'Traits=Archetype Require="level >= 4","features.Cleric Dedication"',
-  'Advanced Dogma':
-    'Traits=Archetype Require="level >= 6","features.Basic Dogma"',
-  'Divine Breadth':
-    'Traits=Archetype ' +
-    'Require="level >= 8","features.Basic Cleric Spellcasting"',
-  'Expert Cleric Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Cleric Spellcasting",' +
-      '"rank.Religion >= 3"',
-  'Master Cleric Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Cleric Spellcasting",' +
-      '"rank.Religion >= 4"',
-
-  'Druid Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"wisdom >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Druid == 0"',
-  'Basic Druid Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
-  'Basic Wilding':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
-  'Order Spell':
-    'Traits=Archetype Require="level >= 4","features.Druid Dedication"',
-  'Advanced Wilding':
-    'Traits=Archetype Require="level >= 6","features.Basic Wilding"',
-  'Primal Breadth':
-    'Traits=Archetype ' +
-    'Require="level >= 8","features.Basic Druid Spellcasting"',
-  'Expert Druid Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Druid Spellcasting",' +
-      '"rank.Nature >= 3"',
-  'Master Druid Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Expert Druid Spellcasting",' +
-      '"rank.Nature >= 4"',
-
-  'Fighter Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"strength >= 14 || multitalentedHalfElf",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
-      '"levels.Fighter == 0"',
-  'Basic Maneuver':
-    'Traits=Archetype ' +
-    'Require="level >= 4","features.Fighter Dedication"',
-  'Fighter Resiliency':
-    'Traits=Archetype ' +
-    'Require="level >= 4","features.Fighter Dedication","classHitPoints <= 8"',
-  'Opportunist':
-    'Traits=Archetype ' +
-    'Require="level >= 4","features.Fighter Dedication"',
-  'Advanced Maneuver':
-    'Traits=Archetype Require="level >= 6","features.Basic Maneuver"',
-  'Diverse Weapon Expert':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
-
-  'Ranger Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"dexterity >= 14 || multitalentedHalfElf",' +
-      '"levels.Ranger == 0"',
-  "Basic Hunter's Trick":
-    'Traits=Archetype Require="level >= 4","features.Ranger Dedication"',
-  'Ranger Resiliency':
-    'Traits=Archetype ' +
-    'Require="level >= 4","features.Ranger Dedication","classHitPoints <= 8"',
-  "Advanced Hunter's Trick":
-    'Traits=Archetype ' +
-    'Require="level >= 6","features.Basic Hunter\'s Trick"',
-  'Master Spotter':
-    'Traits=Archetype ' +
-    'Require="level >= 12","features.Ranger Dedication","rank.Perception >= 3"',
-
-  'Rogue Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"dexterity >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Rogue == 0"',
-  'Basic Trickery':
-    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
-  'Sneak Attacker':
-    'Traits=Archetype Require="level >= 4","features.Rogue Dedication"',
-  'Advanced Trickery':
-    'Traits=Archetype Require="level >= 6","features.Basic Trickery"',
-  'Skill Mastery':
-    'Traits=Archetype ' +
-    'Require="level >= 8","features.Rogue Dedication","maxSkillRank>=2"',
-  'Uncanny Dodge':
-    'Traits=Archetype Require="level >= 10","features.Rogue Dedication"',
-  'Evasiveness':
-    'Traits=Archetype ' +
-    'Require="level >= 12","features.Rogue Dedication","rank.Reflex >= 2"',
-
-  'Wizard Dedication':
-    'Traits=Archetype,Dedication,Multiclass ' +
-    'Require=' +
-      '"level >= 2",' +
-      '"intelligence >= 14 || multiclassAbilityRequirementsWaived",' +
-      '"levels.Wizard == 0"',
-  'Arcane School Spell':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
-  'Basic Arcana':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
-  'Basic Wizard Spellcasting':
-    'Traits=Archetype Require="level >= 4","features.Wizard Dedication"',
-  'Advanced Arcana':
-    'Traits=Archetype Require="level >= 6","features.Basic Arcana"',
-  'Arcane Breadth':
-    'Traits=Archetype ' +
-    'Require="level >= 8","features.Basic Wizard Spellcasting"',
-  'Expert Wizard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Basic Wizard Spellcasting",' +
-      '"rank.Arcana >= 3"',
-  'Master Wizard Spellcasting':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 18",' +
-      '"features.Basic Wizard Spellcasting",' +
-      '"rank.Arcana >= 4"',
-*/
+  'Wizard Dedication':Pathfinder2E.FEATS['Wizard Dedication'],
+  'Arcane School Spell':Pathfinder2E.FEATS['Arcane School Spell'],
+  'Basic Arcana':Pathfinder2E.FEATS['Basic Arcana'],
+  'Basic Wizard Spellcasting':Pathfinder2E.FEATS['Basic Wizard Spellcasting'],
+  'Advanced Arcana':Pathfinder2E.FEATS['Advanced Arcana'],
+  'Arcane Breadth':Pathfinder2E.FEATS['Arcane Breadth'],
+  'Expert Wizard Spellcasting':Pathfinder2E.FEATS['Expert Wizard Spellcasting'],
+  'Master Wizard Spellcasting':Pathfinder2E.FEATS['Master Wizard Spellcasting'],
 
   // Core 2
   'Alchemist Dedication':Pathfinder2E.FEATS['Alchemist Dedication'],
@@ -10611,7 +10512,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Reflex)",' +
-      '"Successes on Reflex saves are critical successes, critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
+      '"Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage"',
   'Battledancer':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -10633,7 +10534,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Failed Strike inflicts half of normal precision damage"',
   'Continuous Flair':
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="Stylish Combatant bonus applies during exploration"',
   'Eternal Confidence':
     'Section=combat,combat ' +
@@ -10642,22 +10543,22 @@ Pathfinder2ERemaster.FEATURES = {
       '"Finisher Strikes with appropriate weapons gain the Confident Finisher failure effect"',
   'Exemplary Finisher (Battledancer)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher allows a Step as a free action"',
+    'Note="Successful finisher Strike allows a free Step afterward"',
   'Exemplary Finisher (Braggart)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher ends temporary Demoralize immunity"',
+    'Note="Successful finisher Strike ends any temporary immunity to self Demoralize"',
   'Exemplary Finisher (Fencer)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher inflicts off-guard until the start of the next turn"',
+    'Note="Successful finisher Strike inflicts off-guard until the start of the next turn"',
   'Exemplary Finisher (Gymnast)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher inflicts additional damage equal to double the number of damage dice"',
+    'Note="Successful finisher Strike on a grabbed, restrained, or prone target inflicts additional damage equal to double the number of damage dice"',
   'Exemplary Finisher (Rascal)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher inflicts -10 Speed until the start of the next turn"',
+    'Note="Successful finisher Strike inflicts -10 Speed until the start of the next turn"',
   'Exemplary Finisher (Wit)':
     'Section=combat ' +
-    'Note="Hitting a foe as part of a finisher inflicts -2 attacks on self until the start of the next turn"',
+    'Note="Successful finisher Strike inflicts -2 attacks on self until the start of the next turn"',
   'Fencer':
     'Section=skill,skill ' +
     'Note=' +
@@ -10670,19 +10571,22 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Grapple, Reposition, Shove, and Trip actions have the bravado trait",' +
       '"Skill Trained (Athletics)"',
+  'Keen Flair':
+    'Section=combat ' +
+    'Note="Strikes with a master prociency weapon critically succeed on a 19"',
   // Light Armor Expertise as above
   // Light Armor Mastery as above
   'Opportune Riposte':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Strikes or attempts to Disarm for in response to the triggering critical miss"',
+    'Note="Strikes or attempts to Disarm the attacker in response to the triggering critical miss"',
   'Panache':
     'Section=combat ' +
-    'Note="Using bravado actions, gains panache that can be use to perform some finisher actions"',
+    'Note="Using bravado actions gives panache that can be use to perform some finisher actions"',
   // Perception Mastery as above
   'Precise Strike':
     'Section=combat ' +
-    'Note="Agile and finesse attack inflicts +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision for finisher Strikes"',
+    'Note="Strikes with an agile or finesse weapon inflict +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision for finisher Strikes"',
   'Rascal':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -10695,18 +10599,42 @@ Pathfinder2ERemaster.FEATURES = {
       '"Save Master (Will)",' +
       '"Successes on Will save are critical successes"',
   'Stylish Combatant':
-    'Section=ability,ability,skill ' +
+    'Section=ability,skill ' +
     'Note=' +
-      '"+%V Speed",' +
-      '"+%{5+5*((level+1)//4>?0)} Speed with panache",' +
-      '"+1 on bravado skills during combat"',
-  'Stylish Tricks':
+      '"+%V Speed with panache",' +
+      '"+%{skillNotes.swashbucklerExpertise?2:1} on bravado skill checks during combat"',
+  'Stylish Tricks (Battledancer)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feats (Acrobatics- or %{swashbucklerSkill}-related)",' +
-      '"+%V Skill Increase (Acrobatics or %{swashbucklerSkill})"',
+      '"+%V Skill Feat (Acrobatics or Performance)",' +
+      '"+%V Skill Increase (Acrobatics or Performance)"',
+  'Stylish Tricks (Braggart)':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (Acrobatics or Intimidation)",' +
+      '"+%V Skill Increase (Acrobatics or Intimidation)"',
+  'Stylish Tricks (Fencer)':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (Acrobatics or Deception)",' +
+      '"+%V Skill Increase (Acrobatics or Deception)"',
+  'Stylish Tricks (Gymnast)':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (Acrobatics or Athletics)",' +
+      '"+%V Skill Increase (Acrobatics or Athletics)"',
+  'Stylish Tricks (Rascal)':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (Acrobatics or Thievery)",' +
+      '"+%V Skill Increase (Acrobatics or Thievery)"',
+  'Stylish Tricks (Wit)':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (Acrobatics or Diplomacy)",' +
+      '"+%V Skill Increase (Acrobatics or Diplomacy)"',
   'Swashbuckler Expertise':
-    'Section=combat,feature ' +
+    'Section=combat,skill ' +
     'Note=' +
       '"Class Expert (Swashbuckler)",' +
       '"Has increased Stylish Combatant effects"',
@@ -10714,6 +10642,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Swashbuckler Skills':
     'Section=skill Note="Skill Trained (Acrobatics; Select %V from any)"',
   "Swashbuckler's Style":'Section=feature Note="1 selection"',
+  'Vivacious Speed':
+    'Section=ability Note="+%V Speed/Has increased Stylish Combatant effects"',
   // Weapon Expertise as above
   // Weapon Mastery as above
   // Weapon Specialization as above
@@ -14540,8 +14470,38 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Elemental (Wood)', '=', '"bludgeoning"'
     );
   } else if(name == 'Swashbuckler') {
+    ['Battledancer', 'Braggart', 'Fencer', 'Gymnast', 'Rascal', 'Wit'].forEach(s => {
+      rules.defineRule('features.Exemplary Finisher (' + s + ')',
+        'features.Exemplary Finisher', '?', null,
+        'features.' + s, '=', '1'
+      );
+      rules.defineRule('features.Stylish Tricks (' + s + ')',
+        'features.Stylish Tricks', '?', null,
+        'features.' + s, '=', '1'
+      );
+      s = s.replaceAll(' ', '');
+      rules.defineRule('featureNotes.stylishTricks(' + s + ')',
+        classLevel, '=', 'source<7 ? 1 : source<15 ? 2 : 3'
+      );
+      rules.defineRule('skillNotes.stylishTricks(' + s + ')',
+        classLevel, '=', 'source<7 ? 1 : source<15 ? 2 : 3'
+      );
+      rules.defineRule('skillNotes.skillIncreases',
+        'skillNotes.stylishTricks(' + s + ')', '+', null
+      );
+    });
     rules.defineRule('abilityNotes.stylishCombatant',
-      'classLevel', '=', 'Math.floor((level + 5) / 8) * 5'
+      '', '=', '5',
+      'abilityNotes.vivaciousSpeed.1', '+', null
+    );
+    rules.defineRule('abilityNotes.vivaciousSpeed',
+      classLevel, '=', '5 * Math.floor((source + 5) / 8)'
+    );
+    rules.defineRule('abilityNotes.vivaciousSpeed.1',
+      classLevel, '=', '5 * Math.floor((source + 5) / 4)'
+    );
+    rules.defineRule('combatNotes.weaponExpertise',
+      classLevel, '=', 'source>=5 ? "Simple Weapons; Martial Weapons" : null'
     );
     rules.defineRule('skillNotes.swashbucklerSkills',
       'intelligenceModifier', '=', 'source + 4'

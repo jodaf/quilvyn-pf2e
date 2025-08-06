@@ -2546,7 +2546,8 @@ Pathfinder2E.FEATS = {
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
-      '"maxWeaponTraining >= 2"',
+      '"features.Fighter Dedication",' +
+      '"maxWeaponTraining >= 2 || rank.Unarmed Attacks >= 2"',
 
   'Monk Dedication':
     'Traits=Archetype,Dedication,Multiclass ' +
