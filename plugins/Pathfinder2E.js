@@ -14406,7 +14406,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     }
   } else if(name == 'Arcane School Spell') {
     let schools =
-      Pathfinder2E.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
+      (rules.plugin.CLASSES.Wizard || Pathfinder2E.CLASSES.Wizard).match(/([\s\w]*:Arcane School)/g)
       .map(x => x.replace(':Arcane School', ''))
       .filter(x => x != 'Universalist');
     schools.forEach(s => {
@@ -14497,14 +14497,16 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
-    if(c == 'Sorcerer') {
+    if(c == 'Sorcerer' || c == 'Witch') {
+      let traditions =
+        c == 'Sorcerer' ? 'bloodlineTraditions' : 'patronTraditions';
       ['A', 'D', 'O', 'P'].forEach(trad => {
         for(let s in slots) {
           if(slots[s] > 0)
             rules.defineRule
               (note + '.' + trad + '.' + s, 'level', '?', 'source>' + slots[s]);
           rules.defineRule(note + '.' + trad + '.' + s,
-            'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+            traditions, '?', 'source && source.includes("' + trad + '")',
              note, '=', '1'
           );
           rules.defineRule

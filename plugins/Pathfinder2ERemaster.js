@@ -3529,7 +3529,6 @@ Pathfinder2ERemaster.FEATS = {
   'Panache Paragon':'Traits=Swashbuckler Require="level >= 20"',
 
   // Archetype
-  // TODO Why adding Bard, etc., to traits?
 
   'Bard Dedication':Pathfinder2E.FEATS['Bard Dedication'],
   'Basic Bard Spellcasting':Pathfinder2E.FEATS['Basic Bard Spellcasting'],
@@ -3569,15 +3568,21 @@ Pathfinder2ERemaster.FEATS = {
   "Basic Hunter's Trick":Pathfinder2E.FEATS["Basic Hunter's Trick"],
   'Ranger Resiliency':Pathfinder2E.FEATS['Ranger Resiliency'],
   "Advanced Hunter's Trick":Pathfinder2E.FEATS["Advanced Hunter's Trick"],
-  'Master Spotter':Pathfinder2E.FEATS['Master Spotter'],
+  'Master Spotter':
+    Pathfinder2E.FEATS['Master Spotter']
+    .replace('features.Ranger Dedication', 'features.Ranger Dedication || features.Investigator Dedication'),
 
   'Rogue Dedication':Pathfinder2E.FEATS['Rogue Dedication'],
   'Basic Trickery':Pathfinder2E.FEATS['Basic Trickery'],
   'Sneak Attacker':Pathfinder2E.FEATS['Sneak Attacker'],
   'Advanced Trickery':Pathfinder2E.FEATS['Advanced Trickery'],
-  'Skill Mastery':Pathfinder2E.FEATS['Skill Mastery'],
+  'Skill Mastery':
+    Pathfinder2E.FEATS['Skill Mastery']
+    .replace('features.Rogue Dedication', 'features.Rogue Dedication || features.Investigator Dedication'),
   'Uncanny Dodge':Pathfinder2E.FEATS['Uncanny Dodge'],
-  'Evasiveness':Pathfinder2E.FEATS.Evasiveness,
+  'Evasiveness':
+    Pathfinder2E.FEATS.Evasiveness
+    .replace('features.Rogue Dedication', 'features.Rogue Dedication || features.Swashbuckler Dedication'),
 
   'Witch Dedication':
     'Traits=Archetype,Dedication,Multiclass ' +
@@ -3616,13 +3621,14 @@ Pathfinder2ERemaster.FEATS = {
   'Master Wizard Spellcasting':Pathfinder2E.FEATS['Master Wizard Spellcasting'],
 
   // Core 2
+
   'Alchemist Dedication':Pathfinder2E.FEATS['Alchemist Dedication'],
   'Advanced Alchemy':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Alchemist Dedication"',
   'Basic Concoction':Pathfinder2E.FEATS['Basic Concoction'],
   'Advanced Concoction':Pathfinder2E.FEATS['Advanced Concoction'],
-  'Volumous Vials':
+  'Voluminous Vials':
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 6",' +
@@ -3665,18 +3671,11 @@ Pathfinder2ERemaster.FEATS = {
   'Advanced Deduction':
     'Traits=Archetype ' +
     'Require="level >= 6","features.Basic Deduction"',
-  'Keen Recollectxion':
+  'Keen Recollection':
     'Traits=Archetype ' +
     'Require="level >= 6","features.Investigator Dedication"',
-  'Skill Mastery':
-    Pathfinder2E.FEATS['Skill Mastery']
-    .replaceAll('Rogue', 'Investigator'),
-  'Master Spotter':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Investigator Dedication",' +
-      '"rank.Perception >= 2"',
+  // Skill Mastery as above
+  // Master Spotter as above
 
   'Monk Dedication':Pathfinder2E.FEATS['Monk Dedication'],
   'Basic Kata':Pathfinder2E.FEATS['Basic Kata'],
@@ -3752,12 +3751,7 @@ Pathfinder2ERemaster.FEATS = {
   "Swashbuckler's Speed":
     'Traits=Archetype ' +
     'Require="level >= 8","features.Swashbuckler Dedication"',
-  'Evasiveness':
-    'Traits=Archetype ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Swashbuckler Dedication",' +
-      '"rank.Reflex >= 2"',
+  // Evasiveness as above
 
   'Acrobat Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Acrobatics >= 1"',
@@ -4286,6 +4280,7 @@ Pathfinder2ERemaster.FEATS = {
 Pathfinder2ERemaster.FEATURES = {
 
   // Ancestry
+
   'Ancestry Feats':'Section=feature Note="%V selections"',
 
   // Dwarf
@@ -6061,7 +6056,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="+2 vs. the triggering magical effect, or +3 if it is a curse, once per min"',
 
-  // Class Features and Feats
+  // Class
 
   'Attribute Boosts':
     Pathfinder2E.FEATURES['Ability Boosts'].replace('Ability', 'Attribute'),
@@ -7938,344 +7933,6 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Metamagic Mastery']
     .replace('metamagic', 'spellshape'),
 
-/*
-  // Archetype
-  'Alchemist Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Attack Trained (Alchemical Bombs)/Class Trained (Alchemist)",' +
-      '"Has the Alchemical Crafting and Infused Reagents features",' +
-      '"Skill Trained (Crafting)"',
-  'Basic Concoction':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
-  // Quick Alchemy as above
-  'Advanced Concoction':
-    'Section=feature Note="+1 Class Feat (alchemist up to level %{level//2})"',
-  'Expert Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
-  'Master Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
-
-  'Barbarian Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Class Trained (Barbarian)",' +
-      '"Has the Anathema, Instinct, and Rage features",' +
-      '"Skill Trained (Athletics)"',
-  'Barbarian Resiliency':'Section=combat Note="+%V Hit Points"',
-  'Basic Fury':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
-  'Advanced Fury':
-    'Section=feature Note="+%V Class Feat (barbarian up to level %{level//2})"',
-  'Instinct Ability':
-    'Section=feature ' +
-    'Note="Has the instinct ability for the chosen barbarian instinct"',
-  "Juggernaut's Fortitude":'Section=save Note="Save Master (Fortitude)"',
-
-  'Bard Dedication':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Muses feature",' +
-      '"Spell Trained (Occult)/Knows 2 occult cantrips",' +
-      '"Skill Trained (Occultism; Performance)"',
-  'Basic Bard Spellcasting':
-    'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} occult spell"',
-  "Basic Muse's Whispers":
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level bard)"',
-  "Advanced Muse's Whispers":
-    'Section=feature Note="+1 Class Feat (bard up to level %{level//2})"',
-  'Counter Perform':
-    'Section=magic ' +
-    'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
-  'Inspirational Performance':
-    'Section=magic Note="Knows the Inspire Courage occult cantrip"',
-  'Occult Breadth':
-    'Section=magic Note="+1 occult spell slot of each level up to %V"',
-  'Expert Bard Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Expert (Occult)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} occult spell"',
-  'Master Bard Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Master (Occult)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} occult spell"',
-
-  'Champion Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Defense Trained (Light Armor; Medium Armor; Heavy Armor)/Class Trained (Champion)",' +
-      '"Has the Anathema, Cause, and Deity features",' +
-      '"Skill Trained (Religion)"',
-  'Basic Devotion':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level champion)"',
-  'Champion Resiliency':'Section=combat Note="+%V Hit Points"',
-  // NOTE: Might not be Lay On Hands for other causes
-  'Healing Touch':
-    'Section=magic ' +
-    'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Devotion':
-    'Section=feature Note="+1 Class Feat (champion up to level %{level//2})"',
-  // Champion's Reaction as above
-  // Divine Ally as above
-  'Diverse Armor Expert':
-    'Section=combat ' +
-    'Note="Defense Expert (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)"',
-
-  'Cleric Dedication':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Anathema and Deity features",' +
-      '"Spell Trained (Divine)/Can prepare 2 divine cantrips each day",' +
-      '"Skill Trained (Religion)"',
-  'Basic Cleric Spellcasting':
-    'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
-  'Basic Dogma':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
-  'Advanced Dogma':
-    'Section=feature Note="+1 Class Feat (cleric up to level %{level//2})"',
-  'Divine Breadth':
-    'Section=magic Note="+1 divine spell slot of each level up to %V"',
-  'Expert Cleric Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
-  'Master Cleric Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Master (Divine)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} divine spell"',
-
-  'Druid Dedication':
-    'Section=feature,magic,skill ' +
-    'Note=' +
-      '"Has the Anathema, Druidic Language, and Druidic Order features",' +
-      '"Spell Trained (Primal)/Can prepare 2 primal cantrips each day",' +
-      '"Skill Trained (Nature)"',
-  'Basic Druid Spellcasting':
-    'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell"',
-  'Basic Wilding':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
-  'Order Spell (Animal)':
-    'Section=magic ' +
-    'Note="Knows the Heal Animal primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Leaf)':
-    'Section=magic ' +
-    'Note="Knows the Goodberry primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Storm)':
-    'Section=magic ' +
-    'Note="Knows the Tempest Surge primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Order Spell (Wild)':
-    'Section=magic ' +
-    'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Wilding':
-    'Section=feature Note="+1 Class Feat (druid up to level %{level//2})"',
-  'Primal Breadth':
-    'Section=magic Note="+1 primal spell slot of each level up to %V"',
-  'Expert Druid Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Expert (Primal)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} primal spell"',
-  'Master Druid Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Master (Primal)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} primal spell"',
-
-  'Fighter Dedication':
-    'Section=combat,skill ' +
-    'Note=' +
-      '"Attack Trained (Simple Weapons; Martial Weapons)/Class Trained (Fighter)",' +
-      '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
-  'Basic Maneuver':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level fighter)"',
-  'Fighter Resiliency':'Section=combat Note="+%V Hit Points"',
-  'Opportunist':'Section=feature Note="Has the Attack Of Opportunity feature"',
-  'Advanced Maneuver':
-    'Section=feature Note="+1 Class Feat (fighter up to level %{level//2})"',
-  'Diverse Weapon Expert':
-    'Section=combat ' +
-    'Note="Attack Expert (Simple Weapons; Martial Weapons)/Attack Trained (Advanced Weapons)"',
-
-  'Monk Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Attack Trained (Unarmed Attacks)/Class Trained (Monk)",' +
-      '"Has the Powerful Fist feature",' +
-      '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
-  'Basic Kata':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level monk)"',
-  'Monk Resiliency':'Section=combat Note="+%V Hit Points"',
-  'Advanced Kata':
-    'Section=feature Note="+1 Class Feat (monk up to level %{level//2})"',
-  'Monk Moves':'Section=ability Note="+10 Speed in no armor"',
-  "Monk's Flurry":'Section=feature Note="Has the Flurry Of Blows feature"',
-  "Perfection's Path (Fortitude)":'Section=save Note="Save Master (Fortitude)"',
-  "Perfection's Path (Reflex)":'Section=save Note="Save Master (Reflex)"',
-  "Perfection's Path (Will)":'Section=save Note="Save Master (Will)"',
-
-  'Ranger Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Class Trained (Ranger)",' +
-      '"Has the Hunt Prey feature",' +
-      '"Skill Trained (Survival)"',
-  "Basic Hunter's Trick":
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level ranger)"',
-  'Ranger Resiliency':'Section=combat Note="+%V Hit Points"',
-  "Advanced Hunter's Trick":
-    'Section=feature Note="+1 Class Feat (ranger up to level %{level//2})"',
-  'Master Spotter':'Section=skill Note="Perception Master"',
-
-  'Rogue Dedication':
-    'Section=combat,feature,skill ' +
-    'Note=' +
-      '"Class Trained (Rogue)/Defense Trained (Light Armor)",' +
-      '"+1 Skill Feat/Has the Surprise Attack feature",' +
-      '"Skill Trained (Choose 1 from Stealth, Thievery; Choose 1 from any)"',
-  'Basic Trickery':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level rogue)"',
-  'Sneak Attacker':'Section=feature Note="Has the Sneak Attack feature"',
-  'Advanced Trickery':
-    'Section=feature Note="+1 Class Feat (rogue up to level %{level//2})"',
-  'Skill Mastery':
-    'Section=feature,skill ' +
-    'Note=' +
-      '"+1 Skill Feat",' +
-      '"Skill Expert (Choose 1 from any)/Skill Master (Choose 1 from any)"',
-  'Uncanny Dodge':'Section=feature Note="Has the Deny Advantage feature"',
-  'Evasiveness':'Section=save Note="Save Master (Reflex)"',
-*/
-
-  'Sorcerer Dedication':
-    'Section=feature,magic ' +
-    'Note=' +
-      '"Has the Bloodline feature",' +
-      '"Spell Trained (%V)/Knows 2 %1 cantrips"',
-/*
-  'Basic Sorcerer Spellcasting':
-    'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
-  'Basic Blood Potency':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
-  'Basic Bloodline Spell (Aberrant)':
-    'Section=magic ' +
-    'Note="Knows the Tentacular Limbs occult spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Angelic)':
-    'Section=magic ' +
-    'Note="Knows the Angelic Halo divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Demonic)':
-    'Section=magic ' +
-    'Note="Knows the Glutton\'s Jaws divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Diabolic)':
-    'Section=magic ' +
-    'Note="Knows the Diabolic Edict divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Black))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Blue))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Brass))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Bronze))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Copper))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Gold))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Green))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Red))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (Silver))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Draconic (White))':
-    'Section=magic ' +
-    'Note="Knows the Dragon Claws arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Air))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Earth))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Fire))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Elemental (Water))':
-    'Section=magic ' +
-    'Note="Knows the Elemental Toss primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Fey)':
-    'Section=magic ' +
-    'Note="Knows the Faerie Dust primal spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Hag)':
-    'Section=magic ' +
-    'Note="Knows the Jealous Hex occult spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Imperial)':
-    'Section=magic ' +
-    'Note="Knows the Ancestral Memories arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Bloodline Spell (Undead)':
-    'Section=magic ' +
-    'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
-  'Advanced Blood Potency':
-    'Section=feature Note="+1 Class Feat (sorcerer up to level %{level//2})"',
-  'Bloodline Breadth':
-    'Section=magic ' +
-    'Note="+1 %{bloodlineTraditionsLowered} spell slot of each level up to %V"',
-  'Expert Sorcerer Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Expert (%{bloodlineTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
-  'Master Sorcerer Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Master (%{bloodlineTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
-
-  'Wizard Dedication':
-    'Section=feature,magic,magic,skill ' +
-    'Note=' +
-      '"Has the Arcane School feature",' +
-      '"Spell Trained (Arcane)/Can prepare 2 arcane cantrips each day",' +
-      '"Owns a spellbook with 4 arcane cantrips",' +
-      '"Skill Trained (Arcana)"',
-  'Arcane School Spell (Abjuration)':
-    'Section=magic ' +
-    'Note="Knows the Protective Ward arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Conjuration)':
-    'Section=magic ' +
-    'Note="Knows the Augment Summoning arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Divination)':
-    'Section=magic ' +
-    'Note="Knows the Diviner\'s Sight arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Enchantment)':
-    'Section=magic ' +
-    'Note="Knows the Charming Words arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Evocation)':
-    'Section=magic ' +
-    'Note="Knows the Force Bolt arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Illusion)':
-    'Section=magic ' +
-    'Note="Knows the Warped Terrain arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Necromancy)':
-    'Section=magic ' +
-    'Note="Knows the Call Of The Grave arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Arcane School Spell (Transmutation)':
-    'Section=magic ' +
-    'Note="Knows the Physical Boost arcane spell/Has a focus pool and at least 1 Focus Point"',
-  'Basic Arcana':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
-  'Basic Wizard Spellcasting':
-    'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
-  'Advanced Arcana':
-    'Section=feature Note="+1 Class Feat (wizard up to level %{level//2})"',
-  'Arcane Breadth':
-    'Section=magic Note="+1 arcane spell slot of each level up to %V"',
-  'Expert Wizard Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Expert (Arcane)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} arcane spell"',
-  'Master Wizard Spellcasting':
-    'Section=magic ' +
-    'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell"',
-*/
-
   // Core 2
 
   // Alchemist
@@ -8369,7 +8026,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed calculations from Infused Reagents
   'Versatile Vials':
     'Section=skill ' +
-    'Note="Can create %{(levels.Alchemist?2+intelligenceModifier:4)+(skillNotes.efficientAlchemy?4:0)+(skillNotes.alchemicalDiscoveries?rank.Crafting-1:0)} versatile vials during daily prep"',
+    'Note="Can create %{(levels.Alchemist?2+intelligenceModifier:skillNotes.alchemicalSciences?intelligenceModifier:4)+(skillNotes.alchemicalDiscoveries?rank.Crafting-1:0)+($\'features.Voluminous Vials\'||0)} versatile vials during daily prep"',
   // Weapon Specialization as above
   'Will Expertise':Pathfinder2E.FEATURES['Iron Will'],
 
@@ -8556,7 +8213,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Enters rage during initiative when unencumbered and in medium or lighter armor"',
   'Rage':
    Pathfinder2E.FEATURES.Rage
-   .replace('-1 Armor Class and ', '')
+   .replace('-1 Armor Class and ', "%{levels.Barbarian?'':'-1 Armor Class and '}")
    .replace('quickRage', 'revitalizingRage')
    .replace('rages', 'rages to again gain temporary Hit Points'),
   'Raging Resistance (Animal)':
@@ -10854,7 +10511,326 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Permanently quickened; can use the extra action only to perform a bravado action"',
 
-  // General and Skill Feats
+  // Archetype
+
+  'Bard Dedication':Pathfinder2E.FEATURES['Bard Dedication'],
+  'Basic Bard Spellcasting':Pathfinder2E.FEATURES['Basic Bard Spellcasting'],
+  "Basic Muse's Whispers":Pathfinder2E.FEATURES["Basic Muse's Whispers"],
+  "Advanced Muse's Whispers":Pathfinder2E.FEATURES["Advanced Muse's Whispers"],
+  'Counter Perform':
+    Pathfinder2E.FEATURES['Counter Perform']
+    .replace(' and at least 1 Focus Point', ''),
+  'Anthemic Performance':
+    Pathfinder2E.FEATURES['Inspirational Performance']
+    .replace('Inspire Courage', 'Courageous Anthem'),
+  'Occult Breadth':Pathfinder2E.FEATURES['Occult Breadth'],
+  'Expert Bard Spellcasting':Pathfinder2E.FEATURES['Expert Bard Spellcasting'],
+  'Master Bard Spellcasting':Pathfinder2E.FEATURES['Master Bard Spellcasting'],
+
+  'Cleric Dedication':Pathfinder2E.FEATURES['Cleric Dedication'],
+  'Basic Cleric Spellcasting':
+    Pathfinder2E.FEATURES['Basic Cleric Spellcasting'],
+  'Basic Dogma':Pathfinder2E.FEATURES['Basic Dogma'],
+  'Advanced Dogma':Pathfinder2E.FEATURES['Advanced Dogma'],
+  'Divine Breadth':Pathfinder2E.FEATURES['Divine Breadth'],
+  'Expert Cleric Spellcasting':
+    Pathfinder2E.FEATURES['Expert Cleric Spellcasting'],
+  'Master Cleric Spellcasting':
+    Pathfinder2E.FEATURES['Master Cleric Spellcasting'],
+
+  'Druid Dedication':
+    Pathfinder2E.FEATURES['Druid Dedication']
+    .replace('Druidic Language', 'Wildsong'),
+  'Basic Druid Spellcasting':Pathfinder2E.FEATURES['Basic Druid Spellcasting'],
+  'Basic Wilding':Pathfinder2E.FEATURES['Basic Wilding'],
+  'Order Spell (Animal)':
+    Pathfinder2E.FEATURES['Order Spell (Animal)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Order Spell (Leaf)':
+    Pathfinder2E.FEATURES['Order Spell (Leaf)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Goodberry', 'Cornucopia'),
+  'Order Spell (Storm)':
+    Pathfinder2E.FEATURES['Order Spell (Storm)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Order Spell (Untamed)':
+    Pathfinder2E.FEATURES['Order Spell (Wild)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Wild Morph', 'Untamed Form'),
+  'Advanced Wilding':Pathfinder2E.FEATURES['Advanced Wilding'],
+  'Primal Breadth':Pathfinder2E.FEATURES['Primal Breadth'],
+  'Expert Druid Spellcasting':
+    Pathfinder2E.FEATURES['Expert Druid Spellcasting'],
+  'Master Druid Spellcasting':
+    Pathfinder2E.FEATURES['Master Druid Spellcasting'],
+  'Ranger Dedication':Pathfinder2E.FEATURES['Ranger Dedication'],
+  "Basic Hunter's Trick":Pathfinder2E.FEATURES["Basic Hunter's Trick"],
+  'Ranger Resiliency':Pathfinder2E.FEATURES['Ranger Resiliency'],
+  "Advanced Hunter's Trick":Pathfinder2E.FEATURES["Advanced Hunter's Trick"],
+  'Master Spotter':Pathfinder2E.FEATURES['Master Spotter'],
+
+  'Fighter Dedication':Pathfinder2E.FEATURES['Fighter Dedication'],
+  'Basic Maneuver':Pathfinder2E.FEATURES['Basic Maneuver'],
+  'Fighter Resiliency':Pathfinder2E.FEATURES['Fighter Resiliency'],
+  'Reactive Striker':
+    Pathfinder2E.FEATURES.Opportunist
+    .replace('Attack Of Opportunity', 'Reactive Strike'),
+  'Advanced Maneuver':Pathfinder2E.FEATURES['Advanced Maneuver'],
+  'Diverse Weapon Expert':Pathfinder2E.FEATURES['Diverse Weapon Expert'],
+
+  'Rogue Dedication':Pathfinder2E.FEATURES['Rogue Dedication'],
+  'Basic Trickery':Pathfinder2E.FEATURES['Basic Trickery'],
+  'Sneak Attacker':Pathfinder2E.FEATURES['Sneak Attacker'],
+  'Advanced Trickery':Pathfinder2E.FEATURES['Advanced Trickery'],
+  'Skill Mastery':Pathfinder2E.FEATURES['Skill Mastery'],
+  'Uncanny Dodge':Pathfinder2E.FEATURES['Uncanny Dodge'],
+  'Evasiveness':Pathfinder2E.FEATURES.Evasiveness,
+
+  'Witch Dedication':
+    'Section=feature Note="Has the Familiar and Patron features"',
+  'Basic Witch Spellcasting':
+    'Section=magic ' +
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{patronTraditionsLowered} spell"',
+  'Basic Witchcraft':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level witch)"',
+  'Advanced Witchcraft':
+    'Section=feature Note="+1 Class Feat (witch up to level %{level//2})"',
+  "Patron's Breadth":
+    'Section=magic Note="+1 %{patronTraditionsLowered} spell slot of each level up to %V"',
+  'Expert Witch Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Expert (Arcane)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{patronTraditionsLowered} spell"',
+  'Master Witch Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{patronTraditionsLowered} spell"',
+
+  'Wizard Dedication':Pathfinder2E.FEATURES['Wizard Dedication'],
+  'Arcane School Spell (School Of Ars Grammatica)':
+    'Section=magic Note="Knows the Protective Wards arcane spell"',
+  'Arcane School Spell (School Of Battle Magic)':
+    'Section=magic Note="Knows the Force Bolt arcane spell"',
+  'Arcane School Spell (School Of The Boundary)':
+    'Section=magic Note="Knows the Fortify Summoning arcane spell"',
+  'Arcane School Spell (School Of Civic Wizardry)':
+    'Section=magic Note="Knows the Earthworks arcane spell"',
+  'Arcane School Spell (School Of Mentalism)':
+    'Section=magic Note="Knows the Charming Push arcane spell"',
+  'Arcane School Spell (School Of Protean Form)':
+    'Section=magic Note="Knows the Scramble Body arcane spell"',
+  'Arcane School Spell (School Of Unified Magical Theory)':
+    'Section=magic Note="Knows the Hand Of The Apprentice arcane spell"',
+  'Basic Arcana':Pathfinder2E.FEATURES['Basic Arcana'],
+  'Basic Wizard Spellcasting':
+    Pathfinder2E.FEATURES['Basic Wizard Spellcasting'],
+  'Advanced Arcana':Pathfinder2E.FEATURES['Advanced Arcana'],
+  'Arcane Breadth':Pathfinder2E.FEATURES['Arcane Breadth'],
+  'Expert Wizard Spellcasting':
+    Pathfinder2E.FEATURES['Expert Wizard Spellcasting'],
+  'Master Wizard Spellcasting':
+    Pathfinder2E.FEATURES['Master Wizard Spellcasting'],
+
+  // Core 2
+
+  'Alchemist Dedication':
+    Pathfinder2E.FEATURES['Alchemist Dedication']
+    .replace('Infused Reagents', 'Versatile Vials'),
+  // Advanced Alchemy as above
+  'Basic Concoction':Pathfinder2E.FEATURES['Basic Concoction'],
+  'Advanced Concoction':Pathfinder2E.FEATURES['Advanced Concoction'],
+  'Voluminous Vials':
+    'Section=skill Note="Has increased Versatile Vials effects"',
+  'Alchemical Power':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Class Expert (Alchemist)",' +
+      '"Can use Alchemist DC for infused item save DC"',
+
+  'Barbarian Dedication':Pathfinder2E.FEATURES['Barbarian Dedication'],
+  'Barbarian Resiliency':Pathfinder2E.FEATURES['Barbarian Resiliency'],
+  'Basic Fury':Pathfinder2E.FEATURES['Basic Fury'],
+  'Advanced Fury':Pathfinder2E.FEATURES['Advanced Fury'],
+  'Instinct Ability':Pathfinder2E.FEATURES['Instinct Ability'],
+  "Juggernaut's Fortitude":Pathfinder2E.FEATURES["Juggernaut's Fortitude"],
+
+  // TODO Trained in Heavy Armor only if already trained in Medium Armor
+  'Champion Dedication':Pathfinder2E.FEATURES['Champion Dedication'],
+  'Basic Devotion':Pathfinder2E.FEATURES['Basic Devotion'],
+  'Champion Resiliency':Pathfinder2E.FEATURES['Champion Resiliency'],
+  'Devout Magic':Pathfinder2E.FEATURES['Healing Touch'],
+  'Advanced Devotion':Pathfinder2E.FEATURES['Advanced Devotion'],
+  // Champion's Reaction as above
+  'Devout Blessing':Pathfinder2E.FEATURES['Divine Ally'],
+
+  'Investigator Dedictation':
+    'Section=combat,feature,skill ' +
+    'Note=' +
+      '"Class Trained (Investigator)",' +
+      '"Has the On The Case feature",' +
+      '"Skill Trained (Society; choose 1 from any)"',
+  'Basic Deduction':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level investigator)"',
+  "Investigator's Stratagem":
+    'Section=feature ' +
+    'Note="Has the Devise A Stratagem feature; cannot substitute intelligence when using Attack Stratagem"',
+  'Advanced Deduction':
+    'Section=feature ' +
+    'Note="+1 Class Feat (investigator up to level %{level//2})"',
+  // Keen Recollection as above
+  // Skill Mastery as above
+  // Master Spotter as above
+
+  'Monk Dedication':Pathfinder2E.FEATURES['Monk Dedication'],
+  'Basic Kata':Pathfinder2E.FEATURES['Basic Kata'],
+  'Monk Resiliency':Pathfinder2E.FEATURES['Monk Resiliency'],
+  'Advanced Kata':Pathfinder2E.FEATURES['Advanced Kata'],
+  'Monk Moves':Pathfinder2E.FEATURES['Monk Moves'],
+  "Monk's Flurry":Pathfinder2E.FEATURES["Monk's Flurry"],
+  "Perfection's Path (Fortitude)":
+    Pathfinder2E.FEATURES["Perfection's Path (Fortitude)"],
+  "Perfection's Path (Reflex)":
+    Pathfinder2E.FEATURES["Perfection's Path (Reflex)"],
+  "Perfection's Path (Will)":Pathfinder2E.FEATURES["Perfection's Path (Will)"],
+
+  'Oracle Dedication':
+    'Section=feature,magic,skill ' +
+    'Note=' +
+      '"Has the Mystery and Oracular Curse features",' +
+      '"Spell Trained (Divine)",' +
+      '"Skill Trained (Religion)"',
+  'Basic Mysteries':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level oracle)"',
+  'Basic Oracle Spellcasting':
+    'Section=magic ' +
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
+  'First Revelation (Ancestors)':
+    'Section=magic Note="Knows the Ancestral Touch divine spell"',
+  'First Revelation (Battle)':
+    'Section=magic Note="Knows the Weapon Trance divine spell"',
+  'First Revelation (Bones)':
+    'Section=magic Note="Knows the Soul Siphon divine spell"',
+  'First Revelation (Cosmos)':
+    'Section=magic Note="Knows the Spray Of Stars divine spell"',
+  'First Revelation (Flames)':
+    'Section=magic Note="Knows the Incendiary Aura divine spell"',
+  'First Revelation (Life)':
+    'Section=magic Note="Knows the Life Link divine spell"',
+  'First Revelation (Lore)':
+    'Section=magic Note="Knows the Brain Drain divine spell"',
+  'First Revelation (Tempest)':
+    'Section=magic Note="Knows the Tempest Touch divine spell"',
+  'Advanced Mysteries':
+    'Section=feature ' +
+    'Note="+1 Class Feat (oracle up to level %{level//2})"',
+  'Mysterious Breadth':
+    'Section=magic Note="+1 divine spell slot of each level up to %V"',
+  'Expert Oracle Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
+  'Master Oracle Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Master (Divine)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} divine spell"',
+
+  'Sorcerer Dedication':Pathfinder2E.FEATURES['Sorcerer Dedication'],
+  'Basic Sorcerer Spellcasting':
+    Pathfinder2E.FEATURES['Basic Sorcerer Spellcasting'],
+  'Basic Blood Potency':Pathfinder2E.FEATURES['Basic Blood Potency'],
+  'Basic Bloodline Spell (Aberrant)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Aberrant)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Angelic)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Angelic)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Demonic)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Demonic)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Diabolic)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Diabolic)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Draconic (Arcane))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Dragon Claws', 'Flurry Of Claws'),
+  'Basic Bloodline Spell (Draconic (Divine))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('arcane', 'divine')
+    .replace('Dragon Claws', 'Flurry Of Claws'),
+  'Basic Bloodline Spell (Draconic (Occult))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('arcane', 'occult')
+    .replace('Dragon Claws', 'Flurry Of Claws'),
+  'Basic Bloodline Spell (Draconic (Primal))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Draconic (Brass))']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('arcane', 'primal')
+    .replace('Dragon Claws', 'Flurry Of Claws'),
+  'Basic Bloodline Spell (Elemental (Air))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Air))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Elemental (Earth))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Earth))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Elemental (Fire))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Fire))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Elemental (Metal))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Earth))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Elemental (Water))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Water))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Elemental (Wood))':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Elemental (Water))']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Fey)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Fey)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Hag)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Hag)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Imperial)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Imperial)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Basic Bloodline Spell (Undead)':
+    Pathfinder2E.FEATURES['Basic Bloodline Spell (Undead)']
+    .replace(' and at least 1 Focus Point', ''),
+  'Advanced Blood Potency':Pathfinder2E.FEATURES['Advanced Blood Potency'],
+  'Bloodline Breadth':Pathfinder2E.FEATURES['Bloodline Breadth'],
+  'Expert Sorcerer Spellcasting':
+    Pathfinder2E.FEATURES['Expert Sorcerer Spellcasting'],
+  'Master Sorcerer Spellcasting':
+    Pathfinder2E.FEATURES['Master Sorcerer Spellcasting'],
+
+  'Swashbuckler Dedication':
+    'Section=combat,feature,skill ' +
+    'Note=' +
+      '"Class Trained (Swashbuckler)",' +
+      '"Has the Panache feature",' +
+      '"Skill Trained (Acrobatics)"',
+  'Basic Flair':
+    'Section=feature Note="+1 Class Feat (1st- or 2nd-level swashbuckler)"',
+  'Finishing Precision':
+    'Section=combat ' +
+    'Note="Has the Precise Strike and Basic Finisher features"',
+  'Basic Finisher':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Strike with a Precise Strike weapon inflicts +1d6 HP precision"',
+  'Advanced Flair':
+    'Section=feature ' +
+    'Note="+1 Class Feat (swashbuckler up to level %{level//2})"',
+  "Swashbuckler's Riposte":
+    'Section=combat Note="Has the Opportune Riposte feature"',
+  "Swashbuckler's Speed":
+    'Section=ability,ability ' +
+    'Note=' +
+      '"+5 Speed",' +
+      '"+5 Speed with panache"',
+  // Evasiveness as above
+
+  // General and Skill
+
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
   'Adopted Ancestry (%ancestry)':
     Pathfinder2E.FEATURES['Adopted Ancestry (%ancestry)'],
@@ -14814,6 +14790,16 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Fangs') {
     rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
     // Note: Ignore Grapple trait currently not shown on character sheet
+  } else if(name == 'First Revelation') {
+    let mysteries =
+      rules.plugin.CLASSES.Oracle.match(/([\s\w]*:Mystery)/g)
+      .map(x => x.replace(':Mystery', ''));
+    mysteries.forEach(s => {
+      rules.defineRule('features.First Revelation (' + s + ')',
+        'features.First Revelation', '?', null,
+        'features.' + s, '=', '1'
+      );
+    });
   } else if(name == 'Form Of The Dragon') {
     rules.defineRule('features.Form Of The Dragon (Arcane)',
       'features.Form Of The Dragon', '?', null,
