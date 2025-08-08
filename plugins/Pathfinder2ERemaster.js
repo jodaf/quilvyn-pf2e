@@ -3275,6 +3275,15 @@ Pathfinder2ERemaster.FEATS = {
   // Cantrip Expansion as above
   'Divine Aegis':'Traits=Oracle,Divine Require="level >= 2"',
   'Domain Acumen (%domain)':'Traits=Oracle Require="level >= 2"',
+  // Added domains from Divine Mysteries
+  'Domain Acumen (Decay)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Dust)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Duty)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Lightning)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Nothingness)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Soul)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Star)':'Traits=Oracle Require="level >= 2"',
+  'Domain Acumen (Vigil)':'Traits=Oracle Require="level >= 2"',
   'Meddling Futures':'Traits=Oracle,Cursebound,Divine Require="level >= 2"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
@@ -9485,7 +9494,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Foretell Harm':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per rd, once per target per day"',
+    'Note="<b>(CB)</b> Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per rd, once per target per day"',
   'Glean Lore':
     'Action=1 ' +
     'Section=skill ' +
@@ -9494,17 +9503,17 @@ Pathfinder2ERemaster.FEATURES = {
     // in note 'Action=1 ' +
     'Section=magic,magic ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' R30\' Target regains %{level*2+2} Hit Points",' +
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(CB)</b> R30\' Target regains %{level*2+2} Hit Points",' +
       '"Can choose during daily prep to be healed by vitality healing or void healing"',
   'Oracular Warning':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
+    'Note="<b>(CB)</b> R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
   // Reach Spell as above
   'Whispers Of Weakness':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
+    'Note="<b>(CB)</b> R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
   // Widen Spell as above
   // Cantrip Expansion as above
   'Divine Aegis':
@@ -9622,19 +9631,34 @@ Pathfinder2ERemaster.FEATURES = {
   'Domain Acumen (Zeal)':
     Pathfinder2E.FEATURES['Domain Initiate (Zeal)']
     .replace(/\/[^"]*/, ''),
+  'Domain Acumen (Decay)':
+    'Section=magic Note="Knows the Withering Grasp divine spell"',
+  'Domain Acumen (Dust)':'Section=magic Note="Knows the Parch divine spell"',
+  'Domain Acumen (Duty)':
+    'Section=magic Note="Knows the Swear Oath divine spell"',
+  'Domain Acumen (Lightning)':
+    'Section=magic Note="Knows the Charged Javelin divine spell"',
+  'Domain Acumen (Nothingness)':
+    'Section=magic Note="Knows the Empty Inside divine spell"',
+  'Domain Acumen (Soul)':
+    'Section=magic Note="Knows the Eject Soul divine spell"',
+  'Domain Acumen (Star)':
+    'Section=magic Note="Knows the Zenith Star divine spell"',
+  'Domain Acumen (Vigil)':
+    'Section=magic Note="Knows the Object Memory divine spell"',
   'Meddling Futures':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
+    'Note="<b>(CB)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Uses Reach Spell or Widen Spell"',
+    'Note="<b>(CB)</b> Uses Reach Spell or Widen Spell"',
   'Thousand Visions':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
+    'Note="<b>(CB)</b> R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
   'Advanced Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Defense divine spell"',
   'Advanced Revelation (Battle)':
@@ -9660,7 +9684,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Debilitating Dichotomy':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="R30\' Inflicts %{((level//2)-1)*3}d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)"',
+    'Note="<b>(CB)</b> R30\' Inflicts %{((level//2)-1)*3}d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)"',
   'Read Disaster':
     'Section=magic ' +
     'Note="%{rank.Religion>=4?1:10} min contemplation reveals whether the results of a proposed action up to 30 min in the future will be generally bad"',
@@ -9675,19 +9699,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Roll The Bones Of Fate':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
+    'Note="<b>(CB)</b> R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
   'The Dead Walk':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit and can flank with allies or each other"',
+    'Note="<b>(CB)</b> R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit and can flank with allies or each other"',
   'Trial By Skyfire':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain suppresses the effects for 1 rd"',
+    'Note="<b>(CB)</b> 10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain suppresses the effects for 1 rd"',
   'Waters Of Creation':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
+    'Note="<b>(CB)</b> 15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
   'Domain Fluency (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
   'Domain Fluency (Ambition)':
     Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
@@ -9742,6 +9766,22 @@ Pathfinder2ERemaster.FEATURES = {
   'Domain Fluency (Water)':Pathfinder2E.FEATURES['Advanced Domain (Water)'],
   'Domain Fluency (Wealth)':Pathfinder2E.FEATURES['Advanced Domain (Wealth)'],
   'Domain Fluency (Zeal)':Pathfinder2E.FEATURES['Advanced Domain (Zeal)'],
+  'Domain Fluency (Decay)':
+    'Section=magic Note="Knows the Fallow Field divine spell"',
+  'Domain Fluency (Dust)':
+    'Section=magic Note="Knows the Dust Storm divine spell"',
+  'Domain Fluency (Duty)':
+    'Section=magic Note="Knows the Dutiful Challenge divine spell"',
+  'Domain Fluency (Lightning)':
+    'Section=magic Note="Knows the Bottle The Storm divine spell"',
+  'Domain Fluency (Nothingness)':
+    'Section=magic Note="Knows the Door To Beyond divine spell"',
+  'Domain Fluency (Soul)':
+    'Section=magic Note="Knows the Ectoplasmic Interstice divine spell"',
+  'Domain Fluency (Star)':
+    'Section=magic Note="Knows the Asterism divine spell"',
+  'Domain Fluency (Vigil)':
+    'Section=magic Note="Knows the Remember The Lost divine spell"',
   'Epiphany At The Crossroads':
     'Action=Free ' +
     'Section=magic ' +
@@ -9776,7 +9816,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Conduit Of Void And Vitality':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity"',
+    'Note="<b>(CB)</b> Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity"',
   'Diverse Mystery':
     'Section=magic ' +
     'Note="Can cast an initial or advanced revelation spell from another mystery, increasing cursebound severity and suffering the mystery\'s cursebound 1 effects"',
@@ -9795,7 +9835,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Mystery Conduit':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
+    'Note="<b>(CB)</b> Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
   'Oracular Providence':'Section=magic Note="+1 10th rank spell slot"',
   'Paradoxical Mystery':
    'Section=magic ' +
@@ -12472,6 +12512,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Zealous Conviction']
     .replace('Enchantment', 'Concentrate,Manipulate'),
 
+  // Bard
   'Allegro':
     Pathfinder2E.SPELLS.Allegro
     .replace('Enchantment', 'Concentrate'),
@@ -12555,6 +12596,8 @@ Pathfinder2ERemaster.SPELLS = {
   'Uplifting Overture':
     Pathfinder2E.SPELLS['Inspire Competence']
     .replace('Enchantment', 'Concentrate'),
+
+  // Cleric
   'Pushing Gust':
     Pathfinder2E.SPELLS['Pushing Gust']
     .replace('Conjuration', 'Concentrate,Manipulate'),
@@ -12823,6 +12866,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Zeal For Battle']
     .replace('Enchantment', 'Concentrate'),
 
+  // Druid
   'Primal Summons':
     Pathfinder2E.SPELLS['Primal Summons']
     .replace('Conjuration', 'Concentrate')
@@ -12936,6 +12980,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"Teleports self and adjacent animal companion 90\', or 180\' in favored terrain"',
 
+  // Witch
   'Blood Ward':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Manipulate ' +
@@ -13079,6 +13124,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Description=' +
       '"R30\' Target suffers -2 attack and sickened 1 when attacking self while sustained for up to 1 min (<b>save Will</b> negates sickened; critical success negates; critical failure inflicts sickened 2)"',
 
+  // Wizard
   'Protective Wards':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Wizard,Aura,Manipulate ' +
@@ -13330,10 +13376,27 @@ Pathfinder2ERemaster.SPELLS = {
   'Touch Of Death':
     Pathfinder2E.SPELLS['Quivering Palm']
     .replace('Necromancy', 'Concentrate,Manipulate'),
-  'Harmonize Self':
-    Pathfinder2E.SPELLS['Wholeness Of Body']
-    .replace('Necromancy', 'Concentrate')
-    .replace('Positive', 'Vitality'),
+  'Embrace Nothingness':
+    'Level=9 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="Self gains resistance %{level} to physical damage, half speed in any direction, concealment when moving and invisibility when still, and the ability toe move through up to 2\' of solid material for 1 min"',
+  'Qi Form':
+    'Level=9 ' +
+    'Traits=Monk,Uncommon,Concentrate,Focus,Polymorph ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be extended to 30\', nonlethal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
+  'Clinging Shadows Stance':
+    'Level=4 ' +
+    'Traits=Monk,Uncommon,Focus,Manipulate,Shadow,Stance ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="Stance gives +2 Grapple checks and DC to Escape and allows shadow grasp Strikes that inflict 1d4 HP void"',
+  'Wild Winds Stance':
+    Pathfinder2E.SPELLS['Wild Winds Stance']
+    .replace('Evocation', 'Manipulate'),
   "Shadow's Web":
     'Level=7 ' +
     'Traits=Uncommon,Focus,Monk,Concentrate,Manipulate ' +
@@ -13341,133 +13404,15 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"30\' emanation inflicts 14d4 HP void and enfeebled 2 for 1 rd (<b>save Fortitude</b> inflicts half HP and enfeebled 1 for 1 rd; critical success negates; critical failure inflicts double HP, stunned 1, enfeebled 2 for 1 rd, and immobilized for 1 rd)"',
-  'Wild Winds Stance':
-    Pathfinder2E.SPELLS['Wild Winds Stance']
-    .replace('Evocation', 'Manipulate'),
+  'Harmonize Self':
+    Pathfinder2E.SPELLS['Wholeness Of Body']
+    .replace('Necromancy', 'Concentrate')
+    .replace('Positive', 'Vitality'),
   'Wind Jump':
     Pathfinder2E.SPELLS['Wind Jump']
     .replace('Transmutation', 'Concentrate'),
 
-  // Sorcerer
-  'Tentacular Limbs':
-    Pathfinder2E.SPELLS['Tentacular Limbs']
-    .replace('Transmutation', 'Manipulate'),
-  'Aberrant Whispers':
-    Pathfinder2E.SPELLS['Aberrant Whispers']
-    .replace('Enchantment', 'Concentrate'),
-  'Unusual Anatomy':
-    Pathfinder2E.SPELLS['Aberrant Whispers']
-    .replace('Transmutation', 'Manipulate'),
-  'Angelic Halo':
-    Pathfinder2E.SPELLS['Angelic Halo']
-    .replace('Abjuration', 'Concentrate')
-    .replace('Good', 'Holy')
-    .replace('level', 'rank'),
-  'Angelic Wings':
-    Pathfinder2E.SPELLS['Angelic Wings']
-    .replace('Evocation', 'Concentrate,Manipulate'),
-  'Celestial Brand':
-    Pathfinder2E.SPELLS['Celestial Brand']
-    .replace('Necromancy', 'Manipulate')
-    .replace('evil', 'unholy')
-    .replace('HP good', 'HP spirit')
-    .replaceAll('good', 'holy'),
-  "Glutton's Jaws":
-    Pathfinder2E.SPELLS["Glutton's Jaws"] + ' ' +
-    'Cast=2 ' +
-    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
-    'Description=' +
-      '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary HP for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary HP</b>)"',
-  'Swamp Of Sloth':
-    Pathfinder2E.SPELLS['Swamp Of Sloth']
-    .replace('Conjuration', 'Concentrate,Manipulate'),
-  'Chthonian Wrath':
-    Pathfinder2E.SPELLS['Abyssal Wrath']
-    .replace('Evocation', 'Concentrate,Manipulate'),
-  'Diabolic Edict':
-    Pathfinder2E.SPELLS['Diabolic Edict']
-    .replace('Enchantment', 'Concentrate'),
-  'Embrace The Pit':
-    Pathfinder2E.SPELLS['Embrace The Pit']
-    .replace('Transmutation', 'Concentrate')
-    .replace(',Evil', '')
-    .replaceAll('evil, fire,', 'fire')
-    .replaceAll(/, and weakness \S+ to good,?/g, ''),
-  'Hellfire Plume':
-    Pathfinder2E.SPELLS['Hellfire Plume']
-    .replace('Evocation', 'Concentrate,Manipulate')
-    .replace('Evil', 'Spirit')
-    .replaceAll('evil', 'spirit'),
-  'Flurry Of Claws':
-    'Level=1 ' +
-    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
-    'Traditions=Primal ' +
-    'Cast=2 ' +
-    'Description=' +
-      '"R30\' Successful spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
-  'Dragon Breath':
-    Pathfinder2E.SPELLS['Dragon Breath']
-    .replace('Evocation', 'Concentrate,Manipulate')
-    .replaceAll(/draconicColor[^:]*:/g, ''),
-  'Dragon Wings':
-    Pathfinder2E.SPELLS['Dragon Wings']
-    .replace('Transmutation', 'Concentrate,Manipulate'),
-  'Elemental Toss':
-    Pathfinder2E.SPELLS['Elemental Toss']
-    .replace('Evocation', 'Manipulate'),
-  'Elemental Motion':
-    Pathfinder2E.SPELLS['Elemental Motion']
-    .replace('Evocation', 'Concentrate,Manipulate')
-    .replace('(Earth)', "(Earth)'||$$'features.Elemental (Metal)")
-    .replace('{', "{$$'features.Elemental (Wood)'?(speed+\\\"' climb Speed\\\"):"),
-  'Elemental Blast':
-    Pathfinder2E.SPELLS['Elemental Blast']
-    .replace('Evocation', 'Concentrate,Manipulate'),
-  'Faerie Dust':
-    Pathfinder2E.SPELLS['Faerie Dust']
-    .replace('Enchantment', 'Concentrate,Manipulate'),
-  'Fey Disappearance':
-    Pathfinder2E.SPELLS['Fey Disappearance']
-    .replace('Enchantment', 'Manipulate'),
-  'Fey Glamour':
-    Pathfinder2E.SPELLS['Fey Glamour']
-    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
-  'Jealous Hex':
-    Pathfinder2E.SPELLS['Jealous Hex']
-    .replace('Necromancy', 'Concentrate'),
-  'Horrific Visage':
-    Pathfinder2E.SPELLS['Jealous Hex']
-    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
-  "You're Mine":
-    Pathfinder2E.SPELLS["You're Mine"]
-    .replace('Enchantment','Concentrate,Manipulate'),
-  'Ancestral Memories':
-    Pathfinder2E.SPELLS['Ancestral Memories']
-    .replace('Divination', 'Concentrate') + ' ' +
-    'Description=' +
-      '"R60\' Self gains +1 on the next spell attack or target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
-  'Extend Blood Magic':
-    'Level=3 ' +
-    'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
-    'Cast=1 ' +
-    'Description=' +
-      '"Extends the blood magic effect from a subsequent spell by 1 rd"',
-  'Arcane Countermeasure':
-    Pathfinder2E.SPELLS['Arcane Countermeasure']
-    .replace('Abjuration', 'Manipulate')
-    .replace('level', 'rank'),
-  "Undeath's Blessing":
-    Pathfinder2E.SPELLS["Undeath's Blessing"]
-    .replace('Necromancy', 'Manipulate')
-    .replace('Negative', 'Void'),
-  'Drain Life':
-    Pathfinder2E.SPELLS['Drain Life']
-    .replace('Necromancy', 'Manipulate')
-    .replace('Negative', 'Void'),
-  'Grasping Grave':
-    Pathfinder2E.SPELLS['Grasping Grave']
-    .replace('Necromancy', 'Concentrate,Manipulate'),
-
+  // Oracle
   'Ancestral Touch':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Emotion,Fear,Focus,Manipulate,Mental ' +
@@ -13612,24 +13557,223 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description="TODO"',
-  'Embrace Nothingness':
-    'Level=9 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus,Manipulate ' +
+  // Additional domain spells from Divine Mysteries
+  'Withering Grasp':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Attack,Concentrate,Focus,Manipulate,Void ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="Self gains resistance %{level} to physical damage, half speed in any direction, concealment when moving and invisibility when still, and the ability toe move through up to 2\' of solid material for 1 min"',
-  'Qi Form':
-    'Level=9 ' +
-    'Traits=Monk,Uncommon,Concentrate,Focus,Polymorph ' +
+    'Description="TODO"',
+  'Parch':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Air,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Swear Oath':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="Self gains a %{speed}\' fly Speed, +1d6 HP force, spirit, vitality, or force damage, a 5\' aura that inflicts 2d6 HP that can be extended to 30\', nonlethal weapon attacks, -2 saves vs. emotion, and +2 saves vs. other mental for 1 min"',
-  'Clinging Shadows Stance':
+    'Description="TODO"',
+  'Charged Javelin':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Attack,Concentrate,Electricity,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Empty Inside':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=1 ' +
+    'Description="TODO"',
+  'Eject Soul':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Zenith Star':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Light,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Object Memory':
+    'Level=1 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Fallow Field':
     'Level=4 ' +
-    'Traits=Monk,Uncommon,Focus,Manipulate,Shadow,Stance ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate,Void ' +
     'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Dust Storm':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Air,Concentrate,Focus,Manipulate,Nonlethal ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Dutiful Challenge':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Bottle The Storm':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Electricity,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=Reaction ' +
+    'Description="TODO"',
+  'Door To Beyond':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Ectoplasmic Interstice':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Asterism':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+  'Remember The Lost':
+    'Level=4 ' +
+    'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
+    'Traditions=Divine ' +
+    'Cast=2 ' +
+    'Description="TODO"',
+
+  // Sorcerer
+  'Tentacular Limbs':
+    Pathfinder2E.SPELLS['Tentacular Limbs']
+    .replace('Transmutation', 'Manipulate'),
+  'Aberrant Whispers':
+    Pathfinder2E.SPELLS['Aberrant Whispers']
+    .replace('Enchantment', 'Concentrate'),
+  'Unusual Anatomy':
+    Pathfinder2E.SPELLS['Aberrant Whispers']
+    .replace('Transmutation', 'Manipulate'),
+  'Angelic Halo':
+    Pathfinder2E.SPELLS['Angelic Halo']
+    .replace('Abjuration', 'Concentrate')
+    .replace('Good', 'Holy')
+    .replace('level', 'rank'),
+  'Angelic Wings':
+    Pathfinder2E.SPELLS['Angelic Wings']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Celestial Brand':
+    Pathfinder2E.SPELLS['Celestial Brand']
+    .replace('Necromancy', 'Manipulate')
+    .replace('evil', 'unholy')
+    .replace('HP good', 'HP spirit')
+    .replaceAll('good', 'holy'),
+  "Glutton's Jaws":
+    Pathfinder2E.SPELLS["Glutton's Jaws"] + ' ' +
+    'Cast=2 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
+    'Description=' +
+      '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary HP for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary HP</b>)"',
+  'Swamp Of Sloth':
+    Pathfinder2E.SPELLS['Swamp Of Sloth']
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Chthonian Wrath':
+    Pathfinder2E.SPELLS['Abyssal Wrath']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Diabolic Edict':
+    Pathfinder2E.SPELLS['Diabolic Edict']
+    .replace('Enchantment', 'Concentrate'),
+  'Embrace The Pit':
+    Pathfinder2E.SPELLS['Embrace The Pit']
+    .replace('Transmutation', 'Concentrate')
+    .replace(',Evil', '')
+    .replaceAll('evil, fire,', 'fire')
+    .replaceAll(/, and weakness \S+ to good,?/g, ''),
+  'Hellfire Plume':
+    Pathfinder2E.SPELLS['Hellfire Plume']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('Evil', 'Spirit')
+    .replaceAll('evil', 'spirit'),
+  'Flurry Of Claws':
+    'Level=1 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Successful spell attack inflicts 1d8 HP slashing plus 1d4 HP %{\'%tradition\'==\'Arcane\'?\'force\':\'%tradition\'==\'Divine\'?\'spirit\':\'%tradition\'==\'Occult\'?\'mental\':\'fire\'} on 2 targets within 10\' of each other (<b>heightened +1</b> inflicts +1d8 HP slashing and +1d4 HP additional)"',
+  'Dragon Breath':
+    Pathfinder2E.SPELLS['Dragon Breath']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replaceAll(/draconicColor[^:]*:/g, ''),
+  'Dragon Wings':
+    Pathfinder2E.SPELLS['Dragon Wings']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Elemental Toss':
+    Pathfinder2E.SPELLS['Elemental Toss']
+    .replace('Evocation', 'Manipulate'),
+  'Elemental Motion':
+    Pathfinder2E.SPELLS['Elemental Motion']
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('(Earth)', "(Earth)'||$$'features.Elemental (Metal)")
+    .replace('{', "{$$'features.Elemental (Wood)'?(speed+\\\"' climb Speed\\\"):"),
+  'Elemental Blast':
+    Pathfinder2E.SPELLS['Elemental Blast']
+    .replace('Evocation', 'Concentrate,Manipulate'),
+  'Faerie Dust':
+    Pathfinder2E.SPELLS['Faerie Dust']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Fey Disappearance':
+    Pathfinder2E.SPELLS['Fey Disappearance']
+    .replace('Enchantment', 'Manipulate'),
+  'Fey Glamour':
+    Pathfinder2E.SPELLS['Fey Glamour']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Jealous Hex':
+    Pathfinder2E.SPELLS['Jealous Hex']
+    .replace('Necromancy', 'Concentrate'),
+  'Horrific Visage':
+    Pathfinder2E.SPELLS['Jealous Hex']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  "You're Mine":
+    Pathfinder2E.SPELLS["You're Mine"]
+    .replace('Enchantment','Concentrate,Manipulate'),
+  'Ancestral Memories':
+    Pathfinder2E.SPELLS['Ancestral Memories']
+    .replace('Divination', 'Concentrate') + ' ' +
+    'Description=' +
+      '"R60\' Self gains +1 on the next spell attack or target suffers -1 on its next save before the end of the turn (<b>heightened 5th</b> gives or inflicts +2 or -2; <b>8th</b> gives or inflicts +3 or -3)"',
+  'Extend Blood Magic':
+    'Level=3 ' +
+    'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
     'Cast=1 ' +
-    'Description="Stance gives +2 Grapple checks and DC to Escape and allows shadow grasp Strikes that inflict 1d4 HP void"'
+    'Description=' +
+      '"Extends the blood magic effect from a subsequent spell by 1 rd"',
+  'Arcane Countermeasure':
+    Pathfinder2E.SPELLS['Arcane Countermeasure']
+    .replace('Abjuration', 'Manipulate')
+    .replace('level', 'rank'),
+  "Undeath's Blessing":
+    Pathfinder2E.SPELLS["Undeath's Blessing"]
+    .replace('Necromancy', 'Manipulate')
+    .replace('Negative', 'Void'),
+  'Drain Life':
+    Pathfinder2E.SPELLS['Drain Life']
+    .replace('Necromancy', 'Manipulate')
+    .replace('Negative', 'Void'),
+  'Grasping Grave':
+    Pathfinder2E.SPELLS['Grasping Grave']
+    .replace('Necromancy', 'Concentrate,Manipulate')
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
