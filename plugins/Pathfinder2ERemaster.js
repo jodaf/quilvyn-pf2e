@@ -10189,7 +10189,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Confident Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Failed Strike inflicts half of normal precision damage"',
+    'Note="Strike with an agile or finesse weapon inflicts %{combatNotes.preciseFinisher?\'full\':\'half of\'} Precise Strike precision damage on failure"',
   'Continuous Flair':
     'Section=skill ' +
     'Note="Stylish Combatant bonus applies during exploration"',
@@ -10197,7 +10197,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Master (Swashbuckler)",' +
-      '"Finisher Strikes with appropriate weapons gain the Confident Finisher failure effect"',
+      '"Finisher and Opportune Riposte Strikes with agile and finesse weapons gain the Confident Finisher failure effect"',
   'Exemplary Finisher (Battledancer)':
     'Section=combat ' +
     'Note="Successful finisher Strike allows a free Step afterward"',
@@ -10243,7 +10243,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Perception Mastery as above
   'Precise Strike':
     'Section=combat ' +
-    'Note="Strikes with an agile or finesse weapon inflict +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision for finisher Strikes"',
+    'Note="Strikes with agile and finesse weapons inflict +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision with finisher Strikes"',
   'Rascal':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -10314,67 +10314,69 @@ Pathfinder2ERemaster.FEATURES = {
   'Disarming Flair':'Section=combat Note="Disarm action has the bravado trait"',
   'Elegant Buckler':
     'Section=combat ' +
-    'Note="Raise A Shield gives +2 Armor Class, and a foe critical miss while a shield is raised gives panache until the end of the next turn"',
+    'Note="Raise A Shield with a buckler gives +2 Armor Class, and a foe critical miss while a buckler is raised gives panache until the end of the next turn"',
   'Extravagant Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="When wielding a one-handed weapon, gives +1 Armor Class, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache util the end of the next turn"',
+    'Note="Gives +1 Armor Class when wielding a one-handed weapon, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache until the end of the next turn"',
   'Flashy Dodge':
     'Action=Reaction ' +
     'Section=feature ' +
-    'Note="Gives +2 Armor Class vs. the triggering attack; a miss gives panache"',
+    'Note="Gives +2 Armor Class vs. the triggering attack; a miss gives panache until the end of the next turn"',
   'Flying Blade':
    'Section=combat ' +
-   'Note="Can apply precision damage bonuses to ranged Strikes within the first range increment of thrown weapons"',
+   'Note="Can apply Precise Strike damage bonuses when using agile or finesse thrown weapons within their first range increment"',
   'Focused Fascination':
     'Section=skill ' +
     'Note="Fascinating Performance used with a single target fascinates on a normal success"',
   'Goading Feint':
     'Section=combat ' +
-    'Note="Successful Feint can instead inflict -2 to next attack roll vs. self before the end of its next turn, or to all attacks vs. self on a critical success"',
+    'Note="Successful Feint can instead inflict -2 to the target\'s next attack roll vs. self before the end of the its next turn, or to all of its attacks vs. self on a critical success"',
   'One For All':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Counts as preparation to Aid an ally within 30\'; the subsequent Aid can use Diplomacy and has the bravado trait"',
+    'Note="Prepares to Aid an ally within 30\'; the subsequent Aid can use Diplomacy for the check and has the bravado trait"',
   'Plummeting Roll':
-    'Action=Reaction ' +
-    'Section=feature ' +
-    'Note="Takes no damage from the triggering fall of at least 10\' and can Stride up to %{speed//2}\'"',
+    // 'Action=Reaction ' + in note
+    'Section=combat,feature ' +
+    'Note=' +
+      '"' + Pathfinder2E.ACTION_MARKS['Reaction'] + ' Strides up to %{speed//2}\' after the triggering fall of at least 10\' that inflicts no damage",' +
+      '"Has the Cat Fall feature"',
   // You're Next as above
   'After You':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Gains panache by going taking last position in initiative"',
+    'Note="Gains panache by taking last position in initiative order"',
   'Antagonize':
     'Section=combat ' +
-    'Note="Successful Demoralize prevents lowering frightened condition below 1 until that target attacks self or moves out of sight for 1 rd"',
+    'Note="Successful Demoralize prevents the target removing its frightened condition until it attacks self or moves out of sight for 1 rd"',
   'Brandishing Draw':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Draws and Strikes with a weapon"',
+    'Note="Draws a weapon and uses it for a Strike or a 1-action finisher"',
   'Charmed Life':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="+2 on the triggering save, and success gives panache until the end of the next turn"',
+    'Note="Gives +2 on the triggering save, and success gives panache until the end of the next turn"',
   'Enjoy The Show':
     'Section=combat ' +
-    'Note="Can use Perform to inflict -1 attacks against others than self until the end of the target\'s next turn, or -2 on a critical success; critical failure instead gives target +1 attacks against self"',
+    'Note="R30\' Successful single-target Perform can instead inflict -1 attacks against creatures others than self, or -2 on a critical success, until the end of the target\'s next turn; critical failure instead gives target +1 attacks against self"',
   'Finishing Follow-Through':
     'Section=combat ' +
     'Note="Gains panache whenever a finisher brings the target to 0 HP"',
   'Retreating Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike allows a Step as a free action on failure"',
+    'Note="Strike allows a free Step on failure"',
   // Tumble Behind as above
   'Unbalancing Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Strike inflicts off-guard until the end of the target\'s next turn"',
+    'Note="Successful Strike inflicts off-guard until the end of the next turn"',
   'Dastardly Dash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strides up to %{speed//2}\'; can attempt a Trip%{$\'features.Dirty Trick\'?\'or Dirty Trick\':\'\'} during the move"',
+    'Note="Strides up to %{speed//2}\'; can attempt a Trip%{$\'features.Dirty Trick\'?\' or a Dirty Trick\':\'\'} during the move"',
   'Even The Odds':
     'Action=Free ' +
     'Section=combat ' +
@@ -10389,7 +10391,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Impaling Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike against an adjacent foe and one behind it"',
+    'Note="Makes a bludgeoning or piercing melee Strike against an adjacent foe and another one behind it"',
   'Leading Dance':
     'Action=1 ' +
     'Section=feature ' +
@@ -10397,11 +10399,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Swaggering Initiative':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="+2 initiative and allows drawing a weapon; acting first in combat gives panache"',
+    'Note="Gives +2 initiative and allows drawing a weapon; acting first in combat gives panache"',
   'Twirling Throw':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Thrown weapon attack ignores 2nd and 3rd range increment penalties; weapon returns except on a critical failure"',
+    'Note="Thrown weapon attack ignores 2nd and 3rd range increment penalties, and the weapon returns except on a critical failure"',
   'Agile Maneuvers':
     'Section=combat ' +
     'Note="Reduces the multiple attack penalty for Disarm, Grapple, Reposition, Shove, and Trip to -4 and -8, or -3 and -6 for an agile weapon with panache"',
@@ -10409,17 +10411,16 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Reduces the multiple attack penalty for finisher Strikes to -4 and -8, or -3 and -6 for an agile weapon"',
   'Precise Finisher':
-   'Section=combat ' +
-   'Note="Confident Finisher inflicts full precision damage on failure"',
+   'Section=combat Note="Has increased Confident Finisher effects"', 
   // Reactive Strike as above
   'Vexing Tumble':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Acrobatics vs. Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard on foes until the end of the turn, and critical failure ends move when within a foe\'s reach"',
+    'Note="Successful Acrobatics vs. each foe\'s Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard until the end of the turn, and critical failure ends the move within the foe\'s reach"',
   'Bleeding Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Slashing or piercing attack also inflicts persistent bleed damage equal to precise finisher damage"',
+    'Note="Slashing or piercing attack also inflicts persistent bleed damage equal to Precise Strike damage"',
   'Distracting Toss':
     'Action=2 ' +
     'Section=feature ' +
@@ -10427,14 +10428,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Dual Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Makes 2 attacks against different foes at the current multiple attack penalty"',
+    'Note="Uses a weapon in each hand to make 1 attack each at the current multiple attack penalty against 2 different foes"',
   'Flashy Roll':
     'Section=save ' +
-    'Note="Flashy Dodge can also be used with Reflex saves; critically failure on the attack or critical success on the save allows a 10\' Stride"',
+    'Note="Flashy Dodge can also be used with Reflex saves; failure on the attack or success on the save allows a 10\' Stride"',
   'Stunning Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Strike inflicts stunned 1 (<b>save Fortitude</b> prevents target reactions until its next turn; critical success negates; critical failure inflicts stunned 3)"',
+    'Note="Successful melee Strike inflicts stunned 1 (<b>save Fortitude</b> prevents target reactions until its next turn; critical success negates; critical failure inflicts stunned 3)"',
   'Vivacious Bravado':
     'Action=1 ' +
     'Section=combat ' +
@@ -10442,18 +10443,18 @@ Pathfinder2ERemaster.FEATURES = {
   'Buckler Dance':'Section=combat Note="Constantly has buckler raised"',
   'Derring-Do':
     'Section=combat ' +
-    'Note="With panache, can use the better of 2 rolls on stylish combatant actions"',
+    'Note="With panache, can use the better of 2 rolls on bravado actions"',
   'Reflexive Riposte':
     'Section=combat ' +
     'Note="Can use an additional reaction for Opportune Riposte each turn"',
   'Stumbling Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike pushes the target 5\', or 10\' on a critical hit"',
+    'Note="Successful Strike pushes the target 5\', or 10\' on a critical hit"',
   'Switcheroo':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="With panache, can Reposition an adjacent foe to suffer the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache"',
+    'Note="With panache, Repositions an adjacent foe so that it suffers the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache"',
   'Targeting Finisher':
     'Action=1 ' +
     'Section=feature ' +
