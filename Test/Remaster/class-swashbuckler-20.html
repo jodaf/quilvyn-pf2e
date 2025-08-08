@@ -75,7 +75,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Experience</b>: 19042/20000</td>
       <td><b>Level</b>: 20</td>
-      <td><b>Speed</b>: 30</td>
+      <td><b>Speed</b>: 45</td>
       <td><b>Size</b>: Medium</td>
       <td><b>Encumbered/Maximum Bulk:</b> 9/14</td>
     </tr></table>
@@ -87,7 +87,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Fleet: +5 Speed</i></td>
     </tr><tr style="text-align:center">
-      <td>Stylish Combatant-1: +30 Speed with panache</td>
+      <td><i>Vivacious Speed: +15 Speed/Has increased Stylish Combatant effects</i></td>
+    </tr><tr style="text-align:center">
+      <td>Cat Fall: Suffers 25' less damage from falling</td>
+    </tr><tr style="text-align:center">
+      <td>Stylish Combatant: +35 Speed with panache</td>
     </tr></table>
 </td>
   </tr></table>
@@ -99,7 +103,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 5; Class: 12; General: 6</td>
+        <td><b>Feat Count</b>: Ancestry: 5; Class: 12; General: 6; Skill: 28</td>
         <td><b>Selectable Feature Count</b>: Human (Heritage); Swashbuckler (Style)</td>
       </tr></table>
 </td>
@@ -107,7 +111,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Scouting Lore); After You; Agile Maneuvers; Antagonize; Bleeding Finisher; Brandishing Draw; Buckler Dance; Charmed Life; Cheat Death; Clever Improviser; Combination Finisher; Cooperative Soul; Dastardly Dash; Deadly Grace; Derring-Do; Disarming Flair; Distracting Toss; Dual Finisher; Elegant Buckler; Enjoy The Show; Even The Odds; Experienced Professional; Extravagant Parry; Felicitous Riposte; Finishing Follow-Through; Flamboyant Athlete; Flamboyant Leap; Flashy Dodge; Flashy Roll; Fleet; Flying Blade; Focused Fascination; Get Used To Disappointment; Goading Feint; Guardian's Deflection; Heroic Presence; Illimitable Finisher; Impaling Finisher; Impossible Riposte; Incredible Luck; Inexhaustible Countermoves; Leading Dance; Lethal Finisher; Mobile Finisher; Multitalented; One For All; Panache Paragon; Parry And Riposte; Perfect Finisher; Plummeting Roll; Precise Finisher; Reactive Strike; Reflexive Riposte; Retreating Finisher; Revitalizing Finisher; Skill Training (Kobold Lore); Stumbling Finisher; Stunning Finisher; Supertaster; Swaggering Initiative; Switcheroo; Targeting Finisher; The Bigger They Are; Tumble Behind; Twirling Throw; Unbalancing Finisher; Unconventional Weaponry (Greataxe); Vexing Tumble; Vivacious Bravado; Weapon Proficiency (Capturing Spetum); You're Next</td>
-        <td><b>Swashbuckler Features</b>: Assured Evasion; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Battledancer; Braggart; Class Trained (Swashbuckler); Confident Evasion; Confident Finisher; Continuous Flair; Defense Trained (Unarmored Defense); Eternal Confidence; Exemplary Finisher; Fencer; Fortitude Expertise; General Feats; Greater Weapon Specialization; Gymnast; Keen Flair; Light Armor Expertise; Light Armor Mastery; Opportune Riposte; Panache; Perception Expert; Perception Mastery; Precise Strike; Rascal; Reinforced Ego; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Increases; Stylish Combatant; Stylish Tricks; Swashbuckler Expertise; Swashbuckler Feats; Swashbuckler Skills; Swashbuckler's Style; Vivacious Speed; Weapon Expertise; Weapon Mastery; Weapon Specialization; Wit</td>
+        <td><b>Swashbuckler Features</b>: Assured Evasion; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Battledancer; Braggart; Class Trained (Swashbuckler); Confident Evasion; Confident Finisher; Continuous Flair; Defense Trained (Light Armor; Unarmored Defense); Eternal Confidence; Exemplary Finisher; Fencer; Fortitude Expertise; General Feats; Greater Weapon Specialization; Gymnast; Keen Flair; Light Armor Expertise; Light Armor Mastery; Opportune Riposte; Panache; Perception Expert; Perception Mastery; Precise Strike; Rascal; Reinforced Ego; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Stylish Combatant; Stylish Tricks; Swashbuckler Expertise; Swashbuckler Feats; Swashbuckler Skills; Swashbuckler's Style; Vivacious Speed; Weapon Expertise; Weapon Mastery; Weapon Specialization; Wit</td>
         <td><b>Insurgent Features</b>: Attribute Boost (Choose 1 from Strength, Wisdom; Choose 1 from any); Lengthy Diversion; Skill Trained (Deception; Warfare Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -125,9 +129,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Plummeting Roll: Has the Cat Fall feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Rascal: Has the Dirty Trick feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Swashbuckler Expertise: Has increased Stylish Combatant effects</i></td>
+        <td><i>Skill Feats: 10 selections</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Battledancer): +3 Skill Feat (Acrobatics or Performance)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Braggart): +3 Skill Feat (Acrobatics or Intimidation)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Fencer): +3 Skill Feat (Acrobatics or Deception)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Gymnast): +3 Skill Feat (Acrobatics or Athletics)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Rascal): +3 Skill Feat (Acrobatics or Thievery)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Stylish Tricks (Wit): +3 Skill Feat (Acrobatics or Diplomacy)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Swashbuckler Feats: 11 selections</i></td>
       </tr><tr style="text-align:center">
@@ -139,11 +157,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Distracting Toss: <b>(2)</b> Successful Feint vs. a target within 30' inflicts off-guard and allows a thrown weapon Strike</td>
       </tr><tr style="text-align:center">
-        <td>Flashy Dodge: <b>(R)</b> Gives +2 Armor Class vs. the triggering attack; a miss gives panache</td>
+        <td>Flashy Dodge: <b>(R)</b> Gives +2 Armor Class vs. the triggering attack; a miss gives panache until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Leading Dance: <b>(1)</b> Successful Performance vs. Will moves self and an adjacent foe 5' in the same direction, or 10' on a critical success; critical failure inflicts prone on self</td>
-      </tr><tr style="text-align:center">
-        <td>Plummeting Roll: <b>(R)</b> Takes no damage from the triggering fall of at least 10' and can Stride up to 15'</td>
       </tr><tr style="text-align:center">
         <td>Targeting Finisher: <b>(1)</b> Successful targeted attack on a foe arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10' Speed until the end of the next turn; effect extends for 1 min at half severity on a critical hit</td>
       </tr></table>
@@ -208,9 +224,23 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Rascal: Skill Trained (Thievery)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Skill Increases: Skill Increase (Choose 9 from any)</i></td>
+      <td><i>Skill Increases: Skill Increase (Choose 27 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Kobold Lore): Skill Trained (Kobold Lore)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Battledancer): +3 Skill Increase (Acrobatics or Performance)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Braggart): +3 Skill Increase (Acrobatics or Intimidation)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Fencer): +3 Skill Increase (Acrobatics or Deception)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Gymnast): +3 Skill Increase (Acrobatics or Athletics)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Rascal): +3 Skill Increase (Acrobatics or Thievery)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Stylish Tricks (Wit): +3 Skill Increase (Acrobatics or Diplomacy)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Swashbuckler Expertise: Has increased Stylish Combatant effects</i></td>
     </tr><tr style="text-align:center">
       <td><i>Swashbuckler Skills: Skill Trained (Acrobatics; Select 8 from any)</i></td>
     </tr><tr style="text-align:center">
@@ -222,6 +252,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Clever Improviser: May attempt any skill untrained</td>
     </tr><tr style="text-align:center">
+      <td>Continuous Flair: Stylish Combatant bonus applies during exploration</td>
+    </tr><tr style="text-align:center">
       <td>Cooperative Soul: Failures and critical failures to Aid with expert skills are successes</td>
     </tr><tr style="text-align:center">
       <td>Experienced Professional: Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income</td>
@@ -230,17 +262,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Fencer: Create A Distraction and Feint actions have the bravado trait</td>
     </tr><tr style="text-align:center">
-      <td>Flamboyant Athlete: Panache gives 15' climb and swim Speeds, -10 jump DCs, and 5' and 15' vertical and horizontal Leaps</td>
+      <td>Flamboyant Athlete: Panache gives 22' climb and swim Speeds, -10 jump DCs, and 5' and 20' vertical and horizontal Leaps</td>
     </tr><tr style="text-align:center">
       <td>Focused Fascination: Fascinating Performance used with a single target fascinates on a normal success</td>
     </tr><tr style="text-align:center">
       <td>Lengthy Diversion: Can remain hidden after a Create A Diversion attempt critically succeeds</td>
     </tr><tr style="text-align:center">
-      <td>One For All: <b>(1)</b> Counts as preparation to Aid an ally within 30'; the subsequent Aid can use Diplomacy and has the bravado trait</td>
+      <td>One For All: <b>(1)</b> Prepares to Aid an ally within 30'; the subsequent Aid can use Diplomacy for the check and has the bravado trait</td>
     </tr><tr style="text-align:center">
       <td>Rascal: Dirty Trick actions have the bravado trait</td>
     </tr><tr style="text-align:center">
-      <td>Stylish Combatant: +1 on bravado skills during combat</td>
+      <td>Stylish Combatant: +2 on bravado skill checks during combat</td>
     </tr><tr style="text-align:center">
       <td>Wit: Bon Mot actions have the bravado trait</td>
     </tr></table>
@@ -286,127 +318,141 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Multitalented: +1 Class Feat (multiclass dedication)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Precise Finisher: Has increased Confident Finisher effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +4</i></td>
       </tr><tr style="text-align:center">
         <td><i>Swashbuckler Expertise: Class Expert (Swashbuckler)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Greataxe): Weapon Familiarity (Greataxe)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Weapon Expertise: Attack Expert (Simple Weapons; Unarmed Attacks)</i></td>
+        <td><i>Weapon Expertise: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Mastery: Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Capturing Spetum): Attack Expert (Capturing Spetum)</i></td>
       </tr><tr style="text-align:center">
-        <td>After You: <b>(F)</b> Gains panache by going taking last position in initiative</td>
+        <td>After You: <b>(F)</b> Gains panache by taking last position in initiative order</td>
       </tr><tr style="text-align:center">
         <td>Agile Maneuvers: Reduces the multiple attack penalty for Disarm, Grapple, Reposition, Shove, and Trip to -4 and -8, or -3 and -6 for an agile weapon with panache</td>
       </tr><tr style="text-align:center">
-        <td>Antagonize: Successful Demoralize prevents lowering frightened condition below 1 until that target attacks self or moves out of sight for 1 rd</td>
+        <td>Antagonize: Successful Demoralize prevents the target removing its frightened condition until it attacks self or moves out of sight for 1 rd</td>
       </tr><tr style="text-align:center">
-        <td>Bleeding Finisher: <b>(1)</b> Slashing or piercing attack also inflicts persistent bleed damage equal to precise finisher damage</td>
+        <td>Bleeding Finisher: <b>(1)</b> Slashing or piercing attack also inflicts persistent bleed damage equal to Precise Strike damage</td>
       </tr><tr style="text-align:center">
         <td>Braggart: Demoralize actions have the bravado trait</td>
       </tr><tr style="text-align:center">
-        <td>Brandishing Draw: <b>(1)</b> Draws and Strikes with a weapon</td>
+        <td>Brandishing Draw: <b>(1)</b> Draws a weapon and uses it for a Strike or a 1-action finisher</td>
       </tr><tr style="text-align:center">
-        <td>Buckler Dance: Constantly has buckler raised</td>
+        <td>Buckler Dance: <b>(1)</b> Constantly has buckler raised</td>
       </tr><tr style="text-align:center">
-        <td>Cheat Death: <b>(R)</b> Retains 1 Hit Point, gains panache, and gains 1 level of doomed in response to the triggering damage that would reduce self to 0 Hit Points</td>
+        <td>Cheat Death: <b>(R)</b> Retains 1 Hit Point, gains panache, and gains 1 level of doomed for 10 min in response to the triggering damage that would reduce self to 0 Hit Points</td>
       </tr><tr style="text-align:center">
         <td>Combination Finisher: Reduces the multiple attack penalty for finisher Strikes to -4 and -8, or -3 and -6 for an agile weapon</td>
       </tr><tr style="text-align:center">
-        <td>Confident Finisher: <b>(1)</b> Failed Strike inflicts half of normal precision damage</td>
+        <td>Confident Finisher: <b>(1)</b> Strike with an agile or finesse weapon inflicts full Precise Strike precision damage on failure</td>
       </tr><tr style="text-align:center">
-        <td>Continuous Flair: Stylish Combatant bonus applies during exploration</td>
+        <td>Dastardly Dash: <b>(1)</b> Strides up to 22'; can attempt a Trip or a Dirty Trick during the move</td>
       </tr><tr style="text-align:center">
-        <td>Dastardly Dash: <b>(1)</b> Strides up to 15'; can attempt a Tripor Dirty Trick during the move</td>
+        <td>Deadly Grace: Critical hits with agile and finesse melee weapons gain the deadly d8 trait or inflict double the normal damage dice if wielding a weapon that already has the deadly trait</td>
       </tr><tr style="text-align:center">
-        <td>Deadly Grace: Critical hit with an agile or finesse melee weapon gains the deadly d8 trait, or inflicts double the damage dice with a deadly weapon</td>
-      </tr><tr style="text-align:center">
-        <td>Derring-Do: With panache, can use the better of 2 rolls on stylish combatant actions</td>
+        <td>Derring-Do: With panache, can use the better of 2 rolls on bravado actions</td>
       </tr><tr style="text-align:center">
         <td>Disarming Flair: Disarm action has the bravado trait</td>
       </tr><tr style="text-align:center">
-        <td>Dual Finisher: <b>(1)</b> Makes 2 attacks against different foes at the current multiple attack penalty</td>
+        <td>Dual Finisher: <b>(1)</b> Uses a weapon in each hand to make 1 attack each at the current multiple attack penalty against 2 different foes</td>
       </tr><tr style="text-align:center">
-        <td>Elegant Buckler: Raise A Shield gives +2 Armor Class, and a foe critical miss while a shield is raised gives panache until the end of the next turn</td>
+        <td>Elegant Buckler: Raise A Shield with a buckler gives +2 Armor Class, and a foe critical miss while a buckler is raised gives panache until the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Enjoy The Show: Can use Perform to inflict -1 attacks against others than self until the end of the target's next turn, or -2 on a critical success; critical failure instead gives target +1 attacks against self</td>
+        <td>Enjoy The Show: R30' Successful single-target Perform can instead inflict -1 attacks against creatures others than self, or -2 on a critical success, until the end of the target's next turn; critical failure instead gives target +1 attacks against self</td>
       </tr><tr style="text-align:center">
-        <td>Eternal Confidence: Finisher Strikes with appropriate weapons gain the Confident Finisher failure effect</td>
+        <td>Eternal Confidence: Finisher and Opportune Riposte Strikes with agile and finesse weapons gain the Confident Finisher failure effect</td>
       </tr><tr style="text-align:center">
         <td>Even The Odds: <b>(F)</b> Gains panache at the beginning of the turn when flanked once per 10 min</td>
       </tr><tr style="text-align:center">
-        <td>Extravagant Parry: <b>(1)</b> When wielding a one-handed weapon, gives +1 Armor Class, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache util the end of the next turn</td>
+        <td>Exemplary Finisher (Battledancer): Successful finisher Strike allows a free Step afterward</td>
       </tr><tr style="text-align:center">
-        <td>Felicitous Riposte: Opportune Riposte uses the better of two rolls</td>
+        <td>Exemplary Finisher (Braggart): Successful finisher Strike ends any temporary immunity to self Demoralize</td>
+      </tr><tr style="text-align:center">
+        <td>Exemplary Finisher (Fencer): Successful finisher Strike inflicts off-guard until the start of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Exemplary Finisher (Gymnast): Successful finisher Strike on a grabbed, restrained, or prone target inflicts additional damage equal to double the number of damage dice</td>
+      </tr><tr style="text-align:center">
+        <td>Exemplary Finisher (Rascal): Successful finisher Strike inflicts -10 Speed until the start of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Exemplary Finisher (Wit): Successful finisher Strike inflicts -2 attacks on self until the start of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Extravagant Parry: <b>(1)</b> Gives +1 Armor Class when wielding a one-handed weapon, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache until the end of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Felicitous Riposte: Opportune Riposte uses the better of two attack rolls</td>
       </tr><tr style="text-align:center">
         <td>Finishing Follow-Through: Gains panache whenever a finisher brings the target to 0 HP</td>
       </tr><tr style="text-align:center">
         <td>Flamboyant Leap: <b>(2)</b> Attempts a 1-action finisher during a Leap or Jump, then falls</td>
       </tr><tr style="text-align:center">
-        <td>Flying Blade: Can apply precision damage bonuses to ranged Strikes within the first range increment of thrown weapons</td>
+        <td>Flying Blade: Can apply Precise Strike damage bonuses when using agile or finesse thrown weapons within their first range increment</td>
       </tr><tr style="text-align:center">
-        <td>Get Used To Disappointment: <b>(F)</b> At the beginning of a turn, attempts to Demoralize a target within 30' who failed an attack or skill test vs. self</td>
+        <td>Get Used To Disappointment: <b>(F)</b> At the beginning of a turn, attempts to Demoralize a target within 30' who failed an attack or skill check vs. self once per target per min</td>
       </tr><tr style="text-align:center">
-        <td>Goading Feint: Successful Feint can instead inflict -2 to next attack roll vs. self before the end of its next turn, or to all attacks vs. self on a critical success</td>
+        <td>Goading Feint: Successful Feint can instead inflict -2 to the target's next attack roll vs. self before the end of the its next turn, or to all of its attacks vs. self on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Guardian's Deflection: <b>(R)</b> Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free</td>
       </tr><tr style="text-align:center">
         <td>Gymnast: Grapple, Reposition, Shove, and Trip actions have the bravado trait</td>
       </tr><tr style="text-align:center">
-        <td>Illimitable Finisher: <b>(1)</b> Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows another finisher</td>
+        <td>Illimitable Finisher: <b>(1)</b> Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows immediately using another finisher</td>
       </tr><tr style="text-align:center">
-        <td>Impaling Finisher: <b>(1)</b> Makes a melee Strike against an adjacent foe and one behind it</td>
+        <td>Impaling Finisher: <b>(1)</b> Makes a bludgeoning or piercing melee Strike against an adjacent foe and another one behind it</td>
       </tr><tr style="text-align:center">
         <td>Impossible Riposte: Can use Opportune Riposte against ranged attacks, with the subsequent Strike inflicting the same damage type as the attack</td>
       </tr><tr style="text-align:center">
         <td>Inexhaustible Countermoves: Gains a reaction at the start of each foe turn that can be for an Opportune Riposte or Reactive Strike</td>
       </tr><tr style="text-align:center">
-        <td>Lethal Finisher: Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP)</td>
+        <td>Keen Flair: Strikes with a master proficiency weapon critically succeed on a 19</td>
+      </tr><tr style="text-align:center">
+        <td>Lethal Finisher: <b>(1)</b> Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP)</td>
       </tr><tr style="text-align:center">
         <td>Mobile Finisher: <b>(1)</b> Makes a Strike after a Stride</td>
       </tr><tr style="text-align:center">
-        <td>Opportune Riposte: <b>(R)</b> Strikes or attempts to Disarm for in response to the triggering critical miss</td>
+        <td>Opportune Riposte: <b>(R)</b> Strikes or attempts to Disarm the attacker in response to the triggering critical miss</td>
       </tr><tr style="text-align:center">
         <td>Panache Paragon: Permanently quickened; can use the extra action only to perform a bravado action</td>
       </tr><tr style="text-align:center">
-        <td>Panache: Using bravado actions, gains panache that can be use to perform some finisher actions</td>
+        <td>Panache: Using bravado actions gives panache that can be use to perform some finisher actions</td>
       </tr><tr style="text-align:center">
-        <td>Parry And Riposte: While benefitting from the parry weapon Armor Class bonus or Extravagant Parry, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn</td>
+        <td>Parry And Riposte: While benefitting from Extravagant Parry or a parry weapon Armor Class bonus, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn</td>
       </tr><tr style="text-align:center">
         <td>Perfect Finisher: <b>(1)</b> Strike uses the better of 2 rolls</td>
       </tr><tr style="text-align:center">
-        <td>Precise Finisher: Confident Finisher inflicts full precision damage on failure</td>
+        <td>Plummeting Roll: <b>(R)</b> Strides up to 22' after the triggering fall of at least 10' that inflicts no damage</td>
       </tr><tr style="text-align:center">
-        <td>Precise Strike: Agile and finesse attack inflicts +6 HP precision, or +6d6 HP precision for finisher Strikes</td>
+        <td>Precise Strike: Strikes with agile and finesse weapons inflict +6 HP precision, or +6d6 HP precision with finisher Strikes</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Reflexive Riposte: Can use an additional reaction for Opportune Riposte each turn</td>
       </tr><tr style="text-align:center">
-        <td>Retreating Finisher: <b>(1)</b> Strike allows a Step as a free action on failure</td>
+        <td>Retreating Finisher: <b>(1)</b> Strike allows a free Step on failure</td>
       </tr><tr style="text-align:center">
-        <td>Revitalizing Finisher: <b>(1)</b> Strike gives self an allies within 30' 10 temporary Hit Points; failure gives these only to self</td>
+        <td>Revitalizing Finisher: <b>(1)</b> Successful strike gives self and allies within 30' 10 temporary Hit Points; failure gives them only to self</td>
       </tr><tr style="text-align:center">
-        <td>Stumbling Finisher: <b>(1)</b> Strike pushes the target 5', or 10' on a critical hit</td>
+        <td>Stumbling Finisher: <b>(1)</b> Successful Strike pushes the target 5', or 10' on a critical hit</td>
       </tr><tr style="text-align:center">
-        <td>Stunning Finisher: <b>(1)</b> Successful Strike inflicts stunned 1 (<b>save Fortitude</b> prevents target reactions until its next turn; critical success negates; critical failure inflicts stunned 3)</td>
+        <td>Stunning Finisher: <b>(1)</b> Successful melee Strike inflicts stunned 1 (<b>save Fortitude</b> prevents target reactions until its next turn; critical success negates; critical failure inflicts stunned 3)</td>
       </tr><tr style="text-align:center">
-        <td>Swaggering Initiative: <b>(F)</b> +2 initiative and allows drawing a weapon; acting first in combat gives panache</td>
+        <td>Swaggering Initiative: <b>(F)</b> Gives +2 initiative and allows drawing a weapon; acting first in combat gives panache</td>
       </tr><tr style="text-align:center">
-        <td>Switcheroo: <b>(R)</b> With panache, can Reposition an adjacent foe to suffer the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache</td>
+        <td>Switcheroo: <b>(R)</b> With panache, Repositions an adjacent foe so that it suffers the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache</td>
       </tr><tr style="text-align:center">
-        <td>The Bigger They Are: <b>(1)</b> Successful Tumble Through a larger creature's space inflicts weakness 10 against to precision damage from next self attack until the end of the next turn, or against all self self attacks on a critical success; critical failure inflicts prone on self</td>
+        <td>The Bigger They Are: <b>(1)</b> Successful Tumble Through a larger creature's space inflicts weakness 10 to precision damage from next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self</td>
       </tr><tr style="text-align:center">
         <td>Tumble Behind: Successful Tumble Through inflicts off-guard against the next self attack until the end of the turn</td>
       </tr><tr style="text-align:center">
-        <td>Twirling Throw: <b>(1)</b> Thrown weapon attack ignores 2nd and 3rd range increment penalties; weapon returns except on a critical failure</td>
+        <td>Twirling Throw: <b>(1)</b> Thrown weapon attack ignores 2nd and 3rd range increment penalties, and the weapon returns except on a critical failure</td>
       </tr><tr style="text-align:center">
-        <td>Unbalancing Finisher: <b>(1)</b> Successful Strike inflicts off-guard until the end of the target's next turn</td>
+        <td>Unbalancing Finisher: <b>(1)</b> Successful Strike inflicts off-guard until the end of the next turn</td>
       </tr><tr style="text-align:center">
-        <td>Vexing Tumble: <b>(1)</b> Successful Acrobatics vs. Reflex while Striding up to 15' does not trigger reactions; critical success also inflicts off-guard on foes until the end of the turn, and critical failure ends move when within a foe's reach</td>
+        <td>Vexing Tumble: <b>(1)</b> Successful Acrobatics vs. each foe's Reflex while Striding up to 22' does not trigger reactions; critical success also inflicts off-guard until the end of the turn, and critical failure ends the move within the foe's reach</td>
       </tr><tr style="text-align:center">
         <td>Vivacious Bravado: <b>(1)</b> Gaining panache gives 24 temporary Hit Points until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -432,13 +478,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Reinforced Ego: Save Master (Will)</i></td>
       </tr><tr style="text-align:center">
-        <td>Assured Evasion: Successes on Reflex saves are critical successes, critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
+        <td>Assured Evasion: Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
       </tr><tr style="text-align:center">
-        <td>Charmed Life: <b>(R)</b> +2 on the triggering save, and success gives panache until the end of the next turn</td>
+        <td>Charmed Life: <b>(R)</b> Gives +2 on the triggering save, and success gives panache until the end of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Confident Evasion: Successes on Reflex saves are critical successes</td>
       </tr><tr style="text-align:center">
-        <td>Flashy Roll: Flashy Dodge can also be used with Reflex saves; critically failure on the attack or critical success on the save allows a 10' Stride</td>
+        <td>Flashy Roll: Flashy Dodge can also be used with Reflex saves; failure on the attack or success on the save allows a 10' Stride</td>
       </tr><tr style="text-align:center">
         <td>Incredible Luck: Charmed life uses the better of two rolls</td>
       </tr><tr style="text-align:center">
@@ -463,6 +509,12 @@ var attributes = {
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Class Feats Allocation: 12 available vs. 60 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 34 available vs. 6 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Skill Feat Allocation: 28 available vs. 3 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Skill Increase Allocation: 27 available vs. 9 allocated</td>
       </tr><tr style="text-align:center">
         <td>Swashbuckler Style Allocation: 1 available vs. 6 allocated</td>
       </tr></table>

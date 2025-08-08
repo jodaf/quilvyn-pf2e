@@ -2474,7 +2474,9 @@ Pathfinder2ERemaster.FEATS = {
   'Trap Finder':
     Pathfinder2E.FEATS['Trap Finder']
     .replace('Traits=', 'Traits=Investigator,'),
-  'Tumble Behind':'Traits=Rogue,Swashbuckler',
+  'Tumble Behind':
+    'Traits=Rogue,Swashbuckler ' +
+    'Require="levels.Rogue >= 1 || levels.Swashbuckler >= 2"',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
   "You're Next":
     Pathfinder2E.FEATS["You're Next"]
@@ -2829,7 +2831,9 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Barbarian,Rage ' +
     // TODO features.Scent isn't a thing
     'Require="level >= 6","features.Low-Light Vision || features.Scent"',
-  'Reactive Strike':Pathfinder2E.FEATS['Attack Of Opportunity'],
+  'Reactive Strike':
+    Pathfinder2E.FEATS['Attack Of Opportunity']
+    .replace('Traits=', 'Traits=Swashbuckler,'),
   // TODO requires "instinct that allows you to change your Rage damage type"
   'Scouring Rage':'Traits=Barbarian Require="level >= 6"',
   "Spirits' Interference":
@@ -3479,8 +3483,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Swashbuckler Require="level >= 6","rank.Athletics >= 2"',
   'Combination Finisher':'Traits=Swashbuckler Require="level >= 6"',
   'Precise Finisher':
-    'Traits=Swashbuckler ' +
-    'Require="level >= 6","rank.Athletics >= 2","features.Confident Finisher"',
+    'Traits=Swashbuckler Require="level >= 6","features.Confident Finisher"',
   // Reactive Strike as above
   'Vexing Tumble':'Traits=Swashbuckler,Bravado Require="level >= 6"',
   'Bleeding Finisher':'Traits=Swashbuckler,Finisher Require="level >= 8"',
@@ -3519,7 +3522,7 @@ Pathfinder2ERemaster.FEATS = {
   'Revitalizing Finisher':'Traits=Swashbuckler,Finisher Require="level >= 16"',
   'Incredible Luck':
     'Traits=Swashbuckler,Fortune Require="level >= 18","features.Charmed Life"',
-  // TODO require "precise strike 6d6"
+  // Note "precise strike 6d6" requirement is equivalent to "level >= 17"
   'Lethal Finisher':'Traits=Swashbuckler,Death,Finisher Require="level >= 18"',
   'Parry And Riposte':
     'Traits=Swashbuckler Require="level >= 18","features.Opportune Riposte"',
@@ -3959,7 +3962,7 @@ Pathfinder2ERemaster.FEATS = {
   'Dual Thrower':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Dual-Weapon Warrior Dedication"',
-  'Dual-Weapon Relaod':
+  'Dual-Weapon Reload':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Dual-Weapon Warrior Dedication"',
   'Flensing Slice':
@@ -8517,7 +8520,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Iron Command':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Foe that inflicted the triggering damage suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura must also kneel or suffer \'+(level<5?1:level<9?2:evel<12?3:level<16?4:level<19?5:6)+\' HP mental\':\'\'}"',
+    'Note="Foe that inflicted the triggering damage suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura must also kneel or suffer \'+(level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6)+\' HP mental\':\'\'}"',
   'Justice':
     'Section=feature,feature ' +
     'Note=' +
@@ -9678,7 +9681,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Trial By Skyfire':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain supresses the effects for 1 rd"',
+    'Note="10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain suppresses the effects for 1 rd"',
   'Waters Of Creation':
     'Action=2 ' +
     'Section=magic ' +
@@ -10230,7 +10233,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Athletics)"',
   'Keen Flair':
     'Section=combat ' +
-    'Note="Strikes with a master prociency weapon critically succeed on a 19"',
+    'Note="Strikes with a master proficiency weapon critically succeed on a 19"',
   // Light Armor Expertise as above
   // Light Armor Mastery as above
   'Opportune Riposte':
@@ -10340,7 +10343,7 @@ Pathfinder2ERemaster.FEATURES = {
     // 'Action=Reaction ' + in note
     'Section=combat,feature ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS['Reaction'] + ' Strides up to %{speed//2}\' after the triggering fall of at least 10\' that inflicts no damage",' +
+      '"' + Pathfinder2E.ACTION_MARKS.Reaction + ' Strides up to %{speed//2}\' after the triggering fall of at least 10\' that inflicts no damage",' +
       '"Has the Cat Fall feature"',
   // You're Next as above
   'After You':
@@ -10440,7 +10443,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Gaining panache gives %{level+charismaModifier} temporary Hit Points until the start of the next turn"',
-  'Buckler Dance':'Section=combat Note="Constantly has buckler raised"',
+  'Buckler Dance':
+    'Action=1 Section=combat Note="Constantly has buckler raised"',
   'Derring-Do':
     'Section=combat ' +
     'Note="With panache, can use the better of 2 rolls on bravado actions"',
@@ -10462,11 +10466,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Cheat Death':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed in response to the triggering damage that would reduce self to 0 Hit Points"',
+    'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed for 10 min in response to the triggering damage that would reduce self to 0 Hit Points"',
   'Get Used To Disappointment':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="At the beginning of a turn, attempts to Demoralize a target within 30\' who failed an attack or skill test vs. self"',
+    'Note="At the beginning of a turn, attempts to Demoralize a target within 30\' who failed an attack or skill check vs. self once per target per min"',
   'Mobile Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -10474,7 +10478,8 @@ Pathfinder2ERemaster.FEATURES = {
   'The Bigger They Are':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Tumble Through a larger creature\'s space inflicts weakness %{level//2} against to precision damage from next self attack until the end of the next turn, or against all self self attacks on a critical success; critical failure inflicts prone on self"',
+    'Note="Successful Tumble Through a larger creature\'s space inflicts weakness %{level//2} to precision damage from next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
+  // TODO check Jump distance
   'Flamboyant Leap':
     'Action=2 ' +
     'Section=combat ' +
@@ -10486,25 +10491,27 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 Section=combat Note="Strike uses the better of 2 rolls"',
   'Deadly Grace':
     'Section=combat ' +
-    'Note="Critical hit with an agile or finesse melee weapon gains the deadly d8 trait, or inflicts double the damage dice with a deadly weapon"',
+    'Note="Critical hits with agile and finesse melee weapons gain the deadly d8 trait or inflict double the normal damage dice if wielding a weapon that already has the deadly trait"',
   'Felicitous Riposte':
-    'Section=combat Note="Opportune Riposte uses the better of two rolls"',
+    'Section=combat ' +
+    'Note="Opportune Riposte uses the better of two attack rolls"',
   'Revitalizing Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike gives self an allies within 30\' %{level//2} temporary Hit Points; failure gives these only to self"',
+    'Note="Successful strike gives self and allies within 30\' %{level//2} temporary Hit Points; failure gives them only to self"',
   'Incredible Luck':
     'Section=save Note="Charmed life uses the better of two rolls"',
   'Lethal Finisher':
+    'Action=1 ' +
     'Section=combat ' +
     'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP)"',
   'Parry And Riposte':
     'Section=combat ' +
-    'Note="While benefitting from the parry weapon Armor Class bonus or Extravagant Parry, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn"',
+    'Note="While benefitting from Extravagant Parry or a parry weapon Armor Class bonus, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn"',
   'Illimitable Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows another finisher"',
+    'Note="Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows immediately using another finisher"',
   'Inexhaustible Countermoves':
     'Section=combat ' +
     'Note="Gains a reaction at the start of each foe turn that can be for an Opportune Riposte%{$\'features.Reactive Strike\'?\' or Reactive Strike\':\'\'}"',
@@ -10662,7 +10669,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Champion's Reaction as above
   'Devout Blessing':Pathfinder2E.FEATURES['Divine Ally'],
 
-  'Investigator Dedictation':
+  'Investigator Dedication':
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Investigator)",' +
