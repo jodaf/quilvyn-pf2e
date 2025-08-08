@@ -9466,7 +9466,9 @@ Pathfinder2ERemaster.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Mystery':'Section=feature Note="1 selection"',
   'Ocular Clarity':'Section=magic Note="Knows 2 10th-level divine spells"',
-  'Oracular Curse':'Section=feature Note="Suffers from a mystery-linked curse"',
+  'Oracular Curse':
+    'Section=feature ' +
+    'Note="Suffers from a mystery-linked curse and a cursebound condition"',
   'Oracular Senses':'Section=skill Note="Perception Expert"',
   'Oracle Feats':'Section=feature Note="%V selections"',
   'Oracle Skills':
@@ -9483,7 +9485,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Foretell Harm':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per target per day once per rd"',
+    'Note="Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per rd, once per target per day"',
   'Glean Lore':
     'Action=1 ' +
     'Section=skill ' +
@@ -9497,7 +9499,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Oracular Warning':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="R20\' Gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min at the start of initiative"',
+    'Note="R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
   // Reach Spell as above
   'Whispers Of Weakness':
     'Action=1 ' +
@@ -9508,7 +9510,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Divine Aegis':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Gives self +1 vs. non-divine magical effects and -1 vs. divine effects until the start of the next turn"',
+    'Note="Upon attempting a save vs. magic, gives self +1 vs. non-divine magical effects and -1 vs. divine effects until the start of the next turn"',
   'Domain Acumen (Air)':
     Pathfinder2E.FEATURES['Domain Initiate (Air)']
     .replace(/\/[^"]*/, ''),
@@ -9677,7 +9679,7 @@ Pathfinder2ERemaster.FEATURES = {
   'The Dead Walk':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit"',
+    'Note="R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit and can flank with allies or each other"',
   'Trial By Skyfire':
     'Action=1 ' +
     'Section=magic ' +
