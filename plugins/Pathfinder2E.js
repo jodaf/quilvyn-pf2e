@@ -6081,7 +6081,7 @@ Pathfinder2E.FEATURES = {
   'Debilitating Strike':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Successful Strike against a flat-footed foe also inflicts %{combatNotes.doubleDebilitation?\'2 choices\':\'a choice\'} from: %{combatNotes.preciseDebilitations?\'+2d6 HP precision; flat-footed; \':\'\'}%{combatNotes.viciousDebilitations?\'weakness 5 to a choice of damage type; clumsy 1; \':\'\'}%{combatNotes.tacticalDebilitations?\'prevent reactions; prevent flanking; \':\'\'}%{combatNotes.criticalDebilitation?\'slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1, critical success negates, and critical failure inflicts paralyzed); \':\'\'}-10 Speed unti the end of the next turn; enfeebled 1 until the end of the next turn"',
+    'Note="Successful Strike against a flat-footed foe also inflicts %{combatNotes.doubleDebilitation?\'2 choices\':\'a choice\'} from: %{combatNotes.preciseDebilitations?\'+2d6 HP precision; flat-footed; \':\'\'}%{combatNotes.viciousDebilitations?\'weakness 5 to a choice of damage type; clumsy 1; \':\'\'}%{combatNotes.tacticalDebilitations?\'prevent reactions; prevent flanking; \':\'\'}%{combatNotes.criticalDebilitation?\'slowed 2 until the end of the next turn (<b>save Fortitude</b> inflicts slowed 1, critical success negates, and critical failure inflicts paralyzed); \':\'\'}-10 Speed until the end of the next turn; enfeebled 1 until the end of the next turn"',
   // Deny Advantage as above
   'Double Debilitation':
     'Section=combat Note="Has increased Debilitating Strike effects"',
