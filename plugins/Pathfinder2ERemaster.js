@@ -2500,7 +2500,7 @@ Pathfinder2ERemaster.FEATS = {
   // Scout's Warning as above
   'The Harder They Fall':'Traits=Rogue Require="level >= 4"',
   'Twin Distraction':'Traits=Rogue Require="level >= 4","features.Twin Feint"',
-  // TODO requires "sneak attack 2d6"
+  // Note: "sneak attack 2d6" requirement is met by Rogue level 5
   'Analyze Weakness':
     'Traits=Rogue Require="level >= 6","features.Sneak Attack"',
   'Anticipate Ambush':
@@ -2660,8 +2660,9 @@ Pathfinder2ERemaster.FEATS = {
   'Call Wizardly Tools':
     'Traits=Wizard,Concentrate,Teleportation ' +
     'Require="level >= 4","features.Arcane Bond"',
-  // TODO requires "curriculum spells" rather than Arcane School
-  'Linked Focus':Pathfinder2E.FEATS['Linked Focus'],
+  'Linked Focus':
+    Pathfinder2E.FEATS['Linked Focus']
+    .replace('Arcane School', 'Curriculum'),
   'Spell Protection Array':
     'Traits=Wizard,Arcane,Manipulate Require="level >= 4"',
   'Convincing Illusion':
@@ -3322,10 +3323,24 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 10",' +
       '"features.Life || features.Tempest"',
   'Domain Fluency (%domain)':
-    'Traits=Oracle ' +
-    'Require=' +
-      '"level >= 12",' +
-      '"features.Domain Acumen"',
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  // Added domains from Divine Mysteries
+  'Domain Fluency (Decay)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Dust)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Duty)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Lightning)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Nothingness)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Soul)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Star)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
+  'Domain Fluency (Vigil)':
+    'Traits=Oracle Require="level >= 12","features.Domain Acumen"',
   'Epiphany At The Crossroads':'Traits=Oracle,Divine Require="level >= 12"',
   // TODO require "initial revelation spell"
   'Greater Revelation':'Traits=Oracle Require="level >= 12"',
@@ -3336,9 +3351,8 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 14","features.Water Walker"',
   'Mysterious Repertoire':'Traits=Oracle Require="level >= 14"',
   "Revelation's Focus":'Traits=Oracle Require="level >= 14"',
-  // TODO require "any oracle mystery"
   'Conduit Of Void And Vitality':
-    'Traits=Oracle,Cursebound,Divine Require="level >= 16"',
+    'Traits=Oracle,Cursebound,Divine Require="level >= 16","feature.Mystery"',
   'Diverse Mystery':
     'Traits=Oracle Require="level >= 16","features.Advanced Revelation"',
   'Portentous Spell':
@@ -3610,18 +3624,18 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Archetype Require="level >= 6","features.Basic Witchcraft"',
   "Patron's Breadth":
     'Traits=Archetype Require="level >= 8","features.Basic Witch Spellcasting"',
-  // TODO master in patron skill
   'Expert Witch Spellcasting':
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 12",' +
-      '"features.Basic Witch Spellcasting"',
-  // TODO legendary in patron skill
+      '"features.Basic Witch Spellcasting",' +
+      '"rank.patronSkill >= 3"',
   'Master Witch Spellcasting':
     'Traits=Archetype ' +
     'Require=' +
       '"level >= 18",' +
-      '"features.Expert Witch Spellcasting"',
+      '"features.Expert Witch Spellcasting",' +
+      '"rank.patronSkill >= 4"',
 
   'Wizard Dedication':Pathfinder2E.FEATS['Wizard Dedication'],
   'Arcane School Spell':Pathfinder2E.FEATS['Arcane School Spell'],
@@ -7784,23 +7798,35 @@ Pathfinder2ERemaster.FEATURES = {
   'Prodigious Will':Pathfinder2E.FEATURES.Resolve,
   // Reflex Expertise as above
   'School Of Ars Grammatica':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Protective Wards arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Protective Wards arcane spell"',
   'School Of Battle Magic':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Force Bolt arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Force Bolt arcane spell"',
   'School Of The Boundary':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Fortify Summoning arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Fortify Summoning arcane spell"',
   'School Of Civic Wizardry':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Earthworks arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Earthworks arcane spell"',
   'School Of Mentalism':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Charming Push arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Charming Push arcane spell"',
   'School Of Protean Form':
-    'Section=magic ' +
-    'Note="+1 spell slot each rank/Knows the Scramble Body arcane spell"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Curriculum feature",' +
+      '"+1 spell slot each rank/Knows the Scramble Body arcane spell"',
   'School Of Unified Magical Theory':
     'Section=feature,magic,magic ' +
     'Note=' +
@@ -9490,7 +9516,6 @@ Pathfinder2ERemaster.FEATURES = {
   // Weapon Expertise as above
   // Weapon Specialization as above
 
-  // TODO Mark cursebound actions?
   'Foretell Harm':
     'Action=Free ' +
     'Section=magic ' +
@@ -14640,6 +14665,23 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       "featureNotes.swashbuckler'sStyle", '=', '1'
     );
   } else if(name == 'Witch') {
+    // TODO Generalize for homebrew?
+    let patronSkills = {
+      "Faith's Flamekeeper":'Religion',
+      'The Inscribed One':'Arcana',
+      'The Resentment':'Occultism',
+      'Silence In Snow':'Nature',
+      'Spinner Of Threads':'Occultism',
+      'Starless Shadow':'Occultism',
+      'Wilding Steward':'Nature'
+    };
+    for(let p in patronSkills) {
+      rules.defineRule('rank.' + p + ' Skill',
+        'features.' + p, '?', null,
+        'rank.' + patronSkills[p], '=', null
+      );
+      rules.defineRule('rank.patronSkill', 'rank.' + p + ' Skill', '^=', null);
+    }
     rules.defineRule('patronTraditionsLowered',
       'patronTraditions', '=', 'source.toLowerCase()'
     );
