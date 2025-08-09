@@ -7225,7 +7225,7 @@ Pathfinder2E.FEATURES = {
   'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
   'Canny Acumen (Will)':'Section=save Note="Save %V (Will)"',
   'Cat Fall':
-    'Section=ability ' +
+    'Section=save ' +
     'Note="Suffers %{rank.Acrobatics>=4?\'no\':rank.Acrobatics==3?\\"50\' less\\":rank.Acrobatics==2?\\"25\' less\\":\\"10\' less\\"} damage from falling"',
   'Charming Liar':
     'Section=skill ' +
@@ -7409,7 +7409,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to level 2, 4, 6, or 10"',
   'Ride':
-    'Section=feature ' +
+    'Section=skill ' +
     'Note="Automatically succeeds when using Command An Animal to move/Mount acts on self turn"',
   'Robust Recovery':
     'Section=skill ' +
@@ -7467,7 +7467,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Critical success on Demoralize causes a lower-level target to flee for 1 rd"',
   'Titan Wrestler':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Can use Disarm, Grapple, Shove, and Trip on creatures up to %{rank.Athletics>=4?3:2} sizes larger"',
   'Toughness':
     'Section=combat,save ' +
