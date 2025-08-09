@@ -5352,7 +5352,7 @@ Pathfinder2E.FEATURES = {
   "Guardian's Deflection":
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an adjacent ally +2 Armor Class vs. the triggering hit when wielding a one-handed weapon with the other hand free"',
+    'Note="When wielding a one-handed weapon with the other hand free, gives an ally within reach +2 Armor Class vs. the triggering attack"',
   'Reflexive Shield':
     'Section=save Note="Raised shield adds its bonus to Reflex saves"',
   'Revealing Stab':
