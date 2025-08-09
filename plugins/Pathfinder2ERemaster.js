@@ -9523,7 +9523,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Foretell Harm':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per rd, once per target per day"',
+    'Note="<b>(Cursebound)</b> Target of a damaging non-cantrip spell takes additional damage equal to the spell rank at the beginning of its turn once per rd, once per target per day"',
   'Glean Lore':
     'Action=1 ' +
     'Section=skill ' +
@@ -9532,17 +9532,17 @@ Pathfinder2ERemaster.FEATURES = {
     // in note 'Action=1 ' +
     'Section=magic,magic ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(CB)</b> R30\' Target regains %{level*2+2} Hit Points",' +
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(Cursebound)</b> R30\' Target regains %{level*2+2} Hit Points",' +
       '"Can choose during daily prep to be healed by vitality healing or void healing"',
   'Oracular Warning':
     'Action=Free ' +
     'Section=feature ' +
-    'Note="<b>(CB)</b> R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
+    'Note="<b>(Cursebound)</b> R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
   // Reach Spell as above
   'Whispers Of Weakness':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
+    'Note="<b>(Cursebound)</b> R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
   // Widen Spell as above
   // Cantrip Expansion as above
   'Divine Aegis':
@@ -9678,16 +9678,16 @@ Pathfinder2ERemaster.FEATURES = {
   'Meddling Futures':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
+    'Note="<b>(Cursebound)</b> Randomly gives self a Strike with +1 attack and +2 damage, a +1 Perception check or skill action, a spell cast with increased damage or healing equal to the spell rank, or a +10\' Stride; cursebound 3 increases these bonuses to +6 damage, +2 check, spell rank + 3 damage or healing, or +20\' Speed, and using a different action requires a successful DC 6 flat check"',
   // Bespell Strikes as above
   'Knowledge Of Shapes':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> Uses Reach Spell or Widen Spell"',
+    'Note="<b>(Cursebound)</b> Uses Reach Spell or Widen Spell"',
   'Thousand Visions':
     'Action=Free ' +
     'Section=skill ' +
-    'Note="<b>(CB)</b> R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
+    'Note="<b>(Cursebound)</b> R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
   'Advanced Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Defense divine spell"',
   'Advanced Revelation (Battle)':
@@ -9713,7 +9713,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Debilitating Dichotomy':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="<b>(CB)</b> R30\' Inflicts %{((level//2)-1)*3}d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)"',
+    'Note="<b>(Cursebound)</b> R30\' Inflicts %{((level//2)-1)*3}d6 HP mental on self and target (<b>save basic Fortitude</b>; self improves save by 1 step; critical failure also inflicts stunned 1)"',
   'Read Disaster':
     'Section=magic ' +
     'Note="%{rank.Religion>=4?1:10} min contemplation reveals whether the results of a proposed action up to 30 min in the future will be generally bad"',
@@ -9728,19 +9728,19 @@ Pathfinder2ERemaster.FEATURES = {
   'Roll The Bones Of Fate':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of 2 rolls on the next attack or skill check; inflicts on a target the worse of 2 rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
+    'Note="<b>(Cursebound)</b> R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of 2 rolls on the next attack or skill check; inflicts on a target the worse of 2 rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
   'The Dead Walk':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit and can flank with allies or each other"',
+    'Note="<b>(Cursebound)</b> R30\' 2 spell attacks (cursebound 2 or 3 gives 3 or 4 attacks) each inflict 4d6 HP spirit and can flank with allies or each other"',
   'Trial By Skyfire':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> 10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain suppresses the effects for 1 rd"',
+    'Note="<b>(Cursebound)</b> 10\' emanation inflicts 2d6 HP fire (cursebound 3 inflicts 4d6 HP in a 15\' emanation) (<b>save basic Reflex</b>) at the end of each turn for 1 min; a Sustain suppresses the effects for 1 rd"',
   'Waters Of Creation':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> 15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
+    'Note="<b>(Cursebound)</b> 15\' emanation restores %{level//2}d6 Hit Points (cursebound 3 restores %{level//2}d8 Hit Points)"',
   'Domain Fluency (Air)':Pathfinder2E.FEATURES['Advanced Domain (Air)'],
   'Domain Fluency (Ambition)':
     Pathfinder2E.FEATURES['Advanced Domain (Ambition)'],
@@ -9845,7 +9845,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Conduit Of Void And Vitality':
     'Action=2 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity"',
+    'Note="<b>(Cursebound)</b> Casting a 3-action signature <i>Harm</i> or <i>Heal</i> restores or inflicts on 1 target additional Hit Points equal to 1d8 * cursebound severity"',
   'Diverse Mystery':
     'Section=magic ' +
     'Note="Can cast an initial or advanced revelation spell from another mystery, increasing cursebound severity and suffering the mystery\'s cursebound 1 effects"',
@@ -9864,7 +9864,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Mystery Conduit':
     'Action=Free ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
+    'Note="<b>(Cursebound)</b> Subsequent casting of an instantaneous spell of up to rank 5 does not expend a spell slot"',
   'Oracular Providence':'Section=magic Note="+1 10th rank spell slot"',
   'Paradoxical Mystery':
    'Section=magic ' +
@@ -10291,10 +10291,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Successful finisher Strike inflicts -2 attacks on self until the start of the next turn"',
   'Fencer':
-    'Section=skill,skill ' +
+    'Section=combat,skill ' +
     'Note=' +
-      '"Skill Trained (Deception)",' +
-      '"Create A Distraction and Feint actions have the bravado trait"',
+      '"Create A Distraction and Feint actions have the bravado trait",' +
+      '"Skill Trained (Deception)"',
   // Fortitude Expertise as above
   // Greater Weapon Specialization as above
   'Gymnast':
@@ -10310,7 +10310,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Opportune Riposte':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Strikes or attempts to Disarm the attacker in response to the triggering critical miss"',
+    'Note="<b>(Bravado)</b> Strikes or attempts to Disarm the attacker in response to the triggering critical miss"',
   'Panache':
     'Section=combat ' +
     'Note="Tumble Through and other bravado actions give panache that enables finisher actions"',
@@ -10396,7 +10396,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gives +1 Armor Class when wielding a one-handed weapon, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe miss during this time gives panache until the end of the next turn"',
   'Flashy Dodge':
     'Action=Reaction ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Gives +2 Armor Class vs. the triggering attack; a miss gives panache until the end of the next turn"',
   'Flying Blade':
    'Section=combat ' +
@@ -10457,8 +10457,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Gains panache at the beginning of the turn when flanked once per 10 min"',
   'Flamboyant Athlete':
-    'Section=skill ' +
-    'Note="Panache gives %{speed//2}\' climb and swim Speeds, -10 Jump DCs, and 5\' and %{speed>30?20:15}\' vertical and horizontal Leaps"',
+    'Section=ability,skill ' +
+    'Note=' +
+      '"Panache gives %{speed//2}\' climb and swim Speeds",' +
+      '"Panache gives -10 jump DCs, and 5\' and %{speed>30?20:15}\' vertical and horizontal Leaps"',
   // Guardian's Deflection as above
   'Impaling Finisher':
     'Action=1 ' +
@@ -10466,8 +10468,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Makes a bludgeoning or piercing melee Strike against an adjacent foe and another one behind it"',
   'Leading Dance':
     'Action=1 ' +
-    'Section=feature ' +
-    'Note="Successful Performance vs. Will moves self and an adjacent foe 5\' in the same direction, or 10\' on a critical success; critical failure inflicts prone on self"',
+    'Section=combat ' +
+    'Note="<b>(Bravado)</b> Successful Performance vs. Will moves self and an adjacent foe 5\' in the same direction, or 10\' on a critical success; critical failure inflicts prone on self"',
   'Swaggering Initiative':
     'Action=Free ' +
     'Section=combat ' +
@@ -10488,14 +10490,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Vexing Tumble':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Acrobatics vs. each foe\'s Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard vs. self until the end of the turn, and critical failure ends the move within the foe\'s reach"',
+    'Note="<b>(Bravado)</b> Successful Acrobatics vs. each foe\'s Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard vs. self until the end of the turn, and critical failure ends the move within the foe\'s reach"',
   'Bleeding Finisher':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Slashing or piercing attack also inflicts persistent bleed damage equal to Precise Strike damage"',
   'Distracting Toss':
     'Action=2 ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Attempts a Feint and a thrown weapon Strike vs. a target within 30\'"',
   'Dual Finisher':
     'Action=1 ' +
@@ -10530,7 +10532,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="With panache, Repositions an adjacent foe so that it suffers the triggering ranged attack with lesser cover, or with no cover on a critical success; critical failure inflicts off-guard on self against the attack, and any result other than critical success causes loss of panache"',
   'Targeting Finisher':
     'Action=1 ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Successful targeted attack on a foe\'s arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; the effect extends for 1 min at half severity on a critical hit"',
   'Cheat Death':
     'Action=Reaction ' +
@@ -10539,7 +10541,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Get Used To Disappointment':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="At the beginning of a turn, attempts to Demoralize a target within 30\' who failed an attack or skill check vs. self once per target per min"',
+    'Note="<b>(Bravado)</b> At the beginning of a turn, attempts to Demoralize a target within 30\' who failed an attack or skill check vs. self once per target per min"',
   'Mobile Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -10547,7 +10549,7 @@ Pathfinder2ERemaster.FEATURES = {
   'The Bigger They Are':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Tumble Through a larger creature\'s space as difficult terrain inflicts weakness %{level//2} to precision damage from the next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
+    'Note="<b>(Bravado)</b> Successful Tumble Through a larger creature\'s space as difficult terrain inflicts weakness %{level//2} to precision damage from the next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
   // TODO check Jump distance
   'Flamboyant Leap':
     'Action=2 ' +
