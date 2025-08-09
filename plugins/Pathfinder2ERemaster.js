@@ -2302,7 +2302,9 @@ Pathfinder2ERemaster.FEATS = {
   'Furious Focus':
     Pathfinder2E.FEATS['Furious Focus']
     .replace('Power Attack', 'Vicious Swing'),
-  "Guardian's Deflection":Pathfinder2E.FEATS["Guardian's Deflection"],
+  "Guardian's Deflection":
+    Pathfinder2E.FEATS["Guardian's Deflection"]
+    .replace('Traits=', 'Traits=Swashbuckler,'),
   'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
   'Ricochet Stance':
@@ -6071,7 +6073,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Fey's Fortune":
     'Action=Free ' +
     'Section=skill ' +
-    'Note="Gains the better of two rolls on a skill check once per day"',
+    'Note="Gains the better of 2 rolls on a skill check once per day"',
   'Haunted Skill':
     'Section=skill ' +
     'Note="+1 on haunt-linked skill; failure inflicts frightened 2, or frightened 4 on a critical failure"',
@@ -6928,7 +6930,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Combat Flexibility':
     // Modified to include Ultimate Flexibility effects
     Pathfinder2E.FEATURES['Combat Flexibility'] + ' ' +
-    'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.ultimateFlexibility?\',\':combatNotes.improvedFlexibility?\' and\':\'\'}%{combatNotes.improvedFlexibility?\' one of up to 14th level\':\'\'}%{combatNotes.ultimateFlexibility?\', and one of up to 18th level\':\'\'} during daily prep%{combatNotes.ultimateFlexibility?\'; can use 1 hr training to change selections\':\'\'}"',
+    'Note="Gains 1 chosen fighter feat of up to 8th level%{combatNotes.ultimateFlexibility?\',\':combatNotes.improvedFlexibility?\' and\':\'\'}%{combatNotes.improvedFlexibility?\' 1 of up to 14th level\':\'\'}%{combatNotes.ultimateFlexibility?\', and 1 of up to 18th level\':\'\'} during daily prep%{combatNotes.ultimateFlexibility?\'; can use 1 hr training to change selections\':\'\'}"',
   'Fighter Expertise':Pathfinder2E.FEATURES['Fighter Expertise'],
   'Fighter Feats':Pathfinder2E.FEATURES['Fighter Feats'],
   'Fighter Key Attribute':Pathfinder2E.FEATURES['Fighter Key Ability'],
@@ -7071,7 +7073,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Furious Focus':
     Pathfinder2E.FEATURES['Furious Focus']
     .replace('Power Attack', 'Vicious Swing'),
-  "Guardian's Deflection":Pathfinder2E.FEATURES["Guardian's Deflection"],
+  "Guardian's Deflection":
+    Pathfinder2E.FEATURES["Guardian's Deflection"]
+    .replace('triggering attack', "triggering attack%{features.Panache?' and gives self panache until the end of the next turn':''}"),
   'Reflexive Shield':Pathfinder2E.FEATURES['Reflexive Shield'],
   'Revealing Stab':Pathfinder2E.FEATURES['Revealing Stab'],
   'Ricochet Stance':
@@ -7327,7 +7331,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Casting a warden spell allows reloading a crossbow once per rd"',
   'Impossible Flurry':
     Pathfinder2E.FEATURES['Impossible Flurry']
-    .replace('each', 'each, the first as if one attack had already been made this turn and the remainder'),
+    .replace('each', 'each, the first as if 1 attack had already been made this turn and the remainder'),
   // Impossible Volley as above
   'Manifold Edge':Pathfinder2E.FEATURES['Manifold Edge'],
   'Masterful Companion':Pathfinder2E.FEATURES['Masterful Companion'],
@@ -7927,7 +7931,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage type on 1 target until the end of the next turn"',
   'Keen Magical Detection':
     'Section=magic ' +
-    'Note="Use of Detect Magic exploration activity gives the better of two initiative rolls against foes that have magic active"',
+    'Note="Use of Detect Magic exploration activity gives the better of 2 initiative rolls against foes that have magic active"',
   // Magic Sense as above
   'Bonded Focus':
     Pathfinder2E.FEATURES['Bonded Focus']
@@ -9022,7 +9026,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Clubs gain Devise A Stratagem attack bonus/Suffers no penalty for making a Strike nonlethal"',
   "That's Odd":
     'Section=skill ' +
-    'Note="Automatically notices one unusual detail when first entering a location and can immediately use Pursue A Lead with it"',
+    'Note="Automatically notices 1 unusual detail when first entering a location and can immediately use Pursue A Lead with it"',
   // Trap Finder as above
   'Underworld Investigator':
     'Section=skill,skill ' +
@@ -9523,7 +9527,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Glean Lore':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Religion check gives one true and one false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives one or two pieces of incorrect info or misleading clues"',
+    'Note="Successful Religion check gives 1 true and 1 false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives 1 or 2 pieces of incorrect info or misleading clues"',
   'Nudge The Scales':
     // in note 'Action=1 ' +
     'Section=magic,magic ' +
@@ -9724,7 +9728,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Roll The Bones Of Fate':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="<b>(CB)</b> R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of two rolls on the next attack or skill check; inflicts on a target the worse of two rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
+    'Note="<b>(CB)</b> R30\' Randomly causes 1 of 4 effects once per 10 min: gives self or an ally the better of 2 rolls on the next attack or skill check; inflicts on a target the worse of 2 rolls on the next attack or skill check (<b>save Will</b> negates); both of the previous; forces all within range to roll twice on their next attack or skill check, giving the better roll if the higher is even and the worse if it is odd"',
   'The Dead Walk':
     'Action=2 ' +
     'Section=magic ' +
@@ -10309,7 +10313,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strikes or attempts to Disarm the attacker in response to the triggering critical miss"',
   'Panache':
     'Section=combat ' +
-    'Note="Using bravado actions gives panache that can be use to perform some finisher actions"',
+    'Note="Tumble Through and other bravado actions give panache that enables finisher actions"',
   // Perception Mastery as above
   'Precise Strike':
     'Section=combat ' +
@@ -10329,7 +10333,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability,skill ' +
     'Note=' +
       '"+%V Speed with panache",' +
-      '"+%{skillNotes.swashbucklerExpertise?2:1} on bravado skill checks during combat"',
+      '"Gains +%{skillNotes.swashbucklerExpertise?2:1} on bravado skill checks during combat"',
+  // TODO randomizing
   'Stylish Tricks (Battledancer)':
     'Section=feature,skill ' +
     'Note=' +
@@ -10388,7 +10393,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Extravagant Parry':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gives +1 Armor Class when wielding a one-handed weapon, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe missing during this time gives panache until the end of the next turn"',
+    'Note="Gives +1 Armor Class when wielding a one-handed weapon, or +2 with a free hand or a parry weapon, until the start of the next turn; a foe miss during this time gives panache until the end of the next turn"',
   'Flashy Dodge':
     'Action=Reaction ' +
     'Section=feature ' +
@@ -10401,7 +10406,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Fascinating Performance used with a single target fascinates on a normal success"',
   'Goading Feint':
     'Section=combat ' +
-    'Note="Successful Feint can instead inflict -2 to the target\'s next attack roll vs. self before the end of the its next turn, or to all of its attacks vs. self on a critical success"',
+    'Note="Successful Feint can instead inflict -2 to the target\'s next attack vs. self before the end of the its next turn, or to all of its attacks vs. self on a critical success"',
   'One For All':
     'Action=1 ' +
     'Section=skill ' +
@@ -10416,10 +10421,10 @@ Pathfinder2ERemaster.FEATURES = {
   'After You':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Gains panache by taking last position in initiative order"',
+    'Note="Gains panache during initiative by taking the last position in the initiative order"',
   'Antagonize':
     'Section=combat ' +
-    'Note="Successful Demoralize prevents the target removing its frightened condition until it attacks self or moves out of sight for 1 rd"',
+    'Note="Successful Demoralize prevents the target from removing its frightened condition until it attacks self or moves out of sight for 1 rd"',
   'Brandishing Draw':
     'Action=1 ' +
     'Section=combat ' +
@@ -10430,7 +10435,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Gives +2 on the triggering save, and success gives panache until the end of the next turn"',
   'Enjoy The Show':
     'Section=combat ' +
-    'Note="R30\' Successful single-target Perform can instead inflict -1 attacks against creatures others than self, or -2 on a critical success, until the end of the target\'s next turn; critical failure instead gives target +1 attacks against self"',
+    'Note="R30\' Successful single-target Perform can instead inflict -1 attacks against creatures others than self, or -2 on a critical success, until the end of the target\'s next turn; critical failure instead gives the target +1 attacks against self until the end of its next turn"',
   'Finishing Follow-Through':
     'Section=combat ' +
     'Note="Gains panache whenever a finisher brings the target to 0 HP"',
@@ -10446,18 +10451,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Dastardly Dash':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strides up to %{speed//2}\'; can attempt a Trip%{$\'features.Dirty Trick\'?\' or a Dirty Trick\':\'\'} during the move"',
+    'Note="Strides up to %{speed//2}\'; can attempt 1 Trip%{$\'features.Dirty Trick\'?\' or Dirty Trick\':\'\'} during the move"',
   'Even The Odds':
     'Action=Free ' +
     'Section=combat ' +
     'Note="Gains panache at the beginning of the turn when flanked once per 10 min"',
   'Flamboyant Athlete':
     'Section=skill ' +
-    'Note="Panache gives %{speed//2}\' climb and swim Speeds, -10 jump DCs, and 5\' and %{speed>30?20:15}\' vertical and horizontal Leaps"',
-  "Guardian's Reflection":
-    'Action=Reaction ' +
-    'Section=combat ' +
-    'Note="When wielding a one-handed melee weapon and one hand free, gives an ally within reach +2 Armor Class against the triggering attack and gives self panache until the end of the next turn"',
+    'Note="Panache gives %{speed//2}\' climb and swim Speeds, -10 Jump DCs, and 5\' and %{speed>30?20:15}\' vertical and horizontal Leaps"',
+  // Guardian's Deflection as above
   'Impaling Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -10486,7 +10488,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Vexing Tumble':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Acrobatics vs. each foe\'s Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard until the end of the turn, and critical failure ends the move within the foe\'s reach"',
+    'Note="Successful Acrobatics vs. each foe\'s Reflex while Striding up to %{speed//2}\' does not trigger reactions; critical success also inflicts off-guard vs. self until the end of the turn, and critical failure ends the move within the foe\'s reach"',
   'Bleeding Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -10494,7 +10496,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Distracting Toss':
     'Action=2 ' +
     'Section=feature ' +
-    'Note="Successful Feint vs. a target within 30\' inflicts off-guard and allows a thrown weapon Strike"',
+    'Note="Attempts a Feint and a thrown weapon Strike vs. a target within 30\'"',
   'Dual Finisher':
     'Action=1 ' +
     'Section=combat ' +
@@ -10509,7 +10511,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Vivacious Bravado':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Gaining panache gives %{level+charismaModifier} temporary Hit Points until the start of the next turn"',
+    'Note="Gains %{level+charismaModifier} temporary Hit Points until the start of the next turn after gaining panache"',
   'Buckler Dance':
     'Action=1 Section=combat Note="Constantly has buckler raised"',
   'Derring-Do':
@@ -10529,7 +10531,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Targeting Finisher':
     'Action=1 ' +
     'Section=feature ' +
-    'Note="Successful targeted attack on a foe arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; effect extends for 1 min at half severity on a critical hit"',
+    'Note="Successful targeted attack on a foe\'s arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; the effect extends for 1 min at half severity on a critical hit"',
   'Cheat Death':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -10545,12 +10547,12 @@ Pathfinder2ERemaster.FEATURES = {
   'The Bigger They Are':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Tumble Through a larger creature\'s space inflicts weakness %{level//2} to precision damage from next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
+    'Note="Successful Tumble Through a larger creature\'s space as difficult terrain inflicts weakness %{level//2} to precision damage from the next self attack until the end of the turn, or against all self attacks on a critical success; failure ends movement, triggering reactions, and critical failure inflicts prone on self"',
   // TODO check Jump distance
   'Flamboyant Leap':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Attempts a 1-action finisher during a Leap or Jump, then falls"',
+    'Note="Attempts a 1-action finisher during a Leap or Jump of up to %{speed*2}\', then falls"',
   'Impossible Riposte':
     'Section=combat ' +
     'Note="Can use Opportune Riposte against ranged attacks, with the subsequent Strike inflicting the same damage type as the attack"',
@@ -10561,17 +10563,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Critical hits with agile and finesse melee weapons gain the deadly d8 trait or inflict double the normal damage dice if wielding a weapon that already has the deadly trait"',
   'Felicitous Riposte':
     'Section=combat ' +
-    'Note="Opportune Riposte uses the better of two attack rolls"',
+    'Note="Opportune Riposte uses the better of 2 attack rolls"',
   'Revitalizing Finisher':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Successful strike gives self and allies within 30\' %{level//2} temporary Hit Points; failure gives them only to self"',
   'Incredible Luck':
-    'Section=save Note="Charmed life uses the better of two rolls"',
+    'Section=save Note="Charmed life uses the better of 2 rolls"',
   'Lethal Finisher':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP)"',
+    'Note="Strike inflicts 12d6 HP precision (<b>save Fortitude</b> inflicts 6d6 HP; critical success inflicts 6 HP; critical failure inflicts 18d6 HP) instead of Precise Strike damage"',
   'Parry And Riposte':
     'Section=combat ' +
     'Note="While benefitting from Extravagant Parry or a parry weapon Armor Class bonus, can use Opportune Riposte after a normal failure on a foe Strike if the foe was damaged by a finisher on the prior turn"',
@@ -10581,7 +10583,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Steps and attempts a 1-action finisher Strike as a bravado action; regaining panache allows immediately using another finisher"',
   'Inexhaustible Countermoves':
     'Section=combat ' +
-    'Note="Gains a reaction at the start of each foe turn that can be for an Opportune Riposte%{$\'features.Reactive Strike\'?\' or Reactive Strike\':\'\'}"',
+    'Note="Gains a reaction at the start of each foe turn that can be used to make an Opportune Riposte%{$\'features.Reactive Strike\'?\' or Reactive Strike\':\'\'}"',
   'Panache Paragon':
     'Section=combat ' +
     'Note="Permanently quickened; can use the extra action only to perform a bravado action"',
