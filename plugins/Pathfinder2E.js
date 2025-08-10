@@ -6853,7 +6853,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
   // Quick Alchemy as above
   'Advanced Concoction':
-    'Section=feature Note="+1 Class Feat (alchemist up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (alchemist up to level %{level//2})"',
   'Expert Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
   'Master Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
 
@@ -6885,7 +6885,7 @@ Pathfinder2E.FEATURES = {
   "Basic Muse's Whispers":
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level bard)"',
   "Advanced Muse's Whispers":
-    'Section=feature Note="+1 Class Feat (bard up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (bard up to level %{level//2})"',
   'Counter Perform':
     'Section=magic ' +
     'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
@@ -6914,7 +6914,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Devotion':
-    'Section=feature Note="+1 Class Feat (champion up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (champion up to level %{level//2})"',
   // Champion's Reaction as above
   // Divine Ally as above
   'Diverse Armor Expert':
@@ -6933,7 +6933,7 @@ Pathfinder2E.FEATURES = {
   'Basic Dogma':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
   'Advanced Dogma':
-    'Section=feature Note="+1 Class Feat (cleric up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (cleric up to level %{level//2})"',
   'Divine Breadth':
     'Section=magic Note="+1 divine spell slot of each level up to %V"',
   'Expert Cleric Spellcasting':
@@ -6967,7 +6967,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Wilding':
-    'Section=feature Note="+1 Class Feat (druid up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (druid up to level %{level//2})"',
   'Primal Breadth':
     'Section=magic Note="+1 primal spell slot of each level up to %V"',
   'Expert Druid Spellcasting':
@@ -6987,7 +6987,7 @@ Pathfinder2E.FEATURES = {
   'Fighter Resiliency':'Section=combat Note="+%V Hit Points"',
   'Opportunist':'Section=feature Note="Has the Attack Of Opportunity feature"',
   'Advanced Maneuver':
-    'Section=feature Note="+1 Class Feat (fighter up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (fighter up to level %{level//2})"',
   'Diverse Weapon Expert':
     'Section=combat ' +
     'Note="Attack Expert (Simple Weapons; Martial Weapons)/Attack Trained (Advanced Weapons)"',
@@ -7002,7 +7002,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level monk)"',
   'Monk Resiliency':'Section=combat Note="+%V Hit Points"',
   'Advanced Kata':
-    'Section=feature Note="+1 Class Feat (monk up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (monk up to level %{level//2})"',
   'Monk Moves':'Section=ability Note="+10 Speed in no armor"',
   "Monk's Flurry":'Section=feature Note="Has the Flurry Of Blows feature"',
   "Perfection's Path (Fortitude)":'Section=save Note="Save Master (Fortitude)"',
@@ -7019,7 +7019,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level ranger)"',
   'Ranger Resiliency':'Section=combat Note="+%V Hit Points"',
   "Advanced Hunter's Trick":
-    'Section=feature Note="+1 Class Feat (ranger up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (ranger up to level %{level//2})"',
   'Master Spotter':'Section=skill Note="Perception Master"',
 
   'Rogue Dedication':
@@ -7032,7 +7032,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level rogue)"',
   'Sneak Attacker':'Section=feature Note="Has the Sneak Attack feature"',
   'Advanced Trickery':
-    'Section=feature Note="+1 Class Feat (rogue up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (rogue up to level %{level//2})"',
   'Skill Mastery':
     'Section=feature,skill ' +
     'Note=' +
@@ -7119,7 +7119,7 @@ Pathfinder2E.FEATURES = {
     // Errata changes Touch Of Undeath to Undeath's Blessing
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':
-    'Section=feature Note="+1 Class Feat (sorcerer up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (sorcerer up to level %{level//2})"',
   'Bloodline Breadth':
     'Section=magic ' +
     'Note="+1 %{bloodlineTraditionsLowered} spell slot of each level up to %V"',
@@ -7168,7 +7168,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
   'Advanced Arcana':
-    'Section=feature Note="+1 Class Feat (wizard up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (wizard up to level %{level//2})"',
   'Arcane Breadth':
     'Section=magic Note="+1 arcane spell slot of each level up to %V"',
   'Expert Wizard Spellcasting':
@@ -14357,11 +14357,10 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('trainingLevel.' + matchInfo[1],
       'skillNotes.' + prefix, '^=', 'source=="Trained" ? 1 : source=="Expert" ? 2 : source=="Master" ? 3 : 4'
     );
+  } else if(name.match(/^Advanced (Arcana|Blood Potency|Concoction|Devotion|Dogma|Fury|Hunter's Trick|Kata|Maneuver|Muse's Whispers|Trickery|Wilding)$/)) {
+    rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name.startsWith('Advanced Domain')) {
     rules.defineRule('features.Advanced Domain', 'features.' + name, '=', '1');
-  } else if(name == 'Advanced Fury') {
-    rules.defineRule
-      ('featureNotes.advancedFury', 'feats.Advanced Fury', '=', null);
   } else if(name == 'Advanced School Spell') {
     let schools =
       rules.plugin.CLASSES.Wizard.match(/([\s\w]*:Arcane School)/g)
