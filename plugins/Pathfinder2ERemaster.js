@@ -4017,6 +4017,554 @@ Pathfinder2ERemaster.FEATS = {
   'Student Of The Dueling Arts':
     'Traits=Archetype Require="level >= 12","features.Duelist Dedication"',
 
+  // TODO require expert in a bow or crossbow
+  'Eldritch Archer Dedication':
+    'Traits=Archetype,Dedication,Magical Require="level >= 6"',
+  'Basic Eldritch Archer Spellcasting':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Eldritch Archer Dedication"',
+  'Enchanting Shot':
+    'Traits=Archetype,Emotion,Magical,Mental ' +
+    'Require="level >= 8","features.Eldritch Archer Dedication"',
+  'Magic Ammunition':
+    'Traits=Archetype,Magical ' +
+    'Require="level >= 8","features.Eldritch Archer Dedication"',
+  'Precious Ammunition':
+    'Traits=Archetype,Magical ' +
+    'Require="level >= 8","features.Eldritch Archer Dedication"',
+  'Precious Ammunition':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Eldritch Archer Dedication"',
+  'Expert Eldritch Archer Spellcaster':
+    'Traits=Archetype ' +
+    'Require="level >= 12","features.Basic Eldritch Archer Spellcasting"',
+  'Homing Shot':
+    'Traits=Archetype,Magical ' +
+    'Require="level >= 14","features.Eldritch Archer Dedication"',
+  'Incorporeal Shot':
+    'Traits=Archetype,Magical ' +
+    'Require="level >= 16","features.Eldritch Archer Dedication"',
+  'Fatal Shot':
+    'Traits=Archetype,Magical ' +
+    'Require="level >= 18","features.Eldritch Archer Dedication"',
+  'Expert Eldritch Archer Spellcaster':
+    'Traits=Archetype ' +
+    'Require="level >= 18","features.Expert Eldritch Archer Spellcasting"',
+
+  'Familiar Master Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2"',
+  'Familiar Mascot':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Familiar Master Dedication"',
+  // Require ability to cast spells
+  'Familiar Conduit':
+    'Traits=Archetype,Concentrate,Spellshape ' +
+    'Require="level >= 4","features.Familiar Master Dedication"',
+  'Improved Familiar':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Familiar Master Dedication"',
+  'Mutable Familiar':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Familiar Master Dedication"',
+  'Incredible Familiar':
+    'Traits=Archetype Require="level >= 10","features.Enhanced Familiar"',
+
+  'Gladiator Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","features.Impressive Performance"',
+  'Fancy Moves':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Gladiator Dedication",' +
+      '"rank.Performance >= 2"',
+  'Play To The Crowd':
+    'Traits=Archetype,Concentrate ' +
+    'Require="level >= 4","features.Gladiator Dedication"',
+  'Stage Fighting':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Gladiator Dedication"',
+  'Performative Weapons Training':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Gladiator Dedication"',
+  'Call Your Shot':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Play To The Crowd"',
+
+  'Herbalist Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Medicine >= 1",' +
+      '"features.Natural Medicine"',
+  'Fresh Ingredients':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 2","features.Herbalist Dedication"',
+  'Poultice Preparation':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Herbalist Dedication"',
+  'Advanced Herbalism':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Herbalist Dedication",' +
+      '"rank.Nature >= 2"',
+  'Endemic Herbs':
+    'Traits=Archetype,Additive ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Herbalist Dedication",' +
+      '"rank.Survival >= 1"',
+
+  'Linguist Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","languageCount >= 3"',
+  'Multilingual Cipher':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Linguist Dedication",' +
+      '"rank.Society >= 2"',
+  'Phonetic Training':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Linguist Dedication",' +
+      '"rank.Society >= 2"',
+  'Spot Translate':
+    'Traits=Archetype,Auditory,Linguistic ' +
+    'Require="level >= 4","features.Linguist Dedication"',
+  'Analyze Idiolect':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Linguist Dedication",' +
+      '"rank.Deception >= 2",' +
+      '"rank.Society >= 2"',
+  'Read Shibboleths':
+    'Traits=Archetype,Linguistic,Skill ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"features.Linguist Dedication",' +
+      '"rank.Society >= 3"',
+  'Crude Communication':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Linguist Dedication"',
+
+  'Marshal Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Martial Weapons >= 1",' +
+      '"rank.Diplomacy >= 1 || rank.Intimidation >= 1"',
+  'Dread Marshal Stance':
+    'Traits=Archetype,Stance ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Marshal Dedication",' +
+      '"rank.Intimidation >= 1"',
+  'Inspiring Marshal Stance':
+    'Traits=Archetype,Stance ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Marshal Dedication",' +
+      '"rank.Diplomacy >= 1"',
+  'Snap Out Of It!':
+    'Traits=Archetype,Auditory,Emotion,Mental ' +
+    'Require="level >= 4","features.Marshal Dedication"',
+  'Steel Yourself!':
+    'Traits=Archetype,Auditory,Emotion,Mental ' +
+    'Require="level >= 4","features.Marshal Dedication"',
+  'Cadence Call':
+    'Traits=Archetype,Auditory,Flourish ' +
+    'Require="level >= 6","features.Marshal Dedication"',
+  'Rallying Charge':
+    'Traits=Archetype,Visual ' +
+    'Require="level >= 6","features.Marshal Dedication"',
+  'Back To Back':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Marshal Dedication"',
+  'To Battle!':
+    'Traits=Archetype,Auditory,Flourish ' +
+    'Require="level >= 8","features.Marshal Dedication"',
+  'Topple Foe':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 10",' +
+      '"features.Marshal Dedication",' +
+      '"rank.Athletics >= 1"',
+  'Coordinated Charge':
+    'Traits=Archetype,Flourish,Visual ' +
+    'Require="level >= 12","features.Marshal Dedication"',
+  'Tactical Cadence':
+    'Traits=Archetype ' +
+    'Require="level >= 14","features.Cadence Call"',
+  'Target Of Opportunity':
+    'Traits=Archetype,Manipulate ' +
+    'Require="level >= 14","features.Martial Dedication"',
+
+  'Martial Artist Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2"',
+  'Follow-Up Strike':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 6","features.Martial Artist Dedication"',
+  'Grievous Blow':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 8","features.Martial Artist Dedication"',
+  'Path Of Iron':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 14","features.Martial Artist Dedication"',
+
+  'Mauler Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","strengthModifier >= 2"',
+  'Clear The Way':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Mauler Dedication"',
+  'Shoving Sweep':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Mauler Dedication",' +
+      '"rank.Athletics >= 2"',
+  'Hammer Quake':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 14","features.Mauler Dedication"',
+  'Avalanche Strike':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 16","features.Mauler Dedication"',
+
+  'Medic Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Medicine >= 1",' +
+      '"features.Battle Medicine"',
+  "Doctor's Visitation":
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 4","features.Medic Dedication"',
+  'Treat Condition':
+    'Traits=Archetype,Healing,Manipulate,Skill ' +
+    'Require="level >= 4","features.Medic Dedication"',
+  'Holistic Care':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"rank.Diplomacy >= 1",' +
+      '"features.Treat Condition"',
+  'Resusicate':
+    'Traits=Archetype,Healing,Manipulate ' +
+    'Require=' +
+      '"level >= 16",' +
+      '"features.Medic Condition",' +
+      '"rank.Medicine >= 4"',
+
+  'Pirate Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Intimidation >= 1"',
+  'Pirate Combat Training':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Pirate Dedication"',
+  'Rope Runner':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Pirate Dedication",' +
+      '"rank.Acrobatics >= 1",' +
+      '"rank.Athletics >= 1"',
+  'Walk The Plank':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Pirate Dedication"',
+
+  'Poisoner Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Crafting >= 1"',
+  "Poisoner's Twist":
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Poisoner Dedication",' +
+      '"rank.Medicine >= 1"',
+  'Advanced Poisoncraft':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Poisoner Dedication"',
+  'Poison Coat':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Poisoner Dedication"',
+  'Acquired Tolerance':
+    'Traits=Archetype,Fortune ' +
+    'Require="level >= 8","features.Poisoner Dedication"',
+  'Chemical Contagion':
+    'Traits=Archetype ' +
+    'Require="level >= 18","features.Poisoner Dedication"',
+
+  'Ritualist Dedication':
+    'Traits=Archetype,Uncommon,Dedication ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"rank.Arcana >= 2 || ' +
+       'rank.Nature >= 2 || ' +
+       'rank.Occultism >= 2 || ' +
+       'rank.Religion >= 2"',
+  'Flexible Ritualist':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Ritualist Dedication"',
+  'Resourceful Ritualist':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 6","features.Ritualist Dedication"',
+  'Efficient Rituals':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Ritualist Dedication"',
+  'Assured Ritualist':
+    'Traits=Archetype,Fortune ' +
+    'Require="level >= 10","features.Flexible Ritualist"',
+  'Enterprising Ritualist':
+    'Traits=Archetype ' +
+    'Require="level >= 14","features.Ritualist Dedication"',
+
+  'Scout Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Stealth >= 1",' +
+      '"rank.Survival >= 1"',
+  "Scout's Charge":
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 4","features.Scout Dedication"',
+  'Terrain Scout':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Scout Dedication"',
+  'Fleeting Shadow':
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 6","features.Scout Dedication"',
+  "Scout's Speed":
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Scout Dedication"',
+  "Scout's Pounce":
+    'Traits=Archetype,Flourish ' +
+    'Require="level >= 10","features.Scout Dedication"',
+
+  'Scroll Trickster Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require=' +
+      '"level >= 2",' +
+      '"rank.Arcana >= 1 || ' +
+       'rank.Nature >= 1 || ' +
+       'rank.Occultism >= 1 || ' +
+       'rank.Religion >= 1"',
+  'Basic Scroll Cache':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Scroll Trickster Dedication"',
+  'Skim Scroll':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Scroll Trickster Dedication"',
+  'Expert Scroll Cache':
+    'Traits=Archetype ' +
+    'Require="level >= 12","features.Basic Scroll Cache"',
+  'Master Scroll Cache':
+    'Traits=Archetype ' +
+    'Require="level >= 18","features.Expert Scroll Cache"',
+
+  'Scrounger Dedication':
+    'Traits=Archetype,Uncommon,Dedication ' +
+    'Require="level >= 2","rank.Crafting >= 1"',
+  'Reverse Engineering':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Scrounger Dedication",' +
+      '"rank.Crafting >= 2"',
+  'Magical Scrounger':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 6",' +
+      '"features.Scrounger Dedication",' +
+      '"features.Magical Crafting"',
+  'Expert Disassembly':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"features.Scrounger Dedication",' +
+      '"rank.Crafting >= 3"',
+
+  'Sentinel Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2"',
+  'Steel Skin':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Sentinel Dedication",' +
+      '"rank.Survival >= 1"',
+  'Armor Specialist':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Sentinel Dedication"',
+  'Armored Rebuff':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Sentinel Dedication"',
+  'Mighty Bulwark':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Sentinel Dedication"',
+
+  'Snarecrafter Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","rank.Crafting >= 1"',
+  'Surprise Snare':
+    'Traits=Archetype,Manipulate ' +
+    'Require="level >= 4","features.Snarecrafter Dedication"',
+  'Remote Trigger':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Snarecrafter Dedication"',
+  'Giant Snare':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Snarecrafter Dedication"',
+  'Lightning Snares':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"features.Snarecrafter Dedication",' +
+      '"rank.Crafting >= 3"',
+  'Plentiful Snares':
+    'Traits=Archetype ' +
+    'Require="level >= 12","features.Snarecrafter Dedication"',
+
+  'Talisman Dabbler Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2"',
+  'Quick Fix':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Talisman Dabbler Dedication"',
+  'Deeper Dabbler':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Talisman Dabbler Dedication"',
+  'Talismanic Sage':
+    'Traits=Archetype ' +
+    'Require="level >= 14","features.Talisman Dabbler Dedication"',
+
+  'Vigilante Dedication':
+    'Traits=Archetype,Dedication,Uncommon ' +
+    'Require="level >= 2","rank.Deception >= 1"',
+  'Hidden Magic':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Vigilante Dedication",' +
+      '"rank.Arcana >= 2 || ' +
+       'rank.Nature >= 2 || ' +
+       'rank.Occultism >= 2 || ' +
+       'rank.Religion >= 2"',
+  'Minion Guise':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 4",' +
+      '"features.Vigilante Dedication",' +
+      '"features.Animal Companion || features.Familiar",' +
+      '"rank.Deception >= 2"',
+  'Safe House':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Vigilante Dedication"',
+  'Social Purview':
+    'Traits=Archetype,Skill ' +
+    'Require="level >= 4","features.Vigilante Dedication"',
+  'Startling Appearance':
+    'Traits=Archetype,Emotion,Fear,Mental,Vigilante ' +
+    'Require="level >= 6","features.Vigilante Dedication"',
+  'Quick Change':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"features.Vigilante Dedication",' +
+      '"rank.Deception >= 3"',
+  'Subjective Truth':
+    'Traits=Archetype,Skill ' +
+    'Require=' +
+      '"level >= 7",' +
+      '"features.Vigilante Dedication",' +
+      '"rank.Deception >= 3"',
+  'Many Guises':
+    'Traits=Archetype ' +
+    'Require=' +
+      '"level >= 8",' +
+      '"features.Vigilante Dedication",' +
+      '"rank.Deception >= 3"',
+  'Frightening Appearance':
+    'Traits=Archetype,Vigilante ' +
+    'Require=' +
+      '"level >= 12",' +
+      '"rank.Intimidation >= 2",' +
+      '"features.Startling Appearance"',
+  'Stunning Appearance':
+    'Traits=Archetype,Vigilante ' +
+    'Require="level >= 16","features.Startling Appearance"',
+
+  'Viking Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Athletics >= 1"',
+  'Hurling Charge':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Viking Dedication"',
+  'Viking Weapon Familiarity':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Viking Dedication"',
+  'Second Shield':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Viking Dedication"',
+  'Into The Fray':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Viking Dedication"',
+
+  'Weapon Improviser Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Martial Weapons >= 1"',
+  'Improvised Pummel':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Weapon Improviser Dedication"',
+  'Surprise Strike':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Weapon Improviser Dedication"',
+  'Improvised Critical':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Weapon Improviser Dedication"',
+  'Makeshift Strike':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Weapon Improviser Dedication"',
+  'Shattering Strike':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Improvised Pummel"',
+
+  'Wrestler Dedication':
+    'Traits=Archetype,Dedication ' +
+    'Require="level >= 2","rank.Athletics >= 1"',
+  'Disengaging Twist':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Wrestler Dedication"',
+  'Elbow Breaker':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Wrestler Dedication"',
+  'Suplex':
+    'Traits=Archetype ' +
+    'Require="level >= 4","features.Wrestler Dedication"',
+  'Clinch Strike':
+    'Traits=Archetype ' +
+    'Require="level >= 6","features.Wrestler Dedication"',
+  'Running Tackle':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Wrestler Dedication"',
+  'Strangle':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Wrestler Dedication"',
+  'Submission Hold':
+    'Traits=Archetype ' +
+    'Require="level >= 8","features.Wrestler Dedication"',
+  'Aerial Piledriver':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Wrestler Dedication"',
+  'Spinebreaker':
+    'Traits=Archetype ' +
+    'Require="level >= 10","features.Wrestler Dedication"',
+  'Inescapable Grasp':
+    'Traits=Archetype ' +
+    'Require="level >= 12","features.Wrestler Dedication"',
+  'Form Lock':
+    'Traits=Archetype,Attack ' +
+    'Require="level >= 14","features.Wrestler Dedication"',
+
   // General and Skill
   'Additional Lore (%lore)':
     Pathfinder2E.FEATS['Additional Lore (%lore)'] + ' Require=""',

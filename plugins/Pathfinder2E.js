@@ -14336,8 +14336,8 @@ Pathfinder2E.featRules.traits = [
   'Hobgoblin', 'Illusion', 'Investigator', 'Kholo', 'Kobold', 'Leshy', 'Light',
   'Lineage', 'Linguistic', 'Lizardfolk', 'Misfortune', 'Nephilim', 'Oracle',
   'Poison', 'Prediction', 'Ratfolk', 'Revelation', 'Sonic', 'Spellshape',
-  'Spirit', 'Swashbuckler', 'Teleportation', 'Tengu', 'Tripkee', 'Vitality',
-  'Void', 'Water', 'Witch'
+  'Spirit', 'Swashbuckler', 'Teleportation', 'Tengu', 'Tripkee', 'Vigilante',
+  'Vitality', 'Void', 'Water', 'Witch'
 ];
 
 /*
