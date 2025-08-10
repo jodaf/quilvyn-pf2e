@@ -2189,17 +2189,17 @@ Pathfinder2E.FEATS = {
   // Enhanced Familiar as above
   'Arcane Evolution':
     'Traits=Sorcerer,Arcane ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Arcane\'"',
+    'Require="level >= 4","sorcererTraditions =~ \'Arcane\'"',
   'Bespell Weapon':'Traits=Sorcerer,Wizard Require="level >= 4"',
   'Divine Evolution':
     'Traits=Sorcerer,Divine ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Divine\'"',
+    'Require="level >= 4","sorcererTraditions =~ \'Divine\'"',
   'Occult Evolution':
     'Traits=Sorcerer,Occult ' +
-     'Require="level >= 4","bloodlineTraditions =~ \'Occult\'"',
+     'Require="level >= 4","sorcererTraditions =~ \'Occult\'"',
   'Primal Evolution':
     'Traits=Sorcerer,Primal ' +
-    'Require="level >= 4","bloodlineTraditions =~ \'Primal\'"',
+    'Require="level >= 4","sorcererTraditions =~ \'Primal\'"',
   'Advanced Bloodline':
     'Traits=Sorcerer ' +
     'Require=' +
@@ -6347,7 +6347,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic Note="Can learn spells from the %{bloodlineTraditionsLowered} tradition"',
+    'Section=magic Note="Can learn spells from the %{sorcererTraditionsLowered} tradition"',
   // Nethys changes Simple Weapon Expertise to Weapon Expertise
   // Weapon Expertise as above
   // Weapon Specialization as above
@@ -7048,7 +7048,7 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{sorcererTraditionsLowered} spell"',
   'Basic Blood Potency':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
   'Basic Bloodline Spell (Aberrant)':
@@ -7122,13 +7122,13 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+%V Class Feat (sorcerer up to level %{level//2})"',
   'Bloodline Breadth':
     'Section=magic ' +
-    'Note="+1 %{bloodlineTraditionsLowered} spell slot of each level up to %V"',
+    'Note="+1 %{sorcererTraditionsLowered} spell slot of each level up to %V"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%{bloodlineTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
+    'Note="Spell Expert (%{sorcererTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%{bloodlineTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{bloodlineTraditionsLowered} spell"',
+    'Note="Spell Master (%{sorcererTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -13952,11 +13952,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'combatNotes.ruffian', '^=', 'source=="Master" ? 3 : source=="Expert" ? 2 : 1'
     );
   } else if(name == 'Sorcerer') {
-    rules.defineRule('bloodlineTraditions',
-      classLevel, '=', 'Pathfinder2E.bloodlineTraditions = ""'
+    rules.defineRule('sorcererTraditions',
+      classLevel, '=', 'Pathfinder2E.sorcererTraditions = ""'
     );
-    rules.defineRule('bloodlineTraditionsLowered',
-      'bloodlineTraditions', '=', 'source.toLowerCase()'
+    rules.defineRule('sorcererTraditionsLowered',
+      'sorcererTraditions', '=', 'source.toLowerCase()'
     );
     rules.defineRule('bloodlineDamage',
       'draconicColor', '=', '{Black:"acid", Blue:"electricity", Bronze:"electricity", Copper:"acid", Green:"poison", Silver:"cold", White:"cold"}[source] || "fire"',
@@ -13983,11 +13983,11 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('combatNotes.weaponExpertise', '', '=', '"Simple Weapons"');
     rules.defineRule('magicNotes.divineEvolution', 'maxSpellLevel', '=', null);
     rules.defineRule
-      ('magicNotes.expertSpellcaster', 'bloodlineTraditions', '=', null);
+      ('magicNotes.expertSpellcaster', 'sorcererTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.legendarySpellcaster', 'bloodlineTraditions', '=', null);
+      ('magicNotes.legendarySpellcaster', 'sorcererTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.masterSpellcaster', 'bloodlineTraditions', '=', null);
+      ('magicNotes.masterSpellcaster', 'sorcererTraditions', '=', null);
     rules.defineRule('magicNotes.primalEvolution', 'maxSpellLevel', '=', null);
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
@@ -14374,20 +14374,25 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   } else if(name == 'Alchemist Dedication') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
-  } else if((matchInfo = name.match(/^(Arcane|Bloodline|Divine|Occult|Primal) Breadth$/)) != null) {
-    let trad = matchInfo[1];
-    let c = {'Arcane':'Wizard', 'Bloodline':'Sorcerer', 'Divine':'Cleric', 'Occult':'Bard', 'Primal':'Druid'}[trad];
-    let note = 'magicNotes.' + trad.toLowerCase() + 'Breadth';
+  } else if((matchInfo = name.match(/^(.*) Breadth$/)) != null) {
+    // TODO homebrew
+    let attrs = rules.plugin.FEATS[name] || Pathfinder2E.FEATS[name] || '';
+    let c = attrs.match(/Basic (.*) Spellcasting/)[1] || 'Wizard';
+    let trad =
+      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
+    let note = 'magicNotes.' + prefix;
     rules.defineRule(note,
       'level', '?', null, // recomputation trigger
       'magicNotes.basic' + c + 'Spellcasting', '=', '1',
       'magicNotes.expert' + c + 'Spellcasting', '^', 'dict.level>=16 ? 4 : dict.level>=14 ? 3 : 2',
       'magicNotes.master' + c + 'Spellcasting', '^', 'dict.level>=20 ? 6 : 5'
     );
-    if(c == 'Sorcerer') {
+    if(trad.match(/^\d/)) {
+      let traditions =
+        c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '') + 'Traditions';
       ['A', 'D', 'O', 'P'].forEach(t => {
         rules.defineRule(note + '.' + t + '.1',
-          'bloodlineTraditions', '?', 'source && source.includes("' + t + '")',
+          traditions, '?', 'source && source.includes("' + t + '")',
            note, '=', null
         );
         [1, 2, 3, 4, 5, 6].forEach(l => {
@@ -14397,10 +14402,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         });
       });
     } else {
-      let t = trad.charAt(0);
       [1, 2, 3, 4, 5, 6].forEach(l => {
         rules.defineRule
-          ('spellSlots.' + t + l, note, '+', 'source>=' + l + ' ? 1 : null');
+          ('spellSlots.' + trad + l, note, '+', 'source>=' + l + ' ? 1 : null');
       });
     }
   } else if(name == 'Arcane School Spell') {
@@ -14496,9 +14500,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
-    if(c == 'Sorcerer' || c == 'Witch') {
+    if(trad.match(/^\d/)) {
       let traditions =
-        c == 'Sorcerer' ? 'bloodlineTraditions' : 'patronTraditions';
+        c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '') + 'Traditions';
       ['A', 'D', 'O', 'P'].forEach(trad => {
         for(let s in slots) {
           if(slots[s] > 0)
@@ -14876,13 +14880,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       'features.Rogue Dedication', '=', '"dexterity"'
     );
   } else if(name == 'Sorcerer Dedication') {
-    rules.defineRule('bloodlineTraditions',
-      'feats.' + name, '=', 'Pathfinder2E.bloodlineTraditions = ""'
+    rules.defineRule('sorcererTraditions',
+      'feats.' + name, '=', 'Pathfinder2E.sorcererTraditions = ""'
     );
     rules.defineRule
-      ('magicNotes.sorcererDedication', 'bloodlineTraditions', '=', null);
+      ('magicNotes.sorcererDedication', 'sorcererTraditions', '=', null);
     rules.defineRule('magicNotes.sorcererDedication.1',
-      'bloodlineTraditionsLowered', '=', null
+      'sorcererTraditionsLowered', '=', null
     );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
@@ -14893,7 +14897,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
       rules.defineRule('spellModifier' + t + '.' + name,
         'features.Sorcerer Dedication', '?', null,
-        'bloodlineTraditions', '?', 'source && source.includes("' + t + '")',
+        'sorcererTraditions', '?', 'source && source.includes("' + t + '")',
         'charismaModifier', '=', null
       );
       rules.defineRule
@@ -15245,11 +15249,11 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name + ':Bloodline')) {
         let trad = matchInfo[1];
         rules.defineRule('sorcerer' + trad + 'Level',
-          'bloodlineTraditions', '?', 'source && source.includes("' + trad + '")',
+          'sorcererTraditions', '?', 'source && source.includes("' + trad + '")',
           'levels.Sorcerer', '=', null
         );
-        rules.defineRule('bloodlineTraditions',
-          'features.' + name, '=', 'Pathfinder2E.bloodlineTraditions = !Pathfinder2E.bloodlineTraditions ? "' + trad + '" : !Pathfinder2E.bloodlineTraditions.includes("' + trad + '") ? Pathfinder2E.bloodlineTraditions + "; ' + trad + '" : Pathfinder2E.bloodlineTraditions'
+        rules.defineRule('sorcererTraditions',
+          'features.' + name, '=', 'Pathfinder2E.sorcererTraditions = !Pathfinder2E.sorcererTraditions ? "' + trad + '" : !Pathfinder2E.sorcererTraditions.includes("' + trad + '") ? Pathfinder2E.sorcererTraditions + "; ' + trad + '" : Pathfinder2E.sorcererTraditions'
         );
         rules.defineRule('features.Advanced Bloodline (' + name + ')',
           'features.Advanced Bloodline', '?', null,
