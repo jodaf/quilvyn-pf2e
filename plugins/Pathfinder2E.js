@@ -622,8 +622,8 @@ Pathfinder2E.CLASSES = {
       '"3:Skill Increases","5:Alertness","9:Resolve","11:Lightning Reflexes",' +
       '"13:Divine Defense","13:Weapon Specialization","19:Miraculous Spell" ' +
     'Selectables=' +
-      '"1:Healing Font:Divine Font",' +
-      '"1:Harmful Font:Divine Font",' +
+      '"deityFont==\'Either\' ? 1:Healing Font:Divine Font",' +
+      '"deityFont==\'Either\' ? 1:Harmful Font:Divine Font",' +
       '"1:Cloistered Cleric:Doctrine",' +
       '"1:Warpriest:Doctrine" ' +
     'SpellSlots=' +
@@ -13785,8 +13785,18 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.warpriest-1', 'level', '?', 'source>=7');
+    rules.defineRule
+      ('featureNotes.divineFont', 'deityFont', '?', 'source=="Either"');
     rules.defineRule('featureNotes.warpriest-1',
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
+    );
+    rules.defineRule('features.Harmful Font',
+      'features.Divine Font', '?', null,
+      'deityFont', '=', 'source=="Harm" ? 1 : null'
+    );
+    rules.defineRule('features.Healing Font',
+      'features.Divine Font', '?', null,
+      'deityFont', '=', 'source=="Heal" ? 1 : null'
     );
     rules.defineRule('magicNotes.cloisteredCleric',
       'level', '=', 'source<7 ? "Trained" : source<15 ? "Expert" : source<19 ? "Master" : "Legendary"'
