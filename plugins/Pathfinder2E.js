@@ -508,9 +508,6 @@ Pathfinder2E.CLASSES = {
       '"17:Heightened Senses","17:Quick Rage","19:Armor Of Fury",' +
       '"19:Devastator" ' +
     'Selectables=' +
-      '"1:Fury Instinct:Instinct",' +
-      '"1:Giant Instinct:Instinct",' +
-      '"1:Spirit Instinct:Instinct",' +
       '"1:Animal Instinct (Ape):Instinct",' +
       '"1:Animal Instinct (Bear):Instinct",' +
       '"1:Animal Instinct (Bull):Instinct",' +
@@ -529,7 +526,10 @@ Pathfinder2E.CLASSES = {
       '"1:Dragon Instinct (Bronze):Instinct",' +
       '"1:Dragon Instinct (Copper):Instinct",' +
       '"1:Dragon Instinct (Gold):Instinct",' +
-      '"1:Dragon Instinct (Silver):Instinct"',
+      '"1:Dragon Instinct (Silver):Instinct",' +
+      '"1:Fury Instinct:Instinct",' +
+      '"1:Giant Instinct:Instinct",' +
+      '"1:Spirit Instinct:Instinct"',
   'Bard':
     'Ability=charisma HitPoints=8 ' +
     'Features=' +
@@ -3700,7 +3700,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Has resistance %{3+constitutionModifier} to negative and undead during rage"',
   'Specialization Ability':
-    'Section=combat Note="Has increased instinct ability rage effects"',
+    'Section=combat Note="Has increased Instinct Ability Rage effects"',
   'Spirit Rage':
     'Section=combat ' +
     'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i>, instead of +%{combatNotes.rage} HP weapon damage during rage"',
@@ -6868,9 +6868,48 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
   'Advanced Fury':
     'Section=feature Note="+%V Class Feat (barbarian up to level %{level//2})"',
-  'Instinct Ability':
-    'Section=feature ' +
-    'Note="Has the instinct ability for the chosen barbarian instinct"',
+  'Instinct Ability (Animal Instinct (Ape))':
+    'Section=feature Note="Has the Bestial Rage (Ape) feature"',
+  'Instinct Ability (Animal Instinct (Bear))':
+    'Section=feature Note="Has the Bestial Rage (Bear) feature"',
+  'Instinct Ability (Animal Instinct (Bull))':
+    'Section=feature Note="Has the Bestial Rage (Bull) feature"',
+  'Instinct Ability (Animal Instinct (Cat))':
+    'Section=feature Note="Has the Bestial Rage (Cat) feature"',
+  'Instinct Ability (Animal Instinct (Deer))':
+    'Section=feature Note="Has the Bestial Rage (Deer) feature"',
+  'Instinct Ability (Animal Instinct (Frog))':
+    'Section=feature Note="Has the Bestial Rage (Frog) feature"',
+  'Instinct Ability (Animal Instinct (Shark))':
+    'Section=feature Note="Has the Bestial Rage (Shark) feature"',
+  'Instinct Ability (Animal Instinct (Snake))':
+    'Section=feature Note="Has the Bestial Rage (Snake) feature"',
+  'Instinct Ability (Animal Instinct (Wolf))':
+    'Section=feature Note="Has the Bestial Rage (Wolf) feature"',
+  'Instinct Ability (Dragon Instinct (Black))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Blue))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Green))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Red))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (White))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Brass))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Bronze))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Copper))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Gold))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Dragon Instinct (Silver))':
+    'Section=feature Note="Has the Draconic Rage feature"',
+  'Instinct Ability (Giant Instinct)':
+    'Section=feature Note="Has the Titan Mauler feature"',
+  'Instinct Ability (Spirit Instinct)':
+    'Section=feature Note="Has the Spirit Rage feature"',
   "Juggernaut's Fortitude":'Section=save Note="Save Master (Fortitude)"',
 
   'Bard Dedication':
@@ -7036,8 +7075,8 @@ Pathfinder2E.FEATURES = {
   'Skill Mastery':
     'Section=feature,skill ' +
     'Note=' +
-      '"+1 Skill Feat",' +
-      '"Skill Expert (Choose 1 from any)/Skill Master (Choose 1 from any)"',
+      '"+%V Skill Feat",' +
+      '"Skill Expert (Choose %V from any)/Skill Master (Choose %V from any)"',
   'Uncanny Dodge':'Section=feature Note="Has the Deny Advantage feature"',
   'Evasiveness':'Section=save Note="Save Master (Reflex)"',
 
@@ -14537,7 +14576,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
       Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Key Ability)'))
+      .filter(x => allSelectables[x].match(/Champion .Key/))
       .map(x => x.replace('Champion - ', ''));
     abilities.forEach(a => {
       rules.defineRule('validationNotes.champion-' + a + 'SelectableFeature',
@@ -14737,22 +14776,15 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('spellSlots.P10', "magicNotes.hierophant'sPower", '+', '1');
   } else if(name == 'Instinct Ability') {
-    // Extend test rules to allow characters with the Instinct Ability
-    // archetype feature to acquire barbarian instinct abilities.
-    // NOTE: Because this code is run only when the feat is processed, any
-    // homebrew instincts will still generate validation errors if selected by
-    // a non-barbarian.
-    let instinctAbilities =
-      QuilvynUtils.getAttrValueArray
-        (rules.getChoices('levels').Barbarian, 'Features')
-        .filter(x => x.match(/Instinct\s*(\(.*\)\s*)?\?\s*[A-Z1]/))
-        .map(x => x.replace(/^.*\?\s*(1:)?/, ''))
-        .filter(x => x != 'Anathema');
-    instinctAbilities.forEach(ia => {
-      rules.defineRule
-        ('barbarianFeatures.' + ia, 'featureNotes.instinctAbility', '=', '1');
-      rules.defineRule('testNotes.barbarianFeatures.' + ia,
-        'featureNotes.instinctAbility', '=', '-1'
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let instincts =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Barbarian (Instinct)'))
+      .map(x => x.replace('Barbarian - ', ''));
+    instincts.forEach(i => {
+      rules.defineRule('features.Instinct Ability (' + i + ')',
+        'features.Instinct Ability', '?', null,
+        'features.' + i, '=', '1'
       );
     });
   } else if(name == 'Interweave Dispel') {
@@ -14879,6 +14911,11 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule('classDifficultyClass.Rogue.1',
       'features.Rogue Dedication', '=', '"dexterity"'
     );
+  } else if(name == 'Skill Mastery') {
+    rules.defineRule
+      ('featureNotes.skillMastery', 'feats.Skill Mastery', '=', null);
+    rules.defineRule
+      ('skillNotes.skillMastery', 'feats.Skill Mastery', '=', null);
   } else if(name == 'Sorcerer Dedication') {
     rules.defineRule('sorcererTraditions',
       'feats.' + name, '=', 'Pathfinder2E.sorcererTraditions = ""'
