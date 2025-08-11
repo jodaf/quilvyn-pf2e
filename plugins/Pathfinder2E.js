@@ -4094,10 +4094,7 @@ Pathfinder2E.FEATURES = {
       '"Has the Anathema feature/1 selection",' +
       '"Skill Trained (%V)"',
   'Deific Weapon':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"%{deityWeapon} inflicts +1 damage die step",' +
-      '"Has access to %{deityWeaponLowered}"',
+    'Section=combat Note="%{deityWeapon} inflicts +1 damage die step"',
   'Devotion Spells':'Section=magic Note="Has a focus pool and 1 Focus Point"',
   'Divine Ally':
     'Section=feature ' +
