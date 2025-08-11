@@ -4638,7 +4638,9 @@ Pathfinder2E.FEATURES = {
       '"Has access to %V spells",' +
       '"Skill Trained (%V)"',
   'Divine Defense':'Section=combat Note="Defense Expert (Unarmored Defense)"',
-  'Divine Font':'Section=feature Note="1 selection"',
+  'Divine Font':
+    'Section=feature ' +
+    'Note="%{deityFont==\'Harm\'?\'Has the Harmful Font feature\':deityFont==\'Heal\'?\'Has the Healing Font feature\':\'1 selection\'}"',
   'Divine Spellcasting':
     'Section=magic Note="Can learn spells from the divine tradition"',
   'Doctrine':'Section=feature Note="1 selection"',
@@ -13785,17 +13787,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityWeapon', '=', null
     );
     rules.defineRule('combatNotes.warpriest-1', 'level', '?', 'source>=7');
-    rules.defineRule
-      ('featureNotes.divineFont', 'deityFont', '?', 'source=="Either"');
     rules.defineRule('featureNotes.warpriest-1',
       'deityWeaponCategory', '?', 'source.match(/Simple|Unarmed/)'
     );
     rules.defineRule('features.Harmful Font',
-      'features.Divine Font', '?', null,
+      'featureNotes.divineFont', '?', null,
       'deityFont', '=', 'source=="Harm" ? 1 : null'
     );
     rules.defineRule('features.Healing Font',
-      'features.Divine Font', '?', null,
+      'featureNotes.divineFont', '?', null,
       'deityFont', '=', 'source=="Heal" ? 1 : null'
     );
     rules.defineRule('magicNotes.cloisteredCleric',
@@ -13825,7 +13825,8 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       ('saveNotes.warpriest', 'level', '=', 'source<15 ? "Expert" : "Master"');
     rules.defineRule('saveNotes.warpriest-1', 'level', '?', 'source>=15');
     rules.defineRule('selectableFeatureCount.Cleric (Divine Font)',
-      'featureNotes.divineFont', '=', '1'
+      'featureNotes.divineFont', '?', null,
+      'deityFont', '=', 'source=="Either" ? 1 : null'
     );
     rules.defineRule('selectableFeatureCount.Cleric (Doctrine)',
       'featureNotes.doctrine', '=', '1'
