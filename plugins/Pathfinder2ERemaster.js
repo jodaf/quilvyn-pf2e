@@ -740,7 +740,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Wilding Steward:Patron" ' +
     // SpellSlots tradition depends on patron--see classRules
     'SpellSlots=' +
-      '0:5@1,' +
+      'C1:5@1,' +
       '1:3@1;4@2,' +
       '2:3@3;4@4,' +
       '3:3@5;4@6,' +
@@ -964,6 +964,9 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Strength:Key Attribute",' +
       '"1:Holy:Sanctification",' +
       '"1:Unholy:Sanctification",' +
+      '"1:Shields Of The Spirit:Devotion Spell",' +
+      '"features.Holy ? 1:Lay On Hands:Devotion Spell",' +
+      '"features.Unholy ? 1:Touch Of The Void:Devotion Spell",' +
       '"1:Blessed Armament:Blessing Of The Devoted",' +
       '"1:Blessed Shield:Blessing Of The Devoted",' +
       '"1:Blessed Swiftness:Blessing Of The Devoted",' +
@@ -2615,12 +2618,12 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Witch ' +
     'Require=' +
       '"level >= 8",' +
-      '"patronTraditions =~ \'Divine|Occult\'"',
+      '"witchTraditions =~ \'Divine|Occult\'"',
   'Stitched Familiar':
     'Traits=Witch ' +
     'Require="' +
       'level >= 8",' +
-      '"patronTraditions =~ \'Arcane|Primal\'"',
+      '"witchTraditions =~ \'Arcane|Primal\'"',
   "Witch's Bottle":'Traits=Witch Require="level >= 8","features.Cauldron"',
   'Double, Double':'Traits=Witch Require="level >= 10","features.Cauldron"',
   'Major Lesson (Death)':'Traits=Witch Require="level >= 10"',
@@ -3679,6 +3682,7 @@ Pathfinder2ERemaster.FEATS = {
   'Champion Dedication':Pathfinder2E.FEATS['Champion Dedication'],
   'Basic Devotion':Pathfinder2E.FEATS['Basic Devotion'],
   'Champion Resiliency':Pathfinder2E.FEATS['Champion Resiliency'],
+
   'Devout Magic':Pathfinder2E.FEATS['Healing Touch'],
   'Advanced Devotion':Pathfinder2E.FEATS['Advanced Devotion'],
   "Champion's Reaction":Pathfinder2E.FEATS["Champion's Reaction"],
@@ -3751,6 +3755,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Basic Sorcerer Spellcasting'],
   'Basic Blood Potency':Pathfinder2E.FEATS['Basic Blood Potency'],
   'Basic Bloodline Spell':Pathfinder2E.FEATS['Basic Bloodline Spell'],
+  'Advanced Blood Potency':Pathfinder2E.FEATS['Advanced Blood Potency'],
   'Bloodline Breadth':Pathfinder2E.FEATS['Bloodline Breadth'],
   'Expert Sorcerer Spellcasting':
     Pathfinder2E.FEATS['Expert Sorcerer Spellcasting'],
@@ -6890,7 +6895,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sanctification':
     'Section=feature ' +
-    'Note="%{deitySanctification==\'Either\'?\'1 selection\':deitySanctification==\'Holy\'?\'Has the Holy trait\':\'Has the Unholy trait\'}"',
+    'Note="%{deitySanctification==\'Either\'?\'1 selection\':deitySanctification==\'Holy\'?\'Has the Holy trait\':deitySanctification==\'Unholy\'?\'Has the Unholy trait\':\'Has neither the Holy nor Unholy trait\'}"',
   'Warpriest':Pathfinder2E.FEATURES.Warpriest
     .replace('Simple Weapons', 'Simple Weapons; Martial Weapons')
     .replace('",', '%{level>=19?\'/Attack Master (%1)\':\'\'}",'),
@@ -8531,7 +8536,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Permanently quickened; can use the additional action only to use Quick Alchemy"',
   'Advanced Alchemy':
     Pathfinder2E.FEATURES['Advanced Alchemy']
-    .replace('use a batch of infused reagents to create 2', 'create %{intelligenceModifier+(!skillNotes.efficientAlchemy?4:!skillNotes.advancedEfficientAlchemy?6:level>=16?10:8)} consumable'),
+    .replace('use a batch of infused reagents to create 2', 'create %{skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4} consumable'),
   'Advanced Vials (Bomber)':
     'Section=skill Note="Can make bombs with a special material trait"',
   'Advanced Vials (Chirurgeon)':
@@ -9078,9 +9083,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Triggering attack from within aura inflicts an additional %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP on self and an equal amount of spirit damage%{combatNotes.relentlessReaction?\', plus \'+charismaModifier+\' HP persistent spirit,\':\'\'} on the attacker, and self Strikes on attacker inflict +%{level<9?2:level<16?4:6} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura suffer half the damage dealt to the triggering foe\':\'\'}"',
+  // Changed effects
   'Devotion Spells':
-    Pathfinder2E.FEATURES['Devotion Spells']
-    .replace(' and 1 Focus Point', ''),
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a focus pool"',
   'Divine Will':Pathfinder2E.FEATURES['Divine Will'],
   'Exalted Reaction':'Section=combat Note="Has increased %V effects"',
   'Flash Of Grandeur':
@@ -9113,6 +9121,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Retributive Strike feature",' +
       '"Must follow the law and respect legitimate authorities"',
+  'Lay On Hands':
+    'Section=magic Note="Knows the Lay On Hands divine spell"',
   'Legendary Armor':Pathfinder2E.FEATURES['Legendary Armor'],
   // Changed description
   'Liberating Step':
@@ -9149,6 +9159,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Gives resistance %{level//2+(combatNotes.relentlessReaction&&charismaModifier>2?charismaModifier:2)} to the triggering damage from within aura%{combatNotes.exaltedReaction?\',\':\' and\'} gives self Strikes against the triggering foe +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\', and inflicts -1 attacks vs. self on foes within aura until the start of the next turn\':\'\'}"',
   // Shield Block as above
+  'Shields Of The Spirit':
+    'Section=magic Note="Knows the Shields Of The Spirit divine spell"',
+  'Touch Of The Void':
+    'Section=magic Note="Knows the Touch Of The Void divine spell"',
   // Weapon Expertise as above
   // Weapon Mastery as above
   // Weapon Specialization as above
@@ -11141,7 +11155,9 @@ Pathfinder2ERemaster.FEATURES = {
   // Archetype
 
   'Bard Dedication':Pathfinder2E.FEATURES['Bard Dedication'],
-  'Basic Bard Spellcasting':Pathfinder2E.FEATURES['Basic Bard Spellcasting'],
+  'Basic Bard Spellcasting':
+    Pathfinder2E.FEATURES['Basic Bard Spellcasting']
+    .replaceAll('level', 'rank'),
   "Basic Muse's Whispers":Pathfinder2E.FEATURES["Basic Muse's Whispers"],
   "Advanced Muse's Whispers":Pathfinder2E.FEATURES["Advanced Muse's Whispers"],
   'Counter Perform':
@@ -11150,25 +11166,38 @@ Pathfinder2ERemaster.FEATURES = {
   'Anthemic Performance':
     Pathfinder2E.FEATURES['Inspirational Performance']
     .replace('Inspire Courage', 'Courageous Anthem'),
-  'Occult Breadth':Pathfinder2E.FEATURES['Occult Breadth'],
-  'Expert Bard Spellcasting':Pathfinder2E.FEATURES['Expert Bard Spellcasting'],
-  'Master Bard Spellcasting':Pathfinder2E.FEATURES['Master Bard Spellcasting'],
+  'Occult Breadth':
+    Pathfinder2E.FEATURES['Occult Breadth']
+    .replace('level', 'rank'),
+  'Expert Bard Spellcasting':
+    Pathfinder2E.FEATURES['Expert Bard Spellcasting']
+    .replaceAll('level', 'rank'),
+  'Master Bard Spellcasting':
+    Pathfinder2E.FEATURES['Master Bard Spellcasting']
+    .replaceAll('level', 'rank'),
 
   'Cleric Dedication':Pathfinder2E.FEATURES['Cleric Dedication'],
   'Basic Cleric Spellcasting':
-    Pathfinder2E.FEATURES['Basic Cleric Spellcasting'],
+    Pathfinder2E.FEATURES['Basic Cleric Spellcasting']
+    .replaceAll('level', 'rank'),
   'Basic Dogma':Pathfinder2E.FEATURES['Basic Dogma'],
   'Advanced Dogma':Pathfinder2E.FEATURES['Advanced Dogma'],
-  'Divine Breadth':Pathfinder2E.FEATURES['Divine Breadth'],
+  'Divine Breadth':
+    Pathfinder2E.FEATURES['Divine Breadth']
+    .replace('level', 'rank'),
   'Expert Cleric Spellcasting':
-    Pathfinder2E.FEATURES['Expert Cleric Spellcasting'],
+    Pathfinder2E.FEATURES['Expert Cleric Spellcasting']
+    .replaceAll('level', 'rank'),
   'Master Cleric Spellcasting':
-    Pathfinder2E.FEATURES['Master Cleric Spellcasting'],
+    Pathfinder2E.FEATURES['Master Cleric Spellcasting']
+    .replaceAll('level', 'rank'),
 
   'Druid Dedication':
     Pathfinder2E.FEATURES['Druid Dedication']
     .replace('Druidic Language', 'Wildsong'),
-  'Basic Druid Spellcasting':Pathfinder2E.FEATURES['Basic Druid Spellcasting'],
+  'Basic Druid Spellcasting':
+    Pathfinder2E.FEATURES['Basic Druid Spellcasting']
+    .replaceAll('level', 'rank'),
   'Basic Wilding':Pathfinder2E.FEATURES['Basic Wilding'],
   'Order Spell (Animal)':
     Pathfinder2E.FEATURES['Order Spell (Animal)']
@@ -11185,11 +11214,16 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(' and at least 1 Focus Point', '')
     .replace('Wild Morph', 'Untamed Form'),
   'Advanced Wilding':Pathfinder2E.FEATURES['Advanced Wilding'],
-  'Primal Breadth':Pathfinder2E.FEATURES['Primal Breadth'],
+  'Primal Breadth':
+    Pathfinder2E.FEATURES['Primal Breadth']
+    .replace('level', 'rank'),
   'Expert Druid Spellcasting':
-    Pathfinder2E.FEATURES['Expert Druid Spellcasting'],
+    Pathfinder2E.FEATURES['Expert Druid Spellcasting']
+    .replaceAll('level', 'rank'),
   'Master Druid Spellcasting':
-    Pathfinder2E.FEATURES['Master Druid Spellcasting'],
+    Pathfinder2E.FEATURES['Master Druid Spellcasting']
+    .replaceAll('level', 'rank'),
+
   'Ranger Dedication':Pathfinder2E.FEATURES['Ranger Dedication'],
   "Basic Hunter's Trick":Pathfinder2E.FEATURES["Basic Hunter's Trick"],
   'Ranger Resiliency':Pathfinder2E.FEATURES['Ranger Resiliency'],
@@ -11217,50 +11251,65 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Has the Familiar and Patron features"',
   'Basic Witch Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{patronTraditionsLowered} spell"',
+    'Note="Knows 1 1st-rank%{rank>=8?\', 1 2nd-rank, and 1 3rd-rank\':rank>=6?\' and 1 2nd-rank\':\'\'} %{witchTraditionsLowered} spell"',
   'Basic Witchcraft':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level witch)"',
   'Advanced Witchcraft':
-    'Section=feature Note="+1 Class Feat (witch up to level %{level//2})"',
+    'Section=feature Note="+%V Class Feat (witch up to level %{level//2})"',
   "Patron's Breadth":
-    'Section=magic Note="+1 %{patronTraditionsLowered} spell slot of each level up to %V"',
+    'Section=magic Note="+1 %{witchTraditionsLowered} spell slot of each rank up to %V"',
   'Expert Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Arcane)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{patronTraditionsLowered} spell"',
+    'Note="Spell Expert (Arcane)/Knows 1 4th-rank%{rank>=16?\', 1 5th-rank, and 1 6th-rank\':rank>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell"',
   'Master Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{patronTraditionsLowered} spell"',
+    'Note="Spell Master (Arcane)/Knows 1 7th-rank%{rank>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell"',
 
   'Wizard Dedication':Pathfinder2E.FEATURES['Wizard Dedication'],
   'Arcane School Spell (School Of Ars Grammatica)':
-    'Section=magic Note="Knows the Protective Wards arcane spell"',
+    Pathfinder2E.FEATURES['Arcane School Spell (Abjuration)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Ward', 'Wards'),
   'Arcane School Spell (School Of Battle Magic)':
-    'Section=magic Note="Knows the Force Bolt arcane spell"',
+    Pathfinder2E.FEATURES['Arcane School Spell (Evocation)']
+    .replace(' and at least 1 Focus Point', ''),
   'Arcane School Spell (School Of The Boundary)':
-    'Section=magic Note="Knows the Fortify Summoning arcane spell"',
+    Pathfinder2E.FEATURES['Arcane School Spell (Conjuration)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Augment', 'Fortify'),
   'Arcane School Spell (School Of Civic Wizardry)':
-    'Section=magic Note="Knows the Earthworks arcane spell"',
+    'Section=magic Note="Knows the Earthworks arcane spell/Has a focus pool"',
   'Arcane School Spell (School Of Mentalism)':
-    'Section=magic Note="Knows the Charming Push arcane spell"',
+    Pathfinder2E.FEATURES['Arcane School Spell (Enchantment)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Words', 'Push'),
   'Arcane School Spell (School Of Protean Form)':
-    'Section=magic Note="Knows the Scramble Body arcane spell"',
+    Pathfinder2E.FEATURES['Arcane School Spell (Necromancy)']
+    .replace(' and at least 1 Focus Point', '')
+    .replace('Call Of The Grave', 'Scramble Body'),
   'Arcane School Spell (School Of Unified Magical Theory)':
-    'Section=magic Note="Knows the Hand Of The Apprentice arcane spell"',
+    Pathfinder2E.FEATURES['Hand Of The Apprentice']
+    .replace(' and at least 1 Focus Point', ''),
   'Basic Arcana':Pathfinder2E.FEATURES['Basic Arcana'],
   'Basic Wizard Spellcasting':
-    Pathfinder2E.FEATURES['Basic Wizard Spellcasting'],
+    Pathfinder2E.FEATURES['Basic Wizard Spellcasting']
+    .replaceAll('level', 'rank'),
   'Advanced Arcana':Pathfinder2E.FEATURES['Advanced Arcana'],
-  'Arcane Breadth':Pathfinder2E.FEATURES['Arcane Breadth'],
+  'Arcane Breadth':
+    Pathfinder2E.FEATURES['Arcane Breadth']
+    .replace('level', 'rank'),
   'Expert Wizard Spellcasting':
-    Pathfinder2E.FEATURES['Expert Wizard Spellcasting'],
+    Pathfinder2E.FEATURES['Expert Wizard Spellcasting']
+    .replaceAll('level', 'rank'),
   'Master Wizard Spellcasting':
-    Pathfinder2E.FEATURES['Master Wizard Spellcasting'],
+    Pathfinder2E.FEATURES['Master Wizard Spellcasting']
+    .replaceAll('level', 'rank'),
 
   // Core 2
 
   'Alchemist Dedication':
     Pathfinder2E.FEATURES['Alchemist Dedication']
-    .replace('Infused Reagents', 'Versatile Vials'),
+    .replace(' and Infused Reagents', ', Quick Alchemy, and Versatile Vials'),
   // Advanced Alchemy as above
   'Basic Concoction':Pathfinder2E.FEATURES['Basic Concoction'],
   'Advanced Concoction':Pathfinder2E.FEATURES['Advanced Concoction'],
@@ -11276,17 +11325,77 @@ Pathfinder2ERemaster.FEATURES = {
   'Barbarian Resiliency':Pathfinder2E.FEATURES['Barbarian Resiliency'],
   'Basic Fury':Pathfinder2E.FEATURES['Basic Fury'],
   'Advanced Fury':Pathfinder2E.FEATURES['Advanced Fury'],
-  'Instinct Ability':Pathfinder2E.FEATURES['Instinct Ability'],
+  'Instinct Ability (Animal Instinct (Ape))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Ape))'],
+  'Instinct Ability (Animal Instinct (Bear))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Bear))'],
+  'Instinct Ability (Animal Instinct (Bull))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Bull))'],
+  'Instinct Ability (Animal Instinct (Cat))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Cat))'],
+  'Instinct Ability (Animal Instinct (Deer))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Deer))'],
+  'Instinct Ability (Animal Instinct (Frog))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Frog))'],
+  'Instinct Ability (Animal Instinct (Shark))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Shark))'],
+  'Instinct Ability (Animal Instinct (Snake))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Snake))'],
+  'Instinct Ability (Animal Instinct (Wolf))':
+    Pathfinder2E.FEATURES['Instinct Ability (Animal Instinct (Wolf))'],
+  'Instinct Ability (Dragon Instinct (Adamantine))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Conspirator))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Diabolic))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Empyreal))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Fortune))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Horned))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Dragon Instinct (Mirage))':
+    Pathfinder2E.FEATURES['Instinct Ability (Dragon Instinct (Black))'],
+  'Instinct Ability (Fury Instinct)':
+    'Section=feature Note="Has the Unstoppable Frenzy feature"',
+  'Instinct Ability (Giant Instinct)':
+    Pathfinder2E.FEATURES['Instinct Ability (Giant Instinct)'],
+  'Instinct Ability (Spirit Instinct)':
+    Pathfinder2E.FEATURES['Instinct Ability (Spirit Instinct)'],
+  'Instinct Ability (Superstition Instinct)':
+    'Section=feature Note="Has the Superstitious Resilience feature"',
   "Juggernaut's Fortitude":Pathfinder2E.FEATURES["Juggernaut's Fortitude"],
 
   // TODO Trained in Heavy Armor only if already trained in Medium Armor
-  'Champion Dedication':Pathfinder2E.FEATURES['Champion Dedication'],
+  'Champion Dedication':
+    Pathfinder2E.FEATURES['Champion Dedication']
+    .replace('Ability and Deity And Cause', 'Attribute, Deity, and Cause'),
   'Basic Devotion':Pathfinder2E.FEATURES['Basic Devotion'],
   'Champion Resiliency':Pathfinder2E.FEATURES['Champion Resiliency'],
-  'Devout Magic':Pathfinder2E.FEATURES['Healing Touch'],
+  // Changed effects
+  'Devout Magic':
+    'Section=feature,magic ' +
+    'Note=' +
+      '"1 selection",' +
+      '"Has a focus pool"',
   'Advanced Devotion':Pathfinder2E.FEATURES['Advanced Devotion'],
-  // Champion's Reaction as above
-  'Devout Blessing':Pathfinder2E.FEATURES['Divine Ally'],
+  "Champion's Reaction (Desecration)":
+    'Section=feature Note="Has the Selfish Shield feature"',
+  "Champion's Reaction (Grandeur)":
+    'Section=feature Note="Has the Flash Of Grandeur feature"',
+  "Champion's Reaction (Iniquity)":
+    'Section=feature Note="Has the Destructive Vengeance feature"',
+  "Champion's Reaction (Justice)":
+    'Section=feature Note="Has the Retributive Strike feature"',
+  "Champion's Reaction (Liberation)":
+    'Section=feature Note="Has the Liberating Step feature"',
+  "Champion's Reaction (Obedience)":
+    'Section=feature Note="Has the Iron Command feature"',
+  "Champion's Reaction (Redemption)":
+    'Section=feature Note="Has the Glimpse Of Redemption feature"',
+  'Devout Blessing':
+    'Section=feature Note="Has the Blessing Of The Devoted feature"',
 
   'Investigator Dedication':
     'Section=combat,feature,skill ' +
@@ -11301,7 +11410,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Has the Devise A Stratagem feature; cannot substitute intelligence when using Attack Stratagem"',
   'Advanced Deduction':
     'Section=feature ' +
-    'Note="+1 Class Feat (investigator up to level %{level//2})"',
+    'Note="+%V Class Feat (investigator up to level %{level//2})"',
   // Keen Recollection as above
   // Skill Mastery as above
   // Master Spotter as above
@@ -11347,7 +11456,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Tempest Touch divine spell"',
   'Advanced Mysteries':
     'Section=feature ' +
-    'Note="+1 Class Feat (oracle up to level %{level//2})"',
+    'Note="+%V Class Feat (oracle up to level %{level//2})"',
   'Mysterious Breadth':
     'Section=magic Note="+1 divine spell slot of each level up to %V"',
   'Expert Oracle Spellcasting':
@@ -11446,7 +11555,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strike with a Precise Strike weapon inflicts +1d6 HP precision"',
   'Advanced Flair':
     'Section=feature ' +
-    'Note="+1 Class Feat (swashbuckler up to level %{level//2})"',
+    'Note="+%V Class Feat (swashbuckler up to level %{level//2})"',
   "Swashbuckler's Riposte":
     'Section=combat Note="Has the Opportune Riposte feature"',
   "Swashbuckler's Speed":
@@ -11653,9 +11762,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Leverage Connections':Pathfinder2E.FEATURES.Connections
 
 };
-for(let f in Pathfinder2ERemaster.FEATURES)
+for(let f in Pathfinder2ERemaster.FEATURES) {
+  if(!Pathfinder2ERemaster.FEATURES[f])
+    console.log(f);
   Pathfinder2ERemaster.FEATURES[f] =
     Pathfinder2ERemaster.FEATURES[f].replace('/+1 Focus Points', '');
+}
 Pathfinder2ERemaster.GOODIES = Pathfinder2E.GOODIES;
 Pathfinder2ERemaster.HERITAGES = {
   'Changeling':
@@ -15011,19 +15123,18 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Dragon Instinct (Horned)', '=', '"poison"'
     );
     rules.defineRule('combatNotes.rage',
-      'combatNotes.revitalizingRage', '=', 'null', // italics
       'combatNotes.superstitiousResilience', '^', null,
       'combatNotes.unstoppableFrenzy', '^', null
     );
     rules.defineRule('combatNotes.superstitiousResilience',
-      'combatNotes.specializationAbility', '=', 'null', // italics
-      'features.Weapon Specialization', '=', '7',
-      'features.Greater Weapon Specialization', '=', '13'
+      '', '=', '3',
+      'features.Weapon Specialization', '^', '7',
+      'features.Greater Weapon Specialization', '^', '13'
     );
     rules.defineRule('combatNotes.unstoppableFrenzy',
-      'combatNotes.specializationAbility', '=', 'null', // italics
-      'features.Weapon Specialization', '=', '7',
-      'features.Greater Weapon Specialization', '=', '13'
+      '', '=', '3',
+      'features.Weapon Specialization', '^', '7',
+      'features.Greater Weapon Specialization', '^', '13'
     );
     // Suppress legacy note
     rules.defineRule('combatNotes.furyInstinct',
@@ -15031,11 +15142,11 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Champion') {
     rules.defineRule('combatNotes.blessedShield',
-      classLevel, '=', 'source<13 ? 3 : source<20 ? 5 : 7'
+      'level', '=', 'source<13 ? 3 : source<20 ? 5 : 7'
     );
     rules.defineRule('combatNotes.blessedShield.1',
       'features.Blessed Shield', '?', null,
-      classLevel, '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
+      'level', '=', 'source<7?44:source<10?52:source<13?64:source<16?80:source<19?84:108'
     );
     rules.defineRule('combatNotes.exaltedReaction',
       'combatNotes.relentlessReaction', '=', null
@@ -15054,22 +15165,25 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       '', '=', '1',
       'featureNotes.secondBlessing', '+', '1'
     );
-    // TODO Might have to revisit for archetypes
     rules.defineRule
       ("features.Champion's Reaction", 'features.Cause', '=', '1');
     rules.defineRule('selectableFeatureCount.Champion (Blessing Of The Devoted)',
       'featureNotes.blessingOfTheDevoted', '=', null
     );
     rules.defineRule('selectableFeatureCount.Champion (Cause)',
-      'featureNotes.cause', '=', '2'
+      'featureNotes.cause', '=', '1'
     );
     rules.defineRule('selectableFeatureCount.Champion (Key Attribute)',
       'featureNotes.championKeyAttribute', '=', '1'
     );
     rules.defineRule('selectableFeatureCount.Champion (Sanctification)',
-      // TODO Might have to revisit for archetypes
-      'levels.Champion', '?', null,
-      'featureNotes.sanctification', '=', '1'
+      'featureNotes.sanctification', '?', null,
+      'deitySanctification', '?', 'source=="Either"',
+      'levels.Champion', '=', '1',
+      'featureNotes.championDedication', '=', '1'
+    );
+    rules.defineRule('selectableFeatureCount.Champion (Devotion Spell)',
+      'featureNotes.devotionSpells', '=', '1'
     );
     rules.defineRule('shieldHardness', 'combatNotes.blessedShield', '+', null);
     rules.defineRule
@@ -15090,10 +15204,10 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
   } else if(name == 'Cleric') {
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
-      // TODO Might have to revisit for archetypes
-      'levels.Cleric', '?', null,
+      'featureNotes.sanctification', '?', null,
       'deitySanctification', '?', 'source=="Either"',
-      'featureNotes.sanctification', '=', '1'
+      'levels.Cleric', '=', '1',
+      'featureNotes.clericDedication', '=', '1'
     );
     rules.defineRule('traits.Holy',
       'deitySanctification', '=', 'source=="Holy" ? 1 : null',
@@ -15234,17 +15348,17 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       );
       rules.defineRule('rank.patronSkill', 'rank.' + p + ' Skill', '^=', null);
     }
-    rules.defineRule('patronTraditionsLowered',
-      'patronTraditions', '=', 'source.toLowerCase()'
+    rules.defineRule('witchTraditionsLowered',
+      'witchTraditions', '=', 'source.toLowerCase()'
     );
     rules.defineRule
-      ('magicNotes.expertSpellcaster', 'patronTraditions', '=', null);
+      ('magicNotes.expertSpellcaster', 'witchTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.legendarySpellcaster', 'patronTraditions', '=', null);
+      ('magicNotes.legendarySpellcaster', 'witchTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.masterSpellcaster', 'patronTraditions', '=', null);
+      ('magicNotes.masterSpellcaster', 'witchTraditions', '=', null);
     rules.defineRule
-      ('magicNotes.witchSpellcasting', 'patronTraditionsLowered', '=', null);
+      ('magicNotes.witchSpellcasting', 'witchTraditionsLowered', '=', null);
     rules.defineRule('selectableFeatureCount.Witch (Patron)',
       'featureNotes.patron', '=', '1'
     );
@@ -15348,6 +15462,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         'features.' + m, '=', '1'
       );
     });
+  } else if(name.match(/^Advanced (Deduction|Flair|Mysteries|Witchcraft)$/)) {
+    rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Angelkin') {
     rules.defineRule('languages.Empyrean', 'skillNotes.angelkin', '=', '1');
   } else if(name.startsWith('Bestial Manifestation')) {
@@ -15399,7 +15515,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       null;
     let rank = name.match('Basic') ? 1 : name.match('Greater') ? 3 : 5;
     rules.defineRule('magicNotes.' + prefix,
-      'patronTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
+      'witchTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
     );
     if(hex) {
       ['arcane', 'divine', 'occult', 'primal'].forEach(t => {
@@ -15439,11 +15555,39 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name == 'Cackle') {
     rules.defineRule('magicNotes.cackle',
-      'patronTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
+      'witchTraditions', '=', 'source.includes("arcane") ? "arcane" : source.includes("divine") ? "divine" : source.includes("occult") ? "occult" : "primal"'
     );
     ['arcane', 'divine', 'occult', 'primal'].forEach(t => {
       rules.defineRule('spells.Cackle (' + t.charAt(0).toUpperCase() + '1 Foc)',
         'magicNotes.cackle', '=', 'source=="' + t + '" ? 1 : null'
+      );
+    });
+  } else if(name.match(/^(Champion|Cleric) Dedication$/)) {
+    let c = name.startsWith('Champion') ? 'Champion' : 'Cleric';
+    // Suppress validation errors for selected sanctification
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let sanctifications =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Sanctification'))
+      .map(x => x.replace(/^\w+ - /, ''));
+    sanctifications.forEach(s => {
+      rules.defineRule('validationNotes.' + c.toLowerCase() + '-' + s.replaceAll(' ', '') + 'SelectableFeature',
+        'feats.' + c + ' Dedication', '+', '1'
+      );
+    });
+  } else if(name == "Champion's Reaction") {
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let causes =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Cause)'))
+      .map(x => x.replace('Champion - ', ''));
+    causes.forEach(c => {
+      rules.defineRule("features.Champion's Reaction (" + c + ")",
+        "features.Champion's Reaction", '?', null,
+        'features.' + c, '=', '1'
+      );
+      rules.defineRule('featureNotes.' + c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', ''),
+        'levels.Champion', '?', null
       );
     });
   } else if(name == 'Cobra Stance') {
@@ -15476,6 +15620,33 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       ('weapons.Claws.5', 'combatNotes.deadlyAspect.1', '=', null);
     rules.defineRule('weapons.Jaws.5', 'combatNotes.deadlyAspect.2', '=', null);
     rules.defineRule('weapons.Tail.5', 'combatNotes.deadlyAspect.3', '=', null);
+  } else if(name == 'Devout Blessing') {
+    // Suppress validation errors for Blessings
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let blessings =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Blessing Of The Devoted)'))
+      .map(x => x.replace('Champion - ', ''));
+    blessings.forEach(b => {
+      rules.defineRule('validationNotes.champion-' + b.replaceAll(' ', '') + 'SelectableFeature',
+        'features.' + name, '+', '1'
+      );
+    });
+  } else if(name == 'Devout Magic') {
+    rules.defineRule('selectableFeatureCount.Champion (Devotion Spell)',
+      'featureNotes.' + prefix, '=', '1'
+    );
+    // Suppress validation errors for Devotion Spells
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let spells =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Champion (Devotion Spell)'))
+      .map(x => x.replace('Champion - ', ''));
+    spells.forEach(s => {
+      rules.defineRule('validationNotes.champion-' + s.replaceAll(' ', '') + 'SelectableFeature',
+        'features.' + name, '+', '1'
+      );
+    });
   } else if(name.startsWith('Domain Acumen')) {
     rules.defineRule('features.Domain Acumen', 'features.' + name, '=', '1');
   } else if(name.startsWith('Draconic Aspect')) {
@@ -15742,6 +15913,22 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('combatNotes.' + prefix,
       'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
+  } else if(name.startsWith('Witch Dedication')) {
+    // Suppress validation errors for selected patron and the notes for features
+    // of patron that don't come with Witch Dedication
+    // TODO Suppress standard patron spells
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let patrons =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Witch (Patron)')).map(x => x.replace('Witch - ', ''));
+    patrons.forEach(m => {
+      let condensed = m.replaceAll(' ', '');
+      let noteName = condensed.charAt(0).toLowerCase() + condensed.substring(1);
+      rules.defineRule('validationNotes.witch-' + condensed + 'SelectableFeature',
+        'featureNotes.witchDedication', '+', '1'
+      );
+      rules.defineRule
+        ('magicNotes.' + noteName + '-1', 'levels.Witch', '?', null);
+    });
   } else if(name.startsWith("Witch's Armaments")) {
     rules.defineRule
       ("features.Witch's Armaments", 'features.' + name, '=', '1');
@@ -15783,11 +15970,11 @@ Pathfinder2ERemaster.featureRules = function(
     if(matchInfo && ((rules.getChoices('levels') || {}).Witch || '').includes(name + ':Patron')) {
       let trad = matchInfo[1];
       rules.defineRule('witch' + trad + 'Level',
-        'patronTraditions', '?', 'source && source.includes("' + trad + '")',
+        'witchTraditions', '?', 'source && source.includes("' + trad + '")',
         'levels.Witch', '=', null
       );
-      rules.defineRule('patronTraditions',
-        'features.' + name, '=', '!dict.patronTraditions ? "' + trad + '" : !dict.patronTraditions.includes("' + trad + '") ? dict.patronTraditions + "; ' + trad + '" : dict.patronTraditions'
+      rules.defineRule('witchTraditions',
+        'features.' + name, '=', '!dict.witchTraditions ? "' + trad + '" : !dict.witchTraditions.includes("' + trad + '") ? dict.witchTraditions + "; ' + trad + '" : dict.witchTraditions'
       );
     }
   });
