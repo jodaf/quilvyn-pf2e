@@ -6711,42 +6711,42 @@ Pathfinder2E.FEATURES = {
   'Abjuration':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Protective Ward arcane spell",' +
+      '"+1 spell slot each level/Knows the Protective Ward arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level abjuration spell"',
   'Conjuration':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Augment Summoning arcane spell",' +
+      '"+1 spell slot each level/Knows the Augment Summoning arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level conjuration spell"',
   'Divination':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Diviner\'s Sight arcane spell",' +
+      '"+1 spell slot each level/Knows the Diviner\'s Sight arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level divination spell"',
   'Enchantment':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Charming Words arcane spell",' +
+      '"+1 spell slot each level/Knows the Charming Words arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level enchantment spell"',
   'Evocation':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Force Bolt arcane spell",' +
+      '"+1 spell slot each level/Knows the Force Bolt arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level evocation spell"',
   'Illusion':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Warped Terrain arcane spell",' +
+      '"+1 spell slot each level/Knows the Warped Terrain arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level illusion spell"',
   'Necromancy':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Call Of The Grave arcane spell",' +
+      '"+1 spell slot each level/Knows the Call Of The Grave arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level necromancy spell"',
   'Transmutation':
     'Section=magic,magic ' +
     'Note=' +
-      '"+1 spell slot each level/Has a focus pool and 1 Focus Point/Knows the Physical Boost arcane spell",' +
+      '"+1 spell slot each level/Knows the Physical Boost arcane spell/Has a focus pool and 1 Focus Point",' +
       '"Knows 1 additional 1st-level transmutation spell"',
 
   // Counterspell as above
@@ -11667,7 +11667,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Auditory,Enchantment,Mental,Sorcerer ' +
     'School=Enchantment ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"5\' emanation (2 or 3 actions give a 10\' or 15\' emanation) inflicts stupefied 2 (<b>save Will</b> negates; critical failure inflicts confused) (<b>heightened +3</b> increases the radius by 5\')"',
@@ -11675,7 +11675,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
       '"60\' cone inflicts 4d6 HP each of a random pair of damage types: bludgeoning and electricity; acid and slashing; bludgeoning and cold; fire and piercing (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP each)"',
@@ -11683,7 +11683,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Divination,Sorcerer ' +
     'School=Divination ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
       '"Self becomes trained in a non-Lore or ancestral Lore skill for 1 min (<b>heightened 6th</b> becomes expert in the skill)"',
@@ -11691,7 +11691,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Abjuration,Aura,Good,Sorcerer ' +
     'School=Abjuration ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
       '"15\' emanation increases the HP restored by <i>Heal</i> by double the <i>Heal</i> spell\'s level for 1 min"',
@@ -11699,7 +11699,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evocation,Light,Sorcerer ' +
     'School=Evocation ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
       '"Self gains a %{speed}\' fly Speed and shines a 30\' radius bright light for 3 rd (<b>heightened 5th</b> effects last for 1 min)"',
@@ -11707,7 +11707,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Abjuration,Sorcerer ' +
     'School=Abjuration ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=Reaction ' +
     'Description=' +
       '"R120\' Reduces the triggering spell\'s heightened level by 1 and gives the spell\'s targets +2 saves, skill checks, Armor Class, and DC against it"',
@@ -11715,7 +11715,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
       '"R30\' Self and allies gain +1 attacks and skill checks vs. the evil target, and attacks by good creatures inflict +1d4 HP good, for 1 rd (<b>heightened +2</b> good creature attacks inflict +1 HP)"',
@@ -11731,7 +11731,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Evocation,Sorcerer ' +
     'School=Evocation ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
       '"%{draconicColor<\'Green\'?\\"60\' line\\":\\"30\' cone\\"} inflicts 5d6 HP %{bloodlineDamage||\'fire\'} (<b>save basic %{draconicColor==\'Green\'?\'Fortitude\':\'Reflex\'}</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
@@ -11739,7 +11739,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
       '"Claws inflict 1d6 HP slashing and 1d6 HP %{bloodlineDamage||\'fire\'}, and self gains resistance 5 to %{bloodlineDamage||\'fire\'}, for 1 min (<b>heightened 5th</b> claws inflict 2d6 HP, and self gains resistance 10; <b>9th</b> claws inflict 3d6 HP, and self gains resistance 15)"',
@@ -11747,7 +11747,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=2 ' +
     'Description=' +
       '"Self gains a %{Speed>?60}\' fly Speed for 1 min (<b>heightened 8th</b> effects last for 10 min)"',
@@ -11795,7 +11795,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Divination,Metamagic,Sorcerer ' +
     'School=Divination ' +
-    'Traditions=Primal ' +
+    'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
       '"Increases the duration of a subsequent targeted spell of less than maximum spell level from 1 min to 10 min"',
@@ -11826,7 +11826,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
       '"Bite inflicts 1d8 HP piercing, giving self 1d6 temporary HP, for 1 min (<b>heightened +2</b> gives +1d6 temporary HP</b>)"',
@@ -11850,7 +11850,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Emotion,Fear,Illusion,Mental,Sorcerer,Visual ' +
     'School=Illusion ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
       '"30\' radius inflicts frightened 1 (<b>save Will</b> negates; critical failure inflicts frightened 2) (<b>heightened 5th</b> inflicts frightened 1, 2, or 3 and fleeing for 1 rd on save success, failure, or critical failure)"',
@@ -11858,7 +11858,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Curse,Necromancy,Sorcerer ' +
     'School=Necromancy ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"R30\' Inflicts enfeebled 1, clumsy 1, drained 1, or stupefied 1, based on the target\'s highest ability modifier, until the target saves or for 1 min (<b>save Will</b> negates; critical failure inflicts condition level 2)"',
@@ -11866,7 +11866,7 @@ Pathfinder2E.SPELLS = {
     'Level=3 ' +
     'Traits=Focus,Uncommon,Conjuration,Olfactory,Sorcerer ' +
     'School=Conjuration ' +
-    'Traditions=Primal ' +
+    'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
       '"R120\' 5\' burst (2 or 3 actions give a 10\' or 15\' burst) inflicts difficult terrain and 1d6 HP poison for 1 min (<b>save basic Fortitude</b>) (<b>heightened +2</b> increases radius by 5\' and inflicts +1d6 HP)"',
@@ -11874,7 +11874,7 @@ Pathfinder2E.SPELLS = {
     'Level=1 ' +
     'Traits=Focus,Uncommon,Morph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"Extends reach for touch spells and unarmed Strikes to 10\' for 1 min; adding an action to touch spells extends reach to 20\' (<b>heightened +2</b> adding an action gives +10\' touch spell reach)"',
@@ -11890,7 +11890,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Polymorph,Sorcerer,Transmutation ' +
     'School=Transmutation ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"Self gains darkvision and resistance 10 to precision and critical damage and inflicts 2d6 HP acid on successful non-reach melee attackers for 1 min (<b>heightened +2</b> gives +5 resistances and inflicts +1d6 HP)"',
@@ -11898,7 +11898,7 @@ Pathfinder2E.SPELLS = {
     'Level=5 ' +
     'Traits=Focus,Uncommon,Emotion,Enchantment,Incapacitation,Mental,Sorcerer ' +
     'School=Enchantment ' +
-    'Traditions=Primal ' +
+    'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
       '"R30\' Inflicts stunned 1 for 1 rd and allows self to direct 1 target action (<b>save Will</b> inflicts stunned only; critical success negates; critical failure gives control for 1 rd) (<b>heightened 7th</b> gives control for 1 rd; critical failure gives control for 1 min or until the target succeeds on a save at the end of each turn)"',
