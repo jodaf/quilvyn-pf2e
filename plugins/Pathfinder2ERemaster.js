@@ -9718,7 +9718,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Attack Expert (Simple Weapons; Unarmed Attacks)",' +
       '"Critical hits with a brawling unarmed attack inflict its critical specialization effect"',
-  'Flurry Of Blows':Pathfinder2E.FEATURES['Flurry Of Blows'],
+  'Flurry Of Blows':
+    Pathfinder2E.FEATURES['Flurry Of Blows']
+    .replace('turn', "%{$$'feats.Monk Dedication'?'1d4 rd':'turn'}"),
   'Graceful Legend':Pathfinder2E.FEATURES['Graceful Legend'],
   'Graceful Mastery':Pathfinder2E.FEATURES['Graceful Mastery'],
   // Greater Weapon Specialization as above
