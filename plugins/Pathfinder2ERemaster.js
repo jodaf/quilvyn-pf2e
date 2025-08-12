@@ -518,12 +518,12 @@ Pathfinder2ERemaster.CLASSES = {
       '"11:Reflex Expertise","13:Divine Defense","13:Weapon Specialization",' +
       '"19:Miraculous Spell" ' +
     'Selectables=' +
-      '"1:Healing Font:Divine Font",' +
-      '"1:Harmful Font:Divine Font",' +
+      '"deityFont==\'Either\' ? 1:Healing Font:Divine Font",' +
+      '"deityFont==\'Either\' ? 1:Harmful Font:Divine Font",' +
       '"1:Cloistered Cleric:Doctrine",' +
       '"1:Warpriest:Doctrine",' +
-      '"1:Holy:Sanctification",' +
-      '"1:Unholy:Sanctification" ' +
+      '"deitySanctification==\'Either\' ? 1:Holy:Sanctification",' +
+      '"deitySanctification==\'Either\' ? 1:Unholy:Sanctification" ' +
     'SpellSlots=' +
       'DC1:5@1,' +
       'D1:2@1;3@2,' +
@@ -962,21 +962,21 @@ Pathfinder2ERemaster.CLASSES = {
     'Selectables=' +
       '"1:Dexterity:Key Attribute",' +
       '"1:Strength:Key Attribute",' +
-      '"1:Holy:Sanctification",' +
-      '"1:Unholy:Sanctification",' +
+      '"deitySanctification==\'Either\' ? 1:Holy:Sanctification",' +
+      '"deitySanctification==\'Either\' ? 1:Unholy:Sanctification",' +
       '"1:Shields Of The Spirit:Devotion Spell",' +
-      '"features.Holy ? 1:Lay On Hands:Devotion Spell",' +
-      '"features.Unholy ? 1:Touch Of The Void:Devotion Spell",' +
+      '"deityFont != \'Harm\' ? 1:Lay On Hands:Devotion Spell",' +
+      '"deityFont != \'Heal\' ? 1:Touch Of The Void:Devotion Spell",' +
       '"1:Blessed Armament:Blessing Of The Devoted",' +
       '"1:Blessed Shield:Blessing Of The Devoted",' +
       '"1:Blessed Swiftness:Blessing Of The Devoted",' +
-      '"features.Unholy ? 1:Desecration:Cause",' +
-      '"features.Holy ? 1:Grandeur:Cause",' +
-      '"features.Unholy ? 1:Iniquity:Cause",' +
+      '"traits.Unholy ? 1:Desecration:Cause",' +
+      '"traits.Holy ? 1:Grandeur:Cause",' +
+      '"traits.Unholy ? 1:Iniquity:Cause",' +
       '"1:Justice:Cause",' +
       '"1:Liberation:Cause",' +
       '"1:Obedience:Cause",' +
-      '"features.Holy ? 1:Redemption:Cause"',
+      '"traits.Holy ? 1:Redemption:Cause"',
 
   'Investigator':
     'Attribute=intelligence HitPoints=8 ' +
@@ -2948,10 +2948,10 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 2"',
   'Aura Of Courage':
     Pathfinder2E.FEATS['Aura Of Courage'] + ' ' +
-    'Require="level >= 4","features.Champion\'s Aura","features.Holy"',
+    'Require="level >= 4","features.Champion\'s Aura","traits.Holy"',
   'Aura Of Despair':
     'Traits=Champion,Uncommon ' +
-    'Require="level >= 4","features.Champion\'s Aura","features.Unholy"',
+    'Require="level >= 4","features.Champion\'s Aura","traits.Unholy"',
   'Cruelty':
     'Traits=Champion Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
   // Traits and requirements changed
@@ -3009,12 +3009,12 @@ Pathfinder2ERemaster.FEATS = {
   'Affliction Mercy':Pathfinder2E.FEATS['Affliction Mercy'],
   'Aura Of Faith':
     Pathfinder2E.FEATS['Aura Of Faith']
-    .replace('The Tenets Of Good', 'Holy || features.Unholy'),
+    .replace('The Tenets Of Good', 'Holy || traits.Unholy'),
   // TODO require "champion's reaction that grants an ally resistance"
   'Blessed Counterstrike':'Traits=Champion,Flourish Require="level >= 12"',
   "Champion's Sacrifice":
     Pathfinder2E.FEATS["Champion's Sacrifice"]
-    .replace('features.The Tenets Of Good', 'features.Unholy == 0'),
+    .replace('features.The Tenets Of Good', 'traits.Unholy == 0'),
   'Devoted Focus':
     Pathfinder2E.FEATS['Devoted Focus']
     .replace('10', '12'),
@@ -3028,7 +3028,7 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Shining Oath', "Champion's Aura"),
   'Aura Of Righteousness':
     Pathfinder2E.FEATS['Aura Of Righteousness']
-    .replace('The Tenets Of Good', 'Champion\'s Aura","features.Holy'),
+    .replace('The Tenets Of Good', 'Champion\'s Aura","traits.Holy'),
   'Divine Reflexes':Pathfinder2E.FEATS['Divine Reflexes'],
   'Auspicious Mount':
     Pathfinder2E.FEATS['Auspicious Mount']
@@ -3220,7 +3220,11 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Monk,Concentrate,Spellshape ' +
     'Require="level >= 12","features.Qi Spells"',
   'Reflexive Stance':'Traits=Monk Require="level >= 12"',
-  'Form Lock':'Traits=Monk,Attack Require="level >= 14"',
+  'Form Lock':
+    'Traits=Monk,Archetype,Attack ' +
+    'Require=' +
+      '"level >= 14",' +
+      '"levels.Monk >= 14 || features.Wrestler Dedication"',
   'Ironblood Surge':Pathfinder2E.FEATS['Ironblood Surge'],
   'Mountain Quake':Pathfinder2E.FEATS['Mountain Quake'],
   'Peerless Form':Pathfinder2E.FEATS['Timeless Body'],
@@ -3242,7 +3246,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Monk Require="level >= 16","features.Qi Spells"',
   'One-Millimeter Punch':
     'Traits=Monk Require="level >= 16","features.One-Inch Punch"',
-  'Shattering Strike':Pathfinder2E.FEATS['Shattering Strike'],
+  'Shattering Strike (Monk)':Pathfinder2E.FEATS['Shattering Strike'],
   'Diamond Fists':Pathfinder2E.FEATS['Diamond Fists'],
   'Grandmaster Qi Spells (Embrace Nothingness)':
     'Traits=Monk Require="level >= 18","features.Qi Spells"',
@@ -4529,7 +4533,7 @@ Pathfinder2ERemaster.FEATS = {
   'Makeshift Strike':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Weapon Improviser Dedication"',
-  'Shattering Strike':
+  'Shattering Strike (Weapon Improviser)':
     'Traits=Archetype ' +
     'Require="level >= 10","features.Improvised Pummel"',
 
@@ -4566,9 +4570,7 @@ Pathfinder2ERemaster.FEATS = {
   'Inescapable Grasp':
     'Traits=Archetype ' +
     'Require="level >= 12","features.Wrestler Dedication"',
-  'Form Lock':
-    'Traits=Archetype,Attack ' +
-    'Require="level >= 14","features.Wrestler Dedication"',
+  // Form Lock as above
 
   // General and Skill
   'Additional Lore (%lore)':
@@ -9121,8 +9123,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Has the Retributive Strike feature",' +
       '"Must follow the law and respect legitimate authorities"',
-  'Lay On Hands':
-    'Section=magic Note="Knows the Lay On Hands divine spell"',
+  'Lay On Hands':'Section=magic Note="Knows the Lay On Hands divine spell"',
   'Legendary Armor':Pathfinder2E.FEATURES['Legendary Armor'],
   // Changed description
   'Liberating Step':
@@ -9306,7 +9307,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Smite':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Strikes against a designated foe gain +3 damage, or +4 with a master proficiency weapon%{features.Holy?\' (+4 or +6 vs. an unholy foe)\':features.Unholy?\' (+4 or +6 vs. a holy foe)\':\'\'}, until the start of the next turn; hostile actions by the foe extend the effect each rd"',
+    'Note="Strikes against a designated foe gain +3 damage, or +4 with a master proficiency weapon%{traits.Holy?\' (+4 or +6 vs. an unholy foe)\':traits.Unholy?\' (+4 or +6 vs. a holy foe)\':\'\'}, until the start of the next turn; hostile actions by the foe extend the effect each rd"',
   "Advanced Deity's Domain (Air)":
     Pathfinder2E.FEATURES["Advanced Deity's Domain (Air)"],
   "Advanced Deity's Domain (Ambition)":
@@ -9410,7 +9411,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed description
   'Aura Of Faith':
     'Section=combat ' +
-    'Note="Strikes by allies within aura gain the %{features.Unholy?\'unholy\':\'holy\'} trait"',
+    'Note="Strikes by allies within aura gain the %{traits.Unholy?\'unholy\':\'holy\'} trait"',
   'Blessed Counterstrike':
     'Action=1 ' +
     'Section=combat ' +
@@ -9460,7 +9461,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Has increased Blessed Armament effects"',
   'Sacred Defender':
     'Section=save ' +
-    'Note="Has resistance 5 to bludgeoning, piercing, and slashing%{features.Holy?\', or resistance 10 vs. unholy creatures\':features.Unholy?\', or resistance 10 vs. holy creatures\':\'\'}, and a natural 20 on a foe Strike does not improve the success degree"',
+    'Note="Has resistance 5 to bludgeoning, piercing, and slashing%{traits.Holy?\', or resistance 10 vs. unholy creatures\':traits.Unholy?\', or resistance 10 vs. holy creatures\':\'\'}, and a natural 20 on a foe Strike does not improve the success degree"',
   'Shield Paragon':Pathfinder2E.FEATURES['Shield Paragon'],
   'Swift Paragon':
     'Section=combat ' +
@@ -9923,7 +9924,7 @@ Pathfinder2ERemaster.FEATURES = {
   'One-Millimeter Punch':
     'Section=combat ' +
     'Note="One-Inch Punch inflicts a 10\' Push (<b>save Fortitude</b> inflicts a 5\' Push; critical success negates; critical failure inflicts a 20\' Push, or a 30\' Push with 3 actions"',
-  'Shattering Strike':Pathfinder2E.FEATURES['Shattering Strike'],
+  'Shattering Strike (Monk)':Pathfinder2E.FEATURES['Shattering Strike'],
   'Diamond Fists':
     Pathfinder2E.FEATURES['Diamond Fists']
     .replace('forceful trait', 'forceful and deadly d10 traits'),
@@ -10536,7 +10537,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Blood Rising':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Triggering casting by another of a%{bloodlineTraditions=~\'^[AO]\'?\'n\':\'\'} %{bloodlineTraditionsLowered} spell targeting self invokes a blood magic effect that targets self or the caster"',
+    'Note="Triggering casting by another of a%{sorcererTraditions=~\'^[AO]\'?\'n\':\'\'} %{sorcererTraditionsLowered} spell targeting self invokes a blood magic effect that targets self or the caster"',
   // Familiar as above
   // Reach Spell as above
   'Tap Into Blood (Arcane)':
@@ -10699,7 +10700,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replaceAll('level', 'rank'),
   'Explosion Of Power':
     'Section=magic ' +
-    'Note="Blood magic effect inflicts 1d6 HP %{bloodlineTraditions=~\'Arcane\'?\'force\':bloodlineTraditions=~\'Divine\'?\'spirit\':bloodlineTraditions=~\'Occult\'?\'mental\':\'fire\'} per spell rank (<b>save basic Reflex</b>) in a 5\' emanation"',
+    'Note="Blood magic effect inflicts 1d6 HP %{sorcererTraditions=~\'Arcane\'?\'force\':sorcererTraditions=~\'Divine\'?\'spirit\':sorcererTraditions=~\'Occult\'?\'mental\':\'fire\'} per spell rank (<b>save basic Reflex</b>) in a 5\' emanation"',
   'Energy Fusion':
     'Action=1 ' +
     'Section=magic ' +
@@ -15203,6 +15204,12 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
       'features.Shining Oath', '?', null
     );
   } else if(name == 'Cleric') {
+    rules.defineRule('clericFeatures.Holy',
+      'deitySanctification', '=', 'source=="Holy" ? 1 : null'
+    );
+    rules.defineRule('clericFeatures.Unholy',
+      'deitySanctification', '=', 'source=="Unholy" ? 1 : null'
+    );
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
       'featureNotes.sanctification', '?', null,
       'deitySanctification', '?', 'source=="Either"',
@@ -15583,7 +15590,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       .map(x => x.replace('Champion - ', ''));
     causes.forEach(c => {
       rules.defineRule("features.Champion's Reaction (" + c + ")",
-        "features.Champion's Reaction", '?', null,
+        "feats.Champion's Reaction", '?', null,
         'features.' + c, '=', '1'
       );
       rules.defineRule('featureNotes.' + c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', ''),
@@ -15886,7 +15893,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('features.Tap Into Blood (' + t + ')',
         'features.Tap Into Blood', '?', null,
-        'bloodlineTraditions', '=', 'source.match(/' + t + '/) ? 1 : null'
+        'sorcererTraditions', '=', 'source.match(/' + t + '/) ? 1 : null'
       );
     });
   } else if(name == 'Traditional Resistances') {
@@ -16187,6 +16194,11 @@ Pathfinder2ERemaster.ruleNotes = function() {
     '  For consistency with the features of other classes, Quilvyn gives ' +
     '  barbarians Medium Armor Master at level 19, rather than Armor Mastery ' +
     "  that doesn't apply to heavy armor.\n" +
+    '  </li><li>\n' +
+    '  Shattering Strike is both a Monk feat and a Weapon Improviser feat, ' +
+    '  but the two have different effects. To avoid confusion, Quilvyn ' +
+    '  defines the feats Shattering Strike (Monk) and Shattering Strike ' +
+    '  (Weapon Improviser).\n' +
     '  </li>\n' +
     '</ul>\n' +
     '</p>\n' +
