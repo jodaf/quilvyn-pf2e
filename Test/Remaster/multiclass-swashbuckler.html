@@ -18,10 +18,11 @@ var attributes = {
   "generalFeats.Additional Lore (Giant Lore)":1, "generalFeats.Feather Step":1, 
   "generalFeats.Skill Training (Aquatic Lore)":1, "languages.Jotun":1, "languages.Kelish":1, "languages.Varisian":1, 
   "name":"Multiclass-Swashbuckler", "selectableFeatures.Fighter - Bombs":1, 
-  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", 
-  "skillIncreases.Absalom Lore":1, "skillIncreases.Astral Plane Lore":1, "skillIncreases.Astronomy Lore":1, 
-  "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, "skillIncreases.Hobgoblin Lore":1, 
-  "skillIncreases.Leshy Lore":1, "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
+  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Human - Versatile Human":1, 
+  "selectableFeatures.Swashbuckler - Battledancer":1, "shield":"Steel", "skillIncreases.Absalom Lore":1, 
+  "skillIncreases.Astral Plane Lore":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, 
+  "skillIncreases.Crafting":2, "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Leshy Lore":1, 
+  "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
 };
   </script>
 </head>
@@ -81,13 +82,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 2; Class: 5; General: 2; Skill: 2</td>
-        <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Fighter (Weapon Group); Human (Heritage)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Fighter (Weapon Group); Human (Heritage); Swashbuckler (Style)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Flair; Basic Flair; Cooperative Nature; Evasiveness; Feather Step; Finishing Precision; Skill Training (Aquatic Lore); Swashbuckler Dedication; Swashbuckler's Riposte; Swashbuckler's Speed; Unconventional Weaponry (Spirit Thresher)</td>
+        <td><b>Swashbuckler Features</b>: Battledancer</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bombs; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -114,7 +116,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 2 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Swashbuckler Dedication: Has the Panache feature</i></td>
+        <td><i>Swashbuckler Dedication: Has the Panache and Swashbuckler's Style features</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Swashbuckler's Style: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
       </tr></table>
@@ -139,7 +143,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Aquatic Lore: +9 (intelligence; trained)</td>
       <td>Games Lore: +11 (intelligence; expert)</td>
-      <td>Performance: +2 (charisma; untrained)</td>
+      <td>Performance: +9 (charisma; trained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +2 (intelligence; untrained)</td>
       <td>Giant Lore: +11 (intelligence; expert)</td>
@@ -171,6 +175,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Additional Lore (Giant Lore): Skill Expert (Giant Lore)</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Battledancer: Skill Trained (Performance)</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Fighter Skills: Skill Trained (Choose 1 from Acrobatics, Athletics; Choose 5 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Intelligence Language Bonus: +2 Language Count</i></td>
@@ -180,6 +186,8 @@ var attributes = {
       <td><i>Skill Training (Aquatic Lore): Skill Trained (Aquatic Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Swashbuckler Dedication: Skill Trained (Acrobatics)</i></td>
+    </tr><tr style="text-align:center">
+      <td>Battledancer: Perform actions have the bravado trait</td>
     </tr><tr style="text-align:center">
       <td>Cooperative Nature: +4 Aid checks</td>
     </tr><tr style="text-align:center">
@@ -237,7 +245,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Panache: Tumble Through and other bravado actions give panache that enables finisher actions</td>
       </tr><tr style="text-align:center">
-        <td>Precise Strike: Strikes with agile and finesse weapons inflict +3 HP precision, or +3d6 HP precision with finisher Strikes</td>
+        <td>Precise Strike: Strikes with agile and finesse weapons inflict +1 HP precision, or +1d6 HP precision with finisher Strikes</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">

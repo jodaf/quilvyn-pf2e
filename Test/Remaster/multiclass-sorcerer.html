@@ -19,10 +19,10 @@ var attributes = {
   "generalFeats.Feather Step":1, "generalFeats.Skill Training (Aquatic Lore)":1, "languages.Jotun":1, 
   "languages.Kelish":1, "languages.Varisian":1, "name":"Multiclass-Sorcerer", 
   "selectableFeatures.Fighter - Bombs":1, "selectableFeatures.Fighter - Strength":1, 
-  "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", "skillIncreases.Absalom Lore":1, 
-  "skillIncreases.Astral Plane Lore":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":2, 
-  "skillIncreases.Crafting":2, "skillIncreases.Hobgoblin Lore":1, "skillIncreases.Leshy Lore":1, 
-  "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
+  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Sorcerer - Aberrant":1, "shield":"Steel", 
+  "skillIncreases.Absalom Lore":1, "skillIncreases.Astral Plane Lore":1, "skillIncreases.Astronomy Lore":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, "skillIncreases.Hobgoblin Lore":1, 
+  "skillIncreases.Leshy Lore":1, "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
 };
   </script>
 </head>
@@ -85,6 +85,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Blood Potency; Basic Blood Potency; Basic Bloodline Spell; Basic Sorcerer Spellcasting; Bloodline Breadth; Cooperative Nature; Expert Sorcerer Spellcasting; Feather Step; Master Sorcerer Spellcasting; Skill Training (Aquatic Lore); Sorcerer Dedication; Unconventional Weaponry (Spirit Thresher)</td>
+        <td><b>Sorcerer Features</b>: Aberrant</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bombs; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -134,7 +135,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Acrobatics: +3 (dexterity; untrained)</td>
       <td>Diplomacy: +2 (charisma; untrained)</td>
-      <td>Occultism: +2 (intelligence; untrained)</td>
+      <td>Occultism: +9 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Aquatic Lore: +9 (intelligence; trained)</td>
       <td>Games Lore: +11 (intelligence; expert)</td>
@@ -149,10 +150,10 @@ var attributes = {
       <td>Society: +9 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
       <td>Astronomy Lore: +9 (intelligence; trained)</td>
-      <td>Intimidation: +2 (charisma; untrained)</td>
+      <td>Intimidation: +9 (charisma; trained)</td>
       <td>Stealth: +3 (dexterity; untrained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +12 (strength; expert)</td>
+      <td>Athletics: +10 (strength; trained)</td>
       <td>Leshy Lore: +9 (intelligence; trained)</td>
       <td>Survival: +1 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
@@ -166,6 +167,8 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Skill Notes</b>:     <table id="SkillNotes" style="width:100%">
     <tr style="text-align:center">
+      <td><i>Aberrant: Skill Trained (Intimidation; Occultism)</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Additional Lore (Games Lore): Skill Expert (Games Lore)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Additional Lore (Giant Lore): Skill Expert (Giant Lore)</i></td>
@@ -248,15 +251,34 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td>    <table id="SpellPart" style="width:100%">
+    <tr style="text-align:center">
+      <td>      <table id="SpellStats" style="width:100%">
+      <tr style="text-align:center">
+        <td><b>Spell Slots</b>: O0: 2; O1: 2; O4: 2; O7: 1</td>
+        <td><b>Focus Points</b>: 1</td>
+        <td><b>Attack</b>: Occult: +9 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Occult: 19 (charisma; trained)</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
+    <td><b>Spells</b>: Tentacular Limbs (O1 Foc): <b>(1)</b> Extends reach for touch spells and unarmed Strikes to 10' for 1 min; adding an action to touch spells extends reach to 20' (<b>heightened +2</b> adding an action gives +10' touch spell reach)</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Basic Sorcerer Spellcasting: Knows 1 1st-level  spell</i></td>
+      <td><i>Basic Bloodline Spell (Aberrant): Knows the Tentacular Limbs occult spell/Has a focus pool</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Bloodline Breadth: +1  spell slot of each level up to 5</i></td>
+      <td><i>Basic Sorcerer Spellcasting: Knows 1 1st-level occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Expert Sorcerer Spellcasting: Spell Expert ()/Knows 1 4th-level  spell</i></td>
+      <td><i>Bloodline Breadth: +1 occult spell slot of each level up to 5</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Master Sorcerer Spellcasting: Spell Master ()/Knows 1 7th-level  spell</i></td>
+      <td><i>Expert Sorcerer Spellcasting: Spell Expert (Occult)/Knows 1 4th-level occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Master Sorcerer Spellcasting: Spell Master (Occult)/Knows 1 7th-level occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Sorcerer Dedication: Spell Trained (Occult)/Knows 2 occult cantrips</i></td>
     </tr></table>
 </td>
   </tr></table>
@@ -274,13 +296,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Class Feats Allocation: 5 available vs. 8 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Expert Sorcerer Spellcasting Feat: Requires level (currently 5) >= 12, basic sorcerer spellcasting feature (currently 1) and arcana rank >= 3, nature rank >= 3, occultism rank >= 3 or religion rank >= 3</td>
+        <td>Expert Sorcerer Spellcasting Feat: Requires level (currently 5) >= 12, basic sorcerer spellcasting feature (currently 1) and arcana rank >= 3, nature rank >= 3, occultism rank (currently 1) >= 3 or religion rank >= 3</td>
       </tr><tr style="text-align:center">
-        <td>Master Sorcerer Spellcasting Feat: Requires level (currently 5) >= 18, expert sorcerer spellcasting feature (currently 1) and arcana rank >= 4, nature rank >= 4, occultism rank >= 4 or religion rank >= 4</td>
-      </tr><tr style="text-align:center">
-        <td>Skill Increase Allocation: 8 available vs. 9 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Sorcerer Bloodline Allocation: 1 available vs. 0 allocated</td>
+        <td>Master Sorcerer Spellcasting Feat: Requires level (currently 5) >= 18, expert sorcerer spellcasting feature (currently 1) and arcana rank >= 4, nature rank >= 4, occultism rank (currently 1) >= 4 or religion rank >= 4</td>
       </tr></table>
 </td>
     </tr></table>
