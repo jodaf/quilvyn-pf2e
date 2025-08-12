@@ -7791,7 +7791,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Initiate Warden':
     'Section=magic,magic ' +
     'Note=' +
-      '"Has a focus pool/Spell Trained (Primal)",' +
+      '"Spell Trained (Primal)/Has a focus pool",' +
       '"Knows %V choice%{$\'features.Initiate Warden\'>1?\'s\':\'\'} of initial warden spells"',
   'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
@@ -9778,9 +9778,9 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Shove', 'Reposition, Shove'),
   'Qi Spells (Inner Upheaval)':
     'Section=magic ' +
-    'Note="Has a focus pool/Knows the Inner Upheaval occult spell"',
+    'Note="Knows the Inner Upheaval occult spell/Has a focus pool"',
   'Qi Spells (Qi Rush)':
-    'Section=magic Note="Has a focus pool/Knows the Qi Rush occult spell"',
+    'Section=magic Note="Knows the Qi Rush occult spell/Has a focus pool"',
   'Stumbling Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -9959,27 +9959,31 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Oracle
   'Ancestors':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Whispers Of Weakness and Curse Of Ancestral Meddling features",' +
+      '"Has the Curse Of Ancestral Meddling feature",' +
+      '"Has the Whispers Of Weakness feature",' +
       '"Knows the Ancestral Touch divine spell",' +
       '"Skill Trained (Society)"',
   'Battle':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Oracular Warning and Curse Of The Mortal Warrior features",' +
+      '"Has the Curse Of The Mortal Warrior feature",' +
+      '"Has the Oracular Warning feature",' +
       '"Knows the Weapon Trance divine spell",' +
       '"Skill Trained (Athletics)"',
   'Bones':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Nudge The Scales and Curse Of Living Death features",' +
+      '"Has the Curse Of Living Death feature",' +
+      '"Has the Nudge The Scales feature",' +
       '"Knows the Soul Siphon divine spell",' +
       '"Skill Trained (Medicine)"',
   'Cosmos':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Oracular Warning and Curse Of The Sky\'s Call features",' +
+      '"Has the Curse Of The Sky\'s Call feature",' +
+      '"Has the Oracular Warning and feature",' +
       '"Knows the Spray Of Stars divine spell",' +
       '"Skill Trained (Nature)"',
   'Curse Of Ancestral Meddling':
@@ -10026,28 +10030,32 @@ Pathfinder2ERemaster.FEATURES = {
       '"Cursebound inflicts a penalty to Will saves of equal severity",' +
       '"Cursebound inflicts a penalty to Perception of equal severity"',
   'Flames':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Foretell Harm and Curse Of Engulfing Flames features",' +
+      '"Has the Curse Of Engulfing Flames feature",' +
+      '"Has the Foretell Harm feature",' +
       '"Knows the Incendiary Aura divine spell",' +
       '"Skill Trained (Acrobatics)"',
   'Life':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Nudge The Scales and Curse Of Outpouring Life features",' +
+      '"Has the Curse Of Outpouring Life feature",' +
+      '"Has the Nudge The Scales feature",' +
       '"Knows the Life Link divine spell",' +
       '"Skill Trained (Medicine)"',
   'Lore':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Whispers Of Weakness and Curse Of Torrential Knowledge features",' +
+      '"Has the Curse Of Torrential Knowledge feature",' +
+      '"Has the Whispers Of Weakness feature",' +
       '"Knows the Brain Drain divine spell",' +
       '"Skill Trained (Occultism; choose 1 from any Lore)"',
   'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
   'Tempest':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Foretell Harm and Curse Of Inclement Headwinds features",' +
+      '"Has the Curse Of Inclement Headwinds feature",' +
+      '"Has the Foretell Harm feature",' +
       '"Knows the Tempest Touch divine spell",' +
       '"Skill Trained (Nature)"',
   // Expert Spellcaster as above
@@ -10882,7 +10890,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Perception Mastery as above
   'Precise Strike':
     'Section=combat ' +
-    'Note="Strikes with agile and finesse weapons inflict +%{(level+7)//4} HP precision, or +%{(level+7)//4}d6 HP precision with finisher Strikes"',
+    'Note="Strikes with agile and finesse weapons inflict +%{levels.Swashbuckler?(level+7)//4:1} HP precision, or +%{levels.Swashbuckler?(level+7)//4:1}d6 HP precision with finisher Strikes"',
   'Rascal':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -11434,7 +11442,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,magic,skill ' +
     'Note=' +
       '"Has the Mystery and Oracular Curse features",' +
-      '"Spell Trained (Divine)",' +
+      '"Spell Trained (Divine)/Knows 2 choices of divine cantrips",' +
       '"Skill Trained (Religion)"',
   'Basic Mysteries':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level oracle)"',
@@ -11442,21 +11450,29 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
   'First Revelation (Ancestors)':
-    'Section=magic Note="Knows the Ancestral Touch divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Ancestral Touch divine spell/Has a focus pool"',
   'First Revelation (Battle)':
-    'Section=magic Note="Knows the Weapon Trance divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Weapon Trance divine spell/Has a focus pool"',
   'First Revelation (Bones)':
-    'Section=magic Note="Knows the Soul Siphon divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Soul Siphon divine spell/Has a focus pool"',
   'First Revelation (Cosmos)':
-    'Section=magic Note="Knows the Spray Of Stars divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Spray Of Stars divine spell/Has a focus pool"',
   'First Revelation (Flames)':
-    'Section=magic Note="Knows the Incendiary Aura divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Incendiary Aura divine spell/Has a focus pool"',
   'First Revelation (Life)':
-    'Section=magic Note="Knows the Life Link divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Life Link divine spell/Has a focus pool"',
   'First Revelation (Lore)':
-    'Section=magic Note="Knows the Brain Drain divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Brain Drain divine spell/Has a focus pool"',
   'First Revelation (Tempest)':
-    'Section=magic Note="Knows the Tempest Touch divine spell"',
+    'Section=magic ' +
+    'Note="Knows the Tempest Touch divine spell/Has a focus pool"',
   'Advanced Mysteries':
     'Section=feature ' +
     'Note="+%V Class Feat (oracle up to level %{level//2})"',
@@ -11545,7 +11561,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Swashbuckler)",' +
-      '"Has the Panache feature",' +
+      '"Has the Panache and Swashbuckler\'s Style features",' +
+      // TODO or the style-linked skill
       '"Skill Trained (Acrobatics)"',
   'Basic Flair':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level swashbuckler)"',
@@ -15851,6 +15868,33 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Expert Strikes', '=', '"Expert"',
       'features.Master Strikes', '=', '"Master"'
     );
+  } else if(name == 'Oracle Dedication') {
+    rules.defineRule('spellModifier.' + name,
+      'magicNotes.oracleDedication', '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifier.' + name, '=', null);
+    rules.defineRule('spellAbility.Divine',
+      'magicNotes.oracleDedication', '=', '"charisma"'
+    );
+    rules.defineRule
+      ('spellSlots.DC1', 'magicNotes.oracleDedication', '+=', '2');
+    // Suppress validation errors for Mysteries and mystery features that don't
+    // come from OD
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let mysteries =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Oracle (Mystery)'))
+      .map(x => x.replace('Oracle - ', ''));
+    mysteries.forEach(m => {
+      rules.defineRule('validationNotes.oracle-' + m.replaceAll(' ', '') + 'SelectableFeature',
+        'features.' + name, '+', '1'
+      );
+      m = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + m + '-1', 'levels.Oracle', '?', null);
+      rules.defineRule('magicNotes.' + m, 'levels.Oracle', '?', null);
+    });
   } else if(name == 'Pack Stalker') {
     // Make sure there's a featCount.Skill to increment
     rules.defineRule('featCount.Skill', 'features.Pack Stalker', '^=', '0');
@@ -15891,6 +15935,21 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Stumbling Swing', 'features.Stumbling Stance', '=', '1');
+  } else if(name == 'Swashbuckler Dedication') {
+    // Suppress validation errors for Styles and style features that don't
+    // come from SD
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let styles =
+      Object.keys(allSelectables)
+      .filter(x => allSelectables[x].includes('Swashbuckler (Style)'))
+      .map(x => x.replace('Swashbuckler - ', ''));
+    styles.forEach(s => {
+      rules.defineRule('validationNotes.swashbuckler-' + s.replaceAll(' ', '') + 'SelectableFeature',
+        'features.' + name, '+', '1'
+      );
+      s = s.charAt(0).toLowerCase() + s.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + s, 'levels.Swashbuckler', '?', null);
+    });
   } else if(name == 'Tap Into Blood') {
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('features.Tap Into Blood (' + t + ')',
