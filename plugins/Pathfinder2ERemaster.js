@@ -3701,7 +3701,7 @@ Pathfinder2ERemaster.FEATS = {
   'Basic Deduction':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Investigator Dedication"',
-  "Investigator's Strategem":
+  "Investigator's Stratagem":
     'Traits=Archetype ' +
     'Require="level >= 4","features.Investigator Dedication"',
   'Advanced Deduction':
@@ -4041,7 +4041,7 @@ Pathfinder2ERemaster.FEATS = {
   'Precious Ammunition':
     'Traits=Archetype,Magical ' +
     'Require="level >= 8","features.Eldritch Archer Dedication"',
-  'Precious Ammunition':
+  'Eldritch Reload':
     'Traits=Archetype ' +
     'Require="level >= 10","features.Eldritch Archer Dedication"',
   'Expert Eldritch Archer Spellcaster':
@@ -4056,7 +4056,7 @@ Pathfinder2ERemaster.FEATS = {
   'Fatal Shot':
     'Traits=Archetype,Magical ' +
     'Require="level >= 18","features.Eldritch Archer Dedication"',
-  'Expert Eldritch Archer Spellcaster':
+  'Master Eldritch Archer Spellcaster':
     'Traits=Archetype ' +
     'Require="level >= 18","features.Expert Eldritch Archer Spellcasting"',
 
@@ -4065,7 +4065,7 @@ Pathfinder2ERemaster.FEATS = {
   'Familiar Mascot':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Familiar Master Dedication"',
-  // Require ability to cast spells
+  // TODO: Requires ability to cast spells
   'Familiar Conduit':
     'Traits=Archetype,Concentrate,Spellshape ' +
     'Require="level >= 4","features.Familiar Master Dedication"',
@@ -4075,8 +4075,9 @@ Pathfinder2ERemaster.FEATS = {
   'Mutable Familiar':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Familiar Master Dedication"',
-  'Incredible Familiar':
-    'Traits=Archetype Require="level >= 10","features.Enhanced Familiar"',
+  // TODO different traits and level requirement than the Witch feat
+  // 'Incredible Familiar':
+  //   'Traits=Archetype Require="level >= 10","features.Enhanced Familiar"',
 
   'Gladiator Dedication':
     'Traits=Archetype,Dedication ' +
@@ -4260,7 +4261,7 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 6",' +
       '"rank.Diplomacy >= 1",' +
       '"features.Treat Condition"',
-  'Resusicate':
+  'Resuscitate':
     'Traits=Archetype,Healing,Manipulate ' +
     'Require=' +
       '"level >= 16",' +
@@ -4731,6 +4732,7 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Weapon Proficiency (%advancedWeapon)'],
 
   // Core 2
+
   'A Home In Every Port':
     'Traits=General,Downtime Require="level >= 11","charismaModifier >= 3"',
   'Acrobatic Performer':'Traits=General,Skill Require="rank.Acrobatics >= 1"',
@@ -4761,11 +4763,12 @@ Pathfinder2ERemaster.FEATS = {
   'Caravan Leader':
     'Traits=General Require="level >= 11","features.Pick Up The Pace"',
   'Concealing Legerdemain':'Traits=General,Skill Require="rank.Thievery >= 1"',
-  'Consult The Spirits':
-    'Traits=General,Skill,Secret ' +
-    'Require=' +
-      '"level >= 7",' +
-      '"rank.Nature >= 3 || rank.Occult >= 3 || rank.Religion >= 3"',
+  'Consult The Spirits (Nature)':
+    'Traits=General,Skill,Secret Require="level >= 7","rank.Nature >= 3"',
+  'Consult The Spirits (Occult)':
+    'Traits=General,Skill,Secret Require="level >= 7","rank.Occult >= 3"',
+  'Consult The Spirits (Religion)':
+    'Traits=General,Skill,Secret Require="level >= 7","rank.Religion >= 3"',
   "Crafter's Appraisal":'Traits=General,Skill Require="rank.Crafting >= 1"',
   'Deceptive Worship':'Traits=General,Skill Require="rank.Occultism >= 1"',
   'Dirty Trick':
@@ -4807,6 +4810,9 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=General,Skill Require="level >= 2","rank.Athletics >= 2"',
   'Legendary Guide':
     'Traits=General,Skill Require="level >= 15","rank.Survival >= 4"',
+  'Leverage Connections':
+    Pathfinder2E.FEATS.Connections
+    .replace('Graces', 'Graces || features.Streetwise'),
   'Numb To Death':'Traits=General Require="level >= 7","features.Diehard"',
   'Pick Up The Pace':
     'Traits=General Require="level >= 3","constitutionModifier >= 2"',
@@ -4851,13 +4857,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=General,Skill,Uncommon ' +
     'Require="level >= 2","rank.Society >= 2","features.Streetwise"',
   'Water Sprint':
-    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"',
-
-  // Core 2
-
-  'Leverage Connections':
-    Pathfinder2E.FEATS.Connections
-    .replace('Graces', 'Graces || features.Streetwise')
+    'Traits=General,Skill Require="level >= 7","rank.Athletics >= 3"'
 
 };
 Pathfinder2ERemaster.FEATURES = {
@@ -11585,6 +11585,31 @@ Pathfinder2ERemaster.FEATURES = {
       '"+5 Speed with panache"',
   // Evasiveness as above
 
+  'Acrobat Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill %V (Acrobatics)",' +
+      '"Can move normally through an enemy\'s space after a successful Tumble Through"',
+  'Contortionist':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Quick Squeeze feature",' +
+      '"Successful Escape using Acrobatics inflicts off-guard vs. next self attack before the end of the next turn%{rank.Acrobatics>=3?\'/Can Squeeze at full speed\':\'\'}"',
+  'Dodge Away':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Gains +1 Armor Class vs. the triggering melee attack and can Step%{rank.Acrobatics>=3?\\" 10\'\\":\'\'} if the attack misses"',
+  'Graceful Leaper':
+    'Section=skill Note="Can se Acrobatics instead of Athletics for Jumps"',
+  'Tumbling Strike':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Acrobatics vs. Reflex allows moving through a foe\'s space to make a melee Strike against it; critical success inflicts off-guard against the Strike, failure allows the Strike but not the move, and critical failure negates both"',
+  'Tumbling Opportunist':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Attempts to use Acrobatics to Trip a foe after moving through its space"',
+
   // General and Skill
 
   'Additional Lore (%lore)':Pathfinder2E.FEATURES['Additional Lore (%lore)'],
@@ -11779,7 +11804,179 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Core 2
 
-  'Leverage Connections':Pathfinder2E.FEATURES.Connections
+  'A Home In Every Port':
+    'Section=skill ' +
+    'Note="Can use 8 hr interaction in a town or village to obtain free lodging for self and 6 allies for 1 dy"',
+  'Acrobatic Performer':
+    'Section=skill ' +
+    'Note="Can use Acrobatics to Perform%{rank.Acrobatics&&rank.Performance?\' with +1 on checks\':\'\'}"',
+  'Aerobatics Mastery':
+    'Section=skill ' +
+    'Note="+2 Acrobatics to Maneuver In Flight and can attempt to combine 2 maneuvers at the higher DC + 5%{rank.Acrobatics>=4?\' or 3 maneuvers at the highest DC + 10\':\'\'}"',
+  'Armor Assist':
+    'Section=skill Note="Successful Athletics or Warfare Lore allows donning armor in half the normal time or helping an ally do so"',
+  'Armored Stealth':
+    'Section=skill ' +
+    'Note="Suffers no Stealth penalty for noisy armor and reduces the penalty for non-noisy armor by %{rank.Stealth<3?1:rank.Stealth<4?2:3}"',
+  'Assured Identification':
+    'Section=skill ' +
+    'Note="Critical failures on Identify Magic are normal failures, and successes on Identify Magic with cursed items do not misidentify them"',
+  'Backup Disguise':
+    'Section=skill ' +
+    'Note="Can assume a prepared disguise with %{rank.Deception<3?\'3 actions\':rank.Deception<4?\'2 actions\':\'1 action\'}"',
+  'Battle Planner':
+    'Section=skill ' +
+    'Note="1 min preparation with detailed scouting info allows using Warfare Lore for initiative"',
+  'Biographical Eye':
+    'Section=skill ' +
+    'Note="1 min with a target and a successful DC 30 Society check reveals its profession, specialty, and where it lives, critical success adds its homeland and a major accomplishment or controversy, failure reveals only its homeland and profession, and critical failure gives incorrect info"',
+  'Bon Mot':
+    'Section=combat ' +
+    'Note="R30\' Successful Diplomacy vs. Will inflicts -2 Perception and Will, or -3 on a critical success, for 1 min; critical failure inflicts the same on self for 1 min or until a successful Bon Mot"',
+  'Caravan Leader':
+    'Section=skill ' +
+    'Note="Group can Hustle for the best length of time among its members plus 20 min"',
+  'Concealing Legerdemain':
+    'Section=skill Note="Can use Thievery to Conceal An Object of light Bulk"',
+  'Consult The Spirits (Nature)':
+    'Section=skill ' +
+    'Note="Successful Nature answers 1 question, or 3 questions with a critical success, about the surrounding 100\' area once per %{rank.Nature<4?\'day\':\'hr\'}; critical failure gives harmful information"',
+  'Consult The Spirits (Occult)':
+    'Section=skill ' +
+    'Note="Successful Occult answers 1 question, or 3 questions with a critical success, about the surrounding 100\' area once per %{rank.Nature<4?\'day\':\'hr\'}; critical failure gives harmful information"',
+  'Consult The Spirits (Religion)':
+    'Section=skill ' +
+    'Note="Successful Religion answers 1 question, or 3 questions with a critical success, about the surrounding 100\' area once per %{rank.Nature<4?\'day\':\'hr\'}; critical failure gives harmful information"',
+  "Crafter's Appraisal":
+    'Section=skill Note="Can use Crafting to Identify Magic on items"',
+  'Deceptive Worship':
+    'Section=skill ' +
+    'Note="Can use Occultism to Lie when claiming membership in another faith"',
+  'Dirty Trick':
+    'Section=combat ' +
+    'Note="Successful Thievery vs. Reflex inflicts clumsy 1 for 1 rd, or until the target performs an Interact action on a critical success; critical failure inflicts prone on self"',
+  'Discreet Inquiry':
+    'Section=skill ' +
+    'Note="Others\' attempts to detect self Gather Information activities require a successful check vs. Deception DC"',
+  'Distracting Performance':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Can use Performance to Create A Diversion for an ally until the end of its turn"',
+  'Disturbing Knowledge':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="R30\' Successful Occultism vs. Will inflicts frightened 1%{rank.Occultism>=4?\' on all foes within range\':\'\'}; critical success also inflicts confused for 1 rd; critical failure inflicts frightened 1 on self"',
+  'Doublespeak':
+    'Section=skill ' +
+    'Note="Can include in speech meanings understood only by allies and observers who critically succeed on Perception vs. Deception"',
+  'Environmental Guide':
+    'Section=save Note="1 hr adjustment allows self and 5 allies to treat environmental temperature effects as %{rank.Survival<4?\'1 step\':\'2 steps\'} less severe"',
+  'Evangelize':
+    'Section=skill ' +
+    'Note="Successful Diplomacy vs. Will inflicts stupefied 1 on target for 1 rd, or stupefied 2 for 1 rd on a critical success, once per target per day"',
+  'Exhort The Faithful':
+    'Section=skill ' +
+    'Note="Can use a Religion with a +2 bonus to Request or Coerce other members of the same faith, and a critical failure does not worsen target\'s attitude"',
+  'Express Rider':
+    'Section=skill ' +
+    'Note="Successful Nature increases the speed of self and 6 allies\' mounts by half for a day"',
+  'Eye For Numbers':
+    'Section=skill ' +
+    'Note="Can accurately estimate the number of items in a group with a glance and can do so with a foe\'s possessions to gain a +1 Society check to Create A Diversion or Feint"',
+  'Eyes Of The City':
+    'Section=skill ' +
+    'Note="Can use Diplomacy or Society to Track within a settlement"',
+  'Forensic Acumen':
+    'Section=skill ' +
+    'Note="Can perform a forensic examination in half the normal time to gain +%{rank.Medicine<3?2:rank.Medicine<4?3:4}l on a Recall Knowledge to determine the cause of injury or death"',
+  'Glean Contents':
+    'Section=skill ' +
+    'Note="Can use a Society check with a +1 bonus to Decipher Writing on a partially-glimpsed message or sealed letter"',
+  'Improvise Tool':
+    'Section=skill ' +
+    'Note="Can craft basic tools and repair them without a toolkit"',
+  'Improvised Repair':
+    'Section=skill ' +
+    'Note="Can quickly repair a broken item into shoddy condition"',
+  'Incredible Scout':'Section=skill Note="Scouting gives allies +2 initiative"',
+  'Influence Nature':
+    'Section=skill Note="Can spend %{rank.Nature<4?\' at least a day of downtime\':\'at least 10 min\'} to influence the behavior of local wildlife"',
+  'Inoculation':
+    'Section=skill ' +
+    'Note="Successful patient recover from Treat A Disease gives them +2 saves vs. the disease for 1 week"',
+  'Keen Follower':
+    'Section=skill Note="Gains +3 to Follow An Expert, or +4 when following a master, and others in the group can use self skill for group rolls"',
+  'Lead Climber':
+    'Section=skill ' +
+    'Note="Successful Athletics check turns a ally\'s critical Climb failure when a following self into a normal failure; a critical failure inflicts the consequences on both"',
+  'Legendary Guide':
+    'Section=skill ' +
+    'Note="Following party gains +10\' Speed when traveling and can travel normally over difficult terrain and at half speed over greater difficult terrain"',
+  'Leverage Connections':Pathfinder2E.FEATURES.Connections,
+  'Numb To Death':
+    'Section=save ' +
+    'Note="Regains +%{level} Hit Points and does not increase wounded condition when recovering from dying once per day"',
+  'Pick Up The Pace':
+    'Section=skill ' +
+    'Note="Hustling group can continue as long as the best member"',
+  "Pilgrim's Token":
+    'Section=combat ' +
+    'Note="Religious symbol allows self to act first when tied with a foe on initiative"',
+  'Rapid Affixture':
+    'Section=skill ' +
+    'Note="Can Affix A Talisman in %{rank.Crafting<4?\'1 min\':\'3 actions\'}"',
+  'Risky Surgery':
+    'Section=skill ' +
+    'Note="Inflicting 1d8 HP slashing on a Treat Wounds patient to gives +2 on the subsequent check and makes a success into a critical success"',
+  'Robust Health':
+    'Section=save ' +
+    'Note="Successful Treat Wounds or Battle Medicine on self restores +%{level} Hit Points, and Battle Medicine can be used again after 1 hr"',
+  'Rolling Landing':
+    'Section=feature ' +
+    'Note="After falling without damage, can use a reaction to Step or Stride up to %{rank.Acrobatics<3?speed//2:speed}\'%{rank.Acrobatics>=4?\', triggering no reactions\':\'\'}"',
+  'Root Magic':
+    'Section=skill ' +
+    'Note="Talisman given to an ally during daily prep gives +%{rank.Occultism<2?1:rank.Occultism<4?2:3} on first save that day vs. a spell or haunt"',
+  'Sanctify Water':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Makes the water in %{rank.Religion<3?\'a\':rank.Religion<4?2:3} light Bulk container%{rank.Religion<3?\'\':\'s\'} held by self or an adjacent ally holy or unholy until the end of the next turn"',
+  'Shadow Mark':
+    'Section=skill ' +
+    'Note="Followed target suffers -%{rank.Stealth<3?2:rank.Stealth<4?3:4} on Perception vs. Stealth to notice"',
+  'Signature Crafting':
+    'Section=skill ' +
+    'Note="Successful DC 9 flat check after Crafting a permanent magic item gives it a random quirk, or a selected quirk on a critical success"',
+  'Slippery Prey':
+    'Section=skill ' +
+    'Note="Reduces the penalty for repeated Escape attempts using Acrobatics or Athletics to -4 and -8, -3 and -6 with master proficiency, or zero with legendary proficiency"',
+  'Snare Crafting':Pathfinder2E.FEATURES['Snare Crafting'],
+  'Sow Rumor':
+    'Section=skill ' +
+    'Note="Successful Deception spreads a rumor for 1 week, giving +1 Deception, Diplomacy, and Intimidation that invokes it; critical success gives a +2 bonus for 1 month and critical failure gives a -4 penalty for 1 week"',
+  'Supertaster':
+    'Section=skill ' +
+    'Note="Automatically attempts to identify ingredients, including poisons, in consumed items, and tasting gives +2 to a relevant Recall Knowledge check"',
+  'Terrifying Resistance':
+    'Section=combat ' +
+    'Note="Successful Demoralize gives self +1 saves vs. target\'s spells for 1 day"',
+  'Thorough Search':
+    'Section=skill ' +
+    'Note="Taking twice the normal time to Search gives +2 Perception on the check and changes a success into a critical success"',
+  'True Perception':
+    'Section=magic ' +
+    'Note="Has constant 6th-rank <i>Truesight</i> effects, using Perception for the counteract check"',
+  'Tumbling Teamwork':
+    'Section=combat ' +
+    'Note="Successful Tumble Through a foe\'s space allows adjacent allies to Step as a reaction into another adjacent space"',
+  'Tumbling Theft':
+    'Section=skill ' +
+    'Note="Successful Tumble Through a foe\'s space allows a +1 Steal check on an accessible light item"',
+  'Underground Network':
+    'Section=skill ' +
+    'Note="1 hr spent with local contacts gives a +1 Recall Knowledge to Gather Information, or +2 if using Underworld Lore"',
+  'Water Sprint':
+    'Section=ability Note="Can%{rank.Athletics<4?\' travel half of Stride in a straight line\':\'Stride\'} over water; must end on solid ground to avoid sinking"'
 
 };
 for(let f in Pathfinder2ERemaster.FEATURES) {
@@ -15477,7 +15674,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   Pathfinder2E.featRulesExtra(rules, name);
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
-  if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
+  if(name == 'Acrobat Dedication') {
+    rules.defineRule('skillNotes.acrobatDedication',
+      'level', '=', 'source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
+    );
+  } if(name.match(/^(Advanced|Masterful|Peerless)\sWarden$/)) {
     rules.defineRule('magicNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name.match(/^(Advanced|Greater) Revelation$/)) {
     // TODO Homebrew mysteries
