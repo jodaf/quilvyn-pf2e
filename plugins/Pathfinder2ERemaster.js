@@ -3847,7 +3847,7 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Archer Dedication",' +
       '"rank.Athletics >= 2"',
 
-  'Assassin':
+  'Assassin Dedication':
     'Traits=Archetype,Dedication ' +
     'Require="level >= 2","rank.Deception >= 1","rank.Stealth >= 1"',
   'Expert Backstabber':
@@ -11589,7 +11589,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill %V (Acrobatics)",' +
-      '"Can move normally through an enemy\'s space after a successful Tumble Through"',
+      '"Critical success on Tumble Through allows moving normally through a foe\'s space"',
   'Contortionist':
     'Section=feature,skill ' +
     'Note=' +
@@ -11600,15 +11600,97 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Gains +1 Armor Class vs. the triggering melee attack and can Step%{rank.Acrobatics>=3?\\" 10\'\\":\'\'} if the attack misses"',
   'Graceful Leaper':
-    'Section=skill Note="Can se Acrobatics instead of Athletics for Jumps"',
+    'Section=skill Note="Can use Acrobatics instead of Athletics for Jumps"',
   'Tumbling Strike':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Acrobatics vs. Reflex allows moving through a foe\'s space to make a melee Strike against it; critical success inflicts off-guard against the Strike, failure allows the Strike but not the move, and critical failure negates both"',
+    'Note="Successful Acrobatics vs. Reflex allows moving through a foe\'s space without triggering reactions to make a melee Strike against it; critical success inflicts off-guard against the Strike, failure allows the Strike but not the move, and critical failure negates both"',
   'Tumbling Opportunist':
     'Action=Free ' +
     'Section=combat ' +
     'Note="Attempts to use Acrobatics to Trip a foe after moving through its space"',
+
+  'Archaeologist Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Expert (Society; Thievery)",' +
+      '"+1 to Recall Knowledge about ancient history, peoples, and cultures"',
+
+  'Magical Scholastics':
+    'Section=magic ' +
+    'Note="Knows the Detect Magic, Guidance, and Read Aura occult innate cantrips"',
+  'Settlement Scholastics':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"+%V Skill Feat (settlement Additional Lore)",' +
+      '"+%V Language Count"',
+  'Scholastic Identification':
+    'Section=skill ' +
+    'Note="Can use Society to Decipher Writing and to Identify Magic with an item of cultural significance"',
+  "Archaeologist's Luck":
+    'Action=Free ' +
+    'Section=save ' +
+    'Note="Rerolls a failed save vs. a trap once per hr"',
+  'Greater Magical Scholastics':
+    'Section=magic ' +
+    'Note="Knows the Augury, Locate, and Veil Of Privacy occult innate spells; can cast each once per day"',
+
+  'Archer Dedication':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Bows; Crossbows)",' +
+      '"Critical hits with an expert proficiency bow or crossbow inflict its critical specialization effect"',
+  'Quick Shot':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Draws and fires a bow or crossbow"',
+  'Crossbow Terror':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Makes an Intimidation check after loading a crossbow; gains +2 on the check from a prior successful crossbow Strike in the same turn"',
+  "Archer's Aim":
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Ranged Strike with a bow or crossbow gains +2 attack, ignores concealment, and can attack a hidden target with a DC 5 flat check"',
+  'Unobstructed Shot':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a ranged Strike after Shoving or Tripping an adjacent creature"',
+
+  'Assassin Dedication':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Has the Mark For Death and Sneak Attack features",' +
+      '"Sneak Attack on a marked target inflicts +1d%{level<6?4:6} HP precision, or +%{level<6?1:2} HP precsion from an existing Sneak Attack ability"',
+  'Mark For Death':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Gains +2 Seek and Feint vs. a chosen target and can use Sneak Attack against it"',
+  'Expert Backstabber':
+    'Section=combat ' +
+    'Note="Strike on an off-guard foe with a backstabber weapon inflicts +2 HP precision"',
+  // Surprise Attack as above
+  'Angel Of Death':
+    'Section=combat ' +
+    'Note="Reducing a marked target to 0 HP inflicts death, and interaction with it afterward requires a %{level//2} counteract rank"',
+  'Assassinate':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Strike on marked target inflicts +6d6 HP precision (<b>save basic Fortitude</b>; critical failure by targets up to level %{level} inflicts death) once per target per day"',
+
+  'Bastion Dedication':'Section=combat Note="Has the Reactive Shield feature"',
+  'Disarming Block':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Follows a successful Shield Block with a Disarm attempt"',
+  'Nimble Shield Hand':
+    'Section=combat Note="Can hold an object in the same hand as a shield"',
+  'Destructive Block':
+    'Section=combat ' +
+    'Note="Can use Shield Block to negate %{shieldHardness*2} HP damage, doubling the amount of damage to the shield"',
+  'Shield Salvation':
+    'Section=combat ' +
+    'Note="Can have shield retain 1 HP when it would normally be destroyed by Shield Block"',
 
   // General and Skill
 
@@ -13345,6 +13427,13 @@ Pathfinder2ERemaster.SPELLS = {
   'Nondetection':
     Pathfinder2E.SPELLS.Nondetection
     .replace('Abjuration', 'Concentrate,Manipulate'),
+  'Veil Of Privacy':
+    'Level=3 ' +
+    'Traits=Uncommon,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast="10 min" ' +
+    'Description=' +
+      '"Attempts to counteract detection, revelation, and scrying cast against the target for 8 hr"',
   'Ventriloquism':
     Pathfinder2E.SPELLS.Ventriloquism
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -16121,6 +16210,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     rules.defineRule('armorClass', 'combatNotes.scalyHide.1', '+', null);
     // NOTE: apparently reduced dex cap only applies if unarmored
     rules.defineRule('armorDexterityCap', 'combatNotes.scalyHide.1', 'v=', '3');
+  } else if(name == 'Settlement Scholastics') {
+    rules.defineRule('featureNotes.' + prefix, 'feats.' + name, '=', null);
+    rules.defineRule('skillNotes.' + prefix, 'feats.' + name, '=', null);
   } else if(name == 'Slag May') {
     rules.defineRule('weapons.Slag Claws', 'combatNotes.slagMay', '=', '1');
   } else if(name == 'Tengu Feather Fan') {

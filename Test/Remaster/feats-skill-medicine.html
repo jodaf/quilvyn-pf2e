@@ -12,7 +12,8 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Longbow)":1, "armor":"None", 
   "background":"Fortune Teller", "class":"Bard", "classFeats.Directed Audience":1, "deity":"Gozreh", 
   "experience":2763, "gender":"Female", "generalFeats.Advanced First Aid":1, 
-  "generalFeats.Battle Medicine":1, "generalFeats.Continual Recovery":1, "generalFeats.Legendary Medic":1, 
+  "generalFeats.Battle Medicine":1, "generalFeats.Continual Recovery":1, "generalFeats.Forensic Acumen":1, 
+  "generalFeats.Inoculation":1, "generalFeats.Legendary Medic":1, "generalFeats.Risky Surgery":1, 
   "generalFeats.Robust Recovery":1, "generalFeats.Unusual Treatment":1, "generalFeats.Ward Medic":1, 
   "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, "name":"Feats-Skill-Medicine", 
   "selectableFeatures.Bard - Maestro":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Steel", 
@@ -74,7 +75,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Advanced First Aid; Battle Medicine; Continual Recovery; Directed Audience; Legendary Medic; Robust Recovery; Unconventional Weaponry (Longbow); Unusual Treatment; Ward Medic</td>
+        <td><b>Feats</b>: Advanced First Aid; Battle Medicine; Continual Recovery; Directed Audience; Forensic Acumen; Inoculation; Legendary Medic; Risky Surgery; Robust Recovery; Unconventional Weaponry (Longbow); Unusual Treatment; Ward Medic</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); General Feats; Maestro; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult)</td>
         <td><b>Fortune Teller Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Oddity Identification; Skill Trained (Occultism; Fortune-Telling Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -160,9 +161,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Continual Recovery: Can repeat Treat Wounds on a patient after 10 min</td>
     </tr><tr style="text-align:center">
+      <td>Forensic Acumen: Can perform a forensic examination in half the normal time to gain +2l on a Recall Knowledge to determine the cause of injury or death</td>
+    </tr><tr style="text-align:center">
+      <td>Inoculation: Successful patient recover from Treat A Disease gives them +2 saves vs. the disease for 1 week</td>
+    </tr><tr style="text-align:center">
       <td>Legendary Medic: Can use a 1 hr process and a successful Medicine check to remove a disease or condition once per target per day</td>
     </tr><tr style="text-align:center">
       <td>Oddity Identification: +2 Occultism to Identify Magic with a fortune, mental, possession, prediction, or scrying trait</td>
+    </tr><tr style="text-align:center">
+      <td>Risky Surgery: Inflicting 1d8 HP slashing on a Treat Wounds patient to gives +2 on the subsequent check and makes a success into a critical success</td>
     </tr><tr style="text-align:center">
       <td>Robust Recovery: Success on Treat Disease or Treat Poison gives a +4 bonus, and patient successes are critical successes</td>
     </tr><tr style="text-align:center">
@@ -273,7 +280,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Advanced First Aid Feat: Requires level (currently 3) >= 7 and medicine rank (currently 2) >= 3</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 2 available vs. 7 allocated</td>
+        <td>General And Skill Feat Allocation: 2 available vs. 10 allocated</td>
       </tr><tr style="text-align:center">
         <td>Legendary Medic Feat: Requires level (currently 3) >= 15 and medicine rank (currently 2) >= 4</td>
       </tr></table>

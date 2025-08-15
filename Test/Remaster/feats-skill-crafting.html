@@ -13,9 +13,11 @@ var attributes = {
   "ancestryFeats.Unconventional Weaponry (Dwarven Waraxe)":1, "armor":"None", "background":"Acrobat", "class":"Rogue", 
   "classFeats.Mobility":1, "classFeats.Underhanded Assault":1, "deity":"Nethys", "experience":2212, 
   "gender":"Male", "generalFeats.Alchemical Crafting":1, "generalFeats.Communal Crafting":1, 
-  "generalFeats.Craft Anything":1, "generalFeats.Impeccable Crafting":1, "generalFeats.Inventor":1, 
-  "generalFeats.Magical Crafting":1, "generalFeats.Quick Repair":1, "generalFeats.Snare Crafting":1, 
-  "generalFeats.Specialty Crafting":1, "languages.Kholo":1, "languages.Pyric":1, "name":"Feats-Skill-Crafting", 
+  "generalFeats.Craft Anything":1, "generalFeats.Crafter's Appraisal":1, "generalFeats.Impeccable Crafting":1, 
+  "generalFeats.Improvise Tool":1, "generalFeats.Inventor":1, "generalFeats.Magical Crafting":1, 
+  "generalFeats.Quick Repair":1, "generalFeats.Rapid Affixture":1, "generalFeats.Signature Crafting":1, 
+  "generalFeats.Snare Crafting":1, "generalFeats.Specialty Crafting":1, "languages.Kholo":1, 
+  "languages.Pyric":1, "name":"Feats-Skill-Crafting", 
   "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
   "selectableFeatures.Rogue - Ruffian":1, "shield":"Tower", "skillIncreases.Athletics":1, "skillIncreases.Crafting":2, 
   "skillIncreases.Heraldry Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Occultism":1, 
@@ -76,7 +78,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Alchemical Crafting; Communal Crafting; Craft Anything; Impeccable Crafting; Inventor; Magical Crafting; Mobility; Quick Repair; Snare Crafting; Specialty Crafting; Unconventional Weaponry (Dwarven Waraxe); Underhanded Assault</td>
+        <td><b>Feats</b>: Alchemical Crafting; Communal Crafting; Craft Anything; Crafter's Appraisal; Impeccable Crafting; Improvise Tool; Inventor; Magical Crafting; Mobility; Quick Repair; Rapid Affixture; Signature Crafting; Snare Crafting; Specialty Crafting; Unconventional Weaponry (Dwarven Waraxe); Underhanded Assault</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Ruffian; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Acrobat Features</b>: Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any); Skill Trained (Acrobatics; Circus Lore); Steady Balance</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -168,15 +170,25 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Craft Anything: Can craft items without meeting secondary requirements</td>
     </tr><tr style="text-align:center">
+      <td>Crafter's Appraisal: Can use Crafting to Identify Magic on items</td>
+    </tr><tr style="text-align:center">
       <td>Formula Book: Has a book that contains at least 4 alchemical formulas</td>
     </tr><tr style="text-align:center">
       <td>Impeccable Crafting: Successes on Specialty Crafting are critical successes</td>
+    </tr><tr style="text-align:center">
+      <td>Improvise Tool: Can craft basic tools and repair them without a toolkit</td>
     </tr><tr style="text-align:center">
       <td>Inventor: Can use Crafting to create unknown common formulas</td>
     </tr><tr style="text-align:center">
       <td>Magical Crafting: Can Craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower</td>
     </tr><tr style="text-align:center">
       <td>Quick Repair: Can Repair an item in 1 min</td>
+    </tr><tr style="text-align:center">
+      <td>Rapid Affixture: Can Affix A Talisman in 1 min</td>
+    </tr><tr style="text-align:center">
+      <td>Signature Crafting: Successful DC 9 flat check after Crafting a permanent magic item gives it a random quirk, or a selected quirk on a critical success</td>
+    </tr><tr style="text-align:center">
+      <td>Snare Crafting: Can use Crafting to create snares and knows the formulas for 4 common snares</td>
     </tr><tr style="text-align:center">
       <td>Specialty Crafting: +1 Crafting on selected type of item</td>
     </tr><tr style="text-align:center">
@@ -252,9 +264,13 @@ var attributes = {
       <tr style="text-align:center">
         <td>Craft Anything Feat: Requires level (currently 3) >= 15 and crafting rank (currently 2) >= 4</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 5 available vs. 9 allocated</td>
+        <td>General And Skill Feat Allocation: 5 available vs. 13 allocated</td>
       </tr><tr style="text-align:center">
         <td>Impeccable Crafting Feat: Requires level (currently 3) >= 7, crafting rank (currently 2) >= 3 and specialty crafting feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Rapid Affixture Feat: Requires level (currently 3) >= 7 and crafting rank (currently 2) >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>Signature Crafting Feat: Requires level (currently 3) >= 7, crafting rank (currently 2) >= 3 and magical crafting feature (currently 1)</td>
       </tr></table>
 </td>
     </tr></table>

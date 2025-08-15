@@ -12,7 +12,8 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Battle Axe)":1, 
   "armor":"Explorer's Clothing", "background":"Barrister", "class":"Witch", 
   "classFeats.Basic Lesson (Vengeance)":1, "deity":"Gozreh", "experience":2495, "gender":"Female", 
-  "generalFeats.Divine Guidance":1, "generalFeats.Student Of The Canon":1, "languages.Aklo":1, 
+  "generalFeats.Divine Guidance":1, "generalFeats.Exhort The Faithful":1, "generalFeats.Pilgrim's Token":1, 
+  "generalFeats.Sanctify Water":1, "generalFeats.Student Of The Canon":1, "languages.Aklo":1, 
   "languages.Kholo":1, "languages.Sakvroth":1, "name":"Feats-Skill-Religion", 
   "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Witch - Starless Shadow":1, "shield":"None", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Arcana":1, "skillIncreases.Games Lore":1, 
@@ -73,7 +74,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Basic Lesson (Vengeance); Divine Guidance; Student Of The Canon; Unconventional Weaponry (Battle Axe)</td>
+        <td><b>Feats</b>: Basic Lesson (Vengeance); Divine Guidance; Exhort The Faithful; Pilgrim's Token; Sanctify Water; Student Of The Canon; Unconventional Weaponry (Battle Axe)</td>
         <td><b>Witch Features</b>: Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Witch); Defense Trained (Unarmored Defense); Familiar; General Feats; Hex Spells; Patron; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Skill Feats; Skill Increases; Starless Shadow; Witch Feats; Witch Skills; Witch Spellcasting</td>
         <td><b>Barrister Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Group Impression; Skill Trained (Diplomacy; Legal Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -153,6 +154,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Divine Guidance: Can use 10 min Decipher Writing on a religious text and a successful Religion check to gain a hint about a current problem</td>
     </tr><tr style="text-align:center">
+      <td>Exhort The Faithful: Can use a Religion with a +2 bonus to Request or Coerce other members of the same faith, and a critical failure does not worsen target's attitude</td>
+    </tr><tr style="text-align:center">
       <td>Group Impression: Can use Diplomacy to Make An Impression on 10 targets</td>
     </tr><tr style="text-align:center">
       <td>Student Of The Canon: Critical failures on Religion checks to Decipher Writing or Recall Knowledge are normal failures/Failures to Recall Knowledge about own faith are successes, and successes are critical successes</td>
@@ -190,6 +193,8 @@ var attributes = {
         <td><i>Dexterity Attack Adjustment: +3</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Battle Axe): Weapon Familiarity (Battle Axe)</i></td>
+      </tr><tr style="text-align:center">
+        <td>Pilgrim's Token: Religious symbol allows self to act first when tied with a foe on initiative</td>
       </tr></table>
 </td>
     </tr></table>
@@ -238,6 +243,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Hex Spells: Knows a choice of the <i>Patron's Puppet</i> and <i>Phase Familiar</i> spells</td>
     </tr><tr style="text-align:center">
+      <td>Sanctify Water: <b>(1)</b> Makes the water in a light Bulk container held by self or an adjacent ally holy or unholy until the end of the next turn</td>
+    </tr><tr style="text-align:center">
       <td>Starless Shadow: Casting or Sustaining a hex inflicts frightened 1 on a target unaware of adjacent familiar</td>
     </tr><tr style="text-align:center">
       <td>Witch Spellcasting: Can learn spells from the occult tradition</td>
@@ -254,7 +261,9 @@ var attributes = {
       <tr style="text-align:center">
         <td>Divine Guidance Feat: Requires level (currently 3) >= 15 and religion rank (currently 2) >= 4</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 3 available vs. 2 allocated</td>
+        <td>General And Skill Feat Allocation: 3 available vs. 5 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Sanctify Water Feat: Requires level (currently 3) >= 2, religion rank (currently 2) >= 2 and deity sanctification (currently None) != 'None'</td>
       </tr><tr style="text-align:center">
         <td>Skill Increase Allocation: 6 available vs. 7 allocated</td>
       </tr></table>

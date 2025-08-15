@@ -12,9 +12,9 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Blowgun)":1, 
   "armor":"Studded Leather", "background":"Criminal", "class":"Bard", "classFeats.Directed Audience":1, 
   "deity":"Gozreh", "experience":2825, "gender":"Female", 
-  "generalFeats.Fascinating Performance":1, "generalFeats.Impressive Performance":1, 
-  "generalFeats.Legendary Performer":1, "generalFeats.Virtuosic Performer":1, "languages.Dwarven":1, 
-  "languages.Elven":1, "languages.Gnomish":1, "languages.Sakvroth":1, 
+  "generalFeats.Distracting Performance":1, "generalFeats.Fascinating Performance":1, 
+  "generalFeats.Impressive Performance":1, "generalFeats.Legendary Performer":1, "generalFeats.Virtuosic Performer":1, 
+  "languages.Dwarven":1, "languages.Elven":1, "languages.Gnomish":1, "languages.Sakvroth":1, 
   "name":"Feats-Skill-Performance", "selectableFeatures.Bard - Enigma":1, 
   "selectableFeatures.Human - Versatile Human":1, "shield":"Steel", "skillIncreases.Arcana":1, "skillIncreases.Art Lore":1, 
   "skillIncreases.Farming Lore":1, "skillIncreases.Mercantile Lore":1, "skillIncreases.Mining Lore":1, 
@@ -75,7 +75,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Directed Audience; Fascinating Performance; Impressive Performance; Legendary Performer; Unconventional Weaponry (Blowgun); Virtuosic Performer</td>
+        <td><b>Feats</b>: Directed Audience; Distracting Performance; Fascinating Performance; Impressive Performance; Legendary Performer; Unconventional Weaponry (Blowgun); Virtuosic Performer</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma; General Feats; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult)</td>
         <td><b>Criminal Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Experienced Smuggler; Skill Trained (Stealth; Underworld Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -202,6 +202,8 @@ var attributes = {
         <td><i>Strength Attack Adjustment: +1</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Blowgun): Weapon Familiarity (Blowgun)</i></td>
+      </tr><tr style="text-align:center">
+        <td>Distracting Performance: <b>(1)</b> Can use Performance to Create A Diversion for an ally until the end of its turn</td>
       </tr></table>
 </td>
     </tr></table>
@@ -264,7 +266,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 3 available vs. 4 allocated</td>
+        <td>Distracting Performance Feat: Requires level (currently 3) >= 2 and performance rank (currently 1) >= 2</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 3 available vs. 5 allocated</td>
       </tr><tr style="text-align:center">
         <td>Legendary Performer Feat: Requires level (currently 3) >= 15, performance rank (currently 1) >= 4 and virtuosic performer feature (currently 1)</td>
       </tr></table>

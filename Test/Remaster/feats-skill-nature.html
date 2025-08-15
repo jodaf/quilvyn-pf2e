@@ -12,8 +12,9 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Arbalest)":1, 
   "armor":"Studded Leather", "background":"Martial Disciple", "class":"Bard", 
   "classFeats.Cantrip Expansion":1, "deity":"Pharasma", "experience":2593, "gender":"Female", 
-  "generalFeats.Bonded Animal":1, "generalFeats.Natural Medicine":1, "generalFeats.Train Animal":1, 
-  "languages.Chthonian":1, "languages.Diabolic":1, "languages.Fey":1, "name":"Feats-Skill-Nature", 
+  "generalFeats.Bonded Animal":1, "generalFeats.Express Rider":1, "generalFeats.Influence Nature":1, 
+  "generalFeats.Natural Medicine":1, "generalFeats.Train Animal":1, "languages.Chthonian":1, 
+  "languages.Diabolic":1, "languages.Fey":1, "name":"Feats-Skill-Nature", 
   "selectableFeatures.Bard - Enigma":1, "selectableFeatures.Human - Skilled Human":1, 
   "selectableFeatures.Martial Disciple - Athletics":1, "shield":"None", "skillIncreases.Astral Plane Lore":1, 
   "skillIncreases.Cooking Lore":1, "skillIncreases.Farming Lore":1, "skillIncreases.Forest Lore":1, 
@@ -74,7 +75,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Bonded Animal; Cantrip Expansion; Natural Medicine; Train Animal; Unconventional Weaponry (Arbalest)</td>
+        <td><b>Feats</b>: Bonded Animal; Cantrip Expansion; Express Rider; Influence Nature; Natural Medicine; Train Animal; Unconventional Weaponry (Arbalest)</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); Enigma; General Feats; Muses; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult)</td>
         <td><b>Martial Disciple Features</b>: Athletics; Attribute Boost (Choose 1 from Dexterity, Strength; Choose 1 from any); Martial Focus; Quick Jump; Skill Trained (Athletics; Warfare Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -163,6 +164,10 @@ var attributes = {
       <td>Bardic Lore: Can use Bardic Lore to attempt to Recall Knowledge on any topic</td>
     </tr><tr style="text-align:center">
       <td>Bonded Animal: Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful</td>
+    </tr><tr style="text-align:center">
+      <td>Express Rider: Successful Nature increases the speed of self and 6 allies' mounts by half for a day</td>
+    </tr><tr style="text-align:center">
+      <td>Influence Nature: Can spend  at least a day of downtime to influence the behavior of local wildlife</td>
     </tr><tr style="text-align:center">
       <td>Natural Medicine: Can use Nature to Treat Wounds; gives a +2 bonus in wilderness</td>
     </tr><tr style="text-align:center">
@@ -261,7 +266,13 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: General And Skill Feat Allocation: 2 available vs. 3 allocated</td>
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 2 available vs. 5 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Influence Nature Feat: Requires level (currently 3) >= 7 and nature rank (currently 2) >= 3</td>
+      </tr></table>
+</td>
     </tr></table>
 </td>
   </tr></table>

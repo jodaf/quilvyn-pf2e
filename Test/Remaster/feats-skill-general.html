@@ -12,17 +12,21 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Heavy Crossbow)":1, 
   "armor":"Studded Leather", "background":"Fortune Teller", "class":"Rogue", "classFeats.Mobility":1, 
   "classFeats.Tumble Behind":1, "deity":"Nethys", "experience":2705, "gender":"Female", 
-  "generalFeats.Assurance (Accounting Lore)":1, "generalFeats.Automatic Knowledge (Accounting Lore)":1, 
-  "generalFeats.Break Curse":1, "generalFeats.Dubious Knowledge":1, "generalFeats.Magical Shorthand":1, 
-  "generalFeats.Quick Identification":1, "generalFeats.Quick Recognition":1, "generalFeats.Recognize Spell":1, 
-  "generalFeats.Seasoned":1, "generalFeats.Skill Training (Abadar Lore)":1, 
-  "generalFeats.Trick Magic Item":1, "languages.Chthonian":1, "languages.Empyrean":1, 
-  "name":"Feats-Skill-General", "selectableFeatures.Human - Skilled Human":1, 
-  "selectableFeatures.Rogue - Dexterity":1, "selectableFeatures.Rogue - Thief":1, "shield":"Steel", 
-  "skillIncreases.Accounting Lore":2, "skillIncreases.Alcohol Lore":1, "skillIncreases.Astronomy Lore":1, 
-  "skillIncreases.Cavern Lore":1, "skillIncreases.Forest Lore":1, "skillIncreases.Halfling Lore":1, 
-  "skillIncreases.Heaven Lore":1, "skillIncreases.Occultism":1, "skillIncreases.River Lore":1, 
-  "skillIncreases.Stabling Lore":1, "weapons.Dart":1, "weapons.Greatclub":1, "weapons.Longsword":1
+  "generalFeats.Armor Assist":1, "generalFeats.Assurance (Accounting Lore)":1, 
+  "generalFeats.Assured Identification":1, "generalFeats.Automatic Knowledge (Accounting Lore)":1, 
+  "generalFeats.Break Curse":1, "generalFeats.Consult The Spirits (Nature)":1, 
+  "generalFeats.Consult The Spirits (Occult)":1, "generalFeats.Consult The Spirits (Religion)":1, 
+  "generalFeats.Discreet Inquiry":1, "generalFeats.Dubious Knowledge":1, "generalFeats.Eyes Of The City":1, 
+  "generalFeats.Magical Shorthand":1, "generalFeats.Quick Identification":1, "generalFeats.Quick Recognition":1, 
+  "generalFeats.Recognize Spell":1, "generalFeats.Seasoned":1, "generalFeats.Skill Training (Abadar Lore)":1, 
+  "generalFeats.Slippery Prey":1, "generalFeats.Trick Magic Item":1, "generalFeats.Tumbling Theft":1, 
+  "languages.Chthonian":1, "languages.Empyrean":1, "name":"Feats-Skill-General", 
+  "selectableFeatures.Human - Skilled Human":1, "selectableFeatures.Rogue - Dexterity":1, 
+  "selectableFeatures.Rogue - Thief":1, "shield":"Steel", "skillIncreases.Accounting Lore":2, 
+  "skillIncreases.Alcohol Lore":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Cavern Lore":1, 
+  "skillIncreases.Forest Lore":1, "skillIncreases.Halfling Lore":1, "skillIncreases.Heaven Lore":1, 
+  "skillIncreases.Occultism":1, "skillIncreases.River Lore":1, "skillIncreases.Stabling Lore":1, 
+  "weapons.Dart":1, "weapons.Greatclub":1, "weapons.Longsword":1
 };
   </script>
 </head>
@@ -78,7 +82,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Assurance (Accounting Lore); Automatic Knowledge (Accounting Lore); Break Curse; Dubious Knowledge; Magical Shorthand; Mobility; Quick Identification; Quick Recognition; Recognize Spell; Seasoned; Skill Training (Abadar Lore); Trick Magic Item; Tumble Behind; Unconventional Weaponry (Heavy Crossbow)</td>
+        <td><b>Feats</b>: Armor Assist; Assurance (Accounting Lore); Assured Identification; Automatic Knowledge (Accounting Lore); Break Curse; Consult The Spirits (Nature); Consult The Spirits (Occult); Consult The Spirits (Religion); Discreet Inquiry; Dubious Knowledge; Eyes Of The City; Magical Shorthand; Mobility; Quick Identification; Quick Recognition; Recognize Spell; Seasoned; Skill Training (Abadar Lore); Slippery Prey; Trick Magic Item; Tumble Behind; Tumbling Theft; Unconventional Weaponry (Heavy Crossbow)</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack; Thief</td>
         <td><b>Fortune Teller Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Oddity Identification; Skill Trained (Occultism; Fortune-Telling Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -166,13 +170,27 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Thief: Skill Trained (Thievery)</i></td>
     </tr><tr style="text-align:center">
+      <td>Armor Assist: Successful Athletics or Warfare Lore allows donning armor in half the normal time or helping an ally do so</td>
+    </tr><tr style="text-align:center">
       <td>Assurance (Accounting Lore): Can take an automatic 17 on Accounting Lore checks</td>
+    </tr><tr style="text-align:center">
+      <td>Assured Identification: Critical failures on Identify Magic are normal failures, and successes on Identify Magic with cursed items do not misidentify them</td>
     </tr><tr style="text-align:center">
       <td>Automatic Knowledge (Accounting Lore): Can use Assurance (Accounting Lore) to Recall Knowledge as a free action once per rd</td>
     </tr><tr style="text-align:center">
       <td>Break Curse: After 8 hr of preparation, can use Occultism or Religion for a 2-rank counteract check against a curse</td>
     </tr><tr style="text-align:center">
+      <td>Consult The Spirits (Nature): Successful Nature answers 1 question, or 3 questions with a critical success, about the surrounding 100' area once per day; critical failure gives harmful information</td>
+    </tr><tr style="text-align:center">
+      <td>Consult The Spirits (Occult): Successful Occult answers 1 question, or 3 questions with a critical success, about the surrounding 100' area once per day; critical failure gives harmful information</td>
+    </tr><tr style="text-align:center">
+      <td>Consult The Spirits (Religion): Successful Religion answers 1 question, or 3 questions with a critical success, about the surrounding 100' area once per day; critical failure gives harmful information</td>
+    </tr><tr style="text-align:center">
+      <td>Discreet Inquiry: Others' attempts to detect self Gather Information activities require a successful check vs. Deception DC</td>
+    </tr><tr style="text-align:center">
       <td>Dubious Knowledge: Failure on a Recall Knowledge check yields a mix of true and false information</td>
+    </tr><tr style="text-align:center">
+      <td>Eyes Of The City: Can use Diplomacy or Society to Track within a settlement</td>
     </tr><tr style="text-align:center">
       <td>Magical Shorthand: Can learn new spells with 10 min of study and retry 1 week after a failure/Can learn new spells at a discounted cost</td>
     </tr><tr style="text-align:center">
@@ -186,7 +204,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Seasoned: +1 to Craft food and drink</td>
     </tr><tr style="text-align:center">
+      <td>Slippery Prey: Reduces the penalty for repeated Escape attempts using Acrobatics or Athletics to -4 and -8, -3 and -6 with master proficiency, or zero with legendary proficiency</td>
+    </tr><tr style="text-align:center">
       <td>Trick Magic Item: <b>(1)</b> Successful check on the related skill activates a magic item until the end of the turn</td>
+    </tr><tr style="text-align:center">
+      <td>Tumbling Theft: Successful Tumble Through a foe's space allows a +1 Steal check on an accessible light item</td>
     </tr></table>
 </td>
   </tr></table>
@@ -252,11 +274,27 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
+        <td>Armor Assist Feat: Requires athletics rank or warfare lore rank</td>
+      </tr><tr style="text-align:center">
         <td>Break Curse Feat: Requires level (currently 3) >= 7 and occultism rank (currently 2) >= 3 or religion rank >= 3</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 4 available vs. 11 allocated</td>
+        <td>Consult The Spirits (Nature) Feat: Requires level (currently 3) >= 7 and nature rank >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>Consult The Spirits (Occult) Feat: Requires level (currently 3) >= 7 and occult rank >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>Consult The Spirits (Religion) Feat: Requires level (currently 3) >= 7 and religion rank >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>Discreet Inquiry Feat: Requires level (currently 3) >= 2 and deception rank >= 2 or diplomacy rank >= 2</td>
+      </tr><tr style="text-align:center">
+        <td>Eyes Of The City Feat: Requires level (currently 3) >= 2 and diplomacy rank or society rank</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 4 available vs. 20 allocated</td>
       </tr><tr style="text-align:center">
         <td>Quick Recognition Feat: Requires level (currently 3) >= 7, arcana rank >= 3, nature rank >= 3, occultism rank (currently 2) >= 3 or religion rank >= 3 and recognize spell feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Slippery Prey Feat: Requires level (currently 3) >= 2 and acrobatics rank or athletics rank</td>
+      </tr><tr style="text-align:center">
+        <td>Tumbling Theft Feat: Requires level (currently 3) >= 7, acrobatics rank >= 2 and thievery rank (currently 1) >= 2</td>
       </tr></table>
 </td>
     </tr></table>

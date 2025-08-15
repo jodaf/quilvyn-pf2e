@@ -11,15 +11,16 @@ var attributes = {
   "abilityBoosts.wisdom":3, "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", 
   "ancestryFeats.Unconventional Weaponry (Shortbow)":1, "armor":"Explorer's Clothing", "background":"Detective", "class":"Rogue", 
   "classFeats.Clever Gambit":1, "classFeats.Tumble Behind":1, "deity":"Pharasma", "experience":2324, 
-  "gender":"Male", "generalFeats.Cat Fall":1, "generalFeats.Kip Up":1, 
-  "generalFeats.Nimble Crawl":1, "generalFeats.Quick Squeeze":1, "generalFeats.Steady Balance":1, 
-  "languages.Gnomish":1, "languages.Shadowtongue":1, "name":"Feats-Skill-Acrobatics", 
-  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
-  "selectableFeatures.Rogue - Mastermind":1, "shield":"Tower", "skillIncreases.Acrobatics":3, 
-  "skillIncreases.Carpentry Lore":1, "skillIncreases.Circus Lore":1, "skillIncreases.Forest Lore":1, 
-  "skillIncreases.Giant Lore":1, "skillIncreases.Herbalism Lore":1, "skillIncreases.Milling Lore":1, 
-  "skillIncreases.Nature":1, "skillIncreases.Survival":1, "weapons.Fist":1, "weapons.Main-gauche":1, 
-  "weapons.Sap":1
+  "gender":"Male", "generalFeats.Acrobatic Performer":1, "generalFeats.Aerobatics Mastery":1, 
+  "generalFeats.Cat Fall":1, "generalFeats.Kip Up":1, "generalFeats.Nimble Crawl":1, 
+  "generalFeats.Quick Squeeze":1, "generalFeats.Rolling Landing":1, "generalFeats.Steady Balance":1, 
+  "generalFeats.Tumbling Teamwork":1, "languages.Gnomish":1, "languages.Shadowtongue":1, 
+  "name":"Feats-Skill-Acrobatics", "selectableFeatures.Human - Versatile Human":1, 
+  "selectableFeatures.Rogue - Dexterity":1, "selectableFeatures.Rogue - Mastermind":1, "shield":"Tower", 
+  "skillIncreases.Acrobatics":3, "skillIncreases.Carpentry Lore":1, "skillIncreases.Circus Lore":1, 
+  "skillIncreases.Forest Lore":1, "skillIncreases.Giant Lore":1, "skillIncreases.Herbalism Lore":1, 
+  "skillIncreases.Milling Lore":1, "skillIncreases.Nature":1, "skillIncreases.Survival":1, "weapons.Fist":1, 
+  "weapons.Main-gauche":1, "weapons.Sap":1
 };
   </script>
 </head>
@@ -81,7 +82,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Cat Fall; Clever Gambit; Kip Up; Nimble Crawl; Quick Squeeze; Steady Balance; Tumble Behind; Unconventional Weaponry (Shortbow)</td>
+        <td><b>Feats</b>: Acrobatic Performer; Aerobatics Mastery; Cat Fall; Clever Gambit; Kip Up; Nimble Crawl; Quick Squeeze; Rolling Landing; Steady Balance; Tumble Behind; Tumbling Teamwork; Unconventional Weaponry (Shortbow)</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Mastermind; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Detective Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Society; Underworld Lore); Streetwise</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -105,6 +106,8 @@ var attributes = {
         <td><i>Skill Feats: 3 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
+      </tr><tr style="text-align:center">
+        <td>Rolling Landing: After falling without damage, can use a reaction to Step or Stride up to 25'</td>
       </tr></table>
 </td>
     </tr></table>
@@ -163,6 +166,10 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 2 from any)</i></td>
     </tr><tr style="text-align:center">
+      <td>Acrobatic Performer: Can use Acrobatics to Perform</td>
+    </tr><tr style="text-align:center">
+      <td>Aerobatics Mastery: +2 Acrobatics to Maneuver In Flight and can attempt to combine 2 maneuvers at the higher DC + 5</td>
+    </tr><tr style="text-align:center">
       <td>Mastermind: Successful Recall Knowledge to identify a creature inflicts off-guard vs. self attacks until the start of the next turn, or for 1 min on a critical success</td>
     </tr><tr style="text-align:center">
       <td>Quick Squeeze: Can Squeeze 5' per rd, or 10' per rd on a critical success</td>
@@ -218,6 +225,8 @@ var attributes = {
         <td>Surprise Attack: Rolling Deception or Stealth for initiative inflicts off-guard vs. self on creatures that haven't acted</td>
       </tr><tr style="text-align:center">
         <td>Tumble Behind: Successful Tumble Through inflicts off-guard against the next self attack until the end of the turn</td>
+      </tr><tr style="text-align:center">
+        <td>Tumbling Teamwork: Successful Tumble Through a foe's space allows adjacent allies to Step as a reaction into another adjacent space</td>
       </tr></table>
 </td>
     </tr></table>
@@ -237,7 +246,15 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Kip Up Feat: Requires level (currently 3) >= 7 and acrobatics rank (currently 3) >= 3</td>
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>Aerobatics Mastery Feat: Requires level (currently 3) >= 7 and acrobatics rank (currently 3) >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 5 available vs. 9 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Kip Up Feat: Requires level (currently 3) >= 7 and acrobatics rank (currently 3) >= 3</td>
+      </tr></table>
+</td>
     </tr></table>
 </td>
   </tr></table>

@@ -11,7 +11,8 @@ var attributes = {
   "abilityBoosts.intelligence":1, "abilityBoosts.strength":1, "abilityBoosts.wisdom":2, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Haughty Obstinacy":1, "armor":"Padded", 
   "background":"Tinker", "class":"Rogue", "classFeats.Mobility":1, "classFeats.Strong Arm":1, 
-  "deity":"Nethys", "experience":2541, "gender":"Female", "generalFeats.Legendary Thief":1, 
+  "deity":"Nethys", "experience":2541, "gender":"Female", 
+  "generalFeats.Concealing Legerdemain":1, "generalFeats.Dirty Trick":1, "generalFeats.Legendary Thief":1, 
   "generalFeats.Pickpocket":1, "generalFeats.Quick Unlock":1, "generalFeats.Subtle Theft":1, 
   "generalFeats.Wary Disarmament":1, "languages.Petran":1, "languages.Thalassic":1, 
   "name":"Feats-Skill-Thievery", "selectableFeatures.Human - Versatile Human":1, 
@@ -75,7 +76,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Haughty Obstinacy; Legendary Thief; Mobility; Pickpocket; Quick Unlock; Strong Arm; Subtle Theft; Wary Disarmament</td>
+        <td><b>Feats</b>: Concealing Legerdemain; Dirty Trick; Haughty Obstinacy; Legendary Thief; Mobility; Pickpocket; Quick Unlock; Strong Arm; Subtle Theft; Wary Disarmament</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Mastermind; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Tinker Features</b>: Attribute Boost (Choose 1 from Dexterity, Intelligence; Choose 1 from any); Skill Trained (Crafting; Engineering Lore); Specialty Crafting</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -157,6 +158,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Increases: Skill Increase (Choose 2 from any)</i></td>
     </tr><tr style="text-align:center">
+      <td>Concealing Legerdemain: Can use Thievery to Conceal An Object of light Bulk</td>
+    </tr><tr style="text-align:center">
       <td>Legendary Thief: Can use Steal with a -5 penalty when hidden to take actively wielded and highly noticeable items</td>
     </tr><tr style="text-align:center">
       <td>Mastermind: Successful Recall Knowledge to identify a creature inflicts off-guard vs. self attacks until the start of the next turn, or for 1 min on a critical success</td>
@@ -209,6 +212,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Deny Advantage: Does not suffer off-guard vs. hidden, undetected, flanking, or surprising foes of equal or lower level</td>
       </tr><tr style="text-align:center">
+        <td>Dirty Trick: Successful Thievery vs. Reflex inflicts clumsy 1 for 1 rd, or until the target performs an Interact action on a critical success; critical failure inflicts prone on self</td>
+      </tr><tr style="text-align:center">
         <td>Mobility: Can Stride at half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
         <td>Sneak Attack: Successful strike using an agile, finesse, or projectile weapon vs. a off-guard foe inflicts +1d6 HP precision damage</td>
@@ -235,6 +240,8 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 5 available vs. 7 allocated</td>
+      </tr><tr style="text-align:center">
         <td>Legendary Thief Feat: Requires level (currently 3) >= 15, thievery rank (currently 2) >= 4 and pickpocket feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Quick Unlock Feat: Requires level (currently 3) >= 7 and thievery rank (currently 2) >= 3</td>

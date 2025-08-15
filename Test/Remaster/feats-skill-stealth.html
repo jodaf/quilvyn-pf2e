@@ -11,17 +11,17 @@ var attributes = {
   "abilityBoosts.wisdom":1, "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", 
   "ancestryFeats.Unconventional Weaponry (Dagger)":1, "armor":"Leather", "background":"Barkeep", "class":"Rogue", 
   "classFeats.Nimble Dodge":1, "classFeats.Strong Arm":1, "deity":"Pharasma", "experience":2071, 
-  "gender":"Male", "generalFeats.Experienced Smuggler":1, "generalFeats.Foil Senses":1, 
-  "generalFeats.Legendary Sneak":1, "generalFeats.Quiet Allies":1, "generalFeats.Swift Sneak":1, 
-  "generalFeats.Terrain Stalker (Rubble)":1, "languages.Empyrean":1, "languages.Goblin":1, "languages.Kholo":1, 
-  "languages.Necril":1, "name":"Feats-Skill-Stealth", 
-  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
-  "selectableFeatures.Rogue - Thief":1, "shield":"None", "skillIncreases.Demon Lore":1, 
-  "skillIncreases.Desert Lore":1, "skillIncreases.Games Lore":1, "skillIncreases.Guild Lore":1, 
-  "skillIncreases.Heraldry Lore":1, "skillIncreases.Leshy Lore":1, "skillIncreases.Military Lore":1, 
-  "skillIncreases.Plains Lore":1, "skillIncreases.River Lore":1, "skillIncreases.Stealth":1, 
-  "skillIncreases.Theater Lore":1, "skillIncreases.Thievery":1, "weapons.Bola":1, "weapons.Hand Crossbow":1, 
-  "weapons.Sap":1
+  "gender":"Male", "generalFeats.Armored Stealth":1, "generalFeats.Experienced Smuggler":1, 
+  "generalFeats.Foil Senses":1, "generalFeats.Legendary Sneak":1, "generalFeats.Quiet Allies":1, 
+  "generalFeats.Shadow Mark":1, "generalFeats.Swift Sneak":1, "generalFeats.Terrain Stalker (Rubble)":1, 
+  "languages.Empyrean":1, "languages.Goblin":1, "languages.Kholo":1, "languages.Necril":1, 
+  "name":"Feats-Skill-Stealth", "selectableFeatures.Human - Versatile Human":1, 
+  "selectableFeatures.Rogue - Dexterity":1, "selectableFeatures.Rogue - Thief":1, "shield":"None", 
+  "skillIncreases.Demon Lore":1, "skillIncreases.Desert Lore":1, "skillIncreases.Games Lore":1, 
+  "skillIncreases.Guild Lore":1, "skillIncreases.Heraldry Lore":1, "skillIncreases.Leshy Lore":1, 
+  "skillIncreases.Military Lore":1, "skillIncreases.Plains Lore":1, "skillIncreases.River Lore":1, 
+  "skillIncreases.Stealth":1, "skillIncreases.Theater Lore":1, "skillIncreases.Thievery":1, 
+  "weapons.Bola":1, "weapons.Hand Crossbow":1, "weapons.Sap":1
 };
   </script>
 </head>
@@ -77,7 +77,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Experienced Smuggler; Foil Senses; Legendary Sneak; Nimble Dodge; Quiet Allies; Strong Arm; Swift Sneak; Terrain Stalker (Rubble); Unconventional Weaponry (Dagger)</td>
+        <td><b>Feats</b>: Armored Stealth; Experienced Smuggler; Foil Senses; Legendary Sneak; Nimble Dodge; Quiet Allies; Shadow Mark; Strong Arm; Swift Sneak; Terrain Stalker (Rubble); Unconventional Weaponry (Dagger)</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack; Thief</td>
         <td><b>Barkeep Features</b>: Attribute Boost (Choose 1 from Charisma, Constitution; Choose 1 from any); Hobnobber; Skill Trained (Diplomacy; Alcohol Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -163,6 +163,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Thief: Skill Trained (Thievery)</i></td>
     </tr><tr style="text-align:center">
+      <td>Armored Stealth: Suffers no Stealth penalty for noisy armor and reduces the penalty for non-noisy armor by 1</td>
+    </tr><tr style="text-align:center">
       <td>Experienced Smuggler: Automatically  gets at least 10 on Stealth rolls to conceal a small item</td>
     </tr><tr style="text-align:center">
       <td>Foil Senses: Automatically takes precautions against special senses when using Avoid Notice, Hide, or Sneak</td>
@@ -172,6 +174,8 @@ var attributes = {
       <td>Legendary Sneak: Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring</td>
     </tr><tr style="text-align:center">
       <td>Quiet Allies: Rolls a single Stealth check to Avoid Notice when leading a group</td>
+    </tr><tr style="text-align:center">
+      <td>Shadow Mark: Followed target suffers -2 on Perception vs. Stealth to notice</td>
     </tr><tr style="text-align:center">
       <td>Swift Sneak: Can Sneak at full Speed</td>
     </tr><tr style="text-align:center">
@@ -243,7 +247,7 @@ var attributes = {
       <tr style="text-align:center">
         <td>Foil Senses Feat: Requires level (currently 3) >= 7 and stealth rank (currently 2) >= 3</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 5 available vs. 6 allocated</td>
+        <td>General And Skill Feat Allocation: 5 available vs. 8 allocated</td>
       </tr><tr style="text-align:center">
         <td>Legendary Sneak Feat: Requires level (currently 3) >= 15, stealth rank (currently 2) >= 4 and swift sneak feature (currently 1)</td>
       </tr><tr style="text-align:center">

@@ -12,15 +12,16 @@ var attributes = {
   "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Blowgun)":1, "armor":"None", 
   "background":"Farmhand", "class":"Rogue", "classFeats.Brutal Beating":1, "classFeats.Mobility":1, 
   "deity":"Pharasma", "experience":2991, "gender":"Female", "generalFeats.Cloud Jump":1, 
-  "generalFeats.Combat Climber":1, "generalFeats.Hefty Hauler":1, "generalFeats.Powerful Leap":1, 
-  "generalFeats.Quick Climb":1, "generalFeats.Quick Jump":1, "generalFeats.Quick Swim":1, 
-  "generalFeats.Rapid Mantel":1, "generalFeats.Titan Wrestler":1, "generalFeats.Underwater Marauder":1, 
-  "languages.Elven":1, "languages.Sussuran":1, "name":"Feats-Skill-Athletics", 
-  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
-  "selectableFeatures.Rogue - Ruffian":1, "shield":"Wooden", "skillIncreases.Absalom Lore":1, 
-  "skillIncreases.Art Lore":1, "skillIncreases.Athletics":3, "skillIncreases.Circus Lore":1, 
-  "skillIncreases.Occultism":1, "skillIncreases.Plains Lore":1, "skillIncreases.Sailing Lore":1, 
-  "skillIncreases.Thievery":1, "weapons.Light Hammer":1, "weapons.Pick":1, "weapons.Sickle":1
+  "generalFeats.Combat Climber":1, "generalFeats.Hefty Hauler":1, "generalFeats.Lead Climber":1, 
+  "generalFeats.Powerful Leap":1, "generalFeats.Quick Climb":1, "generalFeats.Quick Jump":1, 
+  "generalFeats.Quick Swim":1, "generalFeats.Rapid Mantel":1, "generalFeats.Titan Wrestler":1, 
+  "generalFeats.Underwater Marauder":1, "generalFeats.Water Sprint":1, "languages.Elven":1, "languages.Sussuran":1, 
+  "name":"Feats-Skill-Athletics", "selectableFeatures.Human - Versatile Human":1, 
+  "selectableFeatures.Rogue - Dexterity":1, "selectableFeatures.Rogue - Ruffian":1, "shield":"Wooden", 
+  "skillIncreases.Absalom Lore":1, "skillIncreases.Art Lore":1, "skillIncreases.Athletics":3, 
+  "skillIncreases.Circus Lore":1, "skillIncreases.Occultism":1, "skillIncreases.Plains Lore":1, 
+  "skillIncreases.Sailing Lore":1, "skillIncreases.Thievery":1, "weapons.Light Hammer":1, "weapons.Pick":1, 
+  "weapons.Sickle":1
 };
   </script>
 </head>
@@ -64,6 +65,8 @@ var attributes = {
       <td><i>Attribute Boosts: Attribute Boost (Choose 4 from any)</i></td>
     </tr><tr style="text-align:center">
       <td><i>Hefty Hauler: +2 Encumbered Bulk/+2 Maximum Bulk</i></td>
+    </tr><tr style="text-align:center">
+      <td>Water Sprint: CanStride over water; must end on solid ground to avoid sinking</td>
     </tr></table>
 </td>
   </tr></table>
@@ -82,7 +85,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Brutal Beating; Cloud Jump; Combat Climber; Hefty Hauler; Mobility; Powerful Leap; Quick Climb; Quick Jump; Quick Swim; Rapid Mantel; Titan Wrestler; Unconventional Weaponry (Blowgun); Underwater Marauder</td>
+        <td><b>Feats</b>: Brutal Beating; Cloud Jump; Combat Climber; Hefty Hauler; Lead Climber; Mobility; Powerful Leap; Quick Climb; Quick Jump; Quick Swim; Rapid Mantel; Titan Wrestler; Unconventional Weaponry (Blowgun); Underwater Marauder; Water Sprint</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Ruffian; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack</td>
         <td><b>Farmhand Features</b>: Assurance (Athletics); Attribute Boost (Choose 1 from Constitution, Wisdom; Choose 1 from any); Skill Trained (Athletics; Farming Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -170,6 +173,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Combat Climber: Can Climb with a hand occupied, can fight while Climbing, and Climbing does not inflict flat-footed</td>
     </tr><tr style="text-align:center">
+      <td>Lead Climber: Successful Athletics check turns a ally's critical Climb failure when a following self into a normal failure; a critical failure inflicts the consequences on both</td>
+    </tr><tr style="text-align:center">
       <td>Powerful Leap: Can make 5' vertical and +5' horizontal jumps</td>
     </tr><tr style="text-align:center">
       <td>Quick Climb: Can Climb at full Speed</td>
@@ -252,11 +257,13 @@ var attributes = {
       <tr style="text-align:center">
         <td>Cloud Jump Feat: Requires level (currently 3) >= 15 and athletics rank (currently 4) >= 4</td>
       </tr><tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 5 available vs. 10 allocated</td>
+        <td>General And Skill Feat Allocation: 5 available vs. 12 allocated</td>
       </tr><tr style="text-align:center">
         <td>Quick Climb Feat: Requires level (currently 3) >= 7 and athletics rank (currently 4) >= 3</td>
       </tr><tr style="text-align:center">
         <td>Quick Swim Feat: Requires level (currently 3) >= 7 and athletics rank (currently 4) >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>Water Sprint Feat: Requires level (currently 3) >= 7 and athletics rank (currently 4) >= 3</td>
       </tr></table>
 </td>
     </tr></table>

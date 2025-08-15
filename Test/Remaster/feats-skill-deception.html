@@ -12,8 +12,9 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Unconventional Weaponry (Rapier)":1, 
   "armor":"None", "background":"Noble", "class":"Rogue", "classFeats.Nimble Dodge":1, 
   "classFeats.Unbalancing Blow":1, "deity":"Nethys", "experience":2526, "gender":"Male", 
-  "generalFeats.Charming Liar":1, "generalFeats.Confabulator":1, "generalFeats.Lengthy Diversion":1, 
-  "generalFeats.Lie To Me":1, "generalFeats.Quick Disguise":1, "generalFeats.Slippery Secrets":1, 
+  "generalFeats.Backup Disguise":1, "generalFeats.Charming Liar":1, "generalFeats.Confabulator":1, 
+  "generalFeats.Doublespeak":1, "generalFeats.Lengthy Diversion":1, "generalFeats.Lie To Me":1, 
+  "generalFeats.Quick Disguise":1, "generalFeats.Slippery Secrets":1, "generalFeats.Sow Rumor":1, 
   "languages.Elven":1, "languages.Jotun":1, "name":"Feats-Skill-Deception", 
   "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Rogue - Dexterity":1, 
   "selectableFeatures.Rogue - Thief":1, "shield":"None", "skillIncreases.Absalom Lore":1, 
@@ -76,7 +77,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Charming Liar; Confabulator; Lengthy Diversion; Lie To Me; Nimble Dodge; Quick Disguise; Slippery Secrets; Unbalancing Blow; Unconventional Weaponry (Rapier)</td>
+        <td><b>Feats</b>: Backup Disguise; Charming Liar; Confabulator; Doublespeak; Lengthy Diversion; Lie To Me; Nimble Dodge; Quick Disguise; Slippery Secrets; Sow Rumor; Unbalancing Blow; Unconventional Weaponry (Rapier)</td>
         <td><b>Rogue Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Dexterity); Attribute Boosts; Class Trained (Rogue); Defense Trained (Light Armor; Unarmored Defense); Deny Advantage; Dexterity; General Feats; Perception Expert; Rogue Feats; Rogue Key Attribute; Rogue Skills; Rogue's Racket; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Sneak Attack; Surprise Attack; Thief</td>
         <td><b>Noble Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Courtly Graces; Skill Trained (Society; Choose 1 from Genealogy Lore, Heraldry Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
@@ -158,11 +159,15 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Thief: Skill Trained (Thievery)</i></td>
     </tr><tr style="text-align:center">
+      <td>Backup Disguise: Can assume a prepared disguise with 3 actions</td>
+    </tr><tr style="text-align:center">
       <td>Charming Liar: Critical success on a Lie improves a target's attitude by 1 step once per conversation</td>
     </tr><tr style="text-align:center">
       <td>Confabulator: Reduces the bonus given to targets of Deception for previous attempts to +2</td>
     </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
+    </tr><tr style="text-align:center">
+      <td>Doublespeak: Can include in speech meanings understood only by allies and observers who critically succeed on Perception vs. Deception</td>
     </tr><tr style="text-align:center">
       <td>Lengthy Diversion: Can remain hidden after a Create A Diversion attempt critically succeeds</td>
     </tr><tr style="text-align:center">
@@ -171,6 +176,8 @@ var attributes = {
       <td>Quick Disguise: Can create a disguise in 1 min</td>
     </tr><tr style="text-align:center">
       <td>Slippery Secrets: Successful Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment</td>
+    </tr><tr style="text-align:center">
+      <td>Sow Rumor: Successful Deception spreads a rumor for 1 week, giving +1 Deception, Diplomacy, and Intimidation that invokes it; critical success gives a +2 bonus for 1 month and critical failure gives a -4 penalty for 1 week</td>
     </tr></table>
 </td>
   </tr></table>
@@ -238,7 +245,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>General And Skill Feat Allocation: 5 available vs. 6 allocated</td>
+        <td>Doublespeak Feat: Requires level (currently 3) >= 7 and deception rank (currently 2) >= 3</td>
+      </tr><tr style="text-align:center">
+        <td>General And Skill Feat Allocation: 5 available vs. 9 allocated</td>
       </tr><tr style="text-align:center">
         <td>Slippery Secrets Feat: Requires level (currently 3) >= 7 and deception rank (currently 2) >= 3</td>
       </tr></table>
