@@ -5532,16 +5532,8 @@ Pathfinder2E.FEATURES = {
   // Greater Weapon Specialization as above
   'Incredible Movement':'Section=ability Note="+%V Speed in no armor"',
   'Ki Tradition':'Section=feature Note="1 selection"',
-  'Ki Tradition (Divine)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Can learn spells from the divine tradition"',
-  'Ki Tradition (Occult)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Occult)",' +
-      '"Can learn spells from the occult tradition"',
+  'Ki Tradition (Divine)':'Section=magic Note="Spell Trained (Divine)"',
+  'Ki Tradition (Occult)':'Section=magic Note="Spell Trained (Occult)"',
   'Master Strikes':
     'Section=combat Note="Attack Master (Simple Weapons; Unarmed Attacks)"',
   'Metal Strikes':
@@ -5610,13 +5602,12 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Unarmored stance allows dragon tail attacks and Strides that ignore the first square of difficult terrain"',
-  // TODO ff tradition may be divine, rather than occult
   'Ki Rush':
     'Section=magic ' +
-    'Note="Knows the Ki Rush occult spell/Has a focus pool and 1 Focus Point"',
+    'Note="Knows the Ki Rush %V spell/Has a focus pool and 1 Focus Point"',
   'Ki Strike':
     'Section=magic ' +
-    'Note="Knows the Ki Strike occult spell/Has a focus pool and 1 Focus Point"',
+    'Note="Knows the Ki Strike %V spell/Has a focus pool and 1 Focus Point"',
   'Monastic Weaponry':
     'Section=combat,combat ' +
     'Note=' +
@@ -5670,10 +5661,9 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Makes a melee Strike on an adjacent moving foe"',
   'Wholeness Of Body':
-    'Section=magic ' +
-    'Note="Knows the Wholeness Of Body occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Wholeness Of Body %V spell/+1 Focus Points"',
   'Abundant Step':
-    'Section=magic Note="Knows the Abundant Step occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Abundant Step %V spell/+1 Focus Points"',
   'Crane Flutter':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -5682,8 +5672,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="R15\' Bellow while in Dragon Stance inflicts frightened 1 on foes once per 1d4 rd, and affected adjacent foes cannot reduce their frightened value below 1 (<b>save Will</b> vs. Intimidation negates; critical failure inflicts frightened 2); the first successful Strike before the end of the next turn on a frightened foe inflicts +4 HP"',
-  'Ki Blast':
-    'Section=magic Note="Knows the Ki Blast occult spell/+1 Focus Points"',
+  'Ki Blast':'Section=magic Note="Knows the Ki Blast %V spell/+1 Focus Points"',
   'Mountain Stronghold':
     'Action=1 ' +
     'Section=combat ' +
@@ -5720,8 +5709,7 @@ Pathfinder2E.FEATURES = {
     'Note="Unarmored stance prevents foes from moving away (<b>save Reflex, Acrobatics, or Athletics</b> negates) and allows lashing branch attacks"',
   'Wall Run':'Action=1 Section=ability Note="Strides on vertical surfaces"',
   'Wild Winds Initiate':
-    'Section=magic ' +
-    'Note="Knows the Wild Winds Stance occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Wild Winds Stance %V spell/+1 Focus Points"',
   'Knockback Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5731,7 +5719,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Successful grapple also inflicts clumsy 1 until the end of the target\'s next turn, or unconscious for 1 min with a critical success"',
   'Wind Jump':
-    'Section=magic Note="Knows the Wind Jump occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Wind Jump %V spell/+1 Focus Points"',
   'Winding Flow':
     'Action=1 ' +
     'Section=combat ' +
@@ -5776,8 +5764,7 @@ Pathfinder2E.FEATURES = {
     'Action=Free ' +
     'Section=combat Note="Enters a stance at the beginning of a turn"',
   'Quivering Palm':
-    'Section=magic ' +
-    'Note="Knows the Quivering Palm occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Quivering Palm %V spell/+1 Focus Points"',
   'Shattering Strike':
     'Action=2 ' +
     'Section=combat ' +
@@ -5786,7 +5773,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Unarmed Strikes gain the forceful trait or increase damage by 1 die step"',
   'Empty Body':
-    'Section=magic Note="Knows the Empty Body occult spell/+1 Focus Points"',
+    'Section=magic Note="Knows the Empty Body %V spell/+1 Focus Points"',
   'Meditative Wellspring':
     'Section=magic Note="Refocus restores 3 Focus Points"',
   'Swift River':
@@ -13907,12 +13894,14 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'featureNotes.secondPathToPerfection', '+', '1'
     );
     rules.defineRule('magicNotes.gracefulLegend',
-      'features.Ki Tradition (Divine)', '=', '"Divine"',
-      'features.Ki Tradition (Occult)', '=', '"Occult"'
+      'monkTradition', '=', 'source.charAt(0).toUpperCase() + source.substring(1)'
     );
     rules.defineRule('magicNotes.monkExpertise',
-      'features.Ki Tradition (Divine)', '=', '"Divine"',
-      'features.Ki Tradition (Occult)', '=', '"Occult"'
+      'monkTradition', '=', 'source.charAt(0).toUpperCase() + source.substring(1)'
+    );
+    rules.defineRule('monkTradition',
+      'features.Ki Tradition (Divine)', '=', '"divine"',
+      'features.Ki Tradition (Occult)', '=', '"occult"'
     );
     rules.defineRule('selectableFeatureCount.Monk (Ki Tradition)',
       'featureNotes.kiTradition', '=', null
@@ -14402,7 +14391,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
-  if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
+  if(name == 'Abundant Step') {
+    rules.defineRule('magicNotes.abundantStep', 'monkTradition', '=', null);
+  } else if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {
     rules.defineRule('skillNotes.' + prefix,
       'level', '=', 'source<3 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
     );
@@ -14722,6 +14713,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'featureNotes.elfAtavism', '+', '1'
       );
     });
+  } else if(name == 'Empty Body') {
+    rules.defineRule('magicNotes.emptyBody', 'monkTradition', '=', null);
   } else if(name == 'Expert Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
@@ -14815,9 +14808,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('weapons.Iron Sweep', 'features.Ironblood Stance', '=', '1');
+  } else if(name == 'Ki Blast') {
+    rules.defineRule('magicNotes.kiBlast', 'monkTradition', '=', null);
   } else if(name == 'Ki Rush') {
+    rules.defineRule('magicNotes.kiRush', 'monkTradition', '=', null);
     rules.defineRule('features.Ki Spells', 'features.Ki Rush', '=', '1');
   } else if(name == 'Ki Strike') {
+    rules.defineRule('magicNotes.kiStrike', 'monkTradition', '=', null);
     rules.defineRule('features.Ki Spells', 'features.Ki Strike', '=', '1');
   } else if(name == 'Master Alchemy') {
     rules.defineRule
@@ -14897,6 +14894,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'features.' + o, '=', '1'
       );
     });
+  } else if(name == 'Quivering Palm') {
+    rules.defineRule('magicNotes.quiveringPalm', 'monkTradition', '=', null);
   } else if(name.match(/^Radiant Blade (Master|Spirit)$/)) {
     rules.defineRule('combatNotes.bladeAlly',
       'combatNotes.' + prefix, '=', 'null' // italics
@@ -15012,13 +15011,19 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     );
     rules.defineRule
       ('features.Unconventional Weaponry', 'features.' + name, '=', '1');
+  } else if(name == 'Wholeness Of Body') {
+    rules.defineRule('magicNotes.wholenessOfBody', 'monkTradition', '=', null);
   } else if(name == 'Wild Winds Initiate') {
+    rules.defineRule
+      ('magicNotes.wildWindsInitiate', 'monkTradition', '=', null);
     Pathfinder2E.weaponRules(
       rules, 'Wind Crash', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
       ['Agile', 'Nonlethal', 'Propulsive', 'Unarmed'], 30
     );
     rules.defineRule
       ('weapons.Wind Crash', 'features.Wild Winds Initiate', '=', '1');
+  } else if(name == 'Wind Jump') {
+    rules.defineRule('magicNotes.windJump', 'monkTradition', '=', null);
   } else if(name == 'Wizard Dedication') {
     rules.defineRule('spellModifier.' + name,
       'magicNotes.wizardDedication', '?', null,
