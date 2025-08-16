@@ -1098,7 +1098,7 @@ Pathfinder2E.FEATS = {
   'Titan Slinger':'Traits=Halfling',
   'Unfettered Halfling':'Traits=Halfling',
   'Watchful Halfling':'Traits=Halfling',
-  // TODO Remove Halfling from the list
+  // Note: Cultural Adaptability (Halfling) seems useless but not forbidden
   'Cultural Adaptability (%ancestry)':'Traits=Halfling Require="level >= 5"',
   'Halfling Weapon Trickster':
     'Traits=Halfling ' +
@@ -3110,7 +3110,6 @@ Pathfinder2E.FEATURES = {
     'Note="Has R30\' imprecise scent; can use it to gain +2 Perception to locate a creature"',
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
-  // TODO changes innate spell tradition from primal to chosen wellspring
   'Wellspring Gnome (Arcane)':
     'Section=magic ' +
     'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
@@ -3131,7 +3130,7 @@ Pathfinder2E.FEATURES = {
       '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation"',
   'First World Magic':
     'Section=magic ' +
-    'Note="Can cast a chosen primal cantrip as an innate spell at will"',
+    'Note="Can cast a chosen %{gnomeTradition} cantrip as an innate spell at will"',
   'Gnome Obsession':
     'Section=skill ' +
     // NOTE: would like to replace "background Lore skill" with the actual
@@ -3160,7 +3159,7 @@ Pathfinder2E.FEATURES = {
     'Note="Critical hits with a glaive, kukri, or gnome weapon inflict its critical specialization effect"',
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Faerie Fire and Invisibility primal spells; can cast each once per day"',
+     'Note="Knows the Faerie Fire and Invisibility %V innate spells; can cast each once per day"',
   'Vivacious Conduit':
     'Section=combat ' +
     'Note="10 min rest restores %{constitutionModifier*(level/2)//1} HP"',
@@ -13150,6 +13149,7 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
   if(name == 'Dwarf') {
     rules.defineRule('weapons.Clan Dagger', 'features.Clan Dagger', '=', '1');
   } else if(name == 'Gnome') {
+    rules.defineRule('gnomeTradition', 'gnomeLevel', '=', '"primal"');
     rules.defineRule('selectableFeatureCount.Gnome (Wellspring)',
       'featureNotes.wellspringGnome', '=', '1'
     );
@@ -13157,6 +13157,9 @@ Pathfinder2E.ancestryRulesExtra = function(rules, name) {
       rules.defineRule('features.Wellspring Gnome (' + t + ')',
         'features.Wellspring Gnome', '?', null,
         'features.' + t + ' Wellspring', '=', '1'
+      );
+      rules.defineRule('gnomeTradition',
+        'features.Wellspring Gnome (' + t + ')', '=', '"' + t.toLowerCase() + '"'
       );
     });
   } else if(name == 'Goblin') {
@@ -14766,6 +14769,8 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
         'features.Fighter Dedication', '+', '1'
       );
     });
+  } else if(name == 'First World Adept') {
+    rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
@@ -15244,7 +15249,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             rules.defineRule('features.' + f, note, '=', '1');
         });
       }
-      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal)\s+(innate\s)?(cantrip|hex|spell)s?($|;)/);
+      matchInfo = n.match(/^Knows\s+the\s+(.*)\s+(arcane|divine|occult|primal|%V)\s+(innate\s)?(cantrip|hex|spell)s?($|;)/);
       if(matchInfo) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
@@ -15266,17 +15271,23 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
               matchInfo[2].charAt(0).toUpperCase() + matchInfo[2].substring(1);
             let isCantrip = spellTraits.includes('Cantrip');
             let isFocus = spellTraits.includes('Focus');
-            let spellName =
-              s + ' (' + spellTrad.charAt(0) + (isCantrip ? 'C' : '') + spellLevel + (isFocus ? ' Foc' : '') + (spellSchool ? ' ' + spellSchool.substring(0, 3) : '') + ')';
-            rules.defineRule('spells.' + spellName, note, '=', '1');
-            Pathfinder2E.spellRules(rules, spellName,
-              spellSchool,
-              spellLevel,
-              spellTrad,
-              QuilvynUtils.getAttrValue(spellAttrs, 'Cast'),
-              QuilvynUtils.getAttrValueArray(spellAttrs, 'Traits'),
-              QuilvynUtils.getAttrValue(spellAttrs, 'Description').replaceAll('%tradition', spellTrad)
-            );
+            for(let t in {'Arcane':'', 'Divine':'', 'Occult':'', 'Primal':''}) {
+              if(spellTrad != '%V' && spellTrad != t)
+                continue;
+              let spellName =
+                s + ' (' + t.charAt(0) + (isCantrip ? 'C' : '') + spellLevel + (isFocus ? ' Foc' : '') + (spellSchool ? ' ' + spellSchool.substring(0, 3) : '') + ')';
+              Pathfinder2E.spellRules(rules, spellName,
+                spellSchool,
+                spellLevel,
+                t,
+                QuilvynUtils.getAttrValue(spellAttrs, 'Cast'),
+                QuilvynUtils.getAttrValueArray(spellAttrs, 'Traits'),
+                QuilvynUtils.getAttrValue(spellAttrs, 'Description').replaceAll('%tradition', t)
+              );
+              rules.defineRule('spells.' + spellName,
+                note, '=', spellTrad == '%V' ? 'source=="' + t.toLowerCase() + '" ? 1 : null' : '1'
+              );
+            }
           }
         });
       }
