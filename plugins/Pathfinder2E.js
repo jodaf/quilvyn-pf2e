@@ -540,7 +540,7 @@ Pathfinder2E.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Occult)",' +
-      '"1:Occult Spellcasting","1:Composition Spells","1:Muses",' +
+      '"1:Occult Spellcasting","1:Composition Spells","1:Muse",' +
       '"2:Bard Feats","2:Skill Feats","3:General Feats",' +
       '"3:Lightning Reflexes","3:Signature Spells","3:Skill Increases",' +
       '"7:Expert Spellcaster","9:Great Fortitude","9:Resolve",' +
@@ -3643,7 +3643,7 @@ Pathfinder2E.FEATURES = {
       '"Critical hits with a melee weapon or unarmed attack inflict its critical specialization effect during rage"',
   'Deny Advantage':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
+    'Note="Does not suffer flat-footed vs. hidden, undetected, flanking, or surprising foes of up to level %{level}"',
   'Devastator':
     'Section=combat,combat ' +
     'Note=' +
@@ -3703,7 +3703,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Has increased Instinct Ability Rage effects"',
   'Spirit Rage':
     'Section=combat ' +
-    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i>, instead of +%{combatNotes.rage} HP weapon damage during rage"',
+    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i> effects, instead of +%{combatNotes.rage} HP weapon damage during rage"',
   'Titan Mauler':
     'Section=combat ' +
     'Note="Can use weapons made for a larger creature, suffering clumsy 1 and gaining +%{combatNotes.greaterWeaponSpecialization?18:combatNotes.specializationAbility?10:6} HP weapon damage, instead of gaining +%{combatNotes.rage} HP weapon damage during rage"',
@@ -3930,7 +3930,7 @@ Pathfinder2E.FEATURES = {
       '"Knows the Soothe occult spell"',
   'Magnum Opus':'Section=magic Note="Knows 2 10th-level occult spells"',
   'Master Spellcaster':'Section=magic Note="Spell Master (%V)"',
-  'Muses':'Section=feature Note="1 selection"',
+  'Muse':'Section=feature Note="1 selection"',
   'Occult Spellcasting':
     'Section=magic Note="Can learn spells from the occult tradition"',
   'Polymath':
@@ -6847,7 +6847,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Trained (Alchemical Bombs)/Class Trained (Alchemist)",' +
       '"Has the Alchemical Crafting and Infused Reagents features",' +
-      '"Skill Trained (Crafting)"',
+      '"Skill Trained (Crafting)/Knows the formulas for 4 additional 1st-level alchemical items"',
   'Basic Concoction':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
   // Quick Alchemy as above
@@ -6914,7 +6914,7 @@ Pathfinder2E.FEATURES = {
   'Bard Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Muses feature",' +
+      '"Has the Muse feature",' +
       '"Spell Trained (Occult)/Knows 2 occult cantrips",' +
       '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':
@@ -7016,9 +7016,10 @@ Pathfinder2E.FEATURES = {
     'Note="Spell Master (Primal)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} primal spell"',
 
   'Fighter Dedication':
-    'Section=combat,skill ' +
+    'Section=combat,feature,skill ' +
     'Note=' +
       '"Attack Trained (Simple Weapons; Martial Weapons)/Class Trained (Fighter)",' +
+      '"Has the Fighter Key Ability feature",' +
       '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
   'Basic Maneuver':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level fighter)"',
@@ -7034,7 +7035,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Attack Trained (Unarmed Attacks)/Class Trained (Monk)",' +
-      '"Has the Powerful Fist feature",' +
+      '"Has the Powerful Fist and Monk Key Ability features",' +
       '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
   'Basic Kata':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level monk)"',
@@ -7224,7 +7225,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill,skill ' +
     'Note=' +
       '"Has the Formula Book feature",' +
-      '"Knows the formulas for 4 common 1st-level alchemical items",' +
+      '"Knows the formulas for at least 4 common 1st-level alchemical items",' +
       '"Can use Crafting to create alchemical items"',
   'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
   'Arcane Sense':
@@ -13625,6 +13626,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule('advancedAlchemyLevel', classLevel, '=', null);
     rules.defineRule('skillNotes.formulaBook',
       'skillNotes.alchemicalCrafting', '=', '4',
+      'skillNotes.alchemistDedication', '+', '4',
       'levels.Alchemist', '+', 'source * 2',
       'skillNotes.bomber', '+', '2',
       'skillNotes.chirurgeon', '+', '2',
@@ -13694,7 +13696,7 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', classLevel, '=', '"Occult"');
     rules.defineRule
-      ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muses', '=', '1');
+      ('selectableFeatureCount.Bard (Muse)', 'featureNotes.muse', '=', '1');
     rules.defineRule
       ('skillNotes.bardSkills', 'intelligenceModifier', '=', '4 + source');
     rules.defineRule
@@ -14502,6 +14504,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       );
     });
   } else if((matchInfo = name.match(/^([\w\s]+) Resiliency$/)) != null) {
+    // TODO Count only specific class dedication feats, not all archetype feats
     let c = matchInfo[1];
     rules.defineRule('combatNotes.' + c.toLowerCase() + 'Resiliency',
       'sumArchetypeFeats', '=', 'source * 3'
@@ -14756,15 +14759,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
       Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Fighter (Key Ability)'))
+      .filter(x => allSelectables[x].includes('Fighter (Key'))
       .map(x => x.replace('Fighter - ', ''));
     abilities.forEach(a => {
       rules.defineRule('validationNotes.fighter-' + a + 'SelectableFeature',
         'features.Fighter Dedication', '+', '1'
       );
     });
-    rules.defineRule
-      ('features.Fighter Key Ability', 'features.Fighter Dedication', '=', '1');
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
@@ -14834,15 +14835,13 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     let allSelectables = rules.getChoices('selectableFeatures');
     let abilities =
       Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Monk (Key Ability)'))
+      .filter(x => allSelectables[x].includes('Monk (Key'))
       .map(x => x.replace('Monk - ', ''));
     abilities.forEach(a => {
       rules.defineRule('validationNotes.monk-' + a + 'SelectableFeature',
         'features.Monk Dedication', '+', '1'
       );
     });
-    rules.defineRule
-      ('features.Monk Key Ability', 'features.Monk Dedication', '=', '1');
   } else if(name == 'Monk Moves') {
     rules.defineRule('abilityNotes.monkMoves.1',
       'abilityNotes.monkMoves', '=', '10',
@@ -15567,9 +15566,9 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle', 'Ranger', 'Sanctified',
-  'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy', 'Vitality', 'Void',
-  'Witch', 'Wood'
+  'Archetype', 'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle', 'Ranger',
+  'Sanctified', 'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy',
+  'Vitality', 'Void', 'Witch', 'Wood'
 ];
 
 /*
