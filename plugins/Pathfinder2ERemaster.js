@@ -1351,8 +1351,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Gnome,Concentrate,Illusion,Primal,Visual Require="level >= 5"',
   // TODO requires "at least one arcane or occult innate spell gained from a
   // gnome heritage or gnome ancestry feat"
-  'Cautious Curiosity (Arcane)':'Traits=Gnome Require="level >= 9"',
-  'Cautious Curiosity (Occult)':'Traits=Gnome Require="level >= 9"',
+  'Cautious Curiosity':'Traits=Gnome Require="level >= 9"',
   'First World Adept':Pathfinder2E.FEATS['First World Adept'],
   'Life Leap':'Traits=Gnome,Move,Teleportation Require="level >= 9"',
   'Vivacious Conduit':Pathfinder2E.FEATS['Vivacious Conduit'],
@@ -2298,7 +2297,8 @@ Pathfinder2ERemaster.FEATS = {
   'Slam Down':Pathfinder2E.FEATS.Knockdown,
   'Swipe':Pathfinder2E.FEATS.Swipe,
   'Twin Parry':Pathfinder2E.FEATS['Twin Parry'],
-  'Advanced Weapon Training':Pathfinder2E.FEATS['Advanced Weapon Training'],
+  'Advanced Weapon Training (%weaponGroup)':
+    Pathfinder2E.FEATS['Advanced Weapon Training (%weaponGroup)'],
   'Advantageous Assault':Pathfinder2E.FEATS['Advantageous Assault'],
   'Dazing Blow':'Traits=Fighter,Press Require="level >= 6"',
   'Disarming Stance':Pathfinder2E.FEATS['Disarming Stance'],
@@ -5046,16 +5046,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=1 ' +
     'Section=magic ' +
     'Note="Places an illusion of normal clothing over self armor"',
-  'Cautious Curiosity (Arcane)':
+  'Cautious Curiosity':
     'Section=magic ' +
-    'Note="Knows the Disguise Magic and Silence arcane innate spells; can cast each on self at 2nd rank once per day"',
-  'Cautious Curiosity (Occult)':
-    'Section=magic ' +
-    'Note="Knows the Disguise Magic and Silence occult innate spells; can cast each on self at 2nd rank once per day"',
+    'Note="Knows the Disguise Magic and Silence %V innate spells; can cast each on self at 2nd rank once per day"',
   // Changed
   'First World Adept':
     'Section=magic ' +
-     'Note="Knows the Invisibility and Revealing Light primal innate spells; can cast each at 2nd rank once per day"',
+     'Note="Knows the Invisibility and Revealing Light %V innate spells; can cast each at 2nd rank once per day"',
   'Life Leap':
     'Action=1 ' +
     'Section=magic ' +
@@ -5067,7 +5064,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Forces a DC 10 flat check on an attacking foe once per hr; failure negates the attack"',
   'Homeward Bound':
     'Section=magic ' +
-    'Note="Knows the Interplanar Teleport primal innate spell; can use it twice per week to travel to and from the First World"',
+    'Note="Knows the Interplanar Teleport %V innate spell; can use it twice per week to travel to and from the First World"',
 
   // Goblin
   'Charhide Goblin':Pathfinder2E.FEATURES['Charhide Goblin'],
@@ -7621,7 +7618,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Slam Down':Pathfinder2E.FEATURES.Knockdown,
   'Swipe':Pathfinder2E.FEATURES.Swipe,
   'Twin Parry':Pathfinder2E.FEATURES['Twin Parry'],
-  'Advanced Weapon Training':Pathfinder2E.FEATURES['Advanced Weapon Training'],
+  'Advanced Weapon Training (%weaponGroup)':
+    Pathfinder2E.FEATURES['Advanced Weapon Training (%weaponGroup)'],
   'Advantageous Assault':Pathfinder2E.FEATURES['Advantageous Assault'],
   'Dazing Blow':
     'Action=1 ' +
@@ -11831,6 +11829,138 @@ Pathfinder2ERemaster.FEATURES = {
   'Poultice Preparation':
   'Advanced Herbalism':
   'Endemic Herbs':
+
+  'Linguist Dedication':
+  'Multilingual Cipher':
+  'Phonetic Training':
+  'Spot Translate':
+  'Analyze Idiolect':
+  'Read Shibboleths':
+  'Crude Communication':
+
+  'Marshal Dedication':
+  'Dread Marshal Stance':
+  'Inspiring Marshal Stance':
+  'Snap Out Of It!':
+  'Steel Yourself!':
+  'Cadence Call':
+  'Rallying Charge':
+  'Back To Back':
+  'To Battle!':
+  'Topple Foe':
+  'Coordinated Charge':
+  'Tactical Cadence':
+  'Target Of Opportunity':
+
+  'Martial Artist Dedication':
+  'Follow-Up Strike':
+  'Grievous Blow':
+  'Path Of Iron':
+
+  'Mauler Dedication':
+  'Clear The Way':
+  'Shoving Sweep':
+  'Hammer Quake':
+  'Avalanche Strike':
+
+  'Medic Dedication':
+  "Doctor's Visitation":
+  'Treat Condition':
+  'Holistic Care':
+  'Resuscitate':
+
+  'Pirate Dedication':
+  'Pirate Combat Training':
+  'Rope Runner':
+  'Walk The Plank':
+
+  'Poisoner Dedication':
+  "Poisoner's Twist":
+  'Advanced Poisoncraft':
+  'Poison Coat':
+  'Acquired Tolerance':
+  'Chemical Contagion':
+
+  'Ritualist Dedication':
+  'Flexible Ritualist':
+  'Resourceful Ritualist':
+  'Efficient Rituals':
+  'Assured Ritualist':
+  'Enterprising Ritualist':
+
+  'Scout Dedication':
+  "Scout's Charge":
+  'Terrain Scout':
+  'Fleeting Shadow':
+  "Scout's Speed":
+  "Scout's Pounce":
+
+  'Scroll Trickster Dedication':
+  'Basic Scroll Cache':
+  'Skim Scroll':
+  'Expert Scroll Cache':
+  'Master Scroll Cache':
+
+  'Scrounger Dedication':
+  'Reverse Engineering':
+  'Magical Scrounger':
+  'Expert Disassembly':
+
+  'Sentinel Dedication':
+  'Steel Skin':
+  'Armor Specialist':
+  'Armored Rebuff':
+  'Mighty Bulwark':
+
+  'Snarecrafter Dedication':
+  'Surprise Snare':
+  'Remote Trigger':
+  'Giant Snare':
+  'Lightning Snares':
+  'Plentiful Snares':
+
+  'Talisman Dabbler Dedication':
+  'Quick Fix':
+  'Deeper Dabbler':
+  'Talismanic Sage':
+
+  'Vigilante Dedication':
+  'Hidden Magic':
+  'Minion Guise':
+  'Safe House':
+  'Social Purview':
+  'Startling Appearance':
+  'Quick Change':
+  'Subjective Truth':
+  'Many Guises':
+  'Frightening Appearance':
+  'Stunning Appearance':
+
+  'Viking Dedication':
+  'Hurling Charge':
+  'Viking Weapon Familiarity':
+  'Second Shield':
+  'Into The Fray':
+
+  'Weapon Improviser Dedication':
+  'Improvised Pummel':
+  'Surprise Strike':
+  'Improvised Critical':
+  'Makeshift Strike':
+  'Shattering Strike (Weapon Improviser)':
+
+  'Wrestler Dedication':
+  'Disengaging Twist':
+  'Elbow Breaker':
+  'Suplex':
+  'Clinch Strike':
+  'Running Tackle':
+  'Strangle':
+  'Submission Hold':
+  'Aerial Piledriver':
+  'Spinebreaker':
+  'Inescapable Grasp':
+
 */
 
   // General and Skill
@@ -15346,18 +15476,23 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       if(!isFocus)
         rules.addChoice('spells', spellName, attrs);
     });
-  } else if(type == 'Weapon')
+  } else if(type == 'Weapon') {
+    let group = QuilvynUtils.getAttrValue(attrs, 'Group');
     Pathfinder2ERemaster.weaponRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
       QuilvynUtils.getAttrValue(attrs, 'Price'),
       QuilvynUtils.getAttrValue(attrs, 'Damage'),
       QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Hands'),
-      QuilvynUtils.getAttrValue(attrs, 'Group'),
+      group,
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
       QuilvynUtils.getAttrValue(attrs, 'Range')
     );
-  else {
+    group =
+      group == 'Knife' ? 'Knives' :
+      group == 'Brawling' ? 'Brawling Weapons' : (group + 's');
+    rules.addChoice('weaponGroups', group, '');
+  } else {
     console.log('Unknown choice type "' + type + '"');
     return;
   }
@@ -16041,6 +16176,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         'magicNotes.cackle', '=', 'source=="' + t + '" ? 1 : null'
       );
     });
+  } else if(name == 'Cautious Curiosity') {
+    rules.defineRule
+      ('magicNotes.cautiousCuriosity', 'gnomeTradition', '=', null);
   } else if(name.match(/^(Champion|Cleric) Dedication$/)) {
     let c = name.startsWith('Champion') ? 'Champion' : 'Cleric';
     // Suppress validation errors for selected sanctification
@@ -16259,6 +16397,10 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
   } else if(name == 'Hag Claws') {
     // No mods needed to base Claw attributes
     rules.defineRule('weapons.Claws', 'combatNotes.hagClaws', '=', '1');
+  } else if(name == 'Harmonize Self') {
+    rules.defineRule('magicNotes.harmonizeSelf', 'monkTradition', '=', null);
+  } else if(name == 'Homeward Bound') {
+    rules.defineRule('magicNotes.homewardBound', 'gnomeTradition', '=', null);
   } else if(name.match(/^(Improved|Supreme) Invigorating Elixir/)) {
     rules.defineRule('skillNotes.invigoratingElixir',
       'skillNotes.' + prefix, '=', 'null' // italics
