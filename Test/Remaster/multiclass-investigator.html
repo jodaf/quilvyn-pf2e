@@ -14,11 +14,12 @@ var attributes = {
   "classFeats.Advanced Deduction":1, "classFeats.Aggressive Block":1, "classFeats.Basic Deduction":1, 
   "classFeats.Brutish Shove":1, "classFeats.Combat Assessment":1, "classFeats.Double Slice":1, 
   "classFeats.Intimidating Strike":1, "classFeats.Investigator Dedication":1, 
-  "classFeats.Investigator's Strategem":1, "classFeats.Keen Recollection":1, "classFeats.Lunge":1, 
-  "classFeats.Master Spotter":1, "classFeats.Parting Shot":1, "classFeats.Point Blank Stance":1, 
-  "classFeats.Skill Mastery":1, "classFeats.Twin Parry":1, "classFeats.Vicious Swing":1, "deity":"Pharasma", 
-  "experience":4368, "gender":"Male", "generalFeats.Additional Lore (Games Lore)":1, 
-  "generalFeats.Additional Lore (Giant Lore)":1, "generalFeats.Assurance (Absalom Lore)":1, "generalFeats.Feather Step":1, 
+  "classFeats.Investigator's Stratagem":1, "classFeats.Investigator's Strategem":1, "classFeats.Keen Recollection":1, 
+  "classFeats.Lunge":1, "classFeats.Master Spotter":1, "classFeats.Parting Shot":1, 
+  "classFeats.Point Blank Stance":1, "classFeats.Skill Mastery":1, "classFeats.Twin Parry":1, 
+  "classFeats.Vicious Swing":1, "deity":"Pharasma", "experience":4368, "gender":"Male", 
+  "generalFeats.Additional Lore (Games Lore)":1, "generalFeats.Additional Lore (Giant Lore)":1, 
+  "generalFeats.Assurance (Absalom Lore)":1, "generalFeats.Feather Step":1, 
   "generalFeats.Skill Training (Aquatic Lore)":1, "languages.Jotun":1, "languages.Kelish":1, "languages.Varisian":1, 
   "name":"Multiclass-Investigator", "selectableFeatures.Barbarian - Spirit Instinct":1, 
   "selectableFeatures.Fighter - Bombs":1, "selectableFeatures.Fighter - Strength":1, 
@@ -88,7 +89,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Deduction; Aggressive Block; Assurance (Absalom Lore); Basic Deduction; Brutish Shove; Combat Assessment; Double Slice; Feather Step; Intimidating Strike; Investigator Dedication; Keen Recollection; Lunge; Master Spotter; Parting Shot; Point Blank Stance; Sense Allies; Skill Mastery; Skill Training (Aquatic Lore); Twin Parry; Unconventional Weaponry (Lance); Vicious Swing</td>
+        <td><b>Feats</b>: Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Deduction; Aggressive Block; Assurance (Absalom Lore); Basic Deduction; Brutish Shove; Combat Assessment; Double Slice; Feather Step; Intimidating Strike; Investigator Dedication; Investigator's Stratagem; Keen Recollection; Lunge; Master Spotter; Parting Shot; Point Blank Stance; Sense Allies; Skill Mastery; Skill Training (Aquatic Lore); Twin Parry; Unconventional Weaponry (Lance); Vicious Swing</td>
         <td><b>Barbarian Features</b>: Spirit Instinct</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bombs; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
@@ -104,6 +105,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Basic Deduction: +1 Class Feat (1st- or 2nd-level investigator)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Devise A Stratagem: Has the Attack Stratagem and Skill Stratagem features</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Fighter Feats: 3 selections</i></td>
       </tr><tr style="text-align:center">
         <td><i>Fighter Key Attribute: 1 selection</i></td>
@@ -116,6 +119,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Investigator Dedication: Has the On The Case feature</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Investigator's Stratagem: Has the Devise A Stratagem feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>On The Case: Has the Clue In and Pursue A Lead features</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 2 selections</i></td>
@@ -123,6 +128,8 @@ var attributes = {
         <td><i>Skill Mastery: +1 Skill Feat</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: +1 General Feat</i></td>
+      </tr><tr style="text-align:center">
+        <td>Devise A Stratagem: Can use  Attack Stratagem or Skill Stratagem once per rd</td>
       </tr></table>
 </td>
     </tr></table>
@@ -206,6 +213,8 @@ var attributes = {
       <td>Pursue A Lead: Can use 1 min examining a detail to detect a deeper mystery; success allows opening an investigation and gives +1 on later Perception and skill checks when attempting to answer a central question about it</td>
     </tr><tr style="text-align:center">
       <td>Sense Allies: R60' Willing undetected allies are hidden instead and may be targeted with a DC 5 flat check</td>
+    </tr><tr style="text-align:center">
+      <td>Skill Stratagem: <b>(1)</b> Refrains from attacking a chosen creature to gain +1 on the next intelligence-, wisdom-, or charisma-based skill or Perception check involving it before the start of the next turn</td>
     </tr></table>
 </td>
   </tr></table>
@@ -248,6 +257,8 @@ var attributes = {
         <td><i>Unconventional Weaponry (Lance): Weapon Familiarity (Lance)</i></td>
       </tr><tr style="text-align:center">
         <td>Aggressive Block: <b>(F)</b> Shield Block moves foe 5' or inflicts off-guard (foe's choice)</td>
+      </tr><tr style="text-align:center">
+        <td>Attack Stratagem: <b>(1)</b> Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Brutish Shove: <b>(1)</b> Two-handed melee Strike inflicts off-guard until the end of the turn; success also allows an automatic Shove</td>
       </tr><tr style="text-align:center">
@@ -305,7 +316,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Barbarian-Spirit Instinct Selectable Feature: Requires barbarian level</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 5 available vs. 16 allocated</td>
+        <td>Class Feats Allocation: 5 available vs. 17 allocated</td>
       </tr><tr style="text-align:center">
         <td>Keen Recollection Feat: Requires level (currently 5) >= 6 and investigator dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">

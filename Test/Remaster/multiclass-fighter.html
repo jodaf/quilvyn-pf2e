@@ -17,11 +17,11 @@ var attributes = {
   "generalFeats.Additional Lore (Absalom Lore)":1, "generalFeats.Additional Lore (Games Lore)":1, 
   "generalFeats.Additional Lore (Giant Lore)":1, "generalFeats.Feather Step":1, "generalFeats.Fleet":1, 
   "generalFeats.Skill Training (Architecture Lore)":1, "languages.Draconic":1, "languages.Jotun":1, "languages.Kelish":1, 
-  "name":"Multiclass-Fighter", "selectableFeatures.Human - Versatile Human":1, 
-  "selectableFeatures.Investigator - Interrogation":1, "shield":"Steel", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Crafting":1, "skillIncreases.Engineering Lore":1, "skillIncreases.Iomedae Lore":1, 
-  "skillIncreases.Kobold Lore":1, "skillIncreases.Nature":3, "skillIncreases.Occultism":3, "weapons.Bola":1, 
-  "weapons.Light Mace":1, "weapons.Main-gauche":1
+  "name":"Multiclass-Fighter", "selectableFeatures.Fighter - Strength":1, 
+  "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Investigator - Interrogation":1, "shield":"Steel", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Crafting":1, "skillIncreases.Engineering Lore":1, 
+  "skillIncreases.Iomedae Lore":1, "skillIncreases.Kobold Lore":1, "skillIncreases.Nature":3, 
+  "skillIncreases.Occultism":3, "weapons.Bola":1, "weapons.Light Mace":1, "weapons.Main-gauche":1
 };
   </script>
 </head>
@@ -81,7 +81,7 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 2; Class: 5; General: 2; Skill: 4</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage); Investigator (Methodology)</td>
+        <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Human (Heritage); Investigator (Methodology)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -89,6 +89,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Absalom Lore); Additional Lore (Games Lore); Additional Lore (Giant Lore); Advanced Maneuver; Basic Maneuver; Diverse Weapon Expert; Feather Step; Fighter Dedication; Fighter Resiliency; Fleet; Reactive Striker; Sense Allies; Skill Training (Architecture Lore); Unconventional Weaponry (Bo Staff)</td>
         <td><b>Investigator Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Investigator); Clue In; Defense Trained (Light Armor; Unarmored Defense); Devise A Stratagem; General Feats; Interrogation; Investigator Feats; Investigator Skills; Keen Recollection; Methodology; On The Case; Perception Expert; Save Expert (Reflex; Will); Save Trained (Fortitude); Skill Feats; Skill Increases; Skillful Lessons; Strategic Strike; Weapon Expertise</td>
+        <td><b>Fighter Features</b>: Strength</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -103,6 +104,10 @@ var attributes = {
         <td><i>Basic Maneuver: +1 Class Feat (1st- or 2nd-level fighter)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Devise A Stratagem: Has the Attack Stratagem and Skill Stratagem features</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Fighter Dedication: Has the Fighter Key Attribute feature</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Fighter Key Attribute: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>General Feats: 1 selections</i></td>
       </tr><tr style="text-align:center">
@@ -225,7 +230,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Hit Points</b>: 76</td>
         <td><b>Armor Class</b>: 15 (dexterity (1 max); untrained)</td>
-        <td><b>Class DC</b>: Fighter: 2 (%1; %2); Investigator: 19 (intelligence; trained)</td>
+        <td><b>Class DC</b>: Fighter: 14 (strength; trained); Investigator: 19 (intelligence; trained)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">

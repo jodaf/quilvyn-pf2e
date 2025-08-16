@@ -470,7 +470,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Spell Trained (Occult)","1:Class Trained (Bard)",' +
-      '"1:Bard Spellcasting","1:Composition Spells",1:Muses,"2:Bard Feats",' +
+      '"1:Bard Spellcasting","1:Composition Spells",1:Muse,"2:Bard Feats",' +
       '"2:Skill Feats","3:General Feats","3:Reflex Expertise",' +
       '"3:Signature Spells","3:Skill Increases","7:Expert Spellcaster",' +
       '"9:Fortitude Expertise","9:Performer\'s Heart",' +
@@ -3790,6 +3790,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 8","features.Swashbuckler Dedication"',
   // Evasiveness as above
 
+  // TODO Do anything with "additional feats" for Archaeologist et al?
   'Acrobat Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Acrobatics >= 1"',
   'Contortionist':
@@ -6124,7 +6125,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Dinosaur Form occult innate spell; can cast it at 5th rank once per day"',
   'Iruxi Spirit Strike':
     'Section=combat ' +
-    'Note="Lizardfolk ancestry attacks have the <i>ghost touch</i> property"',
+    'Note="Lizardfolk ancestry attacks have <i>ghost touch</i> effects"',
   'Primal Rampage (Occult)':
     'Section=magic ' +
     'Note="Knows the Unfettered Movement and Mountain Resilience occult innate spells; can cast each at 4th rank once per day or use 3 actions to cast both simultaneously"',
@@ -6585,7 +6586,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Critical hits with a bo staff, longbow, composite longbow, scythe, or staff inflict its critical specialization effect"',
   'Ghost Hunter':
     'Section=combat ' +
-    'Note="Strikes on incorporeal creatures are magical, and magical weapons gain the <i>ghost touch</i> property"',
+    'Note="Strikes on incorporeal creatures are magical, and magical weapons gain <i>ghost touch</i> effects"',
   'Gravesight':'Section=feature Note="Has the Darkvision feature"',
   'Lifesense':
     'Section=skill ' +
@@ -6674,7 +6675,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Master Spellcaster':Pathfinder2E.FEATURES['Master Spellcaster'],
   'Maestro':Pathfinder2E.FEATURES.Maestro,
-  'Muses':Pathfinder2E.FEATURES.Muses,
+  'Muse':Pathfinder2E.FEATURES.Muse,
   "Performer's Heart":Pathfinder2E.FEATURES.Resolve,
   'Perception Mastery':Pathfinder2E.FEATURES['Vigilant Senses'],
   'Polymath':
@@ -6885,6 +6886,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Healing Font']
     .replace('level', 'rank')
     .replace(/charismaModifier\s*\+\s*1/, 'level<5?4:level<15?5:6'),
+  'Holy':'Section=feature Note="Has the holy trait"',
   'Miraculous Spell':
     Pathfinder2E.FEATURES['Miraculous Spell']
     .replace('level', 'rank'),
@@ -6897,7 +6899,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Successes on Will saves are critical successes"',
   'Sanctification':
     'Section=feature ' +
-    'Note="%{deitySanctification==\'Either\'?\'1 selection\':deitySanctification==\'Holy\'?\'Has the Holy trait\':deitySanctification==\'Unholy\'?\'Has the Unholy trait\':\'Has neither the Holy nor Unholy trait\'}"',
+    'Note="%{deitySanctification==\'Either\'?\'1 selection\':deitySanctification==\'Holy\'?\'Has the Holy feature\':deitySanctification==\'Unholy\'?\'Has the Unholy feature\':\'Has neither the Holy nor Unholy feature\'}"',
+  'Unholy':'Section=feature Note="Has the unholy trait"',
   'Warpriest':Pathfinder2E.FEATURES.Warpriest
     .replace('Simple Weapons', 'Simple Weapons; Martial Weapons')
     .replace('",', '%{level>=19?\'/Attack Master (%1)\':\'\'}",'),
@@ -7905,8 +7908,8 @@ Pathfinder2ERemaster.FEATURES = {
     .replaceAll('flat-footed', 'off-guard')
     .replace(' from: ', " from: %{combatNotes.methodicalDebilitations?'prevent flanking; negate Armor Class bonus from shields, lesser cover, and standard cover; ':''}%{combatNotes.bloodyDebilitation?'+3d6 HP persistent bleed; ':''}"),
   'Deny Advantage':
-    'Section=combat ' +
-    'Note="Does not suffer off-guard vs. hidden, undetected, flanking, or surprising foes of equal or lower level"',
+    Pathfinder2E.FEATURES['Deny Advantage']
+    .replace('flat-footed', 'off-guard'),
   'Double Debilitation':Pathfinder2E.FEATURES['Double Debilitation'],
   'Evasive Reflexes':Pathfinder2E.FEATURES.Evasion,
   'Greater Rogue Reflexes':Pathfinder2E.FEATURES['Improved Evasion'],
@@ -9489,7 +9492,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Attack Stratagem':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn; can substitute intelligence for strength or dexterity on the attack if using a sap or an agile, finesse, or ranged weapon"',
+    'Note="Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn%{levels.Investigator?\'; can substitute intelligence for strength or dexterity on the attack if using a sap or an agile, finesse, or ranged weapon\':\'\'}"',
   'Skill Stratagem':
     'Action=1 ' +
     'Section=skill ' +
@@ -10765,8 +10768,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Can expend a spell slot to cast a common polymorph battle form spell as a signature spell once per day"',
   'Greater Spiritual Evolution':
-    'Section=magic ' +
-    'Note="Spells have the <i>ghost touch</i> property"',
+    'Section=magic Note="Spells have <i>ghost touch</i> effects"',
   'Magic Sense':
     Pathfinder2E.FEATURES['Magic Sense']
     .replaceAll('level', 'rank'),
@@ -11241,7 +11243,9 @@ Pathfinder2ERemaster.FEATURES = {
   "Advanced Hunter's Trick":Pathfinder2E.FEATURES["Advanced Hunter's Trick"],
   'Master Spotter':Pathfinder2E.FEATURES['Master Spotter'],
 
-  'Fighter Dedication':Pathfinder2E.FEATURES['Fighter Dedication'],
+  'Fighter Dedication':
+    Pathfinder2E.FEATURES['Fighter Dedication']
+    .replace('Ability', 'Attribute'),
   'Basic Maneuver':Pathfinder2E.FEATURES['Basic Maneuver'],
   'Fighter Resiliency':Pathfinder2E.FEATURES['Fighter Resiliency'],
   'Reactive Striker':
@@ -11258,8 +11262,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Uncanny Dodge':Pathfinder2E.FEATURES['Uncanny Dodge'],
   'Evasiveness':Pathfinder2E.FEATURES.Evasiveness,
 
+  // TODO WD gives two cantrips instead of the standard initial patron spells
   'Witch Dedication':
-    'Section=feature Note="Has the Familiar and Patron features"',
+    'Section=feature,magic ' +
+    'Note=' +
+      '"Has the Familiar and Patron features",' +
+      '"Knows a choice of 2 %V cantrips"',
   'Basic Witch Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-rank%{rank>=8?\', 1 2nd-rank, and 1 3rd-rank\':rank>=6?\' and 1 2nd-rank\':\'\'} %{witchTraditionsLowered} spell"',
@@ -11271,10 +11279,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="+1 %{witchTraditionsLowered} spell slot of each rank up to %V"',
   'Expert Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Arcane)/Knows 1 4th-rank%{rank>=16?\', 1 5th-rank, and 1 6th-rank\':rank>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell"',
+    'Note="Spell Expert (%V)/Knows 1 4th-rank%{rank>=16?\', 1 5th-rank, and 1 6th-rank\':rank>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell"',
   'Master Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Arcane)/Knows 1 7th-rank%{rank>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell"',
+    'Note="Spell Master (%V)/Knows 1 7th-rank%{rank>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell"',
 
   'Wizard Dedication':Pathfinder2E.FEATURES['Wizard Dedication'],
   'Arcane School Spell (School Of Ars Grammatica)':
@@ -11320,7 +11328,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Alchemist Dedication':
     Pathfinder2E.FEATURES['Alchemist Dedication']
-    .replace(' and Infused Reagents', ', Quick Alchemy, and Versatile Vials'),
+    .replace(' and Infused Reagents', ', Quick Alchemy, and Versatile Vials')
+    .replace('1st-level', 'common'),
   // Advanced Alchemy as above
   'Basic Concoction':Pathfinder2E.FEATURES['Basic Concoction'],
   'Advanced Concoction':Pathfinder2E.FEATURES['Advanced Concoction'],
@@ -11330,7 +11339,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Class Expert (Alchemist)",' +
-      '"Can use Alchemist DC for infused item save DC"',
+      '"Can use Alchemist DC for infused item save DCs"',
 
   'Barbarian Dedication':Pathfinder2E.FEATURES['Barbarian Dedication'],
   'Barbarian Resiliency':Pathfinder2E.FEATURES['Barbarian Resiliency'],
@@ -11381,7 +11390,7 @@ Pathfinder2ERemaster.FEATURES = {
   // TODO Trained in Heavy Armor only if already trained in Medium Armor
   'Champion Dedication':
     Pathfinder2E.FEATURES['Champion Dedication']
-    .replace('Ability and Deity And Cause', 'Attribute, Deity, and Cause'),
+    .replace('Ability and Deity And Cause', "Attribute, Champion's Aura, Deity, and Cause"),
   'Basic Devotion':Pathfinder2E.FEATURES['Basic Devotion'],
   'Champion Resiliency':Pathfinder2E.FEATURES['Champion Resiliency'],
   // Changed effects
@@ -11389,7 +11398,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"1 selection",' +
-      '"Has a focus pool"',
+      '"Spell Trained (Divine)/Has a focus pool"',
   'Advanced Devotion':Pathfinder2E.FEATURES['Advanced Devotion'],
   "Champion's Reaction (Desecration)":
     'Section=feature Note="Has the Selfish Shield feature"',
@@ -11417,8 +11426,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Basic Deduction':
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level investigator)"',
   "Investigator's Stratagem":
-    'Section=feature ' +
-    'Note="Has the Devise A Stratagem feature; cannot substitute intelligence when using Attack Stratagem"',
+    'Section=feature Note="Has the Devise A Stratagem feature"',
   'Advanced Deduction':
     'Section=feature ' +
     'Note="+%V Class Feat (investigator up to level %{level//2})"',
@@ -11426,7 +11434,9 @@ Pathfinder2ERemaster.FEATURES = {
   // Skill Mastery as above
   // Master Spotter as above
 
-  'Monk Dedication':Pathfinder2E.FEATURES['Monk Dedication'],
+  'Monk Dedication':
+    Pathfinder2E.FEATURES['Monk Dedication']
+    .replace('Ability', 'Attribute'),
   'Basic Kata':Pathfinder2E.FEATURES['Basic Kata'],
   'Monk Resiliency':Pathfinder2E.FEATURES['Monk Resiliency'],
   'Advanced Kata':Pathfinder2E.FEATURES['Advanced Kata'],
@@ -11691,6 +11701,137 @@ Pathfinder2ERemaster.FEATURES = {
   'Shield Salvation':
     'Section=combat ' +
     'Note="Can have shield retain 1 HP when it would normally be destroyed by Shield Block"',
+
+  'Beastmaster Dedication':
+    'Section=feature ' +
+    'Note="Has the Animal Companion and Call Companion features"',
+  'Call Companion':
+    'Section=feature ' +
+    'Note="1 min process makes a different animal companion active"',
+  'Additional Companion':
+    'Section=feature ' +
+    'Note="Has %{$\'feats.Additional Companion\'} additional young animal companion%{$\'feats.Additional Companion\'>1?\'s\':\'\'}"',
+  'Mature Beastmaster Companion':
+    'Section=feature Note="Has the Mature Animal Companion feature"',
+  "Beastmaster's Trance":
+    'Section=magic ' +
+    'Note="Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool"',
+  'Swift Guardian':
+    'Action=Free Section=feature Note="Uses Call Companion as a free action"',
+  'Incredible Beastmaster Companion':
+    'Section=feature Note="Has the Incredible Animal Companion feature"',
+  'Beastmaster Bond':
+    'Section=feature ' +
+    'Note="Can communicate telepathically with animal companions %{rank.Nature<4?\\" within 100\'\\":\'at any range\'}"',
+  "Beastmaster's Call":
+    'Section=combat Note="Can conjure an image of an inactive animal companion to provide support once per turn"',
+  'Specialized Beastmaster Companion':
+    'Section=feature Note="Has the Specialized Animal Companion feature"',
+  'Lead The Pack':
+    'Section=combat ' +
+    'Note="Can have 2 animal companions active simultaneously; Command An Animal allows each to take 1 action or one of them to take 2 actions"',
+
+  'Blessed One Dedication':
+    'Section=magic Note="Knows the Lay On Hands divine spell/Has a focus pool"',
+  'Blessed Sacrifice':
+    'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
+  'Blessed Spell':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Casting a targeted spell on an ally attempts to counteract a harmful condition once per 10 min"',
+  'Blessed Denial':
+    'Action=Reaction ' +
+    'Section=magic ' +
+    'Note="R30\' Reduces by 1 the value of the triggering harmful condition affecting an ally"',
+
+  // TODO additional effects?
+  'Bounty Hunter Dedication':
+    'Section=feature ' +
+    'Note="Has the %V feature%{featureNotes.bountyHunterDedication=~\' and \'?\'s\':\'\'}"',
+  'Posse':
+    'Section=skill ' +
+    'Note="1 min process gives 5 allies +1 bonus to Seek, Track, and Gather Information about a Hunt Prey target and +1 initiative when fighting it"',
+  'Tools Of The Trade':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Bola; Sap; Whip)",' +
+      '"Nonlethal Strikes vs. an off-guard a Hunt Prey target with a bola, sap, or whip inflict +1d4 HP precision/Suffers no penalty from making nonlethal attacks with a lethal weapon"',
+  'Keep Pace':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Strides to keep up with the triggering move away of an adjacent Hunt Prey target"',
+  'Opportunistic Grapple':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Attempts to Grapple a Hunt Prey target after the triggering melee critical miss on self"',
+
+/*
+  'Cavalier Dedication':
+  "Cavalier's Banner":
+  "Cavalier's Charge":
+  'Impressive Mount':
+  'Quick Mount':
+  'Defend Mount':
+  'Mounted Shield':
+  'Incredible Mount':
+  'Trampling Charge':
+  'Unseat':
+  'Specialized Mount':
+  'Legendary Rider':
+
+  'Celebrity Dedication':
+  'Never Tire':
+  'Mesmerizing Gaze':
+  'Command Attention':
+  'Dandy Dedication':
+  'Distracting Flattery':
+  'Gossip Lore':
+  'Fabricated Connections':
+  'Party Crasher':
+
+  'Dual-Weapon Warrior Dedication':
+  'Dual Thrower':
+  'Dual-Weapon Reload':
+  'Flensing Slice':
+  'Dual-Weapon Blitz':
+  'Dual Onslaught':
+  'Duelist Dedication':
+  "Duelist's Challenge":
+  'Selfless Parry':
+  'Student Of The Dueling Arts':
+
+  'Eldritch Archer Dedication':
+  'Basic Eldritch Archer Spellcasting':
+  'Enchanting Shot':
+  'Magic Ammunition':
+  'Precious Ammunition':
+  'Eldritch Reload':
+  'Expert Eldritch Archer Spellcaster':
+  'Homing Shot':
+  'Incorporeal Shot':
+  'Fatal Shot':
+  'Master Eldritch Archer Spellcaster':
+
+  'Familiar Master Dedication':
+  'Familiar Mascot':
+  'Familiar Conduit':
+  'Improved Familiar':
+  'Mutable Familiar':
+  // Incredible Familiar as above
+
+  'Gladiator Dedication':
+  'Fancy Moves':
+  'Play To The Crowd':
+  'Stage Fighting':
+  'Performative Weapons Training':
+  'Call Your Shot':
+
+  'Herbalist Dedication':
+  'Fresh Ingredients':
+  'Poultice Preparation':
+  'Advanced Herbalism':
+  'Endemic Herbs':
+*/
 
   // General and Skill
 
@@ -14768,7 +14909,15 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Negative', 'Void'),
   'Grasping Grave':
     Pathfinder2E.SPELLS['Grasping Grave']
-    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('Necromancy', 'Concentrate,Manipulate'),
+
+  'Beastmaster Trance':
+    'Level=3 ' +
+    'Traits=Uncommon,Archetype,Concentrate,Focus,Manipulate,Mental ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, for 1 min (<b>heightened 6th</b> allows speaking to the companion and extends range to 100 miles and duration to 10 min; <b> 8th</b> allows telepathic communication and extends range to planetary and duration to 1 hr)"'
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -15523,11 +15672,11 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     );
     rules.defineRule('traits.Holy',
       'deitySanctification', '=', 'source=="Holy" ? 1 : null',
-      'features.Holy', '=', '1'
+      'featureNotes.holy', '=', '1'
     );
     rules.defineRule('traits.Unholy',
       'deitySanctification', '=', 'source=="Unholy" ? 1 : null',
-      'features.Unholy', '=', '1'
+      'featureNotes.unholy', '=', '1'
     );
   } else if(name == 'Fighter') {
     rules.defineRule('selectableFeatureCount.Fighter (Key Attribute)',
@@ -15840,6 +15989,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
         );
       });
     }
+  } else if(name == "Beastmaster's Trance") {
+    rules.defineRule('spellModifier.Beastmaster',
+      'magicNotes.' + prefix, '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Primal', 'spellModifier.Beastmaster', '=', null);
+    rules.defineRule
+      ('spellAbility.Primal', 'magicNotes.' + prefix, '=', '"charisma"');
   } else if(name.match(/^(Bone Investiture|Fossil Rider|Primal Rampage)$/)) {
     rules.defineRule('features.' + name + ' (Occult)',
       'features.' + name, '?', null,
@@ -15851,6 +16009,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
     );
   } else if(name.startsWith('Bone Magic')) {
     rules.defineRule('features.Bone Magic', 'features.' + name, '=', '1');
+  } else if(name.startsWith('Bounty Hunter Dedication')) {
+    rules.defineRule('featureNotes.bountyHunterDedication',
+      '', '=', '"Hunt Prey"',
+      'levels.Ranger', '=', '"Hunt Prey and Monster Hunter"'
+    );
   } else if(name == 'Breath Of The Dragon') {
     rules.defineRule('combatNotes.breathOfTheDragon',
       'features.Adamantine Exemplar', '=', '"bludgeoning"',
@@ -15949,6 +16112,14 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       );
     });
   } else if(name == 'Devout Magic') {
+    rules.defineRule('spellModifier.Champion Dedication',
+      'magicNotes.' + prefix, '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifier.Champion Dedication', '=', null);
+    rules.defineRule
+      ('spellAbility.Divine', 'magicNotes.' + prefix, '=', '"charisma"');
     rules.defineRule('selectableFeatureCount.Champion (Devotion Spell)',
       'featureNotes.' + prefix, '=', '1'
     );
@@ -16022,6 +16193,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'features.Draconic Veil', '?', null,
       'features.Primal Dragonblood', '=', '1'
     );
+  } else if(name.match(/^(Expert|Master) Witch Spellcasting$/)) {
+    rules.defineRule('magicNotes.' + prefix, 'witchTraditions', '=', null);
   } else if(name == 'Fangs') {
     rules.defineRule('weapons.Fangs', 'combatNotes.fangs', '=', '1');
     // Note: Ignore Grapple trait currently not shown on character sheet
@@ -16275,6 +16448,30 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
       'level', '=', 'source<11 ? "Trained" : "Expert"'
     );
   } else if(name.startsWith('Witch Dedication')) {
+    rules.defineRule('magicNotes.witchDedication',
+      'witchTraditions', '=', 'source.toLowerCase()'
+    );
+    rules.defineRule('witchTraditions',
+      'feats.' + name, '=', 'Pathfinder2E.witchTraditions = ""'
+    );
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('trainingLevel.' + t,
+        'witchTraditions', '^=', 'source.includes("' + t + '") ? 1 : null'
+      );
+      rules.defineRule('spellSlots.' + t.charAt(0) + 'C1',
+        'magicNotes.witchDedication', '+=', 'source.includes("' + t.toLowerCase() + '") ? 2 : null'
+      );
+      rules.defineRule('spellModifier' + t + '.' + name,
+        'features.Witch Dedication', '?', null,
+        'witchTraditions', '?', 'source && source.includes("' + t + '")',
+        'intelligenceModifier', '=', null
+      );
+      rules.defineRule
+        ('spellModifier.' + t, 'spellModifier' + t + '.' + name, '=', null);
+      rules.defineRule('spellAbility.' + t,
+        'spellModifier' + t + '.' + name, '=', '"intelligence"'
+      );
+    });
     // Suppress validation errors for selected patron and the notes for features
     // of patron that don't come with Witch Dedication
     // TODO Suppress standard patron spells
