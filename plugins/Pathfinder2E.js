@@ -1780,7 +1780,8 @@ Pathfinder2E.FEATS = {
   'Shielded Stride':'Traits=Fighter Require="level >= 4"',
   // Swipe as above
   'Twin Parry':'Traits=Fighter,Ranger Require="level >= 4"',
-  'Advanced Weapon Training':'Traits=Fighter Require="level >= 6"',
+  'Advanced Weapon Training (%weaponGroup)':
+    'Traits=Fighter Require="level >= 6"',
   'Advantageous Assault':'Traits=Fighter,Press Require="level >= 6"',
   'Disarming Stance':
     'Traits=Fighter,Stance Require="level >= 6","rank.Athletics >= 1"',
@@ -3395,7 +3396,6 @@ Pathfinder2E.FEATURES = {
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
-  // TODO recheck Alchemist feature texts
   'Advanced Alchemy':
     'Section=skill ' +
     'Note="Can use a batch of infused reagents to create 2 infused alchemical items of up to level %{level} without a Crafting check during daily prep"',
@@ -5332,10 +5332,12 @@ Pathfinder2E.FEATURES = {
     'Action=1 ' +
     'Section=combat ' +
     'Note="Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn"',
-  // TODO implement?
-  'Advanced Weapon Training':
-    'Section=combat ' +
-    'Note="Has proficiency with advanced weapons equal to martial weapons in a chosen weapon group"',
+  // Note: AWT should affect only advanced weapons--not both advanced and
+  // martial weapons as Weapon Familiarity indicates. But as a fighter feat,
+  // we're assured that anyone with AWT already has equal proficiency in
+  // martial and simple weapons, so the effect is harmless.
+  'Advanced Weapon Training (%weaponGroup)':
+    'Section=combat Note="Weapon Familiarity (%weaponGroup)"',
   'Advantageous Assault':
     'Action=1 ' +
     'Section=combat ' +
@@ -12882,18 +12884,23 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       if(!isFocus)
         rules.addChoice('spells', spellName, attrs);
     });
-  } else if(type == 'Weapon')
+  } else if(type == 'Weapon') {
+    let group = QuilvynUtils.getAttrValue(attrs, 'Group');
     Pathfinder2E.weaponRules(rules, name,
       QuilvynUtils.getAttrValue(attrs, 'Category'),
       QuilvynUtils.getAttrValue(attrs, 'Price'),
       QuilvynUtils.getAttrValue(attrs, 'Damage'),
       QuilvynUtils.getAttrValue(attrs, 'Bulk'),
       QuilvynUtils.getAttrValue(attrs, 'Hands'),
-      QuilvynUtils.getAttrValue(attrs, 'Group'),
+      group,
       QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
       QuilvynUtils.getAttrValue(attrs, 'Range')
     );
-  else {
+    group =
+      group == 'Knife' ? 'Knives' :
+      group == 'Brawling' ? 'Brawling Weapons' : (group + 's');
+    rules.addChoice('weaponGroups', group, '');
+  } else {
     console.log('Unknown choice type "' + type + '"');
     return;
   }
