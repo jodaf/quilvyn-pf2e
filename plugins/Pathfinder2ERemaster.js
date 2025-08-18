@@ -11274,7 +11274,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Witchcraft':
     'Section=feature Note="+%V Class Feat (witch up to level %{level//2})"',
   "Patron's Breadth":
-    'Section=magic Note="+1 %{witchTraditionsLowered} spell slot of each rank up to %V"',
+    'Section=magic Note="Has additional archetype spell slots"',
   'Expert Witch Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (%V)/Knows 1 4th-rank%{rank>=16?\', 1 5th-rank, and 1 6th-rank\':rank>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell"',
@@ -11485,7 +11485,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="+%V Class Feat (oracle up to level %{level//2})"',
   'Mysterious Breadth':
-    'Section=magic Note="+1 divine spell slot of each level up to %V"',
+    'Section=magic Note="Has additional archetype spell slots"',
   'Expert Oracle Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
@@ -15418,7 +15418,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
-    Pathfinder2ERemaster.featRulesExtra(rules, name);
+    Pathfinder2ERemaster.featRulesExtra(rules, name, attrs);
   } else if(type == 'Feature')
     Pathfinder2ERemaster.featureRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Section'),
@@ -16043,8 +16043,8 @@ Pathfinder2ERemaster.featRules = function(
  * Defines in #rules# the rules associated with feat #name# that cannot be
  * derived directly from the attributes passed to featRules.
  */
-Pathfinder2ERemaster.featRulesExtra = function(rules, name) {
-  Pathfinder2E.featRulesExtra(rules, name);
+Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
+  Pathfinder2E.featRulesExtra(rules, name, attrs);
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
   if(name == 'Acrobat Dedication') {
