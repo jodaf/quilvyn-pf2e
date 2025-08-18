@@ -13838,12 +13838,14 @@ Pathfinder2ERemaster.SPELLS = {
   'Song Of Marching':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Mental ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"60\' emanation allows self and allies to Hustle and self to use Performance for initiate while sustained for up to 1 hr (<b>heightened 6th</b> effects last 2 hr; <b>9th</b> effect last 4 hr)"',
   'Song Of Strength':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Concentrate,Emotion,Mental ' +
+    'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
       '"60\' emanation give allies +1 Athletics and DCs vs. Athletics skill actions for 1 rd"',
@@ -13853,6 +13855,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Symphony Of The Unfettered Heart':
     'Level=5 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Concentrate ' +
+    'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
       '"R30\' Uses Performance to counteract a choice of grabbed, immobilized, paralyzed, restrained, slowed, or stunned affecting target (<b>heightened 9th</b> affects 4 targets)"',
@@ -15022,6 +15025,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Extend Blood Magic':
     'Level=3 ' +
     'Traits=Uncommon,Focus,Sorcerer,Concentrate,Spellshape ' +
+    'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
       '"Extends the blood magic effect from a subsequent spell by 1 rd"',
@@ -15473,6 +15477,7 @@ Pathfinder2ERemaster.choiceRules = function(rules, type, name, attrs) {
         QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
         QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
+      rules.addChoice('allSpells', spellName, attrs);
       if(!isFocus)
         rules.addChoice('spells', spellName, attrs);
     });

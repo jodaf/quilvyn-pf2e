@@ -12876,6 +12876,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
         QuilvynUtils.getAttrValueArray(attrs, 'Traits'),
         QuilvynUtils.getAttrValue(attrs, 'Description').replaceAll('%tradition', t)
       );
+      rules.addChoice('allSpells', spellName, attrs);
       if(!isFocus)
         rules.addChoice('spells', spellName, attrs);
     });
@@ -15261,15 +15262,14 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         let spells = matchInfo[1].split(/\s*,\s*|\s*\band\s+/);
         spells.forEach(s => {
           s = s.replace('<i>', '').replace('</i>', '').trim();
+          let matchingSpells =
+            QuilvynUtils.getKeys(rules.getChoices('allSpells'), new RegExp('^' + s + ' \\('));
           if(s == '') {
             // empty
-          // TODO this is ugly...
-          } else if(!(s in Object.assign({}, Pathfinder2E.SPELLS, rules.plugin.SPELLS))) {
+          } else if(matchingSpells.length == 0) {
             console.log('Unknown spell "' + s + '" for feature ' + name);
           } else {
-            // TODO ... and so is this
-            let spellAttrs =
-              Object.assign({}, Pathfinder2E.SPELLS, rules.plugin.SPELLS)[s];
+            let spellAttrs = rules.getChoices('allSpells')[matchingSpells[0]];
             let spellLevel = QuilvynUtils.getAttrValue(spellAttrs, 'Level');
             let spellSchool = QuilvynUtils.getAttrValue(spellAttrs, 'School');
             let spellTraits =
