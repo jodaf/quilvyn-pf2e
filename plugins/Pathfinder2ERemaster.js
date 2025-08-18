@@ -3790,7 +3790,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 8","features.Swashbuckler Dedication"',
   // Evasiveness as above
 
-  // TODO Do anything with "additional feats" for Archaeologist et al?
+  // TODO Do anything with "additional feats" for Archaeologist and others?
   'Acrobat Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Acrobatics >= 1"',
   'Contortionist':
@@ -11669,7 +11669,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Has the Mark For Death and Sneak Attack features",' +
-      '"Sneak Attack on a marked target inflicts +1d%{level<6?4:6} HP precision, or +%{level<6?1:2} HP precsion from an existing Sneak Attack ability"',
+      '"Sneak Attack on a marked target inflicts +1d%{level<6?4:6} HP precision, or +%{level<6?1:2} HP precision from an existing Sneak Attack ability"',
   'Mark For Death':
     'Action=3 ' +
     'Section=combat ' +
@@ -14687,242 +14687,282 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Oracle,Uncommon,Emotion,Fear,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Touch inflicts 2d4 HP mental and frightened 1 (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and frightened 2) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Ancestral Defense':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Focus,Fortune,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Self gains the better of two rolls on the triggering Will save"',
   'Ancestral Form':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Self becomes quasi-corporeal, gaining a %{speed} fly Speed and resistance 10 to all damage other than force, spirit, and <i>ghost touch</i>, or double this to non-magical and precision damage, while sustained for up to 1 min (<b>heightened +2</b> gives +5 resistance)"',
   'Weapon Trance':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Self gains proficiency with martial weapons equal to simple weapon proficiency while sustained for up to 1 min; first successful weapon Strike each rd automatically Sustains as a free action"',
   'Battlefield Persistence':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives self +2 on triggering save, and raises save level by 2 vs. incapacitation effects"',
   'Revel In Retribution':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=6 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives self an extra reaction each rd to use Reactive Strike, and success on a Reactive Strike gives 5 temporary Hit Points, for 1 min (<b>heightened +1</b> gives +1 temporary Hit Point)"',
   'Soul Siphon':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Focus,Manipulate,Void ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Inflicts 1d4 HP void and drained 1, and gives self an equal number of temporary Hit Points (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and drained 2) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Armor Of Bones':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives self resistance 3 to cold, electricity, fire, piercing, and slashing for 1 min (<b>heightened +1</b> gives +1 resistance)"',
   'Claim Undead':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives command of target undead for 10 min (<b>save Will</b> initial and after each rd inflicts stunned 1 and confused for 1 rd; critical success negates; critical failure gives control with no further saves)"',
   'Spray Of Stars':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"15\' cone inflicts 2d4 HP fire and dazzled for 3 rd (<b>save reflex</b> inflicts half HP and dazzled for 1 rd; critical success negates; critical failure inflicts double HP and dazzled for 1 min) (<b>heightened +1</b> inflicts +1d4 HP)"',
   'Interstellar Void':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Cold,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Inflicts 3d6 HP cold and fatigued while sustained for up to 1 min (<b>save basic Fortitude</b>)"',
   'Moonlight Bridge':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Creates a 10\'x120\' bridge with AC 10, Hardness 30, 60 HP, and immunity to all damage other than force, spirit, and <i>ghost touch</i> that can only be crossed by allies for 10 min (<b>heightened +1</> increases length by 20\', width by 5\', and HP by 20)"',
   'Incendiary Aura':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"10\' emanation inflicts 2d4 HP persistent fire on creatures that take fire damage for 1 min (<b>heightened +2</b> inflicts +1d4 HP and increases the radius by 5\')"',
   'Whirling Flames':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Fire,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' 2 5\' bursts inflicts 5d6 HP fire (<b>save basic Reflex</b>) (<b>heightened +2</b> adds another 5\' burst and inflicts +3d6 HP)"',
   'Flaming Fusillade':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Fire,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Allows casting <i>Ignition</i> with 1 action for 1 min (<b>heightened 9</b> <i>Ignition</i> inflicts +9 HP)"',
   'Life Link':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Focus,Healing,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Restores 1d4 HP to the target and transfers up to 3 HP of damage from the first attack on the target each rd to self for 1 min (<b>heightened 3rd</b> affects 2 targets, restores 3d4 HP, and transfers 5 HP from each target to self; <b>6th</b> affects 3 targets, restores 6d4 HP, and transfers 10 HP; <b>9th</b> affects 4 targets, restores 9d4 HP, and transfers 15 HP)"',
   'Delay Affliction':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Restores 3d8 Hit Points to the target and attempts to counteract 1 affliction to delay its effects for 1 hr once per target per day (<b>heightened +1</i> restores +1d8 Hit Points and counteracts +1 affliction)"',
   'Life-Giving Form':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Healing,Light,Manipulate,Vitality ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Causes self to shine, gives resistance 5 to precision and weakness 5 to void, and allows touch to restore 6d8 HP once per target or inflict 3d4 HP vitality for 1 min (<b>heightened +1</b> gives +1 resistance and weakness and touch restores +1d8 HP)"',
   'Brain Drain':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Inflicts 1d8 HP mental and allows using the target\'s memories for a Recall Knowledge check (<b>save basic Will</b> also negates Recall Knowledge) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Access Lore':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives self %{!ranks.Divine?\'untrained\':ranks.Divine==1?\'trained\':ranks.Divine==2?\'expert\':ranks.divine==3?\'master\':\'legendary\'} proficiency in a chosen Lore skill for 1 min"',
   'Dread Secret':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Emotion,Fear,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R60\' Inflicts on 6 targets frightened 1 and 1 damage of a known weakness type or suppression of a known resistance until the end of the next turn (<b>save Will</b> negates frightened; critical success negates; critical failure inflicts frightened 3)"',
   'Tempest Touch':
     'Level=1 ' +
     'Traits=Oracle,Uncommon,Cold,Focus,Manipulate,Water ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Touch inflicts 1d4 HP bludgeoning, 1d4 HP cold, and -10\' Speed until the end of the next turn (<b>save Fortitude</b> inflicts half HP and -5\' Speed; critical success negates; critical failure inflicts double HP)"',
   'Thunderburst':
     'Level=3 ' +
     'Traits=Oracle,Uncommon,Air,Concentrate,Focus,Manipulate,Sonic ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R100\' 20\' burst inflicts 2d6 HP sonic and deafness for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and deafness for 1 hr) (<b>heightened +2</b> inflicts +2d6 HP and extends affect by 5\')"',
   'Tempest Form':
     'Level=6 ' +
     'Traits=Oracle,Uncommon,Concentrate,Focus,Manipulate,Polymorph ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Self loses item armor bonuses, gains resistance 10 to physical damage and immunity to precision damage, can pass through cracks, does not need to breathe, cannot cast spells, and gains a 20\' fly Speed or gains a 20\' swim Speed and can inflict 1d6 HP electricity on melee attackers, while sustained for up to 1 min (<b>heightened +2</b> gives +5 resistance and +1 HP electricity)"',
   // Additional domain spells from Divine Mysteries
   'Withering Grasp':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Attack,Concentrate,Focus,Manipulate,Void ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Touch inflicts 1d12 HP void and 1d4 persistent void, or double this on a critical success; touched objects suffer the same damage and lose 2 Hardness for 1 min, or 4 hardness on a critical success (<b>heightened +1</b> inflicts +1d12 HP initial, +1 HP persistent, and +1 Hardness)"',
   'Parch':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Air,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R60\' Inflicts -1 checks and DCs for 1 min (<b>save Fortitude</b> effects last for 1 rd; critical success negates; critical failure inflicts -2 checks and DCs; water creatures worsen save by 1 degree, and liquid-free creatures are immune) (<b>heightened 4th</b> affects 4 targets)"',
   'Swear Oath':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Readied action gains +1 attack or skill check before the end of the next turn; a Sustain restores the spent Focus Point if the trigger for the action does not occur (<b>heightened 5th</b> gives a +2 bonus; <b>9th</b> gives a +3 bonus<b/>)"',
   'Charged Javelin':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Attack,Concentrate,Electricity,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R60\' Inflicts 1d6 HP electricity and 1 HP persistent electricity, or double HP on a critical success, and inflicts -1 saves vs. electricity and gives attackers +1 attacks with metal weapons and electricity effects while the persistent damage continues (<b>heightened +1</b> inflicts +1d6 HP initial and +1 HP persistent)"',
   'Empty Inside':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Mental ' +
     'Traditions=Divine ' +
     'Cast=1 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Attempts to counteract an emotion effect affecting self (<b>heightened 5th</b> Attempts to counteract multiple effects)"',
   'Eject Soul':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Incapacitation,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Touch inflicts stunned 1 (<b>save Fortitude</b> negates; critical failure inflicts stunned and loss of control for 1 rd) (<b>heightened +3</b> allows an ally target to extended the duration by 1 rd)"',
   'Zenith Star':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R60\' Inflicts dazzled for 1 rd and allows tracking the target for 1 day (<b>save Fortitude</b> inflicts dazzled only; critical success negates; critical failure also inflicts blinded instead of dazzled) (<b>heightened +1</b> effects last +1 day; <b>4th</b> allows self to ignore target concealment)"',
   'Object Memory':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Increases proficiency with touched weapon or tool to trained for 1 min"',
   'Fallow Field':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate,Void ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R60\' 15\' burst inflicts half normal healing while sustained for up to 1 min (<b>save Will</b> negates; critical success gives immunity for 1 min; critical failure negates all healing)"',
   'Dust Storm':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Air,Concentrate,Focus,Manipulate,Nonlethal ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R120\' 20\' burst obscures vision, requires breath holding, and inflicts 1d6 HP slashing for 1 min; water creatures suffer double HP (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Dutiful Challenge':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' Inflicts -1 attacks, damage, and skill checks vs. other creatures on both self and target for 1 min (<b>heightened +1</b> inflicts -1 penalties)"',
   'Bottle The Storm':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Electricity,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=Reaction ' +
-    'Description="TODO"',
+    'Description=' +
+      '"Gives resistance 10 vs. triggering electricity and stores the excess damage to be released with a R60\' single-action spell attack within 1 min (<b>heightened 7th</b> gives resistance 15 and allows immediate release of stored damage; <b>10th</b> gives resistance 20)"',
   'Door To Beyond':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R5\' 20\' burst inflicts 4d6 HP slashing and pulls light Bulk objects and Large and smaller creatures 10\' toward the center (<b>save Fortitude</b> negates; critical failure pulls 20\') (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Ectoplasmic Interstice':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R30\' 15\' burst gives substance to incorporeal creatures while sustained for up to 1 min"',
   'Asterism':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Fire,Focus,Light,Manipulate ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"R150\' 5 connected 30\' lines inflict 4d5 HP fire once per target per turn for 1 min (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Remember The Lost':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus,Manipulate,Mental ' +
     'Traditions=Divine ' +
     'Cast=2 ' +
-    'Description="TODO"',
+    'Description=' +
+      '"30\' emanation inflicts 6d6 HP will on foes, or 6d10 HP with information on the targets\' victims (<b>save basic Will</b>; critical failure also inflicts frightened 1) (<b>heightened +1</b> inflicts +2d6 or +d2d10 HP)"',
 
   // Sorcerer
   'Tentacular Limbs':
@@ -15045,6 +15085,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Grasping Grave']
     .replace('Necromancy', 'Concentrate,Manipulate'),
 
+  // Archetype
   'Beastmaster Trance':
     'Level=3 ' +
     'Traits=Uncommon,Archetype,Concentrate,Focus,Manipulate,Mental ' +
