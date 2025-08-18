@@ -6917,8 +6917,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
   'Inspirational Performance':
     'Section=magic Note="Knows the Inspire Courage occult cantrip"',
-  'Occult Breadth':
-    'Section=magic Note="+1 occult spell slot of each level up to %V"',
+  'Occult Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Bard Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (Occult)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} occult spell"',
@@ -6960,8 +6959,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
   'Advanced Dogma':
     'Section=feature Note="+%V Class Feat (cleric up to level %{level//2})"',
-  'Divine Breadth':
-    'Section=magic Note="+1 divine spell slot of each level up to %V"',
+  'Divine Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Cleric Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
@@ -6994,8 +6992,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Wilding':
     'Section=feature Note="+%V Class Feat (druid up to level %{level//2})"',
-  'Primal Breadth':
-    'Section=magic Note="+1 primal spell slot of each level up to %V"',
+  'Primal Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Druid Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (Primal)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} primal spell"',
@@ -7148,8 +7145,7 @@ Pathfinder2E.FEATURES = {
   'Advanced Blood Potency':
     'Section=feature Note="+%V Class Feat (sorcerer up to level %{level//2})"',
   'Bloodline Breadth':
-    'Section=magic ' +
-    'Note="+1 %{sorcererTraditionsLowered} spell slot of each level up to %V"',
+    'Section=magic Note="Has additional archetype spell slots"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (%{sorcererTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
@@ -7196,8 +7192,7 @@ Pathfinder2E.FEATURES = {
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
   'Advanced Arcana':
     'Section=feature Note="+%V Class Feat (wizard up to level %{level//2})"',
-  'Arcane Breadth':
-    'Section=magic Note="+1 arcane spell slot of each level up to %V"',
+  'Arcane Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Wizard Spellcasting':
     'Section=magic ' +
     'Note="Spell Expert (Arcane)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} arcane spell"',
@@ -12831,7 +12826,7 @@ Pathfinder2E.choiceRules = function(rules, type, name, attrs) {
       QuilvynUtils.getAttrValueArray(attrs, 'Imply'),
       QuilvynUtils.getAttrValueArray(attrs, 'Traits')
     );
-    Pathfinder2E.featRulesExtra(rules, name);
+    Pathfinder2E.featRulesExtra(rules, name, attrs);
   } else if(type == 'Feature')
     Pathfinder2E.featureRules(rules, name,
       QuilvynUtils.getAttrValueArray(attrs, 'Section'),
@@ -14392,7 +14387,7 @@ Pathfinder2E.featRules.traits = [
  * Defines in #rules# the rules associated with feat #name# that cannot be
  * derived directly from the attributes passed to featRules.
  */
-Pathfinder2E.featRulesExtra = function(rules, name) {
+Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
 
   let matchInfo;
   let prefix =
@@ -14425,13 +14420,12 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.alchemistDedication', '=', '1');
   } else if((matchInfo = name.match(/^(.*) Breadth$/)) != null) {
-    // TODO homebrew
-    let attrs = rules.plugin.FEATS[name] || Pathfinder2E.FEATS[name] || '';
-    let c = attrs.match(/Basic (.*) Spellcasting/)[1] || 'Wizard';
+    let c = (attrs.match(/Basic (.*) Spellcasting/) || ['', 'Wizard'])[1];
     let trad =
-      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.getChoices('levels')[c] || '', 'SpellSlots') || 'A').charAt(0);
     let note = 'magicNotes.' + prefix;
-    rules.defineRule(note,
+    rules.defineRule(note + '.1',
+      note, '?', null,
       'level', '?', null, // recomputation trigger
       'magicNotes.basic' + c + 'Spellcasting', '=', '1',
       'magicNotes.expert' + c + 'Spellcasting', '^', 'dict.level>=16 ? 4 : dict.level>=14 ? 3 : 2',
@@ -14443,7 +14437,7 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       ['A', 'D', 'O', 'P'].forEach(t => {
         rules.defineRule(note + '.' + t + '.1',
           traditions, '?', 'source && source.includes("' + t + '")',
-           note, '=', null
+           note + '.1', '=', null
         );
         [1, 2, 3, 4, 5, 6].forEach(l => {
           rules.defineRule('spellSlots.' + t + l,
@@ -14453,8 +14447,9 @@ Pathfinder2E.featRulesExtra = function(rules, name) {
       });
     } else {
       [1, 2, 3, 4, 5, 6].forEach(l => {
-        rules.defineRule
-          ('spellSlots.' + trad + l, note, '+', 'source>=' + l + ' ? 1 : null');
+        rules.defineRule('spellSlots.' + trad + l,
+          note + '.1', '+', 'source>=' + l + ' ? 1 : null'
+        );
       });
     }
   } else if(name == 'Arcane School Spell') {
