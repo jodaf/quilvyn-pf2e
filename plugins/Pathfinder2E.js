@@ -14423,7 +14423,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   } else if((matchInfo = name.match(/^(.*) Breadth$/)) != null) {
     let c = (attrs.match(/Basic (.*) Spellcasting/) || ['', 'Wizard'])[1];
     let trad =
-      (QuilvynUtils.getAttrValue(rules.getChoices('levels')[c] || '', 'SpellSlots') || 'A').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.getChoices('levels')[c] || '', 'SpellSlots') || '0').charAt(0);
     let note = 'magicNotes.' + prefix;
     rules.defineRule(note + '.1',
       note, '?', null,
@@ -14432,7 +14432,13 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'magicNotes.expert' + c + 'Spellcasting', '^', 'dict.level>=16 ? 4 : dict.level>=14 ? 3 : 2',
       'magicNotes.master' + c + 'Spellcasting', '^', 'dict.level>=20 ? 6 : 5'
     );
-    if(trad.match(/^\d/)) {
+    if(trad.match(/^[ADOP]/)) {
+      [1, 2, 3, 4, 5, 6].forEach(l => {
+        rules.defineRule('spellSlots.' + trad + l,
+          note + '.1', '+', 'source>=' + l + ' ? 1 : null'
+        );
+      });
+    } else {
       let traditions =
         c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '') + 'Traditions';
       ['A', 'D', 'O', 'P'].forEach(t => {
@@ -14445,12 +14451,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
             note + '.' + t + '.1', '+', 'source>=' + l + ' ? 1 : null'
           );
         });
-      });
-    } else {
-      [1, 2, 3, 4, 5, 6].forEach(l => {
-        rules.defineRule('spellSlots.' + trad + l,
-          note + '.1', '+', 'source>=' + l + ' ? 1 : null'
-        );
       });
     }
   } else if(name == 'Arcane School Spell') {
@@ -14544,10 +14544,17 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       level=='Basic' ? {'1':0, '2':6, '3':8} :
       level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
-      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || 'A').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || '0').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
-    if(trad.match(/^\d/)) {
+    if(trad.match(/^[ADOP]/)) {
+      for(let s in slots) {
+        if(slots[s] > 0)
+          rules.defineRule(note + '.' + s, 'level', '?', 'source>' + slots[s]);
+        rules.defineRule(note + '.' + s, note, '=', '1');
+        rules.defineRule('spellSlots.' + trad + s, note + '.' + s, '+=', null);
+      }
+    } else {
       let traditions =
         c.charAt(0).toLowerCase() + c.substring(1).replaceAll(' ', '') + 'Traditions';
       ['A', 'D', 'O', 'P'].forEach(trad => {
@@ -14563,13 +14570,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
             ('spellSlots.' + trad + s, note + '.' + trad + '.' + s, '+=', null);
         }
       });
-    } else {
-      for(let s in slots) {
-        if(slots[s] > 0)
-          rules.defineRule(note + '.' + s, 'level', '?', 'source>' + slots[s]);
-        rules.defineRule(note + '.' + s, note, '=', '1');
-        rules.defineRule('spellSlots.' + trad + s, note + '.' + s, '+=', null);
-      }
     }
   } else if((matchInfo = name.match(/^Canny Acumen \((.*)\)$/)) != null) {
     let target = matchInfo[1];

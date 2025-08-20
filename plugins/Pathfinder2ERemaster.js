@@ -8539,7 +8539,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Permanently quickened; can use the additional action only to use Quick Alchemy"',
   'Advanced Alchemy':
     Pathfinder2E.FEATURES['Advanced Alchemy']
-    .replace('use a batch of infused reagents to create 2', 'create %{skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4} consumable'),
+    .replace('use a batch of infused reagents to create 2', 'create %{(skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4)+(skillNotes.advancedHerbalism?$$\'features.Advanced Herbalism\'*2:0)} consumable'),
   'Advanced Vials (Bomber)':
     'Section=skill Note="Can make bombs with a special material trait"',
   'Advanced Vials (Chirurgeon)':
@@ -11763,81 +11763,245 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Attempts to Grapple a Hunt Prey target after the triggering melee critical miss on self"',
 
-/*
   'Cavalier Dedication':
+    'Section=feature Note="Has the Animal Companion feature"',
   "Cavalier's Banner":
+    'Section=combat ' +
+    'Note="R30\' Flying banner gives allies +1 vs. fear, but removing or destroying it inflicts frightened 1 on allies"',
   "Cavalier's Charge":
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a +1 ranged Strike within the weapon\'s frist range increment during a mount double Stride"',
   'Impressive Mount':
+    'Section=feature Note="Has the Mature Animal Companion feature"',
   'Quick Mount':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Uses the Mount and Command An Animal actions"',
   'Defend Mount':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Redirects an attack on mount to self"',
   'Mounted Shield':
+    'Section=combat ' +
+    'Note="Can use Raise A Shield and Shield Block to protect mount"',
   'Incredible Mount':
+    'Section=feature Note="Has the Incredible Companion feature"',
   'Trampling Charge':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Mount inflicts melee Strike damage to smaller foes in its path during a double Strike (<b>save basic Reflex</b>; critical failure also inflicts off-guard until the end of the next turn)"',
   'Unseat':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Athletics vs. Fortitude after a successful melee Strike with a jousting weapon vs. a mounted foe dismounts the foe; critical success also inflicts knocked prone"',
   'Specialized Mount':
+    'Section=feature Note="Has the Specialized Companion feature"',
   'Legendary Rider':
+    'Section=combat ' +
+    'Note="Permanently quickened while mounted; can use the additional action only to Command An Animal"',
 
   'Celebrity Dedication':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Upstage feature",' +
+      '"+1 to Earn Income on tasks higher than level %{level}"',
+  'Upstage':
+    'Action=Reaction ' +
+    'Section=skill ' +
+    'Note="Successful check using the same skill as the triggering foe failure gives self +1 attacks, Perception, saves, and skill checks until the end of the next turn; critical success gives the same benefits after a foe\'s normal success"',
   'Never Tire':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Delays suffering fatigue while observed by at least 3 non-foes for up to 1 min"',
   'Mesmerizing Gaze':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Gaze fascinates an observer until the end of the next turn (<b>save Will</b> negates and makes immune for 1 day)"',
   'Command Attention':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="30\' emanation gives +1 degree of success on saves vs. visual effects, forces foes to succeed on a Will save to use a focus action, and allows allies to Hide without cover"',
+
   'Dandy Dedication':
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Influence Rumor feature",' +
+      // TODO Skill Expert if already trained
+      '"Skill Trained (Deception; Society)"',
+  'Influence Rumor':
+    'Section=skill ' +
+    'Note="Successful Diplomacy influences the course, tone, or content of a circulating rumor"',
   'Distracting Flattery':
+    'Action=Reaction ' +
+    'Section=skill ' +
+    'Note="Successful Deception vs. Will negates triggering decrease in target\'s attitude toward self and allies once per target per 10 min; critical failure inflicts an addition decrease"',
   'Gossip Lore':
+    'Section=feature,skill ' +
+    'Note=' +
+    '"Failure to Recall Knowledge using Gossip Lore yields a mix of true and false information",' +
+      '"Skill %V (Gossip Lore)"',
   'Fabricated Connections':
+    'Section=skill ' +
+    'Note="Can use Deception to Make An Impression or Request once per day and to Earn Income or Subsist once per week"',
   'Party Crasher':
+    'Section=skill ' +
+    'Note="1d4 hr process gains entrance for self and allies to a publicized social event"',
 
   'Dual-Weapon Warrior Dedication':
+    'Section=combat Note="Has the Double Slice feature"',
   'Dual Thrower':
+    'Section=combat ' +
+    'Note="Can apply dual-warrior feat effects to thrown and one-handed ranged weapons"',
   'Dual-Weapon Reload':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Reloads a one-handed ranged weapon while also holding another one-handed weapons"',
   'Flensing Slice':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="After 2 hits on a Double Slice, inflicts 1d8 HP persistent bleed per weapon damage die of the most damaging weapon, plus off-guard and a reduction 5 to any physical damage resistance until the start of the next turn"',
   'Dual-Weapon Blitz':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Strikes once with each of 2 one-handed weapons during a Stride"',
   'Dual Onslaught':
-  'Duelist Dedication':
+    'Section=combat ' +
+    'Note="Turns a normal failure on a Double Slice into a success"',
+
+  'Duelist Dedication':'Section=combat Note="Has the Quick Draw feature"',
   "Duelist's Challenge":
+    'Section=combat ' +
+    'Note="Successful attacks on a challenged foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; successful attacks on others reduce the damage by this amount"',
   'Selfless Parry':
+    'Section=combat ' +
+    'Note="Using Dueling Parry gives adjacent allies +1 Armor Class/Can use Dueling Riposte against foes that critically fail Strikes on adjacent allies"',
   'Student Of The Dueling Arts':
+    'Section=combat ' +
+    'Note="Can swap Duelist Dedication feats during daily prep, and can enter any duelist stance by using twice the normal number of actions"',
 
   'Eldritch Archer Dedication':
+    'Section=combat ' +
+    'Note="Has the Eldritch Shot and Eldritch Archer Tradition features"',
+  'Eldritch Archer Tradition':'Section=feature Note="1 selection"',
+  'Eldritch Shot':
+    'Action=3 ' +
+    'Section=magic ' +
+    'Note="Imbues ammunition with spell effects; counts as 2 attacks"',
   'Basic Eldritch Archer Spellcasting':
+    'Section=magic ' +
+    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
   'Enchanting Shot':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Bow or crossbow Strike inflicts +2d6 HP mental, plus stunned 1 on a critical hit"',
   'Magic Ammunition':
+    'Section=combat Note="Has the Transform Ammunition feature; can use it to create 3 chosen types of magical ammunition"',
+  'Transform Ammunition':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Transforms a non-magical arrow or bolt into a piece of magical ammunition until the end of the turn"',
   'Precious Ammunition':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gives an arrow or bolt cold iron or silver effects until the end of the turn"',
   'Eldritch Reload':
-  'Expert Eldritch Archer Spellcaster':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Reloads a weapon after making an Eldritch Shot, casting a spell, or activating a piece of magical ammunition"',
+  'Expert Eldritch Archer Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Expert (Occult)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
   'Homing Shot':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Bow or crossbow Strike ignores concealment and cover"',
   'Incorporeal Shot':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Bow or crossbow Strike passes through intervening obstacles and gains +4 attack vs. armor"',
   'Fatal Shot':
-  'Master Eldritch Archer Spellcaster':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Bow or crossbow strike inflicts +10d10 HP precision, plus death on a critical hit (<b>save Fortitude</b> negates death)"',
+  'Master Eldritch Archer Spellcasting':
+    'Section=magic ' +
+    'Note="Spell Master (Occult)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
 
   'Familiar Master Dedication':
+    'Section=feature Note="Has the Familiar feature"',
   'Familiar Mascot':
+    'Section=feature ' +
+    'Note="Can select an ally to benefit from each master ability"',
   'Familiar Conduit':
+    'Action=1 ' +
+    'Section=magic ' +
+    'Note="Subsequent cast of a ranged spell uses the familiar as its origin"',
   'Improved Familiar':
+    'Section=feature ' +
+    'Note="Familiar can become a specific familiar with 2 fewer abilities than normal"',
   'Mutable Familiar':
+    'Section=feature ' +
+    'Note="Can replace familiar amphibious, burrower, climber, darkvision, fast movement, manual dexterity, resistance, and scent abilities during daily prep"',
   // Incredible Familiar as above
 
   'Gladiator Dedication':
-  'Fancy Moves':
+    'Section=combat,skill ' +
+    'Note=' +
+      '"At the start of combat, gains %{level} temporary Hit Points for 1 min and can use Performance for initiative if spectators are present",' +
+      '"Has the Additional Lore (Gladitorial Lore) feature"',
+  'Fancy Moves':'Section=skill Note="Can use Performance to Demoralize"',
   'Play To The Crowd':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Upon reducing a foe to 0 Hit Points in front of spectators, a successful Performance check gives 2 choices of %{combatNotes.callYourShot?\\"inflict frightened 2 on a creature within 30\', \\":\'\'}%{level} temporary Hit Points for 1 min, +1 Armor Class until the end of the next turn, and +1 on first attack before the end of the next turn"',
   'Stage Fighting':
+    'Section=combat ' +
+    'Note="Suffers no penalty for making a nonlethal attack with a lethal weapon"',
   'Performative Weapons Training':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Bo Staff; Dueling Cape; Spiked Chain; Sword Cane; Trident; War Flail; Whip)",' +
+      '"Critical hits with a bo staff, dueling cape, spiked chain, sword cane, trident, war flail, or whip inflict its critical specialization effect"',
   'Call Your Shot':
+    'Section=combat Note="Has increased Play To The Crowd effects"',
 
   'Herbalist Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has the Advanced Alchemy feature/Skill Expert (Nature)",' +
+      '"Can create 4 alchemical healing consumables in the wilderness, or 2 elsewhere, during daily prep, and can use Nature to craft them"',
   'Fresh Ingredients':
+    'Section=skill ' +
+    'Note="+2 to use Natural Medicine to Treat Wounds with fresh ingredients"',
   'Poultice Preparation':
+    'Section=skill ' +
+    'Note="Can make herbal items to be applied externally that also allow an immediate flat check to recover from a persistent acid, bleed, or fire condition"',
   'Advanced Herbalism':
+    'Section=skill Note="Has increased Advanced Alchemy features"',
   'Endemic Herbs':
+    'Section=skill Note="Herbal items also give environment-specific benefits:+1 Fortitude for 1 min (aquatic); 1 step less severe cold for 1 hr (arctic); 1 step less severe heat (desert); +2 saves vs. disease and poison (forest) for 1 min; +1 Reflex for a min (mountain); +1 Will for 1 min (plains); remove a source of persistent bleed damage (swamp); +1 Perception for 1 min (underground)"',
 
   'Linguist Dedication':
+    'Section=skill Note="Skill Trained (Society)/Has the Multilingual feature"',
   'Multilingual Cipher':
+    'Section=skill ' +
+    'Note="+1 to Decipher Writing, and others suffer -2 to decipher codes created by self"',
   'Phonetic Training':
+    'Section=skill Note="Can transcribe speech in unknown languages"',
   'Spot Translate':
+    'Action=Reaction ' +
+    'Section=skill ' +
+    'Note="Translates and repeats a linguistic effect"',
   'Analyze Idiolect':
+    'Section=skill ' +
+    'Note="Gains +4 Impersonate checks after 10 min interaction with the impersonated creature"',
   'Read Shibboleths':
+    'Section=skill Note="10 min interaction reveals information about another\'s social environment and gives +1 Diplomacy and Deception with them"',
   'Crude Communication':
+    'Section=skill Note="10 min interaction allows a Society check to communicate with a creature speaking an unknown language"',
 
+/*
   'Marshal Dedication':
   'Dread Marshal Stance':
   'Inspiring Marshal Stance':
@@ -16377,6 +16541,35 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'features.Draconic Veil', '?', null,
       'features.Primal Dragonblood', '=', '1'
     );
+  } else if(name == 'Eldritch Archer Dedication') {
+    let tradFeatures = [];
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('eldritchArcherTraditions',
+        'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
+      );
+      rules.defineRule('spellModifier' + t + '.Eldritch Archer',
+        'features.Eldritch Archer Tradition (Arcane)', '?', null,
+        'charismaModifier', '=', null
+      );
+      rules.defineRule('spellAbility.' + t,
+        'spellModifier' + t + '.Eldritch Archer', '=', '"charisma"'
+      );
+      rules.defineRule('spellModifier.' + t,
+        'spellModifier' + t + '.Eldritch Archer', '=', null
+      );
+      tradFeatures.push(
+        'features.Eldritch Archer Dedication ? 6:' + t + ':Eldritch Archer (Tradition)',
+      );
+    });
+    Pathfinder2E.featureListRules(
+      rules, tradFeatures, 'Eldritch Archer', 'level', true
+    )
+    rules.defineRule('eldritchArcherTraditionsLowered',
+      'eldritchArcherTraditions', '=', 'source.toLowerCase()'
+    );
+    rules.defineRule('selectableFeatureCount.Eldritch Archer (Tradition)',
+      'featureNotes.eldritchArcherTradition', '=', '1'
+    );
   } else if(name.match(/^(Expert|Master) Witch Spellcasting$/)) {
     rules.defineRule('magicNotes.' + prefix, 'witchTraditions', '=', null);
   } else if(name == 'Fangs') {
@@ -16429,6 +16622,11 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Gnome Obsession') {
     // Override legacy rule
     rules.defineRule('skillNotes.gnomeObsession', 'level', '=', 'null');
+  } else if(name == 'Gossip Lore') {
+    rules.defineRule('skillNotes.gossipLore',
+      '', '=', '"Trained"',
+      'rank.Society', '=', 'source>=4 ? "Expert" : null'
+    );
   } else if(name == 'Grown Of Oak') {
     rules.defineRule('magicNotes.grownOfOak',
       '', '=', '1',
@@ -16497,6 +16695,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('combatNotes.sanctifyArmament',
       'combatNotes.lastingArmament', '=', 'null' // italics
     );
+  } else if(name == 'Linguist Dedication') {
+    rules.defineRule
+      ('features.Multilingual', 'features.Linguist Dedication', '+', '1');
   } else if(name == 'Martial Experience') {
     rules.defineRule('combatNotes.martialExperience.1',
       'features.Martial Experience', '?', null,
