@@ -4212,7 +4212,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 14","features.Cadence Call"',
   'Target Of Opportunity':
     'Traits=Archetype,Manipulate ' +
-    'Require="level >= 14","features.Martial Dedication"',
+    'Require="level >= 14","features.Marshal Dedication"',
 
   'Martial Artist Dedication':
     'Traits=Archetype,Dedication Require="level >= 2"',
@@ -4266,7 +4266,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Archetype,Healing,Manipulate ' +
     'Require=' +
       '"level >= 16",' +
-      '"features.Medic Condition",' +
+      '"features.Medic Dedication",' +
       '"rank.Medicine >= 4"',
 
   'Pirate Dedication':
@@ -8539,7 +8539,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Permanently quickened; can use the additional action only to use Quick Alchemy"',
   'Advanced Alchemy':
     Pathfinder2E.FEATURES['Advanced Alchemy']
-    .replace('use a batch of infused reagents to create 2', 'create %{(skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4)+(skillNotes.advancedHerbalism?$$\'features.Advanced Herbalism\'*2:0)} consumable'),
+    .replace('use a batch of infused reagents to create 2', 'create %{(skillNotes.advancedEfficientAlchemy?intelligenceModifier+(level>=16?10:8):skillNotes.efficientAlchemy?6+intelligenceModifier:levels.Alchemist?4+intelligenceModifier:4)+(skillNotes.advancedHerbalism?$$\'features.Advanced Herbalism\'*2:0)+(skillNotes.advancedPoisoncraft?$$\'features.Advanced Poisoncraft\'*2:0)} consumable'),
   'Advanced Vials (Bomber)':
     'Section=skill Note="Can make bombs with a special material trait"',
   'Advanced Vials (Chirurgeon)':
@@ -12001,50 +12001,165 @@ Pathfinder2ERemaster.FEATURES = {
   'Crude Communication':
     'Section=skill Note="10 min interaction allows a Society check to communicate with a creature speaking an unknown language"',
 
-/*
   'Marshal Dedication':
+    'Section=feature,save,skill ' +
+    'Note=' +
+      '"Has a 15\' martial\'s aura emanation",' +
+      '"Marshal\'s aura gives self and allies +1 vs. fear",' +
+      // TODO Expert if already trained
+      '"Skill Trained (Choose 1 from Diplomacy, Intimidation)"',
   'Dread Marshal Stance':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Intimidation check enters a stance that gives self and allies within aura a damage bonus equal to the number of damage dice and causes critical hits to inflict frightened 1; critical failure prevents retrying for 1 min"',
   'Inspiring Marshal Stance':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Diplomacy check enters a stance that gives self and allies within aura +1 attacks and saves vs. mental effects; critical failure prevents retrying for 1 min"',
   'Snap Out Of It!':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gives an ally within aura a +1 Will save vs. a mental effect that lasts up to 1 min once per target per 10 min"',
   'Steel Yourself!':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Gives an ally within aura %{charismaModifier} temporary Hit Points and +2 Fortitude until the start of the next turn"',
   'Cadence Call':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Each ally within aura gains an extra Stride%{combatNotes.tacticalCadence?\' or Strike\':\'\'} during their next turn%{combatNotes.tacticalCadence?\'\':\', but suffers slowed 1 until the end of their following turn\'}"',
   'Rallying Charge':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike after a Stride; success gives allied observers %{charismaModifier} temporary Hit Points until the start of the next turn"',
   'Back To Back':
+    'Section=combat ' +
+    'Note="When adjacent to an ally, foes must flank both self and the ally in order to flank either"',
   'To Battle!':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Allows an ally within aura to use a reaction to Stride; using 2 actions instead allows an ally to use a reaction to Strike"',
   'Topple Foe':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Makes a Trip attempt on an adjacent foe in respons to the triggering hit by an ally on that foe"',
   'Coordinated Charge':
-  'Tactical Cadence':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike after a Stride; success allows each ally within 60\' to Stride toward the target"',
+  'Tactical Cadence':'Section=combat Note="Has increased Cadence Call effects"',
   'Target Of Opportunity':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Makes a ranged Strike in response to an ally\'s successful ranged Strike against the same foe"',
 
   'Martial Artist Dedication':
+    'Section=combat Note="Has the Powerful Fist feature"',
   'Follow-Up Strike':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="After a missed unarmed melee attack, makes another attack at the same multiple attack penalty with a different body part"',
   'Grievous Blow':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Unarmed melee Strike counts as two attacks, inflicts +%{level<18?2:3} damage dice, and ignores resistance %{level} to physical damage"',
   'Path Of Iron':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Makes up to 3 attacks at the current multiple attack penalty during a Stride that triggers no reactions"',
 
   'Mauler Dedication':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Weapon Familiarity (Two-Handed Weapons)",' +
+      '"Critical hits with a two-handed weapon inflict its critical specialization effect"',
   'Clear The Way':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Attempts to Shove up to 5 adjacent creatures at the current multiple attack penalty, then Strides up to %{speed//2}\', triggering no reaction from those successfully Shoved"',
   'Shoving Sweep':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Uses a two-handed weapon to Shove the foe making the triggering move; critical success stops the move"',
   'Hammer Quake':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Makes a Trip attempt vs. all adjacent foes or vs. all foes in squares adjacent to an adjacent square; in the latter case, may first Strike a foe in the target square"',
   'Avalanche Strike':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Makes a melee Strike at the current multiple attack penalty vs. each foe within reach"',
 
   'Medic Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Skill Expert (Medicine)",' +
+      '"Successful Battle Medicine or Treat Wounds restores +5, +10, or +15 Hit Points at DC 20, 30, or 40/Can reuse Battle Medicine on a patient immediately once per %{rank.Medicine<3?\'day\':\'hr\'}"',
   "Doctor's Visitation":
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Uses Battle Medicine or Treat Poison after a Stride; using 2 actions allows instead using Administer First Aid or Treat Condition"',
   'Treat Condition':
-  'Holistic Care':
+    'Action=2 ' +
+    'Section=skill ' +
+    'Note="Successful counteract attempt with header\' tools reduces a %{skillNotes.holisticCare?\'frightened, stupefied, stunned, \':\'\'}clumsy, enfeebled, or sickened condition by 1, or by 2 with a critical success; critical failure increases the condition by 1"',
+  'Holistic Care':'Section=skill Note="Has increased Treat Condition effects"',
   'Resuscitate':
+    'Action=3 ' +
+    'Section=skill ' +
+    'Note="Success DC 40 Medicine check revives a creature dead up to 3 rd, increasing its wounded condition by 1, once per target per day"',
 
   'Pirate Dedication':
+    'Section=ability,combat,feature ' +
+    'Note=' +
+      '"Moves normally through difficult terrain and uneven ground caused by unstable ground",' +
+      '"Has the Boarding Assault feature",' +
+      // TODO randomizer
+      '"+1 Skill Feat (Additional Lore for Sailing Lore or a coastal city)"',
+  'Boarding Assault':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Strikes after a double Stride or swinging %{speed*2}\'; boarding or leaving a boat gives the Strike +1 damage die"',
   'Pirate Combat Training':
+    'Section=combat,combat,feature ' +
+    'Note=' +
+      '"Weapon Familiarity (Hatchet; Rapier; Scimitar; Whip)",' +
+      '"Critical hits with a hatchet, rapier, scimitar, or whip inflicts its critical specialization effect",' +
+      // TODO randomizer
+      '"+1 Skill Feat (Combat Climber or Underwater Marauder)"',
   'Rope Runner':
+    'Section=ability,skill ' +
+    'Note=' +
+      '"Has a 15\' climb Speed on ropes",' +
+      '"Successes to Climb or Balance are critical successes, and does not suffer off-guard when Climbing or Balancing on a rope"',
   'Walk The Plank':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful Demoralize forces the target to move along a chosen path up to its Speed once per target per 10 min; critical success allows forcing onto hazards"',
 
   'Poisoner Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has the Advanced Alchemy feature",' +
+      '"Can create 4 alchemical poison consumables during daily prep"',
   "Poisoner's Twist":
+    'Section=combat ' +
+    'Note="Preceding successful melee Strike on a poisoned foe inflicts %{level<18?1:2}d6 HP of the Strike\'s damage type and %{level<18?1:2}d6 HP poison"',
   'Advanced Poisoncraft':
-  'Poison Coat':
+    'Section=skill Note="Has increased Advanced Alchemy features"',
+  'Poison Coat':'Section=combat Note="Has the Once Bitten feature"',
+  'Once Bitten':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Prepared garmet inflicts poison on a successful unarmed attacker"',
   'Acquired Tolerance':
+    'Action=Reaction ' +
+    'Section=save ' +
+    'Note="Rerolls the triggering save vs. one poison type per day"',
   'Chemical Contagion':
+    'Section=combat Note="Has the Greater Field Discovery (Toxicologist) feature"',
 
+/*
   'Ritualist Dedication':
   'Flexible Ritualist':
   'Resourceful Ritualist':
