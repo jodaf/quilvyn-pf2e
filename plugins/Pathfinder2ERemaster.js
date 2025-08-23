@@ -12159,50 +12159,134 @@ Pathfinder2ERemaster.FEATURES = {
   'Chemical Contagion':
     'Section=combat Note="Has the Greater Field Discovery (Toxicologist) feature"',
 
-/*
   'Ritualist Dedication':
+    'Section=magic ' +
+    'Note="+2 checks to perform rituals/Knows %{level//2} uncommon rituals"',
   'Flexible Ritualist':
+    'Section=magic ' +
+    'Note="Can serve as both primary and a secondary caster for rituals"',
   'Resourceful Ritualist':
+    'Section=magic ' +
+    'Note="Can attempt rituals that require 1 degree higher proficiency"',
   'Efficient Rituals':
+    'Section=magic  ' +
+    'Note="Can cast 1-day rituals in 4 hr and multi-day rituals in %{level<14?\'half the time\':\'an equal number of hr\'}"',
   'Assured Ritualist':
+    'Section=magic ' +
+    'Note="Can improve 1 secondary failed check by 1 degree"',
   'Enterprising Ritualist':
+    'Section=magic ' +
+    'Note="Reduces the cost of ritual components by 10%, or 20% with a critical success"',
 
   'Scout Dedication':
+    'Section=skill ' +
+    'Note="Can perform Scout and Avoid Notice simultaneously, and Scouting gives followers +2 initiative"',
   "Scout's Charge":
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a Strike after a Stride and Feint; can use Stealth for the Feint"',
   'Terrain Scout':
+    'Section=skill,skill ' +
+    'Note=' +
+      // TODO randomizer
+      '"+2 Skill Feat (Terrain Stalker)",' +
+      '"Successful Avoid Notice allows giving Terain Stalker benefits to an ally that is Following The Expert"',
   'Fleeting Shadow':
+    'Action=2 Section=skill Note="Sneaks twice after Hiding"',
   "Scout's Speed":
+    'Section=ability,ability ' +
+    'Note=' +
+      '"+10 Speed",' +
+      '"+10 Speed while traveling"',
   "Scout's Pounce":
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Strikes twice after a Stride; target is off-guard if self was hidden or unnoticed"',
 
   'Scroll Trickster Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has the Trick Magic Item feature",' +
+      '"+2 to Trick scrolls, and critical failures to do so are normal failures"',
   'Basic Scroll Cache':
+    'Section=magic ' +
+    'Note="Can create a 1st-rank scroll%{level<8?\'\':\' and a 2nd-rank scroll\'} during daily prep that last%{level<8?\'s\':\'\'} 1 day"',
   'Skim Scroll':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Draws and uses Trick Magic Item on a scroll"',
   'Expert Scroll Cache':
+    'Section=magic ' +
+    'Note="Can create a 4th-rank scroll%{level<14?\'\':level<16?\' and a 5th-rank scroll\':\', a 5th-rank scroll, and a 6th-rank scroll\'} during daily prep that last%{level<14?\'s\':\'\'} 1 day"',
   'Master Scroll Cache':
+    'Section=magic ' +
+    'Note="Can create a 6h-rank scroll%{level<20?\'\':\' and a 7th-rank scroll\'} during daily prep that last%{level<20?\'s\':\'\'} 1 day"',
 
   'Scrounger Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has the Cobble Together feature",' +
+      '"Can Craft items without appropriate tools and has formulas memorized"',
+  'Cobble Together':
+    'Section=skill ' +
+    'Note="Can use 10 min to Craft a common, shoddy item of up to level %{level//2} that lasts 1d4 hr; can target a creature that takes no shoddy penalty with it"',
   'Reverse Engineering':
+    'Section=skill ' +
+    'Note="Can use 1 day\'s work and a successful Crafting check to reverse engineer a formula for a possessed item; critical success allows reassembling the item"', 
   'Magical Scrounger':
+    'Section=skill ' +
+    'Note="Can use 1 day to Cobble Together a non-consumable magical item of up to level %{level//2}"',
   'Expert Disassembly':
+    'Section=skill Note="Can use Crafting to Disable A Device or Pick A Lock"',
 
   'Sentinel Dedication':
+    'Section=combat ' +
+    // TODO Heavy Armor if already trained in Medium Armor, and advances with other features
+    'Note="Defense Trained (Light Armor; Medium Armor)"',
   'Steel Skin':
+    'Section=combat Note="Does not suffer fatigue from sleeping in armor"',
   'Armor Specialist':
+    'Section=combat Note="Gains the specialization effects of all proficient armor"',
   'Armored Rebuff':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Shoves a foe who fails an attack on self with a melee weapon or unarmed Strike"',
   'Mighty Bulwark':
+    'Section=save Note="Bulwark armor gives +4 on all Reflex saves"',
 
+  // TODO number of snares in formula book
   'Snarecrafter Dedication':
+    'Section=skill,skill ' +
+    'Note=' +
+      '"Has the Snare Crafting feature",' +
+      '"Can craft snares in 3 actions instead of 1 min, and set snares have a DC of at least %{classDC}/Can prepare %{(rank.crafting<3?4:rank.Crafting<4?6:8)*(skillNotes.plentifulSnares?2:1)} snares during daily prep"',
   'Surprise Snare':
+    'Action=3 ' +
+    'Section=combat ' +
+    'Note="Deploys a snare that triggers immediately in a foe\'s space"',
   'Remote Trigger':
+    'Section=combat ' +
+    'Note="Can use a ranged Strike to trigger snares, automatically succeeding with self snares"',
   'Giant Snare':
+    'Section=skill ' +
+    'Note="Can use 2 snare preparations to prepare a single snare that covers a 10\'x10\' area"',
   'Lightning Snares':
+    'Section=skill Note="Can craft snares in 1 action instead of 1 min"',
   'Plentiful Snares':
+    'Section=skill Note="Has increased Sharecrafter Dedication effects"',
 
   'Talisman Dabbler Dedication':
+    'Section=skill ' +
+    'Note="Trained in the use of talismans, can Craft %{2+(skillNotes.deeperDabbler?$\'features.Deeper Dabbler\'*2:0)} talismans of up to level %{level//2} during daily prep, and can use Affix A Talisman to affix or remove up to 4 talismans"',
   'Quick Fix':
+    'Section=skill ' +
+    'Note="Has the Rapid Affixture feature; can affix 4 talismans in 1 min%{level<12?\'\':\' and Affix a Talisman as a 3-action activity\'}"',
   'Deeper Dabbler':
+    'Section=skill Note="Has increased Talisman Dabbler Dedication features"',
   'Talismanic Sage':
+    'Section=skill Note="Can have 2 talismans affect an item simultaneously"',
 
+/*
   'Vigilante Dedication':
   'Hidden Magic':
   'Minion Guise':
@@ -12214,13 +12298,33 @@ Pathfinder2ERemaster.FEATURES = {
   'Many Guises':
   'Frightening Appearance':
   'Stunning Appearance':
+*/
 
   'Viking Dedication':
+    'Section=ability,skill,skill ' +
+    'Note=' +
+      '"Moves normally through difficult terrain from shallow water",' +
+      '"Has the Additional Lore (Sailing Lore) and Additional Lore (Warfare Lore) features",' +
+      '"Successes on Athletics to Swim are critical successes"',
   'Hurling Charge':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Make a ranged thrown Strike, Strides, then draws a weapon without triggering reactions; if raging, the Stride inflicts off-guard on an adjacent foe"',
   'Viking Weapon Familiarity':
+    'Section=combat,combat ' +
+    'Note=' +
+      '"Has the Shield Block feature/Weapon Familiarity (Battle Axe; Hatchet; Longsword; Shield Boss; Shield Spikes; Shortsword)",' +
+      '"Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effects"',
   'Second Shield':
+    'Action=Free ' +
+    'Section=combat ' +
+    'Note="Replaces a shield broken when using Shield Block with a nearby unatteneded shield or improvised item"',
   'Into The Fray':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Makes a Strike with a one-handed melee weapon and another with a shield during a Leap, Strike, or Swim"',
 
+/*
   'Weapon Improviser Dedication':
   'Improvised Pummel':
   'Surprise Strike':
@@ -16870,6 +16974,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('spellSlots.D10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.O10', "magicNotes.patron'sTruth", '+', '1');
     rules.defineRule('spellSlots.P10', "magicNotes.patron'sTruth", '+', '1');
+  } else if(name == 'Pirate Combat Training') {
+    rules.defineRule
+      ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name.startsWith('Qi Spells')) {
     rules.defineRule('features.Qi Spells', 'features.' + name, '=', '1');
   } else if(name == 'Reliable Luck') {
@@ -16939,6 +17046,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Untamed Form') {
     rules.defineRule
       ('spells.Untamed Form (P1 Foc)', 'magicNotes.untamedForm', '=', '1');
+  } else if(name == 'Viking Weapon Familiarity') {
+    rules.defineRule
+      ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name == 'Vicious Incisors') {
     rules.defineRule
       ('weaponDieSidesBonus.Jaws', 'combatNotes.viciousIncisors', '^=', '0');

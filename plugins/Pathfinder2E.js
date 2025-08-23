@@ -13578,6 +13578,7 @@ Pathfinder2E.classRules = function(
   rules.defineRule('classDifficultyClass.' + name + '.2',
     'rank.' + name, '=', 'Pathfinder2E.RANK_NAMES[source]'
   );
+  rules.defineRule('classDC', 'classDifficultyClass.' + name, '=', null);
 
   rules.defineRule('classHitPoints', classLevel, '=', hitPoints);
   rules.defineRule('featureNotes.' + prefix + 'Feats',
