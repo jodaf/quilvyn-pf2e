@@ -2612,7 +2612,11 @@ Pathfinder2ERemaster.FEATS = {
   // Steady Spellcasting as above
   "Witch's Charge":'Traits=Witch,Detection Require="level >= 6"',
   'Incredible Familiar':
-    'Traits=Witch Require="level >= 8","features.Enhanced Familiar"',
+    'Traits=Witch,Archetype ' +
+    'Require=' +
+      '"levels.Witch >= 8 || level >= 10",' +
+      '"features.Enhanced Familiar",' +
+      '"levels.Witch || features.Familiar Master Dedication"',
   'Murksight':'Traits=Witch Require="level >= 8"',
   'Spirit Familiar':
     'Traits=Witch ' +
@@ -3824,11 +3828,11 @@ Pathfinder2ERemaster.FEATS = {
   'Scholastic Identification':
     'Traits=Archetype,Skill ' +
     'Require=' +
-      '"level >= 4",' +
+      '"level >= 7",' +
       '"features.Archaeologist Dedication",' +
       '"rank.Society >= 3"',
   "Archaeologist's Luck":
-    'Traits=Archetype,Skill ' +
+    'Traits=Archetype,Fortune ' +
     'Require="level >= 8","features.Archaeologist Dedication"',
   'Greater Magical Scholastics':
     'Traits=Archetype Require="level >= 10","features.Magical Scholastics"',
@@ -3844,7 +3848,7 @@ Pathfinder2ERemaster.FEATS = {
   'Unobstructed Shot':
     'Traits=Archetype,Flourish ' +
     'Require=' +
-      '"level >= 6",' +
+      '"level >= 10",' +
       '"features.Archer Dedication",' +
       '"rank.Athletics >= 2"',
 
@@ -3860,7 +3864,8 @@ Pathfinder2ERemaster.FEATS = {
   'Assassinate':
     'Traits=Archetype Require="level >= 12","features.Assassin Dedication"',
 
-  'Bastion Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  'Bastion Dedication':
+    'Traits=Archetype,Dedication Require="level >= 2","features.Shield Block"',
   'Disarming Block':
     'Traits=Archetype ' +
     'Require=' +
@@ -3872,7 +3877,7 @@ Pathfinder2ERemaster.FEATS = {
   'Destructive Block':
     'Traits=Archetype Require="level >= 10","features.Bastion Dedication"',
   'Shield Salvation':
-    'Traits=Archetype Require="level >= 10","features.Bastion Dedication"',
+    'Traits=Archetype Require="level >= 12","features.Bastion Dedication"',
 
   'Beastmaster Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Nature >= 1"',
@@ -3906,7 +3911,7 @@ Pathfinder2ERemaster.FEATS = {
   // TODO requires multiple companions
   'Lead The Pack':
     'Traits=Archetype,Uncommon ' +
-    'Require="level >= 16","features.Beastmaster Companion"',
+    'Require="level >= 16","features.Mature Beastmaster Companion"',
 
   'Blessed One Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
   'Blessed Sacrifice':
@@ -4029,7 +4034,8 @@ Pathfinder2ERemaster.FEATS = {
 
   // TODO require expert in a bow or crossbow
   'Eldritch Archer Dedication':
-    'Traits=Archetype,Dedication,Magical Require="level >= 6"',
+    'Traits=Archetype,Dedication,Magical ' +
+    'Require="level >= 6"',
   'Basic Eldritch Archer Spellcasting':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Eldritch Archer Dedication"',
@@ -4076,9 +4082,7 @@ Pathfinder2ERemaster.FEATS = {
   'Mutable Familiar':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Familiar Master Dedication"',
-  // TODO different traits and level requirement than the Witch feat
-  // 'Incredible Familiar':
-  //   'Traits=Archetype Require="level >= 10","features.Enhanced Familiar"',
+  // Incredible Familiar as above
 
   'Gladiator Dedication':
     'Traits=Archetype,Dedication ' +
@@ -4449,7 +4453,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 14","features.Talisman Dabbler Dedication"',
 
   'Vigilante Dedication':
-    'Traits=Archetype,Dedication,Uncommon ' +
+    'Traits=Archetype,Uncommon,Dedication ' +
     'Require="level >= 2","rank.Deception >= 1"',
   'Hidden Magic':
     'Traits=Archetype,Skill ' +
@@ -4564,7 +4568,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Archetype ' +
     'Require="level >= 8","features.Wrestler Dedication"',
   'Aerial Piledriver':
-    'Traits=Archetype ' +
+    'Traits=Archetype,Attack ' +
     'Require="level >= 10","features.Wrestler Dedication"',
   'Spinebreaker':
     'Traits=Archetype ' +
@@ -11616,7 +11620,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Tumbling Opportunist':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Attempts to use Acrobatics to Trip a foe after moving through its space"',
+    'Note="Attempts to use Acrobatics to Trip a foe after moving through its space once per min"',
 
   'Archaeologist Dedication':
     'Section=skill,skill ' +
@@ -11722,7 +11726,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Can communicate telepathically with animal companions %{rank.Nature<4?\\" within 100\'\\":\'at any range\'}"',
   "Beastmaster's Call":
-    'Section=combat Note="Can conjure an image of an inactive animal companion to provide support once per turn"',
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Conjures an image of an inactive animal companion to provide support once per turn"',
   'Specialized Beastmaster Companion':
     'Section=feature Note="Has the Specialized Animal Companion feature"',
   'Lead The Pack':
@@ -11771,7 +11777,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Cavalier's Charge":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes a +1 ranged Strike within the weapon\'s frist range increment during a mount double Stride"',
+    'Note="Makes a +1 ranged Strike within the weapon\'s first range increment during a mount double Stride"',
   'Impressive Mount':
     'Section=feature Note="Has the Mature Animal Companion feature"',
   'Quick Mount':
@@ -11871,6 +11877,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Duelist Dedication':'Section=combat Note="Has the Quick Draw feature"',
   "Duelist's Challenge":
+    'Action=1 ' +
     'Section=combat ' +
     'Note="Successful attacks on a challenged foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; successful attacks on others reduce the damage by this amount"',
   'Selfless Parry':
@@ -11900,7 +11907,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Transform Ammunition':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Transforms a non-magical arrow or bolt into a piece of magical ammunition until the end of the turn"',
+    'Note="Transforms a non-magical arrow or bolt into a piece of magical ammunition until the end of the turn once per rd"',
   'Precious Ammunition':
     'Action=1 ' +
     'Section=combat ' +
@@ -11919,11 +11926,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Incorporeal Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Bow or crossbow Strike passes through intervening obstacles and gains +4 attack vs. armor"',
+    'Note="Bow or crossbow Strike passes through intervening obstacles and gains +4 attack vs. armor once per day"',
   'Fatal Shot':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Bow or crossbow strike inflicts +10d10 HP precision, plus death on a critical hit (<b>save Fortitude</b> negates death)"',
+    'Note="Bow or crossbow strike inflicts +10d10 HP precision, plus death on a critical hit (<b>save Fortitude</b> negates death) once per day"',
   'Master Eldritch Archer Spellcasting':
     'Section=magic ' +
     'Note="Spell Master (Occult)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
@@ -12027,7 +12034,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cadence Call':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Each ally within aura gains an extra Stride%{combatNotes.tacticalCadence?\' or Strike\':\'\'} during their next turn%{combatNotes.tacticalCadence?\'\':\', but suffers slowed 1 until the end of their following turn\'}"',
+    'Note="Each ally within aura gains an extra Stride%{combatNotes.tacticalCadence?\' or Strike\':\'\'} during their next turn%{combatNotes.tacticalCadence?\'\':\', but suffers slowed 1 until the end of their following turn\'} once per min"',
   'Rallying Charge':
     'Action=2 ' +
     'Section=combat ' +
@@ -12042,7 +12049,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Topple Foe':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a Trip attempt on an adjacent foe in respons to the triggering hit by an ally on that foe"',
+    'Note="Makes a Trip attempt on an adjacent foe in response to the triggering hit by an ally on that foe"',
   'Coordinated Charge':
     'Action=2 ' +
     'Section=combat ' +
@@ -12066,7 +12073,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Path Of Iron':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes up to 3 attacks at the current multiple attack penalty during a Stride that triggers no reactions"',
+    'Note="Makes up to 3 attacks at the current multiple attack penalty during a Stride that triggers no reactions once per min"',
 
   'Mauler Dedication':
     'Section=combat,combat ' +
@@ -12143,6 +12150,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the Advanced Alchemy feature",' +
       '"Can create 4 alchemical poison consumables during daily prep"',
   "Poisoner's Twist":
+    'Action=1 ' +
     'Section=combat ' +
     'Note="Preceding successful melee Strike on a poisoned foe inflicts %{level<18?1:2}d6 HP of the Strike\'s damage type and %{level<18?1:2}d6 HP poison"',
   'Advanced Poisoncraft':
@@ -12151,7 +12159,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Once Bitten':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Prepared garmet inflicts poison on a successful unarmed attacker"',
+    'Note="Prepared garment inflicts poison on a successful unarmed attacker"',
   'Acquired Tolerance':
     'Action=Reaction ' +
     'Section=save ' +
@@ -12190,7 +12198,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       // TODO randomizer
       '"+2 Skill Feat (Terrain Stalker)",' +
-      '"Successful Avoid Notice allows giving Terain Stalker benefits to an ally that is Following The Expert"',
+      '"Successful Avoid Notice allows giving Terrain Stalker benefits to an ally that is Following The Expert"',
   'Fleeting Shadow':
     'Action=2 Section=skill Note="Sneaks twice after Hiding"',
   "Scout's Speed":
@@ -12286,19 +12294,39 @@ Pathfinder2ERemaster.FEATURES = {
   'Talismanic Sage':
     'Section=skill Note="Can have 2 talismans affect an item simultaneously"',
 
-/*
   'Vigilante Dedication':
+    'Section=feature ' +
+    'Note="Has separate social and vigilante identities; switching requires 1 min, and attempts by others to uncover require a successful %{20+skillModifiers.Deception} Seek"',
   'Hidden Magic':
+    'Section=skill ' +
+    'Note="Others\' attempts to detect magical gear requires a successful Perception vs. Deception check"',
   'Minion Guise':
+    'Section=skill ' +
+    'Note="Can disguise animal companion, familiar, or pet for social interactions"',
   'Safe House':
+    'Section=feature ' +
+    'Note="Has a secret lair up to %{rank.Deception<2?2:rank.Deception<3?4:rank.Deception<4?8:16} 10\' cubes in size that is shielded from magical protection (DC %{skillModifiers.Deception} counteract vs. level %{level//2} negates)"',
   'Social Purview':
+    // TODO randomize
+    'Section=feature Note="+1 Class Feat (archetype dedication)"',
   'Startling Appearance':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Strike vs. an unaware target inflicts off-guard for the rest of the current turn%{combatNotes.stunningAppearance?\' frightened 1, and stunned 1\':\' and frightened 1\'}, or %{combatNotes.stunningAppearance?\'stunned 2 and \':\'\'}frightened 2 on a critical success"',
   'Quick Change':
+    'Section=skill ' +
+    'Note="Can change identity in %{rank.Deception<4?\' 3 actions\':\'1 action\'}"',
   'Subjective Truth':
+    'Section=skill ' +
+    'Note="Statements that are true to the current identity do not detect as lies"',
   'Many Guises':
+    'Section=feature ' +
+    'Note="Can assume additional identities other than primary social and vigilante identities"',
   'Frightening Appearance':
+    'Section=combat ' +
+    'Note="Startling Appearance also allows a Demoralize attempt vs. unaware foes in a 10\' emanation"',
   'Stunning Appearance':
-*/
+    'Section=combat Note="Has increased Startling Appearance effects"',
 
   'Viking Dedication':
     'Section=ability,skill,skill ' +
@@ -12324,27 +12352,73 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Makes a Strike with a one-handed melee weapon and another with a shield during a Leap, Strike, or Swim"',
 
-/*
   'Weapon Improviser Dedication':
+    'Section=combat ' +
+    'Note="Suffers no attack penalty from using an improvised weapon, and improvised weapons inflict at least 1d6 HP, or 1d4 HP if agile"',
   'Improvised Pummel':
+    'Section=combat ' +
+    'Note="Can gain +%{level<12?1:2} attack and %{level<16?2:3} damage dice with an improvised weapon, but the weapon breaks on a critical hit; critical hits with items that are difficult to break are normal hits"',
   'Surprise Strike':
+    'Section=combat ' +
+    'Note="Foes unaware of self improvised weapon skills are off-guard to first Strike"',
   'Improvised Critical':
+    'Section=combat ' +
+    'Note="Critical hits with improvised weapon inflict appropriate critical specialization effects"',
   'Makeshift Strike':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Grabs and Strikes with an improvised weapon"',
   'Shattering Strike (Weapon Improviser)':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Breaking a weapon used for Improvised Pummel inflicts +3d6 HP piercing"',
 
   'Wrestler Dedication':
+    'Section=combat,save,skill ' +
+    'Note=' +
+      '"Suffers no penalty for inflicting lethal damage with nonlethal unarmed attacks",' +
+      '"+2 Fortitude DC to Grapple or Swallow Whole",' +
+      '"Skill Expert (Athletics)/Has the Titan Wrestler feature"',
   'Disengaging Twist':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Makes a +2 Athletics check to Escape the triggering grabbed or restrained condition"',
   'Elbow Breaker':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe gives +2 to further Disarm attempts and inflicts -2 attacks with the item until the foe changes of its grip; critical success forces foe to drop the item"',
   'Suplex':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful unarmed Strike vs. a grabbed or restrained foe releases hold and inflicts prone, plus 2d6 HP bludgeoning on a critical success"',
   'Clinch Strike':
+    'Action=Reaction ' +
+    'Section=combat ' +
+    'Note="Strikes a foe that Escapes from a grabbed or restrained condition"',
   'Running Tackle':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Attempts a Grapple or Shove after a double Stride or during a High Jump or Long Jump"',
   'Strangle':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe inflicts additional damage equal to the number of damage dice, along with requiring a successful DC 10 flat check to perform any action that requires speech"',
   'Submission Hold':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Grapple vs. a grabbed or restrained foe inflicts enfeebled 1 until the end of its next turn, or enfeebled 2 until the end of its next turn and enfeebled 1 for 1 min on a critical success"',
   'Aerial Piledriver':
+    'Action=2 ' +
+    'Section=combat ' +
+    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe inflicts additional damage equal to the number of damage dice and prone; failure ends grabbed or restrained condition, and critical failure inflicts prone on self"',
   'Spinebreaker':
+    'Action=1 ' +
+    'Section=combat ' +
+    'Note="Successful Grapple vs. a grabbed or restrained foe inflicts clumsy 1 until the end of its next turn, or clumsy 2 until the end of its next turn and clumsy 1 for 1 min on a critical success"',
   'Inescapable Grasp':
-
-*/
+    'Section=combat ' +
+    'Note="Grabbed and restrained foes require a successful DC 15 flat check to teleport or to Escape via <i>unfettered movement</i>"',
+  // Form Lock as above
 
   // General and Skill
 
@@ -14965,6 +15039,52 @@ Pathfinder2ERemaster.SPELLS = {
   'Cloak Of Colors':
     Pathfinder2E.SPELLS['Cloak Of Colors']
     .replace('Illusion', 'Concentrate,Manipulate'),
+  'Collective Transposition':
+    Pathfinder2E.SPELLS['Collective Transposition']
+    .replace('Traits=', 'Traits=Manipulate,'),
+  'Concordant Choir':
+    'Level=1 ' +
+    'Traits=Concentrate,Sonic ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R30\' Inflicts 1d4 HP; 2 or 3 actions inflicts 2d4 HP sonic in a 10\' or 30\' radius (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +1d4 HP for 1 action or +2d4 HP for 2 or 3)"',
+  'Confusing Colors':
+    Pathfinder2E.SPELLS['Scintillating Pattern']
+    .replace('Traits=', 'Traits=Manipulate,Subtle,'),
+  'Containment':
+    Pathfinder2E.SPELLS['Resilient Sphere']
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('Armor Class 5, ', '')
+    .replace(')', ') (<b>heightened +1</b> increases field Hit Points by 5 or 15 on save success or failure'),
+  'Corrosive Muck':
+    'Level=5 ' +
+    'Traits=Acid,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' 2 10\' bursts inflict greater difficult terrain and 8d6 HP acid for 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> creates another 10\' burst)"',
+  'Countless Eyes':
+    'Level=4 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched can see in all directions, cannot be flanked, and critically succeeds on a Seek success for 1 min"',
+  'Crashing Wave':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate,Water ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"30\' cone inflicts 6d6 HP bludgeoning and extinguishes non-magical fires (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Curse Of Lost Time':
+    'Level=3 ' +
+    'Traits=Concentrate,Curse,Manipulate,Void ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched object suffers 4d6 HP, becomes shoddy, cannot be repaired, and counteracts magical attempts to repair it (<b>save Fortitude</b> by bearer negates); touched construct suffers 4d6 HP and clumsy 1, enfeebled 1, cannot be repaired, and counteracts magical attempts to repair it for 1 hr (<b>save basic Fortitude</b>; critical failure makes effects permanent); touched living creature suffers clumsy 1 and enfeebled 1 for 1 hr (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure makes effects permanent)"',
 
   // Champion
   'Lay On Hands':

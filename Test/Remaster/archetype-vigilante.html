@@ -83,7 +83,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 3; Class: 6; General: 2; Skill: 5</td>
+        <td><b>Feat Count</b>: Ancestry: 3; Class: 7; General: 2; Skill: 5</td>
         <td><b>Selectable Feature Count</b>: Fighter (Key Attribute); Fighter (Weapon Group); Human (Heritage)</td>
       </tr></table>
 </td>
@@ -114,11 +114,19 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 5 selections</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Social Purview: +1 Class Feat (archetype dedication)</i></td>
+      </tr><tr style="text-align:center">
         <td>Changeling Heritage: Has the changeling trait and may take changeling ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Familiar: Has a Tiny animal minion</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
+      </tr><tr style="text-align:center">
+        <td>Many Guises: Can assume additional identities other than primary social and vigilante identities</td>
+      </tr><tr style="text-align:center">
+        <td>Safe House: Has a secret lair up to 8 10' cubes in size that is shielded from magical protection (DC 18 counteract vs. level 5 negates)</td>
+      </tr><tr style="text-align:center">
+        <td>Vigilante Dedication: Has separate social and vigilante identities; switching requires 1 min, and attempts by others to uncover require a successful 38 Seek</td>
       </tr></table>
 </td>
     </tr></table>
@@ -181,9 +189,17 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
     </tr><tr style="text-align:center">
+      <td>Hidden Magic: Others' attempts to detect magical gear requires a successful Perception vs. Deception check</td>
+    </tr><tr style="text-align:center">
       <td>Impressive Performance: Can use Performance to Make An Impression</td>
     </tr><tr style="text-align:center">
+      <td>Minion Guise: Can disguise animal companion, familiar, or pet for social interactions</td>
+    </tr><tr style="text-align:center">
       <td>Natural Medicine: Can use Nature to Treat Wounds; gives a +2 bonus in wilderness</td>
+    </tr><tr style="text-align:center">
+      <td>Quick Change: Can change identity in  3 actions</td>
+    </tr><tr style="text-align:center">
+      <td>Subjective Truth: Statements that are true to the current identity do not detect as lies</td>
     </tr></table>
 </td>
   </tr></table>
@@ -221,6 +237,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Stunning Appearance: Has increased Startling Appearance effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Temple Sword): Weapon Familiarity (Temple Sword)</i></td>
       </tr><tr style="text-align:center">
         <td>Battlefield Surveyor: +2 Perception for initiative</td>
@@ -229,9 +247,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
+        <td>Frightening Appearance: Startling Appearance also allows a Demoralize attempt vs. unaware foes in a 10' emanation</td>
+      </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Startling Appearance: <b>(1)</b> Successful Strike vs. an unaware target inflicts off-guard for the rest of the current turn frightened 1, and stunned 1, or stunned 2 and frightened 2 on a critical success</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -267,7 +289,7 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 6 available vs. 12 allocated</td>
+        <td>Class Feats Allocation: 7 available vs. 12 allocated</td>
       </tr><tr style="text-align:center">
         <td>Frightening Appearance Feat: Requires level (currently 10) >= 12, intimidation rank (currently 2) >= 2 and startling appearance feature (currently 1)</td>
       </tr><tr style="text-align:center">

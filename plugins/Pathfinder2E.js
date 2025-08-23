@@ -9777,7 +9777,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Creates an impassible force sphere with Armor Class 5, Harness 10, and 40 HP around the target for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates)"',
+      '"R30\' Creates around the target an impassible force field with immunity to critical hits and precision damage, Armor Class 5, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates)"',
   'Resist Energy':
     'Level=2 ' +
     'Traits=Abjuration ' +
