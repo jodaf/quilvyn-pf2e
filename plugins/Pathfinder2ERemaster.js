@@ -11952,28 +11952,28 @@ Pathfinder2ERemaster.FEATURES = {
   'Familiar Conduit':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent cast of a ranged spell uses the familiar as its origin"',
+    'Note="Subsequent cast of a ranged spell uses familiar as its origin"',
   'Improved Familiar':
     'Section=feature ' +
     'Note="Familiar can become a specific familiar with 2 fewer abilities than normal"',
   'Mutable Familiar':
     'Section=feature ' +
-    'Note="Can replace familiar amphibious, burrower, climber, darkvision, fast movement, manual dexterity, resistance, and scent abilities during daily prep"',
+    'Note="10-min process replaces familiar amphibious, burrower, climber, darkvision, fast movement, manual dexterity, resistance, and scent abilities with others from the same list"',
   // Incredible Familiar as above
 
   'Gladiator Dedication':
     'Section=combat,skill ' +
     'Note=' +
-      '"At the start of combat, gains %{level} temporary Hit Points for 1 min and can use Performance for initiative if spectators are present",' +
+      '"If spectators are present, gains %{level} temporary Hit Points for 1 min at the start of combat and can use Performance for initiative",' +
       '"Has the Additional Lore (Gladitorial Lore) feature"',
   'Fancy Moves':'Section=skill Note="Can use Performance to Demoralize"',
   'Play To The Crowd':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Upon reducing a foe to 0 Hit Points in front of spectators, a successful Performance check gives 2 choices of %{combatNotes.callYourShot?\\"inflict frightened 2 on a creature within 30\', \\":\'\'}%{level} temporary Hit Points for 1 min, +1 Armor Class until the end of the next turn, and +1 on first attack before the end of the next turn"',
+    'Note="Upon reducing a foe to 0 Hit Points in front of spectators, a successful Performance check gives 2 choices from: %{combatNotes.callYourShot?\\"inflict frightened 2 on a creature within 30\'; \\":\'\'}%{level} temporary Hit Points for 1 min; +1 Armor Class until the end of the next turn; +1 on first attack before the end of the next turn"',
   'Stage Fighting':
     'Section=combat ' +
-    'Note="Suffers no penalty for making a nonlethal attack with a lethal weapon"',
+    'Note="Suffers no attack penalty for making a nonlethal Strike with a lethal weapon"',
   'Performative Weapons Training':
     'Section=combat,combat ' +
     'Note=' +
@@ -11989,33 +11989,36 @@ Pathfinder2ERemaster.FEATURES = {
       '"Can create 4 alchemical healing consumables in the wilderness, or 2 elsewhere, during daily prep, and can use Nature to craft them"',
   'Fresh Ingredients':
     'Section=skill ' +
-    'Note="+2 to use Natural Medicine to Treat Wounds with fresh ingredients"',
+    'Note="+4 to use Natural Medicine with fresh herbs to Treat Wounds in the wilderness, or +2 elsewhere"',
   'Poultice Preparation':
     'Section=skill ' +
-    'Note="Can make herbal items to be applied externally that also allow an immediate flat check to recover from a persistent acid, bleed, or fire condition"',
+    'Note="Can make herbal items to be applied externally that also allow an immediate flat check to recover from persistent acid, bleed, or fire damage"',
   'Advanced Herbalism':
-    'Section=skill Note="Has increased Advanced Alchemy features"',
+    'Section=skill Note="Has increased Advanced Alchemy effects"',
   'Endemic Herbs':
-    'Section=skill Note="Herbal items also give environment-specific benefits:+1 Fortitude for 1 min (aquatic); 1 step less severe cold for 1 hr (arctic); 1 step less severe heat (desert); +2 saves vs. disease and poison (forest) for 1 min; +1 Reflex for a min (mountain); +1 Will for 1 min (plains); remove a source of persistent bleed damage (swamp); +1 Perception for 1 min (underground)"',
+    'Section=skill Note="Herbal items also give environment-specific benefits: +1 Fortitude for 1 min (aquatic); 1 step less severe cold for 1 hr (arctic); 1 step less severe heat (desert); +2 saves vs. disease and poison for 1 min (forest); +1 Reflex for 1 min (mountain); +1 Will for 1 min (plains); remove a source of persistent bleed damage (swamp); +1 Perception for 1 min (underground)"',
 
   'Linguist Dedication':
     'Section=skill Note="Skill Trained (Society)/Has the Multilingual feature"',
   'Multilingual Cipher':
     'Section=skill ' +
-    'Note="+1 to Decipher Writing, and others suffer -2 to decipher codes created by self"',
+    'Note="+1 to Decipher Writing, and others without a matching language list suffer -2 to decipher codes created by self"',
   'Phonetic Training':
-    'Section=skill Note="Can transcribe speech in unknown languages"',
+    'Section=skill ' +
+    'Note="Can transcribe and repeat speech in unknown languages"',
   'Spot Translate':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Translates and repeats a linguistic effect"',
+    'Note="R60\' Translates and repeats the triggering linguistic effect"',
   'Analyze Idiolect':
     'Section=skill ' +
-    'Note="Gains +4 Impersonate checks after 10 min interaction with the impersonated creature"',
+    'Note="Gains +4 Impersonate checks after a 10-min interaction with the impersonated creature"',
   'Read Shibboleths':
-    'Section=skill Note="10 min interaction reveals information about another\'s social environment and gives +1 Diplomacy and Deception with them"',
+    'Section=skill ' +
+    'Note="A 10-min interaction reveals information about a target\'s social environment and gives +1 Diplomacy and Deception with them"',
   'Crude Communication':
-    'Section=skill Note="10 min interaction allows a Society check to communicate with a creature speaking an unknown language"',
+    'Section=skill ' +
+    'Note="%{rank.Society<4?\'A 10-min interaction allows a Society check to\':\'Can\'} communicate with creatures that speak an unknown language"',
 
   'Marshal Dedication':
     'Section=feature,save,skill ' +
@@ -12027,7 +12030,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dread Marshal Stance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Intimidation check enters a stance that gives self and allies within aura a damage bonus equal to the number of damage dice and causes critical hits to inflict frightened 1; critical failure prevents retrying for 1 min"',
+    'Note="Successful Intimidation check enters a stance that gives self and allies within aura a damage bonus equal to the number of weapon damage dice and causes critical hits to inflict frightened 1; critical failure prevents retrying for 1 min"',
   'Inspiring Marshal Stance':
     'Action=1 ' +
     'Section=combat ' +
@@ -12043,14 +12046,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Cadence Call':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Each ally within aura gains an extra Stride%{combatNotes.tacticalCadence?\' or Strike\':\'\'} during their next turn%{combatNotes.tacticalCadence?\'\':\', but suffers slowed 1 until the end of their following turn\'} once per min"',
+    'Note="Each ally within aura gains an extra Stride%{combatNotes.tacticalCadence?\' or Strike\':\'\'} during their next turn%{combatNotes.tacticalCadence?\'\':\', but suffers slowed 1 until the end of their following turn,\'} once per min"',
   'Rallying Charge':
     'Action=2 ' +
     'Section=combat ' +
     'Note="Makes a melee Strike after a Stride; success gives allied observers %{charismaModifier} temporary Hit Points until the start of the next turn"',
   'Back To Back':
     'Section=combat ' +
-    'Note="When adjacent to an ally, foes must flank both self and the ally in order to flank either"',
+    'Note="When adjacent to an ally, foes must flank both self and the ally in order to inflict off-guard on either"',
   'To Battle!':
     'Action=1 ' +
     'Section=combat ' +
@@ -12067,7 +12070,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Target Of Opportunity':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a ranged Strike in response to an ally\'s successful ranged Strike against the same foe"',
+    'Note="Makes a -2 ranged Strike in response to an ally\'s successful ranged Strike against the same foe"',
 
   'Martial Artist Dedication':
     'Section=combat Note="Has the Powerful Fist feature"',
@@ -12078,7 +12081,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Grievous Blow':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Unarmed melee Strike counts as two attacks, inflicts +%{level<18?2:3} damage dice, and ignores resistance %{level} to physical damage"',
+    'Note="Unarmed melee Strike counts as 2 attacks, inflicts +%{level<18?2:3} damage dice, and ignores resistance %{level} to physical damage"',
   'Path Of Iron':
     'Action=3 ' +
     'Section=combat ' +
@@ -12096,15 +12099,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Shoving Sweep':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Uses a two-handed weapon to Shove the foe making the triggering move; critical success stops the move"',
+    'Note="Uses a two-handed weapon to Shove a foe making the triggering move; critical success stops the move"',
   'Hammer Quake':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes a Trip attempt vs. all adjacent foes or vs. all foes in squares adjacent to an adjacent square; in the latter case, may first Strike a foe in the target square"',
+    'Note="Uses a non-finesse, two-handed melee weapon to make a Trip attempt vs. all foes in or adjacent to a square within reach after optionally Striking a foe in the target square; counts as 3 attacks for the multiple attack penalty"',
   'Avalanche Strike':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes a melee Strike at the current multiple attack penalty vs. each foe within reach"',
+    'Note="Uses a two-handed melee weapon to make a melee Strike at the current multiple attack penalty vs. each foe within reach"',
 
   'Medic Dedication':
     'Section=skill,skill ' +
@@ -12118,12 +12121,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Treat Condition':
     'Action=2 ' +
     'Section=skill ' +
-    'Note="Successful counteract attempt with header\' tools reduces a %{skillNotes.holisticCare?\'frightened, stupefied, stunned, \':\'\'}clumsy, enfeebled, or sickened condition by 1, or by 2 with a critical success; critical failure increases the condition by 1"',
+    'Note="Successful counteract attempt using healer\'s tools reduces a %{skillNotes.holisticCare?\'frightened, stupefied, stunned, \':\'\'}clumsy, enfeebled, or sickened condition by 1, or by 2 with a critical success; critical failure increases the condition by 1"',
   'Holistic Care':'Section=skill Note="Has increased Treat Condition effects"',
   'Resuscitate':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="Success DC 40 Medicine check revives a creature dead up to 3 rd, increasing its wounded condition by 1, once per target per day"',
+    'Note="Success DC 40 Medicine check using healer\'s tools revives a creature dead up to 3 rd, increasing its wounded condition by 1, once per target per day"',
 
   'Pirate Dedication':
     'Section=ability,combat,feature ' +
