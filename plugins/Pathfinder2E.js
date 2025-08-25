@@ -14538,14 +14538,14 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'features.Bardic Lore', '=', '1',
       'rank.Occultism', '+', 'source>=4 ? 1 : null'
     );
-  } else if((matchInfo = name.match(/^(Basic|Expert|Master) (\w+) Spellcasting$/)) != null) {
+  } else if((matchInfo = name.match(/^(Basic|Expert|Master) ([\w\s]+) Spellcasting$/)) != null) {
     let c = matchInfo[2];
     let level = matchInfo[1];
     let slots =
       level=='Basic' ? {'1':0, '2':6, '3':8} :
       level=='Expert' ? {'4':0, '5':14, '6':16} : {'7':0, '8':20};
     let trad =
-      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c], 'SpellSlots') || '0').charAt(0);
+      (QuilvynUtils.getAttrValue(rules.plugin.CLASSES[c] || Pathfinder2E.CLASSES[c] || '', 'SpellSlots') || '0').charAt(0);
     let note =
       'magicNotes.' + level.toLowerCase() + c.replaceAll(' ', '') + 'Spellcasting';
     if(trad.match(/^[ADOP]/)) {

@@ -12,19 +12,20 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Dueling Parry":1, 
-  "classFeats.Duelist Dedication":1, "classFeats.Duelist's Challenge":1, "classFeats.Selfless Parry":1, 
-  "classFeats.Student Of The Dueling Arts":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
-  "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Assurance (Athletics)":1, 
-  "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, "generalFeats.Courtly Graces":1, 
-  "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
-  "generalFeats.Skill Training (Tea Lore)":1, "languages.Diabolic":1, "languages.Goblin":1, "languages.Jotun":1, 
-  "languages.Osiriani":1, "languages.Shoanti":1, "languages.Sussuran":1, "languages.Vudrani":1, 
-  "languages.Ysoki":1, "name":"Archetype-Duelist", "selectableFeatures.Fighter - Dexterity":1, 
-  "selectableFeatures.Fighter - Spears":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Deception":2, "skillIncreases.Diplomacy":1, "skillIncreases.Dragon Lore":1, 
-  "skillIncreases.Nature":2, "skillIncreases.Society":2, "skillIncreases.Stealth":1, 
-  "skillIncreases.Tea Lore":1, "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
+  "classFeats.Dueling Riposte":1, "classFeats.Duelist Dedication":1, "classFeats.Duelist's Challenge":1, 
+  "classFeats.Selfless Parry":1, "classFeats.Student Of The Dueling Arts":1, "deity":"Pharasma", 
+  "experience":9011, "gender":"Male", "generalFeats.Additional Lore (Gladitorial Lore)":1, 
+  "generalFeats.Assurance (Athletics)":1, "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, 
+  "generalFeats.Courtly Graces":1, "generalFeats.Scholastic Identification":1, 
+  "generalFeats.Skill Training (Accounting Lore)":1, "generalFeats.Skill Training (Tea Lore)":1, "languages.Diabolic":1, 
+  "languages.Goblin":1, "languages.Jotun":1, "languages.Osiriani":1, "languages.Shoanti":1, 
+  "languages.Sussuran":1, "languages.Vudrani":1, "languages.Ysoki":1, "name":"Archetype-Duelist", 
+  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Fighter - Spears":1, 
+  "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Deception":2, 
+  "skillIncreases.Diplomacy":1, "skillIncreases.Dragon Lore":1, "skillIncreases.Nature":2, 
+  "skillIncreases.Society":2, "skillIncreases.Stealth":1, "skillIncreases.Tea Lore":1, 
+  "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
 };
   </script>
 </head>
@@ -88,7 +89,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Courtly Graces; Dueling Parry; Duelist Dedication; Duelist's Challenge; Hardy Traveler; Haughty Obstinacy; Selfless Parry; Skill Training (Accounting Lore); Skill Training (Tea Lore); Student Of The Dueling Arts; Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Courtly Graces; Dueling Parry; Dueling Riposte; Duelist Dedication; Duelist's Challenge; Hardy Traveler; Haughty Obstinacy; Selfless Parry; Skill Training (Accounting Lore); Skill Training (Tea Lore); Student Of The Dueling Arts; Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -231,7 +232,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dueling Parry: <b>(1)</b> Gives +2 Armor Class until the start of the next turn when wielding a one-handed melee weapon with the other hand free</td>
       </tr><tr style="text-align:center">
-        <td>Duelist's Challenge: <b>(1)</b> Successful attacks on a challenged foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; successful attacks on others reduce the damage by this amount</td>
+        <td>Dueling Riposte: <b>(R)</b> While using Dueling Parry, makes a Strike or Disarm attempt on a foe who critically fails an attack on self</td>
+      </tr><tr style="text-align:center">
+        <td>Duelist's Challenge: <b>(1)</b> Selects a foe as a dueling opponent until the encounter ends or it is defeated or flees; subsequent successful attacks on this foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; subsequent successful attacks on others reduce the damage by the same amount</td>
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
@@ -277,13 +280,7 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
-      <tr style="text-align:center">
-        <td>Class Feats Allocation: 6 available vs. 5 allocated</td>
-      </tr><tr style="text-align:center">
-        <td>Student Of The Dueling Arts Feat: Requires level (currently 10) >= 12 and duelist dedication feature (currently 1)</td>
-      </tr></table>
-</td>
+      <td><b>Validation Errors</b>: Student Of The Dueling Arts Feat: Requires level (currently 10) >= 12 and duelist dedication feature (currently 1)</td>
     </tr></table>
 </td>
   </tr></table>

@@ -13,16 +13,17 @@ var attributes = {
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
   "classFeats.Basic Eldritch Archer Spellcasting":1, "classFeats.Eldritch Archer Dedication":1, "classFeats.Eldritch Reload":1, 
-  "classFeats.Enchanting Shot":1, "classFeats.Expert Eldritch Archer Spellcaster":1, 
+  "classFeats.Enchanting Shot":1, "classFeats.Expert Eldritch Archer Spellcasting":1, 
   "classFeats.Fatal Shot":1, "classFeats.Homing Shot":1, "classFeats.Incorporeal Shot":1, 
-  "classFeats.Magic Ammunition":1, "classFeats.Precious Ammunition":1, "deity":"Pharasma", "experience":9011, 
-  "gender":"Male", "generalFeats.Additional Lore (Gladitorial Lore)":1, 
-  "generalFeats.Assurance (Athletics)":1, "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, 
-  "generalFeats.Courtly Graces":1, "generalFeats.Scholastic Identification":1, 
-  "generalFeats.Skill Training (Accounting Lore)":1, "generalFeats.Skill Training (Tea Lore)":1, "languages.Diabolic":1, 
-  "languages.Goblin":1, "languages.Jotun":1, "languages.Osiriani":1, "languages.Shoanti":1, 
-  "languages.Sussuran":1, "languages.Vudrani":1, "languages.Ysoki":1, 
-  "name":"Archetype-Eldritch Archer", "selectableFeatures.Fighter - Dexterity":1, 
+  "classFeats.Magic Ammunition":1, "classFeats.Master Eldritch Archer Spellcasting":1, 
+  "classFeats.Precious Ammunition":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Assurance (Athletics)":1, 
+  "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, "generalFeats.Courtly Graces":1, 
+  "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
+  "generalFeats.Skill Training (Tea Lore)":1, "languages.Diabolic":1, "languages.Goblin":1, "languages.Jotun":1, 
+  "languages.Osiriani":1, "languages.Shoanti":1, "languages.Sussuran":1, "languages.Vudrani":1, 
+  "languages.Ysoki":1, "name":"Archetype-Eldritch Archer", 
+  "selectableFeatures.Eldritch Archer - Occult":1, "selectableFeatures.Fighter - Dexterity":1, 
   "selectableFeatures.Fighter - Spears":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Alcohol Lore":1, "skillIncreases.Athletics":1, 
   "skillIncreases.Deception":2, "skillIncreases.Diplomacy":1, "skillIncreases.Dragon Lore":1, 
@@ -91,7 +92,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Basic Eldritch Archer Spellcasting; Courtly Graces; Eldritch Archer Dedication; Eldritch Reload; Enchanting Shot; Expert Eldritch Archer Spellcaster; Fatal Shot; Hardy Traveler; Haughty Obstinacy; Homing Shot; Incorporeal Shot; Magic Ammunition; Precious Ammunition; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Basic Eldritch Archer Spellcasting; Courtly Graces; Eldritch Archer Dedication; Eldritch Reload; Enchanting Shot; Expert Eldritch Archer Spellcasting; Fatal Shot; Hardy Traveler; Haughty Obstinacy; Homing Shot; Incorporeal Shot; Magic Ammunition; Master Eldritch Archer Spellcasting; Precious Ammunition; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -226,6 +227,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Fighter Weapon Mastery (Spears): Attack Master (Simple Spears; Martial Spears)/Attack Expert (Advanced Spears)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Magic Ammunition: Has the Transform Ammunition feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Strength Attack Adjustment: +2</i></td>
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Temple Sword): Weapon Familiarity (Temple Sword)</i></td>
@@ -236,7 +239,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Eldritch Reload: <b>(F)</b> Reloads a weapon after making an Eldritch Shot, casting a spell, or activating a piece of magical ammunition</td>
       </tr><tr style="text-align:center">
-        <td>Enchanting Shot: <b>(2)</b> Bow or crossbow Strike inflicts +2d6 HP mental, plus stunned 1 on a critical hit</td>
+        <td>Enchanting Shot: <b>(2)</b> Bow or crossbow Strike inflicts +2d6 HP mental, or +3d6 HP or +4d6 HP with a <i>greater striking rune</i> or <i>major striking rune</i>, plus stunned 1 on a critical hit</td>
       </tr><tr style="text-align:center">
         <td>Fatal Shot: <b>(3)</b> Bow or crossbow strike inflicts +10d10 HP precision, plus death on a critical hit (<b>save Fortitude</b> negates death) once per day</td>
       </tr><tr style="text-align:center">
@@ -244,15 +247,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Homing Shot: <b>(1)</b> Bow or crossbow Strike ignores concealment and cover</td>
       </tr><tr style="text-align:center">
-        <td>Incorporeal Shot: <b>(1)</b> Bow or crossbow Strike passes through intervening obstacles and gains +4 attack vs. armor once per day</td>
-      </tr><tr style="text-align:center">
-        <td>Magic Ammunition: Has the Transform Ammunition feature; can use it to create 3 chosen types of magical ammunition</td>
+        <td>Incorporeal Shot: <b>(1)</b> Bow or crossbow Strike passes through intervening non-magical obstacles and gains +4 attack vs. armored creatures once per day</td>
       </tr><tr style="text-align:center">
         <td>Precious Ammunition: <b>(1)</b> Gives an arrow or bolt cold iron or silver effects until the end of the turn</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Transform Ammunition: <b>(F)</b> Transforms a non-magical arrow or bolt into a piece of 1 of 3 chosen types of magical ammunition until the end of the turn once per rd</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -284,11 +287,29 @@ var attributes = {
 </tr><tr style="text-align:center">
   <td style="border:1px solid black"><b>Magic</b><br/>  <table id="Magic" style="width:100%">
   <tr style="text-align:center">
+    <td>    <table id="SpellPart" style="width:100%">
+    <tr style="text-align:center">
+      <td>      <table id="SpellStats" style="width:100%">
+      <tr style="text-align:center">
+        <td><b>Spell Slots</b>: O1; O2; O3; O4; O7</td>
+        <td><b>Attack</b>: Occult: +14 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Occult: 24 (charisma; trained)</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Basic Eldritch Archer Spellcasting: Knows 1 1st-level, 1 2nd-level, and 1 3rd-level undefined spell</td>
+      <td><i>Basic Eldritch Archer Spellcasting: Knows 1 1st-level, 1 2nd-level, and 1 3rd-level occult spell</i></td>
     </tr><tr style="text-align:center">
-      <td>Eldritch Shot: <b>(3)</b> Imbues ammunition with spell effects; counts as 2 attacks</td>
+      <td><i>Eldritch Archer Dedication: Spell Trained (Occult)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Expert Eldritch Archer Spellcasting: Spell Expert (Occult)/Knows 1 4th-level occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Master Eldritch Archer Spellcasting: Spell Master (Occult)/Knows 1 7th-level occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td>Eldritch Shot: <b>(3)</b> Casts a spell and delivers it using bow or crossbow ammunition; counts as 2 attacks</td>
     </tr></table>
 </td>
   </tr></table>
@@ -300,15 +321,17 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 6 available vs. 10 allocated</td>
+        <td>Class Feats Allocation: 6 available vs. 11 allocated</td>
       </tr><tr style="text-align:center">
-        <td>Expert Eldritch Archer Spellcaster Feat: Requires level (currently 10) >= 12 and basic eldritch archer spellcasting feature (currently 1)</td>
+        <td>Expert Eldritch Archer Spellcasting Feat: Requires level (currently 10) >= 12 and basic eldritch archer spellcasting feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Fatal Shot Feat: Requires level (currently 10) >= 18 and eldritch archer dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Homing Shot Feat: Requires level (currently 10) >= 14 and eldritch archer dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Incorporeal Shot Feat: Requires level (currently 10) >= 16 and eldritch archer dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Master Eldritch Archer Spellcasting Feat: Requires level (currently 10) >= 18 and expert eldritch archer spellcasting feature (currently 1)</td>
       </tr></table>
 </td>
     </tr></table>

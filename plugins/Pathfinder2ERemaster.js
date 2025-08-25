@@ -4051,7 +4051,7 @@ Pathfinder2ERemaster.FEATS = {
   'Eldritch Reload':
     'Traits=Archetype ' +
     'Require="level >= 10","features.Eldritch Archer Dedication"',
-  'Expert Eldritch Archer Spellcaster':
+  'Expert Eldritch Archer Spellcasting':
     'Traits=Archetype ' +
     'Require="level >= 12","features.Basic Eldritch Archer Spellcasting"',
   'Homing Shot':
@@ -4063,7 +4063,7 @@ Pathfinder2ERemaster.FEATS = {
   'Fatal Shot':
     'Traits=Archetype,Magical ' +
     'Require="level >= 18","features.Eldritch Archer Dedication"',
-  'Master Eldritch Archer Spellcaster':
+  'Master Eldritch Archer Spellcasting':
     'Traits=Archetype ' +
     'Require="level >= 18","features.Expert Eldritch Archer Spellcasting"',
 
@@ -11848,12 +11848,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Distracting Flattery':
     'Action=Reaction ' +
     'Section=skill ' +
-    'Note="Successful Deception vs. Will negates triggering decrease in target\'s attitude toward self and allies once per target per 10 min; critical failure inflicts an addition decrease"',
+    'Note="Successful Deception vs. Will negates the triggering worsening of the target\'s attitude toward self and allies once per target per 10 min; critical failure worsens it one additional step"',
   'Gossip Lore':
-    'Section=feature,skill ' +
+    'Section=skill,skill ' +
     'Note=' +
-    '"Failure to Recall Knowledge using Gossip Lore yields a mix of true and false information",' +
-      '"Skill %V (Gossip Lore)"',
+      '"Skill %V (Gossip Lore)",' +
+      '"Failure to Recall Knowledge using Gossip Lore yields a mix of true and false information"',
   'Fabricated Connections':
     'Section=skill ' +
     'Note="Can use Deception to Make An Impression or Request once per day and to Earn Income or Subsist once per week"',
@@ -11869,7 +11869,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dual-Weapon Reload':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Reloads a one-handed ranged weapon while also holding another one-handed weapons"',
+    'Note="Reloads a one-handed ranged weapon while also holding another one-handed weapon"',
   'Flensing Slice':
     'Action=1 ' +
     'Section=combat ' +
@@ -11880,41 +11880,43 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strikes once with each of 2 one-handed weapons during a Stride"',
   'Dual Onslaught':
     'Section=combat ' +
-    'Note="Turns a normal failure on a Double Slice into a success"',
+    'Note="Turns a normal failure on a Double Slice double miss into a success"',
 
   'Duelist Dedication':'Section=combat Note="Has the Quick Draw feature"',
   "Duelist's Challenge":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful attacks on a challenged foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; successful attacks on others reduce the damage by this amount"',
+    'Note="Selects a foe as a dueling opponent until the encounter ends or it is defeated or flees; subsequent successful attacks on this foe using a one-handed weapon with the other hand free inflict additional damage equal to the number of damage dice; subsequent successful attacks on others reduce the damage by the same amount"',
   'Selfless Parry':
     'Section=combat ' +
-    'Note="Using Dueling Parry gives adjacent allies +1 Armor Class/Can use Dueling Riposte against foes that critically fail Strikes on adjacent allies"',
+    'Note="Using Dueling Parry gives adjacent allies +1 Armor Class%{$\'features.Dueling Riposte\'?\'/Can use Dueling Riposte against foes that critically fail Strikes on adjacent allies\':\'\'}"',
   'Student Of The Dueling Arts':
     'Section=combat ' +
     'Note="Can swap Duelist Dedication feats during daily prep, and can enter any duelist stance by using twice the normal number of actions"',
 
   'Eldritch Archer Dedication':
-    'Section=combat ' +
-    'Note="Has the Eldritch Shot and Eldritch Archer Tradition features"',
+    'Section=combat,magic ' +
+    'Note=' +
+      '"Has the Eldritch Shot and Eldritch Archer Tradition features",' +
+      '"Spell Trained (%V)"',
   'Eldritch Archer Tradition':'Section=feature Note="1 selection"',
   'Eldritch Shot':
     'Action=3 ' +
     'Section=magic ' +
-    'Note="Imbues ammunition with spell effects; counts as 2 attacks"',
+    'Note="Casts a spell and delivers it using bow or crossbow ammunition; counts as 2 attacks"',
   'Basic Eldritch Archer Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
   'Enchanting Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Bow or crossbow Strike inflicts +2d6 HP mental, plus stunned 1 on a critical hit"',
+    'Note="Bow or crossbow Strike inflicts +2d6 HP mental, or +3d6 HP or +4d6 HP with a <i>greater striking rune</i> or <i>major striking rune</i>, plus stunned 1 on a critical hit"',
   'Magic Ammunition':
-    'Section=combat Note="Has the Transform Ammunition feature; can use it to create 3 chosen types of magical ammunition"',
+    'Section=combat Note="Has the Transform Ammunition feature"',
   'Transform Ammunition':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Transforms a non-magical arrow or bolt into a piece of magical ammunition until the end of the turn once per rd"',
+    'Note="Transforms a non-magical arrow or bolt into a piece of 1 of %{3*$\'features.Magic Ammunition\'} chosen types of magical ammunition until the end of the turn once per rd"',
   'Precious Ammunition':
     'Action=1 ' +
     'Section=combat ' +
@@ -11933,7 +11935,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Incorporeal Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Bow or crossbow Strike passes through intervening obstacles and gains +4 attack vs. armor once per day"',
+    'Note="Bow or crossbow Strike passes through intervening non-magical obstacles and gains +4 attack vs. armored creatures once per day"',
   'Fatal Shot':
     'Action=3 ' +
     'Section=combat ' +
@@ -16904,11 +16906,20 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Eldritch Archer Dedication') {
     let tradFeatures = [];
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('eldritchArcherTraditionCount',
+        'eldritchArcherFeatures.' + t, '+=', '1'
+      );
       rules.defineRule('eldritchArcherTraditions',
         'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
       );
+      rules.defineRule('magicNotes.eldritchArcherDedication',
+        'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
+      );
+      rules.defineRule('rank.' + t,
+        'magicNotes.eldritchArcherDedication', '=', 'source=="' + t + '" ? 1 : null'
+      );
       rules.defineRule('spellModifier' + t + '.Eldritch Archer',
-        'features.Eldritch Archer Tradition (Arcane)', '?', null,
+        'eldritchArcherFeatures.' + t, '?', null,
         'charismaModifier', '=', null
       );
       rules.defineRule('spellAbility.' + t,
@@ -16930,6 +16941,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('selectableFeatureCount.Eldritch Archer (Tradition)',
       'featureNotes.eldritchArcherTradition', '=', '1'
     );
+    QuilvynRules.validAllocationRules
+      (rules, 'Eldritch Archer Tradition', 'selectableFeatureCount.Eldritch Archer (Tradition)', 'eldritchArcherTraditionCount');
   } else if(name.match(/^(Expert|Master) Witch Spellcasting$/)) {
     rules.defineRule('magicNotes.' + prefix, 'witchTraditions', '=', null);
   } else if(name == 'Fangs') {
@@ -16983,6 +16996,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     // Override legacy rule
     rules.defineRule('skillNotes.gnomeObsession', 'level', '=', 'null');
   } else if(name == 'Gossip Lore') {
+    Pathfinder2ERemaster.skillRules(rules, 'Gossip Lore', 'Intelligence', null);
     rules.defineRule('skillNotes.gossipLore',
       '', '=', '"Trained"',
       'rank.Society', '=', 'source>=4 ? "Expert" : null'
