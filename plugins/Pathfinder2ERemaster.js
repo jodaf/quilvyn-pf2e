@@ -11601,7 +11601,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill %V (Acrobatics)",' +
-      '"Critical success on Tumble Through allows moving normally through a foe\'s space"',
+      '"Critical success on Tumble Through to traverse a foe\'s space makes the space normal terrain"',
   'Contortionist':
     'Section=feature,skill ' +
     'Note=' +
@@ -11638,14 +11638,14 @@ Pathfinder2ERemaster.FEATURES = {
       '"+%V Language Count"',
   'Scholastic Identification':
     'Section=skill ' +
-    'Note="Can use Society to Decipher Writing and to Identify Magic with an item of cultural significance"',
+    'Note="Can use Society to Decipher Writing and to Identify Magic with an item or location of cultural significance"',
   "Archaeologist's Luck":
     'Action=Free ' +
     'Section=save ' +
     'Note="Rerolls a failed save vs. a trap once per hr"',
   'Greater Magical Scholastics':
     'Section=magic ' +
-    'Note="Knows the Augury, Locate, and Veil Of Privacy occult innate spells; can cast each once per day"',
+    'Note="Knows the Augury, Locate, and Veil Of Privacy occult innate spells; can cast each once per day, and Veil Of Privacy target must be an object"',
 
   'Archer Dedication':
     'Section=combat,combat ' +
@@ -11655,7 +11655,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Quick Shot':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Draws and fires a bow or crossbow"',
+    'Note="Draws and Strikes with a loaded or reload 0 bow or crossbow"',
   'Crossbow Terror':
     'Action=1 ' +
     'Section=combat ' +
@@ -11667,7 +11667,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Unobstructed Shot':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Makes a ranged Strike after Shoving or Tripping an adjacent creature"',
+    'Note="Uses a single attack to Shove or Trip an adjacent creature, then make a ranged Strike"',
 
   'Assassin Dedication':
     'Section=combat,combat ' +
@@ -11677,14 +11677,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Mark For Death':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Gains +2 Seek and Feint vs. a chosen target and can use Sneak Attack against it"',
+    'Note="Gains +2 Seek and Feint vs. a chosen target, can use Sneak Attack against it, and target suffers -2 Seek vs. self"',
   'Expert Backstabber':
     'Section=combat ' +
-    'Note="Strike on an off-guard foe with a backstabber weapon inflicts +2 HP precision"',
+    'Note="Strike on an off-guard foe with a backstabber weapon inflicts +2 HP precision, or +4 HP with a +3 weapon"',
   // Surprise Attack as above
   'Angel Of Death':
     'Section=combat ' +
-    'Note="Reducing a marked target to 0 HP inflicts death, and interaction with it afterward requires a %{level//2} counteract rank"',
+    'Note="Reducing a marked target to 0 HP inflicts death, and interaction with it afterward requires counteract rank %{(level+1)//2}"',
   'Assassinate':
     'Action=2 ' +
     'Section=combat ' +
@@ -11696,13 +11696,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Follows a successful Shield Block with a Disarm attempt"',
   'Nimble Shield Hand':
-    'Section=combat Note="Can hold an object in the same hand as a shield"',
+    'Section=combat ' +
+    'Note="Can hold or Interact with an object using a hand holding a non-tower shield"',
   'Destructive Block':
     'Section=combat ' +
-    'Note="Can use Shield Block to negate %{shieldHardness*2} HP damage, doubling the amount of damage to the shield"',
+    'Note="Can use Shield Block to negate damage equal to double the shield\'s Hardness by doubling the amount of damage to the shield"',
   'Shield Salvation':
     'Section=combat ' +
-    'Note="Can have shield retain 1 HP when it would normally be destroyed by Shield Block"',
+    'Note="Can have a shield retain 1 HP when using Shield Block would otherwise destroy it; the shield must be repaired before benefitting from Shield Salvation again"',
 
   'Beastmaster Dedication':
     'Section=feature ' +
@@ -11719,55 +11720,61 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool"',
   'Swift Guardian':
-    'Action=Free Section=feature Note="Uses Call Companion as a free action"',
+    'Action=Free ' +
+    'Section=feature ' +
+    'Note="Uses Call Companion during initiative"',
   'Incredible Beastmaster Companion':
-    'Section=feature Note="Has the Incredible Animal Companion feature"',
+    'Section=feature Note="Has the Incredible Companion feature"',
   'Beastmaster Bond':
     'Section=feature ' +
     'Note="Can communicate telepathically with animal companions %{rank.Nature<4?\\" within 100\'\\":\'at any range\'}"',
   "Beastmaster's Call":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Conjures an image of an inactive animal companion to provide support once per turn"',
+    'Note="R30\' Conjures an image of an inactive animal companion to provide support once per turn"',
   'Specialized Beastmaster Companion':
-    'Section=feature Note="Has the Specialized Animal Companion feature"',
+    'Section=feature Note="Has the Specialized Companion feature"',
   'Lead The Pack':
     'Section=combat ' +
     'Note="Can have 2 animal companions active simultaneously; Command An Animal allows each to take 1 action or one of them to take 2 actions"',
 
   'Blessed One Dedication':
-    'Section=magic Note="Knows the Lay On Hands divine spell/Has a focus pool"',
+    'Section=magic ' +
+    'Note="Spell Trained (Divine)/Knows the Lay On Hands divine spell/Has a focus pool"',
   'Blessed Sacrifice':
     'Section=magic Note="Knows the Protector\'s Sacrifice divine spell"',
   'Blessed Spell':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Casting a targeted spell on an ally attempts to counteract a harmful condition once per 10 min"',
+    'Note="Subsequent targeted spell cast on an ally has Mercy effects once per 10 min"',
   'Blessed Denial':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="R30\' Reduces by 1 the value of the triggering harmful condition affecting an ally"',
+    'Note="R30\' Reduces by 1 the severity of the triggering frightened, drained, enfeebled, sickened, or stupefied effect on an ally"',
 
-  // TODO additional effects?
   'Bounty Hunter Dedication':
-    'Section=feature ' +
-    'Note="Has the %V feature%{featureNotes.bountyHunterDedication=~\' and \'?\'s\':\'\'}"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Hunt Prey%1 feature%{featureNotes.bountyHunterDedication.1!=\'\'?\'s\':\'\'}",' +
+      '"+2 Gather Information about Hunt Prey target"',
   'Posse':
-    'Section=skill ' +
-    'Note="1 min process gives 5 allies +1 bonus to Seek, Track, and Gather Information about a Hunt Prey target and +1 initiative when fighting it"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"1 min process gives self and 5 allies +1 initiative when fighting a Hunt Prey target",' +
+      '"1 min process gives 5 allies +1 bonus to Seek, Track, and Gather Information about a Hunt Prey target"',
   'Tools Of The Trade':
     'Section=combat,combat ' +
     'Note=' +
       '"Weapon Familiarity (Bola; Sap; Whip)",' +
-      '"Nonlethal Strikes vs. an off-guard a Hunt Prey target with a bola, sap, or whip inflict +1d4 HP precision/Suffers no penalty from making nonlethal attacks with a lethal weapon"',
+      '"Nonlethal Strikes vs. an off-guard Hunt Prey target with a bola, sap, or whip inflict +1d4 HP precision/Suffers no attack penalty when making nonlethal Strikes with lethal weapons"',
   'Keep Pace':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Strides to keep up with the triggering move away of an adjacent Hunt Prey target"',
+    'Note="Strides to keep up with the triggering retreat by an adjacent Hunt Prey target"',
   'Opportunistic Grapple':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Attempts to Grapple a Hunt Prey target after the triggering melee critical miss on self"',
+    'Note="Attempts to Grapple a Hunt Prey target after it critically misses a melee attack on self"',
 
   'Cavalier Dedication':
     'Section=feature Note="Has the Animal Companion feature"',
@@ -11796,7 +11803,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Trampling Charge':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Mount inflicts melee Strike damage to smaller foes in its path during a double Strike (<b>save basic Reflex</b>; critical failure also inflicts off-guard until the end of the next turn)"',
+    'Note="Mount inflicts melee Strike damage on smaller foes in its path during a double Stride (<b>save basic Reflex</b> vs. Athletics; critical failure also inflicts off-guard until the end of the next turn)"',
   'Unseat':
     'Action=1 ' +
     'Section=combat ' +
@@ -12342,7 +12349,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Has the Shield Block feature/Weapon Familiarity (Battle Axe; Hatchet; Longsword; Shield Boss; Shield Spikes; Shortsword)",' +
-      '"Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effects"',
+      '"Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effect"',
   'Second Shield':
     'Action=Free ' +
     'Section=combat ' +
@@ -12363,7 +12370,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Foes unaware of self improvised weapon skills are off-guard to first Strike"',
   'Improvised Critical':
     'Section=combat ' +
-    'Note="Critical hits with improvised weapon inflict appropriate critical specialization effects"',
+    'Note="Critical hits with improvised weapon inflict appropriate critical specialization effect"',
   'Makeshift Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -15595,7 +15602,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, for 1 min (<b>heightened 6th</b> allows speaking to the companion and extends range to 100 miles and duration to 10 min; <b> 8th</b> allows telepathic communication and extends range to planetary and duration to 1 hr)"'
+      '"Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, while sustained for up to 1 min (<b>heightened 6th</b> allows speaking to the companion and extends the range to 100 miles and the maximum duration to 10 min; <b> 8th</b> allows telepathic communication and extends the range to planetary and the maximum duration to 1 hr)"'
 
 };
 for(let s in Pathfinder2ERemaster.SPELLS)
@@ -16682,6 +16689,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       ('spellModifier.Primal', 'spellModifier.Beastmaster', '=', null);
     rules.defineRule
       ('spellAbility.Primal', 'magicNotes.' + prefix, '=', '"charisma"');
+  } else if(name == 'Blessed One Dedication') {
+    rules.defineRule('spellModifier.Blessed One',
+      'magicNotes.' + prefix, '?', null,
+      'charismaModifier', '=', null
+    );
+    rules.defineRule
+      ('spellModifier.Divine', 'spellModifier.Blessed One', '=', null);
+    rules.defineRule
+      ('spellAbility.Divine', 'magicNotes.' + prefix, '=', '"charisma"');
   } else if(name.match(/^(Bone Investiture|Fossil Rider|Primal Rampage)$/)) {
     rules.defineRule('features.' + name + ' (Occult)',
       'features.' + name, '?', null,
@@ -16694,9 +16710,14 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name.startsWith('Bone Magic')) {
     rules.defineRule('features.Bone Magic', 'features.' + name, '=', '1');
   } else if(name.startsWith('Bounty Hunter Dedication')) {
-    rules.defineRule('featureNotes.bountyHunterDedication',
-      '', '=', '"Hunt Prey"',
-      'levels.Ranger', '=', '"Hunt Prey and Monster Hunter"'
+    rules.defineRule('featureNotes.' + prefix + '.1',
+      'features.Bounty Hunter Dedication', '?', null,
+      'featureNotes.' + prefix, '=', '""',
+      'levels.Ranger', '=', '" and Monster Hunter"'
+    );
+    rules.defineRule('features.Hunt Prey', 'featureNotes.' + prefix, '=', '1');
+    rules.defineRule('features.Monster Hunter',
+      'featureNotes.' + prefix + '.1', '=', 'source!="" ? 1 : null'
     );
   } else if(name == 'Breath Of The Dragon') {
     rules.defineRule('combatNotes.breathOfTheDragon',

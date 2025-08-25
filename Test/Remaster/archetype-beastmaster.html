@@ -21,8 +21,8 @@ var attributes = {
   "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Fighter - Swords":1, 
   "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
   "skillIncreases.Art Lore":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Deception":1, "skillIncreases.Diplomacy":1, "skillIncreases.Engineering Lore":1, 
-  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, "skillIncreases.Stealth":1, 
+  "skillIncreases.Deception":1, "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, 
+  "skillIncreases.Medicine":1, "skillIncreases.Nature":1, "skillIncreases.Stealth":1, 
   "skillIncreases.Survival":1, "weapons.Bola":1, "weapons.Lance":1, "weapons.Shield Boss":1
 };
   </script>
@@ -104,13 +104,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Incredible Beastmaster Companion: Has the Incredible Animal Companion feature</i></td>
+        <td><i>Incredible Beastmaster Companion: Has the Incredible Companion feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Mature Beastmaster Companion: Has the Mature Animal Companion feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: 2 selections</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Specialized Beastmaster Companion: Has the Specialized Animal Companion feature</i></td>
+        <td><i>Specialized Beastmaster Companion: Has the Specialized Companion feature</i></td>
       </tr><tr style="text-align:center">
         <td>Additional Companion: Has 1 additional young animal companion</td>
       </tr><tr style="text-align:center">
@@ -120,9 +120,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Call Companion: 1 min process makes a different animal companion active</td>
       </tr><tr style="text-align:center">
+        <td>Incredible Companion: Animal Companion has a choice of nimble or savage characteristics</td>
+      </tr><tr style="text-align:center">
         <td>Mature Animal Companion: Animal Companion is a mature companion and may Stride or Strike without a command</td>
       </tr><tr style="text-align:center">
-        <td>Swift Guardian: <b>(F)</b> Uses Call Companion as a free action</td>
+        <td>Specialized Companion: Animal Companion has a choice of specialization</td>
+      </tr><tr style="text-align:center">
+        <td>Swift Guardian: <b>(F)</b> Uses Call Companion during initiative</td>
       </tr></table>
 </td>
     </tr></table>
@@ -137,31 +141,31 @@ var attributes = {
     <tr style="text-align:left">
       <td>Acrobatics: +8 (dexterity; trained)</td>
       <td>Deception: +10 (charisma; trained)</td>
-      <td>Performance: +5 (charisma; untrained)</td>
+      <td>Religion: +3 (wisdom; untrained)</td>
     </tr><tr style="text-align:left">
       <td>Arcana: +5 (intelligence; untrained)</td>
       <td>Diplomacy: +10 (charisma; trained)</td>
-      <td>Religion: +3 (wisdom; untrained)</td>
-    </tr><tr style="text-align:left">
-      <td>Art Lore: +10 (intelligence; trained)</td>
-      <td>Engineering Lore: +10 (intelligence; trained)</td>
       <td>River Lore: +12 (intelligence; expert)</td>
     </tr><tr style="text-align:left">
-      <td>Astronomy Lore: +10 (intelligence; trained)</td>
+      <td>Art Lore: +10 (intelligence; trained)</td>
       <td>Intimidation: +10 (charisma; trained)</td>
       <td>Society: +10 (intelligence; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Athletics: +10 (strength; trained)</td>
+      <td>Astronomy Lore: +10 (intelligence; trained)</td>
       <td>Medicine: +8 (wisdom; trained)</td>
       <td>Stealth: +8 (dexterity; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Cooking Lore: +12 (intelligence; expert)</td>
-      <td>Nature: +3 (wisdom; untrained)</td>
+      <td>Athletics: +10 (strength; trained)</td>
+      <td>Nature: +8 (wisdom; trained)</td>
       <td>Survival: +8 (wisdom; trained)</td>
     </tr><tr style="text-align:left">
-      <td>Crafting: +5 (intelligence; untrained)</td>
+      <td>Cooking Lore: +12 (intelligence; expert)</td>
       <td>Occultism: +5 (intelligence; untrained)</td>
       <td>Thievery: +3 (dexterity; untrained)</td>
+    </tr><tr style="text-align:left">
+      <td>Crafting: +5 (intelligence; untrained)</td>
+      <td>Performance: +5 (charisma; untrained)</td>
+      <td></td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
@@ -227,7 +231,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Pick): Weapon Familiarity (Pick)</i></td>
       </tr><tr style="text-align:center">
-        <td>Beastmaster's Call: <b>(1)</b> Conjures an image of an inactive animal companion to provide support once per turn</td>
+        <td>Beastmaster's Call: <b>(1)</b> R30' Conjures an image of an inactive animal companion to provide support once per turn</td>
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
@@ -271,7 +275,7 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Spells</b>: Beastmaster Trance (P3 Foc): <b>(3)</b> Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, for 1 min (<b>heightened 6th</b> allows speaking to the companion and extends range to 100 miles and duration to 10 min; <b> 8th</b> allows telepathic communication and extends range to planetary and duration to 1 hr)</td>
+    <td><b>Spells</b>: Beastmaster Trance (P3 Foc): <b>(3)</b> Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, while sustained for up to 1 min (<b>heightened 6th</b> allows speaking to the companion and extends the range to 100 miles and the maximum duration to 10 min; <b> 8th</b> allows telepathic communication and extends the range to planetary and the maximum duration to 1 hr)</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>: <i>Beastmaster's Trance: Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool</i></td>
   </tr></table>
@@ -284,8 +288,6 @@ var attributes = {
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Beastmaster Bond Feat: Requires level (currently 5) >= 10 and beastmaster dedication feature (currently 1)</td>
-      </tr><tr style="text-align:center">
-        <td>Beastmaster Dedication Feat: Requires level (currently 5) >= 2 and nature rank</td>
       </tr><tr style="text-align:center">
         <td>Beastmaster's Call Feat: Requires level (currently 5) >= 12, beastmaster dedication feature (currently 1) and call companion feature (currently 1)</td>
       </tr><tr style="text-align:center">
