@@ -15689,6 +15689,11 @@ Pathfinder2E.weaponRules = function(
     'weaponFamiliarity.' + group, '^=', 'dict["rank.' + lowerCategory + '"]',
     'weaponFamiliarity.' + name, '^=', 'dict["rank.' + lowerCategory + '"]'
   );
+  if(hands == 2 || traits.filter(x => x.startsWith('Two-hand')).length > 0) {
+    rules.defineRule('weaponRank.' + name,
+      'weaponFamiliarity.Two-Handed Weapons', '^=', 'dict["rank.' + lowerCategory + '"]'
+    );
+  }
   if(group == 'Bombs') {
     rules.defineRule
       ('maxWeaponTraining', 'trainingLevel.Alchemical Bombs', '^=', null);
