@@ -12138,12 +12138,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Boarding Assault':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strikes after a double Stride or swinging %{speed*2}\'; boarding or leaving a boat gives the Strike +1 damage die"',
+    'Note="Strikes after a double Stride or a %{speed*2}\' swing; boarding or leaving a boat gives the Strike +1 damage die"',
   'Pirate Combat Training':
     'Section=combat,combat,feature ' +
     'Note=' +
       '"Weapon Familiarity (Hatchet; Rapier; Scimitar; Whip)",' +
-      '"Critical hits with a hatchet, rapier, scimitar, or whip inflicts its critical specialization effect",' +
+      '"Critical hits with a hatchet, rapier, scimitar, or whip inflict its critical specialization effect",' +
       // TODO randomizer
       '"+1 Skill Feat (Combat Climber or Underwater Marauder)"',
   'Rope Runner':
@@ -12166,12 +12166,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Preceding successful melee Strike on a poisoned foe inflicts %{level<18?1:2}d6 HP of the Strike\'s damage type and %{level<18?1:2}d6 HP poison"',
   'Advanced Poisoncraft':
-    'Section=skill Note="Has increased Advanced Alchemy features"',
+    'Section=skill Note="Has increased Advanced Alchemy effects"',
   'Poison Coat':'Section=combat Note="Has the Once Bitten feature"',
   'Once Bitten':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Prepared garment inflicts poison on a successful unarmed attacker"',
+    'Note="Prepared garment inflicts poison on a successful unarmed attacker once per 10-min treatment"',
   'Acquired Tolerance':
     'Action=Reaction ' +
     'Section=save ' +
@@ -12181,7 +12181,7 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Ritualist Dedication':
     'Section=magic ' +
-    'Note="+2 checks to perform rituals/Knows %{level//2} uncommon rituals"',
+    'Note="+2 checks to perform rituals/Knows %{level//4*2} uncommon rituals of up to level %{level//4*2}"',
   'Flexible Ritualist':
     'Section=magic ' +
     'Note="Can serve as both primary and a secondary caster for rituals"',
@@ -12193,10 +12193,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can cast 1-day rituals in 4 hr and multi-day rituals in %{level<14?\'half the time\':\'an equal number of hr\'}"',
   'Assured Ritualist':
     'Section=magic ' +
-    'Note="Can improve 1 secondary failed check by 1 degree"',
+    'Note="Can improve 1 failed check by a secondary caster by 1 degree"',
   'Enterprising Ritualist':
     'Section=magic ' +
-    'Note="Reduces the cost of ritual components by 10%, or 20% with a critical success"',
+    'Note="Reduces the cost of ritual components by 10%, or 20% with a critical success on the primary check for the ritual"',
 
   'Scout Dedication':
     'Section=skill ' +
@@ -12210,7 +12210,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       // TODO randomizer
       '"+2 Skill Feat (Terrain Stalker)",' +
-      '"Successful Avoid Notice allows giving Terrain Stalker benefits to an ally that is Following The Expert"',
+      '"Successful Avoid Notice allows giving Terrain Stalker benefits to an ally that is using Follow The Expert"',
   'Fleeting Shadow':
     'Action=2 Section=skill Note="Sneaks twice after Hiding"',
   "Scout's Speed":
@@ -12221,7 +12221,7 @@ Pathfinder2ERemaster.FEATURES = {
   "Scout's Pounce":
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strikes twice after a Stride; target is off-guard if self was hidden or unnoticed"',
+    'Note="Strikes twice after a Stride; target is off-guard to both if self was hidden or unnoticed"',
 
   'Scroll Trickster Dedication':
     'Section=skill,skill ' +
@@ -12230,17 +12230,17 @@ Pathfinder2ERemaster.FEATURES = {
       '"+2 to Trick scrolls, and critical failures to do so are normal failures"',
   'Basic Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 1st-rank scroll%{level<8?\'\':\' and a 2nd-rank scroll\'} during daily prep that last%{level<8?\'s\':\'\'} 1 day"',
+    'Note="Can create a 1st-rank spell scroll%{level<8?\'\':\' and a 2nd-rank spell scroll\'} during daily prep that last%{level<8?\'s\':\'\'} 1 day"',
   'Skim Scroll':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Draws and uses Trick Magic Item on a scroll"',
   'Expert Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 4th-rank scroll%{level<14?\'\':level<16?\' and a 5th-rank scroll\':\', a 5th-rank scroll, and a 6th-rank scroll\'} during daily prep that last%{level<14?\'s\':\'\'} 1 day"',
+    'Note="Can create a 3rd-rank spell scroll%{level<14?\'\':level<16?\' and a 4th-rank spell scroll\':\', a 4th-rank spell scroll, and a 5th-rank spell scroll\'} during daily prep that last%{level<14?\'s\':\'\'} 1 day"',
   'Master Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 6h-rank scroll%{level<20?\'\':\' and a 7th-rank scroll\'} during daily prep that last%{level<20?\'s\':\'\'} 1 day"',
+    'Note="Can create a 6h-rank spell scroll%{level<20?\'\':\' and a 7th-rank spell scroll\'} during daily prep that last%{level<20?\'s\':\'\'} 1 day"',
 
   'Scrounger Dedication':
     'Section=skill,skill ' +

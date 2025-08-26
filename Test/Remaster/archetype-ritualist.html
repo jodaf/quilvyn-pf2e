@@ -12,20 +12,20 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
-  "classFeats.Assured Ritualist":1, "classFeats.Efficient Rituals":1, "classFeats.Flexible Ritualist":1, 
-  "classFeats.Resourceful Ritualist":1, "classFeats.Ritualist Dedication":1, "deity":"Pharasma", "experience":9011, 
-  "gender":"Male", "generalFeats.Additional Lore (Gladitorial Lore)":1, 
-  "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, "generalFeats.Impressive Performance":1, 
-  "generalFeats.Natural Medicine":1, "generalFeats.Scholastic Identification":1, 
-  "generalFeats.Skill Training (Accounting Lore)":1, "generalFeats.Skill Training (Tea Lore)":1, "languages.Goblin":1, 
-  "languages.Jotun":1, "languages.Osiriani":1, "languages.Shoanti":1, "languages.Sussuran":1, 
-  "languages.Vudrani":1, "languages.Ysoki":1, "name":"Archetype-Ritualist", 
-  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Fighter - Spears":1, 
-  "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Crafting":1, "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, 
-  "skillIncreases.Medicine":2, "skillIncreases.Nature":2, "skillIncreases.Performance":2, 
-  "skillIncreases.Society":1, "skillIncreases.Stealth":1, "skillIncreases.Survival":1, 
-  "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
+  "classFeats.Assured Ritualist":1, "classFeats.Efficient Rituals":1, "classFeats.Enterprising Ritualist":1, 
+  "classFeats.Flexible Ritualist":1, "classFeats.Resourceful Ritualist":1, "classFeats.Ritualist Dedication":1, 
+  "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, 
+  "generalFeats.Impressive Performance":1, "generalFeats.Natural Medicine":1, 
+  "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
+  "generalFeats.Skill Training (Tea Lore)":1, "languages.Goblin":1, "languages.Jotun":1, "languages.Osiriani":1, 
+  "languages.Shoanti":1, "languages.Sussuran":1, "languages.Vudrani":1, "languages.Ysoki":1, 
+  "name":"Archetype-Ritualist", "selectableFeatures.Fighter - Dexterity":1, 
+  "selectableFeatures.Fighter - Spears":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Crafting":1, "skillIncreases.Diplomacy":1, 
+  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":2, "skillIncreases.Nature":2, 
+  "skillIncreases.Performance":2, "skillIncreases.Society":1, "skillIncreases.Stealth":1, 
+  "skillIncreases.Survival":1, "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
 };
   </script>
 </head>
@@ -89,7 +89,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assured Ritualist; Battle Medicine; Courtly Graces; Efficient Rituals; Flexible Ritualist; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Resourceful Ritualist; Ritualist Dedication; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assured Ritualist; Battle Medicine; Courtly Graces; Efficient Rituals; Enterprising Ritualist; Flexible Ritualist; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Resourceful Ritualist; Ritualist Dedication; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -266,15 +266,17 @@ var attributes = {
   <tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td>Assured Ritualist: Can improve 1 secondary failed check by 1 degree</td>
+      <td>Assured Ritualist: Can improve 1 failed check by a secondary caster by 1 degree</td>
     </tr><tr style="text-align:center">
       <td>Efficient Rituals: Can cast 1-day rituals in 4 hr and multi-day rituals in half the time</td>
+    </tr><tr style="text-align:center">
+      <td>Enterprising Ritualist: Reduces the cost of ritual components by 10%, or 20% with a critical success on the primary check for the ritual</td>
     </tr><tr style="text-align:center">
       <td>Flexible Ritualist: Can serve as both primary and a secondary caster for rituals</td>
     </tr><tr style="text-align:center">
       <td>Resourceful Ritualist: Can attempt rituals that require 1 degree higher proficiency</td>
     </tr><tr style="text-align:center">
-      <td>Ritualist Dedication: +2 checks to perform rituals/Knows 5 uncommon rituals</td>
+      <td>Ritualist Dedication: +2 checks to perform rituals/Knows 4 uncommon rituals of up to level 4</td>
     </tr></table>
 </td>
   </tr></table>
@@ -284,7 +286,7 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 6 available vs. 5 allocated</td>
+      <td><b>Validation Errors</b>: Enterprising Ritualist Feat: Requires level (currently 10) >= 14 and ritualist dedication feature (currently 1)</td>
     </tr></table>
 </td>
   </tr></table>
