@@ -6600,7 +6600,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+1 vs. death effects, disease, undead, and sahkils, and +2 vs. undead and sahkil death effects and disease"',
   'Duskwalker Magic':
     'Section=magic ' +
-    'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast earch at 2nd rank once per day"',
+    'Note="Knows the Augury and Peaceful Rest divine innate spells; can cast each at 2nd rank once per day"',
   'Quietus Strikes':
     'Section=combat ' +
     'Note="Attacks are magical and inflict +1 HP void or vitality, or +2 HP with a <i>+3 potency</i> rune"',
@@ -9905,7 +9905,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Form Lock':
     'Action=1 ' +
     'Section=skill ' +
-    'Note="Successful Athletics check counteracts a polymorph effect affecting a restrained target once per target per day"',
+    'Note="Successful Athletics check counteracts a polymorph effect affecting a grabbed or restrained foe once per target per day"',
   'Ironblood Surge':Pathfinder2E.FEATURES['Ironblood Surge'],
   'Mountain Quake':Pathfinder2E.FEATURES['Mountain Quake'],
   'Peerless Form':
@@ -12252,10 +12252,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use 10 min to Craft a common, shoddy item of up to level %{level//2} that lasts 1d4 hr; can target a creature that takes no shoddy penalty with it"',
   'Reverse Engineering':
     'Section=skill ' +
-    'Note="Can use 1 day\'s work and a successful Crafting check to reverse engineer a formula for a possessed item; critical success allows reassembling the item"', 
+    'Note="Can use 1 day\'s work and a successful +2 Crafting check to reverse engineer a formula for a possessed item; a critical success allows simultaneously reassembling the item"', 
   'Magical Scrounger':
     'Section=skill ' +
-    'Note="Can use 1 day to Cobble Together a non-consumable magical item of up to level %{level//2}"',
+    'Note="Can Cobble Together a non-consumable, non-runic magical item of up to level %{level//2} once per day"',
   'Expert Disassembly':
     'Section=skill Note="Can use Crafting to Disable A Device or Pick A Lock"',
 
@@ -12266,15 +12266,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Steel Skin':
     'Section=combat Note="Does not suffer fatigue from sleeping in armor"',
   'Armor Specialist':
-    'Section=combat Note="Gains the specialization effects of all proficient armor"',
+    'Section=combat Note="Gains the specialization effects of all proficient armors"',
   'Armored Rebuff':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Shoves a foe who fails an attack on self with a melee weapon or unarmed Strike"',
+    'Note="Attempts to Shove an adjacent foe who fails the triggering melee attack on self"',
   'Mighty Bulwark':
     'Section=save Note="Bulwark armor gives +4 on all Reflex saves"',
 
-  // TODO number of snares in formula book
   'Snarecrafter Dedication':
     'Section=skill,skill ' +
     'Note=' +
@@ -12286,23 +12285,23 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Deploys a snare that triggers immediately in a foe\'s space"',
   'Remote Trigger':
     'Section=combat ' +
-    'Note="Can use a ranged Strike to trigger snares, automatically succeeding with self snares"',
+    'Note="Can use a ranged Strike to trigger snares, automatically succeeding with snares crafted by self"',
   'Giant Snare':
     'Section=skill ' +
     'Note="Can use 2 snare preparations to prepare a single snare that covers a 10\'x10\' area"',
   'Lightning Snares':
-    'Section=skill Note="Can craft snares in 1 action instead of 1 min"',
+    'Section=skill Note="Can Craft snares in 1 action instead of 1 min"',
   'Plentiful Snares':
-    'Section=skill Note="Has increased Sharecrafter Dedication effects"',
+    'Section=skill Note="Has increased Snarecrafter Dedication effects"',
 
   'Talisman Dabbler Dedication':
     'Section=skill ' +
     'Note="Trained in the use of talismans, can Craft %{2+(skillNotes.deeperDabbler?$\'features.Deeper Dabbler\'*2:0)} talismans of up to level %{level//2} during daily prep, and can use Affix A Talisman to affix or remove up to 4 talismans"',
   'Quick Fix':
     'Section=skill ' +
-    'Note="Has the Rapid Affixture feature; can affix 4 talismans in 1 min%{level<12?\'\':\' and Affix a Talisman as a 3-action activity\'}"',
+    'Note="Has the Rapid Affixture feature; can affix or remove 4 talismans in 1 min%{level<12?\'\':\' and Affix a Talisman as a 3-action activity\'}"',
   'Deeper Dabbler':
-    'Section=skill Note="Has increased Talisman Dabbler Dedication features"',
+    'Section=skill Note="Has increased Talisman Dabbler Dedication effects"',
   'Talismanic Sage':
     'Section=skill Note="Can have 2 talismans affect an item simultaneously"',
 
@@ -12311,20 +12310,21 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Has separate social and vigilante identities; switching requires 1 min, and attempts by others to uncover require a successful %{20+skillModifiers.Deception} Seek"',
   'Hidden Magic':
     'Section=skill ' +
-    'Note="Others\' attempts to detect magical gear requires a successful Perception vs. Deception check"',
+    'Note="Others\' attempts to detect magical gear require a successful Perception vs. Deception check"',
   'Minion Guise':
     'Section=skill ' +
     'Note="Can disguise animal companion, familiar, or pet for social interactions"',
   'Safe House':
     'Section=feature ' +
-    'Note="Has a secret lair up to %{rank.Deception<2?2:rank.Deception<3?4:rank.Deception<4?8:16} 10\' cubes in size that is shielded from magical protection (DC %{skillModifiers.Deception} counteract vs. level %{level//2} negates)"',
+    'Note="Has a secret lair up to %{rank.Deception<2?2:rank.Deception<3?4:rank.Deception<4?8:16} 10\' cubes in size that is shielded from magical detection (DC %{skillModifiers.Deception} counteract vs. level %{level//2} negates)"',
   'Social Purview':
     // TODO randomize
-    'Section=feature Note="+1 Class Feat (archetype dedication)"',
+    'Section=feature ' +
+    'Note="+1 Class Feat (archetype dedication for social identity)"',
   'Startling Appearance':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful Strike vs. an unaware target inflicts off-guard for the rest of the current turn%{combatNotes.stunningAppearance?\' frightened 1, and stunned 1\':\' and frightened 1\'}, or %{combatNotes.stunningAppearance?\'stunned 2 and \':\'\'}frightened 2 on a critical success"',
+    'Note="Successful Strike vs. an unaware target inflicts off-guard for the rest of the current turn%{combatNotes.stunningAppearance?\', frightened 1, and stunned 1\':\' and frightened 1\'}, or frightened 2%{combatNotes.stunningAppearance?\' and stunned 2\':\'\'} on a critical success"',
   'Quick Change':
     'Section=skill ' +
     'Note="Can change identity in %{rank.Deception<4?\' 3 actions\':\'1 action\'}"',
@@ -12333,7 +12333,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Statements that are true to the current identity do not detect as lies"',
   'Many Guises':
     'Section=feature ' +
-    'Note="Can assume additional identities other than primary social and vigilante identities"',
+    'Note="Can assume other ordinary identities in addition to primary social and vigilante ones"',
   'Frightening Appearance':
     'Section=combat ' +
     'Note="Startling Appearance also allows a Demoralize attempt vs. unaware foes in a 10\' emanation"',
@@ -12372,10 +12372,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can gain +%{level<12?1:2} attack and %{level<16?2:3} damage dice with an improvised weapon, but the weapon breaks on a critical hit; critical hits with items that are difficult to break are normal hits"',
   'Surprise Strike':
     'Section=combat ' +
-    'Note="Foes unaware of self improvised weapon skills are off-guard to first Strike"',
+    'Note="Foes that are unaware of self improvised weapon skills are off-guard to first Strike with one"',
   'Improvised Critical':
     'Section=combat ' +
-    'Note="Critical hits with improvised weapon inflict appropriate critical specialization effect"',
+    'Note="Critical hits with improvised weapon inflict an appropriate critical specialization effect"',
   'Makeshift Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -12383,7 +12383,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Shattering Strike (Weapon Improviser)':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Breaking a weapon used for Improvised Pummel inflicts +3d6 HP piercing"',
+    'Note="Critical hit using Improvised Pummel inflicts +3d6 HP piercing"',
 
   'Wrestler Dedication':
     'Section=combat,save,skill ' +
@@ -12394,11 +12394,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Disengaging Twist':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Makes a +2 Athletics check to Escape the triggering grabbed or restrained condition"',
+    'Note="Makes a +2 Athletics check to Escape from being grabbed or restrained"',
   'Elbow Breaker':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe gives +2 to further Disarm attempts and inflicts -2 attacks with the item until the foe changes of its grip; critical success forces foe to drop the item"',
+    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe gives +2 to further Disarm attempts and inflicts -2 attacks with the item until the foe changes of its grip; critical success forces the foe to drop the item"',
   'Suplex':
     'Action=1 ' +
     'Section=combat ' +
@@ -12406,7 +12406,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Clinch Strike':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Strikes a foe that Escapes from a grabbed or restrained condition"',
+    'Note="Strikes a foe that Escapes from being grabbed or restrained"',
   'Running Tackle':
     'Action=2 ' +
     'Section=combat ' +
@@ -12422,7 +12422,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Aerial Piledriver':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe inflicts additional damage equal to the number of damage dice and prone; failure ends grabbed or restrained condition, and critical failure inflicts prone on self"',
+    'Note="Successful unarmed melee Strike vs. a grabbed or restrained foe inflicts prone and additional damage equal to 1d6 HP per damage die; failure releases the foe, and a critical failure inflicts prone on self"',
   'Spinebreaker':
     'Action=1 ' +
     'Section=combat ' +
@@ -12772,7 +12772,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Slippery Prey':
     'Section=skill ' +
     'Note="Reduces the penalty for repeated Escape attempts using Acrobatics or Athletics to -4 and -8, -3 and -6 with master proficiency, or zero with legendary proficiency"',
-  'Snare Crafting':Pathfinder2E.FEATURES['Snare Crafting'],
+  'Snare Crafting':
+    Pathfinder2E.FEATURES['Snare Crafting']
+    .replace('snareSpecialist', 'snarecrafterDedication'),
   'Sow Rumor':
     'Section=skill ' +
     'Note="Successful Deception spreads a rumor for 1 week, giving +1 Deception, Diplomacy, and Intimidation that invokes it; critical success gives a +2 bonus for 1 month and critical failure gives a -4 penalty for 1 week"',
