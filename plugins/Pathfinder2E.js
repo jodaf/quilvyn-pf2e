@@ -3021,7 +3021,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Critical hits with a battle axe, pick, warhammer, or dwarf weapon inflict its critical specialization effect"',
   "Mountain's Stoutness":
-    'Section=combat,combat ' +
+    'Section=combat,save ' +
     'Note=' +
       '"+%{level} Hit Points",' +
       '"-%{features.Toughness?4:1} dying recovery DC"',
@@ -3149,10 +3149,9 @@ Pathfinder2E.FEATURES = {
       '"+1 Will vs. illusions/R10\' Automatically attempts to disbelieve illusions",' +
       '"+1 Perception (illusions)"',
   'Animal Elocutionist':
-    'Section=magic,skill ' +
+    'Section=skill ' +
     'Note=' +
-      '"Can speak with all animals",' +
-      '"+1 to Make An Impression on animals"',
+      '"Can speak with all animals and gains +1 to Make An Impression on them"',
   'Energized Font':
     'Action=1 Section=magic Note="Regains 1 Focus Point once per day"',
   'Gnome Weapon Innovator':
@@ -3276,7 +3275,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Successes to Escape and vs. grabbed or restrained are critical successes/Foe Grapple fails are critical fails/Foe Grab requires a successful Athletics check"',
   'Watchful Halfling':
-    'Section=combat,skill ' +
+    'Section=save,skill ' +
     'Note=' +
       '"Can use Aid to help another overcome enchantment or possession",' +
       '"+2 Sense Motive to notice enchantment or possession, and automatically attempts a -2 check to notice these"',
@@ -3295,7 +3294,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Successful saves vs. emotion are critical successes%{$\'features.Gutsy Halfling\'?\', and critical failures vs. emotion are normal failures\':\'\'}"',
   'Ceaseless Shadows':
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="Can use Hide and Sneak without cover and gains 1 degree better cover from larger creatures"',
   'Halfling Weapon Expertise':
     'Section=combat ' +
@@ -3318,7 +3317,7 @@ Pathfinder2E.FEATURES = {
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a second tradition"',
-  'Cooperative Nature':'Section=skill Note="+4 Aid checks"',
+  'Cooperative Nature':'Section=feature Note="+4 Aid checks"',
   'General Training':
     'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
   'Haughty Obstinacy':
@@ -3341,9 +3340,10 @@ Pathfinder2E.FEATURES = {
     'Note="Failures and critical failures to Aid with expert skills are successes"',
   'Incredible Improvisation':
     'Action=Free ' +
-    'Section=combat ' +
-    'Note="Gives +4 on an untrained skill check once per day"',
-  'Multitalented':'Section=combat Note="+1 Class Feat (multiclass dedication)"',
+    'Section=skill ' +
+    'Note="Gains +4 on an untrained skill check once per day"',
+  'Multitalented':
+    'Section=feature Note="+1 Class Feat (multiclass dedication)"',
   'Unconventional Expertise (%weapon)':
     'Section=combat Note="Attack %V (%weapon)"',
 
