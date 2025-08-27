@@ -5941,7 +5941,7 @@ Pathfinder2E.FEATURES = {
     'Action=Free Section=combat Note="Gives allies +1 initiative"',
   'Snare Specialist':
     'Section=skill ' +
-    'Note="Knows the formulas for %{rank.Crafting*3-3} snares; may prepare %{rank.Crafting*2*(skillNotes.ubiquitousSnares?2:1)} each day without using resources"',
+    'Note="Can prepare %{rank.Crafting*2*(skillNotes.ubiquitousSnares?2:1)} snares each day without using resources"',
   // Twin Parry as above
   // Mature Animal Companion as above
   'Quick Snares':'Section=skill Note="Can prepare snares with 3 actions"',
@@ -7455,7 +7455,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
   'Snare Crafting':
     'Section=skill ' +
-    'Note="Can use Crafting to create snares and knows the formulas for 4 common snares"',
+    'Note="Can use Crafting to create snares and knows the formulas for %{4+(skillNotes.snareSpecialist?rank.Crafting*3-3:0)} common snares"',
   'Specialty Crafting':
     'Section=skill ' +
     'Note="+%{rank.Crafting>=3?2:1} Crafting on selected type of item"',
