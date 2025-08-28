@@ -460,12 +460,10 @@ Pathfinder2E.CLASSES = {
       '"5:Powerful Alchemy","7:Alchemical Weapon Expertise","7:Iron Will",' +
       '"7:Perpetual Infusions","9:Alchemical Expertise","9:Alertness",' +
       '"9:Double Brew","11:Juggernaut","11:Perpetual Potency",' +
-      '"features.Bomber ? 13:Greater Field Discovery (Bomber)",' +
-      '"features.Chirurgeon ? 13:Greater Field Discovery (Chirurgeon)",' +
-      '"features.Mutagenist ? 13:Greater Field Discovery (Mutagenist)",' +
-      '"13:Medium Armor Expertise","13:Weapon Specialization",' +
-      '"15:Alchemical Alacrity","15:Evasion","17:Alchemical Mastery",' +
-      '"17:Perpetual Perfection","19:Medium Armor Mastery" ' +
+      '"13:Greater Field Discovery","13:Medium Armor Expertise",' +
+      '"13:Weapon Specialization","15:Alchemical Alacrity","15:Evasion",' +
+      '"17:Alchemical Mastery","17:Perpetual Perfection",' +
+      '"19:Medium Armor Mastery" ' +
     'Selectables=' +
       '"1:Bomber:Research Field",' +
       '"1:Chirurgeon:Research Field",' +
@@ -586,14 +584,8 @@ Pathfinder2E.CLASSES = {
       '"1:Devotion Spells","1:Shield Block","1:Champion Feats",' +
       '"2:Skill Feats","3:Divine Ally","3:General Feats","3:Skill Increases",' +
       '"5:Weapon Expertise","7:Armor Expertise","7:Weapon Specialization",' +
-      '"9:Champion Expertise",' +
-      '"features.Liberator ? 9:Divine Smite (Liberator)",' +
-      '"features.Paladin ? 9:Divine Smite (Paladin)",' +
-      '"features.Redeemer ? 9:Divine Smite (Redeemer)",' +
-      '"9:Juggernaut","9:Lightning Reflexes","11:Alertness","11:Divine Will",' +
-      '"features.Liberator ? 11:Exalt (Liberator)",' +
-      '"features.Paladin ? 11:Exalt (Paladin)",' +
-      '"features.Redeemer ? 11:Exalt (Redeemer)",' +
+      '"9:Champion Expertise","9:Divine Smite","9:Juggernaut",' +
+      '"9:Lightning Reflexes","11:Alertness","11:Divine Will","11:Exalt",' +
       '"13:Armor Mastery","13:Weapon Mastery",' +
       '"15:Greater Weapon Specialization","17:Champion Mastery",' +
       '"17:Legendary Armor","19:Hero\'s Defiance" ' +
@@ -13642,6 +13634,15 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'skillNotes.perpetualPotency', '^', 'dict["features.Chirurgeon"] ? 6 : 3',
       'skillNotes.perpetualPerfection', '^', '11'
     );
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let fields =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
+    fields.forEach(f => {
+      rules.defineRule('features.Greater Field Discovery (' + f + ')',
+        'features.Greater Field Discovery', '?', null,
+        'features.' + f, '=', '1'
+      );
+    });
   } else if(name == 'Barbarian') {
     rules.defineRule('combatNotes.draconicRage',
       '', '=', '"fire"',
@@ -13763,6 +13764,19 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
       'deityFollowerAlignments', '?', null,
       'alignment', '=', 'dict.deityFollowerAlignments.split("/").includes(source.replaceAll(/[a-z ]/g, "")) ? null : 1'
     );
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let causes =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Cause')).map(x => x.replace('Champion - ', ''));
+    causes.forEach(c => {
+      rules.defineRule('features.Divine Smite (' + c + ')',
+        'features.Divine Smite', '?', null,
+        'features.' + c, '=', '1'
+      );
+      rules.defineRule('features.Exalt (' + c + ')',
+        'features.Exalt', '?', null,
+        'features.' + c, '=', '1'
+      );
+    });
   } else if(name == 'Cleric') {
     rules.defineRule('combatNotes.cloisteredCleric',
       'level', '?', 'source>=11',
@@ -14479,15 +14493,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('rank.Heavy Armor',
       'combatNotes.armorProficiency', '^=', 'source=="Heavy" ? 1 : null'
     );
-  } else if(name == 'Aura Of Vengeance') {
-    let allSelectables = rules.getChoices('selectableFeatures');
-    let causes =
-      Object.keys(allSelectables)
-      .filter(x => allSelectables[x].includes('Champion (Cause)'))
-      .map(x => x.replace('Champion - ', ''));
-    causes.forEach(c => {
-      rules.defineRule('features.Exalt', 'features.' + c, '=', '1');
-    });
   } else if(name == 'Barbarian Dedication') {
     // Suppress validation errors for selected instinct
     let allSelectables = rules.getChoices('selectableFeatures');
