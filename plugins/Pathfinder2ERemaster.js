@@ -830,25 +830,13 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Alchemy","1:Formula Book","1:Advanced Alchemy","1:Versatile Vials",' +
       '"1:Quick Alchemy","1:Research Field","1:Alchemist Feats",' +
       '"2:Skill Feats","3:General Feats","3:Skill Increases",' +
-      '"features.Bomber ? 5:Field Discovery (Bomber)",' +
-      '"features.Chirurgeon ? 5:Field Discovery (Chirurgeon)",' +
-      '"features.Mutagenist ? 5:Field Discovery (Mutagenist)",' +
-      '"features.Toxicologist ? 5:Field Discovery (Toxicologist)",' +
-      '"5:Powerful Alchemy",' +
+      '"5:Field Discovery","5:Powerful Alchemy",' +
       '"7:Alchemical Weapon Expertise","7:Will Expertise",' +
       '"9:Alchemical Expertise","9:Double Brew","9:Perception Expertise",' +
-      '"features.Bomber ? 11:Advanced Vials (Bomber)",' +
-      '"features.Chirurgeon ? 11:Advanced Vials (Chirurgeon)",' +
-      '"features.Mutagenist ? 11:Advanced Vials (Mutagenist)",' +
-      '"features.Toxicologist ? 11:Advanced Vials (Toxicologist)",' +
-      '"11:Chemical Hardiness",' +
-      '"features.Bomber ? 13:Greater Field Discovery (Bomber)",' +
-      '"features.Chirurgeon ? 13:Greater Field Discovery (Chirurgeon)",' +
-      '"features.Mutagenist ? 13:Greater Field Discovery (Mutagenist)",' +
-      '"features.Toxicologist ? 13:Greater Field Discovery (Toxicologist)",' +
-      '"13:Medium Armor Expertise","13:Weapon Specialization",' +
-      '"15:Alchemical Weapon Mastery","15:Explosion Dodger",' +
-      '"17:Abundant Vials","17:Alchemical Mastery",' +
+      '"11:Advanced Vials","11:Chemical Hardiness",' +
+      '"13:Greater Field Discovery","13:Medium Armor Expertise",' +
+      '"13:Weapon Specialization","15:Alchemical Weapon Mastery",' +
+      '"15:Explosion Dodger","17:Abundant Vials","17:Alchemical Mastery",' +
       '"19:Medium Armor Mastery" ' +
     'Selectables=' +
       '"1:Bomber:Research Field",' +
@@ -11169,7 +11157,9 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Archetype
 
-  'Bard Dedication':Pathfinder2E.FEATURES['Bard Dedication'],
+  'Bard Dedication':
+    Pathfinder2E.FEATURES['Bard Dedication']
+    .replace('Occult Spellcasting', 'Bard Spellcasting'),
   'Basic Bard Spellcasting':
     Pathfinder2E.FEATURES['Basic Bard Spellcasting']
     .replaceAll('level', 'rank'),
@@ -11191,7 +11181,9 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Master Bard Spellcasting']
     .replaceAll('level', 'rank'),
 
-  'Cleric Dedication':Pathfinder2E.FEATURES['Cleric Dedication'],
+  'Cleric Dedication':
+    Pathfinder2E.FEATURES['Cleric Dedication']
+    .replace('Divine Spellcasting', 'Cleric Spellcasting'),
   'Basic Cleric Spellcasting':
     Pathfinder2E.FEATURES['Basic Cleric Spellcasting']
     .replaceAll('level', 'rank'),
@@ -11209,7 +11201,8 @@ Pathfinder2ERemaster.FEATURES = {
 
   'Druid Dedication':
     Pathfinder2E.FEATURES['Druid Dedication']
-    .replace('Druidic Language', 'Wildsong'),
+    .replace('Druidic Language', 'Wildsong')
+    .replace('Primal Spellcasting', 'Druid Spellcasting'),
   'Basic Druid Spellcasting':
     Pathfinder2E.FEATURES['Basic Druid Spellcasting']
     .replaceAll('level', 'rank'),
@@ -11239,12 +11232,6 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Master Druid Spellcasting']
     .replaceAll('level', 'rank'),
 
-  'Ranger Dedication':Pathfinder2E.FEATURES['Ranger Dedication'],
-  "Basic Hunter's Trick":Pathfinder2E.FEATURES["Basic Hunter's Trick"],
-  'Ranger Resiliency':Pathfinder2E.FEATURES['Ranger Resiliency'],
-  "Advanced Hunter's Trick":Pathfinder2E.FEATURES["Advanced Hunter's Trick"],
-  'Master Spotter':Pathfinder2E.FEATURES['Master Spotter'],
-
   'Fighter Dedication':
     Pathfinder2E.FEATURES['Fighter Dedication']
     .replace('Ability', 'Attribute'),
@@ -11255,6 +11242,12 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Attack Of Opportunity', 'Reactive Strike'),
   'Advanced Maneuver':Pathfinder2E.FEATURES['Advanced Maneuver'],
   'Diverse Weapon Expert':Pathfinder2E.FEATURES['Diverse Weapon Expert'],
+
+  'Ranger Dedication':Pathfinder2E.FEATURES['Ranger Dedication'],
+  "Basic Hunter's Trick":Pathfinder2E.FEATURES["Basic Hunter's Trick"],
+  'Ranger Resiliency':Pathfinder2E.FEATURES['Ranger Resiliency'],
+  "Advanced Hunter's Trick":Pathfinder2E.FEATURES["Advanced Hunter's Trick"],
+  'Master Spotter':Pathfinder2E.FEATURES['Master Spotter'],
 
   'Rogue Dedication':Pathfinder2E.FEATURES['Rogue Dedication'],
   'Basic Trickery':Pathfinder2E.FEATURES['Basic Trickery'],
@@ -11268,7 +11261,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Witch Dedication':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Familiar and Patron features",' +
+      '"Has the Familiar, Patron, and Witch Spellcasting features",' +
       '"Knows a choice of 2 %V cantrips"',
   'Basic Witch Spellcasting':
     'Section=magic ' +
@@ -11286,7 +11279,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Spell Master (%V)/Knows 1 7th-rank%{rank>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell"',
 
-  'Wizard Dedication':Pathfinder2E.FEATURES['Wizard Dedication'],
+  'Wizard Dedication':
+    Pathfinder2E.FEATURES['Wizard Dedication']
+    .replace('Arcane Spellcasting', 'Wizard Spellcasting'),
   'Arcane School Spell (School Of Ars Grammatica)':
     Pathfinder2E.FEATURES['Arcane School Spell (Abjuration)']
     .replace(' and at least 1 Focus Point', '')
@@ -11453,7 +11448,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Oracle Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Mystery and Oracular Curse features",' +
+      '"Has the Mystery, Oracular Curse, and Oracle Spellcasting features",' +
       '"Spell Trained (Divine)/Knows 2 choices of divine cantrips",' +
       '"Skill Trained (Religion)"',
   'Basic Mysteries':
@@ -12177,7 +12172,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Rerolls the triggering save vs. one poison type per day"',
   'Chemical Contagion':
-    'Section=combat Note="Has the Greater Field Discovery (Toxicologist) feature"',
+    'Section=feature ' +
+    'Note="Has the Greater Field Discovery (Toxicologist) feature"',
 
   'Ritualist Dedication':
     'Section=magic ' +
@@ -16265,6 +16261,19 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('skillNotes.perpetualInfusions',
       'features.Perpetual Infusions', '?', null
     );
+    let allSelectables = rules.getChoices('selectableFeatures');
+    let fields =
+      Object.keys(allSelectables).filter(x => allSelectables[x].includes('Research Field')).map(x => x.replace('Alchemist - ', ''));
+    fields.forEach(f => {
+      rules.defineRule('features.Advanced Vials (' + f + ')',
+        'features.Advanced Vials', '?', null,
+        'features.' + f, '=', '1'
+      );
+      rules.defineRule('features.Field Discovery (' + f + ')',
+        'features.Field Discovery', '?', null,
+        'features.' + f, '=', '1'
+      );
+    });
   } else if(name == 'Barbarian') {
     rules.defineRule('combatNotes.draconicRage',
       '', '=', '"mental"',
@@ -16784,6 +16793,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'levels.Champion', '?', null
       );
     });
+  } else if(name == 'Chemical Contagion') {
+    rules.defineRule
+      ('features.Greater Field Discovery', 'featureNotes.' + prefix, '=', '1');
   } else if(name == 'Cobra Stance') {
     Pathfinder2E.weaponRules(
       rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
