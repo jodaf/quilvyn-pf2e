@@ -31,7 +31,7 @@ Place, Suite 330, Boston, MA 02111-1307 USA.
  */
 function Pathfinder2E() {
 
-  let rules = new QuilvynRules('Pathfinder 2E (Legacy)', Pathfinder2E.VERSION);
+  let rules = new QuilvynRules('Pathfinder 2E Legacy', Pathfinder2E.VERSION);
   rules.plugin = Pathfinder2E;
   Pathfinder2E.rules = rules;
 
@@ -5130,7 +5130,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.improvedFlexibility?\' and one of up to 14th level\':\'\'} during daily prep"',
   // Evasion as above
-  'Fighter Expertise':'Section=feature Note="Class Expert (Fighter)"',
+  'Fighter Expertise':'Section=combat Note="Class Expert (Fighter)"',
   'Fighter Feats':'Section=feature Note="%V selections"',
   'Fighter Key Ability':'Section=feature Note="1 selection"',
   'Fighter Skills':
@@ -6326,7 +6326,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Feats':'Section=feature Note="%V selections"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
-    'Section=magic Note="Can learn spells from the %{sorcererTraditionsLowered} tradition"',
+    'Section=magic Note="Can learn spells from the %V tradition"',
   // Nethys changes Simple Weapon Expertise to Weapon Expertise
   // Weapon Expertise as above
   // Weapon Specialization as above
@@ -6685,7 +6685,7 @@ Pathfinder2E.FEATURES = {
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Weapon Expertise':
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Attack Expert (Club; Crossbow; Dagger; Heavy Crossbow; Staff; Unarmed Attacks)"',
 
   'Abjuration':
@@ -6894,7 +6894,7 @@ Pathfinder2E.FEATURES = {
   'Bard Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Muse feature",' +
+      '"Has the Muse and Occult Spellcasting features",' +
       '"Spell Trained (Occult)/Knows 2 occult cantrips",' +
       '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':
@@ -6941,7 +6941,7 @@ Pathfinder2E.FEATURES = {
   'Cleric Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Deity feature",' +
+      '"Has the Deity and Divine Spellcasting features",' +
       '"Spell Trained (Divine)/Can prepare 2 divine cantrips each day",' +
       '"Skill Trained (Religion)"',
   'Basic Cleric Spellcasting':
@@ -6962,7 +6962,7 @@ Pathfinder2E.FEATURES = {
   'Druid Dedication':
     'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Anathema, Druidic Language, and Druidic Order features",' +
+      '"Has the Anathema, Druidic Language, Druidic Order, and Primal Spellcasting features",' +
       '"Spell Trained (Primal)/Can prepare 2 primal cantrips each day",' +
       '"Skill Trained (Nature)"',
   'Basic Druid Spellcasting':
@@ -7060,7 +7060,7 @@ Pathfinder2E.FEATURES = {
   'Sorcerer Dedication':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Bloodline feature",' +
+      '"Has the Bloodline and Sorcerer Spellcasting features",' +
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
@@ -7149,7 +7149,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic,magic,skill ' +
     'Note=' +
       // Errata adds Arcane School, but gaining no features from it
-      '"Has the Arcane School feature",' +
+      '"Has the Arcane School and Arcane Spellcasting features",' +
       '"Spell Trained (Arcane)/Can prepare 2 arcane cantrips each day",' +
       '"Owns a spellbook with 4 arcane cantrips",' +
       '"Skill Trained (Arcana)"',
@@ -14048,6 +14048,9 @@ Pathfinder2E.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'sorcererTraditions', '=', null);
     rules.defineRule('magicNotes.primalEvolution', 'maxSpellLevel', '=', null);
+    rules.defineRule('magicNotes.sorcererSpellcasting',
+      'sorcererTraditionsLowered', '=', null
+    );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
       rules.defineRule('trainingLevel.' + t,
         'magicNotes.expertSpellcaster', '^=', 'source.includes("' + t + '") ? 2 : null',
