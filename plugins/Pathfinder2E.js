@@ -841,7 +841,7 @@ Pathfinder2E.CLASSES = {
       '"1:Undead:Bloodline" ' +
     // SpellSlots tradition depends on bloodline--see classRules
     'SpellSlots=' +
-      '0:5@1,' +
+      'C1:5@1,' +
       '1:3@1;4@2,' +
       '2:3@3;4@4,' +
       '3:3@5;4@6,' +
@@ -4967,7 +4967,7 @@ Pathfinder2E.FEATURES = {
 
   'Animal Companion':
     'Section=feature ' +
-    'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' that gains Hunt Prey\'+($\'features.Masterful Companion\'?\' and Flurry, Precision, and Outwit\':\'\')+\' effects\':\'\'}"',
+    'Note="Has a young animal companion%{$\'features.Hunt Prey\'?\' with Hunt Prey\'+($\'features.Masterful Companion\'?\', Flurry, Precision, and Outwit\':\'\')+\' abilities\':\'\'}"',
   // Errata adds fungus
   'Leshy Familiar':'Section=feature Note="Has a Tiny plant or fungus familiar"',
   // Reach Spell as above
@@ -5740,7 +5740,7 @@ Pathfinder2E.FEATURES = {
   'Mountain Quake':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="R20\' Stomp inflicts %{strengthModifier>?0} HP and knocked prone (<b>save basic Fortitude</b> also negates knocked prone) once per 1d4 rd"',
+    'Note="20\' emanation inflicts %{strengthModifier>?0} HP and knocked prone (<b>save basic Fortitude</b> also negates knocked prone) once per 1d4 rd"',
   'Tangled Forest Rake':
     'Action=1 ' +
     'Section=combat ' +
@@ -5754,7 +5754,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can speak and understand all spoken languages"',
   'Wild Winds Gust':
     'Action=2 ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Makes a wind crash Strike against all creatures in a 30\' cone or 60\' line at the current multiple attack penalty"',
   'Enlightened Presence':
     'Section=save ' +
@@ -5919,7 +5919,7 @@ Pathfinder2E.FEATURES = {
     'Note="Draws a weapon and Strikes"',
   // Wild Empathy as above
   "Companion's Cry":
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="Can use 2 actions for Command An Animal to give companion an additional action"',
   // Errata corrects to Action=Reaction
   'Disrupt Prey':
@@ -5951,7 +5951,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,skill ' +
     'Note=' +
       '"Can Stride toward hunted prey as a free action when using Survival for initiative",' +
-      '"Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\'/Can perform other exploration activities while tracking\':\'\'}"',
+      '"Can Track at full Speed%{rank.Survival>=3?\' without hourly Survival checks\':\'\'}%{rank.Survival>=4?\' and can perform other exploration activities while tracking\':\'\'}"',
 
   // Blind-Fight as above
   'Deadly Aim':
@@ -5968,12 +5968,12 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Created snares have a DC of at least %{classDifficultyClass.Ranger}"',
   'Terrain Master':
-    'Section=ability ' +
-    'Note="Can train for 1 hr to make current natural terrain favored until away from it for 1 day"',
+    'Section=feature ' +
+    'Note="1 hr process makes current natural terrain favored until away from it for 1 day"',
   "Warden's Boon":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Shares Hunt Prey and Hunter\'s Edge benefits with an ally until the end of its next turn"',
+    'Note="Shares Hunt Prey, Flurry, Outwit, and Precision benefits with an ally until the end of its next turn"',
   // Errata clarifies effects
   'Camouflage':
     'Section=skill ' +
@@ -6009,7 +6009,7 @@ Pathfinder2E.FEATURES = {
     'Note="Makes undetected foes hidden after a failed Seek"',
   'Shared Prey':
     'Section=combat ' +
-    'Note="Can share with an ally the benefits of Hunt Prey and Flurry, Outwit, or Precision on a single target"',
+    'Note="Can share with an ally the benefits of Hunt Prey, Flurry, Outwit, and Precision on a single target"',
   'Stealthy Companion':
     'Section=skill ' +
     'Note="Companion gains the benefits of Camouflage, and an ambusher companion gains an increase in Stealth rank"',
@@ -6130,7 +6130,7 @@ Pathfinder2E.FEATURES = {
   'Nimble Dodge':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives +2 Armor Class against the triggering attack when unencumbered"',
+    'Note="Gives +2 Armor Class against the triggering attack when unencumbered%{combatNotes.nimbleRoll?\\"; success allows a 10\' Stride\\":\'\'}"',
   'Trap Finder':
     'Section=combat,save,skill ' +
     'Note=' +
@@ -6151,25 +6151,13 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Successful Feints inflict -2 Perception and Reflex saves while the target remains flat-footed"',
   'Minor Magic (Arcane)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Arcane)",' +
-      '"Knows 2 arcane cantrips"',
+    'Section=magic Note="Spell Trained (Arcane)/Knows 2 arcane cantrips"',
   'Minor Magic (Divine)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Divine)",' +
-      '"Knows 2 divine cantrips"',
+    'Section=magic Note="Spell Trained (Divine)/Knows 2 divine cantrips"',
   'Minor Magic (Occult)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Occult)",' +
-      '"Knows 2 occult cantrips"',
+    'Section=magic Note="Spell Trained (Occult)/Knows 2 occult cantrips"',
   'Minor Magic (Primal)':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Primal)",' +
-      '"Knows 2 primal cantrips"',
+    'Section=magic Note="Spell Trained (Primal)/Knows 2 primal cantrips"',
   'Mobility':
     'Section=combat ' +
     'Note="Can Stride at half Speed without triggering reactions"',
@@ -6198,7 +6186,7 @@ Pathfinder2E.FEATURES = {
     'Note="Moves to remain adjacent to a retreating foe"',
   'Sabotage':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Successful Thievery vs. Reflex inflicts %{skillModifiers.Thievery*2} HP damage, or %{skillModifiers.Thievery*4} HP on a critical success, to an item with moving parts possessed by a creature within reach"',
   // Scout's Warning as above
   'Gang Up':
@@ -6221,8 +6209,10 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison"',
   'Nimble Roll':
-    'Section=save ' +
-    'Note="Can use Nimble Dodge before a Reflex save; success allows a 10\' Stride"',
+    'Section=combat,save ' +
+    'Note=' +
+      '"Has increased Nimble Dodge effects",' +
+      '"Can use Nimble Dodge on a Reflex save"',
   'Opportune Backstab':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -6302,8 +6292,8 @@ Pathfinder2E.FEATURES = {
     'Note="Previously-specified trigger invokes a prepared spell of up to level 4 on self"',
   'Hidden Paragon':
     'Action=Reaction ' +
-    'Section=magic ' +
-    'Note="Becomes invisible for 1 min when hidden from foes once per hr"',
+    'Section=skill ' +
+    'Note="Successful Hide or Sneak vs. all foes allows becoming invisible for 1 min once per hr"',
   'Impossible Striker':
     'Section=combat Note="Has increased Sly Striker effects"',
   'Reactive Distraction':
@@ -6488,8 +6478,8 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Choose 1 from any)"',
   'Bespell Weapon':
     'Action=Free ' +
-    'Section=magic ' +
-    'Note="After casting a non-cantrip spell, causes a wielded weapon to inflict +1d6 HP until the end of the turn once per turn; the damage type depends on the spell school"',
+    'Section=combat ' +
+    'Note="Casting a non-cantrip spell causes a wielded weapon to inflict +1d6 HP until the end of the turn once per turn; the damage type depends on the spell school"',
   'Divine Evolution':
     'Section=magic Note="+1 D%V slot for <i>Heal</i> or <i>Harm</i>"',
   'Occult Evolution':
@@ -12376,7 +12366,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('abilityNotes.armorSpeedPenalty',
     'armorSpeedReduction', '=', null,
     'armorStrengthRequirement', '=', 'null', // recomputation trigger
-    'strength', '?', 'source<dict["armorStrengthRequirement"]'
+    'strength', '?', 'source<dict.armorStrengthRequirement'
   );
   rules.defineRule('armorClass',
     '', '=', '10',
@@ -12421,7 +12411,7 @@ Pathfinder2E.combatRules = function(rules, armors, shields, weapons) {
   rules.defineRule('rank.Armor', 'armorCategory', '=', '0');
   ['Unarmored Defense', 'Light Armor', 'Medium Armor', 'Heavy Armor'].forEach(a => {
     rules.defineRule('rank.Armor',
-      'rank.' + a, '=', 'dict["armorCategory"]=="' + a.replace(/\s.*/, '') + '" ? source : null'
+      'rank.' + a, '=', 'dict.armorCategory=="' + a.replace(/\s.*/, '') + '" ? source : null'
     );
     rules.defineRule('trainingLevel.' + a, '', '=', '0');
     rules.defineRule('rank.' + a, 'trainingLevel.' + a, '=', null);
@@ -14848,7 +14838,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('spellModifier.' + trad, 'spellModifier.' + name, '=', null);
     rules.defineRule('spellAbility.' + trad, note, '=', '"charisma"');
-    rules.defineRule('spellSlots.' + trad.charAt(0) + '0', note, '+=', '2');
+    rules.defineRule('spellSlots.' + trad.charAt(0) + 'C1', note, '+=', '2');
   } else if(name == 'Monk Dedication') {
     // Suppress validation errors for selected key ability
     let allSelectables = rules.getChoices('selectableFeatures');
@@ -14957,7 +14947,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       rules.defineRule('trainingLevel.' + t,
         'magicNotes.sorcererDedication', '^=', 'source.includes("' + t + '") ? 1 : null'
       );
-      rules.defineRule('spellSlots.' + t.charAt(0) + '0',
+      rules.defineRule('spellSlots.' + t.charAt(0) + 'C1',
         'magicNotes.sorcererDedication', '+=', 'source.includes("' + t + '") ? 2 : null'
       );
       rules.defineRule('spellModifier' + t + '.' + name,

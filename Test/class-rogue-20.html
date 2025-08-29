@@ -53,8 +53,10 @@ var attributes = {
   "skillIncreases.Heaven Lore":3, "skillIncreases.Heraldry Lore":2, "skillIncreases.Nature":2, 
   "skillIncreases.Performance":3, "skillIncreases.Religion":1, "skillIncreases.Society":3, 
   "skillIncreases.Stabling Lore":2, "skillIncreases.Stealth":3, "skillIncreases.Thievery":2, 
-  "skillIncreases.Underworld Lore":1, "weapons.Bastard Sword":1, "weapons.Fist":1, "weapons.Sickle":1, 
-  "weapons.Spiked Gauntlet":1
+  "skillIncreases.Underworld Lore":1, "spells.Acid Splash (PC1 Evo)":1, "spells.Dancing Lights (OC1 Evo)":1, 
+  "spells.Daze (DC1 Enc)":1, "spells.Detect Magic (AC1 Div)":1, "spells.Detect Magic (DC1 Div)":1, 
+  "spells.Mage Hand (OC1 Evo)":1, "spells.Message (AC1 Ill)":1, "spells.Tanglefoot (PC1 Con)":1, 
+  "weapons.Bastard Sword":1, "weapons.Fist":1, "weapons.Sickle":1, "weapons.Spiked Gauntlet":1
 };
   </script>
 </head>
@@ -269,11 +271,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Group Impression: Can use Diplomacy to Make An Impression with 2 targets</td>
     </tr><tr style="text-align:center">
+      <td>Hidden Paragon: <b>(R)</b> Successful Hide or Sneak vs. all foes allows becoming invisible for 1 min once per hr</td>
+    </tr><tr style="text-align:center">
       <td>Poison Weapon: Can prepare 20 poisons that inflict 1d4 HP poison during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Quick Squeeze: Can Squeeze at full Speed</td>
-    </tr><tr style="text-align:center">
-      <td>Sabotage: <b>(1)</b> Successful Thievery vs. Reflex inflicts 62 HP damage, or 124 HP on a critical success, to an item with moving parts possessed by a creature within reach</td>
     </tr><tr style="text-align:center">
       <td>Sense The Unseen: <b>(R)</b> Makes undetected foes hidden after a failed Seek</td>
     </tr><tr style="text-align:center">
@@ -332,6 +334,8 @@ var attributes = {
         <td><i>Master Strike: Class Master (Rogue)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Master Tricks: Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Nimble Roll: Has increased Nimble Dodge effects</i></td>
       </tr><tr style="text-align:center">
         <td><i>Precise Debilitations: Has increased Debilitating Strike effects</i></td>
       </tr><tr style="text-align:center">
@@ -395,7 +399,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Mobility: Can Stride at half Speed without triggering reactions</td>
       </tr><tr style="text-align:center">
-        <td>Nimble Dodge: <b>(R)</b> Gives +2 Armor Class against the triggering attack when unencumbered</td>
+        <td>Nimble Dodge: <b>(R)</b> Gives +2 Armor Class against the triggering attack when unencumbered; success allows a 10' Stride</td>
       </tr><tr style="text-align:center">
         <td>Opportune Backstab: <b>(R)</b> Strikes a foe immediately after an ally hits it</td>
       </tr><tr style="text-align:center">
@@ -412,6 +416,8 @@ var attributes = {
         <td>Reactive Pursuit: <b>(R)</b> Moves to remain adjacent to a retreating foe</td>
       </tr><tr style="text-align:center">
         <td>Ruffian: Can use any simple weapon to sneak attack/Critical hits with a d8 or lighter simple weapon on a flat-footed foe inflict its critical specialization effect</td>
+      </tr><tr style="text-align:center">
+        <td>Sabotage: <b>(1)</b> Successful Thievery vs. Reflex inflicts 62 HP damage, or 124 HP on a critical success, to an item with moving parts possessed by a creature within reach</td>
       </tr><tr style="text-align:center">
         <td>Scoundrel: Successful Feint inflicts flat-footed on foe vs. self attacks, or all attacks on a critical success, until the end of the next turn</td>
       </tr><tr style="text-align:center">
@@ -473,7 +479,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Improved Evasion: Critical failures on Reflex saves are normal failures, and failed Reflex saves inflict half damage</td>
       </tr><tr style="text-align:center">
-        <td>Nimble Roll: Can use Nimble Dodge before a Reflex save; success allows a 10' Stride</td>
+        <td>Nimble Roll: Can use Nimble Dodge on a Reflex save</td>
       </tr><tr style="text-align:center">
         <td>Slippery Mind: Successes on Will saves are critical successes</td>
       </tr><tr style="text-align:center">
@@ -491,7 +497,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Spell Slots</b>: A0: 2; D0: 2; O0: 2; P0: 2</td>
+        <td><b>Spell Slots</b>: AC1: 2; DC1: 2; OC1: 2; PC1: 2</td>
         <td><b>Attack</b>: Arcane: +26 (charisma; trained); Divine: +26 (charisma; trained); Occult: +26 (charisma; trained); Primal: +26 (charisma; trained)</td>
         <td><b>Spell DC</b>: Arcane: 36 (charisma; trained); Divine: 36 (charisma; trained); Occult: 36 (charisma; trained); Primal: 36 (charisma; trained)</td>
       </tr></table>
@@ -499,27 +505,37 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Acid Splash (PC1 Evo): <b>(2)</b> R30' Spell attack inflicts 1d6 HP acid, plus 1 HP persistent acid on a critical success, and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+4 HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+4 HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+4 HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+4 HP initial, 5 HP persistent, and 4 HP splash)</td>
+    </tr><tr style="text-align:left">
+      <td>Dancing Lights (OC1 Evo): <b>(2)</b> R120' Creates 4 floating torch lights in a 10' radius that can be moved 60' each rd while sustained</td>
+    </tr><tr style="text-align:left">
+      <td>Daze (DC1 Enc): <b>(2)</b> R60' Inflicts 4 HP mental (<b>save basic Will</b>; critical failure also inflicts stunned 1) (<b>heightened +2</b> inflicts +1d6 HP)</td>
+    </tr><tr style="text-align:left">
+      <td>Detect Magic (AC1 Div): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the school of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
+    </tr><tr style="text-align:left">
+      <td>Detect Magic (DC1 Div): <b>(2)</b> 30' emanation reveals the presence of magic and lower-level illusions (<b>heightened 3rd</b> reveals the school of the highest-level effect; <b>4th</b> reveals the approximate location of the highest-level effect)</td>
+    </tr><tr style="text-align:left">
+      <td>Mage Hand (OC1 Evo): <b>(2)</b> R30' Moves a light object 20' per rd while sustained (<b>heightened 3rd</b> moves a Bulk 1 object; <b>5th</b> R60'; <b>7th</b> moves a Bulk 2 object)</td>
+    </tr><tr style="text-align:left">
+      <td>Message (AC1 Ill): <b>(1)</b> R120' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500')</td>
+    </tr><tr style="text-align:left">
+      <td>Tanglefoot (PC1 Con): <b>(2)</b> R30' Spell attack inflicts -10' Speed for 1 rd, plus immobilized for 1 rd on a critical success; a successful Escape negates (<b>heightened 2nd</b> effects last for 2 rd; <b>4th</b> effects last for 1 min)</td>
+    </tr></table>
+</td>
+  </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>Minor Magic (Arcane): Spell Trained (Arcane)</i></td>
+      <td><i>Minor Magic (Arcane): Spell Trained (Arcane)/Knows 2 arcane cantrips</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Minor Magic (Divine): Spell Trained (Divine)</i></td>
+      <td><i>Minor Magic (Divine): Spell Trained (Divine)/Knows 2 divine cantrips</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Minor Magic (Occult): Spell Trained (Occult)</i></td>
+      <td><i>Minor Magic (Occult): Spell Trained (Occult)/Knows 2 occult cantrips</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Minor Magic (Primal): Spell Trained (Primal)</i></td>
-    </tr><tr style="text-align:center">
-      <td>Hidden Paragon: <b>(R)</b> Becomes invisible for 1 min when hidden from foes once per hr</td>
+      <td><i>Minor Magic (Primal): Spell Trained (Primal)/Knows 2 primal cantrips</i></td>
     </tr><tr style="text-align:center">
       <td>Magical Trickster: Spell attacks vs. flat-footed foes inflict sneak attack damage</td>
-    </tr><tr style="text-align:center">
-      <td>Minor Magic (Arcane): Knows 2 arcane cantrips</td>
-    </tr><tr style="text-align:center">
-      <td>Minor Magic (Divine): Knows 2 divine cantrips</td>
-    </tr><tr style="text-align:center">
-      <td>Minor Magic (Occult): Knows 2 occult cantrips</td>
-    </tr><tr style="text-align:center">
-      <td>Minor Magic (Primal): Knows 2 primal cantrips</td>
     </tr><tr style="text-align:center">
       <td>Perfect Distraction: <b>(1)</b> Creates a decoy that gives <i>Mislead</i> effects once per 10 min</td>
     </tr><tr style="text-align:center">
