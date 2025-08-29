@@ -107,7 +107,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Adrenaline Rush: +2 encumbrance and maximum Bulk during rage</td>
     </tr><tr style="text-align:center">
+      <td>Dragon's Rage Wings: <b>(1)</b> Gains a 35' fly Speed during rage</td>
+    </tr><tr style="text-align:center">
       <td>Furious Footfalls: +5 Speed during rage</td>
+    </tr><tr style="text-align:center">
+      <td>Raging Athlete: Has a 35' climb and swim Speed during rage</td>
     </tr></table>
 </td>
   </tr></table>
@@ -160,8 +164,6 @@ var attributes = {
         <td>Adopted Ancestry (Human): May take Human ancestry feats</td>
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or use spells prohibited by barbarian instinct</td>
-      </tr><tr style="text-align:center">
-        <td>Desperate Wrath: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to 164 or fewer Hit Points</td>
       </tr><tr style="text-align:center">
         <td>Nocturnal Senses: Low-Light Vision becomes Darkvision and imprecise scent range increases to 60' during rage</td>
       </tr></table>
@@ -268,7 +270,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Quick Jump: Can use High Jump and Long Jump as 1 action without an initial Stride</td>
     </tr><tr style="text-align:center">
-      <td>Raging Athlete: Has a 35' climb and swim Speed, -10 jump DC, and 5' and 20' vertical and horizontal Leaps during rage</td>
+      <td>Raging Athlete: Has -10 jump DC and 5' and 20' vertical and horizontal Leaps during rage</td>
     </tr><tr style="text-align:center">
       <td>Read Lips: Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and off-guard</td>
     </tr><tr style="text-align:center">
@@ -372,6 +374,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Contagious Rage: Can use Share Rage unlimited times, also sharing instinct and specialization abilities</td>
       </tr><tr style="text-align:center">
+        <td>Desperate Wrath: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to 164 or fewer Hit Points</td>
+      </tr><tr style="text-align:center">
         <td>Devastator: Successful melee Strikes ignore resistance 10 to physical damage</td>
       </tr><tr style="text-align:center">
         <td>Disarming Assault: <b>(1)</b> Successful melee Strike allows an Athletics check to Disarm during rage</td>
@@ -379,8 +383,6 @@ var attributes = {
         <td>Draconic Rage: Can inflict +16 HP poison damage instead of +13 HP weapon damage during rage</td>
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Breath: <b>(2)</b> Breath inflicts 20d6 HP poison damage in a 30' cone (<b>save basic Reflex</b>) once per 10 min during rage</td>
-      </tr><tr style="text-align:center">
-        <td>Dragon's Rage Wings: <b>(1)</b> Gains a 35' fly Speed during rage</td>
       </tr><tr style="text-align:center">
         <td>Embrace The Pain: <b>(R)</b> Successful Athletics check inflicts Grapple or Disarm after a foe melee hit during rage</td>
       </tr><tr style="text-align:center">
@@ -452,9 +454,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Scouring Rage: <b>(F)</b> Entering rage inflicts 20 HP rage damage type on foes in a 20' emanation (<b>save basic Fortitude</b>)</td>
       </tr><tr style="text-align:center">
-        <td>Second Wind: Can gain temporary Hit Points from raging again immediately after ending rage, suffering fatigue afterwards until 10 min rest</td>
-      </tr><tr style="text-align:center">
-        <td>Shake It Off: <b>(1)</b> Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
+        <td>Second Wind: Can gain temporary Hit Points from raging again immediately after ending rage, suffering fatigue afterwards until after a 10 min rest</td>
       </tr><tr style="text-align:center">
         <td>Share Rage: <b>(1)</b> R30' Gives an ally the effects of Rage once per rage</td>
       </tr><tr style="text-align:center">
@@ -466,7 +466,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Spirit's Wrath: <b>(1)</b> R120' +32 spirit Strike during rage inflicts 4d8+4 HP spirit; a critical hit inflicts double HP and frightened 1</td>
       </tr><tr style="text-align:center">
-        <td>Spirits'Interference: <b>(1)</b> Imposes a DC 5 flat check on foe ranged Strikes vs. self until rage ends</td>
+        <td>Spirits'Interference: <b>(1)</b> Requires ranged Strikes vs. self to succeed on an additional DC 5 flat check until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Sudden Charge: <b>(2)</b> Makes a melee Strike after 2 Strides</td>
       </tr><tr style="text-align:center">
@@ -549,6 +549,8 @@ var attributes = {
         <td>Raging Resistance (Spirit): Has resistance 12 to void and undead during rage</td>
       </tr><tr style="text-align:center">
         <td>Raging Resistance (Superstition): Has resistance 12 to a choice of arcane or divine spells and a choice of occult or primal spells during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Shake It Off: <b>(1)</b> Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
       </tr><tr style="text-align:center">
         <td>Superstitious Resilience: +2 vs. magic during rage/Willingly accepting magic effects during rage inflicts frightened 1 as long as the effects last</td>
       </tr><tr style="text-align:center">
