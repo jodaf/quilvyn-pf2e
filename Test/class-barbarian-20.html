@@ -100,6 +100,12 @@ var attributes = {
       <td><i>Ability Boosts: Ability Boost (Choose 20 from any)</i></td>
     </tr><tr style="text-align:center">
       <td>Breath Control: Can hold breath for 225 rd without suffocating</td>
+    </tr><tr style="text-align:center">
+      <td>Dragon's Rage Wings: <b>(1)</b> Gains a 25' fly Speed during rage</td>
+    </tr><tr style="text-align:center">
+      <td>Fast Movement: Gains +10 Speed during rage</td>
+    </tr><tr style="text-align:center">
+      <td>Raging Athlete: Has a 25' climb and swim Speed during rage</td>
     </tr></table>
 </td>
   </tr></table>
@@ -158,8 +164,6 @@ var attributes = {
         <td>Half-Orc: Has the orc trait and may take orc and half-orc feats</td>
       </tr><tr style="text-align:center">
         <td>Low-Light Vision: Has normal vision in dim light</td>
-      </tr><tr style="text-align:center">
-        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to 164 or fewer Hit Points</td>
       </tr></table>
 </td>
     </tr></table>
@@ -248,11 +252,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Expeditious Search: Can Search at 2x normal Speed</td>
     </tr><tr style="text-align:center">
-      <td>Incredible Initiative: +2 on initiative rolls</td>
-    </tr><tr style="text-align:center">
       <td>Quick Jump: Can use High Jump and Long Jump as 1 action without an initial Stride</td>
     </tr><tr style="text-align:center">
-      <td>Raging Athlete: Has a 25' climb and swim Speed, -10 jump DC, and 5' and 15' vertical and horizontal Leaps during rage</td>
+      <td>Raging Athlete: Has -10 jump DC and 5' and 15' vertical and horizontal Leaps during rage</td>
     </tr><tr style="text-align:center">
       <td>Scare To Death: <b>(1)</b> R30' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical success negates; critical failure inflicts death); failure inflicts frightened 1</td>
     </tr><tr style="text-align:center">
@@ -364,10 +366,6 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Dragon's Rage Breath: <b>(2)</b> Breath inflicts 20d6 HP cold in a 30' cone or 60' line once per rage (<b>save basic Reflex</b>; half distance and damage for a 2nd use within 1 hr)</td>
       </tr><tr style="text-align:center">
-        <td>Dragon's Rage Wings: <b>(1)</b> Gains a 25' fly Speed during rage</td>
-      </tr><tr style="text-align:center">
-        <td>Fast Movement: Gains +10 Speed during rage</td>
-      </tr><tr style="text-align:center">
         <td>Furious Bully: +2 Athletics for attacks during rage</td>
       </tr><tr style="text-align:center">
         <td>Furious Finish: <b>(1)</b> Strike inflicts additional damage equal to the number of rounds remaining in rage, ending rage and causing fatigue until 10 min rest</td>
@@ -381,6 +379,8 @@ var attributes = {
         <td>Giant's Stature: <b>(1)</b> Increases size to Large, giving +5' reach and clumsy 1, until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Great Cleave: Can continue to use Cleave on adjacent foes for as long as Strikes incapacitate</td>
+      </tr><tr style="text-align:center">
+        <td>Incredible Initiative: +2 on initiative rolls</td>
       </tr><tr style="text-align:center">
         <td>Intimidating Glare: Can use a glare to Demoralize</td>
       </tr><tr style="text-align:center">
@@ -402,11 +402,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Raging Thrower: Thrown weapons inflict +12 HP and can apply Brutal Critical and Devastator effects during rage</td>
       </tr><tr style="text-align:center">
+        <td>Reckless Abandon: <b>(F)</b> Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to 164 or fewer Hit Points</td>
+      </tr><tr style="text-align:center">
         <td>Renewed Vigor: <b>(1)</b> Gains 14 temporary Hit Points during rage</td>
       </tr><tr style="text-align:center">
-        <td>Second Wind: Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest</td>
-      </tr><tr style="text-align:center">
-        <td>Shake It Off: <b>(1)</b> Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
+        <td>Second Wind: Can rage again immediately after ending rage, suffering fatigue afterwards until after a 10 min rest</td>
       </tr><tr style="text-align:center">
         <td>Share Rage: <b>(1)</b> R30' Gives an ally the effects of Rage once per rage</td>
       </tr><tr style="text-align:center">
@@ -414,7 +414,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Spirit's Wrath: <b>(1)</b> R120' +32 spirit Strike during rage inflicts 4d8+4 HP negative or positive; a critical hit also inflicts frightened 1</td>
       </tr><tr style="text-align:center">
-        <td>Spirits'Interference: <b>(1)</b> Imposes a DC 5 flat check on foe ranged Strikes vs. self until rage ends</td>
+        <td>Spirits'Interference: <b>(1)</b> Requires ranged Strikes vs. self to succeed on an additional DC 5 flat check until rage ends</td>
       </tr><tr style="text-align:center">
         <td>Sudden Charge: <b>(2)</b> Makes a melee Strike after 2 Strides</td>
       </tr><tr style="text-align:center">
@@ -477,6 +477,8 @@ var attributes = {
         <td>Raging Resistance (Giant): Has resistance 7 to bludgeoning and a choice of cold, electricity, or fire during rage</td>
       </tr><tr style="text-align:center">
         <td>Raging Resistance (Spirit): Has resistance 7 to negative and undead during rage</td>
+      </tr><tr style="text-align:center">
+        <td>Shake It Off: <b>(1)</b> Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage</td>
       </tr></table>
 </td>
     </tr></table>

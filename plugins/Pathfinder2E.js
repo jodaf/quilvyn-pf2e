@@ -2564,11 +2564,14 @@ Pathfinder2E.FEATS = {
   "Monk's Flurry":
     'Traits=Archetype Require="level >= 10","feats.Monk Dedication"',
   "Perfection's Path (Fortitude)":
-    'Traits=Archetype Require="level >= 12","rank.Fortitude >= 2"',
+    'Traits=Archetype ' +
+     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
   "Perfection's Path (Reflex)":
-    'Traits=Archetype Require="level >= 12","rank.Fortitude >= 2"',
+    'Traits=Archetype ' +
+     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
   "Perfection's Path (Will)":
-    'Traits=Archetype Require="level >= 12","rank.Fortitude >= 2"',
+    'Traits=Archetype ' +
+     'Require="level >= 12","feats.Monk Dedication","rank.Fortitude >= 2"',
 
   'Ranger Dedication':
     'Traits=Archetype,Dedication,Multiclass ' +
@@ -3577,7 +3580,7 @@ Pathfinder2E.FEATURES = {
     'Section=save ' +
     'Note="Consuming a serene mutagen gives immunity to detection, revelation, and scrying up to level 9"',
   'Miracle Worker':
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="Can administer a true elixir of life that restores life with 1 HP and wounded 1 to a creature dead for up to 2 rd once per 10 min"',
   'Perfect Debilitation':
     'Section=combat ' +
@@ -3733,16 +3736,18 @@ Pathfinder2E.FEATURES = {
     'Note="Stride keeps pace with a retreating foe during rage"',
   'Second Wind':
     'Section=combat ' +
-    'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until 10 min rest"',
+    'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until after a 10 min rest"',
   'Shake It Off':
     'Action=1 ' +
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Reduces a frightened condition by 1 and a sickened condition by 1, 2, or 3 with a fail, success, or critical success on a Fortitude save during rage"',
-  'Fast Movement':'Section=combat Note="Gains +10 Speed during rage"',
+  'Fast Movement':'Section=ability Note="Gains +10 Speed during rage"',
   'Raging Athlete':
-    'Section=skill ' +
+    'Section=ability,skill ' +
     // Errata changes the jump distance
-    'Note="Has a %{speed}\' climb and swim Speed, -10 jump DC, and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
+    'Note=' +
+      '"Has a %{speed}\' climb and swim Speed during rage",' +
+      '"Has -10 jump DC and 5\' and %{speed>=30?20:15}\' vertical and horizontal Leaps during rage"',
   'Swipe':
     'Action=2 ' +
     'Section=combat ' +
@@ -3778,7 +3783,7 @@ Pathfinder2E.FEATURES = {
   "Spirits' Interference":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Imposes a DC 5 flat check on foe ranged Strikes vs. self until rage ends"',
+    'Note="Requires ranged Strikes vs. self to succeed on an additional DC 5 flat check until rage ends"',
   'Animal Rage':
     'Action=1 ' +
     'Section=magic ' +
@@ -3822,7 +3827,7 @@ Pathfinder2E.FEATURES = {
     // Errata corrects "each creature" to "each enemy"
     'Note="Successful Intimidate checks Demoralize each foe in a 30\' radius once per target per min during rage"',
   "Dragon's Rage Wings":
-    'Action=1 Section=combat Note="Gains a %{speed}\' fly Speed during rage"',
+    'Action=1 Section=ability Note="Gains a %{speed}\' fly Speed during rage"',
   'Furious Grab':
     'Action=1 ' +
     'Section=combat ' +
@@ -3862,7 +3867,7 @@ Pathfinder2E.FEATURES = {
     'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'} during rage"',
   'Reckless Abandon':
     'Action=Free ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Gives -2 Armor Class, -1 saves, and +2 attacks at the start of a turn until rage ends when reduced to %{hitPoints//2} or fewer Hit Points"',
   'Brutal Critical':
     'Section=combat ' +
@@ -4272,7 +4277,7 @@ Pathfinder2E.FEATURES = {
       '"Can use <i>Lay On Hands</i> to inflict good damage on creatures seen harming innocents or good allies"',
   'Aura Of Courage':
     'Section=save ' +
-    'Note="Reduces the initial value of any frightened condition by 1, and reduction of a frightened condition at the end of a turn also reduces the fright of allies within 15\'"',
+    'Note="R15\' Reduces the initial value of any self frightened condition by 1, and reduction of a frightened condition at the end of a turn also reduces the fright of allies"',
   'Divine Health':
     'Section=save ' +
     'Note="+1 vs. disease, and successes vs. disease are critical successes"',
@@ -4406,7 +4411,7 @@ Pathfinder2E.FEATURES = {
   'Greater Mercy':'Section=magic Note="Has increased Mercy effects"',
   'Heal Mount':
     'Section=magic ' +
-    'Note="<i>Lay On Hands</i> cast on mount restores 10 HP + 10 HP per heightened level"',
+    'Note="<i>Lay On Hands</i> cast on mount restores 10 Hit Points + 10 Hit Points per heightened level"',
   'Quick Shield Block':
     'Section=combat ' +
     'Note="Can use an additional reaction for a Shield Block once per turn"',
@@ -4780,7 +4785,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Casting <i>Heal</i> on a single target restores HP equal to the spell level to self"',
   'Emblazon Armament':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="10 min process gives a shield +1 Hardness or a weapon +1 HP damage for 1 year"',
   'Sap Life':
     'Section=magic ' +
@@ -4815,7 +4820,7 @@ Pathfinder2E.FEATURES = {
     'Note="Subsequent single-target damaging <i>Harm</i> or <i>Heal</i> also inflicts knocked prone (save negates; critical failure also inflicts -10 Speed for 1 min)"',
   'Divine Weapon':
     'Action=Free ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Using a divine spell slot causes a wielded weapon to inflict +1d4 HP force or +1d6 HP alignment for the remainder of the turn once per turn"',
   'Selective Energy':
     'Section=magic ' +
@@ -4844,7 +4849,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="<i>Heal</i> cast upon undead also inflicts persistent fire damage equal to the spell level"',
   'Emblazon Energy':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Can use Emblazon Armament to instead cause a shield to give a save bonus and Shield Block vs. a chosen energy type, and to give it resistance %{level//2} if the energy matches a known domain spell, or to cause a weapon to inflict +1d4 HP energy type damage, or +1d6 HP if the energy matches a known domain spell"',
   'Castigating Weapon':
     'Section=magic ' +
@@ -4865,7 +4870,7 @@ Pathfinder2E.FEATURES = {
     'Note="Subsequent single-target healing also gives the target +2 Armor Class and saves for 1 rd"',
   'Domain Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Emblazon Antimagic':
-    'Section=magic ' +
+    'Section=combat ' +
     // Errata corrects the counteract level
     'Note="Can use Emblazon Armament to instead cause a shield to give a save bonus vs. magic and Shield Block vs. spells, or to cause 1 critical hit with a weapon to allow a +%{(level+1)//2} counteract attempt vs. a spell"',
   'Shared Replenishment':
@@ -5005,7 +5010,7 @@ Pathfinder2E.FEATURES = {
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts for 1 hr"',
+    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts %{magicNotes.perfectFormControl?\' indefinitely\':\'for 1 hr\'}"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
@@ -5099,7 +5104,7 @@ Pathfinder2E.FEATURES = {
   'Invoke Disaster':
     'Section=magic Note="Knows the Storm Lord primal spell/+1 Focus Points"',
   'Perfect Form Control':
-    'Section=magic Note="Can retain Form Control shape permanently"',
+    'Section=magic Note="Has increased Form Control effects"',
   'Primal Wellspring':'Section=magic Note="Refocus restores 3 Focus Points"',
   "Hierophant's Power":'Section=magic Note="+1 10th level spell slot"',
   'Leyline Conduit':
@@ -5484,7 +5489,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Stance allows Double Slice with an agile weapon to count as 1 attack"',
   'Improved Reflexive Shield':
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Using Shield Block on a Reflex save protects both self and adjacent allies"',
   'Multishot Stance':
     'Action=1 ' +
@@ -7313,7 +7318,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successes on Specialty Crafting are critical successes"',
   'Impressive Performance':
     'Section=skill Note="Can use Performance to Make An Impression"',
-  'Incredible Initiative':'Section=skill Note="+2 on initiative rolls"',
+  'Incredible Initiative':'Section=combat Note="+2 on initiative rolls"',
   'Incredible Investiture':'Section=magic Note="Can invest 12 magic items"',
   'Intimidating Glare':'Section=combat Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
@@ -7489,7 +7494,7 @@ Pathfinder2E.FEATURES = {
       '"+%{level} Hit Points",' +
       '"-1 DC on recovery checks"',
   'Train Animal':
-    'Section=feature ' +
+    'Section=skill ' +
     'Note="Can use days of training and a successful Nature check to teach an animal to perform a trick"',
   'Trick Magic Item':
     'Action=1 ' +
