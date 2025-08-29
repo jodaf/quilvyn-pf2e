@@ -16,11 +16,11 @@ contents of the plugins/ and Images/ subdirectories are placed into the
 corresponding Quilvyn installation subdirectories, then append the following
 lines to the file plugins/plugins.js:
 
-    RULESETS['Pathfinder 2E (Legacy)'] = {
+    RULESETS['Pathfinder 2E Legacy'] = {
       url:'plugins/Pathfinder2E.js',
       group:'Pathfinder'
     };
-    RULESETS['Pathfinder 2E (Remaster)'] = {
+    RULESETS['Pathfinder 2E Remaster'] = {
       url:'plugins/Pathfinder2ERemaster.js',
       group:'Pathfinder',
       require:'Pathfinder2E.js'
