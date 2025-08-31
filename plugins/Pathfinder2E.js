@@ -3313,8 +3313,7 @@ Pathfinder2E.FEATURES = {
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a second tradition"',
   'Cooperative Nature':'Section=feature Note="+4 Aid checks"',
-  'General Training':
-    'Section=feature Note="+%{$\'feats.General Training\'} General Feat"',
+  'General Training':'Section=feature Note="+%V General Feat"',
   'Haughty Obstinacy':
     'Section=save ' +
     'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails"',
@@ -14771,6 +14770,9 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'First World Adept') {
     rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
+  } else if(name == 'General Training') {
+    rules.defineRule
+      ('featureNotes.generalTraining', 'feats.General Training', '=', null);
   } else if(name == 'Gnome Obsession') {
     rules.defineRule('skillNotes.gnomeObsession',
       'level', '=', 'source<2 ? "Trained" : source<7 ? "Expert" : source<15 ? "Master" : "Legendary"'
