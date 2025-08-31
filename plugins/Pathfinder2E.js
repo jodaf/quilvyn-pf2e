@@ -5010,7 +5010,7 @@ Pathfinder2E.FEATURES = {
   'Form Control':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts %{magicNotes.perfectFormControl?\' indefinitely\':\'for 1 hr\'}"',
+    'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts %{magicNotes.perfectFormControl?\'indefinitely\':\'for 1 hr\'}"',
   'Mature Animal Companion':
     'Section=feature ' +
     'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
@@ -15344,10 +15344,8 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
       }
       matchInfo = n.match(/^Can take (.*) ancestry feats$/);
       if(matchInfo) {
-        // TODO What about a character that has both, e.g., Changeling and
-        // Adopted Ancestry?
         rules.defineRule
-          ('addedAncestry', 'features.' + name, '=', '"' + matchInfo[1] + '"');
+          ('allowedFeats.' + matchInfo[1], 'features.' + name, '=', '1');
       }
       if(n.match(/^Can learn spells from the .* tradition$/))
         rules.defineRule('features.Spellcasting', 'features.' + name, '=', '1');
@@ -16425,6 +16423,10 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         attributes[baseAttr] = 10;
       }
     }
+  } else if(attribute == 'alignment') {
+    choices =
+      Object.keys(Pathfinder2E.ALIGNMENTS, attributes['class'] == 'Champion' ? /Good/ : /./);
+    attributes[attribute] = randomElement(choices);
   } else if(attribute == 'armor') {
     attrs = this.applyRules(attributes);
     let allArmors = this.getChoices('armors');
@@ -16544,12 +16546,17 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         QuilvynUtils.getAttrValueArray
           (allChoices[attr], allChoices[attr].includes('Type') ? 'Type' : 'Traits');
       if(attrs[attribute + '.' + attr] != null) {
-        traits.forEach(t => {
+        for(let i = 0; i < traits.length; i++) {
+          let t = traits[i];
+          if(t == attributes.ancestry || attributes['allowedFeats.' + t])
+            t = 'Ancestry';
+          else if(t == attributes['class'])
+            t = 'Class';
           if(toAllocateByTrait[t] != null && toAllocateByTrait[t] > 0) {
             debug.push(attribute + '.' + attr + ' reduces ' + t + ' feats from ' + toAllocateByTrait[t]);
             toAllocateByTrait[t]--;
           }
-        });
+        }
       } else if(attrs['features.' + attr] == null &&
                 !allChoices[attr].includes('Uncommon')) {
         availableChoices[attr] = traits;
@@ -16563,10 +16570,12 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
         let trait = attr == 'Ancestry' ? attributes.ancestry : attr == 'Class' ? attributes['class'] : attr;
         if(availableChoices[a].includes(trait))
           availableChoicesWithTrait[a] = '';
-        else if(attr == 'Ancestry' &&
-                attributes.addedAncestry &&
-                availableChoices[a].includes(attributes.addedAncestry))
-          availableChoicesWithTrait[a] = '';
+        else if(attribute == 'feats') {
+          availableChoices[a].forEach(t => {
+            if(attributes['allowedFeats.' + a])
+              availableChoicesWithTrait[a] = '';
+          });
+        }
       }
       howMany = toAllocateByTrait[attr];
       debug.push('Choose ' + howMany + ' ' + attr + ' ' + attribute);
@@ -16583,6 +16592,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
           if(pick.includes('(')) {
             let pickSet = pick.replace(/ \(.*/, '');
             if(pickSet in setsPicked) {
+              debug[debug.length - 1] += ' ' + pick;
               delete picks[pick];
               delete availableChoicesWithTrait[pick];
               continue;
@@ -16603,7 +16613,7 @@ Pathfinder2E.randomizeOneAttribute = function(attributes, attribute) {
                (validate,
                 new RegExp('^(sanity|validation)Notes.' + note)) != 0) {
             delete attributes[prefix + '.' + pick];
-            debug[debug.length - 1] += ' ' + name;
+            debug[debug.length - 1] += ' ' + pick;
           } else {
             howMany--;
             delete availableChoices[pick];
