@@ -2959,7 +2959,7 @@ Pathfinder2E.FEATS = {
 Pathfinder2E.FEATURES = {
 
   // Ancestry
-  'Ancestry Feats':'Section=feature Note="%V selections"',
+  'Ancestry Feats':'Section=feature Note="Ancestry Feats (Choose %V from any)"',
 
   // Dwarf
   'Ancient-Blooded Dwarf':
@@ -3276,7 +3276,7 @@ Pathfinder2E.FEATURES = {
       '"+2 Sense Motive to notice enchantment or possession, and automatically attempts a -2 check to notice these"',
   'Cultural Adaptability (%ancestry)':
     'Section=feature ' +
-    'Note="+1 Ancestry Feat (%ancestry ancestry feat)/Has the Adopted Ancestry (%ancestry) feature"',
+    'Note="Ancestry Feat (Choose 1 from any %ancestry)/Has the Adopted Ancestry (%ancestry) feature"',
   'Halfling Weapon Trickster':
     'Section=combat ' +
     'Note="Critical hits with a shortsword, sling, or halfling weapon inflict its critical specialization effect"',
@@ -3308,16 +3308,17 @@ Pathfinder2E.FEATURES = {
       '"Has the orc trait and may take orc and half-orc feats"',
   'Human Heritage':'Section=feature Note="1 selection"',
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
-  'Versatile Heritage Human':'Section=feature Note="+1 General Feat"',
+  'Versatile Heritage Human':
+    'Section=feature Note="General Feat (Choose 1 from any)"',
 
   'Adapted Cantrip':
     'Section=magic Note="Knows a cantrip from a second tradition"',
   'Cooperative Nature':'Section=feature Note="+4 Aid checks"',
-  'General Training':'Section=feature Note="+%V General Feat"',
+  'General Training':'Section=feature Note="General Feat (Choose %V from any)"',
   'Haughty Obstinacy':
     'Section=save ' +
     'Note="Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails"',
-  'Natural Ambition':'Section=feature Note="+1 Class Feat"',
+  'Natural Ambition':'Section=feature Note="Class Feat (Choose 1 from any)"',
   'Natural Skill':'Section=skill Note="Skill Trained (Choose 2 from any)"',
   'Unconventional Weaponry (%weapon)':
     'Section=combat Note="Weapon Familiarity (%weapon)"',
@@ -3337,7 +3338,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Gains +4 on an untrained skill check once per day"',
   'Multitalented':
-    'Section=feature Note="+1 Class Feat (multiclass dedication)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Multiclass)"',
   'Unconventional Expertise (%weapon)':
     'Section=combat Note="Attack %V (%weapon)"',
 
@@ -3385,8 +3386,8 @@ Pathfinder2E.FEATURES = {
   // Class Features and Feats
 
   'Ability Boosts':'Section=ability Note="Ability Boost (Choose %V from any)"',
-  'General Feats':'Section=feature Note="%V selections"',
-  'Skill Feats':'Section=feature Note="%V selections"',
+  'General Feats':'Section=feature Note="General Feats (Choose %V from any)"',
+  'Skill Feats':'Section=feature Note="Skill Feats (Choose %V from any)"',
   'Skill Increases':'Section=skill Note="Skill Increase (Choose %V from any)"',
 
   // Alchemist
@@ -3400,7 +3401,7 @@ Pathfinder2E.FEATURES = {
   'Alchemical Weapon Expertise':
     'Section=combat ' +
     'Note="Attack Expert (Simple Weapons; Alchemical Bombs; Unarmed Attacks)"',
-  'Alchemist Feats':'Section=feature Note="%V selections"',
+  'Alchemist Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Alchemist Skills':
     'Section=skill Note="Skill Trained (Crafting; Choose %V from any)"',
   'Alchemy':'Section=feature Note="Has the Alchemical Crafting feature"',
@@ -3598,7 +3599,7 @@ Pathfinder2E.FEATURES = {
   'Armor Of Fury':
     'Section=combat ' +
     'Note="Defense Master (Light Armor; Medium Armor; Unarmored Defense)"',
-  'Barbarian Feats':'Section=feature Note="%V selections"',
+  'Barbarian Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Barbarian Skills':
     'Section=skill Note="Skill Trained (Athletics; Choose %V from any)"',
   'Bestial Rage (Ape)':
@@ -3649,7 +3650,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat,feature ' +
     'Note=' +
       '"Increases added rage damage to %V",' +
-      '"+1 Class Feat"',
+      '"Class Feat (Choose 1 from any)"',
   'Greater Juggernaut':
     'Section=save,save ' +
     'Note=' +
@@ -3895,7 +3896,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Attack Expert (Simple Weapons; Longsword; Rapier; Sap; Shortbow; Shortsword; Whip; Unarmed Attacks)",' +
       '"Critical hits with a simple weapon, longsword, rapier, sap, shortbow, shortsword, whip, or unarmed attack inflict its critical specialization effect when a composition spell is active"',
-  'Bard Feats':'Section=feature Note="%V selections"',
+  'Bard Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Bard Skills':
     'Section=skill ' +
     'Note="Skill Trained (Occultism; Performance; Choose %V from any)"',
@@ -3971,17 +3972,17 @@ Pathfinder2E.FEATURES = {
   'Multifarious Muse (Enigma)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Enigma)",' +
       '"Can select enigma muse feats"',
   'Multifarious Muse (Maestro)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Maestro)",' +
       '"Can select maestro muse feats"',
   'Multifarious Muse (Polymath)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Polymath)",' +
       '"Can select polymath muse feats"',
   'Inspire Defense':
     'Section=magic Note="Knows the Inspire Defense occult cantrip"',
@@ -4070,7 +4071,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Expert (Champion)",' +
       '"Spell Expert (Divine)"',
-  'Champion Feats':'Section=feature Note="%V selections"',
+  'Champion Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Champion Key Ability':'Section=feature Note="1 selection"',
   'Champion Mastery':
     'Section=combat,magic ' +
@@ -4613,7 +4614,7 @@ Pathfinder2E.FEATURES = {
   'Anathema':
     'Section=feature ' +
     'Note="May not perform acts or use spells prohibited by %V"',
-  'Cleric Feats':'Section=feature Note="%V selections"',
+  'Cleric Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Cleric Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Cloistered Cleric':
@@ -4622,7 +4623,7 @@ Pathfinder2E.FEATURES = {
       // Errata adds Attack Expert (Simple Weapons; Unarmed Attacks)
       '"Attack Expert (%V; Simple Weapons; Unarmed Attacks)",' +
       '"Critical hits with a %{deityWeaponLowered} inflict its critical specialization effect",' +
-      '"+1 Class Feat (Domain Initiate feat)",' +
+      '"Class Feat (Choose 1 from any Domain Initiate)",' +
       '"Spell %V (Divine)",' +
       '"Save Expert (Fortitude)"',
   'Deity':
@@ -4921,7 +4922,7 @@ Pathfinder2E.FEATURES = {
       '"Has the Animal Companion feature",' +
       '"Knows the Heal Animal primal spell",' +
       '"Skill Trained (Athletics)"',
-  'Druid Feats':'Section=feature Note="%V selections"',
+  'Druid Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Druid Skills':
     'Section=skill Note="Skill Trained (Nature; Choose %V from any)"',
   'Druidic Language':'Section=skill Note="Knows a druid-specific language"',
@@ -4988,22 +4989,22 @@ Pathfinder2E.FEATURES = {
   'Order Explorer (Animal)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Animal)",' +
       '"Can select animal order feats"',
   'Order Explorer (Leaf)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Leaf)",' +
       '"Can select leaf order feats"',
   'Order Explorer (Storm)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Storm)",' +
       '"Can select storm order feats"',
   'Order Explorer (Wild)':
     'Section=feature,feature ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any Wild)",' +
       '"Can select wild order feats"',
   // Poison Resistance as above; errata removes the 1 action glyph
   'Form Control':
@@ -5135,7 +5136,7 @@ Pathfinder2E.FEATURES = {
     'Note="Gains a chosen fighter feat of up to 8th level%{combatNotes.improvedFlexibility?\' and one of up to 14th level\':\'\'} during daily prep"',
   // Evasion as above
   'Fighter Expertise':'Section=combat Note="Class Expert (Fighter)"',
-  'Fighter Feats':'Section=feature Note="%V selections"',
+  'Fighter Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Fighter Key Ability':'Section=feature Note="1 selection"',
   'Fighter Skills':
     'Section=skill ' +
@@ -5542,7 +5543,7 @@ Pathfinder2E.FEATURES = {
     'Note=' +
       '"Class Expert (Monk)",' +
       '"Spell Expert (%V)"',
-  'Monk Feats':'Section=feature Note="%V selections"',
+  'Monk Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Monk Key Ability':'Section=feature Note="1 selection"',
   'Monk Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Mystic Strikes':
@@ -5830,7 +5831,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Foes suffer flat-footed vs. self from natural uneven ground or natural or snare-related difficult terrain"',
   'Ranger Expertise':'Section=combat Note="Class Expert (Ranger)"',
-  'Ranger Feats':'Section=feature Note="%V selections"',
+  'Ranger Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Ranger Key Ability':'Section=feature Note="1 selection"',
   'Ranger Skills':
     'Section=skill Note="Skill Trained (Nature; Survival; Choose %V from any)"',
@@ -6086,7 +6087,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Rapier; Sap; Shortbow; Shortsword; Unarmed Attacks)"',
   'Rogue Expertise':'Section=combat Note="Class Expert (Rogue)"',
-  'Rogue Feats':'Section=feature Note="%V selections"',
+  'Rogue Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Rogue Key Ability':'Section=feature Note="1 selection"',
   'Rogue Skills':
     'Section=skill Note="Skill Trained (Stealth; Choose %V from any)"',
@@ -6317,7 +6318,7 @@ Pathfinder2E.FEATURES = {
   // Master Spellcaster as above
   // Resolve as above
   // Signature Spells as above
-  'Sorcerer Feats':'Section=feature Note="%V selections"',
+  'Sorcerer Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Sorcerer Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Sorcerer Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
@@ -6660,7 +6661,7 @@ Pathfinder2E.FEATURES = {
   'Metamagical Experimentation':
     'Section=feature,magic ' +
     'Note=' +
-      '"+1 Class Feat (metamagic wizard)",' +
+      '"Class Feat (Choose 1 from any Metamagic)",' +
       '"Can choose 1 metamagic feat of up to level %{level//2} to use each day during daily prep"',
   // Resolve as above
   'Spell Blending':
@@ -6672,10 +6673,10 @@ Pathfinder2E.FEATURES = {
   'Universalist':
     'Section=feature,magic ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any)",' +
       '"Can use Drain Bonded Item once per spell level each day/Knows 1 additional 1st-level spell"',
   // Weapon Specialization as above
-  'Wizard Feats':'Section=feature Note="%V selections"',
+  'Wizard Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Wizard Skills':
     'Section=skill Note="Skill Trained (Arcana; Choose %V from any)"',
   'Wizard Weapon Expertise':
@@ -6823,10 +6824,12 @@ Pathfinder2E.FEATURES = {
       '"Has the Alchemical Crafting and Infused Reagents features",' +
       '"Skill Trained (Crafting)/Knows the formulas for 4 additional 1st-level alchemical items"',
   'Basic Concoction':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level alchemist)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Alchemist up to level 2)"',
   // Quick Alchemy as above
   'Advanced Concoction':
-    'Section=feature Note="+%V Class Feat (alchemist up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Alchemist up to level %{level//2})"',
   'Expert Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
   'Master Alchemy':'Section=feature Note="Raises advanced alchemy level to %V"',
 
@@ -6838,9 +6841,11 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Athletics)"',
   'Barbarian Resiliency':'Section=combat Note="+%V Hit Points"',
   'Basic Fury':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level barbarian)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Barbarian up to level 2)"',
   'Advanced Fury':
-    'Section=feature Note="+%V Class Feat (barbarian up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Barbarian up to level %{level//2})"',
   'Instinct Ability (Animal Instinct (Ape))':
     'Section=feature Note="Has the Bestial Rage (Ape) feature"',
   'Instinct Ability (Animal Instinct (Bear))':
@@ -6895,9 +6900,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} occult spell"',
   "Basic Muse's Whispers":
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level bard)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Bard up to level 2)"',
   "Advanced Muse's Whispers":
-    'Section=feature Note="+%V Class Feat (bard up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Bard up to level %{level//2})"',
   'Counter Perform':
     'Section=magic ' +
     'Note="Knows the Counter Performance occult spell/Has a focus pool and at least 1 Focus Point"',
@@ -6918,14 +6924,16 @@ Pathfinder2E.FEATURES = {
       '"Has the Champion Key Ability and Deity And Cause features",' +
       '"Skill Trained (Religion)"',
   'Basic Devotion':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level champion)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Champion up to level 2)"',
   'Champion Resiliency':'Section=combat Note="+%V Hit Points"',
   // NOTE: Might not be Lay On Hands for other causes
   'Healing Touch':
     'Section=magic ' +
     'Note="Knows the Lay On Hands divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Devotion':
-    'Section=feature Note="+%V Class Feat (champion up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Champion up to level %{level//2})"',
   // Champion's Reaction as above
   // Divine Ally as above
   'Diverse Armor Expert':
@@ -6942,9 +6950,11 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
   'Basic Dogma':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level cleric)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Cleric up to level 2)"',
   'Advanced Dogma':
-    'Section=feature Note="+%V Class Feat (cleric up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Cleric up to level %{level//2})"',
   'Divine Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Cleric Spellcasting':
     'Section=magic ' +
@@ -6963,7 +6973,7 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell"',
   'Basic Wilding':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level druid)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Druid up to level 2)"',
   'Order Spell (Animal)':
     'Section=magic ' +
     'Note="Knows the Heal Animal primal spell/Has a focus pool and at least 1 Focus Point"',
@@ -6977,7 +6987,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Wild Morph primal spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Wilding':
-    'Section=feature Note="+%V Class Feat (druid up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Druid up to level %{level//2})"',
   'Primal Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Druid Spellcasting':
     'Section=magic ' +
@@ -6993,11 +7004,13 @@ Pathfinder2E.FEATURES = {
       '"Has the Fighter Key Ability feature",' +
       '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
   'Basic Maneuver':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level fighter)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Fighter up to level 2)"',
   'Fighter Resiliency':'Section=combat Note="+%V Hit Points"',
   'Opportunist':'Section=feature Note="Has the Attack Of Opportunity feature"',
   'Advanced Maneuver':
-    'Section=feature Note="+%V Class Feat (fighter up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Fighter up to level %{level//2})"',
   'Diverse Weapon Expert':
     'Section=combat ' +
     'Note="Attack Expert (Simple Weapons; Martial Weapons)/Attack Trained (Advanced Weapons)"',
@@ -7009,10 +7022,11 @@ Pathfinder2E.FEATURES = {
       '"Has the Powerful Fist and Monk Key Ability features",' +
       '"Skill Trained (Choose 1 from Acrobatics, Athletics)"',
   'Basic Kata':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level monk)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Monk up to level 2)"',
   'Monk Resiliency':'Section=combat Note="+%V Hit Points"',
   'Advanced Kata':
-    'Section=feature Note="+%V Class Feat (monk up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Monk up to level %{level//2})"',
   'Monk Moves':'Section=ability Note="+10 Speed in no armor"',
   "Monk's Flurry":'Section=feature Note="Has the Flurry Of Blows feature"',
   "Perfection's Path (Fortitude)":'Section=save Note="Save Master (Fortitude)"',
@@ -7026,27 +7040,30 @@ Pathfinder2E.FEATURES = {
       '"Has the Hunt Prey feature",' +
       '"Skill Trained (Survival)"',
   "Basic Hunter's Trick":
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level ranger)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Ranger up to level 2)"',
   'Ranger Resiliency':'Section=combat Note="+%V Hit Points"',
   "Advanced Hunter's Trick":
-    'Section=feature Note="+%V Class Feat (ranger up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Ranger up to level %{level//2})"',
   'Master Spotter':'Section=skill Note="Perception Master"',
 
   'Rogue Dedication':
     'Section=combat,feature,skill ' +
     'Note=' +
       '"Class Trained (Rogue)/Defense Trained (Light Armor)",' +
-      '"+1 Skill Feat/Has the Surprise Attack feature",' +
+      '"Skill Feat (Choose 1 from any)/Has the Surprise Attack feature",' +
       '"Skill Trained (Choose 1 from Stealth, Thievery; Choose 1 from any)"',
   'Basic Trickery':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level rogue)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Rogue up to level 2)"',
   'Sneak Attacker':'Section=feature Note="Has the Sneak Attack feature"',
   'Advanced Trickery':
-    'Section=feature Note="+%V Class Feat (rogue up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Rogue up to level %{level//2})"',
   'Skill Mastery':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat",' +
+      '"Skill Feat (Choose %V from any)",' +
       '"Skill Expert (Choose %V from any)/Skill Master (Choose %V from any)"',
   'Uncanny Dodge':'Section=feature Note="Has the Deny Advantage feature"',
   'Evasiveness':'Section=save Note="Save Master (Reflex)"',
@@ -7060,7 +7077,8 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{sorcererTraditionsLowered} spell"',
   'Basic Blood Potency':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level sorcerer)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Sorcerer up to level 2)"',
   'Basic Bloodline Spell (Aberrant)':
     'Section=magic ' +
     'Note="Knows the Tentacular Limbs occult spell/Has a focus pool and at least 1 Focus Point"',
@@ -7129,7 +7147,8 @@ Pathfinder2E.FEATURES = {
     // Errata changes Touch Of Undeath to Undeath's Blessing
     'Note="Knows the Undeath\'s Blessing divine spell/Has a focus pool and at least 1 Focus Point"',
   'Advanced Blood Potency':
-    'Section=feature Note="+%V Class Feat (sorcerer up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Sorcerer up to level %{level//2})"',
   'Bloodline Breadth':
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Sorcerer Spellcasting':
@@ -7172,12 +7191,14 @@ Pathfinder2E.FEATURES = {
     'Section=magic ' +
     'Note="Knows the Physical Boost arcane spell/Has a focus pool and at least 1 Focus Point"',
   'Basic Arcana':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level wizard)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Wizard up to level 2)"',
   'Basic Wizard Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
   'Advanced Arcana':
-    'Section=feature Note="+%V Class Feat (wizard up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose %V from any Wizard up to level %{level//2})"',
   'Arcane Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Wizard Spellcasting':
     'Section=magic ' +
@@ -7196,7 +7217,8 @@ Pathfinder2E.FEATURES = {
       '"Has the Formula Book feature",' +
       '"Knows the formulas for at least 4 common 1st-level alchemical items",' +
       '"Can use Crafting to create alchemical items"',
-  'Ancestral Paragon':'Section=feature Note="+1 Ancestry Feat"',
+  'Ancestral Paragon':
+    'Section=feature Note="Ancestry Feat (Choose 1 from any)"',
   'Arcane Sense':
     'Section=magic ' +
     'Note="Knows the Detect Magic arcane innate spell; can cast it at %{rank.Arcana>=4?\'4th\':rank.Arcana==3?\'3rd\':\'1st\'} level at will"',
@@ -8936,7 +8958,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP positive to undead and 6d6 HP good to fiends (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP positive and good)"',
+      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP positive to undead and 6d6 HP good to fiends (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP positive and good)"',
   'Horrid Wilting':
     'Level=8 ' +
     'Traits=Necromancy,Negative ' +
@@ -12670,13 +12692,6 @@ Pathfinder2E.talentRules = function(
 
   rules.defineRule
     ('choiceCount.Skill', 'skillNotes.duplicatedTraining', '+=', null);
-  rules.defineRule
-    ('featCount.Ancestry', 'featureNotes.ancestryFeats', '=', null);
-  rules.defineRule('featCount.General',
-    '', '=', '0',
-    'featureNotes.generalFeats', '+', null
-  );
-  rules.defineRule('featCount.Skill', 'featureNotes.skillFeats', '=', null);
   rules.defineRule('featureNotes.ancestryFeats',
     'level', '=', 'Math.floor((source + 3) / 4)'
   );
@@ -13570,8 +13585,6 @@ Pathfinder2E.classRules = function(
   rules.defineRule('featureNotes.' + prefix + 'Feats',
     classLevel, '=', 'Math.floor(source / 2)' + (features.includes('1:' + name + ' Feats') ? ' + 1' : '')
   );
-  rules.defineRule
-    ('featCount.Class', 'featureNotes.' + prefix + 'Feats', '+=', null);
   rules.defineRule('featureNotes.generalFeats',
     classLevel, '=', 'source>=3 ? Math.floor((source + 1) / 4) : 0'
   );
@@ -15172,9 +15185,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
         if(op == '*')
           adjust = adjust.substring(1);
 
-        if((matchInfo = adjusted.match(/^(([A-Z][a-z]*)\s)?Feat\b/)) != null) {
-          adjusted = 'featCount.' + (matchInfo[2] ? matchInfo[2] : 'General');
-        } else if(section == 'save' && adjusted.match(/^[A-Z]\w*$/)) {
+        if(section == 'save' && adjusted.match(/^[A-Z]\w*$/)) {
           adjusted = 'save.' + adjusted;
         } else if(section == 'skill' &&
                   adjusted != 'Language Count' &&
@@ -15247,6 +15258,12 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           rules.defineRule('choiceCount.' + matchInfo[1],
             note, '+=', choices.replace('+', '')
           );
+      }
+      matchInfo = n.match(/^([A-Z]\w*) Feats?\s*.Choose (\d+|%V)/);
+      if(matchInfo) {
+        rules.defineRule('featCount.' + matchInfo[1],
+          note, '+=', matchInfo[2]=='%V' ? 'source' : "'" + matchInfo[2] + "'"
+        );
       }
       matchInfo = n.match(/Weapon\sFamiliarity\s*\(([^\)]*)\)/i);
       if(matchInfo) {
@@ -15588,8 +15605,8 @@ Pathfinder2E.spellRules.traits = [
   'Bard', 'Composition', 'Metamagic', 'Champion', 'Litany', 'Cleric', 'Druid',
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
-  'Archetype', 'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle', 'Ranger',
-  'Sanctified', 'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy',
+  'Archetype', 'Fungus', 'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle',
+  'Ranger', 'Sanctified', 'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy',
   'Vitality', 'Void', 'Witch', 'Wood'
 ];
 
