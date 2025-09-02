@@ -15095,6 +15095,187 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"Touched object suffers 4d6 HP, becomes shoddy, cannot be repaired, and counteracts magical attempts to repair it (<b>save Fortitude</b> by bearer negates); touched construct suffers 4d6 HP and clumsy 1, enfeebled 1, cannot be repaired, and counteracts magical attempts to repair it for 1 hr (<b>save basic Fortitude</b>; critical failure makes effects permanent); touched living creature suffers clumsy 1 and enfeebled 1 for 1 hr (<b>save Fortitude</b> effects last 1 rd; critical success negates; critical failure makes effects permanent)"',
+  'Deja Vu':
+    'Level=1 ' +
+    'Traits=Concentrate,Incapacitation,Manipulate,Mental ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R100\' Forces the target to repeat its next rd action in the following round, or, if repeating is impossible, inflicts stupefied 1 after an action until the end of its turn (<b>save Will</b> negates)"',
+  'Dismantle':
+    'Level=2 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched object disassembles into its components for 1 min, then reassembles itself (<b>heightened 4th</b> effects last for 10 min; <b>6th</b> effects last until next daily prep)"',
+  'Dream Council':
+    Pathfinder2E.SPELLS['Dream Council']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Drop Dead':
+    Pathfinder2E.SPELLS['Drop Dead']
+    .replace('Traits=', 'Traits=Manipulate,Subtle,') + 
+    'Traditions=Arcane,Divine,Occult',
+  'Dull Ambition':
+    'Level=4 ' +
+    'Traits=Concentrate,Curse,Manipulate,Mental,Misfortune ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Target must use the worse of two rolls on all initiative and downtime activity checks for 1 day (<b>save Will</b> effects last 1 hr and only affect initiative; critical success negates; critical failure effects last indefinitely)"',
+  "Familiar's Face":
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate,Scrying ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Allows self to perceive and speak through target animal companion or familiar senses while sustained"',
+  'Final Sacrifice':
+    'Level=2 ' +
+    'Traits=Concentrate,Fire,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' Explosion of target minion slays it and inflicts 6d6 HP fire, or 6d6 HP cold if the minion is a cold or water creature, in a 20\' radius (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Fungal Infestation':
+    'Level=2 ' +
+    'Traits=Concentrate,Fungus,Manipulate,Poison ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"15\' cone inflicts 2d6 HP persistent poison and weakness 1 to fire and slashing while the persistent damage lasts (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and weakness 2) (<b>heightened +2</b> inflicts +2d6 HP and increases weakness by 1, or by 2 on critical failure)"',
+  'Gale Blast':
+    'Level=1 ' +
+    'Traits=Air,Cantrip,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"5\' emanation inflicts 1d6 HP bludgeoning and a 5\' push (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 10\' push) (<b>heightened +1</b> inflicts +1d6 HP)"',
+  'Ghostly Tragedy':
+    'Level=4 ' +
+    'Traits=Uncommon,Concentrate,Manipulate,Spirit ' +
+    'Traditions=Divine,Occult ' +
+    'Cast="1 min" ' +
+    'Description=' +
+      '"Spirits reenact the 9 min leading up to a named victim\'s injury and 1 min afterward, inflicting 2d6 HP void on self"',
+  // Near-complete rewrite
+  'Ghoulish Cravings':
+    'Level=2 ' +
+    'Traits=Concentrate,Curse,Manipulate,Mental ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched suffers sickened 2 that requires eating raw meat to remove (<b>save Will</b> inflicts sickened 1; critical success negates; critical failure inflicts sickened 2 that requires eating raw meat to reduce)"',
+  'Gravity Well':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' 30\' burst moves creatures and unsecured objects 15\' toward its center (<b>save Reflex</b> moves 5\'; critical success negates; critical failure moves 30\')"',
+  'Grisly Growths':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' Inflicts 10d6 HP piercing on target (<b>save basic Fortitude</b>) and, unless the target critically succeeds, sickened 1 on creatures within 30\' (<b>save Will</b> negates; critical failure inflicts sickened 2; afterwards immune for 1 hr) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Haunting Hymn':
+    'Level=1 ' +
+    'Traits=Auditory,Cantrip,Concentrate,Manipulate,Sonic ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"15\' cone inflicts 1d8 HP sonic (<b>save basic Fortitude</b>; critical failure also inflicts deafened for 1 min) (<b>heightened +2</b> inflicts +1d8 HP)"',
+  'Holy Cascade':
+    Pathfinder2E.SPELLS['Holy Cascade'] + ' ' +
+    'Traits=Concentrate,Holy,Manipulate,Water ' +
+    'Description=' +
+      '"R500\' 20\' burst inflicts 3d6 HP bludgeoning, plus 6d6 HP spirit to unholy (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +1d6 HP bludgeoning and +2d6 HP spirit)"',
+  'Ice Storm':
+    'Level=4 ' +
+    'Traits=Cold,Concentrate,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R120\' 20\' burst (or 2 20\' bursts outdoors) inflicts 2d8 HP bludgeoning and 2d8 HP cold, as well as 2 HP cold and difficult terrain (<b>save basic Reflex</b>) while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d8 HP bludgeoning, +1d8 HP cold, and +1 cold while sustained)"',
+  'Imaginary Lockbox':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate,Mental ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast="1 min" ' +
+    'Description=' +
+      '"Touched container becomes accessible only to self until next daily prep; items may only be removed and require 3 actions to do so"',
+  'Imprint Message':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Stores in the touched object a short message or emotion that can be retrieved by <i>Object Reading</i>"',
+  'Invisible Item':
+    'Level=1 ' +
+    'Traits=Concentrate,Illusion,Manipulate ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched object becomes invisible for 1 hr (<b>heightened 3rd</b> effects last until next daily prep; <b>7th</b> effects last indefinitely)"',
+  'Leaden Steps':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Metal,Morph ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Inflicts encumbered and weakness 2 to electricity while sustaine for up to 1 min (<b>save Fortitude</b> effects last until the end of the next turn; critical success negates; critical failure inflicts weakness 3 to electricity) (<b>heightened +1</b> inflicts weakness +1)"',
+  'Lifewood Cage':
+    'Level=7 ' +
+    'Traits=Concentrate,Manipulate,Vitality,Wood ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R30\' 20\' wooden cube with half-inch gaps between bars (AC 10, Hardness 20, 40 HP, weakness 5 to void) traps creatures while sustained for up to 1 min (<b>save Reflex</b> negates)"',
+  'Lightning Storm':
+    'Level=5 ' +
+    'Traits=Concentrate,Electricity,Manipulate ' +
+    'Traditions=Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R120\' 20\' burst (or 2 20\' burst outdoors) inflicts 4d12 HP electricity in a vertical line each rd while sustained for up to 1 min (<b>save basic Reflex</b>) (<b>heightened +2</b> inflicts +1d12 HP)"',
+  'Live Wire':
+    'Level=1 ' +
+    'Traits=Attack,Cantrip,Concentrate,Electricity,Manipulate,Metal ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Spell attack inflicts 1d4 HP slashing and 1d4 HP electricity, double HP and 1d4 persistent electricity on a critical success, or 1d4 HP electricity only on failure (<b>heightened +1</b> inflicts +1d4 HP slashing, electricity, and persistent electricty)"',
+  'Mud Pit':
+    'Level=1 ' +
+    'Traits=Concentrate,Earth,Manipulate,Water ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R60\' 15\' burst becomes muddy, inflicting difficult terrain for 1 min"',
+  "Nature's Enmity":
+    'Level=9 ' +
+    'Traits=Concentrate,Manipulate,Plant,Wood ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"500\' burst inflicts -10\' Speed, 2d10 slashing damage and off-guard for 1 rd (DC 8 flat check negates; <b>save basic Reflex</b>; critical success also negates off-guard), and loss of connection to nature and natural creatures, and failure of primal spells (DC 5 flat check negates) for 10 min"',
+  'Noxious Vapors':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Poison ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"10\' emanation inflicts 1d6 HP poison (<b>save basic Fortitude</b>; critical failure also inflicts sickened 1) and gives concealment for 1 rd (<b>heightened +1</b> inflcits + 1d6 HP)"',
+  'Object Reading':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Reveals a piece of information about an emotional event involving the touched object that occurred within the past week (<b>heightened 2nd</b> extends effects to the past month; <b>4th</b> extends effects to the past year; <b>6th</b> extends effects to the past decade; <b>8th</b> extends effects to the past century; <b>9th</b> extends effects indefinitely)"',
 
   // Champion
   'Lay On Hands':
