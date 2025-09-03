@@ -9587,7 +9587,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class level + 22, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, low-light vision, +30 Athletics modifier, and a trample action for 1 min"',
+      '"R30\' Self and 5 willing targets become Huge mammoths with 20 temporary HP, 40\' Speed, low-light vision, Armor Class level + 22, a tusk attack that inflicts 4d8+19 HP piercing, a trunk attack that inflicts 4d6+16 HP bludgeoning, a foot attack that inflicts 4d6+13 HP bludgeoning, +30 Athletics modifier, and a trample action for 1 min"',
   'Primal Phenomenon':
     'Level=10 ' +
     'Traits=Divination ' +
@@ -10713,7 +10713,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP)"',
+      '"R100\' +%{spellAttackModifier.%tradition} attacks by a force weapon inflict 3d10+%{spellModifier.%tradition} HP force or weapon damage type for 1 min (<b>heightened 10th</b> inflicts +1d10 HP) (<b>heightened 10th</b> inflicts +1d10 HP)"',
   'Weapon Storm':
     'Level=4 ' +
     'Traits=Evocation ' +
@@ -10729,7 +10729,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving)"',
+      '"R30\' 10\' burst inflicts difficult terrain and -10\' Speed for 1 rd (<b>save Reflex or Athletics</b> negates for 1 action; critical success negates for 1 rd; critical failure inflicts immobilized for 1 rd or until a successful Escape; successful Athletics also clears squares upon leaving) (<b>heightened 4th</b> extends the range to 60\' and affects a 20\' burst)"',
   'Weird':
     'Level=9 ' +
     'Traits=Death,Emotion,Fear,Illusion,Mental ' +
@@ -15606,8 +15606,8 @@ Pathfinder2E.spellRules.traits = [
   'Monk', 'Stance', 'Sorcerer', 'Wizard', 'Arcane', 'Concentrate',
   // Renewed
   'Archetype', 'Fungus', 'Hex', 'Holy', 'Manipulate', 'Metal', 'Oracle',
-  'Ranger', 'Sanctified', 'Spellshape', 'Spirit', 'Subtle', 'Summon', 'Unholy',
-  'Vitality', 'Void', 'Witch', 'Wood'
+  'Ranger', 'Sanctified', 'Spellshape', 'Spirit', 'Structure', 'Subtle',
+  'Summon', 'Unholy', 'Vitality', 'Void', 'Witch', 'Wood'
 ];
 
 /*
