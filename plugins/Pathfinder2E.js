@@ -6140,7 +6140,7 @@ Pathfinder2E.FEATURES = {
   'Twin Feint':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Strikes with a melee weapon in each hand, inflicting flat-footed vs. the second"',
+    'Note="Strikes with a melee weapon in each hand; target is flat-footed vs. the second"',
   "You're Next":
     // 'Action=Reaction ' + // included in note
     'Section=combat ' +
@@ -7241,15 +7241,13 @@ Pathfinder2E.FEATURES = {
     'Note="Uses Medicine to restore Hit Points once per target per day"',
   'Bizarre Magic':
     'Section=magic ' +
-    'Note="Increases DCs by 5 to Recognize Spells and Identify Magic on self spells and magic use"',
+    'Note="Gives +5 DCs to Recognize Spells and Identify Magic on self spells and magic use"',
   'Bonded Animal':
     'Section=skill ' +
     'Note="Can use 1 week of interaction and a successful DC 20 Nature check to make an animal permanently helpful"',
   'Breath Control':
-    'Section=ability,save ' +
-    'Note=' +
-      '"Can hold breath for %{(5+constitutionModifier)*25} rd without suffocating",' +
-      '"+1 vs. inhaled threats, and successes vs. inhaled threats are critical successes"',
+    'Section=save ' +
+    'Note="+1 vs. inhaled threats, successes vs. inhaled threats are critical successes, and can hold breath for %{(5+constitutionModifier)*25} rd without suffocating"',
   'Canny Acumen (Fortitude)':'Section=save Note="Save %V (Fortitude)"',
   'Canny Acumen (Perception)':'Section=skill Note="Perception %V"',
   'Canny Acumen (Reflex)':'Section=save Note="Save %V (Reflex)"',
@@ -7280,7 +7278,7 @@ Pathfinder2E.FEATURES = {
   'Craft Anything':
     'Section=skill ' +
     'Note="Can craft items without meeting secondary requirements"',
-  'Diehard':'Section=combat Note="Remains alive until dying 5"',
+  'Diehard':'Section=save Note="Remains alive until dying 5"',
   'Divine Guidance':
     'Section=skill ' +
     'Note="Can use 10 min Decipher Writing on a religious text and a successful Religion check to gain a hint about a current problem"',
@@ -7289,10 +7287,10 @@ Pathfinder2E.FEATURES = {
     'Note="Failure on a Recall Knowledge check yields a mix of true and false information"',
   'Expeditious Search':
     'Section=skill ' +
-    'Note="Can Search at %{rank.Perception>=4?4:2}x normal Speed"',
+    'Note="Can Search at %{rank.Perception>=4?4:2}x normal speed"',
   'Experienced Professional':
     'Section=skill ' +
-    'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the income"',
+    'Note="Critical failures when using Lore to Earn Income are normal failures, and normal failures give twice the normal income"',
   'Experienced Smuggler':
     'Section=skill ' +
     'Note="Automatically %{rank.Stealth>=4?\'succeed\':rank.Steak>=3\' gets at least 15\':\' gets at least 10\'} on Stealth rolls to conceal a small item/Earning Income using Underworld Lore gives increased earnings"',
@@ -7323,7 +7321,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Diplomacy to Make An Impression with %{rank.Diplomacy>=4?25:rank.Diplomacy==3?10:rank.Diplomacy==2?4:2} targets"',
   'Hefty Hauler':'Section=ability Note="+2 Encumbered Bulk/+2 Maximum Bulk"',
-  'Hobnobber':'Section=skill Note="Can Gather Information in half the normal time%{rank.Diplomacy>=3?\', and critical failures when taking normal time are normal failures\':\'\'}"',
+  'Hobnobber':'Section=skill Note="Can Gather Information in half the normal time%{rank.Diplomacy>=3?\', and critical failures when taking the normal time are normal failures\':\'\'}"',
   'Impeccable Crafting':
     'Section=skill ' +
     'Note="Successes on Specialty Crafting are critical successes"',
@@ -7333,8 +7331,10 @@ Pathfinder2E.FEATURES = {
   'Incredible Investiture':'Section=magic Note="Can invest 12 magic items"',
   'Intimidating Glare':'Section=combat Note="Can use a glare to Demoralize"',
   'Intimidating Prowess':
-    'Section=combat ' +
-    'Note="+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Coerce or Demoralize when physically menacing the target"',
+    'Section=combat,skill ' +
+    'Note=' +
+      '"+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Demoralize when physically menacing the target",' +
+      '"+%{strengthModifier>=5&&rank.Intimidation>=3?2:1} to Coerce when physically menacing the target"',
   'Inventor':
     'Section=skill Note="Can use Crafting to create unknown common formulas"',
   'Kip Up':
@@ -7365,7 +7365,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Hide and Sneak without cover/Automatically uses Avoid Notice when exploring"',
   'Legendary Survivalist':
-    'Section=skill ' +
+    'Section=save ' +
     'Note="Can survive indefinitely without food and water and endure incredible temperatures without damage"',
   'Legendary Thief':
     'Section=skill ' +
@@ -7377,10 +7377,10 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can use Deception to detect lies in a conversation"',
   'Magical Crafting':
     'Section=skill ' +
-    'Note="Can Craft magic items/Knows the formulas for 4 common magic items of 2nd level or lower"',
+    'Note="Can Craft magic items and knows the formulas for 4 common magic items of 2nd level or lower"',
   'Magical Shorthand':
-    'Section=skill ' +
-    'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure/Can learn new spells at a discounted cost"',
+    'Section=magic ' +
+    'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure, and can learn new spells at a discounted cost"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
     'Section=skill ' +
@@ -7401,7 +7401,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Can make 5\' vertical and +5\' horizontal jumps"',
   'Quick Climb':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Climbing success increases distance by 5\', critical success by 10\'\\"}"',
+    'Note="%{rank.Athletics>=4?\'Can Climb at full Speed\':\\"Successful Climb increases distance by 5\'; critical success by 10\'\\"}"',
   'Quick Coercion':'Section=skill Note="Can Coerce with 1 rd of conversation"',
   'Quick Disguise':
     'Section=skill ' +
@@ -7423,7 +7423,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can Squeeze %{rank.Acrobatics>=4?\'at full Speed\':\\"5\' per rd, or 10\' per rd on a critical success\\"}"',
   'Quick Swim':
     'Section=skill ' +
-    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\', or by 10\' on a critical success\\"}"',
+    'Note="%{rank.Athletics>=4?\'Can Swim at full Speed\':\\"Successful Swim increases distance by 5\'; critical success by 10\'\\"}"',
   'Quick Unlock':'Section=skill Note="Can Pick A Lock in 1 action"',
   'Quiet Allies':
     'Section=skill ' +
@@ -7443,10 +7443,10 @@ Pathfinder2E.FEATURES = {
     'Note="Automatically succeeds when using Command An Animal to move/Mount acts on self turn"',
   'Robust Recovery':
     'Section=skill ' +
-    'Note="Success on Treat Disease or Treat Poison gives a +4 bonus, and patient successes are critical successes"',
+    'Note="Success on Treat Disease or Treat Poison gives the patient +4 on its saving throw, and patient successes are critical successes"',
   'Scare To Death':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="R30\' Successful Intimidation vs. foe Will DC inflicts frightened 2; critical success inflicts frightened 2 and fleeing for 1 rd (<b>save Fortitude</b> critical success negates; critical failure inflicts death); failure inflicts frightened 1"',
   'Shameless Request':
     'Section=skill ' +
@@ -7466,7 +7466,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can use Crafting to create snares and knows the formulas for %{4+(skillNotes.snareSpecialist?rank.Crafting*3-3:0)} common snares"',
   'Specialty Crafting':
     'Section=skill ' +
-    'Note="+%{rank.Crafting>=3?2:1} Crafting on selected type of item"',
+    'Note="+%{rank.Crafting>=3?2:1} Crafting on a selected type of item"',
   'Steady Balance':
     'Section=skill ' +
     'Note="Balance successes are critical successes/Balance does not inflict flat-footed/Can use Acrobatics to Grab An Edge"',
@@ -7525,7 +7525,7 @@ Pathfinder2E.FEATURES = {
     'Note="+%{level<7 ? level // 2 : level} on untrained skill checks"',
   'Virtuosic Performer':
     'Section=skill ' +
-    'Note="+%{rank.Performance>=3?2:1} checks on chosen Performance type"',
+    'Note="+%{rank.Performance>=3?2:1} checks on a chosen Performance type"',
   'Wall Jump':
     'Section=skill ' +
     'Note="Can follow a jump that ends next to a wall with another 1-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
@@ -7533,8 +7533,10 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can use Medicine to Treat Disease or Treat Wounds on up to %{rank.Medicine>=4?8:rank.Medicine==3?4:2} creatures simultaneously"',
   'Wary Disarmament':
-    'Section=skill ' +
-    'Note="+2 Armor Class and saves vs. a trap triggered while disarming it"',
+    'Section=combat,save ' +
+    'Note=' +
+      '"+2 Armor Class vs. a trap triggered while disarming it",' +
+      '"+2 saves vs. a trap triggered while disarming it"',
   'Weapon Proficiency (Martial Weapons)':
     'Section=combat Note="Attack Trained (Martial Weapons)"',
   'Weapon Proficiency (Simple Weapons)':
