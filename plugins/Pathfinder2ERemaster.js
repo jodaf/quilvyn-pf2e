@@ -5539,7 +5539,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save Note="Has resistance 5 to a choice of energy"',
   'Scion Of Many Planes':
     // TODO not quite correct
-    'Section=feature Note="Ancestry Feat (Choose 1 from any Nephalim Lineage)"',
+    'Section=feature Note="Ancestry Feat (Choose 1 from any Nephilim Lineage)"',
   'Skillful Tail':
     'Section=feature Note="Can use tail for simple Interact actions"',
   'Celestial Magic':
@@ -11588,7 +11588,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strike with a Precise Strike weapon inflicts +1d6 HP precision"',
   'Advanced Flair':
     'Section=feature ' +
-    'Note="Class Feat (Choose %V from any washbuckler up to level %{level//2})"',
+    'Note="Class Feat (Choose %V from any swashbuckler up to level %{level//2})"',
   "Swashbuckler's Riposte":
     'Section=combat Note="Has the Opportune Riposte feature"',
   "Swashbuckler's Speed":
@@ -12357,7 +12357,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Second Shield':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Replaces a shield broken when using Shield Block with a nearby unatteneded shield or improvised item"',
+    'Note="Replaces a shield broken when using Shield Block with a nearby unattended shield or improvised item"',
   'Into The Fray':
     'Action=2 ' +
     'Section=combat ' +
@@ -15229,7 +15229,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Inflicts encumbered and weakness 2 to electricity while sustaine for up to 1 min (<b>save Fortitude</b> effects last until the end of the next turn; critical success negates; critical failure inflicts weakness 3 to electricity) (<b>heightened +1</b> inflicts weakness +1)"',
+      '"R30\' Inflicts encumbered and weakness 2 to electricity while sustained for up to 1 min (<b>save Fortitude</b> effects last until the end of the next turn; critical success negates; critical failure inflicts weakness 3 to electricity) (<b>heightened +1</b> inflicts weakness +1)"',
   'Lifewood Cage':
     'Level=7 ' +
     'Traits=Concentrate,Manipulate,Vitality,Wood ' +
@@ -15250,7 +15250,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 1d4 HP slashing and 1d4 HP electricity, double HP and 1d4 persistent electricity on a critical success, or 1d4 HP electricity only on failure (<b>heightened +1</b> inflicts +1d4 HP slashing, electricity, and persistent electricty)"',
+      '"R30\' Spell attack inflicts 1d4 HP slashing and 1d4 HP electricity, double HP and 1d4 persistent electricity on a critical success, or 1d4 HP electricity only on failure (<b>heightened +1</b> inflicts +1d4 HP slashing, electricity, and persistent electricity)"',
   'Mud Pit':
     'Level=1 ' +
     'Traits=Concentrate,Earth,Manipulate,Water ' +
@@ -15271,7 +15271,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"10\' emanation inflicts 1d6 HP poison (<b>save basic Fortitude</b>; critical failure also inflicts sickened 1) and gives concealment for 1 rd (<b>heightened +1</b> inflcits + 1d6 HP)"',
+      '"10\' emanation inflicts 1d6 HP poison (<b>save basic Fortitude</b>; critical failure also inflicts sickened 1) and gives concealment for 1 rd (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Object Reading':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate ' +
@@ -15319,7 +15319,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' 10\' burst inflicts 2d6 HP slashing (<b>save basic Reflex</b>) while sustained for up to 1 min; the area of effect can be moved 20\' each rd (<b>hightened +2</b> inflicts +1d6 HP)"',
+      '"R60\' 10\' burst inflicts 2d6 HP slashing (<b>save basic Reflex</b>) while sustained for up to 1 min; the area of effect can be moved 20\' each rd (<b>heightened +2</b> inflicts +1d6 HP)"',
   'Sacred Form':
     Pathfinder2E.SPELLS['Righteous Might']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -15411,7 +15411,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=3 ' +
     'Description=' +
-      '"R30\' Summons a celestial, fiend, monitor, or Outer Sphere animal of level -1, as allowed by deity, while sustained for up to 1 min (<b>heightenedk 2nd</b> summons up to level 1; <b>3rd</b> summons up to level 2; <b>4th</b> summons up to level 3)"',
+      '"R30\' Summons a celestial, fiend, monitor, or Outer Sphere animal of level -1, as allowed by deity, while sustained for up to 1 min (<b>heightened 2nd</b> summons up to level 1; <b>3rd</b> summons up to level 2; <b>4th</b> summons up to level 3)"',
   'Synesthesia':
     Pathfinder2E.SPELLS.Synesthesia
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -15424,7 +15424,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Teleports a light Bulk object from self to a willing target (<b>heightene 3rd</b> extends range to 500\'; <b>5th</b> teleports a Bulk 1 item, and using 3 actions extends range to 1 mile"',
+      '"R120\' Teleports a light Bulk object from self to a willing target (<b>heightened 3rd</b> extends range to 500\'; <b>5th</b> teleports a Bulk 1 item, and using 3 actions extends range to 1 mile"',
   'Threefold Aspect':
     'Level=3 ' +
     'Traits=Concentrate,Manipulate,Polymorph ' +
