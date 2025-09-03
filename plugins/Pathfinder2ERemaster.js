@@ -4856,8 +4856,7 @@ Pathfinder2ERemaster.FEATS = {
 Pathfinder2ERemaster.FEATURES = {
 
   // Ancestry
-
-  'Ancestry Feats':'Section=feature Note="%V selections"',
+  'Ancestry Feats':Pathfinder2E.FEATURES['Ancestry Feats'],
 
   // Dwarf
   'Ancient-Blooded Dwarf':Pathfinder2E.FEATURES['Ancient-Blooded Dwarf'],
@@ -4940,7 +4939,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Petrifies self until the end of the current turn, negating the damage from the triggering effect and subsequent effects that would not affect stone, once per day"',
 
   // Elf
-  'Ancient Elf':'Section=feature Note="+1 Class Feat (multiclass dedication)"',
+  'Ancient Elf':'Section=feature Note="Class Feat (Choose 1 from any Multiclass)"',
   'Arctic Elf':Pathfinder2E.FEATURES['Arctic Elf'],
   'Cavern Elf':Pathfinder2E.FEATURES['Cavern Elf'],
   'Elf Heritage':Pathfinder2E.FEATURES['Elf Heritage'],
@@ -5018,9 +5017,9 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed
   'Gnome Obsession':
     'Section=feature,skill ' +
-    // TODO trouble randomizing?
     'Note=' +
-      '"+2 Skill Feat (Additional Lore and Assurance for chosen Lore)",' +
+      // TODO not quite correct
+      '"Skill Feat (Choose 1 from any Additional Lore; Choose 1 from any Assurance)",' +
       '"Can use 1 day of downtime to change the chosen Gnome Obsession skill"',
   // Changed
   'Gnome Weapon Familiarity':
@@ -5209,7 +5208,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Incredible Improvisation':Pathfinder2E.FEATURES['Incredible Improvisation'],
   'Multitalented':Pathfinder2E.FEATURES.Multitalented,
   'Advanced General Training':
-    'Section=feature Note="+1 General Feat (up to 7th level)"',
+    'Section=feature Note="General Feat (Choose 1 from any up to level 7)"',
   'Bounce Back':
     'Action=Free ' +
     'Section=combat ' +
@@ -5362,7 +5361,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       // TODO problems randomizing
-      '"+1 General Feat (Pet or Train Animal)",' +
+      '"General Feat (Choose 1 from Pet, Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
     'Section=combat ' +
@@ -5500,8 +5499,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Fiendish Lineage feature",' +
-      // TODO randomizeOneAttribute won't process this extra feat properly
-      '"Skill Trained (Athletics)/+1 Skill Feat (Athletics-based)"',
+      '"Skill Trained (Athletics)/Skill Feat (Choose 1 from any Athletics)"',
   'Celestial Lineage':
     'Section=feature Note="Can take feats that require celestial lineage"',
   'Fiendish Lineage':
@@ -5522,7 +5520,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Nephilim Lore':
     'Section=feature,skill ' +
     'Note=' +
-      '"+1 Skill Feat (Additional Lore for a related plane)",' +
+      // TODO not quite correct
+      '"Skill Feat (Choose 1 from any Additional Lore)",' +
       '"Skill Trained (Choose 1 from Diplomacy, Intimidation; Religion)"',
   'Nimble Hooves':'Section=ability Note="+5 Speed"',
   'Blessed Blood':
@@ -5539,7 +5538,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Nephilim Resistance':
     'Section=save Note="Has resistance 5 to a choice of energy"',
   'Scion Of Many Planes':
-    'Section=feature Note="+1 Ancestry Feat (Nephilim lineage)"',
+    // TODO not quite correct
+    'Section=feature Note="Ancestry Feat (Choose 1 from any Nephalim Lineage)"',
   'Skillful Tail':
     'Section=feature Note="Can use tail for simple Interact actions"',
   'Celestial Magic':
@@ -5770,7 +5770,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Draws a weapon during initiative"',
   'Runtsage':
-    'Section=feature Note="Has the Adopted Ancestry (Goblin) feature/+1 Ancestry Feat (Goblin feat)"',
+    'Section=feature Note="Has the Adopted Ancestry (Goblin) feature/Ancestry Feat (Choose 1 from any Goblin)"',
   'Cantorian Rejuvenation':
     'Action=2 ' +
     'Section=combat ' +
@@ -5865,7 +5865,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Pack Stalker':
     'Section=feature,skill ' +
     'Note=' +
-      '"+1 Skill Feat (Terrain Stalker feat)",' +
+      '"Skill Feat (Choose 1 from any Terrain Stalker)",' +
       '"Can extend Terrain Stalker effects to %{rank.Stealth<3?\'1 ally\':rank.Stealth<4?\'2 allies\':\'3 allies\'} within 10\'"',
   'Rabid Sprint':'Action=2 Section=combat Note="Strides on all fours 3 times"',
   'Affliction Resistance':
@@ -6066,8 +6066,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Lizardfolk Lore':
     'Section=feature,skill ' +
     'Note=' +
-      // TODO randomizing
-      '"+1 Skill Feat (Additional Lore for Astrology Lore or Lizardfolk Lore)",' +
+      '"Skill Feat (Choose 1 from Additional Lore (Astrology Lore), Additional Lore (Lizardfolk Lore))",' +
       '"Skill Trained (Survival; Choose 1 from Nature, Occultism)"',
   'Marsh Runner':
     'Section=combat,skill ' +
@@ -7289,7 +7288,8 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Wild Morph', 'Untamed Shift'),
   'Shield Block':Pathfinder2E.FEATURES['Shield Block'],
   'Voice Of Nature':
-    'Section=feature Note="+1 Class Feat (Animal Empathy or Plant Empathy)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from Animal Empathy, Plant Empathy)"',
   'Weapon Expertise':
     'Section=combat Note="Attack Expert (%V; Unarmed Attacks)"',
   // Weapon Specialization as above
@@ -8207,7 +8207,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Knows a choice of the Summon Animal and Summon Plant Or Fungus primal spells/Casting or Sustaining a hex gives familiar a choice of imprecise scent, tremorsense, and wavesense with a 60\' range until the start of the next turn, allowing it to immediately Point Out as a free action",' +
       '"Skill Trained (Nature)"',
   'Will Of The Pupil':Pathfinder2E.FEATURES.Resolve,
-  'Witch Feats':'Section=feature Note="%V selections"',
+  'Witch Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Witch Skills':'Section=skill Note="Skill Trained (Choose %V from any)"',
   'Witch Spellcasting':
     'Section=magic Note="Can learn spells from the %V tradition"',
@@ -8382,7 +8382,7 @@ Pathfinder2ERemaster.FEATURES = {
   'School Of Unified Magical Theory':
     'Section=feature,magic,magic ' +
     'Note=' +
-      '"+1 Class Feat",' +
+      '"Class Feat (Choose 1 from any)",' +
       '"Knows the Hand Of The Apprentice arcane spell",' +
       '"Can use Drain Bonded Item once per spell rank each day"',
   'Spell Blending':
@@ -8841,7 +8841,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,feature ' +
     'Note=' +
       '"Increases added rage damage to %V",' +
-      '"+1 Class Feat"',
+      '"Class Feat (Choose 1 from any)"',
   'Weapon Mastery':Pathfinder2E.FEATURES['Weapon Fury'],
   // Reflex Expertise as above
   // Weapon Specialization as above
@@ -9527,7 +9527,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Class Expert (Investigator)",' +
       '"Has increased Pursue A Lead effects"',
-  'Investigator Feats':'Section=feature Note="%V selections"',
+  'Investigator Feats':
+    'Section=feature Note="Class Feats (Choose %V from any)"',
   'Investigator Skills':
     'Section=skill Note="Skill Trained (Society; Choose %V from any)"',
   'Keen Recollection':
@@ -9559,7 +9560,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Save Master (Reflex)",' +
       '"Successes on Reflex saves are critical successes"',
-  'Skillful Lessons':'Section=feature Note="+%V Skill Feat"',
+  'Skillful Lessons':'Section=feature Note="Skill Feat (Choose %V from any)"',
   'Strategic Strike':
     'Section=combat ' +
     'Note="Successful Attack Stratagems that use intelligence inflict +%{(level+3)//4}d6 HP precision"',
@@ -10075,7 +10076,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Suffers from a mystery-linked curse and a cursebound condition"',
   'Oracular Senses':'Section=skill Note="Perception Expert"',
-  'Oracle Feats':'Section=feature Note="%V selections"',
+  'Oracle Feats':'Section=feature Note="Class Feats (Choose %V from any)"',
   'Oracle Skills':
     'Section=skill Note="Skill Trained (Religion; Choose %V from any)"',
   'Oracle Spellcasting':
@@ -10903,39 +10904,40 @@ Pathfinder2ERemaster.FEATURES = {
   'Stylish Tricks (Battledancer)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Performance)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Performance)",' +
       '"+%V Skill Increase (Acrobatics or Performance)"',
   'Stylish Tricks (Braggart)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Intimidation)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Intimidation)",' +
       '"+%V Skill Increase (Acrobatics or Intimidation)"',
   'Stylish Tricks (Fencer)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Deception)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Deception)",' +
       '"+%V Skill Increase (Acrobatics or Deception)"',
   'Stylish Tricks (Gymnast)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Athletics)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Athletics)",' +
       '"+%V Skill Increase (Acrobatics or Athletics)"',
   'Stylish Tricks (Rascal)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Thievery)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Thievery)",' +
       '"+%V Skill Increase (Acrobatics or Thievery)"',
   'Stylish Tricks (Wit)':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (Acrobatics or Diplomacy)",' +
+      '"Skill Feat (Choose %V from any Acrobatics, any Diplomacy)",' +
       '"+%V Skill Increase (Acrobatics or Diplomacy)"',
   'Swashbuckler Expertise':
     'Section=combat,skill ' +
     'Note=' +
       '"Class Expert (Swashbuckler)",' +
       '"Has increased Stylish Combatant effects"',
-  'Swashbuckler Feats':'Section=feature Note="%V selections"',
+  'Swashbuckler Feats':
+    'Section=feature Note="Class Feats (Choose %V from any)"',
   'Swashbuckler Skills':
     'Section=skill Note="Skill Trained (Acrobatics; Select %V from any)"',
   "Swashbuckler's Style":'Section=feature Note="1 selection"',
@@ -11267,9 +11269,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Knows 1 1st-rank%{rank>=8?\', 1 2nd-rank, and 1 3rd-rank\':rank>=6?\' and 1 2nd-rank\':\'\'} %{witchTraditionsLowered} spell"',
   'Basic Witchcraft':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level witch)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Witch up to level 2)"',
   'Advanced Witchcraft':
-    'Section=feature Note="+%V Class Feat (witch up to level %{level//2})"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Witch up to level %{level//2})"',
   "Patron's Breadth":
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Witch Spellcasting':
@@ -11421,12 +11424,13 @@ Pathfinder2ERemaster.FEATURES = {
       '"Has the On The Case feature",' +
       '"Skill Trained (Society; choose 1 from any)"',
   'Basic Deduction':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level investigator)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Investigator up to level 2)"',
   "Investigator's Stratagem":
     'Section=feature Note="Has the Devise A Stratagem feature"',
   'Advanced Deduction':
     'Section=feature ' +
-    'Note="+%V Class Feat (investigator up to level %{level//2})"',
+    'Note="Class Feat (Choose %V from any Investigator up to level %{level//2})"',
   // Keen Recollection as above
   // Skill Mastery as above
   // Master Spotter as above
@@ -11452,7 +11456,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Spell Trained (Divine)/Knows 2 choices of divine cantrips",' +
       '"Skill Trained (Religion)"',
   'Basic Mysteries':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level oracle)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Oracle up to level 2)"',
   'Basic Oracle Spellcasting':
     'Section=magic ' +
     'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
@@ -11482,7 +11487,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Knows the Tempest Touch divine spell/Has a focus pool"',
   'Advanced Mysteries':
     'Section=feature ' +
-    'Note="+%V Class Feat (oracle up to level %{level//2})"',
+    'Note="Class Feat (Choose %V from any Oracle up to level %{level//2})"',
   'Mysterious Breadth':
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Oracle Spellcasting':
@@ -11572,7 +11577,8 @@ Pathfinder2ERemaster.FEATURES = {
       // TODO or the style-linked skill
       '"Skill Trained (Acrobatics)"',
   'Basic Flair':
-    'Section=feature Note="+1 Class Feat (1st- or 2nd-level swashbuckler)"',
+    'Section=feature ' +
+    'Note="Class Feat (Choose 1 from any Swashbuckler up to level 2)"',
   'Finishing Precision':
     'Section=combat ' +
     'Note="Has the Precise Strike and Basic Finisher features"',
@@ -11582,7 +11588,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strike with a Precise Strike weapon inflicts +1d6 HP precision"',
   'Advanced Flair':
     'Section=feature ' +
-    'Note="+%V Class Feat (swashbuckler up to level %{level//2})"',
+    'Note="Class Feat (Choose %V from any washbuckler up to level %{level//2})"',
   "Swashbuckler's Riposte":
     'Section=combat Note="Has the Opportune Riposte feature"',
   "Swashbuckler's Speed":
@@ -11629,7 +11635,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Settlement Scholastics':
     'Section=feature,skill ' +
     'Note=' +
-      '"+%V Skill Feat (settlement Additional Lore)",' +
+      // TODO not quite correct
+      '"Skill Feat (Choose %V from any Additional Lore)",' +
       '"+%V Language Count"',
   'Scholastic Identification':
     'Section=skill ' +
@@ -12128,8 +12135,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Moves normally through difficult terrain and uneven ground caused by unstable ground",' +
       '"Has the Boarding Assault feature",' +
-      // TODO randomizer
-      '"+1 Skill Feat (Additional Lore for Sailing Lore or a coastal city)"',
+      // TODO Not quite correct
+      '"Skill Feat (Choose 1 from any Additional Lore)"',
   'Boarding Assault':
     'Action=2 ' +
     'Section=combat ' +
@@ -12139,8 +12146,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"Weapon Familiarity (Hatchet; Rapier; Scimitar; Whip)",' +
       '"Critical hits with a hatchet, rapier, scimitar, or whip inflict its critical specialization effect",' +
-      // TODO randomizer
-      '"+1 Skill Feat (Combat Climber or Underwater Marauder)"',
+      '"Skill Feat (Choose 1 from Combat Climber, Underwater Marauder)"',
   'Rope Runner':
     'Section=ability,skill ' +
     'Note=' +
@@ -12204,8 +12210,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Terrain Scout':
     'Section=skill,skill ' +
     'Note=' +
-      // TODO randomizer
-      '"+2 Skill Feat (Terrain Stalker)",' +
+      '"Skill Feat (Choose 2 from any Terrain Stalker)",' +
       '"Successful Avoid Notice allows giving Terrain Stalker benefits to an ally that is using Follow The Expert"',
   'Fleeting Shadow':
     'Action=2 Section=skill Note="Sneaks twice after Hiding"',
@@ -12314,9 +12319,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Has a secret lair up to %{rank.Deception<2?2:rank.Deception<3?4:rank.Deception<4?8:16} 10\' cubes in size that is shielded from magical detection (DC %{skillModifiers.Deception} counteract vs. level %{level//2} negates)"',
   'Social Purview':
-    // TODO randomize
-    'Section=feature ' +
-    'Note="+1 Class Feat (archetype dedication for social identity)"',
+    'Section=feature Note="Class Feat (Choose 1 from any Dedication)"',
   'Startling Appearance':
     'Action=1 ' +
     'Section=combat ' +
@@ -15158,7 +15161,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast="1 min" ' +
     'Description=' +
       '"Spirits reenact the 9 min leading up to a named victim\'s injury and 1 min afterward, inflicting 2d6 HP void on self"',
-  // Near-complete rewrite
+  // Major changes
   'Ghoulish Cravings':
     'Level=2 ' +
     'Traits=Concentrate,Curse,Manipulate,Mental ' +
@@ -15276,6 +15279,200 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Description=' +
       '"Reveals a piece of information about an emotional event involving the touched object that occurred within the past week (<b>heightened 2nd</b> extends effects to the past month; <b>4th</b> extends effects to the past year; <b>6th</b> extends effects to the past decade; <b>8th</b> extends effects to the past century; <b>9th</b> extends effects indefinitely)"',
+  'Phantasmal Treasure':
+    'Level=2 ' +
+    'Traits=Concentrate,Emotion,Illusion,Manipulate,Mental ' +
+    'Traditions=Arcane,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' Target becomes fascinated with illusionary treasure for 1 min (<b>save Will</b> effects last until end of target\'s turn; critical success negates; critical failure causes target to use all actions to interact with the treasure"',
+  'Primal Herd':
+    Pathfinder2E.SPELLS['Primal Herd']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Protector Tree':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Plant,Wood ' +
+    'Traditions=Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Creates a tree with Armor Class 10 and 10 Hit Points that redirects damage from adjacent allies to itself for 1 min; a tree that survives the spell\'s duration remains in place (<b>heightened +1</b> gives the tree +10 Hit Points)"',
+  'Puff Of Poison':
+    'Level=1 ' +
+    'Traits=Cantrip,Concentrate,Manipulate,Poison ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R10\' Inflicts 1d4 HP poison and 1d4 HP persistent poison (<b>save Fortitude</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +1d4 HP initial and persistent)"',
+  "Reaper's Lantern":
+    'Level=2 ' +
+    'Traits=Aura,Concentrate,Death,Light,Manipulate ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Lights a 5\' emanation, inflicts enfeebled 1 on undead, and negates half of healing effects on living (<b>save Fortitude<b> negates) for 1 min; a Sustain each turn increases the radius by 5\'"',
+  'Resplendent Mansion':
+    Pathfinder2E.SPELLS['Resplendent Mansion'] + ' ' +
+    'Traits=Concentrate,Manipulate,Structure',
+  'Rouse Skeletons':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' 10\' burst inflicts 2d6 HP slashing (<b>save basic Reflex</b>) while sustained for up to 1 min; the area of effect can be moved 20\' each rd (<b>hightened +2</b> inflicts +1d6 HP)"',
+  'Sacred Form':
+    Pathfinder2E.SPELLS['Righteous Might']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Scatter Scree':
+    'Level=1 ' +
+    'Traits=Cantrip,Concentrate,Earth,Manipulate ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' 2 contiguous 5\' cubes inflict 2d4 HP bludgeoning initial (<b>save basic Reflex), plus difficult terrain for 1 min (<b>heightened +1</b> inflicts +1d4 HP)"',
+  'Schadenfreude':
+    'Level=1 ' +
+    'Traits=Concentrate,Emotion,Mental ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R30\' Inflicts stupefied for 1 rd in response to a critical failure on a save vs. an effect from the target (<b>save Will</b> inflicts -1 Perception and Will for 1 rd; critical success negates; critical failure inflicts stupefied 2 for 1 rd and stunned 1)"',
+  'Scintillating Safeguard':
+    'Level=6 ' +
+    'Traits=Manipulate ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"R30\' Gives 5 targets resistance 10 vs. triggering physical or energy damage (<b>heightened +1</b> gives resistance +1)"',
+  'Seal Fate':
+    'Level=4 ' +
+    'Traits=Concentrate,Curse,Death,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Touched suffers weakness 2 to a specified damage type, plus death when reduced to 0 HP by that damage type if the target is level 7 or less, for 1 min (<b>save Fortitude</b> inflicts weakness 2 only until the end of the next turn; critical success negates; critical failure effects last indefinitely) (<b>heightened +2 inflicts weakness +1 and increases the maximum target level to suffer death by 4)"',
+  'Shared Invisibility':
+    Pathfinder2E.SPELLS['Invisibility Sphere'] + ' ' +
+    'Traits=Aura,Illusion,Manipulate,Subtle ' +
+    'Description=' +
+      '"30\' emanation makes self and 5 willing targets invisible for 10 min or until any target performs a hostile act (<b>heightened 5th</b> affects self and 10 targets, and effects last for 1 hr)"',
+  'Shrink Item':
+    Pathfinder2E.SPELLS['Shrink Item']
+    .replace('Transmutation', 'Concentrate,Manipulate'),
+  'Spell Riposte':
+    Pathfinder2E.SPELLS['Spell Turning']
+    .replace('Abjuration', 'Manipulate')
+    .replace('Arcane', 'Arcane,Divine,Occult') + ' ' +
+    'Cast=Reaction ' +
+    'Description=' +
+      '"Attempts to counteract the triggering targeted spell; success redirects the spell upon the caster"',
+  'Spirit Sense':
+    'Level=2 ' +
+    'Traits=Concentrate,Detection,Manipulate,Mental ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"Self gains a 30\' automatic Search for spirits and haunts, +1 Seek, Recall Knowledge, Armor Class, and saving throws with spirits and haunts, and +1 skill checks to disable a haunt, for 10 min"',
+  // Major changes
+  'Spirit Song':
+    'Level=8 ' +
+    'Traits=Concentrate,Manipulate,Spirit ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"60\' cone inflicts 14d6 HP spirit, stunned 1, and loss of reaction until the beginning of their turns on spirits, including any hidden in solid barriers (<b>save Fortitude</b> inflicts half HP and negates stunned; critical success negates; critical failure inflicts double HP and stunned 2) (<b>heightened +1</b> inflicts +2d6 HP)"',
+  'Spiritual Epidemic':
+    Pathfinder2E.SPELLS['Spiritual Epidemic']
+    .replace('Necromancy', 'Concentrate,Manipulate,Spirit'),
+  'Spout':
+    'Level=1 ' +
+    'Traits=Cantrip,Concentrate,Manipulate,Water ' +
+    'Traditions=Arcane,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' 5\' cube, or a 5\' burst in water, inflicts 2d4 HP bludgeoning (<b>save basic Reflex</b>; critical failure also inflicts off-guard until the end of the next turn) (<b>heightened +1</b> inflicts +1d4 HP)"',
+  'Strange Geometry':
+    'Level=5 ' +
+    'Traits=Concentrate,Illusion,Manipulate ' +
+    'Traditions=Occult ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R60\' 4 10\' disconnected cubes inflict difficult terrain for all modes of movement and teleportation between cubes upon exit for 1 min (<b>save Will</b> negates)"',
+  'Sudden Blight':
+    'Level=2 ' +
+    'Traits=Concentrate,Manipulate,Void ' +
+    'Traditions=Divine,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R120\' 20\' burst inflicts 2d10 HP void (<b>save basic Fortitude</b>; creatures with disease suffer a -2 penalty), optionally plus difficult terrain from the immediate rotting of Small and Tiny non-creature plants (<b>heightened +1</b> inflicts +1d10 HP)"',
+  'Summon Lesser Servitor':
+    'Level=1 ' +
+    'Traits=Concentrate,Manipulate,Summon ' +
+    'Traditions=Divine ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"R30\' Summons a celestial, fiend, monitor, or Outer Sphere animal of level -1, as allowed by deity, while sustained for up to 1 min (<b>heightenedk 2nd</b> summons up to level 1; <b>3rd</b> summons up to level 2; <b>4th</b> summons up to level 3)"',
+  'Synesthesia':
+    Pathfinder2E.SPELLS.Synesthesia
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Telepathic Demand':
+    Pathfinder2E.SPELLS['Telepathic Demand']
+    .replace('Enchantment', 'Concentrate,Manipulate'),
+  'Thoughtful Gift':
+    'Level=1 ' +
+    'Traits=Manipulate,Teleportation ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=1 ' +
+    'Description=' +
+      '"R120\' Teleports a light Bulk object from self to a willing target (<b>heightene 3rd</b> extends range to 500\'; <b>5th</b> teleports a Bulk 1 item, and using 3 actions extends range to 1 mile"',
+  'Threefold Aspect':
+    'Level=3 ' +
+    'Traits=Concentrate,Manipulate,Polymorph ' +
+    'Traditions=Occult,Primal ' +
+    'Cast="1 min" ' +
+    'Description=' +
+      '"Allows self to use a Sustain to polymorph between young adult, adult, and elderly forms for 1 min, gaining +4 Deception to pass as the selected age, for 1 min"',
+  'Vampiric Maiden':
+    'Level=4 ' +
+    'Traits=Concentrate,Manipulate,Void ' +
+    'Traditions=Arcane,Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R30\' Inflicts 4d4 HP piercing, 4d4 HP void, and immobilized for 1 rd (Interact action ends), giving self temporary Hit Points equal to the void damage for 1 min (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and immobilization for 1 rd or until a successful Escape) (<b>heightened +1</b> inflicts +1d4 HP piercing and void)"',
+  'Visions Of Danger':
+    Pathfinder2E.SPELLS['Visions Of Danger']
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+  'Vomit Swarm':
+    'Level=2 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"30\' cone inflicts 2d8 HP piercing and sickened 1 (<b>save basic Reflex</b> also negates sickened) (<b>heightened +1</b> inflicts +1d8 HP)"',
+  'Wall Of Flesh':
+    'Level=5 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Divine,Occult,Primal ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' Creates a 30\'x20\'x3\' wall of flesh, each 5\' section with Armor Class 10 and 75 Hit Points, that either inflicts 2d6 HP piercing, gives self +2 Perception within the wall\'s line of sight, or grabs for 1 rd or until a successful Escape (<b>save Reflex<b> negates; critical failure grabs), for 1 min (<b>heightened +2</b> gives each section +10 Hit Points and inflicts +1d6 HP)"',
+  "Wanderer's Guide":
+    Pathfinder2E.SPELLS["Wanderer's Guide"]
+    .replace('Divination', 'Concentrate,Manipulate'),
+  'Weapon Of Judgment':
+    Pathfinder2E.SPELLS['Weapon Of Judgment']
+    .replace(/3d10\S* HP force/, '4d10 HP spirit') + ' ' +
+    'Traits=Concentrate,Manipulate,Sanctified,Spirit',
+  'Web':
+    Pathfinder2E.SPELLS.Web
+    .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Whispers Of The Void':
+    'Level=4 ' +
+    'Traits=Auditory,Concentrate,Manipulate,Void ' +
+    'Traditions=Divine,Occult ' +
+    'Cast=2 ' +
+    'Description=' +
+      '"R60\' 10\' burst inflicts 4d8 HP persistent void and drained 1 (<b>save Fortitude</b> inflicts 2d8 HP persistent void only; critical success negates; critical failure inflicts drained 2 and doomed 1) (<b>heightened +2</b> inflicts +2d8 HP, or +1d8 HP on a successful save)"',
 
   // Champion
   'Lay On Hands':

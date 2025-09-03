@@ -17,6 +17,7 @@ var attributes = {
   "ancestryFeats.Incredible Improvisation":1, "ancestryFeats.Multitalented":1, "ancestryFeats.Natural Ambition":1, 
   "ancestryFeats.Natural Skill":1, "ancestryFeats.Sense Allies":1, "ancestryFeats.Stubborn Persistence":1, 
   "ancestryFeats.Unconventional Weaponry (Arbalest)":1, "armor":"Breastplate", "background":"Acolyte", "class":"Cleric", 
+  "classFeats.Domain Initiate (Water)":1, "classFeats.Premonition Of Avoidance":1, "classFeats.Reach Spell":1, 
   "deity":"Gozreh", "experience":482, "gender":"Male", 
   "generalFeats.Additional Lore (Scouting Lore)":1, "generalFeats.Skill Training (Carpentry Lore)":1, 
   "generalFeats.Underwater Marauder":1, "languages.Sakvroth":1, "languages.Sussuran":1, "name":"Ancestry-Human", 
@@ -83,14 +84,14 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feat Count</b>: Ancestry: 1; General: 3</td>
+        <td><b>Feat Count</b>: Ancestry: 1; Class: 3; General: 3</td>
         <td><b>Selectable Feature Count</b>: Cleric (Doctrine); Human (Heritage)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Additional Lore (Scouting Lore); Advanced General Training; Bounce Back; Clever Improviser; Cooperative Nature; Cooperative Soul; General Training; Group Aid; Hardy Traveler; Haughty Obstinacy; Heroic Presence; Incredible Improvisation; Multitalented; Natural Ambition; Natural Skill; Sense Allies; Skill Training (Carpentry Lore); Stubborn Persistence; Unconventional Weaponry (Arbalest); Underwater Marauder</td>
+        <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Additional Lore (Scouting Lore); Advanced General Training; Bounce Back; Clever Improviser; Cooperative Nature; Cooperative Soul; Domain Initiate (Water); General Training; Group Aid; Hardy Traveler; Haughty Obstinacy; Heroic Presence; Incredible Improvisation; Multitalented; Natural Ambition; Natural Skill; Premonition Of Avoidance; Reach Spell; Sense Allies; Skill Training (Carpentry Lore); Stubborn Persistence; Unconventional Weaponry (Arbalest); Underwater Marauder</td>
         <td><b>Cleric Features</b>: Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Wisdom); Attribute Boosts; Class Trained (Cleric); Cleric Skills; Cleric Spellcasting; Cloistered Cleric; Defense Trained (Unarmored Defense); Deity; Divine Font; Doctrine; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Spell Trained (Divine)</td>
         <td><b>Acolyte Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human; Versatile Human</td>
@@ -99,13 +100,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><b>Feature Notes</b>:       <table id="FeatureNotes" style="width:100%">
       <tr style="text-align:center">
-        <td><i>Advanced General Training: +1 General Feat (up to 7th level)</i></td>
+        <td><i>Advanced General Training: General Feat (Choose 1 from any up to level 7)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Ancestry Feats: 1 selections</i></td>
+        <td><i>Ancestry Feats: Ancestry Feats (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Clever Improviser: Has the Untrained Improvisation feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Cloistered Cleric: +1 Class Feat (Domain Initiate feat)</i></td>
+        <td><i>Cloistered Cleric: Class Feat (Choose 1 from any Domain Initiate)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Deity: Has the Anathema and Sanctification features</i></td>
       </tr><tr style="text-align:center">
@@ -113,17 +114,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Doctrine: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>General Training: +1 General Feat</i></td>
+        <td><i>General Training: General Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Multitalented: +1 Class Feat (multiclass dedication)</i></td>
+        <td><i>Multitalented: Class Feat (Choose 1 from any Multiclass)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Natural Ambition: +1 Class Feat</i></td>
+        <td><i>Natural Ambition: Class Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Sanctification: Has neither the Holy nor Unholy feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>Versatile Human: +1 General Feat</i></td>
+        <td><i>Versatile Human: General Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or use spells prohibited by Gozreh</td>
       </tr><tr style="text-align:center">
@@ -262,6 +263,8 @@ var attributes = {
       <tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr><tr style="text-align:center">
+        <td>Premonition Of Avoidance: <b>(R)</b> Gives +2 save vs. triggering hazard</td>
+      </tr><tr style="text-align:center">
         <td>Stubborn Persistence: Successful DC 17 flat check negates becoming fatigued</td>
       </tr></table>
 </td>
@@ -277,6 +280,7 @@ var attributes = {
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: D1: 2; DC1: 5</td>
+        <td><b>Focus Points</b>: 1</td>
         <td><b>Attack</b>: Divine: +5 (wisdom; trained)</td>
         <td><b>Spell DC</b>: Divine: 15 (wisdom; trained)</td>
       </tr></table>
@@ -284,11 +288,19 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Spells</b>: Zealous Conviction (D6): <b>(2)</b> R30' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)</td>
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Tidal Surge (D1 Foc): <b>(1)</b> R60' Moves the target 10' over ground or 20' in water (<b>save Fortitude</b> negates)</td>
+    </tr><tr style="text-align:left">
+      <td>Zealous Conviction (D6): <b>(2)</b> R30' 10 willing targets gain 12 temporary HP, gain +2 Will vs. mental effects, and must comply with self requests for 10 min (<b>save Will</b> after fulfilling a repugnant request ends the spell) (<b>heightened 9th</b> gives 18 temporary HP and +3 Will)</td>
+    </tr></table>
+</td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
       <td><i>Cloistered Cleric: Spell Trained (Divine)</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Domain Initiate (Water): Knows the Tidal Surge divine spell/Has a focus pool</i></td>
     </tr><tr style="text-align:center">
       <td>Adapted Cantrip: Knows a cantrip from a second tradition</td>
     </tr><tr style="text-align:center">
@@ -301,6 +313,8 @@ var attributes = {
       <td>Healing Font: Can cast <i>Heal</i> at rank 1 an additional 4 times per day</td>
     </tr><tr style="text-align:center">
       <td>Heroic Presence: <b>(1)</b> R30' Generates the effects of a 6th-rank <i>Zealous Conviction</i> on 10 willing creatures once per day</td>
+    </tr><tr style="text-align:center">
+      <td>Reach Spell: <b>(1)</b> Extends subsequent spell range by 30'</td>
     </tr></table>
 </td>
   </tr></table>
