@@ -5171,7 +5171,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Ceaseless Shadows':Pathfinder2E.FEATURES['Ceaseless Shadows'],
   'Toppling Dance':
     'Section=combat ' +
-    'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/May share a space with a Large or larger prone creature"',
+    'Note="Melee and unarmed attacks on a foe in the same space have the trip trait/Can share a space with a Large or larger prone creature"',
   'Shadow Self':
     'Section=skill ' +
     'Note="Can follow a successful Hide or Sneak with 1 min of invisibility once per hr; a hostile act ends"',
@@ -5194,7 +5194,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Clever Improviser':Pathfinder2E.FEATURES['Clever Improviser'],
   'Sense Allies':
     'Section=skill ' +
-    'Note="R60\' Willing undetected allies are hidden instead and may be targeted with a DC 5 flat check"',
+    'Note="R60\' Willing undetected allies are hidden instead and can be targeted with a DC 5 flat check"',
   'Cooperative Soul':Pathfinder2E.FEATURES['Cooperative Soul'],
   'Group Aid':
     'Action=Free ' +
@@ -5360,7 +5360,6 @@ Pathfinder2ERemaster.FEATURES = {
   'Beast Trainer':
     'Section=feature,skill ' +
     'Note=' +
-      // TODO problems randomizing
       '"General Feat (Choose 1 from Pet, Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
@@ -5431,7 +5430,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changeling
   'Changeling Heritage':
     'Section=feature ' +
-    'Note="Has the changeling trait and may take changeling ancestry feats"',
+    'Note="Has the changeling trait and can take changeling ancestry feats"',
   'Brine May':
     'Section=skill ' +
     'Note="Successful Swim checks are critical successes, and failure does not inflict sinking"',
@@ -5472,7 +5471,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Nephilim
   'Nephilim Heritage':
     'Section=feature ' +
-    'Note="Has the nephilim trait and may take nephilim ancestry feats"',
+    'Note="Has the nephilim trait and can take nephilim ancestry feats"',
   'Angelkin':
     'Section=feature,skill ' +
     'Note=' +
@@ -5570,7 +5569,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Aiuvarin
   'Aiuvarin Heritage':
     'Section=feature ' +
-    'Note="Has the elf and aiuvarin traits and may take elf and aiuvarin ancestry feats"',
+    'Note="Has the elf and aiuvarin traits and can take elf and aiuvarin ancestry feats"',
   'Earned Glory':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -5586,7 +5585,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Dromaar
   'Dromaar':
     'Section=feature ' +
-    'Note="Has the orc and dromaar traits and may take orc and dromaar ancestry feats"',
+    'Note="Has the orc and dromaar traits and can take orc and dromaar ancestry feats"',
   'Monstrous Peacemaker':Pathfinder2E.FEATURES['Monstrous Peacemaker'],
   'Orc Sight':Pathfinder2E.FEATURES['Orc Sight'],
 
@@ -6409,7 +6408,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Dhampir
   'Dhampir Heritage':
     'Section=feature ' +
-    'Note="Has the dhampir trait and may take dhampir ancestry feats"',
+    'Note="Has the dhampir trait and can take dhampir ancestry feats"',
   'Void Healing':
     'Section=save Note="Vitality effects cause harm and void effects heal"',
   'Straveika':
@@ -6457,7 +6456,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dragonblood Heritage':
     'Section=feature,save ' +
     'Note=' +
-      '"Has the dragonblood trait and may take Dragonblood ancestry feats",' +
+      '"Has the dragonblood trait and can take dragonblood ancestry feats",' +
       '"Successes on saves vs. fear are critical successes"',
   'Draconic Exemplar':'Section=feature Note="1 selection"',
   'Arcane Dragonblood':
@@ -6552,7 +6551,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Duskwalker Heritage':
     'Section=feature,save ' +
     'Note=' +
-      '"Has the duskwalker trait and may take duskwalker ancestry feats",' +
+      '"Has the duskwalker trait and can take duskwalker ancestry feats",' +
       '"Cannot become undead"',
   'Chance Death':
     'Action=Reaction ' +
@@ -9094,7 +9093,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Glimpse Of Redemption':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Forces a foe within aura who has damaged an ally within aura to choose between negating the damage or giving the ally resistance %{2+level} to it and suffering enfeebled 2 until the end of its next turn%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}%{combatNotes.exaltedReaction?\'; self may share resistance \'+level+\' with every ally within aura instead of only the damaged ally\':\'\'}"',
+    'Note="Forces a foe within aura who has damaged an ally within aura to choose between negating the damage or giving the ally resistance %{2+level} to it and suffering enfeebled 2 until the end of its next turn%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}%{combatNotes.exaltedReaction?\'; self can share resistance \'+level+\' with every ally within aura instead of only the damaged ally\':\'\'}"',
   'Grandeur':
     'Section=feature,feature ' +
     'Note=' +
@@ -9496,7 +9495,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the That\'s Odd and Expeditious Inspection features",' +
-      // TODO randomizing problem
       '"Skill Trained (Choose 1 from any Intelligence)"',
   'Expeditious Inspection':
     'Action=Free ' +
@@ -10900,7 +10898,6 @@ Pathfinder2ERemaster.FEATURES = {
     'Note=' +
       '"+%V Speed with panache",' +
       '"Gains +%{skillNotes.swashbucklerExpertise?2:1} on bravado skill checks during combat"',
-  // TODO randomizing
   'Stylish Tricks (Battledancer)':
     'Section=feature,skill ' +
     'Note=' +
@@ -14542,7 +14539,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Necromancy', 'Concentrate,Manipulate,Aura')
     .replace('Positive', 'Vitality') + ' ' +
     'Description=' +
-      '"30\' light emanation inflicts 2 HP vitality on successful undead attackers, increasing by 2 HP each rd for 1 min; self may end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
+      '"30\' light emanation inflicts 2 HP vitality on successful undead attackers, increasing by 2 HP each rd for 1 min; self can end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
   'Agile Feet':
     Pathfinder2E.SPELLS['Agile Feet']
     .replace('Transmutation', 'Manipulate'),
@@ -15208,7 +15205,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="1 min" ' +
     'Description=' +
-      '"Touched container becomes accessible only to self until next daily prep; items may only be removed and require 3 actions to do so"',
+      '"Touched container becomes accessible only to self until next daily prep; items can only be removed and require 3 actions to do so"',
   'Imprint Message':
     'Level=1 ' +
     'Traits=Concentrate,Manipulate ' +
