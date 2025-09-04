@@ -3072,14 +3072,14 @@ Pathfinder2E.FEATURES = {
     'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
   'Ageless Patience':
     'Section=skill ' +
-    'Note="May spend double the time normally required on a Perception or skill check to gain a +2 bonus and to suffer a critical failure only on a roll of 10 lower than the DC"',
+    'Note="Can spend double the time normally required on a Perception or skill check to gain a +2 bonus and to suffer a critical failure only on a roll of 10 lower than the DC"',
   'Elven Weapon Elegance':
     'Section=combat ' +
     'Note="Critical hits with a longbow, composite longbow, longsword, rapier, shortbow, composite shortbow, or elf weapon inflict its critical specialization effect"',
   'Elf Step':'Action=1 Section=combat Note="Steps twice"',
   'Expert Longevity':
     'Section=skill ' +
-    'Note="Gains expert proficiency in a chosen trained skill during daily prep and may replace an existing skill increase with one chosen for Ancestral Longevity or Expert Longevity upon expiration"',
+    'Note="Gains expert proficiency in a chosen trained skill during daily prep and can replace an existing skill increase with one chosen for Ancestral Longevity or Expert Longevity upon expiration"',
   'Universal Longevity':
     'Action=1 ' +
     'Section=skill ' +
@@ -3098,7 +3098,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has the fey trait",' +
-      '"Can cast a chosen primal cantrip as an innate spell at will; may spend 10 min to choose a different cantrip once per day"',
+      '"Can cast a chosen primal cantrip as an innate spell at will and can spend 10 min to choose a different cantrip once per day"',
   'Gnome Heritage':'Section=feature Note="1 selection"',
   // Low-Light Vision as above
   'Sensate Gnome':
@@ -3171,7 +3171,7 @@ Pathfinder2E.FEATURES = {
   'Irongut Goblin':
     'Section=feature,save ' +
     'Note=' +
-      '"May safely eat garbage and when sickened",' +
+      '"Can safely eat garbage and when sickened",' +
       '"+2 vs. conditions inflicted by ingestion, and successes on Fortitude saves vs. ingestion conditions are critical successes"',
   'Razortooth Goblin':
     'Section=combat Note="Jaws attack inflicts 1d6 HP piercing"',
@@ -3300,12 +3300,12 @@ Pathfinder2E.FEATURES = {
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Low-Light Vision feature",' +
-      '"Has the elf trait and may take elf and half-elf feats"',
+      '"Has the elf trait and can take elf and half-elf feats"',
   'Half-Orc':
     'Section=feature,feature ' +
     'Note=' +
       '"Has the Low-Light Vision feature",' +
-      '"Has the orc trait and may take orc and half-orc feats"',
+      '"Has the orc trait and can take orc and half-orc feats"',
   'Human Heritage':'Section=feature Note="1 selection"',
   'Skilled Heritage Human':'Section=skill Note="Skill %V (Choose 1 from any)"',
   'Versatile Heritage Human':
@@ -3329,7 +3329,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,skill ' +
     'Note=' +
       '"Has the Untrained Improvisation feature",' +
-      '"May attempt any skill untrained"',
+      '"Can attempt any skill untrained"',
   'Cooperative Soul':
     'Section=skill ' +
     'Note="Failures and critical failures to Aid with expert skills are successes"',
@@ -3697,7 +3697,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat Note="Has increased Instinct Ability Rage effects"',
   'Spirit Rage':
     'Section=combat ' +
-    'Note="May inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i> effects, instead of +%{combatNotes.rage} HP weapon damage during rage"',
+    'Note="Can inflict +%{combatNotes.greaterWeaponSpecialization?13:combatNotes.specializationAbility?7:3} HP positive or negative damage, along with <i>ghost touch</i> effects, instead of +%{combatNotes.rage} HP weapon damage during rage"',
   'Titan Mauler':
     'Section=combat ' +
     'Note="Can use weapons made for a larger creature, suffering clumsy 1 and gaining +%{combatNotes.greaterWeaponSpecialization?18:combatNotes.specializationAbility?10:6} HP weapon damage, instead of gaining +%{combatNotes.rage} HP weapon damage during rage"',
@@ -4247,7 +4247,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can make a Retributive Strike using a ranged Strike or a Step and a melee Strike"',
   'Unimpeded Step':
     'Section=combat ' +
-    'Note="Liberating Step target may Step normally in any terrain"',
+    'Note="Liberating Step target can Step normally in any terrain"',
   'Weight Of Guilt':
     'Section=combat ' +
     'Note="Glimpse Of Redemption can inflict stupefied instead of enfeebled"',
@@ -4422,7 +4422,7 @@ Pathfinder2E.FEATURES = {
   'Devoted Focus':'Section=magic Note="Refocus restores 2 Focus Points"',
   'Imposing Destrier':
     'Section=feature ' +
-    'Note="Mount is a nimble or savage animal companion and may Stride or Strike without a command"',
+    'Note="Mount is a nimble or savage animal companion and can Stride or Strike without a command"',
   'Litany Against Sloth':
     'Section=magic ' +
     'Note=' +
@@ -4451,7 +4451,7 @@ Pathfinder2E.FEATURES = {
     'Note="Extends the effects of Glimpse Of Redemption at half intensity for 1 min"',
   'Liberating Stride':
     'Section=combat ' +
-    'Note="Target of Liberating Step may Stride half their Speed"',
+    'Note="Target of Liberating Step can Stride half their Speed"',
   'Anchoring Aura':
     'Section=magic Note="R15\' Aura attempts to counteract teleportation spells cast by fiends"',
   'Aura Of Life':
@@ -5013,7 +5013,7 @@ Pathfinder2E.FEATURES = {
     'Note="Subsequent <i>Wild Shape</i>, cast 2 levels lower, lasts %{magicNotes.perfectFormControl?\'indefinitely\':\'for 1 hr\'}"',
   'Mature Animal Companion':
     'Section=feature ' +
-    'Note="Animal Companion is a mature companion and may Stride or Strike without a command"',
+    'Note="Animal Companion is a mature companion and can Stride or Strike without a command"',
   'Thousand Faces':
     'Section=magic ' +
     'Note="Can use <i>Wild Shape</i> to change into a Small or Medium humanoid"',
@@ -7210,7 +7210,7 @@ Pathfinder2E.FEATURES = {
   // General Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',
   'Adopted Ancestry (%ancestry)':
-    'Section=feature Note="May take %ancestry ancestry feats"',
+    'Section=feature Note="Can take %ancestry ancestry feats"',
   'Alchemical Crafting':
     'Section=feature,skill,skill ' +
     'Note=' +
@@ -7433,7 +7433,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can stand immediately after a successful Grab An Edge and use Athletics to Grab An Edge"',
   'Read Lips':
     'Section=skill ' +
-    'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and may inflict fascinated and flat-footed"',
+    'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and can inflict fascinated and flat-footed"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -8768,7 +8768,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self may use a reaction to give the target the better of 2 rolls or its foe the worse of 2 rolls, for 1 hr"',
+      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self can use a reaction to give the target the better of 2 rolls or its foe the worse of 2 rolls, for 1 hr"',
   'Freedom Of Movement':
     'Level=4 ' +
     'Traits=Abjuration ' +
@@ -9985,7 +9985,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +1 Armor Class for 1 rd; may end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)"',
+      '"Self gains +1 Armor Class for 1 rd and can end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)"',
   'Shield Other':
     'Level=2 ' +
     'Traits=Necromancy ' +
@@ -10183,7 +10183,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Summoned guardian with 50 HP may attack or defend each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
+      '"R120\' Summoned guardian with 50 HP can attack or defend each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'Traits=Evocation,Force ' +
@@ -10779,7 +10779,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target may take an additional Strike, Stride, or Step for 1 rd"',
+      '"R30\' Target can take an additional Strike, Stride, or Step for 1 rd"',
   'Counter Performance':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Enchantment,Fortune,Mental ' +
@@ -10787,7 +10787,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Allies in a 60\' emanation may substitute a self Performance roll for a save vs. the triggering auditory or visual effect"',
+      '"Allies in a 60\' emanation can substitute a self Performance roll for a save vs. the triggering auditory or visual effect"',
   'Dirge Of Doom':
     'Level=3 ' +
     'Traits=Focus,Uncommon,Bard,Cantrip,Composition,Emotion,Enchantment,Fear,Mental ' +
@@ -10858,7 +10858,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Occult ' +
     'Cast=Free ' +
     'Description=' +
-      '"R30\' Target may take the better of 2 rolls on the triggering Recall Knowledge check"',
+      '"R30\' Target can take the better of 2 rolls on the triggering Recall Knowledge check"',
   'Soothing Ballad':
     'Level=7 ' +
     'Traits=Focus,Uncommon,Bard,Composition,Emotion,Enchantment,Healing,Mental ' +
@@ -10953,7 +10953,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +10\' Speed and +2 Athletics for 1 rd and may immediately Stride, Leap, Climb, or Swim"',
+      '"Self gains +10\' Speed and +2 Athletics for 1 rd and can immediately Stride, Leap, Climb, or Swim"',
   'Bit Of Luck':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Divination,Fortune ' +
@@ -10961,7 +10961,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Willing target may use the better of 2 rolls on a save within 1 min once per target per day"',
+      '"R30\' Willing target can use the better of 2 rolls on a save within 1 min once per target per day"',
   'Blind Ambition':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Cleric,Emotion,Enchantment,Mental ' +
@@ -10993,7 +10993,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"20\' emanation around willing touched reduces bright light to dim and conceals touched for 1 min; target may shed the cloak, and the spell ends if another picks it up"',
+      '"20\' emanation around willing touched reduces bright light to dim and conceals touched for 1 min; target can shed the cloak, and the spell ends if another picks it up"',
   'Commanding Lash':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Enchantment,Incapacitation,Mental ' +
@@ -11225,7 +11225,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> target may use an action to end the sickened condition; critical success negates; critical failure inflicts sickened 2)"',
+      '"R30\' Target suffers sickened 1 and -10\' Speed until no longer sickened (<b>save Fortitude</b> target can use an action to end the sickened condition; critical success negates; critical failure inflicts sickened 2)"',
   'Perfected Form':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Abjuration,Cleric,Fortune ' +
@@ -11249,7 +11249,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=1 ' +
     'Description=' +
-      '"10\' light emanation inflicts 2 HP positive on successful undead attackers for 1 min; self may increase the radius by 10\' and the damage by 2 HP each rd and may end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
+      '"10\' light emanation inflicts 2 HP positive on successful undead attackers for 1 min; self can increase the radius by 10\' and the damage by 2 HP each rd and can end the spell early to heal a living creature or damage an undead creature by double the current damage HP (<b>heightened +1</b> inflicts +0.5 HP initially and for each increase)"',
   'Precious Metals':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Cleric,Transmutation ' +
@@ -11578,7 +11578,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> may choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> may choose 3 effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
+      '"Self gains claws that inflict 1d6 HP slashing (requires <i>Wild Shape</i>), jaws that inflict 1d8 HP piercing (requires <i>Insect Shape</i>), resistance 5 to critical hits and precision damage (requires <i>Elemental Shape</i>), 10\' reach (requires <i>Plant Shape</i>), or a 30\' fly Speed (requires <i>Soaring Shape</i>) for 1 min (<b>heightened 6th</b> can choose 2 effects, claws also inflict 2d6 HP persistent bleed damage, and jaws also inflict 2d6 HP persistent poison damage; <b>10th</b> can choose 3 effects, claws also inflict 4d6 persistent bleed damage and jaws also inflict 4d6 HP persistent poison damage)"',
   'Wild Shape':
     'Level=1 ' +
     'Traits=Focus,Uncommon,Druid,Polymorph,Transmutation ' +
@@ -11586,7 +11586,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Transforms self into a <i>Pest Form</i> creature for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> may transform into an <i>Animal Form</i> creature)"',
+      '"Transforms self into a <i>Pest Form</i> creature for 10 min or another creature for 1 min, gaining +2 attacks (<b>heightened 2nd</b> can transform into an <i>Animal Form</i> creature)"',
   'Abundant Step':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Conjuration,Monk,Teleportation ' +
@@ -11934,7 +11934,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target may substitute self\'s d20 roll for a saving throw or skill check within 1 rd"',
+      '"R30\' Target can substitute self\'s d20 roll for a saving throw or skill check within 1 rd"',
   'Dread Aura':
     'Level=4 ' +
     'Traits=Focus,Uncommon,Aura,Enchantment,Emotion,Fear,Mental,Wizard ' +
@@ -12731,7 +12731,7 @@ Pathfinder2E.talentRules = function(
     (rules, 'skillIncrease', 'choiceCount.Skill', 'skillIncreasesAllocated');
   // Because skill feats are also general feats, the number of selected general
   // feats must equal featCount.General + featCount.Skill, and the number of
-  // selected skill feats may validly exceed featCount.Skill.
+  // selected skill feats can validly exceed featCount.Skill.
   rules.defineRule('generalPlusSkillFeatCount',
     'featCount.General', '+=', null,
     'featCount.Skill', '+=', null
