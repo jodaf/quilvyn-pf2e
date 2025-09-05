@@ -5292,7 +5292,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Leshy Glide':
     'Action=1 ' +
     'Section=ability ' +
-    'Note="Glides downward, moving 5\' down and up to 25\' forward each rd"',
+    'Note="Glides 5\' down and up to 25\' forward each rd"',
   'Ritual Reversion':
     'Action=2 ' +
     'Section=magic ' +
@@ -5353,7 +5353,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save,skill ' +
     'Note=' +
       '"+1 vs. disease",' +
-      '"+2 Athletics to Climb or Swim"',
+      '"+2 Athletics to Climb and Swim"',
   'Winter Orc':
     'Section=save,skill ' +
     'Note=' +
@@ -5366,8 +5366,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"General Feat (Choose 1 from Pet, Train Animal)",' +
       '"Skill Trained (Nature)"',
   'Iron Fists':
-    'Section=combat ' +
-    'Note="Fist attacks lose the nonlethal trait and gain the shove trait"',
+    'Section=combat Note="Fist attacks are lethal and can be used to Shove"',
   'Orc Ferocity':Pathfinder2E.FEATURES['Orc Ferocity'],
   'Orc Lore':
     'Section=feature,skill ' +
@@ -5722,8 +5721,10 @@ Pathfinder2ERemaster.FEATURES = {
       '"Targeting a smoke-concealed creature requires no flat check",' +
       '"Has fire resistance %{level//2>?1}"',
   'Warmarch Hobgoblin':
-    'Section=skill ' +
-    'Note="Normal failures to Subsist in wilderness locate enough poor fare to stay fed/Can Hustle twice as long as normal when exploring"',
+    'Section=ability,skill ' +
+    'Note=' +
+      '"Can Hustle twice as long as normal when exploring",' +
+      '"Normal failures to Subsist in wilderness locate enough poor fare to stay fed"',
   'Warrenbred Hobgoblin':
     'Section=combat,skill ' +
     'Note=' +
@@ -6154,11 +6155,10 @@ Pathfinder2ERemaster.FEATURES = {
      'Section=save ' +
      'Note="Immune to putrid plague, +1 vs. disease and poison, and successes vs. disease and poison are critical successes"',
   'Shadow Rat':
-    'Section=combat,skill,skill ' +
+    'Section=skill,skill ' +
     'Note=' +
-      '"Can use Intimidation to Coerce animals and suffers no Demoralize penalty for lacking a shared language with them",' +
       '"Skill Trained (Intimidation)",' +
-      '"Suffers 1 step worse on initial animal attitudes"',
+      '"Initial attitude of encountered animals is 1 step worse than normal; can use Intimidation to Coerce them and suffers no Demoralize penalty for lacking a shared language with them"',
   'Snow Rat':
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
@@ -6206,12 +6206,12 @@ Pathfinder2ERemaster.FEATURES = {
   'Ratfolk Roll':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Rolls %{speed*4}\' per rd down an incline; after the 1st rd, suffers slowed 2 and suffers and inflicts 4d6 HP bludgeoning if stopped by an obstacle"',
+    'Note="Rolls %{speed*4}\' per rd down an incline; after the 1st rd, suffers slowed 2 and inflicts and suffers 4d6 HP bludgeoning if stopped by an obstacle"',
   'Big Mouth':'Section=feature Note="Has increased Cheek Pouches effects"',
   'Overcrowd':
     'Section=combat ' +
     'Note="Can end movement in the same square as %{features.Shinstabber?\'an\':\'a Small or smaller\'} ally"',
-  'Rat Form':'Action=1 Section=magic Note="Becomes a Tiny rat"',
+  'Rat Form':'Action=1 Section=magic Note="Becomes a Tiny rat for 10 min"',
   'Uncanny Cheeks':
     'Section=feature ' +
     'Note="Has the Prescient Consumable and Prescient Planner features"',
@@ -6287,7 +6287,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Long-Nosed Form':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Becomes a human with tengu-like features"',
+    'Note="Becomes a human with tengu-like features until Dismissed"',
   'Magpie Snatch':
     'Action=2 ' +
     'Section=combat ' +
@@ -6329,7 +6329,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Toxic Skin':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Inflicts %{(level+1)//2}d4 HP poison on triggering touch (<b>save basic Fortitude</b>) once per hr"',
+    'Note="Inflicts %{(level+1)//2}d4 HP poison (<b>save basic Fortitude</b>) when touched once per hr"',
   'Riverside Tripkee':'Section=ability Note="Has a 15\' swim Speed"',
   'Snaptongue Tripkee':
     'Section=feature ' +
@@ -6350,7 +6350,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Croak Talker':'Section=skill Note="Can converse with amphibians"',
   "Hunter's Defense":
     'Action=Reaction ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Can use Nature DC instead of Armor Class vs. a nature creature once per hr"',
   'Jungle Strider':
     'Section=ability,skill ' +
@@ -6380,12 +6380,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=ability ' +
     'Note="Has a %{skillNotes.stickytoeTripkee?20:10}\' climb Speed"',
   'Tenacious Net':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Nets require a successful DC 18 to Escape, and a successful Escape leaves the target off-guard until the start of their next turn"',
   'Tripkee Glide':
     'Action=1 ' +
     'Section=ability ' +
-    'Note="Can glide 5\' down and up to 25\' forward each rd with a hand free"',
+    'Note="Glides 5\' down and up to 25\' forward each rd; requires a free hand"',
   'Vomit Stomach':
     'Action=Reaction ' +
     'Section=save ' +
@@ -6399,7 +6399,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Successful DC 10 flat check ends persistent fire and cold damage and gives fire and cold resistance %{level//2} for 1 min once per day"',
   'Ricocheting Leap':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Can use Wall Jump to carom off creatures that are larger than self and to Shove or Trip a creature once per turn"',
   'Tongue Tether':
     'Section=combat ' +

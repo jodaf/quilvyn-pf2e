@@ -7521,7 +7521,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="+%{rank.Performance>=3?2:1} checks on a chosen Performance type"',
   'Wall Jump':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Can follow a jump that ends next to a wall with another 1-action jump%{rank.Athletics<4?\' once per turn\':\'\'}"',
   'Ward Medic':
     'Section=skill ' +
