@@ -3065,8 +3065,7 @@ Pathfinder2E.FEATURES = {
     'Note="+1 vs. emotion effects, and successes vs. emotion effects are critical successes"',
   'Nimble Elf':'Section=ability Note="+5 Speed"',
   'Otherworldly Magic':
-    'Section=magic ' +
-    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
+    'Section=magic Note="Can cast a chosen arcane innate cantrip at will"',
   'Unwavering Mien':
     'Section=save ' +
     'Note="Reduces the duration of mental effects lasting at least 2 rd by 1 rd/Saves vs. sleep effects gain +1 degree of success"',
@@ -3098,7 +3097,7 @@ Pathfinder2E.FEATURES = {
     'Section=feature,magic ' +
     'Note=' +
       '"Has the fey trait",' +
-      '"Can cast a chosen primal cantrip as an innate spell at will and can spend 10 min to choose a different cantrip once per day"',
+      '"Can cast a chosen primal innate cantrip at will and can spend 10 min to choose a different cantrip once per day"',
   'Gnome Heritage':'Section=feature Note="1 selection"',
   // Low-Light Vision as above
   'Sensate Gnome':
@@ -3107,14 +3106,11 @@ Pathfinder2E.FEATURES = {
   'Umbral Gnome':'Section=feature Note="Has the Darkvision feature"',
   'Wellspring Gnome':'Section=feature Note="1 selection"',
   'Wellspring Gnome (Arcane)':
-    'Section=magic ' +
-    'Note="Can cast a chosen arcane cantrip as an innate spell at will"',
+    'Section=magic Note="Can cast a chosen arcane innate cantrip at will"',
   'Wellspring Gnome (Divine)':
-    'Section=magic ' +
-    'Note="Can cast a chosen divine cantrip as an innate spell at will"',
+    'Section=magic Note="Can cast a chosen divine innate cantrip at will"',
   'Wellspring Gnome (Occult)':
-    'Section=magic ' +
-    'Note="Can cast a chosen occult cantrip as an innate spell at will"',
+    'Section=magic Note="Can cast a chosen occult innate cantrip at will"',
 
   'Animal Accomplice':'Section=feature Note="Has the Familiar feature"',
   'Burrow Elocutionist':'Section=skill Note="Can speak with burrowing animals"',
@@ -3125,8 +3121,7 @@ Pathfinder2E.FEATURES = {
       '"+2 vs. fey",' +
       '"+2 Perception (fey)/Can make a%{$\'features.Glad-Hand\'?\'\':\' -5\'} Diplomacy check to Make An Impression upon meeting fey and retry a failure after 1 min of conversation"',
   'First World Magic':
-    'Section=magic ' +
-    'Note="Can cast a chosen %{gnomeTradition} cantrip as an innate spell at will"',
+    'Section=magic Note="Can cast a chosen %V innate cantrip at will"',
   'Gnome Obsession':
     'Section=skill ' +
     // NOTE: would like to replace "background Lore skill" with the actual
@@ -3169,10 +3164,9 @@ Pathfinder2E.FEATURES = {
     'Note="Has fire resistance %{level//2>?1} and ends persistent fire damage with success on a DC 10 flat check, or on a DC 5 flat check with help"',
   'Goblin Heritage':'Section=feature Note="1 selection"',
   'Irongut Goblin':
-    'Section=feature,save ' +
+    'Section=save ' +
     'Note=' +
-      '"Can safely eat garbage and when sickened",' +
-      '"+2 vs. conditions inflicted by ingestion, and successes on Fortitude saves vs. ingestion conditions are critical successes"',
+      '"Can safely eat garbage and when sickened, +2 vs. conditions inflicted by ingestion, and successes on Fortitude saves vs. ingestion conditions are critical successes"',
   'Razortooth Goblin':
     'Section=combat Note="Jaws attack inflicts 1d6 HP piercing"',
   'Snow Goblin':
@@ -3191,7 +3185,7 @@ Pathfinder2E.FEATURES = {
       '"Fire spells inflict additional damage equal to half the spell level"',
   'City Scavenger':
     'Section=skill ' +
-    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist checks/Can attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival checks to Earn Income from using Subsist in a settlement"',
+    'Note="+%{1+($\'features.Irongut Goblin\'?1:0)} Subsist and can attempt +%{1+($\'features.Irongut Goblin\'?1:0)} Society or Survival to Earn Income from using Subsist in a settlement"',
   'Goblin Lore':
     'Section=skill Note="Skill Trained (Nature; Stealth; Goblin Lore)"',
   'Goblin Scuttle':
@@ -3209,7 +3203,7 @@ Pathfinder2E.FEATURES = {
       '"Has access to uncommon goblin weapons"',
   'Junk Tinker':
     'Section=skill ' +
-    'Note="Can use Crafting on junk to create shoddy level 0 items and suffers no penalty when using them"',
+    'Note="Can use Crafting on junk to create shoddy level 0 items and suffers no penalty from using them"',
   'Rough Rider':
     'Section=feature,skill ' +
     'Note=' +
@@ -7513,7 +7507,7 @@ Pathfinder2E.FEATURES = {
     'Note="Successful check on the related skill activates a magic item until the end of the turn"',
   'Underwater Marauder':
     'Section=combat ' +
-    'Note="Does not suffer flat-footed or penalties using bludgeoning and slashing melee weapons in water"',
+    'Note="Does not suffer flat-footed or penalties from using bludgeoning and slashing melee weapons in water"',
   'Unified Theory':
     'Section=skill ' +
     'Note="Can use Arcana in place of Nature, Occultism, or Religion"',
@@ -14783,7 +14777,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         'features.Fighter Dedication', '+', '1'
       );
     });
-  } else if(name == 'First World Adept') {
+  } else if(name.match(/^First World (Adept|Magic)$/)) {
     rules.defineRule('magicNotes.' + prefix, 'gnomeTradition', '=', null);
   } else if(name == 'General Training') {
     rules.defineRule
@@ -15323,14 +15317,23 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           }
         });
       }
-      matchInfo = n.match(/\s(arcane|divine|occult|primal)\s/);
-      if(matchInfo && n.match(/innate (cantrip|hex|spell)/)) {
+      matchInfo =
+        n.match(/(arcane|divine|occult|primal|%V) innate (cantrip|hex|spell)/);
+      if(matchInfo) {
         let trad =
           matchInfo[1].charAt(0).toUpperCase() + matchInfo[1].substring(1);
-        rules.defineRule('rank.' + trad + ' Innate',
-          'features.' + name, '=', '1',
-          'rank.' + trad, '^', null
-        );
+        for(let t in {'Arcane':'', 'Divine':'', 'Occult':'', 'Primal':''}) {
+          if(trad != '%V' && trad != t)
+            continue;
+          if(trad == '%V')
+            rules.defineRule(prefix + 'Is' + t,
+              'features.' + name, '?', 'source=="' + t +'"'
+            );
+          rules.defineRule('rank.' + trad + ' Innate',
+            trad == '%V' ? prefix + 'Is' + t : ('features.' + name), '=', '1',
+            'rank.' + trad, '^', null
+          );
+        }
       }
       matchInfo = n.match(/Spell Trained \((.*)\)/);
       if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name + ':Bloodline')) {
