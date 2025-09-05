@@ -1372,7 +1372,9 @@ Pathfinder2ERemaster.FEATS = {
   'Distracting Shadows':Pathfinder2E.FEATS['Distracting Shadows'],
   'Folksy Patter':'Traits=Halfling',
   'Halfling Lore':Pathfinder2E.FEATS['Halfling Lore'],
-  'Halfling Luck':Pathfinder2E.FEATS['Halfling Luck'],
+  'Halfling Luck':
+    Pathfinder2E.FEATS['Halfling Luck'] + ' ' +
+    'Require="features.Jinxed Halfling == 0"',
   'Halfling Weapon Familiarity':
     Pathfinder2E.FEATS['Halfling Weapon Familiarity'],
   'Prairie Rider':'Traits=Halfling',
@@ -4911,13 +4913,13 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use 1 hr work to give an item +%{rank.Crafting<3?1:rank.Crafting<4?2:3} Hardness for 24 hr"',
   'Echoes In Stone':
     'Action=1 ' +
-    'Section=feature ' +
+    'Section=skill ' +
     'Note="Gives 20\' imprecise tremorsense when standing on earth or stone until the start of the next turn"',
   "Mountain's Stoutness":Pathfinder2E.FEATURES["Mountain's Stoutness"],
   'Stone Bones':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Successful DC 17 flat check turns a physical critical hit into a normal hit"',
+    'Note="Successful DC 17 flat check turns the triggering physical critical hit on self into a normal hit"',
   'Stonewalker':
     Pathfinder2E.FEATURES.Stonewalker
     .replace('Stonecunning', "Stonemason's Eye")
@@ -4925,10 +4927,10 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'March The Mines':
     'Action=2 ' +
-    'Section=combat ' +
+    'Section=ability ' +
     'Note="Gains a 15\' Burrow Speed and Strides or Burrows twice; can take along an adjacent willing ally"',
   'Telluric Power':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Melee Strikes vs. a foe standing on the same earth or stone surface inflict additional damage equal to the number of weapon damage dice"',
   'Stonegate':
     'Section=magic ' +
@@ -4979,6 +4981,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="%{level>=11?\'Skill Trained (Simple Weapons; Martial Weapons; Advanced Weapons)\':\'+\'+level+\' attack with untrained weapons\'}"',
   'Elf Step':Pathfinder2E.FEATURES['Elf Step'],
   'Expert Longevity':Pathfinder2E.FEATURES['Expert Longevity'],
+  // NOTE: Tradition determined by another feature
   'Otherworldly Acumen':
     'Section=magic ' +
     'Note="Knows 1 chosen 2nd-rank innate spell; can cast it once per day and use a day of downtime to change the spell chosen"',
@@ -5036,7 +5039,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Project Persona':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Places an illusion of normal clothing over self armor"',
+    'Note="Covers self with an illusion of clothing that disguises armor"',
   'Cautious Curiosity':
     'Section=magic ' +
     'Note="Knows the Disguise Magic and Silence %V innate spells; can cast each on self at 2nd rank once per day"',
@@ -5051,7 +5054,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Vivacious Conduit':Pathfinder2E.FEATURES['Vivacious Conduit'],
   'Instinctive Obfuscation':
     'Action=Reaction ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Forces a DC 10 flat check on an attacking foe once per hr; failure negates the attack"',
   'Homeward Bound':
     'Section=magic ' +
@@ -5100,7 +5103,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Cling':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="After a successful Strike with a hand free, can latch onto the target until a successful DC %{10+skillModifiers.Acrobatics} Escape"',
+    'Note="After a successful Strike with a hand free, latches onto the target until it succeeds on a DC %{10+skillModifiers.Acrobatics} Escape"',
   'Skittering Scuttle':Pathfinder2E.FEATURES['Skittering Scuttle'],
   'Very, Very Sneaky':Pathfinder2E.FEATURES['Very, Very Sneaky'],
   'Reckless Abandon':
@@ -5114,7 +5117,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Hillock Halfling':Pathfinder2E.FEATURES['Hillock Halfling'],
   'Jinx':
     'Action=2 ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="R30\' Inflicts clumsy 1 for 1 min (<b>save Will</b> negates; critical failure inflicts clumsy 2 for 1 min) once per day"',
   'Jinxed Halfling':'Section=feature Note="Has the Jinx feature"',
   'Keen Eyes':Pathfinder2E.FEATURES['Keen Eyes'],
@@ -5211,7 +5214,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="General Feat (Choose 1 from any up to level 7)"',
   'Bounce Back':
     'Action=Free ' +
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Recovery from dying does not increase the wounded condition once per day"',
   'Stubborn Persistence':
     'Section=save Note="Successful DC 17 flat check negates becoming fatigued"',
@@ -5240,11 +5243,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can walk at %{speed//2}\' Speed across still liquids and Balance to move across flowing water"',
   'Plant Nourishment':'Section=feature Note="Gains nourishment from nature"',
   'Root Leshy':
-    'Section=combat,feature,save ' +
+    'Section=combat,combat,save ' +
     'Note=' +
       '"+2 Hit Points",' +
-      '"Can go 2 weeks without sunlight before starving",' +
-      '"+2 vs. attempts to Reposition, Shove, or Trip and spells and effects that move or knock prone"',
+      '"+2 vs. attempts to Reposition, Shove, or Trip and spells and effects that move or knock prone",' +
+      '"Can go 2 weeks without sunlight before starving"',
   'Seaweed Leshy':
     'Section=ability,ability ' +
     'Note=' +
@@ -5258,10 +5261,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Can reach 10\' with two-handed weapons that inflict at least 1d6 HP; doing so reduces the damage die by 1 step"',
   'Harmlessly Cute':
-    'Section=feature,skill ' +
+    'Section=combat,feature ' +
     'Note=' +
-      '"Has the Shameless Request feature",' +
-      '"+1 initiative when using Deception"',
+      '"+1 initiative when using Deception",' +
+      '"Has the Shameless Request feature"',
   'Leshy Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5284,7 +5287,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Has the Anchor and Steady Balance features"',
   'Anchor':
     'Action=1 ' +
-    'Section=save ' +
+    'Section=combat ' +
     'Note="Gives +%{$\'features.Root Leshy\'?4:2} vs. Reposition, Shove, Trip, magical move, and magical knock prone and reduces the distance on a successful attempt by half; taking a move action ends"',
   'Leshy Glide':
     'Action=1 ' +
@@ -5437,7 +5440,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Callow May':
     'Section=combat,feature ' +
     'Note=' +
-      '"Rolling Deception for initiative makes foes that haven\'t acted off-guard vs. self",' +
+      '"Rolling Deception for initiative inflicts off-guard vs. self on foes that haven\'t acted",' +
       '"Has the Charming Liar feature"',
   'Dream May':
     'Section=save ' +
@@ -5596,10 +5599,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Clawed Catfolk':'Section=combat Note="Claws inflict 1d6 HP slashing"',
   'Hunting Catfolk':
     'Section=skill ' +
-    'Note="Has 30\' imprecise scent, and gains +2 to Track familiar scents"',
+    'Note="Has 30\' imprecise scent and gains +2 to Track familiar scents"',
   'Jungle Catfolk':
     'Section=ability ' +
-    'Note="Moves normally through undergrowth difficult terrain, and through undergrowth greater difficult terrain as difficult terrain"',
+    'Note="Moves normally through undergrowth difficult terrain and treats undergrowth greater difficult terrain as difficult terrain"',
   'Land On Your Feet':
     'Section=save ' +
     'Note="Takes half damage from falling and does not land prone"',
@@ -5690,9 +5693,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Reaction ' +
     'Section=combat ' +
     'Note="Strides up to %{speed}\' in response to a missed melee attack, triggering no reaction from the attacking foe"',
-  'Reliable Luck':'Section=save Note="Increased Cat\'s Luck effects"',
+  'Reliable Luck':'Section=save Note="Has increased Cat\'s Luck effects"',
   'Ten Lives':
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Successful DC 17 flat check upon dying instead inflicts 0 HP and dying 3"',
 
   // Hobgoblin
@@ -5852,11 +5855,15 @@ Pathfinder2ERemaster.FEATURES = {
       '"Weapon Familiarity (Kholo Weapons; Flail; Khopesh; Mambele; War Flail)",' +
       '"Has access to uncommon kholo weapons%{level>=5?\'/Critical hits with a kholo weapon, flail, khopesh, khopesh, mambele, or war flail inflict its critical specialization effect\':\'\'}"',
   'Pack Hunter':
-    'Section=skill Note="+2 to Aid and to allies\' checks to Aid self"',
+    // TODO duplicate note? put it in features? check other Aid notes
+    'Section=combat,skill ' +
+    'Note=' +
+      '"+2 to Aid and to allies\' checks to Aid self",' +
+      '"+2 to Aid and to allies\' checks to Aid self"',
   'Sensitive Nose':'Section=skill Note="Has 30\' imprecise scent"',
   'Absorb Strength':
     'Action=1 ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Consuming a piece of a foe\'s fresh corpse gives temporary Hit Points equal to the foe\'s level for 1 min once per hr"',
   'Distant Cackle':
     'Section=magic ' +
@@ -5899,7 +5906,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Adjacent foes suffer -1 attacks and skill checks once per foe per day (<b>save Will</b> negates)"',
   'First To Strike, First To Fall':
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Successful Strike in the 1st round on a foe that hasn\'t acted inflicts off-guard until the end of the next turn; reducing the foe to 0 HP by the end of that turn gives self and allies within 30\' an extra Step, Stride, or Strike until the end of the following turn"',
   'Impaling Bone':
     'Section=magic ' +
@@ -6068,7 +6075,8 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Feat (Choose 1 from Additional Lore (Astrology Lore), Additional Lore (Lizardfolk Lore))",' +
       '"Skill Trained (Survival; Choose 1 from Nature, Occultism)"',
   'Marsh Runner':
-    'Section=combat,skill ' +
+   // TODO ability or combat? check other Step notes
+    'Section=ability,skill ' +
    'Note=' +
      '"Can Step in difficult terrain caused by flooding, swamps, and quicksand",' +
      '"Using Acrobatics to Balance on narrow surfaces or marshy ground does not inflict off-guard, and successes to do so are critical successes"',
@@ -6478,7 +6486,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill,skill ' +
     'Note=' +
       '"Skill Trained (Nature)",' +
-      '"Can use Nature to Sense Direction and Subsist in the wilds"',
+      '"Can use Nature to Sense Direction and to Subsist in the wilds"',
   'Breath Of The Dragon':
     'Action=2 ' +
     'Section=combat ' +
@@ -7017,7 +7025,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Premonition Of Avoidance':
     'Action=Reaction ' +
     'Section=save ' +
-    'Note="Gives +2 save vs. triggering hazard"',
+    'Note="Gives +2 save vs. the triggering hazard"',
   // Reach Spell as above
   // Cantrip Expansion as above
   'Communal Healing':
@@ -7635,7 +7643,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Shield Warden':
     'Section=combat Note="Can use Shield Block to protect an adjacent ally"',
   'Triple Shot':Pathfinder2E.FEATURES['Triple Shot'],
-  'Blind-Fight':Pathfinder2E.FEATURES['Blind-Fight'],
+  'Blind-Fight':
+    Pathfinder2E.FEATURES['Blind-Fight']
+    .replace('flat-footed', 'off-guard'),
   'Disorienting Opening':
     'Section=combat ' +
     'Note="Successful Reactive Strike inflicts off-guard until the start of the next turn"',
@@ -8096,7 +8106,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Has increased Debilitating Strike effects"',
   'Critical Debilitation':Pathfinder2E.FEATURES['Critical Debilitation'],
   'Fantastic Leap':Pathfinder2E.FEATURES['Fantastic Leap'],
-  'Felling Shot':Pathfinder2E.FEATURES['Felling Shot'],
+  'Felling Shot':
+    Pathfinder2E.FEATURES['Felling Shot']
+    .replace('flat-footed', 'off-guard'),
   'Preparation':
     'Action=1 ' +
     'Section=combat ' +
@@ -12461,7 +12473,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Cat Fall':Pathfinder2E.FEATURES['Cat Fall'],
   'Charming Liar':Pathfinder2E.FEATURES['Charming Liar'],
   'Cloud Jump':Pathfinder2E.FEATURES['Cloud Jump'],
-  'Combat Climber':Pathfinder2E.FEATURES['Combat Climber'],
+  'Combat Climber':
+    Pathfinder2E.FEATURES['Combat Climber']
+    .replace('flat-footed', 'off-guard'),
   'Communal Crafting':
     'Section=skill ' +
     'Note="Can reduce the cost of crafting items by giving or receiving assistance"',
@@ -12526,7 +12540,9 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill Note="Can use monster bodies with Survival to craft items"',
   'Multilingual':Pathfinder2E.FEATURES.Multilingual,
   'Natural Medicine':Pathfinder2E.FEATURES['Natural Medicine'],
-  'Nimble Crawl':Pathfinder2E.FEATURES['Nimble Crawl'],
+  'Nimble Crawl':
+    Pathfinder2E.FEATURES['Nimble Crawl']
+    .replace('flat-footed', 'off-guard'),
   'No Cause For Alarm':
     'Section=skill ' +
     'Note="Successful Diplomacy reduces frightened levels by 1 in a 10\' emanation, or by 2 on a critical success"',
@@ -12599,7 +12615,9 @@ Pathfinder2ERemaster.FEATURES = {
   'Toughness':Pathfinder2E.FEATURES.Toughness,
   'Train Animal':Pathfinder2E.FEATURES['Train Animal'],
   'Trick Magic Item':Pathfinder2E.FEATURES['Trick Magic Item'],
-  'Underwater Marauder':Pathfinder2E.FEATURES['Underwater Marauder'],
+  'Underwater Marauder':
+    Pathfinder2E.FEATURES['Underwater Marauder']
+    .replace('flat-footed', 'off-guard'),
   'Unified Theory':Pathfinder2E.FEATURES['Unified Theory'],
   'Unmistakable Lore':Pathfinder2E.FEATURES['Unmistakable Lore'],
   // Computation has changed
@@ -15340,7 +15358,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Gives 5 targets resistance 10 vs. triggering physical or energy damage (<b>heightened +1</b> gives resistance +1)"',
+      '"R30\' Gives 5 targets resistance 10 vs. the triggering physical or energy damage (<b>heightened +1</b> gives resistance +1)"',
   'Seal Fate':
     'Level=4 ' +
     'Traits=Concentrate,Curse,Death,Manipulate ' +
@@ -15822,7 +15840,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"Gives resistance 10 vs. triggering electricity and stores the excess damage to be released with a R60\' single-action spell attack within 1 min (<b>heightened 7th</b> gives resistance 15 and allows immediate release of stored damage; <b>10th</b> gives resistance 20)"',
+      '"Gives resistance 10 vs. the triggering electricity damage and stores the excess damage to be released with a R60\' single-action spell attack within 1 min (<b>heightened 7th</b> gives resistance 15 and allows immediate release of stored damage; <b>10th</b> gives resistance 20)"',
   'Door To Beyond':
     'Level=4 ' +
     'Traits=Cleric,Uncommon,Concentrate,Focus ' +
@@ -17411,10 +17429,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule('magicNotes.harmonizeSelf', 'monkTradition', '=', null);
   } else if(name == 'Homeward Bound') {
     rules.defineRule('magicNotes.homewardBound', 'gnomeTradition', '=', null);
-  } else if(name.match(/^(Improved|Supreme) Invigorating Elixir/)) {
-    rules.defineRule('skillNotes.invigoratingElixir',
-      'skillNotes.' + prefix, '=', 'null' // italics
-    );
   } else if(name == 'Interweave Dispel') {
     rules.defineRule('knowsDispelMagicSpell',
       'spells.Dispel Magic (A2)', '=', '1',
@@ -17457,10 +17471,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       // Note: Ignore Sweep trait currently not shown on character sheet
     }
     rules.defineRule('combatNotes.' + prefix + '-1', 'level', '?', 'source>=5');
-  } else if(name == 'Lasting Armament') {
-    rules.defineRule('combatNotes.sanctifyArmament',
-      'combatNotes.lastingArmament', '=', 'null' // italics
-    );
   } else if(name == 'Linguist Dedication') {
     rules.defineRule
       ('features.Multilingual', 'features.Linguist Dedication', '+', '1');
@@ -17526,9 +17536,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
   } else if(name.startsWith('Qi Spells')) {
     rules.defineRule('features.Qi Spells', 'features.' + name, '=', '1');
-  } else if(name == 'Reliable Luck') {
-    rules.defineRule
-      ("saveNotes.cat'sLuck", 'saveNotes.reliableLuck', '=', 'null'); // italics
   } else if(name == 'Saber Teeth') {
     rules.defineRule('weapons.Jaws', 'combatNotes.saberTeeth', '=', '1');
     rules.defineRule
