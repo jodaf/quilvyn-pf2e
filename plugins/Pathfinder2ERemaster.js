@@ -11608,15 +11608,16 @@ Pathfinder2ERemaster.FEATURES = {
   // Evasiveness as above
 
   'Acrobat Dedication':
-    'Section=skill,skill ' +
+    'Section=combat,skill ' +
     'Note=' +
-      '"Skill %V (Acrobatics)",' +
-      '"Critical success on Tumble Through to traverse a foe\'s space makes the space normal terrain"',
+      '"Critical success on Tumble Through to traverse a foe\'s space makes the space normal terrain",' +
+      '"Skill %V (Acrobatics)"',
   'Contortionist':
-    'Section=feature,skill ' +
+    'Section=combat,feature,skill ' +
     'Note=' +
+      '"Successful Escape using Acrobatics inflicts off-guard vs. next self attack before the end of the next turn",' +
       '"Has the Quick Squeeze feature",' +
-      '"Successful Escape using Acrobatics inflicts off-guard vs. next self attack before the end of the next turn%{rank.Acrobatics>=3?\'/Can Squeeze at full speed\':\'\'}"',
+      '"Can Squeeze at full speed"',
   'Dodge Away':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -11681,10 +11682,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Uses a single attack to Shove or Trip an adjacent creature, then make a ranged Strike"',
 
   'Assassin Dedication':
-    'Section=combat,combat ' +
+    'Section=combat,feature ' +
     'Note=' +
-      '"Has the Mark For Death and Sneak Attack features",' +
-      '"Sneak Attack on a marked target inflicts +1d%{level<6?4:6} HP precision, or +%{level<6?1:2} HP precision from an existing Sneak Attack ability"',
+      '"Sneak Attack on a marked target inflicts +1d%{level<6?4:6} HP precision, or +%{level<6?1:2} HP precision from an existing Sneak Attack ability",' +
+      '"Has the Mark For Death and Sneak Attack features"',
   'Mark For Death':
     'Action=3 ' +
     'Section=combat ' +
@@ -11701,14 +11702,14 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Strike on marked target inflicts +6d6 HP precision (<b>save basic Fortitude</b>; critical failure by targets up to level %{level} inflicts death) once per target per day"',
 
-  'Bastion Dedication':'Section=combat Note="Has the Reactive Shield feature"',
+  'Bastion Dedication':'Section=feature Note="Has the Reactive Shield feature"',
   'Disarming Block':
     'Action=Free ' +
     'Section=combat ' +
     'Note="Follows a successful Shield Block with a Disarm attempt"',
   'Nimble Shield Hand':
     'Section=combat ' +
-    'Note="Can hold or Interact with an object using a hand holding a non-tower shield"',
+    'Note="Can hold or Interact with an object using a hand that holds a non-tower shield"',
   'Destructive Block':
     'Section=combat ' +
     'Note="Can use Shield Block to negate damage equal to double the shield\'s Hardness by doubling the amount of damage to the shield"',
@@ -11732,7 +11733,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool"',
   'Swift Guardian':
     'Action=Free ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Uses Call Companion during initiative"',
   'Incredible Beastmaster Companion':
     'Section=feature Note="Has the Incredible Companion feature"',
@@ -11760,7 +11761,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent targeted spell cast on an ally has Mercy effects once per 10 min"',
   'Blessed Denial':
     'Action=Reaction ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="R30\' Reduces by 1 the severity of the triggering frightened, drained, enfeebled, sickened, or stupefied effect on an ally"',
 
   'Bounty Hunter Dedication':
@@ -11906,7 +11907,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can swap Duelist Dedication feats during daily prep, and can enter any duelist stance by using twice the normal number of actions"',
 
   'Eldritch Archer Dedication':
-    'Section=combat,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
       '"Has the Eldritch Shot and Eldritch Archer Tradition features",' +
       '"Spell Trained (%V)"',
@@ -11923,7 +11924,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Bow or crossbow Strike inflicts +2d6 HP mental, or +3d6 HP or +4d6 HP with a <i>greater striking rune</i> or <i>major striking rune</i>, plus stunned 1 on a critical hit"',
   'Magic Ammunition':
-    'Section=combat Note="Has the Transform Ammunition feature"',
+    'Section=feature Note="Has the Transform Ammunition feature"',
   'Transform Ammunition':
     'Action=Free ' +
     'Section=combat ' +
@@ -17195,6 +17196,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venomous'], null
     );
     rules.defineRule('weapons.Cobra Fang', 'features.Cobra Stance', '=', '1');
+  } else if(name == 'Contortionist') {
+    rules.defineRule
+      ('skillNotes.contortionist', 'rank.Acrobatics', '?', 'source >= 3');
   } else if(name.startsWith('Crossblooded Evolution')) {
     rules.defineRule
       ('features.Crossblooded Evolution', 'features.' + name, '=', '1');
@@ -17324,9 +17328,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       );
       rules.defineRule('magicNotes.eldritchArcherDedication',
         'eldritchArcherFeatures.' + t, '=', '"' + t + '"'
-      );
-      rules.defineRule('rank.' + t,
-        'magicNotes.eldritchArcherDedication', '=', 'source=="' + t + '" ? 1 : null'
       );
       rules.defineRule('spellModifier' + t + '.Eldritch Archer',
         'eldritchArcherFeatures.' + t, '?', null,

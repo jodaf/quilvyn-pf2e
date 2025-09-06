@@ -7147,10 +7147,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%{sorcererTraditions})/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
+    'Note="Spell Expert (%V)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%{sorcererTraditions})/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
+    'Note="Spell Master (%V)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -14583,6 +14583,8 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
         }
       });
     }
+    if(name.match(/(Expert|Master) Sorcerer/))
+      rules.defineRule('magicNotes.' + prefix, 'sorcererTraditions', '=', null);
   } else if((matchInfo = name.match(/^Canny Acumen \((.*)\)$/)) != null) {
     let target = matchInfo[1];
     let note =
@@ -14955,9 +14957,6 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
       'sorcererTraditionsLowered', '=', null
     );
     ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
-      rules.defineRule('trainingLevel.' + t,
-        'magicNotes.sorcererDedication', '^=', 'source.includes("' + t + '") ? 1 : null'
-      );
       rules.defineRule('spellSlots.' + t.charAt(0) + 'C1',
         'magicNotes.sorcererDedication', '+=', 'source.includes("' + t + '") ? 2 : null'
       );
@@ -15228,6 +15227,36 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
             (choices + ' * ' + rank);
           rules.defineRule('choiceCount.' + group, note, '+=', choiceCount);
         }
+        if(group == 'Spell') {
+          let trad = matchInfo[3];
+          if(trad == '%V') {
+            ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+              rules.defineRule('trainingLevel.' + t,
+                note, '^=', 'source.includes("' + t + '") ? ' + rank + ' : null'
+              );
+            });
+          } else if(((rules.getChoices('levels') || {}).Sorcerer || '').includes(name + ':Bloodline')) {
+            rules.defineRule('sorcerer' + trad + 'Level',
+              'sorcererTraditions', '?', 'source && source.includes("' + trad + '")',
+              'levels.Sorcerer', '=', null
+            );
+            rules.defineRule('sorcererTraditions',
+              'features.' + name, '=', 'Pathfinder2E.sorcererTraditions = !Pathfinder2E.sorcererTraditions ? "' + trad + '" : !Pathfinder2E.sorcererTraditions.includes("' + trad + '") ? Pathfinder2E.sorcererTraditions + "; ' + trad + '" : Pathfinder2E.sorcererTraditions'
+            );
+            rules.defineRule('features.Advanced Bloodline (' + name + ')',
+              'features.Advanced Bloodline', '?', null,
+              'features.' + name, '=', '1'
+            );
+            rules.defineRule('features.Basic Bloodline Spell (' + name + ')',
+              'features.Basic Bloodline Spell', '?', null,
+              'features.' + name, '=', '1'
+            );
+            rules.defineRule('features.Greater Bloodline (' + name + ')',
+              'features.Greater Bloodline', '?', null,
+              'features.' + name, '=', '1'
+            );
+          }
+        }
       }
       matchInfo = n.match(/Perception\s(Expert|Legendary|Master|Trained)$/i);
       if(matchInfo) {
@@ -15335,28 +15364,10 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           );
         }
       }
-      matchInfo = n.match(/Spell Trained \((.*)\)/);
-      if(matchInfo && ((rules.getChoices('levels') || {}).Sorcerer || '').includes(name + ':Bloodline')) {
-        let trad = matchInfo[1];
-        rules.defineRule('sorcerer' + trad + 'Level',
-          'sorcererTraditions', '?', 'source && source.includes("' + trad + '")',
-          'levels.Sorcerer', '=', null
-        );
-        rules.defineRule('sorcererTraditions',
-          'features.' + name, '=', 'Pathfinder2E.sorcererTraditions = !Pathfinder2E.sorcererTraditions ? "' + trad + '" : !Pathfinder2E.sorcererTraditions.includes("' + trad + '") ? Pathfinder2E.sorcererTraditions + "; ' + trad + '" : Pathfinder2E.sorcererTraditions'
-        );
-        rules.defineRule('features.Advanced Bloodline (' + name + ')',
-          'features.Advanced Bloodline', '?', null,
-          'features.' + name, '=', '1'
-        );
-        rules.defineRule('features.Basic Bloodline Spell (' + name + ')',
-          'features.Basic Bloodline Spell', '?', null,
-          'features.' + name, '=', '1'
-        );
-        rules.defineRule('features.Greater Bloodline (' + name + ')',
-          'features.Greater Bloodline', '?', null,
-          'features.' + name, '=', '1'
-        );
+      matchInfo = n.match(/Spell (Expert|Legendary|Master|Trained) \((.*)\)/);
+      if(matchInfo) {
+        let trad = matchInfo[2];
+        let prof = {Trained:1, Expert:2, Master:3, Legendary:4}[matchInfo[1]];
       }
       matchInfo = n.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
       if(matchInfo) {
