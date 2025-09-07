@@ -9903,7 +9903,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Enters a stance during initiative"',
   'Form Lock':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Successful Athletics check counteracts a polymorph effect affecting a grabbed or restrained foe once per target per day"',
   'Ironblood Surge':Pathfinder2E.FEATURES['Ironblood Surge'],
   'Mountain Quake':Pathfinder2E.FEATURES['Mountain Quake'],
@@ -12020,7 +12020,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can transcribe and repeat speech in unknown languages"',
   'Spot Translate':
     'Action=Reaction ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="R60\' Translates and repeats the triggering linguistic effect"',
   'Analyze Idiolect':
     'Section=skill ' +
@@ -12033,7 +12033,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="%{rank.Society<4?\'A 10-min interaction allows a Society check to\':\'Can\'} communicate with creatures that speak an unknown language"',
 
   'Marshal Dedication':
-    'Section=feature,save,skill ' +
+    'Section=combat,save,skill ' +
     'Note=' +
       '"Has a 15\' martial\'s aura emanation",' +
       '"Marshal\'s aura gives self and allies +1 vs. fear",' +
@@ -12085,7 +12085,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Makes a -2 ranged Strike in response to an ally\'s successful ranged Strike against the same foe"',
 
   'Martial Artist Dedication':
-    'Section=combat Note="Has the Powerful Fist feature"',
+    'Section=combat,combat  ' +
+    'Note=' +
+      '"Fists inflict 1d6 HP damage",' +
+      '"Suffers no attack penalty for inflicting lethal damage with unarmed attacks"',
   'Follow-Up Strike':
     'Action=1 ' +
     'Section=combat ' +
@@ -12097,7 +12100,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Path Of Iron':
     'Action=3 ' +
     'Section=combat ' +
-    'Note="Makes up to 3 attacks at the current multiple attack penalty during a Stride that triggers no reactions once per min"',
+    'Note="Makes up to 3 melee attacks at the current multiple attack penalty during a Stride that triggers no reactions once per min"',
 
   'Mauler Dedication':
     'Section=combat,combat ' +
@@ -12107,7 +12110,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Clear The Way':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Attempts to Shove up to 5 adjacent creatures at the current multiple attack penalty, then Strides up to %{speed//2}\', triggering no reaction from those successfully Shoved"',
+    'Note="Attempts to Shove up to 5 adjacent creatures at the current multiple attack penalty, then Strides up to %{speed//2}\', triggering no reactions from those successfully Shoved"',
   'Shoving Sweep':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -12138,15 +12141,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Resuscitate':
     'Action=3 ' +
     'Section=skill ' +
-    'Note="Success DC 40 Medicine check using healer\'s tools revives a creature dead up to 3 rd, increasing its wounded condition by 1, once per target per day"',
+    'Note="Successful DC 40 Medicine check using healer\'s tools revives a creature dead up to 3 rd, increasing its wounded condition by 1, once per target per day"',
 
   'Pirate Dedication':
-    'Section=ability,combat,feature ' +
+    'Section=ability,feature ' +
     'Note=' +
       '"Moves normally through difficult terrain and uneven ground caused by unstable ground",' +
-      '"Has the Boarding Assault feature",' +
       // TODO Not quite correct
-      '"Skill Feat (Choose 1 from any Additional Lore)"',
+      '"Has the Boarding Assault feature/Skill Feat (Choose 1 from any Additional Lore)"',
   'Boarding Assault':
     'Action=2 ' +
     'Section=combat ' +
@@ -12168,17 +12170,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful Demoralize forces the target to move along a chosen path up to its Speed once per target per 10 min; critical success allows forcing onto hazards"',
 
   'Poisoner Dedication':
-    'Section=skill,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
       '"Has the Advanced Alchemy feature",' +
       '"Can create 4 alchemical poison consumables during daily prep"',
   "Poisoner's Twist":
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Preceding successful melee Strike on a poisoned foe inflicts %{level<18?1:2}d6 HP of the Strike\'s damage type and %{level<18?1:2}d6 HP poison"',
+    'Note="After a successful melee Strike on a poisoned foe, inflicts an additional %{level<18?1:2}d6 HP of the Strike\'s damage type and %{level<18?1:2}d6 HP poison"',
   'Advanced Poisoncraft':
     'Section=skill Note="Has increased Advanced Alchemy effects"',
-  'Poison Coat':'Section=combat Note="Has the Once Bitten feature"',
+  'Poison Coat':'Section=feature Note="Has the Once Bitten feature"',
   'Once Bitten':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -12196,7 +12198,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="+2 checks to perform rituals/Knows %{level//4*2} uncommon rituals of up to level %{level//4*2}"',
   'Flexible Ritualist':
     'Section=magic ' +
-    'Note="Can serve as both primary and a secondary caster for rituals"',
+    'Note="Can serve as both the primary and a secondary caster for rituals"',
   'Resourceful Ritualist':
     'Section=magic ' +
     'Note="Can attempt rituals that require 1 degree higher proficiency"',
@@ -12241,17 +12243,17 @@ Pathfinder2ERemaster.FEATURES = {
       '"+2 to Trick scrolls, and critical failures to do so are normal failures"',
   'Basic Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 1st-rank spell scroll%{level<8?\'\':\' and a 2nd-rank spell scroll\'} during daily prep that last%{level<8?\'s\':\'\'} 1 day"',
+    'Note="Can create a 1st-rank spell scroll%{level<8?\'\':\' and a 2nd-rank spell scroll\'} that last%{level<8?\'s\':\'\'} 1 day during daily prep"',
   'Skim Scroll':
     'Action=1 ' +
     'Section=combat ' +
     'Note="Draws and uses Trick Magic Item on a scroll"',
   'Expert Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 3rd-rank spell scroll%{level<14?\'\':level<16?\' and a 4th-rank spell scroll\':\', a 4th-rank spell scroll, and a 5th-rank spell scroll\'} during daily prep that last%{level<14?\'s\':\'\'} 1 day"',
+    'Note="Can create a 3rd-rank spell scroll%{level<14?\'\':level<16?\' and a 4th-rank spell scroll\':\', a 4th-rank spell scroll, and a 5th-rank spell scroll\'} that last%{level<14?\'s\':\'\'} 1 day during daily prep"',
   'Master Scroll Cache':
     'Section=magic ' +
-    'Note="Can create a 6h-rank spell scroll%{level<20?\'\':\' and a 7th-rank spell scroll\'} during daily prep that last%{level<20?\'s\':\'\'} 1 day"',
+    'Note="Can create a 6h-rank spell scroll%{level<20?\'\':\' and a 7th-rank spell scroll\'} that last%{level<20?\'s\':\'\'} 1 day during daily prep"',
 
   'Scrounger Dedication':
     'Section=skill,skill ' +
@@ -12260,7 +12262,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"Can Craft items without appropriate tools and has formulas memorized"',
   'Cobble Together':
     'Section=skill ' +
-    'Note="Can use 10 min to Craft a common, shoddy item of up to level %{level//2} that lasts 1d4 hr; can target a creature that takes no shoddy penalty with it"',
+    'Note="Can use 10 min to Craft a common, shoddy item of up to level %{level//2} that lasts 1d4 hr; can target a creature that suffers no shoddy penalty from using it"',
   'Reverse Engineering':
     'Section=skill ' +
     'Note="Can use 1 day\'s work and a successful +2 Crafting check to reverse engineer a formula for a possessed item; a critical success allows simultaneously reassembling the item"', 
@@ -12275,7 +12277,7 @@ Pathfinder2ERemaster.FEATURES = {
     // TODO Heavy Armor if already trained in Medium Armor, and advances with other features
     'Note="Defense Trained (Light Armor; Medium Armor)"',
   'Steel Skin':
-    'Section=combat Note="Does not suffer fatigue from sleeping in armor"',
+    'Section=save Note="Does not suffer fatigue from sleeping in armor"',
   'Armor Specialist':
     'Section=combat Note="Gains the specialization effects of all proficient armors"',
   'Armored Rebuff':
@@ -12286,10 +12288,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save Note="Bulwark armor gives +4 on all Reflex saves"',
 
   'Snarecrafter Dedication':
-    'Section=skill,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
       '"Has the Snare Crafting feature",' +
-      '"Can craft snares in 3 actions instead of 1 min, and set snares have a DC of at least %{classDC}/Can prepare %{(rank.crafting<3?4:rank.Crafting<4?6:8)*(skillNotes.plentifulSnares?2:1)} snares during daily prep"',
+      '"Can craft snares in 3 actions instead of 1 min, can prepare %{(rank.crafting<3?4:rank.Crafting<4?6:8)*(skillNotes.plentifulSnares?2:1)} snares during daily prep, and snares have a DC of at least %{classDC}"',
   'Surprise Snare':
     'Action=3 ' +
     'Section=combat ' +
@@ -12309,15 +12311,17 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Trained in the use of talismans, can Craft %{2+(skillNotes.deeperDabbler?$\'features.Deeper Dabbler\'*2:0)} talismans of up to level %{level//2} during daily prep, and can use Affix A Talisman to affix or remove up to 4 talismans"',
   'Quick Fix':
-    'Section=skill ' +
-    'Note="Has the Rapid Affixture feature; can affix or remove 4 talismans in 1 min%{level<12?\'\':\' and Affix a Talisman as a 3-action activity\'}"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Rapid Affixture feature",' +
+      '"Has increased Rapid Affixture effects"',
   'Deeper Dabbler':
     'Section=skill Note="Has increased Talisman Dabbler Dedication effects"',
   'Talismanic Sage':
     'Section=skill Note="Can have 2 talismans affect an item simultaneously"',
 
   'Vigilante Dedication':
-    'Section=feature ' +
+    'Section=skill ' +
     'Note="Has separate social and vigilante identities; switching requires 1 min, and attempts by others to uncover require a successful %{20+skillModifiers.Deception} Seek"',
   'Hidden Magic':
     'Section=skill ' +
@@ -12341,7 +12345,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Statements that are true to the current identity do not detect as lies"',
   'Many Guises':
-    'Section=feature ' +
+    'Section=skill ' +
     'Note="Can assume other ordinary identities in addition to primary social and vigilante ones"',
   'Frightening Appearance':
     'Section=combat ' +
@@ -12350,7 +12354,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Has increased Startling Appearance effects"',
 
   'Viking Dedication':
-    'Section=ability,skill,skill ' +
+    'Section=ability,feature,skill ' +
     'Note=' +
       '"Moves normally through difficult terrain from shallow water",' +
       '"Has the Additional Lore (Sailing Lore) and Additional Lore (Warfare Lore) features",' +
@@ -12358,12 +12362,13 @@ Pathfinder2ERemaster.FEATURES = {
   'Hurling Charge':
     'Action=2 ' +
     'Section=combat ' +
-    'Note="Make a ranged thrown Strike, Strides, then draws a weapon without triggering reactions; if raging, the Stride inflicts off-guard on an adjacent foe"',
+    'Note="Makes a ranged thrown Strike, Strides, and then draws a weapon without triggering reactions; if raging, the Stride inflicts off-guard on an adjacent foe"',
   'Viking Weapon Familiarity':
-    'Section=combat,combat ' +
+    'Section=combat,combat,feature ' +
     'Note=' +
-      '"Has the Shield Block feature/Weapon Familiarity (Battle Axe; Hatchet; Longsword; Shield Boss; Shield Spikes; Shortsword)",' +
-      '"Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effect"',
+      '"Weapon Familiarity (Battle Axe; Hatchet; Longsword; Shield Boss; Shield Spikes; Shortsword)",' +
+      '"Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effect",' +
+      '"Has the Shield Block feature"',
   'Second Shield':
     'Action=Free ' +
     'Section=combat ' +
@@ -12381,7 +12386,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can gain +%{level<12?1:2} attack and %{level<16?2:3} damage dice with an improvised weapon, but the weapon breaks on a critical hit; critical hits with items that are difficult to break are normal hits"',
   'Surprise Strike':
     'Section=combat ' +
-    'Note="Foes that are unaware of self improvised weapon skills are off-guard to first Strike with one"',
+    'Note="Foes that are unaware of self improvised weapon skills are off-guard to the first Strike with one"',
   'Improvised Critical':
     'Section=combat ' +
     'Note="Critical hits with improvised weapon inflict an appropriate critical specialization effect"',
@@ -12395,11 +12400,12 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Critical hit using Improvised Pummel inflicts +3d6 HP piercing"',
 
   'Wrestler Dedication':
-    'Section=combat,save,skill ' +
+    'Section=combat,feature,save,skill ' +
     'Note=' +
       '"Suffers no penalty for inflicting lethal damage with nonlethal unarmed attacks",' +
+      '"Has the Titan Wrestler feature",' +
       '"+2 Fortitude DC to Grapple or Swallow Whole",' +
-      '"Skill Expert (Athletics)/Has the Titan Wrestler feature"',
+      '"Skill Expert (Athletics)"',
   'Disengaging Twist':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -12761,7 +12767,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Religious symbol allows self to act first when tied with a foe on initiative"',
   'Rapid Affixture':
     'Section=skill ' +
-    'Note="Can Affix A Talisman in %{rank.Crafting<4?\'1 min\':\'3 actions\'}"',
+    'Note="Can Affix %{skillNotes.quickFix?\'4 Talismans\':\'a Talisman\'} in %{rank.Crafting>=4?\'3 actions\':skillNotes.quickFix&&level>=12?\'3 actions\':\'1 min\'}"',
   'Risky Surgery':
     'Section=skill ' +
     'Note="Inflicting 1d8 HP slashing on a Treat Wounds patient to gives +2 on the subsequent check and makes a success into a critical success"',
@@ -17535,6 +17541,9 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
   } else if(name == 'Pirate Combat Training') {
     rules.defineRule
       ('combatNotes.' + prefix + '-1', 'level', '?', 'source >= 5');
+  } else if(name == 'Martial Artist Dedication') {
+    rules.defineRule
+      ('weaponDieSides.Fist', 'combatNotes.martialArtistDedication', '^', '6');
   } else if(name.startsWith('Qi Spells')) {
     rules.defineRule('features.Qi Spells', 'features.' + name, '=', '1');
   } else if(name == 'Saber Teeth') {
