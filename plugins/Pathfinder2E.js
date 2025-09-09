@@ -3426,7 +3426,7 @@ Pathfinder2E.FEATURES = {
     'Section=combat ' +
     'Note="Can increase bomb splash radius to %{$\'features.Expanded Splash\'?15:10}\'"',
   'Greater Field Discovery (Chirurgeon)':
-    'Section=combat ' +
+    'Section=skill ' +
     'Note="Created elixirs restore the maximum number of Hit Points"',
   'Greater Field Discovery (Mutagenist)':
     'Section=skill Note="Can use 2 polymorphic mutagens simultaneously"',
@@ -3730,7 +3730,7 @@ Pathfinder2E.FEATURES = {
     'Note="Stride keeps pace with a retreating foe during rage"',
   'Second Wind':
     'Section=combat ' +
-    'Note="Can rage again immediately after ending rage, suffering fatigue afterwards until after a 10 min rest"',
+    'Note="Can rage again immediately after ending rage; suffers fatigue afterwards until after a 10 min rest"',
   'Shake It Off':
     'Action=1 ' +
     'Section=save ' +
@@ -3803,7 +3803,7 @@ Pathfinder2E.FEATURES = {
   'Come And Get Me':
     'Action=1 ' +
     'Section=combat ' +
-    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success, until the rage ends"',
+    'Note="Suffers flat-footed and +2 HP foe damage until rage ends; successful attackers suffer flat-footed until the end of the next turn, and a successful Strike on an attacker during that time gives self %{constitutionModifier} temporary Hit Points, or %{constitutionModifier*2} temporary Hit Points on a critical success, until rage ends"',
   'Furious Sprint':
     'Action=2 ' +
     'Section=combat ' +
@@ -3858,7 +3858,7 @@ Pathfinder2E.FEATURES = {
   'Dragon Transformation':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'} during rage"',
+    'Note="Transforms into a Large dragon, as with 6th-level <i>Dragon Form</i>,%{level>=18?\' with +20 fly Speed, +12 dragon Strikes, and +14 HP breath weapon damage \':\'\'}for 1 min during rage"',
   'Reckless Abandon':
     'Action=Free ' +
     'Section=combat ' +
