@@ -15364,11 +15364,6 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
           );
         }
       }
-      matchInfo = n.match(/Spell (Expert|Legendary|Master|Trained) \((.*)\)/);
-      if(matchInfo) {
-        let trad = matchInfo[2];
-        let prof = {Trained:1, Expert:2, Master:3, Legendary:4}[matchInfo[1]];
-      }
       matchInfo = n.match(/^Has a focus pool( and (at least |\+)?(\d|%V) Focus Points?)?/);
       if(matchInfo) {
         rules.defineRule('features.Focus Pool', note, '=', '1');
