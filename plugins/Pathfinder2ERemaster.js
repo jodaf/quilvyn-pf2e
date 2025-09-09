@@ -6692,7 +6692,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Lingering Composition':
     Pathfinder2E.FEATURES['Lingering Composition'],
   'Martial Performance':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Successful Strike while <i>Courageous Anthem</i>, <i>Rallying Anthem</i>, or <i>Song Of Strength</i> is active extends the spell by 1 rd"',
   'Reach Spell':Pathfinder2E.FEATURES['Reach Spell'],
   'Versatile Performance':Pathfinder2E.FEATURES['Versatile Performance'],
@@ -6732,14 +6732,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Courageous Advance':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Subsequent <i>Courageous Anthem</i> casting allows 1 ally to use a reaction to Stride"',
+    'Note="Subsequent <i>Courageous Anthem</i> allows 1 ally to immediately use a reaction to Stride"',
   'In Tune':
     'Action=1 ' +
     'Section=magic ' +
     'Note="R60\' Subsequent composition spell emanation centers on a willing ally"',
   'Melodious Spell':
     'Action=1 ' +
-    'Section=skill ' +
+    'Section=magic ' +
     'Note="Subsequent spell cast gains the subtle trait"',
   'Rallying Anthem':
     'Section=magic Note="Knows the Rallying Anthem occult cantrip"',
@@ -6765,8 +6765,8 @@ Pathfinder2ERemaster.FEATURES = {
   'Steady Spellcasting':Pathfinder2E.FEATURES['Steady Spellcasting'],
   'Accompany':
     'Action=Reaction ' +
-    'Section=skill ' +
-    'Note="R30\' Successful Performance and sacrifice of a Focus Point or spell slot allows an ally to cast the triggering spell without expending a point or slot"',
+    'Section=magic ' +
+    'Note="R30\' Successful Performance and the sacrifice of a Focus Point or spell slot allows an ally to cast the triggering spell without expending a point or slot"',
   'Call And Response':
     'Action=1 ' +
     'Section=magic ' +
@@ -6787,7 +6787,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Courageous Assault':
     'Action=1 ' +
     'Section=magic ' +
-    'Note="Allows a chosen ally affected by a subsequent <i>Courageous Anthem</i> to immediately use a reaction to make a melee Strike"',
+    'Note="Subsequent <i>Courageous Anthem</i> allows 1 ally to immediately use a reaction to make a melee Strike"',
   'House Of Imaginary Walls':Pathfinder2E.FEATURES['House Of Imaginary Walls'],
   'Ode To Ouroboros':
     'Section=magic Note="Knows the Ode To Ouroboros occult spell"',
@@ -6813,7 +6813,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Successful Performance vs. creature Will DC, hazard Fortitude DC, or caster spell DC reflects %{level*2} HP sonic from the triggering effect back to its source, or %{level*4} on a critical success"',
   'Shared Assault':
-    'Section=magic ' +
+    'Section=combat ' +
    'Note="A critical hit by the target of Courageous Assault allows another ally affected by <i>Courageous Anthem</i> to immediately use a reaction to make a melee Strike"',
   'Allegro':Pathfinder2E.FEATURES.Allegro,
   'Earworm':
@@ -6898,7 +6898,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Unholy':'Section=feature Note="Has the unholy trait"',
   'Warpriest':Pathfinder2E.FEATURES.Warpriest
     .replace('Simple Weapons', 'Simple Weapons; Martial Weapons')
-    .replace('",', '%{level>=19?\'/Attack Master (%1)\':\'\'}",'),
+    .replace('",', '%{level>=19?\'/Attack Master (%2)\':\'\'}",'),
   // Weapon Specialization as above
 
   'Deadly Simplicity':Pathfinder2E.FEATURES['Deadly Simplicity'],
@@ -7203,7 +7203,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Raised symbol and a successful Religion check when taking melee damage inflicts enfeebled 1 on the attacker, or enfeebled 2 on a critical success, until the attacker moves away"',
   'Shared Replenishment':Pathfinder2E.FEATURES['Shared Replenishment'],
   'Channeling Block':
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell rank to the shield\'s Hardness"',
   "Deity's Protection":
     Pathfinder2E.FEATURES["Deity's Protection"]
@@ -7229,7 +7229,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Rebounding Smite':
     'Action=Reaction ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="Missed Strike using Channel Smite allows retargeting the <i>Harm</i> or <i>Heal</i>"',
   'Remediate':
     'Action=Free ' +
@@ -7238,7 +7238,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Resurrectionist':Pathfinder2E.FEATURES.Resurrectionist,
   'Divine Apex':
     'Section=magic ' +
-    'Note="Can give a worn magic item the apex trait and increase its divine attribute value by 1 during daily prep"',
+    'Note="Can give a worn magic item the apex trait for a chosen attribute during daily prep"',
   'Echoing Channel':
     Pathfinder2E.FEATURES['Echoing Channel']
     .replace('an adjacent', 'another'),
@@ -7411,7 +7411,7 @@ Pathfinder2ERemaster.FEATURES = {
     Pathfinder2E.FEATURES['Plant Shape']
     .replaceAll('Wild Shape', 'Untamed Form'),
   'Primal Howl':
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="Companion can use 2 actions to inflict 1d6 HP sonic per 2 levels and frightened 1 in a 30\' cone once per hr (<b>save basic Fortitude</b> also negates frightened; critical failure inflicts frightened 2)"',
   'Pristine Weapon':
     'Section=combat ' +
@@ -8580,14 +8580,17 @@ Pathfinder2ERemaster.FEATURES = {
   'Chirurgeon':
     // Once per target per 10 min comes from the Coagulant trait
     Pathfinder2E.FEATURES.Chirurgeon
-    .replace('Medicine', "Medicine/Can use versatile vials to restore Hit Points equal to their initial damage to a willing target within 20' once per target per 10 min"),
+    .replace('Section=', 'Section=combat,')
+    .replace('Note=', 'Note="Can use versatile vials to restore Hit Points equal to their initial damage to a willing target within 20\' once per target per 10 min",'),
   'Double Brew':Pathfinder2E.FEATURES['Double Brew'],
   'Explosion Dodger':Pathfinder2E.FEATURES.Evasion,
   'Field Discovery (Bomber)':Pathfinder2E.FEATURES['Calculated Splash'],
   'Field Discovery (Chirurgeon)':
-    'Section=skill Note="Crafted healing elixirs give %{intelligenceModifier>?0} temporary Hit Points for 1 min"',
+    'Section=skill ' +
+    'Note="Crafted healing elixirs give %{intelligenceModifier>?0} temporary Hit Points for 1 min"',
   'Field Discovery (Mutagenist)':
-    'Section=save Note="Can end a the effects of a mutagen to reroll a Fortitude save"',
+    'Section=save ' +
+    'Note="Can end a the effects of a mutagen to reroll a Fortitude save"',
   'Field Discovery (Toxicologist)':
     'Section=save Note="Has poison resistance %{level//2}"',
   'Formula Book':Pathfinder2E.FEATURES['Formula Book'],
@@ -8678,7 +8681,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="R30\' Ends the effects of a mutagen to inflict %{level//2}d6 HP acid and sickened 1 (<b>save basic Reflex</b> also negates sickened; critical failure inflicts sickened 2)"',
   'Tenacious Toxins':
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="Increases the duration of poisons by their stage 1 interval"',
   // Changed effects
   'Combine Elixirs':
@@ -8811,7 +8814,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Quick-Tempered':
     'Action=Free ' +
     'Section=combat ' +
-    'Note="Enters rage during initiative when unencumbered and in medium or lighter armor"',
+    'Note="Enters rage during initiative when unencumbered and in %{combatNotes.invulnerableRager?\'heavy\':\'medium\'} or lighter armor"',
   'Rage':
    Pathfinder2E.FEATURES.Rage
    .replace('-1 Armor Class and ', "%{levels.Barbarian?'':'-1 Armor Class and '}")
@@ -8946,13 +8949,11 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Melee Strikes against scent-detected foes ignore concealed and hidden"',
   'Invulnerable Rager':
-    'Section=combat,combat ' +
-    'Note=' +
-      '"Defense %V (Heavy Armor)",' +
-      '"Can use Quick-Tempered action in heavy armor"',
+    'Section=combat ' +
+    'Note="Defense %V (Heavy Armor)/Has increased Quick-Tempered effects"',
   'Renewed Vigor':
     Pathfinder2E.FEATURES['Renewed Vigor']
-    .replace('Hit Points during rage', 'Hit Points, or %{level+constitutionModifier} Hit Points after attacking, until the rage ends'),
+    .replace('Hit Points during rage', 'Hit Points, or %{level+constitutionModifier} Hit Points after attacking, until rage ends'),
   'Share Rage':Pathfinder2E.FEATURES['Share Rage'],
   // Sudden Leap as above
   'Thrash':Pathfinder2E.FEATURES.Thrash,
@@ -9018,7 +9019,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Dragon Transformation':
     Pathfinder2E.FEATURES['Dragon Transformation']
     .replace('level', 'rank')
-    .replace('during rage', 'once per 10 min during rage'),
+    .replace('during rage', 'during rage once per 10 min'),
   'Furious Vengeance':
     'Action=Reaction ' +
     'Section=combat ' +
@@ -9056,7 +9057,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed description
   'Blessed Armament':
     'Section=combat ' +
-    'Note="Can apply a choice of %{combatNotes.armamentParagon?\'<i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, <i>greater vitalizing</i>, \'+(combatNotes.radiantArmament?\'<i>greater astral</i>, <i>greater brilliant</i>, \':\'\'):\'\'}%{combatNotes.radiantArmament?\'<i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep%{combatNotes.radiantArmament?\' and use a \'+(combatNotes.armamentParagon?\'1-action\':\'10-min\')+\' activity to chance the choice\':\'\'}, and critical hits inflict its critical specialization effect"',
+    'Note="Can apply a choice of %{combatNotes.armamentParagon?\'<i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, <i>greater vitalizing</i>, \'+(combatNotes.radiantArmament?\'<i>greater astral</i>, <i>greater brilliant</i>, \':\'\'):\'\'}%{combatNotes.radiantArmament?\'<i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, \':\'\'}<i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep%{combatNotes.radiantArmament?\' and use a \'+(combatNotes.armamentParagon?\'1-action\':\'10-min\')+\' activity to change the choice\':\'\'}, and critical hits inflict its critical specialization effect"',
   'Blessed Shield':
     'Section=combat Note="+%V Shield Hardness/+%1 Shield Hit Points"',
   'Blessed Swiftness':
@@ -9121,7 +9122,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Iron Command':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Foe that inflicted the triggering damage suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura must also kneel or suffer \'+(level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6)+\' HP mental\':\'\'}"',
+    'Note="Foe that inflicted the triggering damage suffers its choice of kneeling or %{level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6}d6 HP mental%{combatNotes.ironRepercussions?\' or persistent mental\':\'\'}%{combatNotes.relentlessReaction?\' and \'+charismaModifier+\' HP persistent spirit\':\'\'}, and self Strikes vs. that foe inflict +%{level<9?1:level<16?2:3} HP spirit until the end of the next turn%{combatNotes.exaltedReaction?\'; other foes within aura must also kneel or suffer \'+(level<5?1:level<9?2:level<12?3:level<16?4:level<19?5:6)+\' HP mental\':\'\'}"',
   'Justice':
     'Section=feature,feature ' +
     'Note=' +
@@ -9262,8 +9263,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Faithful Steed':
     'Section=feature Note="Has a young animal companion as a mount"',
   'Iron Repercussions':
-    'Section=magic ' +
-    'Note="Iron Command can inflict persistent mental damage"',
+    'Section=combat Note="Has increased Iron Command effects"',
   'Nimble Reprisal':Pathfinder2E.FEATURES['Ranged Reprisal'],
   'Ongoing Selfishness':
     'Section=combat ' +
@@ -9302,7 +9302,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="2-action <i>Shields Of The Spirit</i> gives 1 ally the benefits of the spell for 1 min"',
   'Expand Aura':
     'Action=1 ' +
-    'Section=magic ' +
+    'Section=feature ' +
     'Note="Extends Champion\'s Aura to 30\' %{level<10?\'for 1 rd\':level<16?\'for 1 min\':\'until Dismissed\'}"',
   'Loyal Warhorse':Pathfinder2E.FEATURES['Loyal Warhorse'],
   // Reactive Strike as above
@@ -9444,7 +9444,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Changed description
   'Auspicious Mount':
     'Section=feature ' +
-    'Note="Mount is a specialized animal companion with celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, expert proficiency in Religion, ability to speak the language of %{deity}\'s servitors, flight, +%{level<18?20:level<20?25:30} Hit Points, and, as appropriate, the holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait"',
+    'Note="Mount is a specialized animal companion with the celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, expert proficiency in Religion, ability to speak the language of %{deity}\'s servitors, flight, +%{level<18?20:level<20?25:30} Hit Points, and, as appropriate, the holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait"',
   'Instrument Of Slaughter':
     'Section=combat ' +
     'Note="Critical hit on a Champion\'s Reaction that inflicts extra damage also inflicts persistent bleed damage equal to 2 damage dice"',
@@ -16202,7 +16202,7 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
   Pathfinder2E.combatRules(rules, armors, shields, weapons);
   // Define ancestry-specific unarmed attack weapons. Traits on some vary
   // between ancestries; these are modified by the individual features
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Beak', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
@@ -16210,42 +16210,42 @@ Pathfinder2ERemaster.combatRules = function(rules, armors, shields, weapons) {
     rules, 'Claws', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
     ['Agile', 'Finesse', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Fangs', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling', ['Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Hair', 'Unarmed', 0, '1d4 B', 0, 0, 'Brawling',
     ['Agile', 'Disarm', 'Finesse', 'Trip', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Hoof', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Jaws', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Nails', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
     ['Agile', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Slag Claws', 'Unarmed', 0, '1d6 S', 0, 0, 'Brawling',
     ['Grapple', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Spines', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Tail', 'Unarmed', 0, '1d6 B', 0, 0, 'Brawling',
     ['Sweep', 'Unarmed'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Talons', 'Unarmed', 0, '1d4 S', 0, 0, 'Brawling',
     ['Agile', 'Finesse', 'Unarmed', 'Versatile P'], null
   );
-  Pathfinder2E.weaponRules(
+  Pathfinder2ERemaster.weaponRules(
     rules, 'Tusks', 'Unarmed', 0, '1d6 P', 0, 0, 'Brawling',
     ['Finesse', 'Unarmed'], null
   );
@@ -16771,6 +16771,11 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule('clericFeatures.Unholy',
       'deitySanctification', '=', 'source=="Unholy" ? 1 : null'
     );
+    rules.defineRule('combatNotes.warpriest.2',
+      'features.Warpriest', '?', null,
+      'level', '?', 'source >= 19',
+      'deityWeapon', '=', null
+    );
     rules.defineRule('selectableFeatureCount.Cleric (Sanctification)',
       'featureNotes.sanctification', '?', null,
       'deitySanctification', '?', 'source=="Either"',
@@ -16998,6 +17003,11 @@ Pathfinder2ERemaster.deityRules = function(
   rules.defineRule('trainingCount.' + name + ' Lore',
     'skillNotes.beliefSkills.1', '+=', 'source=="' + name + ' Lore" ? 1 : null'
   );
+  if(weapon) {
+    rules.defineRule('trainingLevel.' + weapon,
+      'combatNotes.warpriest.2', '^', 'source=="' + weapon + '" ? 3 : null'
+    );
+  }
 };
 
 /*
@@ -17197,7 +17207,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
     rules.defineRule
       ('features.Greater Field Discovery', 'featureNotes.' + prefix, '=', '1');
   } else if(name == 'Cobra Stance') {
-    Pathfinder2E.weaponRules(
+    Pathfinder2ERemaster.weaponRules(
       rules, 'Cobra Fang', 'Unarmed', 0, '1d4 P', 0, 0, 'Brawling',
       ['Agile', 'Deadly d10', 'Finesse', 'Unarmed', 'Venomous'], null
     );
@@ -17570,7 +17580,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       "magicNotes.thunderGod'sFan", '+', '1'
     );
   } else if(name == 'Stumbling Stance') {
-    Pathfinder2E.weaponRules(
+    Pathfinder2ERemaster.weaponRules(
       rules, 'Stumbling Swing', 'Unarmed', 0, '1d8 B', 0, 0, 'Brawling',
       ['Agile', 'Backstabber', 'Finesse', 'Nonlethal', 'Unarmed'], null
     );
@@ -17877,7 +17887,7 @@ Pathfinder2ERemaster.weaponRules = function(
     );
 };
 
-/* Returns the elements in a basic 5E character editor. */
+/* Returns the elements in a basic PF2E character editor. */
 Pathfinder2ERemaster.initialEditorElements = function() {
   let result =
     Pathfinder2E.initialEditorElements()

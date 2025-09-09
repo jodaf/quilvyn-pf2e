@@ -296,7 +296,7 @@ var attributes = {
       <tr style="text-align:center">
         <td><b>Armor</b>: Padded</td>
         <td><b>Shield</b>: Wooden (+2 AC when raised; hardness 3; HP 12)</td>
-        <td><b>Weapons</b>: Crossbow (+28 1d10 P R120'; dexterity; expert); Fist (+28 1d4+4 B; strength; expert); Flail (+28 1d6+4 B; strength; expert); Longsword (+28 1d8+4 S/P; strength; expert)</td>
+        <td><b>Weapons</b>: Crossbow (+30 1d10 P R120'; dexterity; master); Fist (+28 1d4+4 B; strength; expert); Flail (+28 1d6+4 B; strength; expert); Longsword (+28 1d8+4 S/P; strength; expert)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -328,6 +328,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Channel Smite: <b>(2)</b> Adds the damage from a 1-action <i>Heal</i> or <i>Harm</i> to a melee Strike</td>
       </tr><tr style="text-align:center">
+        <td>Channeling Block: Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell rank to the shield's Hardness</td>
+      </tr><tr style="text-align:center">
         <td>Cloistered Cleric: Critical hits with a crossbow inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Divine Rebuttal: <b>(R)</b> Successful crossbow Strike against an adjacent foe gives allies +2 vs. its triggering magic effect, or +3 on a critical hit</td>
@@ -341,6 +343,8 @@ var attributes = {
         <td>Inviolable: Successful attacks on self inflict 3d6 HP spirit, holy, or unholy on the attacker</td>
       </tr><tr style="text-align:center">
         <td>Rapid Response: <b>(R)</b> Strides with +10 Speed toward an ally reduced to 0 Hit Points</td>
+      </tr><tr style="text-align:center">
+        <td>Rebounding Smite: <b>(R)</b> Missed Strike using Channel Smite allows retargeting the <i>Harm</i> or <i>Heal</i></td>
       </tr><tr style="text-align:center">
         <td>Replenishment Of War: Successful crossbow Strikes give self 10 temporary Hit Points, or 20 temporary Hit Points on a critical hit, until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -457,8 +461,6 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Castigating Weapon: Inflicting damage using <i>Harm</i> or <i>Heal</i> with Divine Castigation gives weapons and unarmed Strikes the holy or unholy trait and additional spirit damage equal to the spell rank until the end of turn</td>
     </tr><tr style="text-align:center">
-      <td>Channeling Block: Can expend a <i>Harm</i> or <i>Heal</i> with Shield Block to add 1d8 per spell rank to the shield's Hardness</td>
-    </tr><tr style="text-align:center">
       <td>Cleric Spellcasting: Can learn spells from the divine tradition</td>
     </tr><tr style="text-align:center">
       <td>Communal Healing: Casting <i>Heal</i> on a single target restores HP equal to the spell rank to self or another target</td>
@@ -473,7 +475,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Directed Channel: Can direct the effects of an area <i>Harm</i> or <i>Heal</i> into a 60' cone</td>
     </tr><tr style="text-align:center">
-      <td>Divine Apex: Can give a worn magic item the apex trait and increase its divine attribute value by 1 during daily prep</td>
+      <td>Divine Apex: Can give a worn magic item the apex trait for a chosen attribute during daily prep</td>
     </tr><tr style="text-align:center">
       <td>Divine Castigation: Can add the holy or unholy trait to <i>Harm</i> and <i>Heal</i> spells to inflict spirit damage</td>
     </tr><tr style="text-align:center">
@@ -510,8 +512,6 @@ var attributes = {
       <td>Panic The Dead: <i>Heal</i> also inflicts frightened 1 on intelligent undead (save negates; critical failure also inflicts fleeing until the start of the next turn)</td>
     </tr><tr style="text-align:center">
       <td>Reach Spell: <b>(1)</b> Extends subsequent spell range by 30'</td>
-    </tr><tr style="text-align:center">
-      <td>Rebounding Smite: <b>(R)</b> Missed Strike using Channel Smite allows retargeting the <i>Harm</i> or <i>Heal</i></td>
     </tr><tr style="text-align:center">
       <td>Remediate: <b>(F)</b> 3-action <i>Harm</i> or <i>Heal</i> attempts to counteract a divine effect once per hr</td>
     </tr><tr style="text-align:center">

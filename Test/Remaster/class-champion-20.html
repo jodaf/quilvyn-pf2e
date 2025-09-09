@@ -173,11 +173,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Anathema: May not perform acts or use spells prohibited by Nethys</td>
       </tr><tr style="text-align:center">
-        <td>Auspicious Mount: Mount is a specialized animal companion with celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, expert proficiency in Religion, ability to speak the language of Nethys's servitors, flight, +30 Hit Points, and, as appropriate, the holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait</td>
+        <td>Auspicious Mount: Mount is a specialized animal companion with the celestial, fiend, or monitor trait, +2 Intelligence, +1 Wisdom, expert proficiency in Religion, ability to speak the language of Nethys's servitors, flight, +30 Hit Points, and, as appropriate, the holy or unholy trait with +5 Hit Points and weakness 5 to the opposing trait</td>
       </tr><tr style="text-align:center">
         <td>Champion's Aura: 15' aura can be detected by followers of Nethys and can be suppressed or resumed with 1 action</td>
       </tr><tr style="text-align:center">
         <td>Desecration: Must subvert all that is pure and holy</td>
+      </tr><tr style="text-align:center">
+        <td>Expand Aura: <b>(1)</b> Extends Champion's Aura to 30' until Dismissed</td>
       </tr><tr style="text-align:center">
         <td>Faithful Steed: Has a young animal companion as a mount</td>
       </tr><tr style="text-align:center">
@@ -346,6 +348,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Greater Weapon Specialization: Has increased Weapon Specialization effects</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Iron Repercussions: Has increased Iron Command effects</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Legendary Armor: Defense Legendary (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Radiant Armament: Has increased Blessed Armament effects</i></td>
@@ -368,7 +372,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Aura Of Faith: Strikes by allies within aura gain the unholy trait</td>
       </tr><tr style="text-align:center">
-        <td>Blessed Armament: Can apply a choice of <i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, <i>greater vitalizing</i>, <i>greater astral</i>, <i>greater brilliant</i>, <i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, <i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep and use a 1-action activity to chance the choice, and critical hits inflict its critical specialization effect</td>
+        <td>Blessed Armament: Can apply a choice of <i>animated</i>, <i>greater fearsome</i>, <i>grievous</i>, <i>keen</i>, <i>greater vitalizing</i>, <i>greater astral</i>, <i>greater brilliant</i>, <i>astral</i>, <i>brilliant</i>, <i>holy</i>, <i>unholy</i>, <i>fearsome</i>, <i>ghost touch</i>, <i>returning</i>, <i>shifting</i>, or <i>vitalizing</i> to a chosen weapon during daily prep and use a 1-action activity to change the choice, and critical hits inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Blessed Counterstrike: <b>(1)</b> Successful Strike after a Champion's Reaction inflicts +1 damage die and weakness 10 to Strikes by self and allies until the start of the next turn</td>
       </tr><tr style="text-align:center">
@@ -394,7 +398,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Instrument Of Zeal: Critical hit with Blessed Counterstrike or Retributive Strike inflicts +1 damage die and slowed 1 on the target's next turn</td>
       </tr><tr style="text-align:center">
-        <td>Iron Command: <b>(R)</b> Foe that inflicted the triggering damage suffers its choice of kneeling or 6d6 HP mental and 4 HP persistent spirit, and self Strikes vs. that foe inflict +3 HP spirit until the end of the next turn; other foes within aura must also kneel or suffer 6 HP mental</td>
+        <td>Iron Command: <b>(R)</b> Foe that inflicted the triggering damage suffers its choice of kneeling or 6d6 HP mental or persistent mental and 4 HP persistent spirit, and self Strikes vs. that foe inflict +3 HP spirit until the end of the next turn; other foes within aura must also kneel or suffer 6 HP mental</td>
       </tr><tr style="text-align:center">
         <td>Liberating Step: <b>(R)</b> Gives an ally within aura resistance 22 to any triggering damage from within aura and free actions to Escape or to save from a restraint and to Step; restraining foe suffers 4 HP persistent spirit, and self and allies also gain a free Step</td>
       </tr><tr style="text-align:center">
@@ -554,13 +558,9 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Devoted Focus: Refocus restores all Focus Points</td>
     </tr><tr style="text-align:center">
-      <td>Expand Aura: <b>(1)</b> Extends Champion's Aura to 30' until Dismissed</td>
-    </tr><tr style="text-align:center">
       <td>Greater Security: Security gives the target +2 Armor Class and allows self to use Shield Block to benefit them</td>
     </tr><tr style="text-align:center">
       <td>Heal Mount: <i>Lay On Hands</i> cast on mount restores 10 Hit Points + 10 Hit Points per heightened rank</td>
-    </tr><tr style="text-align:center">
-      <td>Iron Repercussions: Iron Command can inflict persistent mental damage</td>
     </tr><tr style="text-align:center">
       <td>Mercy (Body): 2-action <i>Lay On Hands</i> can also attempt to counteract stunned, drained, slowed, blinded, dazzled, deafened, enfeebled, or sickened</td>
     </tr><tr style="text-align:center">
