@@ -977,7 +977,7 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks)",' +
       '"1:Defense Trained (Light Armor; Unarmored Defense)",' +
       '"1:Class Trained (Investigator)",' +
-      '"1:On The Case","1:Clue In","1:Devise A Stratagem","1:Methodology",' +
+      '"1:On The Case","1:Devise A Stratagem","1:Methodology",' +
       '"1:Investigator Feats","1:Strategic Strike","2:Skill Feats",' +
       '"2:Skill Increases","3:General Feats","3:Keen Recollection",' +
       '"3:Skillful Lessons","5:Weapon Expertise","7:Vigilant Senses",' +
@@ -9586,7 +9586,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can become temporarily trained in 1 skill during daily prep"',
   'Known Weaknesses':
-    'Section=combat ' +
+    'Section=feature ' +
     'Note="Critical success on a Recall Knowledge as part of Devise A Stratagem gives self and each ally +1 on their first attack on the target before the start of the next turn"',
   'Takedown Expert':
     'Section=combat ' +
@@ -9602,7 +9602,7 @@ Pathfinder2ERemaster.FEATURES = {
       '"+%{skillNotes.pursueALead} Thievery to investigate a case"',
   'Athletic Strategist':
     'Section=combat ' +
-    'Note="Can use Devise A Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check"',
+    'Note="Can use Attack Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check"',
   'Certain Stratagem':
     'Section=combat ' +
     'Note="Failed Attack Stratagem that uses Intelligence inflicts %{(level+3)//4}d6 / 2 HP"',
@@ -9676,7 +9676,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Triggering foe attack targets Perception DC instead of Armor Class"',
   'Just As Planned':
     'Action=Free ' +
-    'Section=combat ' +
+    'Section=feature ' +
     'Note="Devise A Stratagem uses the higher of 2 d20 rolls once per hr"',
   "Make 'Em Sweat":
     'Section=skill ' +
@@ -9692,7 +9692,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Successful Medicine vs. Fortitude inflicts a choice of clumsy 2 or stupefied 2; critical success inflicts clumsy 3 or stupefied 3; failure gives self +1 to the first self attack on the target before the end of the turn; critical failure triggers manipulate reactions"',
   'Plot The Future':
-    'Section=skill ' +
+    'Section=feature ' +
     'Note="10 min reflection gives a general idea of the likelihood of an event up to 1 week in the future and a suggestion of how to make it more or less likely"',
   // Sense The Unseen as above
   'Strategic Bypass':
@@ -9867,7 +9867,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat,combat ' +
     'Note=' +
       '"Has increased Cobra Stance effects",' +
-      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Strike from Cobra Stance gains +5\' reach and inflicts +1d4 HP persistent poison once per min"',
+      '"' + Pathfinder2E.ACTION_MARKS['1'] + ' Cobra fang Strike gains +5\' reach and inflicts +1d4 HP persistent poison once per min"',
   'Knockback Strike':Pathfinder2E.FEATURES['Knockback Strike'],
   'Prevailing Position':
     'Action=Reaction ' +
@@ -9963,31 +9963,27 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Oracle
   'Ancestors':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Ancestral Meddling feature",' +
-      '"Has the Whispers Of Weakness feature",' +
+      '"Has the Whispers Of Weakness and Curse Of Ancestral Meddling features",' +
       '"Knows the Ancestral Touch divine spell",' +
       '"Skill Trained (Society)"',
   'Battle':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of The Mortal Warrior feature",' +
-      '"Has the Oracular Warning feature",' +
+      '"Has the Oracular Warning and Curse Of The Mortal Warrior features",' +
       '"Knows the Weapon Trance divine spell",' +
       '"Skill Trained (Athletics)"',
   'Bones':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Living Death feature",' +
-      '"Has the Nudge The Scales feature",' +
+      '"Has the Nudge The Scales and Curse Of Living Death features",' +
       '"Knows the Soul Siphon divine spell",' +
       '"Skill Trained (Medicine)"',
   'Cosmos':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of The Sky\'s Call feature",' +
-      '"Has the Oracular Warning and feature",' +
+      '"Has the Oracular Warning and Curse Of The Sky\'s Call features",' +
       '"Knows the Spray Of Stars divine spell",' +
       '"Skill Trained (Nature)"',
   'Curse Of Ancestral Meddling':
@@ -10034,46 +10030,42 @@ Pathfinder2ERemaster.FEATURES = {
       '"Cursebound inflicts a penalty to Will saves of equal severity",' +
       '"Cursebound inflicts a penalty to Perception of equal severity"',
   'Flames':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Engulfing Flames feature",' +
-      '"Has the Foretell Harm feature",' +
+      '"Has the Foretell Harm and Curse Of Engulfing Flames features",' +
       '"Knows the Incendiary Aura divine spell",' +
       '"Skill Trained (Acrobatics)"',
   'Life':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Outpouring Life feature",' +
-      '"Has the Nudge The Scales feature",' +
+      '"Has the Nudge The Scales and Curse Of Outpouring Life features",' +
       '"Knows the Life Link divine spell",' +
       '"Skill Trained (Medicine)"',
   'Lore':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Torrential Knowledge feature",' +
-      '"Has the Whispers Of Weakness feature",' +
+      '"Has the Whispers Of Weakness and Curse Of Torrential Knowledge features",' +
       '"Knows the Brain Drain divine spell",' +
       '"Skill Trained (Occultism; choose 1 from any Lore)"',
   'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
   'Tempest':
-    'Section=feature,feature,magic,skill ' +
+    'Section=feature,magic,skill ' +
     'Note=' +
-      '"Has the Curse Of Inclement Headwinds feature",' +
-      '"Has the Foretell Harm feature",' +
+      '"Has the Foretell Harm and Curse Of Inclement Headwinds features",' +
       '"Knows the Tempest Touch divine spell",' +
       '"Skill Trained (Nature)"',
   // Expert Spellcaster as above
   'Divine Access':
     'Section=magic ' +
-    'Note="Can learn 3 cleric spells from a deity with a shared domain"',
-  'Extreme Curse':'Section=magic Note="Can tolerate cursebound severity 4"',
+    'Note="Can learn 3 cleric spells granted by a deity with a shared domain"',
+  'Extreme Curse':'Section=feature Note="Can tolerate cursebound severity 4"',
   'Greater Mysterious Resolve':
     'Section=save,save ' +
     'Note=' +
       '"Save Legendary (Will)",' +
       '"Successes on Will saves are critical successes, critical failures on Will saves are normal failures, and failed Will saves inflict half damage"',
   // Light Armor Expertise as above
-  'Major Curse':'Section=magic Note="Can tolerate cursebound severity 3"',
+  'Major Curse':'Section=feature Note="Can tolerate cursebound severity 3"',
   // Master Spellcaster as above
   'Mysterious Resolve':
     'Section=save,save ' +
@@ -10107,18 +10099,18 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful Religion check gives 1 true and 1 false piece of info about a desired topic, critical success gives accurate info or a clue, and failure or critical failure gives 1 or 2 pieces of incorrect info or misleading clues"',
   'Nudge The Scales':
     // in note 'Action=1 ' +
-    'Section=magic,magic ' +
+    'Section=magic,save ' +
     'Note=' +
       '"' + Pathfinder2E.ACTION_MARKS['1'] + ' <b>(Cursebound)</b> R30\' Target regains %{level*2+2} Hit Points",' +
       '"Can choose during daily prep to be healed by vitality healing or void healing"',
   'Oracular Warning':
     'Action=Free ' +
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="<b>(Cursebound)</b> R20\' At the start of initiative, gives allies +2 initiative, or +3 or +4 initiative with cursebound 2 or 3, and %{level//2} temporary Hit Points for 1 min"',
   // Reach Spell as above
   'Whispers Of Weakness':
     'Action=1 ' +
-    'Section=magic ' +
+    'Section=combat ' +
     'Note="<b>(Cursebound)</b> R60\' Reveals target weakness and its lowest saving throw and gives self +2 to the next attack before the end of the turn once per target per day"',
   // Widen Spell as above
   // Cantrip Expansion as above
@@ -10263,7 +10255,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="<b>(Cursebound)</b> Uses Reach Spell or Widen Spell"',
   'Thousand Visions':
     'Action=Free ' +
-    'Section=skill ' +
+    'Section=combat ' +
     'Note="<b>(Cursebound)</b> R30\' Can target concealed or hidden creatures with no flat check or a DC 5 flat check, does not suffer off-guard from hidden creatures, and senses beyond 30\' become imprecise, for 1 min"',
   'Advanced Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Defense divine spell"',
@@ -10299,7 +10291,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic ' +
     'Note="Subsequent spell ignores resistance %{level} to spirit, vitality, and void"',
   'Water Walker':
-    'Section=magic ' +
+    'Section=ability ' +
     'Note="Cursebound 1 allows Striding across liquids to a solid destination, and cursebound 2 allows walking on liquids as if they were solid"',
   // Quickened Casting as above
   'Roll The Bones Of Fate':
@@ -10390,7 +10382,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Knows the Remember The Lost divine spell"',
   'Epiphany At The Crossroads':
     'Action=Free ' +
-    'Section=magic ' +
+    'Section=save ' +
     'Note="While dying, gains the effects of an <i>Augury</i>, loses the dying condition, gains a wounded level, regains %{level*2} Hit Points, and can Stand once per day"',
   'Greater Revelation (Ancestors)':
     'Section=magic Note="Knows the Ancestral Form divine spell"',
@@ -10411,10 +10403,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Magic Sense as above
   'Forestall Curse':
     'Action=Free ' +
-    'Section=combat ' +
+    'Section=feature ' +
     'Note="Subsequent cursebound ability use does not increase cursebound severity once per day"',
   'Lighter Than Air':
-    'Section=magic ' +
+    'Section=ability ' +
     'Note="Cursebound gives %{speed>?20}\' fly Speed, or %{(speed>?20)+10}\' fly Speed with cursebound 3"',
   'Mysterious Repertoire':
     'Section=magic Note="Knows 1 spell from a different tradition"',
@@ -17356,12 +17348,12 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'spellModifier' + t + '.Eldritch Archer', '=', null
       );
       tradFeatures.push(
-        'features.Eldritch Archer Dedication ? 6:' + t + ':Eldritch Archer (Tradition)',
+        'features.Eldritch Archer Dedication ? 6:' + t + ':Eldritch Archer (Tradition)'
       );
     });
     Pathfinder2E.featureListRules(
       rules, tradFeatures, 'Eldritch Archer', 'level', true
-    )
+    );
     rules.defineRule('eldritchArcherTraditionsLowered',
       'eldritchArcherTraditions', '=', 'source.toLowerCase()'
     );
@@ -17537,7 +17529,6 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'features.' + name, '+', '1'
       );
       m = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
-      rules.defineRule('featureNotes.' + m + '-1', 'levels.Oracle', '?', null);
       rules.defineRule('magicNotes.' + m, 'levels.Oracle', '?', null);
     });
   } else if(name == 'Pack Stalker') {
