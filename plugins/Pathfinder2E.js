@@ -6244,7 +6244,7 @@ Pathfinder2E.FEATURES = {
     'Action=1 Section=combat Note="Strikes a foe after an undetected Stride"',
   'Defensive Roll':
     'Action=Free ' +
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Negates half the damage from an attack that would reduce self to 0 HP once per 10 min"',
   'Instant Opening':
     'Action=1 ' +

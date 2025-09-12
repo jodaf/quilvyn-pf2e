@@ -2389,7 +2389,9 @@ Pathfinder2ERemaster.FEATS = {
   // Animal Companion as above
   'Crossbow Ace':Pathfinder2E.FEATS['Crossbow Ace'],
   'Hunted Shot':Pathfinder2E.FEATS['Hunted Shot'],
-  'Initiate Warden':'Traits=Ranger',
+  'Initiate Warden (Gravity Weapon)':'Traits=Ranger',
+  'Initiate Warden (Heal Companion)':'Traits=Ranger',
+  'Initiate Warden (Magic Hide)':'Traits=Ranger',
   'Monster Hunter':Pathfinder2E.FEATS['Monster Hunter'],
   'Twin Takedown':Pathfinder2E.FEATS['Twin Takedown'],
   // Animal Empathy as above
@@ -2397,7 +2399,13 @@ Pathfinder2ERemaster.FEATS = {
   "Hunter's Aim":Pathfinder2E.FEATS["Hunter's Aim"],
   'Monster Warden':Pathfinder2E.FEATS['Monster Warden'],
   'Quick Draw':Pathfinder2E.FEATS['Quick Draw'],
-  'Advanced Warden':
+  'Advanced Warden (Animal Feature)':
+    'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
+  'Advanced Warden (Enlarge Companion)':
+    'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
+  "Advanced Warden (Hunter's Luck)":
+    'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
+  'Advanced Warden (Soothing Mist)':
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
   "Companion's Cry":Pathfinder2E.FEATS["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATS['Disrupt Prey'],
@@ -2407,7 +2415,9 @@ Pathfinder2ERemaster.FEATS = {
   "Scout's Warning":Pathfinder2E.FEATS["Scout's Warning"],
   // Twin Parry as above
   'Additional Recollection':'Traits=Ranger Require="level >= 6"',
-  'Masterful Warden':
+  'Masterful Warden (Ephemeral Tracking)':
+    'Traits=Ranger Require="level >= 6","features.Initiate Warden"',
+  "Masterful Warden (Ranger's Bramble)":
     'Traits=Ranger Require="level >= 6","features.Initiate Warden"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATS['Skirmish Strike'],
@@ -2421,7 +2431,9 @@ Pathfinder2ERemaster.FEATS = {
   'Camouflage':Pathfinder2E.FEATS.Camouflage,
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATS['Master Monster Hunter'],
-  'Peerless Warden':
+  "Peerless Warden (Hunter's Vision)":
+    'Traits=Ranger Require="level >= 10","features.Initiate Warden"',
+  'Peerless Warden (Terrain Transposition)':
     'Traits=Ranger Require="level >= 10","features.Initiate Warden"',
   'Penetrating Shot':
     Pathfinder2E.FEATS['Penetrating Shot']
@@ -7790,11 +7802,15 @@ Pathfinder2ERemaster.FEATURES = {
   'Hunted Shot':
     Pathfinder2E.FEATURES['Hunted Shot']
     .replace(' once per rd', ''),
-  'Initiate Warden':
-    'Section=magic,magic ' +
-    'Note=' +
-      '"Spell Trained (Primal)/Has a focus pool",' +
-      '"Knows %V choice%{$\'features.Initiate Warden\'>1?\'s\':\'\'} of initial warden spells"',
+  'Initiate Warden (Gravity Weapon)':
+    'Section=magic ' +
+    'Note="Spell Trained (Primal)/Has a focus pool/Knows the Gravity Weapon primal spell"',
+  'Initiate Warden (Heal Companion)':
+    'Section=magic ' +
+    'Note="Spell Trained (Primal)/Has a focus pool/Knows the Heal Companion primal spell"',
+  'Initiate Warden (Magic Hide)':
+    'Section=magic ' +
+    'Note="Spell Trained (Primal)/Has a focus pool/Knows the Magic Hide primal spell"',
   'Monster Hunter':Pathfinder2E.FEATURES['Monster Hunter'],
   'Twin Takedown':
     Pathfinder2E.FEATURES['Twin Takedown']
@@ -7830,9 +7846,14 @@ Pathfinder2ERemaster.FEATURES = {
   "Hunter's Aim":Pathfinder2E.FEATURES["Hunter's Aim"],
   'Monster Warden':Pathfinder2E.FEATURES['Monster Warden'],
   'Quick Draw':Pathfinder2E.FEATURES['Quick Draw'],
-  'Advanced Warden':
-    'Section=magic ' +
-    'Note="Knows %V choice%{$\'features.Advanced Warden\'>1?\'s\':\'\'} of advanced warden spells"',
+  'Advanced Warden (Animal Feature)':
+    'Section=magic Note="Knows the Animal Feature primal spell"',
+  'Advanced Warden (Enlarge Companion)':
+    'Section=magic Note="Knows the Enlarge Companion primal spell"',
+  "Advanced Warden (Hunter's Luck)":
+    'Section=magic Note="Knows the Hunter\'s Luck primal spell"',
+  'Advanced Warden (Soothing Mist)':
+    'Section=magic Note="Knows the Soothing Mist primal spell"',
   "Companion's Cry":Pathfinder2E.FEATURES["Companion's Cry"],
   'Disrupt Prey':Pathfinder2E.FEATURES['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATURES['Far Shot'],
@@ -7844,9 +7865,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Action=Free ' +
     'Section=skill ' +
     'Note="Follows a successful Recall Knowledge on hunted prey with a Recall Knowledge check on another creature"',
-  'Masterful Warden':
-    'Section=magic ' +
-    'Note="Knows %V choice%{$\'features.Masterful Warden\'>1?\'s\':\'\'} of master warden spells"',
+  'Masterful Warden (Ephemeral Tracking)':
+    'Section=magic Note="Knows the Ephemeral Tracking primal spell"',
+  "Masterful Warden (Ranger's Bramble)":
+    'Section=magic Note="Knows the Ranger\'s Bramble primal spell"',
   // Mature Animal Companion as above
   'Skirmish Strike':Pathfinder2E.FEATURES['Skirmish Strike'],
   'Snap Shot':Pathfinder2E.FEATURES['Snap Shot'],
@@ -7859,9 +7881,10 @@ Pathfinder2ERemaster.FEATURES = {
   'Camouflage':Pathfinder2E.FEATURES.Camouflage,
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATURES['Master Monster Hunter'],
-  'Peerless Warden':
-    'Section=magic ' +
-    'Note="Knows %V choice%{$\'features.Peerless Warden\'>1?\'s\':\'\'} of peerless warden spells"',
+  "Peerless Warden (Hunter's Vision)":
+    'Section=magic Note="Knows the Hunter\'s Vision primal spell"',
+  'Peerless Warden (Terrain Transposition)':
+    'Section=magic Note="Knows the Terrain Transposition primal spell"',
   'Penetrating Shot':Pathfinder2E.FEATURES['Penetrating Shot'],
   // Twin Riposte as above
   "Warden's Step":Pathfinder2E.FEATURES["Warden's Step"],
@@ -7923,10 +7946,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Attack Master (Simple Weapons; Martial Weapons; Unarmed Attacks)"',
   'Mastermind':
-    'Section=skill,skill ' +
+    'Section=combat,skill ' +
     'Note=' +
-      '"Skill Trained (Society; Choose 1 from Arcana, Nature, Occultism, Religion)",' +
-      '"Successful Recall Knowledge to identify a creature inflicts off-guard vs. self attacks until the start of the next turn, or for 1 min on a critical success"',
+      '"Successful Recall Knowledge to identify a creature inflicts off-guard vs. self attacks until the start of the next turn, or for 1 min on a critical success",' +
+      '"Skill Trained (Society; Choose 1 from Arcana, Nature, Occultism, Religion)"',
   // Perception Mastery as above
   // Perception Legend as above
   'Rogue Expertise':Pathfinder2E.FEATURES['Rogue Expertise'],
@@ -8015,8 +8038,8 @@ Pathfinder2ERemaster.FEATURES = {
     .replace(/that lasts[^"]*/, 'to a weapon'),
   'Predictable!':
     'Action=1 ' +
-    'Section=skill ' +
-    'Note="Successful Sense Motive vs. Deception gives +1 AC and next save vs. target until the start of the next turn, or +2 on a critical success or -1 on a critical failure"',
+    'Section=combat ' +
+    'Note="Successful Sense Motive vs. Deception gives +1 AC and +1 on the next save vs. target until the start of the next turn, or +2 on a critical success, or -1 on a critical failure"',
   'Reactive Pursuit':Pathfinder2E.FEATURES['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATURES.Sabotage,
   "Scoundrel's Surprise":
@@ -9963,27 +9986,31 @@ Pathfinder2ERemaster.FEATURES = {
 
   // Oracle
   'Ancestors':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Whispers Of Weakness and Curse Of Ancestral Meddling features",' +
+      '"Has the Curse Of Ancestral Meddling feature",' +
+      '"Has the Whispers Of Weakness feature",' +
       '"Knows the Ancestral Touch divine spell",' +
       '"Skill Trained (Society)"',
   'Battle':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Oracular Warning and Curse Of The Mortal Warrior features",' +
+      '"Has the Curse Of The Mortal Warrior feature",' +
+      '"Has the Oracular Warning feature",' +
       '"Knows the Weapon Trance divine spell",' +
       '"Skill Trained (Athletics)"',
   'Bones':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Nudge The Scales and Curse Of Living Death features",' +
+      '"Has the Curse Of Living Death feature",' +
+      '"Has the Nudge The Scales feature",' +
       '"Knows the Soul Siphon divine spell",' +
       '"Skill Trained (Medicine)"',
   'Cosmos':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Oracular Warning and Curse Of The Sky\'s Call features",' +
+      '"Has the Curse Of The Sky\'s Call feature",' +
+      '"Has the Oracular Warning feature",' +
       '"Knows the Spray Of Stars divine spell",' +
       '"Skill Trained (Nature)"',
   'Curse Of Ancestral Meddling':
@@ -10030,28 +10057,32 @@ Pathfinder2ERemaster.FEATURES = {
       '"Cursebound inflicts a penalty to Will saves of equal severity",' +
       '"Cursebound inflicts a penalty to Perception of equal severity"',
   'Flames':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Foretell Harm and Curse Of Engulfing Flames features",' +
+      '"Has the Curse Of Engulfing Flames feature",' +
+      '"Has the Foretell Harm feature",' +
       '"Knows the Incendiary Aura divine spell",' +
       '"Skill Trained (Acrobatics)"',
   'Life':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Nudge The Scales and Curse Of Outpouring Life features",' +
+      '"Has the Curse Of Outpouring Life feature",' +
+      '"Has the Nudge The Scales feature",' +
       '"Knows the Life Link divine spell",' +
       '"Skill Trained (Medicine)"',
   'Lore':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Whispers Of Weakness and Curse Of Torrential Knowledge features",' +
+      '"Has the Curse Of Torrential Knowledge feature",' +
+      '"Has the Whispers Of Weakness feature",' +
       '"Knows the Brain Drain divine spell",' +
       '"Skill Trained (Occultism; choose 1 from any Lore)"',
   'Oracular Clarity':'Section=magic Note="Has 1 10th-rank spell slot"',
   'Tempest':
-    'Section=feature,magic,skill ' +
+    'Section=feature,feature,magic,skill ' +
     'Note=' +
-      '"Has the Foretell Harm and Curse Of Inclement Headwinds features",' +
+      '"Has the Curse Of Inclement Headwinds feature",' +
+      '"Has the Foretell Harm feature",' +
       '"Knows the Tempest Touch divine spell",' +
       '"Skill Trained (Nature)"',
   // Expert Spellcaster as above
@@ -16839,9 +16870,9 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('features.Wild Stride', 'features.Unimpeded Journey', '=', '1');
     rules.defineRule
-      ('magicNotes.masterfulHunter', 'magicNotes.initiateWarden', '?', null);
+      ('magicNotes.masterfulHunter', 'features.Initiate Warden', '?', null);
     rules.defineRule
-      ('magicNotes.rangerExpertise', 'magicNotes.initiateWarden', '?', null);
+      ('magicNotes.rangerExpertise', 'features.Initiate Warden', '?', null);
     rules.defineRule('selectableFeatureCount.Ranger (Key Attribute)',
       'featureNotes.rangerKeyAttribute', '=', '1'
     );
@@ -17445,16 +17476,15 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       'spells.Dispel Magic (O2)', '=', '1',
       'spells.Dispel Magic (P2)', '=', '1'
     );
-  } else if(name == 'Initiate Warden') {
+  } else if(name.startsWith('Initiate Warden')) {
+    rules.defineRule('features.Initiate Warden', 'features.' + name, '=', '1');
     rules.defineRule
-      ('spellAbility.Primal', 'magicNotes.initiateWarden', '=', '"wisdom"');
+      ('spellAbility.Primal', 'features.Initiate Warden', '=', '"wisdom"');
     rules.defineRule('spellModifier.Ranger',
-      'magicNotes.initiateWarden', '?', null,
+      'features.Initiate Warden', '?', null,
       'wisdomModifier', '=', null
     );
     rules.defineRule('spellModifier.Primal', 'spellModifier.Ranger', '=', null);
-    rules.defineRule
-      ('magicNotes.initiateWarden-1', 'feats.Initiate Warden', '=', null);
   } else if(name == 'Invulnerable Rager') {
     rules.defineRule('combatNotes.invulnerableRager',
       'rank.Medium Armor', '=', 'source==4 ? "Legendary" : source==3 ? "Master" : source==2 ? "Expert" : null'
@@ -17529,6 +17559,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'features.' + name, '+', '1'
       );
       m = m.charAt(0).toLowerCase() + m.substring(1).replaceAll(' ', '');
+      rules.defineRule('featureNotes.' + m + '-1', 'levels.Oracle', '?', null);
       rules.defineRule('magicNotes.' + m, 'levels.Oracle', '?', null);
     });
   } else if(name == 'Pack Stalker') {

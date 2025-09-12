@@ -110,7 +110,7 @@ var attributes = {
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Additional Lore (Astral Plane Lore); Additional Lore (Astrology Lore); Additional Lore (Mining Lore); Alchemical Discoveries; Assurance (Ratfolk Lore); Assurance (Tea Lore); Athletic Strategist; Blind-Fight; Bon Mot; Certain Stratagem; Clever Improviser; Clue Them All In; Connect The Dots; Courtly Graces; Defensive Stratagem; Detective's Readiness; Didactic Strike; Dubious Knowledge; Eliminate Red Herrings; Empiricist's Eye; Everyone's A Suspect; Experienced Professional; Exploit Blunder; Flexible Studies; Foresee Danger; Glean Contents; Implausible Purchase; Improvised Repair; Incredible Improvisation; Incredible Investiture; Just As Planned; Just One More Thing; Just The Facts; Known Weaknesses; Lead Investigator; Legendary Professional; Lie Detector; Make 'Em Sweat; Multitalented; Natural Ambition; Ongoing Investigation; Ongoing Strategy; Person Of Interest; Plot The Future; Predictive Purchase; Quick Jump; Read Lips; Reason Rapidly; Reconstruct The Scene; Risky Surgery; Scalpel's Point; Sense The Unseen; Share Tincture; Shared Stratagem; Skill Training (Astral Plane Lore); Skill Training (Catfolk Lore); Skill Training (Scribing Lore); Solid Lead; Strategic Assessment; Strategic Bypass; Streetwise; Surgical Shock; Suspect Of Opportunity; Takedown Expert; Terrain Stalker (Underbrush); That's Odd; Thorough Research; Trap Finder; Trickster's Ace; Unconventional Weaponry (Greatsword); Underworld Investigator; Unmistakable Lore; Unusual Treatment; Weapon Proficiency (Martial Weapons); Whodunnit?</td>
-        <td><b>Investigator Features</b>: Alchemical Sciences; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Investigator); Clue In; Deductive Improvisation; Defense Trained (Light Armor; Unarmored Defense); Devise A Stratagem; Dogged Will; Empiricism; Forensic Medicine; Fortitude Expertise; General Feats; Greater Dogged Will; Greater Weapon Specialization; Incredible Senses; Interrogation; Investigator Expertise; Investigator Feats; Investigator Skills; Keen Recollection; Light Armor Expertise; Light Armor Mastery; Master Detective; Methodology; On The Case; Perception Expert; Save Expert (Reflex; Will); Save Trained (Fortitude); Savvy Reflexes; Skill Feats; Skill Increases; Skillful Lessons; Strategic Strike; Vigilant Senses; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
+        <td><b>Investigator Features</b>: Alchemical Sciences; Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Investigator); Deductive Improvisation; Defense Trained (Light Armor; Unarmored Defense); Devise A Stratagem; Dogged Will; Empiricism; Forensic Medicine; Fortitude Expertise; General Feats; Greater Dogged Will; Greater Weapon Specialization; Incredible Senses; Interrogation; Investigator Expertise; Investigator Feats; Investigator Skills; Keen Recollection; Light Armor Expertise; Light Armor Mastery; Master Detective; Methodology; On The Case; Perception Expert; Save Expert (Reflex; Will); Save Trained (Fortitude); Savvy Reflexes; Skill Feats; Skill Increases; Skillful Lessons; Strategic Strike; Vigilant Senses; Weapon Expertise; Weapon Mastery; Weapon Specialization</td>
         <td><b>Bookkeeper Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Eye For Numbers; Skill Trained (Society; Accounting Lore)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
       </tr></table>
@@ -158,7 +158,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Implausible Purchase: Can use Prescient Planner at will with 1 action, and can use it to retrieve a level 14 consumable 5 times per day</td>
       </tr><tr style="text-align:center">
+        <td>Just As Planned: <b>(F)</b> Devise A Stratagem uses the higher of 2 d20 rolls once per hr</td>
+      </tr><tr style="text-align:center">
+        <td>Known Weaknesses: Critical success on a Recall Knowledge as part of Devise A Stratagem gives self and each ally +1 on their first attack on the target before the start of the next turn</td>
+      </tr><tr style="text-align:center">
         <td>Person Of Interest: <b>(1)</b> Can use Devise A Stratagem for 1 min on a chosen creature unrelated to active investigations once per 10 min</td>
+      </tr><tr style="text-align:center">
+        <td>Plot The Future: 10 min reflection gives a general idea of the likelihood of an event up to 1 week in the future and a suggestion of how to make it more or less likely</td>
       </tr><tr style="text-align:center">
         <td>Predictive Purchase: Can use Prescient Planner with 2 actions</td>
       </tr><tr style="text-align:center">
@@ -355,8 +361,6 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Ongoing Investigation: Can Investigate at full Speed and use another exploration activity while Investigating</td>
     </tr><tr style="text-align:center">
-      <td>Plot The Future: 10 min reflection gives a general idea of the likelihood of an event up to 1 week in the future and a suggestion of how to make it more or less likely</td>
-    </tr><tr style="text-align:center">
       <td>Pointed Question: <b>(1)</b> Successful Diplomacy vs. Will gives +2 Perception to detect a Lie and inflicts off-guard vs. Attack Stratagem until the end of the turn; critical success gives +4 Perception; critical failure worsens the target's attitude by 1 step</td>
     </tr><tr style="text-align:center">
       <td>Pursue A Lead: Can use 1 min examining a detail to detect a deeper mystery; success allows opening an investigation and gives +2 on later Perception and skill checks when attempting to answer a central question about it</td>
@@ -453,7 +457,7 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Weapon Proficiency (Martial Weapons): Attack Expert (Martial Weapons)</i></td>
       </tr><tr style="text-align:center">
-        <td>Athletic Strategist: Can use Devise A Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check</td>
+        <td>Athletic Strategist: Can use Attack Stratagem to Disarm, Grapple, Reposition, Shove, or Trip, and can use Intelligence for the check</td>
       </tr><tr style="text-align:center">
         <td>Attack Stratagem: <b>(1)</b> Uses a pre-rolled value for the first attack vs. a chosen creature before the start of the next turn; can substitute intelligence for strength or dexterity on the attack if using a sap or an agile, finesse, or ranged weapon</td>
       </tr><tr style="text-align:center">
@@ -472,10 +476,6 @@ var attributes = {
         <td>Exploit Blunder: <b>(R)</b> Takes a Step after the triggering miss by the prior turn's Devise A Stratagem target</td>
       </tr><tr style="text-align:center">
         <td>Foresee Danger: <b>(R)</b> Triggering foe attack targets Perception DC instead of Armor Class</td>
-      </tr><tr style="text-align:center">
-        <td>Just As Planned: <b>(F)</b> Devise A Stratagem uses the higher of 2 d20 rolls once per hr</td>
-      </tr><tr style="text-align:center">
-        <td>Known Weaknesses: Critical success on a Recall Knowledge as part of Devise A Stratagem gives self and each ally +1 on their first attack on the target before the start of the next turn</td>
       </tr><tr style="text-align:center">
         <td>Ongoing Strategy: Successful non-Stratagem attacks that use an Attack Stratagem weapon inflict +5 HP precision</td>
       </tr><tr style="text-align:center">
