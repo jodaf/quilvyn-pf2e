@@ -10831,7 +10831,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Bloodline Mutation':
     'Section=feature ' +
-    'Note="Gains low-light vision, darkvision, flight, swimming, water breathing, and/or resistance 20 to an energy type as appropriate for bloodline"',
+    'Note="Has low-light vision, darkvision, flight, swimming, water breathing, and/or resistance 20 to an energy type as appropriate for bloodline"',
   'Bloodline Perfection':
     Pathfinder2E.FEATURES['Bloodline Perfection']
     .replace('level', 'rank'),
@@ -10876,7 +10876,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful finisher Strike allows a free Step afterward"',
   'Exemplary Finisher (Braggart)':
     'Section=combat ' +
-    'Note="Successful finisher Strike ends any temporary immunity to self Demoralize"',
+    'Note="Successful finisher Strike ends any temporary immunity the target has to Demoralize attempts by self"',
   'Exemplary Finisher (Fencer)':
     'Section=combat ' +
     'Note="Successful finisher Strike inflicts off-guard until the start of the next turn"',
@@ -11012,10 +11012,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Prepares to Aid an ally within 30\'; the subsequent Aid can use Diplomacy for the check and has the bravado trait"',
   'Plummeting Roll':
     // 'Action=Reaction ' + in note
-    'Section=combat,feature ' +
+    'Section=feature,save ' +
     'Note=' +
-      '"' + Pathfinder2E.ACTION_MARKS.Reaction + ' Strides up to %{speed//2}\' after the triggering fall of at least 10\' that inflicts no damage",' +
-      '"Has the Cat Fall feature"',
+      '"Has the Cat Fall feature",' +
+      '"' + Pathfinder2E.ACTION_MARKS.Reaction + ' Strides up to %{speed//2}\' after the triggering fall of at least 10\' that inflicts no damage"',
   // You're Next as above
   'After You':
     'Action=Free ' +
@@ -11135,7 +11135,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Successful targeted attack on a foe\'s arm, head, or legs inflicts enfeebled 2, stupefied 2, or -10\' Speed until the end of the next turn; the effect extends for 1 min at half severity on a critical hit"',
   'Cheat Death':
     'Action=Reaction ' +
-    'Section=combat ' +
+    'Section=save ' +
     'Note="Retains 1 Hit Point, gains panache, and gains 1 level of doomed for 10 min in response to the triggering damage that would reduce self to 0 Hit Points"',
   'Get Used To Disappointment':
     'Action=Free ' +
