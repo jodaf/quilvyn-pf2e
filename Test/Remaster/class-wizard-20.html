@@ -143,21 +143,23 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Natural Ambition: Class Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of Ars Grammatica: Has the Curriculum feature</i></td>
+        <td><i>School Of Ars Grammatica: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of Battle Magic: Has the Curriculum feature</i></td>
+        <td><i>School Of Battle Magic: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of Civic Wizardry: Has the Curriculum feature</i></td>
+        <td><i>School Of Civic Wizardry: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of Mentalism: Has the Curriculum feature</i></td>
+        <td><i>School Of Mentalism: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of Protean Form: Has the Curriculum feature</i></td>
+        <td><i>School Of Protean Form: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
-        <td><i>School Of The Boundary: Has the Curriculum feature</i></td>
+        <td><i>School Of The Boundary: Has the Curriculum Spells feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>School Of Unified Magical Theory: Class Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Skill Feats: Skill Feats (Choose 10 from any)</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Spellbook Prodigy: Has the Magical Shorthand feature</i></td>
       </tr><tr style="text-align:center">
         <td><i>Versatile Human: General Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
@@ -238,8 +240,6 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Skill Training (Survival): Skill Trained (Survival)</i></td>
     </tr><tr style="text-align:center">
-      <td><i>Spellbook Prodigy: Has the Magical Shorthand feature</i></td>
-    </tr><tr style="text-align:center">
       <td><i>Untrained Improvisation: +20 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
       <td><i>Wizard Skills: Skill Trained (Arcana; Choose 7 from any)</i></td>
@@ -254,9 +254,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Legendary Professional: Improves NPCs' attitude by 1 step for those with ranks in Society/Increases the job level when Earning Income using Lore</td>
     </tr><tr style="text-align:center">
+      <td>Magical Shorthand: Can learn new spells with 10 min of study and retry 1 week after a failure, and can learn new spells at a discounted cost</td>
+    </tr><tr style="text-align:center">
       <td>Quick Recognition: Can use a skill with master proficiency to Recognize Spell as a free action once per rd</td>
     </tr><tr style="text-align:center">
       <td>Recognize Spell: <b>(R)</b> Successful roll of the connected skill gives recognition of a spell; critical success also gives +1 against effects, and critical failure misidentifies it; trained, expert, master, or legendary proficiency guarantees success on spells up to rank 2, 4, 6, or 10</td>
+    </tr><tr style="text-align:center">
+      <td>Spellbook Prodigy: Critical failures to Learn A Spell are normal failures</td>
     </tr><tr style="text-align:center">
       <td>Survey Wildlife: Can use Survival with a -2 penalty to Recall Knowledge about local creatures after 10 min of study</td>
     </tr><tr style="text-align:center">
@@ -451,6 +455,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Counterspell: <b>(R)</b> Expends a spell slot to attempt to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
+      <td>Curriculum Spells: Automatically adds school-specified spells to spellbook</td>
+    </tr><tr style="text-align:center">
       <td>Drain Bonded Item: <b>(F)</b> Can cast an expended spell using power stored in a possession once per day</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
@@ -469,13 +475,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Irresistible Magic: Reduces any target status bonus to saves vs. self spells by 1</td>
     </tr><tr style="text-align:center">
-      <td>Keen Magical Detection: Use of Detect Magic exploration activity gives the better of 2 initiative rolls against foes that have magic active</td>
+      <td>Keen Magical Detection: Use of the Detect Magic exploration activity gives the better of 2 initiative rolls vs. foes that have magic active</td>
     </tr><tr style="text-align:center">
       <td>Linked Focus: Draining a bonded item to cast a school spell restores 1 Focus Point once per day</td>
     </tr><tr style="text-align:center">
       <td>Magic Sense: Has continuous 1st-rank <i>Detect Magic</i> effects that increase to 3rd-rank during Seek</td>
-    </tr><tr style="text-align:center">
-      <td>Magical Shorthand: Can learn new spells with 10 min of study and retry 1 week after a failure, and can learn new spells at a discounted cost</td>
     </tr><tr style="text-align:center">
       <td>Nonlethal Spell: <b>(1)</b> Changes the damage caused by a subsequent spell to non-lethal</td>
     </tr><tr style="text-align:center">
@@ -510,8 +514,6 @@ var attributes = {
       <td>Spell Substitution: Can use a 10-min process to replace 1 prepared spell with a different spell</td>
     </tr><tr style="text-align:center">
       <td>Spell Tinker: <b>(2)</b> Alters a choice of an ongoing effect from a spell cast on self</td>
-    </tr><tr style="text-align:center">
-      <td>Spellbook Prodigy: Critical failures to Learn A Spell are normal failures</td>
     </tr><tr style="text-align:center">
       <td>Spellshape Mastery: Can use 1-action spellshape effects as free actions</td>
     </tr><tr style="text-align:center">

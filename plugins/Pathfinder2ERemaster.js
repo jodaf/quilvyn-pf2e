@@ -737,7 +737,9 @@ Pathfinder2ERemaster.CLASSES = {
       '"1:Silence In Snow:Patron",' +
       '"1:Spinner Of Threads:Patron",' +
       '"1:Starless Shadow:Patron",' +
-      '"1:Wilding Steward:Patron" ' +
+      '"1:Wilding Steward:Patron",' +
+      '"1:Patron\'s Puppet:Initial Hex",' +
+      '"1:Phase Familiar:Initial Hex" ' +
     // SpellSlots tradition depends on patron--see classRules
     'SpellSlots=' +
       'C1:5@1,' +
@@ -2673,7 +2675,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 4","features.Arcane Bond"',
   'Linked Focus':
     Pathfinder2E.FEATS['Linked Focus']
-    .replace('Arcane School', 'Curriculum'),
+    .replace('Arcane School', 'Curriculum Spells'),
   'Spell Protection Array':
     'Traits=Wizard,Arcane,Manipulate Require="level >= 4"',
   'Convincing Illusion':
@@ -8191,15 +8193,18 @@ Pathfinder2ERemaster.FEATURES = {
       '"Skill Trained (Religion)"',
   'Familiar':Pathfinder2E.FEATURES.Familiar,
   'Hex Spells':
-    'Section=magic,magic ' +
+    'Section=feature,magic ' +
     'Note=' +
-      '"Has a focus pool",' +
-      '"Knows a choice of the <i>Patron\'s Puppet</i> and <i>Phase Familiar</i> spells"',
+      '"Has the Initial Hex feature",' +
+      '"Has a focus pool"',
+  'Initial Hex':'Section=feature Note="1 selection"',
   // Legendary Spellcaster as above
   'Magical Fortitude':'Section=save Note="Save Expert (Fortitude)"',
   // Master Spellcaster as above
   'Patron':'Section=feature Note="1 selection"',
   "Patron's Gift":'Section=magic Note="Has 1 10th-rank spell slot"',
+  "Patron's Puppet":'Section=magic Note="Knows the Patron\'s Puppet %V spell"',
+  'Phase Familiar':'Section=magic Note="Knows the Phase Familiar %V spell"',
   // Perception Expertise as above
   // Reflex Expertise as above
   'Silence In Snow':
@@ -8289,7 +8294,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Subsequent hit with a Witch\'s Armament weapon inflicts -1 saves vs. self hexes, or -2 on a critical hit, until the start of the next turn once per rd"',
   'Ceremonial Knife':
-    'Section=feature ' +
+    'Section=magic ' +
     'Note="Can prepare a knife to contain a spell of up to rank %{level//2-2>?1} during daily prep"',
   'Greater Lesson (Mischief)':
     'Section=magic Note="Knows the Deceiver\'s Cloak %V hex"',
@@ -8328,7 +8333,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Coven Spell':
     'Action=Reaction ' +
     'Section=magic ' +
-    'Note="Gives the triggering ally spell a damage bonus equal to its rank or a spellshape effect"',
+    'Note="Gives the triggering ally spell a spellshape effect or a damage bonus equal to its rank"',
   'Hex Focus':'Section=magic Note="Refocus restores all focus points"',
   "Witch's Broom":
     'Section=skill Note="Can give a broom or similar object a 20\' fly Speed for 1 day, or give an existing <i>flying broomstick</i> +10\' Speed, during daily prep"',
@@ -8369,6 +8374,9 @@ Pathfinder2ERemaster.FEATURES = {
   "Archwizard's Spellcraft":
     Pathfinder2E.FEATURES["Archwizard's Spellcraft"]
     .replace('level', 'rank'),
+  'Curriculum Spells':
+    'Section=magic ' +
+    'Note="Automatically adds school-specified spells to spellbook"',
   'Defensive Robes':'Section=combat Note="Defense Expert (Unarmored Defense)"',
   'Drain Bonded Item':Pathfinder2E.FEATURES['Drain Bonded Item'],
   'Experimental Spellshaping':
@@ -8386,32 +8394,32 @@ Pathfinder2ERemaster.FEATURES = {
   'School Of Ars Grammatica':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Protective Wards arcane spell"',
   'School Of Battle Magic':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Force Bolt arcane spell"',
   'School Of The Boundary':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Fortify Summoning arcane spell"',
   'School Of Civic Wizardry':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Earthworks arcane spell"',
   'School Of Mentalism':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Charming Push arcane spell"',
   'School Of Protean Form':
     'Section=feature,magic ' +
     'Note=' +
-      '"Has the Curriculum feature",' +
+      '"Has the Curriculum Spells feature",' +
       '"+1 spell slot each rank/Knows the Scramble Body arcane spell"',
   'School Of Unified Magical Theory':
     'Section=feature,magic,magic ' +
@@ -8437,10 +8445,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Familiar as above
   // Reach Spell as above
   'Spellbook Prodigy':
-    'Section=magic,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
-      '"Critical failures to Learn A Spell are normal failures",' +
-      '"Has the Magical Shorthand feature"',
+      '"Has the Magical Shorthand feature",' +
+      '"Critical failures to Learn A Spell are normal failures"',
   // Widen Spell as above
   // Cantrip Expansion as above
   // Conceal Spell as above
@@ -8513,7 +8521,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Subsequent spell that inflicts energy damage also inflicts weakness 5 to that damage type on 1 target until the end of the next turn"',
   'Keen Magical Detection':
     'Section=magic ' +
-    'Note="Use of Detect Magic exploration activity gives the better of 2 initiative rolls against foes that have magic active"',
+    'Note="Use of the Detect Magic exploration activity gives the better of 2 initiative rolls vs. foes that have magic active"',
   // Magic Sense as above
   'Bonded Focus':
     Pathfinder2E.FEATURES['Bonded Focus']
@@ -16954,12 +16962,19 @@ Pathfinder2ERemaster.classRulesExtra = function(rules, name) {
     rules.defineRule
       ('magicNotes.masterSpellcaster', 'witchTraditions', '=', null);
     rules.defineRule
+      ("magicNotes.patron'sPuppet", 'witchTraditionsLowered', '=', null);
+    rules.defineRule
+      ('magicNotes.phaseFamiliar', 'witchTraditionsLowered', '=', null);
+    rules.defineRule
       ('magicNotes.witchSpellcasting', 'witchTraditionsLowered', '=', null);
     rules.defineRule('selectableFeatureCount.Witch (Patron)',
       'featureNotes.patron', '=', '1'
     );
     rules.defineRule
       ('skillNotes.witchSkills', 'intelligenceModifier', '=', 'source + 3');
+    rules.defineRule('selectableFeatureCount.Witch (Initial Hex)',
+      'featureNotes.initialHex', '=', '1'
+    );
     rules.defineRule
       ('spellSlots.P10', "magicNotes.patron'sGift", '=', 'null'); // italics
   }

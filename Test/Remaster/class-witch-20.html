@@ -40,6 +40,7 @@ var attributes = {
   "generalFeats.Unmistakable Lore":1, "languages.Elven":1, "languages.Fey":1, "languages.Jotun":1, 
   "languages.Kholo":1, "languages.Thalassic":1, "name":"Class-Witch 20", 
   "selectableFeatures.Human - Versatile Human":1, "selectableFeatures.Witch - Faith's Flamekeeper":1, 
+  "selectableFeatures.Witch - Patron's Puppet":1, "selectableFeatures.Witch - Phase Familiar":1, 
   "selectableFeatures.Witch - Silence In Snow":1, "selectableFeatures.Witch - Spinner Of Threads":1, 
   "selectableFeatures.Witch - Starless Shadow":1, "selectableFeatures.Witch - The Inscribed One":1, 
   "selectableFeatures.Witch - The Resentment":1, "selectableFeatures.Witch - Wilding Steward":1, "shield":"None", 
@@ -108,14 +109,14 @@ var attributes = {
       <td>      <table id="FeatStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feat Count</b>: Ancestry: 6; Class: 10; General: 6; Skill: 10</td>
-        <td><b>Selectable Feature Count</b>: Human (Heritage); Witch (Patron)</td>
+        <td><b>Selectable Feature Count</b>: Human (Heritage); Witch (Initial Hex); Witch (Patron)</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
         <td><b>Feats</b>: Adapted Cantrip; Adaptive Adept; Additional Lore (Baking Lore); Additional Lore (Farming Lore); Additional Lore (Forest Lore); Ancestral Paragon; Basic Lesson (Dreams); Basic Lesson (Elements); Basic Lesson (Life); Basic Lesson (Protection); Basic Lesson (Vengeance); Bounce Back; Cackle; Cantrip Expansion; Cauldron; Ceremonial Knife; Conceal Spell; Counterspell; Courtly Graces; Coven Spell; Diehard; Double, Double; Dubious Knowledge; Effortless Concentration; Enhanced Familiar; Familiar's Language; Fleet; Greater Lesson (Mischief); Greater Lesson (Shadow); Greater Lesson (Snow); Hardy Traveler; Hex Focus; Hex Master; Incredible Familiar; Legendary Professional; Major Lesson (Death); Major Lesson (Renewal); Murksight; Oddity Identification; Patron's Claim; Patron's Presence; Patron's Truth; Quickened Casting; Reach Spell; Read Lips; Reflect Spell; Rites Of Convocation; Rites Of Transfiguration; Schooled In Secrets; Sense Allies; Sign Language; Siphon Power; Skill Training (Acrobatics); Skill Training (Orc Lore); Spirit Familiar; Split Hex; Steady Spellcasting; Stitched Familiar; Sympathetic Strike; Unconventional Weaponry (Rapier); Unmistakable Lore; Widen Spell; Witch's Armaments (Eldritch Nails); Witch's Armaments (Iron Teeth); Witch's Armaments (Living Hair); Witch's Bottle; Witch's Broom; Witch's Charge; Witch's Communion; Witch's Hut</td>
-        <td><b>Witch Features</b>: Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Witch); Defense Trained (Unarmored Defense); Defensive Robes; Expert Spellcaster; Faith's Flamekeeper; Familiar; General Feats; Hex Spells; Legendary Spellcaster; Magical Fortitude; Master Spellcaster; Patron's Gift; Patron; Perception Expertise; Perception Trained; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Silence In Snow; Skill Feats; Skill Increases; Spinner Of Threads; Starless Shadow; The Inscribed One; The Resentment; Weapon Expertise; Weapon Specialization; Wilding Steward; Will Of The Pupil; Witch Feats; Witch Skills; Witch Spellcasting</td>
+        <td><b>Witch Features</b>: Attack Trained (Simple Weapons; Unarmed Attacks); Attribute Boost (Intelligence); Attribute Boosts; Class Trained (Witch); Defense Trained (Unarmored Defense); Defensive Robes; Expert Spellcaster; Faith's Flamekeeper; Familiar; General Feats; Hex Spells; Legendary Spellcaster; Magical Fortitude; Master Spellcaster; Patron's Gift; Patron's Puppet; Patron; Perception Expertise; Perception Trained; Phase Familiar; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Silence In Snow; Skill Feats; Skill Increases; Spinner Of Threads; Starless Shadow; The Inscribed One; The Resentment; Weapon Expertise; Weapon Specialization; Wilding Steward; Will Of The Pupil; Witch Feats; Witch Skills; Witch Spellcasting</td>
         <td><b>Detective Features</b>: Attribute Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Society; Underworld Lore); Streetwise</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Versatile Human</td>
       </tr></table>
@@ -129,7 +130,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>General Feats: General Feats (Choose 5 from any)</i></td>
       </tr><tr style="text-align:center">
+        <td><i>Hex Spells: Has the Initial Hex feature</i></td>
+      </tr><tr style="text-align:center">
         <td><i>Human Heritage: 1 selection</i></td>
+      </tr><tr style="text-align:center">
+        <td><i>Initial Hex: 1 selection</i></td>
       </tr><tr style="text-align:center">
         <td><i>Patron: 1 selection</i></td>
       </tr><tr style="text-align:center">
@@ -138,8 +143,6 @@ var attributes = {
         <td><i>Versatile Human: General Feat (Choose 1 from any)</i></td>
       </tr><tr style="text-align:center">
         <td><i>Witch Feats: Class Feats (Choose 10 from any)</i></td>
-      </tr><tr style="text-align:center">
-        <td>Ceremonial Knife: Can prepare a knife to contain a spell of up to rank 8 during daily prep</td>
       </tr><tr style="text-align:center">
         <td>Enhanced Familiar: Can select 4 familiar or master abilities each day</td>
       </tr><tr style="text-align:center">
@@ -403,7 +406,23 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Nudge Fate (OC1 Foc): <b>(1)</b> R30' Gives +1 to make a failed attack, skill check, or save into a success within 1 min</td>
     </tr><tr style="text-align:left">
+      <td>Patron's Puppet (A1 Foc): <b>(F)</b> Allows Commanding of familiar at the beginning of a turn</td>
+    </tr><tr style="text-align:left">
+      <td>Patron's Puppet (D1 Foc): <b>(F)</b> Allows Commanding of familiar at the beginning of a turn</td>
+    </tr><tr style="text-align:left">
+      <td>Patron's Puppet (O1 Foc): <b>(F)</b> Allows Commanding of familiar at the beginning of a turn</td>
+    </tr><tr style="text-align:left">
+      <td>Patron's Puppet (P1 Foc): <b>(F)</b> Allows Commanding of familiar at the beginning of a turn</td>
+    </tr><tr style="text-align:left">
       <td>Personal Blizzard (P3 Foc): <b>(1)</b> R30' Target suffers 1d6 HP cold and 1d6 HP persistent cold while sustained for up to 1 min (<b>save Fortitude</b> inflicts initial cold only; critical success negates; critical failure inflicts 2d6 HP cold and 2d6 HP persistent cold) (<b>heightened +1</> inflicts +1 HP initial and persistent, or +2 on a critical save failure)</td>
+    </tr><tr style="text-align:left">
+      <td>Phase Familiar (A1 Foc): <b>(R)</b> R60' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)</td>
+    </tr><tr style="text-align:left">
+      <td>Phase Familiar (D1 Foc): <b>(R)</b> R60' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)</td>
+    </tr><tr style="text-align:left">
+      <td>Phase Familiar (O1 Foc): <b>(R)</b> R60' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)</td>
+    </tr><tr style="text-align:left">
+      <td>Phase Familiar (P1 Foc): <b>(R)</b> R60' Gives familiar resistance 5 and immunity to precision damage on triggering damage (<b>heightened +1</b> gives resistance +2)</td>
     </tr><tr style="text-align:left">
       <td>Restorative Moment (P5 Foc): <b>(2)</b> R30' Decreases doomed and drained values by 1 and allows an additional save vs. afflictions once per target per day</td>
     </tr><tr style="text-align:left">
@@ -457,7 +476,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Patron's Gift: Has 1 10th-rank spell slot</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Patron's Puppet: Knows the Patron's Puppet divine; primal; occult; arcane spell</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Patron's Truth: +1 10th rank spell slot</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Phase Familiar: Knows the Phase Familiar divine; primal; occult; arcane spell</i></td>
     </tr><tr style="text-align:center">
       <td><i>Silence In Snow: Spell Trained (Primal)/Knows the Clinging Ice and Gust Of Wind primal spells</i></td>
     </tr><tr style="text-align:center">
@@ -479,11 +502,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Cantrip Expansion: Can prepare 2 additional cantrips each day or add 2 additional cantrips to repertoire</td>
     </tr><tr style="text-align:center">
+      <td>Ceremonial Knife: Can prepare a knife to contain a spell of up to rank 8 during daily prep</td>
+    </tr><tr style="text-align:center">
       <td>Conceal Spell: <b>(1)</b> Casts a subsequent spell without an incantation or obvious manifestations</td>
     </tr><tr style="text-align:center">
       <td>Counterspell: <b>(R)</b> Expends a spell slot to attempt to counteract a spell with the same spell</td>
     </tr><tr style="text-align:center">
-      <td>Coven Spell: <b>(R)</b> Gives the triggering ally spell a damage bonus equal to its rank or a spellshape effect</td>
+      <td>Coven Spell: <b>(R)</b> Gives the triggering ally spell a spellshape effect or a damage bonus equal to its rank</td>
     </tr><tr style="text-align:center">
       <td>Effortless Concentration: <b>(F)</b> Sustains an active spell</td>
     </tr><tr style="text-align:center">
@@ -492,8 +517,6 @@ var attributes = {
       <td>Hex Focus: Refocus restores all focus points</td>
     </tr><tr style="text-align:center">
       <td>Hex Master: Can cast multiple hexes per turn, and <i>Cackle</i> Sustains all active hexes</td>
-    </tr><tr style="text-align:center">
-      <td>Hex Spells: Knows a choice of the <i>Patron's Puppet</i> and <i>Phase Familiar</i> spells</td>
     </tr><tr style="text-align:center">
       <td>Quickened Casting: <b>(F)</b> Reduces the time required to cast a spell of rank 7 or lower by 1 action once per day</td>
     </tr><tr style="text-align:center">
@@ -544,6 +567,8 @@ var attributes = {
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
         <td>Class Feats Allocation: 10 available vs. 48 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Witch Initial Hex Allocation: 1 available vs. 2 allocated</td>
       </tr><tr style="text-align:center">
         <td>Witch Patron Allocation: 1 available vs. 7 allocated</td>
       </tr></table>

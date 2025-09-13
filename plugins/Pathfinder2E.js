@@ -7373,7 +7373,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill ' +
     'Note="Can Craft magic items and knows the formulas for 4 common magic items of 2nd level or lower"',
   'Magical Shorthand':
-    'Section=magic ' +
+    'Section=skill ' +
     'Note="Can learn new spells with %{rank.Arcana>=4||rank.Nature>=4||rank.Occultism>=4||rank.Religion>=4?\'1 min\':rank.Arcana==3||rank.Nature>=3||rank.Occultism>=3||rank.Religion==3?\'5 min\':\'1 hr\'} of study per spell level and retry 1 week after a failure, and can learn new spells at a discounted cost"',
   'Multilingual':'Section=skill Note="+%V Language Count"',
   'Natural Medicine':
@@ -15340,7 +15340,7 @@ Pathfinder2E.featureRules = function(rules, name, sections, notes, action) {
                 QuilvynUtils.getAttrValue(spellAttrs, 'Description').replaceAll('%tradition', t)
               );
               rules.defineRule('spells.' + spellName,
-                note, '=', spellTrad == '%V' ? 'source=="' + t.toLowerCase() + '" ? 1 : null' : '1'
+                note, '=', spellTrad == '%V' ? 'source.includes("' + t.toLowerCase() + '") ? 1 : null' : '1'
               );
             }
           }
