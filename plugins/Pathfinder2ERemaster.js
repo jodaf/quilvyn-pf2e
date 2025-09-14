@@ -5530,8 +5530,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Halo':
     'Section=magic ' +
     'Note="Can use a Sustain action to evoke or suppress a halo that lights a 20\' radius"',
-  'Nephilim Eyes':
-    'Section=feature Note="Has the Darkvision feature"',
+  'Nephilim Eyes':'Section=feature Note="Has the Darkvision feature"',
   'Nephilim Lore':
     'Section=feature,skill ' +
     'Note=' +
@@ -5787,7 +5786,8 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Draws a weapon during initiative"',
   'Runtsage':
-    'Section=feature Note="Has the Adopted Ancestry (Goblin) feature/Ancestry Feat (Choose 1 from any Goblin)"',
+    'Section=feature ' +
+    'Note="Has the Adopted Ancestry (Goblin) feature/Ancestry Feat (Choose 1 from any Goblin)"',
   'Cantorian Rejuvenation':
     'Action=2 ' +
     'Section=combat ' +
@@ -6177,7 +6177,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Has cold resistance %{level//2>?1} and treats environmental cold as 1 step less extreme"',
   'Tunnel Rat':
-    'Section=ability,skill ' +
+    'Section=ability,feature ' +
     'Note=' +
       '"Moves normally through snug spaces",' +
       '"Has the Quick Squeeze feature"',
@@ -11915,7 +11915,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="1d4 hr process gains entrance for self and allies to a publicized social event"',
 
   'Dual-Weapon Warrior Dedication':
-    'Section=combat Note="Has the Double Slice feature"',
+    'Section=feature Note="Has the Double Slice feature"',
   'Dual Thrower':
     'Section=combat ' +
     'Note="Can apply dual-warrior feat effects to thrown and one-handed ranged weapons"',
@@ -11935,7 +11935,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat ' +
     'Note="Turns a normal failure on a Double Slice double miss into a success"',
 
-  'Duelist Dedication':'Section=combat Note="Has the Quick Draw feature"',
+  'Duelist Dedication':'Section=feature Note="Has the Quick Draw feature"',
   "Duelist's Challenge":
     'Action=1 ' +
     'Section=combat ' +
@@ -12015,7 +12015,7 @@ Pathfinder2ERemaster.FEATURES = {
   // Incredible Familiar as above
 
   'Gladiator Dedication':
-    'Section=combat,skill ' +
+    'Section=combat,feature ' +
     'Note=' +
       '"If spectators are present, gains %{level} temporary Hit Points for 1 min at the start of combat and can use Performance for initiative",' +
       '"Has the Additional Lore (Gladitorial Lore) feature"',
@@ -12036,9 +12036,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=combat Note="Has increased Play To The Crowd effects"',
 
   'Herbalist Dedication':
-    'Section=skill,skill ' +
+    'Section=feature,skill,skill ' +
     'Note=' +
-      '"Has the Advanced Alchemy feature/Skill Expert (Nature)",' +
+      '"Has the Advanced Alchemy feature",' +
+      '"Skill Expert (Nature)",' +
       '"Can create 4 alchemical healing consumables in the wilderness, or 2 elsewhere, during daily prep, and can use Nature to craft them"',
   'Fresh Ingredients':
     'Section=skill ' +
@@ -12052,7 +12053,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill Note="Herbal items also give environment-specific benefits: +1 Fortitude for 1 min (aquatic); 1 step less severe cold for 1 hr (arctic); 1 step less severe heat (desert); +2 saves vs. disease and poison for 1 min (forest); +1 Reflex for 1 min (mountain); +1 Will for 1 min (plains); remove a source of persistent bleed damage (swamp); +1 Perception for 1 min (underground)"',
 
   'Linguist Dedication':
-    'Section=skill Note="Skill Trained (Society)/Has the Multilingual feature"',
+    'Section=feature,skill ' +
+    'Note=' +
+      '"Has the Multilingual feature",' +
+      '"Skill Trained (Society)"',
   'Multilingual Cipher':
     'Section=skill ' +
     'Note="+1 to Decipher Writing, and others without a matching language list suffer -2 to decipher codes created by self"',
@@ -12278,7 +12282,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Strikes twice after a Stride; target is off-guard to both if self was hidden or unnoticed"',
 
   'Scroll Trickster Dedication':
-    'Section=skill,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
       '"Has the Trick Magic Item feature",' +
       '"+2 to Trick scrolls, and critical failures to do so are normal failures"',
@@ -12297,7 +12301,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can create a 6h-rank spell scroll%{level<20?\'\':\' and a 7th-rank spell scroll\'} that last%{level<20?\'s\':\'\'} 1 day during daily prep"',
 
   'Scrounger Dedication':
-    'Section=skill,skill ' +
+    'Section=feature,skill ' +
     'Note=' +
       '"Has the Cobble Together feature",' +
       '"Can Craft items without appropriate tools and has formulas memorized"',
