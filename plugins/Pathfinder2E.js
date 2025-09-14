@@ -6892,7 +6892,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Occultism; Performance)"',
   'Basic Bard Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} occult spell"',
+    'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} occult spell slot"',
   "Basic Muse's Whispers":
     'Section=feature Note="Class Feat (Choose 1 from any Bard up to level 2)"',
   "Advanced Muse's Whispers":
@@ -6906,10 +6906,10 @@ Pathfinder2E.FEATURES = {
   'Occult Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Bard Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Occult)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} occult spell"',
+    'Note="Spell Expert (Occult)/Has 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} occult spell slot"',
   'Master Bard Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Occult)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} occult spell"',
+    'Note="Spell Master (Occult)/Has 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} occult spell slot"',
 
   'Champion Dedication':
     'Section=combat,feature,skill ' +
@@ -6942,7 +6942,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Religion)"',
   'Basic Cleric Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
+    'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell slot"',
   'Basic Dogma':
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Cleric up to level 2)"',
@@ -6952,10 +6952,10 @@ Pathfinder2E.FEATURES = {
   'Divine Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Cleric Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
+    'Note="Spell Expert (Divine)/Has 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell slot"',
   'Master Cleric Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Divine)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} divine spell"',
+    'Note="Spell Master (Divine)/Has 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} divine spell slot"',
 
   'Druid Dedication':
     'Section=feature,magic,skill ' +
@@ -6965,7 +6965,7 @@ Pathfinder2E.FEATURES = {
       '"Skill Trained (Nature)"',
   'Basic Druid Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell"',
+    'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} primal spell slot"',
   'Basic Wilding':
     'Section=feature Note="Class Feat (Choose 1 from any Druid up to level 2)"',
   'Order Spell (Animal)':
@@ -6986,10 +6986,10 @@ Pathfinder2E.FEATURES = {
   'Primal Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Druid Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Primal)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} primal spell"',
+    'Note="Spell Expert (Primal)/Has 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} primal spell slot"',
   'Master Druid Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Primal)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} primal spell"',
+    'Note="Spell Master (Primal)/Has 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} primal spell slot"',
 
   'Fighter Dedication':
     'Section=combat,feature,skill ' +
@@ -7069,7 +7069,7 @@ Pathfinder2E.FEATURES = {
       '"Spell Trained (%V)/Knows 2 %1 cantrips"',
   'Basic Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{sorcererTraditionsLowered} spell"',
+    'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{sorcererTraditionsLowered} spell slot"',
   'Basic Blood Potency':
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Sorcerer up to level 2)"',
@@ -7147,10 +7147,10 @@ Pathfinder2E.FEATURES = {
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%V)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
+    'Note="Spell Expert (%V)/Has 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{sorcererTraditionsLowered} spell slot"',
   'Master Sorcerer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%V)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{sorcererTraditionsLowered} spell"',
+    'Note="Spell Master (%V)/Has 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{sorcererTraditionsLowered} spell slot"',
 
   'Wizard Dedication':
     'Section=feature,magic,magic,skill ' +
@@ -7189,17 +7189,17 @@ Pathfinder2E.FEATURES = {
     'Note="Class Feat (Choose 1 from any Wizard up to level 2)"',
   'Basic Wizard Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell"',
+    'Note="Has 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} arcane spell slot"',
   'Advanced Arcana':
     'Section=feature ' +
     'Note="Class Feat (Choose %V from any Wizard up to level %{level//2})"',
   'Arcane Breadth':'Section=magic Note="Has additional archetype spell slots"',
   'Expert Wizard Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Arcane)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} arcane spell"',
+    'Note="Spell Expert (Arcane)/Has 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} arcane spell slot"',
   'Master Wizard Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Arcane)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell"',
+    'Note="Spell Master (Arcane)/Has 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} arcane spell slot"',
 
   // General Feats
   'Additional Lore (%lore)':'Section=skill Note="Skill %V (%lore)"',

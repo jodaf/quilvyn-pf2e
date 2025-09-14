@@ -3595,7 +3595,7 @@ Pathfinder2ERemaster.FEATS = {
   'Basic Druid Spellcasting':Pathfinder2E.FEATS['Basic Druid Spellcasting'],
   'Basic Wilding':Pathfinder2E.FEATS['Basic Wilding'],
   'Order Spell':Pathfinder2E.FEATS['Order Spell'],
-  'Advanced Wilding':Pathfinder2E.FEATS['Basic Wilding'],
+  'Advanced Wilding':Pathfinder2E.FEATS['Advanced Wilding'],
   'Primal Breadth':Pathfinder2E.FEATS['Primal Breadth'],
   'Expert Druid Spellcasting':Pathfinder2E.FEATS['Expert Druid Spellcasting'],
   'Master Druid Spellcasting':Pathfinder2E.FEATS['Master Druid Spellcasting'],
@@ -8186,9 +8186,10 @@ Pathfinder2ERemaster.FEATURES = {
   // Defensive Robes as above
   // Expert Spellcaster as above
   "Faith's Flamekeeper":
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Divine)/Knows the Stoke The Heart and Command divine spells",' +
+      '"Spell Trained (Divine)",' +
+      '"Knows the Stoke The Heart and Command divine spells",' +
       '"Casting or Sustaining a hex gives a target within 15\' of familiar %{2+level//2} temporary Hit Points until the start of the next turn",' +
       '"Skill Trained (Religion)"',
   'Familiar':Pathfinder2E.FEATURES.Familiar,
@@ -8208,41 +8209,47 @@ Pathfinder2ERemaster.FEATURES = {
   // Perception Expertise as above
   // Reflex Expertise as above
   'Silence In Snow':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)/Knows the Clinging Ice and Gust Of Wind primal spells",' +
+      '"Spell Trained (Primal)",' +
+      '"Knows the Clinging Ice and Gust Of Wind primal spells",' +
       '"Casting or Sustaining a hex allows ice to inflict difficult terrain on a 5\' square centered on familiar until the start of the next turn",' +
       '"Skill Trained (Nature)"',
   'Spinner Of Threads':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)/Knows the Nudge Fate and Sure Strike occult spells",' +
+      '"Spell Trained (Occult)",' +
+      '"Knows the Nudge Fate and Sure Strike occult spells",' +
       '"Casting or Sustaining a hex gives a choice of +1 or -1 Armor Class to 1 target within 15\' of familiar until the start of the next turn",' +
       '"Skill Trained (Occultism)"',
   'Starless Shadow':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)/Knows the Shroud Of Night and Fear occult spells",' +
+      '"Spell Trained (Occult)",' +
+      '"Knows the Shroud Of Night and Fear occult spells",' +
       '"Casting or Sustaining a hex inflicts frightened 1 on a target unaware of adjacent familiar",' +
       '"Skill Trained (Occultism)"',
   'The Inscribed One':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Arcane)/Knows the Discern Secrets and Runic Weapon arcane spells",' +
+      '"Spell Trained (Arcane)",' +
+      '"Knows the Discern Secrets and Runic Weapon arcane spells",' +
       '"Casting or Sustaining a hex allows familiar to provide flanking until the start of the next turn",' +
       '"Skill Trained (Arcana)"',
   'The Resentment':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Occult)/Knows the Evil Eye and Enfeeble occult spells",' +
+      '"Spell Trained (Occult)",' +
+      '"Knows the Evil Eye and Enfeeble occult spells",' +
       '"Casting or Sustaining a hex allows prolonging by 1 rd a negative condition affecting a target within 15\' of familiar",' +
       '"Skill Trained (Occultism)"',
   // Weapon Expertise as above
   // Weapon Specialization as above
   'Wilding Steward':
-    'Section=magic,magic,skill ' +
+    'Section=magic,magic,magic,skill ' +
     'Note=' +
-      '"Spell Trained (Primal)/Knows the Wilding Word primal cantrip",' +
+      '"Spell Trained (Primal)",' +
+      '"Knows the Wilding Word primal cantrip",' +
       '"Knows a choice of the Summon Animal and Summon Plant Or Fungus primal spells/Casting or Sustaining a hex gives familiar a choice of imprecise scent, tremorsense, and wavesense with a 60\' range until the start of the next turn, allowing it to immediately Point Out as a free action",' +
       '"Skill Trained (Nature)"',
   'Will Of The Pupil':Pathfinder2E.FEATURES.Resolve,
@@ -11204,7 +11211,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Occult Spellcasting', 'Bard Spellcasting'),
   'Basic Bard Spellcasting':
     Pathfinder2E.FEATURES['Basic Bard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   "Basic Muse's Whispers":Pathfinder2E.FEATURES["Basic Muse's Whispers"],
   "Advanced Muse's Whispers":Pathfinder2E.FEATURES["Advanced Muse's Whispers"],
   'Counter Perform':
@@ -11218,17 +11225,17 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Expert Bard Spellcasting':
     Pathfinder2E.FEATURES['Expert Bard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Master Bard Spellcasting':
     Pathfinder2E.FEATURES['Master Bard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
 
   'Cleric Dedication':
     Pathfinder2E.FEATURES['Cleric Dedication']
     .replace('Divine Spellcasting', 'Cleric Spellcasting'),
   'Basic Cleric Spellcasting':
     Pathfinder2E.FEATURES['Basic Cleric Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Basic Dogma':Pathfinder2E.FEATURES['Basic Dogma'],
   'Advanced Dogma':Pathfinder2E.FEATURES['Advanced Dogma'],
   'Divine Breadth':
@@ -11236,10 +11243,10 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Expert Cleric Spellcasting':
     Pathfinder2E.FEATURES['Expert Cleric Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Master Cleric Spellcasting':
     Pathfinder2E.FEATURES['Master Cleric Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
 
   'Druid Dedication':
     Pathfinder2E.FEATURES['Druid Dedication']
@@ -11247,7 +11254,7 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('Primal Spellcasting', 'Druid Spellcasting'),
   'Basic Druid Spellcasting':
     Pathfinder2E.FEATURES['Basic Druid Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Basic Wilding':Pathfinder2E.FEATURES['Basic Wilding'],
   'Order Spell (Animal)':
     Pathfinder2E.FEATURES['Order Spell (Animal)']
@@ -11269,10 +11276,10 @@ Pathfinder2ERemaster.FEATURES = {
     .replace('level', 'rank'),
   'Expert Druid Spellcasting':
     Pathfinder2E.FEATURES['Expert Druid Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Master Druid Spellcasting':
     Pathfinder2E.FEATURES['Master Druid Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
 
   'Fighter Dedication':
     Pathfinder2E.FEATURES['Fighter Dedication']
@@ -11299,15 +11306,14 @@ Pathfinder2ERemaster.FEATURES = {
   'Uncanny Dodge':Pathfinder2E.FEATURES['Uncanny Dodge'],
   'Evasiveness':Pathfinder2E.FEATURES.Evasiveness,
 
-  // TODO WD gives two cantrips instead of the standard initial patron spells
   'Witch Dedication':
     'Section=feature,magic ' +
     'Note=' +
       '"Has the Familiar, Patron, and Witch Spellcasting features",' +
-      '"Knows a choice of 2 %V cantrips"',
+      '"Can cast a choice of 2 %V cantrips each day"',
   'Basic Witch Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-rank%{rank>=8?\', 1 2nd-rank, and 1 3rd-rank\':rank>=6?\' and 1 2nd-rank\':\'\'} %{witchTraditionsLowered} spell"',
+    'Note="Has 1 1st-rank%{level>=8?\', 1 2nd-rank, and 1 3rd-rank\':level>=6?\' and 1 2nd-rank\':\'\'} %{witchTraditionsLowered} spell slot"',
   'Basic Witchcraft':
     'Section=feature Note="Class Feat (Choose 1 from any Witch up to level 2)"',
   'Advanced Witchcraft':
@@ -11317,10 +11323,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (%V)/Knows 1 4th-rank%{rank>=16?\', 1 5th-rank, and 1 6th-rank\':rank>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell"',
+    'Note="Spell Expert (%V)/Has 1 4th-rank%{level>=16?\', 1 5th-rank, and 1 6th-rank\':level>=14?\' and 1 5th-rank\':\'\'} %{witchTraditionsLowered} spell slot"',
   'Master Witch Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (%V)/Knows 1 7th-rank%{rank>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell"',
+    'Note="Spell Master (%V)/Has 1 7th-rank%{level>=20?\' and 1 8th-rank\':\'\'} %{witchTraditionsLowered} spell slot"',
 
   'Wizard Dedication':
     Pathfinder2E.FEATURES['Wizard Dedication']
@@ -11352,17 +11358,17 @@ Pathfinder2ERemaster.FEATURES = {
   'Basic Arcana':Pathfinder2E.FEATURES['Basic Arcana'],
   'Basic Wizard Spellcasting':
     Pathfinder2E.FEATURES['Basic Wizard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Advanced Arcana':Pathfinder2E.FEATURES['Advanced Arcana'],
   'Arcane Breadth':
     Pathfinder2E.FEATURES['Arcane Breadth']
     .replace('level', 'rank'),
   'Expert Wizard Spellcasting':
     Pathfinder2E.FEATURES['Expert Wizard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
   'Master Wizard Spellcasting':
     Pathfinder2E.FEATURES['Master Wizard Spellcasting']
-    .replaceAll('level', 'rank'),
+    .replaceAll('-level', '-rank'),
 
   // Core 2
 
@@ -11427,6 +11433,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature Note="Has the Superstitious Resilience feature"',
   "Juggernaut's Fortitude":Pathfinder2E.FEATURES["Juggernaut's Fortitude"],
 
+  // Errata adds Champion's Aura
   // TODO Trained in Heavy Armor only if already trained in Medium Armor
   'Champion Dedication':
     Pathfinder2E.FEATURES['Champion Dedication']
@@ -11500,7 +11507,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Class Feat (Choose 1 from any Oracle up to level 2)"',
   'Basic Oracle Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} divine spell"',
+    'Note="Has 1 1st-rank%{level>=8?\', 1 2nd-rank, and 1 3rd-rank\':level>=6?\' and 1 2nd-rank\':\'\'} divine spell slot"',
   'First Revelation (Ancestors)':
     'Section=magic ' +
     'Note="Knows the Ancestral Touch divine spell/Has a focus pool"',
@@ -11532,14 +11539,15 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=magic Note="Has additional archetype spell slots"',
   'Expert Oracle Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Divine)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} divine spell"',
+    'Note="Spell Expert (Divine)/Has 1 4th-rank%{level>=16?\', 1 5th-rank, and 1 6th-rank\':level>=14?\' and 1 5th-rank\':\'\'} divine spell slot"',
   'Master Oracle Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Divine)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} divine spell"',
+    'Note="Spell Master (Divine)/Has 1 7th-rank%{level>=20?\' and 1 8th-rank\':\'\'} divine spell slot"',
 
   'Sorcerer Dedication':Pathfinder2E.FEATURES['Sorcerer Dedication'],
   'Basic Sorcerer Spellcasting':
-    Pathfinder2E.FEATURES['Basic Sorcerer Spellcasting'],
+    Pathfinder2E.FEATURES['Basic Sorcerer Spellcasting']
+    .replaceAll('-level', '-rank'),
   'Basic Blood Potency':Pathfinder2E.FEATURES['Basic Blood Potency'],
   'Basic Bloodline Spell (Aberrant)':
     Pathfinder2E.FEATURES['Basic Bloodline Spell (Aberrant)']
@@ -11605,9 +11613,11 @@ Pathfinder2ERemaster.FEATURES = {
   'Advanced Blood Potency':Pathfinder2E.FEATURES['Advanced Blood Potency'],
   'Bloodline Breadth':Pathfinder2E.FEATURES['Bloodline Breadth'],
   'Expert Sorcerer Spellcasting':
-    Pathfinder2E.FEATURES['Expert Sorcerer Spellcasting'],
+    Pathfinder2E.FEATURES['Expert Sorcerer Spellcasting']
+    .replaceAll('-level', '-rank'),
   'Master Sorcerer Spellcasting':
-    Pathfinder2E.FEATURES['Master Sorcerer Spellcasting'],
+    Pathfinder2E.FEATURES['Master Sorcerer Spellcasting']
+    .replaceAll('-level', '-rank'),
 
   'Swashbuckler Dedication':
     'Section=combat,feature,skill ' +
@@ -11620,7 +11630,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Class Feat (Choose 1 from any Swashbuckler up to level 2)"',
   'Finishing Precision':
-    'Section=combat ' +
+    'Section=feature ' +
     'Note="Has the Precise Strike and Basic Finisher features"',
   'Basic Finisher':
     'Action=1 ' +
@@ -11630,7 +11640,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=feature ' +
     'Note="Class Feat (Choose %V from any swashbuckler up to level %{level//2})"',
   "Swashbuckler's Riposte":
-    'Section=combat Note="Has the Opportune Riposte feature"',
+    'Section=feature Note="Has the Opportune Riposte feature"',
   "Swashbuckler's Speed":
     'Section=ability,ability ' +
     'Note=' +
@@ -11949,7 +11959,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Casts a spell and delivers it using bow or crossbow ammunition; counts as 2 attacks"',
   'Basic Eldritch Archer Spellcasting':
     'Section=magic ' +
-    'Note="Knows 1 1st-level%{level>=8?\', 1 2nd-level, and 1 3rd-level\':level>=6?\' and 1 2nd-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
+    'Note="Has 1 1st-rank%{level>=8?\', 1 2nd-rank, and 1 3rd-rank\':level>=6?\' and 1 2nd-rank\':\'\'} %{eldritchArcherTraditionsLowered} spell slot"',
   'Enchanting Shot':
     'Action=2 ' +
     'Section=combat ' +
@@ -11970,7 +11980,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Reloads a weapon after making an Eldritch Shot, casting a spell, or activating a piece of magical ammunition"',
   'Expert Eldritch Archer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Expert (Occult)/Knows 1 4th-level%{level>=16?\', 1 5th-level, and 1 6th-level\':level>=14?\' and 1 5th-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
+    'Note="Spell Expert (Occult)/Has 1 4th-rank%{level>=16?\', 1 5th-rank, and 1 6th-rank\':level>=14?\' and 1 5th-rank\':\'\'} %{eldritchArcherTraditionsLowered} spell slot"',
   'Homing Shot':
     'Action=1 ' +
     'Section=combat ' +
@@ -11985,7 +11995,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Bow or crossbow strike inflicts +10d10 HP precision, plus death on a critical hit (<b>save Fortitude</b> negates death) once per day"',
   'Master Eldritch Archer Spellcasting':
     'Section=magic ' +
-    'Note="Spell Master (Occult)/Knows 1 7th-level%{level>=20?\' and 1 8th-level\':\'\'} %{eldritchArcherTraditionsLowered} spell"',
+    'Note="Spell Master (Occult)/Has 1 7th-rank%{level>=20?\' and 1 8th-rank\':\'\'} %{eldritchArcherTraditionsLowered} spell slot"',
 
   'Familiar Master Dedication':
     'Section=feature Note="Has the Familiar feature"',
@@ -17685,7 +17695,7 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
         'witchTraditions', '^=', 'source.includes("' + t + '") ? 1 : null'
       );
       rules.defineRule('spellSlots.' + t.charAt(0) + 'C1',
-        'magicNotes.witchDedication', '+=', 'source.includes("' + t.toLowerCase() + '") ? 2 : null'
+        'magicNotes.witchDedication', '+=', 'source.includes("' + t.toLowerCase() + '") ? 1 : null'
       );
       rules.defineRule('spellModifier' + t + '.' + name,
         'features.Witch Dedication', '?', null,
@@ -17712,6 +17722,8 @@ Pathfinder2ERemaster.featRulesExtra = function(rules, name, attrs) {
       );
       rules.defineRule
         ('magicNotes.' + noteName + '-1', 'levels.Witch', '?', null);
+      rules.defineRule
+        ('magicNotes.' + noteName + '-2', 'levels.Witch', '?', null);
     });
   } else if(name.startsWith("Witch's Armaments")) {
     rules.defineRule
