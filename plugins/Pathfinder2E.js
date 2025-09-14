@@ -7387,7 +7387,7 @@ Pathfinder2E.FEATURES = {
     'Note="+2 Occultism to Identify Magic with a mental, possession, prediction, or scrying trait"',
   'Pickpocket':
     'Section=skill ' +
-    'Note="Can Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/Can use 2 actions to Steal with a -5 penalty from an alert creature\':\'\'}"',
+    'Note="Can attempt to Steal a closely-guarded object without penalty%{rank.Thievery>=3?\'/Can use 2 actions to attempt to Steal with a -5 penalty from an alert creature\':\'\'}"',
   'Planar Survival':
     'Section=skill ' +
     'Note="Can use Survival to Subsist on different planes and to prevent damage from planar conditions"',
@@ -7427,7 +7427,7 @@ Pathfinder2E.FEATURES = {
     'Note="Can stand immediately after a successful Grab An Edge and use Athletics to Grab An Edge"',
   'Read Lips':
     'Section=skill ' +
-    'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and can inflict fascinated and flat-footed"',
+    'Note="Can read the lips of those who can be seen clearly; in difficult circumstances, this requires a Society check and can inflict fascinated and flat-footed on self"',
   'Recognize Spell':
     'Action=Reaction ' +
     'Section=skill ' +
@@ -7453,7 +7453,7 @@ Pathfinder2E.FEATURES = {
     'Section=skill Note="Knows the sign equivalents of understood languages"',
   'Skill Training (%skill)':'Section=skill Note="Skill Trained (%skill)"',
   'Slippery Secrets':
-    'Section=skill ' +
+    'Section=save ' +
     'Note="Successful Deception vs. spell DC negates spell effects that read minds, detect lies, or reveal alignment"',
   'Snare Crafting':
     'Section=skill ' +

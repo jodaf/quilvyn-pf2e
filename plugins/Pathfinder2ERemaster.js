@@ -12501,7 +12501,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Bonded Animal':Pathfinder2E.FEATURES['Bonded Animal'],
   'Break Curse':
     'Section=skill ' +
-    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a %{(level+1)//2}-rank counteract check against a curse"',
+    'Note="After %{rank.Occultism>=4||rank.Religion>=4?\'10 min\':\'8 hr\'} of preparation, can use Occultism or Religion for a counteract check at rank %{(level+1)//2} against a curse"',
   'Breath Control':Pathfinder2E.FEATURES['Breath Control'],
   'Canny Acumen (Fortitude)':Pathfinder2E.FEATURES['Canny Acumen (Fortitude)'],
   'Canny Acumen (Perception)':
@@ -12744,9 +12744,10 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="Can include in speech meanings understood only by allies and observers who critically succeed on Perception vs. Deception"',
   'Environmental Guide':
-    'Section=save Note="1 hr adjustment allows self and 5 allies to treat environmental temperature effects as %{rank.Survival<4?\'1 step\':\'2 steps\'} less severe"',
-  'Evangelize':
     'Section=skill ' +
+    'Note="1 hr adjustment allows self and 5 allies to treat environmental temperature effects as %{rank.Survival<4?\'1 step\':\'2 steps\'} less severe"',
+  'Evangelize':
+    'Section=combat ' +
     'Note="Successful Diplomacy vs. Will inflicts stupefied 1 on target for 1 rd, or stupefied 2 for 1 rd on a critical success, once per target per day"',
   'Exhort The Faithful':
     'Section=skill ' +
@@ -12762,7 +12763,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Note="Can use Diplomacy or Society to Track within a settlement"',
   'Forensic Acumen':
     'Section=skill ' +
-    'Note="Can perform a forensic examination in half the normal time to gain +%{rank.Medicine<3?2:rank.Medicine<4?3:4}l on a Recall Knowledge to determine the cause of injury or death"',
+    'Note="Can perform a forensic examination in half the normal time to gain +%{rank.Medicine<3?2:rank.Medicine<4?3:4} on a Recall Knowledge to determine the cause of injury or death"',
   'Glean Contents':
     'Section=skill ' +
     'Note="Can use a Society check with a +1 bonus to Decipher Writing on a partially-glimpsed message or sealed letter"',
@@ -12806,7 +12807,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=save ' +
     'Note="Successful Treat Wounds or Battle Medicine on self restores +%{level} Hit Points, and Battle Medicine can be used again after 1 hr"',
   'Rolling Landing':
-    'Section=feature ' +
+    'Section=combat ' +
     'Note="After falling without damage, can use a reaction to Step or Stride up to %{rank.Acrobatics<3?speed//2:speed}\'%{rank.Acrobatics>=4?\', triggering no reactions\':\'\'}"',
   'Root Magic':
     'Section=skill ' +
@@ -12852,7 +12853,7 @@ Pathfinder2ERemaster.FEATURES = {
     'Section=skill ' +
     'Note="1 hr spent with local contacts gives a +1 Recall Knowledge to Gather Information, or +2 if using Underworld Lore"',
   'Water Sprint':
-    'Section=ability Note="Can%{rank.Athletics<4?\' travel half of Stride in a straight line\':\'Stride\'} over water; must end on solid ground to avoid sinking"'
+    'Section=ability Note="Can%{rank.Athletics<4?\' travel half of Stride in a straight line\':\' Stride\'} over water; must end on solid ground to avoid sinking"'
 
 };
 for(let f in Pathfinder2ERemaster.FEATURES) {
