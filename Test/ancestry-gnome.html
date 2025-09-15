@@ -17,14 +17,14 @@ var attributes = {
   "ancestryFeats.Gnome Weapon Innovator":1, "ancestryFeats.Illusion Sense":1, "ancestryFeats.Vivacious Conduit":1, 
   "armor":"None", "background":"Acolyte", "baseCharisma":10, "baseConstitution":10, 
   "baseDexterity":10, "baseIntelligence":10, "baseStrength":10, "baseWisdom":10, "class":"Cleric", 
-  "deity":"Shelyn", "experience":0, "gender":"Male", "languages.Goblin":1, 
+  "classFeats.Domain Initiate (Protection)":1, "deity":"Shelyn", "experience":0, "gender":"Male", "languages.Goblin":1, 
   "languages.Halfling":1, "name":"Ancestry-Gnome", "selectableFeatures.Cleric - Warpriest":1, 
-  "selectableFeatures.Gnome - Arcane Wellspring":1, "selectableFeatures.Gnome - Chameleon Gnome":1, 
+  "selectableFeatures.Gnome - Chameleon Gnome":1, "selectableFeatures.Gnome - Divine Wellspring":1, 
   "selectableFeatures.Gnome - Fey-Touched Gnome":1, "selectableFeatures.Gnome - Sensate Gnome":1, 
   "selectableFeatures.Gnome - Umbral Gnome":1, "selectableFeatures.Gnome - Wellspring Gnome":1, "shield":"None", 
   "skillIncreases.Astral Plane Lore":1, "skillIncreases.Diplomacy":1, "skillIncreases.Gladitorial Lore":1, 
-  "skillIncreases.Heaven Lore":1, "skillIncreases.Vampire Lore":1, "spells.Ghost Sound (AC1 Ill)":1, 
-  "spells.Guidance (PC1 Div)":1, "weapons.Glaive":1, "weapons.Gnome Flickmace":1, 
+  "skillIncreases.Heaven Lore":1, "skillIncreases.Vampire Lore":1, "spells.Chill Touch (DC1 Nec)":1, 
+  "spells.Prestidigitation (DC1 Evo)":1, "weapons.Glaive":1, "weapons.Gnome Flickmace":1, 
   "weapons.Gnome Hooked Hammer":1, "weapons.Kukri":1, "weapons.Sawtooth Saber":1
 };
   </script>
@@ -82,10 +82,10 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Animal Accomplice; Animal Elocutionist; Burrow Elocutionist; Energized Font; Fey Fellowship; First World Adept; First World Magic; Gnome Obsession; Gnome Weapon Expertise; Gnome Weapon Familiarity; Gnome Weapon Innovator; Illusion Sense; Vivacious Conduit</td>
+        <td><b>Feats</b>: Animal Accomplice; Animal Elocutionist; Burrow Elocutionist; Domain Initiate (Protection); Energized Font; Fey Fellowship; First World Adept; First World Magic; Gnome Obsession; Gnome Weapon Expertise; Gnome Weapon Familiarity; Gnome Weapon Innovator; Illusion Sense; Vivacious Conduit</td>
         <td><b>Cleric Features</b>: Ability Boost (Wisdom); Ability Boosts; Attack Trained (Simple Weapons; Unarmed Attacks); Cleric Skills; Defense Trained (Unarmored Defense); Deity; Divine Font; Divine Spellcasting; Doctrine; Perception Trained; Save Expert (Will); Save Trained (Fortitude; Reflex); Spell Trained (Divine); Warpriest</td>
         <td><b>Acolyte Features</b>: Ability Boost (Choose 1 from Intelligence, Wisdom; Choose 1 from any); Skill Trained (Religion; Scribing Lore); Student Of The Canon</td>
-        <td><b>Gnome Features</b>: Ability Boost (Charisma; Constitution; Choose 1 from any); Ability Flaw (Strength); Ancestry Feats; Arcane Wellspring; Chameleon Gnome; Fey-Touched Gnome; Gnome Heritage; Low-Light Vision; Sensate Gnome; Small; Umbral Gnome; Wellspring Gnome</td>
+        <td><b>Gnome Features</b>: Ability Boost (Charisma; Constitution; Choose 1 from any); Ability Flaw (Strength); Ancestry Feats; Chameleon Gnome; Divine Wellspring; Fey-Touched Gnome; Gnome Heritage; Low-Light Vision; Sensate Gnome; Small; Umbral Gnome; Wellspring Gnome</td>
       </tr></table>
 </td>
     </tr><tr style="text-align:center">
@@ -264,8 +264,9 @@ var attributes = {
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
         <td><b>Spell Slots</b>: D1: 2; DC1: 5</td>
-        <td><b>Attack</b>: Arcane Innate: +5 (charisma; trained); Divine: +5 (wisdom; trained); Primal Innate: +5 (charisma; trained)</td>
-        <td><b>Spell DC</b>: Arcane Innate: 15 (charisma; trained); Divine: 15 (wisdom; trained); Primal Innate: 15 (charisma; trained)</td>
+        <td><b>Focus Points</b>: 1</td>
+        <td><b>Attack</b>: Divine Innate: +5 (charisma; trained); Divine: +5 (wisdom; trained); Primal Innate: +5 (charisma; trained)</td>
+        <td><b>Spell DC</b>: Divine Innate: 15 (charisma; trained); Divine: 15 (wisdom; trained); Primal Innate: 15 (charisma; trained)</td>
       </tr></table>
 </td>
     </tr></table>
@@ -273,19 +274,23 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Faerie Fire (A2 Evo): <b>(2)</b> R120' 10' burst makes concealed creatures visible and invisible creatures concealed for 5 min</td>
+      <td>Chill Touch (DC1 Nec): <b>(2)</b> Touch inflicts 1d4+2 HP negative on a living creature (<b>save basic Fortitude</b>; critical failure also inflicts enfeebled 1 for 1 rd) or flat-footed on an undead for 1 rd (<b>save Fortitude</b> negates; critical failure also inflicts fleeing for 1 rd) (<b>heightened +1</b> inflicts +1d4 HP on living)</td>
     </tr><tr style="text-align:left">
-      <td>Ghost Sound (AC1 Ill): <b>(2)</b> R30' Creates sound equivalent to 4 humans shouting while sustained (<b>heightened 3rd</b> R60'; <b>5th</b> R120')</td>
+      <td>Faerie Fire (D2 Evo): <b>(2)</b> R120' 10' burst makes concealed creatures visible and invisible creatures concealed for 5 min</td>
     </tr><tr style="text-align:left">
-      <td>Guidance (PC1 Div): <b>(1)</b> R30' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr</td>
+      <td>Invisibility (D2 Ill): <b>(2)</b> Touched becomes invisible for 10 min; using a hostile action ends (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)</td>
     </tr><tr style="text-align:left">
-      <td>Invisibility (A2 Ill): <b>(2)</b> Touched becomes invisible for 10 min; using a hostile action ends (<b>heightened 4th</b> effects last for 1 min, and a hostile action does not end the spell)</td>
+      <td>Prestidigitation (DC1 Evo): <b>(2)</b> R10' Performs cooking, lifting, making a minor object, or tidying while sustained</td>
+    </tr><tr style="text-align:left">
+      <td>Protector's Sacrifice (D1 Foc Abj): <b>(R)</b> R30' Transfers 3 HP damage of the triggering attack from target to self (<b>heightened +1</b> transfers +3 HP)</td>
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
     <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
     <tr style="text-align:center">
-      <td><i>First World Adept: Knows the Faerie Fire and Invisibility arcane innate spells; can cast each once per day</i></td>
+      <td><i>Domain Initiate (Protection): Knows the Protector's Sacrifice divine spell/Has a focus pool and 1 Focus Point</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>First World Adept: Knows the Faerie Fire and Invisibility divine innate spells; can cast each once per day</i></td>
     </tr><tr style="text-align:center">
       <td><i>Warpriest: Spell Trained (Divine)</i></td>
     </tr><tr style="text-align:center">
@@ -297,11 +302,11 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Fey-Touched Gnome: Can cast a chosen primal innate cantrip at will and can spend 10 min to choose a different cantrip once per day</td>
     </tr><tr style="text-align:center">
-      <td>First World Magic: Can cast a chosen arcane innate cantrip at will</td>
+      <td>First World Magic: Can cast a chosen divine innate cantrip at will</td>
     </tr><tr style="text-align:center">
       <td>Healing Font: Can cast <i>Heal</i> at level 1 an additional 3 times per day</td>
     </tr><tr style="text-align:center">
-      <td>Wellspring Gnome (Arcane): Can cast a chosen arcane innate cantrip at will</td>
+      <td>Wellspring Gnome (Divine): Can cast a chosen divine innate cantrip at will</td>
     </tr></table>
 </td>
   </tr></table>
@@ -317,7 +322,9 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Animal Elocutionist Feat: Requires level (currently 1) >= 5 and burrow elocutionist feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Energized Font Feat: Requires level (currently 1) >= 5 and focus pool feature</td>
+        <td>Class Feats Allocation: 0 available vs. 1 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Energized Font Feat: Requires level (currently 1) >= 5, focus pool feature (currently 1) and gnome shared innate and focus tradition (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>First World Adept Feat: Requires level (currently 1) >= 9 and primal innate rank (currently 1)</td>
       </tr><tr style="text-align:center">

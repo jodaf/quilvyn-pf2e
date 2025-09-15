@@ -1051,8 +1051,12 @@ Pathfinder2E.FEATS = {
   'Illusion Sense':'Traits=Gnome',
   'Animal Elocutionist':
     'Traits=Gnome Require="level >= 5","features.Burrow Elocutionist"',
-  // TODO requires "at least one innate spell from a gnome heritage or ancestry feat that shares a tradition with at least one of your focus spells"
-  'Energized Font':'Traits=Gnome Require="level >= 5","features.Focus Pool"',
+  'Energized Font':
+    'Traits=Gnome ' +
+    'Require=' +
+      '"level >= 5",' +
+      '"features.Focus Pool",' +
+      '"gnomeSharedInnateAndFocusTradition"',
   'Gnome Weapon Innovator':
     'Traits=Gnome Require="level >= 5","features.Gnome Weapon Familiarity"',
   'First World Adept':
@@ -14732,6 +14736,13 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     });
   } else if(name == 'Empty Body') {
     rules.defineRule('magicNotes.emptyBody', 'monkTradition', '=', null);
+  } else if(name == 'Energized Font') {
+    ['Arcane', 'Divine', 'Occult', 'Primal'].forEach(t => {
+      rules.defineRule('gnomeSharedInnateAndFocusTradition',
+        'gnomeTradition', '?', null,
+        'spellDifficultyClass.' + t, '=', 'dict.gnomeTradition=="' + t.toLowerCase() + '" ? 1 : null'
+      );
+    });
   } else if(name == 'Expert Alchemy') {
     rules.defineRule
       ('advancedAlchemyLevel', 'featureNotes.expertAlchemy', '^', null);
