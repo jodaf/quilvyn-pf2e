@@ -14419,6 +14419,12 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
   let prefix =
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
+  if(name.endsWith(' Dedication')) {
+    rules.defineRule(prefix + 'Level',
+      'features.' + name, '?', null,
+      'level', '=', null
+    );
+  }
   if(name == 'Abundant Step') {
     rules.defineRule('magicNotes.abundantStep', 'monkTradition', '=', null);
   } else if((matchInfo = name.match(/Additional Lore \((.*)\)/)) != null) {

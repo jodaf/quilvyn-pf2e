@@ -2107,8 +2107,13 @@ Pathfinder2ERemaster.FEATS = {
   'Animal Companion':Pathfinder2E.FEATS['Animal Companion'],
   // Changes from Wild Empathy
   'Animal Empathy':
-    'Traits=Druid,Ranger ' +
-    'Require="levels.Druid >= 1 || levels.Ranger >= 2"',
+    'Traits=Druid,Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Druid >= 1 || ' +
+       'levels.Ranger >= 2 || ' +
+       'druidDedicationLevel >= 2 || ' +
+       'rangerDedicationLevel >= 4 || ' +
+       'beastmasterDedicationLevel >= 4"',
   'Leshy Familiar':Pathfinder2E.FEATS['Leshy Familiar'],
   // Note: Feat 1 Plant Empathy links to legacy Feat 6 Druid Empathy in Nethys
   'Plant Empathy':'Traits=Druid',
@@ -2132,7 +2137,15 @@ Pathfinder2ERemaster.FEATS = {
   'Order Explorer (Untamed)':
     Pathfinder2E.FEATS['Order Explorer (Wild)']
     .replace('Wild', 'Untamed'),
-  'Poison Resistance':Pathfinder2E.FEATS['Poison Resistance'],
+  // Changed traits and requirements
+  'Poison Resistance':
+    'Traits=Alchemist,Druid,Archetype ' +
+    'Require=' +
+      '"levels.Alchemist >= 2 || ' +
+       'levels.Druid >= 2 || ' +
+       'alchemistDedicationLevel >= 4 || ' +
+       'druidDedicationLevel >= 4 || ' +
+       'assassinDedicationLevel >= 4"',
   'Anthropomorphic Shape':
     Pathfinder2E.FEATS['Thousand Faces']
     .replace('Wild Shape', 'Untamed Form'),
@@ -2206,7 +2219,15 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"level >= 10",' +
       '"features.Verdant Weapon"',
-  'Side By Side':Pathfinder2E.FEATS['Side By Side'],
+  // Changed traits and requirements
+  'Side By Side':
+    'Traits=Druid,Ranger,Archetype ' +
+    'Require=' +
+      '"features.Animal Companion",' +
+      '"levels.Druid >= 10 || ' +
+       'levels.Ranger >= 12 || ' +
+       'druidDedicationLevel >= 20 || ' +
+       'beastmasterDedicationLevel >= 14"',
   'Thunderclap Spell':
     'Traits=Druid,Sonic,Spellshape Require="level >= 10","inStormOrder"',
   'Dragon Shape':Pathfinder2E.FEATS['Dragon Shape'],
@@ -2255,9 +2276,13 @@ Pathfinder2ERemaster.FEATS = {
   'Combat Assessment':'Traits=Fighter',
   'Double Slice':Pathfinder2E.FEATS['Double Slice'],
   'Exacting Strike':Pathfinder2E.FEATS['Exacting Strike'],
+  // Changed traits and requirements
   'Point Blank Stance':
-    Pathfinder2E.FEATS['Point-Blank Shot']
-    .replace(',Open', ''),
+    'Traits=Fighter,Stance,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 1 || ' +
+       'fighterDedicationLevel >= 2 || ' +
+       'archerDedicationLevel >= 4"',
   'Reactive Shield':Pathfinder2E.FEATS['Reactive Shield'],
   'Snagging Strike':Pathfinder2E.FEATS['Snagging Strike'],
   'Sudden Charge':
@@ -2265,7 +2290,13 @@ Pathfinder2ERemaster.FEATS = {
     .replace(',Open', ''),
   'Vicious Swing':Pathfinder2E.FEATS['Power Attack'],
   'Aggressive Block':Pathfinder2E.FEATS['Aggressive Block'],
-  'Assisting Shot':Pathfinder2E.FEATS['Assisting Shot'],
+  // Changed traits and requirements
+  'Assisting Shot':
+    'Traits=Fighter,Press,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 2 || ' +
+       'fighterDedicationLevel >= 4 || ' +
+       'archerDedicationLevel >= 4"',
   'Blade Brake':'Traits=Fighter,Manipulate Require="level >= 2"',
   'Brutish Shove':Pathfinder2E.FEATS['Brutish Shove'],
   'Combat Grab':Pathfinder2E.FEATS['Combat Grab'],
@@ -2280,12 +2311,29 @@ Pathfinder2ERemaster.FEATS = {
   'Barreling Charge':
     'Traits=Barbarian,Fighter,Flourish ' +
     'Require="level >= 4","rank.Athletics >= 1"',
-  'Double Shot':Pathfinder2E.FEATS['Double Shot'],
+  // Changed traits and requirements
+  'Double Shot':
+    'Traits=Fighter,Flourish,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 4 || ' +
+       'fighterDedicationLevel >= 8 || ' +
+       'archerDedicationLevel >= 6"',
   'Dual-Handed Assault':Pathfinder2E.FEATS['Dual-Handed Assault'],
-  'Parting Shot':'Traits=Fighter Require="level >= 4"',
+  'Parting Shot':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 4 || ' +
+       'fighterDedicationLevel >= 8 || ' +
+       'archerDedicationLevel >= 6"',
   'Powerful Shove':Pathfinder2E.FEATS['Powerful Shove'],
   'Quick Reversal':Pathfinder2E.FEATS['Quick Reversal'],
-  'Shielded Stride':Pathfinder2E.FEATS['Shielded Stride'],
+  // Changed traits and requirements
+  'Shielded Stride':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 4 || ' +
+       'fighterDedicationLevel >= 8 || ' +
+       'bastionDedicationLevel >= 6"',
   'Slam Down':Pathfinder2E.FEATS.Knockdown,
   'Swipe':Pathfinder2E.FEATS.Swipe,
   'Twin Parry':Pathfinder2E.FEATS['Twin Parry'],
@@ -2300,15 +2348,35 @@ Pathfinder2ERemaster.FEATS = {
   "Guardian's Deflection":
     Pathfinder2E.FEATS["Guardian's Deflection"]
     .replace('Traits=', 'Traits=Swashbuckler,'),
-  'Reflexive Shield':Pathfinder2E.FEATS['Reflexive Shield'],
+  // Changed traits and requirements
+  'Reflexive Shield':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 6 || ' +
+       'fighterDedicationLevel >= 12 || ' +
+       'bastionDedicationLevel >= 8"',
   'Revealing Stab':Pathfinder2E.FEATS['Revealing Stab'],
   'Ricochet Stance':
     'Traits=Fighter,Rogue,Stance ' +
     'Require="levels.Fighter >= 6 || levels.Rogue >= 8"',
   'Shatter Defenses':Pathfinder2E.FEATS['Shatter Defenses'],
   'Shield Warden':
-    'Traits=Champion,Fighter Require="level >=6","features.Shield Block"',
-  'Triple Shot':Pathfinder2E.FEATS['Triple Shot'],
+    'Traits=Champion,Fighter,Archetype ' +
+    'Require=' +
+      '"features.Shield Block",' +
+      '"levels.Champion >= 6 || ' +
+       'levels.Fighter >= 6 || ' +
+       'championDedicationLevel >= 12 || ' +
+       'fighterDedicationLevel >= 12 || ' +
+       'bastionDedicationLevel >= 8"',
+  // Changed traits and requirements
+  'Triple Shot':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"features.Double Shot",' +
+      '"levels.Fighter >= 6 || ' +
+       'fighterDedicationLevel >= 12 || ' +
+       'archerDedicationLevel >= 8"',
   'Blind-Fight':
     Pathfinder2E.FEATS['Blind-Fight']
     .replace('Traits=', 'Traits=Investigator,'),
@@ -2317,11 +2385,23 @@ Pathfinder2ERemaster.FEATS = {
   'Dueling Riposte':Pathfinder2E.FEATS['Dueling Riposte'],
   'Felling Strike':Pathfinder2E.FEATS['Felling Strike'],
   'Incredible Aim':Pathfinder2E.FEATS['Incredible Aim'],
-  'Mobile Shot Stance':Pathfinder2E.FEATS['Mobile Shot Stance'],
+  // Changed traits and requirements
+  'Mobile Shot Stance':
+    'Traits=Fighter,Stance,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 8 || ' +
+       'fighterDedicationLevel >= 16 || ' +
+       'archerDedicationLevel >= 10"',
   'Positioning Assault':Pathfinder2E.FEATS['Positioning Assault'],
   'Quick Shield Block':
-    'Traits=Champion,Fighter ' +
-    'Require="level >= 8","features.Shield Block"',
+    'Traits=Champion,Fighter,Archetype ' +
+    'Require=' +
+      '"features.Shield Block",' +
+      '"levels.Champion >= 8 || ' +
+       'levels.Fighter >= 8 || ' +
+       'championDedicationLevel >= 16 || ' +
+       'fighterDedicationLevel >= 16 || ' +
+       'bastionDedicationLevel >= 10"',
   'Resounding Bravery':'Traits=Fighter Require="level >= 8","features.Bravery"',
   'Sudden Leap':'Traits=Fighter Require="level >= 8"',
   'Agile Grace':Pathfinder2E.FEATS['Agile Grace'],
@@ -2335,7 +2415,13 @@ Pathfinder2ERemaster.FEATS = {
   'Disruptive Stance':Pathfinder2E.FEATS['Disruptive Stance'],
   'Fearsome Brute':Pathfinder2E.FEATS['Fearsome Brute'],
   'Flinging Charge':'Traits=Fighter,Flourish Require="level >= 10"',
-  'Mirror Shield':Pathfinder2E.FEATS['Mirror Shield'],
+  // Changed traits and requirements
+  'Mirror Shield':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 10 || ' +
+       'fighterDedicationLevel >= 20 || ' +
+       'bastionDedicationLevel >= 12"',
   'Overpowering Charge':
     'Traits=Barbarian,Fighter ' +
     'Require="level >= 10","features.Barreling Charge"',
@@ -2364,20 +2450,34 @@ Pathfinder2ERemaster.FEATS = {
     Pathfinder2E.FEATS['Whirlwind Strike']
     .replace(',Open', ''),
   'Graceful Poise':Pathfinder2E.FEATS['Graceful Poise'],
-  'Improved Reflexive Shield':Pathfinder2E.FEATS['Improved Reflexive Shield'],
+  // Changed traits and requirements
+  'Improved Reflexive Shield':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"features.Reflexive Shield",' +
+      '"levels.Fighter >= 16 || ' +
+       'bastionDedicationLevel >= 18"',
   'Master Of Many Styles':
     'Traits=Fighter,Monk ' +
     'Require=' +
       '"level >= 16",' +
       '"features.Opening Stance || features.Reflexive Stance"',
+  // Changed traits and requirements
   'Multishot Stance':
-    Pathfinder2E.FEATS['Multishot Stance']
-    .replace('Triple', 'Double'),
+    'Traits=Fighter,Stance,Archetype ' +
+    'Require=' +
+      '"features.Double Shot",' +
+      '"levels.Fighter >= 16 || ' +
+       'archerDedicationLevel >= 18"',
   'Overwhelming Blow':'Traits=Fighter Require="level >= 16"',
   'Twinned Defense':Pathfinder2E.FEATS['Twinned Defense'],
+  // Changed traits and requirements
   'Impossible Volley':
-    Pathfinder2E.FEATS['Impossible Volley']
-    .replace(',Open', ''),
+    'Traits=Fighter,Ranger,Flourish,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 18 || ' +
+       'levels.Ranger >= 18 || ' +
+       'archerDedicationLevel >= 20"',
   'Savage Critical':Pathfinder2E.FEATS['Savage Critical'],
   'Smash From The Air':
     'Traits=Fighter Require="level >= 18","features.Cut From The Air"',
@@ -2389,12 +2489,34 @@ Pathfinder2ERemaster.FEATS = {
 
   // Ranger
   // Animal Companion as above
-  'Crossbow Ace':Pathfinder2E.FEATS['Crossbow Ace'],
+  // Changed traits and requirements
+  'Crossbow Ace':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 1 || ' +
+       'rangerDedicationLevel >= 2 || ' +
+       'archerDedicationLevel >= 4"',
   'Hunted Shot':Pathfinder2E.FEATS['Hunted Shot'],
   'Initiate Warden (Gravity Weapon)':'Traits=Ranger',
-  'Initiate Warden (Heal Companion)':'Traits=Ranger',
-  'Initiate Warden (Magic Hide)':'Traits=Ranger',
-  'Monster Hunter':Pathfinder2E.FEATS['Monster Hunter'],
+  'Initiate Warden (Heal Companion)':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 1 || ' +
+       'rangerDedicationLevel >= 2 || ' +
+       'beastmasterDedicationLevel >= 4"',
+  'Initiate Warden (Magic Hide)':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 1 || ' +
+       'rangerDedicationLevel >= 2 || ' +
+       'beastmasterDedicationLevel >= 4"',
+  // Changed traits and requirements
+  'Monster Hunter':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 1 || ' +
+       'rangerDedicationLevel >= 2 || ' +
+       'bountyHunterDedicationLevel >= 4"',
   'Twin Takedown':Pathfinder2E.FEATS['Twin Takedown'],
   // Animal Empathy as above
   'Favored Terrain (%terrain)':Pathfinder2E.FEATS['Favored Terrain (%terrain)'],
@@ -2404,16 +2526,34 @@ Pathfinder2ERemaster.FEATS = {
   'Advanced Warden (Animal Feature)':
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
   'Advanced Warden (Enlarge Companion)':
-    'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"features.Initiate Warden",' +
+      '"levels.Ranger >= 4 || ' +
+       'rangerDedicationLevel >= 8 || ' +
+       'beastmasterDedicationLevel >= 6"',
   "Advanced Warden (Hunter's Luck)":
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
   'Advanced Warden (Soothing Mist)':
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
-  "Companion's Cry":Pathfinder2E.FEATS["Companion's Cry"],
+  // Changed traits and requirements
+  "Companion's Cry":
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"features.Animal Companion",' +
+      '"levels.Ranger >= 4 || ' +
+       'rangerDedicationLevel >= 8 || ' +
+       'beastmasterDedicationLevel >= 6"',
   'Disrupt Prey':Pathfinder2E.FEATS['Disrupt Prey'],
   'Far Shot':Pathfinder2E.FEATS['Far Shot'],
   'Favored Prey':Pathfinder2E.FEATS['Favored Enemy'],
-  'Running Reload':Pathfinder2E.FEATS['Running Reload'],
+  // Changed traits and requirements
+  'Running Reload':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 4 || ' +
+       'rangerDedicationLevel >= 8 || ' +
+       'archerDedicationLevel >= 6"',
   "Scout's Warning":Pathfinder2E.FEATS["Scout's Warning"],
   // Twin Parry as above
   'Additional Recollection':'Traits=Ranger Require="level >= 6"',
@@ -2443,7 +2583,12 @@ Pathfinder2ERemaster.FEATS = {
   // Twin Riposte as above; Nethys omits Twin Parry prereq, as does Fighter
   "Warden's Step":Pathfinder2E.FEATS["Warden's Step"],
   'Distracting Shot':Pathfinder2E.FEATS['Distracting Shot'],
-  'Double Prey':Pathfinder2E.FEATS['Double Prey'],
+  // Changed traits and requirements
+  'Double Prey':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"levels.Ranger >= 12 || ' +
+       'bountyHunterDedicationLevel >= 14"',
   'Second Sting':Pathfinder2E.FEATS['Second Sting'],
   // Side By Side as above
   "Warden's Focus":
@@ -2480,9 +2625,15 @@ Pathfinder2ERemaster.FEATS = {
   'Nimble Dodge':Pathfinder2E.FEATS['Nimble Dodge'],
   'Overextending Feint':'Traits=Rogue Require="rank.Deception >= 1"',
   'Plant Evidence':'Traits=Rogue Require="features.Pickpocket"',
+  // Changed traits and requirements
   'Trap Finder':
-    Pathfinder2E.FEATS['Trap Finder']
-    .replace('Traits=', 'Traits=Investigator,'),
+    'Traits=Investigator,Rogue,Archetype ' +
+    'Require=' +
+      '"levels.Investigator >= 1 || ' +
+       'levels.Rogue >= 1 || ' +
+       'investigatorDedicationLevel >= 2 || ' +
+       'rogueDedicationLevel >= 2 || ' +
+       'archaeologistDedicationLevel >= 4"',
   'Tumble Behind':
     'Traits=Rogue,Swashbuckler ' +
     'Require="levels.Rogue >= 1 || levels.Swashbuckler >= 2"',
@@ -2501,7 +2652,13 @@ Pathfinder2ERemaster.FEATS = {
   'Dread Striker':Pathfinder2E.FEATS['Dread Striker'],
   'Head Stomp':'Traits=Rogue Require="level >= 4"',
   'Mug':'Traits=Rogue Require="level >= 4"',
-  'Poison Weapon':Pathfinder2E.FEATS['Poison Weapon'],
+  // Changed traits and requirements
+  'Poison Weapon':
+    'Traits=Rogue,Manipulate,Archetype ' +
+    'Require=' +
+      '"levels.Rogue >= 4 || ' +
+       'rogueDedicationLevel >= 8 || ' +
+       'assassinDedicationLevel >= 6"',
   'Predictable!':'Traits=Rogue Require="level >= 4"',
   'Reactive Pursuit':Pathfinder2E.FEATS['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATS.Sabotage,
@@ -2526,8 +2683,21 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 6","rank.Intimidation >= 1"',
   // Blind-Fight as above
   'Bullseye':'Traits=Rogue Require="level >= 8"',
-  'Delay Trap':Pathfinder2E.FEATS['Delay Trap'],
-  'Improved Poison Weapon':Pathfinder2E.FEATS['Improved Poison Weapon'],
+  // Changed traits and requirements
+  'Delay Trap':
+    'Traits=Rogue,Archetype ' +
+    'Require=' +
+      '"levels.Rogue >= 8 || ' +
+       'levels.rogueDedicationLevel >= 16 || ' +
+       'archaeologistDedicationLevel >= 10"',
+  // Changed traits and requirements
+  'Improved Poison Weapon':
+    'Traits=Rogue,Archetype ' +
+    'Require=' +
+      '"features.Poison Weapon",' +
+      '"levels.Rogue >= 8 || ' +
+       'rogueDedicationLevel >= 16 || ' +
+       'assassinDedicationLevel >= 10"',
   'Inspired Stratagem':'Traits=Rogue Require="level >= 8"',
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
@@ -2964,14 +3134,26 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Champion Require="level >= 4","spells.Touch Of The Void (D1 Foc)"',
   // Traits and requirements changed
   'Mercy (Body)':
-    'Traits=Champion ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"spells.Lay On Hands (D1 Foc)",' +
+      '"levels.Champion >= 4 || ' +
+       'championDedicationLevel >= 8 || ' +
+       'blessedOneDedicationLevel >= 6"',
   'Mercy (Grace)':
-    'Traits=Champion ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"spells.Lay On Hands (D1 Foc)",' +
+      '"levels.Champion >= 4 || ' +
+       'championDedicationLevel >= 8 || ' +
+       'blessedOneDedicationLevel >= 6"',
   'Mercy (Mind)':
-    'Traits=Champion ' +
-    'Require="level >= 4","spells.Lay On Hands (D1 Foc)"',
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"spells.Lay On Hands (D1 Foc)",' +
+      '"levels.Champion >= 4 || ' +
+       'championDedicationLevel >= 8 || ' +
+       'blessedOneDedicationLevel >= 6"',
   'Security':
     'Traits=Champion ' +
     'Require="level >= 4","spells.Shields Of The Spirit (D1 Foc)"',
@@ -2988,7 +3170,14 @@ Pathfinder2ERemaster.FEATS = {
   "Advanced Deity's Domain (%domain)":
     Pathfinder2E.FEATS["Advanced Deity's Domain (%domain)"],
   'Greater Cruelty':'Traits=Champion Require="level >= 8","features.Cruelty"',
-  'Greater Mercy':Pathfinder2E.FEATS['Greater Mercy'],
+  // Changed traits and requirements
+  'Greater Mercy':
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"features.Mercy",' +
+      '"levels.Champion >= 8 || ' +
+       'championDedicationLevel >= 16 || ' +
+       'blessedOneDedicationLevel >= 10"',
   'Greater Security':'Traits=Champion Require="level >= 8","features.Security"',
   'Heal Mount':
     Pathfinder2E.FEATS['Heal Mount']
@@ -3014,7 +3203,13 @@ Pathfinder2ERemaster.FEATS = {
   'Spectral Advance':
     'Traits=Champion,Concentrate,Divine,Teleportation ' +
     'Require="level >= 10","features.Blessed Swiftness"',
-  'Affliction Mercy':Pathfinder2E.FEATS['Affliction Mercy'],
+  // Changed traits and requirements
+  'Affliction Mercy':
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"features.Mercy",' +
+      '"levels.Champion >= 12 || ' +
+       'blessedOneDedicationLevel >= 14"',
   'Aura Of Faith':
     Pathfinder2E.FEATS['Aura Of Faith']
     .replace('The Tenets Of Good', 'Holy || traits.Unholy'),
@@ -3049,10 +3244,20 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 16","features.Blessed Counterstrike || features.Retributive Strike"',
   'Shield Of Grace':Pathfinder2E.FEATS['Shield Of Grace'],
   'Rejuvenating Touch':
-    'Traits=Champion Require="level >= 18","spells.Lay On Hands (D1 Foc)"',
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"spells.Lay On Hands (D1 Foc)",' +
+      '"levels.Champion >= 18 || ' +
+       'blessedOneDedicationLevel >= 20"',
   'Swift Retribution':
     'Traits=Champion Require="level >= 18","features.Champion\'s Reaction"',
-  'Ultimate Mercy':Pathfinder2E.FEATS['Ultimate Mercy'],
+  // Changed traits and requirements
+  'Ultimate Mercy':
+    'Traits=Champion,Archetype ' +
+    'Require=' +
+      '"features.Mercy",' +
+      '"levels.Champion >= 18 || ' +
+       'blessedOneDedicationLevel >= 20"',
   'Armament Paragon':
     Pathfinder2E.FEATS['Radiant Blade Master'] + ' ' +
     'Require="level >= 20","features.Blessed Armament"',
@@ -3798,7 +4003,6 @@ Pathfinder2ERemaster.FEATS = {
     'Require="level >= 8","features.Swashbuckler Dedication"',
   // Evasiveness as above
 
-  // TODO Do anything with "additional feats" for Archaeologist and others?
   'Acrobat Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Acrobatics >= 1"',
   'Contortionist':
@@ -3829,6 +4033,7 @@ Pathfinder2ERemaster.FEATS = {
   'Settlement Scholastics':
     'Traits=Archetype,Skill ' +
     'Require="level >= 4","features.Archaeologist Dedication"',
+  // Trap Finder as above
   'Scholastic Identification':
     'Traits=Archetype,Skill ' +
     'Require=' +
@@ -3838,33 +4043,47 @@ Pathfinder2ERemaster.FEATS = {
   "Archaeologist's Luck":
     'Traits=Archetype,Fortune ' +
     'Require="level >= 8","features.Archaeologist Dedication"',
+  // Delay Trap as above
   'Greater Magical Scholastics':
     'Traits=Archetype Require="level >= 10","features.Magical Scholastics"',
 
   'Archer Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
+  // Assisting Shot as above
+  // Crossbow Ace as above
+  // Point Blank Stance as above
   'Quick Shot':
     'Traits=Archetype Require="level >= 4","features.Archer Dedication"',
   'Crossbow Terror':
     'Traits=Archetype Require="level >= 6","features.Archer Dedication"',
+  // Double Shot as above
+  // Parting Shot as above
+  // Running Reload as above
   "Archer's Aim":
     'Traits=Archetype,Concentrate ' +
     'Require="level >= 8","features.Archer Dedication"',
+  // Triple Shot as above
+  // Mobile Shot Stance as above
   'Unobstructed Shot':
     'Traits=Archetype,Flourish ' +
     'Require=' +
       '"level >= 10",' +
       '"features.Archer Dedication",' +
       '"rank.Athletics >= 2"',
+  // Multishot Stance as above
+  // Impossible Volley as above
 
   'Assassin Dedication':
     'Traits=Archetype,Dedication ' +
     'Require="level >= 2","rank.Deception >= 1","rank.Stealth >= 1"',
   'Expert Backstabber':
     'Traits=Archetype Require="level >= 4","features.Assassin Dedication"',
+  // Poison Resistance as above
   'Surprise Attack':
     'Traits=Archetype Require="level >= 4","features.Assassin Dedication"',
+  // Poison Weapon as above
   'Angel Of Death':
     'Traits=Archetype Require="level >= 10","features.Assassin Dedication"',
+  // Improved Poison Weapon as above
   'Assassinate':
     'Traits=Archetype Require="level >= 12","features.Assassin Dedication"',
 
@@ -3878,19 +4097,30 @@ Pathfinder2ERemaster.FEATS = {
       '"rank.Athletics >= 1"',
   'Nimble Shield Hand':
     'Traits=Archetype Require="level >= 6","features.Bastion Dedication"',
+  // Shielded Stride as above
+  // Reflexive Shield as above
+  // Shield Warden as above
   'Destructive Block':
     'Traits=Archetype Require="level >= 10","features.Bastion Dedication"',
+  // Quick Shield Block as above
+  // Mirror Shield as above
   'Shield Salvation':
     'Traits=Archetype Require="level >= 12","features.Bastion Dedication"',
+  // Improved Reflexive Shield as above
 
   'Beastmaster Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Nature >= 1"',
   'Additional Companion':
     'Traits=Archetype Require="level >= 4","features.Beastmaster Dedication"',
+  // Animal Empathy as above
+  // Initiate Warden (Heal Companion) as above
+  // Initiate Warden (Magic Hide) as above
   'Mature Beastmaster Companion':
     'Traits=Archetype Require="level >= 4","features.Beastmaster Dedication"',
+  // Advanced Warden (Enlarge Companion) as above
   "Beastmaster's Trance":
     'Traits=Archetype Require="level >= 6","features.Beastmaster Dedication"',
+  // Companion's Cry as above
   'Swift Guardian':
     'Traits=Archetype,Concentrate ' +
     'Require=' +
@@ -3909,6 +4139,7 @@ Pathfinder2ERemaster.FEATS = {
       '"level >= 12",' +
       '"features.Beastmaster Dedication",' +
       '"features.Call Companion"',
+  // Side By Side as above
   'Specialized Beastmaster Companion':
     'Traits=Archetype ' +
     'Require="level >= 14","features.Incredible Beastmaster Companion"',
@@ -3920,6 +4151,7 @@ Pathfinder2ERemaster.FEATS = {
   'Blessed One Dedication':'Traits=Archetype,Dedication Require="level >= 2"',
   'Blessed Sacrifice':
     'Traits=Archetype Require="level >= 4","features.Blessed One Dedication"',
+  // Mercy as above
   'Blessed Spell':
     'Traits=Archetype,Concentrate,Spellshape ' +
     'Require=' +
@@ -3927,11 +4159,16 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Blessed One Dedication",' +
       '"maxSpellLevel >= 1",' +
       '"features.Mercy"',
+  // Greater Mercy as above
   'Blessed Denial':
     'Traits=Archetype Require="level >= 12","features.Blessed One Dedication"',
+  // Affliction Mercy as above
+  // Rejuvenating Touch as above
+  // Ultimate Mercy as above
 
   'Bounty Hunter Dedication':
     'Traits=Archetype,Dedication Require="level >= 2","rank.Survival >= 1"',
+  // Monster Hunter as above
   'Posse':
     'Traits=Archetype,Exploration ' +
     'Require="level >= 4","features.Bounty Hunter Dedication"',
@@ -3941,6 +4178,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Archetype Require="level >= 6","features.Bounty Hunter Dedication"',
   'Opportunistic Grapple':
     'Traits=Archetype Require="level >= 8","features.Bounty Hunter Dedication"',
+  // Double Prey as above
 
   'Cavalier Dedication':
     'Traits=Archetype,Dedication ' +
