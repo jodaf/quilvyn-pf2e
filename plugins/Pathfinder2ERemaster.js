@@ -2156,7 +2156,8 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Druid >= 2 || ' +
        'alchemistDedicationLevel >= 4 || ' +
        'druidDedicationLevel >= 4 || ' +
-       'assassinDedicationLevel >= 4"',
+       'assassinDedicationLevel >= 4 || ' +
+       'poisonerDedicationLevel >= 4"',
   'Anthropomorphic Shape':
     Pathfinder2E.FEATS['Thousand Faces']
     .replace('Wild Shape', 'Untamed Form'),
@@ -2294,8 +2295,20 @@ Pathfinder2ERemaster.FEATS = {
       '"levels.Fighter >= 1 || ' +
        'fighterDedicationLevel >= 2 || ' +
        'archerDedicationLevel >= 4"',
-  'Reactive Shield':Pathfinder2E.FEATS['Reactive Shield'],
-  'Snagging Strike':Pathfinder2E.FEATS['Snagging Strike'],
+  // Added Archetype
+  'Reactive Shield':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 1 || ' +
+       'fighterDedicationLevel >= 2 || ' +
+       'vikingDedicationLevel >= 4"',
+  // Added Archetype
+  'Snagging Strike':
+    'Traits=Fighter,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 1 || ' +
+       'fighterDedicationLevel >= 2 || ' +
+       'wrestlerDedicationLevel >= 4"',
   'Sudden Charge':
     Pathfinder2E.FEATS['Sudden Charge']
     .replace(',Open', ''),
@@ -2314,7 +2327,13 @@ Pathfinder2ERemaster.FEATS = {
        'archerDedicationLevel >= 4"',
   'Blade Brake':'Traits=Fighter,Manipulate Require="level >= 2"',
   'Brutish Shove':Pathfinder2E.FEATS['Brutish Shove'],
-  'Combat Grab':Pathfinder2E.FEATS['Combat Grab'],
+  // Added Archetype
+  'Combat Grab':
+    'Traits=Fighter,Press,Archetype ' +
+    'Require=' +
+      '"levels.Fighter >= 2 || ' +
+       'fighterDedicationLevel >= 4 || ' +
+       'wrestlerDedicationLevel >= 4"',
   // Added Archetype
   'Dueling Parry':
     'Traits=Fighter,Archetype ' +
@@ -2354,7 +2373,8 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"levels.Fighter >= 4 || ' +
        'fighterDedicationLevel >= 8 || ' +
-       'bastionDedicationLevel >= 6"',
+       'bastionDedicationLevel >= 6 || ' +
+       'vikingDedicationLevel >= 6"',
   'Slam Down':Pathfinder2E.FEATS.Knockdown,
   // Modified from Knockdown; added Archetype
   'Slam Down':
@@ -2452,7 +2472,8 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Fighter >= 8 || ' +
        'championDedicationLevel >= 16 || ' +
        'fighterDedicationLevel >= 16 || ' +
-       'bastionDedicationLevel >= 10"',
+       'bastionDedicationLevel >= 10 || ' +
+       'vikingDedicationLevel >= 10"',
   'Resounding Bravery':'Traits=Fighter Require="level >= 8","features.Bravery"',
   'Sudden Leap':'Traits=Fighter Require="level >= 8"',
   'Agile Grace':Pathfinder2E.FEATS['Agile Grace'],
@@ -2636,7 +2657,8 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Rogue >= 2 || ' +
        'rangerDedicationLevel >= 4 || ' +
        'rogueDedicationLevel >= 4 || ' +
-       'dual-WeaponWarriorDedicationLevel >= 4"',
+       'dual-WeaponWarriorDedicationLevel >= 4 || ' +
+       'vigilanteDedicationLevel >= 4"',
   'Advanced Warden (Animal Feature)':
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
   'Advanced Warden (Enlarge Companion)':
@@ -2685,7 +2707,14 @@ Pathfinder2ERemaster.FEATS = {
   'Hazard Finder':Pathfinder2E.FEATS['Hazard Finder'],
   'Terrain Master':Pathfinder2E.FEATS['Terrain Master'],
   "Warden's Boon":Pathfinder2E.FEATS["Warden's Boon"],
-  'Camouflage':Pathfinder2E.FEATS.Camouflage,
+  // Added Archetype
+  'Camouflage':
+    'Traits=Ranger,Archetype ' +
+    'Require=' +
+      '"rank.Stealth >= 3",' +
+      '"levels.Ranger >= 10  || ' +
+       'rangerDedicationLevel >= 20 || ' +
+       'scoutDedicationLevel >= 12"',
   // Incredible Companion as above
   'Master Monster Hunter':Pathfinder2E.FEATS['Master Monster Hunter'],
   "Peerless Warden (Hunter's Vision)":
@@ -2753,9 +2782,16 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Rogue,Swashbuckler ' +
     'Require="levels.Rogue >= 1 || levels.Swashbuckler >= 2"',
   'Twin Feint':Pathfinder2E.FEATS['Twin Feint'],
+  // Added Archetype
   "You're Next":
-    Pathfinder2E.FEATS["You're Next"]
-    .replace('Traits=', 'Traits=Swashbuckler,'),
+    'Traits=Rogue,Swashbuckler,Emotion,Fear,Mental,Archetype ' +
+    'Require=' +
+      '"rank.Intimidation >= 1",' +
+      '"levels.Rogue >= 1 || ' +
+       'levels.Swashbuckler >= 1 || ' +
+       'rogueDedicationLevel >= 4 || ' +
+       'swashbucklerDedicationLevel >= 4 || ' +
+       'pirateDedicationLevel >= 4"',
   'Brutal Beating':Pathfinder2E.FEATS['Brutal Beating'],
   'Clever Gambit':'Traits=Rogue Require="level >=2","features.Mastermind"',
   'Distracting Feint':Pathfinder2E.FEATS['Distracting Feint'],
@@ -2773,7 +2809,8 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"levels.Rogue >= 4 || ' +
        'rogueDedicationLevel >= 8 || ' +
-       'assassinDedicationLevel >= 6"',
+       'assassinDedicationLevel >= 6 || ' +
+       'poisonerDedicationLevel >= 6"',
   'Predictable!':'Traits=Rogue Require="level >= 4"',
   'Reactive Pursuit':Pathfinder2E.FEATS['Reactive Pursuit'],
   'Sabotage':Pathfinder2E.FEATS.Sabotage,
@@ -2812,7 +2849,8 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Poison Weapon",' +
       '"levels.Rogue >= 8 || ' +
        'rogueDedicationLevel >= 16 || ' +
-       'assassinDedicationLevel >= 10"',
+       'assassinDedicationLevel >= 10 || ' +
+       'poisonerDedicationLevel >= 10"',
   'Inspired Stratagem':'Traits=Rogue Require="level >= 8"',
   'Nimble Roll':Pathfinder2E.FEATS['Nimble Roll'],
   'Opportune Backstab':Pathfinder2E.FEATS['Opportune Backstab'],
@@ -3011,7 +3049,12 @@ Pathfinder2ERemaster.FEATS = {
   // Alchemist
   'Alchemical Familiar':Pathfinder2E.FEATS['Alchemical Familiar'],
   'Alchemical Assessment':Pathfinder2E.FEATS['Alchemical Savant'],
-  'Blowgun Poisoner':'Traits=Alchemist',
+  'Blowgun Poisoner':
+    'Traits=Alchemist,Archetype ' +
+    'Require=' +
+      '"levels.Alchemist >= 1 || ' +
+       'alchemistDedicationLevel >= 2 || ' +
+       'poisonerDedicationLevel >= 4"',
   'Far Lobber':Pathfinder2E.FEATS['Far Lobber'],
   'Quick Bomber':Pathfinder2E.FEATS['Quick Bomber'],
   'Soothing Vials':'Traits=Alchemist Require="features.Chirurgeon"',
@@ -3030,7 +3073,12 @@ Pathfinder2ERemaster.FEATS = {
   'Healing Bomb':'Traits=Alchemist,Additive Require="level >= 4"',
   'Invigorating Elixir':'Traits=Alchemist,Additive Require="level >= 4"',
   'Regurgitate Mutagen':'Traits=Alchemist,Manipulate Require="level >= 4"',
-  'Tenacious Toxins':'Traits=Alchemist Require="level >= 4"',
+  'Tenacious Toxins':
+    'Traits=Alchemist,Archetype ' +
+    'Require=' +
+      '"levels.Alchemist >= 4 || ' +
+       'alchemistDedicationLevel >= 8 || ' +
+       'poisonerDedicationLevel >= 6"',
   'Combine Elixirs':
     Pathfinder2E.FEATS['Combine Elixirs']
     .replace('Additive 2', 'Additive'),
@@ -3039,14 +3087,24 @@ Pathfinder2ERemaster.FEATS = {
     .replace('Additive 2', 'Additive'),
   'Directional Bombs':Pathfinder2E.FEATS['Directional Bombs'],
   'Fortified Elixirs':'Traits=Alchemist Require="level >= 6"',
-  'Sticky Poison':'Traits=Alchemist Require="level >= 6"',
+  'Sticky Poison':
+    'Traits=Alchemist,Archetype ' +
+    'Require=' +
+      '"levels.Alchemist >= 6 || ' +
+       'alchemistDedicationLevel >= 12 || ' +
+       'poisonerDedicationLevel >= 8"',
   'Alter Admixture':'Traits=Alchemist,Exploration Require="level >= 8"',
   'Improved Invigorating Elixir (Mental)':
     'Traits=Alchemist Require="level >= 8","features.Invigorating Elixir"',
   'Improved Invigorating Elixir (Physical)':
     'Traits=Alchemist Require="level >= 8","features.Invigorating Elixir"',
   'Mutant Physique':'Traits=Alchemist Require="level >= 8"',
-  'Pinpoint Poisoner':'Traits=Alchemist Require="level >= 8"',
+  'Pinpoint Poisoner':
+    'Traits=Alchemist,Archetype ' +
+    'Require=' +
+      '"levels.Alchemist >= 8 || ' +
+       'alchemistDedicationLevel >= 16 || ' +
+       'poisonerDedicationLevel >= 10"',
   'Sticky Bomb':
     Pathfinder2E.FEATS['Sticky Bomb']
     .replace('Additive 2', 'Additive'),
@@ -3506,7 +3564,13 @@ Pathfinder2ERemaster.FEATS = {
       '"levels.Monk >= 1 || ' +
        'monkDedicationLevel >= 2 || ' +
        'martialArtistDedicationLevel >= 4"',
-  'Crushing Grab':Pathfinder2E.FEATS['Crushing Grab'],
+  // Added Archetype
+  'Crushing Grab':
+    'Traits=Monk,Archetype ' +
+    'Require=' +
+      '"levels.Monk >= 2 || ' +
+       'monkDedicationLevel >= 4 || ' +
+       'wrestlerDedicationLevel >= 4"',
   'Dancing Leaf':Pathfinder2E.FEATS['Dancing Leaf'],
   'Elemental Fist':
     Pathfinder2E.FEATS['Elemental Fist']
@@ -3576,6 +3640,13 @@ Pathfinder2ERemaster.FEATS = {
   'Whirling Throw':
     Pathfinder2E.FEATS['Whirling Throw']
     .replace('Traits=', 'Traits=Attack,'),
+  // Added Archetype
+  'Whirling Throw':
+    'Traits=Attack,Monk,Archetype ' +
+    'Require=' +
+      '"levels.Monk >= 6 || ' +
+       'monkDedicationLevel >= 12 || ' +
+       'wrestlerDedicationLevel >= 8"',
   'Wolf Drag':'Traits=Monk Require="level >= 6","features.Wolf Stance"',
   // Added Archetype
   'Wolf Drag':
@@ -3679,8 +3750,12 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Stunning Blows"',
   'Enduring Quickness':Pathfinder2E.FEATS['Enduring Quickness'],
   'Godbreaker':
-    'Traits=Monk ' +
-    'Require="level >= 20","features.Crushing Grab","features.Whirling Throw"',
+    'Traits=Monk,Archetype ' +
+    'Require=' +
+      '"features.Crushing Grab",' +
+      '"features.Whirling Throw",' +
+      '"levels.Monk >= 20 || ' +
+       'wrestlerDedicationLevel >= 20"',
   'Immortal Techniques':
     'Traits=Monk Require="level >= 20","features.Master Of Many Styles"',
   'Impossible Technique':Pathfinder2E.FEATS['Impossible Technique'],
@@ -3902,7 +3977,12 @@ Pathfinder2ERemaster.FEATS = {
   'Plummeting Roll':'Traits=Swashbuckler Require="rank.Acrobatics >= 1"',
   // You're Next as above
   'After You':'Traits=Swashbuckler Require="level >= 2"',
-  'Antagonize':'Traits=Swashbuckler Require="level >= 2"',
+  'Antagonize':
+    'Traits=Swashbuckler,Archetype ' +
+    'Require=' +
+       '"levels.Swashbuckler >= 2 || ' +
+        'swashbucklerDedicationLevel >= 4 || ' +
+        'pirateDedicationLevel >= 4"',
   'Brandishing Draw':'Traits=Swashbuckler Require="level >= 2"',
   'Charmed Life':
     'Traits=Swashbuckler Require="level >= 2","charismaModifier >= 2"',
@@ -4750,6 +4830,7 @@ Pathfinder2ERemaster.FEATS = {
   'Pirate Dedication':
     'Traits=Archetype,Dedication ' +
     'Require="level >= 2","rank.Intimidation >= 1"',
+  // Antagonize as above
   'Pirate Combat Training':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Pirate Dedication"',
@@ -4760,6 +4841,7 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Pirate Dedication",' +
       '"rank.Acrobatics >= 1",' +
       '"rank.Athletics >= 1"',
+  // You're Next as above
   'Walk The Plank':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Pirate Dedication"',
@@ -4767,6 +4849,8 @@ Pathfinder2ERemaster.FEATS = {
   'Poisoner Dedication':
     'Traits=Archetype,Dedication ' +
     'Require="level >= 2","rank.Crafting >= 1"',
+  // Blowgun Poisoner as above
+  // Poison Resistance as above
   "Poisoner's Twist":
     'Traits=Archetype ' +
     'Require=' +
@@ -4779,9 +4863,14 @@ Pathfinder2ERemaster.FEATS = {
   'Poison Coat':
     'Traits=Archetype ' +
     'Require="level >= 6","features.Poisoner Dedication"',
+  // Poison Weapon as above
+  // Tenacious Toxins as above
   'Acquired Tolerance':
     'Traits=Archetype,Fortune ' +
     'Require="level >= 8","features.Poisoner Dedication"',
+  // Sticky Poison as above
+  // Improved Poison Weapon as above
+  // Pinpoint Poisoner as above
   'Chemical Contagion':
     'Traits=Archetype ' +
     'Require="level >= 18","features.Poisoner Dedication"',
@@ -4831,6 +4920,7 @@ Pathfinder2ERemaster.FEATS = {
   "Scout's Pounce":
     'Traits=Archetype,Flourish ' +
     'Require="level >= 10","features.Scout Dedication"',
+  // Camouflage as above
 
   'Scroll Trickster Dedication':
     'Traits=Archetype,Dedication ' +
@@ -4945,6 +5035,7 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Vigilante Dedication",' +
       '"features.Animal Companion || features.Familiar",' +
       '"rank.Deception >= 2"',
+  // Quick Draw as above
   'Safe House':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Vigilante Dedication"',
@@ -4988,15 +5079,18 @@ Pathfinder2ERemaster.FEATS = {
   'Hurling Charge':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Viking Dedication"',
+  // Reactive Shield as above
   'Viking Weapon Familiarity':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Viking Dedication"',
   'Second Shield':
     'Traits=Archetype ' +
     'Require="level >= 6","features.Viking Dedication"',
+  // Shielded Stride as above
   'Into The Fray':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Viking Dedication"',
+  // Quick Shield Block as above
 
   'Weapon Improviser Dedication':
     'Traits=Archetype,Dedication ' +
@@ -5020,12 +5114,15 @@ Pathfinder2ERemaster.FEATS = {
   'Wrestler Dedication':
     'Traits=Archetype,Dedication ' +
     'Require="level >= 2","rank.Athletics >= 1"',
+  // Combat Grab as above
+  // Crushing Grab as above
   'Disengaging Twist':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Wrestler Dedication"',
   'Elbow Breaker':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Wrestler Dedication"',
+  // Snagging Strike as above
   'Suplex':
     'Traits=Archetype ' +
     'Require="level >= 4","features.Wrestler Dedication"',
@@ -5041,6 +5138,7 @@ Pathfinder2ERemaster.FEATS = {
   'Submission Hold':
     'Traits=Archetype ' +
     'Require="level >= 8","features.Wrestler Dedication"',
+  // Whirling Throw as above
   'Aerial Piledriver':
     'Traits=Archetype,Attack ' +
     'Require="level >= 10","features.Wrestler Dedication"',
@@ -5051,6 +5149,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Archetype ' +
     'Require="level >= 12","features.Wrestler Dedication"',
   // Form Lock as above
+  // Godbreaker as above
 
   // General and Skill
   'Additional Lore (%lore)':
