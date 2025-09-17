@@ -12,8 +12,10 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Avalanche Strike":1, 
-  "classFeats.Clear The Way":1, "classFeats.Hammer Quake":1, "classFeats.Mauler Dedication":1, 
-  "classFeats.Shoving Sweep":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "classFeats.Brutal Finish":1, "classFeats.Clear The Way":1, "classFeats.Crashing Slam":1, 
+  "classFeats.Hammer Quake":1, "classFeats.Mauler Dedication":1, "classFeats.Shoving Sweep":1, 
+  "classFeats.Slam Down":1, "classFeats.Unbalancing Sweep":1, "classFeats.Vicious Swing":1, 
+  "deity":"Pharasma", "experience":9011, "gender":"Male", 
   "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Assurance (Athletics)":1, "generalFeats.Courtly Graces":1, 
   "generalFeats.Impressive Performance":1, "generalFeats.Natural Medicine":1, 
   "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
@@ -88,7 +90,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Avalanche Strike; Clear The Way; Courtly Graces; Hammer Quake; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Mauler Dedication; Natural Medicine; Shoving Sweep; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Avalanche Strike; Brutal Finish; Clear The Way; Courtly Graces; Crashing Slam; Hammer Quake; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Mauler Dedication; Natural Medicine; Shoving Sweep; Skill Training (Accounting Lore); Skill Training (Tea Lore); Slam Down; Unbalancing Sweep; Unconventional Weaponry (Temple Sword); Vicious Swing</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -229,9 +231,13 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Battlefield Surveyor: +2 Perception for initiative</td>
       </tr><tr style="text-align:center">
+        <td>Brutal Finish: <b>(1)</b> Ends the turn with a two-handed melee Strike that inflicts 1 additional damage die, even on failure</td>
+      </tr><tr style="text-align:center">
         <td>Clear The Way: <b>(2)</b> Attempts to Shove up to 5 adjacent creatures at the current multiple attack penalty, then Strides up to 12', triggering no reactions from those successfully Shoved</td>
       </tr><tr style="text-align:center">
         <td>Combat Flexibility: Gains 1 chosen fighter feat of up to 8th level during daily prep</td>
+      </tr><tr style="text-align:center">
+        <td>Crashing Slam: Slam Down automatically inflicts a critical Trip, and using a two-handed weapon causes the Trip to inflict damage based on the weapon damage die size</td>
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
@@ -244,6 +250,12 @@ var attributes = {
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Shoving Sweep: <b>(R)</b> Uses a two-handed weapon to Shove a foe making the triggering move; critical success stops the move</td>
+      </tr><tr style="text-align:center">
+        <td>Slam Down: <b>(2)</b> Follows a successful melee Strike with an Athletics check to Trip at the same multiple attack penalty</td>
+      </tr><tr style="text-align:center">
+        <td>Unbalancing Sweep: <b>(3)</b> Makes a Shove or Trip attempt vs. 3 foes within reach</td>
+      </tr><tr style="text-align:center">
+        <td>Vicious Swing: <b>(2)</b> Melee Strike inflicts 2 extra damage dice and counts as 2 Strikes for the multiple attack penalty</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -281,9 +293,13 @@ var attributes = {
       <tr style="text-align:center">
         <td>Avalanche Strike Feat: Requires level (currently 10) >= 16 and mauler dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 6 available vs. 5 allocated</td>
+        <td>Brutal Finish Feat: Requires fighter level (currently 10) >= 12 or mauler dedication level (currently 10) >= 14</td>
+      </tr><tr style="text-align:center">
+        <td>Class Feats Allocation: 6 available vs. 10 allocated</td>
       </tr><tr style="text-align:center">
         <td>Hammer Quake Feat: Requires level (currently 10) >= 14 and mauler dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Unbalancing Sweep Feat: Requires barbarian level >= 12 or mauler dedication level (currently 10) >= 14</td>
       </tr></table>
 </td>
     </tr></table>

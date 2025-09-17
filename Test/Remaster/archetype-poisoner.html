@@ -12,9 +12,11 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
-  "classFeats.Acquired Tolerance":1, "classFeats.Advanced Poisoncraft":1, "classFeats.Chemical Contagion":1, 
-  "classFeats.Poison Coat":1, "classFeats.Poisoner Dedication":1, "classFeats.Poisoner's Twist":1, 
-  "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "classFeats.Acquired Tolerance":1, "classFeats.Advanced Poisoncraft":1, "classFeats.Blowgun Poisoner":1, 
+  "classFeats.Chemical Contagion":1, "classFeats.Improved Poison Weapon":1, "classFeats.Pinpoint Poisoner":1, 
+  "classFeats.Poison Coat":1, "classFeats.Poison Resistance":1, "classFeats.Poison Weapon":1, 
+  "classFeats.Poisoner Dedication":1, "classFeats.Poisoner's Twist":1, "classFeats.Sticky Poison":1, 
+  "classFeats.Tenacious Toxins":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
   "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, 
   "generalFeats.Impressive Performance":1, "generalFeats.Natural Medicine":1, 
   "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
@@ -90,7 +92,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Acquired Tolerance; Additional Lore (Gladitorial Lore); Advanced Poisoncraft; Battle Medicine; Chemical Contagion; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Poison Coat; Poisoner Dedication; Poisoner's Twist; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Acquired Tolerance; Additional Lore (Gladitorial Lore); Advanced Poisoncraft; Battle Medicine; Blowgun Poisoner; Chemical Contagion; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Improved Poison Weapon; Natural Medicine; Pinpoint Poisoner; Poison Coat; Poison Resistance; Poison Weapon; Poisoner Dedication; Poisoner's Twist; Skill Training (Accounting Lore); Skill Training (Tea Lore); Sticky Poison; Tenacious Toxins; Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -197,6 +199,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Natural Medicine: Can use Nature to Treat Wounds; gives a +2 bonus in wilderness</td>
     </tr><tr style="text-align:center">
+      <td>Poison Weapon: Can prepare 10 poisons that inflict 1d4 HP poison during daily prep</td>
+    </tr><tr style="text-align:center">
       <td>Poisoner Dedication: Can create 4 alchemical poison consumables during daily prep</td>
     </tr></table>
 </td>
@@ -239,19 +243,31 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Battlefield Surveyor: +2 Perception for initiative</td>
       </tr><tr style="text-align:center">
+        <td>Blowgun Poisoner: Poisoned blowgun Strikes apply injury poisons even if the target's resistance negates the attack damage, and critical successes with a poisoned blowgun Strike inflict 1 degree worse on the save/Successful Stealth vs. Perception when using a blowgun allows remaining hidden</td>
+      </tr><tr style="text-align:center">
         <td>Combat Flexibility: Gains 1 chosen fighter feat of up to 8th level during daily prep</td>
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Greater Field Discovery (Toxicologist): Infused injury poisons can also affect an adjacent target</td>
       </tr><tr style="text-align:center">
+        <td>Improved Poison Weapon: Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison</td>
+      </tr><tr style="text-align:center">
         <td>Once Bitten: <b>(R)</b> Prepared garment inflicts poison on a successful unarmed attacker once per 10-min treatment</td>
+      </tr><tr style="text-align:center">
+        <td>Pinpoint Poisoner: Off-guard targets suffer -2 initial saves vs. self poisoned weapons and inhaled poisons</td>
+      </tr><tr style="text-align:center">
+        <td>Poison Weapon: <b>(1)</b> Applies a poison to a weapon</td>
       </tr><tr style="text-align:center">
         <td>Poisoner's Twist: <b>(1)</b> After a successful melee Strike on a poisoned foe, inflicts an additional 1d6 HP of the Strike's damage type and 1d6 HP poison</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Sticky Poison: Poisoned weapon remains poisoned after a failed Strike with a successful DC 5 flat check, or until the end of the next turn after a successful Strike with a successful DC 17 flat check</td>
+      </tr><tr style="text-align:center">
+        <td>Tenacious Toxins: Increases the duration of poisons by their stage 1 interval</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -276,6 +292,8 @@ var attributes = {
         <td>Bravery: Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1</td>
       </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
+      </tr><tr style="text-align:center">
+        <td>Poison Resistance: Has poison resistance 5 and +1 saves vs. poison</td>
       </tr></table>
 </td>
     </tr></table>
@@ -287,7 +305,13 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Chemical Contagion Feat: Requires level (currently 10) >= 18 and poisoner dedication feature (currently 1)</td>
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>Chemical Contagion Feat: Requires level (currently 10) >= 18 and poisoner dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Class Feats Allocation: 6 available vs. 13 allocated</td>
+      </tr></table>
+</td>
     </tr></table>
 </td>
   </tr></table>

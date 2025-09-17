@@ -14,7 +14,9 @@ var attributes = {
   "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
   "classFeats.Dual Onslaught":1, "classFeats.Dual Thrower":1, "classFeats.Dual-Weapon Blitz":1, 
   "classFeats.Dual-Weapon Reload":1, "classFeats.Dual-Weapon Warrior Dedication":1, 
-  "classFeats.Flensing Slice":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "classFeats.Flensing Slice":1, "classFeats.Improved Twin Riposte":1, "classFeats.Quick Draw":1, 
+  "classFeats.Twin Parry":1, "classFeats.Twin Riposte":1, "classFeats.Twinned Defense":1, 
+  "classFeats.Two-Weapon Flurry":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
   "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Assurance (Athletics)":1, 
   "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, "generalFeats.Courtly Graces":1, 
   "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
@@ -90,7 +92,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Courtly Graces; Dual Onslaught; Dual Thrower; Dual-Weapon Blitz; Dual-Weapon Reload; Dual-Weapon Warrior Dedication; Flensing Slice; Hardy Traveler; Haughty Obstinacy; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Courtly Graces; Dual Onslaught; Dual Thrower; Dual-Weapon Blitz; Dual-Weapon Reload; Dual-Weapon Warrior Dedication; Flensing Slice; Hardy Traveler; Haughty Obstinacy; Improved Twin Riposte; Quick Draw; Skill Training (Accounting Lore); Skill Training (Tea Lore); Twin Parry; Twin Riposte; Twinned Defense; Two-Weapon Flurry; Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -245,9 +247,21 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Flensing Slice: <b>(1)</b> After 2 hits on a Double Slice, inflicts 1d8 HP persistent bleed per weapon damage die of the most damaging weapon, plus off-guard and a reduction 5 to any physical damage resistance until the start of the next turn</td>
       </tr><tr style="text-align:center">
+        <td>Improved Twin Riposte: Gives an additional reaction to make a Twin Riposte once per turn, even when not using Twin Parry</td>
+      </tr><tr style="text-align:center">
+        <td>Quick Draw: <b>(1)</b> Draws a weapon and Strikes</td>
+      </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Twin Parry: <b>(1)</b> Parrying with a melee weapon in each hand gives +1 Armor Class, or +2 Armor Class if either weapon has the parry trait, until the start of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Twin Riposte: <b>(R)</b> Twin Parry allows Striking or Disarming a foe who critically fails a Strike on self</td>
+      </tr><tr style="text-align:center">
+        <td>Twinned Defense: <b>(1)</b> Stance gives continuous benefits of Twin Parry</td>
+      </tr><tr style="text-align:center">
+        <td>Two-Weapon Flurry: <b>(1)</b> Strikes with a weapon in each hand</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
       </tr></table>
@@ -281,7 +295,19 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Dual Onslaught Feat: Requires level (currently 10) >= 14 and dual-weapon warrior dedication feature (currently 1)</td>
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>Class Feats Allocation: 6 available vs. 12 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Dual Onslaught Feat: Requires level (currently 10) >= 14 and dual-weapon warrior dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Improved Twin Riposte Feat: Requires twin riposte feature (currently 1) and fighter level (currently 10) >= 14, ranger level >= 16 or dual weapon warrior dedication level (currently 10) >= 16</td>
+      </tr><tr style="text-align:center">
+        <td>Twinned Defense Feat: Requires twin parry feature (currently 1) and fighter level (currently 10) >= 16 or dual weapon warrior dedication level (currently 10) >= 18</td>
+      </tr><tr style="text-align:center">
+        <td>Two-Weapon Flurry Feat: Requires level (currently 10) >= 14</td>
+      </tr></table>
+</td>
     </tr></table>
 </td>
   </tr></table>

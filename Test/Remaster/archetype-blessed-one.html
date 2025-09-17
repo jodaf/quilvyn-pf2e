@@ -11,16 +11,18 @@ var attributes = {
   "abilityBoosts.intelligence":3, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Bard", 
-  "classFeats.Blessed Denial":1, "classFeats.Blessed One Dedication":1, "classFeats.Blessed Sacrifice":1, 
-  "classFeats.Blessed Spell":1, "classFeats.Mercy (Body)":1, "deity":"Pharasma", "experience":4754, 
-  "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
-  "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
-  "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, "name":"Archetype-Blessed One", 
-  "selectableFeatures.Bard - Warrior":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Buckler", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, 
-  "skillIncreases.Deception":1, "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, 
-  "skillIncreases.Medicine":1, "skillIncreases.Stealth":1, "skillIncreases.Survival":1, "weapons.Bola":1, 
-  "weapons.Lance":1, "weapons.Shield Boss":1
+  "classFeats.Affliction Mercy":1, "classFeats.Blessed Denial":1, "classFeats.Blessed One Dedication":1, 
+  "classFeats.Blessed Sacrifice":1, "classFeats.Blessed Spell":1, "classFeats.Greater Mercy":1, 
+  "classFeats.Mercy (Body)":1, "classFeats.Rejuvenating Touch":1, "classFeats.Ultimate Mercy":1, 
+  "deity":"Pharasma", "experience":4754, "gender":"Female", 
+  "generalFeats.Additional Lore (Cooking Lore)":1, "generalFeats.Additional Lore (River Lore)":1, 
+  "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, "languages.Diabolic":1, "languages.Dwarven":1, 
+  "languages.Goblin":1, "name":"Archetype-Blessed One", "selectableFeatures.Bard - Warrior":1, 
+  "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Buckler", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":1, "skillIncreases.Deception":1, 
+  "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, 
+  "skillIncreases.Stealth":1, "skillIncreases.Survival":1, "weapons.Bola":1, "weapons.Lance":1, 
+  "weapons.Shield Boss":1
 };
   </script>
 </head>
@@ -82,7 +84,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Blessed Denial; Blessed One Dedication; Blessed Sacrifice; Blessed Spell; Clever Improviser; Mercy (Body); Unconventional Weaponry (Pick)</td>
+        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Affliction Mercy; Assurance (Acrobatics); Blessed Denial; Blessed One Dedication; Blessed Sacrifice; Blessed Spell; Clever Improviser; Greater Mercy; Mercy (Body); Rejuvenating Touch; Ultimate Mercy; Unconventional Weaponry (Pick)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Bard Features</b>: Attack Trained (Simple Weapons; Martial Weapons; Unarmed Attacks); Attribute Boost (Charisma); Attribute Boosts; Bard Feats; Bard Skills; Bard Spellcasting; Class Trained (Bard); Composition Spells; Defense Trained (Light Armor; Unarmored Defense); General Feats; Muse; Perception Expert; Reflex Expertise; Save Expert (Will); Save Trained (Fortitude; Reflex); Signature Spells; Skill Feats; Skill Increases; Spell Trained (Occult); Warrior</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
@@ -268,15 +270,23 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Composition Spells: Knows the Counter Performance and Courageous Anthem occult spells/Has a focus pool</i></td>
     </tr><tr style="text-align:center">
+      <td><i>Greater Mercy: Has increased Mercy effects</i></td>
+    </tr><tr style="text-align:center">
       <td><i>Warrior: Knows the Fear occult spell</i></td>
+    </tr><tr style="text-align:center">
+      <td>Affliction Mercy: 2-action <i>Lay On Hands</i> can attempt to counteract an affliction such as a curse, disease, or poison</td>
     </tr><tr style="text-align:center">
       <td>Bard Spellcasting: Can learn spells from the occult tradition</td>
     </tr><tr style="text-align:center">
       <td>Blessed Spell: <b>(1)</b> Subsequent targeted spell cast on an ally has Mercy effects once per 10 min</td>
     </tr><tr style="text-align:center">
-      <td>Mercy (Body): 2-action <i>Lay On Hands</i> can also attempt to counteract blinded, dazzled, deafened, enfeebled, or sickened</td>
+      <td>Mercy (Body): 2-action <i>Lay On Hands</i> can also attempt to counteract drained, slowed, blinded, dazzled, deafened, enfeebled, or sickened</td>
+    </tr><tr style="text-align:center">
+      <td>Rejuvenating Touch: <i>Lay On Hands</i> gives 10 temporary Hit Points, lasting 1 rd, each rd for 10 rd</td>
     </tr><tr style="text-align:center">
       <td>Signature Spells: Can heighten 1 chosen spell of each rank without learning a heightened version</td>
+    </tr><tr style="text-align:center">
+      <td>Ultimate Mercy: 2-action <i>Lay On Hands</i> can restore life with 1 Hit Point and wounded 1 to a target who died in the previous rd</td>
     </tr></table>
 </td>
   </tr></table>
@@ -288,13 +298,21 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
+        <td>Affliction Mercy Feat: Requires mercy feature (currently 1) and champion level >= 12 or blessed one dedication level (currently 5) >= 14</td>
+      </tr><tr style="text-align:center">
         <td>Blessed Denial Feat: Requires level (currently 5) >= 12 and blessed one dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Blessed Spell Feat: Requires level (currently 5) >= 8, blessed one dedication feature (currently 1), max spell level (currently 3) and mercy feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 2 available vs. 5 allocated</td>
+        <td>Class Feats Allocation: 2 available vs. 9 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Greater Mercy Feat: Requires mercy feature (currently 1) and champion level >= 8, champion dedication level >= 16 or blessed one dedication level (currently 5) >= 10</td>
       </tr><tr style="text-align:center">
         <td>Mercy (Body) Feat: Requires lay on hands (d1 foc) spell (currently 1) and champion level >= 4, champion dedication level >= 8 or blessed one dedication level (currently 5) >= 6</td>
+      </tr><tr style="text-align:center">
+        <td>Rejuvenating Touch Feat: Requires lay on hands (d1 foc) spell (currently 1) and champion level >= 18 or blessed one dedication level (currently 5) >= 20</td>
+      </tr><tr style="text-align:center">
+        <td>Ultimate Mercy Feat: Requires mercy feature (currently 1) and champion level >= 18 or blessed one dedication level (currently 5) >= 20</td>
       </tr></table>
 </td>
     </tr></table>

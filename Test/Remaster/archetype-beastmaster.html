@@ -11,9 +11,11 @@ var attributes = {
   "abilityBoosts.intelligence":3, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Fighter", 
-  "classFeats.Additional Companion":1, "classFeats.Beastmaster Bond":1, "classFeats.Beastmaster Dedication":1, 
-  "classFeats.Beastmaster's Call":1, "classFeats.Beastmaster's Trance":1, 
-  "classFeats.Incredible Beastmaster Companion":1, "classFeats.Lead The Pack":1, "classFeats.Mature Beastmaster Companion":1, 
+  "classFeats.Additional Companion":1, "classFeats.Advanced Warden (Enlarge Companion)":1, 
+  "classFeats.Animal Empathy":1, "classFeats.Beastmaster Bond":1, "classFeats.Beastmaster Dedication":1, 
+  "classFeats.Beastmaster's Call":1, "classFeats.Beastmaster's Trance":1, "classFeats.Companion's Cry":1, 
+  "classFeats.Incredible Beastmaster Companion":1, "classFeats.Initiate Warden (Heal Companion)":1, 
+  "classFeats.Lead The Pack":1, "classFeats.Mature Beastmaster Companion":1, "classFeats.Side By Side":1, 
   "classFeats.Specialized Beastmaster Companion":1, "classFeats.Swift Guardian":1, "deity":"Pharasma", "experience":4754, 
   "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
   "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
@@ -79,7 +81,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Companion; Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Beastmaster Bond; Beastmaster Dedication; Beastmaster's Call; Beastmaster's Trance; Clever Improviser; Incredible Beastmaster Companion; Lead The Pack; Mature Beastmaster Companion; Specialized Beastmaster Companion; Swift Guardian; Unconventional Weaponry (Pick)</td>
+        <td><b>Feats</b>: Additional Companion; Additional Lore (Cooking Lore); Additional Lore (River Lore); Advanced Warden (Enlarge Companion); Animal Empathy; Assurance (Acrobatics); Beastmaster Bond; Beastmaster Dedication; Beastmaster's Call; Beastmaster's Trance; Clever Improviser; Companion's Cry; Incredible Beastmaster Companion; Initiate Warden (Heal Companion); Lead The Pack; Mature Beastmaster Companion; Side By Side; Specialized Beastmaster Companion; Swift Guardian; Unconventional Weaponry (Pick)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength; Swords</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -185,9 +187,13 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td><i>Untrained Improvisation: +4 on untrained skill checks</i></td>
     </tr><tr style="text-align:center">
+      <td>Animal Empathy: Can speak with animals</td>
+    </tr><tr style="text-align:center">
       <td>Assurance (Acrobatics): Can take an automatic 17 on Acrobatics checks</td>
     </tr><tr style="text-align:center">
       <td>Clever Improviser: Can attempt any skill untrained</td>
+    </tr><tr style="text-align:center">
+      <td>Companion's Cry: Can use 2 actions for Command An Animal to give companion an additional action</td>
     </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
     </tr></table>
@@ -239,6 +245,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
+        <td>Side By Side: Self and companion automatically flank a foe adjacent to both</td>
+      </tr><tr style="text-align:center">
         <td>Swift Guardian: <b>(F)</b> Uses Call Companion during initiative</td>
       </tr></table>
 </td>
@@ -267,7 +275,7 @@ var attributes = {
     <tr style="text-align:center">
       <td>      <table id="SpellStats" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Focus Points</b>: 1</td>
+        <td><b>Focus Points</b>: 3</td>
         <td><b>Attack</b>: Primal: +10 (charisma; trained)</td>
         <td><b>Spell DC</b>: Primal: 20 (charisma; trained)</td>
       </tr></table>
@@ -275,9 +283,25 @@ var attributes = {
     </tr></table>
 </td>
   </tr><tr style="text-align:center">
-    <td><b>Spells</b>: Beastmaster Trance (P3 Foc): <b>(3)</b> Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, while sustained for up to 1 min (<b>heightened 6th</b> allows speaking to the companion and extends the range to 100 miles and the maximum duration to 10 min; <b> 8th</b> allows telepathic communication and extends the range to planetary and the maximum duration to 1 hr)</td>
+    <td><b>Spells</b>:     <table id="Spells" style="width:100%">
+    <tr style="text-align:left">
+      <td>Beastmaster Trance (P3 Foc): <b>(3)</b> Allows self to use the senses of an animal companion up to 1 mile away, inflicting off-guard on self, while sustained for up to 1 min (<b>heightened 6th</b> allows speaking to the companion and extends the range to 100 miles and the maximum duration to 10 min; <b> 8th</b> allows telepathic communication and extends the range to planetary and the maximum duration to 1 hr)</td>
+    </tr><tr style="text-align:left">
+      <td>Enlarge Companion (P2 Foc): <b>(2)</b> R30' Companion becomes Large, gaining +5' reach, +2 melee damage, and clumsy 1 for 1 min (<b>heightened 4th</b> target becomes Huge, gaining +10' reach and +4 melee damage)</td>
+    </tr><tr style="text-align:left">
+      <td>Heal Companion (P1 Foc): <b>(1)</b> Touch restores 1d10 HP to companion, or using 2 actions gives R30' and restores 1d10+8 HP (<b>heightened +1</b> restores +1d10 HP or +1d10+8 HP)</td>
+    </tr></table>
+</td>
   </tr><tr style="text-align:center">
-    <td><b>Magic Notes</b>: <i>Beastmaster's Trance: Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool</i></td>
+    <td><b>Magic Notes</b>:     <table id="MagicNotes" style="width:100%">
+    <tr style="text-align:center">
+      <td><i>Advanced Warden (Enlarge Companion): Knows the Enlarge Companion primal spell</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Beastmaster's Trance: Spell Trained (Primal)/Knows the Beastmaster Trance primal spell/Has a focus pool</i></td>
+    </tr><tr style="text-align:center">
+      <td><i>Initiate Warden (Heal Companion): Spell Trained (Primal)/Has a focus pool/Knows the Heal Companion primal spell</i></td>
+    </tr></table>
+</td>
   </tr></table>
 </td>
 </tr><tr style="text-align:center">
@@ -287,17 +311,23 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
+        <td>Advanced Warden (Enlarge Companion) Feat: Requires initiate warden feature (currently 1) and ranger level >= 4, ranger dedication level >= 8 or beastmaster dedication level (currently 5) >= 6</td>
+      </tr><tr style="text-align:center">
         <td>Beastmaster Bond Feat: Requires level (currently 5) >= 10 and beastmaster dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Beastmaster's Call Feat: Requires level (currently 5) >= 12, beastmaster dedication feature (currently 1) and call companion feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Beastmaster's Trance Feat: Requires level (currently 5) >= 6 and beastmaster dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 3 available vs. 10 allocated</td>
+        <td>Class Feats Allocation: 3 available vs. 15 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Companion's Cry Feat: Requires animal companion feature (currently 1) and ranger level >= 4, ranger dedication level >= 8 or beastmaster dedication level (currently 5) >= 6</td>
       </tr><tr style="text-align:center">
         <td>Incredible Beastmaster Companion Feat: Requires level (currently 5) >= 8 and mature beastmaster companion feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Lead The Pack Feat: Requires level (currently 5) >= 16 and mature beastmaster companion feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Side By Side Feat: Requires animal companion feature (currently 1) and druid level >= 10, ranger level >= 12, druid dedication level >= 20 or beastmaster dedication level (currently 5) >= 14</td>
       </tr><tr style="text-align:center">
         <td>Specialized Beastmaster Companion Feat: Requires level (currently 5) >= 14 and incredible beastmaster companion feature (currently 1)</td>
       </tr><tr style="text-align:center">

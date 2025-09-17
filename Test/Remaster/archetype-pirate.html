@@ -11,22 +11,22 @@ var attributes = {
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":2, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
-  "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
+  "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Antagonize":1, 
   "classFeats.Pirate Combat Training":1, "classFeats.Pirate Dedication":1, "classFeats.Rope Runner":1, 
-  "classFeats.Walk The Plank":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
-  "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, 
-  "generalFeats.Impressive Performance":1, "generalFeats.Natural Medicine":1, 
-  "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
-  "generalFeats.Skill Training (Performance)":1, "generalFeats.Skill Training (Sailing Lore)":1, 
-  "generalFeats.Skill Training (Tea Lore)":1, "languages.Goblin":1, "languages.Jotun":1, "languages.Osiriani":1, 
-  "languages.Shoanti":1, "languages.Sussuran":1, "languages.Vudrani":1, "languages.Ysoki":1, 
-  "name":"Archetype-Pirate", "selectableFeatures.Fighter - Dexterity":1, 
-  "selectableFeatures.Fighter - Spears":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Athletics":1, "skillIncreases.Diplomacy":1, 
-  "skillIncreases.Dragon Lore":1, "skillIncreases.Intimidation":1, "skillIncreases.Medicine":2, 
-  "skillIncreases.Nature":1, "skillIncreases.Performance":2, "skillIncreases.Society":1, 
-  "skillIncreases.Stealth":1, "skillIncreases.Survival":1, "weapons.Bastard Sword":1, "weapons.Longbow":1, 
-  "weapons.Maul":1
+  "classFeats.Walk The Plank":1, "classFeats.You're Next":1, "deity":"Pharasma", "experience":9011, 
+  "gender":"Male", "generalFeats.Additional Lore (Gladitorial Lore)":1, 
+  "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, "generalFeats.Impressive Performance":1, 
+  "generalFeats.Natural Medicine":1, "generalFeats.Scholastic Identification":1, 
+  "generalFeats.Skill Training (Accounting Lore)":1, "generalFeats.Skill Training (Performance)":1, 
+  "generalFeats.Skill Training (Sailing Lore)":1, "generalFeats.Skill Training (Tea Lore)":1, "languages.Goblin":1, 
+  "languages.Jotun":1, "languages.Osiriani":1, "languages.Shoanti":1, "languages.Sussuran":1, 
+  "languages.Vudrani":1, "languages.Ysoki":1, "name":"Archetype-Pirate", 
+  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Fighter - Spears":1, 
+  "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
+  "skillIncreases.Athletics":1, "skillIncreases.Diplomacy":1, "skillIncreases.Dragon Lore":1, 
+  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":2, "skillIncreases.Nature":1, 
+  "skillIncreases.Performance":2, "skillIncreases.Society":1, "skillIncreases.Stealth":1, 
+  "skillIncreases.Survival":1, "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
 };
   </script>
 </head>
@@ -94,7 +94,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Battle Medicine; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Pirate Combat Training; Pirate Dedication; Rope Runner; Skill Training (Accounting Lore); Skill Training (Performance); Skill Training (Sailing Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword); Walk The Plank</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Antagonize; Battle Medicine; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Pirate Combat Training; Pirate Dedication; Rope Runner; Skill Training (Accounting Lore); Skill Training (Performance); Skill Training (Sailing Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword); Walk The Plank; You're Next</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -241,6 +241,8 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Temple Sword): Weapon Familiarity (Temple Sword)</i></td>
       </tr><tr style="text-align:center">
+        <td>Antagonize: Successful Demoralize prevents the target from removing its frightened condition until it attacks self or moves out of sight for 1 rd</td>
+      </tr><tr style="text-align:center">
         <td>Battlefield Surveyor: +2 Perception for initiative</td>
       </tr><tr style="text-align:center">
         <td>Boarding Assault: <b>(2)</b> Strikes after a double Stride or a 50' swing; boarding or leaving a boat gives the Strike +1 damage die</td>
@@ -258,6 +260,8 @@ var attributes = {
         <td>Walk The Plank: <b>(2)</b> Successful Demoralize forces the target to move along a chosen path up to its Speed once per target per 10 min; critical success allows forcing onto hazards</td>
       </tr><tr style="text-align:center">
         <td>Weapon Specialization: Inflicts +2, +3, or +4 HP damage when using a weapon with expert, master, or legendary proficiency</td>
+      </tr><tr style="text-align:center">
+        <td>You're Next: <b>(R)</b> After downing a foe, makes a +2 Intimidation check to Demoralize another within 60'</td>
       </tr></table>
 </td>
     </tr></table>
@@ -280,16 +284,6 @@ var attributes = {
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
       </tr></table>
 </td>
-    </tr></table>
-</td>
-  </tr></table>
-</td>
-</tr><tr style="text-align:center">
-  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
-  <tr style="text-align:center">
-    <td>    <table id="ValidationPart" style="width:100%">
-    <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 6 available vs. 4 allocated</td>
     </tr></table>
 </td>
   </tr></table>

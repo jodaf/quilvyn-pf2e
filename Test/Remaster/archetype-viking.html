@@ -12,7 +12,8 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Hurling Charge":1, 
-  "classFeats.Into The Fray":1, "classFeats.Second Shield":1, "classFeats.Viking Dedication":1, 
+  "classFeats.Into The Fray":1, "classFeats.Quick Shield Block":1, "classFeats.Reactive Shield":1, 
+  "classFeats.Second Shield":1, "classFeats.Shielded Stride":1, "classFeats.Viking Dedication":1, 
   "classFeats.Viking Weapon Familiarity":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
   "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, "generalFeats.Impressive Performance":1, 
   "generalFeats.Magical Crafting":1, "generalFeats.Natural Medicine":1, 
@@ -90,7 +91,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Battle Medicine; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Hurling Charge; Impressive Performance; Into The Fray; Magical Crafting; Natural Medicine; Second Shield; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword); Viking Dedication; Viking Weapon Familiarity</td>
+        <td><b>Feats</b>: Battle Medicine; Courtly Graces; Hardy Traveler; Haughty Obstinacy; Hurling Charge; Impressive Performance; Into The Fray; Magical Crafting; Natural Medicine; Quick Shield Block; Reactive Shield; Second Shield; Shielded Stride; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword); Viking Dedication; Viking Weapon Familiarity</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -247,11 +248,17 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Into The Fray: <b>(2)</b> Makes a Strike with a one-handed melee weapon and another with a shield during a Leap, Strike, or Swim</td>
       </tr><tr style="text-align:center">
+        <td>Quick Shield Block: Can use an additional reaction for a Shield Block once per turn</td>
+      </tr><tr style="text-align:center">
+        <td>Reactive Shield: <b>(R)</b> Performs Raise A Shield to absorb damage from the triggering melee Strike</td>
+      </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
         <td>Second Shield: <b>(F)</b> Replaces a shield broken when using Shield Block with a nearby unattended shield or improvised item</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Shielded Stride: Can Stride at half Speed with a shield raised without triggering reactions</td>
       </tr><tr style="text-align:center">
         <td>Viking Weapon Familiarity: Critical hits with a battle axe, hatchet, longsword, shield boss, shield spike, or shortsword inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
@@ -287,7 +294,7 @@ var attributes = {
   <tr style="text-align:center">
     <td>    <table id="ValidationPart" style="width:100%">
     <tr style="text-align:center">
-      <td><b>Validation Errors</b>: Class Feats Allocation: 6 available vs. 5 allocated</td>
+      <td><b>Validation Errors</b>: Class Feats Allocation: 6 available vs. 8 allocated</td>
     </tr></table>
 </td>
   </tr></table>

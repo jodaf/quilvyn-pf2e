@@ -2312,11 +2312,10 @@ Pathfinder2ERemaster.FEATS = {
   'Sudden Charge':
     Pathfinder2E.FEATS['Sudden Charge']
     .replace(',Open', ''),
-  // Modified from Power Attac; added Archetype
+  // Modified from Power Attack; added Archetype
   'Vicious Swing':
     'Traits=Fighter,Flourish,Archetype ' +
     'Require="levels.Fighter >= 1 || maulerDedicationLevel >= 4"',
-  'Vicious Swing':Pathfinder2E.FEATS['Power Attack'],
   'Aggressive Block':Pathfinder2E.FEATS['Aggressive Block'],
   // Added Archetype
   'Assisting Shot':
@@ -2375,7 +2374,6 @@ Pathfinder2ERemaster.FEATS = {
        'fighterDedicationLevel >= 8 || ' +
        'bastionDedicationLevel >= 6 || ' +
        'vikingDedicationLevel >= 6"',
-  'Slam Down':Pathfinder2E.FEATS.Knockdown,
   // Modified from Knockdown; added Archetype
   'Slam Down':
     'Traits=Fighter,Flourish,Archetype ' +
@@ -2393,7 +2391,7 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Ranger >= 4 || ' +
        'fighterDedicationLevel >= 8 || ' +
        'rangerDedicationLevel >= 8 || ' +
-       'dual-WeaponWarrirDedicationLevel >= 6"',
+       'dualWeaponWarrirDedicationLevel >= 6"',
   'Advanced Weapon Training (%weaponGroup)':
     Pathfinder2E.FEATS['Advanced Weapon Training (%weaponGroup)'],
   'Advantageous Assault':Pathfinder2E.FEATS['Advantageous Assault'],
@@ -2518,7 +2516,7 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Ranger >= 10 || ' +
        'fighterDedicationLevel >= 20 || ' +
        'rangerDedicationLevel >= 20 || ' +
-       'dual-WeaponWarriorDedicationLevel >= 12"',
+       'dualWeaponWarriorDedicationLevel >= 12"',
   // Added Archetype
   'Brutal Finish':
     'Traits=Fighter,Press,Archetype ' +
@@ -2538,7 +2536,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"features.Dueling Riposte",' +
       '"levels.Fighter >= 12 || ' +
-       'duelistDedicationLeve >= 14"',
+       'duelistDedicationLevel >= 14"',
   'Incredible Ricochet':Pathfinder2E.FEATS['Incredible Ricochet'],
   'Lunging Stance':
     Pathfinder2E.FEATS['Lunging Stance']
@@ -2563,7 +2561,7 @@ Pathfinder2ERemaster.FEATS = {
       '"features.Twin Riposte",' +
       '"levels.Fighter >= 14 || ' +
        'levels.Ranger >= 16 || ' +
-       'dual-WeaponWarriorDedicationLevel >= 16"',
+       'dualWeaponWarriorDedicationLevel >= 16"',
   'Opening Stance':'Traits=Fighter Require="level >= 14"',
   'Two-Weapon Flurry':Pathfinder2E.FEATS['Two-Weapon Flurry'],
   'Whirlwind Strike':
@@ -2596,7 +2594,7 @@ Pathfinder2ERemaster.FEATS = {
     'Require=' +
       '"features.Twin Parry",' +
       '"levels.Fighter >= 16 || ' +
-       'dual-WeaponWarriorDedicationLevel >= 18"',
+       'dualWeaponWarriorDedicationLevel >= 18"',
   // Added Archetype
   'Impossible Volley':
     'Traits=Fighter,Ranger,Flourish,Archetype ' +
@@ -2657,7 +2655,7 @@ Pathfinder2ERemaster.FEATS = {
        'levels.Rogue >= 2 || ' +
        'rangerDedicationLevel >= 4 || ' +
        'rogueDedicationLevel >= 4 || ' +
-       'dual-WeaponWarriorDedicationLevel >= 4 || ' +
+       'dualWeaponWarriorDedicationLevel >= 4 || ' +
        'vigilanteDedicationLevel >= 4"',
   'Advanced Warden (Animal Feature)':
     'Traits=Ranger Require="level >= 4","features.Initiate Warden"',
@@ -2840,7 +2838,7 @@ Pathfinder2ERemaster.FEATS = {
     'Traits=Rogue,Archetype ' +
     'Require=' +
       '"levels.Rogue >= 8 || ' +
-       'levels.rogueDedicationLevel >= 16 || ' +
+       'rogueDedicationLevel >= 16 || ' +
        'archaeologistDedicationLevel >= 10"',
   // Added Archetype
   'Improved Poison Weapon':
@@ -3637,9 +3635,6 @@ Pathfinder2ERemaster.FEATS = {
        'monkDedicationLevel >= 12 || ' +
        'martialArtistDedicationLevel >= 8"',
   'Water Step':Pathfinder2E.FEATS['Water Step'],
-  'Whirling Throw':
-    Pathfinder2E.FEATS['Whirling Throw']
-    .replace('Traits=', 'Traits=Attack,'),
   // Added Archetype
   'Whirling Throw':
     'Traits=Attack,Monk,Archetype ' +
@@ -3647,7 +3642,6 @@ Pathfinder2ERemaster.FEATS = {
       '"levels.Monk >= 6 || ' +
        'monkDedicationLevel >= 12 || ' +
        'wrestlerDedicationLevel >= 8"',
-  'Wolf Drag':'Traits=Monk Require="level >= 6","features.Wolf Stance"',
   // Added Archetype
   'Wolf Drag':
     'Traits=Monk,Archetype ' +

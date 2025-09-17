@@ -14,9 +14,10 @@ var attributes = {
   "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", 
   "classFeats.Basic Eldritch Archer Spellcasting":1, "classFeats.Eldritch Archer Dedication":1, "classFeats.Eldritch Reload":1, 
   "classFeats.Enchanting Shot":1, "classFeats.Expert Eldritch Archer Spellcasting":1, 
-  "classFeats.Fatal Shot":1, "classFeats.Homing Shot":1, "classFeats.Incorporeal Shot":1, 
-  "classFeats.Magic Ammunition":1, "classFeats.Master Eldritch Archer Spellcasting":1, 
-  "classFeats.Precious Ammunition":1, "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "classFeats.Fatal Shot":1, "classFeats.Homing Shot":1, "classFeats.Impossible Volley":1, 
+  "classFeats.Incorporeal Shot":1, "classFeats.Magic Ammunition":1, 
+  "classFeats.Master Eldritch Archer Spellcasting":1, "classFeats.Precious Ammunition":1, "classFeats.Running Reload":1, 
+  "deity":"Pharasma", "experience":9011, "gender":"Male", 
   "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Assurance (Athletics)":1, 
   "generalFeats.Assurance (Society)":1, "generalFeats.Assurance (Tea Lore)":1, "generalFeats.Courtly Graces":1, 
   "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
@@ -92,7 +93,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Basic Eldritch Archer Spellcasting; Courtly Graces; Eldritch Archer Dedication; Eldritch Reload; Enchanting Shot; Expert Eldritch Archer Spellcasting; Fatal Shot; Hardy Traveler; Haughty Obstinacy; Homing Shot; Incorporeal Shot; Magic Ammunition; Master Eldritch Archer Spellcasting; Precious Ammunition; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Assurance (Athletics); Assurance (Society); Assurance (Tea Lore); Basic Eldritch Archer Spellcasting; Courtly Graces; Eldritch Archer Dedication; Eldritch Reload; Enchanting Shot; Expert Eldritch Archer Spellcasting; Fatal Shot; Hardy Traveler; Haughty Obstinacy; Homing Shot; Impossible Volley; Incorporeal Shot; Magic Ammunition; Master Eldritch Archer Spellcasting; Precious Ammunition; Running Reload; Skill Training (Accounting Lore); Skill Training (Tea Lore); Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -247,11 +248,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Homing Shot: <b>(1)</b> Bow or crossbow Strike ignores concealment and cover</td>
       </tr><tr style="text-align:center">
+        <td>Impossible Volley: <b>(3)</b> Ranged Strike with a -2 penalty attacks all foes in a 10' radius</td>
+      </tr><tr style="text-align:center">
         <td>Incorporeal Shot: <b>(1)</b> Bow or crossbow Strike passes through intervening non-magical obstacles and gains +4 attack vs. armored creatures once per day</td>
       </tr><tr style="text-align:center">
         <td>Precious Ammunition: <b>(1)</b> Gives an arrow or bolt cold iron or silver effects until the end of the turn</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
+      </tr><tr style="text-align:center">
+        <td>Running Reload: <b>(1)</b> Reloads during a Stride, Step, or Sneak</td>
       </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
@@ -321,13 +326,15 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 6 available vs. 11 allocated</td>
+        <td>Class Feats Allocation: 6 available vs. 13 allocated</td>
       </tr><tr style="text-align:center">
         <td>Expert Eldritch Archer Spellcasting Feat: Requires level (currently 10) >= 12 and basic eldritch archer spellcasting feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Fatal Shot Feat: Requires level (currently 10) >= 18 and eldritch archer dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
         <td>Homing Shot Feat: Requires level (currently 10) >= 14 and eldritch archer dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Impossible Volley Feat: Requires fighter level (currently 10) >= 18, ranger level >= 18, archer dedication level >= 20 or eldritch archer dedication level (currently 10) >= 20</td>
       </tr><tr style="text-align:center">
         <td>Incorporeal Shot Feat: Requires level (currently 10) >= 16 and eldritch archer dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">

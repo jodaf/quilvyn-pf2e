@@ -14420,7 +14420,7 @@ Pathfinder2E.featRulesExtra = function(rules, name, attrs) {
     name.charAt(0).toLowerCase() + name.substring(1).replaceAll(' ', '');
 
   if(name.endsWith(' Dedication')) {
-    rules.defineRule(prefix + 'Level',
+    rules.defineRule(prefix.replaceAll(/[-]/g, '') + 'Level',
       'features.' + name, '?', null,
       'level', '=', null
     );

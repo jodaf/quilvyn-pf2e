@@ -11,17 +11,21 @@ var attributes = {
   "abilityBoosts.intelligence":3, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Fighter", 
-  "classFeats.Archer Dedication":1, "classFeats.Archer's Aim":1, "classFeats.Crossbow Terror":1, 
-  "classFeats.Quick Shot":1, "classFeats.Unobstructed Shot":1, "deity":"Pharasma", "experience":4754, 
-  "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
-  "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
-  "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, "name":"Archetype-Archer", 
-  "selectableFeatures.Fighter - Strength":1, "selectableFeatures.Fighter - Swords":1, 
-  "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", "skillIncreases.Academia Lore":1, 
-  "skillIncreases.Acrobatics":1, "skillIncreases.Art Lore":1, "skillIncreases.Astronomy Lore":1, 
-  "skillIncreases.Athletics":2, "skillIncreases.Diplomacy":1, "skillIncreases.Engineering Lore":1, 
-  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, "skillIncreases.Survival":1, 
-  "weapons.Composite Longbow":1, "weapons.Crossbow":1, "weapons.Daikyu":1, "weapons.Shield Boss":1
+  "classFeats.Archer Dedication":1, "classFeats.Archer's Aim":1, "classFeats.Assisting Shot":1, 
+  "classFeats.Crossbow Ace":1, "classFeats.Crossbow Terror":1, "classFeats.Double Shot":1, 
+  "classFeats.Impossible Volley":1, "classFeats.Mobile Shot Stance":1, "classFeats.Multishot Stance":1, 
+  "classFeats.Parting Shot":1, "classFeats.Point Blank Stance":1, "classFeats.Quick Shot":1, 
+  "classFeats.Running Reload":1, "classFeats.Triple Shot":1, "classFeats.Unobstructed Shot":1, 
+  "deity":"Pharasma", "experience":4754, "gender":"Female", 
+  "generalFeats.Additional Lore (Cooking Lore)":1, "generalFeats.Additional Lore (River Lore)":1, 
+  "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, "languages.Diabolic":1, "languages.Dwarven":1, 
+  "languages.Goblin":1, "name":"Archetype-Archer", "selectableFeatures.Fighter - Strength":1, 
+  "selectableFeatures.Fighter - Swords":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", 
+  "skillIncreases.Academia Lore":1, "skillIncreases.Acrobatics":1, "skillIncreases.Art Lore":1, 
+  "skillIncreases.Astronomy Lore":1, "skillIncreases.Athletics":2, "skillIncreases.Diplomacy":1, 
+  "skillIncreases.Engineering Lore":1, "skillIncreases.Intimidation":1, "skillIncreases.Medicine":1, 
+  "skillIncreases.Survival":1, "weapons.Composite Longbow":1, "weapons.Crossbow":1, "weapons.Daikyu":1, 
+  "weapons.Shield Boss":1
 };
   </script>
 </head>
@@ -77,7 +81,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Archer Dedication; Archer's Aim; Assurance (Acrobatics); Clever Improviser; Crossbow Terror; Quick Shot; Unconventional Weaponry (Pick); Unobstructed Shot</td>
+        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Archer Dedication; Archer's Aim; Assisting Shot; Assurance (Acrobatics); Clever Improviser; Crossbow Ace; Crossbow Terror; Double Shot; Impossible Volley; Mobile Shot Stance; Multishot Stance; Parting Shot; Point Blank Stance; Quick Shot; Running Reload; Triple Shot; Unconventional Weaponry (Pick); Unobstructed Shot</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength; Swords</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -215,15 +219,35 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Archer's Aim: <b>(2)</b> Ranged Strike with a bow or crossbow gains +2 attack, ignores concealment, and can attack a hidden target with a DC 5 flat check</td>
       </tr><tr style="text-align:center">
+        <td>Assisting Shot: <b>(1)</b> Successful ranged Strike gives the next ally attack on the target +1 attack, or +2 with a critical success, until the start of the next turn</td>
+      </tr><tr style="text-align:center">
+        <td>Crossbow Ace: <b>(1)</b> Uses Create A Diversion or Take Cover, then Interact to reload a crossbow</td>
+      </tr><tr style="text-align:center">
         <td>Crossbow Terror: <b>(1)</b> Makes an Intimidation check after loading a crossbow; gains +2 on the check from a prior successful crossbow Strike in the same turn</td>
       </tr><tr style="text-align:center">
+        <td>Double Shot: <b>(2)</b> Makes 2 ranged Strikes against different foes at the current multiple attack penalty -2</td>
+      </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
+      </tr><tr style="text-align:center">
+        <td>Impossible Volley: <b>(3)</b> Ranged Strike with a -2 penalty attacks all foes in a 10' radius</td>
+      </tr><tr style="text-align:center">
+        <td>Mobile Shot Stance: <b>(1)</b> Stance allows making ranged Strikes without triggering reactions and using Reactive Strike with a loaded ranged weapon to attack an adjacent creature</td>
+      </tr><tr style="text-align:center">
+        <td>Multishot Stance: <b>(1)</b> Stance reduces Double Shot and Triple Shot penalties to -1 and -2</td>
+      </tr><tr style="text-align:center">
+        <td>Parting Shot: <b>(2)</b> Steps away from a foe and makes a ranged Strike with the target off-guard</td>
+      </tr><tr style="text-align:center">
+        <td>Point Blank Stance: <b>(1)</b> Stance negates volley penalty from a ranged volley weapon and gives +2 HP damage within the first range increment of a ranged non-volley weapon</td>
       </tr><tr style="text-align:center">
         <td>Quick Shot: <b>(1)</b> Draws and Strikes with a loaded or reload 0 bow or crossbow</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
+        <td>Running Reload: <b>(1)</b> Reloads during a Stride, Step, or Sneak</td>
+      </tr><tr style="text-align:center">
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
+      </tr><tr style="text-align:center">
+        <td>Triple Shot: Can use Double Shot against 1 target or use 3 actions to make 3 ranged Strikes at the current multiple attack penalty -4</td>
       </tr><tr style="text-align:center">
         <td>Unobstructed Shot: <b>(2)</b> Uses a single attack to Shove or Trip an adjacent creature, then make a ranged Strike</td>
       </tr></table>
@@ -255,9 +279,19 @@ var attributes = {
       <tr style="text-align:center">
         <td>Archer's Aim Feat: Requires level (currently 5) >= 8 and archer dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 3 available vs. 5 allocated</td>
+        <td>Class Feats Allocation: 3 available vs. 15 allocated</td>
       </tr><tr style="text-align:center">
         <td>Crossbow Terror Feat: Requires level (currently 5) >= 6 and archer dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Impossible Volley Feat: Requires fighter level (currently 5) >= 18, ranger level >= 18, archer dedication level (currently 5) >= 20 or eldritch archer dedication level >= 20</td>
+      </tr><tr style="text-align:center">
+        <td>Mobile Shot Stance Feat: Requires fighter level (currently 5) >= 8, fighter dedication level >= 16 or archer dedication level (currently 5) >= 10</td>
+      </tr><tr style="text-align:center">
+        <td>Multishot Stance Feat: Requires double shot feature (currently 1) and fighter level (currently 5) >= 16 or archer dedication level (currently 5) >= 18</td>
+      </tr><tr style="text-align:center">
+        <td>Running Reload Feat: Requires ranger level >= 4, ranger dedication level >= 8, archer dedication level (currently 5) >= 6 or eldritch archer dedication level >= 8</td>
+      </tr><tr style="text-align:center">
+        <td>Triple Shot Feat: Requires double shot feature (currently 1) and fighter level (currently 5) >= 6, fighter dedication level >= 12 or archer dedication level (currently 5) >= 8</td>
       </tr><tr style="text-align:center">
         <td>Unobstructed Shot Feat: Requires level (currently 5) >= 10, archer dedication feature (currently 1) and athletics rank (currently 2) >= 2</td>
       </tr></table>

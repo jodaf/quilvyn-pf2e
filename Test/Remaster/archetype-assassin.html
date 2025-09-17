@@ -12,7 +12,8 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Fighter", 
   "classFeats.Angel Of Death":1, "classFeats.Assassin Dedication":1, "classFeats.Assassinate":1, 
-  "classFeats.Expert Backstabber":1, "classFeats.Surprise Attack":1, "deity":"Pharasma", "experience":4754, 
+  "classFeats.Expert Backstabber":1, "classFeats.Improved Poison Weapon":1, "classFeats.Poison Resistance":1, 
+  "classFeats.Poison Weapon":1, "classFeats.Surprise Attack":1, "deity":"Pharasma", "experience":4754, 
   "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
   "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
   "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, "name":"Archetype-Assassin", 
@@ -77,7 +78,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Angel Of Death; Assassin Dedication; Assassinate; Assurance (Acrobatics); Clever Improviser; Expert Backstabber; Surprise Attack; Unconventional Weaponry (Pick)</td>
+        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Angel Of Death; Assassin Dedication; Assassinate; Assurance (Acrobatics); Clever Improviser; Expert Backstabber; Improved Poison Weapon; Poison Resistance; Poison Weapon; Surprise Attack; Unconventional Weaponry (Pick)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength; Swords</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -168,6 +169,8 @@ var attributes = {
       <td>Clever Improviser: Can attempt any skill untrained</td>
     </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
+    </tr><tr style="text-align:center">
+      <td>Poison Weapon: Can prepare 5 poisons that inflict 1d4 HP poison during daily prep</td>
     </tr></table>
 </td>
   </tr></table>
@@ -217,7 +220,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
+        <td>Improved Poison Weapon: Poisoned weapons inflict +2d4 HP poison, and a critical miss does not waste the poison</td>
+      </tr><tr style="text-align:center">
         <td>Mark For Death: <b>(3)</b> Gains +2 Seek and Feint vs. a chosen target, can use Sneak Attack against it, and target suffers -2 Seek vs. self</td>
+      </tr><tr style="text-align:center">
+        <td>Poison Weapon: <b>(1)</b> Applies a poison to a weapon</td>
       </tr><tr style="text-align:center">
         <td>Reactive Strike: <b>(R)</b> Makes a melee Strike on a foe within reach that uses a manipulate or move action, makes a ranged Strike, or leaves a square while moving</td>
       </tr><tr style="text-align:center">
@@ -240,6 +247,8 @@ var attributes = {
         <td><i>Bravery: Save Expert (Will)</i></td>
       </tr><tr style="text-align:center">
         <td>Bravery: Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1</td>
+      </tr><tr style="text-align:center">
+        <td>Poison Resistance: Has poison resistance 2 and +1 saves vs. poison</td>
       </tr></table>
 </td>
     </tr></table>
@@ -257,7 +266,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Assassinate Feat: Requires level (currently 5) >= 12 and assassin dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
-        <td>Class Feats Allocation: 3 available vs. 5 allocated</td>
+        <td>Class Feats Allocation: 3 available vs. 8 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Improved Poison Weapon Feat: Requires poison weapon feature (currently 1) and rogue level >= 8, rogue dedication level >= 16, assassin dedication level (currently 5) >= 10 or poisoner dedication level >= 10</td>
+      </tr><tr style="text-align:center">
+        <td>Poison Weapon Feat: Requires rogue level >= 4, rogue dedication level >= 8, assassin dedication level (currently 5) >= 6 or poisoner dedication level >= 6</td>
       </tr></table>
 </td>
     </tr></table>

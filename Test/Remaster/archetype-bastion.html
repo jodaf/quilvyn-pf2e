@@ -12,7 +12,9 @@ var attributes = {
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Fighter", 
   "classFeats.Bastion Dedication":1, "classFeats.Destructive Block":1, "classFeats.Disarming Block":1, 
-  "classFeats.Nimble Shield Hand":1, "classFeats.Shield Salvation":1, "deity":"Pharasma", "experience":4754, 
+  "classFeats.Improved Reflexive Shield":1, "classFeats.Mirror Shield":1, "classFeats.Nimble Shield Hand":1, 
+  "classFeats.Quick Shield Block":1, "classFeats.Reflexive Shield":1, "classFeats.Shield Salvation":1, 
+  "classFeats.Shield Warden":1, "classFeats.Shielded Stride":1, "deity":"Pharasma", "experience":4754, 
   "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
   "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
   "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, "name":"Archetype-Bastion", 
@@ -77,7 +79,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Bastion Dedication; Clever Improviser; Destructive Block; Disarming Block; Nimble Shield Hand; Shield Salvation; Unconventional Weaponry (Pick)</td>
+        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Bastion Dedication; Clever Improviser; Destructive Block; Disarming Block; Improved Reflexive Shield; Mirror Shield; Nimble Shield Hand; Quick Shield Block; Reflexive Shield; Shield Salvation; Shield Warden; Shielded Stride; Unconventional Weaponry (Pick)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength; Swords</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -213,7 +215,11 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
+        <td>Mirror Shield: <b>(R)</b> Raised shield reflects a critically failed spell attack back upon the caster, using a ranged Strike or spell attack</td>
+      </tr><tr style="text-align:center">
         <td>Nimble Shield Hand: Can hold or Interact with an object using a hand that holds a non-tower shield</td>
+      </tr><tr style="text-align:center">
+        <td>Quick Shield Block: Can use an additional reaction for a Shield Block once per turn</td>
       </tr><tr style="text-align:center">
         <td>Reactive Shield: <b>(R)</b> Performs Raise A Shield to absorb damage from the triggering melee Strike</td>
       </tr><tr style="text-align:center">
@@ -222,6 +228,10 @@ var attributes = {
         <td>Shield Block: <b>(R)</b> Raised shield negates damage equal to its hardness; self and shield each suffer any remaining damage</td>
       </tr><tr style="text-align:center">
         <td>Shield Salvation: Can have a shield retain 1 HP when using Shield Block would otherwise destroy it; the shield must be repaired before benefitting from Shield Salvation again</td>
+      </tr><tr style="text-align:center">
+        <td>Shield Warden: Can use Shield Block to protect an adjacent ally</td>
+      </tr><tr style="text-align:center">
+        <td>Shielded Stride: Can Stride at half Speed with a shield raised without triggering reactions</td>
       </tr></table>
 </td>
     </tr></table>
@@ -236,6 +246,10 @@ var attributes = {
         <td><i>Bravery: Save Expert (Will)</i></td>
       </tr><tr style="text-align:center">
         <td>Bravery: Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1</td>
+      </tr><tr style="text-align:center">
+        <td>Improved Reflexive Shield: Using Shield Block on a Reflex save protects both self and adjacent allies</td>
+      </tr><tr style="text-align:center">
+        <td>Reflexive Shield: Raised shield adds its bonus to Reflex saves</td>
       </tr></table>
 </td>
     </tr></table>
@@ -249,13 +263,23 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 3 available vs. 5 allocated</td>
+        <td>Class Feats Allocation: 3 available vs. 11 allocated</td>
       </tr><tr style="text-align:center">
         <td>Destructive Block Feat: Requires level (currently 5) >= 10 and bastion dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
+        <td>Improved Reflexive Shield Feat: Requires reflexive shield feature (currently 1) and fighter level (currently 5) >= 16 or bastion dedication level (currently 5) >= 18</td>
+      </tr><tr style="text-align:center">
+        <td>Mirror Shield Feat: Requires fighter level (currently 5) >= 10, fighter dedication level >= 20 or bastion dedication level (currently 5) >= 12</td>
+      </tr><tr style="text-align:center">
         <td>Nimble Shield Hand Feat: Requires level (currently 5) >= 6 and bastion dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
+        <td>Quick Shield Block Feat: Requires shield block feature (currently 1) and champion level >= 8, fighter level (currently 5) >= 8, champion dedication level >= 16, fighter dedication level >= 16, bastion dedication level (currently 5) >= 10 or viking dedication level >= 10</td>
+      </tr><tr style="text-align:center">
+        <td>Reflexive Shield Feat: Requires fighter level (currently 5) >= 6, fighter dedication level >= 12 or bastion dedication level (currently 5) >= 8</td>
+      </tr><tr style="text-align:center">
         <td>Shield Salvation Feat: Requires level (currently 5) >= 12 and bastion dedication feature (currently 1)</td>
+      </tr><tr style="text-align:center">
+        <td>Shield Warden Feat: Requires shield block feature (currently 1) and champion level >= 6, fighter level (currently 5) >= 6, champion dedication level >= 12, fighter dedication level >= 12 or bastion dedication level (currently 5) >= 8</td>
       </tr></table>
 </td>
     </tr></table>

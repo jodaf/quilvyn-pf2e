@@ -11,22 +11,22 @@ var attributes = {
   "abilityBoosts.intelligence":4, "abilityBoosts.strength":2, "abilityBoosts.wisdom":3, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Hardy Traveler":1, 
   "ancestryFeats.Haughty Obstinacy":1, "ancestryFeats.Unconventional Weaponry (Temple Sword)":1, 
-  "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Fleeting Shadow":1, 
-  "classFeats.Scout Dedication":1, "classFeats.Scout's Charge":1, "classFeats.Scout's Pounce":1, 
-  "classFeats.Scout's Speed":1, "classFeats.Terrain Scout":1, "deity":"Pharasma", "experience":9011, 
-  "gender":"Male", "generalFeats.Additional Lore (Gladitorial Lore)":1, 
-  "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, "generalFeats.Impressive Performance":1, 
-  "generalFeats.Natural Medicine":1, "generalFeats.Scholastic Identification":1, 
-  "generalFeats.Skill Training (Accounting Lore)":1, "generalFeats.Skill Training (Tea Lore)":1, 
-  "generalFeats.Terrain Expertise (Cave)":1, "generalFeats.Terrain Expertise (Cavern)":1, "languages.Goblin":1, 
-  "languages.Jotun":1, "languages.Osiriani":1, "languages.Shoanti":1, "languages.Sussuran":1, 
-  "languages.Vudrani":1, "languages.Ysoki":1, "name":"Archetype-Scout", 
-  "selectableFeatures.Fighter - Dexterity":1, "selectableFeatures.Fighter - Spears":1, 
-  "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", "skillIncreases.Acrobatics":1, 
-  "skillIncreases.Crafting":1, "skillIncreases.Diplomacy":1, "skillIncreases.Intimidation":1, 
-  "skillIncreases.Medicine":2, "skillIncreases.Nature":2, "skillIncreases.Performance":2, 
-  "skillIncreases.Society":1, "skillIncreases.Stealth":1, "skillIncreases.Survival":1, 
-  "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
+  "armor":"Studded Leather", "background":"Emissary", "class":"Fighter", "classFeats.Camouflage":1, 
+  "classFeats.Fleeting Shadow":1, "classFeats.Scout Dedication":1, "classFeats.Scout's Charge":1, 
+  "classFeats.Scout's Pounce":1, "classFeats.Scout's Speed":1, "classFeats.Terrain Scout":1, 
+  "deity":"Pharasma", "experience":9011, "gender":"Male", 
+  "generalFeats.Additional Lore (Gladitorial Lore)":1, "generalFeats.Battle Medicine":1, "generalFeats.Courtly Graces":1, 
+  "generalFeats.Impressive Performance":1, "generalFeats.Natural Medicine":1, 
+  "generalFeats.Scholastic Identification":1, "generalFeats.Skill Training (Accounting Lore)":1, 
+  "generalFeats.Skill Training (Tea Lore)":1, "generalFeats.Terrain Expertise (Cave)":1, 
+  "generalFeats.Terrain Expertise (Cavern)":1, "languages.Goblin":1, "languages.Jotun":1, "languages.Osiriani":1, 
+  "languages.Shoanti":1, "languages.Sussuran":1, "languages.Vudrani":1, "languages.Ysoki":1, 
+  "name":"Archetype-Scout", "selectableFeatures.Fighter - Dexterity":1, 
+  "selectableFeatures.Fighter - Spears":1, "selectableFeatures.Versatile Heritage - Changeling":1, "shield":"Tower", 
+  "skillIncreases.Acrobatics":1, "skillIncreases.Crafting":1, "skillIncreases.Diplomacy":1, 
+  "skillIncreases.Intimidation":1, "skillIncreases.Medicine":2, "skillIncreases.Nature":2, 
+  "skillIncreases.Performance":2, "skillIncreases.Society":1, "skillIncreases.Stealth":1, 
+  "skillIncreases.Survival":1, "weapons.Bastard Sword":1, "weapons.Longbow":1, "weapons.Maul":1
 };
   </script>
 </head>
@@ -94,7 +94,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Battle Medicine; Courtly Graces; Fleeting Shadow; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Scout Dedication; Scout's Charge; Scout's Pounce; Scout's Speed; Skill Training (Accounting Lore); Skill Training (Tea Lore); Terrain Expertise (Cave); Terrain Expertise (Cavern); Terrain Scout; Unconventional Weaponry (Temple Sword)</td>
+        <td><b>Feats</b>: Additional Lore (Gladitorial Lore); Battle Medicine; Camouflage; Courtly Graces; Fleeting Shadow; Hardy Traveler; Haughty Obstinacy; Impressive Performance; Natural Medicine; Scout Dedication; Scout's Charge; Scout's Pounce; Scout's Speed; Skill Training (Accounting Lore); Skill Training (Tea Lore); Terrain Expertise (Cave); Terrain Expertise (Cavern); Terrain Scout; Unconventional Weaponry (Temple Sword)</td>
         <td><b>Changeling Features</b>: Changeling Heritage; Low-Light Vision</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Dexterity); Attribute Boosts; Battle Hardened; Battlefield Surveyor; Bravery; Class Trained (Fighter); Combat Flexibility; Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Dexterity; Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Spears; Weapon Specialization</td>
         <td><b>Emissary Features</b>: Attribute Boost (Choose 1 from Charisma, Intelligence; Choose 1 from any); Multilingual; Skill Trained (Society; Choose 1 from any Settlement Lore)</td>
@@ -187,6 +187,8 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>Battle Medicine: <b>(1)</b> Uses Medicine to restore Hit Points once per target per day</td>
     </tr><tr style="text-align:center">
+      <td>Camouflage: Can use Hide and Sneak in natural terrain without cover</td>
+    </tr><tr style="text-align:center">
       <td>Courtly Graces: Can use Society to impersonate a noble or to Make An Impression on one</td>
     </tr><tr style="text-align:center">
       <td>Fleeting Shadow: <b>(2)</b> Sneaks twice after Hiding</td>
@@ -276,6 +278,22 @@ var attributes = {
         <td>Bravery: Successes on Will saves vs. fear are critical successes, and the initial severity of frightened conditions is reduced by 1</td>
       </tr><tr style="text-align:center">
         <td>Haughty Obstinacy: Successful saves vs. mental effects that control actions are critical successes, and foe Intimidation fails to Coerce are critical fails</td>
+      </tr></table>
+</td>
+    </tr></table>
+</td>
+  </tr></table>
+</td>
+</tr><tr style="text-align:center">
+  <td style="border:1px solid black"><b>Notes</b><br/>  <table id="NotesArea" style="width:100%">
+  <tr style="text-align:center">
+    <td>    <table id="ValidationPart" style="width:100%">
+    <tr style="text-align:center">
+      <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
+      <tr style="text-align:center">
+        <td>Camouflage Feat: Requires stealth rank (currently 1) >= 3 and ranger level >= 10, ranger dedication level >= 20 or scout dedication level (currently 10) >= 12</td>
+      </tr><tr style="text-align:center">
+        <td>Class Feats Allocation: 6 available vs. 7 allocated</td>
       </tr></table>
 </td>
     </tr></table>

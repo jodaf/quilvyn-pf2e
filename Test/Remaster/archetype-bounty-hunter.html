@@ -11,12 +11,12 @@ var attributes = {
   "abilityBoosts.intelligence":3, "abilityBoosts.strength":2, "abilityBoosts.wisdom":1, 
   "abilityGeneration":"Standard ancestry boosts", "ancestry":"Human", "ancestryFeats.Clever Improviser":1, 
   "ancestryFeats.Unconventional Weaponry (Pick)":1, "armor":"Splint Mail", "background":"Royalty", "class":"Fighter", 
-  "classFeats.Bounty Hunter Dedication":1, "classFeats.Keep Pace":1, "classFeats.Opportunistic Grapple":1, 
-  "classFeats.Posse":1, "classFeats.Tools Of The Trade":1, "deity":"Pharasma", "experience":4754, 
-  "gender":"Female", "generalFeats.Additional Lore (Cooking Lore)":1, 
-  "generalFeats.Additional Lore (River Lore)":1, "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, 
-  "languages.Diabolic":1, "languages.Dwarven":1, "languages.Goblin":1, 
-  "name":"Archetype-Bounty Hunter", "selectableFeatures.Fighter - Strength":1, 
+  "classFeats.Bounty Hunter Dedication":1, "classFeats.Double Prey":1, "classFeats.Keep Pace":1, 
+  "classFeats.Monster Hunter":1, "classFeats.Opportunistic Grapple":1, "classFeats.Posse":1, 
+  "classFeats.Tools Of The Trade":1, "deity":"Pharasma", "experience":4754, "gender":"Female", 
+  "generalFeats.Additional Lore (Cooking Lore)":1, "generalFeats.Additional Lore (River Lore)":1, 
+  "generalFeats.Assurance (Acrobatics)":1, "languages.Chthonian":1, "languages.Diabolic":1, "languages.Dwarven":1, 
+  "languages.Goblin":1, "name":"Archetype-Bounty Hunter", "selectableFeatures.Fighter - Strength":1, 
   "selectableFeatures.Fighter - Swords":1, "selectableFeatures.Human - Skilled Human":1, "shield":"Buckler", 
   "skillIncreases.Acrobatics":1, "skillIncreases.Art Lore":1, "skillIncreases.Astronomy Lore":1, 
   "skillIncreases.Athletics":1, "skillIncreases.Deception":1, "skillIncreases.Diplomacy":1, 
@@ -78,7 +78,7 @@ var attributes = {
     </tr><tr style="text-align:center">
       <td>      <table id="FeatLists" style="width:100%">
       <tr style="text-align:center">
-        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Bounty Hunter Dedication; Clever Improviser; Keep Pace; Opportunistic Grapple; Posse; Tools Of The Trade; Unconventional Weaponry (Pick)</td>
+        <td><b>Feats</b>: Additional Lore (Cooking Lore); Additional Lore (River Lore); Assurance (Acrobatics); Bounty Hunter Dedication; Clever Improviser; Double Prey; Keep Pace; Monster Hunter; Opportunistic Grapple; Posse; Tools Of The Trade; Unconventional Weaponry (Pick)</td>
         <td><b>Fighter Features</b>: Attack Expert (Simple Weapons; Martial Weapons; Unarmed Attacks); Attack Trained (Advanced Weapons); Attribute Boost (Strength); Attribute Boosts; Bravery; Class Trained (Fighter); Defense Trained (Light Armor; Medium Armor; Heavy Armor; Unarmored Defense); Fighter Feats; Fighter Key Attribute; Fighter Skills; Fighter Weapon Mastery; General Feats; Perception Expert; Reactive Strike; Save Expert (Fortitude; Reflex); Save Trained (Will); Shield Block; Skill Feats; Skill Increases; Strength; Swords</td>
         <td><b>Royalty Features</b>: Attribute Boost (Choose 1 from Intelligence, Charisma; Choose 1 from any); Courtly Graces; Skill Trained (Society)</td>
         <td><b>Human Features</b>: Ancestry Feats; Attribute Boost (Choose 2 from any); Human Heritage; Skilled Human</td>
@@ -216,11 +216,15 @@ var attributes = {
       </tr><tr style="text-align:center">
         <td><i>Unconventional Weaponry (Pick): Weapon Familiarity (Pick)</i></td>
       </tr><tr style="text-align:center">
+        <td>Double Prey: Can use Hunt Prey on 2 targets</td>
+      </tr><tr style="text-align:center">
         <td>Fighter Weapon Mastery: Critical hits with a master proficiency weapon inflict its critical specialization effect</td>
       </tr><tr style="text-align:center">
         <td>Hunt Prey: <b>(1)</b> Suffers no distance penalty for ranged Strikes in the 2nd range increment vs. a designated creature until next daily prep</td>
       </tr><tr style="text-align:center">
         <td>Keep Pace: <b>(R)</b> Strides to keep up with the triggering retreat by an adjacent Hunt Prey target</td>
+      </tr><tr style="text-align:center">
+        <td>Monster Hunter: Can use Recall Knowledge as part of Hunt Prey; critical success gives +1 attack to self and allies on the next attack once per target per day</td>
       </tr><tr style="text-align:center">
         <td>Opportunistic Grapple: <b>(R)</b> Attempts to Grapple a Hunt Prey target after it critically misses a melee attack on self</td>
       </tr><tr style="text-align:center">
@@ -258,7 +262,9 @@ var attributes = {
     <tr style="text-align:center">
       <td><b>Validation Errors</b>:       <table id="ValidationNotes" style="width:100%">
       <tr style="text-align:center">
-        <td>Class Feats Allocation: 3 available vs. 5 allocated</td>
+        <td>Class Feats Allocation: 3 available vs. 7 allocated</td>
+      </tr><tr style="text-align:center">
+        <td>Double Prey Feat: Requires ranger level >= 12 or bounty hunter dedication level (currently 5) >= 14</td>
       </tr><tr style="text-align:center">
         <td>Keep Pace Feat: Requires level (currently 5) >= 6 and bounty hunter dedication feature (currently 1)</td>
       </tr><tr style="text-align:center">
