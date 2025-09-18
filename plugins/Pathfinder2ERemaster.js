@@ -13847,6 +13847,10 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Baleful Polymorph']
     .replace('Transmutation', 'Concentrate,Manipulate,Curse')
     .replace('Traditions=', 'Traditions=Occult,'),
+  'Darkness':
+    Pathfinder2E.SPELLS.Darkness
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Darkvision':
     Pathfinder2E.SPELLS.Darkvision
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -13864,18 +13868,21 @@ Pathfinder2ERemaster.SPELLS = {
   'Detect Magic':
     Pathfinder2E.SPELLS['Detect Magic']
     .replace('Divination', 'Concentrate,Manipulate')
-    .replace('school', 'rank'),
+    .replace('level', 'rank')
+    .replace('school', 'level or rank')
+    .replaceAll('highest-level', 'most powerful'),
   'Detect Poison':
     Pathfinder2E.SPELLS['Detect Poison']
     .replace('Divination', 'Concentrate,Manipulate'),
   'Detect Scrying':
     Pathfinder2E.SPELLS['Detect Scrying']
-    .replace('Divination', 'Concentrate,Manipulate'),
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Detonate Magic':
     Pathfinder2E.SPELLS.Disjunction
     .replace('Abjuration', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force (<b>save basic Reflex</b>)"',
+      '"R120\' Makes a counteract check to convert the target magic into an explosion that inflicts 8d6 HP force in a 5\' emanation (<b>save basic Reflex</b>); trageted magic items are also deactivated for 1 week"',
   'Dinosaur Form':
     Pathfinder2E.SPELLS['Dinosaur Form']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -13885,7 +13892,10 @@ Pathfinder2ERemaster.SPELLS = {
   'Disguise Magic':
     Pathfinder2E.SPELLS['Magic Aura']
     .replace('Uncommon', 'Concentrate,Manipulate')
-    .replace('3rd', '2nd'),
+    .replace('3rd', '2nd')
+    .replace('up to twice the spell', 'lesser')
+    .replace('spell level', 'spell rank')
+    .replace('creature or all', 'creature and all'),
   'Disintegrate':
     Pathfinder2E.SPELLS.Disintegrate
     .replace('Evocation', 'Illusion,Manipulate,Subtle'),
@@ -13894,7 +13904,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Dispelling Globe':
     Pathfinder2E.SPELLS['Globe Of Invulnerability']
-    .replace('Abjuration', 'Concentrate,Manipulate'),
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Divine Decree':
     Pathfinder2E.SPELLS['Divine Decree'] + ' ' +
     'Traits=Concentrate,Manipulate,Sanctified,Spirit ' +
@@ -13907,16 +13918,18 @@ Pathfinder2ERemaster.SPELLS = {
       '"R120\' 20\' burst inflicts 6d6 HP fire or spirit and 2d6 HP persistent fire or spirit (<b>save Reflex</b> inflicts half initial HP only; critical success negates; critical failure inflicts double HP initial and persistent) (<b>heightened +1</b> inflicts +1d6 HP initial and persistent)"',
   'Divine Inspiration':
     Pathfinder2E.SPELLS['Divine Inspiration']
-    .replace('Enchantment', 'Concentrate,Manipulate'),
+    .replace('Enchantment', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Divine Lance':
     Pathfinder2E.SPELLS['Divine Lance']
     .replace('Evocation', 'Concentrate,Manipulate,Sanctified,Spirit')
-    .replace(/1d4+%\{.*\}/, '2d4'),
+    .replace(/1d4\+%\{.*\}/, '2d4')
+    .replace('of chosen alignment', 'spirit'),
   'Divine Wrath':
     Pathfinder2E.SPELLS['Divine Wrath'] + ' ' +
     'Traits=Concentrate,Manipulate,Sanctified,Spirit' + ' ' +
     'Description=' +
-      '"R120\' 20\' burst inflicts 4d10 HP spirit and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1) (<b>heightened +1</b> inflicts +1d10 HP)"',
+      '"R120\' 20\' burst inflicts 4d10 HP spirit and sickened 1 (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts sickened 2 and slowed 1 while sickened) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Dizzying Colors':
     Pathfinder2E.SPELLS['Color Spray']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -13926,9 +13939,9 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Traditions=', 'Traditions=Divine,'),
   'Dragon Form':
     Pathfinder2E.SPELLS['Dragon Form']
-    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
-    'Traditions=Arcane,Divine,Occult,Primal'
-    .replace('+14', '+4d6'),
+    .replace('Transmutation', 'Concentrate,Manipulate')
+    .replace('+14', '+4d6 HP') + ' ' +
+    'Traditions=Arcane,Divine,Occult,Primal',
   'Dream Message':
     Pathfinder2E.SPELLS['Dream Message']
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -13943,7 +13956,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Transmutation', 'Concentrate,Earth,Manipulate'),
   'Earthquake':
     Pathfinder2E.SPELLS.Earthquake
-    .replace('Evocation', 'Concentrate,Manipulate'),
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace(/<b>save Reflex<\/b> inflicts.*critical failure/, '<b>save basic Reflex</b>; critical success also negates knocked prone; critical failure'),
   'Eclipse Burst':
     Pathfinder2E.SPELLS['Eclipse Burst']
     .replace('Necromancy', 'Concentrate,Manipulate')
@@ -13974,7 +13988,7 @@ Pathfinder2ERemaster.SPELLS = {
     // Attack trait removed by errata
     'Traits=Concentrate,Manipulate ' +
     'Description=' +
-      '"R30\' Inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1 for 1 rd; critical success negates; critical failure inflicts enfeebled 3 for 1 min)"',
+      '"R30\' Inflicts enfeebled 2 for 1 min (<b>save Fortitude</b> inflicts enfeebled 1 until the start of the next turn; critical success negates; critical failure inflicts enfeebled 3 for 1 min)"',
   'Enlarge':
     Pathfinder2E.SPELLS.Enlarge
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -13995,7 +14009,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Execute':
     Pathfinder2E.SPELLS['Finger Of Death']
     .replace('Necromancy', 'Concentrate,Manipulate,Void')
-    .replace('negative', 'void'),
+    .replace('negative', 'void or vitality'),
   'Fabricated Truth':
     Pathfinder2E.SPELLS['Fabricated Truth']
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -14005,7 +14019,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replaceAll('fire', 'chosen energy'),
   'False Vision':
     Pathfinder2E.SPELLS['False Vision']
-    .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
+    .replace('Traits=', 'Traits=Concentrate,Manipulate,')
+    .replace('level', 'rank'),
   'False Vitality':
     Pathfinder2E.SPELLS['False Life']
     .replace('Necromancy', 'Concentrate,Manipulate')
@@ -14029,12 +14044,12 @@ Pathfinder2ERemaster.SPELLS = {
     // Subtle trait added by errata
     .replace('Auditory', 'Concentrate,Manipulate,Subtle') + ' ' +
     'Description=' +
-      '"R30\' Creates a simply illusory sound or vision while sustained"',
+      '"R30\' Creates a simple illusory sound or vision, giving a +2 bonus to Create A Diversion, while sustained"',
   'Fire Shield':
     Pathfinder2E.SPELLS['Fire Shield']
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"Hovering shield with Hardness 10 and 40 HP gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on melee attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
+      '"Hovering shield with Hardness 10 (halved vs. water effects), 40 HP, and immunity to fire gives self cold resistance 5 and immunity to severe environmental cold and inflicts 2d6 HP fire on adjacent attackers for 1 min (<b>heightened +2</b> shield has +10 HP, gives cold resistance +5, and inflicts +1d6 HP)"',
   'Fireball':
     Pathfinder2E.SPELLS.Fireball
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -14050,8 +14065,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('; success negates', ''),
   'Fly':
     Pathfinder2E.SPELLS.Fly
-    .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
-    'Traditions=Arcane,Occult,Primal',
+    .replace('Occult', 'Divine,Occult')
+    .replace('Transmutation', 'Concentrate,Manipulate'),
   'Forbidding Ward':
     Pathfinder2E.SPELLS['Forbidding Ward']
     .replace('Abjuration', 'Concentrate,Manipulate'),
