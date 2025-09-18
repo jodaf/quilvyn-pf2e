@@ -8107,7 +8107,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure extends blindness to 1 min)"',
+      '"15\' cone inflicts stunned 1, blinded for 1 rd, and dazzled for 1 min (<b>save Will</b> inflicts dazzled for 1 rd only; critical success negates; critical failure inflicts stunned for 1 rd and blinded for 1 min)"',
   'Command':
     'Level=1 ' +
     'Traits=Auditory,Enchantment,Linguistic,Mental ' +
@@ -8233,7 +8233,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Allows self to see in darkness for 1 hr (<b>heightened 3rd</b> affects a touched target; <b>5th</b> effects last until next daily prep)"',
+      '"Allows self to see in darkness for 1 hr (<b>heightened 3rd</b> affects a touched target; <b>5th</b> affects a touched target and effects last until next daily prep)"',
   'Daze':
     'Level=1 ' +
     'Traits=Cantrip,Enchantment,Mental,Nonlethal ' +
@@ -8297,7 +8297,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' emanation reveals scrying effects, along with the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)"',
+      '"30\' emanation reveals scrying effects, along with the image and location of the scrying creature for lower-level effects, for 1 hr (<b>heightened 6th</b> effects last until next daily prep)"',
   'Dimension Door':
     'Level=4 ' +
     'Traits=Conjuration,Teleportation ' +
@@ -8567,7 +8567,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Willing target becomes Large, gaining +5\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining +10\' reach and +4 melee damage; <b>8th</b> affects 10 creatures)"',
+      '"R30\' Willing target becomes Large, gaining +5\' reach, +2 melee damage, and clumsy 1 for 5 min (<b>heightened 4th</b> target becomes Huge, gaining +10\' reach and +4 melee damage; <b>6th</b> affects 10 creatures)"',
   'Entangle':
     'Level=2 ' +
     'Traits=Plant,Transmutation ' +
@@ -8623,7 +8623,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Controls the image shown by scrying within a 100\' burst until next daily prep"',
+      '"Controls the image shown by scrying within a 100\' burst until next daily prep; a successful Perception with higher-level scrying reveals the illusion but does not give a true depiction of the area"',
   'Fear':
     'Level=1 ' +
     'Traits=Emotion,Enchantment,Fear,Mental ' +
@@ -8679,7 +8679,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Target suffers 70 HP negative, dying at 0 HP (<b>save basic Fortitude</b) (<b>heightened +1</b> inflicts +10 HP)"',
+      '"R30\' Target suffers 70 HP negative, dying at 0 HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> inflicts +10 HP)"',
   'Fire Seeds':
     'Level=6 ' +
     'Traits=Evocation,Fire,Plant ' +
@@ -8719,7 +8719,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Movable flame inflicts 3d6 HP fire in a 15\' sq while sustained for up to 1 min (<b>save basic Reflex</b>; success negates) (<b>heightened +1</b> inflicts +1d6 HP)"',
+      '"R30\' Movable flame inflicts 3d6 HP fire in a 5\' sq while sustained for up to 1 min (<b>save basic Reflex</b>; success negates) (<b>heightened +1</b> inflicts +1d6 HP)"',
   'Fleet Step':
     'Level=1 ' +
     'Traits=Transmutation ' +
@@ -8766,7 +8766,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures, and self can use a reaction to give the target the better of 2 rolls or its foe the worse of 2 rolls, for 1 hr"',
+      '"Touched gains +2 initiative and does not suffer flat-footed vs. undetected and flanking creatures for 1 hr; allows self to use a reaction to give the target the better of 2 rolls or its foe the worse of 2 rolls"',
   'Freedom Of Movement':
     'Level=4 ' +
     'Traits=Abjuration ' +
@@ -8966,7 +8966,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Targets in a 500\' radius suffer 10d10 HP negative (<b>save basic Fortitude</b>; plant and water creatures worsen save by 1 degree) (<b>heightened +1</b> inflicts +1d10 HP)"',
+      '"Targets in a 500\' radius suffer 10d10 HP negative (<b>save basic Fortitude</b>; plant and water creatures worsen save by 1 degree, and moisture-free creatures are immune) (<b>heightened +1</b> inflicts +1d10 HP)"',
   'Humanoid Form':
     'Level=2 ' +
     'Traits=Polymorph,Transmutation ' +
