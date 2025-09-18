@@ -348,11 +348,11 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Acid Grip (P2): <b>(2)</b> R120' Inflicts 2d8 HP acid, 1d6 HP persistent acid, and -10' Speed (<b>save Reflex</b> inflicts half initial HP only and moves the target 5'; critical success negates; critical failure inflicts double initial HP and moves the target 20') (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)</td>
+      <td>Acid Grip (P2): <b>(2)</b> R120' Inflicts 2d8 HP acid and a 10' forced move, plus 1d6 HP persistent acid and -10' Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5' forced move only; critical success negates; critical failure inflicts double initial HP and a 20' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)</td>
     </tr><tr style="text-align:left">
       <td>Aerial Form (P4): <b>(2)</b> Self becomes a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, Armor Class 28, +16 attack, +5 damage, low-light vision, flight, +16 Acrobatics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Acrobatics; <b>6th</b> becomes a Huge creature with +15' Speed, 10' reach, 15 temporary HP, Armor Class 31, +21 attack, +4 damage with double damage dice, +23 Acrobatics)</td>
     </tr><tr style="text-align:left">
-      <td>Air Bubble (P1): <b>(R)</b> R60' Allows target to breathe normally in any environment for 1 min</td>
+      <td>Air Bubble (P1): <b>(R)</b> R60' Allows the target to breathe normally in any environment for 1 min or until it returns to a breathable environment</td>
     </tr><tr style="text-align:left">
       <td>Alarm (P1): <b>(10 min)</b> 20' burst triggers a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr (<b>heightened 3rd</b> allows specifying characteristics of triggering creatures)</td>
     </tr><tr style="text-align:left">
@@ -366,7 +366,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Aqueous Orb (P3): <b>(2)</b> R60' 10' sphere extinguishes normal fires, attempts to counteract magical fires, and engulfs Large or smaller creatures until they succeed on an Escape or DC 10 Swim check (<b>save Reflex</b> negates; critical failure disallows Swim) while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Arctic Rift (P8): <b>(2)</b> R120' Inflicts 12d8 HP cold and slowed 1 for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +2d8 HP and gives ice +5 HP)</td>
+      <td>Arctic Rift (P8): <b>(2)</b> R120' Inflicts 12d8 HP cold and slowed 1 until the start of the next turn (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +1d8 HP and gives ice +5 HP)</td>
     </tr><tr style="text-align:left">
       <td>Banishment (P5): <b>(2)</b> R30' Returns the target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents the target's return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
@@ -374,11 +374,11 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Blanket Of Stars (P6): <b>(2)</b> Gives self +2 Stealth to Hide and Sneak and invisibility or concealment when still or moving beneath a starry sky, and inflicts dazzled for 1 rd on adjacent creatures (<b>save Will negates; critical failure also inflicts confused</b) for 10 min</td>
     </tr><tr style="text-align:left">
-      <td>Blazing Bolt (P2): <b>(1)</b> R60' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)</td>
+      <td>Blazing Bolt (P2): <b>(1)</b> R60' Spell attack inflicts 2d6 HP fire, or double HP on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)</td>
     </tr><tr style="text-align:left">
       <td>Blinding Fury (P6): <b>(R)</b> R60' Makes self hidden from the triggering attacker for 1 rd after every damaging attack for 1 min (<b>save Will</b> effects last for 1 rd; critical success negates; critical failure effects are permanent and also affect the target's perception of other creatures)</td>
     </tr><tr style="text-align:left">
-      <td>Blindness (P3): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
+      <td>Blindness (P3): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until the target's next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
       <td>Blister (P5): <b>(2)</b> R60' Allows self to create 2 15' cones from target that each inflict 7d6 HP acid (<b>save basic Fortitude</b>) anytime within 1 min (<b>save Fortitude</b> allows 1 cone; critical success negates; critical failure allows 4 cones)</td>
     </tr><tr style="text-align:left">
@@ -386,7 +386,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cataclysm (P10): <b>(2)</b> R1000' 60' burst inflicts 3d10 HP each acid, bludgeoning 3 times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)</td>
     </tr><tr style="text-align:left">
-      <td>Caustic Blast (PC1): <b>(2)</b> R30' Spell attack inflicts 1d6 HP acid, plus 1 HP persistent acid on a critical success, and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+3 HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+3 HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+3 HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+3 HP initial, 5 HP persistent, and 4 HP splash)</td>
+      <td>Caustic Blast (PC1): <b>(2)</b> R30' 5' burst inflicts 1d8 HP acid (<b>save basic Reflex</b>; critical failure also inflicts 1 HP persistent acid) (<b>heightened +2</b> inflicts +1d8 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
       <td>Chain Lightning (P6): <b>(2)</b> R500' Inflicts 8d12 HP electricity on a chain of targets, jumping up to 30' between each (<b>save basic Reflex</b>; critical success ends the chain) (<b>heightened +1</b> inflicts +1d12 HP)</td>
     </tr><tr style="text-align:left">
@@ -402,7 +402,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cleanse Cuisine (P1): <b>(2)</b> R10' Enhances or removes contaminants from 1 cubic foot of food and drink (<b>heightened +2</b> affects +1 cubic foot)</td>
     </tr><tr style="text-align:left">
-      <td>Clear Mind (P2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched (<b>heightened 4th</b> can counteract confused, controlled, or slows; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
+      <td>Clear Mind (P2): <b>(2)</b> Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)</td>
     </tr><tr style="text-align:left">
       <td>Control Water (P5): <b>(2)</b> R500' Raises or lowers water by 10' and slows water creatures for 1 hr (<b>save Fortitude</b> negates) in a 50'x50' area</td>
     </tr><tr style="text-align:left">
@@ -416,7 +416,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Create Food (P2): <b>(1 hr)</b> R30' Creates food for 6 Medium creatures that lasts for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)</td>
     </tr><tr style="text-align:left">
-      <td>Create Water (P1): <b>(2)</b> Creates 2 gallons of water that last for 1 day</td>
+      <td>Create Water (P1): <b>(2)</b> Creates 2 gallons of water that lasts for 1 day</td>
     </tr><tr style="text-align:left">
       <td>Creation (P4): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of earth or vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)</td>
     </tr><tr style="text-align:left">

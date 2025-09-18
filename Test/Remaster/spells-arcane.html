@@ -362,11 +362,11 @@ var attributes = {
   </tr><tr style="text-align:center">
     <td><b>Spells</b>:     <table id="Spells" style="width:100%">
     <tr style="text-align:left">
-      <td>Acid Grip (A2): <b>(2)</b> R120' Inflicts 2d8 HP acid, 1d6 HP persistent acid, and -10' Speed (<b>save Reflex</b> inflicts half initial HP only and moves the target 5'; critical success negates; critical failure inflicts double initial HP and moves the target 20') (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)</td>
+      <td>Acid Grip (A2): <b>(2)</b> R120' Inflicts 2d8 HP acid and a 10' forced move, plus 1d6 HP persistent acid and -10' Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5' forced move only; critical success negates; critical failure inflicts double initial HP and a 20' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)</td>
     </tr><tr style="text-align:left">
       <td>Aerial Form (A4): <b>(2)</b> Self becomes a Medium bat, bird, pterosaur, or wasp with 5 temporary HP, Armor Class 28, +16 attack, +5 damage, low-light vision, flight, +16 Acrobatics modifier, and creature-specific features for 1 min (<b>heightened 5th</b> becomes a Large creature with +10' Speed, 10 temporary HP, +18 attack, +8 damage, +20 Acrobatics; <b>6th</b> becomes a Huge creature with +15' Speed, 10' reach, 15 temporary HP, Armor Class 31, +21 attack, +4 damage with double damage dice, +23 Acrobatics)</td>
     </tr><tr style="text-align:left">
-      <td>Air Bubble (A1): <b>(R)</b> R60' Allows target to breathe normally in any environment for 1 min</td>
+      <td>Air Bubble (A1): <b>(R)</b> R60' Allows the target to breathe normally in any environment for 1 min or until it returns to a breathable environment</td>
     </tr><tr style="text-align:left">
       <td>Alarm (A1): <b>(10 min)</b> 20' burst triggers a mental or audible alarm when a Small or larger corporeal creature enters without saying a specified password for 8 hr (<b>heightened 3rd</b> allows specifying characteristics of triggering creatures)</td>
     </tr><tr style="text-align:left">
@@ -376,23 +376,23 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Aqueous Orb (A3): <b>(2)</b> R60' 10' sphere extinguishes normal fires, attempts to counteract magical fires, and engulfs Large or smaller creatures until they succeed on an Escape or DC 10 Swim check (<b>save Reflex</b> negates; critical failure disallows Swim) while sustained for up to 1 min</td>
     </tr><tr style="text-align:left">
-      <td>Arctic Rift (A8): <b>(2)</b> R120' Inflicts 12d8 HP cold and slowed 1 for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +2d8 HP and gives ice +5 HP)</td>
+      <td>Arctic Rift (A8): <b>(2)</b> R120' Inflicts 12d8 HP cold and slowed 1 until the start of the next turn (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +1d8 HP and gives ice +5 HP)</td>
     </tr><tr style="text-align:left">
       <td>Banishment (A5): <b>(2)</b> R30' Returns the target to its home plane (<b>save Will</b> (-2 if cast using an additional action and a target anathema) negates; critical success inflicts stunned 1 on self; critical failure prevents the target's return for 1 week) (<b>heightened 9th</b> affects 10 targets)</td>
     </tr><tr style="text-align:left">
       <td>Bestial Curse (A4): <b>(2)</b> Touched suffers clumsy 1, requires a successful DC 5 flat check for manipulate actions, and gains a claw, hoof, horn, or jaws Strike for 1 hr (<b>save Fortitude</b> only inflicts clumsy 1 for 1 rd; critical success negates; critical failure effects are permanent)</td>
     </tr><tr style="text-align:left">
-      <td>Bind Undead (A3): <b>(2)</b> R30' Controls the actions of a mindless undead of level less than or equal to the spell level for 1 day</td>
+      <td>Bind Undead (A3): <b>(2)</b> R30' Controls the actions of a mindless undead of level less than or equal to the spell rank for 1 day</td>
     </tr><tr style="text-align:left">
-      <td>Blazing Bolt (A2): <b>(1)</b> R60' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)</td>
+      <td>Blazing Bolt (A2): <b>(1)</b> R60' Spell attack inflicts 2d6 HP fire, or double HP on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)</td>
     </tr><tr style="text-align:left">
-      <td>Blindness (A3): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)</td>
+      <td>Blindness (A3): <b>(2)</b> R30' Blinds the target for 1 min (<b>save Fortitude</b> effects last until the target's next turn; critical success negates; critical failure inflicts permanent blindness)</td>
     </tr><tr style="text-align:left">
       <td>Blister (A5): <b>(2)</b> R60' Allows self to create 2 15' cones from target that each inflict 7d6 HP acid (<b>save basic Fortitude</b>) anytime within 1 min (<b>save Fortitude</b> allows 1 cone; critical success negates; critical failure allows 4 cones)</td>
     </tr><tr style="text-align:left">
       <td>Blistering Invective (AC1): <b>(2)</b> Allows self voice to be heard up to 500' away, giving +1 Coerce and auditory Perform in large venues (<b>heightened 5th</b> extends voice to 1200'; <b>7th</b> extends voice to 1 mile)</td>
     </tr><tr style="text-align:left">
-      <td>Blood Vendetta (A2): <b>(R)</b> R30' Spell attack inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)</td>
+      <td>Blood Vendetta (A2): <b>(R)</b> R30' Inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)</td>
     </tr><tr style="text-align:left">
       <td>Blur (A2): <b>(2)</b> Touched becomes concealed for 1 min</td>
     </tr><tr style="text-align:left">
@@ -402,7 +402,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Cataclysm (A10): <b>(2)</b> R1000' 60' burst inflicts 3d10 HP each acid, bludgeoning 3 times, cold, electricity, and fire, ignoring resistance 10 (<b>save basic Reflex</b>)</td>
     </tr><tr style="text-align:left">
-      <td>Caustic Blast (AC1): <b>(2)</b> R30' Spell attack inflicts 1d6 HP acid, plus 1 HP persistent acid on a critical success, and 1 HP acid splash (<b>heightened 3rd</b> inflicts 1d6+4 HP initial and 2 HP persistent; <b>5th</b> inflicts 2d6+4 HP initial, 3 HP persistent, and 2 HP splash; <b>7th</b> inflicts 3d6+4 HP initial, 4 HP persistent, and 3 HP splash; <b>9th</b> inflicts 4d6+4 HP initial, 5 HP persistent, and 4 HP splash)</td>
+      <td>Caustic Blast (AC1): <b>(2)</b> R30' 5' burst inflicts 1d8 HP acid (<b>save basic Reflex</b>; critical failure also inflicts 1 HP persistent acid) (<b>heightened +2</b> inflicts +1d8 HP initial and +1 HP persistent)</td>
     </tr><tr style="text-align:left">
       <td>Chain Lightning (A6): <b>(2)</b> R500' Inflicts 8d12 HP electricity on a chain of targets, jumping up to 30' between each (<b>save basic Reflex</b>; critical success ends the chain) (<b>heightened +1</b> inflicts +1d12 HP)</td>
     </tr><tr style="text-align:left">
@@ -428,7 +428,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Containment (A4): <b>(2)</b> R30' Creates around the target an impassible force field with immunity to critical hits and precision damage, Harness 10, and 40 HP for 1 min or until destroyed (<b>save Reflex</b> decreases the HP to 10; critical success negates) (<b>heightened +1</b> increases field Hit Points by 5 or 15 on save success or failure</td>
     </tr><tr style="text-align:left">
-      <td>Contingency (A7): <b>(10 min)</b> Prepares a spell of up to 3 actions and 4th level to activate as a reaction to a specified trigger (<b>heightened 8th</b> allows a 5th level spell; <b>9th</b> allows a 6th level spell; <b>10th</b> allows a 7th level spell)</td>
+      <td>Contingency (A7): <b>(10 min)</b> Prepares a spell of up to 3 actions and 4th rank to activate as a reaction to a specified trigger (<b>heightened 8th</b> allows a 5th rank spell; <b>9th</b> allows a 6th rank spell; <b>10th</b> allows a 7th rank spell)</td>
     </tr><tr style="text-align:left">
       <td>Control Water (A5): <b>(2)</b> R500' Raises or lowers water by 10' and slows water creatures for 1 hr (<b>save Fortitude</b> negates) in a 50'x50' area</td>
     </tr><tr style="text-align:left">
@@ -442,7 +442,7 @@ var attributes = {
     </tr><tr style="text-align:left">
       <td>Create Food (A2): <b>(1 hr)</b> R30' Creates food for 6 Medium creatures that lasts for 1 day (<b>heightened 4th</b> creates food for 12; <b>6th</b> creates food for 50; <b>8th</b> creates food for 200)</td>
     </tr><tr style="text-align:left">
-      <td>Create Water (A1): <b>(2)</b> Creates 2 gallons of water that last for 1 day</td>
+      <td>Create Water (A1): <b>(2)</b> Creates 2 gallons of water that lasts for 1 day</td>
     </tr><tr style="text-align:left">
       <td>Creation (A4): <b>(1 min)</b> R0' Creates an object of up to 5 cubic feet made of earth or vegetable matter that lasts for 1 hr (<b>heightened 5th</b> object can include metal and common minerals)</td>
     </tr><tr style="text-align:left">

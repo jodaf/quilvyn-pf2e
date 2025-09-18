@@ -7797,7 +7797,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R60\' Allows target to breathe normally in any environment for 1 min"',
+      '"R60\' Allows the target to breathe normally in any environment for 1 min or until it returns to a breathable environment"',
   'Air Walk':
     'Level=4 ' +
     'Traits=Air,Transmutation ' +
@@ -7876,7 +7876,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast="10 min" ' +
     'Description=' +
-      '"Reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad"',
+      '"Successful DC 6 secret flat check reveals whether the results of a proposed action up to 30 min in the future will be generally good or bad"',
   'Avatar':
     'Level=10 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -7964,7 +7964,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Blinds the target for 1 min (<b>save Fortitude</b> effects last until next turn; critical success negates; critical failure inflicts permanent blindness)"',
+      '"R30\' Blinds the target for 1 min (<b>save Fortitude</b> effects last until the target\'s next turn; critical success negates; critical failure inflicts permanent blindness)"',
   'Blink':
     'Level=4 ' +
     'Traits=Conjuration,Teleportation ' +
@@ -8177,7 +8177,7 @@ Pathfinder2E.SPELLS = {
     'School=Conjuration ' +
     'Traditions=Arcane,Divine,Primal ' +
     'Cast=2 ' +
-    'Description="Creates 2 gallons of water that last for 1 day"',
+    'Description="Creates 2 gallons of water that lasts for 1 day"',
   'Creation':
     'Level=4 ' +
     'Traits=Conjuration ' +

@@ -13663,7 +13663,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Evocation', 'Manipulate') + ' ' +
     // Duration deleted by errata
     'Description=' +
-      '"R120\' Inflicts 2d8 HP acid, 1d6 HP persistent acid, and -10\' Speed (<b>save Reflex</b> inflicts half initial HP only and moves the target 5\'; critical success negates; critical failure inflicts double initial HP and moves the target 20\') (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
+      '"R120\' Inflicts 2d8 HP acid and a 10\' forced move, plus 1d6 HP persistent acid and -10\' Speed for 1 min (<b>save Reflex</b> inflicts half initial HP and a 5\' forced move only; critical success negates; critical failure inflicts double initial HP and a 20\' forced move) (<b>heightened +2</b> inflicts +2d8 HP initial and +1d6 HP persistent)"',
   'Aerial Form':
     Pathfinder2E.SPELLS['Aerial Form']
     .replace('Transmutation', 'Manipulate,Concentrate'),
@@ -13694,7 +13694,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Attack,', '')
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Inflicts 12d8 HP cold and slowed 1 for 1 rd (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +2d8 HP and gives ice +5 HP)"',
+      '"R120\' Inflicts 12d8 HP cold and slowed 1 until the start of the next turn (<b>save Fortitude</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and slowed 1 until ice with 60 HP and Hardness 5 is cleared) (<b>heightened +1</b> inflicts +1d8 HP and gives ice +5 HP)"',
   'Augury':
     Pathfinder2E.SPELLS.Augury
     .replace('Divination', 'Concentrate,Manipulate'),
@@ -13705,31 +13705,34 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Bane
     // Aura trait added by errata
     .replace('Enchantment', 'Concentrate,Manipulate,Aura')
+    .replace('concentrate action', 'Sustain action')
     .replaceAll('5', '10'),
   'Banishment':
     Pathfinder2E.SPELLS.Banishment
     .replace('Abjuration', 'Concentrate,Manipulate'),
   'Bind Undead':
     Pathfinder2E.SPELLS['Bind Undead']
-    .replace('Necromancy', 'Concentrate,Manipulate'),
+    .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace('spell level', 'spell rank'),
   'Blazing Bolt':
     'Level=2 ' +
     'Traits=Attack,Concentrate,Fire,Manipulate ' +
     'Traditions=Arcane,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 2d6 HP fire, or double on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
+      '"R60\' Spell attack inflicts 2d6 HP fire, or double HP on a critical success; using 2 or 3 actions increases the damage to 4d6 HP fire and attacks 2 or 3 targets (<b>heightened +1</b> inflicts +1d6 HP, or +2d6 HP with 2 or 3 actions)"',
   'Bless':
     Pathfinder2E.SPELLS.Bless
     // Aura trait added by errata
     .replace('Enchantment', 'Concentrate,Manipulate,Aura')
     .replace('5', '15')
-    .replace('by 5', 'by 10'),
+    .replace('by 5', 'by 10')
+    .replace('concentrate', 'Sustain'),
   'Blessed Boundary':
     Pathfinder2E.SPELLS['Blade Barrier']
     .replace('Evocation', 'Concentrate,Manipulate,Sanctified') + ' ' +
     'Description=' +
-      '"R120\' 60\' burst inflicts 7d8 HP force and a 10\' push for 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts doubles HP and push distance) (<b>heightened +1</b> inflicts +1d8 HP)"',
+      '"R120\' Edge of a 60\' burst inflicts 7d8 HP force and a 10\' push for 1 min (<b>save Reflex</b> inflicts half HP only; critical success negates; critical failure inflicts double HP and a 20\' push) (<b>heightened +1</b> inflicts +1d8 HP)"',
   'Blindness':
     Pathfinder2E.SPELLS.Blindness
     .replace('Necromancy', 'Concentrate,Manipulate'),
@@ -13739,7 +13742,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=Reaction ' +
     'Description=' +
-      '"R30\' Spell attack inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)"',
+      '"R30\' Inflicts 2d6 HP persistent bleed and weakness 1 to piercing and slashing on a target that has inflicted piercing, slashing, or persistent bleed on self (<b>save Will</b> inflicts half HP only; critical success negates; critical failure inflicts double HP) (<b>heightened +2</b> inflicts +2d6 HP)"',
   'Blur':
     Pathfinder2E.SPELLS.Blur
     .replace('Veil', 'Concentrate,Manipulate,Visual'),
@@ -13760,14 +13763,16 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Inflicts 10d6 HP mental, frightened 3, a curse that negates of circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and permanent curse that also affects allies within 15\'"',
+      '"R120\' Inflicts 10d6 HP mental, frightened 3, and a curse that negates circumstance and status bonuses for 1 week (<b>save Will</b> inflicts half HP, frightened 1, and cursed for 1 rd; critical success negates; critical failure inflicts double HP, frightened 4, and a permanent curse that also affects the target\'s allies within 15\'"',
   'Cataclysm':
     Pathfinder2E.SPELLS.Cataclysm
     .replace('Evocation', 'Concentrate,Manipulate'),
   'Caustic Blast':
     Pathfinder2E.SPELLS['Acid Splash']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace(',Attack', ''),
+    .replace(',Attack', '') + ' ' +
+    'Description=' +
+      '"R30\' 5\' burst inflicts 1d8 HP acid (<b>save basic Reflex</b>; critical failure also inflicts 1 HP persistent acid) (<b>heightened +2</b> inflicts +1d8 HP initial and +1 HP persistent)"',
   'Chain Lightning':
     Pathfinder2E.SPELLS['Chain Lightning']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -13802,7 +13807,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Remove Fear'] + ' ' +
     'Traits=Concentrate,Healing,Manipulate,Mental ' +
     'Description=' +
-      '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched (<b>heightened 4th</b> can counteract confused, controlled, or slows; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
+      '"Makes a counteract attempt vs. 1 fleeing, frightened, or stupefied effect affecting touched; failure by 2 or less instead supresses the affect until the start of the next turn (<b>heightened 4th</b> can counteract confused, controlled, or slowed; <b>6th</b> can counteract doomed; <b>8th</b> can counteract stunned)"',
   'Command':
     Pathfinder2E.SPELLS.Command
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -13811,7 +13816,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Contingency':
     Pathfinder2E.SPELLS.Contingency
-    .replace('Abjuration', 'Concentrate,Manipulate'),
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replaceAll('level', 'rank'),
   'Control Water':
     Pathfinder2E.SPELLS['Control Water']
     .replace('Evocation', 'Concentrate,Manipulate')
