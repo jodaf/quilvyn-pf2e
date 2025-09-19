@@ -14093,12 +14093,13 @@ Pathfinder2ERemaster.SPELLS = {
   'Gecko Grip':
     Pathfinder2E.SPELLS['Spider Climb']
     .replace('Transmutation', 'Concentrate,Manipulate'),
-  'Feather Fall':
+  'Gentle Landing':
     Pathfinder2E.SPELLS['Feather Fall']
     .replace('Abjuration', 'Air,Concentrate'),
   'Ghostly Carrier':
     Pathfinder2E.SPELLS['Spectral Hand']
     .replace('Necromancy', 'Concentrate,Manipulate')
+    .replace(/crawling.*?hand/, 'tiny, floating figure')
     .replace(/ends the spell[^"]*/, 'ends the spell'),
   'Ghostly Weapon':
     Pathfinder2E.SPELLS['Ghostly Weapon']
@@ -14112,14 +14113,14 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Melee spell attack inflicts 2d6 HP slashing or piercing, plus 2 HP persistent bleed, or double both on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
+      '"Successful melee spell attack inflicts 2d6 HP slashing or piercing, plus 2 HP persistent bleed, or double HP on a critical success (<b>heightened +1</b> inflicts +1d6 HP initial and +1 persistent bleed)"',
   'Grease':
     Pathfinder2E.SPELLS.Grease
     .replace('Conjuration', 'Concentrate,Manipulate'),
   'Grim Tendrils':
-    Pathfinder2E.SPELLS['Grim Tendrils'] + ' ' +
-    'Traits=Concentrate,Manipulate,Void'
-    .replaceAll('negative', 'void'),
+    Pathfinder2E.SPELLS['Grim Tendrils']
+    .replace('negative', 'void') + ' ' +
+    'Traits=Concentrate,Manipulate,Void',
   'Guidance':
     Pathfinder2E.SPELLS.Guidance
     .replace('Divination', 'Concentrate'),
@@ -14130,35 +14131,37 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Hallucination
     .replace('Traits=', 'Traits=Manipulate,Subtle,'),
   'Harm':
-    Pathfinder2E.SPELLS.Harm + ' ' +
-    'Traits=Manipulate,Void'
-    .replaceAll('negative', 'void'),
+    Pathfinder2E.SPELLS.Harm
+    .replaceAll('negative', 'void') + ' ' +
+    'Traits=Manipulate,Void',
   'Haste':
     Pathfinder2E.SPELLS.Haste
     .replace('Transmutation', 'Concentrate,Manipulate'),
   'Heal':
     Pathfinder2E.SPELLS.Heal
-    .replace('Necromancy,Positive', 'Manipulate,Vitality'),
+    .replace('Necromancy,Positive', 'Manipulate,Vitality')
+    .replace('positive', 'vitality'),
   'Heroism':
     Pathfinder2E.SPELLS.Heroism
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Hidden Mind':
     Pathfinder2E.SPELLS['Mind Blank']
-    .replace('Abjuration', 'Concentrate,Manipulate'),
+    .replace('Abjuration', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Holy Light':
     Pathfinder2E.SPELLS['Searing Light']
     .replace('Evocation', 'Concentrate,Manipulate')
     .replace('Good', 'Holy')
     .replaceAll('good', 'spirit')
     .replace('fiends and undead', 'unholy creatures'),
-  'Glibness':
+  'Honeyed Words':
     Pathfinder2E.SPELLS.Glibness
     .replace('Uncommon,Enchantment', 'Concentrate,Manipulate'),
   'Howling Blizzard':
     Pathfinder2E.SPELLS['Cone Of Cold']
     .replace('Evocation', 'Concentrate,Manipulate,Air') + ' ' +
     'Description=' +
-      '"60\' cone (using 3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>) (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"60\' cone (using 3 actions gives R500\' and a 30\' burst) inflicts 10d6 HP cold (<b>save basic Reflex</b>), plus difficult terrain until the start of the next turn (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Humanoid Form':
     Pathfinder2E.SPELLS['Humanoid Form']
     .replace('Transmutation', 'Concentrate,Manipulate'),
@@ -14177,14 +14180,14 @@ Pathfinder2ERemaster.SPELLS = {
   'Ignition':
     Pathfinder2E.SPELLS['Produce Flame']
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace(/1d4\+%\{.*\} HP/, '2d4 HP (2d6 HP if a melee attack)'),
+    .replace(/1d4\+%\{.*\} HP fire/, '2d4 HP fire (2d6 HP fire if a melee attack)'),
   'Ill Omen':
     'Level=1 ' +
     'Traits=Concentrate,Curse,Manipulate,Misfortune ' +
     'Traditions=Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Target suffers worse of 2 rolls on the next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
+      '"Target must use the worse of 2 rolls on its next attack or skill check within 1 rd (<b>save Will</b> negates; critical failure affects all attacks and skill checks within 1 rd)"',
   'Illusory Creature':
     Pathfinder2E.SPELLS['Illusory Creature']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,')
@@ -14215,20 +14218,22 @@ Pathfinder2ERemaster.SPELLS = {
     'Traits=Concentrate,Manipulate ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=2 ' +
-    'Description="Gives self immunity to harm for 1 rd"',
+    'Description=' +
+      '"Gives self immunity to harm until the start of the next turn"',
   'Infuse Vitality':
     Pathfinder2E.SPELLS['Disrupting Weapons']
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality') + ' ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched weapon (using 2 or 3 actions affects 2 or 3 weapons) inflicts +1d4 HP vitality%{traits.Holy?\' and holy\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
+      '"Touched weapon (using 2 or 3 actions affects 2 or 3 weapons) inflicts +1d4 HP vitality%{traits.Holy?\' and gains the holy trait\':\'\'} for 1 min (<b>heightened 3rd</b> weapon inflicts +2d4 HP; <b>5th</b> weapon inflicts +3d4 HP)"',
   'Insect Form':
     Pathfinder2E.SPELLS['Insect Form']
     .replace('Transmutation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Primal',
   'Interplanar Teleport':
     Pathfinder2E.SPELLS['Plane Shift']
-    .replace('Conjuration', 'Concentrate,Manipulate'),
+    .replace('Conjuration', 'Concentrate,Manipulate')
+    .replace('Transports', "R5' Transports"),
   'Invisibility':
     Pathfinder2E.SPELLS.Invisibility
     .replace('Traits=', 'Traits=Manipulate,Subtle,'),
@@ -14238,7 +14243,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' 10\' burst, movable 30\' per rd, inflicts 2d4 HP mental and 2d4 HP void while sustained for up to 1 min (<b>save Will</b> negates; critical failure also inflicts frightened 2, plus fleeing in the first rd) (<b>heightened +2</b> inflicts +1d4 HP mental and void)"',
+      '"R120\' 10\' burst, movable 30\' per rd, inflicts 2d4 HP mental and 2d4 HP void (<b>save basic Will</b>; critical failure also inflicts frightened 2, plus fleeing for 1 rd in the first rd) while sustained for up to 1 min (<b>heightened +2</b> inflicts +1d4 HP mental and void)"',
   'Item Facade':
     Pathfinder2E.SPELLS['Item Facade']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -14252,7 +14257,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS['Know Direction']
     .replace('Divination', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"Reveals which direction is north (<b>heightened 3rd</b> reveals direction to a location visited in the past week; <b>7th</b> reveals direction to a familiar location)"',
+      '"Reveals which direction is north and the direction to a location visited in the past day (<b>heightened 3rd</b> reveals direction to a location visited in the past week; <b>7th</b> reveals direction to a familiar location)"',
   'Laughing Fit':
     Pathfinder2E.SPELLS['Hideous Laughter']
     .replace('Enchantment', 'Concentrate,Manipulate'),
@@ -15378,7 +15383,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives +2 bonus"',
+      '"R30\' Target gains +1 Armor Class and saves vs. a choice of creature type while sustained for up to 1 min (<b>heightened 5th</b> gives a +2 bonus"',
   'Cackle':
     'Level=1 ' +
     'Traits=Uncommon,Focus,Witch,Concentrate,Hex ' +
@@ -16400,7 +16405,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touch inflicts 1d12 HP void and 1d4 persistent void, or double this on a critical success; touched objects suffer the same damage and lose 2 Hardness for 1 min, or 4 hardness on a critical success (<b>heightened +1</b> inflicts +1d12 HP initial, +1 HP persistent, and +1 Hardness)"',
+      '"Touch inflicts 1d12 HP void and 1d4 persistent void, or double HP on a critical success; touched objects suffer the same damage and lose 2 Hardness for 1 min, or 4 hardness on a critical success (<b>heightened +1</b> inflicts +1d12 HP initial, +1 HP persistent, and +1 Hardness)"',
   'Parch':
     'Level=1 ' +
     'Traits=Cleric,Uncommon,Air,Concentrate,Focus,Manipulate ' +
