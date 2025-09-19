@@ -8870,7 +8870,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes the holder to drop the target object)"',
+      '"R30\' 4 5\' squares cause falls, or 1 target object inflicts a -2 penalty to checks to use it, for 1 min (<b>save Reflex or Acrobatics</b> negates; critical failure causes the holder to drop the target object)"',
   'Grim Tendrils':
     'Level=1 ' +
     'Traits=Necromancy,Negative ' +
@@ -8878,7 +8878,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half HP negative only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +2d4 HP initial and +1 HP persistent)"',
+      '"30\' line inflicts 2d4 HP negative and 1 HP persistent bleed on living creatures (<b>save Fortitude</b> inflicts half initial HP only; critical success negates; critical failure inflicts double initial and persistent HP) (<b>heightened +1</b> inflicts +2d4 HP initial and +1 HP persistent)"',
   'Guidance':
     'Level=1 ' +
     'Traits=Cantrip,Divination ' +
@@ -8886,7 +8886,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"R30\' Target gains +1 on an attack, Perception, save, or skill check within 1 rd once per target per hr"',
+      '"R30\' Target gains +1 on an attack, Perception, save, or skill check before the start of the next turn once per target per hr"',
   'Gust Of Wind':
     'Level=1 ' +
     'Traits=Air,Evocation ' +
@@ -8934,7 +8934,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=1 ' +
     'Description=' +
-      '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) regains 1d%{healSpellDie} HP, or 1d%{healSpellDie}+8 HP with 2 actions; undead instead suffer 1d%{healSpellDie} HP (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP; restores +8 HP with 2 actions)"',
+      '"Touched (2 or 3 actions gives R30\' or a 30\' emanation) regains 1d%{healSpellDie} HP, or 1d%{healSpellDie}+8 HP with 2 actions; undead instead suffer 1d%{healSpellDie} HP positive (<b>save basic Fortitude</b>) (<b>heightened +1</b> restores or inflicts +1d%{healSpellDie} HP; restores +8 HP with 2 actions)"',
   'Heroism':
     'Level=3 ' +
     'Traits=Enchantment,Mental ' +
@@ -8942,7 +8942,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> gives +2 bonus; <b>8th</b> gives +3 bonus)"',
+      '"Touched gains +1 attack, Perception, saves, and skill checks for 10 min (<b>heightened 6th</b> gives a +2 bonus; <b>8th</b> gives a +3 bonus)"',
   'Hideous Laughter':
     'Level=2 ' +
     'Traits=Emotion,Enchantment,Mental ' +
@@ -8982,7 +8982,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R60\' Spell attack inflicts 3d6 HP bludgeoning and a 5\' push, or 6d6 HP bludgeoning and a 10\' push with a critical success (<b>heightened +1</b> inflicts +2d6 HP)"',
+      '"R60\' Spell attack inflicts 3d6 HP bludgeoning and a 5\' push, or 6d6 HP bludgeoning and a 10\' push on a critical success (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hydraulic Torrent':
     'Level=4 ' +
     'Traits=Evocation,Water ' +
@@ -8990,7 +8990,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"60\' line inflicts 8d6 HP bludgeoning and a 5\' push (<b>save basic Fortitude</b>; success negates push; critical failure doubles push distance)"',
+      '"60\' line inflicts 8d6 HP bludgeoning and a 5\' push (<b>save basic Fortitude</b>; success negates push; critical failure doubles push distance (<b>heightened +1</b> inflicts +2d6 HP)"',
   'Hypercognition':
     'Level=3 ' +
     'Traits=Divination ' +
@@ -9897,7 +9897,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead (critical success inflicts double HP), and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
+      '"R120\' Spell attack inflicts 5d6 HP fire, plus 5d6 HP good to fiends and undead, or double HP on a critical success, and attempts to counteract magical darkness (<b>heightened +1</b> inflicts +2d6 HP fire and good)"',
   'Secret Page':
     'Level=3 ' +
     'Traits=Illusion,Visual ' +
@@ -10101,7 +10101,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Creates a crawling, spectral hand that delivers touch spells for 1 min; damage to the hand ends the spell and inflicts 1d6 HP to self"',
+      '"R120\' Creates a crawling, spectral hand that delivers touch spells for 1 min; damage to it ends the spell and inflicts 1d6 HP to self"',
   'Spell Immunity':
     'Level=4 ' +
     'Traits=Abjuration ' +
