@@ -14263,11 +14263,13 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Enchantment', 'Concentrate,Manipulate'),
   'Levitate':
     Pathfinder2E.SPELLS.Levitate
-    .replace('Evocation', 'Concentrate,Manipulate'),
+    .replace('Evocation', 'Concentrate,Manipulate')
+    .replace('concentrate', 'Sustain'),
   'Light':
     Pathfinder2E.SPELLS.Light
     .replace('Evocation', 'Concentrate,Manipulate')
-    .replace('Touched object', "R120' Orb"),
+    .replace('Touched object', "R120' Orb")
+    .replace('prep', 'prep; can be attached to a willing creature to move with it or moved 60\' via a Sustain action'),
   'Lightning Bolt':
     Pathfinder2E.SPELLS['Lightning Bolt']
     .replace('Evocation', 'Concentrate,Manipulate'),
@@ -14292,6 +14294,13 @@ Pathfinder2ERemaster.SPELLS = {
   'Magic Passage':
     Pathfinder2E.SPELLS.Passwall
     .replace('Conjuration', 'Concentrate,Manipulate'),
+  'Manifestation':
+    'Level=10 ' +
+    'Traits=Concentrate,Manipulate ' +
+    'Traditions=Arcane,Divine,Occult,Primal ' +
+    'Cast=3 ' +
+    'Description=' +
+      '"Duplicates the effects of a %tradition spell of up to rank 9 or of a spell from a different tradition of up to rank 7"',
   "Mariner's Curse":
     Pathfinder2E.SPELLS["Mariner's Curse"]
     .replace('Necromancy', 'Concentrate,Manipulate'),
@@ -14300,7 +14309,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Conjuration', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Description=' +
-      '"R30\' Conjures a magical mount (Armor Class %{armorClass}, HP 10, 40\' Speed) that can be ridden only by a designated creature for 8 hr (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
+      '"R30\' Conjures a magical mount with 40\' Speed that can be ridden only by the target and that uses the target\'s Armor Class and saves for 8 hr or until it suffers more than 10 HP damage from a single attack (<b>heightened 3rd</b> mount can walk on water; <b>4th</b> mount has 60\' Speed; <b>5th</b> mount can also fly for 1 rd; <b>6th</b> mount has 80\' Speed and can fly)"',
   'Mask Of Terror':
     Pathfinder2E.SPELLS['Mask Of Terror']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -14318,12 +14327,13 @@ Pathfinder2ERemaster.SPELLS = {
   'Metamorphosis':
     Pathfinder2E.SPELLS.Shapechange
     .replace('Transmutation', 'Concentrate,Manipulate')
-    .replace('level', 'rank'),
+    .replace('level', 'rank, giving 40 temporary Hit Points,'),
   'Migration':
-    Pathfinder2E.SPELLS['Wind Walk'] + ' ' +
-    'Traits=Concentrate,Manipulate,Polymorph'
+    Pathfinder2E.SPELLS['Wind Walk']
     .replace('clouds', 'animals')
-    .replace('MPH', 'MPH, have immunity to extreme cold and heat, and can transform into a Tiny or Small animal'),
+    .replace('MPH', 'MPH, have immunity to extreme cold and heat, and can transform into normal form or a Tiny or Small animal')
+    .replace('; attacking or spellcasting ends the spell', '') + ' ' +
+    'Traits=Concentrate,Manipulate,Polymorph',
   'Mind Probe':
     Pathfinder2E.SPELLS['Mind Probe']
     .replace('Divination', 'Concentrate,Manipulate'),
