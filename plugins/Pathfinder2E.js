@@ -9268,7 +9268,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> R500\')"',
+      '"R120\' Allows self to hold a private conversation with a visible target for 1 turn (<b>heightened 3rd</b> extends range to 500\')"',
   'Meteor Swarm':
     'Level=9 ' +
     'Traits=Evocation,Fire ' +
@@ -9372,7 +9372,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' 5 willing targets gain 5 temporary HP, +10\' Speed, fangs and claws that inflict 2d8 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver and prohibition of non-rage, non-Seek concentration actions, for 1 min (<b>heightened 6th</b> gives 10 temporary HP, inflict 3d8 HP piercing and 3d6 HP slashing, weakness 10 to silver; <b>10th</b> gives 20 temporary HP, inflict 4d8 HP piercing and 4d6 HP slashing, weakness 20 to silver)"',
+      '"R30\' 5 willing targets gain 5 temporary Hit Points, +10\' Speed, fangs and claws that inflict 2d8 HP piercing and 2d6 HP slashing plus 1d4 HP persistent bleed on a critical hit, and increase a size up to Large in full moonlight, but suffer weakness 5 to silver and prohibition of non-rage, non-Seek concentration actions, for 1 min (<b>heightened 6th</b> gives 10 temporary Hit Points, weakness 10 to silver, and fangs and claws that inflict 3d8 HP piercing and 3d6 HP slashing; <b>10th</b> gives 20 temporary Hit Points, weakness 20 to silver, and fangs and claws that inflict 4d8 HP piercing and 4d6 HP slashing)"',
   'Nature Incarnate':
     'Level=10 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -9475,7 +9475,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> the tunnel extends 20\', appears as normal wall, and can be entered only using a password or trigger)"',
+      '"Creates a 5\'x10\'x10\' tunnel in wood, plaster, or stone for 1 hr (<b>heightened 7th</b> the tunnel extends 20\', appears as normal wall, and can be entered only via a password or trigger)"',
   'Pest Form':
     'Level=1 ' +
     'Traits=Polymorph,Transmutation ' +
@@ -10235,7 +10235,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each hit reduces the duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
+      '"Touched gains resistance 5 to non-adamantine physical damage for 20 min; each bludgeoning, piercing, or slashing hit reduces the duration by 1 min (<b>heightened 6th</b> gives resistance 10; <b>8th</b> gives resistance 15; <b>10th</b> gives resistance 20)"',
   'Storm Of Vengeance':
     'Level=9 ' +
     'Traits=Air,Electricity,Evocation ' +
