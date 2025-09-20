@@ -6361,7 +6361,7 @@ Pathfinder2ERemaster.FEATURES = {
   'Pride In Arms':
     'Action=Reaction ' +
     'Section=combat ' +
-    'Note="Gives an ally who brings a foe to 0 HP temporary HP equal to their Constitution modifier until the end of their next turn"',
+    'Note="Gives an ally who brings a foe to 0 HP temporary Hit Points equal to their Constitution modifier until the end of their next turn"',
   'Squad Tactics':
     'Section=combat ' +
     'Note="Adjacent foes within reach of 2 allies are off-guard vs. self"',
@@ -14421,7 +14421,7 @@ Pathfinder2ERemaster.SPELLS = {
   'Pest Form':
     Pathfinder2E.SPELLS['Pest Form']
     .replace('Transmutation', 'Concentrate,Manipulate'),
-  'Pest Cache':
+  'Pet Cache':
     'Level=1 ' +
     'Traits=Extradimensional,Manipulate ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
@@ -14434,7 +14434,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Weird
     .replace('Emotion,Fear', 'Concentrate,Manipulate') + ' ' +
     'Description=' +
-      '"R120\' Inflicts 16d6 HP mental and confused for 1 rd on all targets within range (<b>save Will</b> inflicts half HP loss of reactions for 1 rd; critical success negates; critical failure inflicts double HP and confused for 1 min)"',
+      '"R120\' Inflicts 16d6 HP mental and confused until the start of the next turn on all targets within range (<b>save Will</b> inflicts half HP loss of reactions until the start of the next turn; critical success negates; critical failure inflicts double HP and confused for 1 min)"',
   'Phantasmal Calamity':
     Pathfinder2E.SPELLS['Phantasmal Calamity']
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
@@ -14446,7 +14446,8 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Traits=', 'Traits=Concentrate,Manipulate,'),
   'Pinpoint':
     Pathfinder2E.SPELLS['Discern Location']
-    .replace('Divination', 'Concentrate,Manipulate'),
+    .replace('Divination', 'Concentrate,Manipulate')
+    .replace('level', 'rank'),
   'Planar Palace':
     Pathfinder2E.SPELLS['Magnificent Mansion']
     .replace('Conjuration', 'Concentrate,Manipulate'),
@@ -14472,7 +14473,7 @@ Pathfinder2ERemaster.SPELLS = {
     Pathfinder2E.SPELLS.Protection + ' ' +
     'Traits=Concentrate,Manipulate ' +
     'Description=' +
-      '"Touched gains +1 Armor Class and saves for 1 min (<b>heightened 3rd</b> effects allies in a 10\' emanation around target)"',
+      '"Touched gains +1 Armor Class and saves for 1 min (<b>heightened 3rd</b> effects allies in a 10\' emanation around the target)"',
   'Pummeling Rubble':
     'Level=1 ' +
     'Traits=Concentrate,Earth,Manipulate ' +
@@ -14519,7 +14520,7 @@ Pathfinder2ERemaster.SPELLS = {
     .replace('Evocation', 'Concentrate,Manipulate') + ' ' +
     'Traditions=Arcane,Divine,Occult,Primal ' +
     'Description=' +
-      '"R120\' 10\' burst dazzles makes concealed creatures visible and invisible creatures concealed for 1 min (<b>save Reflex</b> effects last 2 rd; critical success negates; critical failure effects last 10 min)"',
+      '"R120\' 10\' burst dazzles and makes concealed creatures visible and invisible creatures concealed for 1 min (<b>save Reflex</b> effects last 2 rd; critical success negates; critical failure effects last 10 min)"',
   'Revival':
     Pathfinder2E.SPELLS.Revival
     .replace('Necromancy,Positive', 'Concentrate,Manipulate,Vitality'),
@@ -14530,7 +14531,8 @@ Pathfinder2ERemaster.SPELLS = {
     // Note: assume casting time remains the same
     Pathfinder2E.SPELLS['Zone Of Truth']
     .replace('Enchantment', 'Concentrate,Manipulate,Detection')
-    .replace(/; critical failure[^)]/, ''),
+    .replace('prevents', 'reveals')
+    .replace(/; critical failure[^)]*/, ''),
   'Runic Body':
     Pathfinder2E.SPELLS['Magic Fang']
     .replace('Transmutation', 'Concentrate,Manipulate')
@@ -16551,7 +16553,7 @@ Pathfinder2ERemaster.SPELLS = {
     'Cast=2 ' +
     'Traits=Uncommon,Focus,Sorcerer,Attack,Concentrate,Manipulate ' +
     'Description=' +
-      '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary HP for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary HP</b>)"',
+      '"Spell attack inflicts 2d6 HP piercing, giving self 1d4 temporary Hit Points for 1 rd (<b>heightened +2</b> inflicts +2d6 HP and gives +1d4 temporary Hit Points</b>)"',
   'Swamp Of Sloth':
     Pathfinder2E.SPELLS['Swamp Of Sloth']
     .replace('Conjuration', 'Concentrate,Manipulate'),
