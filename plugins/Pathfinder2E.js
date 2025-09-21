@@ -9983,7 +9983,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Divine,Occult ' +
     'Cast=1 ' +
     'Description=' +
-      '"Self gains +1 Armor Class for 1 rd and can end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)"',
+      '"Self gains +1 Armor Class until the start of the next turn and can end the spell and not use it again for 10 min to use Shield Block with Hardness 5 (<b>heightened 3rd</b> gives Hardness 10; <b>5th</b> gives Hardness 15; <b>7th</b> gives Hardness 20; <b>9th</b> gives Hardness 25)"',
   'Shield Other':
     'Level=2 ' +
     'Traits=Necromancy ' +
@@ -10181,7 +10181,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine ' +
     'Cast=2 ' +
     'Description=' +
-      '"R120\' Summoned guardian with 50 HP can attack or defend each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
+      '"R120\' Summoned guardian with 50 HP can attack or protect each rd while sustained for up to 1 min; +%{spellAttackModifier.%tradition} attack inflicts 2d8 HP force or weapon damage type; defense absorbs 10 HP of damage from an attack on an ally (<b>heightened +2</b> guardian gains +20 HP and inflicts +1d8 HP)"',
   'Spiritual Weapon':
     'Level=2 ' +
     'Traits=Evocation,Force ' +
@@ -10196,7 +10196,7 @@ Pathfinder2E.SPELLS = {
     'School=Necromancy ' +
     'Traditions=Divine,Primal ' +
     'Cast=2 ' +
-    'Description="R30\' Removes dying condition from target"',
+    'Description="R30\' Removes the dying condition from the target"',
   'Status':
     'Level=2 ' +
     'Traits=Detection,Divination ' +
@@ -10204,7 +10204,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Divine,Occult,Primal ' +
     'Cast=2 ' +
     'Description=' +
-      '"Reveals willing touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> R10\' affects 10 targets)"',
+      '"Reveals willing touched\'s direction, distance, and conditions until next daily prep (<b>heightened 4th</b> affects 10 targets within 30\')"',
   'Stinking Cloud':
     'Level=3 ' +
     'Traits=Conjuration,Poison ' +
@@ -10251,7 +10251,7 @@ Pathfinder2E.SPELLS = {
     'Traditions=Arcane,Occult ' +
     'Cast=2 ' +
     'Description=' +
-      '"R30\' Specified trigger prompts the target to follow a reasonable, 1 min suggestion until next daily prep (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)"',
+      '"R30\' Specified trigger later prompts the target to follow a reasonable, 1 min suggestion until next daily prep (<b>save Will</b> negates; critical success allows the target to notice the attempt; critical failure inflicts following the suggestion for 1 hr) (<b>heightened 9th</b> affects 10 targets)"',
   'Suggestion':
     'Level=4 ' +
     'Traits=Enchantment,Incapacitation,Linguistic,Mental ' +
